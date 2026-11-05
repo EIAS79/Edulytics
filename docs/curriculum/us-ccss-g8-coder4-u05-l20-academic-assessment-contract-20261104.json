@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L20",
+  "title": "The Volume of a Sphere",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\20\\index.html",
+      "sha256": "d690bc8ddd4a3fc2691dd6e7ca6ad255bc0eb49ba0d68638ff33c3315dfb0121"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\20\\preparation.html",
+      "sha256": "21744755ab1663b44ecba5a8b8b2751017408e2c14632d66f79907dc6da892fd"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\20\\index.html",
+      "sha256": "6ac7a9822a1e136915ab19b7d21c0094be2248a4e5806fcc08346acfec520a9f"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\20\\practice.html",
+      "sha256": "f2e1e4c9d523820ffeba09799117f9c8307784e75ff590aba1cf973e61aa0dee"
+    }
+  },
+  "learningGoals": [
+    "Calculate sphere, cylinder, and cone volumes in a shared-radius comparison",
+    "Represent sphere volume as a function of radius"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "20.1 ? Sketch a Sphere",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "20.2 ? A Sphere in a Cylinder",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "20.3 ? Spheres in Cylinders",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 6,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l20-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l20-selected-first-party-paper.html",
+    "sha256": "237e3d776b7321fe2b20c173a144e112495765f3481ca610293e72852fa2900f",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Sphere 36?, cylinder 54?, cone 18?; sphere equals cylinder minus cone.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Sphere formula is V=(4/3)?r?.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Radius, not diameter, is cubed.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Scaling r by k scales sphere volume by k?.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "r": 3
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

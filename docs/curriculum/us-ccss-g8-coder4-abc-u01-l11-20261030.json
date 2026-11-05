@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L11",
+  "unit": "U01",
+  "officialOrdinal": 11,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\11\\index.html",
+      "sha256": "c7079daf3f93ced1e066cc9d5774146f132118c131328e762a81fdf424369e01"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\11\\index.html",
+      "sha256": "2812f79f3b49d329e517566c3354310e485a0814da1d7e99ecab893aa75cab2e"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\11\\preparation.html",
+      "sha256": "1ab13917a9a5a4c1de8c5e3cb35a54c724ea157956482aff919429bdc546a65a"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "11.1: Find the Right Hands",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Compare original asymmetric left and right hand drawings; identify reflection as necessary to change handedness.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "11.2: Are They the Same?",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Judge figure pairs by all corresponding lengths/angles, not just apparent similarity or matching area.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "11.3: Area, Perimeter, and Congruence",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Compare rectangles R=2×3, S=1×6 and T=1×4 by area and perimeter; identify why equal area or perimeter alone does not show congruence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L11 What Is the Same?",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l11-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 3,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": 4,
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "3682d055bc25d2539f053a197c1386ed483bda30",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:01:55.840143+00:00",
+  "nextLesson": "U01:L12",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

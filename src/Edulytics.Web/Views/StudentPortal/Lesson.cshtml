@@ -1891,19 +1891,32 @@
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
-            @* Grade 6 A-B-C authoring has six complete canonical Edulytics
-               teaching sections. Rich V2 can compress away the exact lesson
-               goal, source-skill reasoning and worked examples. Retain Rich
-               V2 interactions, and keep the canonical instructional sections
-               visible and accessible for every G6 learner. This does not
-               auto-grade teacher-led drawing or discussion activities. *@
-            @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G6:", StringComparison.Ordinal))
+            @* Grade 6 and Grade 8 A-B-C authoring include six complete
+               canonical first-party teaching sections. Rich V2 can compress
+               the lesson goal, source-skill reasoning and worked examples.
+               Preserve Rich V2 interactions while exposing these sections
+               to authenticated learners. Teacher-led work is not auto-graded. *@
+            @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G6:", StringComparison.Ordinal) ||
+                 Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G8:", StringComparison.Ordinal))
             {
                 <div class="lesson-source-aligned-activities"
-                     aria-label="Grade 6 full first-party lesson teaching">
+                     aria-label="Full first-party lesson teaching">
                     @foreach (var canonicalSection in sections)
                     {
                         <partial name="_LessonReaderSection" model="canonicalSection" />
+                    }
+                    @* Keep full first-party graph descriptions beside the
+                       generated visual; mathematical labels and axes must
+                       remain available to all authenticated Grade 8 learners. *@
+                    @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G8:", StringComparison.Ordinal) &&
+                         (Model.WorkedExamples.Contains("Description:", StringComparison.OrdinalIgnoreCase) ||
+                          Model.WorkedExamples.StartsWith("Example:", StringComparison.OrdinalIgnoreCase)))
+                    {
+                        <section class="lesson-learning-section lesson-learning-section--examples"
+                                 aria-label="Complete written descriptions of worked examples">
+                            <h3>Worked-example descriptions and graph details</h3>
+                            <div class="lesson-reader-text" style="white-space: pre-wrap">@Edulytics.Web.Presentation.LessonPresentationParser.ToPlainText(Model.WorkedExamples)</div>
+                        </section>
                     }
                 </div>
             }

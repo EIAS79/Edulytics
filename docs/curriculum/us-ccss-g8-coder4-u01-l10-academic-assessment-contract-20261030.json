@@ -1,0 +1,427 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+  "title": "Composing Figures",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\10\\index.html",
+      "sha256": "3acc9314e5fb821e175cfa0937da28838f1c908f8344c9f0a5cb3fcbe54f1b04"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\10\\index.html",
+      "sha256": "f963451770bf72739fcbdf8cb9c6b4dd041f0cdbc115e1c07b6664ed4b4b3ddc"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\10\\preparation.html",
+      "sha256": "57bc305c172e12e5ee449e65c0221b775df6a5993ab2bfbcbe2111153527ec2a"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.b"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: infer unknown measurements when shapes are composed or moved by rigid transformations, without physically remeasuring every image edge.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Use two original congruent 3-by-2 rectangles to form a 6-by-2 rectangle. Explain why the joined 2-unit side is not in the exterior perimeter and why the area is 12. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "10.1: Angles of an Isosceles Triangle",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Reflect an isosceles triangle about a side and rotate the image to justify equality of the base angles.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "10.2: Triangle Plus One",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Rotate triangle ABC 180° about midpoint M of AC; label new D and reason the composite quadrilateral is a parallelogram.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "10.3: Triangle Plus Two",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Identify transformations and corresponding vertices among three rigid triangle images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "10.4: Triangle ONE Plus",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Use a 30° apex in an isosceles triangle to infer congruent reflected angles without redrawing the original publisher figure.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Join two 3-by-2 rectangles along a complete 2-unit side to form one 6-by-2 rectangle. Find the exterior perimeter.",
+    "responseType": "finite_decimal",
+    "unit": "units",
+    "expected": 16,
+    "acceptedEquivalentInputs": [
+      "16",
+      "16.0",
+      "+16"
+    ],
+    "wrongRejected": [
+      "17",
+      "15"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Use two original congruent 3-by-2 rectangles to form a 6-by-2 rectangle. Explain why the joined 2-unit side is not in the exterior perimeter and why the area is 12.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:01:50.737453+00:00",
+  "parentGitHEAD": "61259110af326c0d5e0340d470d208a11e7778be",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l10-composing-figures-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l10-composing-figures-paper.html",
+    "learnerWorksheetSha256": "52953e975008ba662fcbe0edff29457e5073ef22de9997d04d41c73d2a519789",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "10.1: Angles of an Isosceles Triangle",
+        "worksheet": "isosceles",
+        "modality": "SOURCE_REFLECTION_AND_ROTATION_EQUAL_BASE_ANGLES",
+        "key": "A(0,3), B(-2,0), C(2,0), AB=AC=sqrt(13). Reflection across x=0 exchanges B,C and preserves equal base angles; track original source reflection over AB then rotation around A."
+      },
+      {
+        "source": "10.2: Triangle Plus One",
+        "worksheet": "plus-one",
+        "modality": "MIDPOINT_HALF_TURN_PARALLELOGRAM_PROOF",
+        "key": "A(0,0) B(3,0) C(1,2), midpoint M(0.5,1), image B becomes D(-2,2), ABCD parallelogram: AB=DC=(3,0), BC=AD=(-2,2). Areas triangle 3, parallelogram 6."
+      },
+      {
+        "source": "10.3: Triangle Plus Two",
+        "worksheet": "plus-two",
+        "modality": "TWO_SCALENE_RIGID_IMAGES_WITH_VERTEX_CORRESPONDENCES",
+        "key": "P(1,1), Q(4,1), R(2,3), translate (+2,-1) to (3,0),(6,0),(4,2); reflect x=0 to (-1,1),(-4,1),(-2,3). Corresponding sides/angles equal."
+      },
+      {
+        "source": "10.4: Triangle ONE Plus",
+        "worksheet": "one-plus",
+        "modality": "TWO_ORDERED_REFLECTIONS_ON_30_DEGREE_5_UNIT_RAYS",
+        "key": "O(0,0) N(5,0) E=(5sqrt3/2,5/2); reflection over ON sends E to M=(5sqrt3/2,-5/2); reflection over OM sends N to T=(5/2,-5sqrt3/2). Directions +30°,0°,-30°,-60°; all radii 5."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "TWO_RECTANGLES_COMPOSITE_AREA_PERIMETER_PROOF",
+        "key": "Two 3x2 tiles sharing 2-unit side form 6x2, area12, perimeter16; shared edge interior not perimeter."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 absent/incorrect,1 partly correct,2 fully labelled source-aligned construction with mathematical proof; manual offline teacher review.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Proves equal base angles via source equivalent isosceles reflection/rotation correspondence"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Correct M,D half turn, parallelogram opposite vectors and area 6"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Two independently mapped scalene copies, corresponding sides and angles"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Ordered 30-degree reflections and independently authored rectangle area/perimeter justified"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "isosceles": {
+        "A": [
+          0,
+          3
+        ],
+        "B": [
+          -2,
+          0
+        ],
+        "C": [
+          2,
+          0
+        ],
+        "equalSideSquared": 13,
+        "reflectionAxis": "x=0"
+      },
+      "halfTurn": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          3,
+          0
+        ],
+        "C": [
+          1,
+          2
+        ],
+        "M": [
+          0.5,
+          1
+        ],
+        "D": [
+          -2,
+          2
+        ],
+        "AB": [
+          3,
+          0
+        ],
+        "DC": [
+          3,
+          0
+        ],
+        "BC": [
+          -2,
+          2
+        ],
+        "AD": [
+          -2,
+          2
+        ],
+        "triangleArea": 3,
+        "parallelogramArea": 6
+      },
+      "scaleneOriginal": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "translated": [
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "reflected": [
+        [
+          -1,
+          1
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "rays": {
+        "length": 5,
+        "angleDegrees": [
+          30,
+          0,
+          -30,
+          -60
+        ],
+        "E": "(5sqrt3/2,5/2)",
+        "M": "(5sqrt3/2,-5/2)",
+        "T": "(5/2,-5sqrt3/2)"
+      },
+      "rectangles": {
+        "widthEach": 3,
+        "height": 2,
+        "combinedWidth": 6,
+        "combinedArea": 12,
+        "combinedPerimeter": 16,
+        "sharedInteriorSide": 2
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "Base angles at B and C congruent since AB=AC and reflection swaps B,C",
+        "D=(-2,2), M=(0.5,1), ABCD area 6 and opposite vectors equal",
+        "Translation and reflection of scalene triangle preserve lengths and angle measures",
+        "E at +30, M at -30, T at -60 degrees each radius5",
+        "Rectangle 6x2 area12 exterior perimeter16"
+      ],
+      "equivalent": [
+        "Isosceles theorem plus corresponding reflected angles is valid",
+        "Area 6 shown as two triangles of area3",
+        "Exact radical form or precisely labelled geometric rays accepted",
+        "Perimeter 16 calculated as 20-2*2"
+      ],
+      "wrong": [
+        "Interior joined 2-unit edge counted in outer perimeter",
+        "Cumulative transformations used instead of original triangle for second copy",
+        "A non-midpoint half turn taken as parallelogram proof",
+        "Reflection of E about ON placed above line instead of below",
+        "Area 6 incorrectly assigned to combined 6x2 rectangle"
+      ],
+      "malformed": [
+        "Missing midpoint M or image D label",
+        "Unlabelled corresponding side and angle pairs",
+        "Only number 16 without boundary reasoning",
+        "Missing second reflection line OM",
+        "No geometric sketch or reproducible explanation"
+      ],
+      "boundary": [
+        "Shared interior side contributes zero exterior length even though each tile has an edge",
+        "Half turn about AC midpoint exchanges A and C and maps B to D",
+        "Reflection reverses signed orientation but not angle magnitude",
+        "Exact radicals are equivalent to geometric 30-degree ray construction",
+        "Complete alternate teacher-assessable diagram can replace coordinate computation"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l10-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
+}

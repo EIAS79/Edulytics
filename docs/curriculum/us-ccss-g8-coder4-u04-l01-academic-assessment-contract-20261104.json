@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U04:L01",
+  "title": "Number Puzzles",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\1\\index.html",
+      "sha256": "6c268a1b960fd5163e2b0351ed738e5578cd1808849bdb585d1ee019c3d25ab9"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\1\\preparation.html",
+      "sha256": "62d5b940a530a28e5bb47f2d6d44106d9c8f30e706c110563876a9a0421345c4"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\1\\index.html",
+      "sha256": "9a6fecc99ab54fb89b43405718a1948fc0d741339992ce9c5cf32308bf12f76d"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\1\\practice.html",
+      "sha256": "ba11cb859ed1ba9bce6960a5c06c6351c54cfb10949cfbd7e18ebed355c3dd12"
+    }
+  },
+  "learningGoals": [
+    "Solve a one-variable linear equation from a number puzzle",
+    "Explain steps and verify by substitution",
+    "Create a multistep puzzle with a unique solution"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "1.1 • Notice and wonder about the number line",
+      "firstPartyTask": "numberline",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "1.2 • Telling temperatures as number puzzles",
+      "firstPartyTask": "temperature",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "1.3 • Exchange a three-step puzzle",
+      "firstPartyTask": "creating-puzzle",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 7,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u04-l01-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u04-l01-selected-first-party-paper.html",
+    "sha256": "c1dce1589d21802acafbe9d66cb208c8aef5d24c6d99fbf0d877b30c516a8fe9",
+    "taskIds": [
+      "numberline",
+      "temperature",
+      "creating-puzzle",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Correct number line and signed values.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Temperature equations 2x+7=25 =>x9, 3(x−4)=−6 => x2, parentheses semantic distinction.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "A genuinely three-step solvable peer puzzle and independent partner check.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice: reading fractions original sum 31/45? verify exact; signs, dependent scoring, graph and geometry all justified.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown 3(x+4)−2=25 =>x5 and incorrect 3x+2=25 =>x23/3.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "target": 25,
+    "multiplier": 3,
+    "added": 4,
+    "subtracted": 2,
+    "answer": 5
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

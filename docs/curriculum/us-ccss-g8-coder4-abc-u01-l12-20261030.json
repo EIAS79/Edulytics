@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+  "unit": "U01",
+  "officialOrdinal": 12,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\12\\index.html",
+      "sha256": "ef3a6f77450b912cf44a3b725dc0d2f371886dd166007320c0fe266dcaa5ccf9"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\index.html",
+      "sha256": "166cddb135dd38e0e8cac166afb9e69aaef82e82c10cc8e36b51ce3bca44645d"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\preparation.html",
+      "sha256": "d7e99915a97449713e6732239026465576678c14887017eafc5fb8117de345ed"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "12.1: Translated Images",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Identify which equally sized triangles are pure translations of a labeled triangle rather than turned or flipped images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.2: Congruent Pairs (Part 1)",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Judge the first set of congruent/noncongruent polygon pairs by full vertex and side correspondence and a rigid sequence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.3: Congruent Pairs (Part 2)",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Judge the second set of potentially congruent pairs, tracking reflected labels and an actual rigid motion rather than visual resemblance.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.4: Building Quadrilaterals",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Build two different quadrilaterals from four original pieces, compare all side lengths and angles, and argue when a sequence maps one onto the other.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L12 Congruent Polygons",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l12-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 4,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": [
+      -4,
+      3
+    ],
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "5869ad38af3e8bc0b138cbded52d9971dac1801e",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:02:01.290955+00:00",
+  "nextLesson": "U01:L13",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

@@ -340,11 +340,15 @@ public sealed class RichLessonContentV2PilotTests
             145,
             lessons.Count(x => x.LessonCode.StartsWith(
                 "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+        Assert.Equal(
+            131,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G8:", StringComparison.Ordinal)));
 
         // Existing 24 Cambridge Stage 6 and 2 UAE pilot lessons remain
         // guarded by their dedicated tests above. Do not pin the global sum:
         // future grades can add curated content on their own branches.
-        Assert.True(lessons.Length >= 26 + 143 + 149 + 145);
+        Assert.True(lessons.Length >= 26 + 143 + 149 + 145 + 131);
         Assert.Equal(
             lessons.Length,
             lessons.Select(x => x.LessonCode)

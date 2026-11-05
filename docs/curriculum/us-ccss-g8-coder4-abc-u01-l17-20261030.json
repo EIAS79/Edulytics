@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L17",
+  "unit": "U01",
+  "officialOrdinal": 17,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\17\\index.html",
+      "sha256": "b96b8465aa8dd77685fdfd71cd483f35c35caf25bfe5fa2a74e342e83c990dd4"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\17\\index.html",
+      "sha256": "3478394f3c51457579486135877b56b958e8e632a4f48e775fc50a35a4068c8a"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\17\\preparation.html",
+      "sha256": "cccfba528d6ed21e1e603087b780b1b3d8b8752f33b877499dfbb66bdcbdb2ca"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "4.MD.C"
+    },
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.B.5"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "17.1: Deducing Angle Measures",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Fit six equilateral triangles, four squares, or three regular hexagons around a single point and explain the 360° angular constraint.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "17.2: Tessellate This",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Construct an original gap-free repeating tessellation and identify a translation or other rigid symmetry taking the pattern to itself.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "17.3: Rotate That",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Construct a rotationally symmetric design, exchange with partner and identify a non-identity turn about its center.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L17 Rotate and Tessellate",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l17-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 3,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": 60,
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:02:24.700421+00:00",
+  "nextLesson": "U02:L01",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

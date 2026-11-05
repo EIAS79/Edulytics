@@ -54,6 +54,15 @@
     <div class="rich-lesson-body">
         @foreach (var paragraph in Model.ExplanationParagraphs)
         {
+            // Grade 8 keeps editorial source/provenance notes in the authored
+            // lesson record for governance, but they are not student teaching.
+            // Never remove or rewrite the underlying provenance or license.
+            if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G8:", StringComparison.Ordinal) &&
+                (paragraph.Contains("Open Up Resources", StringComparison.OrdinalIgnoreCase) ||
+                 paragraph.Contains("Illustrative Mathematics", StringComparison.OrdinalIgnoreCase)))
+            {
+                continue;
+            }
             <p class="lesson-reader-text">@paragraph</p>
         }
         @foreach (var visual in Model.Visuals)

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L13",
+  "title": "Cube Roots",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\13\\index.html",
+      "sha256": "707c29a01db973798aaa9fa9401de678bae3f83686003081d5cc07b0da6882bb"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\13\\preparation.html",
+      "sha256": "18ceaec61ac8de9dbbd5d696c53d3b30e1c232429312d8ef1088f290dea2c83c"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\13\\index.html",
+      "sha256": "75051bbf7109c40b88d7cb5e7c80381730da20bcfabe7259d83584936ed5703d"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\13\\practice.html",
+      "sha256": "4afa007d04384014260e69523a1e905ffb2efd54ce598a64b0034b1d70e1a44b"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "13.1: True or False: Cubed",
+      "13.2: Cube Root Values",
+      "13.3: Solutions on a Number Line"
+    ],
+    "practiceProblemCount": 7,
+    "teacherFigureTagCount": 17,
+    "studentFigureTagCount": 11,
+    "requiredMaterialsSectionPresent": false,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: interpret cube roots as inverse operations of cubing, including negative radicands and perfect cubes, and compare them with square roots.",
+    "The real cube root of −8 is −2 because (−2)³=−8. Unlike real square roots of negative numbers, real cube roots exist for every real input. Use exact notation ∛n and check by cubing."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "13.1: True or False: Cubed",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "13.2: Cube Root Values",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "13.3: Solutions on a Number Line",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 7,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l13-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l13-selected-first-party-paper.html",
+    "sha256": "d9e40231d3770b29f7e54612b287d5b61fd54e27600f7623ca2039bf93208c18",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "cbrt(-8)=-2. Since 3^3=27 and 4^3=64, cbrt(30) lies between 3 and 4.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "neg": -2,
+    "lo": 3,
+    "hi": 4
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

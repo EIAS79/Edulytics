@@ -130,6 +130,10 @@ public sealed class RichLessonContentV2RolloutTests
             145,
             curatedLessons.Count(x => x.LessonCode.StartsWith(
                 "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+        Assert.Equal(
+            131,
+            curatedLessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G8:", StringComparison.Ordinal)));
 
         var canonicalCodes = documents
             .SelectMany(x => x.Lessons)

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L22",
+  "title": "Volume As a Function of . . .",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\22\\index.html",
+      "sha256": "c1eaddb361b626691b97dec898bb92496c298ddd3944272e2ffe8320f766944c"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\22\\preparation.html",
+      "sha256": "790fa87ec0bf6ab3415a8701c86b8de44933a7954bb7e93acb9eac96efd8d9ef"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\22\\index.html",
+      "sha256": "6c67e1837bf7c5cf8b68a0b19ee5bb2948d7263b81f1c9ea2ebe6c4e398c88d7"
+    },
+    "practice": null
+  },
+  "learningGoals": [
+    "Describe how radius changes affect sphere volume",
+    "Interpret volume functions for spheres, cones, and cylinders across multiple representations"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "22.1 ? Missing Information?",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "22.2 ? Scaling Volume of a Sphere",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "22.3 ? A Cylinder, a Cone, and a Sphere",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 0,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l22-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l22-selected-first-party-paper.html",
+    "sha256": "e0eecd6350183411cc24b7f925ee62fc3c8d079ffa7083f10920d4d3b2964a2f",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Sphere volume changes by 8; fixed-radius cylinder volume changes by 2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Sphere volume is cubic in radius.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Fixed-radius cylinder volume is linear in height.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Interpretations specify which dimension is the input and which volume is the output.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "rf": 2,
+    "sphereFactor": 8,
+    "cylHeightFactor": 2
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
