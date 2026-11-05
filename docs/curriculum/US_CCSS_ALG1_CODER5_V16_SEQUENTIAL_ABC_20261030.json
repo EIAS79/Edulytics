@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U03:L01",
+  "nextCanonical": "U04:L01",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -2336,32 +2336,492 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L26_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 43,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+      "title": "Two-way Tables",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\1\\preparation.html",
+          "sha256": "ba82c2595cba4b4372b0a907f35ae9637d3d18c99ad9c24a9dde48602982d027"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\1\\index.html",
+          "sha256": "358f902d70d04ba237d1aeca7d22a21223ffe33e37e18d99a5289fc8c90b95fb"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\1\\practice.html",
+          "sha256": "3249220ad7bc6f178befa17a958487927297e86566fd4202a5b914d83b7cf570"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\1\\index.html",
+          "sha256": "e72d5cdea1999f0453e096b282cf37caebb365f015ff6b59557bb2e28d611e92"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\1\\practice.html",
+          "sha256": "caac822736cdd078cfa7da5842e68c0b5641fc8e3f212088420c76b7c73e4eed"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l01-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L01_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 44,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L02",
+      "title": "Relative Frequency Tables",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\2\\preparation.html",
+          "sha256": "91f0c0faa021d9420dd9af4ccabe9fe28f03323286b59d5f049571cde977db90"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\2\\index.html",
+          "sha256": "c46f1313ae672b5dd4820adf42b8b2eca49c4d8c9a966cdbbdac22d4dbf9d511"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\2\\practice.html",
+          "sha256": "a0987f6e2a681f485975ae09b9a252c736c35784ed7bba4c957b8313dfdbcfe5"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\2\\index.html",
+          "sha256": "592ee342bd09f6136b8738345afdf75f69caea5686889d384929157a0f2724ac"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\2\\practice.html",
+          "sha256": "ac07ba9c09cf84ade8c3455cb85c2b04cd1994ef042d98de5f318efffa090be5"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l02-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_SOURCE_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L02_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 45,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L03",
+      "title": "Associations in Categorical Data",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\3\\preparation.html",
+          "sha256": "12a9e32eff076c1ede53e257a4a379a63470376f36e8f95b87e89b9e53cdd3c3"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\3\\index.html",
+          "sha256": "5b37593ec4306869f51fb503ad1b1ebe8662d9c4989d6b16d8d5fdc210884482"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\3\\practice.html",
+          "sha256": "4d7e5ad06040ee8139908f204849cd2f86a8a76e4dbe50386ee09a76fa0c00dd"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\3\\index.html",
+          "sha256": "d51d48ae09b7ce5b6c14f90e6d4fa03cb173bf00dc97779f230a8c81a809adfb"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\3\\practice.html",
+          "sha256": "3a7cab02c4d128811c9788b0ce90fa1a379d2ea36d53d249236ffa7c73acd99d"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l03-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_SOURCE_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L03_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 46,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L04",
+      "title": "Linear Models",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\4\\preparation.html",
+          "sha256": "9cf36fdbe0cd937c43dc645cc6a8e40535b1288399447234e45ddba95463fac4"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\4\\index.html",
+          "sha256": "c963d4a78dea51ce48d7b37d974e4e56c8307b7ff5aff7977afe86dbe489153a"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\4\\practice.html",
+          "sha256": "3771582edeb6fc77aa83c181f243fb0015638021fb13122fe499b96ee04aaaa5"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\4\\index.html",
+          "sha256": "ced851a92d5d3f952aeb1ce89d66c99fa448761d70c51321251675967f854452"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\4\\practice.html",
+          "sha256": "88bc3c353ca958d304492e42694cb168baf9165a408a2d7197229aafc64aff6e"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l04-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_COMPONENT_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L04_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 47,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L05",
+      "title": "Fitting Lines",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\5\\preparation.html",
+          "sha256": "16a4d46a1955a02f4902dea334454e10118170e0c2569741279158a68c7fdca1"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\5\\index.html",
+          "sha256": "f406bc7782ca020d1a65ad83a27ad86b699f55beaa83d7c91222c6b6b7f8fae9"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\5\\practice.html",
+          "sha256": "0022a86fe09e47229a4c4839d597a0e5648c216de4d8fa1ca101faa0000d3c45"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\5\\index.html",
+          "sha256": "315175b6de238ee314c44f4a7016303052bfceb91744d46dad9f27ddafb76ec7"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\5\\practice.html",
+          "sha256": "bac947de8e00a146ef7c6ffb2e0ea5e28ab414ffecc2e43642e0b3c24632a8ca"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l05-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_COMPONENT_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L05_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 48,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06",
+      "title": "Residuals",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\6\\preparation.html",
+          "sha256": "18378a18aa44be08156eabd556919f18581dde0c3e6adada57dbe6cf037e5425"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\6\\index.html",
+          "sha256": "aefe921cc866bf90fc053f3414d787a693668930432739ebc2abfa83c589a2ac"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\6\\practice.html",
+          "sha256": "be27abc7ec12b69b5aa255334b3d20dd6ce657dce747087b988cbfa1b09a715a"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\6\\index.html",
+          "sha256": "c819d16505fbe14b401278940a52ce282510d958012e4d8df245f9f041f58d37"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\6\\practice.html",
+          "sha256": "eeeab050dac7828b69cc256cbdcd648d79449a3824eed3f4d6b57afad64975f7"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l06-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L06_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 49,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L07",
+      "title": "The Correlation Coefficient",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\7\\preparation.html",
+          "sha256": "f06b90859d3d8366d2ecbece1b92751df3df3bf1f0003589a0777af49d0a67dd"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\7\\index.html",
+          "sha256": "6fd3c423e54256650a899c2d526bf46c9039690eed9830024c55b24b8c5b9435"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\7\\practice.html",
+          "sha256": "b9a7a1a65753f14d84759fb82631225aff1776215d7f3352ad3240b7cee4cdcc"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\7\\index.html",
+          "sha256": "12c7e90091c70d322c5a76024bdc5b3b6e9f1cd8511105055e6967cd426681f5"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\7\\practice.html",
+          "sha256": "13359a7796fdb350192776a408fdcacf03fa60c3e8c52068d1d2669cb8866db2"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l07-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L07_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 50,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L08",
+      "title": "Using the Correlation Coefficient",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\8\\preparation.html",
+          "sha256": "37a382e9c79f415a42182b68aae4ed291926adb4ea767f46267061058bbda502"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\8\\index.html",
+          "sha256": "0413e8c32c0deb54cfe30d5626d2bc09c76277eabf44f14e7a44f57a105ec34b"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\8\\practice.html",
+          "sha256": "6a390eab0489f42918385f53f91d63fac158764c54a4f676b4637cf9b323602d"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\8\\index.html",
+          "sha256": "0e5f5040c51540242fa1d9580cee71ff4766f48b33b89220c72c46eb37b3d682"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\8\\practice.html",
+          "sha256": "9fc44dfb67d5182920f14b54dc37b2eac6bf4ade84069dde14fbca5c3d091392"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l08-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L08_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 51,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L09",
+      "title": "Causal Relationships",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\9\\preparation.html",
+          "sha256": "c6499df68953d369cb8ec09034ef8bd731c55370400601c37f9e550ed1fb0478"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\9\\index.html",
+          "sha256": "0b2f0dd7926bf011bfc859421adb57b215ab297d8ad98cd92adfaeaf3a89eb5c"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\9\\practice.html",
+          "sha256": "cf564d95f03b85c79ca33a29f363ef6c0ec5973f334af00077fdabab3e266858"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\9\\index.html",
+          "sha256": "4ee3323d18f800b70ae04d2be583c774d35733c81f862c692edf82d95b7f7723"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\9\\practice.html",
+          "sha256": "b1df5c4aab81cc206a800c631b7feb0445753dc008d0cbb78d77e809f090c107"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l09-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_FAMILY_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L09_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 52,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
+      "title": "Fossils and Flags",
+      "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\10\\preparation.html",
+          "sha256": "95ddff05347585c3c5fbd1d9fdbf97adbab074da31fff692e04a757ab5acd228"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\10\\index.html",
+          "sha256": "e5d73ceaf53900b815fa879c813c00d879699d098f63847efae19020d3b415de"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\3\\10\\practice.html",
+          "sha256": "71dc2636293809057f1d8295bc80cff4961133e7a33ef5d7adbe8b79cd99f9e1"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\10\\index.html",
+          "sha256": "a07aad062b49429ef59ed780f947851d6717da7732508f0ee7f0e8d46e5a7e96"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\3\\10\\practice.html",
+          "sha256": "2e881f46850cca9ae7f6e4fe1093540343d90919b46000ee34a4c7df8bb93241"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u03-l10-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 source comparison"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_AUTHORED_NOT_RUN",
+        "objectivePractice": "Source-aligned exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_L10_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 42,
-    "B_CLOSED": 42,
-    "C_PREPARED": 42,
-    "ABC_READY_FOR_D": 42,
+    "A_CLOSED": 52,
+    "B_CLOSED": 52,
+    "C_PREPARED": 52,
+    "ABC_READY_FOR_D": 52,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 90,
+    "REMAINING": 80,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
-    "UNITS_ABC_CLOSED": 2,
-    "CURRENT_UNIT": "U03",
-    "UNIT_STATUS": "U02_READY_FOR_STAGE_D_NEXT_U03",
+    "UNITS_ABC_CLOSED": 3,
+    "CURRENT_UNIT": "U04",
+    "UNIT_STATUS": "U03_READY_FOR_STAGE_D_NEXT_U04",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
     "sources": "four local HTML SHA256 each lesson",
     "nodeSidecars": "132/132 PASS",
     "mathOracles": "LOCAL_PASS",
-    "dotnet": "NOT_RUN_U02",
+    "dotnet": "NOT_RUN_U03",
     "ci": "NOT_RUN_MANUALLY",
     "StageD": "NOT_RUN",
     "strictUnitGateAndOriginalHashes": "PASS",
@@ -2376,31 +2836,32 @@
     "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L16_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "strictSelectedPracticeRoute": "U01:L01 SOURCE_PATH_VERIFIED_AT_4bfa3339ca2bad3b2e64453ba3b6ea090b911152; INTEGRATED_GENERATE_SOLVE_VERIFY_AND_PERSISTED_SET_GRADING; .NET_TESTS_NOT_RUN; STAGE_D_NOT_RUN",
-    "U02": "26/26 ABC SOURCE_ROUTE_AUTHORED_TESTS_NOT_RUN"
+    "U02": "26/26 ABC SOURCE_ROUTE_AUTHORED_TESTS_NOT_RUN",
+    "U03": "10/10 ABC SOURCE_ROUTE_AUTHORED_TESTS_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
   "unitGate": {
     "course": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
-    "unitCode": "U02",
-    "unitTotalLessons": 26,
+    "unitCode": "U03",
+    "unitTotalLessons": 10,
     "courseUnitTotal": 7,
-    "unitsABCCLosed": 2,
-    "status": "U02_READY_FOR_STAGE_D",
-    "previouslyABCClosed": 16,
-    "newlyABCClosed": 26,
+    "unitsABCCLosed": 3,
+    "status": "U03_READY_FOR_STAGE_D",
+    "previouslyABCClosed": 42,
+    "newlyABCClosed": 10,
     "unitReadyForStageD": true,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
     "blockingDependency": null,
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
-    "sourceEdition": "OUR–IM Algebra 1 original local teacher and student HTML",
+    "sourceEdition": "OUR–IM Algebra 1 original local teacher/student HTML",
     "sourceL01FileHashesRevalidated": true,
     "manualVerification": "PASS_SOURCE_HASH_AND_SERVICE_GATE_ORDER",
     "dotnetTests": "NOT_RUN_NEW_ORDER",
@@ -2408,9 +2869,9 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "U02_READY_FOR_STAGE_D_NEXT_U03",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+  "unitStatus": "U03_READY_FOR_STAGE_D_NEXT_U04",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -2420,9 +2881,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_ABC_UNIT_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U03_ABC_UNIT_CLOSURE_20261105.md"
 }
