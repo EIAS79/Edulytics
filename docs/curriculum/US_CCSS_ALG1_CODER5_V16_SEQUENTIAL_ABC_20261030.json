@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U02:L01",
+  "nextCanonical": "U03:L01",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -1140,32 +1140,1228 @@
       "timeNote": "not captured; no elapsed time invented",
       "strictABCClosure": "READY_FOR_STAGE_D",
       "timingNote": "2026-11-05 source hashes/Rich V2 compared; no invented elapsed time."
+    },
+    {
+      "ordinal": 17,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+      "title": "Planning a Pizza Party",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\1\\preparation.html",
+          "sha256": "bdec078542b5162d17e9f189fcd0b1ee6dfa12f2e7885e4312e2b9f8ade13635"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\1\\index.html",
+          "sha256": "f4fa12525dda905252c85829382a66c7143df57e818979947fbc1c37029d6647"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\1\\practice.html",
+          "sha256": "bee83dd9e8cde255264665b4be3dafd6114d142eabfecf759c6e78b34f8a604d"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\1\\index.html",
+          "sha256": "8d9076c96c07a9bbd1c75fe73cb4936ad8c76405f9df669a6764bf8863bd9547"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\1\\practice.html",
+          "sha256": "6ddb318b951da372def56f030df2dc6f697e38c787bb1daec951fabc9c6a2b52"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l01-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L01_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 18,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L02",
+      "title": "Writing Equations to Model Relationships (Part 1)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\2\\preparation.html",
+          "sha256": "18b5c71f4f1b17cd76a61a10591a3af6ec0ada956065af885af45cb117fd3043"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\2\\index.html",
+          "sha256": "fb307184440d618dbe700362479d6e86ab38c366e53d364f7a96757ea5785c40"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\2\\practice.html",
+          "sha256": "729f86d0731115906adb3040a3388153fa6b7c4d61980a4d554623aa84e67358"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\2\\index.html",
+          "sha256": "b5dfbc6fd40078f67f52639fee5244119267ae0de5b2e9fbed820b009fe7251a"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\2\\practice.html",
+          "sha256": "031d73177b140e5d6f5a7bfa542f61cfe77cbd3c1a6df7bea293d3bd1ab3aeb3"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l02-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L02_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 19,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L03",
+      "title": "Writing Equations to Model Relationships (Part 2)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\3\\preparation.html",
+          "sha256": "7092390ac1f89fcb6f58b764474872389613ecd0dbd4a2da58793b25987bd1a0"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\3\\index.html",
+          "sha256": "d2c46010a6c801d20a67367efbbec04eed7f9f3177a1e5b8b813ed59004bd4c9"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\3\\practice.html",
+          "sha256": "5fc158756f984c827de0f3d7f3cb1313829bb36d1a34d2a7505b2c8ae83dba0c"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\3\\index.html",
+          "sha256": "e0b0053cddda0f53a0dc0e3723199b82c928dfdcd8c13dc53f51038b4a669b16"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\3\\practice.html",
+          "sha256": "2b893e2a4161f08a9e87580b98d0bacffe6cd0772a1720b172ac12af67d0958b"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l03-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L03_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 20,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L04",
+      "title": "Equations and Their Solutions",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\4\\preparation.html",
+          "sha256": "f18f631f0bbac9af4dfb207ba73f29db7f6c76c1c58a7889004dfef0b223987c"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\4\\index.html",
+          "sha256": "d9bf794b384732c7b039dc267d3988d2e3a2ad534f0998f125cc8ef3f06695d2"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\4\\practice.html",
+          "sha256": "a64bbfac1bb3c887e119e2d81e2301069967c8fa61c0e6b2fe1905a6f7c55328"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\4\\index.html",
+          "sha256": "ad1f6edc8d389765934287408925ecffcef80e9b7bb8d2f0b3ad257bf05577ae"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\4\\practice.html",
+          "sha256": "805b1a3b4e2671ea7bddef1217f633289bcc5ccaf943bf41908a36201bf0987d"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l04-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L04_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 21,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L05",
+      "title": "Equations and Their Graphs",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\5\\preparation.html",
+          "sha256": "3f14e7d76b20feee60d2c64dc74fa228b0e56bb24c739d04c4c581ce4e7658a1"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\5\\index.html",
+          "sha256": "55628a1d6ec92f23c6b034501a5fee0fe36d6b7bedc933e0b1ef3eae00a5a206"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\5\\practice.html",
+          "sha256": "7405be6437522e32d9fe231f84808f09dfedfa0ea4685132e4830bdf5c25774b"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\5\\index.html",
+          "sha256": "daf71fd9003f981ddc1cc53d8f9fe5fca7572922d21c15f0cbb04b5544cea5bf"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\5\\practice.html",
+          "sha256": "bf0bdc2d5b05d0e4468819cef332c462de6ccd8dee37e8e39b297d9e16598fc7"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l05-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_ROUTE",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L05_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 22,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L06",
+      "title": "Equivalent Equations",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\6\\preparation.html",
+          "sha256": "a308fe325d3d7bcea98f5e42678e74fe2701826191ad84bef3ec271c7c52eaee"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\6\\index.html",
+          "sha256": "7579d3386d13e44a0a159a0c143b41c1a5ad195c38b0655d1bd00a025959cffb"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\6\\practice.html",
+          "sha256": "bb8c48be4c593b272148f7be70f5e0848c4b6dfe5fd46eb3cafb1ae6de549ae7"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\6\\index.html",
+          "sha256": "7683aa950701588a83a67552bb6eddba723f67b684efe954b963259555061172"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\6\\practice.html",
+          "sha256": "8c9269899a672e3b76ece23343fdd95e6986bbc8b2193d22251a8b28e0a03a25"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l06-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L06_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 23,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L07",
+      "title": "Explaining Steps for Rewriting Equations",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\7\\preparation.html",
+          "sha256": "cae344b0a50be0bfce7a129965d29f3f058f22ce415ee1ec2432f3a45bc34883"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\7\\index.html",
+          "sha256": "f70d1b9ff6430d6dbfc21ee7b8655d9f8f6bcb96e92df274e9a3eb49622f4e1a"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\7\\practice.html",
+          "sha256": "5a75e02b0ce560de2543fa76b8260d0a5e83eafdbbe593c68f05bc52dcce5862"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\7\\index.html",
+          "sha256": "72cdd0fb20d059b82efd98b1776c8506a46bd462b6860ea9a53d0ee2702f33c9"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\7\\practice.html",
+          "sha256": "f33f95610f1e7f94320d459e414a1c714e6cbbc20ae0cf8f94983152c2bc025a"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l07-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_ROUTES",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L07_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 24,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L08",
+      "title": "Which Variable to Solve for? (Part 1)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\8\\preparation.html",
+          "sha256": "5f7d8e76c5d01436a6aeab4e8f0002c7b1e4a5813c4572a1cadbada406d9f8b5"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\8\\index.html",
+          "sha256": "4e1eaaf8f96cb739334ad8ef283c5963a88beb3ba32d09a83ac0e843ce834046"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\8\\practice.html",
+          "sha256": "98c569ec5809f5800b132146674984d60538eaafdaba819b6532bb5f231103a3"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\8\\index.html",
+          "sha256": "9de4f96f13a711e5170500e191a097078fb7d321ae9d91f98481fae1187c6629"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\8\\practice.html",
+          "sha256": "c8208ccfcfd697b831af483411d66d3be2a813cbe843b799abff64e353beee40"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l08-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L08_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 25,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L09",
+      "title": "Which Variable to Solve for? (Part 2)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\9\\preparation.html",
+          "sha256": "fe4d5aecebe730e02d7768d6e8d9a4c741a273c71bb2f9cb0d01d6a3004933c6"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\9\\index.html",
+          "sha256": "c423d9655c07882bb4a1b3dc83d7294cddaa9c9b3b332daa7f394be3c0b2220c"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\9\\practice.html",
+          "sha256": "f2991b7a68688da5cb31ebcf547b535646f2fd2921007a170f8059d165d4e278"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\9\\index.html",
+          "sha256": "b8ba97c534b30dc4fe646979b62a8cc910fe24c77aefaf236a2db5a0ff0ca00c"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\9\\practice.html",
+          "sha256": "c26256af9b8e85c13a74ec4d9a389fe52010aca5ffa6798c0fb3aee7d43e19d6"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l09-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_ROUTE",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L09_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 26,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L10",
+      "title": "Connecting Equations to Graphs (Part 1)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\10\\preparation.html",
+          "sha256": "764165981a25d4567834f33532342e752ed2c2b6e7f1b8443d982b3555cba1bf"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\10\\index.html",
+          "sha256": "ac1c455d176a67a1496310c4db33d24b27f11074982deed8107320e08fe1dd0b"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\10\\practice.html",
+          "sha256": "1d8a2afd84d59badeccee830091c1e16f9b4349a5f81a9275e29ceaca353f919"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\10\\index.html",
+          "sha256": "449e2b79757f760091afc68c398eb956fa313a71a67582f10d468add17f491af"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\10\\practice.html",
+          "sha256": "1530f191a52e44a33426056b55220639a448d091526c9b0fd4675415d423faa2"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l10-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L10_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 27,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L11",
+      "title": "Connecting Equations to Graphs (Part 2)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\11\\preparation.html",
+          "sha256": "ed7ec90cd504ad3dd2c6270f35160cc1f5600ffa6ba974fe9b75dbe74a221475"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\11\\index.html",
+          "sha256": "1f9d9a45a0915bd57006e9d9e001799821e57c938f6649d11975738905d68300"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\11\\practice.html",
+          "sha256": "d151cbbf99223e8ce6d91bb01d28a26a669d1e529f63231f86ff22eeebd5d460"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\11\\index.html",
+          "sha256": "9f4d69f6416793acc1af766b0c943a5f0799d60016639e6101080250c832aa50"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\11\\practice.html",
+          "sha256": "740bb6192e9983db0019cb162848d95bc5fdb1a806a4ecd17e76a1a7fa929366"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l11-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_EXACT_ROUTES",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L11_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 28,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L12",
+      "title": "Writing and Graphing Systems of Linear Equations",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\12\\preparation.html",
+          "sha256": "214d403f0c2c1de720272eaf05fc93bc02e3ad1da144fa7763e85298db3f4ef2"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\12\\index.html",
+          "sha256": "c3e6ebd8a62d1ccd486db74ae8d04487f8387b133f60078114a17133020a01ac"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\12\\practice.html",
+          "sha256": "d3b5a6f9c39547978849afb45bee2b7ec603d05282ee8b4ad065b64ca2ad215f"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\12\\index.html",
+          "sha256": "52d5613f8bc214d39cc94bd6bb91c7dc94b951c975e144f793ad5ee850c1dec8"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\12\\practice.html",
+          "sha256": "f9511230135afa76c74dde99d173f7b65c9f3fed1be7607f47206cadb9393154"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l12-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_ROUTE_AUTHORED_TESTS_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L12_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 29,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13",
+      "title": "Solving Systems by Substitution",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\13\\preparation.html",
+          "sha256": "34b339d7335de633be9bf9f87a8657e51516d23e38dda1d398691f6f506f9b8e"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\13\\index.html",
+          "sha256": "53bafd97c8b0fcfef1147fead3dd8b537b4c24730ebc97c54575aa2f726887a3"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\13\\practice.html",
+          "sha256": "864f5887a2aebd0c86b90dd027954e71944e8a0a6d7ee600b2d85d6b3c6c6b34"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\13\\index.html",
+          "sha256": "7888ae40bfe878ff50babc4408aca7f83353c9d77942a4fb440970f9b81a4195"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\13\\practice.html",
+          "sha256": "8bb58c5e3038a63041d8e52959739b24efeb0615e270e9bad235b4df0e7f73b1"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l13-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_EXACT_PAIR_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L13_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 30,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L14",
+      "title": "Solving Systems by Elimination (Part 1)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\14\\preparation.html",
+          "sha256": "b18f518420c427380d571f53d86fcdbe1f7b4d9345ea20c5d01773c079c5e09d"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\14\\index.html",
+          "sha256": "5cbfccd6cdb2ad5f315efb4c1b6b798d93145cd46d5fa19f9eac79b38a5f32b9"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\14\\practice.html",
+          "sha256": "c0b6567e7d15598746e6e5a29807a904ecac699f66edb165a80b87a4bf6b8380"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\14\\index.html",
+          "sha256": "5bf98acbb0feb5fa662a9361378012503523804c624bb0c0f461ae55bec8529d"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\14\\practice.html",
+          "sha256": "79e5f65860731f5644a1fc8fad576041c5fd00061f6a4d11dca9d03e9c7dab07"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l14-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_EXACT_PAIR_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L14_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 31,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L15",
+      "title": "Solving Systems by Elimination (Part 2)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\15\\preparation.html",
+          "sha256": "227e5bc8d41ff112aa6b0ecde7a0969f72712b69a569c80f0bf7e4fe7f602001"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\15\\index.html",
+          "sha256": "45ecdfc73d4a568cf87a45dc285083a9bcd8730798e43536f5d8e29c45974770"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\15\\practice.html",
+          "sha256": "030e97d4cb8a5f28643def58f268a3559eeec2bd27801eba8a669a9033be7b8d"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\15\\index.html",
+          "sha256": "b4131b0fc33cc6a55ddcacf4b482d5f2d0b90527b026fea32884914d98aa86ca"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\15\\practice.html",
+          "sha256": "bbd118e3d44b20cc321155ea18417653156915911c77875c51451501b3ae8787"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l15-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L15_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 32,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L16",
+      "title": "Solving Systems by Elimination (Part 3)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\16\\preparation.html",
+          "sha256": "19d6398fcf42e9b2edb6b7f848c76746084df70ce5dedcf7cb119f2496d5c2d5"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\16\\index.html",
+          "sha256": "b14e77dc8a77aa0796845d07c744d40405e13edffcc9b64a1137048416b4a3f0"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\16\\practice.html",
+          "sha256": "0a4735276ddedbe9f74ae6839f6b44f28b4b5078e735d7df2951355f7bce1e72"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\16\\index.html",
+          "sha256": "a44a2b5922112f9e33a1cc7c52afca679d6c128713c726497561fb2a6f13fbcf"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\16\\practice.html",
+          "sha256": "7e5365aac317e578b4fc0e44efb59e1b6e8fd172aff8e5529cefe565f6771b31"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l16-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSE_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L16_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 33,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17",
+      "title": "Systems of Linear Equations and Their Solutions",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\17\\preparation.html",
+          "sha256": "67889fedd7e04c149c5fda92398e035aefd9c012e497e41e1d762afc3fb25e80"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\17\\index.html",
+          "sha256": "b31c58e9f41f077db97a5a7db90a82c213858b21009876fb0895dd72c924d644"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\17\\practice.html",
+          "sha256": "86327479a497574d1b6d53b5806c4597778a1c43f61d15112e5cade8de5576fa"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\17\\index.html",
+          "sha256": "4eca8890ec217d8b2e22d7d84a11b2ff243277a63aeec61ac1ff8b13b27860c1"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\17\\practice.html",
+          "sha256": "397016b0da8b9c031c4dfad9897185eee00bae6dbf961c538291492498816383"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l17-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_EXACT_COUNT_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L17_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 34,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18",
+      "title": "Representing Situations with Inequalities",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\18\\preparation.html",
+          "sha256": "edf35642b1373788941b4f6bdd8e8b35fd2512b5b30aa30ddf77071571c73f97"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\18\\index.html",
+          "sha256": "4f04bc1f073373ec81534423d44f1343264d77dcbdfa46d3828036b94ca46168"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\18\\practice.html",
+          "sha256": "22bd69118462d2071537746c6e5aa459da116d56c4096bd78826335caaeb9c95"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\18\\index.html",
+          "sha256": "dcfd9dc5073e2f2920ee0fa03ba2a625de28816d78d17e0f39d88beb388666ad"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\18\\practice.html",
+          "sha256": "52068fa11dad322d3661ba8967aa069abda9591122c4554d5b9060768604a42f"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l18-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSABLE_INEQUALITY_EXTENSION_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L18_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 35,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L19",
+      "title": "Solutions to Inequalities in One Variable",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\19\\preparation.html",
+          "sha256": "8874bd639ecf0348c2b02fd16e42d214b9affa024ee3ef37b3731d7da2900c8b"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\19\\index.html",
+          "sha256": "369c6149e7e3a9ebfa30f065366260b46409bf4b63367a03cb02165de2abfe52"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\19\\practice.html",
+          "sha256": "c674b575854729bff65329df5470ce6199583914dd4a8ea79fe568d5f0157fa0"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\19\\index.html",
+          "sha256": "dcf00c76660452cefc1e10f3bafd09ff0fa9442b65c7c49aa677315207bd9df5"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\19\\practice.html",
+          "sha256": "01ef71a31f4cec7cde4a851a2772d1f1ea1ef74a1c5da137d4c39d8a0f1317b2"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l19-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_ROUTE_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L19_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 36,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L20",
+      "title": "Writing and Solving Inequalities in One Variable",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\20\\preparation.html",
+          "sha256": "e44d7547400ce091f217ed044b9dfae7097a911d2cb03f3c932290aee041afe1"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\20\\index.html",
+          "sha256": "b2192e6feaf48e6ba5f623a0ef3cbab2cfcc09d993a71899b6025237180fbf53"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\20\\practice.html",
+          "sha256": "d27caf727f4e911882dc367134713d583f6b0f9388a0b9fb17296b482e9a4082"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\20\\index.html",
+          "sha256": "0d78a7ff99e7daa1543b220c70a609317104056e827b3b297b751ca6bf5eaa4a"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\20\\practice.html",
+          "sha256": "1e3fa1cc399ef68b24f5b267ced56bb04a47e49c19a056d9627353ea563696aa"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l20-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_ROUTE_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L20_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 37,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L21",
+      "title": "Graphing Linear Inequalities in Two Variables (Part 1)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\21\\preparation.html",
+          "sha256": "33e3b739fea47918c242c101ae0dab7091c5dfb026731cb824517ee084717986"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\21\\index.html",
+          "sha256": "ecceca5a6589182f68a29527a8b0ea5a110eb927b45d9861865f82680bd2bdc6"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\21\\practice.html",
+          "sha256": "2e82059ce0644b30f81fda4b6ad87a87981ce21569853acf4c6cc314bdfe6681"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\21\\index.html",
+          "sha256": "a99e860ebcf6c2347254229ceae83061c83f4d98ed8151dca77eda8ddb5fd8c0"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\21\\practice.html",
+          "sha256": "71c609ccec46e251cfcf311544a593e58217f999cc2aa862953d53fe8d98c63a"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l21-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_TWO_VARIABLE_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L21_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 38,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L22",
+      "title": "Graphing Linear Inequalities in Two Variables (Part 2)",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\22\\preparation.html",
+          "sha256": "2c7e84fe9b56406a2cba36716124ea06dc029e1cf0170d6e1650c7e80f558477"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\22\\index.html",
+          "sha256": "c1a1d2e177bab6ac8593903485c5e3b300fffd7df5b85ac3252dcadbfb8951c0"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\22\\practice.html",
+          "sha256": "e0d85477c1b2974384aaa47ef31478261781bbd6218710d585ce001a547d7422"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\22\\index.html",
+          "sha256": "8b8ed161a292bf3da42e5481be9ec3b09da7a95cd60a82a185de1864b48ab839"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\22\\practice.html",
+          "sha256": "cddb504e007e5550cc5a77062dcbbe1680e5bea760d6b93b2d4114da970b5326"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l22-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_TWO_VARIABLE_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L22_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 39,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L23",
+      "title": "Solving Problems with Inequalities in Two Variables",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\23\\preparation.html",
+          "sha256": "a117d3a1cc33e4f6d2f3b02fab6e2fdab60aa771393607ccb9ddb521c77b18f4"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\23\\index.html",
+          "sha256": "102430035ae311750f1d6573aafe70ad83a5ace01908c5b8b1cc53bbe25a72a6"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\23\\practice.html",
+          "sha256": "f2ad135952ddc44f52f6351e473f4c2ee5cd45480a18dfdca9150c3e86d23550"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\23\\index.html",
+          "sha256": "cbf72c1a94857c8359fdf97fe6b25219fa5251b1e36dc9b066ca7838a2d00654"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\23\\practice.html",
+          "sha256": "d93ded6ef580bbfabca66a8481716ddb181eae7841bc54fe18d28998ff941e8b"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l23-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L23_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 40,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L24",
+      "title": "Solutions to Systems of Linear Inequalities in Two Variables",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\24\\preparation.html",
+          "sha256": "62263c835f77a9c8a1a54873bce815953187dfdab61e4a3f9ee468579d284280"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\24\\index.html",
+          "sha256": "c993ef404025e4e6d0e5ecd0a5074088658547fc7ef6b2a19a8394e3c8066093"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\24\\practice.html",
+          "sha256": "eb4b7b682ab0d61425e9fc89f01d6e8f723a4ab0b5ac6ec61cf65a6736eecb12"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\24\\index.html",
+          "sha256": "c4897115bafe8140b6aceceb80fc7472be787884547042215af80b5761830218"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\24\\practice.html",
+          "sha256": "a4ddf7b9335ee83aa73512e873bcae07b487787bc1e2143ca514ad55c1541994"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l24-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L24_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 41,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L25",
+      "title": "Solving Problems with Systems of Linear Inequalities in Two Variables",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\25\\preparation.html",
+          "sha256": "1f0e2ef76c3bf1da72bd798a75c95272f2988689221a7c135a30ac679bb4ded3"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\25\\index.html",
+          "sha256": "a621976704d026940a92e63e41c095eb0cd308c071c05756a747e8fa26b3e566"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\25\\practice.html",
+          "sha256": "cc540186f15bba21824bdbe435b807ffa3c5b6173d5637043c6ff829a675f55d"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\25\\index.html",
+          "sha256": "6f9116c2458b24dada68a7e09267569e1fef9655e816efe4b41ee16d849dcca4"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\25\\practice.html",
+          "sha256": "28f0836843a46e3a8a75c8ddd8194d13ed8468d877b714ce16d7aebeb590a791"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l25-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L25_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "ordinal": 42,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+      "title": "Modeling with Systems of Inequalities in Two Variables",
+      "sourceEdition": "OUR–IM Algebra 1 local original teacher/student HTML (2017–2019)",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\26\\preparation.html",
+          "sha256": "40058e404e28896752da13689678576aed896d1322510fec71aeaf815d5d523d"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\26\\index.html",
+          "sha256": "4d75c2644caec5d6f37cdae6836a75bb1bde3e6f97c52f88c57b2ab5c59e3e1d"
+        },
+        "teacherPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\2\\26\\practice.html",
+          "sha256": "27b57b0b4d393c7997464d3bdecf1fc7bcedd3760355a73006cb1c8a90730f60"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\26\\index.html",
+          "sha256": "170d57c9a70661d1a256db8213705f828037c151801ac6722afa73d3bab948fe"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\2\\26\\practice.html",
+          "sha256": "237e091887948ea8500d62d6b144fcfcdc71c2dfbddf5f98689e15f96328a195"
+        }
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u02-l26-2021.rich-lesson-v2.json",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "local teacher/student originals and Rich V2 crosswalk"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_INEQUALITY_AUTHORED_NOT_RUN",
+        "objectivePractice": "LessonPracticeContracts exact family; open work teacher-reviewed",
+        "tests": "AUTHORED_NOT_RUN"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_L26_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 16,
-    "B_CLOSED": 16,
-    "C_PREPARED": 16,
-    "ABC_READY_FOR_D": 16,
+    "A_CLOSED": 42,
+    "B_CLOSED": 42,
+    "C_PREPARED": 42,
+    "ABC_READY_FOR_D": 42,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 116,
+    "REMAINING": 90,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
-    "UNITS_ABC_CLOSED": 1,
-    "CURRENT_UNIT": "U02",
-    "UNIT_STATUS": "U01_READY_FOR_STAGE_D_NEXT_U02",
+    "UNITS_ABC_CLOSED": 2,
+    "CURRENT_UNIT": "U03",
+    "UNIT_STATUS": "U02_READY_FOR_STAGE_D_NEXT_U03",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
     "sources": "four local HTML SHA256 each lesson",
     "nodeSidecars": "132/132 PASS",
     "mathOracles": "LOCAL_PASS",
-    "dotnet": "NOT_RUN_CURRENT_SHA",
+    "dotnet": "NOT_RUN_U02",
     "ci": "NOT_RUN_MANUALLY",
     "StageD": "NOT_RUN",
     "strictUnitGateAndOriginalHashes": "PASS",
@@ -1179,31 +2375,32 @@
     "L14_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L16_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
-    "strictSelectedPracticeRoute": "U01:L01 SOURCE_PATH_VERIFIED_AT_4bfa3339ca2bad3b2e64453ba3b6ea090b911152; INTEGRATED_GENERATE_SOLVE_VERIFY_AND_PERSISTED_SET_GRADING; .NET_TESTS_NOT_RUN; STAGE_D_NOT_RUN"
+    "strictSelectedPracticeRoute": "U01:L01 SOURCE_PATH_VERIFIED_AT_4bfa3339ca2bad3b2e64453ba3b6ea090b911152; INTEGRATED_GENERATE_SOLVE_VERIFY_AND_PERSISTED_SET_GRADING; .NET_TESTS_NOT_RUN; STAGE_D_NOT_RUN",
+    "U02": "26/26 ABC SOURCE_ROUTE_AUTHORED_TESTS_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
   "unitGate": {
     "course": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
-    "unitCode": "U01",
-    "unitTotalLessons": 16,
+    "unitCode": "U02",
+    "unitTotalLessons": 26,
     "courseUnitTotal": 7,
-    "unitsABCCLosed": 0,
-    "status": "U01_READY_FOR_STAGE_D",
-    "previouslyABCClosed": 0,
-    "newlyABCClosed": 16,
+    "unitsABCCLosed": 2,
+    "status": "U02_READY_FOR_STAGE_D",
+    "previouslyABCClosed": 16,
+    "newlyABCClosed": 26,
     "unitReadyForStageD": true,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
     "blockingDependency": null,
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
-    "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition original teacher/student HTML",
+    "sourceEdition": "OUR–IM Algebra 1 original local teacher and student HTML",
     "sourceL01FileHashesRevalidated": true,
     "manualVerification": "PASS_SOURCE_HASH_AND_SERVICE_GATE_ORDER",
     "dotnetTests": "NOT_RUN_NEW_ORDER",
@@ -1211,9 +2408,9 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "U01_READY_FOR_STAGE_D_NEXT_U02",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+  "unitStatus": "U02_READY_FOR_STAGE_D_NEXT_U03",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -1223,9 +2420,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U01_ABC_UNIT_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U02_ABC_UNIT_CLOSURE_20261105.md"
 }
