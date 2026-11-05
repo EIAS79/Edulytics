@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l21-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l21-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Predicting Populations",
       "ExplanationParagraphs": [
-        "Learning goal: evaluate whether linear, exponential or no simple model fits measured population history; use defensible projections and discuss why extrapolation can fail. Original independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 21, https://im.kendallhunt.com/HS/teachers/1/5/21/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/21/index.html (CC BY 4.0). The publisher compares real historical city populations; these separate three first-party fictional town series are not real census evidence.",
+        "Learning goal: evaluate whether linear, exponential or no simple model fits measured population history; use defensible projections and discuss why extrapolation can fail. Original independently authored Edulytiks adaptation of This first-party Edulytiks material follows the reviewed local Algebra 1 learning objectives and uses independently authored examples.",
         "Original fictional town counts at equal decade indices t=0,1,2,3: Town A800,900,1000,1100; Town B200,300,450,675; Town C500,600,620,800. Town A has fixed difference100 each decade and a linear model A(t)=800+100t. Town B has fixed ratio1.5 and model B(t)=200(1.5)^t. Town C changes by+100,+20,+180 and ratios vary, so no single simple constant-difference or constant-ratio model matches all four points.",
         "Extrapolating one more decade gives model A(4)=1200 and model B(4)=200(1.5)^4=1012.5; since a population is a whole-number count, report approximately1013 or a continuous proxy estimate1012.5, not a literal half person. Do not invent an extrapolation for Town C as certain just to fill a table. None of these projections is a validated forecast of real people.",
-        "Student task: compare common differences and ratios, graph all three series on shared time/population axes, decide which model fits each, propose a cautious one-step projection and explain migration, policy and sampling factors outside the model. Teacher-scored rubric0–2 each for table/graphs, model selection by evidence, correct projection and defensible limitations."
+        "Student task: compare common differences and ratios, graph all three series on shared time/population axes, decide which model fits each, propose a cautious one-step projection and explain migration, policy and sampling factors outside the model. Teacher-scored rubric0–2 each for table/graphs, model selection by evidence, correct projection and defensible limitations.",
+        "First-party Cool-down (teacher-scored): Population A follows 50,60,70,80 and Population B follows 50,60,72,86.4 at equal intervals. Choose plausible linear or exponential models and justify which extrapolation you trust less. Numeric responses supported by the mapped exact families may be auto-checked; the teacher scores model fitting, data provenance, limitations of extrapolation and justification."
       ],
       "KeyConcepts": [
         {
