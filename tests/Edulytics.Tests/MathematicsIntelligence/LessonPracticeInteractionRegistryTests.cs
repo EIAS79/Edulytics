@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            1609, // 1564 previous interactions plus 45 distinct Grade 7 routes.
+            1656, // 1609 before Grade 9: 46 exact new G9 families plus one pre-existing two-by-two family now routed.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(
@@ -47,6 +47,16 @@ public sealed class LessonPracticeInteractionRegistryTests
                     Enum.IsDefined(
                         contract.InteractionKind));
             });
+    }
+
+    [Fact]
+    public void TwoByTwoSystemFamilyNowHasActualStructuredLearnerInteraction()
+    {
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            "algebra.linear.systems.two_by_two.integer_coefficients", out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal("exact_ordered_pair", contract.AnswerType);
+        Assert.Equal(LessonPracticeInteractionKind.StructuredEntry, contract.InteractionKind);
     }
 
     [Theory]

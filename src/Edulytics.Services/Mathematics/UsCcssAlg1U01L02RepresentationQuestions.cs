@@ -34,7 +34,13 @@ public static class UsCcssAlg1U01L02RepresentationQuestions
             throw new InvalidOperationException("Unsupported ALG1 U01:L02 family.");
         ArgumentNullException.ThrowIfNull(random);
         int dataChoice = random.Next(0, 2);
-        int[] values = Values(dataChoice);
+        // For histogram-only generated practice, translate the observed first-party
+        // dataset by a nonnegative number of minutes. Bin membership and
+        // half-open endpoint rules remain mathematically exact, while student
+        // prompts and exact parameter fingerprints gain adequate session variety.
+        // Legacy two-field source examples continue to mean zero translation.
+        int shift = family == HistogramFamily ? random.Next(0, 13) : 0;
+        int[] values = Values(dataChoice).Select(x => x + shift).ToArray();
         int count = family switch
         {
             DotFamily => values.Distinct().Count(),
@@ -47,6 +53,8 @@ public static class UsCcssAlg1U01L02RepresentationQuestions
             ["dataset"] = dataChoice,
             ["selection"] = selection
         };
+        if (family == HistogramFamily)
+            parameters["shift"] = shift;
 
         string display = string.Join(", ", values);
         string prompt = family switch
@@ -78,9 +86,9 @@ public static class UsCcssAlg1U01L02RepresentationQuestions
 
     public static string Solve(string family, IReadOnlyDictionary<string, int> parameters)
     {
-        if (!Validate(family, parameters, out var dataset, out int selection))
+        if (!Validate(family, parameters, out var dataset, out int selection, out int shift))
             throw new InvalidOperationException("Invalid ALG1 L02 graph parameters.");
-        int[] values = Values(dataset);
+        int[] values = Values(dataset).Select(x => x + shift).ToArray();
         decimal value = family switch
         {
             DotFamily => values.Count(v => v == values.Distinct().OrderBy(x => x).ElementAt(selection)),
@@ -94,7 +102,7 @@ public static class UsCcssAlg1U01L02RepresentationQuestions
     }
 
     public static bool Verify(string family, IReadOnlyDictionary<string, int> parameters, string? answer) =>
-        Validate(family, parameters, out _, out _) &&
+        Validate(family, parameters, out _, out _, out _) &&
         TryExactDecimal(answer, out decimal submitted) &&
         decimal.TryParse(Solve(family, parameters), NumberStyles.AllowDecimalPoint,
             CultureInfo.InvariantCulture, out decimal expected) &&
@@ -104,13 +112,18 @@ public static class UsCcssAlg1U01L02RepresentationQuestions
 
     private static bool Validate(
         string? family, IReadOnlyDictionary<string, int>? parameters,
-        out int dataset, out int selection)
+        out int dataset, out int selection, out int shift)
     {
         dataset = -1;
         selection = -1;
-        if (!Supports(family) || parameters is not { Count: 2 } ||
+        shift = 0;
+        if (!Supports(family) || parameters is null ||
+            (parameters.Count != 2 && !(family == HistogramFamily && parameters.Count == 3)) ||
             !parameters.TryGetValue("dataset", out dataset) || dataset is < 0 or > 1 ||
             !parameters.TryGetValue("selection", out selection) || selection < 0)
+            return false;
+        if (parameters.Count == 3 &&
+            (!parameters.TryGetValue("shift", out shift) || shift is < 0 or > 12))
             return false;
         var values = Values(dataset);
         int limit = family switch

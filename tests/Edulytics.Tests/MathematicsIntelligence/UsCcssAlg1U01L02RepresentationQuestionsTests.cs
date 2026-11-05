@@ -85,6 +85,25 @@ public sealed class UsCcssAlg1U01L02RepresentationQuestionsTests
     }
 
     [Fact]
+    public void ShiftedHistogramsPreserveHalfOpenBinCountsAndRejectForgedOffsets()
+    {
+        var shifted = new Dictionary<string, int>
+        {
+            ["dataset"] = 0, ["selection"] = 0, ["shift"] = 3
+        };
+        Assert.Equal("3", UsCcssAlg1U01L02RepresentationQuestions.Solve(
+            UsCcssAlg1U01L02RepresentationQuestions.HistogramFamily, shifted));
+        Assert.True(UsCcssAlg1U01L02RepresentationQuestions.Verify(
+            UsCcssAlg1U01L02RepresentationQuestions.HistogramFamily, shifted, "3"));
+        shifted["shift"] = 13;
+        Assert.False(UsCcssAlg1U01L02RepresentationQuestions.Verify(
+            UsCcssAlg1U01L02RepresentationQuestions.HistogramFamily, shifted, "3"));
+        shifted["shift"] = -1;
+        Assert.False(UsCcssAlg1U01L02RepresentationQuestions.Verify(
+            UsCcssAlg1U01L02RepresentationQuestions.HistogramFamily, shifted, "3"));
+    }
+
+    [Fact]
     public void WrongFamilyOrForgedParametersFailClosed()
     {
         Assert.False(UsCcssAlg1U01L02RepresentationQuestions.Verify(

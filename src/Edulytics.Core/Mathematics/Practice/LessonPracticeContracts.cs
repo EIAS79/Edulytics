@@ -6194,28 +6194,28 @@ public static class LessonPracticeContractRegistry
 
         byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15",
-            "functions.inverse.linear",
-            "ALG1_INVERSE_LINEAR_EXACT_PLUS_TEACHER_UNDO_CONTEXT",
-            ["supporting.functions.inverse_linear"],
-            "ALG1_U04_L15_INVERSE_LINEAR_PLUS_TEACHER_PROCESS_REVIEW",
+            "functions.inverse.composition",
+            "ALG1_INVERSE_COMPOSITION_TABLE_RESTRICTED_QUADRATIC_PLUS_TEACHER_UNDO_CONTEXT",
+            ["usccss.hs.inverse_composition", "usccss.hs.inverse_table", "usccss.hs.restricted_inverse"],
+            "ALG1_U04_L15_EXACT_RESTRICTED_INVERSE_EXTENSION_PLUS_TEACHER_PROCESS_REVIEW",
             "READY_VERIFIED",
             Version);
 
         byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16",
-            "functions.inverse.linear",
-            "ALG1_INVERSE_LINEAR_SOLVE_PLUS_TEACHER_RULE_CONTEXT",
-            ["supporting.functions.inverse_linear"],
-            "ALG1_U04_L16_INVERSE_SOLVE_PLUS_TEACHER_CONTEXT_REVIEW",
+            "functions.inverse.table",
+            "ALG1_INVERSE_FUNCTION_TABLE_EXACT_PLUS_TEACHER_RULE_CONTEXT",
+            ["usccss.hs.inverse_table"],
+            "ALG1_U04_L16_INVERSE_TABLE_PLUS_TEACHER_CONTEXT_REVIEW",
             "READY_VERIFIED",
             Version);
 
         byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17",
             "functions.inverse.model",
-            "ALG1_LINEAR_MODEL_AND_INVERSE_EXACT_PLUS_TEACHER_CONTEXT",
-            ["statistics.linear_model.predict", "supporting.functions.inverse_linear"],
-            "ALG1_U04_L17_MODEL_PREDICT_INVERSE_PLUS_TEACHER_ROLE_REVIEW",
+            "ALG1_EXACT_INVERSE_COMPOSITION_PLUS_TEACHER_MODEL_CONTEXT",
+            ["usccss.hs.inverse_composition"],
+            "ALG1_U04_L17_INVERSE_MODEL_COMPOSITION_PLUS_TEACHER_ROLE_REVIEW",
             "READY_VERIFIED",
             Version);
 

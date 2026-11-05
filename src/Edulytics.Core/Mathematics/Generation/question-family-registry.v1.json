@@ -5835,7 +5835,8 @@
         "symbolic"
       ],
       "status": "ShadowVerified",
-      "productionRouting": false
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     },
     {
       "id": "algebra.quadratic.solve.integer_coefficients.real_roots",
@@ -29498,7 +29499,7 @@
     {
       "id": "usccss.alg1.u01.l01.statistical_questions_p3",
       "version": 1,
-      "skillId": "supporting.statistics.statistical_questions",
+      "skillId": "supporting.statistics.data_collection",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29511,12 +29512,13 @@
       ],
       "status": "ShadowVerified",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "supporting.statistics.statistical_questions"
     },
     {
       "id": "usccss.alg1.u01.l02.dot_frequency",
       "version": 1,
-      "skillId": "supporting.statistics.statistical_questions",
+      "skillId": "supporting.statistics.data_collection",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29530,12 +29532,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "supporting.statistics.statistical_questions"
     },
     {
       "id": "usccss.alg1.u01.l02.histogram_half_open_bin_count",
       "version": 1,
-      "skillId": "supporting.statistics.statistical_questions",
+      "skillId": "supporting.statistics.data_collection",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29549,12 +29552,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "supporting.statistics.statistical_questions"
     },
     {
       "id": "usccss.alg1.u01.l02.five_number_component",
       "version": 1,
-      "skillId": "supporting.statistics.statistical_questions",
+      "skillId": "supporting.statistics.data_collection",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29568,12 +29572,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "supporting.statistics.statistical_questions"
     },
     {
       "id": "statistics.distribution_shape.classify",
       "version": 1,
-      "skillId": "statistics.distribution_shape",
+      "skillId": "supporting.statistics.distributions",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29587,12 +29592,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.distribution_shape"
     },
     {
       "id": "statistics.center_spread.iqr",
       "version": 1,
-      "skillId": "statistics.center_spread",
+      "skillId": "statistics.center_spread.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29605,12 +29611,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.center_spread"
     },
     {
       "id": "statistics.center_spread.mad",
       "version": 1,
-      "skillId": "statistics.center_spread",
+      "skillId": "statistics.center_spread.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29623,12 +29630,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.center_spread"
     },
     {
       "id": "spreadsheet.cell_reference.evaluate",
       "version": 1,
-      "skillId": "spreadsheet.formula_reasoning",
+      "skillId": "supporting.algebra.expressions",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29642,12 +29650,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "spreadsheet.formula_reasoning"
     },
     {
       "id": "spreadsheet.recursive_fill.evaluate",
       "version": 1,
-      "skillId": "spreadsheet.recursive_reasoning",
+      "skillId": "supporting.sequences.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29662,12 +29671,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "spreadsheet.recursive_reasoning"
     },
     {
       "id": "statistics.histogram.half_open_bin_count",
       "version": 1,
-      "skillId": "statistics.data_representation",
+      "skillId": "supporting.statistics.charts",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29682,12 +29692,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.data_representation"
     },
     {
       "id": "statistics.extreme_value.mean_after_replacement",
       "version": 1,
-      "skillId": "statistics.extreme_value_effect",
+      "skillId": "statistics.center_spread.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29702,12 +29713,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.extreme_value_effect"
     },
     {
       "id": "statistics.center_spread.population_sd",
       "version": 1,
-      "skillId": "statistics.standard_deviation",
+      "skillId": "statistics.center_spread.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29722,12 +29734,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.standard_deviation"
     },
     {
       "id": "statistics.outliers.iqr_fence",
       "version": 1,
-      "skillId": "statistics.outliers",
+      "skillId": "supporting.statistics.distributions",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29741,12 +29754,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.outliers"
     },
     {
       "id": "statistics.outliers.classify_iqr_flag",
       "version": 1,
-      "skillId": "statistics.outliers",
+      "skillId": "supporting.statistics.distributions",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29760,12 +29774,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.outliers"
     },
     {
       "id": "algebra.modeling.constraints.feasible_pair",
       "version": 1,
-      "skillId": "algebra.modeling.constraints",
+      "skillId": "supporting.algebra.systems_inequalities",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29779,12 +29794,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.modeling.constraints"
     },
     {
       "id": "algebra.modeling.linear_relationship.select_equation",
       "version": 1,
-      "skillId": "algebra.modeling.linear_relationship",
+      "skillId": "algebra.relationships.two_unknowns",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29798,12 +29814,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.modeling.linear_relationship"
     },
     {
       "id": "algebra.modeling.pattern.classify_relation",
       "version": 1,
-      "skillId": "algebra.modeling.patterns",
+      "skillId": "supporting.sequences.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29817,12 +29834,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.modeling.patterns"
     },
     {
       "id": "algebra.equation.one_variable.solution_check",
       "version": 1,
-      "skillId": "algebra.equations.solutions",
+      "skillId": "supporting.algebra.equations",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29836,12 +29854,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.equations.solutions"
     },
     {
       "id": "algebra.equation.two_variable.solution_check",
       "version": 1,
-      "skillId": "algebra.equations.solutions",
+      "skillId": "supporting.algebra.equations",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29856,12 +29875,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.equations.solutions"
     },
     {
       "id": "algebra.equations.equivalence.classify",
       "version": 1,
-      "skillId": "algebra.equations.equivalence",
+      "skillId": "supporting.algebra.equations",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29875,12 +29895,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.equations.equivalence"
     },
     {
       "id": "algebra.literal_equation.isolate.select_form",
       "version": 1,
-      "skillId": "algebra.literal_equations.isolate",
+      "skillId": "supporting.algebra.equations",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29894,12 +29915,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.literal_equations.isolate"
     },
     {
       "id": "algebra.linear.standard_form.slope_intercept",
       "version": 1,
-      "skillId": "algebra.linear.graph_connections",
+      "skillId": "functions.graph.sample.coordinates",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29913,12 +29935,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.linear.graph_connections"
     },
     {
       "id": "algebra.linear.systems.solution_count.classify",
       "version": 1,
-      "skillId": "algebra.linear.systems.classification",
+      "skillId": "algebra.linear.systems.two_by_two.solve",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29932,12 +29955,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.linear.systems.classification"
     },
     {
       "id": "algebra.inequality.context.operator_choice",
       "version": 1,
-      "skillId": "algebra.inequalities.modeling",
+      "skillId": "supporting.algebra.systems_inequalities",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29951,12 +29975,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.inequalities.modeling"
     },
     {
       "id": "algebra.inequality.one_variable.candidate_check",
       "version": 1,
-      "skillId": "algebra.inequalities.one_variable",
+      "skillId": "algebra.linear.inequality.solve",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29970,12 +29995,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.inequalities.one_variable"
     },
     {
       "id": "algebra.inequality.two_variable.candidate_check",
       "version": 1,
-      "skillId": "algebra.inequalities.two_variable",
+      "skillId": "supporting.algebra.systems_inequalities",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -29989,12 +30015,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.inequalities.two_variable"
     },
     {
       "id": "algebra.inequality.system.candidate_check",
       "version": 1,
-      "skillId": "algebra.inequalities.systems",
+      "skillId": "supporting.algebra.systems_inequalities",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30008,12 +30035,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "algebra.inequalities.systems"
     },
     {
       "id": "statistics.two_way.marginal_count",
       "version": 1,
-      "skillId": "statistics.categorical.two_way",
+      "skillId": "supporting.statistics.charts",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30027,12 +30055,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.categorical.two_way"
     },
     {
       "id": "statistics.two_way.conditional_relative",
       "version": 1,
-      "skillId": "statistics.categorical.relative_frequency",
+      "skillId": "supporting.statistics.charts",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30046,12 +30075,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.categorical.relative_frequency"
     },
     {
       "id": "statistics.two_way.association",
       "version": 1,
-      "skillId": "statistics.categorical.association",
+      "skillId": "supporting.statistics.charts",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30065,12 +30095,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.categorical.association"
     },
     {
       "id": "statistics.linear_model.predict",
       "version": 1,
-      "skillId": "statistics.bivariate.linear_model",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30084,12 +30115,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.linear_model"
     },
     {
       "id": "statistics.linear_model.fit_select",
       "version": 1,
-      "skillId": "statistics.bivariate.regression",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30103,12 +30135,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.regression"
     },
     {
       "id": "statistics.linear_model.residual",
       "version": 1,
-      "skillId": "statistics.bivariate.residual",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30122,12 +30155,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.residual"
     },
     {
       "id": "statistics.correlation.direction",
       "version": 1,
-      "skillId": "statistics.bivariate.correlation",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30141,12 +30175,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.correlation"
     },
     {
       "id": "statistics.correlation.rounded",
       "version": 1,
-      "skillId": "statistics.bivariate.correlation",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30160,12 +30195,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.correlation"
     },
     {
       "id": "statistics.association.confounder",
       "version": 1,
-      "skillId": "statistics.bivariate.causality",
+      "skillId": "supporting.statistics.scatter",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30179,12 +30215,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "statistics.bivariate.causality"
     },
     {
       "id": "functions.relations.unique_output.classify",
       "version": 1,
-      "skillId": "functions.relations.definition",
+      "skillId": "supporting.functions.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30198,12 +30235,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
     },
     {
       "id": "functions.notation.evaluate_context",
       "version": 1,
-      "skillId": "functions.notation.interpret",
+      "skillId": "functions.evaluate.exact",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30217,12 +30255,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.notation.interpret"
     },
     {
       "id": "functions.domain_range.context_bounds",
       "version": 1,
-      "skillId": "functions.domain_range.context",
+      "skillId": "supporting.functions.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30237,12 +30276,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.domain_range.context"
     },
     {
       "id": "functions.piecewise.evaluate_interval",
       "version": 1,
-      "skillId": "functions.piecewise.interpret",
+      "skillId": "functions.evaluate.exact",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30256,12 +30296,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.piecewise.interpret"
     },
     {
       "id": "functions.absolute_error.from_target",
       "version": 1,
-      "skillId": "functions.absolute_value.error",
+      "skillId": "supporting.functions.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30275,12 +30316,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.absolute_value.error"
     },
     {
       "id": "functions.absolute_value.translate_evaluate",
       "version": 1,
-      "skillId": "functions.absolute_value.translate",
+      "skillId": "supporting.functions.core",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30294,12 +30336,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.absolute_value.translate"
     },
     {
       "id": "functions.growth.linear_exponential.compare",
       "version": 1,
-      "skillId": "functions.growth.compare",
+      "skillId": "supporting.exponentials_logs",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30313,12 +30356,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.growth.compare"
     },
     {
       "id": "functions.exponential.growth.evaluate",
       "version": 1,
-      "skillId": "functions.exponential.growth",
+      "skillId": "supporting.exponentials_logs",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30332,12 +30376,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.exponential.growth"
     },
     {
       "id": "functions.exponential.decay.half_evaluate",
       "version": 1,
-      "skillId": "functions.exponential.decay",
+      "skillId": "supporting.exponentials_logs",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30351,12 +30396,13 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.exponential.decay"
     },
     {
       "id": "functions.quadratic.expand.middle_coefficient",
       "version": 1,
-      "skillId": "functions.quadratic.expand",
+      "skillId": "supporting.algebra.expressions",
       "requiredCapabilities": [
         "lesson.practice.exact.generate",
         "lesson.practice.exact.verify"
@@ -30370,7 +30416,8 @@
       ],
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
-      "lessonPracticeRouting": true
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.quadratic.expand"
     }
   ],
   "variantPolicy": {
