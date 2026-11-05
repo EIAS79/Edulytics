@@ -45,7 +45,9 @@ def require(cond, message):
     if not cond: raise AssertionError("G8_AUTH_FAIL_CLOSED "+str(message))
 
 def source_words(value):
-    return re.findall(r"\w+",html.unescape(str(value)).casefold(),flags=re.UNICODE)
+    plain=html.unescape(str(value))
+    plain=re.sub(r"</?[A-Za-z][A-Za-z0-9:-]*(?:\s[^<>]*?)?/?>"," ",plain)
+    return re.findall(r"\w+",plain.casefold(),flags=re.UNICODE)
 
 def require_rendered(value, visible_words, label, min_words=1, max_words=8):
     words=source_words(value)
@@ -211,8 +213,17 @@ def main():
             authored=canonical.get(field)
             require(isinstance(authored,str) and len(authored.strip())>=20,
                 "missing canonical Grade8 pack section "+code+" "+field)
-            require_rendered(authored,visible_words,
-                f"{code} canonical-pack.{field}",min_words=4,max_words=10)
+            if field=="stepByStepSolutions":
+                for line_index,line in enumerate(authored.splitlines(),1):
+                    instruction=re.sub(r"^\s*Step\s+\d+\s*[:.]\s*","",line,
+                        flags=re.IGNORECASE).strip()
+                    if instruction:
+                        require_rendered(instruction,visible_words,
+                            f"{code} canonical-pack.{field}[{line_index}]",
+                            min_words=3,max_words=8)
+            else:
+                require_rendered(authored,visible_words,
+                    f"{code} canonical-pack.{field}",min_words=4,max_words=10)
 
         cross_denied(foreign,"/student/learning/lesson/"+lesson_id)
         entry={"ordinal":ordinal,"lessonCode":code,
