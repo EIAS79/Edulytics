@@ -347,7 +347,8 @@ internal static class MeetingDemoProvisioner
         var ciProgramme = Environment.GetEnvironmentVariable(
             "EDULYTICS_CI_REHEARSAL_PROGRAMME");
         var activeSchools = disposableCi &&
-            string.Equals(ciProgramme, "US-CCSS-G6", StringComparison.Ordinal)
+            (string.Equals(ciProgramme, "US-CCSS-G6", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "US-CCSS-G8", StringComparison.Ordinal))
             ? Schools.Where(s => s.Key is "commoncore-middle" or "commoncore-secondary").ToArray()
             : disposableCi &&
               string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
