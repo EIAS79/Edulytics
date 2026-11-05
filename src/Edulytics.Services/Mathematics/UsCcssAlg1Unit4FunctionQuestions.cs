@@ -8,12 +8,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     public const string FunctionNotationFamily = "functions.notation.evaluate_context";
     public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
     public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
+    public const string FunctionAbsoluteErrorFamily = "functions.absolute_error.from_target";
 
     public sealed record Problem(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily;
+        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -80,6 +81,22 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == FunctionAbsoluteErrorFamily)
+        {
+            var target = random.Next(20, 81);
+            var delta = random.Next(1, 16) * (random.Next(0, 2) == 0 ? -1 : 1);
+            var guess = target + delta;
+            var variant = random.Next(0, 16);
+            return new(family,
+                $"The target value is {target} and a guess is {guess}. Find the absolute error |{guess}-{target}|. Enter the nonnegative integer only. Explain with the teacher why absolute error is a distance.",
+                $"The absolute error is {Math.Abs(delta)}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["target"] = target, ["guess"] = guess, ["variant"] = variant
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -126,6 +143,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (input <= boundary ? leftSlope * input + leftIntercept : rightSlope * input + rightIntercept).ToString();
         }
 
+        if (family == FunctionAbsoluteErrorFamily)
+        {
+            if (!ValidateAbsoluteError(parameters, out var target, out var guess, out _))
+                throw new InvalidOperationException("Invalid absolute-error parameters.");
+            return Math.Abs(guess - target).ToString();
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -154,6 +178,14 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         if (family == FunctionPiecewiseFamily)
         {
             if (!ValidatePiecewise(parameters, out _, out _, out _, out _, out _, out _, out _) ||
+                !int.TryParse(answer.Trim(), out var submitted))
+                return false;
+            return submitted.ToString() == Solve(family, parameters);
+        }
+
+        if (family == FunctionAbsoluteErrorFamily)
+        {
+            if (!ValidateAbsoluteError(parameters, out _, out _, out _) ||
                 !int.TryParse(answer.Trim(), out var submitted))
                 return false;
             return submitted.ToString() == Solve(family, parameters);
@@ -220,4 +252,16 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("side", out side) && side is >= 0 and <= 1 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
+
+    private static bool ValidateAbsoluteError(IReadOnlyDictionary<string, int>? p,
+        out int target, out int guess, out int variant)
+    {
+        target = guess = variant = 0;
+        return p is not null &&
+            p.TryGetValue("target", out target) && target is >= 20 and <= 80 &&
+            p.TryGetValue("guess", out guess) && guess is >= 5 and <= 95 &&
+            Math.Abs(guess - target) is >= 1 and <= 15 &&
+            p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
 }

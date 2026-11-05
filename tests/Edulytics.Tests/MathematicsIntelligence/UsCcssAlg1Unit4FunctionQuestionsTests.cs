@@ -78,4 +78,18 @@ public sealed class UsCcssAlg1Unit4FunctionQuestionsTests
             UsCcssAlg1Unit4FunctionQuestions.FunctionPiecewiseFamily, parameters, "7"));
     }
 
+
+    [Fact]
+    public void AbsoluteErrorIsNonnegativeDistanceFromTarget()
+    {
+        var parameters = new Dictionary<string, int>
+        {
+            ["target"] = 48, ["guess"] = 41, ["variant"] = 0
+        };
+        Assert.Equal("7", UsCcssAlg1Unit4FunctionQuestions.Solve(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteErrorFamily, parameters));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteErrorFamily, parameters, "7"));
+    }
+
 }

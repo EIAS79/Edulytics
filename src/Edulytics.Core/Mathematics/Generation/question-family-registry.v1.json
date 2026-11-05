@@ -20853,6 +20853,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.absolute_error.from_target",
+      "version": 1,
+      "skillId": "functions.absolute_value.error",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "exact_integer",
+      "verificationPolicy": "alg1-u04-absolute-error-distance",
+      "representations": ["absolute_value", "distance_from_target", "scatter_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
