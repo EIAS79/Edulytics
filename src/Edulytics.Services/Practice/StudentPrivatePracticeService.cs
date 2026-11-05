@@ -134,20 +134,23 @@ public sealed class StudentPrivatePracticeService(
         // do not establish original Algebra 1 student-activity and grading
         // acceptance. Deliberately reject before all registry/fallback routes;
         // replace this gate only with reviewed source-specific acceptance.
-        // Only the independently accepted ALG1 U01:L01 exact six-choice set
-        // may pass the legacy ALG1 early refusal; all other ALG1 scope
-        // selections remain fail-closed, including unit/course requests.
-        const string acceptedAlgebra1FirstLesson =
+        // Only sequentially A-B-C-closed ALG1 lessons may pass this course gate.
+        // Unit/course requests and later lessons remain fail-closed.
+        const string acceptedAlgebra1L01 =
             "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01";
-        var selectedAcceptedAlgebra1FirstLesson =
+        const string acceptedAlgebra1L02 =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02";
+        var selectedAcceptedAlgebra1Lesson =
             request.Scope == StudentPrivatePracticeScope.Lesson &&
             scoped.LessonId.HasValue &&
             context.Lessons.Any(lesson =>
                 lesson.Id == scoped.LessonId.Value &&
-                string.Equals(lesson.Code, acceptedAlgebra1FirstLesson, StringComparison.Ordinal) &&
+                (string.Equals(lesson.Code, acceptedAlgebra1L01, StringComparison.Ordinal) ||
+                 string.Equals(lesson.Code, acceptedAlgebra1L02, StringComparison.Ordinal)) &&
                 LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
-                exactAlgebra1Contract is not null);
-        if (unapprovedAlgebra1Selection && !selectedAcceptedAlgebra1FirstLesson)
+                exactAlgebra1Contract is not null &&
+                string.Equals(exactAlgebra1Contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal));
+        if (unapprovedAlgebra1Selection && !selectedAcceptedAlgebra1Lesson)
         {
             return StudentPrivatePracticeResult.Failure(
                 StudentPrivatePracticeError.NoSupportedOutcomes);
