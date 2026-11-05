@@ -20565,6 +20565,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.modeling.pattern.classify_relation",
+      "version": 1,
+      "skillId": "algebra.modeling.patterns",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-pattern-classification-exact",
+      "representations": ["table_pairs", "relation_classification", "teacher_led_generalization"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

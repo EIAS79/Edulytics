@@ -12,6 +12,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         "algebra.modeling.constraints.feasible_pair";
     public const string LinearRelationshipEquationFamily =
         "algebra.modeling.linear_relationship.select_equation";
+    public const string PatternClassificationFamily =
+        "algebra.modeling.pattern.classify_relation";
 
     public sealed record Problem(
         string Family,
@@ -21,7 +23,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily;
+        family is ConstraintFeasibilityFamily or LinearRelationshipEquationFamily or
+            PatternClassificationFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -31,6 +34,8 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
 
         if (family == LinearRelationshipEquationFamily)
             return BuildLinearRelationshipEquation(random);
+        if (family == PatternClassificationFamily)
+            return BuildPatternClassification(random);
 
         var fixedCost = random.Next(4, 16);
         var itemCost = random.Next(8, 21);
@@ -70,6 +75,18 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
                 throw new InvalidOperationException("Invalid ALG1 U02 linear-relationship parameters.");
             return $"y={rate}x+{fixedAmount}";
         }
+        if (family == PatternClassificationFamily)
+        {
+            if (!ValidatePattern(parameters, out var relation, out _, out _, out _, out _))
+                throw new InvalidOperationException("Invalid ALG1 U02 pattern parameters.");
+            return relation switch
+            {
+                0 => "linear",
+                1 => "constant-total",
+                2 => "inverse-variation",
+                _ => throw new InvalidOperationException("Unsupported pattern relation.")
+            };
+        }
 
         if (!Validate(parameters, out var fixedCost, out var itemCost, out var capacity,
             out var budget, out var guests, out var items, out _))
@@ -92,11 +109,51 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
         if (family == LinearRelationshipEquationFamily)
             return ValidateLinearRelationship(parameters, out _, out _, out _) &&
                 NormalizeEquation(answer) == NormalizeEquation(Solve(family, parameters));
+        if (family == PatternClassificationFamily)
+            return ValidatePattern(parameters, out _, out _, out _, out _, out _) &&
+                NormalizePattern(answer) == Solve(family, parameters);
 
         if (!Validate(parameters, out _, out _, out _, out _, out _, out _, out _))
             return false;
 
         return NormalizeYesNo(answer) == Solve(family, parameters);
+    }
+
+    private static Problem BuildPatternClassification(Random random)
+    {
+        var relation = random.Next(0, 3);
+        var m = random.Next(2, 8);
+        var b = random.Next(1, 10);
+        var k = 24 * random.Next(1, 5);
+        var variant = random.Next(0, 16);
+
+        string pairs;
+        if (relation == 0)
+        {
+            var xs = new[] { 0, 1, 2, 4 };
+            pairs = string.Join(", ", xs.Select(x => $"({x},{m * x + b})"));
+        }
+        else if (relation == 1)
+        {
+            var xs = new[] { 0, k / 4, k / 2, 3 * k / 4 };
+            pairs = string.Join(", ", xs.Select(x => $"({x},{k - x})"));
+        }
+        else
+        {
+            var xs = new[] { 1, 2, 3, 6 };
+            pairs = string.Join(", ", xs.Select(x => $"({x},{k / x})"));
+        }
+
+        return new(
+            PatternClassificationFamily,
+            $"A table contains the ordered pairs {pairs}. Classify the relationship as linear, constant-total, or inverse-variation. " +
+            "Enter only the classification. Writing a general equation and explaining the pattern remain teacher-reviewed.",
+            "Check for a constant rate of change, a constant sum x+y, or a constant product xy.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["relation"] = relation, ["m"] = m, ["b"] = b, ["k"] = k, ["variant"] = variant
+            });
     }
 
     private static Problem BuildLinearRelationshipEquation(Random random)
@@ -115,6 +172,34 @@ public static class UsCcssAlg1Unit2AlgebraQuestions
             {
                 ["rate"] = rate, ["fixedAmount"] = fixedAmount, ["variant"] = variant
             });
+    }
+
+    private static bool ValidatePattern(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int relation,
+        out int m,
+        out int b,
+        out int k,
+        out int variant)
+    {
+        relation = m = b = k = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("relation", out relation) && relation is >= 0 and <= 2 &&
+            parameters.TryGetValue("m", out m) && m is >= 2 and <= 7 &&
+            parameters.TryGetValue("b", out b) && b is >= 1 and <= 9 &&
+            parameters.TryGetValue("k", out k) && k is >= 24 and <= 96 && k % 24 == 0 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static string NormalizePattern(string value)
+    {
+        var text = value.Trim().ToLowerInvariant().Replace('_', '-').Replace(' ', '-');
+        return text switch
+        {
+            "constant-sum" or "constant-total" => "constant-total",
+            "inverse" or "inverse-variation" => "inverse-variation",
+            _ => text
+        };
     }
 
     private static bool ValidateLinearRelationship(

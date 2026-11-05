@@ -33,4 +33,18 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
         Assert.True(UsCcssAlg1Unit2AlgebraQuestions.Verify(
             UsCcssAlg1Unit2AlgebraQuestions.LinearRelationshipEquationFamily, p, " y = 7*x + 95 "));
     }
+
+    [Theory]
+    [InlineData(0, "linear")]
+    [InlineData(1, "constant-total")]
+    [InlineData(2, "inverse-variation")]
+    public void PatternClassificationMatchesRelation(int relation, string expected)
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["relation"] = relation, ["m"] = 5, ["b"] = 3, ["k"] = 48, ["variant"] = 0
+        };
+        Assert.Equal(expected, UsCcssAlg1Unit2AlgebraQuestions.Solve(
+            UsCcssAlg1Unit2AlgebraQuestions.PatternClassificationFamily, p));
+    }
 }

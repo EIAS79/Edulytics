@@ -134,67 +134,13 @@ public sealed class StudentPrivatePracticeService(
         // do not establish original Algebra 1 student-activity and grading
         // acceptance. Deliberately reject before all registry/fallback routes;
         // replace this gate only with reviewed source-specific acceptance.
-        // Only sequentially A-B-C-closed ALG1 lessons may pass this course gate.
-        // Unit/course requests and later lessons remain fail-closed.
-        const string acceptedAlgebra1L01 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01";
-        const string acceptedAlgebra1L02 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02";
-        const string acceptedAlgebra1L03 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03";
-        const string acceptedAlgebra1L04 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04";
-        const string acceptedAlgebra1L05 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05";
-        const string acceptedAlgebra1L06 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06";
-        const string acceptedAlgebra1L07 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07";
-        const string acceptedAlgebra1L08 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08";
-        const string acceptedAlgebra1L09 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09";
-        const string acceptedAlgebra1L10 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10";
-        const string acceptedAlgebra1L11 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11";
-        const string acceptedAlgebra1L12 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12";
-        const string acceptedAlgebra1L13 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13";
-        const string acceptedAlgebra1L14 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14";
-        const string acceptedAlgebra1L15 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15";
-        const string acceptedAlgebra1L16 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16";
-        const string acceptedAlgebra1U02L01 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01";
-        const string acceptedAlgebra1U02L02 =
-            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L02";
+        // A READY_VERIFIED LessonPracticeContract is the sequential Algebra 1
+        // acceptance ledger. Only lesson scope may pass; unit/course requests remain fail-closed.
         var selectedAcceptedAlgebra1Lesson =
             request.Scope == StudentPrivatePracticeScope.Lesson &&
             scoped.LessonId.HasValue &&
             context.Lessons.Any(lesson =>
                 lesson.Id == scoped.LessonId.Value &&
-                (string.Equals(lesson.Code, acceptedAlgebra1L01, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L02, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L03, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L04, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L05, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L06, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L07, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L08, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L09, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L10, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L11, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L12, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L13, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L14, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L15, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1L16, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1U02L01, StringComparison.Ordinal) ||
-                 string.Equals(lesson.Code, acceptedAlgebra1U02L02, StringComparison.Ordinal)) &&
                 LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
                 exactAlgebra1Contract is not null &&
                 string.Equals(exactAlgebra1Contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal));
