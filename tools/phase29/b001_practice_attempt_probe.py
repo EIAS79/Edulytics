@@ -85,7 +85,12 @@ def syntactically_valid_wrong_answer(correct, family=None):
     field/schema; unlike a malformed sentinel, this exercises math grading.
     A full independent source oracle is tested separately in C#.
     """
-    if isinstance(family,str) and family.startswith("usccss.g6."):
+    if isinstance(family,str) and (
+        family.startswith("usccss.g6.") or
+        family == "algebra.linear.ax_plus_b_equals_c"
+    ):
+        # Grade 8 uses the existing linear-equation numeric answer family,
+        # not a Grade 1 semicolon-separated named-field response.
         return grade6_syntactically_valid_wrong_answer(correct)
     if not isinstance(correct,str) or "=" not in correct:
         raise ValueError("Expected answer with named fields")
@@ -381,6 +386,10 @@ if __name__=="__main__":
             self.assertEqual(grade6_syntactically_valid_wrong_answer("(3,-2)"),"(14,-2)")
             self.assertEqual(grade6_syntactically_valid_wrong_answer("YES"),"NO")
             self.assertEqual(syntactically_valid_wrong_answer("n=2","usccss.g1.u01.l01.example"),"n=3")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "7","algebra.linear.ax_plus_b_equals_c"),"18")
+            self.assertEqual(syntactically_valid_wrong_answer(
+                "-2.5","algebra.linear.ax_plus_b_equals_c"),"8.5")
             self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,"")
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
