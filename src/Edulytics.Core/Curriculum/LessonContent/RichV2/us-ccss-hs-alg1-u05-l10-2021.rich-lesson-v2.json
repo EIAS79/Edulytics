@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u05-l10-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u05-l10-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Looking at Rates of Change",
       "ExplanationParagraphs": [
-        "Learning goal: compute average rate of change of exponential functions over specified intervals and explain why the same model has different secant slopes depending on interval. Independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 10, https://im.kendallhunt.com/HS/teachers/1/5/10/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/10/index.html (CC BY 4.0). The source revisits solar-cost and coffee-shop changes, emphasizing finite differences per time.",
+        "Learning goal: compute average rate of change of exponential functions over specified intervals and explain why the same model has different secant slopes depending on interval. Independent Edulytiks adaptation of This first-party Edulytiks material follows the reviewed local Algebra 1 learning objectives and uses independently authored examples.",
         "Original fictional account model F(t)=10·2^t tokens for whole days t≥0 gives F0=10,F1=20,F2=40,F3=80. Average rate from day0 to1 is (20−10)/1=10 tokens/day; from day1 to2 is (40−20)/1=20 tokens/day; from day0 to3 is (80−10)/3=70/3≈23.33 tokens/day.",
         "An exponential function has a constant multiplicative factor, not a constant additive per-unit rate. A secant line based on the full interval 0–3 captures a net average; it does not describe each individual step. Predictions that extend a short-period rate linearly may therefore be wrong: day1's rate10 cannot forecast day3 as40 when actual model gives80.",
-        "Student task: choose two different intervals, draw corresponding secant slopes over one exponential graph, interpret their units and compare short versus long interval predictions. Teacher-scored rubric0–2 each for endpoint read, quotient arithmetic, model-appropriate rate interpretation and explicit limitation of linear prediction."
+        "Student task: choose two different intervals, draw corresponding secant slopes over one exponential graph, interpret their units and compare short versus long interval predictions. Teacher-scored rubric0–2 each for endpoint read, quotient arithmetic, model-appropriate rate interpretation and explicit limitation of linear prediction.",
+        "First-party Cool-down (teacher-scored): Given a function f(t)=2*2^t, compute the average rate of change from t=0 to t=2 and from t=2 to t=4, then explain why the rates differ. Numeric responses supported by the mapped exact families may be auto-checked; the teacher scores average rate of change on nonlinear curves and contextual interpretation."
       ],
       "KeyConcepts": [
         {

@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U05:L10",
+  "nextCanonical": "U05:L11",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -3911,25 +3911,65 @@
       "readyForStageD": true,
       "strictABCClosure": "READY_FOR_STAGE_D",
       "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L09_ABC_CLOSURE_20261105.md"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+      "unitCode": "U05",
+      "lessonNumber": 10,
+      "title": "Looking at Rates of Change",
+      "sourceEdition": "Approved local original teacher/student Algebra 1; AccessIM/v360 excluded",
+      "sourceHashes": {
+        "tp": "295d9d58103c9e4639fb73bac751f6a8299483baf373bc7dddd8de4b1e1315c7",
+        "ti": "0437c0d9c0a587f73f415e8f11747eeceaa2d976f1867cee42cc4a9e03596f61",
+        "tpr": "b39768c7b50a29a3e347c5835529107c28cca320a176a8bf55771e5d64a5d1db",
+        "si": "fb333279be1485f87f5acdbefd88c9aaa8ec0fee26b0688d53efb404c434a5c5",
+        "spr": "6898ae19712e633c09745e8b1e0fefa0e8a699cc4b3ad38e60bae99bab1a5048"
+      },
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u05-l10-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u05-l10-local-source-abc-20261105-v1",
+      "A": {
+        "status": "A_CLOSED_LOCAL_SOURCE",
+        "sourceReview": "Local learning goals, source activities, examples and practice compared; previously correct content preserved"
+      },
+      "B": {
+        "status": "B_CLOSED_PRESERVED_RICH_V2",
+        "preserveCorrectPriorContent": true,
+        "firstPartyCooldown": "AUTHORED"
+      },
+      "C": {
+        "status": "C_CLOSED_REUSED_FAMILIES_TESTS_NOT_RUN",
+        "exactPath": [
+          "geometry.coordinate.gradient_between_points",
+          "functions.exponential.growth.evaluate"
+        ],
+        "teacherReviewRequired": [
+          "average rate of change on nonlinear curves and contextual interpretation"
+        ],
+        "tests": "NOT_RUN_REUSE"
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "strictABCClosure": "READY_FOR_STAGE_D",
+      "closureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L10_ABC_CLOSURE_20261105.md"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 79,
-    "B_CLOSED": 79,
-    "C_PREPARED": 79,
-    "ABC_READY_FOR_D": 79,
+    "A_CLOSED": 80,
+    "B_CLOSED": 80,
+    "C_PREPARED": 80,
+    "ABC_READY_FOR_D": 80,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 53,
+    "REMAINING": 52,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 4,
     "CURRENT_UNIT": "U05",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_L10",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_L11",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -3964,12 +4004,12 @@
     "unitsABCCLosed": 4,
     "status": "U05_IN_PROGRESS",
     "previouslyABCClosed": 70,
-    "newlyABCClosed": 9,
+    "newlyABCClosed": 10,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": false,
@@ -4001,9 +4041,9 @@
     "mayAdvanceToL18": false,
     "mayAdvanceToL01": false
   },
-  "unitStatus": "U05_IN_PROGRESS_L10",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09",
+  "unitStatus": "U05_IN_PROGRESS_L11",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -4013,9 +4053,9 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
   "blockedCurrentLesson": null,
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L09_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U05_L10_ABC_CLOSURE_20261105.md"
 }
