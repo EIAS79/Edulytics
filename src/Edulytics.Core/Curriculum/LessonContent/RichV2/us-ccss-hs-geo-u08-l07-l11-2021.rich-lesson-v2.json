@@ -140,11 +140,15 @@
       "CultureCode": "en",
       "Title": "Conditional Probability",
       "ExplanationParagraphs": [
-        "Learning goal: Compute conditional probability with restricted sample space and derive multiplication formula for joint events.",
+        "Learning goal: Define conditional probability through a restricted sample space, derive P(A and B)=P(A|B)P(B), and use conditional probability to investigate independence.",
         "When the conditioning event B has positive probability, P(A|B)=P(A∩B)/P(B). Only outcomes in B remain in the conditioned sample space; the numerator counts those also in A.",
         "The multiplication formula P(A∩B)=P(A|B)P(B) applies whenever P(B)>0 and does not assume independence. If P(B)=0, the elementary conditional quotient P(A|B) is undefined; do not divide by zero.",
         "Original student task: Students redraw a restricted sample space and derive the multiplication identity from count ratios; teacher reviews proof. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 8, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 8, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses.",
+        "Source alignment repair: Retain the source deck-of-cards progression from unconditional to restricted hearts-only sample space.",
+        "Source alignment repair: Retain the repeated examples that establish the multiplication identity without assuming independence.",
+        "Source alignment repair: Keep the denominator condition explicit so P(A|B) is not formed when P(B)=0.",
+        "Edulytics independent cool-down: From a standard deck, let A be 'card is a face card' and B be 'card is a heart'. Find P(A|B), P(A and B), and verify P(A and B)=P(A|B)P(B)."
       ],
       "KeyConcepts": [
         {
@@ -217,6 +221,7 @@
         }
       ],
       "SummaryPoints": [
+        "Define conditional probability through a restricted sample space, derive P(A and B)=P(A|B)P(B), and use conditional probability to investigate independence.",
         "Compute conditional probability with restricted sample space and derive multiplication formula for joint events.",
         "For P(B)>0, P(A|B)=P(A∩B)/P(B) and P(A∩B)=P(A|B)×P(B); neither equation requires independence.",
         "Source-specific probability models and experimental interpretations require teacher review."
