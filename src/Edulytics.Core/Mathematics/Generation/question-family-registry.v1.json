@@ -20493,6 +20493,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.extreme_value.mean_after_replacement",
+      "version": 1,
+      "skillId": "statistics.extreme_value_effect",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-extreme-replacement-mean-exact",
+      "representations": ["before_after_numeric_data", "mean", "numeric_short_answer", "teacher_led_robustness_reasoning"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

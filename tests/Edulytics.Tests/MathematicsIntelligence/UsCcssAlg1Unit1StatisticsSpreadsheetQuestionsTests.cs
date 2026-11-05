@@ -107,4 +107,17 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.HistogramBinFamily, p, "3"));
     }
+
+    [Fact]
+    public void ExtremeReplacementOracleUpdatesMeanWithoutInventingMedianChange()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["center"] = 6, ["delta"] = 30, ["variant"] = 0
+        };
+        Assert.Equal("9.5", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.ExtremeMeanReplacementFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.ExtremeMeanReplacementFamily, p, "19/2"));
+    }
 }

@@ -20,6 +20,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         "spreadsheet.recursive_fill.evaluate";
     public const string HistogramBinFamily =
         "statistics.histogram.half_open_bin_count";
+    public const string ExtremeMeanReplacementFamily =
+        "statistics.extreme_value.mean_after_replacement";
 
     public sealed record Problem(
         string Family,
@@ -31,7 +33,7 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
     public static bool Supports(string? family) =>
         family is DistributionShapeFamily or IqrFamily or MadFamily or
             SpreadsheetFormulaFamily or SpreadsheetRecursiveFillFamily or
-            HistogramBinFamily;
+            HistogramBinFamily or ExtremeMeanReplacementFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -49,7 +51,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildSpreadsheetFormula(random);
         if (family == SpreadsheetRecursiveFillFamily)
             return BuildSpreadsheetRecursiveFill(random);
-        return BuildHistogramBin(random);
+        if (family == HistogramBinFamily)
+            return BuildHistogramBin(random);
+        return BuildExtremeMeanReplacement(random);
     }
 
     public static string Solve(
@@ -115,6 +119,14 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return count.ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family == ExtremeMeanReplacementFamily)
+        {
+            if (!ValidateExtreme(parameters, out var center, out var delta, out _))
+                throw new InvalidOperationException("Invalid extreme-value parameters.");
+            var newMean = center + 0.5m + delta / 10m;
+            return newMean.ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -138,6 +150,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
                 ValidateRecursiveFill(parameters, out _, out _, out _, out _),
             HistogramBinFamily =>
                 ValidateHistogram(parameters, out _, out _, out _, out _, out _, out _, out _),
+            ExtremeMeanReplacementFamily =>
+                ValidateExtreme(parameters, out _, out _, out _),
             _ => ValidateStep(parameters, out _, out _, out _)
         };
 
@@ -308,6 +322,33 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             values.Add(left + (i % width));
     }
 
+    private static Problem BuildExtremeMeanReplacement(Random random)
+    {
+        var center = random.Next(4, 31);
+        var delta = random.Next(10, 61);
+        var variant = random.Next(0, 16);
+        var before = new[]
+        {
+            center - 2, center - 1, center - 1, center, center,
+            center + 1, center + 1, center + 2, center + 2, center + 3
+        };
+        var after = before.ToArray();
+        after[^1] += delta;
+
+        return new(
+            ExtremeMeanReplacementFamily,
+            $"The ordered data are {string.Join(", ", before)}. " +
+            $"Only the largest value is replaced, giving {string.Join(", ", after)}. " +
+            "What is the new mean? Enter an exact decimal or fraction. " +
+            "Explaining why the median is more resistant to this extreme change remains teacher-reviewed.",
+            "Keep the other nine observations fixed, update the sum by the replacement amount, and divide by 10.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["center"] = center, ["delta"] = delta, ["variant"] = variant
+            });
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -403,6 +444,19 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             parameters.TryGetValue("c1", out c1) && c1 is >= 1 and <= 4 &&
             parameters.TryGetValue("c2", out c2) && c2 is >= 1 and <= 4 &&
             parameters.TryGetValue("target", out target) && target is >= 0 and <= 2 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateExtreme(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int center,
+        out int delta,
+        out int variant)
+    {
+        center = delta = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("center", out center) && center is >= 4 and <= 30 &&
+            parameters.TryGetValue("delta", out delta) && delta is >= 10 and <= 60 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 
