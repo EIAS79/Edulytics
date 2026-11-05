@@ -20541,6 +20541,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "algebra.modeling.constraints.feasible_pair",
+      "version": 1,
+      "skillId": "algebra.modeling.constraints",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u02-constraint-feasibility-exact",
+      "representations": ["contextual_constraints", "candidate_values", "teacher_led_model_authoring"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

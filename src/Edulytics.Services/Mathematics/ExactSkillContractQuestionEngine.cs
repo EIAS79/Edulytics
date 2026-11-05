@@ -186,6 +186,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family.Trim()) ||
          UsCcssAlg1U01L02RepresentationQuestions.Supports(family.Trim()) ||
          UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family.Trim()) ||
+         UsCcssAlg1Unit2AlgebraQuestions.Supports(family.Trim()) ||
          UsCcssG5U03L01FractionOfHalfQuestions.Supports(family.Trim()) ||
          UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family.Trim()) ||
          UsCcssG6Unit1Lesson1TilingQuestions.Supports(family.Trim()) ||
@@ -432,6 +433,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssAlg1U01L02RepresentationQuestions.Verify(family, parameters, answer);
         if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family))
             return UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(family, parameters, answer);
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(family))
+            return UsCcssAlg1Unit2AlgebraQuestions.Verify(family, parameters, answer);
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
@@ -1788,6 +1791,12 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(family))
         {
             var item = UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(family))
+        {
+            var item = UsCcssAlg1Unit2AlgebraQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution,
                 item.ItemType, item.Parameters);
         }
@@ -5022,6 +5031,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssAlg1U01L02RepresentationQuestions.Solve(problem.Family, p);
         if (UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Supports(problem.Family))
             return UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(problem.Family, p);
+        if (UsCcssAlg1Unit2AlgebraQuestions.Supports(problem.Family))
+            return UsCcssAlg1Unit2AlgebraQuestions.Solve(problem.Family, p);
         if (UsCcssG5U03L01FractionOfHalfQuestions.Supports(problem.Family))
             return UsCcssG5U03L01FractionOfHalfQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
