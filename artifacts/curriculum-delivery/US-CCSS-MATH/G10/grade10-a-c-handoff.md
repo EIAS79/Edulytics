@@ -10,7 +10,8 @@
 - Lesson state: READY_FOR_STAGE_D
 - Added state REVIEW complete 2021: No
 - Stage D: NOT RUN
-- Product tests / CI in Stage A-B-C: NOT RUN intentionally
+- Current resumption U06:L09 through U08:L11: product tests and CI were NOT RUN intentionally
+- Earlier closed lessons: historical authoring/check evidence is preserved as recorded; this handoff does not rewrite or erase it
 - Detailed ledger: artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json
 - Source instructions: artifacts/curriculum-delivery/US-CCSS-MATH/G10/source-of-truth.json
 
