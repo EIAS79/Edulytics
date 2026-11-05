@@ -28,7 +28,7 @@ const ec=new Map(ledger.LessonEntries.map(l=>[l.LessonCode,l]));
 for(const [name,arr] of [['blueprint',blueprint.Lessons],['rich',rich],['ledger',ledger.LessonEntries]]){
   check(new Set(arr.map(x=>x.LessonCode)).size===124,'DUPLICATE_'+name,'duplicate or missing');
 }
-const lessons=[];let ordinal=0;
+const lessons=[];let ordinal=0;let mappedSourceLessonCount=0;let mappedSourceRows=0;const sourceMapKinds={};
 for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
   ordinal++;
   const code=prefix+`U${String(u).padStart(2,'0')}:L${String(l).padStart(2,'0')}`;
@@ -40,6 +40,11 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
   const cp=e?.SourceCheckpoint;
   check(!!cp && exists(cp),'SOURCE_CHECKPOINT_MISSING',code);
   const evidence=cp&&exists(cp)?read(cp):null;
+  const mapKeys=['SourceTaskCrosswalk','SourceCrosswalk','SourceToRichV2','SourceComparisonA'];
+  const documentedMaps=mapKeys.flatMap(k=>Array.isArray(evidence?.[k])?evidence[k].map(x=>({kind:k,row:x})):[]);
+  if(documentedMaps.length) mappedSourceLessonCount++;
+  mappedSourceRows+=documentedMaps.length;
+  for(const item of documentedMaps)sourceMapKinds[item.kind]=(sourceMapKinds[item.kind]||0)+1;
   // Source inventory hashes or a list of activity headings do not establish full 1:1 element parity.
   const hasElementMap=Array.isArray(evidence?.SourceElements) && evidence.SourceElements.length>0 &&
     evidence.SourceElements.every(x=>x.SourceElementId && ['MATCHED_DIGITAL','MATCHED_TEACHER_LED'].includes(x.Status));
@@ -53,7 +58,7 @@ for(let u=1;u<=8;u++) for(let l=1;l<=counts[u-1];l++){
 const structural={pass:issues.length===0,errors:issues,count:lessons.length,units:8,
   blueprintHash:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json'))).digest('hex'),
   sourceEvidenceCompleteCount:lessons.filter(x=>x.sourceEvidenceComplete).length,
-  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
+  sourceParity:'UNKNOWN',digitalCoverage:'UNKNOWN',documentedSourceLessonCount:mappedSourceLessonCount,documentedSourceRows:mappedSourceRows,documentedMapKinds:sourceMapKinds,practiceMappingCount:mapped.length,verifiedPracticeMappingCount:verifiedMapped.length};
 const result={structural,lessons};
 if(process.argv.includes('--json')) console.log(JSON.stringify(result,null,2));
 else console.log(JSON.stringify(structural,null,2));

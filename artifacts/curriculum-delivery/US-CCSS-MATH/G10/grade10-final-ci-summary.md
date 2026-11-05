@@ -12,3 +12,5 @@
 - Blocking issue: https://github.com/EIAS79/Edulytics/issues/623
 - Stage D run: https://github.com/EIAS79/Edulytics/actions/runs/42112323865
 - **No merge, production change or deployment performed.**
+
+Owner academic approval: recorded from direct owner authorization on 2026-11-06; technical and third-party asset rights gates remain separate and unverified.
