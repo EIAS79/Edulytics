@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l11-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l11-local-source-abc-20261105-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,10 +8,11 @@
       "CultureCode": "en",
       "Title": "Domain and Range (Part 2)",
       "ExplanationParagraphs": [
-        "Learning goal: infer domain and range directly from features of graphs, including open/closed endpoints, horizontal segments, holes, and discrete inputs, and interpret restrictions in context. Original Edulytiks source-aligned lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 11, https://im.kendallhunt.com/HS/teachers/1/4/11/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/11/index.html (CC BY 4.0). The source compares continuous, step and oscillating graphs rather than relying only on function formulas.",
+        "Learning goal: infer domain and range from graph features and context, including endpoints, horizontal segments, holes, and discrete inputs, and explain which values are actually included. This first-party Edulytics lesson is aligned to the approved local Algebra 1 Unit 4 Lesson 11 evidence and keeps graph interpretation central.",
         "Original fictional delivery charge step graph: C(t)=4 dollars for 0≤t<2 hours, C(t)=7 for 2≤t<4, and C(t)=10 for 4≤t≤6, where t is elapsed service time. Input domain [0,6], output range exactly {4,7,10}; it is incorrect to claim every cost between4 and10 occurs. At t=2, the left segment ends open at cost4 and the next begins closed at cost7.",
         "Original continuous triangular ride-height graph joins (0,0),(3,9),(7,0) with straight segments. Domain [0,7] seconds and range [0,9] metres, because all intermediate heights are attained under the interpolation assumption. Compare a continuous interval of outputs with a step function's isolated set of outputs.",
-        "Student task: draw both graphs with accurate open/closed points; decide whether a graph includes certain inputs and outputs; compare two graphs with identical x-domain but different ranges; and explain why a jump in graph excludes intermediate output values. Teacher-scored rubric 0–2 for endpoints, domain, range and coherent context explanation with suitable accessible alternatives."
+        "Student task: draw both graphs with accurate open/closed points; decide whether a graph includes certain inputs and outputs; compare two graphs with identical x-domain but different ranges; and explain why a jump in graph excludes intermediate output values. Teacher-scored rubric 0–2 for endpoints, domain, range and coherent context explanation with suitable accessible alternatives.",
+        "First-party Cool-down (teacher-scored): A graph is defined for inputs from 0 through 6, has a filled point at x=0, an open point at x=6, and outputs from 1 through 9. State the domain and range using words or interval notation and explain how the open point changes the domain. Numeric bounds may be checked exactly; endpoint inclusion and graph interpretation are teacher-reviewed."
       ],
       "KeyConcepts": [
         {
