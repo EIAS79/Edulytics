@@ -105,7 +105,7 @@ public sealed class UsCcssAlg1Unit2AlgebraQuestionsTests
             UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p));
         Assert.True(UsCcssAlg1Unit2AlgebraQuestions.Verify(
             UsCcssAlg1Unit2AlgebraQuestions.StandardFormSlopeInterceptFamily, p, "(-3, 7)"));
-    } 
+    }
     [Fact]
     public void LinearSystemVerifiesBothEquationsAndRejectsWrongPair()
     {

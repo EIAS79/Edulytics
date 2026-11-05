@@ -1,6 +1,6 @@
 # US-CCSS Algebra 1 U01:L10 — A–B–C closure
 
-**Lesson:** The Effect of Extremes  
+**Lesson:** The Effect of Extremes
 **Status:** `READY_FOR_STAGE_D`
 
 Local source hashes: teacher preparation `e559aeb87dfcdf026c255bc96be40f5c02adc303ae27abe183c2e655c23976e3`; teacher lesson `279e04e46713e9d393d4f78cbed216f9a165f05f87fb31723ec99672b435e207`; teacher practice `5d61e8c7da8b1bc86453fae496def7c45cc2606d32bbcf4728df2113ff59ff8d`; student lesson `bc3d559031aed9b062a63365a8f43c9375e952641f6d5dbd46812912358c5cfe`; student practice `64870e032eba892137da27be48d77537f26d7bb572c3cd16bbb6efdb9a890311`. AccessIM/v360 excluded.

@@ -1,6 +1,6 @@
 # US-CCSS Algebra 1 U01:L02 — A–B–C closure
 
-**Lesson:** Data Representations  
+**Lesson:** Data Representations
 **Status:** `READY_FOR_STAGE_D`
 
 ## Source evidence

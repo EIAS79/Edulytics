@@ -1,6 +1,6 @@
 # US-CCSS Algebra 1 U01:L03 — A–B–C closure
 
-**Lesson:** A Gallery of Data  
+**Lesson:** A Gallery of Data
 **Status:** `READY_FOR_STAGE_D`
 
 ## Local source

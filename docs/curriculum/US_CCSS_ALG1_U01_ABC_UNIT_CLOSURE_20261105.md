@@ -1,7 +1,7 @@
 # Algebra 1 Unit 1 — A–B–C closure report
 
-**Unit:** U01 — One-variable Statistics  
-**Lessons:** 16/16 sequentially closed  
+**Unit:** U01 — One-variable Statistics
+**Lessons:** 16/16 sequentially closed
 **Status:** `READY_FOR_STAGE_D` per lesson; Stage D not run.
 
 The sequence was closed in order through U01:L16. Existing correct Rich V2 content was preserved. Practice work followed Reuse → Extend → New Engine discipline: no new standalone engine was created.

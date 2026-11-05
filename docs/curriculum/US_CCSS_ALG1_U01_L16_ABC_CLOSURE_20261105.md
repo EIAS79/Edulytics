@@ -1,6 +1,6 @@
 # US-CCSS Algebra 1 U01:L16 — A–B–C closure
 
-**Lesson:** Analyzing Data  
+**Lesson:** Analyzing Data
 **Status:** `READY_FOR_STAGE_D`
 
 Local source hashes: teacher preparation `2c2ec5552b22fd7e36a22c287ae48f7ec295f10bc9e89ab2690d27e91c8c4c41`; teacher lesson `c0b854fb180d58424b1d0e132d64a90dfea6d040f0253e0a243215febb4ee6b7`; teacher practice `35491146bf5bf6c15d1c6231618dbadb289975b39ecf4685d1a78719545dce55`; student lesson `9961b244931bada982c563efb1cd0762bb3dd4c02b61ccb375734d7408c08881`; student practice `4d188a15da518b6d35a35cb30ad01b8788c0478104b8b37df187b49ab340595a`. AccessIM/v360 excluded.
