@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U01:L06",
+  "nextCanonical": "U01:L07",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -433,26 +433,25 @@
         "preservedExistingValidWork": true
       },
       "C": {
-        "status": "AUTHORING_CLOSED_NOT_RUNTIME",
+        "status": "C_CLOSED_SHARED_EXTENSION_AUTHORED",
         "draftPrepared": true,
-        "oracles": "6/(1-3/4)=24; B2=A2+A4=3 and B3=A3*A5=24 for 5,4,-2,6; zero, fractional and negative trials; no real applet claimed",
         "humanScored": true,
-        "runtimeEnabled": false,
-        "sharedPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
-        "owner": "Supervisor 2",
+        "runtimeSupported": true,
+        "exactPath": "spreadsheet.cell_reference.evaluate via existing ExactSkillContractQuestionEngine extension",
+        "reason": "Machine-grade only formula evaluation from explicit cell values; spreadsheet editing, hidden-rule discovery and explanation remain teacher-scored",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L06_AUTHORING_C_20261030.json",
-        "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading",
-        "selectedPracticeRouteVerified": false,
-        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
+        "independentOracle": "UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests — AUTHORED_NOT_RUN",
+        "deferredToStageD": "test/CI execution and authenticated spreadsheet interaction/delivery",
+        "selectedPracticeRouteVerified": true,
+        "stageCGate": "SOURCE_CODE_ROUTE_AUTHORED_TESTS_NOT_RUN"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": false,
+      "readyForStageD": true,
       "reviewStartedUtc": null,
       "reviewElapsedSeconds": null,
-      "timingNote": "source review began before timer capture, no estimate invented",
+      "timingNote": "2026-11-05 source hashes/Rich V2 compared; no invented elapsed time.",
       "authoringClosedAtUtc": "2026-10-30T14:08:35.991164+00:00",
-      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
+      "strictABCClosure": "READY_FOR_STAGE_D"
     },
     {
       "ordinal": 7,
@@ -1112,16 +1111,16 @@
     "A_CLOSED": 16,
     "B_CLOSED": 16,
     "C_PREPARED": 16,
-    "ABC_READY_FOR_D": 5,
+    "ABC_READY_FOR_D": 6,
     "D_VERIFIED": 0,
     "BLOCKED": 1,
-    "REMAINING": 127,
+    "REMAINING": 126,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS_BLOCKED_L06",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_BLOCKED_L07",
     "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
@@ -1152,21 +1151,21 @@
     "unitTotalLessons": 16,
     "courseUnitTotal": 7,
     "unitsABCCLosed": 0,
-    "status": "L06_C_BLOCKED_EXACT_SELECTED_PRACTICE",
+    "status": "L07_C_BLOCKED_EXACT_SELECTED_PRACTICE",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 5,
+    "newlyABCClosed": 6,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
     "blockingDependency": {
-      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
       "stage": "C",
-      "missing": "Exact spreadsheet cell-reference formula evaluation route for L06; actual spreadsheet interaction remains teacher-reviewed"
+      "missing": "Bind L07 contextual spreadsheet calculations to the existing exact formula evaluator; software entry and estimation remain teacher-reviewed"
     },
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
@@ -1178,9 +1177,9 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_L06",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_L07",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
   "return_queue_policy": "NO_SKIP: subsequent lesson requires its own concrete selected Stage C route before L03.",
   "historicalV16Authoring": {
     "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
@@ -1190,13 +1189,13 @@
     "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
   },
   "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
-  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
-  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
   "blockedCurrentLesson": {
-    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
     "stage": "C",
-    "missing": "Exact spreadsheet cell-reference formula evaluation route for L06; actual spreadsheet interaction remains teacher-reviewed"
+    "missing": "Bind L07 contextual spreadsheet calculations to the existing exact formula evaluator; software entry and estimation remain teacher-reviewed"
   },
   "lastConfirmedClosureSha": null,
-  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U01_L05_ABC_CLOSURE_20261105.md"
+  "lastConfirmedClosureEvidence": "docs/curriculum/US_CCSS_ALG1_U01_L06_ABC_CLOSURE_20261105.md"
 }

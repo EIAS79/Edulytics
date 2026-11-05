@@ -20457,6 +20457,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "spreadsheet.cell_reference.evaluate",
+      "version": 1,
+      "skillId": "spreadsheet.formula_reasoning",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-spreadsheet-cell-reference-exact",
+      "representations": ["spreadsheet_formula_text", "numeric_short_answer", "teacher_led_software_interaction"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -65,4 +65,19 @@ public sealed class UsCcssAlg1Unit1StatisticsSpreadsheetQuestionsTests
         Assert.False(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
             UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.MadFamily, p, "2.5"));
     }
+
+    [Fact]
+    public void SpreadsheetFormulaOracleUsesCellReferencesAndOrderOfOperations()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["a"] = 5, ["b"] = 4, ["c"] = 3, ["op"] = 0, ["variant"] = 0
+        };
+        Assert.Equal("13", UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Solve(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetFormulaFamily, p));
+        Assert.True(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetFormulaFamily, p, "13"));
+        Assert.False(UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.Verify(
+            UsCcssAlg1Unit1StatisticsSpreadsheetQuestions.SpreadsheetFormulaFamily, p, "17"));
+    }
 }

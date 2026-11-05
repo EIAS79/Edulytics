@@ -14,6 +14,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         "statistics.distribution_shape.classify";
     public const string IqrFamily = "statistics.center_spread.iqr";
     public const string MadFamily = "statistics.center_spread.mad";
+    public const string SpreadsheetFormulaFamily =
+        "spreadsheet.cell_reference.evaluate";
 
     public sealed record Problem(
         string Family,
@@ -23,7 +25,8 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is DistributionShapeFamily or IqrFamily or MadFamily;
+        family is DistributionShapeFamily or IqrFamily or MadFamily or
+            SpreadsheetFormulaFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -35,7 +38,9 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return BuildDistributionShape(random);
         if (family == IqrFamily)
             return BuildIqr(random);
-        return BuildMad(random);
+        if (family == MadFamily)
+            return BuildMad(random);
+        return BuildSpreadsheetFormula(random);
     }
 
     public static string Solve(
@@ -71,6 +76,21 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return (6m * step / 5m).ToString(CultureInfo.InvariantCulture);
         }
 
+        if (family == SpreadsheetFormulaFamily)
+        {
+            if (!ValidateSpreadsheet(parameters, out var a, out var b, out var c, out var op, out _))
+                throw new InvalidOperationException("Invalid spreadsheet parameters.");
+            var value = op switch
+            {
+                0 => a + 2 * b,
+                1 => a * b - c,
+                2 => (a + b) * c,
+                3 => a * a + b,
+                _ => throw new InvalidOperationException("Unsupported spreadsheet operation.")
+            };
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
         throw new InvalidOperationException("Unsupported ALG1 Unit 1 extension family.");
     }
 
@@ -86,7 +106,11 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             return ValidateShape(parameters, out _, out _, out _, out _) &&
                 NormalizeLabel(answer) == NormalizeLabel(Solve(family, parameters));
 
-        return ValidateStep(parameters, out _, out _, out _) &&
+        var parametersValid = family == SpreadsheetFormulaFamily
+            ? ValidateSpreadsheet(parameters, out _, out _, out _, out _, out _)
+            : ValidateStep(parameters, out _, out _, out _);
+
+        return parametersValid &&
             TryExactDecimal(answer, out var submitted) &&
             decimal.TryParse(
                 Solve(family, parameters),
@@ -162,6 +186,35 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
             });
     }
 
+    private static Problem BuildSpreadsheetFormula(Random random)
+    {
+        var a = random.Next(-6, 16);
+        var b = random.Next(-6, 16);
+        var c = random.Next(1, 10);
+        var op = random.Next(0, 4);
+        var variant = random.Next(0, 16);
+        var formula = op switch
+        {
+            0 => "=A2+2*A3",
+            1 => "=A2*A3-A4",
+            2 => "=(A2+A3)*A4",
+            3 => "=A2^2+A3",
+            _ => throw new InvalidOperationException("Unsupported spreadsheet operation.")
+        };
+
+        return new(
+            SpreadsheetFormulaFamily,
+            $"A spreadsheet has A2={a}, A3={b}, A4={c}. " +
+            $"Cell B2 contains {formula}. What numerical value should B2 display? " +
+            "Enter one number. Entering/testing the formula in spreadsheet software remains teacher-reviewed.",
+            "Substitute the current cell values into the formula and apply ordinary order of operations.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string, int>(StringComparer.Ordinal)
+            {
+                ["a"] = a, ["b"] = b, ["c"] = c, ["op"] = op, ["variant"] = variant
+            });
+    }
+
     private static int[] Frequencies(int shape, int scale) => shape switch
     {
         0 => [2 * scale, 2 * scale, 2 * scale, 2 * scale, 2 * scale],
@@ -204,6 +257,23 @@ public static class UsCcssAlg1Unit1StatisticsSpreadsheetQuestions
         return parameters is not null &&
             parameters.TryGetValue("base", out @base) &&
             parameters.TryGetValue("step", out step) && step is >= 1 and <= 7 &&
+            parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateSpreadsheet(
+        IReadOnlyDictionary<string, int>? parameters,
+        out int a,
+        out int b,
+        out int c,
+        out int op,
+        out int variant)
+    {
+        a = b = c = op = variant = 0;
+        return parameters is not null &&
+            parameters.TryGetValue("a", out a) && a is >= -6 and <= 15 &&
+            parameters.TryGetValue("b", out b) && b is >= -6 and <= 15 &&
+            parameters.TryGetValue("c", out c) && c is >= 1 and <= 9 &&
+            parameters.TryGetValue("op", out op) && op is >= 0 and <= 3 &&
             parameters.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
     }
 
