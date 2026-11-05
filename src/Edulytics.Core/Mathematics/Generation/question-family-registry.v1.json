@@ -20421,6 +20421,18 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "statistics.distribution_shape.classify",
+      "version": 1,
+      "skillId": "statistics.distribution_shape",
+      "requiredCapabilities": ["lesson.practice.exact.generate", "lesson.practice.exact.verify"],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u01-distribution-shape-exact",
+      "representations": ["frequency_table", "shape_classification", "teacher_led_graph_context"],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
