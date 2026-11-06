@@ -1,0 +1,403 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L14",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "1c9eb6b33779fccb525f803a722b3a8d0cfc9251493cd5461b1ca53e030d1334",
+    "teacher/index.html": "b01e189d3dcdeeb4e3fba62dfc8ef5d3488ec43b238053570715c5c5a1bd2ce0",
+    "teacher/practice.html": "c0130100649d02bff8ac52aa2853e6f7b4c634d0ebc957f3efaf43a4240358a7",
+    "student/index.html": "bfccfc1a2cde1df62e7b9393e5d76bc5b5c3d6606385d6488a468729bb1df680",
+    "student/practice.html": "7ca9a93404a257de9c90b708b09bf9ebe9d7a5758da7d13a4adc946efb4a5195"
+  },
+  "Goals": [
+    "Use the results from redistributing data from an experiment into groups to determine whether the original difference in means is significant."
+  ],
+  "ElementCount": 48,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-001",
+      "SourceSection": "14.1: Notice and Wonder: Some Distributions",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-002",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "To see what might be happening when we regroup data, consider an experiment that takes 12 subjects and divides them into 2 groups at random. The control group contains 6 subjects and the treatment group contains 6 subjects. To explore…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-003",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "Find the difference in means for the original groups by subtracting the control group mean from the treatment group mean.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-004",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "With a smaller data set like this, we can actually consider all of the different arrangements of the data. There are 924 distinct ways to separate the 12 values into 2 groups of 6. The frequency table shows all the possible differences in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-005",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "What proportion of possible groupings have a difference at least as great as the difference in means for the original groups? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-006",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "The proportion you calculate represents the probability that the original difference in means could be due to the groupings themselves. Based on the proportion you calculated for this situation, which description is most accurate? Explain…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-007",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "Because the proportion is so low, it is unlikely that the difference in means is due to the randomized groupings. This means that the difference in means is most likely caused by the treatment.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-008",
+      "SourceSection": "14.2: A Theoretical Experiment",
+      "SourceExcerpt": "Because the proportion is not that low, it is still rather possible that the original difference in means is due to the random groupings. This means that there is not enough evidence to determine that the difference in means is likely…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-009",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "Researchers want to know the effect of captively raising birds on the weight of the birds. The researchers begin with 100 birds divided into 2 groups of 50 each. One group of 50 will be raised in captivity and the other 50 are tagged and…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-010",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "There are more than \\(10^{29}\\) different ways to regroup the 100 birds into groups of 50 again, so looking at all the combinations would be too time consuming to reproduce. In this case, we can run simulations to determine how the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-011",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "Attribution: tagged red knot birds calidris canutus rufa, by pixnio. Public Domain. pixnio. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-012",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "The original groups have a difference of means of 0.27 grams. Researchers run 1,000 simulations regrouping the data into 2 groups at random and record the differences in means for the groups in each simulation. The histogram shows the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-013",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "They determine that the mean of the differences of means from the simulations is 0.0021 grams and the standard deviation for the differences of means from the simulations is 0.112 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-014",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "What features of the distribution in the histogram let you know that modeling with a normal distribution is reasonable?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-015",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "Model the simulations using a normal distribution with a mean of 0.0021 and a standard deviation of 0.112. What is the area under this normal curve that is more extreme than 0.27?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-016",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "How can this area be used to compare the difference of means from the simulations to the difference of means from the original groups?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-017",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "Based on the area under the normal curve, is there evidence that the original difference in means is likely due to where the birds spent the 5 years? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-018",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "Suppose we decide that if the probability of observing our difference or a more extreme difference happens less than 5% of the time in simulations we will conclude that it was captivity that caused the difference, and if the probability is…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-019",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "To analyze the significance of the data collected from an experiment, a randomization distribution can be used. In some cases, where the number of subjects is small, all of the possible ways to regroup the data can be used to compare the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-020",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "The more subjects included in the experiment, the greater number of possible regroupings. For example, 14 subjects divided into 2 groups of 7 can have their data redistributed into groups 3,432 different ways. When there are 60 subjects…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-021",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "In these cases, we often do a simulation and redistribute the data many times to get a sense of the true distribution of all possibilities. For example, this histogram shows the difference of means for 1,000 simulations of redistributing…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-022",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "The simulations should produce approximately normal distributions with a center near 0. This allows us to use our understanding of normal distributions to estimate the proportion of regroupings that are at least as extreme as the original…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-023",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "For example, using the values from the histogram, the mean is 0.04 and the standard deviation is 9.07. That provides enough information to create a normal distribution that models the data. In the image, we see the normal distribution and…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-024",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "If the original difference in means is something like 20, then we can conclude that there is evidence to show that the difference in means is due to the treatment. On the other hand, if the original difference in means is something like…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-ACTIVITY-025",
+      "SourceSection": "14.3: Simulating to Decide",
+      "SourceExcerpt": "In an experiment where you are comparing two groups, one of which is being given a treatment and the other of which is the control group without any treatment, the treatment is the value of the variable that is changed for the treatment…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Lin is working on a science experiment. She wants to determine whether salt water boils faster than freshwater. She collects 10 samples of 100 milliliters of salt water and 10 samples of 100 milliliters of freshwater. She places each…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Lin writes a computer program to recombine all the data into all 184,756 possible different groupings and finds that 4,008 of the different groupings have a difference in means of at least 24 grams. Is there enough evidence for Lin to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "A company produces 10,000 plastic toys each day. A sample of 25 toys are analyzed, and 2 of them are found to not meet the standards of the company, so they are labeled defective. A simulation is run in which 25 toys are chosen out of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "What is the margin of error based on this simulation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Based on a population proportion estimate and margin of error, is 0.091 a plausible value for the population proportion of toys that are defective? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Technology required",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Researchers are tagging sharks using two different types of devices and want to know if the devices affect the heart rate of the sharks. They tag one group of 8 sharks with a small device that collects a small amount of data and they tag…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Researchers run 1,000 simulations regrouping the data into 2 groups at random and record the differences in means for the groups in each simulation. The histogram shows the differences in means from the simulations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "They determine that the mean of the differences of means from the simulations is 0.028 grams and the standard deviation for the differences of means from the simulations is 1.124 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "What features of the distribution in the histogram let you know that modeling with a normal distribution is reasonable?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-011",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Model the simulations using a normal distribution with a mean of 0.028 and a standard deviation of 1.124. What is the area under this normal curve that is more extreme than 2.5?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-012",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Based on the area under the normal curve, is there evidence that the original difference in means is likely due to the type of device used to tag the sharks? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-013",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A human resources experiment about job satisfaction takes 10 subjects and divides them into 2 groups using a random process. The control group contains 5 subjects and the treatment group contains 5 subjects. Each group is asked to rate…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Statisticians run 100 simulations regrouping the data into 2 groups at random and record the differences in means for the groups in each simulation. The histogram shows the differences in means from the simulations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What is the difference in means between the two groups?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-016",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What proportion of the difference in means from the simulation have a difference at least as great as the difference in means between the control and treatment groups?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-017",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Is there enough evidence to support a claim that the original difference in means is likely due to the treatment?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-018",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "A plant company is growing plants in the laboratory using their regular soil mix and a new soil mix. The company wants to know which process causes the plants to grow taller at the end of 2 months. The mean height of the 25 plants grown…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-019",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Is it reasonable to conclude that the mean difference between the 2 groups occurred by chance? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-020",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The histogram displays the results from 100 simulations of redistributing data from an experiment to create a randomization distribution comparing the weight, in milligrams, of two different groups.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-021",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The difference between the mean weights of the two groups being studied is 1.8 milligrams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-022",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Use information in the histogram to support the claim that a mean difference of 1.8 milligrams is likely to occur by chance. Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L14-PRACTICE-023",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is a value of a mean difference that would be unlikely to occur by chance?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
