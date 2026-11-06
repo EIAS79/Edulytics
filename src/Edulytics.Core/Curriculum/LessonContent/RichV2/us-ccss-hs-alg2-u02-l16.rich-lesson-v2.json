@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l16-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L16",
+      "CultureCode": "en",
+      "Title": "Minimizing Surface Area",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create a rational function to model the surface area of a cylinder of known volume. Interpret graphs of rational functions in context.",
+        "For a closed circular cylinder of fixed volume V, volume pi*r^2*h=V so h=V/(pi*r^2) with r>0. Total material area S=2pi*r^2+2pi*r*h=2pi*r^2+2V/r. The rational formula and positive radius domain are essential; a negative radius is not physical.",
+        "Source activity 16.1: The Least Material: Here are four cylinders that have the same volume. Which cylinder needs the least material to build? What information would be useful to know to determine which cylinder takes the least material to build? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.2: Figuring Out Cylinder Dimensions: There are many cylinders with volume 452 cm3. Let \\(r\\) represent the radius and \\(h\\) represent the height of these cylinders in centimeters. Complete the table. Use graphing technology to plot the pairs \\((r,h)\\) from the table on the coordinate plane. What do you notice about the graph? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.3: Calculating Surface Area: There are many cylinders with volume 452 cm3. Let \\(r\\) represent the radius of these cylinders, \\(h\\) represent the height, and \\(S\\) represent the surface area. Use the table to explore how the value of \\(r\\) affects the surface area of the cylinder. Use graphing technology to plot the pairs \\((r, S)\\) on the coordinate plane. What do you notice about the graph? Write an… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: There are many cylinders with a volume of \\(144\\pi\\) cubic inches. The height \\(h(r)\\) in inches of one of these cylinders is a function of its radius \\(r\\) in inches where \\(h(r)=\\frac{144}{r^2}\\). What is the height of one of these cylinders if its radius is 2 inches? What is the height of one of these cylinders if… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The surface area \\(S(r)\\) in square units of a cylinder with a volume of 18 cubic units is a function of its radius \\(r\\) in units where \\(S(r)=2\\pi r^2+\\frac{36}{r}\\). What is the surface area of a cylinder with a volume of 18 cubic units and a radius of 3 units? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Han finds an expression for \\(S(r) \\) that gives the surface area in square inches of any cylindrical can with a specific fixed volume, in terms of its radius \\(r\\) in inches. This is the graph Han gets if he allows \\(r\\) to take on any value between -1 and 5. What would be a more appropriate domain for Han to use… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The graph of a polynomial function \\(f\\) is shown. Is the degree of the polynomial even or odd? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The polynomial function \\(p(x)=x^4+4x^3-7x^2-22x+24\\) has known factors of \\((x+4)\\) and \\((x-1)\\). Rewrite \\(p(x)\\) as the product of linear factors. Draw a rough sketch of the graph of the function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which polynomial has \\((x+1)\\) as a factor? \\(x^3+2x^2-19x-20\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For radius 5 and volume 100pi find h and surface area. Expected reasoning or answer: h=4, S=2pi*25+2pi*5*4=90pi.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cylinder surface optimisation",
+          "Definition": "For a closed circular cylinder of fixed volume V, volume pi*r^2*h=V so h=V/(pi*r^2) with r>0. Total material area S=2pi*r^2+2pi*r*h=2pi*r^2+2V/r. The rational formula and positive radius domain are essential; a negative radius is not physical.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A closed cylinder has volume 100pi. Express its surface area in terms of radius r. Answer: S(r)=2pi*r^2+200pi/r for r>0."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "h=100/r^2; S=2pi*r^2+2pi*r*(100/r^2)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cylinder surface optimisation",
+          "Question": "A closed cylinder has volume 100pi. Express its surface area in terms of radius r.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "h=100/r^2",
+            "S=2pi*r^2+2pi*r*(100/r^2)."
+          ],
+          "Answer": "S(r)=2pi*r^2+200pi/r for r>0.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For radius 5 and volume 100pi find h and surface area.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "h=4, S=2pi*25+2pi*5*4=90pi.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Cylinder surface optimisation",
+        "For a closed circular cylinder of fixed volume V, volume pi*r^2*h=V so h=V/(pi*r^2) with r>0. Total material area S=2pi*r^2+2pi*r*h=2pi*r^2+2V/r. The rational formula and positive radius domain are essential; a negative radius is not physical.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
