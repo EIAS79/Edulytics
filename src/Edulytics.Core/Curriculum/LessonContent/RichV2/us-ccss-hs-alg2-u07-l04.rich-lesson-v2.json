@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L04",
+      "CultureCode": "en",
+      "Title": "Describing Distributions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe (orally and in writing) various distributions as skewed, symmetric, or bell-shaped. Recall how to interpret (orally and in writing) the standard deviation as a measure of variability.",
+        "Describe a quantitative distribution by shape (symmetric, bell-like, skewed), center and spread. Standard deviation measures typical deviation around the mean in squared-distance units after square root. Extreme values can inflate it.",
+        "Source activity 4.1: Which One Doesn't Belong: Cracking Glass: Four different kinds of glass are hit with a hammer and the length of the longest crack formed is recorded. The process is repeated 150 times for each type of glass. Which one doesn’t belong? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: Name That Distribution Shape: Take turns with your partner to select a dot plot and describe the distribution. For each distribution you describe, use the terms symmetric, skewed, bell-shaped, uniform, and bimodal where appropriate. For each distribution your partner describes, listen carefully to their description. If you disagree, discuss your thinking and work to reach an agreement. Each student in the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Matching Distributions and Statistics: Take turns with your partner to match a dot plot with the summary statistics for the data shown. For each match you find, explain to your partner how you know it’s a match. For each match your partner finds, listen carefully to their explanation. If you disagree, discuss your thinking and work to reach an agreement. Mean: 3, median: 2, standard deviation: 2.91 Mean: 5, median:… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Which statement is true about these 2 distributions? The mean of set A is less than the mean of set B, and their standard deviations are the same. The mean of set A is greater than the mean of set B, and their standard deviations are the same. The standard deviation of set A is less than the standard deviation of set… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Mai collects information about 37 classmates. She believes her data set is perfectly symmetrical with a mean and median of 20. She then realizes that the number she has recorded as 32 was actually supposed to be 42. What is true about the mean and median of her corrected data set? The mean and median of the corrected… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Select all distributions which are approximately symmetric. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: In an experimental study, it was noticed that people who eat more leafy, green vegetables tend to get better sleep than the general population. Researchers wonder whether the improved sleep might be caused by the minerals potassium and magnesium found in leafy, green vegetables. How could the researchers design an… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Elena is conducting an experiment to determine if high school students are more relaxed when the lights are off or when music is played during an exam. She selects 10 of her friends to take an exam with the lights off and another 10 of her friends to take an exam with music playing. What is problematic about the way… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: An environmental education club has 318 members. Select all methods that would select a sample of 20 members at random from the entire environmental education club. Ask for 20 members to volunteer to take the survey. Place the names of all 318 members on individual slips of paper placed into a bowl. Thoroughly mix up… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For [9,10,11] and [5,10,15], which is more spread out? Expected reasoning or answer: [5,10,15].",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distribution shapes and variability",
+          "Definition": "Describe a quantitative distribution by shape (symmetric, bell-like, skewed), center and spread. Standard deviation measures typical deviation around the mean in squared-distance units after square root. Extreme values can inflate it.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Compare data sets [4,5,6] and [0,5,10], both with mean5. Which is more variable? Answer: [0,5,10] has larger standard deviation."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Distances from5 are [1,0,1] versus [5,0,5]; second squared deviations are larger."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distribution shapes and variability",
+          "Question": "Compare data sets [4,5,6] and [0,5,10], both with mean5. Which is more variable?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Distances from5 are [1,0,1] versus [5,0,5]",
+            "second squared deviations are larger."
+          ],
+          "Answer": "[0,5,10] has larger standard deviation.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For [9,10,11] and [5,10,15], which is more spread out?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "[5,10,15].",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Distribution shapes and variability",
+        "Describe a quantitative distribution by shape (symmetric, bell-like, skewed), center and spread. Standard deviation measures typical deviation around the mean in squared-distance units after square root. Extreme values can inflate it.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
