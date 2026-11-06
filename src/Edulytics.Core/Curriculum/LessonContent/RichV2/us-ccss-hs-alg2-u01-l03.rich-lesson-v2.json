@@ -1,0 +1,107 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l03-source-aligned-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03",
+      "CultureCode": "en",
+      "Title": "Different Types of Sequences",
+      "ExplanationParagraphs": [
+        "Goal: compare, distinguish and generate arithmetic and geometric sequences from tables, graphs, function notation and numerical patterns.",
+        "Warm-up: evaluate a function of the form f(n)=3n-7 at specified integer inputs; explain the role of the input n rather than confusing it with the term value.",
+        "Discuss three distinct examples: A=30,40,50,60,70 is arithmetic (+10); B=0,5,15,30,50 has growing differences (+5,+10,+15,+20); C=1,2,4,8,16 is geometric (times two). The same first terms do not guarantee the same type of growth.",
+        "With continuation of those rules to term 10, A(10)=120, B(10)=225 and C(10)=512. The nonlinear B value is second largest; do not choose based on the appearance of only the first five terms.",
+        "Arithmetic rule: from a starting term a(1), a(n)=a(1)+(n-1)d. Geometric rule: from starting term g(1), g(n)=g(1)r^(n-1). Both require an explicit starting index.",
+        "A positive constant sequence such as 5,5,5,... has common difference zero and common ratio one. It is both arithmetic and geometric; this is an exception to an informal either/or classification.",
+        "Compare a table and a graph of the same sequence carefully. If the input positions skip integers, multiplying successive listed output values does not prove a constant multiplier from n to n+1. Teacher reviews the graph, its domain, axes and argument.",
+        "Practice: fill missing arithmetic terms with signed or fractional differences, find geometric factors, distinguish 'neither', and supply a valid continuation for an arithmetic, geometric or nonstandard rule.",
+        "Independent cool-down (Edulytics): compare U=4,10,16,22 and V=4,10,25,62.5. Decide which is arithmetic and which is geometric, state a recursive rule, and predict the next term. Justify using consecutive differences or ratios."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Arithmetic sequence",
+          "Definition": "One constant amount is added at each step.",
+          "Rule": "a(n)=a(1)+(n-1)d.",
+          "Example": "30,40,50,... has d=10."
+        },
+        {
+          "Title": "Geometric sequence",
+          "Definition": "One constant factor multiplies consecutive nonzero terms.",
+          "Rule": "g(n)=g(1)r^(n-1).",
+          "Example": "1,2,4,... has r=2."
+        },
+        {
+          "Title": "Neither or both",
+          "Definition": "Not all sequences fit either classification, while positive constant sequences fit both.",
+          "Rule": "Check at least two differences and two well-defined adjacent ratios.",
+          "Example": "0,5,15,30,50 is neither; 5,5,5,... is both."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare term 10 in three patterns",
+          "Question": "Which has the second-largest 10th term: 30,40,50,...; 0,5,15,30,50,...; or 1,2,4,8,16,...?",
+          "Method": "Identify a separate rule for each sequence.",
+          "Steps": [
+            "A(n)=30+10(n-1), so A(10)=120.",
+            "B(n)=5n(n-1)/2, so B(10)=225.",
+            "C(n)=2^(n-1), so C(10)=512.",
+            "Order 120 < 225 < 512."
+          ],
+          "Answer": "The second sequence, B, at 225.",
+          "Check": "B has nonconstant differences and is neither arithmetic nor geometric."
+        },
+        {
+          "Title": "Find an unknown arithmetic rate",
+          "Question": "Fill -3,-2,_,_,1 and give the common difference.",
+          "Method": "Compare adjacent terms.",
+          "Steps": [
+            "Difference -2-(-3)=+1.",
+            "Next terms are -1 and 0.",
+            "The following term 1 verifies a constant +1."
+          ],
+          "Answer": "-1, 0; d=1.",
+          "Check": "Each step adds one."
+        },
+        {
+          "Title": "A sequence that fits two definitions",
+          "Question": "Can a positive constant sequence such as 7,7,7,... be arithmetic and geometric?",
+          "Method": "Check differences and ratios.",
+          "Steps": [
+            "Every difference is 7-7=0.",
+            "Every ratio is 7/7=1.",
+            "Both differences and ratios are constant."
+          ],
+          "Answer": "Yes; d=0 and r=1.",
+          "Check": "This example refutes a claim that the categories never overlap."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Deciding a sequence is geometric after observing one ratio.",
+          "WhyWrong": "A common ratio must be maintained at each step.",
+          "Correction": "Check every available consecutive nonzero pair."
+        },
+        {
+          "Mistake": "Equating a nonlinear sequence with arithmetic because the terms increase.",
+          "WhyWrong": "Increasing differences are not a common difference.",
+          "Correction": "Compute a difference table first."
+        },
+        {
+          "Mistake": "Assuming a positive constant sequence cannot be both.",
+          "WhyWrong": "It has difference zero and ratio one.",
+          "Correction": "Test both definitions directly."
+        }
+      ],
+      "SummaryPoints": [
+        "Arithmetic: constant difference; geometric: constant ratio.",
+        "Some sequences are neither, and positive constant sequences are both.",
+        "Term indices are discrete; source graphs need justified axis and step interpretation.",
+        "Teacher checks the open classification argument and graphs."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

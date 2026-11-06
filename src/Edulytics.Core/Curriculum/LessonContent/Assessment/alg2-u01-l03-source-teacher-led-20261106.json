@@ -1,0 +1,87 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03",
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-IF.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    }
+  ],
+  "SkillContracts": [
+    {
+      "SkillId": "sequences.core",
+      "AllowedFamilies": [
+        "sequences.core.arithmetic_nth_term",
+        "sequences.core.geometric_nth_term",
+        "sequences.core.find_position_arithmetic",
+        "usccss.g11.alg2.u01.l02.rational_geometric_term"
+      ],
+      "Forbidden": [
+        "random-unrelated-arithmetic"
+      ],
+      "Readiness": "WRITTEN_NOT_RUN"
+    }
+  ],
+  "TeacherReview": {
+    "Required": true,
+    "Tasks": [
+      "evaluate function notation without a calculator",
+      "comparison of three source sequence patterns",
+      "third source table-versus-graph dispute",
+      "signed and fractional common differences",
+      "classify positive constant sequence as both"
+    ],
+    "Rubric": [
+      "correct start index",
+      "difference or ratio checked for each step",
+      "appropriate function domain and graph",
+      "justification of classification"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Classify U: 4,10,16,22 and V: 4,10,25,62.5. Write a recurrence for each and predict the next term. Explain how you can tell.",
+    "Expected": "U arithmetic d=6 next28; V geometric r=5/2 next156.25.",
+    "Grader": "TEACHER_REVIEW_REQUIRED",
+    "Origin": "EDULYTICS_ORIGINAL"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l03-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
