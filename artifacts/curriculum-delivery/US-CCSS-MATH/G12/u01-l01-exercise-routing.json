@@ -1513,7 +1513,7 @@
         "Fails horizontal-line test because distinct inputs have the same output, including the flat portion.",
         "Answer: NOT one-to-one."
       ],
-      "SourceGraphDescription": "Single-valued graph that is flat on the left near y=0, rises to a small peak and then falls on the right. A horizontal line, including y≈0, meets multiple plotted inputs.",
+      "SourceGraphDescription": "Single-valued graph that is flat on the left near y=0, rises to a small peak and then falls on the right. A horizontal line, including y≈0, meets multiple plotted inputs. The source drawing labels horizontal positions in multiples of π, not as ordinary integer distances; preserve this variable/axis interpretation.",
       "SourceMathVerificationStatus": "SOURCE_VERIFIED",
       "AllSourceSubpartsVerified": true,
       "ProposedExistingQuestionFamily": null,
@@ -1530,7 +1530,15 @@
       "StudentPracticeGrading": "NOT_AUTOMATICALLY_GRADED_BY_92_EXERCISE_BANK",
       "StudentPracticeReviewMode": "TEACHER_DIAGRAM_REQUIRED",
       "FirstPartyDrawingEquivalent": "TYPED_FIRST_PARTY_GRAPH_AUTHORED_NOT_SOURCE_FIGURE_CERTIFIED",
-      "FirstPartyDrawingArtifact": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11ExerciseVisuals.cs"
+      "FirstPartyDrawingArtifact": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11ExerciseVisuals.cs",
+      "SourceHorizontalAxisLabels": [
+        "−π",
+        "−π/2",
+        "0",
+        "π/2",
+        "π"
+      ],
+      "FirstPartyGraphAxisStatus": "SKILL_ONLY_AXES_NOT_SEMANTICALLY_IDENTICAL_TO_SOURCE_PI_RADIAN_SCALE"
     },
     {
       "SourceElementId": "G12-U01-L01-EXERCISE060",
@@ -2293,5 +2301,7 @@
   "SourceExerciseAtomicElementsIdentified": 162,
   "SourceExerciseAtomicDenominatorIdentifiedByOrdinal": true,
   "SourceExerciseAtomicElementsSemanticallyMatched": 0,
-  "All92ExerciseSubpartsSemanticallyMatched": false
+  "All92ExerciseSubpartsSemanticallyMatched": false,
+  "OriginalExercise59PiAxisIdentified": true,
+  "OriginalExercise59SourcePdfPage": 36
 }

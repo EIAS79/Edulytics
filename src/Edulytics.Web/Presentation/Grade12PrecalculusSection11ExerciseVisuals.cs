@@ -163,7 +163,7 @@ public static class Grade12PrecalculusSection11ExerciseVisuals
             [59] = Coordinate(Window(-4m,4m,-3m,4m),
                 Polyline(Point(-4m,0m),Point(-2m,0m),Point(0m,2m),Point(2m,1m),Point(4m,-2m)),
                 "Exercise 59: flat then peaked function",
-                "Repeated outputs on the flat part or either side of the peak defeat the horizontal-line test.")
+                "This shape-only model uses numeric x-ticks; the original exercise uses π-radian x-labels, which must be shown in the teacher-inspected source graph. Repeated outputs defeat the horizontal-line test.")
         };
 
         if (result.Count != 19)
