@@ -3,7 +3,7 @@
 **Release decision: NO_GO_TECHNICAL. No merge or production deployment.**
 
 - Owner academic authorization: recorded and accepted as owner decision in `grade10-owner-academic-authorization-20261106.json`; separate third-party asset rights status NOT VERIFIED.
-- Current candidate code SHA: `2a7129acdbb7722e3b4314a27398acc04202a564`.
+- Current candidate code SHA: `ea94f9a891f657dae83e30fed9b2ff0d97234f10`.
 - Last fully observed Grade 10 candidate SHA: `df4723500c034fd634cc8406fd98d1edade0c977` (previous D CI RUN `42129708817`, 121/121 .NET targeted PASS and D1/D2/D3 Node PASS, with source and route jobs FAIL).
 - GitHub Actions on current head: NOT OBSERVED at time of record; do not transfer old PASS to the new SHA.
 - Grade 10 authenticated HTTPS regression workflow added: `.github/workflows/us-ccss-g10-geometry-https.yml`; results pending observation.
