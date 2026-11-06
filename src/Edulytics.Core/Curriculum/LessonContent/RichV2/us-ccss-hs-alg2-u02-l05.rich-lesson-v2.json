@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l05-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L05",
+      "CultureCode": "en",
+      "Title": "Connecting Factors and Zeros",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify zeros of polynomial functions written in factored form. Understand that if factors multiplied together equal zero for a specific value of $x$, at least one of the factors must also equal zero at that value of $x$.",
+        "A product is zero if any factor is zero. For p(x)=(x-2)(x+3), p(x)=0 at x=2 and -3; these are horizontal intercepts of its graph. Factored form reveals zeros, but a sketch also depends on degree and the leading coefficient.",
+        "Source activity 5.1: Notice and Wonder: Factored Form: What do you notice? What do you wonder? \\(f(x)=(x+5)(x+1)(x-3)\\) \\(f(x)=(x+5)(x+1)(x-3)\\) \\(g(x)=(x+5)(x+1)(x-2)\\) \\(g(x)=(x+5)(x+1)(x-2)\\) \\(h(x)=(x+4)(x+1)(x-2)\\) \\(h(x)=(x+4)(x+1)(x-2)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.2: What Values of $x$ Make These Equations True?: Find all values of \\(x\\) that make the equation true. \\((x+4)(x+2)(x-1)=0\\) \\((x+4)(x+2)(x-1)(x-3)=0\\) \\((x+4)^2 (x+2)^2=0\\) \\(\\text-2(x-4)(x-2)(x+1)(x+3)=0\\) \\((2x+8)(7x-3)(x-10)=0\\) \\(x(3-x)(x-1)(x+0.75)=0\\) Write an equation that is true when \\(x\\) is equal to -5, 4, or 0 and for no other values of \\(x\\). Write an equation that is true when \\(x\\) is equal to -5, 4, or 0 and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.3: Factors, Intercepts, and Graphs: Your teacher will give you a set of cards. Match each equation to either a graph or a description. Take turns with your partner to match an equation with a graph or a description of a graph. For each match that you find, explain to your partner how you know it’s a match. For each match that your partner finds, listen carefully to their explanation. If you disagree, discuss… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: What is the value of \\(\\displaystyle 4(x-2)(x-3)+7(x-2)(x-5)-6(x-3)(x-5)\\) when \\(x=5\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which polynomial function has zeros when \\(x=\\text-2,\\frac34,5\\)? \\(f(x)=(x-2)(3x+4)(x+5)\\) \\(f(x)=(x-2)(4x+3)(x+5)\\) \\(f(x)=(x+2)(3x-4)(x+5)\\) \\(f(x)=(x+2)(4x-3)(x-5)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The graph of a polynomial \\(f(x)=(2x-3)(x-4)(x+3)\\) has \\(x\\)-intercepts at 3 \\(x\\) values. What are they? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Match each sequence with one of the recursive definitions. Note that only the part of the definition showing the relationship between the current term and the previous term is given so as not to give away the solutions. One of the sequences matches two recursive definitions. \\(a(n) = a(n-1) -4 \\) \\(b(n) = b(n-1)+0\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Han is multiplying \\(10x^4\\) by \\(0.5x^3\\) and gets \\(5x^7\\). He says that \\(0.5x^3\\) is not a polynomial because 0.5 is not an integer. What is the error in Han’s thinking? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here are two expressions whose sum is a new expression, \\(A\\). \\(\\displaystyle (2x^2 + 5)+(6x^{\\boxed{\\phantom{33}}} -7) = A\\) Select all the values that we can put in the box so that \\(A\\) is a polynomial. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find zeros of 2(x+4)(x-1), and evaluate at x=0. Expected reasoning or answer: Zeros -4 and 1; value -8.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Zeros of factored polynomials",
+          "Definition": "A product is zero if any factor is zero. For p(x)=(x-2)(x+3), p(x)=0 at x=2 and -3; these are horizontal intercepts of its graph. Factored form reveals zeros, but a sketch also depends on degree and the leading coefficient.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find the zeros and vertical intercept of p(x)=(x-2)(x+3). Answer: Zeros -3 and 2; y-intercept -6."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Set each factor to zero: x=2 or -3; evaluate p(0)=-2*3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Zeros of factored polynomials",
+          "Question": "Find the zeros and vertical intercept of p(x)=(x-2)(x+3).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Set each factor to zero: x=2 or -3",
+            "evaluate p(0)=-2*3."
+          ],
+          "Answer": "Zeros -3 and 2; y-intercept -6.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find zeros of 2(x+4)(x-1), and evaluate at x=0.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Zeros -4 and 1; value -8.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Zeros of factored polynomials",
+        "A product is zero if any factor is zero. For p(x)=(x-2)(x+3), p(x)=0 at x=2 and -3; these are horizontal intercepts of its graph. Factored form reveals zeros, but a sketch also depends on degree and the leading coefficient.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
