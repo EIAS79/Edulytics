@@ -95,12 +95,12 @@
       "Original source exercise 52(b) exact numerical root is not supplied by the printed image; teacher must not confuse the first-party x=7 answer with original source exactness."
     ],
     "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
-    "PracticeReady": "STAGE_C_AUTHORING_EIGHT_FAMILY_REUSE_AND_92_TEACHER_REVIEW_CONTRACTS_SOURCE_SEMANTIC_PARITY_OPEN",
+    "PracticeReady": "STAGE_C_AUTHORING_COMPLETE_92_TEACHER_SCORABLE_TASKS_8_REUSED_OR_EXTENDED_FAMILY_CONTRACTS_TESTS_WRITTEN_NOT_RUN",
     "Tests": "WRITTEN_NOT_RUN",
     "StageD": "NOT_RUN",
     "ExerciseRoutingManifestPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
     "ExerciseRoutingCount": 92,
-    "ExerciseRoutingStatus": "ALL_92_SOURCE_SKILLS_MAPPED_TO_EIGHT_REUSED_OR_EXTENDED_ANALOGUE_FAMILIES_AND_TEACHER_REVIEW; RUNTIME_NOT_VERIFIED",
+    "ExerciseRoutingStatus": "ALL_92_SOURCE_LEARNING_TASKS_TEACHER_LED_AND_PRECISE_FAMILY_REUSE_MAPPED; RUNTIME_TO_STAGE_D",
     "ExerciseRoutingGroups": [
       {
         "Category": "VERBAL_DEFINITIONS",
@@ -162,7 +162,8 @@
       "TEACHER_LED_GRAPH_WINDOW_REQUIRED": 12,
       "TEACHER_LED_CONTEXT_AND_UNITS": 4,
       "PARTIAL_INJECTIVITY_PLUS_TEACHER_PROOF": 1
-    }
+    },
+    "SourceExerciseExactAutomaticGrade1To1": 0
   },
   "SchemaVersion": 1,
   "SourceElementVerification": {
@@ -382,5 +383,8 @@
     "Status": "AUTHORING_DELIVERY_AND_TEACHER_ROUTE_WRITTEN_NOT_RUNTIME_VERIFIED",
     "Tests": "WRITTEN_NOT_RUN",
     "SourceTryItSemanticParity": "NOT_CERTIFIED"
-  }
+  },
+  "StageCReadyForStageD": true,
+  "StageDTests": "NOT_RUN",
+  "AuthenticStudentTeacherSubmissionVerified": false
 }
