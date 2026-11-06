@@ -4798,9 +4798,11 @@
       "SourceMathematicsScope": "Applied input-output modeling with units and one-to-one justifications.",
       "DeliveryStatus": "NOT_YET_IMPLEMENTED",
       "SubpartsAndDiagramsFullyReconciled": false,
-      "SourceMathCheck": "Garbage G=f(p) with p in thousands: f(40)=13 tonnes/week; f(5)=2 means 5,000 people generate 2 tonnes/week.",
+      "SourceMathCheck": "Garbage G=f(p), with p measured in thousands of people and G measured in US-source 'tons per week' (not metric tonnes): f(40)=13 tons per week; f(5)=2 means a population of 5,000 produces 2 tons per week.",
       "CandidateReuseFamily": null,
-      "SemanticEdulyticsEquivalenceStatus": "NOT_ASSESSED"
+      "SemanticEdulyticsEquivalenceStatus": "NOT_ASSESSED",
+      "SourceUnitVerification": "ORIGINAL_PDF_PAGE_37_TONS_PER_WEEK_NOT_TONNES",
+      "SourceUnitVerificationEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise88-source-unit-review.md"
     },
     {
       "SourceElementId": "G12-U01-L01-EXERCISE089",
@@ -5184,5 +5186,6 @@
     "Source-specific CCSS mapping is still pending"
   ],
   "Unit": 1,
-  "UpdatedUtc": "2026-11-06T06:48:52.185978+00:00"
+  "UpdatedUtc": "2026-11-06T11:51:15.853Z",
+  "OriginalExercise88SourceUnitCorrected": true
 }
