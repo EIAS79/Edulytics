@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l17-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L17",
+      "CultureCode": "en",
+      "Title": "Comparing Transformations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine what information is needed to sketch a transformation of a function and create its equation. Ask questions to elicit that information.",
+        "A family y=D+A sin(k(x-h)) has amplitude |A|, period2π/|k|, horizontal displacement h and midline D. Ask for missing parameters before claiming a unique model.",
+        "Source activity 17.1: Three Functions: For each pair of graphs, be prepared to describe a transformation from the graph on top to the graph on bottom. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.2: Info Gap: What's the Transformation?: Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.3: Match the Graph: Here is the graph of \\(f(x)=\\cos(x)\\) and the graph of \\(g\\), which is a transformation of \\(f\\). Identify a transformation that takes \\(f\\) to \\(g\\) and write an equation for \\(g\\) in terms of \\(f\\) matching the transformation. Identify at least one other transformation that takes \\(f\\) to \\(g\\) and write an equation for \\(g\\) in terms of \\(f\\) matching the transformation.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here is the graph of a trigonometric function. Which equation has this graph? Select all that apply. \\(y=\\frac{3}{2} \\cos\\left (2\\pi x - \\frac{\\pi}{2}\\right)\\) \\(y=\\text-\\frac{3}{2}\\sin(2\\pi x)\\) \\(y=\\frac{3}{2}\\cos(2\\pi x)\\) \\(y=\\frac{3}{2} \\cos\\left (2\\pi x + \\frac{\\pi}{2}\\right)\\) \\(y=\\frac{3}{2} \\sin(2\\pi x +… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is the graph of a trigonometric function. Which equation has this graph? \\(y=\\frac{1}{2}\\cos(x) + 1\\) \\(y=\\frac{1}{2}\\cos(\\pi \\boldcdot x) + 1\\) \\(y=\\frac{1}{2} \\cos(2\\pi \\boldcdot x) + 1\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of a trigonometric function. Find a trigonometric function \\(f\\) that has this graph. Explain your reasoning. The graph is translated right by \\(\\frac{\\pi}{2}\\) so it has a minimum value at \\(x=0\\), then stretched horizontally so its period is 3 times greater than the period of \\(f\\). Find a… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The function \\(f\\) is given by \\(f(x) = 4 + 2\\sin\\left(\\pi x\\right)\\). The graph of \\(g\\) is the graph of \\(f\\) translated left by \\(\\frac{\\pi}{2}\\) and translated vertically by -1. Which expression defines \\(g\\)? \\(5 + 2\\sin\\left(\\pi x + \\frac{\\pi}{2}\\right)\\) \\(3 + 2\\sin\\left(\\pi x + \\frac{\\pi}{2}\\right)\\) \\(3 +… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here are graphs of trigonometric functions \\(f\\) and \\(g\\). What transformations can be applied to the graph of \\(f\\) to get the graph of \\(g\\)? Make sure to list them in the order they are applied. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The table shows the vertical position of a point at the tip of a windmill blade after the blade has rotated through different angles. The point starts at the location furthest to the right. How long is the windmill blade? Explain how you know. What is the height of the windmill? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The function \\(f\\) is given by \\(f(\\theta) = 6 +5\\cos\\left(\\theta + \\frac{\\pi}{2}\\right)\\). Which of the following are true of \\(f\\)? Select all that apply. The amplitude of \\(f\\) is 6. The function \\(f\\) takes its maximum value when \\(x = 0\\). The midline of \\(f\\) is 6. The graph of \\(f\\) is the same as the graph of… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Give period of y=3cos(2(x-1)). Expected reasoning or answer: π.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Determine a combined trig transformation",
+          "Definition": "A family y=D+A sin(k(x-h)) has amplitude |A|, period2π/|k|, horizontal displacement h and midline D. Ask for missing parameters before claiming a unique model.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For y=-2sin(x+π/3)+1, state amplitude, midline, period and phase shift. Answer: Amplitude2; midline1; period2π; leftπ/3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Determine a combined trig transformation",
+          "Question": "For y=-2sin(x+π/3)+1, state amplitude, midline, period and phase shift.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3."
+          ],
+          "Answer": "Amplitude2; midline1; period2π; leftπ/3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Give period of y=3cos(2(x-1)).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "π.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Determine a combined trig transformation",
+        "A family y=D+A sin(k(x-h)) has amplitude |A|, period2π/|k|, horizontal displacement h and midline D. Ask for missing parameters before claiming a unique model.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
