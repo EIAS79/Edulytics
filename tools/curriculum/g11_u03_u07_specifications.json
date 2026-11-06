@@ -171,5 +171,169 @@
       "Make a monic quadratic with roots ±2i.",
       "x²+4=0."
     ]
+  },
+  "4": {
+    "1": [
+      "Exponential growth and decay",
+      "An exponential model f(t)=a*b^t multiplies by factor b for each unit step. b>1 models growth and 0<b<1 decay. Compare equivalent multiplicative and percentage descriptions.",
+      "Evaluate growth 100*(1.2)^2 and decay 100*(0.8)^2.",
+      "Multiply100 by1.44; or100 by0.64.",
+      "144 and 64.",
+      "An investment starts200 and grows10% each year. What is its value after two years?",
+      "200*1.1^2=242."
+    ],
+    "2": [
+      "Parameters in exponential models",
+      "In f(t)=a*b^t, a=f(0) is initial amount, b is unit-input growth factor, and its percent change is 100(b-1)%. Graphs are discrete or continuous according to context.",
+      "For f(t)=50*(1.1)^t, identify initial value, growth percent, and f(2).",
+      "a=50; factor1.1 is 10% growth; 50*1.21=60.5.",
+      "Initial50; 10% per unit; f(2)=60.5.",
+      "For g(t)=80*(0.75)^t, state initial value and percent decay.",
+      "80 and 25% decay."
+    ],
+    "3": [
+      "Rational inputs to exponentials",
+      "For positive b, exponential f(t)=a*b^t is defined at rational real t, where b^(1/2) is square root b. Half a unit of input produces sqrt(b), not b/2.",
+      "Evaluate 16^(1/2) and interpret it as a half-step growth factor.",
+      "sqrt16=4 and 4*4=16 over two half-steps.",
+      "4.",
+      "Given f(t)=9*4^t, find f(1/2).",
+      "18."
+    ],
+    "4": [
+      "Equal fractional intervals",
+      "If b is full-step growth factor, the multiplier over 1/n time units is b^(1/n), not b/n. For yearly factor1.21 a half-year multiplier is sqrt1.21=1.1.",
+      "A process grows by factor 1.21 per year. What factor applies per half-year?",
+      "Factor r solves r^2=1.21, so r=sqrt1.21.",
+      "1.1.",
+      "An annual factor is 1.44. Find the equal six-month factor.",
+      "1.2."
+    ],
+    "5": [
+      "Multiplicative changes over intervals",
+      "Exponential models have constant multiplicative change across intervals of equal duration even when duration is fractional: f(t+h)/f(t)=b^h. Inputs and valid units matter.",
+      "For f(t)=100*4^t, find factor over half a time unit.",
+      "4^(1/2)=2, independent of starting t.",
+      "2.",
+      "For f(t)=50*9^t, find multiplier over one-third time unit.",
+      "9^(1/3)."
+    ],
+    "6": [
+      "Infer exponential equation from separated inputs",
+      "Given positive outputs f(t1),f(t2), solve b^(t2-t1)=f(t2)/f(t1), then find a=f(t1)/b^t1. Non-unit gaps cannot be treated as successive unit steps.",
+      "An exponential has f(0)=5 and f(2)=45. Find a*b^t.",
+      "a=5; b^2=45/5=9; positive b=3.",
+      "f(t)=5*3^t.",
+      "If f(1)=12 and f(3)=48, find positive factor per unit.",
+      "b^2=48/12=4, hence b=2."
+    ],
+    "7": [
+      "Half-life decay",
+      "A half-life H means multiply by1/2 after H elapsed time units. Model A(t)=A0*(1/2)^(t/H) for t>=0, interpreting units and measurement.",
+      "A substance has half-life8 years and starts100 grams. What remains after24 years?",
+      "Three half-lives elapsed; 100*(1/2)^3.",
+      "12.5 grams.",
+      "A sample starts80 grams and has half-life5 years. Find remaining after15 years.",
+      "10 grams."
+    ],
+    "8": [
+      "Unknown exponent",
+      "An unknown exponent can be found by recognizing powers or comparing a graph. Some equations require a logarithm, which is introduced after observing the inverse operation.",
+      "Solve 2^x=32.",
+      "32=2^5, so x=5.",
+      "x=5.",
+      "Solve 3^t=81.",
+      "t=4."
+    ],
+    "9": [
+      "Definition of logarithm",
+      "For b>0, b!=1 and y>0, log_b(y) is the exponent x such that b^x=y. Logarithms invert exponentials; arguments must be positive.",
+      "Evaluate log_2(32).",
+      "Because 2^5=32, log base2 of32 is5.",
+      "5.",
+      "Evaluate log_3(81).",
+      "4."
+    ],
+    "10": [
+      "Equivalent exponential and log forms",
+      "Statements b^x=y and log_b(y)=x are equivalent if b>0, b!=1, y>0. Swap between forms without changing the base or the unknown.",
+      "Rewrite 10^3=1000 using logarithms.",
+      "Base is10, output1000 and exponent3.",
+      "log_10(1000)=3.",
+      "Rewrite log_5(125)=3 exponentially.",
+      "5^3=125."
+    ],
+    "11": [
+      "Evaluating logs",
+      "Logarithms measure exponents. For b>1, larger positive arguments give larger log values; for 0<b<1 order reverses. Exact powers avoid needless approximations.",
+      "Evaluate log_3(81).",
+      "Since3^4=81, exponent is4.",
+      "4.",
+      "Is log_2(16) bigger than log_2(8)? Find both.",
+      "4>3."
+    ],
+    "12": [
+      "The number e",
+      "The constant e≈2.71828 is the base of natural logarithms and continuous exponential growth. It can be described by the limit (1+1/n)^n as n increases; it is not a variable.",
+      "Approximate e^0 and compare it to e.",
+      "Any nonzero positive base raised to0 is1; e≈2.718.",
+      "e^0=1, e≈2.718.",
+      "What is ln(e)?",
+      "1."
+    ],
+    "13": [
+      "Continuous growth and e",
+      "A model P*e^(rt) has initial amount P and continuous growth rate r per time unit; its one-unit growth factor is e^r and its one-unit percent change is100(e^r-1). A negative r indicates decay.",
+      "For A(t)=200e^(0.1t), find A(0) and one-unit growth factor.",
+      "At t0 exponent0 so initial200; at t1 ratio e^0.1.",
+      "A(0)=200; factor≈1.10517.",
+      "For B(t)=50e^(-0.2t), is it growth or decay?",
+      "Decay; initial50."
+    ],
+    "14": [
+      "Solve exponential equations with ln",
+      "For positive values, e^(kt)=c implies kt=ln(c) and t=ln(c)/k when k!=0. Domain and units must be retained.",
+      "Solve e^(2x)=7.",
+      "Take ln: 2x=ln7; divide by2.",
+      "x=ln7/2.",
+      "Solve e^(3t)=20.",
+      "t=ln20/3."
+    ],
+    "15": [
+      "Graphs and logarithmic solutions",
+      "An exponential curve intersects a horizontal line at the input solving the associated logarithmic equation. For b>0,b!=1, b^t=c gives t=ln(c)/ln(b), c>0.",
+      "Solve 2^t=10 in exact logarithmic form.",
+      "Take natural ln: t*ln2=ln10; divide.",
+      "t=ln10/ln2≈3.32193.",
+      "Solve 5^x=125.",
+      "x=3."
+    ],
+    "16": [
+      "Intersections of exponential models",
+      "To find where two exponential functions agree, set outputs equal and use logarithms to isolate the input. Verify the intersection input and calculate its shared output; interpret whether time can be negative.",
+      "Solve 2^t=3^(t-1).",
+      "t ln2=(t-1)ln3; t(ln3-ln2)=ln3.",
+      "t=ln3/(ln3-ln2).",
+      "Find where 2^t=4*2^(t-2).",
+      "They are identical for every t."
+    ],
+    "17": [
+      "Logarithmic function graphs",
+      "y=log_b(x) is inverse to y=b^x when b>0,b!=1, x>0. The graph passes through (1,0), has vertical asymptote x=0, and is increasing when b>1.",
+      "Identify domain, zero and vertical asymptote of y=log_2(x).",
+      "Argument must be positive; log_2(1)=0; as x→0+ output→-infinity.",
+      "Domain x>0; zero at1; x=0 asymptote.",
+      "Evaluate log_2(1/8).",
+      "-3."
+    ],
+    "18": [
+      "Logarithms in acidity and seismic scales",
+      "Log scales translate multiplicative changes into additive differences. For pH=-log_10([H+]) with concentration measured consistently, [H+]=10^-3 gives pH3. An earthquake magnitude increase of1 corresponds to a tenfold amplitude ratio on a base-ten model.",
+      "A solution has hydrogen-ion concentration10^-3. Find pH.",
+      "pH=-log10(10^-3)=3.",
+      "pH=3.",
+      "Concentrations10^-5 and10^-3: which has lower pH?",
+      "10^-3 gives pH3, lower than pH5."
+    ]
   }
 }
