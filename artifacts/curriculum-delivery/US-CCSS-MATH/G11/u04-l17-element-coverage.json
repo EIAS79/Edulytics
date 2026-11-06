@@ -1,0 +1,436 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L17",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "8c8f0c6b58df73069b290d4be3116370afee2c29ae3f0277fd91c2d4e8915afb",
+    "teacher/index.html": "840e390251ed3353fa01f3d6865f04081bd89f30824e2723e470eec86ae56bf3",
+    "teacher/practice.html": "0013674e881cad0a619fd47e6265d5099cfc5dbf4cf222d0a4353fcb5e59c8fa",
+    "student/index.html": "06cffec9188be5bed9144961d11867a3ecf1694bc8bfd9f6e9bf011a509dd006",
+    "student/practice.html": "5bd0d78ff398435c05dfe6de3332455589c1bfad1c0556562aba4df7acfe7602"
+  },
+  "Goals": [
+    "Create graphs of logarithmic functions and use them to answer questions.",
+    "Describe (orally and in writing) characteristics of logarithmic functions."
+  ],
+  "ElementCount": 52,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-001",
+      "SourceSection": "17.1: Which One Doesn’t Belong: Functions",
+      "SourceExcerpt": "Which one doesn’t belong? Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-002",
+      "SourceSection": "17.1: Which One Doesn’t Belong: Functions",
+      "SourceExcerpt": "\\(f(x) = 4 \\boldcdot (0.75)^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-003",
+      "SourceSection": "17.1: Which One Doesn’t Belong: Functions",
+      "SourceExcerpt": "\\(g(x) = 4 \\boldcdot e^{(0.75x)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-004",
+      "SourceSection": "17.1: Which One Doesn’t Belong: Functions",
+      "SourceExcerpt": "\\(h(x) = (0.75) \\boldcdot 4^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-005",
+      "SourceSection": "17.1: Which One Doesn’t Belong: Functions",
+      "SourceExcerpt": "\\(j(x) = 4 \\boldcdot \\log x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-006",
+      "SourceSection": "17.2: How Long Will It Take?",
+      "SourceExcerpt": "A colony of 1,000 bacteria doubles in population every hour.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-007",
+      "SourceSection": "17.2: How Long Will It Take?",
+      "SourceExcerpt": "Explain why we can write \\(h = \\log_{2}{x}\\) to represent the number of hours, \\(h\\), it takes for the one thousand bacteria to reach a population of \\(x\\) thousand.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-008",
+      "SourceSection": "17.2: How Long Will It Take?",
+      "SourceExcerpt": "Complete the table with the corresponding values of \\(h\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-009",
+      "SourceSection": "17.2: How Long Will It Take?",
+      "SourceExcerpt": "Plot the pairs of values on the coordinate plane. Make two observations about the graph.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-010",
+      "SourceSection": "17.2: How Long Will It Take?",
+      "SourceExcerpt": "Use the graph to estimate the missing values in the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-011",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Earlier we saw that \\(h = \\log_2 x\\) represents the number of hours for 1 thousand bacteria, doubling every hour, to reach a population of \\(x\\), in thousands.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-012",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Suppose the function \\(d\\), defined by \\(d(x) = \\log_{10} x\\), represents the number of days it takes 1 thousand of another species of bacteria to reach a population of \\(x\\), in thousands. How is this population of bacteria growing?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-013",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Graph \\(d\\) using graphing technology. Make two observations about the graph.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-014",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Use your graph to estimate the values of \\(d(50)\\) and \\(d(20,\\!000)\\). (Adjust your graphing window as needed.) Explain what each value means in this situation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-015",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Estimate or find the population after 5 days.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-016",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Without graphing, how do you think the graphs of the equations \\(y =\\log_2(x)\\) and \\(y = \\log_{10}(x)\\) compare? Do they ever meet?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-017",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Graph both equations on the same axes to test your conjectures.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-018",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Earlier we have studied exponential relationships where the input values are the exponent in the function. Sometimes we want to express an exponential relationship where the values we want to find, the outputs, are the exponents. A…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-019",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "For example: Suppose the population of a town starts at one thousand and doubles every decade since first measured. We can write \\(P = 1 \\boldcdot 2^d\\) or \\(P = 2^d\\) to represent the population, in thousands, after \\(d\\) decades.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-020",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "But if we want to know how long, in decades, it would take to reach certain population sizes, in thousands, we can write a logarithmic function \\(\\displaystyle d = \\log_2 P\\). In this function, the input is \\(P\\), population in thousands,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-021",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "We can use the graph to estimate the answer to a question such as, “How many decades will it take for the population to reach a million?” In this case, the answer is about 10 decades, because one million is 1,000 thousands and \\(\\log_2…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-022",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "Suppose the population of that town expands by a factor of 10 every decade instead of by a factor of 2. The function representing the time it takes to reach a certain population, in thousands, would be \\(\\displaystyle d = \\log_{10} P\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-023",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "From the graph, we can see that it takes only 3 decades to reach 1,000 thousands, because \\(\\log_{10} 1,\\!000=3\\) (or \\(10^3 = 1,\\!000\\)).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-024",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "A logarithmic function is a constant multiple of a logarithm to some base, so it is a function given by \\(f(x) = k \\log_{a}(x)\\) where \\(k\\) is any number and \\(a\\) is a positive number (10, 2, or \\(e\\) in this course). The graph of a…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-ACTIVITY-025",
+      "SourceSection": "17.3: Another Logarithmic Function",
+      "SourceExcerpt": "logarithmic function",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The relationship between a bacteria population \\(p\\), in thousands, and time \\(d\\), in days, since it was measured to be 1,000 can be represented by the equation \\(d = \\log_2 p\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Select all statements that are true about the situation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Each day, the bacteria population grows by a factor of 2.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The equation \\(p = 2^d\\) also defines the relationship between the population in thousands and time in days.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-005",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The population reaches 7,000 after \\(\\log_2 7,\\!000\\) days.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-006",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The expression \\(\\log_2 10\\) tells us when the population reaches 10,000.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-007",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The equation \\(d = \\log_2 p\\) represents a logarithmic function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-008",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The equation \\(7 = \\log_2 128\\) tells us that the population reaches 128,000 in 7 days.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-009",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Here is the graph of a logarithmic function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-010",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "What is the base of the logarithm? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-011",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Match each equation with a graph that represents it.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-012",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(f(x) = \\log_{2}{x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-013",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(g(x) = \\log_{10}{x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-014",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(h(x) = \\log_{5}{x}\\)​​",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The graph represents the cost of a medical treatment, in dollars, as a function of time, \\(d\\), in decades since 1978.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-016",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The expression \\(150 \\boldcdot (1.35)^3\\) represents the cost of the medical treatment sometime after 1978. Which year does it represent?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-017",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The equation \\(A(w) = 180 \\boldcdot e^{(0.01w)}\\) represents the area, in square centimeters, of a wall covered by mold as a function of \\(w\\), time in weeks since the area was measured.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-018",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Explain or show that we can approximate the area covered by mold in 8 weeks by multiplying \\(A(7)\\) by 1.01.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Solve each equation without using a calculator. Some solutions will need to be expressed using log notation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-020",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(10^{(n-3)} = 10\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-021",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(\\frac12 \\boldcdot 10^x = 0.05\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-022",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(10^{\\frac13 t} = 100\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-023",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Technology required. The population of Mali can be represented by \\(m(t)= 17 \\boldcdot e^{(0.03t)}\\). The population of Saudi Arabia can be represented by \\(s(t) = 31 \\boldcdot e^{(0.015t)}\\). In both models, \\(t\\) represents years since…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-024",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Which country had a higher population in 2014? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-025",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Which country has a higher growth rate? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-026",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Use graphing technology to graph both equations on the same axes.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L17-PRACTICE-027",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Do the two graphs intersect? If so, estimate their point of intersection and explain what it means in this situation. If not, explain what it means that the two graphs don’t intersect.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l17.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l17-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L17",
+      "CultureCode": "en",
+      "Title": "Logarithmic Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create graphs of logarithmic functions and use them to answer questions. Describe (orally and in writing) characteristics of logarithmic functions.",
+        "y=log_b(x) is inverse to y=b^x when b>0,b!=1, x>0. The graph passes through (1,0), has vertical asymptote x=0, and is increasing when b>1.",
+        "Source activity 17.1: Which One Doesn’t Belong: Functions: Which one doesn’t belong? Be prepared to explain your reasoning. \\(f(x) = 4 \\boldcdot (0.75)^x\\) \\(g(x) = 4 \\boldcdot e^{(0.75x)}\\) \\(h(x) = (0.75) \\boldcdot 4^x\\) \\(j(x) = 4 \\boldcdot \\log x\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.2: How Long Will It Take?: A colony of 1,000 bacteria doubles in population every hour. Explain why we can write \\(h = \\log_{2}{x}\\) to represent the number of hours, \\(h\\), it takes for the one thousand bacteria to reach a population of \\(x\\) thousand. Complete the table with the corresponding values of \\(h\\). Plot the pairs of values on the coordinate plane. Make two observations about the graph. Use… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.3: Another Logarithmic Function: Earlier we saw that \\(h = \\log_2 x\\) represents the number of hours for 1 thousand bacteria, doubling every hour, to reach a population of \\(x\\), in thousands. Suppose the function \\(d\\), defined by \\(d(x) = \\log_{10} x\\), represents the number of days it takes 1 thousand of another species of bacteria to reach a population of \\(x\\), in thousands. How is this population of… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The relationship between a bacteria population \\(p\\), in thousands, and time \\(d\\), in days, since it was measured to be 1,000 can be represented by the equation \\(d = \\log_2 p\\). Select all statements that are true about the situation. Each day, the bacteria population grows by a factor of 2. The equation \\(p = 2^d\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is the graph of a logarithmic function. What is the base of the logarithm? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Match each equation with a graph that represents it. \\(f(x) = \\log_{2}{x}\\) \\(g(x) = \\log_{10}{x}\\) \\(h(x) = \\log_{5}{x}\\)​​ Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The graph represents the cost of a medical treatment, in dollars, as a function of time, \\(d\\), in decades since 1978. The expression \\(150 \\boldcdot (1.35)^3\\) represents the cost of the medical treatment sometime after 1978. Which year does it represent? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The equation \\(A(w) = 180 \\boldcdot e^{(0.01w)}\\) represents the area, in square centimeters, of a wall covered by mold as a function of \\(w\\), time in weeks since the area was measured. Explain or show that we can approximate the area covered by mold in 8 weeks by multiplying \\(A(7)\\) by 1.01. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Solve each equation without using a calculator. Some solutions will need to be expressed using log notation. \\(10^{(n-3)} = 10\\) \\(\\frac12 \\boldcdot 10^x = 0.05\\) \\(10^{\\frac13 t} = 100\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Technology required. The population of Mali can be represented by \\(m(t)= 17 \\boldcdot e^{(0.03t)}\\). The population of Saudi Arabia can be represented by \\(s(t) = 31 \\boldcdot e^{(0.015t)}\\). In both models, \\(t\\) represents years since 2014 and the populations are measured in millions. Which country had a higher… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate log_2(1/8). Expected reasoning or answer: -3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Logarithmic function graphs",
+          "Definition": "y=log_b(x) is inverse to y=b^x when b>0,b!=1, x>0. The graph passes through (1,0), has vertical asymptote x=0, and is increasing when b>1.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Identify domain, zero and vertical asymptote of y=log_2(x). Answer: Domain x>0; zero at1; x=0 asymptote."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Argument must be positive; log_2(1)=0; as x→0+ output→-infinity."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Logarithmic function graphs",
+          "Question": "Identify domain, zero and vertical asymptote of y=log_2(x).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Argument must be positive",
+            "log_2(1)=0",
+            "as x→0+ output→-infinity."
+          ],
+          "Answer": "Domain x>0; zero at1; x=0 asymptote.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate log_2(1/8).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Logarithmic function graphs",
+        "y=log_b(x) is inverse to y=b^x when b>0,b!=1, x>0. The graph passes through (1,0), has vertical asymptote x=0, and is increasing when b>1.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
