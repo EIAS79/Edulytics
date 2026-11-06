@@ -1,0 +1,300 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L09",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "5269f09b81594996de32b14935938186b0e833d3665f2765470491f82364c9b3",
+    "teacher/index.html": "f9a5225e1b668b5a804c607d3e8679cf7058b156e25958f4ee5d7bd66fee1bd5",
+    "teacher/practice.html": "8a24fdaacbe8c17ec2e1e242d952df8ec571cbe91123a62bb6a3f0e8e5744526",
+    "student/index.html": "9d78eb0c4d83b90835d2c97c71b5d75f25439169ef0672bc7f3705308abf8dce",
+    "student/practice.html": "ed9d2a2a187655060ad4fc020ec46ca812b9c93d45fa6ffe1374582da95521c7"
+  },
+  "Goals": [
+    "Calculate the scale factor $k$ needed to transform the input of a function to fit a situation.",
+    "Describe (orally and in writing) the effect of a scale factor on the input of a function."
+  ],
+  "ElementCount": 35,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-001",
+      "SourceSection": "9.1: Out and Back",
+      "SourceExcerpt": "Every weekend, Elena takes a walk along the straight road in front of her house for 2 miles, then turns around and comes back home. Let’s assume Elena walks at a constant speed.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-002",
+      "SourceSection": "9.1: Out and Back",
+      "SourceExcerpt": "Attribution: Straight Road, by pxhere. Public Domain. pxhere. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-003",
+      "SourceSection": "9.1: Out and Back",
+      "SourceExcerpt": "Here is a graph of the function \\(f\\) that gives her distance \\(f(t)\\), in miles, from home as a function of time \\(t\\) if she walks 2 miles per hour.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-004",
+      "SourceSection": "9.1: Out and Back",
+      "SourceExcerpt": "Sketch a graph of the function \\(g\\) that gives her distance \\(g(t)\\), in miles, from home as a function of time \\(t\\) if she walks 4 miles per hour.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-005",
+      "SourceSection": "9.1: Out and Back",
+      "SourceExcerpt": "Write an equation for \\(g\\) in terms of \\(f\\). Be prepared to explain why your equation makes sense.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-006",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "Remember Clare on the Ferris wheel? In the table, we have the function \\(F\\) which gives her height \\(F(t)\\) above the ground, in feet, \\(t\\) seconds after starting her descent from the top. Today Clare tried out two new Ferris wheels.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-007",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "The first wheel is twice the height of \\(F\\) and rotates at the same speed. The function \\(g\\) gives Clare's height \\(g(t)\\), in feet, \\(t\\) seconds after starting her descent from the top.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-008",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "The second wheel is the same height as \\(F\\) but rotates at half the speed. The function \\(h\\) gives Clare's height \\(h(t)\\), in feet, \\(t\\) seconds after starting her descent from the top.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-009",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "Complete the table for the function \\(g\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-010",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "Explain why there is not enough information to find the exact values for \\(h(20)\\) and \\(h(60)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-011",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "Complete as much of the table as you can for the function \\(h\\), modeling Claire's height on the second Ferris wheel.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-012",
+      "SourceSection": "9.2: A New Set of Wheels",
+      "SourceExcerpt": "Express \\(g\\) and \\(h\\) in terms of \\(f\\). Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-013",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "Function \\(k\\) is a transformation of function \\(P\\) due to a scale factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-014",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "Write an equation for \\(k\\) in terms of \\(P\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-015",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "On the same axes, graph the function \\(m\\) where \\(m(x)=P(0.75x)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-016",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "The highest point on the graph of \\(P\\) is \\((1,2)\\). What is the highest point on the graph of a function \\(n\\) where \\(n(x)=P(5x)\\)? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-017",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "The point furthest to the right on the graph of \\(P\\) is \\((4,0)\\). If the point furthest to the right on the graph of a function \\(q\\) is \\((18,0)\\), write a possible equation for \\(q\\) in terms of \\(P\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-018",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "What transformation takes \\(f(x)=2x(x-4)\\) to \\(g(x)=8x(x-2)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-019",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "Here are two graphs showing the distance traveled by two trains \\(t\\) hours into their journeys. What do you notice?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-020",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "Where Train A traveled 25 miles in 1 hour, Train B traveled 25 miles in half the time. Similarly, Train A traveled 150 miles in 4 hours while Train B traveled 150 miles in only 2 hours. Train B is traveling twice the speed of Train A.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-021",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "A train travelling twice the speed gets to any particular point along the track in half the time, so the graph for Train B is compressed horizontally by a factor of \\(\\frac12\\) when compared to the graph of Train A. If the function…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-ACTIVITY-022",
+      "SourceSection": "9.3: The Many Transformations of a Function $P$",
+      "SourceExcerpt": "If a different Train C were going one fourth the speed of Train A, then its motion would be represented by \\(s = f(0.25t)\\) and the graph would be stretched horizontally by a factor of 4 since it would take four times as long to travel the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Here are graphs of functions \\(f\\) and \\(g\\). For each, determine the value of \\(k\\) so that \\(g(x)=f(kx)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Let \\(f(x) = x(x-5)(x+2)(x+5)\\). Decide if the reasoning about each of the following functions is correct. Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Andre says that \\(g(x) = 0.1x(0.1x-5)(0.1x+2)(0.1x+5)\\) is obtained from \\(f\\) by scaling the inputs by a factor of 0.1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Clare says this graph is a vertical shift of the graph of \\(f\\) down 100 units.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Diego says the graph of \\(k(x) = \\text-x(x-5)(x+2)(x+5)\\) is the reflection of the graph of \\(f\\) over the \\(y\\)-axis.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "A bacteria population, in thousands, is modeled by the function \\(f(d) = 30 \\boldcdot 2^d\\) where \\(d\\) is the number of days since it was first measured. The function \\(g\\) gives the bacteria population, in thousands, \\(w\\) weeks after it…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The height of a hot air balloon, in feet, \\(m\\) minutes after takeoff is modeled by the function \\(f(m) = 16m\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "How many minutes does it take for the balloon to reach 200 feet?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Another balloon takes off 5 minutes later and rises at the same speed. Write an equation for the function \\(g\\), where \\(g(t)\\) is the height, in feet, of this balloon in terms of \\(m\\). Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Sketch graphs of the two functions \\(f\\) and \\(g\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Here is the graph of a function \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Reflecting \\(f\\) across the \\(x\\)-axis and then across the vertical line \\(y=1\\) takes the graph of \\(f\\) back to itself. Tyler says that this means \\(f\\) is an odd function. Do you agree with Tyler? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L09-PRACTICE-013",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The population of sloths in an area has been increasing by 5% each year since 2000. Let \\(P\\) model the population \\(P(t)\\), in thousands, of sloths \\(t\\) years after the year 2000. The graph of \\(p(t) = 1.05^t\\) has a general shape that…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
