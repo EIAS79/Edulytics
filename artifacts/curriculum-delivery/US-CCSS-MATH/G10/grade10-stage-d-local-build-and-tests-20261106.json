@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "testEnvironment": "owner Windows Our-CS authorized worktree; no production writes",
+  "candidateSha": "ea94f9a891f657dae83e30fed9b2ff0d97234f10",
+  "sdk": "10.0.200 isolated at C:/Temp/dotnet-pinned-g10",
+  "recordedAtUtc": "2026-11-06T00:13:27.469490+00:00",
+  "node": {
+    "testFiles": 133,
+    "tests": 885,
+    "passed": 885,
+    "failed": 0,
+    "status": "PASS",
+    "logSha256": "d5a87c4c8e351e36444c4b1735527a2dc5d4ed7996c818eafa75733acf86a056"
+  },
+  "dotnet": {
+    "tests": 121,
+    "passed": 121,
+    "failed": 0,
+    "status": "PASS",
+    "scope": "FullyQualifiedName~Geometry|FullyQualifiedName~UsCcssGeo|FullyQualifiedName~Grade10",
+    "logSha256": "7ea5eb0b8cf9fd6661198ce57b6732843bd6f88cd10976171b1d147506df4d30"
+  },
+  "fixtureBuild": {
+    "projects": [
+      "Edulytics.Core",
+      "Edulytics.Services",
+      "Edulytics.Data",
+      "Edulytics.Web",
+      "Edulytics.CiFixtures"
+    ],
+    "warnings": 0,
+    "errors": 0,
+    "status": "PASS",
+    "logSha256": "532352258d16b3a138b796a4df836500ad3297c02c49620d74c277cb7aca975f"
+  },
+  "notVerified": [
+    "GitHub Actions exact latest code SHA",
+    "124 authenticated learner pages and teacher sessions",
+    "lesson-specific practice and manual rubric grading persistence",
+    "source asset rights",
+    "production release"
+  ]
+}

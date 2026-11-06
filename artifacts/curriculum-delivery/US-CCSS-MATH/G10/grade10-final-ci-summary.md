@@ -16,3 +16,5 @@
 - PR: https://github.com/EIAS79/Edulytics/pull/583
 
 Latest reviewed source-visual audit: 65 RichV2 structured visuals with zero external visual URLs; this is not graphic/semantic equivalence. Some learner-facing lesson paragraphs still include internal source/editorial notes.
+
+Local latest candidate `ea94f9a891f657dae83e30fed9b2ff0d97234f10`: 133 Geometry Node files = 885/885 PASS; .NET 121/121 targeted PASS; pinned SDK 10.0.200 CiFixtures/Web build PASS 0 warnings/errors. See `grade10-stage-d-local-build-and-tests-20261106.json`. These are not authenticated runtime or final GitHub checks.
