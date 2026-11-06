@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l11-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L11",
+      "CultureCode": "en",
+      "Title": "Introducing the Number $i$",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that the symbol “$i$” means the positive square root of -1 and that an imaginary number is a real number times $i$. Represent solutions to equations using $i$ and the complex plane.",
+        "A complex value a+bi corresponds to point (a,b); the horizontal component is real, vertical imaginary and i²=-1.",
+        "Source activity 11.1: Math Talk: Squared: Find the value of each expression mentally. \\(\\left(2\\sqrt{3}\\right)^2\\) \\(\\left(\\frac12 \\sqrt{3}\\right)^2\\) \\(\\left(2\\sqrt{\\text- 1}\\right)^2\\) \\(\\left(\\frac12 \\sqrt{\\text- 1}\\right)^2\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.2: It is $i$: Find the solutions to these equations, then plot the solutions to each equation on the imaginary or real number line. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.3: The $i$’s Have It: Write these imaginary numbers using the number \\(i\\). \\(\\sqrt{\\text- 36}\\) \\(\\sqrt{\\text- 10}\\) \\(\\text- \\sqrt{\\text- 100}\\) \\(\\text- \\sqrt{\\text- 17}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.4: Complex Numbers: Label at least 8 different imaginary numbers on the imaginary number line. When we add a real number and an imaginary number, we get a complex number. The diagram shows where \\(2 + i\\) is in the complex number plane. What complex number is represented by point \\(A\\)? Plot these complex numbers in the complex number plane and label them. Diego says that all real numbers and all… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Which point represents the complex number \\(\\text-3 + 2i\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Match each expression to an equivalent expression. \\(2i \\boldcdot 8i\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Diego squared a number and got 4. Andre squared a different number and got 4. What were the numbers that Diego and Andre squared? Jada squared a number and got -4. Elena squared a different number and got -4. What were the numbers that Jada and Elena squared? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Find all solutions to each equation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Find the exact solution(s) to each of these equations, or explain why there is no solution. \\(\\sqrt[3]{a+2}=4\\) \\(\\sqrt[3]{b} +5 = 4\\) \\(\\sqrt[3]{c-1}-14=\\text-4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Explain how you know that \\(\\sqrt{\\text-1}\\) is not a negative number. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve x²=-16 over complex numbers. Expected reasoning or answer: x=±4i.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Imaginary axis and complex plane",
+          "Definition": "A complex value a+bi corresponds to point (a,b); the horizontal component is real, vertical imaginary and i²=-1.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Plot 2+3i and evaluate (3i)². Answer: (2,3) and -9"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Point coordinates2,3; (3i)²=9i²=-9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Imaginary axis and complex plane",
+          "Question": "Plot 2+3i and evaluate (3i)².",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Point coordinates2,3",
+            "(3i)²=9i²=-9."
+          ],
+          "Answer": "(2,3) and -9",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve x²=-16 over complex numbers.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=±4i.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Imaginary axis and complex plane",
+        "A complex value a+bi corresponds to point (a,b); the horizontal component is real, vertical imaginary and i²=-1.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
