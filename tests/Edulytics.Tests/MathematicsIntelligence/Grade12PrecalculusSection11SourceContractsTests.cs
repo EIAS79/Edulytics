@@ -47,7 +47,7 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Equal("Functions and Function Notation", lesson.Title);
         Assert.Equal(16, lesson.WorkedExamples.Count);
         Assert.True(lesson.KeyConcepts.Count >= 8);
-        Assert.Equal(7, lesson.Visuals.Count);
+        Assert.Equal(21, lesson.Visuals.Count);
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Vertical-line test",
             StringComparison.Ordinal));
         Assert.Contains(lesson.Visuals, visual =>
@@ -65,6 +65,11 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Contains(lesson.Visuals, visual =>
             visual.Title == "Vertical-line test of overlapping horizontal rays" &&
             visual.Items.Any(item => item.Contains("0<x<2", StringComparison.Ordinal)));
+        Assert.Equal(14, lesson.Visuals.Count(visual =>
+            visual.Title.StartsWith("Source-skill table ", StringComparison.Ordinal)));
+        Assert.Contains(lesson.Visuals, visual =>
+            visual.Title == "Source-skill table 14: Exercise input–output table" &&
+            visual.Rows.Count == 2 && visual.Rows[1].Cells.Count == 10);
         Assert.All(lesson.WorkedExamples, example =>
         {
             Assert.True(example.Steps.Count >= 3);

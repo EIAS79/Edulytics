@@ -1,5 +1,5 @@
 {
-  "ContentVersion": "g12-u01-l01-16-first-party-examples-7-visuals-tabular-lookup-20261106",
+  "ContentVersion": "g12-section11-21-first-party-visuals-including-14-source-skill-tables-20261106",
   "Lessons": [
     {
       "CommonMistakes": [
@@ -328,6 +328,478 @@
               ],
               "Numerator": 0,
               "Denominator": 0
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 1: Grade bands",
+          "Description": "A fixed grading scale maps each percentage interval to exactly one GPA; many percentages share one GPA.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Percentage",
+              "Cells": [
+                "0–56",
+                "57–61",
+                "62–66",
+                "67–71",
+                "72–77",
+                "78–86",
+                "87–91",
+                "92–100"
+              ]
+            },
+            {
+              "Label": "GPA",
+              "Cells": [
+                "0.0",
+                "1.0",
+                "1.5",
+                "2.0",
+                "2.5",
+                "3.0",
+                "3.5",
+                "4.0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 2: Names mapped to ranks",
+          "Description": "Five distinct historical example names, each paired to exactly one rank. The rank/name direction is functionally invertible within this sample.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Name",
+              "Cells": [
+                "Babe Ruth",
+                "Willie Mays",
+                "Ty Cobb",
+                "Walter Johnson",
+                "Hank Aaron"
+              ]
+            },
+            {
+              "Label": "Rank",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 3: Month lengths in a non-leap year",
+          "Description": "Months 1–12 map to the number of calendar days in a non-leap year. Different months can share the same length.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Month",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12"
+              ]
+            },
+            {
+              "Label": "Days",
+              "Cells": [
+                "31",
+                "28",
+                "31",
+                "30",
+                "31",
+                "30",
+                "31",
+                "31",
+                "30",
+                "31",
+                "30",
+                "31"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 4: Repeated numeric outputs",
+          "Description": "Inputs 1 through 5 have exactly one output each even though outputs 8 and 6 repeat at other inputs.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "n",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Q",
+              "Cells": [
+                "8",
+                "6",
+                "7",
+                "6",
+                "8"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 5: Age–height nonfunction relation",
+          "Description": "The age 5 appears twice with distinct output heights 40 and 42 inches, so the tabulated relation is not a function.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Age (years)",
+              "Cells": [
+                "5",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+              ]
+            },
+            {
+              "Label": "Height (inches)",
+              "Cells": [
+                "40",
+                "42",
+                "44",
+                "47",
+                "50",
+                "52",
+                "54"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 6: Function table A",
+          "Description": "Each listed input has one output; all inputs and outputs are distinct.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "2",
+                "5",
+                "8"
+              ]
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "1",
+                "3",
+                "6"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 7: Function table B",
+          "Description": "Input/output relation is a function but is not one-to-one, since two different inputs yield 5.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "−3",
+                "0",
+                "4"
+              ]
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "5",
+                "1",
+                "5"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 8: Nonfunction table",
+          "Description": "Input 5 repeats with conflicting outputs 2 and 4; this table is not a function.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "1",
+                "5",
+                "5"
+              ]
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "0",
+                "2",
+                "4"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 9: Exponential-looking lookup table",
+          "Description": "Each input 1, 2, 3 has exactly one output, 10, 100, 1000.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "10",
+                "100",
+                "1000"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 10: Animal memory-hour lookup",
+          "Description": "Real-world example categories map to an hours figure in the source's illustrative data; each category has one value.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "Puppy",
+                "Adult dog",
+                "Cat",
+                "Goldfish",
+                "Betta fish"
+              ]
+            },
+            {
+              "Label": "Hours",
+              "Cells": [
+                "0.008",
+                "0.083",
+                "16",
+                "2160",
+                "3600"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 11: Evaluate and invert a finite table",
+          "Description": "For g(n) use the column for n=3 to evaluate, and find both input columns with output 6.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "n",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "g(n)",
+              "Cells": [
+                "8",
+                "6",
+                "7",
+                "6",
+                "8"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 12: Letter grade as one-to-one function",
+          "Description": "Four distinct letter inputs have four different decimal point outputs.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Letter",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            {
+              "Label": "Points",
+              "Cells": [
+                "4.0",
+                "3.0",
+                "2.0",
+                "1.0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 13: Basic toolkit functions",
+          "Description": "Reference for nine common function families; separate authentic graph and sample table representations are still required for full visual parity.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "Family",
+              "Cells": [
+                "Constant",
+                "Identity",
+                "Absolute value",
+                "Quadratic",
+                "Cubic",
+                "Reciprocal",
+                "Reciprocal squared",
+                "Square root",
+                "Cube root"
+              ]
+            },
+            {
+              "Label": "Formula",
+              "Cells": [
+                "f(x)=c",
+                "f(x)=x",
+                "f(x)=|x|",
+                "f(x)=x²",
+                "f(x)=x³",
+                "f(x)=1/x",
+                "f(x)=1/x²",
+                "f(x)=√x",
+                "f(x)=∛x"
+              ]
+            },
+            {
+              "Label": "Real domain",
+              "Cells": [
+                "all real",
+                "all real",
+                "all real",
+                "all real",
+                "all real",
+                "x≠0",
+                "x≠0",
+                "x≥0",
+                "all real"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Source-skill table 14: Exercise input–output table",
+          "Description": "Graph and arithmetic lookup: f(3)=53, while f(x)=1 in the displayed table occurs only at x=2.",
+          "PrimaryLabel": "Input / category",
+          "SecondaryLabel": "Output / mapping",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "Label": "f(x)",
+              "Cells": [
+                "74",
+                "28",
+                "1",
+                "53",
+                "56",
+                "3",
+                "36",
+                "45",
+                "14",
+                "47"
+              ]
             }
           ],
           "Items": [],
