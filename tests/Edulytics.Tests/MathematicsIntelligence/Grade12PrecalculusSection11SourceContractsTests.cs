@@ -182,6 +182,27 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void Grade12FirstPartyExerciseBankMapsAllOriginalNumberedTasks()
+    {
+        var tasks = Grade12PrecalculusSection11Exercises.All;
+        Assert.Equal(92, tasks.Count);
+        Assert.Equal(Enumerable.Range(1, 92), tasks.Select(x => x.Number));
+        Assert.All(tasks, item =>
+        {
+            Assert.False(string.IsNullOrWhiteSpace(item.Skill));
+            Assert.False(string.IsNullOrWhiteSpace(item.Prompt));
+            Assert.NotEqual("AUTOMATICALLY_GRADED", item.ReviewMode);
+        });
+        Assert.Equal(20, tasks.Count(x => x.Number is >= 40 and <= 59 &&
+            x.ReviewMode == "TEACHER_DIAGRAM_REQUIRED"));
+        Assert.Equal(12, tasks.Count(x => x.Number is >= 76 and <= 87 &&
+            x.ReviewMode == "TEACHER_DIAGRAM_REQUIRED"));
+        Assert.Contains("tons/week", tasks[87].Prompt, StringComparison.Ordinal);
+        // Teacher submission persistence, actual figure equivalence and
+        // automated skill grading remain separate A–C gaps.
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

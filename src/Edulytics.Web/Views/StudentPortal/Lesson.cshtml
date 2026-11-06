@@ -1940,6 +1940,34 @@
                 }
             </section>
         }
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities" aria-label="First-party Section 1.1 practice">
+                <h2>Function notation and relations — practice bank</h2>
+                <p>92 first-party practice tasks organized by mathematical skill.
+                   For diagrams and written reasoning, show work to the assigned teacher;
+                   these are not automatically marked and do not replace the original
+                   textbook figures or constitute a completed teacher submission.</p>
+                @foreach (var group in Grade12PrecalculusSection11Exercises.All.GroupBy(x => x.Skill))
+                {
+                    <details class="student-card">
+                        <summary>@group.Key (@group.Count() tasks)</summary>
+                        <ol>
+                            @foreach (var task in group)
+                            {
+                                <li value="@task.Number">
+                                    <strong>Task @task.Number:</strong> @task.Prompt
+                                    @if (task.ReviewMode == "TEACHER_DIAGRAM_REQUIRED")
+                                    {
+                                        <p><em>Teacher-reviewed sketch and mathematical justification required.</em></p>
+                                    }
+                                </li>
+                            }
+                        </ol>
+                    </details>
+                }
+            </section>
+        }
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
