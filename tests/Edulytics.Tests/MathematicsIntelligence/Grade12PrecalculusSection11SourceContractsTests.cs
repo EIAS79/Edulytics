@@ -38,18 +38,26 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
-    public void FirstPartySection11ContentHasFifteenDistinctMathematicalExamples()
+    public void FirstPartySection11ContentHasSixteenMathematicallyDistinctExamples()
     {
         var lesson = RichLessonContentV2Registry.Find(Code, "en");
         Assert.NotNull(lesson);
         Assert.Equal("Functions and Function Notation", lesson.Title);
-        Assert.Equal(15, lesson.WorkedExamples.Count);
+        Assert.Equal(16, lesson.WorkedExamples.Count);
         Assert.True(lesson.KeyConcepts.Count >= 8);
-        Assert.Equal(5, lesson.Visuals.Count);
+        Assert.Equal(6, lesson.Visuals.Count);
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Vertical-line test",
             StringComparison.Ordinal));
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Horizontal-line test",
             StringComparison.Ordinal));
+        // Regression for the source exercise 46 error: separate horizontal
+        // rays with overlapping x-domains can fail the vertical-line test.
+        Assert.Contains(lesson.WorkedExamples, example =>
+            example.Title == "Two horizontal rays with overlapping input domains" &&
+            example.Answer.Contains("not a function", StringComparison.OrdinalIgnoreCase));
+        Assert.Contains(lesson.Visuals, visual =>
+            visual.Title == "Vertical-line test of overlapping horizontal rays" &&
+            visual.Items.Any(item => item.Contains("0<x<2", StringComparison.Ordinal)));
         Assert.All(lesson.WorkedExamples, example =>
         {
             Assert.True(example.Steps.Count >= 3);
