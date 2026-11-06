@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l12-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L12",
+      "CultureCode": "en",
+      "Title": "Arithmetic with Complex Numbers",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine powers of imaginary numbers and represent them on the complex plane. Determine the result of adding complex numbers, and represent it in the form $a+bi$, where $a$ and $b$ are real numbers. Use the complex plane to visualize why the sum of two complex numbers is another complex number.",
+        "Sum real and imaginary components separately. Powers i,i²=-1,i³=-i,i⁴=1 cycle with period four.",
+        "Source activity 12.1: Math Talk: Telescoping Sums: Find the value of these expressions mentally. \\(2 - 2 + 20 - 20 + 200 - 200\\) \\(100 - 50 + 10 - 10 + 50 - 100\\) \\(3 + 2 + 1 + 0 - 1 - 2 - 3\\) \\(1 + 2 + 4 + 8 + 16 + 32 - 16 - 8 - 4 - 2 - 1\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.2: Adding Complex Numbers: How do you see \\(2 + 3i\\) represented? How do you see \\(\\text- 8 - 8i\\) represented? What complex number does \\(A\\) represent? Add “like terms” in the expression \\((2 + 3i) + (\\text- 8 - 8i)\\). What do you get? This diagram represents \\((2 + 3i) + (\\text- 8 - 8i)\\). \\((\\text- 3 + 2i) + (4 - 5i)\\) (Check your work by drawing a diagram.) \\((\\text- 37 - 45i) + (11 + 81i)\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.3: Multiplication on the Complex Plane: Draw points to represent 2, 22, 23, and 24 on the real number line. Write \\(2i\\), \\((2i)^2\\), \\((2i)^3\\), and \\((2i)^4\\) in the form \\(a+bi\\). Plot \\(2i\\), \\((2i)^2\\), \\((2i)^3\\), and \\((2i)^4\\) on the complex plane. If \\(a\\) and \\(b\\) are positive numbers, is it true that \\(\\sqrt{ab}=\\sqrt{a}\\sqrt{b}\\)? Explain how you know. If \\(a\\) and \\(b\\) are negative numbers, is it true… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. You may plot the numbers in the complex plane as a guide. \\(2 \\boldcdot \\sqrt{\\text-4}\\) \\(3i \\boldcdot 2i\\) \\(4 - 3\\sqrt{\\text-1}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which expression is equivalent to \\((3+9i) - (5-3i)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: What are \\(a\\) and \\(b\\) when you write \\(\\sqrt{\\text-16}\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers? \\(a=0\\), \\(b=\\text-4\\) \\(a=\\text-4\\), \\(b=0\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Fill in the boxes to make a true statement: \\(\\displaystyle (\\boxed{\\phantom{30}}-3i) - (15+\\boxed{\\phantom{30}}i) = 7 - 12i\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Plot each number on the real number line, or explain why the number is not on the real number line. \\(\\text- \\sqrt{16}\\) \\(\\sqrt{\\text-16}\\) \\(\\text- 56^{1/2}\\) \\((\\text-56)^{1/2}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which expression is equivalent to \\(\\sqrt{\\text-4}\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate i^7. Expected reasoning or answer: -i.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Complex sums and i-powers",
+          "Definition": "Sum real and imaginary components separately. Powers i,i²=-1,i³=-i,i⁴=1 cycle with period four.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Compute (2+3i)+(4-5i). Answer: 6-2i"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Real sum6, imaginary coefficient-2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complex sums and i-powers",
+          "Question": "Compute (2+3i)+(4-5i).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Real sum6, imaginary coefficient-2."
+          ],
+          "Answer": "6-2i",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate i^7.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-i.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Complex sums and i-powers",
+        "Sum real and imaginary components separately. Powers i,i²=-1,i³=-i,i⁴=1 cycle with period four.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
