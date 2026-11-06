@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L04",
+      "CultureCode": "en",
+      "Title": "Combining Polynomials",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that when polynomials are combined by addition, subtraction, or multiplication, the result is a polynomial. Justify (orally) conclusions about what happens when integers or polynomials are combined using arithmetic operations.",
+        "Sums, differences and products of polynomials remain polynomials. Combine like powers only when adding or subtracting; use distribution when multiplying. Degree of a product generally adds nonzero factor degrees, while addition may cancel leading terms and lower the result degree.",
+        "Source activity 4.1: Notice and Wonder: What Can Happen to Integers: What do you notice? What do you wonder? \\(7 \\boldcdot 9 = 63\\) \\(7 - 9 = \\text-2\\) \\(\\frac{7}{9} = 0.777 \\ldots\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: Experimenting with Integers: Which of these statements are true? Give reasons in support of your answer. If you add two even numbers, you’ll always get an even number. If you subtract an even number from another even number, you’ll always get an even number. If you add two odd numbers, you’ll always get an odd number. If you subtract an odd number from another odd number, you’ll always get an odd number.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Experimenting with Polynomials: Here are some questions about polynomials. You and a partner will work on one of these questions. If you add or subtract two polynomials, will you always get a polynomial? If you multiply two polynomials, will you always get a polynomial? Try combining some polynomials to answer your question. Use the ones given by your teacher or make up your own polynomials. Keep a record of… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here are two expressions whose product is a new expression, \\(A\\). \\(\\displaystyle (5x^4 + \\boxed{\\phantom{33}}x^3)(4x^{\\boxed{\\phantom{3}}} - 6) = A\\) Andre says that any real number can go in either of the boxes and \\(A\\) will be a polynomial. Is he correct? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Lin divides the polynomial \\(2x^2 - 4x + 1\\) by 4 and gets \\(0.5x^2 - x + 0.25\\). Is \\(0.5x^2 - x + 0.25\\) a polynomial? Explain your thinking. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: What is the result when any 2 integers are multiplied? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Clare wants to make an open-top box by cutting out corners of a 30 inch by 25 inch piece of poster board and then folding up the sides. The volume \\(V(x)\\) in cubic inches of the open-top box is a function of the side length \\(x\\) in inches of the square cutouts. Write an expression for \\(V(x)\\). What is a reasonable… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Identify the degree, leading coefficient, and constant value of each of the following polynomials. \\(f(x)=2x^5 - 8 x^2 - x - 6\\) \\(h(x)=x^3 - 7 x^2 - x + 2\\) \\(g(x)=5 x^2-4 x^3 + 2x +5.4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which point is a relative minimum? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Subtract (2x^2+3x-1) from (5x^2-x+4). Expected reasoning or answer: 3x^2-4x+5.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial closure",
+          "Definition": "Sums, differences and products of polynomials remain polynomials. Combine like powers only when adding or subtracting; use distribution when multiplying. Degree of a product generally adds nonzero factor degrees, while addition may cancel leading terms and lower the result degree.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Add x^2+2x and 3x^2-x+1, then multiply x by x+2. Answer: Sum 4x^2+x+1; product x^2+2x."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Group like powers: (1+3)x^2+(2-1)x+1; distribute x."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial closure",
+          "Question": "Add x^2+2x and 3x^2-x+1, then multiply x by x+2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Group like powers: (1+3)x^2+(2-1)x+1",
+            "distribute x."
+          ],
+          "Answer": "Sum 4x^2+x+1; product x^2+2x.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Subtract (2x^2+3x-1) from (5x^2-x+4).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "3x^2-4x+5.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial closure",
+        "Sums, differences and products of polynomials remain polynomials. Combine like powers only when adding or subtracting; use distribution when multiplying. Degree of a product generally adds nonzero factor degrees, while addition may cancel leading terms and lower the result degree.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
