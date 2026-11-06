@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l19-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L19",
+      "CultureCode": "en",
+      "Title": "Beyond Circles",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create a trigonometric function to model data, and use the model to make predictions.",
+        "To model oscillating data, estimate midline (max+min)/2, amplitude (max-min)/2, period and phase. A sine or cosine prediction applies only if the observed periodic pattern supports it.",
+        "Source activity 19.1: Notice and Wonder: Examining Data: Here is some data that we will study in today’s lesson. What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 19.2: Watching the Evening Sky: The data from the warm-up is the amount of the Moon that is visible from a particular location on Earth at midnight for each day in January 2018. A value of 1 represents a full moon in which all of illuminated portion of the moon's face is visible. A value of 0.25 means one fourth of the illuminated portion of the moon's face is visible. What is an appropriate midline for… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The water level \\(f\\), in feet, at a certain beach is modeled by the function \\(f(t) = 2\\sin\\left(\\frac{2\\pi t}{24}\\right)\\), where \\(t\\) is the number of hours since the level was measured. What is the amplitude of the function? What does it mean in this context? What is the period of the function? What does it mean… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The amount of the Moon visible \\(d\\) days after November 30 is modeled by the equation \\(f(d) = 0.5\\cos\\left(\\frac{2\\pi \\boldcdot (d-6)}{30} \\right)+0.5\\). Select all the statements that are true for this model. The model predicts a full moon on December 6. The model predicts that there will be two full moons in… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: One month, the amount of the Moon visible \\(d\\) days after the beginning of the month is modeled by the equation \\(y = 0.5\\cos\\left(\\frac{2\\pi d}{30} - \\frac{\\pi}{4}\\right) + 0.5\\). Explain why the Moon will be full when \\(\\frac{2\\pi d}{30} = \\frac{\\pi}{4}\\). Which day of the month is this? Explain why none of the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The center of a clock is \\((0,0)\\) in a coordinate system, and the hour hand is 8 inches long. It is 10:30 p.m. Which of the following are true of the end of the hour hand? Select all that apply. its coordinates are about \\((\\text-5.7,5.7)\\) its coordinates are about \\((5.7,\\text-5.7)\\) its coordinates are about… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Label these points on the unit circle. \\(Q\\) is the image of \\(P\\) after a \\(\\text-\\frac{\\pi}{6}\\) radian rotation with center \\(O\\). \\(R\\) is the image of \\(P\\) after a \\(\\text-\\frac{\\pi}{2}\\) radian rotation with center \\(O\\). \\(S\\) is the image of \\(P\\) after a \\(\\text-\\frac{4\\pi}{3}\\) radian rotation with center… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The function \\(h\\) given by \\(h(\\theta) = 15 + 4 \\sin(\\theta)\\) models the height, in feet, at the tip of a windmill blade that has rotated through an angle \\(\\theta\\). What is the height of the windmill? Explain how you know. What is the length of the windmill blade? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The vertical position of a seat on a Ferris wheel is described by the function \\(f(t) = 80 \\sin\\left(\\frac{2\\pi t}{30}\\right) + 95\\). Time \\(t\\) is measured in seconds and the output of \\(f\\) is measured in feet. Write an equation describing the vertical position on a Ferris wheel that is the same size as the Ferris… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: Here is the initial position of a bike wheel before it starts to move. The vertical position, in inches, of \\(P\\) is given by \\(y = 10\\boldcdot \\sin\\left(\\frac{\\pi}{2} + 6\\pi s\\right) + 10\\), where \\(s\\) is the number of seconds since the wheel began to move. Select all the true statements. The wheel makes 3… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For h(t)=4+1.5cos(πt/4), give period. Expected reasoning or answer: 8.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Trig model for periodic data",
+          "Definition": "To model oscillating data, estimate midline (max+min)/2, amplitude (max-min)/2, period and phase. A sine or cosine prediction applies only if the observed periodic pattern supports it.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A tide follows h(t)=3+2sin(πt/6). Give period and extreme heights. Answer: Period12; max5; min1."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Amplitude2, midline3, angular frequencyπ/6 gives period12; extrema3±2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Trig model for periodic data",
+          "Question": "A tide follows h(t)=3+2sin(πt/6). Give period and extreme heights.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Amplitude2, midline3, angular frequencyπ/6 gives period12",
+            "extrema3±2."
+          ],
+          "Answer": "Period12; max5; min1.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For h(t)=4+1.5cos(πt/4), give period.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "8.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Trig model for periodic data",
+        "To model oscillating data, estimate midline (max+min)/2, amplitude (max-min)/2, period and phase. A sine or cosine prediction applies only if the observed periodic pattern supports it.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
