@@ -2,7 +2,7 @@
 
 Scope: OpenStax Precalculus local ©2017 PDF revision PR-2015-002(03/17)-BW, 12 chapters, 73 Sections. Local PDF is READ ONLY. Exact_Sources is supplementary; exclude AccessIM/v360, Grade11 Algebra2, HS Fourth Courses and UAE Grade12 from this baseline.
 
-Discovery: the 2026-11-06 main snapshot has no US-CCSS-MATH Grade12 Precalculus Blueprint or RichV2 content. Create only missing independent course parts after inspecting contracts, never relabel other pathways.
+Discovery status: earlier main lacked this route, but PR #626 now contains the 73-Section Grade12 blueprint and one Section 1.1 content draft. Check branch HEAD before creating any missing lessons.
 
 Sequence: read first not-ready lesson from full-grade-progress.json, inspect all original source elements and chapter resources, align Stage A then author/repair Stage B then Stage C, write but DO NOT RUN tests, save element evidence/checkpoint, commit lesson closure before moving to the next. Prefetch whole chapter page ranges without marking future lessons complete.
 
@@ -35,5 +35,13 @@ Draft course now authored: PRECALC/Advanced Precalculus selector at American Gra
 - **Lesson gate:** Verify only the current Section's original elements, first-party content, skill/assessment contracts, accessible representations and rights. Chapter Review / Review Exercises / Practice Test remain **unit-owned shared resources**; reconcile them at U01 unit closure, and attach relevant cross-references to current lessons. Never demand all 80 review exercises and 35 practice-test questions as a prerequisite for **L01 alone**.
 - **Grade-wide gate:** The other 72 Sections' official CCSS mapping is a grade-wide backlog, not an unresolved standard mapping for Section 1.1, whose two formal references were checked already. Do not duplicate checks across every earlier lesson.
 - **Stage D boundary:** Do not require **executed** authenticated student/teacher UI or CI tests in A–B–C. Record those as `B_RUNTIME_UNVERIFIED` and `D_PENDING`; however actual missing content, teacher assessment contracts, source parity, and unserved diagrams remain blockers to `READY_FOR_STAGE_D`.
-- **Counts:** Distinguish original source examples (15 identified in Section 1.1) from first-party authored examples (now 16, including the new overlapping-ray remediation). Rich V2 has 6 first-party table/equation visuals, *not* 6 equivalent graph figures. These figures do not count as source visual parity by themselves.
+- **Counts:** Distinguish original source examples (15 identified in Section 1.1) from first-party authored examples (now 16, including the new overlapping-ray remediation). Rich V2 currently has 21 first-party table/equation visuals. Student code holds 5 teaching graphs and 19 source-skill exercise graph models. These are authored teaching models, not an independently certified source figure 1:1 match. Recompute counts from HEAD.
 - When updating source/assessment/teacher material, stage **one coherent content/test/evidence/checkpoint change** per actual lesson close. Interim correction commits are permissible only for an independently repaired defect; they never advance the sequential cursor. Stage D tests remain written, not run.
+
+
+## Section 1.1 Edulytics original Cool-down handoff
+
+- OpenStax Section 1.1 contains exactly 92 numbered exercises. An Edulytics original Cool-down is a **separate item 93**; it is not an original source problem and does not belong in the 92-item denominator.
+- Its question is stored in u01-l01-assessment.json and Grade12PrecalculusSection11Exercises.CoolDown; the student view links to the G12 scoped teacher-review route.
+- The authored database migration accepts 1 to 93 but is WRITTEN_NOT_APPLIED; authenticated teacher/learner persistence remains Stage D.
+- Do not claim source Cool-down equivalence or completed E2E until verified.

@@ -1,6 +1,7 @@
 @model Edulytics.Web.Controllers.G12PrecalcRubricTeacherPage
 @{ ViewData["Title"] = "Precalculus — teacher assessment"; }
-<h1>Section 1.1, exercise @Model.Submission.ExerciseNumber — teacher assessment</h1>
+<h1>Section 1.1, @(Model.Submission.ExerciseNumber == 93
+    ? "Edulytics original Cool-down" : $"exercise {Model.Submission.ExerciseNumber}") — teacher assessment</h1>
 <p>Student: @Model.Submission.StudentProfileId</p>
 <p>Submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
 <pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>

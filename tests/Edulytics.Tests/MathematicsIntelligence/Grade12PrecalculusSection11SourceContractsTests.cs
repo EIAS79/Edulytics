@@ -195,6 +195,9 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         var tasks = Grade12PrecalculusSection11Exercises.All;
         Assert.Equal(92, tasks.Count);
         Assert.Equal(Enumerable.Range(1, 92), tasks.Select(x => x.Number));
+        Assert.Equal(93, Grade12PrecalculusSection11Exercises.CoolDown.Number);
+        Assert.Contains("one-to-one", Grade12PrecalculusSection11Exercises.CoolDown.Prompt);
+        Assert.Null(Grade12PrecalculusSection11Exercises.Find(94));
         Assert.All(tasks, item =>
         {
             Assert.False(string.IsNullOrWhiteSpace(item.Skill));

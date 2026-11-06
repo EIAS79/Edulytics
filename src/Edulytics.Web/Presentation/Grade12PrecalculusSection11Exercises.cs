@@ -104,4 +104,20 @@ public static class Grade12PrecalculusSection11Exercises
         new(91, "Function interpretation", "Let h(t) be a rocket's height in feet t seconds after launch. Interpret h(1)=200 and h(2)=350 with units.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_REASONING"),
         new(92, "Counterexample to one-to-one", "Show that f(x)=3(x−5)²+7 is not one-to-one on all real inputs. Give two distinct inputs with equal output, and explain the horizontal-line consequence.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_REASONING"),
     ];
+
+    // Original Section 1.1 has exactly 92 numbered exercises.
+    // Item 93 is an explicitly separate Edulytics first-party Cool-down.
+    public const int CoolDownNumber = 93;
+
+    public static readonly Task CoolDown = new(
+        CoolDownNumber,
+        "Edulytics original Cool-down",
+        "(a) Decide whether R={(1,2),(1,4),(2,4)} is a function and explain. " +
+        "(b) For f(x)=x²−2x+1, compute f(−1) with substitutions. " +
+        "(c) Is h(x)=x² one-to-one when its domain is x≥0? Prove or explain.",
+        "TEACHER_REVIEW_REQUIRED", "MULTIPART_WRITTEN_PROOF");
+
+    public static Task? Find(int number) =>
+        number == CoolDownNumber ? CoolDown :
+        All.FirstOrDefault(task => task.Number == number);
 }

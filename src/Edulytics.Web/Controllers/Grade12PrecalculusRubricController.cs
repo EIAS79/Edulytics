@@ -21,8 +21,7 @@ public sealed class Grade12PrecalculusRubricStudentController(Grade12Precalculus
         Guid lessonId, int exerciseNumber, CancellationToken ct)
     {
         if (!Actor(out var actor)) return Forbid();
-        var task = Grade12PrecalculusSection11Exercises.All
-            .FirstOrDefault(item => item.Number == exerciseNumber);
+        var task = Grade12PrecalculusSection11Exercises.Find(exerciseNumber);
         if (task is null) return NotFound();
         var scope = await rubric.StudentScopeAsync(actor, lessonId, Guid.Empty, ct);
         if (scope is null) return NotFound();
@@ -36,7 +35,7 @@ public sealed class Grade12PrecalculusRubricStudentController(Grade12Precalculus
         [FromForm] string? explanation, CancellationToken ct)
     {
         if (!Actor(out var actor)) return Forbid();
-        if (!Grade12PrecalculusSection11Exercises.All.Any(x => x.Number == exerciseNumber))
+        if (Grade12PrecalculusSection11Exercises.Find(exerciseNumber) is null)
             return NotFound();
         var scope = await rubric.StudentScopeAsync(actor, lessonId, Guid.Empty, ct);
         if (scope is null) return NotFound();
