@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l06-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L06",
+      "CultureCode": "en",
+      "Title": "Symmetry in Equations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Explain (orally) how to sketch the second half of an even or odd function given the first half. Justify (orally and in writing) why a function is even, odd, or neither from an equation.",
+        "To classify symmetry, substitute -x into the equation, simplify and compare with f(x) and -f(x). A graph can be completed across the y-axis for even functions or through the origin for odd functions.",
+        "Source activity 6.1: Notice and Wonder: Same and Different: What do you notice? What do you wonder? A. Graph of \\(g(x)=x^5+x\\) A. Graph of \\(g(x)=x^5+x\\) B. Graph of \\(\\text-g(x)=\\text-(x^5+x)\\) B. Graph of \\(\\text-g(x)=\\text-(x^5+x)\\) C. Graph of \\(g(\\text-x)=(\\text-x)^5+(\\text-x)\\) C. Graph of \\(g(\\text-x)=(\\text-x)^5+(\\text-x)\\) D. Graph of \\(\\text-g(\\text-x)=\\text-\\left((\\text-x)^5+(\\text-x)\\right)\\) D. Graph of… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.2: Finish the Graph: Here is a graph of \\(y = f(x)\\) for \\(\\text-5 \\le x \\le 0\\). Draw the graph for \\(0 \\le x \\le 5\\) and be prepared to explain your reasoning if: \\(f\\) is neither even nor odd Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.3: Odd and Even Equations: Take turns with your partner to decide if the function is even, odd, or neither. If it’s your turn, explain to your partner how you decided. If it’s your partner’s turn, listen carefully to their reasons and decide if you agree. If you disagree, discuss your thinking and work to reach an agreement. \\(f(x) = 3x^4 - 2x^2 + 1\\) \\(h(x) = (x^2 -1)(x^2 - 4)\\) \\(j(x) = 2^x +… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Classify each function as odd, even, or neither. \\(f(x)=\\frac{1}{x^2+1}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is a graph of a function \\(f\\) for \\(0 \\leq x \\leq 5\\). The function \\(g\\) is even and takes the same values as \\(f\\) for \\(0 \\leq x \\leq 5\\). Sketch a graph of \\(g\\). The function \\(h\\) is odd and takes the same values as \\(f\\) for \\(0 \\leq x \\leq 5\\). Sketch a graph of \\(h\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The linear function \\(f\\) is given by \\(f(x) = mx + b\\). If \\(f\\) is even, what can you conclude about \\(m\\) and \\(b\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here are the graphs of \\(y = f(x)\\) and \\(y = f(x-1)\\) for a function \\(f\\). Which graph corresponds to each equation? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Write an expression for two of the graphs in terms of \\(f(x)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is a graph of the function \\(f\\) given by \\(f(x) = x^3\\). What happens if you reflect the graph across the \\(x\\)-axis and then across the \\(y\\)-axis? Is \\(f\\) even, odd, or neither? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Classify f(x)=x⁴+2x². Expected reasoning or answer: Even.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Symmetry from equations",
+          "Definition": "To classify symmetry, substitute -x into the equation, simplify and compare with f(x) and -f(x). A graph can be completed across the y-axis for even functions or through the origin for odd functions.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Classify f(x)=x³+x and g(x)=x²+x. Answer: f odd; g neither."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "f(-x)=-x³-x=-f(x); g(-x)=x²-x differs from ±g(x)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Symmetry from equations",
+          "Question": "Classify f(x)=x³+x and g(x)=x²+x.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "f(-x)=-x³-x=-f(x)",
+            "g(-x)=x²-x differs from ±g(x)."
+          ],
+          "Answer": "f odd; g neither.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Classify f(x)=x⁴+2x².",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Even.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Symmetry from equations",
+        "To classify symmetry, substitute -x into the equation, simplify and compare with f(x) and -f(x). A graph can be completed across the y-axis for even functions or through the origin for odd functions.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
