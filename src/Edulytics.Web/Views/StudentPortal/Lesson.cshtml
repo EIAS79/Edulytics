@@ -1939,6 +1939,33 @@
                     </figure>
                 }
                 <details class="student-card">
+                    <summary>Figure-based explanations — original first-party alternatives</summary>
+                    <p>Fifteen brief alternatives explain the mathematical ideas
+                       represented by the source lesson illustrations. They
+                       are not copies of the original publisher diagrams.
+                       Original task diagrams may require teacher reference.</p>
+                    <ol>
+                        @foreach (var figure in Grade12PrecalculusSection11FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Illustration @figure.OriginalFigureOrdinal: @figure.Topic</strong>
+                                <p>@figure.FirstPartyAlternative</p>
+                                @if (figure.LinkedFirstPartyGraphExercise is int sourceNumber)
+                                {
+                                    <p>Related independent graph practice: exercise @sourceNumber.</p>
+                                }
+                                @if (figure.AddedDrawing is { } drawing)
+                                {
+                                    <figure class="student-lesson-graph">
+                                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawing))
+                                        <figcaption>@drawing.Accessibility.Description</figcaption>
+                                    </figure>
+                                }
+                            </li>
+                        }
+                    </ol>
+                </details>
+                <details class="student-card">
                     <summary>Nine basic function families — interactive reading practice</summary>
                     <p>Use these original Edulytics coordinate diagrams to identify
                        the domain and range. Explain any missing input, branch,

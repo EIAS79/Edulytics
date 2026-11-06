@@ -352,6 +352,26 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void FifteenOriginalFigureSkillsHaveIndependentTextOrGraphAlternatives()
+    {
+        var figures = Grade12PrecalculusSection11FigureAlternatives.All;
+        Assert.Equal(15, figures.Count);
+        Assert.Equal(Enumerable.Range(1, 15),
+            figures.Select(x => x.OriginalFigureOrdinal));
+        Assert.All(figures, x =>
+            Assert.False(string.IsNullOrWhiteSpace(x.FirstPartyAlternative)));
+        Assert.Equal(2, figures.Count(x => x.OriginalFigureOrdinal is 6 or 10 &&
+            x.AddedDrawing is not null));
+        foreach (var figure in figures.Where(x => x.AddedDrawing is not null))
+        {
+            MathematicalVisualSpecValidator.Validate(figure.AddedDrawing!);
+            Assert.Contains("aria-labelledby",
+                AdvancedMathematicsVisualRenderer.RenderSvg(figure.AddedDrawing!),
+                StringComparison.Ordinal);
+        }
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
