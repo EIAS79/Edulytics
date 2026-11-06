@@ -46,6 +46,23 @@ public static class Grade12PrecalculusSection11Visuals
                     "Nonhorizontal line: a one-to-one function",
                     "The line y=2x-1 has one output per input and distinct outputs for distinct inputs. " +
                     "Every vertical and every horizontal line intersects it at most once.")),
+            // Direct graph reading: an independently drawn curve with the
+            // same mathematical graph-read answers as source Example 12,
+            // without reproducing its copyrighted figure.
+            new FunctionGraphVisualSpec(
+                new MathematicalAxisWindow(-3m, 5m, -1m, 9m, 1m, 1m),
+                new MathematicalCurveSpec("precalc-section11-graph-read",
+                    MathematicalCurveKind.Polynomial, [1m, -2m, 1m], "y=(x-1)²"),
+                [
+                    new MathematicalPoint(-1m, 4m, "(-1,4)"),
+                    new MathematicalPoint(2m, 1m, "(2,1)"),
+                    new MathematicalPoint(3m, 4m, "(3,4)")
+                ],
+                new MathematicalVisualAccessibility(
+                    "Read graph values and solve for all inputs",
+                    "Read the plotted parabola rather than substituting into its rule: " +
+                    "at x=2, the height is 1. The horizontal level y=4 meets the curve " +
+                    "at x=-1 and x=3. Record both roots and label the axes.")),
             new CoordinatePlaneVisualSpec(
                 new MathematicalAxisWindow(-1m, 9m, -4m, 4m, 1m, 1m),
                 [

@@ -167,9 +167,11 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     public void Grade12FirstPartyFunctionGraphsRenderWithAccessibleOpenEndpoints()
     {
         var visualSpecs = Grade12PrecalculusSection11Visuals.Build();
-        Assert.Equal(4, visualSpecs.Count);
+        Assert.Equal(5, visualSpecs.Count);
         Assert.All(visualSpecs, MathematicalVisualSpecValidator.Validate);
-        var horizontalRays = Assert.IsType<CoordinatePlaneVisualSpec>(visualSpecs[3]);
+        Assert.Contains("at x=-1 and x=3",
+            visualSpecs[2].Accessibility.Description, StringComparison.Ordinal);
+        var horizontalRays = Assert.IsType<CoordinatePlaneVisualSpec>(visualSpecs[4]);
         Assert.Equal(2, horizontalRays.OpenPoints.Count);
         var svg = AdvancedMathematicsVisualRenderer.RenderSvg(horizontalRays);
         Assert.Equal(2, svg.Split("class='amv-open-point'").Length - 1);

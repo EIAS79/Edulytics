@@ -181,11 +181,13 @@
       "FirstPartyExampleTitle": "Extract values from a graph description",
       "FirstPartyContentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u01-l01.rich-lesson-v2.json",
       "SkillKind": "DIRECT_GRAPH_READ_ALL_ROOTS",
-      "Status": "GRAPH_VISUAL_TASK_NOT_YET_EQUIVALENT_REPLACEMENT_EXPLICIT_RULE_SIMPLIFIES_COGNITIVE_TASK",
+      "Status": "DIRECT_GRAPH_READING_SKILL_MATHEMATICALLY_EQUIVALENT_FIRST_PARTY_GRAPH_ADDED; ORIGINAL_FIGURE_PARITY_NOT_CERTIFIED",
       "MathematicalAndRepresentationParityCertified": false,
       "SourceRightsClearanceStatus": "FIRST_PARTY_TEXT_ONLY; ORIGINAL_FIGURES_NOT_REUSED",
       "EvidenceMethod": "READ_ONLY_ORIGINAL_PDF_PAGES_19_TO_31_VERSUS_EDULYTICS_RICHV2_16_AUTHORED_EXAMPLES",
-      "Notes": "A skill mapping is not a full source-element match. Preserve unresolved source tables, figures, examples' subparts, and teacher-led checks."
+      "Notes": "A skill mapping is not a full source-element match. Preserve unresolved source tables, figures, examples' subparts, and teacher-led checks.",
+      "DirectGraphReadValueCheck": "f(2)=1; horizontal y=4 intersects first-party graph at x=-1 and x=3; same source numerical answers.",
+      "FirstPartyTypedGraphOrdinal": 3
     },
     {
       "SourceElementId": "G12-U01-L01-EXAMPLE013",
@@ -229,5 +231,6 @@
       "EvidenceMethod": "READ_ONLY_ORIGINAL_PDF_PAGES_19_TO_31_VERSUS_EDULYTICS_RICHV2_16_AUTHORED_EXAMPLES",
       "Notes": "A skill mapping is not a full source-element match. Preserve unresolved source tables, figures, examples' subparts, and teacher-led checks."
     }
-  ]
+  ],
+  "FirstPartyAdvancedGraphSpecs": 5
 }
