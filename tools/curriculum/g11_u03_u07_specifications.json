@@ -436,5 +436,178 @@
       "Find y=a(x+2)²+1 passing through (-1,4).",
       "a=3, so y=3(x+2)²+1."
     ]
+  },
+  "6": {
+    "1": [
+      "Periodic motion and circle coordinates",
+      "A periodic function repeats outputs at a fixed positive period P: f(t+P)=f(t). A point on a circle centered at origin radius r obeys x²+y²=r²; use Pythagorean theorem for unknown coordinates.",
+      "For a circle of radius5, find positive y when x=3.",
+      "x²+y²=25; y²=25-9=16; y=4 in upper half.",
+      "y=4.",
+      "For a circle radius13 with x=5 and positive y, find y.",
+      "12."
+    ],
+    "2": [
+      "Triangle trigonometry and unit circle",
+      "On a unit circle at angle θ, coordinate pair is (cos θ,sin θ). For a right triangle, sin=opposite/hypotenuse, cos=adjacent/hypotenuse and tan=opposite/adjacent when defined.",
+      "Find coordinates on unit circle at θ=π/6.",
+      "cos π/6=√3/2; sin π/6=1/2.",
+      "(√3/2,1/2).",
+      "Find coordinates at θ=π/3.",
+      "(1/2,√3/2)."
+    ],
+    "3": [
+      "Radian and arc length",
+      "One radian subtends an arc equal in length to the radius. General arc length s=rθ if θ is in radians, with signed angle indicating travel direction and physical length using absolute value.",
+      "Radius2, angle π/3. Find arc length.",
+      "s=2*(π/3).",
+      "2π/3 units.",
+      "Find arc length for radius6 angle π/2.",
+      "3π."
+    ],
+    "4": [
+      "Quadrants and common radian angles",
+      "A point on the unit circle has cos θ as x and sin θ as y. Reference angles and quadrant signs locate values at π/6, π/4, π/3 and their reflections.",
+      "Find unit-circle coordinates for θ=5π/6.",
+      "Reference angle π/6; quadrantII has negative cosine and positive sine.",
+      "(-√3/2,1/2).",
+      "Find coordinates at 7π/6.",
+      "(-√3/2,-1/2)."
+    ],
+    "5": [
+      "Pythagorean trigonometric identity",
+      "Because any unit circle point has x²+y²=1 with x=cos θ, y=sin θ, the identity cos²θ+sin²θ=1 holds for all real θ. It is not sinθ+cosθ=1.",
+      "If cosθ=3/5 and θ is in quadrant I, find sinθ.",
+      "sin²θ=1-9/25=16/25; quadrantI positive.",
+      "4/5.",
+      "Find cos(theta) if sin(theta)=-5/13 and theta is in quadrant IV.",
+      "12/13."
+    ],
+    "6": [
+      "Signs from the Pythagorean identity",
+      "To recover sin or cos from its square, apply the known quadrant to choose the sign; tanθ=sinθ/cosθ when cosθ!=0.",
+      "If cosθ=-3/5 and θ is in quadrantII, find sin and tan.",
+      "sin²=1-9/25=16/25; sin positive4/5; tan=(4/5)/(-3/5).",
+      "sin=4/5; tan=-4/3.",
+      "If cosθ=4/5 in quadrant IV, find sin.",
+      "-3/5."
+    ],
+    "7": [
+      "Coordinates on any circle",
+      "A point on a circle radius r at angle θ from the positive x-axis has coordinates (r cosθ,r sinθ). Quadrant signs and scale must both be applied.",
+      "For radius10 and θ=2π/3, find coordinates.",
+      "cos2π/3=-1/2, sin2π/3=√3/2; multiply each by10.",
+      "(-5,5√3).",
+      "For radius8 at θ=π, find coordinates.",
+      "(-8,0)."
+    ],
+    "8": [
+      "Sine cosine tangent comparison",
+      "Sine and cosine have period2π, bounded values from-1 to1 and a quarter-period shift; tangent has periodπ and is undefined when cosine is zero. Graphs cannot share the same range or asymptotes.",
+      "Give periods of sinθ and tanθ and identify where tangent is undefined.",
+      "Sine repeats after2π, tangent afterπ; tan=sin/cos so cos=0 at π/2+kπ.",
+      "2π and π; undefined π/2+kπ.",
+      "Find range of y=cosθ.",
+      "[-1,1]."
+    ],
+    "9": [
+      "Sine and cosine as functions",
+      "Unit circle coordinates define cos and sin for every real angle. Their graphs are periodic as θ travels 0 to 2π; sin0=0 and cos0=1, and output values stay in [-1,1].",
+      "Evaluate sin0, sin(π/2), and cos0.",
+      "At θ0 point(1,0), at π/2 point(0,1).",
+      "0,1,1.",
+      "Evaluate cosπ and sinπ.",
+      "-1,0."
+    ],
+    "10": [
+      "Angles beyond a full revolution",
+      "Coterminal angles differ by multiples of2π and give identical sine and cosine values. A turn of 2π corresponds to one complete revolution.",
+      "Find cos(2π+π/3).",
+      "Subtract full revolution2π and use cosπ/3.",
+      "1/2.",
+      "Find sin(4π+π/2).",
+      "1."
+    ],
+    "11": [
+      "Negative angles and clockwise rotation",
+      "A negative radian angle rotates clockwise. Cosine is even cos(-θ)=cosθ; sine is odd sin(-θ)=-sinθ, allowing extension beyond the interval [0,2π].",
+      "Evaluate sin(-π/2) and cos(-π/3).",
+      "Odd sine gives -1; even cosine gives cosπ/3=1/2.",
+      "-1 and 1/2.",
+      "Evaluate sin(-π/6).",
+      "-1/2."
+    ],
+    "12": [
+      "Tangent and its graph",
+      "Tangent θ=sinθ/cosθ has periodπ and domain excluding θ=π/2+kπ. It is unbounded on intervals between vertical asymptotes, unlike sine and cosine.",
+      "Find tan(π/4) and state tan(π/2) status.",
+      "sinπ/4=cosπ/4 so ratio1; at π/2 cosine zero so undefined.",
+      "tanπ/4=1; tanπ/2 undefined.",
+      "Find tanπ.",
+      "0."
+    ],
+    "13": [
+      "Amplitude and midline",
+      "For y=A sin(x)+D, amplitude |A| is half the peak-to-trough distance and midline y=D is average of max and min. Negative A reflects vertically, not change amplitude magnitude.",
+      "Find amplitude, midline, max and min of y=3sinx+2.",
+      "|A|=3; D=2; extrema2±3.",
+      "Amplitude3; midline2; max5, min-1.",
+      "For y=-4cosx+1, give amplitude and midline.",
+      "4 and y=1."
+    ],
+    "14": [
+      "Horizontal translation of trigonometric graphs",
+      "For y=A cos(x-h)+D, the graph shifts right by h when h>0; A sets amplitude and D midline. Period stays2π unless frequency is changed.",
+      "Describe y=2cos(x-π/4)+1.",
+      "Amplitude2, right shiftπ/4, midline1, base cosine period2π.",
+      "Amplitude2; midline1; rightπ/4; period2π.",
+      "Describe y=sin(x+π/3).",
+      "Leftπ/3."
+    ],
+    "15": [
+      "Frequency and trig period",
+      "For y=cos(kx) with k nonzero, one full cycle occurs when kx advances 2π, so period is 2π/|k|. Horizontal shifts and reflections do not alter absolute period.",
+      "Find period of y=cos(3x).",
+      "Solve3P=2π.",
+      "P=2π/3.",
+      "Find period of y=sin(4x).",
+      "π/2."
+    ],
+    "16": [
+      "Period from context",
+      "A function y=D+A sin(2πt/T) has period T, amplitude |A| and midline D. Read a repeating cycle from the model graph and check physical units.",
+      "For y=2sin(πt/6)+4, find period, amplitude and midline.",
+      "Angular coefficient π/6; period2π/(π/6)=12; amplitude2, shift4.",
+      "Period12; amplitude2; midline4.",
+      "For y=5cos(πt/3)-2, find period.",
+      "6."
+    ],
+    "17": [
+      "Determine a combined trig transformation",
+      "A family y=D+A sin(k(x-h)) has amplitude |A|, period2π/|k|, horizontal displacement h and midline D. Ask for missing parameters before claiming a unique model.",
+      "For y=-2sin(x+π/3)+1, state amplitude, midline, period and phase shift.",
+      "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3.",
+      "Amplitude2; midline1; period2π; leftπ/3.",
+      "Give period of y=3cos(2(x-1)).",
+      "π."
+    ],
+    "18": [
+      "Circular motion model",
+      "A wheel with radius r rotating at angular speed ω has angle θ=ωt and height D-r cos(ωt) when it starts at the bottom. Arc travel distance s=rθ in radians; period T=2π/ω.",
+      "A wheel of radius10 has center height12 and period60 seconds, starting at bottom. Find height at t=0 and t=30.",
+      "h(t)=12-10cos(2πt/60); h(0)=2; h(30)=22.",
+      "2 and 22 height units.",
+      "For radius4 and angle π/2, find arc length.",
+      "2π."
+    ],
+    "19": [
+      "Trig model for periodic data",
+      "To model oscillating data, estimate midline (max+min)/2, amplitude (max-min)/2, period and phase. A sine or cosine prediction applies only if the observed periodic pattern supports it.",
+      "A tide follows h(t)=3+2sin(πt/6). Give period and extreme heights.",
+      "Amplitude2, midline3, angular frequencyπ/6 gives period12; extrema3±2.",
+      "Period12; max5; min1.",
+      "For h(t)=4+1.5cos(πt/4), give period.",
+      "8."
+    ]
   }
 }

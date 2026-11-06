@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l01-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L01",
+      "CultureCode": "en",
+      "Title": "Moving in Circles",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that periodic functions are ones with outputs that repeat at regular intervals. Use the Pythagorean Theorem to calculate coordinates of points on a circle centered on the origin.",
+        "A periodic function repeats outputs at a fixed positive period P: f(t+P)=f(t). A point on a circle centered at origin radius r obeys x²+y²=r²; use Pythagorean theorem for unknown coordinates.",
+        "Source activity 1.1: Which One Doesn't Belong: Reading Clocks: Which one doesn’t belong? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.2: Around and Around: A ladybug lands on the end of a clock’s second hand when the hand is pointing straight up. The second hand is 1 foot long and when it rotates and points directly to the right, the ladybug is 10 feet above the ground. How far above the ground is the ladybug after 0, 30, 45, and 60 seconds have passed? Pause here for a class discussion. Estimate how far above the ground the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.3: Where is the Point?: What is the radius of the circle? If \\(Q\\) has a \\(y\\)-coordinate of -4, what is the \\(x\\)-coordinate? If \\(B\\) has a \\(y\\)-coordinate of 4, what is the \\(x\\)-coordinate? A circle centered at \\((0,0)\\) has a radius of 10. Point \\(S\\) on the circle has an \\(x\\)-coordinate of 6. What is the \\(y\\)-coordinate of point \\(S\\)? Explain or show your reasoning. How many times a day do… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here is a clock face. For each time given, name the number the second hand points at. 15 seconds after 1:00. 30 seconds after 1:00. 1 minute after 1:00. 5 minutes after 1:00. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: At 12:15, the end of the minute hand of a clock is 8 feet above the ground. At 12:30, it is 6.5 feet off the ground. How long is the minute hand of the clock? Explain how you know. How high is the clock above the ground? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is a point on a circle centered at \\((0,0)\\). Which equation defines the circle? \\(x^2 + y^2 = 100\\) \\((x-6)^2 + (y-8)^2 = 100\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The point \\((3,4)\\) is on a circle centered at \\((0,0)\\). Which of these points lie on the circle? Select all that apply. \\((\\text-3,\\text-4)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Match each polynomial with its end behavior as \\(x\\) gets larger and larger in the positive and negative directions. (Note: some of the answer choices are not used and some answer choices may be used more than once.) \\(f(x)=\\dfrac{6}{x-6}\\) \\(g(x)=\\dfrac{3x}{x-6}\\) \\(h(x)=\\dfrac{3x-18}{x-6}\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Find the solution(s) to each equation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For a circle radius13 with x=5 and positive y, find y. Expected reasoning or answer: 12.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Periodic motion and circle coordinates",
+          "Definition": "A periodic function repeats outputs at a fixed positive period P: f(t+P)=f(t). A point on a circle centered at origin radius r obeys x²+y²=r²; use Pythagorean theorem for unknown coordinates.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For a circle of radius5, find positive y when x=3. Answer: y=4."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "x²+y²=25; y²=25-9=16; y=4 in upper half."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Periodic motion and circle coordinates",
+          "Question": "For a circle of radius5, find positive y when x=3.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "x²+y²=25",
+            "y²=25-9=16",
+            "y=4 in upper half."
+          ],
+          "Answer": "y=4.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For a circle radius13 with x=5 and positive y, find y.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "12.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Periodic motion and circle coordinates",
+        "A periodic function repeats outputs at a fixed positive period P: f(t+P)=f(t). A point on a circle centered at origin radius r obeys x²+y²=r²; use Pythagorean theorem for unknown coordinates.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
