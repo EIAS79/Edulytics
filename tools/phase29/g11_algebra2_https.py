@@ -60,6 +60,12 @@ except urllib.error.HTTPError as error:
  assert error.code in (401,403,404),("unexpected RBAC response",error.code)
 except AssertionError as error:
  if str(error).startswith("cross-school"):raise
+data["rubricEntryPagesRendered"]=0
+for code,lesson_id in ids.items():
+ raw=page(student,"/student/g11/algebra2/rubric?lessonId="+lesson_id)
+ assert "Submit for teacher review" in raw,("G11 student rubric unavailable",code)
+ data["rubricEntryPagesRendered"]+=1
+print("G11_120_AUTHENTICATED_STUDENT_TEACHER_RUBRIC_ENTRIES",data["rubricEntryPagesRendered"],flush=True)
 data["crossSchoolDenial"]="PASS"
 data["notVerified"]=["Practice generation/feedback","Teacher grading persistence","all source drawings, media, and element parity","visual accessibility and keyboard","all question family mathematical accuracy"]
 data["technicalRenderingStatus"]="PASS" if data["passed"]==120 else "FAIL"

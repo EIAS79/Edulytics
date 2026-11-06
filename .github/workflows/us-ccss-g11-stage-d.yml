@@ -34,6 +34,29 @@ jobs:
           name: g11-structural-inventory
           path: /tmp/g11-structural.json
           if-no-files-found: warn
+  owner-academic-acceptance:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify recorded programme owner academic decision only, never classify it as technical evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          p='artifacts/curriculum-delivery/US-CCSS-MATH/G11/grade11-owner-academic-publication-authorization-20261106.json'
+          approval=json.load(open(p,encoding='utf8'))
+          assert approval['OwnerDecision']=='ACADEMICALLY_APPROVED_BY_OWNER'
+          assert approval['ReadyForStageDCountFromABC']==120
+          assert approval['PublicationAuthorization']=='OWNER_APPROVES_PUBLICATION_AFTER_REQUIRED_TECHNICAL_AND_LEGAL_GATES'
+          assert approval['NoFalseCIOrReviewerApproval'] is True
+          assert approval['StageDTechnicalAcceptance']=='NOT_IMPLIED'
+          print('G11_OWNER_ACADEMIC_APPROVAL_REGISTERED; RUNTIME_AND_RIGHTS_INDEPENDENT')
+          PY
   named-lesson-contract-shards:
     needs: structural-inventory
     runs-on: ubuntu-24.04
@@ -114,19 +137,38 @@ jobs:
       - name: Fail closed on unknown denominator, unverified rights or missing independent source parity
         run: node tools/curriculum/g11-stage-d-audit.cjs --strict-source
   verified-practice-route-coverage:
-    needs: structural-inventory
+    needs: [structural-inventory, authenticated-g11-120-https]
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '24'
-      - name: Fail closed on unverified Grade 11 question delivery, grading and persistence
-        run: node tools/curriculum/g11-stage-d-audit.cjs --strict-practice
-
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: g11-algebra2-120-authenticated-https
+          path: /tmp/g11-https-evidence
+      - name: Fail closed unless 120 rubric entry pages and one authorized teacher grading write are real
+        shell: bash
+        env:
+          EXACT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/g11_stage_d_teacher_route_verify.py \
+            /tmp/g11-https-evidence/g11-algebra2-120-authenticated-render.json \
+            /tmp/g11-https-evidence/g11-one-teacher-review-https.json \
+            "$EXACT_SHA" /tmp/g11-runtime-route-verification.json
+          node tools/curriculum/g11-stage-d-audit.cjs --strict-practice \
+            --teacher-manifest /tmp/g11-runtime-route-verification.json --candidate-sha "$EXACT_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g11-verified-teacher-reviewed-route-coverage
+          path: /tmp/g11-runtime-route-verification.json
+          if-no-files-found: warn
   authenticated-g11-120-https:
     needs: structural-inventory
     runs-on: ubuntu-24.04
@@ -175,7 +217,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 -m py_compile tools/phase29/g11_algebra2_https.py
+          python3 -m py_compile tools/phase29/g11_algebra2_https.py tools/phase29/g11_algebra2_rubric_persistence_https.py
           dotnet tool restore
           dotnet restore Edulytics.sln
           dotnet build Edulytics.sln --no-restore -c Release
@@ -225,10 +267,13 @@ jobs:
             grep -E '(^|[[:space:]])(fail:|crit:|System\.|InvalidOperationException|NullReferenceException|ArgumentException|Unhandled exception|Error)' /tmp/g11-app.log | tail -n 120 || true
             exit 1
           fi
+          python3 tools/phase29/g11_algebra2_rubric_persistence_https.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: g11-algebra2-120-authenticated-https
-          path: /tmp/g11-algebra2-120-authenticated-render.json
+          path: |
+            /tmp/g11-algebra2-120-authenticated-render.json
+            /tmp/g11-one-teacher-review-https.json
           if-no-files-found: warn
           retention-days: 14

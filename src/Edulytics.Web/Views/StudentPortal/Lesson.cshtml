@@ -108,6 +108,22 @@
         </nav>
     }
 
+    @* G11 Algebra 2: authentic first-party written response with manual teacher review, not a machine-graded claim. *@
+    @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:", StringComparison.Ordinal))
+    {
+        <section class="student-card" aria-label="Algebra 2 lesson written submission and teacher review">
+            <h2>Submit your Algebra 2 reasoning for teacher review</h2>
+            <p>Write a mathematical model, calculation, interpretation and explanation.
+                Your assigned teacher reviews the response, including any written or drawn evidence,
+                and records a manual score. This is not automatic Practice grading.</p>
+            <a class="school-button school-button-primary"
+               asp-controller="Grade11Algebra2RubricStudent" asp-action="Index"
+               asp-route-lessonId="@Model.Id">
+                Open teacher-reviewed Algebra 2 response
+            </a>
+        </section>
+    }
+
     @* G10 Geometry: per-lesson first-party written evidence, separately and manually scored. *@
     @if (Model.LessonCode.StartsWith("PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:", StringComparison.Ordinal))
     {

@@ -29,9 +29,12 @@ public sealed class LessonPracticeInteractionRegistryTests
     [Fact]
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
-        Assert.Equal(
-            1656, // 1609 before Grade 9: 46 exact new G9 families plus one pre-existing two-by-two family now routed.
-            LessonPracticeInteractionRegistry.All.Count);
+        // Preserve pre-G11 baseline: exactly eight new Algebra 2 families added.
+        var algebra2 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("usccss.g11.alg2.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(8, algebra2.Length);
+        Assert.Equal(1656, LessonPracticeInteractionRegistry.All.Count - algebra2.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

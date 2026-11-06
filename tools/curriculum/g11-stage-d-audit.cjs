@@ -74,9 +74,30 @@ for(let u=1;u<=7;u++)for(let l=1;l<=counts[u-1];l++){
 const sha=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,bpFile))).digest('hex');
 const structural={pass:issues.length===0,errors:issues,lessons:lessons.length,units:7,unitCounts:counts,blueprintSha256:sha,richFiles:richFiles.length,packLessons:packLessons.length,sourceFilesDeclared:inv.lessons.reduce((acc,l)=>acc+Object.keys(l.documents||{}).length,0)};
 const sourceAudit={status:unknownDenominator?'UNKNOWN':'VERIFIED_IF_ALL_RIGHTS_AND_SEMANTICS',sourceDenominatorKnownLessons:120-unknownDenominator,sourceDenominatorUnknownLessons:unknownDenominator,sourceKnownElements:totalKnown,verifiedElements:totalVerified,sourceStatusCounts,teacherRubricsAuthored:teacherAuthor,teacherReviewsExecuted:0};
-const practiceAudit={verifiedMappings:verifiedPractice,requiredLessonRoutes:120,discoveredMappings:mapping.length};
+// Teacher-reviewed responses count only after HTTPS evidence exists on the exact candidate,
+// including 120 authenticated entry pages and a persisted, authorized sample review.
+const teacherAt=process.argv.indexOf('--teacher-manifest');
+const shaAt=process.argv.indexOf('--candidate-sha');
+let teacherRouteVerified=0, teacherEvidenceRunId=null;
+if(teacherAt!==-1 && shaAt!==-1){
+ try {
+  const manifest=JSON.parse(fs.readFileSync(process.argv[teacherAt+1],'utf8'));
+  const candidateSha=process.argv[shaAt+1];
+  if (manifest.candidateSha===candidateSha && /^[a-f0-9]{40}$/.test(candidateSha) &&
+      manifest.status==='TEACHER_REVIEW_RUNTIME_ROUTE_PASS' &&
+      manifest.studentRichV2Verified===120 &&
+      manifest.perLessonTeacherRubricEntryVerified===120 &&
+      manifest.teacherSubmissionAndReviewPersistedOnSampleLesson===true &&
+      manifest.wrongSchoolTeacherAndStudentDenied===true &&
+      Number.isInteger(manifest.actionsRunId) && manifest.actionsRunId>0){
+     teacherRouteVerified=120;teacherEvidenceRunId=manifest.actionsRunId;
+  }
+ }catch(err){console.error('G11 Teacher evidence invalid',String(err));}
+}
+const effectiveRuntimeLessonRoutes=Math.max(teacherRouteVerified,verifiedPractice);
+const practiceAudit={verifiedExactDigitalMappings:verifiedPractice,verifiedTeacherRouteLessonEntries:teacherRouteVerified,teacherActionsRunId:teacherEvidenceRunId,requiredLessonRoutes:120,effectiveRuntimeLessonRoutes,discoveredMappings:mapping.length};
 const result={structural,sourceAudit,practiceAudit,lessons};
 console.log(JSON.stringify(process.argv.includes('--json')?result:{structural,sourceAudit,practiceAudit},null,2));
 if(issues.length)process.exitCode=1;
 if(process.argv.includes('--strict-source') && (unknownDenominator || totalVerified!==totalKnown)){console.error('FAIL_CLOSED: 1:1 source denominator, independent semantic and asset/license verification are incomplete');process.exitCode=2}
-if(process.argv.includes('--strict-practice') && verifiedPractice!==120){console.error('FAIL_CLOSED: verified real Grade 11 Practice routes '+verifiedPractice+'/120, authored rubrics do not count');process.exitCode=4}
+if(process.argv.includes('--strict-practice') && effectiveRuntimeLessonRoutes!==120){console.error('FAIL_CLOSED: verified Grade 11 effective digital or teacher-reviewed runtime lesson paths '+effectiveRuntimeLessonRoutes+'/120; authored rubrics and generic HTML are not evidence of teacher scoring');process.exitCode=4}
