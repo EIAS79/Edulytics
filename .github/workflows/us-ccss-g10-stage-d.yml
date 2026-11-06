@@ -172,18 +172,38 @@ jobs:
 
   lesson-runtime-route-coverage:
     if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
-    needs: structural-inventory
+    needs: [structural-inventory, g10-geometry-124-student-https]
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '24'
-      - name: Require verified digital Practice or tested tenant-isolated teacher-review route
-        run: node tools/curriculum/g10-stage-d-audit.cjs --strict-practice
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: g10-124-authenticated-geometry-https
+          path: /tmp/g10-actual-https
+      - name: Negative controls - synthetic grade cannot claim 124 grade writes
+        run: python3 tools/curriculum/test_g10_stage_d_runtime_route_verify.py
+      - name: Verify 124 per-lesson learner and rubric entry pages and one actually persisted teacher grade on same SHA
+        shell: bash
+        env:
+          EXACT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/g10_stage_d_runtime_route_verify.py \
+            /tmp/g10-actual-https/g10-geometry-124-authenticated-render.json \
+            /tmp/g10-actual-https/g10-one-teacher-review-https.json \
+            "$EXACT_SHA" /tmp/g10-runtime-route-verification.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-actual-runtime-route-verification
+          path: /tmp/g10-runtime-route-verification.json
+          if-no-files-found: warn
 
   g10-geometry-124-student-https:
     if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
@@ -210,6 +230,7 @@ jobs:
       EDULYTICS_CI_REHEARSAL: 'true'
       EDULYTICS_CI_REHEARSAL_PROGRAMME: US-CCSS
       EDULYTICS_CI_G10_GEOMETRY: 'true'
+      G10_EXPECTED_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
       ASPNETCORE_ENVIRONMENT: Staging
       PGPASSWORD: postgres
       Edulytics__LessonContent__ReadFromJson: 'true'

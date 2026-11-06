@@ -69,7 +69,7 @@ student=connect("commoncore-secondary.student.primary@edulytiks.com","Student")
 primary=connect("commoncore-primary.student.primary@edulytiks.com","Student")
 page(student,"/student/dashboard")
 page(student,"/student/learning")
-result={"candidateSha":os.environ.get("GITHUB_SHA"),"source":"disposable-https-postgres18",
+result={"candidateSha":os.environ.get("G10_EXPECTED_CANDIDATE_SHA"),"source":"disposable-https-postgres18",
         "expected":124,"checked":0,"passed":0,"failures":[],"lessons":[]}
 for code,identifier in ids.items():
     try:
