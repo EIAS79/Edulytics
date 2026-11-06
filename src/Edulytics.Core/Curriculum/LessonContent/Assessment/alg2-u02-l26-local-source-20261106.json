@@ -1,0 +1,71 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L26",
+  "LearningGoals": [
+    "Calculate solutions to problems by using the formula for the first $n$ terms in a geometric sequence.",
+    "Interpret results about geometric sums in non-mathematical contexts."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-SSE.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-SSE.B.4",
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Five housing projects contain 5,10,20,40,80 houses. Find the total.",
+    "Steps": [
+      "a=5,r=2,n=5",
+      "S=5*(2^5-1)."
+    ],
+    "Answer": "155 houses."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "26.1: Some Interesting Sums",
+      "26.2: That’s a lot of Houses",
+      "26.3: Back to Funding the Future"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "A fund receives 100 each of four periods with factor 1.1 per period; find the amount at the end of the fourth period assuming first deposit accrues three times.",
+    "Expected": "100*(1+1.1+1.21+1.331)=464.1.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u02-l26-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l26.rich-lesson-v2.json"
+}

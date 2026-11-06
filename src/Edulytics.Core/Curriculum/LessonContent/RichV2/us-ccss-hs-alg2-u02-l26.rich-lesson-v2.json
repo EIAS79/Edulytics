@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l26-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L26",
+      "CultureCode": "en",
+      "Title": "Using the Sum",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate solutions to problems by using the formula for the first $n$ terms in a geometric sequence. Interpret results about geometric sums in non-mathematical contexts.",
+        "Financial, housing and growth contexts require interpreting the sum rather than confusing it with the final term. For n terms with initial a and growth ratio r use S_n=a(r^n-1)/(r-1) when r is not one; state the time indexing and unit. If r=1, add n equal terms.",
+        "Source activity 26.1: Some Interesting Sums: Recall that for any geometric sequence starting at \\(a\\) with a common ratio \\(r\\), the sum \\(s\\) of the first \\(n\\) terms is given by \\(s=a\\frac{1-r^{n}}{1-r}\\). Find the approximate sum of the first 50 terms of each sequence: \\(\\frac12\\), \\(\\frac14\\), \\(\\frac18\\), \\(\\frac{1}{16}\\), . . . 1, \\(\\frac12\\), \\(\\frac14\\), \\(\\frac18\\), \\(\\frac{1}{16}\\), . . . Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 26.2: That’s a lot of Houses: Attribution: England Water Reflection Homes Row, by protowink. Public Domain. pixabay. Source. In 2012, about 71 thousand homes were sold in the United Kingdom. For the next 3 years, the number of homes sold increased by about 18% annually. Assuming the sales trend continues, How many homes were sold in 2013? In 2014? What information does the value of the expression \\(71… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 26.3: Back to Funding the Future: Let’s say you open a savings account with an interest rate of 5% per year compounded annually and that you plan on contributing the same amount to it at the start of every year. Predict how much you need to put into the account at the start of each year to have over $100,000 in it when you turn 70. Calculate how much the account would have after the deposit at the start of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Kiran plans to save $200 per year. Bank A would pay 6% interest, and Bank B would pay 4% interest (both compounded annually). How many years will it take to save $10,000 if he uses Bank A? Bank B? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Find the sum of the first 20 terms of each sequence: \\(1, \\frac23, \\frac49,\\frac8{27},\\frac{16}{81},\\dots\\) \\(3, \\frac63,\\frac{12}9,\\frac{24}{27},\\frac{48}{81},\\dots\\) \\(4,2,1,\\frac12,\\frac14,\\dots\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Diego wonders how much money he could save over 25 years if he puts $150 a year into an account with 4% interest per year compounded annually. He calculates the following, but thinks he must have something wrong, since he ended up with a very small amount of money: \\(\\text{total amount} =150 \\frac{1-0.04^{25}}{0.96} =… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which one of these equations is equivalent to \\(8 = \\frac{3+2x}{4+x}\\) for \\(x \\neq \\text-4\\)? \\(8 \\cdot (4+x) = 3 + 2x\\) \\(8 \\cdot (3+2x) = 4 + x\\) \\(8 - (4 + x) = 3 + 2x\\) \\(\\frac{4+x}{8} = 3 + 2x\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Is \\(a^3 + b^3 = (a+b)(a^2 - ab + b^2)\\) an identity? Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Is \\(a^4 + b^4 = (a+b)(a^3-a^2b-ab^2+b^3)\\) an identity? Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The formula for the sum \\(s\\) of the first \\(n\\) terms in a geometric sequence is given by \\(s = a \\left( \\frac{1-r^{n}}{1-r}\\right)\\), where \\(a\\) is the initial value and \\(r\\) is the common ratio. A medicine is prescribed for a patient to take 700 mg every 12 hours for 5 days. After 12 hours, 4% of the medicine is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: A fund receives 100 each of four periods with factor 1.1 per period; find the amount at the end of the fourth period assuming first deposit accrues three times. Expected reasoning or answer: 100*(1+1.1+1.21+1.331)=464.1.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Applying geometric sums",
+          "Definition": "Financial, housing and growth contexts require interpreting the sum rather than confusing it with the final term. For n terms with initial a and growth ratio r use S_n=a(r^n-1)/(r-1) when r is not one; state the time indexing and unit. If r=1, add n equal terms.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Five housing projects contain 5,10,20,40,80 houses. Find the total. Answer: 155 houses."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "a=5,r=2,n=5; S=5*(2^5-1)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Applying geometric sums",
+          "Question": "Five housing projects contain 5,10,20,40,80 houses. Find the total.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "a=5,r=2,n=5",
+            "S=5*(2^5-1)."
+          ],
+          "Answer": "155 houses.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "A fund receives 100 each of four periods with factor 1.1 per period; find the amount at the end of the fourth period assuming first deposit accrues three times.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "100*(1+1.1+1.21+1.331)=464.1.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Applying geometric sums",
+        "Financial, housing and growth contexts require interpreting the sum rather than confusing it with the final term. For n terms with initial a and growth ratio r use S_n=a(r^n-1)/(r-1) when r is not one; state the time indexing and unit. If r=1, add n equal terms.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
