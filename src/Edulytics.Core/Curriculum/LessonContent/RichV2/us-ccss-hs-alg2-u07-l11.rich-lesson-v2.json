@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l11-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L11",
+      "CultureCode": "en",
+      "Title": "Reducing Margin of Error",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Generalize that a greater sample size usually leads to a smaller margin of error. Use data from samples to determine proportions of populations and estimate a margin of error.",
+        "Approximate margin of error decreases like 1/sqrt(n) for independent random samples. Quadrupling sample size typically halves the margin; merely doubling size reduces it by about factor1/sqrt2, not half.",
+        "Source activity 11.1: Notice and Wonder: Female Leads: Five students wanted to see how many children’s movies have female lead characters. They each took a sample of children’s movies, found the proportion of movies that had female lead characters, then used their results to simulate 100 additional samples. The table shows some of the findings based on the original sample and the simulations. What do you notice? What do you… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.2: Finding a Job: Elena and Clare are each working on a project about how high school students are having trouble finding jobs. They each find the proportion of students without jobs from a random sample, then use a computer to do 1,000 simulations using the proportion they found and report the results. Elena says, “The proportion of high school students without jobs is about 0.70 with a margin… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.3: Exercised: Cut a sheet of paper into enough slips for each student in the class to get one. On each of the slips you cut, write “Yes” if you spend at least 5 hours intentionally exercising each week, otherwise write “No” on each of the slips. Put one of your paper slips in each student’s bag, including your own. After all the slips are distributed for all the students, return to your… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Han and Priya are studying the size of trees in the forest next to their school. They each take a random sample to find the proportion of trees that have a trunk circumference greater than 4 feet. Tyler’s sample contains 12 trees, and Priya’s sample contains 20 trees. After collecting data, they run 100 simulations… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Two reporters are both interested in finding the proportion of people in town who are unemployed. They each collect a random sample and use the proportion of unemployed people in the sample to run 100 simulations to determine a margin of error. The first reporter claims the proportion of unemployed people in town is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: An advertising agency uses a random sample of 100 television viewers and simulations to estimate the proportion of people who skip commercials when watching television is 0.653 with a margin of error of 0.082. They decide to check their results by collecting another random sample with 200 television viewers. Which of… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: A scientist uses a random sample of 30 electric companies and simulations from the sample to find that the proportion of electricity produced from renewable methods in the United States is 0.14 with a margin of error of 0.025. Which of these methods would be most likely to significantly reduce margin of error? Run… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: A scientist captures bacteria samples from 100 different locations along a portion of the banks of the Mississippi River and measures the proportion of samples that are contaminated at each location. Describe how the scientist could use the data to estimate the proportion of samples of bacteria that are contaminated… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: This relative frequency histogram shows the distribution of daily rainfall (in centimeters) for a mountainous area over the last 50 days. Match each rainfall interval with the proportion of days over the 50 days whose rainfall amount fell in that interval. 7 to 10 centimeters Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: How many samples compared with n=100 are needed to reduce ±10% to ±2.5%? Expected reasoning or answer: 16 times as many, n≈1600.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sample size and accuracy",
+          "Definition": "Approximate margin of error decreases like 1/sqrt(n) for independent random samples. Quadrupling sample size typically halves the margin; merely doubling size reduces it by about factor1/sqrt2, not half.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "If 100 observations give about ±10% conservative margin, what is the margin for 400? Answer: Approximately ±5%."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Four times sample size; 1/sqrt400=.05 versus1/sqrt100=.10."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sample size and accuracy",
+          "Question": "If 100 observations give about ±10% conservative margin, what is the margin for 400?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Four times sample size",
+            "1/sqrt400=.05 versus1/sqrt100=.10."
+          ],
+          "Answer": "Approximately ±5%.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "How many samples compared with n=100 are needed to reduce ±10% to ±2.5%?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "16 times as many, n≈1600.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Sample size and accuracy",
+        "Approximate margin of error decreases like 1/sqrt(n) for independent random samples. Quadrupling sample size typically halves the margin; merely doubling size reduces it by about factor1/sqrt2, not half.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
