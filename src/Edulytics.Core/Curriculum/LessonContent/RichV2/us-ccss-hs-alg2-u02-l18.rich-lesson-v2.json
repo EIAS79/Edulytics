@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l18-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L18",
+      "CultureCode": "en",
+      "Title": "Graphs of Rational Functions (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify horizontal asymptotes of simple rational functions from their equations. Interpret a graph of a rational function and explain the meaning of the horizontal asymptote in context.",
+        "A rational function with form f(n)=c+k/n approaches c as n grows without bound, with n restricted by its context. For a book with total cost 1000+5n to print n copies, average cost is 5+1000/n, approaching 5 from above. The asymptote is a limit, not a finite attainable average cost when the fixed cost is positive.",
+        "Source activity 18.1: Rewritten Equations: Decide if each of these equations is true or false for \\(x\\) values that do not result in a denominator of 0. Be prepared to explain your reasoning. \\(\\displaystyle{\\frac{x+7}{x}=1+\\frac{7}{x}}\\) \\(\\displaystyle{\\frac{x}{x+7} =1+\\frac{x}{7}}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.2: Publishing a Paperback: Let \\(c\\) be the function that gives the average cost per book \\(c(x)\\), in dollars, when using an online store to print \\(x\\) copies of a self-published paperback book. Here is a graph of \\(c(x)= \\tfrac{120+4x}{x}.\\) What is the approximate cost per book when 50 books are printed? 100 books? The author plans to charge $8 per book. About how many should be printed to make a… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.3: Horizontal Asymptotes: Here are four graphs of rational functions. \\(a(x)=\\frac{4}{x}-1\\) \\(b(x)=\\frac{1}{x}-4\\) \\(c(x)=\\frac{1+4x}{x}\\) \\(d(x)=\\frac{x+4}{x}\\) \\(e(x)=\\frac{1-4x}{x}\\) \\(f(x)=\\frac{4-x}{x}\\) \\(g(x)=1+\\frac{4}{x}\\) \\(h(x)=\\frac{1}{x}+4\\) Match each function with its graphical representation. Where do you see the horizontal asymptote of the graph in the expressions for the functions?… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Rewrite the rational function \\(g(x) = \\frac{x-4}{x}\\) in the form \\(g(x) = c + \\frac{r}{x}\\), where \\(c\\) and \\(r\\) are constants. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The average cost (in dollars) per mile for riding \\(x\\) miles in a cab is \\(c(x)=\\frac{2.5+2x}{x}\\). As \\(x\\) gets larger and larger, what does the end behavior of the function tell you about the situation? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The graphs of two rational functions \\(f\\) and \\(g\\) are shown. One of them is given by the expression \\(\\frac{2-3x}{x}\\). Which graph is it? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which polynomial function’s graph is shown here? \\(f(x)=(x+1)(x+2)(x+5)\\) \\(f(x)=(x+1)(x-2)(x-5)\\) \\(f(x)=(x-1)(x+2)(x+5)\\) \\(f(x)=(x-1)(x-2)(x-5)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: State the degree and end behavior of \\(f(x)=5x^3-2x^4-6x^2-3x+7\\). Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The graphs of two rational functions \\(f\\) and \\(g\\) are shown. Which function must be given by the expression of \\(\\frac{10}{x-3}\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If average is 4+200/n, find the asymptote and the value at n=50. Expected reasoning or answer: y=4; f(50)=8.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Horizontal rational asymptote",
+          "Definition": "A rational function with form f(n)=c+k/n approaches c as n grows without bound, with n restricted by its context. For a book with total cost 1000+5n to print n copies, average cost is 5+1000/n, approaching 5 from above. The asymptote is a limit, not a finite attainable average cost when the fixed cost is positive.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "If total cost is 1000+5n, find average cost per copy for n=100 and its horizontal asymptote. Answer: 15 per copy; asymptote y=5."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Average=5+1000/n; at n=100 average=15; as n increases fixed share tends to 0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Horizontal rational asymptote",
+          "Question": "If total cost is 1000+5n, find average cost per copy for n=100 and its horizontal asymptote.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Average=5+1000/n",
+            "at n=100 average=15",
+            "as n increases fixed share tends to 0."
+          ],
+          "Answer": "15 per copy; asymptote y=5.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If average is 4+200/n, find the asymptote and the value at n=50.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "y=4; f(50)=8.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Horizontal rational asymptote",
+        "A rational function with form f(n)=c+k/n approaches c as n grows without bound, with n restricted by its context. For a book with total cost 1000+5n to print n copies, average cost is 5+1000/n, approaching 5 from above. The asymptote is a limit, not a finite attainable average cost when the fixed cost is positive.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
