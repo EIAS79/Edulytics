@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L08",
+      "CultureCode": "en",
+      "Title": "Unknown Exponents",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend the need to \"undo\" exponentiation to solve problems in simple contexts. Explain (orally and in writing) how to determine the value of an unknown exponent both exactly and approximately.",
+        "An unknown exponent can be found by recognizing powers or comparing a graph. Some equations require a logarithm, which is introduced after observing the inverse operation.",
+        "Source activity 8.1: A Bunch of $x$’s: Solve each equation. Be prepared to explain your reasoning. \\(\\frac {x}{3}=12\\) \\(\\frac {3}{x}=12\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: A Tessellated Trapezoid: Here is a pattern showing a trapezoid being successively decomposed into four similar trapezoids at each step. If \\(n\\) is the step number, how many of the smallest trapezoids are there when \\(n\\) is 4? What about when \\(n\\) is 10? Write an equation to represent the relationship between \\(n\\) and the number of trapezoids in that step. Explain to a partner how you might find… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Successive Splitting: Attribution: Enterobacter cloacae 01, by Centers for Disease Control and Prevention. Public Domain. Wikimedia Commons. Source. In a lab, a colony of 100 bacteria is placed on a petri dish. The population triples every hour. How would you estimate or find the population of bacteria in: double the initial population? How would you estimate or find the number of hours it would… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.4: Missing Values: Complete the tables. Be prepared to explain how you found the missing values. Sometimes we know the value of an exponential expression but we don’t know the exponent that produces that value. For example, suppose the population of a town was 1 thousand. Since then, the population has doubled every decade and is currently at 32 thousand. How many decades has it been since the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A pattern of dots grows exponentially. The table shows the number of dots at each step of the pattern. Write an equation to represent the relationship between the step number, \\(n\\), and the number of dots, \\(y\\). At one step, there are 9,765,625 dots in the pattern. At what step number will that happen? Explain how… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A bacteria population is modeled by the equation \\(p(h) = 10,\\!000 \\boldcdot 2^h\\), where \\(h\\) is the number of hours since the population was measured. About how long will it take for the population to reach 100,000? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Complete the table. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a graph of \\(y = 3^x\\). What is the approximate value of \\(x\\) satisfying \\(3^x = 10,\\!000\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: One account doubles every 2 years. A second account triples every 3 years. Assuming the accounts start with the same amount of money, which account is growing more rapidly? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: How would you describe the output of this graph for: Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The half-life of carbon-14 is about 5730 years. Complete the table, which shows the amount of carbon-14 remaining in a plant fossil at the different times since the plant died. About how many years will it be until there is 0.1 picogram of carbon-14 remaining in the fossil? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve 3^t=81. Expected reasoning or answer: t=4.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown exponent",
+          "Definition": "An unknown exponent can be found by recognizing powers or comparing a graph. Some equations require a logarithm, which is introduced after observing the inverse operation.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve 2^x=32. Answer: x=5."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "32=2^5, so x=5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Unknown exponent",
+          "Question": "Solve 2^x=32.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "32=2^5, so x=5."
+          ],
+          "Answer": "x=5.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve 3^t=81.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "t=4.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Unknown exponent",
+        "An unknown exponent can be found by recognizing powers or comparing a graph. Some equations require a logarithm, which is introduced after observing the inverse operation.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
