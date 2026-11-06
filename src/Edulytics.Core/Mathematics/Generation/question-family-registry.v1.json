@@ -30418,6 +30418,81 @@
       "productionRouting": false,
       "lessonPracticeRouting": true,
       "sourceLessonSkillId": "functions.quadratic.expand"
+    },
+    {
+      "id": "usccss.g11.alg2.u01.l01.affine_recurrence",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g11-u01l01-exact-move-count-or-recursive-value-independent-oracle-stage-d-written-not-run",
+      "representations": [
+        "symbolic",
+        "sequence",
+        "contextual"
+      ],
+      "status": "Shadow",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g11.alg2.u01.l01.hanoi_moves",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g11-u01l01-exact-move-count-or-recursive-value-independent-oracle-stage-d-written-not-run",
+      "representations": [
+        "symbolic",
+        "sequence",
+        "contextual"
+      ],
+      "status": "Shadow",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g11.alg2.u01.l01.fibonacci_term",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g11-u01l01-exact-move-count-or-recursive-value-independent-oracle-stage-d-written-not-run",
+      "representations": [
+        "symbolic",
+        "sequence",
+        "contextual"
+      ],
+      "status": "Shadow",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g11.alg2.u01.l01.halving_fraction",
+      "version": 1,
+      "skillId": "sequences.core",
+      "requiredCapabilities": [
+        "sequences.core.exact",
+        "sequences.verify.core"
+      ],
+      "answerType": "exact_fraction",
+      "verificationPolicy": "g11-u01l01-reduced-or-equivalent-fraction-recursion-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "sequence"
+      ],
+      "status": "Shadow",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

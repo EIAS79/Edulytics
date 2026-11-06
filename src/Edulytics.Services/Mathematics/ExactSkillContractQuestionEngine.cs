@@ -61,6 +61,10 @@ public sealed class ExactSkillContractQuestionEngine
             "sequences.core.arithmetic_nth_term",
             "sequences.core.geometric_nth_term",
             "sequences.core.find_position_arithmetic",
+            "usccss.g11.alg2.u01.l01.affine_recurrence",
+            "usccss.g11.alg2.u01.l01.hanoi_moves",
+            "usccss.g11.alg2.u01.l01.fibonacci_term",
+            "usccss.g11.alg2.u01.l01.halving_fraction",
             "geometry.polygons.interior_angle_sum",
             "geometry.polygons.missing_interior_angle",
             "geometry.polygons.regular_interior_angle",
@@ -904,6 +908,13 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family == "usccss.g11.alg2.u01.l01.halving_fraction")
+        {
+            if (!TryParseFraction(answer, out var numerator, out var denominator)) return false;
+            return parameters["n"] is >= 1 and <= 12 &&
+                numerator * (1 << parameters["n"]) == denominator;
+        }
+
         if (family.StartsWith("fractions.add_subtract.", StringComparison.Ordinal))
         {
             if (!TryParseFraction(answer, out var answerNumerator, out var answerDenominator))
@@ -1133,6 +1144,20 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["quantity"] * (100 + parameters["direction"] * parameters["percent"]) % 100 == 0 &&
                 value * 100 ==
                     parameters["quantity"] * (100 + parameters["direction"] * parameters["percent"]),
+
+            "usccss.g11.alg2.u01.l01.affine_recurrence" =>
+                parameters["n"] >= 1 && parameters["n"] <= 8 &&
+                parameters["multiplier"] is 2 or -2 &&
+                parameters["offset"] is 1 or -1 or 3 &&
+                value == G11AffineRecurrenceTerm(parameters["first"], parameters["multiplier"], parameters["offset"], parameters["n"]),
+
+            "usccss.g11.alg2.u01.l01.hanoi_moves" =>
+                parameters["n"] is >= 1 and <= 12 &&
+                value == G11HanoiMinimalMoves(parameters["n"]),
+
+            "usccss.g11.alg2.u01.l01.fibonacci_term" =>
+                parameters["n"] is >= 1 and <= 20 &&
+                value == G11FibonacciTerm(parameters["n"]),
 
             "sequences.core.arithmetic_nth_term" =>
                 parameters["n"] > 0 &&
@@ -3094,6 +3119,14 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildPercentageOfQuantity(random, scale, "percentages.core.of_quantity"),
             "percentages.core.increase_decrease" =>
                 BuildPercentageIncreaseDecrease(random, scale),
+            "usccss.g11.alg2.u01.l01.affine_recurrence" =>
+                BuildG11AffineSequence(random),
+            "usccss.g11.alg2.u01.l01.hanoi_moves" =>
+                BuildG11HanoiMoves(random),
+            "usccss.g11.alg2.u01.l01.fibonacci_term" =>
+                BuildG11FibonacciTerm(random),
+            "usccss.g11.alg2.u01.l01.halving_fraction" =>
+                BuildG11HalvingFraction(random),
             "sequences.core.arithmetic_nth_term" =>
                 BuildArithmeticSequenceNthTerm(random, scale),
             "sequences.core.geometric_nth_term" =>
@@ -3364,6 +3397,76 @@ public sealed class ExactSkillContractQuestionEngine
             ("percent", percent),
             ("quantity", quantity),
             ("direction", direction));
+    }
+
+    // G11 Algebra 2 U01:L01 first-party recurrence question families.
+    // Explicitly separate the numerical response from teacher-scored
+    // explanations and legal-move demonstrations.
+    private static int G11AffineRecurrenceTerm(int first, int multiplier, int offset, int n)
+    {
+        var term=first;
+        for(var position=1;position<n;position++)
+            term=checked(multiplier*term+offset);
+        return term;
+    }
+
+    private static int G11HanoiMinimalMoves(int n) => checked((1 << n)-1);
+
+    private static int G11FibonacciTerm(int n)
+    {
+        if(n<=2)return n-1;
+        var a=0;var b=1;
+        for(var i=3;i<=n;i++)
+        {
+            var next=checked(a+b);
+            a=b;
+            b=next;
+        }
+        return b;
+    }
+
+    private static ExactProblem BuildG11AffineSequence(Random random)
+    {
+        var first=random.Next(-3,5);
+        var multiplier=random.Next(0,2)==0?2:-2;
+        var offset=multiplier==2?-1:3;
+        var n=random.Next(3,7);
+        return Problem(
+            "usccss.g11.alg2.u01.l01.affine_recurrence",
+            $"A sequence starts with {first}. Each following term is {multiplier} times the previous term plus ({offset}). What is term {n}?",
+            "Start with the first term and apply the stated operation exactly once per step. Do not reverse subtraction or change the initial value.",
+            AssessmentItemType.Numeric,
+            ("first",first),("multiplier",multiplier),("offset",offset),("n",n));
+    }
+
+    private static ExactProblem BuildG11HanoiMoves(Random random)
+    {
+        var n=random.Next(3,9);
+        return Problem(
+            "usccss.g11.alg2.u01.l01.hanoi_moves",
+            $"Under the legal three-peg, one-disc transfer rules, what is the smallest number of moves for {n} discs?",
+            "Move n-1 smaller discs aside, move the largest once, then transfer n-1 back. Explain why both subproblems are necessary.",
+            AssessmentItemType.Numeric,("n",n));
+    }
+
+    private static ExactProblem BuildG11HalvingFraction(Random random)
+    {
+        var n=random.Next(4,8);
+        return Problem(
+            "usccss.g11.alg2.u01.l01.halving_fraction",
+            $"A sequence starts 1/2 and each next term is half the previous term. What is term {n}? Enter an exact fraction.",
+            "Halving the fraction n-1 times produces 1/2^n. Enter a fraction with the correct numerator and denominator.",
+            AssessmentItemType.ShortAnswer,("n",n));
+    }
+
+    private static ExactProblem BuildG11FibonacciTerm(Random random)
+    {
+        var n=random.Next(5,11);
+        return Problem(
+            "usccss.g11.alg2.u01.l01.fibonacci_term",
+            $"A sequence begins 0,1 and each later term is the sum of its previous two terms. Counting 0 as term 1, find term {n}.",
+            "Keep both previous terms, add them to form the next, then slide the two-term window forward.",
+            AssessmentItemType.Numeric,("n",n));
     }
 
     private static ExactProblem BuildArithmeticSequenceNthTerm(Random random, int scale)
@@ -6013,6 +6116,16 @@ public sealed class ExactSkillContractQuestionEngine
             "percentages.core.increase_decrease" =>
                 (p["quantity"] * (100 + p["direction"] * p["percent"]) / 100)
                     .ToString(CultureInfo.InvariantCulture),
+
+            "usccss.g11.alg2.u01.l01.affine_recurrence" =>
+                G11AffineRecurrenceTerm(p["first"],p["multiplier"],p["offset"],p["n"])
+                    .ToString(CultureInfo.InvariantCulture),
+            "usccss.g11.alg2.u01.l01.hanoi_moves" =>
+                G11HanoiMinimalMoves(p["n"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g11.alg2.u01.l01.fibonacci_term" =>
+                G11FibonacciTerm(p["n"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g11.alg2.u01.l01.halving_fraction" =>
+                SimplifyFraction(1, 1 << p["n"]),
 
             "sequences.core.arithmetic_nth_term" =>
                 (p["first"] + (p["n"] - 1) * p["difference"]).ToString(CultureInfo.InvariantCulture),
