@@ -56,6 +56,6 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Equal(3, (-3) * (-3) + 2 * (-3));
         Assert.Equal(3, 1 * 1 + 2 * 1);
         Assert.Equal(4, (-1) * (-1) - 2 * (-1) + 1);
-        Assert.Equal(0, 2 * 3 + 6 * (2 - 3.0 / 3) - 12);
+        Assert.Equal(0.0, 2 * 3 + 6 * (2 - 3.0 / 3) - 12);
     }
 }
