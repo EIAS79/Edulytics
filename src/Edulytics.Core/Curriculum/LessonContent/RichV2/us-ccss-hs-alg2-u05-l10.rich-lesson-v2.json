@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l10-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10",
+      "CultureCode": "en",
+      "Title": "Combining Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create new functions by adding, subtracting, multiplying, and dividing simpler functions with and without context.",
+        "If functions f,g share a domain, f+g, f-g and fg evaluate pointwise. The quotient f/g is defined only where g is nonzero; context may impose additional restrictions.",
+        "Source activity 10.1: Notice and Wonder: Are Book Sales Improving?: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.2: How Many Books Can One Person Have?: The table shows the values of two functions, \\(P\\) and \\(B\\), where \\(P(t)\\) is the population of the US, in millions, \\(t\\) years after 2010, and \\(B(t)\\) is the number of books sold per year, in millions, \\(t\\) years after 2010. Plot the values of \\(B\\) as a function of \\(t\\). What does the plot tell you about book sales? How many books were sold per person in 2010 and 2016?… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.3: Adding Functions: Here are the graphs of two functions, \\(E\\) and \\(L\\). Define a new function \\(S\\) by adding \\(E\\) and \\(L\\), so \\(S(x) = E(x) + L(x)\\). On the same axes, sketch what you think the graph of \\(S\\) looks like. Sketch the graph of the sum of \\(E\\) and each of the following functions. Here are the graphs of two functions, \\(U\\) and \\(V\\). Define a new function \\(W\\) by multiplying… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Sketch the graph of the function defined by the sum of function \\(F\\) and each of these functions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here are graphs of two functions \\(f\\) and \\(g\\). The function \\(h\\) is defined by \\(h(x) = f(x) - g(x)\\). For which values of \\(x\\) is \\(h(x) = 0\\)? Explain how you know. For which values of \\(x\\) is \\(h(x) < 0\\)? For which values of \\(x\\) is \\(h(x) > 0\\)? Sketch a graph of \\(h\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The graph of each of these quadratic equations is a parabola. Explain how to find the vertex of each parabola by applying transformations to the graph of \\(y = x^2\\). \\(y = (x-1)^2 + 5\\) \\(y = \\text-(x-1)^2 + 5\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The table shows the approximate United States population and the amount of sugar consumed in the given years. About how many pounds of sugar per year were consumed by each person in the 1800? 1850? 1900? 1950? 2000? Plot the numbers on the graph. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is a graph of a function \\(f\\). Use the graph to explain why this function is neither odd nor even. An equation defining \\(f\\) is \\(f(x) = x^2 -2x\\). Use the equation to verify that \\(f\\) is neither odd nor even. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: In the table, we have the function \\(f\\) which gives Clare’s height \\(f(t)\\) above the ground, in feet, \\(t\\) seconds after starting her descent from the top of the original Ferris wheel. Today Clare tried out two new Ferris wheels. The first one, whose height is given by the function \\(p\\), is half the height of the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For the same functions find (f/g)(2) and excluded denominator input. Expected reasoning or answer: 3/4; x=0 excluded.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Operations on functions",
+          "Definition": "If functions f,g share a domain, f+g, f-g and fg evaluate pointwise. The quotient f/g is defined only where g is nonzero; context may impose additional restrictions.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "With f(x)=x+1 and g(x)=x², find (f+g)(2) and (fg)(2). Answer: 7 and12."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "At2 f=3 and g=4; sum7 product12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Operations on functions",
+          "Question": "With f(x)=x+1 and g(x)=x², find (f+g)(2) and (fg)(2).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "At2 f=3 and g=4",
+            "sum7 product12."
+          ],
+          "Answer": "7 and12.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For the same functions find (f/g)(2) and excluded denominator input.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "3/4; x=0 excluded.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Operations on functions",
+        "If functions f,g share a domain, f+g, f-g and fg evaluate pointwise. The quotient f/g is defined only where g is nonzero; context may impose additional restrictions.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
