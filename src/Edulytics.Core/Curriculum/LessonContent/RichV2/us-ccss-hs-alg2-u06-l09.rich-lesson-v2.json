@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l09-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L09",
+      "CultureCode": "en",
+      "Title": "Introduction to Trigonometric Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend cosine and sine as functions whose input is an angle $\\theta$ and output is the $x$- or $y$-coordinate of the corresponding point on the unit circle. Draw and label the graphs of $y=\\cos(\\theta)$ and $y=\\sin(\\theta)$ for values of $\\theta$ from 0 to $2\\pi$.",
+        "Unit circle coordinates define cos and sin for every real angle. Their graphs are periodic as θ travels 0 to 2π; sin0=0 and cos0=1, and output values stay in [-1,1].",
+        "Source activity 9.1: An Angle and a Circle: Suppose there is a point \\(P\\) on the unit circle at \\((1,0)\\). Describe how the \\(x\\)-coordinate of \\(P\\) changes as it rotates once counterclockwise around the circle. Describe how the \\(y\\)-coordinate of \\(P\\) changes as it rotates once counterclockwise around the circle. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.2: Do the Wave: Use the class display, the table from a previous lesson, or the applet to estimate the value of \\(y=\\cos(\\theta)\\) and \\(y=\\sin(\\theta)\\) where \\(\\theta\\) is the measure of an angle in radians. Use technology to plot the values of \\(y=\\cos(\\theta)\\), where \\(\\theta\\) is the measure of an angle in radians. Use technology to plot the values of \\(y=\\sin(\\theta)\\), where… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.3: Graphs of Cosine and Sine: Looking at the graphs of \\(y=\\cos(\\theta)\\) and \\(y=\\sin(\\theta)\\), at what values of \\(\\theta\\) do \\(\\cos(\\theta)=\\sin(\\theta)\\)? Where on the unit circle do these points correspond to? \\(y=\\cos(\\theta)+\\sin(\\theta)\\) \\(y=\\cos^2(\\theta)\\) \\(y=\\sin^2(\\theta)\\) \\(y=\\cos^2(\\theta)+\\sin^2(\\theta)\\) For each of these equations, first predict what the graph looks like, and then… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Which statement is not true for the function \\(f\\) given by \\(f(\\theta) = \\sin(\\theta)\\), for values of \\(\\theta\\) between 0 and \\(2\\pi\\)? The outputs of the function range from -1 to 1. \\(\\sin{\\theta} = 1\\) only when \\(\\theta = \\frac{\\pi}{2}\\) \\(\\sin{\\theta} = 0\\) only when \\(\\theta = 0\\) \\(\\sin{\\theta} > 0\\) for \\(0… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Angle \\(\\theta\\), measured in radians, satisfies \\(\\cos(\\theta) = 0\\). What could the value of \\(\\theta\\) be? Select all that apply. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here are the graphs of two functions. Which is the graph of \\(y = \\cos(\\theta)\\)? Explain how you know. Which is the graph of \\(y = \\sin(\\theta)\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which statements are true for both functions \\(y = \\cos(\\theta)\\) and \\(y = \\sin(\\theta)\\)? Select all that apply. The function is periodic. The maximum value is 1. The maximum value occurs at \\(\\theta = 0\\). The period of the function is \\(2\\pi\\). The function has a value of about 0.71 when \\(\\theta =… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is a graph of a function \\(f\\). The function \\(f\\) is either defined by \\(f(\\theta) = \\cos^2(\\theta) + \\sin^2(\\theta)\\) or \\(f(\\theta) = \\cos^2(\\theta) - \\sin^2(\\theta)\\). Which definition is correct? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The minute hand on a clock is 1.5 feet long. The end of the minute hand is 6 feet above the ground at one time each hour. How many feet above the ground could the center of the clock be? Select all that apply. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Here is a graph of the water level height, \\(h\\), in feet, relative to a fixed mark, measured at a beach over several days, \\(d\\). Explain why the water level is a function of time. Describe how the water level varies each day. What does it mean in this context for the water level to be a periodic function of time? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate cosπ and sinπ. Expected reasoning or answer: -1,0.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sine and cosine as functions",
+          "Definition": "Unit circle coordinates define cos and sin for every real angle. Their graphs are periodic as θ travels 0 to 2π; sin0=0 and cos0=1, and output values stay in [-1,1].",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Evaluate sin0, sin(π/2), and cos0. Answer: 0,1,1."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "At θ0 point(1,0), at π/2 point(0,1)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sine and cosine as functions",
+          "Question": "Evaluate sin0, sin(π/2), and cos0.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "At θ0 point(1,0), at π/2 point(0,1)."
+          ],
+          "Answer": "0,1,1.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate cosπ and sinπ.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-1,0.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Sine and cosine as functions",
+        "Unit circle coordinates define cos and sin for every real angle. Their graphs are periodic as θ travels 0 to 2π; sin0=0 and cos0=1, and output values stay in [-1,1].",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
