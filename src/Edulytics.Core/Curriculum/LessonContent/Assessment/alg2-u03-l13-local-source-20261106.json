@@ -1,0 +1,94 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L13",
+  "LearningGoals": [
+    "Calculate the result of multiplying two complex numbers.",
+    "Justify that two equivalent expressions involving complex numbers are equivalent, using the fact that $i^2=\\text-1$."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSN-RN.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-CN.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-CN.A.1",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-CN.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-CN.A.2",
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSN-CN.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSN-CN.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Multiply (2+i)(3-2i).",
+    "Steps": [
+      "6-4i+3i-2i²=8-i."
+    ],
+    "Answer": "8-i"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "13.1: $i$ Squared",
+      "13.2: Multiplying Imaginary Numbers",
+      "13.3: Multiplying Complex Numbers"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Multiply (1+2i)(1-2i).",
+    "Expected": "5.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l13-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l13.rich-lesson-v2.json"
+}
