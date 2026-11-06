@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L04",
+      "CultureCode": "en",
+      "Title": "Reflecting Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that \"reflecting\" a function's graph across an axis means replacing either the inputs or the outputs with their opposite values. Create a graph of $y=\\text-f(x)$ or $y=f(\\text-x)$ given the graph of $y=f(x)$.",
+        "Reflecting y=f(x) over the x-axis gives y=-f(x); reflecting over the y-axis gives y=f(-x). These are different operations unless the function has appropriate symmetry.",
+        "Source activity 4.1: Notice and Wonder: Reflections: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: Reflecting Across: Here is the graph of function \\(f\\) and a table of values. Let \\(g\\) be the function defined by \\(g(x) = \\text-f(x)\\). Complete the table. Sketch the graph of \\(g\\) on the same axes as the graph of \\(f\\) but in a different color. Describe how to transform the graph of \\(f\\) into the graph of \\(g\\). Explain how the equation produces this transformation. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Reflecting Across a Different Way: Here is another copy of the graph of \\(f\\) from the earlier activity. This time, let \\(h\\) be the function defined by \\(h(x) = f(\\text-x)\\). Use the definition of \\(h\\) to find \\(h(0)\\). Does your answer agree with your prediction? What does your prediction tell you about \\(h(\\text-0.6)\\)? Does your answer agree with the definition of \\(h\\)? Complete the tables. The values for… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The dashed function is the graph of \\(f\\) and the solid function is the graph of \\(g\\). Express \\(g\\) in terms of \\(f\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The table gives some values of functions \\(f\\) and \\(g\\). Which of these equations could be true for all values of \\(x\\)? \\(f(x) = \\text-g(x)\\) \\(f(x) = \\text-g(-x)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of a function \\(f\\). On the same axis, sketch a graph of \\(f\\) reflected over the \\(y\\)-axis and then translate it 3 units up. Write an equation (in terms of \\(f\\)) for a function \\(g\\) that has the graph that you drew. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Describe a transformation of the line that contains the two labelled points. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The thermostat in an apartment is set to \\(75^\\circ \\text{F}\\) while the owner is awake and to \\(60^\\circ \\text{F}\\) while the owner is sleeping. The function \\(W\\) gives the temperature \\(W(x)\\), in degrees Fahrenheit, in the apartment \\(x\\) hours after midnight. When it is hot outside, the owner changes the settings… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: A ball is hit in the air. Its height \\(h\\), in feet, \\(t\\) seconds after it is hit is modeled by the equation \\(h = 4 + 50t - 32t^2\\). Which equation models the height of a ball following the same path but is hit 2 seconds after the first ball? \\(h = 6 + 50t - 32t^2\\) \\(h = 2 + 50t - 32t^2\\) \\(h = 4 + 50(t+2)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Reflect f(x)=x²+3 in the x-axis. Expected reasoning or answer: -x²-3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reflections",
+          "Definition": "Reflecting y=f(x) over the x-axis gives y=-f(x); reflecting over the y-axis gives y=f(-x). These are different operations unless the function has appropriate symmetry.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For f(x)=x+2, write -f(x) and f(-x). Answer: -f(x)=-x-2; f(-x)=-x+2."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Negate entire output: -x-2; negate input only: -x+2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reflections",
+          "Question": "For f(x)=x+2, write -f(x) and f(-x).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Negate entire output: -x-2",
+            "negate input only: -x+2."
+          ],
+          "Answer": "-f(x)=-x-2; f(-x)=-x+2.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Reflect f(x)=x²+3 in the x-axis.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-x²-3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Reflections",
+        "Reflecting y=f(x) over the x-axis gives y=-f(x); reflecting over the y-axis gives y=f(-x). These are different operations unless the function has appropriate symmetry.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
