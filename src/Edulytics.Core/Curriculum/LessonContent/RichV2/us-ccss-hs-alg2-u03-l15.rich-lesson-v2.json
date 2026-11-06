@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l15-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L15",
+      "CultureCode": "en",
+      "Title": "Working Backwards",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine what information is needed to find the complex numbers that were multiplied to get a certain result, and ask questions to elicit that information.",
+        "A complex product does not uniquely determine its two factors. Ask for additional constraints, such as conjugacy; z*conj(z)=a²+b².",
+        "Source activity 15.1: What's Missing?: Here are some complex numbers with an unknown difference: \\((10+4i)-(\\underline{\\phantom{00}} + \\underline{\\phantom{00}}i) = \\text?\\) If the result of this subtraction is a real number, what could the second complex number be? If the result of this subtraction is an imaginary number, what could the second complex number be? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 15.2: Info Gap: What Was Multiplied?: Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all the expressions that are equivalent to \\((3 - 5i)(\\text-8 + 2i)\\). \\(\\text-24 + 6i - 40i + 10i^2\\) \\(\\text-24 + 46i - 10\\) \\(\\text-24 + 6i + 40i - 10i^2\\) \\(\\text-24 + 46i + 10\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Explain or show how to write \\((20 - i)(8 + 4i)\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Without going through all the trouble of writing the left side in the form \\(a+bi\\), how could you tell that this equation is false? \\((\\text-9 + 2i)(10 - 13i) =\\text-68 - 97i\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Andre spilled something on his math notebook and some parts of the problems he was working on were erased. Here is one of the problems: \\((\\hspace{1cm} - 2i)(\\hspace{1cm} + 2i) = \\hspace{1cm} - 10i\\) What could go in the blanks? Could other numbers work, or is this the only possibility? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Find the exact solution(s) to each of these equations, or explain why there is no solution. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. Optionally, plot \\(3+2i\\) in the complex plane. Then plot and label each of your answers. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The table shows two investment account balances growing over time. Describe a pattern in how each account balance changed from one year to the next. Define the amount of money, in thousands of dollars, in accounts \\(A\\) and \\(B\\) as functions of time \\(t\\), where \\(t\\) is years since 2000, using function notation.… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Compute (3+2i)(3-2i). Expected reasoning or answer: 13.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Information gap in complex factorisation",
+          "Definition": "A complex product does not uniquely determine its two factors. Ask for additional constraints, such as conjugacy; z*conj(z)=a²+b².",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find a conjugate pair whose product is 2. Answer: 1+i and 1-i"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(1+i)(1-i)=1-i²=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Information gap in complex factorisation",
+          "Question": "Find a conjugate pair whose product is 2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(1+i)(1-i)=1-i²=2."
+          ],
+          "Answer": "1+i and 1-i",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Compute (3+2i)(3-2i).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "13.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Information gap in complex factorisation",
+        "A complex product does not uniquely determine its two factors. Ask for additional constraints, such as conjugacy; z*conj(z)=a²+b².",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
