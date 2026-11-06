@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L08",
+      "CultureCode": "en",
+      "Title": "Cubes and Cube Roots",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate solutions to equations involving cubes and cube roots and explain the solution method used. Compare and contrast the processes of solving equations with square roots and with cube roots. Justify using a graph that every number, positive or negative, has exactly one cube root.",
+        "Each real number has one real cube root because x^3 increases strictly across the real line; negative inputs retain their sign.",
+        "Source activity 8.1: Put Your Arm(s) Up: How are these graphs the same? How are they different? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: Finding Cube Roots with a Graph: Use the applet to zoom in and out on the graph. How many solutions are there to each of the following equations? Estimate the solution(s) from the graph of \\(y=x^3\\). Check your estimate by substituting it back into the equation. \\(x^3 = \\text{-}8\\) \\(x^3 = \\text{-}2\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Cube Root Equations: Use the applet to zoom in and out on the graph. Use the graph of \\(y = \\sqrt[3]{x}\\) to estimate the solution(s) to \\(\\sqrt[3]{x} = \\text{-}4\\). Use the meaning of cube roots to find an exact solution to the equation \\(\\sqrt[3]{x} = \\text{-}4\\). How close was your estimate? Find the solution of the equation \\(\\sqrt[3]{x} = 3.5\\) using the meaning of cube roots. Use the graph… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.4: Solve These Equations With Cube Roots in Them: Here are a lot of equations: \\(\\sqrt[3]{t+4} = 3\\) \\(\\text-10 = \\text-\\sqrt[3]{a}\\) \\(\\sqrt[3]{3-w} - 4 = 0\\) \\(\\sqrt[3]{z} + 9 = 0\\) \\(\\sqrt[3]{r^3 - 19} = 2\\) \\(5 - \\sqrt[3]{k+1} = \\text-1\\) \\(\\sqrt[3]{p+4} - 2 = 1\\) \\(6-\\sqrt[3]{b} = 0\\) \\(\\sqrt[3]{2n} + 3 = \\text-5\\) \\(4+\\sqrt[3]{\\text-m} + 4 = 6\\) \\(\\text-\\sqrt[3]{c} = 5\\) \\(\\sqrt[3]{s-7} + 3 = 0\\) Without solving,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all equations for which -3 is a solution. \\((\\text- x)^2 = 9\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: \\(\\sqrt[3]{x} = 2\\) \\(\\sqrt[3]{x} = \\text-4.5\\) \\(\\sqrt[3]{x} = 3.75\\) Use the graph of \\(y = \\sqrt[3]{x}\\) to estimate the solution(s) to the following equations. Use the meaning of cube roots to find exact solutions to all three equations. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Which are the solutions to the equation \\(x^3=\\text-125\\)? The equation has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Complete the table. Use powers of 16 in the top row. Use radicals or rational numbers in the second row. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which are the solutions to the equation \\(\\sqrt{x}=\\text-8\\)? This equation has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Find the solution(s) to each equation, or explain why there is no solution. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve 2x^3=54. Expected reasoning or answer: x=3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cubes and cube roots",
+          "Definition": "Each real number has one real cube root because x^3 increases strictly across the real line; negative inputs retain their sign.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve x^3=-8 and cube root(-64). Answer: x=-2; cube root=-4"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(-2)^3=-8 and (-4)^3=-64."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cubes and cube roots",
+          "Question": "Solve x^3=-8 and cube root(-64).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(-2)^3=-8 and (-4)^3=-64."
+          ],
+          "Answer": "x=-2; cube root=-4",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve 2x^3=54.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Cubes and cube roots",
+        "Each real number has one real cube root because x^3 increases strictly across the real line; negative inputs retain their sign.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
