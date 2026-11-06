@@ -220,7 +220,11 @@ jobs:
             sleep 3
           done
           if [[ "$ready" != true ]]; then tail -n 100 /tmp/g11-app.log; exit 1; fi
-          python3 tools/phase29/g11_algebra2_https.py
+          if ! python3 tools/phase29/g11_algebra2_https.py; then
+            echo 'Grade11 authenticated lesson rendering failed; sanitized server exception summary follows:'
+            grep -E '(^|[[:space:]])(fail:|crit:|System\.|InvalidOperationException|NullReferenceException|ArgumentException|Unhandled exception|Error)' /tmp/g11-app.log | tail -n 120 || true
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
