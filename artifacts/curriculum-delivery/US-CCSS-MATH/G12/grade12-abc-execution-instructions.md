@@ -35,7 +35,7 @@ Draft course now authored: PRECALC/Advanced Precalculus selector at American Gra
 - **Lesson gate:** Verify only the current Section's original elements, first-party content, skill/assessment contracts, accessible representations and rights. Chapter Review / Review Exercises / Practice Test remain **unit-owned shared resources**; reconcile them at U01 unit closure, and attach relevant cross-references to current lessons. Never demand all 80 review exercises and 35 practice-test questions as a prerequisite for **L01 alone**.
 - **Grade-wide gate:** The other 72 Sections' official CCSS mapping is a grade-wide backlog, not an unresolved standard mapping for Section 1.1, whose two formal references were checked already. Do not duplicate checks across every earlier lesson.
 - **Stage D boundary:** Do not require **executed** authenticated student/teacher UI or CI tests in A–B–C. Record those as `B_RUNTIME_UNVERIFIED` and `D_PENDING`; however actual missing content, teacher assessment contracts, source parity, and unserved diagrams remain blockers to `READY_FOR_STAGE_D`.
-- **Counts:** Distinguish original source examples (15 identified in Section 1.1) from first-party authored examples (now 16, including the new overlapping-ray remediation). Rich V2 currently has 21 first-party table/equation visuals. Student code holds 5 teaching graphs and 19 source-skill exercise graph models. These are authored teaching models, not an independently certified source figure 1:1 match. Recompute counts from HEAD.
+- **Counts:** Distinguish original source examples (15 identified in Section 1.1) from first-party authored examples (now 16, including the new overlapping-ray remediation). Rich V2 currently has 21 first-party table/equation visuals. Student code holds 5 teaching graphs and 20 source-skill exercise graph models, including a separately labelled first-party graph-52 analogue with its own known rule. These are authored teaching models, not an independently certified source figure 1:1 match. Recompute counts from HEAD.
 - When updating source/assessment/teacher material, stage **one coherent content/test/evidence/checkpoint change** per actual lesson close. Interim correction commits are permissible only for an independently repaired defect; they never advance the sequential cursor. Stage D tests remain written, not run.
 
 
@@ -52,3 +52,12 @@ Draft course now authored: PRECALC/Advanced Precalculus selector at American Gra
 - Original source contains 12 Try It skill checks; independent Edulytics first-party replacements are saved under u01-l01-tryit-first-party-teacher-review.json.
 - All twelve prompts are now authored in the Section 1.1 student lesson view and routed by unique teacher-submission identifiers 94 through 105. These identifiers are NOT original numbered Section exercises.
 - Student/teacher authorization, PostgreSQL persistence, rubric feedback and accessible rendering remain WRITTEN_NOT_RUN or STAGE_D_NOT_VERIFIED, not a claim of production success.
+
+
+## Efficient local source prefetch (no external search or sync)
+
+- Use tools/curriculum/prepare_g12_openstax_unit_source_cache.py --unit 1 on the authorized Windows device. It extracts local PDF pages for the seven sequential Unit 1 lessons together, validates the exact adopted 2017 source SHA-256, and caches them outside the repository under the local temp directory.
+- Re-run the same command to reuse the hash-stable cache without opening the entire PDF again. Later use --unit 2 through --unit 12, as and when work reaches those chapters. The cache is not checked into GitHub.
+- Cached original text is an inspection aid; equations, embedded diagrams and page-window semantics still require visual checks where a source ambiguity exists.
+- Strictly preserve first-incomplete ordering: Unit 1 remains U01:L01 until the academic A–B–C parity and assessment gate is actually met; never advance source review based on cache existence alone.
+- Targeted isolated C# compilation for the renderer and exact question family passed; the full student/teacher runtime, migrations, CI, Stage D and authenticated tests remain outside A–B–C.
