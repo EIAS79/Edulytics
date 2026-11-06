@@ -1,5 +1,5 @@
 {
-  "ContentVersion": "g12-u01-l01-overlapping-ray-vertical-line-first-party-supplement-20261106",
+  "ContentVersion": "g12-u01-l01-16-first-party-examples-7-visuals-tabular-lookup-20261106",
   "Lessons": [
     {
       "CommonMistakes": [
@@ -299,6 +299,39 @@
           ],
           "SecondaryItems": [],
           "Rows": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Evaluate and solve from a displayed input-output table",
+          "Description": "First-party table for worked example 11. Read f(0)=1 by column and compare the two columns whose output is 4. Multiple different inputs can have the same output while the relation remains a function.",
+          "PrimaryLabel": "Input x",
+          "SecondaryLabel": "Output f(x)",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "−1",
+                "0",
+                "1",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "f(x)",
+              "Cells": [
+                "4",
+                "1",
+                "4",
+                "9"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
         }
       ],
       "WorkedExamples": [

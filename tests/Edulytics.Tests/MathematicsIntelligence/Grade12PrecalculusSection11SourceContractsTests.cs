@@ -45,9 +45,14 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Equal("Functions and Function Notation", lesson.Title);
         Assert.Equal(16, lesson.WorkedExamples.Count);
         Assert.True(lesson.KeyConcepts.Count >= 8);
-        Assert.Equal(6, lesson.Visuals.Count);
+        Assert.Equal(7, lesson.Visuals.Count);
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Vertical-line test",
             StringComparison.Ordinal));
+        Assert.Contains(lesson.Visuals, visual =>
+            visual.Kind == "RatioTable" &&
+            visual.Title == "Evaluate and solve from a displayed input-output table" &&
+            visual.Rows.Count == 2 &&
+            visual.Rows[0].Cells.Count == 4);
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Horizontal-line test",
             StringComparison.Ordinal));
         // Regression for the source exercise 46 error: separate horizontal
