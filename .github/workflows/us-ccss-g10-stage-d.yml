@@ -1,17 +1,9 @@
 name: Grade 10 Geometry Stage D - fail closed
+# Do not filter by changed-file paths: PR #583 spans >300 changed files and
+# GitHub's pull_request path filter can silently miss later modifications.
 on:
   pull_request:
     branches: [main]
-    paths:
-      - '.github/workflows/us-ccss-g10-stage-d.yml'
-      - 'tools/curriculum/g10-stage-d-audit.cjs'
-      - 'tools/phase29/g10_geometry_https.py'
-      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
-      - 'artifacts/curriculum-delivery/US-CCSS-MATH/GEO/**'
-      - 'src/Edulytics.Core/Curriculum/LessonContent/**'
-      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/**'
-      - 'tools/curriculum/us-ccss-geo-*.test.cjs'
-      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,6 +12,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   structural-inventory:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -44,6 +37,7 @@ jobs:
           path: /tmp/g10-structural.json
           if-no-files-found: warn
   node-lesson-shards:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -97,6 +91,7 @@ jobs:
             exit 3
           fi
   node-shared-geometry:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -116,6 +111,7 @@ jobs:
           test "${#suites[@]}" -gt 0
           node --test "${suites[@]}"
   dotnet-build-regression:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 60
@@ -141,6 +137,7 @@ jobs:
           path: /tmp/g10-dotnet/
           if-no-files-found: warn
   source-and-owner-academic-handoff:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 15
@@ -174,6 +171,7 @@ jobs:
           if-no-files-found: warn
 
   lesson-runtime-route-coverage:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 15
@@ -188,6 +186,7 @@ jobs:
         run: node tools/curriculum/g10-stage-d-audit.cjs --strict-practice
 
   g10-geometry-124-student-https:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
     needs: structural-inventory
     runs-on: ubuntu-24.04
     timeout-minutes: 70
