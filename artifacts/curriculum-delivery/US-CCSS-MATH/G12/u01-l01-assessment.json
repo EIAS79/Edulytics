@@ -89,21 +89,18 @@
       "Do not use the G11 Algebra 2 curriculum course identity for this Grade12 Precalculus course."
     ],
     "MissingFamiliesOrCapabilities": [
-      "Exact graph/curve vertical-line and horizontal-line interaction and grading, or equivalent accessible teacher review",
-      "Function one-to-one classification on explicitly restricted domains",
-      "Function equation-solving with all valid roots and domain restrictions",
-      "All 92 source Section 1.1 exercise structures and diagram-sensitive tasks",
-      "Exercise 60–67 require separate table/ordered-pair classification and function-value lookup (not graphical line testing).",
-      "Exercise 52 part (b) original graph cannot be graded without an exact source read or human rubric.",
-      "Exercise 52 part (b) cannot receive a hard-coded exact numerical answer from the displayed original graph."
+      "Original graphic constructs and drawings require authenticated Stage D review of the authored graph-coordinate teacher route.",
+      "Full automatic scoring is not claimed for all 92 original-numbered source tasks; partial existing exact families and teacher-scoped rubrics are explicitly distinguished.",
+      "Exact symbolically equivalent arbitrary function-solving and difference quotient automation is not implemented; the source skill is delivered in a human-scored task.",
+      "Original source exercise 52(b) exact numerical root is not supplied by the printed image; teacher must not confuse the first-party x=7 answer with original source exactness."
     ],
     "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
-    "PracticeReady": "PARTIAL_8_FAMILY_CONTRACT_NOT_FULL_SOURCE_PARITY",
+    "PracticeReady": "STAGE_C_AUTHORING_EIGHT_FAMILY_REUSE_AND_92_TEACHER_REVIEW_CONTRACTS_SOURCE_SEMANTIC_PARITY_OPEN",
     "Tests": "WRITTEN_NOT_RUN",
     "StageD": "NOT_RUN",
     "ExerciseRoutingManifestPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
     "ExerciseRoutingCount": 92,
-    "ExerciseRoutingStatus": "CONTRACTS_AUTHORED_NOT_RUNTIME_BOUND",
+    "ExerciseRoutingStatus": "ALL_92_SOURCE_SKILLS_MAPPED_TO_EIGHT_REUSED_OR_EXTENDED_ANALOGUE_FAMILIES_AND_TEACHER_REVIEW; RUNTIME_NOT_VERIFIED",
     "ExerciseRoutingGroups": [
       {
         "Category": "VERBAL_DEFINITIONS",
@@ -145,7 +142,27 @@
     "ExtendedFamilyDesign": "EXACT_FINITE_RELATION_ONE_TO_ONE_CLASSIFICATION; NO_GRAPH_AUTOGRADING",
     "ExtendedFamilyTestStatus": "WRITTEN_NOT_RUN",
     "ExtendedFamiliesCount": 4,
-    "ExactFamilyCountForGrade12": 8
+    "ExactFamilyCountForGrade12": 8,
+    "SourceNumberedExerciseAssessmentContracts": 92,
+    "SourceExerciseTeacherChecklistLeaves": 162,
+    "SourceExercisesFullyAutoGraded1To1": 0,
+    "StageCQuestionFamilyPlan": {
+      "TEACHER_LED_PROOF": 5,
+      "EXACT_FINITE_RELATION_SKILL_ANALOGUE": 2,
+      "PARTIAL_FIXED_VARIANTS_PLUS_TEACHER": 19,
+      "PARTIAL_NUMERIC_PLUS_TEACHER_SYMBOLIC": 5,
+      "TEACHER_LED_SYMBOLIC_DIFFERENCE_QUOTIENT": 2,
+      "PARTIAL_EXACT_SKILL_PLUS_TEACHER_MULTIPART": 6,
+      "TEACHER_LED_SOURCE_GRAPH": 15,
+      "PARTIAL_FINITE_RELATION_PLUS_TEACHER_GRAPH": 5,
+      "EXACT_RELATION_CLASSIFICATION_SKILL_ANALOGUE": 6,
+      "EXACT_TABLE_LOOKUP_SKILL_ANALOGUE": 2,
+      "PARTIAL_NUMERIC_PLUS_TEACHER_FIVE_INPUTS": 6,
+      "PARTIAL_VALUE_ARITHMETIC_PLUS_TEACHER": 2,
+      "TEACHER_LED_GRAPH_WINDOW_REQUIRED": 12,
+      "TEACHER_LED_CONTEXT_AND_UNITS": 4,
+      "PARTIAL_INJECTIVITY_PLUS_TEACHER_PROOF": 1
+    }
   },
   "SchemaVersion": 1,
   "SourceElementVerification": {
