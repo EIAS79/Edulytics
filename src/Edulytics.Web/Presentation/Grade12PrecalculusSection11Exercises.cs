@@ -146,4 +146,34 @@ public static class Grade12PrecalculusSection11Exercises
         number is >= 94 and <= 105
             ? TryIts.FirstOrDefault(task => task.Number == number)
             : All.FirstOrDefault(task => task.Number == number);
+
+    // Reading/plotting a graph can be assessed using a labelled coordinate
+    // representation supplied as text. This is an accessible teacher-review
+    // alternative; it does not silently create or assert a rendered drawing.
+    public static bool SupportsGraphEvidence(int number) =>
+        number is (>= 40 and <= 59) or (>= 76 and <= 87) or 104 or 105;
+
+    // Section source exercises 76–87 explicitly require graphing the function.
+    public static bool RequiresGraphEvidence(int number) =>
+        number is >= 76 and <= 87;
+
+    public static string? ComposeTeacherResponse(
+        int number, string? explanation, string? graphEvidence)
+    {
+        if (Find(number) is null || string.IsNullOrWhiteSpace(explanation))
+            return null;
+        var reasoning = explanation.Trim();
+        if (reasoning.Length is < 20 or > 8000)
+            return null;
+        var evidence = graphEvidence?.Trim() ?? string.Empty;
+        if (evidence.Length > 3000 ||
+            (RequiresGraphEvidence(number) && evidence.Length < 20) ||
+            (!SupportsGraphEvidence(number) && evidence.Length > 0))
+            return null;
+        if (evidence.Length == 0)
+            return reasoning;
+        var combined = "Written reasoning:\n" + reasoning +
+            "\n\nLabelled graph / coordinate representation:\n" + evidence;
+        return combined.Length <= 8000 ? combined : null;
+    }
 }

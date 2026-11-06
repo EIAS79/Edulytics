@@ -12,9 +12,10 @@ for r in routing["SourceExerciseContracts"]:
     n=r["OriginalExerciseNumber"]
     explanation=(r.get("OriginalMathematicsSourceReview") or "").strip()
     if n==52:
-        explanation=("Graph reading: f(−1) is approximately 1. The exact input for "
-            "f(x)=3 cannot be certified from the finite plotted window alone; "
-            "do not invent a numerical root without a warranted extension.")
+        explanation=("Grade the STUDENT'S FIRST-PARTY graph y=√(x+2): f(−1)=1 and "
+            "the plotted level y=3 is reached at x=7. The original source graph "
+            "separately shows f(−1)≈1; it does not independently justify an exact "
+            "numerical root for y=3.")
     elif n==53:
         explanation="From the plotted W-curve, f(0)=1; f(x)=−3 occurs at x=−2 and x=2."
     elif n==54:

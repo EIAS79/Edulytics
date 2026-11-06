@@ -292,6 +292,13 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Contains("tons per week",
             Grade12PrecalculusSection11TeacherGuidance.Find(88)!.ExpectedMathematics,
             StringComparison.Ordinal);
+        Assert.Contains("x=7",
+            Grade12PrecalculusSection11TeacherGuidance.Find(52)!.ExpectedMathematics,
+            StringComparison.Ordinal);
+        Assert.Contains("original source graph",
+            Grade12PrecalculusSection11TeacherGuidance.Find(52)!.ExpectedMathematics,
+            StringComparison.OrdinalIgnoreCase);
+
         Assert.Contains("UNRESOLVED",
             Grade12PrecalculusSection11TeacherGuidance.Find(52)!.Caveat,
             StringComparison.Ordinal);
@@ -384,6 +391,23 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Empty(Grade12PrecalculusSection11SourcePartChecklist.ForExercise(93));
         Assert.Contains(Grade12PrecalculusSection11SourcePartChecklist.ForExercise(52),
             part => part.OriginalSourceNumericalResultUnresolved);
+    }
+
+    [Fact]
+    public void Grade12GraphSubmissionsPreserveAccessibleCoordinatesAndRequireEvidence()
+    {
+        const string reasoning = "This input value has a single correctly labelled output.";
+        const string graph = "x-domain [-10,10], marked vertex (0,0), range [0,100].";
+        Assert.True(Grade12PrecalculusSection11Exercises.SupportsGraphEvidence(40));
+        Assert.True(Grade12PrecalculusSection11Exercises.RequiresGraphEvidence(76));
+        Assert.False(Grade12PrecalculusSection11Exercises.RequiresGraphEvidence(52));
+        Assert.Null(Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(76, reasoning, null));
+        Assert.Null(Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(76, reasoning, "x=1"));
+        Assert.NotNull(Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(76, reasoning, graph));
+        Assert.Contains("Labelled graph / coordinate representation:",
+            Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(76, reasoning, graph)!);
+        Assert.Null(Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(27, reasoning, graph));
+        Assert.Null(Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(106, reasoning, null));
     }
 
     [Fact]

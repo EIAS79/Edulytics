@@ -32,18 +32,22 @@ public sealed class Grade12PrecalculusRubricStudentController(Grade12Precalculus
     [HttpPost("submit"), ValidateAntiForgeryToken]
     public async Task<IActionResult> Submit(
         Guid lessonId, int exerciseNumber,
-        [FromForm] string? explanation, CancellationToken ct)
+        [FromForm] string? explanation,
+        [FromForm] string? graphEvidence, CancellationToken ct)
     {
         if (!Actor(out var actor)) return Forbid();
         if (Grade12PrecalculusSection11Exercises.Find(exerciseNumber) is null)
             return NotFound();
         var scope = await rubric.StudentScopeAsync(actor, lessonId, Guid.Empty, ct);
         if (scope is null) return NotFound();
-        if (string.IsNullOrWhiteSpace(explanation) ||
-            explanation.Trim().Length is < 20 or > 8000)
-            return BadRequest("An explanation between 20 and 8000 characters is required.");
-        var inserted = await rubric.InsertAsync( scope.Value.School, scope.Value.Class, scope.Value.Student,
-            lessonId, exerciseNumber, explanation.Trim(), ct);
+        var studentResponse = Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(
+            exerciseNumber, explanation, graphEvidence);
+        if (studentResponse is null)
+            return BadRequest("Provide complete written reasoning and, for graph-window " +
+                "tasks 76-87, a labelled graph/coordinate description. " +
+                "Maximum combined length is 8000 characters.");
+        var inserted = await rubric.InsertAsync(scope.Value.School, scope.Value.Class, scope.Value.Student,
+            lessonId, exerciseNumber, studentResponse, ct);
         if (!inserted) return Conflict("Already submitted; teacher reviews the original answer.");
         return RedirectToAction(nameof(Index), new { lessonId, exerciseNumber });
     }
