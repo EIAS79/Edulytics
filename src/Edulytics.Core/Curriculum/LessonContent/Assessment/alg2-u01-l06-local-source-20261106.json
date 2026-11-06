@@ -1,0 +1,93 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L06",
+  "LearningGoals": [
+    "Create a table, graph, or recursive definition of a sequence from given information."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-BF.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.A.2",
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 6
+    }
+  ],
+  "ReusePolicy": "Existing arithmetic/geometric/affine exact sequence engines only when question matches; unverified new mechanics remain teacher-reviewed",
+  "ExistingNumericFamilies": [
+    "sequences.core.arithmetic_nth_term",
+    "sequences.core.geometric_nth_term",
+    "sequences.core.find_position_arithmetic",
+    "usccss.g11.alg2.u01.l01.affine_recurrence",
+    "usccss.g11.alg2.u01.l01.fibonacci_term",
+    "usccss.g11.alg2.u01.l02.growth_factor"
+  ],
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "TeacherReview": {
+    "Required": true,
+    "SourceSpecificTasks": [
+      "match corresponding data cards and recurrence",
+      "graphs must be discrete with correct labels",
+      "square pattern drawing and nonconstant change",
+      "physical diagram maximal cuts claim"
+    ],
+    "Rubric": [
+      "correct term index and initial condition",
+      "mathematically correct representation or diagram",
+      "explanation justified by source constraints",
+      "accurate signed/fractional answers"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither.",
+    "Expected": "S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l06-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l06.rich-lesson-v2.json"
+}
