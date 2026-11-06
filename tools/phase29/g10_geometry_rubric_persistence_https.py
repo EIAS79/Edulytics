@@ -36,7 +36,9 @@ def login(email, role):
     cookies = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookies),
         urllib.request.HTTPSHandler(context=CTX))
-    entry = view(opener, "/account/login?culture=en")
+    with opener.open(ROOT + "/account/login?culture=en", timeout=30) as login_page:
+        assert login_page.status == 200
+        entry = login_page.read().decode()
     body = urllib.parse.urlencode({"Email":email, "Password":PASSWORD,
         "AccountType":role, "__RequestVerificationToken":token(entry)}).encode()
     with opener.open(urllib.request.Request(ROOT + "/account/login?culture=en",
