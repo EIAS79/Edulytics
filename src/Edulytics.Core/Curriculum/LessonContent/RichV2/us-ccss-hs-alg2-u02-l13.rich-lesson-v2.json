@@ -1,0 +1,89 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l13-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L13",
+      "CultureCode": "en",
+      "Title": "Polynomial Division (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Compare and contrast diagrams and long division as ways of representing division. Use long division to find the quotient of two polynomials.",
+        "Polynomial long division uses leading-term division, multiplication and subtraction repeatedly. For (2x^3+3x^2-8x-12)/(x+2), successive quotient terms are 2x^2,-x,-6, giving zero remainder. Always compare product divisor times quotient plus remainder with dividend.",
+        "Source activity 13.1: Notice and Wonder: Different Divisions: What do you notice? What do you wonder? \\(\\displaystyle \\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 2x^2\\phantom{+7x+22} \\\\ x+1 \\enclose{longdiv}{2x^3+7x^2+7x+2} \\\\ \\underline{\\text-2x^3-2x^2} \\phantom{+7x+22} \\\\ 5x^2+7x \\phantom{+22} \\end{array} \\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.2: Polynomial Long Division: \\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 3x-5 \\\\ 2x+1 \\enclose{longdiv}{6x^2 - 7x - 5} \\\\ \\underline{\\text-6x^2 - 3x} \\phantom{-55} \\\\ \\text-10x-5 \\\\ \\underline{10x+5} \\\\ 0 \\end{array} \\) Pause here for a whole-class discussion. Diego used the long division shown here to figure out that \\(6x^2-7x-5 = (2x+1)(3x-5)\\). Show what it would look like if he… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.3: More Long Division: Here are some polynomial functions with known factors. Rewrite each polynomial as a product of linear factors using long division. \\(A(x)=x^3 - 7x^2 - 16x + 112\\), \\((x-7)\\) \\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} x^2\\phantom{55555555555} \\\\ x-7 \\enclose{longdiv}{x^3 - 7x^2 -16x+112} \\\\ \\underline{\\text-x^3 + 7x^2} \\phantom{.55555555555} \\\\ \\end{array}… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.4: Missing Numbers: Here are pairs of equivalent expressions, one in standard form and the other in factored form. Find the missing numbers. \\(x^2 + 9x + 14\\) and \\((x+2)(x+\\boxed{\\phantom{30}})\\) \\(x^2 - 9x + 20\\) and \\((x-\\boxed{\\phantom{30}})(x-\\boxed{\\phantom{30}})\\) \\(2x^2+2x-24\\) and \\(2(x+\\boxed{\\phantom{30}})(x-3)\\) \\(\\boxed{\\phantom{30}}x^3 + 11x^2 - 17x + 6\\) and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The polynomial function \\(B(x)=x^3-21x+20\\) has a known factor of \\((x-4)\\). Rewrite \\(B(x)\\) as a product of linear factors. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Let the function \\(P\\) be defined by \\(P(x) = x^3 + 7x^2 - 26x - 72\\) where \\((x+9)\\) is a factor. To rewrite the function as the product of two factors, long division was used but an error was made: \\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2+16x+118\\phantom{000} \\\\ x+9 \\enclose{longdiv}{x^3+7x^2-26x-72}… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: For the polynomial function \\(A(x)=x^4-2x^3-21x^2+22x+40\\) we know \\((x-5)\\) is a factor. Select all the other linear factors of \\(A(x)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Match the polynomial function with its constant term. \\(P(x)=(x-2)(x-3)(x+7)\\) \\(P(x)=(x+2)(x-3)(x+7)\\) \\(P(x)=\\frac12(x-2)(x-3)(x+7)\\) \\(P(x)=5(x-2)(x-3)(x+7)\\) \\(P(x)=\\text-5(x-2)(x-3)(x+7)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What are the solutions to the equation \\((x-2)(x-4)=8\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The graph of a polynomial function \\(f\\) is shown. Which statement is true about the end behavior of the polynomial function? As \\(x\\) gets larger and larger in the either the positive or the negative direction, \\(f(x)\\) gets larger and larger in the positive direction. As \\(x\\) gets larger and larger in the positive… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The polynomial function \\(p(x)=x^3+3x^2-6x-8\\) has a known factor of \\((x+4)\\). Rewrite \\(p(x)\\) as the product of linear factors. Draw a rough sketch of the graph of the function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Divide x^3-1 by x-1. Expected reasoning or answer: x^2+x+1, remainder 0.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial long division",
+          "Definition": "Polynomial long division uses leading-term division, multiplication and subtraction repeatedly. For (2x^3+3x^2-8x-12)/(x+2), successive quotient terms are 2x^2,-x,-6, giving zero remainder. Always compare product divisor times quotient plus remainder with dividend.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Divide 2x^3+3x^2-8x-12 by x+2. Answer: 2x^2-x-6 with remainder zero."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "2x^3/x=2x^2, subtract; then -x; then -6; remainder 0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial long division",
+          "Question": "Divide 2x^3+3x^2-8x-12 by x+2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "2x^3/x=2x^2, subtract",
+            "then -x",
+            "then -6",
+            "remainder 0."
+          ],
+          "Answer": "2x^2-x-6 with remainder zero.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Divide x^3-1 by x-1.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x^2+x+1, remainder 0.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial long division",
+        "Polynomial long division uses leading-term division, multiplication and subtraction repeatedly. For (2x^3+3x^2-8x-12)/(x+2), successive quotient terms are 2x^2,-x,-6, giving zero remainder. Always compare product divisor times quotient plus remainder with dividend.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
