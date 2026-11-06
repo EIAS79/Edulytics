@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l14-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L14",
+      "CultureCode": "en",
+      "Title": "What Do You Know About Polynomials?",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine what information is needed to sketch a polynomial function given a known factor. Ask questions to elicit that information.",
+        "A known factor gives one zero but does not determine a unique polynomial. A complete sketch needs more: additional factors or zeros, multiplicities, vertical intercept or leading sign and degree. Ask explicitly for the missing information rather than inventing it.",
+        "Source activity 14.1: What Else is True?: \\(G(x)\\) is a polynomial. Here are some things we know about it: Both \\(x\\) and \\((x+4)\\) are factors of \\(G\\). It has 2 horizontal intercepts, but only 1 is negative. Its leading coefficient is negative. What else do we know is true about \\(G(x)\\)? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.2: Info Gap: More Polynomials: Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner, “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.3: Even More Polynomials: write a polynomial of degree 3 or 4 in factored form sketch the graph of your polynomial rewrite its expression in standard form Without letting your partner see, do the following: On a separate slip of paper, write the standard form of your polynomial along with 1 of the factors (or 2 factors, if the polynomial has degree 4). Trade slips with your partner. rewrite their… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: We know these things about a polynomial function, \\(f(x)\\): it has exactly one relative maximum and one relative minimum, it has exactly three zeros, and it has a known factor of \\((x-4)\\). Sketch a graph of \\(f(x)\\) given this information. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Mai graphs a polynomial function, \\(f(x)\\), that has three linear factors \\((x+6)\\), \\((x+2)\\), and \\((x-1)\\). But she makes a mistake. What is her mistake? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of a polynomial function with degree 4. Select all of the statements that are true about the function. The leading coefficient is positive. The constant term is negative. It has 2 relative maximums. It has 4 linear factors. One of the factors is \\((x-1)\\). One of the zeros is \\(x=2\\). There is a… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: State the degree and end behavior of \\(f(x)=2x^3-3x^5-x^2+1\\). Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Is this the graph of \\(g(x)=(x-1)^2(x+2)\\) or \\(h(x)=(x-1)(x+2)^2\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Kiran thinks he knows one of the linear factors of \\(P(x)=x^3 + x^2 - 17 x + 15 \\). After finding that \\(P(3)=0\\), Kiran suspects that \\(x-3\\) is a factor of \\(P(x)\\), so he sets up a diagram to check. Here is the diagram he made to check his reasoning, but he set it up incorrectly. What went wrong? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The polynomial function \\(B(x)=x^3+8x^2+5x-14\\) has a known factor of \\((x+2)\\). Rewrite \\(B(x)\\) as a product of linear factors. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Explain why knowing x-4 is a factor does not uniquely specify a polynomial. Expected reasoning or answer: Infinitely many choices p=(x-4)q(x), where q is another polynomial.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial information gaps",
+          "Definition": "A known factor gives one zero but does not determine a unique polynomial. A complete sketch needs more: additional factors or zeros, multiplicities, vertical intercept or leading sign and degree. Ask explicitly for the missing information rather than inventing it.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A monic cubic has known zeros -2,1 and 3. Write it factored and calculate its value at zero. Answer: f=(x+2)(x-1)(x-3), y-intercept 6."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "f=(x+2)(x-1)(x-3); f(0)=2*(-1)*(-3)=6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial information gaps",
+          "Question": "A monic cubic has known zeros -2,1 and 3. Write it factored and calculate its value at zero.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "f=(x+2)(x-1)(x-3)",
+            "f(0)=2*(-1)*(-3)=6."
+          ],
+          "Answer": "f=(x+2)(x-1)(x-3), y-intercept 6.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Explain why knowing x-4 is a factor does not uniquely specify a polynomial.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Infinitely many choices p=(x-4)q(x), where q is another polynomial.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial information gaps",
+        "A known factor gives one zero but does not determine a unique polynomial. A complete sketch needs more: additional factors or zeros, multiplicities, vertical intercept or leading sign and degree. Ask explicitly for the missing information rather than inventing it.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
