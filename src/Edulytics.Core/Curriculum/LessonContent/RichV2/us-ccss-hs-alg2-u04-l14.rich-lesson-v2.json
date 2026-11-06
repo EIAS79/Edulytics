@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l14-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L14",
+      "CultureCode": "en",
+      "Title": "Solving Exponential Equations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that the natural logarithm is used to express the solution to an exponential equation with base $e$. Use base 10 and natural logarithms to solve exponential equations.",
+        "For positive values, e^(kt)=c implies kt=ln(c) and t=ln(c)/k when k!=0. Domain and units must be retained.",
+        "Source activity 14.1: A Valid Solution?: To solve the equation \\(5 \\boldcdot e^{3a} = 90\\), Lin wrote the following: \\(\\displaystyle \\begin {align}5 \\boldcdot e^{3a} &= 90\\\\ e^{3a} &= 18\\\\ 3a &= \\log_e 18\\\\ a&=\\frac {\\log_e 18}{3}\\\\ \\end {align}\\) Is her solution valid? Be prepared to explain what she did in each step to support your answer. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.2: Natural Logarithm: Complete the table with equivalent equations. The first row is completed for you. Solve each equation by expressing the solution using \\(\\ln\\) notation. Then, find the approximate value of the solution using the “ln” button on a calculator. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.3: Solving Exponential Equations: Without using a calculator, solve each equation. It is expected that some solutions will be expressed using log notation. Be prepared to explain your reasoning. \\(10^x = 10,\\!000\\) \\(5 \\boldcdot 10^x = 500\\) \\(10^{(x+3)} = 10,\\!000\\) \\(10^{2x} = 10,\\!000\\) \\(2 \\boldcdot 10^x = 800\\) \\(10^{(1.2x)} = 4,\\!000\\) \\(7\\boldcdot 10^{(0.5x)} = 70\\) \\(2 \\boldcdot e^x=16\\) \\(10 \\boldcdot… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Solve each equation without using a calculator. Some solutions will need to be expressed using log notation. \\(4 \\boldcdot 10^x = 400,\\!000\\) \\(10^{3n} = 1,\\!000,\\!000\\) \\(6 \\boldcdot 10^t = 360\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Solve \\(\\frac14 \\boldcdot 10^{(d+2)} = 0.25\\). Show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Write two equations—one in logarithmic form and one in exponential form—that represent the statement: “the natural logarithm of 10 is \\(y\\)”. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Explain why \\(\\ln 1 = 0\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: If \\(\\log_{10}(x) = 6\\), what is the value of \\(x\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: For each logarithmic equation, write an equivalent equation in exponential form. \\(\\log_{10} 20 = y\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The function \\(f\\) is given by \\(f(x) = e^{0.07x}\\). What is the continuous growth rate of \\(f\\)? By what factor does \\(f\\) grow when the input \\(x\\) increases by 1? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve e^(3t)=20. Expected reasoning or answer: t=ln20/3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solve exponential equations with ln",
+          "Definition": "For positive values, e^(kt)=c implies kt=ln(c) and t=ln(c)/k when k!=0. Domain and units must be retained.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve e^(2x)=7. Answer: x=ln7/2."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Take ln: 2x=ln7; divide by2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve exponential equations with ln",
+          "Question": "Solve e^(2x)=7.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Take ln: 2x=ln7",
+            "divide by2."
+          ],
+          "Answer": "x=ln7/2.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve e^(3t)=20.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "t=ln20/3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Solve exponential equations with ln",
+        "For positive values, e^(kt)=c implies kt=ln(c) and t=ln(c)/k when k!=0. Domain and units must be retained.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
