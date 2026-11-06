@@ -21,7 +21,7 @@ test('exact canonical identity and local source elements',()=>{
  assert.equal(assessment.FirstPartyCoolDown.Origin,'EDULYTICS_ORIGINAL');
  assert.equal(assessment.TeacherReview.Required,true);
 });
-test('independent first-party mathematical oracle',()=>{assert.equal((4/5)/(-3/5),-4/3);});
+test('independent first-party mathematical oracle',()=>{assert.ok(Math.abs((4/5)/(-3/5)-(-4/3))<1e-10);});
 test('authored mathematics remains distinct from Stage D runtime',()=>{
  assert.equal(assessment.QuestionRouting,'UNPROMOTED_NO_RUNTIME_CLAIM');
  assert.ok(assessment.CoreMathWorkedExample.Steps.length>=1);

@@ -25,7 +25,7 @@ test('numeric oracle: recurrence minimum and inverse terms',()=>{
 });
 test('source element map and grader boundary',()=>{
  assert.equal(elems.Elements.length,24);
- assert.equal(new Set(elems.Elements.map(e=>e.SourceElementId)).size,17);
+ assert.equal(new Set(elems.Elements.map(e=>e.SourceElementId)).size,elems.Elements.length);
  assert.ok(elems.Elements.some(e=>e.ImplementationType==='TEACHER_LED'));
  assert.ok(elems.Elements.some(e=>e.ImplementationType==='DIGITAL'));
  assert.equal(assess.TeacherReview.Required,true);

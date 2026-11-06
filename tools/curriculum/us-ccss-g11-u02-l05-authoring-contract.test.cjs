@@ -20,7 +20,7 @@ test('unit 2 lesson identity and source task coverage evidence',()=>{
  assert.equal(assessment.TeacherReview.Required,true);
  assert.equal(assessment.FirstPartyCoolDown.Origin,'EDULYTICS_ORIGINAL');
 });
-test('lesson-specific independent arithmetic oracle',()=>{assert.equal((2-2)*(2+3),0);assert.equal((-3-2)*(-3+3),0);});
+test('lesson-specific independent arithmetic oracle',()=>{assert.equal((2-2)*(2+3),0);assert.equal((-3-2)*(-3+3)===0,true);});
 test('teacher and learner source still distinguish authored from tested',()=>{
  assert.equal(assessment.QuestionRouting,'UNPROMOTED_NO_RUNTIME_CLAIM');
  assert.ok(assessment.CoreMathWorkedExample.Question.length>15);
