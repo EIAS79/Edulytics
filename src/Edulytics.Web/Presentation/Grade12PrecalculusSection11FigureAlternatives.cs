@@ -90,19 +90,31 @@ public static class Grade12PrecalculusSection11FigureAlternatives
         new(9,"Locate all inverse graph-read inputs",
             "The horizontal level y=4 meets first-party y=(x-1)² at (-1,4) and (3,4).",
             null,Grade12PrecalculusSection11Visuals.Build()[2]),
-        new(10,"Discrete points versus continuous curve",
-            "A first-party line f(x)=2−x/6 contains (0,2) and (6,1). " +
-            "The plotted points are samples; the continuous curve includes infinitely many inputs.",
+        new(10,"Sampled points on a continuous non-monotonic function",
+            "An original first-party continuous piecewise curve passes through " +
+            "(0,2) and (6,1) but also rises and falls between sampled values. " +
+            "Knowing two plotted points does not imply the curve is a straight " +
+            "line, a monotonic function, or fully determined outside its graph.",
             null,new CoordinatePlaneVisualSpec(
-                Window(-1m,7m,0m,3m),
+                Window(-6m,8m,-3m,4m),
                 [new MathematicalPoint(0m,2m,"(0,2)"),
                  new MathematicalPoint(6m,1m,"(6,1)")],
-                [new MathematicalSegment(
-                    new MathematicalPoint(0m,2m),
-                    new MathematicalPoint(6m,1m))],
+                [
+                    new MathematicalSegment(new MathematicalPoint(-5m,-2m),
+                        new MathematicalPoint(0m,2m)),
+                    new MathematicalSegment(new MathematicalPoint(0m,2m),
+                        new MathematicalPoint(3m,0.5m)),
+                    new MathematicalSegment(new MathematicalPoint(3m,0.5m),
+                        new MathematicalPoint(6m,1m)),
+                    new MathematicalSegment(new MathematicalPoint(6m,1m),
+                        new MathematicalPoint(8m,2m))
+                ],
                 new MathematicalVisualAccessibility(
-                    "Function graph with sampled values",
-                    "At x=0 output is exactly 2, and at x=6 output is exactly 1 on a straight first-party segment."))),
+                    "Function graph includes two sampled outputs but is non-monotonic",
+                    "An independent continuous, piecewise-linear function rises to " +
+                    "a local maximum (0,2), falls to a low point near (3,0.5), " +
+                    "and rises through (6,1). Every x has one y, while the two " +
+                    "highlighted samples do not determine the remaining curve."))),
         new(11,"Vertical-line comparison",
             "A nonvertical line passes the test; a sideways parabola and a circle fail " +
             "because some inputs intersect their graphs twice.",41,null),

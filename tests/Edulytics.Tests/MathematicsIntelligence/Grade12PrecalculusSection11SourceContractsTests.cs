@@ -368,6 +368,11 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.All(figures, x =>
             Assert.False(string.IsNullOrWhiteSpace(x.FirstPartyAlternative)));
         Assert.Equal(5, figures.Count(x => x.AddedDrawing is not null));
+        Assert.Contains("rises and falls", figures.Single(x =>
+            x.OriginalFigureOrdinal == 10).FirstPartyAlternative);
+        var fig10 = Assert.IsType<CoordinatePlaneVisualSpec>(figures.Single(x =>
+            x.OriginalFigureOrdinal == 10).AddedDrawing);
+        Assert.Equal(4, fig10.Segments.Count);
         Assert.Contains("three different inputs", figures.Single(x =>
             x.OriginalFigureOrdinal == 15).FirstPartyAlternative);
         Assert.Contains("x=-2,0,2", figures.Single(x =>
