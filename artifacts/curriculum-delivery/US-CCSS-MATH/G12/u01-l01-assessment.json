@@ -1,17 +1,6 @@
 {
-  "SchemaVersion": 1,
-  "Course": "US-CCSS-MATH:G12",
-  "Unit": 1,
-  "Lesson": 1,
-  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
   "ContentVersion": "g12-u01-l01-abc-draft-20261106",
-  "LearningGoals": [
-    "Determine from ordered pairs, tables, formulas and descriptions whether each input has a single output.",
-    "Use function notation to express and evaluate outputs and solve for valid inputs.",
-    "Determine whether an established function is one-to-one under its stated domain.",
-    "Interpret vertical-line and horizontal-line tests for graphs and implicit relations.",
-    "Identify basic toolkit function families and domain restrictions."
-  ],
+  "Course": "US-CCSS-MATH:G12",
   "FirstPartyCoolDown": {
     "Authorship": "Edulytics original — not represented as the source book's teacher-only assessment.",
     "Prompt": "(a) Determine whether R={(1,2),(1,4),(2,4)} is a function and justify. (b) For f(x)=x²−2x+1 find f(−1). (c) Is h(x)=x² one-to-one on x≥0? Justify using a formula or a horizontal-line sketch.",
@@ -38,6 +27,16 @@
     "DigitalCorrectnessEngine": "NOT_YET_ROUTED_TO_GRADE12",
     "DeliveryStatus": "AUTHORED_NOT_TESTED"
   },
+  "LearningGoals": [
+    "Determine from ordered pairs, tables, formulas and descriptions whether each input has a single output.",
+    "Use function notation to express and evaluate outputs and solve for valid inputs.",
+    "Determine whether an established function is one-to-one under its stated domain.",
+    "Interpret vertical-line and horizontal-line tests for graphs and implicit relations.",
+    "Identify basic toolkit function families and domain restrictions."
+  ],
+  "Lesson": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+  "OwnerAcademicStatus": "OWNER_AUTHORING_DIRECTION_APPROVED; CONTENT_AND_RIGHTS_CLOSURE_NOT_YET_COMPLETE",
   "Practice": {
     "ReuseCandidates": [
       {
@@ -121,6 +120,18 @@
       }
     ]
   },
+  "SchemaVersion": 1,
+  "SourceElementVerification": {
+    "OriginalExamplesLocated": 15,
+    "OriginalTryItsLocated": 12,
+    "FigureNumbersLocated": 15,
+    "OriginalExerciseNumberRange": "1–92",
+    "FullSourceDenominatorVerified": false,
+    "ExactExampleToDigitalMappings": 0,
+    "FigureRightsClearance": false,
+    "ReviewAndPracticeTestChapterResources": "NOT_YET_ATOMICALLY_CROSSWALKED",
+    "Status": "SOURCE_ELEMENTS_IDENTIFIED_MATCHING_IN_PROGRESS"
+  },
   "TeacherReview": {
     "Audience": "Assigned mathematics teacher",
     "SourceSection": "1.1 Functions and Function Notation",
@@ -162,16 +173,22 @@
       "Tests": "WRITTEN_NOT_RUN"
     }
   },
-  "SourceElementVerification": {
-    "OriginalExamplesLocated": 15,
-    "OriginalTryItsLocated": 12,
-    "FigureNumbersLocated": 15,
-    "OriginalExerciseNumberRange": "1–92",
-    "FullSourceDenominatorVerified": false,
-    "ExactExampleToDigitalMappings": 0,
-    "FigureRightsClearance": false,
-    "ReviewAndPracticeTestChapterResources": "NOT_YET_ATOMICALLY_CROSSWALKED",
-    "Status": "SOURCE_ELEMENTS_IDENTIFIED_MATCHING_IN_PROGRESS"
+  "Unit": 1,
+  "VisualRepresentationDrafts": {
+    "Authoring": "Edulytics first-party table and equation visuals, not original PDF images",
+    "StructuredRichV2VisualsWritten": 5,
+    "SourceFigureOneToOneParityVerified": false,
+    "GraphRenderer": "NOT_IN_RICHV2_CORE; teacher-led coordinate sketch required",
+    "Accessibility": "Full equation/table descriptions provided; actual accessible graphical interaction still pending",
+    "StageD": "NOT_RUN"
   },
-  "OwnerAcademicStatus": "OWNER_AUTHORING_DIRECTION_APPROVED; CONTENT_AND_RIGHTS_CLOSURE_NOT_YET_COMPLETE"
+  "SourceExerciseRoutingManifest": {
+    "Path": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
+    "SourceExerciseCount": 92,
+    "SourceMathReviewedCount": 91,
+    "OriginalGraph52ExactReadingUnverified": true,
+    "TeacherScoringRuntime": "NOT_VERIFIED",
+    "SourceOfTruth": "UPSTREAM_EXACT_PER_ITEM_ROUTE; displaces earlier generic grouping",
+    "EdulyticsDigitalParityVerified": 0
+  }
 }

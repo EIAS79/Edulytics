@@ -1,12 +1,35 @@
 {
-  "SchemaVersion": 1,
-  "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g12-openstax-u01-l01-abc-authoring-20261106",
+  "ContentVersion": "g12-u01-l01-source-graph-rubric-plus-12-tryit-5-visuals-20261106",
   "Lessons": [
     {
-      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a repeated output as evidence that a relation is not a function.",
+          "WhyWrong": "Many different inputs may lead to one output.",
+          "Correction": "Check whether any one input has two distinct outputs."
+        },
+        {
+          "Mistake": "Computing f(a+h) as f(a)+f(h) without justification.",
+          "WhyWrong": "Functions generally do not distribute across addition of inputs.",
+          "Correction": "Substitute the full expression a+h into the defining formula."
+        },
+        {
+          "Mistake": "Answering f(x)=3 by substituting x=3.",
+          "WhyWrong": "The problem asks for an input that produces output 3, not for f(3).",
+          "Correction": "Solve the equation f(x)=3 and check the solutions."
+        },
+        {
+          "Mistake": "Using the horizontal-line test to decide whether a relation is a function.",
+          "WhyWrong": "Horizontal-line test checks injectivity, not single-valuedness.",
+          "Correction": "First apply vertical-line test; only then apply horizontal-line test."
+        },
+        {
+          "Mistake": "Calling a circle graph y=f(x) without a branch restriction.",
+          "WhyWrong": "A single x can have both positive and negative y solutions.",
+          "Correction": "Select upper or lower semicircle and state the domain."
+        }
+      ],
       "CultureCode": "en",
-      "Title": "Functions and Function Notation",
       "ExplanationParagraphs": [
         "Learning objectives: distinguish a function from a relation; evaluate values and equations using function notation; decide when a function is one-to-one; use vertical and horizontal line tests; and identify basic toolkit families and their domains.",
         "Begin by listing ordered pairs and discussing the independent and dependent variables. Have learners test whether repeated inputs produce conflicting outputs. A repeated output alone does not violate the definition of a function.",
@@ -16,8 +39,20 @@
         "Teacher-led activity: provide coordinate grids or a graphing tool. Ask learners to draw y=x², x=y² and y=|x|−1, sketch vertical and horizontal test lines, annotate all intersections, and justify results orally or in writing. Teacher validates hand-drawn scale and mathematical claims; these are not automatically scored.",
         "Independent section practice can include verbal descriptions, algebraic relations, tables, graph classification, technology-assisted view windows and applied situations. Independent exercises, including table, algebra, graph, and applied tasks, must be discussed using their own models, units and stated input domains. A teacher checks graph drawings and written explanations.",
         "Teacher checkpoint: compare an input/output mapping, a function evaluation, an inverse-direction ambiguity and two graph tests. Keep contextual units visible. Alternate representations must preserve the definition and intended domain; graph accuracy is a human review task until the display contract is exercised.",
-        "Edulytics cool-down: given R={(1,2),(1,4),(2,4)}, classify R and explain; evaluate f(−1) for f(x)=x²−2x+1; and decide whether h(x)=x² is one-to-one when x≥0. Submit reasons. A teacher reviews the explanation; this cool-down is independently authored, not a reproduction of teacher-restricted material.",
-        "Instructor-graded graphical practice (source Section 1.1, exercises 52–59): learners read labelled axes, distinguish a graph that fails the vertical-line test from one that merely fails one-to-one, and justify every horizontal-line intersection. An original source graph beginning near (−2,0) shows f(−1)≈1; its displayed right-hand curve does not establish an exact input for f(x)=3, so students must label any extrapolated value as an estimate. Follow the separate teacher rubric; these diagrams and explanations have no proven automatic grader or production delivery."
+        "Independent Try It 1 — Classifying a pair of mappings. In a small library, book IDs A, B, C identify titles Alpha, Beta, Gamma without duplicates. Is title a function of book ID? Is book ID a function of title? Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 2 — Function notation in context. A plant's measured height h in centimetres depends on the day d since planting. Express this as a named function and state what h(8)=17 means. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 3 — Classification of a table. A table contains input/output pairs (1,10), (2,100), (3,1000). Decide whether this is a function and justify. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 4 — Evaluate an integer radical. For f(t)=sqrt(t-9), calculate f(13) and state the real domain. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 5 — Solve an integer radical equation. For f(t)=sqrt(t-9), find the input with output four. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 6 — Isolate a cubed dependent variable. Rewrite x=27y^3 as y=f(x) for real x. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 7 — Evaluate a table-encoded function. The table shows (0,6), (1,8), (2,10). Find g(1). Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 8 — Solve a function equation from a graph. On coordinate paper, graph f(x)=|x-1|, then identify each x at which f(x)=1. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 9 — Inverse direction in a contextual mapping. Each employee is assigned one department; departments can contain multiple employees. Is department a function of employee? Is employee a function of department? Is the first function one-to-one? Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 10 — Contextual function versus injectivity. A score from 0 to 100 determines exactly one letter grade, and several scores share each letter. Is letter grade a function of numeric score? Is it one-to-one? Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 11 — Vertical-line test for a graph. Sketch y=|x| and explain whether each vertical line meets its graph in at most one point. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Independent Try It 12 — Horizontal-line test for a function. Graph y=x^2 on all real inputs. Is it one-to-one? Provide a horizontal-line counterexample. Explain your reasoning to your teacher; diagrams and open-ended reasoning are teacher-reviewed.",
+        "Instructor-graded graphical practice (source Section 1.1, exercises 52–59): learners read labelled axes, distinguish a graph that fails the vertical-line test from one that merely fails one-to-one, and justify every horizontal-line intersection. An original source graph beginning near (−2,0) shows f(−1)≈1; its displayed right-hand curve does not establish an exact input for f(x)=3, so students must label any extrapolated value as an estimate. Follow the separate teacher rubric; these diagrams and explanations have no proven automatic grader or production delivery.",
+        "Edulytics cool-down: given R={(1,2),(1,4),(2,4)}, classify R and explain; evaluate f(−1) for f(x)=x²−2x+1; and decide whether h(x)=x² is one-to-one when x≥0. Submit reasons. A teacher reviews the explanation; this cool-down is independently authored, not a reproduction of teacher-restricted material."
       ],
       "KeyConcepts": [
         {
@@ -67,6 +102,181 @@
           "Definition": "Toolkit graphs include constant, identity, square, cube, absolute value, reciprocal, square root and related transformations.",
           "Rule": "Graph shape, domain and function notation must be understood together; reciprocal excludes x=0 and square root requires x≥0.",
           "Example": "f(x)=1/x is undefined at 0; g(x)=√x is real for x≥0."
+        }
+      ],
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+      "SummaryPoints": [
+        "A function assigns exactly one output to every allowed input.",
+        "Repeated inputs are permitted only when their outputs agree.",
+        "f(x) is the output at input x; f(x)=c asks for possible inputs.",
+        "One-to-one means distinct inputs have distinct outputs.",
+        "Vertical-line test checks function status; horizontal-line test checks one-to-one status.",
+        "Toolkit functions require correct domains, graph shapes and units.",
+        "Open-ended graph interpretation and written proof are teacher-reviewed."
+      ],
+      "Title": "Functions and Function Notation",
+      "Videos": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Different inputs may share one output",
+          "Description": "This relation is a function because every displayed input has one output. It is not one-to-one because x=2 and x=3 both produce 5.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x (input)",
+              "Cells": [
+                "1",
+                "2",
+                "3"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "f(x) (output)",
+              "Cells": [
+                "4",
+                "5",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "One input with two different outputs",
+          "Description": "The repeated input x=1 produces 2 and 4, so this relation is not a function. Treat these as two different ordered pairs, not a duplicate row.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x (input)",
+              "Cells": [
+                "1",
+                "1",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "y (output)",
+              "Cells": [
+                "2",
+                "4",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Vertical-line test: parabola and sideways parabola",
+          "Description": "For the same x=4, y=x² gives only y=16, but x=y² gives y=2 and y=−2. Ask learners to sketch both coordinate graphs and test the vertical line x=4.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "y = x²: (4, 16)",
+            "x = y²: (4, 2) and (4, −2)",
+            "Same x with two distinct y-values is NOT a y-function"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Horizontal-line test under an explicit domain",
+          "Description": "At y=4, the unrestricted quadratic f(x)=x² gives two different inputs, but on the domain x≥0 only x=2 remains. Compare the graphs with a teacher.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "f(−2) = 4 and f(2) = 4",
+            "On ℝ: not one-to-one",
+            "On x≥0: one-to-one"
+          ],
+          "SecondaryItems": [],
+          "Rows": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Basic toolkit functions on three input values",
+          "Description": "Compare a function's formula with its values; infer constant, identity, quadratic, cubic, and absolute-value graph shapes. Sketch these first-party table-based examples on a coordinate grid.",
+          "PrimaryLabel": "Function",
+          "SecondaryLabel": "Values at -1, 0, 1",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "−1",
+                "0",
+                "1"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "f(x)=2",
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "g(x)=x",
+              "Cells": [
+                "−1",
+                "0",
+                "1"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "h(x)=x²",
+              "Cells": [
+                "1",
+                "0",
+                "1"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "k(x)=x³",
+              "Cells": [
+                "−1",
+                "0",
+                "1"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "a(x)=|x|",
+              "Cells": [
+                "1",
+                "0",
+                "1"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
         }
       ],
       "WorkedExamples": [
@@ -250,45 +460,9 @@
           "Answer": "g(x)=2x−1 is one-to-one; f(x)=(x−1)² is not.",
           "Check": "Restricting f to x≥1 would make it one-to-one, but that is a different domain."
         }
-      ],
-      "CommonMistakes": [
-        {
-          "Mistake": "Treating a repeated output as evidence that a relation is not a function.",
-          "WhyWrong": "Many different inputs may lead to one output.",
-          "Correction": "Check whether any one input has two distinct outputs."
-        },
-        {
-          "Mistake": "Computing f(a+h) as f(a)+f(h) without justification.",
-          "WhyWrong": "Functions generally do not distribute across addition of inputs.",
-          "Correction": "Substitute the full expression a+h into the defining formula."
-        },
-        {
-          "Mistake": "Answering f(x)=3 by substituting x=3.",
-          "WhyWrong": "The problem asks for an input that produces output 3, not for f(3).",
-          "Correction": "Solve the equation f(x)=3 and check the solutions."
-        },
-        {
-          "Mistake": "Using the horizontal-line test to decide whether a relation is a function.",
-          "WhyWrong": "Horizontal-line test checks injectivity, not single-valuedness.",
-          "Correction": "First apply vertical-line test; only then apply horizontal-line test."
-        },
-        {
-          "Mistake": "Calling a circle graph y=f(x) without a branch restriction.",
-          "WhyWrong": "A single x can have both positive and negative y solutions.",
-          "Correction": "Select upper or lower semicircle and state the domain."
-        }
-      ],
-      "SummaryPoints": [
-        "A function assigns exactly one output to every allowed input.",
-        "Repeated inputs are permitted only when their outputs agree.",
-        "f(x) is the output at input x; f(x)=c asks for possible inputs.",
-        "One-to-one means distinct inputs have distinct outputs.",
-        "Vertical-line test checks function status; horizontal-line test checks one-to-one status.",
-        "Toolkit functions require correct domains, graph shapes and units.",
-        "Open-ended graph interpretation and written proof are teacher-reviewed."
-      ],
-      "Visuals": [],
-      "Videos": []
+      ]
     }
-  ]
+  ],
+  "PackCode": "US-CCSS-MATH",
+  "SchemaVersion": 1
 }

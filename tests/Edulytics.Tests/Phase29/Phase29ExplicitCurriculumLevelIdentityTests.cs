@@ -53,13 +53,18 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
     {
         var pack = MathematicsCurriculumPackRegistry.CommonCoreCode;
         var levels = CurriculumLevelIdentityRegistry.ForPack(pack);
-        Assert.Equal(9, CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses.Count);
+        // Nine historical HS courses remain available at 10–13.
+        // New source-backed PRECALC is intentionally selectable at Grade 12 only.
+        Assert.Equal(10, CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses.Count);
         foreach (var logical in new[] { 10, 11, 12, 13 })
         {
             var options = levels.Where(x => x.LogicalLevel == logical).ToArray();
-            Assert.Equal(9, options.Length);
-            Assert.Equal(9, options.Select(x => x.Key).Distinct().Count());
-            foreach (var source in CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses)
+            var expectedCount = logical == 13 ? 10 : 9;
+            Assert.Equal(expectedCount, options.Length);
+            Assert.Equal(expectedCount, options.Select(x => x.Key).Distinct().Count());
+            var expectedCourses = CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses
+                .Where(course => course.Code != "PRECALC" || logical == 13);
+            foreach (var source in expectedCourses)
             {
                 var item = Assert.Single(options, x => x.CourseCode == source.Code);
                 Assert.Equal(source.Pathway, item.Pathway);
@@ -80,6 +85,23 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
         }
         Assert.Null(CurriculumLevelIdentityRegistry.ResolveLegacy(
             pack, "Grade 10", gradeOrder: 11));
+    }
+
+    [Fact]
+    public void Grade12PrecalculusCourseIsExplicitAndDoesNotAppearInOtherGradeSelectors()
+    {
+        var code = MathematicsCurriculumPackRegistry.CommonCoreCode;
+        var level = Assert.Single(CurriculumLevelIdentityRegistry.ForPack(code),
+            item => item.CourseCode == "PRECALC");
+        Assert.Equal(13, level.LogicalLevel);
+        Assert.Equal("Advanced Precalculus", level.Pathway);
+        Assert.Equal("Precalculus", level.Label);
+        Assert.Equal(
+            CurriculumLevelIdentityRegistry.BuildKey(code, 13, "Advanced Precalculus", "PRECALC"),
+            level.Key);
+        Assert.Same(level, CurriculumLevelIdentityRegistry.Find(level.Key));
+        Assert.DoesNotContain(CurriculumLevelIdentityRegistry.ForPack(code),
+            item => item.CourseCode == "PRECALC" && item.LogicalLevel != 13);
     }
 
     [Fact]
@@ -109,7 +131,7 @@ public sealed class Phase29ExplicitCurriculumLevelIdentityTests
             "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs");
         var files = Directory.GetFiles(packDir,
             "us-ccss-math-hs-*.lesson-blueprint.json");
-        Assert.Equal(9, files.Length);
+        Assert.Equal(10, files.Length);
         var observed = files.Select(file =>
         {
             using var json = JsonDocument.Parse(File.ReadAllText(file));

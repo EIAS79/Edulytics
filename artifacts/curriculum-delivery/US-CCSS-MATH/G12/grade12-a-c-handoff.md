@@ -34,4 +34,15 @@
 - `full-grade-progress.json` — authoritative sequential cursor.
 - `grade12-abc-execution-instructions.md` — binding work rules.
 
+## Current Grade 12 authoring continuation (not an academic closure)
+
+- **Corrected grade placement:** American Grade 12 uses logical level 13, not logical 12 (Grade 11). Blueprint, selector and authored tests fixed before commit.
+- New **independent 73-lesson V2 Blueprint** and exact \`PRECALC\` course identity were authored from the existing 73-source-section inventory; selector is **Grade 12 only**. It is draft and **unverified at runtime**.
+- Source-specific formal mappings recorded for Section 1.1 only: \`HSF.IF.A.1\` and \`HSF.IF.A.2\` with source-page evidence. The other **72 Sections remain officially unmapped**, not inferred from similar Grade 11 topics.
+- Section 1.1 Rich V2 now contains 15 first-party worked examples, **12 first-party Try It alternatives** and **5 independently authored structured mathematical visuals**. They do not reproduce publisher graphics, and actual graph equivalence remains open.
+- Locally checked **12/12 original Try It answers** against the source PDF appendix p.1097. These are *source checks*, not authenticated practice delivery.
+- **91/92** original numbered exercises have identified source mathematics; exercise 52 remains a partial graph interpretation. All **92** are assigned proposed evaluation/review contracts in \`u01-l01-exercise-routing.json\`, but this is **not** persisted teacher grading or runtime exercise implementation.
+- Corrected static Grade 12-specific school course selection to avoid offering PRECALC on Grades 10, 11 or 13; **Stage D tests authored, not run**. Shared scope is narrow: identity registry + explicit regression specs.
+- **A–B–C 0/73 READY, lesson U01:L01 STILL OPEN, Stage D/CI NOT RUN.** No test results or production availability claimed.
+
 **Do not run Stage D, CI, tests, merge or deploy this unfinished course during A–B–C.**

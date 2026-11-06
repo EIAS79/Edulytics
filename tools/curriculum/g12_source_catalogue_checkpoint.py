@@ -37,7 +37,7 @@ save("g12-precalculus-blueprint-source-candidate.json",{
  "CourseCode":"PRECALC","PackCode":"US-CCSS-MATH",
  "LessonCodePrefix":"PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:",
  "PathwayCandidate":"Advanced Precalculus",
- "LogicalLevelCandidate":12,
+ "LogicalLevelCandidate":13,
  "ExpectedSections":73,"ExpectedUnits":12,
  "UnitSectionCounts":inv["unitCounts"],"SourcePdfSha256":inv["sourceSha256"],
  "DoNotInheritPathways":["Traditional Algebra2","Fourth Courses","UAE Grade12"],
