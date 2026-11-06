@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l23-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L23",
+      "CultureCode": "en",
+      "Title": "Polynomial Identities (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend what a polynomial identity is. Prove some common identities.",
+        "An identity is an equality valid for every allowed variable value, unlike an equation with isolated solutions. Expand both sides or use an area model to prove (a+b)^2=a^2+2ab+b^2. Testing one number is not a general proof.",
+        "Source activity 23.1: Let’s Find Some Differences: Calculate the following differences: What do you notice about these calculations? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 23.2: A Closer Look at Differences: Clare thinks the difference between the squares of two consecutive integers will always be the sum of the two integers. Is she right? Explain or show your reasoning. Pause here for a class discussion. Andre thinks the difference between the squares of two consecutive even integers will always be 4 times the sum of the two integers. Is he right? Explain or show your reasoning.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 23.3: That Expression is How Big?: Apply the distributive property to rewrite the following expressions without parentheses, combining like terms where possible. What do you notice? \\((x - 1)(x^2+x+1)\\) \\((x - 1)(x^3+x^2+x+1)\\) \\((x - 1)(x^4+x^3+x^2+x+1)\\) \\((x - 1)(x^{20} + x^{19} + . . . +x+1)\\) In earlier grades we learned how to do things like apply the distributive property and combine like terms to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all the identities:​​​​ \\((x+2)^3 = x^3 + 8\\) \\((x^6 + x) = (x-1)(x^5 + x^4 + x^3 + x^2 + x)\\) \\((x^2 - 1)(x^4 + x^2 + 1) = x^6 - 1\\) \\((x+1)^4 = x^4 + x^3 + x^2 + x + 1\\) \\((x+1)(x^4 - x^3 + x^2 - x + 1) = x^5+1\\) \\((x^3 - 1)(x^3 + 1) = x^6 - 1\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Is \\(2(x+1)^2 = (2x+2)^2\\) an identity? Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Mai is solving the rational equation \\(5 = \\frac{2+7x}{x}\\) for \\(x\\). What move do you think Mai would make first to solve for \\(x\\)? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: For \\(x\\)-values of 0 and -2, \\((x^5+32) = (x+2)^5\\). Does this mean the equation is an identity? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Clare finds an expression for \\(S(r)\\) that gives the surface area in square inches of any cylindrical can with a specific fixed volume, in terms of its radius \\(r\\) in centimeters. This is the graph Clare gets if she allows \\(r\\) to take on any value between -1.2 and 3. What would be a more appropriate domain for… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which values of \\(x\\) make \\(\\frac{3x+1}{x}=\\frac{1}{x-3}\\) true? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Prove (x-2)^2=x^2-4x+4 by expansion. Expected reasoning or answer: (x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial identities",
+          "Definition": "An identity is an equality valid for every allowed variable value, unlike an equation with isolated solutions. Expand both sides or use an area model to prove (a+b)^2=a^2+2ab+b^2. Testing one number is not a general proof.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Expand (x+3)^2 and justify the middle term. Answer: x^2+6x+9."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(x+3)(x+3)=x^2+3x+3x+9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial identities",
+          "Question": "Expand (x+3)^2 and justify the middle term.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(x+3)(x+3)=x^2+3x+3x+9."
+          ],
+          "Answer": "x^2+6x+9.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Prove (x-2)^2=x^2-4x+4 by expansion.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "(x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial identities",
+        "An identity is an equality valid for every allowed variable value, unlike an equation with isolated solutions. Expand both sides or use an area model to prove (a+b)^2=a^2+2ab+b^2. Testing one number is not a general proof.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
