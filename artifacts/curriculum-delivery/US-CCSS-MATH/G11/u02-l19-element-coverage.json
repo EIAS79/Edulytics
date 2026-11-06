@@ -1,0 +1,436 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L19",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "d957bbab8422bc2aa43dbd6dfd6cd20852026975611a3c03eea456d96bd96696",
+    "teacher/index.html": "06fc8650b64a1ffcff9e0e06cc14442581b0ad5fffae178a1040b5e5c18fcccb",
+    "teacher/practice.html": "e636606b4f542f7009983b37d345cc0ad65464ff46385219f5870f1cca3aa051",
+    "student/index.html": "5e47b8f34851ec2013cb775ccd0fb0180f2364783c746e395db72f9a931d0971",
+    "student/practice.html": "fc2c4c69c951e03bb86ae9fdca24b02668d223468433b8ff7d298c22dcb1b9e8"
+  },
+  "Goals": [
+    "Calculate the end behavior of a rational function by rewriting it in the form $f(x)=q(x)+\\frac{r(x)}{b(x)}$.",
+    "Generalize from specific rational functions to state relationships between the end behavior and the degrees of the numerator and denominator."
+  ],
+  "ElementCount": 52,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-001",
+      "SourceSection": "19.1: Different Divisions, Revisited",
+      "SourceExcerpt": "Complete all three representations of the polynomial division following the forms of the integer division.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-002",
+      "SourceSection": "19.1: Different Divisions, Revisited",
+      "SourceExcerpt": "\\( \\require{enclose} \\begin{array}{r} 2x^2 \\phantom{+7x+55} \\\\ x+1 \\enclose{longdiv}{2x^3+7x^2+7x+5} \\\\ \\end{array}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-003",
+      "SourceSection": "19.1: Different Divisions, Revisited",
+      "SourceExcerpt": "\\(2x^3+7x^2+7x+5=\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-004",
+      "SourceSection": "19.1: Different Divisions, Revisited",
+      "SourceExcerpt": "\\(\\dfrac{2775}{11}=252+\\dfrac{3}{11}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-005",
+      "SourceSection": "19.1: Different Divisions, Revisited",
+      "SourceExcerpt": "\\(\\dfrac{2x^3+7x^2+7x+5}{x+1}=\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-006",
+      "SourceSection": "19.2: Combined Fuel Economy",
+      "SourceExcerpt": "In 2000, the Environmental Protection Agency (EPA) reported a combined fuel efficiency for cars that assumes 55% city driving and 45% highway driving. The expression for the combined fuel efficiency of a car that gets \\(x\\) mpg in the city…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-007",
+      "SourceSection": "19.2: Combined Fuel Economy",
+      "SourceExcerpt": "Several conventional cars have a fuel economy for highway driving that is about 10 mpg higher than for city driving. That is, \\(h=x+10\\). Write a function \\(f\\) that represents the combined fuel efficiency for cars like these in terms of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-008",
+      "SourceSection": "19.2: Combined Fuel Economy",
+      "SourceExcerpt": "Rewrite \\(f\\) in the form \\(q(x)+\\frac{r(x)}{b(x)}\\) where \\(q(x)\\), \\(r(x)\\), and \\(b(x)\\) are polynomials.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-009",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "Complete the table to explore the end behavior for rational functions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-010",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "What do you notice about the end behavior of different types of rational functions?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-011",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "Graph \\(y=j(x)\\) and the line it approaches.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-012",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "Under what conditions would the end behavior of the graph of a rational function approach a line that is not horizontal?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-013",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "Create a rational function that approaches the line \\(y=2x-3\\) as \\(x\\) gets larger and larger in either the positive or negative direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-014",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "In earlier lessons, we saw rational functions whose end behavior could be described by a horizontal asymptote. For example, we can rewrite functions like \\(d(x)=\\frac{x+4}{x}\\) as \\(d(x)=1+\\frac{4}{x}\\) to see more clearly that as \\(x\\)…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-015",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "For example, consider \\(f(x)=\\frac{x^2+4x+5}{x-3}\\). Using division, the expression can be rewritten as \\(f(x)=x+7+\\frac{26}{x-3}\\). As \\(x\\) gets larger and larger in either the positive or negative direction, the value of the term…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-016",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "The line \\(y =c\\) is a horizontal asymptote of a function if the outputs of the function get closer and closer to \\(c\\) as the inputs get larger and larger in either the positive or negative direction. This means the graph gets closer and…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-017",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "horizontal asymptote",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-018",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "A rational function is a function defined by a fraction with polynomials in the numerator and denominator. Rational functions include polynomials because a polynomial can be written as a fraction with denominator 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-ACTIVITY-019",
+      "SourceSection": "19.3: Exploring End Behavior",
+      "SourceExcerpt": "The line \\(x=a\\) is a vertical asymptote for a function \\(f\\) if \\(f\\) is undefined at \\(x=a\\) and its outputs get larger and larger in the negative or positive direction when \\(x\\) gets closer and closer to \\(a\\) on each side of the line.…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The function \\(f(x)=\\frac{5x+2}{x-3}\\) can be rewritten in the form \\(f(x)=5+\\frac{17}{x-3}\\). What is the end behavior of \\(y=f(x)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Rewrite the rational function \\(g(x) = \\frac{x^2+7x-12}{x+2}\\) in the form \\(g(x) = p(x)+ \\frac{r}{x+2}\\), where \\(p(x)\\) is a polynomial and \\(r\\) is an integer.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-003",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Match each polynomial with its end behavior as \\(x\\) gets larger and larger in the positive and negative directions. (Note: Some of the answer choices are not used and some answer choices are used more than once.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-004",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(p(x)=\\dfrac{3}{x-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(q(x)=\\dfrac{2x}{x-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(r(x)=\\dfrac{2x+3}{x-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(s(x)=\\dfrac{2x^2+x+3}{x-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(t(x)=\\dfrac{x^3}{x-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The graph approaches \\(y=2\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The graph approaches \\(y=3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-011",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The graph approaches \\(y=2x+3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-012",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The graph approaches \\(y=x^2+x+1\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-013",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The graph approaches \\(y=0\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Let the function \\(P\\) be defined by \\(P(x) = x^3 + 2x^2 - 13x + 10\\). Mai divides \\(P(x)\\) by \\(x+5\\) and gets:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2-3x+2 \\phantom{00}\\\\ x+5 \\enclose{longdiv}{x^3+2x^2-13x+10} \\\\ \\underline{-x^3-5x^2} \\phantom{-13x+100} \\\\ -3x^2-13x \\phantom{+100}\\\\ \\underline{3x^2+15x} \\phantom{+100} \\\\ 2x+10 \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-016",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "How could we tell by looking at the remainder that \\((x+5)\\) is a factor?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-017",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "For the polynomial function \\(f(x)=x^4+3x^3-x^2-3x\\) we have \\(f(\\text-3)= 0, f(\\text-2)=\\text-6, f(\\text-1)=0\\), \\(f(0)=0, f(1)=0,f(2)=30, f(3)=144\\). Rewrite \\(f(x)\\) as a product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "There are many cones with a volume of \\(60\\pi\\) cubic inches. The height \\(h(r)\\) in inches of one of these cones is a function of its radius \\(r\\) in inches where \\(h(r)=\\frac{180}{r^2}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is the height of one of these cones if its radius is 2 inches?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-020",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is the height of one of these cones if its radius is 3 inches?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-021",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is the height of one of these cones if its radius is 6 inches?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-022",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "A cylindrical can needs to have a volume of 10 cubic inches. There needs to be a label around the side of the can. The function \\(S(r)=\\frac{20}{r}\\) gives the area of the label in square inches where \\(r\\) is the radius of the can in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-023",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "As \\(r\\) gets closer and closer to 0, what does the behavior of the function tell you about the situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-024",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "As \\(r\\) gets larger and larger, what does the end behavior of the function tell you about the situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-025",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Match each rational function with a description of its end behavior as \\(x\\) gets larger and larger.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-026",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\frac{99x+9}{x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-027",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\frac{99+9x}{x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-028",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression gets closer and closer to 0.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-029",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression gets closer and closer to 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-030",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression gets closer and closer to 9.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-031",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression is 99.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-032",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression gets larger and larger in the positive direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L19-PRACTICE-033",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "The value of the expression gets larger and larger in the negative direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l19.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
