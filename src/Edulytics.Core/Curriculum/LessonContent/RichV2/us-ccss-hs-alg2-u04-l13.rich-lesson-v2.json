@@ -1,0 +1,88 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l13-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L13",
+      "CultureCode": "en",
+      "Title": "Exponential Functions with Base $e$",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that we can use $e^r$ as the growth factor of $f(t) = e^{rt}$ when we assume the rate $r$ is applied continuously. Interpret the parameters in the equations of exponential functions with the form $f(t)=P \\boldcdot e^{rt}$.",
+        "A model P*e^(rt) has initial amount P and continuous growth rate r per time unit; its one-unit growth factor is e^r and its one-unit percent change is100(e^r-1). A negative r indicates decay.",
+        "Source activity 13.1: $e$ on a Calculator: The other day, you learned that \\(e\\) is a mathematical constant whose value is approximately 2.718. When working on problems that involve \\(e\\), we often rely on calculators to estimate values. Find the \\(e\\) button on your calculator. Experiment with it to understand how it works. (For example, see how the value of \\(2e\\) or \\(e^2\\) can be calculated.) \\(10\\boldcdot… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.2: Same Situation, Different Equations: The population of a colony of insects is 9 thousand when it was first being studied. Here are two functions that could be used to model the growth of the colony \\(t\\) months after the study began. \\( P(t) = 9 \\boldcdot (1.02)^t\\) \\(Q(t) = 9 \\boldcdot e^{(0.02t)}\\) Use technology to find the population of the colony at different times after the beginning of the study and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.3: $e$ in Exponential Models: Exponential models that use \\(e\\) often use the format shown in this example: Here are some situations in which a percent change is considered to be happening continuously. For each function, identify the missing information and the missing growth rate (expressed as a percentage). function: \\(b(t) = 50 \\boldcdot e^{(0.25t)}\\) continuous growth rate per hour: At time \\(t=0\\),… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.4: Graphing Exponential Functions with Base $e$: The function \\(f\\) models the population of bacteria in \\(t\\) hours after it was initially measured. About how many bacteria were in the dish 10 hours after the scientist put the initial 50 bacteria in the dish? About how many hours did it take for the number of bacteria in the dish to double? Explain or show your reasoning. Use graphing technology to graph the function… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The population of a town is growing exponentially and can be modeled by the equation \\(f(t) = 42 \\boldcdot e^{(0.015t)}\\). The population is measured in thousands, and time is measured in years since 1950. What was the population of the town in 1950? What is the approximate percent increase in the population each… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The revenue of a technology company, in thousands of dollars, can be modeled with an exponential function whose starting value is $395,000 where time \\(t\\) is measured in years after 2010. Which function predicts exactly 1.2% of annual growth: \\(R(t) = 395 \\boldcdot e^{(0.012t)}\\) or \\(S(t) = 395 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: How are the functions \\(f\\) and \\(g\\) given by \\(f(x) = (1.05)^x\\) and \\(g(x) = e^{0.05x}\\) similar? How are they different? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: A bond is worth $100 and grows in value by 4 percent each year. Explain why the value of the bond after \\(t\\) years is given by \\(100 \\boldcdot 1.04^t\\). A second bond is worth $100 and grows in value by 2 percent each half year. Explain why the value of the bond after \\(t\\) years is given by \\(100 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The population of a country is growing exponentially, doubling every 50 years. What is the annual growth rate? Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which expression has a greater value: \\(\\log_3 \\frac13\\) or \\(\\log_b \\frac1b\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The expression \\(5 \\boldcdot \\left(\\frac12\\right)^d\\) models the amount of a radioactive substance, in nanograms, in a sample over time in decades, \\(d\\). (1 nanogram is a billionth or \\(1 \\times 10^{\\text-9}\\) gram.) What do the 5 and the \\(\\frac12\\) tell us in this situation? When will the sample have less than 0.5… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: Select all true statements about the number \\(e\\). \\(e\\) is a rational number. \\(e\\) is approximately 2.718. \\(e\\) is an irrational number. \\(e\\) is between \\(\\pi\\) and \\(\\sqrt2\\) on the number line. \\(e\\) is exactly 2.718. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For B(t)=50e^(-0.2t), is it growth or decay? Expected reasoning or answer: Decay; initial50.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Continuous growth and e",
+          "Definition": "A model P*e^(rt) has initial amount P and continuous growth rate r per time unit; its one-unit growth factor is e^r and its one-unit percent change is100(e^r-1). A negative r indicates decay.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For A(t)=200e^(0.1t), find A(0) and one-unit growth factor. Answer: A(0)=200; factor≈1.10517."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "At t0 exponent0 so initial200; at t1 ratio e^0.1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Continuous growth and e",
+          "Question": "For A(t)=200e^(0.1t), find A(0) and one-unit growth factor.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "At t0 exponent0 so initial200",
+            "at t1 ratio e^0.1."
+          ],
+          "Answer": "A(0)=200; factor≈1.10517.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For B(t)=50e^(-0.2t), is it growth or decay?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Decay; initial50.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Continuous growth and e",
+        "A model P*e^(rt) has initial amount P and continuous growth rate r per time unit; its one-unit growth factor is e^r and its one-unit percent change is100(e^r-1). A negative r indicates decay.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
