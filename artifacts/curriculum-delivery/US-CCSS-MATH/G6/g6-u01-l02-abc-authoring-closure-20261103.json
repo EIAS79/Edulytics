@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_INDIVIDUAL_LESSON_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+  "title": "Finding Area by Decomposing and Rearranging",
+  "sourceLessonCode": "6.1.2",
+  "unit": "U01",
+  "sourceEdition": "Original IM 6-8 Math / OUR-developed Kendall Hunt first-edition lineage, 2017–2019 copyright and IM 2019 adaptation; owner-approved IM K–12 first-edition family",
+  "sourceRightsMetadata": "CC BY 4.0",
+  "sourcePaths": {
+    "teacherLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\2\\index.html",
+    "teacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\2\\preparation.html",
+    "teacherPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\2\\practice.html",
+    "studentLesson": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM_Student\\1\\2\\index.html"
+  },
+  "sourceSha256": {
+    "teacherLesson": "bba81d28a6d2966609382f5a125fa5aa7a0298d519773d439eac0d790827e245",
+    "teacherPreparation": "1009a9eec74fd3adff011bba638830591004d2b7f3e4b348c69ef8ecb06f3fa0",
+    "teacherPractice": "aac200293acc797727cde1091b31778cacb13a6072aaedf3d076c47beb1ea01f",
+    "studentLesson": "c4e2147770927befc416f6921bc49e142ce41c62ff1c05c86d59283b37ab4063"
+  },
+  "excludedWrongEditionSource": [
+    "06_Grade_6_OUR_IM\\AccessIM_Grade6_Course_Guide.html",
+    "06_Grade_6_OUR_IM\\AccessIM_Grade6_Lessons_By_Standard.html",
+    "06_Grade_6_OUR_IM\\AccessIM_Grade6_Standards_By_Lesson.html",
+    "Illustrative_Mathematics_v360 (separate folder)"
+  ],
+  "closureStatus": "A_B_C_AUTHORED_CLOSED_READY_FOR_STAGE_D",
+  "gradeLabel": "ready for stage D",
+  "reviewComplete2021MarkerAdded": false,
+  "acceptedUtc": "2026-11-03T02:31:57Z",
+  "closureSha": "718183af33efecf5070ab6ce64fffba7d1053c3b",
+  "closureShaRole": "GitHub commit containing the complete lesson-selected exact Practice integration; subsequent evidence/ledger commit is separately visible on PR #591",
+  "stageA": {
+    "status": "CLOSED",
+    "sourceParts": [
+      "2.1 What is Area: four same/mixed-size square arrangements, gaps and overlays, rigorous equal unit definition",
+      "2.2 Composing Shapes: modified eight-piece kit 1 square+4 small+1 medium+2 large triangles; area conservation, create non-square area1 and distinct area2 and area4 shapes",
+      "2.3 Tangram Triangles optional: explain area equivalence",
+      "Practice: rearranged rectangle, moved four of sixteen small squares, 1.5-unit multi-select, rectangle 78/13, explanation"
+    ],
+    "preExistingEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-abc-source-first-party-20261030.json",
+    "boundaries": "Original publisher interactive applet figures, teacher-authenticated Cool-down and full pixel parity are not certified; preserved truthful source limitations"
+  },
+  "stageB": {
+    "status": "CLOSED_AUTHORED",
+    "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
+    "existingKernel": "src/Edulytics.Core/Mathematics/Practice/UsCcssG6Unit1Lesson2TangramArea.cs",
+    "sourceAlignedMathematics": [
+      "One unit square = 2 small half-square triangles",
+      "Medium triangle area1; large triangle area2; four small triangles area2; complete modified tangram inventory area8",
+      "Two three-half-square decompositions of area 1.5; equal numeric area is insufficient to judge constructed shapes"
+    ],
+    "teacherBoundary": "Physical/digital polygons, distinct outlines, gaps/overlaps and oral/written proof require teacher review; never treat numeric verifier as visual construction grade",
+    "cooldown": "Edulytiks-authored source-skill aligned exit check exists in Rich V2, not represented as authenticated publisher Cool-down"
+  },
+  "stageC": {
+    "status": "CLOSED_STATIC_AUTHORED_SELECTED_PRACTICE",
+    "contract": "PED:US-CCSS-MATH:G6:U01:L02 -> LessonPracticeContractRegistry.TryResolve -> StudentPrivatePracticeService.GenerateSkillContractLessonAsync -> Stage18SkillContractPracticeEngine -> ExactSkillContractQuestionEngine",
+    "skillId": "geometry.area_tiling",
+    "families": [
+      "usccss.g6.u01.l02.tangram_piece_area",
+      "usccss.g6.u01.l02.tangram_equal_area"
+    ],
+    "dispatch": "ExactSkillContractQuestionEngine.SupportsFamily / BuildProblem / Solve / Verify -> UsCcssG6Unit1Lesson2TangramQuestions",
+    "verification": "Bounded variant for 8 piece-area tasks or 4 equal-area comparisons, exact half-square arithmetic and fraction equivalence; malformed, forged, out-of-kit answers rejected. Drawings remain teacher reviewed.",
+    "feedback": "Each generated question includes non-secret explanation describing exact numerical area and explicit teacher review of shapes; real authenticated feedback and persisted grading are not runtime-tested until Stage D",
+    "registry": "ShadowVerified / lessonPracticeRouting=true, productionRouting=false; 1109 unique IDs, previous 1107 retained",
+    "integrationCommit": "718183af33efecf5070ab6ce64fffba7d1053c3b",
+    "testsAuthoredNotRun": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2TangramAreaTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2TangramQuestionAdapterTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2SelectedPracticeRouteTests.cs",
+      "tests/academic-us-ccss-g6-u01-l02-first-party-tangram.test.cjs"
+    ],
+    "staticChecks": [
+      "git diff --check clean",
+      "JSON registry parsed, 1109/1109 unique families, two new G6 U01:L02 families",
+      "Exact contract, build, solve, verify routing inspected on original course branch"
+    ],
+    "testExecution": "AUTHORED_NOT_RUN",
+    "runtimeExecution": "NOT_RUN"
+  },
+  "stageD": "NOT_STARTED",
+  "readyForStageD": true,
+  "nextLesson": "PED:US-CCSS-MATH:G6:U01:L03",
+  "limitations": [
+    "A–B–C acceptance is authoring/static only, not test execution, CI, Stage D, production merge or deployment",
+    "Authenticated learner generation, response feedback, persistence and live browser were not executed",
+    "Original publisher applet behavior and protected Cool-down not reproduced",
+    "Human review of drawings and justifications still required"
+  ]
+}

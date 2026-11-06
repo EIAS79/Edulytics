@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 392" role="img" aria-labelledby="g7u07l01-title g7u07l01-desc">
+  <title id="g7u07l01-title">Three regular hexagon corners make a full turn; read a 40-degree protractor angle</title>
+  <desc id="g7u07l01-desc">Left: three congruent regular hexagons, each having a 120-degree internal corner, rotate by 120 degrees about their shared vertex O; together the three corners total 360 degrees without overlap or gap. Right: one ray points right from O at 0 degrees, a second ray points 40 degrees counterclockwise. The angle read from the right-hand zero is 40 degrees; reading the opposite 140-degree numbering incorrectly would measure the supplement relative to the left-hand baseline. Hexagons are mathematical originals, not publisher pattern-block artwork.</desc>
+  <style>
+    .bg{fill:#fff}.panel{fill:#f8fafc;stroke:#536171;stroke-width:1.5}
+    .hexA{fill:#d2eaf4;stroke:#20394f;stroke-width:2}
+    .hexB{fill:#f1e2bf;stroke:#493d24;stroke-width:2}
+    .hexC{fill:#dce9d3;stroke:#2e4931;stroke-width:2}
+    .ray{stroke:#172d43;stroke-width:3;stroke-linecap:round}
+    .opposite{stroke:#555;stroke-width:2;stroke-dasharray:6 4}
+    .arc{fill:none;stroke:#283d51;stroke-width:2}
+    .h{font:bold 18px system-ui,sans-serif;fill:#142738}
+    .lab{font:16px system-ui,sans-serif;fill:#172c40}
+    .small{font:14px system-ui,sans-serif;fill:#172c40}
+  </style>
+  <rect class="bg" width="1000" height="392"/>
+  <text class="h" x="22" y="31">Reason about angles, not side lengths</text>
+  <rect class="panel" x="18" y="49" width="461" height="325" rx="9"/>
+  <rect class="panel" x="497" y="49" width="485" height="325" rx="9"/>
+  <text class="h" x="34" y="80">Three 120° regular hexagon corners</text>
+  <text class="h" x="513" y="80">Begin measuring at the right-hand 0°</text>
+  <!-- The shared origin is the first polygon vertex. Rotations of a true
+       regular hexagon leave three exact 120-degree angles at O. -->
+  <g transform="translate(221 228)">
+    <g id="hexagon-0" transform="rotate(0)"><polygon class="hexA" points="0,0 26,-45.0333 78,-45.0333 104,0 78,45.0333 26,45.0333"/></g>
+    <g id="hexagon-120" transform="rotate(120)"><polygon class="hexB" points="0,0 26,-45.0333 78,-45.0333 104,0 78,45.0333 26,45.0333"/></g>
+    <g id="hexagon-240" transform="rotate(240)"><polygon class="hexC" points="0,0 26,-45.0333 78,-45.0333 104,0 78,45.0333 26,45.0333"/></g>
+  </g>
+  <circle cx="221" cy="228" r="5" fill="#10283c"/>
+  <text class="lab" x="230" y="248">O</text>
+  <text class="lab" x="46" y="326">120° + 120° + 120° = 360°</text>
+  <text class="small" x="46" y="350">One vertex shared, no gap or overlap</text>
+  <!-- The divider endpoint is O + 160*(cos40,-sin40), rounded to 0.01px. -->
+  <line id="protractor-zero-ray" class="ray" x1="668" y1="275" x2="912" y2="275"/>
+  <line id="protractor-angle-40-ray" class="ray" x1="668" y1="275" x2="790.57" y2="172.15" data-angle-deg="40"/>
+  <line id="protractor-opposite-baseline" class="opposite" x1="668" y1="275" x2="548" y2="275"/>
+  <circle cx="668" cy="275" r="5" fill="#10283c"/>
+  <path class="arc" d="M 728 275 A 60 60 0 0 0 713.96 236.43"/>
+  <text class="lab" x="740" y="251">40°</text>
+  <text class="small" x="844" y="298">0° start</text>
+  <text class="small" x="521" y="296">180°</text>
+  <text class="small" x="690" y="151">not 140° from the right</text>
+  <text class="small" x="513" y="346">Always match the scale's 0° to the starting ray.</text>
+  <text class="small" x="22" y="389">Edulytiks original reference figures. A teacher reviews the learner's assembled blocks, ray diagram and protractor use.</text>
+</svg>

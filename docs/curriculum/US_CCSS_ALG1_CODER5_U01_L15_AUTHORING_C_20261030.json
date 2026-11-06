@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+  "contentVersion": "alg1-u01-l15-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\15\\preparation.html",
+      "sha256": "e97883b62718827d327720d86326bd4084196ac7221a09209a3be8753bfe31ab"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\15\\index.html",
+      "sha256": "4d81824af6e49f7fe1c90d0dcde887d64eb572af798e7e70f39a46bbc3887b18"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\15\\index.html",
+      "sha256": "6a5df9df84ee7105dacc176e7750155615c719a81266098f3fcc05b169cb82ac"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\15\\practice.html",
+      "sha256": "a00270dd993730db7bfb04c9d22cabc85b7d9d3f646024f816a85642564d8364"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 BuildingOn",
+    "HSS-ID.A.1 Addressing",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.2 BuildingTowards"
+  ],
+  "activity": "Source asks choose bowlers from 25-game histograms; invented five-game alternatives are examples, not measured source values.",
+  "practice": "For fictional A/B both centers120, compute SD sqrt200 vs sqrt2, IQR30 vs3 and support team preference.",
+  "mathFixture": [
+    120,
+    120,
+    14.142135623730951,
+    1.4142135623730951,
+    30.0,
+    3.0
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Source asks choose bowlers from 25-game histograms; invented five-game alternatives are examples, not measured source values.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "For fictional A/B both centers120, compute SD sqrt200 vs sqrt2, IQR30 vs3 and support team preference.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        120,
+        120,
+        14.142135623730951,
+        1.4142135623730951,
+        30,
+        3
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "For fictional A/B both centers120, compute SD sqrt200 vs sqrt2, IQR30 vs3 and support team preference.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Accurate centers",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Spread measures",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Defensible decision",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

@@ -116,6 +116,40 @@ public sealed class StudentPrivatePracticeService(
         if (scoped.Error.HasValue)
             return StudentPrivatePracticeResult.Failure(scoped.Error.Value);
 
+        // The original 132-lesson Traditional Algebra 1 course has authored
+        // learning content, but its source-specific assessment/teacher-scored
+        // contracts are not yet accepted. An outcome or title-based fallback
+        // must not be presented as verified Algebra 1 Practice. Keep its
+        // broader scopes closed until course-wide assessment is certified.
+        const string traditionalAlgebra1Prefix =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:";
+        var unapprovedAlgebra1Selection =
+            request.Scope == StudentPrivatePracticeScope.Lesson
+                ? scoped.LessonId.HasValue && context.Lessons.Any(x =>
+                    x.Id == scoped.LessonId.Value &&
+                    x.Code.StartsWith(traditionalAlgebra1Prefix, StringComparison.Ordinal))
+                : context.Lessons.Count > 0 && context.Lessons.All(x =>
+                    x.Code.StartsWith(traditionalAlgebra1Prefix, StringComparison.Ordinal));
+        // Even projected official-outcome rules currently marked READY_VERIFIED
+        // do not establish original Algebra 1 student-activity and grading
+        // acceptance. Deliberately reject before all registry/fallback routes;
+        // replace this gate only with reviewed source-specific acceptance.
+        // A READY_VERIFIED LessonPracticeContract is the sequential Algebra 1
+        // acceptance ledger. Only lesson scope may pass; unit/course requests remain fail-closed.
+        var selectedAcceptedAlgebra1Lesson =
+            request.Scope == StudentPrivatePracticeScope.Lesson &&
+            scoped.LessonId.HasValue &&
+            context.Lessons.Any(lesson =>
+                lesson.Id == scoped.LessonId.Value &&
+                LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
+                exactAlgebra1Contract is not null &&
+                string.Equals(exactAlgebra1Contract.Readiness, "READY_VERIFIED", StringComparison.Ordinal));
+        if (unapprovedAlgebra1Selection && !selectedAcceptedAlgebra1Lesson)
+        {
+            return StudentPrivatePracticeResult.Failure(
+                StudentPrivatePracticeError.NoSupportedOutcomes);
+        }
+
         // General lesson Practice contracts are authoritative for READY_VERIFIED
         // lesson-scoped Practice. Supporting lessons do not need an official
         // OutcomeCode to use the exact solver/verifier path. Once a contract
@@ -174,6 +208,7 @@ public sealed class StudentPrivatePracticeService(
                     compatibleContract,
                     cancellationToken);
             }
+
         }
 
         var masteryByOutcome = context.OfficialMasteries

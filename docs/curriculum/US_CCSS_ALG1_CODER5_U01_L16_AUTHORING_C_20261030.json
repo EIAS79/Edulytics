@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+  "contentVersion": "alg1-u01-l16-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\16\\preparation.html",
+      "sha256": "2c2ec5552b22fd7e36a22c287ae48f7ec295f10bc9e89ab2690d27e91c8c4c41"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\16\\index.html",
+      "sha256": "c0b854fb180d58424b1d0e132d64a90dfea6d040f0253e0a243215febb4ee6b7"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\16\\index.html",
+      "sha256": "9961b244931bada982c563efb1cd0762bb3dd4c02b61ccb375734d7408c08881"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\16\\practice.html",
+      "sha256": "4d188a15da518b6d35a35cb30ad01b8788c0478104b8b37df187b49ab340595a"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A Addressing",
+    "HSS-ID.A.1 Addressing",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 Addressing",
+    "HSS-ID.A.1 BuildingTowards",
+    "HSS-ID.A.2 BuildingTowards",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Two ruler-drop conditions require 20 genuine observations EACH, if actually performed; five-value example is fictional.",
+  "practice": "Compare fictional group means 8cm vs6cm and median 8cm vs6cm; five observations cannot satisfy source experiment.",
+  "mathFixture": [
+    8,
+    6,
+    8,
+    6,
+    5,
+    5
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Two ruler-drop conditions require 20 genuine observations EACH, if actually performed; five-value example is fictional.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Compare fictional group means 8cm vs6cm and median 8cm vs6cm; five observations cannot satisfy source experiment.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        8,
+        6,
+        8,
+        6,
+        5,
+        5
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Compare fictional group means 8cm vs6cm and median 8cm vs6cm; five observations cannot satisfy source experiment.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Fair design and authentic n",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Display and statistics",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Limits and no fake participation",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

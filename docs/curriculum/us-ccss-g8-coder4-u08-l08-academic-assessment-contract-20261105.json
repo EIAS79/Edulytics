@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L08",
+  "title": "Finding Unknown Side Lengths",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\8\\index.html",
+      "sha256": "ccc52256b77c0e287b6d5580135bf2170a2e665dd85ef6925cdf876c0ba2e860"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\8\\preparation.html",
+      "sha256": "04cb6f9c435e248ff47c059acc5cbfa1442e72b59df015f3349d91fb15446089"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\8\\index.html",
+      "sha256": "24b392719d08a63a39b767c0999ab0c69fb910829c14c6d6e4b22dac79ba3e57"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\8\\practice.html",
+      "sha256": "3ba748cf0bdc588457fe5fc3c217c555ef1830f6f02b5767bad896c8531337bf"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "8.1: Which One Doesn’t Belong: Equations",
+      "8.2: Which One Is the Hypotenuse?",
+      "8.3: Find the Missing Side Lengths"
+    ],
+    "practiceProblemCount": 6,
+    "teacherFigureTagCount": 38,
+    "studentFigureTagCount": 43,
+    "requiredMaterialsSectionPresent": false,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: solve for an unknown leg or hypotenuse in a right triangle, recognizing when subtraction versus addition of squares is appropriate.",
+    "The largest side c is the hypotenuse; if c and leg a are known, the missing leg b=√(c²−a²). Check that c>a>0 so the radicand is positive in a nondegenerate triangle."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "8.1: Which One Doesn’t Belong: Equations",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.2: Which One Is the Hypotenuse?",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.3: Find the Missing Side Lengths",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 6,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l08-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l08-selected-first-party-paper.html",
+    "sha256": "2fbbddc505a3d0cc5f841d10e92a427a620ae7286ed6a8da0adb2d498bbbe3d8",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "b=sqrt(13^2-5^2)=sqrt(144)=12; subtraction isolates the unknown leg square.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "a": 5,
+    "b": 12,
+    "c": 13
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

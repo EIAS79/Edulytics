@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L11",
+  "title": "Writing Equations for Lines",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\11\\index.html",
+      "sha256": "3f7cb38dd2e6075c2eb5ceb2df425d579b25a307dcdf5c5205f85a794a09d089"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\11\\preparation.html",
+      "sha256": "f0526f8c7268cd87c113aa9b924c0057b9f2a5f5d0ba1cf33ed14e3244d7631c"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\11\\index.html",
+      "sha256": "a0ed9fd3ee59008de3eb8427e41a652857aef3eef665d2e943ef783e0d00224e"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\11\\practice.html",
+      "sha256": "c4a234f228b533f0a4b31dde73ce68ed755b8a14c7e859b0d1b5480241c60857"
+    }
+  },
+  "learningGoals": [
+    "Find horizontal and vertical distances between coordinate pairs",
+    "Test whether a coordinate pair is on a line by a justified equation",
+    "Derive a linear equation from slope triangles and explain why it applies to all points"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "11.1 • Coordinate differences and lengths",
+      "firstPartyTask": "coordinate-lengths",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.2 • What an equation says about points",
+      "firstPartyTask": "equation-of-line",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.3 • Relationships from slope triangles",
+      "firstPartyTask": "slope-equations",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l11-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u02-l11-selected-first-party-paper.html",
+    "sha256": "b40e2e4464141f9c4ec955518a3c7967557ec6d63b421a88d1823d07258bf8a1",
+    "taskIds": [
+      "coordinate-lengths",
+      "equation-of-line",
+      "slope-equations",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Coordinate AB4 and BC6, slope3/2 with correct x and y axes.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Line through origin slope3/4: (20,15),(100,75) yes and (90,68) no because expected67.5.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Slope through (2,1),(6,7) is3/2; intercept−2; equation y=1.5x−2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice slope2, line y=1.5x+4 with (4,10), equivalent fractions, and angle mismatch.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cool-down line y=2x−3; (4,5) yes and (4,6) no.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "x": 20,
+    "y": 15,
+    "numerator": 3,
+    "denominator": 4,
+    "badX": 90,
+    "badY": 68
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

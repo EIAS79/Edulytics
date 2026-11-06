@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edulytics Grade 6 U01:L16 — Surface Area versus Volume</title>
+<style>:root{color-scheme:light;font-family:system-ui,Arial,sans-serif}body{max-width:900px;margin:auto;padding:18px;color:#17283b;line-height:1.5}h1,h2{line-height:1.25}section{border-top:1px solid #b7c3d2;padding-top:13px;margin-top:18px}.note{border-left:4px solid #45698b;background:#eef3f9;padding:12px}table{width:100%;border-collapse:collapse}th,td{padding:8px;border:1px solid #b2bfca;text-align:left}fieldset{display:flex;flex-wrap:wrap;gap:12px}label{display:block;max-width:200px}input{display:block;width:7em;padding:8px;margin-top:5px}button{padding:8px 13px;cursor:pointer}output{display:block;padding:12px;min-height:15px}@media print{button{display:none}.note{background:white}body{padding:0}}</style></head>
+<body>
+<h1>Grade 6 · U01:L16 — Surface Area vs Volume</h1>
+<p class="note">Independent Edulytics workmat aligned to the original optional OUR/IM first-edition lesson 16.1–16.3. No protected publisher Cool-down is reproduced: the original optional lesson has no separate 16.4 Cool-down heading in the local source. Teacher inspects models, written reasoning and labels; numerical feedback does not certify these.</p>
+<section><h2>Original activity 16.3 — three boxes with the SAME surface area</h2>
+<table><thead><tr><th>Source prism</th><th>Base × height (cm)</th><th>Surface area (cm²)</th><th>Volume (cm³)</th></tr></thead><tbody>
+<tr><td>A</td><td>1 × 11 × 1</td><td>46</td><td>11</td></tr>
+<tr><td>B</td><td>2 × 7 × 1</td><td>46</td><td>14</td></tr>
+<tr><td>C</td><td>3 × 5 × 1</td><td>46</td><td>15</td></tr>
+</tbody></table>
+<p>All three have exactly the same exterior area but different capacity. <strong>Do not use</strong> the independent 1×1×5 and 1×2×3 examples (area 22) as original publisher Box A/B/C.</p></section>
+<section><h2>Original 16.2 — build two shapes with 8 unit cubes each</h2>
+<p>Start with sixteen cubes. Build two connected solids, each with exactly eight cubes. Examples for independent checking: compact 2×2×2 has surface area24; 1×2×4 has28; 1×1×8 has34. Explain how internal face contacts reduce exposed area, even while every model holds eight cubic units.</p>
+<p>Original practice pictured four cubes 1×1×4 have volume4 and exposed area18. Doubling the number of cubes <strong>does not necessarily double</strong> the outside area.</p>
+</section>
+<section><h2>Numeric check</h2><form id="check"><fieldset>
+<label for="a-area">Original A surface area<input required inputmode="decimal" id="a-area"></label>
+<label for="a-volume">Original A volume<input required inputmode="decimal" id="a-volume"></label>
+<label for="b-volume">Original B volume<input required inputmode="decimal" id="b-volume"></label>
+<label for="c-volume">Original C volume<input required inputmode="decimal" id="c-volume"></label>
+</fieldset><button type="submit">Check answers</button><output id="result" aria-live="polite"></output></form>
+</section>
+<section><h2>Independent Edulytics exit task — teacher reviewed</h2>
+<p>Draw or construct two of the original source boxes A and C with their actual lengths. Explain why both have surface area46cm² but volumes11cm³ and15cm³. Include a face-by-face calculation, a cube count, and a reason why square units differ from cubic units.</p>
+<p><strong>Teacher rubric:</strong> dimensions and net are scaled; all six faces counted; valid exterior area46 for both; correct volumes11 and15; appropriate cm² vs cm³; geometric model and written argument. This is independent Edulytics content, not a publisher original Cool-down.</p>
+<div style="border:1px dashed #8299b0;min-height:160px" aria-label="Blank space to draw both figures"></div></section>
+<button id="print" type="button">Print for teacher</button>
+<script>"use strict";document.getElementById("check").addEventListener("submit",e=>{e.preventDefault();const ids=["a-area","a-volume","b-volume","c-volume"],answers=[46,11,14,15];const pass=ids.map((k,i)=>{const v=document.getElementById(k).value.trim();return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(v)&&Number.isFinite(Number(v))&&Number(v)===answers[i]});const n=pass.filter(Boolean).length;document.getElementById("result").textContent=n===4?"4/4 numbers correct. Teacher must still check physical shapes and written reasoning.":n+"/4 numbers correct. Recompute square-face coverage separately from cubic-unit capacity."});document.getElementById("print").addEventListener("click",()=>window.print());</script>
+</body></html>

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L11",
+  "title": "Finding Distances in the Coordinate Plane",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\11\\index.html",
+      "sha256": "7a5efe8dc2d31d6f1d72b19dc82bfebd34a2e4e5540aa29cd8f4091c615fa662"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\11\\preparation.html",
+      "sha256": "169c1f0adf82aa9240c6eead2eff226fd6cc29183c35ae8c8a7e7a81bb08a012"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\11\\index.html",
+      "sha256": "830e3199415802d1564a07acb289754122420821b465e91e829a59641124d4f3"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\11\\practice.html",
+      "sha256": "d462a3a2bcebc83f9ea0133d0f74d0a489c15ac329c3f03557520cc83e60f33d"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "11.1: Closest Distance",
+      "11.2: How Far Apart?",
+      "11.3: Perimeters with Pythagoras",
+      "11.4: Finding the Right Distance"
+    ],
+    "practiceProblemCount": 5,
+    "teacherFigureTagCount": 31,
+    "studentFigureTagCount": 35,
+    "requiredMaterialsSectionPresent": false,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: derive and use the coordinate distance formula from horizontal and vertical displacements and Pythagorean theorem.",
+    "Two points (x₁,y₁),(x₂,y₂) determine horizontal difference Δx and vertical difference Δy. Euclidean distance is √(Δx²+Δy²), symmetric in point order and never negative."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "11.1: Closest Distance",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.2: How Far Apart?",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.3: Perimeters with Pythagoras",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.4: Finding the Right Distance",
+      "firstPartyTask": "activity-4",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l11-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l11-selected-first-party-paper.html",
+    "sha256": "dc1ccf8225c3bf5144cb3772b90800ec66bc55166dbaff587925fb068f5bb654",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "activity-4",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Differences are 3 and 4, so distance is sqrt(9+16)=5; squaring makes the sign of reversed differences irrelevant.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "dx": 3,
+    "dy": 4,
+    "d": 5
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

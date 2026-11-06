@@ -237,13 +237,17 @@ public static class LessonPracticeInteractionRegistry
             "exact_integer" =>
                 LessonPracticeInteractionKind.IntegerKeypad,
 
+            "exact_decimal" or
             "exact_scalar" =>
                 LessonPracticeInteractionKind.NumericEntry,
 
             "exact_rational" =>
                 LessonPracticeInteractionKind.FractionEntry,
 
+            "exact_ordered_pair" or
             "exact_vector" or
+            "exact_ordered_ratio" or
+            "exact_ordered_ratio_three_term" or
             "exact_interval_or_union" or
             "quotient_and_remainder" or
             "enum_text" =>

@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U09:L05",
+  "title": "Plotting the Weather",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\5\\index.html",
+      "sha256": "9cc22c230e93c73c9a39e51fae429bede83afee5d6d4576c288c92ff8b8ebde4"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\9\\5\\preparation.html",
+      "sha256": "b4e0ae8689ff0832adaba1085bf991b639239a3046ddd13868a71b47a289e57e"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\9\\5\\index.html",
+      "sha256": "f4ae621e3d8413b5a7f751c40fd34be89d1ae2d2fb1bd9cbafa141fed4afd3b8"
+    },
+    "practice": null
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "5.1: California Rain",
+      "5.2: Data Snooping",
+      "5.3: Temperature vs. Latitude"
+    ],
+    "practiceProblemCount": 0,
+    "teacherFigureTagCount": 19,
+    "studentFigureTagCount": 14,
+    "requiredMaterialsSectionPresent": true,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: construct a scatter plot from paired climate-like measurements and choose a reasonable linear model with a stated numerical slope, intercept and uncertainty.",
+    "Given original fictional observations of latitude L and temperature T: (20,31),(30,24),(40,21),(50,14), one possible trend line is T≈40−0.5L. Some observations fall above or below the line; its predictions are estimates."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "5.1: California Rain",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "5.2: Data Snooping",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "5.3: Temperature vs. Latitude",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 0,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u09-l05-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u09-l05-selected-first-party-paper.html",
+    "sha256": "bb927720da0dd36bf0e86478f8f9d55473c54d5140982808bd9487a732c104eb",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Predictions are 30 and 15, giving residuals +1 and -1. The line is an approximate model, not an exact rule for every observation.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Geometric constructions distinguish gap-free/overlap-free tessellation from visual proximity, and statistical models distinguish prediction from exact observation.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Claims state the conditions, variables, units, and limitations needed for a defensible conclusion.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "p20": 30,
+    "r20": 1,
+    "p50": 15,
+    "r50": -1
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

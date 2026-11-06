@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edulytics • Equivalent Ratios</title>
+<style>body{font:1rem system-ui,sans-serif;background:#f8fafc;color:#1e293b}main{max-width:850px;margin:auto;padding:1rem}section{border:1px solid #cbd5e1;border-radius:12px;margin:1rem 0;background:#fff;padding:1rem}input,button{font:inherit;padding:.35rem}input{width:3.8rem}.teacher{border-left:4px solid #64748b;padding:.7rem;background:#e2e8f0}table{border-collapse:collapse}td,th{padding:.5rem;border:1px solid #94a3b8}</style></head>
+<body><main><h1>Defining equivalent ratios</h1><p>Two positive two-term ratios are equivalent when one common multiplier maps both matching terms. Drawing groups and explaining nonexamples are teacher-assessed.</p>
+<section><h2>5.1 • Dots and half dots</h2><p>Invent a dot-and-half-dot display with 4 full dots and 5 half dots, then repeat the whole group twice. The comparison 4:5 becomes 8:10. Show that each category was doubled, not increased by an arbitrary amount.</p></section>
+<section><h2>5.2 • Tuna casserole scale</h2><p>A full recipe uses 3 cups pasta, 6 ounces tuna, 10 ounces soup, 1 cup cheese, 1½ cups onions. A half batch uses 1½, 3, 5, ½ and ¾ in their respective original units. Explain why you cannot multiply only the soup.</p>
+<p>If a dish measures 9 by 18 inches at fixed height, base area 162 square inches. A double batch requires twice that base area: 324 square inches, not 648. You may choose several different suitable rectangular dimensions.</p></section>
+<section><h2>5.3 • Check equivalence</h2><p>Input positive numbers for two ratios A:B and C:D.</p>
+<label>Ratio one <input id="a" type="number" value="4"> : <input id="b" type="number" value="5"></label>
+<label>Ratio two <input id="c" type="number" value="8"> : <input id="d" type="number" value="10"></label>
+<button type="button" id="check">Compare cross products</button><p id="result" role="status"></p>
+<p>Try 18:3 and 6:1, 2:7 and 10000:35000, 6:4 and 18:8, and 3:6 and 6:3. Explain each example or counterexample with a table or diagram.</p></section>
+<section><h2>Independent Edulytics Cool-down</h2><p>Explain whether 8:12 and 12:18 are equivalent. Find the shared positive factor, give a non-equivalent example, and draw two complete groups.</p>
+<div class="teacher"><strong>Teacher rubric:</strong> 8:12=2:3 and12:18=2:3; multiply both original terms by 1.5. A counterexample such as 8:12 versus12:16 fails because 8×16 ≠ 12×12. Inspect the student-created diagram and complete explanation, which selected numeric Practice does not certify.</div></section>
+<script>
+function check(){let ids=['a','b','c','d'];let v=ids.map(id=>Number(document.getElementById(id).value));let o=document.getElementById('result');if(v.some(x=>!Number.isInteger(x)||x<1||x>100000)){o.textContent='Enter whole numbers from 1 to 100000.';return}o.textContent=v[0]*v[3]===v[1]*v[2]?'Equivalent: both products equal '+v[0]*v[3]+'. Explain the multiplier.':'Not equivalent: cross products '+(v[0]*v[3])+' and '+(v[1]*v[2])+' differ.'}document.getElementById('check').onclick=check;check();
+</script></main></body></html>

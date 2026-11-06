@@ -341,6 +341,32 @@ public sealed class PracticeSessionDiversityCertificationTests
                     question.CorrectAnswer)));
     }
 
+    [Fact]
+    public void StructuredTilingCoverageCanSustainTenIndependentQuestions()
+    {
+        // The original four configurations exhaust a ten-item exact session.
+        // More geometrically distinct positive/negative mosaics are required;
+        // relaxing uniqueness or the certified ten-item target is not a fix.
+        const string family = "usccss.g6.u01.l01.structured_tiling_coverage";
+        var questions = new ExactSkillContractQuestionEngine().Generate(
+            "g6-structured-tiling-regression",
+            family,
+            [family],
+            ExactSkillQuestionDifficulty.Standard,
+            10,
+            20261102,
+            []);
+
+        Assert.Equal(10, questions.Count);
+        Assert.Equal(10, questions.Select(x => x.ExposureFingerprint)
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.All(questions, question => Assert.True(
+            ExactSkillContractQuestionEngine.Verify(
+                question.Family, question.Parameters, question.CorrectAnswer)));
+        Assert.All(questions, question => Assert.Contains(
+            "The placed pieces are:", question.Prompt, StringComparison.Ordinal));
+    }
+
     private static string NormalizePromptShape(string prompt) =>
         Regex.Replace(
             Regex.Replace(

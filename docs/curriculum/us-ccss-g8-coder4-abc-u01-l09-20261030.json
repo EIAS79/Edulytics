@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
+  "unit": "U01",
+  "officialOrdinal": 9,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\9\\index.html",
+      "sha256": "29bc327350569b5e6bd03c7e64e1fb9144fb63f2a8da495fcfe660af0bb53bd9"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\9\\index.html",
+      "sha256": "7c497f3672489e7324befccc2d83da95b6f93c17bb43215a534fc9b5c6f6702c"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\9\\preparation.html",
+      "sha256": "13d9ec14647ce152ff06899b63faa21442999cc8753eae8437b74fd3ce0d250c"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.B.5"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.b"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.c"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "9.1: Line Moves",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Find a single rigid motion between labeled lines and plot images A′,B′ for the marked points.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "9.2: Parallel Lines",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Translate two parallel lines together, half-turn about a named center, and reflect across a line: explain why they remain parallel.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "9.3: Let’s Do Some 180’s",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Use a half-turn about an intersection point to demonstrate equal vertical angles and correspondences.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L09 Moves in Parallel",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 1
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l09-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 3,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": 3,
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "7bc1ba75ed712d039c784a5b05943f7a9665bd53",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:01:46.147003+00:00",
+  "nextLesson": "U01:L10",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

@@ -1,0 +1,1206 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
+      "CultureCode": "en",
+      "Title": "Moves in Parallel",
+      "ExplanationParagraphs": [
+        "Learning objective: reason about how translations, reflections and rotations move lines, preserving parallelism, perpendicularity and intersection angles.",
+        "A translation moves every point of a line by one vector, so it sends a line to itself or a parallel line. A rotation turns all directions through the same angle; parallel input lines stay parallel. A reflection reverses orientation but still preserves the angle between lines.",
+        "Draw horizontal lines y=1 and y=4, then translate both upward two units. Compare their separation and slopes. Next rotate a pair of horizontal line segments a quarter-turn about the origin and observe how their directions change together.",
+        "Activity 9.1: for a line ℓ and its image ℓ′, identify a possible single rigid motion and then plot corresponding images A′ and B′. Mapping only the infinite line without its labeled points does not complete the source task.",
+        "Activity 9.2: apply a common translation, half-turn about K, and mirror reflection across h to the same two parallel lines. Explain why their distance and parallelism remain unchanged, even when both line directions reverse.",
+        "Activity 9.3: under a half-turn around D on a line, every point exchanges position with its image across D and the full line maps to itself. For intersecting lines rotated together about O, reason from corresponding angles and vertical angles rather than appearance alone.",
+        "Student explanation: Is it possible for a rigid movement to turn two parallel lines into intersecting lines? Justify with a diagram and the meaning of rigid preservation. Written proof and a student-made drawing require teacher judgment.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate y=1 and y=4 up two units. Name both image lines and show that their separation is unchanged. Explain why vertical angles remain equal after 180° rotation. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/9/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L09 (Moves in Parallel): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l09-moves-parallel-paper.html. This course-owned paper assesses source-aligned activities 9.1: Line Moves; 9.2: Parallel Lines; 9.3: Let’s Do Some 180’s with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel lines",
+          "Definition": "Two distinct coplanar lines that never intersect.",
+          "Rule": "A common rigid move preserves parallelism.",
+          "Example": "The translated pair y=3 and y=6 remain three units apart."
+        },
+        {
+          "Title": "Perpendicular lines",
+          "Definition": "Lines meeting at a right angle.",
+          "Rule": "Rigid moves preserve the 90° angle between lines.",
+          "Example": "Horizontal and vertical axes stay perpendicular after a joint quarter-turn."
+        },
+        {
+          "Title": "Translation of a line",
+          "Definition": "A uniform displacement of all its points.",
+          "Rule": "For a line y=c, an upward translation of k gives y=c+k.",
+          "Example": "y=1 shifted up 2 becomes y=3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate a parallel pair",
+          "Question": "What are the images of y=1 and y=4 after moving every point up two units?",
+          "Method": "Add two to the vertical coordinate of each point.",
+          "Steps": [
+            "On y=1, every point (x,1) moves to (x,3), forming y=3.",
+            "On y=4, every point (x,4) moves to (x,6), forming y=6.",
+            "Their vertical separation stays |6−3|=3 units."
+          ],
+          "Answer": "y=3 and y=6; the lines remain parallel.",
+          "Check": "Both have slope 0 and never meet."
+        },
+        {
+          "Title": "Rotate a horizontal line",
+          "Question": "Rotate the line y=2 by 90° counterclockwise around O. Which line results?",
+          "Method": "Use (x,y)→(−y,x) on any point of the line.",
+          "Steps": [
+            "Every point has the form (x,2).",
+            "After the rotation its image is (−2,x).",
+            "Every image x-coordinate is −2, so the whole line is x=−2."
+          ],
+          "Answer": "x=−2, a vertical line.",
+          "Check": "The distance 2 from O remains 2."
+        },
+        {
+          "Title": "Preserve a right angle",
+          "Question": "Two lines meet at 90°. Both rotate by 35° about the same point. What is their new angle?",
+          "Method": "A common rigid rotation preserves the difference between line directions.",
+          "Steps": [
+            "Suppose their directions originally differ by 90°.",
+            "Both directions gain the same rotation of 35°.",
+            "The difference is still 90° because the common angle cancels."
+          ],
+          "Answer": "90°.",
+          "Check": "A shared rotation does not change the angle between lines."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rotating one of two lines and claiming a common rigid image.",
+          "WhyWrong": "Moving only one line can destroy parallelism.",
+          "Correction": "Apply the same transformation to both lines."
+        },
+        {
+          "Mistake": "Assuming that a translated line must have the same equation.",
+          "WhyWrong": "A vertical shift changes its intercept while preserving its direction.",
+          "Correction": "Track two points and write the new equation."
+        }
+      ],
+      "SummaryPoints": [
+        "Common rigid movements preserve parallelism and perpendicularity.",
+        "Translate a line by transforming all its points.",
+        "Reason from angles and distances, not drawings alone."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Parallel lines after translation",
+          "Description": "Moving both horizontal lines two units up preserves their parallel nature.",
+          "Rows": [
+            {
+              "Label": "line",
+              "Cells": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "Label": "initial y",
+              "Cells": [
+                "1",
+                "4"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "6"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L09 Moves in Parallel",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Original pair",
+              "Cells": [
+                "y=1 and y=4",
+                "parallel, separation 3"
+              ]
+            },
+            {
+              "Label": "Translation (0,+2)",
+              "Cells": [
+                "y=3 and y=6",
+                "parallel, separation 3"
+              ]
+            },
+            {
+              "Label": "90° rotation about O",
+              "Cells": [
+                "x=-1 and x=-4",
+                "parallel, separation 3"
+              ]
+            },
+            {
+              "Label": "180° vertical angles",
+              "Cells": [
+                "30° opposite 30°",
+                "equal by rigid turn"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+      "CultureCode": "en",
+      "Title": "Composing Figures",
+      "ExplanationParagraphs": [
+        "Learning objective: infer unknown measurements when shapes are composed or moved by rigid transformations, without physically remeasuring every image edge.",
+        "When two figures are assembled from rigid copies, corresponding edge lengths and angles transfer exactly. Mark equal pieces on a diagram before deriving total perimeter, area or unknown angle; do not assume an overlapping edge counts twice on the outside perimeter.",
+        "Original task: build a 6-by-2 rectangle from two identical 3-by-2 rectangles. Translate one piece next to the other and ask what happens to the shared interior boundary. Discuss which lengths become exterior edges.",
+        "Activity 10.1: start from isosceles triangle ABC with AB=AC. Reflect ABC over side AB, then rotate around A to align the image of C with B; corresponding base angles B and C are congruent because reflections and rotations preserve angle measure.",
+        "Activity 10.2: mark M as the midpoint of side AC of triangle ABC, then rotate the triangle 180° around M. The image vertices are C,D,A, and quadrilateral ABCD is a parallelogram because opposite corresponding sides are parallel. Two congruent triangles fill it, so each has half its area.",
+        "Activity 10.3: construct and label two other rigid images of an original scalene triangle. Identify at least two corresponding segment pairs and two equal angle pairs by matching vertices; teacher review is required for the constructed diagram and explanation.",
+        "Activity 10.4: begin with triangle ONE where ON=OE=5 and angle NOE=30°. Reflect across ON and then across OM, marking the successive images M and T. Justify the new angles and all 5-unit image rays; numerical repetition is not sufficient evidence of a constructed sequence.",
+        "For a rotated image of a rectangle, report the same lengths and right angles regardless of orientation. A teacher evaluates how the learner tracks a composite diagram; numeric checks can test the resulting measurements.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Use two original congruent 3-by-2 rectangles to form a 6-by-2 rectangle. Explain why the joined 2-unit side is not in the exterior perimeter and why the area is 12. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/10/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L10 (Composing Figures): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l10-composing-figures-paper.html. This course-owned paper assesses source-aligned activities 10.1: Angles of an Isosceles Triangle; 10.2: Triangle Plus One; 10.3: Triangle Plus Two; 10.4: Triangle ONE Plus with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Transferred length",
+          "Definition": "A rigid image segment has the same length as its source segment.",
+          "Rule": "Use correspondence instead of remeasuring.",
+          "Example": "A 6-unit edge stays 6 units after a 90° rotation."
+        },
+        {
+          "Title": "Composite perimeter",
+          "Definition": "The outside boundary of assembled pieces.",
+          "Rule": "Do not include shared interior edges in the outside perimeter.",
+          "Example": "Two 3-by-2 rectangles joined along a 2-unit side form a 6-by-2 rectangle."
+        },
+        {
+          "Title": "Right angles under movement",
+          "Definition": "A rotated or reflected right corner remains 90°.",
+          "Rule": "Rigid transformations preserve angles.",
+          "Example": "The four right angles of a rectangle remain right angles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compose two rectangles",
+          "Question": "Two 3-by-2 rectangles join along a 2-unit side. What is the perimeter of the new shape?",
+          "Method": "Determine its overall outside dimensions.",
+          "Steps": [
+            "The combined width is 3+3=6 units.",
+            "The height remains 2 units; the shared boundary is inside.",
+            "The outer perimeter is 2(6+2)=16 units."
+          ],
+          "Answer": "16 units.",
+          "Check": "Adding 10+10 would double-count the shared 2-unit edge, giving an incorrect 20."
+        },
+        {
+          "Title": "Transfer a rotated measurement",
+          "Question": "A 6-by-2 rectangle is turned 90°. How long is its new long side?",
+          "Method": "Use rigid preservation, not its position.",
+          "Steps": [
+            "The original longer side measures 6.",
+            "A 90° rotation changes orientation only.",
+            "The corresponding rotated long side is still 6 units."
+          ],
+          "Answer": "6 units.",
+          "Check": "Rotation cannot stretch an edge."
+        },
+        {
+          "Title": "Compute area after composition",
+          "Question": "Two 3-by-2 nonoverlapping rectangles share one side to form one 6-by-2 rectangle. What area does the final figure cover?",
+          "Method": "Add areas or multiply new dimensions.",
+          "Steps": [
+            "Each small rectangle covers 3×2=6 square units.",
+            "They meet only at a boundary, so there is no area overlap.",
+            "The total area is 6+6=12 square units, agreeing with 6×2."
+          ],
+          "Answer": "12 square units.",
+          "Check": "Area adds when interiors do not overlap."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting a joined edge as exterior perimeter.",
+          "WhyWrong": "The interior seam is not part of the outside boundary.",
+          "Correction": "Trace the outer boundary once."
+        },
+        {
+          "Mistake": "Assuming rotation changes dimensions.",
+          "WhyWrong": "Rigid movement changes position/orientation, not side length.",
+          "Correction": "Identify corresponding edges."
+        }
+      ],
+      "SummaryPoints": [
+        "Rigid transformations transfer measurements exactly.",
+        "Perimeter follows the outer outline, not internal seams.",
+        "Use diagrams and correspondence to explain calculations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L10 Composing Figures",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Triangle ABC",
+              "Cells": [
+                "rotate 180° about midpoint AC",
+                "opposite side vectors match"
+              ]
+            },
+            {
+              "Label": "Image CDA",
+              "Cells": [
+                "first-party half-turn",
+                "ABCD parallelogram"
+              ]
+            },
+            {
+              "Label": "Two 3×2 tiles",
+              "Cells": [
+                "area 6+6=12",
+                "exterior dimensions 6×2"
+              ]
+            },
+            {
+              "Label": "Shared boundary",
+              "Cells": [
+                "interior length 2",
+                "not counted in outer perimeter 16"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L11",
+      "CultureCode": "en",
+      "Title": "What Is the Same?",
+      "ExplanationParagraphs": [
+        "Learning objective: decide whether two figures are the same size and shape, even when their positions or orientations differ, and distinguish congruence from mere visual resemblance.",
+        "A square and its rotated copy are congruent because a rigid movement takes one to the other. A scaled square may look similar but is not congruent because its side lengths changed. Corresponding vertices and sides help specify an exact rigid mapping.",
+        "Source-aligned 11.1: compare left- and right-handed asymmetric tracings. A reflection reverses handedness, whereas translating or rotating a labeled tracing does not. Explain which orientation difference must be accounted for by the rigid mapping.",
+        "Source-aligned 11.2: inspect multiple shape pairs and distinguish size changes, altered angles, and reflection-plus-translation congruence. Similar-looking shapes with a changed angle or length cannot be established as congruent just by matching areas.",
+        "Source-aligned 11.3: compare rectangles R (2 by 3), S (1 by 6), and T (1 by 4). R and S have equal area 6 but perimeters 10 and 14; R and T have the same perimeter 10 but areas 6 and 4. Neither equal area nor equal perimeter alone proves congruence.",
+        "Use labeled, independently drawn triangles with side lengths 3,4,5. Mirror one triangle and shift it away from the first. Decide whether the result is congruent and explain which measurements are unchanged.",
+        "Student challenge: give one example of a pair that looks alike but is not congruent and one pair whose orientation differs but is congruent. A teacher evaluates explanations and sketches, not an asserted one-word machine-graded result.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Given R=2×3, S=1×6 and T=1×4, compare all areas and perimeters and select which are actually congruent. Justify the rejection despite matching area/perimeter. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/11/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L11 (What Is the Same?): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l11-what-is-same-paper.html. This course-owned paper assesses source-aligned activities 11.1: Find the Right Hands; 11.2: Are They the Same?; 11.3: Area, Perimeter, and Congruence with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Congruent figures",
+          "Definition": "Figures related by a rigid movement and having identical corresponding lengths and angles.",
+          "Rule": "Size and shape must agree; position and orientation need not.",
+          "Example": "A 3-4-5 triangle reflected in a line is congruent to itself."
+        },
+        {
+          "Title": "Similar but not congruent",
+          "Definition": "Matching shape with different scale.",
+          "Rule": "A change in side length blocks congruence.",
+          "Example": "A 2-by-2 square and a 4-by-4 square are similar, not congruent."
+        },
+        {
+          "Title": "Correspondence",
+          "Definition": "A matching of original to image vertices and edges.",
+          "Rule": "Label matching corners consistently.",
+          "Example": "A maps to A′ and side AB maps to A′B′ with the same length."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check a reflected triangle",
+          "Question": "Triangle sides measure 3, 4 and 5. Its mirror image has those lengths and matching angles. Are they congruent?",
+          "Method": "A reflection is rigid and preserves geometry.",
+          "Steps": [
+            "Reflection preserves all side lengths.",
+            "The three reflected sides remain 3,4,5.",
+            "Angles are also preserved even though the orientation reverses."
+          ],
+          "Answer": "Yes, they are congruent.",
+          "Check": "Reflection provides the required rigid mapping."
+        },
+        {
+          "Title": "Reject a scaled square",
+          "Question": "One square has side 2 and another has side 4. Are they congruent?",
+          "Method": "Compare a corresponding side measurement.",
+          "Steps": [
+            "The first side length is 2.",
+            "The second is 4, double the first.",
+            "Rigid transformations cannot double lengths."
+          ],
+          "Answer": "No. They have the same shape but not the same size.",
+          "Check": "A scale factor of 2 is not rigid."
+        },
+        {
+          "Title": "Rotated rectangle",
+          "Question": "A 2-by-5 rectangle is rotated 90° and moved three units right. Is it still congruent?",
+          "Method": "Use the two rigid steps.",
+          "Steps": [
+            "The rotation preserves every side and angle.",
+            "The translation also preserves every side and angle.",
+            "The composition therefore maps the original to a congruent figure."
+          ],
+          "Answer": "Yes.",
+          "Check": "Both steps are rigid regardless of the final orientation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing only the orientation of figures.",
+          "WhyWrong": "Congruent figures need not point the same way.",
+          "Correction": "Find rigid movements and compare corresponding measures."
+        },
+        {
+          "Mistake": "Equating similarity with congruence.",
+          "WhyWrong": "A dilation changes size when the scale factor is not 1.",
+          "Correction": "Test at least one side length."
+        }
+      ],
+      "SummaryPoints": [
+        "Congruence means equal size and shape.",
+        "Rigid movements can change orientation and position.",
+        "Scaled copies may be similar without being congruent."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L11 What Is the Same?",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "R 2×3",
+              "Cells": [
+                "area 6",
+                "perimeter 10"
+              ]
+            },
+            {
+              "Label": "S 1×6",
+              "Cells": [
+                "area 6",
+                "perimeter 14"
+              ]
+            },
+            {
+              "Label": "T 1×4",
+              "Cells": [
+                "area 4",
+                "perimeter 10"
+              ]
+            },
+            {
+              "Label": "Congruence",
+              "Cells": [
+                "R vs S: no",
+                "R vs T: no"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+      "CultureCode": "en",
+      "Title": "Congruent Polygons",
+      "ExplanationParagraphs": [
+        "Learning objective: match the corresponding vertices, sides and angles of two polygons and justify congruence using a rigid transformation or complete measurement correspondence.",
+        "Use the order of vertices to prevent a false correspondence. The same quadrilateral can appear reversed after reflection; tracking labels and the matching sides matters more than visual left-to-right order.",
+        "Source-aligned 12.1: draw multiple congruent triangle copies; select only those mapped by a translation. A translation preserves orientation and moves every labeled vertex through exactly the same vector, unlike reflected or rotated copies.",
+        "Source-aligned 12.2 and 12.3: for each polygon pair, test the whole labeled boundary, not just approximate shape. A different angle, different edge length, or change from convex to nonconvex is sufficient to reject congruence even when several vertices align.",
+        "Source-aligned 12.4: build an original quadrilateral and specify a reproducible sequence of permitted rigid moves mapping all corresponding points to a second figure; teacher evaluates the labeled construction and reasoning.",
+        "Draw quadrilateral A(1,1), B(4,1), C(4,3), D(1,3) and translate it by (−5,2). Label A′,B′,C′,D′. Check that all four sides and right angles correspond.",
+        "Investigate two visually similar polygons with one changed edge. A teacher reviews a learner-drawn correspondence diagram and explanation; calculations can check specific vertices and lengths.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/12/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L12 (Congruent Polygons): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l12-congruent-polygons-paper.html. This course-owned paper assesses source-aligned activities 12.1: Translated Images; 12.2: Congruent Pairs (Part 1); 12.3: Congruent Pairs (Part 2); 12.4: Building Quadrilaterals with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding sides",
+          "Definition": "Pairs of edges connected by the same vertex mapping.",
+          "Rule": "If A maps to A′ and B to B′ then AB corresponds to A′B′.",
+          "Example": "AB length 3 matches A′B′ length 3."
+        },
+        {
+          "Title": "Matching vertex order",
+          "Definition": "An ordered correspondence between polygons.",
+          "Rule": "Consistent labels determine which angles and edges to compare.",
+          "Example": "ABCD must map to A′B′C′D′ under the stated translation."
+        },
+        {
+          "Title": "Congruence under a translation",
+          "Definition": "All vertices shift by one vector.",
+          "Rule": "The same vector preserves every side and angle.",
+          "Example": "(1,1) shifted (−5,2) becomes (−4,3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate all four vertices",
+          "Question": "Translate A(1,1), B(4,1), C(4,3), D(1,3) by (−5,2).",
+          "Method": "Add −5 to x and 2 to y for every vertex.",
+          "Steps": [
+            "A′=(−4,3), B′=(−1,3).",
+            "C′=(−1,5), D′=(−4,5).",
+            "The width stays 3 and height stays 2."
+          ],
+          "Answer": "A′(−4,3), B′(−1,3), C′(−1,5), D′(−4,5).",
+          "Check": "The displacement is (−5,2) at each vertex."
+        },
+        {
+          "Title": "Identify corresponding edge",
+          "Question": "A maps to A′ and B maps to B′. Which image edge corresponds to AB?",
+          "Method": "Follow the labeled endpoint mapping.",
+          "Steps": [
+            "First endpoint A becomes A′.",
+            "Second endpoint B becomes B′.",
+            "The edge joining their images is A′B′."
+          ],
+          "Answer": "A′B′.",
+          "Check": "The mapping respects both endpoints."
+        },
+        {
+          "Title": "Spot an invalid claim",
+          "Question": "A quadrilateral has a side of 3 units but its proposed congruent image has the corresponding side of 4 units. Can that pair be congruent?",
+          "Method": "Use equality of corresponding lengths.",
+          "Steps": [
+            "A rigid transformation cannot change length.",
+            "The proposed lengths 3 and 4 disagree.",
+            "Thus the stated correspondence is not congruent."
+          ],
+          "Answer": "No, not under that correspondence.",
+          "Check": "A valid congruence must pair sides of equal length."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Matching vertices only by nearest location.",
+          "WhyWrong": "A transformation may carry faraway vertices to closer or farther locations.",
+          "Correction": "Use the stated transformation and ordered labels."
+        },
+        {
+          "Mistake": "Ignoring one side when claiming congruence.",
+          "WhyWrong": "One mismatch disproves congruence.",
+          "Correction": "Check all relevant corresponding measurements or a complete rigid mapping."
+        }
+      ],
+      "SummaryPoints": [
+        "Track every corresponding vertex.",
+        "A rigid map of the polygon preserves sides and angles.",
+        "Explain why the mapping is valid."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L12 Congruent Polygons",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Original",
+              "Cells": [
+                "A(1,1),B(4,1)",
+                "C(4,3),D(1,3)"
+              ]
+            },
+            {
+              "Label": "Translation",
+              "Cells": [
+                "(-5,+2)",
+                "same vector for all vertices"
+              ]
+            },
+            {
+              "Label": "Image",
+              "Cells": [
+                "A′(-4,3),B′(-1,3)",
+                "C′(-1,5),D′(-4,5)"
+              ]
+            },
+            {
+              "Label": "Bad match",
+              "Cells": [
+                "a side 3 mapped to 4",
+                "not congruent"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L13",
+      "CultureCode": "en",
+      "Title": "Congruence",
+      "ExplanationParagraphs": [
+        "Learning objective: test whether figures can be mapped onto one another using translations, rotations and reflections, and give sufficient mathematical evidence for the decision.",
+        "A sequence of rigid moves gives a constructive explanation of congruence. Equal side lengths can support a congruence claim for triangles, but for an arbitrary quadrilateral side lengths alone may leave different angles and shapes; do not overgeneralize triangle tests.",
+        "Source-aligned 13.1: after translating a trapezoid, track points that lie halfway or another fixed fraction along an edge, not only its four vertices. If P=A+t(D−A), then under a translation by vector v, P′=(A+v)+t(D−A).",
+        "Source-aligned 13.2: compare ovals whose long and short axes have the same dimensions but are turned 90°; orientation alone does not change congruence. A genuinely larger oval cannot be matched by a rigid motion.",
+        "Source-aligned 13.3 and 13.4: identify interior/edge point correspondences and explain congruence using actual geometric evidence. Points that are only close in a drawing are not necessarily corresponding.",
+        "Create two 3-4-5 triangles: a right triangle with legs 3 and 4, and its shifted reflection. Trace and overlay corresponding sides and explain why the mapping exists.",
+        "Challenge: two quadrilaterals each have four sides of length 2, but one is a square and the other a slanted rhombus. Compare their angles to decide whether they are congruent. A teacher reviews the logic.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate segment AB with A(0,0),B(4,0) by (+2,+3). Label A′, B′ and midpoint E′. Explain how correspondence of points other than vertices proves the mapping. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/13/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L13 (Congruence): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l13-congruence-paper.html. This course-owned paper assesses source-aligned activities 13.1: Not Just the Vertices; 13.2: Congruent Ovals; 13.3: Corresponding Points in Congruent Figures; 13.4: Astonished Faces with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rigid-map criterion",
+          "Definition": "A congruence can be established by a series of rigid transformations.",
+          "Rule": "Give a complete translation/rotation/reflection sequence.",
+          "Example": "A triangle and its shifted mirror are congruent."
+        },
+        {
+          "Title": "Triangle side evidence",
+          "Definition": "Equal corresponding three sides determine a triangle up to rigid motions.",
+          "Rule": "SSS works for triangles, not arbitrary polygons.",
+          "Example": "Triangles with sides 3,4,5 are right and congruent."
+        },
+        {
+          "Title": "Side evidence limitation",
+          "Definition": "Arbitrary quadrilaterals may have equal side lengths but different angles.",
+          "Rule": "Compare interior angles or show a rigid mapping.",
+          "Example": "Square and non-square rhombus may each have side 2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use SSS on triangles",
+          "Question": "Two triangles each have side lengths 3,4,5. Are they congruent?",
+          "Method": "Use the three-side triangle criterion.",
+          "Steps": [
+            "Match the 3-unit sides, 4-unit sides and 5-unit sides.",
+            "All three corresponding pairs agree.",
+            "A triangle is determined up to rigid movement by the lengths of its three sides."
+          ],
+          "Answer": "Yes, by SSS.",
+          "Check": "Both have a 90° angle between sides of lengths 3 and 4."
+        },
+        {
+          "Title": "Reject a rhombus-square comparison",
+          "Question": "A square and a non-square rhombus both have four sides of length 2. Must they be congruent?",
+          "Method": "Compare angle evidence.",
+          "Steps": [
+            "All four side lengths agree.",
+            "A square has four right angles; a non-square rhombus has acute and obtuse angles.",
+            "Rigid movement preserves angles, so the two polygons cannot coincide."
+          ],
+          "Answer": "No. Equal sides alone are insufficient for these quadrilaterals.",
+          "Check": "One unequal corresponding angle rules out congruence."
+        },
+        {
+          "Title": "Reject a doubled triangle",
+          "Question": "A 3-4-5 triangle is enlarged to sides 6,8,10. Is the image congruent?",
+          "Method": "Test length preservation.",
+          "Steps": [
+            "The scale factor is 2.",
+            "Each new side is double the corresponding original side.",
+            "No composition of rigid movements changes a length by factor 2."
+          ],
+          "Answer": "Not congruent; only similar.",
+          "Check": "A dilation with scale 2 is not rigid."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming SSS proves every polygon congruent.",
+          "WhyWrong": "Four-sided figures can flex while keeping side lengths fixed.",
+          "Correction": "Use triangle criteria only for triangles; compare angles or mapping for other shapes."
+        },
+        {
+          "Mistake": "Demanding figures coincide before any move.",
+          "WhyWrong": "A reflection or rotation can connect congruent figures.",
+          "Correction": "Show a legitimate rigid sequence."
+        }
+      ],
+      "SummaryPoints": [
+        "Rigid transformations establish congruence.",
+        "SSS is a triangle-specific test.",
+        "For general polygons, lengths alone may not suffice."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L13 Congruence",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Original endpoints",
+              "Cells": [
+                "A=(0,0), B=(4,0)",
+                "midpoint E=(2,0)"
+              ]
+            },
+            {
+              "Label": "Translated endpoints",
+              "Cells": [
+                "A′=(2,3), B′=(6,3)",
+                "E′=(4,3)"
+              ]
+            },
+            {
+              "Label": "Oval comparison",
+              "Cells": [
+                "axes 2×4 vs rotated 4×2",
+                "congruent under 90° rotation"
+              ]
+            },
+            {
+              "Label": "Different oval",
+              "Cells": [
+                "axes 2×5",
+                "not congruent to 2×4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L14",
+      "CultureCode": "en",
+      "Title": "Alternate Interior Angles",
+      "ExplanationParagraphs": [
+        "Learning objective: explain why alternate interior angles formed by a transversal crossing parallel lines are equal, including a geometric movement explanation.",
+        "Draw two parallel horizontal lines and one slanted transversal. The interior angles lie between the two lines. Alternate interior angles are on opposite sides of the transversal; they can be matched by an appropriate 180° turn around the midpoint between intersection points.",
+        "Source-aligned 14.1: supplementary angles add to 180° and vertical angles are equal. If one angle of intersecting lines is 30°, each adjacent angle is 150°, while its vertical opposite also measures 30°.",
+        "Source-aligned 14.2: when a transversal meets two truly parallel lines and one acute intersection angle is 63°, alternate interior and corresponding acute angles also measure 63°, while their supplements measure 117°. In the deliberately nonparallel comparison diagram, equal alternate interior angles must not be assumed; a visually similar sketch is not a proof.",
+        "Source-aligned 14.3: identify the correct pair by locating both angles between the parallel lines on opposite sides of the transversal. A half-turn about the midpoint between intersection points can map the lines and prove equality, provided the lines are actually parallel.",
+        "Original investigation: mark a slanted line y=x meeting horizontal lines y=0 and y=3. Measure the acute angle formed with each horizontal line and compare them. Then show why a straight line and the parallel condition force equality.",
+        "Student tasks include selecting correct angle pairs in a labeled diagram and explaining equality; human review should check the correspondence rather than merely one angle value.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): An acute angle made by a transversal across parallel lines is 63°. Identify one alternate interior 63° angle and one adjacent 117° angle, and explain why parallelism is necessary. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/14/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L14 (Alternate Interior Angles): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l14-alternate-interior-angles-paper.html. This course-owned paper assesses source-aligned activities 14.1: Angle Pairs; 14.2: Cutting Parallel Lines with a Transversal; 14.3: Alternate Interior Angles Are Congruent with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Transversal",
+          "Definition": "A line intersecting two other lines at distinct points.",
+          "Rule": "Mark both intersections to locate angle pairs.",
+          "Example": "y=x crosses the horizontal lines y=0 and y=3."
+        },
+        {
+          "Title": "Alternate interior angles",
+          "Definition": "Angles inside the parallel lines on opposite sides of the transversal.",
+          "Rule": "With parallel lines, the alternate interior angle measures agree.",
+          "Example": "Two 45° acute angles made by y=x with horizontal parallel lines."
+        },
+        {
+          "Title": "Straight angle",
+          "Definition": "Adjacent angles on a straight line total 180°.",
+          "Rule": "Use supplementary angles to derive related measures.",
+          "Example": "If one angle is 65°, its adjacent straight-line angle is 115°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Infer the alternate angle",
+          "Question": "Parallel lines are cut by a transversal. One alternate interior angle is 65°. Find the other.",
+          "Method": "Use the parallel-line equality.",
+          "Steps": [
+            "Identify two interior angles on opposite sides of the transversal.",
+            "Their corresponding rays are related by a rigid rotation between intersections.",
+            "Parallelism makes the two alternate interior angles equal."
+          ],
+          "Answer": "65°.",
+          "Check": "The second cannot be 115° unless it is a different, supplementary angle."
+        },
+        {
+          "Title": "Infer the adjacent angle",
+          "Question": "An angle at a line intersection measures 65°. Find its adjacent supplementary angle.",
+          "Method": "Use the 180° straight angle sum.",
+          "Steps": [
+            "Adjacent angles along a line form one straight angle.",
+            "Subtract 65° from 180°.",
+            "The result is 115°."
+          ],
+          "Answer": "115°.",
+          "Check": "65°+115°=180°."
+        },
+        {
+          "Title": "Analyze a 45° transversal",
+          "Question": "The line y=x crosses two horizontal parallel lines. What acute angle does it make with each?",
+          "Method": "Compare equal horizontal and vertical changes.",
+          "Steps": [
+            "A step along y=x has horizontal change 1 and vertical change 1.",
+            "An equal-rise equal-run right triangle has acute angles 45° and 45°.",
+            "Translation along the transversal carries one intersection to the other without changing the angle."
+          ],
+          "Answer": "45° at both intersections.",
+          "Check": "The transversal has slope 1 and the horizontals have slope 0."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Choosing two interior angles on the same side.",
+          "WhyWrong": "Those are co-interior angles, not alternate interior.",
+          "Correction": "Check both interior position and opposite transversal sides."
+        },
+        {
+          "Mistake": "Claiming the equality for nonparallel lines.",
+          "WhyWrong": "The equal-angle theorem depends on the lines being parallel.",
+          "Correction": "Verify the parallel-line hypothesis."
+        }
+      ],
+      "SummaryPoints": [
+        "Alternate interior angles are equal when cut by a transversal across parallel lines.",
+        "Supplementary angles add to 180°.",
+        "A labeled diagram and a justification are essential."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L14 Alternate Interior Angles",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Acute intersection",
+              "Cells": [
+                "63°",
+                "alternate 63°"
+              ]
+            },
+            {
+              "Label": "Adjacent supplement",
+              "Cells": [
+                "117°",
+                "63°+117°=180°"
+              ]
+            },
+            {
+              "Label": "Half-turn",
+              "Cells": [
+                "midpoint of intersections",
+                "matches alternate interior angles"
+              ]
+            },
+            {
+              "Label": "Nonparallel counterexample",
+              "Cells": [
+                "different line directions",
+                "cannot assume congruence"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L15",
+      "CultureCode": "en",
+      "Title": "Adding the Angles in a Triangle",
+      "ExplanationParagraphs": [
+        "Learning objective: conjecture, verify and use the 180° angle sum of a triangle, distinguishing an interior angle from the adjacent exterior angle.",
+        "Draw a scalene triangle, cut out the three corners and assemble them at a point so that the three wedges form a straight angle. This supports the fact that the angles in any Euclidean triangle add to 180°.",
+        "Source-aligned 15.1: construct a 3-by-3 classification table of scalene, isosceles, and equilateral triangles versus acute, right, and obtuse angles. The inclusive isosceles definition means equilateral triangles have at least two equal sides; equilateral-right and equilateral-obtuse cases are impossible in Euclidean geometry.",
+        "Source-aligned 15.2: compare three differently labeled views of the same congruent triangle and reconcile all three interior angle measures before posting a combined result. Do not mistake an exterior angle for a triangle interior angle.",
+        "Source-aligned 15.3: cut out or draw three independent angle sectors, fit them along one straight line, and explain why their sum must equal 180°. Numeric substitution alone does not demonstrate the source construction.",
+        "Explore acute, right and obtuse triangles. The sum remains the same regardless of the triangle shape. Then use two given angles to calculate a missing third one.",
+        "A learner should explain why their rearranged angle pieces form a straight angle. A teacher checks the physical construction and proof while numeric missing-angle answers can be graded independently.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Triangle angles are 50° and 60°. Construct the third angle, arrange original paper angle cutouts along a straight line and defend why the result is 70° rather than measuring a sketch. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/15/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L15 (Adding the Angles in a Triangle): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l15-adding-angles-triangle-paper.html. This course-owned paper assesses source-aligned activities 15.1: Can You Draw It?; 15.2: Find All Three; 15.3: Tear It Up with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Triangle angle sum",
+          "Definition": "The three interior angle measures in a Euclidean triangle add to 180°.",
+          "Rule": "A+B+C=180°.",
+          "Example": "Angles 40°,60°,80° form a valid triangle sum."
+        },
+        {
+          "Title": "Exterior angle",
+          "Definition": "The angle adjacent to a triangle interior angle after extending one side.",
+          "Rule": "Exterior and adjacent interior add to 180°.",
+          "Example": "Exterior to a 70° angle is 110°."
+        },
+        {
+          "Title": "Right triangle",
+          "Definition": "A triangle with one 90° angle.",
+          "Rule": "The other two angles total 90°.",
+          "Example": "Other angles 30° and 60° complete the right triangle."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find the third angle",
+          "Question": "Two triangle angles are 50° and 60°. Find the last one.",
+          "Method": "Subtract the two known angles from 180°.",
+          "Steps": [
+            "First combine the known angles: 50°+60°=110°.",
+            "Subtract 110° from the triangle total 180°.",
+            "The remaining angle is 70°."
+          ],
+          "Answer": "70°.",
+          "Check": "50°+60°+70°=180°."
+        },
+        {
+          "Title": "Check a right triangle",
+          "Question": "One angle is 90° and another is 35°. Find the third.",
+          "Method": "The remaining acute angles total 90°.",
+          "Steps": [
+            "The entire triangle sum is 180°.",
+            "Remove 90° for the right angle and 35° for the known acute angle.",
+            "Compute 180°−90°−35°=55°."
+          ],
+          "Answer": "55°.",
+          "Check": "90°+35°+55°=180°."
+        },
+        {
+          "Title": "Use an exterior angle",
+          "Question": "A triangle interior angle at a vertex is 70°. Find its adjacent exterior angle.",
+          "Method": "Use a straight-line supplementary pair.",
+          "Steps": [
+            "The interior and exterior rays lie on a straight line.",
+            "Their angle sum is 180°.",
+            "180°−70°=110°."
+          ],
+          "Answer": "110°.",
+          "Check": "70°+110°=180°."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding angles to 360° as though a triangle were a quadrilateral.",
+          "WhyWrong": "Triangles have a 180° total.",
+          "Correction": "Arrange the three corners along a straight angle."
+        },
+        {
+          "Mistake": "Confusing exterior and opposite interior angles.",
+          "WhyWrong": "Exterior is formed by prolonging one side at a vertex.",
+          "Correction": "Mark the straight-line pair first."
+        }
+      ],
+      "SummaryPoints": [
+        "The three triangle interior angles sum to 180°.",
+        "Unknown angles follow by subtraction.",
+        "An adjacent exterior angle is supplementary to its interior angle."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L15 Adding the Angles in a Triangle",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Scalene",
+              "Cells": [
+                "acute/right/obtuse possible",
+                "side lengths all different"
+              ]
+            },
+            {
+              "Label": "Isosceles",
+              "Cells": [
+                "acute/right/obtuse possible",
+                "two equal sides"
+              ]
+            },
+            {
+              "Label": "Equilateral",
+              "Cells": [
+                "acute only (60°,60°,60°)",
+                "right and obtuse impossible"
+              ]
+            },
+            {
+              "Label": "Straight angle",
+              "Cells": [
+                "50°+60°+70°",
+                "180°"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L16",
+      "CultureCode": "en",
+      "Title": "Parallel Lines and the Angles in a Triangle",
+      "ExplanationParagraphs": [
+        "Learning objective: derive the 180° interior-angle sum of a triangle by constructing a parallel line and applying alternate interior angle properties.",
+        "Through the top vertex C of triangle ABC draw a line parallel to base AB. The rays CA and CB form angles with this new line that equal the two base angles by alternate interior angle relationships. Those two angles and angle C form a straight angle.",
+        "Source-aligned 16.1: justify true/false using properties of operations: 62−28=34 differs from 60−30=30 (false); 3×(−8)=2×(−8)−8 (true); 16/(−2)+24/(−2)=40/(−2) (true). This warm-up is not interchangeable with a generic triangle-only question.",
+        "Source-aligned 16.2: rotate a triangle 180° about the midpoints of AC and AB to create a pair of exterior images. Angle EAB plus angle BAC plus angle CAD forms one straight angle; the other two pieces correspond to the original base angles.",
+        "Source-aligned 16.3 and 16.4: construct a line through the upper vertex parallel to the opposite triangle side, label equal alternate interior angles and explain why all three consecutive angles sum to 180°. For a quadrilateral, drawing a diagonal reduces its angle sum to two triangle sums (360°).",
+        "This creates a proof rather than relying solely on repeated measurements or cut paper. Reconstruct the diagram with a different-shaped triangle to check which hypothesis makes the correspondence valid.",
+        "Learners draw their own parallel and label equal angles. A teacher assesses the logical proof, while exact given-angle calculations can be independently checked.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): For triangle with angles 42° and 73°, construct auxiliary parallel through apex and show how alternate interior angles force the remaining angle to be 65°. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/16/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L16 (Parallel Lines and the Angles in a Triangle): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l16-parallel-lines-triangle-angles-paper.html. This course-owned paper assesses source-aligned activities 16.1: True or False: Computational Relationships; 16.2: Angle Plus Two; 16.3: Every Triangle in the World; 16.4: Four Triangles Revisited with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel through a vertex",
+          "Definition": "A line drawn through triangle vertex C parallel to opposite side AB.",
+          "Rule": "Use parallel-line alternate interior angles to transfer the base angles to C.",
+          "Example": "The angle corresponding to A appears beside angle C."
+        },
+        {
+          "Title": "Straight-angle proof",
+          "Definition": "Three adjacent angles along the constructed line total 180°.",
+          "Rule": "The two transferred base angles and apex angle lie on one straight line.",
+          "Example": "A+B+C=180°."
+        },
+        {
+          "Title": "Hypothesis matters",
+          "Definition": "Parallelism is needed to transfer equal angles.",
+          "Rule": "A nonparallel line through C does not automatically create alternate equal angles.",
+          "Example": "Confirm the constructed line is parallel to AB."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive the general sum",
+          "Question": "What do two transferred base angles and the top angle add to along the line through C parallel to AB?",
+          "Method": "Use the straight line and alternate interior equivalence.",
+          "Steps": [
+            "Draw through C a line parallel to AB.",
+            "Match the angle corresponding to A on one side and the angle corresponding to B on the other.",
+            "These two angles plus C lie adjacent on a straight line and sum to 180°."
+          ],
+          "Answer": "A+B+C=180°.",
+          "Check": "The equality follows from parallel lines and straight-angle addition."
+        },
+        {
+          "Title": "Find an angle using the theorem",
+          "Question": "A triangle has base angles of 42° and 73°. Find the apex angle.",
+          "Method": "Subtract both base angles from the straight-angle sum.",
+          "Steps": [
+            "Add base angles: 42°+73°=115°.",
+            "The remaining apex angle is 180°−115°.",
+            "Compute 65°."
+          ],
+          "Answer": "65°.",
+          "Check": "42°+73°+65°=180°."
+        },
+        {
+          "Title": "Check a proof claim",
+          "Question": "A student draws a nonparallel line through C and claims transferred alternate angles must match. Is that justified?",
+          "Method": "Inspect the required parallel hypothesis.",
+          "Steps": [
+            "Alternate interior equality requires parallel lines.",
+            "The student did not establish that the new line is parallel to AB.",
+            "Thus the equality cannot be inferred from the drawing alone."
+          ],
+          "Answer": "No; the proof needs a line through C parallel to AB.",
+          "Check": "A diagram that merely looks parallel is not a geometric justification."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using alternate-angle equality without stating parallelism.",
+          "WhyWrong": "The theorem applies only when the two lines are parallel.",
+          "Correction": "Label the parallel condition explicitly."
+        },
+        {
+          "Mistake": "Relying on a roughly straight sketch as proof.",
+          "WhyWrong": "The sum theorem needs an invariant reason.",
+          "Correction": "Derive it from the constructed parallel and a straight angle."
+        }
+      ],
+      "SummaryPoints": [
+        "Draw a parallel through the opposite vertex.",
+        "Transfer base angles with alternate-angle equality.",
+        "The three adjacent angles make a 180° straight angle."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L16 Parallel Lines and the Angles in a Triangle",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Warm-up 1",
+              "Cells": [
+                "62−28=34, 60−30=30",
+                "FALSE"
+              ]
+            },
+            {
+              "Label": "Warm-up 2",
+              "Cells": [
+                "3×(−8)=−24, 2×(−8)−8=−24",
+                "TRUE"
+              ]
+            },
+            {
+              "Label": "Warm-up 3",
+              "Cells": [
+                "16/(−2)+24/(−2)=−20",
+                "40/(−2)=−20 TRUE"
+              ]
+            },
+            {
+              "Label": "Auxiliary parallel",
+              "Cells": [
+                "42° + apex + 73° = 180°",
+                "apex 65°"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U01:L17",
+      "CultureCode": "en",
+      "Title": "Rotate and Tessellate",
+      "ExplanationParagraphs": [
+        "Learning objective: make a repeating planar pattern with rigid transformations, explaining when copies of tiles cover the plane without gaps or overlaps.",
+        "A tessellation fills the plane by repeated copies of shapes. At a grid vertex, angles from touching tiles must add to 360°. Equilateral triangles have 60° corner angles, so six fit around a point; squares have 90°, so four fit. Repeating regular pentagons alone do not fit at a vertex because their 108° angles do not divide 360°.",
+        "Source-aligned 17.1: test angular tilings around a shared vertex. Six equilateral 60° angles fit exactly; four right 90° angles fit exactly; three regular 108° pentagon angles leave 36° and four exceed 360°, so copies of a regular pentagon alone cannot meet at a single vertex without a gap or overlap.",
+        "Source-aligned 17.2: create a first-party periodic triangular or rectangular tiling and ask a partner to name an exact translation taking the full repeating pattern to itself. Verify adjacent edges match without overlaps and the chosen motion preserves tile dimensions.",
+        "Source-aligned 17.3: make a design with rotational symmetry and identify an actual nonzero rotation below 360° that maps the entire pattern, not merely one tile, to itself. Assess student drawing and explanation with a teacher rather than inventing numerical auto-grading.",
+        "Draw a triangle tile and make repeated rotated or translated copies on an accessible grid. Explain why the boundaries meet without gaps and why the transformations preserve tile shape.",
+        "Student constructions and explanations are teacher-reviewed; an automated count of polygons is not enough to verify no gaps or overlaps in the actual drawing.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Design a tessellation with six equilateral triangles around a grid vertex. Label all six 60° angles and a symmetry rotation of 60°; explain why neither gaps nor overlaps remain. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+        "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/17/preparation.html . No publisher artwork or branded assessment is copied.",
+        "ACTIVE FIRST-PARTY LESSON-SELECTED ACADEMIC ASSESSMENT — Grade 8 U01:L17 (Rotate and Tessellate): teacher distributes independently authored, lesson-exact printed learner worksheet /curriculum/us-ccss-g8/assessment/u01-l17-rotate-tessellate-paper.html. This course-owned paper assesses source-aligned activities 17.1: Deducing Angle Measures; 17.2: Tessellate This; 17.3: Rotate That with labelled mathematical constructions, corresponding-vertex evidence, and student oral/written geometric reasoning rather than a single numeric choice. A separate private 8-point teacher rubric, verified mathematical key and correct/equivalent/wrong/malformed/boundary authored fixtures are stored in the lesson-specific academic assessment contract. The publisher Cool-down is unverified; an explicitly first-party Edulytiks alternative is provided. This paper/manual review route is NOT a machine-generated online Practice assessment, online submission, authenticated teacher-grade save, or Stage D runtime pass."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tessellation",
+          "Definition": "A gap-free, overlap-free tiling of the plane by figures.",
+          "Rule": "Copies must fit along edges and around vertices.",
+          "Example": "Equilateral triangles tile with six 60° corners around a vertex."
+        },
+        {
+          "Title": "Angle around a point",
+          "Definition": "A full revolution around a point has measure 360°.",
+          "Rule": "Tile angles meeting at the same vertex must sum to 360°.",
+          "Example": "Four square corners contribute 4×90°=360°."
+        },
+        {
+          "Title": "Rigid tile placement",
+          "Definition": "Rotation or translation of a tile preserving its size and angles.",
+          "Rule": "The repeated tile must remain congruent to the original.",
+          "Example": "A square can be translated across rows without resizing."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equilateral triangle tiling",
+          "Question": "How many 60° triangle corners meet exactly around a point?",
+          "Method": "Divide the full angle by one triangle angle.",
+          "Steps": [
+            "The full angle around a point is 360°.",
+            "Each equilateral triangle corner is 60°.",
+            "Compute 360°÷60°=6."
+          ],
+          "Answer": "Six triangles.",
+          "Check": "6×60°=360°, leaving no angular gap."
+        },
+        {
+          "Title": "Square tiling",
+          "Question": "How many 90° corners fill a vertex?",
+          "Method": "Divide one full turn by a right angle.",
+          "Steps": [
+            "The total surrounding angle is 360°.",
+            "A square corner measures 90°.",
+            "360°÷90°=4."
+          ],
+          "Answer": "Four square corners.",
+          "Check": "4×90°=360°."
+        },
+        {
+          "Title": "Test regular pentagon tiles",
+          "Question": "A regular pentagon has interior angle 108°. Can copies of that single regular pentagon fit exactly around a vertex?",
+          "Method": "Test whether the vertex angle divides 360° into a whole number.",
+          "Steps": [
+            "Three pentagon angles total 3×108°=324°, leaving 36° gap.",
+            "Four total 432°, causing overlap.",
+            "No whole number of 108° corners fills exactly 360°."
+          ],
+          "Answer": "No, regular pentagons alone do not tessellate edge-to-edge around a vertex.",
+          "Check": "360°÷108°=3⅓ is not an integer."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a pattern a tessellation despite gaps.",
+          "WhyWrong": "A tessellation requires complete coverage without gaps or overlaps.",
+          "Correction": "Inspect edge fit and angles around every vertex."
+        },
+        {
+          "Mistake": "Changing tile size between copies.",
+          "WhyWrong": "A repeated rigid tile must be congruent.",
+          "Correction": "Use only translations, rotations or reflections for tile copies."
+        }
+      ],
+      "SummaryPoints": [
+        "Tessellations require no gaps and no overlaps.",
+        "Angles around a vertex total 360°.",
+        "Explain the chosen rigid movements and check the actual tiling."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L17 Rotate and Tessellate",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Equilateral triangles",
+              "Cells": [
+                "6×60°=360°",
+                "repeat by 60° turn"
+              ]
+            },
+            {
+              "Label": "Squares",
+              "Cells": [
+                "4×90°=360°",
+                "repeat by 90° turn"
+              ]
+            },
+            {
+              "Label": "Regular hexagons",
+              "Cells": [
+                "3×120°=360°",
+                "repeat by 120° turn"
+              ]
+            },
+            {
+              "Label": "Tessellation condition",
+              "Cells": [
+                "no gaps or overlaps",
+                "rigid repeating copies cover plane"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

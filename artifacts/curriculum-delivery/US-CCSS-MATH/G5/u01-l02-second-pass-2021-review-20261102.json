@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE5_IM2021_SECOND_PASS_LESSON_REVIEW",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+  "ordinal": 2,
+  "title": "Measure Volume",
+  "sourceEdition": "Illustrative Mathematics K–5 Grade 5 First Edition (2021)",
+  "reviewedAtUtc": "2026-11-02T21:11:00.378Z",
+  "localSourceReadOnlyPaths": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
+  ],
+  "verifiedTeacherSourceConcepts": [
+    "Warm-up WODB source A two separate 1×2×3 prisms, B 2×2×3 with one missing cube =11, C 4+4+3+1=12, D 3×2×2=12; multiple defensible WODB answers",
+    "Activity 1 partner 8–12 connected cubes, count each once including irregular layers; 24 cubes supplied per pair",
+    "Activity 2 Guess My Prism reconstruct hidden completely packed 16–24 cube prism from dimensions / layers, not scalar cube count alone",
+    "5.MD.C.3.b and 5.MD.C.4 counting and volume without premature prism formula",
+    "Source publisher Cool-down gated; independently authored 2×3×3=18 structural teacher-scored alternative"
+  ],
+  "existingImplementationReviewed": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson2PracticeContracts.cs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-practice-rubric-v15.json",
+    "tests/academic-us-ccss-g5-u01-l02-2021-handoff-revalidation.test.cjs"
+  ],
+  "selectedPracticeFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes",
+  "teacherReview": "WODB explanations, partner builds/description, hidden-prism reconstruction, equivalent rotations, exit check must remain manually reviewed",
+  "differenceFromWrongEdition": "Current RichV2 task structure and source WODB figure labels match original 2021 teacher lesson; no new v360 substitution demonstrated",
+  "action": "REUSE_ONLY_NO_PROVEN_MISSING_IMPLEMENTATION",
+  "correctedFiles": [],
+  "sourceExceptions": [
+    "Publisher exact Cool-down SOURCE_UNAVAILABLE_GATED, independent aligned Edulytiks teacher-reviewed alternative accepted",
+    "Original publisher artwork pixel equivalence/rights not certified; student PDF image parity not certified"
+  ],
+  "tests": "EXISTING_AUTHORED_REGRESSION_REVIEWED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "sourceExact100PercentClaimed": false,
+  "REVIEW_COMPLETE_2021": true,
+  "historicalReadyForStageD": "PRESERVED",
+  "next": "PED:US-CCSS-MATH:G5:U01:L03"
+}

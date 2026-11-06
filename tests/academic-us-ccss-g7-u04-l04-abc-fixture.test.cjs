@@ -1,0 +1,4 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const root=path.resolve(__dirname,'..'),read=x=>fs.readFileSync(path.join(root,x),'utf8');
+test('U04 L04 authored',()=>{const v=read('src/Edulytics.Web/Views/Shared/_USCCSSG7Unit4PercentagePractice.cshtml');for(const s of ['data-g7-u04-l04','4.1 Connect','4.2 Increase','Cool-down'])assert.ok(v.includes(s));});
+test('U04 L04 arithmetic',()=>{assert.equal(24*(1+3/8),33);assert.equal(24*(1-1/4),18);});
+test('U04 L04 extension recorded',()=>{const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u04-l04-abc-cursor.json'));assert.equal(c.extendedFamily,'usccss.g7.u04.fractional_change');assert.equal(c.newEngine,false);assert.equal(c.READY_FOR_STAGE_D,true);});

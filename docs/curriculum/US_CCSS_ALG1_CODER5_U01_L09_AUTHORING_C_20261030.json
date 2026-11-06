@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",
+  "contentVersion": "alg1-u01-l09-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\9\\preparation.html",
+      "sha256": "1e93f399832f6b1d0122b58375ffe1951cbc6c63cf60ef8460537f2afcd866b4"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\9\\index.html",
+      "sha256": "a42b16f52cbb41a7b9bf5836a896821a7cc4904d611a4a3db3305882f5fc33c3"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\9\\index.html",
+      "sha256": "9b56edb86b389adcab5793e25d5d05c17ef368b4275b4fd1dd37300cb898cdeb"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\9\\practice.html",
+      "sha256": "ada4507092742dddf996943e96671d2258863e2ff6057a568a94f62dd0745a28"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.2 BuildingOn",
+    "HSS-ID.A.1 Addressing",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.2 BuildingTowards",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Use spreadsheet/statistics tool to plot previously collected genuine data if available; else labelled fictional sample of eight reading durations. Make dot, histogram and box displays; compare mean/median/bin changes.",
+  "practice": "Predict changes to mean and median after replacing only the maximum; state which display hides individual values.",
+  "mathFixture": [
+    84,
+    10.5,
+    9.5,
+    8.5,
+    13.0,
+    4,
+    3,
+    1,
+    12.5,
+    9.5
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Use spreadsheet/statistics tool to plot previously collected genuine data if available; else labelled fictional sample of eight reading durations. Make dot, histogram and box displays; compare mean/median/bin changes.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Predict changes to mean and median after replacing only the maximum; state which display hides individual values.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        84,
+        10.5,
+        9.5,
+        8.5,
+        13,
+        4,
+        3,
+        1,
+        12.5,
+        9.5
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Predict changes to mean and median after replacing only the maximum; state which display hides individual values.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Correct statistics with units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Correct display/bin interpretation",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Honest disclosure of actual technology versus simulated analysis",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

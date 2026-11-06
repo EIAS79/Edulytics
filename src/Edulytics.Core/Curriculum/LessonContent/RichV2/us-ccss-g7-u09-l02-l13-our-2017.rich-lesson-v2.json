@@ -1,0 +1,1724 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v4",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L02",
+      "CultureCode": "en",
+      "Title": "Costs of Running a Restaurant",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Estimate restaurant expenses, distinguish fixed from per-serving costs and explain a defensible budget. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/2/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Restaurant ingredient cost spreadsheet with copied formulas and per-serving pricing. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/2/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Fixed costs do not change with the number of customers over the stated period.",
+          "Rule": "Fixed costs do not change with the number of customers over the stated period.",
+          "Example": "$800."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Variable cost is per serving multiplied by servings.",
+          "Rule": "Variable cost is per serving multiplied by servings.",
+          "Example": "$200."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Total cost=fixed+variable.",
+          "Rule": "Total cost=fixed+variable.",
+          "Example": "90 meals."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "A restaurant pays $500 fixed and $3 per meal. Cost for 100 meals?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Variable cost=100×3=300.",
+            "Add fixed 500.",
+            "Compute 800."
+          ],
+          "Answer": "$800.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Ingredients cost $2.50 per meal for 80 meals. Total ingredient cost?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Multiply 2.50×80.",
+            "Compute 200.",
+            "Label dollars."
+          ],
+          "Answer": "$200.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A restaurant has $600 budget, fixed cost $240, meals at $4 each. Maximum meals?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Write 240+4m≤600.",
+            "Subtract 240, obtain 4m≤360.",
+            "Divide by 4."
+          ],
+          "Answer": "90 meals.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Costs of Running a Restaurant",
+          "Question": "An original soup recipe for 8 servings needs 1.2 kg vegetable A at $3/kg and 0.8 kg vegetable B at $4.50/kg. Calculate ingredient cost per serving and write cell formulas that would recalculate if servings changed.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Ingredient A cost 1.2×3=$3.60 and B cost 0.8×4.50=$3.60.",
+            "Total ingredients cost $7.20; per serving $7.20/8=$0.90.",
+            "A spreadsheet can store amounts B2/B3, unit costs C2/C3, servings F1 and use D2=B2*C2, D3=B3*C3, total SUM(D2:D3), per serving=SUM(D2:D3)/F1.",
+            "Change F1 to 6 and verify per-serving cost becomes $1.20 if batch quantities remain the same."
+          ],
+          "Answer": "$7.20 per batch, $0.90 for 8 servings, $1.20 for 6 servings at same batch size.",
+          "Check": "Teacher checks an actual working spreadsheet with appropriately referenced cells and genuinely sourced ingredient costs if used for a real menu."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring recurring or fixed costs when deciding how many meals a budget covers.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Fixed costs do not change with the number of customers over the stated period.",
+        "Variable cost is per serving multiplied by servings.",
+        "Total cost=fixed+variable."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Restaurant operating budget model",
+          "Description": "Independent mathematical planning data for Costs of Running a Restaurant. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "100 meals, $3 per meal",
+                "80 meals, $2.50 each",
+                "Budget $600, fixed $240, meals $4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Fixed cost",
+              "Cells": [
+                "$500",
+                "$0 stated",
+                "$240"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "$800 total",
+                "$200 ingredients",
+                "90 whole meals max"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L03",
+      "CultureCode": "en",
+      "Title": "More Costs of Running a Restaurant",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Use signed income and expense terms to model projected restaurant profit and loss. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/3/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: List fixed, one-time and ongoing restaurant expenses and compare profitability. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/3/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Profit=revenue−expenses.",
+          "Rule": "Profit=revenue−expenses.",
+          "Example": "$200 profit."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "A loss is represented by a negative net result.",
+          "Rule": "A loss is represented by a negative net result.",
+          "Example": "$70 loss."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Projected income and costs rely on assumptions about sales.",
+          "Rule": "Projected income and costs rely on assumptions about sales.",
+          "Example": "50 meals."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Sell 70 meals at $12 with costs $640. Profit?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Revenue=70×12=840.",
+            "Subtract 640.",
+            "Compute 200."
+          ],
+          "Answer": "$200 profit.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Sales $540, expenses $610. Net?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 540−610.",
+            "Result −70.",
+            "Interpret as loss."
+          ],
+          "Answer": "$70 loss.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "Fixed expenses $300, meal cost $4 and price $10. Break even meal count?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Write 10m=300+4m.",
+            "Subtract 4m: 6m=300.",
+            "Divide by 6."
+          ],
+          "Answer": "50 meals.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — More Costs of Running a Restaurant",
+          "Question": "An original café sells 800 meals at $9 each, food costs $3 per meal, and ongoing fixed expenses are $2,800/month. Compute monthly profit and break-even meal count.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Revenue is 800×$9=$7,200.",
+            "Food cost is 800×$3=$2,400; adding fixed expenses gives $5,200 costs.",
+            "Profit=$7,200−$5,200=$2,000.",
+            "Contribution margin is $9−$3=$6/meal; break-even fixed/$6=$2,800/$6≈466.67, so at least 467 whole meals."
+          ],
+          "Answer": "$2,000 profit at 800 meals; break-even 467 whole meals under the stated assumptions.",
+          "Check": "Teacher reviews independently proposed fixed versus per-meal costs, relevant missing expenses and a clear budget ledger."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling revenue profit without deducting fixed and variable expenses.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Profit=revenue−expenses.",
+        "A loss is represented by a negative net result.",
+        "Projected income and costs rely on assumptions about sales."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Income, expense and restaurant profit",
+          "Description": "Independent mathematical planning data for More Costs of Running a Restaurant. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "70 meals at $12",
+                "Sales $540 and expense $610",
+                "Fixed $300, $4 cost and $10 price"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Revenue or expense",
+              "Cells": [
+                "Revenue $840 / cost $640",
+                "Net $540−$610",
+                "Margin $6 per meal"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "$200 profit",
+                "$70 loss",
+                "50 meals break-even"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L04",
+      "CultureCode": "en",
+      "Title": "Restaurant Floor Plan",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Design an accurate scale plan of a restaurant with clearance and area constraints under teacher review. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/4/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Design a scale restaurant dining plan with area and table spacing. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/4/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "A floor plan must use one scale consistently.",
+          "Rule": "A floor plan must use one scale consistently.",
+          "Example": "6 by 4 cm."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Area measurements require squared units.",
+          "Rule": "Area measurements require squared units.",
+          "Example": "3 cm."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Constraints on paths, spacing and access must be justified geometrically.",
+          "Rule": "Constraints on paths, spacing and access must be justified geometrically.",
+          "Example": "54 m²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "A room is 12 by 8 m, scale 1 cm:2 m. Drawing dimensions?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 12/2=6 cm.",
+            "Compute 8/2=4 cm.",
+            "Label scale and dimensions."
+          ],
+          "Answer": "6 by 4 cm.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "A square dining table side 1.5 m is shown at 1 cm:0.5 m. Drawn side?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 1.5/0.5.",
+            "Obtain 3.",
+            "Label centimeters."
+          ],
+          "Answer": "3 cm.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A rectangular dining area measures 9 by 6 m. Find area.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Multiply 9×6.",
+            "Compute 54.",
+            "Use square metres."
+          ],
+          "Answer": "54 m².",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Restaurant Floor Plan",
+          "Question": "A first-party café needs seating for 20 customers, assuming 15 ft² of dining floor per customer. Design a 20-by-15 ft rectangular dining zone at 1 cm:2 ft and label what must be checked before placing tables.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Area target 20×15=300 ft² and 20×15 rectangle meets it.",
+            "At 1 cm:2 ft, drawing size is 10 cm by 7.5 cm.",
+            "Record desired tables, server station, entry/exit and at least one scale-consistent path clearance.",
+            "Draw a realistic layout but do not claim feasibility until chair spacing, service reach and local code constraints are checked."
+          ],
+          "Answer": "300 ft² zone, 10 by 7.5 cm plan at 1 cm:2 ft; actual table design is teacher reviewed.",
+          "Check": "Teacher reviews measured scale drawing, physically plausible seating and walkway/service constraints; simple rectangle area is insufficient."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Automatically approving a restaurant floor plan from one correct scale calculation without verifying the drawn layout.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "A floor plan must use one scale consistently.",
+        "Area measurements require squared units.",
+        "Constraints on paths, spacing and access must be justified geometrically."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Restaurant floor-plan geometry and scale",
+          "Description": "Independent mathematical planning data for Restaurant Floor Plan. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Real measure",
+              "Cells": [
+                "Length 12 m",
+                "Width 8 m",
+                "Table side 1.5 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Scale",
+              "Cells": [
+                "1 cm:2 m",
+                "1 cm:2 m",
+                "1 cm:0.5 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Drawing measure",
+              "Cells": [
+                "6 cm",
+                "4 cm",
+                "3 cm"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L05",
+      "CultureCode": "en",
+      "Title": "How Crowded Is this Neighborhood?",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Compare population densities by dividing counts of people or houses by area. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/5/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Compare dot density and housing density across differently sized plots. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/5/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Density=population/area.",
+          "Rule": "Density=population/area.",
+          "Example": "2000 residents/km²."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Derived density units are people per km² or houses per hectare.",
+          "Rule": "Derived density units are people per km² or houses per hectare.",
+          "Example": "240 people/km²."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "The largest population is not always the highest density.",
+          "Rule": "The largest population is not always the highest density.",
+          "Example": "A is denser."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Area 2 km² has 4000 residents. Density?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Divide 4000 by 2.",
+            "Compute 2000.",
+            "Label residents/km²."
+          ],
+          "Answer": "2000 residents/km².",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Neighborhood A has 120 people in 0.5 km². Density?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 120/0.5.",
+            "Obtain 240.",
+            "Use people per km²."
+          ],
+          "Answer": "240 people/km².",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "Neighborhood B has 300 people in 2 km². Compare to A.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "B density=300/2=150.",
+            "A density=240.",
+            "Compare 240>150."
+          ],
+          "Answer": "A is denser.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — How Crowded Is this Neighborhood?",
+          "Question": "Plot A has 18 dots in a 3-in by 2-in rectangle, and plot B has 25 dots in a 5-in by 1-in rectangle. Compare dots per square inch and describe the proportional equations.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "A area=3×2=6 in²; density 18/6=3 dots/in².",
+            "B area=5×1=5 in²; density 25/5=5 dots/in².",
+            "Use d=3a for A and d=5a for B where a is area in square inches.",
+            "Draw separate point (a,d) and lines from origin; compare 3 versus 5 density, not raw dot counts."
+          ],
+          "Answer": "Plot B denser: 5 versus 3 dots/in².",
+          "Check": "Teacher checks original plotted density arrays and the area-based units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing raw populations without dividing by area.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Density=population/area.",
+        "Derived density units are people per km² or houses per hectare.",
+        "The largest population is not always the highest density."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Neighborhood population density comparisons",
+          "Description": "Independent mathematical planning data for How Crowded Is this Neighborhood?. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Neighborhood",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Residents",
+              "Cells": [
+                "4,000",
+                "120",
+                "300"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (km²)",
+              "Cells": [
+                "2",
+                "0.5",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Density (people/km²)",
+              "Cells": [
+                "2,000",
+                "240",
+                "150"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L06",
+      "CultureCode": "en",
+      "Title": "Fermi Problems",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Construct rough, transparent numerical estimates from assumptions and rates, then judge reasonableness. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/6/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Fermi estimates with clearly stated uncertain assumptions. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/6/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "A Fermi estimate decomposes an inaccessible quantity into approximate measurable factors.",
+          "Rule": "A Fermi estimate decomposes an inaccessible quantity into approximate measurable factors.",
+          "Example": "About 500 cups/day."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Every assumption should be stated and revisable.",
+          "Rule": "Every assumption should be stated and revisable.",
+          "Example": "Around 360 pages."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "The result is an order-of-magnitude estimate, not a precise census.",
+          "Rule": "The result is an order-of-magnitude estimate, not a precise census.",
+          "Example": "About 50,400 lunches/year."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Estimate cups used by 250 students if each uses about 2 per school day.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Assume 250 attendees and 2 cups each.",
+            "Multiply 250×2.",
+            "Obtain around 500."
+          ],
+          "Answer": "About 500 cups/day.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Estimate pages read by 30 pupils at 12 pages each over a day.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Assume equal average of 12.",
+            "Multiply 30×12.",
+            "Get 360."
+          ],
+          "Answer": "Around 360 pages.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "Estimate annual school lunches for 400 students over 180 days at 70% participation.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Estimate daily 400×0.7=280.",
+            "Multiply 280×180.",
+            "Obtain 50,400."
+          ],
+          "Answer": "About 50,400 lunches/year.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Fermi Problems",
+          "Question": "Estimate how many heartbeats an imaginary 13-year-old might have had if average pulse were 75 beats/minute throughout life, using 365 days per year. What limits the estimate?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Minutes per year=60×24×365=525,600.",
+            "Years 13 imply 13×525,600=6,832,800 minutes.",
+            "At 75 beats/minute estimate 6,832,800×75=512,460,000 beats.",
+            "Discuss leap years, changing heart rate, exact birth time and rest/exercise as uncertainty; this is an order-of-magnitude model."
+          ],
+          "Answer": "About 5.1×10^8 heartbeats under hypothetical assumptions.",
+          "Check": "Teacher checks assumptions, estimation strategy, units, bounds and critique; not an individual's real health measure."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Presenting an estimate based on invented rates as an observed exact fact.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "A Fermi estimate decomposes an inaccessible quantity into approximate measurable factors.",
+        "Every assumption should be stated and revisable.",
+        "The result is an order-of-magnitude estimate, not a precise census."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fermi estimation with explicit assumptions",
+          "Description": "Independent mathematical planning data for Fermi Problems. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Assumed activity",
+              "Cells": [
+                "250 students, 2 cups/day",
+                "30 readers, 12 pages/day",
+                "400 students, 70% lunches, 180 days"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Model",
+              "Cells": [
+                "250×2",
+                "30×12",
+                "400×0.7×180"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Estimated count",
+              "Cells": [
+                "500 cups/day",
+                "360 pages/day",
+                "50,400 lunches/year"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L07",
+      "CultureCode": "en",
+      "Title": "More Expressions and Equations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Build and solve equations for contexts with related unknowns and several simultaneous relationships. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/7/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Build expressions and equations for tiered ticket costs and inventory. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/7/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Define a primary variable and express other unknowns using it.",
+          "Rule": "Define a primary variable and express other unknowns using it.",
+          "Example": "$55."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Combine different constraints into one solvable equation.",
+          "Rule": "Combine different constraints into one solvable equation.",
+          "Example": "15 and 20."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Check all original relationships and physical plausibility.",
+          "Rule": "Check all original relationships and physical plausibility.",
+          "Example": "$8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Three adults and two children attend; adult ticket $5 more, child $8. Total cost?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Adult ticket=8+5=13.",
+            "Compute adults 3×13=39.",
+            "Add children 2×8=16: total 55."
+          ],
+          "Answer": "$55.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Two numbers sum 35 and larger is 5 more. Find numbers.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Let smaller x, larger x+5.",
+            "Write 2x+5=35.",
+            "Solve 2x=30, x=15."
+          ],
+          "Answer": "15 and 20.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "An order has 3 identical sandwiches and one $4 drink, total $28. Sandwich price?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Write 3x+4=28.",
+            "Subtract 4 to get 3x=24.",
+            "Divide by 3."
+          ],
+          "Answer": "$8.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — More Expressions and Equations",
+          "Question": "For a fictional school play, adult tickets cost x dollars and student tickets x−3 dollars. On one evening 40 adults and 70 students attend, bringing in $1,110. What are ticket prices?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Revenue equation is 40x+70(x−3)=1110.",
+            "Combine like terms: 110x−210=1110, so 110x=1320.",
+            "Divide by 110 to find x=$12 for adult tickets; student tickets cost x−3=$9.",
+            "Verify 40×$12+70×$9=$480+$630=$1,110 and explain both prices make sense for the invented context."
+          ],
+          "Answer": "Adult tickets cost $12 and student tickets cost $9; the calculated $1,110 revenue matches the total.",
+          "Check": "Teacher reviews the two-variable pricing story, equation structure, verification, reasonable price choices and any proposed changes to the model."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Solving one equation while ignoring an additional quantity relationship from the original context.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Define a primary variable and express other unknowns using it.",
+        "Combine different constraints into one solvable equation.",
+        "Check all original relationships and physical plausibility."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Solve multi-quantity restaurant equations",
+          "Description": "Independent mathematical planning data for More Expressions and Equations. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "3 adults at $13, 2 children at $8",
+                "Two numbers sum 35; gap 5",
+                "3 sandwiches and $4 drink cost $28"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Equation/model",
+              "Cells": [
+                "3×13 + 2×8",
+                "2x+5=35",
+                "3s+4=28"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Solution",
+              "Cells": [
+                "$55",
+                "15 and 20",
+                "s=$8"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L08",
+      "CultureCode": "en",
+      "Title": "Measurement Error (Part 1)",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Compare measurements by repeated trials and explain how rounding and uncertainty affect scale calculations. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/8/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Repeated measurement with ruler uncertainty and worst-case percentage. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/8/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "A measured quantity is an approximation with a stated resolution.",
+          "Rule": "A measured quantity is an approximation with a stated resolution.",
+          "Example": "0.1 m."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Repeated measurements reveal variability.",
+          "Rule": "Repeated measurements reveal variability.",
+          "Example": "[9.5,10.5) cm."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Error propagates when scaling a measurement.",
+          "Rule": "Error propagates when scaling a measurement.",
+          "Example": "6.3 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Tape measures 2.4 m, while reference is 2.5 m. Absolute error?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Subtract 2.4−2.5=−0.1.",
+            "Take absolute value.",
+            "State metres."
+          ],
+          "Answer": "0.1 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "A 10 cm reading is rounded to nearest cm. Possible length interval?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Half cm resolution=0.5.",
+            "Find 10−0.5 and 10+0.5.",
+            "State rounding convention."
+          ],
+          "Answer": "[9.5,10.5) cm.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A 6 m field length is measured 5% high. Reading?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 5% of 6=0.3 m.",
+            "Add 6+0.3.",
+            "Get 6.3."
+          ],
+          "Answer": "6.3 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measurement Error (Part 1)",
+          "Question": "One board measures 10.0 cm to the nearest tenth. The true length can lie from 9.95 cm (inclusive) to just below 10.05 cm. Give the largest possible relative error measured against the actual length.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "A rounding to nearest 0.1 cm implies error magnitude no greater than about 0.05 cm.",
+            "At the lower actual bound 9.95 cm, relative error can be 0.05/9.95≈0.005025.",
+            "Express this as about 0.503% of actual length; at the upper side the denominator is larger.",
+            "Draw a scale/ruler reading and state endpoint conventions before presenting a strict largest value."
+          ],
+          "Answer": "Maximum relative error approximately 0.503%, with endpoint interpretation depending on rounding ties.",
+          "Check": "Teacher checks original physical ruler/uncertainty interval and correct percent denominator."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a rounded measurement as exact to arbitrarily many digits.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "A measured quantity is an approximation with a stated resolution.",
+        "Repeated measurements reveal variability.",
+        "Error propagates when scaling a measurement."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Absolute error and rounded intervals",
+          "Description": "Independent mathematical planning data for Measurement Error (Part 1). Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Reference",
+              "Cells": [
+                "2.5 m",
+                "10 cm rounded",
+                "6 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Recorded or assumed",
+              "Cells": [
+                "2.4 m",
+                "nearest 1 cm",
+                "+5% high"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "0.1 m low",
+                "[9.5,10.5) cm",
+                "6.3 m reading"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L09",
+      "CultureCode": "en",
+      "Title": "Measurement Error (Part 2)",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Estimate area or volume from measured dimensions and compare sensitivity to measurement error. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/9/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Propagate measurement error through area and volume multiplicatively. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/9/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Area products inherit errors in each measured length.",
+          "Rule": "Area products inherit errors in each measured length.",
+          "Example": "4.04 m² overestimate."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "A small difference in side length can produce a larger change in computed area.",
+          "Rule": "A small difference in side length can produce a larger change in computed area.",
+          "Example": "1.261 m³ overestimate."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "State interval or estimate rather than false exactness.",
+          "Rule": "State interval or estimate rather than false exactness.",
+          "Example": "[19.5,20.5] m²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "True square side 10 m, measured side 10.2 m. Compare areas.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "True area=10²=100 m².",
+            "Measured area=10.2²=104.04 m².",
+            "Difference=4.04 m²."
+          ],
+          "Answer": "4.04 m² overestimate.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "A cube has measured edge 2.1 m instead of actual 2 m. Compare volumes.",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Actual volume=2³=8.",
+            "Measured volume=2.1³=9.261.",
+            "Difference=1.261."
+          ],
+          "Answer": "1.261 m³ overestimate.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A rectangle measures 4.0±0.1 m by 5.0 m exactly. Area interval?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Width range 3.9–4.1.",
+            "Multiply each by 5.",
+            "Get 19.5–20.5."
+          ],
+          "Answer": "[19.5,20.5] m².",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measurement Error (Part 2)",
+          "Question": "Two sides of a rectangle are independently measured 5% HIGH, so measured length and width each equal 1.05 times actual. What is the resulting area percent error? Extend to three dimensions.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Measured area factor=1.05×1.05=1.1025.",
+            "Area is 10.25% HIGH, not exactly 10%.",
+            "If all three dimensions are 5% HIGH, measured volume factor=1.05³=1.157625.",
+            "Volume is 15.7625% HIGH; clearly distinguish worst-direction assumptions and dimension units."
+          ],
+          "Answer": "Area +10.25% and volume +15.7625% under all-dimensions-5%-high assumptions.",
+          "Check": "Teacher checks labeled measured-vs-true shapes and interpretation; this is not a blanket bound for all rounding outcomes."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming area error equals the length error without accounting for multiplication.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Area products inherit errors in each measured length.",
+        "A small difference in side length can produce a larger change in computed area.",
+        "State interval or estimate rather than false exactness."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Nonlinear effect of length measurement errors",
+          "Description": "Independent mathematical planning data for Measurement Error (Part 2). Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Figure",
+              "Cells": [
+                "Square, actual side 10 m",
+                "Square, recorded side 10.2 m",
+                "Cube, edge 2.1 vs actual 2 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Reference area/volume",
+              "Cells": [
+                "100 m²",
+                "100 m²",
+                "8 m³"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Measured area/volume",
+              "Cells": [
+                "100 m²",
+                "104.04 m²",
+                "9.261 m³"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L10",
+      "CultureCode": "en",
+      "Title": "Measuring Long Distances Over Uneven Terrain",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Compare field measurement techniques and plan sensible distance estimates over rough or sloping ground. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/10/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Compare repeated path measurements by distinct tools and percentage. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/10/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Direct ground-route distance differs from horizontal projection on a slope.",
+          "Rule": "Direct ground-route distance differs from horizontal projection on a slope.",
+          "Example": "About 200 m."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Repeated small-scale measurements accumulate error.",
+          "Rule": "Repeated small-scale measurements accumulate error.",
+          "Example": "50 m."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Field methods require a recorded procedure and precision estimate.",
+          "Rule": "Field methods require a recorded procedure and precision estimate.",
+          "Example": "3%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "A route is estimated from 8 straight 25 m segments. Total estimate?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 8×25.",
+            "Get 200.",
+            "Label metres."
+          ],
+          "Answer": "About 200 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "A right-triangle slope has horizontal run 30 m and rise 40 m. Sloped straight-line length?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Compute 30²+40²=2500.",
+            "Square root 2500.",
+            "Obtain 50."
+          ],
+          "Answer": "50 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A 100 m route measurement is 3 m long compared with reference. Percent error?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Difference=3 m.",
+            "Divide 3/100.",
+            "Convert to 3%."
+          ],
+          "Answer": "3%.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measuring Long Distances Over Uneven Terrain",
+          "Question": "An original marked trail is measured twice by pacing at 612 m and 600 m, and another method returns 606 m. What might be reported, and how far are the first estimates apart as a percent of the 606 m comparator?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Record three labeled measurements: 612,600,606 m; identify methods and uncertainties.",
+            "Difference between first two is 12 m.",
+            "Relative to explicitly chosen 606 m comparator, 12/606×100≈1.98%.",
+            "Propose reporting around 606 m with a stated uncertainty, not a false exact distance; teacher should review the chosen comparator."
+          ],
+          "Answer": "Difference 12 m, about 1.98% of the 606 m comparison value.",
+          "Check": "Teacher checks actual repeated measurements and methodological notes; hypothetical data do not certify fieldwork."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing terrain path length with the horizontal projected distance.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Direct ground-route distance differs from horizontal projection on a slope.",
+        "Repeated small-scale measurements accumulate error.",
+        "Field methods require a recorded procedure and precision estimate."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Plan a long-route field measurement",
+          "Description": "Independent mathematical planning data for Measuring Long Distances Over Uneven Terrain. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Procedure",
+              "Cells": [
+                "8 segments each 25 m",
+                "Right-triangle slope, legs 30 and 40 m",
+                "Reference 100 m; measured 103 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "8×25",
+                "√(30²+40²)",
+                "|103−100|/100×100%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "200 m estimate",
+                "50 m sloped line",
+                "3% error"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L11",
+      "CultureCode": "en",
+      "Title": "Building a Trundle Wheel",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Calculate circumference, mark rotations and construct a calibrated trundle-wheel measurement device. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/11/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Construct a click-counting trundle wheel with circumference calibration. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/11/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Wheel circumference determines travel per revolution without slip.",
+          "Rule": "Wheel circumference determines travel per revolution without slip.",
+          "Example": "0.5π m."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Number of rotations×circumference gives travel distance.",
+          "Rule": "Number of rotations×circumference gives travel distance.",
+          "Example": "10π m."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "A homemade device needs calibration and a teacher-reviewed physical demonstration.",
+          "Rule": "A homemade device needs calibration and a teacher-reviewed physical demonstration.",
+          "Example": "Approximately 0.318 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "A wheel diameter 0.5 m: circumference?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Use C=πd.",
+            "Substitute d=0.5.",
+            "Get 0.5π."
+          ],
+          "Answer": "0.5π m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Same wheel after 20 revolutions: distance?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "One turn 0.5π m.",
+            "Multiply by 20.",
+            "Compute 10π."
+          ],
+          "Answer": "10π m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "Build a wheel with circumference 1 m. Ideal diameter?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Use d=C/π.",
+            "Substitute C=1 m.",
+            "Calculate 1/π≈0.318."
+          ],
+          "Answer": "Approximately 0.318 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Building a Trundle Wheel",
+          "Question": "A hand-built wheel has measured diameter 0.45 m and rolls 32 rotations across a room. Estimate room length and explain why a physical wheel measurement is necessary.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Circumference C=πd=0.45π m per turn.",
+            "32 turns represent 32×0.45π=14.4π m≈45.24 m.",
+            "A wheel click marker must count one whole rotation, and the diameter must be measured across center.",
+            "Explain potential slips, partial rotations and rough floors as sources of error."
+          ],
+          "Answer": "Estimated distance 14.4π≈45.24 m.",
+          "Check": "Teacher must inspect actual constructed wheel, verified rotation marker and independently measured classroom path."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using wheel radius as distance per revolution, omitting circumference and slip calibration.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Wheel circumference determines travel per revolution without slip.",
+        "Number of rotations×circumference gives travel distance.",
+        "A homemade device needs calibration and a teacher-reviewed physical demonstration."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Trundle-wheel calibration arithmetic",
+          "Description": "Independent mathematical planning data for Building a Trundle Wheel. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Wheel quantity",
+              "Cells": [
+                "Diameter",
+                "Circumference",
+                "20 turns",
+                "Diameter if circumference =1 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Relation",
+              "Cells": [
+                "0.5 m",
+                "C=πd",
+                "20×0.5π",
+                "d=1/π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "0.5 m",
+                "0.5π m",
+                "10π m",
+                "≈0.318 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L12",
+      "CultureCode": "en",
+      "Title": "Using a Trundle Wheel to Measure Distances",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Record wheel rotations and compare measured route distances with precision and reproducibility. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/12/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Repeated trundle-wheel trials and comparison with other methods. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/12/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "D=turns×measured wheel circumference when rolling without slip.",
+          "Rule": "D=turns×measured wheel circumference when rolling without slip.",
+          "Example": "60 m."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Partial revolutions contribute proportionally.",
+          "Rule": "Partial revolutions contribute proportionally.",
+          "Example": "15 m."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "Calibrate on a known reference length before field use.",
+          "Rule": "Calibrate on a known reference length before field use.",
+          "Example": "4%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "Wheel circumference 0.8 m, 75 full turns. Distance?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Multiply 0.8×75.",
+            "Compute 60.",
+            "State metres."
+          ],
+          "Answer": "60 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "Wheel circumference 1.2 m, 12.5 turns. Distance?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Multiply 1.2×12.5.",
+            "Compute 15.",
+            "State metres."
+          ],
+          "Answer": "15 m.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "A reference 50 m is measured as 52 m. Percent error?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Difference 2 m.",
+            "Divide 2/50.",
+            "Convert to 4%."
+          ],
+          "Answer": "4%.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Using a Trundle Wheel to Measure Distances",
+          "Question": "A wheel has circumference 0.8 m. On a marked path, three observed whole-and-partial turn counts are 75,74.5,75.5. Compute three distances and their average.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Multiply 0.8×75=60 m.",
+            "Second 0.8×74.5=59.6 m; third 0.8×75.5=60.4 m.",
+            "The three mean distance=(60+59.6+60.4)/3=60 m.",
+            "Present uncertainty from 59.6 to 60.4 m and compare an independently measured reference path if available."
+          ],
+          "Answer": "Trial distances 60,59.6,60.4 m; mean 60 m.",
+          "Check": "Teacher checks actual three trial observations, wheel circumference and other group comparison."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating an uncalibrated homemade wheel as an exact distance standard.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "D=turns×measured wheel circumference when rolling without slip.",
+        "Partial revolutions contribute proportionally.",
+        "Calibrate on a known reference length before field use."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Converting wheel turns to route distance",
+          "Description": "Independent mathematical planning data for Using a Trundle Wheel to Measure Distances. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Trial",
+              "Cells": [
+                "Wheel C=0.8 m / 75 turns",
+                "Wheel C=1.2 m / 12.5 turns",
+                "Measured 52 m vs reference 50 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "0.8×75",
+                "1.2×12.5",
+                "2/50×100%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "60 m",
+                "15 m",
+                "4% error"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U09:L13",
+      "CultureCode": "en",
+      "Title": "Designing a 5K Course",
+      "ExplanationParagraphs": [
+        "Edulytiks learning objective: Design and justify a 5 km running route using mapped distances, lap counts and trundle-wheel measurements. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/13/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Produce and revise a real 5K route using trundle measurements. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/13/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Task model",
+          "Definition": "Five kilometres equals 5000 metres.",
+          "Rule": "Five kilometres equals 5000 metres.",
+          "Example": "4 laps."
+        },
+        {
+          "Title": "Rate or geometry",
+          "Definition": "Lap count=target distance/lap distance.",
+          "Rule": "Lap count=target distance/lap distance.",
+          "Example": "1400 m/lap."
+        },
+        {
+          "Title": "Evaluation of uncertainty",
+          "Definition": "An authentic route design needs scale map, start/finish logic and field-verified lengths.",
+          "Rule": "An authentic route design needs scale map, start/finish logic and field-verified lengths.",
+          "Example": "5 cm."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Independent project scaffold 1",
+          "Question": "A loop measures 1250 m. How many laps for 5K?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Convert 5 km to 5000 m.",
+            "Divide 5000/1250.",
+            "Get 4."
+          ],
+          "Answer": "4 laps.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 2",
+          "Question": "A 5K route has 3 identical laps plus 800 m finish segment. Required lap length?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Remaining length=5000−800=4200.",
+            "Divide 4200/3.",
+            "Compute 1400."
+          ],
+          "Answer": "1400 m/lap.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Independent project scaffold 3",
+          "Question": "Map uses 1 cm:200 m. How many cm represent a 1 km route segment?",
+          "Method": "Define the model and all assumptions, then compute using appropriate units.",
+          "Steps": [
+            "Convert 1 km to 1000 m.",
+            "Divide 1000/200.",
+            "Compute 5."
+          ],
+          "Answer": "5 cm.",
+          "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Designing a 5K Course",
+          "Question": "An original school walk plan uses a measured loop of 1,250 m with a safe start/finish area. How many whole loops make 5 km, and what map evidence must a student supply before organizers approve it?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Convert target 5 km=5,000 m.",
+            "Compute 5,000/1,250=4 whole loops.",
+            "Draw loop route, start/finish position, safe crossings and direction arrows on an original scale map.",
+            "Use at least two authentic wheel measurements per route and revise if measurements differ; share a teacher-reviewed proposal."
+          ],
+          "Answer": "Four 1,250 m laps make 5 km in the model, pending real route measurement.",
+          "Check": "Teacher-only rubric: field measurement, repeated trials, accurate map/scale, physical safety, coherent revision and organizer-ready presentation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a single correct lap calculation proof that the route is safe, accessible or measured accurately.",
+          "WhyWrong": "It confuses assumptions, units or the mathematical model needed to complete the project.",
+          "Correction": "Document sources and derive each output from correctly identified measures."
+        },
+        {
+          "Mistake": "Presenting a correct illustrative calculation as a complete authentic project",
+          "WhyWrong": "The lesson assesses an actual constructed, measured or justified student artifact.",
+          "Correction": "Require a teacher rubric for original solutions, precision and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Five kilometres equals 5000 metres.",
+        "Lap count=target distance/lap distance.",
+        "An authentic route design needs scale map, start/finish logic and field-verified lengths."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "5K route design arithmetic",
+          "Description": "Independent mathematical planning data for Designing a 5K Course. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "Four 1,250 m loops",
+                "Three laps plus 800 m finish",
+                "Map 1 cm:200 m; actual 1 km"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "4×1,250",
+                "3×1,400 +800",
+                "1,000/200"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Length",
+              "Cells": [
+                "5,000 m",
+                "5,000 m",
+                "5 cm on map"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

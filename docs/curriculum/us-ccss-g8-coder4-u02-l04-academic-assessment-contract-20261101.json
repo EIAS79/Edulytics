@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U02:L04",
+  "title": "Dilations on a Square Grid",
+  "unit": "U02",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\4\\index.html",
+      "sha256": "eb764ba819cfda2705b614e1fc206d15d29d57880b7041ecfaafa66f0ca7c078"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\4\\index.html",
+      "sha256": "5bd257b6831ffa99b38d86ab718afd0c4e583603ac238c5c295d63ed5a709384"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\2\\4\\preparation.html",
+      "sha256": "0cd82a3ad5be0739d997b9cfe1b67b343922d84e4e2580916cb4bc0e1ffd73ca"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\2\\4\\practice.html",
+      "sha256": "355333274b59b03f60481ec02b5a977708154f2cc717d29b0e94eb03569dc41e"
+    }
+  },
+  "learningGoals": [
+    "Construct dilation images of polygons on square grids for given center and scale factor",
+    "Identify exact images using coordinate displacement and factor",
+    "Justify corresponding scaled segments and angle invariance"
+  ],
+  "sourceStandardsRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.3"
+    }
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "source": "4.1: Estimating a Scale Factor",
+      "section": "scale-estimate",
+      "teacherKey": "Source mathematical behavior: estimate from ratio center-to-image distance / center-to-preimage distance. Edulytiks example A=(1,1),B=(3,1),C=(8,1): AB2 AC7 => k=7/2=3.5, NOT BC/AB5/2."
+    },
+    {
+      "source": "4.2: Dilations on a Grid",
+      "section": "two-centers",
+      "teacherKey": "Rectangle A(2,9),B(8,9),C(8,5),D(2,5) with P(3,7), k2 -> (1,11),(13,11),(13,3),(1,3). Source described triangle Q(5,7),R(6,5),S(4,4) about T(2,6): k2 images (8,8),(10,4),(6,2); k1/2 images (3.5,6.5),(4,5.5),(3,5). All from ORIGINAL."
+    },
+    {
+      "source": "4.3: Card Sort: Matching Dilations on a Coordinate Grid",
+      "section": "card-sort",
+      "teacherKey": "Independent first-party six numbered centers/factors and five lettered full image triples, one unmatched requiring drawing. 1=B,2=E,3=D,4=A,5=C,6=UNMATCHED. 6 center(1,2) k1/2 maps K(1,1)->(1,1.5),L(3,1)->(2,1.5),M(1,2)->(1,2). Extended circle original center(4,0) radius4 about O k3/2 -> center(6,0),radius6."
+    }
+  ],
+  "sourcePracticeToFirstPartyCrosswalk": [
+    {
+      "source": "Problem 1 equal angles but scale2 not congruent",
+      "section": "practice",
+      "teacherKey": "No: dilation factor2 doubles corresponding sides, so same angles gives similarity not congruence."
+    },
+    {
+      "source": "Problem 2 quadrilateral PQRS different centers k2 and k1/2",
+      "section": "practice",
+      "teacherKey": "Original P(7,6),Q(5,4),R(9,3),S(11,5): about R k2 ->(5,9),(1,5),(9,3),(13,7); about O(5,1) k1/2 ->(6,3.5),(5,2.5),(7,2),(8,3); about S k1/2 ->(9,5.5),(8,4.5),(10,4),(11,5)."
+    },
+    {
+      "source": "Problem 3 intersecting line vertical/supplementary angles",
+      "section": "practice",
+      "teacherKey": "Separate nonparallel crossings: vertical pairs 35/35 and27/27, respective adjacent 145 and153. Do not apply alternate interior theorem."
+    },
+    {
+      "source": "Problem 4 sequence of rigid motions polygon-to-polygon",
+      "section": "practice",
+      "teacherKey": "Original triangle (0,0),(2,0),(0,1); reflection over y-axis then translation(+3,+1) yields (3,1),(1,1),(3,2). Corresponding lengths angles equal."
+    },
+    {
+      "source": "Problem 5 translation then y-axis reflection then translation",
+      "section": "practice",
+      "teacherKey": "B(-2,-5) down4->(-2,-9) reflect y->(2,-9) up6->(2,-3)."
+    }
+  ],
+  "selectedOfflinePaperRoute20261101": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U02:L04",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u02-l04-dilations-square-grid-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u02-l04-dilations-square-grid-paper.html",
+    "learnerWorksheetSha256": "f1e3232f4c26691ceedf7672b93af5d6239b1a2b4fa0f5509e32797af48bf905",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+    "stableTaskIds": [
+      "scale-estimate",
+      "two-centers",
+      "card-sort",
+      "practice",
+      "cool"
+    ],
+    "linkedFromRichV2": true,
+    "existingFigures": [
+      {
+        "url": "/curriculum/us-ccss-g8/figures/u02-l04.svg",
+        "sha256": "f3bf9f6a33a27aaf43e3c2f5e2427640d24a526fe1973f8d4e6025ea54340ee0"
+      },
+      {
+        "url": "/curriculum/us-ccss-g8/figures/u02-l04-off-origin.svg",
+        "sha256": "a9e67ac62272703ef2b82c9a87526fc5407958421ef9558516fa555dd25deff5"
+      }
+    ],
+    "delivery": "Teacher prints exact lesson-specific student paper, assigns numbered-to-lettered card sort, collects marked grid and written workings, scores private rubric manually.",
+    "teacherRubric": {
+      "MaxPoints": 8,
+      "scoring": "For each criterion 0 absent/incorrect, 1 partially correct or insufficiently justified, 2 correct source-equivalent construction and explanation; teacher collects printed work and manually scores privately; online grades not persisted.",
+      "criteria": [
+        {
+          "id": "L04_R1",
+          "points": 2,
+          "meaning": "4.1 estimates and proves scale factor from center-to-image / center-to-preimage including clearly placed A,B,C"
+        },
+        {
+          "id": "L04_R2",
+          "points": 2,
+          "meaning": "4.2 full four-vertex P-centered rectangle and separate two T-centered triangle images, labels, rays, ratios"
+        },
+        {
+          "id": "L04_R3",
+          "points": 2,
+          "meaning": "4.3 independently solves all 6 cards, exactly 5 matches, labels every unmatched image point and explains centers/scale"
+        },
+        {
+          "id": "L04_R4",
+          "points": 2,
+          "meaning": "All five source Practice families plus original Cool-down demonstrate valid source mathematics and teacher-reviewed reasoning"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "estimate": {
+        "A": [
+          1,
+          1
+        ],
+        "B": [
+          3,
+          1
+        ],
+        "C": [
+          8,
+          1
+        ],
+        "AB": 2,
+        "AC": 7,
+        "factor": 3.5
+      },
+      "rectangle": {
+        "center": [
+          3,
+          7
+        ],
+        "vertices": [
+          [
+            2,
+            9
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            5
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "factor": 2,
+        "image": [
+          [
+            1,
+            11
+          ],
+          [
+            13,
+            11
+          ],
+          [
+            13,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "triangle": {
+        "center": [
+          2,
+          6
+        ],
+        "vertices": [
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "double": [
+          [
+            8,
+            8
+          ],
+          [
+            10,
+            4
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "half": [
+          [
+            3.5,
+            6.5
+          ],
+          [
+            4,
+            5.5
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "cards": {
+        "original": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "numbered": [
+          {
+            "center": [
+              0,
+              0
+            ],
+            "factor": 2,
+            "letter": "B"
+          },
+          {
+            "center": [
+              1,
+              1
+            ],
+            "factor": 2,
+            "letter": "E"
+          },
+          {
+            "center": [
+              0,
+              0
+            ],
+            "factor": 0.5,
+            "letter": "D"
+          },
+          {
+            "center": [
+              3,
+              1
+            ],
+            "factor": 2,
+            "letter": "A"
+          },
+          {
+            "center": [
+              0,
+              0
+            ],
+            "factor": 3,
+            "letter": "C"
+          },
+          {
+            "center": [
+              1,
+              2
+            ],
+            "factor": 0.5,
+            "letter": null
+          }
+        ],
+        "lettered": {
+          "A": [
+            [
+              -1,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              -1,
+              3
+            ]
+          ],
+          "B": [
+            [
+              2,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "C": [
+            [
+              3,
+              3
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "D": [
+            [
+              0.5,
+              0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.5,
+              1
+            ]
+          ],
+          "E": [
+            [
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "unmatched": [
+          [
+            1,
+            1.5
+          ],
+          [
+            2,
+            1.5
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "circle": {
+          "originalCenter": [
+            4,
+            0
+          ],
+          "originalRadius": 4,
+          "scale": 1.5,
+          "imageCenter": [
+            6,
+            0
+          ],
+          "imageRadius": 6
+        }
+      },
+      "practice1": {
+        "congruent": false,
+        "anglePreserved": true,
+        "sideFactor": 2
+      },
+      "practice2": {
+        "original": [
+          [
+            7,
+            6
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            11,
+            5
+          ]
+        ],
+        "R": [
+          9,
+          3
+        ],
+        "O": [
+          5,
+          1
+        ],
+        "S": [
+          11,
+          5
+        ],
+        "doubleR": [
+          [
+            5,
+            9
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            13,
+            7
+          ]
+        ],
+        "halfO": [
+          [
+            6,
+            3.5
+          ],
+          [
+            5,
+            2.5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            3
+          ]
+        ],
+        "halfS": [
+          [
+            9,
+            5.5
+          ],
+          [
+            8,
+            4.5
+          ],
+          [
+            10,
+            4
+          ],
+          [
+            11,
+            5
+          ]
+        ]
+      },
+      "practice3": {
+        "vertical": [
+          35,
+          27
+        ],
+        "adjacent": [
+          145,
+          153
+        ],
+        "parallelAssumed": false
+      },
+      "practice4": {
+        "original": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "image": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      "practice5": {
+        "original": [
+          -2,
+          -5
+        ],
+        "down": [
+          -2,
+          -9
+        ],
+        "reflected": [
+          2,
+          -9
+        ],
+        "final": [
+          2,
+          -3
+        ]
+      },
+      "cooldown": {
+        "center": [
+          2,
+          1
+        ],
+        "vertices": [
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "factor": 1.5,
+        "image": [
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "A-B 2, A-C 7, factor 7/2",
+        "Rectangle factor2 about P produces (1,11),(13,11),(13,3),(1,3)",
+        "Both factor2 and factor1/2 images of QRS computed about T",
+        "Cards 1=B,2=E,3=D,4=A,5=C,6 unmatched",
+        "Unmatched coordinates (1,1.5),(2,1.5),(1,2)",
+        "Original 4.4-independent cooldown about C gives A′(5,1),B′(5,4),D′(2,4)"
+      ],
+      "equivalent": [
+        "3.5 and 7/2 are equivalent scale factors",
+        "Fraction 1/2 and decimal0.5 accepted",
+        "An alternate correct mathematical proof based on proportional distances rather than coordinate rule accepted",
+        "Student may draw exact scale factors with properly labelled grid instead of typed pairs",
+        "Different valid rigid sequence to exact P4 Q accepted with proof"
+      ],
+      "wrong": [
+        "Use distance BC/AB instead of AC/AB in 4.1",
+        "Double rectangle absolute coordinates while center is P(3,7)",
+        "Use factor2 result to calculate factor1/2 result instead of original",
+        "Match six cards to five outputs without an unmatched drawing",
+        "Claim equal angles of k2 dilation proves congruent side lengths",
+        "Set angles35 and27 equal assuming unprovided parallelism"
+      ],
+      "missing": [
+        "No center label on image",
+        "No QRS image for half factor",
+        "One or more card answers missing",
+        "Practice answered as a single multiple choice option with no reasoning",
+        "Cooldown not attempted"
+      ],
+      "malformed": [
+        "Unparseable vertex or non-finite coordinate",
+        "Repeated coordinate without corresponding label",
+        "Card number with nonexistent letter F",
+        "Image point with three coordinates rather than two",
+        "A diagram missing any matching original vertex label"
+      ],
+      "boundary": [
+        "Center point is fixed and every other positive scale ray points forward",
+        "At k1 a dilation is identity and congruent but k2 generally not",
+        "Card 6 center(1,2) fixes original vertex M(1,2)",
+        "The two T-centered dilations must each start from original QRS",
+        "A circle whose original center differs from dilation center maps to a larger circle with shifted center",
+        "Teacher alone scores free-form drawing and explanation; no automatic grading claimed"
+      ]
+    },
+    "firstPartyCooldown": {
+      "section": "cool",
+      "status": "EDULYTIKS_AUTHORED_NOT_PUBLISHER_4_4",
+      "manualReviewRequired": true
+    },
+    "teacherSelectedOffline": true,
+    "onlineSubmission": false,
+    "generatedOnlinePracticeVerified": false,
+    "savedTeacherGradeVerified": false,
+    "publisherCoolDown": "TEACHER_4.4_NOT_REPRODUCED",
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u02-l04-selected-paper-route-20261101.test.cjs"
+  },
+  "StageA": "A_CLOSED_SOURCE_THREE_ACTIVITIES_FIVE_PRACTICE_FAMILIES_PARITY",
+  "StageB": "B_CLOSED_PREVIOUS_RICHV2_AND_TWO_EXISTING_FIRST_PARTY_SVG_REUSED",
+  "StageC": "C_CLOSED_EXACT_SELECTED_FIRST_PARTY_TEACHER_PAPER_ROUTE",
+  "StageD": "NOT_RUN",
+  "rights": "ORIGINAL_EDULYTIKS_ASSESSMENT_NOT_PUBLISHER_ART",
+  "teacherGradePersistence": "NOT_RUN",
+  "sourceCardArtwork": "NOT_REPRODUCED",
+  "sharedCodeModified": false,
+  "onlinePractice": "NOT_READY_VERIFIED"
+}

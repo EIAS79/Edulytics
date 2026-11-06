@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Original IM Grade 6 Unit 1 Lesson 11 — Edulytics polygon area workmat</title>
+<style>
+:root{color-scheme:light;font-family:system-ui,Arial,sans-serif}body{max-width:960px;margin:auto;padding:18px;color:#14243b;line-height:1.5}
+h1,h2{line-height:1.25}section{border-top:1px solid #c2cbd5;padding-top:13px;margin-top:18px}
+.note{background:#edf3f8;padding:12px;border-left:4px solid #365f85}.work{width:100%;max-width:490px;border:1px solid #9aaabd}
+fieldset{display:flex;flex-wrap:wrap;gap:14px;border:1px solid #aab7c7;padding:10px}label{display:block;max-width:215px}
+input{width:8em;display:block;padding:7px;margin-top:7px}button{padding:8px 12px;cursor:pointer}
+output{display:block;padding:12px;min-height:1em}.rubric{background:#f7f8fb;padding:12px}
+@media print{button{display:none}body{padding:0}.note,.rubric{background:white}.work{width:390px}}
+</style>
+</head>
+<body>
+<h1>Grade 6 · U01:L11 · Polygons and enclosed area</h1>
+<p class="note"><strong>Independent Edulytics teaching material.</strong> Aligned to first-edition OUR/IM 6–8 mathematics lesson 11.2–11.4 and original practice. The polygon below is newly drawn from grid measurements for classroom reasoning, not a pixel copy of publisher artwork. Original publisher 11.5 Cool-down is teacher-login restricted; the independent task below is not its wording.</p>
+<section aria-labelledby="definition"><h2 id="definition">11.2 — Identify polygons precisely</h2>
+<p>For every figure, decide whether its boundary is a single, closed, non-self-crossing chain of straight segments. An inward corner does not disqualify a polygon; curved corners, missing joins and a whole three-dimensional object do.</p>
+<p>Original practice examples, described in words: A closed straight arrow; B rectangle-like with rounded corners; C closed straight-edged star; D a triangle with a gap; E curved heart; F a 3D rectangular prism. Explain why <strong>A and C</strong> are plane polygons, and why the others are not.</p>
+<p>Teacher: ask students to distinguish a polygon's boundary from the region whose area is measured. The number check below does not assess this explanation.</p>
+</section>
+<section aria-labelledby="pinwheel"><h2 id="pinwheel">Original 11.4 source-grid geometry — area by dissection</h2>
+<p>Use the grid to split the original-shape region into a central tilted square and four triangles. The central area is <strong>20</strong> square units, and each of the four wings is <strong>5</strong> square units. Explain how you know the pieces cover the region without overlap. This is NOT the separately labeled first-party 12-unit sample in the lesson notes.</p>
+<svg class="work" role="img" aria-labelledby="polygon-title polygon-desc" viewBox="0 0 430 430" xmlns="http://www.w3.org/2000/svg">
+<title id="polygon-title">First-party drawing of source-mechanic pinwheel composed of a central square and four triangular wings</title>
+<desc id="polygon-desc">Vertices at grid coordinates (1,5),(4,6),(9,1),(8,4),(13,9),(10,8),(5,13),(6,10). The central rotated square has vertices (4,6),(8,4),(10,8),(6,10), and each attached triangular wing has area five square units.</desc>
+<g transform="translate(12 12) scale(29)">
+<g stroke="#d8e2ed" stroke-width=".025"><path d="M0 0V14 M1 0V14 M2 0V14 M3 0V14 M4 0V14 M5 0V14 M6 0V14 M7 0V14 M8 0V14 M9 0V14 M10 0V14 M11 0V14 M12 0V14 M13 0V14 M14 0V14 M0 0H14 M0 1H14 M0 2H14 M0 3H14 M0 4H14 M0 5H14 M0 6H14 M0 7H14 M0 8H14 M0 9H14 M0 10H14 M0 11H14 M0 12H14 M0 13H14 M0 14H14"/></g>
+<path d="M4 6L8 4L10 8L6 10Z" fill="#81bed8" stroke="#224864" stroke-width=".065"/>
+<g fill="#b9d8ad" stroke="#224864" stroke-width=".055">
+<path d="M4 6L9 1L8 4Z"/><path d="M8 4L13 9L10 8Z"/>
+<path d="M10 8L5 13L6 10Z"/><path d="M6 10L1 5L4 6Z"/>
+</g>
+<g fill="#162c49" font-size=".47" font-family="Arial,sans-serif"><text x="6.7" y="7.3">20</text><text x="6.8" y="3.4">5</text><text x="10.3" y="6.6">5</text><text x="7.5" y="10.7">5</text><text x="3.1" y="7.5">5</text></g>
+</g>
+</svg>
+<p>Teacher check: the source-area sum is 20 + 5 + 5 + 5 + 5 = 40 square units. The square can be proved by enclosure/subtraction, not by assuming an irrational diagonal has an integer length.</p>
+</section>
+<section aria-labelledby="check"><h2 id="check">Short source-practice numerical check</h2>
+<form id="check-math"><fieldset>
+<label for="f-trap">Original practice 2: trapezoid bases 8 and 4, height 3 (square units)
+<input required id="f-trap" inputmode="decimal"></label>
+<label for="f-hex">Original practice 3: hexagon side 6 inches, total height 10.4 inches (square inches)
+<input required id="f-hex" inputmode="decimal"></label>
+<label for="f-pin">Original source 11.4 pinwheel (square units)
+<input required id="f-pin" inputmode="decimal"></label>
+</fieldset><button type="submit">Check numeric areas</button><output id="result" aria-live="polite"></output></form>
+</section>
+<section aria-labelledby="exit"><h2 id="exit">Edulytics independent Cool-down — not publisher 11.5</h2>
+<p>Draw and decompose a trapezoid with parallel bases <strong>10 cm</strong> and <strong>6 cm</strong> and perpendicular height <strong>4 cm</strong>. Find its area, show two different plans, and explain why two matching trapezoids can form a parallelogram. The correct area is <strong>32 cm²</strong>.</p>
+<div class="rubric"><strong>Teacher rubric:</strong> A valid closed four-sided trapezoid with parallel bases; a 90° perpendicular height of 4; a decomposition into triangles and rectangle or into two congruent copies; correct 32 cm² with units; a written explanation. The number checker cannot certify the drawing or reasoning.</div>
+<div style="border:1px dashed #98a6b7;min-height:160px" aria-label="Printable blank student diagram space"></div>
+</section>
+<button type="button" id="print">Print teacher workmat</button>
+<script>
+"use strict";
+document.getElementById("check-math").addEventListener("submit",event=>{
+ event.preventDefault();
+ const keys=["f-trap","f-hex","f-pin"],expected=[18,93.6,40];
+ const good=keys.map((key,i)=>{const raw=document.getElementById(key).value.trim();
+ return /^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(raw)&&Number.isFinite(Number(raw))&&Number(raw)===expected[i]});
+ const n=good.filter(Boolean).length;
+ document.getElementById("result").textContent=n===3?
+ "All three numeric areas are correct. Teacher must evaluate decompositions and geometric explanations.":
+ n+" of 3 numeric areas correct. Revisit the base/height correspondence or the missing regions; teacher reviews the reasoning.";
+});
+document.getElementById("print").addEventListener("click",()=>window.print());
+</script>
+</body></html>

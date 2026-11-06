@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U08:L09",
+  "title": "The Converse",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\9\\index.html",
+      "sha256": "ef88beb421a4314cb6affcf139a2e8d0e8d02df7938996cd97e9cee9a62bd995"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\8\\9\\preparation.html",
+      "sha256": "0b266dd227e10ef1a04ee23e6e05616d7d9b1b5275f16e80d0de5b7251fa9249"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\9\\index.html",
+      "sha256": "65a213a4242377cfb5bd5cd0b0aefb5996be0493e0c95f91f0db89cb391298b2"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\8\\9\\practice.html",
+      "sha256": "2815a4bfe10249fe1394a6370b2e52ec0b8fff5c2755db41792cab364668a235"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "9.1: The Hands of a Clock",
+      "9.2: Proving the Converse",
+      "9.3: Calculating Legs of Right Triangles"
+    ],
+    "practiceProblemCount": 5,
+    "teacherFigureTagCount": 49,
+    "studentFigureTagCount": 39,
+    "requiredMaterialsSectionPresent": false,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: use the converse of the Pythagorean theorem to test whether a triangle is right, and distinguish a proof from a simple diagram appearance.",
+    "For side lengths a≤b≤c, equality a²+b²=c² establishes a right triangle; if not equal, the triangle is not right. The triangle must satisfy ordinary triangle inequalities as well."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "9.1: The Hands of a Clock",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.2: Proving the Converse",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "9.3: Calculating Legs of Right Triangles",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u08-l09-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u08-l09-selected-first-party-paper.html",
+    "sha256": "871cc6357f57faea1f434891f39f7990617b922ed51c30424758a9553a61ced3",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "6,8,10 is right because 36+64=100; 6,8,11 is not because 36+64?121.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Square/cube root and Pythagorean reasoning distinguishes exact values, approximations, and physical nonnegative lengths.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Diagrams, units, rationality claims, and scaling conclusions are checked against the defining equations.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "a": 6,
+    "b": 8,
+    "c1": 10,
+    "c2": 11
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

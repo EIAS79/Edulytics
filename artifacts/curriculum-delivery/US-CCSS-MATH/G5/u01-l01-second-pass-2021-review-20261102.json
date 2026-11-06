@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "kind": "GRADE5_IM2021_SECOND_PASS_LESSON_REVIEW",
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+  "ordinal": 1,
+  "lessonTitle": "What Is Volume?",
+  "reviewState": "CLOSED_WITH_AUTHORIZED_SOURCE_EXCEPTION",
+  "sourceEdition": "Illustrative Mathematics K–5 Grade 5 First Edition (2021)",
+  "reviewDateUtc": "2026-11-02T21:09:51.159Z",
+  "readOnlyLocalSources": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\Illustrative_Mathematics_First_Edition_2021\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html"
+  ],
+  "sourceSnapshotsPreviouslyVerified": {
+    "teacherSha256": "88920fb053a82ff0ecd76289ea096548530d2fb5dcfccc8edc63498b6597f7cb",
+    "preparationSha256": "0caa7f39bd3e8fe06ed6bb7f0d9f7a8236c947f0458d0a51cc4c5e3757f65195"
+  },
+  "sourceFindings": [
+    "Warm-up WODB four cube objects A 2x2x2=8, B five bottom+three upper=8, C 2x1x4=8, D 5x1x2=10; multiple justified choices",
+    "Activity 1 compare two pairs of eight-cube arrangements and explain why different heights do not imply different volume",
+    "Activity 2 four-person build/order, then precisely nine face-connected cubes, equal count / varied shape; source preparation requires 24 connecting cubes per pair; optional dot paper",
+    "Explain volume as three-dimensional occupied space before formal cubic-unit calculations",
+    "5.MD.C.3 learning objective; gated publisher Cool-down remains unavailable; first-party teacher-scored aligned alternative authorized"
+  ],
+  "existingImplementationReviewed": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson1PracticeContracts.cs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-practice-human-rubric-v14.json",
+    "tests/academic-us-ccss-g5-u01-l01-2021-handoff-revalidation.test.cjs",
+    "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs"
+  ],
+  "practiceFamily": "usccss.g5.u01.l01.compare_connected_cube_models",
+  "assessmentBoundary": "Digital count comparison only; WODB rationale, physical constructions, shape/volume reasoning, four-object ordering and authored Cool-down require teacher review.",
+  "v360Audit": "Old v360 student mirror explicitly excluded from this lesson's source evidence. Current Rich V2 cites 2021 teacher/student-facing original rather than v360.",
+  "outcome": "REUSE_ONLY_NO_PROVEN_NEW_IMPLEMENTATION_DEFECT",
+  "correctedFiles": [],
+  "sourceElementCountsPreviouslyVerified": {
+    "identified": 25,
+    "matchedTeacherLed": 23,
+    "matchedDigital": 1,
+    "publisherUnavailable": 1
+  },
+  "sourceExceptions": [
+    "Publisher original gated Cool-down not copied; owner-authorized first-party aligned teacher-scored alternative preserved",
+    "Publisher artwork binaries/rights and separate 2021 Student Task PDF are not independently certified; no publisher literal/asset 100% claim"
+  ],
+  "tests": "EXISTING_TARGETED_FIXTURES_REVIEWED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ciTests": "NOT_RUN",
+  "runtimeGrading": "NOT_VERIFIED",
+  "academic100Percent": "NOT_CLAIMED",
+  "historicalReadyForStageD": "PRESERVED",
+  "secondPassReviewComplete2021": true,
+  "nextLesson": "PED:US-CCSS-MATH:G5:U01:L02"
+}

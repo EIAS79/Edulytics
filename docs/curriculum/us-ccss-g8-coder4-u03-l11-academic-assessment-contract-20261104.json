@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L11",
+  "title": "Equations of All Kinds of Lines",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\11\\index.html",
+      "sha256": "4d710cf7b0f378ea489d06d11104e8582954578fa29ebb0a3be995b4dc070d7f"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\3\\11\\preparation.html",
+      "sha256": "27eed66bb3b6cdca7ab9a24f158575eca337124a58da8dce9db6942f1208e75d"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\11\\index.html",
+      "sha256": "66780994fda0b3533623b21f02fe9ab6ac73d72e783e613714a8e4629ae01de8"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\3\\11\\practice.html",
+      "sha256": "aeedf71ad0cad1dd393de83bbf1f093121b3f2eb0a1ef85983ab3b6b9120e08f"
+    }
+  },
+  "learningGoals": [
+    "Differentiate horizontal and vertical lines and their equations",
+    "Generate graphs and tables with constant x or y",
+    "Use perimeter constraints as a nontrivial linear relationship"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "11.1 • Which pair of lines differs?",
+      "firstPartyTask": "odd-lines",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.2 • Ten points with constant coordinate",
+      "firstPartyTask": "all-same",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "11.3 • Same perimeter rectangles",
+      "firstPartyTask": "perimeter",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 4,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u03-l11-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u03-l11-selected-first-party-paper.html",
+    "sha256": "f1f51bb24cd88ba2798817f4b24a93ce0cf45bb365b9df82644a01e335fb7b85",
+    "taskIds": [
+      "odd-lines",
+      "all-same",
+      "perimeter",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Odd-one-out classifications explained with parallelism, slope and intercept.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Horizontal y=−4, slope0; vertical x=3 undefined, ten unique points each.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Perimeter l+w=25; width25−l and 0<l<25 for nonzero rectangles.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice line y=−4x−1; horizontal y=5 vertical x=2; book thickness 0.5+0.002N, N250 gives1inch.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cooldown through (−2,7), horizontal y=7 slope0, vertical x=−2 slope undefined.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "perimeter": 50,
+    "halfPerimeter": 25,
+    "bookCoverThickness": 0.25,
+    "pageThickness": 0.002,
+    "pages": 250,
+    "bookThickness": 1
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

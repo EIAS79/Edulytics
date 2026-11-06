@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370" role="img" aria-labelledby="g7u02l01-title g7u02l01-desc">
+  <title id="g7u02l01-title">Compare scaled crescents with a distorted crescent</title>
+  <desc id="g7u02l01-desc">Three original stylized crescent outlines, each constructed from the same cubic path with explicit transforms at the same screen-unit scale. Panel A uses x and y factors 1. Panel B uses x and y factors 1.5, a true scaled copy. Panel C uses x factor 1.5 but y factor 1, a horizontal distortion. The matching path shape and different transforms make the distinction independent of color. Learners should justify at least two corresponding measurements and construct a new copy.</desc>
+  <style>
+    .background{fill:#fff}.panel{fill:#f8fafc;stroke:#526171;stroke-width:1.5}
+    .shape{fill:#bddde8;stroke:#123347;stroke-width:2.5}
+    .wrong{fill:#ededed;stroke:#633333;stroke-width:2.5;stroke-dasharray:7 4}
+    .h{font:bold 18px system-ui,sans-serif;fill:#152536}
+    .p{font:15px system-ui,sans-serif;fill:#182b3c}
+    .note{font:14px system-ui,sans-serif;fill:#182b3c}
+  </style>
+  <rect class="background" width="1000" height="370"/>
+  <text class="h" x="20" y="31">Scaled or stretched? Original crescent models</text>
+  <rect class="panel" x="18" y="48" width="302" height="295" rx="9"/>
+  <rect class="panel" x="349" y="48" width="302" height="295" rx="9"/>
+  <rect class="panel" x="680" y="48" width="302" height="295" rx="9"/>
+  <text class="h" x="34" y="77">A. Original crescent</text>
+  <text class="h" x="365" y="77">B. Scale factor 1.5</text>
+  <text class="h" x="696" y="77">C. Horizontal stretch</text>
+  <text class="p" x="34" y="102">x factor 1; y factor 1</text>
+  <text class="p" x="365" y="102">x factor 1.5; y factor 1.5</text>
+  <text class="p" x="696" y="102">x factor 1.5; y factor 1</text>
+  <!-- The SAME cubic path is transformed, never redrawn by eye. -->
+  <g id="original-crescent" transform="translate(235 206) scale(1 1)">
+    <path class="shape" d="M 0 -48 C -110 -48 -110 48 0 48 C -54 34 -54 -34 0 -48 Z"/>
+  </g>
+  <g id="uniform-crescent" transform="translate(577 206) scale(1.5 1.5)">
+    <path class="shape" d="M 0 -48 C -110 -48 -110 48 0 48 C -54 34 -54 -34 0 -48 Z"/>
+  </g>
+  <g id="stretched-crescent" transform="translate(914 206) scale(1.5 1)">
+    <path class="wrong" d="M 0 -48 C -110 -48 -110 48 0 48 C -54 34 -54 -34 0 -48 Z"/>
+  </g>
+  <text class="p" x="34" y="299">Reference width W, height H</text>
+  <text class="p" x="365" y="299">Width 1.5W, height 1.5H</text>
+  <text class="p" x="696" y="299">Width 1.5W, height H</text>
+  <text class="note" x="18" y="362">A → B preserves all corresponding length ratios. A → C does not. Shapes are first-party illustrative models, not official figures.</text>
+</svg>

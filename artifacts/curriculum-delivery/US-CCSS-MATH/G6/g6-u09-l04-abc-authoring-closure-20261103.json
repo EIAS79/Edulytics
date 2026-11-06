@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "recordType": "GRADE6_ORIGINAL_IM_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U09:L04",
+  "lessonOrdinal": 145,
+  "title": "Comparing Votes and Supermajority Rules",
+  "recordedAtUtc": "2026-11-03T20:50:04.146576+00:00",
+  "sourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\9\\4",
+  "sourceEdition": "Original OUR/IM 6-8 first edition 2017-2019 CC BY4.0; AccessIM v360 excluded",
+  "originalSourceSha256": {
+    "teacherPreparation": "3437d1bd39b5b33e4610d490acb391519f32f3b4d0bd41ea404dfff79fce5a9a",
+    "teacherLesson": "3e799a5dc92ab6f7c4c9468512f5e76440d8b5a175045e8e915181ab191542b6",
+    "teacherPractice": "SOURCE_ABSENT_IN_ORIGINAL_ARCHIVE_NO_PRACTICE_HTML",
+    "studentLesson": "f7561ea5f03ddab032e9d6fc5cd792a2dc11f56cefe1b16b92a495b28596b6ae"
+  },
+  "sourceTasks": [
+    {
+      "id": "4.1",
+      "expectation": "Which Was Yessier? poetry classA24/16 vs classB18/9",
+      "coverage": "SOURCE_EXACT_RATIO_MATH_AND_TEACHER_LANGUAGE"
+    },
+    {
+      "id": "4.2",
+      "expectation": "Which Class Voted Purpler? A26yes14no B31yes19no",
+      "coverage": "SOURCE_PERCENT_COMPARISON"
+    },
+    {
+      "id": "4.3",
+      "expectation": "Supermajorities: 2/3 of240 and55% of240",
+      "coverage": "SOURCE_EXACT_THRESHOLD_MATH"
+    },
+    {
+      "id": "4.4",
+      "expectation": "Best Restaurant: 25% subscribers20% vote80% of voters favor",
+      "coverage": "SOURCE_NESTED_PERCENTAND_SAMPLING_RUBRIC"
+    },
+    {
+      "id": "SOURCE_PRACTICE",
+      "expectation": "No original standalone practice.html in optional Unit9 Lesson4",
+      "coverage": "FIRST_PARTY_SELECTED_PERCENT_MATH"
+    },
+    {
+      "id": "SOURCE_COOLDOWN",
+      "expectation": "No numbered original Cool-down",
+      "coverage": "INDEPENDENT_EDULYTICS_REFLECTION"
+    }
+  ],
+  "firstPartyWorkmat": "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u09-l04-vote-fractions-supermajority-workmat.html",
+  "originalSourceArtworkCopied": false,
+  "teacherReviewRequired": true,
+  "sourceOriginalStandalonePracticeExists": false,
+  "sourceOriginalNumberedCoolDownExists": false,
+  "firstPartyNumericPracticeSeparateFromOpenProject": true,
+  "ownerAuthorizedCooldownSubstitute": true,
+  "originalCooldownText": "SOURCE_ABSENT_NO_NUMBERED_COOLDOWN",
+  "selectedPractice": {
+    "lessonCode": "PED:US-CCSS-MATH:G6:U09:L04",
+    "families": [
+      "usccss.g6.u09.l04.first_party_two_choice_voting_math",
+      "usccss.g6.u09.l04.first_party_supermajority_and_sampling_logic"
+    ]
+  },
+  "testsFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit9Lesson4SelectedPracticeTests.cs",
+  "testStatus": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ci": "NOT_RUN",
+  "readyForStageD": true,
+  "gradeLabel": "ready for stage D",
+  "ownerAcademicApproval": true,
+  "ownerPublicationPermission": true,
+  "publisherSourceTextParity100": false,
+  "reviewComplete2021MarkerAdded": false,
+  "noOverclaim": "Source-grounded lesson and first-party Cool-down authored; teacher-scored diagrams and real app/persistence/CI not verified."
+}

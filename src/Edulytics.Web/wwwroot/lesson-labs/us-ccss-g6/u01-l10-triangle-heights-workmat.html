@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade 6 U01:L10 — corresponding triangle heights, original Edulytics workmat</title>
+<style>
+:root{color-scheme:light; font-family:system-ui,Arial,sans-serif}
+body{max-width:980px;margin:auto;padding:18px;color:#182133;line-height:1.5}
+h1,h2{line-height:1.25} .notice{background:#eef3f9;padding:12px;border-left:4px solid #345b89}
+section{margin-top:18px;border-top:1px solid #b4bdcc;padding-top:12px}
+.diagram{width:100%;max-width:690px;border:1px solid #9baabe;display:block}
+fieldset{display:flex;gap:14px;flex-wrap:wrap;border:1px solid #a8b6c7;padding:12px}
+label{display:block;max-width:250px} input{width:7em;padding:7px;margin:4px 0;display:block}
+button{padding:8px 14px;cursor:pointer}
+.output{display:block;padding:12px;min-height:1.2em}
+.review{background:#f5f7fb;padding:12px}
+@media print{button{display:none}body{padding:0}.notice{border-left:2px solid #333;background:white}.diagram{max-width:610px}}
+</style>
+</head>
+<body>
+<h1>Grade 6 · Unit 1 · Lesson 10 — Bases and Heights of Triangles</h1>
+<p class="notice"><strong>Edulytics original first-party workmat</strong>, aligned to the original OUR/IM 6–8 lesson 10.1–10.3. This does not reproduce the publisher's 10.4 Cool-down or original diagrams. Figures and tasks here are independently authored. Paper drawings and explanations are assessed by a teacher, not automatically by the number checker.</p>
+<section aria-labelledby="height-lab">
+<h2 id="height-lab">10.2 — A different perpendicular height for each base</h2>
+<p>Print or copy the figure. For each choice <strong>a</strong>, <strong>b</strong> and <strong>c</strong>, mark that side as the base and draw its matching 90° height from the opposite vertex to the base line. Extend the base line when necessary. Use an index card's right-angle corner as the construction tool.</p>
+<svg class="diagram" role="img" aria-labelledby="tri-title tri-desc" viewBox="0 0 680 265" xmlns="http://www.w3.org/2000/svg">
+<title id="tri-title">Three identical triangle copies, each with a different side selected as base</title>
+<desc id="tri-desc">Each triangle has vertices (25,180),(170,180),(100,38) in its own panel. First panel marks the horizontal bottom side a. Second marks the right-slant side b. Third marks the left-slant side c. Students construct a separate perpendicular height for each.</desc>
+<g fill="none" stroke="#263c5a" stroke-width="2.7">
+<path d="M25 195 L170 195 L100 38 Z"/>
+<path d="M250 195 L395 195 L325 38 Z"/>
+<path d="M475 195 L620 195 L550 38 Z"/>
+</g>
+<g fill="#1260a6" stroke="#1260a6" stroke-width="5">
+<path d="M25 195 L170 195"/><path d="M395 195 L325 38"/><path d="M550 38 L475 195"/>
+</g>
+<g font-size="18" font-family="system-ui" fill="#182133">
+<text x="90" y="226">a</text><text x="370" y="115">b</text><text x="492" y="111">c</text>
+<text x="10" y="252">Base a</text><text x="235" y="252">Base b</text><text x="460" y="252">Base c</text>
+</g>
+</svg>
+<p>Teacher check: each chosen side is a real triangle side; the height is perpendicular to the <em>same chosen side</em>, reaches the opposite-vertex line, and is not simply a slanted edge.</p>
+</section>
+<section aria-labelledby="outside-height">
+<h2 id="outside-height">An obtuse triangle — the height may be outside</h2>
+<svg class="diagram" role="img" aria-labelledby="obtuse-title obtuse-desc" viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg">
+<title id="obtuse-title">Obtuse triangle with an exterior corresponding perpendicular height</title>
+<desc id="obtuse-desc">Chosen horizontal base from (110,190) to (310,190), opposite vertex at (45,48), with the base line extended left from 110 to 45. Dashed height connects (45,48) to (45,190) at 90 degrees outside the triangle.</desc>
+<path d="M110 190 L310 190 L45 48 Z" fill="#def0fb" stroke="#264a74" stroke-width="3"/>
+<path d="M45 190 H110" stroke="#264a74" stroke-dasharray="6 5" stroke-width="2"/>
+<path d="M45 48 V190" stroke="#a63332" stroke-dasharray="7 4" stroke-width="3"/>
+<path d="M45 177 H58 V190" fill="none" stroke="#a63332" stroke-width="1.8"/>
+<g font-family="system-ui" font-size="15" fill="#172c49"><text x="183" y="215">chosen base</text><text x="8" y="119">height</text><text x="60" y="27">opposite vertex</text></g>
+</svg>
+<p>Use the same perpendicular-distance rule when the altitude meets an extension of the base rather than the segment itself. Explain why a long diagonal side is not automatically the height.</p>
+</section>
+<section aria-labelledby="practice-check">
+<h2 id="practice-check">Numerical source-skill checks</h2>
+<p>These values exercise the original lesson's stated skills without copying the publisher's protected teacher answers. Numeric feedback does not replace teacher scoring.</p>
+<form id="number-check">
+<fieldset>
+<label for="q-warmup">10.1 — Area of a triangle with base 6 and perpendicular height 4 (square units)
+<input required id="q-warmup" inputmode="decimal" autocomplete="off"></label>
+<label for="q-p2c">Practice 2 figure C — Base 3 and height 5 (square units)
+<input required id="q-p2c" inputmode="decimal" autocomplete="off"></label>
+<label for="q-p5">Practice 5 — Shaded six-sided region in a 6 by 5 enclosing rectangle, with 12 square units outside (square units)
+<input required id="q-p5" inputmode="decimal" autocomplete="off"></label>
+</fieldset>
+<button type="submit">Check numbers</button>
+<output id="feedback" class="output" aria-live="polite"></output>
+</form>
+</section>
+<section aria-labelledby="cooldown">
+<h2 id="cooldown">Edulytics independent Cool-down</h2>
+<p>Construct a non-right or obtuse triangle of area <strong>12 square units</strong>. Choose a base of <strong>6 units</strong> and find the required perpendicular height. Draw that height, show a right-angle mark even when it falls outside the triangle, and explain why different slants can have identical areas. This task is <strong>not</strong> the original publisher 10.4 "Stretched Sideways" text.</p>
+<div class="review"><strong>Teacher rubric:</strong> 1. Triangle is non-right if the student claims so. 2. Base of 6 and matching perpendicular height of 4 are labeled, with correct location or extension. 3. Area is 6 × 4 ÷ 2 = 12 square units. 4. Student explains the corresponding base-height relationship and equal area across different slants. Numerical feedback alone cannot certify points 1, 2 or 4.</div>
+<p>Printed-drawing / written explanation:</p>
+<div style="min-height:170px;border:1px dashed #7f91a8" aria-label="Blank workspace for triangle drawing and explanation"></div>
+</section>
+<button id="print" type="button">Print for teacher review</button>
+<script>
+"use strict";
+document.getElementById("number-check").addEventListener("submit",function(event){
+  event.preventDefault();
+  const fields=["q-warmup","q-p2c","q-p5"],expected=[12,7.5,18];
+  const checked=fields.map((id,i)=>{
+    const raw=document.getElementById(id).value.trim();
+    if(!/^(?:0|[1-9]\d*)(?:\.\d+)?$/.test(raw))return false;
+    return Number.isFinite(Number(raw))&&Number(raw)===expected[i];
+  });
+  const n=checked.filter(Boolean).length;
+  document.getElementById("feedback").textContent=
+    n===3?"3/3 numeric checks correct. Teacher must still evaluate the drawings and written explanations.":
+    n+"/3 numeric checks correct. Recheck the other base-height pairs and shaded area. Teacher reviews the constructions.";
+});
+document.getElementById("print").addEventListener("click",()=>window.print());
+</script>
+</body>
+</html>

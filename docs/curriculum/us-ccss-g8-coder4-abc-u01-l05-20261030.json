@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
+  "sourceLessonCode": "8.1.5",
+  "title": "Coordinate Moves",
+  "startUtc": "2026-10-30T12:14:52.240314+00:00",
+  "finishUtc": "2026-10-30T12:14:52.275329+00:00",
+  "elapsedSeconds": 0.035015,
+  "reviewer": "Coder 4 (course content and math); no owner runtime certification",
+  "sourceEditionAndRights": "2017-2019 Open Up Resources/Illustrative Mathematics CC BY 4.0, independent Edulytiks first-party adaptation",
+  "sourcePaths": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\5\\index.html",
+      "sha256": "a38464d86adf5bc5e77687b367fbb36506dafed552114be57737528275c6e996"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\5\\index.html",
+      "sha256": "582974e59731c0ec5861d3ddc422b1fd8440227a3404f2d260f68c9addc20ef7"
+    },
+    "teacherPreparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\5\\preparation.html",
+      "sha256": "7428ebe152408c887e62a5b4de2e575360148ec7d6285eacb2abc42a3096fe00"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.3"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.3"
+    }
+  ],
+  "blueprintExtraRoles": [],
+  "sourceActivityTitles": [
+    "5.1: Translating Coordinates",
+    "5.2: Reflecting Points on the Coordinate Plane",
+    "5.3: Transformations of a Segment"
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceActivity": "5.1 Translating Coordinates",
+      "sourceObjective": "Select all correct translations between two triangles",
+      "firstPartyCorrection": "Original four vector cards, same correct/wrong alternatives as source numerical task"
+    },
+    {
+      "sourceActivity": "5.2 Reflecting Points on the Coordinate Plane",
+      "sourceObjective": "Reflect coordinate points over x- and y-axes, label images",
+      "firstPartyCorrection": "First-party original four-column reflection table with coordinate checks"
+    },
+    {
+      "sourceActivity": "5.3 Transformations of a Segment",
+      "sourceObjective": "Rotate a segment around endpoints and origin, distinguish centers",
+      "firstPartyCorrection": "Independent constructed A/B segment with C/D/E/F and exact center-aware rotation"
+    },
+    {
+      "sourceActivity": "5.4 teacher Cool-down - Rotation or Reflection",
+      "sourceObjective": "Teacher-only source assessment inaccessible",
+      "firstPartyCorrection": "Original two-image classification with 8-point teacher rubric"
+    }
+  ],
+  "independentFirstPartyChanges": {
+    "newExplanationCount": 5,
+    "nativeVisualKindsAdded": [
+      "ShapeDecomposition",
+      "RatioTable",
+      "RatioTable"
+    ],
+    "existingWorkedExamplesPreserved": 3,
+    "existingPrimaryVisualRetained": true,
+    "newCoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "practiceContract": {
+    "officialOutcome": "CCSS:8.G.A.3",
+    "staticRuleId": "ccss-transformations",
+    "candidateFamily": "transformations",
+    "machine": {
+      "kind": "coordinate_rotation_ccw90_nonorigin",
+      "start": [
+        1,
+        1
+      ],
+      "center": [
+        3,
+        1
+      ],
+      "degrees": 90,
+      "expected": [
+        3,
+        -1
+      ],
+      "correct": [
+        "(3,-1)",
+        "3,-1",
+        "(3.0,-1.0)"
+      ],
+      "wrong": [
+        "(3,3)",
+        "(-1,1)"
+      ],
+      "invalid": [
+        "NaN",
+        "(3,-1,4)",
+        "",
+        null
+      ]
+    },
+    "teacherRubric": {
+      "maxPoints": 8,
+      "perCriterionScore": [
+        0,
+        1,
+        2
+      ],
+      "criteria": [
+        "Distinguishes rotation from reflection using corresponding points and orientation",
+        "Uses correct center or mirror line with a mathematically valid rule",
+        "Correctly labels diagram vertices and preserves lengths",
+        "Explains source-aligned reasoning rather than only guessing a coordinate"
+      ],
+      "autoGradeFreeResponse": false
+    },
+    "exactLessonReadyVerifiedRuntime": false,
+    "resolverPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeCapabilityResolver.cs",
+    "registrySearch": "No literal U01 lesson READY_VERIFIED contract located by git grep in src/Edulytics.Core/Mathematics/Practice at baseline fcb3d059; static outcome map is not runtime capability",
+    "sharedFilesEdited": false
+  },
+  "mathOracleIndependentCases": {
+    "vector": [
+      4,
+      2
+    ],
+    "translationPairs": [
+      [
+        [
+          -3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          -4,
+          -3
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    ],
+    "xAxisPairs": [
+      [
+        [
+          13,
+          10
+        ],
+        [
+          13,
+          -10
+        ]
+      ],
+      [
+        [
+          13,
+          -20
+        ],
+        [
+          13,
+          20
+        ]
+      ],
+      [
+        [
+          13,
+          570
+        ],
+        [
+          13,
+          -570
+        ]
+      ]
+    ],
+    "yAxisPair": [
+      [
+        3,
+        2
+      ],
+      [
+        -3,
+        2
+      ]
+    ],
+    "segment": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "rotAboutB": [
+      3,
+      -1
+    ],
+    "rotAboutA": [
+      1,
+      3
+    ],
+    "originCW": [
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        -3
+      ]
+    ]
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "dependency": {
+    "stage": "C",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
+    "owner": "Supervisor 2 (central Practice contract owner)",
+    "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs; src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "reason": "No verified lesson-scoped exact transformations generator/grader and associated teacher-scored pathway for this lesson; numeric oracle is candidate only, do not weaken fail-closed.",
+    "return_queue": true,
+    "sharedFixRequestedInSeparateFile": false
+  },
+  "verification": {
+    "courseOwnedMathOracle": "PASS_3_INDEPENDENT_TESTS",
+    "testCommand": "node --test tests/academic-us-ccss-g8-coder4-u01-l05-abc.test.cjs",
+    "exitCode": 0,
+    "passed": 3,
+    "failed": 0,
+    "newSHAStatus": "TESTED_WORKTREE_BEFORE_COMMIT",
+    "authBrowser": "NOT_RUN_STAGE_D",
+    "dbOrSchoolIsolation": "NOT_RUN_STAGE_D",
+    "CI": "NOT_RUN_MANUAL",
+    "stageD": "NOT_RUN",
+    "testedParentHeadSHA": "310586f3af7781c0d3f0fbc7af86df976134216a",
+    "testedContentSHA256": "0b4cc90f33d8190828fd1636903ea1c2d89003d0f176f30e08699b6586f8d202",
+    "testSourceSHA256": "92e9ea4e59a8197fa557e0af4b8fcb61de970dc65e7c890771341284f0837ad3",
+    "lastRunAtUtc": "2026-10-30T12:15:42.213936+00:00"
+  },
+  "headBeforeChange": "HEAD_FROM_PREVIOUS_CANONICAL_COMMIT",
+  "nextCanonicalLesson": "PED:US-CCSS-MATH:G8:U01:L06",
+  "nextAllowed": true,
+  "counters": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 4,
+    "B_CLOSED": 5,
+    "C_PREPARED": 5,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 5,
+    "REMAINING": 131
+  },
+  "approvedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l05-academic-assessment-contract-20261030.json",
+  "strictSequentialUnitStatus": "UNIT_IN_PROGRESS",
+  "academicClosedAtUtc": "2026-10-30T13:54:40.761629+00:00",
+  "currentCourseABCVerification": "Course-owned exact candidate + teacher 8-point rubric; production fail-closed unchanged",
+  "runtimeStageD": {
+    "status": "NOT_RUN",
+    "owner": "Supervisor 2 single-writer"
+  }
+}

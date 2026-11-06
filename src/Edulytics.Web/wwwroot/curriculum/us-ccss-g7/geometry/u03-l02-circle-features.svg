@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 390" role="img" aria-labelledby="title desc">
+  <title id="title">Circle center radius diameter and circumference</title>
+  <desc id="desc">A first-party circle centered at O. Segment OR is a radius. Segment AB passes through O from one side of the circle to the other and is a diameter. The boundary is labeled circumference.</desc>
+  <rect width="680" height="390" fill="white"/>
+  <circle cx="320" cy="190" r="125" fill="none" stroke="currentColor" stroke-width="4"/>
+  <circle cx="320" cy="190" r="5" fill="currentColor"/>
+  <text x="330" y="184" font-size="20">O</text>
+  <line x1="320" y1="190" x2="425" y2="120" stroke="currentColor" stroke-width="3"/>
+  <circle cx="425" cy="120" r="5" fill="currentColor"/>
+  <text x="435" y="116" font-size="20">R</text>
+  <text x="365" y="145" font-size="18">radius r</text>
+  <line x1="195" y1="190" x2="445" y2="190" stroke="currentColor" stroke-width="3"/>
+  <circle cx="195" cy="190" r="5" fill="currentColor"/><circle cx="445" cy="190" r="5" fill="currentColor"/>
+  <text x="176" y="184" font-size="20">A</text><text x="455" y="184" font-size="20">B</text>
+  <text x="255" y="220" font-size="18">diameter d = 2r</text>
+  <path d="M210 95 Q320 28 430 95" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="250" y="58" font-size="18">circumference</text>
+  <text x="70" y="350" font-size="20">Every point on the circle is the same distance r from center O.</text>
+</svg>

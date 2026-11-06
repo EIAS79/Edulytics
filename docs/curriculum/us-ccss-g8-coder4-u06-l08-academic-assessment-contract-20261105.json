@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U06:L08",
+  "title": "Analyzing Bivariate Data",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\6\\8\\index.html",
+      "sha256": "f50be4f0c1ddaa22910cf920ac4ff753f285f23a3cc39ea4bab78eddbc3fa7fc"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\6\\8\\preparation.html",
+      "sha256": "17eb567b47c68da400ba2e74ba4d880b9fdcbeedc9be17943a25e5abfdd4422c"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\6\\8\\index.html",
+      "sha256": "40069bf122f47178cec4543c5bcd77027ee89e048017f298440a2f20a205a909"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\6\\8\\practice.html",
+      "sha256": "97ba62621f318bc77535bdcd9592894cb5e5b33b3ec6106a6970e240eccd9fde"
+    }
+  },
+  "sourceReview": {
+    "activityHeadings": [
+      "8.1: Speed vs. Step Length",
+      "8.2: Animal Brains",
+      "8.3: Equal Body Dimensions"
+    ],
+    "practiceProblemCount": 3,
+    "teacherFigureTagCount": 40,
+    "studentFigureTagCount": 23,
+    "requiredMaterialsSectionPresent": true,
+    "accessIMv360Used": false,
+    "comparisonScope": "OBJECTIVES_ACTIVITIES_EXAMPLES_PRACTICE_FIGURES_TEACHER_GUIDANCE_REVIEWED_LOCALLY; FIRST_PARTY_ASSESSMENT_ADDED_ONLY_WHERE_NEEDED"
+  },
+  "learningGoals": [
+    "Goal: evaluate a bivariate data set through plots, trend, outliers and limitations, and use evidence to support a concise statistical conclusion.",
+    "A strong analysis identifies both variables, sample size, general direction, unusual observations and whether the conclusion concerns association or cause. Different scales and missing measurements can distort appearance."
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "8.1: Speed vs. Step Length",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.2: Animal Brains",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "8.3: Equal Body Dimensions",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 3,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u06-l08-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u06-l08-selected-first-party-paper.html",
+    "sha256": "3f913632c69d224af5f38a8267a3ddb876a7f32fed2b308e26d785be58bae189",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Residual is 13, far above the model; in an otherwise tight data set this would be an obvious candidate outlier requiring investigation.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Representations keep paired data, axes, variables, and units consistent with the context.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Statistical conclusions distinguish association/model evidence from causal or universal claims.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 6,
+  "mathFixtures": {
+    "x": 3,
+    "obs": 20,
+    "pred": 7,
+    "resid": 13
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

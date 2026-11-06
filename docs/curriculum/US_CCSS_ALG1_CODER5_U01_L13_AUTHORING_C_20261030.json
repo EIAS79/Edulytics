@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
+  "contentVersion": "alg1-u01-l13-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\13\\preparation.html",
+      "sha256": "5d28360e2f12b3cd6b8198a7c9858d9c373e6e4d1479dd93ba689f76a3955da2"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\13\\index.html",
+      "sha256": "45f2325815447c4104c1ff71442b0dadbb7f39ed939eec6bec68b712d8455d7e"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\13\\index.html",
+      "sha256": "d0ddd813ca5c1f6bec9b66c0063e509dc9dcf0f3f0cac9165bbf91beaba06420"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\13\\practice.html",
+      "sha256": "d223d606d0234ea972895a3d6f1cb13d83228cdf8d2e5042230baf80bde0e1d0"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 BuildingOn",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Partner info-gap: request missing context and compare two hypothetical groups by SD.",
+  "practice": "Both means13; compute SD sqrt5 and sqrt20, plus shifting all observations by 5.",
+  "mathFixture": [
+    13,
+    13,
+    2.23606797749979,
+    4.47213595499958
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Partner info-gap: request missing context and compare two hypothetical groups by SD.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Both means13; compute SD sqrt5 and sqrt20, plus shifting all observations by 5.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        13,
+        13,
+        2.23606797749979,
+        4.47213595499958
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Both means13; compute SD sqrt5 and sqrt20, plus shifting all observations by 5.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Correct spreads",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Information requests and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "No fabricated partner turns",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}

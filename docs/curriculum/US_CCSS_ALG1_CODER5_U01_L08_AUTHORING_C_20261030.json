@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08",
+  "contentVersion": "alg1-u01-l08-sequential-source-abc-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local HTML, CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\8\\preparation.html",
+      "sha256": "5a41126ea96c75b0312e73779e590640a505fa55a81c641390fe53725b73116b"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\8\\index.html",
+      "sha256": "028a1dfdc2a8036644704a56f97e0280bb1d0b9f9c747c7232ce3f2b93c4be9d"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\8\\index.html",
+      "sha256": "a45ae014f1103ca2a43a7686d970ef9395464681739223ea7d72c7d6bdbd3d81"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\8\\practice.html",
+      "sha256": "48c6d0834e382c118bcc155de2304efce5d18ee18e1e315d5cd319a04bc77aed"
+    }
+  },
+  "sourceRoles": [
+    "Optional spreadsheet sequence; no numbered Addressing standard specified in local teacher preparation"
+  ],
+  "sourceToContentCrosswalk": [
+    "8.1 equivalent ratios",
+    "8.2 cell-click birthday arithmetic, symbolic month-day verification without collecting real DOB",
+    "8.3 drag-fill relative references and recursive sequence",
+    "P1 actual fill-down, P2 tenth-pattern explanation, P3 month-day formulas, P4 arithmetic, prior center/spread"
+  ],
+  "task": "relative references and hypothetical birthday formula",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "8.1 equivalent ratios",
+        "8.2 cell-click birthday arithmetic, symbolic month-day verification without collecting real DOB",
+        "8.3 drag-fill relative references and recursive sequence",
+        "P1 actual fill-down, P2 tenth-pattern explanation, P3 month-day formulas, P4 arithmetic, prior center/spread"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "spreadsheet-formula",
+          "maxPoints": 2,
+          "evidence": "correct references and safe syntax"
+        },
+        {
+          "criterion": "arithmetic-model",
+          "maxPoints": 2,
+          "evidence": "correct checked numerical interpretation"
+        },
+        {
+          "criterion": "dynamic-behavior",
+          "maxPoints": 2,
+          "evidence": "accurate change-propagation explanation, labelled simulated if not run"
+        },
+        {
+          "criterion": "reasoned-verification",
+          "maxPoints": 2,
+          "evidence": "units/constraints, justified counterexample or independent check"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "relative copying",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "birthday algebra without identity",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "ratios and recursion",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        409,
+        1231,
+        101,
+        -25
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        409,
+        1231,
+        101,
+        -25
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 925 342" role="img" aria-labelledby="g7u01l01-title g7u01l01-desc">
+  <title id="g7u01l01-title">What are scaled copies?</title>
+  <desc id="g7u01l01-desc">Three first-party coordinate-based F polygons with identical unit length on the page. Original has vertices (0,0),(4,0),(4,1),(1,1),(1,2),(3,2),(3,3),(1,3),(1,5),(0,5). Its correct scaled copy has scale factor 2: it doubles both x and y, including every vertical segment. The stretched non-copy doubles only x, so the horizontal top doubles but the vertical spine does not. The outlines are not publisher artwork.</desc>
+  <style>
+    .panel{fill:#fff;stroke:#555;stroke-width:1.5}.shape{fill:#dcecf3;stroke:#152d40;stroke-width:2.5;stroke-linejoin:round}
+    .bad{fill:#f0f0f0;stroke:#661a1a;stroke-width:2.5;stroke-dasharray:6 3;stroke-linejoin:round}
+    .heading{fill:#101820;font:bold 17px system-ui,sans-serif}.minor{fill:#263746;font:13px system-ui,sans-serif}
+    .caption{fill:#101820;font:15px system-ui,sans-serif}.math{fill:#101820;font:bold 16px system-ui,sans-serif}
+    .line{stroke:#101820;stroke-width:2}.dot{fill:#101820}
+  </style>
+  <rect width="925" height="342" fill="#fff"/>
+  <text x="24" y="29" class="heading">What are scaled copies?</text>
+  <rect class="panel" x="20" y="48" width="260" height="255" rx="10" /><text class="heading" x="34" y="73">Original F</text><text class="minor" x="34" y="92">unit grid: 1 unit = 16 px</text><rect class="panel" x="330" y="48" width="260" height="255" rx="10" /><text class="heading" x="344" y="73">Uniform scale copy</text><text class="minor" x="344" y="92">factor 2 for both x and y</text><rect class="panel" x="640" y="48" width="260" height="255" rx="10" /><text class="heading" x="654" y="73">Horizontal stretch</text><text class="minor" x="654" y="92">x factor 2, y factor 1</text><polygon class="shape" points="70,116 134,116 134,132 86,132 86,148 118,148 118,164 86,164 86,196 70,196" /><polygon class="shape" points="370,116 498,116 498,148 402,148 402,180 466,180 466,212 402,212 402,276 370,276" /><polygon class="bad" points="680,116 808,116 808,132 712,132 712,148 776,148 776,164 712,164 712,196 680,196" /><text x="35" y="319" class="math">Top: 4, spine: 5</text><text x="345" y="319" class="math">Top: 8, spine: 10</text><text x="655" y="319" class="math">Top: 8, spine: 5</text>
+</svg>

@@ -1,0 +1,386 @@
+name: Grade 8 Stage D 131-Lesson Diagnostics
+
+on:
+  push:
+    branches: [curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029]
+    paths:
+      - '.github/workflows/us-ccss-g8-stage-d.yml'
+      - 'tools/curriculum/g8-stage-d-inventory.cjs'
+      - 'tools/phase29/g8_stage_d_authenticated_https.py'
+      - 'tools/phase29/g8_stage_d_visual_https.py'
+      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G8/**'
+      - 'docs/curriculum/us-ccss-g8-**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade8-our-2017.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g8-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml'
+      - 'tests/academic-us-ccss-g8-**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2PilotTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2RolloutTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/SupportingLessonPracticeR3Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4RichV2Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4V11SyntheticPracticeServiceTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsGrade8IntegerExponentOutcomeTests.cs'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g8-stage-d.yml'
+      - 'tools/curriculum/g8-stage-d-inventory.cjs'
+      - 'tools/phase29/g8_stage_d_authenticated_https.py'
+      - 'tools/phase29/g8_stage_d_visual_https.py'
+      - 'tools/Edulytics.CiFixtures/MeetingDemoProvisioner.cs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G8/**'
+      - 'docs/curriculum/us-ccss-g8-**'
+      - 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade8-our-2017.lesson-blueprint.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g8-phase29-v1.lesson-content-pack.json'
+      - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Core/Practice/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/Practice/**'
+      - 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml'
+      - 'tests/academic-us-ccss-g8-**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2PilotTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/RichLessonContentV2RolloutTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/SupportingLessonPracticeR3Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4RichV2Tests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsCcssGrade8Coder4V11SyntheticPracticeServiceTests.cs'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/UsGrade8IntegerExponentOutcomeTests.cs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: g8-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inventory:
+    name: g8-d-inventory-131
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Bind exact candidate SHA
+        env:
+          CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify 131/131 handoffs, canonical scope, content pack and lesson-test mapping
+        run: |
+          set -euo pipefail
+          node tools/curriculum/g8-stage-d-inventory.cjs verify
+          mkdir -p /tmp/g8-stage-d
+          node tools/curriculum/g8-stage-d-inventory.cjs inventory > /tmp/g8-stage-d/inventory.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-131-inventory
+          path: /tmp/g8-stage-d/inventory.json
+          if-no-files-found: error
+          retention-days: 30
+
+  source-shards:
+    name: g8-d-${{ matrix.batch }}-lesson-contracts
+    needs: inventory
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute exactly the A-B-C-authored test mapped to every lesson in this shard
+        shell: bash
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          mapfile -t files < <(node tools/curriculum/g8-stage-d-inventory.cjs shard "$BATCH")
+          test "${#files[@]}" -gt 0
+          printf '%s\n' "${files[@]}" > "g8-stage-d-results/$BATCH-files.txt"
+          node --test "${files[@]}" | tee "g8-stage-d-results/$BATCH-node.tap"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-${{ matrix.batch }}-lesson-contract-results
+          path: g8-stage-d-results/
+          if-no-files-found: error
+          retention-days: 30
+
+  crosscut-node:
+    name: g8-d-crosscut-source-math-visual-regressions
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute current Grade 8 cross-cutting source, math and visual contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          # Per-lesson tests are executed exactly once by D1/D2/D3 shards above.
+          # P0/V7/V8/V9 snapshot-state tests remain historical evidence and are
+          # intentionally not treated as assertions about the final A-B-C state.
+          files=(
+            tests/academic-us-ccss-g8-coder4-v10-math-visuals.test.cjs
+            tests/academic-us-ccss-g8-coder4-v11-original-svg.test.cjs
+            tests/academic-us-ccss-g8-coder4-v12-source-geometry.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-batch.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-extended.test.cjs
+            tests/academic-us-ccss-g8-coder4-v13-u01-final-source-spot.test.cjs
+          )
+          for file in "${files[@]}"; do test -f "$file"; done
+          node --test "${files[@]}" | tee g8-stage-d-results/g8-crosscut-node.tap
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-crosscut-node-results
+          path: g8-stage-d-results/
+          if-no-files-found: error
+          retention-days: 30
+
+  dotnet-build-math:
+    name: g8-d-dotnet-build-and-math
+    needs: inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore and build affected test graph
+        run: |
+          set -euo pipefail
+          dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+          dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: Execute Grade 8 Rich V2, Practice routing and math regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p g8-stage-d-results
+          FILTER='FullyQualifiedName~UsCcssGrade8|FullyQualifiedName~UsGrade8IntegerExponentOutcomeTests|FullyQualifiedName~SupportingLessonPracticeR3Tests|FullyQualifiedName~RichLessonContentV2PilotTests|FullyQualifiedName~RichLessonContentV2RolloutTests'
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             -c Release --no-build             --filter "$FILTER"             --logger 'trx;LogFileName=g8-dotnet.trx'             --results-directory g8-stage-d-results
+          test -s g8-stage-d-results/g8-dotnet.trx
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-dotnet-math-results
+          path: g8-stage-d-results/
+          if-no-files-found: warn
+          retention-days: 30
+
+  technical-summary:
+    name: g8-d-d1-d2-technical-summary
+    if: always()
+    needs: [inventory, source-shards, crosscut-node, dotnet-build-math]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Fail closed unless all D1/D2 technical jobs passed
+        env:
+          INVENTORY: ${{ needs.inventory.result }}
+          SHARDS: ${{ needs.source-shards.result }}
+          CROSSCUT: ${{ needs.crosscut-node.result }}
+          DOTNET: ${{ needs.dotnet-build-math.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$INVENTORY" = success
+          test "$SHARDS" = success
+          test "$CROSSCUT" = success
+          test "$DOTNET" = success
+          {
+            echo 'Grade 8 D1/D2 technical diagnostics passed on this exact candidate SHA.'
+            echo 'Authenticated E2E, DB/RBAC, visual/accessibility runtime and final release gate are separate D3/D4 gates and are not granted here.'
+          } | tee g8-d1-d2-summary.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-d1-d2-technical-summary
+          path: g8-d1-d2-summary.txt
+          if-no-files-found: warn
+          retention-days: 30
+
+  authenticated-runtime:
+    name: g8-d-131-isolated-postgres-authenticated-https
+    needs: technical-summary
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: 'US-CCSS-G8'
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject production databases and bind exact Grade 8 candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTIONS" = true
+          test "$EDULYTICS_CI_REHEARSAL" = true
+          test "$EDULYTICS_CI_REHEARSAL_PROGRAMME" = US-CCSS-G8
+          test "$EDULYTICS_CLEAN_DATABASE_NAME" = edulytics_clean_ci
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          python3 -m py_compile             tools/phase29/g8_stage_d_authenticated_https.py             tools/phase29/g8_stage_d_visual_https.py             tools/phase29/b001_practice_attempt_probe.py
+          python3 tools/phase29/b001_practice_attempt_probe.py >/tmp/g8-probe-unittests.log
+      - name: Build and publish the real application into isolated PostgreSQL 18
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj             -c Release --no-restore --output /tmp/g8-d-web-publish
+          dotnet ef database update             --project src/Edulytics.Data/Edulytics.Data.csproj             --startup-project src/Edulytics.Web/Edulytics.Web.csproj             --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install isolated Chromium for Grade 8 visual checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
+      - name: Exercise real HTTPS, 131 Rich V2 lessons, RBAC, approved Practice and Assessment Builder
+        env:
+          RENDER_SERVICE_ID: ci-disposable
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rehearsal_password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$rehearsal_password"
+          export Edulytics__MeetingDemo__Password="$rehearsal_password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g8-d-fixture.log 2>&1; then
+            tail -n 100 /tmp/g8-d-fixture.log
+            exit 1
+          fi
+          grep -q MEETING_DEMO_SEED_COMPLETED /tmp/g8-d-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1             -keyout /tmp/g8-d-key.pem -out /tmp/g8-d-cert.pem             -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g8-d-identity.pfx             -inkey /tmp/g8-d-key.pem -in /tmp/g8-d-cert.pem             -passout pass:g8-local-ci-tls >/dev/null 2>&1
+          cp /tmp/g8-d-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS=https://127.0.0.1:5052
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g8-d-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=g8-local-ci-tls
+          export Edulytics__MeetingDemo__ResetAndSeed=false
+          export Edulytics__Deployment__CleanBootstrap=true
+          export ASPNETCORE_CONTENTROOT=/tmp/g8-d-web-publish
+          dotnet /tmp/g8-d-web-publish/Edulytics.Web.dll > /tmp/g8-d-web.log 2>&1 &
+          web_pid=$!
+          trap 'kill "$web_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 100); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$web_pid" 2>/dev/null; then
+              tail -n 120 /tmp/g8-d-web.log
+              exit 1
+            fi
+            sleep 3
+          done
+          test "$ready" = true
+          export G8_CANDIDATE_SHA="$(git rev-parse HEAD)"
+          if ! python3 tools/phase29/g8_stage_d_authenticated_https.py; then
+            echo G8_AUTHENTICATED_STAGE_D_FAILURE
+            tail -n 100 /tmp/g8-d-web.log
+            exit 1
+          fi
+          if ! python3 tools/phase29/g8_stage_d_visual_https.py; then
+            echo G8_CHROMIUM_STAGE_D_VISUAL_FAILURE
+            tail -n 100 /tmp/g8-d-web.log
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-isolated-authenticated-131-evidence-not-release
+          path: /tmp/g8-131-isolated-auth-https-evidence.json
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g8-d-real-9unit-chromium-mobile-desktop-spotchecks
+          path: /tmp/g8-stage-d-visual/
+          if-no-files-found: warn
+          retention-days: 30
+
+  d3-summary:
+    name: g8-d-d3-auth-db-rbac-visual-summary
+    if: always()
+    needs: [technical-summary, authenticated-runtime]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Fail closed unless D1-D3 technical jobs passed
+        env:
+          D1_D2: ${{ needs.technical-summary.result }}
+          AUTH_RUNTIME: ${{ needs.authenticated-runtime.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$D1_D2" = success
+          test "$AUTH_RUNTIME" = success
+          echo 'Grade 8 D1-D3 technical runtime is green on this candidate. Human/rights approval and final release decision remain separate.'

@@ -1,0 +1,500 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-fractions-coordinates-im2021-u03-l01-area-grids-v16-20261101",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L01",
+      "CultureCode": "en",
+      "Title": "One Piece of One Part",
+      "ExplanationParagraphs": [
+        "Lesson goal: represent and interpret a unit fraction of a unit fraction using diagrams and a single consistent whole. The original 2021 first-edition lesson begins with students' own representations, before formalizing symbolic fraction multiplication in later lessons.",
+        "Warm-up (Notice and Wonder): inspect the 2021 source photograph of a pan of macaroni and cheese; students estimate what fraction remains. The picture does NOT show an exact half. Source teacher guidance places the amount between one third and one half (about two fifths); this is a visual estimate, not a measurable equality. Ask students to justify their estimate and identify the full pan as the whole. If the original photograph cannot be displayed under its own image license, use an independently authored, explicitly approximate model rather than presenting the half-full worked-example model as a source photograph.",
+        "Activity 1 (Of What?): a pan is half full and Lin eats one third of the remaining macaroni and cheese. The public 2021 Student Facing task asks learners to DRAW their own diagram and explain how it represents the situation. First let students choose and justify a partition; compare different correct orientations. During synthesis, extend partitions through the original full pan to see that one third of one half represents one sixth. Do not require the numerical product or a particular grid orientation as the initial student response.",
+        "Activity 2 (The Same, but Different): examine TWO first-party equal-area rectangle diagrams for one fourth of one half. Diagram A partitions a rectangular whole into two vertical halves, then partitions the chosen half into four equal horizontal strips and darkens one. Diagram B partitions the same whole into two horizontal halves, divides the chosen half into four equal vertical strips and darkens one. Ask learners to explain how EACH diagram represents one quarter of one half, then extend the divisions and justify that the dark area is one eighth of the SAME original whole. These are accessible replacement constructions, not copied publisher diagrams A and B.",
+        "Source task and assessment boundary: Grade 5 Unit 3 Lesson 1 (2021) asks for self-made drawings, explanation of a third of a half, comparison of two given diagram representations for a quarter of a half, and an argument about the original whole. Teacher review is needed for drawn partitions and equivalent orientations. The original Cool-down is teacher-gated and remains unverified; use the independently authored formative exit task below instead. Student PDF and proprietary image details still need independent evidence.",
+        "Original Edulytics formative Cool-down (NOT copied from the teacher-gated 2021 assessment): A garden bed is divided into two equal halves. One half has vegetables. One fourth of that vegetable half is planted with carrots. Draw a rectangle for the WHOLE garden bed, show the partitions and shade the carrot section. What fraction of the WHOLE garden bed is carrots? Explain your drawing. Teacher-scored drawing and explanation; a number alone is insufficient. Teacher rubric is stored separately from this learner-facing prompt."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "The whole stays fixed",
+          "Definition": "The original complete object is the reference for every fraction of a fraction.",
+          "Rule": "One half of a whole is not a new whole when the final answer is requested as a fraction of the original.",
+          "Example": "One third of a half is one sixth of the full pan."
+        },
+        {
+          "Title": "Successive equal partitions",
+          "Definition": "Represent a fraction of an existing equal part by subdividing that part into more equal-sized pieces.",
+          "Rule": "If the whole is halved and a half is divided into three equal pieces, each selected piece is a sixth of the whole.",
+          "Example": "One sixth is shown by one dark part among six equal whole-pan parts."
+        },
+        {
+          "Title": "Orientation does not change fraction",
+          "Definition": "Equivalent diagrams may partition in different directions without changing covered area.",
+          "Rule": "Compare a selected piece with equal areas of the same whole, not merely the shape's orientation.",
+          "Example": "One quarter of one half occupies one eighth of the whole pan."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One third of one half",
+          "Question": "A pan is half full. A person eats one third of that half. What fraction of the full pan is eaten?",
+          "Method": "Draw the whole before partitioning the remaining half.",
+          "Steps": [
+            "Split one whole into two equal half-pan areas.",
+            "Subdivide the selected half into three equal parts.",
+            "Extend the partition across the whole: there are six equal-sized pieces in total."
+          ],
+          "Answer": "One sixth of the original full pan.",
+          "Check": "3 × (1/6) = 1/2 of the whole; teacher reviews whether the diagram actually shows the six equal parts."
+        },
+        {
+          "Title": "One fourth of one half",
+          "Question": "Explain why one fourth of one half of the same pan occupies one eighth of the whole.",
+          "Method": "Use two perpendicular equal-partition choices.",
+          "Steps": [
+            "Mark one of two equal halves of the original rectangle; do not shade the entire half as the final answer.",
+            "Partition the chosen half into four equal-area pieces; shade just one such piece.",
+            "Extend the same-size subdivisions through the other half: one shaded cell out of eight cells covering the original whole."
+          ],
+          "Answer": "One eighth of the whole pan.",
+          "Check": "Four such pieces reconstruct the half; eight reconstruct the whole."
+        },
+        {
+          "Title": "Same result, different diagrams",
+          "Question": "A learner partitions a rectangle horizontally, another vertically; both identify one quarter of the same half. Are the areas equal?",
+          "Method": "Compare the selected fraction of the original whole, not the orientation.",
+          "Steps": [
+            "In each diagram identify the original whole pan.",
+            "Check that each chosen half occupies one of two equal parts.",
+            "Check that one quarter of that half is exactly one eighth of the original."
+          ],
+          "Answer": "Yes, each dark piece has one eighth of the same total area.",
+          "Check": "Teacher examines the drawn equal partitions; a matching number alone does not prove visual equivalence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the half as a new whole in the final answer",
+          "WhyWrong": "The source asks what fraction of the original full pan is selected.",
+          "Correction": "Extend the partitions to the whole rectangle and recount all equal pieces."
+        },
+        {
+          "Mistake": "Partition the selected fraction into unequal-sized parts",
+          "WhyWrong": "A fraction counts equal parts; unequal divisions cannot establish the target value.",
+          "Correction": "Mark equal-length intervals or use a regularly spaced area grid."
+        }
+      ],
+      "SummaryPoints": [
+        "Fractions of fractions can be made visible by repeatedly partitioning equal parts of the same whole.",
+        "One third of a half is one sixth; one fourth of a half is one eighth of the original whole.",
+        "Different diagram orientations may show the same amount; a learner must justify why each piece has the claimed area.",
+        "Source: Illustrative Mathematics, first edition 2021 Grade 5 Unit 3 Lesson 1, https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-1/lesson.html; first-party Edulytiks text and area-model examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fraction of a fraction with one original whole",
+          "Description": "First-party summary of six equal-area cells covering the ORIGINAL full pan; one shaded cell is one sixth of the full pan, not one third of the half as a new whole.",
+          "Rows": [
+            {
+              "Label": "Original pan",
+              "Cells": [
+                "6 equal cells"
+              ]
+            },
+            {
+              "Label": "Half of pan",
+              "Cells": [
+                "3 cells"
+              ]
+            },
+            {
+              "Label": "One third of that half",
+              "Cells": [
+                "1 cell"
+              ]
+            },
+            {
+              "Label": "Fraction of original whole",
+              "Cells": [
+                "1/6"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Two Edulytiks-original representations of one fourth of a half",
+          "Description": "Accessible first-party alternatives to the publisher's diagrams A and B. Equal total area is assumed; in each, one of eight equal cells in the entire original rectangle is shaded. Layout changes, not the fractional amount.",
+          "Rows": [
+            {
+              "Label": "Diagram A",
+              "Cells": [
+                "2 vertical halves",
+                "chosen half quartered horizontally",
+                "1 dark cell out of 8 whole cells"
+              ]
+            },
+            {
+              "Label": "Diagram B",
+              "Cells": [
+                "2 horizontal halves",
+                "chosen half quartered vertically",
+                "1 dark cell out of 8 whole cells"
+              ]
+            },
+            {
+              "Label": "Compare",
+              "Cells": [
+                "same whole area",
+                "different line orientations",
+                "equal dark area = 1/8 whole"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original area model: one third of the remaining half (3 rows × 2 columns)",
+          "Description": "EDULYTIKS-ORIGINAL equal-area grid, not a publisher picture. The complete six-cell table is the original whole pan. LEFT column is one of two equal halves; one dark cell in its three equal parts is 1/6 of the original full pan. Dark = selected; unshaded = not selected. Read rows top to bottom.",
+          "Rows": [
+            {
+              "Label": "Top row",
+              "Cells": [
+                "■ shade",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Middle row",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Bottom row",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Diagram A: quarter of left half (4 rows × 2 columns)",
+          "Description": "EDULYTIKS-ORIGINAL schematic: divide the ORIGINAL whole into left/right equal halves, then partition the LEFT half into four equal horizontal parts. Extend the row divisions across the RIGHT half to make eight equal whole-pan cells. One dark cell = 1/8 original whole; all eight cells have equal area.",
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Cells": [
+                "■ shade",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Cells": [
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Diagram B: quarter of top half (2 rows × 4 columns)",
+          "Description": "EDULYTIKS-ORIGINAL equivalent model of the SAME original whole: divide into equal top/bottom halves, then quarter the TOP half vertically; extend all divisions across the BOTTOM half. Every cell occupies 1/8 of the whole. Diagram B changes orientation, not area; teacher checks explanations.",
+          "Rows": [
+            {
+              "Label": "Top half",
+              "Cells": [
+                "■ shade",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            },
+            {
+              "Label": "Bottom half",
+              "Cells": [
+                "□ empty",
+                "□ empty",
+                "□ empty",
+                "□ empty"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L01",
+      "CultureCode": "en",
+      "Title": "Explore the Coordinate Grid",
+      "ExplanationParagraphs": [
+        "Original IM K5 2021 G5 U07:L01 introduces numbered COORDINATE GRID, horizontal axis and vertical axis through communicating the size and POSITION of rectangles. Exact geometry is conveyed by source figures and peer discussion, not by the bare name of a rectangle.",
+        "Warm-up Notice and Wonder The Grid uses original image and teacher asks pupils to notice numbered horizontal/vertical directions. Publisher source graphic not reconstructed from numeric HTML alone; teacher must compare source picture before accepting actual shape matches.",
+        "Activity1 Can You Draw It source is three separate Draw My Shape partner rounds with SECRET publisher shape cards. Partner A describes and B sketches, then compare. Relative position, dimensions and axes all matter. The source exact card datasets are not available from plain HTML, so independent vocabulary choice is only supportive Practice, not actual card drawing verification.",
+        "Activity2 Guess Which One source has 12 labeled shapes A–L, partner A mentally chooses a shape and partner B uses YES/NO questions and elimination. Final Diego/Kiran last two source images ask for a discriminating question, whose answer depends on actual figure geometry; teacher reviews the source pictures. Do not fabricate letter/card coordinates.",
+        "Existing Rich V2 correctly describes coordinate communication and is REUSED; bounded numeric/word choices cover grid vocabulary and reasoning only, while original three-round drawings, card sorts, last-two questions and source Cool-down remain TEACHER_REVIEW_REQUIRED. Independent Edulytiks exit prompt does not recreate publisher gated material.",
+        "Source and assessment limits: independently authored Edulytiks Cool-down with teacher-reviewed drawing/explanation. Original publisher gated Cool-down, standalone student PDF and original image binaries are not individually certified. Numeric exact choices cover only eligible subskills, not the original open source tasks.",
+        "Optional previous source-aligned or independently authored extension — Lesson goal: describe the location and size of rectangles precisely enough that a partner can reproduce them. Students experience how adding grid lines and then numbered coordinate axes improves communication. Formal terms coordinate grid, horizontal axis and vertical axis are introduced, while exact coordinate plotting is not an adequate substitute for the partner construction task.",
+        "Optional previous source-aligned or independently authored extension — Warm-up: examine an independently authored empty first-quadrant grid whose horizontal and vertical axes run from zero to ten in unit intervals. Describe what the intersecting lines and numbered axes might help a student communicate.",
+        "Optional previous source-aligned or independently authored extension — Activity 1 — three-round Draw My Shape: one learner chooses an axis-aligned rectangle and describes it without showing the picture, while a partner reconstructs it. Round 1 uses an ungridded page, round 2 a square unit grid, and round 3 a numbered coordinate grid. Repeat with another rectangle and compare drawings. Observe which directions become unambiguous as grid labels appear.",
+        "Optional previous source-aligned or independently authored extension — Activity 2 — Guess Which One: display several rectangles of varying widths, heights and locations in the first quadrant. The partner who does not know the selected rectangle may ask only yes-or-no questions. Include location-specific questions about the horizontal and vertical numbered axes, not only questions about size. For an original example, a rectangle with opposite corners (2, 1) and (6, 4) has width 4 and height 3 and can be distinguished from another 4-by-3 rectangle translated to a different position.",
+        "Optional previous source-aligned or independently authored extension — Assessment boundary: drawing, interpreting a partner's description and asking diagnostic questions are teacher-reviewed. An automatically graded question asking only for an isolated coordinate does not establish mastery of describing a full rectangle. The source's three-round card game and original card art are not copied; original Edulytiks rectangle descriptions are provided as accessible substitutes. The publisher's gated Cool-down is not claimed verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Coordinate grid",
+          "Definition": "Two perpendicular numbered axes and a lattice of intersecting grid lines that describe spatial position.",
+          "Rule": "A complete location description identifies the horizontal and vertical positions, not merely a shape's width.",
+          "Example": "A rectangle may span horizontal coordinates 2 to 6 and vertical coordinates 1 to 4."
+        },
+        {
+          "Title": "Horizontal and vertical axes",
+          "Definition": "The horizontal x-axis runs left-right; the vertical y-axis runs up-down from the origin.",
+          "Rule": "Count a horizontal position along x and a vertical position along y; use the correct numbered scale.",
+          "Example": "The point (2, 1) is 2 units across and 1 unit up from the origin."
+        },
+        {
+          "Title": "Reconstructing a rectangle",
+          "Definition": "A figure is determined by its location and dimensions relative to the grid.",
+          "Rule": "Name two opposite corners or all four vertices on a specified square-unit grid.",
+          "Example": "Corners (2,1), (6,1), (6,4), (2,4) define a rectangle of width 4, height 3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source exact 1 — Original G5 U07:L01 Explore the Coordinate Grid",
+          "Question": "Original source vocabulary: what is the numbered HORIZONTAL line on a coordinate grid called?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "horizontal axis",
+          "Check": "Original numeric source example; incorrect distractors vertical axis and origin must not be accepted."
+        },
+        {
+          "Title": "Source exact 2 — Original G5 U07:L01 Explore the Coordinate Grid",
+          "Question": "Original source vocabulary: what is the numbered VERTICAL line called?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "vertical axis",
+          "Check": "Original numeric source example; incorrect distractors horizontal axis and origin must not be accepted."
+        },
+        {
+          "Title": "Source exact 3 — Original G5 U07:L01 Explore the Coordinate Grid",
+          "Question": "Original source vocabulary: where do horizontal and vertical axes meet?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "origin",
+          "Check": "Original numeric source example; incorrect distractors upper-right corner and a rectangle's center must not be accepted."
+        },
+        {
+          "Title": "Source exact 4 — Original G5 U07:L01 Explore the Coordinate Grid",
+          "Question": "Source Draw My Shape lesson: which input determines a rectangle's POSITION on the numbered grid?",
+          "Method": "Use exact decimal place values of the same whole; written strategy and model teacher-reviewed.",
+          "Steps": [
+            "Identify the original two decimal quantities or source condition.",
+            "Line up the ones, tenths and hundredths before computing.",
+            "Regroup or check the result with the inverse operation, explaining the source method."
+          ],
+          "Answer": "its coordinate locations",
+          "Check": "Original numeric source example; incorrect distractors only its side lengths and only its color must not be accepted."
+        },
+        {
+          "Title": "Optional existing extension — Describe a grid rectangle",
+          "Question": "How could you tell a partner to draw a rectangle with corners (2,1), (6,1), (6,4), (2,4)?",
+          "Method": "Describe its exact location and side lengths, or supply the four vertices.",
+          "Steps": [
+            "Find the origin and locate the point at x=2, y=1.",
+            "Draw a horizontal side four grid units right, then a vertical side three units up.",
+            "Complete the rectangle by connecting back to the corresponding vertices."
+          ],
+          "Answer": "Rectangle vertices (2,1), (6,1), (6,4), (2,4).",
+          "Check": "The drawn rectangle is four grid units wide and three high; teacher checks the partner's reconstruction."
+        },
+        {
+          "Title": "Optional existing extension — Same size, different place",
+          "Question": "Are rectangles with opposite corners (2,1)/(6,4) and (3,2)/(7,5) the same location?",
+          "Method": "Compare dimensions separately from coordinate position.",
+          "Steps": [
+            "Both x-coordinate differences equal 4 and both y differences equal 3.",
+            "Compare the lower-left corners: (2,1) and (3,2).",
+            "Conclude that equal size does not imply identical location."
+          ],
+          "Answer": "No; they have equal width and height but lie in different grid locations.",
+          "Check": "All four corresponding coordinates of the second rectangle are one unit farther right and up."
+        },
+        {
+          "Title": "Optional existing extension — Ask a discriminating question",
+          "Question": "A guessed rectangle is one of two equal-sized shapes at different coordinates. What question can locate it?",
+          "Method": "Use the numbered axes rather than the shape's size alone.",
+          "Steps": [
+            "Observe that both candidate shapes have width 4 and height 3.",
+            "Find a property that differs, such as the x-coordinate of the left edge.",
+            "Ask whether the left edge lies at horizontal coordinate 2."
+          ],
+          "Answer": "The yes/no question distinguishes the rectangle beginning at x=2 from one beginning at x=3.",
+          "Check": "A correct answer requires inspecting the grid's numbered positions, not guessing by visual size."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Identify a rectangle only by its dimensions",
+          "WhyWrong": "Two equal-sized rectangles may occupy different positions.",
+          "Correction": "Include a reference to numbered grid lines, a corner or vertex coordinates."
+        },
+        {
+          "Mistake": "Reverse horizontal and vertical coordinates",
+          "WhyWrong": "Switching x and y moves a point and may change the described rectangle.",
+          "Correction": "State the x coordinate first, then the y coordinate; check each against the axis scale."
+        },
+        {
+          "Mistake": "Claim generic coordinate vocabulary auto-scores actual Draw My Shape and A–L diagrams",
+          "WhyWrong": "The original IM2021 printed student activities use specific decimal values and require place-value reasoning, so substituting unrelated examples or accepting a right-justified digit alignment does not preserve source parity.",
+          "Correction": "Retain existing curriculum visuals and teacher-scored card tasks, mark digital selected vocabulary as bounded support."
+        }
+      ],
+      "SummaryPoints": [
+        "Original lesson shapes and coordinates must be obtained from teacher-provided source cards, not invented.",
+        "Selected vocabulary verifies horizontal/vertical axes and location but not drawn rectangles.",
+        "Student shape choices, questions and peer explanations teacher reviewed.",
+        "Optional prior: A coordinate grid is useful because gridlines and labeled axes locate figures precisely.",
+        "Optional prior: To reconstruct a rectangle, describe both its side lengths and its position on the grid.",
+        "Optional prior: Partner drawing, explanation and yes/no question strategies require teacher review beyond any numeric coordinate exercise.",
+        "Optional prior: Source: 2021 first-edition Grade 5 Unit 7 Lesson 1, https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-1/lesson.html; original Edulytiks grid examples and accessible text table."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original G5 U07:L01 Explore the Coordinate Grid — original source-exact values",
+          "Description": "Edulytiks own text table; original publisher figures, open journal and student strategy teacher reviewed.",
+          "Rows": [
+            {
+              "Label": "Original source vocabulary: what is the numbered HORIZONTAL line on a ",
+              "Cells": [
+                "horizontal axis",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source vocabulary: what is the numbered VERTICAL line called?",
+              "Cells": [
+                "vertical axis",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Original source vocabulary: where do horizontal and vertical axes meet",
+              "Cells": [
+                "origin",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Draw My Shape lesson: which input determines a rectangle's POSI",
+              "Cells": [
+                "its coordinate locations",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Draw My Shape lesson: do dimensions ALONE distinguish two congr",
+              "Cells": [
+                "no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Guess Which One partner task: correct questions to identify a s",
+              "Cells": [
+                "yes or no",
+                "Human rationale required"
+              ]
+            },
+            {
+              "Label": "Source Guess Which One lettered figure cards A–L: is their exact ident",
+              "Cells": [
+                "teacher visual review required",
+                "Human rationale required"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Optional prior — Location and dimensions are different",
+          "Description": "Accessible first-party table for two equal-size rectangles on an x/y grid, not original publisher cards.",
+          "Rows": [
+            {
+              "Label": "Rectangle",
+              "Cells": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "Label": "Bottom-left",
+              "Cells": [
+                "(2,1)",
+                "(3,2)"
+              ]
+            },
+            {
+              "Label": "Top-right",
+              "Cells": [
+                "(6,4)",
+                "(7,5)"
+              ]
+            },
+            {
+              "Label": "Width × height",
+              "Cells": [
+                "4 × 3",
+                "4 × 3"
+              ]
+            },
+            {
+              "Label": "Location",
+              "Cells": [
+                "Different",
+                "Different"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U04:L13",
+  "title": "Solving Systems of Equations",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\13\\index.html",
+      "sha256": "c922afa53daadb19b7d04496b1f03dcb032cdf2888ae596b09d35c2cf165a105"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\4\\13\\preparation.html",
+      "sha256": "341799a2c81bcdbe4cebf475b168ad6f552102cfa7a3d2937ddc9737130bdd2c"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\13\\index.html",
+      "sha256": "f70de0b94d07fec5552270ec0f76f23091da9d9745a02f10b42d7adc8561687b"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\4\\13\\practice.html",
+      "sha256": "1d65529e57da608c4438d2de8385b891d468e5f2659a4d57dde48e497ca1056a"
+    }
+  },
+  "learningGoals": [
+    "Coordinate algebraic solutions with intersections of two linear graphs",
+    "Solve systems by setting two expressions for the same variable equal",
+    "Classify systems as having one, no, or infinitely many solutions"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "13.1 ? Read a system from two lines",
+      "firstPartyTask": "true-false",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "13.2 ? Match systems, graphs, and exact intersections",
+      "firstPartyTask": "match-systems",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "13.3 ? One, none, or infinitely many",
+      "firstPartyTask": "solution-types",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u04-l13-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u04-l13-selected-first-party-paper.html",
+    "sha256": "1c6b20203796f129e948d9410a106bf64a8e9cdf1ac672acfe86989c729fa7f9",
+    "taskIds": [
+      "true-false",
+      "match-systems",
+      "solution-types",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "Warm-up intersection is (2,8): -2+10=8 and 2(2)+4=8; the equality of right-hand expressions is solved by x=2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Matching systems yield intersections (3,14), (-4.5,-19), and (-10,7), respectively.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "One solution means distinct nonparallel lines; no solution means distinct parallel lines; infinitely many means equivalent equations for the same line.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Practice P3 gives (2,5); P4 gives (14,15.5); equation P5 gives x=-2.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C5",
+      "points": 2,
+      "expectedReasoning": "Cool-down intersection is (3,7), verified in both equations and on the graph.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 10,
+  "mathFixtures": {
+    "x": 2,
+    "y": 8
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}

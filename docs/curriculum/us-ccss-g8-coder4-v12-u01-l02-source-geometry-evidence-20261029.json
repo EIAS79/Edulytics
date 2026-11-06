@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+  "sourceLessonCode": "8.1.2",
+  "title": "Naming the Moves",
+  "status": "SOURCE_ALIGNED_COURSE_OWNED_CANDIDATE_NOT_A_D_ACCEPTED",
+  "sourceEdition": "Open Up Resources / IM 2017–2019",
+  "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/3/1/2/index.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/3/1/2/index.html",
+  "sourceActivityReview": [
+    {
+      "sourceActivity": "2.1: A Pair of Quadrilaterals",
+      "studentObjective": "Estimate the rotation angle between two quadrilaterals",
+      "teacherEvidence": "Teacher guidance describes 120-degree counterclockwise rotation around a shared vertex",
+      "courseChange": "Added explicit angle-estimation explanatory content and mathematically constructed first-party 120-degree CCW quadrilateral model",
+      "evidenceType": "PUBLIC_STUDENT_AND_TEACHER_PAGE_SPOT_REVIEW",
+      "notPublisherArt": true
+    },
+    {
+      "sourceActivity": "2.2: How Did You Make That Move?",
+      "studentObjective": "Describe moves across six panels, recognizing a new move",
+      "teacherEvidence": "Reflection differs from any in-plane slide/turn; teacher contrasts a vertical flip with a rotation",
+      "courseChange": "Added orientation-reversal tracing-paper explanation and a vertical reflection panel",
+      "evidenceType": "PUBLIC_STUDENT_AND_TEACHER_PAGE_SPOT_REVIEW",
+      "notFullPanelFidelity": true
+    },
+    {
+      "sourceActivity": "2.3: Card Sort: Move",
+      "studentObjective": "Sort movement cards and explain categories",
+      "teacherEvidence": "Teacher describes 9 primary cards, 3 translations, 3 rotations, 3 reflections, plus optional extras",
+      "courseChange": "Retained open teacher-reviewed sorting task; no synthetic auto-grade or interactive card-sort claim",
+      "evidenceType": "PUBLIC_STUDENT_AND_TEACHER_PAGE_SPOT_REVIEW",
+      "interactiveCardSortImplemented": false
+    }
+  ],
+  "mathIssueCorrected": "Previous summary implied reflection requires the original figure to possess a symmetry axis. This is false; a mirror line can lie outside an asymmetric figure.",
+  "priorRichCandidateFileSha256": "aca9735c8b72ef94a8e51b59281f7d695f150787dea0c259333edf932833555c",
+  "updatedRichCandidateFileSha256": "a2b2fd302ea310348debe9548011c3dce810fbbea04c5af8e4bdbfab94ff1103",
+  "contentVersionTransitionStatus": "AWAITING_SUPERVISOR_2_SHARED_ADOPTION_REVIEW_NO_VERSION_ROLLOUT",
+  "assetPath": "/curriculum/us-ccss-g8/figures/u01-l02.svg",
+  "sha256": "0108457dab785a3279ef2c5f216ef8f7f707f01c30373349a09afea39c3cd7d3",
+  "figureRole": "ORIGINAL_FIRST_PARTY_ACTIVITY_ALIGNED_REPRESENTATION_NOT_COPY_OF_SOURCE_ART",
+  "projection": {
+    "rotation": {
+      "originPx": {
+        "x": 240,
+        "y": 355
+      },
+      "pixelsPerUnit": 69,
+      "angleDegreesCounterclockwise": 120,
+      "original": [
+        {
+          "label": "O",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "label": "A",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "label": "B",
+          "x": 2.8,
+          "y": 1
+        },
+        {
+          "label": "C",
+          "x": 1.2,
+          "y": 1.7
+        }
+      ]
+    },
+    "reflection": {
+      "originPx": {
+        "x": 680,
+        "y": 420
+      },
+      "pixelsPerUnit": 53,
+      "mirrorLine": "x=0",
+      "original": [
+        {
+          "label": "P",
+          "x": 1,
+          "y": 0.5
+        },
+        {
+          "label": "Q",
+          "x": 3,
+          "y": 0.5
+        },
+        {
+          "label": "R",
+          "x": 2.5,
+          "y": 2
+        },
+        {
+          "label": "S",
+          "x": 1.4,
+          "y": 1.4
+        }
+      ]
+    }
+  },
+  "acceptance": {
+    "stageA": "NOT_ACCEPTED",
+    "stageB": "NOT_ACCEPTED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED",
+    "sourceParityComplete": false,
+    "independentMathTested": false,
+    "svgAttachedToRichV2": false,
+    "authenticatedStudentHtmlVerified": false,
+    "practiceGeneratedAndPersisted": false,
+    "teacherScoringPersisted": false,
+    "realTwoSchoolPostgresFixturePassed": false,
+    "academicReviewerSignoff": false
+  },
+  "sharedBlockers": [
+    "Grade 8 course-local SVG not attached to authenticated Rich V2 renderer; shared integration owned by Supervisor 2",
+    "Student six-panel/categorization interaction is not implemented as an accessible interactive equivalent",
+    "Real Practice, teacher rubric scores and tenant-separated PostgreSQL fixture not verified",
+    "Content-version rollout for revised pack requires owner-approved shared coordination; no database version transition made"
+  ]
+}

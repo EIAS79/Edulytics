@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">Square measurements and approximate proportionality</title>
+  <desc id="desc">Three first-party squares with side lengths 2, 4, and 6 units. Their diagonals are shown as measured values about 2.8, 5.7, and 8.5. Perimeters are 8, 16, and 24 while areas are 4, 16, and 36.</desc>
+  <rect width="720" height="400" fill="white"/>
+  <g transform="translate(45,60)">
+    <rect x="0" y="80" width="80" height="80" fill="none" stroke="currentColor" stroke-width="3"/>
+    <line x1="0" y1="160" x2="80" y2="80" stroke="currentColor" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="0" y="205" font-size="18">side 2; d≈2.8</text><text x="0" y="235" font-size="18">P=8; A=4</text>
+  </g>
+  <g transform="translate(260,40)">
+    <rect x="0" y="60" width="120" height="120" fill="none" stroke="currentColor" stroke-width="3"/>
+    <line x1="0" y1="180" x2="120" y2="60" stroke="currentColor" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="0" y="225" font-size="18">side 4; d≈5.7</text><text x="0" y="255" font-size="18">P=16; A=16</text>
+  </g>
+  <g transform="translate(500,20)">
+    <rect x="0" y="40" width="150" height="150" fill="none" stroke="currentColor" stroke-width="3"/>
+    <line x1="0" y1="190" x2="150" y2="40" stroke="currentColor" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="0" y="235" font-size="18">side 6; d≈8.5</text><text x="0" y="265" font-size="18">P=24; A=36</text>
+  </g>
+  <text x="55" y="355" font-size="20">Measurement points may scatter slightly; proportional structure is judged by the underlying relationship, not perfect measured alignment.</text>
+</svg>

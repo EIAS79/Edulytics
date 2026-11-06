@@ -21,13 +21,21 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
                 .Select(l => (Doc: d, Lesson: l)))
             .ToArray();
 
-        // Earlier explicitly source-bound set: 179. Source-guarded Grade2 curriculum
-        // expansions from original publisher corrections add 115 reviewed identities.
-        // This is an EXACT selector inventory guard, not an academic acceptance count.
-        const int expectedSourceBoundCount = 294;
+        // Match the source-locked production metadata selector inventory:
+        // 144 G1 + 131 G2 + 2 G3 + 9 G4, no G5 or G6 promotion.
+        // This is an exact technical inventory guard, not academic approval.
+        const int expectedSourceBoundCount = 286;
         Assert.Equal(expectedSourceBoundCount, chosen.Length);
         Assert.Equal(expectedSourceBoundCount, chosen.Select(x => x.Lesson.LessonCode)
             .Distinct(StringComparer.Ordinal).Count());
+        var countByGrade = chosen
+            .GroupBy(x => x.Lesson.LessonCode.Split(':')[2], StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+        Assert.Equal(4, countByGrade.Count);
+        Assert.Equal(144, countByGrade["G1"]);
+        Assert.Equal(131, countByGrade["G2"]);
+        Assert.Equal(2, countByGrade["G3"]);
+        Assert.Equal(9, countByGrade["G4"]);
         Assert.All(chosen, x =>
         {
             Assert.Equal(MathematicsCurriculumPackRegistry.CommonCoreCode,
@@ -107,7 +115,7 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
         Assert.Contains("PED:US-CCSS-MATH:G4:U01:L01", selected);
         Assert.Contains("PED:US-CCSS-MATH:G2:U04:L03", selected);
         Assert.Contains("PED:US-CCSS-MATH:G4:U07:L14", selected);
-        Assert.Contains("PED:US-CCSS-MATH:G5:U08:L09", selected);
+        Assert.DoesNotContain("PED:US-CCSS-MATH:G5:U08:L09", selected);
 
         var nonTarget = documents
             .Single(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&

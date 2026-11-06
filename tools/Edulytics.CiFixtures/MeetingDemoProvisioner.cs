@@ -352,16 +352,22 @@ internal static class MeetingDemoProvisioner
             string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal) &&
             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_G10_GEOMETRY"),
                 "true", StringComparison.OrdinalIgnoreCase);
+        // Preserve the existing Grade 6/8 disposable fixture selection on main,
+        // while selecting Grade 10 Geometry only when explicitly opted in.
         var activeSchools = disposableCi &&
-            string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
-            ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary")
-                .Select(s => geometryCi && s.Key == "commoncore-secondary"
-                    ? s with { PrimaryLoginLogicalLevel = 10, SecondaryLoginLogicalLevel = 11 }
-                    : s)
-                .ToArray()
-            : disposableCi || permanentDemo
-                ? Schools.Take(2).ToArray()
-                : Schools;
+            (string.Equals(ciProgramme, "US-CCSS-G6", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "US-CCSS-G8", StringComparison.Ordinal))
+            ? Schools.Where(s => s.Key is "commoncore-middle" or "commoncore-secondary").ToArray()
+            : disposableCi &&
+              string.Equals(ciProgramme, "US-CCSS", StringComparison.Ordinal)
+                ? Schools.Where(s => s.Key is "commoncore-primary" or "commoncore-secondary")
+                    .Select(s => geometryCi && s.Key == "commoncore-secondary"
+                        ? s with { PrimaryLoginLogicalLevel = 10, SecondaryLoginLogicalLevel = 11 }
+                        : s)
+                    .ToArray()
+                : disposableCi || permanentDemo
+                    ? Schools.Take(2).ToArray()
+                    : Schools;
 
         var password = configuration["Edulytics:MeetingDemo:Password"];
         if (string.IsNullOrWhiteSpace(password))

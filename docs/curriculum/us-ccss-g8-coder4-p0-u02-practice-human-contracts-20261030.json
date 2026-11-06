@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "status": "COURSE_OWNED_PROPOSALS_SHARED_GENERATOR_AND_DB_NOT_TESTED",
+  "contracts": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L01",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "1.1: Number Talk: Remembering Fraction Division",
+        "1.2: Sorting Rectangles",
+        "1.3: Scaled Rectangles"
+      ],
+      "requiredNumericalOrLogicalCheck": "25/8 and 71/35 as mixed-number division results; rectangle A:C:E scale factors 1:1/2:1/4",
+      "equivalentAcceptExamples": [
+        "25/8",
+        "3.125",
+        "3 1/8"
+      ],
+      "mustRejectOrFlagWrong": "B(5.5,8.5) is not an A(8.5,11) scaled copy even though it came from halving; alternating short/long is not uniform scaling",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Student physical rectangle sorting and shared-diagonal explanation",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L02",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "2.1: Notice and Wonder: Concentric Circles",
+        "2.2: A Droplet on the Surface",
+        "2.3: Quadrilateral on a Circular Grid",
+        "2.4: A Quadrilateral and Concentric Circles"
+      ],
+      "requiredNumericalOrLogicalCheck": "Radius 2 to radius 5 gives factor 5/2 for every chosen ray",
+      "equivalentAcceptExamples": [
+        "5/2",
+        "2.5"
+      ],
+      "mustRejectOrFlagWrong": "Using a direction-dependent factor is invalid when two concentric circles are dilated",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Construct four rays, intersections and measured table on a circular grid",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L03",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "3.1: Points on a Ray",
+        "3.2: Dilation Obstacle Course",
+        "3.3: Getting Perspective"
+      ],
+      "requiredNumericalOrLogicalCheck": "A(0,0), B(2,0): factors 2, 1/2, 5 map to (4,0),(1,0),(10,0)",
+      "equivalentAcceptExamples": [
+        "2.0",
+        "2"
+      ],
+      "mustRejectOrFlagWrong": "A negative factor in a source positive-ray dilation points the wrong way; factor 0 not a one-to-one similarity",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Select center and draw mapped figures on an ungridded plane",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L04",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "4.1: Estimating a Scale Factor",
+        "4.2: Dilations on a Grid",
+        "4.3: Card Sort: Matching Dilations on a Coordinate Grid"
+      ],
+      "requiredNumericalOrLogicalCheck": "Center P(3,7), k=2: A(2,9) maps to (1,11), B(8,9) to (13,11), C(8,5) to (13,3), D(2,5) to (1,3)",
+      "equivalentAcceptExamples": [
+        "(1,11)",
+        "(1.0,11.0)"
+      ],
+      "mustRejectOrFlagWrong": "Raw doubling A to (4,18) ignores the nonorigin center",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Image quadrilateral construction and dilation card-sort justification",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L05",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "5.1: Many Dilations of a Triangle",
+        "5.2: Info Gap: Dilations"
+      ],
+      "requiredNumericalOrLogicalCheck": "14-unit side scales to 7 with k=1/2, 28 with k=2; area ratio 1/4 or 4",
+      "equivalentAcceptExamples": [
+        "1/2",
+        "0.5"
+      ],
+      "mustRejectOrFlagWrong": "Scaling area by k instead of k^2 is incorrect",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Applet exploration and two-person information-gap communication",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L06",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "6.1: Equivalent Expressions",
+        "6.2: Similarity Transformations (Part 1)",
+        "6.3: Similarity Transformations (Part 2)",
+        "6.4: Methods for Translations and Dilations"
+      ],
+      "requiredNumericalOrLogicalCheck": "10(2+3)-8*3 = 26; similarity requires an overall uniform scale plus rigid transformations",
+      "equivalentAcceptExamples": [
+        "26",
+        "2*13",
+        "50-24"
+      ],
+      "mustRejectOrFlagWrong": "Unequal side scale factors cannot prove a single dilation",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Corresponding transformed polygons and geometric alignment demonstration",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L07",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "7.1: All, Some, None: Congruence and Similarity",
+        "7.2: Are They Similar?",
+        "7.3: Find Someone Similar"
+      ],
+      "requiredNumericalOrLogicalCheck": "Congruence always implies similarity; similarity only sometimes implies congruence; dilation does not change angle",
+      "equivalentAcceptExamples": [
+        "all",
+        "always"
+      ],
+      "mustRejectOrFlagWrong": "Rectangles 4x2 and 6x4 do not have a common side ratio (6/4 != 4/2)",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Classify all/some/none and criticize competing polygon arguments",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L08",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "8.1: Equivalent Expressions",
+        "8.2: Making Pasta Angles and Triangles",
+        "8.3: Similar Figures in a Regular Pentagon"
+      ],
+      "requiredNumericalOrLogicalCheck": "AA similarity with two equal corresponding angles; one common angle alone is insufficient",
+      "equivalentAcceptExamples": [
+        "AA",
+        "angle-angle"
+      ],
+      "mustRejectOrFlagWrong": "One 40-degree angle shared by two triangles cannot establish similarity",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Pasta triangles, angle measurements and comparing constructed figures",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L09",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "9.1: Two-three-four and Four-five-six",
+        "9.2: Quotients of Sides Within Similar Triangles",
+        "9.3: Using Side Quotients to Find Side Lengths of Similar Triangles"
+      ],
+      "requiredNumericalOrLogicalCheck": "4,5,7 scaled by 2 produces 8,10,14; by 3 produces 12,15,21; by 1/2 produces 2,2.5,3.5",
+      "equivalentAcceptExamples": [
+        "7/4",
+        "1.75"
+      ],
+      "mustRejectOrFlagWrong": "(2,3,4) and (4,5,6) are not similar: length factors differ",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Partner quotient table and explanation of consistent correspondence",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L10",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "10.1: Equal Quotients",
+        "10.2: Similar Triangles on the Same Line",
+        "10.3: Multiple Lines with the Same Slope",
+        "10.4: Different Slopes of Different Lines"
+      ],
+      "requiredNumericalOrLogicalCheck": "Rise/run (3/4,6/8,1.5/2) all yield 0.75",
+      "equivalentAcceptExamples": [
+        "3/4",
+        "0.75"
+      ],
+      "mustRejectOrFlagWrong": "Vertical lines have undefined slope; 0 is a horizontal slope",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Draw similar slope triangles along the source line and justify similarity",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L11",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "11.1: Coordinates and Lengths in the Coordinate Plane",
+        "11.2: What We Mean by an Equation of a Line",
+        "11.3: Writing Relationships from Slope Triangles"
+      ],
+      "requiredNumericalOrLogicalCheck": "Line y=3x/4 contains (20,15), (100,75) and rejects (90,68)",
+      "equivalentAcceptExamples": [
+        "3x/4",
+        "0.75x"
+      ],
+      "mustRejectOrFlagWrong": "(90,68) is not on the line because expected y=67.5",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Find and label E via similar triangles and derive a general coordinate rule",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L12",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "12.1: Missing center",
+        "12.2: Writing Relationships from Two Points",
+        "12.3: Dilations and Slope Triangles"
+      ],
+      "requiredNumericalOrLogicalCheck": "y=2x-7 contains (9,11) and (100,193), rejects (9,10); dilation s=4.5 around (0,1) maps C(2,2) to (9,5.5)",
+      "equivalentAcceptExamples": [
+        "y=2x-7",
+        "y-3=2(x-5)"
+      ],
+      "mustRejectOrFlagWrong": "Using y=2x+7 or omitting the dilation center contradicts source coordinate pairs",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Draw slope triangles, determine dilation center, construct labeled image",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U02:L13",
+      "contractStatus": "COURSE_OWNED_CANDIDATE_NOT_PRACTICE_GENERATOR_VERIFIED",
+      "sourceLinkedObjective": [
+        "13.1: Notice and Wonder: Long Shadows and Short Shadows",
+        "13.2: Objects and Shadows",
+        "13.3: Justifying the Relationship",
+        "13.4: The Height of a Tall Object"
+      ],
+      "requiredNumericalOrLogicalCheck": "Using 72/48=1.5 estimates 114-inch lamppost shadow height as about 171 inches; 43/29 differs slightly",
+      "equivalentAcceptExamples": [
+        "≈171 inches",
+        "approximately 171"
+      ],
+      "mustRejectOrFlagWrong": "An exact 171-inch measured height cannot be inferred from rounded photos; nearby point-source shadows need not share slope",
+      "malformedMustReject": [
+        "wrong lessonCode",
+        "non-numeric where numeric expected",
+        "NaN/Infinity",
+        "missing required value",
+        "unexpected JSON structure"
+      ],
+      "boundaryAndEquivalenceCases": "Verify exact rational fractions and decimals, zero denominators in quotients, center equals point in dilation, allowed positive scale ranges, near-boundary approximations when observations rounded.",
+      "requiredHumanReview": "Explain similar right triangles and assumptions of parallel sunlight, with uncertainty",
+      "teacherRubricDraft": "EXISTS_FROM_PRIOR_COURSE_MANIFEST_NOT_RUNTIME_PERSISTED",
+      "selectedProductionItemFamilyObserved": false,
+      "authenticatedAttemptSaved": false,
+      "wrongSchoolRejectedInRealDb": false
+    }
+  ],
+  "sharedOwner": "Supervisor 2",
+  "sourceMismatchCounts": {
+    "U02ExistingRoleFlags": 3,
+    "staticUnmappedLessonsInU02": 2,
+    "grade8TotalExistingRoleFlags": 22
+  },
+  "missingSharedProof": [
+    "Actual selected question family and lesson binding",
+    "Generator correct/wrong/equivalent/malformed and boundary",
+    "Authenticated two-school Postgres attempted, scored, readback",
+    "Teacher-only rubric persistence and feedback",
+    "Accessible user-built graph/dilation/card interaction, not a static SVG"
+  ],
+  "release": "NO_GO"
+}

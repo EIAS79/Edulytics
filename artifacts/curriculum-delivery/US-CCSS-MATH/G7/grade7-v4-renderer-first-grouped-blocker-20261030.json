@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "author": "Coder 3 — Grade 7 scoped branch",
+  "issuedAt": "2026-10-30",
+  "phase": "V4_RENDERER_FIRST_FAIL_CLOSED",
+  "PR": 590,
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "basis": {
+    "gradeBranchRenderer": {
+      "path": "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+      "blobSha": "677477322a00a33f1700654c5026965be5ac4350",
+      "invokesGrade7Partial": false
+    },
+    "gradeBranchPartial": {
+      "path": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "blobSha": "a49145b68005f8796d2101b1ade64f48e23403fc",
+      "bytes": 42318,
+      "lessonsWithAppendedTaskUI": "U01:L01–L08"
+    },
+    "sharedPR599": {
+      "status": "OPEN_DRAFT_UNMERGED",
+      "branch": "supervisor1/g7-rich-svg-renderer-hook-20261029",
+      "rendererBlobSha": "5fe462350c36d44cadbfde5a09374caa5ede3a6d",
+      "rendersU01Prefix": true,
+      "guard": "Model.LessonCode.StartsWith(\"PED:US-CCSS-MATH:G7:U01:L\", StringComparison.Ordinal)",
+      "gradePartialBlobSha": "5d237539a466e7ddcc018a38c5553d9fb27eefc7",
+      "partialBytes": 9981,
+      "staleComparedToGrade": true,
+      "doNotOverwriteUpdatedGradePartial": true
+    },
+    "RichV2": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
+      "includesU01L01ThroughL13": true,
+      "lessonExampleAnswersAreVisible": true,
+      "separateStudentAssessmentContract": "ABSENT_IN_REVIEWED_L01_SCHEMA"
+    },
+    "academicLedger": {
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authoring-ledger.json",
+      "scopedAClosed": [
+        "U01:L02",
+        "U01:L03",
+        "U01:L04",
+        "U01:L05",
+        "U01:L06",
+        "U01:L07",
+        "U01:L08"
+      ],
+      "L01A": "OPEN",
+      "BClosed": 0,
+      "CPrepared": 0,
+      "readyForD": 0
+    },
+    "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "sharedRendererPR": "https://github.com/EIAS79/Edulytics/pull/599",
+    "escalationComment": "https://github.com/EIAS79/Edulytics/issues/592#issuecomment-6522670417"
+  },
+  "currentFirstOpen": "PED:US-CCSS-MATH:G7:U01:L01",
+  "blockedReturnBacklog": [
+    "PED:US-CCSS-MATH:G7:U01:L01",
+    "PED:US-CCSS-MATH:G7:U01:L02",
+    "PED:US-CCSS-MATH:G7:U01:L03",
+    "PED:US-CCSS-MATH:G7:U01:L04",
+    "PED:US-CCSS-MATH:G7:U01:L05",
+    "PED:US-CCSS-MATH:G7:U01:L06",
+    "PED:US-CCSS-MATH:G7:U01:L07",
+    "PED:US-CCSS-MATH:G7:U01:L08"
+  ],
+  "nextOrderedReview": "PED:US-CCSS-MATH:G7:U01:L09",
+  "nextIndependentCursor": "NONE_VERIFIED_PENDING_SHARED_RENDERER_AND_EXACT_PRACTICE",
+  "L09ReadOnlyReview": {
+    "lesson": "PED:US-CCSS-MATH:G7:U01:L09",
+    "title": "Creating Scale Drawings",
+    "sourcePaths": [
+      "07_Grade_7_OUR_IM/1/9/preparation.html",
+      "07_Grade_7_OUR_IM_Student/1/9/index.html",
+      "07_Grade_7_OUR_IM_Student/1/9/practice.html"
+    ],
+    "sourceGoals": [
+      "Determine numerical scale from 16 cm drawing representing actual 4 meters",
+      "Construct other room walls at same scale and draw a checked actual floor plan",
+      "Compare Utah outline drawings at 1 cm to 50 miles and 1 cm to 75 miles",
+      "Explain which scale creates a larger drawing"
+    ],
+    "mathAcceptance": [
+      "4 m is 400 cm; 16 cm : 400 cm is unitless 1:25",
+      "Wall 2.5m ->10cm, 2.75m ->11cm, 3.75m ->15cm at 1cm:0.25m",
+      "Utah 270mi x350mi at 1cm:50mi ->5.4cm x7cm; at 1cm:75mi ->3.6cm x14/3cm, before notch",
+      "Original first-party drawing must preserve angles, not assume a ratio alone is completed construction"
+    ],
+    "sourceRights": "OUR/IM CC BY 4.0 source; publisher original images/applet not reproduced",
+    "status": "SOURCE_REVIEWED_NOT_A_CLOSED_NO_NEW_UNINVOKED_ASSESSMENT",
+    "blocker": "New U01 lesson-specific activity/Cool-down would land in the same uninvoked partial and generic 7.G.A.1 Practice fallback. Do not manufacture more B/C blockers."
+  },
+  "groupedFutureRisk": {
+    "impactedRange": "PED:US-CCSS-MATH:G7:U01:L09 through U01:L13",
+    "reason": "All require correct lesson-owned student task delivery and exact lesson-correct Practice; same absent grade-branch Rich V2 hook and unresolved shared Practice family. Grouped risk only: not individual closure/blocker counts, not a waiver of source review.",
+    "status": "PENDING_SHARED_INTEGRATION_SINGLE_WRITER"
+  },
+  "owner": "Supervisor 1 designated renderer and Practice single writer",
+  "releaseGates": {
+    "TOTAL": 145,
+    "AUTHORED": 145,
+    "A_CLOSED": 7,
+    "B_CLOSED": 0,
+    "C_PREPARED": 0,
+    "READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED_RETURN": 8,
+    "REMAINING": 145
+  },
+  "tests": "Grade fixture sources AUTHORED_NOT_RUN; one case-sensitive test fixture path corrected on grade branch; no manual Node/.NET/CI/Stage D",
+  "merge": "NO_MERGE",
+  "deploy": "NO_DEPLOY"
+}

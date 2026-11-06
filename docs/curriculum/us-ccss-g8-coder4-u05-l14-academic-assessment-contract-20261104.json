@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U05:L14",
+  "title": "Finding Cylinder Dimensions",
+  "sourceEdition": "LOCAL_OUR_IM_2017_2019_NOT_V360",
+  "sourceFiles": {
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\14\\index.html",
+      "sha256": "48b9a288fe51cbf978be5fed3db9f15b336d71809a1842ab2fbc95d1aca09f99"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\5\\14\\preparation.html",
+      "sha256": "aead43f28090d2468263a6437e90e98350d4f69b2e34fa08b2e94f86d568cc82"
+    },
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\14\\index.html",
+      "sha256": "50f200631766f85965c83fcb8aaa74710c5fc4a8bc5e19300ce698a78cd6dcfd"
+    },
+    "practice": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\5\\14\\practice.html",
+      "sha256": "1ba52f94a146d358fdccc8b833a9f131c18ef5898eb3ccf99d0a79db5e5b4127"
+    }
+  },
+  "learningGoals": [
+    "Solve cylinder-volume equations for an unknown dimension",
+    "Describe patterns among dimensions of cylinders with fixed volume"
+  ],
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "14.1 ? A Cylinder of Unknown Height",
+      "firstPartyTask": "activity-1",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "14.2 ? What?s the Dimension?",
+      "firstPartyTask": "activity-2",
+      "teacherReview": true
+    },
+    {
+      "sourceActivity": "14.3 ? Cylinders with Unknown Dimensions",
+      "firstPartyTask": "activity-3",
+      "teacherReview": true
+    }
+  ],
+  "sourcePracticeCount": 5,
+  "firstPartyPractice": true,
+  "teacherOnlyCooldown": "ORIGINAL_NOT_ACCESSIBLE_OR_REPRODUCED",
+  "selectedOfflinePaper": {
+    "path": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u05-l14-selected-first-party-paper.html",
+    "url": "/curriculum/us-ccss-g8/assessment/u05-l14-selected-first-party-paper.html",
+    "sha256": "5c1cd132eea55b6a7baf4c337fc8fd55ebee7a21049b93cd43270381997cb714",
+    "taskIds": [
+      "activity-1",
+      "activity-2",
+      "activity-3",
+      "practice",
+      "cool-down"
+    ]
+  },
+  "rubric": [
+    {
+      "criterion": "C1",
+      "points": 2,
+      "expectedReasoning": "h=4; substitution gives ??25?4=100?.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C2",
+      "points": 2,
+      "expectedReasoning": "Unknown-height equation is h=V/(?r?).",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C3",
+      "points": 2,
+      "expectedReasoning": "Unknown-radius equation uses the nonnegative square root.",
+      "teacherReview": true
+    },
+    {
+      "criterion": "C4",
+      "points": 2,
+      "expectedReasoning": "Fixed-volume radius/height relationship is nonlinear.",
+      "teacherReview": true
+    }
+  ],
+  "maxScore": 8,
+  "mathFixtures": {
+    "Vcoef": 100,
+    "r": 5,
+    "h": 4
+  },
+  "tests": "AUTHORED_NOT_RUN",
+  "stageD": "NOT_RUN",
+  "ownerAcademicApproval": true
+}
