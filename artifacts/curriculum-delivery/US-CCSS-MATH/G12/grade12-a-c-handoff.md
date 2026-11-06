@@ -21,6 +21,8 @@
 - Section 1.1 exercises **60–67 were incorrectly grouped as graph line tests** in the initial coarse inventory. They are relation/table and table-value lookup tasks. Their classification is corrected, and all **92** section exercise route contracts are recorded in `u01-l01-exercise-routing.json` with the applicable existing-engine candidate or explicit teacher review requirement.
 - This repair is **authoring/route evidence only**. No G12 runtime question selection, score integration, graph rendering, full item-level semantic equivalence, or Stage D acceptance has been demonstrated. Exercise 52 part (b), source diagram rights, and chapter resources remain open. Grade 12 `READY_FOR_STAGE_D` stays **0/73**.
 
+- Re-inspected **PDF page 36 visually** for graph exercise 52 and 53–59. Exercise 52 has `f(−1)≈1`, but its plotted section cannot justify an exact value for `f(x)=3`; this remains a source-reading blocker. A concrete first-party **teacher graph rubric** for 52–59 was added to the lesson assessment, and a corresponding explanation was added to Rich V2. No source image was copied; no automatic graph scoring is claimed.
+
 ## Evidence locations
 
 - `source-of-truth.json` — exact edition and PDF hash.

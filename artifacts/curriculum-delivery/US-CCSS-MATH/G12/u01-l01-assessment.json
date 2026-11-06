@@ -72,7 +72,8 @@
       "Function equation-solving with all valid roots and domain restrictions",
       "All 92 source Section 1.1 exercise structures and diagram-sensitive tasks",
       "Exercise 60–67 require separate table/ordered-pair classification and function-value lookup (not graphical line testing).",
-      "Exercise 52 part (b) original graph cannot be graded without an exact source read or human rubric."
+      "Exercise 52 part (b) original graph cannot be graded without an exact source read or human rubric.",
+      "Exercise 52 part (b) cannot receive a hard-coded exact numerical answer from the displayed original graph."
     ],
     "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
     "PracticeReady": "NOT_READY",
@@ -129,11 +130,37 @@
       "Inspect a table with repeated input and a repeated output. Require an explanation of the distinction.",
       "Ask students to plot y=x², y²=x and y=|x|−1 with labeled axes and scale.",
       "Ask for a vertical-line and horizontal-line classification justified by intersections and domain.",
-      "Review the first-party Cool-down using the four-point rubric, with teacher overrides and documented feedback."
+      "Review the first-party Cool-down using the four-point rubric, with teacher overrides and documented feedback.",
+      "Graph-reading practice from source section 1.1 page 36: use independently redrawn, labelled representations; apply the graph rubric for exercises 52–59 and explicitly flag source exercise 52 part (b) as approximate without an exact function rule."
     ],
     "AutomatedScoreClaim": false,
     "RuntimeIntegration": "NOT_IMPLEMENTED_FOR_G12",
-    "DocumentationStatus": "AUTHORED_NOT_TESTED"
+    "DocumentationStatus": "AUTHORED_NOT_TESTED",
+    "Section11GraphReadRubric": {
+      "OriginalSourcePage": 36,
+      "OriginalFigureEmbeddedInEdulytics": false,
+      "SourceExercises": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "HumanEvaluator": "Assigned mathematics teacher",
+      "Criteria": [
+        "For exercise 52, credit f(−1)≈1 when read against labelled axes; do not assert an exact solution to f(x)=3 that is not resolved by the displayed graph.",
+        "For exercise 53, verify f(0)=1 and x=−2 or x=2 when f(x)=−3.",
+        "For exercise 54, verify f(4)=−3 and x=−6 or x=0 when f(x)=1.",
+        "For 55–59, apply vertical first and horizontal second: 55 is not a function; 56 and 59 are functions but not one-to-one; 57 and 58 are one-to-one.",
+        "Check each student's axes, horizontal/vertical intersections, domain and any graphical uncertainty; record manual feedback."
+      ],
+      "AutoMarkingAllowed": false,
+      "RuntimeDeliveryStatus": "AUTHORED_NOT_INTEGRATED",
+      "Tests": "WRITTEN_NOT_RUN"
+    }
   },
   "SourceElementVerification": {
     "OriginalExamplesLocated": 15,

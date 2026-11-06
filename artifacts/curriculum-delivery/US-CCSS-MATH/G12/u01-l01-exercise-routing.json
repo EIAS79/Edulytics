@@ -1025,16 +1025,16 @@
       "SkillKind": "GRAPH_LINE_TESTS",
       "OriginalMathematicsSourceReview": null,
       "SourceGraphMathParts": [
-        "f(−1)≈1 from visible grid.",
-        "Read y=3 at the right edge/extension, but an exact x-coordinate cannot be established reliably from the reproduced graph alone."
+        "f(−1)≈1 from the displayed graph.",
+        "The graph approaches but does not clearly attain y=3 inside the displayed window. An exact root for f(x)=3 cannot be read from the image; extrapolation suggests roughly x≈7, conditional on an unstated curve rule. Teacher must accept reasoned graphical estimates with stated uncertainty, not force an unsupported exact value."
       ],
-      "SourceGraphDescription": "Curved increasing ray starts at x=−2, y=0; at x=−1 its height is about 1; near right edge x≈6 its y approaches 3.",
+      "SourceGraphDescription": "Read-only visual inspection of local PDF page 36: increasing concave-down curve begins at approximately (−2,0), passes approximately (−1,1), and continues through the displayed window near (6,2.8).",
       "SourceMathVerificationStatus": "SOURCE_IDENTIFIED",
       "AllSourceSubpartsVerified": false,
       "ProposedExistingQuestionFamily": null,
       "EvaluationRoute": "ACCESSIBLE_GRAPH_INTERACTION_OR_TEACHER_REVIEW_REQUIRED",
       "HumanReviewRequired": true,
-      "CapabilityStatus": "NOT_VERIFIED_FOR_GRADE12",
+      "CapabilityStatus": "BLOCKED_BY_EXACT_GRAPH_ROOT_UNVERIFIED",
       "DeliveryStatus": "NOT_YET_IMPLEMENTED",
       "SemanticParityStatus": "UNMATCHED",
       "Tests": "WRITTEN_NOT_RUN"
@@ -1782,5 +1782,5 @@
     "Shared Chapter 1 review/test and answer-appendix matching"
   ],
   "Status": "ROUTES_AUTHORED_NOT_LIVE; A_C_EXPLICIT_GAP",
-  "UpdatedUtc": "2026-11-06T06:32:56.958Z"
+  "UpdatedUtc": "2026-11-06T06:35:45.926Z"
 }
