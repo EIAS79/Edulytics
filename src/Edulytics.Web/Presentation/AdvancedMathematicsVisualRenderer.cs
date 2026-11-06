@@ -55,6 +55,14 @@ public static class AdvancedMathematicsVisualRenderer
         var plot = new PlotContext(spec.Window);
         var sb = Start(spec.Accessibility);
         Axes(sb, plot);
+        foreach (var tick in spec.XAxisTicks)
+        {
+            var x = plot.X(tick.Value);
+            var zeroY = plot.Y(0m);
+            sb.Append($"<line x1='{F(x)}' y1='{F(zeroY - 4d)}' " +
+                $"x2='{F(x)}' y2='{F(zeroY + 4d)}' class='amv-axis'/>");
+            Label(sb, x, zeroY + 20d, tick.Label, "amv-axis-label");
+        }
 
         foreach (var segment in spec.Segments)
             Segment(sb, plot, segment);

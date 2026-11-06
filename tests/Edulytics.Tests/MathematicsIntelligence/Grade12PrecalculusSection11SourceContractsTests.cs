@@ -240,6 +240,11 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     {
         Assert.Equal(19, Grade12PrecalculusSection11ExerciseVisuals.Count);
         Assert.Null(Grade12PrecalculusSection11ExerciseVisuals.Find(52));
+        var radians = Assert.IsType<CoordinatePlaneVisualSpec>(
+            Grade12PrecalculusSection11ExerciseVisuals.Find(59));
+        Assert.Equal(5, radians.XAxisTicks.Count);
+        Assert.Contains(radians.XAxisTicks, tick => tick.Label == "π/2");
+        Assert.Contains("π/2", AdvancedMathematicsVisualRenderer.RenderSvg(radians));
         foreach (var (originalNumber, visual) in Grade12PrecalculusSection11ExerciseVisuals.All)
         {
             Assert.True(originalNumber is >= 40 and <= 59);

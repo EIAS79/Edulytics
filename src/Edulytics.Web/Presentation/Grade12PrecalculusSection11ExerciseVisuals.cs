@@ -160,10 +160,26 @@ public static class Grade12PrecalculusSection11ExerciseVisuals
                 "Exercise 58: strictly decreasing graph",
                 "A decreasing nonhorizontal line passes vertical and horizontal line tests.",
                 0m,-1m),
-            [59] = Coordinate(Window(-4m,4m,-3m,4m),
-                Polyline(Point(-4m,0m),Point(-2m,0m),Point(0m,2m),Point(2m,1m),Point(4m,-2m)),
-                "Exercise 59: flat then peaked function",
-                "This shape-only model uses numeric x-ticks; the original exercise uses π-radian x-labels, which must be shown in the teacher-inspected source graph. Repeated outputs defeat the horizontal-line test.")
+            [59] = new CoordinatePlaneVisualSpec(
+                Window(-3.5m,3.5m,-3m,3m,0.785398163m),
+                [],
+                Polyline(Point(-3.141592654m,0m),Point(-1.570796327m,0m),
+                    Point(0m,0.3m),Point(0.785398163m,0.7m),
+                    Point(1.570796327m,0m),Point(3.141592654m,-2m)),
+                Access("Exercise 59: π-labelled graph, not one-to-one",
+                "An independent first-party graph uses the source's horizontal π-radian labels. " +
+                "Its horizontal-line test fails because repeated outputs appear on the flat " +
+                "portion and on the rise and fall. Teacher checks exact original geometry."))
+            {
+                XAxisTicks =
+                [
+                    new(-3.141592654m,"−π"),
+                    new(-1.570796327m,"−π/2"),
+                    new(0m,"0"),
+                    new(1.570796327m,"π/2"),
+                    new(3.141592654m,"π")
+                ]
+            }
         };
 
         if (result.Count != 19)
