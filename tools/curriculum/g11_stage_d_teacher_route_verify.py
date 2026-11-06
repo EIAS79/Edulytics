@@ -47,7 +47,7 @@ out={
   "teacherSubmissionAndReviewPersistedOnSampleLesson":True,
   "teacherSubmissionAndReviewPersistedForAll120":True,
   "wrongSchoolTeacherAndStudentDenied":True,
-  "coverage":"120 eligible teacher-reviewed entry routes; one representative persisted grade, NOT 120 graded student attempts",
+  "coverage":"120 distinct authenticated teacher-reviewed lesson routes, 120 CI synthetic student responses, 120 persisted teacher scores, 120 learner score readbacks; NOT independent academic grading of real students and NOT 120 auto-graded Practice routes",
   "academicOrSourceParityProven":False,
   "digitalPracticeQuestionFamiliesVerifiedHere":0,
   "status":"TEACHER_REVIEW_RUNTIME_ROUTE_PASS"
