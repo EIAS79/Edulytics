@@ -1,0 +1,77 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L07",
+  "LearningGoals": [
+    "Determine what information is needed to represent a sequence in different ways. Ask questions to elicit information."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-BF.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-IF.A.3",
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.A.2",
+      "SortOrder": 4
+    }
+  ],
+  "ReusePolicy": "Existing arithmetic/geometric/affine exact sequence engines only when question matches; unverified new mechanics remain teacher-reviewed",
+  "ExistingNumericFamilies": [
+    "sequences.core.arithmetic_nth_term",
+    "sequences.core.geometric_nth_term",
+    "sequences.core.find_position_arithmetic",
+    "usccss.g11.alg2.u01.l01.affine_recurrence",
+    "usccss.g11.alg2.u01.l01.fibonacci_term",
+    "usccss.g11.alg2.u01.l02.growth_factor"
+  ],
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "TeacherReview": {
+    "Required": true,
+    "SourceSpecificTasks": [
+      "partner-requested specific information only",
+      "problem card and data card not exposed before comparison",
+      "justify why first term needed",
+      "quadratic dot drawing and explanation"
+    ],
+    "Rubric": [
+      "correct term index and initial condition",
+      "mathematically correct representation or diagram",
+      "explanation justified by source constraints",
+      "accurate signed/fractional answers"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify.",
+    "Expected": "Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l07-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l07.rich-lesson-v2.json"
+}
