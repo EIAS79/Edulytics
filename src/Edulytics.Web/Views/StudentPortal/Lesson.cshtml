@@ -1938,6 +1938,21 @@
                         <figcaption>@graph.Accessibility.Description</figcaption>
                     </figure>
                 }
+                <details class="student-card">
+                    <summary>Nine basic function families — interactive reading practice</summary>
+                    <p>Use these original Edulytics coordinate diagrams to identify
+                       the domain and range. Explain any missing input, branch,
+                       or non-negative restriction. The source book's images have
+                       not been copied.</p>
+                    @foreach (var family in Grade12PrecalculusSection11ToolkitGraphs.All)
+                    {
+                        <figure class="student-lesson-graph">
+                            <figcaption><strong>@family.Title</strong>
+                                — Domain: @family.Domain. Range: @family.Range.</figcaption>
+                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(family.Graph))
+                        </figure>
+                    }
+                </details>
             </section>
         }
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")

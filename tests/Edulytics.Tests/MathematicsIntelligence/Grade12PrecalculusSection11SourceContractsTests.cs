@@ -333,6 +333,25 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void NineBasicToolkitGraphFamiliesHaveAccessibleDomainsAndBranches()
+    {
+        Assert.Equal(9, Grade12PrecalculusSection11ToolkitGraphs.All.Count);
+        Assert.Contains(Grade12PrecalculusSection11ToolkitGraphs.All,
+            x => x.Title == "Reciprocal y=1/x" &&
+                 x.Domain == "x≠0" && x.Graph.Segments.Count == 80);
+        Assert.Contains(Grade12PrecalculusSection11ToolkitGraphs.All,
+            x => x.Title == "Square root y=√x" && x.Domain == "x≥0");
+        Assert.All(Grade12PrecalculusSection11ToolkitGraphs.All,
+            x =>
+            {
+                MathematicalVisualSpecValidator.Validate(x.Graph);
+                Assert.Contains("aria-labelledby",
+                    AdvancedMathematicsVisualRenderer.RenderSvg(x.Graph),
+                    StringComparison.Ordinal);
+            });
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
