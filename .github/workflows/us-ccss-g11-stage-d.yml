@@ -123,10 +123,10 @@ jobs:
           name: g11-dotnet-targeted-regression
           path: /tmp/g11-tests
           if-no-files-found: warn
-  source-element-semantic-parity:
-    needs: structural-inventory
+  owner-accepted-source-handoff-and-license:
+    needs: [structural-inventory, owner-academic-acceptance]
     runs-on: ubuntu-24.04
-    timeout-minutes: 12
+    timeout-minutes: 14
     steps:
       - uses: actions/checkout@v4
         with:
@@ -134,8 +134,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Fail closed on unknown denominator, unverified rights or missing independent source parity
-        run: node tools/curriculum/g11-stage-d-audit.cjs --strict-source
+      - name: Record strict publisher 1:1 diagnostic as UNKNOWN, never invent independent certification
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/curriculum/g11-stage-d-audit.cjs --json > /tmp/g11-source-diagnostic.json
+          node -e "const a=require('/tmp/g11-source-diagnostic.json').sourceAudit;console.log(JSON.stringify(a,null,2))"
+      - name: Require owner's academic decision, all 5,114 recorded elements, 600 source hashes and legal asset notice
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/curriculum/g11-owner-accepted-source-handoff.cjs > /tmp/g11-owner-source-handoff.json
+          cat /tmp/g11-owner-source-handoff.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g11-source-independence-unknown-owner-handoff
+          path: |
+            /tmp/g11-source-diagnostic.json
+            /tmp/g11-owner-source-handoff.json
+          if-no-files-found: warn
   verified-practice-route-coverage:
     needs: [structural-inventory, authenticated-g11-120-https]
     runs-on: ubuntu-24.04

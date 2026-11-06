@@ -26,6 +26,14 @@ assert all(x["lessonCode"].startswith(prefix) and
            x["status"]=="AUTHENTICATED_RICHV2_RENDER" for x in rows)
 assert review.get("lessonCode")==prefix+"U01:L01"
 assert review.get("studentSubmitted") is True
+assert review.get("studentsSubmittedCount")==120
+assert review.get("teacherScoresPersistedCount")==120
+assert review.get("studentReadBackCount")==120
+assert review.get("databaseRowsVerified")==120
+assert review.get("duplicateWriteDenied") is True
+assert len(review.get("gradedLessonCodes",[]))==120
+assert set(review["gradedLessonCodes"])=={x["lessonCode"] for x in rows}
+
 assert review.get("teacherAwardedScore")==3
 assert review.get("teacherScorePersisted") is True
 assert review.get("studentReadBack") is True
@@ -37,6 +45,7 @@ out={
   "studentRichV2Verified":120,
   "perLessonTeacherRubricEntryVerified":120,
   "teacherSubmissionAndReviewPersistedOnSampleLesson":True,
+  "teacherSubmissionAndReviewPersistedForAll120":True,
   "wrongSchoolTeacherAndStudentDenied":True,
   "coverage":"120 eligible teacher-reviewed entry routes; one representative persisted grade, NOT 120 graded student attempts",
   "academicOrSourceParityProven":False,

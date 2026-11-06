@@ -88,6 +88,7 @@ if(teacherAt!==-1 && shaAt!==-1){
       manifest.studentRichV2Verified===120 &&
       manifest.perLessonTeacherRubricEntryVerified===120 &&
       manifest.teacherSubmissionAndReviewPersistedOnSampleLesson===true &&
+      manifest.teacherSubmissionAndReviewPersistedForAll120===true &&
       manifest.wrongSchoolTeacherAndStudentDenied===true &&
       Number.isInteger(manifest.actionsRunId) && manifest.actionsRunId>0){
      teacherRouteVerified=120;teacherEvidenceRunId=manifest.actionsRunId;
