@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l13-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L13",
+      "CultureCode": "en",
+      "Title": "Amplitude and Midline",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create a trigonometric function to represent a situation where either the amplitude or midline is not 1. Describe (in writing) how changing the amplitude or midline transforms the graph of a trigonometric function.",
+        "For y=A sin(x)+D, amplitude |A| is half the peak-to-trough distance and midline y=D is average of max and min. Negative A reflects vertically, not change amplitude magnitude.",
+        "Source activity 13.1: Comparing Parabolas: Match each equation to its graph. Be prepared to explain how you know which graph belongs with each equation. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.2: Blowing in the Wind: Suppose a windmill has a radius of 1 meter and the center of the windmill is \\((0,0)\\) on a coordinate grid. Write a function describing the relationship between the height \\(h\\) of \\(W\\) and the angle of rotation \\(\\theta\\). Explain your reasoning. the windmill blade has length 3 meters. The windmill blade has length 0.5 meter. Describe how your function and its graph would… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 13.3: Up, Up, and Away: A windmill has radius 1 meter and its center is 8 meters off the ground. The point \\(W\\) starts at the tip of a blade in the position farthest to the right and rotates counterclockwise. Write a function describing the relationship between the height \\(h\\) of \\(W\\), in meters, and the angle \\(\\theta\\) of rotation. Graph your function using technology. How does it compare to the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: For each trigonometric function, indicate the amplitude and midline. \\(y = 2\\sin(\\theta)\\) \\(y = \\cos(\\theta) - 5\\) \\(y= 1.4 \\sin(\\theta) + 3.5\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is a graph of the equation \\(y = 2\\sin(\\theta) - 3\\). Indicate the midline on the graph. Use the graph to find the amplitude of this sine equation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Select all trigonometric functions with an amplitude of 3. \\(y = 3\\sin(\\theta) -1\\) \\(y = \\sin(\\theta) + 3\\) \\(y = 3\\cos(\\theta) + 2\\) \\(y = \\cos(\\theta) - 3\\) \\(y = 3\\sin(\\theta)\\) \\(y = \\cos(\\theta - 3)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The center of a windmill is 20 feet off the ground and the blades are 10 feet long. Fill out the table showing the vertical position of \\(P\\) after the windmill has rotated through the given angle. Write an equation for the function \\(f\\) that describes the relationship between the angle of rotation \\(\\theta\\) and the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The measure of angle \\(\\theta\\), in radians, satisfies \\(\\sin(\\theta) < 0\\). If \\(\\theta\\) is between 0 and \\(2\\pi\\) what can you say about the measure of \\(\\theta\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which rotations, with center \\(O\\), take \\(P\\) to \\(Q\\)? Select all that apply. \\(\\frac{3\\pi}{4}\\) radians \\(\\frac{15\\pi}{4}\\) radians \\(\\frac{7\\pi}{4}\\) radians \\(\\frac{11\\pi}{4}\\) radians \\(\\frac{23\\pi}{4}\\) radians Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The picture shows two points \\(P\\) and \\(Q\\) on the unit circle. Explain why the tangent of \\(P\\) and \\(Q\\) is 2. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For y=-4cosx+1, give amplitude and midline. Expected reasoning or answer: 4 and y=1.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Amplitude and midline",
+          "Definition": "For y=A sin(x)+D, amplitude |A| is half the peak-to-trough distance and midline y=D is average of max and min. Negative A reflects vertically, not change amplitude magnitude.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find amplitude, midline, max and min of y=3sinx+2. Answer: Amplitude3; midline2; max5, min-1."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "|A|=3; D=2; extrema2±3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Amplitude and midline",
+          "Question": "Find amplitude, midline, max and min of y=3sinx+2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "|A|=3",
+            "D=2",
+            "extrema2±3."
+          ],
+          "Answer": "Amplitude3; midline2; max5, min-1.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For y=-4cosx+1, give amplitude and midline.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "4 and y=1.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Amplitude and midline",
+        "For y=A sin(x)+D, amplitude |A| is half the peak-to-trough distance and midline y=D is average of max and min. Negative A reflects vertically, not change amplitude magnitude.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
