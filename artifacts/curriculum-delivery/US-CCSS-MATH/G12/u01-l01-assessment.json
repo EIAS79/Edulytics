@@ -171,6 +171,50 @@
       "AutoMarkingAllowed": false,
       "RuntimeDeliveryStatus": "AUTHORED_NOT_INTEGRATED",
       "Tests": "WRITTEN_NOT_RUN"
+    },
+    "Section11VerticalLineGraphRubric": {
+      "SourcePdfPage": 35,
+      "OriginalSourceExercises": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "OriginalFigureEmbeddedInEdulytics": false,
+      "HumanEvaluator": "Assigned mathematics teacher",
+      "AnswerKey": {
+        "40": "FUNCTION",
+        "41": "NOT_A_FUNCTION",
+        "42": "FUNCTION",
+        "43": "FUNCTION",
+        "44": "NOT_A_FUNCTION",
+        "45": "FUNCTION",
+        "46": "NOT_A_FUNCTION",
+        "47": "FUNCTION",
+        "48": "NOT_A_FUNCTION",
+        "49": "FUNCTION",
+        "50": "NOT_A_FUNCTION",
+        "51": "FUNCTION"
+      },
+      "CriticalErrorCorrected": "Exercise 46 is NOT a function. At x=1 the two horizontal rays give y≈3 and y≈−3; upper open endpoint at x=0 and lower open endpoint at x≈2 do not remove the domain overlap.",
+      "Instructions": [
+        "First draw each relation as an accessible first-party representation with labelled axes; do not substitute source screenshot or claim original figures are licensed separately.",
+        "Ask the learner whether every permitted x has at most one y. At x=0, an excluded point is not a second output.",
+        "For exercises 41,44,46,48,50 require a specific vertical line with two distinct intersection heights. A curve failing the test is not a function.",
+        "For exercises 40,42,43,45,47,49,51 require the learner to explain why at most one y is produced for each permissible input.",
+        "Record manual justification and feedback; this source reading alone does not enable auto-scoring or gradebook persistence."
+      ],
+      "RuntimeDeliveryStatus": "AUTHORED_NOT_INTEGRATED",
+      "AutoMarkingAllowed": false,
+      "Tests": "WRITTEN_NOT_RUN"
     }
   },
   "Unit": 1,
