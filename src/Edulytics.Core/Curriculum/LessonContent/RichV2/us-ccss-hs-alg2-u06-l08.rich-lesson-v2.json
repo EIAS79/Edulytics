@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L08",
+      "CultureCode": "en",
+      "Title": "Rising and Falling",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Compare and contrast (in writing) the features of the cosine, sine, and tangent functions.",
+        "Sine and cosine have period2π, bounded values from-1 to1 and a quarter-period shift; tangent has periodπ and is undefined when cosine is zero. Graphs cannot share the same range or asymptotes.",
+        "Source activity 8.1: Notice and Wonder: A Bouncing Curve: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: What is Happening?: Here are some relationships that produce graphs that have a repetitive nature. For each situation, describe the dependent and independent variable. How does the dependent variable change? What might cause this change? This is the graph of the distance of a race car from the starting line as it goes around a track. This is the graph of the temperature in a city in Australia… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Card Sort: Graphs of Functions: Your teacher will give you a set of cards that show graphs. Sort the cards into categories of your choosing. Be prepared to describe your categories. Pause for a whole-class discussion. Sort the cards into new categories in a different way. Be prepared to describe your new categories. Many familiar things go through cycles: The sun (and the moon) rise and fall regularly each… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A fan blade spins counterclockwise once per second. Which of these graphs best depicts the height, \\(h\\), of \\(P\\) after \\(s\\) seconds? The fan blades are 1 foot long and the height is measured in feet from the center of the fan blades. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which situations are modeled accurately by a periodic function? Select all that apply. the distance from the earth to the sun as a function of time the vertical height of a point on a rotating wheel as a function of time the area of a sheet of paper as a function of the number of times it is folded in half the number… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of a function for some values of \\(x\\). Can you extend the graph to the whole plane so that the function \\(f\\) is periodic? Explain your reasoning. Can you extend the graph to the whole plane so that the function \\(f\\) is not periodic? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Can a non-constant linear function be periodic? Explain your reasoning. Can a quadratic function be periodic? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Do \\((7,1)\\) and \\((\\text-5,5)\\) lie on the same circle centered at \\((0,0)\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The measure of angle \\(\\theta\\) is between 0 and \\(2\\pi\\) radians. Which statements must be true of \\(\\sin(\\theta)\\) and \\(\\cos(\\theta)\\)? Select all that apply. \\(\\cos^2(\\theta) + \\sin^2(\\theta) = 1\\) If \\(\\sin(\\theta) = 0\\), then \\(\\cos(\\theta) = 1\\). If \\(\\sin(\\theta) = 1\\), then \\(\\cos(\\theta) = 0\\).… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The center of a clock is the origin \\((0,0)\\) in a coordinate system. The hour hand is 4 units long. What are the coordinates of the end of the hour hand at: Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find range of y=cosθ. Expected reasoning or answer: [-1,1].",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sine cosine tangent comparison",
+          "Definition": "Sine and cosine have period2π, bounded values from-1 to1 and a quarter-period shift; tangent has periodπ and is undefined when cosine is zero. Graphs cannot share the same range or asymptotes.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Give periods of sinθ and tanθ and identify where tangent is undefined. Answer: 2π and π; undefined π/2+kπ."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Sine repeats after2π, tangent afterπ; tan=sin/cos so cos=0 at π/2+kπ."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sine cosine tangent comparison",
+          "Question": "Give periods of sinθ and tanθ and identify where tangent is undefined.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Sine repeats after2π, tangent afterπ",
+            "tan=sin/cos so cos=0 at π/2+kπ."
+          ],
+          "Answer": "2π and π; undefined π/2+kπ.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find range of y=cosθ.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "[-1,1].",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Sine cosine tangent comparison",
+        "Sine and cosine have period2π, bounded values from-1 to1 and a quarter-period shift; tangent has periodπ and is undefined when cosine is zero. Graphs cannot share the same range or asymptotes.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
