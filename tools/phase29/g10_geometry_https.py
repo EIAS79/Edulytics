@@ -95,6 +95,16 @@ except AssertionError as exc:
     # Login redirect or another access gate is a denial, not an allowed page.
 
 result["crossSchoolDenial"]="PASS"
+
+# Verify the newly wired first-party teacher rubric is available to each
+# learner for exactly the assigned Geometry course; scoring persistence is a
+# separate acceptance gate, never inferred from page rendering.
+result["rubricEntryPagesRendered"]=0
+for lesson_code,lesson_id in ids.items():
+    rubric_html=page(student,"/student/g10/geometry/rubric?lessonId="+lesson_id)
+    assert "Submit for teacher review" in rubric_html,lesson_code
+    result["rubricEntryPagesRendered"]+=1
+print("G10_GEOMETRY_RUBRIC_STUDENT_ENTRY_PAGES",result["rubricEntryPagesRendered"],"/124",flush=True)
 result["technicalStatus"]="PASS" if result["passed"]==124 else "FAIL"
 result["notProved"]=["all mathematical correctness","Practice generating/grading and persistence",
      "teacher-scored submission review","graph/visual/accessibility","source-element parity"]

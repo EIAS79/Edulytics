@@ -1,0 +1,10 @@
+@model Edulytics.Web.Controllers.G10GeoRubricRow[]
+@{ ViewData["Title"] = "Grade 10 Geometry ? teacher review queue"; }
+<h1>Grade 10 Geometry ? teacher review queue</h1>
+<p>Only enrolled learners in your assigned mathematics classes appear here. Review each student's mathematical evidence and use the lesson-specific rubric.</p>
+<ul>
+@foreach (var row in Model)
+{
+    <li><a href="/school/g10/geometry/rubric/@row.Id">Lesson @row.LessonId ? Student @row.StudentProfileId</a> ? @row.SubmittedAtUtc.ToString("u") ? @(row.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")</li>
+}
+</ul>
