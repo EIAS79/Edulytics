@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l07-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L07",
+      "CultureCode": "en",
+      "Title": "Interpreting and Using Exponential Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend the term “half-life” in relation to the radioactive decay of certain elements and use it to calculate the age of different objects. Describe (in writing) the parameters of exponential expressions that represent different decay situations.",
+        "A half-life H means multiply by1/2 after H elapsed time units. Model A(t)=A0*(1/2)^(t/H) for t>=0, interpreting units and measurement.",
+        "Source activity 7.1: Halving and Doubling: A colony of microbes doubles in population every 6 hours. Explain why we could say that the population grows by a factor of \\(\\sqrt[6]{2}\\) every hour. A bacteria population decreases by a factor of \\(\\frac{1}{2}\\) every 4 hours. Explain why we could also say that the population decays by a factor of \\(\\sqrt[4]{\\frac12}\\) every hour. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.2: Radiocarbon Dating: Carbon-14 is used to find the age of certain artifacts and fossils. It has a half-life of 5,730 years, so if an object has carbon-14, it loses half of it every 5,730 years. At a certain point in time, a fossil had 3 picograms (a trillionth of a gram) of carbon-14. Complete the table with the missing mass of carbon-14 and years. What do the 2.5, \\(\\frac{1}{2}\\), and 5,730 mean… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.3: Old Manuscripts: The half-life of carbon-14 is about 5,730 years. Pythagoras lived between 600 BCE and 500 BCE. Explain why the age of a papyrus from the time of Pythagoras is about half of a carbon-14 half-life. Someone claims they have a papyrus scroll written by Pythagoras. Testing shows the scroll has 85% of its original amount of carbon-14 remaining. Explain why the scroll is likely a… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The half-life of carbon-14 is about 5,730 years. A fossil had 6 picograms of carbon-14 at one point in time. (A picogram is a trillionth of a gram or \\(1 \\times 10^{\\text-12}\\) gram.) Which expression describes the amount of carbon-14, in picograms, \\(t\\) years after it was measured to be 6 picograms. \\(6 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The half-life of carbon-14 is about 5,730 years. A tree fossil was estimated to have about 4.2 picograms of carbon-14 when it died. (A picogram is a trillionth of a gram.) The fossil now has about 0.5 picogram of carbon-14. About how many years ago did the tree die? Show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Nickel-63 is a radioactive substance with a half-life of about 100 years. An artifact had 9.8 milligrams of nickel-63 when it was first measured. Write an equation to represent the mass of nickel-63, in milligrams, as a function of: \\(t\\), time in years \\(d\\), time in days Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Tyler says that the function \\(f(x) = 5^x\\) is exponential and so it grows by equal factors over equal intervals. He says that factor must be \\(\\sqrt[10]{5}\\) for an interval of \\(\\frac{1}{10}\\) because ten of those intervals makes an interval of length 1. Do you agree with Tyler? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The population in a city is modeled by the equation \\(p(d) = 100,\\!000 \\boldcdot (1+ 0.3)^d\\), where \\(d\\) is the number of decades since 1970. What do the 0.3 and 100,000 mean in this situation? Write an equation for the function \\(f\\) to represent the population \\(y\\) years after 1970. Show your reasoning. Write an… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The function \\(f\\) is exponential. Its graph contains the points \\((0,5)\\) and \\((1.5,10)\\). Find \\(f(3)\\). Explain your reasoning. Use the value of \\(f(3)\\) to find \\(f(1)\\). Explain your reasoning. What is an equation that defines \\(f\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Select all expressions that are equal to \\(8^{\\frac23}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: A sample starts80 grams and has half-life5 years. Find remaining after15 years. Expected reasoning or answer: 10 grams.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Half-life decay",
+          "Definition": "A half-life H means multiply by1/2 after H elapsed time units. Model A(t)=A0*(1/2)^(t/H) for t>=0, interpreting units and measurement.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A substance has half-life8 years and starts100 grams. What remains after24 years? Answer: 12.5 grams."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Three half-lives elapsed; 100*(1/2)^3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Half-life decay",
+          "Question": "A substance has half-life8 years and starts100 grams. What remains after24 years?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Three half-lives elapsed",
+            "100*(1/2)^3."
+          ],
+          "Answer": "12.5 grams.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "A sample starts80 grams and has half-life5 years. Find remaining after15 years.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "10 grams.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Half-life decay",
+        "A half-life H means multiply by1/2 after H elapsed time units. Model A(t)=A0*(1/2)^(t/H) for t>=0, interpreting units and measurement.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
