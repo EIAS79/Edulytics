@@ -74,7 +74,12 @@ public sealed record CoordinatePlaneVisualSpec(
     MathematicalVisualAccessibility Accessibility)
     : MathematicalVisualSpec(
         MathematicalVisualKind.CoordinatePlane,
-        Accessibility);
+        Accessibility)
+{
+    // Optional unfilled endpoint markers for strict/open interval graphs.
+    // Kept separate from Points to preserve existing constructor contracts.
+    public IReadOnlyList<MathematicalPoint> OpenPoints { get; init; } = [];
+}
 
 public sealed record FunctionGraphVisualSpec(
     MathematicalAxisWindow Window,
@@ -190,6 +195,7 @@ public static class MathematicalVisualSpecValidator
             case CoordinatePlaneVisualSpec coordinate:
                 ValidateWindow(coordinate.Window);
                 ValidatePoints(coordinate.Points);
+                ValidatePoints(coordinate.OpenPoints);
                 ValidateSegments(coordinate.Segments);
                 break;
 

@@ -1920,6 +1920,26 @@
 
     <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@grade5OriginalDisplayTitle</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
+        @* G12 section 1.1: source-skill first-party instructional graphs, not
+           the original textbook's 1:1 figures or automatically marked tasks. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="First-party function graph teaching">
+                <h2>Function graphs — input, output and one-to-one</h2>
+                <p>These independently authored graphs show vertical-line and
+                    horizontal-line reasoning. They are teaching models, not
+                    reproductions of the original exercise figures. Written and
+                    drawn explanations require teacher review.</p>
+                @foreach (var graph in Grade12PrecalculusSection11Visuals.Build())
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(graph))
+                        <figcaption>@graph.Accessibility.Description</figcaption>
+                    </figure>
+                }
+            </section>
+        }
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />

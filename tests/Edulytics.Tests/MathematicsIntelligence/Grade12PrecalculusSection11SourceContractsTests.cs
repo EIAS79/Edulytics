@@ -1,6 +1,8 @@
 using Edulytics.Core.Curriculum;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
+using Edulytics.Core.Mathematics.Visuals;
+using Edulytics.Web.Presentation;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -159,6 +161,22 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         injective["step"] = 0; // Distinct output guarantee removed; fail closed.
         Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(family, injective, "yes"));
         // This tests ordered-pair injectivity, NOT graphical one-to-one proof.
+    }
+
+    [Fact]
+    public void Grade12FirstPartyFunctionGraphsRenderWithAccessibleOpenEndpoints()
+    {
+        var visualSpecs = Grade12PrecalculusSection11Visuals.Build();
+        Assert.Equal(4, visualSpecs.Count);
+        Assert.All(visualSpecs, MathematicalVisualSpecValidator.Validate);
+        var horizontalRays = Assert.IsType<CoordinatePlaneVisualSpec>(visualSpecs[3]);
+        Assert.Equal(2, horizontalRays.OpenPoints.Count);
+        var svg = AdvancedMathematicsVisualRenderer.RenderSvg(horizontalRays);
+        Assert.Equal(2, svg.Split("class='amv-open-point'").Length - 1);
+        Assert.Contains("At x=1", horizontalRays.Accessibility.Description,
+            StringComparison.Ordinal);
+        Assert.Contains("aria-labelledby", svg, StringComparison.Ordinal);
+        // Renderable teaching graphs do not certify original figure parity.
     }
 
     [Fact]

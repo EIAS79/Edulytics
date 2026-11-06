@@ -61,6 +61,8 @@ public static class AdvancedMathematicsVisualRenderer
 
         foreach (var point in spec.Points)
             Point(sb, plot, point);
+        foreach (var openPoint in spec.OpenPoints)
+            OpenPoint(sb, plot, openPoint);
 
         return End(sb);
     }
@@ -643,6 +645,19 @@ public static class AdvancedMathematicsVisualRenderer
             Label(sb, x + 10d, y - 10d, point.Label!);
     }
 
+    private static void OpenPoint(
+        StringBuilder sb,
+        PlotContext plot,
+        MathematicalPoint point)
+    {
+        var x = plot.X(point.X);
+        var y = plot.Y(point.Y);
+        sb.Append(
+            $"<circle cx='{F(x)}' cy='{F(y)}' r='5' class='amv-open-point'/>");
+        if (!string.IsNullOrWhiteSpace(point.Label))
+            Label(sb, x + 10d, y - 10d, point.Label!);
+    }
+
     private static MathematicalAxisWindow BoundsFor(
         IReadOnlyList<MathematicalPoint> points)
     {
@@ -702,7 +717,7 @@ public static class AdvancedMathematicsVisualRenderer
             ".amv-bg{fill:#fff}.amv-grid{stroke:#d7e0e7;stroke-width:1}" +
             ".amv-axis{stroke:#173c47;stroke-width:2}.amv-axis-label,.amv-label{fill:#173c47;font:600 14px system-ui,sans-serif}" +
             ".amv-segment{stroke:#173c47;stroke-width:3;fill:none}.amv-dashed{stroke-dasharray:8 6}" +
-            ".amv-point{fill:#173c47;stroke:#fff;stroke-width:2}.amv-guide{stroke:#7a8c96;stroke-width:1.5;stroke-dasharray:5 5}" +
+            ".amv-point{fill:#173c47;stroke:#fff;stroke-width:2}.amv-open-point{fill:#fff;stroke:#173c47;stroke-width:3}.amv-guide{stroke:#7a8c96;stroke-width:1.5;stroke-dasharray:5 5}" +
             ".amv-vector{stroke:#173c47;stroke-width:3}.amv-bracket{stroke:#173c47;stroke-width:3;fill:none}" +
             ".amv-matrix-value{fill:#173c47;font:700 17px ui-monospace,monospace}" +
             ".amv-polygon{fill:#eef4f7;stroke:#173c47;stroke-width:2}" +
