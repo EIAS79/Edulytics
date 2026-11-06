@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l01-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L01",
+      "CultureCode": "en",
+      "Title": "Let’s Make a Box",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Generalize from specific calculations to create a polynomial to model the volume of a constructed box. Interpret features of a graph of a polynomial.",
+        "Removing an equal square of side x from each corner of an L by W sheet and folding gives a box with height x and base dimensions L-2x and W-2x; V(x)=x(L-2x)(W-2x) with 0<x<min(L,W)/2. A graph must be interpreted only over the physically permitted domain.",
+        "Source activity 1.1: Which One Doesn’t Belong: Boxes: Which one doesn’t belong? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.2: Building Boxes: Your teacher will give you some supplies. Construct an open-top box from a sheet of paper by cutting out a square from each corner and then folding up the sides. Calculate the volume of your box, and complete the table with your information. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.3: Building the Biggest Box: Attribution: Balancing Boxes, by publicdomainpictures. Public Domain. publicdomainpictures. Source. The volume \\(V(x)\\) in cubic inches of the open-top box is a function of the side length \\(x\\) in inches of the square cutouts. Make a plan to figure out how to construct the box with the largest volume. Pause here so your teacher can review your plan. Write an expression for… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A rectangular schoolyard is to be fenced in using the wall of the school for one side and 150 meters of fencing for the other three sides. The area \\(A(x)\\) in square meters of the schoolyard is a function of the length \\(x\\) in meters of each of the sides perpendicular to the school wall. Write an expression for… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Noah finds an expression for \\(V(x) \\) that gives the volume of an open-top box in cubic inches in terms of the length \\(x\\) in inches of the cutout squares used to make it. This is the graph Noah gets if he allows \\(x\\) to take on any value between -1 and 5. What would be a more appropriate domain for Noah to use… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Mai wants to make an open-top box by cutting out corners of a square piece of cardboard and folding up the sides. The cardboard is 10 centimeters by 10 centimeters. The volume \\(V(x)\\) in cubic centimeters of the open-top box is a function of the side length \\(x\\) in centimeters of the square cutouts. Write an… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The area of a pond covered by algae is \\(\\frac{1}{4}\\) of a square meter on day 1 and it doubles each day. Complete the table. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is a table showing values of sequence \\(p\\). Define \\(p\\) recursively using function notation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The table shows two sloth populations growing over time. Describe a pattern in how each population changed from one year to the next. These patterns continued for many years. Based on this information, fill in the extra rows in the table. On the same axes, draw graphs of the two populations over time. Does Population… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For an 18 by 10 sheet, derive V(x) and V(2), with domain. Expected reasoning or answer: V=x(18-2x)(10-2x); V(2)=2*14*6=168; 0<x<5.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial box volume",
+          "Definition": "Removing an equal square of side x from each corner of an L by W sheet and folding gives a box with height x and base dimensions L-2x and W-2x; V(x)=x(L-2x)(W-2x) with 0<x<min(L,W)/2. A graph must be interpreted only over the physically permitted domain.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For a 20 by 12 inch sheet, write the volume polynomial and evaluate at x=2. Answer: V(x)=4x^3-64x^2+240x cubic inches; V(2)=256."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "V=x(20-2x)(12-2x); V=4x^3-64x^2+240x; V(2)=256."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial box volume",
+          "Question": "For a 20 by 12 inch sheet, write the volume polynomial and evaluate at x=2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "V=x(20-2x)(12-2x)",
+            "V=4x^3-64x^2+240x",
+            "V(2)=256."
+          ],
+          "Answer": "V(x)=4x^3-64x^2+240x cubic inches; V(2)=256.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For an 18 by 10 sheet, derive V(x) and V(2), with domain.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "V=x(18-2x)(10-2x); V(2)=2*14*6=168; 0<x<5.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial box volume",
+        "Removing an equal square of side x from each corner of an L by W sheet and folding gives a box with height x and base dimensions L-2x and W-2x; V(x)=x(L-2x)(W-2x) with 0<x<min(L,W)/2. A graph must be interpreted only over the physically permitted domain.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
