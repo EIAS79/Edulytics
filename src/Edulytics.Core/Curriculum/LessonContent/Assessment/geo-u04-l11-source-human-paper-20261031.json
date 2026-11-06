@@ -1,0 +1,209 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f28bb9bf1b283e435efcc03e78fd20c13a47bf47a5fc5ecc4caf484d8fb228f0",
+    "TeacherActivities": "49c6a8d90db8f0766ee591ad2f0b4accb3612ed312398acb5b117493b4b3bcd7",
+    "StudentActivities": "54717ab5c8b2b37bd5ee97ac719c0d4b34eedffa1aeb75e574cb741faccaa0b6",
+    "StudentPractice": "12e6ec9a8fc14ab6b107d69ed925b75819f636d2bf369fdd640a9abdbb413b88"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-GMD.A.1",
+      "HSG-SRT.C",
+      "HSN-Q.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "source radius1 hexagon shaded area pi-3sqrt3/2 and comparison with square",
+      "Mode": "EXACT_GEOMETRIC_AREA_PROOF"
+    },
+    {
+      "Source": "11.2",
+      "Goal": "independently derive full inscribed n-gon perimeter 2n sin180/n, source GeoGebra figure not reproduced",
+      "Mode": "TEACHER_GENERAL_FORMULA_DIAGRAM"
+    },
+    {
+      "Source": "11.3",
+      "Goal": "n6/10/20/50 pi lower approximations, upper tangent bound, incorrect original rounding claim correction",
+      "Mode": "MATH_EXACT_ROUNDING_CRITIQUE"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original pentagon area, pi estimate, hexagon, airplane, right triangle and equilateral items",
+      "Mode": "EXACT_P1_P4_P7_AND_TEACHER_SOURCE_FIGURE"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "teacher-login protected final assessment unavailable",
+      "Mode": "EDULYTIKS_INDEPENDENT_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11",
+    "TaskId": "geo-u04-l11-inscribed-circumscribed-pi-proof-and-error-bound",
+    "GroupId": "GEO_U04_L11_PI_N_GON_BOUNDS_ROUNDING_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original hand drawn unit circle square and hexagon shaded areas, n-gon general proof and lower/upper bound, numeric n-series plus documented source rounding correction, seven indexed practice with date and human8 point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "constructs and calculates exact unit hexagon area3sqrt3/2 and shaded circle gap, comparing square gap",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "proves n-gon P=2n sin(180/n) and two-sided pi inequalities with geometric side/altitude justifications",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "checks n6 n10 n20 n50 and distinguishes error/rounding, demonstrating n237 smallest correct three-decimal rounding",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "answers seven original source Practice calculations and provides clear human-reviewed diagrams/units and source-correction explanation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "regular pentagon side7 inches perimeter and area",
+        "TeacherExpected": "perimeter35in and area245/(4tan36)≈84.303 square inches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "n sin180/n approximates pi n=60",
+        "TeacherExpected": "pi_in60≈3.14015737, pi−approx≈0.00143528; expression is HALF perimeter, not full",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "regular hexagon side2 inches perimeter and area",
+        "TeacherExpected": "perimeter12in, area6sqrt3≈10.392 square inches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "airplane horizontal125mi vertical9mi",
+        "TeacherExpected": "angle arctan9/125≈4.12 degrees, path sqrt15625+81≈125.3236mi",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "five source right triangle statements AC and trig ratios",
+        "TeacherExpected": "actual source diagram must be checked before selecting option A-E",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "two sine and two cosine formulas from source ABC triangle",
+        "TeacherExpected": "teacher checks original labelled angles and the opposite/adjacent hypotenuse mapping",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "equilateral triangle area36sqrt3 square units",
+        "TeacherExpected": "side12 units using area=s²sqrt3/4",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "UnitHexagonArea": "3sqrt3/2",
+    "ShadedHexagonGap": "pi-3sqrt3/2",
+    "SquareShadedGap": "pi-2",
+    "PiLowerFormula": "n*sin(pi/n)",
+    "PiUpperFormula": "n*tan(pi/n)",
+    "FullPerimeterFormula": "2*n*sin(pi/n)",
+    "PiLowerN60": "3.1401573745766296",
+    "PiLowerN72": "3.140595890304192",
+    "PiLowerN102": "3.141095972729376",
+    "PiLowerN236": "3.1414998701404784",
+    "PiLowerN237": "3.141500651464446",
+    "FirstNCorrectNearestThousandth": 237,
+    "OriginalSource102Claim": "INACCURATE_FOR_NEAREST_THOUSANDTH_ROUNDING",
+    "P1PentagonArea": "245/(4tan36deg)",
+    "P3HexArea": "6sqrt3",
+    "P4Path": "sqrt(125^2+9^2)",
+    "P7EquilateralSide": 12
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "unit-circle hexagon area3sqrt3/2, shaded gap pi minus that area",
+      "P_in=2n sin(pi/n), P_out=2n tan(pi/n) and π strictly between corresponding half-perimeters",
+      "n237 lower estimate rounds3.142 whereas n102 rounds3.141, correcting source misconception",
+      "Practice P1 pentagon perimeter35 and area84.303, P3 hex perimeter12 and area6sqrt3"
+    ],
+    "Equivalent": [
+      "2n sin180/n degrees and2n sin(pi/n radians agree when angle mode is correct",
+      "P1 pentagon area245/(4tan36) also equals(245/4)*cot36"
+    ],
+    "Wrong": [
+      "n*sin(pi/n) is FULL perimeter instead of HALF perimeter",
+      "n102 rounds to3.142 at nearest thousandth",
+      "a fixed inscribed regular polygon perimeter is larger than circumference",
+      "upper bound uses sine while lower uses tangent"
+    ],
+    "Boundary": [
+      "n integer>=3 and radius positive",
+      "source error tolerance under0.0005 is not sufficient to guarantee same rounding near threshold3.1415",
+      "teacher/source original GeoGebra applet not verified and publisher locked assessment not copied"
+    ],
+    "Malformed": [
+      "missing n side count or angle expressed in wrong mode",
+      "claims exact pi value from a finite polygon",
+      "source figure-dependent P5/P6 claimed exact with absent image"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

@@ -1,0 +1,171 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L13",
+  "Ordinal": 50,
+  "UnitCode": "U03",
+  "UnitOrdinal": 13,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\13\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\13\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\13\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\13\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "a213058e1239510dac5770f5f38f47a26b4b3bf0007128aeabbb76ca91717237",
+    "TeacherActivities": "a372510f3035088775838df28055d3aefad99c8933ca426a2597d8639d7e10cf",
+    "StudentActivities": "26972a02737fb75d9ad21202b224e2b4ffc14245adae0ddb38c4e7248927cb50",
+    "StudentPractice": "d4c3550503ecb927b33dc478a9599f47f08ac416aafc4087f6d68e72fe805b15"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "13.1",
+      "Goal": "Similar, Right? altitude from right vertex and two smaller AA-similar triangles",
+      "Mode": "TEACHER_LABELED_PAPER_AA"
+    },
+    {
+      "Source": "13.2",
+      "Goal": "trace and rotate smaller triangle, three ordered pair similarity statements and HG GF HF",
+      "Mode": "TEACHER_ORIGINAL_DIAGRAM_AND_RATIO"
+    },
+    {
+      "Source": "13.3",
+      "Goal": "prove AA without assuming sketch, generate repeated-side ratio equations, distinguish rounded vs exact",
+      "Mode": "FIRST_PARTY_HUMAN_PROOF_MATH"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original source-indexed altitude, area, quadrilateral and midpoint problems",
+      "Mode": "EXACT_SOURCE_AND_FIGURE_DEPENDENT_TEACHER"
+    },
+    {
+      "Source": "13.4",
+      "Goal": "teacher-locked finding unknown values",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.A.3"
+    ],
+    "Addressing": [
+      "HSG-SRT.B.5"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.B.4"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L13_RIGHT_ALTITUDE_AA_RATIO_PAPER",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L13",
+    "TaskId": "geo-u03-l13-three-altitude-triangles-and-exact-geometric-means",
+    "GroupId": "GEO_U03_L13_RIGHT_ALTITUDE_AA_RATIO_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Three accurately labelled altitude triangles and ordered AA mapping, tracing paper comparisons, coherent CD^2 and leg-projection ratios, source exact numerical examples and teacher-scored critique.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "identifies three original right triangles with correctly ordered right and acute angle matches and proves AA",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "writes consistent corresponding-side ratios including CD squared=AD*DB and BC squared=AB*DB with reasoning",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "computes source examples PS=sqrt(21), QS=25/12 and Practice P2 h=6, P3 area without invented diagrams",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "teacher-reviewed drawing and critical comparison of measured approximate versus exact Pythagorean results",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "right triangle with hypotenuse pieces12 and3 has altitude6",
+      "source RS3 QS7 gives PS sqrt21 by equal ratios and source PQ5 RQ12 gives SQ25/12",
+      "any triangle with altitude h to side c area is h*c/2"
+    ],
+    "Equivalent": [
+      "CD=sqrt(AD*DB) positive root and CD^2=AD*DB represent same constraint",
+      "two distinct valid AA angle correspondences imply same right-triangle side proportions"
+    ],
+    "Wrong": [
+      "automatically asserts two smaller triangles CONGRUENT merely because both are right triangles",
+      "treats arbitrary nonright triangle altitude as generating three similar triangles",
+      "rounds measured CB11.96 and claims exact source theorem value 12 without checking source diagram"
+    ],
+    "Boundary": [
+      "right triangle nondegenerate and both altitude foot hypotenuse segments positive",
+      "zero hypotenuse segment gives degenerate triangle, no genuine three-triangle argument",
+      "source original 13.2 missing diagram measurements so HG/GF/HF exact values withheld"
+    ],
+    "Malformed": [
+      "no specified perpendicular altitude foot or labelled vertex correspondence",
+      "cross-multiplied side proportions from incorrect ordering",
+      "figure-dependent answer given with no source measurement"
+    ]
+  },
+  "IndependentMathOracles": {
+    "SourcePQRExampleAltitude": "sqrt(21)",
+    "SourcePQRProjection": "25/12",
+    "PracticeP2Altitude": "6",
+    "PracticeP3Area": "h*c/2",
+    "PracticeP3Choice": "D",
+    "SourceAngleBCD": 58,
+    "SourceAngleACD": 32,
+    "SourceAngleA": 58,
+    "GeneralAltitudeSquare": "CD^2=AD*DB",
+    "GeneralProjectionSquare": "BC^2=AB*DB",
+    "UnverifiedOriginalFigureLength": [
+      "HG",
+      "GF",
+      "HF"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l13-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l13-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l13-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l13-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "eea02638fd81fed5ccbeb9dc690e1d18337c99e7",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T04:12:32.394624Z",
+  "ClosedAtUtc": "2026-10-31T04:12:53.011734Z",
+  "ElapsedSeconds": 20.617,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L14"
+}

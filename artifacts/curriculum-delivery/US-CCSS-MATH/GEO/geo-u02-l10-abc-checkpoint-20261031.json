@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L10",
+  "LessonTitle": "Practicing Proofs",
+  "Unit": "U02",
+  "Ordinal": 32,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "b045b3b3c8012378f04e54c1ae20dbb6583de84d666efb12cb83001f0a173fb9",
+    "TeacherActivities": "3d5a47bc79fa5f57045f2b7b7c83a16c9208132133d4d5e6cc9ce34e1e68ea97",
+    "StudentActivities": "6cc6c13aef119569af3cbb59cda4fe9552950c619dc0dd73c31a8e118a85d3fe",
+    "StudentPractice": "210579aa3e19fdf1e54b27f2596266b7e7eabac7e59c39d5c4010d572666e202"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.A.2",
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [
+      "HSG-MG.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "OriginalActivities": [
+    "10.1",
+    "10.2",
+    "10.2 Extension",
+    "10.3"
+  ],
+  "OriginalPracticeCount": 8,
+  "SourceCrosswalk": [
+    {
+      "Source": "10.1",
+      "Goal": "Physical bracing/metal-fastener exploration, different flexible and rigid diagonals",
+      "FirstPartyMode": "PHYSICAL_TEACHER_OBSERVED_DIAGONAL_CONSTRUCTION"
+    },
+    {
+      "Source": "10.2",
+      "Goal": "Two independent card sort classifications then rigid/flexible and SSS/SAS/ASA arguments",
+      "FirstPartyMode": "TEACHER_OWNED_PRIVATE_DIAGRAM_CARDS"
+    },
+    {
+      "Source": "10.2 Extension",
+      "Goal": "John Hancock braced building possible quadrilateral, source photograph not reproduced",
+      "FirstPartyMode": "FIRST_PARTY_CONJECTURE_AND_TEST"
+    },
+    {
+      "Source": "10.3",
+      "Goal": "Partner take-turns four quadrilateral claims matched to justified diagrams",
+      "FirstPartyMode": "TEACHER_REVIEWED_GIVEN_VS_PROVEN_CARD_PROTOCOL"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 original source problem skills including kite, reflection, angle bisector, rotation",
+      "FirstPartyMode": "EIGHT_TEACHER_SCORED_SOURCE_INDEXED_PRACTICE"
+    },
+    {
+      "Source": "10.4 Publisher Cool-down",
+      "Goal": "Restricted original",
+      "FirstPartyMode": "FIRST_PARTY_EDULYTIKS_PROOF_ALTERNATIVE"
+    }
+  ],
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_RESTRICTED_UNVERIFIED_EDULYTIKS_FIRST_PARTY_PAPER",
+  "StageA": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+  "StageB": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+  "StageC": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L10_QUADRILATERAL_BRACES_PHYSICAL_PAPER_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L10_QUADRILATERAL_BRACES_PHYSICAL_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L10",
+    "Mode": "TEACHER_SELECTED_PHYSICAL_MANIPULATIVES_AND_PAPER_REVIEW",
+    "TaskId": "geo-u02-l10-diagonal-braces-card-sort-8-practice",
+    "TeacherHandoff": "Provide two long two short hole-punched strips and four fasteners per student or equivalent self-contained handmade materials; guide rigid/flexible brace demonstration, privately authored source-equivalent sort cards, partner explanation and 8 source-indexed practice tasks. Teacher observes and scores written proof against four 0–2 criteria offline; source original imagery/blackline not copied.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct physical brace configurations, distinction of diagonal and side-midpoint bar, counterexample to four-bar rigidity",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Two justified diagram-card classifications, rigid/flexible grouping and properly established SSS/SAS/ASA correspondence",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Accurate four matching quadrilateral claims and partner given-versus-to-prove argument without circular proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Eight source-indexed tasks and first-party Cool-down with correct kite/angle-bisector/rotation logic, no unsupported claims",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "FlexibleRhombusExamples": [
+      "side5 angle60 non-square rhombus",
+      "side5 angle90 square"
+    ],
+    "P7_Error": "GE_BISECTS_AT_G_ONLY_DOES_NOT_IMPLY_AT_E",
+    "RigidFromDiagonal": "TWO_TRIANGLES_FIXED_BY_SSS_WITH_DIAGONAL_LENGTH",
+    "CardCriteria": [
+      "SSS",
+      "SAS",
+      "ASA"
+    ],
+    "PracticeCount": 8
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l10-brace-card-sort-paper-20261031.json",
+  "LessonContentCommit": "0490e436e1b30143164753b0f06e75b7a521a427",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l10-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StaticValidation": "Python JSON parsing + node --check syntax + git diff --check (NO app tests/Stage D)",
+  "OriginalFigures": "NOT_PIXEL_CERTIFIED_IF_SOURCE_IMAGES_LOCKED",
+  "TeacherScorePersistence": "NOT_VERIFIED_STAGE_D_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT"
+}

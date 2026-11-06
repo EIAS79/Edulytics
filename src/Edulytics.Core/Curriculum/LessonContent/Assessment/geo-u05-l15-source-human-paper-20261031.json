@@ -1,0 +1,206 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\15\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\15\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\15\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\15\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "baa2655a28af508aa9e57f120274273f64f0b57536c865ed7ddaaefaf7525207",
+    "TeacherActivities": "64cb11768b22af10b4f27490defdacb2b7271d668e7bb9305af855d914555f6a",
+    "StudentActivities": "ed0394996b38085e3a565978d7d6aab180071e475289c13d25c88207a7e51af8",
+    "StudentPractice": "33fdd07d226e7bff3333fa3e97ab7162b437fafb17adf91713508ed37c7ec7f3"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-GMD.A.3",
+      "HSG-GMD.B.4"
+    ],
+    "BuildingTowards": []
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "15.1",
+      "Goal": "mental base-area times perpendicular height with correct radius exponent",
+      "Mode": "TEACHER_SOURCE_FIGURE"
+    },
+    {
+      "Source": "15.2",
+      "Goal": "four source image-based missing lengths using Pythagoras/trig, optional hemisphere",
+      "Mode": "HUMAN_STRATEGY_AND_EXACT_SOURCE_ALTERNATIVE"
+    },
+    {
+      "Source": "15.3",
+      "Goal": "source profile cylinder r2 h5 with cone r2 h3 total24pi",
+      "Mode": "FIRST_PARTY_ROTATION_DRAWING_AND_EXACT_MATH"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven source cone slant, square pyramid height, volume comparisons, inverse design and wheel scale",
+      "Mode": "EXACT_SOURCE_CALCULATION_AND_HUMAN"
+    },
+    {
+      "Source": "15.4",
+      "Goal": "publisher protected Maximizing Seeds",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L15",
+    "TaskId": "geo-u05-l15-original-rotation-r2-h5-and-cone-h3",
+    "GroupId": "GEO_U05_L15_CONE_CYLINDER_ROTATION_STRATEGY_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Print annotated original 2D radial profile and compound 3D cylinder/cone, source missing-height plan with teacher supplied figures, P1-P7 exact computations and 8-point human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l15-rotation-composite-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "labels original source cone/prism missing dimensions, selects proper Pythagorean or trig height strategy before formula",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "constructs original 15.3 axial cylinder radius2 h5 plus cone radius2 h3, derives V24pi and explains no double count",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "checks source cylinder chew toy202.5pi vs right cone12pi sqrt220, distinguishes slant height and bowl material assumptions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies original P1-P7, including slant13, pyramid400, volume ratios1/9/3 and valid inverse design units",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "cone diameter10 volume100pi find slant",
+        "TeacherExpected": "r5 h12, slant13",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "square pyramid side10 midpoint slant13",
+        "TeacherExpected": "perpendicular h12, volume400",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "prism/pyramid equal height different base3x; pyramid/cylinder heights; cone radius3x",
+        "TeacherExpected": "first equal; cylinder9x pyramid; cone3x cylinder",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "pyramid V120 h8 two distinct polygon bases",
+        "TeacherExpected": "B45in² e.g rectangle5x9 and triangle legs9/10",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "clay prism6×1×.5 new pyramid same volume",
+        "TeacherExpected": "V3in³, B*h9; two examples square3x3 h1 and rectangle3x1 h3",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "three congruent pyramids fill cube side2ft",
+        "TeacherExpected": "8/3ft³ each",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "monster wheel area324pi to9pi",
+        "TeacherExpected": "linear scale1/6",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "SourceRotationCylinder": "20pi",
+    "SourceRotationCone": "4pi",
+    "SourceRotationTotal": "24pi",
+    "SourceCylinderToy": "202.5pi",
+    "SourceConeToy": "12pi sqrt220",
+    "OptionalBowlVolume": "1/(3sqrt(2pi))",
+    "P1Slant": 13,
+    "P2PyramidVolume": 400,
+    "P3Comparisons": [
+      "EQUAL",
+      "CYLINDER_9X_PYRAMID",
+      "CONE_3X_CYLINDER"
+    ],
+    "P4BaseArea": 45,
+    "P5ClayVolume": 3,
+    "P6Pyramid": "8/3",
+    "P7LinearScale": "1/6"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source 15.3 r2 cylinder height5 volume20pi plus cone height3 volume4pi total24pi",
+      "P1 apex-to-edge13, P2 h12 volume400, P7 k1/6",
+      "P3 first prism/pyramid equal, cylinder9 times pyramid, cone3 times cylinder"
+    ],
+    "Equivalent": [
+      "source total24pi equals(20+4)pi and about75.398 cubic inches",
+      "P6 cube volume8 divided by3 gives8/3 cubic feet each"
+    ],
+    "Wrong": [
+      "cone radius squared after being divided by3",
+      "right pyramid uses given midpoint slant13 as perpendicular height",
+      "solid of rotation counts shared disk as positive overlap volume",
+      "wheel area ratio1/36 taken directly as linear scale"
+    ],
+    "Boundary": [
+      "source 15.1 and 15.2 original missing measurements figure only; cannot grade specific numeric answers without figure",
+      "hemisphere sheet metal area1ft² may describe curved surface only and ignores thickness",
+      "zero/negative radius/height nonphysical"
+    ],
+    "Malformed": [
+      "no rotation axis referenced",
+      "slant length and height conflated with no labelled right triangle",
+      "area in inches squared used to report volume"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l15-rotation-composite-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l15-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

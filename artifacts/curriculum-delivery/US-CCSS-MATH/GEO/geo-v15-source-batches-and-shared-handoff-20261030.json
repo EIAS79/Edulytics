@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "courseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "pr": 583,
+  "branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "date": "2026-10-30",
+  "checkpoint": "V15 course-owned source-specific batches U03/L06 and U04/L01/L03",
+  "releaseDecision": "DRAFT_NO_GO",
+  "authoredRichV2Candidates": 124,
+  "totalWorkedExamples": 372,
+  "priorIndependentNumericSlots": 55,
+  "newIndependentNumericSlots": 28,
+  "totalIndependentNumericSlots": 83,
+  "remainingNotIndependentlyNumericChecked": 289,
+  "mathCountNotes": "New V15 28 examples are distinct numeric answer slots across U03:L01-L16 and are disjoint from V14 U04 28 and V13 U05-U08 27; qualitative theorem/proof correctness is separate and still requires review.",
+  "sourceTaskRowsReviewed": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L06",
+      "title": "Connecting Similarity and Transformations",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/2/3/6/index.html",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/2/3/6/preparation.html",
+      "sourceActivities": [
+        "6.1 Dilation Miscalculation: critique rectangular distortion",
+        "6.2 Card Sort: Not-So-Rigid Transformations and inverse scales",
+        "6.3 Alphabet Soup: right-triangle correspondence 8,15,17 to 3.2,6,6.8"
+      ],
+      "teacherObjective": "comprehend similarity via dilations + rigid transformations; articulate correctly ordered similarity statements and matching side proportions",
+      "codeChange": "First worked example now directly answers the question with vertices D=(1,1), E=(7,1), F=(1,9), not just an abstract similarity statement; native EquationSet + source-specific student tasks added.",
+      "parityGap": "Actual source cards and teacher-collected transformation sequences, figure critique and ordered similarity proofs not authenticated or human graded. The native EquationSet is authored only, not browser verified.",
+      "newIndependentMathExampleIndexes": [
+        0,
+        1
+      ],
+      "originalAssetPaths": [],
+      "nativeVisualCount": 1,
+      "sourceOptional": false,
+      "authenticStudentTeacherSourceCompared": true,
+      "authenticatedStudentRender": "NOT_RUN",
+      "persistedTeacherGrade": "NOT_RUN",
+      "livePractice": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L01",
+      "title": "Angles and Steepness",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/2/4/1/index.html",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/2/4/1/preparation.html",
+      "sourceActivities": [
+        "1.1 Ratios Galore: correct similar-triangle equations",
+        "1.2 Can You Calculate?: missing-information challenge",
+        "1.3 Is it Accessible?: four 7-inch steps and a teacher-supplied rule-based critique/redesign; extension compares angles of 1:12,1:6,1:3"
+      ],
+      "teacherObjective": "use AA similarity to explain fixed side ratio for fixed acute angle; model a ramp as one part of physical accessibility, avoid unverified legal certification",
+      "codeChange": "Original labelled 28-inch rise/336-inch run hypothetical mathematical modeling sequence, two valid distinct same-angle run-pairs, native EquationSet/RatioTable, standalone accessible first-party ramp SVG.",
+      "parityGap": "Teacher-provided current ADA/local rules and authentic student ramp drawings, critique and redesign are NOT available in shared assessed UI. The 1:12 mathematical scenario is not certified accessible/legal.",
+      "newIndependentMathExampleIndexes": [],
+      "originalAssetPaths": [
+        "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l01-ramp-similarity-models.svg"
+      ],
+      "nativeVisualCount": 2,
+      "sourceOptional": false,
+      "authenticStudentTeacherSourceCompared": true,
+      "authenticatedStudentRender": "NOT_RUN",
+      "persistedTeacherGrade": "NOT_RUN",
+      "livePractice": "NOT_VERIFIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03",
+      "title": "Half an Equilateral Triangle",
+      "studentSourceUrl": "https://im.kendallhunt.com/HS/students/2/4/3/index.html",
+      "teacherSourceUrl": "https://im.kendallhunt.com/HS/teachers/2/4/3/preparation.html",
+      "sourceActivities": [
+        "3.1 Notice/Wonder altitude sketch",
+        "3.2 equilateral triangle with altitude and measurement of multiple half-triangle sides",
+        "3.3 five unknown sides across three 30-60-90 triangles, optional after similarly optional lesson 2"
+      ],
+      "teacherObjective": "calculate 30-60-90 sides, generalize ratio using lengths, sketch and explain",
+      "codeChange": "Mathematically labelled full-side 2s half-base s altitude s√3 proof (s>0), two original SVGs including five-unknown side exercise; native EquationSet/ShapeDecomposition and explicit positive/zero/negative-domain checks.",
+      "parityGap": "No authenticated learner geometry construction, diagram rendering, teacher save/score/feedback or actual source activity parity certification. Optional source classification preserved.",
+      "newIndependentMathExampleIndexes": [],
+      "originalAssetPaths": [
+        "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l03-equilateral-altitude-30-60-90.svg",
+        "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l03-five-unknown-triangle-sides.svg"
+      ],
+      "nativeVisualCount": 2,
+      "sourceOptional": true,
+      "authenticStudentTeacherSourceCompared": true,
+      "authenticatedStudentRender": "NOT_RUN",
+      "persistedTeacherGrade": "NOT_RUN",
+      "livePractice": "NOT_VERIFIED"
+    }
+  ],
+  "originalSvgAssetsAdded": [
+    "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l01-ramp-similarity-models.svg",
+    "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l03-equilateral-altitude-30-60-90.svg",
+    "src/Edulytics.Web/wwwroot/geometry/geo/v15/u04-l03-five-unknown-triangle-sides.svg"
+  ],
+  "nativeRichV2VisualsAdded": 5,
+  "humanScoreRubricsNewlyAuthored": 2,
+  "totalCourseLocalAuthoringRubrics": 8,
+  "submittedStudentDrawings": 0,
+  "teacherScoredSavedGrades": 0,
+  "authenticatedRichV2SvgRenders": 0,
+  "securityAndPractice": {
+    "syntheticTwoSchoolFixture": "AUTHORED_NOT_EXECUTED_AGAINST_DISPOSABLE_DB_OR_HTTPS",
+    "syntheticStudentAttemptsPersisted": "NOT_RUN",
+    "teacherGradeSaves": "NOT_RUN",
+    "verifiedGEOExactLessonMappings": "NONE_CONFIRMED",
+    "GEOvsALG1Selection": "UNVERIFIED",
+    "crossSchoolAccessRejection": "NOT_RUN",
+    "wrongRoleAccessRejection": "NOT_RUN",
+    "sharedOwner": "Supervisor 2 central only, issue #453",
+    "richV2SvgRendererOwner": "Supervisor 2 central",
+    "globalCountTestOwner": "Supervisor 2 shared PR #598"
+  },
+  "stages": {
+    "A_REVIEWED_NEW": 3,
+    "A_ACCEPTED": 0,
+    "B_IMPLEMENTED_NEW": 3,
+    "B_VERIFIED": 0,
+    "C_VERIFIED": 0,
+    "D_VERIFIED": 0,
+    "denominator": 124
+  },
+  "execution": "Course-local Node and SVG tests to be executed on exact committed SHA. No dotnet SDK on Anas_Nitro; Supervisor 2's 121 focused .NET passed V14 only and must be rerun on any V15 commit. No claims of actual student/teacher rendering.",
+  "sharedIntegrationHandoff": {
+    "lessonIds": [
+      "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L06",
+      "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L01",
+      "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03"
+    ],
+    "svgContract": "Allowlisted local /geometry/geo/v15/*.svg asset ID in existing authenticated Rich V2 student/teacher renderer, preserve required titles/descriptions, block user-supplied URLs/scripts/path traversal; source references must resolve only trusted first-party static files.",
+    "teacherContract": "Support source-anchored original geometry drawing + optional uploaded figure + written proof or critique + labeled units/answer fields, teacher 0-2/criterion scoring (8-point max), feedback, draft/submitted/reviewed/grade saved lifecycle, strict exact lesson/course/tenant/role authorization and idempotency.",
+    "practiceContract": "Machine-grade only calculation subitems with validated per-lesson family/skill; route teacher-scored drawing/proof tasks for human rubric, never generic arithmetic fallback for geometric construction.",
+    "disposableTests": "Two synthetic schools, one Traditional GEO adoption and one ALG1, wrong-course/wrong-school/wrong-role failure, student attempt persist, teacher rubric grade persist + retry idempotence; no production data, use pinned .NET SDK in authorized isolated runner.",
+    "stageGate": "Do not promote B/C/D or merge until authenticated learner UI, valid teacher submission and saved grade + independent fixture runs + CI."
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07",
+  "Ordinal": 44,
+  "Unit": "U03",
+  "UnitOrdinal": 7,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "fbe25b1f5c0650bf2cbe027f9feea884416f8b454159075e98ee7dac13c120c7",
+    "TeacherActivities": "3a09802cb6d7e32adfb70bf63ee0de121fcf5584e29796c42ad9b1d112f27333",
+    "StudentActivities": "e8d42f6539c0d05eeafe9380634952ce128e984b17b6dc4588b63ee33950e731",
+    "StudentPractice": "d2bcf4710fb46e139371a852b6a69930d06508e1ee0b49e43f6544c8d856f315"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "Nested Triangles Notice and Wonder before formal theorem",
+      "Mode": "FIRST_PARTY_NESTED_TRIANGLE_PAPER"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "create ABC and DEF with three ordered angle matches and side ratios; swap and transform",
+      "Mode": "HUMAN_PAIRED_DRAWING"
+    },
+    {
+      "Source": "7.3",
+      "Goal": "secret triangle card information gap and GENERAL dilation-first ASA theorem",
+      "Mode": "FIRST_PARTY_HIDDEN_CARDS_AND_NARRATIVE_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source-indexed similarity, rectangle and prior concepts",
+      "Mode": "TEACHER_DIAGRAM_OR_EXACT"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "original protected Cool-down",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.2",
+      "HSG-SRT.B.4"
+    ],
+    "Addressing": [
+      "HSG-SRT.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.3"
+    ]
+  },
+  "SourceBoundary": "Original 7.4 cool-down teacher restricted; first-party hidden triangle card and diagram equivalence does not imply image parity. Formal theorem must use known ASA, not unproved AA similarity.",
+  "Preserved": "Three prior mathematically valid worked examples and all U03 L08-L09 content preserved.",
+  "Repaired": "Source 7.1 exploratory nested triangles; 7.2 partner sketches; 7.3 unseen card information gap and general dilation-first ASA proof with alternate rigid-first method; eight Practice task mappings.",
+  "StageA": "A_CLOSED_SOURCE_4_ACTIVITIES_8_PRACTICE_ORIGINAL_SHA256",
+  "StageB": "B_CLOSED_FORMAL_GENERAL_DILATE_FIRST_ASA_AND_RIGID_FIRST_SIMILARITY_PROOF",
+  "StageC": "C_CLOSED_SELECTED_TEACHER_PAPER_TRIANGLE_PROOF_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L07_SIMILARITY_GENERAL_ASA_PAPER_PROOF",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07",
+    "TaskId": "geo-u03-l07-general-similarity-asa-and-hidden-triangle-proof",
+    "GroupId": "GEO_U03_L07_SIMILARITY_GENERAL_ASA_PAPER_PROOF",
+    "Mode": "TEACHER_SELECTED_PAPER_RIGID_DILATION_FORMAL_PROOF",
+    "Evidence": "original paired sketches, hidden-card intermediate states, side ratios, labelled general dilation-first ASA and rigid-first proof",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, issue #605 exclusive leases preserved"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "three correctly ordered corresponding angles and a single positive side ratio",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "complete general dilation-first construction invoking previously established ASA congruence without assuming AA",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "valid alternate rigid-first then dilation method with rays and precise distances",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "peer hidden triangle correspondence, intermediate figures and justified corrections",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "GeneralTriangleSimilarityTheorem": "three corresponding angle equalities and proportional sides imply similarity via chosen k and ASA congruence of dilated triangle",
+    "CorrectPreviousCongruenceTheorem": "ASA",
+    "DoNotPresuppose": "AA_SIMILARITY",
+    "P7Choice": "B",
+    "P6PerimeterScale": "2",
+    "P5ScaleImageDependent": true
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "dilate first with k=DE/AB, matching side and both included end angles, ASA gives rigid congruence",
+      "source sketch 3-4-5 to 6-8-10 k2 with angle matches proves similarity",
+      "square has diagonal reflection symmetry P7 choice B"
+    ],
+    "Equivalent": [
+      "rigid-first angle alignment then centre-vertex dilation reaches both target endpoints",
+      "different legal rigid sequences produce identical ordered vertex correspondence"
+    ],
+    "Wrong": [
+      "proclaims AA similarity before the source formally proves it later",
+      "assumes same coordinate translation works for every randomly positioned source triangle",
+      "matches one side length ratio but ignores other required proportions"
+    ],
+    "Boundary": [
+      "k=1 gives congruent but still similar triangles",
+      "nondegenerate triangles required, zero side length ratios excluded",
+      "non-similar same-angle quadrilaterals can have differing aspect ratio"
+    ],
+    "Malformed": [
+      "no matched vertex order on triangle",
+      "no chosen positive scale factor",
+      "no proof or missing intermediate image in card exchange"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_RICH": "PASS",
+    "JSON_ASSESSMENT": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "NODE_TESTS": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "SharedEngine": "UNMODIFIED_WRITER_LEASE_ISSUE_605",
+  "TeacherGrade": "NOT_VERIFIED_ISSUE_453",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u03-l07-l09-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l07-general-similarity-asa-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l07-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l07-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "c08b5ffc1ac748cb461bd8a850b3f0c32ec90527",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T03:51:22.052417Z",
+  "ClosedAtUtc": "2026-10-31T03:52:08.059217Z",
+  "ElapsedSeconds": 46.007,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L08"
+}

@@ -1,0 +1,311 @@
+name: Grade 10 Geometry Stage D - fail closed
+# Do not filter by changed-file paths: PR #583 spans >300 changed files and
+# GitHub's pull_request path filter can silently miss later modifications.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: g10-stage-d-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  structural-inventory:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Report exact candidate
+        run: |
+          echo "CANDIDATE_SHA=$(git rev-parse HEAD)"
+          echo "EVENT_SHA=${{ github.event.pull_request.head.sha || github.sha }}"
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify 124 exact Grade 10 codes across blueprint, RichV2, ledger, checkpoint
+        run: node tools/curriculum/g10-stage-d-audit.cjs --json > /tmp/g10-structural.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-structural-inventory
+          path: /tmp/g10-structural.json
+          if-no-files-found: warn
+  node-lesson-shards:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shard: D1
+            from: 1
+            to: 42
+          - shard: D2
+            from: 43
+            to: 83
+          - shard: D3
+            from: 84
+            to: 124
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute existing, source-scoped authoring/contract tests with explicit missing-suite accounting
+        shell: bash
+        env:
+          LOWER: ${{ matrix.from }}
+          UPPER: ${{ matrix.to }}
+        run: |
+          set -euo pipefail
+          files=()
+          missing=()
+          for ordinal in $(seq "$LOWER" "$UPPER"); do
+            if [ "$ordinal" -le 22 ]; then u=1; l=$ordinal
+            elif [ "$ordinal" -le 37 ]; then u=2; l=$((ordinal-22))
+            elif [ "$ordinal" -le 53 ]; then u=3; l=$((ordinal-37))
+            elif [ "$ordinal" -le 64 ]; then u=4; l=$((ordinal-53))
+            elif [ "$ordinal" -le 82 ]; then u=5; l=$((ordinal-64))
+            elif [ "$ordinal" -le 99 ]; then u=6; l=$((ordinal-82))
+            elif [ "$ordinal" -le 113 ]; then u=7; l=$((ordinal-99))
+            else u=8; l=$((ordinal-113))
+            fi
+            printf -v base 'tools/curriculum/us-ccss-geo-u%02d-l%02d-authoring-contract.test.cjs' "$u" "$l"
+            if [ -f "$base" ]; then files+=("$base"); else missing+=("$ordinal:$base"); fi
+          done
+          printf 'SCOPED_FILES=%s\n' "${#files[@]}"
+          if (("${#files[@]}")); then node --test "${files[@]}"; fi
+          if (("${#missing[@]}")); then
+            printf 'MISSING_LESSON_SUITE %s\n' "${missing[@]}"
+            echo 'Fail closed: not every lesson has a named authoring contract suite.'
+            exit 3
+          fi
+  node-shared-geometry:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run all preexisting Geometry shared-source and independent math oracles
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          suites=(tools/curriculum/us-ccss-geo-*.test.cjs)
+          test "${#suites[@]}" -gt 0
+          node --test "${suites[@]}"
+  dotnet-build-regression:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Shared .NET restore and build
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore -c Release
+      - name: Relevant geometry/math regression
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~Geometry|FullyQualifiedName~UsCcssGeo|FullyQualifiedName~Grade10' --logger 'trx;LogFileName=g10-geometry.trx' --results-directory /tmp/g10-dotnet
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-dotnet-regression
+          path: /tmp/g10-dotnet/
+          if-no-files-found: warn
+  source-and-owner-academic-handoff:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify recorded owner's academic approval, and audit source gaps without re-running Stage A-B-C
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const assert=require('node:assert/strict');
+          const fs=require('node:fs');
+          const owner=JSON.parse(fs.readFileSync('artifacts/curriculum-delivery/US-CCSS-MATH/G10/grade10-owner-academic-authorization-20261106.json','utf8'));
+          assert.equal(owner.ownerDecision,'ACADEMICALLY_APPROVED_BY_OWNER');
+          assert.equal(owner.publicationDecision,'OWNER_AUTHORIZES_PUBLICATION_ONCE_OPERATIONAL_RELEASE_GATES_ARE_SATISFIED');
+          assert.equal(owner.technicalTestsAreIndependent,true);
+          console.log('OWNER_ACADEMIC_APPROVAL_REGISTERED_NOT_TECHNICAL_ACCEPTANCE');
+          JS
+          node tools/curriculum/g10-stage-d-audit.cjs --json > /tmp/g10-source-and-academic-audit.json
+          node -e "const a=require('/tmp/g10-source-and-academic-audit.json').structural;console.log(JSON.stringify({sourceEvidenceCompleteCount:a.sourceEvidenceCompleteCount,sourceTeacherActivityIds:a.sourceTeacherActivityIds,sourceTeacherActivityIdsCrosswalked:a.sourceTeacherActivityIdsCrosswalked,sourcePracticeProblemHeadings:a.sourcePracticeProblemHeadings},null,2))"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-source-academic-handoff-not-runtime-proof
+          path: /tmp/g10-source-and-academic-audit.json
+          if-no-files-found: warn
+
+  lesson-runtime-route-coverage:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: [structural-inventory, g10-geometry-124-student-https]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: g10-124-authenticated-geometry-https
+          path: /tmp/g10-actual-https
+      - name: Negative controls - synthetic grade cannot claim 124 grade writes
+        run: python3 tools/curriculum/test_g10_stage_d_runtime_route_verify.py
+      - name: Verify 124 per-lesson learner and rubric entry pages and one actually persisted teacher grade on same SHA
+        shell: bash
+        env:
+          EXACT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 tools/curriculum/g10_stage_d_runtime_route_verify.py \
+            /tmp/g10-actual-https/g10-geometry-124-authenticated-render.json \
+            /tmp/g10-actual-https/g10-one-teacher-review-https.json \
+            "$EXACT_SHA" /tmp/g10-runtime-route-verification.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-actual-runtime-route-verification
+          path: /tmp/g10-runtime-route-verification.json
+          if-no-files-found: warn
+
+  g10-geometry-124-student-https:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-geo-coder6-source-repairs-20261028'
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 70
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: US-CCSS
+      EDULYTICS_CI_G10_GEOMETRY: 'true'
+      G10_EXPECTED_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile dedicated test probe
+        run: python3 -m py_compile tools/phase29/g10_geometry_https.py tools/phase29/g10_geometry_rubric_persistence_https.py
+      - name: Build disposable web and schema (not production)
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore -c Release
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore -o /tmp/g10-geometry-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Build synthetic schools with explicit Geometry adoption and test all lessons via HTTPS
+        env:
+          RENDER_SERVICE_ID: ci-disposable
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+        run: |
+          set -euo pipefail
+          password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$password"
+          export Edulytics__MeetingDemo__Password="$password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic >/tmp/g10-fixture.log 2>&1; then
+            tail -n 150 /tmp/g10-fixture.log
+            exit 1
+          fi
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g10-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/g10-key.pem -out /tmp/phase-uat-cert.pem \
+            -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g10-identity.pfx \
+            -inkey /tmp/g10-key.pem -in /tmp/phase-uat-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g10-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          export ASPNETCORE_CONTENTROOT=/tmp/g10-geometry-publish
+          dotnet /tmp/g10-geometry-publish/Edulytics.Web.dll >/tmp/g10-web.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          ready=false
+          for retry in $(seq 1 100); do
+            if curl -fsS --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then ready=true; break; fi
+            if ! kill -0 "$pid" 2>/dev/null; then tail -n 100 /tmp/g10-web.log; exit 1; fi
+            sleep 3
+          done
+          test "$ready" = true
+          python3 tools/phase29/g10_geometry_https.py
+          python3 tools/phase29/g10_geometry_rubric_persistence_https.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g10-124-authenticated-geometry-https
+          path: |
+            /tmp/g10-geometry-124-authenticated-render.json
+            /tmp/g10-one-teacher-review-https.json
+          if-no-files-found: warn
+          retention-days: 14

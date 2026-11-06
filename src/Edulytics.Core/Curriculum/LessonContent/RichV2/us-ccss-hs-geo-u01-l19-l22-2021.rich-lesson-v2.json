@@ -1,0 +1,396 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l19-l22-original-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L19",
+      "CultureCode": "en",
+      "Title": "Evidence, Angles, and Proof",
+      "ExplanationParagraphs": [
+        "Learning goal: State a defensible conjecture from a labelled diagram and write a complete narrative proof that vertical angles are congruent.",
+        "Verbal diagram: two distinct straight lines intersect at O. Their four rays in cyclic order are OA, OB, OC, OD, with OA opposite OC and OB opposite OD. Vertical pairs are ∠AOB and ∠COD, and ∠BOC and ∠DOA.",
+        "Proof model: ∠AOB and ∠BOC form a straight angle, so their measures sum to 180 degrees. ∠BOC and ∠COD also form a straight angle. Subtract the common m∠BOC from both equations to obtain m∠AOB=m∠COD. This is a logical deduction, not a measurement from a drawing.",
+        "Student task: supply a narrative proof in words and annotate angle pairs with reason-based equality symbols; identify a nonexample formed by adjacent rather than vertical angles. Teacher rubric (0–4): explicitly named opposite rays; true linear-pair equations; valid subtraction inference; clear conclusion/diagram labels.",
+        "Independently authored Edulytiks explanations and tasks; source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. No publisher drawings or restricted assessment answers are reproduced.",
+        "Source 19.1 Math Talk Supplementary Angles: intersect two lines at O with adjacent measures 70° and 110°, and require a discussion of all four angles and the 180° linear-pair fact. Original first-party verbal diagram replaces the unverified publisher figures; pupils justify rather than measure a picture.",
+        "Source 19.2 That Can't Be Right, Can It?: line l with ray r creates adjacent supplementary angles α and β. Students FIRST label the rays and their interior bisectors and restate the ambiguous conjecture precisely, THEN prove the angle between the two bisectors is (α+β)/2=90°. The proof applies to all nondegenerate α,β>0 with α+β=180°, not only a numerical example.",
+        "Source 19.3 Convince Me: label two intersecting lines and independently write a connected NARRATIVE proof that vertical angles agree. One proof uses a 180° rotation about their intersection, carrying both boundary rays to opposite rays; another uses α+β=180° and β+γ=180° to conclude α=γ. Explain why adjacent supplementary angles are not automatically congruent. A two-column outline or mere measured 70° is not a complete narrative proof.",
+        "Optional source conjecture counterexample: the first values of maximum regions formed by joining n points on a circle can appear to double, but at n=6 the maximal region count is 31 rather than 32 for chords in general position. Discuss why examples do not prove a universal theorem; optional only, not scored as mandatory proof."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertical angles",
+          "Definition": "The opposite angle pair formed by intersecting lines, sharing a vertex but no side.",
+          "Rule": "Show equality using linear pairs or a valid rigid transformation.",
+          "Example": "If one angle is 47 degrees, its vertical angle is 47 degrees."
+        },
+        {
+          "Title": "Linear pair",
+          "Definition": "Two adjacent angles whose nonshared sides are opposite rays and therefore sum to 180 degrees.",
+          "Rule": "Identify the opposite rays before asserting supplementary measures.",
+          "Example": "For straight line AOC, m∠AOB+m∠BOC=180°."
+        },
+        {
+          "Title": "Narrative proof",
+          "Definition": "A connected argument deriving a claim from definitions or known results with a reason at every step.",
+          "Rule": "Distinguish observed pattern, conjecture and justified theorem.",
+          "Example": "Subtracting equal expressions for a straight angle proves the vertical-angle equality."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove vertical angles",
+          "Question": "Two lines AC and BD intersect at O. Prove ∠AOB≅∠COD.",
+          "Method": "Use two linear-pair equations that share the angle BOC.",
+          "Steps": [
+            "Since OA and OC are opposite rays, m∠AOB+m∠BOC=180°.",
+            "Since OB and OD are opposite rays, m∠BOC+m∠COD=180°.",
+            "Both sums equal 180°, so m∠AOB+m∠BOC=m∠BOC+m∠COD.",
+            "Subtract m∠BOC to conclude m∠AOB=m∠COD."
+          ],
+          "Answer": "The vertical angles ∠AOB and ∠COD are congruent.",
+          "Check": "No parallel-line assumption or protractor measurement is needed."
+        },
+        {
+          "Title": "Find angles and justify",
+          "Question": "At intersecting lines, an angle is 62°. Find its adjacent and vertical angles.",
+          "Method": "Use supplementary linear pairs and vertical-angle equality.",
+          "Steps": [
+            "The vertical angle is congruent, hence 62°.",
+            "Each adjacent angle forms a linear pair with the 62° angle.",
+            "Each adjacent measure is 180°−62°=118°.",
+            "Opposite adjacent angles are both 118°, consistent with vertical-angle equality."
+          ],
+          "Answer": "Vertical angle 62°; each adjacent angle 118°.",
+          "Check": "62+118=180 and four angles sum to 360."
+        },
+        {
+          "Title": "Reject a false angle proof",
+          "Question": "A student says ∠AOB=∠BOC because they share a vertex. Is this justified?",
+          "Method": "Check whether shared-vertex property implies equality.",
+          "Steps": [
+            "Sharing O is common to all four angles at intersecting lines.",
+            "Adjacent angles can measure 62° and 118° while sharing O.",
+            "Only an actual vertical pair is guaranteed congruent here.",
+            "A shared vertex alone is insufficient."
+          ],
+          "Answer": "No; sharing a vertex does not imply congruent angles.",
+          "Check": "Provide a valid diagram with unequal adjacent angles to disprove the claim."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Presenting matching-looking angles as the proof.",
+          "WhyWrong": "Angle appearance and image proportions are not precise mathematical evidence.",
+          "Correction": "Write the linear-pair equations and deduct the shared term."
+        },
+        {
+          "Mistake": "Confusing adjacent angles with vertical angles.",
+          "WhyWrong": "Adjacent angles generally sum to 180°, rather than necessarily being equal.",
+          "Correction": "Locate opposite rays and confirm the pair shares no ray."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: State a defensible conjecture from a labelled diagram and write a complete narrative proof that vertical angles are congruent.",
+        "Every proof needs explicit hypotheses, logical reasons and a conclusion; attractive diagrams are not proof.",
+        "The authentic proof, construction or open explanation is teacher-scored; there is no numeric proxy auto-grade."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L20",
+      "CultureCode": "en",
+      "Title": "Transformations, Transversals, and Proof",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove that a transversal cutting two distinct parallel lines creates congruent corresponding angles and congruent alternate interior angles, using rigid transformations and their geometric invariants.",
+        "Verbal diagram: horizontal parallels ℓ:y=0 and m:y=3 are crossed by the same transversal t. Label each intersection and specify which ray directions form corresponding or alternate interior angles. A mere equal-looking figure without a verified parallel assumption does not justify the theorem.",
+        "Transformational reasoning: translating by the directed segment along transversal t between intersections maps ℓ to m because lines parallel to ℓ through the target intersection are unique. It also maps t to itself as an infinite line, so corresponding angle ray pairs align. A 180-degree rotation about the midpoint between the intersections exchanges the two intersections, maps each parallel line to the other, and maps rays on t into opposite rays, explaining alternate-interior correspondence.",
+        "Student task: present both narrative proof mechanisms, then construct a counterexample when lines are not parallel. Teacher rubric (0–4): verified parallel hypotheses; valid translation/half-turn correspondence; unambiguous angle labels; logical conclusion/counterexample. Source-style written proofs cannot be replaced by automatically graded angle guesses.",
+        "Independently authored Edulytiks explanations and tasks; source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. No publisher drawings or restricted assessment answers are reproduced.",
+        "20.1 Source Math Talk: parallel lines l:y=0 and m:y=3 cut by transversal t:y=x at B(0,0) and C(3,3). Label ray-oriented corresponding and alternate interior angle pairs, explain their measures before relying on theorems.",
+        "20.2 Source Make a Mark? Give a Reason: translate l and transversal by directed segment BC=(3,3), mapping l onto m and t onto itself; corresponding angles and ray directions are preserved. Partners exchange and critique complete narrative explanations.",
+        "20.3 Source An Alternate Explanation: rotate 180° about M=(1.5,1.5), midpoint of BC, exchanging B/C and two parallel lines and reversing transversal rays, hence alternate interior angles are congruent. A centre on a line maps it to itself; a centre off maps it to a distinct parallel line.",
+        "Source practice converse: equal alternate interior angles imply coplanar lines parallel. The argument does not depend on a particular sample angle such as 40 degrees."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding angles",
+          "Definition": "Angles in the same relative position where a transversal meets two lines.",
+          "Rule": "They are congruent when the lines are parallel, via translation aligning intersections.",
+          "Example": "A 40° corresponding angle across a parallel pair is also 40°."
+        },
+        {
+          "Title": "Alternate interior angles",
+          "Definition": "Interior angles on opposite sides of a transversal at two intersections.",
+          "Rule": "For parallel lines these are congruent; a half-turn between intersections supplies a rigid-motion justification.",
+          "Example": "An interior angle of 61° has corresponding alternate-interior angle 61°."
+        },
+        {
+          "Title": "Parallel hypothesis",
+          "Definition": "A geometric condition requiring two coplanar straight lines not to intersect.",
+          "Rule": "The corresponding/alternate interior congruence implication needs the parallel condition.",
+          "Example": "If two nonparallel lines cross one transversal, their same-position angles need not agree."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove corresponding-angle equality",
+          "Question": "Lines ℓ and m are parallel and t meets them at X and Y. Why are corresponding angles congruent?",
+          "Method": "Translate by the directed segment XY along the transversal.",
+          "Steps": [
+            "Translation T taking X to Y maps line t onto itself.",
+            "T maps ℓ to a parallel line through Y.",
+            "Because m is the unique line parallel to ℓ through Y, T(ℓ)=m.",
+            "The image of each angle ray at X lies along its corresponding ray at Y.",
+            "Translation preserves angle measure, so the corresponding angles are congruent."
+          ],
+          "Answer": "Corresponding angles are equal when ℓ∥m.",
+          "Check": "Explicitly uses uniqueness of a parallel through Y and the directed translation along t."
+        },
+        {
+          "Title": "Prove alternate-interior equality",
+          "Question": "Why are alternate interior angles equal when t crosses parallels at X and Y?",
+          "Method": "Rotate the plane 180° about midpoint M of XY.",
+          "Steps": [
+            "A half-turn about M sends X to Y and sends line t to itself.",
+            "A half-turn sends ℓ to a parallel line through Y, hence to m.",
+            "Interior rays at X map to opposite-side interior rays at Y.",
+            "Rigid rotation preserves angle measures, so the alternate-interior angle pair is congruent."
+          ],
+          "Answer": "Alternate interior angles are congruent under parallel-line hypotheses.",
+          "Check": "A 180° half-turn is an isometry with a fixed centre M."
+        },
+        {
+          "Title": "Check the role of parallel lines",
+          "Question": "Two different lines cross a transversal, creating angles 45° and 60° in corresponding positions. Can the lines be parallel?",
+          "Method": "Use the contrapositive of the corresponding-angle theorem.",
+          "Steps": [
+            "Parallel lines would force their corresponding angles to be congruent.",
+            "The given angles 45° and 60° are unequal.",
+            "Therefore the two lines cannot be parallel.",
+            "No angle measure is inferred from a picture; only the stated measures are used."
+          ],
+          "Answer": "No, the lines are not parallel.",
+          "Check": "The rule requires matching corresponding positions and actual measured values."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using corresponding-angle equality without stating the lines are parallel.",
+          "WhyWrong": "With nonparallel lines, corresponding angles are not necessarily congruent.",
+          "Correction": "State and verify ℓ∥m before the transformation proof."
+        },
+        {
+          "Mistake": "Claiming that any translation maps one line to any other line through Y.",
+          "WhyWrong": "Translations preserve direction; only the parallel through Y is obtained.",
+          "Correction": "Use the uniqueness of the parallel through Y to identify the image line."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Prove that a transversal cutting two distinct parallel lines creates congruent corresponding angles and congruent alternate interior angles, using rigid transformations and their geometric invariants.",
+        "Every proof needs explicit hypotheses, logical reasons and a conclusion; attractive diagrams are not proof.",
+        "The authentic proof, construction or open explanation is teacher-scored; there is no numeric proxy auto-grade."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L21",
+      "CultureCode": "en",
+      "Title": "One Hundred and Eighty",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove that the interior angles of every nondegenerate Euclidean triangle sum to 180 degrees, using a parallel construction and the established alternate-interior-angle theorem.",
+        "Verbal diagram: triangle ABC has three noncollinear vertices. Through A draw a line ℓ parallel to BC; the rays AB and AC divide the straight angle at A into three adjacent angles, with two outer angles congruent to interior angles at B and C by the parallel-transversal theorem.",
+        "The theorem depends on Euclidean geometry and a genuine triangle: collinear 'vertices' form a degenerate segment, not a nondegenerate triangle. The familiar 180° is not a universal theorem on curved surfaces.",
+        "Student task: write a narrative proof for an acute, obtuse or right triangle and separately critique an argument that incorrectly assumes two lines parallel. Teacher rubric (0–4): valid parallel construction; correct corresponding/alternate-angle matches; precise straight-angle sum; a general statement independent of measured examples. The full proof is human reviewed.",
+        "Independently authored Edulytiks explanations and tasks; source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. No publisher drawings or restricted assessment answers are reproduced.",
+        "21.1 What Went Wrong?: lines l and m are NOT parallel and are crossed by a transversal. Tyler assumes corresponding angles must agree after translating one vertex onto another. Partners inspect each of the four stated justifications; the crucial false step is claiming the image of line l (parallel to l) lies on the distinct nonparallel line m. No corresponding-angle equality follows without parallel lines.",
+        "21.2 Triangle Angle Sum One Way: for any nondegenerate triangle ABC mark midpoints of AB and AC. A 180-degree turn of the triangle about each of those midpoints sends line BC to a line through A parallel to BC. The two images coincide by uniqueness of the parallel through A. The corresponding alternate-interior angles at A give measures b and c beside original angle a; these form a straight angle a+b+c=180°. This is a full narrative proof, not a diagram measurement.",
+        "21.3 Triangle Angle Sum Another Way: translate ABC by directed segment B→C, label all image vertices; then translate the image so A' maps to C, labelling second-stage vertices. Track transformed rays and use rigidity to place the three original angle measures consecutively around a straight line at C. Because the translated corresponding side lines are parallel, a+b+c=180° for every noncollinear Euclidean triangle. Students give a second independent narrative proof.",
+        "Optional extension: the 180-degree sum is Euclidean; a spherical triangle using the North Pole and two equatorial points separated by 90° has three right angles, summing 270°. This does not invalidate the Euclidean proof and is not part of required scoring."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Triangle angle sum",
+          "Definition": "In a nondegenerate triangle in the Euclidean plane, its three interior angles total 180 degrees.",
+          "Rule": "Through a vertex construct a parallel to the opposite side and use alternate-interior-angle equality.",
+          "Example": "If angles A and B are 50° and 60°, angle C is 70°."
+        },
+        {
+          "Title": "Parallel through a vertex",
+          "Definition": "There exists exactly one line through A parallel to BC in Euclidean geometry.",
+          "Rule": "Identify the two transversal intersections and correct paired angles.",
+          "Example": "AB and AC act as two transversals of ℓ∥BC."
+        },
+        {
+          "Title": "Exterior angle",
+          "Definition": "An angle adjacent to one triangle interior angle along an extended side.",
+          "Rule": "Its measure equals the sum of the two remote interior angles, following the 180° theorem.",
+          "Example": "If remote interior angles are 35° and 65°, the exterior angle is 100°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "General angle-sum proof",
+          "Question": "Prove ∠A+∠B+∠C=180° for any triangle ABC.",
+          "Method": "Draw a parallel to BC through A and use transversal angles.",
+          "Steps": [
+            "Because A,B,C are noncollinear, triangle ABC is well defined.",
+            "Draw line ℓ through A parallel to BC.",
+            "By alternate-interior angles with transversal AB, one outer angle at A equals ∠B.",
+            "By alternate-interior angles with transversal AC, the other outer angle at A equals ∠C.",
+            "These two outer angles and interior ∠A form a straight angle, summing to 180°."
+          ],
+          "Answer": "m∠A+m∠B+m∠C=180° for all Euclidean triangles.",
+          "Check": "The proof makes no assumptions about acute, right or obtuse angle types."
+        },
+        {
+          "Title": "Compute third angle with proof",
+          "Question": "A triangle has two angles 37° and 83°. Find the third.",
+          "Method": "Use the proven triangle angle-sum theorem.",
+          "Steps": [
+            "The three interior angles sum to 180°.",
+            "Known angles total 37°+83°=120°.",
+            "Unknown measure is 180°−120°=60°.",
+            "All three are strictly between 0° and 180°, so the data are consistent with a nondegenerate triangle."
+          ],
+          "Answer": "60°.",
+          "Check": "37+83+60=180."
+        },
+        {
+          "Title": "Exterior angle theorem",
+          "Question": "Remote interior angles are 35° and 65°. Find the exterior angle at the third vertex.",
+          "Method": "Combine straight-angle and triangle-angle sums.",
+          "Steps": [
+            "The third interior angle is 180°−(35°+65°)=80°.",
+            "The exterior angle adjacent to it forms a straight angle.",
+            "Exterior angle is 180°−80°=100°.",
+            "Therefore it equals 35°+65°, the two remote interior angles."
+          ],
+          "Answer": "Exterior angle 100°.",
+          "Check": "The third interior angle and adjacent exterior total 180°."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming the triangle sum from measuring one sketch.",
+          "WhyWrong": "Measurements are approximate and one example cannot prove a universal theorem.",
+          "Correction": "Use a valid Euclidean parallel construction and exact angle equalities."
+        },
+        {
+          "Mistake": "Using the parallel-transversal theorem on lines not known parallel.",
+          "WhyWrong": "Corresponding or alternate interior angles may not be congruent.",
+          "Correction": "Construct ℓ∥BC explicitly before identifying equal angles."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Prove that the interior angles of every nondegenerate Euclidean triangle sum to 180 degrees, using a parallel construction and the established alternate-interior-angle theorem.",
+        "Every proof needs explicit hypotheses, logical reasons and a conclusion; attractive diagrams are not proof.",
+        "The authentic proof, construction or open explanation is teacher-scored; there is no numeric proxy auto-grade."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+      "CultureCode": "en",
+      "Title": "Now What Can You Build?",
+      "ExplanationParagraphs": [
+        "Learning goal: Design a novel reproducible geometric pattern using straightedge-and-compass techniques and communicate enough precise instructions for another student to reconstruct it.",
+        "This is explicitly optional source enrichment: it extends earlier construction tasks and requires original pattern creation. The original source includes designs used with third-party permission; Edulytiks does not copy those drawings. An original written construction and peer-produced replica are the authentic assessment evidence.",
+        "First-party visual concept (verbal diagram): begin with segment AB of positive length; construct equilateral triangle ABC; from its three vertices draw circles of the same radius AB/3 if marked by an independently constructed trisection or choose radius AB/2 via its midpoint construction. Connect circle intersection marks only when they exist and label every step.",
+        "Student task: invent a two- or three-stage compound pattern incorporating at least one exact perpendicular bisector, one pair of congruent circles and one nontrivial line or rotational symmetry. Write the steps without relying on a picture and exchange with a peer who attempts the construction. Teacher rubric (0–8): teacher scores four criteria at 0, 1 or 2 points each for noticing geometric structure, reproducing a design, precise original construction steps, and peer reconstruction with congruence reasons and revision. This is NOT a machine-gradable numeric question.",
+        "Independently authored Edulytiks explanations and tasks; source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. No publisher drawings or restricted assessment answers are reproduced.",
+        "Source 22.1 Notice and Wonder (5 min): Display an independently drawn regular hexagon ABCDEF with three long diagonals AD, BE, CF and ask what lines, shapes, rotational symmetries and perpendicular or parallel relationships students NOTICE and WONDER about. Accept tentative observations before asking for geometric evidence; do not present an unverified publisher decorative image as ours.",
+        "Source 22.2 Duplicate a Design (15 min; optional): Use a first-party labelled regular-hexagon starting design, not the publisher's permission-restricted blackline. Students identify visible rotations, reflections or translations; reproduce it with legal straightedge-and-compass moves; and write each step so a listener can reconstruct it. A regular hexagon construction begins from a specified circle and six successive equal-radius chords; extra diagonals must be named.",
+        "Source 22.3 Make Your Own Design (15 min; optional): Each learner chooses paper with straightedge and compass, or available dynamic geometry software, to make an ORIGINAL design and records labelled construction steps and geometric reasons. Offer an equilateral triangle or regular hexagon as a starting prompt, not as a compulsory design. Extension only: construct a tessellation exhibiting rotation, reflection and translation symmetries.",
+        "Source 22.4 Make Their Design (15 min; optional): Exchange the written instructions with a student other than the original partner while concealing the original drawing. The recipient reconstructs independently, lists pairs of congruent figures and justifies each by precise construction or rigid motion. Compare the two outputs; the author revises ambiguous centres, radii, intersection choices or order of operations.",
+        "Source Lesson Practice P1-P2: With an independently authored labelled hexagon design, identify two pairs of congruent figures and a nonidentity rigid self-motion with explicit reasons. Original publisher diagram content is not certified. P3-P10 are cumulative tasks from U01:L18-L21: triangle translation/congruence, angle transfer, parallel transversals, 180-degree half-turn, angle bisectors, line self-mapping and sequential rigid-motion images. Teacher reviews the referenced diagrams and written arguments; do not invent a scalar answer key for missing figures.",
+        "Teacher evidence: collect source-aligned 22.1 observations, a 22.2 reconstruction plus repeatable instructions, a 22.3 independent design and 22.4 peer replication with congruence reasons. Preserve the optional lesson and activity labels. A paper-scored first-party task is an authored alternative; no student upload, teacher grade persistence or authenticated renderer is asserted."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Constructible pattern",
+          "Definition": "A pattern whose objects can be obtained from the stated inputs by permitted compass/straightedge operations.",
+          "Rule": "Specify each centre, copied length, intersection and subsequent connection.",
+          "Example": "Two equal-radius circles centred at distinct A and B produce two intersection points if their radii are greater than AB/2."
+        },
+        {
+          "Title": "Precision and source independence",
+          "Definition": "Reproducible procedures must specify invariant geometry without copying protected decorative artwork.",
+          "Rule": "Use independently authored labelled objects and explain the underlying relationships.",
+          "Example": "A repeated triangle pattern can be described by equal-radius intersections rather than a publisher screenshot."
+        },
+        {
+          "Title": "Authentic assessment",
+          "Definition": "Evidence includes original construction, written procedure, peer replication and correction of an ambiguity.",
+          "Rule": "A teacher must review the actual figures and procedural reasoning.",
+          "Example": "‘Draw a circle’ is insufficient until centre and radius are specified."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original two-circle flower seed",
+          "Question": "Create a symmetric six-vertex starting pattern from centre O and point A, OA>0.",
+          "Method": "Use the compass opening OA around one fixed circle.",
+          "Steps": [
+            "Draw circle k centred at O through A.",
+            "Keep compass opening OA and use A as centre to mark the next intersection B on k.",
+            "Move the compass centre to B to mark C, choosing the next counterclockwise intersection.",
+            "Repeat until A,B,C,D,E,F are six successive vertices.",
+            "Join consecutive vertices: six central angles of 60° complete one full revolution."
+          ],
+          "Answer": "A regular hexagon ABCDEF inscribed in k provides a symmetric skeleton for a new design.",
+          "Check": "Teacher checks exact stepping and the direction of selected intersections, not appearance alone."
+        },
+        {
+          "Title": "Decorate while preserving a mirror",
+          "Question": "Given an equilateral triangle ABC, how can you make a symmetric original pattern with equal circles at the vertices?",
+          "Method": "Choose a common radius and use circles centred at each vertex.",
+          "Steps": [
+            "Construct a nondegenerate equilateral triangle ABC.",
+            "Construct the midpoint M of AB with its perpendicular bisector, setting radius r=AM=AB/2.",
+            "Without changing compass opening r, draw circles centred A,B,C.",
+            "Every reflection axis of the equilateral triangle permutes the three equal circles, so the combined design remains reflection-symmetric."
+          ],
+          "Answer": "An equilateral triangle with three equal-radius vertex-centred circles has three reflection axes.",
+          "Check": "No image is needed to justify invariance: each symmetry permutes the three centres and preserves their radii."
+        },
+        {
+          "Title": "Repair an unreproducible instruction",
+          "Question": "A peer says ‘draw circles at the corners and join the nice intersections’. Why does this fail?",
+          "Method": "Identify unspecified data and rewrite as exact tool directions.",
+          "Steps": [
+            "‘Corners’ needs a named initial polygon and ordered vertex labels.",
+            "Circles need named centres and a single defined radius or individually defined radii.",
+            "An intersection needs a unique label and specification of which of two possible crossings to select.",
+            "Rewrite using the equilateral triangle ABC, circle centres A,B,C, radius AB/2 and explicit intersection naming or a permissible choice."
+          ],
+          "Answer": "The revised procedure provides constructible inputs and unambiguous dependencies.",
+          "Check": "Have another student reconstruct it from words alone, noting any remaining choice that changes the figure."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Leaving centre, radius or intersection choice implicit.",
+          "WhyWrong": "The reader cannot determine a unique reproducible configuration.",
+          "Correction": "Label each given object and write exact consecutive compass/straightedge steps."
+        },
+        {
+          "Mistake": "Scoring a creative drawing only with a numeric answer.",
+          "WhyWrong": "It does not measure authorship, construction legality, precision, reflection symmetry or peer reproduction.",
+          "Correction": "Use submitted construction plus written instructions and teacher-reviewed rubric."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Design a novel reproducible geometric pattern using straightedge-and-compass techniques and communicate enough precise instructions for another student to reconstruct it.",
+        "A reproducible construction specifies initial givens, every compass centre and radius, labels, order and intersection choices; the receiving student must be able to follow the words without seeing the original design.",
+        "A teacher evaluates original and reconstructed designs, written directions, congruence justifications and feedback; no automatic numeric score can verify the drawing."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

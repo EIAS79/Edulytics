@@ -1,0 +1,163 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L10",
+  "Ordinal": 47,
+  "UnitCode": "U03",
+  "UnitOrdinal": 10,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "c24b876d41fd1b673c666b67f7a81b4e64a73b6a5da50908949af1eedf0e3302",
+    "TeacherActivities": "8d343145e915a0ebf7fa557d27ba1e6f33c439a14fb1c6ccc3c539bffbb57fb5",
+    "StudentActivities": "b705c1b6a9cc7599b21436f7595df23f024d0454c781a8cb7540d8b58eab5af4",
+    "StudentPractice": "30f676f5e04971b3405d476ad24e7deb998fe7c3e822839ac920b44c5d9299d2"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "10.1",
+      "Requirement": "four source Math Talk congruence cases and missing conditions",
+      "Mode": "TEACHER_SOURCE_DIAGRAM_REVIEW"
+    },
+    {
+      "Source": "10.2",
+      "Requirement": "Andre/Clare optional SAS similarity proof from two proportional sides and included angle",
+      "Mode": "GENERAL_PAPER_DILATION_SAS_PROOF"
+    },
+    {
+      "Source": "10.3",
+      "Requirement": "optional SSS similarity from three proportions and separate optional SSA critique",
+      "Mode": "GENERAL_PAPER_DILATION_SSS_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Requirement": "eight source-indexed similarity, angle, scale and dilation tasks",
+      "Mode": "EXACT_P2_P4_AND_TEACHER_FIGURE_REVIEW"
+    },
+    {
+      "Source": "10.4",
+      "Requirement": "teacher-login restricted Cool-down",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_PROOF"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [],
+    "BuildingTowards": []
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L10_OPTIONAL_SAS_SSS_PAPER_HUMAN_PROOF",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L10",
+    "TaskId": "geo-u03-l10-sas-sss-complete-proof-and-ssa-counterexample",
+    "GroupId": "GEO_U03_L10_OPTIONAL_SAS_SSS_PAPER_HUMAN_PROOF",
+    "Mode": "TEACHER_SELECTED_TWO_FORMAL_CONGRUENCE_BASED_PROOFS",
+    "Evidence": "original labelled SAS and SSS source geometry sketches, ordered proportions, complete dilation then congruence arguments and SSA nonexample with teacher score",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, issue #605 leases untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "identifies a single positive ordered factor and correct included-angle SAS information",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "writes general complete dilation and SAS congruence proof of SAS similarity",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "writes complete dilation then SSS congruence proof from three proportional sides",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "critiques SSA nonincluded-angle ambiguity and justifies source practice results and optional status",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "adjacent source side pairs 4,6 and target 8,12 with included equal angle imply similarity via k2 SAS congruence",
+      "source three side triples 4,6,8 and 6,9,12 have k3/2 SSS congruence after dilation",
+      "P2 EF22.2 E36 F84, P4 DF36"
+    ],
+    "Equivalent": [
+      "SAS proof may dilate the larger triangle by inverse k to match source",
+      "SSS proof can use any one corresponding side as base to find the same k"
+    ],
+    "Wrong": [
+      "SSA is generally sufficient with two proportional sides and a nonincluded matching angle",
+      "applying SSS congruence directly to proportional but unequal side lengths",
+      "source P4 treats DE27 as image of AB12 without angle correspondence"
+    ],
+    "Boundary": [
+      "every compared triangle nondegenerate and all lengths positive",
+      "k1 case gives congruence and thus similarity",
+      "included angle is between the two matched proportional sides",
+      "source lesson optional beyond core AA"
+    ],
+    "Malformed": [
+      "no exact common ratio k or incorrect side ordering",
+      "missing included angle in SAS proof",
+      "no target/source vertex labels or reasons beyond a diagram"
+    ]
+  },
+  "IndependentMathOracles": {
+    "P2EF": "22.2",
+    "P2AngleE": "36",
+    "P2AngleF": "84",
+    "P4DF": "36",
+    "P4Choice": "C",
+    "P5AllFourSimilarByAngleSet": true,
+    "SASCriterion": "INCLUDED_ANGLE",
+    "SSSCriterion": "THREE_COMMON_POSITIVE_SIDE_RATIOS",
+    "SSAUniversal": false,
+    "OriginalOptional": true
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l10-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l10-optional-sas-sss-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l10-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l10-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "1058f7108996d878b4bd7c45079d52e32e31d941",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T04:02:15.908938Z",
+  "ClosedAtUtc": "2026-10-31T04:04:02.717788Z",
+  "ElapsedSeconds": 106.809,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L11"
+}

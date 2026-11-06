@@ -1,0 +1,184 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+  "Status": "C_CLOSED_AUTHORING_CONSTRUCTION_SSS_REFLECTION_CRITIQUE_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\14\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\14\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\14\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\14\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "0d4791ae9ac219074647917ab0f83cc5c64d321ee9cb89779a94f572ca90c3ac",
+    "TeacherActivities": "ea1821ff222c431f20db33a3e54a7d2fd739a703a78f4014db1a46fe853c0cf8",
+    "StudentActivities": "44b18ea87091871067db9ef97272e07daa02ed3305ec1455a07f8814bf8d5287",
+    "StudentPractice": "270b4f5d5b0aca52e0b4b4ab970ffcd174f6141e9859a44a3e63d56053adaf50"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.3",
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.C.9"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "14.1",
+      "Goal": "Two arc intersections and partner-A explanation/partner-B justified perpendicular bisector",
+      "FirstPartyMode": "OFFLINE_TEACHER_OBSERVED_COMPASS_PAIR_PROOF"
+    },
+    {
+      "Source": "14.2",
+      "Goal": "Critique Han Clare Andre then independent SSS for angle bisector constructed midpoint F",
+      "FirstPartyMode": "TEACHER_SCORED_PROOF_DRAFT_CRITIQUE"
+    },
+    {
+      "Source": "14.3 OPTIONAL",
+      "Goal": "Isosceles PQ SAS reflection axis vs invalid general parallelogram diagonal symmetry",
+      "FirstPartyMode": "OPTIONAL_TEACHER_REVIEW_SOURCE_PAPER"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven source-indexed rhombus/trapezoid/isosceles congruence problems",
+      "FirstPartyMode": "SEVEN_PAPER_TEACHER_SCORED_TASKS"
+    },
+    {
+      "Source": "14.4 Publisher Cool-down",
+      "Goal": "Gated teacher content",
+      "FirstPartyMode": "EDULYTIKS_INDEPENDENT_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L14_ANGLE_BISECTOR_SSS_PAPER_CONSTRUCTION_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L14",
+    "Mode": "TEACHER_SELECTED_PHYSICAL_CONSTRUCTION_AND_PAPER_CRITIQUE",
+    "TaskId": "geo-u02-l14-arc-and-angle-bisector-sss-reasoning",
+    "TeacherHandoff": "Teacher hands out paired arc-construction worksheet and Han/Clare/Andre drafts, observes A/B explanation role pairing, collects labelled AF/DE circle and midpoint SSS proof, optionally 14.3 reflection critique, 7 source indexed paper practice tasks and Edulytiks Cool-down. Mark criteria 0–2 each offline, not online score.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Valid two distinct equal-radius intersections and two-point perpendicular bisector theorem, both partner roles",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Correct AD=AE DF=EF AF=AF SSS proof before claiming angle DAF=FAE; critiques student circular drafts",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Accurate optional isosceles reflection SAS and rejection of arbitrary parallelogram diagonal reflection",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven indexed original practice analogues and independently authored Cool-down, diagrams/figure caveats",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "SourceSkill": "Which diagonal necessarily line of symmetry?",
+      "FirstPartyPrompt": "For general trapezoid, isosceles trapezoid, parallelogram, rhombus, rectangle, square identify families with a *diagonal* that is necessarily a reflection axis; distinguish a line through side midpoints.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "SourceSkill": "Rhombus EG axis proof",
+      "FirstPartyPrompt": "For rhombus EFGH show diagonal EG gives reflection symmetry via equal triangles across EG.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "SourceSkill": "Trapezoid noncongruence",
+      "FirstPartyPrompt": "Isosceles trapezoid ABDE source labelled diagram: refute unsupported triangle AEB congruent DBE claim; teacher checks correspondence.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "SourceSkill": "Ordered ADC to CBA",
+      "FirstPartyPrompt": "If triangle ADC congruent triangle CBA, derive both pairs opposite parallel using matching angles.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "SourceSkill": "Trapezoid congruent diagonals",
+      "FirstPartyPrompt": "Use auxiliary diagonals and the equal legs/base angles in isosceles ABDE to construct valid SAS argument for equal diagonals; source figure teacher-checked.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "SourceSkill": "Insufficient side-and-angle",
+      "FirstPartyPrompt": "Triangles AFE and ADE have AF=AD and angle F=angle D; explain why that alone does not automatically establish congruence.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "SourceSkill": "Sufficient extra isosceles data",
+      "FirstPartyPrompt": "Given AD=AC in DAC, identify sufficient additional statements to establish DB=BC or congruence of suitable triangle pair, verifying teacher-provided figure.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "ConstructArcRadius": "r>BC/2 and B!=C",
+    "AngleSSS": "AD_EQ_AE_DF_EQ_FE_AF_SHARED",
+    "ReflectionValid": "AP_EQ_BP_PQ_SHARED_INCLUDED_HALFANGLES_SAS",
+    "ReflectionInvalid": "ARBITRARY_PARALLELOGRAM_DIAGONAL_NOT_AXIS",
+    "SymmetryFamilies": "RHOMBUS_AND_SQUARE_HAVE_DIAGONAL_SYMMETRIES"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "AD=AE DF=FE AF=AF give triangles ADF and AEF congruent by SSS",
+      "two distinct equal-radius intersections determine perpendicular bisector",
+      "isosceles PQ SAS gives reflection symmetry",
+      "a rhombus has diagonal reflection"
+    ],
+    "Equivalent": [
+      "equal radius of any r>half segment and two swapped intersections",
+      "a correct independent paper drawing and verbal equivalent reasoning"
+    ],
+    "Wrong": [
+      "one equal radius tangent point determines perpendicular bisector by two points",
+      "Angle bisector justified by assuming desired equality as a given",
+      "every parallelogram diagonal is a reflection axis",
+      "isosceles trapezoid off-axis diagonal necessarily reflection axis"
+    ],
+    "Boundary": [
+      "B!=C and strict radius>half; equality tangent invalid as two crossing proof",
+      "degenerate angle and collapsed triangle excluded"
+    ],
+    "Malformed": [
+      "no arc centres or common radius",
+      "missing midpoint or congruence correspondence",
+      "blank figure/criterion evidence"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Prompt": "Build the equal-radius perpendicular bisector, construct a nondegenerate angle bisector AF using equal radius A to D/E and midpoint F, prove by SSS, and critique invalid parallelogram diagonal reflection.",
+    "Mode": "TEACHER_PAPER_REVIEW",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l14-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN: no online assignment, saved teacher grade, app/CI, merge/deploy"
+}

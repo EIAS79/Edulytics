@@ -1,0 +1,303 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l07-l09-original-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L07",
+      "CultureCode": "en",
+      "Title": "Construction Techniques 5: Squares",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct a square from one specified side and construct a square inscribed in a circle, explaining how perpendicular lines, equal radii and diagonals establish its properties.",
+        "A square is a four-sided regular polygon: all sides congruent and every interior angle 90 degrees. Merely marking four approximately equal sides does not guarantee right angles.",
+        "Verbal diagram for side construction: start with horizontal AB of length s>0, erect perpendicular rays at A and B on the same side of line AB, mark D on the first and C on the second at length s, then join D to C. The vertices occur A–B–C–D around the boundary.",
+        "Verbal diagram for a circle: let O be its centre with nonzero radius r; construct two perpendicular diameters with endpoints A and C on one diameter, B and D on the other. Join A–B–C–D. Successive radii enclose four equal right central angles, so the four chords are congruent.",
+        "Student task (human-scored): produce both constructions with labelled auxiliary lines and explain, rather than merely assert, why every side is congruent and every angle is right. Teacher rubric (0–4): nondegenerate starting figure, legal compass/straightedge sequence, four right-angle or central-angle justifications, and clear labelled mathematical communication.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; Edulytiks examples and explanations are independently authored.",
+        "First-party 7.1 Which One Doesn't Belong? Explore four verbally defined regularity candidates instead of unverified publisher images: A a non-square rectangle (2 by 3), B a rhombus with angle 60 degrees, C a square (2 by 2), D a scalene triangle (three unequal sides). For each, argue at least one classification criterion; multiple answers may be valid but must be mathematically justified. Define a regular polygon as both equilateral and equiangular.",
+        "First-party 7.2 It's Cool to Be Square: given distinct A,B (length s>0) construct perpendicular rays at both endpoints on the SAME side of AB; transfer the opening AB to locate D from A and C from B; join B,C,D,A. Exhibit all four right angles and lengths s rather than trusting a sketch.",
+        "First-party 7.3 Trying to Circle a Square, discovery BEFORE final construction: given square ABCD draw diagonals AC and BD, find E and conjecture that they are equal, perpendicular and bisect each other. Draw circles centred A through D and C through D, then a circle centred E through B; test which vertices lie on it. Only THEN construct a square inscribed in a fresh circle using two perpendicular diameters. Explain that each 90-degree central arc produces an equal chord and right interior angles.",
+        "Optional source extension: construct a square circumscribed about the same circle by tangents at four endpoints of two perpendicular diameters. Its side is 2r and area 4r²; the inscribed square area is 2r², half the circumscribed area. Optional, not a prerequisite for the two main source constructions.",
+        "Edulytiks-authored Cool-down (publisher teacher original not read): given a circle of radius 3, construct two perpendicular diameters and connect their four endpoints in cyclic order to make a square. Explain why the diagonals meet at right angles, are congruent and bisect one another, and why the square's sides are congruent; teacher scores actual labelled construction."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Regular polygon",
+          "Definition": "A polygon whose sides are congruent and whose interior angles are congruent.",
+          "Rule": "For a square, verify four equal sides and four right angles.",
+          "Example": "A rhombus with a 60-degree angle is not a square."
+        },
+        {
+          "Title": "Square inscribed in a circle",
+          "Definition": "A square whose four vertices lie on one circle.",
+          "Rule": "Use the endpoints of two perpendicular diameters; join them cyclically.",
+          "Example": "For a circle of radius 5 centred at the origin, vertices (5,0),(0,5),(−5,0),(0,−5) make an inscribed square."
+        },
+        {
+          "Title": "Diagonals of a square",
+          "Definition": "Segments joining pairs of opposite vertices; they bisect each other, have equal length and meet at 90 degrees.",
+          "Rule": "Equal perpendicular diameters of one circle produce square diagonals.",
+          "Example": "A square of side s has diagonal s√2 by the Pythagorean theorem."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Square from a given side",
+          "Question": "Construct square ABCD with AB=4 units using only straightedge and compass.",
+          "Method": "Erect two perpendicular rays, copy the base length, connect their endpoints.",
+          "Steps": [
+            "Mark distinct A and B and draw AB of positive length 4.",
+            "Construct lines perpendicular to AB through A and B, and select rays on the same side of AB.",
+            "With compass opening AB, mark D on A's ray and C on B's ray so AD=BC=AB.",
+            "Join C to D. Since AD and BC are equal directed perpendicular offsets from A and B, DC is parallel and congruent to AB.",
+            "The four sides are equal and adjacent sides perpendicular, so ABCD is a square."
+          ],
+          "Answer": "The square has four sides of length 4 and area 16 square units.",
+          "Check": "Choosing opposite half-plane rays would produce a crossing or unintended figure; ensure C and D lie on the same side."
+        },
+        {
+          "Title": "Inscribed square from two diameters",
+          "Question": "Construct a square inscribed in a circle with centre O and radius 3.",
+          "Method": "Construct a diameter, its perpendicular diameter, and the four connecting chords.",
+          "Steps": [
+            "Draw a line through O intersecting the circle at A and C.",
+            "Construct a perpendicular to AC through O, meeting the circle at B and D.",
+            "Join A, B, C, D in cyclic order.",
+            "Each central angle AOB, BOC, COD and DOA is 90 degrees; equal central angles subtend equal chords.",
+            "Each triangle with two radii and a right included angle has a chord 3√2; consecutive chords are perpendicular, giving an inscribed square."
+          ],
+          "Answer": "ABCD is a square with diagonal 6 and side 3√2.",
+          "Check": "The diagonal endpoints must lie on opposite ends of perpendicular diameters; a coincident diameter does not work."
+        },
+        {
+          "Title": "Compare inscribed and circumscribed squares",
+          "Question": "A circle has radius r>0. Find the ratio between the area of an inscribed square and a square circumscribed about the circle.",
+          "Method": "Use diagonals or half-side distances.",
+          "Steps": [
+            "For the inscribed square, the circle diameter 2r is a diagonal.",
+            "Its area is diagonal²/2 = (2r)²/2 = 2r².",
+            "For the circumscribed square, its side equals circle diameter 2r, so its area is 4r².",
+            "The inscribed-to-circumscribed area ratio is 2r²:4r²=1:2."
+          ],
+          "Answer": "The inscribed square has half the area of the circumscribed square.",
+          "Check": "This assumes the same circle and r>0; both areas use square units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a diamond-shaped rhombus is a square merely because all four sides look equal.",
+          "WhyWrong": "Congruent sides do not force four right angles.",
+          "Correction": "Construct and justify perpendicular adjacent sides or equal perpendicular diagonals."
+        },
+        {
+          "Mistake": "Joining points on a circle without ensuring perpendicular diameters.",
+          "WhyWrong": "Four arbitrary circle vertices need not form a square.",
+          "Correction": "Use two perpendicular diameters through the centre and connect endpoints in cyclic order."
+        }
+      ],
+      "SummaryPoints": [
+        "A square is both equilateral and equiangular; constructing equal lengths alone is insufficient.",
+        "An inscribed square arises from two perpendicular diameters; its diagonal is the circle diameter.",
+        "Physical/digital diagrams and explanations are teacher assessed until a genuine drawing evidence route is integrated.",
+        "First compare regularity criteria and conjecture square diagonal properties before constructing a square from a side and an inscribed square."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L08",
+      "CultureCode": "en",
+      "Title": "Using Technology for Constructions",
+      "ExplanationParagraphs": [
+        "Learning goal: Use dynamic geometry tools to define and test constructions whose geometric constraints remain valid when free starting points are dragged.",
+        "This is an optional source lesson. Digital geometry differs from drawing an appearance: a constructed point should depend on its geometric parent objects, such as being an intersection of circles, not have arbitrary screen coordinates.",
+        "Verbal tool map: a free point can move independently; a point-on-object remains on its parent circle or line; an intersection point stays where its parent objects meet (while intersections exist). A virtual compass constructs a circle with a centre and transferred segment radius; virtual straightedge tools create a line or segment through chosen points.",
+        "Student task: in a dynamic-geometry program, first construct a perpendicular bisector of movable segment AB by intersecting equal-radius circles and joining the intersection points. Drag A and B while keeping A≠B, and record whether the line stays perpendicular to and bisects AB. Repeat for an equilateral triangle, square or regular hexagon. Submit a file/video/screenshot sequence plus observations as teacher-assessed evidence; do not claim digital auto-grade without an interactive capture/verification integration.",
+        "Teacher rubric (0–4): geometry objects use dependencies rather than freehand approximations; at least two nondegenerate drag tests; correct invariant checks; explanation of a detected degeneracy or limitation. Do not grade success only by visual similarity.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; Edulytiks examples and explanations are independently authored.",
+        "First-party 8.1 OPTIONAL DIGITAL activity: in teacher-supplied dynamic geometry software, try free point, point-on-object, point of intersection, line, segment, ray, circle and compass-transfer operations. Drag each point type: a free point moves independently, while a dependent point must satisfy its parent constraints. Explain the difference from a physical compass; actually operate the software.",
+        "First-party 8.2 OPTIONAL DIGITAL activity: construct two examples from perpendicular bisector, equilateral triangle, regular hexagon, square, inscribed square or congruent triangles. Drag two independently chosen starting points to nondegenerate positions; check equality/perpendicularity remain valid. A fixed screenshot or paper substitute cannot prove successful dragging.",
+        "First-party 8.3 OPTIONAL DIGITAL activity: draw a line and exterior point, use parallel/perpendicular tool commands, and drag the exterior point while testing the line constraints; then build and drag-test a quadrilateral. Teacher records observation of live software and written reasoning. No Edulytiks drawing integration is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Dependent point",
+          "Definition": "A point whose location is defined by geometric constraints from existing objects.",
+          "Rule": "Use an intersection-point tool for circle intersections, not a free point positioned by eye.",
+          "Example": "The intersection of two circles stays at their crossing when a centre moves and the circles continue to intersect."
+        },
+        {
+          "Title": "Drag-test invariance",
+          "Definition": "A valid construction preserves its intended geometric property for allowable motion of free starting objects.",
+          "Rule": "Move independent points while avoiding degenerate starting cases, then check equal lengths, midpoint and perpendicularity.",
+          "Example": "An equilateral triangle should retain AC=BC=AB after dragging A if A≠B."
+        },
+        {
+          "Title": "Software and evidence",
+          "Definition": "A digital construction file encodes object dependencies and may be examined by a teacher.",
+          "Rule": "Save the construction and provide labelled invariant reasoning; a screenshot by itself may hide unconstrained free points.",
+          "Example": "Compare a manually positioned apex with the intersection of equal-radius circles under movement."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Dependent intersection versus freehand apex",
+          "Question": "Why is a triangle apex dragged into an approximately equal-sided position not a robust equilateral construction?",
+          "Method": "Check whether the apex is mathematically bound to two fixed-length conditions.",
+          "Steps": [
+            "Choose distinct free points A and B.",
+            "Draw circles centred A and B each through the other centre.",
+            "Choose C as a circle-intersection object rather than placing a free point.",
+            "Draw segments AB, AC and BC; the intersection constraints imply AC=BC=AB.",
+            "Drag A or B while preserving A≠B; verify side equality continues."
+          ],
+          "Answer": "Intersection-dependent C preserves equilateral geometry; a freely placed apex does not.",
+          "Check": "At A=B the construction degenerates, and the drag test must not falsely classify that case as a valid triangle."
+        },
+        {
+          "Title": "Digital perpendicular bisector",
+          "Question": "How can software construct a perpendicular bisector robust under dragging segment AB?",
+          "Method": "Use equal-radius circles and an intersection-line object.",
+          "Steps": [
+            "Create distinct draggable A and B and segment AB.",
+            "Make a circle centred A with radius r>AB/2; construct another centred B with the same radius.",
+            "Select two distinct intersection points X and Y.",
+            "Construct line XY and the intersection M of XY with AB.",
+            "Drag A or B within a nondegenerate configuration; verify AM=MB and XY⊥AB."
+          ],
+          "Answer": "The dependent line XY is a perpendicular bisector under valid dragging.",
+          "Check": "The implementation must preserve equal radii and require r>AB/2; otherwise two intersections may disappear."
+        },
+        {
+          "Title": "Detect failure by dragging",
+          "Question": "A square created from four unconstrained points looks correct initially. What failure exposes it?",
+          "Method": "Drag one vertex and examine constrained properties.",
+          "Steps": [
+            "Select one freely placed vertex and move it slightly.",
+            "Measure adjacent sides and angles; at least one generally changes from the square condition.",
+            "Replace arbitrary vertices with constructed perpendicular lines and copied distances.",
+            "Repeat the drag test, checking four equal sides and 90-degree angles."
+          ],
+          "Answer": "The freehand square is only an appearance; a valid dependency-based square retains its constraints.",
+          "Check": "Drag tests sample possible motions but are not a universal proof; mathematical reasoning about dependencies is still required."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a geometric shape is constructed correctly merely because it looks right on screen.",
+          "WhyWrong": "Freely positioned points can move independently and break its relationships.",
+          "Correction": "Use dependent intersections, circles and perpendiculars; test constraints under dragging."
+        },
+        {
+          "Mistake": "Treating a drag-test failure at overlapping starting points as a counterexample to a nondegenerate construction.",
+          "WhyWrong": "The construction's hypotheses may exclude zero-length segments or vanished intersections.",
+          "Correction": "State valid input domains before testing and separately report genuine degeneracies."
+        }
+      ],
+      "SummaryPoints": [
+        "Digital geometry constructions encode dependencies rather than fixed screen positions.",
+        "Drag tests are useful checks of construction invariants but are not a substitute for proof.",
+        "Optional source activity requires teacher review of actual geometry files or demonstrations, not fake automatic scoring."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L09",
+      "CultureCode": "en",
+      "Title": "Speedy Delivery",
+      "ExplanationParagraphs": [
+        "Learning goal: Model nearest-facility service regions using perpendicular bisectors and explain the boundaries and assumptions of a Voronoi partition.",
+        "Verbal diagram: place three distinct stores A, B and C in a square city. For each pair, the perpendicular bisector divides points nearer the first store from points nearer the second. The Voronoi region for A consists of points at least as close to A as to both B and C, clipped to the city boundary.",
+        "Assumptions: use Euclidean straight-line distance on a flat map with identical facility availability. A real road network can give different regions; don't infer actual delivery times, staffing or demand merely from distance. On exact bisectors there can be ties, and a point equidistant from three noncollinear stores is their circumcentre (which may lie outside the city boundary).",
+        "An independently authored student task: draw three store points on your own coordinate map, mark the pairwise bisectors and shade the service region for each. For 100 employees, argue why areas alone are insufficient to allocate staff if customer demand is unknown. Include alternative demand scenarios and discuss ties. A teacher checks modelling choices, labels and explanation.",
+        "Teacher rubric (0–4): valid assumptions and distance rule; correct bisectors and bounded regions; tie and boundary reasoning; and an evidence-based limitation on staffing claims. Numeric distances can be checked independently but the original map modelling, tessellation and written explanation are not automatically graded.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; Edulytiks examples and explanations are independently authored.",
+        "First-party 9.1 Notice and Wonder: draw an original square-grid city and mark three store points A=(0,0), B=(8,0), C=(0,6). Ask students to list observations and questions about fairness and proximity BEFORE constructing cell boundaries.",
+        "First-party 9.2 Who Is Closest?: in Euclidean coordinate units, draw three pairwise perpendicular bisectors x=4, y=3, 4x-3y=7, and partition the square city [0,10] by nearest of A,B,C, labelling equal-distance boundaries and the triple tie (4,3). Open a fourth store D=(8,6) and repartition. Discuss which factual order-demand, capacity and delivery-road assumptions would be needed before allocating 100 employees; do NOT claim a uniquely justified staff count from geometric areas alone.",
+        "First-party 9.3 optional modelling extension: choose a new set of at least four locations and build a nearest-site Voronoi diagram on paper or with a provided dynamic geometry tool, then write a brief letter describing its decision use and the limits of straight-line distance. A publisher blackline master or external applet is not claimed integrated.",
+        "First-party 9.4 Another Layer: begin with a square-grid tessellation of equal-spaced site points, construct their Voronoi boundaries using perpendicular bisectors and shade the nonoverlapping nearest-site regions. Explain why these cells cover the modelled plane without gaps or interior overlap; shared boundaries are allowed. Write one conjecture about how repeating input cells affects the Voronoi pattern."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perpendicular-bisector decision boundary",
+          "Definition": "For two distinct facilities A and B, the locus of points P with PA=PB.",
+          "Rule": "Points on one side of the perpendicular bisector are nearer A, and points on the other nearer B.",
+          "Example": "For A=(0,0), B=(4,0), the boundary is x=2."
+        },
+        {
+          "Title": "Voronoi cell",
+          "Definition": "Points at least as close to one named site as to every other named site, with equality allowed at ties.",
+          "Rule": "Intersect the relevant closer-than-or-equal half-planes; clip to the actual city boundary if required.",
+          "Example": "For A=(0,0),B=(4,0),C=(0,4), A's cell includes all points with x≤2 and y≤2."
+        },
+        {
+          "Title": "Distance modelling",
+          "Definition": "A rule translating map geometry into an operational decision, with assumptions and limitations.",
+          "Rule": "Separate nearest-site geometry from customer demand and road travel times.",
+          "Example": "Two equal-area service cells may need different staffing if order densities differ."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Bisector of two stores",
+          "Question": "Stores A=(0,0) and B=(4,0). Which store is nearer P=(3,1)?",
+          "Method": "Compare squared Euclidean distances; avoid square roots for ordering.",
+          "Steps": [
+            "PA²=(3−0)²+(1−0)²=10.",
+            "PB²=(3−4)²+(1−0)²=2.",
+            "Because 2<10, P is nearer B.",
+            "The tie line is x=2 because (x²+y²)−((x−4)²+y²)=8x−16."
+          ],
+          "Answer": "Store B is nearer; x=2 is the full equidistant boundary.",
+          "Check": "P has x=3>2, as expected on the B side."
+        },
+        {
+          "Title": "Three-store service cells",
+          "Question": "For A=(0,0), B=(4,0), C=(0,4), describe A's Voronoi cell in a 0≤x≤4, 0≤y≤4 city.",
+          "Method": "Intersect the two half-planes making A no farther than each other store.",
+          "Steps": [
+            "PA²≤PB² simplifies to x≤2.",
+            "PA²≤PC² simplifies to y≤2.",
+            "A's Voronoi cell inside the city is 0≤x≤2 and 0≤y≤2.",
+            "At (2,2), squared distances to all three stores are 8; the site tie is triple."
+          ],
+          "Answer": "Within this square city, A's region is the lower-left 2-by-2 square, including tie boundaries.",
+          "Check": "The three cells meet at (2,2); boundary ownership requires a stated tie-breaking policy in an actual service system."
+        },
+        {
+          "Title": "Staff allocation is not purely geometric",
+          "Question": "Two store regions have equal map areas but contain 80 and 20 daily orders. What can a distance-only map tell us about allocating 100 staff?",
+          "Method": "Distinguish geometric coverage from evidence about workload.",
+          "Steps": [
+            "A nearest-facility partition identifies which store would serve locations under the model.",
+            "The number of daily orders is a separate demand variable, not determined by geographic area.",
+            "If staffing were proportional to those 100 known orders and work per order were equal, a tentative split would be 80:20.",
+            "Without actual order rates, worker productivity or service targets, a unique staff split cannot be justified."
+          ],
+          "Answer": "Distance-only geometry does not determine staffing; under the stated equal-work-per-order assumption, 80 and 20 is one defensible provisional allocation.",
+          "Check": "The proportional allocation is conditional, not an official staffing recommendation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Drawing a service boundary by connecting store locations instead of bisecting their separating segment perpendicularly.",
+          "WhyWrong": "A segment between stores usually contains points nearer one store or the other, not equal-distance locations.",
+          "Correction": "Construct the perpendicular bisector and check distances to both sites at a sample boundary point."
+        },
+        {
+          "Mistake": "Assigning staff proportionally to polygon area without demand evidence.",
+          "WhyWrong": "Area does not determine order density or delivery workload.",
+          "Correction": "State required customer-demand and operational assumptions before recommending a staffing distribution."
+        }
+      ],
+      "SummaryPoints": [
+        "Voronoi cells are intersections of nearest-site half-planes bounded by perpendicular bisectors.",
+        "Boundary ties, city clipping and Euclidean-distance assumptions must be explicit.",
+        "Authentic map modelling and written explanations require teacher-scored evidence; generic arithmetic auto-grading cannot replace them."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

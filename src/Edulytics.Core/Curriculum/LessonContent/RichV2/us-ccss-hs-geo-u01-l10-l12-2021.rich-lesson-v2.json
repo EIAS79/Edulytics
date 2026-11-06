@@ -1,0 +1,294 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l10-l12-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L10",
+      "CultureCode": "en",
+      "Title": "Rigid Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Describe and construct images of shapes under translations and reflections; justify preservation of lengths and angle measures; and explain why changing the order of two rigid motions can change the final image.",
+        "A transformation acts on points in the plane; the original is the preimage and the result its image, labelled with prime marks. A rigid motion preserves every pairwise distance and angle measure. A sequence of rigid motions is also rigid. Two figures are congruent if one maps to the other by such a sequence.",
+        "Student representation: draw a triangle with vertices A=(0,0), B=(2,0), C=(0,1). First translate each vertex two units right, then reflect each translated vertex across the y-axis. Mark both intermediate and final triangles and compare the corresponding side lengths.",
+        "Order matters: for P=(1,0), translation T(x,y)=(x+2,y) followed by reflection R(x,y)=(-x,y) gives R(T(P))=(-3,0), whereas T(R(P))=(1,0). The final images differ though both operations preserve distances.",
+        "Teacher rubric (0–4): correctly matched corresponding vertices; accurate two-stage image; preserved distance/angle justification; explicit demonstration of when transformation order matters. Drawing quality, oral argument and critique are human-scored; a numeric answer alone cannot certify these activities.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Explanations and examples are independent Edulytiks adaptations; publisher figures are not reproduced.",
+        "First-party 10.1 Notice and Wonder: show original congruent labelled asymmetric L-shapes on an isometric paper grid, one moved by (2,0) and one mirrored across a named line. Students first observe preserved side lengths/angle measures; avoid formally introducing rotations here, since later source lessons define them.",
+        "First-party 10.2 What's the Same?: for asymmetric triangle A(0,0),B(2,0),C(0,1), construct the images under T(x,y)=(x+2,y), reflection in y-axis R(x,y)=(-x,y), and T then R. Label every intermediate vertex with prime marks and use distinct shading; ask what measurements agree and what positions or orientations differ.",
+        "First-party 10.3 Does Order Matter?: take P=(1,0), translate 2 units right then reflect in y-axis to obtain (-3,0); reverse the order to obtain (1,0). Repeat for a labelled L-shaped figure and critique a claim that rigid motions always commute. Discuss that two translations commute but translation and reflection generally do not; these are examples, not a universal proof from drawing alone."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rigid motion",
+          "Definition": "A transformation of the plane preserving distances between every pair of points; translations, reflections and rotations are examples.",
+          "Rule": "Corresponding segment lengths and angle measures do not change under a rigid transformation.",
+          "Example": "The triangle with sides 3,4,5 stays a 3–4–5 triangle after a reflection."
+        },
+        {
+          "Title": "Image and correspondence",
+          "Definition": "The image is the output of a transformation, with point labels such as A′ corresponding to A.",
+          "Rule": "Track each original vertex through every step, including intermediate images.",
+          "Example": "If A=(1,2) translates by (3,-1), then A′=(4,1)."
+        },
+        {
+          "Title": "Composition order",
+          "Definition": "For motions R and T, R(T(P)) need not equal T(R(P)).",
+          "Rule": "Apply operations in the stated order to each point; do not interchange stages without checking.",
+          "Example": "Reflection in the y-axis after a rightward translation differs from the reverse order."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Translate a right triangle",
+          "Question": "Triangle A=(0,0),B=(3,0),C=(0,4) moves right 2 and up 1. Find its image.",
+          "Method": "Apply the same translation to every vertex.",
+          "Steps": [
+            "Use T(x,y)=(x+2,y+1).",
+            "A′=(2,1), B′=(5,1), C′=(2,5).",
+            "AB=3 and A′B′=3; AC=4 and A′C′=4.",
+            "BC=5 and B′C′=5; the right angle at A remains right."
+          ],
+          "Answer": "The image has vertices (2,1),(5,1),(2,5) and is congruent to the original.",
+          "Check": "All differences between corresponding vertices equal (2,1); no rotation or reflection has occurred."
+        },
+        {
+          "Title": "Sequence with order sensitivity",
+          "Question": "Apply a right-2 translation then a y-axis reflection to P=(1,1), and reverse the order.",
+          "Method": "Compute each composition explicitly.",
+          "Steps": [
+            "T(1,1)=(3,1).",
+            "R(T(1,1))=(-3,1).",
+            "R(1,1)=(-1,1).",
+            "T(R(1,1))=(1,1)."
+          ],
+          "Answer": "Reflection after translation gives (-3,1); translation after reflection gives (1,1).",
+          "Check": "Both preserve distance and angles, but the sequences do not commute."
+        },
+        {
+          "Title": "Two reflections can be one translation",
+          "Question": "Reflect P=(2,1) across x=0 and then across x=3. What is the net motion?",
+          "Method": "Use the equal perpendicular distances defining each reflection.",
+          "Steps": [
+            "Reflection in x=0 takes (x,y) to (-x,y), so P maps to (-2,1).",
+            "Reflection in x=3 takes (u,v) to (6-u,v).",
+            "Thus the second image is (8,1).",
+            "For arbitrary P=(x,y), the net image is (x+6,y); a translation 6 units to the right."
+          ],
+          "Answer": "A translation 6 units right, twice the gap between the parallel mirrors.",
+          "Check": "A reversed pair of mirrors translates 6 units left, proving order matters."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating image vertices as freely paired after a motion.",
+          "WhyWrong": "Corresponding labels preserve the input-to-output relationship; arbitrary re-pairing can conceal noncongruence.",
+          "Correction": "Follow A→A′, B→B′ and C→C′ explicitly through the full sequence."
+        },
+        {
+          "Mistake": "Assuming rigid transformations always commute.",
+          "WhyWrong": "Composition depends on order; a reflection and translation can yield different outputs.",
+          "Correction": "Calculate or construct two orders on a non-symmetric test point and compare."
+        }
+      ],
+      "SummaryPoints": [
+        "Rigid motions preserve distances and angles, and their compositions are rigid.",
+        "Congruence is defined via a sequence of rigid motions, not by visual similarity alone.",
+        "Order sometimes changes the resulting image; drawings and arguments remain human assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L11",
+      "CultureCode": "en",
+      "Title": "Defining Reflections",
+      "ExplanationParagraphs": [
+        "Learning goal: Define a reflection using a named mirror line, construct image points, and decide whether a proposed image satisfies the equal perpendicular-distance conditions.",
+        "A reflection in line m sends each point P not on m to point P′ on the opposite side such that m is the perpendicular bisector of segment PP′. Points on m are fixed. Equal distance from the line alone is insufficient: corresponding points must lie on the same perpendicular to the mirror line.",
+        "Verbal diagram: mirror m is the vertical line x=2, point P=(5,1) lies 3 units right of m, and its image P′=(-1,1) lies 3 units left. Segment PP′ is horizontal and m intersects at midpoint (2,1).",
+        "Student task: reflect a scalene triangle across a given oblique line using perpendicular constructions, mark each vertex and its reflected image, and critique an image where the candidate point is on the correct side but not on the perpendicular through the original. Teacher rubric (0–4): specified mirror, perpendicular-foot construction, equal opposite offsets, correct image correspondences and explanation. Drawing and explanation need human-scored evidence.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Explanations and examples are independent Edulytiks adaptations; publisher figures are not reproduced.",
+        "First-party 11.1 Which One Doesn't Belong? compare four independently described point-image pairs: a vertical-line reflection, a horizontal-line reflection, an image with unequal perpendicular distances, and a point already on the mirror axis that stays fixed. Learners can choose different non-belonging reasons if mathematically defended; the original publisher panels are not reused.",
+        "First-party 11.2 Info Gap: What’s the Point? Teacher gives Partner 1 a PROBLEM CARD asking for image of P=(4,1) and Q=(1,3) under an unknown line reflection. Partner 2 receives a separate DATA CARD specifying mirror line x=2 and the definition that PP' is perpendicular to the mirror and midpoint lies on it. Partners cannot show cards initially: one asks which line and why, the other supplies only requested facts, then both independently solve P'=(0,1), Q'=(3,3) and compare. Teacher must distribute cards separately; copying both together defeats the source information-gap skill.",
+        "First-party 11.3 Triangle in the Mirror: for triangle C=(1,1), D=(3,1), E=(2,4) and oblique mirror m: y=x, show D'=(1,3), E'=(4,2), construct C'=(1,1) (the mirror-fixed point), and shade the image triangle. State general construction: perpendicular from each vertex to mirror, then an equal length on the opposite side; a vertex on the mirror stays fixed. Critique the incorrect candidate C''=(1,-1), which is not on the required perpendicular mirror-normal through C. Use labelled paper and written proof, not 'looks fine'."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reflection definition",
+          "Definition": "A reflection across line m maps P to P′ so m is the perpendicular bisector of segment PP′ for P off m; points on m stay fixed.",
+          "Rule": "Construct the perpendicular from P to m and transfer its distance an equal amount across the line.",
+          "Example": "Reflect (5,1) across x=2 to obtain (-1,1)."
+        },
+        {
+          "Title": "Mirror invariants",
+          "Definition": "Reflections preserve lengths and angle magnitudes but reverse orientation.",
+          "Rule": "Check midpoint-on-axis and perpendicularity for every P/P′ pair.",
+          "Example": "If x=0 is the mirror, (a,b) maps to (-a,b)."
+        },
+        {
+          "Title": "Invalid reflection evidence",
+          "Definition": "Equal shortest distances to the mirror are necessary but alone not sufficient to identify the image of a particular point.",
+          "Rule": "Check that segment joining the pair is perpendicular to the mirror and bisected by it.",
+          "Example": "Across y=0, (2,3) does not reflect to (5,-3), despite both having distance 3 to the line."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reflect across a vertical line",
+          "Question": "Reflect P=(5,1) in the mirror x=2.",
+          "Method": "Retain the y coordinate and place an equal horizontal offset on the opposite side.",
+          "Steps": [
+            "P is 5−2=3 units right of x=2.",
+            "Move 3 units left from the mirror: 2−3=−1.",
+            "Retain y=1 because the perpendicular to a vertical mirror is horizontal.",
+            "Thus P′=(−1,1), and the midpoint of segment PP′ is (2,1) on x=2."
+          ],
+          "Answer": "P′=(−1,1).",
+          "Check": "PP′ is horizontal and the mirror x=2 bisects its length."
+        },
+        {
+          "Title": "Reflect a triangle across the x-axis",
+          "Question": "Reflect A=(0,0), B=(3,1), C=(1,4) across y=0.",
+          "Method": "Use (x,y)↦(x,−y) for each vertex.",
+          "Steps": [
+            "A lies on the mirror, so A′=(0,0).",
+            "B′=(3,−1) and C′=(1,−4).",
+            "AB²=10 and A′B′²=10; BC²=13 and B′C′²=13; AC²=17 and A′C′²=17.",
+            "All lengths are preserved; orientation reverses."
+          ],
+          "Answer": "A′=(0,0), B′=(3,−1), C′=(1,−4).",
+          "Check": "Each original/image segment crosses y=0 at its midpoint and is perpendicular unless it is a fixed point."
+        },
+        {
+          "Title": "Detect a false mirror partner",
+          "Question": "Can P=(2,3) reflect across y=0 to Q=(5,−3)?",
+          "Method": "Test both signed separation and perpendicularity.",
+          "Steps": [
+            "P and Q lie on opposite sides of y=0.",
+            "Their distances to the mirror are both 3, satisfying the distance test.",
+            "However PQ changes x from 2 to 5; the segment is not perpendicular to the horizontal mirror.",
+            "The true reflected image is P′=(2,−3)."
+          ],
+          "Answer": "No. Equal mirror distances alone do not prove a reflection.",
+          "Check": "The true image shares x=2 with P and has opposite y."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Marking any point at the same distance across the mirror as a reflected image.",
+          "WhyWrong": "It can be displaced along the mirror line and fail perpendicular correspondence.",
+          "Correction": "Construct P′ on the perpendicular through P with the mirror as midpoint."
+        },
+        {
+          "Mistake": "Moving points that lie on the reflection line.",
+          "WhyWrong": "Every point on the mirror is fixed by the reflection.",
+          "Correction": "Preserve on-axis vertices and reflect only off-axis points."
+        }
+      ],
+      "SummaryPoints": [
+        "A mirror line must be specified; the line perpendicularly bisects each segment from a point to its image.",
+        "Reflections preserve metric geometry but reverse orientation.",
+        "Authentic figure reflections and critique of invalid diagrams need teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L12",
+      "CultureCode": "en",
+      "Title": "Defining Translations",
+      "ExplanationParagraphs": [
+        "Learning goal: Define a translation by a directed segment with specified distance and direction, draw image points, and justify the parallelogram formed when a segment and its translated image are joined.",
+        "A directed segment from U to V prescribes the same displacement for every point in the plane. If the displacement is (a,b), a translation maps P=(x,y) to P′=(x+a,y+b). Both components, and their signs, matter. Unlike a reflection, a translation preserves orientation and does not have a mirror line.",
+        "Verbal diagram: segment AB lies horizontally with A=(0,0),B=(3,0), and the given arrow points up and right by (2,1). Its image A′=(2,1), B′=(5,1) remains horizontal and has the same length. The vertices A–B–B′–A′ form a parallelogram when the displacement is not parallel to AB.",
+        "Source-aligned independent task: draw a directed segment and translate an asymmetric triangle by it; connect the endpoints of a second segment to its image; conjecture when the quadrilateral is a parallelogram and when it degenerates. Teacher rubric (0–4): stated directed displacement, correctly mapped all points, justified parallel/equal opposite sides, and identified the parallel-vector degenerate case. Written conjectures and diagrams are human-assessed.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Explanations and examples are independent Edulytiks adaptations; publisher figures are not reproduced.",
+        "First-party 12.1 Notice and Wonder: draw two congruent translated asymmetric triangles and a directed arrow from U=(0,0) to V=(3,2). Before definitions, students identify common equal-length, parallel and same-direction point-to-image segments; the term directed line segment is used deliberately, not yet introduced as a vector.",
+        "First-party 12.2 What's the Point: Translations: label V=(0,0) and its image W=(3,2); students independently find at least three other original/image pairs under this same displacement and record a conjecture. Repeat using second image Z=(-2,1), compare the conjectures under the different directions.",
+        "First-party 12.3 Translating Triangles: translate triangle A=(0,0),B=(3,0),C=(0,2) by directed segment A→C=(0,2), mark A',B',C' and compare BC to B'C'. Translate segment DE with D=(0,0), E=(2,0) by w=(1,3), then join D-E-E'-D'; prove opposite sides are parallel and equal. If displacement is parallel to DE, the quadrilateral degenerates and must not be counted as a nondegenerate parallelogram."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Directed segment",
+          "Definition": "A segment with a chosen start and end, encoding both distance and direction.",
+          "Rule": "Use the same displacement from each original point to its image.",
+          "Example": "An arrow from (1,2) to (4,1) encodes displacement (3,−1)."
+        },
+        {
+          "Title": "Translation",
+          "Definition": "A rigid transformation sending every P to P′ by a common directed displacement.",
+          "Rule": "Translate each coordinate by the same ordered pair; image segments stay parallel to their originals.",
+          "Example": "The translation (3,−1) sends (−2,4) to (1,3)."
+        },
+        {
+          "Title": "Parallelogram from corresponding endpoints",
+          "Definition": "For a segment AB and a translation by a non-parallel nonzero displacement v, A–B–B′–A′ is a nondegenerate parallelogram.",
+          "Rule": "Opposite segments AB and A′B′ are equal/parallel, and AA′ and BB′ are equal/parallel.",
+          "Example": "A=(0,0), B=(3,0), v=(2,1) gives A′=(2,1), B′=(5,1)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Apply a directed segment",
+          "Question": "Directed segment from U=(1,2) to V=(4,1). Translate P=(−2,4).",
+          "Method": "Subtract endpoint coordinates to find the displacement.",
+          "Steps": [
+            "Compute the directed displacement V−U=(4−1,1−2)=(3,−1).",
+            "Apply the displacement to P: P′=(−2+3,4−1)=(1,3).",
+            "Verify PP′ has displacement (3,−1) and the same length/direction as UV.",
+            "The length of each displacement is √(3²+(−1)²)=√10."
+          ],
+          "Answer": "P′=(1,3).",
+          "Check": "Using U−V would reverse the arrow and yield an incorrect image."
+        },
+        {
+          "Title": "Translate a triangle and test its sides",
+          "Question": "Translate A=(0,0), B=(3,0), C=(0,2) by (2,1).",
+          "Method": "Add the same vector to each vertex, tracking their labels.",
+          "Steps": [
+            "A′=(2,1), B′=(5,1), C′=(2,3).",
+            "AB has displacement (3,0), and A′B′ has the same displacement.",
+            "AC has displacement (0,2), and A′C′ has the same displacement.",
+            "All corresponding lengths and angle measures therefore agree; orientation is unchanged."
+          ],
+          "Answer": "Image vertices are (2,1),(5,1),(2,3), congruent and consistently oriented.",
+          "Check": "Each of A′−A, B′−B and C′−C equals (2,1)."
+        },
+        {
+          "Title": "Recognize parallelogram degeneracy",
+          "Question": "Segment AB is horizontal. Explain the quadrilateral A–B–B′–A′ when the translation is (2,1), versus when it is (2,0).",
+          "Method": "Compare the original segment direction with the translation direction.",
+          "Steps": [
+            "With translation (2,1), AB and A′B′ are parallel and the connectors AA′ and BB′ are parallel.",
+            "Because (2,1) is not parallel to horizontal AB, the resulting four vertices enclose nonzero area and form a parallelogram.",
+            "With translation (2,0), the connectors are collinear with AB, so all four points lie on one line.",
+            "A degenerate collinear configuration is not a nondegenerate parallelogram with positive area."
+          ],
+          "Answer": "A true parallelogram for non-parallel displacement; collinear degenerate figure for horizontal displacement.",
+          "Check": "The claim requires both AB nonzero and translation not parallel to AB for a nonzero-area quadrilateral."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring an arrow's direction and using only its length.",
+          "WhyWrong": "Infinitely many directed segments share a length, producing different images.",
+          "Correction": "Track start-to-end displacement, including the signs of both components."
+        },
+        {
+          "Mistake": "Claiming any translated segment automatically creates a nondegenerate parallelogram with its original.",
+          "WhyWrong": "If displacement is zero or parallel to the segment, all connecting points may be collinear.",
+          "Correction": "State the nonzero, non-parallel displacement condition before using the parallelogram conclusion."
+        }
+      ],
+      "SummaryPoints": [
+        "A translation uses one directed displacement for every point; it preserves distances, angles and orientation.",
+        "Corresponding segments are equal and parallel.",
+        "The segment-to-image quadrilateral is nondegenerate only when translation is nonzero and not parallel to the original segment.",
+        "All point-image directed segments in one translation share equal length, direction and parallelism; students test conjectures with two different translations before a formal definition."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

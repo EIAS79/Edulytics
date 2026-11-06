@@ -1,0 +1,18 @@
+{
+  "SchemaVersion": 1,
+  "Grade": 10,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "Curriculum": "IM Geometry",
+  "TeacherSourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry",
+  "StudentSourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student",
+  "Exclude": [
+    "AccessIM_Geometry_*",
+    "Illustrative_Mathematics_v360",
+    "UAE Grade 10 content"
+  ],
+  "Execution": "Read local source -> compare current lesson -> repair only missing/wrong -> author NOT_RUN checks -> checkpoint/commit -> next lesson",
+  "StatusLabel": "READY_FOR_STAGE_D",
+  "DoNotAdd": "REVIEW complete 2021",
+  "Reporting": "Do not stop after each lesson; aggregate at unit boundaries.",
+  "Testing": "Stage D, .NET tests, Node test execution and CI are NOT run during A-B-C."
+}

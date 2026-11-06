@@ -1,0 +1,806 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-hs-geo-u05-l01-l06-firstparty-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L01",
+      "CultureCode": "en",
+      "Title": "Solids of Rotation",
+      "ExplanationParagraphs": [
+        "Learning goal: A filled rectangle of width r revolved about its height-side sweeps a solid right circular cylinder of radius r; a right triangle revolved about a leg sweeps a cone. Naming an off-edge axis can create a hollow body.",
+        "Geometric reasoning: A filled rectangle of width r revolved about its height-side sweeps a solid right circular cylinder of radius r; a right triangle revolved about a leg sweeps a cone. Naming an off-edge axis can create a hollow body.",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four human 0/1/2 criteria cover an exact source-aligned labelled region and fixed axis, correct continuous symmetry/shell-versus-solid interpretation, independently constructed axial half-profiles and explicit off-axis hole, and complete source Practice reasoning with non-invented diagram-dependent answers.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 1, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 1.1 Which One Doesn't Belong? Solids (5 minutes): source images show a wire spring toy, cylindrical chalk, conical roof and puzzle cube. Students must first give defensible verbal classifications and compare continuous rotational symmetry about a vertical axis with the cube's 90-degree discrete rotations. The two round cylindrical and conical objects have full circular axial rotational symmetry; an obliquely depicted spring may not. Original source images are not copied, and no unique right answer is asserted for this exploratory discussion.",
+        "Source 1.2 Axis of Rotation (10 minutes): in groups tape pre-cut FILLED shapes to a pencil edge and rotate: filled rectangle about one side produces solid cylinder, right triangle about its leg produces a cone, and filled semicircle about its diameter produces a solid sphere. Draw the fixed axis, radial extent, circular cross-sections, and at least three viewpoints before identifying solids. Compare with the digital Surface command: rotating a one-dimensional CURVE makes only a 2D shell, not a solid filled volume; do not claim the GeoGebra interactive renderer is connected.",
+        "Source 1.2 optional extension: graph y=-x+3 for 1<=x<=3 and rotate ONLY this LINE SEGMENT about the y-axis. Coordinates x=1 to3 become radial distance r=1 to3 with height y=2 down to0, sweeping the LATERAL SURFACE of a cone frustum, not the interior of a solid frustum. Its shell does not touch the rotation axis and has inner radius1 at top and outer radius3 at bottom. A filled 2D region with suitable boundaries would be needed for a real 3D body. Distinguish a full disk rotating about an external coplanar vertical axis from an axial cylinder: an offset disk that avoids the axis sweeps a torus with a hole.",
+        "Source 1.3 From Three Dimensions to Two (15 minutes): each first-party Team A creates a labelled solid with chosen rotation axis and hides the generating 2D REGION, Team B inspects the 3D shape from several orientations and draws a suitable axial HALF-PROFILE and line of rotation; then verify against the revealed generator and exchange roles. For the publisher's example vase, tiered cake, barbell and bagel, source drawings must be inspected, not copied. A bagel/torus needs the off-axis disk and its central void; an entire silhouette and its HALF profile may generate the same solid under different rotation angles but no full uninterrupted rotation of a nondegenerate planar region about an axis can make a rectangular prism with corners and only discrete cube symmetry.",
+        "Source lesson synthesis: a rotation in 2D is about a fixed POINT whereas a 3D rotation is around a LINE, with points travelling circles in perpendicular planes. The source independently asks whether changing the axis of the SAME figure changes its solid; it does, so state the axis each time and distinguish surface-only motion from filled region. The student summary's spinning coin yields a sphere when an ideal filled flat disk rotates about a DIAMETER in its own plane, not if the coin merely spins around its axis perpendicular to the face. A triangular flag rotating about a leg/pole sweeps a cone when the vertex and geometry meet the right-triangle assumptions.",
+        "Source Practice P1-P7: P1 sketch solid from pictured 2D region about horizontal axis—source figure needed. P2 draw 2D axial half-profile producing the barrel-shaped rotation—original figure must be inspected. P3 match source labelled figures A/B/C to 1 cylinder,2 sphere,3 cone—pictures missing from accessible text, no invented A/B/C mapping; independent canonical generators are rectangle about side→cylinder, semicircle about diameter→sphere, right triangle about leg→cone. P4 shaded region area and P5 figure area from previous U04:L11 are source-image dependent. P6 regular STOP SIGN octagon side12 inches has perimeter96 inches and area 2(1+sqrt2)12²=288(1+sqrt2)≈695.29 square inches; require derivation from four rectangular strips and triangles or apothem. P7 right triangle ABC original image determines whether any options A-H for BC equal sqrt(4.9²+6²), sqrt(6²-4.9²), 4.9sin55, 4.9/sin55, 4.9tan55, 4.9/tan55, 6cos55 or 6/cos55; side/angle placement is required before selecting. Original teacher-login Telescope Cool-down protected; use independently authored first-party paper comparison of surface/shell, filled solid and off-axis torus, reviewed by teacher."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Axis of rotation",
+          "Definition": "Fixed line; points off axis trace circles whose radii are distances to the axis",
+          "Rule": "Name the line before rotating",
+          "Example": "Point on axis is fixed"
+        },
+        {
+          "Title": "Filled generating region",
+          "Definition": "Planar interior whose revolution sweeps 3D volume",
+          "Rule": "Distinguish a region from merely its outline",
+          "Example": "Rotating a rectangle gives a filled cylinder"
+        },
+        {
+          "Title": "Generating profile",
+          "Definition": "Perpendicular distances from axis describe cross-sectional radii",
+          "Rule": "A linear taper makes a cone",
+          "Example": "Right triangle gives cone or double cone depending on axis"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solids of Rotation: investigation 1",
+          "Question": "A filled rectangle 3 wide and 7 high rotates about its 7-unit side. Identify solid and dimensions.",
+          "Method": "Use axis of rotation with explicit geometric hypotheses.",
+          "Steps": [
+            "The side of length 7 is the fixed axis",
+            "Every height level sweeps a disk of radius 3",
+            "The union of disks forms cylinder of height 7"
+          ],
+          "Answer": "Cylinder of radius 3 and height 7.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Solids of Rotation: investigation 2",
+          "Question": "Right triangle has legs 4 and 6. Rotate about the 6-leg.",
+          "Method": "Use filled generating region with explicit geometric hypotheses.",
+          "Steps": [
+            "Six-unit leg is the stationary axis",
+            "The four-unit leg traces a disk radius 4 at one end",
+            "Radial extent tapers linearly to apex"
+          ],
+          "Answer": "Right circular cone of radius 4 and height 6.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Solids of Rotation: investigation 3",
+          "Question": "A filled semicircle radius 5 rotates around its diameter.",
+          "Method": "Use generating profile with explicit geometric hypotheses.",
+          "Steps": [
+            "The diameter is the axis through the circle centre",
+            "Circular slices sweep all radial directions",
+            "The entire 3D ball of radius 5 is swept"
+          ],
+          "Answer": "Solid sphere of radius 5.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mistaking an outline for the filled region",
+          "WhyWrong": "An outline sweeps surfaces, not necessarily the filled interior",
+          "Correction": "Specify filled area versus boundary"
+        },
+        {
+          "Mistake": "Ignoring axis placement",
+          "WhyWrong": "Changing axes can change solid shape and dimensions",
+          "Correction": "Mark axis and perpendicular radii"
+        }
+      ],
+      "SummaryPoints": [
+        "A filled rectangle of width r revolved about its height-side sweeps a solid right circular cylinder of radius r; a right triangle revolved about a leg sweeps a cone. Naming an off-edge axis can create a hollow body.",
+        "Distinguish a region from merely its outline",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Solids of Rotation. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Axis of rotation",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Name the line before rotating",
+                "Point on axis is fixed"
+              ]
+            },
+            {
+              "Label": "Filled generating region",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Distinguish a region from merely its outline",
+                "Rotating a rectangle gives a filled cylinder"
+              ]
+            },
+            {
+              "Label": "Generating profile",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A linear taper makes a cone",
+                "Right triangle gives cone or double cone depending on axis"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L02",
+      "CultureCode": "en",
+      "Title": "Slicing Solids",
+      "ExplanationParagraphs": [
+        "Learning goal: A plane cross section is the full intersection with a solid. Planes parallel to a right cylinder's bases give disks; a plane through its axis yields a rectangle; a pyramid's parallel slices are smaller similar polygons.",
+        "Geometric reasoning: A plane cross section is the full intersection with a solid. Planes parallel to a right cylinder's bases give disks; a plane through its axis yields a rectangle; a pyramid's parallel slices are smaller similar polygons.",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four human-scored 0/1/2 criteria check correct solid-plane cut vocabulary and labelled orientation, multiple genuinely distinct cube/sphere/cylinder/cone sections, valid prism-vs-pyramid slice stack reasoning including slab distinction, and original nine Practice justifications with non-invented original images.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 2, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 2.1 Slice This (5 min): source warm-up physically demonstrates slicing a right circular cylinder. Ask learners to draw ALL distinct qualitative cross-sections from different PLANES: plane parallel to flat base intersects the FILLED cylinder in a circle/disk, a vertical plane parallel to axis through its interior yields a rectangle, and a sufficiently oblique plane may give an ellipse (when it cuts the curved surface without intersecting the top/bottom caps). Finite cylinders cut obliquely through a cap may instead have mixed straight and curved boundary; specify orientation and offset, not just the word diagonal.",
+        "Source 2.2 Slice That (20 min): physical groups of 3–4 use independent clay cubes, spheres, cones and cylinders with dental floss to predict, cut, re-form and draw multiple labelled cross-sections, or demonstrate with a permitted viewer. A cube can yield triangle, quadrilateral, pentagon and hexagon sections depending on plane; a sphere cuts into circular DISKS of different radii for non-tangent planes, with a point for tangent plane and empty intersection when external. A right cone horizontal plane makes circles, axial plane a triangle; a non-axial vertical or angled plane can make a curved conic section, potentially truncated by base. Original GeoGebra dynamic figure and copied artwork not claimed available.",
+        "Source 2.3 Stack 'Em Up (10 min): original same-size coin stack is cylindrical, varying sizes stacked can approximate a cone but finite distinct thickness coins yield a STEPWISE stack, not a smooth cone. Source eight successive plane slice silhouettes run small triangle, medium triangle, partly clipped large triangle, hexagon, asymmetric hexagon, clipped triangle, medium triangle, small triangle. Teacher asks students to infer three-dimensional solid from actual rendered slices and their ordering, without fabricating a uniquely named object from only verbal polygon descriptions. A rectangular prism sliced PARALLEL to a given face has congruent sections; a pyramid sliced parallel to its base has progressively smaller SIMILAR but generally NONCONGRUENT sections. A sphere's parallel circular sections vary in radius, maximal at centre.",
+        "Source 2.3 optional 3D printing: compare three different horizontal layers from a first-party rocket model. Thicker slices show fewer, coarser step levels and make detailed curved objects less accurate, while a rectangular prism with flat vertical sides can appear largely unchanged except top/bottom surface resolution. Physical layers are thin three-dimensional SLABS whereas mathematical plane sections are two-dimensional; they must not be confused. Students contrast anterior prediction with the revealed model and revise written reasons.",
+        "Source glossary and summary: a prism has two parallel congruent polygonal bases joined by parallelogram faces; pyramid one polygonal base and triangular side faces meeting at apex; cylinder two parallel congruent circular disks; cone circular base and apex; sphere has circular plane sections when properly cutting the interior, except tangent/empty limits. An infinite plane makes only the finite planar INTERSECTION with a bounded solid. Cross-sections go across the full solid unlike U05:L01's axial half-profile generator, and cutting plane may be horizontal, vertical or oblique.",
+        "Source Practice P1-P9: P1 figures with some direction for which ALL interior nonempty parallel cross sections are congruent are RECTANGULAR PRISM C, CUBE D and CYLINDER F; pyramid/cone sections shrink and sphere radii vary (A,B,E,G false). P2 vertical plane avoiding apex on upright finite cone makes a bounded region with curved conic and possibly bottom chord rather than an apex triangle; horizontal plane a circle, diagonal plane depends on exact angle/offset. P3 cylinder and sphere both can have circular sections; cone also horizontal circle. P4 rotate source figure about dashed vertical axis requires original image; P5 draw right triangle region adjacent to vertical leg for source cone, with axis labelled. P6 regular hexagon and octagon INSCRIBED in same circle: hex perimeter < oct perimeter < circle circumference, choice A. P7 find source polygon perimeter requires original figure. P8 matching tan/cos/sin for angle A/B with ratios x,y,z requires original labelled right triangle to determine ratio-role mapping, no invented matching. P9 original parallel lines m and l requires marked angles, source image not available. Original teacher-locked 2.4 Sketch It Cool-down is unverified; use teacher-scored cross-section chart and independently generated slab drawings."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cross section",
+          "Definition": "Intersection of solid and plane including interior",
+          "Rule": "State cut orientation and location",
+          "Example": "Horizontal slice of vertical cylinder is a disk"
+        },
+        {
+          "Title": "Parallel prism sections",
+          "Definition": "For a uniform prism, base-parallel sections are congruent",
+          "Rule": "Area stays constant along height",
+          "Example": "2-by-3 rectangular prism sections have area 6"
+        },
+        {
+          "Title": "Pyramid sections",
+          "Definition": "Planes parallel to base produce similar scaled base figures",
+          "Rule": "Linear size changes with distance from apex",
+          "Example": "Halfway from apex gives quarter area"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Slicing Solids: investigation 1",
+          "Question": "Cylinder radius 3 and height 8 sliced parallel to base at height 5. Describe section.",
+          "Method": "Use cross section with explicit geometric hypotheses.",
+          "Steps": [
+            "Cut is perpendicular to vertical axis",
+            "At height 5 all points within radius 3 are included",
+            "Calculate disk area π·3²"
+          ],
+          "Answer": "Disk radius 3, area 9π.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Slicing Solids: investigation 2",
+          "Question": "Square pyramid base side 6 sliced halfway from apex parallel to base.",
+          "Method": "Use parallel prism sections with explicit geometric hypotheses.",
+          "Steps": [
+            "All rays from apex are intercepted at half-distance",
+            "Section side is half of 6, namely 3",
+            "Compute area as 3²"
+          ],
+          "Answer": "Square of area 9.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Slicing Solids: investigation 3",
+          "Question": "Rectangular prism 2 by 3 by 7 sliced parallel to its 2-by-3 face.",
+          "Method": "Use pyramid sections with explicit geometric hypotheses.",
+          "Steps": [
+            "Cross section duplicates the chosen face",
+            "Side lengths are 2 and 3 at any interior depth",
+            "Area is their product"
+          ],
+          "Answer": "Constant area 6 square units.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "All cylinder cuts are circles",
+          "WhyWrong": "Axial cuts can be rectangles and oblique cuts ellipses",
+          "Correction": "Record plane orientation"
+        },
+        {
+          "Mistake": "Confusing silhouette with a section",
+          "WhyWrong": "The cut is the entire plane-solid intersection",
+          "Correction": "Draw the interior of the intersection"
+        }
+      ],
+      "SummaryPoints": [
+        "A plane cross section is the full intersection with a solid. Planes parallel to a right cylinder's bases give disks; a plane through its axis yields a rectangle; a pyramid's parallel slices are smaller similar polygons.",
+        "Area stays constant along height",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Slicing Solids. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Cross section",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "State cut orientation and location",
+                "Horizontal slice of vertical cylinder is a disk"
+              ]
+            },
+            {
+              "Label": "Parallel prism sections",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Area stays constant along height",
+                "2-by-3 rectangular prism sections have area 6"
+              ]
+            },
+            {
+              "Label": "Pyramid sections",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Linear size changes with distance from apex",
+                "Halfway from apex gives quarter area"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L03",
+      "CultureCode": "en",
+      "Title": "Creating Cross Sections by Dilating",
+      "ExplanationParagraphs": [
+        "Learning goal: A plane section of a pyramid or cone parallel to its base is the dilation image of the base with centre at apex. At fraction t of apex-to-base height, corresponding lengths scale by t and areas by t².",
+        "Geometric reasoning: A plane section of a pyramid or cone parallel to its base is the dilation image of the base with centre at apex. At fraction t of apex-to-base height, corresponding lengths scale by t and areas by t².",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four 0/1/2 teacher criteria verify correct two-dimensional P k2 warm-up, four source k-factor rectangular paper/physical models with measured lengths, correct apex-distance scale orientation including source inversion correction, and eight original Practice with Khufu k1/3 and non-invented diagram answers.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 3, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 3.1 Dilating Again (10 minutes): original triangle BCD is dilated about P with k=2; learners draw positive rays PB,PC,PD and images B',C',D' at exactly doubled distances and list notices/wonders. View drawing as two PARALLEL sections in a TRIANGULAR pyramid with corresponding vertices aligned toward an apex in three dimensions; 2D P centre can represent projected apex, but 3D apex is located ABOVE base plane. Do not confuse enlarging k=2 warm-up image with pyramid interior cross-sections k in [0,1].",
+        "Source 3.2 Pyramid Mobile (25 minutes): partner group of FOUR takes identically dimensioned rectangular paper sheets, locates geometric centre and assigns distinct positive dilation factors exactly k=.25,.5,.75,1. For original base dimensions L by W, corresponding measured length=kL, width=kW; paper area should be experimentally computed as (kL)*(kW), not falsely k times original area. Cut each rectangle, punch centre hole, thread long string more than30cm and four short supports at equal vertical intervals, largest BASE below and progressively smaller sheets toward APEX; teacher reviews physical model, measurement precision and accurate horizontal section alignment.",
+        "Source 3.2 key two-centre distinction: students draw 2D same-plane enlargements ABOUT RECTANGLE CENTRE and then physically stack; the 3D SIMILAR pyramid is represented by homotheties about top APEX with corresponding sections parallel to base. A base at scale1 has full dimensions at bottom; scale .75 nearer bottom, scale .5 halfway in height, scale .25 nearer top, and k=0 collapses to apex point. For the apex-centred geometric parameter, k equals (distance from apex to section plane)/(distance from apex to base). The original source synthesis phrases that k=.1 would be near base and k=.9 near apex, but that reverses this standard apex-distance parameter: k=.1 is NEAR APEX and k=.9 NEAR BASE.",
+        "Source 3.2 original extension: dilating a square by factor0.9 and then its image by factor0.9 about the same centre yields total scale 0.9*0.9=0.81, NOT 0.8. Explain 0.81 differs by0.01 in side fraction; in area fraction .81²=.6561 versus .8²=.64. This source foreshadows next lesson on area scaling, but students initially measure/observe rather than being required to prove the general area theorem here.",
+        "Source lesson student summary: horizontal 3D pyramid base plane k1 and APEX k0 have all intervening similar base-parallel sections with k in (0,1); e.g. source 3D triangle with k=.5 section has each side half of base, k=.25 quarter, k=.75 three-quarters. Section area changes by k² when asserted as a first-party mathematical consequence, to be developed more fully in later lessons; rectangular prism section would have congruent base-parallel copies instead. Different string heights change absolute spacing but preserve correct fractional apex-base positions for corresponding k.",
+        "Source Practice P1-P8: P1 images A/B/C correspond k=3/4,1/4,1/2 respectively when A is largest and closest base, B smallest closest apex, C halfway (original graphic teacher confirmation). P2 Great Pyramid of Khufu historical source geometry height144m, square side231m; section 96m ABOVE base, so 48m below apex, k=48/144=1/3, square section side77m and area5929m²; source approximate and historical superlative not a current claim. P3 all horizontal cuts from top point to base have factors between0 and1, choice B. P4 cone planes horizontal/vertical through apex/diagonal must be matched to original three images, no guessed letters. P5 cube vertical plane through opposite parallel vertical edges creates rectangle (side along face diagonal and vertical cube edge), teacher checks figure. P6 original source figure rotated around dashed vertical axis image-dependent. P7 tent rope4m angle20° above ground gives vertical height4sin20≈1.368m. P8 y from original U04:L06 figure image-dependent. Source 3.3 Circle Dilation Cool-down teacher-login restricted; independently authored human-scored mobile and circle section reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Apex-centred dilation",
+          "Definition": "Maps base to a parallel plane section of a pyramid",
+          "Rule": "Scale by distance from apex divided by full height",
+          "Example": "At t=1/3 a 12-unit edge maps to 4"
+        },
+        {
+          "Title": "Section area",
+          "Definition": "Area is quadratic in linear scale",
+          "Rule": "Asection=t²·Abase",
+          "Example": "At t=1/2 area is quarter"
+        },
+        {
+          "Title": "Height reference",
+          "Definition": "Distance must be measured from apex for this t",
+          "Rule": "Convert height above base to apex distance",
+          "Example": "Height 2 above base in height 8 gives t=6/8"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Creating Cross Sections by Dilating: investigation 1",
+          "Question": "Square pyramid height 12 base side 10. Slice 3 below apex.",
+          "Method": "Use apex-centred dilation with explicit geometric hypotheses.",
+          "Steps": [
+            "Distance fraction from apex is 3/12=1/4",
+            "Section side is 10/4=2.5",
+            "Area is 2.5²"
+          ],
+          "Answer": "Square side 2.5, area 6.25.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Creating Cross Sections by Dilating: investigation 2",
+          "Question": "Cone radius 8 height 15. Find radius at section 6 from apex.",
+          "Method": "Use section area with explicit geometric hypotheses.",
+          "Steps": [
+            "The parallel plane cuts a similar circle",
+            "t=6/15=2/5",
+            "Radius becomes 8·2/5"
+          ],
+          "Answer": "Radius 3.2.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Creating Cross Sections by Dilating: investigation 3",
+          "Question": "Pyramid base area 144 sliced halfway between apex and base.",
+          "Method": "Use height reference with explicit geometric hypotheses.",
+          "Steps": [
+            "Linear scale is t=1/2",
+            "Area factor is t²=1/4",
+            "Compute 144/4"
+          ],
+          "Answer": "Section area 36.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling area linearly",
+          "WhyWrong": "Area depends on two dimensions",
+          "Correction": "Apply t²"
+        },
+        {
+          "Mistake": "Using base-to-plane distance directly",
+          "WhyWrong": "The dilation is centred at apex",
+          "Correction": "Convert to apex-to-plane distance"
+        }
+      ],
+      "SummaryPoints": [
+        "A plane section of a pyramid or cone parallel to its base is the dilation image of the base with centre at apex. At fraction t of apex-to-base height, corresponding lengths scale by t and areas by t².",
+        "Asection=t²·Abase",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Creating Cross Sections by Dilating. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Apex-centred dilation",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Scale by distance from apex divided by full height",
+                "At t=1/3 a 12-unit edge maps to 4"
+              ]
+            },
+            {
+              "Label": "Section area",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Asection=t²·Abase",
+                "At t=1/2 area is quarter"
+              ]
+            },
+            {
+              "Label": "Height reference",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Convert height above base to apex distance",
+                "Height 2 above base in height 8 gives t=6/8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L04",
+      "CultureCode": "en",
+      "Title": "Scaling and Area",
+      "ExplanationParagraphs": [
+        "Learning goal: Under positive planar dilation k, lengths multiply by k and areas by k². Reverse an area ratio with the positive square root.",
+        "Geometric reasoning: Under positive planar dilation k, lengths multiply by k and areas by k². Reverse an area ratio with the positive square root.",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four teacher-scored 0/1/2 criteria cover root and positive k reasoning, full source 5-by-2 rectangle table including correction of 30-versus-90 error, general k² area argument extended to nonrectangular regions, and all original nine Practice with figure-dependent cases treated accurately.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 4, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 4.1 Squares and Roots (5 min): ask what nonnegative number times itself makes 25→5, 81→9, 10→sqrt10 approximately3.1623. Distinguish a positive physical length/scale k from either algebraic solution to x²=25; for geometric dilation factors use k>0 and the principal nonnegative square root. This sets up reversing an AREA ratio in later lessons, but the present lesson first proves the forward area scaling rule.",
+        "Source 4.2 Scaling Up a Rectangle (20 min): original source rectangle ABCD is length5 and width2, area10 square units, dilate from A by scale k2→image length10 width4 area40, k3→length15 width6 area90. Complete full original table k=.5→area2.5 and multiplier.25; k1→area10 multiplier1; k2→area40 multiplier4; k2.5→area62.5 multiplier6.25; k3→area90 multiplier9; k4→area160 multiplier16. Derive for arbitrary dimensions l,w: A_new=(kl)(kw)=k²(lw), and critique source false claim that k3 makes area30; correct90 from source original area10. Instructor first asks students to see consistent numbers in a grid and express reason, not just a formula.",
+        "Source 4.2 optional extension: equilateral triangle tiled with congruent unit-scale pieces under integer k1,2,3,4 has tile counts1,4,9,16; adjacent differences3,5,7 and in general k²-(k-1)²=2k-1. Sum of the first n odd positive integers equals n². This explains area scaling as a TWO-dimensional operation, not a new scalar multiple.",
+        "Source 4.3 What About Other Shapes? (10 min): Jada and Andre approximate a first-party irregular planar blob with a sequence of smaller covering rectangles. Each small original rectangle area a_i becomes k²a_i; adding many pairwise disjoint interior rectangles gives k² sum a_i, and refining the approximation under consistent area notion yields A_new=k²A for any reasonable region. Students draft, peer-revise and improve a diagram and a written distribution argument, distinguishing approximation error from exact mathematical limit. Source separate numeric circle originally area20 square inches scaled k6 has new area20*(6²)=720 square inches, NOT120.",
+        "Source synthesis: original arbitrary region area40 has after dilation k2 area160, k1/2 area10, k3.5 area490. Source student summary rectangle5-inch by4-inch original area20 and k3 image15 by12 area180. Contrast length factor k versus AREA factor k². If equivalent larger/smaller area ratio known, positive side scale is sqrt(area_new/area_old), not the untransformed area ratio; this inverse reasoning is introduced as an independent cross-check, while the source focuses on forward k².",
+        "Source Practice P1-P9: P1 original area12 with k2→48, k5→300, k1→12, k1/4→3/4, k1.2→17.28 square units. P2 unit-radius circle area pi, dilation k=r makes circle radius r and area pi*r² for r>0. P3 trapezoids ABCD and A'B'C'D' source grid requires actual image to compute k and tile count k², no fabricated number. P4 source U05:L03 A,B,C diagrams k about3/4,1/4,1/2 conditional on original figures. P5 cone has apex-centred base-parallel cross-sections scale0 to1, choice A; P6 solids with some circular cross-section E cone, F cylinder, G sphere. P7 original rotated figure about vertical axes source-image dependent. P8 Tyler tan56=8/x with x=BC denominator; Jada may use tan34=x/8 since complementary angles swap opposite/adjacent. P9 original ACD/BCD isosceles with DBC110, BDA22 and AD=AC, BD=BC; original diagram and relative ray arrangement needed before claiming angle BAC. Original teacher-login 4.4 Finding an Area inaccessible; first-party paper numeric table and blob approximation are human-scored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Length factor",
+          "Definition": "Ratio of image to source corresponding lengths",
+          "Rule": "k=Lnew/Lold>0",
+          "Example": "3 to 9 gives k=3"
+        },
+        {
+          "Title": "Area factor",
+          "Definition": "Each of two independent planar dimensions scales by k",
+          "Rule": "Anew=k² Aold",
+          "Example": "Area 8 with k=3 becomes 72"
+        },
+        {
+          "Title": "Inverse factor",
+          "Definition": "Area factor q determines positive k",
+          "Rule": "k=√q",
+          "Example": "Area factor 25 gives k=5"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scaling and Area: investigation 1",
+          "Question": "Rectangle 4 by 7 dilated by k=3; find area.",
+          "Method": "Use length factor with explicit geometric hypotheses.",
+          "Steps": [
+            "Original area=4·7=28",
+            "Image dimensions are 12 and 21",
+            "Image area 12·21=252 equals 28·9"
+          ],
+          "Answer": "252 square units.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling and Area: investigation 2",
+          "Question": "Triangle area 10 cm² enlarged by k=1.5; find area.",
+          "Method": "Use area factor with explicit geometric hypotheses.",
+          "Steps": [
+            "Area multiplier is 1.5²=2.25",
+            "Multiply 10×2.25",
+            "Label square centimetres"
+          ],
+          "Answer": "22.5 cm².",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling and Area: investigation 3",
+          "Question": "Area changes 12→108. Find positive length multiplier.",
+          "Method": "Use inverse factor with explicit geometric hypotheses.",
+          "Steps": [
+            "Area ratio=108/12=9",
+            "Set k²=9",
+            "For k>0 take k=3"
+          ],
+          "Answer": "Scale factor 3.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using k for area",
+          "WhyWrong": "Two dimensions scale",
+          "Correction": "Use k²"
+        },
+        {
+          "Mistake": "Using negative root as geometric scale",
+          "WhyWrong": "Positive dilation requires positive k",
+          "Correction": "Take √(area ratio)"
+        }
+      ],
+      "SummaryPoints": [
+        "Under positive planar dilation k, lengths multiply by k and areas by k². Reverse an area ratio with the positive square root.",
+        "Anew=k² Aold",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Scaling and Area. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Length factor",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "k=Lnew/Lold>0",
+                "3 to 9 gives k=3"
+              ]
+            },
+            {
+              "Label": "Area factor",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Anew=k² Aold",
+                "Area 8 with k=3 becomes 72"
+              ]
+            },
+            {
+              "Label": "Inverse factor",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "k=√q",
+                "Area factor 25 gives k=5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
+      "CultureCode": "en",
+      "Title": "Scaling and Unscaling",
+      "ExplanationParagraphs": [
+        "Learning goal: For positive areas, image/source area ratio q=k² and the positive linear scale k=√q. Graph y=k² on k≥0 and its inverse y=√q; reciprocal scale reverses the dilation.",
+        "Geometric reasoning: For positive areas, image/source area ratio q=k² and the positive linear scale k=√q. Graph y=k² on k≥0 and its inverse y=√q; reciprocal scale reverses the dilation.",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four human-scored 0/1/2 criteria cover exact source Transamerica top-floor area and error critique, k=.25 triangle reasoning and two follow-on cases, all five sqrt-area graph points with nonconstant rates, and seven source Practice answers with correct boundary/figure-dependent conditions.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 5, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 5.1 Transamerica Building (10 min): model source approximate rectangular base53 m by44 m, k=.32 top floor. Original base area53*44=2332m²; scaled top dimensions16.96m by14.08m, area16.96*14.08=238.7968m², equally2332*.32²=238.7968. Critique common 2332*.32≈746.24m² incorrect because LENGTH factor k applies to each dimension. Building illustration is historical geometry teaching context, wings ignored and no actual current top-floor measurement certified.",
+        "Source 5.2 Two Viewpoints (10 min): original triangle area100in², k=.25. Mai's area25in² uses wrong linear multiplier and is FALSE; Lin's area6.25in² uses100*(.25²) and is TRUE. Source further asks image area at k9→8100in², k3/4→100*(9/16)=56.25in². Students draft explanation, critique each peer's mathematical assumption and improve clarity; geometric area is squared ratio even when dimensions not specified.",
+        "Source 5.3 Graphing Areas and Scale Factors (15 min): source initial painting is ONE FOOT SQUARE, area1ft², input x=paint-covered square feet, output y=positive dilation scale. Solve y=sqrt(x) on x>=0; plot five original ordered pairs (0,0),(1,1),(4,2),(9,3),(16,4) and draw INCREASING CONCAVE-DOWN curve, with correct units x area and y dimensionless scale. For9ft² artist uses k3; for12ft² k=sqrt12≈3.46; adding2ft² from1 to3 raises scale by sqrt3-1≈.732, but adding2ft² from14 to16 raises by4-sqrt14≈.258. Compare exact differences and interpret decreasing average RATE, not constant linear growth.",
+        "Source 5.3 optional extension: original triangle ABC centre A dilation k=2 and second dilation k=-2 (signed affine extension) differ by a 180-degree rotation ABOUT A, so rigid half-turn maps AB'C' to AB''C''; the prior positive-ray geometric dilation definition normally k>0, so negative k is explicitly an affine signed extension beyond that restricted convention. Both have area multiplier4. A physical nondegenerate scaled copy has k>0; x=0 graph point represents collapsed zero-area limit, not a valid positive nondegenerate copy.",
+        "Source lesson synthesis: a 2ft² source painting rescaled to72ft² has area ratio36 and linear k=sqrt36=6; original dimension1ft by2ft can become6ft by12ft. Student summary circle area1→64 implies k8, y=sqrt(x) graph; if original area A>0 generally k=sqrt(target area/A), not sqrt(target area) alone. Preserve independent correct earlier reverse examples q=25/16 gives k5/4, k=.6 reverse5/3, q=.04 gives k.2.",
+        "Source Practice P1-P7: P1 circle area8pi→32pi has area ratio4 and k2, choice A. P2 source trapezoid area100, target areas6400→k8,900→k3,100→k1,25→k.5,4→k.2. P3 triangle original area6in² perimeter12in, graph A depicts k=sqrt(A_image/6) versus area x (match4); graph B depicts k=P_image/12 versus perimeter x (match3); graph C depicts perimeter=12k versus scale x (match1); graph D depicts area=6k² versus scale x (match2), but require checking original graphs before final teacher labels. P4 original polygon area10 scale4→160,1.5→22.5,1→10,1/3→10/9. P5 source A-centred enlarged parallelogram tile count and k image-dependent. P6 cone D and triangular pyramid E have apex-centred base-parallel cross sections with k0 to1, not cylinder/prism. P7 trig inverse angle A choices A-F on 28-45-53 triangle depend on pictured corresponding legs; either set {B,C,E} when opposite28 or {A,D,F} when opposite45, teacher checks source marked angle. Original teacher-login 5.4 Miniature Cool-down protected: independent first-party signed scale/root graph with reasoning teacher reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area-to-length inverse",
+          "Definition": "Recover k>0 from q=Anew/Aold",
+          "Rule": "k=√q",
+          "Example": "q=49/16 gives k=7/4"
+        },
+        {
+          "Title": "Square-root graph",
+          "Definition": "For nonnegative q, √q is inverse of k²",
+          "Rule": "State domain and nonnegative range",
+          "Example": "q=0 yields degenerate k=0"
+        },
+        {
+          "Title": "Reverse dilation",
+          "Definition": "A forward k has reverse 1/k",
+          "Rule": "Area ratio reversed is 1/k²",
+          "Example": "Forward k=2 reverse 1/2"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scaling and Unscaling: investigation 1",
+          "Question": "Area goes 32 to 50. Find linear multiplier.",
+          "Method": "Use area-to-length inverse with explicit geometric hypotheses.",
+          "Steps": [
+            "Area ratio 50/32=25/16",
+            "Take positive square root",
+            "k=5/4"
+          ],
+          "Answer": "Scale factor 5/4.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling and Unscaling: investigation 2",
+          "Question": "Forward length factor 0.6. Find reverse factor.",
+          "Method": "Use square-root graph with explicit geometric hypotheses.",
+          "Steps": [
+            "Write k=3/5",
+            "Invert ratio 1/k=5/3",
+            "Verify their product equals 1"
+          ],
+          "Answer": "Reverse factor 5/3.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling and Unscaling: investigation 3",
+          "Question": "Area ratio q=0.04; find positive k.",
+          "Method": "Use reverse dilation with explicit geometric hypotheses.",
+          "Steps": [
+            "Set k²=0.04",
+            "Square root gives k=0.2",
+            "Check 0.2²=0.04"
+          ],
+          "Answer": "Length factor 0.2.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using area ratio as length factor",
+          "WhyWrong": "Area scales quadratically",
+          "Correction": "Take √q"
+        },
+        {
+          "Mistake": "Using negative physical area",
+          "WhyWrong": "Actual areas cannot be negative",
+          "Correction": "Validate q≥0 and k>0"
+        }
+      ],
+      "SummaryPoints": [
+        "For positive areas, image/source area ratio q=k² and the positive linear scale k=√q. Graph y=k² on k≥0 and its inverse y=√q; reciprocal scale reverses the dilation.",
+        "State domain and nonnegative range",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Scaling and Unscaling. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Area-to-length inverse",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "k=√q",
+                "q=49/16 gives k=7/4"
+              ]
+            },
+            {
+              "Label": "Square-root graph",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "State domain and nonnegative range",
+                "q=0 yields degenerate k=0"
+              ]
+            },
+            {
+              "Label": "Reverse dilation",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Area ratio reversed is 1/k²",
+                "Forward k=2 reverse 1/2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L06",
+      "CultureCode": "en",
+      "Title": "Scaling Solids",
+      "ExplanationParagraphs": [
+        "Learning goal: Uniform 3D dilation k scales linear lengths by k, surface areas by k², and volumes by k³; stretching just one dimension is not a uniform dilation.",
+        "Geometric reasoning: Uniform 3D dilation k scales linear lengths by k, surface areas by k², and volumes by k³; stretching just one dimension is not a uniform dilation.",
+        "Verbal figure for this lesson: label the relevant centres, axes, dimensions and cutting planes before performing calculations; the construction/measurement constraints determine a unique valid model only when its hypotheses are satisfied.",
+        "Teacher rubric (0–8): four human 0/1/2 criteria score physical source cube table with complete surface/volume units, correct k²-versus-k³ symbolic proof, source original prism SA1344 and volume2304 plus arbitrary-solid argument, and nine source Practice exact results with zero-area and Sierpinski boundary reasoning.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 5 Lesson 6, CC BY 4.0. New Edulytiks examples independently authored; publisher graphics and protected assessments not reproduced.",
+        "Source 6.1 Math Talk Cube Volumes (5 min): practise side cube volume mentally, including half-inch cube volume (1/2)^3=1/8 cubic inch and how eight such cubes fill a one-inch cube. Teacher elicits multiple student strategies, preserves distinction between squaring face area (length²) and cubing interior volume (length³), and avoids inventing absent original pictured side numbers.",
+        "Source 6.2 How Do Surface Area and Volume Change with Scaling? (20 min): build PHYSICAL small-cube models or first-party diagrams for unit cube scaled k=1,2,3,4. For these four original table rows, side lengths 1,2,3,4; SURFACE AREAS respectively 6,24,54,96 square units (6k²); VOLUMES 1,8,27,64 cubic units (k³). Ask students to notice all six exposed faces, not count every tiny internal square as surface. Derive k3 by multiplying three dimensions independently, and k² by multiplying two dimensions on each face. Compare cube net area and filled small-cube count with peer critique.",
+        "Source 6.3 Scaling All Solids (10 min): Clare and Elena ask why k³ applies beyond cubes. Cover an independently drawn 3D solid's interior approximately with small disjoint cubic cells of original volumes v_i, which each dilate to k³v_i; sum and refine the approximation to infer total new volume k³ times original volume for bounded measurable solids. This is a spatial analogue of U05:L04's rectangle area approximation; not a claim that every physical model can be perfectly tiled with integer cubes. Surface area obeys k² for area-regular 2D boundary faces; keep boundary-versus-interior measurements and square/cubic units distinct.",
+        "Source 6.3 exact original triangular prism: surface area84cm², volume36cm³ and k=4 yield new surface area84*16=1344cm², new volume36*64=2304cm³. Student groups compare written proof with three or more peers and revise. Original lesson synthesis rectangular pyramid k=5: lengths factor5, exposed surface area factor25, volume factor125. The same rule applies to spheres/cylinders/cones with positive uniform scaling, but any change to ONLY one dimension is NOT a geometrical dilation.",
+        "Source optional Sierpinski triangle extension: original completed planar self-similar dust consists of three half-scale copies, so the top self-similar piece has k=1/2 and occupies ONE OF THREE self-similar symbolic pieces. It does NOT occupy 1/4 of a positive total planar AREA, because the ideal infinite Sierpinski gasket has zero 2D Lebesgue area; source asks to explain why top piece contains 1/3 of the remaining shading, a mass or counting measure over three identical fractal pieces rather than an ordinary planar-area fraction. Be precise rather than assuming a positive-area area multiplier contradicts source fractal self-similarity.",
+        "Source student summary original rectangular prism3 by4 by5 has volume60 and surface area2(12+15+20)=94. Dilate k3 to9 by12 by15, volume1620 (×27), surface area846 (×9). Preserve existing independent Edulytiks cube side2 k3 volume216, sphere surface36pi at half scale9pi, volume5 at scale2.5 gives78.125 as independent valid examples. Original 6.4 One Cubic Foot teacher-login restricted; first-party student-authored cube net+solid argument teacher scored.",
+        "Source Practice P1-P9: P1 box uses 2oz paint on all outside surfaces and holds15 cups sugar, doubling ALL dimensions requires 8oz paint (4× surface) and120cups sugar (8× volume), assuming material thickness/packing ignored. P2 volume12 with k1/4→3/16=0.1875, k.4→.768, k1→12, k1.2→20.736, k5/3→500/9≈55.556 cubic units. P3 volume10 and k3.5 →10*(3.5³)=428.75in³; Kiran's35 wrongly multiplies by k not k³. P4 area10 and target0,40,160,360,640 yields scale0 (collapsed limit),2,4,6,8 respectively. P5 y=sqrt(x/4) includes points A (0,0), B(1,1/2), D(4,1) only; E(8,2) incorrect since sqrt2, C(1,1) wrong. P6 design banner1.5ft² scaled k5 ->37.5ft². P7 original source rectangle k3/4 axial cross-section dimensions require pictured base labels. P8 inscribed unit-hexagon shaded gap pi-3sqrt3/2 in² from previous U04 lesson when shaded outside hexagon inside circle. P9 two distinct COPLANAR lines both perpendicular to same coplanar n are parallel by equal corresponding right angles; in unconstrained 3D any two lines meeting a transversal at right angles can lie in different planes, so coplanarity is necessary. Original source Cool-down not copied or machine scored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Surface multiplier",
+          "Definition": "Each 2D face area scales by k²",
+          "Rule": "Snew=k²Sold",
+          "Example": "Doubling a cube's side gives quadruple surface"
+        },
+        {
+          "Title": "Volume multiplier",
+          "Definition": "Three independent dimensions scale by k",
+          "Rule": "Vnew=k³Vold",
+          "Example": "Doubling a cube's side gives eightfold volume"
+        },
+        {
+          "Title": "Units and exponents",
+          "Definition": "Lengths, areas and volumes have units to powers 1,2,3",
+          "Rule": "Check units against scale exponent",
+          "Example": "Side 2→6 means volume 8→216"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scaling Solids: investigation 1",
+          "Question": "Cube side 2 cm dilated k=3; find volume.",
+          "Method": "Use surface multiplier with explicit geometric hypotheses.",
+          "Steps": [
+            "Original volume is 2³=8 cm³",
+            "New side is 6 cm",
+            "Volume 6³=216 cm³=27×8"
+          ],
+          "Answer": "New volume 216 cm³.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling Solids: investigation 2",
+          "Question": "Sphere surface area 36π cm² shrunk to half scale; find new surface.",
+          "Method": "Use volume multiplier with explicit geometric hypotheses.",
+          "Steps": [
+            "Surface scale is (1/2)²=1/4",
+            "Multiply 36π by 1/4",
+            "Keep units cm²"
+          ],
+          "Answer": "9π cm².",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        },
+        {
+          "Title": "Scaling Solids: investigation 3",
+          "Question": "Solid volume 5 m³ scaled k=2.5; find image volume.",
+          "Method": "Use units and exponents with explicit geometric hypotheses.",
+          "Steps": [
+            "Volume scale is 2.5³=15.625",
+            "Multiply 5×15.625",
+            "Keep units m³"
+          ],
+          "Answer": "78.125 m³.",
+          "Check": "Verify units, nondegeneracy and the stated relationship independently."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling volume by k²",
+          "WhyWrong": "Volume changes in three dimensions",
+          "Correction": "Use k³"
+        },
+        {
+          "Mistake": "Applying isotropic formula to one-axis stretch",
+          "WhyWrong": "Factors differ by axis",
+          "Correction": "Check one common k"
+        }
+      ],
+      "SummaryPoints": [
+        "Uniform 3D dilation k scales linear lengths by k, surface areas by k², and volumes by k³; stretching just one dimension is not a uniform dilation.",
+        "Vnew=k³Vold",
+        "The drawn model and justified explanation require authentic teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Geometric model: essential relationships",
+          "Description": "Original structured model of Scaling Solids. Verify labelled assumptions against the worked examples.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Surface multiplier",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Snew=k²Sold",
+                "Doubling a cube's side gives quadruple surface"
+              ]
+            },
+            {
+              "Label": "Volume multiplier",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Vnew=k³Vold",
+                "Doubling a cube's side gives eightfold volume"
+              ]
+            },
+            {
+              "Label": "Units and exponents",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Check units against scale exponent",
+                "Side 2→6 means volume 8→216"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

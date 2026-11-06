@@ -1,0 +1,254 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "LessonTitle": "Build It",
+  "Ordinal": 1,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "HeadBeforeCommit": "d2b65c2abf383b37d3d2428aeadbcf9f61acec58",
+  "RecordedAt": "2026-10-30T07:00:57.341Z",
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
+  "Status": "READY_FOR_STAGE_D",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "LocalSourceFileAndPages": [
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\preparation.html",
+      "sections": [
+        "Learning Goals",
+        "Learning Targets",
+        "CCSS Standards"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\index.html",
+      "sections": [
+        "1.1 The Right Tool",
+        "1.2 Illegal Construction Moves",
+        "1.3 Can You Make a Perfect Copy?",
+        "Activity Synthesis"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\1\\index.html",
+      "sections": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "Summary"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\1\\practice.html",
+      "sections": [
+        "Practice 1-4"
+      ]
+    }
+  ],
+  "ReusedEvidence": [
+    "geo-124-source-manifest-20261028.json U01:L01 source comparison and V13 reopen",
+    "geo-v10-124-candidate-execution-evidence-20261029.json",
+    "geo-v12-124-candidate-source-and-practice-evidence-20261029.json",
+    "geo-v15-source-batches-and-shared-handoff-20261030.json",
+    "prior preserved three worked examples and existing 124 lesson candidates"
+  ],
+  "SourceTaskCrosswalk": [
+    {
+      "Activity": "1.1",
+      "SourceRequirement": "Contrast sketch and explicit straightedge/compass circle-and-segment construction, transferring length PQ",
+      "FirstPartyMapping": "New activity A paragraph + existing radius-transfer worked example",
+      "Disposition": "AUTHORING_ALIGNED_NO_AUTHENTICATED_TOOL_RENDER"
+    },
+    {
+      "Activity": "1.2",
+      "SourceRequirement": "Estimated midpoint causes non-reproducibility; distinguish guaranteed radius equality from unjustified half-segment assertion",
+      "FirstPartyMapping": "New activity B paragraph and explicit error correction",
+      "Disposition": "PREVIOUS_MATERIAL_GAP_REPAIRED_AS_FIRST_PARTY_CANDIDATE",
+      "SourcePedagogicalCaveat": "The original 1.2 illegal move is intentionally estimated for comparing varied outcomes. It must be experienced/discussed before the exact perpendicular-bisector remedy; the repair must not erase that teaching sequence."
+    },
+    {
+      "Activity": "1.3",
+      "SourceRequirement": "Compare guessed and constructed regular hexagons; justify six equal chords and full turn",
+      "FirstPartyMapping": "Existing regular-hexagon worked example retained + new peer comparison activity C",
+      "Disposition": "FIRST_PARTY_MATHEMATICAL_EQUIVALENT_CANDIDATE_NOT_STUDENT_DRAWING_VERIFIED"
+    },
+    {
+      "Activity": "Practice 1-4",
+      "SourceRequirement": "Geometric circle/line diagram interpretation and non-measurement distance claims",
+      "FirstPartyMapping": "Teacher-scored first-party evidence and existing conceptual content, not an exact Practice family",
+      "Disposition": "SOURCE_PRACTICE_NOT_EXACT_MAPPED"
+    }
+  ],
+  "SourceImagesObserved": "Original HTML references remote CMS image assets. No assertion of pixel/source-figure parity; publisher images not copied.",
+  "TeacherLearningGoals": [
+    "Compasses create circles and transfer distances",
+    "Straightedge creates line/segment through points"
+  ],
+  "StandardRoles": {
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.D.12"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "AcademicReviewer": "PENDING_INDEPENDENT_ACADEMIC_REVIEW",
+  "StageA": "REVIEWED_SOURCE_TASKS_NO_INDEPENDENT_PARITY_ACCEPTANCE",
+  "StageB": "TARGETED_RICH_V2_SOURCE_REPAIR_AUTHORED_NOT_VALIDATED_IN_AUTHENTICATED_RENDER",
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
+  "StageD": "NOT_RUN; shared owner #453 must prove exact assignment, tenant and teacher grade persistence",
+  "ABCReadyForD": true,
+  "Original2021CoolDown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+  "FocusedVerification": {
+    "ManualSourceComparison": "DONE_LOCAL_TEACHER_STUDENT_PRACTICE_TEXT",
+    "MathematicalInvariants": "REVIEWED_RADIUS_EQUALITY_AND_MIDPOINT_COUNTEREXAMPLE",
+    "JsonSyntaxAndPackScope": "VALIDATED_BEFORE_COMMIT",
+    "NodeCourseTests": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AuthenticatedStudentTeacher": "NOT_RUN",
+    "TwoSchoolDisposableDb": "NOT_RUN",
+    "GeometryIndependentNode": {
+      "runner": "Our-CS existing Node; read-only standalone node -e arithmetic oracle; no repository checkout modified",
+      "date": "2026-10-30",
+      "testcases": 16,
+      "pass": 16,
+      "fail": 0,
+      "skip": 0,
+      "exitCode": 0,
+      "cases": [
+        "circle radius transfer",
+        "guessed midpoint inequality",
+        "two arc distances to centres at (4,±3) radius 5",
+        "strict r>d/2 threshold and tangent/nonintersecting case",
+        "six consecutive 60 degree chords and 360 degree closure"
+      ],
+      "boundToApplicationSHA": false,
+      "notEquivalentTo": "node --test application tests, .NET suite, authenticated Rich V2, database tenant acceptance, CI"
+    },
+    "SourceSha256OriginalRead20261030": {
+      "Result": "PASS",
+      "Count": 4,
+      "Expected": 4,
+      "Device": "Our-CS",
+      "Method": "read-only Node crypto SHA256 for original local teacher preparation + teacher activities + student activities + student practice",
+      "AppTests": "NOT_RUN"
+    },
+    "SourceOrderCheckVUnit": {
+      "Result": "PASS",
+      "explorationIndex": 4,
+      "diagnosisIndex": 5,
+      "scope": "authored RichV2 JSON order only"
+    },
+    "CCourseLocalContractStatic": "PASS: source tasks 1.1-1.3+P1-4 mapped, 3 human 8-point rubrics, 4 two-point practice questions, equivalent/wrong/malformed/insufficient cases; no app suite"
+  },
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l01-abc-checkpoint-20261030.json"
+  ],
+  "Blockers": [],
+  "Metrics": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 1,
+    "B_CLOSED": 1,
+    "C_PREPARED": 1,
+    "ABC_READY_FOR_D": 1,
+    "D_VERIFIED": 0,
+    "BLOCKED": 0,
+    "REMAINING": 123
+  },
+  "ReviewRevision": "30 October 2026 — detailed source reviewer checklist and actual assessment-mode code comparison",
+  "AcademicReviewChecklistPath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
+  "AssessmentContractPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
+  "ExistingSubmissionCodeEvidence": {
+    "TextHomeworkWorksheet": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs lines 515–601: string response storage, no scalar grade",
+    "GradeLimitation": "src/Edulytics.Services/Assessments/AssessmentService.Commands.cs lines 1576–1581: SaveStudentResultAsync is Exam-only",
+    "ExamAutoScoreUnsafe": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs lines 398–419: MathAnswerEquivalence auto scores Exam, not proof/drawing",
+    "AssessmentModel": "src/Edulytics.Core/Entities/AssessmentTaskResponse.cs: per-school string response and attempt/question references",
+    "Verdict": "General text submission exists; approved course-exact lesson binding and teacher rubric grading/paper record not proved"
+  },
+  "Focus": "No new engine forced: paper-and-pencil is academically acceptable only when explicit reviewer approves and teacher evidence is documented; online scoring remains separate central issue.",
+  "CheckpointCommit": "Updated on PR #583 in next commit; parent c4e3bcbd0eb1afb3ad142bfb09d2ea27ee0db6d5",
+  "SourceFileSha256": {
+    "TeacherPreparation": "ef6de406c01e1cf3233e115e8118d5e491123ab36f0af489ad95ceaf384b27ff",
+    "TeacherActivities": "24d77e65075b4bf7a43feca7190fd369883a17bc22e329e3e95989d25e35969d",
+    "StudentActivities": "898c2df9232610d497d5778ce43a191b9587a586b8c011b8e089d2950839ec39",
+    "StudentPractice": "82fc8f0676fd13a62337b74177edc96c2ba0166179dc459d4d12ff9610e9f794"
+  },
+  "StageIndependent": {
+    "A": {
+      "status": "A_CLOSED_COURSE_SOURCE_PARITY",
+      "source": "2021 local Our-CS teacher prep/activity and student activity/practice HTML (four SHA256 above)",
+      "rights": "CC BY 4.0 original scope, independent first-party wording; protected 2021 Cool-down unverified",
+      "originalCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+      "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+      "sourceRoles": {
+        "Addressing": [
+          "HSG-CO.A.1",
+          "HSG-CO.D.12"
+        ],
+        "BuildingTowards": [
+          "HSG-CO.D.12",
+          "HSG-CO.D.13"
+        ]
+      },
+      "skills": "1.1 compass/radius, 1.2 wrong guessed midpoint and variation-before-repair, 1.3 sixfold hexagon, P1-P4 source-skills analogues",
+      "independentReviewer": "NOT_SIGNED_NOT_CLAIMED"
+    },
+    "B": {
+      "status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+      "fixes": [
+        "Inserted explicit source 1.2 experimentation and peer comparison before perpendicular-bisector repair",
+        "Corrected first-party Practice 4 to CE=AD/2 under stated collinearity",
+        "Corrected first-party teacher rubric point labels to R,S,T,N",
+        "Retained three original worked examples and earlier content"
+      ],
+      "visuals": "Paper diagrams and accessible verbal descriptions only; no online attachment/digital applet claimed",
+      "SourceSequenceCorrectionVUnit20261030": {
+        "Status": "B_CLOSED",
+        "Problem": "Correction of estimated midpoint was shown before the original exploratory circle-and-triangle activity",
+        "Fix": "Reordered preexisting Rich V2 paragraphs: intentional estimate C / circle A through B / circle B through C / triangle ADE student comparison at index 4, then critique and exact midpoint at index 5",
+        "PreservedWorkedExamples": 3
+      }
+    },
+    "C": {
+      "status": "C_CLOSED_AUTHORING_ONLY",
+      "rubric": "8-point human teacher-only cooldown and equilateral triangle; 8-point hexagon; four 2-point original practice problems",
+      "teacherMode": "paper labelled diagram, offline teacher marking",
+      "contractGap": "Exact secure school/pathway/GEO lesson-to-assignment and evidence/teacher-grade record not proven; shared application change prohibited on course branch",
+      "sharedIssue": 453,
+      "Status": "C_CLOSED_AUTHORING_ONLY",
+      "OwnerResolutionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+      "notEligibleForReady": false,
+      "OperationalStageDGap": "Exact course-school-pathway registered teacher grade persistence not verified; preserved as D owner requirement",
+      "ContractProof": "Assessment JSON CanonicalAssessmentContractVUnit SourceToItems + paper handoff + evidence cases; no machine scoring"
+    },
+    "D": "NOT_RUN stage D: authenticated renderer/grade persistence/two-school isolation"
+  },
+  "return_queue": [],
+  "UnitGate20261030": {
+    "Course": "Geometry",
+    "UnitCode": "U01",
+    "UnitLessonCount": 22,
+    "UnitStatus": "UNIT_IN_PROGRESS",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "PreviouslyABCClosed": 0,
+    "NewlyABCClosed": 1,
+    "Owner": null,
+    "Issue": null,
+    "DecisionNeeded": "Work through canonical U01:L02 next; Stage D tenant-safe teacher grade persistence held separately for Supervisor 2",
+    "NextUnit": null
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "ProgressionPolicyVUnit20261030": "Admin strict ascending: previous permission to bypass BLOCKED_C_SHARED removed; first open remains U01:L01; L02–L06 retained as previous A/B/C_PREPARED but are not READY_FOR_STAGE_D."
+}

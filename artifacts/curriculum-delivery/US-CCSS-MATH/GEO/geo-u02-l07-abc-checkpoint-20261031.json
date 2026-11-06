@@ -1,0 +1,144 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+  "LessonTitle": "Angle-Side-Angle Triangle Congruence",
+  "Unit": "U02",
+  "Ordinal": 29,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "0ad62a2a0c861b1d7863b786ffce8c110f1ad47d73a0afe7685c78c0e71e69f0",
+    "TeacherActivities": "b9ee445d2863abce23632626639a6a8651f4d57c477a4bc1672803dd707fcfd5",
+    "StudentActivities": "8675b1df54a6ad30bf7330892381516ab7d40ca3e4e14362adca8e6c8b970cac",
+    "StudentPractice": "181eabf4191d9eccd33095a944d14e47c7da3c4d7715940e0d7671d4b0dc551a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.5",
+      "HSG-CO.B.7",
+      "HSG-CO.B.8",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8"
+    ]
+  },
+  "OriginalActivities": [
+    "7.1 Notice and Wonder Assertion",
+    "7.2 Proving the ASA Triangle Congruence Theorem",
+    "7.3 OPTIONAL Find the Missing Angle Measures",
+    "7.4 What Do We Know For Sure About Parallelograms?"
+  ],
+  "OriginalPracticeCount": 7,
+  "SourceCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "Unique line through two distinct points; distinct lines share at most one point",
+      "FirstPartyMode": "SOURCE_ALLOWED_PAPER_NOTICE_WONDER_WITH_TEACHER_DISPLAY"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "Original ASA WXY/DEF proof uses two angle rays unique intersection, not unknown distance",
+      "FirstPartyMode": "PAPER_TEACHER_REVIEWED_RIGID_MOTION_PROOF"
+    },
+    {
+      "Source": "7.3 OPTIONAL",
+      "Goal": "Parallel/transversal angle relationships a=42 and other labelled angles",
+      "FirstPartyMode": "OPTIONAL_PAPER_TEACHER_REVIEW_IMAGE_DEPENDENT"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "Opposite parallelogram sides via common diagonal and two alternate interior angles with ASA",
+      "FirstPartyMode": "PAPER_AUXILIARY_DIAGONAL_SAS_AVOIDANCE"
+    },
+    {
+      "Source": "7.4 Extension",
+      "Goal": "Parallelogram ears and a hexagon with two ears; figure proof teacher reviewed",
+      "FirstPartyMode": "OPTIONAL_HAND_DRAWN_POLYGON_REVIEW"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven original source-indexed theorem, isosceles, circle, correspondence and proof tasks",
+      "FirstPartyMode": "TEACHER_REVIEW_AND_LIMITED_INDEPENDENT_ORACLES"
+    },
+    {
+      "Source": "7.5 Cool-down",
+      "Goal": "Publisher-locked original unverified",
+      "FirstPartyMode": "EDULYTIKS_FIRST_PARTY_MANUAL_PROOF"
+    }
+  ],
+  "PublisherCooldown": "7.5 PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
+  "StageA": "A_CLOSED_SOURCE_ASA_RAY_UNIQUENESS_AND_SEVEN_PRACTICE_HASHES",
+  "StageB": "B_CLOSED_SOURCE_7_1_TO_7_4_AND_OPTIONAL_PAPER_APPLET_ALTERNATIVE_PRESERVED_3_EXAMPLES",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_SELECTED_ASA_PAPER_RUBRIC_FIXTURES_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L07_ASA_PARALLELOGRAM_PAPER_HUMAN_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L07_ASA_PARALLELOGRAM_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_MATHEMATICAL_PROOF_REVIEW",
+    "TaskId": "geo-u02-l07-two-ray-asa-and-diagonal-parallelogram",
+    "TeacherHandoff": "Give an original first-party labelled paper source task: 7.1 two-line assertion Notice/Wonder (paper source alternative), 7.2 ASA WXY/DEF construction, optional 7.3 transversal discussion, 7.4 parallelogram diagonal proof, and seven indexed paper Practice questions, with author-created first-party Cool-down. Authorized teacher records evidence and 0-2 criteria offline only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "OriginalGeoGebraApplet": "SOURCE_OPTIONAL_NOT_RECREATED"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct source two-line assertion and ASA included-side matching, no claim two distinct lines have two intersections",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Rigid ASA proof uses optional reflection and unique intersection of two distinct angle-ray lines, not unsupported length equality",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Diagonal AC, two alternate interior angle pairs and included common side, valid parallelogram opposite-side theorem",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "All seven source-indexed Practice components and first-party Cool-down with justified figure/teacher checks",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "ASA_ThirdVertex": "UNIQUE_INTERSECTION_OF_TWO_DISTINCT_NONPARALLEL_LINES",
+    "IncludedSide": "WX_TO_DE",
+    "Parallelogram": "AB_PARALLEL_CD__BC_PARALLEL_AD__AC_SHARED__ASA_THEN_OPPOSITE_SIDES_EQUAL",
+    "P3": "GE_SHARED_ANGLE_BISECTOR_AT_G_AND_E__ASA",
+    "P5_OnlyUniversallyCongruent": "ALL_SQUARES_WITH_SIDE_5",
+    "OptionalTransversal": "42_OR_138_DEGREES_DEPENDING_ON_LABEL"
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l07-asa-parallelogram-paper-20261031.json",
+  "LessonContentCommit": "a1cdd711ce014427174b1052c7423ef84fedbe22",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StaticValidation": "JSON parse/write + node --check syntax + git diff --check. Node tests, dotnet, full CI, app tests NOT_RUN.",
+  "OriginalImages": "NOT_PIXEL_CERTIFIED",
+  "TeacherScorePersistence": "STAGE_D_UNVERIFIED_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT",
+  "PreviousHEAD": "35c1805c55be701136537a6f538ad59849fbde0d"
+}

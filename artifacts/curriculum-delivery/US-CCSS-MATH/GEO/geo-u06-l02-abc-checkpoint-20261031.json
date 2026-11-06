@@ -1,0 +1,249 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L02",
+  "Ordinal": 84,
+  "UnitCode": "U06",
+  "UnitOrdinal": 2,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "19a08392928d8fef463fcd47c3a118ffa91301560e948b94ae8b77cde0c5bdeb",
+    "TeacherActivities": "6be27269921de92fcead498707ee37167b5b1d50e305aa7f137248112d821bb0",
+    "StudentActivities": "eab6e1f45909b52f94169e26c54c015208206fb968863b58f4278a593aec723e",
+    "StudentPractice": "f419f75bdc9a5cccc95d7812ac898955aad068e1190840d22f3103c30c358fa2"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "2.1",
+      "Goal": "four original point A=(3,2) independent moves and point-to-point coordinate function",
+      "Mode": "EXACT_SOURCE_POINT_MAPS"
+    },
+    {
+      "Source": "2.2",
+      "Goal": "original ABC translate12,-2, rectangle uniform origin dilation2",
+      "Mode": "FIRST_PARTY_SOURCE_COORDINATE_TABLE_AND_PLOT"
+    },
+    {
+      "Source": "2.3",
+      "Goal": "Q horizontal stretch vs R reflection vs S CW rotation, source A example, optional y=x reflection",
+      "Mode": "HUMAN_PLOTTED_QUADRILATERAL_AND_SOURCE_UNAVAILABLE_POINTS"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight original function-matching, reflection, density, cube and square ratios",
+      "Mode": "EXACT_P1_P3_P4_P6_P8_HUMAN_IMAGES"
+    },
+    {
+      "Source": "2.4",
+      "Goal": "teacher-login protected Ready Transform",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.2"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U06_L02_INPUT_OUTPUT_RIGID_NONUNIFORM_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L02",
+    "TaskId": "geo-u06-l02-source-ABC-and-QRS-transform-map",
+    "GroupId": "GEO_U06_L02_INPUT_OUTPUT_RIGID_NONUNIFORM_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party printable containing four source A maps, original triangle and rectangle input-output tables, Q/R/S plot and 8 Practice responses; scored with dated 4x2 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l02-transform-function-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes four independent transformations of source A(3,2), identifies each plane function's ordered-pair input/output",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "completes original ABC three-point translation(12,-2) and four original doubling rectangle table accurately with plots",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "distinguishes Q(2x,y) horizontal stretch from R x-axis reflection and S clockwise90 origin; maps source A(3,-4)",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves eight source Practice P1 A2 B3 C1 D4 E5, P3 classifications, P6 log floating and P8 ratio2 with teacher source plots",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "A(3,2) translation up2 (3,4), left4 (-1,2), x-axis reflect (3,-2), origin half-turn(-3,-2)",
+      "source triangle A(-10,5) moves(2,3), B(-4,9)→(8,7), C(-2,6)→(10,4)",
+      "Q anisotropic horizontal stretch not uniform dilation; R x-axis reflect; S clockwise90 origin rotation",
+      "P1 A2 B3 C1 D4 E5, P4 choiceC, P7 choiceC"
+    ],
+    "Equivalent": [
+      "reflection y=x point map (x,y)→(y,x) sends optional four polygon vertices to A'",
+      "reflect x0 then y0 and rotate180 origin both yield(-x,-y)"
+    ],
+    "Wrong": [
+      "classify (2x,y) as uniform 2D dilation2",
+      "classify (2x,3y) as rigid or similarity",
+      "compute log density1950/(0.8π) as1950/(0.8) ignoring π",
+      "reflect y2 then translate as (x+3,4−y) forgetting +2"
+    ],
+    "Boundary": [
+      "k0 collapse not positive nondegenerate dilation; negative k includes half-turn under signed extension",
+      "original quadrilateral ABCD coordinates apart from A(3,-4) and P2/P5 image-only coords need teacher source",
+      "straight one-dimensional source grid transforms remain valid without live application"
+    ],
+    "Malformed": [
+      "maps unordered scalar inputs instead of ordered (x,y)",
+      "student applies 2.1 four warmup moves sequentially despite independent tasks",
+      "source P2 plotted result asserted for unavailable ABC vertex locations"
+    ]
+  },
+  "IndependentMathOracles": {
+    "SourceA": [
+      3,
+      2
+    ],
+    "WarmupOutputs": [
+      [
+        3,
+        4
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        3,
+        -2
+      ],
+      [
+        -3,
+        -2
+      ]
+    ],
+    "TranslateSourceABC": [
+      [
+        2,
+        3
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        10,
+        4
+      ]
+    ],
+    "DoubleRectangle": [
+      [
+        -2,
+        -6
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        10,
+        -6
+      ]
+    ],
+    "Q": "(2x,y)",
+    "R": "(x,-y)",
+    "S": "(y,-x)",
+    "SourceAImages": {
+      "Q": [
+        6,
+        -4
+      ],
+      "R": [
+        3,
+        4
+      ],
+      "S": [
+        -4,
+        -3
+      ]
+    },
+    "OptionalReflectYX": "(y,x)",
+    "P1Choices": [
+      2,
+      3,
+      1,
+      4,
+      5
+    ],
+    "P3Classifications": [
+      "RIGID",
+      "NEITHER",
+      "DILATION",
+      "RIGID"
+    ],
+    "P4Choice": "C",
+    "P5Composition": "(x+3,6-y)",
+    "P6LogDensity": "1950/(0.8pi)",
+    "P6Floats": true,
+    "P7Choice": "C",
+    "P8Ratio": 2
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u06-l02-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u06-l02-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u06-l02-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "24eb6ce0a73be875fce69e24e35fd4ec4ee51ade",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:38:18.679330Z",
+  "ClosedAtUtc": "2026-10-31T23:38:31.040244Z",
+  "ElapsedSeconds": 12.361,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L03"
+}

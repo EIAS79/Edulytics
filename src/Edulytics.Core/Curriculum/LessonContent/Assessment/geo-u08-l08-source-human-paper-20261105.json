@@ -1,0 +1,101 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L08",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "IM Geometry local archive used as authorized source; AccessIM/v360 excluded",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\8\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\8\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\8\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\8\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "abb4b12855856da90aec67df9cf57921b21fb0271acd26a27d6e44d9b1775135",
+    "TeacherActivities": "3315b1b1e4622e4728db7b5562f261d8428bac1ab3a199ccf89d1468764ea676",
+    "StudentActivities": "e7225aff8a2f034f97fce471c762ab6cd4f31f559ae07044e2fcb48c45fedf18",
+    "StudentPractice": "5ddbd368094d56f3d8fc48f3b33ce68c3c7f16c2fe40d81e556a31eddeba0f72"
+  },
+  "SourceStandards": [],
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Goal": "She Made Some Tarts",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "8.2",
+      "Goal": "Under One Condition",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "8.3",
+      "Goal": "Coin and Cube",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Practice",
+      "Goal": "Visible student practice prompts in the authorized local practice HTML reviewed against lesson skill and representation requirements.",
+      "Mode": "SOURCE_PRACTICE_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Cool-down",
+      "Goal": "Original teacher cool-down content is access-restricted; Edulytics uses an independently authored lesson-skill check.",
+      "Mode": "FIRST_PARTY_COOLDOWN"
+    }
+  ],
+  "SourceInventoryCounts": {
+    "TeacherStructuredElements": 128,
+    "StudentStructuredElements": 52,
+    "StudentPracticeStructuredElements": 46
+  },
+  "SourceInventoryFingerprints": {
+    "TeacherElementsSha256": "6de0a6ac896bbafaeae704a31bbe00054e627708523ace3d7a304513f274cdc2",
+    "StudentElementsSha256": "5c40407c027cd677ae1f005c99f3a95105fe4bf63bada01327629e92c19482b9",
+    "PracticeElementsSha256": "98b0a211746dc8b193c7796e6f38fe0acc21aa92ec53e08e6a19a1abb340ecdc"
+  },
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L08",
+    "TaskId": "geo-u08-l08-source-aligned-review",
+    "GroupId": "GEO_U08_L08_SOURCE_ALIGNED_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "conditioning restricts the sample space correctly",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "correct conditional denominator",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "correct joint probability",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "multiplication identity verified without assuming independence",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "FirstPartyCooldown": {
+    "Prompt": "From a standard deck, let A be 'card is a face card' and B be 'card is a heart'. Find P(A|B), P(A and B), and verify P(A and B)=P(A|B)P(B).",
+    "Scoring": "Teacher verifies mathematics, representation, and explanation; persistence is Stage D."
+  },
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u08-l07-l11-2021.rich-lesson-v2.json",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldownStatus": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE"
+}

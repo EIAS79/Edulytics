@@ -1,0 +1,192 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L17",
+  "Ordinal": 81,
+  "UnitCode": "U05",
+  "UnitOrdinal": 17,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\17\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\17\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\17\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\17\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "32aaadf181f5631d7bd541726256df17f340bb7d1d7fa26c55ff1984141f16b4",
+    "TeacherActivities": "f376d131ef920340f42166f383cb569ff07844c147935ad2c0887756bd5f857c",
+    "StudentActivities": "30e420bc5cbcbef53b2ae8305830466bbd2d7b7bb5cf5f7c763324f8f5076c84",
+    "StudentPractice": "6595edb0a7c8914e4c598bb461b39b2d60a21c23d8e79d78990fa37349faa2f6"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "17.1",
+      "Goal": "1000 kg feathers/steel same mass, different volumes, density definition",
+      "Mode": "TEACHER_FIRST_PARTY_MODEL"
+    },
+    {
+      "Source": "17.2",
+      "Goal": "source pillow59g 51x66x7 and anchor30kg square pyramid20x20 h28 full conversion",
+      "Mode": "EXACT_SOURCE_UNIT_CONVERSION_PAPER"
+    },
+    {
+      "Source": "17.3",
+      "Goal": "hollow cylindrical tank, original R r h figure required, 16 fish/100gal and 275 available",
+      "Mode": "HUMAN_SOURCE_FIGURE_AND_CONDITIONAL_MATH"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine source washers cells float equal SA cone pyramids and perpendicular lines",
+      "Mode": "EXACT_SOURCE_CASES_AND_TEACHER_CONCEPT_BOUNDARY"
+    },
+    {
+      "Source": "17.4",
+      "Goal": "publisher protected Float or Sink",
+      "Mode": "FIRST_PARTY_HUMAN_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-GMD.A.3"
+    ],
+    "Addressing": [
+      "HSG-MG.A.2",
+      "HSN-Q.A.1"
+    ],
+    "BuildingTowards": [
+      "HSG-MG.A.2",
+      "HSN-Q.A.1"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U05_L17_DENSITY_VOLUME_WASHER_FISH_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L17",
+    "TaskId": "geo-u05-l17-pillow-anchor-density-and-hollow-fish-tank",
+    "GroupId": "GEO_U05_L17_DENSITY_VOLUME_WASHER_FISH_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Source lesson printable with full pillow/anchor density conversion, human-labelled hollow fish tank diagram and stocking equation, original nine Practice calculations, written misconceptions, and teacher 0-8-point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l17-density-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "distinguishes mass from density, defines m/V, converts g/cm3 to kg/m3 correctly with units",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "computes source pillow59g in23562cm3 and anchor30kg in11200/3cm3 densities and1000kg target volumes",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "models hollow central tube tank as pi(R²−r²)h, converts 7.48gal/ft³ and explains 275-vs-target with source image limitation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies nine original Practice items including P1 0.14lb, P2 cell counts, P3 float, P7 BDE and dimensional boundaries",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "1000kg feathers and steel have identical mass despite dissimilar occupied volume",
+      "source pillow density ~2.504kg/m³ and anchor ~8035.714kg/m³ after conversions",
+      "P1 washer five about.14lb, P3 toy density.75 floats, P7 B D E and P8 A D F"
+    ],
+    "Equivalent": [
+      "source 59/23562 g/cm³ multiplied1000 equals.059/(23562/1e6) kg/m³",
+      "steel V=(20*20*28)/3cm³ equals(11200/3)cm³"
+    ],
+    "Wrong": [
+      "feathers1000kg considered lighter MASS than steel1000kg",
+      "1g/cm³ falsely equated to1kg/m³ instead of1000kg/m³",
+      "washers annulus hole not subtracted",
+      "original source fish stock certified without outer inner diameters and height"
+    ],
+    "Boundary": [
+      "zero/negative material volume cannot define finite m/V density",
+      "original aquarium figure missing R r h; numeric target fish from teacher discussion conditional only",
+      "ideal cell-count toy model not a biological census",
+      "coplanarity required for universal parallel-lines statement"
+    ],
+    "Malformed": [
+      "inconsistent volume in cm³ and mass grams without conversion before kg/m³",
+      "figure missing hollow tube but fish capacity claimed exact",
+      "paper response reports density in cubic centimetres instead of mass/volume"
+    ]
+  },
+  "IndependentMathOracles": {
+    "PillowVolumeCm3": 23562,
+    "PillowDensityKgPerM3": 2.5040319157966215,
+    "AnchorVolumeCm3": "11200/3",
+    "AnchorDensityKgPerM3": 8035.714285714286,
+    "FeatherVolume1000KgM3": 399.35593220338984,
+    "SteelVolume1000KgM3": 0.12444444444444444,
+    "SourceTankFullGallons": "7.48*pi*(R²-r²)*h",
+    "SourceFishTarget": "0.16*7.48*pi*(R²-r²)*h",
+    "ConditionalFishCount": "315.8_FROM_TEACHER_DISCUSSION_FIGURE_NOT_VERIFIED",
+    "P1Washer5Lbs": 0.13989904785517046,
+    "P2CellMassG": 4.60766922526503e-09,
+    "P2KoalaCount": 1302176807115.5073,
+    "P2HippoCount": 303841254993618.4,
+    "P3ToyDensity": 0.75,
+    "P4CubeSurface": 384,
+    "P4SphereSurface": 309.5024551711621,
+    "P5Pair": [
+      "SA22 V5",
+      "SA22 V6"
+    ],
+    "P6Choice": "C",
+    "P7Choices": [
+      "B",
+      "D",
+      "E"
+    ],
+    "P8Choices": [
+      "A",
+      "D",
+      "F"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l17-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l17-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u05-l17-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u05-l17-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "a5689e531d0eabe75bebb94624fc303b7a494d4a",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:33:23.498744Z",
+  "ClosedAtUtc": "2026-10-31T23:33:35.128662Z",
+  "ElapsedSeconds": 11.63,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L18"
+}

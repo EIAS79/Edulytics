@@ -1,0 +1,186 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+  "Status": "C_CLOSED_AUTHORING_OPTIONAL_SSA_SOURCE_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f1883dcdfc90131614efe17a893b75409a7649378aaa0583fad19e49d825f90f",
+    "TeacherActivities": "fc81a313974026a30071e6c9e097dd316dade7be1297478c984df7eed05cad8e",
+    "StudentActivities": "4f7967262cf38bad2d90bb6c4fd02b9480cb84dfe176ccaf7f7d9b39503bb2a3",
+    "StudentPractice": "24500e16eb7dc1372444be780854568c69e93b5796c45636da0c937b97c7abc0"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "Ambiguous source GBD/KHI congruent parts not included",
+      "FirstPartyMode": "MULTIPLE_VALID_COUNTEREXAMPLE_DRAWINGS"
+    },
+    {
+      "Source": "11.2 OPTIONAL",
+      "Goal": "40-degree 6/8 cm group construction, source material alternatives",
+      "FirstPartyMode": "PAPER_GROUP_ANGLE_SIDE_ASSIGNMENTS"
+    },
+    {
+      "Source": "11.3 OPTIONAL",
+      "Goal": "0/1/2 SSA triangles and two-sided angle counterexamples, gallery walk",
+      "FirstPartyMode": "TEACHER_SELECTED_PRIVATE_CARD_CASES"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven source-indexed original student Practice tasks",
+      "FirstPartyMode": "SEVEN_HUMAN_PAPER_REVIEW"
+    },
+    {
+      "Source": "11.4 Cool-down",
+      "Goal": "Publisher restricted original",
+      "FirstPartyMode": "ORIGINAL_EDULYTIKS_PAPER_EQUIVALENT"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L11_SSA_NON_UNIQUE_PAPER_TEACHER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_OPTIONAL_SOURCE_LESSON",
+    "TaskId": "geo-u02-l11-angle-side-assignment-and-ssa-ray-intersection",
+    "TeacherHandoff": "Teacher chooses this optional lesson, distributes first-party paper 40/6/8 cards, manages 0/1/2 ambiguity drawings and seven indexed paper questions, scores four 0-2 criteria offline, and does not claim publisher graphics or digital saved grade.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct nonincluded-angle identification and two noncongruent source-based SSA counterexample drawings",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Classifies 0/1/2 based on ray-circle intersections, altitude and relative side lengths without negative ray roots",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "First-party 40-degree 6/8 group and optional midpoint D/M exploration with accurate ambiguity conditions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven source-indexed paper Practice and original Cool-down, including figure-dependent teacher review",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Universal congruence cases",
+      "FirstPartyPrompt": "Only SSS, SAS, ASA of five listed choices always suffice; state why AAA/SSA do not.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Noncongruent 30-degree BC6 CA4",
+      "FirstPartyPrompt": "Construct two distinct positive intersections for given B-angle 30, adjacent BC6, opposite CA4; verify different AB.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Kite diagonal bisectors",
+      "FirstPartyPrompt": "Explain exactly what equality/given must be proved before diagonal WY bisects kite vertex angles.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "Six diagram-dependent quadrilateral statements",
+      "FirstPartyPrompt": "Teacher verifies actual original figure before selecting CBE/DAE, DA/CB, DC/AB and parallel claims.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "Kite 94/112-degree source figure",
+      "FirstPartyPrompt": "Solve angle ZYW using teacher-supplied source diagram, distinguish angles and vertex order.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Isosceles reflection proof blanks",
+      "FirstPartyPrompt": "Complete correct reflection axis, correspondence and SAS/ASA conditions based on labelled source figure.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Rigid DEF to BAC transformation",
+      "FirstPartyPrompt": "Translate E to A, rotate D image to B, conditionally reflect about AB to align F with C; verify the original orientation.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalPublisherFigureParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "P1_Sufficient": [
+      "SSS",
+      "SAS",
+      "ASA"
+    ],
+    "AmbiguousCase": "ANGLE30_ADJACENT10_OPPOSITE6_TWO_POSITIVE_TRIANGLES",
+    "PracticeP2": "B30_BC6_CA4_TWO_POSITIVE_TRIANGLES",
+    "ZeroCase": "a<h",
+    "TangentCase": "a=h",
+    "UniqueLongerOpposite": "a>=c for acute with valid nondegenerate triangle"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "A=30 c=10 a=6 two distinct triangles",
+      "A=30 c=10 a=4 no triangle",
+      "P1 SSS/SAS/ASA only",
+      "Given B30 BC6 CA4 gives two solutions"
+    ],
+    "Equivalent": [
+      "reflect either valid triangle while preserving same SSA side assignments",
+      "switch which 6/8 side is adjacent then correctly analyze each labelled case"
+    ],
+    "Wrong": [
+      "SSA always suffices",
+      "SSA always gives two triangles",
+      "negative ray root counted as a triangle",
+      "using SAS with nonincluded angle"
+    ],
+    "Boundary": [
+      "tangent right triangle when a=h",
+      "a=c includes t=0 invalid root, so only one positive triangle",
+      "angles 0 or 180 excluded"
+    ],
+    "Malformed": [
+      "missing which side opposite specified angle",
+      "unlabelled side assignment",
+      "missing gallery construction evidence"
+    ]
+  },
+  "PublisherCooldown": "SOURCE_OPTIONAL_PUBLISHER_LOCKED_COOLDOWN_UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Prompt": "Construct labelled A=30, AB=10, BC=6 two noncongruent triangles; classify a=4 no-solution case and a=12 unique case, giving geometric explanation.",
+    "Mode": "TEACHER_PAPER_SCORING",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN browser grade persistence/CI/deploy"
+}

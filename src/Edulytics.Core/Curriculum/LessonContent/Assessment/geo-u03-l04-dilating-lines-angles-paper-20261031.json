@@ -1,0 +1,200 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
+  "Status": "C_CLOSED_AUTHORING_SOURCE_ANGLE_ASSERTION_AND_TEACHER_PROOF_NOT_RUN",
+  "SourceEdition": "IM Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "374d78859a64d9ebc12e956f00668979baf0ae4ee7803521b464413ef485d482",
+    "TeacherActivities": "997d9dc09f4e562da40a3e3eac9a9de6470145cbbf622953d5d82ab7880ba9c7",
+    "StudentActivities": "dcd5587d589fb761f372d854bcad5a5bd3985aaa7e6f9d4718e51acb44a968b0",
+    "StudentPractice": "a4f5288e3c110b2e0cfa8b20466dbf7af7c3b4fbad76f102f8fa52232e95c4a3"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.2",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-SRT.A.1",
+      "HSG-SRT.A.1.a"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.2",
+      "HSG-SRT.A.3"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "4.1",
+      "Original": "Measure dilated corresponding angles, establish assertion but no proof",
+      "FirstPartyMode": "TEACHER_MEASURED_ANGLE_ASSERTION"
+    },
+    {
+      "Source": "4.2",
+      "Original": "C-centred points 3/4 1/3 3/2, line CE k2 unchanged, optional midpoint X k1/2",
+      "FirstPartyMode": "PAPER_RAY_AND_INFINITE_LINE_SET"
+    },
+    {
+      "Source": "4.3",
+      "Original": "Jada triangle P k2, proof off-centre lines parallel from corresponding-angle assertion",
+      "FirstPartyMode": "TEACHER_NARRATIVE_TRANSVERSAL_PROOF"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Original": "angle, candidate parallel lines, dilation centre, scale, perimeter, proportion, SSA",
+      "FirstPartyMode": "EXACT_P1_P4_P5_P6_AND_TEACHER_DIAGRAMS_P2_P3_P7"
+    },
+    {
+      "Source": "4.4 Cool-down",
+      "Original": "teacher-login protected",
+      "FirstPartyMode": "ORIGINAL_FIRST_PARTY_PAPER_EQUIVALENT_SOURCE_LOCKED"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
+    "TaskId": "geo-u03-l04-measured-angles-invariant-lines-proof",
+    "GroupId": "GEO_U03_L04_DILATION_LINE_ANGLE_TEACHER_PROOF_REVIEW",
+    "Mode": "TEACHER_SELECTED_PAPER_PROTRACTOR_RAY_AND_PROOF",
+    "Evidence": "students submit measured angle observations, named C-ray points, line-through-centre proof, and off-centre parallel-line argument with figure and labels",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 Issue #453; writer leases #605 untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "measures image angles and distinguishes experimental source assertion of angle preservation from deductive proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "correctly places A',B',D' along centre-C rays with exact positive factors 3/4, 1/3, 3/2",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "uses dilation definition to show a whole line through C invariant as a set, even though points generally move",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "writes complete source-aligned angle-and-transversal proof for off-centre parallel line images, including k<1 and k=1 cases",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "angle 21 under dilation k3",
+        "TeacherExpected": "angle remains 21 degrees",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "which diagram lines could be image of m",
+        "TeacherExpected": "teacher checks original line directions and possible dilation centres; only same or parallel lines",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "identify centre factor 2 taking f to g",
+        "TeacherExpected": "teacher checks source figure and centre-point ray ratios; no guessed letter",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "ABCE to A'B'C'E' measured sides",
+        "TeacherExpected": "k=1.5/3=3/6=2.5/5=1/2",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "perimeter 18 and k3/2",
+        "TeacherExpected": "image perimeter 27; choice C",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "solve 4/7=10/x",
+        "TeacherExpected": "x=70/4=35/2=17.5",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "30 degree angle, AC=3, CB=2 ambiguous SSA",
+        "TeacherExpected": "provide two legal noncongruent triangles with matching two sides and nonincluded angle",
+        "Points": 2,
+        "Mode": "TEACHER_DIAGRAM_OR_EXACT_ARITHMETIC"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "P1AngleDegrees": 21,
+    "P4Scale": "1/2",
+    "P5Perimeter": 27,
+    "P6X": "35/2",
+    "SameLineInvariantForCentreOnLine": true,
+    "DistinctOffCentreParallelRequiresKNotOne": true,
+    "SourceAngleCongruenceStatus": "ASSERTION_NOT_PROVED_THIS_LESSON"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "21 degrees remains 21 under positive dilation",
+      "source A B D vertices remain on same centre rays with k3/4,1/3,3/2",
+      "off-centre line parallel proof uses corresponding-angle congruence and transversal"
+    ],
+    "Equivalent": [
+      "scale 1.5 and 3/2 same positive dilation",
+      "P6 x=17.5 or 35/2 equivalent"
+    ],
+    "Wrong": [
+      "claims all points of line through centre individually fixed",
+      "asserts angle preservation proved by protractor measurement",
+      "uses factor k1 to claim a distinct off-centre parallel line"
+    ],
+    "Boundary": [
+      "k=1 is identity dilation, so image line coincident not distinct",
+      "k>0 by source definition, factor zero cannot yield a line image",
+      "line passing through centre invariant as an infinite set, not pointwise fixed",
+      "point at centre stays fixed and its own quotient OP'/OP=0/0 undefined"
+    ],
+    "Malformed": [
+      "unlabelled centre or missing ray direction",
+      "parallel claim with no angle theorem justification",
+      "angle copied without a measured or reasoned relation"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_4.4_COOLDOWN_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ANGLE_AND_LINE_PROOF",
+  "TeacherHandoff": "Paper protractor work, labelled segment and full source-aligned narrative proof teacher-scored, without claiming saved app grades or source art parity.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

@@ -1,0 +1,322 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l04-l06-first-party-20261028-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+      "CultureCode": "en",
+      "Title": "Construction Techniques 2: Equilateral Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct equilateral triangles of different sizes and justify congruent segments by referencing equal compass radii and a regular-hexagon construction.",
+        "Verbal diagram: circle k has centre O and six successive vertices A,B,C,D,E,F at equal arc steps around its boundary. Chords AB, BC, CD, DE, EF and FA are each the circle radius. Connect A, C and E to obtain a larger inscribed equilateral triangle.",
+        "An inscribed polygon has all its vertices on a circle. A regular hexagon can be subdivided into six equilateral central triangles; each spans 60 degrees at O. A–C–E joins vertices separated by two 60-degree steps, so its three central angles are equal (120 degrees). The three chords AC, CE and EA have equal length.",
+        "First-party student task: construct one equilateral triangle on a given segment and a second, larger triangle inside a circle. Record how circle centres, unchanged openings and intersection points force the equal sides. Optional peer discussion should be teacher reviewed.",
+        "Teacher rubric (0–4, human assessed): starting segment and radius conditions; actual legal tool sequence; labels and congruent-segment justification; correct inscribed triangle or counterexample discussion. No unverified numeric auto-grade is assigned to the physical construction.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 4, CC BY 4.0; content and tasks here are independently authored.",
+        "First-party 4.1 Notice and Wonder — construct or inspect a seven-circle equal-radius paper model: one circle centred O with marked regular-hexagon vertices A through F and six circles, one centred at each of those vertices, all with the same radius OA>0. Write at least one observation and one question before being shown a proof, exchange observations with a peer, and identify possible polygons from labelled circle intersections. The original publisher seven-circle picture is NOT reproduced; this is a new accessible verbal model.",
+        "First-party 4.2 What Polygons Can You Find? — using the labelled intersections of the equal-radius circle construction, draw AT LEAST TWO DIFFERENT polygons, shade them in two distinguishable colours or hatch patterns, and state two conjectures about side lengths or angles. Mark which conjectures are justified solely by equal radii and which are currently unproved. Do not assert visually plausible rectangle/square relationships as guaranteed without a proof.",
+        "First-party 4.3 Spot the Equilaterals — construct two distinct nondegenerate equilateral triangles of DIFFERENT side lengths, one central OAB of side r and one alternating-vertex ACE of side sqrt(3)r in the same regular hexagon of circumradius r>0. Label tool actions, equal radii and the 60/120-degree central angles, then compare actual paper diagrams. A second triangle of the same size is not sufficient evidence of this specific activity.",
+        "Optional open-ended extension only: a learner may investigate a polygon net that folds into a container if a safe first-party labelled net is available; the original figure is not imported and the optional extension is not required for Stage A acceptance or for scoring the two-triangle core task.",
+        "New first-party teacher-scored Cool-down substitute for inaccessible publisher task: from a nonzero circle radius r, construct regular hexagon ABCDEF and inscribed triangle ACE, then construct smaller triangle OAB. Which sides are guaranteed equal within each triangle, and why are their side lengths not equal to one another? Give an exact mathematical reason and a labelled compass/straightedge paper diagram."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equilateral triangle",
+          "Definition": "A triangle with three congruent sides, hence three congruent angles of 60 degrees.",
+          "Rule": "Use intersection of two circles whose centres are the endpoints of the starting segment and whose radii are that segment's length.",
+          "Example": "For side length 5, each constructed side is 5 because it is a radius of one of the two circles."
+        },
+        {
+          "Title": "Inscribed polygon",
+          "Definition": "A polygon with every vertex lying on a common circle.",
+          "Rule": "Keep every selected vertex on the circle and connect the vertices in the desired order.",
+          "Example": "Joining alternating vertices A, C and E of a regular hexagon produces an inscribed equilateral triangle."
+        },
+        {
+          "Title": "Distance argument",
+          "Definition": "A compass construction establishes equal lengths through equal circle radii.",
+          "Rule": "Identify which circle makes each constructed edge congruent; do not rely on appearance.",
+          "Example": "If C is on equal-radius circles centred A and B, then AC = BC = AB."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "A basic equilateral triangle",
+          "Question": "Construct a triangle with a prescribed nonzero side AB.",
+          "Method": "Two circles with radius AB and centres A and B.",
+          "Steps": [
+            "Draw AB and leave the compass opened to length AB.",
+            "Draw a circle centred A through B.",
+            "Draw a circle centred B through A with the same opening.",
+            "Choose an intersection C not on line AB; draw AC and BC.",
+            "From the circle definitions AC = BC = AB, so ABC is equilateral."
+          ],
+          "Answer": "Either intersection produces a valid equilateral triangle.",
+          "Check": "The chosen intersection must not be A or B; the segment AB must have positive length."
+        },
+        {
+          "Title": "Equilateral triangle within a hexagon",
+          "Question": "A regular hexagon has consecutive vertices A,B,C,D,E,F on a circle. Which alternating vertices form an equilateral triangle?",
+          "Method": "Compare equal chords subtending equal central angles.",
+          "Steps": [
+            "Each consecutive pair subtends a 60-degree central angle.",
+            "Vertices A,C,E are separated by two consecutive arc steps, so chords AC, CE and EA each subtend 120 degrees at centre O.",
+            "Equal chords subtend equal central angles in the same circle.",
+            "Therefore AC = CE = EA."
+          ],
+          "Answer": "Triangle ACE is equilateral and inscribed in the hexagon's circle.",
+          "Check": "The same argument applies to the other alternating triangle BDF."
+        },
+        {
+          "Title": "Two sizes from two distinct base lengths",
+          "Question": "Construct equilateral triangles of side lengths 3 and 6 length units.",
+          "Method": "Repeat the two-circle construction with each prescribed base segment.",
+          "Steps": [
+            "Construct a positive-length base segment of 3 units; keep the same opening for both circles and select their intersection.",
+            "Join the intersection to each endpoint; all three sides equal 3.",
+            "Repeat using a distinct base segment of 6 units and new equal-radius circles.",
+            "Verify each triangle's sides by their corresponding radii."
+          ],
+          "Answer": "Two equilateral triangles with side lengths 3 and 6; the second is scaled by factor 2.",
+          "Check": "Same technique works for any strictly positive base length; actual drawing precision requires teacher review."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any three vertices of a regular hexagon as an equilateral triangle.",
+          "WhyWrong": "Unequal gaps around the circle yield different chord lengths.",
+          "Correction": "Choose every other vertex; all three arc gaps are two 60-degree steps."
+        },
+        {
+          "Mistake": "Checking the drawing only with a ruler and skipping the compass equality.",
+          "WhyWrong": "Visual or approximate measurements do not prove the sides congruent.",
+          "Correction": "Use the original equal-radius circle definitions to justify each equality."
+        },
+        {
+          "Mistake": "Producing two equilateral triangles with the same side length and treating this as satisfying the activity's different-sizes condition.",
+          "Correction": "Construct a radius-r central triangle and an alternating-vertex triangle of side sqrt(3)r, or use explicitly distinct positive base lengths; justify both.",
+          "WhyWrong": "Identical side lengths fail the source requirement to compare distinct-sized equilateral constructions."
+        }
+      ],
+      "SummaryPoints": [
+        "A nonzero base segment and two equal-radius circle intersections construct an equilateral triangle.",
+        "An inscribed triangle through alternating vertices of a regular hexagon has three equal sides.",
+        "Source-aligned reasoning is teacher assessed for actual constructions and explanations.",
+        "Use one central and six vertex-centred congruent circles to notice many possible inscribed polygons, record two conjectures, and distinguish what radii alone can prove.",
+        "Construct TWO distinct equilateral triangles of different sizes with teacher-reviewed labels and reasoning; the source's optional paper-net extension is not required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
+      "CultureCode": "en",
+      "Title": "Construction Techniques 3: Perpendicular Lines and Angle Bisectors",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct a perpendicular line through a point on a given line and bisect a non-degenerate angle using only straightedge and compass operations.",
+        "Verbal diagram: points A, C, B occur in that order along a given line ℓ, with AC = CB. Two arcs from A and B with equal radius greater than AB/2 meet at X and Y on opposite sides of ℓ. Line XY passes through C at a right angle.",
+        "An angle bisector is a ray from the vertex that divides an angle into two congruent angles. For 0 < angle ABC < 180 degrees, mark P on ray BA and Q on ray BC with BP = BQ. Draw equal-radius arcs from P and Q that meet at X inside the angle, then draw ray BX. Since BP=BQ, PX=QX, and BX is shared, triangles BPX and BQX are congruent by SSS; the two angles at B are equal.",
+        "Original Edulytiks challenge: construct a perpendicular at marked C and an angle bisector at B; write the allowed tool steps and a justification. Teacher rubric (0–4): valid start and radii; intersection construction; correct rays/lines; sound midpoint or SSS reasoning. A physical tool action is not machine-graded as a number.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 5, CC BY 4.0. All exposition and worked tasks are independently authored.",
+        "First-party 5.1 Two Circles warm-up: with A != B, draw two radius-AB circles centred A and B, label their intersections E,F. WITHOUT giving the perpendicular-bisector answer in advance, ask learners to compare EA with EB and FA with FB, draw line EF and record a conjecture about EF and segment AB. Peers compare at least two justifications from radius membership; distinguish the conjecture stage from later proof.",
+        "First-party 5.2 Make It Right: present a given line l and a MARKED point C lying on it. Have learners discover a perpendicular line through C with only straightedge and compass; encourage reusing symmetric points A and B on l such that AC=BC, then arcs from A and B of common radius greater than AB/2, then line through their two intersections. Do not replace independent construction with merely stating a 90-degree angle.",
+        "First-party 5.3 Bisect This: given angle CBA with nonzero measure below 180 degrees, first ESTIMATE point D near the angle's middle. Next construct equal-distance points P on BA and Q on BC, equal-radius arcs from P and Q intersecting at an interior point X, then ray BX; compare the constructed ray with the estimate D. Partners TAKE TURNS creating different angles and verbally critiquing each other's exact compass opening, arc intersection and proof. Equal-length BP=BQ and PX=QX plus shared BX support triangle congruence; no visual-only claim or machine grade.",
+        "Optional extension only: arbitrary angle trisection using an unmarked compass and straightedge is not assumed possible. The original source mentions a separate paper-folding technique; it is not required to pass the angle-bisector core task and no protected publisher media is reproduced.",
+        "New Edulytiks-authored Cool-down replacement: given line l and point C on it, construct the perpendicular through C, then given a different acute angle construct and label its bisector. Provide one mathematical reason for each, and compare the first estimated bisector location to the final construction. Teacher scores labelled diagrams and explanation rather than scalar angle answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perpendicular line at a point",
+          "Definition": "A line through given point C on line ℓ that meets ℓ at a 90-degree angle.",
+          "Rule": "Choose A and B on ℓ equally distant on opposite sides of C, then bisect AB perpendicularly.",
+          "Example": "If A=(−2,0), C=(0,0), B=(2,0), the constructed line is x=0."
+        },
+        {
+          "Title": "Angle bisector",
+          "Definition": "A ray from a non-degenerate angle's vertex that divides its angle into two congruent angles.",
+          "Rule": "Use equal-distance marks on both sides and equal-radius intersecting arcs inside the angle.",
+          "Example": "An angle of 70 degrees is divided into two angles of 35 degrees."
+        },
+        {
+          "Title": "Congruence evidence",
+          "Definition": "SSS triangle congruence establishes matching angles from three corresponding side equalities.",
+          "Rule": "Identify corresponding vertices and all three equal side pairs before claiming angles congruent.",
+          "Example": "For triangles BPX and BQX: BP=BQ, PX=QX, BX=BX."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Perpendicular through a point on a line",
+          "Question": "Given a line ℓ and a point C on it, construct a perpendicular through C.",
+          "Method": "Create symmetric endpoints around C, then their perpendicular bisector.",
+          "Steps": [
+            "Draw a circle centred at C meeting line ℓ at distinct A and B; AC = BC.",
+            "Use the same compass opening from A and B, greater than AB/2, to produce intersections X and Y.",
+            "Draw line XY using the straightedge.",
+            "Since C is the midpoint of AB and XY is its perpendicular bisector, XY passes through C and is perpendicular to ℓ."
+          ],
+          "Answer": "Line XY is perpendicular to ℓ at C.",
+          "Check": "Choose nonzero initial circle radius and subsequent arc opening greater than AB/2."
+        },
+        {
+          "Title": "Bisect an angle by congruent triangles",
+          "Question": "Construct the bisector of a 70-degree angle ABC without using a protractor.",
+          "Method": "Equal-radius marks on sides, then equal-radius intersecting arcs.",
+          "Steps": [
+            "Mark P on ray BA and Q on ray BC with BP=BQ>0.",
+            "Choose the same arc radius from P and Q large enough for an intersection X inside the angle.",
+            "Draw ray BX.",
+            "BP=BQ, PX=QX, and BX=BX imply triangles BPX and BQX congruent by SSS.",
+            "Thus angle ABX equals XBC, and each is half the original angle."
+          ],
+          "Answer": "Ray BX bisects the 70-degree angle into two 35-degree angles.",
+          "Check": "A point X on the interior angle-bisector side must be selected, not an exterior intersection."
+        },
+        {
+          "Title": "Bisect a straight angle",
+          "Question": "How is a perpendicular through C related to the bisector of a straight angle?",
+          "Method": "Treat the two opposite rays along ℓ as a 180-degree angle.",
+          "Steps": [
+            "Opposite rays CA and CB form a 180-degree angle at C.",
+            "An angle bisector divides 180 degrees into equal 90-degree parts.",
+            "A ray from C forming 90 degrees with each half-line is perpendicular to ℓ.",
+            "Extend the ray in both directions to obtain the perpendicular line."
+          ],
+          "Answer": "The perpendicular at C is the line containing the bisector of the straight angle ACB.",
+          "Check": "The two rays must actually be opposite; otherwise the original angle need not be straight."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming a visually central ray is an angle bisector.",
+          "WhyWrong": "Equal-looking drawn angles are not a geometric proof.",
+          "Correction": "Construct P and Q at equal distances from B and prove the two triangles congruent by SSS."
+        },
+        {
+          "Mistake": "Constructing through a nearby point rather than the specified point C.",
+          "WhyWrong": "Perpendicularity alone does not satisfy the point-through condition.",
+          "Correction": "First create A and B symmetric about C; use the perpendicular bisector of AB."
+        },
+        {
+          "Mistake": "Skipping the initial estimated angle-bisector location D and partner critique in source 5.3, or assigning the answer before student exploration.",
+          "Correction": "Students mark an estimate D, then construct BX using equal-radius arcs and compare; partners describe and critique each step before seeing the explanation.",
+          "WhyWrong": "Removing the pre-construction estimate and collaborative explanation suppresses source learning goals of conjecture and critique."
+        }
+      ],
+      "SummaryPoints": [
+        "Use a symmetric segment to construct a perpendicular at a point on a line.",
+        "Use equal-distance arcs and SSS correspondence to justify an angle bisector.",
+        "The construction outcome and argument are human assessed, not fabricated auto-graded arithmetic.",
+        "Source 5.1 students observe E and F as equal-radius circle intersections and conjecture EF perpendicular to AB; 5.2 uses this to construct through given C.",
+        "Source 5.3 requires an initial estimated point D, a rigorous equal-radius angle bisector and peer turns with verbal reasoning, all teacher-assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
+      "CultureCode": "en",
+      "Title": "Construction Techniques 4: Parallel and Perpendicular Lines",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct a perpendicular line through a point outside a given line, and a parallel line through the same point, by composing earlier constructions.",
+        "Verbal diagram: line m runs horizontally and point C lies strictly above it. Circle c centred at C meets m at distinct points A and B. Equal-radius arcs from A and B intersect at C and at another point D below m. Line CD is perpendicular to m. A new line n through C perpendicular to CD is parallel to m.",
+        "Choose a compass radius greater than the distance from C to m, so the circle through C meets the line at two points; avoid the tangent case. Because CA = CB, C lies on the perpendicular bisector of AB, and the second equal-distance intersection D determines that line. Two distinct lines in one Euclidean plane that are both perpendicular to the same line are parallel.",
+        "Original Edulytiks student activity: construct m-perpendicular and m-parallel lines through C, label the two auxiliary foot points and justify each step. Teacher rubric (0–4): valid two-intersection circle; justified perpendicular bisector; second perpendicular at C; correct Euclidean parallel argument. Construction cannot be certified by a numeric answer alone.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 6, CC BY 4.0. Original publisher diagrams and image assets are not reproduced.",
+        "First-party 6.1 Math Talk: Transformations — show original coordinate-shape PAIRS using a triangle with vertices (0,0),(2,0),(0,1): one copy translated 3 units right, one reflected across the y-axis and one rotated 90 degrees about the origin. Students mentally identify a rigid motion or sequence carrying each original onto its copy, defend why lengths and angles are preserved, and point out when edges of the translated copies lie on parallel lines. Source pairs were image-dependent and are not reused or claimed identical.",
+        "First-party 6.2 Standing on the Shoulders of Giants — mark line m and point C STRICTLY OFF it, list available previous constructions, then ask students to develop a perpendicular through C WITHOUT pre-supplying a full algorithm. A successful strategy draws a circle centred C cutting m in distinct A,B, then constructs the perpendicular bisector of chord AB through C by equal-radius arc intersections. Require radius greater than the shortest distance C-to-m (tangency gives only one point), peer critique and labelled drawing.",
+        "First-party 6.3 Parallel Constructions Challenge — given the SAME line m and off-line point C, construct a line n through C parallel to m using the perpendicular from 6.2 and a second perpendicular to it through C. Explain Euclidean parallelism by the two perpendicular lines-to-one-transversal condition; distinguish the through-C constraint from merely drawing an arbitrary parallel.",
+        "Optional 6.2 exploration: begin with AB of unit length, bisect AB to mark distance 1/2 from A, bisect an available subsegment to mark 1/4 or 3/4, and repeat to produce rational distances k/2^n in [0,1]. These are dyadic fractions only; do NOT claim the method produces every real number. This optional exploration is not required for the mandatory 6.2 construction.",
+        "New first-party restricted-publisher-Cool-down substitute: a point C is not on line m. Use perpendicular/compass constructions to locate the foot F and the point C' on the opposite side of m such that C,F,C' are collinear and FC'=FC. Explain why m is the perpendicular bisector of CC' and why this operation is a reflection in m; use paper labels and teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perpendicular from an exterior point",
+          "Definition": "A line passing through C not on m and intersecting m at 90 degrees.",
+          "Rule": "Take two circle intersections A and B on m with CA=CB; their perpendicular bisector passes through C.",
+          "Example": "For m: y=0 and C=(2,3), the perpendicular is x=2."
+        },
+        {
+          "Title": "Parallel through an exterior point",
+          "Definition": "The line n through C lying in the same plane as m and never meeting m.",
+          "Rule": "First construct a transversal t through C perpendicular to m; then n through C perpendicular to t.",
+          "Example": "For m: y=0 and C=(2,3), the resulting parallel is y=3."
+        },
+        {
+          "Title": "Conditional construction",
+          "Definition": "Allowed compass radius and point conditions ensure actual intersections and nondegenerate lines.",
+          "Rule": "If the circle centred at C is tangent to m, it provides only one intersection; increase the radius.",
+          "Example": "If C is 3 cm from m, radius 4 cm intersects m twice; radius 3 cm is tangent."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Drop a perpendicular from C",
+          "Question": "Given line m and point C not on it, construct a perpendicular line through C.",
+          "Method": "Use a circle centred at C, then the perpendicular bisector of its chord AB.",
+          "Steps": [
+            "Draw a circle centred C with radius greater than the shortest distance from C to m.",
+            "Label the two intersections with line m as A and B; CA=CB by the circle definition.",
+            "With centres A and B and a common opening CA, draw arcs; C is one intersection and D is the other.",
+            "Draw line CD; it is the perpendicular bisector of chord AB and hence perpendicular to m."
+          ],
+          "Answer": "Line CD passes through C and is perpendicular to m.",
+          "Check": "The first circle must cut m at two distinct points; D must differ from C."
+        },
+        {
+          "Title": "Build a parallel line by two perpendiculars",
+          "Question": "Given m: y=0 and C=(2,3), find the parallel through C.",
+          "Method": "Construct one perpendicular to m and then a perpendicular to that line through C.",
+          "Steps": [
+            "The vertical line x=2 passes through C and is perpendicular to the horizontal m.",
+            "Through C, construct a perpendicular to x=2; this has equation y=3.",
+            "Since y=3 and y=0 have the same direction and distinct intercepts, they do not intersect.",
+            "The two-perpendicular construction is valid in the Euclidean plane."
+          ],
+          "Answer": "n: y=3 is the parallel line through C.",
+          "Check": "Substituting C=(2,3) into y=3 succeeds; the lines m and n never meet."
+        },
+        {
+          "Title": "Detect a tangent construction failure",
+          "Question": "C is 3 cm above m. Why is a circle with centre C and radius 3 cm inadequate for step 1?",
+          "Method": "Compare the circle radius with C's shortest distance to the line.",
+          "Steps": [
+            "The distance from C to m is 3 cm.",
+            "A radius-3 circle touches m in exactly one point at the perpendicular foot.",
+            "One point cannot define the auxiliary chord AB with distinct endpoints.",
+            "Increase the radius, for example to 4 cm, so the circle cuts m at two points."
+          ],
+          "Answer": "Radius 3 cm produces only tangency; radius greater than 3 cm is required.",
+          "Check": "The same failure occurs for every radius smaller than 3 cm, which produces no intersections."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taking a tangent circle as though it has two distinct intersections with the line.",
+          "WhyWrong": "Without two distinct A and B points, the auxiliary perpendicular-bisector construction fails.",
+          "Correction": "Choose radius strictly greater than the perpendicular distance from C to the line."
+        },
+        {
+          "Mistake": "Constructing two perpendiculars but placing the second one through the wrong point.",
+          "WhyWrong": "The line may be parallel but will fail the requirement to pass through C.",
+          "Correction": "Draw the second perpendicular to the first line specifically at C, and verify C is on the result."
+        },
+        {
+          "Mistake": "Asserting an off-line perpendicular when the first circle centred at C only touches m, leaving one chord intersection.",
+          "Correction": "Choose opening strictly greater than the shortest distance C to m, label two distinct intersections A,B and construct their bisector.",
+          "WhyWrong": "A tangent circle gives only one contact point, so the auxiliary chord and its perpendicular bisector are not defined as specified."
+        }
+      ],
+      "SummaryPoints": [
+        "An exterior-point perpendicular can be made by bisecting a chord defined by an exterior-centred circle.",
+        "A parallel through C can be constructed by drawing a perpendicular to a perpendicular through C.",
+        "Teacher reviews authentic construction steps, not an unverified machine-graded proxy.",
+        "First recall translations, reflections and rotations as rigid transformations; then adapt perpendicular constructions to a point C not on line m.",
+        "Use the off-line perpendicular and a second through-C perpendicular for the parallel challenge; a mirror-point Cool-down can be teacher scored on paper."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

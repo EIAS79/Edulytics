@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L19",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "TeacherPreparation": "29481c8b1d6d9bfd163da1ee518cee108e0cccde3cbd23cefbae9a093b00fcfe",
+    "TeacherActivities": "2610cc1e4b6f5c0eac12c6819c41b10c1e115e9c26fc7ba2c7ec7004352a7df5",
+    "StudentActivities": "eb902a18e55d2db456a969dab52637ad1ba2dd6c56a95225474fc656ef07d5f8",
+    "StudentPractice": "5ee3d759380010a1f3ea216a896b4a07dba240d5cd4bbbd35dc7ff8e85760c1e"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "7.G.B.5",
+      "HSG-CO.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.C.9"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.9"
+    ]
+  },
+  "SourceActivities": [
+    "19.1 Math Talk supplementary angles",
+    "19.2 adjacent-angle bisectors conjecture and 90 degree proof",
+    "19.3 vertical angles general narrative proof",
+    "Practice 1–8 with earlier spiral review"
+  ],
+  "Task": {
+    "Prompt": "Label original paper intersecting-line diagram and write a complete narrative proof that vertical angles agree, using a 180-degree rotation or linear-pair equations. Independently prove why the bisectors of two adjacent supplementary angles are perpendicular, then refute a false adjacent-angle claim.",
+    "ResponseType": "TEACHER_SCORED_LABELLED_DIAGRAM_AND_NARRATIVE_PROOF",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "labels intersecting lines, vertical and supplementary pairs precisely",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "forms a valid general conjecture and derives the adjacent-bisector 90-degree result",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "presents an uninterrupted narrative half-turn or supplements proof of vertical equality",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "critiques an invalid adjacent-angle claim and explains why empirical measurements are insufficient",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "Intersecting straight lines give angle AOB=70 degrees. Determine opposite and adjacent measures.",
+        "Expected": "Opposite COD=70°, adjacent BOC/DOA=110° by equal supplements.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "Adjacent angle bisectors split α and β, α+β=180°. Find their included angle.",
+        "Expected": "α/2+β/2=90°, always, with bisectors inside adjacent angles.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "Why does a half-turn of D about intersection B land on opposite ray BA but not necessarily at A?",
+        "Expected": "Half-turn reverses the ray with radius BD; coincidence with A requires BD=BA.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "Under rotation of a labelled polygon about D followed by translation DE, why may intermediate labels not be skipped?",
+        "Expected": "The order affects image locations; each rigid stage must be shown and same mapping retained.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Source": 5,
+        "Prompt": "How to align congruent labelled quadrilaterals point-by-point?",
+        "Expected": "Translate a vertex, rotate about its image to align neighbour; reflect if necessary while preserving matches.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Source": 6,
+        "Prompt": "What supports a congruent triangle point correspondence rather than appearance?",
+        "Expected": "Same pairwise distances and explicit translation-rotation-reflection mapping.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Source": 7,
+        "Prompt": "A generic kite has reflection axis AC. What does it imply about the other diagonal BD?",
+        "Expected": "AC perpendicularly bisects BD and reflection exchanges B,D.",
+        "Points": 2
+      },
+      {
+        "Id": "P8",
+        "Source": 8,
+        "Prompt": "Do adjacent angles of 70 and 110 degrees have to be equal?",
+        "Expected": "No. They are supplementary, whereas opposite vertical angles are equal.",
+        "Points": 2
+      }
+    ],
+    "TotalMax": 16
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: prove vertical 70-degree pair congruent by half-turn and 110-degree supplementary relation",
+  "TeacherPaperHandoff": "Student gives labelled geometric diagram and continuous written proof to school teacher. Teacher checks each mathematical inference, scores four 0/1/2 criteria, writes feedback and signs/dates the paper; no automatic grade or online evidence storage claimed.",
+  "Cases": {
+    "CORRECT": "two justified linear-pair equations or half-turn general proof",
+    "EQUIVALENT": "different correct point names, mirrored construction or valid independent narrative theorem",
+    "WRONG": "assert adjacent supplementary angles are necessarily equal",
+    "INSUFFICIENT": "measurement or two-column skeleton without explanatory proof",
+    "MALFORMED": "undefined O, no opposite rays or invalid degenerate linear pair"
+  },
+  "MachineGrade": false,
+  "RuntimeReadiness": "NOT_REGISTERED_NOT_READY_VERIFIED",
+  "StageD": {
+    "Status": "NOT_RUN",
+    "Owner": "Supervisor 2 issue #453",
+    "Required": "exact GEO lesson-to-school teacher assessment assignment and saved grade/feedback; auth and tenant E2E"
+  }
+}

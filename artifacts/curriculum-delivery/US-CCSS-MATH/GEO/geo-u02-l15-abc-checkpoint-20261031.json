@@ -1,0 +1,131 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+  "LessonTitle": "Congruence for Quadrilaterals",
+  "Unit": "U02",
+  "Ordinal": 37,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\15\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\15\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\15\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\15\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "db6bde524957b2e47a4ea518cfdebf29553a6f351d33e20adda6ec7c23b201ec",
+    "TeacherActivities": "f74ce567ef37a7c4c296ee0e57e4e5770e1ebe9a4d28ff2e81331b722399230a",
+    "StudentActivities": "b5212618e2cf80d8893930391ba1c3e0f191ee46ed806ed68e822e526c4dfd35",
+    "StudentPractice": "1f9b97cbb84c235cba117705be35beb8c2308c73e75f53540241581a790858a8"
+  },
+  "StandardRoles": {
+    "Addressing": [
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "OriginalActivities": [
+    "15.1",
+    "15.2",
+    "15.3"
+  ],
+  "OriginalPracticeCount": 7,
+  "SourceCrosswalk": [
+    {
+      "Source": "15.1",
+      "Goal": "MUST MIGHT CANNOT from source parallelogram properties",
+      "FirstPartyMode": "TEACHER_REVIEWED_CLASSIFICATION_AND_REASON"
+    },
+    {
+      "Source": "15.2",
+      "Goal": "Counterexample to four-side shortcut, SAS included angle and fourth-vertex uniqueness",
+      "FirstPartyMode": "PHYSICAL_HINGED_QUADRILATERAL_AND_PAPER_SAS"
+    },
+    {
+      "Source": "15.3",
+      "Goal": "Student-designed new sufficient criterion, counterexamples and peer proof",
+      "FirstPartyMode": "TEACHER_OBSERVED_THEOREM_CONJECTURE"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven source-indexed parallelogram and reflection/rotation tasks",
+      "FirstPartyMode": "SEVEN_ORIGINAL_FIRST_PARTY_PAPER_SKILL_RESPONSES"
+    },
+    {
+      "Source": "15.4 Cool-down",
+      "Goal": "Protected publisher unavailable",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_PAPER"
+    }
+  ],
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_FIRST_PARTY_EDULYTIKS_ORIGINAL",
+  "StageA": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+  "StageB": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+  "StageC": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L15_PARALLELOGRAM_SAS_NOT_SSSS_PAPER_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L15_PARALLELOGRAM_SAS_NOT_SSSS_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+    "Mode": "TEACHER_SELECTED_PHYSICAL_HINGE_AND_PAPER_PROOF",
+    "TaskId": "geo-u02-l15-congruent-parallelograms-sas-fourth-vertex",
+    "TeacherHandoff": "Teacher prepares fasteners/strips and protractor, assesses 15.1 classifications, 15.2 hinged SSSS counterexample, real SAS fourth-vertex rigid motion, 15.3 student proposal, 7 paper practice and first-party Cool-down using four 0-2 criteria. Offline manual scores only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct must/might/cannot parallelogram classification with counterexample to mere possibility",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Physically valid same-four-sides noncongruent rhombus; correct SAS first triangle and fourth-vertex uniqueness under parallels",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Valid new sufficient parallelogram theorem and explicit counterexample why false criterion/general quadrilateral fails",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven original source-indexed paper Practice skills and first-party teacher Cool-down accurately justified",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "P1_HalfTurnUniversal": [
+      "PARALLELOGRAM",
+      "RHOMBUS",
+      "RECTANGLE",
+      "SQUARE"
+    ],
+    "P4_TrueChoice": "B",
+    "Sufficient": [
+      "AB=EF",
+      "BC=FG",
+      "ANGLE_ABC=ANGLE_EFG_INCLUDED"
+    ],
+    "FourthVertex": "UNIQUE_INTERSECTION_TWO_PARALLEL_CONSTRAINTS",
+    "False_SSSS": "SIDE5_SQUARE_VS_SIDE5_RHOMBUS_ANGLE60"
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l15-parallelogram-congruence-paper-20261031.json",
+  "LessonContentCommit": "a70d233078edab16fdac460d1585b7b2e1197e53",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l15-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StaticValidation": "Python JSON parsing + node --check syntax + git diff --check (NO app tests/Stage D)",
+  "OriginalFigures": "NOT_PIXEL_CERTIFIED_IF_SOURCE_IMAGES_LOCKED",
+  "TeacherScorePersistence": "NOT_VERIFIED_STAGE_D_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L16",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT"
+}

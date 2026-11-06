@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+  "Unit": "U02",
+  "Ordinal": 23,
+  "SourceEdition": "Illustrative Mathematics High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\1\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\1\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\1\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\1\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "3411b7607966db3c35c9d8685be42291811af7a28710967b6ad8f11939e5e411",
+    "TeacherActivities": "d24da3d743aef758604ce9da6869fb1ef05596d1f849d4620bbe312ee4f7d12a",
+    "StudentActivities": "d2d6798344ac0bf07e0871e5af576e968e46254f76d402d97de4941bf1ef1fb2",
+    "StudentPractice": "7156a528aed27c186103f89ee354ee995d4e3ab9c77274b46c96ff38cf70c37a"
+  },
+  "SourceComparisonA": [
+    {
+      "Source": "1.1",
+      "Task": "Notice and Wonder: Transformed Rectangles",
+      "FirstParty": "Labelled transformed rectangle and questioning before theorem; no publisher graphic copied"
+    },
+    {
+      "Source": "1.2",
+      "Task": "Triangle congruence via rigid sequence, BC to EF, angle ABC to DEF; prove corresponding-parts theorem",
+      "FirstParty": "Independent labelled mapping, full written transformation and general noncircular proof with peer feedback"
+    },
+    {
+      "Source": "1.3",
+      "Task": "Construct triangle, midpoint of longest side, 180-degree rotation, conjecture and justify quadrilateral",
+      "FirstParty": "Labelled half-turn and parallelogram proof by bisecting diagonals"
+    },
+    {
+      "Source": "Practice 1-6",
+      "Task": "P1-P3 congruent parts, reflection and isosceles; P4-P6 cumulative figures",
+      "FirstParty": "Human-reviewed source-matched reasoning, no exact publisher figure equality"
+    },
+    {
+      "Source": "1.4 original Cool-down",
+      "Task": "Teacher-locked Making Angle Bisectors",
+      "FirstParty": "EDULYTIKS_AUTHORED_ALTERNATIVE, original not verified"
+    }
+  ],
+  "SourceLimitation": "Local first-edition source text and six student practice items reviewed. Publisher visual diagram parity NOT verified; protected 1.4 Cool-down not accessed; first-party independent alternative authored.",
+  "RetainedB": "Three existing accurate worked examples, correct correspondence and midpoint-parallelogram invariant; no changes to U02:L02 or U02:L03.",
+  "RepairedB": "Add 1.1 transformed-rectangle Notice/Wonder, 1.2 noncircular general corresponding parts proof and partner explanation, 1.3 labelled half-turn parallelogram, six practice mappings and independent teacher cooldown, aligned 8-point human rubric.",
+  "StageA": "A_CLOSED_SOURCE_TEXT_AND_FIRST_PARTY_ACTIVITY_EQUIVALENCE_VISUAL_UNVERIFIED",
+  "StageB": "B_CLOSED_SOURCE_ACTIVITY_ORDER_GENERAL_THEOREM_AND_PARALLELOGRAM_PROOF",
+  "StageC": "C_CLOSED_AUTHORING_HUMAN_PAPER_RUBRIC_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U02_L01_CORRESPONDING_PARTS_HUMAN_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L01_CORRESPONDING_PARTS_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedIssue": "#453",
+    "ExactDigitalAssignment": "UNVERIFIED_STAGE_D",
+    "SavedTeacherScore": "UNVERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correctly maps corresponding labelled vertices, sides and angles from the specified rigid transformation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "gives a logically noncircular theorem proof that the same rigid motion maps all corresponding parts and preserves measures",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "shows accurate nondegenerate triangle, side midpoint and image after 180-degree rotation, with matching opposite rays",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "proves the formed quadrilateral is a parallelogram from shared-midpoint diagonals or justified parallel sides, not visual appearance",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l01-authoring-contract.test.cjs",
+  "AuthoredFixtureClasses": [
+    "Correct",
+    "Equivalent",
+    "Wrong",
+    "Boundary",
+    "Malformed"
+  ],
+  "TargetedStaticCheck": {
+    "JSON_PACK_PARSE": "PASS",
+    "JSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_CHECK_SYNTAX_ONLY": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "NODE_TEST_RUN": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "ChangedFiles": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u02-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l01-corresponding-parts-paper-assessment-20261031.json",
+    "tools/curriculum/us-ccss-geo-u02-l01-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l01-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "bf2445be3089caeed26fb6ea912ba14a16da1545",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T00:09:01.679821Z",
+  "ClosedAtUtc": "2026-10-31T00:10:32.895253Z",
+  "ElapsedSeconds": 91.215,
+  "BlockersABC": [],
+  "StageDDependencies": [
+    "issue #453 online exact lesson routing",
+    "authorized teacher grade persistence",
+    "authenticated two-school isolation"
+  ],
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02"
+}

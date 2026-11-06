@@ -1,0 +1,205 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L08",
+  "Ordinal": 90,
+  "UnitCode": "U06",
+  "UnitOrdinal": 8,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "dfc94ff789e4009c6944efbd56e2abf9d9fe168a8ea81a708ef1213c3228fe21",
+    "TeacherActivities": "ae26138d3ce828b9d2122e384eaae1078881465987dc6ca76bcb7708a5e81bbd",
+    "StudentActivities": "006dcf5d539db4d15ba2e998b87a057e48997750503c6dbebea3885a634abdf9",
+    "StudentPractice": "77ed6595bc8ec93d75bed69b758e4429f759320e0bb86390b18aa485e4b3a38d"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Goal": "source F−2,2/directrix x-axis A2,5 B−8,10, distances without Pythagoras",
+      "Mode": "EXACT_SOURCE_PERPENDICULAR_DISTANCE_PAPER"
+    },
+    {
+      "Source": "8.2",
+      "Goal": "source F3,2 y0 derive equation and vertex form with full algebra",
+      "Mode": "FIRST_PARTY_GRAPH_AND_DERIVATION"
+    },
+    {
+      "Source": "8.3",
+      "Goal": "original teacher-card source protected, first-party mathematical graph/equation cards and optional ellipse",
+      "Mode": "HUMAN_PAPER_CARDS_NO_PUBLISHER_LABEL_INVENTION"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 source circle, focus/directrix, parabola width and perfect square question",
+      "Mode": "EXACT_SOURCE_P1_P7_PLUS_TEACHER_P8_ORIGINAL_GRAPHIC"
+    },
+    {
+      "Source": "8.4",
+      "Goal": "publisher restricted One More Equation",
+      "Mode": "FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-SSE.A",
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.2"
+    ],
+    "BuildingTowards": []
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U06_L08_PARABOLA_EQUATION_GRAPH_CARDS_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L08",
+    "TaskId": "geo-u06-l08-focus3-2-to-vertex-and-graph-matching",
+    "GroupId": "GEO_U06_L08_PARABOLA_EQUATION_GRAPH_CARDS_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party printable source F−2,2 distances, focus3,2 y0 detailed equation, four teacher-constructed graph pairs, source Practice P1-P8, optional ellipse reasoning, dated 0–8 human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l08-equation-graph-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes source 8.1 A2,5 distance5 and B−8,10 distance10 from directrix y0, labels equidistance without initial hypotenuse calculation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "derives from equal squared distances original focus3,2 to y=¼(x−3)²+1 and plots vertex3,1 and check point",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "explains source card sort correspondence of focus/directrix and graph/vertex, optional half-distance locus is ellipse not parabola",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves 8 source Practice including P1 circle A, P3 B/E, P4 B/E, source P8 source-image limit and correct units",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source F−2,2 A2,5 and B−8,10 have directrix distances5 and10 so same focus distances",
+      "F3,2 and y0 leads y=(x−3)²/4+1 vertex(3,1)",
+      "P3 correct B and E, P4 correct B and E, P1 circle A",
+      "optional half distance from focus5,3 to y0 gives ellipse centre5,4 semi-axis sqrt3 and2"
+    ],
+    "Equivalent": [
+      "(x−3)²+(y−2)²=y² and y=(x−3)²/4+1 equivalent for all real x,y",
+      "source P2 focus4,1 equation (x−4)²+(y−1)²=y² equals vertex y=.5(x−4)²+.5"
+    ],
+    "Wrong": [
+      "P3 chooses -20 coefficient instead of -1/20",
+      "source8.2 drops +1 vertical vertex shift",
+      "focus−1,-7 with line3 vertex y+2 instead of -2",
+      "optional half-distance locus wrongly called another parabola"
+    ],
+    "Boundary": [
+      "source publisher card graphs unavailable as independent labelled task data; teacher checks matches",
+      "half-distance squared equation has ellipse not parabola; focus must differ from directrix for nondegenerate parabola",
+      "original source P8 2D rotated shape requires diagram for exact volume"
+    ],
+    "Malformed": [
+      "no perpendicular-distance definition for directrix",
+      "inconsistent x-axis/y-axis orientation in graphed vertex",
+      "asserts live Desmos output when only printable paper created"
+    ]
+  },
+  "IndependentMathOracles": {
+    "WarmupSourceF": [
+      -2,
+      2
+    ],
+    "WarmupSourceA": [
+      2,
+      5
+    ],
+    "WarmupSourceB": [
+      -8,
+      10
+    ],
+    "WarmupDistances": [
+      5,
+      10
+    ],
+    "Source8_2Focus": [
+      3,
+      2
+    ],
+    "Source8_2Directrix": "y=0",
+    "Source8_2Equation": "(x−3)^2+(y−2)^2=y^2",
+    "Source8_2VertexForm": "y=(x−3)^2/4+1",
+    "Source8_2Vertex": [
+      3,
+      1
+    ],
+    "OptionalHalfDistanceEllipse": "(x−5)^2/3+(y−4)^2/4=1",
+    "P1Choice": "A",
+    "P3Choices": [
+      "B",
+      "E"
+    ],
+    "P4Choices": [
+      "B",
+      "E"
+    ],
+    "P5Vertex": [
+      5,
+      -1
+    ],
+    "P6Choice": "C",
+    "P7Factors": [
+      "x(x+3)",
+      "(x−7)(x+1)",
+      "(x+2)^2"
+    ],
+    "P8Image": "TEACHER_ORIGINAL_REQUIRED"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l08-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u06-l08-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u06-l08-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u06-l08-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "1ac5d6951dab24d3ae1db314322e3a5a74c32b76",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:50:02.171106Z",
+  "ClosedAtUtc": "2026-10-31T23:50:14.032310Z",
+  "ElapsedSeconds": 11.861,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L09"
+}

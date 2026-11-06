@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L10",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "IM Geometry local archive used as authorized source; AccessIM/v360 excluded",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "6abda24e51c9634f3d7d788f5cf2fa86b324c88ccc99820068bae7745116404a",
+    "TeacherActivities": "d03e111542f6f97828f2f932bdcb3a1ce4d8f996df38dae0c04a95f5753ab1f0",
+    "StudentActivities": "73dcf6089ab3a4582116c945aee3dc9a02c039d90a8751b501ca1656340b30b4",
+    "StudentPractice": "e8d4dd9603d07a382ed620e6d481ae68a4a331945b70a6812c172a8c9b564751"
+  },
+  "SourceStandards": [
+    "HSG-GPE.B.4",
+    "HSG-GPE.B.5"
+  ],
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "10.1",
+      "Goal": "Translating Lines",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "10.2",
+      "Goal": "Priya’s Proof",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "10.3",
+      "Goal": "Prove Your Parallelogram",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Practice",
+      "Goal": "All visible student practice prompts in the local practice HTML were reviewed against lesson skill and representation requirements.",
+      "Mode": "SOURCE_PRACTICE_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Cool-down",
+      "Goal": "Original teacher cool-down is access-restricted; Edulytics uses an independently authored lesson-skill check.",
+      "Mode": "FIRST_PARTY_COOLDOWN"
+    }
+  ],
+  "SourceInventoryCounts": {
+    "TeacherStructuredElements": 117,
+    "StudentStructuredElements": 33,
+    "StudentPracticeStructuredElements": 45
+  },
+  "SourceInventoryFingerprints": {
+    "TeacherElementsSha256": "e0c81ea4c51ce005064c30329816d58b7f01b26e5fd3ec36635da8f502b9e4b5",
+    "StudentElementsSha256": "cd8f56f211b94242354bbf4cef4e2caff06c9949a750f44d12537dce66011232",
+    "PracticeElementsSha256": "8b839f1a329fb5edc5d817e00987207130cf6caf9f74e44162c8bd3fe2d862c1"
+  },
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L10",
+    "TaskId": "geo-u06-l10-source-aligned-review",
+    "GroupId": "GEO_U06_L10_SOURCE_ALIGNED_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correct slope extraction",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "valid parallel-line equation through the required point",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "proof that equal slope plus distinctness gives parallel lines",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "vertical-line special case handled explicitly",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "FirstPartyCooldown": {
+    "Prompt": "A line has equation y=-2/5 x+7. Write an equation of the parallel line through (5,-1) and justify why the two lines are parallel. State the separate rule for two distinct vertical lines.",
+    "Scoring": "Teacher verifies mathematics, representation, and explanation; persistence is Stage D."
+  },
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u06-l07-l12-2021.rich-lesson-v2.json",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldownStatus": "EDULYTICS_AUTHORED_INDEPENDENT_ALTERNATIVE"
+}

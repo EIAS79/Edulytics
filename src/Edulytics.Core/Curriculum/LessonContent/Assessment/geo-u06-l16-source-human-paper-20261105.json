@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "IM Geometry local archive used as authorized source; AccessIM/v360 excluded",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\16\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\16\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\16\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\16\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "787d67cf9570ddf0a87a9888e020247f726fffedc335388a66364fa6338cb5b4",
+    "TeacherActivities": "cf355ba8497c50724d476e8cce4ec57b559ad18baa02eca3ae48d2d78c6dbf73",
+    "StudentActivities": "f5cd64d9e826aac07c7ee5af83e87ba06a5f605aefc633082cf44c63f29517b9",
+    "StudentPractice": "b46423375be7de3c719d69479326eb5f6e9afab284624d8a6e4793f73aa1b29c"
+  },
+  "SourceStandards": [
+    "HSG-CO.C.10",
+    "HSG-GPE.B.4",
+    "HSG-GPE.B.6"
+  ],
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "16.1",
+      "Goal": "Triangle Midpoints",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "16.2",
+      "Goal": "Triangle Medians",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "16.3",
+      "Goal": "Any Triangle’s Medians",
+      "Mode": "SOURCE_ACTIVITY_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Practice",
+      "Goal": "All visible student practice prompts in the local practice HTML were reviewed against lesson skill and representation requirements.",
+      "Mode": "SOURCE_PRACTICE_REVIEWED_LOCAL_HTML"
+    },
+    {
+      "Source": "Cool-down",
+      "Goal": "Original teacher cool-down is access-restricted; Edulytics uses an independently authored lesson-skill check.",
+      "Mode": "FIRST_PARTY_COOLDOWN"
+    }
+  ],
+  "SourceInventoryCounts": {
+    "TeacherStructuredElements": 104,
+    "StudentStructuredElements": 35,
+    "StudentPracticeStructuredElements": 41
+  },
+  "SourceInventoryFingerprints": {
+    "TeacherElementsSha256": "3f4c90fb368ffd5f0f3847ea616b02f1038b265f2827593d8b68dbf42c5fbe04",
+    "StudentElementsSha256": "059137eed9d59aa87a0798dffe25b638473be2795c493eb64caa1a806646be5e",
+    "PracticeElementsSha256": "b8ab9ce30f36c5b380a3fa67d6766036b33ac2eedb5862915de6db4916e46677"
+  },
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+    "TaskId": "geo-u06-l16-source-aligned-review",
+    "GroupId": "GEO_U06_L16_SOURCE_ALIGNED_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correct side midpoint",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "correct 2:1 partition from vertex",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "same coordinate obtained from all medians or equivalent proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "clear concurrency conclusion",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "FirstPartyCooldown": {
+    "Prompt": "For triangle A=(0,0), B=(6,0), C=(0,3), find the centroid and verify that it lies two-thirds of the way from A to the midpoint of BC.",
+    "Scoring": "Teacher verifies mathematics, representation, and explanation; persistence is Stage D."
+  },
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u06-l13-l17-2021.rich-lesson-v2.json",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldownStatus": "EDULYTICS_AUTHORED_INDEPENDENT_ALTERNATIVE"
+}

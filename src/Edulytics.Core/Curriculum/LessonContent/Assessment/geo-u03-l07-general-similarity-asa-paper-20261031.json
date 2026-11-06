@@ -1,0 +1,204 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07",
+  "Status": "C_CLOSED_AUTHORING_GENERAL_ASA_SIMILARITY_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "fbe25b1f5c0650bf2cbe027f9feea884416f8b454159075e98ee7dac13c120c7",
+    "TeacherActivities": "3a09802cb6d7e32adfb70bf63ee0de121fcf5584e29796c42ad9b1d112f27333",
+    "StudentActivities": "e8d42f6539c0d05eeafe9380634952ce128e984b17b6dc4588b63ee33950e731",
+    "StudentPractice": "d2bcf4710fb46e139371a852b6a69930d06508e1ee0b49e43f6544c8d856f315"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.2",
+      "HSG-SRT.B.4"
+    ],
+    "Addressing": [
+      "HSG-SRT.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.3"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "Nested Triangles Notice and Wonder before formal theorem",
+      "Mode": "FIRST_PARTY_NESTED_TRIANGLE_PAPER"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "create ABC and DEF with three ordered angle matches and side ratios; swap and transform",
+      "Mode": "HUMAN_PAIRED_DRAWING"
+    },
+    {
+      "Source": "7.3",
+      "Goal": "secret triangle card information gap and GENERAL dilation-first ASA theorem",
+      "Mode": "FIRST_PARTY_HIDDEN_CARDS_AND_NARRATIVE_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source-indexed similarity, rectangle and prior concepts",
+      "Mode": "TEACHER_DIAGRAM_OR_EXACT"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "original protected Cool-down",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07",
+    "TaskId": "geo-u03-l07-general-similarity-asa-and-hidden-triangle-proof",
+    "GroupId": "GEO_U03_L07_SIMILARITY_GENERAL_ASA_PAPER_PROOF",
+    "Mode": "TEACHER_SELECTED_PAPER_RIGID_DILATION_FORMAL_PROOF",
+    "Evidence": "original paired sketches, hidden-card intermediate states, side ratios, labelled general dilation-first ASA and rigid-first proof",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, issue #605 exclusive leases preserved"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "three correctly ordered corresponding angles and a single positive side ratio",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "complete general dilation-first construction invoking previously established ASA congruence without assuming AA",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "valid alternate rigid-first then dilation method with rays and precise distances",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "peer hidden triangle correspondence, intermediate figures and justified corrections",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "sketch similar polygon",
+        "TeacherExpected": "label valid matching angles and one common side ratio",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "ABC and AED two sequences with AC=6",
+        "TeacherExpected": "figure-dependent exact k, give two valid sequences",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "definition similarity",
+        "TeacherExpected": "sequence of rigid motions and dilations",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "parallelogram P similar options",
+        "TeacherExpected": "teacher examines figure A-E without guessed answer",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "squares ABCD to EFGH",
+        "TeacherExpected": "translate AE rotate around E then k5/2 or 2/5 as verified from diagram",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "triangle ABC vs midpoint DEF perimeter",
+        "TeacherExpected": "perimeter ABC=2 perimeter DEF, number depends on figure",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "quadrilateral diagonal symmetry",
+        "TeacherExpected": "square choice B",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "triangle translations and angles",
+        "TeacherExpected": "source-figure proof angle CAD = angle ACB",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "GeneralTriangleSimilarityTheorem": "three corresponding angle equalities and proportional sides imply similarity via chosen k and ASA congruence of dilated triangle",
+    "CorrectPreviousCongruenceTheorem": "ASA",
+    "DoNotPresuppose": "AA_SIMILARITY",
+    "P7Choice": "B",
+    "P6PerimeterScale": "2",
+    "P5ScaleImageDependent": true
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "dilate first with k=DE/AB, matching side and both included end angles, ASA gives rigid congruence",
+      "source sketch 3-4-5 to 6-8-10 k2 with angle matches proves similarity",
+      "square has diagonal reflection symmetry P7 choice B"
+    ],
+    "Equivalent": [
+      "rigid-first angle alignment then centre-vertex dilation reaches both target endpoints",
+      "different legal rigid sequences produce identical ordered vertex correspondence"
+    ],
+    "Wrong": [
+      "proclaims AA similarity before the source formally proves it later",
+      "assumes same coordinate translation works for every randomly positioned source triangle",
+      "matches one side length ratio but ignores other required proportions"
+    ],
+    "Boundary": [
+      "k=1 gives congruent but still similar triangles",
+      "nondegenerate triangles required, zero side length ratios excluded",
+      "non-similar same-angle quadrilaterals can have differing aspect ratio"
+    ],
+    "Malformed": [
+      "no matched vertex order on triangle",
+      "no chosen positive scale factor",
+      "no proof or missing intermediate image in card exchange"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_7.4_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_GENERAL_ASA_SIMILARITY_ALTERNATIVE",
+  "TeacherHandoff": "Teacher reviews first-party labelled triangles, hidden-card moves, full general ASA reasoning and dated paper rubric; saved app grade not verified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

@@ -1,0 +1,172 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L15",
+  "Ordinal": 52,
+  "UnitCode": "U03",
+  "UnitOrdinal": 15,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\15\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\15\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\15\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\15\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "de1615a1e74ee049af29d9d8f91ceda6871aa518e0748e3089723ed98e11016d",
+    "TeacherActivities": "f1009a5f9777277d541dcf66a12bf91326cb09c06ee482723be794de3059d488",
+    "StudentActivities": "ae852e56fe1f07a34f96284423b87dfa54e74129e096305cbd142f5b68f56c80",
+    "StudentPractice": "e91dbb2ecde3bc978cede1d120e764b705b12ba431398314801358994d793039"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "15.1",
+      "Goal": "four independent justified Which One Doesn't Belong? figure classifications",
+      "Mode": "FIRST_PARTY_DIAGRAM_DIALOGUE_HUMAN"
+    },
+    {
+      "Source": "15.2",
+      "Goal": "two partner information-gap rounds, question specificity, source/target ratios and right-angle tests",
+      "Mode": "TEACHER_SELECTED_ORIGINAL_HIDDEN_CARDS"
+    },
+    {
+      "Source": "15.3",
+      "Goal": "reasonable estimates for similar triangles, source invalid 5,6,7 critique and optional paper fold",
+      "Mode": "TEACHER_PAPER_ESTIMATION_AND_OPTIONAL_ORIGAMI"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original source exact and diagram-dependent missing lengths/rigid-motion questions",
+      "Mode": "EXACT_SOURCE_OR_HUMAN_DIAGRAM_REVIEW"
+    },
+    {
+      "Source": "15.4",
+      "Goal": "publisher protected Calculate and Check",
+      "Mode": "EDULYTIKS_INDEPENDENT_FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "8.G.B.7"
+    ],
+    "Addressing": [
+      "HSG-SRT.B.5"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.8"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L15_INFO_GAP_SIMILAR_RIGHT_TRIANGLES_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L15",
+    "TaskId": "geo-u03-l15-hidden-card-proportions-and-pythagoras",
+    "GroupId": "GEO_U03_L15_INFO_GAP_SIMILAR_RIGHT_TRIANGLES_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Two labelled independent first-party hidden problem/data card transcripts, requested given with reason, correct target triangle scale and both ratio/Pythagoras calculations, labelled approximation critique and teacher-dated 8-point paper rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "follows hidden two-card information-gap roles with necessary questions, controlled data requests and explicit explanation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "correctly fixes ordered triangle correspondence, one k and two equivalent proportion methods, with valid right-angle Pythagoras",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "gives source summary x=3 and y=16/5 and justifies estimation uncertainty, scale and units",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "accurately answers source-indexed exact Practice and explains source diagram-dependent items without fabricated numbers",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source ABC AB4 BC3 AC5 and FGH FH4 GH12/5 gives x3 y16/5 by two independent methods",
+      "P2 right hypotenuse13 and leg5 gives other leg12",
+      "P4 right triples 30-40-50,8-15-17,7-24-25; P6 sqrt(8*2)=4"
+    ],
+    "Equivalent": [
+      "within-triangle GH/FH=BC/AC=3/5 and across triangles GH/BC=FH/AC=4/5 both give GH12/5",
+      "y=3.2 equals 16/5; source JK=3.25 equals 13/4"
+    ],
+    "Wrong": [
+      "data-holder secretly solves missing lengths for the partner rather than releasing asked-for givens",
+      "uses Pythagorean theorem with an acute or unknown right-angle triangle",
+      "makes source estimate 5,6,7 without checking 5/6=5/8 and common scale"
+    ],
+    "Boundary": [
+      "angles 40,50,90 determine shape but any positive absolute length scale",
+      "right triangles require positive sides, hypotenuse longest and strict triangle inequality",
+      "source hidden cards and 15.3 figures are protected or unspecified, so source numerical result must not be manufactured"
+    ],
+    "Malformed": [
+      "no correspondence or reason given for requesting a card datum",
+      "mixed forward k and inverse 1/k inconsistently in one result",
+      "unlabelled similar triangle or unsupported source multiple-choice answer"
+    ]
+  },
+  "IndependentMathOracles": {
+    "P2AC": 12,
+    "P4RightChoices": [
+      "A",
+      "C",
+      "D"
+    ],
+    "P6Altitude": 4,
+    "SourceStudentSummaryX": "3",
+    "SourceStudentSummaryY": "16/5",
+    "SourceSynthesisED": "6",
+    "SourceSynthesisFD": "8",
+    "SourceSynthesisOM": "12",
+    "SourceSynthesisJK": "3.25",
+    "SourceCandidateWrongRatio": "5/6 != 5/8",
+    "RightTriangleHypotenuseMustBeLongest": true,
+    "SourceFoldFraction": "1/3"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l15-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l15-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l15-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l15-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "c9da2be80f22043bf4af9a9e8c1ed46ea2824ef6",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T04:16:07.014122Z",
+  "ClosedAtUtc": "2026-10-31T04:16:22.042221Z",
+  "ElapsedSeconds": 15.028,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L16"
+}

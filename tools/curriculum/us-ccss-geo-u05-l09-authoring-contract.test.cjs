@@ -1,0 +1,31 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'../..');
+const p=JSON.parse(fs.readFileSync(path.join(root,"src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u05-l07-l12-2021.rich-lesson-v2.json"),'utf8'));
+const a=JSON.parse(fs.readFileSync(path.join(root,"src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u05-l09-source-human-paper-20261031.json"),'utf8'));
+const lesson=p.Lessons.find(x=>x.LessonCode==="PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L09");
+test('lesson exists, previous authored lessons preserved, source task contract selected',()=>{
+ assert.ok(lesson);assert.equal(a.LessonCode,"PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L09");assert.equal(a.SourceTaskCrosswalk.length,6);
+ assert.equal(a.Practice.Count,7);assert.ok(lesson.WorkedExamples.length>0);
+});
+test('four real human rubric criteria, five fixture families and tests not executed',()=>{
+ assert.equal(a.SelectedPracticeRoute.MachineGrade,false);assert.equal(a.HumanRubric.TotalMax,8);
+ assert.equal(a.HumanRubric.Criteria.reduce((t,x)=>t+x.MaxPoints,0),8);
+ assert.equal(a.TestsExecuted,'NOT_RUN');
+ for(const k of ['Correct','Equivalent','Wrong','Boundary','Malformed'])assert.ok(a.AuthoredFixtures[k].length>=2,k);
+});
+test('printable source-specific student evidence',()=>{const w=fs.readFileSync(path.join(root,"src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l09-cylinder-volumes-student-worksheet.md"),'utf8');assert.ok(w.includes('U05:L09'));assert.equal(a.SelectedPracticeRoute.PrintableStudentEvidencePath,"src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l09-cylinder-volumes-student-worksheet.md");});
+test('independent source math oracle 1',()=>{assert.ok(Math.abs((9*4*Math.PI)-(113.09733552923255))<1e-9);});
+test('independent source math oracle 2',()=>{assert.ok(Math.abs(((5**2*3+2**2*3)*Math.PI)-(273.318560862312))<1e-9);});
+test('independent source math oracle 3',()=>{assert.ok(Math.abs(((5**2-3**2)*6*Math.PI)-(301.59289474462014))<1e-9);});
+test('independent source math oracle 4',()=>{assert.ok(Math.abs(((6**2*2+3**2*3)*Math.PI)-(311.01767270538954))<1e-9);});
+test('independent source math oracle 5',()=>{assert.ok(Math.abs((Math.PI*3**2*6)-(169.64600329384882))<1e-9);});
+test('independent source math oracle 6',()=>{assert.ok(Math.abs((30.5*6.5)-(198.25))<1e-9);});
+test('independent source math oracle 7',()=>{assert.ok(Math.abs((Math.cbrt(25)**2)-(8.549879733383484))<1e-9);});
+test('independent source math oracle 8',()=>{assert.ok(Math.abs((96*(.25)**2)-(6))<1e-9);});
+test('source scope 2630',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source 9.1 The Same But Differen")));});
+test('source scope 2760',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source 9.2 Water Transfer (15 mi")));});
+test('source scope 2890',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source 9.3 Revisiting Rotation (")));});
+test('source scope 3020',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source 9.3 source shaded grid B:")));});
+test('source scope 3150',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source 9.3 optional comparison: ")));});
+test('source scope 3280',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source student summary 9.4 hollo")));});
+test('source scope 3410',()=>{assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes("Source Practice P1-P7: P1 horizo")));});

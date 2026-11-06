@@ -1,0 +1,220 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L06",
+  "Ordinal": 88,
+  "UnitCode": "U06",
+  "UnitOrdinal": 6,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "cb7d5be3eaa064c171334fa5ae64b8a8a36e1835357e17f54ed49dc5c815063c",
+    "TeacherActivities": "7788d7c32d2d6e63c461583a5ea0bd1bf0bb28a84f392e7df1d9df7f20239905",
+    "StudentActivities": "b48164364da0acbfb967011145522bc5b4fad6860582dfe5a5184f8cfb953b7e",
+    "StudentPractice": "4dcca0911db7044e28d42f4ff17ea1257ff155dab1f66847b6e49a13133c7eff"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "warmup x²+10x,−16x,+40x,+5x perfect-square box constants",
+      "Mode": "EXACT_SOURCE_HALF_COEFFICIENT"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "Elena x²+y²−6x−20y+105 with 9 and100 balancing, centre3,10 r2",
+      "Mode": "SOURCE_STEPWISE_COMPLETING_THE_SQUARE"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "unscaffolded x²+y²−2x+4y−4 graph and optional triangulation",
+      "Mode": "FIRST_PARTY_GRAPH_AND_COORDINATE_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight circle, binomial factoring, scaling and SA/V source tasks",
+      "Mode": "EXACT_SOURCE_HUMAN_PAPER"
+    },
+    {
+      "Source": "6.4",
+      "Goal": "publisher protected One More cooldown",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.1"
+    ],
+    "BuildingTowards": [
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.1"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U06_L06_COMPLETE_SQUARE_CIRCLE_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L06",
+    "TaskId": "geo-u06-l06-elena-circle-and-independent-circle-rubric",
+    "GroupId": "GEO_U06_L06_COMPLETE_SQUARE_CIRCLE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original four square-box expressions, Elena equality steps and independent circle graph, optional solved triangulation, source 8 Practice and 4x2 teacher rubric on printable selected worksheet.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l06-complete-square-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "derives source four missing perfect-square constants including 25/4 using half-coefficient squared",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "continues Elena source steps x−3/y−10 squares, RHS4, centre3,10 radius2 with balanced both-sides proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "derives and draws source unscaffolded circle centre1,-2 r3, optional triangulation point6,8 with checks",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "completes original P1-P8 including source matching A1 B4 C3 D2, P4 A B D E, and circle P6 inside/outside/on",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source Elena adds9+100 to BOTH sides, factors centre3,10 radius2",
+      "source Your Turn centre1,-2 radius3",
+      "source warmup x²+5x needs25/4=6.25, not25",
+      "P2 map A1 B4 C3 D2, P4 choices A B D E, P6 classifications inside outside on"
+    ],
+    "Equivalent": [
+      "x²+y²−6x−20y+105=0 and(x−3)²+(y−10)²=4 same circle",
+      "P5 expanded equation with constant65 equals original standard circle equation",
+      "sqrt19 and approx4.359 both radius estimates, exact preferred"
+    ],
+    "Wrong": [
+      "Elena adds9 and100 only left side leaving RHS−105",
+      "source Your Turn centre(-1,2) instead of(1,-2)",
+      "P4 y²−10y+5 called square because5 is positive",
+      "P8 sphere radius3 SA/V3 instead of1"
+    ],
+    "Boundary": [
+      "completed radius squared zero single point, negative no real circle",
+      "nonuniform scaling cannot preserve ratios in general unless special degenerate triangle",
+      "triangulation exact solution6,8 checks all three distances; missing any centre not sufficient",
+      "publisher cooldown not available and no runtime grade"
+    ],
+    "Malformed": [
+      "missing intermediate balanced equalities",
+      "linear coefficient/2 mistakenly written without squaring for constant",
+      "radius reported as signed negative square root",
+      "units area per volume stated as length not inverse length"
+    ]
+  },
+  "IndependentMathOracles": {
+    "WarmupConstants": [
+      25,
+      64,
+      400,
+      6.25
+    ],
+    "ElenaCompleted": "(x-3)^2+(y-10)^2=4",
+    "ElenaCentre": [
+      3,
+      10
+    ],
+    "ElenaRadius": 2,
+    "IndependentCompleted": "(x-1)^2+(y+2)^2=9",
+    "IndependentCentre": [
+      1,
+      -2
+    ],
+    "IndependentRadius": 3,
+    "TriangulationPoint": [
+      6,
+      8
+    ],
+    "SynthesisCircle1Centre": [
+      0,
+      12
+    ],
+    "SynthesisCircle1R": 1,
+    "SynthesisCircle2Centre": [
+      -35,
+      50
+    ],
+    "SynthesisCircle2R": "sqrt19",
+    "P2Map": [
+      1,
+      4,
+      3,
+      2
+    ],
+    "P3Centre": [
+      -2,
+      5
+    ],
+    "P3R": 3,
+    "P4Choices": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "P5Expanded": "x²+y²+6x−18y+65=0",
+    "P6SqDists": [
+      13,
+      29,
+      16
+    ],
+    "P7Choice": "C",
+    "P8CubeRatio": 2,
+    "P8SphereRatio": 1
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u06-l06-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u06-l06-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u06-l06-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "8f812b64acc4fb09fe42e11c091111158b5916e4",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T23:44:35.313244Z",
+  "ClosedAtUtc": "2026-10-31T23:45:24.750120Z",
+  "ElapsedSeconds": 49.437,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07"
+}

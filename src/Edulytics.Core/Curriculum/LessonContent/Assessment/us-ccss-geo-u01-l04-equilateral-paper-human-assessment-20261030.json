@@ -1,0 +1,423 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "Geometry",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+  "Version": "2026-10-30-course-ABC",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "Original Edulytiks first-party text; source CC BY 4.0, no publisher images/logos copied",
+  "SourceLocalPaths": {
+    "TeacherPreparation": "10_HS_Geometry/1/4/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/4/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/4/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/4/practice.html"
+  },
+  "SourceLocalSha256": {
+    "TeacherPreparation": "7534f265cd53e76e6a7319d5f75f8ac5757e984d2c020a1fe06c709045259d3a",
+    "TeacherActivities": "4211b6706a8d5589d63674c1ae2b7a839e50f3509ec085f450e6a09107372b0d",
+    "StudentActivities": "62f119442f9725191b404f9c34dfb96f57760f565422578ae368edabd8342bb2",
+    "StudentPractice": "287e478a30a1443127fe129952bd980e67cf9b94d1ad5b8f98e5c230d8cdf54a"
+  },
+  "SourceActivities": [
+    "4.1 Notice and Wonder: Circles Circles Circles",
+    "4.2 What Polygons Can You Find?",
+    "4.3 Spot the Equilaterals",
+    "Optional 4.3 extension: polygon net (original publisher figure NOT used)"
+  ],
+  "Standards": {
+    "BuildingOn": [
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.3",
+      "HSG-CO.C",
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "CoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+  "Modality": "PAPER_COMPASS_STRAIGHTEDGE_TWO_TRIANGLES_TEACHER_SCORE",
+  "SourceFigures": "ORIGINAL_PUBLISHER_FIGURES_NOT_IMPORTED; VERBAL_ACCESSIBLE_FIGURES_AND_STUDENT_PAPER_DRAWING",
+  "MachineScoringAllowed": false,
+  "OnlineLessonRegistration": "NOT_IMPLEMENTED",
+  "TeacherGradePersistence": "NOT_RUN_STAGE_D",
+  "Tasks": [
+    {
+      "Id": "POLYGON-NOTICE-8",
+      "Prompt": "Construct one circle centred O and six equal-radius circles centred at consecutive vertices of its inscribed regular hexagon. Record two observations/questions. Draw two distinct polygons whose vertices are circle intersections; shade them with two colours/hatchings and write two falsifiable conjectures. Mark any claim not justified by equal-radius evidence.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "N1",
+            "Criterion": "Seven-circle radius construction or correct labelled given model",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N2",
+            "Criterion": "Two distinct polygons built from actual intersections and differentiated by shading/hatching",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N3",
+            "Criterion": "Two meaningful geometric conjectures after notice/wonder",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N4",
+            "Criterion": "Evidence-based radius argument and explicit identification of at least one unproven visual claim",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Any distinct valid polygons, marked conjectures with coherent reasons; no fixed publisher artwork necessary",
+      "Reject": "Two copies of the same polygon, unlabelled conjectures or asserting unsupported equal lengths"
+    },
+    {
+      "Id": "EQUILATERAL-TWO-SIZES-8",
+      "Prompt": "Construct two equilateral triangles of different sizes using a regular hexagon and its centre, for example OAB and ACE. Label O,A..F, each chord and circle radius. Explain why OAB has side r and ACE has side sqrt(3)r, and why both are equilateral.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "T1",
+            "Criterion": "Nonzero centre/radius and valid regular hexagon with six consecutive vertices",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T2",
+            "Criterion": "Two actual equilateral triangles of distinct sizes, correctly labelled",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T3",
+            "Criterion": "Circle membership, equal chords / 60/120-degree central-angle justification",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T4",
+            "Criterion": "Mathematically correct comparison of side lengths and preservation of permitted tool moves",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Any two nondegenerate different-sized equilateral triangles with valid source-aligned construction; alternate rotations/reflections valid",
+      "Reject": "Two same-size triangles, purely visual equality claim or only numeric answers"
+    },
+    {
+      "Id": "EDULYTIKS-AUTHORED-COOLDOWN-8",
+      "Prompt": "Given a circle of positive radius r, construct a regular hexagon, the alternating-vertex triangle ACE and central triangle OAB. Justify each triangle's three equal sides and explain why ACE is larger.",
+      "Expected": "OAB has all sides r; ACE has equal central spans 120 degrees and chord length sqrt(3)r, greater than r for r>0.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Correct labelled regular-hexagon compass construction",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Correct distinct triangles OAB and ACE",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Radius and equal-chord justification for both equilateral triangles",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Correct size comparison with no false publisher source claim",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      }
+    }
+  ],
+  "SourcePracticeAnalogues": {
+    "Purpose": "Original source practice 1-9 covers equilateral constructions and earlier-lesson spiral review; first-party independent figures; teacher-scored paper/written",
+    "TotalMax": 18,
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "The two circles centred A and B each have radius AB and intersect at C. Explain why triangle ABC is equilateral.",
+        "Expected": "AC=AB from A circle, BC=AB from B circle, so all three equal.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "In a regular hexagon A..F inscribed in radius-r circle centred O, name at least eight mathematically guaranteed equilateral triangles using O and hexagon vertices.",
+        "Expected": "Six central adjacent-vertex triangles OAB,OBC,OCD,ODE,OEF,OFA and the two alternating triangles ACE,BDF. Do not claim these are all possible triangles without further review.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "Two radius-r circles centred A and B, with AB=r, intersect at C and D. Which must be true: AC=BC, AC=BD, CD=AB, or A-C-B-D is necessarily a square?",
+        "Expected": "AC=BC and AC=BD are guaranteed (each r), while CD=sqrt(3)r need not equal AB=r; the rhombus A-C-B-D is not a square.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "Line CD is perpendicular to AB at AB's midpoint M. Does AB automatically bisect CD? Explain.",
+        "Expected": "Not necessarily: CD need not have M as its midpoint, although it is perpendicular to AB.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Source": 5,
+        "Prompt": "Given two points A and B only, can an unmarked straightedge alone construct the equidistant locus? Could a compass alone locate two equidistant points? Explain.",
+        "Expected": "An unmarked straightedge alone cannot determine the midpoint/locus from two isolated marked points; a compass opened to r>AB/2 and centred at A and B locates the two intersection points X,Y, each equidistant.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Source": 6,
+        "Prompt": "Take A=(−4,0), B=(4,0), M=(0,0), E=(−1,2), and perpendicular bisector x=0. Determine AM vs BM, whether E is closer to A or B, and whether EM must equal EA.",
+        "Expected": "AM=BM=4; EA²=13, EB²=29 and EM²=5. Thus E is closer to A and EM is not equal to EA.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Source": 7,
+        "Prompt": "If a circle centred P passes through Q and R, must PQ=PR? Explain.",
+        "Expected": "Yes; both are radii of the same circle.",
+        "Points": 2
+      },
+      {
+        "Id": "P8",
+        "Source": 8,
+        "Prompt": "Give ordered moves from distinct A,B to construct the rhombus A-C-B-D from two congruent circles and their intersections.",
+        "Expected": "Draw circles with centres A,B, common radius AB, label intersections C,D on opposite sides of AB, connect AC,CB,BD,DA.",
+        "Points": 2
+      },
+      {
+        "Id": "P9",
+        "Source": 9,
+        "Prompt": "Circle centre A radius AB contains points B and C. A different circle centred B also has radius AB and contains D. Which guaranteed distances equal AB?",
+        "Expected": "AB=AC=BD by appropriate circle membership; no unsupported chord equality follows.",
+        "Points": 2
+      }
+    ]
+  },
+  "SharedCDependency": {
+    "Owner": "Supervisor 2",
+    "Issue": 453,
+    "Required": "exact GEO lesson-to-tenant student/teacher assignment, paper evidence custody and human rubric scoring record; no shared engine edit from course branch",
+    "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04"
+  },
+  "Checks": {
+    "Structural": "COURSE_JSON_ASSERTIONS",
+    "Math": "64 PASS / 0 FAIL independent Node for r=1,3,5,12 of hexagon and alternating triangles",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "StageD": "NOT_RUN"
+  },
+  "AuthoringStageC": {
+    "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "Modality": "Paper seven-circle diagram, two distinct shaded polygons and conjectures, two equilateral triangles of different sizes; human teacher assessment",
+    "SourceMap": [
+      {
+        "Source": "4.1 Notice and Wonder: Circles Circles Circles",
+        "RequiredSkill": "notice/wonder before proof",
+        "TeacherTasks": [
+          "POLYGON-NOTICE-8",
+          "EQUILATERAL-TWO-SIZES-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ]
+      },
+      {
+        "Source": "4.2 What Polygons Can You Find?",
+        "RequiredSkill": "two distinct shaded polygons and two conjectures",
+        "TeacherTasks": [
+          "POLYGON-NOTICE-8",
+          "EQUILATERAL-TWO-SIZES-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ]
+      },
+      {
+        "Source": "4.3 Spot the Equilaterals",
+        "RequiredSkill": "two different-size actual equilateral constructions",
+        "TeacherTasks": [
+          "POLYGON-NOTICE-8",
+          "EQUILATERAL-TWO-SIZES-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ]
+      },
+      {
+        "Source": "Optional 4.3 extension: polygon net (original publisher figure NOT used)",
+        "RequiredSkill": "optional extension not scored",
+        "TeacherTasks": [
+          "POLYGON-NOTICE-8",
+          "EQUILATERAL-TWO-SIZES-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ]
+      }
+    ],
+    "Practice": [
+      {
+        "Id": "P1",
+        "Expected": "AC=AB from A circle, BC=AB from B circle, so all three equal.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P2",
+        "Expected": "Six central adjacent-vertex triangles OAB,OBC,OCD,ODE,OEF,OFA and the two alternating triangles ACE,BDF. Do not claim these are all possible triangles without further review.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P3",
+        "Expected": "AC=BC and AC=BD are guaranteed (each r), while CD=sqrt(3)r need not equal AB=r; the rhombus A-C-B-D is not a square.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P4",
+        "Expected": "Not necessarily: CD need not have M as its midpoint, although it is perpendicular to AB.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P5",
+        "Expected": "An unmarked straightedge alone cannot determine the midpoint/locus from two isolated marked points; a compass opened to r>AB/2 and centred at A and B locates the two intersection points X,Y, each equidistant.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P6",
+        "Expected": "AM=BM=4; EA²=13, EB²=29 and EM²=5. Thus E is closer to A and EM is not equal to EA.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P7",
+        "Expected": "Yes; both are radii of the same circle.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P8",
+        "Expected": "Draw circles with centres A,B, common radius AB, label intersections C,D on opposite sides of AB, connect AC,CB,BD,DA.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      },
+      {
+        "Id": "P9",
+        "Expected": "AB=AC=BD by appropriate circle membership; no unsupported chord equality follows.",
+        "MaxPoints": 2,
+        "HumanMarked": true
+      }
+    ],
+    "TeacherRubrics": [
+      {
+        "Id": "POLYGON-NOTICE-8",
+        "Prompt": "Construct one circle centred O and six equal-radius circles centred at consecutive vertices of its inscribed regular hexagon. Record two observations/questions. Draw two distinct polygons whose vertices are circle intersections; shade them with two colours/hatchings and write two falsifiable conjectures. Mark any claim not justified by equal-radius evidence.",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "N1",
+            "Criterion": "Seven-circle radius construction or correct labelled given model",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N2",
+            "Criterion": "Two distinct polygons built from actual intersections and differentiated by shading/hatching",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N3",
+            "Criterion": "Two meaningful geometric conjectures after notice/wonder",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "N4",
+            "Criterion": "Evidence-based radius argument and explicit identification of at least one unproven visual claim",
+            "MaxPoints": 2
+          }
+        ]
+      },
+      {
+        "Id": "EQUILATERAL-TWO-SIZES-8",
+        "Prompt": "Construct two equilateral triangles of different sizes using a regular hexagon and its centre, for example OAB and ACE. Label O,A..F, each chord and circle radius. Explain why OAB has side r and ACE has side sqrt(3)r, and why both are equilateral.",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "T1",
+            "Criterion": "Nonzero centre/radius and valid regular hexagon with six consecutive vertices",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T2",
+            "Criterion": "Two actual equilateral triangles of distinct sizes, correctly labelled",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T3",
+            "Criterion": "Circle membership, equal chords / 60/120-degree central-angle justification",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "T4",
+            "Criterion": "Mathematically correct comparison of side lengths and preservation of permitted tool moves",
+            "MaxPoints": 2
+          }
+        ]
+      },
+      {
+        "Id": "EDULYTIKS-AUTHORED-COOLDOWN-8",
+        "Prompt": "Given a circle of positive radius r, construct a regular hexagon, the alternating-vertex triangle ACE and central triangle OAB. Justify each triangle's three equal sides and explain why ACE is larger.",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Correct labelled regular-hexagon compass construction",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Correct distinct triangles OAB and ACE",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Radius and equal-chord justification for both equilateral triangles",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Correct size comparison with no false publisher source claim",
+            "MaxPoints": 2
+          }
+        ]
+      }
+    ],
+    "PaperHandoff": "Student gives original labelled paper circles, polygons, hexagon and distinct triangles with written reasoning to teacher, who examines physical evidence, marks criteria 0/1/2, writes feedback and acknowledges by signature/date on school paper record.",
+    "Cases": {
+      "correct": "7 congruent circles, two different polygons, justified radius-based equalities and two valid equilateral sizes",
+      "equivalent": "rotated/reflected diagrams, different nonzero r and any alternative mathematically justified construction",
+      "wrong": "two same-size triangles accepted as different, or arbitrary unequal circle chords claimed equal",
+      "insufficient": "only drawing looks equal, missing labelled diagrams/conjectures",
+      "malformed": "zero-radius circle, nonconsecutive or repeated hexagon vertices"
+    },
+    "NoNumericExamScoring": true,
+    "PracticeResolverReadyVerified": false,
+    "StageD": {
+      "Status": "NOT_RUN",
+      "Owner": "Supervisor 2 #453",
+      "Scope": "authenticated course/pathway lesson assignment, school/teacher paper score custody/persistence and two-school tests"
+    }
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l16-l18-original-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L16",
+      "CultureCode": "en",
+      "Title": "More Symmetry",
+      "ExplanationParagraphs": [
+        "Learning goal: Determine and justify every nonidentity rotation that maps a given figure onto itself, including its centre, directed angle and rotational order.",
+        "Verbal diagram: a regular pentagon centred at O has five vertices at equal 72-degree sectors; a rectangle centred at O has two pairs of opposite equal edges but unequal side lengths.",
+        "Student task: compare a regular polygon, non-square rectangle and non-equilateral isosceles triangle; list rotation angles and provide a counterexample. Teacher rubric (0–4): correct centre, permitted nonidentity angle, full-figure mapping, and sound justification. The original student-created poster and oral comparisons are human scored.",
+        "Independent Edulytiks teaching aligned with Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Original publisher artwork and restricted assessment materials are not reused.",
+        "16.1 source equivalent Which One Doesn't Belong: discuss original non-square rectangle, square, three-blade motif and isosceles triangle. Justify competing symmetry criteria, rather than identify unverified publisher pictures.",
+        "16.2 source equivalent Self Rotation: groups define a regular polygon, non-square rectangle or asymmetric triangle; mark ALL nonidentity rotations with centre, angle and direction, plus one invalid rotation. Square: 90,180,270 degrees; regular pentagon: 72,144,216,288; non-square rectangle: 180; non-equilateral isosceles triangle: none. Never count 0 or 360.",
+        "16.3 source equivalent Parallelogram Symmetry: parallelogram A(0,0),B(4,0),C(5,2),D(1,2) has centre M=(2.5,1). Half-turn about M exchanges A↔C, B↔D and fixes the figure set; a generic oblique parallelogram has no reflection axis. Optional infinite frieze patterns can have nonzero translational symmetry; finite bounded polygons cannot."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rotation symmetry",
+          "Definition": "A nonidentity rotation about a point that takes the entire figure back onto itself.",
+          "Rule": "Check a common centre and full-figure vertex correspondence; rotations by a full 360-degree turn alone do not count.",
+          "Example": "A non-square rectangle has 180-degree rotational symmetry, but not 90-degree rotational symmetry."
+        },
+        {
+          "Title": "Order of rotational symmetry",
+          "Definition": "Number of distinct rotations through a full turn that map a shape to itself, including identity when counting order.",
+          "Rule": "For a regular n-gon, the smallest positive such turn is 360/n degrees.",
+          "Example": "A regular pentagon has order 5 with steps of 72 degrees."
+        },
+        {
+          "Title": "Rotation versus reflection",
+          "Definition": "A rotation preserves the orientation of labelled vertices; a reflection reverses it.",
+          "Rule": "Distinguish a turn about a centre from a mirror across a line.",
+          "Example": "A non-equilateral isosceles triangle has a reflection axis but no nontrivial rotation symmetry."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Regular pentagon",
+          "Question": "Give all nonidentity rotational symmetries of a regular pentagon about its centre.",
+          "Method": "Divide one complete revolution into five equal central sectors.",
+          "Steps": [
+            "A regular pentagon has five equally spaced vertices around its centre.",
+            "The smallest turn taking each vertex to its next is 360/5=72 degrees.",
+            "Successive turns 72,144,216,288 degrees permute all vertices without changing the polygon.",
+            "The 360-degree turn is identity, not a nontrivial rotational symmetry."
+          ],
+          "Answer": "72, 144, 216 and 288 degrees about the centre (modulo 360).",
+          "Check": "Each allowed turn maps the set of all vertices onto itself."
+        },
+        {
+          "Title": "Rectangle but not square",
+          "Question": "Which turns of a 6-by-2 rectangle about its centre are symmetries?",
+          "Method": "Test the positions and orientations of unequal sides.",
+          "Steps": [
+            "A 180-degree turn swaps opposite corners and preserves all four sides.",
+            "A 90-degree turn sends a horizontal length-6 side to a vertical direction where the rectangle has length 2.",
+            "Thus quarter-turns do not map the rectangle to itself.",
+            "A full 360-degree rotation is identity, leaving 180 degrees as the nontrivial turn."
+          ],
+          "Answer": "Exactly 180 degrees modulo 360 is nontrivial.",
+          "Check": "The 90-degree turn would become valid if the rectangle were a square."
+        },
+        {
+          "Title": "A figure with reflection but not rotation symmetry",
+          "Question": "Does triangle A=(-2,0),B=(2,0),C=(0,3) have a nonidentity rotational symmetry?",
+          "Method": "Use the uniqueness of an unmatched apex and the side-length pattern.",
+          "Steps": [
+            "The equal sides AC and BC meet at unique apex C, while side AB has a different length.",
+            "Any symmetry of the triangle must map the unique apex C to itself.",
+            "A nonidentity rotation in the plane fixes only its centre, so its centre would have to be C.",
+            "Such a rotation cannot exchange A and B while retaining the other lengths and preserve the entire triangle; the triangle is not equilateral."
+          ],
+          "Answer": "No nonidentity rotation maps this triangle to itself.",
+          "Check": "Reflecting across x=0 does map it to itself, so reflection symmetry and rotation symmetry differ."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting a full 360-degree turn as evidence of nontrivial rotational symmetry.",
+          "WhyWrong": "Every figure maps to itself under identity, so this does not distinguish symmetric shapes.",
+          "Correction": "Find a strictly positive turn less than 360 degrees that preserves the entire figure."
+        },
+        {
+          "Mistake": "Assuming one symmetric-looking vertex is enough.",
+          "WhyWrong": "The whole set of vertices and edges must coincide with the original.",
+          "Correction": "Verify the image of every defining vertex under the same centre and angle."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Determine and justify every nonidentity rotation that maps a given figure onto itself, including its centre, directed angle and rotational order.",
+        "Mathematical hypotheses and vertex/figure correspondence must be checked before a symmetry or congruence claim.",
+        "Teacher-scored evidence is required for constructed diagrams, argument critique and original written explanations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L17",
+      "CultureCode": "en",
+      "Title": "Working with Rigid Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Give a systematic point-by-point sequence of rigid motions that aligns corresponding vertices of congruent figures and explain why each step preserves already matched points.",
+        "Verbal diagram: imagine two congruent, labelled triangles. A translation places the first named vertex on its target; rotation about that target aligns the second; optional reflection in their connecting line aligns the third when orientation is reversed.",
+        "Student task: give a word-only alignment procedure and analyse one invalid correspondence. Teacher rubric (0–4): true matching lengths, preserved previously matched vertices, precise motion order and reasoned third-vertex result; source card sorting and oral explanation are human scored.",
+        "Independent Edulytiks teaching aligned with Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Original publisher artwork and restricted assessment materials are not reused.",
+        "Source 17.1 Math Talk From Here to There: given a segment AB with perpendicular bisector CD, mentally identify a reflection across CD that swaps A and B, or a half-turn about AB midpoint, and a half-turn about CD midpoint that exchanges C and D. Students justify the named centres/mirrors and note that C and D need not be symmetric about AB unless separately specified.",
+        "Source 17.2 Card Sort: teacher gives FOUR separate original paper cards: a translation of a triangle, a mirror reflection, a rotation with named centre and a two-step composition. Students first sort by number of motions, then re-sort by orientation preserved/reversed, explaining both systems, and label an exact pointwise sequence for every rigid pair. The optional investigation may compare a genuine glide reflection with a single reflection/rotation/translation without claiming every composition reduces to one motion.",
+        "Source 17.3 Reflecting on Reflection: to find an exact mirror line taking P to P' for distinct corresponding points, construct the perpendicular bisector PP'. Check that every other corresponding vertex pair shares that SAME line. A proposed guessed line or a perpendicular bisector of the wrong correspondence is not proof.",
+        "First-party complete pointwise alignment: A(0,0), B(2,0), C(0,1) map to D(5,3), E(5,5), F(4,3). Translate by A→D=(5,3), then rotate 90 degrees CCW about D. A' stays D, B' reaches E and C' reaches F; the first pair stays fixed while matching the second. If the third vertex is on the opposite side of matched line DE, reflect in DE without changing D or E."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Point-by-point alignment",
+          "Definition": "A method using translation, rotation and optionally reflection to map named corresponding vertices to their target positions.",
+          "Rule": "First map A onto D by translation, then rotate about D to align B with E, then reflect across line DE only if the third vertex is opposite the target side.",
+          "Example": "Congruent triangles ABC and DEF with valid correspondences can be aligned through at most three such rigid motions."
+        },
+        {
+          "Title": "Fixed-point-preserving step",
+          "Definition": "A rotation about D fixes D; reflection about line DE fixes both D and E.",
+          "Rule": "Choose later motions that preserve previously aligned points.",
+          "Example": "After A reaches D and B reaches E, a reflection in DE can interchange the two sides without moving D or E."
+        },
+        {
+          "Title": "Congruence hypotheses",
+          "Definition": "A valid correspondence is constrained by equality of matching side lengths/angle measures.",
+          "Rule": "Verify AB=DE, AC=DF, BC=EF before asserting the third vertex must match.",
+          "Example": "A proposed matching that swaps unequal sides cannot be achieved by rigid motions."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Align congruent triangles",
+          "Question": "Triangle ABC has A=(0,0), B=(2,0), C=(0,1). Target DEF has D=(3,2), E=(3,4), F=(2,2). Give a rigid sequence.",
+          "Method": "Translate A to D; rotate about D counterclockwise by 90 degrees.",
+          "Steps": [
+            "Translate by (3,2): A→D=(3,2), B→(5,2), C→(3,3).",
+            "Rotate the translated image 90 degrees counterclockwise about D.",
+            "Vector DB=(2,0) rotates to (0,2), so B→E=(3,4).",
+            "Vector DC=(0,1) rotates to (-1,0), so C→F=(2,2).",
+            "All corresponding vertices now coincide; no reflection is required."
+          ],
+          "Answer": "Translate by (3,2), then rotate 90 degrees counterclockwise about D.",
+          "Check": "Distances AB=DE=2, AC=DF=1 and BC=EF=√5 agree."
+        },
+        {
+          "Title": "Align mirror-image triangles",
+          "Question": "A=(0,0),B=(2,0),C=(0,1); D=(3,2),E=(5,2),F=(3,1). Which rigid motions suffice?",
+          "Method": "Translate and then reflect across the target base line.",
+          "Steps": [
+            "Translate by (3,2) so A→D, B→E and C→(3,3).",
+            "Line DE is horizontal y=2; reflection across y=2 fixes D and E.",
+            "Reflect (3,3) across y=2 to (3,1)=F.",
+            "All named vertices match and the final figure is congruent."
+          ],
+          "Answer": "Translate by (3,2), then reflect across line DE (y=2).",
+          "Check": "A bare translation is insufficient for the third vertex because its orientation is reversed."
+        },
+        {
+          "Title": "Reject a false correspondence",
+          "Question": "Can a rigid motion map A=(0,0),B=(2,0) to D=(0,0),E=(3,0) with A→D and B→E?",
+          "Method": "Check corresponding distances first.",
+          "Steps": [
+            "Measure AB=2.",
+            "Measure DE=3.",
+            "Every rigid motion preserves the distance between its two mapped points.",
+            "Since AB≠DE, no rigid motion can satisfy both A→D and B→E."
+          ],
+          "Answer": "No, the assigned point correspondence is impossible.",
+          "Check": "A drawing that visually looks similar does not override the distance-preservation invariant."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Aligning the second vertex by a new translation that displaces the first matched vertex.",
+          "WhyWrong": "The first correspondence is lost.",
+          "Correction": "After placing A at D, rotate about D so D remains fixed."
+        },
+        {
+          "Mistake": "Reflecting across a line not through the two already aligned vertices.",
+          "WhyWrong": "Reflection may disrupt the two fixed correspondences.",
+          "Correction": "Use line DE itself for an optional final reflection."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Give a systematic point-by-point sequence of rigid motions that aligns corresponding vertices of congruent figures and explain why each step preserves already matched points.",
+        "Mathematical hypotheses and vertex/figure correspondence must be checked before a symmetry or congruence claim.",
+        "Teacher-scored evidence is required for constructed diagrams, argument critique and original written explanations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L18",
+      "CultureCode": "en",
+      "Title": "Practicing Point by Point Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Describe, draw and check a sequence of rigid motions that maps an entire figure to a target while avoiding specified obstacles throughout the continuous motion.",
+        "Optional source lesson, intended to provide further transformation practice after U01:L17. Unlike an endpoint-matching problem, an obstacle course adds time-dependent constraints and boundaries.",
+        "Student task: draw a movable triangle on a map of obstacles, submit every intermediate image and a path-clearance argument. Teacher rubric (0–4): correct motions, endpoint correspondence, continuous collision verification, clear readable diagrams; don't auto-grade a coordinate pair as proof of a safe entire-figure route.",
+        "Independent Edulytiks teaching aligned with Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0. Original publisher artwork and restricted assessment materials are not reused.",
+        "Source OPTIONAL 18.1 Notice and Wonder Obstacles: learners compare original start/goal triangular positions on a square map and a solid obstacle and predict whether a single straight translation crosses it. Unlike ordinary image correspondence, obstacle avoidance requires testing EVERY intermediate figure along a continuous physical motion, not just its two endpoint drawings.",
+        "Source OPTIONAL 18.2 Obstacle Course: use original map 0≤x≤10,0≤y≤10 and SOLID rectangular obstacle 4≤x≤6,3≤y≤7. Triangle A(1,1),B(2,1),C(1,2) must map to D(8,8),E(9,8),F(8,9): first translate up (0,7), keeping all x≤2 left of obstacle; THEN right (7,0) while every y≥8 above it. Intermediate images remain entirely on map and avoid the obstacle. A single diagonal translation (7,7) is invalid as its swept path crosses the obstacle. A second original challenge moves G(8,1),H(9,1),I(8,2) to J(1,8),K(2,8),L(1,9) by up then left; compare clearance.",
+        "Source OPTIONAL 18.3 Point by Point without grid: first translate an asymmetric parallelogram so one named vertex coincides with its target, then rotate about that fixed vertex to align an adjacent side, using a final reflection only if the opposite orientation requires it. For every stage, label all four corresponding vertices and explain why previously matched positions are preserved. Optional students may design a SOLVABLE original obstacle map and exchange challenge with a peer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Intermediate image",
+          "Definition": "An intermediate figure after each stage of a rigid motion sequence, before the final target image.",
+          "Rule": "Draw or list every intermediate vertex position; endpoint-only checks do not establish a collision-free route.",
+          "Example": "A triangle may reach the target by a direct translation that crosses an obstacle even if endpoints are clear."
+        },
+        {
+          "Title": "Collision-free motion",
+          "Definition": "A continuous physical path in which the moving figure never intersects forbidden obstacles or leaves allowed bounds.",
+          "Rule": "Check the swept figure for all parameter values along each translation or rotation.",
+          "Example": "A line segment translated from x=0 to x=4 intersects an obstacle spanning x∈[2,3] even if start/end lie outside it."
+        },
+        {
+          "Title": "Sequential precision",
+          "Definition": "Motion steps require a directed length, rotation centre, angle and order sufficiently precise to reproduce the figure's path.",
+          "Rule": "Specify each motion and label images after each step.",
+          "Example": "T(x,y)=(x+3,y), then quarter-turn about (3,0), yields a different path from the reverse order."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "An obstacle-crossing translation",
+          "Question": "A point marker at (0,0) must reach (4,0), but a forbidden vertical barrier covers x between 2 and 3 at y=0. Is a direct right-4 translation safe?",
+          "Method": "Parameterize the continuous segment traced by the point.",
+          "Steps": [
+            "Direct translation path is P(t)=(4t,0) for 0≤t≤1.",
+            "At t=1/2, P=(2,0), which is on the barrier.",
+            "The start (0,0) and endpoint (4,0) are outside the barrier but the path is not.",
+            "Use a sequence of vertical and horizontal translations around a bounded barrier if a safe corridor exists."
+          ],
+          "Answer": "No; the direct translation intersects the forbidden region.",
+          "Check": "A point demonstration is only a necessary check for a shape; the entire moving figure requires collision review."
+        },
+        {
+          "Title": "Two-stage path around a rectangle",
+          "Question": "A point travels from (0,0) to (4,0), with forbidden rectangle 2≤x≤3 and −1≤y≤1. Give a safe path.",
+          "Method": "Choose a vertical clearance greater than 1 before moving horizontally.",
+          "Steps": [
+            "Translate up 2 to (0,2).",
+            "Translate right 4 to (4,2), staying at y=2, outside the forbidden rectangle.",
+            "Translate down 2 to (4,0).",
+            "Each segment avoids the rectangle because the vertical legs have x outside [2,3] and the horizontal leg has y>1."
+          ],
+          "Answer": "Up 2, right 4, down 2 safely routes the point.",
+          "Check": "For a triangle instead of a point, its full footprint must fit the clearance; a 2-unit point clearance may not suffice."
+        },
+        {
+          "Title": "Verify a two-step rotation and translation",
+          "Question": "Translate P=(1,0) right 2, then rotate it 90 degrees counterclockwise about O=(0,0).",
+          "Method": "Record every intermediate coordinate.",
+          "Steps": [
+            "Translation sends P to (3,0).",
+            "A 90-degree counterclockwise rotation about O sends (3,0) to (0,3).",
+            "The final distance to O equals the intermediate radius 3; the translation itself need not preserve distance to O.",
+            "The path differs if the rotation is performed before the translation."
+          ],
+          "Answer": "Final P′=(0,3), with intermediate (3,0).",
+          "Check": "Checking the final image alone is insufficient to certify obstacle avoidance."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Approving a collision-free path merely because final and initial drawings do not overlap the obstacle.",
+          "WhyWrong": "An intermediate point or part of the figure can cross a forbidden region.",
+          "Correction": "Check the whole swept figure during each continuous motion."
+        },
+        {
+          "Mistake": "Using a solution for one vertex and assuming the full polygon fits the corridor.",
+          "WhyWrong": "Other vertices can collide even while the tracked vertex avoids obstacles.",
+          "Correction": "Test all edges and the polygon interior against each obstacle at every stage."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: Describe, draw and check a sequence of rigid motions that maps an entire figure to a target while avoiding specified obstacles throughout the continuous motion.",
+        "Mathematical hypotheses and vertex/figure correspondence must be checked before a symmetry or congruence claim.",
+        "Teacher-scored evidence is required for constructed diagrams, argument critique and original written explanations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

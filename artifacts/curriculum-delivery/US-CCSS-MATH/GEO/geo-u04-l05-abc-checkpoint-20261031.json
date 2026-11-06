@@ -1,0 +1,185 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L05",
+  "Ordinal": 58,
+  "UnitCode": "U04",
+  "UnitOrdinal": 5,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\5\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\5\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\5\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\5\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "73c2873c103958c9cda544b45a411288f974579e6c7c2e9d2a65efcb6b900c95",
+    "TeacherActivities": "d248f96f2b5f5d8e1d1c6bfe485622ac60942cda13d994c9f6b6628646efb6c7",
+    "StudentActivities": "484135d29af49de1b7b6c14a993f13888d33fe511967630b139720009e414103",
+    "StudentPractice": "128e485aea0979177a9917f21654b6b0a20f667bb5e6ec226b781891e2b0b921"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "5.1",
+      "Goal": "rocket rise50 run13 launch-angle estimate",
+      "Mode": "ORIGINAL_SOURCE_PAPER_MODEL"
+    },
+    {
+      "Source": "5.2",
+      "Goal": "right 7-24-25, three smallest-angle ratios and angle estimation",
+      "Mode": "FIRST_PARTY_EXACT_AND_ROUNDED_SOURCE"
+    },
+    {
+      "Source": "5.3",
+      "Goal": "unknown AB/DE source diagrams and two known 40/70-degree side calculations",
+      "Mode": "TEACHER_FIGURE_AND_SOURCE_KNOWN_RATIO"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source-indexed triple, kite, right triangle, square and altitude items",
+      "Mode": "EXACT_P1_P5_AND_TEACHER_IMAGE_DEPENDENT_P6_P8"
+    },
+    {
+      "Source": "5.4",
+      "Goal": "publisher protected Solve the Triangle",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "8.G.B.7"
+    ],
+    "Addressing": [
+      "HSG-SRT.C.6"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.7"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U04_L05_SOURCE_LAUNCH_TRIPLE_TABLE_PAPER",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L05",
+    "TaskId": "geo-u04-l05-rocket-triple-and-side-ratio-estimates",
+    "GroupId": "GEO_U04_L05_SOURCE_LAUNCH_TRIPLE_TABLE_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Rocket diagram with angle between70 and80, exact source seven-twentyfour-twentyfive ratios, hand-computed forty/seventy angle table side estimates, original eight Practice statements with scored human reasoning and precision caveats.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "labels 50ft vertical rise and 13ft horizontal run, estimates a justified angle between70 and80 degrees",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "verifies 7^2+24^2=25^2 and correctly computes the three ratios for the smallest angle and its complement",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "solves 40-degree hyp5/0.643 and 70-degree adjacent12/2.747 with correct labels and rounding",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "explains source eight Practice results, uncertainty and source-figure limits with complete teacher-scored proof",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "rocket 50/13 rise/run corresponds launch angle between70 and80 degrees",
+      "7-24-25 smallest-angle adjacent/hyp24/25 opp/hyp7/25 opp/adj7/24",
+      "kite angle30 string18 height9, P3 D/E correct, P4 63-degree D"
+    ],
+    "Equivalent": [
+      "smallest angle arctan(7/24) about16.26 and complement73.74",
+      "source 40-degree hyp 5/0.643 and 7.776 are equivalent approximations"
+    ],
+    "Wrong": [
+      "rocket rise13 horizontal50 gives angle under20 rather than above70",
+      "takes 70-degree opposite12 and divides by opposite/hyp0.94 to find adjacent, yielding hypotenuse instead",
+      "calls P3 AC7 BC3 hypotenuse10 despite square sum58"
+    ],
+    "Boundary": [
+      "right acute angle strictly between0 and90 with positive legs",
+      "source table rounded thousandths imply approximate side not exact symbolic answer",
+      "source picture AB/DE and later Practice P6/P7/P8 require marked image before numeric scoring"
+    ],
+    "Malformed": [
+      "no acute angle label identifying opposite/adjacent",
+      "inconsistent source table ratio ordering or no units",
+      "original locked Cool-down presented as auto-grader outcome"
+    ]
+  },
+  "IndependentMathOracles": {
+    "RocketRiseFeet": 50,
+    "RocketRunFeet": 13,
+    "RocketAngleEstimate": "75.4",
+    "Triple725Ratios": [
+      "24/25",
+      "7/25",
+      "7/24"
+    ],
+    "Triple725SmallAngleApprox": "16.3",
+    "Given40HypotenuseApprox": "7.776",
+    "Given70AdjacentApprox": "4.368",
+    "Summary25AdjacentApprox": "10.7",
+    "SummaryDEstimate": "52",
+    "P1Angles": [
+      "28.1",
+      "61.9"
+    ],
+    "P2KiteFeet": 9,
+    "P3Options": [
+      "D",
+      "E"
+    ],
+    "P4Choice": "D",
+    "P5AnglesApprox": [
+      "72",
+      "18"
+    ],
+    "SourceRatioTerms": "UNNAMED_IN_THIS_LESSON",
+    "PublisherCoolDown": "UNVERIFIED_LOCKED"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l05-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u04-l05-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u04-l05-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u04-l05-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "65e5ef9824b0b07883b62d7c747012325b56c82d",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:06:26.991174Z",
+  "ClosedAtUtc": "2026-10-31T07:06:38.396420Z",
+  "ElapsedSeconds": 11.405,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L06"
+}

@@ -1,0 +1,177 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L06",
+  "Ordinal": 43,
+  "Unit": "U03",
+  "UnitOrdinal": 6,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "edcf1a6d304525b9bca98f26b58eaaf55f64bb504e07c97514025a1c416be6a6",
+    "TeacherActivities": "eb4e27979a953ee4f0e0331bfe201ec22c5b2bd000a60649eca376e0838aa99a",
+    "StudentActivities": "3399307a505e0a680b89d7d4b4f347da3df778ed8ca5e1954a31983f1a457b57",
+    "StudentPractice": "69acf8d601c4e58ec3c96faf642c890597d988c7c9cb06d157d2a032086171d3"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "false square image rays and nonuniform ratio critique"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "three card classes and forward/backward factors"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "ordered triangle similarity notation and transformation strategy"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine source-indexed exact and diagram-dependent skills"
+    },
+    {
+      "Source": "6.4",
+      "Goal": "protected cool-down: independent Edulytiks paper equivalent"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.6"
+    ],
+    "Addressing": [
+      "HSG-SRT.A.1.b",
+      "HSG-SRT.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.A.2"
+    ]
+  },
+  "SourceBoundary": "Publisher original cards and 6.4 Cool-down restricted; first-party matching paper task not original visual parity. Informal generalized similarity reasoning, formal proof later.",
+  "Preserved": "Three existing correct original worked examples and target vertex coordinates. Previous unit content unchanged.",
+  "Repairs": "Source 6.1 square-ray and ratio mismatch; 6.2 reciprocal card categories; 6.3 precise ordered similarity and two informal methods; P1-P9 exact/diagram-dependent mappings.",
+  "StageA": "A_CLOSED_SOURCE_4_ACTIVITIES_9_PRACTICE_SHA256",
+  "StageB": "B_CLOSED_SOURCE_DILATION_RAY_CRITIQUE_CARD_SORT_AND_ORDERED_SIMILARITY",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_CARD_AND_PAPER_REVIEW_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L06_SIMILARITY_RIGID_DILATION_CARD_SORT_HUMAN",
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U03_L06_SIMILARITY_RIGID_DILATION_CARD_SORT_HUMAN",
+    "TaskId": "geo-u03-l06-ordered-similarity-card-sort",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L06",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_CARD_AND_PAPER_REVIEW",
+    "Evidence": "labelled independent cards and written ordered transformation sequence with k, reciprocal 1/k and critique",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453; #605 leases untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Diagnoses wrong ray and unequal scale factor in attempted original-square dilation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Classifies original labelled cards into congruent, similar-but-not-congruent, neither with invariant reasons",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Constructs valid rigid-plus-dilation sequence and computes forward k and reverse 1/k",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Writes accurate ordered triangle similarity statement and explains alternative valid sequence",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "P3Choice": "D",
+    "P6Angle": 90,
+    "P8Ratio": "2/3",
+    "P9Choices": [
+      "B",
+      "D"
+    ],
+    "OriginalTargetVertices": {
+      "D": [
+        1,
+        1
+      ],
+      "E": [
+        7,
+        1
+      ],
+      "F": [
+        1,
+        9
+      ]
+    },
+    "ReverseScale": "1/k",
+    "FormalSimilarityProof": "DEFERRED_TO_LATER_SOURCE_LESSON"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "F to G factor 2 requires G to F factor 1/2",
+      "Right angle remains 90 under dilation",
+      "Perimeter 12 to 8 has k=2/3"
+    ],
+    "Equivalent": [
+      "Different rigid-motion order may map corresponding vertices to identical image",
+      "Every congruent pair is similar with scale factor one"
+    ],
+    "Wrong": [
+      "Right angles alone imply all rectangles similar",
+      "Different image ray directions with matching lengths still form dilation",
+      "Reverse direction preserves factor k rather than 1/k"
+    ],
+    "Boundary": [
+      "k=1 produces congruence, a special case of similarity",
+      "a non-square 2x4 rectangle is not similar to 3x5 rectangle",
+      "scale k must be positive and reciprocals exist for k>0"
+    ],
+    "Malformed": [
+      "No labelled source-to-image vertex correspondence",
+      "Unstated positive scale factor or centre",
+      "Diagram-dependent card answer without figure evidence"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_PACK": "PASS",
+    "JSON_ASSESSMENT": "PASS",
+    "NODE_SYNTAX_ONLY": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "NODE_TESTS": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "SharedEngine": "UNMODIFIED_WRITER_LEASE_ISSUE_605",
+  "TeacherSavedGrade": "NOT_VERIFIED_ISSUE_453",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u03-l04-l06-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l06-similarity-transformations-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l06-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l06-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "08bf1e8e07c5edf9abd7aa925d50aab02c107058",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T03:48:35.574311Z",
+  "ClosedAtUtc": "2026-10-31T03:49:14.857237Z",
+  "ElapsedSeconds": 39.283,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07"
+}

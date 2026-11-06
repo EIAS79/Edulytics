@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L10",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "60bdc2d88d46bd85871304ae7c5197a0f02940f3f533919f4110b256733d8d34",
+    "teacher": "3f2fdce262be75bbd419c06a7421a6844a75113b3ede79c99f646428c39f61b0",
+    "student": "bfb39a34ea3c41664f07084d3054638f851dd3aab47adbc0183e37b55b1c1c27",
+    "practice": "71094a7d479585f2a5654bed6781ca150ce491cc00bea7dc3e3d77e427b1a6b3"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5"
+    ]
+  },
+  "SourceMap": [
+    "10.1 Notice and Wonder: Transformed",
+    "10.2 What's the Same?",
+    "10.3 Does Order Matter?",
+    "Practice 1–6"
+  ],
+  "Task": {
+    "Prompt": "On paper with original labelled asymmetric figures, perform translation T(x,y)=(x+2,y), reflection R(x,y)=(-x,y), then both orders on a point and an L shape; show intermediate points, give a pair of corresponding lengths/angles and explain whether orders agree.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "correct labels and prime images for at least two rigid motions",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "accurate translation, reflection and their composed images",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "preserved distances/angles with valid geometric reasoning",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "reversed order example and explicit noncommutativity counterexample",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "Which is not a rigid transformation: a reflection, translation, 90 degree rotation or factor-2 dilation?",
+      "Expected": "Factor-2 dilation changes lengths unless degenerate.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "When are two figures congruent?",
+      "Expected": "A sequence of translations, reflections and rotations maps the first exactly onto the second.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "A,B,C map by T(x,y)=(x+2,y). Where does D=(3,1) map?",
+      "Expected": "D'=(5,1) under the same transformation.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "How do you locate an equal-distance stadium for three non-collinear sites?",
+      "Expected": "Intersection of pairwise perpendicular bisectors (circumcenter); may lie outside their triangle.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Does drawing an arbitrary line from C to the midpoint of AB guarantee parallel AB?",
+      "Expected": "No; a parallel requires perpendicular to a perpendicular, not a generic midpoint connection.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Two radius-r circles centred A and B intersect at X,Y. What lengths are guaranteed equal?",
+      "Expected": "AX=BX=AY=BY=r.",
+      "Points": 2
+    }
+  ],
+  "OriginalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: contrast T(R(1,0)) with R(T(1,0)) using explicit mapped coordinates",
+  "Handoff": "Student provides labelled original paper images and reasoning to teacher; teacher marks rubric 0/1/2 for each, writes feedback and signs dated paper record. Online grade not claimed.",
+  "Cases": {
+    "CORRECT": "T then R gives (-3,0), reversed gives (1,0)",
+    "EQUIVALENT": "different congruent asymmetric shape or equivalent rigid sequence with same point-image mapping",
+    "WRONG": "claims factor-2 dilation rigid or that T and R commute",
+    "INSUFFICIENT": "unlabelled figure or no reasoning",
+    "MALFORMED": "undefined mirror axis, mismatched preimage vertex correspondences"
+  },
+  "MachineScoring": false,
+  "StageD": "NOT_RUN authenticated teacher evidence/score and school exact binding #453"
+}

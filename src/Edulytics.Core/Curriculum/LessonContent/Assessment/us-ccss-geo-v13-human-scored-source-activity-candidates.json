@@ -1,0 +1,214 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "HS:TRAD:GEO:IM-1E",
+  "Status": "COURSE_LOCAL_AUTHORING_ONLY_NOT_RUNTIME_CONNECTED",
+  "Version": "geometry-v13-humanscored-source-tasks-20261029",
+  "ScoringPolicy": "Always require teacher review for geometric drawing, theorem explanation, and graphical interpretation; formula results alone must never yield an overall grade.",
+  "TeacherSubmissionPersistence": "NOT_IMPLEMENTED",
+  "NotReleaseApproval": true,
+  "Contracts": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "TaskId": "geo-v13-u06-l15-human-source-task",
+      "Title": "Weighted averages and common-centre quadrilateral dilation",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/6/15/index.html",
+      "SourceTeacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/6/15/preparation.html",
+      "OriginalPrompt": "Plot A=(2,3), B=(6,3), C=(8,9), D=(4,9). Partition each segment from A to the other vertex in a 1:4 ratio and draw A,B′,C′,D′. Prove the whole polygon was dilated from A with a common factor, not merely that three coordinates were calculated.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not evidenced, 1=partly justified, 2=accurate fully justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Label all preimage and image vertices with correct fractions",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Identify a single centre and one common scale factor for every vertex",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Provide a valid graphical or vector explanation, not only a coordinate list",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Explain why differing centres or unequal ratios would not establish one dilation",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "A to B: delta=(4,0), factor 1/5",
+          "Expected": "B′=(14/5,3)",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "A to C: delta=(6,6), factor 1/5",
+          "Expected": "C′=(16/5,21/5)",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "A to D: delta=(2,6), factor 1/5",
+          "Expected": "D′=(12/5,21/5)",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Use 4/5 of distance from A rather than 1/5",
+          "ExpectedHandling": "Reject ratio reversal and require source convention"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Polygon labelled without coordinates or centre",
+          "ExpectedHandling": "Do not auto-grade; ask teacher to clarify evidence"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "A coincides with a second vertex so corresponding segment degenerates",
+          "ExpectedHandling": "Review whether geometric proof actually supports a nondegenerate quadrilateral"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Use vector A+(X−A)/5 rather than coordinates listed as fifths",
+          "ExpectedHandling": "Accept valid equivalent image with an explicit common-centre argument"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "TaskId": "geo-v13-u07-l13-human-source-task",
+      "Title": "Sector formulas and the radian slope of an arc-length graph",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/7/13/index.html",
+      "SourceTeacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/7/13/preparation.html",
+      "OriginalPrompt": "For an original circular-road model with fixed central angle, produce the (radius, arc length) table (2,3),(6,9),(11,16.5),(14,21), plot these ordered pairs with labelled units, explain why line slope is the radian angle, and derive the sector-area formula using the fraction θ/(2π).",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not evidenced, 1=partly justified, 2=accurate fully justified"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Tabulate all ordered pairs and label axis units accurately",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Plot a correctly scaled line through the origin and determine slope by rise/run",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Explain slope as radians and justify s=θr, including positive-radius assumptions",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Derive area A=(1/2)r²θ from the fraction θ/(2π) and explain square units",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "Graph model s/r for r>0",
+          "Expected": "s=1.5r; θ=1.5 rad",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Radius r=20 m under same angle",
+          "Expected": "s=30 m",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        },
+        {
+          "Input": "Radius r=12 m and θ=π/3",
+          "Expected": "sector area A=24π m²",
+          "Scope": "NUMERICAL_SUBCOMPONENT_ONLY_NOT_OVERALL_SCORE"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Divide radius by arc length and call 2/3 radians the slope",
+          "ExpectedHandling": "Reject axes reversed; slope Δs/Δr=1.5"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Unlabelled graph without axis units",
+          "ExpectedHandling": "Teacher requests coordinate and units"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Claim s/r defined at r=0",
+          "ExpectedHandling": "Use the line's slope; ratio s/r is not defined at zero radius"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Graph a table of proportional values not exactly the four listed points",
+          "ExpectedHandling": "Review mathematical equivalence and clarity before accepting"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      }
+    }
+  ]
+}

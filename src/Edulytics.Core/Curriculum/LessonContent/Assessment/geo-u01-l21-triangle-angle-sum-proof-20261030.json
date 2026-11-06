@@ -1,0 +1,144 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L21",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "TeacherPreparation": "94d9aa8dce30baf98e47b3e396229e35478c5631dab5344d35af4fa7242ec680",
+    "TeacherActivities": "eab52a78dc088e1f680038b0041d439890f971ee52b6dd22c66495e851061492",
+    "StudentActivities": "14326eb5a4f0783c89368269cb914073241bf64c7858d8a5335a875dcbaf1dde",
+    "StudentPractice": "760b5fc8e4b7b99bdbbcac1ef7b6344aec1947f01bce25031a5a0f46452c0085"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.5",
+      "HSG-CO.A.1",
+      "HSG-CO.A.2",
+      "HSG-CO.A.4",
+      "HSG-CO.C.9"
+    ],
+    "Addressing": [
+      "HSG-CO.C.10",
+      "HSG-CO.C.9"
+    ]
+  },
+  "SourceActivities": [
+    "21.1 What Went Wrong false parallel inference",
+    "21.2 Triangle Angle Sum by midpoint 180 rotations",
+    "21.3 Triangle Angle Sum by two translations",
+    "Practice 1–9 source-skill analogues"
+  ],
+  "Task": {
+    "Prompt": "On paper draw an original nondegenerate Euclidean triangle and give TWO independent complete narrative proofs that interior angle measures sum 180 degrees: first via side-midpoint 180-degree rotations, second via two translations. Annotate images/parallel lines and diagnose Tyler's use of nonparallel lines.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "identifies Tyler's unjustified nonparallel corresponding-angle step",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "writes a complete midpoint half-turn narrative proof of the sum",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "writes an independent two-translation angle-sum proof with labelled images",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "makes correct general Euclidean/parallel assumptions and coherent concluding narrative",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "Two triangles have identical orientation and displacement; are they translations?",
+        "Expected": "Yes if every corresponding point has the same directed displacement.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "Parallelogram has adjacent interior angles 70 and ?",
+        "Expected": "110 degrees, since parallel-line angles are supplementary.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "Which alternate interior angle corresponds to a given line-pair angle?",
+        "Expected": "The opposite-side interior angle across the transversal when lines are parallel.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "Which other triangle angles equal in two parallel horizontal lines cut by transversals?",
+        "Expected": "Corresponding/alternate angle pairs determined by matched rays, not the drawing alone.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Source": 5,
+        "Prompt": "Two approaches to parallel transversal angle equality?",
+        "Expected": "Translate for corresponding; half-turn about midpoint for alternate interior.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Source": 6,
+        "Prompt": "Half-turn about B maps D to A?",
+        "Expected": "Only if BD=BA. It always places the image on the opposite ray.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Source": 7,
+        "Prompt": "Why are intersection-line vertical angles equal?",
+        "Expected": "180° rotation or equal supplementary linear pairs.",
+        "Points": 2
+      },
+      {
+        "Id": "P8",
+        "Source": 8,
+        "Prompt": "How verify collinearity of original and image points under a specified rigid move?",
+        "Expected": "Track the full line's image and its point membership.",
+        "Points": 2
+      },
+      {
+        "Id": "P9",
+        "Source": 9,
+        "Prompt": "How map congruent triangles ABC to A'B'C'?",
+        "Expected": "Translate a vertex, rotate about it to align a side, reflect if needed.",
+        "Points": 2
+      }
+    ],
+    "TotalMax": 18
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: triangle angles 43,57 and 80 degrees prove their 180 sum via parallel-line transformation, not scalar guessing",
+  "PaperHandoff": "Teacher collects both labelled narrative proofs and critique, scores each 0/1/2 criterion, signs/dates feedback on paper under school policy. No runtime teacher grade asserted.",
+  "Cases": {
+    "CORRECT": "two independently valid general proofs and critique",
+    "EQUIVALENT": "any nondegenerate triangle or rotated/transferred diagram giving same logical proof",
+    "WRONG": "corresponding angles assumed equal when source lines nonparallel",
+    "INSUFFICIENT": "three measured numbers sum 180 without general proof",
+    "MALFORMED": "collinear triangle vertices or missing construction"
+  },
+  "MachineGrade": false,
+  "RuntimeReadyVerified": false,
+  "StageD": {
+    "Status": "NOT_RUN",
+    "Owner": "Supervisor 2 issue #453",
+    "Required": "school/pathway exact lesson manual teacher scoring and persistence, authenticated E2E/tenant"
+  }
+}

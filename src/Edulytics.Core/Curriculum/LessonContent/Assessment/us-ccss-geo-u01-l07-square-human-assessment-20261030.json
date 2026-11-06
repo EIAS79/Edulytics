@@ -1,0 +1,188 @@
+{
+  "SchemaVersion": 1,
+  "Course": "Geometry",
+  "Unit": "U01",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L07",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "SourceLocalPaths": [
+    "10_HS_Geometry/1/7/preparation.html",
+    "10_HS_Geometry/1/7/index.html",
+    "10_HS_Geometry_Student/1/7/index.html",
+    "10_HS_Geometry_Student/1/7/practice.html"
+  ],
+  "SourceSha256": {
+    "TeacherPreparation": "ebd0c42c7de696acedb191b7898c29ac8ec14af3a2714f2d39fea9ae1f991a8c",
+    "TeacherActivities": "0e8f17c4612539d11e961bbb962d2c9a5093132409dbef009ec41806ba6acb63",
+    "StudentActivities": "a9094e9f87451dc087c833efedea8de41dd81a7a7080745276ffc2b5a6e7631c",
+    "StudentPractice": "2054ccfc1b86bc3ab526b8605664266fff4cf28600da5b7064dfe8af9864ac53"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "5.G.B.3",
+      "HSG-CO.A.1",
+      "HSG-CO.D.12"
+    ],
+    "Addressing": [
+      "HSG-CO.D.13"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.3",
+      "HSG-CO.D.13"
+    ]
+  },
+  "SourceActivityMapping": [
+    {
+      "Source": "7.1 Which One Doesn't Belong",
+      "Equivalent": "four original text-defined polygons with multiple justified classifications"
+    },
+    {
+      "Source": "7.2 It's Cool to Be Square",
+      "Equivalent": "construct square on given side, perpendicular sides + compass transfer"
+    },
+    {
+      "Source": "7.3 Trying to Circle a Square",
+      "Equivalent": "student conjectures about diagonals first, then inscribes square in circle"
+    },
+    {
+      "Source": "Practice 1–7",
+      "Equivalent": "seven original spiral source-skill analogues"
+    },
+    {
+      "Source": "protected original Cool-down",
+      "Equivalent": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN"
+    }
+  ],
+  "Task": {
+    "Id": "GEO-U01-L07-PAPER-SQUARES",
+    "Prompt": "Draw and label a square with a prescribed nonzero side AB and a square inscribed in a circle. Record steps, diagonals and proofs for both. Start by writing a conjecture about square diagonals.",
+    "ResponseType": "PAPER_STRAIGHTEDGE_COMPASS_LABELLED_PROOF",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "S1",
+          "Criterion": "Valid nonzero base AB and two perpendiculars on same side",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S2",
+          "Criterion": "Transfers exact radius AB to both auxiliary rays and joins square in order",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S3",
+          "Criterion": "Inscribed circle construction with two perpendicular diameters and labelled vertices",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S4",
+          "Criterion": "Justifies equal sides, right angles, perpendicular equal bisected diagonals",
+          "MaxPoints": 2
+        }
+      ]
+    },
+    "Accept": "Two correct labelled square constructions with equal-side/right-angle proofs",
+    "Reject": "visual rectangle without equal sides, arbitrary diamond, missing bisected/perpendicular diameters"
+  },
+  "FirstPartyCooldown": {
+    "Status": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "PublisherStatus": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "Prompt": "Edulytiks-authored Cool-down (publisher teacher original not read): given a circle of radius 3, construct two perpendicular diameters and connect their four endpoints in cyclic order to make a square. Explain why the diagonals meet at right angles, are congruent and bisect one another, and why the square's sides are congruent; teacher scores actual labelled construction.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "S1",
+          "Criterion": "Valid nonzero base AB and two perpendiculars on same side",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S2",
+          "Criterion": "Transfers exact radius AB to both auxiliary rays and joins square in order",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S3",
+          "Criterion": "Inscribed circle construction with two perpendicular diameters and labelled vertices",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "S4",
+          "Criterion": "Justifies equal sides, right angles, perpendicular equal bisected diagonals",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "All squares are regular polygons, but not all rectangles or rhombi are; give counterexamples.",
+        "Expected": "Regular needs equal sides AND angles; square yes, nonsquare rectangle unequal sides and oblique rhombus unequal angles.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "Why use a circle centred A through B when constructing a square with AB as a side?",
+        "Expected": "The circle transfers length AB onto the perpendicular through A to mark another side exactly equal.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "After constructing a perpendicular through off-line C to AB, what creates the parallel through C?",
+        "Expected": "Construct the line through C perpendicular to the first perpendicular.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "A learner's circle is tangent to the base line and has only one intersection. Why does the bisector procedure fail?",
+        "Expected": "An auxiliary chord needs two distinct intersections; increase radius beyond point-to-line distance.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Source": 5,
+        "Prompt": "Why must equal-distance marks on two sides of an angle share the same vertex B?",
+        "Expected": "The construction uses points P,Q with BP=BQ so the interior equal-radius intersection makes triangles BPX and BQX congruent.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Source": 6,
+        "Prompt": "How do two intersecting equal-radius circles centred A,B produce an equilateral triangle?",
+        "Expected": "Their intersection X gives AX=BX=AB.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Source": 7,
+        "Prompt": "How can a straightedge and compass bisect positive segment AB?",
+        "Expected": "Choose arcs of common radius r>AB/2 from A,B, connect two intersections; their line crosses AB at midpoint.",
+        "Points": 2
+      }
+    ],
+    "TotalMax": 14,
+    "Type": "TEACHER_REVIEWED_ORIGINAL_REASONING"
+  },
+  "TeacherAcknowledgement": "Teacher receives the physical paper and verifies construction and reasoning; assigns rubric 0/1/2 for each criterion, signs/dates feedback. Student submission/grade does not run online by this contract.",
+  "Cases": {
+    "CORRECT": "equal side lengths and four 90° angles, circle-inscribed vertices and valid diagonal relations",
+    "EQUIVALENT": "clockwise/anticlockwise, reflection, rotation, other positive side lengths",
+    "WRONG": "rhombus counted as square without angle proof, circles tangent where two intersections needed",
+    "INSUFFICIENT": "numbers or diagram without construction steps and proof",
+    "MALFORMED": "zero length base, inconsistent labels"
+  },
+  "MachineGrade": false,
+  "RuntimePracticeReadiness": "NOT_REGISTERED_NOT_READY_VERIFIED",
+  "StageD": {
+    "Status": "NOT_RUN",
+    "Owner": "Supervisor 2 #453",
+    "Missing": "secure school/pathway lesson-assigned paper review and persisted teacher score, authenticated visual/tenant E2E"
+  }
+}

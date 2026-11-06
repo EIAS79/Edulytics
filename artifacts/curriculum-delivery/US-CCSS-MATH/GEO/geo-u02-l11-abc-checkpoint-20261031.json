@@ -1,0 +1,124 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+  "LessonTitle": "Side-Side-Angle (Sometimes) Congruence",
+  "Unit": "U02",
+  "Ordinal": 33,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f1883dcdfc90131614efe17a893b75409a7649378aaa0583fad19e49d825f90f",
+    "TeacherActivities": "fc81a313974026a30071e6c9e097dd316dade7be1297478c984df7eed05cad8e",
+    "StudentActivities": "4f7967262cf38bad2d90bb6c4fd02b9480cb84dfe176ccaf7f7d9b39503bb2a3",
+    "StudentPractice": "24500e16eb7dc1372444be780854568c69e93b5796c45636da0c937b97c7abc0"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.8"
+    ]
+  },
+  "OriginalActivities": [
+    "11.1",
+    "11.2 OPTIONAL",
+    "11.3 OPTIONAL"
+  ],
+  "OriginalPracticeCount": 7,
+  "SourceCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "Ambiguous source GBD/KHI congruent parts not included",
+      "FirstPartyMode": "MULTIPLE_VALID_COUNTEREXAMPLE_DRAWINGS"
+    },
+    {
+      "Source": "11.2 OPTIONAL",
+      "Goal": "40-degree 6/8 cm group construction, source material alternatives",
+      "FirstPartyMode": "PAPER_GROUP_ANGLE_SIDE_ASSIGNMENTS"
+    },
+    {
+      "Source": "11.3 OPTIONAL",
+      "Goal": "0/1/2 SSA triangles and two-sided angle counterexamples, gallery walk",
+      "FirstPartyMode": "TEACHER_SELECTED_PRIVATE_CARD_CASES"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven source-indexed original student Practice tasks",
+      "FirstPartyMode": "SEVEN_HUMAN_PAPER_REVIEW"
+    },
+    {
+      "Source": "11.4 Cool-down",
+      "Goal": "Publisher restricted original",
+      "FirstPartyMode": "ORIGINAL_EDULYTIKS_PAPER_EQUIVALENT"
+    }
+  ],
+  "PublisherCooldown": "SOURCE_OPTIONAL_PUBLISHER_LOCKED_COOLDOWN_UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
+  "StageA": "A_CLOSED_LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_SOURCE_SHA256_AND_CROSSWALK",
+  "StageB": "B_CLOSED_COURSE_RICHV2_SOURCE_SPECIFIC_REPAIR_RETAIN_VALID_CONTENT",
+  "StageC": "C_CLOSED_AUTHORING_EXACT_LESSON_TEACHER_SELECTED_SOURCE_ASSESSMENT_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L11_SSA_NON_UNIQUE_PAPER_TEACHER_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L11_SSA_NON_UNIQUE_PAPER_TEACHER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L11",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_OPTIONAL_SOURCE_LESSON",
+    "TaskId": "geo-u02-l11-angle-side-assignment-and-ssa-ray-intersection",
+    "TeacherHandoff": "Teacher chooses this optional lesson, distributes first-party paper 40/6/8 cards, manages 0/1/2 ambiguity drawings and seven indexed paper questions, scores four 0-2 criteria offline, and does not claim publisher graphics or digital saved grade.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct nonincluded-angle identification and two noncongruent source-based SSA counterexample drawings",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Classifies 0/1/2 based on ray-circle intersections, altitude and relative side lengths without negative ray roots",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "First-party 40-degree 6/8 group and optional midpoint D/M exploration with accurate ambiguity conditions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven source-indexed paper Practice and original Cool-down, including figure-dependent teacher review",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "P1_Sufficient": [
+      "SSS",
+      "SAS",
+      "ASA"
+    ],
+    "AmbiguousCase": "ANGLE30_ADJACENT10_OPPOSITE6_TWO_POSITIVE_TRIANGLES",
+    "PracticeP2": "B30_BC6_CA4_TWO_POSITIVE_TRIANGLES",
+    "ZeroCase": "a<h",
+    "TangentCase": "a=h",
+    "UniqueLongerOpposite": "a>=c for acute with valid nondegenerate triangle"
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l11-ssa-optional-paper-20261031.json",
+  "LessonContentCommit": "91d88205beb25f03a7be945633afe7ad17a80b1a",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StaticValidation": "Python JSON parsing + node --check syntax + git diff --check (NO app tests/Stage D)",
+  "OriginalFigures": "NOT_PIXEL_CERTIFIED_IF_SOURCE_IMAGES_LOCKED",
+  "TeacherScorePersistence": "NOT_VERIFIED_STAGE_D_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L12",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT"
+}

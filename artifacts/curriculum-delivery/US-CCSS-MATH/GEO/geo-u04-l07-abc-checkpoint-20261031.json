@@ -1,0 +1,179 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L07",
+  "Ordinal": 60,
+  "UnitCode": "U04",
+  "UnitOrdinal": 7,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "55308d4ee49480afd98637e5ce2a4fdc9e5add28f4a8ee389da0f1d42be7377a",
+    "TeacherActivities": "69d3c7fdb86fe1af33089721aafc8f63bb7df4acfdf6dbd22ca8d5eed64f9a81",
+    "StudentActivities": "7fb2eb53542acf7b6ecf3f33085253a56cdebd6211ff973128dd61ab8dca4227",
+    "StudentPractice": "6ab7f90c639bc6cdf6b81251da38a023bc6bbbd551fd2f87895a8a6b88581305"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "Tilted Triangle prior ratio and original source figure",
+      "Mode": "TEACHER_SOURCE_FIGURE_REVIEW"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "two rounds protected information-gap cards, targeted question protocol",
+      "Mode": "FIRST_PARTY_HUMAN_INFO_GAP_CARDS"
+    },
+    {
+      "Source": "7.3",
+      "Goal": "2019 Dubai/Philadelphia tower heights, optional ledge and hypothetical billboard",
+      "Mode": "SOURCE_DATE_BOUNDED_CONTEXTUAL_TAN_MODEL"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven original Eiffel Arch trig, kite and inverse-ratio practice tasks",
+      "Mode": "EXACT_P1_P3_P5_P6_AND_TEACHER_FIGURE"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "publisher-protected Tallest Tree",
+      "Mode": "EDULYTIKS_SOURCE_SKILL_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSN-Q.A.2"
+    ],
+    "Addressing": [
+      "HSG-SRT.C.8",
+      "HSN-Q.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.8"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U04_L07_INFO_GAP_TOWERS_HEIGHT_SOURCE_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L07",
+    "TaskId": "geo-u04-l07-pair-information-gap-and-tallest-tower",
+    "GroupId": "GEO_U04_L07_INFO_GAP_TOWERS_HEIGHT_SOURCE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Two confidential first-party card exchanges, why-needed information requests, independently labelled trig height diagrams, bounded historical tower calculations, seven source Practice items and dated human teacher rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "records specific necessary given requests in two info-gap rounds without sharing entire card or solving for partner",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "constructs correct right-triangle opposite/adjacent labels, degree mode equations and appropriate unit conversions",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "computes source 250tan73 and1300tan23 with precision critique and historical-vs-model distinction",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "explains source Practice P1-P7, first-party independent mirror/tree model and valid figure-dependent limitations",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Burj 250tan73 and Philadelphia City Hall1300tan23 are source GEOMETRIC estimates, not certified heights",
+      "optional ledge300*(tan60+tan15)=600 feet exact ideal",
+      "P5 kite 12sin45=6sqrt2, P6 mapping A5 B1 C2 D3 E4"
+    ],
+    "Equivalent": [
+      "12/sqrt2 and6sqrt2 positive feet are equivalent",
+      "optional ledge total300sqrt3+300(2-sqrt3) equals600"
+    ],
+    "Wrong": [
+      "treats source 2019 historical tallest building titles as current verified ranking",
+      "computes tower vertical height by cosine of elevation multiplying ground distance",
+      "data-holder invents missing numerical measurements instead of releasing only givens"
+    ],
+    "Boundary": [
+      "finite positive ground distance, elevation between0 and90 degrees",
+      "measurement precision cannot justify tenth place for large loosely rounded source input",
+      "source picture missing for 7.1 and Practice P2/P4/P7; original card text restricted"
+    ],
+    "Malformed": [
+      "no angle reference or ground/hypotenuse distinction",
+      "mixes metres with feet in shared equation",
+      "claims actual saved online score or verified publisher graphics"
+    ]
+  },
+  "IndependentMathOracles": {
+    "BurjGeometryMetres": "250*tan(73deg)",
+    "PhiladelphiaGeometryFeet": "1300*tan(23deg)",
+    "HistoricalSourceComparison": [
+      "829.8m",
+      "548ft"
+    ],
+    "OptionalLedgeFeet": 600,
+    "BillboardBottomFeet": "47tan40",
+    "BillboardMaxImageFeet": "50-47tan40",
+    "SourceTreeHeightFeet": "100tan10",
+    "P1EiffelModelFeet": "80tan85.7",
+    "P3ArchHorizontalFeet": "630/tan50",
+    "P5Height": "6sqrt2",
+    "P5Choice": "B",
+    "P6Map": [
+      "5",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "TeacherInfoGap": "DATA_HOLDER_ONLY_SUPPLIED_GIVENS"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u04-l07-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u04-l07-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u04-l07-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "8b9867814ac7679bc11fd7f27b8356c015519ab3",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:09:14.695580Z",
+  "ClosedAtUtc": "2026-10-31T07:09:26.023077Z",
+  "ElapsedSeconds": 11.327,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L08"
+}

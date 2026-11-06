@@ -1,0 +1,219 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+  "Status": "C_CLOSED_AUTHORING_TEACHER_PAPER_RUBRIC_FIXTURES_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "7f0d63bb67743c6d0fd2a9b2aa005b77892ec9b48910e904b955f824d6f311ff",
+    "TeacherActivities": "c5bbe2d0f082aea28a59fb556ff0175c6902bc65c71bcb4b93fecdcf5323430c",
+    "StudentActivities": "c4bd94f404a782e02078f163396badcc5cdd762c12c09056ceaf42f03cbd990b",
+    "StudentPractice": "fd7195a451ca0ba3dd27c36914951c0fe533dce692ab2818f42f7ab75b4de8a9"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.7"
+    ],
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.B.8",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "4.1",
+      "Goal": "Use only sufficient data to draw triangle and recognize measurement rounding",
+      "FirstPartyMode": "FIRST_PARTY_PAPER_TRIANGLE_AND_HIGHLIGHTED_USED_DATA"
+    },
+    {
+      "Source": "4.2",
+      "Goal": "Private partner info gap, precise questions and role swap; distinguish ASA/SAS/SSS vs AAA/SS",
+      "FirstPartyMode": "FIRST_PARTY_HIDDEN_DATA_AND_PROBLEM_CARD_PARTNER_PROTOCOL"
+    },
+    {
+      "Source": "4.2 Extension",
+      "Goal": "Two sides plus area ambiguity and two angles plus area sufficiency",
+      "FirstPartyMode": "PAPER_SUPPLEMENTARY_ANGLE_COUNTEREXAMPLE"
+    },
+    {
+      "Source": "4.3",
+      "Goal": "16-degree, 5 cm, 4 cm vague SSA; repair with named included SAS",
+      "FirstPartyMode": "PAPER_AMBIGUITY_SKETCH_AND_EXPLANATION"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "All nine original practice skills with figure-dependent boundaries",
+      "FirstPartyMode": "NINE_INDEXED_FIRST_PARTY_TEACHER_SCORED_RESPONSES"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "Protected original unverified",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_PAPER_EQUIVALENT"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L04_CONGRUENCE_CRITERIA_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+    "TaskId": "geo-u02-l04-criteria-counterexample-and-partner-handoff",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_PARTNER_REVIEW",
+    "TeacherHandoff": "Distribute first-party private information-gap cards separately; require precise verbal requests and role swap; collect 4.1 drawing, 4.2 partner question log, 4.3 ambiguity counterexample, P1-P9 and independent Cool-down on paper. Authorized teacher checks four 0-2 criteria and records results offline; no asserted online saved grade.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Exact corresponding SSS/SAS/ASA sufficient criteria and named included angle, with valid 4.1 construction",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Correct labelled SSA/AAA counterexamples, including two noncongruent valid SSA alternatives",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Actual 4.2 private partner information-gap role exchange and 4.3 precise corrected request",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Justified teacher-reviewed nine source-indexed practice parts and first-party Cool-down",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "SourceSkill": "SSS/SAS/ASA mark correspondence",
+      "FirstPartyPrompt": "Classify three labelled valid configurations; explain marked sides and included angle.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "SourceSkill": "40 and 100 degrees and a 3-unit side",
+      "FirstPartyPrompt": "Sketch two different triangles when the 3-unit side is opposite 40 versus opposite 100; justify two congruence classes.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "SourceSkill": "Least labelled data",
+      "FirstPartyPrompt": "Name sufficient SSS, SAS or ASA for a teacher-provided triangle and state why.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "SourceSkill": "ABC congruent EDF",
+      "FirstPartyPrompt": "With A→E, B→D and C→F, select statements A:angle A→E, B:angle B→F, C:AB→EF, D:BC→DF, E:AC→ED.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "SourceSkill": "Same ray proof",
+      "FirstPartyPrompt": "Why does a rigid-motion image of B equal D when the same ray is aligned and corresponding distances are equal?",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "SourceSkill": "Quadrilateral reflection ordering",
+      "FirstPartyPrompt": "Given a diagram with reflection, write exact ordered four-vertex correspondence; a same-length unrelated side is insufficient.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "SourceSkill": "HGF reflected across FH to HEF",
+      "FirstPartyPrompt": "Use H→H, G→E, F→F to classify six ordered-triangle/angle/side correspondence claims.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P8",
+      "SourceSkill": "Rectangle reflection",
+      "FirstPartyPrompt": "Explain why AD and BC coincide in length after reflection by corresponding-parts congruence, not by arbitrary adjacent sides.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P9",
+      "SourceSkill": "Hexagon-based decorated figure",
+      "FirstPartyPrompt": "Identify a rigid self-symmetry that preserves every drawn segment; teacher must supply or independently recreate figure.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentAnswerOracles": {
+    "P4_TrueChoices": [
+      "A",
+      "D"
+    ],
+    "P7_TrueChoices": [
+      "A",
+      "B",
+      "F"
+    ],
+    "P8_Reason": "CORRESPONDING_PARTS_CONGRUENT",
+    "Warmup_BC_ApproxCm": 3.6985,
+    "SSA_AB10_BC6_A30": "TWO_DISTINCT_POSITIVE_AC_LENGTHS",
+    "AAA": "SIMILARITY_ONLY"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "SSS, SAS included angle and ASA labelled correspondences",
+      "P4 answers A,D by ABC to EDF mapping",
+      "P7 answers A,B,F under FH reflection"
+    ],
+    "Equivalent": [
+      "mirror-image congruent construction",
+      "valid alternative orientation and explained correspondence",
+      "AAS accepted as sufficient even though only ASA/SAS/SSS introduced in lesson"
+    ],
+    "Wrong": [
+      "AAA with 3,4,5 vs 6,8,10 claimed congruent",
+      "SSA AB=10, BC=6, angle A=30 claimed unique",
+      "P4 AB→EF or P7 EH→FG claimed necessary",
+      "two sides and area always fix angle"
+    ],
+    "Boundary": [
+      "SSA quadratic has two positive distinct AC roots",
+      "two angles plus positive area with assigned correspondence fix scale",
+      "zero length, degenerate collinear triangle not a valid nondegenerate congruence test"
+    ],
+    "Malformed": [
+      "angle not identified as included",
+      "no diagram labels or correspondence",
+      "information-gap cards shown before requests",
+      "missing teacher-only explanatory evidence"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_ALTERNATIVE",
+  "FirstPartyCooldown": {
+    "Task": "Using AB=10, BC=6, angle BAC=30 degrees, construct two distinct noncongruent triangles, justify why SSA is ambiguous, and specify a correct included-angle SAS substitute.",
+    "Mode": "HUMAN_TEACHER_SCORED",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN: No online lesson-linked assignment, saved teacher rubric, authenticated student route, cross-school test, full CI or deploy"
+}

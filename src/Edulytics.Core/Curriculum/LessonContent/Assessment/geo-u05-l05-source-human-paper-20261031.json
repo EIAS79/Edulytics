@@ -1,0 +1,244 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\5\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\5\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\5\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\5\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "800af26e40417b6cb89a0a9a36adee21ad7091ad6389ae096ece27a9acb00545",
+    "TeacherActivities": "c6d028d2bd88b6b1f6f5876226f37846f347d4bdab9306425ffaf11982ada370",
+    "StudentActivities": "c92cb65a13cc3ba100138f2d09e8db1ab99147c38d47e802bad5744718f4801e",
+    "StudentPractice": "aeb748608daad30c61f26a5549c464ceae36f93c145fc248610609f9a217c9c9"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-CED.A.2",
+      "HSF-IF.C.7.b",
+      "HSG-GMD"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "5.1",
+      "Goal": "Transamerica original 53x44m building top k.32, two equivalent methods",
+      "Mode": "EXACT_SOURCE_AREA_AND_ROUNDING"
+    },
+    {
+      "Source": "5.2",
+      "Goal": "Mai wrong25 vs Lin correct6.25 plus k9 and3/4",
+      "Mode": "TEACHER_PEER_ERROR_CRITIQUE"
+    },
+    {
+      "Source": "5.3",
+      "Goal": "artist unit square sqrt area scale graph and optional signed dilation k-2",
+      "Mode": "FIRST_PARTY_GRAPH_PAPER_PEER_REVIEW"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "seven source root factor, area/perimeter graph, cone sections and trig questions",
+      "Mode": "EXACT_P1_P4_P6_AND_HUMAN_ORIGINAL_IMAGES"
+    },
+    {
+      "Source": "5.4",
+      "Goal": "protected Miniature cooldown",
+      "Mode": "INDEPENDENT_FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L05",
+    "TaskId": "geo-u05-l05-transamerica-error-and-artist-sqrt-graph",
+    "GroupId": "GEO_U05_L05_AREA_INVERSE_SQRT_GRAPH_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Source 53x44 base and k.32 two-method top floor, corrected Lin-Mai argument, paper sqrt-area five-point plot with annotated slopes, exact original seven Practice problems and human dated eight-point scoring.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "derives top-floor source area238.7968 two ways and refutes incorrect .32 area multiplier",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "compares Mai25 versus Lin6.25 for source area100 k.25 and computes k9/k3/4 exactly",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "plots y=sqrt(x) original five points and calculates 1→3 versus14→16 differences with units and proper graph curvature",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies seven original Practice items, positive-root inverse scale and source image limits including graph mapping",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "circle area8pi image area32pi",
+        "TeacherExpected": "scale k=sqrt(32pi/8pi)=2 choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "trapezoid area100 target6400 900 100 25 4",
+        "TeacherExpected": "k=8,3,1,1/2,1/5 respectively",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "four source area/perimeter function graphs A B C D",
+        "TeacherExpected": "conditional source graph A→4, B→3, C→1, D→2; check original image axes and curves",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "polygon area10 scale4,1.5,1,1/3",
+        "TeacherExpected": "areas160,22.5,10,10/9 square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "source parallelogram A-centred dilation copy count and area",
+        "TeacherExpected": "source original diagram needed to determine factor and count k²",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "base-parallel conical and pyramid sections with apex-centred k0-1",
+        "TeacherExpected": "D cone and E triangular pyramid",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "inverse trig angle A on 28/45/53 right triangle",
+        "TeacherExpected": "if A opposite28 then choices B,C,E; if A opposite45 choices A,D,F; original marked diagram required",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "BuildingBaseM": [
+      53,
+      44
+    ],
+    "BuildingOriginalArea": 2332,
+    "BuildingScale": 0.32,
+    "BuildingNewDimensionsM": [
+      16.96,
+      14.08
+    ],
+    "BuildingNewAreaM2": "238.7968",
+    "WrongMaiArea": 25,
+    "CorrectLinArea": "6.25",
+    "SourceK9Area": 8100,
+    "SourceKThreeQuarterArea": "56.25",
+    "ArtistGraphPoints": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        16,
+        4
+      ]
+    ],
+    "ArtistK12": "sqrt12",
+    "Increase1To3": "sqrt3-1",
+    "Increase14To16": "4-sqrt14",
+    "Area2To72K": 6,
+    "SourceP1Choice": "A",
+    "SourceP2Factors": [
+      8,
+      3,
+      1,
+      0.5,
+      0.2
+    ],
+    "P6Choices": [
+      "D",
+      "E"
+    ],
+    "OriginalSignedExtension": "NEGATIVE_K_NOT_POSITIVE_RAY_DILATION"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source top-floor area 53*44*(.32²)=238.7968 square metres",
+      "original triangle area100 scaled k.25 yields6.25, Lin correct and Mai wrong",
+      "artist sqrt graph points (0,0),(1,1),(4,2),(9,3),(16,4); P1 k2 P2 k8,3,1,.5,.2"
+    ],
+    "Equivalent": [
+      "16.96*14.08 equals2332*.1024",
+      "positive k=sqrt(image/source area) and dimension ratio for two corresponding measured sides agree"
+    ],
+    "Wrong": [
+      "source top floor area2332*.32 wrongly counted746.24",
+      "area100 k9 gives900 rather than8100",
+      "the sqrt graph slope is constant, so adding2ft² raises scale by same amount everywhere"
+    ],
+    "Boundary": [
+      "source area A positive required before dividing target by A; x0 is collapsed figure on sqrt graph",
+      "negative signed affine k=-2 allowed only with explicit changed definition, not ordinary positive ray",
+      "source Practice P3/P5/P7 image-dependent exact labels require original diagrams"
+    ],
+    "Malformed": [
+      "graph axis says x scale y area when source defines x area y scale",
+      "no square units for model areas or ambiguous k direction",
+      "claims student original restricted publisher applet has live functional assessment"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l05-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

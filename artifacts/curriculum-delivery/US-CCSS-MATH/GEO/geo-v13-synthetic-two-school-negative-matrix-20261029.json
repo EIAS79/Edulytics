@@ -1,0 +1,260 @@
+{
+  "SchemaVersion": 1,
+  "FixtureId": "us-ccss-traditional-geo-v13-two-school-synthetic-20261029",
+  "DataClassification": "DISPOSABLE_SYNTHETIC_ONLY",
+  "CreatedDate": "2026-10-29",
+  "ExecutionStatus": "NOT_RUN_NO_AUTHORIZED_DISPOSABLE_DATABASE_OR_SERVER_PROVIDED",
+  "Course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "RequiredEnvironment": {
+    "Database": "Disposable isolated PostgreSQL, never production/real data",
+    "HTTPS": "Authorized test server seeded with fixture only",
+    "AuthenticatedRoles": [
+      "student",
+      "teacher"
+    ],
+    "SDK": "10.0.200",
+    "ExternalDependency": "Supervisor2 #453 production-safe routing & persistence",
+    "Blocked": true
+  },
+  "Ids": {
+    "SchoolA": "10000000-0000-4000-8000-000000000001",
+    "SchoolB": "20000000-0000-4000-8000-000000000002",
+    "StudentA": "a0000000-0000-4000-8000-000000000001",
+    "StudentB": "b0000000-0000-4000-8000-000000000002",
+    "TeacherA": "a1000000-0000-4000-8000-000000000001",
+    "TeacherB": "b1000000-0000-4000-8000-000000000002",
+    "GeoAdoptionA": "a2000000-0000-4000-8000-000000000001",
+    "GeoAdoptionB": "b2000000-0000-4000-8000-000000000002",
+    "Alg1AdoptionA": "a3000000-0000-4000-8000-000000000001",
+    "GeoAttemptA": "a4000000-0000-4000-8000-000000000001",
+    "GeoAttemptB": "b4000000-0000-4000-8000-000000000002"
+  },
+  "Schools": [
+    {
+      "Id": "10000000-0000-4000-8000-000000000001",
+      "Name": "GEO Synthetic School Alpha"
+    },
+    {
+      "Id": "20000000-0000-4000-8000-000000000002",
+      "Name": "GEO Synthetic School Beta"
+    }
+  ],
+  "Users": [
+    {
+      "Id": "a0000000-0000-4000-8000-000000000001",
+      "SchoolId": "10000000-0000-4000-8000-000000000001",
+      "Role": "student"
+    },
+    {
+      "Id": "b0000000-0000-4000-8000-000000000002",
+      "SchoolId": "20000000-0000-4000-8000-000000000002",
+      "Role": "student"
+    },
+    {
+      "Id": "a1000000-0000-4000-8000-000000000001",
+      "SchoolId": "10000000-0000-4000-8000-000000000001",
+      "Role": "teacher"
+    },
+    {
+      "Id": "b1000000-0000-4000-8000-000000000002",
+      "SchoolId": "20000000-0000-4000-8000-000000000002",
+      "Role": "teacher"
+    }
+  ],
+  "CourseAdoptions": [
+    {
+      "Id": "a2000000-0000-4000-8000-000000000001",
+      "SchoolId": "10000000-0000-4000-8000-000000000001",
+      "CourseCode": "GEO",
+      "Pathway": "Traditional",
+      "LessonCodes": [
+        "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+        "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13"
+      ]
+    },
+    {
+      "Id": "b2000000-0000-4000-8000-000000000002",
+      "SchoolId": "20000000-0000-4000-8000-000000000002",
+      "CourseCode": "GEO",
+      "Pathway": "Traditional",
+      "LessonCodes": [
+        "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+        "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13"
+      ]
+    },
+    {
+      "Id": "a3000000-0000-4000-8000-000000000001",
+      "SchoolId": "10000000-0000-4000-8000-000000000001",
+      "CourseCode": "ALG1",
+      "Pathway": "Traditional",
+      "LessonCodes": [
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L15"
+      ]
+    }
+  ],
+  "SyntheticAttempts": [
+    {
+      "Id": "a4000000-0000-4000-8000-000000000001",
+      "StudentId": "a0000000-0000-4000-8000-000000000001",
+      "SchoolId": "10000000-0000-4000-8000-000000000001",
+      "AdoptionId": "a2000000-0000-4000-8000-000000000001",
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Feedback": "Synthetic isolated A only; teacher-score not asserted"
+    },
+    {
+      "Id": "b4000000-0000-4000-8000-000000000002",
+      "StudentId": "b0000000-0000-4000-8000-000000000002",
+      "SchoolId": "20000000-0000-4000-8000-000000000002",
+      "AdoptionId": "b2000000-0000-4000-8000-000000000002",
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Feedback": "Synthetic isolated B only; teacher-score not asserted"
+    }
+  ],
+  "PositiveCases": [
+    {
+      "Id": "A_STUDENT_READ_GEO",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Operation": "viewLesson",
+      "Expected": "ALLOW"
+    },
+    {
+      "Id": "B_STUDENT_READ_GEO",
+      "Actor": "b0000000-0000-4000-8000-000000000002",
+      "School": "20000000-0000-4000-8000-000000000002",
+      "Adoption": "b2000000-0000-4000-8000-000000000002",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Operation": "viewLesson",
+      "Expected": "ALLOW"
+    },
+    {
+      "Id": "A_STUDENT_READ_OWN_ATTEMPT",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "readOwnAttempt",
+      "Expected": "ALLOW"
+    },
+    {
+      "Id": "A_TEACHER_SAME_SCHOOL_REVIEW",
+      "Actor": "a1000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "teacherReviewAndSaveGrade",
+      "Expected": "ALLOW_WHEN_ROLE_ASSIGNMENT_AND_HUMAN_WORKFLOW_IMPLEMENTED"
+    }
+  ],
+  "DenialCases": [
+    {
+      "Id": "CROSS_SCHOOL_STUDENT_ADOPTION",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "b2000000-0000-4000-8000-000000000002",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Operation": "viewLesson",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "CROSS_SCHOOL_ATTEMPT_READ",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "b2000000-0000-4000-8000-000000000002",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Attempt": "b4000000-0000-4000-8000-000000000002",
+      "Operation": "readOwnAttempt",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "CROSS_SCHOOL_TEACHER_SCORE",
+      "Actor": "b1000000-0000-4000-8000-000000000002",
+      "School": "20000000-0000-4000-8000-000000000002",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "teacherReviewAndSaveGrade",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "WRONG_ALG1_ADOPTION",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a3000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Operation": "viewLesson",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "WRONG_LESSON_B_IN_ATTEMPT_A",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "readOwnAttempt",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "WRONG_STUDENT_SAME_SCHOOL",
+      "Actor": "a1000000-0000-4000-8000-000000000001",
+      "School": "10000000-0000-4000-8000-000000000001",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "studentSubmitAsTeacher",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "OTHER_STUDENT_OWNERSHIP",
+      "Actor": "b0000000-0000-4000-8000-000000000002",
+      "School": "20000000-0000-4000-8000-000000000002",
+      "Adoption": "a2000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "readOwnAttempt",
+      "Expected": "DENY"
+    },
+    {
+      "Id": "OTHER_STUDENT_ATTEMPT_REPLAY",
+      "Actor": "b0000000-0000-4000-8000-000000000002",
+      "School": "20000000-0000-4000-8000-000000000002",
+      "Adoption": "b2000000-0000-4000-8000-000000000002",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Operation": "readOwnAttempt",
+      "Expected": "DENY"
+    }
+  ],
+  "PersistenceCases": [
+    {
+      "Id": "GRADE_PERSISTENCE",
+      "Actor": "a1000000-0000-4000-8000-000000000001",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Expected": "Submitted human-reviewed rubric grade and feedback must persist on isolated synthetic test database, be visible only to authorized pupil/teacher",
+      "Status": "NOT_RUN"
+    },
+    {
+      "Id": "DOUBLE_SUBMISSION_IDEMPOTENCE",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Expected": "Same client request identifier is not duplicated as two successful attempts",
+      "Status": "NOT_RUN"
+    },
+    {
+      "Id": "WRONG_ANSWER_GRADING",
+      "Actor": "a0000000-0000-4000-8000-000000000001",
+      "Attempt": "a4000000-0000-4000-8000-000000000001",
+      "Lesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "Expected": "Lesson-exact wrong response rejected while valid equivalent recognized; malformed or zero denominator rejected",
+      "Status": "NOT_RUN"
+    }
+  ],
+  "Boundary": "A JSON policy fixture is not a functional authorization test; all positive/negative endpoints remain untested. Human-workflow positive case must not be treated as working until authorized server and actual persistence are verified."
+}

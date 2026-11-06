@@ -1,0 +1,111 @@
+{
+  "SchemaVersion": 1,
+  "CreatedDate": "2026-10-29",
+  "Course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "Repository": "EIAS79/Edulytics",
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "PR": "https://github.com/EIAS79/Edulytics/pull/583",
+  "PRState": "DRAFT_NO_GO",
+  "Role": "Coder 6",
+  "Device": "Anas_Nitro / Personal",
+  "Checkout": "C:\\Users\\codin\\Edulytiks-Coder6-GEO-Recovery-20261029",
+  "LastTestedCodeSHA": "ffe61f012f0f3939b40d2814724291c1afa73234",
+  "PublishedCodeSha": null,
+  "Coverage": {
+    "canonical": 124,
+    "richV2CandidateAuthored": 124,
+    "units": 8,
+    "workedExamples": 372,
+    "workedExamplesStructurallyChecked": 372,
+    "workedExamplesIndependentlyMathematicallyCertified": 0
+  },
+  "SourceReadStates": {
+    "NewV12TeacherAndStudentActivityPages": 39,
+    "ReauditedV10InitialUnit5TeacherAndStudentPages": 18,
+    "PriorInitialRecordsNotYetReaudited": 67,
+    "AllRecordsWithSomeInitialTeacherAndStudentSourceRead": 124,
+    "StageAAccepted": 0,
+    "RemainingFullTaskParityUnverified": 124,
+    "SourceOptionalU08L01Verified": true
+  },
+  "ContentRepair": {
+    "NewV12CourseLessonCodes": [
+      "U06:L03",
+      "U07:L02",
+      "U07:L06",
+      "U07:L10",
+      "U07:L12",
+      "U08:L02",
+      "U08:L04"
+    ],
+    "PreservedV11MathematicalRepairs": [
+      "U08:L04",
+      "U08:L07",
+      "U08:L08",
+      "U08:L09",
+      "U08:L10",
+      "U08:L11",
+      "U06:L07"
+    ],
+    "OriginalWorkedExampleSlotsInCourse": 372,
+    "OriginalFirstPartyGraphicsNotCopied": true
+  },
+  "Visuals": {
+    "OriginalStandaloneAccessibleSvgCount": 3,
+    "NativeStructuredVisualCandidatesU05U08": 60,
+    "AuthenticatedSvgIntegrationVerified": 0,
+    "AuthenticDynamicOrPhysicalActivityEquivalenceVerified": 0,
+    "SharedBlocker": "RichLessonVisualKind and _RichLessonVisual.cshtml do not accept course-local SVG asset reference. Supervisor2 single-writer review needed."
+  },
+  "Practice": {
+    "ExactGeoRowsInCurrentGlobalLessonSkillMappings": 0,
+    "TotalGlobalRowsInCurrentMapping": 238,
+    "ExactGeoReadyVerifiedRuntimeContractsProven": 0,
+    "LessonSpecificSourceHumanAssessmentAuthoringContracts": 4,
+    "HumanContractPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-v12-human-scored-source-activity-candidates.json",
+    "CorrectWrongMalformedEquivalentBoundaryRealGeneratorTest": "NOT_RUN",
+    "TeacherSubmissionReviewGradeSaved": "NOT_RUN",
+    "GradePersistence": "NOT_RUN",
+    "StageCVerified": 0
+  },
+  "Security": {
+    "DisposableTwoSchoolAuthenticatedTest": "NOT_RUN",
+    "TraditionalGeoAdoptionVerified": 0,
+    "WrongTenantWrongALG1WrongLessonDenialsVerified": 0,
+    "StageDVerified": 0,
+    "SharedIssue": "https://github.com/EIAS79/Edulytics/issues/453"
+  },
+  "StageAccepted": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0
+  },
+  "Tests": {
+    "NodeCommand": "node --test tools/curriculum/us-ccss-geo-richv2-contract.test.cjs tools/curriculum/us-ccss-geo-v11-conditional-integrity.test.cjs tools/curriculum/us-ccss-geo-v11-svg-assets.test.cjs tools/curriculum/us-ccss-geo-v12-source-math-contract.test.cjs tools/curriculum/us-ccss-geo-v12-human-scoring-contract.test.cjs",
+    "Passed": 40,
+    "Failed": 0,
+    "Skipped": 0,
+    "ExitCode": 0,
+    "ExecutedOnAuthorisedDevice": true,
+    "DotnetCommandForApprovedRunner": "dotnet test Edulytics.sln -c Release",
+    "DotnetLocal": "NOT_RUN — dotnet not available; global.json SDK 10.0.200 unchanged",
+    "RunLimits": [
+      "No complete independent mathematical audit of all 372 answers; only source-targeted external mathematical oracles plus field checks",
+      "No live Web UI authenticated student/teacher rendering or source diagrams",
+      "No Math engine grading, database attempt storage or two-school auth verification"
+    ]
+  },
+  "Ci": {
+    "ExactSHAAtReview": "ffe61f012f0f3939b40d2814724291c1afa73234",
+    "Workflows": 7,
+    "ObservedStatus": "queued or pending in earlier exact commit, check current latest SHA separately",
+    "GreenClaim": false,
+    "SharedCatalogPR": "https://github.com/EIAS79/Edulytics/pull/598 (not merged by Coder6)"
+  },
+  "IntegrationHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_V12_SUP2_SHARED_INTEGRATION_HANDOFF_20261029.md",
+  "Decision": "AUTHORING_COMPLETE_SOURCE_REVIEW_PARTIAL_PRACTICE_RUNTIME_BLOCKED_NO_GO",
+  "NoMainMerge": true,
+  "NoProductionDeployment": true,
+  "NoRealTenantWrite": true
+}

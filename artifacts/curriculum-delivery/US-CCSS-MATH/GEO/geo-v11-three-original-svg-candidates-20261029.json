@@ -1,0 +1,36 @@
+{
+  "SchemaVersion": 1,
+  "CourseCode": "GEO",
+  "CourseIdentity": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "CreatedOn": "2026-10-29",
+  "AssetStatus": "FIRST_PARTY_STATIC_ASSET_STAGED_NOT_YET_LINKED_TO_LESSON_RENDERER",
+  "AcademicAcceptance": "NOT_VERIFIED",
+  "WebStudentTeacherAuthenticatedView": "NOT_TESTED",
+  "Model": "Assets are standalone, individually accessible SVG source files. The current shared RichLessonVisual renderer has no general per-lesson SVG asset kind; central reviewer/designated single writer owns any production integration.",
+  "Assets": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L01",
+      "Path": "src/Edulytics.Web/wwwroot/geometry/geo/v11/u05-l01-solids-of-rotation.svg",
+      "AccessibleTitle": "A rectangle revolved about its side makes a filled right circular cylinder",
+      "SourceTask": "Identify a 2D generating region and axis for a 3D solid",
+      "MathCheck": "Width r becomes cylinder radius r; height h remains perpendicular height h; volume πr²h",
+      "VisualParity": "PARTIAL_FIRST_PARTY_CANDIDATE"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07",
+      "Path": "src/Edulytics.Web/wwwroot/geometry/geo/v11/u06-l07-focus-directrix-parabola.svg",
+      "AccessibleTitle": "Focus-directrix parabola x squared equals eight y",
+      "SourceTask": "Visual focus/directrix locus and equidistance before algebra",
+      "MathCheck": "For focus (0,2), directrix y=-2, P=(4,2), both distances equal 4; x²=8y",
+      "VisualParity": "PARTIAL_FIRST_PARTY_CANDIDATE_DYNAMIC_APPLET_MISSING"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L11",
+      "Path": "src/Edulytics.Web/wwwroot/geometry/geo/v11/u07-l11-radian-arc-radius.svg",
+      "AccessibleTitle": "Radian measure equals arc length divided by radius",
+      "SourceTask": "Measure central angle using arc length divided by radius; original source uses string and applet",
+      "MathCheck": "For 60° arc, θ=π/3 radians, s=(π/3)r",
+      "VisualParity": "PARTIAL_FIRST_PARTY_CANDIDATE_PHYSICAL_STRING_APPLET_MISSING"
+    }
+  ]
+}

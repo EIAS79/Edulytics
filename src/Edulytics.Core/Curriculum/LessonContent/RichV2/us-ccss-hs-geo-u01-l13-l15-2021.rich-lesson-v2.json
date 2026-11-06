@@ -1,0 +1,292 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u01-l13-l15-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L13",
+      "CultureCode": "en",
+      "Title": "Incorporating Rotations",
+      "ExplanationParagraphs": [
+        "Learning goal: Draw rotational images of points and figures on a grid while identifying the required centre, directed angle and appropriate measurement precision; explain how a translation, rotation and reflection can establish congruence.",
+        "Rotation is rigid: a point P and its image P′ lie on a circle with the given centre O and same radius OP=OP′. The directed angle from OP to OP′ determines clockwise or counterclockwise rotation. A centre, angle magnitude and direction are all needed for a unique general specification.",
+        "Verbal diagram: centre O=(0,0); P=(2,1) rotates 90 degrees counterclockwise to P′=(-1,2). To rotate a polygon, transform each labelled vertex around the same centre through the same directed angle, then join images in the original correspondence order.",
+        "Student task: choose a non-symmetric triangle and map it to a congruent target by explicitly recording each intermediate vertex after a translation, a rotation and, if necessary, a reflection. Provide numerical or ruler/compass checks for preserved distances. Teacher rubric (0–4): labelled centre/direction/angle, correct intermediate images, preserved correspondence and rigorous justification. Physical rotation drawings and oral explanation require human scoring.",
+        "Original first-party Edulytiks material aligned to Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; no publisher diagrams, logos or protected assessment answers reproduced.",
+        "First-party 13.1 Left to Right: replace publisher flag artwork with two original line-segment 'signal arms' from centre O=(0,0), pointing first to P=(2,0) and then Q=(0,2). Use a protractor or coordinate grid to identify the centre, 90 degree counterclockwise direction and angle; show that direction changes the result. A rotation cannot be specified by angle alone.",
+        "First-party 13.2 Turning on a Grid: use original asymmetric quadrilateral A(1,0),B(3,0),C(3,1),D(1,1) with centre O=(0,0). Carry out 90 degrees clockwise and 180 degrees; then an original irregular polygon HJKLMN about O for 120 degrees clockwise and about a distinct centre P for 60 degrees counterclockwise. Label original and image points and keep the same centre/directed angle for each vertex.",
+        "First-party 13.3 Translate, Rotate, Reflect: triangle ABC has A=(0,0), B=(2,0), C=(0,1). Translate all vertices by (3,0), rotate the image 90 degrees counterclockwise around D=(3,0), then reflect across the vertical line x=3. Track each labelled intermediate triangle and demonstrate exactly which image maps to the chosen congruent DEF. Every rigid step preserves distances and angles, but a different order may not reach the same target."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rotation parameters",
+          "Definition": "A planar rotation is specified by its centre, directed angle and turn sense.",
+          "Rule": "Use one centre and directed angle for all vertices.",
+          "Example": "A 90-degree counterclockwise turn about the origin maps (x,y) to (-y,x)."
+        },
+        {
+          "Title": "Distance preservation",
+          "Definition": "Rotations preserve the distance to their centre and all distances between points.",
+          "Rule": "Check OP=OP′ and matching lengths/angles in polygons.",
+          "Example": "Point (3,4) remains 5 units from the origin after any rotation about it."
+        },
+        {
+          "Title": "Composition for congruence",
+          "Definition": "A sequence of translations, rotations and reflections is a rigid transformation.",
+          "Rule": "Track vertex images one stage at a time, and verify correspondence; reversing order is not generally equivalent.",
+          "Example": "Align one corresponding vertex by translation, a second by rotation, and orientation by a reflection if required."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Quarter-turn around origin",
+          "Question": "Rotate P=(2,1) through 90 degrees counterclockwise about O=(0,0).",
+          "Method": "Apply (x,y)↦(-y,x).",
+          "Steps": [
+            "The directed angle is +90 degrees counterclockwise about O.",
+            "Use the quarter-turn rule: (-1,2).",
+            "OP²=2²+1²=5; OP′²=(-1)²+2²=5.",
+            "The dot product (2,1)·(-1,2)=0, confirming the radii are perpendicular."
+          ],
+          "Answer": "P′=(-1,2), with centre distance √5 unchanged.",
+          "Check": "A clockwise quarter-turn would instead yield (1,-2), showing why direction matters."
+        },
+        {
+          "Title": "Rotate a triangle",
+          "Question": "Rotate A=(0,0), B=(2,0), C=(0,1) 180 degrees about O=(1,1).",
+          "Method": "Use P′=2O−P for a half-turn.",
+          "Steps": [
+            "A′=(2,2), B′=(0,2), C′=(2,1).",
+            "A′B′ has length 2, equal to AB=2.",
+            "A′C′ has length 1, equal to AC=1.",
+            "Each midpoint of P and P′ equals O, proving a common 180-degree rotation centre."
+          ],
+          "Answer": "Image triangle has A′=(2,2), B′=(0,2), C′=(2,1).",
+          "Check": "The same result arises clockwise or counterclockwise for a 180-degree turn."
+        },
+        {
+          "Title": "Distinguish two rotations with the same angle",
+          "Question": "Why do rotations of P=(2,0) by 90 degrees counterclockwise around O=(0,0) and Q=(1,0) differ?",
+          "Method": "Translate to each centre, rotate relative coordinates, and translate back.",
+          "Steps": [
+            "About O, (2,0) rotates to (0,2).",
+            "Relative to Q, P−Q=(1,0).",
+            "Rotate (1,0) to (0,1), then add Q=(1,0), yielding (1,1).",
+            "Both are 90-degree counterclockwise rotations but use different centres."
+          ],
+          "Answer": "The images are (0,2) and (1,1) respectively.",
+          "Check": "The required centre is not optional; a bare angle does not determine the transformation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Naming an angle without identifying its centre or direction.",
+          "WhyWrong": "Many rotations share an angle but send the same point to different images.",
+          "Correction": "State centre, clockwise/counterclockwise sense and directed angle before mapping."
+        },
+        {
+          "Mistake": "Rotating the polygon's vertices around different points.",
+          "WhyWrong": "The image may change pairwise lengths and no longer be a single rigid rotation.",
+          "Correction": "Apply one common rotation centre and angle to all vertices."
+        }
+      ],
+      "SummaryPoints": [
+        "Rotations need centre, angle and direction; all vertices use the same parameters.",
+        "Rotation preserves distances and angle measures; correspondences must be tracked through motion sequences.",
+        "Authentic drawings and multi-step congruence arguments are assessed by a teacher."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L14",
+      "CultureCode": "en",
+      "Title": "Defining Rotations",
+      "ExplanationParagraphs": [
+        "Learning goal: Use a rigorous centre-and-directed-angle definition of rotation to identify, construct and verify the image of a point or figure, including the special fixed centre.",
+        "A rotation R about O through a directed angle θ maps P≠O to P′ on the circle centred O of radius OP such that the directed angle POP′ equals θ modulo 360 degrees. The centre O maps to itself. Clockwise angles can be represented as negative and counterclockwise as positive under a consistent convention.",
+        "Verbal diagram: centre O and equal-length segments OP and OP′ enclose the directed angle θ. For a 120-degree counterclockwise rotation, P′ is reached around the radius-OP circle in the counterclockwise direction, not by moving P an arbitrary straight-line distance.",
+        "Student task: for three named centres and angles, construct one image triangle at each; use equal-radius arcs and angle measurements to distinguish rotations, and critique a candidate whose radius is correct but direction is wrong. Teacher rubric (0–4): fixed centre, correct radial distance, directed angle, and correspondence/justification. Teacher assesses physical diagrams and explanations.",
+        "Original first-party Edulytiks material aligned to Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; no publisher diagrams, logos or protected assessment answers reproduced.",
+        "First-party 14.1 Math Talk Comparing Angles: show original three pairs of rays with known compass chord distances and variable radii. Ask which angle pair is congruent, how a protractor or equal central-angle/chord construction can check, and why unequal radii alone do not imply unequal angle measures. Compare reasons orally before giving the rotation definition.",
+        "First-party 14.2 Info Gap: Rotations. Teacher privately gives one partner a problem card requiring the image of P=(2,1) while withholding rotation information; other partner has a DATA CARD: centre O=(0,1), angle 90 degrees CCW. Learners must ask for centre, direction and angle and justify why each is needed, then separately calculate P'=(0,3). Do not show both cards before the information exchange.",
+        "First-party 14.3 Turning into Triangles: A=(2,0), B=(0,0), rotate segment BA 90 degrees clockwise around B to A'=(0,-2), draw triangle ABA' and classify it as right isosceles by BA=BA'=2 and included angle 90. In another configuration C=(3,0), D=(0,0), rotate DC twice by 30 degrees CCW around D, giving C''=(1.5, 1.5√3), and justify that triangle CDC'' is equilateral with included 60-degree angle and two radius-3 sides. Do not conflate 30-degree first stage with 60-degree final result."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rotation definition",
+          "Definition": "A rigid transformation about centre O through a directed angle θ, preserving radius and applying the same angular change to every point.",
+          "Rule": "Keep OP=OP′ for every point and use a common signed angle.",
+          "Example": "A point on the circle radius 2 remains on that circle after rotation about its centre."
+        },
+        {
+          "Title": "Fixed centre",
+          "Definition": "The rotation centre stays in place for any rotation angle.",
+          "Rule": "O maps to O; do not attempt to assign a nonunique direction to the zero-length radius.",
+          "Example": "Rotating (1,3) about (1,3) leaves it at (1,3)."
+        },
+        {
+          "Title": "Angle periodicity",
+          "Definition": "Directed rotations differing by a whole number of full turns have the same point images.",
+          "Rule": "Reduce directed angles modulo 360 degrees when comparing rotation maps.",
+          "Example": "A 450-degree counterclockwise turn is equivalent to a 90-degree counterclockwise turn."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rotate a point about a nonorigin centre",
+          "Question": "Rotate P=(4,2) 90 degrees clockwise about O=(2,1).",
+          "Method": "Subtract centre, rotate the relative position, add centre.",
+          "Steps": [
+            "Compute P−O=(2,1).",
+            "Clockwise 90 degrees sends (u,v) to (v,-u), so (2,1)→(1,-2).",
+            "Add O=(2,1), yielding P′=(3,-1).",
+            "Check OP²=2²+1²=5, OP′²=1²+(-2)²=5."
+          ],
+          "Answer": "P′=(3,-1).",
+          "Check": "A counterclockwise 90-degree image would be (1,3), not (3,-1)."
+        },
+        {
+          "Title": "Rotate around the point itself",
+          "Question": "A rotation of 67 degrees is centred at O=(−2,5). What happens to O?",
+          "Method": "Apply the fixed-centre rule.",
+          "Steps": [
+            "The centre-relative displacement O−O is the zero vector.",
+            "Rotating a zero vector gives the zero vector.",
+            "Add O back to recover O′=O.",
+            "All other off-centre points follow a radius and directed angle."
+          ],
+          "Answer": "O maps to (−2,5), itself.",
+          "Check": "The special case does not require an arbitrary direction for a zero-radius point."
+        },
+        {
+          "Title": "Compare equivalent directed angles",
+          "Question": "How do a clockwise 270-degree turn and a counterclockwise 90-degree turn compare?",
+          "Method": "Normalize signed angles modulo 360 degrees.",
+          "Steps": [
+            "Clockwise 270 degrees corresponds to −270 degrees.",
+            "Add a full +360-degree turn: −270+360=+90 degrees.",
+            "The two turn specifications have the same centre and equivalent directed angle.",
+            "Therefore they map every point to the same image."
+          ],
+          "Answer": "The two rotations are equivalent if their centres agree.",
+          "Check": "Equal angle alone is insufficient if the rotation centres differ."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using the same numerical angle without checking turn direction.",
+          "WhyWrong": "Clockwise and counterclockwise turns usually produce different points.",
+          "Correction": "Use a signed-angle convention and verify angular orientation about the specified centre."
+        },
+        {
+          "Mistake": "Expecting a new image location for the rotation centre.",
+          "WhyWrong": "The centre is the unique fixed point of a nonidentity plane rotation.",
+          "Correction": "Map O to itself; apply radial constraints only to other points."
+        }
+      ],
+      "SummaryPoints": [
+        "A rotation uses one centre, a directed angle and equal radii to original/image points.",
+        "The centre is fixed and full-turn differences yield equivalent rotations.",
+        "Measured diagrams and explanations require actual evidence and teacher-scored review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L15",
+      "CultureCode": "en",
+      "Title": "Symmetry",
+      "ExplanationParagraphs": [
+        "Learning goal: Identify all reflection lines that map a figure onto itself and justify them using matching points, not merely approximate visual balance.",
+        "A line ℓ is an axis of reflection symmetry of a figure F if reflecting every point of F across ℓ produces exactly the same set F. Individual points may move; the figure as a whole must coincide with its original. Identity motion does not count as a nontrivial symmetry.",
+        "Verbal diagram: a non-square rectangle centred at the origin has vertices (−3,−1),(3,−1),(3,1),(−3,1). Its vertical and horizontal midlines x=0 and y=0 are symmetry axes. Diagonal lines are not axes unless the rectangle is a square.",
+        "Student task: study a general kite, a rectangle and an isosceles triangle, draw every symmetry axis under each stated hypothesis, supply one invalid proposed axis and justify its failure. Teacher rubric (0–4): complete axis enumeration, correct reflection pairing, explicit shape hypotheses, and supported counterexample. Original collaborative display, drawing and proof require human scoring.",
+        "Original first-party Edulytiks material aligned to Illustrative Mathematics Geometry First Edition (2019–2021), CC BY 4.0; no publisher diagrams, logos or protected assessment answers reproduced.",
+        "Source 15.1 Back to the Start: students compare a segment translated up 5 then down 5 (identity composition) to nontrivial individual symmetries, such as reflecting the segment across its perpendicular bisector or rotating 180 degrees about its midpoint, which exchange endpoints while leaving the segment set unchanged.",
+        "Source 15.2 Self Reflection: groups define, draw and label a non-square rectangle, square or non-rhombus kite; show EVERY reflection axis with mapped vertices, one contrasting invalid axis, and a precise explanation. A non-square rectangle has two axes; a square four; an example non-rhombus kite with vertices (0,3),(2,0),(0,-1),(-2,0) has one axis x=0.",
+        "Source 15.3 Diabolic Diagonals: only one diagonal of a generic non-rhombus kite is a reflection axis; the other exchanges unequal vertices and fails. A special rhombus or square may have additional axes, so do not generalize 'every kite has exactly one' without a non-rhombus hypothesis."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Line of symmetry",
+          "Definition": "A line such that reflecting every point of the figure across the line yields the same entire figure.",
+          "Rule": "Test corresponding vertices, edges and interior points, not just one visually similar part.",
+          "Example": "The perpendicular bisector of the base is a symmetry axis for a non-equilateral isosceles triangle."
+        },
+        {
+          "Title": "Rectangle versus square",
+          "Definition": "An ordinary non-square rectangle has exactly two reflection axes; a square has four.",
+          "Rule": "For a non-square rectangle use horizontal and vertical midlines; diagonals become axes only if its side lengths are equal.",
+          "Example": "A 6×2 rectangle is not symmetric across its diagonals."
+        },
+        {
+          "Title": "Kite symmetry",
+          "Definition": "A kite with two pairs of equal adjacent sides generally has one reflection axis through vertices shared by those equal side pairs.",
+          "Rule": "Do not assert both diagonals are symmetry axes unless additional rhombus/square hypotheses apply.",
+          "Example": "Kite A=(0,2),B=(1,0),C=(0,-1),D=(-1,0) is symmetric across x=0 but not y=0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find axes of a non-square rectangle",
+          "Question": "Find the reflection symmetries of the rectangle with vertices (±3,±1).",
+          "Method": "Test candidate lines using point-to-point reflections.",
+          "Steps": [
+            "Reflect across x=0: each (x,y) maps to (-x,y), which is also in the rectangle.",
+            "Reflect across y=0: each (x,y) maps to (x,-y), also in the rectangle.",
+            "Reflect corner (3,1) over diagonal y=x: it maps to (1,3), which is not in this rectangle.",
+            "No oblique line can reflect its 6-unit sides onto 2-unit sides while preserving lengths."
+          ],
+          "Answer": "Exactly two axes: x=0 and y=0.",
+          "Check": "The side lengths are unequal; if the rectangle were a square, two diagonals would also be axes."
+        },
+        {
+          "Title": "Find the symmetry line of a kite",
+          "Question": "Kite A=(0,2), B=(1,0), C=(0,-1), D=(-1,0). Which diagonal is a reflection axis?",
+          "Method": "Reflect coordinates and compare mapped vertices.",
+          "Steps": [
+            "Reflection across x=0 swaps B and D while leaving A and C fixed.",
+            "Thus the entire kite boundary and interior map to themselves.",
+            "Reflection across y=0 sends A=(0,2) to (0,-2), which is not a vertex of the kite.",
+            "Therefore the horizontal diagonal BD is not a symmetry axis."
+          ],
+          "Answer": "Only vertical diagonal AC, lying on x=0.",
+          "Check": "The example is not a rhombus; its upper and lower distances from the horizontal diagonal are unequal."
+        },
+        {
+          "Title": "Isosceles triangle with a fixed base",
+          "Question": "Triangle A=(−2,0), B=(2,0), C=(0,3) is isosceles. Identify its reflection axis.",
+          "Method": "Use perpendicular-bisector symmetry of the base.",
+          "Steps": [
+            "Base endpoints A and B are 2 units left and right of x=0.",
+            "Reflecting across x=0 swaps A and B.",
+            "Apex C lies on x=0 and stays fixed.",
+            "The reflected triangle has the same three vertices and coincides with the original."
+          ],
+          "Answer": "The axis is x=0, the perpendicular bisector of AB.",
+          "Check": "The triangle is not equilateral: AB=4 while AC=BC=√13, so there is only one reflection axis."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming every diagonal is an axis of symmetry for a rectangle or kite.",
+          "WhyWrong": "A reflection across an arbitrary diagonal may move vertices outside the figure.",
+          "Correction": "Apply the reflection map to each vertex, compare the image set, and state the shape hypotheses."
+        },
+        {
+          "Mistake": "Calling a motion a symmetry because one point or one edge coincides.",
+          "WhyWrong": "A symmetry must map the entire figure onto itself, not just one component.",
+          "Correction": "Check all defining vertices and boundaries; consider an interior or asymmetric marker when needed."
+        }
+      ],
+      "SummaryPoints": [
+        "Reflection symmetry means the entire figure maps onto itself under a named reflection.",
+        "A non-square rectangle has two axes, a square four, and a general kite one.",
+        "Axis enumeration, geometric drawings and counterexamples require teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

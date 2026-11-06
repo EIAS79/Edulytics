@@ -1,0 +1,306 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u03-l07-l09-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L07",
+      "CultureCode": "en",
+      "Title": "Reasoning about Similarity with Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Justify the similarity of two triangles with matching ordered angles and one common ratio of all corresponding sides by describing a dilation and a rigid point-by-point alignment.",
+        "Given ABC and DEF with A↔D,B↔E,C↔F, suppose all angles match and each target side is k times the matching original length, for one k>0. Dilate ABC by k about A; then it has a segment of length DE. Translate its first vertex onto D and rotate its base ray onto DE; if necessary reflect across DE. Two angle-ray constraints force the third image vertex to coincide with F, so a similarity transformation exists.",
+        "Verbal diagram: small triangle has sides 3,4,5. A second triangle has sides 6,8,10 and matching corresponding angles. The second is a factor-2 dilation followed by some rigid relocation; changing the exact figure orientation does not change similarity.",
+        "Source-inspired original student task: work with a partner who knows only labelled angle and ratio data, specify a sequence of transformations verbally, and have them reconstruct a corresponding triangle with each intermediate image. Teacher rubric (0–8): teacher assesses ordered angle/side matches, precise reciprocal ratio and dilate-first ASA proof, equivalent rigid-first construction, and partner information-gap explanation in four 0/1/2 criteria. Partner communication, diagrams and narrative proofs require teacher scoring.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Content is independently authored Edulytiks instruction, not publisher drawings or protected assessments.",
+        "Source 7.1 Notice and Wonder Nested Triangles (5 min): show original Edulytiks nested triangles, invite unedited student notices and questions about same-ray dilation, side proportions and angle equality before announcing any theorem.",
+        "Source 7.2 Stretched or Distorted? Triangles (10 min): each learner sketches two triangles ABC, DEF with A to D, B to E, C to F, three congruent corresponding angles and one common positive ratio of all corresponding sides; swap sketches with a peer, independently describe rigid motions plus a dilation, and compare whether identical coordinates require different individual moves. An optional challenge asks for more than one valid sequence.",
+        "Source 7.3 Invisible Triangles Similarity (20 min): partner 1 only knows reported ordered vertex, angle and length correspondences; partner 2 keeps first-party triangle cards hidden and draws every requested translation, rotation, reflection and dilation while reporting when 1,2,3 vertices align. Students formulate a GENERAL transformation method rather than merely copying one diagram. Original publisher blackline cards are not reproduced.",
+        "Source 7.3 FORMAL THEOREM proof: if triangles have all corresponding sides proportional by k>0 and all corresponding angles congruent, dilate the first about one named vertex by k so one corresponding side length matches the second. Dilation angle preservation leaves both included end angles congruent. The previous ASA triangle congruence theorem now guarantees a rigid sequence to align the dilated triangle exactly with the target, so original triangles are similar by definition. This completes the source theorem and does NOT prematurely use AA similarity. Alternative rigid-first method aligns an angle and its rays, then uses same k to place endpoints on exact same rays at target distances. No single fixed translation coordinates work for all orientations.",
+        "Source Practice P1-P8: P1 sketch and label original similar polygon; P2 give two distinct legal sequences for triangles ABC and AED with AC=6, but figure-dependent scale; P3 define similarity via rigid transformations and dilations; P4 parallelogram P which options A-E similar requires original figure; P5 square ABCD to EFGH first translate AE then rotate at E and choose factor 5/2 or 2/5 as supported by source figure; P6 ABC perimeter twice midpoint DEF perimeter with labelled source lengths; P7 square is the guaranteed option having a diagonal symmetry axis (choice B); P8 give geometrically valid translated-triangle explanation for equality angle CAD and angle ACB using original figure.",
+        "Source 7.4 Cool-down Not quite similar is teacher-login restricted. Independently authored student paper alternative presents one all-angle-and-proportional-side pair and one equal-angle-but-distorted quadrilateral pair; student must state which satisfies transformations and justify the full general triangle theorem via dilation and ASA. Teacher checks labelled construction, correct correspondence, proof and peer feedback; no machine rubric or authenticated grade is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Similarity invariants",
+          "Definition": "Similar triangles have corresponding angle measures equal and side lengths proportional by a common positive scale factor.",
+          "Rule": "Keep the same ordered vertex mapping for every comparison.",
+          "Example": "3:4:5 versus 6:8:10 has scale 2."
+        },
+        {
+          "Title": "General alignment strategy",
+          "Definition": "Dilate first to match one corresponding side length, then use rigid motions to align two and finally all three corresponding vertices.",
+          "Rule": "Translate the first vertex to target, rotate the second onto its ray and reflect if orientation needs reversal.",
+          "Example": "If AB=3 and DE=6, dilate by 2 before aligning AB to DE."
+        },
+        {
+          "Title": "Triangle versus arbitrary polygon",
+          "Definition": "Triangle side ratios and corresponding angles constrain shape strongly; a general polygon needs care with vertex order and side arrangement.",
+          "Rule": "Prove the claimed figures admit a single dilation-plus-rigid sequence; a few equal-looking measurements do not suffice for arbitrary diagrams.",
+          "Example": "An equal-angle rectangle pair with different aspect ratios is not similar."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove similarity with a rigid sequence",
+          "Question": "Triangle ABC has sides 3,4,5. Triangle DEF has matching sides 6,8,10 and matching angles. Why similar?",
+          "Method": "Dilate then align corresponding vertices.",
+          "Steps": [
+            "Scale ABC by k=6/3=2.",
+            "The image side lengths become 6,8,10.",
+            "Translate its first vertex onto D and rotate its first side to DE.",
+            "If needed, reflect across DE to put the third vertex on the target side.",
+            "The corresponding angle ray and adjacent side length fix the third vertex at F."
+          ],
+          "Answer": "ABC∼DEF at scale factor 2.",
+          "Check": "Each target/original length ratio is 2 and corresponding angles agree."
+        },
+        {
+          "Title": "Compute an ordered missing side",
+          "Question": "ABC∼DEF, with AB=5, DE=15, AC=7. Find DF.",
+          "Method": "Use k=DE/AB with A↔D,C↔F.",
+          "Steps": [
+            "Scale factor k=15/5=3.",
+            "Side AC corresponds to DF.",
+            "Therefore DF=3·7=21.",
+            "Verify DF/AC=21/7=3."
+          ],
+          "Answer": "DF=21.",
+          "Check": "Do not pair AC with EF; that would ignore ordered correspondence."
+        },
+        {
+          "Title": "Diagnose a false similarity claim",
+          "Question": "Two right triangles have legs 3,4 and 6,9. Are they similar?",
+          "Method": "Compare corresponding leg ratios under the only right-angle correspondence and possible swap.",
+          "Steps": [
+            "Pairing 3→6 and 4→9 gives ratios 2 and 9/4, unequal.",
+            "Swapping legs gives ratios 9/3=3 and 6/4=1.5, still unequal.",
+            "No single dilation factor aligns both legs.",
+            "Although both have a 90° angle, they need not have the same acute angles."
+          ],
+          "Answer": "No; unequal leg ratios disprove similarity.",
+          "Check": "One common right angle is not enough for AA similarity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Proving only one corresponding side ratio matches.",
+          "WhyWrong": "Other sides may have different ratios, making a uniform dilation impossible.",
+          "Correction": "Verify a common scale across all corresponding lengths and correct ordered angles."
+        },
+        {
+          "Mistake": "Treating the third vertex as determined merely by placing the first two vertices, without using angle/side data.",
+          "WhyWrong": "Many third points are possible relative to a fixed base.",
+          "Correction": "Use corresponding angle rays or two circle-distance constraints and a valid reflection choice."
+        }
+      ],
+      "SummaryPoints": [
+        "A dilation followed by rigid motions realizes similarity of corresponding triangles when all necessary invariants agree.",
+        "An ordered similarity statement controls exact side/angle correspondence.",
+        "A reproducible communication-and-proof task is human assessed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L08",
+      "CultureCode": "en",
+      "Title": "Are They All Similar?",
+      "ExplanationParagraphs": [
+        "Learning goal: Distinguish shape categories whose members are necessarily similar from categories requiring additional ratios, then prove all circles and all equilateral triangles are similar.",
+        "Any two circles with radii r1,r2>0 are similar: translate centre O1 to O2 and dilate by r2/r1 about O2; the first circle maps exactly to the second. This is a proof about every point of the circle, not a visual guess.",
+        "Any two nondegenerate equilateral triangles have equal 60° angles; one matching side ratio k>0 works for all three sides, then a dilation and rigid alignment maps one to the other. Not all rectangles are similar: a 1-by-3 rectangle and a 1-by-5 rectangle have different aspect ratios despite equal right angles.",
+        "Verbal diagram: a circle radius 2 centred at (0,0) and circle radius 5 centred at (10,0) share a positive scale k=5/2 after centre alignment. A rectangle 2-by-3 cannot be mapped to 2-by-4 by one dilation because their aspect ratios differ.",
+        "Original task: sort circles, rectangles, equilateral triangles, isosceles triangles and squares into 'always similar' or 'not necessarily' with written proof or counterexample. Teacher rubric (0–8): four human 0/1/2 criteria for original aspect-ratio rectangle counterexample, exact Tyler second-dilation error, general circle/equilateral similarity proofs, and accurate true/false classification with mathematical reasons. Drawing and original proof evidence are human scored.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Content is independently authored Edulytiks instruction, not publisher drawings or protected assessments.",
+        "Source 8.1 Stretched or Distorted? Rectangles (10 min): original grid rectangles Q (1 by 3) and R (1 by 5) are NOT similar: long-to-short ratios 3 and 5 cannot be made equal by a single uniform dilation, despite four right angles. Have students first explain and then refine intuitive skinny or stretched claims into invariant ratio and construction arguments.",
+        "Source 8.2 Faulty Logic (10 min): critique Tylers seven-step purported universal proof of all rectangle similarity. Translation A to P, rotation to align AD with PS and initial dilation PS/AD do align one side; later second dilation PQ/AB changes EVERY length, spoiling the previously aligned PS unless second k=1. Drawing each intermediate image reveals the error at SECOND dilation, not at the initial line-up, so the resulting two sides are NOT both guaranteed congruent. Explore and test counterexamples before proof.",
+        "Source 8.3 Always? Prove it! (15 min): learners choose TWO category claims and either prove or give counterexample. All equilateral triangles always similar: 60-degree angle triples and one common side ratio then previous U03:L07 triangle similarity theorem; all positive-radius circles similar: translate centre O1 to O2 then dilate about O2 by r2/r1 and every source circle point maps onto target. Not all isosceles triangles similar (30-30-120 versus 45-45-90); not all right triangles similar (legs 3:4 versus 3:5). A single counterexample refutes universal claim, while selected examples cannot prove it.",
+        "Source 8.3 optional Golden Rectangle extension: for positive x, x by (x+1) and 1 by x rectangles similar when long-to-short aspect ratios match: (x+1)/x=x, hence x squared minus x minus 1 equals zero and x=(1+sqrt(5))/2. Negative algebraic root is inadmissible for rectangle side length. This is enrichment, not a mandatory proof target.",
+        "Source Practice P1-P7: P1 invalid universal isosceles similarity proof applies different rotations separately to A and B and ignores how the second rotation displaces the first match, so step 5 undermines the fixed first point; P2 correct all-circles justification is centre translation plus radius dilation choice D; P3 similar polygon choice depends on original diagram; P4 triangle ABC and AED transformations with 1/2 and 2 factors require original figure and valid corresponding ray/reflection; P5 any two equilateral triangles must be similar but square and triangle cannot be similar; P6 square EFGH to ABCD sequence is source-figure-dependent; P7 angle and triangle similarity options from given AED congruent ABC require original diagram, avoid guessed options.",
+        "Source 8.4 Cool-down Samesies remains teacher-login restricted. Edulytiks independent teacher-reviewed alternative requires a general translation-plus-radius-dilation proof for all circles, a proof equilateral triangles similar via source U03:L07 theorem, and two explicit counterexamples to all-isosceles and all-rectangles claims; full arguments and paper figures scored by teacher, not a numeric proxy."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "All circles are similar",
+          "Definition": "Any two circles of positive radii can be mapped onto each other by a translation and positive dilation.",
+          "Rule": "Align centres and choose scale k=target radius/source radius.",
+          "Example": "Radius 2 to radius 5 uses k=5/2."
+        },
+        {
+          "Title": "All equilateral triangles are similar",
+          "Definition": "Every nondegenerate equilateral triangle has all three angles 60° and identical side ratios under a suitable positive scale.",
+          "Rule": "Dilate one side to target length and align matching vertices rigidly.",
+          "Example": "An equilateral triangle side 3 is similar to one side 12 at scale 4."
+        },
+        {
+          "Title": "Counterexample by aspect ratio",
+          "Definition": "Equal angles alone do not force arbitrary quadrilaterals similar.",
+          "Rule": "Compare ratios of independent dimensions after accounting for possible rotation.",
+          "Example": "Rectangles 1×3 and 1×5 have different aspect ratios, so are not similar."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Map one circle to another",
+          "Question": "How can circle radius 2 centred O=(0,0) become circle radius 5 centred P=(10,0)?",
+          "Method": "Translate centres then dilate.",
+          "Steps": [
+            "Translate by (10,0) so centre O maps to P.",
+            "Every circle point now lies distance 2 from P.",
+            "Dilate about P with factor k=5/2.",
+            "Every image point lies distance (5/2)·2=5 from P.",
+            "The full source circle maps bijectively onto the target circle."
+          ],
+          "Answer": "The circles are similar via translation then k=2.5 dilation.",
+          "Check": "Both radii must be strictly positive for the factor to be defined."
+        },
+        {
+          "Title": "Prove equilateral triangles similar",
+          "Question": "Two equilateral triangles have side lengths 3 and 12. Why similar?",
+          "Method": "Scale and rigidly align all vertices.",
+          "Steps": [
+            "Each triangle has all three angles 60° by equal-side geometry.",
+            "Choose scale factor k=12/3=4.",
+            "Dilation sends each length-3 side to length 12.",
+            "Align one side by translation and rotation; reflect if orientation is reversed.",
+            "The third vertex is fixed by equal side lengths and angle and so aligns."
+          ],
+          "Answer": "The triangles are similar at factor 4.",
+          "Check": "They are not congruent because their side lengths differ."
+        },
+        {
+          "Title": "Refute 'all rectangles are similar'",
+          "Question": "Are a 1-by-3 rectangle and a 1-by-5 rectangle similar?",
+          "Method": "Use invariant aspect ratio.",
+          "Steps": [
+            "The first rectangle has longer/shorter side ratio 3/1=3.",
+            "The second has ratio 5/1=5.",
+            "A positive dilation multiplies both sides by the same factor and preserves this ratio.",
+            "The aspect ratios differ, so similarity is impossible."
+          ],
+          "Answer": "No; not all rectangles are similar.",
+          "Check": "A rotation only swaps which side is labelled width, not the unordered aspect ratio."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming two circles must be congruent because both are circles.",
+          "WhyWrong": "Congruence requires equal radii; similarity permits different positive radii.",
+          "Correction": "Distinguish factor k=1 from other positive k."
+        },
+        {
+          "Mistake": "Using a separate horizontal and vertical scale factor in a purported similarity transformation.",
+          "WhyWrong": "That is nonuniform scaling and can alter angles and shape.",
+          "Correction": "Use one scale factor, then only rigid transformations."
+        }
+      ],
+      "SummaryPoints": [
+        "All positive-radius circles are similar by centre alignment and dilation.",
+        "All nondegenerate equilateral triangles are similar, but rectangles generally are not.",
+        "Classification proofs and counterexamples need teacher-reviewed reasoning."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L09",
+      "CultureCode": "en",
+      "Title": "Conditions for Triangle Similarity",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the Angle-Angle (AA) triangle similarity criterion with dilation and ASA congruence, then use two matching angles to justify similarity even when side lengths differ.",
+        "If two angles of ABC equal corresponding angles of DEF, the third angles also match because each triangle's interior angles sum to 180°. Choose positive factor k=DE/AB. Dilate ABC by k about A so its image base equals DE. Use rigid motions to align the image base with DE. The two known angle pairs and included side equality give ASA congruence between the dilated triangle and DEF. Therefore ABC is similar to DEF.",
+        "Verbal diagram: triangle ABC has angles 45°,65°,70°, target DEF has angles 45°,65°,70° with a different side length. A scaling factor based on one corresponding side, plus rigid alignment, maps the triangles even without initially knowing all side ratios.",
+        "Student task: generate triangles with one fixed angle, then with two fixed angles, and test which information forces similarity. Provide a written AA proof and one counterexample showing one angle is insufficient. Teacher rubric (0–8): four human 0/1/2 criteria for correct angle correspondence and sum, positive included-side scale and ASA proof, exact source 9.3 x/y calculations, and original one-angle/quadrilateral counterexamples with practice explanations. Diagrams and proof are teacher scored.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Content is independently authored Edulytiks instruction, not publisher drawings or protected assessments.",
+        "Source 9.1 Math Talk Angle-Side-Angle As A Helpful Tool (10 min): original PQR has QR=2 and RP=3, dilation by factor 1/2 gives QprimeRprime=1 and RprimePprime=1.5. Use labelled matching included angles and ASA congruence to identify PprimeQprimeRprime with STU (TU=1, SU=1.5), then conclude PQR is similar to STU from the actual dilation and rigid alignment. A second GHI to GprimeHprimeIprime to MNO group uses shared congruent GH and MN and matched endpoint angles. Both source Math Talk sequences must receive mathematical justifications, not only true/false.",
+        "Source 9.2 How Many Pieces? (15 min): learner sketches two triangles with only a 45-degree angle (may not be similar), then two triangles with 45 and 30 degree angles (must be similar), then those two angle conditions plus one corresponding side pair 2 cm and 6 cm (scale 3 from small to large). Before introducing the theorem, students compare figures, conjecture, and write the proof: choose ratio of INCLUDED corresponding sides, dilate by k so this side matches, and apply the earlier ASA triangle congruence theorem using the two endpoint angles. Rigid transformations complete the alignment; therefore AA similarity is established without presupposing itself.",
+        "Source 9.3 Any Two Angles? (10 min): source first triangle angles 60 and 40 imply third 80; second has 40 and 80 implies third 60. Pair corresponding angles by measure, not position in textual listing. Their opposite-40 sides are 3 and 5, so target/source scale k=5/3. In source first triangle opposite-60 side x, second opposite-60 side 8, hence x=8*(3/5)=24/5=4.8. In first triangle opposite-80 side 6, second opposite-80 side y, hence y=6*(5/3)=10. Angle sum establishes AA even when only ONE of the initial listed angle measures seems identical.",
+        "Source 9.3 extension: two or three angle pairs alone do not guarantee similarity of arbitrary quadrilaterals (all rectangles share all four right angles but may differ in aspect ratio). Preserve special category exceptions only with additional proportional side information; use a counterexample, not a hypothetical universal AA quadrilateral theorem.",
+        "Source Practice P1-P8: P1 ABC has A=68, B=44, C=68; DEF has D=68, F=44, E=68. DE=18 corresponds to AC=6 (68 to 68 side between 68 angles), giving scale 3; DF corresponds AB=8, so DF=24. P2 ABC 35,20,125 angles: matching options A, C and D; B and E do not have the same angle multiset. P3 ABC/DEC similarity original figure dependent; P4 general all-circles proof from U03:L08; P5 parallelograms need not be similar; P6 equilateral and right triangle cannot be similar, while a right and isosceles triangle could be the same 45-45-90 category; P7 similar quadrilaterals P/Q scale factor source diagram dependent; P8 two circles and unknown x source figure dependent, cannot invent radius ratio.",
+        "Source 9.4 Cool-down Any Four Angles? teacher-login restricted; independently authored replacement asks learners to prove AA via a source-aligned dilation and ASA, use triangle angle sum and exact x,y for source 9.3, and refute generalized quadrilateral AA by 1x3 vs 1x5 rectangles. Teacher assesses labelled construction and narrative proof, not machine-generated answer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "AA triangle similarity",
+          "Definition": "Two corresponding angle pairs equal in two nondegenerate Euclidean triangles guarantee similarity.",
+          "Rule": "Use triangle angle sum for third angle, dilate one side length to match and apply ASA.",
+          "Example": "Angles 45°,65° in both triangles force third angle 70° and similarity."
+        },
+        {
+          "Title": "One angle insufficient",
+          "Definition": "Triangles may share one angle yet have different other angles and side ratios.",
+          "Rule": "Require at least two corresponding angle pairs for AA.",
+          "Example": "Triangles with angles (90°,30°,60°) and (90°,45°,45°) are not similar."
+        },
+        {
+          "Title": "Proving rather than guessing similarity",
+          "Definition": "A similarity theorem needs a reasoned dilation-and-congruence sequence, not merely angle measurements on one sketch.",
+          "Rule": "Fix corresponding vertex order and apply an exact congruence theorem to the dilated triangle.",
+          "Example": "Scaling base AB onto DE gives ASA with the two known endpoint angles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Proof of AA",
+          "Question": "ABC and DEF have ∠A=∠D and ∠B=∠E. Prove ABC∼DEF.",
+          "Method": "Dilate ABC to match DE, then apply ASA.",
+          "Steps": [
+            "The third angles satisfy ∠C=180−∠A−∠B and ∠F=180−∠D−∠E, so ∠C=∠F.",
+            "Choose k=DE/AB>0 (the base lengths are nonzero).",
+            "Dilate ABC by k so the image of AB has length DE.",
+            "Rigidly align that base onto DE; the two endpoint angles remain congruent.",
+            "ASA makes the dilated triangle congruent to DEF; hence original ABC is similar to DEF."
+          ],
+          "Answer": "ABC∼DEF by AA similarity.",
+          "Check": "The scaling correspondence A↔D,B↔E,C↔F must be maintained."
+        },
+        {
+          "Title": "Find a third angle and scale",
+          "Question": "Triangles ABC and DEF share A=D=45° and B=E=65°. If AB=4 and DE=10, what is third angle and scale?",
+          "Method": "Use 180° sum and ratio of matching sides.",
+          "Steps": [
+            "Third angle is 180−45−65=70° for both triangles.",
+            "Scale factor from ABC to DEF is DE/AB=10/4=5/2.",
+            "AA proves the triangles similar regardless of their different sizes.",
+            "Every target side is 2.5 times its corresponding source side."
+          ],
+          "Answer": "Third angle 70°, scale factor 5/2.",
+          "Check": "Angles remain 45°,65°,70° after scaling; side lengths change uniformly."
+        },
+        {
+          "Title": "Disprove one-angle similarity",
+          "Question": "Two right triangles have acute angles (30°,60°) and (45°,45°). Are they similar?",
+          "Method": "Compare the complete angle triples.",
+          "Steps": [
+            "Both triangles have one 90° angle.",
+            "The first angle multiset is {90,30,60}.",
+            "The second is {90,45,45}.",
+            "No ordering makes both remaining angle pairs equal, so AA fails."
+          ],
+          "Answer": "No; sharing one right angle does not guarantee similarity.",
+          "Check": "An isosceles right triangle cannot be similar to a 30–60–90 triangle."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using AA to prove congruence rather than similarity.",
+          "WhyWrong": "The triangles may have all corresponding angles equal but different side lengths.",
+          "Correction": "Conclude similarity unless an additional scale k=1 condition is established."
+        },
+        {
+          "Mistake": "Comparing angles under inconsistent vertex correspondence.",
+          "WhyWrong": "AA requires two correct corresponding angle pairs.",
+          "Correction": "Write ordered triangle labels and map the same vertices when setting the scaling ratio."
+        }
+      ],
+      "SummaryPoints": [
+        "AA similarity is proved by dilation to one matching side followed by ASA congruence.",
+        "Two matching angles force third-angle equality and proportional lengths.",
+        "One angle is insufficient; source-style proof and counterexamples need teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

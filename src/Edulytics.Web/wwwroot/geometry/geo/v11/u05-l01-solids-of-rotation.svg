@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" role="img" aria-labelledby="rotation-title rotation-desc">
+<title id="rotation-title">A rectangle revolved about its side makes a filled right circular cylinder</title>
+<desc id="rotation-desc">Left: a shaded rectangle has its left vertical side as axis of rotation, width r and height h. A curved arrow indicates a complete turn. Right: the resulting right circular cylinder has horizontal radius r and perpendicular height h. The axis is fixed; each horizontal cross-section is a disk of radius r.</desc>
+<rect width="1000" height="410" fill="#fff"/>
+<text x="48" y="35" font-size="20" font-family="sans-serif" fill="#132f48">Original filled region</text>
+<rect x="105" y="86" width="170" height="245" fill="#c4e6f4" stroke="#15547c" stroke-width="3"/>
+<line x1="105" y1="58" x2="105" y2="356" stroke="#b45309" stroke-width="4" stroke-dasharray="10 7"/>
+<text x="16" y="72" font-size="16" font-family="sans-serif" fill="#7b390c">Axis</text>
+<line x1="105" y1="351" x2="275" y2="351" stroke="#132f48" stroke-width="2"/>
+<path d="M105 346 V356 M275 346 V356" stroke="#132f48" stroke-width="2"/>
+<text x="188" y="376" font-size="18" font-family="sans-serif" fill="#132f48">r</text>
+<text x="65" y="211" font-size="20" font-family="sans-serif" fill="#132f48">h</text>
+<path d="M340 189 C395 135 451 149 487 187" fill="none" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<path d="M470 176 L490 191 L475 208" fill="none" stroke="#b45309" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="343" y="232" font-size="17" font-family="sans-serif" fill="#132f48">Rotate 360°</text>
+<text x="610" y="35" font-size="20" font-family="sans-serif" fill="#132f48">Generated solid</text>
+<path d="M614 112 Q614 84 772 84 Q930 84 930 112 L930 309 Q930 338 772 338 Q614 338 614 309 Z" fill="#c4e6f4" stroke="#15547c" stroke-width="3"/>
+<ellipse cx="772" cy="112" rx="158" ry="28" fill="#eff8fc" stroke="#15547c" stroke-width="3"/>
+<path d="M614 309 A158 28 0 0 0 930 309" fill="none" stroke="#15547c" stroke-width="3"/>
+<path d="M614 309 A158 28 0 0 1 930 309" fill="none" stroke="#15547c" stroke-width="2" stroke-dasharray="7 5" opacity=".65"/>
+<line x1="772" y1="85" x2="772" y2="339" stroke="#b45309" stroke-width="2" stroke-dasharray="9 7"/>
+<line x1="772" y1="112" x2="930" y2="112" stroke="#132f48" stroke-width="2"/>
+<circle cx="772" cy="112" r="4" fill="#132f48"/>
+<text x="848" y="103" font-size="19" font-family="sans-serif" fill="#132f48">r</text>
+<text x="947" y="214" font-size="20" font-family="sans-serif" fill="#132f48">h</text>
+<text x="678" y="378" font-size="18" font-family="sans-serif" fill="#132f48">Cylinder: V = πr²h</text>
+</svg>

@@ -1,0 +1,118 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L14",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "77a5f229e870a728d21e47ee81b12800c9b68b9c4c228151819caf44c8285b6b",
+    "teacher": "e9ce2ec6980c79d36c331f1bbaea57ad499bd71de53b0619fbacab11bf5d573f",
+    "student": "b8add8193677e50c43060fb3a6eadce3d09ac5c12e9fa50617717b0163169384",
+    "practice": "2e3e95b2abe070e0f182167b24e31eebaad3f68f071ce9cd95656a443ce3c7ac"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.A.4",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.4"
+    ]
+  },
+  "SourceActivities": [
+    "14.1 Math Talk Comparing Angles",
+    "14.2 Info Gap Rotation cards",
+    "14.3 Turning into Triangles right isosceles and 60 degree equilateral",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "On paper construct right isosceles triangle by 90-degree rotation and equilateral triangle by successive 30-degree rotations. Mark each centre and angle; complete hidden-card rotation information gap with partner.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "states centre, directed angle and rotation direction, and distinguishes fixed centre",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "correctly constructs 90-degree right-isosceles rotational triangle",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "constructs two successive 30-degree turns and justifies final equilateral triangle",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "follows private information-gap card protocol with valid explanation and comparison",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Cards": {
+    "Problem": "Find image of P=(2,1) under an unspecified rotation; ask centre, direction and angle.",
+    "Data": "Centre O=(0,1); rotation 90 degrees counterclockwise; give details only when asked and why."
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "Rotate P=(2,1) 120 degrees CCW about O=(2,1). Where does it go?",
+      "Expected": "The point at the centre stays fixed (2,1).",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Smallest positive central angle carrying vertex A to next vertex B in inscribed equilateral triangle?",
+      "Expected": "120 degrees, since each of 3 equal central arcs is 120 degrees.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Rotate vector (3,0) 90 degrees CCW about origin.",
+      "Expected": "(0,3).",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "A segment flag rotates from east to north around its base. Describe transformation.",
+      "Expected": "Rotation 90 degrees counterclockwise around the common base point.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Does translation followed by reflection always equal reverse order?",
+      "Expected": "No; transformations generally do not commute.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Under translation vector (2,1), is image of line AB parallel AB?",
+      "Expected": "Yes, or the same line; every point has same displacement.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "Rigid transform maps D=(1,2) by a translation (3,-2); determine image.",
+      "Expected": "D'=(4,0).",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: rotate P=(2,1) 90° CCW around O=(0,1), obtain (0,3) and justify equal radii",
+  "TeacherReview": "Teacher receives separate student/partner responses and marked diagrams, scores 0/1/2 per rubric criterion and signs dated feedback on paper; not a database score.",
+  "Cases": {
+    "CORRECT": "90 degree triangle is right isosceles; two 30 degree turns form 60 degree equilateral triangle",
+    "EQUIVALENT": "any translated/rotated figures preserving same centre/directed angle conditions",
+    "WRONG": "claim final included angle 30 not 60 or omit centre/direction",
+    "INSUFFICIENT": "freehand angle with no tool/angle reason",
+    "MALFORMED": "undefined centre or incorrect card disclosures"
+  },
+  "AutoScore": false,
+  "StageD": "NOT_RUN online school/teacher assignment and score record #453"
+}

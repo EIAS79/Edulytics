@@ -1,0 +1,149 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+  "LessonTitle": "Congruent Triangles, Part 2",
+  "Unit": "U02",
+  "Ordinal": 26,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\4\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\4\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\4\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\4\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "7f0d63bb67743c6d0fd2a9b2aa005b77892ec9b48910e904b955f824d6f311ff",
+    "TeacherActivities": "c5bbe2d0f082aea28a59fb556ff0175c6902bc65c71bcb4b93fecdcf5323430c",
+    "StudentActivities": "c4bd94f404a782e02078f163396badcc5cdd762c12c09056ceaf42f03cbd990b",
+    "StudentPractice": "fd7195a451ca0ba3dd27c36914951c0fe533dce692ab2818f42f7ab75b4de8a9"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.B.7"
+    ],
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.B.8",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceCrosswalk": [
+    {
+      "Source": "4.1",
+      "Goal": "Use only sufficient data to draw triangle and recognize measurement rounding",
+      "FirstPartyMode": "FIRST_PARTY_PAPER_TRIANGLE_AND_HIGHLIGHTED_USED_DATA"
+    },
+    {
+      "Source": "4.2",
+      "Goal": "Private partner info gap, precise questions and role swap; distinguish ASA/SAS/SSS vs AAA/SS",
+      "FirstPartyMode": "FIRST_PARTY_HIDDEN_DATA_AND_PROBLEM_CARD_PARTNER_PROTOCOL"
+    },
+    {
+      "Source": "4.2 Extension",
+      "Goal": "Two sides plus area ambiguity and two angles plus area sufficiency",
+      "FirstPartyMode": "PAPER_SUPPLEMENTARY_ANGLE_COUNTEREXAMPLE"
+    },
+    {
+      "Source": "4.3",
+      "Goal": "16-degree, 5 cm, 4 cm vague SSA; repair with named included SAS",
+      "FirstPartyMode": "PAPER_AMBIGUITY_SKETCH_AND_EXPLANATION"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "All nine original practice skills with figure-dependent boundaries",
+      "FirstPartyMode": "NINE_INDEXED_FIRST_PARTY_TEACHER_SCORED_RESPONSES"
+    },
+    {
+      "Source": "Publisher Cool-down",
+      "Goal": "Protected original unverified",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_PAPER_EQUIVALENT"
+    }
+  ],
+  "SourceLimitations": "Original publisher figure equivalence not visually certified; locked 4.4 Cool-down not accessed, Edulytiks independent paper alternative authored. Source prep+teacher/student activities+student practice SHA256 captured on Our-CS.",
+  "StageA": "A_CLOSED_SOURCE_ACTIVITY_TEXT_AND_NINE_PRACTICE_CROSSWALK",
+  "StageB": "B_CLOSED_EXISTING_THREE_EXAMPLES_PRESERVED_NEW_ACTIVITY_AND_PRACTICE_REPAIRS",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_SELECTED_PAPER_ROUTE_WITH_8_POINT_RUBRIC",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "SelectedPracticeGroupId": "GEO_U02_L04_CONGRUENCE_CRITERIA_PAPER_HUMAN_REVIEW",
+  "TeacherAssessmentMode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_PARTNER_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L04_CONGRUENCE_CRITERIA_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+    "TaskId": "geo-u02-l04-criteria-counterexample-and-partner-handoff",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_PARTNER_REVIEW",
+    "TeacherHandoff": "Distribute first-party private information-gap cards separately; require precise verbal requests and role swap; collect 4.1 drawing, 4.2 partner question log, 4.3 ambiguity counterexample, P1-P9 and independent Cool-down on paper. Authorized teacher checks four 0-2 criteria and records results offline; no asserted online saved grade.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "PracticeProblemCount": 9,
+  "IndependentOracles": {
+    "P4_TrueChoices": [
+      "A",
+      "D"
+    ],
+    "P7_TrueChoices": [
+      "A",
+      "B",
+      "F"
+    ],
+    "P8_Reason": "CORRESPONDING_PARTS_CONGRUENT",
+    "Warmup_BC_ApproxCm": 3.6985,
+    "SSA_AB10_BC6_A30": "TWO_DISTINCT_POSITIVE_AC_LENGTHS",
+    "AAA": "SIMILARITY_ONLY"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Exact corresponding SSS/SAS/ASA sufficient criteria and named included angle, with valid 4.1 construction",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Correct labelled SSA/AAA counterexamples, including two noncongruent valid SSA alternatives",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Actual 4.2 private partner information-gap role exchange and 4.3 precise corrected request",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Justified teacher-reviewed nine source-indexed practice parts and first-party Cool-down",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l04-triangle-congruence-paper-20261031.json",
+  "LessonContentCommit": "5179d3b6221cdf8eb8f99d7ac610a6944f291368",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l04-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "ScopedStaticChecks": {
+    "JsonSerialization": "PASS_BY_PYTHON_PARSE_AND_WRITE",
+    "NodeSyntax": "CHECK_ONLY_NO_TEST_RUN",
+    "GitDiffCheck": "CHECK_ONLY_NO_TEST_RUN"
+  },
+  "RuntimeClaims": {
+    "AuthenticatedLesson": "NOT_VERIFIED_STAGE_D",
+    "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D",
+    "TenantPath": "NOT_VERIFIED_STAGE_D",
+    "FullCI": "NOT_RUN",
+    "PublisherCooldown": "UNVERIFIED"
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L05",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT",
+  "PreviousHEAD": "2ba55d34c92bb9acedaa81eba00e8c4b181fe6a5"
+}

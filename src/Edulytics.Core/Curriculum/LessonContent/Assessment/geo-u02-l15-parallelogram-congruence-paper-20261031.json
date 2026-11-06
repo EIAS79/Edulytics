@@ -1,0 +1,190 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+  "Status": "C_CLOSED_AUTHORING_PARALLELOGRAM_SAS_HINGED_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\15\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\15\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\15\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\15\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "db6bde524957b2e47a4ea518cfdebf29553a6f351d33e20adda6ec7c23b201ec",
+    "TeacherActivities": "f74ce567ef37a7c4c296ee0e57e4e5770e1ebe9a4d28ff2e81331b722399230a",
+    "StudentActivities": "b5212618e2cf80d8893930391ba1c3e0f191ee46ed806ed68e822e526c4dfd35",
+    "StudentPractice": "1f9b97cbb84c235cba117705be35beb8c2308c73e75f53540241581a790858a8"
+  },
+  "StandardRoles": {
+    "Addressing": [
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "15.1",
+      "Goal": "MUST MIGHT CANNOT from source parallelogram properties",
+      "FirstPartyMode": "TEACHER_REVIEWED_CLASSIFICATION_AND_REASON"
+    },
+    {
+      "Source": "15.2",
+      "Goal": "Counterexample to four-side shortcut, SAS included angle and fourth-vertex uniqueness",
+      "FirstPartyMode": "PHYSICAL_HINGED_QUADRILATERAL_AND_PAPER_SAS"
+    },
+    {
+      "Source": "15.3",
+      "Goal": "Student-designed new sufficient criterion, counterexamples and peer proof",
+      "FirstPartyMode": "TEACHER_OBSERVED_THEOREM_CONJECTURE"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven source-indexed parallelogram and reflection/rotation tasks",
+      "FirstPartyMode": "SEVEN_ORIGINAL_FIRST_PARTY_PAPER_SKILL_RESPONSES"
+    },
+    {
+      "Source": "15.4 Cool-down",
+      "Goal": "Protected publisher unavailable",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L15_PARALLELOGRAM_SAS_NOT_SSSS_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L15",
+    "Mode": "TEACHER_SELECTED_PHYSICAL_HINGE_AND_PAPER_PROOF",
+    "TaskId": "geo-u02-l15-congruent-parallelograms-sas-fourth-vertex",
+    "TeacherHandoff": "Teacher prepares fasteners/strips and protractor, assesses 15.1 classifications, 15.2 hinged SSSS counterexample, real SAS fourth-vertex rigid motion, 15.3 student proposal, 7 paper practice and first-party Cool-down using four 0-2 criteria. Offline manual scores only.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct must/might/cannot parallelogram classification with counterexample to mere possibility",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Physically valid same-four-sides noncongruent rhombus; correct SAS first triangle and fourth-vertex uniqueness under parallels",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Valid new sufficient parallelogram theorem and explicit counterexample why false criterion/general quadrilateral fails",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven original source-indexed paper Practice skills and first-party teacher Cool-down accurately justified",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Half-turn symmetry",
+      "FirstPartyPrompt": "Choose families necessarily 180 degree rotation symmetric: parallelogram, rhombus, rectangle, square; distinguish arbitrary trapezoids.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Rhombus diagonal axis",
+      "FirstPartyPrompt": "Fill a labelled reflection proof for rhombus EFGH across EG with E/G fixed, F↔H.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "One pair opposite sides equal and parallel",
+      "FirstPartyPrompt": "Prove AD=BC and AD∥BC imply parallelogram using diagonal AC and SAS plus alternate interior angles.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "Sufficient parallelogram test",
+      "FirstPartyPrompt": "Choose the only always true statement: opposite pair sides both congruent and parallel imply parallelogram.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "EFGH is rectangle",
+      "FirstPartyPrompt": "From EFGH parallelogram and angle HEF right, identify true triangle correspondences using teacher diagram, not false unlabeled diagonals.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Congruent triangles from diagonal",
+      "FirstPartyPrompt": "Check whether ADB congruent CBD in parallelogram ABCD using correct AB=CD and parallel-derived angles plus common diagonal.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "KLMN parallel triangles",
+      "FirstPartyPrompt": "Use KLMN parallelogram and diagonal LN to prove triangles KNL and MLN by matched side pair and included angle or SSS.",
+      "Mode": "TEACHER_HUMAN_PAPER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "P1_HalfTurnUniversal": [
+      "PARALLELOGRAM",
+      "RHOMBUS",
+      "RECTANGLE",
+      "SQUARE"
+    ],
+    "P4_TrueChoice": "B",
+    "Sufficient": [
+      "AB=EF",
+      "BC=FG",
+      "ANGLE_ABC=ANGLE_EFG_INCLUDED"
+    ],
+    "FourthVertex": "UNIQUE_INTERSECTION_TWO_PARALLEL_CONSTRAINTS",
+    "False_SSSS": "SIDE5_SQUARE_VS_SIDE5_RHOMBUS_ANGLE60"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "Side-5 square and side-5 rhombus 60 degrees share all four side lengths but not angles",
+      "AB EF BC FG included angles equality gives same triangle under SAS then unique fourth parallelogram vertex",
+      "P4 one opposite pair equal and parallel true"
+    ],
+    "Equivalent": [
+      "paper hinge or verified physical model with same mathematical properties",
+      "alternate rigid translation/reflection and rotation alignment mapping all four vertices"
+    ],
+    "Wrong": [
+      "SSSS always congruent quadrilaterals",
+      "matching three vertices allows arbitrary fourth parallelogram vertex",
+      "every trapezoid necessarily halfturn symmetric"
+    ],
+    "Boundary": [
+      "positive side lengths and nondegenerate included angle 0<theta<180",
+      "arbitrary non-parallelogram shape not determined by same two side and angle"
+    ],
+    "Malformed": [
+      "no vertex correspondence",
+      "wrong included-angle position",
+      "unlabeled hinge evidence"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED_FIRST_PARTY_EDULYTIKS_ORIGINAL",
+  "FirstPartyCooldown": {
+    "Prompt": "Show two side-five rhombi not congruent and prove a valid two-side-included-angle theorem for labelled nondegenerate parallelograms, distinguishing arbitrary quadrilaterals.",
+    "Mode": "TEACHER_PAPER_REVIEW",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l15-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN app/teacher grade/CI/merge/deploy"
+}

@@ -1,0 +1,217 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L12",
+  "Status": "C_CLOSED_AUTHORING_FIRST_PARTY_HUMAN_REVIEW_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\12\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\12\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\12\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\12\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "34a41b93f7d18e83e6270858791fab70e56061363152f7f38b3861c020dba1f1",
+    "TeacherActivities": "1ee1fede6463f8d8faf9e8dd057737598982e27aff51b68352d9933ecabf0cef",
+    "StudentActivities": "c0b75b4676c213b631d9570a5067a0d5f4302d3113a002257d18f7c824038bbf",
+    "StudentPractice": "c091d65dc5649d8a8b2b81ed450144ef508da14dcf76679a67efabf779d1470e"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "12.1",
+      "Goal": "source three solid surface nets and cone sector",
+      "Mode": "TEACHER_FIRST_PARTY_PAPER_NET"
+    },
+    {
+      "Source": "12.2",
+      "Goal": "two categorical card sorts right/oblique, apex vs two bases and Platonic extension",
+      "Mode": "HUMAN_ORIGINAL_CARD_IMAGE_REVIEW"
+    },
+    {
+      "Source": "12.3",
+      "Goal": "three original source nets P1/P2/P3 assemble a triangular prism and preserve for next lesson",
+      "Mode": "PHYSICAL_TEACHER_REVIEW_AND_CONJECTURE"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 source names, four face sets, exact base areas and volumes",
+      "Mode": "EXACT_P2_P4_P6_P8_PLUS_SOURCE_IMAGE_REVIEW"
+    },
+    {
+      "Source": "12.4",
+      "Goal": "publisher restricted How Many Faces cooldown",
+      "Mode": "EDULYTIKS_INDEPENDENT_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L12",
+    "TaskId": "geo-u05-l12-triple-pyramid-prism-nets-and-two-card-sorts",
+    "GroupId": "GEO_U05_L12_PYRAMID_PRISM_NETS_SORT_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Original first-party printable student net diagrams, two justified card sorts, teacher-verified P1/P2/P3 physical three-pyramid prism construction, student conjecture, eight source-indexed Practice items and dated human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l12-pyramids-prisms-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "draws original source rectangular pyramid, triangular prism and cone surfaces accurately, including curved sector rather than polygon",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "classifies two ways using one apex versus twin bases, base-parallel sections and perpendicular centre-based right/oblique criteria",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "documents three triangular pyramid net/paper assemblies into prism, face correspondence and conjecture vs unproved volume statement",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves original eight Practice with correct A1 B4 C2 D3, base area30 options A D E and exact volume units",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "source P1 geometric names original figures A/B/C",
+        "TeacherExpected": "original source artwork required; identify shape by faces/bases, no guessed labels",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "source P2 match four solid-face collections",
+        "TeacherExpected": "A→1 triangular prism, B→4 rectangular pyramid, C→2 oblique square prism, D→3 triangular pyramid",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "source P3 three congruent square pyramids fill unit cube",
+        "TeacherExpected": "each 1/3 cubic foot",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "source P4 prism V120 height4 choose base area30",
+        "TeacherExpected": "options A D E only",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "source P5 right triangular prism V54 find missing h",
+        "TeacherExpected": "teacher verifies original marked base dimensions in source figure",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "source P6 all horizontal sections square3×3 height5",
+        "TeacherExpected": "volume45 cubic units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "source P7 cylinder r3 h2, hex prism B4.5 h7, triangle prism legs1.5 and9 h5",
+        "TeacherExpected": "18pi in³, 31.5 cm³, 33.75 ft³",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "source P8 circle area pi dilation5",
+        "TeacherExpected": "25pi square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceFaceMap": {
+      "A": 1,
+      "B": 4,
+      "C": 2,
+      "D": 3
+    },
+    "ThreeEqualPyramidsEach": "1/3 ft³",
+    "PrismP4Options": [
+      "A",
+      "D",
+      "E"
+    ],
+    "PrismP4BaseArea": 30,
+    "P6Volume": 45,
+    "P7Volumes": [
+      "18pi",
+      "31.5",
+      "33.75"
+    ],
+    "P8Area": "25pi",
+    "SourceNets": "ORIGINAL_BLACKLINE_TEACHER_ACCESS",
+    "Conjecture": "P1_ONE_THIRD_TO_VERIFY_IN_NEXT_LESSON"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "triangular prism faces2 triangles3 rectangles, rectangular pyramid base rectangle+4 triangles",
+      "P2 A1 B4 C2 D3, P4 A D E, P6 volume45",
+      "three equal-volume pyramids filling unit cube each1/3ft³"
+    ],
+    "Equivalent": [
+      "P7 triangular prism base(1.5*9/2) times5 equals33.75",
+      "circle k5 area multiplier25"
+    ],
+    "Wrong": [
+      "cone side treated as flat triangle instead of circular sector",
+      "pyramid horizontal parallel sections congruent rather than similar",
+      "square base area25 selected for P4 required area30"
+    ],
+    "Boundary": [
+      "apex-centre right-pyramid convention assumes a meaningful base centre",
+      "source 12.3 actual publisher net markings and P1/P5 figures need teacher originals",
+      "12.3 one-third claim remains conjecture pending next lesson"
+    ],
+    "Malformed": [
+      "missing base/apex labels and no identified section planes",
+      "student claims publisher cards copied although only independent figures",
+      "volume given in square units"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u05-l12-pyramids-prisms-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l12-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

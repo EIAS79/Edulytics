@@ -1,0 +1,179 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L08",
+  "Ordinal": 61,
+  "UnitCode": "U04",
+  "UnitOrdinal": 8,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "5c0e32743ff8c290219a660651cbf906ce043d2b4add3bd79916b8a319395fd7",
+    "TeacherActivities": "db7b3224aafb44bdba927f9296a05adc5b5691127021b1edc6fd9570e203fa53",
+    "StudentActivities": "2e55b0b1c71e73cfb4c59f522accf75849cd462df756a9f00f236c3ce25d1d70",
+    "StudentPractice": "dff96c9a2bde7d82f65803f38730204e03af5f045a9bdd46968077a90e4adc0c"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Goal": "four source picture Which One Doesn't Belong with multiple valid category explanations",
+      "Mode": "FIRST_PARTY_HUMAN_VISUAL_COMPARISON"
+    },
+    {
+      "Source": "8.2",
+      "Goal": "paired A/B three source equivalent trigonometric expressions",
+      "Mode": "EXACT_OR_APPROXIMATE_SOURCE_TRIANGLE_PAIRS"
+    },
+    {
+      "Source": "8.3",
+      "Goal": "full peer-revised visual identity proof and reciprocal tangent extension",
+      "Mode": "TEACHER_GRADED_GENERAL_SYMBOLIC_PROOF"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 source complementary, 7-24-25, building and handball tasks",
+      "Mode": "EXACT_AND_TEACHER_SOURCE_IMAGE_REVIEW"
+    },
+    {
+      "Source": "8.4",
+      "Goal": "protected Cosine Complement Cool-down",
+      "Mode": "INDEPENDENT_FIRST_PARTY_TEACHER_PAPER"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.C.6"
+    ],
+    "Addressing": [
+      "HSG-SRT.C.7"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.7"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U04_L08_COMPLEMENTARY_SINE_COSINE_PROOF_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L08",
+    "TaskId": "geo-u04-l08-twin-pairs-and-general-complementary-proof",
+    "GroupId": "GEO_U04_L08_COMPLEMENTARY_SINE_COSINE_PROOF_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Three matched original A/B trigonometric calculations, labelled right triangle proof and revised partner visual display, theta45 comparison, eight Practice proofs with dated teacher rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes original three twin triangle x/y/z pairs and explains complementary side correspondence",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "provides a logically complete labelled diagram proof sin(theta)=cos(90-theta) for 0<theta<90",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "interprets sine versus cosine for theta below/equal/above45 and optional reciprocal tangent proof",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "correct source Practice exact choices, conditions, figure-dependent uncertainties and peer visual explanation",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "cos41=7/x and sin49=7/x yield the same positive hypotenuse",
+      "sin theta=y/h=cos(90-theta) using same y leg and hypotenuse",
+      "Practice P1 B,D true and P3 both reciprocal-tangent equations valid"
+    ],
+    "Equivalent": [
+      "x=7/cos41 and x=7/sin49 are exactly equivalent under degrees",
+      "the proof may start from either angle and swap its opposite/adjacent role"
+    ],
+    "Wrong": [
+      "cos15 equals sin15 for an arbitrary acute angle",
+      "tan theta equals tan(90-theta) for all acute theta",
+      "infers original handball court point from dimensions without checking labelled D/A wall geometry"
+    ],
+    "Boundary": [
+      "acute theta strictly 0 to90 for nondegenerate right triangle",
+      "theta45 is unique equality sin=cos and tangent complement self-reciprocal",
+      "original source figure/cooldown not pixel verified"
+    ],
+    "Malformed": [
+      "one leg not identified relative to reference angle",
+      "uses different triangles or mismatched hypotenuses in equality proof",
+      "paper diagram missing and teacher score automatically claimed"
+    ]
+  },
+  "IndependentMathOracles": {
+    "Pair1": "7/cos41=7/sin49",
+    "Pair2": "6sin65=6cos25",
+    "Pair3": "8/sin50=8/cos40",
+    "GeneralIdentity": "sin(theta)=cos(90-theta)",
+    "ReciprocalTangents": "tan(theta)*tan(90-theta)=1",
+    "ComparisonBoundary": 45,
+    "P1Choices": [
+      "B",
+      "D"
+    ],
+    "P3Both": true,
+    "P7Angles": [
+      "16.3",
+      "73.7"
+    ],
+    "P8ConditionalCE": "140/19",
+    "SourceGraphicallyRestricted": [
+      "8.1",
+      "Practice P2",
+      "Practice P5",
+      "Practice P6",
+      "Practice P8"
+    ]
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l08-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u04-l08-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u04-l08-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u04-l08-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "75f0382c92e4782ff1eae8d89afcca54d5c92986",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:10:16.576562Z",
+  "ClosedAtUtc": "2026-10-31T07:10:28.721319Z",
+  "ElapsedSeconds": 12.145,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L09"
+}

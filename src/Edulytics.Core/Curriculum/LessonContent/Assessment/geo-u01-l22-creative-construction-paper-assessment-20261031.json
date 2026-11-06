@@ -1,0 +1,228 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "Illustrative Mathematics High School Geometry First Edition (2019-2021)",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\22\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\22\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\22\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\22\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "d22cae4805a948f48d4e254d285352b00ed70e5f4daa668f4cb4095ce64e32ef",
+    "TeacherActivities": "70ce02966103ec325fc3605b6cfde3ce478f9f64911aa527aeb1bd036bb867fb",
+    "StudentActivities": "308acf2e9c841266dbafa6025b2103e3687aada86fa5c13762c85eab20b4ab52",
+    "StudentPractice": "886c7b48a1e90fcbb9348db309362e661d90dc13f9ef968b38f781521c95fbe0"
+  },
+  "SourceUnit": "U01",
+  "OptionalPublisherLesson": true,
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.1",
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ],
+    "Addressing": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "22.1",
+      "Original": "Notice and Wonder: Dramatic Designs; image-based structure and mathematical questioning",
+      "Edulytiks": "Independent labelled hexagon/diagonals, wonder/notice with justification",
+      "MaterialLimit": "Publisher image not duplicated or pixel-verified"
+    },
+    {
+      "Source": "22.2",
+      "Original": "Duplicate a Design; teacher distributes permissioned hexagon designs; identify rigid motions; construct and write instructions",
+      "Edulytiks": "First-party hexagon-and-diagonals task with exact tool moves and a written recipe",
+      "MaterialLimit": "Permissioned blackline not duplicated; exact decorative visual parity not claimed"
+    },
+    {
+      "Source": "22.3",
+      "Original": "Make Your Own Design; digital or print; construction recipe; optional tessellation extension",
+      "Edulytiks": "Original learner design and written numbered steps; tessellation marked enrichment"
+    },
+    {
+      "Source": "22.4",
+      "Original": "Make Their Design; exchange secret instructions and justify congruent objects",
+      "Edulytiks": "Peer receives instructions only, reconstructs then compares diagrams and justifies congruence"
+    },
+    {
+      "Source": "Practice 1-2",
+      "Original": "Hexagon-based figure congruence and self-motion",
+      "Edulytiks": "First-party visual/paper analogues; teacher-reviewed, not source-image-identical"
+    },
+    {
+      "Source": "Practice 3-10",
+      "Original": "Cumulative U01:L18-L21 rigid motions and geometry proofs",
+      "Edulytiks": "Source-task-indexed paper review criteria referencing corresponding earlier lesson assessments; figures not inferred"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "GroupId": "GEO_U01_L22_CONSTRUCTION_HUMAN_REVIEW",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "ExactAppAssignmentAndPersistence": "UNVERIFIED_STAGE_D_ISSUE_453",
+    "SharedOwner": "Supervisor 2 issue #453",
+    "PaperEvidence": "original design, replication, labelled procedure, peer feedback and teacher-scored signed review",
+    "NoStudentSubmissionRuntimeClaim": true
+  },
+  "Task": {
+    "Prompt": "Using an independently provided labelled hexagon-based design, observe and reconstruct it with precise compass/straightedge moves. Create a new design and written steps; trade instructions without showing the original, independently reproduce it and justify at least two congruences. Record one revision after feedback.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "identifies repeated structures and at least one defensible geometric question from an original independent design (22.1)",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "reconstructs a labelled hexagon-based pattern using correct straightedge-compass steps and names at least one valid rigid motion (22.2)",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "produces an original design with ordered, reproducible centre/radius/intersection instructions (22.3)",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "independent peer uses the hidden-design instructions, identifies congruent parts with reasons, and the author resolves ambiguity (22.4)",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "SourceFocus": "regular-hexagon design: two congruent figure pairs",
+        "ExpectedTeacherEvidence": "teacher checks corresponding figures and a valid rigid-motion/construction congruence reason, not imagined publisher labels",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "SourceFocus": "regular-hexagon design: nontrivial self-motion",
+        "ExpectedTeacherEvidence": "teacher checks a correct rotation/reflection that maps the entire given diagram to itself; a hexagon alone does not prove decoration symmetry",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "SourceFocus": "triangle constructions from two translations of B",
+        "ExpectedTeacherEvidence": "teacher checks correct translated-point correspondences and the congruence argument",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "SourceFocus": "two given congruence relationships and triangle angle measures",
+        "ExpectedTeacherEvidence": "teacher checks diagram-specific vertex correspondence and angle sum, no fabricated scalar angles without image",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "SourceFocus": "parallel transversal select-all from angle 3 congruent angle 6",
+        "ExpectedTeacherEvidence": "teacher checks the precise original figure and converse angle theorem; diagram required",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "SourceFocus": "midpoint 180-degree rotation image and preserved angles",
+        "ExpectedTeacherEvidence": "teacher checks M midpoint, half-turn sends A to C and carries rays/angle measure correctly",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "SourceFocus": "perpendicular lines plus angle bisectors select-all",
+        "ExpectedTeacherEvidence": "teacher checks ray order and marked bisectors from original figure; no auto-selected option letters",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "SourceFocus": "two intersecting lines fixed by a rotation",
+        "ExpectedTeacherEvidence": "180-degree rotation about their intersection takes each complete line to itself; any nontrivial allowed angle must be justified",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "SourceFocus": "reflection then directed translation of a triangle",
+        "ExpectedTeacherEvidence": "teacher checks composition order, mapped vertices and image drawing",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      },
+      {
+        "Id": "P10",
+        "SourceProblem": 10,
+        "SourceFocus": "rotation about T then translation and alternative sequence",
+        "ExpectedTeacherEvidence": "teacher checks mapped polygon vertices and an equivalent whole-figure transformation composition",
+        "Mode": "TEACHER_REVIEW_OF_DIAGRAM_AND_EXPLANATION",
+        "Points": 2
+      }
+    ],
+    "Count": 10,
+    "TotalMax": 20,
+    "PictureDependentAnswers": "ORIGINAL_VISUALS_NOT_VERIFIED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "valid six equal-chord regular-hexagon seed; exact named centres and radii; partner replicates",
+      "two congruences justified by matched rigid motion or constructed equality",
+      "180-degree half-turn about intersection preserves both whole lines"
+    ],
+    "Equivalent": [
+      "rotated or translated first-party design with identical construction relations",
+      "different legal tool sequence creating congruent figure with reproducible labels"
+    ],
+    "Incorrect": [
+      "unconstrained visual guess used as proof of congruence",
+      "assertion that any decoration of a regular hexagon also has 60-degree rotational symmetry",
+      "unjustified original diagram option letters for cumulative select-all"
+    ],
+    "Boundary": [
+      "degenerate zero-radius initial circle is invalid",
+      "circles centred distance d apart with radius d/2 are tangent, not two intersections",
+      "valid design with no nontrivial decoration symmetry may still satisfy 22.3 creation but cannot be claimed 22.2 self-motion"
+    ],
+    "Malformed": [
+      "missing circle centre, radius or intersection branch",
+      "illegible drawing without named points or directions",
+      "peer copy without original written instructions"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_2021_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE: make a new reproducible diagram with one reflection and explain why the mirror matches each named part; teacher scores reasoning and construction.",
+  "TeacherHandoff": "Paper-only until secure assignment flow is verified: collect original plus peer copy and instruction sheet; score 0/1/2 per criterion, provide date and feedback under school policy; never auto-grade drawing or open proof.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u01-l22-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": {
+    "Status": "NOT_RUN",
+    "Owner": "Supervisor 2 issue #453",
+    "Required": "lesson-selected assignment route, student evidence submission, authorized teacher rubric grade persistence, two-school negatives, renderer and final CI"
+  }
+}

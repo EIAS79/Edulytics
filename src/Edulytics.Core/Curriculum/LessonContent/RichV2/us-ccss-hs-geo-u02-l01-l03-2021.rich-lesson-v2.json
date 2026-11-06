@@ -1,0 +1,306 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u02-l01-l03-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+      "CultureCode": "en",
+      "Title": "Congruent Parts, Part 1",
+      "ExplanationParagraphs": [
+        "Learning goal: Explain why congruent figures have congruent corresponding sides and angles, identify the correct correspondence from a rigid transformation, and reason about a triangle and its half-turn image.",
+        "Two plane figures are congruent when a sequence of rigid transformations maps one exactly onto the other. A rigid transformation preserves distances and angle measures. The correspondence is defined by how labelled points move, not by alphabetical ordering in a picture.",
+        "Verbal diagram: triangle ABC is mapped to triangle DEF with A→D, B→E and C→F. Segment BC maps to segment EF; therefore BC=EF. Angle at A maps to angle at D, and their measures agree. A claim AC=EF is not guaranteed by this correspondence, even if special side coincidences occur in an isosceles triangle.",
+        "Original construction task: start with a nondegenerate triangle ABC, construct the midpoint M of its longest side AB, rotate all three vertices 180 degrees about M, and join the original and image of vertex C. Explain which opposite sides of the resulting quadrilateral are parallel and equal, and why it is a parallelogram when C is off line AB.",
+        "Teacher rubric (0–8): four human-scored criteria (0,1,2 each) for labelled rigid correspondence, a noncircular corresponding-parts theorem, an accurate half-turn diagram and midpoint argument, and a nondegenerate parallelogram proof with precise reasoning. An actual drawing and original geometric argument require human review rather than numeric autograding.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. The worked examples are original Edulytiks material, not reproductions of publisher activity diagrams or protected answers.",
+        "Source 1.1 Notice and Wonder: Transformed Rectangles (5 min): Show two independently labelled images of the same rectangle after a rigid motion, including a differently ordered labelling. Ask students what they notice and wonder about the matching vertices; solicit questions before giving any correspondence rule. The publisher figure is not copied or pixel-verified.",
+        "Source 1.2 If We Know This, Then We Know That (15 min): Given triangle ABC congruent to triangle DEF with A to D, B to E, C to F, students name a valid sequence of rigid motions from their independently labelled construction and track BC to EF and angle ABC to angle DEF. They justify that the SAME rigid map carries every side and angle and preserves its measure; teacher elicits a GENERAL narrative theorem rather than accepting 'they correspond' as a circular first proof. Partners strengthen and clarify the reasoning; only after the proof may the teacher use it as a theorem.",
+        "Source 1.3 Making Quadrilaterals (15 min): Students draw a nondegenerate triangle, construct the midpoint M of a longest side AB, half-turn 180 degrees about M and label C prime, then connect A,C,B,C prime. Since the half-turn interchanges A and B and maps C to C prime, AB and CC prime bisect one another at M; opposite sides are parallel. Therefore A-C-B-C prime is a parallelogram. Make the student's conjecture and its proof explicit, not merely 'it looks parallel'.",
+        "Source Practice P1-P6: P1 asks for the theorem that corresponding parts of congruent figures are congruent (choice D); P2 reflects an isosceles triangle across the shared HF axis and asks for congruent sides, bisected angles and the image angle; P3 reflects a right triangle across BC and establishes CA=CA prime, so CAA prime is isosceles. P4-P5 are Unit 1 triangle translation/congruence and parallel-line justifications; P6 identifies a rigid-motion image among six drawn quadrilaterals. Teacher reviews original figure-dependent choices and diagrams; no guessed numeric solver.",
+        "Source teacher synthesis: invite rigorous full-sentence explanation of why any rigid motion preserving corresponding parts preserves their length/angle, record the theorem in words rather than only CPCTC, and sequence quadrilateral proof discussions from visual conjecture to half-turn and alternate-angle justification.",
+        "Original publisher 1.4 Cool-down Making Angle Bisectors is teacher-login restricted, so mark ORIGINAL_COOLDOWN_UNVERIFIED. Edulytiks authored alternative: justify using a half-turn that opposite sides in a four-vertex construction are parallel and corresponding triangle angles equal; teacher scores the written argument as independent, not the source cool-down."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Corresponding parts",
+          "Definition": "Sides and angles matched by the same rigid transformation that maps one polygon onto another.",
+          "Rule": "Use the vertex mapping to identify each side and angle; do not infer labels from orientation alone.",
+          "Example": "If A→D, B→E, C→F, then BC→EF and angle BAC→angle EDF."
+        },
+        {
+          "Title": "Congruence guarantees",
+          "Definition": "Rigid motions preserve pairwise lengths and angle measure, so corresponding parts of congruent figures are congruent.",
+          "Rule": "Write a mapping followed by an equality for the image of each side or angle.",
+          "Example": "If ABC≅DEF in corresponding order, AB=DE and angle C equals angle F."
+        },
+        {
+          "Title": "Half-turn parallelogram",
+          "Definition": "A 180-degree rotation about midpoint M of segment AB swaps A and B, mapping an off-line vertex C to D; quadrilateral A–C–B–D is a nondegenerate parallelogram.",
+          "Rule": "Diagonals AB and CD share midpoint M; therefore the quadrilateral is a parallelogram when C is not on AB.",
+          "Example": "A=(−2,0), B=(2,0), C=(0,1) rotates to D=(0,−1); ACBD has diagonals bisecting each other."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read a congruence correspondence",
+          "Question": "A rigid sequence sends A→D, B→E, C→F. Which segment corresponds to BC and which angle to ∠BAC?",
+          "Method": "Transform each endpoint and each angle ray under the same sequence.",
+          "Steps": [
+            "Since B→E and C→F, segment BC maps to segment EF.",
+            "Since ray AB maps to ray DE and ray AC to ray DF, angle BAC maps to angle EDF.",
+            "Rigid transformations preserve distances and angle magnitudes.",
+            "Conclude BC=EF and m∠BAC=m∠EDF."
+          ],
+          "Answer": "BC corresponds to EF and ∠BAC corresponds to ∠EDF.",
+          "Check": "The middle letter of the angle specifies its vertex; A maps to D."
+        },
+        {
+          "Title": "Create a parallelogram by a half-turn",
+          "Question": "For A=(−2,0), B=(2,0), C=(0,1), rotate triangle ABC by 180 degrees about midpoint M=(0,0) of AB. What quadrilateral is formed?",
+          "Method": "Apply the half-turn P↦2M−P and use diagonal bisection.",
+          "Steps": [
+            "The half-turn exchanges A and B because M is their midpoint.",
+            "C=(0,1) maps to D=(0,−1).",
+            "In quadrilateral A–C–B–D, diagonals AB and CD intersect at M and bisect each other.",
+            "A quadrilateral with diagonals that bisect each other is a parallelogram.",
+            "Because C is not on AB, the quadrilateral has positive area."
+          ],
+          "Answer": "Quadrilateral A–C–B–D is a nondegenerate parallelogram.",
+          "Check": "AC and BD are opposite, equal and parallel under the half-turn; similarly CB and DA."
+        },
+        {
+          "Title": "Reject invalid part matching",
+          "Question": "Congruence ABC≅DEF fixes A↔D,B↔E,C↔F. Must AC be congruent to EF?",
+          "Method": "Check the actual mapping; provide a counterexample for an arbitrary unmatched pair.",
+          "Steps": [
+            "AC maps to DF, while BC maps to EF.",
+            "The congruence hypothesis guarantees AC=DF and BC=EF, but not necessarily AC=EF.",
+            "For a scalene triangle with AC=4 and BC=5, AC and EF have lengths 4 and 5.",
+            "Thus the unmatched equality fails in a valid congruent pair."
+          ],
+          "Answer": "No. AC corresponds to DF, not EF.",
+          "Check": "Additional equalities could occur in special triangles; lack of guarantee does not mean equality is impossible."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Matching triangle sides by how they appear left-to-right on the page.",
+          "WhyWrong": "Congruence records vertex mapping under rigid transformations; an image can be rotated or reflected.",
+          "Correction": "Write A→D, B→E, C→F and map each side by its endpoints."
+        },
+        {
+          "Mistake": "Assuming the half-turn creates a nondegenerate parallelogram for a collinear triangle.",
+          "WhyWrong": "If C lies on AB, the triangle is degenerate and the resulting four points are collinear.",
+          "Correction": "State A,B,C noncollinear; use the midpoint-diagonal argument only with a genuine triangle."
+        }
+      ],
+      "SummaryPoints": [
+        "Congruent figures have equal corresponding sides and angles because rigid transformations preserve these measures.",
+        "A vertex correspondence identifies exactly which parts match; unrelated side equalities may happen but are not guaranteed.",
+        "A half-turn about a triangle-side midpoint constructs a parallelogram when the third vertex is off the side; teacher checks authentic diagrams and written justification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+      "CultureCode": "en",
+      "Title": "Congruent Parts, Part 2",
+      "ExplanationParagraphs": [
+        "Learning goal: Decide whether proposed congruence statements preserve vertex correspondence, and use a complete rigid-motion argument or a single conflicting invariant to justify congruence or noncongruence.",
+        "Congruence statements are ordered: ABC≅DEF asserts A↔D, B↔E and C↔F. If the same triangles happen to be congruent with a different correspondence, one proposed statement may still be false; test the named parts rather than merely comparing the sets of points.",
+        "Verbal diagram: a scalene triangle ABC with AB=3, BC=4 and AC=5 is rigidly mapped to another triangle whose correctly corresponding sides DE=3, EF=4, DF=5. The statement ABC≅DEF is consistent. The statement ABC≅DFE would map AB (length 3) to DF (length 5), making it false.",
+        "Important logical distinction: all three matching side lengths can establish congruence for triangles (SSS), but SSA is not in general a triangle congruence criterion. A reflection might be required for a reversed orientation, and a point-by-point rigid sequence must preserve every previously fixed correspondence.",
+        "Student task: annotate a pair of scalene triangles with all side lengths and compare three differently ordered congruence claims. Supply a valid rigid transformation for one and an invariant-based counterexample for another. Teacher rubric (0–8): four criteria scored by a teacher at 0,1,2 each for ordered vertex correspondence, valid rigid-motion or invariant-based proof, a correct SSA ambiguity counterexample, and precise explanation/correction. The classification alone does not replace human review of a diagram or proof.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. The worked examples are original Edulytiks material, not reproductions of publisher activity diagrams or protected answers.",
+        "Source 2.1 Math Talk Which Are Congruent (5 min): Four publisher statement scenarios name triangles ABC to FED, quadrilaterals PZJM to LYXB, triangles JKL to QRS, and pentagons ABCDE to PQRST. The two depicted polygons in each pair may be congruent as unlabelled shapes yet a written ordered correspondence may still be FALSE. Students trace named edges or colour each matched vertex, explain true/false based on the actual diagram, and discuss reasoning without assuming a letter order is valid by appearance. Original figures are not copied.",
+        "Source 2.2 Which Triangles Are Congruent (15 min): In the original print source triangles PQR, ACE, LMN are compared, and the teacher synthesis explicitly rejects PQR congruent ACE based on at least one noncongruent corresponding part. The student exhibits a pointwise rigid-motion sequence for a truly matching pair, documents why the third cannot be mapped, and critiques the FALSE claim PQR congruent ACE from only angle P equal angle A, PQ equal AC and QR equal CE. Those data are SSA (nonincluded angle), which can yield noncongruent triangles. Do not infer the publisher diagram's third-side data from three isolated labels.",
+        "Independent mathematical SSA demonstration (not a copy of publisher art): let A=(0,0), B=(8,0); let the ray AC make 30 degrees with AB. Imposing BC=5 yields two possible positive distances AC=4*sqrt(3)-3 and AC=4*sqrt(3)+3. Both satisfy angle BAC=30 degrees, AB=8 and BC=5; they are not congruent because their AC lengths differ. This illustrates why two sides and a nonincluded angle are insufficient, and it does not assert which specific drawing PQR maps onto.",
+        "Source 2.3 Are These Parts Congruent (15 min): For 180-degree rotation sending ordered triangle CDB onto ABD, C->A,D->B,B->D; so angle ADB corresponds to angle CBD, not angle CDB. For ordered reflection-plus-translation GFONM to HIJKL, segment NM maps to KL, not KJ. For ordered rotation VZYW to PQRS, angle ZYW maps to QRS and is congruent. The proper ordered vertex names are the proof, even when an image is withheld.",
+        "Source practice P1-P7: P1 identify the incorrect pentagon correspondence in a line-symmetric design and rewrite it correctly; P2 a 90-degree turn maps a constructed quadrilateral in a labelled L-shape; P3 180-degree turn of triangle FGH maps to HEF and students check original select-all statements by correspondence; P4 reflecting ABC across AB gives AC congruent AD by the corresponding-parts theorem (choice B); P5 prove parallel and alternate angle relationships; P6 reflect isosceles FEH in HF; P7 construct a segment making a second hexagon congruent to ABCIHG. All diagram-dependent options require visual teacher assessment rather than invented scalar answer keys.",
+        "Optional source-specific language support: students compare the corresponding side order with coloured highlights, use MLR3 Clarify Critique Correct for the incorrect SSA explanation, and practice stating a valid counterexample in clear mathematical language. Preserve the original 2.1->2.2->2.3 sequence; source image parity and teacher-login protected cool-down are not claimed.",
+        "Independent Edulytiks cool-down alternative: given two differently named scalene triangles with an explicit mapping and one unequal corresponding side, prove why that exact ordered congruence statement is false. Mark ORIGINAL_COOLDOWN_UNVERIFIED and EDULYTIKS_AUTHORED_ALTERNATIVE; a teacher grades the written reasoning, not a numeric proxy."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Ordered congruence statement",
+          "Definition": "A statement naming congruent polygons in an order that fixes the correspondence of their vertices.",
+          "Rule": "The ith vertex of one polygon maps to the ith vertex of the other.",
+          "Example": "ABC≅DEF gives AB↔DE, BC↔EF, AC↔DF."
+        },
+        {
+          "Title": "Noncongruence by invariant",
+          "Definition": "If a claimed correspondence sends some side to a different length, no rigid motion can realize that claim.",
+          "Rule": "Check corresponding distances or angles; one unequal required pair rejects the proposed mapping.",
+          "Example": "A side of length 3 cannot map rigidly onto a side of length 5."
+        },
+        {
+          "Title": "Triangle criteria and ambiguity",
+          "Definition": "Three matching sides determine triangle congruence (SSS), but two sides and a nonincluded angle (SSA) can allow two noncongruent triangles.",
+          "Rule": "Do not assume a picture or insufficient data fixes a unique correspondence.",
+          "Example": "A side-side-angle construction may place the third vertex at two different points."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate an ordered claim",
+          "Question": "ABC has AB=3, BC=4, AC=5. DEF has DE=3, EF=4, DF=5. Is ABC≅DEF consistent with the given sides?",
+          "Method": "Compare all three pairs named by the ordering.",
+          "Steps": [
+            "A↔D, B↔E, C↔F implies AB↔DE, BC↔EF, AC↔DF.",
+            "Check 3=3, 4=4 and 5=5.",
+            "By SSS, these triangle data determine the same shape up to rigid motions, possibly including reflection.",
+            "Thus ABC≅DEF is justified with the stated side correspondence."
+          ],
+          "Answer": "Yes; the ordered statement is valid by SSS.",
+          "Check": "For right triangles with sides 3,4,5, a reflected or rotated position is still congruent."
+        },
+        {
+          "Title": "Reject an incorrect ordering",
+          "Question": "With the same scalene triangles, can ABC≅DFE hold?",
+          "Method": "Test the side AB under the claimed vertex ordering.",
+          "Steps": [
+            "ABC≅DFE would map A→D, B→F, C→E.",
+            "Therefore side AB would have to map to DF.",
+            "But AB=3 while DF=5.",
+            "Distance preservation rules out that ordered congruence statement."
+          ],
+          "Answer": "No; the claimed correspondence fails AB=DF.",
+          "Check": "The triangles remain congruent under ABC≅DEF; this does not validate every ordering."
+        },
+        {
+          "Title": "Explain why a necessary condition is not automatic sufficiency",
+          "Question": "Two polygon diagrams show one congruent side and one congruent angle. Does this prove that the whole figures are congruent?",
+          "Method": "Contrast local data with rigid-motion constraints on all parts.",
+          "Steps": [
+            "One side and one angle describe only some local information.",
+            "Figures can differ in other side lengths while keeping those two values fixed.",
+            "If two corresponding sides differ in length, any proposed rigid transformation is impossible.",
+            "Require sufficient congruence information, and for triangles an established criterion such as SSS, SAS or ASA."
+          ],
+          "Answer": "No; one matching side and one angle are insufficient.",
+          "Check": "A valid proof needs a theorem whose hypotheses exactly match the supplied parts."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating every vertex ordering as valid as soon as two triangles are known congruent.",
+          "WhyWrong": "An ordering asserts a specific bijection that may send unequal lengths to each other.",
+          "Correction": "Check side endpoint correspondence for each proposed written statement."
+        },
+        {
+          "Mistake": "Using an SSA pattern as though it were a universal triangle congruence theorem.",
+          "WhyWrong": "SSA can admit ambiguous triangle constructions and two distinct solutions.",
+          "Correction": "Use a valid criterion and explicitly check whether the angle is included between the given sides."
+        }
+      ],
+      "SummaryPoints": [
+        "A congruence statement specifies ordered vertex correspondences; wrong order can make it false.",
+        "One violated side-length invariant disproves a claimed rigid mapping.",
+        "Congruence evidence must match a valid theorem, not visual appearance or ambiguous SSA; teacher reviews full explanations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+      "CultureCode": "en",
+      "Title": "Congruent Triangles, Part 1",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove from a complete six-part correspondence why two triangles are congruent by rigid transformations, and distinguish necessary corresponding equalities from coincidental unmatched equalities.",
+        "Definition: triangle ABC≅DEF with A↔D, B↔E, C↔F means one rigid transformation sequence maps the entire first triangle exactly to the second. It forces AB=DE, BC=EF, AC=DF and ∠A≅∠D, ∠B≅∠E, ∠C≅∠F. In the Euclidean plane, all six corresponding equalities are sufficient too (in fact SSS alone already suffices).",
+        "Point-by-point proof idea: translate A to D, rotate around D until the image of B matches E, then (if necessary) reflect over line DE to bring the third vertex to the target side. The third vertex must lie at the intersection of the radius-DF circle centred D and the radius-EF circle centred E. There are at most two such intersections off line DE; one is selected by the target orientation.",
+        "Student task: given labelled scalene triangles with six corresponding equalities, construct and explain a point-by-point rigid alignment. Then change one side of the target and use distance preservation to reject the claim. Teacher rubric (0–8): four criteria scored by the teacher at 0,1,2 each: ordered correspondence, complete translate-rotate-reflect instructions, exact same-ray/same-distance proof for B and C, and a valid necessary/possible/impossible classification with counterexample. Human evaluation is required for drawn transformations and proof writing.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. The worked examples are original Edulytiks material, not reproductions of publisher activity diagrams or protected answers.",
+        "Source 3.1 True or Sometimes True (5 min): Start with triangle ABC congruent to A-prime B-prime C-prime BEFORE any fixed diagram. Students list at least one invariant that MUST hold (matched side lengths and angle measures), a special equality that COULD hold (two noncorresponding sides in an isosceles triangle), and an equality that CANNOT hold (different matched lengths under a rigid motion). Revisit after an independent diagram and require counterexamples before rejecting a merely possible equality.",
+        "Source 3.2 Invisible Triangles (20 min): Two students have distinct roles, a secret triangle-card holder and a transformer who sees only the exact ordered correspondence of all three side and three angle pairs. The transformer issues precise point-by-point instructions; the holder uses tracing paper or a first-party construction to show intermediate images and reports how many of 1,2,3 vertices coincide. Guide toward a reusable translate first matched vertex, rotate about it to align a second, and reflect across their common line if necessary. Keep the publisher blackline cards and diagrams out of the authored assets; an independently labelled triangle card and written dialogue are the assessable equivalent. Reflection-only challenge is optional.",
+        "Source 3.3 Why Do They Coincide (10 min): For triangle ABC matched with DEF, translate A to D, rotate about D until the image ray AB aligns with DE, and reflect across DE only if the third vertex lies on the wrong side. Explain in full sentences: (i) aligned B-image coincides E because preserved AB=DE along the same ray from D, (ii) after choosing the correct side, angle BAC equal angle EDF ensures ray AC-image aligns ray DF, (iii) preserved AC=DF ensures C-image equals F along that same ray. A diagram alone or naming SSS without these exact steps does not meet the proof task.",
+        "Source course claim: if all six corresponding sides and angles of two nondegenerate triangles are congruent, a rigid sequence maps the first to the second; conversely any such rigid sequence preserves all six corresponding parts. Do not collapse the source transformation argument into a memorized SSS shortcut; it is introduced as a later criterion.",
+        "Source practice P1-P8: P1 maps ABC to EDF and tests correct ordered vertices/segments; P2 rotation at C maps triangle CBA to CDE and requires the rotated ray/endpoint argument; P3 choose a three-move sequence for XYZ to BCA using the original diagram; P4 a 180-degree half-turn of FGH to HEF with selection justified by ordered mapping; P5 repair a line-symmetric pentagon's false name; P6 list correct corresponding parts under ABC to DEF; P7 reflection ABC across AB gives image ABD and students must reason with figure-dependent angles; P8 find two angles on a drawing with DE parallel BC. Diagram-specific multiple-choice options require human teacher review; do not invent a publisher image answer.",
+        "Teacher synthesis: post and refine an independent bank of proof sentences ('we translate... so ... coincide', 'rigid motions preserve length and angle', 'same ray and same distance guarantee the point', 'if opposite orientation reflect in common line'). Preserve source activity order 3.1->3.2->3.3, and mark locked original Cool-down as unverified; separately authored first-party narrative explanation is teacher-scored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Six corresponding parts",
+          "Definition": "For triangle correspondence A↔D, B↔E, C↔F, three matching side equalities and three matching angle equalities.",
+          "Rule": "List every required equality and distinguish it from unrelated coincidence.",
+          "Example": "AB=DE, BC=EF, AC=DF; m∠A=m∠D, m∠B=m∠E, m∠C=m∠F."
+        },
+        {
+          "Title": "Point-by-point rigidity proof",
+          "Definition": "A construction of rigid motions aligning successive corresponding vertices while preserving already matched ones.",
+          "Rule": "Translate the first point; rotate about it for the second; optionally reflect about the line through both to match the third.",
+          "Example": "A→D, then B→E under rotation about D; reflection in DE keeps D and E fixed."
+        },
+        {
+          "Title": "Circle-intersection uniqueness",
+          "Definition": "When D and E are fixed and DF, EF are prescribed, third vertex F must lie in the intersection of circles centred at D,E with those radii.",
+          "Rule": "A nondegenerate triangle has up to two mirror candidate third vertices; both are congruent configurations.",
+          "Example": "For D=(0,0), E=(4,0), DF=3, EF=3, the two possible third vertices are symmetric across DE."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Six equalities imply a rigid alignment",
+          "Question": "Suppose AB=DE, BC=EF, AC=DF and all three corresponding angle measures match. Why must ABC and DEF be congruent?",
+          "Method": "Align A and B first, then locate C by two radius constraints.",
+          "Steps": [
+            "Translate A to D, preserving every side and angle.",
+            "Rotate about D to make the translated B land on E; AB=DE makes this possible.",
+            "The image of C must be DF units from D and EF units from E, as rigid motions preserve distances.",
+            "The two circle intersections are mirror images across DE (in a nondegenerate triangle); reflect across DE if needed to choose F.",
+            "All three corresponding vertices now align, establishing a rigid-motion congruence."
+          ],
+          "Answer": "There is a sequence of at most translation, rotation and reflection mapping ABC to DEF.",
+          "Check": "A and B must be distinct; the triangle inequalities must allow a genuine third vertex."
+        },
+        {
+          "Title": "Construct matching corresponding sides",
+          "Question": "Triangles ABC and DEF are congruent with A↔D, B↔E, C↔F. If AB=5, BC=6, AC=7, what are the three target side lengths?",
+          "Method": "Read the side correspondence from the vertex mapping.",
+          "Steps": [
+            "Map endpoints AB→DE, so DE=5.",
+            "Map BC→EF, so EF=6.",
+            "Map AC→DF, so DF=7.",
+            "Verify the sides satisfy triangle inequalities: 5+6>7 and similarly for the other pairs."
+          ],
+          "Answer": "DE=5, EF=6, DF=7.",
+          "Check": "Lengths of unrelated pairs, such as AB and EF, are not forced equal."
+        },
+        {
+          "Title": "Must-be-true versus might-be-true",
+          "Question": "If ABC≅DEF, must AC=EF? Could AC=EF ever happen?",
+          "Method": "Compare the required mapping with special additional equalities.",
+          "Steps": [
+            "The congruence guarantees AC=DF because A→D and C→F.",
+            "It also guarantees BC=EF.",
+            "If ABC is scalene with AC≠BC, then AC≠EF.",
+            "If ABC is isosceles with AC=BC, then AC=EF can happen as an additional equality."
+          ],
+          "Answer": "AC=EF is not guaranteed, but it can be true for special triangles.",
+          "Check": "Avoid saying an unmatched equality is impossible when the source triangles may be isosceles."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Deducing an arbitrary side equality from congruence without checking the vertex map.",
+          "WhyWrong": "Congruence guarantees corresponding, not all possible, side pairs match.",
+          "Correction": "Translate the vertex mapping into specific side and angle pairs."
+        },
+        {
+          "Mistake": "Stating SSS or the six equalities without explaining how a rigid motion can align the vertices.",
+          "WhyWrong": "It omits the required transformation-based justification for this lesson.",
+          "Correction": "Describe first-point translation, second-point rotation and conditional reflection using circle-intersection constraints."
+        }
+      ],
+      "SummaryPoints": [
+        "Rigid congruence guarantees three corresponding side and three corresponding angle equalities.",
+        "Translate, rotate and optionally reflect to align the three vertices; two-circle constraints explain the third vertex.",
+        "Nonmatching side equalities can occur in special triangles but are not compulsory; teacher reviews proofs and drawings."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
