@@ -1957,6 +1957,13 @@
                             {
                                 <li value="@task.Number">
                                     <strong>Task @task.Number:</strong> @task.Prompt
+                                    @if (Grade12PrecalculusSection11ExerciseVisuals.Find(task.Number) is { } sourceSkillGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(sourceSkillGraph))
+                                            <figcaption>@sourceSkillGraph.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
                                     @if (task.ReviewMode == "TEACHER_DIAGRAM_REQUIRED")
                                     {
                                         <p><em>Teacher-reviewed sketch and mathematical justification required.</em></p>

@@ -218,6 +218,22 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void SourceRelatedExerciseGraphsAreAccessibleFirstPartySpecifications()
+    {
+        Assert.Equal(19, Grade12PrecalculusSection11ExerciseVisuals.Count);
+        Assert.Null(Grade12PrecalculusSection11ExerciseVisuals.Find(52));
+        foreach (var (originalNumber, visual) in Grade12PrecalculusSection11ExerciseVisuals.All)
+        {
+            Assert.True(originalNumber is >= 40 and <= 59);
+            Assert.False(string.IsNullOrWhiteSpace(visual.Accessibility.Description));
+            MathematicalVisualSpecValidator.Validate(visual);
+            var svg = AdvancedMathematicsVisualRenderer.RenderSvg(visual);
+            Assert.Contains("aria-labelledby", svg, StringComparison.Ordinal);
+        }
+        // Source figure 1:1 equivalence and student E2E remain for Stage D.
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
