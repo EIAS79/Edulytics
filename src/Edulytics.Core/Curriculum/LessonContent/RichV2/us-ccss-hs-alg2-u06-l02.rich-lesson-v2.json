@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L02",
+      "CultureCode": "en",
+      "Title": "Revisiting Right Triangles",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that coordinates for a point 1 unit away from the origin in quadrant 1 can be represented by $(\\cos(A),\\sin(A))$ where $A$ is the angle the point makes with the $x$-axis. Recall definitions for cosine, sine, and tangent of an angle in a right triangle.",
+        "On a unit circle at angle θ, coordinate pair is (cos θ,sin θ). For a right triangle, sin=opposite/hypotenuse, cos=adjacent/hypotenuse and tan=opposite/adjacent when defined.",
+        "Source activity 2.1: Notice and Wonder: A Right Triangle: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Recalling Right Triangle Trigonometry: Find \\(\\cos(A)\\), \\(\\sin(A)\\), and \\(\\tan(A)\\) for triangle \\(ABC\\). Sketch a triangle \\(DEF\\) where \\(\\sin(D)=\\cos(D)\\) and \\(E\\) is a right angle. What is the value of \\(\\tan(D)\\) for this triangle? Explain how you know. If the coordinates of point \\(I\\) are \\((9,12)\\), what is the value of \\(\\cos(G)\\), \\(\\sin(G)\\), and \\(\\tan(G)\\) for triangle \\(GHI\\)? Explain or show your… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: Shrinking Triangles: What are \\(\\cos(D)\\), \\(\\sin(D)\\), and \\(\\tan(D)\\)? Explain how you know. Here is a triangle similar to triangle \\(DEF\\). What is the scale factor from \\(\\triangle DEF\\) to \\(\\triangle D'E'F'\\)? Explain how you know. What are \\(\\cos(D')\\), \\(\\sin(D')\\), and \\(\\tan(D')\\)? Here is another triangle similar to triangle \\( DEF\\). Label the triangle \\(D’'E’'F’'\\). What is the scale… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Which of the following is true? \\(\\sin(A) = \\frac{6}{10}\\) \\(\\cos(A) = \\frac{6}{10}\\) \\(\\sin(C) = \\frac{6}{10}\\) \\(\\cos(C) = \\frac{8}{10}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is triangle ABC: Express the length of segment \\(AB\\) using sine or cosine. Express the length of segment \\(BC\\) using sine or cosine. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Triangle DEF is similar to triangle ABC. What is the length of segment \\(DE\\)? What is the length of segment \\(EF\\)? Explain how you know. Explain why the length of segment \\(DE\\) is \\(\\cos(D)\\) and the length of segment \\(EF\\) is \\(\\sin(D)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a triangle. Find \\(\\cos(A)\\), \\(\\sin(A)\\), and \\(\\tan(A)\\). Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Sketch and label a right triangle \\(ABC\\) with \\(\\tan(A) = 2\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The point \\((1,4)\\) lies on a circle with center \\((0,0)\\). Name at least one point in each quadrant that lies on the circle. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find coordinates at θ=π/3. Expected reasoning or answer: (1/2,√3/2).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Triangle trigonometry and unit circle",
+          "Definition": "On a unit circle at angle θ, coordinate pair is (cos θ,sin θ). For a right triangle, sin=opposite/hypotenuse, cos=adjacent/hypotenuse and tan=opposite/adjacent when defined.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find coordinates on unit circle at θ=π/6. Answer: (√3/2,1/2)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "cos π/6=√3/2; sin π/6=1/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Triangle trigonometry and unit circle",
+          "Question": "Find coordinates on unit circle at θ=π/6.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "cos π/6=√3/2",
+            "sin π/6=1/2."
+          ],
+          "Answer": "(√3/2,1/2).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find coordinates at θ=π/3.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "(1/2,√3/2).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Triangle trigonometry and unit circle",
+        "On a unit circle at angle θ, coordinate pair is (cos θ,sin θ). For a right triangle, sin=opposite/hypotenuse, cos=adjacent/hypotenuse and tan=opposite/adjacent when defined.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
