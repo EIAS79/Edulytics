@@ -432,6 +432,21 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void NarrativeSourceGapsHaveFirstPartyExplanationsAndNineNamedToolkitFamilies()
+    {
+        var lesson = RichLessonContentV2Registry.Find(Code, "en");
+        Assert.NotNull(lesson);
+        var narrative = string.Join(" ", lesson.ExplanationParagraphs);
+        Assert.Contains("not multiplication", narrative, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("sampled ordered pairs", narrative, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("isolated plotted values", narrative, StringComparison.OrdinalIgnoreCase);
+        var toolkit = lesson.KeyConcepts.Single(x => x.Title == "Basic function families");
+        Assert.Contains("reciprocal squared", toolkit.Definition);
+        Assert.Contains("cube root", toolkit.Definition);
+        Assert.Equal(9, Grade12PrecalculusSection11ToolkitGraphs.All.Count);
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

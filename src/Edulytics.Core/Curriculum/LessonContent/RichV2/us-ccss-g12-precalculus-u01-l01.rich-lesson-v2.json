@@ -1,5 +1,5 @@
 {
-  "ContentVersion": "g12-u01-l01-source-nonnumeric-month-analysis-20261106",
+  "ContentVersion": "g12-u01-l01-source-narrative-definition-gaps-20261106",
   "Lessons": [
     {
       "CommonMistakes": [
@@ -61,7 +61,11 @@
         "Edulytics cool-down: given R={(1,2),(1,4),(2,4)}, classify R and explain; evaluate f(−1) for f(x)=x²−2x+1; and decide whether h(x)=x² is one-to-one when x≥0. Submit reasons. A teacher reviews the explanation; this cool-down is independently authored, not a reproduction of teacher-restricted material.",
         "First-party supplemental example — overlapping domains: the horizontal rays y=3 for x>0 and y=−3 for x<2 overlap over 0<x<2. At x=1, a vertical line hits both points (1,3) and (1,−3), so their union is not a function of x. Separate graph pieces do not guarantee separate input domains. This is an Edulytics teaching example, not a copied source diagram.",
         "Notation choice — in applied mathematics one may write y=y(x). For introductory function analysis, y=f(x) distinguishes the function rule f from the output value y, so treat them as different mathematical roles.",
-        "Implicit function subtlety — an equation can determine one output for each input without giving an easy explicit formula for that output. Test uniqueness of the output branch; conversely, equations such as a circle may produce two real y-values for the same x and are not functions of x."
+        "Implicit function subtlety — an equation can determine one output for each input without giving an easy explicit formula for that output. Test uniqueness of the output branch; conversely, equations such as a circle may produce two real y-values for the same x and are not functions of x.",
+        "Function notation uses parentheses to indicate the INPUT to a function, not multiplication: f(a+b) applies f after determining a+b as one complete input.",
+        "A table can list every known pair or selected observations from a wider relationship. A few sampled ordered pairs do not determine how the function behaves outside the table.",
+        "A graph may consist of isolated plotted values for a discrete domain, or the complete curve representing all ordered pairs in a continuous domain. Plotting sampled points alone does not prove continuity between them.",
+        "The nine basic toolkit-function families are constant, identity, absolute value, quadratic, cubic, reciprocal, reciprocal squared, square root, and cube root. For reciprocal and reciprocal squared exclude x=0; the square root has real x>=0."
       ],
       "KeyConcepts": [
         {
@@ -108,8 +112,8 @@
         },
         {
           "Title": "Basic function families",
-          "Definition": "Toolkit graphs include constant, identity, square, cube, absolute value, reciprocal, square root and related transformations.",
-          "Rule": "Graph shape, domain and function notation must be understood together; reciprocal excludes x=0 and square root requires x≥0.",
+          "Definition": "Nine toolkit families: constant, identity, absolute value, quadratic, cubic, reciprocal, reciprocal squared, square root, and cube root.",
+          "Rule": "Read formula, graph, domain and range together: 1/x and 1/x² exclude x=0, while √x requires x≥0.",
           "Example": "f(x)=1/x is undefined at 0; g(x)=√x is real for x≥0."
         }
       ],
