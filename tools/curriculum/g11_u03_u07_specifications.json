@@ -1,0 +1,175 @@
+{
+  "3": {
+    "1": [
+      "Exponent laws",
+      "For nonzero a, a^m*a^n=a^(m+n); division subtracts exponents. Defining a^0=1 and a^-n=1/a^n extends rules to all integers.",
+      "Simplify 2^3 times 2^4.",
+      "Same base; add exponents 3+4=7; calculate 2^7.",
+      "128",
+      "Evaluate 3^-2 and explain the reciprocal rule.",
+      "1/9."
+    ],
+    "2": [
+      "Principal roots",
+      "For a nonnegative a, sqrt(a) is its nonnegative square root, while cube root works for negative real inputs. Physical lengths cannot be negative.",
+      "Find sqrt(49) and cube root(-27).",
+      "7^2=49; (-3)^3=-27.",
+      "7 and -3",
+      "Evaluate sqrt(121) and cube root(-64).",
+      "11 and -4."
+    ],
+    "3": [
+      "Fractional exponent and radical",
+      "b^(1/n) equals its nth root where a real root is defined; for positive b the exponent identity holds without ambiguity.",
+      "Evaluate 81^(1/4).",
+      "3^4=81 so the fourth root is3.",
+      "3",
+      "Evaluate 32^(1/5).",
+      "2."
+    ],
+    "4": [
+      "Positive rational powers",
+      "For b>0, b^(m/n)=(nth root b)^m. Graph y=b^x with fractional inputs and verify exponent laws.",
+      "Evaluate 27^(2/3).",
+      "Cube root27=3; 3^2=9.",
+      "9",
+      "Evaluate 16^(3/4).",
+      "8."
+    ],
+    "5": [
+      "Negative rational powers",
+      "For b>0, b^(-m/n)=1/b^(m/n); negative exponent takes a reciprocal, not a negative number.",
+      "Evaluate 16^(-3/4).",
+      "Fourth root16=2; cube gives8; reciprocal1/8.",
+      "1/8",
+      "Evaluate 27^(-2/3).",
+      "1/9."
+    ],
+    "6": [
+      "Principal sqrt and two signed solutions",
+      "sqrt(x) for x>=0 is nonnegative, but x^2=a>0 has two real solutions. Do not automatically add ± to the radical symbol.",
+      "Solve z^2=25 and sqrt(x)=5.",
+      "Signed square roots z=±5; square equation sqrt(x)=5 to get x=25.",
+      "z=±5, x=25",
+      "Solve u^2=36 and sqrt(v)=6.",
+      "u=±6; v=36."
+    ],
+    "7": [
+      "Squaring changes possible solutions",
+      "After isolating a nonnegative square root, squaring the equation may introduce extraneous solutions. Check all candidates in the original equation.",
+      "Solve sqrt(x+5)=x-1.",
+      "Domain x>=1; square x+5=x^2-2x+1; factor (x-4)(x+1)=0; reject -1.",
+      "x=4",
+      "Solve sqrt(x+6)=x.",
+      "x=3; reject -2."
+    ],
+    "8": [
+      "Cubes and cube roots",
+      "Each real number has one real cube root because x^3 increases strictly across the real line; negative inputs retain their sign.",
+      "Solve x^3=-8 and cube root(-64).",
+      "(-2)^3=-8 and (-4)^3=-64.",
+      "x=-2; cube root=-4",
+      "Solve 2x^3=54.",
+      "x=3."
+    ],
+    "9": [
+      "Solve and verify radical equations",
+      "Isolate the radical, impose its real domain and nonnegative output, square, solve, and substitute into the unsquared equation.",
+      "Solve sqrt(x+6)=x.",
+      "x>=0; square yields x²-x-6=0; candidates3,-2; reject -2.",
+      "x=3",
+      "Solve sqrt(x+5)=x-1.",
+      "x=4."
+    ],
+    "10": [
+      "New number i",
+      "The square of a real number is never negative; x²=-1 has no real root. Define a complex imaginary unit i such that i²=-1.",
+      "Does x²=-1 have a real solution?",
+      "For all real x, x²>=0, so no real equality with -1.",
+      "No real solution",
+      "Solve x²=-9 over complex numbers.",
+      "x=±3i."
+    ],
+    "11": [
+      "Imaginary axis and complex plane",
+      "A complex value a+bi corresponds to point (a,b); the horizontal component is real, vertical imaginary and i²=-1.",
+      "Plot 2+3i and evaluate (3i)².",
+      "Point coordinates2,3; (3i)²=9i²=-9.",
+      "(2,3) and -9",
+      "Solve x²=-16 over complex numbers.",
+      "x=±4i."
+    ],
+    "12": [
+      "Complex sums and i-powers",
+      "Sum real and imaginary components separately. Powers i,i²=-1,i³=-i,i⁴=1 cycle with period four.",
+      "Compute (2+3i)+(4-5i).",
+      "Real sum6, imaginary coefficient-2.",
+      "6-2i",
+      "Evaluate i^7.",
+      "-i."
+    ],
+    "13": [
+      "Multiplying complex numbers",
+      "Distribute and simplify with i²=-1; (a+bi)(c+di)=(ac-bd)+(ad+bc)i.",
+      "Multiply (2+i)(3-2i).",
+      "6-4i+3i-2i²=8-i.",
+      "8-i",
+      "Multiply (1+2i)(1-2i).",
+      "5."
+    ],
+    "14": [
+      "Complex arithmetic",
+      "Reduce powers of i modulo 4, apply componentwise addition and subtraction, and distribute for products.",
+      "Simplify i^5+i^6+i^7+i^8.",
+      "Terms are i,-1,-i,1; sum0.",
+      "0",
+      "Evaluate i^10.",
+      "-1."
+    ],
+    "15": [
+      "Information gap in complex factorisation",
+      "A complex product does not uniquely determine its two factors. Ask for additional constraints, such as conjugacy; z*conj(z)=a²+b².",
+      "Find a conjugate pair whose product is 2.",
+      "(1+i)(1-i)=1-i²=2.",
+      "1+i and 1-i",
+      "Compute (3+2i)(3-2i).",
+      "13."
+    ],
+    "16": [
+      "Complete square for quadratic roots",
+      "Move the constant and complete square to solve; compare with quadratic formula and substitute roots into the original quadratic.",
+      "Solve x²+6x+5=0.",
+      "(x+3)²=4; x=-3±2.",
+      "x=-1 or -5",
+      "Solve x²-4x+3=0.",
+      "x=1 or 3."
+    ],
+    "17": [
+      "Non-real solutions from completing square",
+      "If (x+a)²=-b for b>0, solutions are x=-a±i sqrt(b). Real-coefficient quadratics have conjugate non-real pairs.",
+      "Solve x²+2x+5=0.",
+      "(x+1)²=-4; x=-1±2i.",
+      "-1±2i",
+      "Solve x²+4x+8=0.",
+      "-2±2i."
+    ],
+    "18": [
+      "Quadratic formula with i",
+      "Discriminant b²-4ac<0 gives a non-real conjugate pair; simplify sqrt of negative using i, then put result in c±di form.",
+      "Solve x²+4x+13=0.",
+      "Delta=16-52=-36; x=(-4±6i)/2.",
+      "-2±3i",
+      "Solve x²+2x+10=0.",
+      "-1±3i."
+    ],
+    "19": [
+      "Discriminant and real-root classification",
+      "For real quadratic ax²+bx+c with a!=0, discriminant positive gives two real roots, zero one repeated real root, negative two non-real conjugates.",
+      "Compare roots of x²-9=0 and x²+9=0.",
+      "First roots ±3 real; second ±3i non-real.",
+      "±3 and ±3i",
+      "Make a monic quadratic with roots ±2i.",
+      "x²+4=0."
+    ]
+  }
+}
