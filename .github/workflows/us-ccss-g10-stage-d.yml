@@ -230,7 +230,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Compile dedicated test probe
-        run: python3 -m py_compile tools/phase29/g10_geometry_https.py
+        run: python3 -m py_compile tools/phase29/g10_geometry_https.py tools/phase29/g10_geometry_rubric_persistence_https.py
       - name: Build disposable web and schema (not production)
         run: |
           set -euo pipefail
@@ -278,10 +278,13 @@ jobs:
           done
           test "$ready" = true
           python3 tools/phase29/g10_geometry_https.py
+          python3 tools/phase29/g10_geometry_rubric_persistence_https.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: g10-124-authenticated-geometry-https
-          path: /tmp/g10-geometry-124-authenticated-render.json
+          path: |
+            /tmp/g10-geometry-124-authenticated-render.json
+            /tmp/g10-one-teacher-review-https.json
           if-no-files-found: warn
           retention-days: 14
