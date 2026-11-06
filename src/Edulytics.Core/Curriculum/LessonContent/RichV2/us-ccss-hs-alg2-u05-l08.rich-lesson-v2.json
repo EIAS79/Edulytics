@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L08",
+      "CultureCode": "en",
+      "Title": "Scaling the Outputs",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the scale factor $k$ needed to transform the output of a function to fit data. Describe the effect of a scale factor on the output of a function.",
+        "The transformation g(x)=k*f(x) scales every output by k; |k|>1 vertically stretches, 0<|k|<1 compresses and negative k additionally reflects across the x-axis.",
+        "Source activity 8.1: Notice and Wonder: Arch You Glad to See Me?: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: The Hulme Arch Bridge: The Hulme Arch Bridge in Manchester, England is shaped like a parabola. The ends of the arch are 52 meters apart, and it is 25 meters high. Attribution: Close View of Hulme Arch, by Mikey. CC BY 2.0. Wikimedia Commons. Source. Use the description to help you label the 3 coordinates on the graph. For the \\(x\\)-coordinates of the three points, what are the corresponding points… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Feed the Dog: A certain brand of dog food gives the minimum daily amount of food a dog needs depending on its weight. We want to model the relationship between the amount of food and the dog’s weight with a function \\(F\\), where \\(F(w)\\) is the amount of food, in grams, needed by a dog weighing \\(w\\) pounds. Use graphing technology to find a linear function, \\(F(w) = mw + b\\), that fits the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: In each pair of graphs shown here, the values of function \\(g\\) are the values of function \\(f\\) multiplied by a scale factor. Express \\(g\\) in terms of \\(f\\) using function notation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is the graph of \\(y = f(x)\\) for a cubic function \\(f\\). Will scaling the outputs of \\(f\\) change the \\(x\\)-intercepts of the graph? Explain how you know. Will scaling the outputs of \\(f\\) change the \\(y\\)-intercept of the graph? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The function \\(f\\) is given by \\(f(x) = 2^x\\), while the function \\(g\\) is given by \\(g(x) = 4 \\boldcdot 2^x\\). Kiran says that the graph of \\(g\\) is a vertical scaling of the graph of \\(f\\). Mai says that the graph of \\(g\\) is a horizontal shift of the graph of \\(f\\). Do you agree with either of them? Explain your… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The dashed function is the graph of \\(f\\) and the solid function is the graph of \\(g\\). Express \\(g\\) in terms of \\(f\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The table shows some values for an odd function \\(f\\). Complete the table. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is a graph of \\(f(x)=x^3\\) and a graph of \\(g\\), which is a transformation of \\(f\\). Write an equation for the function \\(g\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If f(2)=-5, find g(2) for g=-2f. Expected reasoning or answer: 10.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scaling outputs",
+          "Definition": "The transformation g(x)=k*f(x) scales every output by k; |k|>1 vertically stretches, 0<|k|<1 compresses and negative k additionally reflects across the x-axis.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Given f(x)=x² and g(x)=3f(x), find g(2). Answer: 12."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "f(2)=4; multiply output by3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scaling outputs",
+          "Question": "Given f(x)=x² and g(x)=3f(x), find g(2).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "f(2)=4",
+            "multiply output by3."
+          ],
+          "Answer": "12.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If f(2)=-5, find g(2) for g=-2f.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "10.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Scaling outputs",
+        "The transformation g(x)=k*f(x) scales every output by k; |k|>1 vertically stretches, 0<|k|<1 compresses and negative k additionally reflects across the x-axis.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
