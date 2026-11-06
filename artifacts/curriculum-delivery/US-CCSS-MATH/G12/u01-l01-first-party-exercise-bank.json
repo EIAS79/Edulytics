@@ -10,7 +10,7 @@
   "Readiness": "AUTHORING_DRAFT_NOT_PRODUCTION_VERIFIED",
   "SourceGraphImagesEmbedded": false,
   "SourceExerciseRights": "MATH_PROMPTS_ARE_NEW_FIRST_PARTY_DERIVATIVES; SOURCE_ATTRIBUTION_IN_PUBLIC_LICENSE_PAGE",
-  "StudentSubmissionAndTeacherGrading": "NOT_BOUND_TO_G12_PERSISTENCE",
+  "StudentSubmissionAndTeacherGrading": "G12_PER_ACTIVITY_TEACHER_ROUTE_AND_MIGRATION_AUTHORED_NOT_RUNTIME_VERIFIED",
   "DigitalExactScoring": "EXACT_CANDIDATES_ONLY_NOT_92_AUTO_GRADED",
   "Tests": "WRITTEN_NOT_RUN",
   "CI": "NOT_RUN",
@@ -529,11 +529,13 @@
       "Number": 52,
       "SourceElementId": "G12-U01-L01-EXERCISE052",
       "Skill": "Reading values from a graph",
-      "Prompt": "For the teacher-supplied increasing concave-down curve, read f(−1) and determine whether the displayed graph supports a unique input solving f(x)=3. Distinguish observed intersections from extrapolation and do not invent an exact root.",
+      "Prompt": "Use the independent first-party increasing concave-down graph displayed with this task to read f(−1) and locate all displayed crossings of y=3. The first-party teaching model has a known rule, but the original textbook graph does not state one: explain why its precise root requires separate source verification.",
       "Mode": "TEACHER_DIAGRAM_REQUIRED",
       "AnswerKind": "GRAPH_INTERPRETATION",
       "SourcePdfPage": 36,
-      "SourceParity": "CANDIDATE_NOT_VERIFIED"
+      "SourceParity": "CANDIDATE_NOT_VERIFIED",
+      "FirstPartyGraphRule": "y=sqrt(x+2)",
+      "OriginalSourceRuleStatus": "NOT_GIVEN_DO_NOT_DEDUCE_EXACT_SOURCE_ROOT"
     },
     {
       "Number": 53,
@@ -936,5 +938,6 @@
       "SourcePdfPage": 37,
       "SourceParity": "CANDIDATE_NOT_VERIFIED"
     }
-  ]
+  ],
+  "ScoringRubric": "FOUR_1_POINT_CRITERIA_MAX_4_TEACHER_ONLY"
 }

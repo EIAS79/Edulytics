@@ -136,6 +136,14 @@ public static class Grade12PrecalculusSection11ExerciseVisuals
                     MathematicalCurveKind.Sine,[1m,1m,0m,0m]),
                 [],Access("Exercise 51: continuous wave",
                 "A wave can repeat an output at different x-values while still being a function.")),
+            [52] = Coordinate(Window(-2.5m,8m,-0.5m,4m),
+                Sample(x => (decimal)Math.Sqrt((double)(x + 2m)),
+                    -2m,8m,40),
+                "Exercise 52: first-party increasing concave-down graph",
+                "Independently drawn y=sqrt(x+2) is a teaching analogue, not the original exact graph. " +
+                "Read f(-1)=1 and the y=3 intersection near x=7 on THIS curve. " +
+                "Do not treat the original source graph as an exact algebraic rule.",
+                [Point(-1m,1m,"(-1,1)"), Point(7m,3m,"(7,3)")]),
             [53] = Polynomial(Window(-3m,3m,-4m,5m),53,
                 "Exercise 53: W-shaped graph values",
                 "The quartic reaches y=-3 at x=-2 and x=2; its central point is f(0)=1.",
@@ -182,7 +190,7 @@ public static class Grade12PrecalculusSection11ExerciseVisuals
             }
         };
 
-        if (result.Count != 19)
+        if (result.Count != 20)
             throw new InvalidOperationException("Section 1.1 exercise diagram count changed.");
         foreach (var spec in result.Values)
             MathematicalVisualSpecValidator.Validate(spec);

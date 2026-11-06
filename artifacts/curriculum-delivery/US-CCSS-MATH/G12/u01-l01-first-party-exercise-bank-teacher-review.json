@@ -1,7 +1,7 @@
 {
   "ContentVersion": "g12-section11-first-party-practice-92-tasks-v1",
   "SourceSection": "1.1",
-  "TeacherAssessmentRoute": "EXISTING_AUTHENTICATED_GENERIC_TEACHER_REVIEW_REQUIRES_G12_INTEGRATION",
+  "TeacherAssessmentRoute": "G12_SECTION_1_1_EXERCISE_SCOPED_STUDENT_AND_TEACHER_ROUTES_AUTHORED_NOT_RUNTIME_VERIFIED",
   "DeliveryRoute": "STUDENT_LESSON_SECTION_1_1_READ_ONLY_PROMPTS",
   "SourceExercisesAddressedByOrdinal": [
     1,
@@ -110,19 +110,19 @@
   "RubricCriteria": [
     {
       "Label": "Mathematical accuracy and complete permitted solution set",
-      "Points": 2
+      "Points": 1
     },
     {
       "Label": "Representation, diagram/window and stated domain accuracy",
-      "Points": 2
+      "Points": 1
     },
     {
       "Label": "Proof, explanation and interpretation of the objective",
-      "Points": 2
+      "Points": 1
     },
     {
       "Label": "Correct units, precision, symbols and valid inputs",
-      "Points": 2
+      "Points": 1
     }
   ],
   "ScorePersistsInGradebook": false,
@@ -130,5 +130,9 @@
   "RequiresHumanJudgement": true,
   "Scope": "A–C teacher review directions only; durable tenant-isolated submission integration remains a blocker",
   "Status": "AUTHORING_NOT_RUNTIME_VERIFIED",
-  "Tests": "WRITTEN_NOT_RUN"
+  "Tests": "WRITTEN_NOT_RUN",
+  "MaximumTeacherScore": 4,
+  "ScorePersistedInSeparateTeacherRubricTable": "MIGRATION_WRITTEN_NOT_APPLIED",
+  "ScoringReconciliation": "FOUR_BINARY_CRITERIA_ONE_POINT_EACH; UI_AND_DATABASE_SCORE_RANGE_0_TO_4",
+  "OriginalGraph52TeacherGuidance": "In the new first-party graph y=sqrt(x+2), f(-1)=1 and y=3 at x=7. That exact root applies ONLY to this authored replacement; the printed source graph is not explicitly given by an algebraic rule."
 }

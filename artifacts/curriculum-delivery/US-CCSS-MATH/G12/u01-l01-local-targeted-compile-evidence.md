@@ -10,3 +10,5 @@ Scope: isolated C# compilation of the existing G12 first-party presentation sour
 - This isolated compilation does not prove whole-app route or controller compilation; source-semantic 1:1 parity remains incomplete. U01:L01 remains A_C_EXPLICIT_GAP and NOT READY_FOR_STAGE_D.
 
 - Additional source-verified graph 59 visual correction: optional typed pi-radian x-axis ticks were added to CoordinatePlane, and graph 59 now uses pi-labelled first-party coordinates instead of numeric labels; isolated advanced renderer compilation after this change passed with zero warnings/errors. Original geometry parity is not certified.
+
+- Original graph-52 skill now has an independent first-party sampled concave-down curve and explicitly separate teacher caveat; 20 source-skill exercise graph visuals in scope. Targeted presentation compilation passed (0 warnings, 0 errors). Original graph exact root remains unverifiable without assuming an equation.

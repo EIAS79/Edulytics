@@ -238,8 +238,8 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     [Fact]
     public void SourceRelatedExerciseGraphsAreAccessibleFirstPartySpecifications()
     {
-        Assert.Equal(19, Grade12PrecalculusSection11ExerciseVisuals.Count);
-        Assert.Null(Grade12PrecalculusSection11ExerciseVisuals.Find(52));
+        Assert.Equal(20, Grade12PrecalculusSection11ExerciseVisuals.Count);
+        Assert.NotNull(Grade12PrecalculusSection11ExerciseVisuals.Find(52));
         var radians = Assert.IsType<CoordinatePlaneVisualSpec>(
             Grade12PrecalculusSection11ExerciseVisuals.Find(59));
         Assert.Equal(5, radians.XAxisTicks.Count);

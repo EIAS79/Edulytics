@@ -1329,7 +1329,11 @@
       "FirstPartyStudentPracticeTaskNumber": 52,
       "StudentPracticeAuthoringStatus": "FIRST_PARTY_CANDIDATE_NOT_SOURCE_PARITY_CERTIFIED",
       "StudentPracticeGrading": "NOT_AUTOMATICALLY_GRADED_BY_92_EXERCISE_BANK",
-      "StudentPracticeReviewMode": "TEACHER_DIAGRAM_REQUIRED"
+      "StudentPracticeReviewMode": "TEACHER_DIAGRAM_REQUIRED",
+      "FirstPartyDrawingEquivalent": "INDEPENDENT_GRAPH_ANALOGUE_AUTHORED; ORIGINAL_SOURCE_PRECISE_ROOT_UNVERIFIED",
+      "FirstPartyDrawingArtifact": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11ExerciseVisuals.cs",
+      "FirstPartyAnalogueFunctionRule": "y=sqrt(x+2), x>=-2",
+      "FirstPartyAnalogueAnswer": "f(-1)=1 and on this first-party curve f(x)=3 at x=7; does NOT establish exact source root"
     },
     {
       "SourceElementId": "G12-U01-L01-EXERCISE053",
@@ -2302,7 +2306,7 @@
   "StudentFirstPartyExerciseTaskBankPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank.json",
   "StudentFirstPartyExerciseTaskCount": 92,
   "StudentFirstPartyExerciseBankStatus": "WRITTEN_RUNTIME_NOT_TESTED; NO_92_EXERCISE_DIGITAL_PARITY_ASSERTION",
-  "FirstPartySourceSkillExerciseGraphCount": 19,
+  "FirstPartySourceSkillExerciseGraphCount": 20,
   "ExactOriginalGraph52StillUnresolved": true,
   "SourceExerciseAtomicInventoryPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-atomic-source-inventory.json",
   "SourceExerciseAtomicElementsIdentified": 162,
@@ -2311,5 +2315,6 @@
   "All92ExerciseSubpartsSemanticallyMatched": false,
   "OriginalExercise59PiAxisIdentified": true,
   "OriginalExercise59SourcePdfPage": 36,
-  "Exercise59PiTickVisualRendering": "TYPED_COORDINATE_AXIS_LABELS_AUTHORED_COMPILED"
+  "Exercise59PiTickVisualRendering": "TYPED_COORDINATE_AXIS_LABELS_AUTHORED_COMPILED",
+  "OriginalGraph52StillUnresolved": true
 }
