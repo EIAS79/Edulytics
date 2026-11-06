@@ -116,6 +116,6 @@ if __name__=='__main__':
  ledger['UpdatedUtc']=closed;write(ledgerp,ledger)
  progressp=BASE/'full-grade-progress.json';progress=json.loads((ROOT/progressp).read_text(encoding='utf8'));assert progress['LessonsReadyForStageD']==ord-1
  next_unit=unit+1 if n==UNIT_COUNTS[unit-1] else unit;next_l=1 if next_unit>unit else n+1
- progress.update({'LessonsReadyForStageD':ord,'LessonsRemaining':120-ord,'LastClosedLesson':code,'FirstOpenLesson':f'PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U{next_unit:02d}:L{next_l:02d}','UpdatedUtc':closed})
+ progress.update({'LessonsReadyForStageD':ord,'LessonsRemaining':120-ord,'LastClosedLesson':code,'FirstOpenLesson':None if unit==7 and n==16 else f'PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U{next_unit:02d}:L{next_l:02d}','UpdatedUtc':closed})
  write(progressp,progress)
  print('G11_SOURCE_REPAIR_AUTHORED',code,'goals',len(goals),'source_items',len(source_elements),'TESTS_NOT_RUN')

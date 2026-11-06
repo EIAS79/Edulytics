@@ -609,5 +609,151 @@
       "For h(t)=4+1.5cos(πt/4), give period.",
       "8."
     ]
+  },
+  "7": {
+    "1": [
+      "Assess statistical claims critically",
+      "A statistical conclusion depends on how data were collected. A sample survey estimates a population; a randomized experiment can support causal inference; an observational study may show association but cannot automatically establish causation. Voluntary responses can be biased.",
+      "A web poll of 100 volunteers reports 90% support for a policy. Does that prove 90% of the whole city supports it?",
+      "Voluntary response is not a probability sample; participants may differ systematically from nonparticipants.",
+      "No; the citywide percentage is not established.",
+      "A school surveys only students attending an optional club about all students' habits. Identify the risk.",
+      "Selection bias: club members are not a random school sample."
+    ],
+    "2": [
+      "Study types",
+      "A sample survey asks sampled individuals for characteristics or opinions; an observational study records associations without assigning treatments; an experiment deliberately assigns treatments, ideally at random, to compare outcomes.",
+      "Classify a study that randomly assigns patients to two approved teaching methods and compares test scores.",
+      "Researchers assign interventions; random assignment creates experimental groups.",
+      "Randomized experiment.",
+      "Classify researchers observing existing sleep hours and grades.",
+      "Observational study."
+    ],
+    "3": [
+      "Random selection and assignment",
+      "Simple random selection gives every possible sample of a specified size an equal chance (under the stated scheme). Random selection supports generalization; random assignment supports causal comparison. Neither means choosing convenient participants.",
+      "A roster has 100 numbered students. How can you choose 10 as a simple random sample?",
+      "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups.",
+      "Sample 10 distinct uniformly selected IDs.",
+      "Does choosing the first 10 volunteers count as simple random selection?",
+      "No; it is convenience/volunteer selection."
+    ],
+    "4": [
+      "Distribution shapes and variability",
+      "Describe a quantitative distribution by shape (symmetric, bell-like, skewed), center and spread. Standard deviation measures typical deviation around the mean in squared-distance units after square root. Extreme values can inflate it.",
+      "Compare data sets [4,5,6] and [0,5,10], both with mean5. Which is more variable?",
+      "Distances from5 are [1,0,1] versus [5,0,5]; second squared deviations are larger.",
+      "[0,5,10] has larger standard deviation.",
+      "For [9,10,11] and [5,10,15], which is more spread out?",
+      "[5,10,15]."
+    ],
+    "5": [
+      "Normal distributions",
+      "A normal model is unimodal, symmetric and bell-shaped, defined by a mean μ and standard deviation σ. Many measurements approximately follow it, but do not assume every histogram is normal or that every point is exactly at the center.",
+      "A distribution is approximately normal with mean50 and SD10. What z-score has observation60?",
+      "z=(x-μ)/σ=(60-50)/10=1.",
+      "z=1.",
+      "What value has z=-2 for mean100 and SD15?",
+      "70."
+    ],
+    "6": [
+      "Histogram areas and proportions",
+      "For a density histogram with equal bin widths, the proportion in a bin equals its relative-frequency bar area; total area is 1. For variable widths, height must be scaled to density for areas to represent proportions. The normal curve's area can approximate these fractions.",
+      "In a sample of 100 with equal-width histogram bins, 20 observations lie in one bin. What proportion is in it?",
+      "Divide count20 by total100.",
+      "0.20 or 20%.",
+      "A density histogram has total area1; one region has area0.35. What proportion lies there?",
+      "35%."
+    ],
+    "7": [
+      "Normal curve probabilities",
+      "The standard normal probability between z=-1 and z=1 is approximately0.6827, and the complement outside that interval about0.3173. These are model-based proportions, not exact counts for arbitrary finite samples.",
+      "Approximately what fraction of a normal population lies within one standard deviation of its mean?",
+      "Use standard normal area from z=-1 to z=1.",
+      "About 68.27%.",
+      "About what fraction lies outside ±1 SD?",
+      "31.73%."
+    ],
+    "8": [
+      "Simulation evidence and model critique",
+      "Random simulation results fluctuate around theoretical probabilities. Ten fair-coin flips can reasonably include seven heads; a single small-run discrepancy does not prove a biased coin. Critique probability claims using sample size and repeated simulation.",
+      "A fair coin produces 7 heads in 10 simulated flips. Is this proof the chance of heads is 70%?",
+      "Observed proportion7/10=.7 differs from fair theoretical .5; 10 trials are too few for conclusive bias.",
+      "No; random variation can explain it.",
+      "If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+      "No; 0.52 is a sample proportion."
+    ],
+    "9": [
+      "Sampling variability and margin of error",
+      "Different random samples can produce different population estimates. Margin of error expresses uncertainty associated with a sampling procedure and chosen confidence method; it does not correct nonresponse or biased sampling.",
+      "Two independent random samples estimate support at 42% and 47%. Must one estimate be fraudulent?",
+      "Random samples differ because of sampling variability, even when both are collected correctly.",
+      "No; both can be legitimate estimates.",
+      "Can adding a margin of error fix a convenience sample?",
+      "No; selection bias remains."
+    ],
+    "10": [
+      "Estimate proportions and margin",
+      "For a sufficiently large simple random sample, an approximate 95% margin of error for sample proportion p is about 2 sqrt(p(1-p)/n). The conservative worst-case p=.5 gives approximately1/sqrt(n). Conditions and clustering matter.",
+      "Use conservative approximate 95% margin of error for n=400.",
+      "Worst-case 1/sqrt(400)=1/20=.05.",
+      "About ±5 percentage points.",
+      "For n=100, conservative approximate margin?",
+      "About ±10 percentage points."
+    ],
+    "11": [
+      "Sample size and accuracy",
+      "Approximate margin of error decreases like 1/sqrt(n) for independent random samples. Quadrupling sample size typically halves the margin; merely doubling size reduces it by about factor1/sqrt2, not half.",
+      "If 100 observations give about ±10% conservative margin, what is the margin for 400?",
+      "Four times sample size; 1/sqrt400=.05 versus1/sqrt100=.10.",
+      "Approximately ±5%.",
+      "How many samples compared with n=100 are needed to reduce ±10% to ±2.5%?",
+      "16 times as many, n≈1600."
+    ],
+    "12": [
+      "Population mean estimation",
+      "A random sample mean estimates the population mean. An approximate 95% interval may use sample mean ±2s/sqrt(n) when conditions are met; genuine interpretation requires a random sample and attention to outliers.",
+      "A simple random sample has n=36, mean50, sample SD12. Estimate 95% interval using ±2s/sqrt n.",
+      "SE≈12/6=2; margin≈4; interval50±4.",
+      "Approximately [46,54].",
+      "With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+      "[24,26]."
+    ],
+    "13": [
+      "Randomization in experiments",
+      "Random assignment aims to balance treatment and control groups, allowing difference comparisons with less confounding. Random selection and random assignment are distinct; a simulation can demonstrate variability of outcomes under random assignment.",
+      "A study randomly assigns 40 participants equally to treatments A and B. How many in each group?",
+      "Equal allocation means40/2=20 each, with random labels.",
+      "20 in each group.",
+      "Does randomly choosing participants from a population automatically randomize treatment assignments?",
+      "No; sampling and assignment are separate procedures."
+    ],
+    "14": [
+      "Permutation tests and significance",
+      "Under a no-treatment-effect model, randomization redistributes response labels or group membership to estimate the chance of an observed or more extreme difference. A fraction of 20 of 1000 simulations as extreme corresponds to estimated p≈0.02, with simulation uncertainty.",
+      "A randomization distribution has 1000 shuffled assignments and 20 yield a result at least as extreme. Estimate the p-value.",
+      "Count20 divided by1000.",
+      "p≈0.02.",
+      "If 35 of 500 simulated differences are as extreme, estimate p.",
+      "0.07."
+    ],
+    "15": [
+      "Normal tail with z-scores",
+      "For a normal model convert x to z=(x-μ)/σ. Standard normal right-tail probability above z=1 is about0.1587; right-tail area complements the cumulative probability from a z-table. State whether the question asks above or below.",
+      "Scores are normal with mean70, SD10. What is approximate proportion above80?",
+      "z=(80-70)/10=1; normal P(Z>1)≈.1587.",
+      "About15.87%.",
+      "For Z standard normal, what is proportion below z=1?",
+      "About84.13%."
+    ],
+    "16": [
+      "Heart-rate experiment analysis",
+      "To compare two treatment groups use a randomization distribution of the difference in measured outcomes, checking treatment allocation, group size, and how the comparison statistic is defined. A p-value measures extremeness under a null model, not probability that the null is true.",
+      "Treatment A has sample mean80 and B has sample mean76 beats/minute. What is observed A minus B difference?",
+      "80-76=4.",
+      "4 beats per minute.",
+      "If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value?",
+      "0.03."
+    ]
   }
 }
