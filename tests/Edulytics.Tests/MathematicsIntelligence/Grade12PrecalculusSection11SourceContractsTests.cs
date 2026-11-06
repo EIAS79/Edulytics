@@ -281,6 +281,20 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void Section11TeacherReviewGuidanceCoversAll105WithoutExposingOriginalFigureExactRoots()
+    {
+        Assert.Equal(105, Grade12PrecalculusSection11TeacherGuidance.Count);
+        Assert.Contains("tons per week",
+            Grade12PrecalculusSection11TeacherGuidance.Find(88)!.ExpectedMathematics,
+            StringComparison.Ordinal);
+        Assert.Contains("UNRESOLVED",
+            Grade12PrecalculusSection11TeacherGuidance.Find(52)!.Caveat,
+            StringComparison.Ordinal);
+        Assert.False(Grade12PrecalculusSection11TeacherGuidance.Find(94)!.OriginalSourceExercise);
+        Assert.Null(Grade12PrecalculusSection11TeacherGuidance.Find(106));
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
