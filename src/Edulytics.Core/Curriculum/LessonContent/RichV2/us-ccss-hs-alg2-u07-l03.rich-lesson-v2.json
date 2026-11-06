@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l03-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L03",
+      "CultureCode": "en",
+      "Title": "Randomness in Groups",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend (in spoken and written language) what it means to be random in the context of statistics. Explain (orally and in writing) what it means to select at random.",
+        "Simple random selection gives every possible sample of a specified size an equal chance (under the stated scheme). Random selection supports generalization; random assignment supports causal comparison. Neither means choosing convenient participants.",
+        "Source activity 3.1: Study Selection: A reporter wants to know how people feel about the governor of her state. She decides to ask 100 people their opinions and thinks of several ways to ask the 100 people. For each method, explain the benefits and drawbacks, then choose the method for selecting 100 people that would best represent the people of the state. Go to the capital city and find 100 people interested in… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.2: Hip Hop Memory: A research group interested in comparing the effect of different types of music on short-term memory gathers 200 volunteers for a study. One group will listen to a hip hop music playlist while trying to memorize a list of 20 words. A second group will listen to a playlist of orchestral music while trying to memorize the list of 20 words. After a break, the number of words… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.3: Random Rectangles: A company offers solar power systems made up of 1 square meter cells arranged into rectangles. They use the designs for their first 100 customers to list the ways people arrange the cells. They are interested in investigating this question: “What is the mean area of the rectangles created by our customers?” Look quickly at the chart and select 5 rectangles by their numbers.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Andre is in the band and he is conducting an experiment to determine if high school students find listening to classical music or listening to the sounds of the ocean more calming. He selects five students at random from the band to listen to classical music. He then selects five people at random from the swim team to… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: You want to survey twenty of the 150 ninth graders to get their opinion on the school’s new schedule. Which of the following methods is most likely to lead to a sample that is the most representative of the 150 ninth graders? Choose 20 ninth graders from your first period class. Choose the first 20 ninth graders from… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The United States Senate has 2 senators from each of the 50 states. Select all methods that would select a sample of 10 senators at random from the entire Senate. Take the 10 senators from the 5 largest states. Take the 10 senators who have served in the Senate the longest. Place the names of all 100 senators on… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Jada is designing a study to determine whether mold grows faster in tap water or bottled water. To do this she compares the growth rate of mold growing in a glass of tap water to the growth rate of mold growing in a glass of bottled water. What type of study is Jada designing? How could her design be improved to… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What type of study would you conduct if you wanted to know how many miles a week on average students on the school's cross country team run during the summer? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Describe the design of an experimental study that could determine whether you send text messages faster before or after exercise. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Does choosing the first 10 volunteers count as simple random selection? Expected reasoning or answer: No; it is convenience/volunteer selection.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Random selection and assignment",
+          "Definition": "Simple random selection gives every possible sample of a specified size an equal chance (under the stated scheme). Random selection supports generalization; random assignment supports causal comparison. Neither means choosing convenient participants.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A roster has 100 numbered students. How can you choose 10 as a simple random sample? Answer: Sample 10 distinct uniformly selected IDs."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Random selection and assignment",
+          "Question": "A roster has 100 numbered students. How can you choose 10 as a simple random sample?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups."
+          ],
+          "Answer": "Sample 10 distinct uniformly selected IDs.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Does choosing the first 10 volunteers count as simple random selection?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "No; it is convenience/volunteer selection.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Random selection and assignment",
+        "Simple random selection gives every possible sample of a specified size an equal chance (under the stated scheme). Random selection supports generalization; random assignment supports causal comparison. Neither means choosing convenient participants.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
