@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l04-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Distances from5 are [1,0,1] versus [5,0,5]; second squared deviations are larger."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Recall how to interpret (orally and in writing) the standard deviation as a measure of variability.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For [9,10,11] and [5,10,15], which is more spread out? Answer: [5,10,15]."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Distances from5 are [1,0,1] versus [5,0,5]",
-            "second squared deviations are larger."
+            "second squared deviations are larger.",
+            "Interpret the computed result ([0,5,10] has larger standard deviation.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "[0,5,10] has larger standard deviation.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +66,18 @@
           ],
           "Answer": "[5,10,15].",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For [9,10,11] and [5,10,15], which is more spread out?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For [9,10,11] and [5,10,15], which is more spread out?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Distances from5 are [1,0,1] versus [5,0,5]",
+            "Verify the result with a second substitution or interpretation; the authored solution is: [5,10,15]."
+          ],
+          "Answer": "[5,10,15].",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u05-l06-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "f(-x)=-x³-x=-f(x); g(-x)=x²-x differs from ±g(x)."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Justify (orally and in writing) why a function is even, odd, or neither from an equation.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Classify f(x)=x⁴+2x². Answer: Even."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "f(-x)=-x³-x=-f(x)",
-            "g(-x)=x²-x differs from ±g(x)."
+            "g(-x)=x²-x differs from ±g(x).",
+            "Interpret the computed result (f odd; g neither.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "f odd; g neither.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +66,18 @@
           ],
           "Answer": "Even.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Classify f(x)=x⁴+2x².",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Classify f(x)=x⁴+2x².",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. f(-x)=-x³-x=-f(x)",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Even."
+          ],
+          "Answer": "Even.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

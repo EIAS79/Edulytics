@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l18-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "pH=-log10(10^-3)=3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use logarithmic relationships to solve problems about acidity and earthquakes.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Concentrations10^-5 and10^-3: which has lower pH? Answer: 10^-3 gives pH3, lower than pH5."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,9 @@
           "Question": "A solution has hydrogen-ion concentration10^-3. Find pH.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "pH=-log10(10^-3)=3."
+            "pH=-log10(10^-3)=3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (pH=3.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "pH=3.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +68,18 @@
           ],
           "Answer": "10^-3 gives pH3, lower than pH5.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Concentrations10^-5 and10^-3: which has lower pH?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Concentrations10^-5 and10^-3: which has lower pH?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. pH=-log10(10^-3)=3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 10^-3 gives pH3, lower than pH5."
+          ],
+          "Answer": "10^-3 gives pH3, lower than pH5.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l10-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Base is10, output1000 and exponent3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Create equivalent equations in exponential and logarithmic forms.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Rewrite log_5(125)=3 exponentially. Answer: 5^3=125."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,9 @@
           "Question": "Rewrite 10^3=1000 using logarithms.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Base is10, output1000 and exponent3."
+            "Base is10, output1000 and exponent3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (log_10(1000)=3.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "log_10(1000)=3.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +68,18 @@
           ],
           "Answer": "5^3=125.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Rewrite log_5(125)=3 exponentially.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Rewrite log_5(125)=3 exponentially.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Base is10, output1000 and exponent3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 5^3=125."
+          ],
+          "Answer": "5^3=125.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

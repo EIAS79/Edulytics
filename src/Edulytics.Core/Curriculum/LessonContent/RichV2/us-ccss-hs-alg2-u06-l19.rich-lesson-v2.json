@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l19-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Amplitude2, midline3, angular frequencyπ/6 gives period12; extrema3±2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Create a trigonometric function to model data, and use the model to make predictions.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For h(t)=4+1.5cos(πt/4), give period. Answer: 8."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Amplitude2, midline3, angular frequencyπ/6 gives period12",
-            "extrema3±2."
+            "extrema3±2.",
+            "Interpret the computed result (Period12; max5; min1.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "Period12; max5; min1.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +67,18 @@
           ],
           "Answer": "8.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For h(t)=4+1.5cos(πt/4), give period.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For h(t)=4+1.5cos(πt/4), give period.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Amplitude2, midline3, angular frequencyπ/6 gives period12",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 8."
+          ],
+          "Answer": "8.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

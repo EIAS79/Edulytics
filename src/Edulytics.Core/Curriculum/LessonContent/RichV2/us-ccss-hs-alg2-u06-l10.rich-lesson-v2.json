@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l10-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Subtract full revolution2π and use cosπ/3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret (in writing) the meaning of angle measures larger than $2\\pi$ radians on the unit circle.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find sin(4π+π/2). Answer: 1."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Find cos(2π+π/3).",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Subtract full revolution2π and use cosπ/3."
+            "Subtract full revolution2π and use cosπ/3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (1/2.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "1/2.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "1.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find sin(4π+π/2).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find sin(4π+π/2).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Subtract full revolution2π and use cosπ/3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 1."
+          ],
+          "Answer": "1.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

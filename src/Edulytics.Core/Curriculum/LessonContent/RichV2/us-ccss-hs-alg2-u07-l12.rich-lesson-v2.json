@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l12-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "SE≈12/6=2; margin≈4; interval50±4."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Determine (in writing) an estimate for the population mean with a margin of error using sample means from random samples.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "With n=100, mean25, sample SD5, find approximate 2-SE interval. Answer: [24,26]."
         }
       ],
       "WorkedExamples": [
@@ -60,6 +66,18 @@
           ],
           "Answer": "[24,26].",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. SE≈12/6=2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: [24,26]."
+          ],
+          "Answer": "[24,26].",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

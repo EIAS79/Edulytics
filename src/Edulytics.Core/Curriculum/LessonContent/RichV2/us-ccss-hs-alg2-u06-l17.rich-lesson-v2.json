@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l17-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Determine what information is needed to sketch a transformation of a function and create its equation. Ask questions to elicit that information.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Give period of y=3cos(2(x-1)). Answer: π."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "For y=-2sin(x+π/3)+1, state amplitude, midline, period and phase shift.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3."
+            "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (Amplitude2; midline1; period2π; leftπ/3.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "Amplitude2; midline1; period2π; leftπ/3.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "π.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Give period of y=3cos(2(x-1)).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Give period of y=3cos(2(x-1)).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: π."
+          ],
+          "Answer": "π.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

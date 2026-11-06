@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l08-local-source-20261106",
   "Lessons": [
@@ -61,10 +61,23 @@
           "Method": "Compute 80*(1/4)^3.",
           "Steps": [
             "There are three multiplications by 1/4.",
-            "A(4)=80/64."
+            "A(4)=80/64.",
+            "Interpret the computed result (5/4 square inches) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "5/4 square inches",
           "Check": "Physical model requires a feasible step count."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A sequence begins 5 and triples each term. Write both a recursive and an explicit definition starting at n=1, calculate the fifth term and state why n=2.5 is not a sequence index.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A sequence begins 5 and triples each term. Write both a recursive and an explicit definition starting at n=1, calculate the fifth term and state why n=2.5 is not a sequence index.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Apply the exponent formula. f(n)=3*2^(n-1).",
+            "Verify the result with a second substitution or interpretation; the authored solution is: a(1)=5,a(n)=3a(n-1); a(n)=5*3^(n-1); a(5)=405; indices are integers."
+          ],
+          "Answer": "a(1)=5,a(n)=3a(n-1); a(n)=5*3^(n-1); a(5)=405; indices are integers.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l03-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Explain (orally and in writing) what it means to select at random.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Does choosing the first 10 volunteers count as simple random selection? Answer: No; it is convenience/volunteer selection."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "A roster has 100 numbered students. How can you choose 10 as a simple random sample?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups."
+            "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (Sample 10 distinct uniformly selected IDs.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "Sample 10 distinct uniformly selected IDs.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "No; it is convenience/volunteer selection.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Does choosing the first 10 volunteers count as simple random selection?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Does choosing the first 10 volunteers count as simple random selection?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: No; it is convenience/volunteer selection."
+          ],
+          "Answer": "No; it is convenience/volunteer selection.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

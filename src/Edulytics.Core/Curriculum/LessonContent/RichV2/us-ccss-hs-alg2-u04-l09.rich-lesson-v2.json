@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l09-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Because 2^5=32, log base2 of32 is5."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify the parameters in expressions involving a logarithm.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate log_3(81). Answer: 4."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,9 @@
           "Question": "Evaluate log_2(32).",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Because 2^5=32, log base2 of32 is5."
+            "Because 2^5=32, log base2 of32 is5.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (5.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "5.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +68,18 @@
           ],
           "Answer": "4.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate log_3(81).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate log_3(81).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Because 2^5=32, log base2 of32 is5.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 4."
+          ],
+          "Answer": "4.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

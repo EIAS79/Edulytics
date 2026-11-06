@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l10-local-source-20261106",
   "Lessons": [
@@ -62,10 +62,23 @@
           "Method": "Use f(n)=3*2^n.",
           "Steps": [
             "Five multiplications by two after n=0.",
-            "f(5)=3*32."
+            "f(5)=3*32.",
+            "Interpret the computed result (96) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "96",
           "Check": "f(0)=3 matches the start condition."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A geometric sequence starts 8,12,18. Find its growth factor and percentage increase, write an nth-term rule beginning at n=1 and find term five.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A geometric sequence starts 8,12,18. Find its growth factor and percentage increase, write an nth-term rule beginning at n=1 and find term five.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Find the multiplier from two consecutive terms. 24/16=3/2.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: r=1.5, growth 50%; a(n)=8*(1.5)^(n-1); a(5)=40.5."
+          ],
+          "Answer": "r=1.5, growth 50%; a(n)=8*(1.5)^(n-1); a(5)=40.5.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

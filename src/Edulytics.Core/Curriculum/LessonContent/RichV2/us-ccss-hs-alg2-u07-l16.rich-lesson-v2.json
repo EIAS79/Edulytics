@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l16-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "80-76=4."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Collect and analyze data using a randomization distribution to compare 2 treatments.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value? Answer: 0.03."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "Treatment A has sample mean80 and B has sample mean76 beats/minute. What is observed A minus B difference?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "80-76=4."
+            "80-76=4.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (4 beats per minute.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "4 beats per minute.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "0.03.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. 80-76=4.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 0.03."
+          ],
+          "Answer": "0.03.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

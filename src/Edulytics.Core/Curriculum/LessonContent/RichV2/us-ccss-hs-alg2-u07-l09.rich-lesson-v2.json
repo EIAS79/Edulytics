@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l09-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Random samples differ because of sampling variability, even when both are collected correctly."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (orally and in writing) the importance of margin of error when reporting an estimate for a population characteristic based on a sample statistic.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Can adding a margin of error fix a convenience sample? Answer: No; selection bias remains."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Two independent random samples estimate support at 42% and 47%. Must one estimate be fraudulent?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Random samples differ because of sampling variability, even when both are collected correctly."
+            "Random samples differ because of sampling variability, even when both are collected correctly.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (No; both can be legitimate estimates.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "No; both can be legitimate estimates.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "No; selection bias remains.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Can adding a margin of error fix a convenience sample?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Can adding a margin of error fix a convenience sample?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Random samples differ because of sampling variability, even when both are collected correctly.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: No; selection bias remains."
+          ],
+          "Answer": "No; selection bias remains.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l02-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Researchers assign interventions; random assignment creates experimental groups."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (orally and in writing) the purposes of and differences among sample surveys, experiments, and observational studies.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Classify researchers observing existing sleep hours and grades. Answer: Observational study."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Researchers assign interventions",
-            "random assignment creates experimental groups."
+            "random assignment creates experimental groups.",
+            "Interpret the computed result (Randomized experiment.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "Randomized experiment.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +66,18 @@
           ],
           "Answer": "Observational study.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Classify researchers observing existing sleep hours and grades.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Classify researchers observing existing sleep hours and grades.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Researchers assign interventions",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Observational study."
+          ],
+          "Answer": "Observational study.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

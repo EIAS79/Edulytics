@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l20-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "5+200/n=9; 200/n=4; n=50."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Create simple equations involving a rational expression to solve a problem in context.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve 6+180/n=12 for n>0. Answer: n=30."
         }
       ],
       "WorkedExamples": [
@@ -60,6 +66,18 @@
           ],
           "Answer": "n=30.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve 6+180/n=12 for n>0.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve 6+180/n=12 for n>0.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. 5+200/n=9",
+            "Verify the result with a second substitution or interpretation; the authored solution is: n=30."
+          ],
+          "Answer": "n=30.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

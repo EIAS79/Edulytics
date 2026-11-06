@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u03-l08-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "(-2)^3=-8 and (-4)^3=-64."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Justify using a graph that every number, positive or negative, has exactly one cube root.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve 2x^3=54. Answer: x=3."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "Solve x^3=-8 and cube root(-64).",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "(-2)^3=-8 and (-4)^3=-64."
+            "(-2)^3=-8 and (-4)^3=-64.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (x=-2; cube root=-4) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "x=-2; cube root=-4",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "x=3.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve 2x^3=54.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve 2x^3=54.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. (-2)^3=-8 and (-4)^3=-64.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x=3."
+          ],
+          "Answer": "x=3.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

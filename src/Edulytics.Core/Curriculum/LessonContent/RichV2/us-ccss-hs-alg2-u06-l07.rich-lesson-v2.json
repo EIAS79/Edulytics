@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l07-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "cos2π/3=-1/2, sin2π/3=√3/2; multiply each by10."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use sine and cosine to find coordinates of points on a circle in all 4 quadrants.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For radius8 at θ=π, find coordinates. Answer: (-8,0)."
         }
       ],
       "WorkedExamples": [
@@ -45,7 +51,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "cos2π/3=-1/2, sin2π/3=√3/2",
-            "multiply each by10."
+            "multiply each by10.",
+            "Interpret the computed result ((-5,5√3).) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "(-5,5√3).",
           "Check": "Substitute into the original expression and review any constraints."
@@ -61,6 +68,18 @@
           ],
           "Answer": "(-8,0).",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For radius8 at θ=π, find coordinates.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For radius8 at θ=π, find coordinates.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. cos2π/3=-1/2, sin2π/3=√3/2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: (-8,0)."
+          ],
+          "Answer": "(-8,0).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

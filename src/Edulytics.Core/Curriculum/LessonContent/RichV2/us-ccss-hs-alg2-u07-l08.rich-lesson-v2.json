@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l08-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Observed proportion7/10=.7 differs from fair theoretical .5; 10 trials are too few for conclusive bias."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use data to critique (orally and in writing) mathematical claims based on a model in different cases.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If a fair coin yields 52 heads in100 flips, is probability necessarily .52? Answer: No; 0.52 is a sample proportion."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Observed proportion7/10=.7 differs from fair theoretical .5",
-            "10 trials are too few for conclusive bias."
+            "10 trials are too few for conclusive bias.",
+            "Interpret the computed result (No; random variation can explain it.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "No; random variation can explain it.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +66,18 @@
           ],
           "Answer": "No; 0.52 is a sample proportion.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Observed proportion7/10=.7 differs from fair theoretical .5",
+            "Verify the result with a second substitution or interpretation; the authored solution is: No; 0.52 is a sample proportion."
+          ],
+          "Answer": "No; 0.52 is a sample proportion.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

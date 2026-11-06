@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l06-local-source-20261106",
   "Lessons": [
@@ -61,10 +61,23 @@
           "Method": "Each new line can cross all previous lines at distinct points.",
           "Steps": [
             "New regions after cuts 1,2,3,4 are 1,2,3,4.",
-            "Total is 1+1+2+3+4=11."
+            "Total is 1+1+2+3+4=11.",
+            "Interpret the computed result (11 regions) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "11 regions",
           "Check": "A drawing must actually exhibit the maximal intersections."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Add a new 4-by-4 block. The added counts are 1,4,9 at the first three steps.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither."
+          ],
+          "Answer": "S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

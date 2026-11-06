@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l18-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "h(t)=12-10cos(2πt/60); h(0)=2; h(30)=22."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use the relationship between arc length and radian angle measurements to calculate distance traveled around a circle.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For radius4 and angle π/2, find arc length. Answer: 2π."
         }
       ],
       "WorkedExamples": [
@@ -62,6 +68,18 @@
           ],
           "Answer": "2π.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For radius4 and angle π/2, find arc length.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For radius4 and angle π/2, find arc length.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. h(t)=12-10cos(2πt/60)",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 2π."
+          ],
+          "Answer": "2π.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

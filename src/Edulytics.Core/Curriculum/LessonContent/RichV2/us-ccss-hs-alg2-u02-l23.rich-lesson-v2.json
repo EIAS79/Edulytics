@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l23-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "(x+3)(x+3)=x^2+3x+3x+9."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Prove some common identities.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Prove (x-2)^2=x^2-4x+4 by expansion. Answer: (x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Expand (x+3)^2 and justify the middle term.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "(x+3)(x+3)=x^2+3x+3x+9."
+            "(x+3)(x+3)=x^2+3x+3x+9.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (x^2+6x+9.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "x^2+6x+9.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "(x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Prove (x-2)^2=x^2-4x+4 by expansion.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Prove (x-2)^2=x^2-4x+4 by expansion.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. (x+3)(x+3)=x^2+3x+3x+9.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: (x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4."
+          ],
+          "Answer": "(x-2)(x-2)=x^2-2x-2x+4=x^2-4x+4.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

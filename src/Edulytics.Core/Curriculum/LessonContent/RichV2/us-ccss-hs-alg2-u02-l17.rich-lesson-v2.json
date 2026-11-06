@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l17-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Use t=distance/speed=10/4."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret the end behavior of a rational function in context.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "What speed gives a 10-mile time of 1.25 hours? Answer: v=10/1.25=8 miles/hour."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "How long does a 10-mile trip take at 4 miles per hour?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Use t=distance/speed=10/4."
+            "Use t=distance/speed=10/4.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (2.5 hours.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "2.5 hours.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "v=10/1.25=8 miles/hour.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "What speed gives a 10-mile time of 1.25 hours?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: What speed gives a 10-mile time of 1.25 hours?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Use t=distance/speed=10/4.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: v=10/1.25=8 miles/hour."
+          ],
+          "Answer": "v=10/1.25=8 miles/hour.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

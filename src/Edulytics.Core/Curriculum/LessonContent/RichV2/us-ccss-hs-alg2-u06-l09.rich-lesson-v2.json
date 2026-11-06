@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l09-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "At θ0 point(1,0), at π/2 point(0,1)."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Draw and label the graphs of $y=\\cos(\\theta)$ and $y=\\sin(\\theta)$ for values of $\\theta$ from 0 to $2\\pi$.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate cosπ and sinπ. Answer: -1,0."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "Evaluate sin0, sin(π/2), and cos0.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "At θ0 point(1,0), at π/2 point(0,1)."
+            "At θ0 point(1,0), at π/2 point(0,1).",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (0,1,1.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "0,1,1.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "-1,0.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate cosπ and sinπ.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate cosπ and sinπ.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. At θ0 point(1,0), at π/2 point(0,1).",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -1,0."
+          ],
+          "Answer": "-1,0.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

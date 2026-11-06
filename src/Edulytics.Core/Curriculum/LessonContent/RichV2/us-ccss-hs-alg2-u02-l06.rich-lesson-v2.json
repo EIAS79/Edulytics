@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l06-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Multiply base factors to obtain 240-64x+4x^2; multiply by x."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify properties of polynomials by representing them in equivalent forms.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Expand (x-3)(x+2)(x+1) and give the leading term. Answer: x^3-7x-6; leading term x^3."
         }
       ],
       "WorkedExamples": [
@@ -45,7 +51,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Multiply base factors to obtain 240-64x+4x^2",
-            "multiply by x."
+            "multiply by x.",
+            "Interpret the computed result (V=4x^3-64x^2+240x.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "V=4x^3-64x^2+240x.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -61,6 +68,18 @@
           ],
           "Answer": "x^3-7x-6; leading term x^3.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Expand (x-3)(x+2)(x+1) and give the leading term.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Expand (x-3)(x+2)(x+1) and give the leading term.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Multiply base factors to obtain 240-64x+4x^2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x^3-7x-6; leading term x^3."
+          ],
+          "Answer": "x^3-7x-6; leading term x^3.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

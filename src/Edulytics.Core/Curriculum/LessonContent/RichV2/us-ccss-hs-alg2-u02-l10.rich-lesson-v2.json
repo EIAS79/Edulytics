@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l10-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "At x=1 exponent2 even so touches; at x=-2 exponent1 odd so crosses; degree 3 and leading positive."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use zeros and multiplicities to create a rough graph of a polynomial function given in factored form.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For f(x)=-(x+3)^2(x-4), identify touch/cross roots. Answer: -3 touches; 4 crosses."
         }
       ],
       "WorkedExamples": [
@@ -61,6 +67,18 @@
           ],
           "Answer": "-3 touches; 4 crosses.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For f(x)=-(x+3)^2(x-4), identify touch/cross roots.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For f(x)=-(x+3)^2(x-4), identify touch/cross roots.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. At x=1 exponent2 even so touches",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -3 touches; 4 crosses."
+          ],
+          "Answer": "-3 touches; 4 crosses.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

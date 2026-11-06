@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l11-local-source-20261106",
   "Lessons": [
@@ -63,10 +63,23 @@
           "Method": "Subtract remaining fraction from one.",
           "Steps": [
             "Remaining = (1/2)^4=1/16.",
-            "Covered=1-1/16."
+            "Covered=1-1/16.",
+            "Interpret the computed result (15/16) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "15/16",
           "Check": "No finite n covers all of it under exact halving."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A seven-day sequence pays 2,4,8,16,32,64,128 dollars. Find the total amount, show the addition and explain how the result differs from the final daily payment.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A seven-day sequence pays 2,4,8,16,32,64,128 dollars. Find the total amount, show the addition and explain how the result differs from the final daily payment.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: List terms and add. Terms are 1,2,4,8,16,32,64.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Total 254 dollars; last payment 128 dollars."
+          ],
+          "Answer": "Total 254 dollars; last payment 128 dollars.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l09-local-source-20261106",
   "Lessons": [
@@ -67,6 +67,18 @@
           ],
           "Answer": "1.25 square inches",
           "Check": "Domain is positive whole-number piece index."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "An envelope starts at 6.75 grams and each inserted clip adds 0.5 grams. Define w(n) for n nonnegative clips, find w(5), and explain why w(2.5) is not an appropriate count of clips.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: An envelope starts at 6.75 grams and each inserted clip adds 0.5 grams. Define w(n) for n nonnegative clips, find w(5), and explain why w(2.5) is not an appropriate count of clips.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Start with 6 and add 4 per additional table. P(1)=6.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: w(n)=6.75+0.5n; w(5)=9.25 grams; n is a nonnegative integer."
+          ],
+          "Answer": "w(n)=6.75+0.5n; w(5)=9.25 grams; n is a nonnegative integer.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

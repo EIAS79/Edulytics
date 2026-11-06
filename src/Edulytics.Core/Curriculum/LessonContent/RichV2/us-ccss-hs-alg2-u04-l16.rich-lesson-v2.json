@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l16-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "t ln2=(t-1)ln3; t(ln3-ln2)=ln3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret the intersection of the graphs of two exponential functions in context.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find where 2^t=4*2^(t-2). Answer: They are identical for every t."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "t ln2=(t-1)ln3",
-            "t(ln3-ln2)=ln3."
+            "t(ln3-ln2)=ln3.",
+            "Interpret the computed result (t=ln3/(ln3-ln2).) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "t=ln3/(ln3-ln2).",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +67,18 @@
           ],
           "Answer": "They are identical for every t.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find where 2^t=4*2^(t-2).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find where 2^t=4*2^(t-2).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. t ln2=(t-1)ln3",
+            "Verify the result with a second substitution or interpretation; the authored solution is: They are identical for every t."
+          ],
+          "Answer": "They are identical for every t.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

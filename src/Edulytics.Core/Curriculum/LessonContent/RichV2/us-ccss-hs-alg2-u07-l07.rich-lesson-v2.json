@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l07-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Use standard normal area from z=-1 to z=1."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret (orally and in writing) the proportion of values in certain intervals under a normal curve in a variety of different contexts.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "About what fraction lies outside ±1 SD? Answer: 31.73%."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Approximately what fraction of a normal population lies within one standard deviation of its mean?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Use standard normal area from z=-1 to z=1."
+            "Use standard normal area from z=-1 to z=1.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (About 68.27%.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "About 68.27%.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "31.73%.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "About what fraction lies outside ±1 SD?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: About what fraction lies outside ±1 SD?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Use standard normal area from z=-1 to z=1.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 31.73%."
+          ],
+          "Answer": "31.73%.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

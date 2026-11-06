@@ -14,7 +14,7 @@ const inv=read(base+'local-archive-source-inventory-20261106.json');
 const ledger=read(base+'abc-independent-course-ledger.json'),progress=read(base+'full-grade-progress.json');
 const richDir='src/Edulytics.Core/Curriculum/LessonContent/RichV2/';
 const richFiles=fs.readdirSync(path.join(root,richDir)).filter(x=>/^us-ccss-hs-alg2-u\d\d-l\d\d\.rich-lesson-v2\.json$/.test(x));
-const rich=richFiles.flatMap(file=>read(richDir+file).Lessons.map(l=>({...l,__file:richDir+file})));
+const rich=richFiles.flatMap(file=>read(richDir+file).Lessons.map(l=>({...l,__file:richDir+file,__schema:read(richDir+file).SchemaVersion})));
 const packs=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json');
 const packLessons=packs.lessons.filter(x=>typeof x.lessonCode==='string'&&x.lessonCode.startsWith(prefix));
 const mapping=registry.mappings.filter(x=>typeof x.lessonCode==='string'&&x.lessonCode.startsWith(prefix));
@@ -39,7 +39,7 @@ for(let u=1;u<=7;u++)for(let l=1;l<=counts[u-1];l++){
  const code=prefix+suffix,e=ledger.LessonEntries[ordinal-1],b=byBP.get(code),r=byRich.get(code),p=byPack.get(code),source=inv.lessons[ordinal-1];
  check(!!e&&e.Ordinal===ordinal&&e.LessonCode===code&&e.ABCReadyForD===true,'LEDGER_ORDER',code);
  check(!!b&&b.SortOrder===ordinal&&b.UnitNumber===u&&b.LessonNumber===l,'BLUEPRINT_ORDER',code);
- check(!!r&&r.CultureCode==='en'&&Array.isArray(r.WorkedExamples)&&r.WorkedExamples.length>0&&Array.isArray(r.ExplanationParagraphs)&&r.ExplanationParagraphs.length>0,'RICH_SHAPE',code);
+ check(!!r&&r.__schema===1&&r.CultureCode==='en'&&Array.isArray(r.WorkedExamples)&&r.WorkedExamples.length>=3&&r.WorkedExamples.every(x=>Array.isArray(x.Steps)&&x.Steps.length>=3)&&Array.isArray(r.KeyConcepts)&&r.KeyConcepts.length>=3&&Array.isArray(r.CommonMistakes)&&r.CommonMistakes.length>=2&&Array.isArray(r.SummaryPoints)&&r.SummaryPoints.length>=3&&Array.isArray(r.ExplanationParagraphs)&&r.ExplanationParagraphs.length>=2,'RICH_RUNTIME_VALIDATION',code);
  check(!!p&&Array.isArray(p.translations)&&p.translations.some(t=>t.cultureCode==='en'),'PACK_LESSON',code);
  check(!!source&&source.lessonCode===code,'SOURCE_ORDER',code);
  if(source){for(const [kind,d] of Object.entries(source.documents||{}))check(typeof d.sha256==='string'&&/^[a-f0-9]{64}$/.test(d.sha256),'SOURCE_HASH',code+':'+kind)}

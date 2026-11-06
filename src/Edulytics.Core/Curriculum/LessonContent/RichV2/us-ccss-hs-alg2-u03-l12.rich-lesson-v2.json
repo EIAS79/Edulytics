@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u03-l12-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Real sum6, imaginary coefficient-2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use the complex plane to visualize why the sum of two complex numbers is another complex number.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate i^7. Answer: -i."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Compute (2+3i)+(4-5i).",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Real sum6, imaginary coefficient-2."
+            "Real sum6, imaginary coefficient-2.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (6-2i) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "6-2i",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "-i.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate i^7.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate i^7.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Real sum6, imaginary coefficient-2.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -i."
+          ],
+          "Answer": "-i.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

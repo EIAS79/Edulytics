@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u06-l15-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Solve3P=2π."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Predict how changing the value of $k$ in $y=cos(kx)$ changes the graph of the function for whole number values of $k$.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find period of y=sin(4x). Answer: π/2."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "Find period of y=cos(3x).",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Solve3P=2π."
+            "Solve3P=2π.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (P=2π/3.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "P=2π/3.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "π/2.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find period of y=sin(4x).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find period of y=sin(4x).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Solve3P=2π.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: π/2."
+          ],
+          "Answer": "π/2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

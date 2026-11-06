@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l03-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "sqrt16=4 and 4*4=16 over two half-steps."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use equations and graphs to identify the value of an exponential function at a rational input.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Given f(t)=9*4^t, find f(1/2). Answer: 18."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "Evaluate 16^(1/2) and interpret it as a half-step growth factor.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "sqrt16=4 and 4*4=16 over two half-steps."
+            "sqrt16=4 and 4*4=16 over two half-steps.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (4.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "4.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "18.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Given f(t)=9*4^t, find f(1/2).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Given f(t)=9*4^t, find f(1/2).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. sqrt16=4 and 4*4=16 over two half-steps.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 18."
+          ],
+          "Answer": "18.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

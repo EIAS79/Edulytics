@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u07-l14-local-archive-20261106",
   "Lessons": [
@@ -34,6 +34,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Count20 divided by1000."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use the results from redistributing data from an experiment into groups to determine whether the original difference in means is significant.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If 35 of 500 simulated differences are as extreme, estimate p. Answer: 0.07."
         }
       ],
       "WorkedExamples": [
@@ -42,7 +48,9 @@
           "Question": "A randomization distribution has 1000 shuffled assignments and 20 yield a result at least as extreme. Estimate the p-value.",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Count20 divided by1000."
+            "Count20 divided by1000.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (p≈0.02.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "p≈0.02.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -58,6 +66,18 @@
           ],
           "Answer": "0.07.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If 35 of 500 simulated differences are as extreme, estimate p.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If 35 of 500 simulated differences are as extreme, estimate p.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Count20 divided by1000.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 0.07."
+          ],
+          "Answer": "0.07.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

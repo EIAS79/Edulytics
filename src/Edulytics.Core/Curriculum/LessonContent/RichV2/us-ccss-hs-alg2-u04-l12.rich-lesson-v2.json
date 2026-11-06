@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l12-local-archive-20261106",
   "Lessons": [
@@ -36,6 +36,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Any nonzero positive base raised to0 is1; e≈2.718."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Comprehend that $e$ represents a constant whose value is approximately 2.718.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "What is ln(e)? Answer: 1."
         }
       ],
       "WorkedExamples": [
@@ -45,7 +51,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Any nonzero positive base raised to0 is1",
-            "e≈2.718."
+            "e≈2.718.",
+            "Interpret the computed result (e^0=1, e≈2.718.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "e^0=1, e≈2.718.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -61,6 +68,18 @@
           ],
           "Answer": "1.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "What is ln(e)?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: What is ln(e)?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Any nonzero positive base raised to0 is1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 1."
+          ],
+          "Answer": "1.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u04-l04-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Factor r solves r^2=1.21, so r=sqrt1.21."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Understand that the growth (or decay) factor for an input interval of $\\frac{1}{n}$ is $b^{\\frac{1}{n}}$ and not $\\frac{b}{n}$ when $b$ is the growth (or decay) factor for an interval of length 1 and $n$ is the number of intervals.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "An annual factor is 1.44. Find the equal six-month factor. Answer: 1.2."
         }
       ],
       "WorkedExamples": [
@@ -43,7 +49,9 @@
           "Question": "A process grows by factor 1.21 per year. What factor applies per half-year?",
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
-            "Factor r solves r^2=1.21, so r=sqrt1.21."
+            "Factor r solves r^2=1.21, so r=sqrt1.21.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (1.1.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "1.1.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -59,6 +67,18 @@
           ],
           "Answer": "1.2.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "An annual factor is 1.44. Find the equal six-month factor.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: An annual factor is 1.44. Find the equal six-month factor.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Factor r solves r^2=1.21, so r=sqrt1.21.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 1.2."
+          ],
+          "Answer": "1.2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

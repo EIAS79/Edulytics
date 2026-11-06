@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u01-l07-local-source-20261106",
   "Lessons": [
@@ -65,6 +65,18 @@
           ],
           "Answer": "3,7,13,21",
           "Check": "Differences 4,6,8 are nonconstant."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Multiply by the common ratio three times. H(2)=13.5.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5."
+          ],
+          "Answer": "Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [

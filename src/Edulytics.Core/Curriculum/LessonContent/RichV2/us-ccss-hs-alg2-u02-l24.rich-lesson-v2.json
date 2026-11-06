@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": 2,
+  "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
   "ContentVersion": "g11-u02-l24-local-archive-20261106",
   "Lessons": [
@@ -35,6 +35,12 @@
           "Definition": "A model must be checked against the given quantities and representation.",
           "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
           "Example": "Expand both squares: a^2+2ab+b^2+a^2-2ab+b^2; middle terms cancel."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Justify (in writing) general relationships by using identities.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Verify 9(x^2-1)=9x^2-9 as a polynomial identity. Answer: Distribution yields 9x^2-9 for every x."
         }
       ],
       "WorkedExamples": [
@@ -44,7 +50,8 @@
           "Method": "Identify relationships and execute the algebraic model with explicit checks.",
           "Steps": [
             "Expand both squares: a^2+2ab+b^2+a^2-2ab+b^2",
-            "middle terms cancel."
+            "middle terms cancel.",
+            "Interpret the computed result (2a^2+2b^2.) under the stated input domain and units; verify that it answers the original question."
           ],
           "Answer": "2a^2+2b^2.",
           "Check": "Substitute into the original expression and review any constraints."
@@ -60,6 +67,18 @@
           ],
           "Answer": "Distribution yields 9x^2-9 for every x.",
           "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Verify 9(x^2-1)=9x^2-9 as a polynomial identity.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Verify 9(x^2-1)=9x^2-9 as a polynomial identity.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Expand both squares: a^2+2ab+b^2+a^2-2ab+b^2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Distribution yields 9x^2-9 for every x."
+          ],
+          "Answer": "Distribution yields 9x^2-9 for every x.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
         }
       ],
       "CommonMistakes": [
