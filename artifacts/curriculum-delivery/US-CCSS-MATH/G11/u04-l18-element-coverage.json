@@ -1,0 +1,395 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L18",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "0ec2c48a9b8d87c5137668ea82bcdcbb6b5055a89bed36ac3f7fab01b002d192",
+    "teacher/index.html": "9797ed7d77677c6589cf4731acca166f871ab3e81ee941758a064cf03cbc9178",
+    "teacher/practice.html": "c4ac3e35504fceb45255f2ae39a3685a80b4395bebddb4c41d2a096802f25e2a",
+    "student/index.html": "f72ac0616b56ad194fdfe9f100d34a2ca87f0c748794649d1e1a8f421eb2244b",
+    "student/practice.html": "ae37d0053d6e78008ddb3bf43d6bb643e3b4aa9fe0583e0464ce545a353ad7f9"
+  },
+  "Goals": [
+    "Use logarithmic relationships to solve problems about acidity and earthquakes."
+  ],
+  "ElementCount": 47,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-001",
+      "SourceSection": "18.1: Scrambled Logs",
+      "SourceExcerpt": "Without using a calculator, put the following expressions in order, from least to greatest. Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-002",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "The pH scale is a way to measure the acidity of a liquid solution. It is based on the concentration of positive hydrogen ions in the liquid. A smaller pH indicates more hydrogen ions and higher acidity. A larger pH indicates less hydrogen…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-003",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "Here is a table showing the hydrogen ion concentration (in moles per liter) and the pH of some different liquids:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-004",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "Which of the drinks listed, water, coffee, root beer, or orange juice, is the most acidic? Which is the least acidic? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-005",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "Seawater has a pH of 8. Is it more acidic or less acidic than water? Record the hydrogen ion concentration of seawater in the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-006",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "Vinegar has a pH of 2.4. Is it more acidic or less acidic than orange juice? Record the hydrogen ion concentration of vinegar in the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-007",
+      "SourceSection": "18.2: How Acidic Is It?",
+      "SourceExcerpt": "A logarithm is used to translate hydrogen ion concentrations to pH values. With a partner, discuss how the hydrogen ion concentrations might be related to the pH. Use words or expressions to describe the relationship you notice.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-008",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "This table shows the relationship between hydrogen ion concentrations and pH ratings (acidity) for different substances.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-009",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Write an equation to represent the pH rating, \\(p\\), in terms of the hydrogen ion concentration \\(h\\), in moles per liter.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-010",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Test your equation by using the hydrogen ion concentration of a substance from the table as the input. Does it produce the right pH rating as the output? If not, revise your equation and test it again.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-011",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Magnesium hydroxide (also called “milk of magnesia”) is a medication used to treat stomach indigestion. It has a hydrogen concentration \\(5.6 \\times 10^{\\text-11}\\) mole per liter. Estimate a pH rating for magnesium hydroxide. Explain or…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-012",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "As shown in the table, apple has a pH of 3 and milk has a pH of 6. How many times more acidic is the apple than milk?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-013",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "The graph shows points representing the hydrogen ion concentration, in moles per liter, and pH ratings of the different substances you saw earlier.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-014",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Which point represents baking soda? Which represents banana? How can you tell?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-015",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Vinegar has a pH of 2.4. Where on the graph would a point that represents vinegar be plotted?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-016",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "Why do you think the graph appears the way it does, with a group of points stacked up along the vertical axis?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-017",
+      "SourceSection": "18.3: pH Ratings",
+      "SourceExcerpt": "How is it like and unlike other graphs of logarithmic functions you have seen so far?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-018",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "Here is a table showing the Richter ratings for displacements recorded by a seismograph 100 km from the epicenter of an earthquake.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-019",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "Compare an earthquake rated with a magnitude of 5 on the Richter scale and that rated with a 6. How do their displacements compare? What about an earthquake with a magnitude rated with a 2 and that rated with a 3?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-020",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "Discuss with a partner how the displacement might be related to the Richter scale. Express that relationship in words or with an expression.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-021",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "An earthquake shook the northwest part of Indonesia in 2004, causing massive damage and casualties. If a seismograph was located 100 km from the epicenter, it would have recorded a displacement of 125 m! Use your answer to the previous…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-022",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "Logarithms are helpful in a variety of real-world contexts. Let’s look at an example in chemistry.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-023",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "The acidity of a substance is measured by the concentration of positive hydrogen ions, \\(H\\), in moles per liter. If the concentration is \\(10^{x}\\), then the acidity rating, or pH rating, is \\(\\text{-}x\\). For example, grapefruit juice…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-024",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "We can see that the pH rating is -1 times the exponent in the expression representing the hydrogen ion concentration. Because the exponent in a power of 10 can be expressed in terms of the base 10 logarithm, the pH rating can be expressed…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-025",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "When the exponent in a power of 10 increases by 1, say from \\(10^\\text{-3}\\) to \\(10^\\text{-2}\\), the quantity changes by a factor of 10. This means that lemon juice has 10 times the hydrogen ion concentration of grapefruit juice. Water,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-026",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "Another example of logarithm use is the Richter scale, which measures the strength of an earthquake in terms of the displacement of the needle on a seismograph. A displacement of 1 micrometer, one millionth of a meter, measures 1 on the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-027",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "If the seismograph displacement is \\(d\\) meters, the Richter rating of the earthquake can be expressed as \\(7 +\\log_{10}{d}\\). We can check that when \\(d = 1 \\times 10^{\\text-6}\\) (a displacement of 1 micrometer), the Richter rating is 1.…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-028",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "A logarithmic function is a constant multiple of a logarithm to some base, so it is a function given by \\(f(x) = k \\log_{a}(x)\\) where \\(k\\) is any number and \\(a\\) is a positive number (10, 2, or \\(e\\) in this course). The graph of a…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-ACTIVITY-029",
+      "SourceSection": "18.4: Measuring Earthquake Strength",
+      "SourceExcerpt": "logarithmic function",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "A function \\(g\\) can be represented with a graph that contains \\((\\text-2,1)\\) and \\(\\left(1,\\frac{1}{64}\\right)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Write an equation of the form \\(g(x) = a \\boldcdot b^x\\) to define the function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Using the fact that \\(2^{10} = 1024\\), Tyler estimates that \\(2^{20}\\) is about 1,000,000, and \\(\\log_2(1,\\!000,\\!000)\\) is about 20. Do you agree with Tyler?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-004",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "For each logarithmic equation, write an equivalent equation in exponential form.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-005",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The function \\(f\\) given by \\(f(t) = 10e^{0.07t}\\) models the balance in a bank account, in thousands of dollars, \\(t\\) years after it was opened.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What was the opening balance?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "About when does the account balance reach 1,000,000 dollars? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-008",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The function \\(f\\) is given by \\(f(x) = 20 \\boldcdot e^x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-009",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Write an equation of an exponential function \\(g\\) whose graph meets the graph of \\(f\\) for a positive value of \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-010",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Write an equation of an exponential function \\(h\\) whose graph does not meet the graph of \\(f\\) for any positive value of \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-011",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The area of a wall covered by mold is growing exponentially. Without treatment, the area doubles every month.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-012",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Complete the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-013",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Write a function, \\(f\\), to represent the time in months as a function of the square feet of area covered by mold, \\(a\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-014",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The wall is 240 square feet; about how many months will it take for the area to be completely covered by mold? Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-015",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "A bank account had a balance of $100. Because of the interest accumulated over time, the balance doubles every decade. No withdrawals or other deposits are made.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-016",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "To find out when the account will have a balance of $1,000, Diego wrote: \\(100 \\boldcdot 2^t =1,\\!000\\) and Mai wrote: \\(t = \\log_2 \\left(\\frac{1,\\!000}{100}\\right)\\). Show that the equations are equivalent and have the same solution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-017",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Use either of the strategies to find out when the account will have the following amounts. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L18-PRACTICE-018",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Write an equation that shows when (at what value of \\(t\\)) the account will have \\(x\\) dollars.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
