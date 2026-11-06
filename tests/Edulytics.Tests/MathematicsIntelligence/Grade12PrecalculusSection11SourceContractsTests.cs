@@ -372,6 +372,21 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void Grade12OriginalExercisePartsRetain162AtomicReviewActionsWithoutDoubleCounting()
+    {
+        Assert.Equal(92, Grade12PrecalculusSection11SourcePartChecklist.OriginalSourceExerciseCount);
+        Assert.Equal(162, Grade12PrecalculusSection11SourcePartChecklist.OriginalAtomicReviewActions);
+        Assert.Equal(106, Grade12PrecalculusSection11SourcePartChecklist.ExplicitSourceSubparts);
+        Assert.Equal(5, Grade12PrecalculusSection11SourcePartChecklist.ForExercise(27).Count);
+        Assert.Equal(3, Grade12PrecalculusSection11SourcePartChecklist.ForExercise(39).Count);
+        Assert.Equal(2, Grade12PrecalculusSection11SourcePartChecklist.ForExercise(52).Count);
+        Assert.Single(Grade12PrecalculusSection11SourcePartChecklist.ForExercise(92));
+        Assert.Empty(Grade12PrecalculusSection11SourcePartChecklist.ForExercise(93));
+        Assert.Contains(Grade12PrecalculusSection11SourcePartChecklist.ForExercise(52),
+            part => part.OriginalSourceNumericalResultUnresolved);
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

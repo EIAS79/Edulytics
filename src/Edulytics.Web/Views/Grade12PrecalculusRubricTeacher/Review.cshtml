@@ -15,6 +15,32 @@
            proof, diagram and all requested subparts before awarding marks.</p>
     </section>
 }
+@if (Grade12PrecalculusSection11SourcePartChecklist.ForExercise(
+    Model.Submission.ExerciseNumber) is { Count: > 0 } sourceParts)
+{
+    <section class="student-card" aria-label="Original exercise completeness checklist">
+        <h2>Source-aligned exercise checklist</h2>
+        <p>Review each requested original mathematical action against the
+           learner's complete first-party response. This checklist supports
+           teacher judgment, not a separate automatic score or a claim
+           that original publisher artwork is reproduced.</p>
+        <ol>
+            @foreach (var part in sourceParts)
+            {
+                <li>
+                    <strong>@part.Label:</strong> @part.RequestedSkill
+                    @if (part.OriginalSourceNumericalResultUnresolved)
+                    {
+                        <p><strong>Precision warning:</strong> The exact original
+                           graphical result cannot be confirmed from the
+                           printed image. Do not award or deduct marks based on
+                           an invented source-specific numerical root.</p>
+                    }
+                </li>
+            }
+        </ol>
+    </section>
+}
 @if (Model.Submission.TeacherScore is int score)
 {
     <p>Teacher score: @score / 4</p>
