@@ -1,0 +1,316 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L02",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "089be3309c8bbdce1958fb7f412d80dc5435b014869161d963b5b546a9b911d9",
+    "teacher/index.html": "13196dec3c814f44d9f18a2333c42ec9e19c02c325509d03d30d4a78cfb1c152",
+    "teacher/practice.html": "cb798033870b1b428905c3b0f26523a659f7f6404307edf789550045a9598047",
+    "student/index.html": "b15b53349a366977766afb57233c8ddd2effcdebf43f17ac5bfde70a786b6ab5",
+    "student/practice.html": "bb4dd6ef4ff8a11431b98df65d9640f36758f41cca8136931d0e4ba27d61a81b"
+  },
+  "Goals": [
+    "Explain (in writing) the meaning of different constants in an expression representing an exponential function.",
+    "Interpret equations and graphs that represent exponential functions in context."
+  ],
+  "ElementCount": 37,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-001",
+      "SourceSection": "2.1: One Fourth at a Time",
+      "SourceExcerpt": "Priya borrowed $160 from her grandmother. Each month, she pays off one fourth of the remaining balance that she owes.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-002",
+      "SourceSection": "2.1: One Fourth at a Time",
+      "SourceExcerpt": "What amount will Priya pay her grandmother in the third month?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-003",
+      "SourceSection": "2.1: One Fourth at a Time",
+      "SourceExcerpt": "Discuss with a partner why the expression \\(160 \\boldcdot \\left(\\frac34\\right)^3\\) represents the balance Priya owes her grandmother at the end of the third month.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-004",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "The tuition at a college was $30,000 in 2012, $31,200 in 2013, and $32,448 in 2014. The tuition has been increasing by the same percentage since the year 2000.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-005",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "The equation \\(c(t)=30,\\!000 \\boldcdot (1.04)^t\\) represents the cost of tuition, in dollars, as a function of \\(t\\), the number of years since 2012. Explain what the 30,000 and 1.04 tell us about this situation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-006",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "What is the percent increase in tuition from year to year?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-007",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "What does \\(c(3)\\) mean in this situation? Find its value and show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-008",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "Write an expression to represent the cost of tuition in 2007.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-009",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "How much did tuition cost that year?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-010",
+      "SourceSection": "2.2: Climbing Cost",
+      "SourceExcerpt": "Jada thinks that the college tuition will increase by 40% each decade. Do you agree with Jada? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-011",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "A small business bought a van for $40,000 in 2008. The van depreciates by 15% every year after its purchase.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-012",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "Which graph correctly represents the value of the van as a function of years since its purchase? Be prepared to explain why each of the other graphs could not represent the function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-013",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "Find the value of the van 8 years after its purchase. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-014",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "In the same year (2008), the business bought a second van that cost $10,000 less than the first van and depreciates at 10% per year. Would the second van be worth more or less than the first van 8 years after the purchase? Explain or show…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-015",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "On the same coordinate plane as the graph you chose in the first question, sketch a graph that shows the value of the second van, in dollars, as a function of years since its purchase.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-016",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "There are lots of ways to represent an exponential function. Suppose the population of a city was 20,000 in 1990 and that it increased by 10% each year.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-017",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "We can represent this situation with a table of values and show, for instance, that the population increased by a factor of 1.1 each year.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-018",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "We can also use a graph to show how the population was changing.​​​​​ While the graph looks almost linear, it has a slight upward curve since the population is increasing by a factor of 1.1 and not a constant value each year.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-019",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "An equation is another useful representation. In this case, if \\(t\\) is the number of years since 1990, then the population is a function \\(f\\) of \\(t\\) where \\(f(t) = 20,\\!000 \\boldcdot (1.1)^t\\). Here we can see the 20,000 in the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-ACTIVITY-020",
+      "SourceSection": "2.3: Two Vans and Their Values",
+      "SourceExcerpt": "Throughout this unit, we will examine many exponential functions. All four representations—descriptions, tables, graphs, and equations—will be useful for determining different information about the function and the situation the function…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "In 1990, the value of a home is $170,000. Since then, its value has increased 5% per year.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What is the approximate value of the home in the year 1993?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Write an equation, in function notation, to represent the value of the home as a function of time in years since 1990, \\(t\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Will the value of the home be more than $500,000 in 2020 (assuming that the trend continues)? Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The graph shows a wolf population which has been growing exponentially.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "What was the population when it was first measured?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "By what factor did the population grow in the first year?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Write an equation relating the wolf population, \\(w\\), and the number of years since it was measured, \\(t\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Here is the graph of an exponential function \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Find an equation defining \\(f\\). Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The equation \\(f(t) = 24,\\!500 \\boldcdot (0.88)^t\\) represents the value of a car, in dollars, \\(t\\) years after it was purchased.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-012",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What do the numbers 24,500 and 0.88 mean?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-013",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What does \\(f(9)\\) represent?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Sketch a graph that represents the function \\(f\\) and shows \\(f(0), \\) \\(f(1),\\) and \\(f(2)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-015",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The first two terms of an exponential sequence are 18 and 6. What are the next 3 terms of this sequence?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "A bacteria population has been doubling each day for the last 5 days. It is currently 100,000. What was the bacterial population 5 days ago? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L02-PRACTICE-017",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Select all expressions that are equivalent to \\(27^{\\frac13}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l02.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
