@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l14-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L14",
+      "CultureCode": "en",
+      "Title": "Transforming Trigonometric Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe (using words and other representations) the effect of a horizontal translation of a periodic function. Interpret (in writing) the amplitude and midline of a trigonometric function representing a situation.",
+        "For y=A cos(x-h)+D, the graph shifts right by h when h>0; A sets amplitude and D midline. Period stays2π unless frequency is changed.",
+        "Source activity 14.1: Translated Parabolas: Match each equation with its graph. Be prepared to explain your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.2: Windmills Everywhere: Here are three equations for three different windmills. Each equation describes the height \\(h\\), in feet above the ground, of a point at the tip of a blade of a different windmill. The point is at the far right when the angle \\(\\theta\\) takes the value 0. Describe each windmill and how it is spinning. \\(h = 2.5 \\sin(\\theta) + 10\\) \\(h = \\frac{4}{5} \\sin(\\theta) + 3\\) \\(h =… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.3: Spinning Fan: A fan has radius 1 foot. A point \\(P\\) starts in the position shown in the picture. The center of the fan is at \\((0,0)\\) and the point \\(P\\) is at the \\(\\frac{\\pi}{6}\\) position on the circle. The fan turns in a counterclockwise direction. Sketch a graph of the horizontal position \\(h\\), in feet, of \\(P\\) as a function of the angle of rotation \\(\\theta\\) of the fan from its… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: These equations model the vertical position, in feet above the ground, of a point at the end of a windmill blade. For each function, indicate the height of the windmill and the length of the windmill blades. \\(y = 5\\sin(\\theta) +10\\) \\(y = 8\\sin(\\theta) + 20\\) \\(y = 4\\sin(\\theta) + 15\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which expression takes the same value as \\(\\cos(\\theta)\\) when \\(\\theta = 0, \\frac{\\pi}{2}, \\pi,\\) and \\(\\frac{3\\pi}{2}\\)? \\(\\sin\\left(\\theta -\\frac{\\pi}{2}\\right)\\) \\(\\sin\\left(\\theta + \\frac{\\pi}{2}\\right)\\) \\(\\sin(\\theta+\\pi)\\) \\(\\sin(\\theta-\\pi)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is a graph of a trigonometric function. Which equation does the graph represent? \\(y = 2\\sin\\left(\\theta\\right)\\) \\(y = 2\\cos\\left(\\theta+\\frac{\\pi}{4}\\right)\\) \\(y = 2\\sin\\left(\\theta-\\frac{\\pi}{4}\\right)\\) \\(y = 2\\cos\\left(\\theta-\\frac{\\pi}{4}\\right)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The vertical position \\(v\\) of a point at the tip of a windmill blade, in feet, is given by \\(v(\\theta) = 11 + 2\\sin\\left(\\theta+\\frac{\\pi}{2}\\right)\\). Here \\(\\theta\\) is the angle of rotation. How long is the windmill blade? Explain how you know. What is the height of the windmill? Explain how you know. Where is the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Explain how to use a unit circle to find a point \\(P\\) with \\(x\\)-coordinate \\(\\cos(\\frac{23\\pi}{24})\\). Use a unit circle to estimate the value of \\(\\cos(\\frac{23\\pi}{24})\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: What are some ways in which the tangent function is similar to sine and cosine? What are some ways in which the tangent function is different from sine and cosine? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Match the trigonometric expressions with their graphs. \\(3\\cos(\\theta) - 2\\) \\(2\\cos(\\theta) - 3\\) \\(3\\sin(\\theta) -2\\) \\(2\\sin(\\theta)-3\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Describe y=sin(x+π/3). Expected reasoning or answer: Leftπ/3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Horizontal translation of trigonometric graphs",
+          "Definition": "For y=A cos(x-h)+D, the graph shifts right by h when h>0; A sets amplitude and D midline. Period stays2π unless frequency is changed.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Describe y=2cos(x-π/4)+1. Answer: Amplitude2; midline1; rightπ/4; period2π."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Amplitude2, right shiftπ/4, midline1, base cosine period2π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Horizontal translation of trigonometric graphs",
+          "Question": "Describe y=2cos(x-π/4)+1.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Amplitude2, right shiftπ/4, midline1, base cosine period2π."
+          ],
+          "Answer": "Amplitude2; midline1; rightπ/4; period2π.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Describe y=sin(x+π/3).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Leftπ/3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Horizontal translation of trigonometric graphs",
+        "For y=A cos(x-h)+D, the graph shifts right by h when h>0; A sets amplitude and D midline. Period stays2π unless frequency is changed.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
