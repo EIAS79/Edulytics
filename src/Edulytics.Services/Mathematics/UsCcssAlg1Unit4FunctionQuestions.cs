@@ -6,6 +6,9 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 {
     public const string FunctionRelationFamily = "functions.relations.unique_output.classify";
     public const string FunctionOneToOneFamily = "functions.relations.one_to_one.classify";
+    public const string FunctionImplicitClassificationFamily = "functions.relations.implicit.classify";
+    public const string FunctionTableLookupFamily = "functions.table.lookup.invert";
+    public const string FunctionQuadraticRootsFamily = "functions.quadratic.output_roots.solve";
     public const string FunctionNotationFamily = "functions.notation.evaluate_context";
     public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
     public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
@@ -20,7 +23,7 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionOneToOneFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily or QuadraticExpandMiddleFamily;
+        family is FunctionRelationFamily or FunctionOneToOneFamily or FunctionImplicitClassificationFamily or FunctionTableLookupFamily or FunctionQuadraticRootsFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily or QuadraticExpandMiddleFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -183,6 +186,53 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == FunctionImplicitClassificationFamily)
+        {
+            var variant = random.Next(0, 5);
+            var relation = variant switch
+            {
+                0 => "2x+3y=9",
+                1 => "x=y²",
+                2 => "x²+y²=9",
+                3 => "y=x³",
+                _ => "y=√(4−x)"
+            };
+            return new(family,
+                $"Determine whether {relation} defines y as a function of real x in its permitted domain. Enter yes or no; justify domain and branches to the teacher.",
+                variant is 0 or 3 or 4
+                    ? "The relation assigns at most one real y-value to each permitted x."
+                    : "At some permitted x the relation contains two different real y-values.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int> { ["variant"] = variant });
+        }
+
+        if (family == FunctionTableLookupFamily)
+        {
+            var first = random.Next(0, 50);
+            var inverse = random.Next(0, 2);
+            var prompt = $"Table: x=[1,2,3,4,5]; f(x)=[{first+1},{first+7},{first+2},{first+7},{first+3}].";
+            prompt += inverse == 1
+                ? $" Find all x-values in the table with f(x)={first+7}. Enter both inputs separated by commas."
+                : " Evaluate f(3) using the table. Enter the integer output.";
+            return new(family, prompt,
+                inverse == 1 ? "Both x=2 and x=4 have the requested output." : $"f(3)={first+2}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int> { ["first"] = first, ["inverse"] = inverse });
+        }
+
+        if (family == FunctionQuadraticRootsFamily)
+        {
+            var rootA = random.Next(-5, 6);
+            var rootB = random.Next(-5, 6);
+            if (rootB == rootA)
+                rootB = rootA == 5 ? -5 : rootA + 1;
+            return new(family,
+                $"Given f(x)=(x-({rootA}))(x-({rootB})), solve f(x)=0 over the reals. Enter both distinct integer roots separated by commas; show the zero-product reasoning to the teacher.",
+                $"The two zero-product roots are {Math.Min(rootA,rootB)} and {Math.Max(rootA,rootB)}.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int> { ["rootA"] = rootA, ["rootB"] = rootB });
+        }
+
         if (family == FunctionOneToOneFamily)
         {
             // Exactly one output per input in every generated problem.
@@ -295,6 +345,25 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (factorA + factorB).ToString();
         }
 
+        if (family == FunctionImplicitClassificationFamily)
+        {
+            if (!ValidateImplicit(parameters, out var variant))
+                throw new InvalidOperationException("Invalid implicit relation parameters.");
+            return variant is 0 or 3 or 4 ? "yes" : "no";
+        }
+        if (family == FunctionTableLookupFamily)
+        {
+            if (!ValidateTableLookup(parameters, out var first, out var inverse))
+                throw new InvalidOperationException("Invalid tabular lookup parameters.");
+            return inverse == 1 ? "2,4" : (first+2).ToString();
+        }
+        if (family == FunctionQuadraticRootsFamily)
+        {
+            if (!ValidateQuadraticRoots(parameters, out var a, out var b))
+                throw new InvalidOperationException("Invalid quadratic root parameters.");
+            return $"{Math.Min(a,b)},{Math.Max(a,b)}";
+        }
+
         if (family == FunctionOneToOneFamily)
         {
             if (!ValidateOneToOne(parameters, out _, out _, out _, out var injective))
@@ -370,6 +439,27 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                    int.TryParse(answer.Trim(), out var value) &&
                    value.ToString() == Solve(family, parameters);
 
+        if (family == FunctionImplicitClassificationFamily)
+        {
+            if (!ValidateImplicit(parameters, out _)) return false;
+            var value = answer.Trim().ToLowerInvariant();
+            return (value is "yes" or "no") && value == Solve(family, parameters);
+        }
+        if (family == FunctionTableLookupFamily)
+        {
+            if (!ValidateTableLookup(parameters, out var first, out var inverse))
+                return false;
+            if (inverse == 0)
+                return int.TryParse(answer.Trim(), out var output) && output == first + 2;
+            return EqualIntegerPair(answer, 2, 4);
+        }
+        if (family == FunctionQuadraticRootsFamily)
+        {
+            if (!ValidateQuadraticRoots(parameters, out var rootA, out var rootB))
+                return false;
+            return EqualIntegerPair(answer, rootA, rootB);
+        }
+
         if (family == FunctionOneToOneFamily)
         {
             if (!ValidateOneToOne(parameters, out _, out _, out _, out _))
@@ -402,6 +492,44 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("b", out b) && b is >= -9 and <= 10 &&
             p.TryGetValue("repeats", out repeats) && repeats is >= 0 and <= 1 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateImplicit(IReadOnlyDictionary<string,int>? p,
+        out int variant)
+    {
+        variant = 0;
+        return p is not null && p.TryGetValue("variant", out variant) &&
+            variant is >= 0 and <= 4;
+    }
+
+    private static bool ValidateTableLookup(IReadOnlyDictionary<string,int>? p,
+        out int first, out int inverse)
+    {
+        first = inverse = 0;
+        return p is not null &&
+            p.TryGetValue("first", out first) && first is >= 0 and <= 49 &&
+            p.TryGetValue("inverse", out inverse) && inverse is >= 0 and <= 1;
+    }
+
+    private static bool ValidateQuadraticRoots(IReadOnlyDictionary<string,int>? p,
+        out int rootA, out int rootB)
+    {
+        rootA = rootB = 0;
+        return p is not null &&
+            p.TryGetValue("rootA", out rootA) && rootA is >= -5 and <= 5 &&
+            p.TryGetValue("rootB", out rootB) && rootB is >= -5 and <= 5 &&
+            rootA != rootB;
+    }
+
+    private static bool EqualIntegerPair(string answer, int expectedA, int expectedB)
+    {
+        var parts = answer.Split([',', ';'], StringSplitOptions.TrimEntries);
+        return parts.Length == 2 &&
+            int.TryParse(parts[0], out var a) &&
+            int.TryParse(parts[1], out var b) &&
+            a != b &&
+            ((a == expectedA && b == expectedB) ||
+             (a == expectedB && b == expectedA));
     }
 
     private static bool ValidateOneToOne(IReadOnlyDictionary<string, int>? p,

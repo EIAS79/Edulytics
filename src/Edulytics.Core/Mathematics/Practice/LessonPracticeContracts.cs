@@ -7033,15 +7033,18 @@ public static class LessonPracticeContractRegistry
             new LessonPracticeContract(
                 "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
                 "supporting.functions.core",
-                "PRECALC_FUNCTION_RELATIONS_INJECTIVITY_NOTATION_DOMAIN_TOOLKIT_PARTIAL",
+                "PRECALC_FUNCTION_RELATIONS_INJECTIVITY_IMPLICIT_TABLE_ROOTS_PARTIAL",
                 [
                     "functions.relations.unique_output.classify",
                     "functions.relations.one_to_one.classify",
+                    "functions.relations.implicit.classify",
+                    "functions.table.lookup.invert",
+                    "functions.quadratic.output_roots.solve",
                     "functions.notation.evaluate_context",
                     "functions.domain_range.context_bounds",
                     "functions.absolute_value.translate_evaluate"
                 ],
-                "G12_SECTION_1_1_FOUR_REUSED_ONE_EXTENDED_FAMILY_NOT_FULL_SOURCE_PARITY",
+                "G12_SECTION_1_1_FOUR_REUSED_FOUR_EXTENDED_FAMILIES_NOT_92_SOURCE_PARITY",
                 "READY_VERIFIED",
                 Version)
             {

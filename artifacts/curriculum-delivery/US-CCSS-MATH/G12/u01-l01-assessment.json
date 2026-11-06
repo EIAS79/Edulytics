@@ -63,6 +63,21 @@
         "Family": "functions.relations.one_to_one.classify",
         "ReuseReason": "Extend the existing exact ordered-pair function engine to assess injectivity of finite relations with distinct inputs and possible repeated outputs; does not auto-grade original graph tasks.",
         "Status": "EXTENDED_EXISTING_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.relations.implicit.classify",
+        "ReuseReason": "Implicit equation/branch classification with real domain",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.table.lookup.invert",
+        "ReuseReason": "Evaluate and invert a finite numeric function table",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.quadratic.output_roots.solve",
+        "ReuseReason": "Solve a factored quadratic output equation for both distinct real integer roots",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
       }
     ],
     "ForbidSubstitutions": [
@@ -80,7 +95,7 @@
       "Exercise 52 part (b) cannot receive a hard-coded exact numerical answer from the displayed original graph."
     ],
     "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
-    "PracticeReady": "PARTIAL_FIVE_FAMILY_CONTRACT_NOT_COMPLETE_SOURCE_PARITY",
+    "PracticeReady": "PARTIAL_8_FAMILY_CONTRACT_NOT_FULL_SOURCE_PARITY",
     "Tests": "WRITTEN_NOT_RUN",
     "StageD": "NOT_RUN",
     "ExerciseRoutingManifestPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
@@ -125,7 +140,9 @@
       }
     ],
     "ExtendedFamilyDesign": "EXACT_FINITE_RELATION_ONE_TO_ONE_CLASSIFICATION; NO_GRAPH_AUTOGRADING",
-    "ExtendedFamilyTestStatus": "WRITTEN_NOT_RUN"
+    "ExtendedFamilyTestStatus": "WRITTEN_NOT_RUN",
+    "ExtendedFamiliesCount": 4,
+    "ExactFamilyCountForGrade12": 8
   },
   "SchemaVersion": 1,
   "SourceElementVerification": {

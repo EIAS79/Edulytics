@@ -109,6 +109,9 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         {
             UsCcssAlg1Unit4FunctionQuestions.FunctionRelationFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionOneToOneFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionImplicitClassificationFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionTableLookupFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionQuadraticRootsFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteTranslateFamily
@@ -236,6 +239,35 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
             Assert.Contains("aria-labelledby", svg, StringComparison.Ordinal);
         }
         // Source figure 1:1 equivalence and student E2E remain for Stage D.
+    }
+
+    [Fact]
+    public void ExtendedPrecalculusSourceFamiliesRejectInvalidAnswerAndParameters()
+    {
+        var implicitParameters = new Dictionary<string, int> { ["variant"] = 1 };
+        const string implicitFamily = UsCcssAlg1Unit4FunctionQuestions.FunctionImplicitClassificationFamily;
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Supports(implicitFamily));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(implicitFamily, implicitParameters, "no"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(implicitFamily, implicitParameters, "yes"));
+        implicitParameters["variant"] = 99;
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(implicitFamily, implicitParameters, "no"));
+
+        var table = new Dictionary<string,int> { ["first"] = 10, ["inverse"] = 1 };
+        const string tableFamily = UsCcssAlg1Unit4FunctionQuestions.FunctionTableLookupFamily;
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(tableFamily, table, "2,4"));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(tableFamily, table, "4; 2"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(tableFamily, table, "2,2"));
+        table["inverse"] = 0;
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(tableFamily, table, "12"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(tableFamily, table, "17"));
+
+        var roots = new Dictionary<string,int> { ["rootA"]=-3, ["rootB"]=2 };
+        const string rootFamily = UsCcssAlg1Unit4FunctionQuestions.FunctionQuadraticRootsFamily;
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(rootFamily, roots, "-3,2"));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(rootFamily, roots, "2,-3"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(rootFamily, roots, "-3,-3"));
+        roots["rootB"] = -3;
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(rootFamily, roots, "-3"));
     }
 
     [Fact]
