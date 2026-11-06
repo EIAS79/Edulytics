@@ -1,0 +1,110 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L03",
+  "LearningGoals": [
+    "Explain how to match expressions involving exponents with equivalent expressions.",
+    "Justify the equivalence of $b^{1/n}$ and $\\sqrt[n]{b}$ using the properties of exponents."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-RN.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-RN.A.1",
+      "SortOrder": 4
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-RN.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-RN.A.2",
+      "SortOrder": 5
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSN-RN.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 6
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSN-RN.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 7
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Evaluate 81^(1/4).",
+    "Steps": [
+      "3^4=81 so the fourth root is3."
+    ],
+    "Answer": "3"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "3.1: Sometimes It’s Squared and Sometimes It’s Cubed",
+      "3.2: To the...Half?",
+      "3.3: Fraction of What, Exactly?",
+      "3.4: Exponents and Radicals"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Evaluate 32^(1/5).",
+    "Expected": "2.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l03-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l03.rich-lesson-v2.json"
+}
