@@ -1,0 +1,77 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L10",
+  "LearningGoals": [
+    "Interpret graphs of cosine and sine for input values greater than $2\\pi$.",
+    "Interpret (in writing) the meaning of angle measures larger than $2\\pi$ radians on the unit circle."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSA-REI.D.11",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-TF.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-TF.B",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Find cos(2π+π/3).",
+    "Steps": [
+      "Subtract full revolution2π and use cosπ/3."
+    ],
+    "Answer": "1/2."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "10.1: All the Way Around",
+      "10.2: Going Around and Around and Around",
+      "10.3: Back to Where We Started"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Find sin(4π+π/2).",
+    "Expected": "1.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u06-l10-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l10.rich-lesson-v2.json"
+}
