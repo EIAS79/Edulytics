@@ -86,7 +86,7 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
-    public void Grade12ExactPartialReuseIsRestrictedToFourRealFamilies()
+    public void Grade12PartialPracticeIncludesExactFiniteRelationInjectivityFamily()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Code, out var contract));
         Assert.NotNull(contract);
@@ -96,14 +96,15 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Equal(new[]
         {
             UsCcssAlg1Unit4FunctionQuestions.FunctionRelationFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionOneToOneFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily,
             UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteTranslateFamily
         }, contract.AllowedQuestionFamilies);
         Assert.DoesNotContain(contract.AllowedQuestionFamilies,
             family => family.Contains("graph", StringComparison.OrdinalIgnoreCase));
-        Assert.DoesNotContain(contract.AllowedQuestionFamilies,
-            family => family.Contains("one_to_one", StringComparison.OrdinalIgnoreCase));
+        Assert.Equal(1, contract.AllowedQuestionFamilies.Count(
+            family => family.Contains("one_to_one", StringComparison.OrdinalIgnoreCase)));
     }
 
     [Fact]
@@ -128,6 +129,31 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         notation.Remove("rate");
         Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
             UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, notation, "38"));
+    }
+
+    [Fact]
+    public void FiniteRelationOneToOneFamilyGradingIsExactAndFailsClosed()
+    {
+        const string family = UsCcssAlg1Unit4FunctionQuestions.FunctionOneToOneFamily;
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Supports(family));
+        var notInjective = new Dictionary<string, int>
+        {
+            ["x0"] = -1, ["y0"] = 3, ["step"] = 2, ["injective"] = 0
+        };
+        Assert.Equal("no", UsCcssAlg1Unit4FunctionQuestions.Solve(family, notInjective));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(family, notInjective, "no"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(family, notInjective, "yes"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(family, notInjective, "invalid"));
+        var injective = new Dictionary<string, int>(notInjective)
+        {
+            ["injective"] = 1
+        };
+        Assert.Equal("yes", UsCcssAlg1Unit4FunctionQuestions.Solve(family, injective));
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(family, injective, "yes"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(family, injective, "no"));
+        injective["step"] = 0; // Distinct output guarantee removed; fail closed.
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(family, injective, "yes"));
+        // This tests ordered-pair injectivity, NOT graphical one-to-one proof.
     }
 
     [Fact]

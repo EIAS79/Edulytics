@@ -5,6 +5,7 @@ namespace Edulytics.Services.Mathematics;
 public static class UsCcssAlg1Unit4FunctionQuestions
 {
     public const string FunctionRelationFamily = "functions.relations.unique_output.classify";
+    public const string FunctionOneToOneFamily = "functions.relations.one_to_one.classify";
     public const string FunctionNotationFamily = "functions.notation.evaluate_context";
     public const string FunctionDomainRangeFamily = "functions.domain_range.context_bounds";
     public const string FunctionPiecewiseFamily = "functions.piecewise.evaluate_interval";
@@ -19,7 +20,7 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     public static bool Supports(string? family) =>
-        family is FunctionRelationFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily or QuadraticExpandMiddleFamily;
+        family is FunctionRelationFamily or FunctionOneToOneFamily or FunctionNotationFamily or FunctionDomainRangeFamily or FunctionPiecewiseFamily or FunctionAbsoluteErrorFamily or FunctionAbsoluteTranslateFamily or LinearExponentialCompareFamily or ExponentialGrowthEvaluateFamily or ExponentialDecayHalfFamily or QuadraticExpandMiddleFamily;
 
     public static Problem Build(string family, Random random)
     {
@@ -182,6 +183,28 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                 });
         }
 
+        if (family == FunctionOneToOneFamily)
+        {
+            // Exactly one output per input in every generated problem.
+            // The other question is injectivity: do any distinct inputs
+            // have a shared output? This is not a graph-drawing grader.
+            var x0 = random.Next(-4, 9);
+            var y0 = random.Next(-9, 10);
+            var step = random.Next(1, 5);
+            var injective = random.Next(0, 2);
+            var y1 = y0 + step;
+            var y2 = injective == 1 ? y0 + 2 * step : y0;
+            return new(family,
+                $"A relation has ordered pairs ({x0},{y0}), ({x0 + 1},{y1}), ({x0 + 2},{y2}). Is it a one-to-one function of the first coordinate? Enter yes or no. Explain to your teacher why repeating an output is different from repeating an input.",
+                $"All inputs are distinct, so it is a function. {(injective == 1 ? "All outputs are distinct; it is one-to-one." : "The first and third inputs share an output; it is not one-to-one.")}",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string, int>(StringComparer.Ordinal)
+                {
+                    ["x0"] = x0, ["y0"] = y0,
+                    ["step"] = step, ["injective"] = injective
+                });
+        }
+
         if (family != FunctionRelationFamily)
             throw new InvalidOperationException("Unsupported family.");
 
@@ -272,6 +295,13 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             return (factorA + factorB).ToString();
         }
 
+        if (family == FunctionOneToOneFamily)
+        {
+            if (!ValidateOneToOne(parameters, out _, out _, out _, out var injective))
+                throw new InvalidOperationException("Invalid one-to-one classification parameters.");
+            return injective == 1 ? "yes" : "no";
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out var a, out var b, out var repeats, out _))
             throw new InvalidOperationException("Invalid relation parameters.");
@@ -340,6 +370,15 @@ public static class UsCcssAlg1Unit4FunctionQuestions
                    int.TryParse(answer.Trim(), out var value) &&
                    value.ToString() == Solve(family, parameters);
 
+        if (family == FunctionOneToOneFamily)
+        {
+            if (!ValidateOneToOne(parameters, out _, out _, out _, out _))
+                return false;
+            var normalized = answer.Trim().ToLowerInvariant();
+            return normalized is "yes" or "no" &&
+                   normalized == Solve(family, parameters);
+        }
+
         if (family != FunctionRelationFamily ||
             !ValidateRelation(parameters, out _, out _, out _, out _, out _))
             return false;
@@ -363,6 +402,17 @@ public static class UsCcssAlg1Unit4FunctionQuestions
             p.TryGetValue("b", out b) && b is >= -9 and <= 10 &&
             p.TryGetValue("repeats", out repeats) && repeats is >= 0 and <= 1 &&
             p.TryGetValue("variant", out variant) && variant is >= 0 and <= 15;
+    }
+
+    private static bool ValidateOneToOne(IReadOnlyDictionary<string, int>? p,
+        out int x0, out int y0, out int step, out int injective)
+    {
+        x0 = y0 = step = injective = 0;
+        return p is not null &&
+            p.TryGetValue("x0", out x0) && x0 is >= -4 and <= 8 &&
+            p.TryGetValue("y0", out y0) && y0 is >= -9 and <= 9 &&
+            p.TryGetValue("step", out step) && step is >= 1 and <= 4 &&
+            p.TryGetValue("injective", out injective) && injective is >= 0 and <= 1;
     }
 
     private static bool ValidateNotation(IReadOnlyDictionary<string, int>? p,
