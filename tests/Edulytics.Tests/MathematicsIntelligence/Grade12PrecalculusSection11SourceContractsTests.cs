@@ -411,6 +411,27 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void SourceExplicitMultiPartExamplesArePreservedInFirstPartyTeaching()
+    {
+        var lesson = RichLessonContentV2Registry.Find(Code, "en");
+        Assert.NotNull(lesson);
+        var tableCase = lesson.WorkedExamples[4];
+        Assert.Contains("Table A", tableCase.Question);
+        Assert.Contains("Table B", tableCase.Question);
+        Assert.Contains("Table C", tableCase.Question);
+        Assert.Contains("Table C: not a function", tableCase.Answer);
+        var substitution = lesson.WorkedExamples[5];
+        Assert.Contains("f(2), f(a), f(a+h)", substitution.Question);
+        Assert.Contains("f(a)=a²+3a−4", substitution.Answer);
+        Assert.Contains("quotient=2a+h+3", substitution.Answer);
+        var vertical = lesson.WorkedExamples[13];
+        Assert.Contains("(A) y=x²", vertical.Question);
+        Assert.Contains("(B) y=2x+1", vertical.Question);
+        Assert.Contains("(C) y²=x", vertical.Question);
+        Assert.Contains("Graphs A and B are functions", vertical.Answer);
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

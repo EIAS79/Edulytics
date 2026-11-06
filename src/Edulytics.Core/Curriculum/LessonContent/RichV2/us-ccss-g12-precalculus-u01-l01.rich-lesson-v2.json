@@ -1,5 +1,5 @@
 {
-  "ContentVersion": "g12-u01-l01-source-q-and-a-clarifications-20261106",
+  "ContentVersion": "g12-u01-l01-atomic-source-example-subparts-reconciled-20261106",
   "Lessons": [
     {
       "CommonMistakes": [
@@ -859,26 +859,27 @@
         },
         {
           "Title": "Determine whether a table is a function",
-          "Question": "A table contains (1,3), (2,5), (2,5), and (3,5). Is it a function? Is it one-to-one?",
-          "Method": "Separate the function condition from one-to-one.",
+          "Question": "Compare three independently authored relation tables. Table A: (2,1),(5,3),(8,6). Table B: (-3,5),(0,1),(4,5). Table C: (1,0),(5,2),(5,4). Classify whether EACH table defines y as a function of x; for the functional tables decide whether one-to-one, with reasons.",
+          "Method": "Check each input and its output independently in all three tables; then test repeated outputs.",
           "Steps": [
-            "Every occurrence of x=2 has the same output 5, so no input has contradictory outputs.",
-            "x=2 and x=3 share y=5, which is allowed for a function.",
-            "The shared output means the function is not one-to-one."
+            "Table A has three distinct inputs and three distinct outputs: it is a one-to-one function.",
+            "Table B has distinct inputs, but -3 and 4 both map to 5: it is a function but not one-to-one.",
+            "Table C maps the same input 5 to both 2 and 4: it is not a function at all."
           ],
-          "Answer": "It is a function but not one-to-one.",
-          "Check": "The duplicate ordered pair (2,5) is not a violation."
+          "Answer": "Table A: one-to-one function. Table B: function but not one-to-one. Table C: not a function.",
+          "Check": "A repeated output is allowed for a function; a repeated input with a conflicting output is not."
         },
         {
           "Title": "Evaluate and simplify an input expression",
-          "Question": "For f(x)=x²+3x−4, calculate f(2), f(a+h), and [f(a+h)−f(a)]/h for h≠0.",
+          "Question": "For f(x)=x²+3x−4, calculate f(2), f(a), f(a+h), and [f(a+h)−f(a)]/h for h≠0.",
           "Method": "Substitute the entire input before expanding.",
           "Steps": [
-            "f(2)=4+6−4=6.",
-            "f(a+h)=(a+h)²+3(a+h)−4=a²+2ah+h²+3a+3h−4.",
-            "Subtract f(a)=a²+3a−4; divide 2ah+h²+3h by h≠0."
+            "Evaluate at x=2: f(2)=4+6−4=6.",
+            "Evaluate at symbolic input a: f(a)=a²+3a−4.",
+            "At input a+h, f(a+h)=(a+h)²+3(a+h)−4=a²+2ah+h²+3a+3h−4.",
+            "For h≠0, subtract f(a) from f(a+h), factor h, then simplify the difference quotient to 2a+h+3."
           ],
-          "Answer": "f(2)=6; f(a+h)=a²+2ah+h²+3a+3h−4; quotient=2a+h+3.",
+          "Answer": "f(2)=6; f(a)=a²+3a−4; f(a+h)=a²+2ah+h²+3a+3h−4; quotient=2a+h+3.",
           "Check": "The quotient expression requires h≠0."
         },
         {
@@ -967,15 +968,15 @@
         },
         {
           "Title": "Apply the vertical-line test",
-          "Question": "Compare the graphs of y=x² and y²=x. Which describes y as a function of x?",
+          "Question": "Apply the vertical-line test to three independent model graphs: (A) y=x², (B) y=2x+1, and (C) y²=x. Which of A, B, C represent y as a function of x, and why?",
           "Method": "Check whether a vertical line can hit the graph more than once.",
           "Steps": [
-            "Each x yields one y=x², so vertical lines meet that parabola at most once.",
-            "For y²=x and x=4, there are points (4,2) and (4,−2).",
-            "Thus y²=x fails the vertical-line test while y=x² passes."
+            "A: each real x has one output x², so every vertical line meets the parabola at most once.",
+            "B: each real x has exactly one output 2x+1, so a nonvertical straight line passes.",
+            "C: at x=4 the sideways relation contains both (4,2) and (4,-2), so it fails."
           ],
-          "Answer": "y=x² defines y as a function of x; y²=x does not.",
-          "Check": "At x=4 the second relation has two different y values."
+          "Answer": "Graphs A and B are functions of x. Graph C is not a function of x.",
+          "Check": "The test concerns the number of outputs for a SINGLE x; it is not a test of injectivity."
         },
         {
           "Title": "Apply the horizontal-line test",

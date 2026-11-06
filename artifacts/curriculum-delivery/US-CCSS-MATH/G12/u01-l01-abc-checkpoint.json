@@ -28,7 +28,7 @@
   "ReasonForNotMovingToLesson2": [
     "Source atomic denominator remains incomplete: 170 location anchors are not total source atoms",
     "Original graph tasks and figure licenses/accessible equivalence have not been fully checked",
-    "Exercise 52 source graph requires exact point verification; all 92 need verified Edulytics implementation, not just teacher rubric proposals",
+    "Exercise 52 source precision limit documented and first-party x=7 teacher-scored separately; full 92-question source-semantic/assessment parity remains unverified, beyond teacher rubric proposals",
     "Lesson-specific Practice engine and exact grading for graph, one-to-one, and all function-solving prompts are not verified",
     "Teacher-reviewed G12 routes/SQL migration are authored but await Stage D verification; absence of an authenticated Stage D run alone is not an A–B–C source-match blocker"
   ],
@@ -171,7 +171,7 @@
   "SourceNonGraphExerciseComparisonEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-72-nongraph-exercise-source-comparison.json",
   "OriginalSourceSectionExerciseSkillsReviewed": 92,
   "OriginalSourceGraphClassificationAndValuesCompared": 19,
-  "SourceGraph52ExactInputStatus": "NO_GROUNDED_EXACT_SOURCE_NUMERIC_RESULT_TEACHER_QUALIFIED",
+  "SourceGraph52ExactInputStatus": "ORIGINAL_BOUND_GRAPH_HAS_NO_PROVABLE_EXACT_ROOT; FIRST_PARTY_X7_VALID",
   "FirstPartyExerciseFigureImagesCopied": 0,
   "SourceGraphSkillReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-20-graph-exercise-skill-audit.json",
   "SourceHowToAnalysisQaStatementsVerified": 11,
@@ -181,14 +181,19 @@
   "OriginalSourceToolkitTablesAndGraphSamplesFullyMatched": false,
   "OriginalWorkedExamplesSkillSourceVerified": 15,
   "OriginalTryItSkillSourceVerified": 12,
-  "OriginalSourceAnchorsSourceVerified": 169,
+  "OriginalSourceAnchorsSourceVerified": 170,
   "SourceTopLevelAnchorsReviewedAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-a-b-c-source-coverage-audit.json",
-  "SourceTopLevelAnchorsSourceVerified": 169,
+  "SourceTopLevelAnchorsSourceVerified": 170,
   "SourceTopLevelAnchorsOriginalGraph52Partial": 1,
   "SourceExerciseAtomicTeacherReviewChecklistCount": 162,
   "OriginalExercise52BExactRoot": "SOURCE_UNRESOLVED",
   "FirstPartyGraphEvidenceTextRoute": "AUTHORED_FOR_SOURCE_40_59_AND_76_87_NOT_RUNTIME_TESTED",
   "FirstPartyWindowGraphEvidenceRequired": true,
   "FirstPartyActualGraphFileUpload": "NOT_IMPLEMENTED",
-  "Graph52TeacherMathAnswerVsSourceBoundary": "FIRST_PARTY_X7_CORRECT_SOURCE_ORIGINAL_EXACT_ROOT_UNKNOWN"
+  "Graph52TeacherMathAnswerVsSourceBoundary": "FIRST_PARTY_X7_CORRECT_SOURCE_ORIGINAL_EXACT_ROOT_UNKNOWN",
+  "SourceGraph52SourceReadingComplete": true,
+  "NamedSourceLeafActionInventoryPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-256-named-source-atomic-actions.json",
+  "SourceNamedAtomicLeafActionCount": 256,
+  "SourceExplicitExampleQuestionActions": 28,
+  "SourceExplicitTryItQuestionActions": 15
 }

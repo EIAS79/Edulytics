@@ -1371,20 +1371,20 @@
       "OriginalExerciseNumber": 52,
       "SourcePdfPage": 36,
       "SkillKind": "GRAPH_LINE_TESTS",
-      "OriginalMathematicsSourceReview": null,
+      "OriginalMathematicsSourceReview": "Source Section 1.1 exercise 52: (a) read f(-1) approximately 1; (b) graphically estimate input at level y=3, stating the printed curve only approaches this height at the right edge, so no exact algebraic x-value can be asserted from the source image.",
       "SourceGraphMathParts": [
         "f(−1)≈1 from the displayed graph.",
         "The graph approaches but does not clearly attain y=3 inside the displayed window. An exact root for f(x)=3 cannot be read from the image; extrapolation suggests roughly x≈7, conditional on an unstated curve rule. Teacher must accept reasoned graphical estimates with stated uncertainty, not force an unsupported exact value."
       ],
       "SourceGraphDescription": "Read-only visual inspection of local PDF page 36: increasing concave-down curve begins at approximately (−2,0), passes approximately (−1,1), and continues through the displayed window near (6,2.8).",
-      "SourceMathVerificationStatus": "SOURCE_IDENTIFIED",
+      "SourceMathVerificationStatus": "GRAPH_SOURCE_VISUALLY_REVIEWED_PRECISION_LIMIT_ANNOTATED",
       "AllSourceSubpartsVerified": false,
       "ProposedExistingQuestionFamily": null,
       "EvaluationRoute": "ACCESSIBLE_GRAPH_INTERACTION_OR_TEACHER_REVIEW_REQUIRED",
       "HumanReviewRequired": true,
       "CapabilityStatus": "BLOCKED_BY_EXACT_GRAPH_ROOT_UNVERIFIED",
       "DeliveryStatus": "NOT_YET_IMPLEMENTED",
-      "SemanticParityStatus": "SOURCE_GRAPH_52_PART_B_TEACHER_QUALIFIED_UNRESOLVED_NOT_CERTIFIED",
+      "SemanticParityStatus": "FIRST_PARTY_GRAPH_ASSESSMENT_AUTHORED_SOURCE_EXACT_PARITY_OPEN",
       "Tests": "WRITTEN_NOT_RUN",
       "FirstPartyStudentPracticeTaskNumber": 52,
       "StudentPracticeAuthoringStatus": "FIRST_PARTY_CANDIDATE_NOT_SOURCE_PARITY_CERTIFIED",
@@ -1398,7 +1398,9 @@
       "OriginalGraphValueAtMinusOne": "APPROX_1",
       "OriginalGraphFEquals3ExactInput": "NOT_UNAMBIGUOUS_WITHIN_SOURCE_WINDOW",
       "FirstPartyTeachingReplacementMath": "y=sqrt(x+2); f(-1)=1, f(7)=3, applies only to the independent graph",
-      "OriginalGraphImageVisualParityCertified": false
+      "OriginalGraphImageVisualParityCertified": false,
+      "OriginalSourcePrecisionLimit": "Exact original x when f(x)=3 cannot be read from bounded source image",
+      "FirstPartyTeachingAnswer": "y=sqrt(x+2) has f(-1)=1 and f(7)=3; not exact original-source claim"
     },
     {
       "SourceElementId": "G12-U01-L01-EXERCISE053",
@@ -2496,5 +2498,8 @@
   "OriginalGraphExerciseSkillEvidenceCount": 19,
   "OriginalGraph52SpecialUnresolved": true,
   "OriginalSourceNumberedMathQuestionsReviewed": 92,
-  "FirstPartyGraphVisualSkillCandidatesCount": 20
+  "FirstPartyGraphVisualSkillCandidatesCount": 20,
+  "OriginalSourceNamedExerciseAnchorsSourceReviewed": 92,
+  "OriginalSourceExercise52SourceInterpretationReviewed": true,
+  "OriginalSourceExercise52ExactRootVerified": false
 }

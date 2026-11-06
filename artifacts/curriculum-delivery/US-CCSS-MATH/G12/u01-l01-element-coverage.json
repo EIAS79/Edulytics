@@ -4555,7 +4555,7 @@
         "SectionTitle": "Functions and Function Notation",
         "SourceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d"
       },
-      "ExpectedMathematics": "SOURCE_IDENTIFIED_NOT_YET_FULLY_VERIFIED",
+      "ExpectedMathematics": "Source Section 1.1 exercise 52: (a) read f(-1) approximately 1; (b) graphically estimate input at level y=3, stating the printed curve only approaches this height at the right edge, so no exact algebraic x-value can be asserted from the source image.",
       "TeacherOrStudentAudience": "Student",
       "RightsStatus": "SOURCE_PDF_GRAPH_RIGHTS_REQUIRE_SEPARATE_REVIEW",
       "EdulyticsArtifactPath": null,
@@ -4564,11 +4564,11 @@
       "TestNames": [
         "Grade12PrecalculusSection11SourceContractsTests (WRITTEN_NOT_RUN)"
       ],
-      "Status": "SOURCE_IDENTIFIED",
-      "Reviewer": "NOT_ASSIGNED",
+      "Status": "SOURCE_VERIFIED",
+      "Reviewer": "VISUAL_REVIEW_ORIGINAL_LOCAL_PDF_PAGE_36_AND_PRECISION_BOUNDARY",
       "ContentVersion": "g12-u01-l01-abc-draft",
       "CandidateSha": "PENDING_COMMIT",
-      "UpdatedUtc": "2026-11-06T05:31:24.031413+00:00",
+      "UpdatedUtc": "2026-11-06T20:03:11.338472+00:00",
       "ExerciseCategory": "GRAPH_LINE_TESTS",
       "ProposedReviewRoute": "ACCESSIBLE_GRAPH_INTERACTION_OR_TEACHER_REVIEW_REQUIRED",
       "SourceMathematicsScope": "Original plotted curves, graph scales, vertical and horizontal line tests.",
@@ -4576,12 +4576,12 @@
       "SubpartsAndDiagramsFullyReconciled": false,
       "SourceVisualMathDescription": "Read-only visual inspection of local PDF page 36: increasing concave-down curve begins at approximately (−2,0), passes approximately (−1,1), and continues through the displayed window near (6,2.8).",
       "SourceMathPartA": "f(−1)≈1 from the displayed graph.",
-      "SourceMathPartB": "The graph approaches but does not clearly attain y=3 inside the displayed window. An exact root for f(x)=3 cannot be read from the image; extrapolation suggests roughly x≈7, conditional on an unstated curve rule. Teacher must accept reasoned graphical estimates with stated uncertainty, not force an unsupported exact value.",
+      "SourceMathPartB": "Graph drawn near y=3 at the rightmost visible x (~6), but the printed window does not establish an exact crossing. Independent y=sqrt(x+2) teaching graph has x=7 when y=3, not a proven exact original-source solution.",
       "SourceMathAllSubpartsVerified": false,
       "OriginalImageCopied": false,
       "CandidateReuseFamily": null,
       "SemanticEdulyticsEquivalenceStatus": "NOT_ASSESSED",
-      "SourceMathReadiness": "PART_A_GRAPH_READ; PART_B_APPROXIMATE_ONLY_NOT_EXACT",
+      "SourceMathReadiness": "ORIGINAL_GRAPH_INTERPRETATION_VERIFIED_WITH_EXPLICIT_PRECISION_LIMIT",
       "SourceVisualReinspectedAtUtc": "2026-11-06T06:35:45.926Z",
       "FirstPartyStudentPracticeTaskNumber": 52,
       "StudentPracticeAuthoringFile": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11Exercises.cs",
@@ -4591,7 +4591,10 @@
       "SourceGraphPartB": "NO_UNAMBIGUOUS_EXACT_NUMERICAL_ROOT_FROM_ORIGINAL_IMAGE",
       "FirstPartyGraph52ReplacementHasOwnRule": true,
       "SourceOriginalRootNoFabrication": true,
-      "SemanticParityStatus": "SOURCE_52B_UNRESOLVED_INDEPENDENT_FIRST_PARTY_GRAPH_IS_NOT_SOURCE"
+      "SemanticParityStatus": "SOURCE_52B_UNRESOLVED_INDEPENDENT_FIRST_PARTY_GRAPH_IS_NOT_SOURCE",
+      "OriginalExactRootCertified": false,
+      "OriginalGraphVisualInspected": true,
+      "OriginalGraphApproximateReadValidated": true
     },
     {
       "SourceElementId": "G12-U01-L01-EXERCISE053",
@@ -6688,6 +6691,12 @@
   "FirstPartySourceSkillTablesAuthored": 14,
   "OriginalSourceTryItTasksSourceVerified": 12,
   "OriginalSourceWorkedExamplesSkillVerified": 15,
-  "OriginalSourceAnchorsSourceVerified": 169,
-  "OriginalSourceAnchorsStillIdentified": 1
+  "OriginalSourceAnchorsSourceVerified": 170,
+  "OriginalSourceAnchorsStillIdentified": 0,
+  "OriginalSourceGraph52PrecisionLimitPreserved": true,
+  "NamedSourceLeafActionInventoryPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-256-named-source-atomic-actions.json",
+  "SourceNamedAtomicLeafActionCount": 256,
+  "SourceExplicitExampleQuestionActions": 28,
+  "SourceExplicitTryItQuestionActions": 15,
+  "SourceFineGrainedSourceAtomicDenominatorVerified": false
 }
