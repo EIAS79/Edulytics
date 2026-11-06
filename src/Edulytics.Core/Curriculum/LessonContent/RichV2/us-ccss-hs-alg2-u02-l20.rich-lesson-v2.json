@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l20-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L20",
+      "CultureCode": "en",
+      "Title": "Rational Equations (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate solutions to equations involving a single rational expression. Create simple equations involving a rational expression to solve a problem in context.",
+        "A contextual rational equation models average price with a fixed cost plus variable cost: C(n)=(200+5n)/n=5+200/n, n>0. To solve C=9, require n=50, then substitute back. Multiplying by n is legitimate only if n is nonzero.",
+        "Source activity 20.1: Notice and Wonder: Denominators and Solutions: What do you notice? What do you wonder? A: \\(\\frac{2x+5}{x} = \\frac{7x-5}{x}\\), \\(x=2\\) B: \\(2x+5 = 7x-5\\), \\(x=2\\) C: \\(\\frac{2x^2+3}{x+2} = \\frac{4x+1}{x+2}\\), \\(x=1\\) D: \\(2x^2+3=4x+1\\), \\(x=1\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 20.2: Rationalizing the Price of T-shirts: The school art club at a large high school is in charge of designing school T-shirts and getting them printed this year. A local business charges $35 to set up their T-shirt printing machine with the design and $4.25 in materials per T-shirt to print. Create an equation to represent the average cost \\(C(x)\\), in dollars, per T-shirt if \\(x\\) T-shirts are printed by this… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 20.3: Batting Averages: Attribution: Baseball Glove Ball Bat, by Max Pixel. Public Domain. Max Pixel. Source. Tyler is on a school baseball team and he has had 24 base hits out of 110 at bats this year. What is his current batting average? He wants to raise his batting average to .300. How many of the next consecutive at bats need to be base hits to raise his batting average to .300? Write and solve… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A local office supply store charges $18 to set up their business card printing machine with the design and $0.15 in materials per business card to print. Select all equations that could represent an expression for the average cost \\(A(x)\\) of printing a batch of \\(x\\) business cards. \\(A(x)=\\frac{18+x}{0.15}\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The school band is in charge of a new set of uniforms made with a new logo. A local business charges $140 to set up the logo with the design and $0.25 in materials per logo printed. The function \\(C(x)=\\frac{140+0.25x}{x}\\) represents the average cost per logo if \\(x\\) uniforms are printed by this business. What is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Two competing sports equipment suppliers sell footballs at different prices. Supplier A charges $85 in shipping, and charges $2.59 per football. Supplier B charges $50 shipping, and charges $4.29 per football. A school wants to buy 40 balls. Which supplier has the lowest average cost per ball? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: What is one point of intersection between the graphs of the functions \\(f(x)=(x + 6)(x+2)\\) and \\(g(x)=x+ 6\\)? \\((\\text-4,\\text-4)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The graph of a polynomial \\(f(x)=(5x-3)(x+4)(x+a)\\) has \\(x\\)-intercepts at -4, \\(\\frac35\\), and 6. What is the value of \\(a\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The function \\(f(x)=\\frac{3x-4}{x+6}\\) can be rewritten in the form \\(f(x)=3+\\frac{\\text-22}{x+6}\\). What is the end behavior of \\(y=f(x)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve 6+180/n=12 for n>0. Expected reasoning or answer: n=30.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solving rational price equations",
+          "Definition": "A contextual rational equation models average price with a fixed cost plus variable cost: C(n)=(200+5n)/n=5+200/n, n>0. To solve C=9, require n=50, then substitute back. Multiplying by n is legitimate only if n is nonzero.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A shirt run has fixed setup 200 and unit cost 5. How many shirts make average cost 9? Answer: 50 shirts, with n>0."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "5+200/n=9; 200/n=4; n=50."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solving rational price equations",
+          "Question": "A shirt run has fixed setup 200 and unit cost 5. How many shirts make average cost 9?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "5+200/n=9",
+            "200/n=4",
+            "n=50."
+          ],
+          "Answer": "50 shirts, with n>0.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve 6+180/n=12 for n>0.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "n=30.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Solving rational price equations",
+        "A contextual rational equation models average price with a fixed cost plus variable cost: C(n)=(200+5n)/n=5+200/n, n>0. To solve C=9, require n=50, then substitute back. Multiplying by n is legitimate only if n is nonzero.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
