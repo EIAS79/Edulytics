@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l16-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L16",
+      "CultureCode": "en",
+      "Title": "Heart Rates",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Collect and analyze data using a randomization distribution to compare 2 treatments.",
+        "To compare two treatment groups use a randomization distribution of the difference in measured outcomes, checking treatment allocation, group size, and how the comparison statistic is defined. A p-value measures extremeness under a null model, not probability that the null is true.",
+        "Source activity 16.1: Find Your Heart Rate: Find your heart rate. One way is to place your index and middle fingers on your neck just below the jaw to feel your heartbeat. Count the number of heartbeats you feel in 10 seconds. Multiply the value by 6 to find your heart rate in beats per minute (bpm). Attribution: Radial pulse, by United States Air Force. Public Domain. Wikimedia commons. Source. Write the value for your… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.2: The Counting Experiment: Does counting while exercising affect your heart rate? Let’s perform an experiment to find out. Your teacher will help divide you into two groups and lead the exercise. If you are selected to be in the group that will count during the exercise, count out loud together with your group while you do the exercise. If you are selected to be in the group that will remain silent… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.3: The Flapping Experiment: Does the way you do an exercise affect your heart rate? Let’s perform an experiment to find out. Your teacher will help divide you into two groups and lead the exercise. If you are selected to be in the group that will do jumping-jacks during the exercise, do the standard exercise using your arms and legs. If you are selected to be in the group that will only flap their arms,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.4: Analyzing the Heart Rates: Using the data for the increase in heart rates, find the mean for each group. Find the difference between the means for the two groups by subtracting the mean for the first group from the mean for the second group. What does a positive value mean? What does a negative value mean? Does the difference in means tell us that there is an effect on heart rate? If so, explain the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A scientist compares methane levels on Mars at several locations, in parts per billion, taken at 2 different times during the Martian day. The difference between the means of the methane levels for the two different times is -0.08 parts per billion. The scientist uses simulations to create a randomization distribution… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A biologist is studying the research question, “Do eggs from the common gull, a type of bird, take longer to hatch at 85 degrees Fahrenheit or at 87 degrees Fahrenheit?” They design an experiment in which they select 20 eggs and assign those eggs to 2 groups of 10 eggs each at random. The eggs in the first group are… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Technology required Diego rolls a standard number cube 10 times and adds the values to get a sum of 40. Is that unusually high? Priya simulates rolling the number cube 10 times on a computer and adds the values. She repeats that process 100 times and creates a histogram of the results. Based on the histogram, does 40… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Why do we use randomization distributions? To randomly assign groups in an experiment To determine how likely it is that you would arrive at a difference of means due to chance To randomly select a sample for use in an experiment To prove that the only way the difference could happen is due to the experimental… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which of these values would be most useful for determining whether the difference in means is likely due to the treatment? Explain your reasoning. interquartile range Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: A distribution is approximately normal with a mean of 70 and a standard deviation of 10. Match the interval with the approximate percentage of data that falls within that interval. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value? Expected reasoning or answer: 0.03.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Heart-rate experiment analysis",
+          "Definition": "To compare two treatment groups use a randomization distribution of the difference in measured outcomes, checking treatment allocation, group size, and how the comparison statistic is defined. A p-value measures extremeness under a null model, not probability that the null is true.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Treatment A has sample mean80 and B has sample mean76 beats/minute. What is observed A minus B difference? Answer: 4 beats per minute."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "80-76=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Heart-rate experiment analysis",
+          "Question": "Treatment A has sample mean80 and B has sample mean76 beats/minute. What is observed A minus B difference?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "80-76=4."
+          ],
+          "Answer": "4 beats per minute.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "0.03.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Heart-rate experiment analysis",
+        "To compare two treatment groups use a randomization distribution of the difference in measured outcomes, checking treatment allocation, group size, and how the comparison statistic is defined. A p-value measures extremeness under a null model, not probability that the null is true.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
