@@ -1,0 +1,412 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L15",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "4756976190eb65dd64000047a0a13407bea7aa1e2cb964596c16eba3d31728e5",
+    "teacher/index.html": "55227b245dbd34960e57508600ee2cac49c680dd0236a4090936c1ce3765b2fa",
+    "teacher/practice.html": "ed69b98715c856c3c3afdcbf8817cb23447275e1d7e1b4745a28104faba4aecf",
+    "student/index.html": "368228430f942be4283e981fd3e21757148963d53f4702ddacf34db60d78aae9",
+    "student/practice.html": "2bdc572616b4abdd0d9f0b27ec077715693017d1717ae4346a24b6ee671d088d"
+  },
+  "Goals": [
+    "Comprehend that for a polynomial $p(x)$, $(x-a)$ is a factor if $p(a)=0$ and, conversely, that $p(a)=0$ if $(x-a)$ is a factor.",
+    "Comprehend that for a polynomial $p(x)$ and a number $a$, the remainder on division by $(x - a)$ is $p(a)$."
+  ],
+  "ElementCount": 49,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-001",
+      "SourceSection": "15.1: Notice and Wonder: Division Leftovers",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-002",
+      "SourceSection": "15.1: Notice and Wonder: Division Leftovers",
+      "SourceExcerpt": "A. \\(330 = 33(10) + 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-003",
+      "SourceSection": "15.1: Notice and Wonder: Division Leftovers",
+      "SourceExcerpt": "B. \\(330 = 4(82) + 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-004",
+      "SourceSection": "15.1: Notice and Wonder: Division Leftovers",
+      "SourceExcerpt": "C. \\(330 = 5 (66) + 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-005",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "Consider the polynomial function \\(f(x)=x^4 - ux^3 + 24x^2 - 32x + 16\\) where \\(u\\) is an unknown real number. If \\(x-2\\) is a factor, what is the value of \\(u\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-006",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "Here are some diagrams that show the same third-degree polynomial, \\(P(x) = 2x^3+5x^2+x+10\\), divided by a linear factor and by a quadratic factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-007",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "\\(\\dfrac{P(x)}{x+3}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-008",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "\\(\\dfrac{P(x)}{x^2-x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-009",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "What is the remainder of each of these divisions?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-010",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "For each division, how does the degree of the remainder compare to the degree of the divisor?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-011",
+      "SourceSection": "15.2: The Unknown Coefficient",
+      "SourceExcerpt": "Could the remainder ever have the same degree as the divisor, or a higher degree? Give an example to show that this is possible, or explain why it is not possible.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-012",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(A(x) = 6x^2 - 7x - 5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-013",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(B(x) = 3 x^2 + 15 x - 42\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-014",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(C(x) = 2x^3 + 13x^2 + 16x + 5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-015",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(D(x) = 3x^3 - 2x^2 - 15x + 14\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-016",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(E(x) = 8x^4 - 41x^3 - 18x^2 + 101x + 70\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-017",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(F(x) = x^4 + 5 x^3 - 27 x^2 - 101 x - 70\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-018",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Which of these polynomials could have \\((x-2)\\) as a factor?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-019",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Explain how you know \\((x-2)\\) is not a factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-020",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "If you have not already done so, divide the polynomial by \\((x-2)\\). What is the remainder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-021",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Select one of the polynomials that you said doesn’t have \\((x-2)\\) as a factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-022",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "List the remainders for each of the polynomials when divided by \\((x-2)\\). How do these values compare to the value of the functions at \\(x=2\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-023",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "When we use long division to divide 1573 by 12, we get a remainder of 1, so \\(1573 = 12(131) + 1\\). When we divide by 11 instead, we get a remainder of 0, so \\(1573 = 11(143)\\). A remainder of 0 means that 11 is a factor of 1573. The same…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-024",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2+4x+3 \\\\ x+1 \\enclose{longdiv}{x^3+5x^2+7x+3} \\\\ \\underline{\\text-x^3-x^2} \\phantom{+7x+333} \\\\ 4x^2+7x \\phantom{+33}\\\\ \\underline{\\text-4x^2-4x} \\phantom{+33} \\\\ 3x+3 \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-025",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "So \\((x+1)\\) is a factor of \\(x^3 + 5x^2 + 7x + 3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-026",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Earlier we learned that if \\((x-a)\\) is a factor of a polynomial \\(p(x)\\), then \\(p(a)=0\\), meaning \\(a\\) is a zero of the function. It turns out that the converse is also true: if \\(a\\) is a zero, then \\((x-a)\\) is a factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-027",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "To see that this is true, let’s think about what we know if we have a polynomial \\(p(x)\\) with a known zero at \\(x=a\\). If we divide \\(p(x)\\) by the linear factor \\((x-a)\\), then \\(p(x) = (x-a)q(x)+r\\), where \\(r\\) is the remainder and…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-028",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "\\(\\displaystyle p(a) = (a-a)q(x)+r \\\\ p(a)=r\\\\ 0=r\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-029",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Which means that \\(p(x) = (x-a)q(x)\\). So, if \\(a\\) is a zero of a polynomial, then \\((x-a)\\) must be a factor of \\(p(x)\\). Now we know that if we start with a linear factor of a polynomial, then we know one of the zeros of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-030",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "Lastly, even if \\(a\\) is not a zero of \\(p\\), we can figure out what the remainder will be if we divide \\(p(x)\\) by \\((x-a)\\), without having to do any division. If \\(p(x) = (x-a)q(x)+r\\), then \\(p(a)=(a-a)q(x)+r\\), so \\(p(a)=r\\). So the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-031",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "How the outputs of a function change as we look at input values further and further from 0.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-032",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "This function shows different end behavior in the positive and negative directions. In the positive direction the values get larger and larger. In the negative direction the values get closer and closer to -3.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-ACTIVITY-033",
+      "SourceSection": "15.3: A Study of Remainders",
+      "SourceExcerpt": "The power to which a factor occurs in the factored form of a polynomial. For example, in the polynomial \\((x-1)^2(x+3)\\), the factor \\(x-1\\) has multiplicity 2 and the factor \\(x+3\\) has multiplicity 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "For the polynomial function \\(f(x)=x^3-2x^2-5x+6\\), we have \\(f(0)=6, f(2)=\\text-4, f(\\text-2)=0, f(3)=0,f(\\text-1)=8, f(1)=0\\). Rewrite \\(f(x)\\) as a product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Select all the polynomials that have \\((x-4)\\) as a factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x^3 + 8x^2 + 19x + 12\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x^3+6x + 5x - 12\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Write a polynomial function, \\(p(x)\\), with degree 3 that has \\(p(7) = 0\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Long division was used here to divide the polynomial function \\(p(x)=x^3+7x^2-20x-110\\) by \\((x-5)\\) and to divide it by \\((x+5)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2+12x+40 \\\\ x-5 \\enclose{longdiv}{x^3+7x^2-20x-110} \\\\ \\underline{-x^3+5x^2} \\phantom{-20x-110} \\\\ 12x^2-20x \\phantom{-110}\\\\ \\underline{-12x^2+60x} \\phantom{-110} \\\\ 40x-110 \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2+2x-30 \\\\ x+5 \\enclose{longdiv}{x^3+7x^2-20x-110} \\\\ \\underline{-x^3-5x^2} \\phantom{-20x-110} \\\\ 2x^2-20x \\phantom{-110}\\\\ \\underline{-2x^2-10x} \\phantom{-110} \\\\ \\text-30x-110 \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What is \\(p(\\text-5)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-010",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Which polynomial function has zeros when \\(x=5,\\frac23,\\text-7\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x+5)(2x+3)(x-7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x+5)(3x+2)(x-7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x-5)(2x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x-5)(3x-2)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The polynomial function \\(q(x)=3x^4+8x^3-13x^2-22x+24\\) has known factors \\((x+3)\\) and \\((x+2)\\). Rewrite \\(q(x)\\) as the product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L15-PRACTICE-016",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "We know these things about a polynomial function \\(f(x)\\): it has degree 3, the leading coefficient is negative, and it has zeros at \\(x=\\text-5,\\text-1, 3\\). Sketch a graph of \\(f(x)\\) given this information.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}
