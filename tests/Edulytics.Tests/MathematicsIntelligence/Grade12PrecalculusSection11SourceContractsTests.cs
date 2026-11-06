@@ -367,7 +367,11 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
             figures.Select(x => x.OriginalFigureOrdinal));
         Assert.All(figures, x =>
             Assert.False(string.IsNullOrWhiteSpace(x.FirstPartyAlternative)));
-        Assert.Equal(4, figures.Count(x => x.AddedDrawing is not null));
+        Assert.Equal(5, figures.Count(x => x.AddedDrawing is not null));
+        Assert.Contains("three different inputs", figures.Single(x =>
+            x.OriginalFigureOrdinal == 15).FirstPartyAlternative);
+        Assert.Contains("x=-2,0,2", figures.Single(x =>
+            x.OriginalFigureOrdinal == 15).AddedDrawing!.Accessibility.Description);
         Assert.Contains("circle", figures.Single(x =>
             x.OriginalFigureOrdinal == 13).Topic, StringComparison.OrdinalIgnoreCase);
         Assert.Contains("IS a function", figures.Single(x =>

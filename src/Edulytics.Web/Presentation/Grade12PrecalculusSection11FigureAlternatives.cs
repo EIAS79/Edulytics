@@ -119,10 +119,24 @@ public static class Grade12PrecalculusSection11FigureAlternatives
             "this relation IS a function, as required by the original Try It 11 skill.",
             null,Grade12PrecalculusSection11ToolkitGraphs.All
                 .Single(family => family.Title == "Absolute value y=|x|").Graph),
-        new(15,"Horizontal-line test of injectivity",
-            "On first-party y=x², horizontal y=4 meets x=-2 and x=2. " +
-            "Thus it is a function but not one-to-one over all real inputs.",
-            null,Grade12PrecalculusSection11Visuals.Build()[0])
+        new(15,"Horizontal-line test with three repeated outputs",
+            "The original source illustrates that a horizontal line can meet " +
+            "a function curve at two or even three different inputs. " +
+            "In this independent cubic y=x³−4x, the horizontal level y=0 " +
+            "meets x=−2, x=0 and x=2, so the function is not one-to-one.",
+            null,new FunctionGraphVisualSpec(
+                Window(-3m,3m,-6m,6m),
+                new MathematicalCurveSpec("g12-s11-fig15-three-horizontal-roots",
+                    MathematicalCurveKind.Polynomial,[0m,-4m,0m,1m],"y=x³−4x"),
+                [new MathematicalPoint(-2m,0m,"(-2,0)"),
+                 new MathematicalPoint(0m,0m,"(0,0)"),
+                 new MathematicalPoint(2m,0m,"(2,0)")],
+                new MathematicalVisualAccessibility(
+                    "Continuous cubic is a function but not one-to-one",
+                    "The cubic graph y=x cubed minus four x passes the vertical-line " +
+                    "test, but horizontal y=0 crosses three times at x=-2,0,2. " +
+                    "This recreates the source's three-intersection skill without " +
+                    "copying source curve artwork.")))
     ];
 
     public static Figure? Find(int originalFigure) =>
