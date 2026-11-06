@@ -1,0 +1,88 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L08",
+  "LearningGoals": [
+    "Compare and contrast (orally) the end behavior of polynomials of even and odd degree.",
+    "Generalize about end behavior based on specific functions and calculations.",
+    "Identify end behavior of polynomial functions from equations."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSA-APR.B.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-IF.C.7.C",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Describe the end behaviour of f(x)=2x^4-3x+1.",
+    "Steps": [
+      "Highest power is even and leading coefficient positive",
+      "term 2x^4 dominates as |x| grows."
+    ],
+    "Answer": "f(x) tends to +infinity as x tends to either +infinity or -infinity."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "8.1: Notice and Wonder: A Different View",
+      "8.2: Polynomial End Behavior",
+      "8.3: Two Polynomial Equations"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Describe both ends of 5x^3-x^2.",
+    "Expected": "Left -infinity, right +infinity.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u02-l08-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l08.rich-lesson-v2.json"
+}

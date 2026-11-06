@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L08",
+      "CultureCode": "en",
+      "Title": "End Behavior (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Compare and contrast (orally) the end behavior of polynomials of even and odd degree. Generalize about end behavior based on specific functions and calculations. Identify end behavior of polynomial functions from equations.",
+        "For large absolute x, the leading term dominates a polynomial. A positive even-degree leading term rises at both ends; positive odd-degree is negative on the far left and positive on the far right. The lower degree terms do not change this eventual sign pattern.",
+        "Source activity 8.1: Notice and Wonder: A Different View: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: Polynomial End Behavior: For your assigned polynomial, complete the column for the different values of \\(x\\). Discuss with your group what you notice. Sketch what you think the end behavior of your polynomial looks like, then check your work using graphing technology. Mai is studying the function \\(p(x) = \\text-\\frac{1}{100}x^3 + 25,\\!422x^2 + 8x + 26\\). She makes a table of values for \\(p\\) with \\(x… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Two Polynomial Equations: Consider the polynomial \\(y=2x^5 - 5x^4 - 30x^3 + 5x^2 + 88x + 60\\). Identify the degree of the polynomial. Which of the 6 terms, \\(2x^5\\), \\(5x^4\\), \\(30x^3\\), \\(5x^2\\), \\(88x\\), or \\(60\\), is greatest when: Describe the end behavior of the polynomial. We know that if the expression for a polynomial function \\(f\\) written in factored form has the factor \\((x-a)\\), then \\(a\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Match each polynomial with its end behavior. Some end behavior options may not have a matching polynomial. \\(f(x)=2x^3+3x^4+x^2-1\\) As \\(x\\) gets larger and larger in either the positive or negative direction, \\(f(x)\\) gets larger and larger in the positive direction. As \\(x\\) gets larger and larger in the positive… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which polynomial function gets larger and larger in the negative direction as \\(x\\) gets larger and larger in the negative direction? \\(f(x) = 5x^2 - 2x + 1\\) \\(f(x) = 6x^3 + 4x^2 -15x + 32\\) \\(f(x) = 7x^4 - 2x^3 + 3x^2 + 8x - 10\\) \\(f(x) = 8x^6 + 1\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The graph of a polynomial function \\(f\\) is shown. Which statement about the polynomial is true? The degree of the polynomial is even. The degree of the polynomial is odd. The constant term of the polynomial is even. The constant term of the polynomial is odd. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Andre wants to make an open-top box by cutting out corners of a 22 inch by 28 inch piece of poster board and then folding up the sides. The volume \\(V(x)\\) in cubic inches of the open-top box is a function of the side length \\(x\\) in inches of the square cutouts. Write an expression for \\(V(x)\\). What is the volume of… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: For each polynomial function, rewrite the polynomial in standard form. Then state its degree and constant term. \\(f(x)=(3x+1)(x+2)(x-3)\\) \\(g(x)=\\text-2(3x+1)(x+2)(x-3)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Kiran wrote \\(f(x)=(x-3)(x-7)\\) as an example of a function whose graph has \\(x\\)-intercepts at \\(x=\\text-3,\\text-7\\). What was his mistake? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: A polynomial function, \\(f(x)\\), has \\(x\\)-intercepts at \\((\\text-6, 0)\\) and \\((2, 0)\\). What is one possible factor of \\(f(x)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Describe both ends of 5x^3-x^2. Expected reasoning or answer: Left -infinity, right +infinity.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "End behaviour by parity",
+          "Definition": "For large absolute x, the leading term dominates a polynomial. A positive even-degree leading term rises at both ends; positive odd-degree is negative on the far left and positive on the far right. The lower degree terms do not change this eventual sign pattern.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Describe the end behaviour of f(x)=2x^4-3x+1. Answer: f(x) tends to +infinity as x tends to either +infinity or -infinity."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Highest power is even and leading coefficient positive; term 2x^4 dominates as |x| grows."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "End behaviour by parity",
+          "Question": "Describe the end behaviour of f(x)=2x^4-3x+1.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Highest power is even and leading coefficient positive",
+            "term 2x^4 dominates as |x| grows."
+          ],
+          "Answer": "f(x) tends to +infinity as x tends to either +infinity or -infinity.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Describe both ends of 5x^3-x^2.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Left -infinity, right +infinity.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "End behaviour by parity",
+        "For large absolute x, the leading term dominates a polynomial. A positive even-degree leading term rises at both ends; positive odd-degree is negative on the far left and positive on the far right. The lower degree terms do not change this eventual sign pattern.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
