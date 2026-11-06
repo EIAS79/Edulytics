@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l10-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L10",
+      "CultureCode": "en",
+      "Title": "Multiplicity",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend the effect that the multiplicity of factors has on the shape of the graph of a polynomial function. Use zeros and multiplicities to create a rough graph of a polynomial function given in factored form.",
+        "If a factored polynomial contains (x-a)^m, the root a has multiplicity m. At an odd-multiplicity real root the sign generally changes and the curve crosses the axis; at even multiplicity the graph touches and turns without a sign change. Leading sign and total degree govern end behaviour.",
+        "Source activity 10.1: Notice and Wonder: Duplicate Factors: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.2: Sketching Polynomials: Write the degree, all zeros, and complete the sentence about the end behavior. Sketch a possible graph. Check your sketch using graphing technology. Pause here for your teacher to check your work. For polynomials \\(A\\)–\\(F\\): Create a polynomial with degree greater than 2 and less than 8 and write the equation in the space given. Trade papers with a partner, then fill out the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.3: Using Knowledge of Zeros: Sketch a graph for a polynomial function \\(y=f(x)\\) that has 3 different zeros and \\(f(x)\\ge0\\) for all values of \\(x\\). What is the smallest degree the polynomial could have? What is a possible equation for the polynomial? Use graphing technology to see if your equation matches your sketch. What is a possible equation of a polynomial function that has degree 5 but whose graph… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Draw a rough sketch of the graph of \\(g(x)=(x-3)(x+1)(7x-2)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Draw a rough sketch of the graph of \\(f(x)=(x+1)^2(x-4)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Technology required. Predict the end behavior of each polynomial function, then check your prediction using technology. \\(A(x) = (x + 3)(x - 4)(3x - 7)(4x - 3)\\) \\(B(x) = (3 - x)^2(6 - x)\\) \\(C(x) = \\text-(4 - 3x)(x^4)\\) \\(D(x) = (6 - x)^6\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which term can be added to the polynomial expression \\(5x^{7}-6x^{6}+4x^4-4x^2\\) to make it into a 10th degree polynomial?​​ Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: \\(f(x)=(x+1)(x-6)\\) and \\(g(x)=2(x+1)(x-6)\\). The graphs of each are shown. Which graph represents which polynomial function? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: State the degree and end behavior of \\(f(x)=8x^3+2x^4-5x^2+9\\). Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The graph of a polynomial function \\(f\\) is shown. Select all the true statements about the polynomial. The degree of the polynomial is even. The degree of the polynomial is odd. The leading coefficient is positive. The leading coefficient is negative. The constant term of the polynomial is positive. The constant term… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For f(x)=-(x+3)^2(x-4), identify touch/cross roots. Expected reasoning or answer: -3 touches; 4 crosses.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Root multiplicity",
+          "Definition": "If a factored polynomial contains (x-a)^m, the root a has multiplicity m. At an odd-multiplicity real root the sign generally changes and the curve crosses the axis; at even multiplicity the graph touches and turns without a sign change. Leading sign and total degree govern end behaviour.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Analyse zeros and crossing for f(x)=(x-1)^2(x+2). Answer: Roots 1 (touch), -2 (cross); left down, right up."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "At x=1 exponent2 even so touches; at x=-2 exponent1 odd so crosses; degree 3 and leading positive."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Root multiplicity",
+          "Question": "Analyse zeros and crossing for f(x)=(x-1)^2(x+2).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "At x=1 exponent2 even so touches",
+            "at x=-2 exponent1 odd so crosses",
+            "degree 3 and leading positive."
+          ],
+          "Answer": "Roots 1 (touch), -2 (cross); left down, right up.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For f(x)=-(x+3)^2(x-4), identify touch/cross roots.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-3 touches; 4 crosses.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Root multiplicity",
+        "If a factored polynomial contains (x-a)^m, the root a has multiplicity m. At an odd-multiplicity real root the sign generally changes and the curve crosses the axis; at even multiplicity the graph touches and turns without a sign change. Leading sign and total degree govern end behaviour.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
