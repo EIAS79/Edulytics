@@ -1,0 +1,276 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L03",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "75135ee4dcf755d6204fbbe00fcfaf13297465ea4166ea80bfdca42e559538db",
+    "teacher/index.html": "a3a3beaa4371ffe0fcf1bef0110b6a4a9b2fe7aaa12533ace58d8d667a3a13da",
+    "teacher/practice.html": "9f5a5a4984858d1e3e6f05762eb4fbb42897cae315519b75bb2fa4a5da49a089",
+    "student/index.html": "e6b9867be6cd0f815e38cd26db928e2c042e6f57199662bd39e32b699de7add3",
+    "student/practice.html": "e0dbbab579e99fe0b0f8bd3ac4fb9ecbfcef536bc4df30fe83b5040f7e86e8d1"
+  },
+  "Goals": [
+    "Create an equation to represent the vertical and horizontal translations needed to move one graph to another.",
+    "Describe the effect on a graph by replacing $f(x)$ with $f(x)+k$ and $f(x+k)$."
+  ],
+  "ElementCount": 32,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-001",
+      "SourceSection": "3.1: Moving a Graph",
+      "SourceExcerpt": "How can we translate the graph of \\(A\\) to match one of the other graphs?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-002",
+      "SourceSection": "3.2: New Hours for the Kitchen",
+      "SourceExcerpt": "Remember the bakery with the thermostat set to \\(65^\\circ \\text{F}\\)? At 5:00 a.m., the temperature in the kitchen rises to \\(85^\\circ \\text{F}\\) due to the ovens and other kitchen equipment being used until they are turned off at 10:00…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-003",
+      "SourceSection": "3.2: New Hours for the Kitchen",
+      "SourceExcerpt": "Andre thinks, “When the bakery starts baking 2 hours earlier, that means I need to subtract 2 from \\(x\\) and that \\(G(x)=H(x-2)\\).” How could you help Andre understand the error in his thinking?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-004",
+      "SourceSection": "3.2: New Hours for the Kitchen",
+      "SourceExcerpt": "The graph of \\(F\\) shows the temperatures after a change to the thermostat settings. What did the owner do?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-005",
+      "SourceSection": "3.2: New Hours for the Kitchen",
+      "SourceExcerpt": "Write an expression for \\(F\\) in terms of the original baking schedule, \\(H\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-006",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "A piece of meat is taken out of the freezer to thaw. The data points show its temperature \\(M\\), in degrees Fahrenheit, \\(t\\) hours after it was taken out. The graph \\(M=G(t)\\), where \\(G(t) = \\text-62(0.85)^t\\), models the shape of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-007",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Jada thinks changing the equation to \\(J(t)=\\text-62(0.85)^t + 75.1\\) makes a good model for the data. Noah thinks \\(N(t) = \\text-62(0.85)^{(t+1)}+68\\) is better.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-008",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Without graphing, describe how Jada and Noah each transformed the graph of \\(G\\) to make their new functions to fit the data.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-009",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Use technology to graph the data, \\(J\\) and \\(N\\), on the same axes.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-010",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Whose function do you think best fits the data? Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-011",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Elena excludes the first data point and chooses a linear model, \\(E(t)=21.32+5.06t\\), to fit the remaining data.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-012",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "How well does Elena’s model fit the data?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-013",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Is Elena’s idea to exclude the first data point a good one? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-014",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Remember the pumpkin catapult? The function \\(h\\) gives the height \\(h(t)\\), in feet, of the pumpkin above the ground \\(t\\) seconds after launch. Now suppose \\(k\\) represents the height \\(k(t)\\), in feet, of the pumpkin if it were launched…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-015",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Since we know the pumpkin's height \\(k(t)\\) at time \\(t\\) is the same as the height \\(h(t)\\) of the original pumpkin at time \\(t-5\\), we can write \\(k\\) in terms of \\(h\\) as \\(k(t)=h(t-5)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-ACTIVITY-016",
+      "SourceSection": "3.3: Thawing Meat",
+      "SourceExcerpt": "Suppose there was a third function, \\(j\\), where \\(j(t)=h(t+4)\\). Even without graphing \\(j\\), we know that the graph reaches a maximum height of 66 feet. To evaluate \\(j(t)\\) we evaluate \\(h\\) at the input \\(t+4\\), which is zero when \\(t…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Here is a graph of \\(f\\) and a graph of \\(g\\). Express \\(g\\) in terms of \\(f\\) using function notation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Tyler leaves his house at 7:00 a.m. to go to school. He walks for 20 minutes until he reaches his school, 1 mile from his house. The function \\(d\\) gives the distance \\(d(t)\\), in miles, of Tyler from his house \\(t\\) minutes after 7:00…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Explain what \\(d(5)=0.25\\) means in this context.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "On snowy days, Tyler’s school has a 2 hour delayed start time (120 minutes). The function \\(s\\) gives Tyler’s distance \\(s(t)\\), in miles, from home \\(t\\) minutes after 7:00 a.m. with a 120 minute delayed start time. If \\(d(5)=0.25\\), then…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Write an expression for \\(s\\) in terms of \\(d\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "A new function, \\(n\\), is defined as \\(n(t)=d(t + 60)\\) explain what this means in terms of Tyler’s distance from school.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Technology required. Here are the data for the population \\(f\\), in thousands, of a city \\(d\\) decades after 1960 along with the graph of the function given by \\(f(d) = 25 \\boldcdot (1.19)^d\\). Elena thinks that shifting the graph of \\(f\\)…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "What functions define Elena's and Han's graphs?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Use graphing technology to graph Elena's and Han's proposed functions along with \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Which graph do you think fits the data better? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Here is a graph of \\(y = f(x+2)-1\\) for a function \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-012",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Sketch the graph of \\(y = f(x)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Describe how to transform the graph of \\(f\\) to the graph of \\(g\\):",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "using only translations",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-015",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "using a reflection and a translation",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L03-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Here is a graph of function \\(f\\) and a graph of function \\(g\\). Express \\(g\\) in terms of \\(f\\) using function notation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

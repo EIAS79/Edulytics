@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l03-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L03",
+      "CultureCode": "en",
+      "Title": "More Movement",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create an equation to represent the vertical and horizontal translations needed to move one graph to another. Describe the effect on a graph by replacing $f(x)$ with $f(x)+k$ and $f(x+k)$.",
+        "A model g(x)=f(x-h)+k shifts f right h and up k. A negative value of h or k reverses the direction; coordinates of identifiable features change consistently.",
+        "Source activity 3.1: Moving a Graph: How can we translate the graph of \\(A\\) to match one of the other graphs? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.2: New Hours for the Kitchen: Remember the bakery with the thermostat set to \\(65^\\circ \\text{F}\\)? At 5:00 a.m., the temperature in the kitchen rises to \\(85^\\circ \\text{F}\\) due to the ovens and other kitchen equipment being used until they are turned off at 10:00 a.m. When the owner decided to open 2 hours earlier, the baking schedule changed to match. Andre thinks, “When the bakery starts baking 2… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.3: Thawing Meat: A piece of meat is taken out of the freezer to thaw. The data points show its temperature \\(M\\), in degrees Fahrenheit, \\(t\\) hours after it was taken out. The graph \\(M=G(t)\\), where \\(G(t) = \\text-62(0.85)^t\\), models the shape of the data but is in the wrong position. Jada thinks changing the equation to \\(J(t)=\\text-62(0.85)^t + 75.1\\) makes a good model for the data. Noah… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here is a graph of \\(f\\) and a graph of \\(g\\). Express \\(g\\) in terms of \\(f\\) using function notation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Tyler leaves his house at 7:00 a.m. to go to school. He walks for 20 minutes until he reaches his school, 1 mile from his house. The function \\(d\\) gives the distance \\(d(t)\\), in miles, of Tyler from his house \\(t\\) minutes after 7:00 a.m. Explain what \\(d(5)=0.25\\) means in this context. On snowy days, Tyler’s… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Technology required. Here are the data for the population \\(f\\), in thousands, of a city \\(d\\) decades after 1960 along with the graph of the function given by \\(f(d) = 25 \\boldcdot (1.19)^d\\). Elena thinks that shifting the graph of \\(f\\) up by 50 will match the data. Han thinks that shifting the graph of \\(f\\) up by… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a graph of \\(y = f(x+2)-1\\) for a function \\(f\\). Sketch the graph of \\(y = f(x)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Describe how to transform the graph of \\(f\\) to the graph of \\(g\\): using only translations using a reflection and a translation Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is a graph of function \\(f\\) and a graph of function \\(g\\). Express \\(g\\) in terms of \\(f\\) using function notation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Describe y=(x-4)²+2 relative to y=x². Expected reasoning or answer: Right4 up2.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Combined translations",
+          "Definition": "A model g(x)=f(x-h)+k shifts f right h and up k. A negative value of h or k reverses the direction; coordinates of identifiable features change consistently.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Given f(x)=x², describe g(x)=(x+3)²-4. Answer: Vertex (-3,-4)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Replace input x with x+3: left3; subtract4: down4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Combined translations",
+          "Question": "Given f(x)=x², describe g(x)=(x+3)²-4.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Replace input x with x+3: left3",
+            "subtract4: down4."
+          ],
+          "Answer": "Vertex (-3,-4).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Describe y=(x-4)²+2 relative to y=x².",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Right4 up2.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Combined translations",
+        "A model g(x)=f(x-h)+k shifts f right h and up k. A negative value of h or k reverses the direction; coordinates of identifiable features change consistently.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
