@@ -1,0 +1,85 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l06-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L06",
+      "CultureCode": "en",
+      "Title": "Squares and Square Roots",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that the symbol $\\sqrt{x}$ denotes only the positive square root of $x$. Explain why equations of the form $x^2 = a$ can have two solutions, while equations of the form $\\sqrt{x} = a$ cannot have more than one solution.",
+        "sqrt(x) for x>=0 is nonnegative, but x^2=a>0 has two real solutions. Do not automatically add ± to the radical symbol.",
+        "Source activity 6.1: Math Talk: Four Squares: Find the solutions of each equation mentally. \\(x^2 = \\text{-}1\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.2: Finding Square Roots: Clare was adding \\(\\sqrt{4}\\) and \\(\\sqrt{9}\\), and at first she wrote \\(\\sqrt{4} + \\sqrt{9} = 2+3\\). But then she remembered that 2 and -2 both square to make 4, and that 3 and -3 both square to make 9. She wrote down all the possible combinations: 2 + 3 = 5 2 + (-3) = -1 (-2) + 3 = 1 (-2) + (-3) = -5 Then she wondered, “Which of these are the same as \\(\\sqrt{4} + \\sqrt{9}\\)?… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.3: One Solution or Two?: The graph of \\(b=\\sqrt{a}\\) is shown. Complete the table with the exact values and label the corresponding points on the graph with the exact values. Label the point on the graph that shows the solution to \\(\\sqrt{a} = 4\\). Label the point on the graph that shows the solution to \\(\\sqrt{a} = 5\\). Label the point on the graph that shows the solution to \\(\\sqrt{a} = \\sqrt{5}\\).… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all solutions to the equation \\(x^2=7\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Find the solution(s) to each equation, if there are any. \\(\\sqrt{x}=\\text-3\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: If \\(c\\) is a positive number, how many solutions does \\(x^2=c\\) have? Explain. If \\(c\\) is a positive number, how many solutions does \\(\\sqrt{x}=c\\) have? Explain. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Suppose that a friend missed class and never learned what \\(37^{\\frac13}\\) means. Use exponent rules your friend would already know to calculate \\((37^{\\frac13})^3\\). Explain why this means that \\(37^{\\frac13}\\) is the cube root of 37. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Evaluate \\(8^{\\frac53}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Write each expression without using exponents. \\(4^{\\text-\\frac32}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve u^2=36 and sqrt(v)=6. Expected reasoning or answer: u=±6; v=36.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Principal sqrt and two signed solutions",
+          "Definition": "sqrt(x) for x>=0 is nonnegative, but x^2=a>0 has two real solutions. Do not automatically add ± to the radical symbol.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve z^2=25 and sqrt(x)=5. Answer: z=±5, x=25"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Signed square roots z=±5; square equation sqrt(x)=5 to get x=25."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Principal sqrt and two signed solutions",
+          "Question": "Solve z^2=25 and sqrt(x)=5.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Signed square roots z=±5",
+            "square equation sqrt(x)=5 to get x=25."
+          ],
+          "Answer": "z=±5, x=25",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve u^2=36 and sqrt(v)=6.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "u=±6; v=36.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Principal sqrt and two signed solutions",
+        "sqrt(x) for x>=0 is nonnegative, but x^2=a>0 has two real solutions. Do not automatically add ± to the radical symbol.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

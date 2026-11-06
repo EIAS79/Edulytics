@@ -1,0 +1,62 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L06",
+  "LearningGoals": [
+    "Comprehend that the symbol $\\sqrt{x}$ denotes only the positive square root of $x$.",
+    "Explain why equations of the form $x^2 = a$ can have two solutions, while equations of the form $\\sqrt{x} = a$ cannot have more than one solution."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-REI.A.2",
+      "SortOrder": 1
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Solve z^2=25 and sqrt(x)=5.",
+    "Steps": [
+      "Signed square roots z=±5",
+      "square equation sqrt(x)=5 to get x=25."
+    ],
+    "Answer": "z=±5, x=25"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "6.1: Math Talk: Four Squares",
+      "6.2: Finding Square Roots",
+      "6.3: One Solution or Two?"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Solve u^2=36 and sqrt(v)=6.",
+    "Expected": "u=±6; v=36.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l06-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l06.rich-lesson-v2.json"
+}
