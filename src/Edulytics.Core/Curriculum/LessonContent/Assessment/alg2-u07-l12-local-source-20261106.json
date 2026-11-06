@@ -1,0 +1,62 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L12",
+  "LearningGoals": [
+    "Determine (in writing) an estimate for the population mean with a margin of error using sample means from random samples."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-IC.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-IC.B.4",
+      "SortOrder": 1
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A simple random sample has n=36, mean50, sample SD12. Estimate 95% interval using ±2s/sqrt n.",
+    "Steps": [
+      "SE≈12/6=2",
+      "margin≈4",
+      "interval50±4."
+    ],
+    "Answer": "Approximately [46,54]."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "12.1: Rolling Distribution",
+      "12.2: Rolling for Means",
+      "12.3: Margin of Error for Means"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+    "Expected": "[24,26].",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u07-l12-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l12.rich-lesson-v2.json"
+}

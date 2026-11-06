@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l12-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L12",
+      "CultureCode": "en",
+      "Title": "Estimating a Population Mean",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine (in writing) an estimate for the population mean with a margin of error using sample means from random samples.",
+        "A random sample mean estimates the population mean. An approximate 95% interval may use sample mean ±2s/sqrt(n) when conditions are met; genuine interpretation requires a random sample and attention to outliers.",
+        "Source activity 12.1: Rolling Distribution: In the next activity, you will roll a standard number cube 35 times. Draw a dot plot that shows the distribution of values you might expect for the rolls. Explain your reasoning. If you rolled the number cube one million times and found the mean of all the values, what do you expect for the mean? Explain your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.2: Rolling for Means: Roll your number cube applet 35 times, recording the values as you do so. Every 5 values, find the mean. Share your means with your group and create a dot plot of all the means from your group. What do you notice about the shape of the distribution of means? Using the dot plot of means, what do you think is a good estimate for the mean of all 140 rolls from your group? How… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.3: Margin of Error for Means: As with the means of sample proportions, the means of sample means are usually within 2 standard deviations of the population mean when there is a large sample size or when the population distribution is approximately normal. For each situation: Use the sample means to estimate the mean of the population. Find the standard deviation of the sample means. Use the standard… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Technology required The mean amount spent on daycare yearly by random samples of 10 families are listed. Use the values to estimate the mean amount spent on daycare yearly for the population, and provide a margin of error (round to the nearest dollar). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Technology required 25 random samples of 30 people each were measured for their daily water usage. The mean for each sample is included in the dot plot. Use the values to estimate the mean water usage for the population. What is the margin of error for this estimate based on these values? (Round to the nearest tenth… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Select all of the values for the population mean that would be plausible based on an estimate of 105 cm with a margin of error of 21 cm. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: A normal curve with a mean of 70 and a standard deviation of 20 is shown. Shade the region under the curve between the mean and one standard deviation greater than the mean. How much of the data falls within the shaded region? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Noah and Clare are studying the noise level, in decibels, outside of their school in the morning. They sample in 15 minute time periods in the morning to determine whether the noise level reaches 90 or more decibels. They each take a random sample to find the proportion of 15 minute time periods where the noise level… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Two activists are both interested in finding the proportion of people in town who are recycling. They each collect a random sample and use the proportion of people who recycle in the sample to run 200 simulations to determine a margin of error. The first activist claims the proportion of people in town who recycle is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: With n=100, mean25, sample SD5, find approximate 2-SE interval. Expected reasoning or answer: [24,26].",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Population mean estimation",
+          "Definition": "A random sample mean estimates the population mean. An approximate 95% interval may use sample mean ±2s/sqrt(n) when conditions are met; genuine interpretation requires a random sample and attention to outliers.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A simple random sample has n=36, mean50, sample SD12. Estimate 95% interval using ±2s/sqrt n. Answer: Approximately [46,54]."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "SE≈12/6=2; margin≈4; interval50±4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Population mean estimation",
+          "Question": "A simple random sample has n=36, mean50, sample SD12. Estimate 95% interval using ±2s/sqrt n.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "SE≈12/6=2",
+            "margin≈4",
+            "interval50±4."
+          ],
+          "Answer": "Approximately [46,54].",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "[24,26].",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Population mean estimation",
+        "A random sample mean estimates the population mean. An approximate 95% interval may use sample mean ±2s/sqrt(n) when conditions are met; genuine interpretation requires a random sample and attention to outliers.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
