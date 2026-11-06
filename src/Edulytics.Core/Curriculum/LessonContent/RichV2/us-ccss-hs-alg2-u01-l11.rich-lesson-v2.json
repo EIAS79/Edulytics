@@ -1,0 +1,98 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l11-local-source-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L11",
+      "CultureCode": "en",
+      "Title": "Adding Up",
+      "ExplanationParagraphs": [
+        "Calculate short geometric sequence sums from contexts without requiring a formula, using exact arithmetic.",
+        "A sequence sum adds its terms; it is not another single term. For 1,2,4,8,16,32,64 the seven-term sum is 127, despite last term 64. For half the remainder at each stop, the covered fractions after two and four stops are 3/4 and 15/16; no finite number of stops reaches 1 exactly. For a triangular design whose sides are quadrupled at each step, S(0)=3, S(n)=3*4^n, while newly added triangles can follow a separate geometric sequence. Sum only through the specified number of terms.",
+        "Activity 11.1: Math Talk: Adding Terms: math source context — \\(\\frac 1 2 + \\frac 1 4\\) \\(\\frac 1 2 + \\frac 1 4 + \\frac 1 8\\) \\(\\frac 1 2 + \\frac 1 4 + \\frac 1 8 + \\frac 1 {16}\\) \\(\\frac 3 2 + \\frac 3 4 + \\frac 3 8 + \\frac 3 {16}\\). Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 11.2: Paper Trail: math source context — Tyler has a piece of paper and is sharing it with Elena, Clare, and Andre. He cuts the paper to create four equal pieces, then hands one piece each to the others and keeps one for himself. What fraction of the original piece of paper does each person have? Tyler then takes his remaining paper and does it again. He. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 11.3: A Threefold Design: math source context — Here is a geometric shape built in steps. Step 0 is an equilateral triangle. To go from Step 0 to Step 1, take every edge of Step 0 and replace its middle third with an outward-facing equilateral triangle. To go from Step 1 to Step 2, take every edge of Step 1 and replace its middle third with an outward-facing. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Cumulative Problem 1: source mathematics — Find the sum of the sequence: \\(\\frac 1 3 + \\frac 1 9\\) \\(\\frac 2 3 + \\frac 2 9\\) \\(\\frac 1 3 + \\frac 1 9 + \\frac{1}{27}\\) \\(\\frac 2 3 + \\frac 2 9 + \\frac{2}{27}\\) \\(\\frac 1 3 + \\frac 1 9 + \\frac{1}{27} + \\frac{1}{81}\\) \\(\\frac 2 3 + \\frac 2 9 + \\frac{2}{27} + \\frac{2}{81}\\). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 2: source mathematics — Priya is walking down a long hallway. She walks halfway and stops. Then, she walks half of the remaining distance, and stops again. She continues to stop every time she goes half of the remaining distance. What fraction of the length of the hallway will Priya have covered after. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 3: source mathematics — A geometric sequence \\(h\\) starts with 10, 5, . . . Explain how you would calculate the value of the 100th term.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 4: source mathematics — Here is a graph of sequence \\(r\\). Define \\(r\\) recursively using function notation.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 5: source mathematics — An unfolded piece of paper is 0.05 mm thick. Complete the table with the thickness of the piece of paper \\(T(n)\\) after it is folded in half \\(n\\) times. Define \\(T\\) for the \\(n^{\\text{th}}\\) term. What is a reasonable domain for the function \\(T\\)? Explain how you know.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 6: source mathematics — A piece of paper is 0.05 mm thick. Complete the table with the thickness of the paper \\(t(n)\\), in mm, after it has been folded \\(n\\) times. Does \\(t(0.5)\\) make sense? Explain how you know.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 7: source mathematics — An arithmetic sequence \\(a\\) starts 84, 77, . . . Define \\(a\\) recursively. Define \\(a\\) for the \\(n^{\\text{th}}\\) term.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 8: source mathematics — Here is a pattern of growing rectangles: Describe how the rectangle grows from Step 0 to Step 2. Write an equation for sequence \\(S\\), so that \\(S(n)\\) is the number of squares in Step \\(n\\). Is \\(S\\) a geometric sequence, an arithmetic sequence, or neither? Explain how you know.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "First-party independent cool-down: A seven-day sequence pays 2,4,8,16,32,64,128 dollars. Find the total amount, show the addition and explain how the result differs from the final daily payment. Answer key: Total 254 dollars; last payment 128 dollars.",
+        "Assessment boundary: digital exact numeric questions may reuse an existing compatible family only if semantics match; diagrams, card discussion and written justifications require teacher verification. Source activities are guidance, not proof an interactive simulator exists."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Finite sequence sum",
+          "Definition": "Add exactly the specified terms.",
+          "Rule": "S_N = a1+a2+...+aN.",
+          "Example": "1+2+4+8=15."
+        },
+        {
+          "Title": "Geometric fractions",
+          "Definition": "Repeatedly halve a remaining positive quantity.",
+          "Rule": "Covered proportion after n halves: 1-(1/2)^n.",
+          "Example": "After four stops: 15/16."
+        },
+        {
+          "Title": "Fractal geometric growth",
+          "Definition": "Counts and areas must be tracked separately.",
+          "Rule": "Initial 3 edges quadruple at each new subdivision step.",
+          "Example": "3,12,48 sides at steps 0,1,2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Seven-step doubling sum",
+          "Question": "How much is received if daily receipts double from 1 through seven days?",
+          "Method": "List terms and add.",
+          "Steps": [
+            "Terms are 1,2,4,8,16,32,64.",
+            "Sum first four:15; last three:112.",
+            "Total 127."
+          ],
+          "Answer": "127",
+          "Check": "A sum is not the final 64."
+        },
+        {
+          "Title": "Half-remaining walk",
+          "Question": "After four halfway segments, what fraction of a hallway has been covered?",
+          "Method": "Subtract remaining fraction from one.",
+          "Steps": [
+            "Remaining = (1/2)^4=1/16.",
+            "Covered=1-1/16."
+          ],
+          "Answer": "15/16",
+          "Check": "No finite n covers all of it under exact halving."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a sequence rule as context-free.",
+          "WhyWrong": "It can alter the index, initial term, units or learning target.",
+          "Correction": "State the beginning term, domain and original lesson model."
+        },
+        {
+          "Mistake": "Using a fixed common difference when the sequence is not arithmetic.",
+          "WhyWrong": "Differing consecutive differences invalidate the arithmetic formula.",
+          "Correction": "Calculate two or more differences or ratios before selecting a rule."
+        },
+        {
+          "Mistake": "Auto-grading graphs, card exchanges or manipulative proof from a number alone.",
+          "WhyWrong": "Numeric equality does not establish a correct diagram or explanation.",
+          "Correction": "Use a teacher rubric for visual and reasoning evidence."
+        }
+      ],
+      "SummaryPoints": [
+        "Calculate short geometric sequence sums from contexts without requiring a formula, using exact arithmetic.",
+        "A sequence sum adds its terms; it is not another single term. For 1,2,4,8,16,32,64 the seven-term sum is 127, despite last term 64. For half the remainder at each stop, the covered fractions after two and four stops are 3/4 and 15/16; no finite number of stops reaches 1 exactly. For a triangular design whose sides are ",
+        "Use current existing exact sequence families where genuinely compatible; leave unsupported questions teacher-reviewed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
