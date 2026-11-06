@@ -1,0 +1,52 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+  "SourceEdition": "Kendall Hunt Algebra 2 local archive (copyright 2019 footer)",
+  "SkillContracts": [
+    {
+      "SkillId": "sequences.core",
+      "QuestionFamilies": [
+        "sequences.core.geometric_nth_term",
+        "usccss.g11.alg2.u01.l02.paper_piece_count",
+        "usccss.g11.alg2.u01.l02.paper_piece_area"
+      ],
+      "AnswerTypes": [
+        "integer",
+        "exact_fraction"
+      ],
+      "Readiness": "WRITTEN_NOT_RUN",
+      "Forbidden": [
+        "irrelevant-arithmetic",
+        "unexplained-graph-auto-pass"
+      ]
+    }
+  ],
+  "TeacherReview": {
+    "Required": true,
+    "Tasks": [
+      "warm-up compare four growth patterns",
+      "paper cut-and-stack table with lengths and units",
+      "graph of count and area on integer domain",
+      "triangle subdivision pictures and interpretation",
+      "credit-card monthly growth with financial rounding",
+      "multiple valid geometric starting values"
+    ],
+    "ScoringRubric": [
+      "correct factor and recurrence",
+      "correct table and units",
+      "justified discrete graphs",
+      "explanation of preserved area"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "A board of area 96 square centimetres is divided into twice as many equal regions after each operation. From one region at step 0, what are the number and area of regions at step four? State both recursive rules and justify the total area.",
+    "Expected": "16 regions, area 6 square centimetres each, constant product 96.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "TeacherReviewRequired": true
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l02-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l02.rich-lesson-v2.json"
+}

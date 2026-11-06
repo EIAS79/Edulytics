@@ -65,6 +65,10 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g11.alg2.u01.l01.hanoi_moves",
             "usccss.g11.alg2.u01.l01.fibonacci_term",
             "usccss.g11.alg2.u01.l01.halving_fraction",
+            "usccss.g11.alg2.u01.l02.paper_piece_count",
+            "usccss.g11.alg2.u01.l02.paper_piece_area",
+            "usccss.g11.alg2.u01.l02.rational_geometric_term",
+            "usccss.g11.alg2.u01.l02.growth_factor",
             "geometry.polygons.interior_angle_sum",
             "geometry.polygons.missing_interior_angle",
             "geometry.polygons.regular_interior_angle",
@@ -908,6 +912,30 @@ public sealed class ExactSkillContractQuestionEngine
                 StringComparison.Ordinal);
         }
 
+        if (family == "usccss.g11.alg2.u01.l02.paper_piece_area")
+        {
+            if (!TryParseFraction(answer, out var n, out var d)) return false;
+            return parameters["cutCount"] is >= 0 and <= 8 &&
+                (long)n * (1 << parameters["cutCount"]) == (long)80 * d;
+        }
+
+        if (family == "usccss.g11.alg2.u01.l02.rational_geometric_term")
+        {
+            if (!TryParseFraction(answer, out var n, out var d)) return false;
+            var first=parameters["first"];var rn=parameters["ratioNumerator"];
+            var rd=parameters["ratioDenominator"];var term=parameters["term"];
+            return rd > 0 && term is >= 1 and <= 8 &&
+                (long)n * G11IntPow(rd,term-1)==
+                (long)d * first * G11IntPow(rn,term-1);
+        }
+
+        if (family == "usccss.g11.alg2.u01.l02.growth_factor")
+        {
+            if (!TryParseFraction(answer, out var n, out var d)) return false;
+            return parameters["previous"] != 0 &&
+                (long)n*parameters["previous"]==(long)d*parameters["next"];
+        }
+
         if (family == "usccss.g11.alg2.u01.l01.halving_fraction")
         {
             if (!TryParseFraction(answer, out var numerator, out var denominator)) return false;
@@ -1158,6 +1186,10 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g11.alg2.u01.l01.fibonacci_term" =>
                 parameters["n"] is >= 1 and <= 20 &&
                 value == G11FibonacciTerm(parameters["n"]),
+
+            "usccss.g11.alg2.u01.l02.paper_piece_count" =>
+                parameters["cutCount"] is >= 0 and <= 9 &&
+                value == (1 << parameters["cutCount"]),
 
             "sequences.core.arithmetic_nth_term" =>
                 parameters["n"] > 0 &&
@@ -3127,6 +3159,14 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildG11FibonacciTerm(random),
             "usccss.g11.alg2.u01.l01.halving_fraction" =>
                 BuildG11HalvingFraction(random),
+            "usccss.g11.alg2.u01.l02.paper_piece_count" =>
+                BuildG11PaperPieceCount(random),
+            "usccss.g11.alg2.u01.l02.paper_piece_area" =>
+                BuildG11PaperPieceArea(random),
+            "usccss.g11.alg2.u01.l02.rational_geometric_term" =>
+                BuildG11RationalGeometricTerm(random),
+            "usccss.g11.alg2.u01.l02.growth_factor" =>
+                BuildG11GeometricGrowthFactor(random),
             "sequences.core.arithmetic_nth_term" =>
                 BuildArithmeticSequenceNthTerm(random, scale),
             "sequences.core.geometric_nth_term" =>
@@ -3397,6 +3437,54 @@ public sealed class ExactSkillContractQuestionEngine
             ("percent", percent),
             ("quantity", quantity),
             ("direction", direction));
+    }
+
+    private static int G11IntPow(int value, int exponent)
+    {
+        var output=1;
+        for(var i=0;i<exponent;i++) output=checked(output*value);
+        return output;
+    }
+
+    private static ExactProblem BuildG11PaperPieceCount(Random random)
+    {
+        var cuts=random.Next(1,8);
+        return Problem("usccss.g11.alg2.u01.l02.paper_piece_count",
+            $"An 8-by-10-inch sheet is split into equal halves at each step. How many pieces exist after {cuts} cuts?",
+            "The count doubles after every cut. Start at one piece with zero cuts.",
+            AssessmentItemType.Numeric,("cutCount",cuts));
+    }
+
+    private static ExactProblem BuildG11PaperPieceArea(Random random)
+    {
+        var cuts=random.Next(1,7);
+        return Problem("usccss.g11.alg2.u01.l02.paper_piece_area",
+            $"A sheet has area 80 square inches. Every cut halves every existing equal piece. What is the exact area of each piece after {cuts} cuts? Give a reduced fraction if needed.",
+            "Conserve the total sheet area: 80 divided by 2^n pieces.",
+            AssessmentItemType.ShortAnswer,("cutCount",cuts));
+    }
+
+    private static ExactProblem BuildG11RationalGeometricTerm(Random random)
+    {
+        var variants=new (int N,int D)[]{(1,2),(1,10),(3,4),(2,1),(3,1),(4,1)};
+        var ratio=variants[random.Next(variants.Length)];
+        var first=random.Next(2,9);
+        var term=random.Next(3,6);
+        return Problem("usccss.g11.alg2.u01.l02.rational_geometric_term",
+            $"A geometric sequence has first term {first} and constant multiplier {ratio.N}/{ratio.D}. What is term {term}? Give an exact fraction or integer.",
+            "Multiply by the common ratio once for each move to a new term, preserving exact rational values.",
+            AssessmentItemType.ShortAnswer,("first",first),
+            ("ratioNumerator",ratio.N),("ratioDenominator",ratio.D),("term",term));
+    }
+
+    private static ExactProblem BuildG11GeometricGrowthFactor(Random random)
+    {
+        var choices=new (int Previous,int Next)[]{(256,192),(40,120),(1000,500),(2,8),(200,20),(24,12)};
+        var row=choices[random.Next(choices.Length)];
+        return Problem("usccss.g11.alg2.u01.l02.growth_factor",
+            $"Two successive terms in a sequence are {row.Previous} and {row.Next}. Assuming a geometric rule, what is the exact growth factor?",
+            "Divide the later term by the earlier nonzero term and simplify.",
+            AssessmentItemType.ShortAnswer,("previous",row.Previous),("next",row.Next));
     }
 
     // G11 Algebra 2 U01:L01 first-party recurrence question families.
@@ -6126,6 +6214,15 @@ public sealed class ExactSkillContractQuestionEngine
                 G11FibonacciTerm(p["n"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g11.alg2.u01.l01.halving_fraction" =>
                 SimplifyFraction(1, 1 << p["n"]),
+            "usccss.g11.alg2.u01.l02.paper_piece_count" =>
+                (1 << p["cutCount"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g11.alg2.u01.l02.paper_piece_area" =>
+                SimplifyFraction(80,1 << p["cutCount"]),
+            "usccss.g11.alg2.u01.l02.rational_geometric_term" =>
+                SimplifyFraction(checked(p["first"]*G11IntPow(p["ratioNumerator"],p["term"]-1)),
+                    G11IntPow(p["ratioDenominator"],p["term"]-1)),
+            "usccss.g11.alg2.u01.l02.growth_factor" =>
+                SimplifyFraction(p["next"],p["previous"]),
 
             "sequences.core.arithmetic_nth_term" =>
                 (p["first"] + (p["n"] - 1) * p["difference"]).ToString(CultureInfo.InvariantCulture),
