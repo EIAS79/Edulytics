@@ -359,9 +359,9 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         }
         if (family == FunctionQuadraticRootsFamily)
         {
-            if (!ValidateQuadraticRoots(parameters, out var a, out var b))
+            if (!ValidateQuadraticRoots(parameters, out var rootA, out var rootB))
                 throw new InvalidOperationException("Invalid quadratic root parameters.");
-            return $"{Math.Min(a,b)},{Math.Max(a,b)}";
+            return $"{Math.Min(rootA,rootB)},{Math.Max(rootA,rootB)}";
         }
 
         if (family == FunctionOneToOneFamily)
