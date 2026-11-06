@@ -16,12 +16,18 @@
 - Total `READY_FOR_STAGE_D`: **0/73**. First not-closed ordinal 1. Work remains sequential; no next lesson may be marked closed before this one.
 - Academic owner approves first-party educational direction and conditional future publication. It is not an exemption from CC BY 4.0 attribution, visual rights or technical acceptance. A distinct general credits notice for this course has been drafted outside learner lesson text.
 
+## Exercise-level routing correction (2026-11-06)
+
+- Section 1.1 exercises **60–67 were incorrectly grouped as graph line tests** in the initial coarse inventory. They are relation/table and table-value lookup tasks. Their classification is corrected, and all **92** section exercise route contracts are recorded in `u01-l01-exercise-routing.json` with the applicable existing-engine candidate or explicit teacher review requirement.
+- This repair is **authoring/route evidence only**. No G12 runtime question selection, score integration, graph rendering, full item-level semantic equivalence, or Stage D acceptance has been demonstrated. Exercise 52 part (b), source diagram rights, and chapter resources remain open. Grade 12 `READY_FOR_STAGE_D` stays **0/73**.
+
 ## Evidence locations
 
 - `source-of-truth.json` — exact edition and PDF hash.
 - `g12-openstax-local-source-inventory-20261106.json` — 73 chapter/section page boundaries, text hashes and raw marker locations.
 - `u01-l01-element-coverage.json` — auditable IDs and unverified status of source atoms.
 - `u01-l01-assessment.json` — first-party Cool-down, evaluator role and reuse candidates.
+- `u01-l01-exercise-routing.json` — 92 source exercise-level route/skill contracts, unbound to runtime; graph/table misclassification corrected.
 - `u01-l01-abc-checkpoint.json` — incomplete lesson status and current blockers.
 - `full-grade-progress.json` — authoritative sequential cursor.
 - `grade12-abc-execution-instructions.md` — binding work rules.

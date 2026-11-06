@@ -70,12 +70,55 @@
       "Exact graph/curve vertical-line and horizontal-line interaction and grading, or equivalent accessible teacher review",
       "Function one-to-one classification on explicitly restricted domains",
       "Function equation-solving with all valid roots and domain restrictions",
-      "All 92 source Section 1.1 exercise structures and diagram-sensitive tasks"
+      "All 92 source Section 1.1 exercise structures and diagram-sensitive tasks",
+      "Exercise 60–67 require separate table/ordered-pair classification and function-value lookup (not graphical line testing).",
+      "Exercise 52 part (b) original graph cannot be graded without an exact source read or human rubric."
     ],
     "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
     "PracticeReady": "NOT_READY",
     "Tests": "WRITTEN_NOT_RUN",
-    "StageD": "NOT_RUN"
+    "StageD": "NOT_RUN",
+    "ExerciseRoutingManifestPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
+    "ExerciseRoutingCount": 92,
+    "ExerciseRoutingStatus": "CONTRACTS_AUTHORED_NOT_RUNTIME_BOUND",
+    "ExerciseRoutingGroups": [
+      {
+        "Category": "VERBAL_DEFINITIONS",
+        "Count": 5
+      },
+      {
+        "Category": "RELATIONS_AND_IMPLICIT_EQUATIONS",
+        "Count": 21
+      },
+      {
+        "Category": "FUNCTION_NOTATION_AND_SOLVING",
+        "Count": 13
+      },
+      {
+        "Category": "GRAPH_LINE_TESTS",
+        "Count": 20
+      },
+      {
+        "Category": "ORDERED_PAIRS_AND_TABLE_RELATIONS",
+        "Count": 6
+      },
+      {
+        "Category": "TABLE_FUNCTION_LOOKUP",
+        "Count": 2
+      },
+      {
+        "Category": "FUNCTION_EVALUATION",
+        "Count": 8
+      },
+      {
+        "Category": "GRAPHING_VIEWPORT",
+        "Count": 12
+      },
+      {
+        "Category": "APPLICATIONS_AND_PROOF",
+        "Count": 5
+      }
+    ]
   },
   "TeacherReview": {
     "Audience": "Assigned mathematics teacher",

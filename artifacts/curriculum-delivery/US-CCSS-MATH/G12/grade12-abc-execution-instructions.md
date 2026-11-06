@@ -15,3 +15,13 @@ Completion: distinguish source inventory, pedagogic-semantic parity, digitally a
 Academic owner: approves first-party instructional direction and future conditional publication, but CC BY 4.0 attribution and third-party rights remain mandatory; keep copyright credits separate from learner explanation prose.
 
 Current state: 73/73 source section locators indexed; zero source-verified lesson closures, first active U01:L01.
+
+## Unit-based continuous execution and reporting (owner instruction, 2026-11-06)
+
+- Work continuously from the first unclosed lesson, strictly in source order. After **each fully eligible lesson** complete A→B→C→evidence→checkpoint→one commit, then move straight to the next lesson without requesting another user turn.
+- **Do not stop to send one report per lesson.** Aggregate progress reports after completing an entire unit (U01 then U02, etc.); if a genuinely unresolved blocking source/rights/runtime gap prevents closure, record it in the active lesson and do not report a later lesson as closed.
+- Prefetch/collate the necessary local pages and original exercises for the current unit in a single read operation when possible, reuse existing previously verified source notes, and keep all original books read-only. Do not re-download or re-index what is already anchored to the same source SHA.
+- A–B–C deliberately writes tests and contracts **without running tests, CI, E2E or Stage D**. No blanket builds, full sync, or repeated checks without a distinct technical cause. Use [skip ci] where possible; verify GitHub trigger rules before updating branch.
+- First-party Cool-down derived from a verified learning objective is allowed where an original instructor-only assessment is inaccessible; label it clearly as first-party and assign teacher review for diagrams, explanations and proofs.
+- Measure actual per-lesson start/close time if available; three minutes is a performance target for straightforward repairs, not permission to skip source element matching or falsify closure.
+- Report each completed unit's closed lessons, source gap counts, reused/extended engines, evidence URLs, commit SHA(s), and next sequential lesson, without calling Stage D ready unless every exit criterion is met.
