@@ -1,0 +1,102 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L04",
+  "LearningGoals": [
+    "Interpret fractional inputs for exponential functions in context.",
+    "Understand that the growth (or decay) factor for an input interval of $\\frac{1}{n}$ is $b^{\\frac{1}{n}}$ and not $\\frac{b}{n}$ when $b$ is the growth (or decay) factor for an interval of length 1 and $n$ is the number of intervals."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-SSE.A.1",
+      "SortOrder": 4
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.B.3.C",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "SubpartToAcceptedParent",
+      "OutcomeCode": "CCSS:HSA-SSE.B.3",
+      "SortOrder": 5
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.A.2",
+      "SortOrder": 6
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A process grows by factor 1.21 per year. What factor applies per half-year?",
+    "Steps": [
+      "Factor r solves r^2=1.21, so r=sqrt1.21."
+    ],
+    "Answer": "1.1."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "4.1: Math Talk: Unknown Exponents",
+      "4.2: Population of Nigeria",
+      "4.3: Got Caffeine?"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "An annual factor is 1.44. Find the equal six-month factor.",
+    "Expected": "1.2.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u04-l04-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json"
+}
