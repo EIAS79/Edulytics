@@ -133,7 +133,7 @@ public static class Grade12PrecalculusSection11Exercises
         new(102, "Try It — independent practice", "Each employee is assigned exactly one department, and at least two employees are assigned to the same department. Is department a function of employee? Is employee a function of department? Is the first function one-to-one?", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
         new(103, "Try It — independent practice", "A score from 0 to 100 determines exactly one letter grade, and several scores share each letter. Is letter grade a function of numeric score? Is it one-to-one?", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
         new(104, "Try It — independent practice", "Sketch y=|x| and explain whether each vertical line meets its graph in at most one point.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
-        new(105, "Try It — independent practice", "Graph y=x^2 on all real inputs. Is it one-to-one? Provide a horizontal-line counterexample.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
+        new(105, "Try It — independent practice", "Consider the independently drawn circle x²+y²=4 on real coordinates. Is this a one-to-one FUNCTION of x? Check the vertical-line test at x=0 BEFORE applying any horizontal-line argument.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
     ];
 
     public static string DisplayLabel(int number) =>

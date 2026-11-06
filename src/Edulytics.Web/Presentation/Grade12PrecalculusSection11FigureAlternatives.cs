@@ -16,6 +16,37 @@ public static class Grade12PrecalculusSection11FigureAlternatives
     private static MathematicalAxisWindow Window(decimal xmin, decimal xmax,
         decimal ymin, decimal ymax) => new(xmin,xmax,ymin,ymax,1m,1m);
 
+    // Independent analytic circle model: unlike the graph of a function,
+    // this relation has two real outputs at the same x. Neither the source
+    // artwork nor its pixel layout is reused.
+    private static CoordinatePlaneVisualSpec CircleCounterexample()
+    {
+        const int samples = 96;
+        var segments = new List<MathematicalSegment>();
+        var previous = new MathematicalPoint(2m, 0m);
+        for (var i = 1; i <= samples; i++)
+        {
+            var theta = 2d * Math.PI * i / samples;
+            var next = new MathematicalPoint(
+                (decimal)(2d * Math.Cos(theta)),
+                (decimal)(2d * Math.Sin(theta)));
+            segments.Add(new MathematicalSegment(previous, next));
+            previous = next;
+        }
+        return new CoordinatePlaneVisualSpec(
+            Window(-3m, 3m, -3m, 3m),
+            [
+                new MathematicalPoint(0m, 2m, "(0,2)"),
+                new MathematicalPoint(0m, -2m, "(0,-2)")
+            ],
+            segments,
+            new MathematicalVisualAccessibility(
+                "First-party circle: not a function of x",
+                "The independent relation x squared plus y squared equals 4. At x=0, " +
+                "the graph has two outputs y=2 and y=-2. It fails the vertical-line test " +
+                "and cannot be classified as a one-to-one function of x."));
+    }
+
     public static readonly IReadOnlyList<Figure> All =
     [
         new(1,"Relation arrow diagrams",
@@ -78,13 +109,16 @@ public static class Grade12PrecalculusSection11FigureAlternatives
         new(12,"Three vertical-line classification examples",
             "Two independent first-party graph models pass the vertical-line test; " +
             "a sideways parabola fails. Compare outputs at one chosen input.",41,null),
-        new(13,"Vertical-line failure highlighted",
-            "The relation x=y² contains (1,1) and (1,-1). A vertical line at x=1 intersects twice.",
-            41,null),
-        new(14,"Independent vertical-line Try It alternative",
-            "Sketch a closed ellipse and test x=0 on an ellipse centered at the origin; " +
-            "two y-values show it is not a function. Original drawing remains unverified.",
-            44,null),
+        new(13,"Source Figure 13: circle fails the vertical-line test",
+            "An independent circle x²+y²=4 has points (0,2) and (0,-2). " +
+            "The same x has two real outputs, so the relation is not a function of x.",
+            null,CircleCounterexample()),
+        new(14,"Source Figure 14: absolute-value V is a function",
+            "The independent V-shaped graph y=|x| has vertex (0,0) and exactly " +
+            "one output for every real x. Every vertical line hits at most once: " +
+            "this relation IS a function, as required by the original Try It 11 skill.",
+            null,Grade12PrecalculusSection11ToolkitGraphs.All
+                .Single(family => family.Title == "Absolute value y=|x|").Graph),
         new(15,"Horizontal-line test of injectivity",
             "On first-party y=x², horizontal y=4 meets x=-2 and x=2. " +
             "Thus it is a function but not one-to-one over all real inputs.",

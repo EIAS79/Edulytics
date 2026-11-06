@@ -43,8 +43,8 @@ tasks=[
   "Sketch y=|x| and explain whether each vertical line meets its graph in at most one point.",
   "Yes. Every x determines exactly one y=|x|.","Vertical line test."),
  ("Horizontal-line test for a function",
-  "Graph y=x^2 on all real inputs. Is it one-to-one? Provide a horizontal-line counterexample.",
-  "No; y=4 meets the graph at x=-2 and x=2.","Horizontal-line test and domain.")
+  "Consider the independently drawn circle x²+y²=4 on real coordinates. Is this a one-to-one FUNCTION of x? Check the vertical-line test at x=0 BEFORE applying any horizontal-line argument.",
+  "No. The first-party circle fails the vertical-line test at x=0, with y=2 and y=-2; therefore it is not a one-to-one function.","Horizontal-line test and domain.")
 ]
 assert len(tasks)==12
 source=base/"u01-l01-element-coverage.json"

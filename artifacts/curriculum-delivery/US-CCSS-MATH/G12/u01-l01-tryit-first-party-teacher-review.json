@@ -225,10 +225,10 @@
       "SourceId": "G12-U01-L01-TRY012",
       "OriginalBookPdfPage": 31,
       "SourceAnswerAppendixPdfPage": 1097,
-      "LearningSkill": "Horizontal-line test and domain.",
-      "EdulyticsTitle": "Horizontal-line test for a function",
-      "EdulyticsIndependentPrompt": "Graph y=x^2 on all real inputs. Is it one-to-one? Provide a horizontal-line counterexample.",
-      "ExpectedTeacherAnswer": "No; y=4 meets the graph at x=-2 and x=2.",
+      "LearningSkill": "Function prerequisite for one-to-one: test vertical uniqueness before horizontal injectivity.",
+      "EdulyticsTitle": "Check functionhood before testing one-to-one",
+      "EdulyticsIndependentPrompt": "No. The original-skill FIRST-PARTY circle x²+y²=4 is not even a function of x: at x=0 it has outputs 2 and -2. The vertical-line test fails; one-to-one requires first being a function.",
+      "ExpectedTeacherAnswer": "No. A circle has two outputs at x=0, namely y=2 and y=-2, and is not a function of x; one-to-one is not applicable.",
       "GradingMode": "TEACHER_REVIEW_WITH_EXPLANATION",
       "AutoGrade": false,
       "SourceMathVerified": true,
@@ -238,7 +238,10 @@
       "Status": "AUTHORED_NOT_RUNTIME_VERIFIED",
       "StudentTaskSubmissionNumber": 105,
       "StudentViewWired": true,
-      "TeacherReviewRouteCodeAuthored": true
+      "TeacherReviewRouteCodeAuthored": true,
+      "SourceTryItOriginalImageInspected": true,
+      "OriginalCircleNonfunctionCognitiveSkillPreserved": true,
+      "IndependentFirstPartyCircleModelFile": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11FigureAlternatives.cs"
     }
   ],
   "CreatedUtc": "2026-11-06T06:35:21.592806+00:00",
@@ -257,5 +260,6 @@
     105
   ],
   "StudentViewWiredToFirstPartyTryItTasks": true,
-  "TeacherRubricPersisted": false
+  "TeacherRubricPersisted": false,
+  "OriginalTryIt12SourceCircleSemanticMismatchCorrected": true
 }

@@ -367,8 +367,15 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
             figures.Select(x => x.OriginalFigureOrdinal));
         Assert.All(figures, x =>
             Assert.False(string.IsNullOrWhiteSpace(x.FirstPartyAlternative)));
-        Assert.Equal(2, figures.Count(x => x.OriginalFigureOrdinal is 6 or 10 &&
-            x.AddedDrawing is not null));
+        Assert.Equal(4, figures.Count(x => x.AddedDrawing is not null));
+        Assert.Contains("circle", figures.Single(x =>
+            x.OriginalFigureOrdinal == 13).Topic, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("IS a function", figures.Single(x =>
+            x.OriginalFigureOrdinal == 14).FirstPartyAlternative);
+        Assert.True(figures.Single(x => x.OriginalFigureOrdinal == 13)
+            .AddedDrawing is CoordinatePlaneVisualSpec);
+        Assert.True(figures.Single(x => x.OriginalFigureOrdinal == 14)
+            .AddedDrawing is CoordinatePlaneVisualSpec);
         foreach (var figure in figures.Where(x => x.AddedDrawing is not null))
         {
             MathematicalVisualSpecValidator.Validate(figure.AddedDrawing!);
@@ -460,6 +467,19 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Contains("4→2", toolkit.Rows[3].Cells[7]);
         Assert.Contains("0.125→0.5", toolkit.Rows[3].Cells[8]);
         Assert.Equal(9, Grade12PrecalculusSection11ToolkitGraphs.All.Count);
+    }
+
+    [Fact]
+    public void OriginalTryItElevenAndTwelveDoNotInvertFunctionhoodLogic()
+    {
+        var v = Grade12PrecalculusSection11Exercises.TryIts;
+        Assert.Equal(12, v.Count);
+        Assert.Contains("y=|x|", v.Single(x => x.Number == 104).Prompt);
+        Assert.Contains("x²+y²=4", v.Single(x => x.Number == 105).Prompt);
+        Assert.Contains("vertical-line test at x=0",
+            v.Single(x => x.Number == 105).Prompt);
+        Assert.Contains("not even a function",
+            Grade12PrecalculusSection11TeacherGuidance.Find(105)!.ExpectedMathematics);
     }
 
     [Fact]

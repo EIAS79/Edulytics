@@ -17,7 +17,7 @@ Local original: Precalculus 2017, Section 1.1, PDF pages 18–31. Source figure 
 | Figure 11 | 29 | Vertical-line test distinguishes one-output from multiple-output graphs. | First-party explanatory alternative authored; original figure 1:1 not certified |
 | Figure 12 | 30 | Two example graphs are functions; a third is not. | First-party explanatory alternative authored; original figure 1:1 not certified |
 | Figure 13 | 30 | A vertical line intersects a nonfunction graph twice. | First-party explanatory alternative authored; original figure 1:1 not certified |
-| Figure 14 | 30 | Try It graph requires teacher inspection for vertical-line function status. | First-party explanatory alternative authored; original figure 1:1 not certified |
+| Figure 14 | 30 | Original V-shaped absolute-value curve IS a function: every vertical line meets it once. | First-party explanatory alternative authored; original figure 1:1 not certified |
 | Figure 15 | 31 | A horizontal line can intersect a function graph twice, disproving injectivity. | First-party explanatory alternative authored; original figure 1:1 not certified |
 
 First-party delivery: Grade12PrecalculusSection11FigureAlternatives.cs in the Grade12 student lesson view. Figure 6 includes the exact independent h(p)=p²+2p graph with all three source-verified output values. Figure 10 uses a line segment through the exact sample points (0,2) and (6,1) rather than a rounded rational polynomial slope. Figures 7–9 reuse the independent curve y=(x−1)² and read f(2)=1 and f(x)=4 at x=-1,3. Other figures use explicit accessible prose and existing graph links; original source shapes require independent visual acceptance.

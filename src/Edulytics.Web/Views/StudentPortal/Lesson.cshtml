@@ -2038,6 +2038,17 @@
                         {
                             <li>
                                 <strong>Try It @(task.Number - 93):</strong> @task.Prompt
+                                @if (task.Number is 104 or 105)
+                                {
+                                    var sourceFigure = task.Number == 104 ? 14 : 13;
+                                    if (Grade12PrecalculusSection11FigureAlternatives.Find(sourceFigure)?.AddedDrawing is { } drawn)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawn))
+                                            <figcaption>@drawn.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
+                                }
                                 <a asp-controller="Grade12PrecalculusRubricStudent"
                                    asp-action="Index" asp-route-lessonId="@Model.Id"
                                    asp-route-exerciseNumber="@task.Number">

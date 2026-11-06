@@ -117,7 +117,7 @@ public static class Grade12PrecalculusSection11TeacherGuidance
             [102] = new(102, "Department is a function of employee. Employee is not a function of department, because the stipulated shared department maps to at least two employees. The first function is not one-to-one.", "Independent Edulytics Try It analogue; do not claim verbatim original source material or automatic scoring.", false),
             [103] = new(103, "Yes, but not one-to-one.", "Independent Edulytics Try It analogue; do not claim verbatim original source material or automatic scoring.", false),
             [104] = new(104, "Yes. Every x determines exactly one y=|x|.", "Independent Edulytics Try It analogue; do not claim verbatim original source material or automatic scoring.", false),
-            [105] = new(105, "No; y=4 meets the graph at x=-2 and x=2.", "Independent Edulytics Try It analogue; do not claim verbatim original source material or automatic scoring.", false),
+            [105] = new(105, "No. The original-skill FIRST-PARTY circle x²+y²=4 is not even a function of x: at x=0 it has outputs 2 and -2. The vertical-line test fails; one-to-one requires first being a function.", "Independent Edulytics Try It analogue; do not claim verbatim original source material or automatic scoring.", false),
         };
 
     public static int Count => Notes.Count;
