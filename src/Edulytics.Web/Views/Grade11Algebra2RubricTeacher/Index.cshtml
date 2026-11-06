@@ -1,0 +1,10 @@
+@model Edulytics.Web.Controllers.G11Alg2RubricRow[]
+@{ ViewData["Title"] = "Grade 11 Algebra 2 ? teacher review queue"; }
+<h1>Grade 11 Algebra 2 ? teacher review queue</h1>
+<p>Only enrolled learners in your assigned mathematics classes appear here. Review each student's mathematical evidence and use the lesson-specific rubric.</p>
+<ul>
+@foreach (var row in Model)
+{
+    <li><a href="/school/g11/algebra2/rubric/@row.Id">Lesson @row.LessonId ? Student @row.StudentProfileId</a> ? @row.SubmittedAtUtc.ToString("u") ? @(row.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")</li>
+}
+</ul>

@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l10-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L10",
+      "CultureCode": "en",
+      "Title": "Interpreting and Writing Logarithmic Equations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Coordinate (orally and in writing) exponential and logarithmic equations that represent the same relationship. Create equivalent equations in exponential and logarithmic forms.",
+        "Statements b^x=y and log_b(y)=x are equivalent if b>0, b!=1, y>0. Swap between forms without changing the base or the unknown.",
+        "Source activity 10.1: Reading Logs: The expression \\(\\log_{10} 1,\\!000 = 3\\) can be read as: “The log, base 10, of 1,000 is 3.” It can be interpreted as: “The exponent to which we raise a base 10 to get 1,000 is 3.” Take turns with a partner reading each equation out loud. Then, interpret what they mean. \\(\\log_{10} 100,\\!000,\\!000 = 8\\) \\(\\log_{10} 1 = 0\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.2: Base 2 Logarithms: Use the table to find the exact or approximate value of each expression. Then, explain to a partner what each expression and its approximated value means. Solve each equation. Write the solution as a logarithmic expression. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.3: Exponential and Logarithmic Forms: These equations express the same relationship between 2, 16, and 4: \\(\\displaystyle \\log_2 16 = 4\\) \\(\\displaystyle 2^4 = 16\\) Each row shows two equations that express the same relationship. Complete the table. “To what exponent do we raise the number 4 to get 64?” “What is the log, base 2, of 128?” Write two equations—one in exponential form and one in logarithmic form—to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Use the base-2 log table (printed in the lesson) to approximate the value of each exponential expression. Use the base-2 log table to find or approximate the value of each logarithm. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is a logarithmic expression: \\(\\log_2 64\\). How do we say the expression in words? Explain in your own words what the expression means. What is the value of this expression? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: What is \\(\\log_{10}(100)\\)? What about \\(\\log_{100}(10)\\)? What is \\(\\log_{2}(4)\\)? What about \\(\\log_{4}(2)\\)? Express \\(b\\) as a power of \\(a\\) if \\(a^2 = b\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: In order for an investment, which is increasing in value exponentially, to increase by a factor of 5 in 20 years, about what percent does it need to grow each year? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is the graph of the amount of a chemical remaining after it was first measured. The chemical decays exponentially. What is the approximate half-life of the chemical? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Find each missing exponent. \\(\\left(\\frac {1}{10}\\right)^? = \\frac{1}{1,000}\\) \\(\\left(\\frac12\\right)^? = 2\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Explain why \\(\\log_{10}1 = 0\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: How are the two equations \\(10^2 = 100\\) and \\(\\log_{10}(100) = 2\\) related? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Rewrite log_5(125)=3 exponentially. Expected reasoning or answer: 5^3=125.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent exponential and log forms",
+          "Definition": "Statements b^x=y and log_b(y)=x are equivalent if b>0, b!=1, y>0. Swap between forms without changing the base or the unknown.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Rewrite 10^3=1000 using logarithms. Answer: log_10(1000)=3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Base is10, output1000 and exponent3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Create equivalent equations in exponential and logarithmic forms.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Rewrite log_5(125)=3 exponentially. Answer: 5^3=125."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equivalent exponential and log forms",
+          "Question": "Rewrite 10^3=1000 using logarithms.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Base is10, output1000 and exponent3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (log_10(1000)=3.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "log_10(1000)=3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Rewrite log_5(125)=3 exponentially.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "5^3=125.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Rewrite log_5(125)=3 exponentially.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Rewrite log_5(125)=3 exponentially.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Base is10, output1000 and exponent3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 5^3=125."
+          ],
+          "Answer": "5^3=125.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent exponential and log forms",
+        "Statements b^x=y and log_b(y)=x are equivalent if b>0, b!=1, y>0. Swap between forms without changing the base or the unknown.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

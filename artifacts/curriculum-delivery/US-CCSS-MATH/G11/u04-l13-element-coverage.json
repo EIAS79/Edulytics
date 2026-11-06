@@ -1,0 +1,532 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L13",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "715db89bfad734758944ab5f97f99a0e57abc006688175700ccc38e6d81fb372",
+    "teacher/index.html": "de98450a50412f8a2d88ef62237665585e139ba18e697f649dcd3b1c70c92101",
+    "teacher/practice.html": "56ba7405b186754c495e354f890c5512a53c8c12f781e6adf7337c3ee72c9876",
+    "student/index.html": "27a2536c22a134b00ba43de7b672229b15a922b79d9c40a6ea196f1109dd5b31",
+    "student/practice.html": "5206110a336f9aae7edf42396aefc1bacb7a8fe30e2882063a5969ed71d633d9"
+  },
+  "Goals": [
+    "Comprehend that we can use $e^r$ as the growth factor of $f(t) = e^{rt}$ when we assume the rate $r$ is applied continuously.",
+    "Interpret the parameters in the equations of exponential functions with the form $f(t)=P \\boldcdot e^{rt}$."
+  ],
+  "ElementCount": 64,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-001",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "The other day, you learned that \\(e\\) is a mathematical constant whose value is approximately 2.718. When working on problems that involve \\(e\\), we often rely on calculators to estimate values.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-002",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "Find the \\(e\\) button on your calculator. Experiment with it to understand how it works. (For example, see how the value of \\(2e\\) or \\(e^2\\) can be calculated.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-003",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "\\(10\\boldcdot e^{(1.1)}\\) should give approximately 30.04166",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-004",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "\\(5 \\boldcdot e^{(1.1)(7)}\\) should give approximately 11,041.73996",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-005",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "\\(e^{\\frac{9}{23}}+7\\) should give approximately 8.47891",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-006",
+      "SourceSection": "13.1: $e$ on a Calculator",
+      "SourceExcerpt": "Evaluate each expression. Make sure your calculator gives the indicated value. If it doesn’t, check in with your partner to compare how you entered the expression.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-007",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "The population of a colony of insects is 9 thousand when it was first being studied. Here are two functions that could be used to model the growth of the colony \\(t\\) months after the study began.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-008",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\( P(t) = 9 \\boldcdot (1.02)^t\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-009",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\(Q(t) = 9 \\boldcdot e^{(0.02t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-010",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "Use technology to find the population of the colony at different times after the beginning of the study and complete the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-011",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "What do you notice about the populations in the two models?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-012",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\(\\text{Colony 1}\\\\ f(t) = 10 \\boldcdot (1.05)^t\\\\ g(t) = 10 \\boldcdot e^{(0.05t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-013",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\(\\text{Colony 2}\\\\k(t) = 10 \\boldcdot (1.03)^t\\\\ l(t) = 10 \\boldcdot e^{(0.03t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-014",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\(\\text{Colony 3}\\\\p(t) = 10 \\boldcdot (1.01)^t\\\\ q(t) = 10 \\boldcdot e^{(0.01t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-015",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "\\(\\text{Colony 4}\\\\v(t) = 10 \\boldcdot (1.005)^t\\\\ w(t) = 10 \\boldcdot e^{(0.005t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-016",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "Graph each pair of functions on the same coordinate plane. Adjust the graphing window to the following boundaries to start: \\(0 < x < 50\\) and \\(0 < y < 80\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-017",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "What do you notice about the graph of the equation written using \\(e\\) and the counterpart written without \\(e\\)? Make a couple of observations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-018",
+      "SourceSection": "13.2: Same Situation, Different Equations",
+      "SourceExcerpt": "Here are pairs of equations representing the populations, in thousands, of four other insect colonies in a research lab. The initial population of each colony is 10 thousand and they are growing exponentially. \\(t\\) is time, in months,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-019",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "Exponential models that use \\(e\\) often use the format shown in this example:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-020",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "Here are some situations in which a percent change is considered to be happening continuously. For each function, identify the missing information and the missing growth rate (expressed as a percentage).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-021",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "function: \\(b(t) = 50 \\boldcdot e^{(0.25t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-022",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "continuous growth rate per hour:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-023",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "At time \\(t=0\\), measured in hours, a scientist puts 50 bacteria into a gel on a dish. The bacteria are growing and the population is expected to show exponential growth.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-024",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "function: \\(p(t) = \\underline{\\hspace{0.5in}} \\boldcdot e^{\\underline{\\hspace{0.25in}}t}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-025",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "continuous growth rate per year: 1.4%",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-026",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "In 1964, the population of the United States was growing at a rate of 1.4% annually. That year, the population was approximately 192 million. The model predicts the population, in millions, \\(t\\) years after 1964.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-027",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "function: ​​\\(q(t) = \\underline{\\hspace{0.5in}} \\boldcdot e^{(0.0168t)}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-028",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "continuous growth rate per year:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-029",
+      "SourceSection": "13.3: $e$ in Exponential Models",
+      "SourceExcerpt": "In 1955, the world population was about 2.5 billion and growing. The model predicts the population, in billions, \\(t\\) years after 1955.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-030",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "The function \\(f\\) models the population of bacteria in \\(t\\) hours after it was initially measured. About how many bacteria were in the dish 10 hours after the scientist put the initial 50 bacteria in the dish?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-031",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "About how many hours did it take for the number of bacteria in the dish to double? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-032",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "Use graphing technology to graph the function defined by \\(f(t) = 50 \\boldcdot e^{(0.25t)}\\). Adjust the graphing window as needed to answer these questions:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-033",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "The equation models the population, in millions, in the U.S. \\(t\\) years after 1964. What does the model predict for the population of the U.S. in 1974?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-034",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "In which year does the model predict the population will reach 300 million?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-035",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "Use graphing technology to graph the function defined by \\(p(t)=192 \\boldcdot e^{(0.014t)}\\). Adjust the graphing window as needed to answer these questions:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-036",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "Research what the population of the U.S. was in the year the model predicted 300 million people. How far off was the model? What factors do you think account for the actual population in that year being different from the prediction of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-037",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "Suppose 24 square feet of a pond is covered with algae and the area is growing at a rate of 8% each day.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-038",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "We learned earlier that the area, in square feet, can be modeled with a function such as \\(a(d) = 24 \\boldcdot (1+0.08)^d\\) or \\(a(d) = 24 \\boldcdot (1.08)^d\\), where \\(d\\) is the number of days since the area was 24 square feet. This…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-039",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "In this lesson, we looked at a different type of exponential function, using the base \\(e\\). For the algae growth, this might look like \\(A(d)=24 \\boldcdot e^{(0.08d)}\\). This model is different because the 8% growth is not just applied at…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-040",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "Many functions that express real-life exponential growth or decay are expressed in the form that uses \\(e\\). For the algae model \\(A\\), 0.08 is called the continuous growth rate while \\(e^{0.08}\\) is the growth factor for 1 day. In…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-041",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "The number \\(e\\) is an irrational number with an infinite decimal expansion that starts \\(2.71828182845\\ .\\ .\\ .\\), which is used in finance and science as the base for an exponential function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-ACTIVITY-042",
+      "SourceSection": "13.4: Graphing Exponential Functions with Base $e$",
+      "SourceExcerpt": "$e$ (mathematical constant)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The population of a town is growing exponentially and can be modeled by the equation \\(f(t) = 42 \\boldcdot e^{(0.015t)}\\). The population is measured in thousands, and time is measured in years since 1950.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What was the population of the town in 1950?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What is the approximate percent increase in the population each year?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "According to this model, approximately what was the population in 1960?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The revenue of a technology company, in thousands of dollars, can be modeled with an exponential function whose starting value is $395,000 where time \\(t\\) is measured in years after 2010.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Which function predicts exactly 1.2% of annual growth: \\(R(t) = 395 \\boldcdot e^{(0.012t)}\\) or \\(S(t) = 395 \\boldcdot (1.012)^t\\)? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "How are the functions \\(f\\) and \\(g\\) given by \\(f(x) = (1.05)^x\\) and \\(g(x) = e^{0.05x}\\) similar? How are they different?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A bond is worth $100 and grows in value by 4 percent each year. Explain why the value of the bond after \\(t\\) years is given by \\(100 \\boldcdot 1.04^t\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A second bond is worth $100 and grows in value by 2 percent each half year. Explain why the value of the bond after \\(t\\) years is given by \\(100 \\boldcdot (1.02)^{2t}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A third bond is worth $100 and grows in value by 4 percent each year, but the interest is applied continuously, at every moment. The value of this bond after \\(t\\) years is given by \\(100 \\boldcdot e^{(0.04t)}\\). Order the bonds from…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The population of a country is growing exponentially, doubling every 50 years. What is the annual growth rate? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-012",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Which expression has a greater value: \\(\\log_3 \\frac13\\) or \\(\\log_b \\frac1b\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-013",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The expression \\(5 \\boldcdot \\left(\\frac12\\right)^d\\) models the amount of a radioactive substance, in nanograms, in a sample over time in decades, \\(d\\). (1 nanogram is a billionth or \\(1 \\times 10^{\\text-9}\\) gram.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-014",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "What do the 5 and the \\(\\frac12\\) tell us in this situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-015",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "When will the sample have less than 0.5 nanogram of the radioactive substance? Express your answer to the nearest half decade. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-016",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Show that only about 5 picograms of the substance will remain one century after the sample is measured. (A picogram is a trillionth or \\(1 \\times 10^{\\text-12}\\) gram.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-017",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Select all true statements about the number \\(e\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-018",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(e\\) is a rational number.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-019",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(e\\) is approximately 2.718.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-020",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(e\\) is an irrational number.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-021",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(e\\) is between \\(\\pi\\) and \\(\\sqrt2\\) on the number line.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L13-PRACTICE-022",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(e\\) is exactly 2.718.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

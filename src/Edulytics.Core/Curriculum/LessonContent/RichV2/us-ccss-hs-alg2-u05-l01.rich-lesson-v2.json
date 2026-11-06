@@ -1,0 +1,103 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l01-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L01",
+      "CultureCode": "en",
+      "Title": "Matching up to Data",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe informally (orally and in writing) transformations of graphs. Describe (in writing) how to transform a given function to fit a data set.",
+        "Transform a known parent function to describe observed data; a quadratic graph translated vertically by 3 is y=x²+3, with its vertex moved from (0,0) to (0,3). Compare actual ordered pairs before accepting a model.",
+        "Source activity 1.1: Notice and Wonder: Cooling Down: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.2: Which Function?: A bottle of soda water is left outside on a cold day. The scatter plot shows the temperature \\(T\\), in degrees Fahrenheit, of the bottle \\(h\\) hours after it was left outside. Here are 2 functions you can use to model the temperature as a function of time: \\(f(h) = 45 + \\frac{20}{h+0.5}\\) \\(g(h) = 45 + 33(0.5)^{h+0.5}\\) Which function better fits the shape of the data? Explain… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.3: What Happened to the Graph?: Your teacher will give you a card. Take turns describing the transformation of the graph on your card for your partner to draw and drawing the transformed graph from your partner's description. The data in the graph show the temperature \\(T\\), in degrees Fahrenheit, of a can of soda \\(h\\) hours after it was put into the refrigerator. What if we want to build a function that… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Describe a transformation that gives the graph representing \\(g\\) from the graph representing \\(f\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Describe a way to transform each graph so that it goes through the labeled points. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Describe a way to transform each graph so that it better matches the data. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Does the function \\(f\\) or the function \\(g\\) fit the data better? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: For the polynomial function \\(A(x)=2x^3+5x^2-28x-15\\) we know \\((x+5)\\) is a factor. Rewrite \\(A(x)\\) as a product of linear factors. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Model values (0,-2),(1,-1),(2,2) from y=x². Expected reasoning or answer: y=x²-2.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fit a function to data",
+          "Definition": "Transform a known parent function to describe observed data; a quadratic graph translated vertically by 3 is y=x²+3, with its vertex moved from (0,0) to (0,3). Compare actual ordered pairs before accepting a model.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A table has (0,3),(1,4),(2,7). Find a transformed version of y=x² matching it. Answer: y=x²+3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "At x0 parent0 plus3 gives3; x1 parent1 plus3 gives4; x2 parent4 plus3 gives7."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (in writing) how to transform a given function to fit a data set.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Model values (0,-2),(1,-1),(2,2) from y=x². Answer: y=x²-2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Fit a function to data",
+          "Question": "A table has (0,3),(1,4),(2,7). Find a transformed version of y=x² matching it.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "At x0 parent0 plus3 gives3",
+            "x1 parent1 plus3 gives4",
+            "x2 parent4 plus3 gives7."
+          ],
+          "Answer": "y=x²+3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Model values (0,-2),(1,-1),(2,2) from y=x².",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "y=x²-2.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Model values (0,-2),(1,-1),(2,2) from y=x².",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Model values (0,-2),(1,-1),(2,2) from y=x².",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. At x0 parent0 plus3 gives3",
+            "Verify the result with a second substitution or interpretation; the authored solution is: y=x²-2."
+          ],
+          "Answer": "y=x²-2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Fit a function to data",
+        "Transform a known parent function to describe observed data; a quadratic graph translated vertically by 3 is y=x²+3, with its vertex moved from (0,0) to (0,3). Compare actual ordered pairs before accepting a model.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

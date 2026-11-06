@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l17-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L17",
+      "CultureCode": "en",
+      "Title": "Graphs of Rational Functions (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify features of simple rational functions from graphs and equations. Interpret the end behavior of a rational function in context.",
+        "For a fixed 10-mile trip at constant positive speed v, travel time t(v)=10/v hours. The graph declines as speed increases, has vertical asymptote v=0 and approaches t=0 for arbitrarily large speed without reaching zero at finite v. The physically valid domain is v>0.",
+        "Source activity 17.1: Biking 10 Miles (Part 1): Attribution: Biking, by pxhere. Public Domain. pxhere. Source. Kiran’s aunt plans to bike 10 miles. How long will it take if she bikes at an average rate of 8 miles per hour? How long will it take if she bikes at an average rate of \\(r\\) miles per hour? Kiran wants to join his aunt, but he only has 45 minutes to exercise. What will their average rate need to be for him to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.2: Biking 10 Miles (Part 2): Kiran plans to bike 10 miles. Write an equation that gives his time \\(t\\), in hours, as a function of his rate \\(r\\), in miles per hour. What is the meaning of \\(t(8)\\)? Does this value make sense? Explain your reasoning. What is the meaning of \\(t(0)\\)? Does this value make sense? Explain your reasoning. As \\(r\\) gets closer and closer to 0, what does the behavior of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.3: Card Sort: Graphs of Rational Functions: Your teacher will give you a set of cards. Match each rational function with its graphical representation. Priya and Han are bicycling. Han is going at a rate of 10 mph and begins 2 miles ahead of Priya. If Priya bikes at a rate of \\(r\\) mph, when will Priya pass Han? Write an equation and sketch a graph. Then interpret the graph in terms of the situation. The distance \\(d\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Jada is planning a kayak trip. She finds an expression for the time, \\(T(s)\\), in hours it takes her to paddle 10 kilometers upstream in terms of \\(s\\), the speed of the current in kilometers per hour. This is the graph Jada gets if she allows \\(s\\) to take on any value between 0 and 7.5. What would be a more… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A cylindrical can needs to have a volume of 6 cubic inches. A label is to go around the side of the can. The function \\(S(r)=\\frac{12}{r}\\) gives the area of the label in square inches where \\(r\\) is the radius of the can in inches. As \\(r\\) gets closer and closer to 0, what does the behavior of the function tell you… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: What is the equation of the vertical asymptote for the graph of the rational function \\(g(x) = \\frac{6}{x-1}\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: A geometric sequence \\(h\\) starts at 16 and has a growth factor of 1.75. Sketch a graph of \\(h\\) showing the first 5 terms. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Is this the graph of \\(g(x)=\\text-x^2(x-2)\\) or \\(h(x)=x^2(x-2)\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Technology required. A 6 oz cylindrical can of tomato paste needs to have a volume of 178 cm3. The current can design uses a radius of 2.75 cm and a height of 7.5 cm. Use graphing technology to find a cylindrical design that would have less surface area so each can uses less metal. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The surface area \\(S(r)\\) in square units of a cylinder with a volume of 20 cubic units is a function of its radius \\(r\\) in units where \\(S(r)=2\\pi r^2+\\frac{40}{r}\\). What is the surface area of a cylinder with a volume of 20 cubic units and a radius of 4 units? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: What speed gives a 10-mile time of 1.25 hours? Expected reasoning or answer: v=10/1.25=8 miles/hour.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reciprocal travel model",
+          "Definition": "For a fixed 10-mile trip at constant positive speed v, travel time t(v)=10/v hours. The graph declines as speed increases, has vertical asymptote v=0 and approaches t=0 for arbitrarily large speed without reaching zero at finite v. The physically valid domain is v>0.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "How long does a 10-mile trip take at 4 miles per hour? Answer: 2.5 hours."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Use t=distance/speed=10/4."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret the end behavior of a rational function in context.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "What speed gives a 10-mile time of 1.25 hours? Answer: v=10/1.25=8 miles/hour."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reciprocal travel model",
+          "Question": "How long does a 10-mile trip take at 4 miles per hour?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Use t=distance/speed=10/4.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (2.5 hours.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "2.5 hours.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "What speed gives a 10-mile time of 1.25 hours?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "v=10/1.25=8 miles/hour.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "What speed gives a 10-mile time of 1.25 hours?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: What speed gives a 10-mile time of 1.25 hours?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Use t=distance/speed=10/4.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: v=10/1.25=8 miles/hour."
+          ],
+          "Answer": "v=10/1.25=8 miles/hour.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Reciprocal travel model",
+        "For a fixed 10-mile trip at constant positive speed v, travel time t(v)=10/v hours. The graph declines as speed increases, has vertical asymptote v=0 and approaches t=0 for arbitrarily large speed without reaching zero at finite v. The physically valid domain is v>0.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

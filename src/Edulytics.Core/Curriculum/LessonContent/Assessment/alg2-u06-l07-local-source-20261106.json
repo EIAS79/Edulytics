@@ -1,0 +1,87 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L07",
+  "LearningGoals": [
+    "Use sine and cosine to find coordinates of points on a circle in all 4 quadrants."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-TF.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.B",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-TF.B",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-TF.B.5",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "For radius10 and θ=2π/3, find coordinates.",
+    "Steps": [
+      "cos2π/3=-1/2, sin2π/3=√3/2",
+      "multiply each by10."
+    ],
+    "Answer": "(-5,5√3)."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "7.1: Notice and Wonder: Big and Small",
+      "7.2: Clock Coordinates",
+      "7.3: Around a Ferris Wheel"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7",
+      "Problem 8"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "For radius8 at θ=π, find coordinates.",
+    "Expected": "(-8,0).",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u06-l07-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l07.rich-lesson-v2.json"
+}

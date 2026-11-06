@@ -1,0 +1,108 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l07-local-source-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L07",
+      "CultureCode": "en",
+      "Title": "Representing More Sequences",
+      "ExplanationParagraphs": [
+        "Ask for missing data needed to represent and solve an indexed sequence, and explain the justification without exposing a partner’s card.",
+        "A recursive rule alone may not identify a unique sequence: f(n)=f(n-1)-5 requires a starting term. A defined function also needs a meaningful index domain. In a two-person information gap, request the missing first term, multiplier or difference and index origin, then justify the derived table/graph. For H(1)=20.25 with common ratio 2/3, the first terms are 20.25,13.5,9,6. A visual pattern with count n^2+3n+3 starting at n=0 has counts 3,7,13,21,...; differences 4,6,8 increase.",
+        "Activity 7.1: Which One Doesn’t Belong: Recursive Definitions: math source context — Which one doesn’t belong? \\(f(n) = f(n-1) - 5\\) for \\(n\\ge2\\) \\(f(n) = \\frac 1 2 \\boldcdot f(n-1)\\) for \\(n\\ge2\\) \\(f(n) = 10 \\boldcdot f(n-1)\\) for \\(n \\ge1\\) \\(f(n) = f(n-1) + n^2\\) for \\(n\\ge2\\). Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 7.2: Info Gap: Ways To Represent A Sequence: math source context — Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Cumulative Problem 1: source mathematics — Here is the recursive definition of a sequence: \\(f(1) = 10, f(n) = f(n-1) - 1.5\\) for \\(n\\ge2\\). Is this sequence arithmetic, geometric, or neither? List at least the first five terms of the sequence. Graph the value of the term \\(f(n)\\) as a function of the term number \\(n\\). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 2: source mathematics — An arithmetic sequence \\(k\\) starts 12, 6, . . . Write a recursive definition for this sequence. Graph at least the first five terms of the sequence.. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 3: source mathematics — An arithmetic sequence \\(a\\) begins 11, 7, . . . Write a recursive definition for this sequence using function notation. Sketch a graph of the first 5 terms of \\(a\\). Explain how to use the recursive definition to find \\(a(100)\\). (Don't actually determine the value.). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 4: source mathematics — A geometric sequence \\(g\\) starts 80, 40, . . . Write a recursive definition for this sequence using function notation. Use your definition to make a table of values for \\(g(n)\\) for the first 6 terms. Explain how to use the recursive definition to find \\(g(100)\\). (Don't. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 5: source mathematics — Match each recursive definition with one of the sequences. \\(h(1)=1, h(n)=2 \\boldcdot h(n-1) + 1\\) for \\(n\\ge2\\) \\(p(1) = 1, p(n) = 2 \\boldcdot p(n-1)\\) for \\(n\\ge2\\) \\(a(1) = 80, a(n) = \\frac 1 2 \\boldcdot a(n-1)\\) for \\(n\\ge2\\). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 6: source mathematics — For each sequence, decide whether it could be arithmetic, geometric, or neither. \\(\\frac{1}{2},\\) 3, 18, . . . For each sequence that is neither arithmetic nor geometric, how can you change a single number to make it an arithmetic sequence? A geometric sequence?. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "First-party independent cool-down: You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify. Answer key: Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5.",
+        "Assessment boundary: digital exact numeric questions may reuse an existing compatible family only if semantics match; diagrams, card discussion and written justifications require teacher verification. Source activities are guidance, not proof an interactive simulator exists."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Missing initial condition",
+          "Definition": "A recurrence does not specify its first value without an initial term.",
+          "Rule": "Ask for f(1) or f(0) explicitly.",
+          "Example": "f(n)=f(n-1)-5 admits many sequences."
+        },
+        {
+          "Title": "Questioning for information",
+          "Definition": "Mathematical information can be shared and justified through precise questions.",
+          "Rule": "Request the start index, initial term and update relationship.",
+          "Example": "Given H(1)=20.25 and ratio 2/3, H(3)=9."
+        },
+        {
+          "Title": "Quadratic visual count",
+          "Definition": "A pattern with n^2+3n+3 increases by nonconstant amounts.",
+          "Rule": "At n=0 count=3; n=1 count=7.",
+          "Example": "3,7,13,21"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Geometric info gap",
+          "Question": "Given H(1)=20.25 and factor 2/3, find H(4).",
+          "Method": "Multiply by the common ratio three times.",
+          "Steps": [
+            "H(2)=13.5.",
+            "H(3)=9.",
+            "H(4)=6."
+          ],
+          "Answer": "6",
+          "Check": "H(1)=(81/4), H(4)=(81/4)*(8/27)=6."
+        },
+        {
+          "Title": "Quadratic dots",
+          "Question": "For D(n)=n^2+3n+3 from step zero, find the first four values.",
+          "Method": "Evaluate the expression for whole-number inputs.",
+          "Steps": [
+            "D(0)=3.",
+            "D(1)=7; D(2)=13.",
+            "D(3)=21."
+          ],
+          "Answer": "3,7,13,21",
+          "Check": "Differences 4,6,8 are nonconstant."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: You receive the recurrence q(n)=q(n-1)-1.5 for n>=2 but not the first term. State which information is missing; then if q(1)=10, give q(1) through q(5) and classify.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Multiply by the common ratio three times. H(2)=13.5.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5."
+          ],
+          "Answer": "Need q(1). Terms 10,8.5,7,5.5,4; arithmetic d=-1.5.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a sequence rule as context-free.",
+          "WhyWrong": "It can alter the index, initial term, units or learning target.",
+          "Correction": "State the beginning term, domain and original lesson model."
+        },
+        {
+          "Mistake": "Using a fixed common difference when the sequence is not arithmetic.",
+          "WhyWrong": "Differing consecutive differences invalidate the arithmetic formula.",
+          "Correction": "Calculate two or more differences or ratios before selecting a rule."
+        },
+        {
+          "Mistake": "Auto-grading graphs, card exchanges or manipulative proof from a number alone.",
+          "WhyWrong": "Numeric equality does not establish a correct diagram or explanation.",
+          "Correction": "Use a teacher rubric for visual and reasoning evidence."
+        }
+      ],
+      "SummaryPoints": [
+        "Ask for missing data needed to represent and solve an indexed sequence, and explain the justification without exposing a partner’s card.",
+        "A recursive rule alone may not identify a unique sequence: f(n)=f(n-1)-5 requires a starting term. A defined function also needs a meaningful index domain. In a two-person information gap, request the missing first term, multiplier or difference and index origin, then justify the derived table/graph. For H(1)=20.25 wit",
+        "Use current existing exact sequence families where genuinely compatible; leave unsupported questions teacher-reviewed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l07-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L07",
+      "CultureCode": "en",
+      "Title": "Using Factors and Zeros",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Explain how to find an appropriate graphing window for a function in factored form. Generate a possible expression for a polynomial function given the horizontal intercepts of the function.",
+        "For prescribed zeros a and b, a possible function is f(x)=k(x-a)(x-b) where k is nonzero. A valid graphing window must include the given zeros and enough vertical variation to see the turning behaviour; do not change a zero to make it fit an arbitrary window.",
+        "Source activity 7.1: More Than Factors: \\(M\\) and \\(K\\) are both polynomial functions of \\(x\\) where \\(M(x)=(x+3)(2x-5)\\) and \\(K(x)= 3(x+3)(2x-5)\\). How are the two functions alike? How are they different? If a graphing window of \\(\\text-5 \\leq x \\leq 5\\) and \\(\\text-20 \\leq y \\leq 20\\) shows all intercepts of a graph of \\(y=M(x)\\), what graphing window would show all intercepts of \\(y=K(x)\\)? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.2: Choosing Windows: Mai graphs the function \\(p\\) given by \\(p(x)=(x+1)(x-2)(x+15)\\) and sees this graph. She says, “This graph looks like a parabola, so it must be a quadratic.” Is Mai correct? Use graphing technology to check. Explain how you could select a viewing window before graphing an expression like \\(p(x)\\) that would show the main features of a graph. Using your explanation, what… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.3: What’s the Equation?: Write a possible equation for a polynomial whose graph has the following horizontal intercepts. Check your equation using graphing technology. \\((0, 0)\\) and \\((4, 0)\\) \\((\\text-2, 0)\\), \\((0,0)\\) and \\((4,0)\\) \\((\\text-4,0), (0,0)\\), and \\((2,0)\\) \\((\\text-5, 0)\\), \\(\\left(\\frac12, 0 \\right)\\), and \\((3,0)\\) We can use the zeros of a polynomial function to figure out what an… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Diego wrote \\(f(x)=(x+2)(x-4)\\) as an example of a function whose graph has \\(x\\)-intercepts at \\(x=\\text-4,2\\). What was his mistake? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Write a possible equation for a polynomial whose graph has horizontal intercepts at \\(x=2,\\text-\\frac12,\\text-3\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Which polynomial function’s graph is shown here? \\(f(x)=(x+1)(x+3)(x+4)\\) \\(f(x)=(x+1)(x-3)(x+4)\\) \\(f(x)=(x-1)(x+3)(x-4)\\) \\(f(x)=(x-1)(x-3)(x-4)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which expression is equivalent to \\((3x + 2)(3x - 5)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What is the value of \\(6(x-2)(x-3)+4(x-2)(x-5)\\) when \\(x=\\text-3\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Match each polynomial function with its leading coefficient. \\(P(x)=(x+2)(2x-3)(4x+7)\\) \\(P(x)=\\frac12(x-2)(2x-3)(4x+7)\\) \\(P(x)=5(x-2)(2x-3)(4x+7)\\) \\(P(x)=\\text-(x-2)(2x-3)(4x+7)\\) \\(P(x)=\\frac{1}{4}(x+2)(2x-3)(4x+7)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Give a polynomial with zeros -2,0,4 and leading coefficient 1. Expected reasoning or answer: f(x)=x(x+2)(x-4).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Zeros and graphing window",
+          "Definition": "For prescribed zeros a and b, a possible function is f(x)=k(x-a)(x-b) where k is nonzero. A valid graphing window must include the given zeros and enough vertical variation to see the turning behaviour; do not change a zero to make it fit an arbitrary window.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Make a monic quadratic whose horizontal intercepts are x=-1 and x=3. Answer: f(x)=x^2-2x-3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Choose factors (x+1) and (x-3); distribute."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Generate a possible expression for a polynomial function given the horizontal intercepts of the function.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Give a polynomial with zeros -2,0,4 and leading coefficient 1. Answer: f(x)=x(x+2)(x-4)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Zeros and graphing window",
+          "Question": "Make a monic quadratic whose horizontal intercepts are x=-1 and x=3.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Choose factors (x+1) and (x-3)",
+            "distribute.",
+            "Interpret the computed result (f(x)=x^2-2x-3.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "f(x)=x^2-2x-3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Give a polynomial with zeros -2,0,4 and leading coefficient 1.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "f(x)=x(x+2)(x-4).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Give a polynomial with zeros -2,0,4 and leading coefficient 1.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Give a polynomial with zeros -2,0,4 and leading coefficient 1.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Choose factors (x+1) and (x-3)",
+            "Verify the result with a second substitution or interpretation; the authored solution is: f(x)=x(x+2)(x-4)."
+          ],
+          "Answer": "f(x)=x(x+2)(x-4).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Zeros and graphing window",
+        "For prescribed zeros a and b, a possible function is f(x)=k(x-a)(x-b) where k is nonzero. A valid graphing window must include the given zeros and enough vertical variation to see the turning behaviour; do not change a zero to make it fit an arbitrary window.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

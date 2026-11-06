@@ -1,0 +1,110 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L02",
+  "LearningGoals": [
+    "Create a polynomial to model a simple investment situation.",
+    "Generalize the structure of integers in order to see similarities to polynomials."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-APR.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-APR.A.1",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-CED.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-CED.A.2",
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.D.11",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-REI.D.11",
+      "SortOrder": 4
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-SSE.A.1",
+      "SortOrder": 5
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSA-APR.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 6
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSA-SSE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 7
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A 1000 gift is invested at the ends of three successive periods. At the third period end, give the accumulated sum when r=1.05.",
+    "Steps": [
+      "P(r)=1000(1+r+r^2)",
+      "1+1.05+1.1025=3.1525."
+    ],
+    "Answer": "3152.50 currency units"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "2.1: Notice and Wonder: Writing Numbers",
+      "2.2: Polynomials in the Integers",
+      "2.3: A Yearly Gift"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1.",
+    "Expected": "200(1+r+r^2+r^3); at r=1 total 800.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u02-l02-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l02.rich-lesson-v2.json"
+}

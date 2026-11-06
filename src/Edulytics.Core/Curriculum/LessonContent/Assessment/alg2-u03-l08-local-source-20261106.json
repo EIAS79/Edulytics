@@ -1,0 +1,79 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L08",
+  "LearningGoals": [
+    "Calculate solutions to equations involving cubes and cube roots and explain the solution method used.",
+    "Compare and contrast the processes of solving equations with square roots and with cube roots.",
+    "Justify using a graph that every number, positive or negative, has exactly one cube root."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "8.EE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-REI.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.D.11",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-REI.D.11",
+      "SortOrder": 3
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Solve x^3=-8 and cube root(-64).",
+    "Steps": [
+      "(-2)^3=-8 and (-4)^3=-64."
+    ],
+    "Answer": "x=-2; cube root=-4"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "8.1: Put Your Arm(s) Up",
+      "8.2: Finding Cube Roots with a Graph",
+      "8.3: Cube Root Equations",
+      "8.4: Solve These Equations With Cube Roots in Them"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Solve 2x^3=54.",
+    "Expected": "x=3.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l08-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l08.rich-lesson-v2.json"
+}

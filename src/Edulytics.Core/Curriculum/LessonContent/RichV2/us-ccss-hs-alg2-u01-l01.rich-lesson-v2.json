@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l01-source-aligned-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+      "CultureCode": "en",
+      "Title": "A Towering Sequence",
+      "ExplanationParagraphs": [
+        "Goal: describe an ordered numerical sequence and use a recursive rule to generate new terms from an initial condition.",
+        "Warm-up, 5 minutes. Write a sequence of five terms. For each term after the first use two times the previous term minus one. Choose a starting value and compare with a partner's different starting value; both may follow the same rule.",
+        "Main task, 30 minutes. Use three pegs and different-sized coins or discs; move one top disc at a time and never place a larger one onto a smaller one. Find the fewest legal moves for 2, 3, and 4 discs, and explain how the solution with n-1 discs permits the n-disc solution.",
+        "The minimum move count is a sequence in the positive integer input n: 1,3,7,15,31,... . To move n discs, temporarily move n-1, move the largest once, then move n-1 back. The recurrence is M(1)=1, M(n)=2M(n-1)+1; deriving M(n)=2^n-1 requires a mathematical justification, not extrapolation alone.",
+        "Extension: predict the number of moves for 5 and 7 discs, and estimate the elapsed years for 64 discs at one second per move. Allow independent reasoning, then compare recurrence and explicit formulas.",
+        "Optional alternate activity: swap two colours of checkers on a line with a centre gap. Only forward moves into an empty space or jumps over one opposing checker are legal. Collect the minimum counts for 1,2,3,4 checkers per colour, explain growth and predict the 7-per-colour count. A physical/manipulative task is teacher assessed.",
+        "Teacher delivery: pairs need three marked peg positions and 2–5 different-sized discs, a timer and a table for disc count/moves. Do not substitute an auto-scored arithmetic quiz for observing legal physical moves; teacher verifies the move sequence, an explanation and a table.",
+        "Practice: generate 10 Fibonacci-type terms from 0,1; continue 1/2,1/4,1/8 using an explicit halving rule; work backward and forward around the fourth term -7 under next=-2*previous+3; propose two distinct legitimate sequences starting 0,5.",
+        "Cool-down, authored by Edulytics: a stack of six discs follows the same legal-move rules. Find its minimum move count, describe why the minimum for six discs is twice the minimum for five discs plus one, and identify the first four sequence terms. Teacher checks the justification; not claimed to reproduce a restricted original cool-down."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sequence",
+          "Definition": "An ordered list of terms indexed by positions.",
+          "Rule": "A starting term and a recurrence determine subsequent terms when the rule is well defined.",
+          "Example": "With a1=2 and a(n+1)=2a(n)-1, terms start 2,3,5,9,17."
+        },
+        {
+          "Title": "Minimum legal moves",
+          "Definition": "Fewest permitted one-disc transfers between three pegs with larger discs never placed on smaller discs.",
+          "Rule": "M(1)=1 and M(n)=2M(n-1)+1 for n>1.",
+          "Example": "M(4)=2(7)+1=15."
+        },
+        {
+          "Title": "Recursive versus explicit forms",
+          "Definition": "A recurrence uses earlier terms; an explicit expression uses the term index.",
+          "Rule": "For this puzzle, M(n)=2^n-1 for n>=1.",
+          "Example": "M(7)=127."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Different initial values",
+          "Question": "Start at 4; each next term is one less than twice the previous term. List five terms.",
+          "Method": "Apply a(n+1)=2a(n)-1 four times.",
+          "Steps": [
+            "a1=4.",
+            "a2=7; a3=13.",
+            "a4=25; a5=49."
+          ],
+          "Answer": "4, 7, 13, 25, 49",
+          "Check": "All four transitions satisfy next=2*previous-1."
+        },
+        {
+          "Title": "Minimum disc transfers",
+          "Question": "What is the minimum number of transfers for 5 discs?",
+          "Method": "Solve the four-disc subproblem twice and move the largest once.",
+          "Steps": [
+            "M(1)=1, M(2)=3.",
+            "M(3)=7, M(4)=15.",
+            "M(5)=2*15+1=31."
+          ],
+          "Answer": "31 legal moves",
+          "Check": "The largest disc must move once; all smaller discs must move away and return."
+        },
+        {
+          "Title": "Practice a recurrence in both directions",
+          "Question": "Given a(n+1)=-2a(n)+3 and a4=-7, find a1,a2,a3,a5.",
+          "Method": "Reverse by a(n)=(3-a(n+1))/2; then apply the forward rule.",
+          "Steps": [
+            "a3=(3-(-7))/2=5.",
+            "a2=(3-5)/2=-1; a1=(3-(-1))/2=2.",
+            "a5=-2*(-7)+3=17."
+          ],
+          "Answer": "a1=2, a2=-1, a3=5, a5=17",
+          "Check": "2 -> -1 -> 5 -> -7 -> 17 obeys the rule."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using 1-2x instead of 2x-1.",
+          "WhyWrong": "It reverses the subtraction order.",
+          "Correction": "Compute twice x first, then subtract one."
+        },
+        {
+          "Mistake": "Counting 2^n moves rather than 2^n-1.",
+          "WhyWrong": "The recurrence starts at one move and adds one to twice the previous count.",
+          "Correction": "For n=3 verify the minimum is 7, not 8."
+        },
+        {
+          "Mistake": "Assuming a numerical formula verifies legal puzzle play.",
+          "WhyWrong": "The actual move constraints and strategy are additional evidence.",
+          "Correction": "Teacher checks a move log, demonstration or justified construction."
+        }
+      ],
+      "SummaryPoints": [
+        "A sequence has ordered terms; a recurrence specifies the next term using earlier terms.",
+        "Always state the initial term.",
+        "Three-peg disc minimum is 2^n-1 for n positive.",
+        "Manipulative play, checker jumping and reasoning remain teacher-reviewed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

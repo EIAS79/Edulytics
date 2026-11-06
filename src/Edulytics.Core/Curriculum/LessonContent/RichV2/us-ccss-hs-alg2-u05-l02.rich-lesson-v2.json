@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L02",
+      "CultureCode": "en",
+      "Title": "Moving Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Use function notation to represent a vertical or horizontal translation from one graph to another.",
+        "For a function f, f(x)+k translates the graph vertically by k; f(x-h) translates right by h. The sign inside the function reverses the visible horizontal direction.",
+        "Source activity 2.1: What Happened to the Equation?: Graph each function using technology. Describe how to transform \\(f(x)=x^2(x-2)\\) to get to the functions shown here in terms of both the graph and the equation. \\(h(x)=x^2(x-2)-5\\) \\(g(x)=(x-4)^2(x-6)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Writing Equations for Vertical Translations: The graph of function \\(g\\) is a vertical translation of the graph of polynomial \\(f\\). Complete the \\(g(x)\\) column of the table. If \\(f(0) = \\text-0.86\\), what is \\(g(0)\\)? Explain how you know. Write an equation for \\(g(x)\\) in terms of \\(f(x)\\) for any input \\(x\\). The function \\(h\\) can be written in terms of \\(f\\) as \\(h(x)=f(x)-2.5\\). Complete the \\(h(x)\\) column of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: Heating the Kitchen: A bakery kitchen has a thermostat set to \\(65^\\circ \\text{F}\\). Starting at 5:00 a.m., the temperature in the kitchen rises to \\(85^\\circ \\text{F}\\) when the ovens and other kitchen equipment are turned on to bake the daily breads and pastries. The ovens are turned off at 10:00 a.m. when the baking finishes. Sketch a graph of the function \\(H\\) that gives the temperature in… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The thermostat in an empty apartment is set to \\(65^\\circ \\text{F}\\) from 4:00 a.m. to 5:00 p.m. and to \\(50^\\circ \\text{F}\\) from 5:00 p.m. until 4:00 a.m. Here is a graph of the function \\(H\\) that gives the temperature \\(H(x)\\) in degrees Fahrenheit in the apartment \\(x\\) hours after midnight. The owner of the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A pumpkin pie recipe says to bake the pie at \\(425^\\circ \\text{F}\\) for 15 minutes, and then to adjust the temperature down to \\(350^\\circ \\text{F}\\) for 45 additional minutes. The function \\(P\\) gives the oven temperature setting \\(P(t)\\), in degrees Fahrenheit, \\(t\\) minutes after the pie is placed in the oven.… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of \\(y = f(x)\\) for a function \\(f\\). On the same axes, sketch a graph of \\(g(x) = f(x) + 2\\). On the same axes, sketch a graph of \\(h(x) = f(x+2)\\). How do the graphs of \\(g\\) and \\(h\\) compare to \\(f\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The graph shows the height of a tennis ball \\(t\\) seconds after it has been hit. The function \\(f\\) given by \\(f(t) = 5 +30t - 32t^2\\) models the height of the ball in feet. How high was the ball when it was hit? Where do you see this in the equation? Suppose a second ball follows the same trajectory but is hit from 7… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Describe a horizontal translation of the line to a line that contains the two labeled points. Describe a vertical translation of the line to a line that contains the two labeled points. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Does the function \\(f\\) or the function \\(g\\) fit the data better? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If f(x)=x², describe h(x)=f(x)+5. Expected reasoning or answer: Shift up five.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Horizontal and vertical translations",
+          "Definition": "For a function f, f(x)+k translates the graph vertically by k; f(x-h) translates right by h. The sign inside the function reverses the visible horizontal direction.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "If f(x)=x², describe g(x)=f(x-2) and its vertex. Answer: Right two; vertex (2,0)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Input x-2 is zero at x2, so shift 2 right."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use function notation to represent a vertical or horizontal translation from one graph to another.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If f(x)=x², describe h(x)=f(x)+5. Answer: Shift up five."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Horizontal and vertical translations",
+          "Question": "If f(x)=x², describe g(x)=f(x-2) and its vertex.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Input x-2 is zero at x2, so shift 2 right.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (Right two; vertex (2,0).) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "Right two; vertex (2,0).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If f(x)=x², describe h(x)=f(x)+5.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Shift up five.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If f(x)=x², describe h(x)=f(x)+5.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If f(x)=x², describe h(x)=f(x)+5.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Input x-2 is zero at x2, so shift 2 right.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Shift up five."
+          ],
+          "Answer": "Shift up five.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Horizontal and vertical translations",
+        "For a function f, f(x)+k translates the graph vertically by k; f(x-h) translates right by h. The sign inside the function reverses the visible horizontal direction.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L07",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "dce002f08829eb6960611ea18b17f1a06a87ce7294f1701eb998b8f2ad0f8110",
+    "teacher/index.html": "d34283764325864b0f38bc9cd05408c3c30b027489e426cfd1b36686fc81e4c1",
+    "teacher/practice.html": "0a3fb950a1b4c969d1607327d7de4e598e452a4762b9e2769a4d6f3cb9a766ad",
+    "student/index.html": "3777bf468103b6835dfb714fd669daaef43d2c486b180cc2ba1dee9b9e41306d",
+    "student/practice.html": "57977d0ab06263c8ef64e4f8019257b0dfb32eaf31590e74fde52a7c83d3ad05"
+  },
+  "Goals": [
+    "Explain why squaring each side of an equation, or taking the square root of each side, may result in an inequivalent equation.",
+    "Use graphs to represent solutions to equations involving squares and square roots."
+  ],
+  "ElementCount": 56,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-001",
+      "SourceSection": "7.1: 2 and -2",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-002",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "Tyler was solving this equation:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-003",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "\\(\\displaystyle x^2 - 1 = 3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-004",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "He said, “I can add 1 to each side of the equation and it doesn’t change the equation. I get \\(x^2 = 4\\).”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-005",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "How can you see the solution to the equation \\(x^2 - 1 = 3\\) in Figure A?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-006",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "How can you see the solution to the equation \\(x^2 = 4\\) in Figure B?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-007",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "Use the graphs to explain why the equations have the same solutions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-008",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "Priya said, “It does change the equation. It just doesn’t change the solutions!” Then she showed these two graphs.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-009",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "\\(\\begin{align}x^2 &= 4\\\\ \\sqrt{x^2} &= \\sqrt{4} \\\\ x &= 2 \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-010",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "Priya said, “But the graphs show that there are two solutions!” What went wrong?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-011",
+      "SourceSection": "7.2: Careful When You Take the Square Root",
+      "SourceExcerpt": "Tyler said, “Now I can take the square root of each side to get the solution to \\(x^2 = 4\\). The square root of \\(x^2\\) is \\(x\\). The square root of 4 is 2.” He wrote:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-012",
+      "SourceSection": "7.3: Another Way to Solve",
+      "SourceExcerpt": "Han was solving this equation: \\(\\displaystyle \\dfrac{x+3}{2} = 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-013",
+      "SourceSection": "7.3: Another Way to Solve",
+      "SourceExcerpt": "He said, \"I know that half of \\(x+3\\) is 4. So \\(x+3\\) must be 8, since half of 8 is 4. This means that \\(x\\) is 5.\"",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-014",
+      "SourceSection": "7.3: Another Way to Solve",
+      "SourceExcerpt": "Use Han's reasoning to solve this equation: \\((x+3)^2 = 4\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-015",
+      "SourceSection": "7.3: Another Way to Solve",
+      "SourceExcerpt": "What advice would you give to someone who was going to solve an equation like \\((x+3)^2 = 4\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-016",
+      "SourceSection": "7.4: What Happens When You Square Each Side?",
+      "SourceExcerpt": "Mai was solving this equation: \\(\\displaystyle \\sqrt{x-1} = 3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-017",
+      "SourceSection": "7.4: What Happens When You Square Each Side?",
+      "SourceExcerpt": "She said, “I can square each side of the equation to get another equation with the same solutions.” Then she wrote:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-018",
+      "SourceSection": "7.4: What Happens When You Square Each Side?",
+      "SourceExcerpt": "\\(\\begin{align}\\sqrt{x-1} &= 3\\\\ (\\sqrt{x-1})^2 &= 3^2 \\\\ x-1 &= 9 \\\\ x &= 10 \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-019",
+      "SourceSection": "7.4: What Happens When You Square Each Side?",
+      "SourceExcerpt": "Check to see if her solution makes the original equation true.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-020",
+      "SourceSection": "7.4: What Happens When You Square Each Side?",
+      "SourceExcerpt": "Andre said, “I tried your technique to solve \\(\\displaystyle \\sqrt{x-1} = \\text{-} 3\\)but it didn’t work.” Why doesn’t it work? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-021",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "Find the solution(s) to each of these equations, or explain why there is no solution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-022",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\sqrt{t + 4} = 3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-023",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\text{-}10 = \\text{-}\\sqrt{a}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-024",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\sqrt{3 - w} - 4 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-025",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\sqrt{z} + 9 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-026",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "Are there values of \\(a\\) and \\(b\\) so that the equation \\(\\sqrt{t + a} = b\\) has more than one solution? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-027",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "Every positive number has two square roots. You can see this by looking at the graph of \\(y=x^2\\):",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-028",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "If \\(y\\) is a positive number like 4, then we can see that \\(y=4\\) crosses the graph in two places, so the equation \\(x^2=4\\) will have two solutions, namely, \\(\\sqrt{4}\\) and \\(\\text{-}\\sqrt{4}\\). This is true for any positive number…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-029",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "When we have a square root in an equation like \\(\\sqrt{t} - 6 = 0\\), we can isolate the square root and then square each side:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-030",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\begin{align}\\sqrt{t} - 6 &= 0\\\\ \\sqrt{t} &= 6\\\\ t &= 6^2 \\\\ t &= 36 \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-031",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "But sometimes, squaring each side of an equation gives results that aren’t solutions to the original equation. For example:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-032",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "\\(\\begin{align}\\sqrt{t} + 6 &= 0\\\\ \\sqrt{t} &= \\text-6\\\\ t &= (\\text-6)^2 \\\\ t &= 36 \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-033",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "Note that 36 is not a solution to the original equation, because \\(\\sqrt{36}+6\\) doesn’t equal 0. In fact, \\(\\sqrt{t}+6=0\\) has no solutions, because it’s impossible for the sum of two positive numbers to be zero.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-ACTIVITY-034",
+      "SourceSection": "7.5: Solve These Equations With Square Roots in Them",
+      "SourceExcerpt": "Remember: sometimes the new equation has solutions that the old equation doesn’t have. Always check your solutions in the original equation!",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Noah solved the equation \\(5x^2=45\\). Here are his steps:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\begin{align} 5x^2 &= 45 \\\\ x^2 &= 9 \\\\ x &= 3 \\\\ \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Do you agree with Noah? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Find the solution(s) to each equation, or explain why there is no solution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\sqrt{47-x}-2 = 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\frac12 \\sqrt{20+x} = 5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Which is a solution to the equation \\(\\sqrt{5-x}+13=4\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The equation has no solution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Select all expressions that are equal to \\(\\frac{1}{(\\sqrt2)^5}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\text- \\frac{5}{\\sqrt2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{1}{\\sqrt{2^5}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-012",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{1}{\\sqrt{32}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-013",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\text- (\\sqrt2)^5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\text- 2^{\\frac52}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(2^{\\text- \\frac52}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-016",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Which are the solutions to the equation \\(x^2=36\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-017",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "This equation has no solutions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Here is a graph of \\(y=x^2\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Use the graph to estimate all solutions to the equation \\(x^2=3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-020",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "If you square your estimates, what number should they be close to?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-021",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Square your estimates. How close did you get to this number?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L07-PRACTICE-022",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The polynomial function \\(q(x)=3x^3+11x^2-14x-40\\) has a known factor of \\((3x + 5)\\). Rewrite \\(q(x)\\) as the product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

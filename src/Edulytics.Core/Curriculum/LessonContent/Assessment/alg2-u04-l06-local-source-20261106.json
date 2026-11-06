@@ -1,0 +1,87 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L06",
+  "LearningGoals": [
+    "Create an equation for an exponential function from input-output pairs in which the inputs do not differ by 1.",
+    "Determine what information is needed to write an exponential equation. Ask questions to elicit that information."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-SSE.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C.8.B",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "SubpartToAcceptedParent",
+      "OutcomeCode": "CCSS:HSF-IF.C.8",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.A.2",
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-RN.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-RN.A.1",
+      "SortOrder": 4
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "An exponential has f(0)=5 and f(2)=45. Find a*b^t.",
+    "Steps": [
+      "a=5",
+      "b^2=45/5=9",
+      "positive b=3."
+    ],
+    "Answer": "f(t)=5*3^t."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "6.1: All Equivalent?",
+      "6.2: Info Gap: Two Points",
+      "6.3: Bacteria Growth Expressions"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "If f(1)=12 and f(3)=48, find positive factor per unit.",
+    "Expected": "b^2=48/12=4, hence b=2.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u04-l06-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l06.rich-lesson-v2.json"
+}

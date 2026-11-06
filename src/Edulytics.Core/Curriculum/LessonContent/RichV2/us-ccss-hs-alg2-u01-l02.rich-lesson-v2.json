@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l02-source-aligned-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+      "CultureCode": "en",
+      "Title": "Introducing Geometric Sequences",
+      "ExplanationParagraphs": [
+        "Learning goal: recognise equal ratios between consecutive terms, recover missing terms and model geometric growth or decay through tables and discrete graphs.",
+        "Warm-up: compare four numerical lists, including one that triples, one that quadruples, one that halves and one multiplied by three-quarters. Ask how to distinguish equal multipliers from equal differences; classify by calculating at least two adjacent ratios.",
+        "Paper investigation: start with an 8 by 10 inch rectangle. After every equal halving cut the number of pieces doubles and the area of each piece is halved. Complete an input-output table for zero through six cuts.",
+        "Model the whole-number step n as P(n)=2^n and A(n)=80/2^n square inches. After n=5 there are 32 pieces of area 2.5 square inches; n=6 gives 64 pieces of 1.25 square inches. P(n)A(n)=80 at each step, so the total area remains constant.",
+        "Draw or graph two separate sets of discrete points: cuts versus number of pieces, then cuts versus area per piece. Compare their opposite trends and explain why a fractional number of physical cuts is not a permitted input in this model.",
+        "Generate and repair missing terms for geometric sequences with factors 2, 3, one-tenth, three and one-half; whenever an entry is fractional, preserve exact rational notation rather than rounding away the relationship.",
+        "Practice transfer: a balance growing by 2% each month without payments follows B(n)=1000(1.02)^n. A triangle-subdivision pattern can have 3^n retained triangles, each 256/4^n square inches, so retained area is 256(3/4)^n. Distinguish piece count from area per piece.",
+        "Teacher-led: if scissors or graphing technology are available, ask students to demonstrate cut-and-stack or plot points; verify labels, units, and the conservation argument. Do not treat a bare numeric answer as proof of a correct diagram.",
+        "Independent cool-down (Edulytics): a rectangular board has area 96 square centimetres. Each operation doubles the count of equal regions and halves the area per region. Predict both quantities after four operations, write the two recursive rules and justify the invariant product."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Geometric sequence",
+          "Definition": "Consecutive nonzero terms differ by a single constant multiplier r.",
+          "Rule": "a(n+1)=r*a(n); for n beginning at zero, a(n)=a(0)*r^n.",
+          "Example": "24,12,6,3,1.5 has r=1/2."
+        },
+        {
+          "Title": "Growth factor",
+          "Definition": "A fixed ratio of a new term to the preceding nonzero term.",
+          "Rule": "r=a(n+1)/a(n), checked for several adjacent pairs.",
+          "Example": "256,192,144 has r=3/4."
+        },
+        {
+          "Title": "Conserved total area",
+          "Definition": "More equal pieces can have smaller individual areas without changing the original area.",
+          "Rule": "P(n)=2^n; A(n)=A(0)/2^n; P(n)*A(n)=A(0).",
+          "Example": "64 pieces of 1.25 square inches still make 80 square inches."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete two geometric patterns",
+          "Question": "Find the missing terms in 1.5,3,6,?,24,? and 200,20,2,?,0.02,?.",
+          "Method": "Recover the constant multiplier from adjacent terms and use it consistently.",
+          "Steps": [
+            "First ratio is 3/1.5=2, giving 12 and 48.",
+            "Second ratio is 20/200=0.1, giving 0.2 and 0.002.",
+            "Check a second pair to confirm both factors."
+          ],
+          "Answer": "12 and 48; 0.2 and 0.002.",
+          "Check": "Consecutive ratios are 2 and 0.1 respectively."
+        },
+        {
+          "Title": "Doubling count, halving size",
+          "Question": "How many pieces and what area per piece result from six halving cuts of an 80-square-inch sheet?",
+          "Method": "Use powers of two, with n counting cuts starting at zero.",
+          "Steps": [
+            "Count=2^6=64.",
+            "Area per piece=80/64=1.25 square inches.",
+            "Total=64*1.25=80 square inches."
+          ],
+          "Answer": "64 pieces, 1.25 square inches each.",
+          "Check": "The original sheet's total area is unchanged."
+        },
+        {
+          "Title": "Two exponential quantities in a subdivided triangle",
+          "Question": "A diagram begins with one shaded triangle of area 256. At each step each retained triangle produces three retained smaller triangles, each a quarter the previous area. What is the shaded area at step two?",
+          "Method": "Track number and area per triangle independently.",
+          "Steps": [
+            "At step 2 the count is 3^2=9.",
+            "At step 2 each area is 256/4^2=16.",
+            "Shaded total =9*16=144."
+          ],
+          "Answer": "144 square units.",
+          "Check": "The shaded fraction after two steps is (3/4)^2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtracting a common difference instead of multiplying by a ratio.",
+          "WhyWrong": "Growth and decay change by factors, not fixed absolute increments.",
+          "Correction": "Divide adjacent nonzero terms twice to verify a common ratio."
+        },
+        {
+          "Mistake": "Graphing a sequence as a continuous curve without indicating discrete points.",
+          "WhyWrong": "A cut count is a whole number and the sequence is indexed by whole steps.",
+          "Correction": "Plot only integer inputs with proper axis labels."
+        },
+        {
+          "Mistake": "Claiming total sheet area grows when pieces multiply.",
+          "WhyWrong": "Area per piece decreases by the inverse multiplier.",
+          "Correction": "Multiply piece count by area per piece."
+        }
+      ],
+      "SummaryPoints": [
+        "Constant adjacent ratios characterise a geometric sequence.",
+        "An index starting at zero has explicit rule a(n)=a(0)*r^n.",
+        "In a cut-and-stack model pieces double while area per piece halves.",
+        "Teacher verifies physical diagrams and graphs; exact numeric families are authored for Stage D verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

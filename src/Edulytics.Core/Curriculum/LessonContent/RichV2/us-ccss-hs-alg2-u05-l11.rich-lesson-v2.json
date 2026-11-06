@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l11-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L11",
+      "CultureCode": "en",
+      "Title": "Making a Model for Data",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Compare and contrast different models for the same data. Use transformations to create a function that models data given a simple starting function.",
+        "Use observed vertices, intercepts and scaling to transform a parent graph. For a quadratic with vertex (1,3) and output5 at x2, g(x)=2(x-1)²+3 fits both; verify additional observations before trusting the model.",
+        "Source activity 11.1: What Function Could It Be?: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.2: Heating Up: Here is a graph of data showing the temperature of a bottle of water after it has been removed from the refrigerator. For the function types assigned by your teacher: Apply a sequence of transformations to your function so that it matches the data as well as possible. How well does your model fit the data? Make adjustments as needed. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A line \\(\\ell\\) is defined by the equation \\(f(x) = 2x - 3\\). Line \\(m\\) is the same as line \\(l\\), but shifted 1 unit right. What is an equation for a function \\(g\\) that defines the line \\(m\\)? Line \\(n\\) is the same as line \\(m\\), but shifted 2 units up. What is an equation for a function \\(h\\) that defines the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The functions \\(g\\) and \\(f\\) are related by the equation \\(g(x) = f(\\text-x) + 3\\). Which sequence of transformations will take the graph of \\(f\\) to the graph of \\(g\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The function \\(f\\) is linear. Can \\(f\\) be an odd function? Explain how you know Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Technology required. The function \\(f\\) is given by \\(f(x) = x^3 + 1\\). Kiran says that \\(f\\) is odd because \\((\\text-x)^3 = \\text-x^3\\). Do you agree with Kiran? Explain your reasoning. Graph \\(f\\), and use the graph to decide whether or not \\(f\\) is an odd function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here are graphs of three functions \\(f\\), \\(g\\), and \\(h\\) given by \\(f(x) = (x-1)^2\\), \\(g(x) = 2(x-1)^2\\) and \\(h(x) = 3(x-1)^2\\). Identify which function matches each graph. Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Technology required. Describe how to transform the graph of \\(f(x) = x^2\\) into the graph of \\(g(x) = 4(3x-1)^2 + 5\\). Check your response by graphing \\(f\\) and \\(g\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Let \\(p\\) be the price of a T-shirt, in dollars. A company expects to sell \\(f(p)\\) T-shirts a day where \\(f(p) = 50 - 4p\\). Write a function \\(r\\) giving the total revenue received in a day. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: A population of 80 single-celled organisms is tripling every hour. The population as a function of hours since it is measured, \\(h\\), can be represented by \\(g(h) =80 \\boldcdot 3^h\\). Which equation represents the population 10 minutes after it is measured? \\(g(10) =80 \\boldcdot 3^{10}\\) \\(g(0.1) =80 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find y=a(x+2)²+1 passing through (-1,4). Expected reasoning or answer: a=3, so y=3(x+2)²+1.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Transform a parent function to model data",
+          "Definition": "Use observed vertices, intercepts and scaling to transform a parent graph. For a quadratic with vertex (1,3) and output5 at x2, g(x)=2(x-1)²+3 fits both; verify additional observations before trusting the model.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find a transformed quadratic y=a(x-1)²+3 passing through (2,5). Answer: y=2(x-1)²+3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Set5=a*(1)²+3, so a=2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use transformations to create a function that models data given a simple starting function.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find y=a(x+2)²+1 passing through (-1,4). Answer: a=3, so y=3(x+2)²+1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Transform a parent function to model data",
+          "Question": "Find a transformed quadratic y=a(x-1)²+3 passing through (2,5).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Set5=a*(1)²+3, so a=2.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (y=2(x-1)²+3.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "y=2(x-1)²+3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find y=a(x+2)²+1 passing through (-1,4).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "a=3, so y=3(x+2)²+1.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find y=a(x+2)²+1 passing through (-1,4).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find y=a(x+2)²+1 passing through (-1,4).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Set5=a*(1)²+3, so a=2.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: a=3, so y=3(x+2)²+1."
+          ],
+          "Answer": "a=3, so y=3(x+2)²+1.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Transform a parent function to model data",
+        "Use observed vertices, intercepts and scaling to transform a parent graph. For a quadratic with vertex (1,3) and output5 at x2, g(x)=2(x-1)²+3 fits both; verify additional observations before trusting the model.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

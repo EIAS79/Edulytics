@@ -1,0 +1,74 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+  "Unit": 1,
+  "Lesson": 1,
+  "SourceTaskTypes": [
+    "recursive sequence generation",
+    "disc transfer demonstration",
+    "optional checker manipulation",
+    "verbal reasoning",
+    "cumulative independent practice"
+  ],
+  "CompetencyContracts": [
+    {
+      "skill": "recursive-sequence-generation",
+      "answerTypes": [
+        "ordered-term-list",
+        "numeric"
+      ],
+      "allowedQuestionFamilies": [
+        "usccss.g11.alg2.u01.l01.affine_recurrence",
+        "usccss.g11.alg2.u01.l01.fibonacci_term",
+        "usccss.g11.alg2.u01.l01.halving_fraction"
+      ],
+      "forbiddenQuestionFamilies": [
+        "unrelated-arithmetic-fallback"
+      ],
+      "grading": "deterministic exact recurrence if existing engine support is proved; else teacher review",
+      "capabilityReadiness": "WRITTEN_NOT_RUN"
+    },
+    {
+      "skill": "minimum-disc-transfer-reasoning",
+      "answerTypes": [
+        "numeric",
+        "verbal-justification",
+        "legal-move-log"
+      ],
+      "allowedQuestionFamilies": [
+        "usccss.g11.alg2.u01.l01.hanoi_moves"
+      ],
+      "forbiddenQuestionFamilies": [
+        "unrelated-multiple-choice"
+      ],
+      "grading": "teacher verifies physical constraints and explanation",
+      "capabilityReadiness": "WRITTEN_NOT_RUN_TEACHER_JUSTIFICATION"
+    }
+  ],
+  "IndependentCoolDown": {
+    "Prompt": "A six-disc puzzle has three pegs and the usual legal move constraints. Give the fewest moves, calculate it from the five-disc result, and explain why your recurrence must use two five-disc transfers.",
+    "Expected": "M(6)=2*M(5)+1=63; five smaller discs must be moved away and back.",
+    "Origin": "FIRST_PARTY_AUTHORED_NOT_PUBLISHER_COOLDOWN",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "Evidence": [
+      "disc move log or demonstration",
+      "sequence table",
+      "recursion explanation",
+      "checker explanation if optional"
+    ],
+    "NoClaimOfAutomatedRuntime": true
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l01-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l01.rich-lesson-v2.json",
+  "StageA": "SOURCE_ELEMENT_GROUPS_24_OF_24_AUTHORED",
+  "StageB": "RICH_V2_AUTHORING_COMPLETE_RUNTIME_NOT_RUN",
+  "StageC": "FOUR_FAMILIES_AUTHORED_UNPROMOTED_AND_TEACHER_LED",
+  "TeachingPerformance": "STAGE_D_NOT_RUN"
+}

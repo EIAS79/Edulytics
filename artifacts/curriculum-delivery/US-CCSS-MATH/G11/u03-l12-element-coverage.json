@@ -1,0 +1,413 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L12",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "fc66b2de5139a0c0e604e9c5163d9b25a6dd2d0a4ced4723eb054c202e5d6150",
+    "teacher/index.html": "c3ecb0e9a0b762b1d76920ff3383ae2ecf36a7ccc079432307a7068619cbc438",
+    "teacher/practice.html": "d3922e4ab534bea4c2f567e50deed6d56cf164a30082fc4ffa7fd32575e377c4",
+    "student/index.html": "5f2129aaf1fba78017d593bc1384a319c577e3d677e0df5d14239e3ce27202df",
+    "student/practice.html": "ad73a1ac258c4b0b8b08f2501589b6005c6366536af467ee7d0010a79d1d846c"
+  },
+  "Goals": [
+    "Determine powers of imaginary numbers and represent them on the complex plane.",
+    "Determine the result of adding complex numbers, and represent it in the form $a+bi$, where $a$ and $b$ are real numbers.",
+    "Use the complex plane to visualize why the sum of two complex numbers is another complex number."
+  ],
+  "ElementCount": 49,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-001",
+      "SourceSection": "12.1: Math Talk: Telescoping Sums",
+      "SourceExcerpt": "Find the value of these expressions mentally.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-002",
+      "SourceSection": "12.1: Math Talk: Telescoping Sums",
+      "SourceExcerpt": "\\(2 - 2 + 20 - 20 + 200 - 200\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-003",
+      "SourceSection": "12.1: Math Talk: Telescoping Sums",
+      "SourceExcerpt": "\\(100 - 50 + 10 - 10 + 50 - 100\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-004",
+      "SourceSection": "12.1: Math Talk: Telescoping Sums",
+      "SourceExcerpt": "\\(3 + 2 + 1 + 0 - 1 - 2 - 3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-005",
+      "SourceSection": "12.1: Math Talk: Telescoping Sums",
+      "SourceExcerpt": "\\(1 + 2 + 4 + 8 + 16 + 32 - 16 - 8 - 4 - 2 - 1\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-006",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "How do you see \\(2 + 3i\\) represented?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-007",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "How do you see \\(\\text- 8 - 8i\\) represented?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-008",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "What complex number does \\(A\\) represent?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-009",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "Add “like terms” in the expression \\((2 + 3i) + (\\text- 8 - 8i)\\). What do you get?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-010",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "This diagram represents \\((2 + 3i) + (\\text- 8 - 8i)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-011",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "\\((\\text- 3 + 2i) + (4 - 5i)\\) (Check your work by drawing a diagram.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-012",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "\\((\\text- 37 - 45i) + (11 + 81i)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-013",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "\\((\\text- 3 + 2i) - (4 - 5i)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-014",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "\\((\\text- 37 - 45i) - (11 + 81i)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-015",
+      "SourceSection": "12.2: Adding Complex Numbers",
+      "SourceExcerpt": "Write these sums and differences in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-016",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "Draw points to represent 2, 22, 23, and 24 on the real number line.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-017",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "Write \\(2i\\), \\((2i)^2\\), \\((2i)^3\\), and \\((2i)^4\\) in the form \\(a+bi\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-018",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "Plot \\(2i\\), \\((2i)^2\\), \\((2i)^3\\), and \\((2i)^4\\) on the complex plane.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-019",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "If \\(a\\) and \\(b\\) are positive numbers, is it true that \\(\\sqrt{ab}=\\sqrt{a}\\sqrt{b}\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-020",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "If \\(a\\) and \\(b\\) are negative numbers, is it true that \\(\\sqrt{ab}=\\sqrt{a}\\sqrt{b}\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-021",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "When we add a real number with an imaginary number, we get a complex number. We usually write complex numbers as:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-022",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\displaystyle a + bi\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-023",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "where \\(a\\) and \\(b\\) are real numbers. We say that \\(a\\) is the real part and \\(bi\\) is the imaginary part.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-024",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "To add (or subtract) two complex numbers, we add (or subtract) the real parts and add (or subtract) the imaginary parts. For example:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-025",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\displaystyle (2 + 3i )+(4 + 5i) = (2 + 4) + (3i + 5i) = 6 + 8i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-026",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\displaystyle (2 + 3i )-(4 + 5i) = (2 - 4) + (3i - 5i) = \\text-2 - 2i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-027",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\displaystyle (a+bi) + (c+di) = (a+c) + (b+d)i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-028",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\displaystyle (a+bi) - (c+di) = (a-c) + (b - d)i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-029",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "When we raise an imaginary number to a power, we can use the fact that \\(i^2=\\text-1\\) to write the result in the form \\(a+bi\\). For example, \\((4i)^3=4i \\boldcdot 4i \\boldcdot 4i\\). We can group the \\(i\\) factors together to see how to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-030",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "\\(\\begin{align*} 4i \\boldcdot 4i \\boldcdot 4i &= (4 \\boldcdot 4 \\boldcdot 4) \\boldcdot (i \\boldcdot i \\boldcdot i) \\\\ &= 64 \\boldcdot (i^2 \\boldcdot i) \\\\ &= 64 \\boldcdot \\text-1 \\boldcdot i \\\\ &= \\text-64i \\end{align*} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-031",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "So in this example, \\(a\\) is 0 and \\(b\\) is -64.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-032",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "A number in the complex plane. It can be written as \\(a + bi\\), where \\(a\\) and \\(b\\) are real numbers and \\(i^2 = \\text-1\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-033",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "A number on the imaginary number line. It can be written as \\(bi\\), where \\(b\\) is a real number and \\(i^2 = \\text-1\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-ACTIVITY-034",
+      "SourceSection": "12.3: Multiplication on the Complex Plane",
+      "SourceExcerpt": "A number on the number line.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. You may plot the numbers in the complex plane as a guide.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(2 \\boldcdot \\sqrt{\\text-4}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(3i \\boldcdot 2i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(4 - 3\\sqrt{\\text-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Which expression is equivalent to \\((3+9i) - (5-3i)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "What are \\(a\\) and \\(b\\) when you write \\(\\sqrt{\\text-16}\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(a=0\\), \\(b=\\text-4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(a=\\text-4\\), \\(b=0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Fill in the boxes to make a true statement: \\(\\displaystyle (\\boxed{\\phantom{30}}-3i) - (15+\\boxed{\\phantom{30}}i) = 7 - 12i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-010",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Plot each number on the real number line, or explain why the number is not on the real number line.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\text- \\sqrt{16}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\sqrt{\\text-16}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\text- 56^{1/2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\((\\text-56)^{1/2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L12-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Which expression is equivalent to \\(\\sqrt{\\text-4}\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l12.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

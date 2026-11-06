@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L04",
+      "CultureCode": "en",
+      "Title": "Representing Functions at Rational Inputs",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Interpret fractional inputs for exponential functions in context. Understand that the growth (or decay) factor for an input interval of $\\frac{1}{n}$ is $b^{\\frac{1}{n}}$ and not $\\frac{b}{n}$ when $b$ is the growth (or decay) factor for an interval of length 1 and $n$ is the number of intervals.",
+        "If b is full-step growth factor, the multiplier over 1/n time units is b^(1/n), not b/n. For yearly factor1.21 a half-year multiplier is sqrt1.21=1.1.",
+        "Source activity 4.1: Math Talk: Unknown Exponents: Solve each equation mentally. \\(\\frac{1}{5^r} = \\frac{1}{125}\\) \\(5^t = \\frac{1}{125}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: Population of Nigeria: Attribution: Location Nigeria AU Africa, by Alvaro1984 18. Public Domain. Wikimedia Commons. Source. In 1990, Nigeria had a population of about 95.3 million. By 2000, there were about 122.4 million people, an increase of about 28.4%. During that decade, the population can be reasonably modeled by an exponential function. Express the population of Nigeria \\(f(d)\\), in millions… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Got Caffeine?: In healthy adults, caffeine has an average half-life of about 6 hours. Let's suppose a healthy man consumes a cup of coffee that contains 100 mg of caffeine at noon. \\(100 \\boldcdot \\left(\\frac12\\right)^1\\) \\(100 \\boldcdot \\left(\\frac12\\right)^3\\) \\(100 \\boldcdot \\left(\\frac12\\right)^{\\frac16}\\) \\(100 \\boldcdot \\left(\\frac12\\right)^t\\) Each of the following expressions… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A bacteria population is tripling every hour. By what factor does the population change in \\(\\frac12\\) hour? Select all that apply. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A medication has a half-life of 4 hours after it enters the bloodstream. A nurse administers a dose of 225 milligrams to a patient at noon. 1 p.m. on the same day 7 p.m. on the same day Write an expression to represent the amount of medication, in milligrams, in the patient’s body at: The expression \\(225 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The number of employees in a company has been growing exponentially by 10% each year. By what factor does the number of employees change: Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The value of a truck decreases exponentially since its purchase. The two points on the graph shows the truck’s initial value and its value a decade afterward. Express the car’s value, in dollars, as a function of time \\(d\\), in decades, since purchase. Write an expression to represent the car’s value 4 years after… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The value of a stock increases by 8% each year. Explain why the stock value does not increase by 80% each decade. Does the value increase by more or less than 80% each decade? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Decide if each statement is true or false. \\(50^\\frac12 = 25\\) \\(\\sqrt{30}\\) is a solution to \\(y^2 = 30\\). \\(243^{\\frac13}\\) is equivalent to \\(\\sqrt[3]{243}\\). \\(\\sqrt{20}\\) is a solution to \\(m^4 = 20\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Lin is saving $300 per year in an account that pays 4.5% interest per year, compounded annually. About how much money will she have 20 years after she started? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: An annual factor is 1.44. Find the equal six-month factor. Expected reasoning or answer: 1.2.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equal fractional intervals",
+          "Definition": "If b is full-step growth factor, the multiplier over 1/n time units is b^(1/n), not b/n. For yearly factor1.21 a half-year multiplier is sqrt1.21=1.1.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A process grows by factor 1.21 per year. What factor applies per half-year? Answer: 1.1."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Factor r solves r^2=1.21, so r=sqrt1.21."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Understand that the growth (or decay) factor for an input interval of $\\frac{1}{n}$ is $b^{\\frac{1}{n}}$ and not $\\frac{b}{n}$ when $b$ is the growth (or decay) factor for an interval of length 1 and $n$ is the number of intervals.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "An annual factor is 1.44. Find the equal six-month factor. Answer: 1.2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equal fractional intervals",
+          "Question": "A process grows by factor 1.21 per year. What factor applies per half-year?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Factor r solves r^2=1.21, so r=sqrt1.21.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (1.1.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "1.1.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "An annual factor is 1.44. Find the equal six-month factor.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "1.2.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "An annual factor is 1.44. Find the equal six-month factor.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: An annual factor is 1.44. Find the equal six-month factor.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Factor r solves r^2=1.21, so r=sqrt1.21.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 1.2."
+          ],
+          "Answer": "1.2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Equal fractional intervals",
+        "If b is full-step growth factor, the multiplier over 1/n time units is b^(1/n), not b/n. For yearly factor1.21 a half-year multiplier is sqrt1.21=1.1.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

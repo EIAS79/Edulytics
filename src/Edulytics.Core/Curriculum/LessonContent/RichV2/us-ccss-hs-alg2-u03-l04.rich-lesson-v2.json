@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L04",
+      "CultureCode": "en",
+      "Title": "Positive Rational Exponents",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Justify the equivalence of $b^{m/n}$ and $\\sqrt[n]{b^m}$ using the properties of exponents. Use graphs to estimate the value of expressions involving positive rational exponents.",
+        "For b>0, b^(m/n)=(nth root b)^m. Graph y=b^x with fractional inputs and verify exponent laws.",
+        "Source activity 4.1: Math Talk: Regrouping Fractions: Find the value of each expression mentally. \\(\\frac12 \\boldcdot 5 \\boldcdot 4\\) \\(\\frac52 \\boldcdot 4\\) \\(\\frac23 \\boldcdot 7 \\boldcdot \\frac32\\) \\(7 \\boldcdot \\frac53 \\boldcdot \\frac37\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: You Can Use Any Fraction As an Exponent: \\(\\left(5^{\\frac13}\\right)^2\\) \\(\\left(5^2\\right)^{\\frac13}\\) Use exponent rules to explain why these expressions are equal to each other: Write \\(5^{\\frac23}\\) using radicals. Write \\(5^{\\frac43}\\) using radicals. Show your reasoning using exponent rules. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Fractional Powers Are Just Numbers: Complete the table as much as you can without using a calculator. (You should be able to fill in three spaces.) Plot the points that you filled in. Connect the points as smoothly as you can. Use this graph of \\(y=2^x\\) to estimate the value of the other powers in the table, and write your estimates in the table. Let’s investigate \\(2^{\\frac13}\\): Write \\(2^{\\frac13}\\) using… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Evaluate \\(8^{\\frac53}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Select all expressions that are equal to \\(64^{\\frac32}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Write the expression \\(17^{\\frac43}\\) using radicals. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: An arithmetic sequence \\(k\\) starts 4, 13, . . . . Explain how you would calculate the value of the 5,000th term. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Select all items equivalent to \\(\\sqrt{24}\\). the area of a square with side length 24 units the side length of a square with area 24 square units the positive number \\(x\\), where \\(x \\boldcdot x = 24\\) the positive number \\(y\\), where \\(y = 24 \\boldcdot 24\\) the edge length of a cube with volume 24 cubic units the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which expression is equivalent to \\(23^{\\frac12}\\)? \\(\\frac{1}{\\sqrt{23}}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate 16^(3/4). Expected reasoning or answer: 8.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Positive rational powers",
+          "Definition": "For b>0, b^(m/n)=(nth root b)^m. Graph y=b^x with fractional inputs and verify exponent laws.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Evaluate 27^(2/3). Answer: 9"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Cube root27=3; 3^2=9."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use graphs to estimate the value of expressions involving positive rational exponents.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate 16^(3/4). Answer: 8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Positive rational powers",
+          "Question": "Evaluate 27^(2/3).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Cube root27=3",
+            "3^2=9.",
+            "Interpret the computed result (9) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "9",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate 16^(3/4).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "8.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate 16^(3/4).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate 16^(3/4).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Cube root27=3",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 8."
+          ],
+          "Answer": "8.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Positive rational powers",
+        "For b>0, b^(m/n)=(nth root b)^m. Graph y=b^x with fractional inputs and verify exponent laws.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

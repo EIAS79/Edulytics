@@ -1,0 +1,121 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L18",
+  "LearningGoals": [
+    "Create trigonometric functions to model circular motion given a description.",
+    "Use the relationship between arc length and radian angle measurements to calculate distance traveled around a circle."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-BF.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSG-C.B.5",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-IF.B.4",
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C.7.E",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "SubpartToAcceptedParent",
+      "OutcomeCode": "CCSS:HSF-IF.C.7",
+      "SortOrder": 4
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-TF.A.1",
+      "SortOrder": 5
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.B.5",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-TF.B.5",
+      "SortOrder": 6
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-Q.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-Q.A.1",
+      "SortOrder": 7
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-TF.B.5",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 8
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A wheel of radius10 has center height12 and period60 seconds, starting at bottom. Find height at t=0 and t=30.",
+    "Steps": [
+      "h(t)=12-10cos(2πt/60)",
+      "h(0)=2",
+      "h(30)=22."
+    ],
+    "Answer": "2 and 22 height units."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "18.1: Comparing Bikes",
+      "18.2: Around a Carousel",
+      "18.3: Modeling the Carousel Motion"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7",
+      "Problem 8"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "For radius4 and angle π/2, find arc length.",
+    "Expected": "2π.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u06-l18-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json"
+}

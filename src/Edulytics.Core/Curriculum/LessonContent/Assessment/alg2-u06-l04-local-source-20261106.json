@@ -1,0 +1,95 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L04",
+  "LearningGoals": [
+    "Describe the structure of angles expressed in terms of radians on the unit circle.",
+    "Describe the structure of the coordinates associated with specific radian measurements on the unit circle."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-TF.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSG-SRT.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-TF.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-TF.A.1",
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-TF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Find unit-circle coordinates for θ=5π/6.",
+    "Steps": [
+      "Reference angle π/6",
+      "quadrantII has negative cosine and positive sine."
+    ],
+    "Answer": "(-√3/2,1/2)."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "4.1: Notice and Wonder: Angles Around the Unit Circle",
+      "4.2: Angles Everywhere",
+      "4.3: Angle Coordinates Galore"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Find coordinates at 7π/6.",
+    "Expected": "(-√3/2,-1/2).",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u06-l04-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json"
+}

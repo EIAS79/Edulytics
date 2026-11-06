@@ -1,0 +1,380 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L14",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "23d528e4ce5430111c784153f4e74ab63a6405a8f6cb49a6b540e0471ec9f109",
+    "teacher/index.html": "923dcf30fe4b9a41bd2a8e8f7d43801ba604dba379fa7fe4af6f99d09b5c2af9",
+    "teacher/practice.html": "4b4543932c7c470ba3606ad0f15f0522fe21e6ead9ef1173a09639d8cf4edf11",
+    "student/index.html": "fe63b2ccdd95045035cfe57ef8b6157d0a3cd57a79878cc6db17e7d64a575fd0",
+    "student/practice.html": "0035aeb76117db1b429043e843da7f59ad33935099d6337beab4953f0cdf04e3"
+  },
+  "Goals": [
+    "Comprehend that the natural logarithm is used to express the solution to an exponential equation with base $e$.",
+    "Use base 10 and natural logarithms to solve exponential equations."
+  ],
+  "ElementCount": 45,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-001",
+      "SourceSection": "14.1: A Valid Solution?",
+      "SourceExcerpt": "To solve the equation \\(5 \\boldcdot e^{3a} = 90\\), Lin wrote the following:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-002",
+      "SourceSection": "14.1: A Valid Solution?",
+      "SourceExcerpt": "\\(\\displaystyle \\begin {align}5 \\boldcdot e^{3a} &= 90\\\\ e^{3a} &= 18\\\\ 3a &= \\log_e 18\\\\ a&=\\frac {\\log_e 18}{3}\\\\ \\end {align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-003",
+      "SourceSection": "14.1: A Valid Solution?",
+      "SourceExcerpt": "Is her solution valid? Be prepared to explain what she did in each step to support your answer.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-004",
+      "SourceSection": "14.2: Natural Logarithm",
+      "SourceExcerpt": "Complete the table with equivalent equations. The first row is completed for you.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-005",
+      "SourceSection": "14.2: Natural Logarithm",
+      "SourceExcerpt": "Solve each equation by expressing the solution using \\(\\ln\\) notation. Then, find the approximate value of the solution using the “ln” button on a calculator.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-006",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "Without using a calculator, solve each equation. It is expected that some solutions will be expressed using log notation. Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-007",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(10^x = 10,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-008",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(5 \\boldcdot 10^x = 500\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-009",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(10^{(x+3)} = 10,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-010",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(10^{2x} = 10,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-011",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(2 \\boldcdot 10^x = 800\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-012",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(10^{(1.2x)} = 4,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-013",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(7\\boldcdot 10^{(0.5x)} = 70\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-014",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(2 \\boldcdot e^x=16\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-015",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(10 \\boldcdot e^{3x}=250\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-016",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "Solve the equations \\(10^{n} = 16\\) and \\(10^{n} = 2\\). Express your answers as logarithms.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-017",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "What is the relationship between these two solutions? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-018",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "So far we have solved exponential equations by",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-019",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "finding whole number powers of the base (for example, the solution of \\(10^x = 100,\\!000\\) is 5)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-020",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "estimation (for example, the solution of \\(10^x = 300\\) is between 2 and 3)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-021",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "using a logarithm and approximating its value on a calculator (for example, the solution of \\(10^x = 300\\) is \\(\\log 300 \\approx 2.48\\))",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-022",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "Sometimes solving exponential equations takes additional reasoning. Here are a couple of examples.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-023",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(\\displaystyle \\begin {align} 5 \\boldcdot 10^x &= 45\\\\ 5 \\boldcdot 10^x &= 45\\\\10^x &= 9\\\\x &=\\log 9\\\\ \\end {align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-024",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "\\(\\displaystyle \\begin {align} 10^{(0.2t)} &= 1,\\!000\\\\ 10^{(0.2t)} &= 10^3\\\\ 0.2t &= 3\\\\ t &= \\frac {3}{0.2}\\\\ t &=15\\\\ \\end {align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-025",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "In the first example, the power of 10 is multiplied by 5, so to find the value of \\(x\\) that makes this equation true each side was divided by 5. From there, the equation was rewritten as a logarithm, giving an exact value for \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-026",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "In the second example, the expressions on each side of the equation were rewritten as powers of 10: \\(10^{(0.2t)}=10^3\\). This means that the exponent \\(0.2t\\) on one side and the 3 on the other side must be equal, and leads to a simpler…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-027",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "How do we solve an exponential equation with base \\(e\\), such as \\(e^x = 5\\)? We can express the solution using the natural logarithm, the logarithm for base \\(e\\). Natural logarithm is written as \\(\\ln\\), or sometimes as \\(\\log_e\\). Just…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-028",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "All this means that we can solve \\(e^x = 5\\) by rewriting the equation as \\(x = \\ln 5\\). This says that \\(x\\) is the exponent to which base \\(e\\) is raised to equal 5.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-029",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "To estimate the size of \\(\\ln 5\\), remember that \\(e\\) is about 2.7. Because 5 is greater than \\(e^1\\), this means that \\(\\ln 5\\) is greater than 1. \\(e^2\\) is about \\((2.7)^2\\) or 7.3. Because 5 is less than \\(e^2\\), this means that \\(\\ln…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-030",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "The number \\(e\\) is an irrational number with an infinite decimal expansion that starts \\(2.71828182845\\ .\\ .\\ .\\), which is used in finance and science as the base for an exponential function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-031",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "$e$ (mathematical constant)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-ACTIVITY-032",
+      "SourceSection": "14.3: Solving Exponential Equations",
+      "SourceExcerpt": "The natural logarithm of \\(x\\), written \\(\\ln(x)\\), is the log to the base \\(e\\) of \\(x\\). So it is the number \\(y\\) that makes the equation \\(e^y = x\\) true.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Solve each equation without using a calculator. Some solutions will need to be expressed using log notation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(4 \\boldcdot 10^x = 400,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(10^{3n} = 1,\\!000,\\!000\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(6 \\boldcdot 10^t = 360\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Solve \\(\\frac14 \\boldcdot 10^{(d+2)} = 0.25\\). Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Write two equations—one in logarithmic form and one in exponential form—that represent the statement: “the natural logarithm of 10 is \\(y\\)”.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Explain why \\(\\ln 1 = 0\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-008",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "If \\(\\log_{10}(x) = 6\\), what is the value of \\(x\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-009",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "For each logarithmic equation, write an equivalent equation in exponential form.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-010",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(\\log_{10} 20 = y\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-011",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The function \\(f\\) is given by \\(f(x) = e^{0.07x}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-012",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "What is the continuous growth rate of \\(f\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L14-PRACTICE-013",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "By what factor does \\(f\\) grow when the input \\(x\\) increases by 1?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l14.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

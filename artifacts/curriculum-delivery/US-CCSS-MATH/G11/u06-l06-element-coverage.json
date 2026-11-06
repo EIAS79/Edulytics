@@ -1,0 +1,436 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L06",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "4f4fef5275378b4b3e9b1971312e2b6bc2a4c55a04ef9c14f4409440970b0dfe",
+    "teacher/index.html": "cd7650242f2475f1241291f8056752bf10cad5e370661a57a74026e7d31f0332",
+    "teacher/practice.html": "1174ef72b114854a831f40d132a1ee6172293fbe6f50b0b744b043299780055d",
+    "student/index.html": "f3ab64c67ba6a8ff5532960ee2166444565d792d83a3e92ca5623ebce3c691d6",
+    "student/practice.html": "8df6fbd1dc9f97aa7584e98cec62030d1073ff58b1e5a223f3211463c8a4fe7e"
+  },
+  "Goals": [
+    "Critique (in writing) a strategy using the Pythagorean Identity for identifying the value of sine and tangent from the known value of cosine and the quadrant of the angle.",
+    "Use the Pythagorean Identity to determine the value of all 3 trigonometric ratios given the value of 1 to start from and the quadrant of the angle."
+  ],
+  "ElementCount": 52,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-001",
+      "SourceSection": "6.1: Math Talk: Which Quadrant?",
+      "SourceExcerpt": "For an angle \\(\\theta\\) in the quadrant indicated, use mental estimation to identify the values of \\(\\cos(\\theta)\\), \\(\\sin(\\theta)\\), and \\(\\tan(\\theta)\\) as either positive or negative.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-002",
+      "SourceSection": "6.2: Andre's Calculations",
+      "SourceExcerpt": "Suppose that the angle \\(\\theta\\), in radians, is in quadrant 4 of the unit circle. If \\(\\cos(\\theta)=0.28\\), what are the values of \\(\\sin(\\theta)\\) and \\(\\tan(\\theta)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-003",
+      "SourceSection": "6.2: Andre's Calculations",
+      "SourceExcerpt": "Andre uses the Pythagorean Identity and determines that the value of \\(\\sin(\\theta)\\) is -0.96. Using the values of sine and cosine, he then calculates the value of tangent:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-004",
+      "SourceSection": "6.2: Andre's Calculations",
+      "SourceExcerpt": "\\(\\begin{align} \\tan(\\theta)&=\\dfrac{\\sin(\\theta)}{\\cos(\\theta)} \\\\ &=\\frac{\\text-0.96}{0.28} \\\\ &\\approx \\text-3.43 \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-005",
+      "SourceSection": "6.2: Andre's Calculations",
+      "SourceExcerpt": "Do you agree with Andre? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-006",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Your teacher will give you a set of cards that should be arranged face up with cards showing values for sine, cosine, and tangent on one side and cards showing quadrants on the other.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-007",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "For each pair, explain to your partner how you know if the pair is or is not possible on the unit circle. Once a pair is identified, place the cards in front of you to use later.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-008",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "For each pair that your partner draws, listen carefully to their explanation. If you disagree, discuss your thinking and work to reach an agreement.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-009",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Take turns with your partner matching pairs of cards. Identify 2 pairs that are possible on the unit circle and 2 pairs that are not possible, in any order.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-010",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Once you and your partner have identified 4 pairs each, pick 1 of your possible matches and then calculate the values of the two missing trigonometric ratios for that match. When you finish, trade calculations with your partner and check…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-011",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Suppose \\(\\tan(\\theta)=2\\) and the angle \\(\\theta\\) is in quadrant 1. Find the values of \\(\\cos(\\theta)\\) and \\(\\sin(\\theta)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-012",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Say we know that \\(\\sin(\\theta)=\\text-\\frac{\\sqrt{2}}{2}\\) and that \\(\\theta\\) is an angle in quadrant 3. What can we say about the values of cosine and tangent at \\(\\theta\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-013",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Since we can think of \\(\\sin(\\theta)\\) as the \\(y\\)-coordinate of a point \\(P\\) in quadrant 3, let’s start with a sketch of the unit circle showing point \\(P\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-014",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "The sketch helps us see that the \\(x\\)-coordinate, which is \\(\\cos(\\theta)\\), is also negative. Using the Pythagorean Identity, we can calculate the value of \\(\\cos(\\theta)\\):",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-015",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "\\(\\begin{align} \\cos^2(\\theta)+\\sin^2(\\theta)&=1^2 \\\\ \\cos^2(\\theta)+\\left(\\text-\\frac{\\sqrt{2}}{2}\\right)^2 &= 1 \\\\ \\cos^2(\\theta)&=1-\\left(\\text-\\frac{\\sqrt{2}}{2}\\right)^2 \\\\ \\cos^2(\\theta)&=1-\\frac{2}{4} \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-016",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Now that we know the value of cosine, we can calculate the value of tangent with some division:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-017",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "\\(\\tan(\\theta)=\\dfrac{\\text-\\frac{\\sqrt{2}}{2}}{\\text-\\sqrt{\\frac{1}{2}}}=\\dfrac{\\frac{\\sqrt{2}}{2}}{\\frac{\\sqrt{2}}{2}}=1\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-018",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "We can use one piece of information and the structure of the unit circle to figure out a whole bunch more, similar to how we used the value of one side length, the hypotenuse, and the structure of right triangles in the past to figure out…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-019",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "The identity \\(\\sin^2(x) + \\cos^2(x) = 1\\) relating the sine and cosine of a number. It is called the Pythagorean identity because it follows from the Pythagorean theorem.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-020",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "Pythagorean identity",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-021",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "The length of an interval at which a periodic function repeats. A function \\(f\\) has a period, \\(p\\), if \\(f(x+p) = f(x)\\) for all inputs \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-022",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "A function whose values repeat at regular intervals. If \\(f\\) is a periodic function then there is a number \\(p\\), called the period, so that \\(f(x + p) = f(x)\\) for all inputs \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-ACTIVITY-023",
+      "SourceSection": "6.3: Card Sort: Where's the Point?",
+      "SourceExcerpt": "The circle in the coordinate plane with radius 1 and center the origin.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The picture shows angles \\(A\\) and \\(B\\). Explain why \\(\\sin(B) = \\text- \\sin(A)\\) and why \\(\\cos(B) = \\text-\\cos(A)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Which statements are true? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\sin(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 2",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\cos(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 2",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\tan(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 2",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\sin(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 3",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\cos(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 3",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\tan(\\theta) > 0\\) for an angle \\(\\theta\\) in quadrant 3",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The tangent of an angle satisfies \\(\\tan(\\theta) = 10\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Which quadrant could \\(\\theta\\) lie in? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-011",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Estimate the possible value(s) of \\(\\theta\\). Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-012",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Evaluate each of the following:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-013",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\tan\\left(\\frac{5\\pi}{4}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\sin\\left(\\frac{3\\pi}{2}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\cos\\left(\\frac{7\\pi}{4}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-016",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The sine of an angle \\(\\theta\\) in the second quadrant is \\(0.6\\). What is \\(\\tan(\\theta)\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Triangle \\(ABC\\) is an isosceles right triangle in the unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Explain why \\(\\sin(A) = \\cos(A)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Use the Pythagorean Theorem to explain why \\(2(\\sin(A))^2 = 1\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Triangle \\(DEF\\) is similar to triangle \\(ABC\\). The scale factor going from \\(\\triangle DEF\\) to \\(\\triangle ABC\\) is 3.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-021",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Explain why the length of segment \\(AB\\) is 3 times the length of segment \\(DE\\) and the length of segment \\(BC\\) is 3 times the length of segment \\(EF\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-022",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Explain why \\(\\sin(A) = \\sin(D)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-023",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Which of the following is true for angle \\(\\theta\\)? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-024",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\sin(\\theta) < 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-025",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\sin(\\theta) > 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-026",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\cos(\\theta) < 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-027",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\cos(\\theta) > 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-028",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\sin(\\theta) > \\cos(\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L06-PRACTICE-029",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(\\sin(\\theta) < \\cos(\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l06.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

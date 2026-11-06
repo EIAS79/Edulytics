@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l09-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L09",
+      "CultureCode": "en",
+      "Title": "Solving Radical Equations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate solutions to radical equations. Create radical equations that have either zero, one, or two solutions. Explain the steps taken to solve radical equations.",
+        "Isolate the radical, impose its real domain and nonnegative output, square, solve, and substitute into the unsquared equation.",
+        "Source activity 9.1: Math Talk: Radical Equations: Solve these equations mentally: \\(\\sqrt[3]{x} = 1\\) \\(\\sqrt{7} = \\sqrt{x-1}\\) \\(\\sqrt{100} = 2x\\) \\(\\sqrt{x + 1} = \\text{-}5\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.2: Getting to the Root of the Problem: Find the solution(s) to each of these equations, or explain why there is no solution. \\(\\sqrt{a - 5} = 5\\) \\(\\sqrt[3]{a - 5} = 5\\) \\( \\sqrt[3]{b} = \\text{-}2\\) \\(\\sqrt{c} + 2 = 0\\) \\(\\sqrt[3]{3 - d} + 4 = 0\\) \\(\\sqrt{7} = \\sqrt{x-1}\\) \\(22z = \\sqrt[3]{11}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.3: Write Your Own Equation: Write an equation that includes a radical symbol with: Switch with a partner and solve their equations. Find all solutions to the equation \\(\\sqrt{x} = \\sqrt[3]{x}\\). Explain how you know those are all of the solutions. Whenever we have an equation with a radical symbol that contains a variable, we can solve it by isolating the radical and then raising each side of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Find the solution(s) to each of these equations, or explain why there is no solution. \\(\\sqrt{x+5}+7 = 10\\) \\(\\sqrt{x-2}+3=\\text-2\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: For each equation, decide how many solutions it has and explain how you know. \\(x^3 -7 = \\text-20\\) \\(6 \\boldcdot \\sqrt[3]{x} = 0\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Jada was solving the equation \\(\\sqrt{6-x}=\\text-16\\). She was about to square each side, but then she realized she could give an answer without doing any algebra. What did she realize? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here are the steps Tyler took to solve the equation \\(\\sqrt{x+3}=\\text-5\\). \\(\\begin{align} \\sqrt{x+3} & =\\text-5 \\\\ x+3 &=25 \\\\ x &=22 \\\\ \\end{align} \\) Check Tyler’s answer: Is the equation true if \\(x=22\\)? Explain or show your reasoning. What mistake did Tyler make? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Complete the table. Use powers of 16 in the top row and radicals or rational numbers in the bottom row. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Which are the solutions to the equation \\(x^3=35\\)? \\(\\text-\\sqrt[3]{35}\\) both \\(\\sqrt[3]{35}\\) and \\(\\text-\\sqrt[3]{35}\\) The equation has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve sqrt(x+5)=x-1. Expected reasoning or answer: x=4.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solve and verify radical equations",
+          "Definition": "Isolate the radical, impose its real domain and nonnegative output, square, solve, and substitute into the unsquared equation.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve sqrt(x+6)=x. Answer: x=3"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "x>=0; square yields x²-x-6=0; candidates3,-2; reject -2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Explain the steps taken to solve radical equations.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve sqrt(x+5)=x-1. Answer: x=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve and verify radical equations",
+          "Question": "Solve sqrt(x+6)=x.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "x>=0",
+            "square yields x²-x-6=0",
+            "candidates3,-2",
+            "reject -2."
+          ],
+          "Answer": "x=3",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve sqrt(x+5)=x-1.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=4.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve sqrt(x+5)=x-1.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve sqrt(x+5)=x-1.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. x>=0",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Solve and verify radical equations",
+        "Isolate the radical, impose its real domain and nonnegative output, square, solve, and substitute into the unsquared equation.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

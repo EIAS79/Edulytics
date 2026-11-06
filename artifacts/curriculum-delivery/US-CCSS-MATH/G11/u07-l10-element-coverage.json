@@ -1,0 +1,324 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L10",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "aa18c94cb32b79ec19480ac63b89b29f949e12b1f7facaab9d557d40da359b27",
+    "teacher/index.html": "95902053bfad6f1016e6ab7fd8f661914aa4fb764b695873dc7a1b987511ec64",
+    "teacher/practice.html": "bdca7939003a441f6fe4ed2053e3027408603d0d368398ace038b2b80fea7a44",
+    "student/index.html": "657345cebbe1a8267e426df792b68e36708646b3e7dfc1b2dd90ad0cb7d93594",
+    "student/practice.html": "8f0620d742ce2b5fa625f07af21b47dbc6ab0af5830ac216cbdbdae03e9585f1"
+  },
+  "Goals": [
+    "Calculate the margin of error for a population proportion estimate.",
+    "Use data from a random sample to determine an estimate for a population proportion."
+  ],
+  "ElementCount": 38,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-001",
+      "SourceSection": "10.1: Math Talk: Proportions",
+      "SourceExcerpt": "Mentally evaluate the proportion of chips that are blue.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-002",
+      "SourceSection": "10.1: Math Talk: Proportions",
+      "SourceExcerpt": "17 are blue out of 50 chips",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-003",
+      "SourceSection": "10.1: Math Talk: Proportions",
+      "SourceExcerpt": "28 are blue out of 50 chips",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-004",
+      "SourceSection": "10.1: Math Talk: Proportions",
+      "SourceExcerpt": "17 are blue out of 20 chips",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-005",
+      "SourceSection": "10.1: Math Talk: Proportions",
+      "SourceExcerpt": "21 are blue out of 60 chips",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-006",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "Your teacher will give you a bag with paper slips inside that are marked as either Pass or Fail. Do not empty the bag to look at all of the contents at once.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-007",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "One partner should hold the bag so that the other partner cannot see inside while they draw a slip of paper. The other partner should draw 10 slips of paper from the bag, one at a time. After the 10 slips are drawn, record the number of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-008",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "From the results of the first trial, estimate the proportion of the slips in the bag that are marked Pass.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-009",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "Switch roles with your partner and repeat the process until you have run 5 trials. For each trial, compute the proportion of slips you drew that are marked Pass.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-010",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "Create a dot plot based on the trials from the class that shows the proportion of slips drawn that are marked Pass.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-011",
+      "SourceSection": "10.2: Pass or Fail",
+      "SourceExcerpt": "From the class dot plot, estimate the proportion of slips marked Pass in the bag. Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-012",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "A biologist is breeding fruit flies to include a specific genetic mutation that will be useful in understanding memory in humans. To check whether a fly has the mutation, a DNA sequence is analyzed in a way that kills the fly, so the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-013",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Attribution: Gray and Black Fruit Fly, by pixabay. Public Domain. pexels. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-014",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "The biologist selects 40 flies to sequence at random and finds that 9 of them have the genetic mutation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-015",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Based on this sample, estimate the proportion of flies in this group that has the genetic mutation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-016",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Assume the sample is representative of the population of flies and create a simulation that mimics what the scientist found. Andre gets 200 pieces of paper and marks 45 of them as Mutant and puts them all in a bag. Since Andre decided to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-017",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Andre then simulates the scientist’s sample by drawing a slip of paper from the bag noting whether it is Mutant or not, then replacing the paper into the bag and drawing another paper until he has a sample of 40. He repeats this process…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-018",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Andre then finds the mean proportion from his simulations to be 0.2195 and the standard deviation to be 0.06. How far are your values from the last question from the mean? This will represent your estimated margin of error.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-019",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Divide the distance from the last question by the standard deviation to get the margin of error in terms of the number of standard deviations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-020",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "The scientist is worried that only having one sample may not be reliable for estimating the proportion of flies with the mutation, but does not want to sacrifice more flies to get a larger sample. The proportion from the sample is a good…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-021",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Based on Andre’s simulations, should the scientist feel confident that the proportion of flies is within two standard deviations of the mean for the simulations?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-022",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Suppose the biologist breeds 600 flies. What is the minimum number of flies the biologist should expect to have the mutation based on Andre’s margin of error? What is the maximum that should be expected?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-023",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "Although reality doesn’t always match up with our estimates, using sample data to estimate a characteristic for a larger group can be very useful, especially when you attach a margin of error to the estimate. It is unlikely that an…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-024",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "For example, a lumber manufacturer may be worried about the number of boards it produces that are not straight. It would be too time consuming and costly to check every board, but they can check 50 boards each day to get an idea of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-025",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "The next day, their sample has 15 boards that are not straight out of the 50 checked. The manufacturer should estimate that the proportion of boards that are not straight for that day is about 0.3 (since \\(\\frac{15}{50} = 0.3\\) ) with a…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-ACTIVITY-026",
+      "SourceSection": "10.3: Fly Memory",
+      "SourceExcerpt": "The maximum expected difference between an estimate for a population characteristic and the actual value of the population characteristic.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "A scientist captures a sample of fish from 100 different locations along the Yellowstone river and measures the proportion of fish affected by copper toxicity for each sample. Describe how the scientist could use the data to estimate the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "A company produces 1,000 blue crayons every day. A sample of 50 crayons are analyzed, and 3 of them are found to not meet the standards of the company, so they are labeled defective. A simulation is run in which 50 crayons are chosen out…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "What is a good margin of error based on this simulation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Based on a population proportion estimate and margin of error, is 0.07 a plausible value for the population proportion of crayons that are defective? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "A researcher uses a random sample of 200 people in prison in the United States to find that the proportion of the prison population that is jailed for drug-related crimes is 0.485. The researcher simulates selecting a sample of 200…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A pizza company is interested in the average number of pizzas eaten each year by people. They send out 30 volunteers to conduct research by collecting random samples of 25 people each and determine the number of pizzas that the people in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-007",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Based on surveys of random samples from students at a university, the proportion of university students interested in a new chain restaurant opening on their campus is 0.62 with a standard deviation of 0.04. Which of these intervals is the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-008",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Kiran collects information about 25 classmates. He believes his data set is perfectly symmetrical with a mean and median of 6. He then realizes that the number he has recorded as 12 was actually supposed to be 10. What is true about the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-009",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The mean and median of the corrected set are both still 6.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-010",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The mean of the corrected data set is still 6, but the median is greater than 6.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-011",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The median of the corrected data set is still 6, but the mean is greater than 6.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L10-PRACTICE-012",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The median of the corrected data set is still 6, but the mean is less than 6.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

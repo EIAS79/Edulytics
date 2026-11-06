@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l18-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L18",
+      "CultureCode": "en",
+      "Title": "The Quadratic Formula and Complex Solutions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate complex solutions using the quadratic formula and represent them in the form $c \\pm di$, where $c$ and $d$ are real numbers. Explain reasoning and critique the reasoning of others when solving quadratic equations. Explain when solutions are non-real when using the quadratic formula.",
+        "Discriminant b²-4ac<0 gives a non-real conjugate pair; simplify sqrt of negative using i, then put result in c±di form.",
+        "Source activity 18.1: Math Talk: Real or Not?: Mentally decide whether the solutions to each equation are real numbers or not. \\(w^2 = \\text- 367\\) \\((z + 5)^2 = \\text- 367\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.2: Be Discriminating: Kiran was using the quadratic formula to solve the equation \\(x^2 - 12x + 41 = 0\\). He wrote this: \\(\\displaystyle x = \\dfrac{12 \\pm \\sqrt{144 - 164}}{2}\\) Then he noticed that the number inside the square root is negative and said, “This equation doesn’t have any solutions.” Do you agree with Kiran? Explain your reasoning. Write \\(\\sqrt{\\text- 20}\\) as an imaginary number.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.3: Solving All Kinds of Quadratics: For each row, you and your partner will each solve a quadratic equation. You should each get the same answer. If you disagree, work to reach agreement. Sometimes when we use the quadratic formula to solve a quadratic equation, we get a negative number inside the square root symbol. This means that the solutions to the equation must involve imaginary numbers. For example,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Clare solves the quadratic equation \\(4x^2+12x+58=0\\), but when she checks her answer, she realizes she made a mistake. Explain what Clare's mistake was. \\(\\begin{align} x &= \\frac{\\text-12 \\pm \\sqrt{12^2 - 4 \\boldcdot 4 \\boldcdot 58}}{2 \\boldcdot 4} \\\\ x &= \\frac{\\text-12 \\pm \\sqrt{144-928}}{8} \\\\ x &= \\frac{\\text-12… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Write in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers: \\(\\frac{5 \\pm \\sqrt{\\text-4}}{3}\\) \\(\\frac{10 \\pm \\sqrt{\\text-16}}{2}\\) \\(\\frac{\\text-3 \\pm \\sqrt{\\text-144}}{6}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Priya is using the quadratic formula to solve two different quadratic equations. For the first equation, she writes \\(x= \\frac{4 \\pm \\sqrt{16-72}}{12}\\) For the second equation, she writes \\(x=\\frac{8 \\pm \\sqrt{64-24}}{6}\\) Which equation(s) will have real solutions? Which equation(s) will have non-real solutions?… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Find the exact solution(s) to each of these equations, or explain why there is no solution. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Kiran is solving the equation \\(\\sqrt{x+2} - 5 = 11\\) and decides to start by squaring both sides. Which equation results if Kiran squares both sides as his first step? \\(x + 2 - 25 = 121\\) \\(x + 2 + 25 = 121\\) \\(x+2 - 10\\sqrt{x+2} + 25 = 121\\) \\(x+2 + 10\\sqrt{x+2} + 25 = 121\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Plot each number on the real or imaginary number line. \\(\\text-3\\sqrt{\\text-1}\\) \\(4\\sqrt{\\text-1}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve x²+2x+10=0. Expected reasoning or answer: -1±3i.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadratic formula with i",
+          "Definition": "Discriminant b²-4ac<0 gives a non-real conjugate pair; simplify sqrt of negative using i, then put result in c±di form.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve x²+4x+13=0. Answer: -2±3i"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Delta=16-52=-36; x=(-4±6i)/2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Explain when solutions are non-real when using the quadratic formula.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve x²+2x+10=0. Answer: -1±3i."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Quadratic formula with i",
+          "Question": "Solve x²+4x+13=0.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Delta=16-52=-36",
+            "x=(-4±6i)/2.",
+            "Interpret the computed result (-2±3i) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "-2±3i",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve x²+2x+10=0.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-1±3i.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve x²+2x+10=0.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve x²+2x+10=0.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Delta=16-52=-36",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -1±3i."
+          ],
+          "Answer": "-1±3i.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadratic formula with i",
+        "Discriminant b²-4ac<0 gives a non-real conjugate pair; simplify sqrt of negative using i, then put result in c±di form.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

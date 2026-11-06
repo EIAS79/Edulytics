@@ -1,0 +1,517 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L16",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "ea1ebe4f889a41c8674f468cc64ed18b7e7940af184477df441fef9fa17bb0c2",
+    "teacher/index.html": "4a36a724b6fd0d2eda4ff53be3a36455055dffaef29114be4b77c56a4b6c1f2b",
+    "teacher/practice.html": "59573b7dc1231ef6b0d3098bc5236d51caa09fb53b3f4ecea7f2c335b99a603c",
+    "student/index.html": "acb4e984442505b08b1ac26df7a5f7d4c7184b435231ec18e87923b24e941aaf",
+    "student/practice.html": "7e79c1207eb88488cdadfd8938dc1a89d914772524437424868fdc21b8415004"
+  },
+  "Goals": [
+    "Explain (in writing) the reasoning used to solve a quadratic equation by completing the square and by using the quadratic formula.",
+    "Justify whether two radical expressions are equivalent.",
+    "Solve quadratic equations and explain the solution method."
+  ],
+  "ElementCount": 62,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-001",
+      "SourceSection": "16.1: Find the Perfect Squares",
+      "SourceExcerpt": "The expression \\(x^2+8x+16\\) is equivalent to \\((x+4)^2\\). Which expressions are equivalent to \\((x+n)^2\\) for some number \\(n\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-002",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Elena and Han solved the equation \\(x^2-6x+7=0\\) in different ways.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-003",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Elena said, “First I added 2 to each side:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-004",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x^2 - 6x + 7 + 2 = 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-005",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle (x - 3)^2 = 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-006",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "I can find the square roots of both sides:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-007",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x - 3 = \\pm \\sqrt{2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-008",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Which is the same as:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-009",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x = 3 \\pm \\sqrt{2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-010",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "So the two solutions are \\(x=3+\\sqrt{2}\\) and \\(x=3-\\sqrt{2}\\).”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-011",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Han said, “I used the quadratic formula:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-012",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{\\text- b \\pm \\sqrt{b^2 - 4 \\boldcdot a \\boldcdot c}}{2 \\boldcdot a} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-013",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Since \\(x^2 - 6x + 7 = 0\\), that means \\(a = 1\\), \\(b = \\text- 6\\), and \\(c = 7\\). I know:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-014",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{6 \\pm \\sqrt{36 - 4 \\boldcdot 1 \\boldcdot 7}}{2 \\boldcdot 1} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-015",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{6 \\pm \\sqrt{8}}{2} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-016",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "\\(\\displaystyle x = 3 \\pm \\frac{\\sqrt{8}}{2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-017",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "I think the solutions are \\(x = 3 + \\frac{\\sqrt{8}}{2}\\) and \\(x = 3 - \\frac{\\sqrt{8}}{2}\\).”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-018",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Do you agree with either of them? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-019",
+      "SourceSection": "16.2: Different Ways to Solve It",
+      "SourceExcerpt": "Under what circumstances would solving an equation of the form \\(x^2+bx+c=0\\) lead to a solution that doesn’t involve fractions?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-020",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "Solve each quadratic equation with the method of your choice. Be prepared to compare your approach with a partner‘s.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-021",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(x^2 - 10x + 25 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-022",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(x^2 + 14x + 40 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-023",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(x^2 + 14x + 39 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-024",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(3x^2 - 5x - 11 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-025",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "Consider the quadratic equation:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-026",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x^2 - 5x = 25\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-027",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "It is often most efficient to solve equations like this by completing the square. To complete the square, note that the perfect square \\((x+n)^2\\) is equal to \\(x^2+(2n)x +n^2\\). Compare the coefficients of \\(x\\) in \\(x^2+(2n)x +n^2\\) to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-028",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle \\begin{align} x^2 - 5x &= 25 \\\\ x^2- 5x + \\frac{25}{4} &= 25 + \\frac{25}{4} \\\\ \\left(x-\\frac52\\right)^2 &= \\frac{100}{4} +\\frac{25}{4} \\\\ \\left(x-\\frac52\\right)^2 &= \\frac{125}{4} \\end{align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-029",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "The two numbers that square to make \\(\\frac{125}{4}\\) are \\(\\frac{\\sqrt{125}}{2}\\) and \\(\\text-\\frac{\\sqrt{125}}{2}\\), so:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-030",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x-\\frac52 = \\pm \\frac{\\sqrt{125}}{2} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-031",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "which means the two solutions are:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-032",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x = \\frac52 \\pm \\frac{\\sqrt{125}}{2} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-033",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "Other times, it is most efficient to use the quadratic formula. Look at the quadratic equation:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-034",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle 3x^2-2x = 0.8 \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-035",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "We could divide each side by 3 and then complete the square like before, but the equation would get even messier and the chance of making a mistake might be higher. With messier equations like this, it is often most efficient to use the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-036",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x = {\\text-b \\pm \\sqrt{b^2-4ac} \\over 2a} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-037",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "To use this formula, we first need to put the equation in standard form and identify \\(a\\), \\(b\\), and \\(c\\). Rearranging, we get:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-038",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle 3x^2 - 2x -0.8 =0 \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-039",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "so \\(a=3\\), \\(b=\\text-2\\), and \\(c=\\text-0.8\\). We have to be careful to pay attention to the negative signs. Using the quadratic formula, we get:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-040",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x = {\\text-(\\text-2) \\pm \\sqrt{(\\text-2)^2-4(3)(\\text-0.8)} \\over 2(3)} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-041",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "\\(\\displaystyle x = {2 \\pm \\sqrt{4+(12)(0.8)} \\over 6} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-ACTIVITY-042",
+      "SourceSection": "16.3: Solve These Ones",
+      "SourceExcerpt": "Evaluating these solutions with a calculator gives decimal approximations -0.281 and 0.948.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What number should be added to the expression \\(x^2 - 15x\\) to result in an expression equivalent to a perfect square?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Noah uses the quadratic formula to solve the equation \\(2x^2+3x-5=4\\). He finds \\(x = \\text-2.5\\) or 1. But, when he checks his answer, he finds that neither -2.5 nor 1 are solutions to the equation. Here are his steps:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(a=2\\), \\(b=3\\), \\(c=\\text-5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x=\\frac{\\text-3 \\pm \\sqrt{3^2 - 4 \\boldcdot 2 \\boldcdot \\text-5}}{2 \\boldcdot 2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x=\\frac{\\text-3 \\pm \\sqrt{49}}{4}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x = \\text-2.5\\) or 1",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Explain what Noah’s mistake was.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Solve the equation correctly.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Solve each quadratic equation with the method of your choice.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What are the solutions to the equation \\(x^2-4x=\\text-3\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 0 \\boldcdot \\text-3}}{2 \\boldcdot 0}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-012",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 1 \\boldcdot \\text-3}}{2 \\boldcdot 1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-013",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 1 \\boldcdot 3}}{2 \\boldcdot 1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac{\\text-4 \\pm \\sqrt{16 - 4 \\boldcdot 1 \\boldcdot 3}}{2 \\boldcdot 1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-015",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Which expression is equivalent to \\(\\sqrt{\\text-23}\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-016",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\text- i \\sqrt{23}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(i^2 \\boldcdot i^2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\((5+4i) - (\\text-3 + 2i)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L16-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Let \\(m=(7-2i)\\) and \\(k=3i\\). Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

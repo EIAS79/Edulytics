@@ -1,0 +1,77 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L05",
+  "LearningGoals": [
+    "Identify normal distributions as a way to model distributions that are approximately symmetric and bell-shaped and explain (orally) the reasoning."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-ID.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-ID.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-ID.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-ID.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSS-ID.A.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A distribution is approximately normal with mean50 and SD10. What z-score has observation60?",
+    "Steps": [
+      "z=(x-μ)/σ=(60-50)/10=1."
+    ],
+    "Answer": "z=1."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "5.1: Body Temperature",
+      "5.2: Playing a Piano",
+      "5.3: Relative Frequency Distribution",
+      "5.4: The Normal Curve"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "What value has z=-2 for mean100 and SD15?",
+    "Expected": "70.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u07-l05-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l05.rich-lesson-v2.json"
+}

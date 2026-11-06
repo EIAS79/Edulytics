@@ -1,0 +1,79 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L09",
+  "LearningGoals": [
+    "Calculate the scale factor $k$ needed to transform the input of a function to fit a situation.",
+    "Describe (orally and in writing) the effect of a scale factor on the input of a function."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-BF.B.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-BF.B.3",
+      "SortOrder": 3
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Given f(x)=x², express g(x)=f(2x) and describe the change.",
+    "Steps": [
+      "Substitute input2x",
+      "g=(2x)²=4x²",
+      "original feature at x occurs now at x/2."
+    ],
+    "Answer": "g(x)=4x²; horizontal compression by factor1/2."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "9.1: Out and Back",
+      "9.2: A New Set of Wheels",
+      "9.3: The Many Transformations of a Function $P$"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "If f(x)=sin x, what is period of f(3x)?",
+    "Expected": "2π/3.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u05-l09-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l09.rich-lesson-v2.json"
+}

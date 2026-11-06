@@ -1,0 +1,97 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L13",
+  "LearningGoals": [
+    "Comprehend that we can use $e^r$ as the growth factor of $f(t) = e^{rt}$ when we assume the rate $r$ is applied continuously.",
+    "Interpret the parameters in the equations of exponential functions with the form $f(t)=P \\boldcdot e^{rt}$."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-SSE.A.1.B",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "SubpartToAcceptedParent",
+      "OutcomeCode": "CCSS:HSA-SSE.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C.7",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-IF.C.7",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.B.5",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.B.5",
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-LE.A.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "For A(t)=200e^(0.1t), find A(0) and one-unit growth factor.",
+    "Steps": [
+      "At t0 exponent0 so initial200",
+      "at t1 ratio e^0.1."
+    ],
+    "Answer": "A(0)=200; factor≈1.10517."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "13.1: $e$ on a Calculator",
+      "13.2: Same Situation, Different Equations",
+      "13.3: $e$ in Exponential Models",
+      "13.4: Graphing Exponential Functions with Base $e$"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6",
+      "Problem 7",
+      "Problem 8"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "For B(t)=50e^(-0.2t), is it growth or decay?",
+    "Expected": "Decay; initial50.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u04-l13-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l13.rich-lesson-v2.json"
+}

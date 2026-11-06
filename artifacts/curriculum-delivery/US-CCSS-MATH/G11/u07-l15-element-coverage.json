@@ -1,0 +1,436 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L15",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "5801d363a36c792e15e612b883c1b0e62d04b6f0f6bbdb8664a784310a980767",
+    "teacher/index.html": "68eeebd19469c6fa988439146f1de974b98b5f6d125ea07b34668df1dbaf59c1",
+    "teacher/practice.html": "bea7364384b914b653de24c0b0d13ad2e256e999fd302cdcc81af9a84052e2bb",
+    "student/index.html": "f30e37cc852f04ae6aa42f92a3f85d6ca193b31249e0b40e3daa9e0fb7d647e2",
+    "student/practice.html": "ae84db4dd937e2eed0b62d5329a1728ae10a4b7383b9dd49fb740611661083bb"
+  },
+  "Goals": [
+    "Ask questions (orally) to determine information needed to analyze data from an experiment.",
+    "Identify the area under a normal curve above an interval based on z-scores and a table of values."
+  ],
+  "ElementCount": 52,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-001",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "A scientist divides 30 strawberry plants into two groups at random. One group of 15 plants will represent the control group and is grown in standard greenhouse conditions. The second group of 15 plans will represent the treatment group and…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-002",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "The data are summarized by these statistics and histogram.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-003",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "Mean for the control group: 238.67 grams",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-004",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "Mean for the group with different soil: 347.47 grams",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-005",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "Mean of differences in means from randomized groupings: -0.540 grams",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-006",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "Standard deviation of differences in means from randomized groupings: 29.83 grams",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-007",
+      "SourceSection": "15.1: Is It the Treatment?",
+      "SourceExcerpt": "Is there evidence that the difference in means from the original groupings is due to the different soil or is it likely that the difference is due to the way the plants were grouped? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-008",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-009",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "If your teacher gives you the data card:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-010",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Silently read the information on your card.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-011",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything for your partner!)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-012",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Before telling your partner the information, ask “Why do you need to know (that piece of information)?”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-013",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Read the problem card, and solve the problem independently.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-014",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Share the data card, and discuss your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-015",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "If your teacher gives you the problem card:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-016",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Silently read your card and think about what information you need to answer the question.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-017",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Ask your partner for the specific information that you need.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-018",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Explain to your partner how you are using the information to solve the problem.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-019",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "When you have enough information, share the problem card with your partner, and solve the problem independently.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-020",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Read the data card, and discuss your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-021",
+      "SourceSection": "15.2: Info Gap: Is There a Difference?",
+      "SourceExcerpt": "Pause here so your teacher can review your work. Ask your teacher for a new set of cards and repeat the activity, trading roles with your partner.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-022",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "A factory produces baseballs. The weights of the baseballs produced are approximately normally distributed with a mean weight of 145 grams and a standard deviation of 2 grams. Official rules require the balls to weigh between 142 and 149…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-023",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Recall that the proportion of items in an interval of an approximately normally distributed situation is the same as the area under the normal curve. A table can be used to determine the area under a normal curve bounded by an interval.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-024",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "First, the relevant values need to be converted to a z-score. A value's z-score represents the number of standard deviations it is above the mean. In the baseball example, the value 147 grams has a z-score of 1 since it is 1 standard…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-025",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "In general, a z-score can be found using",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-026",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "\\(z = \\frac{\\text{value} - \\text{mean}}{\\text{standard deviation}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-027",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Find the z-score for 142 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-028",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Find the z-score for 149 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-029",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "What value would have a z-score of 1.45?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-030",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "The table gives the area under the normal curve that is less than the given value. Shade the region that is given by the table for the area related to 142 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-031",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Use the z-score for 142 grams and the table to find the area under the normal curve that is less than 142 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-032",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Shade the region that is given by the table for the area related to 149 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-033",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Use the z-score for 149 grams and the table to find the area under the normal curve that is less than 149 grams.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-034",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "Use the two areas to find the area under the normal curve between 142 and 149 grams. Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-035",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "What proportion of the baseballs that the factory makes are within the official rules?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-036",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "There are 2 different distributions. Distribution A has a mean of 55 and a standard deviation of 8. Distribution B has a mean of 6 and a standard deviation of 1.6.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-037",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "From distribution A, a person is interested in a value of 70 and from distribution B, the person is interested in a value of 10. How can z-scores be used to determine which is more relatively extreme?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-038",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "After collecting data from an experiment, it is important to analyze the data to determine whether there is evidence that the difference in means for the groups is due to the treatment or whether the difference might be explained by the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-039",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "First, the difference in the means for the two groups is important to know. Then the difference can be compared to the differences in means collected from regrouping the data into groups at random. The proportion of differences in means…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-040",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "The proportion can be determined either from counting the actual number of differences that are more extreme or modeling the differences with a normal distribution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-ACTIVITY-041",
+      "SourceSection": "15.3: Using Tables for Normal Distribution Areas",
+      "SourceExcerpt": "In an experiment where you are comparing two groups, one of which is being given a treatment and the other of which is the control group without any treatment, the treatment is the value of the variable that is changed for the treatment…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Clare analyzes oil prices in her economics class. She finds that the mean oil price between 1988 and 2002 is $27 per barrel with a standard deviation of $5.50 per barrel. Select the z-score for a price of $38 per barrel.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Priya is investigating the population density of deer in several different forests. The mean population density is 36.4 deer per square mile with a standard deviation of 4.6 deer per square mile. Use the z-score for 43.3 deer per square…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-003",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Find the area under the curve that is less than a significant value for each z-score listed here.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-004",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Noah is working on a science experiment. He wants to determine how the temperature in a pool affects the chlorine level. Noah visits 16 pools and adjusts the chlorine levels so that they are all at 2.5 parts per million. After two days, he…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-005",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Noah writes a computer program to recombine all the data into all 12,870 possible different groupings and finds that 2,612 of the different groupings have a difference in means of at least 0.6 part per million. Is there enough evidence for…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-006",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The daily step count of 25 random samples of 40 people each are measured. The mean for each sample is included in the dot plot.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-007",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Use the values to estimate the mean step count for the population. What is the margin of error for this estimate based on these values? (Round to the nearest step.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-008",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "A spinner is divided into 4 equal sections labeled A, B, C, and D.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-009",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Based on probability, how many times would you expect the spinner to land on C after spinning 60 times? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-010",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "After spinning the spinner 60 times, the frequency of the outcomes is: A 13 times, B 16 times, C 17 times, D 14 times. Is the number of times the spinner landed on C reasonable based on your expectations? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U07-L15-PRACTICE-011",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The spinner is spun 2,000 times. Give an example of a number of spins that result in C that would be possible, but unusual. Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

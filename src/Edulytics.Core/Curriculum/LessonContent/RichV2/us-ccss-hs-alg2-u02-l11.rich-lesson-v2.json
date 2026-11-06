@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l11-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L11",
+      "CultureCode": "en",
+      "Title": "Finding Intersections",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the solution to a system of polynomial equations.",
+        "A solution to f(x)=g(x) provides the horizontal coordinate of the intersection; evaluating either function gives its shared vertical coordinate. Algebraic solutions must be turned into ordered points and checked on both graphs.",
+        "Source activity 11.1: Math Talk: When $f$ Meets $g$: Mentally identify a point where the graphs of the two functions intersect, if one exists. \\(f(x)=x\\) and \\(g(x)=3\\) \\(j(x)=(x+3)(x-3)\\) and \\(k(x)=0\\) \\(m(x)=(x+3)(x-3)\\) and \\(n(x)=(x-3)\\) \\(p(x)=(x+5)(x-5)\\) and \\(q(x)=(x+3)(x-3)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.2: More Points of Intersection: For each pair of polynomials given, find all points of intersection of their graphs. \\(c(x)=x^2-7\\) and \\(d(x)=2\\) \\(f(x)=(x+7)(x-4)\\) and \\(g(x)=x-4\\) \\(m(x)=(x+7)(x-4)\\) and \\(n(x)=(2x+5)(x-4)\\) \\(p(x)=(x+1)(x-8)\\) and \\(q(x)=(x+2)(x-4)\\) Find all points of intersection of the graphs of the equations \\(p(x)=(2x+3)(x-5)\\) and \\(q(x)=(x+5)(x+1)(x-3)\\). Use graphing technology… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.3: Graphing to Find Points of Intersection: Consider the functions \\(p(x) = 5x^3+6x^2+4x\\) and \\(q(x) = 5640\\). Use graphing technology to find a value of \\(x\\) that makes \\(p(x)=q(x)\\) true. For the \\(x\\)-value at the point of intersection, what can you say about the value of \\(5x^3+6x^2+4x-5640\\)? What does your answer suggest is a possible factor of \\(5x^3+6x^2+4x-5640\\)? Write your own polynomial \\(m(x)\\) of degree… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: What are the points of intersection between the graphs of the functions \\(f(x)=x^2(x+1)\\) and \\(g(x)=x+1\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Select all the points of intersection between the graphs of the functions \\(f(x)=(x+5)(x-2)\\) and \\(g(x)=(2x+1)(x-2)\\). \\((\\text-\\frac12, 0)\\) \\((\\text-2,\\text-12)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: What are the solutions to the equation \\((x-3)(x+5)=\\text-15\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: What are the \\(x\\)-intercepts of the graph of \\(y=(5x+7)(2x-1)(x-4)\\)? \\(\\text-\\frac75, \\text{-}\\frac12, 4\\) \\(\\frac57, \\frac12, 4\\) \\(\\text{-}\\frac75, \\frac12, 4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which polynomial function’s graph is shown here? \\(f(x)=(x+1)(x+2)(x+4)\\) \\(f(x)=(x+1)(x-2)(x+4)\\) \\(f(x)=(x-1)(x+2)(x-4)\\) \\(f(x)=(x-1)(x-2)(x-4)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Draw a rough sketch of the graph of \\(g(x)=\\text-x^2(x+2)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The graph of a polynomial function \\(f\\) is shown. Is the degree of the polynomial odd or even? Explain how you know. What is the constant term of the polynomial? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve intersections of y=x^2-1 and y=2x-1. Expected reasoning or answer: (0,-1) and (2,3).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Intersections of polynomial functions",
+          "Definition": "A solution to f(x)=g(x) provides the horizontal coordinate of the intersection; evaluating either function gives its shared vertical coordinate. Algebraic solutions must be turned into ordered points and checked on both graphs.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find intersections of y=x^2 and y=2x. Answer: (0,0) and (2,4)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "x^2=2x; x(x-2)=0; x=0 or 2; compute y."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Calculate the solution to a system of polynomial equations.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve intersections of y=x^2-1 and y=2x-1. Answer: (0,-1) and (2,3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Intersections of polynomial functions",
+          "Question": "Find intersections of y=x^2 and y=2x.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "x^2=2x",
+            "x(x-2)=0",
+            "x=0 or 2",
+            "compute y."
+          ],
+          "Answer": "(0,0) and (2,4).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve intersections of y=x^2-1 and y=2x-1.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "(0,-1) and (2,3).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve intersections of y=x^2-1 and y=2x-1.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve intersections of y=x^2-1 and y=2x-1.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. x^2=2x",
+            "Verify the result with a second substitution or interpretation; the authored solution is: (0,-1) and (2,3)."
+          ],
+          "Answer": "(0,-1) and (2,3).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Intersections of polynomial functions",
+        "A solution to f(x)=g(x) provides the horizontal coordinate of the intersection; evaluating either function gives its shared vertical coordinate. Algebraic solutions must be turned into ordered points and checked on both graphs.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L03",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "42f381620e5085f98e8a90f4f85aca1b3661e3db8420e5f303cf4219a17c239b",
+    "teacher/index.html": "8c6bd02f34253cd24e72e51194a49fb9cbdc4339ed1b4aa91433942770f9792f",
+    "teacher/practice.html": "63c23fc315889c7203cc9413471796d020adfbae73e642dc6c0d6ee8fc634479",
+    "student/index.html": "cd8f42a53e12b55d7d2f128826fb1d08890fc459483dd99afe581293fca20e66",
+    "student/practice.html": "c630b8cd55804949c381ff1b2e20aae881ab5d9d6c08e9f479f67da7c0c00cce"
+  },
+  "Goals": [
+    "Identify relative minimums and relative maximums of graphs of polynomials.",
+    "Identify the degree, leading term, and constant term of a polynomial."
+  ],
+  "ElementCount": 33,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-001",
+      "SourceSection": "3.1: Which One Doesn’t Belong: What are Polynomials?",
+      "SourceExcerpt": "Which one doesn’t belong?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-002",
+      "SourceSection": "3.1: Which One Doesn’t Belong: What are Polynomials?",
+      "SourceExcerpt": "A: \\(4 - x^2 + x^3 - 4x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-003",
+      "SourceSection": "3.1: Which One Doesn’t Belong: What are Polynomials?",
+      "SourceExcerpt": "B: \\(2x^4 + x^2 - 5.7x + 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-004",
+      "SourceSection": "3.1: Which One Doesn’t Belong: What are Polynomials?",
+      "SourceExcerpt": "C: \\(x^2 + 7x - x^{\\frac13} + 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-005",
+      "SourceSection": "3.1: Which One Doesn’t Belong: What are Polynomials?",
+      "SourceExcerpt": "D: \\(x^5 + 8.36 x^3 - 2.4 x^2 + 0.32x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-006",
+      "SourceSection": "3.2: Card Sort: Equations and Graphs",
+      "SourceExcerpt": "Your teacher will give you a set of cards. Group them into pairs that represent the same polynomial function. Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-007",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "Use graphing technology to write equations for polynomial functions whose graphs have the characteristics listed when plotted on the coordinate plane.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-008",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A 1st degree polynomial function whose graph intercepts the vertical axis at 8.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-009",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A 2nd degree polynomial function whose graph has only positive \\(y\\)-values.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-010",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A 2nd degree polynomial function whose graph contains the point \\((0,\\text-9)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-011",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A 3rd degree polynomial function whose graph crosses the horizontal axis more than once.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-012",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A 4th degree or higher polynomial function whose graph never crosses the horizontal axis.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-013",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "For each of the following letters, find the equation for a polynomial function whose graph resembles the given letter: U, N, M, W.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-014",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A polynomial function of \\(x\\) is a function given by a sum of terms, each of which is a constant times a whole number power of \\(x\\). Polynomials are often classified by the term with the highest exponent on the independent variable. For…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-015",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "Graphs of polynomials have a variety of appearances. Here are three graphs of different polynomials with degree 1, 3, and 6, respectively:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-016",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "Since graphs of polynomials can curve up and down multiple times, they can have points that are higher or lower than the rest of the points around them. These points are relative maximums and relative minimums. In the second graph, there…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-017",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "In future lessons, we’ll explore connections between equations and graphs of polynomials and learn more about how the degree of a polynomial affects the shape of the graph.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-018",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "The degree of a polynomial in \\(x\\) is the highest exponent occuring on \\(x\\) when you write the polynomial out as a sum of non-zero constants times powers of \\(x\\) (with like terms collected).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-019",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A polynomial function of \\(x\\) is a function given by a sum of terms, each of which is a constant times a whole number power of \\(x\\). The word polynomial is used to refer both to the function and to the expression defining it.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-020",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A point on the graph of a function that is higher than any of the points around it.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-ACTIVITY-021",
+      "SourceSection": "3.3: Let’s Make Some Curves",
+      "SourceExcerpt": "A point on the graph of a function that is lower than any of the points around it.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Select all points where relative minimum values occur on this graph of a polynomial function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Add one term to the polynomial expression \\(14x^{19}-9x^{15}+11x^4+5x^2+3\\) to make it into a 22nd degree polynomial.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-003",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Identify the degree, leading coefficient, and constant value of each of the following polynomials:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-004",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(f(x)=x^3 - 8 x^2 - x + 8\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(h(x)=2 x^4 + x^3 - 3 x^2 - x + 1\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-006",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(g(x)=13.2 x^3+3 x^4 - x - 4.4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "We want to make an open-top box by cutting out corners of a square piece of cardboard and folding up the sides. The cardboard is a 9 inch by 9 inch square. The volume \\(V(x)\\) in cubic inches of the open-top box is a function of the side…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Write an expression for \\(V(x)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What is the volume of the box when \\(x=1\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What is a reasonable domain for \\(V\\) in this context?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Consider the polynomial function \\(p\\) given by \\(p(x)=7x^3 - 2x^2 + 3x+10\\). Evaluate the function at \\(x=\\text-3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L03-PRACTICE-012",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "An open-top box is formed by cutting squares out of an 11 inch by 17 inch piece of paper and then folding up the sides. The volume \\(V(x)\\) in cubic inches of this type of open-top box is a function of the side length \\(x\\) in inches of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l03.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

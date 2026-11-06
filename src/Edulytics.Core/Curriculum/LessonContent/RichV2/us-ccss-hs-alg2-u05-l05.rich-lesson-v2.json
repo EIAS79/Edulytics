@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l05-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L05",
+      "CultureCode": "en",
+      "Title": "Some Functions Have Symmetry",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Generalize (orally and in writing) what is true for coordinate pairs of even and odd functions. Identify (orally) features that graphs of even functions have in common and features that graphs of odd functions have in common.",
+        "An even function satisfies f(-x)=f(x) and has y-axis symmetry. An odd function satisfies f(-x)=-f(x) and has origin symmetry. Both require domains symmetric about zero.",
+        "Source activity 5.1: Changing Heights: The table shows Clare’s elevation on a Ferris wheel at different times, \\(t\\). Clare got on the ride 80 seconds ago. Right now, at time 0 seconds, she is at the top of the ride. Assuming the Ferris wheel moves at a constant speed for the next 80 seconds, complete the table. Attribution: Ferris Wheel, by Cindy Stuntz. CC BY 2.0.. Source. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.2: Card Sort: Two Types of Graphs: Your teacher will give you a set of cards that show graphs. Sort the cards into 2 categories of your choosing. Be prepared to explain the meaning of your categories. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.3: Card Sort: Two Types of Coordinates: Your teacher will give you a set of cards to go with the cards you already have. Match each table of coordinate pairs with one of the graphs from earlier. Describe something you notice about the coordinate pairs of even functions. Describe something you notice about the coordinate pairs of odd functions. Can a non-zero function whose domain is all real numbers be both even and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Classify each function as odd, even, or neither. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The table shows the values of an even function \\(f\\) for some inputs. Complete the table. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of \\(y = x -2\\). Is there a vertical translation of the graph that represents an even function? Explain your reasoning. Is there a vertical translation of the graph that represents an odd function? Explain you reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The function \\(f\\) is odd. Which statements must be true? Select all that apply. If \\(f(5) = 2\\), then \\(f(\\text-5) = 2\\). If \\(f(5) = 3\\), then \\(f(\\text-5) = \\text-3\\). Reflection over the \\(y\\)-axis takes the graph of \\(f\\) to itself. Reflecting \\(f\\) across both axes takes the graph of \\(f\\) to itself. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Find the exact solution(s) to each of these equations, or explain why there is no solution. \\(\\frac14 \\sqrt[3]{d}=15\\) \\(\\text- \\sqrt[3]{e}=7\\) \\(\\sqrt[3]{f-5}+2=4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is the graph of \\(f\\). Graph the function \\(g\\) given by \\(g(x) = \\text-f(x)\\). Graph the function \\(h\\) given by \\(h(x) = f(\\text-x)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The graph models Priya's heart rate before, during, and after a run. What was Priya's approximate heart rate before and after the run? About how high did Priya's heart rate get during the run? Sketch what the graph would look like if Priya went for the run three hours later. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Classify h(x)=x²+x. Expected reasoning or answer: Neither.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Even and odd symmetry",
+          "Definition": "An even function satisfies f(-x)=f(x) and has y-axis symmetry. An odd function satisfies f(-x)=-f(x) and has origin symmetry. Both require domains symmetric about zero.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Classify f(x)=x² and g(x)=x³ as even or odd. Answer: x² even; x³ odd."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(-x)²=x²; (-x)³=-x³."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify (orally) features that graphs of even functions have in common and features that graphs of odd functions have in common.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Classify h(x)=x²+x. Answer: Neither."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Even and odd symmetry",
+          "Question": "Classify f(x)=x² and g(x)=x³ as even or odd.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(-x)²=x²",
+            "(-x)³=-x³.",
+            "Interpret the computed result (x² even; x³ odd.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "x² even; x³ odd.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Classify h(x)=x²+x.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Neither.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Classify h(x)=x²+x.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Classify h(x)=x²+x.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. (-x)²=x²",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Neither."
+          ],
+          "Answer": "Neither.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Even and odd symmetry",
+        "An even function satisfies f(-x)=f(x) and has y-axis symmetry. An odd function satisfies f(-x)=-f(x) and has origin symmetry. Both require domains symmetric about zero.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

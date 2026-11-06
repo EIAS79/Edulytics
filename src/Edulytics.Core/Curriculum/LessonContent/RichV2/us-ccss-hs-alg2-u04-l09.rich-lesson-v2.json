@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l09-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L09",
+      "CultureCode": "en",
+      "Title": "What is a Logarithm?",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend the definition of a logarithm as the solution to an exponential equation. Identify the parameters in expressions involving a logarithm.",
+        "For b>0, b!=1 and y>0, log_b(y) is the exponent x such that b^x=y. Logarithms invert exponentials; arguments must be positive.",
+        "Source activity 9.1: Math Talk: Finding Solutions: Find or estimate the value of each variable mentally. \\(4^\\frac{5}{2}=c\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.2: A Table of Numbers: Analyze the table and discuss with a partner what you think the table tells us. Use the table to find the value of the unknown exponent that makes each equation true. Notice that some values in the columns labeled \\(\\log_{10} x\\) are whole numbers, but most are decimals. Why do you think that is? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.3: Hello, Logarithm!: \\(\\begin {align} \\log_{10} 100 &= 2\\\\ \\log_{10} 1,\\!000 &= 3 \\end{align}\\) What values could replace the “?” in these equations to make them true? \\(\\log_{10} 1,\\!000,\\!000 = {?}\\) \\(\\log_{10} 1 = {?}\\) \\(\\log_{10} ? = 4\\) Here are two true equations based on the information from the table: Between which two whole numbers is the value of \\(\\log_{10} 600\\)? Be prepared to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: For each equation in the left column, find in the right column an exact or approximate value for the unknown exponent so that the equation is true. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here is a logarithmic expression: \\(\\log_{10}100\\). How do we say the expression in words? Explain in your own words what the expression means. What is the value of this expression? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The base 10 log table shows that the value of \\(\\log_{10} 50\\) is about 1.69897. Explain or show why it makes sense that the value is between 1 and 2. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a table of some logarithm values. What is the approximate value of \\(\\log_{10}(400)\\)? What is the value of \\(\\log_{10}(1000)\\)? Is this value approximate or exact? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What is the value of \\(\\log_{10}(1,\\!000,\\!000,\\!000)\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: A bank account balance, in dollars, is modeled by the equation \\(f(t) = 1,\\!000 \\boldcdot (1.08)^t\\), where \\(t\\) is time measured in years. About how many years will it take for the account balance to double? Explain or show how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The graph shows the number of milligrams of a chemical in the body, \\(d\\) days after it was first measured. Explain what the point \\((1,2.5)\\) means in this situation. Mark the point that represents the amount of medicine left in the body after 8 hours. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: The exponential function \\(f\\) takes the value 10 when \\(x = 1\\) and \\(30\\) when \\(x = 2\\). What is the \\(y\\)-intercept of \\(f\\)? Explain how you know. What is an equation defining \\(f\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate log_3(81). Expected reasoning or answer: 4.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Definition of logarithm",
+          "Definition": "For b>0, b!=1 and y>0, log_b(y) is the exponent x such that b^x=y. Logarithms invert exponentials; arguments must be positive.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Evaluate log_2(32). Answer: 5."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Because 2^5=32, log base2 of32 is5."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify the parameters in expressions involving a logarithm.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate log_3(81). Answer: 4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Definition of logarithm",
+          "Question": "Evaluate log_2(32).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Because 2^5=32, log base2 of32 is5.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (5.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "5.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate log_3(81).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "4.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate log_3(81).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate log_3(81).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Because 2^5=32, log base2 of32 is5.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 4."
+          ],
+          "Answer": "4.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Definition of logarithm",
+        "For b>0, b!=1 and y>0, log_b(y) is the exponent x such that b^x=y. Logarithms invert exponentials; arguments must be positive.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l15-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L15",
+      "CultureCode": "en",
+      "Title": "Questioning Experimenting",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Ask questions (orally) to determine information needed to analyze data from an experiment. Identify the area under a normal curve above an interval based on z-scores and a table of values.",
+        "For a normal model convert x to z=(x-μ)/σ. Standard normal right-tail probability above z=1 is about0.1587; right-tail area complements the cumulative probability from a z-table. State whether the question asks above or below.",
+        "Source activity 15.1: Is It the Treatment?: A scientist divides 30 strawberry plants into two groups at random. One group of 15 plants will represent the control group and is grown in standard greenhouse conditions. The second group of 15 plans will represent the treatment group and will grow under the same conditions except they are grown in a different type of soil. After 6 weeks, the total weight (in grams) of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 15.2: Info Gap: Is There a Difference?: Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 15.3: Using Tables for Normal Distribution Areas: A factory produces baseballs. The weights of the baseballs produced are approximately normally distributed with a mean weight of 145 grams and a standard deviation of 2 grams. Official rules require the balls to weigh between 142 and 149 grams. Recall that the proportion of items in an interval of an approximately normally distributed situation is the same as the area under… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Clare analyzes oil prices in her economics class. She finds that the mean oil price between 1988 and 2002 is $27 per barrel with a standard deviation of $5.50 per barrel. Select the z-score for a price of $38 per barrel. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Priya is investigating the population density of deer in several different forests. The mean population density is 36.4 deer per square mile with a standard deviation of 4.6 deer per square mile. Use the z-score for 43.3 deer per square mile and the table to find the area under the normal curve that is less than 43.3… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Find the area under the curve that is less than a significant value for each z-score listed here. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Noah is working on a science experiment. He wants to determine how the temperature in a pool affects the chlorine level. Noah visits 16 pools and adjusts the chlorine levels so that they are all at 2.5 parts per million. After two days, he collects 8 samples from pools that are 78 degrees and 8 samples from pools that… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The daily step count of 25 random samples of 40 people each are measured. The mean for each sample is included in the dot plot. Use the values to estimate the mean step count for the population. What is the margin of error for this estimate based on these values? (Round to the nearest step.) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: A spinner is divided into 4 equal sections labeled A, B, C, and D. Based on probability, how many times would you expect the spinner to land on C after spinning 60 times? Explain your reasoning. After spinning the spinner 60 times, the frequency of the outcomes is: A 13 times, B 16 times, C 17 times, D 14 times. Is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For Z standard normal, what is proportion below z=1? Expected reasoning or answer: About84.13%.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normal tail with z-scores",
+          "Definition": "For a normal model convert x to z=(x-μ)/σ. Standard normal right-tail probability above z=1 is about0.1587; right-tail area complements the cumulative probability from a z-table. State whether the question asks above or below.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Scores are normal with mean70, SD10. What is approximate proportion above80? Answer: About15.87%."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "z=(80-70)/10=1; normal P(Z>1)≈.1587."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify the area under a normal curve above an interval based on z-scores and a table of values.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For Z standard normal, what is proportion below z=1? Answer: About84.13%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Normal tail with z-scores",
+          "Question": "Scores are normal with mean70, SD10. What is approximate proportion above80?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "z=(80-70)/10=1",
+            "normal P(Z>1)≈.1587.",
+            "Interpret the computed result (About15.87%.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "About15.87%.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For Z standard normal, what is proportion below z=1?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "About84.13%.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For Z standard normal, what is proportion below z=1?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For Z standard normal, what is proportion below z=1?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. z=(80-70)/10=1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: About84.13%."
+          ],
+          "Answer": "About84.13%.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Normal tail with z-scores",
+        "For a normal model convert x to z=(x-μ)/σ. Standard normal right-tail probability above z=1 is about0.1587; right-tail area complements the cumulative probability from a z-table. State whether the question asks above or below.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

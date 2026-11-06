@@ -1,0 +1,103 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l01-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L01",
+      "CultureCode": "en",
+      "Title": "Being Skeptical",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Critique and evaluate reports (orally) based on data and how the data were collected. Recognize the purposes of and differences among sample surveys, experiments, and observational studies. Understand statistics as a process for making inferences about population parameters based on data from a statistical study.",
+        "A statistical conclusion depends on how data were collected. A sample survey estimates a population; a randomized experiment can support causal inference; an observational study may show association but cannot automatically establish causation. Voluntary responses can be biased.",
+        "Source activity 1.1: Notice and Wonder: Headlines: A graph and 2 headlines from a website are shown. What do you notice? What do you wonder? “80% of Dentists Recommend Acme Toothpaste” “Pythagoras Brand Rulers Measure 20% Better” Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 1.2: Take Turns: Statistical Design: One partner reads the statistical question and study design to the other partner. The reader should then sort the item into the type of study described: Observational study The other partner should decide whether the study is good or bad and explain their reasoning. After the discussion, switch roles and have the other partner read the next statistical question and study… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Which of these statements describes a key distinction between an observational study and an experimental study? Experimental studies are more representative of the larger population than observational studies. Data is collected in experimental studies, but not in observational studies. Observational studies try to… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Elena is interested in whether music affects plant growth. For a science fair project, she will grow one plant in a room that is normally kept quiet. She will grow another plant in another room that has classical piano music playing all the time. After 2 months, she compares the height of the plants to determine the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Match the description of the study design with the type of study being conducted. Does a certain multivitamin help people lose weight? Researchers select 100 people to participate in the study and assign them to 2 groups at random. One group is given the multivitamin. The other group is given a fake pill. The weights… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here are the first 4 stages of a pattern. In stage 1, the middle third of a segment of length 1 is removed. Each successive stage continues to remove the middle third of remaining segments. What is the total length of the segments in stage 1? What is the total length of the segments in stage 2? What is the total… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Mai is using the quadratic formula to solve two different quadratic equations. For the first equation, she writes \\(x= \\dfrac{\\text-4 \\pm \\sqrt{4^2 - 4(4)(1)}}{2(4)}\\) For the second equation, she writes \\(x=\\dfrac{3 \\pm \\sqrt{(\\text-3)^2 - 4(3)(5)}}{2(3)}\\) How many real solutions will each equation have? Explain how… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here are graphs of two functions \\(f\\) and \\(g\\). Which statements are true about the graph of \\(y = h(x)\\) where \\(h\\) given by \\(h(x) = f(x) -g(x)\\) ? Select all that apply. There is an \\(x\\)-intercept between \\(x = 1\\) and \\(x = 2\\) There is an \\(x\\)-intercept between \\(x = 2\\) and \\(x = 3\\) The \\(y\\)-intercept is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: A school surveys only students attending an optional club about all students' habits. Identify the risk. Expected reasoning or answer: Selection bias: club members are not a random school sample.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Assess statistical claims critically",
+          "Definition": "A statistical conclusion depends on how data were collected. A sample survey estimates a population; a randomized experiment can support causal inference; an observational study may show association but cannot automatically establish causation. Voluntary responses can be biased.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A web poll of 100 volunteers reports 90% support for a policy. Does that prove 90% of the whole city supports it? Answer: No; the citywide percentage is not established."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Voluntary response is not a probability sample; participants may differ systematically from nonparticipants."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Understand statistics as a process for making inferences about population parameters based on data from a statistical study.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "A school surveys only students attending an optional club about all students' habits. Identify the risk. Answer: Selection bias: club members are not a random school sample."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Assess statistical claims critically",
+          "Question": "A web poll of 100 volunteers reports 90% support for a policy. Does that prove 90% of the whole city supports it?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Voluntary response is not a probability sample",
+            "participants may differ systematically from nonparticipants.",
+            "Interpret the computed result (No; the citywide percentage is not established.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "No; the citywide percentage is not established.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "A school surveys only students attending an optional club about all students' habits. Identify the risk.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Selection bias: club members are not a random school sample.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A school surveys only students attending an optional club about all students' habits. Identify the risk.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A school surveys only students attending an optional club about all students' habits. Identify the risk.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Voluntary response is not a probability sample",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Selection bias: club members are not a random school sample."
+          ],
+          "Answer": "Selection bias: club members are not a random school sample.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Assess statistical claims critically",
+        "A statistical conclusion depends on how data were collected. A sample survey estimates a population; a randomized experiment can support causal inference; an observational study may show association but cannot automatically establish causation. Voluntary responses can be biased.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l04-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L04",
+      "CultureCode": "en",
+      "Title": "The Unit Circle (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe the structure of angles expressed in terms of radians on the unit circle. Describe the structure of the coordinates associated with specific radian measurements on the unit circle.",
+        "A point on the unit circle has cos θ as x and sin θ as y. Reference angles and quadrant signs locate values at π/6, π/4, π/3 and their reflections.",
+        "Source activity 4.1: Notice and Wonder: Angles Around the Unit Circle: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.2: Angles Everywhere: Here is a circle of radius 1 with some radii drawn. Draw and label angles, with the positive \\(x\\)-axis as the starting ray for each angle, measuring \\(\\frac{\\pi}{12},\\frac{\\pi}{6},\\frac{\\pi}{4} \\ldots, 2\\pi\\) in the counterclockwise direction. Four of these angles, one in each quadrant, have been drawn for you. There should be a total of 24 angles labeled when you are… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 4.3: Angle Coordinates Galore: Your teacher will assign you a section of the unit circle. Find and label the coordinates of the points assigned to you where the angles intersect the circle. Compare and share your values with your group. What relationships or patterns do you notice in the coordinates? Be prepared to share what you notice with the class. Other than \\((1,0)\\), \\((0,1)\\), \\((\\text-1,0)\\), and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Angle \\(ABC\\) measures \\(\\frac{\\pi}{3}\\) radians, and the coordinates of \\(C\\) are about \\((0.5,0.87)\\). The measure of angle \\(ABD\\) is \\(\\frac{2\\pi}{3}\\) radians. What are the approximate coordinates of \\(D\\)? Explain how you know. The measure of angle \\(ABE\\) is \\(\\frac{5\\pi}{3}\\) radians. What are the approximate… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Give an angle of rotation centered at the origin that sends point \\(P\\) to a location whose \\((x,y)\\) coordinates satisfy the given conditions. \\(x > 0\\) and \\(y < 0\\) \\(x < 0\\) and \\(y > 0\\) \\(y < 0\\) and \\(x < 0\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Lin calculates \\(0.97^2 + 0.26^2\\) and finds that it is 1.0085. Explain why \\((0.97,0.26)\\) is not on the unit circle. Is \\((0.97,0.26)\\) a good estimate for the coordinates of a point on the unit circle? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The \\(x\\)-coordinate of a point \\(P\\) on the unit circle is 0. If point \\(P\\) is the result of rotating the point \\((1,0)\\) by \\(\\theta\\) radians counterclockwise about the origin, what angle could \\(\\theta\\) represent? Select all that apply. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is triangle \\(ABC\\). \\(BC\\) is shorter than \\(AC\\). Which statements are true? Select all that apply. \\(\\sin(A) < \\sin(B)\\) \\(\\cos(A) < \\cos(B)\\) \\(\\tan(A) < \\tan(B)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Angle \\(POQ\\) measures one radian. The radius of the circle is 1 unit. What is the length of arc \\(PQ\\)? Explain why the length of arc \\(PQ\\) is less than \\(\\frac{1}{6}\\) of the full circle. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Label these points on the unit circle: \\(Q\\) is the image of \\(P\\) after a \\(\\frac{11\\pi}{6}\\) rotation with center \\(O\\). \\(R\\) is the image of \\(P\\) after a \\(\\frac{3\\pi}{2}\\) rotation with center \\(O\\). \\(U\\) is the image of \\(P\\) after a \\(\\frac{2\\pi}{3}\\) rotation with center \\(O\\). \\(V\\) is the image of \\(P\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find coordinates at 7π/6. Expected reasoning or answer: (-√3/2,-1/2).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadrants and common radian angles",
+          "Definition": "A point on the unit circle has cos θ as x and sin θ as y. Reference angles and quadrant signs locate values at π/6, π/4, π/3 and their reflections.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find unit-circle coordinates for θ=5π/6. Answer: (-√3/2,1/2)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Reference angle π/6; quadrantII has negative cosine and positive sine."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe the structure of the coordinates associated with specific radian measurements on the unit circle.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find coordinates at 7π/6. Answer: (-√3/2,-1/2)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Quadrants and common radian angles",
+          "Question": "Find unit-circle coordinates for θ=5π/6.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Reference angle π/6",
+            "quadrantII has negative cosine and positive sine.",
+            "Interpret the computed result ((-√3/2,1/2).) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "(-√3/2,1/2).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find coordinates at 7π/6.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "(-√3/2,-1/2).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find coordinates at 7π/6.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find coordinates at 7π/6.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Reference angle π/6",
+            "Verify the result with a second substitution or interpretation; the authored solution is: (-√3/2,-1/2)."
+          ],
+          "Answer": "(-√3/2,-1/2).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadrants and common radian angles",
+        "A point on the unit circle has cos θ as x and sin θ as y. Reference angles and quadrant signs locate values at π/6, π/4, π/3 and their reflections.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

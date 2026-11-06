@@ -1,0 +1,252 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L08",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "3ab159032cb17b0990f3d1a2b6da1b54708fd031f1f5f7ad1acbbf71b74e2c46",
+    "teacher/index.html": "6d5b0235cac109c0a9f80077c62b8e1a047dda7c335303e99fef8dd3665b9a00",
+    "teacher/practice.html": "3221339125a35719869498a1a2e7682e320c4b1bed6f39d6c77b9ca0888115b8",
+    "student/index.html": "757eca878f7af77075db630d2821b63fc0b4b71cc031eb79589f1d8b407a6040",
+    "student/practice.html": "a9394280b98919130ebbe89a0618a584a2559b11b777d0c1f7c4dc1e6a893d30"
+  },
+  "Goals": [
+    "Calculate the scale factor $k$ needed to transform the output of a function to fit data.",
+    "Describe the effect of a scale factor on the output of a function."
+  ],
+  "ElementCount": 29,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-001",
+      "SourceSection": "8.1: Notice and Wonder: Arch You Glad to See Me?",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-002",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "The Hulme Arch Bridge in Manchester, England is shaped like a parabola. The ends of the arch are 52 meters apart, and it is 25 meters high.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-003",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "Attribution: Close View of Hulme Arch, by Mikey. CC BY 2.0. Wikimedia Commons. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-004",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "Use the description to help you label the 3 coordinates on the graph.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-005",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "For the \\(x\\)-coordinates of the three points, what are the corresponding points on the graph of \\(H\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-006",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "What aspects of the shape does Han’s function model well, and what parts does it not model well?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-007",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "Compare the height of Han’s graph with the height of the Hulme Arch Bridge. How can you change the outputs of \\(H\\) to make it fit better? What would the revised version of \\(H(x)\\) be?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-008",
+      "SourceSection": "8.2: The Hulme Arch Bridge",
+      "SourceExcerpt": "Han wants to model the shape of the arch with the graph of a function, and he chooses \\(H(x) = x(52-x)\\), where \\(H(x)\\) is the height in meters above a point \\(x\\) meters along the base of the arch from the left end.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-009",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "A certain brand of dog food gives the minimum daily amount of food a dog needs depending on its weight. We want to model the relationship between the amount of food and the dog’s weight with a function \\(F\\), where \\(F(w)\\) is the amount…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-010",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "Use graphing technology to find a linear function, \\(F(w) = mw + b\\), that fits the data.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-011",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "What aspects of the data does your function model well and what aspects does it not model well?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-012",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "The graph of \\(f(w) = w^{\\frac23}\\) has a general shape that fits the data. Use graphing technology to find a scale factor \\(k\\) so that \\(F(w) = kf(w)\\) fits the data.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-013",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "How do the graphs of \\(a(w) = 42w^{\\frac{1}{2}}\\), \\(b(w) = 20w^{\\frac{2}{3}}\\), and \\(c(w) = 14w^{\\frac{3}{4}}\\) compare?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-014",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "Which one do you think can be used to produce the best model of the amount of food needed? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-015",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "Sometimes when we want to model data, we can look at the context and the shape of the data to help us figure out what type of function to use. Once we have the same general shape, we can translate a function up, down, left, or right or…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-016",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "For example, the towers of the Golden Gate bridge in San Francisco are 1280 meters apart, and the tops of the towers are 152 meters above the roadway. If we place the \\(x\\)-axis at the top of the towers, we can model the parabolic shape…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-017",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "\\(\\displaystyle f(640) = 640(640-1280) = \\text-640^2 = \\text-409,\\!600. \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-018",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "No number of translations or reflections of the current model will make a graph that matches the shape of the suspension cables and also keeps the zeros at 0 and 1280. So instead of adding to or subtracting from the output, we're going to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-019",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "Attribution: Golden Gate Bridge, by Don Ramey Logan. CC BY-SA 4.0.. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-ACTIVITY-020",
+      "SourceSection": "8.3: Feed the Dog",
+      "SourceExcerpt": "Multiplying by a scale factor less than 1 squashes the graph vertically. This is also called compressing the graph vertically. Sometimes we want to stretch the graph. In that case, we would use a scale factor greater than 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "In each pair of graphs shown here, the values of function \\(g\\) are the values of function \\(f\\) multiplied by a scale factor. Express \\(g\\) in terms of \\(f\\) using function notation.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Here is the graph of \\(y = f(x)\\) for a cubic function \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Will scaling the outputs of \\(f\\) change the \\(x\\)-intercepts of the graph? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Will scaling the outputs of \\(f\\) change the \\(y\\)-intercept of the graph? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The function \\(f\\) is given by \\(f(x) = 2^x\\), while the function \\(g\\) is given by \\(g(x) = 4 \\boldcdot 2^x\\). Kiran says that the graph of \\(g\\) is a vertical scaling of the graph of \\(f\\). Mai says that the graph of \\(g\\) is a…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The dashed function is the graph of \\(f\\) and the solid function is the graph of \\(g\\). Express \\(g\\) in terms of \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-007",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The table shows some values for an odd function \\(f\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-008",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Complete the table.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U05-L08-PRACTICE-009",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Here is a graph of \\(f(x)=x^3\\) and a graph of \\(g\\), which is a transformation of \\(f\\). Write an equation for the function \\(g\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u05-l08.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

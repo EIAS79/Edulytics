@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l07-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L07",
+      "CultureCode": "en",
+      "Title": "Finding Unknown Coordinates on a Circle",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Use sine and cosine to find coordinates of points on a circle in all 4 quadrants.",
+        "A point on a circle radius r at angle θ from the positive x-axis has coordinates (r cosθ,r sinθ). Quadrant signs and scale must both be applied.",
+        "Source activity 7.1: Notice and Wonder: Big and Small: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.2: Clock Coordinates: Here is a clock face. 45 minutes after the hour 10 minutes after the hour 40 minutes after the hour The length of the minute hand on a clock is 5 inches and the center of the clock is at \\((0,0)\\) on a coordinate plane. Determine the coordinates of the end of the minute hand at the following times. Explain or show your reasoning. 45 minutes after the hour 10 minutes after the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.3: Around a Ferris Wheel: The center of a Ferris wheel is 40 feet off the ground, and the radius of the Ferris wheel is 30 feet. Point \\(P\\) is shown at 0 radians. \\(\\frac \\pi {12}\\) radians \\(\\frac \\pi 2\\)radians \\(\\frac {5\\pi}6\\) radians \\(\\frac {5\\pi}3\\) radians Calculate how high off the ground point \\(P\\) is as the Ferris wheel rotates counterclockwise starting from 0 radians. As you go around on… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The center of a clock is at \\((0,0)\\) in a coordinate system, and the minute hand is 10 inches long. Find the approximate coordinates of the tip of the minute hand at: Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The center of a Ferris wheel is 100 feet off the ground and its radius is 85 feet. The point \\(A\\) is at the 0 radian position, \\(B\\) is rotated \\(\\frac{7\\pi}{12}\\) radians from \\(A\\), and \\(C\\) is rotated \\(\\frac{5\\pi}{4}\\) radians from \\(A\\). For each point \\(A\\), \\(B\\), and \\(C\\), find how high the position on the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: A Ferris wheel has a radius of 50 feet, and its center is 60 feet off the ground. How many points on the Ferris wheel are: 30 feet off the ground? 110 feet off the ground? 5 feet off the ground? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The minute hand on a clock tower is 6 feet long. At 10 minutes after the hour, the tip of the minute hand is 55 feet above the ground. How high above the ground is the center of the clock face? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: A wheel has a radius of 1 foot. The center of the wheel is point \\(O\\). Indicate where the point \\(P\\) will be after the wheel rotates counterclockwise around its center 1 foot. Label this point \\(Q\\). What is the measure of angle \\(POQ\\) in radians? Indicate where the point \\(P\\) will be after the wheel rotates… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Angle \\(\\theta\\) corresponds to a point \\((x,y)\\) on the unit circle in quadrant 1. Which quadrant does \\(\\theta + \\pi\\) lie in? In terms of \\(x\\) and \\(y\\), what are the coordinates of \\(\\theta + \\pi\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Using a unit circle display, give an example of an angle satisfying each inequality. \\(A\\) so that \\(\\cos(A) > 0\\) and \\(\\sin(A) < 0\\) \\(B\\) so that \\(\\cos(B) < 0\\) and \\(\\sin(B) > 0\\) \\(C\\) so that \\(\\cos(C) < 0\\) and \\(\\sin(C) < 0\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: Suppose angle \\(\\theta\\), in radians, is in quadrant 3 of the unit circle. If \\(\\sin(\\theta)=\\text-0.45\\), what are the values of \\(\\cos(\\theta)\\) and \\(\\tan(\\theta)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For radius8 at θ=π, find coordinates. Expected reasoning or answer: (-8,0).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Coordinates on any circle",
+          "Definition": "A point on a circle radius r at angle θ from the positive x-axis has coordinates (r cosθ,r sinθ). Quadrant signs and scale must both be applied.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For radius10 and θ=2π/3, find coordinates. Answer: (-5,5√3)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "cos2π/3=-1/2, sin2π/3=√3/2; multiply each by10."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use sine and cosine to find coordinates of points on a circle in all 4 quadrants.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For radius8 at θ=π, find coordinates. Answer: (-8,0)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Coordinates on any circle",
+          "Question": "For radius10 and θ=2π/3, find coordinates.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "cos2π/3=-1/2, sin2π/3=√3/2",
+            "multiply each by10.",
+            "Interpret the computed result ((-5,5√3).) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "(-5,5√3).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For radius8 at θ=π, find coordinates.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "(-8,0).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For radius8 at θ=π, find coordinates.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For radius8 at θ=π, find coordinates.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. cos2π/3=-1/2, sin2π/3=√3/2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: (-8,0)."
+          ],
+          "Answer": "(-8,0).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Coordinates on any circle",
+        "A point on a circle radius r at angle θ from the positive x-axis has coordinates (r cosθ,r sinθ). Quadrant signs and scale must both be applied.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

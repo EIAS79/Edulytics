@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l05-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L05",
+      "CultureCode": "en",
+      "Title": "Normal Distributions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify normal distributions as a way to model distributions that are approximately symmetric and bell-shaped and explain (orally) the reasoning.",
+        "A normal model is unimodal, symmetric and bell-shaped, defined by a mean μ and standard deviation σ. Many measurements approximately follow it, but do not assume every histogram is normal or that every point is exactly at the center.",
+        "Source activity 5.1: Body Temperature: Each histogram represents a group of 500 healthy people who had their temperature taken. Three histograms represent examples of data that approximate a normal distribution and three histograms represent non-examples, or data that do not approximate a normal distribution. What do you think the elements are of a definition of normal distribution? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.2: Playing a Piano: Attribution: Volunteer Voluntary Guide Guiding Grip Handle, by niekverlaan. Public Domain. pixabay. Source. On many piano keyboards, the distance from one white key to the next is 2.39 centimeters. How many of your classmates could reach two notes that are 9 keys apart (21.5 cm) on a keyboard using only one hand? Stretch your fingers apart as wide as you can and measure the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.3: Relative Frequency Distribution: Manufacturers of butter make sticks of butter that weigh 110 grams on average. A manufacturer suspects the machine that forms the sticks of butter may have a problem, so they weigh each stick of butter the machine produces in an hour. The weights are grouped into intervals of 0.5 grams and are summarized in a frequency table. The same data are summarized in this histogram.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.4: The Normal Curve: These curves represent normal distributions with different means and standard deviations. What do you notice? mean = 10. standard deviation = 1 mean = 10. standard deviation = 1 mean = 10. standard deviation = 2 mean = 10. standard deviation = 2 mean = 8. standard deviation = 2 mean = 8. standard deviation = 2 mean = 12. standard deviation = 1 mean = 12. standard deviation = 1… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here is a histogram of a distribution with 94 data points. For each given interval, find the proportion of data points which fall in that interval. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: This relative frequency histogram shows the distribution of average daily temperatures (in degrees Fahrenheit) for a town over the course of 5 years. Match each temperature interval with the proportion of days over the 5 years whose average temperature fell in that interval. 60 to 66 degrees Fahrenheit 66 to 68… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Two curves representing normal distributions are shown. Does the solid curve or dashed curve have a greater standard deviation? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here are 2 distributions. How does the mean of set A compare to the mean of set B? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which distribution is symmetric? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Clare is designing an experimental study. She says that it is important to randomly assign people to random groups in an experimental study because this helps reduce the likelihood of grouping subjects into groups that may differ on some characteristic that is related to the response of interest. Do you agree with… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: What value has z=-2 for mean100 and SD15? Expected reasoning or answer: 70.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normal distributions",
+          "Definition": "A normal model is unimodal, symmetric and bell-shaped, defined by a mean μ and standard deviation σ. Many measurements approximately follow it, but do not assume every histogram is normal or that every point is exactly at the center.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A distribution is approximately normal with mean50 and SD10. What z-score has observation60? Answer: z=1."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "z=(x-μ)/σ=(60-50)/10=1."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify normal distributions as a way to model distributions that are approximately symmetric and bell-shaped and explain (orally) the reasoning.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "What value has z=-2 for mean100 and SD15? Answer: 70."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Normal distributions",
+          "Question": "A distribution is approximately normal with mean50 and SD10. What z-score has observation60?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "z=(x-μ)/σ=(60-50)/10=1.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (z=1.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "z=1.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "What value has z=-2 for mean100 and SD15?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "70.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "What value has z=-2 for mean100 and SD15?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: What value has z=-2 for mean100 and SD15?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. z=(x-μ)/σ=(60-50)/10=1.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 70."
+          ],
+          "Answer": "70.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Normal distributions",
+        "A normal model is unimodal, symmetric and bell-shaped, defined by a mean μ and standard deviation σ. Many measurements approximately follow it, but do not assume every histogram is normal or that every point is exactly at the center.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

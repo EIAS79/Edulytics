@@ -1,0 +1,29 @@
+@model Edulytics.Web.Controllers.G11Alg2RubricStudentPage
+@{ ViewData["Title"] = "Algebra 2 - Explain and justify"; }
+<h1>Geometry ? lesson explanation and teacher review</h1>
+<p>Explain your mathematical construction, proof, probability model or diagram and justify your conclusion. If you used a physical drawing or construction, provide the labelled evidence directly to your teacher. The platform stores the written response; it does not infer whether a physical drawing is correct.</p>
+@if (Model.Existing is null)
+{
+    <form method="post" action="/student/g11/algebra2/rubric/submit">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <label for="explanation">Your independent solution and justification (20?8000 characters)</label>
+        <textarea id="explanation" name="explanation" required minlength="20" maxlength="8000" rows="10"></textarea>
+        <button type="submit">Submit for teacher review</button>
+    </form>
+}
+else
+{
+    <h2>Response submitted</h2>
+    <p>Submitted @Model.Existing.SubmittedAtUtc.ToString("u")</p>
+    <pre style="white-space:pre-wrap">@Model.Existing.ResponseText</pre>
+    @if (Model.Existing.TeacherScore is int score)
+    {
+        <p>Teacher score: @score / 4</p>
+        <p>Teacher feedback: @Model.Existing.TeacherFeedback</p>
+    }
+    else
+    {
+        <p>Teacher review pending; no automatic grade was awarded.</p>
+    }
+}

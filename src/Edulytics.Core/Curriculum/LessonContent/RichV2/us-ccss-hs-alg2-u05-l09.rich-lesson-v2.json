@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u05-l09-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L09",
+      "CultureCode": "en",
+      "Title": "Scaling the Inputs",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the scale factor $k$ needed to transform the input of a function to fit a situation. Describe (orally and in writing) the effect of a scale factor on the input of a function.",
+        "The transformation g(x)=f(kx) compresses the graph horizontally by factor 1/|k| if |k|>1, with an additional y-axis reflection when k<0. It does not multiply output directly.",
+        "Source activity 9.1: Out and Back: Every weekend, Elena takes a walk along the straight road in front of her house for 2 miles, then turns around and comes back home. Let’s assume Elena walks at a constant speed. Attribution: Straight Road, by pxhere. Public Domain. pxhere. Source. Here is a graph of the function \\(f\\) that gives her distance \\(f(t)\\), in miles, from home as a function of time \\(t\\) if she… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.2: A New Set of Wheels: Remember Clare on the Ferris wheel? In the table, we have the function \\(F\\) which gives her height \\(F(t)\\) above the ground, in feet, \\(t\\) seconds after starting her descent from the top. Today Clare tried out two new Ferris wheels. The first wheel is twice the height of \\(F\\) and rotates at the same speed. The function \\(g\\) gives Clare's height \\(g(t)\\), in feet, \\(t\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 9.3: The Many Transformations of a Function $P$: Function \\(k\\) is a transformation of function \\(P\\) due to a scale factor. Write an equation for \\(k\\) in terms of \\(P\\). On the same axes, graph the function \\(m\\) where \\(m(x)=P(0.75x)\\). The highest point on the graph of \\(P\\) is \\((1,2)\\). What is the highest point on the graph of a function \\(n\\) where \\(n(x)=P(5x)\\)? Explain or show your reasoning. The point furthest to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here are graphs of functions \\(f\\) and \\(g\\). For each, determine the value of \\(k\\) so that \\(g(x)=f(kx)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Let \\(f(x) = x(x-5)(x+2)(x+5)\\). Decide if the reasoning about each of the following functions is correct. Explain your reasoning. Andre says that \\(g(x) = 0.1x(0.1x-5)(0.1x+2)(0.1x+5)\\) is obtained from \\(f\\) by scaling the inputs by a factor of 0.1. Clare says this graph is a vertical shift of the graph of \\(f\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: A bacteria population, in thousands, is modeled by the function \\(f(d) = 30 \\boldcdot 2^d\\) where \\(d\\) is the number of days since it was first measured. The function \\(g\\) gives the bacteria population, in thousands, \\(w\\) weeks after it was first measured. Express \\(g\\) in terms of \\(f\\). Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The height of a hot air balloon, in feet, \\(m\\) minutes after takeoff is modeled by the function \\(f(m) = 16m\\). How many minutes does it take for the balloon to reach 200 feet? Another balloon takes off 5 minutes later and rises at the same speed. Write an equation for the function \\(g\\), where \\(g(t)\\) is the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is the graph of a function \\(f\\). Reflecting \\(f\\) across the \\(x\\)-axis and then across the vertical line \\(y=1\\) takes the graph of \\(f\\) back to itself. Tyler says that this means \\(f\\) is an odd function. Do you agree with Tyler? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The population of sloths in an area has been increasing by 5% each year since 2000. Let \\(P\\) model the population \\(P(t)\\), in thousands, of sloths \\(t\\) years after the year 2000. The graph of \\(p(t) = 1.05^t\\) has a general shape that fits the data. Find a scale factor \\(k\\) so that \\(P(t) = kp(t)\\) fits the data. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If f(x)=sin x, what is period of f(3x)? Expected reasoning or answer: 2π/3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scaling inputs",
+          "Definition": "The transformation g(x)=f(kx) compresses the graph horizontally by factor 1/|k| if |k|>1, with an additional y-axis reflection when k<0. It does not multiply output directly.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Given f(x)=x², express g(x)=f(2x) and describe the change. Answer: g(x)=4x²; horizontal compression by factor1/2."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Substitute input2x; g=(2x)²=4x²; original feature at x occurs now at x/2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (orally and in writing) the effect of a scale factor on the input of a function.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If f(x)=sin x, what is period of f(3x)? Answer: 2π/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scaling inputs",
+          "Question": "Given f(x)=x², express g(x)=f(2x) and describe the change.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Substitute input2x",
+            "g=(2x)²=4x²",
+            "original feature at x occurs now at x/2."
+          ],
+          "Answer": "g(x)=4x²; horizontal compression by factor1/2.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If f(x)=sin x, what is period of f(3x)?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "2π/3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If f(x)=sin x, what is period of f(3x)?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If f(x)=sin x, what is period of f(3x)?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Substitute input2x",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 2π/3."
+          ],
+          "Answer": "2π/3.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Scaling inputs",
+        "The transformation g(x)=f(kx) compresses the graph horizontally by factor 1/|k| if |k|>1, with an additional y-axis reflection when k<0. It does not multiply output directly.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

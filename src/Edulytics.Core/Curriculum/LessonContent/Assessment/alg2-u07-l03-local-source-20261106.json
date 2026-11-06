@@ -1,0 +1,69 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L03",
+  "LearningGoals": [
+    "Comprehend (in spoken and written language) what it means to be random in the context of statistics.",
+    "Explain (orally and in writing) what it means to select at random."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-IC.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-IC.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-IC.B.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-IC.B.3",
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "A roster has 100 numbered students. How can you choose 10 as a simple random sample?",
+    "Steps": [
+      "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups."
+    ],
+    "Answer": "Sample 10 distinct uniformly selected IDs."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "3.1: Study Selection",
+      "3.2: Hip Hop Memory",
+      "3.3: Random Rectangles"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Does choosing the first 10 volunteers count as simple random selection?",
+    "Expected": "No; it is convenience/volunteer selection.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u07-l03-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l03.rich-lesson-v2.json"
+}

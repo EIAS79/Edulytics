@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L02",
+      "CultureCode": "en",
+      "Title": "Funding the Future",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create a polynomial to model a simple investment situation. Generalize the structure of integers in order to see similarities to polynomials.",
+        "Repeated yearly deposits produce a polynomial in an unspecified growth multiplier r. After three equal deposits of 1000, a simple end-of-year model is P(r)=1000(1+r+r^2); check each deposit timing. Positional representation parallels place value: digits weighted by powers of 10.",
+        "Source activity 2.1: Notice and Wonder: Writing Numbers: What do you notice? What do you wonder? 3 100s, 2 10s, 9 1s \\(3(10^2) + 2(10^1) + 9(10^0)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Polynomials in the Integers: Consider the polynomial function \\(p\\) given by \\(p(x)=5x^3+6x^2+4x\\). Evaluate the function at \\(x=\\text-5\\) and \\(x=15\\). How does knowing that \\(5,\\!000+600+40 = 5,\\!640\\) help you solve the equation \\(5x^3+6x^2+4x=5,\\!640\\)? \\(11^2 = 121\\) and \\((x+1)^2 = x^2 + 2x +1\\) \\(11^3 = 1331\\) while \\((x+1)^3 = x^3 + 3x^2 + 3x + 1\\) The digits in the powers of 11 correspond to the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: A Yearly Gift: At the end of 12th grade, Clare’s aunt started investing money for her to use after graduating from college four years later. The first deposit was \\$300. If \\(r\\) is the annual interest rate of the account, then at the end of each school year the balance in the account is multiplied by a growth factor of \\(x=1+r\\). After one year, the total value is \\(300x\\). After two years,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all polynomial expressions that are equivalent to \\(6x^4+4x^3-7x^2+5x+8\\). \\(6x^5+4x^4-7x^3+5x^2+8x\\) \\(6x^4+4x^3-7x^2+5x+8\\) \\(8+5x+7x^2-4x^3+6x^4\\) \\(8+5x-7x^2+4x^3+6x^4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Each year a certain amount of money is deposited in an account which pays an annual interest rate of \\(r\\) so that at the end of each year the balance in the account is multiplied by a growth factor of \\(x=1+r\\). $500 is deposited at the start of the first year, an additional $200 is deposited at the start of the next… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Consider the polynomial function \\(p\\) given by \\(p(x)=5x^3+8x^2-3x+1\\). Evaluate the function at \\(x=\\text-2\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: An open-top box is formed by cutting squares out of a 5 inch by 7 inch piece of paper and then folding up the sides. The volume \\(V(x)\\) in cubic inches of this type of open-top box is a function of the side length \\(x\\) in inches of the square cutouts and can be given by \\(V(x)=(7-2x)(5-2x)(x)\\). Rewrite this… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: A rectangular playground space is to be fenced in using the wall of a daycare building for one side and 200 meters of fencing for the other three sides. The area \\(A(x)\\) in square meters of the playground space is a function of the length \\(x\\) in meters of each of the sides perpendicular to the wall of the daycare… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Tyler finds an expression for \\(V(x) \\) that gives the volume of an open-top box in cubic inches in terms of the length \\(x\\) in inches of the square cutouts used to make it. This is the graph Tyler gets if he allows \\(x\\) to take on any value between -1 and 7. What would be a more appropriate domain for Tyler to use… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1. Expected reasoning or answer: 200(1+r+r^2+r^3); at r=1 total 800.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Investment polynomial",
+          "Definition": "Repeated yearly deposits produce a polynomial in an unspecified growth multiplier r. After three equal deposits of 1000, a simple end-of-year model is P(r)=1000(1+r+r^2); check each deposit timing. Positional representation parallels place value: digits weighted by powers of 10.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A 1000 gift is invested at the ends of three successive periods. At the third period end, give the accumulated sum when r=1.05. Answer: 3152.50 currency units"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "P(r)=1000(1+r+r^2); 1+1.05+1.1025=3.1525."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Generalize the structure of integers in order to see similarities to polynomials.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1. Answer: 200(1+r+r^2+r^3); at r=1 total 800."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Investment polynomial",
+          "Question": "A 1000 gift is invested at the ends of three successive periods. At the third period end, give the accumulated sum when r=1.05.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "P(r)=1000(1+r+r^2)",
+            "1+1.05+1.1025=3.1525.",
+            "Interpret the computed result (3152.50 currency units) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "3152.50 currency units",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "200(1+r+r^2+r^3); at r=1 total 800.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Write the accumulation polynomial for 200 deposited at the end of each of four years; evaluate at r=1.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. P(r)=1000(1+r+r^2)",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 200(1+r+r^2+r^3); at r=1 total 800."
+          ],
+          "Answer": "200(1+r+r^2+r^3); at r=1 total 800.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Investment polynomial",
+        "Repeated yearly deposits produce a polynomial in an unspecified growth multiplier r. After three equal deposits of 1000, a simple end-of-year model is P(r)=1000(1+r+r^2); check each deposit timing. Positional representation parallels place value: digits weighted by powers of 10.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

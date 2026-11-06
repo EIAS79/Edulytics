@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l06-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L06",
+      "CultureCode": "en",
+      "Title": "Writing Equations for Exponential Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create an equation for an exponential function from input-output pairs in which the inputs do not differ by 1. Determine what information is needed to write an exponential equation. Ask questions to elicit that information.",
+        "Given positive outputs f(t1),f(t2), solve b^(t2-t1)=f(t2)/f(t1), then find a=f(t1)/b^t1. Non-unit gaps cannot be treated as successive unit steps.",
+        "Source activity 6.1: All Equivalent?: \\(\\left(8^2\\right)^\\frac13\\) \\(\\left(2^3\\right)^\\frac23\\) \\(\\left(8^\\frac13 \\right)^2\\) Discuss with a partner why the following expressions are equivalent. What is another expression equivalent to these? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.2: Info Gap: Two Points: Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. If your teacher gives you the data card: Silently read the information on your card. Ask your partner “What specific information do you need?” and wait for your partner to ask for information. Only give information that is on your card. (Do not figure out anything… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.3: Bacteria Growth Expressions: A bacteria population starts at 1000 and doubles every 10 hours. Explain why the expressions \\(1000 \\boldcdot \\left(2^{\\frac{1}{10}}\\right)^h\\) and \\(1000 \\boldcdot 2^{\\frac{h}{10}}\\) both represent the bacteria population after \\(h\\) hours. By what factor does the bacteria population grow each hour? Explain how you know. Equations are helpful for communicating how quantities… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A population of 1,500 insects grows exponentially by a factor of 3 every week. Select all equations that represent or approximate the population, \\(p\\), as a function of time in days, \\(t\\), since the population was 1,500. \\(p(t) = 1,\\!500 \\boldcdot 3^t\\) \\(p(t) = 1,\\!500 \\boldcdot 3^{\\frac{t}{7}}\\) \\(p(t) = 1,\\!500… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The tuition at a public university was $21,000 in 2008. Between 2008 and 2010, the tuition had increased by 15%. Since then, it has continued to grow exponentially. Select all statements that describe the growth in tuition cost. The tuition cost can be defined by the function \\(f(y) = 21,\\!000 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is a graph that represents \\(g(x) = a \\boldcdot b^x\\). Find the values of \\(a\\) and \\(b\\). Show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The number of fish in a lake is growing exponentially. The table shows the values, in thousands, after different numbers of years since the population was first measured. By what factor does the population grow every two years? Use this information to fill out the table for 4 years and 6 years. By what factor does the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The value of a home increases by 7% each year. Explain why the value of the home doubles approximately once each decade. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is the graph of an exponential function \\(f\\). The coordinates of \\(A\\) are \\(\\left(\\frac{1}{4},3\\right)\\). The coordinates of \\(B\\) are \\(\\left(\\frac{1}{2},4.5\\right)\\). If the \\(x\\)-coordinate of \\(C\\) is \\(\\frac{7}{4}\\), what is its \\(y\\)-coordinate? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If f(1)=12 and f(3)=48, find positive factor per unit. Expected reasoning or answer: b^2=48/12=4, hence b=2.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Infer exponential equation from separated inputs",
+          "Definition": "Given positive outputs f(t1),f(t2), solve b^(t2-t1)=f(t2)/f(t1), then find a=f(t1)/b^t1. Non-unit gaps cannot be treated as successive unit steps.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "An exponential has f(0)=5 and f(2)=45. Find a*b^t. Answer: f(t)=5*3^t."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "a=5; b^2=45/5=9; positive b=3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Determine what information is needed to write an exponential equation. Ask questions to elicit that information.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If f(1)=12 and f(3)=48, find positive factor per unit. Answer: b^2=48/12=4, hence b=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Infer exponential equation from separated inputs",
+          "Question": "An exponential has f(0)=5 and f(2)=45. Find a*b^t.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "a=5",
+            "b^2=45/5=9",
+            "positive b=3."
+          ],
+          "Answer": "f(t)=5*3^t.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If f(1)=12 and f(3)=48, find positive factor per unit.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "b^2=48/12=4, hence b=2.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If f(1)=12 and f(3)=48, find positive factor per unit.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If f(1)=12 and f(3)=48, find positive factor per unit.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. a=5",
+            "Verify the result with a second substitution or interpretation; the authored solution is: b^2=48/12=4, hence b=2."
+          ],
+          "Answer": "b^2=48/12=4, hence b=2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Infer exponential equation from separated inputs",
+        "Given positive outputs f(t1),f(t2), solve b^(t2-t1)=f(t2)/f(t1), then find a=f(t1)/b^t1. Non-unit gaps cannot be treated as successive unit steps.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L04",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "20c5c7bc047d03ce6a4c723133fdd60ef4373207b9ba706b2f14dad0c733a0d7",
+    "teacher/index.html": "c52dff391986652feadec0f125ba2f4321fd06ecebe761f429ee2525bbf5b2a1",
+    "teacher/practice.html": "f84449c22ccfd342997fcb5e21c453c92f68577862620567b3bd60119ea8789c",
+    "student/index.html": "791fb1f729208a1ac5f5bef227c150d28092861beaeec9fe7c1d818a20166ff6",
+    "student/practice.html": "a60c64f1ae2757b0e1eb36dfdef48da2a73f92c98d8acf570f3e460264cfd6d2"
+  },
+  "Goals": [
+    "Interpret fractional inputs for exponential functions in context.",
+    "Understand that the growth (or decay) factor for an input interval of $\\frac{1}{n}$ is $b^{\\frac{1}{n}}$ and not $\\frac{b}{n}$ when $b$ is the growth (or decay) factor for an interval of length 1 and $n$ is the number of intervals."
+  ],
+  "ElementCount": 41,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-001",
+      "SourceSection": "4.1: Math Talk: Unknown Exponents",
+      "SourceExcerpt": "Solve each equation mentally.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-002",
+      "SourceSection": "4.1: Math Talk: Unknown Exponents",
+      "SourceExcerpt": "\\(\\frac{1}{5^r} = \\frac{1}{125}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-003",
+      "SourceSection": "4.1: Math Talk: Unknown Exponents",
+      "SourceExcerpt": "\\(5^t = \\frac{1}{125}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-004",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "Attribution: Location Nigeria AU Africa, by Alvaro1984 18. Public Domain. Wikimedia Commons. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-005",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "In 1990, Nigeria had a population of about 95.3 million. By 2000, there were about 122.4 million people, an increase of about 28.4%. During that decade, the population can be reasonably modeled by an exponential function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-006",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "Express the population of Nigeria \\(f(d)\\), in millions of people, \\(d\\) decades since 1990.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-007",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "Write an expression to represent the population of Nigeria in 1996.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-008",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "Explain or show why the student’s statement is incorrect.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-009",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "Find the correct annual growth rate. Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-010",
+      "SourceSection": "4.2: Population of Nigeria",
+      "SourceExcerpt": "A student said, “The population of Nigeria grew at a rate of 2.84% every year.”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-011",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "In healthy adults, caffeine has an average half-life of about 6 hours. Let's suppose a healthy man consumes a cup of coffee that contains 100 mg of caffeine at noon.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-012",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "\\(100 \\boldcdot \\left(\\frac12\\right)^1\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-013",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "\\(100 \\boldcdot \\left(\\frac12\\right)^3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-014",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "\\(100 \\boldcdot \\left(\\frac12\\right)^{\\frac16}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-015",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "\\(100 \\boldcdot \\left(\\frac12\\right)^t\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-016",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "Each of the following expressions describes the amount of caffeine in the man's body some number of hours after consumption. How many hours after consumption?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-017",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "Write a function \\(g\\) to represent the amount of caffeine left in the body, \\(h\\) hours after it enters the bloodstream.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-018",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "The function \\(f\\) represents the amount of caffeine left in the body after \\(t\\) 6-hour periods. Explain why \\(g(6) = f(1)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-019",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "What percentage of the initial amount of caffeine do you expect to break down in the first 3 hours: less than 25%, exactly 25%, or more than 25%? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-020",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "Imagine a medicine has a half-life of 3 hours. If a patient takes 200 mg of the medicine, then the amount of medicine in their body, in mg, can be modeled by the function \\(\\displaystyle f(t) = 200 \\boldcdot \\left(\\frac{1}{2}\\right)^t\\).…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-ACTIVITY-021",
+      "SourceSection": "4.3: Got Caffeine?",
+      "SourceExcerpt": "But what if we wanted to find the amount of medicine in the patient’s body each hour after taking it? We know there are 3 equal groups of 1 hour in a 3-hour period. We also know that because the medicine decays exponentially, it decays by…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "A bacteria population is tripling every hour. By what factor does the population change in \\(\\frac12\\) hour? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "A medication has a half-life of 4 hours after it enters the bloodstream. A nurse administers a dose of 225 milligrams to a patient at noon.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "1 p.m. on the same day",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "7 p.m. on the same day",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Write an expression to represent the amount of medication, in milligrams, in the patient’s body at:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The expression \\(225 \\boldcdot \\left(\\frac12\\right)^{\\frac52}\\) represents the amount of medicine in the body some time after it is administered. What is that time?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The number of employees in a company has been growing exponentially by 10% each year. By what factor does the number of employees change:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The value of a truck decreases exponentially since its purchase. The two points on the graph shows the truck’s initial value and its value a decade afterward.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Express the car’s value, in dollars, as a function of time \\(d\\), in decades, since purchase.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Write an expression to represent the car’s value 4 years after purchase.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "By what factor is the value of the car changing each year? Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The value of a stock increases by 8% each year.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Explain why the stock value does not increase by 80% each decade.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Does the value increase by more or less than 80% each decade?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Decide if each statement is true or false.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(50^\\frac12 = 25\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(\\sqrt{30}\\) is a solution to \\(y^2 = 30\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(243^{\\frac13}\\) is equivalent to \\(\\sqrt[3]{243}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(\\sqrt{20}\\) is a solution to \\(m^4 = 20\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L04-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Lin is saving $300 per year in an account that pays 4.5% interest per year, compounded annually. About how much money will she have 20 years after she started?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

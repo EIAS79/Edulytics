@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l08-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L08",
+      "CultureCode": "en",
+      "Title": "Not Always Ideal",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that probabilities from simulations may differ from expected probabilities. Use data to critique (orally and in writing) mathematical claims based on a model in different cases.",
+        "Random simulation results fluctuate around theoretical probabilities. Ten fair-coin flips can reasonably include seven heads; a single small-run discrepancy does not prove a biased coin. Critique probability claims using sample size and repeated simulation.",
+        "Source activity 8.1: When Does It Get Weird?: Lin, Kiran, and Diego are going to shoot 100 free throws each for practice. Based on their shooting in the past, Lin thinks they are all of similar ability, and Lin estimates that they each have a 60% chance of making each shot. They each shoot their shots. Lin makes 63 of the 100 shots. Kiran makes 75 of the 100 shots. Diego makes 35 of the 100 shots. From the results, do you… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.2: What is Reasonable?: What is the probability that you will flip heads when using the coin in the applet? Estimate the number of heads you will get when you flip the coin 20 times. Flip your coin 20 times and record the number of heads you get. Repeat this process 4 more times. Create a dot plot that shows the number of heads in 20 flips using data from the class. What is the least number of heads… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 8.3: Is That Fair?: The local news station wants to interview 8 students from a school. There are 25 students on the student council. Ten of the students are from the graduating class and 15 are from the other classes. The principal has a difficult time deciding which students from the council will get interviewed, so she tells the group of students that she will put all of the names in a bowl,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A tetrahedron is a triangular pyramid with 4 equilateral faces. Han has a box of tetrahedrons with each of the 4 vertices marked with one of the numbers 1, 2, 3, and 4. He rolls one tetrahedron and makes note of the number on the vertex that points up. After rolling this tetrahedron 10 times, he notices that the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A spinner is divided into 3 equal sections labeled A, B, and C. Based on probability, how many times would you expect the spinner to land on C after spinning 30 times? Explain your reasoning. After spinning the spinner 30 times, the frequency of the outcomes is: A 9 times, B 8 times, C 13 times. Is the number of times… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Based on classical genetics, two heterozygous parents should pass on the recessive trait to their children \\(\\frac{1}{4}\\) of the time. A researcher puts 20 fruit flies that are heterozygous in a container, then examines the children. 46 of the 100 children have the recessive trait. Is there reason to believe… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The weight of each cookie in a batch of a certain type of commercially produced cookie follows an approximately normal distribution with a mean of 11.32 grams and a standard deviation of 0.03 grams. Approximately what percent of the cookies weigh between 11.32 and 11.35 grams? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: When Elena throws a shot put during track and field practice, it travels an average of 26 feet with a standard deviation of 3 feet, and the distribution of lengths is approximately normal. Approximately what percentage of her shots will travel less than 23 feet? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Priya looks at this histogram of a distribution with a mean of 5.6 grams and a standard deviation of 1.4 grams. She claims that approximately 68% of the data is between 4.9 and 6.3 grams. What is the error in her thinking? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: If a fair coin yields 52 heads in100 flips, is probability necessarily .52? Expected reasoning or answer: No; 0.52 is a sample proportion.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Simulation evidence and model critique",
+          "Definition": "Random simulation results fluctuate around theoretical probabilities. Ten fair-coin flips can reasonably include seven heads; a single small-run discrepancy does not prove a biased coin. Critique probability claims using sample size and repeated simulation.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A fair coin produces 7 heads in 10 simulated flips. Is this proof the chance of heads is 70%? Answer: No; random variation can explain it."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Observed proportion7/10=.7 differs from fair theoretical .5; 10 trials are too few for conclusive bias."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use data to critique (orally and in writing) mathematical claims based on a model in different cases.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "If a fair coin yields 52 heads in100 flips, is probability necessarily .52? Answer: No; 0.52 is a sample proportion."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simulation evidence and model critique",
+          "Question": "A fair coin produces 7 heads in 10 simulated flips. Is this proof the chance of heads is 70%?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Observed proportion7/10=.7 differs from fair theoretical .5",
+            "10 trials are too few for conclusive bias.",
+            "Interpret the computed result (No; random variation can explain it.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "No; random variation can explain it.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "No; 0.52 is a sample proportion.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Observed proportion7/10=.7 differs from fair theoretical .5",
+            "Verify the result with a second substitution or interpretation; the authored solution is: No; 0.52 is a sample proportion."
+          ],
+          "Answer": "No; 0.52 is a sample proportion.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Simulation evidence and model critique",
+        "Random simulation results fluctuate around theoretical probabilities. Ten fair-coin flips can reasonably include seven heads; a single small-run discrepancy does not prove a biased coin. Critique probability claims using sample size and repeated simulation.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

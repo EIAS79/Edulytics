@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L02",
+      "CultureCode": "en",
+      "Title": "Study Types",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe (orally and in writing) the purposes of and differences among sample surveys, experiments, and observational studies.",
+        "A sample survey asks sampled individuals for characteristics or opinions; an observational study records associations without assigning treatments; an experiment deliberately assigns treatments, ideally at random, to compare outcomes.",
+        "Source activity 2.1: What's Different About These Questions?: For each question, determine whether it is a statistical question. If it is a statistical question, determine whether an experimental study, observational study, or survey would be best at providing data to answer the question. Explain your reasoning. Do dogs who eat only Brand A of dog food have more health problems than those who eat a variety of food brands? Do people who… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Study Type Matching: Take turns with your partner to determine whether a survey, observational study, or experimental study would be the best way to collect data to answer the question. For each study type that you match, explain to your partner why you think this is the best type of study. For each study that your partner matches, listen carefully to their explanation. If you disagree, discuss… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: Relaxing Television: A study of 1,000 people aged 20–30 asked how much television each person watches each night and how each person would rate their energy level in the evenings. The study showed that people who watch television for at least 2 hours every night have lower energy in the evening than people who do not watch as much television. Is this study a survey, observational study, or… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: What type of study would you conduct if you wanted to know how many hours a week on average students at your school spend on homework? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Select all designs which describe an observational study that is not a survey. 200 voters are randomly selected and asked how they will vote in the upcoming election. 60 pieces of lumber are randomly selected. Half of those are randomly assigned to be treated with a new sealer. Three months later the level of rotting… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: In an observational study, it was noticed that people that eat more chocolate tend to have better blood flow than the general population. Researchers wonder whether the improved blood flow might be caused by flavanols (a molecule found in many foods). Dark chocolate contains a high concentration of flavanols, but milk… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: What is one major difference between an observational study and an experimental study? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Tyler is interested in how different environments affect dandelion plants. For a science fair project, Tyler looks for dandelions growing in the grass and growing in dirt without grass. He counts the number of days it takes each dandelion to turn from a yellow flower into seeds. After 6 weeks, he compares the number… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: For physics class, Jada wants to know how the surface of different ramps affects the maximum speed of a marble being rolled down the ramp. To study this, she compares the maximum speed of a marble rolled down ramps with different surfaces. She rolls the same marble down each type of ramp 10 times. What type of study… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Classify researchers observing existing sleep hours and grades. Expected reasoning or answer: Observational study.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Study types",
+          "Definition": "A sample survey asks sampled individuals for characteristics or opinions; an observational study records associations without assigning treatments; an experiment deliberately assigns treatments, ideally at random, to compare outcomes.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Classify a study that randomly assigns patients to two approved teaching methods and compares test scores. Answer: Randomized experiment."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Researchers assign interventions; random assignment creates experimental groups."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (orally and in writing) the purposes of and differences among sample surveys, experiments, and observational studies.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Classify researchers observing existing sleep hours and grades. Answer: Observational study."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Study types",
+          "Question": "Classify a study that randomly assigns patients to two approved teaching methods and compares test scores.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Researchers assign interventions",
+            "random assignment creates experimental groups.",
+            "Interpret the computed result (Randomized experiment.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "Randomized experiment.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Classify researchers observing existing sleep hours and grades.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Observational study.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Classify researchers observing existing sleep hours and grades.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Classify researchers observing existing sleep hours and grades.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Researchers assign interventions",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Observational study."
+          ],
+          "Answer": "Observational study.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Study types",
+        "A sample survey asks sampled individuals for characteristics or opinions; an observational study records associations without assigning treatments; an experiment deliberately assigns treatments, ideally at random, to compare outcomes.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

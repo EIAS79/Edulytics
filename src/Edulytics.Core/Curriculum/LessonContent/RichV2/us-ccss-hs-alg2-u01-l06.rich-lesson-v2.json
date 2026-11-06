@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l06-local-source-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L06",
+      "CultureCode": "en",
+      "Title": "Representing Sequences",
+      "ExplanationParagraphs": [
+        "Translate among a list, table, graph and recursive definition; calculate common differences and growth factors.",
+        "A sequence can be represented as indexed terms, an input-output table, discrete graph points or a recurrence. For 5,15,25,35,45 the common difference is 10. For g(1)=-5 and g(n)=-2g(n-1), the first four terms are -5,10,-20,40. A geometric list of -factor values alternates signs. For the growing square arrangement with totals 1,5,14,... each new step adds n^2, so S(1)=1 and S(n)=S(n-1)+n^2; S(4)=30. For maximal planar pieces from n straight cuts, R(n)=1+n(n+1)/2.",
+        "Activity 6.1: Reading Representations: math source context — For each sequence shown, find either the growth factor or rate of change. Be prepared to explain your reasoning. 5, 15, 25, 35, 45, . . . Starting at 10, each new term is \\(\\frac52\\) less than the previous term. \\(g(1)=\\text-5, g(n)=g(n-1)\\boldcdot \\text-2\\) for \\(n\\ge2\\). Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 6.2: Matching Recursive Definitions: math source context — Take turns with your partner to match a sequence with a recursive definition. It may help to first figure out if the sequence is arithmetic or geometric. For each match that you find, explain to your partner how you know it’s a match. For each match that your partner finds, listen carefully to their explanation. If. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 6.3: Squares of Squares: math source context — Here is a pattern where the number of small squares increases with each new step. Write a recursive definition for the total number of small squares \\(S(n)\\) in Step \\(n\\). Sketch a graph of \\(S\\) that shows Steps 1 to 7. Is this sequence geometric, arithmetic, or neither? Be prepared to explain how you know. Start. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Cumulative Problem 1: source mathematics — An arithmetic sequence \\(a\\) starts 2, 5, . . . Write a recursive definition for this sequence using function notation. Use your definition to make a table of values for \\(a(n)\\) and find \\(a(6)\\).. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 2: source mathematics — A geometric sequence \\(g\\) starts 1, 3, . . . Write a recursive definition for this sequence using function notation. Sketch a graph of the first 5 terms of \\(g\\). Explain how to use the recursive definition to determine \\(g(30)\\). (Don’t actually determine the value.). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 3: source mathematics — Match each sequence with one of the recursive definitions. Note that only the part of the definition showing the relationship between the current term and the previous term is given so as not to give away the solutions. 18, 6, 2, \\(\\frac23\\) \\(a(n) = \\frac{1}{3} \\boldcdot. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 4: source mathematics — Write the first five terms of each sequence. \\(a(1)=1, a(n)=3 \\boldcdot a(n-1), n\\ge2\\) \\(b(1)=1, b(n)=\\text-2 + b(n-1), n\\ge2\\) \\(c(1)=1, c(n)=2 \\boldcdot c(n-1) + 1, n\\ge2\\) \\(d(1)=1, d(n)=d(n-1)^2+1, n\\ge2\\) \\(f(1)=1, f(n)=f(n-1)+2n-2, n\\ge2\\). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 5: source mathematics — A sequence has \\(f(1) = 120, f(2) = 60\\). Determine the next 2 terms if it is an arithmetic sequence, then write a recursive definition that matches the sequence in the form \\(f(1)=120, f(n)=f(n-1)+\\underline{\\hspace{.25in}}\\) for \\(n\\ge2\\). Determine the next 2 terms if it is a. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 6: source mathematics — One hour after an antibiotic is administered, a bacteria population is 1,000,000. Each following hour, it decreases by a factor of \\(\\frac{1}{2}\\). Complete the table with the bacteria population at the given times. Do the bacteria populations make a geometric sequence? Explain. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "First-party independent cool-down: A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither. Answer key: S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither.",
+        "Assessment boundary: digital exact numeric questions may reuse an existing compatible family only if semantics match; diagrams, card discussion and written justifications require teacher verification. Source activities are guidance, not proof an interactive simulator exists."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Four representations",
+          "Definition": "One indexed sequence can appear as numbers, table, graph and recurrence.",
+          "Rule": "Keep index and start conditions consistent.",
+          "Example": "4,7,10,13 has f(1)=4, f(n)=f(n-1)+3."
+        },
+        {
+          "Title": "Sign-changing geometric sequence",
+          "Definition": "Negative ratio reverses the sign every step.",
+          "Rule": "g(n)=-2g(n-1).",
+          "Example": "-5,10,-20,40."
+        },
+        {
+          "Title": "Sum of squares pattern",
+          "Definition": "A new n-by-n block contributes n squared cells.",
+          "Rule": "S(n)=S(n-1)+n^2.",
+          "Example": "S(1)=1, S(2)=5, S(3)=14, S(4)=30."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Square growth",
+          "Question": "A pattern totals 1,5,14 squares at steps 1,2,3. What is step 4?",
+          "Method": "Add a new 4-by-4 block.",
+          "Steps": [
+            "The added counts are 1,4,9 at the first three steps.",
+            "Step 4 adds 16.",
+            "S(4)=14+16=30."
+          ],
+          "Answer": "30 squares",
+          "Check": "The differences 4,9,16 are not constant."
+        },
+        {
+          "Title": "Maximum pieces of a circle",
+          "Question": "Starting with one region, how many at most after four straight cuts?",
+          "Method": "Each new line can cross all previous lines at distinct points.",
+          "Steps": [
+            "New regions after cuts 1,2,3,4 are 1,2,3,4.",
+            "Total is 1+1+2+3+4=11.",
+            "Interpret the computed result (11 regions) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "11 regions",
+          "Check": "A drawing must actually exhibit the maximal intersections."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A block pattern has S(1)=1 and adds n squared small squares at step n. Find S(2), S(3) and S(4), write its recursive definition and state if arithmetic, geometric or neither.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Add a new 4-by-4 block. The added counts are 1,4,9 at the first three steps.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither."
+          ],
+          "Answer": "S(2)=5,S(3)=14,S(4)=30; S(n)=S(n-1)+n^2 for n>=2; neither.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a sequence rule as context-free.",
+          "WhyWrong": "It can alter the index, initial term, units or learning target.",
+          "Correction": "State the beginning term, domain and original lesson model."
+        },
+        {
+          "Mistake": "Using a fixed common difference when the sequence is not arithmetic.",
+          "WhyWrong": "Differing consecutive differences invalidate the arithmetic formula.",
+          "Correction": "Calculate two or more differences or ratios before selecting a rule."
+        },
+        {
+          "Mistake": "Auto-grading graphs, card exchanges or manipulative proof from a number alone.",
+          "WhyWrong": "Numeric equality does not establish a correct diagram or explanation.",
+          "Correction": "Use a teacher rubric for visual and reasoning evidence."
+        }
+      ],
+      "SummaryPoints": [
+        "Translate among a list, table, graph and recursive definition; calculate common differences and growth factors.",
+        "A sequence can be represented as indexed terms, an input-output table, discrete graph points or a recurrence. For 5,15,25,35,45 the common difference is 10. For g(1)=-5 and g(n)=-2g(n-1), the first four terms are -5,10,-20,40. A geometric list of -factor values alternates signs. For the growing square arrangement with ",
+        "Use current existing exact sequence families where genuinely compatible; leave unsupported questions teacher-reviewed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

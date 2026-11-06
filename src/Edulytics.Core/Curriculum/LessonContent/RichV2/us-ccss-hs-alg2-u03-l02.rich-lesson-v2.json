@@ -1,0 +1,103 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L02",
+      "CultureCode": "en",
+      "Title": "Square Roots and Cube Roots",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend the meaning of square roots and cube roots. Determine side lengths of squares and cubes, and express their exact values using radicals.",
+        "For a nonnegative a, sqrt(a) is its nonnegative square root, while cube root works for negative real inputs. Physical lengths cannot be negative.",
+        "Source activity 2.1: It’s a Square: Find the area of square \\(ABCD\\). Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Squares and Their Side Lengths: Complete the table with the area of each square in square units, and its exact side length in units. This table includes areas in square units and side lengths in units of some more squares. Complete the table. In the first question, all of the squares have vertices at grid points. Is there a square whose vertices are at grid points and whose area is 7 square units? Explain… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: Cube It: Attribution: Cube Cubes Design Model Texture, by 2500529. Public Domain. pixabay. Source. A cube has edge length 3 units. What is the volume of the cube? A cube has edge length 4 units. What is the volume of the cube? A cube has volume 8 units. What is the edge length of the cube? A cube has volume 7 units. What is the edge length of the cube? \\(\\sqrt[3]{1,\\!200}\\) is between… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Rewrite the following expression as a number with no exponents. Explain or show your reasoning. \\(\\displaystyle \\dfrac{7^{\\text-3}}{7^{\\text-5}}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Find the value of each variable that makes the equation true. \\((2^d)^4 = 2^{12}\\) \\(3^5 \\boldcdot 7^5 = e^5\\) \\(5^0 \\boldcdot 5^f = 5^4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: A square has area 9 cm2. How long are its sides? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The table shows the side length and area of several different squares. Complete the table using exact values. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Find the two whole numbers that are the closest to \\(\\sqrt{42}\\). Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate sqrt(121) and cube root(-64). Expected reasoning or answer: 11 and -4.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Principal roots",
+          "Definition": "For a nonnegative a, sqrt(a) is its nonnegative square root, while cube root works for negative real inputs. Physical lengths cannot be negative.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find sqrt(49) and cube root(-27). Answer: 7 and -3"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "7^2=49; (-3)^3=-27."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Determine side lengths of squares and cubes, and express their exact values using radicals.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate sqrt(121) and cube root(-64). Answer: 11 and -4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Principal roots",
+          "Question": "Find sqrt(49) and cube root(-27).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "7^2=49",
+            "(-3)^3=-27.",
+            "Interpret the computed result (7 and -3) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "7 and -3",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate sqrt(121) and cube root(-64).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "11 and -4.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate sqrt(121) and cube root(-64).",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate sqrt(121) and cube root(-64).",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. 7^2=49",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 11 and -4."
+          ],
+          "Answer": "11 and -4.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Principal roots",
+        "For a nonnegative a, sqrt(a) is its nonnegative square root, while cube root works for negative real inputs. Physical lengths cannot be negative.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

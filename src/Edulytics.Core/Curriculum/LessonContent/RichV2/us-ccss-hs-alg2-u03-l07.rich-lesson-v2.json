@@ -1,0 +1,108 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l07-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L07",
+      "CultureCode": "en",
+      "Title": "Inequivalent Equations",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Explain why squaring each side of an equation, or taking the square root of each side, may result in an inequivalent equation. Use graphs to represent solutions to equations involving squares and square roots.",
+        "After isolating a nonnegative square root, squaring the equation may introduce extraneous solutions. Check all candidates in the original equation.",
+        "Source activity 7.1: 2 and -2: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.2: Careful When You Take the Square Root: Tyler was solving this equation: \\(\\displaystyle x^2 - 1 = 3\\) He said, “I can add 1 to each side of the equation and it doesn’t change the equation. I get \\(x^2 = 4\\).” How can you see the solution to the equation \\(x^2 - 1 = 3\\) in Figure A? How can you see the solution to the equation \\(x^2 = 4\\) in Figure B? Use the graphs to explain why the equations have the same… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.3: Another Way to Solve: Han was solving this equation: \\(\\displaystyle \\dfrac{x+3}{2} = 4\\) He said, \"I know that half of \\(x+3\\) is 4. So \\(x+3\\) must be 8, since half of 8 is 4. This means that \\(x\\) is 5.\" Use Han's reasoning to solve this equation: \\((x+3)^2 = 4\\). What advice would you give to someone who was going to solve an equation like \\((x+3)^2 = 4\\)? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.4: What Happens When You Square Each Side?: Mai was solving this equation: \\(\\displaystyle \\sqrt{x-1} = 3\\) She said, “I can square each side of the equation to get another equation with the same solutions.” Then she wrote: \\(\\begin{align}\\sqrt{x-1} &= 3\\\\ (\\sqrt{x-1})^2 &= 3^2 \\\\ x-1 &= 9 \\\\ x &= 10 \\end{align}\\) Check to see if her solution makes the original equation true. Andre said, “I tried your technique to solve… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.5: Solve These Equations With Square Roots in Them: Find the solution(s) to each of these equations, or explain why there is no solution. \\(\\sqrt{t + 4} = 3\\) \\(\\text{-}10 = \\text{-}\\sqrt{a}\\) \\(\\sqrt{3 - w} - 4 = 0\\) \\(\\sqrt{z} + 9 = 0\\) Are there values of \\(a\\) and \\(b\\) so that the equation \\(\\sqrt{t + a} = b\\) has more than one solution? Explain your reasoning. Every positive number has two square roots. You can see this… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Noah solved the equation \\(5x^2=45\\). Here are his steps: \\(\\begin{align} 5x^2 &= 45 \\\\ x^2 &= 9 \\\\ x &= 3 \\\\ \\end{align}\\) Do you agree with Noah? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Find the solution(s) to each equation, or explain why there is no solution. \\(\\sqrt{47-x}-2 = 4\\) \\(\\frac12 \\sqrt{20+x} = 5\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Which is a solution to the equation \\(\\sqrt{5-x}+13=4\\)? The equation has no solution. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Select all expressions that are equal to \\(\\frac{1}{(\\sqrt2)^5}\\). \\(\\text- \\frac{5}{\\sqrt2}\\) \\(\\frac{1}{\\sqrt{2^5}}\\) \\(\\frac{1}{\\sqrt{32}}\\) \\(\\text- (\\sqrt2)^5\\) \\(\\text- 2^{\\frac52}\\) \\(2^{\\text- \\frac52}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which are the solutions to the equation \\(x^2=36\\)? This equation has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is a graph of \\(y=x^2\\). Use the graph to estimate all solutions to the equation \\(x^2=3\\). If you square your estimates, what number should they be close to? Square your estimates. How close did you get to this number? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The polynomial function \\(q(x)=3x^3+11x^2-14x-40\\) has a known factor of \\((3x + 5)\\). Rewrite \\(q(x)\\) as the product of linear factors. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve sqrt(x+6)=x. Expected reasoning or answer: x=3; reject -2.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Squaring changes possible solutions",
+          "Definition": "After isolating a nonnegative square root, squaring the equation may introduce extraneous solutions. Check all candidates in the original equation.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve sqrt(x+5)=x-1. Answer: x=4"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Domain x>=1; square x+5=x^2-2x+1; factor (x-4)(x+1)=0; reject -1."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use graphs to represent solutions to equations involving squares and square roots.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve sqrt(x+6)=x. Answer: x=3; reject -2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Squaring changes possible solutions",
+          "Question": "Solve sqrt(x+5)=x-1.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Domain x>=1",
+            "square x+5=x^2-2x+1",
+            "factor (x-4)(x+1)=0",
+            "reject -1."
+          ],
+          "Answer": "x=4",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve sqrt(x+6)=x.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=3; reject -2.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve sqrt(x+6)=x.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve sqrt(x+6)=x.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Domain x>=1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x=3; reject -2."
+          ],
+          "Answer": "x=3; reject -2.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Squaring changes possible solutions",
+        "After isolating a nonnegative square root, squaring the equation may introduce extraneous solutions. Check all candidates in the original equation.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

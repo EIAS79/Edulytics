@@ -1,0 +1,356 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L04",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "4155b5d741c2e38a319f6789506bafc7f7670a0c7d52be179c299a1dd7f02f46",
+    "teacher/index.html": "b82bc2cb178feb1187e4ad3260624fae2e147be2016ac8eb500c52def4b38d23",
+    "teacher/practice.html": "5616612c389f33faf80a3afd1313c927d82d8e4320baac56420ff7263b0b238e",
+    "student/index.html": "749973fc936a88457d4ef325d3d441ff38047d2e117b15133caf11b22e8556ca",
+    "student/practice.html": "c7bf1d0c697fd166323b9e7f29258ca6f2a730cbb301e425a504bb257dea099a"
+  },
+  "Goals": [
+    "Describe the structure of angles expressed in terms of radians on the unit circle.",
+    "Describe the structure of the coordinates associated with specific radian measurements on the unit circle."
+  ],
+  "ElementCount": 42,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-001",
+      "SourceSection": "4.1: Notice and Wonder: Angles Around the Unit Circle",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-002",
+      "SourceSection": "4.2: Angles Everywhere",
+      "SourceExcerpt": "Here is a circle of radius 1 with some radii drawn.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-003",
+      "SourceSection": "4.2: Angles Everywhere",
+      "SourceExcerpt": "Draw and label angles, with the positive \\(x\\)-axis as the starting ray for each angle, measuring \\(\\frac{\\pi}{12},\\frac{\\pi}{6},\\frac{\\pi}{4} \\ldots, 2\\pi\\) in the counterclockwise direction. Four of these angles, one in each quadrant,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-004",
+      "SourceSection": "4.2: Angles Everywhere",
+      "SourceExcerpt": "Label the points, where the rays meet the unit circle, for which you know the exact coordinate values.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-005",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Your teacher will assign you a section of the unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-006",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Find and label the coordinates of the points assigned to you where the angles intersect the circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-007",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Compare and share your values with your group.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-008",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "What relationships or patterns do you notice in the coordinates? Be prepared to share what you notice with the class.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-009",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Other than \\((1,0)\\), \\((0,1)\\), \\((\\text-1,0)\\), and \\((0,\\text-1)\\), the coordinates we used in this activity involved approximations. The point \\((0.8,0.6)\\), however, lies exactly on our unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-010",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Explain why this must be true.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-011",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Find all other points on the unit circle that also lie exactly at the intersection of two grid lines.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-012",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "What are the approximate angle measures needed to intersect at \\((0.8, 0.6)\\) and each of these new points?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-013",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "Given any point in a quadrant on the unit circle and its associated angle, like \\(R\\) shown here, we can make some statements about other points that must also be on the unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-014",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "For example, if the coordinates of \\(R\\) are \\((\\text-0.87,0.5)\\) and \\(a\\) is \\(\\frac{5\\pi}{6}\\) radians, then there is a point \\(S\\) in quadrant 1 with coordinates \\((0.87,0.5)\\). Since \\(R\\) is \\(\\frac{\\pi}{6}\\) radians from a half…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-015",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "What is the matching point to \\(R\\) in quadrant 4? (A point at \\((0.87,\\text-0.5)\\) and angle \\(\\frac{11\\pi}{6}\\) radians.)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-016",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "In future lessons, we’ll learn about how to find the coordinates of point \\(R\\) ourselves using its angle \\(a\\) and what we know about right triangles.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-017",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "The length of an interval at which a periodic function repeats. A function \\(f\\) has a period, \\(p\\), if \\(f(x+p) = f(x)\\) for all inputs \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-018",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "A function whose values repeat at regular intervals. If \\(f\\) is a periodic function then there is a number \\(p\\), called the period, so that \\(f(x + p) = f(x)\\) for all inputs \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-ACTIVITY-019",
+      "SourceSection": "4.3: Angle Coordinates Galore",
+      "SourceExcerpt": "The circle in the coordinate plane with radius 1 and center the origin.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Angle \\(ABC\\) measures \\(\\frac{\\pi}{3}\\) radians, and the coordinates of \\(C\\) are about \\((0.5,0.87)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The measure of angle \\(ABD\\) is \\(\\frac{2\\pi}{3}\\) radians. What are the approximate coordinates of \\(D\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The measure of angle \\(ABE\\) is \\(\\frac{5\\pi}{3}\\) radians. What are the approximate coordinates of \\(E\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Give an angle of rotation centered at the origin that sends point \\(P\\) to a location whose \\((x,y)\\) coordinates satisfy the given conditions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x > 0\\) and \\(y < 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(x < 0\\) and \\(y > 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(y < 0\\) and \\(x < 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Lin calculates \\(0.97^2 + 0.26^2\\) and finds that it is 1.0085.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Explain why \\((0.97,0.26)\\) is not on the unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Is \\((0.97,0.26)\\) a good estimate for the coordinates of a point on the unit circle? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The \\(x\\)-coordinate of a point \\(P\\) on the unit circle is 0. If point \\(P\\) is the result of rotating the point \\((1,0)\\) by \\(\\theta\\) radians counterclockwise about the origin, what angle could \\(\\theta\\) represent? Select all that…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Here is triangle \\(ABC\\). \\(BC\\) is shorter than \\(AC\\). Which statements are true? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\sin(A) < \\sin(B)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\cos(A) < \\cos(B)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-015",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(\\tan(A) < \\tan(B)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Angle \\(POQ\\) measures one radian. The radius of the circle is 1 unit.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is the length of arc \\(PQ\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Explain why the length of arc \\(PQ\\) is less than \\(\\frac{1}{6}\\) of the full circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-019",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Label these points on the unit circle:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(Q\\) is the image of \\(P\\) after a \\(\\frac{11\\pi}{6}\\) rotation with center \\(O\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-021",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(R\\) is the image of \\(P\\) after a \\(\\frac{3\\pi}{2}\\) rotation with center \\(O\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-022",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(U\\) is the image of \\(P\\) after a \\(\\frac{2\\pi}{3}\\) rotation with center \\(O\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L04-PRACTICE-023",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(V\\) is the image of \\(P\\) after a \\(\\frac{\\pi}{3}\\) rotation with center \\(O\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l04.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

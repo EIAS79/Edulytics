@@ -123,8 +123,16 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // academic reapproval, replacement for those tests, or blanket SHA reset.
   // Three shared blobs gained Grade 7-only routes and retain byte-identical G1-specific
   // dispatch lines (verified by the G1-G7 shared compatibility test).
-  // All eight paths are still exact Git-blob pinned; a ninth path or any
-  // future change fails. Live G1 practice and two-school HTTPS gates remain mandatory.
+  // Current-branch 2026-11-06 G11 technical re-pin: the same eight
+  // G1-affected shared paths are still all independently Git-blob pinned.
+  // Exact historical G1 proof remains e702b363; G1-only files are untouched.
+  // Additional G8/G9/G10 routes on main and eight G11-only families on PR #624
+  // have been checked by the existing 96-lesson G1 maths job and 13,598
+  // cross-grade .NET tests; the G11 engine diff from main is exactly
+  // 210 additions / zero deletions (see exact compatibility test).
+  // A ninth path or unexpected future blob still FAILS CLOSED. This audit
+  // is runtime compatibility only, NEVER a new G1 academic approval.
+  // Live G1 practice and two-school HTTPS gates remain mandatory.
   const auditedG1UnaffectedDeltas=new Map([
     ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
       ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
@@ -133,15 +141,15 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','1621291d58735d314953c908ac2d02dc04282e8d']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','0557784611797e6a45d5219556bd630e642530e7']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','4ab3d76929f98384a8cbde990e9298cfa0d7d3f6']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','1a21ed278a0a1956a82b67bf4be2e1218b200fb3']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','28cc417956722287265a43d740eafb9db1ff2d25']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0d5cd3d3f294decd4d36d158563606b3f4708823']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;

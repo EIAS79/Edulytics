@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l03-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L03",
+      "CultureCode": "en",
+      "Title": "Introducing Polynomials",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify relative minimums and relative maximums of graphs of polynomials. Identify the degree, leading term, and constant term of a polynomial.",
+        "A polynomial is a finite sum of nonnegative integer powers with real coefficients. The degree is the largest exponent of a nonzero term, the leading term has that degree, and the constant is the x-independent term. A graph may have relative maxima or minima that require examining turning behaviour, not just counting terms.",
+        "Source activity 3.1: Which One Doesn’t Belong: What are Polynomials?: Which one doesn’t belong? A: \\(4 - x^2 + x^3 - 4x\\) B: \\(2x^4 + x^2 - 5.7x + 2\\) C: \\(x^2 + 7x - x^{\\frac13} + 2\\) D: \\(x^5 + 8.36 x^3 - 2.4 x^2 + 0.32x\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.2: Card Sort: Equations and Graphs: Your teacher will give you a set of cards. Group them into pairs that represent the same polynomial function. Be prepared to explain your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 3.3: Let’s Make Some Curves: Use graphing technology to write equations for polynomial functions whose graphs have the characteristics listed when plotted on the coordinate plane. A 1st degree polynomial function whose graph intercepts the vertical axis at 8. A 2nd degree polynomial function whose graph has only positive \\(y\\)-values. A 2nd degree polynomial function whose graph contains the point… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all points where relative minimum values occur on this graph of a polynomial function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Add one term to the polynomial expression \\(14x^{19}-9x^{15}+11x^4+5x^2+3\\) to make it into a 22nd degree polynomial. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Identify the degree, leading coefficient, and constant value of each of the following polynomials: \\(f(x)=x^3 - 8 x^2 - x + 8\\) \\(h(x)=2 x^4 + x^3 - 3 x^2 - x + 1\\) \\(g(x)=13.2 x^3+3 x^4 - x - 4.4\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: We want to make an open-top box by cutting out corners of a square piece of cardboard and folding up the sides. The cardboard is a 9 inch by 9 inch square. The volume \\(V(x)\\) in cubic inches of the open-top box is a function of the side length \\(x\\) in inches of the square cutouts. Write an expression for \\(V(x)\\).… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Consider the polynomial function \\(p\\) given by \\(p(x)=7x^3 - 2x^2 + 3x+10\\). Evaluate the function at \\(x=\\text-3\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: An open-top box is formed by cutting squares out of an 11 inch by 17 inch piece of paper and then folding up the sides. The volume \\(V(x)\\) in cubic inches of this type of open-top box is a function of the side length \\(x\\) in inches of the square cutouts and can be given by \\(V(x)=(17-2x)(11-2x)(x)\\). Rewrite this… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find the degree, leading coefficient and constant of -2x^3+5x-9. Expected reasoning or answer: Degree 3, leading coefficient -2, constant -9.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial vocabulary",
+          "Definition": "A polynomial is a finite sum of nonnegative integer powers with real coefficients. The degree is the largest exponent of a nonzero term, the leading term has that degree, and the constant is the x-independent term. A graph may have relative maxima or minima that require examining turning behaviour, not just counting terms.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Determine degree, leading term and constant for 3x^4-2x^2+7. Answer: Degree 4, leading term 3x^4, constant 7"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Highest exponent 4; leading monomial 3x^4; x-independent term 7."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Identify the degree, leading term, and constant term of a polynomial.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find the degree, leading coefficient and constant of -2x^3+5x-9. Answer: Degree 3, leading coefficient -2, constant -9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial vocabulary",
+          "Question": "Determine degree, leading term and constant for 3x^4-2x^2+7.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Highest exponent 4",
+            "leading monomial 3x^4",
+            "x-independent term 7."
+          ],
+          "Answer": "Degree 4, leading term 3x^4, constant 7",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find the degree, leading coefficient and constant of -2x^3+5x-9.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "Degree 3, leading coefficient -2, constant -9.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find the degree, leading coefficient and constant of -2x^3+5x-9.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find the degree, leading coefficient and constant of -2x^3+5x-9.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Highest exponent 4",
+            "Verify the result with a second substitution or interpretation; the authored solution is: Degree 3, leading coefficient -2, constant -9."
+          ],
+          "Answer": "Degree 3, leading coefficient -2, constant -9.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial vocabulary",
+        "A polynomial is a finite sum of nonnegative integer powers with real coefficients. The degree is the largest exponent of a nonzero term, the leading term has that degree, and the constant is the x-independent term. A graph may have relative maxima or minima that require examining turning behaviour, not just counting terms.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

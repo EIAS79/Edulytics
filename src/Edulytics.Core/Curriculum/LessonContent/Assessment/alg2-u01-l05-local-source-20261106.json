@@ -1,0 +1,78 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L05",
+  "LearningGoals": [
+    "Comprehend that sequences are functions whose domain is a subset of the integers.",
+    "Create (in writing) a recursive definition for a sequence using function notation."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-IF.A",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-BF.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-IF.A.3",
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-IF.A.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    }
+  ],
+  "ReusePolicy": "Existing arithmetic/geometric/affine exact sequence engines only when question matches; unverified new mechanics remain teacher-reviewed",
+  "ExistingNumericFamilies": [
+    "sequences.core.arithmetic_nth_term",
+    "sequences.core.geometric_nth_term",
+    "sequences.core.find_position_arithmetic",
+    "usccss.g11.alg2.u01.l01.affine_recurrence",
+    "usccss.g11.alg2.u01.l01.fibonacci_term",
+    "usccss.g11.alg2.u01.l02.growth_factor"
+  ],
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "TeacherReview": {
+    "Required": true,
+    "SourceSpecificTasks": [
+      "dot pattern drawing and incremental row count",
+      "compare domain positive integers to continuous inputs",
+      "write correct initial condition and recurrence",
+      "identify which given patterns are arithmetic, geometric or neither"
+    ],
+    "Rubric": [
+      "correct term index and initial condition",
+      "mathematically correct representation or diagram",
+      "explanation justified by source constraints",
+      "accurate signed/fractional answers"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "A triangular display starts with one dot. On each next step add a new row containing as many dots as the step number. Write D(1), D(n) for n>=2, list D(1)...D(5), and explain whether it is arithmetic or geometric.",
+    "Expected": "D(1)=1, D(n)=D(n-1)+n; 1,3,6,10,15; neither.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l05-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l05.rich-lesson-v2.json"
+}

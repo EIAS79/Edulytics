@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l06-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L06",
+      "CultureCode": "en",
+      "Title": "Areas in Histograms",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Describe (orally) the relationship between areas in a histogram and proportions of data. Generalize (orally and in writing) that normally distributed data always have the same proportion of values in an interval with endpoints described by the mean and standard deviation.",
+        "For a density histogram with equal bin widths, the proportion in a bin equals its relative-frequency bar area; total area is 1. For variable widths, height must be scaled to density for areas to represent proportions. The normal curve's area can approximate these fractions.",
+        "Source activity 6.1: Find the Area: Find the shaded area between the function, the \\(x\\)-axis, and the boundaries \\(x = 1\\) and \\(x = 2\\). Explain or show your reasoning. What proportion of the area between the function, the \\(x\\)-axis, and the boundaries \\(x = 0\\) and \\(x = 7\\) is shaded? Explain or show your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.2: Story Submissions: A publisher takes submissions for short stories to include in a book. 200 stories are submitted, but the publisher needs to be aware of how long each story is. The way the publisher will put together the collection of stories, a page typically contains 200 words. The mean number of words for each story is 2,600 and the standard deviation is 400 words. If a histogram is created… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 6.3: Website Load Times: A company collects data from 10,000 websites about how long it takes to load the site. The number of seconds it takes to fully load the website is summarized in the relative frequency table. The relative frequency histogram summarizes the same data. The mean time to load a website is 3 seconds and the standard deviation is 0.4 seconds. Would a normal distribution be a good… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A normal curve with a mean of 500 and a standard deviation of 100 is shown. Shade the region under the curve within one standard deviation of the mean. How much of the data falls within the shaded region? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The stopping distance of a certain car traveling at 60 miles per hour follows an approximately normal distribution with a mean of 130 feet and a standard deviation of 5 feet. Approximately what percent of the time does the car stop at a distance of between 120 feet and 140 feet? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The distribution of weights for bags of chips is shown to follow an approximately normal distribution as seen in this histogram. The weights of approximately 95% of the chip bags fall within the shaded region. What is the approximate mean weight of a chip bag? What is the approximate standard deviation of the weight… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a histogram of a distribution with 50 data points. For each given interval, find the proportion of data points which fall in that interval. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Two curves representing normal distributions are shown. Does the solid curve or dashed curve have a greater standard deviation? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Why is it important to randomly assign people to random groups in an experimental study? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: A density histogram has total area1; one region has area0.35. What proportion lies there? Expected reasoning or answer: 35%.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Histogram areas and proportions",
+          "Definition": "For a density histogram with equal bin widths, the proportion in a bin equals its relative-frequency bar area; total area is 1. For variable widths, height must be scaled to density for areas to represent proportions. The normal curve's area can approximate these fractions.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "In a sample of 100 with equal-width histogram bins, 20 observations lie in one bin. What proportion is in it? Answer: 0.20 or 20%."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Divide count20 by total100."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Generalize (orally and in writing) that normally distributed data always have the same proportion of values in an interval with endpoints described by the mean and standard deviation.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "A density histogram has total area1; one region has area0.35. What proportion lies there? Answer: 35%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Histogram areas and proportions",
+          "Question": "In a sample of 100 with equal-width histogram bins, 20 observations lie in one bin. What proportion is in it?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Divide count20 by total100.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (0.20 or 20%.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "0.20 or 20%.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "A density histogram has total area1; one region has area0.35. What proportion lies there?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "35%.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A density histogram has total area1; one region has area0.35. What proportion lies there?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A density histogram has total area1; one region has area0.35. What proportion lies there?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Divide count20 by total100.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 35%."
+          ],
+          "Answer": "35%.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Histogram areas and proportions",
+        "For a density histogram with equal bin widths, the proportion in a bin equals its relative-frequency bar area; total area is 1. For variable widths, height must be scaled to density for areas to represent proportions. The normal curve's area can approximate these fractions.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

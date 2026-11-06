@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l16-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L16",
+      "CultureCode": "en",
+      "Title": "Solving Quadratics",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Explain (in writing) the reasoning used to solve a quadratic equation by completing the square and by using the quadratic formula. Justify whether two radical expressions are equivalent. Solve quadratic equations and explain the solution method.",
+        "Move the constant and complete square to solve; compare with quadratic formula and substitute roots into the original quadratic.",
+        "Source activity 16.1: Find the Perfect Squares: The expression \\(x^2+8x+16\\) is equivalent to \\((x+4)^2\\). Which expressions are equivalent to \\((x+n)^2\\) for some number \\(n\\)? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.2: Different Ways to Solve It: Elena and Han solved the equation \\(x^2-6x+7=0\\) in different ways. Elena said, “First I added 2 to each side: \\(\\displaystyle x^2 - 6x + 7 + 2 = 2\\) \\(\\displaystyle (x - 3)^2 = 2\\) I can find the square roots of both sides: \\(\\displaystyle x - 3 = \\pm \\sqrt{2}\\) Which is the same as: \\(\\displaystyle x = 3 \\pm \\sqrt{2}\\) So the two solutions are \\(x=3+\\sqrt{2}\\) and… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.3: Solve These Ones: Solve each quadratic equation with the method of your choice. Be prepared to compare your approach with a partner‘s. \\(x^2 - 10x + 25 = 0\\) \\(x^2 + 14x + 40 = 0\\) \\(x^2 + 14x + 39 = 0\\) \\(3x^2 - 5x - 11 = 0\\) Consider the quadratic equation: \\(\\displaystyle x^2 - 5x = 25\\) It is often most efficient to solve equations like this by completing the square. To complete the square,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: What number should be added to the expression \\(x^2 - 15x\\) to result in an expression equivalent to a perfect square? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Noah uses the quadratic formula to solve the equation \\(2x^2+3x-5=4\\). He finds \\(x = \\text-2.5\\) or 1. But, when he checks his answer, he finds that neither -2.5 nor 1 are solutions to the equation. Here are his steps: \\(a=2\\), \\(b=3\\), \\(c=\\text-5\\) \\(x=\\frac{\\text-3 \\pm \\sqrt{3^2 - 4 \\boldcdot 2 \\boldcdot… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Solve each quadratic equation with the method of your choice. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: What are the solutions to the equation \\(x^2-4x=\\text-3\\)? \\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 0 \\boldcdot \\text-3}}{2 \\boldcdot 0}\\) \\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 1 \\boldcdot \\text-3}}{2 \\boldcdot 1}\\) \\(\\frac{4 \\pm \\sqrt{16 - 4 \\boldcdot 1 \\boldcdot 3}}{2 \\boldcdot 1}\\) \\(\\frac{\\text-4 \\pm \\sqrt{16 - 4… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which expression is equivalent to \\(\\sqrt{\\text-23}\\)? \\(\\text- i \\sqrt{23}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. \\(i^2 \\boldcdot i^2\\) \\((5+4i) - (\\text-3 + 2i)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Let \\(m=(7-2i)\\) and \\(k=3i\\). Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve x²-4x+3=0. Expected reasoning or answer: x=1 or 3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Complete square for quadratic roots",
+          "Definition": "Move the constant and complete square to solve; compare with quadratic formula and substitute roots into the original quadratic.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve x²+6x+5=0. Answer: x=-1 or -5"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(x+3)²=4; x=-3±2."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Solve quadratic equations and explain the solution method.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve x²-4x+3=0. Answer: x=1 or 3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete square for quadratic roots",
+          "Question": "Solve x²+6x+5=0.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(x+3)²=4",
+            "x=-3±2.",
+            "Interpret the computed result (x=-1 or -5) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "x=-1 or -5",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve x²-4x+3=0.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=1 or 3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve x²-4x+3=0.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve x²-4x+3=0.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. (x+3)²=4",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x=1 or 3."
+          ],
+          "Answer": "x=1 or 3.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Complete square for quadratic roots",
+        "Move the constant and complete square to solve; compare with quadratic formula and substitute roots into the original quadratic.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

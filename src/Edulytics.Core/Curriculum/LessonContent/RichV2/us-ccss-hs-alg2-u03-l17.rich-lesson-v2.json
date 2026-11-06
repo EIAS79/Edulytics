@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l17-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L17",
+      "CultureCode": "en",
+      "Title": "Completing the Square and Complex Solutions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate complex solutions to quadratic equations by completing the square. Compare and contrast quadratic equations with real and with non-real complex solutions. Explain how to solve equations that have non-real complex solutions.",
+        "If (x+a)²=-b for b>0, solutions are x=-a±i sqrt(b). Real-coefficient quadratics have conjugate non-real pairs.",
+        "Source activity 17.1: Creating Quadratic Equations: Match each equation in standard form to its factored form and its solutions. \\((x - 5i)(x + 5i) = 0\\) \\((x - 5)(x + 5) = 0\\) \\((x - \\sqrt{5})(x + \\sqrt{5}) = 0\\) \\(\\sqrt{5}\\), \\(\\text- \\sqrt{5}\\) \\(5i\\), ​​​​\\(\\text- 5i\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.2: Sometimes the Solutions Aren't Real Numbers: What are the solutions to these equations? \\((x - 5)^2 = \\text- 1\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.3: Finding Complex Solutions: Solve these equations by completing the square. \\(x^2 - 8x + 13 = 0\\) \\(x^2 - 8x + 19 = 0\\) For which values of \\(a\\) does the equation \\(x^2 - 8x + a = 0\\) have two real solutions? One real solution? No real solutions? Explain your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 17.4: Can You See the Solutions on a Graph?: \\(x^2 - 8x + 13 = 0\\) \\(x^2 - 8x + 16 = 0\\) \\(x^2 - 8x + 19 = 0\\) How many real solutions does each equation have? How many non-real solutions? \\(f(x) = x^2 - 8x + 13\\) \\(g(x) = x^2 - 8x + 16\\) \\(h(x) = x^2 - 8x + 19\\) How do the graphs of these functions help us answer the previous question? Sometimes quadratic equations have real solutions, and sometimes they do not. Here is… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Find the solution or solutions to each equation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which describes the solutions to the equation \\(x^2+7=0\\)? One non-real solution Two non-real solutions Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Explain how you know \\(\\sqrt{3x+2}=\\text-16\\) has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Determine the number of real solutions and non-real solutions to each equation. Use the graphs; don't do any calculations to find the solutions. \\(\\text-x^2-3x+2=0\\) \\(x^2-6x+7=\\text-2\\) \\(\\text-x^2-3x+2=6\\) \\(y=\\text-x^2 - 3x +2\\) \\(y=\\text-x^2 - 3x +2\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Write \\((5-5i)^2\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. Write \\((5-5i)^4\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: What number \\(n\\) makes this equation true? \\(x^2+11x+\\frac{121}{4} = (x+n)^2\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve x²+4x+8=0. Expected reasoning or answer: -2±2i.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Non-real solutions from completing square",
+          "Definition": "If (x+a)²=-b for b>0, solutions are x=-a±i sqrt(b). Real-coefficient quadratics have conjugate non-real pairs.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve x²+2x+5=0. Answer: -1±2i"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "(x+1)²=-4; x=-1±2i."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Explain how to solve equations that have non-real complex solutions.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve x²+4x+8=0. Answer: -2±2i."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Non-real solutions from completing square",
+          "Question": "Solve x²+2x+5=0.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "(x+1)²=-4",
+            "x=-1±2i.",
+            "Interpret the computed result (-1±2i) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "-1±2i",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve x²+4x+8=0.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-2±2i.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve x²+4x+8=0.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve x²+4x+8=0.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. (x+1)²=-4",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -2±2i."
+          ],
+          "Answer": "-2±2i.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Non-real solutions from completing square",
+        "If (x+a)²=-b for b>0, solutions are x=-a±i sqrt(b). Real-coefficient quadratics have conjugate non-real pairs.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l12-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L12",
+      "CultureCode": "en",
+      "Title": "The Number $e$",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Comprehend that $e$ represents a constant whose value is approximately 2.718.",
+        "The constant e≈2.71828 is the base of natural logarithms and continuous exponential growth. It can be described by the limit (1+1/n)^n as n increases; it is not a variable.",
+        "Source activity 12.1: Matching Situations and Equations: Match each equation to a situation it represents. Be prepared to explain how you know. Not all equations have a match. \\(f(t) = 400 \\boldcdot (0.5)^{0.1t}\\) \\(g(t) = 400 \\boldcdot (1.25)^{0.1t}\\) \\(h(t) = 400 \\boldcdot (0.75)^{0.1t}\\) \\(j(t)=400 \\boldcdot (2)^{10t}\\) \\(k(t) = 400 \\boldcdot (2)^{0.1t}\\) A scientist begins an experiment with 400 bacteria in a petri dish. The… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.2: Notice and Wonder: Moldy Growth: A spot of mold is found on a basement wall. Its area is about 10 square centimeters. Here are three representations of a function that models how the mold is growing. \\(a(t) = 10 \\boldcdot e^t\\) What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.3: $(1 + \\text{tiny})^{\\text{huge}}$: \\(d(x) = \\frac{1}{x}\\) \\(f(x) = \\left(\\frac{1}{x}\\right)^x\\) \\(g(x) = \\left(1 + \\frac{1}{x}\\right)^x\\) Here are some functions. For each function, describe, in words, the outputs for very tiny, positive values of \\(x\\) and for very large values of \\(x\\). Remember that \\(e \\approx 2.718\\). What does the function \\(g\\) have to do with the number \\(e\\)? What do you notice about… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Put the following expressions in order from least to greatest. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Here are graphs of three functions: \\(f(x) = 2^x\\), \\(g(x) = e^x\\), and \\(h(x) = 3^x\\). Which graph corresponds to each function? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Which of the statements are true about the function \\(f\\) given by \\(f(x) = 100 \\boldcdot e^{\\text- x}\\)? Select all that apply. The \\(y\\)-intercept of the graph of \\(f\\) is at \\((0,100)\\). The values of \\(f\\) increase when \\(x\\) increases. The value of \\(f\\) when \\(x = \\text-1\\) is a little less than 40. The value of… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Suppose you have $1 to put in an interest-bearing account for 1 year and are offered different options for interest rates and compounding frequencies (how often interest is calculated), as shown in the table. The highest interest rate is 100%, calculated once a year. The lower the interest rate, the more often it gets… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The function \\(f\\) is given by \\(f(x) = (1+x)^{\\frac{1}{x}}\\). How do the values of \\(f\\) behave for small positive and large positive values of \\(x\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Since 1992, the value of homes in a neighborhood has doubled every 16 years. The value of one home in the neighborhood was $136,500 in 1992. What is the value of this home, in dollars, in the year 2000? Explain your reasoning. Write an equation that represents the growth in housing value as a function of time in \\(t\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Write two equations—one in exponential form and one in logarithmic form—to represent each question. Use “?” for the unknown value. “To what exponent do we raise the number 5 to get 625?” “What is the log, base 3, of 27?” Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: Clare says that \\(\\log 0.1 = \\text-1\\). Kiran says that \\(\\log (\\text-10) = \\text-1\\). Do you agree with either one of them? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: What is ln(e)? Expected reasoning or answer: 1.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "The number e",
+          "Definition": "The constant e≈2.71828 is the base of natural logarithms and continuous exponential growth. It can be described by the limit (1+1/n)^n as n increases; it is not a variable.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Approximate e^0 and compare it to e. Answer: e^0=1, e≈2.718."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Any nonzero positive base raised to0 is1; e≈2.718."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Comprehend that $e$ represents a constant whose value is approximately 2.718.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "What is ln(e)? Answer: 1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "The number e",
+          "Question": "Approximate e^0 and compare it to e.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Any nonzero positive base raised to0 is1",
+            "e≈2.718.",
+            "Interpret the computed result (e^0=1, e≈2.718.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "e^0=1, e≈2.718.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "What is ln(e)?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "1.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "What is ln(e)?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: What is ln(e)?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Any nonzero positive base raised to0 is1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 1."
+          ],
+          "Answer": "1.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "The number e",
+        "The constant e≈2.71828 is the base of natural logarithms and continuous exponential growth. It can be described by the limit (1+1/n)^n as n increases; it is not a variable.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

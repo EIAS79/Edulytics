@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l11-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L11",
+      "CultureCode": "en",
+      "Title": "Evaluating Logarithmic Expressions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the value of a logarithmic expression using estimation or technology. Justify (orally) why one logarithmic expression is greater than another.",
+        "Logarithms measure exponents. For b>1, larger positive arguments give larger log values; for 0<b<1 order reverses. Exact powers avoid needless approximations.",
+        "Source activity 11.1: Math Talk: Finding Values: \\(\\log \\frac{1}{1,000}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.2: Log War!: Have you played the game of war with a deck of playing cards? Your teacher will give you and your partner a set of special cards. Shuffle and deal the cards evenly. Each player turns one card face up. The card with the greater value wins the round and its player captures both cards and sets them aside. If you and your partner disagree about the value of a card, discuss until… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 11.3: Finding Logarithms with a Calculator: Experiment with your calculator until you understand how to evaluate \\(\\log_{10} 19\\). What value do you see on the calculator? Discuss with a partner: Why might \\(\\log_{10} 19\\) be expressed in different ways? To solve the equation \\(10^m= 19\\), Tyler writes the equation in the logarithmic form: \\(m = \\log_{10} 19\\). He then presses the “log” button on the calculator, enters… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all expressions that are equal to \\(\\log_2 8\\). \\(\\log_{10} 1,\\!000\\) \\(\\log_{10} 0.001\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which expression has a greater value: \\(\\log_{10} \\frac {1}{100}\\) or \\(\\log_2 \\frac {1}{8}\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Andre says that \\(\\log_{10}(55) = 1.5\\) because 55 is halfway between 10 and 100. Do you agree with Andre? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: An exponential function is defined by \\(k(x)= 15 \\boldcdot 2^x\\). Show that when \\(x\\) increases from 1 to 1.25 and when it increases from 2.75 to 3, the value of \\(k\\) grows by the same factor. Show that when \\(x\\) increases from \\(t\\) to \\(t+0.25\\), \\(k(t)\\) also grows by this same factor. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: How many times does $1 need to double in value to become $1,000,000? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: What values could replace the “?” in these equations to make them true? \\(\\log_{10} 10,\\!000 = {?}\\) \\(\\log_{10} 10,\\!000,\\!000 = {?}\\) \\(\\log_{10} {?} = 5\\) \\(\\log_{10} {?} = 1\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: What value of \\(t\\) would make the equation \\(2^t = 6\\) true? Between which two whole numbers is the value of \\(\\log_2 6\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 8: For each exponential equation, write an equivalent equation in logarithmic form. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Is log_2(16) bigger than log_2(8)? Find both. Expected reasoning or answer: 4>3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Evaluating logs",
+          "Definition": "Logarithms measure exponents. For b>1, larger positive arguments give larger log values; for 0<b<1 order reverses. Exact powers avoid needless approximations.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Evaluate log_3(81). Answer: 4."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Since3^4=81, exponent is4."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Justify (orally) why one logarithmic expression is greater than another.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Is log_2(16) bigger than log_2(8)? Find both. Answer: 4>3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluating logs",
+          "Question": "Evaluate log_3(81).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Since3^4=81, exponent is4.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (4.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "4.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Is log_2(16) bigger than log_2(8)? Find both.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "4>3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Is log_2(16) bigger than log_2(8)? Find both.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Is log_2(16) bigger than log_2(8)? Find both.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Since3^4=81, exponent is4.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 4>3."
+          ],
+          "Answer": "4>3.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Evaluating logs",
+        "Logarithms measure exponents. For b>1, larger positive arguments give larger log values; for 0<b<1 order reverses. Exact powers avoid needless approximations.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L18",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "962b7968d3f8e7f2f4e97c47a87168208f93d0458a987fcd0c9f94b159957fa9",
+    "teacher/index.html": "f09ab53638870aebf41c827fb8292958965b3ffc89ec2b2f16b6bb09d571c97c",
+    "teacher/practice.html": "f1dbd02ebb7f90b71c24bb9db89624fb7b8ebcbdeae5e8d859aa6cda9720d021",
+    "student/index.html": "f3368d61cb89904824eda76d46bcfc90a0d8f4ffd7233172c96046d7428af18a",
+    "student/practice.html": "f1a15fb222d66f679e2d7a0a47a2daf4f989c463dcf4912224c4eada7d17df31"
+  },
+  "Goals": [
+    "Create trigonometric functions to model circular motion given a description.",
+    "Use the relationship between arc length and radian angle measurements to calculate distance traveled around a circle."
+  ],
+  "ElementCount": 62,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-001",
+      "SourceSection": "18.1: Comparing Bikes",
+      "SourceExcerpt": "Each graph shows the vertical position \\(v\\), in inches, of a point on the outside of a bike wheel, \\(s\\) seconds after the wheel begins to spin.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-002",
+      "SourceSection": "18.1: Comparing Bikes",
+      "SourceExcerpt": "Which bike has larger wheels? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-003",
+      "SourceSection": "18.1: Comparing Bikes",
+      "SourceExcerpt": "Which bike’s wheels are spinning faster? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-004",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "Attribution: Carousel, by Mariamichelle. Public Domain. Pixabay. Source.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-005",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "Jada, Noah, and Elena are riding a carousel. Here is a view, from above, of the carousel.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-006",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "The carousel moves in a counterclockwise direction. When the ride begins, Jada is at position \\(J\\), Noah is at position \\(N\\), and Elena is at position \\(E\\). The measure of angle \\(JON\\) is \\(\\frac{\\pi}{2}\\) and the measure of angle…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-007",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "The radius of the carousel is 20 feet. How far does Jada travel to reach Noah’s starting position? What about Elena’s starting position? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-008",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "The carousel makes 1 complete rotation every 10 seconds. At which times will Jada be at her starting position? At which times will she be at Noah's starting position? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-009",
+      "SourceSection": "18.2: Around a Carousel",
+      "SourceExcerpt": "The carousel ride lasts for 3.25 minutes. Where will Elena be when the ride ends? How far will she have traveled? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-010",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Jada begins the carousel ride at point \\(J\\) and Noah begins the ride at point \\(N\\). The radius of the carousel is 20 feet and it rotates in a counterclockwise direction, making one complete rotation every 10 seconds.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-011",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Write an equation describing the horizontal coordinate of Jada’s location as a function of time relative to the center of the carousel. Make sure to indicate the units of your variables.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-012",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Sketch a graph of your function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-013",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "What does the graph tell you about Jada’s location during the carousel ride?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-014",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Write an equation describing the vertical coordinate of Noah’s location as a function of time relative to the center of the carousel. Make sure to indicate the units of your variables.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-015",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Sketch a graph of your function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-016",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "What does the graph tell you about Noah’s location during the carousel ride?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-017",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Diego rides a different carousel and begins at position \\(D\\). An equation describing the horizontal coordinate, \\(d(t)\\), of his location in feet relative to the center of the carousel as a function of time is \\(d(t)=15\\cos(\\frac{\\pi…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-018",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "What is the radius of the carousel?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-019",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "How long does it take the carousel to make a complete rotation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-020",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Where did Diego start?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-021",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Here is a point \\(P\\) on a Ferris wheel:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-022",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "This Ferris wheel has a diameter of 100 feet and its center is 60 feet off the ground. The Ferris wheel makes one revolution every 5 minutes. We can use this information to write a function that describes the vertical position of \\(P\\), in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-023",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The amplitude is 50 (the diameter of the Ferris wheel is 100 feet)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-024",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The midline is at 60 (the center of the Ferris wheel is 60 feet high)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-025",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The horizontal translation is \\(\\frac{\\pi}{2}\\) (\\(P\\) starts at the angle \\(\\frac{\\pi}{2}\\) on the circle)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-026",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The period is 5 (every 5 minutes the Ferris wheel makes one complete revolution)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-027",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "Since we want the vertical position, let's use the sine function. Putting all of this information together the height of \\(P\\) is modeled by the function \\(h = 50\\sin\\left(\\frac{\\pi}{2} + \\frac{2\\pi t}{5}\\right) + 60\\). Here is a graph of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-028",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The maximum distance of the values of a periodic function above or below the midline.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-ACTIVITY-029",
+      "SourceSection": "18.3: Modeling the Carousel Motion",
+      "SourceExcerpt": "The value halfway between the maximum and minimum values of a period function. Also the horizontal line whose \\(y\\)-coordinate is that value.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Jada is riding on a Ferris wheel. Her height, in feet, is modeled by the function \\(h(m) = 100\\sin\\left(\\text-\\frac{\\pi}{2} + \\frac{2\\pi m}{10}\\right) + 110\\), where \\(m\\) is the number of minutes since she got on the ride.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "How many minutes does it take the Ferris wheel to make one full revolution? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What is the radius of the Ferris wheel? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Sketch a graph of \\(h\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The vertical position, in feet, of the point \\(P\\) on a windmill is represented by \\(y = 5\\sin\\left(\\frac{2\\pi t}{3}\\right)+20\\), where \\(t\\) is the number of seconds after the windmill started turning at a constant speed. Select all the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The windmill blades are 5 feet long.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The windmill blades make 5 revolutions per second.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The midline for the graph of the equation is 20.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-009",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The windmill makes one revolution every 3 seconds.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-010",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The windmill makes 3 revolutions per second.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-011",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "A seat on a Ferris wheel travels \\(250\\pi\\) feet in one full revolution. How many feet is the carriage from the center of the Ferris wheel?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-012",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(\\frac{125}{\\pi}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-013",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(\\frac{250}{\\pi}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-014",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "A carousel has a radius of 20 feet. The carousel makes 8 complete revolutions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-015",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "How many feet does a person on the carousel travel during these 8 revolutions?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-016",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What angle does the carousel travel through?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-017",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What is the relationship between the angle of rotation and the distance traveled on this carousel? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-018",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "For which angle measures between 0 and \\(2\\pi\\) is the cosine negative and the sine positive?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-019",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "For which angle measures between 0 and \\(2\\pi\\) is the cosine negative and the sine negative?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-020",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "A \\(\\frac{\\pi}{2}\\) radian rotation takes a point \\(D\\) on the unit circle to a point \\(E\\). Which other radian rotation also takes point \\(D\\) to point \\(E\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-021",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "A windmill blade spins in a counterclockwise direction, making one full revolution every 5 seconds.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-022",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Which statements are true? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-023",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "After 15 seconds, the point \\(W\\) will be in its starting position.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-024",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "After \\(\\frac{1}{5}\\) of a second, the point \\(W\\) will be in its starting position.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-025",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "In 1 second, the point \\(W\\) travels through an angle of \\(\\frac{\\pi}{5}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-026",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The position of \\(W\\) repeats every 5 seconds.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-027",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The position of \\(W\\) repeats every 10 seconds.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-028",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Here is the graph of a trigonometric function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-029",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Which equation has this graph?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-030",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(y = \\text-2\\sin(2x)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-031",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(y = 2\\sin\\left( 2\\pi \\left(x+\\frac{1}{4}\\right)\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-032",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(y = 2\\sin\\left( 2\\pi \\left(x-\\frac{1}{4}\\right)\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L18-PRACTICE-033",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "\\(y = 2\\sin\\left( 2\\pi \\left(x-\\frac{\\pi}{4}\\right)\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

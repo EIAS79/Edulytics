@@ -1,0 +1,108 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l05-local-source-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L05",
+      "CultureCode": "en",
+      "Title": "Sequences are Functions",
+      "ExplanationParagraphs": [
+        "Define sequences as integer-domain functions, specify initial conditions and write recursive function notation.",
+        "For a triangular dot pattern with one dot at step 1 and a new row of n dots at step n, the count is D(1)=1 and D(n)=D(n-1)+n for whole-number n>=2. The first five counts are 1,3,6,10,15 and the explicit formula is n(n+1)/2. Its differences increase, so it is neither arithmetic nor geometric. A recursive equation without a starting term is incomplete.",
+        "Activity 5.1: Bowling for Triangles (Part 1): math source context — Describe how to produce one step of the pattern from the previous step.. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 5.2: Bowling for Triangles (Part 2): math source context — Here is a visual pattern of dots. The number of dots \\(D(n)\\) is a function of the step number \\(n\\). What values make sense for \\(n\\) in this situation? What values don't make sense for \\(n\\)? Complete the table for Steps 1 to 5. Following the pattern in the table, write an equation for \\(D(n)\\) in terms of the. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Activity 5.3: Let's Define Some Sequences: math source context — Use the first 5 terms of each sequence to state if the sequence is arithmetic, geometric, or neither. Next, define the sequence recursively using function notation. \\(A\\): 30, 40, 50, 60, 70, . . . \\(B\\): 80, 40, 20, 10, 5, 2.5, . . . \\(C\\): 1, 2, 4, 8, 16, 32, . . . \\(D\\): \\(1, \\frac12, \\frac14, \\frac18,. Work the source task, document quantities and justify the rule. Teacher checks any diagram, model or partner discussion.",
+        "Cumulative Problem 1: source mathematics — Match each sequence with one of the definitions. Note that only the part of the definition showing the relationship between the current term and the previous term is given so as not to give away the solutions. \\(a(n) = 7 \\boldcdot a(n-1)\\) \\(b(n) = \\frac 1 2 \\boldcdot b(n-1)\\). Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 2: source mathematics — Write the first five terms of each sequence. Determine whether each sequence is arithmetic, geometric, or neither. \\(a(1) = 7, a(n) = a(n-1) - 3\\) for \\(n\\ge2\\). \\(b(1) = 2, b(n) = 2 \\boldcdot b(n-1) -1 \\) for \\(n\\ge2\\). \\(c(1) = 3, c(n) = 10 \\boldcdot c(n-1)\\) for \\(n\\ge2\\).. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 3: source mathematics — The first 5 terms of some sequences are given. State a rule that each sequence could follow. 50, 25, 0, -25, -50 \\(\\frac13\\), 1, 3, 9, 27. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 4: source mathematics — Function \\(f\\) is defined by \\(f(x)=2x-7\\) and \\(g\\) is defined by \\(g(x)=5^x\\). Find \\(f(3), f(2), f(1), f(0),\\) and \\(f (\\text-1)\\). Find \\(g(3), g(2), g(1), g(0),\\) and \\(g (\\text-1)\\).. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "Cumulative Problem 5: source mathematics — Here is the graph of two sequences. Complete the table for each sequence. For Sequence A, describe a way to produce a new term from the previous term. For Sequence B, describe a way to produce a new term from the previous term. Which of these is a geometric sequence? Explain how. Preserve original index, signs, ratios and units; independent first-party answer and reasoning required.",
+        "First-party independent cool-down: A triangular display starts with one dot. On each next step add a new row containing as many dots as the step number. Write D(1), D(n) for n>=2, list D(1)...D(5), and explain whether it is arithmetic or geometric. Answer key: D(1)=1, D(n)=D(n-1)+n; 1,3,6,10,15; neither.",
+        "Assessment boundary: digital exact numeric questions may reuse an existing compatible family only if semantics match; diagrams, card discussion and written justifications require teacher verification. Source activities are guidance, not proof an interactive simulator exists."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sequence as function",
+          "Definition": "An integer-indexed function has one output for each permitted input n.",
+          "Rule": "State domain and first term.",
+          "Example": "D: positive integers to nonnegative integers."
+        },
+        {
+          "Title": "Recursive notation",
+          "Definition": "A term is defined through an earlier term.",
+          "Rule": "For n>=2, f(n)=f(n-1)+d, with f(1) specified.",
+          "Example": "f(1)=6, f(n)=f(n-1)+4."
+        },
+        {
+          "Title": "Nonlinear triangular numbers",
+          "Definition": "Each new triangle row adds its row number.",
+          "Rule": "T(n)=T(n-1)+n; T(1)=1.",
+          "Example": "1,3,6,10,15"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Triangular pattern",
+          "Question": "How many dots are there at step 5?",
+          "Method": "Use the previous count and add the new row.",
+          "Steps": [
+            "D(1)=1.",
+            "D(2)=1+2=3; D(3)=3+3=6.",
+            "D(4)=6+4=10; D(5)=10+5=15."
+          ],
+          "Answer": "15 dots",
+          "Check": "Differences 2,3,4,5 increase, not a constant."
+        },
+        {
+          "Title": "Compare recursive sequences",
+          "Question": "Classify 30,40,50,... and 1,3,7,15,...",
+          "Method": "Check consecutive differences and ratios.",
+          "Steps": [
+            "The first has constant +10, hence arithmetic.",
+            "The second has differences 2,4,8 so not arithmetic.",
+            "Ratios 3,7/3,15/7 differ so not geometric."
+          ],
+          "Answer": "The first is arithmetic; second is neither.",
+          "Check": "1,3,7,15 follows next=2*previous+1."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A triangular display starts with one dot. On each next step add a new row containing as many dots as the step number. Write D(1), D(n) for n>=2, list D(1)...D(5), and explain whether it is arithmetic or geometric.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A triangular display starts with one dot. On each next step add a new row containing as many dots as the step number. Write D(1), D(n) for n>=2, list D(1)...D(5), and explain whether it is arithmetic or geometric.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Use the previous count and add the new row. D(1)=1.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: D(1)=1, D(n)=D(n-1)+n; 1,3,6,10,15; neither."
+          ],
+          "Answer": "D(1)=1, D(n)=D(n-1)+n; 1,3,6,10,15; neither.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a sequence rule as context-free.",
+          "WhyWrong": "It can alter the index, initial term, units or learning target.",
+          "Correction": "State the beginning term, domain and original lesson model."
+        },
+        {
+          "Mistake": "Using a fixed common difference when the sequence is not arithmetic.",
+          "WhyWrong": "Differing consecutive differences invalidate the arithmetic formula.",
+          "Correction": "Calculate two or more differences or ratios before selecting a rule."
+        },
+        {
+          "Mistake": "Auto-grading graphs, card exchanges or manipulative proof from a number alone.",
+          "WhyWrong": "Numeric equality does not establish a correct diagram or explanation.",
+          "Correction": "Use a teacher rubric for visual and reasoning evidence."
+        }
+      ],
+      "SummaryPoints": [
+        "Define sequences as integer-domain functions, specify initial conditions and write recursive function notation.",
+        "For a triangular dot pattern with one dot at step 1 and a new row of n dots at step n, the count is D(1)=1 and D(n)=D(n-1)+n for whole-number n>=2. The first five counts are 1,3,6,10,15 and the explicit formula is n(n+1)/2. Its differences increase, so it is neither arithmetic nor geometric. A recursive equation withou",
+        "Use current existing exact sequence families where genuinely compatible; leave unsupported questions teacher-reviewed."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

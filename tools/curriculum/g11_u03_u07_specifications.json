@@ -1,0 +1,759 @@
+{
+  "3": {
+    "1": [
+      "Exponent laws",
+      "For nonzero a, a^m*a^n=a^(m+n); division subtracts exponents. Defining a^0=1 and a^-n=1/a^n extends rules to all integers.",
+      "Simplify 2^3 times 2^4.",
+      "Same base; add exponents 3+4=7; calculate 2^7.",
+      "128",
+      "Evaluate 3^-2 and explain the reciprocal rule.",
+      "1/9."
+    ],
+    "2": [
+      "Principal roots",
+      "For a nonnegative a, sqrt(a) is its nonnegative square root, while cube root works for negative real inputs. Physical lengths cannot be negative.",
+      "Find sqrt(49) and cube root(-27).",
+      "7^2=49; (-3)^3=-27.",
+      "7 and -3",
+      "Evaluate sqrt(121) and cube root(-64).",
+      "11 and -4."
+    ],
+    "3": [
+      "Fractional exponent and radical",
+      "b^(1/n) equals its nth root where a real root is defined; for positive b the exponent identity holds without ambiguity.",
+      "Evaluate 81^(1/4).",
+      "3^4=81 so the fourth root is3.",
+      "3",
+      "Evaluate 32^(1/5).",
+      "2."
+    ],
+    "4": [
+      "Positive rational powers",
+      "For b>0, b^(m/n)=(nth root b)^m. Graph y=b^x with fractional inputs and verify exponent laws.",
+      "Evaluate 27^(2/3).",
+      "Cube root27=3; 3^2=9.",
+      "9",
+      "Evaluate 16^(3/4).",
+      "8."
+    ],
+    "5": [
+      "Negative rational powers",
+      "For b>0, b^(-m/n)=1/b^(m/n); negative exponent takes a reciprocal, not a negative number.",
+      "Evaluate 16^(-3/4).",
+      "Fourth root16=2; cube gives8; reciprocal1/8.",
+      "1/8",
+      "Evaluate 27^(-2/3).",
+      "1/9."
+    ],
+    "6": [
+      "Principal sqrt and two signed solutions",
+      "sqrt(x) for x>=0 is nonnegative, but x^2=a>0 has two real solutions. Do not automatically add ± to the radical symbol.",
+      "Solve z^2=25 and sqrt(x)=5.",
+      "Signed square roots z=±5; square equation sqrt(x)=5 to get x=25.",
+      "z=±5, x=25",
+      "Solve u^2=36 and sqrt(v)=6.",
+      "u=±6; v=36."
+    ],
+    "7": [
+      "Squaring changes possible solutions",
+      "After isolating a nonnegative square root, squaring the equation may introduce extraneous solutions. Check all candidates in the original equation.",
+      "Solve sqrt(x+5)=x-1.",
+      "Domain x>=1; square x+5=x^2-2x+1; factor (x-4)(x+1)=0; reject -1.",
+      "x=4",
+      "Solve sqrt(x+6)=x.",
+      "x=3; reject -2."
+    ],
+    "8": [
+      "Cubes and cube roots",
+      "Each real number has one real cube root because x^3 increases strictly across the real line; negative inputs retain their sign.",
+      "Solve x^3=-8 and cube root(-64).",
+      "(-2)^3=-8 and (-4)^3=-64.",
+      "x=-2; cube root=-4",
+      "Solve 2x^3=54.",
+      "x=3."
+    ],
+    "9": [
+      "Solve and verify radical equations",
+      "Isolate the radical, impose its real domain and nonnegative output, square, solve, and substitute into the unsquared equation.",
+      "Solve sqrt(x+6)=x.",
+      "x>=0; square yields x²-x-6=0; candidates3,-2; reject -2.",
+      "x=3",
+      "Solve sqrt(x+5)=x-1.",
+      "x=4."
+    ],
+    "10": [
+      "New number i",
+      "The square of a real number is never negative; x²=-1 has no real root. Define a complex imaginary unit i such that i²=-1.",
+      "Does x²=-1 have a real solution?",
+      "For all real x, x²>=0, so no real equality with -1.",
+      "No real solution",
+      "Solve x²=-9 over complex numbers.",
+      "x=±3i."
+    ],
+    "11": [
+      "Imaginary axis and complex plane",
+      "A complex value a+bi corresponds to point (a,b); the horizontal component is real, vertical imaginary and i²=-1.",
+      "Plot 2+3i and evaluate (3i)².",
+      "Point coordinates2,3; (3i)²=9i²=-9.",
+      "(2,3) and -9",
+      "Solve x²=-16 over complex numbers.",
+      "x=±4i."
+    ],
+    "12": [
+      "Complex sums and i-powers",
+      "Sum real and imaginary components separately. Powers i,i²=-1,i³=-i,i⁴=1 cycle with period four.",
+      "Compute (2+3i)+(4-5i).",
+      "Real sum6, imaginary coefficient-2.",
+      "6-2i",
+      "Evaluate i^7.",
+      "-i."
+    ],
+    "13": [
+      "Multiplying complex numbers",
+      "Distribute and simplify with i²=-1; (a+bi)(c+di)=(ac-bd)+(ad+bc)i.",
+      "Multiply (2+i)(3-2i).",
+      "6-4i+3i-2i²=8-i.",
+      "8-i",
+      "Multiply (1+2i)(1-2i).",
+      "5."
+    ],
+    "14": [
+      "Complex arithmetic",
+      "Reduce powers of i modulo 4, apply componentwise addition and subtraction, and distribute for products.",
+      "Simplify i^5+i^6+i^7+i^8.",
+      "Terms are i,-1,-i,1; sum0.",
+      "0",
+      "Evaluate i^10.",
+      "-1."
+    ],
+    "15": [
+      "Information gap in complex factorisation",
+      "A complex product does not uniquely determine its two factors. Ask for additional constraints, such as conjugacy; z*conj(z)=a²+b².",
+      "Find a conjugate pair whose product is 2.",
+      "(1+i)(1-i)=1-i²=2.",
+      "1+i and 1-i",
+      "Compute (3+2i)(3-2i).",
+      "13."
+    ],
+    "16": [
+      "Complete square for quadratic roots",
+      "Move the constant and complete square to solve; compare with quadratic formula and substitute roots into the original quadratic.",
+      "Solve x²+6x+5=0.",
+      "(x+3)²=4; x=-3±2.",
+      "x=-1 or -5",
+      "Solve x²-4x+3=0.",
+      "x=1 or 3."
+    ],
+    "17": [
+      "Non-real solutions from completing square",
+      "If (x+a)²=-b for b>0, solutions are x=-a±i sqrt(b). Real-coefficient quadratics have conjugate non-real pairs.",
+      "Solve x²+2x+5=0.",
+      "(x+1)²=-4; x=-1±2i.",
+      "-1±2i",
+      "Solve x²+4x+8=0.",
+      "-2±2i."
+    ],
+    "18": [
+      "Quadratic formula with i",
+      "Discriminant b²-4ac<0 gives a non-real conjugate pair; simplify sqrt of negative using i, then put result in c±di form.",
+      "Solve x²+4x+13=0.",
+      "Delta=16-52=-36; x=(-4±6i)/2.",
+      "-2±3i",
+      "Solve x²+2x+10=0.",
+      "-1±3i."
+    ],
+    "19": [
+      "Discriminant and real-root classification",
+      "For real quadratic ax²+bx+c with a!=0, discriminant positive gives two real roots, zero one repeated real root, negative two non-real conjugates.",
+      "Compare roots of x²-9=0 and x²+9=0.",
+      "First roots ±3 real; second ±3i non-real.",
+      "±3 and ±3i",
+      "Make a monic quadratic with roots ±2i.",
+      "x²+4=0."
+    ]
+  },
+  "4": {
+    "1": [
+      "Exponential growth and decay",
+      "An exponential model f(t)=a*b^t multiplies by factor b for each unit step. b>1 models growth and 0<b<1 decay. Compare equivalent multiplicative and percentage descriptions.",
+      "Evaluate growth 100*(1.2)^2 and decay 100*(0.8)^2.",
+      "Multiply100 by1.44; or100 by0.64.",
+      "144 and 64.",
+      "An investment starts200 and grows10% each year. What is its value after two years?",
+      "200*1.1^2=242."
+    ],
+    "2": [
+      "Parameters in exponential models",
+      "In f(t)=a*b^t, a=f(0) is initial amount, b is unit-input growth factor, and its percent change is 100(b-1)%. Graphs are discrete or continuous according to context.",
+      "For f(t)=50*(1.1)^t, identify initial value, growth percent, and f(2).",
+      "a=50; factor1.1 is 10% growth; 50*1.21=60.5.",
+      "Initial50; 10% per unit; f(2)=60.5.",
+      "For g(t)=80*(0.75)^t, state initial value and percent decay.",
+      "80 and 25% decay."
+    ],
+    "3": [
+      "Rational inputs to exponentials",
+      "For positive b, exponential f(t)=a*b^t is defined at rational real t, where b^(1/2) is square root b. Half a unit of input produces sqrt(b), not b/2.",
+      "Evaluate 16^(1/2) and interpret it as a half-step growth factor.",
+      "sqrt16=4 and 4*4=16 over two half-steps.",
+      "4.",
+      "Given f(t)=9*4^t, find f(1/2).",
+      "18."
+    ],
+    "4": [
+      "Equal fractional intervals",
+      "If b is full-step growth factor, the multiplier over 1/n time units is b^(1/n), not b/n. For yearly factor1.21 a half-year multiplier is sqrt1.21=1.1.",
+      "A process grows by factor 1.21 per year. What factor applies per half-year?",
+      "Factor r solves r^2=1.21, so r=sqrt1.21.",
+      "1.1.",
+      "An annual factor is 1.44. Find the equal six-month factor.",
+      "1.2."
+    ],
+    "5": [
+      "Multiplicative changes over intervals",
+      "Exponential models have constant multiplicative change across intervals of equal duration even when duration is fractional: f(t+h)/f(t)=b^h. Inputs and valid units matter.",
+      "For f(t)=100*4^t, find factor over half a time unit.",
+      "4^(1/2)=2, independent of starting t.",
+      "2.",
+      "For f(t)=50*9^t, find multiplier over one-third time unit.",
+      "9^(1/3)."
+    ],
+    "6": [
+      "Infer exponential equation from separated inputs",
+      "Given positive outputs f(t1),f(t2), solve b^(t2-t1)=f(t2)/f(t1), then find a=f(t1)/b^t1. Non-unit gaps cannot be treated as successive unit steps.",
+      "An exponential has f(0)=5 and f(2)=45. Find a*b^t.",
+      "a=5; b^2=45/5=9; positive b=3.",
+      "f(t)=5*3^t.",
+      "If f(1)=12 and f(3)=48, find positive factor per unit.",
+      "b^2=48/12=4, hence b=2."
+    ],
+    "7": [
+      "Half-life decay",
+      "A half-life H means multiply by1/2 after H elapsed time units. Model A(t)=A0*(1/2)^(t/H) for t>=0, interpreting units and measurement.",
+      "A substance has half-life8 years and starts100 grams. What remains after24 years?",
+      "Three half-lives elapsed; 100*(1/2)^3.",
+      "12.5 grams.",
+      "A sample starts80 grams and has half-life5 years. Find remaining after15 years.",
+      "10 grams."
+    ],
+    "8": [
+      "Unknown exponent",
+      "An unknown exponent can be found by recognizing powers or comparing a graph. Some equations require a logarithm, which is introduced after observing the inverse operation.",
+      "Solve 2^x=32.",
+      "32=2^5, so x=5.",
+      "x=5.",
+      "Solve 3^t=81.",
+      "t=4."
+    ],
+    "9": [
+      "Definition of logarithm",
+      "For b>0, b!=1 and y>0, log_b(y) is the exponent x such that b^x=y. Logarithms invert exponentials; arguments must be positive.",
+      "Evaluate log_2(32).",
+      "Because 2^5=32, log base2 of32 is5.",
+      "5.",
+      "Evaluate log_3(81).",
+      "4."
+    ],
+    "10": [
+      "Equivalent exponential and log forms",
+      "Statements b^x=y and log_b(y)=x are equivalent if b>0, b!=1, y>0. Swap between forms without changing the base or the unknown.",
+      "Rewrite 10^3=1000 using logarithms.",
+      "Base is10, output1000 and exponent3.",
+      "log_10(1000)=3.",
+      "Rewrite log_5(125)=3 exponentially.",
+      "5^3=125."
+    ],
+    "11": [
+      "Evaluating logs",
+      "Logarithms measure exponents. For b>1, larger positive arguments give larger log values; for 0<b<1 order reverses. Exact powers avoid needless approximations.",
+      "Evaluate log_3(81).",
+      "Since3^4=81, exponent is4.",
+      "4.",
+      "Is log_2(16) bigger than log_2(8)? Find both.",
+      "4>3."
+    ],
+    "12": [
+      "The number e",
+      "The constant e≈2.71828 is the base of natural logarithms and continuous exponential growth. It can be described by the limit (1+1/n)^n as n increases; it is not a variable.",
+      "Approximate e^0 and compare it to e.",
+      "Any nonzero positive base raised to0 is1; e≈2.718.",
+      "e^0=1, e≈2.718.",
+      "What is ln(e)?",
+      "1."
+    ],
+    "13": [
+      "Continuous growth and e",
+      "A model P*e^(rt) has initial amount P and continuous growth rate r per time unit; its one-unit growth factor is e^r and its one-unit percent change is100(e^r-1). A negative r indicates decay.",
+      "For A(t)=200e^(0.1t), find A(0) and one-unit growth factor.",
+      "At t0 exponent0 so initial200; at t1 ratio e^0.1.",
+      "A(0)=200; factor≈1.10517.",
+      "For B(t)=50e^(-0.2t), is it growth or decay?",
+      "Decay; initial50."
+    ],
+    "14": [
+      "Solve exponential equations with ln",
+      "For positive values, e^(kt)=c implies kt=ln(c) and t=ln(c)/k when k!=0. Domain and units must be retained.",
+      "Solve e^(2x)=7.",
+      "Take ln: 2x=ln7; divide by2.",
+      "x=ln7/2.",
+      "Solve e^(3t)=20.",
+      "t=ln20/3."
+    ],
+    "15": [
+      "Graphs and logarithmic solutions",
+      "An exponential curve intersects a horizontal line at the input solving the associated logarithmic equation. For b>0,b!=1, b^t=c gives t=ln(c)/ln(b), c>0.",
+      "Solve 2^t=10 in exact logarithmic form.",
+      "Take natural ln: t*ln2=ln10; divide.",
+      "t=ln10/ln2≈3.32193.",
+      "Solve 5^x=125.",
+      "x=3."
+    ],
+    "16": [
+      "Intersections of exponential models",
+      "To find where two exponential functions agree, set outputs equal and use logarithms to isolate the input. Verify the intersection input and calculate its shared output; interpret whether time can be negative.",
+      "Solve 2^t=3^(t-1).",
+      "t ln2=(t-1)ln3; t(ln3-ln2)=ln3.",
+      "t=ln3/(ln3-ln2).",
+      "Find where 2^t=4*2^(t-2).",
+      "They are identical for every t."
+    ],
+    "17": [
+      "Logarithmic function graphs",
+      "y=log_b(x) is inverse to y=b^x when b>0,b!=1, x>0. The graph passes through (1,0), has vertical asymptote x=0, and is increasing when b>1.",
+      "Identify domain, zero and vertical asymptote of y=log_2(x).",
+      "Argument must be positive; log_2(1)=0; as x→0+ output→-infinity.",
+      "Domain x>0; zero at1; x=0 asymptote.",
+      "Evaluate log_2(1/8).",
+      "-3."
+    ],
+    "18": [
+      "Logarithms in acidity and seismic scales",
+      "Log scales translate multiplicative changes into additive differences. For pH=-log_10([H+]) with concentration measured consistently, [H+]=10^-3 gives pH3. An earthquake magnitude increase of1 corresponds to a tenfold amplitude ratio on a base-ten model.",
+      "A solution has hydrogen-ion concentration10^-3. Find pH.",
+      "pH=-log10(10^-3)=3.",
+      "pH=3.",
+      "Concentrations10^-5 and10^-3: which has lower pH?",
+      "10^-3 gives pH3, lower than pH5."
+    ]
+  },
+  "5": {
+    "1": [
+      "Fit a function to data",
+      "Transform a known parent function to describe observed data; a quadratic graph translated vertically by 3 is y=x²+3, with its vertex moved from (0,0) to (0,3). Compare actual ordered pairs before accepting a model.",
+      "A table has (0,3),(1,4),(2,7). Find a transformed version of y=x² matching it.",
+      "At x0 parent0 plus3 gives3; x1 parent1 plus3 gives4; x2 parent4 plus3 gives7.",
+      "y=x²+3.",
+      "Model values (0,-2),(1,-1),(2,2) from y=x².",
+      "y=x²-2."
+    ],
+    "2": [
+      "Horizontal and vertical translations",
+      "For a function f, f(x)+k translates the graph vertically by k; f(x-h) translates right by h. The sign inside the function reverses the visible horizontal direction.",
+      "If f(x)=x², describe g(x)=f(x-2) and its vertex.",
+      "Input x-2 is zero at x2, so shift 2 right.",
+      "Right two; vertex (2,0).",
+      "If f(x)=x², describe h(x)=f(x)+5.",
+      "Shift up five."
+    ],
+    "3": [
+      "Combined translations",
+      "A model g(x)=f(x-h)+k shifts f right h and up k. A negative value of h or k reverses the direction; coordinates of identifiable features change consistently.",
+      "Given f(x)=x², describe g(x)=(x+3)²-4.",
+      "Replace input x with x+3: left3; subtract4: down4.",
+      "Vertex (-3,-4).",
+      "Describe y=(x-4)²+2 relative to y=x².",
+      "Right4 up2."
+    ],
+    "4": [
+      "Reflections",
+      "Reflecting y=f(x) over the x-axis gives y=-f(x); reflecting over the y-axis gives y=f(-x). These are different operations unless the function has appropriate symmetry.",
+      "For f(x)=x+2, write -f(x) and f(-x).",
+      "Negate entire output: -x-2; negate input only: -x+2.",
+      "-f(x)=-x-2; f(-x)=-x+2.",
+      "Reflect f(x)=x²+3 in the x-axis.",
+      "-x²-3."
+    ],
+    "5": [
+      "Even and odd symmetry",
+      "An even function satisfies f(-x)=f(x) and has y-axis symmetry. An odd function satisfies f(-x)=-f(x) and has origin symmetry. Both require domains symmetric about zero.",
+      "Classify f(x)=x² and g(x)=x³ as even or odd.",
+      "(-x)²=x²; (-x)³=-x³.",
+      "x² even; x³ odd.",
+      "Classify h(x)=x²+x.",
+      "Neither."
+    ],
+    "6": [
+      "Symmetry from equations",
+      "To classify symmetry, substitute -x into the equation, simplify and compare with f(x) and -f(x). A graph can be completed across the y-axis for even functions or through the origin for odd functions.",
+      "Classify f(x)=x³+x and g(x)=x²+x.",
+      "f(-x)=-x³-x=-f(x); g(-x)=x²-x differs from ±g(x).",
+      "f odd; g neither.",
+      "Classify f(x)=x⁴+2x².",
+      "Even."
+    ],
+    "7": [
+      "Algebraic composition of graph transformations",
+      "Translations and reflections may be combined: g(x)=-f(x-2)+3 first moves inputs right2, then reflects output and raises3; order matters for some transformations.",
+      "For f(x)=x², describe g(x)=-(x-2)²+3.",
+      "Input shift right2; output reflect over x-axis; add3; vertex2,3 opens down.",
+      "Vertex (2,3), opens downward.",
+      "Express left1 and down4 for f(x)=x².",
+      "g(x)=(x+1)²-4."
+    ],
+    "8": [
+      "Scaling outputs",
+      "The transformation g(x)=k*f(x) scales every output by k; |k|>1 vertically stretches, 0<|k|<1 compresses and negative k additionally reflects across the x-axis.",
+      "Given f(x)=x² and g(x)=3f(x), find g(2).",
+      "f(2)=4; multiply output by3.",
+      "12.",
+      "If f(2)=-5, find g(2) for g=-2f.",
+      "10."
+    ],
+    "9": [
+      "Scaling inputs",
+      "The transformation g(x)=f(kx) compresses the graph horizontally by factor 1/|k| if |k|>1, with an additional y-axis reflection when k<0. It does not multiply output directly.",
+      "Given f(x)=x², express g(x)=f(2x) and describe the change.",
+      "Substitute input2x; g=(2x)²=4x²; original feature at x occurs now at x/2.",
+      "g(x)=4x²; horizontal compression by factor1/2.",
+      "If f(x)=sin x, what is period of f(3x)?",
+      "2π/3."
+    ],
+    "10": [
+      "Operations on functions",
+      "If functions f,g share a domain, f+g, f-g and fg evaluate pointwise. The quotient f/g is defined only where g is nonzero; context may impose additional restrictions.",
+      "With f(x)=x+1 and g(x)=x², find (f+g)(2) and (fg)(2).",
+      "At2 f=3 and g=4; sum7 product12.",
+      "7 and12.",
+      "For the same functions find (f/g)(2) and excluded denominator input.",
+      "3/4; x=0 excluded."
+    ],
+    "11": [
+      "Transform a parent function to model data",
+      "Use observed vertices, intercepts and scaling to transform a parent graph. For a quadratic with vertex (1,3) and output5 at x2, g(x)=2(x-1)²+3 fits both; verify additional observations before trusting the model.",
+      "Find a transformed quadratic y=a(x-1)²+3 passing through (2,5).",
+      "Set5=a*(1)²+3, so a=2.",
+      "y=2(x-1)²+3.",
+      "Find y=a(x+2)²+1 passing through (-1,4).",
+      "a=3, so y=3(x+2)²+1."
+    ]
+  },
+  "6": {
+    "1": [
+      "Periodic motion and circle coordinates",
+      "A periodic function repeats outputs at a fixed positive period P: f(t+P)=f(t). A point on a circle centered at origin radius r obeys x²+y²=r²; use Pythagorean theorem for unknown coordinates.",
+      "For a circle of radius5, find positive y when x=3.",
+      "x²+y²=25; y²=25-9=16; y=4 in upper half.",
+      "y=4.",
+      "For a circle radius13 with x=5 and positive y, find y.",
+      "12."
+    ],
+    "2": [
+      "Triangle trigonometry and unit circle",
+      "On a unit circle at angle θ, coordinate pair is (cos θ,sin θ). For a right triangle, sin=opposite/hypotenuse, cos=adjacent/hypotenuse and tan=opposite/adjacent when defined.",
+      "Find coordinates on unit circle at θ=π/6.",
+      "cos π/6=√3/2; sin π/6=1/2.",
+      "(√3/2,1/2).",
+      "Find coordinates at θ=π/3.",
+      "(1/2,√3/2)."
+    ],
+    "3": [
+      "Radian and arc length",
+      "One radian subtends an arc equal in length to the radius. General arc length s=rθ if θ is in radians, with signed angle indicating travel direction and physical length using absolute value.",
+      "Radius2, angle π/3. Find arc length.",
+      "s=2*(π/3).",
+      "2π/3 units.",
+      "Find arc length for radius6 angle π/2.",
+      "3π."
+    ],
+    "4": [
+      "Quadrants and common radian angles",
+      "A point on the unit circle has cos θ as x and sin θ as y. Reference angles and quadrant signs locate values at π/6, π/4, π/3 and their reflections.",
+      "Find unit-circle coordinates for θ=5π/6.",
+      "Reference angle π/6; quadrantII has negative cosine and positive sine.",
+      "(-√3/2,1/2).",
+      "Find coordinates at 7π/6.",
+      "(-√3/2,-1/2)."
+    ],
+    "5": [
+      "Pythagorean trigonometric identity",
+      "Because any unit circle point has x²+y²=1 with x=cos θ, y=sin θ, the identity cos²θ+sin²θ=1 holds for all real θ. It is not sinθ+cosθ=1.",
+      "If cosθ=3/5 and θ is in quadrant I, find sinθ.",
+      "sin²θ=1-9/25=16/25; quadrantI positive.",
+      "4/5.",
+      "Find cos(theta) if sin(theta)=-5/13 and theta is in quadrant IV.",
+      "12/13."
+    ],
+    "6": [
+      "Signs from the Pythagorean identity",
+      "To recover sin or cos from its square, apply the known quadrant to choose the sign; tanθ=sinθ/cosθ when cosθ!=0.",
+      "If cosθ=-3/5 and θ is in quadrantII, find sin and tan.",
+      "sin²=1-9/25=16/25; sin positive4/5; tan=(4/5)/(-3/5).",
+      "sin=4/5; tan=-4/3.",
+      "If cosθ=4/5 in quadrant IV, find sin.",
+      "-3/5."
+    ],
+    "7": [
+      "Coordinates on any circle",
+      "A point on a circle radius r at angle θ from the positive x-axis has coordinates (r cosθ,r sinθ). Quadrant signs and scale must both be applied.",
+      "For radius10 and θ=2π/3, find coordinates.",
+      "cos2π/3=-1/2, sin2π/3=√3/2; multiply each by10.",
+      "(-5,5√3).",
+      "For radius8 at θ=π, find coordinates.",
+      "(-8,0)."
+    ],
+    "8": [
+      "Sine cosine tangent comparison",
+      "Sine and cosine have period2π, bounded values from-1 to1 and a quarter-period shift; tangent has periodπ and is undefined when cosine is zero. Graphs cannot share the same range or asymptotes.",
+      "Give periods of sinθ and tanθ and identify where tangent is undefined.",
+      "Sine repeats after2π, tangent afterπ; tan=sin/cos so cos=0 at π/2+kπ.",
+      "2π and π; undefined π/2+kπ.",
+      "Find range of y=cosθ.",
+      "[-1,1]."
+    ],
+    "9": [
+      "Sine and cosine as functions",
+      "Unit circle coordinates define cos and sin for every real angle. Their graphs are periodic as θ travels 0 to 2π; sin0=0 and cos0=1, and output values stay in [-1,1].",
+      "Evaluate sin0, sin(π/2), and cos0.",
+      "At θ0 point(1,0), at π/2 point(0,1).",
+      "0,1,1.",
+      "Evaluate cosπ and sinπ.",
+      "-1,0."
+    ],
+    "10": [
+      "Angles beyond a full revolution",
+      "Coterminal angles differ by multiples of2π and give identical sine and cosine values. A turn of 2π corresponds to one complete revolution.",
+      "Find cos(2π+π/3).",
+      "Subtract full revolution2π and use cosπ/3.",
+      "1/2.",
+      "Find sin(4π+π/2).",
+      "1."
+    ],
+    "11": [
+      "Negative angles and clockwise rotation",
+      "A negative radian angle rotates clockwise. Cosine is even cos(-θ)=cosθ; sine is odd sin(-θ)=-sinθ, allowing extension beyond the interval [0,2π].",
+      "Evaluate sin(-π/2) and cos(-π/3).",
+      "Odd sine gives -1; even cosine gives cosπ/3=1/2.",
+      "-1 and 1/2.",
+      "Evaluate sin(-π/6).",
+      "-1/2."
+    ],
+    "12": [
+      "Tangent and its graph",
+      "Tangent θ=sinθ/cosθ has periodπ and domain excluding θ=π/2+kπ. It is unbounded on intervals between vertical asymptotes, unlike sine and cosine.",
+      "Find tan(π/4) and state tan(π/2) status.",
+      "sinπ/4=cosπ/4 so ratio1; at π/2 cosine zero so undefined.",
+      "tanπ/4=1; tanπ/2 undefined.",
+      "Find tanπ.",
+      "0."
+    ],
+    "13": [
+      "Amplitude and midline",
+      "For y=A sin(x)+D, amplitude |A| is half the peak-to-trough distance and midline y=D is average of max and min. Negative A reflects vertically, not change amplitude magnitude.",
+      "Find amplitude, midline, max and min of y=3sinx+2.",
+      "|A|=3; D=2; extrema2±3.",
+      "Amplitude3; midline2; max5, min-1.",
+      "For y=-4cosx+1, give amplitude and midline.",
+      "4 and y=1."
+    ],
+    "14": [
+      "Horizontal translation of trigonometric graphs",
+      "For y=A cos(x-h)+D, the graph shifts right by h when h>0; A sets amplitude and D midline. Period stays2π unless frequency is changed.",
+      "Describe y=2cos(x-π/4)+1.",
+      "Amplitude2, right shiftπ/4, midline1, base cosine period2π.",
+      "Amplitude2; midline1; rightπ/4; period2π.",
+      "Describe y=sin(x+π/3).",
+      "Leftπ/3."
+    ],
+    "15": [
+      "Frequency and trig period",
+      "For y=cos(kx) with k nonzero, one full cycle occurs when kx advances 2π, so period is 2π/|k|. Horizontal shifts and reflections do not alter absolute period.",
+      "Find period of y=cos(3x).",
+      "Solve3P=2π.",
+      "P=2π/3.",
+      "Find period of y=sin(4x).",
+      "π/2."
+    ],
+    "16": [
+      "Period from context",
+      "A function y=D+A sin(2πt/T) has period T, amplitude |A| and midline D. Read a repeating cycle from the model graph and check physical units.",
+      "For y=2sin(πt/6)+4, find period, amplitude and midline.",
+      "Angular coefficient π/6; period2π/(π/6)=12; amplitude2, shift4.",
+      "Period12; amplitude2; midline4.",
+      "For y=5cos(πt/3)-2, find period.",
+      "6."
+    ],
+    "17": [
+      "Determine a combined trig transformation",
+      "A family y=D+A sin(k(x-h)) has amplitude |A|, period2π/|k|, horizontal displacement h and midline D. Ask for missing parameters before claiming a unique model.",
+      "For y=-2sin(x+π/3)+1, state amplitude, midline, period and phase shift.",
+      "Absolute coefficient2, vertical shift1, angular frequency1, input shift leftπ/3.",
+      "Amplitude2; midline1; period2π; leftπ/3.",
+      "Give period of y=3cos(2(x-1)).",
+      "π."
+    ],
+    "18": [
+      "Circular motion model",
+      "A wheel with radius r rotating at angular speed ω has angle θ=ωt and height D-r cos(ωt) when it starts at the bottom. Arc travel distance s=rθ in radians; period T=2π/ω.",
+      "A wheel of radius10 has center height12 and period60 seconds, starting at bottom. Find height at t=0 and t=30.",
+      "h(t)=12-10cos(2πt/60); h(0)=2; h(30)=22.",
+      "2 and 22 height units.",
+      "For radius4 and angle π/2, find arc length.",
+      "2π."
+    ],
+    "19": [
+      "Trig model for periodic data",
+      "To model oscillating data, estimate midline (max+min)/2, amplitude (max-min)/2, period and phase. A sine or cosine prediction applies only if the observed periodic pattern supports it.",
+      "A tide follows h(t)=3+2sin(πt/6). Give period and extreme heights.",
+      "Amplitude2, midline3, angular frequencyπ/6 gives period12; extrema3±2.",
+      "Period12; max5; min1.",
+      "For h(t)=4+1.5cos(πt/4), give period.",
+      "8."
+    ]
+  },
+  "7": {
+    "1": [
+      "Assess statistical claims critically",
+      "A statistical conclusion depends on how data were collected. A sample survey estimates a population; a randomized experiment can support causal inference; an observational study may show association but cannot automatically establish causation. Voluntary responses can be biased.",
+      "A web poll of 100 volunteers reports 90% support for a policy. Does that prove 90% of the whole city supports it?",
+      "Voluntary response is not a probability sample; participants may differ systematically from nonparticipants.",
+      "No; the citywide percentage is not established.",
+      "A school surveys only students attending an optional club about all students' habits. Identify the risk.",
+      "Selection bias: club members are not a random school sample."
+    ],
+    "2": [
+      "Study types",
+      "A sample survey asks sampled individuals for characteristics or opinions; an observational study records associations without assigning treatments; an experiment deliberately assigns treatments, ideally at random, to compare outcomes.",
+      "Classify a study that randomly assigns patients to two approved teaching methods and compares test scores.",
+      "Researchers assign interventions; random assignment creates experimental groups.",
+      "Randomized experiment.",
+      "Classify researchers observing existing sleep hours and grades.",
+      "Observational study."
+    ],
+    "3": [
+      "Random selection and assignment",
+      "Simple random selection gives every possible sample of a specified size an equal chance (under the stated scheme). Random selection supports generalization; random assignment supports causal comparison. Neither means choosing convenient participants.",
+      "A roster has 100 numbered students. How can you choose 10 as a simple random sample?",
+      "Use a reproducible random-number procedure selecting 10 distinct student IDs with equal probability among all 10-person groups.",
+      "Sample 10 distinct uniformly selected IDs.",
+      "Does choosing the first 10 volunteers count as simple random selection?",
+      "No; it is convenience/volunteer selection."
+    ],
+    "4": [
+      "Distribution shapes and variability",
+      "Describe a quantitative distribution by shape (symmetric, bell-like, skewed), center and spread. Standard deviation measures typical deviation around the mean in squared-distance units after square root. Extreme values can inflate it.",
+      "Compare data sets [4,5,6] and [0,5,10], both with mean5. Which is more variable?",
+      "Distances from5 are [1,0,1] versus [5,0,5]; second squared deviations are larger.",
+      "[0,5,10] has larger standard deviation.",
+      "For [9,10,11] and [5,10,15], which is more spread out?",
+      "[5,10,15]."
+    ],
+    "5": [
+      "Normal distributions",
+      "A normal model is unimodal, symmetric and bell-shaped, defined by a mean μ and standard deviation σ. Many measurements approximately follow it, but do not assume every histogram is normal or that every point is exactly at the center.",
+      "A distribution is approximately normal with mean50 and SD10. What z-score has observation60?",
+      "z=(x-μ)/σ=(60-50)/10=1.",
+      "z=1.",
+      "What value has z=-2 for mean100 and SD15?",
+      "70."
+    ],
+    "6": [
+      "Histogram areas and proportions",
+      "For a density histogram with equal bin widths, the proportion in a bin equals its relative-frequency bar area; total area is 1. For variable widths, height must be scaled to density for areas to represent proportions. The normal curve's area can approximate these fractions.",
+      "In a sample of 100 with equal-width histogram bins, 20 observations lie in one bin. What proportion is in it?",
+      "Divide count20 by total100.",
+      "0.20 or 20%.",
+      "A density histogram has total area1; one region has area0.35. What proportion lies there?",
+      "35%."
+    ],
+    "7": [
+      "Normal curve probabilities",
+      "The standard normal probability between z=-1 and z=1 is approximately0.6827, and the complement outside that interval about0.3173. These are model-based proportions, not exact counts for arbitrary finite samples.",
+      "Approximately what fraction of a normal population lies within one standard deviation of its mean?",
+      "Use standard normal area from z=-1 to z=1.",
+      "About 68.27%.",
+      "About what fraction lies outside ±1 SD?",
+      "31.73%."
+    ],
+    "8": [
+      "Simulation evidence and model critique",
+      "Random simulation results fluctuate around theoretical probabilities. Ten fair-coin flips can reasonably include seven heads; a single small-run discrepancy does not prove a biased coin. Critique probability claims using sample size and repeated simulation.",
+      "A fair coin produces 7 heads in 10 simulated flips. Is this proof the chance of heads is 70%?",
+      "Observed proportion7/10=.7 differs from fair theoretical .5; 10 trials are too few for conclusive bias.",
+      "No; random variation can explain it.",
+      "If a fair coin yields 52 heads in100 flips, is probability necessarily .52?",
+      "No; 0.52 is a sample proportion."
+    ],
+    "9": [
+      "Sampling variability and margin of error",
+      "Different random samples can produce different population estimates. Margin of error expresses uncertainty associated with a sampling procedure and chosen confidence method; it does not correct nonresponse or biased sampling.",
+      "Two independent random samples estimate support at 42% and 47%. Must one estimate be fraudulent?",
+      "Random samples differ because of sampling variability, even when both are collected correctly.",
+      "No; both can be legitimate estimates.",
+      "Can adding a margin of error fix a convenience sample?",
+      "No; selection bias remains."
+    ],
+    "10": [
+      "Estimate proportions and margin",
+      "For a sufficiently large simple random sample, an approximate 95% margin of error for sample proportion p is about 2 sqrt(p(1-p)/n). The conservative worst-case p=.5 gives approximately1/sqrt(n). Conditions and clustering matter.",
+      "Use conservative approximate 95% margin of error for n=400.",
+      "Worst-case 1/sqrt(400)=1/20=.05.",
+      "About ±5 percentage points.",
+      "For n=100, conservative approximate margin?",
+      "About ±10 percentage points."
+    ],
+    "11": [
+      "Sample size and accuracy",
+      "Approximate margin of error decreases like 1/sqrt(n) for independent random samples. Quadrupling sample size typically halves the margin; merely doubling size reduces it by about factor1/sqrt2, not half.",
+      "If 100 observations give about ±10% conservative margin, what is the margin for 400?",
+      "Four times sample size; 1/sqrt400=.05 versus1/sqrt100=.10.",
+      "Approximately ±5%.",
+      "How many samples compared with n=100 are needed to reduce ±10% to ±2.5%?",
+      "16 times as many, n≈1600."
+    ],
+    "12": [
+      "Population mean estimation",
+      "A random sample mean estimates the population mean. An approximate 95% interval may use sample mean ±2s/sqrt(n) when conditions are met; genuine interpretation requires a random sample and attention to outliers.",
+      "A simple random sample has n=36, mean50, sample SD12. Estimate 95% interval using ±2s/sqrt n.",
+      "SE≈12/6=2; margin≈4; interval50±4.",
+      "Approximately [46,54].",
+      "With n=100, mean25, sample SD5, find approximate 2-SE interval.",
+      "[24,26]."
+    ],
+    "13": [
+      "Randomization in experiments",
+      "Random assignment aims to balance treatment and control groups, allowing difference comparisons with less confounding. Random selection and random assignment are distinct; a simulation can demonstrate variability of outcomes under random assignment.",
+      "A study randomly assigns 40 participants equally to treatments A and B. How many in each group?",
+      "Equal allocation means40/2=20 each, with random labels.",
+      "20 in each group.",
+      "Does randomly choosing participants from a population automatically randomize treatment assignments?",
+      "No; sampling and assignment are separate procedures."
+    ],
+    "14": [
+      "Permutation tests and significance",
+      "Under a no-treatment-effect model, randomization redistributes response labels or group membership to estimate the chance of an observed or more extreme difference. A fraction of 20 of 1000 simulations as extreme corresponds to estimated p≈0.02, with simulation uncertainty.",
+      "A randomization distribution has 1000 shuffled assignments and 20 yield a result at least as extreme. Estimate the p-value.",
+      "Count20 divided by1000.",
+      "p≈0.02.",
+      "If 35 of 500 simulated differences are as extreme, estimate p.",
+      "0.07."
+    ],
+    "15": [
+      "Normal tail with z-scores",
+      "For a normal model convert x to z=(x-μ)/σ. Standard normal right-tail probability above z=1 is about0.1587; right-tail area complements the cumulative probability from a z-table. State whether the question asks above or below.",
+      "Scores are normal with mean70, SD10. What is approximate proportion above80?",
+      "z=(80-70)/10=1; normal P(Z>1)≈.1587.",
+      "About15.87%.",
+      "For Z standard normal, what is proportion below z=1?",
+      "About84.13%."
+    ],
+    "16": [
+      "Heart-rate experiment analysis",
+      "To compare two treatment groups use a randomization distribution of the difference in measured outcomes, checking treatment allocation, group size, and how the comparison statistic is defined. A p-value measures extremeness under a null model, not probability that the null is true.",
+      "Treatment A has sample mean80 and B has sample mean76 beats/minute. What is observed A minus B difference?",
+      "80-76=4.",
+      "4 beats per minute.",
+      "If randomization yields 30 of1000 differences at least as extreme, what is estimated p-value?",
+      "0.03."
+    ]
+  }
+}

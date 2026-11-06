@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l05-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L05",
+      "CultureCode": "en",
+      "Title": "Changes Over Rational Intervals",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Understand that an exponential function still changes by a constant factor over equal intervals, even if the interval is a fractional amount.",
+        "Exponential models have constant multiplicative change across intervals of equal duration even when duration is fractional: f(t+h)/f(t)=b^h. Inputs and valid units matter.",
+        "Source activity 5.1: Changes Over Intervals: Consider the exponential function \\(h(x)=4^x\\). For each question, be prepared to share your reasoning with the class. By what factor does \\(h\\) increase when the exponent \\(x\\) increases by 1? By what factor does \\(h\\) increase when the exponent \\(x\\) increases by 2? By what factor does \\(h\\) increase when the exponent \\(x\\) increases by 0.5? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.2: Machine Depreciation: After purchase, the value of a machine depreciates exponentially. The table shows its value as a function of years since purchase. If a spreadsheet tool is available, consider using it to help you reason about the following questions. The value of the machine in dollars is a function \\(f\\) of time \\(t\\), the number of years since the machine was purchased. Find an equation… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.3: Fever Medicine: The graph shows the amount of medicine in a child’s body \\(h\\) hours after taking the medicine. The amount of medicine decays exponentially. After \\(\\frac{1}{4}\\) hour there are about 7 mg of medicine left. After \\(\\frac{3}{4}\\) hour there are about 3.5 mg of medicine left. About how many mg of medicine are left after 1\\(\\frac{3}{4}\\) hours? Explain how you know. How does the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The table shows the monthly revenue of a business rising exponentially since it opened an online store. Describe how the monthly revenue is growing. Write an equation to represent the revenue, \\(R\\), as a function of months, \\(m\\), since the online store opened. Find the monthly revenue 1 month after the online store… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: At 7 a.m., a colony of 100 bacteria is placed on a petri dish where the population will triple every 6 hours. Select all statements that are true about the bacteria population. When the bacteria population reaches 900, 12 hours have passed since the colony was placed on the petri dish. Three hours after the colony is… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The graph represents the cost of a medical treatment, in dollars, as a function of time, \\(d\\), in decades since 1978. Find the cost of the treatment, in dollars, when \\(d=1\\). Show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The exponential function \\(f\\) is given by \\(f(x) = 3^x\\). By what factor does \\(f\\) increase when the exponent \\(x\\) increases by 1? Explain how you know. By what factor does \\(f\\) increase when the exponent \\(x\\) increases by 2? Explain how you know. By what factor does \\(f\\) increase when the exponent \\(x\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: A piece of paper has area 93.5 square inches. How many times does it need to be folded in half before the area is less than 1 square inch? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The area covered by an invasive tropical plant triples every year. By what factor does the area covered by the plant increase every month? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For f(t)=50*9^t, find multiplier over one-third time unit. Expected reasoning or answer: 9^(1/3).",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Multiplicative changes over intervals",
+          "Definition": "Exponential models have constant multiplicative change across intervals of equal duration even when duration is fractional: f(t+h)/f(t)=b^h. Inputs and valid units matter.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For f(t)=100*4^t, find factor over half a time unit. Answer: 2."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "4^(1/2)=2, independent of starting t."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Understand that an exponential function still changes by a constant factor over equal intervals, even if the interval is a fractional amount.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For f(t)=50*9^t, find multiplier over one-third time unit. Answer: 9^(1/3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Multiplicative changes over intervals",
+          "Question": "For f(t)=100*4^t, find factor over half a time unit.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "4^(1/2)=2, independent of starting t.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (2.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "2.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For f(t)=50*9^t, find multiplier over one-third time unit.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "9^(1/3).",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For f(t)=50*9^t, find multiplier over one-third time unit.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For f(t)=50*9^t, find multiplier over one-third time unit.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. 4^(1/2)=2, independent of starting t.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 9^(1/3)."
+          ],
+          "Answer": "9^(1/3).",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Multiplicative changes over intervals",
+        "Exponential models have constant multiplicative change across intervals of equal duration even when duration is fractional: f(t+h)/f(t)=b^h. Inputs and valid units matter.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

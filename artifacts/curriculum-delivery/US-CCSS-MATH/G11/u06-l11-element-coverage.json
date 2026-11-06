@@ -1,0 +1,508 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L11",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "3afffb31a29c87bd8cc166d3fa1f9f3c398bf96fe8b852a5fbdd380e381fba13",
+    "teacher/index.html": "73bd963077f4b373ab034fb3ef9c217939e0e23bf91428c6a91cf3e6c8184c2e",
+    "teacher/practice.html": "1d4c609f3615ca5cf27354d4050c9328cdb234e8b40efe496bec21396c3dd2e4",
+    "student/index.html": "6cebb05d2be10c3a3a43e06514d14ef3b1d3cbac992730fed70d7fad2df25d69",
+    "student/practice.html": "458f527991c1f6604b7bf00211bf20ed3510a984d3f1a5c4e2164090a9ce970a"
+  },
+  "Goals": [
+    "Interpret graphs of cosine and sine for input values less than 0.",
+    "Interpret (orally and in writing) the meaning of angle measures less than 0 radians on the unit circle."
+  ],
+  "ElementCount": 61,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-001",
+      "SourceSection": "11.1: Rewind to the Windmill",
+      "SourceExcerpt": "Priya is thinking about the windmill in an earlier lesson. That windmill had a point \\(P\\) at \\((1,0)\\) at the end of the blade that starts at 0 radians pointing directly to the right. Priya says that if the blade rotates \\(\\text- \\frac…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-002",
+      "SourceSection": "11.1: Rewind to the Windmill",
+      "SourceExcerpt": "What do you think Priya means by rotating \\(\\text- \\frac \\pi 2\\) radians? Do you agree with Priya? Be prepared to explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-003",
+      "SourceSection": "11.2: Math Talk: The Hour Hand",
+      "SourceExcerpt": "Here is a clock showing an hour hand at 3 p.m.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-004",
+      "SourceSection": "11.2: Math Talk: The Hour Hand",
+      "SourceExcerpt": "Your teacher will give you a time. Identify the radian angle measure that the hour hand rotates through if it starts at 3 p.m.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-005",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "Create a visual display for the following functions. Include a graph of the function from at least \\(\\text-4\\pi\\) to \\(4\\pi\\) radians, the maximum and minimum value of the function, and the period of the function. Label any intersections…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-006",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "The \\(y\\)-axis is a line of symmetry for one of the two graphs. Which one? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-007",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "Recall that a symmetry is a rigid transformation that takes a figure onto itself (not counting a transformation that leaves every point where it is). For example, the graph of \\(y=(x-3)^2\\) has reflection symmetry across the line \\(x=3\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-008",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "Find a reflection symmetry of the graph of \\(y=\\sin(\\theta)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-009",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "Find a rotation symmetry of the graph of \\(y=\\sin(\\theta)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-010",
+      "SourceSection": "11.3: The Big Picture for Cosine and Sine",
+      "SourceExcerpt": "Find a translation symmetry of the graph of \\(y=\\sin(\\theta)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-011",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "Use graphing technology to graph the functions \\(y = \\cos(\\theta)\\) and \\(y = \\sin(\\theta)\\) on the same axes.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-012",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "Identify two points where the graphs intersect—one with a negative \\(\\theta\\)-coordinate, and one with a positive \\(\\theta\\)-coordinate. What is the exact \\(\\theta\\)-coordinate for each point? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-013",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "What are the \\(y\\)-coordinates of the points of intersection? Explain or show how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-014",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "What could be the value of \\(\\cos(\\theta)\\) if \\(\\sin(\\theta)=0\\)? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-015",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The functions \\(\\cos(\\theta)\\) and \\(\\sin(\\theta)\\) are both periodic, meaning their values repeat at regular intervals. Since the period of cosine and sine is \\(2\\pi\\), the values of these functions repeat any time the input is changed by…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-016",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "Notice that between \\(\\text-2\\pi\\) and \\(0\\), and then between 0 and \\(2\\pi\\), the same wave pattern repeats. Both positive and negative values for \\(\\theta\\) can be thought of through the lens of the unit circle with positive values…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-017",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The \\(\\theta\\)-intercepts of the graph are at all integer multiples of \\(\\pi\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-018",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The relative maximums are at \\(\\frac{\\pi}{2}\\) and any integer multiple of \\(2\\pi\\) from there.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-019",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The relative minimums are at \\(\\frac{3\\pi}{2}\\) and any integer multiple of \\(2\\pi\\) from there.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-020",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The graph of \\(y= \\cos(\\theta)\\) is also periodic, repeating every time the input changes by a multiple of \\(2\\pi\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-021",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The \\(\\theta\\)-intercepts are at \\(\\frac{\\pi}{2}\\) and any integer multiple of \\(\\pi\\) from there.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-022",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The relative maximums are at 0 and any integer multiple of \\(2\\pi\\) from there.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-023",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "The relative minimums are at \\(\\pi\\) and any integer multiple of \\(2\\pi\\) from there.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-ACTIVITY-024",
+      "SourceSection": "11.4: Cosine and Sine Together",
+      "SourceExcerpt": "A function whose values repeat at regular intervals. If \\(f\\) is a periodic function then there is a number \\(p\\), called the period, so that \\(f(x + p) = f(x)\\) for all inputs \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "For which of these angles is the sine negative? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\text-\\frac{\\pi}{4}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\text-\\frac{\\pi}{3}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\text-\\frac{2\\pi}{3}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-005",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\text-\\frac{4\\pi}{3}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-006",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\text-\\frac{11\\pi}{6}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The clock reads 3:00 p.m.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Which of the following are true? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-009",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "In the next hour, the minute hand moves through an angle of \\(2\\pi\\) radians.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-010",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "In the next 5 minutes, the minute hand will move through an angle of \\(\\text-\\frac{\\pi}{6}\\) radians.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-011",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "After the minute hand moves through an angle of \\(\\text-\\pi\\) radians, it is 3:30 p.m.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-012",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "When the hour hand moves through an angle of \\(\\text-\\frac{\\pi}{6}\\) radians, it is 4:00 p.m.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-013",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The angle the minute hand moves through is 12 times the angle the hour hand moves through.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-014",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Plot each point on the unit circle.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-015",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(A=(\\cos(\\text-\\frac{\\pi}{4}), \\sin(\\text-\\frac{\\pi}{4}))\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-016",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(B=(\\cos(2\\pi),\\sin(2\\pi))\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-017",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(C=\\left(\\cos(\\frac{16\\pi}{3}), \\sin(\\frac{16\\pi}{3})\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-018",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(D=\\left(\\cos(\\text-\\frac{16\\pi}{3}), \\sin(\\text-\\frac{16\\pi}{3})\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-019",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Which of these statements are true about the function \\(f\\) given by \\(f(\\theta) = \\sin(\\theta)\\)? Select all that apply.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-020",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The graph of \\(f\\) meets the \\(\\theta\\)-axis at \\(0, \\pm \\pi, \\pm 2\\pi, \\pm 3\\pi, \\ldots\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-021",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The value of \\(f\\) always stays the same when \\(\\pi\\) radians is added to the input.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-022",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The value of \\(f\\) always stays the same when \\(2\\pi\\) radians is added to the input.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-023",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The value of \\(f\\) always stays the same when \\(\\text-2\\pi\\) radians is added to the input.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-024",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The graph of \\(f\\) has a maximum when \\(\\theta = \\frac{5\\pi}{2}\\) radians.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-025",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Here is a unit circle with a point \\(P\\) at \\((1,0)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-026",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "For each positive angle of rotation of the unit circle around its center listed, indicate on the unit circle where \\(P\\) is taken, and give a negative angle of rotation which takes \\(P\\) to the same location.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-027",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(A\\), \\(\\frac{\\pi}{4}\\) radians",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-028",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(B\\), \\(\\frac{\\pi}{2}\\) radians",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-029",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(C\\), \\(\\pi\\) radians",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-030",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(D\\), \\(\\frac{3\\pi}{2}\\) radians",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-031",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "In which quadrant are both the sine and the tangent negative?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-032",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Technology required. Each equation defines a function. Graph each of them to identify which are periodic. Select all that are.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-033",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(y = \\sin(\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-034",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(y = x^2 - 2x + 5\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-035",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "\\(y = \\cos(\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-036",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "List three different counterclockwise angles of rotation around the center of the circle that take \\(P\\) to \\(Q\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L11-PRACTICE-037",
+      "SourceSection": "Problem 8",
+      "SourceExcerpt": "Which quadrant(s) are the angles \\(\\frac{13\\pi}{4}\\) and \\(\\frac{10\\pi}{3}\\) radians in? Is the sine of these angles positive or negative?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

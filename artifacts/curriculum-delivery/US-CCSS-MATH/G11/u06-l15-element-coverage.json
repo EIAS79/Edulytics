@@ -1,0 +1,340 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L15",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "35a563dc6fbe8ac5950b14b2ae077c2e884d623826d9abc835067301388bd629",
+    "teacher/index.html": "a488cd25c3db165fd5597016a3061e315722762c2efe4db7eb21ccec3836fe28",
+    "teacher/practice.html": "b88c310ca0f72e4e2e5e90580ea36dcea10298335e8d0c55af1c4973adcbfa96",
+    "student/index.html": "66e91ddb729540c3c696a291a6395becda63a7d25786ebfac51f902046317131",
+    "student/practice.html": "8af68776e537acd357bbb1baab542ac6e74ab91129d870ec9985b5158c55c387"
+  },
+  "Goals": [
+    "Identify the midline, amplitude, and horizontal translation in trigonometric functions presented graphically and with equations.",
+    "Predict how changing the value of $k$ in $y=cos(kx)$ changes the graph of the function for whole number values of $k$."
+  ],
+  "ElementCount": 40,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-001",
+      "SourceSection": "15.1: Notice and Wonder: Musical Notes",
+      "SourceExcerpt": "Here are pictures of sound waves for two different musical notes:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-002",
+      "SourceSection": "15.1: Notice and Wonder: Musical Notes",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-003",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "Match each equation with its graph. More than 1 equation can match the same graph.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-004",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = \\text-\\cos(\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-005",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = 2\\sin(\\theta)-3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-006",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = \\cos\\left(\\theta + \\frac{\\pi}{2}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-007",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = 3\\sin(\\theta) - 2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-008",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = \\sin(\\theta-\\frac\\pi 2)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-009",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "\\(y = \\sin(\\theta+\\pi)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-010",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "Find an equation for this graph using the sine function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-011",
+      "SourceSection": "15.2: Equations and Graphs",
+      "SourceExcerpt": "Find another equation for the same graph using a cosine function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-012",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "Complete the table of values for the expression \\(\\sin(2\\theta)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-013",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "Plot the values and sketch a graph of the equation \\(y = \\sin(2\\theta)\\). How does the graph of \\(y = \\sin(2\\theta)\\) compare to the graph of \\(y = \\sin(\\theta)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-014",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "Predict what the graph of \\(y = \\cos(4\\theta)\\) will look like and make a sketch. Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-015",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "We can find the amplitude and midline of a trigonometric function using the graph or from an equation. For example, let’s look at the function given by the equation \\(y = 3\\cos\\left(\\theta+\\frac{\\pi}{4}\\right) + 2\\). We can see that the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-016",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "Another type of transformation is one that affects the period and that is when a horizontal scale factor is used. For example, let's look at the equation \\(y = \\cos(2\\theta)\\) where the variable \\(\\theta\\) is multiplied by a number. Here,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-017",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "Notice that the graph of \\(y=\\cos(2\\theta)\\) has the same general shape as the graph of \\(y =\\cos(\\theta)\\) (same midline and amplitude) but the waves are compressed together. And what if we wanted to give the graph of cosine a stretched…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-018",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "The maximum distance of the values of a periodic function above or below the midline.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-ACTIVITY-019",
+      "SourceSection": "15.3: Double the Sine",
+      "SourceExcerpt": "The value halfway between the maximum and minimum values of a period function. Also the horizontal line whose \\(y\\)-coordinate is that value.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Here is a graph of a trigonometric function. Which equation could define this function?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(y = 1.5\\sin(x) - 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(y = 1.5\\cos(x) - 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(y = \\text-4\\sin(1.5x)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-005",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(y = \\text-4\\cos(1.5x)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Select all the functions that have period \\(\\pi\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-007",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(y = \\cos\\left(\\frac{x}{2}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(y = \\sin\\left(\\frac{x}{2}\\right)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Sketch a graph of \\(a(\\theta) = \\cos(3\\theta)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Compare the graph of \\(a\\) to the graph of \\(b(\\theta)=\\cos(\\theta)\\). How are the two graphs alike? How are they different?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The functions \\(f\\) and \\(g\\) are given by \\(f(x) = \\cos(x)\\) and \\(g(x) = \\cos(5x)\\). How are the graphs of \\(f\\) and \\(g\\) related?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Here is a point at the tip of a windmill blade. The center of the windmill is 6 feet off the ground and the blades are 1.5 feet long.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Write an equation giving the height \\(h\\) of the point \\(P\\) after the windmill blade rotates by an angle of \\(a\\). Point \\(P\\) is currently rotated \\(\\frac{\\pi}{4}\\) radians from the point directly to the right of the center of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-014",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The coordinates of \\(P\\) are \\((1,0)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "If the wheel makes a \\(\\frac{1}{3}\\) rotation counterclockwise around its center, what radian angle does \\(P\\) rotate through?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "If the wheel makes a \\(1 \\frac{1}{4}\\) rotation counterclockwise around its center, what radian angle does \\(P\\) rotate through?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-017",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "A Ferris wheel has a radius of 95 feet and its center is 105 feet above the ground. Which statement is true about a point on the Ferris wheel as it goes around in a circle?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-018",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "It is 85 feet off the ground once in quadrant 1 and once in quadrant 2.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-019",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "It is is 85 feet off the ground once in quadrant 2 and once in quadrant 3.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "It is 85 feet off the ground once in quadrant 3 and once in quadrant 4.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U06-L15-PRACTICE-021",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "It is 85 feet off the ground once in quadrant 4 and once in quadrant 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u06-l15.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

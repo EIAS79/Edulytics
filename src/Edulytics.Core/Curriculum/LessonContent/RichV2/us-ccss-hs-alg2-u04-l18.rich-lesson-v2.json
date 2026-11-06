@@ -1,0 +1,106 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l18-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L18",
+      "CultureCode": "en",
+      "Title": "Applications of Logarithmic Functions",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Use logarithmic relationships to solve problems about acidity and earthquakes.",
+        "Log scales translate multiplicative changes into additive differences. For pH=-log_10([H+]) with concentration measured consistently, [H+]=10^-3 gives pH3. An earthquake magnitude increase of1 corresponds to a tenfold amplitude ratio on a base-ten model.",
+        "Source activity 18.1: Scrambled Logs: Without using a calculator, put the following expressions in order, from least to greatest. Be prepared to explain your reasoning. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.2: How Acidic Is It?: The pH scale is a way to measure the acidity of a liquid solution. It is based on the concentration of positive hydrogen ions in the liquid. A smaller pH indicates more hydrogen ions and higher acidity. A larger pH indicates less hydrogen ions and lower acidity. Here is a table showing the hydrogen ion concentration (in moles per liter) and the pH of some different liquids:… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.3: pH Ratings: This table shows the relationship between hydrogen ion concentrations and pH ratings (acidity) for different substances. Write an equation to represent the pH rating, \\(p\\), in terms of the hydrogen ion concentration \\(h\\), in moles per liter. Test your equation by using the hydrogen ion concentration of a substance from the table as the input. Does it produce the right pH… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 18.4: Measuring Earthquake Strength: Here is a table showing the Richter ratings for displacements recorded by a seismograph 100 km from the epicenter of an earthquake. Compare an earthquake rated with a magnitude of 5 on the Richter scale and that rated with a 6. How do their displacements compare? What about an earthquake with a magnitude rated with a 2 and that rated with a 3? Discuss with a partner how the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A function \\(g\\) can be represented with a graph that contains \\((\\text-2,1)\\) and \\(\\left(1,\\frac{1}{64}\\right)\\). Write an equation of the form \\(g(x) = a \\boldcdot b^x\\) to define the function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Using the fact that \\(2^{10} = 1024\\), Tyler estimates that \\(2^{20}\\) is about 1,000,000, and \\(\\log_2(1,\\!000,\\!000)\\) is about 20. Do you agree with Tyler? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: For each logarithmic equation, write an equivalent equation in exponential form. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The function \\(f\\) given by \\(f(t) = 10e^{0.07t}\\) models the balance in a bank account, in thousands of dollars, \\(t\\) years after it was opened. What was the opening balance? About when does the account balance reach 1,000,000 dollars? Explain or show how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The function \\(f\\) is given by \\(f(x) = 20 \\boldcdot e^x\\). Write an equation of an exponential function \\(g\\) whose graph meets the graph of \\(f\\) for a positive value of \\(x\\). Write an equation of an exponential function \\(h\\) whose graph does not meet the graph of \\(f\\) for any positive value of \\(x\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: The area of a wall covered by mold is growing exponentially. Without treatment, the area doubles every month. Complete the table. Write a function, \\(f\\), to represent the time in months as a function of the square feet of area covered by mold, \\(a\\). The wall is 240 square feet; about how many months will it take for… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: A bank account had a balance of $100. Because of the interest accumulated over time, the balance doubles every decade. No withdrawals or other deposits are made. To find out when the account will have a balance of $1,000, Diego wrote: \\(100 \\boldcdot 2^t =1,\\!000\\) and Mai wrote: \\(t = \\log_2… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Concentrations10^-5 and10^-3: which has lower pH? Expected reasoning or answer: 10^-3 gives pH3, lower than pH5.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Logarithms in acidity and seismic scales",
+          "Definition": "Log scales translate multiplicative changes into additive differences. For pH=-log_10([H+]) with concentration measured consistently, [H+]=10^-3 gives pH3. An earthquake magnitude increase of1 corresponds to a tenfold amplitude ratio on a base-ten model.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A solution has hydrogen-ion concentration10^-3. Find pH. Answer: pH=3."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "pH=-log10(10^-3)=3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use logarithmic relationships to solve problems about acidity and earthquakes.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Concentrations10^-5 and10^-3: which has lower pH? Answer: 10^-3 gives pH3, lower than pH5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Logarithms in acidity and seismic scales",
+          "Question": "A solution has hydrogen-ion concentration10^-3. Find pH.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "pH=-log10(10^-3)=3.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (pH=3.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "pH=3.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Concentrations10^-5 and10^-3: which has lower pH?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "10^-3 gives pH3, lower than pH5.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Concentrations10^-5 and10^-3: which has lower pH?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Concentrations10^-5 and10^-3: which has lower pH?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. pH=-log10(10^-3)=3.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 10^-3 gives pH3, lower than pH5."
+          ],
+          "Answer": "10^-3 gives pH3, lower than pH5.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Logarithms in acidity and seismic scales",
+        "Log scales translate multiplicative changes into additive differences. For pH=-log_10([H+]) with concentration measured consistently, [H+]=10^-3 gives pH3. An earthquake magnitude increase of1 corresponds to a tenfold amplitude ratio on a base-ten model.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

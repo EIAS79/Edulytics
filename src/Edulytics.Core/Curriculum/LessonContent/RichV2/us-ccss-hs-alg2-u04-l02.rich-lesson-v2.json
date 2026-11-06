@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l02-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L02",
+      "CultureCode": "en",
+      "Title": "Representations of Growth and Decay",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Explain (in writing) the meaning of different constants in an expression representing an exponential function. Interpret equations and graphs that represent exponential functions in context.",
+        "In f(t)=a*b^t, a=f(0) is initial amount, b is unit-input growth factor, and its percent change is 100(b-1)%. Graphs are discrete or continuous according to context.",
+        "Source activity 2.1: One Fourth at a Time: Priya borrowed $160 from her grandmother. Each month, she pays off one fourth of the remaining balance that she owes. What amount will Priya pay her grandmother in the third month? Discuss with a partner why the expression \\(160 \\boldcdot \\left(\\frac34\\right)^3\\) represents the balance Priya owes her grandmother at the end of the third month. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.2: Climbing Cost: The tuition at a college was $30,000 in 2012, $31,200 in 2013, and $32,448 in 2014. The tuition has been increasing by the same percentage since the year 2000. The equation \\(c(t)=30,\\!000 \\boldcdot (1.04)^t\\) represents the cost of tuition, in dollars, as a function of \\(t\\), the number of years since 2012. Explain what the 30,000 and 1.04 tell us about this situation. What… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 2.3: Two Vans and Their Values: A small business bought a van for $40,000 in 2008. The van depreciates by 15% every year after its purchase. Which graph correctly represents the value of the van as a function of years since its purchase? Be prepared to explain why each of the other graphs could not represent the function. Find the value of the van 8 years after its purchase. Show your reasoning. In the same… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: In 1990, the value of a home is $170,000. Since then, its value has increased 5% per year. What is the approximate value of the home in the year 1993? Write an equation, in function notation, to represent the value of the home as a function of time in years since 1990, \\(t\\). Will the value of the home be more than… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The graph shows a wolf population which has been growing exponentially. What was the population when it was first measured? By what factor did the population grow in the first year? Write an equation relating the wolf population, \\(w\\), and the number of years since it was measured, \\(t\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the graph of an exponential function \\(f\\). Find an equation defining \\(f\\). Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The equation \\(f(t) = 24,\\!500 \\boldcdot (0.88)^t\\) represents the value of a car, in dollars, \\(t\\) years after it was purchased. What do the numbers 24,500 and 0.88 mean? What does \\(f(9)\\) represent? Sketch a graph that represents the function \\(f\\) and shows \\(f(0), \\) \\(f(1),\\) and \\(f(2)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The first two terms of an exponential sequence are 18 and 6. What are the next 3 terms of this sequence? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: A bacteria population has been doubling each day for the last 5 days. It is currently 100,000. What was the bacterial population 5 days ago? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Select all expressions that are equivalent to \\(27^{\\frac13}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For g(t)=80*(0.75)^t, state initial value and percent decay. Expected reasoning or answer: 80 and 25% decay.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parameters in exponential models",
+          "Definition": "In f(t)=a*b^t, a=f(0) is initial amount, b is unit-input growth factor, and its percent change is 100(b-1)%. Graphs are discrete or continuous according to context.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For f(t)=50*(1.1)^t, identify initial value, growth percent, and f(2). Answer: Initial50; 10% per unit; f(2)=60.5."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "a=50; factor1.1 is 10% growth; 50*1.21=60.5."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret equations and graphs that represent exponential functions in context.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "For g(t)=80*(0.75)^t, state initial value and percent decay. Answer: 80 and 25% decay."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Parameters in exponential models",
+          "Question": "For f(t)=50*(1.1)^t, identify initial value, growth percent, and f(2).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "a=50",
+            "factor1.1 is 10% growth",
+            "50*1.21=60.5."
+          ],
+          "Answer": "Initial50; 10% per unit; f(2)=60.5.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For g(t)=80*(0.75)^t, state initial value and percent decay.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "80 and 25% decay.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "For g(t)=80*(0.75)^t, state initial value and percent decay.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: For g(t)=80*(0.75)^t, state initial value and percent decay.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. a=50",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 80 and 25% decay."
+          ],
+          "Answer": "80 and 25% decay.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Parameters in exponential models",
+        "In f(t)=a*b^t, a=f(0) is initial amount, b is unit-input growth factor, and its percent change is 100(b-1)%. Graphs are discrete or continuous according to context.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

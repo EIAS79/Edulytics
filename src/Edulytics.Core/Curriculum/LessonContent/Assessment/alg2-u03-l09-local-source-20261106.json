@@ -1,0 +1,65 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L09",
+  "LearningGoals": [
+    "Calculate solutions to radical equations.",
+    "Create radical equations that have either zero, one, or two solutions.",
+    "Explain the steps taken to solve radical equations."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-REI.A.2",
+      "SortOrder": 1
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Solve sqrt(x+6)=x.",
+    "Steps": [
+      "x>=0",
+      "square yields x²-x-6=0",
+      "candidates3,-2",
+      "reject -2."
+    ],
+    "Answer": "x=3"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "9.1: Math Talk: Radical Equations",
+      "9.2: Getting to the Root of the Problem",
+      "9.3: Write Your Own Equation"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Solve sqrt(x+5)=x-1.",
+    "Expected": "x=4.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l09-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l09.rich-lesson-v2.json"
+}

@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l07-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L07",
+      "CultureCode": "en",
+      "Title": "Areas under a Normal Curve",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Determine areas under a normal curve. Interpret (orally and in writing) the proportion of values in certain intervals under a normal curve in a variety of different contexts.",
+        "The standard normal probability between z=-1 and z=1 is approximately0.6827, and the complement outside that interval about0.3173. These are model-based proportions, not exact counts for arbitrary finite samples.",
+        "Source activity 7.1: Find the Areas: The images show a normal curve with mean of 40 and standard deviation of 2. The area under the curve to the left of 39 is 0.3085. The area under the curve to the left of 39 is 0.3085. The area under the curve to the left of 43 is 0.9332. The area under the curve to the left of 43 is 0.9332. Since it is a normal curve, we know that the total area under the curve is 1. Use the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.2: Life of Lights: The life span of light bulbs is approximately normally distributed. Some statistics about life spans of two different types of light bulbs are listed. LED bulbs: mean = 2,300 days, standard deviation = 230 days incandescent bulbs: mean = 100 days, standard deviation = 10 days To estimate the proportion of bulbs that burn out in a certain interval of time, use technology to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 7.3: Waiting for a Waiter: The wait times at a popular restaurant are approximately normally distributed. The mean wait time is 24.3 minutes with a standard deviation of 3.2 minutes. Use technology to estimate the wait times for the described groups of diners. Describe the number of minutes diners have to wait if their wait times are in the longest 10% of wait times for diners at this restaurant.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: When Lin drives a golf ball, it travels a mean distance of 200 yards with a standard deviation of 20 yards, and the distribution of lengths is approximately normal. Approximately what percentage of her shots will travel less than 180 yards? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A distribution is approximately normal with a mean of 18 and a standard deviation of 4. Match the interval with the approximate percentage of data that falls within that interval. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Tyler looks at this histogram of a distribution with a mean of 6.7 grams and a standard deviation of 1 gram. He claims that approximately 68% of the data is between 5.7 and 7.7 grams. What is the error in his thinking? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Select all designs which describe an experimental study. 100 randomly selected students are asked if they have their driver's license. 50 baseball players are selected to wear compression sleeves during practice and games and another 50 players are selected not to wear compression sleeves during practice and games.… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: A normal curve with a mean of 400 and a standard deviation of 50 is shown. Shade the region under the curve within two standard deviations of the mean. How much of the data falls within the shaded region? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: How many data points are presented in the histogram? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: About what fraction lies outside ±1 SD? Expected reasoning or answer: 31.73%.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normal curve probabilities",
+          "Definition": "The standard normal probability between z=-1 and z=1 is approximately0.6827, and the complement outside that interval about0.3173. These are model-based proportions, not exact counts for arbitrary finite samples.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Approximately what fraction of a normal population lies within one standard deviation of its mean? Answer: About 68.27%."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Use standard normal area from z=-1 to z=1."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Interpret (orally and in writing) the proportion of values in certain intervals under a normal curve in a variety of different contexts.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "About what fraction lies outside ±1 SD? Answer: 31.73%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Normal curve probabilities",
+          "Question": "Approximately what fraction of a normal population lies within one standard deviation of its mean?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Use standard normal area from z=-1 to z=1.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (About 68.27%.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "About 68.27%.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "About what fraction lies outside ±1 SD?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "31.73%.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "About what fraction lies outside ±1 SD?",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: About what fraction lies outside ±1 SD?",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Use standard normal area from z=-1 to z=1.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 31.73%."
+          ],
+          "Answer": "31.73%.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Normal curve probabilities",
+        "The standard normal probability between z=-1 and z=1 is approximately0.6827, and the complement outside that interval about0.3173. These are model-based proportions, not exact counts for arbitrary finite samples.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

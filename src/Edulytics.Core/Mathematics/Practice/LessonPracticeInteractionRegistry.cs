@@ -241,7 +241,8 @@ public static class LessonPracticeInteractionRegistry
             "exact_scalar" =>
                 LessonPracticeInteractionKind.NumericEntry,
 
-            "exact_rational" =>
+            "exact_rational" or
+            "exact_fraction" =>
                 LessonPracticeInteractionKind.FractionEntry,
 
             "exact_ordered_pair" or

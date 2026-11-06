@@ -64,6 +64,7 @@ builder.Services
 builder.Services.AddScoped<Edulytics.Web.Controllers.Grade5U03L02RubricService>();
 // Grade 10 Geometry first-party teacher-scored construction/proof/reasoning persistence.
 builder.Services.AddScoped<Edulytics.Web.Controllers.Grade10GeometryRubricService>();
+builder.Services.AddScoped<Edulytics.Web.Controllers.Grade11Algebra2RubricService>();
 
 builder.Services
     .AddMultiInstanceScalePhase25(

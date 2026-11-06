@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l12-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L12",
+      "CultureCode": "en",
+      "Title": "Tangent",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Compare and contrast (in writing) the features of the cosine, sine, and tangent functions. Describe (orally and in writing) features of the graph of the tangent function, such as period, domain, and asymptotes.",
+        "Tangent θ=sinθ/cosθ has periodπ and domain excluding θ=π/2+kπ. It is unbounded on intervals between vertical asymptotes, unlike sine and cosine.",
+        "Source activity 12.1: Notice and Wonder: An Unusual Function: What do you notice? What do you wonder? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.2: A Tangent Ratio: Complete the table. For each positive angle in the table, add the corresponding point and the segment between it and the origin to the unit circle. How are the values of \\(\\tan(\\theta)\\) like the values of \\(\\cos(\\theta)\\) and \\(\\sin(\\theta)\\)? How are they different? Where does the line \\(x=1\\) intersect the line that passes through the origin and the point corresponding to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.3: The Tangent Function: Before we graph \\(y= \\tan(\\theta)\\), let’s figure out some things that must be true. Explain why the graph of \\(\\tan(\\theta)\\) has a vertical asymptote at \\(x = \\frac{\\pi}{2}\\). Does the graph of \\(\\tan(\\theta)\\) have other vertical asymptotes? Explain how you know. For which values of \\(\\theta\\) is \\(\\tan(\\theta)\\) zero? For which values of \\(\\theta\\) is \\(\\tan(\\theta)\\) one?… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Here is a graph of \\(f\\) given by \\(f(\\theta) = \\tan(\\theta)\\). Are \\(\\frac{\\pi}{2}\\) and \\(\\frac{3\\pi}{2}\\) in the domain of \\(f\\)? Explain how you know. What are the \\(\\theta\\)-intercepts of the graph of \\(f\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The function \\(f\\) is given by \\(f(\\theta) = \\tan(\\theta)\\). Which of the statements are true? Select all that apply. \\(f\\) is a periodic function The domain of \\(f\\) is all real numbers. The range of \\(f\\) is all real numbers. The period of \\(f\\) is \\(2\\pi\\). The period of \\(f\\) is \\(\\pi\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Here is the unit circle. If \\(\\tan(a) > 1\\) where could angle \\(a\\) be on the unit circle? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Here is a point on the unit circle. Explain why the line going through \\((0,0)\\) and \\(P\\) has slope \\(\\frac{1}{2}\\). What is the tangent of the angle represented by \\(P\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: For which angles \\(\\theta\\) between 0 and \\(2\\pi\\) is \\(\\cos(\\theta) < 0\\)? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: What angle will the hour hand rotate through in the next hour? Explain how you know. What angle will the hour hand rotate through in the next 12 hours? Explain how you know. What angle will the hour hand rotate through in the next 24 hours? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: The function \\(f\\) is given by \\(f(x) = x^2\\). Write an equation for the function \\(g\\) whose graph is the graph of \\(f\\) translated 3 units left and then reflected over the \\(y\\)-axis. Write an equation for the function \\(h\\) whose graph is the graph of \\(f\\) reflected over the \\(y\\)-axis and then translated 3 units… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find tanπ. Expected reasoning or answer: 0.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tangent and its graph",
+          "Definition": "Tangent θ=sinθ/cosθ has periodπ and domain excluding θ=π/2+kπ. It is unbounded on intervals between vertical asymptotes, unlike sine and cosine.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Find tan(π/4) and state tan(π/2) status. Answer: tanπ/4=1; tanπ/2 undefined."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "sinπ/4=cosπ/4 so ratio1; at π/2 cosine zero so undefined."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Describe (orally and in writing) features of the graph of the tangent function, such as period, domain, and asymptotes.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Find tanπ. Answer: 0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Tangent and its graph",
+          "Question": "Find tan(π/4) and state tan(π/2) status.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "sinπ/4=cosπ/4 so ratio1",
+            "at π/2 cosine zero so undefined.",
+            "Interpret the computed result (tanπ/4=1; tanπ/2 undefined.) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "tanπ/4=1; tanπ/2 undefined.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find tanπ.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "0.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Find tanπ.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Find tanπ.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. sinπ/4=cosπ/4 so ratio1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 0."
+          ],
+          "Answer": "0.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Tangent and its graph",
+        "Tangent θ=sinθ/cosθ has periodπ and domain excluding θ=π/2+kπ. It is unbounded on intervals between vertical asymptotes, unlike sine and cosine.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L13",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "7c720ceaf0f651c4247737caff4469dacb839d3ec5788a51346e3f0fa54a1cda",
+    "teacher/index.html": "015d647a017ce4cd8b92a57ee9a9fd8a44defd5ed4aae0d74e463d76078eb472",
+    "teacher/practice.html": "7d93914e81a42d1fae24c82ffcfe6714e0add8ba987c65071e85d7a8a5702616",
+    "student/index.html": "71cf775080aa89c0018c63abe2484b08030490450106fbbb743de4fba81c7d09",
+    "student/practice.html": "c373c10f6001a3510f55b9919c07d195d4849ae9386a098fd11abc9097de69de"
+  },
+  "Goals": [
+    "Compare and contrast diagrams and long division as ways of representing division.",
+    "Use long division to find the quotient of two polynomials."
+  ],
+  "ElementCount": 52,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-001",
+      "SourceSection": "13.1: Notice and Wonder: Different Divisions",
+      "SourceExcerpt": "What do you notice? What do you wonder?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-002",
+      "SourceSection": "13.1: Notice and Wonder: Different Divisions",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 2x^2\\phantom{+7x+22} \\\\ x+1 \\enclose{longdiv}{2x^3+7x^2+7x+2} \\\\ \\underline{\\text-2x^3-2x^2} \\phantom{+7x+22} \\\\ 5x^2+7x \\phantom{+22} \\end{array} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-003",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 3x-5 \\\\ 2x+1 \\enclose{longdiv}{6x^2 - 7x - 5} \\\\ \\underline{\\text-6x^2 - 3x} \\phantom{-55} \\\\ \\text-10x-5 \\\\ \\underline{10x+5} \\\\ 0 \\end{array} \\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-004",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "Pause here for a whole-class discussion.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-005",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "Diego used the long division shown here to figure out that \\(6x^2-7x-5 = (2x+1)(3x-5)\\). Show what it would look like if he had used a diagram.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-006",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 2x^2 \\phantom{+x+100} \\\\ x-2 \\enclose{longdiv}{2x^3-7x^2+x+10} \\\\ \\underline{\\text-2x^3+4x^2} \\phantom{+x+100} \\end{array}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-007",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "\\((x-2)\\) is a factor of \\(2x^3 - 7x^2 + x + 10\\), which means there is some other factor \\(A\\) where \\(2x^3 - 7x^2 + x + 10=(x-2)(A)\\). Finish the division started here to find the value of \\(A\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-008",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} 2x+1 \\enclose{longdiv}{2x^3+13x^2+16x+5} \\end{array}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-009",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "Jada used the diagram shown here to figure out that \\(2x^3 + 13x^2 + 16x + 5 = (2x+1)(x^2+6x+5)\\). Show what it would look like if she had used long division.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-010",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "What is \\((x^4-1) \\div (x-1)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-011",
+      "SourceSection": "13.2: Polynomial Long Division",
+      "SourceExcerpt": "Use your response to predict what \\((x^7-1) \\div (x-1)\\) is, and then use division to check your prediction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-012",
+      "SourceSection": "13.3: More Long Division",
+      "SourceExcerpt": "Here are some polynomial functions with known factors. Rewrite each polynomial as a product of linear factors using long division.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-013",
+      "SourceSection": "13.3: More Long Division",
+      "SourceExcerpt": "\\(A(x)=x^3 - 7x^2 - 16x + 112\\), \\((x-7)\\) \\(\\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} x^2\\phantom{55555555555} \\\\ x-7 \\enclose{longdiv}{x^3 - 7x^2 -16x+112} \\\\ \\underline{\\text-x^3 + 7x^2} \\phantom{.55555555555} \\\\…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-014",
+      "SourceSection": "13.3: More Long Division",
+      "SourceExcerpt": "\\(C(x)=x^3 - 3x^2 - 13x + 15\\), \\((x+3)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-015",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "Here are pairs of equivalent expressions, one in standard form and the other in factored form. Find the missing numbers.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-016",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(x^2 + 9x + 14\\) and \\((x+2)(x+\\boxed{\\phantom{30}})\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-017",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(x^2 - 9x + 20\\) and \\((x-\\boxed{\\phantom{30}})(x-\\boxed{\\phantom{30}})\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-018",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(2x^2+2x-24\\) and \\(2(x+\\boxed{\\phantom{30}})(x-3)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-019",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(\\boxed{\\phantom{30}}x^3 + 11x^2 - 17x + 6\\) and \\((\\text-x+3)(2x-1)(x-2)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-020",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(6x^3+2x^2-16x+8\\) and \\((x-1)(2x+4)(\\boxed{\\phantom{30}}x-2)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-021",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(2x^3+7x^2-7x-12\\) and \\((2x-3)(x+\\boxed{\\phantom{30}})(x+\\boxed{\\phantom{30}})\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-022",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(x^3+6x^2+\\boxed{\\phantom{30}}x-10\\) and \\((x+2)(x-1)(x+\\boxed{\\phantom{30}})\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-023",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "In earlier grades, we learned how to add, subtract, and multiply numbers. We also learned that one way to divide numbers, like 1573 divided by 11, is by using long division.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-024",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "Here the division has been completed in stages, focusing on the highest power of 10 (1,000) in the dividend 1,573, and working down. This long division shows that \\(1573 = (11)(143)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-025",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "Similar to integers, we can add, subtract, and multiply polynomials. It turns out that we can also use long division on polynomials. Instead of focusing on powers of 10, in polynomial long division we focus on powers of \\(x\\). Just as we…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-026",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} x^2\\phantom{+7x+33} \\\\ x+1 \\enclose{longdiv}{x^3+5x^2+7x+3} \\\\ \\underline{\\text-x^3-x^2} \\phantom{+7x+333} \\\\ 4x^2+7x \\phantom{+33}\\\\ \\end{array}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-027",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} x^2+4x\\phantom{+33} \\\\ x+1 \\enclose{longdiv}{x^3+5x^2+7x+3} \\\\ \\underline{\\text-x^3-x^2} \\phantom{+7x+333} \\\\ 4x^2+7x \\phantom{+33}\\\\ \\underline{\\text-4x^2-4x}…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-028",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "\\(\\displaystyle \\displaystyle \\displaystyle \\require{enclose} \\begin{array}{r} x^2+4x+3 \\\\ x+1 \\enclose{longdiv}{x^3+5x^2+7x+3} \\\\ \\underline{\\text-x^3-x^2} \\phantom{+7x+333} \\\\ 4x^2+7x \\phantom{+33}\\\\ \\underline{\\text-4x^2-4x}…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-029",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "At each stage, the focus is only on the term with the largest exponent that’s left. At the conclusion, we can see that \\(x^3 + 5x^2 + 7x + 3 = (x+1)(x^2+4x+3)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-030",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "How the outputs of a function change as we look at input values further and further from 0.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-031",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "This function shows different end behavior in the positive and negative directions. In the positive direction the values get larger and larger. In the negative direction the values get closer and closer to -3.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-ACTIVITY-032",
+      "SourceSection": "13.4: Missing Numbers",
+      "SourceExcerpt": "The power to which a factor occurs in the factored form of a polynomial. For example, in the polynomial \\((x-1)^2(x+3)\\), the factor \\(x-1\\) has multiplicity 2 and the factor \\(x+3\\) has multiplicity 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The polynomial function \\(B(x)=x^3-21x+20\\) has a known factor of \\((x-4)\\). Rewrite \\(B(x)\\) as a product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Let the function \\(P\\) be defined by \\(P(x) = x^3 + 7x^2 - 26x - 72\\) where \\((x+9)\\) is a factor. To rewrite the function as the product of two factors, long division was used but an error was made:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\displaystyle \\require{enclose} \\begin{array}{r} x^2+16x+118\\phantom{000} \\\\ x+9 \\enclose{longdiv}{x^3+7x^2-26x-72} \\phantom{000}\\\\ \\underline{-x^3+9x^2} \\phantom{-26x-720000} \\\\ 16x^2-26x \\phantom{-720000}\\\\ \\underline{-16x^2+144x}…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "How can we tell by looking at the remainder that an error was made somewhere?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "For the polynomial function \\(A(x)=x^4-2x^3-21x^2+22x+40\\) we know \\((x-5)\\) is a factor. Select all the other linear factors of \\(A(x)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Match the polynomial function with its constant term.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(P(x)=(x-2)(x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(P(x)=(x+2)(x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(P(x)=\\frac12(x-2)(x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(P(x)=5(x-2)(x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(P(x)=\\text-5(x-2)(x-3)(x+7)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "What are the solutions to the equation \\((x-2)(x-4)=8\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-013",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The graph of a polynomial function \\(f\\) is shown. Which statement is true about the end behavior of the polynomial function?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-014",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "As \\(x\\) gets larger and larger in the either the positive or the negative direction, \\(f(x)\\) gets larger and larger in the positive direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "As \\(x\\) gets larger and larger in the positive direction, \\(f(x)\\) gets larger and larger in the positive direction. As \\(x\\) gets larger and larger in the negative direction, \\(f(x)\\) gets larger and larger in the negative direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "As \\(x\\) gets larger and larger in the positive direction, \\(f(x)\\) gets larger and larger in the negative direction. As \\(x\\) gets larger and larger in the negative direction, \\(f(x)\\) gets larger and larger in the positive direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "As \\(x\\) gets larger and larger in the either the positive or negative direction, \\(f(x)\\) gets larger and larger in the negative direction.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-018",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The polynomial function \\(p(x)=x^3+3x^2-6x-8\\) has a known factor of \\((x+4)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-019",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Rewrite \\(p(x)\\) as the product of linear factors.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L13-PRACTICE-020",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Draw a rough sketch of the graph of the function.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l13.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

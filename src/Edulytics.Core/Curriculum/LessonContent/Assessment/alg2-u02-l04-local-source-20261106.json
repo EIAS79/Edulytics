@@ -1,0 +1,70 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L04",
+  "LearningGoals": [
+    "Comprehend that when polynomials are combined by addition, subtraction, or multiplication, the result is a polynomial.",
+    "Justify (orally) conclusions about what happens when integers or polynomials are combined using arithmetic operations."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-APR.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-APR.A.1",
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSA-APR.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Add x^2+2x and 3x^2-x+1, then multiply x by x+2.",
+    "Steps": [
+      "Group like powers: (1+3)x^2+(2-1)x+1",
+      "distribute x."
+    ],
+    "Answer": "Sum 4x^2+x+1; product x^2+2x."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "4.1: Notice and Wonder: What Can Happen to Integers",
+      "4.2: Experimenting with Integers",
+      "4.3: Experimenting with Polynomials"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Subtract (2x^2+3x-1) from (5x^2-x+4).",
+    "Expected": "3x^2-4x+5.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u02-l04-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l04.rich-lesson-v2.json"
+}

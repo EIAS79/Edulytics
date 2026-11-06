@@ -1,0 +1,316 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L07",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "d2afcff4203259bb59f337c280144605c959176c29ac105982b2654525141e33",
+    "teacher/index.html": "eaa18b4167b4d3283b1cf38977f8da7cc484b7087d92d7f010b3d0d2516c4533",
+    "teacher/practice.html": "9c68bf2720ebd476b6c7a62c3a76ad5e8e7f0474f8ea47263fe75bffc978838f",
+    "student/index.html": "0f598ef653193cacf3fd9b48b005e715aad9b319121ae2ebcc2954b79b45fd83",
+    "student/practice.html": "a6154ac2b6f33a441c83ad60bd9a444350d00844b20f21b52c8414f9a3ef48cf"
+  },
+  "Goals": [
+    "Comprehend the term “half-life” in relation to the radioactive decay of certain elements and use it to calculate the age of different objects.",
+    "Describe (in writing) the parameters of exponential expressions that represent different decay situations."
+  ],
+  "ElementCount": 37,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-001",
+      "SourceSection": "7.1: Halving and Doubling",
+      "SourceExcerpt": "A colony of microbes doubles in population every 6 hours. Explain why we could say that the population grows by a factor of \\(\\sqrt[6]{2}\\) every hour.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-002",
+      "SourceSection": "7.1: Halving and Doubling",
+      "SourceExcerpt": "A bacteria population decreases by a factor of \\(\\frac{1}{2}\\) every 4 hours. Explain why we could also say that the population decays by a factor of \\(\\sqrt[4]{\\frac12}\\) every hour.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-003",
+      "SourceSection": "7.2: Radiocarbon Dating",
+      "SourceExcerpt": "Carbon-14 is used to find the age of certain artifacts and fossils. It has a half-life of 5,730 years, so if an object has carbon-14, it loses half of it every 5,730 years.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-004",
+      "SourceSection": "7.2: Radiocarbon Dating",
+      "SourceExcerpt": "At a certain point in time, a fossil had 3 picograms (a trillionth of a gram) of carbon-14. Complete the table with the missing mass of carbon-14 and years.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-005",
+      "SourceSection": "7.2: Radiocarbon Dating",
+      "SourceExcerpt": "What do the 2.5, \\(\\frac{1}{2}\\), and 5,730 mean in this situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-006",
+      "SourceSection": "7.2: Radiocarbon Dating",
+      "SourceExcerpt": "Would more or less than 0.1 picogram of carbon-14 remain in this fossil today? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-007",
+      "SourceSection": "7.2: Radiocarbon Dating",
+      "SourceExcerpt": "A scientist uses the expression \\((2.5) \\boldcdot \\left(\\frac{1}{2}\\right)^{\\frac{t}{5,730}}\\) to model the number of picograms of carbon-14 remaining in a different fossil \\(t\\) years after 20,000 BC.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-008",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "The half-life of carbon-14 is about 5,730 years.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-009",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "Pythagoras lived between 600 BCE and 500 BCE. Explain why the age of a papyrus from the time of Pythagoras is about half of a carbon-14 half-life.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-010",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "Someone claims they have a papyrus scroll written by Pythagoras. Testing shows the scroll has 85% of its original amount of carbon-14 remaining. Explain why the scroll is likely a fake.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-011",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "A copy of the Gutenberg Bible was made around 1450. Would more or less than 90% of the carbon-14 remain in the paper today? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-012",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "Some substances change over time through a process called radioactive decay, and their rate of decay can be measured or estimated. Let’s take sodium-22 as an example.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-013",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "Suppose a scientist finds 4 nanograms of sodium-22 in a sample of an artifact. (One nanogram is 1 billionth, or \\(10^{\\text-9}\\), of a gram.) Approximately every 3 years, half of the sodium-22 decays. We can represent this change with a…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-014",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "This can also be represented by an equation. If the function \\(f\\) gives the number of nanograms of sodium remaining after \\(t\\) years then \\(\\displaystyle f(t) = 4 \\boldcdot \\left(\\frac{1}{2}\\right)^{\\frac{t}{3}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-015",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "The 4 represents the number of nanograms in the sample when it was first measured, while the \\(\\frac{1}{2}\\) and 3 show that the amount of sodium is cut in half every 3 years, because if you increase \\(t\\) by 3, you increase the exponent…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-016",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "How much of the sodium remains after one year? Using the equation, we find \\(f(1) = 4 \\boldcdot \\left(\\frac{1}{2}\\right)^{\\frac{1}{3}}\\). This is about 3.2 nanograms.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-017",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "About how many years after the first measurement will there be about 0.015 nanogram of sodium-22? One way to find out is by extending the table and multiplying the mass of sodium-22 by \\(\\frac12\\) each time. If we multiply 0.5 nanogram…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-ACTIVITY-018",
+      "SourceSection": "7.3: Old Manuscripts",
+      "SourceExcerpt": "Archaeologists and scientists use exponential functions to help estimate the ages of ancient things.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The half-life of carbon-14 is about 5,730 years. A fossil had 6 picograms of carbon-14 at one point in time. (A picogram is a trillionth of a gram or \\(1 \\times 10^{\\text-12}\\) gram.) Which expression describes the amount of carbon-14, in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(6 \\boldcdot \\left(\\frac12\\right)^{\\frac{t}{5,730}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(6 \\boldcdot \\left(\\frac12\\right)^{5,730t}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(6 \\boldcdot (5,\\!730)^{\\frac12 t}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-005",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\frac12 \\boldcdot (6)^{\\frac{t}{5,730}}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The half-life of carbon-14 is about 5,730 years. A tree fossil was estimated to have about 4.2 picograms of carbon-14 when it died. (A picogram is a trillionth of a gram.) The fossil now has about 0.5 picogram of carbon-14. About how many…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Nickel-63 is a radioactive substance with a half-life of about 100 years. An artifact had 9.8 milligrams of nickel-63 when it was first measured. Write an equation to represent the mass of nickel-63, in milligrams, as a function of:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(t\\), time in years",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(d\\), time in days",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-010",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Tyler says that the function \\(f(x) = 5^x\\) is exponential and so it grows by equal factors over equal intervals. He says that factor must be \\(\\sqrt[10]{5}\\) for an interval of \\(\\frac{1}{10}\\) because ten of those intervals makes an…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "The population in a city is modeled by the equation \\(p(d) = 100,\\!000 \\boldcdot (1+ 0.3)^d\\), where \\(d\\) is the number of decades since 1970.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "What do the 0.3 and 100,000 mean in this situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Write an equation for the function \\(f\\) to represent the population \\(y\\) years after 1970. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Write an equation for the function \\(g\\) to represent the population \\(c\\) centuries after 1970. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "The function \\(f\\) is exponential. Its graph contains the points \\((0,5)\\) and \\((1.5,10)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-016",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Find \\(f(3)\\). Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Use the value of \\(f(3)\\) to find \\(f(1)\\). Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "What is an equation that defines \\(f\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L07-PRACTICE-019",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Select all expressions that are equal to \\(8^{\\frac23}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l07.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

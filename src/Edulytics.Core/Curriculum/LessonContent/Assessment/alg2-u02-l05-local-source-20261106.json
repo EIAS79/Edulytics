@@ -1,0 +1,70 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L05",
+  "LearningGoals": [
+    "Identify zeros of polynomial functions written in factored form.",
+    "Understand that if factors multiplied together equal zero for a specific value of $x$, at least one of the factors must also equal zero at that value of $x$."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-APR.B",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-APR.B.3",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSA-APR.B.3",
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Find the zeros and vertical intercept of p(x)=(x-2)(x+3).",
+    "Steps": [
+      "Set each factor to zero: x=2 or -3",
+      "evaluate p(0)=-2*3."
+    ],
+    "Answer": "Zeros -3 and 2; y-intercept -6."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "5.1: Notice and Wonder: Factored Form",
+      "5.2: What Values of $x$ Make These Equations True?",
+      "5.3: Factors, Intercepts, and Graphs"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Find zeros of 2(x+4)(x-1), and evaluate at x=0.",
+    "Expected": "Zeros -4 and 1; value -8.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u02-l05-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l05.rich-lesson-v2.json"
+}

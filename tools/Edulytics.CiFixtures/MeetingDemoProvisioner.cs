@@ -1125,20 +1125,25 @@ DELETE FROM "Schools";
                 x =>
                     x.LogicalLevel >= definition.MinimumLogicalLevel &&
                     x.LogicalLevel <= definition.MaximumLogicalLevel)
-            // Disposable American secondary rehearsal deliberately uses an
-            // explicit ALG1 source course for each HS grade placement rather
-            // than provisioning nine conflicting school-course adoptions.
-            // This is fixture policy, NEVER a real-school migration/default.
+            // Disposable US-CCSS fixture: opt into a specific HS course only under
+            // GitHub Actions isolated rehearsal. Never change real-school adoption.
             .Where(x =>
                 definition.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
                 x.LogicalLevel <= 9 ||
-                x.CourseCode == (string.Equals(
-                    Environment.GetEnvironmentVariable("EDULYTICS_CI_G10_GEOMETRY"),
-                    "true", StringComparison.OrdinalIgnoreCase) &&
+                x.CourseCode == (
                     string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
-                    "true", StringComparison.OrdinalIgnoreCase) &&
+                        "true", StringComparison.OrdinalIgnoreCase) &&
                     string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
-                    "true", StringComparison.OrdinalIgnoreCase)
+                        "true", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_G11_ALG2"),
+                        "true", StringComparison.OrdinalIgnoreCase)
+                        ? "ALG2" :
+                    string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_G10_GEOMETRY"),
+                        "true", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                        "true", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                        "true", StringComparison.OrdinalIgnoreCase)
                         ? "GEO" : "ALG1"))
             .ToArray();
 

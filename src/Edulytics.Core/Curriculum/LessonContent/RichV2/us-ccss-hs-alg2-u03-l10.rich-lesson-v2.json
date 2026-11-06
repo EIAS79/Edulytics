@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l10-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L10",
+      "CultureCode": "en",
+      "Title": "A New Kind of Number",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Justify that $x^2=\\text-1$ has no real solutions by using a graph of $y=x^2$. Represent imaginary numbers visually with the imaginary number line.",
+        "The square of a real number is never negative; x²=-1 has no real root. Define a complex imaginary unit i such that i²=-1.",
+        "Source activity 10.1: Numbers Are Inventions: Jada was helping her cousin with his math homework. He was supposed to solve the equation \\(8 + x = 5\\). He said, “If I subtract 8 from both sides, I get \\(x = 5 - 8\\). This doesn’t make sense. You can’t subtract a bigger number from a smaller number. If I have 5 grapes, I can’t eat 8 of them!” What do you think Jada could say to her cousin to help him understand why \\(5 - 8\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.2: The Square Root of Negative One: Numbers on the number line are often called real numbers. The equation \\(x^2 = 9\\) has 2 real solutions. How can you see this on the graph of \\(y = x^2\\)? Draw points on this real number line to represent these 2 solutions. How many real solutions does \\(x^2 = 0\\) have? Explain how you can see this on the graph of \\(y = x^2\\). Draw the solution(s) on a real number line. How… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.3: Imaginary Numbers: Draw an arrow starting at 0 that represents 3. Draw an arrow starting at 0 that represents -5. On the real number line: Draw an arrow starting at 0 that represents \\(3\\sqrt{\\text- 1}\\). Draw an arrow starting at 0 that represents \\(\\text- \\sqrt{\\text- 1}\\). Draw an arrow starting at 0 that represents \\(\\text- 5\\sqrt{\\text- 1}\\). This diagram shows an arrow that represents… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all the true statements. \\(\\sqrt{\\text-1}\\) is an imaginary number. There are no real numbers that satisfy the equation \\(x=\\sqrt{\\text-1}\\). Because \\(\\sqrt{\\text-1}\\) is imaginary, no one does math with it. The equation \\(x^2 = \\text-1\\) has real solutions. \\(\\sqrt{\\text-1} = \\text-1\\) because \\(\\text-1… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Plot each number on the real number line, or explain why the number is not on the real number line. \\(\\text- \\sqrt{4}\\) \\(\\text- \\sqrt{8}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Explain why \\((x-4)^2=\\text-9\\) has no real solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which value is closest to \\(10^{\\text- \\frac12}\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Which is a solution to the equation \\(\\sqrt{6-x}+5=10\\)? The equation has no solutions. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Select all equations for which -64 is a solution. \\(\\sqrt{x} = \\text-8\\) \\(\\sqrt[3]x = \\text-4\\) \\(\\text-\\sqrt{x}=8\\) \\(\\sqrt{\\text-x}=8\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve x²=-9 over complex numbers. Expected reasoning or answer: x=±3i.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "New number i",
+          "Definition": "The square of a real number is never negative; x²=-1 has no real root. Define a complex imaginary unit i such that i²=-1.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Does x²=-1 have a real solution? Answer: No real solution"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "For all real x, x²>=0, so no real equality with -1."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Represent imaginary numbers visually with the imaginary number line.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Solve x²=-9 over complex numbers. Answer: x=±3i."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "New number i",
+          "Question": "Does x²=-1 have a real solution?",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "For all real x, x²>=0, so no real equality with -1.",
+            "Apply the lesson-specific rule to the given quantities: Apply the exact task conditions, mathematical operation, and permitted domain.",
+            "Interpret the computed result (No real solution) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "No real solution",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve x²=-9 over complex numbers.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=±3i.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Solve x²=-9 over complex numbers.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Solve x²=-9 over complex numbers.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. For all real x, x²>=0, so no real equality with -1.",
+            "Verify the result with a second substitution or interpretation; the authored solution is: x=±3i."
+          ],
+          "Answer": "x=±3i.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "New number i",
+        "The square of a real number is never negative; x²=-1 has no real root. Define a complex imaginary unit i such that i²=-1.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

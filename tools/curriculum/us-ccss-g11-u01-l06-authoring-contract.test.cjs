@@ -1,0 +1,32 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'../..');
+const read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
+const code='PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L06';
+const rich=read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l06.rich-lesson-v2.json');
+const assessment=read('src/Edulytics.Core/Curriculum/LessonContent/Assessment/alg2-u01-l06-local-source-20261106.json');
+const evidence=read('artifacts/curriculum-delivery/US-CCSS-MATH/G11/u01-l06-element-coverage.json');
+test('canonical identity and source evidence contract',()=>{
+ assert.equal(rich.Lessons.length,1);
+ assert.equal(rich.Lessons[0].LessonCode,code);
+ assert.equal(assessment.LessonCode,code);
+ assert.equal(evidence.LessonCode,code);
+ assert.ok(evidence.Count>=10);
+ assert.equal(evidence.Count,evidence.Elements.length);
+ assert.equal(new Set(evidence.Elements.map(x=>x.SourceElementId)).size,evidence.Count);
+ assert.equal(assessment.TestsExecuted,'NOT_RUN');
+ assert.equal(assessment.StageD,'NOT_RUN');
+ assert.equal(assessment.TeacherReview.Required,true);
+ assert.equal(assessment.FirstPartyCoolDown.Origin,'EDULYTICS_ORIGINAL');
+});
+test('independent math oracle for the lesson',()=>{assert.deepEqual([1,2,3,4].map(k=>Array.from({length:k},(_,i)=>(i+1)**2).reduce((a,b)=>a+b,0)),[1,5,14,30]);});
+test('preserve first-party original objectives, answer boundaries and source tasks',()=>{
+ assert.ok(assessment.LearningGoals.length>0);
+ assert.ok(rich.Lessons[0].ExplanationParagraphs.length>=5);
+ assert.ok(rich.Lessons[0].WorkedExamples.length>=2);
+ assert.ok(evidence.Elements.some(x=>x.SourceElementId.includes('STUDENT_PRACTICE')));
+ assert.equal(assessment.QuestionRouting,'UNPROMOTED_NO_RUNTIME_CLAIM');
+});

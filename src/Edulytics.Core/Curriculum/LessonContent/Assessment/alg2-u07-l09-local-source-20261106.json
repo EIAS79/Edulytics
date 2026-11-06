@@ -1,0 +1,69 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L09",
+  "LearningGoals": [
+    "Comprehend that random samples produce different estimates for population characteristics.",
+    "Describe (orally and in writing) the importance of margin of error when reporting an estimate for a population characteristic based on a sample statistic."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-IC.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-IC.B.4",
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSS-IC.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Two independent random samples estimate support at 42% and 47%. Must one estimate be fraudulent?",
+    "Steps": [
+      "Random samples differ because of sampling variability, even when both are collected correctly."
+    ],
+    "Answer": "No; both can be legitimate estimates."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "9.1: Selecting Samples",
+      "9.2: Examining Sample Statistics",
+      "9.3: Variability of Sample Estimates"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Can adding a margin of error fix a convenience sample?",
+    "Expected": "No; selection bias remains.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u07-l09-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l09.rich-lesson-v2.json"
+}

@@ -1,0 +1,86 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L08",
+  "LearningGoals": [
+    "Interpret an equation for the $n^{\\text{th}}$ term of a sequence.",
+    "Justify (orally and in writing) why different equations can represent the same sequence."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSF-LE.A.1",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-BF.A.2",
+      "SortOrder": 2
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSF-LE.A.2",
+      "SortOrder": 3
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-BF.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 4
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-LE.A.2",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 5
+    }
+  ],
+  "ReusePolicy": "Existing arithmetic/geometric/affine exact sequence engines only when question matches; unverified new mechanics remain teacher-reviewed",
+  "ExistingNumericFamilies": [
+    "sequences.core.arithmetic_nth_term",
+    "sequences.core.geometric_nth_term",
+    "sequences.core.find_position_arithmetic",
+    "usccss.g11.alg2.u01.l01.affine_recurrence",
+    "usccss.g11.alg2.u01.l01.fibonacci_term",
+    "usccss.g11.alg2.u01.l02.growth_factor"
+  ],
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "TeacherReview": {
+    "Required": true,
+    "SourceSpecificTasks": [
+      "identify nth-term expressions matched to recurrence",
+      "justify equation equivalence",
+      "paper slicing and geometric diagram",
+      "discrete graph/domain"
+    ],
+    "Rubric": [
+      "correct term index and initial condition",
+      "mathematically correct representation or diagram",
+      "explanation justified by source constraints",
+      "accurate signed/fractional answers"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "A sequence begins 5 and triples each term. Write both a recursive and an explicit definition starting at n=1, calculate the fifth term and state why n=2.5 is not a sequence index.",
+    "Expected": "a(1)=5,a(n)=3a(n-1); a(n)=5*3^(n-1); a(5)=405; indices are integers.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l08-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u01-l08.rich-lesson-v2.json"
+}

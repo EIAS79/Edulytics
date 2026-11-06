@@ -1,0 +1,363 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L11",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "29aba34d1d6939aa295b84cd12d3ba48ee9012dfa7a6bc6dd67afad694aa1f02",
+    "teacher/index.html": "7518f3caba5cf30a75812cb5840430d35558d1a6b7fc8d4d4083770dca62f39c",
+    "teacher/practice.html": "1e06ea275cf476a646542fecf07728c5bc59e63dbdc4b0135a1965b4a8f7a3f3",
+    "student/index.html": "541fb7e63e6425bfdeea43303f7d750214bf2c27cac2028fa3ec1386587fbe31",
+    "student/practice.html": "9ba5662feee954d080dc31f4ddbde8b0f15ef13a1424b1d9a2b660760abe2bd6"
+  },
+  "Goals": [
+    "Calculate the solution to a system of polynomial equations."
+  ],
+  "ElementCount": 43,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-001",
+      "SourceSection": "11.1: Math Talk: When $f$ Meets $g$",
+      "SourceExcerpt": "Mentally identify a point where the graphs of the two functions intersect, if one exists.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-002",
+      "SourceSection": "11.1: Math Talk: When $f$ Meets $g$",
+      "SourceExcerpt": "\\(f(x)=x\\) and \\(g(x)=3\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-003",
+      "SourceSection": "11.1: Math Talk: When $f$ Meets $g$",
+      "SourceExcerpt": "\\(j(x)=(x+3)(x-3)\\) and \\(k(x)=0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-004",
+      "SourceSection": "11.1: Math Talk: When $f$ Meets $g$",
+      "SourceExcerpt": "\\(m(x)=(x+3)(x-3)\\) and \\(n(x)=(x-3)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-005",
+      "SourceSection": "11.1: Math Talk: When $f$ Meets $g$",
+      "SourceExcerpt": "\\(p(x)=(x+5)(x-5)\\) and \\(q(x)=(x+3)(x-3)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-006",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "For each pair of polynomials given, find all points of intersection of their graphs.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-007",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "\\(c(x)=x^2-7\\) and \\(d(x)=2\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-008",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "\\(f(x)=(x+7)(x-4)\\) and \\(g(x)=x-4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-009",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "\\(m(x)=(x+7)(x-4)\\) and \\(n(x)=(2x+5)(x-4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-010",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "\\(p(x)=(x+1)(x-8)\\) and \\(q(x)=(x+2)(x-4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-011",
+      "SourceSection": "11.2: More Points of Intersection",
+      "SourceExcerpt": "Find all points of intersection of the graphs of the equations \\(p(x)=(2x+3)(x-5)\\) and \\(q(x)=(x+5)(x+1)(x-3)\\). Use graphing technology to check your solutions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-012",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "Consider the functions \\(p(x) = 5x^3+6x^2+4x\\) and \\(q(x) = 5640\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-013",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "Use graphing technology to find a value of \\(x\\) that makes \\(p(x)=q(x)\\) true.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-014",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "For the \\(x\\)-value at the point of intersection, what can you say about the value of \\(5x^3+6x^2+4x-5640\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-015",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "What does your answer suggest is a possible factor of \\(5x^3+6x^2+4x-5640\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-016",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "Write your own polynomial \\(m(x)\\) of degree 3 or higher.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-017",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "Use graphing technology to estimate the values of \\(x\\) that make \\(m(x)= q(x)\\) true.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-018",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "When asked to find all values of \\(x\\) that make an equation like \\((x+4)(x-8)=(2-x)(x-8)\\) true, one way to consider the question is to ask where the graphs of the functions \\(f(x)=(x+4)(x-8)\\) and \\(g(x)=(2-x)(x-8)\\) intersect.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-019",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "Since the coordinate of any point of intersection has the form \\((a,f(a))=(a,g(a))\\), these points must make \\(f(x)=g(x)\\) true when \\(x=a\\). In our example, we can tell from the graph that both \\(x=\\text-1\\) and \\(x=8\\) are solutions to…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-020",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "We can also use algebra to identify solutions to \\((x+4)(x-8)=(2-x)(x-8)\\) by rearranging and then recognizing that both parts have a factor of \\((x-8)\\) in common:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-021",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "\\(\\displaystyle \\begin{align*} (x+4)(x-8)&=(2-x)(x-8)\\\\ (x+4)(x-8)-(2-x)(x-8)&=0\\\\ (x-8)(x+4-2+x)&=0\\\\ (x-8)(2x+2)&=0\\\\ x&=8, \\text-1\\\\ \\end{align*}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-022",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "For polynomials created to model specific situations that have a more messy structure, solving without using technology can be challenging, especially because the graphs of two polynomials can intersect at multiple points because of the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-023",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "How the outputs of a function change as we look at input values further and further from 0.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-024",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "This function shows different end behavior in the positive and negative directions. In the positive direction the values get larger and larger. In the negative direction the values get closer and closer to -3.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-ACTIVITY-025",
+      "SourceSection": "11.3: Graphing to Find Points of Intersection",
+      "SourceExcerpt": "The power to which a factor occurs in the factored form of a polynomial. For example, in the polynomial \\((x-1)^2(x+3)\\), the factor \\(x-1\\) has multiplicity 2 and the factor \\(x+3\\) has multiplicity 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "What are the points of intersection between the graphs of the functions \\(f(x)=x^2(x+1)\\) and \\(g(x)=x+1\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-002",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Select all the points of intersection between the graphs of the functions \\(f(x)=(x+5)(x-2)\\) and \\(g(x)=(2x+1)(x-2)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\((\\text-\\frac12, 0)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\((\\text-2,\\text-12)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-005",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "What are the solutions to the equation \\((x-3)(x+5)=\\text-15\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-006",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "What are the \\(x\\)-intercepts of the graph of \\(y=(5x+7)(2x-1)(x-4)\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-007",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\text-\\frac75, \\text{-}\\frac12, 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-008",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\frac57, \\frac12, 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-009",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "\\(\\text{-}\\frac75, \\frac12, 4\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-010",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Which polynomial function’s graph is shown here?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-011",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x+1)(x+2)(x+4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x+1)(x-2)(x+4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x-1)(x+2)(x-4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(f(x)=(x-1)(x-2)(x-4)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-015",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Draw a rough sketch of the graph of \\(g(x)=\\text-x^2(x+2)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-016",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The graph of a polynomial function \\(f\\) is shown.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-017",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Is the degree of the polynomial odd or even? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U02-L11-PRACTICE-018",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "What is the constant term of the polynomial?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u02-l11.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

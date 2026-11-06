@@ -1,0 +1,78 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L19",
+  "LearningGoals": [
+    "Create quadratic equations that will have either real or non-real solutions, then calculate the specific solutions.",
+    "Justify that a quadratic equation will have either real or non-real solutions using graphical reasoning."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSA-REI.B.4.B",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "SubpartToAcceptedParent",
+      "OutcomeCode": "CCSS:HSA-REI.B.4",
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSN-CN.C.7",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSN-CN.C.7",
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSA-REI.B.4.B",
+      "ReferenceKind": "StandardSubpart",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Compare roots of x²-9=0 and x²+9=0.",
+    "Steps": [
+      "First roots ±3 real",
+      "second ±3i non-real."
+    ],
+    "Answer": "±3 and ±3i"
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "19.1: Notice and Wonder: Where Is It 0?",
+      "19.2: Real or Not?",
+      "19.3: Make Your Own"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "Make a monic quadratic with roots ±2i.",
+    "Expected": "x²+4=0.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u03-l19-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l19.rich-lesson-v2.json"
+}

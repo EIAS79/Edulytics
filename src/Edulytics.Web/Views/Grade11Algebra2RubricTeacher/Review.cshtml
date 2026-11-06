@@ -1,0 +1,33 @@
+@model Edulytics.Web.Controllers.G11Alg2RubricTeacherPage
+@{ ViewData["Title"] = "Grade 11 Algebra 2 ? teacher assessment"; }
+<h1>Algebra 2 lesson ? teacher assessment</h1>
+<p>Lesson: @Model.Submission.LessonId | Student: @Model.Submission.StudentProfileId</p>
+<p>Student response submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
+<pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>
+@if (Model.Submission.TeacherScore is int score)
+{
+    <p>Teacher-awarded score: @score / 4</p>
+    <p>Feedback: @Model.Submission.TeacherFeedback</p>
+}
+else
+{
+    <p>Review the original lesson-specific evidence, drawings and reasoning. These four criteria record teacher judgment; they are never auto-graded.</p>
+    <form method="post" action="/school/g11/algebra2/rubric/@Model.Submission.Id">
+        @Html.AntiForgeryToken()
+        @for (var i = 0; i < Model.Criteria.Length; i++)
+        {
+            <div>
+                <label for="criterion-@i">@(i + 1). @Model.Criteria[i]</label>
+                <select id="criterion-@i" name="marks" required>
+                    <option value="">Choose a mark</option>
+                    <option value="0">0 ? Not demonstrated</option>
+                    <option value="1">1 ? Demonstrated</option>
+                </select>
+            </div>
+        }
+        <label for="teacherFeedback">Teacher explanation and feedback (10?2000 characters)</label>
+        <textarea id="teacherFeedback" name="teacherFeedback" required minlength="10" maxlength="2000" rows="5"></textarea>
+        <button type="submit">Save teacher assessment</button>
+    </form>
+}
+<a href="/school/g11/algebra2/rubric">Return to review queue</a>

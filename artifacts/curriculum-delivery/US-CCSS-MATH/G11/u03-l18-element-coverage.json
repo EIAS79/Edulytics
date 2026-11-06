@@ -1,0 +1,349 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L18",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "eb41d09234a0143639116e12a3315527b1ed9876003a080c1126f534b91fd6f7",
+    "teacher/index.html": "2431824e122aed0439c0b9620d47ec9c38791fa920ce6b0a2baf9cac492fa4ad",
+    "teacher/practice.html": "a9e1a79bd382e1b9a714d92b9203cc5b664f26d46b5b4bb197221fb6ab50282e",
+    "student/index.html": "d8ad58c341fc0807f4ff975f8b315b3b280a22a592cf69b4c675904a8403d69f",
+    "student/practice.html": "7ad0fa7356e9b9179510b280633e1e0bf207299939e5069af44c9cca788923d7"
+  },
+  "Goals": [
+    "Calculate complex solutions using the quadratic formula and represent them in the form $c \\pm di$, where $c$ and $d$ are real numbers.",
+    "Explain reasoning and critique the reasoning of others when solving quadratic equations.",
+    "Explain when solutions are non-real when using the quadratic formula."
+  ],
+  "ElementCount": 41,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-001",
+      "SourceSection": "18.1: Math Talk: Real or Not?",
+      "SourceExcerpt": "Mentally decide whether the solutions to each equation are real numbers or not.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-002",
+      "SourceSection": "18.1: Math Talk: Real or Not?",
+      "SourceExcerpt": "\\(w^2 = \\text- 367\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-003",
+      "SourceSection": "18.1: Math Talk: Real or Not?",
+      "SourceExcerpt": "\\((z + 5)^2 = \\text- 367\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-004",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Kiran was using the quadratic formula to solve the equation \\(x^2 - 12x + 41 = 0\\). He wrote this:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-005",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{12 \\pm \\sqrt{144 - 164}}{2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-006",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Then he noticed that the number inside the square root is negative and said, “This equation doesn’t have any solutions.”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-007",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Do you agree with Kiran? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-008",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Write \\(\\sqrt{\\text- 20}\\) as an imaginary number.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-009",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Solve the equation \\(3x^2 - 10x +50=0\\) and plot the solutions in the complex plane.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-010",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "Although imaginary numbers let us describe complex solutions to quadratic equations, they were actually discovered and accepted because they could help us find real solutions to equations with polynomials of degree 3. In the 16th century,…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-011",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "To find a solution to the equation \\(x^3-px-q=0\\) the cubic formula would first tell us to find a complex number, \\(z\\), which is \\(\\frac{q}{2}+i\\sqrt{(\\frac{p}{3})^3-(\\frac{q}{2})^2}\\). Find \\(z\\) when our equation is \\(x^3-15x-4=0\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-012",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "The next step is to find a complex number \\(w\\) so that \\(w^3=z\\). Show that \\(w=2+i\\) works for the \\(z\\) we found in step 1.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-013",
+      "SourceSection": "18.2: Be Discriminating",
+      "SourceExcerpt": "If we write \\(w=a+bi\\) where \\(a\\) and \\(b\\) are real numbers, the solutions to our equation are \\(2a\\), \\(\\text-a+b\\sqrt{3}\\), and \\(\\text-a-b\\sqrt{3}\\). What are the three solutions to our equation \\(x^3-15x-4=0\\)?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-014",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "For each row, you and your partner will each solve a quadratic equation. You should each get the same answer. If you disagree, work to reach agreement.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-015",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "Sometimes when we use the quadratic formula to solve a quadratic equation, we get a negative number inside the square root symbol. This means that the solutions to the equation must involve imaginary numbers. For example, consider the…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-016",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "\\(\\displaystyle 5x^2 + x + 10 = 0\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-017",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "Using the quadratic formula, we know that:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-018",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{\\text- 1 \\pm \\sqrt{1^2 - 4 \\boldcdot 5 \\boldcdot 10}}{2 \\boldcdot 5}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-019",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "\\(\\displaystyle x = \\dfrac{\\text- 1 \\pm \\sqrt{\\text- 199}}{10}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-020",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "Which means that the two solutions are:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-021",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "\\(\\displaystyle x = \\text- \\frac{1}{10} + \\frac{\\sqrt{199}}{10}i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-ACTIVITY-022",
+      "SourceSection": "18.3: Solving All Kinds of Quadratics",
+      "SourceExcerpt": "\\(\\displaystyle x = \\text- \\frac{1}{10} - \\frac{\\sqrt{199}}{10}i\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "Clare solves the quadratic equation \\(4x^2+12x+58=0\\), but when she checks her answer, she realizes she made a mistake. Explain what Clare's mistake was.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "\\(\\begin{align} x &= \\frac{\\text-12 \\pm \\sqrt{12^2 - 4 \\boldcdot 4 \\boldcdot 58}}{2 \\boldcdot 4} \\\\ x &= \\frac{\\text-12 \\pm \\sqrt{144-928}}{8} \\\\ x &= \\frac{\\text-12 \\pm \\sqrt{\\text-784}}{8} \\\\ x &= \\frac{\\text-12 \\pm 28i}{8} \\\\ x &=…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-003",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Write in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-004",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\frac{5 \\pm \\sqrt{\\text-4}}{3}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-005",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\frac{10 \\pm \\sqrt{\\text-16}}{2}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-006",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "\\(\\frac{\\text-3 \\pm \\sqrt{\\text-144}}{6}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-007",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Priya is using the quadratic formula to solve two different quadratic equations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-008",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "For the first equation, she writes \\(x= \\frac{4 \\pm \\sqrt{16-72}}{12}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-009",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "For the second equation, she writes \\(x=\\frac{8 \\pm \\sqrt{64-24}}{6}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-010",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "Which equation(s) will have real solutions? Which equation(s) will have non-real solutions? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-011",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Find the exact solution(s) to each of these equations, or explain why there is no solution.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-012",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Kiran is solving the equation \\(\\sqrt{x+2} - 5 = 11\\) and decides to start by squaring both sides. Which equation results if Kiran squares both sides as his first step?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-013",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(x + 2 - 25 = 121\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-014",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(x + 2 + 25 = 121\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-015",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(x+2 - 10\\sqrt{x+2} + 25 = 121\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-016",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "\\(x+2 + 10\\sqrt{x+2} + 25 = 121\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-017",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Plot each number on the real or imaginary number line.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-018",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(\\text-3\\sqrt{\\text-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U03-L18-PRACTICE-019",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "\\(4\\sqrt{\\text-1}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u03-l18.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

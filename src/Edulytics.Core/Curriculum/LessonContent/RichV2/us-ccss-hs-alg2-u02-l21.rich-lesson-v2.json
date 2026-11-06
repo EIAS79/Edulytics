@@ -1,0 +1,105 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l21-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L21",
+      "CultureCode": "en",
+      "Title": "Rational Equations (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Create a simple equation involving two rational expressions to model a situation and use the model to answer questions. Use strategic multiplication to solve equations that have rational expressions on both sides.",
+        "A river trip with still-water speed v and current c has upstream speed v-c, downstream v+c and times distance/(v-c) and distance/(v+c). A physical model requires v>|c|. Rational expressions can be combined with a common denominator but forbidden speeds remain excluded.",
+        "Source activity 21.1: Math Talk: Adding Rationals: Solve each equation mentally: \\(\\dfrac{x}{2} = \\dfrac{3}{4}\\) \\(\\dfrac{3}{x} = \\dfrac{1}{6}\\) \\(\\dfrac{1}{4} = \\dfrac{1}{x^2}\\) \\(\\dfrac{2}{x} = \\dfrac{x}{8}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 21.2: A Rational River: Noah likes to go for boat rides along a river with his family. In still water, the boat travels about 8 kilometers per hour. In the river, it takes them the same amount of time \\(t\\) to go upstream 5 kilometers as it does to travel downstream 10 kilometers. Attribution: Family boating, by publicdomainpictures. Public Domain. publicdomainpictures. Source. If the speed of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 21.3: Rational Resistance: Circuits in parallel follow this law: The inverse of the total resistance is the sum of the inverses of each individual resistance. We can write this as: \\(\\displaystyle \\frac{1}{R_T}=\\frac{1}{R_1} +\\frac{1}{R_2}+ . . . + \\frac{1}{R_n}\\) where there are \\(n\\) parallel circuits and \\(R_T\\) is the total resistance. Resistance is measured in ohms. Two circuits are placed in… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Solve \\(x-1 = \\dfrac{x^2 - 4x + 3}{x+2}\\) for \\(x\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Solve \\(\\frac{4}{4-x} = \\frac{5}{4+x}\\) for \\(x\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Show that the equation \\(\\frac{1}{60} = \\frac{2x+50}{x(x+50)}\\) is equivalent to \\(x^2 - 70x - 3,\\!000 = 0\\) for all values of \\(x\\) not equal to 0 or -50. Explain each step as you rewrite the original equation. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Kiran jogs at a speed of 6 miles per hour when there are no hills. He plans to jog up a mountain road, which will cause his speed to decrease by \\(r\\) miles per hour. Which expression represents the time, \\(t\\), in hours it will take him to jog 8 miles up the mountain road? \\(t=\\frac{8-r}{6}\\) \\(t=\\frac{8}{6+r}\\)… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: The rational function \\(g(x) = \\frac{x+10}{x}\\) can be rewritten in the form \\(g(x) = c + \\frac{r}{x}\\), where \\(c\\) and \\(r\\) are constants. Which expression is the result? \\(g(x)=x+\\frac{10}{x}\\) \\(g(x)=1+\\frac{10}{x}\\) \\(g(x)=x -\\frac{10}{x+10}\\) \\(g(x)=1-\\frac{1}{x+10}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: For each equation below, find the value(s) of \\(x\\) that make it true. \\(10 = \\frac{1+7x}{7+x}\\) \\(0.2=\\frac{6+2x}{12+x}\\) \\(0.8= \\frac{x}{0.5+x}\\) \\(3.5=\\frac{4+2x}{0.5-x}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: A softball player has had 8 base hits out of 25 at bats for a current batting average of \\(\\frac{8}{25}=.320\\). How many consecutive base hits does she need if she wants to raise her batting average to .400? Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: A boat with still speed 10 and current 2 travels 12 km each way. Find total time. Expected reasoning or answer: 12/8+12/12=2.5 hours.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two rational expressions in a model",
+          "Definition": "A river trip with still-water speed v and current c has upstream speed v-c, downstream v+c and times distance/(v-c) and distance/(v+c). A physical model requires v>|c|. Rational expressions can be combined with a common denominator but forbidden speeds remain excluded.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "A boat travels 8 km upstream and 8 km downstream at still-water speed 6 km/h against a 2 km/h current. Find total time. Answer: 3 hours."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Upstream=8/(6-2)=2; downstream=8/(6+2)=1; sum=3."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Use strategic multiplication to solve equations that have rational expressions on both sides.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "A boat with still speed 10 and current 2 travels 12 km each way. Find total time. Answer: 12/8+12/12=2.5 hours."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two rational expressions in a model",
+          "Question": "A boat travels 8 km upstream and 8 km downstream at still-water speed 6 km/h against a 2 km/h current. Find total time.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Upstream=8/(6-2)=2",
+            "downstream=8/(6+2)=1",
+            "sum=3."
+          ],
+          "Answer": "3 hours.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "A boat with still speed 10 and current 2 travels 12 km each way. Find total time.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "12/8+12/12=2.5 hours.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "A boat with still speed 10 and current 2 travels 12 km each way. Find total time.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: A boat with still speed 10 and current 2 travels 12 km each way. Find total time.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Upstream=8/(6-2)=2",
+            "Verify the result with a second substitution or interpretation; the authored solution is: 12/8+12/12=2.5 hours."
+          ],
+          "Answer": "12/8+12/12=2.5 hours.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Two rational expressions in a model",
+        "A river trip with still-water speed v and current c has upstream speed v-c, downstream v+c and times distance/(v-c) and distance/(v+c). A physical model requires v>|c|. Rational expressions can be combined with a common denominator but forbidden speeds remain excluded.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

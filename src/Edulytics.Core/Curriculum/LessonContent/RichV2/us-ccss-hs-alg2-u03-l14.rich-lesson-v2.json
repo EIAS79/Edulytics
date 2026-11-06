@@ -1,0 +1,104 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l14-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L14",
+      "CultureCode": "en",
+      "Title": "More Arithmetic with Complex Numbers",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Add, subtract, and multiply complex numbers, and represent the solutions in the form $a+bi$. Explain reasoning and critique the reasoning of others when writing numbers in the form $a+bi$. Generalize patterns in repeated reasoning to show what happens when $i$ is raised to different powers.",
+        "Reduce powers of i modulo 4, apply componentwise addition and subtraction, and distribute for products.",
+        "Source activity 14.1: Which One Doesn’t Belong: Complex Expressions: Which one doesn’t belong? B. \\((1 + i) + (1 - i)\\) D. \\((1 + i)(1 - i)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.2: Powers of $i$: Write each power of \\(i\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. If \\(a\\) or \\(b\\) is zero, you can ignore that part of the number. For example, \\(0+3i\\) can simply be expressed as \\(3i\\). What is \\(i^{100}\\)? Explain your reasoning. What is \\(i^{38}\\)? Explain your reasoning. Write each power of \\(1+i\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 14.3: Add 'Em Up (or Subtract or Multiply): For each row, your partner and you will each rewrite an expression so it has the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. You and your partner should get the same answer. If you disagree, work to reach agreement. Suppose we want to write the product \\((3+5i)(7-2i)\\) in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. For example, we might want to… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Select all expressions that are equivalent to \\(8+16i\\). \\(\\text-2i(\\text-8-4i)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Which expression is equivalent to \\((\\text-4 + 3i)(2-7i)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Match the equivalent expressions. \\(\\text-4i \\boldcdot 5i\\) \\((1+2i)(\\text-1+3i)\\) \\((3+5i) - (10+4i)\\) \\((1-4i) + (\\text-4+3i)\\) \\((\\text-6 + 12i) - (\\text-21 - 8i)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Write each expression in \\(a+bi\\) form. \\((\\text-8 + 3i) - (2 +5i)\\) \\((3 + 5i)(4 + 3i)\\) \\((3i)(\\text-2 i)(4i)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Here is a method for solving the equation \\(\\sqrt{5+x}+10=6\\). Does the method produce the correct solution to the equation? Explain how you know. \\(\\begin{align} \\sqrt{5+x}+10 &= 6 \\\\ \\sqrt{5+x} &= \\text-4 &\\text{ (after subtracting 10 from each side)} \\\\ 5+x &= 16 &\\text{ (after squaring both sides)} \\\\ x &= 11 \\\\… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Write each expression in the form \\(a+bi\\), where \\(a\\) and \\(b\\) are real numbers. \\((4+2i) + (8-2i)\\) \\(2i \\boldcdot 7i\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate i^10. Expected reasoning or answer: -1.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Complex arithmetic",
+          "Definition": "Reduce powers of i modulo 4, apply componentwise addition and subtraction, and distribute for products.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Simplify i^5+i^6+i^7+i^8. Answer: 0"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Terms are i,-1,-i,1; sum0."
+        },
+        {
+          "Title": "Apply the learning goal to independent practice",
+          "Definition": "Generalize patterns in repeated reasoning to show what happens when $i$ is raised to different powers.",
+          "Rule": "For a new set of inputs, use the lesson's model, show the intermediate steps and check the allowed domain, units and interpretation.",
+          "Example": "Evaluate i^10. Answer: -1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complex arithmetic",
+          "Question": "Simplify i^5+i^6+i^7+i^8.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Terms are i,-1,-i,1",
+            "sum0.",
+            "Interpret the computed result (0) under the stated input domain and units; verify that it answers the original question."
+          ],
+          "Answer": "0",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate i^10.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "-1.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        },
+        {
+          "Title": "Independent source-aligned Edulytics cool-down walkthrough",
+          "Question": "Evaluate i^10.",
+          "Method": "Apply the definition and procedure from this lesson, then test the answer against the original constraints. Written interpretation remains teacher-reviewed.",
+          "Steps": [
+            "Identify the given quantities, domain and requested output in the new problem: Evaluate i^10.",
+            "Select and apply the relevant mathematical rule demonstrated earlier: Identify relationships and execute the algebraic model with explicit checks. Terms are i,-1,-i,1",
+            "Verify the result with a second substitution or interpretation; the authored solution is: -1."
+          ],
+          "Answer": "-1.",
+          "Check": "Independent first-party solution; a teacher verifies the reasoning and any diagrams or explanations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Complex arithmetic",
+        "Reduce powers of i modulo 4, apply componentwise addition and subtraction, and distribute for products.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
