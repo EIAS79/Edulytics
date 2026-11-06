@@ -61,3 +61,18 @@ Draft course now authored: PRECALC/Advanced Precalculus selector at American Gra
 - Cached original text is an inspection aid; equations, embedded diagrams and page-window semantics still require visual checks where a source ambiguity exists.
 - Strictly preserve first-incomplete ordering: Unit 1 remains U01:L01 until the academic A–B–C parity and assessment gate is actually met; never advance source review based on cache existence alone.
 - Targeted isolated C# compilation for the renderer and exact question family passed; the full student/teacher runtime, migrations, CI, Stage D and authenticated tests remain outside A–B–C.
+
+## Continuous execution mode — same workflow as previously completed grades
+
+**Mode:** CONTINUOUS_UNIT_CHAIN, not ONE_REPLY_PER_STEP and not ONE_REPLY_PER_LESSON.
+
+1. Resume at the first not-closed lesson recorded in `full-grade-progress.json`. Inspect the currently authored lesson before creating anything new. Use the local OpenStax 2017 source cache and already-verified evidence. Avoid re-reading identical source pages and avoid exploratory redevelopment.
+2. For the active lesson, complete Stage A → Stage B → Stage C as a single coherent correction pass. Reuse existing engines, add only verified missing capabilities, and write targeted tests without executing Stage D/CI.
+3. Close the lesson only when all A–B–C source/content/assessment/evidence gates are actually met. Commit the complete checkpoint once, then immediately move to the next ordinal without requesting user approval or writing a per-lesson final report.
+4. Complete all lessons of the current unit before writing a consolidated unit report. After the unit report, continue automatically with the next unit. The requested end state is all 73 sections processed sequentially.
+5. Intermediate GitHub commits, tool completions, source discoveries, and successful partial corrections are **not** session-completion events. Avoid premature final answers and repeated verbose progress narration; continue tool execution while the request is actionable in the current turn.
+6. Genuine unresolved source, rights, or content gaps stay explicitly `A_C_EXPLICIT_GAP`; they must not be cosmetically marked `READY_FOR_STAGE_D`, and the sequential close cursor must not jump over them. Record an actionable blocker with precise artifact and continue independent repairs within the same lesson.
+7. Batch independent reads and coherent writes, prefer one lesson-close commit, and measure start/close timestamps. Three minutes per straightforward repair is an optimization target, not permission to fabricate source parity.
+8. Do not claim automated or background continuation after the assistant response, and never claim unit/grade completion without recorded closure evidence. If execution genuinely cannot continue within this turn, report the specific verified obstacle and last completed operation only, not a routine step-by-step report.
+
+**Authority:** This changes execution and reporting cadence, **not** academic standards or acceptance thresholds. Stage D still owns runtime testing, CI, authenticated E2E, deployment, and publishing; A–B–C owns source alignment, teaching content, practice contracts, and written tests.
