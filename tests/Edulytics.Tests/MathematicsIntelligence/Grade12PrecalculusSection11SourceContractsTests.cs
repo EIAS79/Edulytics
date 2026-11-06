@@ -447,6 +447,22 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void AllNineSourceToolkitFamiliesRetainTheirOriginalNumericalSamples()
+    {
+        var lesson = RichLessonContentV2Registry.Find(Code, "en");
+        Assert.NotNull(lesson);
+        var toolkit = lesson.Visuals.Single(x =>
+            x.Title == "Source-skill table 13: Basic toolkit functions");
+        Assert.Equal(4, toolkit.Rows.Count);
+        Assert.Equal(9, toolkit.Rows[3].Cells.Count);
+        Assert.Contains("−0.5→−2", toolkit.Rows[3].Cells[5]);
+        Assert.Contains("−0.5→4", toolkit.Rows[3].Cells[6]);
+        Assert.Contains("4→2", toolkit.Rows[3].Cells[7]);
+        Assert.Contains("0.125→0.5", toolkit.Rows[3].Cells[8]);
+        Assert.Equal(9, Grade12PrecalculusSection11ToolkitGraphs.All.Count);
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

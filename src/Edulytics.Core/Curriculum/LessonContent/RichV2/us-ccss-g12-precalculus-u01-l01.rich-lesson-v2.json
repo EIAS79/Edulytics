@@ -1,5 +1,5 @@
 {
-  "ContentVersion": "g12-u01-l01-source-narrative-definition-gaps-20261106",
+  "ContentVersion": "g12-u01-l01-source-toolkit-table13-numeric-samples-20261106",
   "Lessons": [
     {
       "CommonMistakes": [
@@ -721,7 +721,7 @@
         {
           "Kind": "RatioTable",
           "Title": "Source-skill table 13: Basic toolkit functions",
-          "Description": "Reference for nine common function families; separate authentic graph and sample table representations are still required for full visual parity.",
+          "Description": "Nine basic function families with source-verified algebraic sample input/output pairs read from the locally authorized 2017 Section 1.1 Table 13; Edulytics independently draws the nine function graphs with explicit real domains. The underlying source images were not reused.",
           "PrimaryLabel": "Input / category",
           "SecondaryLabel": "Output / mapping",
           "Rows": [
@@ -765,6 +765,20 @@
                 "x≠0",
                 "x≥0",
                 "all real"
+              ]
+            },
+            {
+              "Label": "Sample x→f(x) pairs",
+              "Cells": [
+                "−2→2; 0→2; 2→2",
+                "−2→−2; 0→0; 2→2",
+                "−2→2; 0→0; 2→2",
+                "−2→4; −1→1; 0→0; 1→1; 2→4",
+                "−1→−1; −0.5→−0.125; 0→0; 0.5→0.125; 1→1",
+                "−2→−0.5; −1→−1; −0.5→−2; 0.5→2; 1→1; 2→0.5",
+                "−2→0.25; −1→1; −0.5→4; 0.5→4; 1→1; 2→0.25",
+                "0→0; 1→1; 4→2",
+                "−1→−1; −0.125→−0.5; 0→0; 0.125→0.5; 1→1"
               ]
             }
           ],
