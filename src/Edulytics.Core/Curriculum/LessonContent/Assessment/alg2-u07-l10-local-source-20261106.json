@@ -1,0 +1,69 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L10",
+  "LearningGoals": [
+    "Calculate the margin of error for a population proportion estimate.",
+    "Use data from a random sample to determine an estimate for a population proportion."
+  ],
+  "BlueprintAlignments": [
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSS-IC.B.4",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "ExactAcceptedStandard",
+      "OutcomeCode": "CCSS:HSS-IC.B.4",
+      "SortOrder": 1
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSS-IC.B.6",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    }
+  ],
+  "SourceAuthority": "Local Kendall Hunt archival teacher/student pages; AccessIM v360 excluded",
+  "EnginePolicy": "REUSE_IF_MATCHING_ELSE_TEACHER_REVIEW; DO_NOT_PROMOTE_UNVERIFIED",
+  "QuestionRouting": "UNPROMOTED_NO_RUNTIME_CLAIM",
+  "CoreMathWorkedExample": {
+    "Question": "Use conservative approximate 95% margin of error for n=400.",
+    "Steps": [
+      "Worst-case 1/sqrt(400)=1/20=.05."
+    ],
+    "Answer": "About ±5 percentage points."
+  },
+  "TeacherReview": {
+    "Required": true,
+    "ActivitySections": [
+      "10.1: Math Talk: Proportions",
+      "10.2: Pass or Fail",
+      "10.3: Fly Memory"
+    ],
+    "PracticeSections": [
+      "Problem 1",
+      "Problem 2",
+      "Problem 3",
+      "Problem 4",
+      "Problem 5",
+      "Problem 6"
+    ],
+    "GradingRubric": [
+      "exact algebraic/model fidelity",
+      "correct numerical/symbolic value",
+      "valid input and units",
+      "teacher verifies diagrams, graphs, card work and explanation"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "For n=100, conservative approximate margin?",
+    "Expected": "About ±10 percentage points.",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "Grading": "TEACHER_REVIEW_REQUIRED"
+  },
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u07-l10-authoring-contract.test.cjs"
+  ],
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u07-l10.rich-lesson-v2.json"
+}

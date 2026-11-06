@@ -1,0 +1,84 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u07-l10-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U07:L10",
+      "CultureCode": "en",
+      "Title": "Estimating Proportions from Samples",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the margin of error for a population proportion estimate. Use data from a random sample to determine an estimate for a population proportion.",
+        "For a sufficiently large simple random sample, an approximate 95% margin of error for sample proportion p is about 2 sqrt(p(1-p)/n). The conservative worst-case p=.5 gives approximately1/sqrt(n). Conditions and clustering matter.",
+        "Source activity 10.1: Math Talk: Proportions: Mentally evaluate the proportion of chips that are blue. 17 are blue out of 50 chips 28 are blue out of 50 chips 17 are blue out of 20 chips 21 are blue out of 60 chips Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.2: Pass or Fail: Your teacher will give you a bag with paper slips inside that are marked as either Pass or Fail. Do not empty the bag to look at all of the contents at once. One partner should hold the bag so that the other partner cannot see inside while they draw a slip of paper. The other partner should draw 10 slips of paper from the bag, one at a time. After the 10 slips are drawn,… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 10.3: Fly Memory: A biologist is breeding fruit flies to include a specific genetic mutation that will be useful in understanding memory in humans. To check whether a fly has the mutation, a DNA sequence is analyzed in a way that kills the fly, so the biologist only wants to test a sample of the flies to estimate the proportion of flies that have the mutation. Attribution: Gray and Black Fruit… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A scientist captures a sample of fish from 100 different locations along the Yellowstone river and measures the proportion of fish affected by copper toxicity for each sample. Describe how the scientist could use the data to estimate the proportion of fish affected by copper toxicity in the entire population along… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A company produces 1,000 blue crayons every day. A sample of 50 crayons are analyzed, and 3 of them are found to not meet the standards of the company, so they are labeled defective. A simulation is run in which 50 crayons are chosen out of 1,000 so that each crayon chosen has a 6% chance of being defective. The… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: A researcher uses a random sample of 200 people in prison in the United States to find that the proportion of the prison population that is jailed for drug-related crimes is 0.485. The researcher simulates selecting a sample of 200 prisoners, each with a 48.5% chance of being in prison for drug-related crimes. The… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: A pizza company is interested in the average number of pizzas eaten each year by people. They send out 30 volunteers to conduct research by collecting random samples of 25 people each and determine the number of pizzas that the people in the group ate in the previous year. After looking at the sample means, the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Based on surveys of random samples from students at a university, the proportion of university students interested in a new chain restaurant opening on their campus is 0.62 with a standard deviation of 0.04. Which of these intervals is the smallest that likely contains 95% of the sample proportions? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Kiran collects information about 25 classmates. He believes his data set is perfectly symmetrical with a mean and median of 6. He then realizes that the number he has recorded as 12 was actually supposed to be 10. What is true about the mean and median of his corrected data set? The mean and median of the corrected… Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For n=100, conservative approximate margin? Expected reasoning or answer: About ±10 percentage points.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate proportions and margin",
+          "Definition": "For a sufficiently large simple random sample, an approximate 95% margin of error for sample proportion p is about 2 sqrt(p(1-p)/n). The conservative worst-case p=.5 gives approximately1/sqrt(n). Conditions and clustering matter.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Use conservative approximate 95% margin of error for n=400. Answer: About ±5 percentage points."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Worst-case 1/sqrt(400)=1/20=.05."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate proportions and margin",
+          "Question": "Use conservative approximate 95% margin of error for n=400.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Worst-case 1/sqrt(400)=1/20=.05."
+          ],
+          "Answer": "About ±5 percentage points.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For n=100, conservative approximate margin?",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "About ±10 percentage points.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Estimate proportions and margin",
+        "For a sufficiently large simple random sample, an approximate 95% margin of error for sample proportion p is about 2 sqrt(p(1-p)/n). The conservative worst-case p=.5 gives approximately1/sqrt(n). Conditions and clustering matter.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
