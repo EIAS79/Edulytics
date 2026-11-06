@@ -1,0 +1,108 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u01-l04-source-aligned-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L04",
+      "CultureCode": "en",
+      "Title": "Using Technology to Work with Sequences",
+      "ExplanationParagraphs": [
+        "Learning goal: use spreadsheet and graphing technology to generate a sequence from a recurrence and represent sequence terms as a graph of ordered pairs.",
+        "Optional technology workshop (teacher-led): open a spreadsheet; enter A1=2,A2=3,A3=-10,A4=1/5; then enter B1=A1+A2, B2=A3*A4, B3=B1+333 and B4=abs(B2). Results are 5,-2,338,2. Change one A-value and explain how dependent B-cells update. Try a power formula using ^ and note that the equals sign is required.",
+        "Fill-down: start at 10 and type =A1+3 in A2. Show 10,13,16,...; change the first entry to 12 to get 12,15,18,... and change +3 to -1 to get 12,11,10,... . Explain how A2 becomes A3 when copied to the next row.",
+        "Fill-down for a geometric sequence: start at 16 and use =B1*0.5 for 16,8,4,2,... ; modify it to start 10 and multiply by 3 to make 10,30,90,... .",
+        "To verify common ratios, place 700,70,7,0.7,0.07 in a column and enter =C2/C1 in the adjacent row, then fill down to get 0.1 repeatedly. For a second list 7,10.5,14,17.5 use =E2-E1 to get difference 3.5 repeatedly.",
+        "The list 8,12,18,27,40.5 has factor 1.5 and is geometric. The list 50,42.1,34.2,26.3 subtracts 7.9 each time and is arithmetic. Compare adjacent values with a table; do not infer from shape alone.",
+        "Graphing workshop: create a table with one column of term indices and a column of term values, then plot the discrete ordered pairs. Alter the table to form an upward sloping diagonal line, a horizontal line, and a relation with repeated input but different output (not a function). Make a nonlinear list and a negative input with positive output in quadrant II.",
+        "Model a line using integer inputs n from 0 to 9. The rule y=2n+5 yields outputs 5,7,9,...23. Filling down a formula =2*A1+5 is different from filling a previous-row recurrence; explain both.",
+        "Practice: write spreadsheet formulas to generate doubling and +2 from 2, halving and -75 from 400, and specific five-term recursive lists from starts 5 or 1 and rules 3*previous+2 or 3*(previous+2). Check signed/fractional growth factors including -1 and 0.5.",
+        "Independent original cool-down: enter a starting value 6, then generate the next five terms with formula =2*previous-3; explain which cell reference you would use in the second row, write the output table, and plot the first three discrete points. Teacher checks spreadsheet formulas and graph, not simply numeric answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Relative spreadsheet reference",
+          "Definition": "Cell address whose row/column adjusts when a formula is copied.",
+          "Rule": "=A1+3 in A2 becomes =A2+3 in A3 after fill-down.",
+          "Example": "10,13,16 from A1=10."
+        },
+        {
+          "Title": "Common ratio and difference",
+          "Definition": "Multiplicative ratio or additive change between consecutive terms.",
+          "Rule": "Ratio = new/previous (when previous nonzero); difference = new-previous.",
+          "Example": "700,70,7 ratio 0.1; 7,10.5,14 difference 3.5."
+        },
+        {
+          "Title": "Discrete sequence graph",
+          "Definition": "Set of (term number,value) coordinate pairs.",
+          "Rule": "Each input position has exactly one output for a function.",
+          "Example": "n=0,1,2 with y=2n+5 plots (0,5),(1,7),(2,9)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Spreadsheet reference chain",
+          "Question": "Compute B1=A1+A2, B2=A3*A4, B3=B1+333, B4=abs(B2) for A=[2,3,-10,1/5].",
+          "Method": "Evaluate referenced cells in order.",
+          "Steps": [
+            "B1=2+3=5.",
+            "B2=-10*(1/5)=-2.",
+            "B3=5+333=338.",
+            "B4=|-2|=2."
+          ],
+          "Answer": "5,-2,338,2",
+          "Check": "All inputs come from the given A-cells or previously computed B-cells."
+        },
+        {
+          "Title": "Geometric ratio via fill-down",
+          "Question": "What value appears in every ratio cell next to 700,70,7,0.7,0.07?",
+          "Method": "Divide each new term by the immediately preceding term.",
+          "Steps": [
+            "70/700=0.1.",
+            "7/70=0.1.",
+            "0.7/7=0.1 and 0.07/0.7=0.1."
+          ],
+          "Answer": "0.1",
+          "Check": "Same ratio throughout."
+        },
+        {
+          "Title": "Produce integer-indexed linear values",
+          "Question": "For n=0,...,9 compute y=2n+5 and show first and last points.",
+          "Method": "Apply the function to each index.",
+          "Steps": [
+            "n=0 gives y=5.",
+            "n=1 gives y=7.",
+            "n=9 gives y=23."
+          ],
+          "Answer": "First (0,5), last (9,23).",
+          "Check": "Difference in y is 2 for each step of n."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omitting = from a formula.",
+          "WhyWrong": "Spreadsheet may store text instead of a calculated expression.",
+          "Correction": "Start each computed formula with = and verify a referenced cell changes results."
+        },
+        {
+          "Mistake": "Mixing previous-row references when filling down.",
+          "WhyWrong": "It changes the recurrence and produces a different sequence.",
+          "Correction": "Check the copied formula references the immediately preceding row."
+        },
+        {
+          "Mistake": "Claiming points are a function despite repeated inputs with different outputs.",
+          "WhyWrong": "A function cannot assign multiple outputs to one input.",
+          "Correction": "Review the input column and graph using the vertical-line test."
+        }
+      ],
+      "SummaryPoints": [
+        "Use spreadsheet formulas and relative references to generate sequences.",
+        "Adjacent differences and quotients test arithmetic and geometric patterns.",
+        "Plot discrete (term, value) pairs and test function validity.",
+        "Actual spreadsheet and graph actions are evaluated by a teacher; unrun tests remain Stage D."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

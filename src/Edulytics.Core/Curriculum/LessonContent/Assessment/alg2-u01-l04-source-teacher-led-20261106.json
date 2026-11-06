@@ -1,0 +1,71 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L04",
+  "BlueprintAlignments": [
+    {
+      "Role": "BuildingOn",
+      "ReferenceCode": "HSA-REI.D.10",
+      "ReferenceKind": "NumberedStandard",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 1
+    },
+    {
+      "Role": "Addressing",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 2
+    },
+    {
+      "Role": "BuildingTowards",
+      "ReferenceCode": "HSF-IF.C",
+      "ReferenceKind": "Cluster",
+      "ResolutionKind": "None",
+      "OutcomeCode": null,
+      "SortOrder": 3
+    }
+  ],
+  "SourceCategory": "optional spreadsheet and graphing technology workshop",
+  "Contract": {
+    "Skills": [
+      "sequence table from recursive formula",
+      "relative cell references",
+      "classify constant differences and ratios",
+      "ordered pair function check"
+    ],
+    "AllowedQuestionFamilies": [
+      "sequences.core.arithmetic_nth_term",
+      "sequences.core.geometric_nth_term",
+      "usccss.g11.alg2.u01.l01.affine_recurrence"
+    ],
+    "Readiness": "WRITTEN_NOT_RUN",
+    "ManualTeacherRequired": true,
+    "DoNotClaimIntegratedSpreadsheet": true
+  },
+  "TeacherReview": {
+    "Tasks": [
+      "actual spreadsheet relative reference entry and fill down",
+      "plot discrete points",
+      "test function by repeated input",
+      "explain zero or negative term handling"
+    ],
+    "Rubric": [
+      "formula syntax",
+      "input/output consistency",
+      "correct difference or ratio",
+      "correct graph and axis labels"
+    ]
+  },
+  "FirstPartyCoolDown": {
+    "Prompt": "In a spreadsheet start A1=6 and use A2=2*A1-3, then fill down for six terms. State the row formulas and graph the first three values as points indexed from n=1.",
+    "Expected": "6,9,15,27,51,99; (1,6),(2,9),(3,15).",
+    "Origin": "EDULYTICS_ORIGINAL",
+    "TeacherGraded": true
+  },
+  "StageD": "NOT_RUN",
+  "TestsExecuted": "NOT_RUN",
+  "TestsAuthoredNotRun": [
+    "tools/curriculum/us-ccss-g11-u01-l04-authoring-contract.test.cjs"
+  ]
+}
