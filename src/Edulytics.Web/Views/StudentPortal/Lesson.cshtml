@@ -1957,6 +1957,14 @@
                             {
                                 <li value="@task.Number">
                                     <strong>Task @task.Number:</strong> @task.Prompt
+                                    @if (Grade12PrecalculusSection11WindowVisuals.Find(task.Number) is { } windowGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(windowGraph.Graph))
+                                            <figcaption>Exact output range: @windowGraph.ExactOutputRange.
+                                                Axis endpoint labels are source-window values; coordinates are normalized for rendering.</figcaption>
+                                        </figure>
+                                    }
                                     @if (Grade12PrecalculusSection11ExerciseVisuals.Find(task.Number) is { } sourceSkillGraph)
                                     {
                                         <figure class="student-lesson-graph">

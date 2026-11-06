@@ -63,6 +63,14 @@ public static class AdvancedMathematicsVisualRenderer
                 $"x2='{F(x)}' y2='{F(zeroY + 4d)}' class='amv-axis'/>");
             Label(sb, x, zeroY + 20d, tick.Label, "amv-axis-label");
         }
+        foreach (var tick in spec.YAxisTicks)
+        {
+            var y = plot.Y(tick.Value);
+            var zeroX = plot.X(0m);
+            sb.Append($"<line x1='{F(zeroX - 4d)}' y1='{F(y)}' " +
+                $"x2='{F(zeroX + 4d)}' y2='{F(y)}' class='amv-axis'/>");
+            Label(sb, zeroX - 30d, y - 6d, tick.Label, "amv-axis-label");
+        }
 
         foreach (var segment in spec.Segments)
             Segment(sb, plot, segment);

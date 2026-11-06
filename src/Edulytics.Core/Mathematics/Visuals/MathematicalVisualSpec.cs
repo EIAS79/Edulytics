@@ -82,6 +82,7 @@ public sealed record CoordinatePlaneVisualSpec(
     // Kept separate from Points to preserve existing constructor contracts.
     public IReadOnlyList<MathematicalPoint> OpenPoints { get; init; } = [];
     public IReadOnlyList<MathematicalAxisTick> XAxisTicks { get; init; } = [];
+    public IReadOnlyList<MathematicalAxisTick> YAxisTicks { get; init; } = [];
 }
 
 public sealed record FunctionGraphVisualSpec(
@@ -208,6 +209,17 @@ public static class MathematicalVisualSpecValidator
                         tick.Value > coordinate.Window.XMax ||
                         string.IsNullOrWhiteSpace(tick.Label))
                         throw new ArgumentOutOfRangeException(nameof(coordinate.XAxisTicks));
+                    ValidateLabel(tick.Label);
+                }
+                if (coordinate.YAxisTicks.Count > MaximumPoints)
+                    throw new ArgumentOutOfRangeException(nameof(coordinate.YAxisTicks));
+                foreach (var tick in coordinate.YAxisTicks)
+                {
+                    ValidateCoordinate(tick.Value, nameof(tick.Value));
+                    if (tick.Value < coordinate.Window.YMin ||
+                        tick.Value > coordinate.Window.YMax ||
+                        string.IsNullOrWhiteSpace(tick.Label))
+                        throw new ArgumentOutOfRangeException(nameof(coordinate.YAxisTicks));
                     ValidateLabel(tick.Label);
                 }
                 ValidateSegments(coordinate.Segments);

@@ -311,6 +311,28 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void PrecalculusWindowExercisesRespectExactPhysicalAxesAndRanges()
+    {
+        var windows = Grade12PrecalculusSection11WindowVisuals.All;
+        Assert.Equal(12, windows.Count);
+        Assert.Equal(Enumerable.Range(76, 12),
+            windows.Select(x => x.ExerciseNumber));
+        Assert.Equal(-1000000m, windows[11].XMin);
+        Assert.Equal(1000000m, windows[11].XMax);
+        Assert.Equal("-100 ≤ y ≤ 100", windows[11].ExactOutputRange);
+        Assert.Equal("0 ≤ y ≤ 10,000", windows[2].ExactOutputRange);
+        Assert.Equal("-0.001 ≤ y ≤ 0.001", windows[3].ExactOutputRange);
+        Assert.All(windows, x =>
+        {
+            MathematicalVisualSpecValidator.Validate(x.Graph);
+            Assert.True(x.Graph.Segments.Count >= 32);
+            Assert.Contains("aria-labelledby",
+                AdvancedMathematicsVisualRenderer.RenderSvg(x.Graph),
+                StringComparison.Ordinal);
+        });
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
