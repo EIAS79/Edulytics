@@ -1,0 +1,420 @@
+{
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L16",
+  "SourceDocumentHashes": {
+    "teacher/preparation.html": "48d86b86d10b7cd31cb0724e8f41cddecb1de307b0a81054cc10de8f5ce1c61b",
+    "teacher/index.html": "b6c7b06587854fed419bbdb958d476c0120f8b9ad952ff0cf1a59ec44f1cfd5d",
+    "teacher/practice.html": "47bc95d0a6cb638ba68d050f08dec60bef7dab127a341da19213b126d19a7526",
+    "student/index.html": "ca5bb6f86a1e67212528df3e3007d8393e14a1199380358082d09130296a9b6a",
+    "student/practice.html": "7079ad272d94616a8aa5f992e0f554afeb75815af0438f4678b55df9abb764e1"
+  },
+  "Goals": [
+    "Calculate the coordinates of the point of intersection of two exponential graphs using logarithms.",
+    "Interpret the intersection of the graphs of two exponential functions in context."
+  ],
+  "ElementCount": 50,
+  "SourceElements": [
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-001",
+      "SourceSection": "16.1: Two Bank Accounts",
+      "SourceExcerpt": "A business owner opened two different types of investment accounts at the start of the year. The functions \\(f\\) and \\(g\\) represent the values of the two accounts as a function of the number of months after the accounts were opened.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-002",
+      "SourceSection": "16.1: Two Bank Accounts",
+      "SourceExcerpt": "Here are some true statements about the investment accounts. What does each statement mean?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-003",
+      "SourceSection": "16.1: Two Bank Accounts",
+      "SourceExcerpt": "If the two functions were graphed on the same coordinate plane, what might it look like? Sketch the two functions.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-004",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "To study the growth of bacteria in different conditions, a scientist measures the area, in square millimeters, occupied by two populations.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-005",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "The growth of Population A, in square millimeters, can be modeled by \\(f(h) = 24 \\boldcdot e^{(0.4h)}\\) where \\(h\\) is the number of hours since the experiment began. The growth of Population B can be modeled by \\(g(h) = 9 \\boldcdot…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-006",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "In this situation, what does the point of intersection of the two graphs tell us?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-007",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "solving \\(f(h) = 171\\) or \\(g(h)=171\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-008",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "solving the equation \\(f(h) = g(h)\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-009",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "Suppose the population coordinate of the point of intersection is 171. Explain why we can find the corresponding time coordinate by:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-010",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "Solve either \\(f(h) = 171\\) or \\(g(h)= 171\\). Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-011",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "Solve \\(f(h) = g(h)\\). Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-012",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "The functions \\(f\\) and \\(g\\) are given by \\(f(t) = 10e^{0.5t}\\) and \\(g(t) = 8e^{0.4t}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-013",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "Is there any positive value of \\(t\\) so that \\(f(t) =g(t)\\)? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-014",
+      "SourceSection": "16.2: Bacteria in Different Conditions",
+      "SourceExcerpt": "When do \\(f\\) and \\(g\\) reach the value 1000?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-015",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "The population, in millions, of Country C is given by the equation \\(f(t) = 16 \\boldcdot e^{(0.02t)}\\). The population of Country D is given by \\(g(t) = 17.5 \\boldcdot e^{(0.025t)}\\). In both equations, \\(t\\) is the number of years since…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-016",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "Will there be a time when the two populations are equal? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-017",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "At some point in time, the population of Country C reached 30 million. When does this happen? Explain or show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-018",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "Graphs representing functions can help us visualize how two or more quantities are changing in a situation. Let’s consider the populations of two colonies of ants.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-019",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "The population, in thousands, of a colony of carpenter ants and a colony of red wood ants can be modeled with functions \\(c(x) = 8.1 \\boldcdot e^{(0.03x)}\\) and \\(r(x)= 5.4 \\boldcdot e^{(0.05x)}\\), respectively. Here, \\(x\\) is the time in…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-020",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "From the equations, we can tell which colony had a greater initial population (carpenter ants, 8.1 thousand) and which had a greater growth factor (red wood ants, \\(e^{(0.05)}\\)). Will the colony of red wood ants eventually exceed that of…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-021",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "The intersection of the graphs tells us that about 20 months after the study began, the two colonies have the same population, about 15 thousand. After that point, the population of red wood ants is greater than that of carpenter ants. To…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-022",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "Another way to find the point of intersection is using the equations for the functions. At the point of intersection of the graphs, the two functions have the same \\(y\\)-value, so we can write the equation \\(8.1 \\boldcdot e^{(0.03x)}=5.4…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-023",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "\\(\\displaystyle \\begin {align} 8.1 \\cdot e^{(0.03x)} &= 5.4 \\cdot e^{(0.05x)}\\\\ \\frac{8.1}{5.4}&=\\frac{e^{(0.05x)}}{e^{(0.03x)}}\\\\ 1.5&=e^{(0.02x)}\\\\ \\ln (1.5)&= 0.02x\\\\ \\frac{0.405}{0.02}& \\approx x\\\\ 20.3& \\approx x\\\\ \\end {align}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-ACTIVITY-024",
+      "SourceSection": "16.3: Populations of Two Countries",
+      "SourceExcerpt": "This solution means that about 20.3 months after the study began, the two colonies have the same population.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-001",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The revenues of two companies can be modeled with exponential functions \\(f\\) and \\(g\\). Here are the graphs of the two functions. In each function, the revenue is in thousands of dollars and time, \\(t\\), is measured in years. The…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-002",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The intersection of the graphs tells us when the revenues of the two companies grow by the same factor.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-003",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "The intersection tells us when the two companies have the same revenue.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-004",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "At the intersection, \\(f(t) >g(t)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-005",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "At the intersection, \\(f(t) = 215.7\\) and \\(g(t)=215.7\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-006",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "We need to know both expressions that define \\(f\\) and \\(g\\) to find the value of \\(t\\) at the intersection.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-007",
+      "SourceSection": "Problem 1",
+      "SourceExcerpt": "If we know at least one of the expressions that define \\(f\\) and \\(g\\), we can calculate the value of \\(t\\) at the intersection.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-008",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "The population of a fast-growing city in Texas can be modeled with the equation \\(p(t) = 82 \\boldcdot e^{(0.078t)}\\). The population of a fast-growing city in Tennessee can be modeled with \\(q(t) = 132 \\boldcdot e^{(0.047t)}\\). In both…",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-009",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "What does the intersection mean in this situation?",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-010",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Find the \\(x\\)-coordinate of the intersection point by solving each equation. Show your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-011",
+      "SourceSection": "Problem 2",
+      "SourceExcerpt": "Explain why we can find out the \\(t\\) value at the intersection of the two graphs by solving \\(p(t) = q(t)\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-012",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "The function \\(f\\) is given by \\(f(x) = 100 \\boldcdot 3^x\\). Select all equations whose graph meets the graph of \\(f\\) for a positive value of \\(x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-013",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(y = 10 \\boldcdot e^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-014",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(y = 500 \\boldcdot e^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-015",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(y = 500 \\boldcdot e^{\\text-x}\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-016",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\( y = 1,\\!000 \\boldcdot 2^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-017",
+      "SourceSection": "Problem 3",
+      "SourceExcerpt": "\\(y = 600 \\boldcdot 10^x\\)",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-018",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "The half-life of nickel-63 is 100 years. A students says, “An artifact with nickel-63 in it will lose a quarter of that substance in 50 years.”",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-019",
+      "SourceSection": "Problem 4",
+      "SourceExcerpt": "Do you agree with this statement? Explain your reasoning.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-020",
+      "SourceSection": "Problem 5",
+      "SourceExcerpt": "Technology required. Estimate the value of each expression and record it. Then, use a calculator to find its value and record it.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-021",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Here are graphs of the functions \\(f\\) and \\(g\\) given by \\(f(x) = 100 \\boldcdot (1.2)^x\\) and \\(g(x) = 100 \\boldcdot e^{0.2x}\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-022",
+      "SourceSection": "Problem 6",
+      "SourceExcerpt": "Which graph corresponds to each function? Explain how you know.",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-023",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Here is a graph that represents \\(f(x) = e^x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-024",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "Explain how we can use the graph to estimate:",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-025",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The solution to an equation such as \\(300 = e^x\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    },
+    {
+      "SourceElementId": "G11-U04-L16-PRACTICE-026",
+      "SourceSection": "Problem 7",
+      "SourceExcerpt": "The value of \\(\\ln 700\\).",
+      "SourceLessonArtifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg2-u04-l16.rich-lesson-v2.json",
+      "Treatment": "SOURCE_SCOPED_AUTHORING_WITH_TEACHER_REVIEW",
+      "TestsExecuted": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceRights": "CC_BY_4_EVIDENCE_META",
+  "Assets": "source pictures/graphs retained as teacher source context; no claim of new interactive component",
+  "TestsExecuted": "NOT_RUN"
+}

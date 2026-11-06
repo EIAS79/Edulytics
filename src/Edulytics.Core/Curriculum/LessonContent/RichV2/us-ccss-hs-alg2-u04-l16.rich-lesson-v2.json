@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l16-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L16",
+      "CultureCode": "en",
+      "Title": "Using Graphs and Logarithms to Solve Problems (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the coordinates of the point of intersection of two exponential graphs using logarithms. Interpret the intersection of the graphs of two exponential functions in context.",
+        "To find where two exponential functions agree, set outputs equal and use logarithms to isolate the input. Verify the intersection input and calculate its shared output; interpret whether time can be negative.",
+        "Source activity 16.1: Two Bank Accounts: A business owner opened two different types of investment accounts at the start of the year. The functions \\(f\\) and \\(g\\) represent the values of the two accounts as a function of the number of months after the accounts were opened. Here are some true statements about the investment accounts. What does each statement mean? If the two functions were graphed on the same… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.2: Bacteria in Different Conditions: To study the growth of bacteria in different conditions, a scientist measures the area, in square millimeters, occupied by two populations. The growth of Population A, in square millimeters, can be modeled by \\(f(h) = 24 \\boldcdot e^{(0.4h)}\\) where \\(h\\) is the number of hours since the experiment began. The growth of Population B can be modeled by \\(g(h) = 9 \\boldcdot… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.3: Populations of Two Countries: The population, in millions, of Country C is given by the equation \\(f(t) = 16 \\boldcdot e^{(0.02t)}\\). The population of Country D is given by \\(g(t) = 17.5 \\boldcdot e^{(0.025t)}\\). In both equations, \\(t\\) is the number of years since 1980. Will there be a time when the two populations are equal? Explain or show your reasoning. At some point in time, the population of… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The revenues of two companies can be modeled with exponential functions \\(f\\) and \\(g\\). Here are the graphs of the two functions. In each function, the revenue is in thousands of dollars and time, \\(t\\), is measured in years. The \\(y\\)-coordinate of the intersection is 215.7. Select all statements that correctly… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: The population of a fast-growing city in Texas can be modeled with the equation \\(p(t) = 82 \\boldcdot e^{(0.078t)}\\). The population of a fast-growing city in Tennessee can be modeled with \\(q(t) = 132 \\boldcdot e^{(0.047t)}\\). In both equations, \\(t\\) represents years since 2016 and the population is measured in… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The function \\(f\\) is given by \\(f(x) = 100 \\boldcdot 3^x\\). Select all equations whose graph meets the graph of \\(f\\) for a positive value of \\(x\\). \\(y = 10 \\boldcdot e^x\\) \\(y = 500 \\boldcdot e^x\\) \\(y = 500 \\boldcdot e^{\\text-x}\\) \\( y = 1,\\!000 \\boldcdot 2^x\\) \\(y = 600 \\boldcdot 10^x\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: The half-life of nickel-63 is 100 years. A students says, “An artifact with nickel-63 in it will lose a quarter of that substance in 50 years.” Do you agree with this statement? Explain your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Technology required. Estimate the value of each expression and record it. Then, use a calculator to find its value and record it. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here are graphs of the functions \\(f\\) and \\(g\\) given by \\(f(x) = 100 \\boldcdot (1.2)^x\\) and \\(g(x) = 100 \\boldcdot e^{0.2x}\\). Which graph corresponds to each function? Explain how you know. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Here is a graph that represents \\(f(x) = e^x\\). Explain how we can use the graph to estimate: The solution to an equation such as \\(300 = e^x\\). The value of \\(\\ln 700\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Find where 2^t=4*2^(t-2). Expected reasoning or answer: They are identical for every t.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Intersections of exponential models",
+          "Definition": "To find where two exponential functions agree, set outputs equal and use logarithms to isolate the input. Verify the intersection input and calculate its shared output; interpret whether time can be negative.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve 2^t=3^(t-1). Answer: t=ln3/(ln3-ln2)."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "t ln2=(t-1)ln3; t(ln3-ln2)=ln3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Intersections of exponential models",
+          "Question": "Solve 2^t=3^(t-1).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "t ln2=(t-1)ln3",
+            "t(ln3-ln2)=ln3."
+          ],
+          "Answer": "t=ln3/(ln3-ln2).",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Find where 2^t=4*2^(t-2).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "They are identical for every t.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Intersections of exponential models",
+        "To find where two exponential functions agree, set outputs equal and use logarithms to isolate the input. Verify the intersection input and calculate its shared output; interpret whether time can be negative.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
