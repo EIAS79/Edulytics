@@ -1,0 +1,107 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "Unit": 1,
+  "Lesson": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+  "ContentVersion": "g12-u01-l01-abc-draft-20261106",
+  "LearningGoals": [
+    "Determine from ordered pairs, tables, formulas and descriptions whether each input has a single output.",
+    "Use function notation to express and evaluate outputs and solve for valid inputs.",
+    "Determine whether an established function is one-to-one under its stated domain.",
+    "Interpret vertical-line and horizontal-line tests for graphs and implicit relations.",
+    "Identify basic toolkit function families and domain restrictions."
+  ],
+  "FirstPartyCoolDown": {
+    "Authorship": "Edulytics original — not represented as the source book's teacher-only assessment.",
+    "Prompt": "(a) Determine whether R={(1,2),(1,4),(2,4)} is a function and justify. (b) For f(x)=x²−2x+1 find f(−1). (c) Is h(x)=x² one-to-one on x≥0? Justify using a formula or a horizontal-line sketch.",
+    "Expected": "(a) No, input 1 maps to both 2 and 4. (b) f(−1)=1+2+1=4. (c) Yes on x≥0: the square function is strictly increasing there, so each nonnegative output has one domain input.",
+    "ScoreRubric": [
+      {
+        "Criterion": "Correctly identifies conflicting outputs for input 1",
+        "Points": 1
+      },
+      {
+        "Criterion": "Computes substitution f(−1)=4 with intermediate steps",
+        "Points": 1
+      },
+      {
+        "Criterion": "States why x² on x≥0 is one-to-one, including domain restriction",
+        "Points": 1
+      },
+      {
+        "Criterion": "Explains vertical/horizontal line meaning or algebraic reasoning coherently",
+        "Points": 1
+      }
+    ],
+    "Evaluator": "Teacher-led written response; do not auto-mark an unseen diagram or explanation.",
+    "DigitalCorrectnessEngine": "NOT_YET_ROUTED_TO_GRADE12",
+    "DeliveryStatus": "AUTHORED_NOT_TESTED"
+  },
+  "Practice": {
+    "ReuseCandidates": [
+      {
+        "Family": "functions.relations.unique_output.classify",
+        "ReuseReason": "Classifying an input-output relation; validate prompt and expected answer when bound to the selected Grade12 lesson.",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.notation.evaluate_context",
+        "ReuseReason": "Numerical function notation substitution with contextual output",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.domain_range.context_bounds",
+        "ReuseReason": "Domain/range restriction in context; only subset of section objectives",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.absolute_value.translate_evaluate",
+        "ReuseReason": "Function evaluation and toolkit graph transformation; does not replace arbitrary graph reading",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      }
+    ],
+    "ForbidSubstitutions": [
+      "Do not substitute generic arithmetic for vertical-line/horizontal-line graphical tests.",
+      "Do not claim that classifying a numeric input-output table automatically grades a drawn function graph.",
+      "Do not use the G11 Algebra 2 curriculum course identity for this Grade12 Precalculus course."
+    ],
+    "MissingFamiliesOrCapabilities": [
+      "Exact graph/curve vertical-line and horizontal-line interaction and grading, or equivalent accessible teacher review",
+      "Function one-to-one classification on explicitly restricted domains",
+      "Function equation-solving with all valid roots and domain restrictions",
+      "All 92 source Section 1.1 exercise structures and diagram-sensitive tasks"
+    ],
+    "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
+    "PracticeReady": "NOT_READY",
+    "Tests": "WRITTEN_NOT_RUN",
+    "StageD": "NOT_RUN"
+  },
+  "TeacherReview": {
+    "Audience": "Assigned mathematics teacher",
+    "SourceSection": "1.1 Functions and Function Notation",
+    "Materials": "Coordinate paper, ruler, graphing utility as available, student response log.",
+    "Procedure": [
+      "Show the input-output rule using two counterexamples; ask the learner to label independent variable and domain.",
+      "Inspect a table with repeated input and a repeated output. Require an explanation of the distinction.",
+      "Ask students to plot y=x², y²=x and y=|x|−1 with labeled axes and scale.",
+      "Ask for a vertical-line and horizontal-line classification justified by intersections and domain.",
+      "Review the first-party Cool-down using the four-point rubric, with teacher overrides and documented feedback."
+    ],
+    "AutomatedScoreClaim": false,
+    "RuntimeIntegration": "NOT_IMPLEMENTED_FOR_G12",
+    "DocumentationStatus": "AUTHORED_NOT_TESTED"
+  },
+  "SourceElementVerification": {
+    "OriginalExamplesLocated": 15,
+    "OriginalTryItsLocated": 12,
+    "FigureNumbersLocated": 15,
+    "OriginalExerciseNumberRange": "1–92",
+    "FullSourceDenominatorVerified": false,
+    "ExactExampleToDigitalMappings": 0,
+    "FigureRightsClearance": false,
+    "ReviewAndPracticeTestChapterResources": "NOT_YET_ATOMICALLY_CROSSWALKED",
+    "Status": "SOURCE_ELEMENTS_IDENTIFIED_MATCHING_IN_PROGRESS"
+  },
+  "OwnerAcademicStatus": "OWNER_AUTHORING_DIRECTION_APPROVED; CONTENT_AND_RIGHTS_CLOSURE_NOT_YET_COMPLETE"
+}
