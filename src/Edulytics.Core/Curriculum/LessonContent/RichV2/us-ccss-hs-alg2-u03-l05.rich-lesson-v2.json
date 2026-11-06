@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u03-l05-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U03:L05",
+      "CultureCode": "en",
+      "Title": "Negative Rational Exponents",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Draw a graph representing negative rational exponents and use it to estimate values. Use both radicals and exponents to represent numbers.",
+        "For b>0, b^(-m/n)=1/b^(m/n); negative exponent takes a reciprocal, not a negative number.",
+        "Source activity 5.1: Math Talk: Don’t Be Negative: \\(9^{\\text-\\frac12}\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.2: Negative Fractional Powers Are Just Numbers: Complete the table as much as you can without using a calculator. (You should be able to fill in three spaces.) Plot these powers of 2 in the coordinate plane. ​​​​​​ Connect the points as smoothly as you can. Use your graph of \\(y=2^x\\) to estimate the value of the other powers in the table, and write your estimates in the table. Let’s investigate \\(2^{\\text{-} \\frac13}\\).… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.3: Any Fraction Can Be an Exponent: \\(8^{\\frac45}\\), \\(\\sqrt[4]{8}^5\\), \\(\\sqrt[5]{8}^4\\) \\(8^{\\text{-} \\frac45}\\), \\(\\dfrac{1}{\\sqrt[5]{8^4}}\\), \\(\\text-\\dfrac{1}{\\sqrt[5]{8^4}}\\) \\(\\sqrt{4^3}\\), \\(4^{\\frac32}\\), \\(4^{\\frac23}\\) \\(\\dfrac{1}{\\sqrt{4^3}}\\), \\(\\text-4^{\\frac32}\\), \\(4^{\\text-\\frac32}\\) For each set of 3 numbers, cross out the expression that is not equal to the other two expressions.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 5.4: Make These Exponents Less Complicated: Match expressions into groups according to whether they are equal. Be prepared to explain your reasoning. \\(\\left(\\sqrt{3}\\right)^4\\) \\(\\left (3^{\\frac12}\\right )^4\\) \\((\\sqrt{3})^2 \\boldcdot (\\sqrt{3})^2\\) \\(\\left (3^2 \\right) ^{\\frac12}\\) \\(\\left (3^{\\frac12}\\right)^2\\) When we have a number with a negative exponent, it just means we need to find the reciprocal of the number… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: Write each expression in the form \\(a^b\\), without using any radicals. \\(\\frac{1}{\\sqrt[3]{12}}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Write \\(32^{\\text-\\frac25}\\) without using exponents or radicals. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Match the equivalent expressions. \\(8^{\\text- \\frac13}\\) \\(16^{\\text- \\frac{1}{2}}\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Complete the table. Use powers of 27 in the top row and radicals or rational numbers in the bottom row. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What are the solutions to the equation \\((x-1)(x+2)=\\text-2\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Use exponent rules to explain why \\((\\sqrt{5})^3 = \\sqrt{5^3}\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Evaluate 27^(-2/3). Expected reasoning or answer: 1/9.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative rational powers",
+          "Definition": "For b>0, b^(-m/n)=1/b^(m/n); negative exponent takes a reciprocal, not a negative number.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Evaluate 16^(-3/4). Answer: 1/8"
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Fourth root16=2; cube gives8; reciprocal1/8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Negative rational powers",
+          "Question": "Evaluate 16^(-3/4).",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Fourth root16=2",
+            "cube gives8",
+            "reciprocal1/8."
+          ],
+          "Answer": "1/8",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Evaluate 27^(-2/3).",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "1/9.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Negative rational powers",
+        "For b>0, b^(-m/n)=1/b^(m/n); negative exponent takes a reciprocal, not a negative number.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
