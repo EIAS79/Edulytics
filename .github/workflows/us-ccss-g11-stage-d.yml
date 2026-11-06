@@ -1,0 +1,128 @@
+name: Grade 11 Algebra 2 Stage D - evidence and runtime gates
+# Grade 11 release is intentionally fail-closed: authoring checks do not imply runtime proof.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: g11-stage-d-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  structural-inventory:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'curriculum/us-ccss-g11-algebra2-abc-20261106'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Pin exact candidate and validate structural inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          node tools/curriculum/g11-stage-d-audit.cjs --json > /tmp/g11-structural.json
+          node -e "const a=require('/tmp/g11-structural.json');console.log(JSON.stringify(a.structural,null,2))"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g11-structural-inventory
+          path: /tmp/g11-structural.json
+          if-no-files-found: warn
+  named-lesson-contract-shards:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {shard: D1, lower: 1, upper: 40}
+          - {shard: D2, lower: 41, upper: 80}
+          - {shard: D3, lower: 81, upper: 120}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run all named lesson contracts, missing tests fail closed
+        shell: bash
+        env:
+          LOWER: ${{ matrix.lower }}
+          UPPER: ${{ matrix.upper }}
+        run: |
+          set -euo pipefail
+          files=()
+          missing=()
+          for ordinal in $(seq "$LOWER" "$UPPER"); do
+            if (( ordinal <= 11 )); then u=1; l=$ordinal
+            elif (( ordinal <= 37 )); then u=2; l=$((ordinal-11))
+            elif (( ordinal <= 56 )); then u=3; l=$((ordinal-37))
+            elif (( ordinal <= 74 )); then u=4; l=$((ordinal-56))
+            elif (( ordinal <= 85 )); then u=5; l=$((ordinal-74))
+            elif (( ordinal <= 104 )); then u=6; l=$((ordinal-85))
+            else u=7; l=$((ordinal-104)); fi
+            printf -v file 'tools/curriculum/us-ccss-g11-u%02d-l%02d-authoring-contract.test.cjs' "$u" "$l"
+            if [[ -f "$file" ]]; then files+=("$file"); else missing+=("$ordinal:$file"); fi
+          done
+          echo "SHARD ${{ matrix.shard }} TEST_FILES=${#files[@]} EXPECTED=$((UPPER-LOWER+1))"
+          if (( ${#missing[@]} )); then printf 'MISSING_NAMED_CONTRACT %s\n' "${missing[@]}"; exit 3; fi
+          node --test "${files[@]}"
+  dotnet-build-and-targeted-regression:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Shared restore and compile
+        run: |
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --no-restore -c Release
+      - name: Algebra 2, math engine and shared curriculum tests
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~Algebra2|FullyQualifiedName~Grade11|FullyQualifiedName~ExactSkill|FullyQualifiedName~Mathematics|FullyQualifiedName~Curriculum' --logger 'trx;LogFileName=g11-targeted.trx' --results-directory /tmp/g11-tests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g11-dotnet-targeted-regression
+          path: /tmp/g11-tests
+          if-no-files-found: warn
+  source-element-semantic-parity:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fail closed on unknown denominator, unverified rights or missing independent source parity
+        run: node tools/curriculum/g11-stage-d-audit.cjs --strict-source
+  verified-practice-route-coverage:
+    needs: structural-inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fail closed on unverified Grade 11 question delivery, grading and persistence
+        run: node tools/curriculum/g11-stage-d-audit.cjs --strict-practice
