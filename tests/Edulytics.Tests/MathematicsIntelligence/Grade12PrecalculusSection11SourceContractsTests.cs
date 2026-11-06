@@ -295,6 +295,17 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void SixSourceMediaSkillsHaveIndependentFirstPartyLearningAlternatives()
+    {
+        Assert.Equal(6, Grade12PrecalculusSection11SupportResources.All.Count);
+        Assert.Equal(Enumerable.Range(1, 6),
+            Grade12PrecalculusSection11SupportResources.All.Select(x => x.OriginalMediaOrdinal));
+        Assert.All(Grade12PrecalculusSection11SupportResources.All,
+            resource => Assert.False(string.IsNullOrWhiteSpace(resource.FirstPartyExplanation)));
+        // Alternative explanations do not prove third-party media rights or exact parity.
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);
