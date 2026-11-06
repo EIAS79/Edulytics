@@ -335,5 +335,106 @@
       "Concentrations10^-5 and10^-3: which has lower pH?",
       "10^-3 gives pH3, lower than pH5."
     ]
+  },
+  "5": {
+    "1": [
+      "Fit a function to data",
+      "Transform a known parent function to describe observed data; a quadratic graph translated vertically by 3 is y=x²+3, with its vertex moved from (0,0) to (0,3). Compare actual ordered pairs before accepting a model.",
+      "A table has (0,3),(1,4),(2,7). Find a transformed version of y=x² matching it.",
+      "At x0 parent0 plus3 gives3; x1 parent1 plus3 gives4; x2 parent4 plus3 gives7.",
+      "y=x²+3.",
+      "Model values (0,-2),(1,-1),(2,2) from y=x².",
+      "y=x²-2."
+    ],
+    "2": [
+      "Horizontal and vertical translations",
+      "For a function f, f(x)+k translates the graph vertically by k; f(x-h) translates right by h. The sign inside the function reverses the visible horizontal direction.",
+      "If f(x)=x², describe g(x)=f(x-2) and its vertex.",
+      "Input x-2 is zero at x2, so shift 2 right.",
+      "Right two; vertex (2,0).",
+      "If f(x)=x², describe h(x)=f(x)+5.",
+      "Shift up five."
+    ],
+    "3": [
+      "Combined translations",
+      "A model g(x)=f(x-h)+k shifts f right h and up k. A negative value of h or k reverses the direction; coordinates of identifiable features change consistently.",
+      "Given f(x)=x², describe g(x)=(x+3)²-4.",
+      "Replace input x with x+3: left3; subtract4: down4.",
+      "Vertex (-3,-4).",
+      "Describe y=(x-4)²+2 relative to y=x².",
+      "Right4 up2."
+    ],
+    "4": [
+      "Reflections",
+      "Reflecting y=f(x) over the x-axis gives y=-f(x); reflecting over the y-axis gives y=f(-x). These are different operations unless the function has appropriate symmetry.",
+      "For f(x)=x+2, write -f(x) and f(-x).",
+      "Negate entire output: -x-2; negate input only: -x+2.",
+      "-f(x)=-x-2; f(-x)=-x+2.",
+      "Reflect f(x)=x²+3 in the x-axis.",
+      "-x²-3."
+    ],
+    "5": [
+      "Even and odd symmetry",
+      "An even function satisfies f(-x)=f(x) and has y-axis symmetry. An odd function satisfies f(-x)=-f(x) and has origin symmetry. Both require domains symmetric about zero.",
+      "Classify f(x)=x² and g(x)=x³ as even or odd.",
+      "(-x)²=x²; (-x)³=-x³.",
+      "x² even; x³ odd.",
+      "Classify h(x)=x²+x.",
+      "Neither."
+    ],
+    "6": [
+      "Symmetry from equations",
+      "To classify symmetry, substitute -x into the equation, simplify and compare with f(x) and -f(x). A graph can be completed across the y-axis for even functions or through the origin for odd functions.",
+      "Classify f(x)=x³+x and g(x)=x²+x.",
+      "f(-x)=-x³-x=-f(x); g(-x)=x²-x differs from ±g(x).",
+      "f odd; g neither.",
+      "Classify f(x)=x⁴+2x².",
+      "Even."
+    ],
+    "7": [
+      "Algebraic composition of graph transformations",
+      "Translations and reflections may be combined: g(x)=-f(x-2)+3 first moves inputs right2, then reflects output and raises3; order matters for some transformations.",
+      "For f(x)=x², describe g(x)=-(x-2)²+3.",
+      "Input shift right2; output reflect over x-axis; add3; vertex2,3 opens down.",
+      "Vertex (2,3), opens downward.",
+      "Express left1 and down4 for f(x)=x².",
+      "g(x)=(x+1)²-4."
+    ],
+    "8": [
+      "Scaling outputs",
+      "The transformation g(x)=k*f(x) scales every output by k; |k|>1 vertically stretches, 0<|k|<1 compresses and negative k additionally reflects across the x-axis.",
+      "Given f(x)=x² and g(x)=3f(x), find g(2).",
+      "f(2)=4; multiply output by3.",
+      "12.",
+      "If f(2)=-5, find g(2) for g=-2f.",
+      "10."
+    ],
+    "9": [
+      "Scaling inputs",
+      "The transformation g(x)=f(kx) compresses the graph horizontally by factor 1/|k| if |k|>1, with an additional y-axis reflection when k<0. It does not multiply output directly.",
+      "Given f(x)=x², express g(x)=f(2x) and describe the change.",
+      "Substitute input2x; g=(2x)²=4x²; original feature at x occurs now at x/2.",
+      "g(x)=4x²; horizontal compression by factor1/2.",
+      "If f(x)=sin x, what is period of f(3x)?",
+      "2π/3."
+    ],
+    "10": [
+      "Operations on functions",
+      "If functions f,g share a domain, f+g, f-g and fg evaluate pointwise. The quotient f/g is defined only where g is nonzero; context may impose additional restrictions.",
+      "With f(x)=x+1 and g(x)=x², find (f+g)(2) and (fg)(2).",
+      "At2 f=3 and g=4; sum7 product12.",
+      "7 and12.",
+      "For the same functions find (f/g)(2) and excluded denominator input.",
+      "3/4; x=0 excluded."
+    ],
+    "11": [
+      "Transform a parent function to model data",
+      "Use observed vertices, intercepts and scaling to transform a parent graph. For a quadratic with vertex (1,3) and output5 at x2, g(x)=2(x-1)²+3 fits both; verify additional observations before trusting the model.",
+      "Find a transformed quadratic y=a(x-1)²+3 passing through (2,5).",
+      "Set5=a*(1)²+3, so a=2.",
+      "y=2(x-1)²+3.",
+      "Find y=a(x+2)²+1 passing through (-1,4).",
+      "a=3, so y=3(x+2)²+1."
+    ]
   }
 }
