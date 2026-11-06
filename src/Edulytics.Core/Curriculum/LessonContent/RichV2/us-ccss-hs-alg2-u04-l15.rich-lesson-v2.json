@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u04-l15-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L15",
+      "CultureCode": "en",
+      "Title": "Using Graphs and Logarithms to Solve Problems (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Use graphs to identify solutions to exponential equations. Use logarithms to calculate solutions to exponential equations.",
+        "An exponential curve intersects a horizontal line at the input solving the associated logarithmic equation. For b>0,b!=1, b^t=c gives t=ln(c)/ln(b), c>0.",
+        "Source activity 15.1: Using a Graph to Estimate: Here is a graph that represents an exponential function with base \\(e\\), defined by \\(f(x) = e^x\\). Explain how to use the graph to estimate logarithms such as \\(\\ln 100\\). Use the graph to estimate \\(\\ln 100\\). How can you use a calculator to check your estimate? What would you enter into the calculator? Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 15.2: Retire A Millionaire?: The expression \\(1 \\boldcdot e^{(0.06t)}\\) models the balance, in thousands of dollars, of an account \\(t\\) years after the account was opened. when the account is opened? What is the account balance: Diego says that the expression \\(\\ln 5\\) represents the time, in years, when the account will have 5 thousand dollars. Do you agree? Explain your reasoning. Suppose you opened… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 15.3: Cicada Population: Attribution: Summer Insects Cicada Abstract Arboretum Nature, by Max Pixel. Public Domain. Max Pixel. Source. A population of cicadas is modeled by a function defined by \\(f(w) = 250 \\boldcdot e^{(0.5w)}\\) where \\(w\\) is the number of weeks since the population was first measured. Explain why solving the equation \\(500 = 250 \\boldcdot e^{(0.5w)}\\) gives the number of weeks it… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The equation \\(p(h) = 5,\\!000 \\boldcdot 2^h\\) represents a bacteria population as a function of time in hours. Here is a graph of the function \\(p\\). Use the graph to determine when the population will reach 100,000. Explain why \\(\\log_{2} 20\\) also tells us when the population will reach 100,000. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Technology required. Population growth in the U.S. between 1800 and 1850, in millions, can be represented by the function \\(f\\), defined by \\(f(t) = 5 \\boldcdot e^{(0.028t)}\\). What was the U.S. population in 1800? Use graphing technology to graph the equations \\(y=f(t)\\) and \\(y=20\\). Adjust the graphing window to… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The growth of a bacteria population is modeled by the equation \\(p(h) = 1,\\!000 e^{(0.4h)}\\). For each question, explain or show how you know. How long does it take for the population to double? How long does it take for the population to reach 1,000,000? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: What value of \\(b\\) makes each equation true? \\(\\log_b \\frac19 = \\text-2\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: Put the following expressions in order, from least to greatest. \\(\\log_{10} 1,\\!000\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Solve \\(9 \\boldcdot 10^{(0.2t)} = 900\\). Show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Explain why \\(\\ln 4\\) is greater than 1 but is less than 2. Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Solve 5^x=125. Expected reasoning or answer: x=3.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Graphs and logarithmic solutions",
+          "Definition": "An exponential curve intersects a horizontal line at the input solving the associated logarithmic equation. For b>0,b!=1, b^t=c gives t=ln(c)/ln(b), c>0.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Solve 2^t=10 in exact logarithmic form. Answer: t=ln10/ln2≈3.32193."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Take natural ln: t*ln2=ln10; divide."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Graphs and logarithmic solutions",
+          "Question": "Solve 2^t=10 in exact logarithmic form.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Take natural ln: t*ln2=ln10",
+            "divide."
+          ],
+          "Answer": "t=ln10/ln2≈3.32193.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Solve 5^x=125.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x=3.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Graphs and logarithmic solutions",
+        "An exponential curve intersects a horizontal line at the input solving the associated logarithmic equation. For b>0,b!=1, b^t=c gives t=ln(c)/ln(b), c>0.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
