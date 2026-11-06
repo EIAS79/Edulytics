@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u02-l12-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L12",
+      "CultureCode": "en",
+      "Title": "Polynomial Division (Part 1)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Calculate the result of polynomial division using a diagram. Identify factors of polynomials using division.",
+        "A rectangular area diagram models polynomial division by grouping like powers: if P(x)=(x+2)(x+3), then dividing P by x+2 gives quotient x+3. A factor divides with remainder zero. Check by multiplication before accepting a quotient.",
+        "Source activity 12.1: Notice and Wonder: A Different Use for Diagrams: What do you notice? What do you wonder? A. \\((x-3)(x+5)=x^2+2x-15\\) B. \\((x-1)(x^2+3x-4)=x^3+2x^2-7x+4\\) C. \\((x-2)(?)=(x^3 - x^2 - 4x + 4)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.2: Factoring with Diagrams: Priya wants to sketch a graph of the polynomial \\(f\\) defined by \\(f(x)=x^3 + 5x^2 + 2x - 8\\). She knows \\(f(1)=0\\), so she suspects that \\((x-1)\\) could be a factor of \\(x^3 + 5x^2 + 2x - 8\\) and writes \\(\\displaystyle (x^3 + 5x^2 + 2x - 8) = (x - 1)(?x^2 + ?x + ?)\\) and draws a diagram. Finish Priya’s diagram. Write \\(f(x)\\) as the product of \\((x-1)\\) and another factor.… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 12.3: More Factoring with Diagrams: Here are some polynomial functions with known factors. Rewrite each polynomial as a product of linear factors. Note: you may not need to use all the columns in each diagram. For some problems, you may need to make another diagram. \\(A(x)=x^3 - 7x^2 - 16x + 112\\), \\((x-7)\\) \\(B(x)=2x^3 - x^2 - 27x + 36\\), \\(\\left(x-\\frac32\\right)\\) \\(C(x)=x^3 - 3x^2 - 13x + 15\\), \\((x+3)\\)… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: The polynomial function \\(p(x)=x^3-3x^2-10x+24\\) has a known factor of \\((x-4)\\). Rewrite \\(p(x)\\) as the product of linear factors. Draw a rough sketch of the graph of the function. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: Tyler thinks he knows one of the linear factors of \\(P(x)=x^3-9x^2+23x-15\\). After finding that \\(P(1)=0\\), he suspects that \\(x-1\\) is a factor of \\(P(x)\\). Here is the diagram he made to check if he’s right, but he set it up incorrectly. What went wrong? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: The polynomial function \\(q(x)=2x^4-9x^3-12x^2+29x+30\\) has known factors \\((x-2)\\) and \\((x+1)\\). Which expression represents \\(q(x)\\) as the product of linear factors? \\((2x - 5)(x+3)(x-2)(x+1)\\) \\((2x + 3)(x-5)(x-2)(x+1)\\) \\((2x + 15)(x-1)(x-2)(x+1)\\) \\((2x - 15)(x+1)(x-2)(x+1)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Each year a certain amount of money is deposited in an account which pays an annual interest rate of \\(r\\) so that at the end of each year the balance in the account is multiplied by a growth factor of \\(x=1+r\\). $1,000 is deposited at the start of the first year, an additional $300 is deposited at the start of the… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: State the degree and end behavior of \\(f(x)=5 + 7x - 9x^2 + 4x^3\\). Explain or show your reasoning. Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Describe the end behavior of \\(f(x) = 1 + 7x + 9x^3 + 6x^4 - 2x^5\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: What are the points of intersection between the graphs of the functions \\(f(x)=(x+3)(x-1)\\) and \\(g(x)=(x+1)(x-3)\\)? Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: Divide x^2+7x+12 by x+3. Expected reasoning or answer: x+4, remainder 0.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial division diagrams",
+          "Definition": "A rectangular area diagram models polynomial division by grouping like powers: if P(x)=(x+2)(x+3), then dividing P by x+2 gives quotient x+3. A factor divides with remainder zero. Check by multiplication before accepting a quotient.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "Divide x^2+5x+6 by x+2. Answer: Quotient x+3, remainder 0."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Factor (x+2)(x+3); cancel the divisor x+2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polynomial division diagrams",
+          "Question": "Divide x^2+5x+6 by x+2.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Factor (x+2)(x+3)",
+            "cancel the divisor x+2."
+          ],
+          "Answer": "Quotient x+3, remainder 0.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "Divide x^2+7x+12 by x+3.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "x+4, remainder 0.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Polynomial division diagrams",
+        "A rectangular area diagram models polynomial division by grouping like powers: if P(x)=(x+2)(x+3), then dividing P by x+2 gives quotient x+3. A factor divides with remainder zero. Check by multiplication before accepting a quotient.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
