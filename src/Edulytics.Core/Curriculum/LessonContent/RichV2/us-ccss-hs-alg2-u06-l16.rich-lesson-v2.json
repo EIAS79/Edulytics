@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g11-u06-l16-local-archive-20261106",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U06:L16",
+      "CultureCode": "en",
+      "Title": "Features of Trigonometric Graphs (Part 2)",
+      "ExplanationParagraphs": [
+        "Source-aligned goals: Identify the period of a trigonometric function from its graph or equation. Interpret a trigonometric function modeling a situation.",
+        "A function y=D+A sin(2πt/T) has period T, amplitude |A| and midline D. Read a repeating cycle from the model graph and check physical units.",
+        "Source activity 16.1: Which One Doesn't Belong: Graph Periods: Which one doesn't belong? A. \\(y=\\sin(\\pi \\theta)\\) A. \\(y=\\sin(\\pi \\theta)\\) B. \\(y=\\sin(\\theta)\\) B. \\(y=\\sin(\\theta)\\) C. \\(y=\\sin (\\frac 12 \\theta)\\) C. \\(y=\\sin (\\frac 12 \\theta)\\) D. \\(y=\\sin(\\theta+\\frac \\pi 2)\\) D. \\(y=\\sin(\\theta+\\frac \\pi 2)\\) Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.2: Any Period: For each graph of a trigonometric function, identify the period. Here are some trigonometric functions. Find the period of each function. What is the period of the function \\(y=\\cos(\\pi \\theta)\\)? Explain your reasoning. Identify a possible equation for a trigonometric function with this graph. Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Source activity 16.3: Around the World’s Largest Ferris Wheel: Attribution: High Roller Ferris Wheel, by thiemen. Public Domain. Pixabay. Source. The world’s tallest Ferris wheel is in Las Vegas. The height \\(h\\) in feet of one of the passenger seats on the Ferris wheel can be modeled by the function \\(f(t) = 275+ 260 \\sin\\left(\\frac{2\\pi t}{30}\\right)\\) where time \\(t\\) is measured in minutes after 8:00 a.m. What is the diameter of the… Explain the mathematical model, verify the relevant result and have a teacher inspect original diagrams or discussion evidence.",
+        "Practice Problem 1: A wheel rotates three times per second in a counterclockwise direction. The center of the wheel does not move. What angle does the point \\(P\\) rotate through in one second? \\(\\frac{2\\pi}{3}\\) radians Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 2: A bicycle wheel is spinning in place. The vertical position of a point on the wheel, in inches, is described by the function \\(f(t) = 13.5\\sin(5 \\boldcdot 2\\pi t) + 20\\). Time \\(t\\) is measured in seconds. What is the meaning of 13.5 in this context? What is the meaning of 5 in this context? What is the meaning of 20… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 3: Each expression describes the vertical position, in feet off the ground, of a carriage on a Ferris wheel after \\(t\\) minutes. Which function describes the largest Ferris wheel? \\(100 \\sin\\left(\\frac{2\\pi t}{20}\\right) + 110\\) \\(100 \\sin\\left(\\frac{2\\pi t}{30}\\right) + 110\\) \\(200 \\sin\\left(\\frac{2\\pi t}{30}\\right) +… Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 4: Which trigonometric function has period 5? \\(f(x) = \\sin\\left(\\frac{1}{5}x\\right)\\) \\(f(x) = \\sin(5x)\\) \\(f(x) = \\sin\\left(\\frac{5}{2\\pi}x\\right)\\) \\(f(x) = \\sin\\left(\\frac{2\\pi}{5} x\\right)\\) Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 5: What is the period of the function \\(f\\) given by \\(f(t) = \\cos(4\\pi t)\\)? Explain how you know. Sketch a graph of \\(f\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 6: Here is a graph of \\(y=\\cos(x)\\). Sketch a graph of \\(\\cos(2x)\\). How do the two graphs compare? Preserve original numbers, constraints and representations in a student practice task.",
+        "Practice Problem 7: Here is a table that shows the values of functions \\(f\\), \\(g\\), and \\(h\\) for some values of \\(x\\). Use the table to determine the value of \\(a\\) in the equation \\(g(x)=f(ax)\\). Use the table to determine the value of \\(b\\) in the equation \\(h(x)=f(bx)\\). Preserve original numbers, constraints and representations in a student practice task.",
+        "Edulytics independent cool-down: For y=5cos(πt/3)-2, find period. Expected reasoning or answer: 6.",
+        "Stage A-B-C authoring boundary: existing mathematics engines are reused where a proved family supports the actual operation and answer type. Any unmatched explanation, diagram, graph or advanced symbolic manipulation is teacher-reviewed; interactive capabilities are not presumed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Period from context",
+          "Definition": "A function y=D+A sin(2πt/T) has period T, amplitude |A| and midline D. Read a repeating cycle from the model graph and check physical units.",
+          "Rule": "Apply the exact task conditions, mathematical operation, and permitted domain.",
+          "Example": "For y=2sin(πt/6)+4, find period, amplitude and midline. Answer: Period12; amplitude2; midline4."
+        },
+        {
+          "Title": "Source-context verification",
+          "Definition": "A model must be checked against the given quantities and representation.",
+          "Rule": "Keep source index, signs, units, factor structure and forbidden inputs.",
+          "Example": "Angular coefficient π/6; period2π/(π/6)=12; amplitude2, shift4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Period from context",
+          "Question": "For y=2sin(πt/6)+4, find period, amplitude and midline.",
+          "Method": "Identify relationships and execute the algebraic model with explicit checks.",
+          "Steps": [
+            "Angular coefficient π/6",
+            "period2π/(π/6)=12",
+            "amplitude2, shift4."
+          ],
+          "Answer": "Period12; amplitude2; midline4.",
+          "Check": "Substitute into the original expression and review any constraints."
+        },
+        {
+          "Title": "Independent authored assessment",
+          "Question": "For y=5cos(πt/3)-2, find period.",
+          "Method": "Use the relevant mathematical rule, then justify why it applies.",
+          "Steps": [
+            "Identify the source-inspired quantities and domain.",
+            "Compute using the correct algebraic rule.",
+            "Check the result against original conditions."
+          ],
+          "Answer": "6.",
+          "Check": "Teacher checks written justification, diagrams or graph when applicable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying an algebraic solution at an excluded input.",
+          "WhyWrong": "A zero denominator or impossible physical quantity makes the result invalid.",
+          "Correction": "State and check the domain before finalising."
+        },
+        {
+          "Mistake": "Guessing a graph shape without source-specific reasoning.",
+          "WhyWrong": "Multiplicity, degree, leading sign and context can alter the curve.",
+          "Correction": "Explain each relevant feature using algebra, a table or verified source activity."
+        }
+      ],
+      "SummaryPoints": [
+        "Period from context",
+        "A function y=D+A sin(2πt/T) has period T, amplitude |A| and midline D. Read a repeating cycle from the model graph and check physical units.",
+        "Original source activity and practice task evidence are inventoried; authored explanation and source-specific teacher rubric remain distinct from unrun runtime verification."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
