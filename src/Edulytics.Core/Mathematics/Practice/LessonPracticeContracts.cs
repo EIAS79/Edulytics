@@ -7024,6 +7024,29 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // OpenStax Precalculus 2017 Section 1.1 (Grade 12): reuse only four
+        // independently implemented function family mechanics. This is a
+        // PARTIAL skill-scoped digital route, NOT an assertion that all 92
+        // original exercises, graph drawings, answers or teacher rubrics are
+        // digitally graded or that the lesson passed Stage D.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01"] =
+            new LessonPracticeContract(
+                "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+                "supporting.functions.core",
+                "PRECALC_FUNCTION_RELATIONS_NOTATION_DOMAIN_TOOLKIT_PARTIAL",
+                [
+                    "functions.relations.unique_output.classify",
+                    "functions.notation.evaluate_context",
+                    "functions.domain_range.context_bounds",
+                    "functions.absolute_value.translate_evaluate"
+                ],
+                "G12_SECTION_1_1_EXISTING_FAMILY_REUSE_ONLY_NOT_FULL_SOURCE_PARITY",
+                "READY_VERIFIED",
+                Version)
+            {
+                SkillIds = ["supporting.functions.core", "functions.evaluate.exact"]
+            };
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

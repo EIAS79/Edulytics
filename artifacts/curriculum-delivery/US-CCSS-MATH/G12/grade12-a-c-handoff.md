@@ -46,3 +46,13 @@
 - **A–B–C 0/73 READY, lesson U01:L01 STILL OPEN, Stage D/CI NOT RUN.** No test results or production availability claimed.
 
 **Do not run Stage D, CI, tests, merge or deploy this unfinished course during A–B–C.**
+
+## L01 runtime authoring continuation — partial reuse; not lesson closure
+
+- Added Grade 12 first-party **canonical Draft** course content pack sourced from the existing 15 Rich V2 worked examples, objectives, teacher notes and concepts. The Draft is not learner-published.
+- Added an exact G12-only lesson Practice contract reusing four pre-existing families: unique-output classification, numeric function notation, contextual domain/range and absolute-value evaluation. These support only a subset of Section 1.1, not all 92 original exercises, graphical interpretations, or teacher-led assessment.
+- Wrote focused Stage D contract/positive/wrong/invalid regression tests, **not run**, and did not initiate CI or E2E. Original grade-level evidence still requires runtime testing, full mapping, graph/source rights, teacher-scored gradebook, and unit resources.
+- Corrected the stale contradictory Grade 12 placement line in execution instructions: American Grade 12 = logical Level 13.
+- **U01:L01 remains A_C_EXPLICIT_GAP; 0/73 READY_FOR_STAGE_D.**
+
+- Corrected first-party Try It 9: "can contain multiple" was insufficient to prove non-injectivity. The exercise now explicitly specifies at least two employees in one department, with an aligned teacher answer. Same correction is applied to Rich V2 and canonical Draft.

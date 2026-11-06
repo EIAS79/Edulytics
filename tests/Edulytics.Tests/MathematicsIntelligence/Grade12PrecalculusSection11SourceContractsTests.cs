@@ -1,4 +1,5 @@
 using Edulytics.Core.Curriculum;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -74,6 +75,51 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         // classification or a manually checked line-test drawing.
         Assert.False(UsCcssAlg1Unit4FunctionQuestions.Supports(
             "g12.prectrig.graph.vertical_horizontal_line_teacher_review"));
+    }
+
+    [Fact]
+    public void Grade12ExactPartialReuseIsRestrictedToFourRealFamilies()
+    {
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(Code, out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal("READY_VERIFIED", contract.Readiness);
+        Assert.Equal(new[] { "supporting.functions.core", "functions.evaluate.exact" },
+            contract.SkillIds);
+        Assert.Equal(new[]
+        {
+            UsCcssAlg1Unit4FunctionQuestions.FunctionRelationFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionDomainRangeFamily,
+            UsCcssAlg1Unit4FunctionQuestions.FunctionAbsoluteTranslateFamily
+        }, contract.AllowedQuestionFamilies);
+        Assert.DoesNotContain(contract.AllowedQuestionFamilies,
+            family => family.Contains("graph", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain(contract.AllowedQuestionFamilies,
+            family => family.Contains("one_to_one", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
+    public void Grade12ReuseExactPositiveWrongAndInvalidAnswers()
+    {
+        var relation = new Dictionary<string, int>
+        {
+            ["x"] = 2, ["a"] = 5, ["b"] = 8, ["repeats"] = 1, ["variant"] = 0
+        };
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionRelationFamily, relation, "no"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionRelationFamily, relation, "yes"));
+        var notation = new Dictionary<string, int>
+        {
+            ["initial"] = 20, ["rate"] = 9, ["input"] = 2, ["variant"] = 0
+        };
+        Assert.True(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, notation, "38"));
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, notation, "37"));
+        notation.Remove("rate");
+        Assert.False(UsCcssAlg1Unit4FunctionQuestions.Verify(
+            UsCcssAlg1Unit4FunctionQuestions.FunctionNotationFamily, notation, "38"));
     }
 
     [Fact]

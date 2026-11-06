@@ -26,6 +26,6 @@ Current state: 73/73 source section locators indexed; zero source-verified lesso
 - Measure actual per-lesson start/close time if available; three minutes is a performance target for straightforward repairs, not permission to skip source element matching or falsify closure.
 - Report each completed unit's closed lessons, source gap counts, reused/extended engines, evidence URLs, commit SHA(s), and next sequential lesson, without calling Stage D ready unless every exit criterion is met.
 
-Draft course now authored: PRECALC/Advanced Precalculus selector at logical Level 12 only, V2 source identity inventory of 73 lessons. This does not close any lesson or verify authenticated runtime. Continue *U01:L01* from full-grade-progress.json until 100% source, semantic, assessment, rights and evidence completeness are proved. Do not misinterpret 92 classroom score proposals as 92 delivered digital questions.
+Draft course now authored: PRECALC/Advanced Precalculus selector at American Grade 12 logical Level 13 only, V2 source identity inventory of 73 lessons. This does not close any lesson or verify authenticated runtime. Continue *U01:L01* from full-grade-progress.json until 100% source, semantic, assessment, rights and evidence completeness are proved. Do not misinterpret 92 classroom score proposals as 92 delivered digital questions.
 
 **Grade placement invariant:** US-CCSS-MATH Grade12 = logical level 13; never reuse UAE Grade12 logical12. PRECALC is offered only at logical13. Grade11 uses logical12.
