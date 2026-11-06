@@ -1,0 +1,36 @@
+@model Edulytics.Web.Controllers.G12PrecalcRubricTeacherPage
+@{ ViewData["Title"] = "Precalculus — teacher assessment"; }
+<h1>Section 1.1, exercise @Model.Submission.ExerciseNumber — teacher assessment</h1>
+<p>Student: @Model.Submission.StudentProfileId</p>
+<p>Submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
+<pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>
+@if (Model.Submission.TeacherScore is int score)
+{
+    <p>Teacher score: @score / 4</p>
+    <p>Feedback: @Model.Submission.TeacherFeedback</p>
+}
+else
+{
+    <p>Inspect original reasoning, domain restrictions, all requested subparts and
+       any separately submitted graph. Score each of four criteria using your own
+       judgment; the platform does not grade drawings or explanations automatically.</p>
+    <form method="post" action="/school/g12/precalculus/rubric/@Model.Submission.Id">
+        @Html.AntiForgeryToken()
+        @for (var i = 0; i < Model.Criteria.Length; i++)
+        {
+            <div>
+                <label for="criterion-@i">@(i + 1). @Model.Criteria[i]</label>
+                <select id="criterion-@i" name="marks" required>
+                    <option value="">Choose a mark</option>
+                    <option value="0">0 — Not demonstrated</option>
+                    <option value="1">1 — Demonstrated</option>
+                </select>
+            </div>
+        }
+        <label for="teacherFeedback">Teacher feedback (10–2000 characters)</label>
+        <textarea id="teacherFeedback" name="teacherFeedback" required minlength="10"
+                  maxlength="2000" rows="5"></textarea>
+        <button type="submit">Save teacher assessment</button>
+    </form>
+}
+<a href="/school/g12/precalculus/rubric">Back to review queue</a>

@@ -1,0 +1,34 @@
+@model Edulytics.Web.Controllers.G12PrecalcRubricStudentPage
+@{ ViewData["Title"] = "Precalculus — Section 1.1 exercise response"; }
+<h1>Precalculus: teacher-reviewed mathematical response</h1>
+<p><strong>Exercise @Model.ExerciseNumber</strong>: @Model.Prompt</p>
+<p>Explain each mathematical step and provide any requested graph with labelled axes to your teacher.
+   Submit your written reasoning here. The platform does not automatically mark
+   open-ended graphs or proofs.</p>
+@if (Model.Existing is null)
+{
+    <form method="post" action="/student/g12/precalculus/rubric/submit">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <input type="hidden" name="exerciseNumber" value="@Model.ExerciseNumber" />
+        <label for="explanation">Your independent answer and justification (20–8000 characters)</label>
+        <textarea id="explanation" name="explanation" required minlength="20"
+                  maxlength="8000" rows="10"></textarea>
+        <button type="submit">Submit this exercise to the teacher</button>
+    </form>
+}
+else
+{
+    <h2>Submitted response</h2>
+    <p>Submitted @Model.Existing.SubmittedAtUtc.ToString("u")</p>
+    <pre style="white-space:pre-wrap">@Model.Existing.ResponseText</pre>
+    @if (Model.Existing.TeacherScore is int score)
+    {
+        <p>Teacher-awarded score: @score / 4</p>
+        <p>Teacher feedback: @Model.Existing.TeacherFeedback</p>
+    }
+    else
+    {
+        <p>Teacher review pending. No automatic grade has been awarded.</p>
+    }
+}

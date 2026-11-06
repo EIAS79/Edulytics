@@ -1,0 +1,18 @@
+@model Edulytics.Web.Controllers.G12PrecalcRubricRow[]
+@{ ViewData["Title"] = "Precalculus — teacher review queue"; }
+<h1>Precalculus — teacher review queue</h1>
+<p>Only submissions from students enrolled in your assigned mathematics groups
+   are eligible for review. Score the particular exercise, not the complete section
+   or the student's machine-graded Practice mastery.</p>
+<ul>
+@foreach (var row in Model)
+{
+    <li>
+        <a href="/school/g12/precalculus/rubric/@row.Id">
+            Exercise @row.ExerciseNumber · Lesson @row.LessonId · Student @row.StudentProfileId
+        </a>
+        — @row.SubmittedAtUtc.ToString("u")
+        — @(row.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")
+    </li>
+}
+</ul>

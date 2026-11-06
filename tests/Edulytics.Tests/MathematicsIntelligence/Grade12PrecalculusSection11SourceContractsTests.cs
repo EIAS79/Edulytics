@@ -203,6 +203,21 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
     }
 
     [Fact]
+    public void Grade12RubricRoutesAreLessonScopedAndPreserve92ExerciseNumbers()
+    {
+        Assert.Equal(92, Grade12PrecalculusSection11Exercises.All.Count);
+        var studentRoute = Attribute.GetCustomAttribute(
+            typeof(Edulytics.Web.Controllers.Grade12PrecalculusRubricStudentController),
+            typeof(Microsoft.AspNetCore.Mvc.RouteAttribute)) as Microsoft.AspNetCore.Mvc.RouteAttribute;
+        var teacherRoute = Attribute.GetCustomAttribute(
+            typeof(Edulytics.Web.Controllers.Grade12PrecalculusRubricTeacherController),
+            typeof(Microsoft.AspNetCore.Mvc.RouteAttribute)) as Microsoft.AspNetCore.Mvc.RouteAttribute;
+        Assert.Equal("student/g12/precalculus/rubric", studentRoute?.Template);
+        Assert.Equal("school/g12/precalculus/rubric", teacherRoute?.Template);
+        // Tenant-scoped persistence and authorization are verified in Stage D.
+    }
+
+    [Fact]
     public void IndependentWorkedExamplesHaveCorrectMathGoldenValues()
     {
         Assert.Equal(6, 2 * 2 + 3 * 2 - 4);

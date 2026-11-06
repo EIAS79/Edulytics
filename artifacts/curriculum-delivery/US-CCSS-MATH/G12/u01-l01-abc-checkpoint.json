@@ -30,7 +30,7 @@
     "Original graph tasks and figure licenses/accessible equivalence have not been fully checked",
     "Exercise 52 source graph requires exact point verification; all 92 need verified Edulytics implementation, not just teacher rubric proposals",
     "Lesson-specific Practice engine and exact grading for graph, one-to-one, and all function-solving prompts are not verified",
-    "Teacher rubric submissions have not been integrated with durable gradebook/tenant isolation"
+    "Teacher-reviewed G12 routes/SQL migration are authored but await Stage D verification; absence of an authenticated Stage D run alone is not an A–B–C source-match blocker"
   ],
   "RichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u01-l01.rich-lesson-v2.json",
   "RichV2StructuredVisualsAuthored": 7,
@@ -75,7 +75,7 @@
   "SourceVerifiedEquivalentElements": 0,
   "StageA": "SOURCE_1_1_169_CANDIDATE_IDS_91_OF_92_EXERCISE_MATH_CHECKED_12_TRYIT_SOURCE_ANSWERS_CHECKED;_DENOMINATOR_INCOMPLETE",
   "StageB": "16_FIRST_PARTY_EXAMPLES_12_TRYIT_6_TABLE_EQUATION_VISUALS_AUTHORED_NOT_VERIFIED_FOR_RENDERING_OR_FULL_SOURCE_PARITY",
-  "StageC": "COOLDOWN_TEACHER_RUBRIC_92_SOURCE_EXERCISES_TEACHER_SCORING_PLAN_ONLY;_NO_VERIFIED_G12_DIGITAL_MAPPING",
+  "StageC": "92_FIRST_PARTY_STUDENT_PRACTICE_TASKS_AND_TEACHER_PER_EXERCISE_SUBMISSION_AUTHORED; EXACT_FAMILIES_PARTIAL; SOURCE_PARITY_OPEN",
   "StageD": "NOT_STARTED",
   "Status": "A_C_EXPLICIT_GAP",
   "StudentRichV2IndependentTryItItemsAuthored": 12,
@@ -120,5 +120,14 @@
   "FirstPartySectionExerciseBankPromptsAuthored": 92,
   "FirstPartySectionExerciseBankPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank.json",
   "StudentExerciseBankRuntimeStatus": "92_FIRST_PARTY_TASKS_VIEW_AUTHORED_NOT_RUNTIME_TESTED",
-  "FirstPartySectionExerciseTeacherGuide": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank-teacher-review.json"
+  "FirstPartySectionExerciseTeacherGuide": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank-teacher-review.json",
+  "TeacherRubricSubmissionPersistence": "G12_EXERCISE_SCOPED_SOURCE_WRITTEN_MIGRATION_NOT_APPLIED",
+  "TeacherRubricMigration": "20261106193000_Grade12PrecalculusTeacherRubric",
+  "StageDVerificationPending": [
+    "Grade12 specific lesson identity and school adoption",
+    "G12 teacher rubric database migration applied in a controlled environment",
+    "Per-exercise student submit and tenant-isolated teacher score persistence",
+    "Five accessible first-party graph visuals rendered to authenticated learners",
+    "Exact math family build/verify and answer normalization"
+  ]
 }

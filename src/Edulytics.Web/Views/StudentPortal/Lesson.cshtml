@@ -1961,6 +1961,11 @@
                                     {
                                         <p><em>Teacher-reviewed sketch and mathematical justification required.</em></p>
                                     }
+                                    <a asp-controller="Grade12PrecalculusRubricStudent"
+                                       asp-action="Index" asp-route-lessonId="@Model.Id"
+                                       asp-route-exerciseNumber="@task.Number">
+                                        Submit exercise @task.Number for teacher review
+                                    </a>
                                 </li>
                             }
                         </ol>
