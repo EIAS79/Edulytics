@@ -43,5 +43,12 @@ Draft course now authored: PRECALC/Advanced Precalculus selector at American Gra
 
 - OpenStax Section 1.1 contains exactly 92 numbered exercises. An Edulytics original Cool-down is a **separate item 93**; it is not an original source problem and does not belong in the 92-item denominator.
 - Its question is stored in u01-l01-assessment.json and Grade12PrecalculusSection11Exercises.CoolDown; the student view links to the G12 scoped teacher-review route.
-- The authored database migration accepts 1 to 93 but is WRITTEN_NOT_APPLIED; authenticated teacher/learner persistence remains Stage D.
+- The authored database migration accepts identifiers 1–105: source exercises 1–92; original Edulytics Cool-down 93; twelve first-party Try Its 94–105. The migration is WRITTEN_NOT_APPLIED; authenticated student/teacher persistence remains Stage D.
 - Do not claim source Cool-down equivalence or completed E2E until verified.
+
+
+## Section 1.1 independent Try It delivery
+
+- Original source contains 12 Try It skill checks; independent Edulytics first-party replacements are saved under u01-l01-tryit-first-party-teacher-review.json.
+- All twelve prompts are now authored in the Section 1.1 student lesson view and routed by unique teacher-submission identifiers 94 through 105. These identifiers are NOT original numbered Section exercises.
+- Student/teacher authorization, PostgreSQL persistence, rubric feedback and accessible rendering remain WRITTEN_NOT_RUN or STAGE_D_NOT_VERIFIED, not a claim of production success.

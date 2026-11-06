@@ -1,4 +1,5 @@
 @model Edulytics.Web.Controllers.G12PrecalcRubricRow[]
+@using Edulytics.Web.Presentation
 @{ ViewData["Title"] = "Precalculus — teacher review queue"; }
 <h1>Precalculus — teacher review queue</h1>
 <p>Only submissions from students enrolled in your assigned mathematics groups
@@ -9,7 +10,7 @@
 {
     <li>
         <a href="/school/g12/precalculus/rubric/@row.Id">
-            @(row.ExerciseNumber == 93 ? "Edulytics Cool-down" : $"Exercise {row.ExerciseNumber}") · Lesson @row.LessonId · Student @row.StudentProfileId
+            @(Grade12PrecalculusSection11Exercises.DisplayLabel(row.ExerciseNumber)) · Lesson @row.LessonId · Student @row.StudentProfileId
         </a>
         — @row.SubmittedAtUtc.ToString("u")
         — @(row.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")

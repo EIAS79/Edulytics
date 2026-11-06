@@ -1978,6 +1978,25 @@
                         </ol>
                     </details>
                 }
+                <section class="student-card" aria-label="Edulytics first-party Try It activities">
+                    <h3>Try It — independent practice</h3>
+                    <p>12 new first-party tasks aligned to the section skills.
+                       Written reasoning and graphs are reviewed by the assigned
+                       mathematics teacher, not automatically scored.</p>
+                    <ol>
+                        @foreach (var task in Grade12PrecalculusSection11Exercises.TryIts)
+                        {
+                            <li>
+                                <strong>Try It @(task.Number - 93):</strong> @task.Prompt
+                                <a asp-controller="Grade12PrecalculusRubricStudent"
+                                   asp-action="Index" asp-route-lessonId="@Model.Id"
+                                   asp-route-exerciseNumber="@task.Number">
+                                    Submit Try It @(task.Number - 93) for teacher review
+                                </a>
+                            </li>
+                        }
+                    </ol>
+                </section>
                 <section class="student-card" aria-label="Edulytics original Cool-down">
                     <h3>Cool-down — explain what you know</h3>
                     <p>@Grade12PrecalculusSection11Exercises.CoolDown.Prompt</p>

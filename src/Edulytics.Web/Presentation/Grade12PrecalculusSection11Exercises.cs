@@ -117,7 +117,33 @@ public static class Grade12PrecalculusSection11Exercises
         "(c) Is h(x)=x² one-to-one when its domain is x≥0? Prove or explain.",
         "TEACHER_REVIEW_REQUIRED", "MULTIPART_WRITTEN_PROOF");
 
+    // Original Section 1.1 also contains twelve Try It learning actions.
+    // Numbers 94–105 are Edulytics internal submission identifiers, not
+    // publisher exercise numbers or additions to the 92 exercise denominator.
+    public static readonly IReadOnlyList<Task> TryIts =
+    [
+        new(94, "Try It — independent practice", "In a small library, book IDs A, B, C identify titles Alpha, Beta, Gamma without duplicates. Is title a function of book ID? Is book ID a function of title?", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(95, "Try It — independent practice", "A plant's measured height h in centimetres depends on the day d since planting. Express this as a named function and state what h(8)=17 means.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(96, "Try It — independent practice", "A table contains input/output pairs (1,10), (2,100), (3,1000). Decide whether this is a function and justify.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(97, "Try It — independent practice", "For f(t)=sqrt(t-9), calculate f(13) and state the real domain.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(98, "Try It — independent practice", "For f(t)=sqrt(t-9), find the input with output four.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(99, "Try It — independent practice", "Rewrite x=27y^3 as y=f(x) for real x.", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(100, "Try It — independent practice", "The table shows (0,6), (1,8), (2,10). Find g(1).", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(101, "Try It — independent practice", "On coordinate paper, graph f(x)=|x-1|, then identify each x at which f(x)=1.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
+        new(102, "Try It — independent practice", "Each employee is assigned exactly one department, and at least two employees are assigned to the same department. Is department a function of employee? Is employee a function of department? Is the first function one-to-one?", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(103, "Try It — independent practice", "A score from 0 to 100 determines exactly one letter grade, and several scores share each letter. Is letter grade a function of numeric score? Is it one-to-one?", "TEACHER_REVIEW_REQUIRED", "WRITTEN_EXPLANATION"),
+        new(104, "Try It — independent practice", "Sketch y=|x| and explain whether each vertical line meets its graph in at most one point.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
+        new(105, "Try It — independent practice", "Graph y=x^2 on all real inputs. Is it one-to-one? Provide a horizontal-line counterexample.", "TEACHER_REVIEW_REQUIRED", "DIAGRAM_AND_JUSTIFICATION"),
+    ];
+
+    public static string DisplayLabel(int number) =>
+        number == CoolDownNumber ? "Edulytics original Cool-down" :
+        number is >= 94 and <= 105 ? $"Try It {number - 93}" :
+        number is >= 1 and <= 92 ? $"Exercise {number}" : "Unknown activity";
+
     public static Task? Find(int number) =>
         number == CoolDownNumber ? CoolDown :
-        All.FirstOrDefault(task => task.Number == number);
+        number is >= 94 and <= 105
+            ? TryIts.FirstOrDefault(task => task.Number == number)
+            : All.FirstOrDefault(task => task.Number == number);
 }

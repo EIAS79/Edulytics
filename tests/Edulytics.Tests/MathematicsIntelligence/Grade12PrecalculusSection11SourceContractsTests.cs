@@ -197,7 +197,14 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Equal(Enumerable.Range(1, 92), tasks.Select(x => x.Number));
         Assert.Equal(93, Grade12PrecalculusSection11Exercises.CoolDown.Number);
         Assert.Contains("one-to-one", Grade12PrecalculusSection11Exercises.CoolDown.Prompt);
-        Assert.Null(Grade12PrecalculusSection11Exercises.Find(94));
+        Assert.Equal(12, Grade12PrecalculusSection11Exercises.TryIts.Count);
+        Assert.Equal(Enumerable.Range(94, 12),
+            Grade12PrecalculusSection11Exercises.TryIts.Select(x => x.Number));
+        Assert.NotNull(Grade12PrecalculusSection11Exercises.Find(94));
+        Assert.Equal("Try It 1", Grade12PrecalculusSection11Exercises.DisplayLabel(94));
+        Assert.Equal("Edulytics original Cool-down",
+            Grade12PrecalculusSection11Exercises.DisplayLabel(93));
+        Assert.Null(Grade12PrecalculusSection11Exercises.Find(106));
         Assert.All(tasks, item =>
         {
             Assert.False(string.IsNullOrWhiteSpace(item.Skill));
