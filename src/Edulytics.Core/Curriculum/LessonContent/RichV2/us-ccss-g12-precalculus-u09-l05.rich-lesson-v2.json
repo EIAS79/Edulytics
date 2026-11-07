@@ -1,0 +1,184 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L05",
+  "ContentVersion": "us-ccss-g12-precalculus-u09-l05-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L05",
+      "CultureCode": "en",
+      "Title": "Matrices and Matrix Operations",
+      "ExplanationParagraphs": [
+        "Describe matrices by dimensions and entries.",
+        "Addition/subtraction require equal shapes.",
+        "Scalar multiplication affects every entry.",
+        "Matrix multiplication uses row-by-column dot products.",
+        "Matrix products need matching inner dimensions.",
+        "AB need not equal BA.",
+        "A matrix power B^n requires square B.",
+        "Independent Cool-down: demonstrate a valid example of the section's central operation and check exact answer."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding the Dimensions of the Given Matrix and Locating Entries",
+          "Question": "Attempt adding 2×2 A=[[4, 1], [1, 5]] and3×3 B=[[6, 1, 2], [1, 12, -1], [2, -1, 9]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Undefined: unequal dimensions."
+          ],
+          "Answer": "Undefined: unequal dimensions.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Finding the Sum of Matrices",
+          "Question": "Add matrices A=[[5, 1], [1, 6]],C=[[1, 2], [0, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[6, 3], [1, 8]]"
+          ],
+          "Answer": "[[6, 3], [1, 8]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Adding Matrix A and Matrix B",
+          "Question": "Add matrices A=[[6, 1], [1, 7]],C=[[1, 3], [1, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[7, 4], [2, 9]]"
+          ],
+          "Answer": "[[7, 4], [2, 9]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Finding the Difference of Two Matrices",
+          "Question": "Attempt adding 2×2 A=[[7, 1], [1, 5]] and3×3 B=[[9, 1, 2], [1, 8, -1], [2, -1, 8]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Undefined: unequal dimensions."
+          ],
+          "Answer": "Undefined: unequal dimensions.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Finding the Sum and Difference of Two 3 x 3 Matrices",
+          "Question": "Scale matrix A=[[5, 1], [1, 5]] by 2.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[10, 2], [2, 10]]"
+          ],
+          "Answer": "[[10, 2], [2, 10]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Multiplying the Matrix by a Scalar",
+          "Question": "Scale matrix A=[[6, 1], [1, 6]] by 3.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[18, 3], [3, 18]]"
+          ],
+          "Answer": "[[18, 3], [3, 18]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Finding the Sum of Scalar Multiples",
+          "Question": "Compute 1A−C, A=[[7, 1], [1, 5]],C=[[1, 1], [2, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[6, 0], [-1, 3]]"
+          ],
+          "Answer": "[[6, 0], [-1, 3]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Multiplying Two Matrices",
+          "Question": "Multiply matrices A=[[6, 1], [1, 5]] by C=[[1, 1], [1, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[Fraction(7, 1), Fraction(8, 1)], [Fraction(6, 1), Fraction(11, 1)]]"
+          ],
+          "Answer": "[[Fraction(7, 1), Fraction(8, 1)], [Fraction(6, 1), Fraction(11, 1)]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Multiplying Two Matrices",
+          "Question": "Multiply matrices A=[[7, 1], [1, 6]] by C=[[1, 2], [2, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[Fraction(9, 1), Fraction(16, 1)], [Fraction(13, 1), Fraction(14, 1)]]"
+          ],
+          "Answer": "[[Fraction(9, 1), Fraction(16, 1)], [Fraction(13, 1), Fraction(14, 1)]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using Matrices in Real-World Problems",
+          "Question": "Compute 3A−C, A=[[3, 1], [1, 5]],C=[[1, 1], [-2, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[8, 2], [5, 13]]"
+          ],
+          "Answer": "[[8, 2], [5, 13]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using a Calculator to Perform Matrix Operations",
+          "Question": "Compute A·C−2A with A=[[3, 1], [1, 7]],C=[[1, 3], [-2, 2]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "[[Fraction(-5, 1), Fraction(9, 1)], [Fraction(-15, 1), Fraction(3, 1)]]"
+          ],
+          "Answer": "[[Fraction(-5, 1), Fraction(9, 1)], [Fraction(-15, 1), Fraction(3, 1)]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mathematical validity",
+          "Definition": "Operations follow matrix dimensions and algebraic identities.",
+          "Rule": "Verify results against original constraints.",
+          "Example": "Attempt adding 2×2 A=[[4, 1], [1, 5]] and3×3 B=[[6, 1, 2], [1, 12, -1], [2, -1, 9]]."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party matrix operations guide",
+          "Description": "Independently authored concept table.",
+          "PrimaryLabel": "Operation",
+          "SecondaryLabel": "Constraint",
+          "Rows": [
+            {
+              "Label": "Action",
+              "Cells": [
+                "add",
+                "multiply",
+                "invert"
+              ]
+            },
+            {
+              "Label": "Requirement",
+              "Cells": [
+                "equal shape",
+                "matching inner dims",
+                "square nonsingular"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Describe matrices by dimensions and entries.",
+        "Addition/subtraction require equal shapes.",
+        "Scalar multiplication affects every entry."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore matrix dimension, rank or determinant restrictions.",
+          "WhyWrong": "May produce undefined operation or false unique solution.",
+          "Correction": "Inspect dimensions and singularity; check original equations."
+        }
+      ]
+    }
+  ]
+}
