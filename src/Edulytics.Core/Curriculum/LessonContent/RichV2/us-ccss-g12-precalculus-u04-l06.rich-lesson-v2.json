@@ -1,0 +1,245 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L06",
+  "ContentVersion": "g12-u04-l06-exponent-log-equations-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L06",
+      "CultureCode": "en",
+      "Title": "Exponential and Logarithmic Equations",
+      "ExplanationParagraphs": [
+        "Exponential equations with common positive base b≠1 are solved by equating their exponents: b^S=b^T iff S=T.",
+        "Rewrite powers to a common base when possible. When bases are different use ln on positive sides of the equation, apply log power rules and solve for the unknown.",
+        "Exponential outputs with positive multipliers are strictly positive. Reject equations that require such expressions to be negative.",
+        "For Ae^(kt)=y with A,y>0 and k≠0, solve t=ln(y/A)/k. Always check the units for t and the sign of k.",
+        "When an equation is quadratic in e^x, set u=e^x, solve the quadratic and reject u≤0 before taking ln.",
+        "For real logarithms every argument must be strictly positive. Combine logs when needed, solve algebraically, then substitute candidates back to reject extraneous solutions.",
+        "Graphing verifies approximate intersections; numerical plots supplement, not replace, the exact equations and domain checks.",
+        "Half-life model A(t)=A0(1/2)^(t/T) holds for a positive initial quantity and a known half-life T. Solve by logarithms, respecting the physical time domain.",
+        "Independent Cool-down: solve 5^(x+2)=5^(2x−1); solve ln(x−2)=ln(4x−11) with domain; and compute the time for a half-life 6h sample to reach one-quarter its initial mass.",
+        "Independent Try It 1: Solve 5^(x−3)=5^(2x−8).",
+        "Independent Try It 2: Solve 9^(x+1)=27^x.",
+        "Independent Try It 3: Solve cube_root(8)^(x+1)=2^(2x).",
+        "Independent Try It 4: Can 3^x=−100 be solved over the reals?",
+        "Independent Try It 5: Solve 4^x=7^(x+1).",
+        "Independent Try It 6: Solve 200=40e^(3t).",
+        "Independent Try It 7: Solve 5e^(x+1)−2=18.",
+        "Independent Try It 8: Solve e^(2x)−6e^x+8=0.",
+        "Independent Try It 9: Solve 4ln x+2=10.",
+        "Independent Try It 10: Solve 3ln(2x)=6.",
+        "Independent Try It 11: Use graphing to approximate ln(x)=1.5.",
+        "Independent Try It 12: Solve ln(x²)=ln(5x+6).",
+        "Independent Try It 13: A 120mg sample has half-life5 days; find time to reach 15mg."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Common-base equation",
+          "Question": "Solve 3^(2x−1)=3^(x+4).",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "Set equal exponents: 2x−1=x+4, hence x=5."
+          ],
+          "Answer": "Set equal exponents: 2x−1=x+4, hence x=5.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Rewrite bases",
+          "Question": "Solve 8^(x+1)=16^x.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "2^(3x+3)=2^(4x), hence x=3."
+          ],
+          "Answer": "2^(3x+3)=2^(4x), hence x=3.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Roots as fractional exponents",
+          "Question": "Solve sqrt(9)^(x+1)=3^(2x−1).",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "sqrt9=3, so x+1=2x−1 and x=2."
+          ],
+          "Answer": "sqrt9=3, so x+1=2x−1 and x=2.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Impossible exponential equality",
+          "Question": "Can 2^(x+3)=−5 hold for real x?",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "No. Positive base exponent remains strictly positive."
+          ],
+          "Answer": "No. Positive base exponent remains strictly positive.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Different bases with logs",
+          "Question": "Solve 2^(x+1)=3^x.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "2·2^x=3^x; (3/2)^x=2; x=ln2/ln(3/2)."
+          ],
+          "Answer": "2·2^x=3^x; (3/2)^x=2; x=ln2/ln(3/2).",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Natural exponential isolated",
+          "Question": "Solve 30=5e^(2t).",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "e^(2t)=6 => t=ln6/2."
+          ],
+          "Answer": "e^(2t)=6 => t=ln6/2.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Natural exponential with translation",
+          "Question": "Solve 3e^(x−2)+1=10.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "e^(x−2)=3, x=2+ln3."
+          ],
+          "Answer": "e^(x−2)=3, x=2+ln3.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Quadratic in e^x",
+          "Question": "Solve e^(2x)−5e^x+6=0.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "u=e^x>0; u²−5u+6=(u−2)(u−3), so x=ln2 or ln3."
+          ],
+          "Answer": "u=e^x>0; u²−5u+6=(u−2)(u−3), so x=ln2 or ln3.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Logarithmic definition",
+          "Question": "Solve 3ln(x)+1=7.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "ln x=2, x=e²>0."
+          ],
+          "Answer": "ln x=2, x=e²>0.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Multiply before inverse log",
+          "Question": "Solve 2ln(4x)=6.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "ln(4x)=3, x=e³/4>0."
+          ],
+          "Answer": "ln(4x)=3, x=e³/4>0.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Graphical logarithmic intersection",
+          "Question": "Solve ln x=2 using curve and horizontal line.",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "x=e²≈7.389; plots y=ln x and y=2 intersect at(e²,2)."
+          ],
+          "Answer": "x=e²≈7.389; plots y=ln x and y=2 intersect at(e²,2).",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Log one-to-one and domain",
+          "Question": "Solve ln(x²)=ln(x+6).",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "x²=x+6 =>x=3 or−2; both x²>0 and x+6>0, so both valid."
+          ],
+          "Answer": "x²=x+6 =>x=3 or−2; both x²>0 and x+6>0, so both valid.",
+          "Check": "Domain and substitution check with units where applicable."
+        },
+        {
+          "Title": "Half-life application",
+          "Question": "A 200-g sample has half-life12h. When will 25% of initial mass remain?",
+          "Method": "Apply exact exponential or logarithm inverse rules, then check original equation.",
+          "Steps": [
+            "50/200=(1/2)^(t/12); 1/4=(1/2)², so t=24 hours."
+          ],
+          "Answer": "50/200=(1/2)^(t/12); 1/4=(1/2)², so t=24 hours.",
+          "Check": "Domain and substitution check with units where applicable."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exponential one-to-one",
+          "Definition": "For b>0,b≠1, b^S=b^T iff S=T.",
+          "Rule": "Rewrite common base first.",
+          "Example": "2^(x+1)=2^5 implies x=4."
+        },
+        {
+          "Title": "Log inverse",
+          "Definition": "log_b(u)=c iff u=b^c with u>0.",
+          "Rule": "Exclude zero or negative log arguments.",
+          "Example": "ln x=2 implies x=e²."
+        },
+        {
+          "Title": "Positivity of exponential",
+          "Definition": "For real y and b>0, b^y>0.",
+          "Rule": "No real solution to b^y=negative.",
+          "Example": "3^x=−4 has no real solution."
+        },
+        {
+          "Title": "Exponential decay half-life",
+          "Definition": "A(t)=A0(1/2)^(t/T), T>0.",
+          "Rule": "Remaining fraction r gives t=T·ln(r)/ln(1/2).",
+          "Example": "r=1/4 corresponds to two half-lives."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent rapid-growth population model",
+          "Description": "Replaces source's credited rabbit photograph with independent numerical exponential-model example; not an empirical forecast.",
+          "PrimaryLabel": "Elapsed periods",
+          "SecondaryLabel": "Modeled count",
+          "Rows": [
+            {
+              "Label": "t",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "P(t)=10·2^t",
+              "Cells": [
+                "10",
+                "20",
+                "40",
+                "80"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Use same-base exponents.",
+        "Logarithms for unlike bases.",
+        "Verify domains and reject extraneous roots.",
+        "Graphically inspect intersections.",
+        "Use time units and half-life context."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Retain negative u as a root of e^x=u.",
+          "WhyWrong": "e^x strictly positive.",
+          "Correction": "Discard u≤0."
+        },
+        {
+          "Mistake": "Keep a candidate that makes a log argument nonpositive.",
+          "WhyWrong": "The real log is undefined there.",
+          "Correction": "Check every original logarithmic argument."
+        }
+      ]
+    }
+  ]
+}
