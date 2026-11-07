@@ -637,6 +637,9 @@ def main() -> int:
                 indent=2,
             )
         )
+    if args.strict and report["summary"]["blockerCount"]:
+        print(json.dumps({"semanticAuditBlockers": report["blockers"][:40]},
+                         ensure_ascii=False, indent=2))
     if args.strict and (
         report["summary"]["blockerCount"]
         or report["summary"]["studentFacingBlockerCount"]

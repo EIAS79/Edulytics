@@ -33,11 +33,11 @@ test('Noncommercial restrictions on third-party material are not silently waived
     licenseClaim:'CC BY-NC-SA 4.0'}).status, 'BLOCKED_NONCOMMERCIAL_SOURCE');
 });
 
-test('All 17 committed blueprint sources are screened without automatic rights approvals', () => {
+test('All 18 committed blueprint sources including Grade12 are screened without automatic rights approvals', () => {
   const dir = path.resolve(__dirname, '../src/Edulytics.Core/Curriculum/LessonBlueprints/Packs');
   const result = scanBlueprints(dir);
-  assert.equal(result.blueprintCount, 17);
-  assert(result.sourceCount >= 17);
+  assert.equal(result.blueprintCount, 18);
+  assert(result.sourceCount >= 18);
   assert(result.entries.every(row => row.status.startsWith('BLOCKED_') ||
     row.status === 'PENDING_INDEPENDENT_RIGHTS_REVIEW'));
   assert(result.entries.every(row => row.blueprint && row.sourceFile));
