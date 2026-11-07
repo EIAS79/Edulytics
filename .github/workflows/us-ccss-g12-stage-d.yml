@@ -45,6 +45,8 @@ jobs:
         run: dotnet build Edulytics.sln --no-restore --configuration Release
       - name: Execute Grade 12 first-lesson source/registry tests on GitHub Actions
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusSection11SourceContractsTests --logger "trx;LogFileName=g12-u01-l01.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Execute all 73 Grade 12 actual RichV2 embedded-registry loading tests
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllLessonRegistryRuntimeTests --logger "trx;LogFileName=g12-all73-runtime-registry.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Upload focused test evidence
         if: always()
         uses: actions/upload-artifact@v4
