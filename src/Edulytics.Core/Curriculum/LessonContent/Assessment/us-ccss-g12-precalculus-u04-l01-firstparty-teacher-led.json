@@ -1,0 +1,95 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01",
+  "IndependentTryIts": [
+    {
+      "Number": 1,
+      "Prompt": "Classify x^4, (3/4)^x, and 7x.",
+      "TeacherExpectedMath": "Only (3/4)^x is exponential; base 0.75 implies decay.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 2,
+      "Prompt": "Find 2·3^(x−1)+1 at x=3.",
+      "TeacherExpectedMath": "2·3²+1=19.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 3,
+      "Prompt": "A city has 20,000 people growing 2% annually. Model 5-year population.",
+      "TeacherExpectedMath": "P(t)=20000(1.02)^t; at t=5 ≈22081.6.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 4,
+      "Prompt": "A bacteria culture starts at 200 and doubles every 3 hours. Express count at t hours.",
+      "TeacherExpectedMath": "N(t)=200·2^(t/3).",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 5,
+      "Prompt": "Exponential f(0)=7 and f(2)=63. Find model.",
+      "TeacherExpectedMath": "a=7, b²=9, b=3; f(x)=7·3^x.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 6,
+      "Prompt": "Given graph points (0,6),(1,18),(2,54), write f.",
+      "TeacherExpectedMath": "f(x)=6·3^x.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 7,
+      "Prompt": "Table y=4,12,36 at x=1,2,3. Find f=ab^x.",
+      "TeacherExpectedMath": "b=3, a=4/3; f(x)=(4/3)·3^x.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 8,
+      "Prompt": "Find amount of $1,000 at 8% APR compounded twice annually for 2 years.",
+      "TeacherExpectedMath": "1000(1+0.08/2)^4≈$1169.86.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 9,
+      "Prompt": "What deposit gives $5000 after 1 year at 12% compounded monthly?",
+      "TeacherExpectedMath": "P=5000/(1.01)^12≈$4437.25.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 10,
+      "Prompt": "Evaluate e²/2.",
+      "TeacherExpectedMath": "≈3.694528.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 11,
+      "Prompt": "Find $2,000 after 3 years at 3% continuous interest.",
+      "TeacherExpectedMath": "2000e^0.09≈$2188.35.",
+      "Marking": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 12,
+      "Prompt": "Mass starts at 60 and decays at 10% continuous rate. Find after 5 units.",
+      "TeacherExpectedMath": "60e^(−0.5)≈36.3918.",
+      "Marking": "TEACHER_MANUAL"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Classify 5(1.2)^x as growth or decay and justify.",
+      "Find exponential model f(x)=ab^x with f(0)=3,f(2)=48.",
+      "Find amount at 4% interest compounded continuously for 2 years on $1000."
+    ],
+    "TeacherExpectedMath": [
+      "Growth; base 1.2>1.",
+      "a=3, b=4, f(x)=3·4^x.",
+      "1000e^0.08≈1083.29 dollars."
+    ],
+    "PublisherRestrictedCoolDownCopied": false
+  },
+  "FirstPartyIndependentStudentMathQuestions": [],
+  "RuntimeVerified": false,
+  "StageD": "NOT_RUN"
+}
