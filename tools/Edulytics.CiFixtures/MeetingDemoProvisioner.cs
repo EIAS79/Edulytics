@@ -1130,7 +1130,14 @@ DELETE FROM "Schools";
             .Where(x =>
                 definition.PackCode != MathematicsCurriculumPackRegistry.CommonCoreCode ||
                 x.LogicalLevel <= 9 ||
-                x.CourseCode == (
+                (string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                      "true", StringComparison.OrdinalIgnoreCase) &&
+                   string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                      "true", StringComparison.OrdinalIgnoreCase) &&
+                   string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_G12_PRECALC"),
+                      "true", StringComparison.OrdinalIgnoreCase) &&
+                   (x.CourseCode == "ALG1" || x.CourseCode == "PRECALC")) ||
+                  x.CourseCode == (
                     string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
                         "true", StringComparison.OrdinalIgnoreCase) &&
                     string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
