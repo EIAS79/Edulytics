@@ -1,0 +1,132 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U11:L03",
+  "ContentVersion": "us-ccss-g12-precalculus-u11-l03-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03",
+      "CultureCode": "en",
+      "Title": "Geometric Sequences",
+      "ExplanationParagraphs": [
+        "Geometric sequences have constant ratio r between consecutive nonzero terms.",
+        "Explicit nth term a_n=a1 r^(n−1).",
+        "Recursive a_n=r a_(n−1).",
+        "Negative ratios alternate signs; |r|<1 causes decay toward zero.",
+        "Constant nonzero sequence is both arithmetic and geometric.",
+        "Independent Cool-down: calculate a representative source-family example and check the result with the definition."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding Common Ratios",
+          "Question": "Find a_4 for a1=2,ratio=3.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "54."
+          ],
+          "Answer": "54.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of a Geometric Sequence",
+          "Question": "Write recursive rule of geometric sequence a1=3,r=-2.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "a_n=-2a_(n−1), n≥2."
+          ],
+          "Answer": "a_n=-2a_(n−1), n≥2.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Using Recursive Formulas for Geometric Sequences",
+          "Question": "Compute first four geometric terms with a1=4,r=1/2.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "[Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)]."
+          ],
+          "Answer": "[Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)].",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing Terms of Geometric Sequences Using the Explicit Formula",
+          "Question": "Find ratio of geometric sequence [5, 10, 20, 40].",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "r=2."
+          ],
+          "Answer": "r=2.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing an Explicit Formula for the nth Term of a Geometric Sequence",
+          "Question": "Find a_8 for a1=1,ratio=3.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "2187."
+          ],
+          "Answer": "2187.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Solving Application Problems with Geometric Sequences",
+          "Question": "Write recursive rule of geometric sequence a1=2,r=-2.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "a_n=-2a_(n−1), n≥2."
+          ],
+          "Answer": "a_n=-2a_(n−1), n≥2.",
+          "Check": "Verify by substitution or counting."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Core definition",
+          "Definition": "Geometric sequences have constant ratio r between consecutive nonzero terms.",
+          "Rule": "Explicit nth term a_n=a1 r^(n−1).",
+          "Example": "54."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent mathematical progression and counting table",
+          "Description": "First-party numeric reference examples.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Progression",
+              "Cells": [
+                "arithmetic",
+                "geometric",
+                "probability"
+              ]
+            },
+            {
+              "Label": "Core formula",
+              "Cells": [
+                "a1+(n−1)d",
+                "a1r^(n−1)",
+                "favorable/total"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Geometric sequences have constant ratio r between consecutive nonzero terms.",
+        "Explicit nth term a_n=a1 r^(n−1).",
+        "Recursive a_n=r a_(n−1)."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse index, count, order or probability assumptions.",
+          "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
+          "Correction": "Identify model and count conditions before computing."
+        }
+      ]
+    }
+  ]
+}

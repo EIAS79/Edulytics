@@ -8,11 +8,11 @@ txt=lambda i:D[i].get_textpage().get_text_range()
 profiles=[
 (63,1,"11.1","Sequences and their Notations",953,966,71,7,9),
 (64,2,"11.2","Arithmetic Sequences",966,976,74,7,8),
-(65,3,"11.3","Geometric Sequences",976,984,60,5,6),
+(65,3,"11.3","Geometric Sequences",976,984,60,6,7),
 (66,4,"11.4","Series and their Notations",984,997,62,9,15),
-(67,5,"11.5","Counting Principles",997,1007,54,6,9),
-(68,6,"11.6","Binomial Theorem",1007,1014,49,2,2),
-(69,7,"11.7","Probability",1014,1023,60,6,5)]
+(67,5,"11.5","Counting Principles",997,1007,54,7,10),
+(68,6,"11.6","Binomial Theorem",1007,1014,49,3,3),
+(69,7,"11.7","Probability",1014,1023,60,6,6)]
 def save(f,v):f.parent.mkdir(parents=True,exist_ok=True);f.write_text(json.dumps(v,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
 def add(Q,q,a,skill,condition=True):
  assert condition
@@ -180,6 +180,7 @@ descriptions={
 }
 for ordinal,les,sec,title,start,end,count,wc,tc in profiles:
  p=json.loads(P.read_text(encoding="utf8"))
+ if ordinal <= p["LastClosedLessonOrdinal"]:continue
  assert p["LastClosedLessonOrdinal"]==ordinal-1 and p["FirstIncompleteLessonOrdinal"]==ordinal
  row=p["LessonEntries"][ordinal-1];assert row["Ordinal"]==ordinal and row["SourceSection"]==sec
  section_text=txt(start)+txt(start+1)
