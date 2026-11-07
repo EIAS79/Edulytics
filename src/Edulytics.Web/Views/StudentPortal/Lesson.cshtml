@@ -1971,6 +1971,24 @@
            Figure skills aligned; original textbook artwork is not copied. *@
         @* First-party G12 unit circle drawings. No publisher images reproduced. *@
         @* Independent sinusoidal mathematical figures, not source art. *@
+        @* Original first-party graphs for 6.2, skip denominator zeros. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Tangent cotangent secant cosecant mathematical graphs">
+                <h2>Independent reciprocal and quotient function graphs</h2>
+                <p>Investigate periods, shifts and asymptotes. Diagrams are original
+                   and graphical explanations require teacher verification.</p>
+                @foreach (var task in Grade12PrecalculusSection62TrigGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L01")
         {
             <section class="lesson-source-aligned-activities"
