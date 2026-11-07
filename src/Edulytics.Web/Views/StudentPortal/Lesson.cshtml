@@ -1961,6 +1961,29 @@
 
         @* Independently authored Grade 12 exponential graphs for source skills.
            Mathematical drawings are teacher-reviewed; runtime is reserved for Stage D. *@
+        @* Grade 12 Section 4.2: original first-party typed math graphs.
+           The publisher figure skills are covered, not replicated as pixels. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Exponential function transformations and graph reasoning">
+                <h2>Exponential graph reasoning: thirteen figure-skill alternatives</h2>
+                <p>Investigate each independently authored graph, its intercepts,
+                   asymptote, growth or decay ratio, translations and reflections.
+                   For multi-curve comparisons, use the explicitly named functions
+                   and explain their distinct initial values and ratios.
+                   Drawing and explanations require teacher review.</p>
+                @foreach (var task in Grade12PrecalculusSection42GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Figure skill @task.SourceFigureSkill:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01")
         {
             <section class="lesson-source-aligned-activities"

@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 22,
+  "ActiveLessonOrdinal": 23,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 22,
+  "FirstIncompleteLessonOrdinal": 23,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_21_OF_73",
-  "LastClosedLessonOrdinal": 21,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_22_OF_73",
+  "LastClosedLessonOrdinal": 22,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -935,22 +935,35 @@
       "LessonNumber": 2,
       "Title": "Graphs of Exponential Functions",
       "SourceSection": "4.2",
-      "PdfPageStart": 359,
-      "PdfPageEnd": 370,
-      "ACStatus": "A_C_PENDING",
+      "PdfPageStart": 358,
+      "PdfPageEnd": 369,
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l02-source-inventory-corrected-boundary.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "OriginalSourceFigureCount": 13,
+      "OriginalSourceExerciseCount": 54,
+      "OriginalWorkedExamples": 6,
+      "OriginalTryIts": 6,
+      "SourceBoundaryCorrectionVerified": true,
+      "UpdatedUtc": "2026-11-07T16:28:44.388307+00:00",
+      "OriginalSourceMathReviewed": 54,
+      "FirstPartyTeacherManualQuestionCount": 54,
+      "OriginalFigureMathSkillsCovered": 13,
+      "CorrectedPdfPages": [
+        358,
+        369
+      ],
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l02-abc-close-audit.json",
+      "ClosedAtUtc": "2026-11-07T16:28:44.388307+00:00"
     },
     {
       "Ordinal": 23,
@@ -2177,15 +2190,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 22,
+  "NextLessonOrdinal": 23,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 21,
+  "ReadyForStageD": 22,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 21,
+  "SourceVerifiedGrade12Lessons": 22,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2216,5 +2229,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T16:20:32.795373+00:00"
+  "UpdatedUtc": "2026-11-07T16:28:44.388307+00:00"
 }
