@@ -794,7 +794,7 @@
       "SourceSection": "3.7",
       "PdfPageStart": 293,
       "PdfPageEnd": 313,
-      "ACStatus": "A_C_PENDING",
+      "ACStatus": "A_C_IN_PROGRESS",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
@@ -803,11 +803,19 @@
       "RightsVerified": false,
       "ReadyForStageD": false,
       "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u03-l07-source-inventory-and-gap-audit.json",
       "LastCommitSha": null,
       "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+        "88_ORIGINAL_EXERCISES_NEED_INDIVIDUAL_FIRST_PARTY_MATH_AND_TEACHER_RUBRIC_REVIEW",
+        "23_SOURCE_FIGURE_SKILLS_NEED_INDEPENDENT_GRAPH_ALTERNATIVES_AND_MATH_CHECK",
+        "STAGE_C_REUSE_EXTEND_DECISIONS_AND_STUDENT_ASSESSMENT_ROUTE_NOT_COMPLETE"
+      ],
+      "FirstPartyRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u03-l07.rich-lesson-v2.json",
+      "SourceWorkedExampleAnchorsIdentified": 12,
+      "SourceTryItActivitiesIdentified": 8,
+      "SourceFigureAnchorsIdentified": 23,
+      "SourceExercisesIdentified": 88,
+      "UpdatedUtc": "2026-11-07T15:01:02.908562+00:00"
     },
     {
       "Ordinal": 19,
@@ -2169,5 +2177,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T11:01:59.135019+00:00"
+  "UpdatedUtc": "2026-11-07T15:01:02.908562+00:00"
 }

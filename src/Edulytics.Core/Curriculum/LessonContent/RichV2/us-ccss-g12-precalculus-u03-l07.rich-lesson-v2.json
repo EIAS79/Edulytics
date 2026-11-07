@@ -1,0 +1,235 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L07",
+  "ContentVersion": "g12-u03-l07-firstparty-rational-functions-draft-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07",
+      "CultureCode": "en",
+      "Title": "Rational Functions",
+      "ExplanationParagraphs": [
+        "A rational function is a quotient of polynomials; the original denominator cannot be zero, even where a common factor cancels.",
+        "Arrow notation x→a− or x→a+ describes one-sided input behavior. A vertical asymptote often signals diverging output, while a removable discontinuity is a finite-valued hole.",
+        "After factoring numerator and denominator, cancel common factors to locate holes but retain original domain exclusions. Remaining real denominator zeros yield vertical asymptotes.",
+        "Horizontal asymptotes follow degree comparison: numerator degree lower gives y=0; equal gives the ratio of leading coefficients; higher generally requires polynomial division for polynomial end behavior.",
+        "A graph can cross a horizontal asymptote but does not take values at a vertical asymptote's x-coordinate; a hole is an excluded point on the simplified curve.",
+        "Use intercepts, limits, sign charts and asymptotes to sketch each branch. Contextual units and positive-domain restrictions are essential in rational models.",
+        "Independent Try It 1: For f(x)=−1/(x+4), determine f(x) as x→−4− and x→−4+.",
+        "Independent Try It 2: For g(x)=3/(x−1)−2 identify both asymptotes.",
+        "Independent Try It 3: A tank holds 30 g in 60 L; add 3 g/min and 2 L/min. Write c(t) and its long-run level.",
+        "Independent Try It 4: Find domain of (x−5)/(x²−16).",
+        "Independent Try It 5: For (x²−9)/(x−3), locate the hole.",
+        "Independent Try It 6: Find end asymptote for (4x²+3)/(x²+1).",
+        "Independent Try It 7: Find x/y intercepts of (x+3)/(x−2).",
+        "Independent Try It 8: Construct a rational function with zero x=2, vertical asymptote x=−1, horizontal asymptote y=3."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Arrow notation",
+          "Question": "For f(x)=1/(x−2), determine behavior as x approaches 2 from each side.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "As x→2−, f(x)→−∞; as x→2+, f(x)→+∞."
+          ],
+          "Answer": "As x→2−, f(x)→−∞; as x→2+, f(x)→+∞.",
+          "Check": "The denominator changes from negative to positive through zero."
+        },
+        {
+          "Title": "Transform a reciprocal",
+          "Question": "Graph g(x)=−2/(x+3)+1 and state both asymptotes.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "Vertical x=−3; horizontal y=1; g(−2)=−1."
+          ],
+          "Answer": "Vertical x=−3; horizontal y=1; g(−2)=−1.",
+          "Check": "Apply translation left 3, up 1 and vertical reflection/stretch by 2."
+        },
+        {
+          "Title": "Rational concentration model",
+          "Question": "A tank has 12 kg solute in 100 L and adds 2 kg/min and 5 L/min. Express the concentration after t minutes and its long-run level.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "C(t)=(12+2t)/(100+5t) kg/L, t≥0; as t→∞, C(t)→2/5 kg/L."
+          ],
+          "Answer": "C(t)=(12+2t)/(100+5t) kg/L, t≥0; as t→∞, C(t)→2/5 kg/L.",
+          "Check": "Divide total solute mass by total volume; compare leading coefficients."
+        },
+        {
+          "Title": "Domain restrictions",
+          "Question": "Find the domain of h(x)=(x+1)/(x²−9).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "All real x except −3 and 3."
+          ],
+          "Answer": "All real x except −3 and 3.",
+          "Check": "Factor denominator (x−3)(x+3); never include zero-denominator points."
+        },
+        {
+          "Title": "Vertical asymptotes",
+          "Question": "Find vertical asymptotes of (x+1)/((x−2)(x+4)).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "x=2 and x=−4."
+          ],
+          "Answer": "x=2 and x=−4.",
+          "Check": "Neither denominator factor cancels with the numerator."
+        },
+        {
+          "Title": "Hole versus asymptote",
+          "Question": "For f(x)=((x−2)(x+3))/((x−2)(x+1)), identify the hole and vertical asymptote.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "Hole at (2,5/3); vertical asymptote x=−1; domain excludes both 2 and −1."
+          ],
+          "Answer": "Hole at (2,5/3); vertical asymptote x=−1; domain excludes both 2 and −1.",
+          "Check": "Cancel only to compute the limit; original function remains undefined at x=2."
+        },
+        {
+          "Title": "Slant asymptote",
+          "Question": "Find the end behavior of (x²+2x+3)/(x+1).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "f(x)=x+1+2/(x+1); slant asymptote y=x+1."
+          ],
+          "Answer": "f(x)=x+1+2/(x+1); slant asymptote y=x+1.",
+          "Check": "Polynomial division gives the linear quotient and vanishing remainder ratio."
+        },
+        {
+          "Title": "Horizontal asymptote",
+          "Question": "Find the horizontal asymptote of (3x²+1)/(2x²+5).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "y=3/2."
+          ],
+          "Answer": "y=3/2.",
+          "Check": "Equal polynomial degrees: leading coefficient ratio."
+        },
+        {
+          "Title": "All vertical and horizontal asymptotes",
+          "Question": "Analyze (x²−1)/(x²−4).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "Vertical asymptotes x=−2, x=2; horizontal y=1; zeros x=±1."
+          ],
+          "Answer": "Vertical asymptotes x=−2, x=2; horizontal y=1; zeros x=±1.",
+          "Check": "Factor numerator and denominator and compare degrees."
+        },
+        {
+          "Title": "Intercepts of rational function",
+          "Question": "Find intercepts and asymptotes of (x−4)/(x+2).",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "x-intercept (4,0), y-intercept (0,−2), vertical x=−2, horizontal y=1."
+          ],
+          "Answer": "x-intercept (4,0), y-intercept (0,−2), vertical x=−2, horizontal y=1.",
+          "Check": "Numerator zero produces x-intercept only if denominator nonzero."
+        },
+        {
+          "Title": "Graph from critical points",
+          "Question": "Sketch f(x)=x/(x²−1) with intercepts and asymptotes.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "Intercept (0,0); vertical x=±1; horizontal y=0. On (1,∞) graph is positive, on (0,1) negative."
+          ],
+          "Answer": "Intercept (0,0); vertical x=±1; horizontal y=0. On (1,∞) graph is positive, on (0,1) negative.",
+          "Check": "Use signs between critical inputs to place branches."
+        },
+        {
+          "Title": "Construct a rational function",
+          "Question": "Construct f with simple vertical asymptotes −2 and 3, zero at 1 and y-intercept 1/3.",
+          "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+          "Steps": [
+            "f(x)=2(x−1)/((x+2)(x−3))."
+          ],
+          "Answer": "f(x)=2(x−1)/((x+2)(x−3)).",
+          "Check": "Choose factored numerator/denominator and solve f(0)=1/3 for scale."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rational function and domain",
+          "Definition": "A quotient p(x)/q(x), q(x)≠0.",
+          "Rule": "Exclude every zero of the original denominator.",
+          "Example": "(x−2)/(x²−4) excludes x=−2 and x=2."
+        },
+        {
+          "Title": "Removable hole",
+          "Definition": "A common factor cancels while its root remains excluded from the domain.",
+          "Rule": "Evaluate the simplified expression at the excluded input to find the hole's y-coordinate.",
+          "Example": "(x−2)(x+3)/((x−2)(x+1)) has hole (2,5/3)."
+        },
+        {
+          "Title": "Vertical asymptote",
+          "Definition": "A vertical line where the function grows unbounded on at least one side.",
+          "Rule": "Check uncancelled real denominator factors and one-sided behavior.",
+          "Example": "1/(x+2) has vertical x=−2."
+        },
+        {
+          "Title": "Horizontal/slant asymptotes",
+          "Definition": "Lines approached as input grows without bound.",
+          "Rule": "Use degree comparisons and long division; horizontal lines may be crossed.",
+          "Example": "(x²+2x+3)/(x+1)=x+1+2/(x+1)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rational behavior by numerator/denominator degree",
+          "Description": "Independent degree classification rather than a copied source illustration.",
+          "PrimaryLabel": "Degrees",
+          "SecondaryLabel": "Long-run behavior",
+          "Rows": [
+            {
+              "Label": "deg numerator < deg denominator",
+              "Cells": [
+                "horizontal asymptote",
+                "y=0"
+              ]
+            },
+            {
+              "Label": "equal degree",
+              "Cells": [
+                "horizontal asymptote",
+                "leading-coefficient ratio"
+              ]
+            },
+            {
+              "Label": "degree numerator one higher",
+              "Cells": [
+                "linear slant if quotient has degree 1",
+                "polynomial division"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Original denominator zeros are always excluded.",
+        "Cancel common factors to distinguish holes from vertical asymptotes.",
+        "A horizontal asymptote can be crossed.",
+        "Use intercepts and branch signs in addition to asymptotes.",
+        "Context models require units and permissible input ranges."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a cancelled factor as an allowed input.",
+          "WhyWrong": "Cancelling does not restore undefined domain values.",
+          "Correction": "Keep the original denominator restrictions and graph a hole."
+        },
+        {
+          "Mistake": "Claiming every horizontal asymptote is uncrossable.",
+          "WhyWrong": "Horizontal asymptotes describe end behavior, not forbidden output values.",
+          "Correction": "Solve f(x)=asymptote value and check any finite intersections."
+        },
+        {
+          "Mistake": "Forgetting that a denominator zero may create a hole.",
+          "WhyWrong": "A common numerator factor cancels and leaves finite limit.",
+          "Correction": "Factor first and distinguish cancelled from remaining factors."
+        }
+      ]
+    }
+  ]
+}
