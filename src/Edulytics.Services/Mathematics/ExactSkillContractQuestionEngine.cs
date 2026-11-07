@@ -5503,6 +5503,11 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
         var triple = triples[random.Next(triples.Length)];
+        // Preserve exact ratios while diversifying numerically distinct
+        // triangles for certified 10-question practice sessions.
+        var multiplier = random.Next(1, Math.Max(13, scale + 1));
+        triple = (triple.Opposite * multiplier,
+            triple.Adjacent * multiplier, triple.Hypotenuse * multiplier);
         var ratioType = random.Next(0, 3);
         var numerator = ratioType switch
         {
@@ -5536,7 +5541,7 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
         var triple = triples[random.Next(triples.Length)];
-        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var multiplier = random.Next(1, Math.Max(13, scale + 1));
         var opposite = triple.Opposite * multiplier;
         var adjacent = triple.Adjacent * multiplier;
         var hypotenuse = triple.Hypotenuse * multiplier;

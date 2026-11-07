@@ -2009,7 +2009,7 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("The numerator and denominator of a nonzero divisor fraction can be swapped to multiply by the reciprocal. 1=yes,0=no.",1,"a÷(b/c)=a×(c/b)."),
             new("Dividing by a fraction less than1 always makes the quotient smaller for positive dividend. 1=yes,0=no.",0,"It gets larger."),
             new("A tape diagram and reciprocal algorithm should produce the same correct quotient. 1=yes,0=no.",1,"Equivalent reasoning."),
-            new("One must avoid using0 as the divisor of a fraction-division expression. 1=yes,0=no.",1,"Division by zero undefined.")
+            new("One must avoid using0 as the divisor of a fraction-division expression. 1=yes,0=no.",1,"Division by zero has no defined quotient.")
         ],
         [L0411DivisionFluency] =
         [
