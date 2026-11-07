@@ -13,6 +13,31 @@ public sealed class Grade12Precalculus31AdvancedExactFamilyStageDTests
         "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
 
     [Fact]
+    public void CardinalUnitCircleCosineAndSineAreExactForAllSignedQuarterTurns()
+    {
+        var family = Grade12PrecalculusAdvancedNumericQuestions.Prefix +
+            "u05.l02.unit_circle_coordinate";
+        var p = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["a"] = 2, ["b"] = 3, ["c"] = 4, ["d"] = 5,
+            ["x"] = 1, ["n"] = 0, ["k"] = 0
+        };
+        var cosine = new[] { 1, 0, -1, 0 };
+        var sine = new[] { 0, 1, 0, -1 };
+        for (var k = -32; k <= 32; k++)
+        {
+            p["k"] = k;
+            var index = ((k % 4) + 4) % 4;
+            p["n"] = 0;
+            Assert.Equal(cosine[index].ToString(),
+                Grade12PrecalculusAdvancedNumericQuestions.Solve(family,p));
+            p["n"] = 1;
+            Assert.Equal(sine[index].ToString(),
+                Grade12PrecalculusAdvancedNumericQuestions.Solve(family,p));
+        }
+    }
+
+    [Fact]
     public void All31NumericalFamiliesMatchIndependentlyComputedKnownAnswerVectors()
     {
         var baseParams = new Dictionary<string, int>(StringComparer.Ordinal)

@@ -216,9 +216,7 @@ public static class Grade12PrecalculusAdvancedNumericQuestions
             "u03.l07.rational_asymptote" => b,
             "u03.l09.direct_variation" => a*x*x,
             "u05.l01.radians_to_degrees" => 30*k,
-            "u05.l02.unit_circle_coordinate" => n==0
-                ? ((k%4+4)%4 switch {0=>1,1=>0,2=>-1,_=>0})
-                : ((k%4+4)%4 switch {0=>0,1=>1,2=>0,_=>-1}),
+            "u05.l02.unit_circle_coordinate" => UnitCircleQuarterTurn(k, n),
             "u05.l03.trigonometric_ratio" => (n==0?3:4)*k,
             "u06.l01.sine_wave_maximum" => a+b,
             "u06.l02.tangent_period" => n,
@@ -248,6 +246,21 @@ public static class Grade12PrecalculusAdvancedNumericQuestions
             _ => throw new ArgumentOutOfRangeException(nameof(family))
         };
         return answer.ToString(CultureInfo.InvariantCulture);
+    }
+
+    // Use an explicit normalized angle before evaluating the two cardinal
+    // coordinate cases. A nested switch in the ternary numeric formula had
+    // a reproducible DivideByZeroException in the Linux release runtime
+    // (GitHub Actions #42421350552, U05:L02, eight of fifteen seeds).
+    private static int UnitCircleQuarterTurn(int steps, int coordinateKind)
+    {
+        var normalized = steps % 4;
+        if (normalized < 0) normalized += 4;
+        if (coordinateKind == 0)
+            return normalized switch { 0 => 1, 1 => 0, 2 => -1, 3 => 0, _ => throw new InvalidOperationException() };
+        if (coordinateKind == 1)
+            return normalized switch { 0 => 0, 1 => 1, 2 => 0, 3 => -1, _ => throw new InvalidOperationException() };
+        throw new ArgumentOutOfRangeException(nameof(coordinateKind));
     }
 
     private static int Choose(int n,int k)
