@@ -1,0 +1,112 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U12:L01",
+  "ContentVersion": "us-ccss-g12-precalculus-u12-l01-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L01",
+      "CultureCode": "en",
+      "Title": "Finding Limits: Numerical and Graphical Approaches",
+      "ExplanationParagraphs": [
+        "A limit describes approached function value as x approaches a point, whether or not f(a) is defined.",
+        "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
+        "A two-sided limit exists only if finite one-sided limits agree.",
+        "A removable hole can have a finite limit even when function is undefined.",
+        "Infinite limits describe unbounded behavior rather than a finite real number.",
+        "Independent Cool-down: evaluate a representative local example and explain the limiting or derivative reasoning."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Understanding the Limit of a Function",
+          "Question": "At x→3 for f(x)=x², compute f(a±0.01) and infer limit.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "left=8.9401,right=9.0601,limit=9."
+          ],
+          "Answer": "left=8.9401,right=9.0601,limit=9.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding a Limit Using a Graph",
+          "Question": "Find one-sided limits at x→4 of f(x)=x+4 if x<4, else x+3.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Left=8, right=7, two-sided does not exist."
+          ],
+          "Answer": "Left=8, right=7, two-sided does not exist.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding a Limit Using a Table",
+          "Question": "From f(x)=1/(x−5)², describe limit x→5.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "+infinity from both sides; no finite real limit."
+          ],
+          "Answer": "+infinity from both sides; no finite real limit.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Using a Graphing Utility to Determine a Limit",
+          "Question": "For f(x)=sin(x)/x for x≠0, what is limit at0?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "1; function has removable discontinuity if f(0) not assigned1."
+          ],
+          "Answer": "1; function has removable discontinuity if f(0) not assigned1.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Calculus core concept",
+          "Definition": "A limit describes approached function value as x approaches a point, whether or not f(a) is defined.",
+          "Rule": "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
+          "Example": "left=8.9401,right=9.0601,limit=9."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party calculus comparison table",
+          "Description": "Independent secant/limit/continuity concept chart.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Test",
+          "Rows": [
+            {
+              "Label": "Concept",
+              "Cells": [
+                "limit",
+                "continuity",
+                "derivative"
+              ]
+            },
+            {
+              "Label": "Check",
+              "Cells": [
+                "left=right",
+                "limit=f(a)",
+                "difference quotient"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "A limit describes approached function value as x approaches a point, whether or not f(a) is defined.",
+        "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
+        "A two-sided limit exists only if finite one-sided limits agree."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
+          "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
+          "Correction": "Factor/rationalize or compare one-sided limits."
+        }
+      ]
+    }
+  ]
+}
