@@ -53,7 +53,202 @@
       "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
     }
   ],
-  "OriginalExerciseFirstPartyCoverageStatus": "PENDING_PER_EXERCISE_MATH_AND_GRAPH_CHECK",
+  "OriginalExerciseFirstPartyCoverageStatus": "24_OF_88_INDEPENDENT_SOURCE_SKILL_QUESTION_ALTERNATIVES_AUTHORED_REMAINING_64_PENDING",
   "OriginalSourceImagesCopied": false,
-  "StageDStudentTeacherRuntime": "NOT_RUN"
+  "StageDStudentTeacherRuntime": "NOT_RUN",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Explain why p(x)=x³−2x+4 is polynomial while r(x)=(x²+1)/(x−3) is rational.",
+      "TeacherExpectedMath": "p uses nonnegative integer exponents and no nonconstant denominator. r is a quotient of polynomials and is undefined at x=3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Compare continuity of p(x)=2x²+1 and r(x)=1/(x+1) over real inputs.",
+      "TeacherExpectedMath": "p is continuous at every real x; r is undefined and has a vertical asymptote at x=−1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Explain why r(x)=(x−4)(x+2)/((x−4)(x−1)) has a hole at x=4.",
+      "TeacherExpectedMath": "A common factor x−4 cancels in the expression, but the original domain excludes 4. The simplified value at 4 is (4+2)/(4−1)=2, giving hole (4,2).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Give an example of a rational function with no vertical asymptotes and justify it.",
+      "TeacherExpectedMath": "1/(x²+4): the denominator has no real zeros, so no real vertical asymptotes.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Give a rational function with no real x-intercepts and justify it.",
+      "TeacherExpectedMath": "(x²+1)/(x−2): the numerator is always positive, so no x-intercepts; domain excludes 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x+2)/(x−4).",
+      "TeacherExpectedMath": "All real x except 4.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Find the original domain of f(x)=(x−3)/(x²−9) and classify each excluded input.",
+      "TeacherExpectedMath": "Exclude −3 and 3; x=3 is a hole at y=1/6 and x=−3 is a vertical asymptote.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x²+1)/(x²+x−6).",
+      "TeacherExpectedMath": "Factor denominator (x+3)(x−2). Exclude −3 and 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x+5)/(x⁴−10x²+9).",
+      "TeacherExpectedMath": "Denominator=(x²−1)(x²−9). Exclude −3,−1,1,3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Find domain, vertical and horizontal asymptotes of 7/(x+5).",
+      "TeacherExpectedMath": "Exclude −5; vertical x=−5; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Find domain and asymptotes of 3/(2x−7).",
+      "TeacherExpectedMath": "Exclude 7/2; vertical x=7/2; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Find domain and asymptotes of x/(x²−16).",
+      "TeacherExpectedMath": "Exclude −4 and 4; vertical x=±4; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (x+1)/(x²−3x−10).",
+      "TeacherExpectedMath": "Denominator=(x−5)(x+2). Exclude 5 and −2; both are vertical asymptotes, horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Find real vertical and horizontal asymptotes of (x+6)/(x³−8).",
+      "TeacherExpectedMath": "Denominator real zero x=2, numerator nonzero there. Vertical x=2; horizontal y=0. Domain excludes 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (2x+1)/(x³−9x).",
+      "TeacherExpectedMath": "Denominator x(x−3)(x+3). Exclude −3,0,3; all vertical, horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (x²−4)/(x(x+3)(x+5)).",
+      "TeacherExpectedMath": "Exclude −5,−3,0; numerator nonzero at all three, so verticals there; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Classify all discontinuities and the horizontal asymptote of (x−4)/(x²−16).",
+      "TeacherExpectedMath": "Domain excludes −4 and 4; hole at (4,1/8); vertical asymptote x=−4; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Find domain and vertical/horizontal asymptotes of (x+2)/(x−1).",
+      "TeacherExpectedMath": "Exclude 1; vertical x=1; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (6−3x)/(2x+1).",
+      "TeacherExpectedMath": "Exclude −1/2; vertical x=−1/2; horizontal y=−3/2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Find the x- and y-intercepts of (x−6)/(x²+1).",
+      "TeacherExpectedMath": "x-intercept (6,0); y-intercept (0,−6).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Find intercepts and hole of f(x)=x/(x²+2x).",
+      "TeacherExpectedMath": "Original domain excludes 0 and −2; simplifies to 1/(x+2). Hole at (0,1/2); no x-intercept and no y-intercept.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Find intercepts of (x²−5x+4)/(x²+4x+3).",
+      "TeacherExpectedMath": "x-intercepts (1,0) and (4,0); y-intercept (0,4/3). Denominator roots −1,−3 do not cancel.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Find all real intercepts of (x²+x+2)/(x²−5x+6).",
+      "TeacherExpectedMath": "No x-intercepts: numerator discriminant 1−8<0; y-intercept (0,1/3).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Find the x- and y-intercepts of (50−2x²)/(x²−9).",
+      "TeacherExpectedMath": "x-intercepts (−5,0) and (5,0); y-intercept (0,−50/9). Denominator excludes ±3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    }
+  ],
+  "FirstPartyIndependentStudentQuestionsAuthored": 24
 }
