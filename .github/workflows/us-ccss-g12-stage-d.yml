@@ -31,6 +31,8 @@ jobs:
           node-version: '22'
       - name: Check 73 ordered lesson and Stage D ledger contracts
         run: node tools/curriculum/g12_stage_d_structure_gate.cjs
+      - name: Verify owner-authorized 73 canonical student body candidates and attribution credits
+        run: node tools/curriculum/g12_stage_d_canonical_73_gate.cjs
   shared-dotnet-build-and-first-lesson-contracts:
     runs-on: ubuntu-latest
     timeout-minutes: 45
@@ -47,6 +49,8 @@ jobs:
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusSection11SourceContractsTests --logger "trx;LogFileName=g12-u01-l01.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Execute all 73 Grade 12 actual RichV2 embedded-registry loading tests
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllLessonRegistryRuntimeTests --logger "trx;LogFileName=g12-all73-runtime-registry.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Materialize and validate all 73 published canonical Grade12 lesson candidates
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusCanonical73PublishedCandidateTests --logger "trx;LogFileName=g12-canonical-73.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Verify exact Grade12 additional function families and global presentation contracts
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter "FullyQualifiedName~Grade12Section11AdditionalFunctionFamilyInteractionTests|FullyQualifiedName~LessonPracticeInteractionRegistryTests|FullyQualifiedName~SupportingLessonPracticeR7R9ClosureTests" --logger "trx;LogFileName=g12-new-family-runtime.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Upload focused test evidence
