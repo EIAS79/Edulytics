@@ -1,0 +1,478 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "Which physical process is naturally modeled by sinusoid? Give two necessary features.",
+      "TeacherMathAnswer": "Repeating rise/fall, approximate steady amplitude/mean and period; tides or daily temperature.",
+      "SourceMathematicalSkillReviewed": "Source1 periodic physical behavior",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Give two data sets sufficient to construct a daily temperature sine model.",
+      "TeacherMathAnswer": "Set1 extrema+their clock times; set2 mean+amplitude+peak time, assuming24h period.",
+      "SourceMathematicalSkillReviewed": "Source2 data sufficiency",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "Is monotonically cumulative rainfall well modeled by an unadjusted sine?",
+      "TeacherMathAnswer": "No: cumulative total cannot decrease, while sine oscillates downward.",
+      "SourceMathematicalSkillReviewed": "Source3 monotonic cumulative vs daily rainfall",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "What does multiplying a spring oscillation by e^(−ct), c>0 do?",
+      "TeacherMathAnswer": "Envelope falls from A to Ae^(−ct), period remains2π/ω.",
+      "SourceMathematicalSkillReviewed": "Source4 damping envelope",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [-3.0, 0.0, 3.0, 0.0, -3.0]. Fit one sinusoid using given period 4 and family cos.",
+      "TeacherMathAnswer": "One matching formula y=0+(3)cos((2π/4)(x−2)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source5 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [-3.0, 5.0, -3.0, 5.0, -3.0]. Fit one sinusoid using given period 2 and family cos.",
+      "TeacherMathAnswer": "One matching formula y=1+(-4)cos((2π/2)(x−4)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source6 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [2.0, 2.0, 2.0, 2.0, 2.0]. Fit one sinusoid using given period 2 and family sin.",
+      "TeacherMathAnswer": "One matching formula y=2+(5)sin((2π/2)(x−1)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source7 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [-1.0, -5.0, -1.0, 3.0, -1.0]. Fit one sinusoid using given period 4 and family cos.",
+      "TeacherMathAnswer": "One matching formula y=-1+(4)cos((2π/4)(x−3)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source8 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [7.0, 1.0, -2.0, 1.0, 7.0]. Fit one sinusoid using given period 6 and family cos.",
+      "TeacherMathAnswer": "One matching formula y=4+(-6)cos((2π/6)(x−2)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source9 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [12.0, 5.0, -2.0, 5.0, 12.0]. Fit one sinusoid using given period 4 and family sin.",
+      "TeacherMathAnswer": "One matching formula y=5+(7)sin((2π/4)(x−3)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source10 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [-1.0, -0.41421, 1.0, 2.41421, 3.0]. Fit one sinusoid using given period 8 and family sin.",
+      "TeacherMathAnswer": "One matching formula y=1+(2)sin((2π/8)(x−2)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source11 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Observed table at x=0..4 has y-values [-0.5, 1.0, -0.5, -3.5, -5.0]. Fit one sinusoid using given period 6 and family cos.",
+      "TeacherMathAnswer": "One matching formula y=-2+(3)cos((2π/6)(x−1)); check each table value.",
+      "SourceMathematicalSkillReviewed": "Source12 table-of-values sinusoid reconstruction",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "Graph f(t)=50−15cos(πt/6) on[0,12]; give realistic interpretation.",
+      "TeacherMathAnswer": "Yearly 12-month seasonal index, midline50, amplitude15, minimum35 at t0, maximum65 at t6.",
+      "SourceMathematicalSkillReviewed": "Source13 composite periodic graphical model",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "Graph f(t)=80+12sin(πt/12) on[0,24]; give physical example.",
+      "TeacherMathAnswer": "Daily 24h periodic humidity-like index, midline80 amplitude12; use physically valid range.",
+      "SourceMathematicalSkillReviewed": "Source14 combined sine/cos physical model",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "Graph f(t)=12+2sin(πt/6) on[0,24]; give physical example.",
+      "TeacherMathAnswer": "Temperature indicator periodic12 units with midline12 amplitude2; period12.",
+      "SourceMathematicalSkillReviewed": "Source15 trigonometric plus tangent physical interpretation",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "A seasonal rainfall model has average20in plus amplitude5in, with long-term linear decline2in/year. When can model first predict0?",
+      "TeacherMathAnswer": "h(t)=20−2t+5cos(2πt), t years; first zero lies between7.5 and12.5 years, solve numerically with chosen start phase.",
+      "SourceMathematicalSkillReviewed": "Source16 seasonal rainfall with declining trend and first zero",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Daily temperature peak 96°F at hour17, mean80°F. Assume24h period; find T(9:00).",
+      "TeacherMathAnswer": "T(t)=80+16cos(2π(t−17)/24), T(9)≈72.00°F.",
+      "SourceMathematicalSkillReviewed": "Source17 daily temperature from max/mean/peak time",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "Daily temperature peak 82°F at hour18, mean69°F. Assume24h period; find T(7:00).",
+      "TeacherMathAnswer": "T(t)=69+13cos(2π(t−18)/24), T(7)≈56.44°F.",
+      "SourceMathematicalSkillReviewed": "Source18 daily temperature from max/mean/peak time",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Daily T(t)=60+10sin(πt/12), t hours since midnight. Find first t≥0 with T=55°F.",
+      "TeacherMathAnswer": "t=(12/π)arcsin((55−60)/10) modulo24; first crossing t≈22.000hours.",
+      "SourceMathematicalSkillReviewed": "Source19 temperature first threshold crossing",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Daily T(t)=76+12sin(πt/12), t hours since midnight. Find first t≥0 with T=70°F.",
+      "TeacherMathAnswer": "t=(12/π)arcsin((70−76)/12) modulo24; first crossing t≈22.000hours.",
+      "SourceMathematicalSkillReviewed": "Source20 temperature first threshold crossing",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "Wheel diameter24m, bottom boarding at2m, period8min. How long above16m?",
+      "TeacherMathAnswer": "h(t)=14−12cos(2πt/8); duration=8(1−arccos(-0.16667)/π)≈3.5736min.",
+      "SourceMathematicalSkillReviewed": "Source21 Ferris wheel time above given level",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "Wheel diameter40m, bottom boarding at1m, period10min. How long above26m?",
+      "TeacherMathAnswer": "h(t)=21−20cos(2πt/10); duration=10(1−arccos(-0.25000)/π)≈4.1957min.",
+      "SourceMathematicalSkillReviewed": "Source22 Ferris wheel time above given level",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "Northern sea ice varies seasonally between 6 and14, period365days; how many days per cycle less than 9?",
+      "TeacherMathAnswer": "m=10,A=4, f(t)=m+Acos(2πt/365) centered on maximum; days≈153.14 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source23 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "Southern sea ice varies seasonally between 4 and18, period365days; how many days per cycle greater than 15?",
+      "TeacherMathAnswer": "m=11,A=7, f(t)=m+Acos(2πt/365) centered on maximum; days≈111.83 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source24 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Monsoon rainfall varies seasonally between 3 and13, period90days; how many days per cycle greater than 11?",
+      "TeacherMathAnswer": "m=8,A=5, f(t)=m+Acos(2πt/90) centered on maximum; days≈26.57 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source25 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Monsoon rainfall varies seasonally between 5 and13, period90days; how many days per cycle less than 6?",
+      "TeacherMathAnswer": "m=9,A=4, f(t)=m+Acos(2πt/90) centered on maximum; days≈20.70 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source26 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Seasonal precipitation varies seasonally between 1 and9, period365days; how many days per cycle greater than 8?",
+      "TeacherMathAnswer": "m=5,A=4, f(t)=m+Acos(2πt/365) centered on maximum; days≈83.97 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source27 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Seasonal precipitation varies seasonally between 4 and24, period365days; how many days per cycle less than 5?",
+      "TeacherMathAnswer": "m=14,A=10, f(t)=m+Acos(2πt/365) centered on maximum; days≈52.40 per cycle (threshold strict, endpoints excluded).",
+      "SourceMathematicalSkillReviewed": "Source28 sinusoidal annual/monsoon threshold duration",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Spring displacement h(t)=8sin(2π·3t)cm. Determine amplitude, period and frequency.",
+      "TeacherMathAnswer": "A=8cm, period=0.333333s, frequency=3Hz.",
+      "SourceMathematicalSkillReviewed": "Source29 harmonic oscillation frequency and period",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Spring displacement h(t)=11sin(2π·6t)cm. Determine amplitude, period and frequency.",
+      "TeacherMathAnswer": "A=11cm, period=0.166667s, frequency=6Hz.",
+      "SourceMathematicalSkillReviewed": "Source30 harmonic oscillation frequency and period",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Spring displacement h(t)=4sin(2π·0.25t)cm. Determine amplitude, period and frequency.",
+      "TeacherMathAnswer": "A=4cm, period=4.000000s, frequency=0.25Hz.",
+      "SourceMathematicalSkillReviewed": "Source31 harmonic oscillation frequency and period",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Spring displacement h(t)=5sin(2π·30t)cm. Determine amplitude, period and frequency.",
+      "TeacherMathAnswer": "A=5cm, period=0.033333s, frequency=30Hz.",
+      "SourceMathematicalSkillReviewed": "Source32 harmonic oscillation frequency and period",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Build deer population model with January minimum, yearly oscillation ±20, initial mean700, mean rises by120 per year.",
+      "TeacherMathAnswer": "P(t)=700+(120/12)t−20cos(2πt/12), t months since January; January is initial minimum.",
+      "SourceMathematicalSkillReviewed": "Source33 linear/exponential trend with annual seasonal population",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Build rabbits population model with January minimum, yearly oscillation ±15, initial mean600, mean rises by96 per year.",
+      "TeacherMathAnswer": "P(t)=600+(96/12)t−15cos(2πt/12), t months since January; January is initial minimum.",
+      "SourceMathematicalSkillReviewed": "Source34 linear/exponential trend with annual seasonal population",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Build muskrats population model with January minimum, yearly oscillation ±30, initial mean900, mean grows 5% monthly.",
+      "TeacherMathAnswer": "P(t)=900(1+0.05)^t−30cos(2πt/12), t months since January; January is initial minimum.",
+      "SourceMathematicalSkillReviewed": "Source35 linear/exponential trend with annual seasonal population",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Build fish population model with January minimum, yearly oscillation ±40, initial mean800, mean grows 4% monthly.",
+      "TeacherMathAnswer": "P(t)=800(1+0.04)^t−40cos(2πt/12), t months since January; January is initial minimum.",
+      "SourceMathematicalSkillReviewed": "Source36 linear/exponential trend with annual seasonal population",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "A spring starts 10cm below equilibrium and oscillates 18Hz with amplitude multiplied each second by 0.850000. Write damped displacement.",
+      "TeacherMathAnswer": "D(t)=10(0.8500000)^t cos(2π18t), t≥0.",
+      "SourceMathematicalSkillReviewed": "Source37 damped spring exponential envelope",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "A spring starts 8cm below equilibrium and oscillates 20Hz with amplitude multiplied each second by 0.880000. Write damped displacement.",
+      "TeacherMathAnswer": "D(t)=8(0.8800000)^t cos(2π20t), t≥0.",
+      "SourceMathematicalSkillReviewed": "Source38 damped spring exponential envelope",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "A spring starts 17cm below equilibrium and oscillates 14Hz with amplitude multiplied each second by 0.914460. Write damped displacement.",
+      "TeacherMathAnswer": "D(t)=17(0.9144602)^t cos(2π14t), t≥0.",
+      "SourceMathematicalSkillReviewed": "Source39 damped spring exponential envelope",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "A spring starts 19cm below equilibrium and oscillates 13Hz with amplitude multiplied each second by 0.926496. Write damped displacement.",
+      "TeacherMathAnswer": "D(t)=19(0.9264961)^t cos(2π13t), t≥0.",
+      "SourceMathematicalSkillReviewed": "Source40 damped spring exponential envelope",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "A lake has initial population20000 with annual harvest of3000 and oscillation ±2000; estimate first possible extinction.",
+      "TeacherMathAnswer": "P(t)=20000−3000t+2000cos2πt; no nonnegative population physically after first zero, first crossing t in[6,7.34]y; solve numerically.",
+      "SourceMathematicalSkillReviewed": "Source41 seasonal population decline first zero",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "Fish population begins500, declines by6% annually with ±25 seasonal variation. Approximate year when envelope below200.",
+      "TeacherMathAnswer": "Upper envelope=500(.94)^t+25; permanent below200 once t>ln(175/500)/ln(.94)≈16.97 years.",
+      "SourceMathematicalSkillReviewed": "Source42 population threshold with exponential loss",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "Spring starts amplitude12cm, decreases to6cm after2s, frequency8Hz. When is envelope permanently <0.1cm?",
+      "TeacherMathAnswer": "D(t)=12e^(-0.346574t)cos(2π8t), envelope crossing t≈13.8138s.",
+      "SourceMathematicalSkillReviewed": "Source43 damped spring near-rest envelope threshold",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "Spring starts amplitude20cm, decreases to4cm after6s, frequency20Hz. When is envelope permanently <0.1cm?",
+      "TeacherMathAnswer": "D(t)=20e^(-0.268240t)cos(2π20t), envelope crossing t≈19.7522s.",
+      "SourceMathematicalSkillReviewed": "Source44 damped spring near-rest envelope threshold",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "Compare two springs envelopes A1=30(0.5)^t and A2=16(0.125)^(t/4), permanent rest threshold0.1cm.",
+      "TeacherMathAnswer": "First t≈8.229s; second t≈9.763s; first reaches threshold first.",
+      "SourceMathematicalSkillReviewed": "Source45 compare two damped spring stopping times",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Compare two springs envelopes A1=3(0.92)^t and A2=10(0.2)^(t/3), permanent rest threshold0.1cm.",
+      "TeacherMathAnswer": "First t≈40.791s; second t≈8.584s; second reaches threshold first.",
+      "SourceMathematicalSkillReviewed": "Source46 compare two damped spring stopping times",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Plane flies legs (distance miles, bearing clockwise from north) [(150, 20), (180, 110)]. Find resultant distance and bearing.",
+      "TeacherMathAnswer": "east≈220.448,north≈79.390,distance≈234.307mi,bearing≈70.194°.",
+      "SourceMathematicalSkillReviewed": "Source47 vector composition of two flights",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Plane flies legs (distance miles, bearing clockwise from north) [(200, 60), (300, 150)]. Find resultant distance and bearing.",
+      "TeacherMathAnswer": "east≈323.205,north≈-159.808,distance≈360.555mi,bearing≈116.310°.",
+      "SourceMathematicalSkillReviewed": "Source48 vector composition of two flights",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Find y=a·b^x+c sin(πx/2) fitting x0..3 data [6.0, 22.0, 54.0, 158.0].",
+      "TeacherMathAnswer": "a=6, b=3, c=4; check y0=a,y2=a b²,y1=ab+c,y3=ab³−c.",
+      "SourceMathematicalSkillReviewed": "Source49 exponential+sinusoidal table fitting",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "Find y=a·b^x+c sin(πx/2) fitting x0..3 data [5.0, 22.0, 80.0, 318.0].",
+      "TeacherMathAnswer": "a=5, b=4, c=2; check y0=a,y2=a b²,y1=ab+c,y3=ab³−c.",
+      "SourceMathematicalSkillReviewed": "Source50 exponential+sinusoidal table fitting",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Find y=a·b^x+c sin(πx/2) fitting x0..3 data [4.0, 2.0, 16.0, 38.0].",
+      "TeacherMathAnswer": "a=4, b=2, c=-6; check y0=a,y2=a b²,y1=ab+c,y3=ab³−c.",
+      "SourceMathematicalSkillReviewed": "Source51 exponential+sinusoidal table fitting",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Find y=a·b^x cos(πx/2)+c fitting x0..3 data [11.0, 3.0, -29.0, 3.0].",
+      "TeacherMathAnswer": "a=8,b=2,c=3; use odd inputs y1=y3=c and y0=a+c, y2=−ab²+c.",
+      "SourceMathematicalSkillReviewed": "Source52 exponential cosine+offset table fitting",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "Find y=a·b^x cos(πx/2)+c fitting x0..3 data [6.0, 1.0, -44.0, 1.0].",
+      "TeacherMathAnswer": "a=5,b=3,c=1; use odd inputs y1=y3=c and y0=a+c, y2=−ab²+c.",
+      "SourceMathematicalSkillReviewed": "Source53 exponential cosine+offset table fitting",
+      "OriginalTextCopied": false,
+      "Scoring": "TEACHER_MANUAL_MODELING"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Model 24h temperature mean15,amp5,peak noon.",
+      "TeacherExpectedMath": "T(t)=15+5cos(π(t−12)/12)."
+    },
+    {
+      "Number": 2,
+      "Question": "Spring y=4cos(8πt), find frequency.",
+      "TeacherExpectedMath": "4Hz."
+    },
+    {
+      "Number": 3,
+      "Question": "Wheel radius10m,period12min, starts bottom, center11m.",
+      "TeacherExpectedMath": "h(t)=11−10cos(πt/6)."
+    },
+    {
+      "Number": 4,
+      "Question": "Damped spring 5(.9)^t cos(6πt), identify envelope.",
+      "TeacherExpectedMath": "5(.9)^t."
+    },
+    {
+      "Number": 5,
+      "Question": "Find t where amplitude8e^(−.4t) drops below1.",
+      "TeacherExpectedMath": "t>ln8/.4≈5.1986."
+    },
+    {
+      "Number": 6,
+      "Question": "Fit model y=4·2^x+3sin(πx/2), evaluate atx3.",
+      "TeacherExpectedMath": "32−3=29."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Ferris wheel radius6m,center7m,period8min starts bottom: write height.",
+      "Spring frequency3Hz: find period.",
+      "Time envelope10e^(−.5t)<.1."
+    ],
+    "TeacherExpectedMath": [
+      "h(t)=7−6cos(πt/4).",
+      "1/3s.",
+      "t>2ln100≈9.2103s."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "SourceNumberedExercisesReviewed": 53,
+  "StageC": "REUSE_RICHV2_TEACHER_MANUAL_PHYSICAL_MODELS",
+  "StageD": "NOT_RUN"
+}

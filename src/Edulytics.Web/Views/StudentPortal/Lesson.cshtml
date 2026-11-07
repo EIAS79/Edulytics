@@ -1974,6 +1974,24 @@
         @* Original first-party graphs for 6.2, skip denominator zeros. *@
         @* Independent inverse-trig mathematical models, original Edulytics plots. *@
         @* First-party identities illustrations, not publisher images. *@
+        @* Independent mathematical physical model graphs for 7.6. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Original periodic and damped physical model graphs">
+                <h2>Physical sinusoid models</h2>
+                <p>Compare undamped periodic motion, seasonal trends and decaying
+                   spring amplitudes using independently plotted curves.</p>
+                @foreach (var task in Grade12PrecalculusSection76PhysicalModelGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L01")
         {
             <section class="lesson-source-aligned-activities"
