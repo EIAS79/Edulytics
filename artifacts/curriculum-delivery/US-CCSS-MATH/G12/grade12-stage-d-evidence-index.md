@@ -31,3 +31,7 @@ Checked against RichLessonContentV2Registry.Validate, not just JSON syntax.
 - RUNTIME_WORKED_EXAMPLE_STEPS_BELOW_MIN_3: 71 lessons
 No invented filler content; repair documented deficiencies in source-aligned lessons sequentially.
 No D_VERIFIED or release decision has been made.
+
+## Targeted runtime schema compatibility correction
+
+Converted only 72 Grade12 JSON document SchemaVersion values from 2 to 1, preserving lesson data byte-for-byte except the version marker. Educational step/concept/mistake deficiencies remain open; Stage D still NO_GO.
