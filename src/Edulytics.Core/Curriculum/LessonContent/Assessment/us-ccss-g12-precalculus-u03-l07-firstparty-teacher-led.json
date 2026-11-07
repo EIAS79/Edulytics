@@ -771,5 +771,29 @@
     }
   ],
   "FirstPartyIndependentStudentQuestionsAuthored": 88,
-  "OriginalPublisherGraphicBitmapsCopied": false
+  "OriginalPublisherGraphicBitmapsCopied": false,
+  "IndependentCoolDown": {
+    "OriginalIndependentEdulyticsCoolDown": true,
+    "StudentQuestions": [
+      {
+        "Number": 1,
+        "Prompt": "For f(x)=(x²−4)/(x²+x−6), state original domain, hole location, vertical and horizontal asymptotes.",
+        "Expected": "Denominator (x+3)(x−2), numerator (x−2)(x+2). Original domain excludes x=−3 and 2; hole at (2,4/5), vertical x=−3, horizontal y=1."
+      },
+      {
+        "Number": 2,
+        "Prompt": "For g(x)=(x−1)²/((x+2)(x−3)), state roots and their multiplicities, vertical poles, horizontal asymptote and y-intercept.",
+        "Expected": "Double root x=1; vertical x=−2 and x=3; horizontal y=1; y-intercept (0,−1/6)."
+      },
+      {
+        "Number": 3,
+        "Prompt": "A tank initially has 50 L solution and 5 kg solute. Add 5 L/min liquid containing 1 kg/min solute. Express C(t) and its limiting value with units.",
+        "Expected": "C(t)=(5+t)/(50+5t) kg/L for t≥0; limit 1/5 kg/L."
+      }
+    ],
+    "MarkingMode": "TEACHER_REVIEW_EXACT_MATH_WITH_REASONING",
+    "Runtime": "NOT_RUN",
+    "CopiedRestrictedPublisherCoolDown": false
+  },
+  "TeacherOnlyMarkingGuidance": "Check algebraic factorization, denominator exclusions before cancellation, sign chart and graphical branch reasoning, valid contextual input restrictions and physical units. Graphs and free responses require teacher review; do not automatically grade drawings."
 }
