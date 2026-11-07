@@ -1,0 +1,416 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L08",
+  "ContentVersion": "g12-u04-l08-regression-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L08",
+      "CultureCode": "en",
+      "Title": "Fitting Exponential Models to Data",
+      "ExplanationParagraphs": [
+        "Regression estimates a mathematical relation from measured scatter data. Exponential y=ab^x, logarithmic y=a+b ln x (x>0), and logistic y=L/(1+ae^(−kx)) solve different patterns.",
+        "Use consistent input/output units, inspect original scatter, compute fitted predictions and compare residuals before selecting a model.",
+        "An exponential has approximately constant ratios under equal x-increments; a logarithm changes rapidly near small positive inputs; a logistic grows toward finite carrying capacity L.",
+        "Exact synthetic datasets can establish known parameters for learning, while real-world noisy datasets need fitted coefficients and residual analysis.",
+        "Use change of base ab^x=a e^((lnb)x), and for logistic capacity and half-capacity time use P=L/2 -> t=(ln a)/k.",
+        "Two-point exponential fits are exact interpolations, not sufficient evidence for real-world model suitability. State the original domain and potential extrapolation limitations.",
+        "Independent Cool-down: (a) fit exponential through (0,2),(1,6), (b) identify carrying capacity and initial population for 120/(1+5e^(−.3t)), and (c) explain how to compare residuals.",
+        "Independent Try It 1: Fit exponential y=ab^x through (0,3),(2,12).",
+        "Independent Try It 2: Fit logarithmic y=a+b ln x from (1,2),(e,6).",
+        "Independent Try It 3: For L=80,a=3,k=.5, find initial and half-capacity time."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Fit exponential model",
+          "Question": "Points (0,5),(1,10),(2,20): find y=ab^x.",
+          "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+          "Steps": [
+            "a=5,b=2, f(x)=5·2^x, all residuals zero."
+          ],
+          "Answer": "a=5,b=2, f(x)=5·2^x, all residuals zero.",
+          "Check": "Verify fitted curve against original values and domain."
+        },
+        {
+          "Title": "Fit logarithmic model",
+          "Question": "Points (1,4),(e,7),(e²,10): fit y=a+b ln x.",
+          "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+          "Steps": [
+            "a=4,b=3, y=4+3ln x."
+          ],
+          "Answer": "a=4,b=3, y=4+3ln x.",
+          "Check": "Verify fitted curve against original values and domain."
+        },
+        {
+          "Title": "Fit logistic model",
+          "Question": "P(0)=20, capacity100, at t=ln4 the population50 with rate1.",
+          "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+          "Steps": [
+            "P(t)=100/(1+4e^(−t)); P(0)=20, P(ln4)=50."
+          ],
+          "Answer": "P(t)=100/(1+4e^(−t)); P(0)=20, P(ln4)=50.",
+          "Check": "Verify fitted curve against original values and domain."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exponential regression",
+          "Definition": "f(x)=ab^x or ae^(kx), b>0.",
+          "Rule": "Use ratios and fitted predictions.",
+          "Example": "4·2^x."
+        },
+        {
+          "Title": "Logarithmic regression",
+          "Definition": "y=a+b ln x, x>0.",
+          "Rule": "Compare transformed input ln x and observed y.",
+          "Example": "2+3lnx."
+        },
+        {
+          "Title": "Logistic regression",
+          "Definition": "P(t)=L/(1+ae^(−kt)), L,a,k>0.",
+          "Rule": "Capacity L and initial L/(1+a).",
+          "Example": "50/(1+9e^(−.5t))."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 1: Exponential growth data",
+          "Description": "Independently authored math illustration of 4·2^x, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "8.000",
+                "16.000",
+                "32.000",
+                "64.000"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 2: Exponential decline data",
+          "Description": "Independently authored math illustration of 500(0.75)^x, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "375.000",
+                "281.250",
+                "210.938",
+                "158.203"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 3: Logarithmic growth data",
+          "Description": "Independently authored math illustration of 2+3lnx, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "2.000",
+                "4.079",
+                "5.296",
+                "6.159"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 4: Logarithmic decline data",
+          "Description": "Independently authored math illustration of 10−2lnx, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "10.000",
+                "8.614",
+                "7.803",
+                "7.227"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 5: Logistic growth and carrying capacity",
+          "Description": "Independently authored math illustration of 50/(1+9e^(−0.5x)), not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "7.741",
+                "11.598",
+                "16.621",
+                "22.543"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 6: Exponential scatter and fitted curve",
+          "Description": "Independently authored math illustration of 2·1.5^x, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "3.000",
+                "4.500",
+                "6.750",
+                "10.125"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 7: Decreasing exponential scatter",
+          "Description": "Independently authored math illustration of 4e^(−.3x), not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "2.963",
+                "2.195",
+                "1.626",
+                "1.205"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 8: Decreasing logarithmic scatter",
+          "Description": "Independently authored math illustration of 6−lnx, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "6.000",
+                "5.307",
+                "4.901",
+                "4.614"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 9: Positive exponential scatter",
+          "Description": "Independently authored math illustration of 2·(1.5)^x, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "3.000",
+                "4.500",
+                "6.750",
+                "10.125"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 10: Increasing logarithmic scatter",
+          "Description": "Independently authored math illustration of 3+2lnx, not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "3.000",
+                "4.386",
+                "5.197",
+                "5.773"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party figure skill 11: Bounded logistic scatter",
+          "Description": "Independently authored math illustration of 20/(1+5e^(−.4x)), not copied publisher scatter data.",
+          "PrimaryLabel": "Input index",
+          "SecondaryLabel": "Model",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Function",
+              "Cells": [
+                "4.596",
+                "6.160",
+                "7.981",
+                "9.953"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Plot data before choosing a model.",
+        "Fit coefficients and check predicted values.",
+        "Distinguish finite logistic capacity from unbounded exponential growth.",
+        "Use model domains and explain limits."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume high correlation proves causation.",
+          "WhyWrong": "Regression is descriptive and may not identify physical mechanism.",
+          "Correction": "Use contextual evidence and residuals."
+        },
+        {
+          "Mistake": "Interpret fitted carrying capacity as guaranteed real-world maximum.",
+          "WhyWrong": "Ecological system and model assumptions may change.",
+          "Correction": "State bounded logistic assumption and applicable horizon."
+        }
+      ]
+    }
+  ]
+}
