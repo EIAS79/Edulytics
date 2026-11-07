@@ -1967,6 +1967,26 @@
            Source math skill alignment only; publisher figures not reused. *@
         @* OpenStax 2017 Section 4.6 source-skill alternatives:
            two original Edulytics graphical investigations, not publisher art. *@
+        @* Grade 12 Section 5.1 original directed-angle mathematical sketches.
+           Figure skills aligned; original textbook artwork is not copied. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Directed angles and radians">
+                <h2>Directed angle investigations</h2>
+                <p>Use the mathematical diagrams to discuss signed turns, coterminal
+                   rays, arc length, sectors, and radian measures. The drawings
+                   are independently authored and require teacher interpretation.</p>
+                @foreach (var task in Grade12PrecalculusSection51AngleModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Angle source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L06")
         {
             <section class="lesson-source-aligned-activities"
