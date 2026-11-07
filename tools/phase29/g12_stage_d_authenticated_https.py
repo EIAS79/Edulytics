@@ -100,14 +100,50 @@ def run():
          extract_idempotency_key(form2),sql,answer_mode="malformed")
     if negative.get("status")!="MALFORMED_ANSWER_REJECTED_AND_PERSISTED":
         raise AssertionError("G12 malformed answer not rejected/persisted: "+str(negative))
+    # Every canonical lesson now has a distinct bounded exact Practice route.
+    # Exercise each lesson's real ASP.NET endpoint, SQL-generated item and
+    # persisted grade. This proves self-consistent runtime, not a publisher
+    # source-item math oracle (the independent xUnit suite covers the latter).
+    all_lesson_practice=[{
+        "ordinal":1,"lessonCode":expected[0][0],"positive":positive,"negative":negative}]
+    records[0]["correctAndMalformedPracticePersisted"]=True
+    for ordinal,(code,lesson_id) in enumerate(expected[1:],2):
+        page=get_page(student,"/student/practice")
+        token=extract_csrf(page)
+        nonce=extract_idempotency_key(page)
+        target_adoption=extract_adoption(page)
+        if not token or not nonce or target_adoption != adoption_id:
+            raise AssertionError(f"G12_PRAC_FORM_INVALID ordinal={ordinal} code={code}")
+        correct=probe_lesson(student,BASE,lesson_id,target_adoption,
+            token,nonce,sql)
+        if correct.get("status")!="SELF_CONSISTENT_GRADE_PERSISTED":
+            raise AssertionError(f"G12_PRAC_CORRECT_FAILED ordinal={ordinal} "
+                f"code={code} result={correct}")
+        negative_page=get_page(student,"/student/practice")
+        malformed=probe_lesson(student,BASE,lesson_id,
+            extract_adoption(negative_page),extract_csrf(negative_page),
+            extract_idempotency_key(negative_page),sql,
+            answer_mode="malformed")
+        if malformed.get("status")!="MALFORMED_ANSWER_REJECTED_AND_PERSISTED":
+            raise AssertionError(f"G12_PRAC_WRONG_FAILED ordinal={ordinal} "
+                f"code={code} result={malformed}")
+        all_lesson_practice.append({"ordinal":ordinal,"lessonCode":code,
+            "positive":correct,"negative":malformed})
+        records[ordinal-1]["correctAndMalformedPracticePersisted"]=True
+        print("G12_PRACTICE_PERSISTENCE_CHECK",ordinal,code,flush=True)
+    if len(all_lesson_practice)!=73:
+        raise AssertionError("Grade12 cannot close a partial practice acceptance")
     report={"scope":"CI_DISPOSABLE_G12_AUTHENTICATED_HTTPS_NOT_PUBLICATION",
             "candidateSha":os.environ.get("GITHUB_SHA"),
             "sourceAcademicParity":"UNKNOWN","reviewerSignoff":"NOT_TESTED",
             "studentPages":records,"adoptionKey":adoption_key,
             "crossSchoolAccessDenied":True,"teacherAssessmentDashboard":True,
-            "realPersistedCorrectAnswer":positive,"realPersistedMalformedAnswer":negative}
+            "realPersistedCorrectAnswer":positive,"realPersistedMalformedAnswer":negative,
+            "all73LessonPracticePositiveAndNegative":all_lesson_practice,
+            "persistedExactPracticeLessonCount":len(all_lesson_practice),
+            "teacherGradebookPerLessonVerified":False}
     Path("/tmp/g12-stage-d-authenticated-73-lessons.json").write_text(
        json.dumps(report,ensure_ascii=False,indent=2,default=str),encoding="utf8")
-    print("G12_AUTHENTICATED_73_LESSONS_2_REAL_GRADED_ATTEMPTS_PASS",len(records),flush=True)
+    print("G12_AUTHENTICATED_73_LESSONS_146_REAL_GRADED_ATTEMPTS_PASS",len(records),flush=True)
 
 if __name__=="__main__":run()
