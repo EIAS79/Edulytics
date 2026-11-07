@@ -7051,6 +7051,58 @@ public static class LessonPracticeContractRegistry
                 SkillIds = ["supporting.functions.core", "functions.evaluate.exact"]
             };
 
+        // Stage D lesson-specific exact subset. These contracts only certify the
+        // tested numerical generator family. Graphs, explanations, source
+        // exercise mapping and teacher rubric remain separately assessed.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04",
+            "functions.inverse.composition",
+            "COMPOSITION_INVERSE_EXACT_PARTIAL",
+            ["usccss.hs.inverse_composition"],
+            "FIRSTPARTY_SECTION_1_4_COMPOSITION_EXACT_SUBSET_TEACHER_PROSE",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L05",
+            "functions.absolute_value.translate",
+            "TRANSFORMATION_TRANSLATION_EXACT_PARTIAL",
+            ["functions.absolute_value.translate_evaluate"],
+            "FIRSTPARTY_SECTION_1_5_FUNCTION_TRANSLATION_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06",
+            "functions.absolute_value.translate",
+            "ABSOLUTE_VALUE_TRANSLATION_EXACT_PARTIAL",
+            ["functions.absolute_value.translate_evaluate", "functions.absolute_error.from_target"],
+            "FIRSTPARTY_SECTION_1_6_ABSOLUTE_VALUE_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L01",
+            "functions.average_rate_of_change",
+            "LINEAR_SLOPE_EXACT_PARTIAL",
+            ["geometry.coordinate.gradient_between_points"],
+            "FIRSTPARTY_SECTION_2_1_SLOPE_SUBSET_TEACHER_LINEAR_MODELS",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L02",
+            "functions.graph.key_features",
+            "LINEAR_INTERCEPT_EXACT_PARTIAL",
+            ["geometry.coordinate.y_intercept_from_rule"],
+            "FIRSTPARTY_SECTION_2_2_Y_INTERCEPT_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04",
+            "functions.model.linear_data",
+            "LINEAR_REGRESSION_PREDICTION_EXACT_PARTIAL",
+            ["statistics.linear_model.predict", "statistics.linear_model.residual"],
+            "FIRSTPARTY_SECTION_2_4_LINEAR_MODEL_SUBSET_TEACHER_FIT",
+            "READY_VERIFIED",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
