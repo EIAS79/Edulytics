@@ -1970,6 +1970,24 @@
         @* Grade 12 Section 5.1 original directed-angle mathematical sketches.
            Figure skills aligned; original textbook artwork is not copied. *@
         @* First-party G12 unit circle drawings. No publisher images reproduced. *@
+        @* Independent sinusoidal mathematical figures, not source art. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Sine and cosine sinusoidal graphs">
+                <h2>Sinusoidal graphical investigations</h2>
+                <p>Determine the amplitude, period, phase and midline of each
+                   independent graph. Mathematical reasoning requires teacher review.</p>
+                @foreach (var task in Grade12PrecalculusSection61SineCosineGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L02")
         {
             <section class="lesson-source-aligned-activities"
