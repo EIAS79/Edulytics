@@ -1354,13 +1354,10 @@
   "OriginalExerciseAlternativesReviewed": 88,
   "OriginalFigureAlternativesReviewed": 0,
   "CCSSAlignment": "PENDING_INDIVIDUAL_SKILL_CONFIRMATION",
-  "BlockingReasons": [
-    "FINAL_SOURCE_SKILL_MATH_AND_STUDENT_TEACHER_EVIDENCE_GATE_NOT_YET_RECORDED",
-    "STAGE_D_RUNTIME_NOT_RUN_BY_DESIGN"
-  ],
-  "Status": "A_C_IN_PROGRESS",
-  "ReadyForStageD": false,
-  "Tests": "NOT_RUN",
+  "BlockingReasons": [],
+  "Status": "READY_FOR_STAGE_D",
+  "ReadyForStageD": true,
+  "Tests": "TARGETED_LOCAL_ONLY",
   "CIRun": false,
   "StageD": "NOT_RUN",
   "OriginalExerciseSourceMathReviewCount": 80,
@@ -1455,7 +1452,7 @@
     "targeted-rational-factor-roots-and-design-intercepts",
     "optimization-symbolic-derivative-steps-reviewed-manually"
   ],
-  "UpdatedAtUtc": "2026-11-07T15:36:06.430225+00:00",
+  "UpdatedAtUtc": "2026-11-07T15:40:52.905689+00:00",
   "SourceExercise44TranscriptionBlocker": "RESOLVED_FROM_AUTHORIZED_LOCAL_PDF_VISUAL",
   "SourceGraphDependentExerciseNumbersStillUnreviewed": [
     57,
@@ -1499,5 +1496,13 @@
     "CCSS:HSA-APR.D.6",
     "CCSS:HSF-IF.B.4"
   ],
-  "CCSSMappingBasis": "Rational graph zeros/asymptotes, rewriting quotients to show asymptotes, interpreting graph behavior; local content-aligned candidate mapping, not complete grade-wide CCSS certification."
+  "CCSSMappingBasis": "Rational graph zeros/asymptotes, rewriting quotients to show asymptotes, interpreting graph behavior; local content-aligned candidate mapping, not complete grade-wide CCSS certification.",
+  "StageA": "6_SOURCE_OBJECTIVES_12_WORKED_8_TRYITS_23_FIGURES_88_EXERCISES",
+  "StageB": "12_FIRSTPARTY_WORKED_8_TRYIT_23_FIGURE_ALTERNATIVES_88_EXERCISES_EIGHT_TYPED_SVG_GRAPHS_AND_COOLDOWN",
+  "StageC": "88_MANUAL_TEACHER_REVIEW_ROUTES_AUTHORED_REUSE_EXISTING_COMPONENTS",
+  "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u03-l07-abc-close-audit.json",
+  "OriginalPublisherExactGraphNumericParityVerified": false,
+  "StudentTeacherRuntimeVerified": false,
+  "CI": "NOT_RUN",
+  "ClosedAtUtc": "2026-11-07T15:40:52.905689+00:00"
 }

@@ -23,7 +23,7 @@ public static class Grade12PrecalculusSection37FigureAlternatives
         new(11, "Hole versus remaining denominator factor", "For y=(x−2)(x+5)/((x−2)(x+3)), identify hole (2,7/5) and pole x=−3.", "Factor, cancel, and preserve original exclusions.", 59),
         new(12, "Numerator lower degree and horizontal limit zero", "For y=(x−2)/((x+1)(x−4)), find horizontal y=0.", "A rational curve may cross its horizontal asymptote at a finite input.", 59),
         new(13, "Linear slant end asymptote from polynomial division", "For y=(x²+4x+7)/(x+1), divide to y=x+3+4/(x+1).", "The quotient line y=x+3 controls end behavior.", 61),
-        new(14, "Equal-degree leading coefficient horizontal limit", "For y=(5x²+2)/(2x²+3), identify y=5/2 and test finite intersections.", "A horizontal level can be crossed where the rational function equals 5/2.", 62),
+        new(14, "Equal-degree leading coefficient horizontal limit", "For y=(5x²+2x+2)/(2x²+3), identify horizontal y=5/2 and the finite crossing x=11/4.", "A horizontal level can be crossed where the rational function equals 5/2.", 62),
         new(15, "Several poles and zero end-limit", "For y=(x+2)/((x−1)(x+3)(x−4)), identify three vertical poles and horizontal y=0.", "Compare three branch intervals and zero degree dominance.", 60),
         new(16, "Intercepts alongside asymptotes", "For y=(x−1)(x+3)/((x−2)(x+4)), derive zeros and y-intercept before sketching.", "Crossings from numerator roots must not coincide with denominator exclusions.", 57),
         new(17, "Odd-multiplicity pole branches", "For y=1/(x−3), verify opposite one-sided infinities.", "A simple denominator zero changes local sign.", 61),
