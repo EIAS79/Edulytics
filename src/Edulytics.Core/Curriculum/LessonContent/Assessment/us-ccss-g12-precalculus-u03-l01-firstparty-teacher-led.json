@@ -1,0 +1,827 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L01",
+  "OriginalSourceNumberedExercises": 58,
+  "FirstPartyStudentQuestions": [
+    {
+      "Number": 1,
+      "SourceSkill": "VERBAL_COMPLEX_FOUNDATIONS",
+      "Question": "Explain the algorithm for adding two complex numbers and demonstrate it.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 2,
+      "SourceSkill": "VERBAL_COMPLEX_FOUNDATIONS",
+      "Question": "What identity is essential when multiplying complex numbers?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 3,
+      "SourceSkill": "VERBAL_COMPLEX_FOUNDATIONS",
+      "Question": "Provide two nonzero imaginary numbers whose product is a nonzero real number.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 4,
+      "SourceSkill": "VERBAL_COMPLEX_FOUNDATIONS",
+      "Question": "Where do real numbers lie when plotted on complex axes?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 5,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(0)+(2)i (exact complex standard form), evaluate f(z)=z²+z−4; combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 6,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(0)+(1)i (exact complex standard form), evaluate f(z)=z³−2; combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 7,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(2)+(1)i (exact complex standard form), evaluate f(z)=z²+3z+5; combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 8,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(2)+(-3)i (exact complex standard form), evaluate f(z)=2z²+z−3; combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 9,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(0)+(5)i (exact complex standard form), evaluate f(z)=(z+1)/(2−z); combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 10,
+      "SourceSkill": "EVALUATE_COMPLEX_POLYNOMIAL_OR_RATIONAL",
+      "Question": "For independent complex input z=(0)+(4)i (exact complex standard form), evaluate f(z)=(1+2z)/(z+3); combine real/imaginary components and ensure denominator nonzero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 11,
+      "SourceSkill": "QUADRATIC_ROOTS_FROM_INDEPENDENT_GRAPH",
+      "Question": "Consider a first-party graph of y=x²+1 with vertex (0,1) and no x-axis crossing. How many real and nonreal complex zeros solve x²+1=0?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 12,
+      "SourceSkill": "QUADRATIC_ROOTS_FROM_INDEPENDENT_GRAPH",
+      "Question": "A first-party graph of y=x²−4 crosses the horizontal axis at (−2,0),(2,0). State number and values of real versus nonreal roots.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 13,
+      "SourceSkill": "PLOT_COMPLEX_COORDINATE",
+      "Question": "Plot z=(1)+(-2)i (exact complex standard form) on a labelled real/imaginary coordinate plane. Give exact ordered point.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 14,
+      "SourceSkill": "PLOT_COMPLEX_COORDINATE",
+      "Question": "Plot z=(-2)+(3)i (exact complex standard form) on a labelled real/imaginary coordinate plane. Give exact ordered point.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 15,
+      "SourceSkill": "PLOT_COMPLEX_COORDINATE",
+      "Question": "Plot z=(0)+(1)i (exact complex standard form) on a labelled real/imaginary coordinate plane. Give exact ordered point.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 16,
+      "SourceSkill": "PLOT_COMPLEX_COORDINATE",
+      "Question": "Plot z=(-3)+(-4)i (exact complex standard form) on a labelled real/imaginary coordinate plane. Give exact ordered point.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 17,
+      "SourceSkill": "COMPLEX_SUM",
+      "Question": "Calculate the complex sum of A=(3)+(2)i (exact complex standard form) and B=(5)+(-3)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 18,
+      "SourceSkill": "COMPLEX_SUM",
+      "Question": "Calculate the complex sum of A=(-2)+(-4)i (exact complex standard form) and B=(1)+(6)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 19,
+      "SourceSkill": "COMPLEX_DIFFERENCE",
+      "Question": "Calculate the complex difference of A=(-5)+(3)i (exact complex standard form) and B=(6)+(-1)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 20,
+      "SourceSkill": "COMPLEX_DIFFERENCE",
+      "Question": "Calculate the complex difference of A=(2)+(-3)i (exact complex standard form) and B=(3)+(2)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 21,
+      "SourceSkill": "COMPLEX_DIFFERENCE",
+      "Question": "Calculate the complex difference of A=(-4)+(4)i (exact complex standard form) and B=(-6)+(9)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 22,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(2)+(3)i (exact complex standard form) and B=(0)+(4)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 23,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(5)+(-2)i (exact complex standard form) and B=(0)+(3)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 24,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(6)+(-2)i (exact complex standard form) and B=(5)+(0)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 25,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(-2)+(4)i (exact complex standard form) and B=(8)+(0)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 26,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(2)+(3)i (exact complex standard form) and B=(4)+(-1)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 27,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(-1)+(2)i (exact complex standard form) and B=(-2)+(3)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 28,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(4)+(-2)i (exact complex standard form) and B=(4)+(2)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 29,
+      "SourceSkill": "COMPLEX_PRODUCT",
+      "Question": "Calculate the complex product of A=(3)+(4)i (exact complex standard form) and B=(3)+(-4)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 30,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(3)+(4)i (exact complex standard form) and B=(2)+(0)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 31,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(6)+(-2)i (exact complex standard form) and B=(3)+(0)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 32,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(-5)+(3)i (exact complex standard form) and B=(0)+(2)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 33,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(6)+(4)i (exact complex standard form) and B=(0)+(1)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 34,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(2)+(-3)i (exact complex standard form) and B=(4)+(3)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 35,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(3)+(4)i (exact complex standard form) and B=(2)+(-1)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 36,
+      "SourceSkill": "COMPLEX_QUOTIENT",
+      "Question": "Calculate the complex quotient of A=(2)+(3)i (exact complex standard form) and B=(2)+(-3)i (exact complex standard form) exactly. Express in a+bi form and show conjugate where dividing.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 37,
+      "SourceSkill": "COMPLEX_RADICALS",
+      "Question": "Evaluate √(−9)+3√(−16) in standard form.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 38,
+      "SourceSkill": "COMPLEX_RADICALS",
+      "Question": "Evaluate −√(−4)−4√(−25) in standard form.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 39,
+      "SourceSkill": "COMPLEX_RADICALS",
+      "Question": "Simplify [2+√(−12)]/2.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 40,
+      "SourceSkill": "COMPLEX_RADICALS",
+      "Question": "Simplify [4+√(−20)]/2.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 41,
+      "SourceSkill": "IMAGINARY_POWER_CYCLE",
+      "Question": "Evaluate i^8 using congruence of exponent modulo four.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 42,
+      "SourceSkill": "IMAGINARY_POWER_CYCLE",
+      "Question": "Evaluate i^15 using congruence of exponent modulo four.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 43,
+      "SourceSkill": "IMAGINARY_POWER_CYCLE",
+      "Question": "Evaluate i^22 using congruence of exponent modulo four.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 44,
+      "SourceSkill": "COMPLEX_EXPONENTIAL_PATTERN",
+      "Question": "Evaluate ((1)+(1)i (exact complex standard form)) raised to powers [4, 8, 12], then predict the value at exponent 16. State the exact algebraic recurrence.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 45,
+      "SourceSkill": "COMPLEX_EXPONENTIAL_PATTERN",
+      "Question": "Evaluate ((1)+(-1)i (exact complex standard form)) raised to powers [2, 6, 10], then predict the value at exponent 14. State the exact algebraic recurrence.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 46,
+      "SourceSkill": "DIFFERENCE_OF_COMPLEX_POWER_PATTERNS",
+      "Question": "Evaluate (1+i)^k−(1−i)^k for k=4,8,12 and predict k=16. Explain why each result is real or zero.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 47,
+      "SourceSkill": "VERIFY_COMPLEX_ROOT_BY_EXACT_ARGUMENT",
+      "Question": "Verify the complex unit-circle point z=√3/2+i/2 is a solution of z^6+1=0, using exact trigonometric powers or algebra.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 48,
+      "SourceSkill": "VERIFY_EIGHTH_ROOT_OF_UNITY",
+      "Question": "Verify z=√2/2+i√2/2 solves z^8−1=0 using argument and modulus.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 49,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression 1/i+4/i³ to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 50,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression 1/i¹¹−1/i²¹ to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 51,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression i⁷(1+i²) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 52,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression i^(−3)+5i⁷ to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 53,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression [(2+i)(4−2i)]/(1+i) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 54,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression [(1+3i)(2−4i)]/(1+2i) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 55,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression (3+i)²/(1+2i)² to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 56,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression (3+2i)/(2+i)+(4+3i) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 57,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression (4+i)/i+(3−4i)/(1−i) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 58,
+      "SourceSkill": "COMPLEX_MULTISTEP_FRACTIONS_AND_IMAGINARY_POWERS",
+      "Question": "Simplify the independent complex expression (3+2i)/(1+2i)−(2−3i)/(3+i) to a+bi with exact rational components, using conjugates and the four-power cycle.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    }
+  ],
+  "TeacherOnlyExpectedMath": [
+    {
+      "Number": 1,
+      "Expected": "Add real parts together and imaginary coefficients together; (a+bi)+(c+di)=(a+c)+(b+d)i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 2,
+      "Expected": "Expand by distribution and replace i² with −1.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 3,
+      "Expected": "(2i)(3i)=−6, which is real.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 4,
+      "Expected": "On horizontal real axis with imaginary coordinate0.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 5,
+      "Expected": "(-8)+(2)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 6,
+      "Expected": "(-2)+(-1)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 7,
+      "Expected": "(14)+(7)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 8,
+      "Expected": "(-11)+(-27)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 9,
+      "Expected": "(-23/29)+(15/29)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 10,
+      "Expected": "(7/5)+(4/5)i (exact complex standard form)",
+      "Actions": [
+        "substitute complex input",
+        "simplify every i² and/or conjugate quotient"
+      ]
+    },
+    {
+      "Number": 11,
+      "Expected": "0 real roots, 2 nonreal complex roots ±i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 12,
+      "Expected": "2 real roots x=±2, no nonreal roots.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 13,
+      "Expected": "Plot (1,-2) as (Re(z),Im(z)).",
+      "Actions": [
+        "read real and imaginary components",
+        "mark correct quadrant or axis"
+      ]
+    },
+    {
+      "Number": 14,
+      "Expected": "Plot (-2,3) as (Re(z),Im(z)).",
+      "Actions": [
+        "read real and imaginary components",
+        "mark correct quadrant or axis"
+      ]
+    },
+    {
+      "Number": 15,
+      "Expected": "Plot (0,1) as (Re(z),Im(z)).",
+      "Actions": [
+        "read real and imaginary components",
+        "mark correct quadrant or axis"
+      ]
+    },
+    {
+      "Number": 16,
+      "Expected": "Plot (-3,-4) as (Re(z),Im(z)).",
+      "Actions": [
+        "read real and imaginary components",
+        "mark correct quadrant or axis"
+      ]
+    },
+    {
+      "Number": 17,
+      "Expected": "(8)+(-1)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 18,
+      "Expected": "(-1)+(2)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 19,
+      "Expected": "(-11)+(4)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 20,
+      "Expected": "(-1)+(-5)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 21,
+      "Expected": "(2)+(-5)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 22,
+      "Expected": "(-12)+(8)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 23,
+      "Expected": "(6)+(15)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 24,
+      "Expected": "(30)+(-10)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 25,
+      "Expected": "(-16)+(32)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 26,
+      "Expected": "(11)+(10)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 27,
+      "Expected": "(-4)+(-7)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 28,
+      "Expected": "(20)+(0)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 29,
+      "Expected": "(25)+(0)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 30,
+      "Expected": "(3/2)+(2)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 31,
+      "Expected": "(2)+(-2/3)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 32,
+      "Expected": "(3/2)+(5/2)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 33,
+      "Expected": "(4)+(-6)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 34,
+      "Expected": "(-1/25)+(-18/25)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 35,
+      "Expected": "(2/5)+(11/5)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 36,
+      "Expected": "(-5/13)+(12/13)i (exact complex standard form)",
+      "Actions": [
+        "perform required arithmetic",
+        "reduce i² and simplify exact fractions"
+      ]
+    },
+    {
+      "Number": 37,
+      "Expected": "15i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 38,
+      "Expected": "−22i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 39,
+      "Expected": "1+√3·i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 40,
+      "Expected": "2+√5·i.",
+      "Actions": [
+        "show exact complex algebra and simplify into a+bi"
+      ]
+    },
+    {
+      "Number": 41,
+      "Expected": "(1)+(0)i (exact complex standard form)",
+      "Actions": [
+        "reduce exponent mod4",
+        "state value"
+      ]
+    },
+    {
+      "Number": 42,
+      "Expected": "(0)+(-1)i (exact complex standard form)",
+      "Actions": [
+        "reduce exponent mod4",
+        "state value"
+      ]
+    },
+    {
+      "Number": 43,
+      "Expected": "(-1)+(0)i (exact complex standard form)",
+      "Actions": [
+        "reduce exponent mod4",
+        "state value"
+      ]
+    },
+    {
+      "Number": 44,
+      "Expected": "{4: '(-4)+(0)i (exact complex standard form)', 8: '(16)+(0)i (exact complex standard form)', 12: '(-64)+(0)i (exact complex standard form)', 16: '(256)+(0)i (exact complex standard form)'}",
+      "Actions": [
+        "calculate pattern powers",
+        "predict next exponent"
+      ]
+    },
+    {
+      "Number": 45,
+      "Expected": "{2: '(0)+(-2)i (exact complex standard form)', 6: '(0)+(8)i (exact complex standard form)', 10: '(0)+(-32)i (exact complex standard form)', 14: '(0)+(128)i (exact complex standard form)'}",
+      "Actions": [
+        "calculate pattern powers",
+        "predict next exponent"
+      ]
+    },
+    {
+      "Number": 46,
+      "Expected": "{4: '(0)+(0)i (exact complex standard form)', 8: '(0)+(0)i (exact complex standard form)', 12: '(0)+(0)i (exact complex standard form)', 16: '(0)+(0)i (exact complex standard form)'}",
+      "Actions": [
+        "compute three differences",
+        "predict k=16"
+      ]
+    },
+    {
+      "Number": 47,
+      "Expected": "z=cos(π/6)+i sin(π/6); z^6=cosπ+i sinπ=−1; z^6+1=0.",
+      "Actions": [
+        "identify unit magnitude/angle",
+        "raise to sixth power",
+        "substitute equation"
+      ]
+    },
+    {
+      "Number": 48,
+      "Expected": "z=cos(π/4)+i sin(π/4); z^8=cos2π+i sin2π=1; difference zero.",
+      "Actions": [
+        "identify unit magnitude/angle",
+        "raise to eighth",
+        "verify"
+      ]
+    },
+    {
+      "Number": 49,
+      "Expected": "(0)+(3)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 50,
+      "Expected": "(0)+(2)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 51,
+      "Expected": "(0)+(0)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 52,
+      "Expected": "(0)+(-4)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 53,
+      "Expected": "(5)+(-5)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 54,
+      "Expected": "(18/5)+(-26/5)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 55,
+      "Expected": "(0)+(-2)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 56,
+      "Expected": "(28/5)+(16/5)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 57,
+      "Expected": "(9/2)+(-9/2)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    },
+    {
+      "Number": 58,
+      "Expected": "(11/10)+(3/10)i (exact complex standard form)",
+      "Actions": [
+        "simplify intermediate powers or products",
+        "rationalize every complex denominator",
+        "combine real and imaginary results"
+      ]
+    }
+  ],
+  "OriginalPublisherBitmapOrImageReproduced": false,
+  "OriginalPublisherExactTextGraphicNumericInstanceParityCertified": false,
+  "StudentTeacherRuntime": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
