@@ -1,0 +1,189 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U07:L01",
+  "ContentVersion": "g12-u07-l01-firstparty-identity-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L01",
+      "CultureCode": "en",
+      "Title": "Solving Trigonometric Equations with Identities",
+      "ExplanationParagraphs": [
+        "Identities hold for all inputs in the common domain of the two expressions. Equations may instead hold only for particular inputs.",
+        "Fundamental Pythagorean: sin²t+cos²t=1; 1+tan²t=sec²t where cos t≠0; 1+cot²t=csc²t where sin t≠0.",
+        "Reciprocal: sec=1/cos, csc=1/sin; quotient tan=sin/cos, cot=cos/sin. Preserve original denominator exclusions when simplifying.",
+        "Cos and sec are even; sin, tan, cot, csc are odd, on their domains. Use these identities to transform negative angles.",
+        "Algebraic proof uses factoring, expanding, common denominators, and conjugates; checking individual numeric inputs only disproves false identities.",
+        "Independent Cool-down: simplify (1−cos²t)/sin²t, simplify sec²t−tan²t and disprove sin t+cos t=1 universally.",
+        "Independent Try It 1: Simplify sin²t+cos²t",
+        "Independent Try It 2: Simplify csc t sin t",
+        "Independent Try It 3: Simplify sin(-t)+cos(-t)",
+        "Independent Try It 4: Simplify tan²t−sec²t",
+        "Independent Try It 5: Express sec²t with tan²t"
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Pythagorean",
+          "Question": "Prove sin²t+cos²t=1",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "Unit-circle equation x²+y²=1."
+          ],
+          "Answer": "Unit-circle equation x²+y²=1.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Reciprocal",
+          "Question": "Simplify sec t cos t",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1, for cos t≠0."
+          ],
+          "Answer": "1, for cos t≠0.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Odd-even",
+          "Question": "Simplify sin(-t)cos(-t)",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "−sin t cos t."
+          ],
+          "Answer": "−sin t cos t.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Use sec identity",
+          "Question": "Simplify sec²t−tan²t",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1, where cos t≠0."
+          ],
+          "Answer": "1, where cos t≠0.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Combine quotient",
+          "Question": "Simplify tan t+cot t",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1/(sin t cos t), both nonzero."
+          ],
+          "Answer": "1/(sin t cos t), both nonzero.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Parity algebra",
+          "Question": "Simplify cos(-t)−sin(-t)",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "cos t+sin t."
+          ],
+          "Answer": "cos t+sin t.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Multiply reciprocal ratios",
+          "Question": "Simplify cot t tan t",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1 on common domain."
+          ],
+          "Answer": "1 on common domain.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Square identity",
+          "Question": "Rewrite cos²t in terms of sine",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1−sin²t."
+          ],
+          "Answer": "1−sin²t.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Difference of squares",
+          "Question": "Simplify (sec t−tan t)(sec t+tan t)",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "1 on common domain."
+          ],
+          "Answer": "1 on common domain.",
+          "Check": "Verify on common domain."
+        },
+        {
+          "Title": "Substitution",
+          "Question": "Simplify 1/(1+tan²t)",
+          "Method": "Use algebraic identity and check denominators.",
+          "Steps": [
+            "cos²t where cos t≠0."
+          ],
+          "Answer": "cos²t where cos t≠0.",
+          "Check": "Verify on common domain."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pythagorean identities",
+          "Definition": "sin²+cos²=1; 1+tan²=sec²; 1+cot²=csc²",
+          "Rule": "Specify denominator domain.",
+          "Example": "sec²−tan²=1"
+        },
+        {
+          "Title": "Function parity",
+          "Definition": "Cosine/secant even, sine/tangent/cotangent/cosecant odd",
+          "Rule": "Replace negative input with correct sign.",
+          "Example": "sin(-t)=-sin t"
+        },
+        {
+          "Title": "Proof vs example",
+          "Definition": "Identity holds throughout common domain.",
+          "Rule": "Numerical counterexample disproves but numerical agreement doesn't prove.",
+          "Example": "sin t+cos t=1 fails at π/4"
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent trigonometric identity validity table",
+          "Description": "Mathematically authored table of identities and domains.",
+          "PrimaryLabel": "Identity",
+          "SecondaryLabel": "Required domain",
+          "Rows": [
+            {
+              "Label": "Equation",
+              "Cells": [
+                "sin²+cos²=1",
+                "sec²−tan²=1",
+                "csc²−cot²=1"
+              ]
+            },
+            {
+              "Label": "Domain",
+              "Cells": [
+                "all real",
+                "cos t≠0",
+                "sin t≠0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Preserve domain in every trig cancellation.",
+        "Algebra proves identities; a counterexample disproves.",
+        "Use reciprocal, Pythagorean and parity laws."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Cancel denominators without domain restriction",
+          "WhyWrong": "Original expression undefined at zeros",
+          "Correction": "Retain original domain."
+        }
+      ]
+    }
+  ]
+}

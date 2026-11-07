@@ -1973,6 +1973,22 @@
         @* Independent sinusoidal mathematical figures, not source art. *@
         @* Original first-party graphs for 6.2, skip denominator zeros. *@
         @* Independent inverse-trig mathematical models, original Edulytics plots. *@
+        @* First-party identities illustrations, not publisher images. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Trigonometric identity graphical comparisons">
+                <h2>Trigonometric identity graphs</h2>
+                @foreach (var task in Grade12PrecalculusSection71IdentityGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>@task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03")
         {
             <section class="lesson-source-aligned-activities"
