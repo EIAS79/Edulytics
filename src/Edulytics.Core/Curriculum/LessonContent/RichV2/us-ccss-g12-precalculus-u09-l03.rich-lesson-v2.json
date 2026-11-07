@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L03",
+  "ContentVersion": "g12-u09-l03-nonlinear-systems-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L03",
+      "CultureCode": "en",
+      "Title": "Systems of Nonlinear Equations and Inequalities: Two Variables",
+      "ExplanationParagraphs": [
+        "Nonlinear systems can have zero, one, two, four or other finite numbers of intersection points, or infinitely many.",
+        "Use substitution of a line into a circle or parabola to reduce a nonlinear system to a one-variable polynomial.",
+        "Elimination can solve systems involving sums/differences of x² and y².",
+        "Graph inequalities by drawing a dashed boundary for < or > and solid boundary for ≤ or ≥; shade only satisfying regions.",
+        "For a system of inequalities, the feasible set is intersection of shaded regions, which may be empty.",
+        "In a financial model profit is P(x)=R(x)−C(x); positive profit requires P(x)>0 on feasible quantities.",
+        "Independent Cool-down: intersect y=x² and y=4, graph y>x² and y<9, identify R>C between profit roots.",
+        "Independent Try It 1: Solve y=x²,y=4.",
+        "Independent Try It 2: Solve x²+y²=16,x=0.",
+        "Independent Try It 3: Solve y=0,x²+y²=9.",
+        "Independent Try It 4: Graph y≥x²."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Parabola and line",
+          "Question": "Solve y=x², y=x+2.",
+          "Method": "Eliminate one variable, solve roots and test all original equations.",
+          "Steps": [
+            "x=−1 or2, points(-1,1),(2,4)."
+          ],
+          "Answer": "x=−1 or2, points(-1,1),(2,4).",
+          "Check": "Verify candidate points and inequality feasibility."
+        },
+        {
+          "Title": "Circle and line",
+          "Question": "Solve x²+y²=25,y=0.",
+          "Method": "Eliminate one variable, solve roots and test all original equations.",
+          "Steps": [
+            "(±5,0)."
+          ],
+          "Answer": "(±5,0).",
+          "Check": "Verify candidate points and inequality feasibility."
+        },
+        {
+          "Title": "Circle and ellipse",
+          "Question": "Solve x²+y²=9,x²+4y²=9.",
+          "Method": "Eliminate one variable, solve roots and test all original equations.",
+          "Steps": [
+            "(±3,0)."
+          ],
+          "Answer": "(±3,0).",
+          "Check": "Verify candidate points and inequality feasibility."
+        },
+        {
+          "Title": "Parabola inequality",
+          "Question": "Graph y>x².",
+          "Method": "Eliminate one variable, solve roots and test all original equations.",
+          "Steps": [
+            "Region strictly above parabola."
+          ],
+          "Answer": "Region strictly above parabola.",
+          "Check": "Verify candidate points and inequality feasibility."
+        },
+        {
+          "Title": "Inequality system",
+          "Question": "Graph y>x² and y<4.",
+          "Method": "Eliminate one variable, solve roots and test all original equations.",
+          "Steps": [
+            "x²<y<4, |x|<2."
+          ],
+          "Answer": "x²<y<4, |x|<2.",
+          "Check": "Verify candidate points and inequality feasibility."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Nonlinear intersections",
+          "Definition": "Solutions are shared real (x,y) points.",
+          "Rule": "Substitute/verify all candidates.",
+          "Example": "Line and circle."
+        },
+        {
+          "Title": "Feasible set",
+          "Definition": "Points satisfying all inequalities.",
+          "Rule": "Intersection of shaded regions.",
+          "Example": "x²<y<4."
+        },
+        {
+          "Title": "Profit",
+          "Definition": "P(x)=R(x)−C(x).",
+          "Rule": "Profit where P(x)>0.",
+          "Example": "Between upward/downward quadratic crossings."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party inequality boundary guide",
+          "Description": "Basic open/closed boundaries.",
+          "PrimaryLabel": "Inequality",
+          "SecondaryLabel": "Boundary",
+          "Rows": [
+            {
+              "Label": "Relation",
+              "Cells": [
+                "y>x²",
+                "y≥x²",
+                "x²+y²<9"
+              ]
+            },
+            {
+              "Label": "Boundary",
+              "Cells": [
+                "dashed",
+                "solid",
+                "dashed circle"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Substitute and eliminate nonlinear equations.",
+        "Verify roots.",
+        "Graph inequalities with correct boundary and intersection.",
+        "Interpret feasible profits."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Keep an extraneous squared root.",
+          "WhyWrong": "A candidate may not satisfy original equations.",
+          "Correction": "Back-substitute every point."
+        }
+      ]
+    }
+  ]
+}
