@@ -871,7 +871,7 @@
       "SourceSection": "3.9",
       "PdfPageStart": 325,
       "PdfPageEnd": 331,
-      "ACStatus": "A_C_PENDING",
+      "ACStatus": "A_C_IN_PROGRESS",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
@@ -880,11 +880,19 @@
       "RightsVerified": false,
       "ReadyForStageD": false,
       "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u03-l09-source-inventory-and-gap-audit.json",
       "LastCommitSha": null,
       "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+        "60_SOURCE_EXERCISES_REQUIRE_MATH_REVIEW_AND_INDEPENDENT_TEACHER_KEYS",
+        "FOUR_ORIGINAL_FIGURE_SKILL_ALTERNATIVES_PENDING",
+        "STAGE_C_REUSE_ASSESSMENT_ROUTES_PENDING"
+      ],
+      "FirstPartyRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u03-l09.rich-lesson-v2.json",
+      "OriginalSourceWorkedExamplesLocated": 4,
+      "OriginalSourceTryItsLocated": 3,
+      "OriginalSourceFiguresLocated": 4,
+      "OriginalSourceExercisesLocated": 60,
+      "UpdatedUtc": "2026-11-07T15:59:18.871634+00:00"
     },
     {
       "Ordinal": 21,
@@ -2198,5 +2206,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T15:56:31.828842+00:00"
+  "UpdatedUtc": "2026-11-07T15:59:18.871634+00:00"
 }
