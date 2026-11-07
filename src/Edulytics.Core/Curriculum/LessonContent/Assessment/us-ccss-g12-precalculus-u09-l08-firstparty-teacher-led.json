@@ -1,0 +1,580 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L08",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalExercise": 1,
+      "IndependentStudentMathQuestion": "Why determinant only square matrices?",
+      "TeacherMathAnswer": "Standard determinant is defined for n×n square arrays.",
+      "SourceSkillFamily": "Source1–4 determinant rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 2,
+      "IndependentStudentMathQuestion": "What if det(A)=0?",
+      "TeacherMathAnswer": "A singular: Cramer's rule cannot give a unique solution.",
+      "SourceSkillFamily": "Source1–4 determinant rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 3,
+      "IndependentStudentMathQuestion": "What does zero determinant say about inverse?",
+      "TeacherMathAnswer": "Matrix inverse does not exist.",
+      "SourceSkillFamily": "Source1–4 determinant rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 4,
+      "IndependentStudentMathQuestion": "If det A=3, swap rows then multiply rows by6 and2. New determinant?",
+      "TeacherMathAnswer": "−36: sign swap and factor12.",
+      "SourceSkillFamily": "Source1–4 determinant rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 5,
+      "IndependentStudentMathQuestion": "Compute determinant of [[3, 1], [1, 7]].",
+      "TeacherMathAnswer": "20",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 6,
+      "IndependentStudentMathQuestion": "Compute determinant of [[4, 1], [1, 5]].",
+      "TeacherMathAnswer": "19",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 7,
+      "IndependentStudentMathQuestion": "Compute determinant of [[5, 1], [1, 6]].",
+      "TeacherMathAnswer": "29",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 8,
+      "IndependentStudentMathQuestion": "Compute determinant of [[6, 1], [1, 7]].",
+      "TeacherMathAnswer": "41",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 9,
+      "IndependentStudentMathQuestion": "Compute determinant of [[7, 1], [1, 5]].",
+      "TeacherMathAnswer": "34",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 10,
+      "IndependentStudentMathQuestion": "Compute determinant of [[3, 1], [1, 6]].",
+      "TeacherMathAnswer": "17",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 11,
+      "IndependentStudentMathQuestion": "Compute determinant of [[4, 1], [1, 7]].",
+      "TeacherMathAnswer": "27",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 12,
+      "IndependentStudentMathQuestion": "Compute determinant of [[5, 1], [1, 5]].",
+      "TeacherMathAnswer": "24",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 13,
+      "IndependentStudentMathQuestion": "Compute determinant of [[6, 1], [1, 6]].",
+      "TeacherMathAnswer": "35",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 14,
+      "IndependentStudentMathQuestion": "Compute determinant of [[7, 1], [1, 7]].",
+      "TeacherMathAnswer": "48",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 15,
+      "IndependentStudentMathQuestion": "Compute determinant of [[5, 1, 2], [1, 7, -1], [2, -1, 10]].",
+      "TeacherMathAnswer": "303",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 16,
+      "IndependentStudentMathQuestion": "Compute determinant of [[6, 1, 2], [1, 8, -1], [2, -1, 7]].",
+      "TeacherMathAnswer": "287",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 17,
+      "IndependentStudentMathQuestion": "Compute determinant of [[7, 1, 2], [1, 9, -1], [2, -1, 8]].",
+      "TeacherMathAnswer": "449",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 18,
+      "IndependentStudentMathQuestion": "Compute determinant of [[8, 1, 2], [1, 10, -1], [2, -1, 9]].",
+      "TeacherMathAnswer": "659",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 19,
+      "IndependentStudentMathQuestion": "Compute determinant of [[9, 1, 2], [1, 11, -1], [18, 2, 4]].",
+      "TeacherMathAnswer": "0",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 20,
+      "IndependentStudentMathQuestion": "Compute determinant of [[5, 1, 2], [1, 12, -1], [2, -1, 7]].",
+      "TeacherMathAnswer": "356",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 21,
+      "IndependentStudentMathQuestion": "Compute determinant of [[6, 1, 2], [1, 6, -1], [2, -1, 8]].",
+      "TeacherMathAnswer": "246",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 22,
+      "IndependentStudentMathQuestion": "Compute determinant of [[7, 1, 2], [1, 7, -1], [2, -1, 9]].",
+      "TeacherMathAnswer": "393",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 23,
+      "IndependentStudentMathQuestion": "Compute determinant of [[8, 1, 2], [1, 8, -1], [2, -1, 10]].",
+      "TeacherMathAnswer": "586",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 24,
+      "IndependentStudentMathQuestion": "Compute determinant of [[9, 1, 2], [1, 9, -1], [2, -1, 7]].",
+      "TeacherMathAnswer": "511",
+      "SourceSkillFamily": "Source5–24 determinant calculation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 25,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13].",
+      "TeacherMathAnswer": "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 26,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[4, 1], [1, 7]] and b=[6, 15].",
+      "TeacherMathAnswer": "det A=27, det substituted=[Fraction(27, 1), Fraction(54, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 27,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1], [1, 5]] and b=[7, 11].",
+      "TeacherMathAnswer": "det A=24, det substituted=[Fraction(24, 1), Fraction(48, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 28,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1], [1, 6]] and b=[8, 13].",
+      "TeacherMathAnswer": "det A=35, det substituted=[Fraction(35, 1), Fraction(70, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 29,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1], [1, 7]] and b=[9, 15].",
+      "TeacherMathAnswer": "det A=48, det substituted=[Fraction(48, 1), Fraction(96, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 30,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[3, 1], [1, 5]] and b=[5, 11].",
+      "TeacherMathAnswer": "det A=14, det substituted=[Fraction(14, 1), Fraction(28, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 31,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[4, 1], [1, 6]] and b=[6, 13].",
+      "TeacherMathAnswer": "det A=23, det substituted=[Fraction(23, 1), Fraction(46, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 32,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1], [1, 7]] and b=[7, 15].",
+      "TeacherMathAnswer": "det A=34, det substituted=[Fraction(34, 1), Fraction(68, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 33,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1], [1, 5]] and b=[8, 11].",
+      "TeacherMathAnswer": "det A=29, det substituted=[Fraction(29, 1), Fraction(58, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 34,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1], [1, 6]] and b=[9, 13].",
+      "TeacherMathAnswer": "det A=41, det substituted=[Fraction(41, 1), Fraction(82, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source25–34 Cramer 2×2",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 35,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 6, -1], [2, -1, 10]] and b=[13, 10, 30].",
+      "TeacherMathAnswer": "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 36,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 7, -1], [2, -1, 7]] and b=[14, 12, 21].",
+      "TeacherMathAnswer": "det A=249, det substituted=[Fraction(249, 1), Fraction(498, 1), Fraction(747, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 37,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 8, -1], [2, -1, 8]] and b=[15, 14, 24].",
+      "TeacherMathAnswer": "det A=397, det substituted=[Fraction(397, 1), Fraction(794, 1), Fraction(1191, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 38,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 9, -1], [2, -1, 9]] and b=[16, 16, 27].",
+      "TeacherMathAnswer": "det A=591, det substituted=[Fraction(591, 1), Fraction(1182, 1), Fraction(1773, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 39,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[9, 1, 2], [1, 10, -1], [2, -1, 10]] and b=[17, 18, 30].",
+      "TeacherMathAnswer": "det A=837, det substituted=[Fraction(837, 1), Fraction(1674, 1), Fraction(2511, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 40,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 11, -1], [2, -1, 7]] and b=[13, 20, 21].",
+      "TeacherMathAnswer": "det A=325, det substituted=[Fraction(325, 1), Fraction(650, 1), Fraction(975, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 41,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 12, -1], [2, -1, 8]] and b=[14, 22, 24].",
+      "TeacherMathAnswer": "det A=510, det substituted=[Fraction(510, 1), Fraction(1020, 1), Fraction(1530, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 42,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 6, -1], [2, -1, 9]] and b=[15, 10, 27].",
+      "TeacherMathAnswer": "det A=334, det substituted=[Fraction(334, 1), Fraction(668, 1), Fraction(1002, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 43,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 7, -1], [16, 2, 4]] and b=[16, 12, 32].",
+      "TeacherMathAnswer": "det A=0; no unique solution, use elimination for classification.",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 44,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[9, 1, 2], [1, 8, -1], [18, 2, 4]] and b=[17, 14, 34].",
+      "TeacherMathAnswer": "det A=0; no unique solution, use elimination for classification.",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 45,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 9, -1], [10, 2, 4]] and b=[13, 16, 26].",
+      "TeacherMathAnswer": "det A=0; no unique solution, use elimination for classification.",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 46,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 10, -1], [2, -1, 9]] and b=[14, 18, 27].",
+      "TeacherMathAnswer": "det A=481, det substituted=[Fraction(481, 1), Fraction(962, 1), Fraction(1443, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 47,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 11, -1], [2, -1, 10]] and b=[15, 20, 30].",
+      "TeacherMathAnswer": "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 48,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 12, -1], [2, -1, 7]] and b=[16, 22, 21].",
+      "TeacherMathAnswer": "det A=605, det substituted=[Fraction(605, 1), Fraction(1210, 1), Fraction(1815, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 49,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[9, 1, 2], [1, 6, -1], [2, -1, 8]] and b=[17, 10, 24].",
+      "TeacherMathAnswer": "det A=387, det substituted=[Fraction(387, 1), Fraction(774, 1), Fraction(1161, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 50,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 7, -1], [2, -1, 9]] and b=[13, 12, 27].",
+      "TeacherMathAnswer": "det A=269, det substituted=[Fraction(269, 1), Fraction(538, 1), Fraction(807, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 51,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 8, -1], [2, -1, 10]] and b=[14, 14, 30].",
+      "TeacherMathAnswer": "det A=428, det substituted=[Fraction(428, 1), Fraction(856, 1), Fraction(1284, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 52,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 9, -1], [2, -1, 7]] and b=[15, 16, 21].",
+      "TeacherMathAnswer": "det A=387, det substituted=[Fraction(387, 1), Fraction(774, 1), Fraction(1161, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 53,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 10, -1], [2, -1, 8]] and b=[16, 18, 24].",
+      "TeacherMathAnswer": "det A=580, det substituted=[Fraction(580, 1), Fraction(1160, 1), Fraction(1740, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 54,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[9, 1, 2], [1, 11, -1], [2, -1, 9]] and b=[17, 20, 27].",
+      "TeacherMathAnswer": "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source35–54 Cramer 3×3",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 55,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13].",
+      "TeacherMathAnswer": "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 56,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[4, 1], [1, 7]] and b=[6, 15].",
+      "TeacherMathAnswer": "det A=27, det substituted=[Fraction(27, 1), Fraction(54, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 57,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1], [1, 5]] and b=[7, 11].",
+      "TeacherMathAnswer": "det A=24, det substituted=[Fraction(24, 1), Fraction(48, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 58,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1], [1, 6]] and b=[8, 13].",
+      "TeacherMathAnswer": "det A=35, det substituted=[Fraction(35, 1), Fraction(70, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 59,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1], [1, 7]] and b=[9, 15].",
+      "TeacherMathAnswer": "det A=48, det substituted=[Fraction(48, 1), Fraction(96, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 60,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 10, -1], [2, -1, 7]] and b=[13, 18, 21].",
+      "TeacherMathAnswer": "det A=294, det substituted=[Fraction(294, 1), Fraction(588, 1), Fraction(882, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 61,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 11, -1], [2, -1, 8]] and b=[14, 20, 24].",
+      "TeacherMathAnswer": "det A=466, det substituted=[Fraction(466, 1), Fraction(932, 1), Fraction(1398, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 62,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 12, -1], [2, -1, 9]] and b=[15, 22, 27].",
+      "TeacherMathAnswer": "det A=688, det substituted=[Fraction(688, 1), Fraction(1376, 1), Fraction(2064, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 63,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 6, -1], [2, -1, 10]] and b=[16, 10, 30].",
+      "TeacherMathAnswer": "det A=434, det substituted=[Fraction(434, 1), Fraction(868, 1), Fraction(1302, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 64,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[9, 1, 2], [1, 7, -1], [2, -1, 7]] and b=[17, 12, 21].",
+      "TeacherMathAnswer": "det A=393, det substituted=[Fraction(393, 1), Fraction(786, 1), Fraction(1179, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 65,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[5, 1, 2], [1, 8, -1], [2, -1, 8]] and b=[13, 14, 24].",
+      "TeacherMathAnswer": "det A=271, det substituted=[Fraction(271, 1), Fraction(542, 1), Fraction(813, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 66,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[6, 1, 2], [1, 9, -1], [2, -1, 9]] and b=[14, 16, 27].",
+      "TeacherMathAnswer": "det A=431, det substituted=[Fraction(431, 1), Fraction(862, 1), Fraction(1293, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 67,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[7, 1, 2], [1, 10, -1], [2, -1, 10]] and b=[15, 18, 30].",
+      "TeacherMathAnswer": "det A=639, det substituted=[Fraction(639, 1), Fraction(1278, 1), Fraction(1917, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 68,
+      "IndependentStudentMathQuestion": "Apply Cramer's rule to A=[[8, 1, 2], [1, 11, -1], [2, -1, 7]] and b=[16, 20, 21].",
+      "TeacherMathAnswer": "det A=553, det substituted=[Fraction(553, 1), Fraction(1106, 1), Fraction(1659, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source55–68 Cramer applied models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Compute determinant of [[4, 1], [1, 5]].",
+      "TeacherExpectedMath": "19"
+    },
+    {
+      "Number": 2,
+      "Question": "Compute determinant of [[5, 1], [1, 6]].",
+      "TeacherExpectedMath": "29"
+    },
+    {
+      "Number": 3,
+      "Question": "Compute determinant of [[6, 1], [1, 7]].",
+      "TeacherExpectedMath": "41"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Compute determinant of [[4, 1], [1, 5]]."
+    ],
+    "TeacherExpectedMath": [
+      "19"
+    ],
+    "PublisherOriginalCopied": false
+  },
+  "OriginalExerciseMathSkills": 68,
+  "StageC": "REUSE_MANUAL_TEACHER_MATRIX_SCORING",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
