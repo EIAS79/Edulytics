@@ -1924,6 +1924,41 @@
            the original textbook's 1:1 figures or automatically marked tasks. *@
         @* Grade 12 Section 3.7: reuse the typed mathematics renderer for eight
            independently authored graph interpretation tasks. No Stage D claim. *@
+        @* Independent Grade 12 section 3.8 source-skill inverse reflections.
+           Not reproductions of OpenStax artwork; runtime reserved for Stage D. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="First-party inverse functions and radical graphs">
+                <h2>Inverse functions: graphs and mathematical constraints</h2>
+                <p>Compare each function and inverse about the line y=x.
+                   The independent graphs below are practice models. Explain
+                   the original domain restrictions and the corresponding inverse
+                   range. No source textbook images are reproduced.</p>
+                @foreach (var graph in Grade12PrecalculusSection38InverseGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(graph.Graph))
+                        <figcaption>Independent graph practice @graph.RelatedExercise:
+                            @graph.Title. @graph.DomainConstraint.</figcaption>
+                    </figure>
+                }
+                <details class="student-card">
+                    <summary>Nine original-source figure concepts: independent alternatives</summary>
+                    <ol>
+                        @foreach (var item in Grade12PrecalculusSection38FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Figure skill @item.Number: @item.Title</strong>
+                                <p>@item.Model</p><p>@item.TeacherExplanation</p>
+                                <p>Related first-party practice: @item.Exercise</p>
+                            </li>
+                        }
+                    </ol>
+                </details>
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07")
         {
             <section class="lesson-source-aligned-activities"
