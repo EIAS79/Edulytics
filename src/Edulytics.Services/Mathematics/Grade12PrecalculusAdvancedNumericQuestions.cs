@@ -222,7 +222,7 @@ public static class Grade12PrecalculusAdvancedNumericQuestions
             "u06.l02.tangent_period" => n,
             "u06.l03.inverse_sine_principal" => k,
             "u07.l01.pythagorean_identity" => k*k-n*n,
-            "u07.l02.angle_sum_sine" => ((n+k)%4+4)%4 switch {0=>0,1=>1,2=>0,_=>-1},
+            "u07.l02.angle_sum_sine" => UnitCircleQuarterTurn(n + k, 1),
             "u07.l05.trig_equation_solution_count" => k,
             "u07.l06.trig_model_amplitude" => a,
             "u08.l01.law_of_sines" => a,
