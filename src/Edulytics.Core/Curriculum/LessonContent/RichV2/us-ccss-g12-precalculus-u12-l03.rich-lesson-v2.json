@@ -1,0 +1,122 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U12:L03",
+  "ContentVersion": "us-ccss-g12-precalculus-u12-l03-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L03",
+      "CultureCode": "en",
+      "Title": "Continuity",
+      "ExplanationParagraphs": [
+        "Continuity at a requires f(a) defined, limit exists, and limit equals f(a).",
+        "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
+        "For piecewise functions check left and right formulas and assigned boundary value.",
+        "Polynomial functions continuous everywhere; rational functions wherever denominator nonzero.",
+        "The intermediate value theorem applies to functions continuous on a closed interval.",
+        "Independent Cool-down: evaluate a representative local example and explain the limiting or derivative reasoning."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identifying Discontinuities",
+          "Question": "Find discontinuity of f(x)=(x²−9)/(x−3) (unredefined).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Removable at x=3; limit=6 but function undefined there."
+          ],
+          "Answer": "Removable at x=3; limit=6 but function undefined there.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Determining Whether a Piecewise Function is Continuous at a Given Number",
+          "Question": "For f(x)=x+4 if x<0, and x+3 if x≥0, continuous at0?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "No, jump; left=4,right=3."
+          ],
+          "Answer": "No, jump; left=4,right=3.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Determining Whether a Rational Function is Continuous at a Given Number",
+          "Question": "At x→5, g(x)=1/(x−5) has which continuity type?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Infinite discontinuity, opposite-sign unbounded one-sided limits."
+          ],
+          "Answer": "Infinite discontinuity, opposite-sign unbounded one-sided limits.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Determining the Input Values for Which a Piecewise Function Is Discontinuous",
+          "Question": "Define f(x)=x² for x≠6, f(6)=37. Is it continuous at x=6?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "No, removable point mismatch: limit=36, value=37."
+          ],
+          "Answer": "No, removable point mismatch: limit=36, value=37.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Determining Whether a Piecewise Function Is Continuous",
+          "Question": "Does continuous f(x)=x³−7 on interval[0,8] have a zero by IVT?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Yes, f(0)<0 and f(a+1)>0, so some c satisfies f(c)=0."
+          ],
+          "Answer": "Yes, f(0)<0 and f(a+1)>0, so some c satisfies f(c)=0.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Calculus core concept",
+          "Definition": "Continuity at a requires f(a) defined, limit exists, and limit equals f(a).",
+          "Rule": "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
+          "Example": "Removable at x=3; limit=6 but function undefined there."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party calculus comparison table",
+          "Description": "Independent secant/limit/continuity concept chart.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Test",
+          "Rows": [
+            {
+              "Label": "Concept",
+              "Cells": [
+                "limit",
+                "continuity",
+                "derivative"
+              ]
+            },
+            {
+              "Label": "Check",
+              "Cells": [
+                "left=right",
+                "limit=f(a)",
+                "difference quotient"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Continuity at a requires f(a) defined, limit exists, and limit equals f(a).",
+        "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
+        "For piecewise functions check left and right formulas and assigned boundary value."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
+          "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
+          "Correction": "Factor/rationalize or compare one-sided limits."
+        }
+      ]
+    }
+  ]
+}
