@@ -1,0 +1,112 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U10:L05",
+  "ContentVersion": "us-ccss-g12-precalculus-u10-l05-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L05",
+      "CultureCode": "en",
+      "Title": "Conic Sections in Polar Coordinates",
+      "ExplanationParagraphs": [
+        "Focus-origin polar conic r=l/(1±e cosθ) or r=l/(1±e sinθ) depends on eccentricity e.",
+        "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
+        "Convert x=r cosθ,y=r sinθ,r²=x²+y² and retain sign/domain restrictions after squaring.",
+        "Polar graph asymptotes occur where denominator vanishes; negative radius can reverse direction.",
+        "Describe focus, vertices and directrices from geometric parameter e and l.",
+        "Independent Cool-down: identify the standard conic, state relevant foci/axis features, and verify the equation with an independent point."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identifying a Conic Given the Polar Form",
+          "Question": "Classify focus-origin polar conic r=3/(1+1.0cosθ).",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Eccentricity e=1.0, type parabola."
+          ],
+          "Answer": "Eccentricity e=1.0, type parabola.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing a Parabola in Polar Form",
+          "Question": "Classify focus-origin polar conic r=4/(1+1.5cosθ).",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Eccentricity e=1.5, type hyperbola."
+          ],
+          "Answer": "Eccentricity e=1.5, type hyperbola.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing a Hyperbola in Polar Form",
+          "Question": "Classify focus-origin polar conic r=5/(1+0.5cosθ).",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Eccentricity e=0.5, type ellipse."
+          ],
+          "Answer": "Eccentricity e=0.5, type ellipse.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Ellipse in Polar Form",
+          "Question": "Classify focus-origin polar conic r=6/(1+1.0cosθ).",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Eccentricity e=1.0, type parabola."
+          ],
+          "Answer": "Eccentricity e=1.0, type parabola.",
+          "Check": "Check conic parameters, domains and equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conic geometry",
+          "Definition": "Focus-origin polar conic r=l/(1±e cosθ) or r=l/(1±e sinθ) depends on eccentricity e.",
+          "Rule": "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
+          "Example": "Eccentricity e=1.0, type parabola."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party conic classification and parameters",
+          "Description": "Original independent mathematical chart.",
+          "PrimaryLabel": "Conic",
+          "SecondaryLabel": "Signature",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "ellipse",
+                "parabola",
+                "hyperbola"
+              ]
+            },
+            {
+              "Label": "Eccentricity",
+              "Cells": [
+                "e<1",
+                "e=1",
+                "e>1"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Focus-origin polar conic r=l/(1±e cosθ) or r=l/(1±e sinθ) depends on eccentricity e.",
+        "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
+        "Convert x=r cosθ,y=r sinθ,r²=x²+y² and retain sign/domain restrictions after squaring."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore center, axis sign or domain constraints.",
+          "WhyWrong": "Changes conic branch/focus.",
+          "Correction": "Verify standard equation and orientation."
+        }
+      ]
+    }
+  ]
+}
