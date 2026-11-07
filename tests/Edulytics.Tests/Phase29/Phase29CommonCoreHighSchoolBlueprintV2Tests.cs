@@ -39,7 +39,8 @@ public sealed class
                     x =>
                         x.PackCode ==
                         MathematicsCurriculumPackRegistry
-                            .CommonCoreCode)
+                            .CommonCoreCode &&
+                        x.CourseCode != "PRECALC")
                 .ToArray();
 
         Assert.Equal(
@@ -354,7 +355,9 @@ public sealed class
                         x.LogicalLevelFrom ==
                             x.LogicalLevelTo &&
                         x.LogicalLevelFrom >= 10 &&
-                        x.LogicalLevelFrom <= 13);
+                        x.LogicalLevelFrom <= 13 &&
+                        !x.Code.StartsWith(
+                            "PED:US-CCSS-MATH:HS:ADV:PRECALC:"));
 
         Assert.Equal(
             0,

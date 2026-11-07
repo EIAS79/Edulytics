@@ -52,7 +52,7 @@ def main():
     assert (ROOT/AUTH).exists()
     original=load(CANON)
     assert original["Lessons"][0]["LessonCode"]==entries[0]["LessonCode"]
-    assert len(original["Lessons"])==1
+    assert len(original["Lessons"]) in (1,73)
     # The full course is the user's owner-approved content. This does not
     # upgrade the source-derived comparison ledger or waive rights notices.
     first=copy.deepcopy(original["Lessons"][0])

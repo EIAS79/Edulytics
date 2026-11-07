@@ -49,6 +49,8 @@ jobs:
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusSection11SourceContractsTests --logger "trx;LogFileName=g12-u01-l01.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Execute all 73 Grade 12 actual RichV2 embedded-registry loading tests
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllLessonRegistryRuntimeTests --logger "trx;LogFileName=g12-all73-runtime-registry.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Render all independently authored Grade12 typed mathematical graphs in real SVG renderer
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllSourceGraphRenderTests --logger "trx;LogFileName=g12-math-svg-rendering.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Materialize and validate all 73 published canonical Grade12 lesson candidates
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusCanonical73PublishedCandidateTests --logger "trx;LogFileName=g12-canonical-73.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Verify exact Grade12 additional function families and global presentation contracts
@@ -80,14 +82,14 @@ jobs:
   fail-closed-final-release-gate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: structural-source-inventory
+    needs: [structural-source-inventory, shared-dotnet-build-and-first-lesson-contracts, content-shard-static, isolated-grade12-73-lesson-authenticated-https]
     if: always()
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check source parity, runtime evidence and approval (expected red until complete)
+      - name: Verify owner academic authorization and independent Stage D runtime release evidence (fail closed)
         run: node tools/curriculum/g12_stage_d_final_gate.cjs
   isolated-grade12-73-lesson-authenticated-https:
     runs-on: ubuntu-latest
@@ -185,7 +187,11 @@ jobs:
             sleep 3
           done
           test "$ready" = true
-          python3 tools/phase29/g12_stage_d_authenticated_https.py
+          if ! python3 tools/phase29/g12_stage_d_authenticated_https.py; then
+            echo 'Grade12 authenticated runtime encountered an application exception; sanitized disposable web diagnostics:'
+            tail -n 180 /tmp/g12-web.log | grep -Ev 'password|Password|password=' || true
+            exit 1
+          fi
       - name: Preserve genuine Grade12 disposable E2E evidence
         if: always()
         uses: actions/upload-artifact@v4

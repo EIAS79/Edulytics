@@ -15,7 +15,9 @@ public sealed class PracticeSessionDiversityCertificationTests
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
 
-        Assert.Equal(5110, contracts.Length);
+        // 5,110 legacy contracts plus 28 actual Grade12 contracts;
+        // 45 still lack verified runtime practice and must remain release blockers.
+        Assert.Equal(5138, contracts.Length);
 
         for (var index = 0; index < contracts.Length; index++)
         {

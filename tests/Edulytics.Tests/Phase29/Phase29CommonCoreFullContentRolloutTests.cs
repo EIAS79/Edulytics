@@ -12,7 +12,7 @@ public sealed class Phase29CommonCoreFullContentRolloutTests
     {
         var blueprints = PedagogicalLessonBlueprintRegistry
             .LoadEmbeddedDocuments()
-            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode && x.CourseCode != "PRECALC")
             .ToArray();
 
         Assert.Equal(17, blueprints.Length);
@@ -39,7 +39,8 @@ public sealed class Phase29CommonCoreFullContentRolloutTests
 
         var documents = MathematicsCanonicalLessonContentSeeder
             .LoadEmbeddedDocuments()
-            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode)
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+                !x.Lessons.Any(l => l.LessonCode.StartsWith("PED:US-CCSS-MATH:HS:ADV:PRECALC:", StringComparison.Ordinal)))
             .ToArray();
 
         Assert.Equal(17, documents.Length);

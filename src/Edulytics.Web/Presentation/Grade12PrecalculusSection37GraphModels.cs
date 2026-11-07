@@ -49,9 +49,12 @@ public static class Grade12PrecalculusSection37GraphModels
             var segments = new List<MathematicalSegment>();
             MathematicalPoint? previous = null;
             decimal? previousX = null;
-            for (var index = 0; index <= 140; index++)
+            // The typed SVG contract allows at most 128 line segments.
+            // Sample the entire [-7,7] window at 1/8-unit intervals (112
+            // intervals) and leave excluded poles disconnected.
+            for (var index = 0; index <= 112; index++)
             {
-                var x = -7m + index / 10m;
+                var x = -7m + index / 8m;
                 // Do not bridge real poles with a straight segment.
                 if (excludedPoles.Any(p => Math.Abs(x - p) < 0.17m))
                 {
@@ -67,7 +70,7 @@ public static class Grade12PrecalculusSection37GraphModels
                     continue;
                 }
                 var point = new MathematicalPoint(x, y);
-                if (previous is not null && previousX is decimal lastX && x - lastX <= 0.11m)
+                if (previous is not null && previousX is decimal lastX && x - lastX <= 0.126m)
                     segments.Add(new MathematicalSegment(previous, point));
                 previous = point;
                 previousX = x;
