@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 2,
   "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L09",
-  "ContentVersion": "g12-u03-l09-independent-variation-abc-draft-20261107",
+  "ContentVersion": "g12-u03-l09-firstparty-variation-abc-four-figure-alternatives",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L09",
@@ -16,7 +16,11 @@
         "Independent first-party Cool-down: (a) Model revenue varying directly with units. (b) Model light intensity varying inversely with squared distance. (c) A jointly varying force F=kv²A is calibrated and evaluated.",
         "Independent Try It 1: y varies directly as x². When x=3, y=18. Find y for x=5.",
         "Independent Try It 2: y varies inversely as x³. When x=2, y=24. Find y for x=4.",
-        "Independent Try It 3: q varies directly as a²b and inversely as c. If q=12 at a=2,b=3,c=2, find q at a=3,b=4,c=6."
+        "Independent Try It 3: q varies directly as a²b and inversely as c. If q=12 at a=2,b=3,c=2, find q at a=3,b=4,c=6.",
+        "Figure-skill alternative 1: Original publisher Figure 1 illustrates earnings y=0.16s; a first-party alternative uses e=0.1s, s∈{0,200,400,600}, e∈{0,20,40,60}. Constant positive rate leads to origin line and proportional increases.",
+        "Figure-skill alternative 2: Original source Figure 2 illustrates y=(25/8)x³ at x=2 and x=6; independent first-party graph uses y=2x³ with points (0,0),(1,2),(2,16),(3,54). Higher-power direct variation curves even though multiplier k remains constant.",
+        "Figure-skill alternative 3: Original Figure 3 illustrates a reciprocal form. Independent alternative y=24/x for x>0 with (1,24),(2,12),(3,8),(6,4). Doubling x halves y for inverse first-power variation.",
+        "Figure-skill alternative 4: Original Figure 4 illustrates inverse cube y=200/x³. Independent alternative y=64/x³ for x>0, points (2,8),(4,1),(8,1/8). Doubling x divides output by 8 and the x=0 domain exclusion remains."
       ],
       "WorkedExamples": [
         {
@@ -110,6 +114,120 @@
                 "8",
                 "4",
                 "2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent diagram for direct variation: commission rate",
+          "Description": "Original mathematical skill from source Figure 1; no publisher diagram copied.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "Sale s ($)",
+              "Cells": [
+                "0",
+                "200",
+                "400",
+                "600"
+              ]
+            },
+            {
+              "Label": "Commission e=0.1s ($)",
+              "Cells": [
+                "0",
+                "20",
+                "40",
+                "60"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent diagram for cubic variation",
+          "Description": "Original Figure 2 source skill; coordinates can be plotted as an increasing cubic.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y=2x³",
+              "Cells": [
+                "0",
+                "2",
+                "16",
+                "54"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent inverse variation table",
+          "Description": "Graphing y=24/x on x>0 shows a decreasing reciprocal branch.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "y=24/x",
+              "Cells": [
+                "24",
+                "12",
+                "8",
+                "4"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent inverse cube variation table",
+          "Description": "Graph y=64/x³ on x>0 and discuss change factor under doubling.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "y=64/x³",
+              "Cells": [
+                "8",
+                "1",
+                "1/8"
               ]
             }
           ],

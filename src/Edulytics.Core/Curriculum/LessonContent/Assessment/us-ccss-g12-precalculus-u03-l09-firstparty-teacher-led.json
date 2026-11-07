@@ -217,9 +217,308 @@
       "OriginalSourceMathematicsReviewed": "Original source y=kxz/(√w t²), at x=3,z=1,w=25,t=2,y=6: k=40.",
       "Rubric": "TEACHER_REVIEW_SINGLE_CONSTANT_AND_DIMENSIONS",
       "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Direct y=kx, y=18 at x=3. Find y at x=10.",
+      "TeacherExpectedMath": "k=6; y=60.",
+      "OriginalSourceMathematicsReviewed": "Original k=12/3=4; y(20)=80.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Direct square variation, y=27 at x=3. Find y at x=5.",
+      "TeacherExpectedMath": "k=3; y=75.",
+      "OriginalSourceMathematicsReviewed": "Original k=16/4=4; y(8)=256.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Direct cube variation, y=16 at x=2. Find y at x=3.",
+      "TeacherExpectedMath": "k=2; y=54.",
+      "OriginalSourceMathematicsReviewed": "Original k=5/27; y(4)=320/27.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Direct square root variation, y=9 at x=9. Find y at x=25.",
+      "TeacherExpectedMath": "k=3; y=15.",
+      "OriginalSourceMathematicsReviewed": "Original k=4/4=1; y(36)=6.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Direct cube root variation, y=8 at x=64. Find y at x=125.",
+      "TeacherExpectedMath": "k=2; y=10.",
+      "OriginalSourceMathematicsReviewed": "Original k=15/5=3; y(1000)=30.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Inverse variation, y=10 at x=2. Find y at x=5.",
+      "TeacherExpectedMath": "k=20; y=4.",
+      "OriginalSourceMathematicsReviewed": "Original k=3*2=6; y(1)=6.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Inverse-square variation, y=5 at x=2. Find y at x=4.",
+      "TeacherExpectedMath": "k=20; y=5/4.",
+      "OriginalSourceMathematicsReviewed": "Original k=3*16=48; y(2)=12.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Inverse-cube variation, y=4 at x=2. Find y at x=4.",
+      "TeacherExpectedMath": "k=32; y=1/2.",
+      "OriginalSourceMathematicsReviewed": "Original k=1*27=27; y(1)=27.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "Inverse square-root variation, y=9 at x=16. Find y at x=81.",
+      "TeacherExpectedMath": "k=36; y=4.",
+      "OriginalSourceMathematicsReviewed": "Original k=12*8=96; y(36)=16.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Inverse cube-root variation, y=6 at x=8. Find y at x=27.",
+      "TeacherExpectedMath": "k=12; y=4.",
+      "OriginalSourceMathematicsReviewed": "Original k=5*3=15; y(125)=3.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Joint y=kxz, y=24 at x=3,z=4. Find y for x=2,z=5.",
+      "TeacherExpectedMath": "k=2; y=20.",
+      "OriginalSourceMathematicsReviewed": "Original k=16/(4*2)=2; y(3,3)=18.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Joint y=kxzw, y=30 at x=2,z=3,w=5. Find y for x=3,z=2,w=2.",
+      "TeacherExpectedMath": "k=1; y=12.",
+      "OriginalSourceMathematicsReviewed": "Original k=72/(2*1*12)=3; y(1,2,3)=18.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Joint y=kxz², y=54 at x=3,z=3. Find y for x=2,z=5.",
+      "TeacherExpectedMath": "k=2; y=100.",
+      "OriginalSourceMathematicsReviewed": "Original k=144/(2*16)=9/2; y(4,5)=450.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Joint y=kx²√z, y=36 at x=2,z=9. Find y at x=3,z=16.",
+      "TeacherExpectedMath": "k=3; y=108.",
+      "OriginalSourceMathematicsReviewed": "Original k=24/(4*3)=2; y(3,25)=90.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "Joint/inverse y=kxz/w, y=20 at x=4,z=5,w=2. Find y at x=3,z=8,w=6.",
+      "TeacherExpectedMath": "k=2; y=8.",
+      "OriginalSourceMathematicsReviewed": "Original k=4*20/(5*2)=8; y(3,8,48)=4.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Joint/inverse y=kx²z³/√w, y=16 at x=2,z=2,w=16. Find at x=1,z=3,w=9.",
+      "TeacherExpectedMath": "k=2; y=18.",
+      "OriginalSourceMathematicsReviewed": "Original k=12*8/(4*8)=3; y(1,3,4)=81/2.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Joint/inverse y=kx²z/(√w*t), y=6 at x=2,z=3,w=16,t=1. Find for x=3,z=2,w=9,t=2.",
+      "TeacherExpectedMath": "k=2; y=6.",
+      "OriginalSourceMathematicsReviewed": "Original y=kx²z/(√w*t), k=1*4*3/(4*3)=1; new y=9*2/(6*5)=3/5.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Graph direct square variation y=12 at x=2, with vertex and sample symmetric points.",
+      "TeacherExpectedMath": "y=3x², vertex (0,0), points (−2,12),(2,12).",
+      "OriginalSourceMathematicsReviewed": "Original y=(3/4)x² with points ±2 mapped to3.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Graph direct cube variation y=16 at x=2, with sign and origin.",
+      "TeacherExpectedMath": "y=2x³; passes (−2,−16),(0,0),(2,16).",
+      "OriginalSourceMathematicsReviewed": "Original y=(1/2)x³ passes (2,4).",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "Graph direct square-root variation y=9 at x=9; state domain.",
+      "TeacherExpectedMath": "y=3√x, domain x≥0; points (0,0),(4,6),(9,9).",
+      "OriginalSourceMathematicsReviewed": "Original y=(1/3)√x because at x=36, y=2.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Graph inverse variation with y=8 at x=2; state asymptotes.",
+      "TeacherExpectedMath": "y=16/x, x≠0; asymptotes x=0 and y=0.",
+      "OriginalSourceMathematicsReviewed": "Original y=12/x with x=6,y=2.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Graph inverse-square variation y=3 at x=2; state signs.",
+      "TeacherExpectedMath": "y=12/x², x≠0; both branches positive, asymptotes x=0 and y=0.",
+      "OriginalSourceMathematicsReviewed": "Original y=4/x² with x=1,y=4.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Kepler: orbital years T and astronomical distance a obey T²=ka³. Earth (1,1). Find equation.",
+      "TeacherExpectedMath": "T²=a³ for a≥0, T≥0; T=a^(3/2).",
+      "OriginalSourceMathematicsReviewed": "Source Earth 1 yr,93 million miles: T²=(a/93)^3 when a in million miles.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "Find orbital period for a planet 4 AU from Sun under T²=a³.",
+      "TeacherExpectedMath": "T=8 years.",
+      "OriginalSourceMathematicsReviewed": "Source Mars: T=(142/93)^(3/2)≈1.886 years.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "Use Earth as (T=1 yr,a=150 million km) to define Kepler variation.",
+      "TeacherExpectedMath": "T²=(a/150)^3, T in years, a in million km.",
+      "OriginalSourceMathematicsReviewed": "Source Earth150 million km: T²=(a/150)^3.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "Find orbital period at a=60 million km under Earth distance150 million km.",
+      "TeacherExpectedMath": "T=(60/150)^(3/2)= (2/5)^(3/2) ≈0.253 years.",
+      "OriginalSourceMathematicsReviewed": "Source Venus: T=(108/150)^(3/2)≈0.611 years.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "Using T²=a³ in AU/years, find period for planet at a=4 AU.",
+      "TeacherExpectedMath": "T=8 years.",
+      "OriginalSourceMathematicsReviewed": "Source Saturn at9.54 AU: T=9.54^(3/2)≈29.46 years.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "An object falls s=kt², traveling 25 ft at t=1s. Find time for s=225ft.",
+      "TeacherExpectedMath": "k=25 ft/s²; t=√(225/25)=3 s.",
+      "OriginalSourceMathematicsReviewed": "Source 16 ft in1s, to144 ft: t=3 s.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Velocity v=kt, v=30 ft/s at 2 s. Find v at 6s.",
+      "TeacherExpectedMath": "k=15 ft/s²; v=90 ft/s.",
+      "OriginalSourceMathematicsReviewed": "Source v=64 at t=2 -> v=160 ft/s at5 s.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "String rate f=k/L, L=30 cm gives f=120Hz. Find L for 60Hz.",
+      "TeacherExpectedMath": "k=3600 Hz·cm; L=60cm.",
+      "OriginalSourceMathematicsReviewed": "Source length24in,rate128Hz -> at64Hz length48in.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "At constant temperature gas V=k/P, V=900cm³ at P=300 mmHg. Find V at P=450.",
+      "TeacherExpectedMath": "k=270000; V=600cm³.",
+      "OriginalSourceMathematicsReviewed": "Source V=1200 at P=200 -> V=800cm³ at P300.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 55,
+      "IndependentStudentQuestion": "Weight varies inverse-square with center distance, W=80 lb at d=4000 miles. Find W at d=5000.",
+      "TeacherExpectedMath": "W=80(4000/5000)²=51.2lb.",
+      "OriginalSourceMathematicsReviewed": "Source W=50(3960/3970)² pounds, approximately49.748.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 56,
+      "IndependentStudentQuestion": "Light intensity inverse-square; I=0.12 foot-candles at d=2 m. Find intensity at d=6m.",
+      "TeacherExpectedMath": "I=0.12(2/6)²=1/75≈0.013333 foot-candles.",
+      "OriginalSourceMathematicsReviewed": "Source I=0.08(3/8)²=0.01125 foot-candles.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 57,
+      "IndependentStudentQuestion": "Electrical current I=k/R; I=25A at R=8Ω. Find I at R=20Ω.",
+      "TeacherExpectedMath": "k=200 A·Ω; I=10A.",
+      "OriginalSourceMathematicsReviewed": "Source I=40*10/12=100/3 A.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 58,
+      "IndependentStudentQuestion": "Wind force F=kAv²; F=20 lb at A=50ft²,v=10mph. Find at A=40ft²,v=20mph.",
+      "TeacherExpectedMath": "Ratio (40/50)*(20/10)²=3.2; F=64lb.",
+      "OriginalSourceMathematicsReviewed": "Source F=15*(65/40)*(30/20)²=54.84375 pounds.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 59,
+      "IndependentStudentQuestion": "Shaft power P=knd³. A 2-in shaft passes40hp at 100rpm. Find d for P=135hp at 100rpm.",
+      "TeacherExpectedMath": "d=2*(135/40)^(1/3)≈3 inches (since ratio27/8).",
+      "OriginalSourceMathematicsReviewed": "Source d=3*((60/45)*(100/150))^(1/3)=3*(8/9)^(1/3) inches.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 60,
+      "IndependentStudentQuestion": "Kinetic energy K=kmv². At fixed mass, K=800J when v=10 m/s. Find K at 15 m/s.",
+      "TeacherExpectedMath": "K=800*(15/10)²=1800J.",
+      "OriginalSourceMathematicsReviewed": "Source K=1000*(20/15)²=16000/9≈1777.78J. 40 kilograms is mass not weight.",
+      "Rubric": "TEACHER_REVIEW_FORMULA_CONSTANT_DOMAIN_UNITS",
+      "Runtime": "NOT_RUN"
     }
   ],
   "StageD": "NOT_RUN",
-  "SourceExerciseMathReviewed": 23,
-  "IndependentExerciseTasksAuthored": 23
+  "SourceExerciseMathReviewed": 60,
+  "IndependentExerciseTasksAuthored": 60,
+  "SourceOriginalScientificClaimsRestricted": "Kepler formula exercises are idealized two-body models; physical cases use positive distances and periods. Kinetic mass in kg is not weight.",
+  "StageCAssessmentRoutes": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u03-l09-stage-c-reuse-60-teacher-assessment-routes.json",
+  "FirstPartySourceFigureSkillAlternatives": 4
 }
