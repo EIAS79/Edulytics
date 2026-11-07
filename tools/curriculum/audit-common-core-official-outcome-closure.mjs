@@ -24,11 +24,30 @@ const skillMapPath = path.join(
   'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
 );
 
+// Official-outcome closure is deliberately scoped to the 17 existing
+// CCSS grade/course packs. Owner-adopted Grade12 Advanced Precalculus is
+// an additional source-sequenced 73-lesson course; it is NOT one of the
+// original 1560 officially aligned lessons. Audit its published owner pack
+// independently rather than classifying 72 advanced sections as defects.
+const g12BlueprintFile = 'us-ccss-math-hs-advanced-precalculus-openstax-2017.lesson-blueprint.json';
+const g12ContentFile = 'us-ccss-math-g12-precalculus-u01-l01-abc-draft.lesson-content-pack.json';
+const g12BlueprintDoc = JSON.parse(fs.readFileSync(path.join(blueprintDir,g12BlueprintFile),'utf8'));
+const g12ContentDoc = JSON.parse(fs.readFileSync(path.join(contentDir,g12ContentFile),'utf8'));
+const g12BlueprintCodes = (g12BlueprintDoc.Lessons || []).map(x => x.LessonCode);
+const g12ContentCodes = (g12ContentDoc.Lessons || []).map(x => x.LessonCode);
+const g12AdditionalErrors = [];
+if (g12BlueprintCodes.length !== 73 || g12ContentCodes.length !== 73 ||
+    new Set(g12BlueprintCodes).size !== 73 ||
+    g12BlueprintCodes.some((code,i) => code !== g12ContentCodes[i]) ||
+    g12ContentDoc.Status !== 'Published' ||
+    !/owner/i.test(g12ContentDoc.ReviewedBy || ''))
+  g12AdditionalErrors.push('supplemental G12 published lesson blueprint/content owner alignment not 73/73');
+
 const blueprintFiles = fs.readdirSync(blueprintDir)
-  .filter((name) => /^us-ccss-math-.*\.lesson-blueprint\.json$/i.test(name))
+  .filter((name) => /^us-ccss-math-.*\.lesson-blueprint\.json$/i.test(name) && name !== g12BlueprintFile)
   .sort();
 const contentFiles = fs.readdirSync(contentDir)
-  .filter((name) => /^us-ccss-math-.*\.lesson-content-pack\.json$/i.test(name))
+  .filter((name) => /^us-ccss-math-.*\.lesson-content-pack\.json$/i.test(name) && name !== g12ContentFile)
   .sort();
 
 const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
@@ -134,7 +153,7 @@ const officialFlagMismatches = commonCoreSkillMappings
     row.sourceType === 'OfficialMappedPedagogicalLesson' &&
     row.officialOutcomeMapped !== true);
 
-const errors = [];
+const errors = [...g12AdditionalErrors];
 if (blueprintFiles.length !== 17) errors.push(`expected 17 blueprints, found ${blueprintFiles.length}`);
 if (contentFiles.length !== 17) errors.push(`expected 17 content packs, found ${contentFiles.length}`);
 if (blueprintLessons.size !== 1560) errors.push(`expected 1560 blueprint lessons, found ${blueprintLessons.size}`);
@@ -151,6 +170,9 @@ if (supportingSkillMappings.length) errors.push(`SupportingLesson skill mappings
 if (officialFlagMismatches.length) errors.push(`official skill mappings missing officialOutcomeMapped=true: ${officialFlagMismatches.length}`);
 
 const report = {
+  scope: '1560_CC_SSM_OFFICIAL_17_BASELINE_PACKS_PLUS_INDEPENDENT_G12_OWNER_AUTHORIZED_ADVANCED_COURSE',
+  supplementalG12BlueprintLessons: g12BlueprintCodes.length,
+  supplementalG12PublishedContentLessons: g12ContentCodes.length,
   blueprintFiles: blueprintFiles.length,
   contentFiles: contentFiles.length,
   blueprintLessons: blueprintLessons.size,
