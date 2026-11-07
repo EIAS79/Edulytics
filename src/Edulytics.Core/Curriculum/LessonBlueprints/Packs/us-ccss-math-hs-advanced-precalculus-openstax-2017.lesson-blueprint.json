@@ -1,0 +1,1434 @@
+{
+  "SchemaVersion": 2,
+  "BlueprintCode": "US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017",
+  "PackCode": "US-CCSS-MATH",
+  "VersionCode": "CCSSM-2010",
+  "LogicalLevel": 0,
+  "CourseCode": "PRECALC",
+  "LogicalLevelFrom": 13,
+  "LogicalLevelTo": 13,
+  "SequenceAuthority": "PublisherSourceSequence",
+  "SuppressOutcomeFallbackForLogicalRange": true,
+  "NativeLevel": "Precalculus",
+  "Pathway": "Advanced Precalculus",
+  "OfficialAuthority": "Common Core State Standards Initiative",
+  "OfficialSourceUrl": "https://corestandards.org/wp-content/uploads/2023/09/ADA-Compliant-Math-Standards.pdf",
+  "SourceCheckedAtUtc": "2026-11-06T06:27:39.517816+00:00",
+  "SourceSelectionReason": "User-selected Grade 12 baseline is the local ©2017 OpenStax Precalculus PDF, 12 chapters/73 Sections; do not relabel IM Algebra2, UAE G12 or US Fourth Courses.",
+  "SourceSelectionEvidence": "Local source PDF 1156 pages SHA256 f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d; 73 bookmarks and their page hashes captured separately at artifacts/curriculum-delivery/US-CCSS-MATH/G12.",
+  "SemanticGraphSha256": "fb789d5097b21ab6c903bb7040612f499150a6fd25a8603deb8036a48734c777",
+  "Sources": [
+    {
+      "SourceKey": "OPENSTAX-PRECALC-2017",
+      "SourceType": "Open-licensed textbook source",
+      "Title": "Precalculus",
+      "Publisher": "OpenStax / Rice University",
+      "Edition": "OpenStax Precalculus, original 2014, local ©2017, revision PR-2015-002(03/17)-BW",
+      "RootUrl": "https://openstax.org/details/books/precalculus",
+      "License": "CC BY 4.0",
+      "RequiredDigitalAttribution": "OpenStax, Precalculus (Rice University, local ©2017 edition), CC BY 4.0; book link and license notice.",
+      "RightsNote": "General work licensed CC BY 4.0; third-party graphics, external links and trademarks need separate license/credit review before reuse.",
+      "EvidenceUrls": [
+        "https://openstax.org/details/books/precalculus",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ]
+    }
+  ],
+  "AcquisitionDiagnostics": {
+    "UnitCount": 12,
+    "LessonCount": 73,
+    "OfficialStandardCount": 2,
+    "AddressingCoverageCount": 2,
+    "FormalMappingCount": 2,
+    "LessonsWithoutNumberedGradeReferenceAnyRole": 72,
+    "LessonsWithoutNumberedAddressingStandard": 72,
+    "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 72,
+    "MultiStandardLessons": 1
+  },
+  "Units": [
+    {
+      "Number": 1,
+      "UnitCode": "U01",
+      "SortOrder": 1,
+      "Title": "Functions",
+      "LessonCount": 7,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f3eb852a05382a6587816e36a60af5aa812a10fc36295ffb44eed227749311ab"
+    },
+    {
+      "Number": 2,
+      "UnitCode": "U02",
+      "SortOrder": 2,
+      "Title": "Linear Functions",
+      "LessonCount": 4,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b445443f798e711b86df0cbbbacf1ad73bc3b2ece35d18e21599b5b2bf064acc"
+    },
+    {
+      "Number": 3,
+      "UnitCode": "U03",
+      "SortOrder": 3,
+      "Title": "Polynomial and Rational Functions",
+      "LessonCount": 9,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "2f3703e53522e63a76f4e9f572f2bf3a7cbaeea40a58a82264662c96fc2055ad"
+    },
+    {
+      "Number": 4,
+      "UnitCode": "U04",
+      "SortOrder": 4,
+      "Title": "Exponential and Logarithmic Functions",
+      "LessonCount": 8,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "108750e7c94da86d98ac0b9f046e353f820717c10317eec7220fdac22054bc8c"
+    },
+    {
+      "Number": 5,
+      "UnitCode": "U05",
+      "SortOrder": 5,
+      "Title": "Trigonometric Functions",
+      "LessonCount": 4,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "1c831415a04a00ba3dd4d453e9fb89403cad79e36ea2c13777a9dbcf63dbcbb1"
+    },
+    {
+      "Number": 6,
+      "UnitCode": "U06",
+      "SortOrder": 6,
+      "Title": "Periodic Functions",
+      "LessonCount": 3,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "eeca7967f678d7d60153f73fc1c2013ea3ef62e4f10e91ef581eb79a7a35b13d"
+    },
+    {
+      "Number": 7,
+      "UnitCode": "U07",
+      "SortOrder": 7,
+      "Title": "Trigonometric Identities and Equations",
+      "LessonCount": 6,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "83bae09c1cdd6fa27d90698ec470af9d31e8fceb72510e1d076003dc70b0681a"
+    },
+    {
+      "Number": 8,
+      "UnitCode": "U08",
+      "SortOrder": 8,
+      "Title": "Further Applications of Trigonometry",
+      "LessonCount": 8,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "7f7fc289c8819cc1a359e744b6b08c9355d065f266bf4c8fe4f2f87eed6d72a4"
+    },
+    {
+      "Number": 9,
+      "UnitCode": "U09",
+      "SortOrder": 9,
+      "Title": "Systems of Equations and Inequalities",
+      "LessonCount": 8,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "af8dc0dff0bd715e26eb8b6b3bbfb6d4e56aec83ed4095f11ca7603e6550f826"
+    },
+    {
+      "Number": 10,
+      "UnitCode": "U10",
+      "SortOrder": 10,
+      "Title": "Analytic Geometry",
+      "LessonCount": 5,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b9c69bbc568622ab339bfe0aa5d282554738a6df5f8506ee4cc423e34dabeffa"
+    },
+    {
+      "Number": 11,
+      "UnitCode": "U11",
+      "SortOrder": 11,
+      "Title": "Sequences, Probability and Counting Theory",
+      "LessonCount": 7,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3ae8554887b37581cba9c377c8491b4a0e1cecd49e54bed57975d80620eabbef"
+    },
+    {
+      "Number": 12,
+      "UnitCode": "U12",
+      "SortOrder": 12,
+      "Title": "Introduction to Calculus",
+      "LessonCount": 4,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "99addebe04c84a4f01a108af5472c93e09cb594cd8084970cc3927bbd5b14108"
+    }
+  ],
+  "Lessons": [
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 1,
+      "Title": "Functions and Function Notation",
+      "SortOrder": 1,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "6c805b5e8170f1c1a9f8445f406150fff5e66031db82b022b99a81b575c2c1d5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": [
+        {
+          "OutcomeCode": "CCSS:HSF-IF.A.1",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 1,
+          "EvidenceReferences": [
+            {
+              "SourceKey": "OPENSTAX-PRECALC-2017",
+              "SourceFamily": "OpenStax Precalculus local ©2017 PDF",
+              "SourceUrl": "https://openstax.org/details/books/precalculus",
+              "SectionOrTask": "Local PDF SHA256 f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d; Source section 1.1 pp18–22: relation, domain, range, repeated-input rule and function distinction. Source content supports official CCSS concept, not a publisher-issued standards map or Edulytics final lesson parity.",
+              "EvidenceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+              "License": "CC BY 4.0"
+            }
+          ]
+        },
+        {
+          "OutcomeCode": "CCSS:HSF-IF.A.2",
+          "EvidenceKind": "VerifiedContentCoverage",
+          "PublisherSuppliedAlignment": false,
+          "SortOrder": 2,
+          "EvidenceReferences": [
+            {
+              "SourceKey": "OPENSTAX-PRECALC-2017",
+              "SourceFamily": "OpenStax Precalculus local ©2017 PDF",
+              "SourceUrl": "https://openstax.org/details/books/precalculus",
+              "SectionOrTask": "Local PDF SHA256 f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d; Source section 1.1 pp20–27: interpret function notation, evaluate f(x) and interpret input/output in context. Source content supports official CCSS concept, not a publisher-issued standards map or Edulytics final lesson parity.",
+              "EvidenceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+              "License": "CC BY 4.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L02",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 2,
+      "Title": "Domain and Range",
+      "SortOrder": 2,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3c168775ca52c034875faafaef39e9d1e1a700af4a4b10c9dd6517de19ee25bb",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L03",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 3,
+      "Title": "Rates of Change and Behavior of Graphs",
+      "SortOrder": 3,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ed5ac4a525043449a6579066fc96f2a65382e24f80cd58566811025139f2b551",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 4,
+      "Title": "Composition of Functions",
+      "SortOrder": 4,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "bfbc1a9e7dfa7678b396733239b7984f8b9d6205524ba27ed73a9767aaf99170",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L05",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 5,
+      "Title": "Transformation of Functions",
+      "SortOrder": 5,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f93648a2063716cbb24262b738c4c3fb93e63a76938deb9ea871c65b8d61bce8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 6,
+      "Title": "Absolute Value Functions",
+      "SortOrder": 6,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "8222b5e1bd7f07ccc36b6a64506a841861b6a4ccbb95f96f1b6df51ae5d67ca6",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:1.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L07",
+      "UnitNumber": 1,
+      "UnitTitle": "Functions",
+      "LessonNumber": 7,
+      "Title": "Inverse Functions",
+      "SortOrder": 7,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "0780aeca0f652a59696b5f9ef6ff535c9e7a72078ebf5216dd4764c45b0ea39c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:2.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L01",
+      "UnitNumber": 2,
+      "UnitTitle": "Linear Functions",
+      "LessonNumber": 1,
+      "Title": "Linear Functions",
+      "SortOrder": 8,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ece648cbada4b9fdd91dbe74fde2e964726db446770cace540480c7a06f9fe15",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:2.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L02",
+      "UnitNumber": 2,
+      "UnitTitle": "Linear Functions",
+      "LessonNumber": 2,
+      "Title": "Graphs of Linear Functions",
+      "SortOrder": 9,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "1f761464d38b51cae3f672ba2274de24dcd10a901ec4552bc6148625ad5f2b54",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:2.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L03",
+      "UnitNumber": 2,
+      "UnitTitle": "Linear Functions",
+      "LessonNumber": 3,
+      "Title": "Modeling with Linear Functions",
+      "SortOrder": 10,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "023d685362d7f35eb42b73c99a48b1301edef1e5520e397edfbc6d48ed8e6062",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:2.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04",
+      "UnitNumber": 2,
+      "UnitTitle": "Linear Functions",
+      "LessonNumber": 4,
+      "Title": "Fitting Linear Models to Data",
+      "SortOrder": 11,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b7276627bdf78015c4f413840139d9c711ad13a4880e78de7ce6dbb37c7e17c9",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L01",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 1,
+      "Title": "Complex Numbers",
+      "SortOrder": 12,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "339049a592ca5ecec5962cb77fd8ec4a1c91f5b89410330965fec85aaa4bd497",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L02",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 2,
+      "Title": "Quadratic Functions",
+      "SortOrder": 13,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ceef4a29efb741ef37b42e06940e29045f76107b6c2f414929cc88a90139d7a1",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 3,
+      "Title": "Power Functions and Polynomial Functions",
+      "SortOrder": 14,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "04b44f8ed86ba6c7850762a03d5adebc6b0a8db15d7e2a72c9daebfad80ccaa2",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L04",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 4,
+      "Title": "Graphs of Polynomial Functions",
+      "SortOrder": 15,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "18c0684084eada3005145ad29818a897bd783e6440bb02c9e3dbfbacc5143d15",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L05",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 5,
+      "Title": "Dividing Polynomials",
+      "SortOrder": 16,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "dbca6c07921cc2f25c8007a5b3f03f9fa131dd5b84c2acca77dcbd8170ff8648",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 6,
+      "Title": "Zeros of Polynomial Functions",
+      "SortOrder": 17,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "c2a0a5862819106c694641a8d60af594bc70d0424b5916c4d4b409634680671f",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 7,
+      "Title": "Rational Functions",
+      "SortOrder": 18,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3e06875386c28f23aa64a3697c275e36f5649d805d50b082584aad2e02a1462d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.8",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 8,
+      "Title": "Inverses and Radical Functions",
+      "SortOrder": 19,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "925e01a507a9f72aec565a1a27344bc972171d4ba3a258ca1939ca96111d1d12",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:3.9",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L09",
+      "UnitNumber": 3,
+      "UnitTitle": "Polynomial and Rational Functions",
+      "LessonNumber": 9,
+      "Title": "Modeling Using Variation",
+      "SortOrder": 20,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "856b82f804ab0dfd3822fdbc5e461bdc9c72af0169847895de46347f7d63f990",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 1,
+      "Title": "Exponential Functions",
+      "SortOrder": 21,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "fe4fa7e189e69c93ec47e0bf1f059b89120c39d7ad2de2de62855ebdd109f9fc",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 2,
+      "Title": "Graphs of Exponential Functions",
+      "SortOrder": 22,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "761133a8c9351e6bd3183d3633af7deb98d39b1ae5c3c648cf645eff448e5115",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L03",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 3,
+      "Title": "Logarithmic Functions",
+      "SortOrder": 23,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b29410189527d1f78270c303ea5c296d50e19a467db2a32ca8e0ae447b827b63",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L04",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 4,
+      "Title": "Graphs of Logarithmic Functions",
+      "SortOrder": 24,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "96630148944012cbd10fd73cd61a906da1afb190c6b4a17df0c03397c4b42ecb",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L05",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 5,
+      "Title": "Logarithmic Properties",
+      "SortOrder": 25,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3bd119845487359e78ac19a5b3093f8d55349c44f9f36185cb404dbdbefa0b2a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L06",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 6,
+      "Title": "Exponential and Logarithmic Equations",
+      "SortOrder": 26,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "47dd903d2b1f8bccf93811733f7c099292a81ea79c09f3d94eb2160161873962",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L07",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 7,
+      "Title": "Exponential and Logarithmic Models",
+      "SortOrder": 27,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "154ab25fe136a00af987a4a4981ee3d26e38f73633f780d8619d5662081299be",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:4.8",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L08",
+      "UnitNumber": 4,
+      "UnitTitle": "Exponential and Logarithmic Functions",
+      "LessonNumber": 8,
+      "Title": "Fitting Exponential Models to Data",
+      "SortOrder": 28,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "c62aece184fe6e986235d00d247e9b5f2ffe69d4912f4599dec82038862935c8",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:5.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L01",
+      "UnitNumber": 5,
+      "UnitTitle": "Trigonometric Functions",
+      "LessonNumber": 1,
+      "Title": "Angles",
+      "SortOrder": 29,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "0e630f65f5ed5f487b1fcda9c3f0ce1aeacb9cc5d2efebe55676b3e36a3c612d",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:5.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L02",
+      "UnitNumber": 5,
+      "UnitTitle": "Trigonometric Functions",
+      "LessonNumber": 2,
+      "Title": "Unit Circle: Sine and Cosine Functions",
+      "SortOrder": 30,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "8a09b1963f09b4cb8d4382bb9c5019041de42ddf1068f0c3771ec7ba841ef082",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:5.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L03",
+      "UnitNumber": 5,
+      "UnitTitle": "Trigonometric Functions",
+      "LessonNumber": 3,
+      "Title": "The Other Trigonometric Functions",
+      "SortOrder": 31,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "fc7320008d6752c332296f1f0d960b4e52beab7d04767ff88512cb5f1b0f9037",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:5.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04",
+      "UnitNumber": 5,
+      "UnitTitle": "Trigonometric Functions",
+      "LessonNumber": 4,
+      "Title": "Right Triangle Trigonometry",
+      "SortOrder": 32,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "711f27954af6c7b52241c6d40bfc42e3fbe423df5d51d20e2a624a4bf6ace157",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:6.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L01",
+      "UnitNumber": 6,
+      "UnitTitle": "Periodic Functions",
+      "LessonNumber": 1,
+      "Title": "Graphs of the Sine and Cosine Functions",
+      "SortOrder": 33,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "568710404b02f60886cac05dbbdf64162403bbab92d9f151ea29dd694f2a2d6c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:6.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02",
+      "UnitNumber": 6,
+      "UnitTitle": "Periodic Functions",
+      "LessonNumber": 2,
+      "Title": "Graphs of the Other Trigonometric Functions",
+      "SortOrder": 34,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "743296137b8480ec26425d9ecfd08d902f1cfbf74f271206a22d5f25cb570f31",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:6.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03",
+      "UnitNumber": 6,
+      "UnitTitle": "Periodic Functions",
+      "LessonNumber": 3,
+      "Title": "Inverse Trigonometric Functions",
+      "SortOrder": 35,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "eae2656cfa4f2a9523ea4349cf83be89298c5e2242fb3cfedfb237da13f7449c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L01",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 1,
+      "Title": "Solving Trigonometric Equations with Identities",
+      "SortOrder": 36,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "cbbfd027d429c0a215f2dd905fa936b2b025d1da9a7b0a2139a0fe4b11628eba",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L02",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 2,
+      "Title": "Sum and Difference Identities",
+      "SortOrder": 37,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "38cabde0b1677d0b6047735d6fea0eefc6d4001c603a7f9c5806c8f0ead7f81a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L03",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 3,
+      "Title": "Double-Angle, Half-Angle, and Reduction Formulas",
+      "SortOrder": 38,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ce69d2f9316f9094c05ce13e1258ba60d84ac8a4b164f0f368f46e2bbf513a4e",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L04",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 4,
+      "Title": "Sum-to-Product and Product-to-Sum Formulas",
+      "SortOrder": 39,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b58c4362aaad7d7e3627beca34a5bad6d86389b9f1191886347d756ae67e5ec1",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L05",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 5,
+      "Title": "Solving Trigonometric Functions",
+      "SortOrder": 40,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ebe5dbdfdee88fd9457d12174dea3ef85137af0b9e45bb84aae6f7728b195158",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:7.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06",
+      "UnitNumber": 7,
+      "UnitTitle": "Trigonometric Identities and Equations",
+      "LessonNumber": 6,
+      "Title": "Modeling with Trigonometric Equations",
+      "SortOrder": 41,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "9ed4404b843cc481d51149236f487d8391bd659afa84084e22425f2aebe98a38",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 1,
+      "Title": "Non-Right Triangles: Law of Sines",
+      "SortOrder": 42,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "30a4b4cd61ac6723e00e2436f8404d96a831d481314c7e2f08172cf6dd13a155",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L02",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 2,
+      "Title": "Non-Right Triangles: Law of Cosines",
+      "SortOrder": 43,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f9eb49a3c3eeb72efa47e001c87fd03d56235d5308424af677bc817aadcd3135",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L03",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 3,
+      "Title": "Polar Coordinates",
+      "SortOrder": 44,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "12caef3db94792655af970002f4f133c29b3195cd207aa7b6f162a2fd3ca74e3",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L04",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 4,
+      "Title": "Polar Coordinates: Graphs",
+      "SortOrder": 45,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "4e52d110abdf4363b80fc3960d916e1620354c1dd5cf25cb42f89d79342827d4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L05",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 5,
+      "Title": "Polar Form of Complex Numbers",
+      "SortOrder": 46,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "35102859c0f4b5110ee6aa212dbbcb30578b1cc280c0daf1b2d9b71f2d42b64c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L06",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 6,
+      "Title": "Parametric Equations",
+      "SortOrder": 47,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "909042a2795ad60c5b92c1f5a27dabb1580cfef6bf2be907736957326ad9f820",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L07",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 7,
+      "Title": "Parametric Equations: Graphs",
+      "SortOrder": 48,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "d33e98a4b0ee5fa60ee3e8a5ed66694460f38cd8b166b4ac3038e355770a8a94",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:8.8",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08",
+      "UnitNumber": 8,
+      "UnitTitle": "Further Applications of Trigonometry",
+      "LessonNumber": 8,
+      "Title": "Vectors",
+      "SortOrder": 49,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f9603a7948bd4438cf7eb7b7277c2ab5c0bcd784df5731a9b94815b0e867ca82",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L01",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 1,
+      "Title": "Systems of Linear Equations: Two Variables",
+      "SortOrder": 50,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "7c5d67820631ae4e69df2bb893b24cbae96a1232f4f5a00604a9eac691886291",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L02",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 2,
+      "Title": "Systems of Linear Equations: Three Variables",
+      "SortOrder": 51,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "b9df93721b0d9888fa04f452f457cfd4243dcd1548b8009f4f28e04211d0c317",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L03",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 3,
+      "Title": "Systems of Nonlinear Equations and Inequalities: Two Variables",
+      "SortOrder": 52,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "d3d52138aad23fc2be2cbb40dd89aa21cba17ea75c0f5d55b96ee02154e85475",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L04",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 4,
+      "Title": "Partial Fractions",
+      "SortOrder": 53,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "2043191a5313fa74e6b71c8ab8ee270b4577bbd2c35f0b79db7fd55020a7c402",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L05",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 5,
+      "Title": "Matrices and Matrix Operations",
+      "SortOrder": 54,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "9277d785be6e090964f0e59d79079b4809de016db7072a2dcd3af3a2c7331f14",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L06",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 6,
+      "Title": "Solving Systems with Gaussian Elimination",
+      "SortOrder": 55,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "0b6faaf43cb15e04070b05d123f223e105ebe6fe2783a7a35a86ec7778eb6cf4",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L07",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 7,
+      "Title": "Solving Systems with Inverses",
+      "SortOrder": 56,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3e5d2843eb79695132602470239d9714ae9627ed67257b4d4ece831f69b0e959",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:9.8",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L08",
+      "UnitNumber": 9,
+      "UnitTitle": "Systems of Equations and Inequalities",
+      "LessonNumber": 8,
+      "Title": "Solving Systems with Cramer's Rule",
+      "SortOrder": 57,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "d4e45d6b5a26617d837a3c331fe99535453e0c191cb1d3f5328664c72468b1b9",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:10.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L01",
+      "UnitNumber": 10,
+      "UnitTitle": "Analytic Geometry",
+      "LessonNumber": 1,
+      "Title": "The Ellipse",
+      "SortOrder": 58,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "7d1ff68f0934d81b9f675c6d112b1230b4fd1b18b943c02d58b452f8cdd70410",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:10.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L02",
+      "UnitNumber": 10,
+      "UnitTitle": "Analytic Geometry",
+      "LessonNumber": 2,
+      "Title": "The Hyperbola",
+      "SortOrder": 59,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "23ad689706047dab98e2a64a11d2e3c26662d6ec5649bb8d97a51bc144a7a057",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:10.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L03",
+      "UnitNumber": 10,
+      "UnitTitle": "Analytic Geometry",
+      "LessonNumber": 3,
+      "Title": "The Parabola",
+      "SortOrder": 60,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "4725bb22dd361e5126d0fde6ad851333ec1c78eba7a1a5303369ab0b1846cfd2",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:10.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L04",
+      "UnitNumber": 10,
+      "UnitTitle": "Analytic Geometry",
+      "LessonNumber": 4,
+      "Title": "Rotation of Axis",
+      "SortOrder": 61,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "4eb6c77b0dd62caebd90b4dbcdfd0ea022ea9c11ce537444b2ee71e3c5ff9226",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:10.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L05",
+      "UnitNumber": 10,
+      "UnitTitle": "Analytic Geometry",
+      "LessonNumber": 5,
+      "Title": "Conic Sections in Polar Coordinates",
+      "SortOrder": 62,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "49676141468c905477ba7ea05ecff4e315e27f4694b179adef075ac7cbc49219",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 1,
+      "Title": "Sequences and their Notations",
+      "SortOrder": 63,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "696d770be0f0a396370a7b32a5941d6db7309c0a6f2c303683091b48d9fb0814",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 2,
+      "Title": "Arithmetic Sequences",
+      "SortOrder": 64,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "3240bc137cb3a997796a2230afa4e93a90be53aebed71ba7452cb349114b995c",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 3,
+      "Title": "Geometric Sequences",
+      "SortOrder": 65,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "e05c340dfc557c09c9ca30c432cf4a557dc8a02bfc81d2f4f85c8a517c1b98d2",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L04",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 4,
+      "Title": "Series and their Notations",
+      "SortOrder": 66,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "76804542bac928d5453c4d922372aed74fb4bdbbe67226213118b5094f7ad0e5",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.5",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L05",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 5,
+      "Title": "Counting Principles",
+      "SortOrder": 67,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "490b276e266035bc872d141b979c08b3c439be218129553963da3aee1cf9d4b7",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.6",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L06",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 6,
+      "Title": "Binomial Theorem",
+      "SortOrder": 68,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "9772ce1d6b201b03ec1104f4b01f79a799c3657b6108c87a5c1adc3070909d08",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:11.7",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L07",
+      "UnitNumber": 11,
+      "UnitTitle": "Sequences, Probability and Counting Theory",
+      "LessonNumber": 7,
+      "Title": "Probability",
+      "SortOrder": 69,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "a9b6c4826cb7313de645a84b814b8b43f45bab359efa5e139396c71fca68dc19",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:12.1",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L01",
+      "UnitNumber": 12,
+      "UnitTitle": "Introduction to Calculus",
+      "LessonNumber": 1,
+      "Title": "Finding Limits: Numerical and Graphical Approaches",
+      "SortOrder": 70,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "ff298ccc6d6f6e06d7fa099630b22eb44a858b1b3ebbc9b17c6c6e8d814baf8a",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:12.2",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L02",
+      "UnitNumber": 12,
+      "UnitTitle": "Introduction to Calculus",
+      "LessonNumber": 2,
+      "Title": "Finding Limits: Properties of Limits",
+      "SortOrder": 71,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f26024db88a52c3c828471d60ba1f62417e759a661d94c59e6f3ef8fe1c73ae0",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:12.3",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L03",
+      "UnitNumber": 12,
+      "UnitTitle": "Introduction to Calculus",
+      "LessonNumber": 3,
+      "Title": "Continuity",
+      "SortOrder": 72,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "00f862d5e6303635fe7b473fb952862080c4eae701fc437d1681151de2411469",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    },
+    {
+      "SourceLessonCode": "OPENSTAX-PRECALCULUS-2017:12.4",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L04",
+      "UnitNumber": 12,
+      "UnitTitle": "Introduction to Calculus",
+      "LessonNumber": 4,
+      "Title": "Derivatives",
+      "SortOrder": 73,
+      "SourceUrl": "https://openstax.org/details/books/precalculus",
+      "SemanticSha256": "f53136158d174d0f5c744a3823ee9e5cf20f1dec54d3d5fa0a0b09be0bd968e9",
+      "Alignments": [],
+      "OutcomeCodes": [],
+      "ApplicableCourses": [
+        "Precalculus"
+      ],
+      "FormalTargets": []
+    }
+  ]
+}

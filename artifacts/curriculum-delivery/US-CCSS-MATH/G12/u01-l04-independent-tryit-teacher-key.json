@@ -1,0 +1,44 @@
+{
+  "Unit": 1,
+  "Lesson": 4,
+  "SourceOriginalTryItCount": 7,
+  "TeacherOnlyFirstPartyAnswers": [
+    {
+      "OriginalTryItNumber": 1,
+      "IndependentStudentPrompt": "With f(x)=x−2 and g(x)=x²−4, find (fg)(x), (f−g)(x), and their domains.",
+      "TeacherExpectedMathematics": "Product x³−2x²−4x+8; difference −x²+x+2. Both domains ℝ."
+    },
+    {
+      "OriginalTryItNumber": 2,
+      "IndependentStudentPrompt": "Let G(r) be gravitational force for orbital distance r and a(F) acceleration caused by force F. Form the physically meaningful composition.",
+      "TeacherExpectedMathematics": "a(G(r)); input distance yields force then acceleration."
+    },
+    {
+      "OriginalTryItNumber": 3,
+      "IndependentStudentPrompt": "Let f(1)=6,f(2)=5,f(3)=2,f(4)=7 and g(1)=3,g(2)=4,g(3)=1,g(4)=2. Find f(g(1)) and g(f(3)).",
+      "TeacherExpectedMathematics": "f(g(1))=f(3)=2; g(f(3))=g(2)=4."
+    },
+    {
+      "OriginalTryItNumber": 4,
+      "IndependentStudentPrompt": "An independent plot gives f(2)=4 and g(4)=1. Find g(f(2)).",
+      "TeacherExpectedMathematics": "1, with inner plotted output 4."
+    },
+    {
+      "OriginalTryItNumber": 5,
+      "IndependentStudentPrompt": "For f(x)=x²−2x and h(x)=2x+3, evaluate h(f(2)) and h(f(−2)).",
+      "TeacherExpectedMathematics": "h(f(2))=3; h(f(−2))=27 because f(−2)=12 and h(12)=27."
+    },
+    {
+      "OriginalTryItNumber": 6,
+      "IndependentStudentPrompt": "Let f(x)=1/(x−3) and g(x)=√(x+2). Find domain of f(g(x)).",
+      "TeacherExpectedMathematics": "x≥−2 except x=7, since √(x+2)=3 iff x=7."
+    },
+    {
+      "OriginalTryItNumber": 7,
+      "IndependentStudentPrompt": "Decompose H(x)=4/(5−√(x²+2)) into an inner and outer function and state its domain.",
+      "TeacherExpectedMathematics": "a(x)=√(x²+2); b(u)=4/(5−u); exclude x=±√23."
+    }
+  ],
+  "OriginalPublisherAssetsCopied": false,
+  "StageD": "NOT_RUN"
+}

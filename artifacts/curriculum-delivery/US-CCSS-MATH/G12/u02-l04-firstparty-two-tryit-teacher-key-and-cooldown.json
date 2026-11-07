@@ -1,0 +1,21 @@
+{
+  "OriginalTryItSkills": 2,
+  "FirstPartyIndependentTryItAlternatives": 2,
+  "FirstPartyTeacherMathKeys": [
+    {
+      "Number": 1,
+      "Answer": "7.4, interpolation (the actual observed y at x2 is 8; residual +0.6)."
+    },
+    {
+      "Number": 2,
+      "Answer": "16.2, extrapolation outside [0,4]; cannot guarantee model remains valid."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentPrompt": "Given paired data (0,2),(1,4),(2,6),(3,8): (a) fit an exact linear rule, (b) identify r, (c) predict at x=2.5 and x=7 and classify each prediction.",
+    "TeacherExpectedMath": "y=2x+2, r=1; x2.5 gives 7 (interpolation), x7 gives 16 (extrapolation).",
+    "OriginalPublisherRestrictedCoolDownCopied": false
+  },
+  "PublisherGraphsCopied": false,
+  "StageD": "NOT_RUN"
+}

@@ -1,0 +1,609 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04",
+  "OriginalSectionNumberedExercises": 42,
+  "IndependentFirstPartyStudentQuestions": [
+    {
+      "Number": 1,
+      "Skill": "INTERPRET_SCATTER_REGRESSION",
+      "Question": "What is a model breakdown and how could a residual plot reveal it?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 2,
+      "Skill": "INTERPRET_SCATTER_REGRESSION",
+      "Question": "What is interpolation within a data sample?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 3,
+      "Skill": "INTERPRET_SCATTER_REGRESSION",
+      "Question": "What is extrapolation and why may it be unreliable?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 4,
+      "Skill": "INTERPRET_SCATTER_REGRESSION",
+      "Question": "Explain differences between r>0 and r<0 for a scatterplot.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 5,
+      "Skill": "INTERPRET_SCATTER_REGRESSION",
+      "Question": "What does |r| near 1 versus near 0 mean?",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 6,
+      "Skill": "EVALUATE_REPORTED_REGRESSION",
+      "Question": "An independently reported regression model has slope −1.341, intercept 32.234 and r=−0.896. Predict y at x=11 and interpret correlation sign.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 7,
+      "Skill": "EVALUATE_REPORTED_REGRESSION",
+      "Question": "A tree age model has slope 6.301 years/inch, intercept −1.044 years and reported r=−0.970. Predict age at 10 inches and identify any apparent inconsistency.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 8,
+      "Skill": "DRAW_SCATTER_AND_IDENTIFY_TREND",
+      "Question": "Graph the independent coordinate pairs x=[0, 2, 4, 6, 8, 10], y=[-22, -19, -15, -11, -6, -2]. Does the plotted relation look approximately linear or clearly curved? Justify, not merely fit a line.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 9,
+      "Skill": "DRAW_SCATTER_AND_IDENTIFY_TREND",
+      "Question": "Graph the independent coordinate pairs x=[1, 2, 3, 4, 5, 6], y=[46, 50, 59, 75, 100, 136]. Does the plotted relation look approximately linear or clearly curved? Justify, not merely fit a line.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 10,
+      "Skill": "DRAW_SCATTER_AND_IDENTIFY_TREND",
+      "Question": "Graph the independent coordinate pairs x=[100, 250, 300, 450, 600, 750], y=[12, 12.6, 13.1, 14, 14.5, 15.2]. Does the plotted relation look approximately linear or clearly curved? Justify, not merely fit a line.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 11,
+      "Skill": "DRAW_SCATTER_AND_IDENTIFY_TREND",
+      "Question": "Graph the independent coordinate pairs x=[1, 3, 5, 7, 9, 11], y=[1, 9, 28, 65, 125, 216]. Does the plotted relation look approximately linear or clearly curved? Justify, not merely fit a line.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 12,
+      "Skill": "EXTRAPOLATE_LINEAR_SCATTER_THRESHOLD",
+      "Question": "A first-party-rephrased town has paired year/population records [(1990, 11500), (1995, 12100), (2000, 12700), (2005, 13000), (2010, 13750)]. Is estimating year for 15000 people interpolation or extrapolation? Fit a visually reasonable trend and estimate the year.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 13,
+      "Skill": "INTERPOLATE_SCATTER_TEMPERATURE",
+      "Question": "A first-party temperature/time scatter dataset has temperature x=[16,18,20,25,30]°F and measured duration y=[46,50,54,55,62]sec. Estimate duration at 28°F and classify prediction.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 14,
+      "Skill": "MATCH_CORRELATION_TO_INDEPENDENT_SCATTER",
+      "Question": "A separate first-party scatterplot has a reported sample Pearson coefficient r=0.95. Describe expected plot direction and linear strength; select the correct qualitative panel among increasing/decreasing and tight/diffuse options.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 15,
+      "Skill": "MATCH_CORRELATION_TO_INDEPENDENT_SCATTER",
+      "Question": "A separate first-party scatterplot has a reported sample Pearson coefficient r=-0.89. Describe expected plot direction and linear strength; select the correct qualitative panel among increasing/decreasing and tight/diffuse options.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 16,
+      "Skill": "MATCH_CORRELATION_TO_INDEPENDENT_SCATTER",
+      "Question": "A separate first-party scatterplot has a reported sample Pearson coefficient r=0.26. Describe expected plot direction and linear strength; select the correct qualitative panel among increasing/decreasing and tight/diffuse options.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 17,
+      "Skill": "MATCH_CORRELATION_TO_INDEPENDENT_SCATTER",
+      "Question": "A separate first-party scatterplot has a reported sample Pearson coefficient r=-0.39. Describe expected plot direction and linear strength; select the correct qualitative panel among increasing/decreasing and tight/diffuse options.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 18,
+      "Skill": "DRAW_LINE_OF_BEST_FIT_FROM_INDEPENDENT_POINTS",
+      "Question": "An independent scatter plot consists of labelled coordinates [(0, 1), (2, 3), (4, 6), (6, 8), (8, 10)]. Plot it, estimate a best-fit line, and compare its slope to the least-squares slope.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 19,
+      "Skill": "DRAW_LINE_OF_BEST_FIT_FROM_INDEPENDENT_POINTS",
+      "Question": "An independent scatter plot consists of labelled coordinates [(0, 10), (2, 8), (4, 7), (6, 4), (8, 2)]. Plot it, estimate a best-fit line, and compare its slope to the least-squares slope.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 20,
+      "Skill": "DRAW_LINE_OF_BEST_FIT_FROM_INDEPENDENT_POINTS",
+      "Question": "An independent scatter plot consists of labelled coordinates [(0, 4), (2, 6), (4, 7), (6, 7), (8, 5)]. Plot it, estimate a best-fit line, and compare its slope to the least-squares slope.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 21,
+      "Skill": "DRAW_LINE_OF_BEST_FIT_FROM_INDEPENDENT_POINTS",
+      "Question": "An independent scatter plot consists of labelled coordinates [(0, 2), (2, 5), (4, 9), (6, 12), (8, 17)]. Plot it, estimate a best-fit line, and compare its slope to the least-squares slope.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 22,
+      "Skill": "HISTORICAL_TREND_REGRESSION_THRESHOLD",
+      "Question": "Evaluate whether paired historical observations [(1990, 21.3), (1992, 21.4), (1994, 22.2), (1996, 23.6), (1998, 24.4), (2000, 25.6), (2002, 26.7), (2004, 27.7), (2006, 28), (2008, 29.4)] are roughly linear. Under that explicit modeling assumption, estimate the calendar year when predicted percent graduates exceeds 35.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 23,
+      "Skill": "HISTORICAL_TREND_REGRESSION_THRESHOLD",
+      "Question": "Evaluate whether paired historical observations [(1992, 2665), (1994, 2688), (1996, 3565), (1998, 4129), (2000, 4584), (2002, 5655), (2004, 6549), (2006, 7950), (2008, 8487), (2009, 9462)] are roughly linear. Under that explicit modeling assumption, estimate the calendar year when predicted hectoliters exceeds 12000.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 24,
+      "Skill": "HISTORICAL_TREND_REGRESSION_THRESHOLD",
+      "Question": "Evaluate whether paired historical observations [(1990, 750), (1992, 670), (1994, 650), (1996, 605), (1998, 550), (2000, 510), (2002, 460), (2004, 420), (2006, 380), (2008, 320)] are roughly linear. Under that explicit modeling assumption, estimate the calendar year when predicted unemployed residents reaches 5.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 25,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[8, 15, 26, 31, 56], y=[23, 41, 53, 72, 103]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 26,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[5, 7, 10, 12, 15], y=[4, 12, 17, 22, 24]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 27,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], y=[21.9, 22.22, 22.74, 22.26, 20.78, 17.6, 16.52, 18.54, 15.76, 13.68, 14.1, 14.02, 11.94, 12.76, 11.28, 9.1]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 28,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[4, 5, 6, 7, 8, 9, 10, 11, 12, 13], y=[44.8, 43.1, 38.8, 39, 38, 32.7, 30.1, 29.3, 27, 25.8]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 29,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[21, 25, 30, 31, 40, 50], y=[17, 11, 2, -1, -18, -40]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 30,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[100, 80, 60, 55, 40, 20], y=[2000, 1798, 1589, 1580, 1390, 1202]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 31,
+      "Skill": "COMPUTE_LEAST_SQUARES_AND_PEARSON_R",
+      "Question": "Compute the least-squares linear regression y=mx+b and Pearson correlation r to three decimals for independent paired observations: x=[900, 988, 1000, 1010, 1200, 1205], y=[70, 80, 82, 84, 105, 108]. Interpret direction and any fit limits.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 32,
+      "Skill": "VERIFY_EXACT_LINEAR_REGRESSION",
+      "Question": "Create an independent dataset by evaluating f(x)=(0.5)x+(10) at x=[-2, 1, 5, 6, 9]. Regress resulting five points and compare to original.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 33,
+      "Skill": "VERIFY_EXACT_LINEAR_REGRESSION",
+      "Question": "Create an independent dataset by evaluating f(x)=(-2)x+(-10) at x=[-2, 1, 5, 6, 9]. Regress resulting five points and compare to original.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 34,
+      "Skill": "REGRESS_DECLINING_PROFIT",
+      "Question": "For independent first-party business data (units hundreds, profit thousands) [(46, 600), (48, 550), (50, 505), (52, 540), (54, 495)], fit P(x)=mx+b and state units.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 35,
+      "Skill": "REGRESSION_X_INTERCEPT",
+      "Question": "Using the least-squares line of independent data (46,600),(48,550),(50,505),(52,540),(54,495), estimate the x-intercept to one decimal and interpret units.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 36,
+      "Skill": "REGRESSION_Y_INTERCEPT",
+      "Question": "Using the same independently fitted five-point declining-profit model, estimate y-intercept to one decimal and explain its physical reliability.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 37,
+      "Skill": "REGRESS_YEAR_AS_OUTPUT",
+      "Question": "Pairs (population,calendar year) are [(2500, 2000), (2650, 2001), (3000, 2003), (3500, 2006), (4200, 2010)]. Regress year y as function of population x (not the other direction) to 3 decimal places.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 38,
+      "Skill": "REGRESS_YEAR_AT_POPULATION_THRESHOLD",
+      "Question": "Using independent population-year data (2500,2000),(2650,2001),(3000,2003),(3500,2006),(4200,2010), predict calendar year at population8000 using year as dependent variable.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 39,
+      "Skill": "REGRESS_INCREASING_PROFIT",
+      "Question": "Fit least-squares profit in thousands versus units in hundreds for independent points [(46, 250), (48, 305), (50, 350), (52, 390), (54, 410)].",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 40,
+      "Skill": "REGRESSION_SALES_PROFIT_TARGET",
+      "Question": "For fitted rising-profit model from (46,250),(48,305),(50,350),(52,390),(54,410), estimate number of hundreds of units required for profit greater than 1000 thousand dollars.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 41,
+      "Skill": "REGRESS_FALLING_PROFIT",
+      "Question": "Fit least-squares profit in thousands versus units in hundreds for independent points [(46, 250), (48, 225), (50, 205), (52, 180), (54, 165)].",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    },
+    {
+      "Number": 42,
+      "Skill": "REGRESSION_DECREASING_PROFIT_THRESHOLD",
+      "Question": "For the independent declining-profit observations (46,250),(48,225),(50,205),(52,180),(54,165), estimate the units-in-hundreds level where predicted profit dips below $25,000.",
+      "GradeMode": "MANUAL_TEACHER_REVIEW"
+    }
+  ],
+  "TeacherExpectedAnswers": [
+    {
+      "Number": 1,
+      "ExpectedMath": "Model breakdown means the assumed relation fails for new conditions or is systematically misspecified; curved residual patterns warn against a single linear fit.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 2,
+      "ExpectedMath": "Predicting y for x inside the observed x-range.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 3,
+      "ExpectedMath": "Predicting outside observed x-range; trend may not continue.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 4,
+      "ExpectedMath": "Positive r means upward association, negative r downward association.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 5,
+      "ExpectedMath": "Magnitude near 1 implies strong linear association, near0 weak linear association; neither proves causation.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 6,
+      "ExpectedMath": "ŷ(11)=−1.341×11+32.234=17.483; r negative strong linear association.",
+      "CognitiveActions": [
+        "predict from stated line",
+        "interpret r sign/strength"
+      ]
+    },
+    {
+      "Number": 7,
+      "ExpectedMath": "ŷ(10)=61.966 years. An observed regression with positive slope and negative r is internally inconsistent (when x,y variances positive, r and slope share sign); report rather than silently trusting the pair.",
+      "CognitiveActions": [
+        "predict from slope/intercept",
+        "critical consistency check r against slope"
+      ]
+    },
+    {
+      "Number": 8,
+      "ExpectedMath": "Visual pattern roughly linear; optional diagnostic least-squares m≈2.042857, b≈-22.714286, r≈0.997661. High correlation alone does not eliminate curvature.",
+      "CognitiveActions": [
+        "draw paired scatter points",
+        "assess linear vs nonlinear visual shape"
+      ]
+    },
+    {
+      "Number": 9,
+      "ExpectedMath": "Visual pattern curved/nonlinear; optional diagnostic least-squares m≈17.6, b≈16.066667, r≈0.948508. High correlation alone does not eliminate curvature.",
+      "CognitiveActions": [
+        "draw paired scatter points",
+        "assess linear vs nonlinear visual shape"
+      ]
+    },
+    {
+      "Number": 10,
+      "ExpectedMath": "Visual pattern roughly linear; optional diagnostic least-squares m≈0.005022, b≈11.51611, r≈0.993597. High correlation alone does not eliminate curvature.",
+      "CognitiveActions": [
+        "draw paired scatter points",
+        "assess linear vs nonlinear visual shape"
+      ]
+    },
+    {
+      "Number": 11,
+      "ExpectedMath": "Visual pattern curved/nonlinear; optional diagnostic least-squares m≈20.857143, b≈-51.142857, r≈0.939277. High correlation alone does not eliminate curvature.",
+      "CognitiveActions": [
+        "draw paired scatter points",
+        "assess linear vs nonlinear visual shape"
+      ]
+    },
+    {
+      "Number": 12,
+      "ExpectedMath": "Extrapolation (15000 exceeds observed max13750); least squares y≈108·year+(-203390), gives year≈2022.12963; eyeballed line may vary.",
+      "CognitiveActions": [
+        "plot scatter",
+        "classify extrapolation",
+        "estimate threshold year"
+      ]
+    },
+    {
+      "Number": 13,
+      "ExpectedMath": "Interpolation, because 28°F lies inside [16,30]; least squares time≈1.012422x+(31.329193), prediction at28°F≈59.677019 seconds.",
+      "CognitiveActions": [
+        "draw scatter",
+        "predict within observed data window"
+      ]
+    },
+    {
+      "Number": 14,
+      "ExpectedMath": "Expected strong positive linear association; a positive sign rises, negative falls, magnitude determines concentration.",
+      "CognitiveActions": [
+        "interpret r sign",
+        "interpret |r|",
+        "choose appropriate graph pattern"
+      ]
+    },
+    {
+      "Number": 15,
+      "ExpectedMath": "Expected strong negative linear association; a positive sign rises, negative falls, magnitude determines concentration.",
+      "CognitiveActions": [
+        "interpret r sign",
+        "interpret |r|",
+        "choose appropriate graph pattern"
+      ]
+    },
+    {
+      "Number": 16,
+      "ExpectedMath": "Expected weak positive linear association; a positive sign rises, negative falls, magnitude determines concentration.",
+      "CognitiveActions": [
+        "interpret r sign",
+        "interpret |r|",
+        "choose appropriate graph pattern"
+      ]
+    },
+    {
+      "Number": 17,
+      "ExpectedMath": "Expected weak-to-moderate negative linear association; a positive sign rises, negative falls, magnitude determines concentration.",
+      "CognitiveActions": [
+        "interpret r sign",
+        "interpret |r|",
+        "choose appropriate graph pattern"
+      ]
+    },
+    {
+      "Number": 18,
+      "ExpectedMath": "Least-squares m≈1.15, b≈1, r≈0.997176; a reasonable hand-drawn line may differ.",
+      "CognitiveActions": [
+        "plot points",
+        "draw reasonable trendline",
+        "report approximate equation"
+      ]
+    },
+    {
+      "Number": 19,
+      "ExpectedMath": "Least-squares m≈-1, b≈10.2, r≈-0.990148; a reasonable hand-drawn line may differ.",
+      "CognitiveActions": [
+        "plot points",
+        "draw reasonable trendline",
+        "report approximate equation"
+      ]
+    },
+    {
+      "Number": 20,
+      "ExpectedMath": "Least-squares m≈0.15, b≈5.2, r≈0.363803; a reasonable hand-drawn line may differ.",
+      "CognitiveActions": [
+        "plot points",
+        "draw reasonable trendline",
+        "report approximate equation"
+      ]
+    },
+    {
+      "Number": 21,
+      "ExpectedMath": "Least-squares m≈1.85, b≈1.6, r≈0.996007; a reasonable hand-drawn line may differ.",
+      "CognitiveActions": [
+        "plot points",
+        "draw reasonable trendline",
+        "report approximate equation"
+      ]
+    },
+    {
+      "Number": 22,
+      "ExpectedMath": "Least squares m≈0.476061, intercept≈-926.615152, r≈0.993959; equality near year 2019.942712; confirm strict crossing if exceed, and flag long-horizon extrapolation.",
+      "CognitiveActions": [
+        "fit linear model",
+        "evaluate correlation/fit",
+        "solve threshold year with caution"
+      ]
+    },
+    {
+      "Number": 23,
+      "ExpectedMath": "Least squares m≈409.502717, intercept≈-813800.585491, r≈0.984828; equality near year 2016.593669; confirm strict crossing if exceed, and flag long-horizon extrapolation.",
+      "CognitiveActions": [
+        "fit linear model",
+        "evaluate correlation/fit",
+        "solve threshold year with caution"
+      ]
+    },
+    {
+      "Number": 24,
+      "ExpectedMath": "Least squares m≈-22.80303, intercept≈46114.757576, r≈-0.997649; equality near year 2022.089037; confirm strict crossing if exceed, and flag long-horizon extrapolation.",
+      "CognitiveActions": [
+        "fit linear model",
+        "evaluate correlation/fit",
+        "solve threshold year with caution"
+      ]
+    },
+    {
+      "Number": 25,
+      "ExpectedMath": "m≈1.639712, b≈13.799824, r≈0.987; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 26,
+      "ExpectedMath": "m≈1.971338, b≈-3.519108, r≈0.967; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 27,
+      "ExpectedMath": "m≈-0.901471, b≈26.040441, r≈-0.968; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 28,
+      "ExpectedMath": "m≈-2.201212, b≈53.570303, r≈-0.986; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 29,
+      "ExpectedMath": "m≈-1.980614, b≈60.196839, r≈-0.998; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 30,
+      "ExpectedMath": "m≈9.984456, b≈1002.419689, r≈0.999; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 31,
+      "ExpectedMath": "m≈0.120902, b≈-38.840547, r≈0.998; recompute unrounded coefficients before final rounding.",
+      "CognitiveActions": [
+        "calculate slope and intercept",
+        "calculate r",
+        "round r to 3 decimals"
+      ]
+    },
+    {
+      "Number": 32,
+      "ExpectedMath": "Data [(-2, 9.0), (1, 10.5), (5, 12.5), (6, 13.0), (9, 14.5)], regression exactly m=0.5, b=10, r=1; all residuals zero.",
+      "CognitiveActions": [
+        "calculate five coordinates",
+        "fit least-squares",
+        "explain perfect correlation"
+      ]
+    },
+    {
+      "Number": 33,
+      "ExpectedMath": "Data [(-2, -6), (1, -12), (5, -20), (6, -22), (9, -28)], regression exactly m=-2, b=-10, r=−1; all residuals zero.",
+      "CognitiveActions": [
+        "calculate five coordinates",
+        "fit least-squares",
+        "explain perfect correlation"
+      ]
+    },
+    {
+      "Number": 34,
+      "ExpectedMath": "P(x)≈-11x+(1088) thousand dollars, where x is hundreds of units, r≈-0.835711.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 35,
+      "ExpectedMath": "x≈98.909091 hundreds of units at fitted zero profit; outside observed range if appropriate.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 36,
+      "ExpectedMath": "y-intercept b≈1088 thousand dollars at x=0 hundreds of units; extrapolation far outside observed data.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 37,
+      "ExpectedMath": "year≈(0.006)population+(1985.406), unrounded slope=0.005865, intercept=1985.406413, r≈0.999899.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 38,
+      "ExpectedMath": "Unrounded year prediction≈2032.330292, a long extrapolation outside the sampled population range.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 39,
+      "ExpectedMath": "P(x)≈20.25x+(-671.5) thousands; r≈0.987511.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 40,
+      "ExpectedMath": "P(x)>1000 for x>82.54321 hundreds of units, under extrapolation assumptions.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 41,
+      "ExpectedMath": "P(x)≈-10.75x+(742.5), slope negative, r≈-0.997039.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    },
+    {
+      "Number": 42,
+      "ExpectedMath": "P(x)<25 thousand for x>66.744186 hundreds of units (negative slope), extrapolation beyond observations.",
+      "CognitiveActions": [
+        "calculate and justify source-skill conclusion"
+      ]
+    }
+  ],
+  "PublisherSourceGraphicImagesReproduced": false,
+  "OriginalSourceExactVerbatimAndGraphPixelParityCertified": false,
+  "StageDStudentTeacherRuntime": "NOT_RUN",
+  "CI": "NOT_RUN"
+}

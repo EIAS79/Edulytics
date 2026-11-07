@@ -1,0 +1,284 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U01:L07",
+  "ContentVersion": "g12-u01-l07-firstparty-source-skill-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L07",
+      "CultureCode": "en",
+      "Title": "Inverse Functions",
+      "ExplanationParagraphs": [
+        "Learning goals: identify one-to-one functions, invert table and graph coordinates, test inverse pairs by composition, compute inverse algebraically, and correctly exchange domain/range including physical units.",
+        "If f(a)=b for one-to-one f, the inverse satisfies f⁻¹(b)=a. The inverse must be a function, so f must pass the horizontal-line test on its chosen domain.",
+        "Graph f and f⁻¹ are symmetric across y=x: every original point (a,b) corresponds to an inverse point (b,a). Inverse is not the same as reciprocal 1/f.",
+        "Algebraic inversion solves y=f(x) for the input variable, swaps symbols, and preserves exclusions and necessary branch restrictions. Verify both compositions when possible.",
+        "An unrestricted quadratic or absolute-value function is not one-to-one. Restrict to a monotonic branch before claiming a functional inverse.",
+        "The inverse domain equals the original range, and the inverse range equals the original domain. Physical models swap output/input units.",
+        "Independent Edulytics Cool-down: (a) Find inverse of f(x)=2x−6 and verify by composition. (b) Explain why f(x)=x² requires an injective domain restriction. (c) For g(x)=4+√(x−1), determine inverse formula and its domain.",
+        "Independent Try It 1 — Swap a given inverse pair. If h⁻¹(7)=3, what exact original mapping must h contain?",
+        "Independent Try It 2 — Test inverse cubic translation. For f(x)=x³−4 and g(x)=∛(x+4), verify both compositions.",
+        "Independent Try It 3 — Cube translated inverse. For f(x)=(x−1)³, is g(x)=∛x+1 an inverse?",
+        "Independent Try It 4 — Swap domain and range. A one-to-one f has domain (1,∞) and range (−∞,−2). Give inverse domain and range.",
+        "Independent Try It 5 — Invert finite table. For a one-to-one table f(1)=5,f(2)=7,f(3)=9, evaluate f⁻¹(7).",
+        "Independent Try It 6 — Graph inverse coordinate lookup. For a source-skill graph model g(x)=x+3, read g(2) and g⁻¹(2).",
+        "Independent Try It 7 — Solve formula for input. Solve y=(x−5)/3 for x in terms of y.",
+        "Independent Try It 8 — Inverse of a decreasing root. For f(x)=2−√x, x≥0, derive its inverse and state its allowable domain.",
+        "Independent Try It 9 — Graph a function and its rational inverse. Reflect points from f(x)=3/(x−2)+5 across y=x. Derive inverse formula."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reverse an input-output mapping",
+          "Question": "A one-to-one mapping has f(2)=7 and f(5)=12. Find the matching inverse values.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "f⁻¹(7)=2; f⁻¹(12)=5."
+          ],
+          "Answer": "f⁻¹(7)=2; f⁻¹(12)=5.",
+          "Check": "The inverse swaps coordinates (2,7)↔(7,2)."
+        },
+        {
+          "Title": "Prove an inverse by composing in both orders",
+          "Question": "Given f(x)=1/(x+3) and g(x)=1/x−3, determine if they are inverse functions including their proper domains.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "f(g(x))=x for x≠0; g(f(x))=x for x≠−3. Yes, they are inverse functions."
+          ],
+          "Answer": "f(g(x))=x for x≠0; g(f(x))=x for x≠−3. Yes, they are inverse functions.",
+          "Check": "Respect the distinct input restrictions."
+        },
+        {
+          "Title": "Distinguish a multiplier from a fractional exponent",
+          "Question": "Is g(x)=x/3 the inverse of f(x)=x³?",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "No. f(g(x))=x³/27. Correct inverse is g(x)=∛x."
+          ],
+          "Answer": "No. f(g(x))=x³/27. Correct inverse is g(x)=∛x.",
+          "Check": "A factor 1/3 does not undo a cube operation."
+        },
+        {
+          "Title": "Restrict domain before inverting a noninjective family",
+          "Question": "Explain how to make x², |x| and 1/x² invertible by an admissible branch restriction.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "For f(x)=x² choose x≥0 and inverse √x. For |x| choose x≥0; for 1/x² choose x>0 yielding 1/√y for y>0."
+          ],
+          "Answer": "For f(x)=x² choose x≥0 and inverse √x. For |x| choose x≥0; for 1/x² choose x>0 yielding 1/√y for y>0.",
+          "Check": "The original full real domains are not one-to-one."
+        },
+        {
+          "Title": "Interpret a tabulated inverse",
+          "Question": "A trip log gives f(20)=12 miles, f(40)=25 miles and f(60)=50 miles, with input minutes. Interpret f⁻¹(50).",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "f⁻¹(50)=60 minutes; the 50-mile reading occurs after 60 minutes."
+          ],
+          "Answer": "f⁻¹(50)=60 minutes; the 50-mile reading occurs after 60 minutes.",
+          "Check": "Inverse inputs carry miles, inverse outputs minutes."
+        },
+        {
+          "Title": "Read a graph and its inverse",
+          "Question": "An independently plotted one-to-one linear model is g(x)=x−1. Find g(3) and g⁻¹(3) from points.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "g(3)=2, g⁻¹(3)=4; the input/output roles are reversed."
+          ],
+          "Answer": "g(3)=2, g⁻¹(3)=4; the input/output roles are reversed.",
+          "Check": "g(4)=3 confirms the inverse read."
+        },
+        {
+          "Title": "Invert Fahrenheit and Celsius units",
+          "Question": "Given C=(5/9)(F−32), express Fahrenheit F in terms of Celsius C.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "F=(9/5)C+32."
+          ],
+          "Answer": "F=(9/5)C+32.",
+          "Check": "Recomposing with C(F) returns the starting temperature."
+        },
+        {
+          "Title": "Inverse of a shifted rational rule",
+          "Question": "For f(x)=3/(x−2)+5, solve for f⁻¹(x) and state both input domains.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "f⁻¹(x)=3/(x−5)+2; original x≠2; inverse x≠5."
+          ],
+          "Answer": "f⁻¹(x)=3/(x−5)+2; original x≠2; inverse x≠5.",
+          "Check": "Check both compositions on their allowed domains."
+        },
+        {
+          "Title": "Inverse of a shifted square root",
+          "Question": "For f(x)=3+√(x−2), find inverse rule, domain and range.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "f⁻¹(x)=(x−3)²+2 for x≥3; original domain [2,∞), range [3,∞)."
+          ],
+          "Answer": "f⁻¹(x)=(x−3)²+2 for x≥3; original domain [2,∞), range [3,∞).",
+          "Check": "The inverse quadratic is restricted to x≥3."
+        },
+        {
+          "Title": "Plot the reflected inverse across y=x",
+          "Question": "For f(x)=x+2 and f⁻¹(x)=x−2, plot three points from each and explain the symmetry.",
+          "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+          "Steps": [
+            "Source points (−1,1),(0,2),(2,4) reflect to inverse points (1,−1),(2,0),(4,2) across y=x."
+          ],
+          "Answer": "Source points (−1,1),(0,2),(2,4) reflect to inverse points (1,−1),(2,0),(4,2) across y=x.",
+          "Check": "Reflected inverse swaps domain and range."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse function",
+          "Definition": "If f(a)=b for a one-to-one function then f⁻¹(b)=a.",
+          "Rule": "Swap input/output roles and original domain/range.",
+          "Example": "f(2)=7 ↔ f⁻¹(7)=2."
+        },
+        {
+          "Title": "One-to-one and horizontal line test",
+          "Definition": "Inverse of a function is a function only when each original output has at most one input.",
+          "Rule": "A horizontal line may intersect the graph no more than once.",
+          "Example": "Unrestricted y=x² fails the horizontal line test."
+        },
+        {
+          "Title": "Composition proof",
+          "Definition": "For inverse pair f,g both f∘g and g∘f act as identity on their corresponding valid domains.",
+          "Rule": "Do not forget exclusions where an inner rule is undefined.",
+          "Example": "f(x)=1/(x+3),g(x)=1/x−3."
+        },
+        {
+          "Title": "Algebraic inversion",
+          "Definition": "Write y=f(x), solve for x in terms of y, exchange variables and preserve restrictions.",
+          "Rule": "Some formulas require selecting an injective branch.",
+          "Example": "f(x)=3+√(x−2) invertible with inverse (x−3)²+2 on x≥3."
+        },
+        {
+          "Title": "Domain and range interchange",
+          "Definition": "Domain of f⁻¹ equals range of f and range of f⁻¹ equals domain of f.",
+          "Rule": "Swapping without checking endpoints yields incorrect domains.",
+          "Example": "√x on [0,∞) has inverse x² restricted x≥0."
+        },
+        {
+          "Title": "Graph symmetry",
+          "Definition": "An inverse graph is the reflection of f across the identity line y=x.",
+          "Rule": "Each point (a,b) maps to (b,a).",
+          "Example": "(3,5) in f becomes (5,3) in f⁻¹."
+        },
+        {
+          "Title": "Units in inverse models",
+          "Definition": "An inverse changes dependent output back into the input quantity.",
+          "Rule": "Units of original output become inverse input units.",
+          "Example": "Distance in miles ↔ time in minutes."
+        }
+      ],
+      "SummaryPoints": [
+        "One-to-one functions pass the horizontal-line test.",
+        "An inverse reverses inputs and outputs; it is not the reciprocal function.",
+        "Composition with an inverse returns the identity on the appropriate domain.",
+        "An inverse graph is the reflection of the original graph in y=x.",
+        "Restrictions and included endpoints swap when domains and ranges exchange.",
+        "Teacher evaluates independent source-skill graph inversions manually in Stage C."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party inverse finite mapping",
+          "Description": "The inverse relation swaps input and output coordinates.",
+          "PrimaryLabel": "input",
+          "SecondaryLabel": "output",
+          "Rows": [
+            {
+              "Label": "f input",
+              "Cells": [
+                "2",
+                "5",
+                "8"
+              ]
+            },
+            {
+              "Label": "f output",
+              "Cells": [
+                "7",
+                "12",
+                "16"
+              ]
+            },
+            {
+              "Label": "f⁻¹ input",
+              "Cells": [
+                "7",
+                "12",
+                "16"
+              ]
+            },
+            {
+              "Label": "f⁻¹ output",
+              "Cells": [
+                "2",
+                "5",
+                "8"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Domain/range exchange on root functions",
+          "Description": "A one-to-one square-root branch inverts to a restricted quadratic branch.",
+          "PrimaryLabel": "Function",
+          "SecondaryLabel": "Domain/range",
+          "Rows": [
+            {
+              "Label": "Formula",
+              "Cells": [
+                "f(x)=3+√(x−2)",
+                "f⁻¹(x)=(x−3)²+2"
+              ]
+            },
+            {
+              "Label": "Domain",
+              "Cells": [
+                "[2,∞)",
+                "[3,∞)"
+              ]
+            },
+            {
+              "Label": "Range",
+              "Cells": [
+                "[3,∞)",
+                "[2,∞)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "CommonMistakes": [
+        {
+          "Mistake": "Writing f⁻¹(x)=1/f(x).",
+          "WhyWrong": "Inverse functions reverse inputs/outputs; reciprocals divide 1 by output.",
+          "Correction": "Solve y=f(x) for x and swap variables."
+        },
+        {
+          "Mistake": "Inverting x² on ℝ without restricting input sign.",
+          "WhyWrong": "Two distinct inputs can produce one output.",
+          "Correction": "Choose x≥0 or x≤0 before finding a functional inverse."
+        },
+        {
+          "Mistake": "Forgetting inverse domain restrictions after squaring a radical equation.",
+          "WhyWrong": "The new quadratic formula may allow outputs the original root never attained.",
+          "Correction": "Use original range as inverse domain."
+        },
+        {
+          "Mistake": "Reading g⁻¹(3) by finding g(3).",
+          "WhyWrong": "The inverse question asks for an input whose original output is 3.",
+          "Correction": "Read the original graph at y=3 then return its x-coordinate."
+        }
+      ]
+    }
+  ]
+}

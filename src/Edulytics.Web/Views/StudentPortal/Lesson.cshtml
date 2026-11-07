@@ -1920,6 +1920,171 @@
 
     <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@grade5OriginalDisplayTitle</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
+        @* G12 section 1.1: source-skill first-party instructional graphs, not
+           the original textbook's 1:1 figures or automatically marked tasks. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="First-party function graph teaching">
+                <h2>Function graphs — input, output and one-to-one</h2>
+                <p>These independently authored graphs show vertical-line and
+                    horizontal-line reasoning. They are teaching models, not
+                    reproductions of the original exercise figures. Written and
+                    drawn explanations require teacher review.</p>
+                @foreach (var graph in Grade12PrecalculusSection11Visuals.Build())
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(graph))
+                        <figcaption>@graph.Accessibility.Description</figcaption>
+                    </figure>
+                }
+                <details class="student-card">
+                    <summary>Figure-based explanations — original first-party alternatives</summary>
+                    <p>Fifteen brief alternatives explain the mathematical ideas
+                       represented by the source lesson illustrations. They
+                       are not copies of the original publisher diagrams.
+                       Original task diagrams may require teacher reference.</p>
+                    <ol>
+                        @foreach (var figure in Grade12PrecalculusSection11FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Illustration @figure.OriginalFigureOrdinal: @figure.Topic</strong>
+                                <p>@figure.FirstPartyAlternative</p>
+                                @if (figure.LinkedFirstPartyGraphExercise is int sourceNumber)
+                                {
+                                    <p>Related independent graph practice: exercise @sourceNumber.</p>
+                                }
+                                @if (figure.AddedDrawing is { } drawing)
+                                {
+                                    <figure class="student-lesson-graph">
+                                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawing))
+                                        <figcaption>@drawing.Accessibility.Description</figcaption>
+                                    </figure>
+                                }
+                            </li>
+                        }
+                    </ol>
+                </details>
+                <details class="student-card">
+                    <summary>Nine basic function families — interactive reading practice</summary>
+                    <p>Use these original Edulytics coordinate diagrams to identify
+                       the domain and range. Explain any missing input, branch,
+                       or non-negative restriction. The source book's images have
+                       not been copied.</p>
+                    @foreach (var family in Grade12PrecalculusSection11ToolkitGraphs.All)
+                    {
+                        <figure class="student-lesson-graph">
+                            <figcaption><strong>@family.Title</strong>
+                                — Domain: @family.Domain. Range: @family.Range.</figcaption>
+                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(family.Graph))
+                        </figure>
+                    }
+                </details>
+            </section>
+        }
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities" aria-label="First-party Section 1.1 practice">
+                <h2>Function notation and relations — practice bank</h2>
+                <p>92 first-party practice tasks organized by mathematical skill.
+                   For diagrams and written reasoning, show work to the assigned teacher;
+                   these are not automatically marked and do not replace the original
+                   textbook figures or constitute a completed teacher submission.</p>
+                @foreach (var group in Grade12PrecalculusSection11Exercises.All.GroupBy(x => x.Skill))
+                {
+                    <details class="student-card">
+                        <summary>@group.Key (@group.Count() tasks)</summary>
+                        <ol>
+                            @foreach (var task in group)
+                            {
+                                <li value="@task.Number">
+                                    <strong>Task @task.Number:</strong> @task.Prompt
+                                    @if (Grade12PrecalculusSection11WindowVisuals.Find(task.Number) is { } windowGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(windowGraph.Graph))
+                                            <figcaption>Exact output range: @windowGraph.ExactOutputRange.
+                                                Axis endpoint labels are source-window values; coordinates are normalized for rendering.</figcaption>
+                                        </figure>
+                                    }
+                                    @if (Grade12PrecalculusSection11ExerciseVisuals.Find(task.Number) is { } sourceSkillGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(sourceSkillGraph))
+                                            <figcaption>@sourceSkillGraph.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
+                                    @if (task.ReviewMode == "TEACHER_DIAGRAM_REQUIRED")
+                                    {
+                                        <p><em>Teacher-reviewed sketch and mathematical justification required.</em></p>
+                                    }
+                                    <a asp-controller="Grade12PrecalculusRubricStudent"
+                                       asp-action="Index" asp-route-lessonId="@Model.Id"
+                                       asp-route-exerciseNumber="@task.Number">
+                                        Submit exercise @task.Number for teacher review
+                                    </a>
+                                </li>
+                            }
+                        </ol>
+                    </details>
+                }
+                <section class="student-card" aria-label="Edulytics first-party Try It activities">
+                    <h3>Try It — independent practice</h3>
+                    <p>12 new first-party tasks aligned to the section skills.
+                       Written reasoning and graphs are reviewed by the assigned
+                       mathematics teacher, not automatically scored.</p>
+                    <ol>
+                        @foreach (var task in Grade12PrecalculusSection11Exercises.TryIts)
+                        {
+                            <li>
+                                <strong>Try It @(task.Number - 93):</strong> @task.Prompt
+                                @if (task.Number is 104 or 105)
+                                {
+                                    var sourceFigure = task.Number == 104 ? 14 : 13;
+                                    if (Grade12PrecalculusSection11FigureAlternatives.Find(sourceFigure)?.AddedDrawing is { } drawn)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawn))
+                                            <figcaption>@drawn.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
+                                }
+                                <a asp-controller="Grade12PrecalculusRubricStudent"
+                                   asp-action="Index" asp-route-lessonId="@Model.Id"
+                                   asp-route-exerciseNumber="@task.Number">
+                                    Submit Try It @(task.Number - 93) for teacher review
+                                </a>
+                            </li>
+                        }
+                    </ol>
+                </section>
+                <section class="student-card" aria-label="Edulytics original concept extensions">
+                    <h3>Additional function concept explanations</h3>
+                    <p>Six independent Edulytics explanations and practice references
+                       address the source section's six optional media topics.
+                       They are not embedded third-party videos.</p>
+                    <ol>
+                        @foreach (var resource in Grade12PrecalculusSection11SupportResources.All)
+                        {
+                            <li>
+                                <strong>@resource.Title</strong>
+                                <p>@resource.FirstPartyExplanation</p>
+                                <p>Related practice task numbers: @resource.RelatedPracticeNumbers</p>
+                            </li>
+                        }
+                    </ol>
+                </section>
+                <section class="student-card" aria-label="Edulytics original Cool-down">
+                    <h3>Cool-down — explain what you know</h3>
+                    <p>@Grade12PrecalculusSection11Exercises.CoolDown.Prompt</p>
+                    <a asp-controller="Grade12PrecalculusRubricStudent" asp-action="Index"
+                       asp-route-lessonId="@Model.Id"
+                       asp-route-exerciseNumber="@Grade12PrecalculusSection11Exercises.CoolDownNumber">
+                        Submit the Cool-down for teacher review
+                    </a>
+                </section>
+            </section>
+        }
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />

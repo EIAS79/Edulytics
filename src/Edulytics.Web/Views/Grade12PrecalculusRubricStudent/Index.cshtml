@@ -1,0 +1,57 @@
+@model Edulytics.Web.Controllers.G12PrecalcRubricStudentPage
+@using Edulytics.Web.Presentation
+@{ ViewData["Title"] = "Precalculus — Section 1.1 exercise response"; }
+<h1>Precalculus: teacher-reviewed mathematical response</h1>
+<p><strong>@(Grade12PrecalculusSection11Exercises.DisplayLabel(Model.ExerciseNumber))</strong>: @Model.Prompt</p>
+<p>Explain each mathematical step and provide any requested graph with labelled axes to your teacher.
+   Submit your written reasoning here. The platform does not automatically mark
+   open-ended graphs or proofs.</p>
+@if (Model.Existing is null)
+{
+    <form method="post" action="/student/g12/precalculus/rubric/submit">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <input type="hidden" name="exerciseNumber" value="@Model.ExerciseNumber" />
+        <label for="explanation">Your independent answer and justification (20–8000 characters)</label>
+        <textarea id="explanation" name="explanation" required minlength="20"
+                  maxlength="8000" rows="10"></textarea>
+        @if (Grade12PrecalculusSection11Exercises.SupportsGraphEvidence(Model.ExerciseNumber))
+        {
+            <label for="graphEvidence">Graph evidence — describe the x/y axes,
+                interval, plotted points or horizontal/vertical intersections
+                using labelled coordinates (up to 3000 characters).</label>
+            <p>For graph-window tasks 76–87 this evidence is required. A text
+               description supports teacher assessment but is not a drawing
+               upload or an automatically scored graph.</p>
+            @if (Grade12PrecalculusSection11Exercises.RequiresGraphEvidence(Model.ExerciseNumber))
+            {
+                <textarea id="graphEvidence" name="graphEvidence" rows="5"
+                          maxlength="3000" minlength="20" required></textarea>
+            }
+            else
+            {
+                <textarea id="graphEvidence" name="graphEvidence" rows="5"
+                          maxlength="3000"></textarea>
+            }
+        }
+        <p>The combined submission must not exceed 8000 characters.
+           The teacher reviews your reasoning, graph data and all source-skill
+           parts. Drawn images may be inspected separately by your teacher.</p>
+        <button type="submit">Submit this exercise to the teacher</button>
+    </form>
+}
+else
+{
+    <h2>Submitted response</h2>
+    <p>Submitted @Model.Existing.SubmittedAtUtc.ToString("u")</p>
+    <pre style="white-space:pre-wrap">@Model.Existing.ResponseText</pre>
+    @if (Model.Existing.TeacherScore is int score)
+    {
+        <p>Teacher-awarded score: @score / 4</p>
+        <p>Teacher feedback: @Model.Existing.TeacherFeedback</p>
+    }
+    else
+    {
+        <p>Teacher review pending. No automatic grade has been awarded.</p>
+    }
+}

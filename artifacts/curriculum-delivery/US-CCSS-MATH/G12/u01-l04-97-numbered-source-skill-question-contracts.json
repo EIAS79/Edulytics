@@ -1,0 +1,1592 @@
+{
+  "SchemaVersion": 1,
+  "SourceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "SourceNumberedExercises": 97,
+  "FirstPartySourceSkillAssessmentQuestions": 97,
+  "TeacherManualReviewQuestions": 97,
+  "OriginalPublisherGraphicCopied": false,
+  "OriginalSourceExactVerbatimOrFullSourceAtomicMatchingClaim": false,
+  "StudentDeliveryRuntime": "NOT_VERIFIED",
+  "StageD": "NOT_RUN",
+  "Items": [
+    {
+      "SourceNumber": 1,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentTask": "Explain how to determine the real domain of a quotient of two functions with an example of a cancelled but excluded input.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Intersect the separate domains and exclude any input where the original divisor is zero.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 2,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentTask": "Define composition (f∘g)(x) with an example specifying which operation happens first.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(g(x)), inner g first then f; check intermediate result.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 3,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentTask": "Can different composition orders ever yield the same result? Supply one pair which commutes and one which does not.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Yes; f(x)=x+1,g(x)=x+2 commute, while f(x)=x²,g(x)=x+1 generally do not.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 4,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentTask": "State the domain rule for the composition f∘g, including a numerical counterexample for a missing intermediate value.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "{x∈D(g):g(x)∈D(f)}.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 5,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_FOUR_OPERATIONS",
+      "FirstPartyStudentTask": "For f(x)=x²+2x and g(x)=6−x², calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x∈ℝ except divisor zeros x=±√6.",
+      "SourceRequestedActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 6,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_FOUR_OPERATIONS",
+      "FirstPartyStudentTask": "For f(x)=−3x²+x and g(x)=5, calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Apply all four pointwise operations, preserve unsimplified domain restrictions; all real inputs.",
+      "SourceRequestedActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 7,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_FOUR_OPERATIONS",
+      "FirstPartyStudentTask": "For f(x)=2x²+4x and g(x)=1/(2x), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≠0 for all four; divisor g never zero on its domain.",
+      "SourceRequestedActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 8,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_FOUR_OPERATIONS",
+      "FirstPartyStudentTask": "For f(x)=1/(x−4) and g(x)=1/(6−x), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≠4,6 for all four; denominator g nonzero for allowed x.",
+      "SourceRequestedActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 9,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_FOUR_OPERATIONS",
+      "FirstPartyStudentTask": "For f(x)=3x² and g(x)=√(x−5), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≥5 for +,−,×; x>5 for quotient f/g.",
+      "SourceRequestedActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 10,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "POINTWISE_QUOTIENT_DOMAIN",
+      "FirstPartyStudentTask": "For f(x)=√x and g(x)=|x−3|, find g(x)/f(x) and its real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "|x−3|/√x with x>0, because the denominator is zero at x=0.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 11,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "FIVE_NESTED_COMPOSITIONS",
+      "FirstPartyStudentTask": "For independent f(x)=2x²+1 and g(x)=3x−5, find f(g(2)), f(g(x)), g(f(x)), g(g(x)), and f(f(−2)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(g(2))=3; f(g(x))=2(3x−5)²+1; g(f(x))=6x²−2; g(g(x))=9x−20; f(f(−2))=163.",
+      "SourceRequestedActions": [
+        "f(g(2))",
+        "f(g(x))",
+        "g(f(x))",
+        "g(g(x))",
+        "f(f(−2))"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 12,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=x²+1, g(x)=√(x+2); simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 13,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=√x+2, g(x)=x²+3; simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 14,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=|x|, g(x)=5x+1; simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 15,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=∛x, g(x)=(x+1)/x³; simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 16,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=1/(x−6), g(x)=7/x+6; simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 17,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "TWO_FUNCTION_COMPOSITIONS",
+      "FirstPartyStudentTask": "Compute f(g(x)) and g(f(x)) separately for f(x)=1/(x−4), g(x)=2/x+4; simplify and state all original-composition domain restrictions.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "SourceRequestedActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 18,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "THREE_FUNCTION_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=x⁴+6, g(x)=x−6, h(x)=√x, compute f(g(h(x))) and state its exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Evaluate h then g then f; teacher verifies nested simplification and every intermediate domain.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 19,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "THREE_FUNCTION_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=x²+1, g(x)=1/x, h(x)=x+3, compute f(g(h(x))) and state its exact real domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Evaluate h then g then f; teacher verifies nested simplification and every intermediate domain.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 20,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "COMPOSITION_TWO_ORDERS_AND_QUOTIENT",
+      "FirstPartyStudentTask": "For f(x)=1/x, g(x)=x−3: (a) find f∘g, (b) its domain, (c) find g∘f, (d) its domain, and (e) f/g with its domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "(a) 1/(x−3); (b) x≠3; (c) 1/x−3; (d) x≠0; (e) 1/[x(x−3)] with x≠0,3.",
+      "SourceRequestedActions": [
+        "f∘g",
+        "domain f∘g",
+        "g∘f",
+        "domain g∘f",
+        "quotient/domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 21,
+      "SourcePdfPage": 76,
+      "SourceLearningSkill": "ROOT_AND_RECIPROCAL_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=√(2−4x), g(x)=−3/x, find g(f(x)) and its exact real domain. Explain why the root must be strictly positive.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "−3/√(2−4x), x<1/2; radicand zero is forbidden to outer reciprocal.",
+      "SourceRequestedActions": [
+        "composition formula",
+        "domain with strict endpoint"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 22,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "NESTED_RATIONAL_EVALUATION",
+      "FirstPartyStudentTask": "For f(x)=(1−x)/x and g(x)=1/(1+x²), find g(f(x)) and evaluate at x=2.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "g(f(x))=x²/[x²+(1−x)²], x≠0; g(f(2))=4/5.",
+      "SourceRequestedActions": [
+        "nested formula and domain",
+        "numeric evaluation at 2"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 23,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "THREE_COMPOSITE_DOMAINS",
+      "FirstPartyStudentTask": "Given p(x)=1/√x and m(x)=x²−4, give exact domains of first function divided by second, first composed with second, and second composed with first.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Determine strict positivity for square-root denominator, exclusions for the polynomial divisor, and nested-domain preimage correctly.",
+      "SourceRequestedActions": [
+        "quotient real domain",
+        "first∘second domain",
+        "second∘first domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 24,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "THREE_COMPOSITE_DOMAINS",
+      "FirstPartyStudentTask": "Given q(x)=1/√x and h(x)=x²−9, give exact domains of first function divided by second, first composed with second, and second composed with first.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Determine strict positivity for square-root denominator, exclusions for the polynomial divisor, and nested-domain preimage correctly.",
+      "SourceRequestedActions": [
+        "quotient real domain",
+        "first∘second domain",
+        "second∘first domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 25,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "NESTED_RADICAL_DOMAIN",
+      "FirstPartyStudentTask": "For f(x)=1/x and g(x)=√(x−1), find the exact domain of f(g(x)) in interval notation.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "(1,∞), because x≥1 is necessary for g, and √(x−1) cannot be zero.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 26,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=(x+2)². Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 27,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=(x−5)³. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 28,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=3/(x−5). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 29,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=4/(x+2)². Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 30,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=4+∛x. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 31,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=∛(1/(2x−3)). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 32,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=1/(3x²−4)^(-3). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 33,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=fourth_root((3x−2)/(x+5)). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 34,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=((8+x³)/(8−x³))⁴. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 35,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=√(2x+6). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 36,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=(5x−1)³. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 37,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=∛(x−1). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 38,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=|x²+7|. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 39,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=1/(x−2)³. Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 40,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=(1/(2x−3))². Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 41,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "DECOMPOSE_OUTER_INNER",
+      "FirstPartyStudentTask": "Find explicit inner g and outer f such that f(g(x))=H(x)=√((2x−1)/(3x+4)). Verify by substitution and preserve the correct domain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "SourceRequestedActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 42,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(g(3)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 43,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(g(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 44,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(f(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 45,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(f(0)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 46,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(f(5)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 47,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(f(4)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 48,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(g(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 49,
+      "SourcePdfPage": 77,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(g(0)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 50,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read g(f(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 51,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read g(f(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 52,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(4)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 53,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 54,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(h(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 55,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read h(f(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 56,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(h(4))) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 57,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "FirstPartyStudentTask": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(f(−2))) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "SourceRequestedActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 58,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(g(8)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 8 gives 4; composite result is 4.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 59,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(g(5)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 5 gives 8; composite result is 9.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 60,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(f(5)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 5 gives 0; composite result is 9.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 61,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 3 gives 8; composite result is 4.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 62,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(f(4)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 4 gives 4; composite result is 4.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 63,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(f(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 1 gives 6; composite result is 2.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 64,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(g(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 2 gives 6; composite result is 7.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 65,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(g(6)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 6 gives 7; composite result is 3.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 66,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(g(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 1 gives 1; composite result is 2.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 67,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(g(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 2 gives 0; composite result is 1.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 68,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(f(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 2 gives 3; composite result is -1.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 69,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 3 gives 4; composite result is undefined.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 70,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(g(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 1 gives 1; composite result is 1.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 71,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "FINITE_TABLE_NESTED_LOOKUP",
+      "FirstPartyStudentTask": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Inner function at 3 gives 4; composite result is undefined.",
+      "SourceRequestedActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 72,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "FirstPartyStudentTask": "Using f(x)=4x+8, g(x)=7−x², evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "SourceRequestedActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 73,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "FirstPartyStudentTask": "Using f(x)=5x+7, g(x)=4−2x², evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "SourceRequestedActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 74,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "FirstPartyStudentTask": "Using f(x)=√(x+4), g(x)=12−x³, evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "SourceRequestedActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 75,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "FirstPartyStudentTask": "Using f(x)=1/(x+2), g(x)=4x+3, evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "SourceRequestedActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 76,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "SINGLE_NESTED_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=2x²+1 and g(x)=3x+5, compute f(g(2)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "g(2)=11; f(11)=243.",
+      "SourceRequestedActions": [
+        "nested numeric"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 77,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "SINGLE_NESTED_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=2x²+1 and g(x)=3x+5, simplify f(g(x)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "2(3x+5)²+1=18x²+60x+51.",
+      "SourceRequestedActions": [
+        "nested symbolic"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 78,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "SINGLE_NESTED_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=2x²+1 and g(x)=3x+5, compute g(f(−3)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(−3)=19, g(19)=62.",
+      "SourceRequestedActions": [
+        "nested numeric"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 79,
+      "SourcePdfPage": 78,
+      "SourceLearningSkill": "SINGLE_NESTED_COMPOSITION",
+      "FirstPartyStudentTask": "For f(x)=2x²+1 and g(x)=3x+5, simplify g(g(x)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "9x+20.",
+      "SourceRequestedActions": [
+        "nested symbolic"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 80,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "COMPOSITION_COMPARE_SYMBOLIC",
+      "FirstPartyStudentTask": "Given f(x)=x³+1,g(x)=∛(x−1), calculate f(g(x)) and g(f(x)) and compare both domains.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(g(x))=x; g(f(x))=x for all real x; both are inverses on ℝ.",
+      "SourceRequestedActions": [
+        "f∘g",
+        "g∘f",
+        "compare domains"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 81,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "COMPOSITION_COMPARE_NUMERIC",
+      "FirstPartyStudentTask": "For the same f(x)=x³+1,g(x)=∛(x−1), calculate f(g(2)) and g(f(2)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Each equals 2.",
+      "SourceRequestedActions": [
+        "two nested values"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 82,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "INVERSE_COMPOSITION_DOMAIN",
+      "FirstPartyStudentTask": "Given f(x)=x³+1 and g(x)=∛(x−1), state the real domain of g(f(x)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "(−∞,∞).",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 83,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "INVERSE_COMPOSITION_DOMAIN",
+      "FirstPartyStudentTask": "Given f(x)=x³+1 and g(x)=∛(x−1), state the real domain of f(g(x)).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "(−∞,∞).",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 84,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "SELF_INVERSE_COUNTEREXAMPLE",
+      "FirstPartyStudentTask": "For f(x)=1/x on x≠0, find f(f(x)). Is it true that every f satisfies f(f(x))=x? Prove or disprove.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(f(x))=x on x≠0. Not true for arbitrary f, e.g. f(x)=x+1 gives x+2.",
+      "SourceRequestedActions": [
+        "compute on original domain",
+        "prove counterexample"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 85,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "COMPOSITION_POWER_ORDER",
+      "FirstPartyStudentTask": "For F(x)=(x+1)^5, f(x)=x^5 and g(x)=x+1, determine if (g∘f)(x)=F(x).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "False, x^5+1≠(x+1)^5 generally.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 86,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "COMPOSITION_POWER_ORDER",
+      "FirstPartyStudentTask": "For F(x)=(x+1)^5, f(x)=x^5 and g(x)=x+1, determine if (f∘g)(x)=F(x).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "True for every real x.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 87,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "TWO_COMPOSITIONS_WITH_RESTRICTIONS",
+      "FirstPartyStudentTask": "Given f(x)=x²+2 for x≥0 and g(x)=√(x−2) for x≥2, compute f(g(6)) and g(f(6)), checking each intermediate input.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(g(6))=(6−2)+2=6; g(f(6))=√((6²+2)−2)=6.",
+      "SourceRequestedActions": [
+        "first direction",
+        "reverse direction"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 88,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "TWO_SYMBOLIC_COMPOSITIONS_WITH_RESTRICTIONS",
+      "FirstPartyStudentTask": "For f(x)=x²+2 on x≥0 and g(x)=√(x−2) on x≥2, simplify g(f(a)) and f(g(a)) and give the domains.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "g(f(a))=a for a≥0; f(g(a))=a for a≥2. The former root yields |a| before imposing a≥0.",
+      "SourceRequestedActions": [
+        "g∘f and domain",
+        "f∘g and domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 89,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "TWO_COMPOSITIONS_WITH_RESTRICTIONS",
+      "FirstPartyStudentTask": "Given f(x)=x²+2 for x≥0 and g(x)=√(x−2) for x≥2, compute f(g(11)) and g(f(11)), checking each intermediate input.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "f(g(11))=(11−2)+2=11; g(f(11))=√((11²+2)−2)=11.",
+      "SourceRequestedActions": [
+        "first direction",
+        "reverse direction"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 90,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "APPLIED_UNIT_COMPOSITION_ORDER",
+      "FirstPartyStudentTask": "Let D(p) be items demanded at unit price p dollars and C(q) the dollars needed to produce q items. Which composition yields production cost if the price is $6? Explain.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "C(D(6)); inner price→units, outer units→dollars.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 91,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "APPLIED_INVERSE_COMPOSITION_CHOICE",
+      "FirstPartyStudentTask": "Let S(d) be a health-safety monitoring score as a function of sensor input d, and m(t) the sensor reading after t minutes. Write the equation that finds when the score reaches 4.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "Solve S(m(t))=4 for t. Other expression orders have incompatible quantity meanings.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 92,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "SUCCESSIVE_DISCOUNTS",
+      "FirstPartyStudentTask": "An item first receives a 30% discount and then a further 15% discount. Write the final price function of original price x with sequential composition.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "P(x)=0.85(0.70x)=0.595x; total reduction is 40.5%, not 45%.",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 93,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "CIRCLE_AREA_OF_COMPOSED_RADIUS",
+      "FirstPartyStudentTask": "A circular surface ripple's radius obeys r(t)=5√(t+2) inches for t≥0 minutes. Derive area A(t) and calculate A(2).",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "A(t)=π(5√(t+2))²=25π(t+2) in²; A(2)=100π in².",
+      "SourceRequestedActions": [
+        "area composition",
+        "time evaluation"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 94,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "CIRCLE_AREA_OF_COMPOSED_LINEAR_RADIUS",
+      "FirstPartyStudentTask": "A growing circular field has radius r(t)=2t+1 metres. Find area A(t) for time t≥0.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "A(t)=π(2t+1)² m².",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 95,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "TIME_EVALUATION_OF_COMPOSED_AREA",
+      "FirstPartyStudentTask": "Using A(t)=π(2t+1)² for a circular field, calculate the area after five minutes.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "A(5)=121π m².",
+      "SourceRequestedActions": [
+        "complete question with correct restrictions"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 96,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "SPHERE_RADIUS_OF_VOLUME_AND_TIME",
+      "FirstPartyStudentTask": "A spherical balloon receives air so V(t)=10+20t cubic inches for t≥0. Its radius obeys r(V)=∛(3V/(4π)). Derive r(t) and find the exact time at which r=10 inches.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "r(t)=∛(3(10+20t)/(4π)); 10+20t=4000π/3 so t=200π/3−1/2 seconds.",
+      "SourceRequestedActions": [
+        "compose volume to radius",
+        "solve target radius time"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    },
+    {
+      "SourceNumber": 97,
+      "SourcePdfPage": 79,
+      "SourceLearningSkill": "MODEL_CHAIN_AND_EQUATION",
+      "FirstPartyStudentTask": "A model predicts N(T)=23T²−56T+1 units for temperature T in (3,33), with T(t)=5t+1.5 degrees after t hours. (a) Form N(T(t)); (b) solve N(T(t))=6752 for eligible t, rounding to 2 decimal places.",
+      "TeacherExpectedMathematicsOrAssessmentMethod": "N(t)=23(5t+1.5)²−56(5t+1.5)+1; solve the resulting quadratic, rejecting roots outside 3<5t+1.5<33.",
+      "SourceRequestedActions": [
+        "compose formulas",
+        "solve and filter by contextual domain"
+      ],
+      "ReviewMode": "TEACHER_MANUAL_MATH_AND_DOMAIN_REVIEW",
+      "SourceExerciseExactPublisherProseCopied": false,
+      "OriginalPublisherGraphicCopied": false,
+      "StudentPortalBound": "NOT_VERIFIED",
+      "StageDAutoGrade": "NOT_RUN"
+    }
+  ]
+}
