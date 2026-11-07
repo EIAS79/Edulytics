@@ -1,0 +1,25 @@
+{
+  "SourceTryItSkillCount": 3,
+  "IndependentFirstPartyTryItCount": 3,
+  "TeacherOnlyMathKeys": [
+    {
+      "Number": 1,
+      "ExpectedMath": "C(n)=30000+0.40n dollars for n≥0 items; intercept $30000."
+    },
+    {
+      "Number": 2,
+      "ExpectedMath": "Slope 1000/year; 2026: 26000; 2030: 30000."
+    },
+    {
+      "Number": 3,
+      "ExpectedMath": "Total road length 50 km, junction at 20 km from A."
+    }
+  ],
+  "IndependentCoolDown": {
+    "Prompt": "(a) A supply model has $125 fixed cost and $3 per unit. Find C(40). (b) A population is 600 in year0 and 750 in year3; find P(t). (c) Compare A(d)=20+2d with B(d)=60+d and find when B saves money.",
+    "TeacherExpectedMath": "(a) $245. (b) P(t)=600+50t. (c) Equal at d=40; B cheaper when d>40.",
+    "OriginalRestrictedTeacherOnlyPublisherCoolDownCopied": false
+  },
+  "OriginalPublisherOrThirdPartyImagesCopied": false,
+  "StageD": "NOT_RUN"
+}

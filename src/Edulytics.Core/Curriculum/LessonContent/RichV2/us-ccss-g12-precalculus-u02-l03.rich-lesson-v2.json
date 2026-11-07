@@ -1,0 +1,209 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U02:L03",
+  "ContentVersion": "g12-u02-l03-math-source-skill-authoring-20261107",
+  "Lessons": [
+    {
+      "CultureCode": "en",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L03",
+      "Title": "Modeling with Linear Functions",
+      "ExplanationParagraphs": [
+        "Learning aims: identify model inputs and outputs, translate verbal descriptions into affine equations, use diagrams for quantities and spatial measurements, and build/solve systems to compare practical choices.",
+        "The statement 'starts at b and gains m per unit' corresponds to y=mx+b. Explain the rate and initial value with units.",
+        "Two data points identify the linear slope. Check whether the resulting formula should apply only within a specific time interval or other realistic domain.",
+        "Geometric modeling may require a Pythagorean distance formula before simplification. Distances, times and cardinal directions must retain their units.",
+        "Competing plans should be compared as two functions of the same input variable. Their break-even point solves C1(x)=C2(x), but preferring one plan requires evaluating the appropriate inequality.",
+        "Independent Edulytics cool-down: (a) A supply model has $125 fixed cost and $3 per unit. Find C(40). (b) A population is 600 in year0 and 750 in year3; find P(t). (c) Compare A(d)=20+2d with B(d)=60+d and find when B saves money.",
+        "Independent Try It 1 — Model fixed and variable manufacturing cost. A workshop pays $30,000 rent and $0.40 for each item. Write cost C(n), initial value and units.",
+        "Independent Try It 2 — Forecast and threshold from a two-year trend. A town has 20,000 people in 2020 and 24,000 in 2024. Under a linear continuation find 2026 population and year of 30,000.",
+        "Independent Try It 3 — Use perpendicular projection geometry. Road segment points from town A=(0,0) to B=(30,40) km. Find travelled straight-line length to a junction at (12,16)."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Extrapolate population using a linear model",
+          "Question": "A town has 7,500 people at t=0 and 8,700 at t=4 years. Assume a linear model. Find P(t) and forecast the year t=8.",
+          "Method": "Identify the independent input, create an equation or geometric relationship, and check units and constraints.",
+          "Steps": [
+            "Slope 300 residents/year; P(t)=7500+300t; P(8)=9900. Valid only if the linear trend persists."
+          ],
+          "Answer": "Slope 300 residents/year; P(t)=7500+300t; P(8)=9900. Valid only if the linear trend persists.",
+          "Check": "Verify known data points and contextual interpretation."
+        },
+        {
+          "Title": "Model perpendicular walking paths",
+          "Question": "Two people start together; one walks east 6 km/h and another north 8 km/h. Build a function for the straight-line separation after t hours.",
+          "Method": "Identify the independent input, create an equation or geometric relationship, and check units and constraints.",
+          "Steps": [
+            "Distance d(t)=√((6t)²+(8t)²)=10t km for t≥0, a linear distance model."
+          ],
+          "Answer": "Distance d(t)=√((6t)²+(8t)²)=10t km for t≥0, a linear distance model.",
+          "Check": "Verify known data points and contextual interpretation."
+        },
+        {
+          "Title": "Geometric projection in a road network",
+          "Question": "A straight route to a location 40 km east and 30 km north has a total length 50 km. Find the projection of a point (16,12) on the route and its distance along the line.",
+          "Method": "Identify the independent input, create an equation or geometric relationship, and check units and constraints.",
+          "Steps": [
+            "The point lies at two-fifths of the route, so distance from start =20 km; slope 3/4 from coordinates."
+          ],
+          "Answer": "The point lies at two-fifths of the route, so distance from start =20 km; slope 3/4 from coordinates.",
+          "Check": "Verify known data points and contextual interpretation."
+        },
+        {
+          "Title": "Choose between two affine service plans",
+          "Question": "Plan A charges fixed $40 and $1.50 per kilometre; plan B $75 and $0.80/km. Find the break-even travel distance and preferred plan afterward.",
+          "Method": "Identify the independent input, create an equation or geometric relationship, and check units and constraints.",
+          "Steps": [
+            "40+1.5d=75+0.8d; d=50 km; B cheaper for d>50."
+          ],
+          "Answer": "40+1.5d=75+0.8d; d=50 km; B cheaper for d>50.",
+          "Check": "Verify known data points and contextual interpretation."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Identify variables",
+          "Definition": "The independent quantity is the controllable input and the dependent quantity changes with it.",
+          "Rule": "Choose units and realistic nonnegative domain.",
+          "Example": "Number of items n → cost C(n)."
+        },
+        {
+          "Title": "Constant-rate model",
+          "Definition": "Linear model y=mx+b when the rate Δy/Δx is constant.",
+          "Rule": "Estimate m from two observed points, then determine b.",
+          "Example": "P(t)=7500+300t."
+        },
+        {
+          "Title": "Extrapolation caveat",
+          "Definition": "Forecasting a linear trend beyond observations assumes the rate stays unchanged.",
+          "Rule": "An extrapolation is a model forecast, not a guaranteed fact.",
+          "Example": "P(8)=9900 assumes annual growth remains 300."
+        },
+        {
+          "Title": "Graph and geometry model",
+          "Definition": "Perpendicular displacement components can form a right triangle.",
+          "Rule": "Pythagorean length may simplify to a linear time function.",
+          "Example": "East6t, north8t gives 10t."
+        },
+        {
+          "Title": "Parallel/perpendicular route",
+          "Definition": "Coordinate geometry can express route slopes and projection points.",
+          "Rule": "Use dot product or right-angle geometry for perpendicular lines.",
+          "Example": "Slope3/4 has perpendicular slope −4/3."
+        },
+        {
+          "Title": "System of linear models",
+          "Definition": "Two competing cost plans meet at equal cost.",
+          "Rule": "Solve C1(x)=C2(x), then compare the two sides of threshold.",
+          "Example": "$40+1.5d versus $75+0.8d break even at d=50."
+        },
+        {
+          "Title": "Intercept and rate in context",
+          "Definition": "A model's intercept is its value at input zero.",
+          "Rule": "State both quantities in physical/financial units.",
+          "Example": "Rent is $30,000 even if zero items produced."
+        },
+        {
+          "Title": "Domain/range and units",
+          "Definition": "A realistic function may be limited to the duration of a measured trend.",
+          "Rule": "Do not extrapolate a nonnegative population into negative numbers.",
+          "Example": "Restrict t and explain model horizon."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent town population model",
+          "Description": "Uniform annual increments of 300 residents.",
+          "PrimaryLabel": "Years",
+          "SecondaryLabel": "Population",
+          "Rows": [
+            {
+              "Label": "t",
+              "Cells": [
+                "0",
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "P(t)",
+              "Cells": [
+                "7500",
+                "8100",
+                "8700",
+                "9900"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party two-plan cost comparison",
+          "Description": "The lower-cost plan changes after equality at 50 km.",
+          "PrimaryLabel": "Distance km",
+          "SecondaryLabel": "Cost $",
+          "Rows": [
+            {
+              "Label": "d",
+              "Cells": [
+                "0",
+                "25",
+                "50",
+                "100"
+              ]
+            },
+            {
+              "Label": "Plan A",
+              "Cells": [
+                "40",
+                "77.50",
+                "115",
+                "190"
+              ]
+            },
+            {
+              "Label": "Plan B",
+              "Cells": [
+                "75",
+                "95",
+                "115",
+                "155"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Define input/output variables and units.",
+        "Use constant slope and intercept to build a model.",
+        "Confirm the chosen physical domain and extrapolation assumptions.",
+        "Solve C1=C2 before comparing costs.",
+        "A geographic diagram can reveal lengths and perpendicular relationships."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a trend extrapolates indefinitely.",
+          "WhyWrong": "Linear models can break beyond observed conditions.",
+          "Correction": "State model assumptions and plausible horizon."
+        },
+        {
+          "Mistake": "Comparing two prices with different input units.",
+          "WhyWrong": "Both expressions must use the same independent quantity.",
+          "Correction": "Convert to one shared variable and unit."
+        },
+        {
+          "Mistake": "Treating a positive break-even equality as the cheaper-plan interval.",
+          "WhyWrong": "Equality alone says neither plan is cheaper.",
+          "Correction": "Solve a strict inequality for preferred option."
+        }
+      ]
+    }
+  ]
+}
