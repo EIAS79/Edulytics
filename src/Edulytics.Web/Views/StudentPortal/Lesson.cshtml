@@ -1969,6 +1969,25 @@
            two original Edulytics graphical investigations, not publisher art. *@
         @* Grade 12 Section 5.1 original directed-angle mathematical sketches.
            Figure skills aligned; original textbook artwork is not copied. *@
+        @* First-party G12 unit circle drawings. No publisher images reproduced. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Unit circle and sine cosine graphical investigations">
+                <h2>Unit circle graphical investigations</h2>
+                <p>Identify coordinates (cos t, sin t), reference angles and quadrant
+                   signs on original mathematical diagrams. Teacher review required
+                   for open-ended geometric explanations.</p>
+                @foreach (var task in Grade12PrecalculusSection52UnitCircleModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L01")
         {
             <section class="lesson-source-aligned-activities"

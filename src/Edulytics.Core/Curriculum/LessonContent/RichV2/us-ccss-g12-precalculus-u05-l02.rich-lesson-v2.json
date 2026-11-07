@@ -1,0 +1,179 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U05:L02",
+  "ContentVersion": "g12-u05-l02-firstparty-unit-circle-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L02",
+      "CultureCode": "en",
+      "Title": "Unit Circle: Sine and Cosine Functions",
+      "ExplanationParagraphs": [
+        "The unit circle x²+y²=1 maps each directed angle t to (cos t,sin t).",
+        "The horizontal coordinate is cosine, vertical coordinate sine; both are defined on all real angles and range from−1 to1.",
+        "The Pythagorean identity sin²t+cos²t=1 follows from x²+y²=1 and helps find an unknown trig value. The quadrant determines its sign.",
+        "Standard special angles 0,π/6,π/4,π/3,π/2 and their symmetric rotations have exact algebraic values.",
+        "Reference angles measure the acute angle from terminal side to x-axis. Use reference angle magnitudes and quadrant signs.",
+        "A radius r circle has coordinates (r cos t,r sin t). For a unit-circle carousel beginning at north, t=π/2+ωtime.",
+        "Independent Cool-down: find sin and cos at 4π/3; find cos if sin=5/13 in quadrantII; and find coordinate on radius5 at angleπ/6.",
+        "Independent Try It 1: Point atπ/3 on unit circle.",
+        "Independent Try It 2: Find sin,cos of angleπ.",
+        "Independent Try It 3: If sin=3/5 in QII, find cos.",
+        "Independent Try It 4: Evaluate cos(20°) to4 decimals.",
+        "Independent Try It 5: Find reference angle for 315°.",
+        "Independent Try It 6: Find sin,cos of 5π/4.",
+        "Independent Try It 7: Find point on circle r=4 at210°."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Unit circle coordinates",
+          "Question": "Find cos and sin at 5π/6.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "cos=−sqrt3/2, sin=1/2."
+          ],
+          "Answer": "cos=−sqrt3/2, sin=1/2.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Axis angle",
+          "Question": "Find sin and cos for angle3π/2.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "sin=−1, cos=0."
+          ],
+          "Answer": "sin=−1, cos=0.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Use Pythagorean identity",
+          "Question": "Given cos=3/5 and quadrantIV, find sin.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "sin=−sqrt(1−9/25)=−4/5."
+          ],
+          "Answer": "sin=−sqrt(1−9/25)=−4/5.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Calculator evaluation",
+          "Question": "Evaluate sin(100°) to four decimals.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "0.9848."
+          ],
+          "Answer": "0.9848.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Reference angle",
+          "Question": "Find reference angle for 240°.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "240−180=60°, quadrant III."
+          ],
+          "Answer": "240−180=60°, quadrant III.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Reference sine cosine",
+          "Question": "Find sin,cos for 7π/6.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "sin=−1/2, cos=−sqrt3/2."
+          ],
+          "Answer": "sin=−1/2, cos=−sqrt3/2.",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        },
+        {
+          "Title": "Radius coordinates",
+          "Question": "Find point at120° on circle radius6.",
+          "Method": "Place terminal point on circle and determine signed coordinates.",
+          "Steps": [
+            "(6cos120°,6sin120°)=(-3,3sqrt3)."
+          ],
+          "Answer": "(6cos120°,6sin120°)=(-3,3sqrt3).",
+          "Check": "Verify sin²+cos²=1 and quadrant sign."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit-circle coordinates",
+          "Definition": "Point at angle t is (cos t,sin t).",
+          "Rule": "cos horizontal, sin vertical.",
+          "Example": "t=π/2 gives(0,1)."
+        },
+        {
+          "Title": "Pythagorean identity",
+          "Definition": "sin²t+cos²t=1.",
+          "Rule": "Missing component sign depends on quadrant.",
+          "Example": "cos=3/5 QIV ->sin=−4/5."
+        },
+        {
+          "Title": "Reference angle",
+          "Definition": "Acute angle between terminal side and x-axis.",
+          "Rule": "Use quadrant signs.",
+          "Example": "225° reference45°."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent first-quadrant unit circle table",
+          "Description": "Original unit circle exact coordinates.",
+          "PrimaryLabel": "Angle",
+          "SecondaryLabel": "Coordinates",
+          "Rows": [
+            {
+              "Label": "t",
+              "Cells": [
+                "0",
+                "π/6",
+                "π/4",
+                "π/3"
+              ]
+            },
+            {
+              "Label": "cos t",
+              "Cells": [
+                "1",
+                "sqrt3/2",
+                "sqrt2/2",
+                "1/2"
+              ]
+            },
+            {
+              "Label": "sin t",
+              "Cells": [
+                "0",
+                "1/2",
+                "sqrt2/2",
+                "sqrt3/2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Unit circle maps to sine and cosine.",
+        "Quadrant signs determine components.",
+        "Reference angles provide exact special values.",
+        "Check identity and graph coordinates."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Swap sine and cosine axes.",
+          "WhyWrong": "cos t is x-coordinate, sin t is y-coordinate.",
+          "Correction": "Always write (cos t,sin t)."
+        },
+        {
+          "Mistake": "Take positive square root in quadrantIII/IV without checking sign.",
+          "WhyWrong": "The component may be negative.",
+          "Correction": "Use quadrant before selecting radical sign."
+        }
+      ]
+    }
+  ]
+}
