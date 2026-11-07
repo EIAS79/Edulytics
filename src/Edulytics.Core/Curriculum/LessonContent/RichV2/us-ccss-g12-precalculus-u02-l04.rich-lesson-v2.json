@@ -1,0 +1,243 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U02:L04",
+  "ContentVersion": "g12-u02-l04-independent-statistics-authoring-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04",
+      "CultureCode": "en",
+      "Title": "Fitting Linear Models to Data",
+      "ExplanationParagraphs": [
+        "Learning aims: draw and interpret scatterplots, identify a reasonable line of best fit, distinguish linear versus nonlinear patterns and predict from a linear model.",
+        "A least-squares model y=mx+b minimizes the sum of squared vertical residuals; an approximate hand-drawn line is different from a mathematical regression computation.",
+        "Pearson's r ranges from −1 through +1, with sign indicating association direction and magnitude reflecting linear association strength. Correlation does not establish causation.",
+        "Interpolation predicts at an x within the observed window. Extrapolation predicts outside it and requires an explicit caution about model reliability.",
+        "Always state the data units, observed x-range, the fitted slope/intercept and whether the graph has a curved residual pattern.",
+        "Independent Edulytics Cool-down: Given paired data (0,2),(1,4),(2,6),(3,8): (a) fit an exact linear rule, (b) identify r, (c) predict at x=2.5 and x=7 and classify each prediction.",
+        "Independent Try It 1 — Predict within observed x-range. A fitted line for x∈[0,4] is y=2.2x+3. Evaluate at x=2 and classify prediction.",
+        "Independent Try It 2 — Extrapolate line with model caution. For y=2.2x+3 fitted on x=0..4, predict at x=6; identify whether extrapolation."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Draw and interpret a scatterplot",
+          "Question": "Plot the first-party points (0,3),(1,5),(2,8),(3,9),(4,12); describe direction and whether a line makes sense.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "The pattern is strongly increasing and near-linear, but not perfectly collinear."
+          ],
+          "Answer": "The pattern is strongly increasing and near-linear, but not perfectly collinear.",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        },
+        {
+          "Title": "Fit a line by eye",
+          "Question": "Choose a plausible straight line for data (0,3),(1,5),(2,8),(3,9),(4,12), and give its slope/intercept.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "A line of rough fit y≈2.2x+3; a visual estimate need not equal least squares exactly."
+          ],
+          "Answer": "A line of rough fit y≈2.2x+3; a visual estimate need not equal least squares exactly.",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        },
+        {
+          "Title": "Distinguish interpolation/extrapolation",
+          "Question": "Using observed x=0 through4, predict y at x=2.5 and x=7 from y≈2.2x+3.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "y(2.5)≈8.5 interpolation; y(7)≈18.4 extrapolation with higher uncertainty."
+          ],
+          "Answer": "y(2.5)≈8.5 interpolation; y(7)≈18.4 extrapolation with higher uncertainty.",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        },
+        {
+          "Title": "Compute least squares without library",
+          "Question": "For first-party scatter data x=0,1,2,3,4; y=3,5,8,9,12, compute least-squares line.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "m=2.2,b=3.0; minimize Σ(y−mx−b)²."
+          ],
+          "Answer": "m=2.2,b=3.0; minimize Σ(y−mx−b)².",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        },
+        {
+          "Title": "Interpret Pearson correlation",
+          "Question": "For the same five points compute r and interpret it.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "Pearson r≈0.992; positive, close to one; correlation does not prove causation."
+          ],
+          "Answer": "Pearson r≈0.992; positive, close to one; correlation does not prove causation.",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        },
+        {
+          "Title": "Predict under the fitted model",
+          "Question": "Using least-squares y≈2.2x+3, estimate x=6 and state whether within observed window.",
+          "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+          "Steps": [
+            "y(6)=16.2; x6 exceeds observed [0,4], so extrapolation requiring domain caveat."
+          ],
+          "Answer": "y(6)=16.2; x6 exceeds observed [0,4], so extrapolation requiring domain caveat.",
+          "Check": "Compare fitted model to observed points and inspect extrapolation risk."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scatterplot",
+          "Definition": "Each paired numerical observation (x,y) is plotted as one point.",
+          "Rule": "Do not connect observations unless their order and process justify it.",
+          "Example": "(1,5),(2,8)."
+        },
+        {
+          "Title": "Visual best-fit line",
+          "Definition": "A line that follows the pattern of a scatterplot; not necessarily a perfect match.",
+          "Rule": "Predict only when the relationship appears sufficiently straight.",
+          "Example": "y≈2.2x+3."
+        },
+        {
+          "Title": "Least-squares regression",
+          "Definition": "Choose coefficients m,b minimizing the sum of squared vertical residuals.",
+          "Rule": "m=Σ[(x−x̄)(y−ȳ)]/Σ[(x−x̄)²]; b=ȳ−m x̄.",
+          "Example": "First-party data has m2.2,b3."
+        },
+        {
+          "Title": "Residual",
+          "Definition": "Observed output minus model-predicted output.",
+          "Rule": "A pattern in residuals can indicate an inadequate linear model.",
+          "Example": "At x2: 8−7.4=0.6."
+        },
+        {
+          "Title": "Pearson correlation",
+          "Definition": "r measures direction and strength of linear association, between −1 and 1.",
+          "Rule": "Large |r| means close to line, not proof of causation.",
+          "Example": "r≈0.992 strongly positive."
+        },
+        {
+          "Title": "Interpolation",
+          "Definition": "Estimating within the span of observed independent inputs.",
+          "Rule": "Predictions can still be wrong even inside observed span.",
+          "Example": "Estimate at x2.5 with 0≤x≤4."
+        },
+        {
+          "Title": "Extrapolation",
+          "Definition": "Estimating beyond original independent input range.",
+          "Rule": "Explicitly flag changing conditions and weaker reliability.",
+          "Example": "Predict x6 from x∈[0,4]."
+        },
+        {
+          "Title": "Nonlinear relations",
+          "Definition": "Curved scatter patterns are not well described by one affine rule.",
+          "Rule": "Inspect scatter and residual shape before using regression.",
+          "Example": "x² data curve instead of straight line."
+        },
+        {
+          "Title": "Correlation sign",
+          "Definition": "Positive correlation indicates y grows on average with x; negative falls.",
+          "Rule": "r near 0 means weak linear relation, not necessarily no relation.",
+          "Example": "r≈−0.9 indicates strong negative trend."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party five-observation scatter data",
+          "Description": "A near-linear dataset rather than an identical publisher chart.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "y",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Observed y",
+              "Cells": [
+                "3",
+                "5",
+                "8",
+                "9",
+                "12"
+              ]
+            },
+            {
+              "Label": "Least-squares predicted y",
+              "Cells": [
+                "3",
+                "5.2",
+                "7.4",
+                "9.6",
+                "11.8"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Interpolation and extrapolation",
+          "Description": "The source dataset has measured inputs from zero through four.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Prediction",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "2",
+                "2.5",
+                "6"
+              ]
+            },
+            {
+              "Label": "y=2.2x+3",
+              "Cells": [
+                "7.4",
+                "8.5",
+                "16.2"
+              ]
+            },
+            {
+              "Label": "Type",
+              "Cells": [
+                "Interpolation",
+                "Interpolation",
+                "Extrapolation"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Plot observations as paired points.",
+        "Determine whether linear fit is sensible.",
+        "Least squares minimizes vertical squared residuals.",
+        "Correlation sign and magnitude describe linear association, not causation.",
+        "Explicitly label interpolation vs extrapolation."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming an r near one means the slope must be one.",
+          "WhyWrong": "Correlation is unitless; slope is output/input units.",
+          "Correction": "Compute slope and r separately."
+        },
+        {
+          "Mistake": "Claiming correlation proves causal influence.",
+          "WhyWrong": "A third variable or coincidence can create association.",
+          "Correction": "Describe association without causal claim."
+        },
+        {
+          "Mistake": "Treating long-distance extrapolation as confirmed fact.",
+          "WhyWrong": "The observed relationship may break outside the sampled range.",
+          "Correction": "State data window, forecast assumptions and caution."
+        }
+      ]
+    }
+  ]
+}
