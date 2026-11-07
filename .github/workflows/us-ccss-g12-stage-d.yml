@@ -70,6 +70,9 @@ jobs:
           node-version: '22'
       - name: Check authoring schemas, question keys and lesson codes in each shard
         run: node tools/curriculum/g12_stage_d_content_shard.cjs ${{ matrix.shard }}
+      - name: Independent mathematical oracle for 12 alternating sequence teacher keys
+        if: matrix.shard == 'G12-D3'
+        run: node tools/curriculum/g12_stage_d_sequence_sign_gate.cjs
   fail-closed-final-release-gate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
