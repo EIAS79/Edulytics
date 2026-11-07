@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 27,
+  "ActiveLessonOrdinal": 28,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 27,
+  "FirstIncompleteLessonOrdinal": 28,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_26_OF_73",
-  "LastClosedLessonOrdinal": 26,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_27_OF_73",
+  "LastClosedLessonOrdinal": 27,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -1095,22 +1095,26 @@
       "LessonNumber": 7,
       "Title": "Exponential and Logarithmic Models",
       "SourceSection": "4.7",
-      "PdfPageStart": 417,
-      "PdfPageEnd": 431,
-      "ACStatus": "A_C_PENDING",
+      "PdfPageStart": 416,
+      "PdfPageEnd": 430,
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l07-source-review-and-gap-audit.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "SourceExerciseMathReviewed": 53,
+      "FirstPartyTeacherRubrics": 53,
+      "FigureSkillAlternatives": 11,
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l07-abc-close-audit.json",
+      "ClosedAtUtc": "2026-11-07T17:10:17.069638+00:00",
+      "UpdatedUtc": "2026-11-07T17:10:17.069638+00:00"
     },
     {
       "Ordinal": 28,
@@ -2217,15 +2221,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 27,
+  "NextLessonOrdinal": 28,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 26,
+  "ReadyForStageD": 27,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 26,
+  "SourceVerifiedGrade12Lessons": 27,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2256,5 +2260,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T17:05:40.587819+00:00"
+  "UpdatedUtc": "2026-11-07T17:10:17.069638+00:00"
 }
