@@ -4,7 +4,7 @@ using Edulytics.Services.Mathematics;
 namespace Edulytics.Tests.MathematicsIntelligence;
 
 /// <summary>
-/// Six first-party precalculus lessons have a real, independently verifiable
+/// Fourteen first-party precalculus lessons have a real, independently verifiable
 /// numerical Practice subset. This does not approve graphs, source-book
 /// equivalence, teacher grading or the complete lesson for release.
 /// </summary>
@@ -21,6 +21,14 @@ public sealed class Grade12PrecalculusScopedPracticeContractStageDTests
         yield return ["U02:L01", "geometry.coordinate.gradient_between_points"];
         yield return ["U02:L02", "geometry.coordinate.y_intercept_from_rule"];
         yield return ["U02:L04", "statistics.linear_model.predict"];
+        yield return ["U03:L08", "usccss.hs.restricted_inverse"];
+        yield return ["U04:L01", "functions.exponential.growth.evaluate"];
+        yield return ["U04:L02", "functions.exponential.growth.evaluate"];
+        yield return ["U04:L07", "functions.exponential.growth.evaluate"];
+        yield return ["U09:L01", "algebra.linear.systems.two_by_two.integer_coefficients"];
+        yield return ["U09:L06", "algebra.linear.systems.two_by_two.integer_coefficients"];
+        yield return ["U09:L08", "algebra.linear.systems.two_by_two.integer_coefficients"];
+        yield return ["U11:L07", "probability.theoretical.complement"];
     }
 
     [Theory]

@@ -53,8 +53,8 @@ jobs:
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllSourceGraphRenderTests --logger "trx;LogFileName=g12-math-svg-rendering.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Materialize and validate all 73 published canonical Grade12 lesson candidates
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusCanonical73PublishedCandidateTests --logger "trx;LogFileName=g12-canonical-73.trx" --results-directory ./artifacts/g12-stage-d-trx
-      - name: Independently generate and grade six source-aligned numerical Practice subsets
-        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusScopedPracticeContractStageDTests --logger "trx;LogFileName=g12-six-partial-practice-families.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Independently generate and grade 14 source-aligned numerical Practice subsets
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusScopedPracticeContractStageDTests --logger "trx;LogFileName=g12-14-partial-practice-families.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Verify exact Grade12 additional function families and global presentation contracts
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter "FullyQualifiedName~Grade12Section11AdditionalFunctionFamilyInteractionTests|FullyQualifiedName~LessonPracticeInteractionRegistryTests|FullyQualifiedName~SupportingLessonPracticeR7R9ClosureTests" --logger "trx;LogFileName=g12-new-family-runtime.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Upload focused test evidence
