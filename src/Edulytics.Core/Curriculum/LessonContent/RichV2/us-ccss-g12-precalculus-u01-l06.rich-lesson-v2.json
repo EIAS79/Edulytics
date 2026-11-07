@@ -1,0 +1,239 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U01:L06",
+  "ContentVersion": "g12-u01-l06-firstparty-source-skill-a-b-c-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06",
+      "CultureCode": "en",
+      "Title": "Absolute Value Functions",
+      "ExplanationParagraphs": [
+        "Learning goals: express numerical distances and contextual tolerances with |x−a|, construct transformed absolute-value graphs, solve absolute equations and graph absolute inequalities.",
+        "The absolute value |x−a| is a nonnegative distance. For a nonnegative tolerance d, |x−a|≤d includes all x from a−d through a+d, while |x−a|≥d describes two external rays.",
+        "The graph f(x)=a|x−h|+k has vertex (h,k). If a>0 it opens upward and attains minimum k; if a<0 it opens downward and attains maximum k.",
+        "For |A|=c: if c>0 solve A=±c; if c=0 solve A=0; if c<0 there are no real solutions. Check each candidate in the original formula.",
+        "A strict inside inequality |A|<c has two simultaneous bounds; an outside inequality |A|>c describes separate rays. When multiplying or dividing inequalities by a negative factor, reverse the sign.",
+        "Graph intercepts require setting the appropriate coordinate to zero. Always state endpoints and included/excluded bounds for real-domain and graph window problems.",
+        "Independent Edulytics Cool-down: (a) Solve |x+2|≤4 using interval notation. (b) For f(x)=−2|x−3|+4 state vertex, range and x-intercepts. (c) Explain why |3x−1|=−2 has no solution.",
+        "Independent Try It 1 — Distance from center. Find all x within two units of −1.",
+        "Independent Try It 2 — Test passing score. A score within 15 points of 75 meets a stated requirement. Express inclusive absolute-value inequality.",
+        "Independent Try It 3 — Graph a V transformation. Reflect f(x)=|x| over x-axis, then shift right 2 and up 4.",
+        "Independent Try It 4 — Solve for both roots. Find zeros of f(x)=|2x+3|−5.",
+        "Independent Try It 5 — Locate graph intercepts. Find intercepts of f(x)=−|x+1|+4.",
+        "Independent Try It 6 — Inclusive absolute inequality. Solve |x−3|≤5.",
+        "Independent Try It 7 — Inequality after dividing by negative. Solve −2|k−4|≤−6."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Model a symmetric number-line tolerance",
+          "Question": "Find all real numbers within or exactly three units of six.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "|x−6|≤3, so x∈[3,9]."
+          ],
+          "Answer": "|x−6|≤3, so x∈[3,9].",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Manufacturing tolerance with units",
+          "Question": "A resistor rated at 10 kΩ allows a ±2% tolerance. Express acceptable resistance R in ohms and interval notation.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "|R−10000|≤200 ohms; R∈[9800,10200] ohms."
+          ],
+          "Answer": "|R−10000|≤200 ohms; R∈[9800,10200] ohms.",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Recover the V-shape equation",
+          "Question": "An upward V-shaped graph has vertex (−1,−3) and crosses the vertical axis at (0,−1). Determine f(x)=a|x−h|+k.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "f(x)=2|x+1|−3, with a=2, vertex (−1,−3), range [−3,∞)."
+          ],
+          "Answer": "f(x)=2|x+1|−3, with a=2, vertex (−1,−3), range [−3,∞).",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Compute zeros of an absolute-value function",
+          "Question": "Find all zeros of f(x)=|3x+2|−8.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "3x+2=±8; x=2 or x=−10/3."
+          ],
+          "Answer": "3x+2=±8; x=2 or x=−10/3.",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Recognize a no-solution equation",
+          "Question": "Solve 2|x−1|+3=1.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "No real solution: a nonnegative absolute term cannot yield −2."
+          ],
+          "Answer": "No real solution: a nonnegative absolute term cannot yield −2.",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Solve a strict absolute inequality",
+          "Question": "Solve |x−4|<3.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "−3<x−4<3, so x∈(1,7)."
+          ],
+          "Answer": "−3<x−4<3, so x∈(1,7).",
+          "Check": "Verify by substitution and endpoint inclusion."
+        },
+        {
+          "Title": "Solve where a transformed V graph is below zero",
+          "Question": "For f(x)=−(1/2)|2x−5|+3, find all x with f(x)<0.",
+          "Method": "Use nonnegative absolute-distance definitions, source-skill V-graph properties, exact algebraic intervals and teacher review.",
+          "Steps": [
+            "|2x−5|>6, so x<−1/2 or x>11/2."
+          ],
+          "Answer": "|2x−5|>6, so x<−1/2 or x>11/2.",
+          "Check": "Verify by substitution and endpoint inclusion."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Absolute distance",
+          "Definition": "|x−a| denotes nonnegative real distance of x from a.",
+          "Rule": "|x−a|≤d for d≥0 is the closed interval [a−d,a+d].",
+          "Example": "|x−6|≤3 gives [3,9]."
+        },
+        {
+          "Title": "Absolute V-shape",
+          "Definition": "f(x)=a|x−h|+k has corner/vertex (h,k).",
+          "Rule": "Sign of a controls opening, |a| controls steepness; domain all real.",
+          "Example": "−2|x+1|+4 opens down from (−1,4)."
+        },
+        {
+          "Title": "Absolute equations",
+          "Definition": "If |A|=c with c>0, then A=c or A=−c.",
+          "Rule": "For c<0 there are no solutions; for c=0 solve A=0.",
+          "Example": "|2x−3|=5 gives x=4 or −1."
+        },
+        {
+          "Title": "Absolute inequalities",
+          "Definition": "Inside ≤ yields intersection; outside ≥ yields two rays for a nonnegative bound.",
+          "Rule": "For negative bounds examine the nonnegative absolute value before case splitting.",
+          "Example": "|x−3|≤5 gives [−2,8]; |x−3|>5 gives two rays."
+        },
+        {
+          "Title": "Intercepts",
+          "Definition": "Set y=0 for x-intercepts and x=0 for y-intercept.",
+          "Rule": "An upward shifted V may have no x-intercepts even though it always has a y-intercept.",
+          "Example": "2|x−1|+3 has no x-intercepts."
+        },
+        {
+          "Title": "Context and units",
+          "Definition": "Engineering tolerances model bounded deviations.",
+          "Rule": "State center, allowable distance, inclusion, units and interpretation.",
+          "Example": "|R−10000|≤200 Ω."
+        },
+        {
+          "Title": "Viewing windows",
+          "Definition": "A bounded plotted x-window generally has a range different from the full real-domain range.",
+          "Rule": "Check vertex inside the window and both included endpoints.",
+          "Example": "10|x−2| on [0,4] attains [0,20]."
+        }
+      ],
+      "SummaryPoints": [
+        "Absolute value represents nonnegative distance from a target.",
+        "V-shaped functions have a vertex determined by horizontal and vertical shifts.",
+        "An equation |A|=c has no real solution if c<0.",
+        "Inside inequalities produce bounded intervals; outside inequalities usually produce two rays.",
+        "Always check boundary inclusions, intercepts, graph window and physical units.",
+        "Teacher reviews diagrams and source-skill reasoning in Stage C."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distance from a target",
+          "Description": "The equal-distance endpoints are included when inequality uses ≤.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "Distance",
+          "Rows": [
+            {
+              "Label": "Input x",
+              "Cells": [
+                "3",
+                "4",
+                "6",
+                "8",
+                "9"
+              ]
+            },
+            {
+              "Label": "|x−6|",
+              "Cells": [
+                "3",
+                "2",
+                "0",
+                "2",
+                "3"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "V transformation from vertex",
+          "Description": "Piecewise absolute-value graph: every input has exactly one output.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "f(x)",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "−3",
+                "−2",
+                "−1",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "Label": "2|x+1|−3",
+              "Cells": [
+                "1",
+                "−1",
+                "−3",
+                "−1",
+                "1"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "CommonMistakes": [
+        {
+          "Mistake": "Splitting |A|=−2 into two equations.",
+          "WhyWrong": "Absolute values cannot be negative.",
+          "Correction": "Conclude no real solutions before splitting."
+        },
+        {
+          "Mistake": "Writing an OR statement for |x−a|<d.",
+          "WhyWrong": "Inside a radius imposes simultaneous lower and upper bounds.",
+          "Correction": "Use a−d<x<a+d for d>0."
+        },
+        {
+          "Mistake": "Neglecting to reverse inequality when dividing by a negative multiplier.",
+          "WhyWrong": "This reverses which real values satisfy the inequality.",
+          "Correction": "Reverse the comparison direction on negative division."
+        },
+        {
+          "Mistake": "Confusing the vertex location with graph intercepts.",
+          "WhyWrong": "Vertex generally has nonzero x or y coordinate.",
+          "Correction": "Set x=0/y=0 explicitly to find intercepts."
+        }
+      ]
+    }
+  ]
+}

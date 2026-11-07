@@ -1,0 +1,1001 @@
+{
+  "SchemaVersion": 1,
+  "SourceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "OriginalNumberedExercises": 64,
+  "FirstPartyIndependentSourceSkillQuestions": 64,
+  "OriginalPublisherGraphicsCopied": 0,
+  "OriginalSourceExactArtworkTextPixelParityClaim": false,
+  "OriginalQuestionGraphCognitiveSkillsRecreatedWithIndependent5PointModels": true,
+  "StageD": "NOT_RUN",
+  "Items": [
+    {
+      "Number": 1,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentPrompt": "Explain a reliable three-case method for solving |A(x)|=c. Include a no-solution case.",
+      "TeacherExpectedAnswerOrScoringGuidance": "If c<0 no real solution; if c=0 solve A=0; if c>0 solve A=±c.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 2,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentPrompt": "Explain how a V-shaped function can have two, one or no x-intercepts by comparing vertex height and opening direction.",
+      "TeacherExpectedAnswerOrScoringGuidance": "For f=a|x−h|+k: solve |x−h|=−k/a and classify sign.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 3,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentPrompt": "If isolating absolute value gives |A|=−3, what does it say about solutions and the corresponding graphs?",
+      "TeacherExpectedAnswerOrScoringGuidance": "No real solution; nonnegative distance cannot equal negative output.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 4,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentPrompt": "How can a graph of a V-shaped absolute-value function identify intervals where f(x)<0?",
+      "TeacherExpectedAnswerOrScoringGuidance": "Locate x-intercepts and select strictly below x-axis segments.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 5,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "VERBAL",
+      "FirstPartyStudentPrompt": "Explain how to solve |A|≤c versus |A|≥c, including open/closed endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "For c≥0 inside interval simultaneous inequalities; outside union of two rays. Negative c requires special handling.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 6,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "DISTANCE_FROM_TARGET",
+      "FirstPartyStudentPrompt": "Express the corresponding original source skill in absolute-distance notation |x−8|=4; derive the exact permitted real set or output bound and explain whether equality is included.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{4,12}",
+      "StudentLearningActions": [
+        "express distance",
+        "solve set or range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 7,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "DISTANCE_FROM_TARGET",
+      "FirstPartyStudentPrompt": "Express the corresponding original source skill in absolute-distance notation |x+4|=1/2; derive the exact permitted real set or output bound and explain whether equality is included.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−9/2,−7/2}",
+      "StudentLearningActions": [
+        "express distance",
+        "solve set or range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 8,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "DISTANCE_FROM_TARGET",
+      "FirstPartyStudentPrompt": "Express the corresponding original source skill in absolute-distance notation |x−10|≥15; derive the exact permitted real set or output bound and explain whether equality is included.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−5]∪[25,∞)",
+      "StudentLearningActions": [
+        "express distance",
+        "solve set or range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 9,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "DISTANCE_FROM_TARGET",
+      "FirstPartyStudentPrompt": "Express the corresponding original source skill in absolute-distance notation |f(x)−8|<0.03; derive the exact permitted real set or output bound and explain whether equality is included.",
+      "TeacherExpectedAnswerOrScoringGuidance": "7.97<f(x)<8.03",
+      "StudentLearningActions": [
+        "express distance",
+        "solve set or range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 10,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |x+3|=9. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−12,6}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 11,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |6−x|=5. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{1,11}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 12,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |5x−2|=11. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−9/5,13/5}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 13,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |4x−2|=11. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−9/4,13/4}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 14,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation 2|4−x|=7. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{1/2,15/2}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 15,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation 3|5−x|=5. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{10/3,20/3}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 16,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation 3|x+1|−4=5. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−4,2}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 17,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation 5|x−4|−7=2. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{11/5,29/5}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 18,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation −|x−3|+2=0. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{1,5}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 19,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation 2|x−3|+1=2. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{5/2,7/2}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 20,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |3x−2|=7. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−5/3,3}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 21,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |3x−2|=−7. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "∅ (no real solution)",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 22,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |x/2−5|=11. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−12,32}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 23,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation |x/3+5|=14. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−57,27}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 24,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "SOLVE_ABSOLUTE_VALUE_EQUATION",
+      "FirstPartyStudentPrompt": "Solve the real absolute-value equation −|x/3+5|+14=0. Show the two linear cases only when valid and report all exact solutions in set notation.",
+      "TeacherExpectedAnswerOrScoringGuidance": "{−57,27}",
+      "StudentLearningActions": [
+        "isolate absolute value",
+        "analyze nonnegative bound",
+        "solve and verify candidates"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 25,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_GRAPH_INTERCEPTS",
+      "FirstPartyStudentPrompt": "For f(x)=2|x+1|−10, find all real x-intercepts and the unique y-intercept without relying on a publisher graph.",
+      "TeacherExpectedAnswerOrScoringGuidance": "x-intercepts: x=−6 or 4; y-intercept: y=−8.",
+      "StudentLearningActions": [
+        "solve f(x)=0",
+        "evaluate f(0)"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 26,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_GRAPH_INTERCEPTS",
+      "FirstPartyStudentPrompt": "For f(x)=4|x−3|+4, find all real x-intercepts and the unique y-intercept without relying on a publisher graph.",
+      "TeacherExpectedAnswerOrScoringGuidance": "x-intercepts: none; y-intercept: y=16.",
+      "StudentLearningActions": [
+        "solve f(x)=0",
+        "evaluate f(0)"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 27,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_GRAPH_INTERCEPTS",
+      "FirstPartyStudentPrompt": "For f(x)=−3|x−2|−1, find all real x-intercepts and the unique y-intercept without relying on a publisher graph.",
+      "TeacherExpectedAnswerOrScoringGuidance": "x-intercepts: none; y-intercept: y=−7.",
+      "StudentLearningActions": [
+        "solve f(x)=0",
+        "evaluate f(0)"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 28,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_GRAPH_INTERCEPTS",
+      "FirstPartyStudentPrompt": "For f(x)=−2|x+1|+6, find all real x-intercepts and the unique y-intercept without relying on a publisher graph.",
+      "TeacherExpectedAnswerOrScoringGuidance": "x-intercepts: x=−4 or 2; y-intercept: y=4.",
+      "StudentLearningActions": [
+        "solve f(x)=0",
+        "evaluate f(0)"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 29,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |x−2|>10 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−8)∪(12,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 30,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve 2|v−7|−4≥42 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−16]∪[30,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 31,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |3x−4|≤8 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "[−4/3,4]",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 32,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |x−4|≥8 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−4]∪[12,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 33,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |3x−5|≥13 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−8/3]∪[6,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 34,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |3x−5|≥−13 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 35,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |3x/4−5|≥7 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "(−∞,−8/3]∪[16,∞)",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 36,
+      "OriginalPdfPage": 114,
+      "SourceLearningSkill": "ABSOLUTE_VALUE_INEQUALITY",
+      "FirstPartyStudentPrompt": "Solve |3x/4−5|+1≤16 over ℝ, reporting the entire solution in correct interval notation and marking equality endpoints.",
+      "TeacherExpectedAnswerOrScoringGuidance": "[−40/3,80/3]",
+      "StudentLearningActions": [
+        "isolate nonnegative absolute term",
+        "split inside/outside conditions",
+        "state included endpoints"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 37,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|x−1| by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (1,0); five valid labelled points [('-1', '2'), ('0', '1'), ('1', '0'), ('2', '1'), ('3', '2')]; domain ℝ; range [0,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 38,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|x+1| by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-1,0); five valid labelled points [('-3', '2'), ('-2', '1'), ('-1', '0'), ('0', '1'), ('1', '2')]; domain ℝ; range [0,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 39,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|x|+1 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (0,1); five valid labelled points [('-2', '3'), ('-1', '2'), ('0', '1'), ('1', '2'), ('2', '3')]; domain ℝ; range [1,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 40,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|x|−2 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (0,-2); five valid labelled points [('-2', '0'), ('-1', '-1'), ('0', '-2'), ('1', '-1'), ('2', '0')]; domain ℝ; range [-2,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 41,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x| by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (0,0); five valid labelled points [('-2', '-2'), ('-1', '-1'), ('0', '0'), ('1', '-1'), ('2', '-2')]; domain ℝ; range (−∞,0].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 42,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x|−2 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (0,-2); five valid labelled points [('-2', '-4'), ('-1', '-3'), ('0', '-2'), ('1', '-3'), ('2', '-4')]; domain ℝ; range (−∞,-2].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 43,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x−3|−2 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (3,-2); five valid labelled points [('1', '-4'), ('2', '-3'), ('3', '-2'), ('4', '-3'), ('5', '-4')]; domain ℝ; range (−∞,-2].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 44,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x−1|−2 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (1,-2); five valid labelled points [('-1', '-4'), ('0', '-3'), ('1', '-2'), ('2', '-3'), ('3', '-4')]; domain ℝ; range (−∞,-2].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 45,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x+3|+4 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-3,4); five valid labelled points [('-5', '2'), ('-4', '3'), ('-3', '4'), ('-2', '3'), ('-1', '2')]; domain ℝ; range (−∞,4].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 46,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=2|x+3|+1 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-3,1); five valid labelled points [('-5', '5'), ('-4', '3'), ('-3', '1'), ('-2', '3'), ('-1', '5')]; domain ℝ; range [1,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 47,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=3|x−2|+3 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (2,3); five valid labelled points [('0', '9'), ('1', '6'), ('2', '3'), ('3', '6'), ('4', '9')]; domain ℝ; range [3,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 48,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|2x−4|−3 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (2,-3); five valid labelled points [('0', '1'), ('1', '-1'), ('2', '-3'), ('3', '-1'), ('4', '1')]; domain ℝ; range [-3,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 49,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=|3x+9|+2 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-3,2); five valid labelled points [('-5', '8'), ('-4', '5'), ('-3', '2'), ('-2', '5'), ('-1', '8')]; domain ℝ; range [2,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 50,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x−1|−3 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (1,-3); five valid labelled points [('-1', '-5'), ('0', '-4'), ('1', '-3'), ('2', '-4'), ('3', '-5')]; domain ℝ; range (−∞,-3].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 51,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=−|x+4|−3 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-4,-3); five valid labelled points [('-6', '-5'), ('-5', '-4'), ('-4', '-3'), ('-3', '-4'), ('-2', '-5')]; domain ℝ; range (−∞,-3].",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 52,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "FIVE_POINT_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Independently graph y=(1/2)|x+4|−3 by computing at least five correctly labelled points spanning both arms. State the vertex, domain, range and whether the graph opens up or down.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (-4,-3); five valid labelled points [('-6', '-2'), ('-5', '-5/2'), ('-4', '-3'), ('-3', '-5/2'), ('-2', '-2')]; domain ℝ; range [-3,∞).",
+      "StudentLearningActions": [
+        "evaluate five points",
+        "mark vertex",
+        "state domain/range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 53,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "WINDOWED_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Graph the first-party formula f(x)=10|x−2| only on the source-skill window 0≤x≤4 and identify the attained range.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Range [0,20], min zero at x=2, max 20 at x=0 and x=4.",
+      "StudentLearningActions": [
+        "render bounded viewing window",
+        "check attained output range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 54,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "WINDOWED_ABSOLUTE_GRAPH",
+      "FirstPartyStudentPrompt": "Graph f(x)=−100|x|+100 on the bounded window −5≤x≤5 and determine the exact displayed range.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Range [−400,100], max 100 at x=0 and min −400 at x=±5.",
+      "StudentLearningActions": [
+        "render bounded viewing window",
+        "check attained output range"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 55,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "TECHNOLOGY_SCALE_GRAPH",
+      "FirstPartyStudentPrompt": "Graph f(x)=−0.1|0.1(0.2−x)|+0.3 in a viewing window including x=0.2 and at least five nearby inputs. Label vertex and both slopes.",
+      "TeacherExpectedAnswerOrScoringGuidance": "f(x)=−0.01|x−0.2|+0.3; vertex (0.2,0.3); downward V; choose and label independent window.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 56,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "TECHNOLOGY_LARGE_MAGNITUDE_GRAPH",
+      "FirstPartyStudentPrompt": "Graph f(x)=4·10^9|x−5·10^9|+2·10^9 using a window centered on x=5·10^9 wide enough to see both arms. State its vertex and axis labels.",
+      "TeacherExpectedAnswerOrScoringGuidance": "Vertex (5·10^9,2·10^9); upward V, slopes ±4·10^9; an adequate first-party window includes x=5·10^9±1.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 57,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "ABSOLUTE_INEQUALITY_ALWAYS_TRUE",
+      "FirstPartyStudentPrompt": "Determine all x satisfying |−2x−(2/3)(x+1)|+3>−1 and justify without unnecessary case splitting.",
+      "TeacherExpectedAnswerOrScoringGuidance": "All real x, because the left side is always at least 3.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 58,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "ABSOLUTE_ZERO_INTERCEPT_PARAMETER",
+      "FirstPartyStudentPrompt": "For f(x)=2|x+1|+a with a real parameter, determine all a for which no x-intercepts occur.",
+      "TeacherExpectedAnswerOrScoringGuidance": "a>0; a=0 gives one zero and a<0 gives two.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 59,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "ABSOLUTE_Y_INTERCEPT_PARAMETER",
+      "FirstPartyStudentPrompt": "For f(x)=2|x+1|+a determine whether any real a removes the y-intercept; explain.",
+      "TeacherExpectedAnswerOrScoringGuidance": "No such a: f(0)=2+a always exists.",
+      "StudentLearningActions": [
+        "show mathematical reasoning and final set/graph"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 60,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "CONTEXT_ABSOLUTE_TOLERANCE",
+      "FirstPartyStudentPrompt": "Translate an independent real-world distance or tolerance into absolute-value notation: target 0 miles for two towns on a signed east-west line, allowed at least 100 of the target. Use variable x and interpret the boundary.",
+      "TeacherExpectedAnswerOrScoringGuidance": "|x−(0)|≥100",
+      "StudentLearningActions": [
+        "define target and deviation units",
+        "write appropriate absolute comparison"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 61,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "CONTEXT_ABSOLUTE_TOLERANCE",
+      "FirstPartyStudentPrompt": "Translate an independent real-world distance or tolerance into absolute-value notation: target 0.08 proportion of respondents, allowed within 0.015 of the target. Use variable p and interpret the boundary.",
+      "TeacherExpectedAnswerOrScoringGuidance": "|p−(0.08)|≤0.015",
+      "StudentLearningActions": [
+        "define target and deviation units",
+        "write appropriate absolute comparison"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 62,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "CONTEXT_ABSOLUTE_TOLERANCE",
+      "FirstPartyStudentPrompt": "Translate an independent real-world distance or tolerance into absolute-value notation: target 82 test score points, allowed within 18 of the target. Use variable x and interpret the boundary.",
+      "TeacherExpectedAnswerOrScoringGuidance": "|x−(82)|≤18",
+      "StudentLearningActions": [
+        "define target and deviation units",
+        "write appropriate absolute comparison"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 63,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "CONTEXT_ABSOLUTE_TOLERANCE",
+      "FirstPartyStudentPrompt": "Translate an independent real-world distance or tolerance into absolute-value notation: target 5 inches diameter, allowed within 0.01 of the target. Use variable x and interpret the boundary.",
+      "TeacherExpectedAnswerOrScoringGuidance": "|x−(5)|≤0.01",
+      "StudentLearningActions": [
+        "define target and deviation units",
+        "write appropriate absolute comparison"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    },
+    {
+      "Number": 64,
+      "OriginalPdfPage": 115,
+      "SourceLearningSkill": "CONTEXT_ABSOLUTE_TOLERANCE",
+      "FirstPartyStudentPrompt": "Translate an independent real-world distance or tolerance into absolute-value notation: target 2 inches diameter, allowed within 0.01 of the target. Use variable x and interpret the boundary.",
+      "TeacherExpectedAnswerOrScoringGuidance": "|x−(2)|≤0.01",
+      "StudentLearningActions": [
+        "define target and deviation units",
+        "write appropriate absolute comparison"
+      ],
+      "GradeMode": "TEACHER_REVIEW_REQUIRED",
+      "OriginalSourceGraphicsCopied": false,
+      "ExactPublisherGraphicOrTextParityClaim": false,
+      "StageDRuntime": "NOT_RUN"
+    }
+  ]
+}
