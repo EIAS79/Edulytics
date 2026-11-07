@@ -6,6 +6,7 @@ from g5_stage_d_authenticated_https import (
     sql, login_actor, get_page, BASE, UUID,
     extract_adoption, extract_csrf, extract_idempotency_key, probe_lesson,
 )
+from g12_stage_d_72_teacher_rubric_probe import all_other_g12_teacher_rubrics
 COUNTS=(7,4,9,8,4,3,6,8,8,5,7,4)
 STUDENT="commoncore-secondary.student.secondary@edulytiks.com"
 TEACHER="commoncore-secondary.teacher.secondary@edulytiks.com"
@@ -189,6 +190,10 @@ def run():
     if len(all_lesson_practice)!=73:
         raise AssertionError("Grade12 cannot close a partial practice acceptance")
     teacher_rubric=first_lesson_teacher_rubric(student,teacher,expected[0][1])
+    other_teacher_rubrics=all_other_g12_teacher_rubrics(
+        student,teacher,expected,one,BASE,get_page,extract_csrf,sql)
+    if len(other_teacher_rubrics)!=72:
+        raise AssertionError("G12_TEACHER_GRADEBOOK_73_NOT_COMPLETE")
     report={"scope":"CI_DISPOSABLE_G12_AUTHENTICATED_HTTPS_NOT_PUBLICATION",
             "candidateSha":os.environ.get("GITHUB_SHA"),
             "sourceAcademicParity":"UNKNOWN","reviewerSignoff":"NOT_TESTED",
@@ -197,8 +202,11 @@ def run():
             "realPersistedCorrectAnswer":positive,"realPersistedMalformedAnswer":negative,
             "all73LessonPracticePositiveAndNegative":all_lesson_practice,
             "persistedExactPracticeLessonCount":len(all_lesson_practice),
-            "teacherGradebookPerLessonVerified":False,
-            "independentFirstLessonTeacherRubric":teacher_rubric}
+            "teacherGradebookPerLessonVerified":True,
+            "independentFirstLessonTeacherRubric":teacher_rubric,
+            "all73ManualTeacherRubricsSqlPersisted":True,
+            "teacherRubricLessonCount":1+len(other_teacher_rubrics),
+            "teacherRubricRecords":other_teacher_rubrics}
     Path("/tmp/g12-stage-d-authenticated-73-lessons.json").write_text(
        json.dumps(report,ensure_ascii=False,indent=2,default=str),encoding="utf8")
     print("G12_AUTHENTICATED_73_LESSONS_146_REAL_GRADED_ATTEMPTS_PASS",len(records),flush=True)

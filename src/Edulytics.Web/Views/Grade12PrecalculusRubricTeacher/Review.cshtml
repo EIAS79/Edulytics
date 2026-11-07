@@ -1,11 +1,12 @@
 @model Edulytics.Web.Controllers.G12PrecalcRubricTeacherPage
 @using Edulytics.Web.Presentation
 @{ ViewData["Title"] = "Precalculus — teacher assessment"; }
-<h1>Section 1.1, @(Grade12PrecalculusSection11Exercises.DisplayLabel(Model.Submission.ExerciseNumber)) — teacher assessment</h1>
+<h1>Grade 12 Precalculus, @(Grade12PrecalculusTeacherTaskBank.DisplayLabel(Model.LessonCode, Model.Submission.ExerciseNumber)) — teacher assessment</h1>
 <p>Student: @Model.Submission.StudentProfileId</p>
 <p>Submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
 <pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>
-@if (Grade12PrecalculusSection11TeacherGuidance.Find(Model.Submission.ExerciseNumber) is { } note)
+@if (Model.LessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+    Grade12PrecalculusSection11TeacherGuidance.Find(Model.Submission.ExerciseNumber) is { } note)
 {
     <section class="student-card" aria-label="Teacher-only mathematical review guidance">
         <h2>Teacher-only mathematical review guidance</h2>
@@ -15,7 +16,8 @@
            proof, diagram and all requested subparts before awarding marks.</p>
     </section>
 }
-@if (Grade12PrecalculusSection11SourcePartChecklist.ForExercise(
+@if (Model.LessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+    Grade12PrecalculusSection11SourcePartChecklist.ForExercise(
     Model.Submission.ExerciseNumber) is { Count: > 0 } sourceParts)
 {
     <section class="student-card" aria-label="Original exercise completeness checklist">

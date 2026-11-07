@@ -2,7 +2,7 @@
 @using Edulytics.Web.Presentation
 @{ ViewData["Title"] = "Precalculus — Section 1.1 exercise response"; }
 <h1>Precalculus: teacher-reviewed mathematical response</h1>
-<p><strong>@(Grade12PrecalculusSection11Exercises.DisplayLabel(Model.ExerciseNumber))</strong>: @Model.Prompt</p>
+<p><strong>@(Grade12PrecalculusTeacherTaskBank.DisplayLabel(Model.LessonCode, Model.ExerciseNumber))</strong>: @Model.Prompt</p>
 <p>Explain each mathematical step and provide any requested graph with labelled axes to your teacher.
    Submit your written reasoning here. The platform does not automatically mark
    open-ended graphs or proofs.</p>

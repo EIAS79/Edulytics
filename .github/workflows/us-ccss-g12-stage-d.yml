@@ -53,6 +53,8 @@ jobs:
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllSourceGraphRenderTests --logger "trx;LogFileName=g12-math-svg-rendering.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Verify 31 original advanced Grade12 mathematical subskills and ten-item exact pools
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12Precalculus31AdvancedExactFamilyStageDTests --logger "trx;LogFileName=g12-31-advanced-exact-families.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Verify all 73 teacher-review task banks and 4384 first-party authored prompts
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusAllTeacherRubricSourceBanksTests --logger "trx;LogFileName=g12-73-teacher-bank.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Materialize and validate all 73 published canonical Grade12 lesson candidates
         run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusCanonical73PublishedCandidateTests --logger "trx;LogFileName=g12-canonical-73.trx" --results-directory ./artifacts/g12-stage-d-trx
       - name: Independently generate and grade 21 source-aligned numerical Practice subsets

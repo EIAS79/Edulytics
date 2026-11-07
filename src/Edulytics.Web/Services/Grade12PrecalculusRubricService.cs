@@ -3,6 +3,7 @@ using System.Data.Common;
 using System.Security.Claims;
 using System.Text.Json;
 using Edulytics.Core.Constants;
+using Edulytics.Web.Presentation;
 using Edulytics.Data.Contexts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +19,10 @@ public sealed record G12PrecalcRubricRow(
     Guid? TeacherUserId, int? TeacherScore, string? TeacherFeedback,
     DateTime? ReviewedAtUtc);
 public sealed record G12PrecalcRubricStudentPage(
-    Guid LessonId, int ExerciseNumber, string Prompt, G12PrecalcRubricRow? Existing);
+    Guid LessonId, int ExerciseNumber, string Prompt, string LessonCode,
+    G12PrecalcRubricRow? Existing);
 public sealed record G12PrecalcRubricTeacherPage(
-    G12PrecalcRubricRow Submission, string[] Criteria);
+    G12PrecalcRubricRow Submission, string[] Criteria, string LessonCode);
 
 internal static class G12PrecalcRubricStorage
 {
@@ -31,7 +33,7 @@ internal static class G12PrecalcRubricStorage
         "The exercise-specific function, graph, table or algebraic model is represented accurately",
         "Calculations, solution sets, domain restrictions and graph intersections are mathematically correct",
         "Mathematical justification and all requested source-skill subparts are complete",
-        "Axes, labels, precision, physical units and teacher-inspected diagrams meet Section 1.1 goals"
+        "Axes, labels, precision, physical units and teacher-inspected diagrams meet the section goals"
     ];
 
     private static DbParameter P(DbCommand command, string name, object? value)
@@ -153,6 +155,12 @@ internal static class G12PrecalcRubricStorage
 
 public sealed class Grade12PrecalculusRubricService(EdulyticsDbContext db)
 {
+    public Task<string?> LessonCodeAsync(Guid lessonId, CancellationToken ct) =>
+        db.CurriculumPedagogicalLessons.AsNoTracking()
+            .Where(x => x.Id == lessonId)
+            .Select(x => x.Code)
+            .FirstOrDefaultAsync(ct);
+
     public Task<G12PrecalcRubricRow?> FindAsync(Guid id, CancellationToken ct) =>
         G12PrecalcRubricStorage.FindAsync(db, id, ct);
 
@@ -192,7 +200,8 @@ public sealed class Grade12PrecalculusRubricService(EdulyticsDbContext db)
                 on adoption.FrameworkVersionId equals lesson.FrameworkVersionId
             where p.UserId == actor && !p.IsArchived && adoption.IsActive &&
                   (curriculumAdoptionId == Guid.Empty || adoption.Id == curriculumAdoptionId) &&
-                  lesson.Id == lessonId && lesson.Code == G12PrecalcRubricStorage.LessonCode &&
+                  lesson.Id == lessonId &&
+                  lesson.Code.StartsWith(Grade12PrecalculusTeacherTaskBank.LessonPrefix) &&
                   adoption.CurriculumLevelKey == G12PrecalcRubricStorage.AdoptionLevelKey
             orderby e.EnrolledAtUtc descending
             select new { p.SchoolId, ClassGroupId = cls.Id, StudentId = p.Id }
@@ -220,7 +229,8 @@ public sealed class Grade12PrecalculusRubricService(EdulyticsDbContext db)
                   t.ClassGroupId == row.ClassGroupId &&
                   t.SubjectId == adoption.SubjectId &&
                   e.StudentProfileId == row.StudentProfileId &&
-                  lesson.Id == row.LessonId && lesson.Code == G12PrecalcRubricStorage.LessonCode &&
+                  lesson.Id == row.LessonId &&
+                  lesson.Code.StartsWith(Grade12PrecalculusTeacherTaskBank.LessonPrefix) &&
                   adoption.CurriculumLevelKey == G12PrecalcRubricStorage.AdoptionLevelKey
             select t.Id
         ).AnyAsync(ct);

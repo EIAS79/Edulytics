@@ -10,7 +10,7 @@
 {
     <li>
         <a href="/school/g12/precalculus/rubric/@row.Id">
-            @(Grade12PrecalculusSection11Exercises.DisplayLabel(row.ExerciseNumber)) · Lesson @row.LessonId · Student @row.StudentProfileId
+            Exercise @row.ExerciseNumber · Lesson @row.LessonId · Student @row.StudentProfileId
         </a>
         — @row.SubmittedAtUtc.ToString("u")
         — @(row.ReviewedAtUtc.HasValue ? "Reviewed" : "Pending review")

@@ -21,12 +21,14 @@ public sealed class Grade12PrecalculusRubricStudentController(Grade12Precalculus
         Guid lessonId, int exerciseNumber, CancellationToken ct)
     {
         if (!Actor(out var actor)) return Forbid();
-        var task = Grade12PrecalculusSection11Exercises.Find(exerciseNumber);
-        if (task is null) return NotFound();
         var scope = await rubric.StudentScopeAsync(actor, lessonId, Guid.Empty, ct);
         if (scope is null) return NotFound();
+        var lessonCode = await rubric.LessonCodeAsync(lessonId, ct);
+        var task = Grade12PrecalculusTeacherTaskBank.Find(lessonCode, exerciseNumber);
+        if (task is null || lessonCode is null) return NotFound();
         var existing = await rubric.FindStudentAsync(scope.Value.School, scope.Value.Class, scope.Value.Student, lessonId, exerciseNumber, ct);
-        return View(new G12PrecalcRubricStudentPage(lessonId, exerciseNumber, task.Prompt, existing));
+        return View(new G12PrecalcRubricStudentPage(lessonId, exerciseNumber,
+            task.Prompt, lessonCode, existing));
     }
 
     [HttpPost("submit"), ValidateAntiForgeryToken]
@@ -36,12 +38,16 @@ public sealed class Grade12PrecalculusRubricStudentController(Grade12Precalculus
         [FromForm] string? graphEvidence, CancellationToken ct)
     {
         if (!Actor(out var actor)) return Forbid();
-        if (Grade12PrecalculusSection11Exercises.Find(exerciseNumber) is null)
-            return NotFound();
         var scope = await rubric.StudentScopeAsync(actor, lessonId, Guid.Empty, ct);
         if (scope is null) return NotFound();
-        var studentResponse = Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(
-            exerciseNumber, explanation, graphEvidence);
+        var lessonCode = await rubric.LessonCodeAsync(lessonId, ct);
+        if (Grade12PrecalculusTeacherTaskBank.Find(lessonCode, exerciseNumber) is null)
+            return NotFound();
+        var studentResponse = lessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson
+            ? Grade12PrecalculusSection11Exercises.ComposeTeacherResponse(
+                exerciseNumber, explanation, graphEvidence)
+            : Grade12PrecalculusTeacherTaskBank.ComposeTeacherResponse(
+                lessonCode!, exerciseNumber, explanation, graphEvidence);
         if (studentResponse is null)
             return BadRequest("Provide complete written reasoning and, for graph-window " +
                 "tasks 76-87, a labelled graph/coordinate description. " +
@@ -88,7 +94,10 @@ public sealed class Grade12PrecalculusRubricTeacherController(Grade12Precalculus
         var row = await rubric.FindAsync( id, ct);
         if (row is null) return NotFound();
         if (!await rubric.MayReviewAsync(actor, row, ct)) return NotFound();
-        return View(new G12PrecalcRubricTeacherPage(row, G12PrecalcRubricStorage.Criteria));
+        var lessonCode = await rubric.LessonCodeAsync(row.LessonId, ct);
+        if (lessonCode is null) return NotFound();
+        return View(new G12PrecalcRubricTeacherPage(
+            row, G12PrecalcRubricStorage.Criteria, lessonCode));
     }
 
     [HttpPost("{id:guid}"), ValidateAntiForgeryToken]
