@@ -7148,6 +7148,45 @@ public static class LessonPracticeContractRegistry
             ["probability.theoretical.complement"],
             "G12_SECTION_11_7_PROBABILITY_COMPLEMENT_SUBSET", "READY_VERIFIED", Version);
 
+        // Stage D: arithmetic/sequence/vector/trigonometry exact subsets.
+        // No source-atom, diagram, proof, human rubric or full digital parity
+        // certification can be inferred from these numerical mechanics.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03", "functions.quadratic.equations",
+            "POLYNOMIAL_QUADRATIC_SPECIAL_CASE_EXACT_PARTIAL",
+            ["functions.quadratic.output_roots.solve"],
+            "G12_SECTION_3_3_QUADRATIC_POLYNOMIAL_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06", "functions.quadratic.equations",
+            "POLYNOMIAL_ZERO_QUADRATIC_SPECIAL_CASE_EXACT_PARTIAL",
+            ["functions.quadratic.output_roots.solve"],
+            "G12_SECTION_3_6_POLYNOMIAL_QUADRATIC_ROOT_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04", "trigonometry.right_triangle.ratio",
+            "RIGHT_TRIANGLE_TRIGONOMETRY_EXACT_PARTIAL",
+            ["trigonometry.right_triangle.ratio_exact", "trigonometry.right_triangle.find_side_exact"],
+            "G12_SECTION_5_4_RIGHT_TRIANGLE_MEASUREMENT_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08", "vectors.operations",
+            "VECTOR_EXACT_ARITHMETIC_PARTIAL",
+            ["vectors.add.exact_rational", "vectors.subtract.exact_rational", "vectors.magnitude.exact", "vectors.dot.exact_rational"],
+            "G12_SECTION_8_8_VECTOR_ARITHMETIC_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01", "sequences.core",
+            "EXPLICIT_SEQUENCE_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.geometric_nth_term"],
+            "G12_SECTION_11_1_SEQUENCE_NOTATION_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02", "sequences.arithmetic",
+            "ARITHMETIC_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
+            "G12_SECTION_11_2_ARITHMETIC_SEQUENCE_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03", "sequences.geometric",
+            "GEOMETRIC_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.geometric_nth_term"],
+            "G12_SECTION_11_3_GEOMETRIC_SEQUENCE_SUBSET", "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

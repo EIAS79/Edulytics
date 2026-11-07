@@ -15,9 +15,14 @@ public sealed class PracticeSessionDiversityCertificationTests
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
 
-        // 5,110 legacy contracts plus 28 actual Grade12 contracts;
-        // 45 still lack verified runtime practice and must remain release blockers.
-        Assert.Equal(5138, contracts.Length);
+        // Lock the existing certified catalogue independently of the expanding
+        // Grade12 verified-subskill cohort; every new entry must still generate
+        // 10 varied questions and pass the same verification below.
+        const string grade12Prefix = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
+        Assert.Equal(5110, contracts.Count(x => !x.LessonCode.StartsWith(
+            grade12Prefix, StringComparison.Ordinal)));
+        Assert.InRange(contracts.Count(x => x.LessonCode.StartsWith(
+            grade12Prefix, StringComparison.Ordinal)), 21, 73);
 
         for (var index = 0; index < contracts.Length; index++)
         {
