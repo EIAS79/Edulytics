@@ -1,0 +1,680 @@
+{
+  "SchemaVersion": 1,
+  "Section": "8.3",
+  "Count": 84,
+  "IndependentStudentMathTeacherKeys": [
+    {
+      "SourceExercise": 1,
+      "IndependentPolarQuestion": "Compare rectangular and polar representation of a point.",
+      "TeacherMathematicalAnswer": "Cartesian uses signed(x,y); polar uses signed radius and directed angle(r,θ).",
+      "SourceMathSkillReviewed": "Source1 polar vs Cartesian",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentPolarQuestion": "Explain polar axis and pole.",
+      "TeacherMathematicalAnswer": "Pole is origin, polar axis is reference ray θ=0 along positive x-axis.",
+      "SourceMathSkillReviewed": "Source2 polar axes",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentPolarQuestion": "Describe how to plot (r,θ).",
+      "TeacherMathematicalAnswer": "Rotate θ from polar axis, move radius |r| along ray if r≥0 or opposite ray if r<0.",
+      "SourceMathSkillReviewed": "Source3 polar plotting",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentPolarQuestion": "Compare (3,π/2) and (−3,π/2).",
+      "TeacherMathematicalAnswer": "Opposite points: (0,3) and(0,−3).",
+      "SourceMathSkillReviewed": "Source4 radius negative",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentPolarQuestion": "Why are (−3,π/2) and (3,−π/2) identical?",
+      "TeacherMathematicalAnswer": "Both rectangular(0,−3), since (−r,θ)=(r,θ+π).",
+      "SourceMathSkillReviewed": "Source5 equivalent polar points",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentPolarQuestion": "Convert polar(r=7,θ=1.16667π) to Cartesian(x,y).",
+      "TeacherMathematicalAnswer": "x=r cosθ≈-6.062178,y=r sinθ≈-3.500000.",
+      "SourceMathSkillReviewed": "Source6 polar to Cartesian with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentPolarQuestion": "Convert polar(r=5,θ=1.00000π) to Cartesian(x,y).",
+      "TeacherMathematicalAnswer": "x=r cosθ≈-5.000000,y=r sinθ≈0.000000.",
+      "SourceMathSkillReviewed": "Source7 polar to Cartesian with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentPolarQuestion": "Convert polar(r=6,θ=-0.25000π) to Cartesian(x,y).",
+      "TeacherMathematicalAnswer": "x=r cosθ≈4.242641,y=r sinθ≈-4.242641.",
+      "SourceMathSkillReviewed": "Source8 polar to Cartesian with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentPolarQuestion": "Convert polar(r=-3,θ=0.16667π) to Cartesian(x,y).",
+      "TeacherMathematicalAnswer": "x=r cosθ≈-2.598076,y=r sinθ≈-1.500000.",
+      "SourceMathSkillReviewed": "Source9 polar to Cartesian with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentPolarQuestion": "Convert polar(r=4,θ=1.75000π) to Cartesian(x,y).",
+      "TeacherMathematicalAnswer": "x=r cosθ≈2.828427,y=r sinθ≈-2.828427.",
+      "SourceMathSkillReviewed": "Source10 polar to Cartesian with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentPolarQuestion": "Convert Cartesian(4,2) to polar with r>0,0≤θ<2π.",
+      "TeacherMathematicalAnswer": "r=sqrt(20)≈4.472136;θ≈0.463648rad.",
+      "SourceMathSkillReviewed": "Source11 quadrant-aware rectangular to polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentPolarQuestion": "Convert Cartesian(-4,6) to polar with r>0,0≤θ<2π.",
+      "TeacherMathematicalAnswer": "r=sqrt(52)≈7.211103;θ≈2.158799rad.",
+      "SourceMathSkillReviewed": "Source12 quadrant-aware rectangular to polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentPolarQuestion": "Convert Cartesian(3,-5) to polar with r>0,0≤θ<2π.",
+      "TeacherMathematicalAnswer": "r=sqrt(34)≈5.830952;θ≈5.252808rad.",
+      "SourceMathSkillReviewed": "Source13 quadrant-aware rectangular to polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentPolarQuestion": "Convert Cartesian(-10,-13) to polar with r>0,0≤θ<2π.",
+      "TeacherMathematicalAnswer": "r=sqrt(269)≈16.401219;θ≈4.056693rad.",
+      "SourceMathSkillReviewed": "Source14 quadrant-aware rectangular to polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentPolarQuestion": "Convert Cartesian(8,8) to polar with r>0,0≤θ<2π.",
+      "TeacherMathematicalAnswer": "r=sqrt(128)≈11.313708;θ≈0.785398rad.",
+      "SourceMathSkillReviewed": "Source15 quadrant-aware rectangular to polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentPolarQuestion": "Convert Cartesian equation x=3 to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r cosθ=3.",
+      "SourceMathSkillReviewed": "Source16 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentPolarQuestion": "Convert Cartesian equation y=4 to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r sinθ=4.",
+      "SourceMathSkillReviewed": "Source17 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentPolarQuestion": "Convert Cartesian equation y=4x² to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r sinθ=4r²cos²θ.",
+      "SourceMathSkillReviewed": "Source18 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentPolarQuestion": "Convert Cartesian equation y=2x⁴ to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r sinθ=2r⁴cos⁴θ.",
+      "SourceMathSkillReviewed": "Source19 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²+y²=4y to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²=4r sinθ.",
+      "SourceMathSkillReviewed": "Source20 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²+y²=3x to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²=3r cosθ.",
+      "SourceMathSkillReviewed": "Source21 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²−y²=x to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²(cos²θ−sin²θ)=r cosθ.",
+      "SourceMathSkillReviewed": "Source22 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²−y²=3y to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²cos2θ=3r sinθ.",
+      "SourceMathSkillReviewed": "Source23 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²+y²=9 to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²=9.",
+      "SourceMathSkillReviewed": "Source24 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentPolarQuestion": "Convert Cartesian equation x²=9y to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²cos²θ=9r sinθ.",
+      "SourceMathSkillReviewed": "Source25 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentPolarQuestion": "Convert Cartesian equation y²=9x to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "r²sin²θ=9r cosθ.",
+      "SourceMathSkillReviewed": "Source26 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentPolarQuestion": "Convert Cartesian equation 9xy=1 to polar without losing the origin.",
+      "TeacherMathematicalAnswer": "9r²sinθcosθ=1.",
+      "SourceMathSkillReviewed": "Source27 algebraic x=rcosθ,y=rsinθ,r²=x²+y² substitution",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentPolarQuestion": "Convert polar r=3sinθ to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x²+y²=3y; circle center(0,1.5),radius1.5.",
+      "SourceMathSkillReviewed": "Source28 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentPolarQuestion": "Convert polar r=4cosθ to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x²+y²=4x; circle center(2,0),radius2.",
+      "SourceMathSkillReviewed": "Source29 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentPolarQuestion": "Convert polar r=4/(sinθ+7cosθ) to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "y+7x=4; line (source domain excludes denominator zero).",
+      "SourceMathSkillReviewed": "Source30 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentPolarQuestion": "Convert polar r=6/(cosθ+3sinθ) to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x+3y=6; line.",
+      "SourceMathSkillReviewed": "Source31 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentPolarQuestion": "Convert polar r=2secθ to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x=2, straight vertical line.",
+      "SourceMathSkillReviewed": "Source32 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentPolarQuestion": "Convert polar r=3cscθ to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "y=3, straight horizontal line.",
+      "SourceMathSkillReviewed": "Source33 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentPolarQuestion": "Convert polar r²=r cosθ+2 to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x²+y²=x+2; circle center(.5,0),radius1.5.",
+      "SourceMathSkillReviewed": "Source34 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentPolarQuestion": "Convert polar r²=4secθcscθ to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "xy=4, rectangular hyperbola, original sinθcosθ nonzero.",
+      "SourceMathSkillReviewed": "Source35 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentPolarQuestion": "Convert polar r=4 to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x²+y²=16; circle radius4.",
+      "SourceMathSkillReviewed": "Source36 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentPolarQuestion": "Convert polar r²=4 to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x²+y²=4; circle radius2.",
+      "SourceMathSkillReviewed": "Source37 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentPolarQuestion": "Convert polar r=1/(4cosθ−3sinθ) to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "4x−3y=1; line.",
+      "SourceMathSkillReviewed": "Source38 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentPolarQuestion": "Convert polar r=3/(cosθ−5sinθ) to Cartesian; state geometric form.",
+      "TeacherMathematicalAnswer": "x−5y=3; line.",
+      "SourceMathSkillReviewed": "Source39 polar equation conversion and conic classification",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentPolarQuestion": "Independent polar grid shows radius 2 and angle0.33333π. Give rectangular location and one equivalent polar pair.",
+      "TeacherMathematicalAnswer": "Cartesian≈(1.00000,1.73205); equivalent polar(−2,θ+π).",
+      "SourceMathSkillReviewed": "Source40 read polar grid point",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentPolarQuestion": "Independent polar grid shows radius 3 and angle1.25000π. Give rectangular location and one equivalent polar pair.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-2.12132,-2.12132); equivalent polar(−3,θ+π).",
+      "SourceMathSkillReviewed": "Source41 read polar grid point",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentPolarQuestion": "Independent polar grid shows radius -2 and angle0.16667π. Give rectangular location and one equivalent polar pair.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-1.73205,-1.00000); equivalent polar(−-2,θ+π).",
+      "SourceMathSkillReviewed": "Source42 read polar grid point",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentPolarQuestion": "Independent polar grid shows radius 1.5 and angle1.50000π. Give rectangular location and one equivalent polar pair.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-0.00000,-1.50000); equivalent polar(−1.5,θ+π).",
+      "SourceMathSkillReviewed": "Source43 read polar grid point",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentPolarQuestion": "Independent polar grid shows radius 4 and angle-0.25000π. Give rectangular location and one equivalent polar pair.",
+      "TeacherMathematicalAnswer": "Cartesian≈(2.82843,-2.82843); equivalent polar(−4,θ+π).",
+      "SourceMathSkillReviewed": "Source44 read polar grid point",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentPolarQuestion": "Plot polar point(r=-2,θ=0.3333π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-1.00000,-1.73205); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source45 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentPolarQuestion": "Plot polar point(r=-1,θ=-0.5000π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-0.00000,1.00000); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source46 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentPolarQuestion": "Plot polar point(r=3.5,θ=1.7500π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(2.47487,-2.47487); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source47 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentPolarQuestion": "Plot polar point(r=-4,θ=0.3333π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-2.00000,-3.46410); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source48 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentPolarQuestion": "Plot polar point(r=5,θ=0.5000π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(0.00000,5.00000); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source49 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentPolarQuestion": "Plot polar point(r=4,θ=-1.2500π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-2.82843,2.82843); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source50 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentPolarQuestion": "Plot polar point(r=3,θ=0.8333π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-2.59808,1.50000); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source51 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentPolarQuestion": "Plot polar point(r=-1.5,θ=1.1667π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(1.29904,0.75000); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source52 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentPolarQuestion": "Plot polar point(r=-2,θ=0.2500π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-1.41421,-1.41421); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source53 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentPolarQuestion": "Plot polar point(r=1,θ=1.5000π) and give its Cartesian position.",
+      "TeacherMathematicalAnswer": "Cartesian≈(-0.00000,-1.00000); negative r reverses direction.",
+      "SourceMathSkillReviewed": "Source54 polar plotting with signed radius",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentPolarQuestion": "Convert 5x−y=6 from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r(5cosθ−sinθ)=6.",
+      "SourceMathSkillReviewed": "Source55 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentPolarQuestion": "Convert 2x+7y=−3 from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r(2cosθ+7sinθ)=−3.",
+      "SourceMathSkillReviewed": "Source56 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentPolarQuestion": "Convert x²+(y−1)²=1 from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r²−2r sinθ=0.",
+      "SourceMathSkillReviewed": "Source57 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentPolarQuestion": "Convert (x+2)²+(y+3)²=13 from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r²+4r cosθ+6r sinθ=0.",
+      "SourceMathSkillReviewed": "Source58 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentPolarQuestion": "Convert x=2 from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r cosθ=2.",
+      "SourceMathSkillReviewed": "Source59 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentPolarQuestion": "Convert x²+y²=5y from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r²=5r sinθ.",
+      "SourceMathSkillReviewed": "Source60 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 61,
+      "IndependentPolarQuestion": "Convert x²+y²=3x from Cartesian to polar without deleting origin.",
+      "TeacherMathematicalAnswer": "r²=3r cosθ.",
+      "SourceMathSkillReviewed": "Source61 convert rectangular equation and graph polar",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 62,
+      "IndependentPolarQuestion": "Convert r=6 to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "x²+y²=36; circle radius6.",
+      "SourceMathSkillReviewed": "Source62 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 63,
+      "IndependentPolarQuestion": "Convert r=−4 to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "x²+y²=16; circle radius4.",
+      "SourceMathSkillReviewed": "Source63 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 64,
+      "IndependentPolarQuestion": "Convert θ=−2π/3 to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "line through origin y=√3 x (when signed r allowed); if r≥0, one ray.",
+      "SourceMathSkillReviewed": "Source64 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 65,
+      "IndependentPolarQuestion": "Convert θ=π/4 to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "line y=x (if r any real), otherwise northeast ray.",
+      "SourceMathSkillReviewed": "Source65 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 66,
+      "IndependentPolarQuestion": "Convert r=secθ to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "x=1.",
+      "SourceMathSkillReviewed": "Source66 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 67,
+      "IndependentPolarQuestion": "Convert r=−10sinθ to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "x²+y²=−10y, center(0,−5), radius5.",
+      "SourceMathSkillReviewed": "Source67 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 68,
+      "IndependentPolarQuestion": "Convert r=3cosθ to rectangular curve and identify shape, with signed-radius convention.",
+      "TeacherMathematicalAnswer": "x²+y²=3x, center(1.5,0), radius1.5.",
+      "SourceMathSkillReviewed": "Source68 polar-to-Cartesian graphical equivalence",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 69,
+      "IndependentPolarQuestion": "Use calculator to convert polar(r=2,θ=-0.200000π) to Cartesian.",
+      "TeacherMathematicalAnswer": "(x,y)≈(1.618,-1.176)",
+      "SourceMathSkillReviewed": "Source69 numerical coordinate conversion",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 70,
+      "IndependentPolarQuestion": "Use calculator to convert polar(r=-3,θ=0.428571π) to Cartesian.",
+      "TeacherMathematicalAnswer": "(x,y)≈(-0.668,-2.925)",
+      "SourceMathSkillReviewed": "Source70 numerical coordinate conversion",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 71,
+      "IndependentPolarQuestion": "Convert Cartesian(-7,8) to polar by calculator.",
+      "TeacherMathematicalAnswer": "r≈10.63015, θ≈2.28963 radians (131.186°).",
+      "SourceMathSkillReviewed": "Source71 numerical coordinate conversion",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 72,
+      "IndependentPolarQuestion": "Convert Cartesian(3,-4) to polar by calculator.",
+      "TeacherMathematicalAnswer": "r≈5.00000, θ≈5.35589 radians (306.870°).",
+      "SourceMathSkillReviewed": "Source72 numerical coordinate conversion",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 73,
+      "IndependentPolarQuestion": "Convert Cartesian(-2,0) to polar by calculator.",
+      "TeacherMathematicalAnswer": "r≈2.00000, θ≈3.14159 radians (180.000°).",
+      "SourceMathSkillReviewed": "Source73 numerical coordinate conversion",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 74,
+      "IndependentPolarQuestion": "Describe the locus r=2secθ in Cartesian coordinates.",
+      "TeacherMathematicalAnswer": "x=2; entire straight line with allowable signed r and defined denominator.",
+      "SourceMathSkillReviewed": "Source74 polar secant/cosecant straight-line locus",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 75,
+      "IndependentPolarQuestion": "Describe the locus r=-3secθ in Cartesian coordinates.",
+      "TeacherMathematicalAnswer": "x=-3; entire straight line with allowable signed r and defined denominator.",
+      "SourceMathSkillReviewed": "Source75 polar secant/cosecant straight-line locus",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 76,
+      "IndependentPolarQuestion": "Describe the locus r=4cscθ in Cartesian coordinates.",
+      "TeacherMathematicalAnswer": "y=4; entire straight line with allowable signed r and defined denominator.",
+      "SourceMathSkillReviewed": "Source76 polar secant/cosecant straight-line locus",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 77,
+      "IndependentPolarQuestion": "Describe the locus r=-5cscθ in Cartesian coordinates.",
+      "TeacherMathematicalAnswer": "y=-5; entire straight line with allowable signed r and defined denominator.",
+      "SourceMathSkillReviewed": "Source77 polar secant/cosecant straight-line locus",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 78,
+      "IndependentPolarQuestion": "Find a polar equation for oblique line 3x−2y=5.",
+      "TeacherMathematicalAnswer": "r=5/(3cosθ−2sinθ), wherever denominator nonzero.",
+      "SourceMathSkillReviewed": "Source78 oblique non-axis polar line",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 79,
+      "IndependentPolarQuestion": "Plot region 0≤r<4, 0≤θ<2π.",
+      "TeacherMathematicalAnswer": "Open disk of radius4 centered at pole, including origin and excluding outer circle.",
+      "SourceMathSkillReviewed": "Source79 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 80,
+      "IndependentPolarQuestion": "Describe all points with 0≤θ≤π/4 and r≥0.",
+      "TeacherMathematicalAnswer": "Closed wedge bounded by positive x-axis and 45° ray, unbounded radial direction.",
+      "SourceMathSkillReviewed": "Source80 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 81,
+      "IndependentPolarQuestion": "Plot θ=π/4, r≥2.",
+      "TeacherMathematicalAnswer": "Ray along45° starting at radius2, inclusive, and extending outward.",
+      "SourceMathSkillReviewed": "Source81 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 82,
+      "IndependentPolarQuestion": "Plot θ=π/4,r≥−3, allowing signed radius.",
+      "TeacherMathematicalAnswer": "Forward 45° ray all r≥0 plus backward225° segment length3 (endpoint included).",
+      "SourceMathSkillReviewed": "Source82 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 83,
+      "IndependentPolarQuestion": "Plot 0≤θ≤π/3 with0≤r<2.",
+      "TeacherMathematicalAnswer": "First-quadrant sector with radius<2; radial sides included, circle boundary excluded.",
+      "SourceMathSkillReviewed": "Source83 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    },
+    {
+      "SourceExercise": 84,
+      "IndependentPolarQuestion": "Plot −π/6<θ≤π/3 with −3<r<2.",
+      "TeacherMathematicalAnswer": "Forward sector with r∈[0,2) and opposite angular sector with negative r∈(−3,0); angular boundary inclusion follows θ interval.",
+      "SourceMathSkillReviewed": "Source84 signed polar region and boundary",
+      "PublisherTextCopied": false,
+      "TeacherScoring": "MANUAL_POLAR_COORDINATES"
+    }
+  ],
+  "StageD": "NOT_RUN"
+}

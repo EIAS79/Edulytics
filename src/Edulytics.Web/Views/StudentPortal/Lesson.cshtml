@@ -1977,6 +1977,24 @@
         @* Independent mathematical physical model graphs for 7.6. *@
         @* First-party law-of-sines oblique triangle diagrams. *@
         @* Original oblique SAS diagrams for law-of-cosines investigations. *@
+        @* First-party polar point diagrams for Section 8.3. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L03")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Polar coordinate point and grid illustrations">
+                <h2>Polar coordinate mathematical investigations</h2>
+                <p>Convert signed-radius points to and from Cartesian form.
+                   All plots are independent mathematical diagrams.</p>
+                @foreach (var task in Grade12PrecalculusSection83PolarModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L02")
         {
             <section class="lesson-source-aligned-activities"
