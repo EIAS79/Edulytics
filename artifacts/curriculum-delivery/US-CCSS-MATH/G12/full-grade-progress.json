@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 45,
+  "ActiveLessonOrdinal": 46,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 45,
+  "FirstIncompleteLessonOrdinal": 46,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_44_OF_73",
-  "LastClosedLessonOrdinal": 44,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_45_OF_73",
+  "LastClosedLessonOrdinal": 45,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -1571,22 +1571,23 @@
       "LessonNumber": 4,
       "Title": "Polar Coordinates: Graphs",
       "SourceSection": "8.4",
-      "PdfPageStart": 697,
-      "PdfPageEnd": 712,
-      "ACStatus": "A_C_PENDING",
+      "PdfPageStart": 696,
+      "PdfPageEnd": 711,
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u08-l04-source-academic-audit.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u08-l04-abc-close-audit.json",
+      "SourceMathExercisesReviewed": 72,
+      "ClosedAtUtc": "2026-11-07T18:51:20.854350+00:00"
     },
     {
       "Ordinal": 46,
@@ -2261,15 +2262,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 45,
+  "NextLessonOrdinal": 46,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 44,
+  "ReadyForStageD": 45,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 44,
+  "SourceVerifiedGrade12Lessons": 45,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2300,5 +2301,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T18:36:19.486187+00:00"
+  "UpdatedUtc": "2026-11-07T18:51:20.854350+00:00"
 }
