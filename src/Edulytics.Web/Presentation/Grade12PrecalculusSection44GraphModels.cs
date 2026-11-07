@@ -53,9 +53,9 @@ public static class Grade12PrecalculusSection44GraphModels
             foreach(var f in funcs)
             {
                 MathematicalPoint? previous=null;
-                for(var i=0;i<=220;i++)
+                for(var i=0;i<=120/Math.Max(1,funcs.Length);i++)
                 {
-                    var x=-7m+21m*i/220m;
+                    var x=-7m+21m*i/(120m/Math.Max(1,funcs.Length));
                     var value=f(x);
                     if(!value.HasValue || value.Value<-9m || value.Value>9m)
                     { previous=null; continue; }

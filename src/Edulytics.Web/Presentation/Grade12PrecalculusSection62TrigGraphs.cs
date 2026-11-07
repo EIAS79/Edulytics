@@ -32,9 +32,9 @@ public static class Grade12PrecalculusSection62TrigGraphs
         {
             var segments=new List<MathematicalSegment>();
             MathematicalPoint? previous=null;
-            for(int i=0;i<=700;i++)
+            for(int i=0;i<=120;i++)
             {
-                var x=-2*Math.PI+4*Math.PI*i/700d;
+                var x=-2*Math.PI+4*Math.PI*i/120d;
                 var s=Math.Sin(B*x+C);var c=Math.Cos(B*x+C);
                 var invalid=(kind=="tan"||kind=="sec")?Math.Abs(c)<.02d:Math.Abs(s)<.02d;
                 if(invalid) {previous=null;continue;}

@@ -25,9 +25,9 @@ public static class Grade12PrecalculusSection63InverseTrigGraphs
         {
             var segments=new List<MathematicalSegment>();
             MathematicalPoint? previous=null;
-            for(int i=0;i<=240;i++)
+            for(int i=0;i<=120;i++)
             {
-                var x=-2d+4d*i/240d;
+                var x=-2d+4d*i/120d;
                 var u=x/scale;
                 if(kind!="atan" && Math.Abs(u)>1d)
                 {previous=null;continue;}

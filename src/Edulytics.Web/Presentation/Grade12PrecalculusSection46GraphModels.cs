@@ -27,9 +27,9 @@ public static class Grade12PrecalculusSection46GraphModels
             foreach(var f in funcs)
             {
                 MathematicalPoint? previous=null;
-                for(var index=0; index<=200; index++)
+                for(var index=0; index<=120/Math.Max(1,funcs.Length); index++)
                 {
-                    var x=xmin+(xmax-xmin)*index/200m;
+                    var x=xmin+(xmax-xmin)*index/(120m/Math.Max(1,funcs.Length));
                     var y=f(x);
                     if(!y.HasValue || y.Value<ymin || y.Value>ymax)
                     { previous=null; continue; }

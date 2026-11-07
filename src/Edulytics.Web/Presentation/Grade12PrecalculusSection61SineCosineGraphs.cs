@@ -46,9 +46,9 @@ public static class Grade12PrecalculusSection61SineCosineGraphs
         {
             var segments=new List<MathematicalSegment>();
             MathematicalPoint? previous=null;
-            for(int i=0;i<=240;i++)
+            for(int i=0;i<=120;i++)
             {
-                var x=-2*Math.PI+4*Math.PI*i/240d;
+                var x=-2*Math.PI+4*Math.PI*i/120d;
                 var y=A*(sine?Math.Sin(B*x+C):Math.Cos(B*x+C))+D;
                 var point=new MathematicalPoint((decimal)x,(decimal)y);
                 if(previous is not null)segments.Add(new MathematicalSegment(previous,point));
