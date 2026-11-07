@@ -1,0 +1,529 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L07",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalExercise": 1,
+      "IndependentStudentMathQuestion": "Why AA^-1=A^-1A?",
+      "TeacherMathAnswer": "Both equal I by definition of a two-sided inverse.",
+      "SourceSkillFamily": "Source1–5 inverse facts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 2,
+      "IndependentStudentMathQuestion": "Does every2×2 matrix have an inverse?",
+      "TeacherMathAnswer": "Only if determinant nonzero.",
+      "SourceSkillFamily": "Source1–5 inverse facts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 3,
+      "IndependentStudentMathQuestion": "Can matrix with entire zero row be invertible?",
+      "TeacherMathAnswer": "No: determinant zero.",
+      "SourceSkillFamily": "Source1–5 inverse facts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 4,
+      "IndependentStudentMathQuestion": "Can matrix with zero column be invertible?",
+      "TeacherMathAnswer": "No: rank deficient.",
+      "SourceSkillFamily": "Source1–5 inverse facts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 5,
+      "IndependentStudentMathQuestion": "Can zero diagonal matrix be invertible?",
+      "TeacherMathAnswer": "Yes [[0,1],[1,0]] self-inverse.",
+      "SourceSkillFamily": "Source1–5 inverse facts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 6,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[4, 1], [1, 5]] and B=[[Fraction(5, 19), Fraction(-1, 19)], [Fraction(-1, 19), Fraction(4, 19)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 7,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[5, 1], [1, 6]] and B=[[Fraction(6, 29), Fraction(-1, 29)], [Fraction(-1, 29), Fraction(5, 29)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 8,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[6, 1], [1, 7]] and B=[[Fraction(7, 41), Fraction(-1, 41)], [Fraction(-1, 41), Fraction(6, 41)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 9,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[7, 1], [1, 5]] and B=[[Fraction(5, 34), Fraction(-1, 34)], [Fraction(-1, 34), Fraction(7, 34)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 10,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[3, 1], [1, 6]] and B=[[Fraction(6, 17), Fraction(-1, 17)], [Fraction(-1, 17), Fraction(3, 17)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 11,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[4, 1], [1, 7]] and B=[[Fraction(7, 27), Fraction(-1, 27)], [Fraction(-1, 27), Fraction(4, 27)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 12,
+      "IndependentStudentMathQuestion": "Verify mutual inverse of A=[[5, 1], [1, 5]] and B=[[Fraction(5, 24), Fraction(-1, 24)], [Fraction(-1, 24), Fraction(5, 24)]].",
+      "TeacherMathAnswer": "AB=BA=I_2",
+      "SourceSkillFamily": "Source6–12 inverse verification",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 13,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[6, 1], [1, 6]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(6, 35), Fraction(-1, 35)], [Fraction(-1, 35), Fraction(6, 35)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 14,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[7, 1], [1, 7]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(7, 48), Fraction(-1, 48)], [Fraction(-1, 48), Fraction(7, 48)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 15,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[3, 1], [1, 5]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(5, 14), Fraction(-1, 14)], [Fraction(-1, 14), Fraction(3, 14)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 16,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[4, 1], [1, 6]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(6, 23), Fraction(-1, 23)], [Fraction(-1, 23), Fraction(4, 23)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 17,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[5, 1], [5, 1]] if it exists.",
+      "TeacherMathAnswer": "Noninvertible",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 18,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[6, 1], [1, 5]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(5, 29), Fraction(-1, 29)], [Fraction(-1, 29), Fraction(6, 29)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 19,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[7, 1], [1, 6]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(6, 41), Fraction(-1, 41)], [Fraction(-1, 41), Fraction(7, 41)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 20,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[5, 1, 2], [1, 12, -1], [2, -1, 7]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(83, 356), Fraction(-9, 356), Fraction(-25, 356)], [Fraction(-9, 356), Fraction(31, 356), Fraction(7, 356)], [Fraction(-25, 356), Fraction(7, 356), Fraction(59, 356)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 21,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[6, 1, 2], [1, 6, -1], [2, -1, 8]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(47, 246), Fraction(-5, 123), Fraction(-13, 246)], [Fraction(-5, 123), Fraction(22, 123), Fraction(4, 123)], [Fraction(-13, 246), Fraction(4, 123), Fraction(35, 246)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 22,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[7, 1, 2], [1, 7, -1], [2, -1, 9]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(62, 393), Fraction(-11, 393), Fraction(-5, 131)], [Fraction(-11, 393), Fraction(59, 393), Fraction(3, 131)], [Fraction(-5, 131), Fraction(3, 131), Fraction(16, 131)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 23,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[8, 1, 2], [1, 8, -1], [2, -1, 10]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(79, 586), Fraction(-6, 293), Fraction(-17, 586)], [Fraction(-6, 293), Fraction(38, 293), Fraction(5, 293)], [Fraction(-17, 586), Fraction(5, 293), Fraction(63, 586)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 24,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[9, 1, 2], [1, 9, -1], [9, 1, 2]] if it exists.",
+      "TeacherMathAnswer": "Noninvertible",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 25,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[5, 1, 2], [1, 10, -1], [2, -1, 8]] if it exists.",
+      "TeacherMathAnswer": "[[Fraction(79, 343), Fraction(-10, 343), Fraction(-3, 49)], [Fraction(-10, 343), Fraction(36, 343), Fraction(1, 49)], [Fraction(-3, 49), Fraction(1, 49), Fraction(1, 7)]]",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 26,
+      "IndependentStudentMathQuestion": "Find A^-1 for A=[[6, 1, 2], [1, 11, -1], [6, 1, 2]] if it exists.",
+      "TeacherMathAnswer": "Noninvertible",
+      "SourceSkillFamily": "Source13–26 inverse computation",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 27,
+      "IndependentStudentMathQuestion": "Solve [[5, 1], [1, 5]]·X=[7, 11] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 28,
+      "IndependentStudentMathQuestion": "Solve [[6, 1], [1, 6]]·X=[8, 13] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 29,
+      "IndependentStudentMathQuestion": "Solve [[7, 1], [1, 7]]·X=[9, 15] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 30,
+      "IndependentStudentMathQuestion": "Solve [[3, 1], [1, 5]]·X=[5, 11] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 31,
+      "IndependentStudentMathQuestion": "Solve [[4, 1], [1, 6]]·X=[6, 13] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 32,
+      "IndependentStudentMathQuestion": "Solve [[5, 1], [1, 7]]·X=[7, 15] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 33,
+      "IndependentStudentMathQuestion": "Solve [[6, 1], [1, 5]]·X=[8, 11] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 34,
+      "IndependentStudentMathQuestion": "Solve [[7, 1], [1, 6]]·X=[9, 13] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 35,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 6, -1], [2, -1, 10]]·X=[13, 10, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 36,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 7, -1], [2, -1, 7]]·X=[14, 12, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 37,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 8, -1], [2, -1, 8]]·X=[15, 14, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 38,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 9, -1], [2, -1, 9]]·X=[16, 16, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 39,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 10, -1], [2, -1, 10]]·X=[17, 18, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 40,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 11, -1], [2, -1, 7]]·X=[13, 20, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 41,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 12, -1], [2, -1, 8]]·X=[14, 22, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 42,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 6, -1], [2, -1, 9]]·X=[15, 10, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 43,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 7, -1], [2, -1, 10]]·X=[16, 12, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 44,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 8, -1], [2, -1, 7]]·X=[17, 14, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 45,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 9, -1], [2, -1, 8]]·X=[13, 16, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 46,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 10, -1], [2, -1, 9]]·X=[14, 18, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 47,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 11, -1], [2, -1, 10]]·X=[15, 20, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 48,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 12, -1], [2, -1, 7]]·X=[16, 22, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 49,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 6, -1], [2, -1, 8]]·X=[17, 10, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 50,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 7, -1], [2, -1, 9]]·X=[13, 12, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source27–50 inverse linear systems",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 51,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 8, -1], [2, -1, 10]]·X=[14, 14, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 52,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 9, -1], [2, -1, 7]]·X=[15, 16, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 53,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 10, -1], [2, -1, 8]]·X=[16, 18, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 54,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 11, -1], [2, -1, 9]]·X=[17, 20, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 55,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 12, -1], [2, -1, 10]]·X=[13, 22, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 56,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 6, -1], [2, -1, 7]]·X=[14, 10, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 57,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 7, -1], [2, -1, 8]]·X=[15, 12, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 58,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 8, -1], [2, -1, 9]]·X=[16, 14, 27] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 59,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 9, -1], [2, -1, 10]]·X=[17, 16, 30] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 60,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 10, -1], [2, -1, 7]]·X=[13, 18, 21] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 61,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 11, -1], [2, -1, 8]]·X=[14, 20, 24] by inverse matrix A^-1b.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 inverse word models",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Verify mutual inverse of A=[[4, 1], [1, 5]] and B=[[Fraction(5, 19), Fraction(-1, 19)], [Fraction(-1, 19), Fraction(4, 19)]].",
+      "TeacherExpectedMath": "AB=BA=I_2"
+    },
+    {
+      "Number": 2,
+      "Question": "Verify mutual inverse of A=[[5, 1], [1, 6]] and B=[[Fraction(6, 29), Fraction(-1, 29)], [Fraction(-1, 29), Fraction(5, 29)]].",
+      "TeacherExpectedMath": "AB=BA=I_2"
+    },
+    {
+      "Number": 3,
+      "Question": "Verify mutual inverse of A=[[6, 1], [1, 7]] and B=[[Fraction(7, 41), Fraction(-1, 41)], [Fraction(-1, 41), Fraction(6, 41)]].",
+      "TeacherExpectedMath": "AB=BA=I_2"
+    },
+    {
+      "Number": 4,
+      "Question": "Verify mutual inverse of A=[[7, 1], [1, 5]] and B=[[Fraction(5, 34), Fraction(-1, 34)], [Fraction(-1, 34), Fraction(7, 34)]].",
+      "TeacherExpectedMath": "AB=BA=I_2"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Verify mutual inverse of A=[[4, 1], [1, 5]] and B=[[Fraction(5, 19), Fraction(-1, 19)], [Fraction(-1, 19), Fraction(4, 19)]]."
+    ],
+    "TeacherExpectedMath": [
+      "AB=BA=I_2"
+    ],
+    "PublisherOriginalCopied": false
+  },
+  "OriginalExerciseMathSkills": 61,
+  "StageC": "REUSE_MANUAL_TEACHER_MATRIX_SCORING",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
