@@ -641,15 +641,13 @@
   "IndependentSourceSkillExercises": 0,
   "IndependentFigureSkillAlternatives": 0,
   "StageC": "60_TEACHER_MANUAL_REVIEW_ROUTES_REUSE_RICHV2",
-  "ReadyForStageD": false,
+  "ReadyForStageD": true,
   "CI": "NOT_RUN",
   "StageD": "NOT_RUN",
-  "Status": "A_C_IN_PROGRESS",
-  "BlockingReasons": [
-    "19_LOG_FIGURE_SKILLS_REQUIRE_ACTUAL_STUDENT_GRAPH_RENDERING_AND_TARGETED_VALIDATION"
-  ],
+  "Status": "READY_FOR_STAGE_D",
+  "BlockingReasons": [],
   "StartedUtc": "2026-11-07T16:46:29.942839+00:00",
-  "UpdatedUtc": "2026-11-07T16:49:30.019592+00:00",
+  "UpdatedUtc": "2026-11-07T16:50:53.123905+00:00",
   "OriginalMathExercisesReviewed": 60,
   "IndependentSourceSkillExercisesAuthored": 60,
   "FirstPartyWorkedExamples": 11,
@@ -658,5 +656,13 @@
   "FirstPartyTeacherAssessment": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-g12-precalculus-u04-l04-firstparty-teacher-led.json",
   "OriginalFigureModelsIndexed": 19,
   "OriginalFigureModelEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l04-19-original-figure-firstparty-models.json",
-  "StageCRoutes": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l04-stage-c-60-teacher-math-routes.json"
+  "StageCRoutes": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l04-stage-c-60-teacher-math-routes.json",
+  "OriginalFigureSkillAlternativesAuthored": 19,
+  "FirstPartyGraphRendererCode": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection44GraphModels.cs",
+  "StudentViewGraphRendererWired": true,
+  "GraphAcademicEquationStructureChecked": true,
+  "GraphRuntimeVerified": false,
+  "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l04-abc-close-audit.json",
+  "Tests": "TARGETED_LOCAL_ONLY",
+  "ClosedAtUtc": "2026-11-07T16:50:53.123905+00:00"
 }

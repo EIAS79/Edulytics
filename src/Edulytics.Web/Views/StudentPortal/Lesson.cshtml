@@ -1963,6 +1963,26 @@
            Mathematical drawings are teacher-reviewed; runtime is reserved for Stage D. *@
         @* Grade 12 Section 4.2: original first-party typed math graphs.
            The publisher figure skills are covered, not replicated as pixels. *@
+        @* Grade 12 log-graph first-party mathematical artwork.
+           Source math skill alignment only; publisher figures not reused. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L04")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Logarithmic graph skill alternatives">
+                <h2>Nineteen independent logarithmic graphical investigations</h2>
+                <p>Examine the vertical asymptotes, valid domains, shifts and reflections.
+                   The diagrams are original Edulytics plots. Explain your conclusions
+                   and have your teacher review free-response graphical answers.</p>
+                @foreach (var task in Grade12PrecalculusSection44GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Graph skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02")
         {
             <section class="lesson-source-aligned-activities"
