@@ -1,0 +1,212 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L05",
+  "ContentVersion": "g12-u08-l05-firstparty-complex-polar-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L05",
+      "CultureCode": "en",
+      "Title": "Polar Form of Complex Numbers",
+      "ExplanationParagraphs": [
+        "Complex z=a+bi plots at (a,b) in the Argand plane with real horizontal axis and imaginary vertical axis.",
+        "The modulus r=sqrt(a²+b²) and argument θ=atan2(b,a) describe z=r(cosθ+i sinθ)=r cisθ. For zero, the argument is undefined.",
+        "Use the correct quadrant when converting a nonzero complex number from rectangular to polar form.",
+        "Polar multiplication multiplies moduli and adds arguments; division divides moduli and subtracts arguments when denominator is nonzero.",
+        "De Moivre's theorem (r cisθ)^n=r^n cis(nθ) for integer n supports efficient powers.",
+        "The n distinct nth roots of nonzero z=r cisθ are r^(1/n) cis((θ+2πk)/n), k=0,...,n-1.",
+        "Round only final decimal approximations; retain exact special-angle values when known.",
+        "Independent Cool-down: convert -3-3i to polar, multiply 2cis30° by 4cis90°, and find all square roots of 9cis180°.",
+        "Independent Try It 1: Plot -1+2i.",
+        "Independent Try It 2: Find |8-6i|.",
+        "Independent Try It 3: Find |-5+12i|.",
+        "Independent Try It 4: Convert -3+3i to cis form.",
+        "Independent Try It 5: Convert 4cis150° to a+bi.",
+        "Independent Try It 6: Multiply 2cis40° and 5cis110°.",
+        "Independent Try It 7: Divide 6cis300° by 3cis60°.",
+        "Independent Try It 8: Find (3cis30°)^2."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complex plane",
+          "Question": "Plot -3+4i.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "(-3,4); modulus5."
+          ],
+          "Answer": "(-3,4); modulus5.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Absolute value",
+          "Question": "Compute modulus of 5-12i.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "13."
+          ],
+          "Answer": "13.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Modulus with radical",
+          "Question": "Compute modulus of sqrt7+3i.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "4."
+          ],
+          "Answer": "4.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Polar coordinates",
+          "Question": "Convert 3+3i to polar.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "3sqrt2 cis45°."
+          ],
+          "Answer": "3sqrt2 cis45°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Quadrant and argument",
+          "Question": "Convert -2-2sqrt3 i to polar.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "4cis240°."
+          ],
+          "Answer": "4cis240°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Polar to rectangular",
+          "Question": "Convert 8cis60°.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "4+4sqrt3 i."
+          ],
+          "Answer": "4+4sqrt3 i.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Rectangular negative axis",
+          "Question": "Convert 3cis180°.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "-3."
+          ],
+          "Answer": "-3.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Product",
+          "Question": "(2cis30°)(3cis100°).",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "6cis130°."
+          ],
+          "Answer": "6cis130°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Quotient",
+          "Question": "(8cis240°)/(2cis30°).",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "4cis210°."
+          ],
+          "Answer": "4cis210°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "De Moivre power",
+          "Question": "(2cis45°)^3.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "8cis135°."
+          ],
+          "Answer": "8cis135°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        },
+        {
+          "Title": "Cube roots",
+          "Question": "Cube roots of 8cis0°.",
+          "Method": "Use Argand coordinates, modulus/argument and cis arithmetic.",
+          "Steps": [
+            "2cis0°, 2cis120°, 2cis240°."
+          ],
+          "Answer": "2cis0°, 2cis120°, 2cis240°.",
+          "Check": "Convert back to a+bi or exponentiate roots."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Modulus",
+          "Definition": "|a+bi|=sqrt(a²+b²).",
+          "Rule": "Nonnegative radius.",
+          "Example": "|3+4i|=5."
+        },
+        {
+          "Title": "Polar multiplication",
+          "Definition": "r1cisθ1·r2cisθ2=r1r2cis(θ1+θ2).",
+          "Rule": "Angles same unit.",
+          "Example": "2cis30°·3cis60°=6cis90°."
+        },
+        {
+          "Title": "Complex roots",
+          "Definition": "r^(1/n)cis((θ+2πk)/n).",
+          "Rule": "k=0,...,n-1 for nonzero z.",
+          "Example": "Cube roots of8."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent complex plane coordinates",
+          "Description": "First-party Argand quadrant table.",
+          "PrimaryLabel": "Complex number",
+          "SecondaryLabel": "Point",
+          "Rows": [
+            {
+              "Label": "z",
+              "Cells": [
+                "3+4i",
+                "-3+4i",
+                "-3-4i",
+                "3-4i"
+              ]
+            },
+            {
+              "Label": "(Re,Im)",
+              "Cells": [
+                "(3,4)",
+                "(-3,4)",
+                "(-3,-4)",
+                "(3,-4)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Plot complex numbers in the Argand plane.",
+        "Use modulus and quadrant-aware argument.",
+        "Multiply/divide in cis form.",
+        "Apply De Moivre and all nth-root branches."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use atan(b/a) without quadrant correction.",
+          "WhyWrong": "Arctangent loses quadrant.",
+          "Correction": "Use atan2(b,a)."
+        },
+        {
+          "Mistake": "Return only one nonzero nth root.",
+          "WhyWrong": "There are n distinct complex nth roots.",
+          "Correction": "Enumerate k=0,...,n-1."
+        }
+      ]
+    }
+  ]
+}

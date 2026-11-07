@@ -1,0 +1,676 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L05",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "OriginalExerciseNumber": 1,
+      "IndependentStudentQuestion": "Explain real and imaginary coordinates of z=-4+7i.",
+      "TeacherMathAnswer": "Real part -4, imaginary part 7; point (-4,7).",
+      "SourceMathSkill": "Source 1 complex a+bi components.",
+      "MathematicalSpotCheck": false,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 2,
+      "IndependentStudentQuestion": "Interpret |z| geometrically for z=a+bi.",
+      "TeacherMathAnswer": "Distance from origin to (a,b), sqrt(a²+b²).",
+      "SourceMathSkill": "Source 2 modulus meaning.",
+      "MathematicalSpotCheck": false,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 3,
+      "IndependentStudentQuestion": "Convert z=3-3i to polar form.",
+      "TeacherMathAnswer": "r=3sqrt2; principal θ=315° (or -45°); z=3sqrt2 cis315°.",
+      "SourceMathSkill": "Source 3 rectangular-to-polar.",
+      "MathematicalSpotCheck": false,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 4,
+      "IndependentStudentQuestion": "Multiply z1=2cis30° and z2=3cis70°.",
+      "TeacherMathAnswer": "6cis100°; multiply magnitudes and add arguments.",
+      "SourceMathSkill": "Source 4 complex multiplication.",
+      "MathematicalSpotCheck": false,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 5,
+      "IndependentStudentQuestion": "State De Moivre's identity and a use.",
+      "TeacherMathAnswer": "(r cisθ)^n=r^n cis(nθ) for integer n; powers, roots by root formula.",
+      "SourceMathSkill": "Source 5 De Moivre theorem.",
+      "MathematicalSpotCheck": false,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 6,
+      "IndependentStudentQuestion": "Find modulus of z=4+(3)i.",
+      "TeacherMathAnswer": "|z|=5.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 7,
+      "IndependentStudentQuestion": "Find modulus of z=-8+(6)i.",
+      "TeacherMathAnswer": "|z|=10.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 8,
+      "IndependentStudentQuestion": "Find modulus of z=-5+(-12)i.",
+      "TeacherMathAnswer": "|z|=13.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 9,
+      "IndependentStudentQuestion": "Find modulus of z=1.732051+(-1)i.",
+      "TeacherMathAnswer": "|z|=2.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 10,
+      "IndependentStudentQuestion": "Find modulus of z=0+(3)i.",
+      "TeacherMathAnswer": "|z|=3.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 11,
+      "IndependentStudentQuestion": "Find modulus of z=2.5+(-1.5)i.",
+      "TeacherMathAnswer": "|z|=2.915476.",
+      "SourceMathSkill": "Source exercises 6–11 absolute values.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 12,
+      "IndependentStudentQuestion": "Convert z=3+(3)i to cis polar form.",
+      "TeacherMathAnswer": "r≈4.242641, θ≈45.000000°; z=r cisθ.",
+      "SourceMathSkill": "Source 12–16 rectangular-to-polar forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 13,
+      "IndependentStudentQuestion": "Convert z=6+(-2)i to cis polar form.",
+      "TeacherMathAnswer": "r≈6.324555, θ≈341.565051°; z=r cisθ.",
+      "SourceMathSkill": "Source 12–16 rectangular-to-polar forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 14,
+      "IndependentStudentQuestion": "Convert z=-1+(-1.732051)i to cis polar form.",
+      "TeacherMathAnswer": "r≈2.000000, θ≈240.000000°; z=r cisθ.",
+      "SourceMathSkill": "Source 12–16 rectangular-to-polar forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 15,
+      "IndependentStudentQuestion": "Convert z=1.732051+(3)i to cis polar form.",
+      "TeacherMathAnswer": "r≈3.464102, θ≈60.000000°; z=r cisθ.",
+      "SourceMathSkill": "Source 12–16 rectangular-to-polar forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 16,
+      "IndependentStudentQuestion": "Convert z=-0+(-4)i to cis polar form.",
+      "TeacherMathAnswer": "r≈4.000000, θ≈270.000000°; z=r cisθ.",
+      "SourceMathSkill": "Source 12–16 rectangular-to-polar forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 17,
+      "IndependentStudentQuestion": "Convert 8cis(30°) to rectangular form.",
+      "TeacherMathAnswer": "z=6.928203+(4)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 18,
+      "IndependentStudentQuestion": "Convert 3cis(60°) to rectangular form.",
+      "TeacherMathAnswer": "z=1.5+(2.598076)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 19,
+      "IndependentStudentQuestion": "Convert 5cis(210°) to rectangular form.",
+      "TeacherMathAnswer": "z=-4.330127+(-2.5)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 20,
+      "IndependentStudentQuestion": "Convert 6cis(135°) to rectangular form.",
+      "TeacherMathAnswer": "z=-4.242641+(4.242641)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 21,
+      "IndependentStudentQuestion": "Convert 4cis(240°) to rectangular form.",
+      "TeacherMathAnswer": "z=-2+(-3.464102)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 22,
+      "IndependentStudentQuestion": "Convert 2.828427cis(300°) to rectangular form.",
+      "TeacherMathAnswer": "z=1.414214+(-2.44949)i, via (r cosθ,r sinθ).",
+      "SourceMathSkill": "Source 17–22 polar-to-rectangular forms.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 23,
+      "IndependentStudentQuestion": "Compute product of z1=2cis20°, z2=3cis80°.",
+      "TeacherMathAnswer": "z1z2=6cis(100°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 24,
+      "IndependentStudentQuestion": "Compute product of z1=1.414214cis125°, z2=3cis135°.",
+      "TeacherMathAnswer": "z1z2=4.242641cis(260°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 25,
+      "IndependentStudentQuestion": "Compute product of z1=5cis120°, z2=2cis60°.",
+      "TeacherMathAnswer": "z1z2=10cis(180°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 26,
+      "IndependentStudentQuestion": "Compute product of z1=3cis45°, z2=2cis30°.",
+      "TeacherMathAnswer": "z1z2=6cis(75°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 27,
+      "IndependentStudentQuestion": "Compute product of z1=2cis112.5°, z2=4cis15°.",
+      "TeacherMathAnswer": "z1z2=8cis(127.5°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 28,
+      "IndependentStudentQuestion": "Compute product of z1=6cis90°, z2=1.5cis75°.",
+      "TeacherMathAnswer": "z1z2=9cis(165°).",
+      "SourceMathSkill": "Source 23–28 polar multiplication.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 29,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=24cis120°, z2=4cis50°.",
+      "TeacherMathAnswer": "z1/z2=6cis(70°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 30,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=3cis90°, z2=2cis60°.",
+      "TeacherMathAnswer": "z1/z2=1.5cis(30°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 31,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=18cis120°, z2=6cis40°.",
+      "TeacherMathAnswer": "z1/z2=3cis(80°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 32,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=8cis60°, z2=2cis45°.",
+      "TeacherMathAnswer": "z1/z2=4cis(15°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 33,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=7.071068cis180°, z2=1.414214cis120°.",
+      "TeacherMathAnswer": "z1/z2=5cis(60°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 34,
+      "IndependentStudentQuestion": "Compute quotient z1/z2 for z1=9cis108°, z2=3cis45°.",
+      "TeacherMathAnswer": "z1/z2=3cis(63°).",
+      "SourceMathSkill": "Source 29–34 polar division.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 35,
+      "IndependentStudentQuestion": "Apply De Moivre to (3cis45°)^3.",
+      "TeacherMathAnswer": "27cis(135°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 36,
+      "IndependentStudentQuestion": "Apply De Moivre to (2cis75°)^4.",
+      "TeacherMathAnswer": "16cis(300°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 37,
+      "IndependentStudentQuestion": "Apply De Moivre to (4cis120°)^2.",
+      "TeacherMathAnswer": "16cis(240°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 38,
+      "IndependentStudentQuestion": "Apply De Moivre to (5cis30°)^2.",
+      "TeacherMathAnswer": "25cis(60°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 39,
+      "IndependentStudentQuestion": "Apply De Moivre to (2cis35°)^4.",
+      "TeacherMathAnswer": "16cis(140°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 40,
+      "IndependentStudentQuestion": "Apply De Moivre to (2cis105°)^3.",
+      "TeacherMathAnswer": "8cis(315°).",
+      "SourceMathSkill": "Source 35–40 integer complex powers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 41,
+      "IndependentStudentQuestion": "Find all 3th roots of z=8cis(120°).",
+      "TeacherMathAnswer": "3 roots: 2cisθ where θ in [40.0, 160.0, 280.0]°.",
+      "SourceMathSkill": "Source 41–45 distinct roots of complex numbers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 42,
+      "IndependentStudentQuestion": "Find all 2th roots of z=25cis(100°).",
+      "TeacherMathAnswer": "2 roots: 5cisθ where θ in [50.0, 230.0]°.",
+      "SourceMathSkill": "Source 41–45 distinct roots of complex numbers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 43,
+      "IndependentStudentQuestion": "Find all 3th roots of z=64cis(240°).",
+      "TeacherMathAnswer": "3 roots: 4cisθ where θ in [80.0, 200.0, 320.0]°.",
+      "SourceMathSkill": "Source 41–45 distinct roots of complex numbers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 44,
+      "IndependentStudentQuestion": "Find all 2th roots of z=36cis(180°).",
+      "TeacherMathAnswer": "2 roots: 6cisθ where θ in [90.0, 270.0]°.",
+      "SourceMathSkill": "Source 41–45 distinct roots of complex numbers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 45,
+      "IndependentStudentQuestion": "Find all 3th roots of z=27cis(315°).",
+      "TeacherMathAnswer": "3 roots: 3cisθ where θ in [105.0, 225.0, 345.0]°.",
+      "SourceMathSkill": "Source 41–45 distinct roots of complex numbers.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 46,
+      "IndependentStudentQuestion": "Plot z=3+(4)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (3,4), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 47,
+      "IndependentStudentQuestion": "Plot z=-4+(-2)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (-4,-2), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 48,
+      "IndependentStudentQuestion": "Plot z=5+(-3)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (5,-3), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 49,
+      "IndependentStudentQuestion": "Plot z=-2+(-6)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (-2,-6), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 50,
+      "IndependentStudentQuestion": "Plot z=4+(1)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (4,1), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 51,
+      "IndependentStudentQuestion": "Plot z=0+(5)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (0,5), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 52,
+      "IndependentStudentQuestion": "Plot z=-6+(0)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (-6,0), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 53,
+      "IndependentStudentQuestion": "Plot z=2+(-7)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (2,-7), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 54,
+      "IndependentStudentQuestion": "Plot z=-3+(2)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (-3,2), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 55,
+      "IndependentStudentQuestion": "Plot z=1+(-5)i on an independent Argand plane.",
+      "TeacherMathAnswer": "Plot (1,-5), Re horizontal, Im vertical.",
+      "SourceMathSkill": "Source 46–55 complex plane plotted coordinates.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 56,
+      "IndependentStudentQuestion": "Use calculator method to express z=7+(7)i in polar form (2 decimal places).",
+      "TeacherMathAnswer": "r≈9.90, θ≈45.00°.",
+      "SourceMathSkill": "Source 56–58 technology polar conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 57,
+      "IndependentStudentQuestion": "Use calculator method to express z=4+(-3)i in polar form (2 decimal places).",
+      "TeacherMathAnswer": "r≈5.00, θ≈323.13°.",
+      "SourceMathSkill": "Source 56–58 technology polar conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 58,
+      "IndependentStudentQuestion": "Use calculator method to express z=-5+(-5)i in polar form (2 decimal places).",
+      "TeacherMathAnswer": "r≈7.07, θ≈225.00°.",
+      "SourceMathSkill": "Source 56–58 technology polar conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 59,
+      "IndependentStudentQuestion": "Convert 5cis(120°) to rectangular coordinates rounded to hundredths.",
+      "TeacherMathAnswer": "z≈-2.50+(4.33)i.",
+      "SourceMathSkill": "Source 59–61 technology rectangular conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 60,
+      "IndependentStudentQuestion": "Convert 3cis(45°) to rectangular coordinates rounded to hundredths.",
+      "TeacherMathAnswer": "z≈2.12+(2.12)i.",
+      "SourceMathSkill": "Source 59–61 technology rectangular conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExerciseNumber": 61,
+      "IndependentStudentQuestion": "Convert 6cis(210°) to rectangular coordinates rounded to hundredths.",
+      "TeacherMathAnswer": "z≈-5.20+(-3.00)i.",
+      "SourceMathSkill": "Source 59–61 technology rectangular conversion.",
+      "MathematicalSpotCheck": true,
+      "PublisherExerciseCopied": false,
+      "AssessmentMode": "MANUAL_TEACHER_REVIEW",
+      "RuntimeVerified": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Plot -1+2i.",
+      "TeacherExpectedMath": "(-1,2)."
+    },
+    {
+      "Number": 2,
+      "Question": "Find |8-6i|.",
+      "TeacherExpectedMath": "10."
+    },
+    {
+      "Number": 3,
+      "Question": "Find |-5+12i|.",
+      "TeacherExpectedMath": "13."
+    },
+    {
+      "Number": 4,
+      "Question": "Convert -3+3i to cis form.",
+      "TeacherExpectedMath": "3sqrt2cis135°."
+    },
+    {
+      "Number": 5,
+      "Question": "Convert 4cis150° to a+bi.",
+      "TeacherExpectedMath": "-2sqrt3+2i."
+    },
+    {
+      "Number": 6,
+      "Question": "Multiply 2cis40° and 5cis110°.",
+      "TeacherExpectedMath": "10cis150°."
+    },
+    {
+      "Number": 7,
+      "Question": "Divide 6cis300° by 3cis60°.",
+      "TeacherExpectedMath": "2cis240°."
+    },
+    {
+      "Number": 8,
+      "Question": "Find (3cis30°)^2.",
+      "TeacherExpectedMath": "9cis60°."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Convert -3-3i to polar.",
+      "Multiply 2cis30° and4cis90°.",
+      "Find two square roots of9cis180°."
+    ],
+    "TeacherExpectedMath": [
+      "3sqrt2cis225°.",
+      "8cis120°.",
+      "3cis90°, 3cis270°."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "SourceMathExercisesReviewed": 61,
+  "StageC": "REUSE_RICHV2_MANUAL_COMPLEX_MATH",
+  "AutoGradingVerified": false,
+  "StageD": "NOT_RUN"
+}
