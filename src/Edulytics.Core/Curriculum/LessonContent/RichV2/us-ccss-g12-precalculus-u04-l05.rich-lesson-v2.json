@@ -1,0 +1,253 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L05",
+  "ContentVersion": "g12-u04-l05-firstparty-log-properties-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L05",
+      "CultureCode": "en",
+      "Title": "Logarithmic Properties",
+      "ExplanationParagraphs": [
+        "For any valid common base b, log_b(MN)=log_b M+log_b N, log_b(M/N)=log_b M−log_b N and log_b(M^k)=k log_b M, with all original log arguments positive.",
+        "Expand products and quotients after identifying positive variable restrictions; when condensation creates an expression, preserve original domains.",
+        "Use roots as rational exponents. For positive x, log_b(nth_root(x))=(1/n)log_b(x).",
+        "Any base b>0,b!=1 can be converted: log_b(x)=ln(x)/ln(b), for x>0.",
+        "For logarithmic equations, combine logs first, solve, then check all original argument domains and reject extraneous roots.",
+        "An original source photograph illustrating a chemistry pH measurement is replaced by independent log-scale numerical examples; no publisher photo is copied.",
+        "Independent Cool-down: expand log((6x²)/y), condense 2lnx−lnz and solve log_2(x+1)=3.",
+        "Independent Try It 1: Expand log_2(5xy).",
+        "Independent Try It 2: Expand ln(6x/y).",
+        "Independent Try It 3: Expand log_5(x³).",
+        "Independent Try It 4: Expand log(sqrt[4](x)).",
+        "Independent Try It 5: Condense 4lnx.",
+        "Independent Try It 6: Expand ln(2a³/b²).",
+        "Independent Try It 7: Expand log_3(sqrt(x³)).",
+        "Independent Try It 8: Expand ln((x² y)/sqrt z).",
+        "Independent Try It 9: Condense log2+logx−logy.",
+        "Independent Try It 10: Condense 3lnx+lny−2lnz.",
+        "Independent Try It 11: Condense (1/2)ln9+lnx.",
+        "Independent Try It 12: Evaluate log_4(64)−log_4(4).",
+        "Independent Try It 13: Express log_11 7 using ln.",
+        "Independent Try It 14: Evaluate log_2 13 to 5 decimals."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Product rule",
+          "Question": "Expand log_2(3xy).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "log_2 3+log_2x+log_2y for x,y>0."
+          ],
+          "Answer": "log_2 3+log_2x+log_2y for x,y>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Quotient rule",
+          "Question": "Expand ln((4x)/y).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "ln4+lnx−lny for x,y>0."
+          ],
+          "Answer": "ln4+lnx−lny for x,y>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Power rule",
+          "Question": "Expand log_3(x^5).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "5log_3 x for x>0."
+          ],
+          "Answer": "5log_3 x for x>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Root power",
+          "Question": "Expand log(sqrt(x)).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "(1/2)log x for x>0."
+          ],
+          "Answer": "(1/2)log x for x>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Reverse power rule",
+          "Question": "Condense 3ln x.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "ln(x³), x>0."
+          ],
+          "Answer": "ln(x³), x>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Combined rules",
+          "Question": "Expand log((3x²)/(y³)).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "log3+2logx−3logy."
+          ],
+          "Answer": "log3+2logx−3logy.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Radical law",
+          "Question": "Expand log_2(cube_root(x²)).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "(2/3)log_2x for x>0."
+          ],
+          "Answer": "(2/3)log_2x for x>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Complex logarithm",
+          "Question": "Expand ln((5a²sqrt(b))/c).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "ln5+2lna+(1/2)lnb−lnc."
+          ],
+          "Answer": "ln5+2lna+(1/2)lnb−lnc.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Condense product quotient",
+          "Question": "Condense log3+log x−log y.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "log(3x/y) for x,y>0."
+          ],
+          "Answer": "log(3x/y) for x,y>0.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Condense complex",
+          "Question": "Condense 2logx+log(y+1)−3logz.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "log(x²(y+1)/z³)."
+          ],
+          "Answer": "log(x²(y+1)/z³).",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Single logarithm",
+          "Question": "Condense (1/4)ln16+ln x.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "ln(2x)."
+          ],
+          "Answer": "ln(2x).",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Apply laws exactly",
+          "Question": "Evaluate log_2(16)−log_2(2).",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "4−1=3."
+          ],
+          "Answer": "4−1=3.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Change base to ln",
+          "Question": "Express log_7 13 via ln.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "ln13/ln7."
+          ],
+          "Answer": "ln13/ln7.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        },
+        {
+          "Title": "Evaluate change base",
+          "Question": "Evaluate log_3 11 to five decimals.",
+          "Method": "Use domain-safe log product, quotient and power identities.",
+          "Steps": [
+            "2.18266."
+          ],
+          "Answer": "2.18266.",
+          "Check": "Recombine logarithms and enforce positivity of original arguments."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product rule",
+          "Definition": "log_b(MN)=log_bM+log_bN for M,N>0.",
+          "Rule": "Sum of logs represents a positive product.",
+          "Example": "log_2(3x)=log_2 3+log_2 x."
+        },
+        {
+          "Title": "Quotient rule",
+          "Definition": "log_b(M/N)=log_bM−log_bN for M,N>0.",
+          "Rule": "Difference represents a positive ratio.",
+          "Example": "ln(x/y)=lnx−lny."
+        },
+        {
+          "Title": "Power rule",
+          "Definition": "log_b(M^k)=k log_bM when M>0.",
+          "Rule": "Rewrite radicals as powers first.",
+          "Example": "log(sqrt(x))=(1/2)logx."
+        },
+        {
+          "Title": "Change of base",
+          "Definition": "log_b(M)=lnM/lnb, M>0, b>0 and b!=1.",
+          "Rule": "Numerical calculators support common and natural logarithms.",
+          "Example": "log_7(13)=ln13/ln7."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent base10 pH logarithmic scale",
+          "Description": "Original educational numerical replacement for chemistry photograph; sample H+ concentration relates to pH=−log10[H+]. No original image copied.",
+          "PrimaryLabel": "Hydrogen ion concentration (mol/L)",
+          "SecondaryLabel": "pH value",
+          "Rows": [
+            {
+              "Label": "[H+]",
+              "Cells": [
+                "10^(−2)",
+                "10^(−4)",
+                "10^(−7)",
+                "10^(−9)"
+              ]
+            },
+            {
+              "Label": "pH=−log10[H+]",
+              "Cells": [
+                "2",
+                "4",
+                "7",
+                "9"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Use product, quotient and power rules.",
+        "Preserve original domains when combining logs.",
+        "Use natural-log change of base.",
+        "Check algebraic solutions in originals."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume log(x+y)=logx+logy.",
+          "WhyWrong": "Sum inside a logarithm is not a product.",
+          "Correction": "Product rule only for multiplication."
+        },
+        {
+          "Mistake": "Ignore individual argument positivity when condensing.",
+          "WhyWrong": "The condensed result may define extra input values.",
+          "Correction": "Retain original domain constraints."
+        }
+      ]
+    }
+  ]
+}

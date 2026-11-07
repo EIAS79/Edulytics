@@ -1,0 +1,474 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L05",
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Expand log_2(5xy).",
+      "TeacherExpectedMath": "log_2 5+log_2x+log_2y."
+    },
+    {
+      "Number": 2,
+      "Question": "Expand ln(6x/y).",
+      "TeacherExpectedMath": "ln6+lnx−lny."
+    },
+    {
+      "Number": 3,
+      "Question": "Expand log_5(x³).",
+      "TeacherExpectedMath": "3log_5x."
+    },
+    {
+      "Number": 4,
+      "Question": "Expand log(sqrt[4](x)).",
+      "TeacherExpectedMath": "(1/4)logx."
+    },
+    {
+      "Number": 5,
+      "Question": "Condense 4lnx.",
+      "TeacherExpectedMath": "ln(x⁴)."
+    },
+    {
+      "Number": 6,
+      "Question": "Expand ln(2a³/b²).",
+      "TeacherExpectedMath": "ln2+3lna−2lnb."
+    },
+    {
+      "Number": 7,
+      "Question": "Expand log_3(sqrt(x³)).",
+      "TeacherExpectedMath": "(3/2)log_3x."
+    },
+    {
+      "Number": 8,
+      "Question": "Expand ln((x² y)/sqrt z).",
+      "TeacherExpectedMath": "2lnx+lny−(1/2)lnz."
+    },
+    {
+      "Number": 9,
+      "Question": "Condense log2+logx−logy.",
+      "TeacherExpectedMath": "log(2x/y)."
+    },
+    {
+      "Number": 10,
+      "Question": "Condense 3lnx+lny−2lnz.",
+      "TeacherExpectedMath": "ln(x³y/z²)."
+    },
+    {
+      "Number": 11,
+      "Question": "Condense (1/2)ln9+lnx.",
+      "TeacherExpectedMath": "ln(3x)."
+    },
+    {
+      "Number": 12,
+      "Question": "Evaluate log_4(64)−log_4(4).",
+      "TeacherExpectedMath": "3−1=2."
+    },
+    {
+      "Number": 13,
+      "Question": "Express log_11 7 using ln.",
+      "TeacherExpectedMath": "ln7/ln11."
+    },
+    {
+      "Number": 14,
+      "Question": "Evaluate log_2 13 to 5 decimals.",
+      "TeacherExpectedMath": "3.70044."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Expand log(6x²/y).",
+      "Condense 2lnx−lnz.",
+      "Solve log_2(x+1)=3."
+    ],
+    "TeacherExpectedMath": [
+      "log6+2logx−logy for x,y>0.",
+      "ln(x²/z) for x,z>0.",
+      "x=7; argument 8 positive."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "How does the power rule simplify log_b(sqrt[3](x)) for x>0?",
+      "TeacherExpectedMath": "log_b(x^(1/3))=(1/3)log_b(x).",
+      "OriginalSourceMathReviewed": "Original #1 power rule for logarithmic nth roots.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Give the change-of-base identity for log_7(x).",
+      "TeacherExpectedMath": "log_7(x)=ln(x)/ln(7)=log(x)/log(7), x>0.",
+      "OriginalSourceMathReviewed": "Original #2 change of base enables arbitrary-base calculator logs.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Expand log_b(6xy) for positive variables.",
+      "TeacherExpectedMath": "log_b6+log_bx+log_by",
+      "OriginalSourceMathReviewed": "Source #3 log_b(7x·2y)=log_b14+log_bx+log_by.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Expand ln(10abc) for positive variables.",
+      "TeacherExpectedMath": "ln10+ln a+ln b+ln c",
+      "OriginalSourceMathReviewed": "Source #4 ln(3ab·5c)=ln15+ln a+ln b+ln c.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Expand log_b(5/9) for positive variables.",
+      "TeacherExpectedMath": "log_b5−log_b9",
+      "OriginalSourceMathReviewed": "Source #5 log_b(13/17)=log_b13−log_b17.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Expand log_4((xy)/z) for positive variables.",
+      "TeacherExpectedMath": "log_4x+log_4y−log_4z",
+      "OriginalSourceMathReviewed": "Source #6 log_4((x/z)/w)=log_4x−log_4z−log_4w.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Expand ln(1/(5p)) for positive variables.",
+      "TeacherExpectedMath": "−ln5−ln p",
+      "OriginalSourceMathReviewed": "Source #7 ln(1/(4k))=−ln4−ln k.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Expand log_2(x^3y^2) for positive variables.",
+      "TeacherExpectedMath": "3log_2x+2log_2y",
+      "OriginalSourceMathReviewed": "Source #8 log_2(y^x)=x log_2 y, for y>0.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Condense to one logarithm: ln2+ln x+ln y.",
+      "TeacherExpectedMath": "ln(2xy)",
+      "OriginalSourceMathReviewed": "Source #9 ln7+lnx+lny=ln(7xy).",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Condense to one logarithm: log_3 5+log_3 a+log_3 2+log_3 b.",
+      "TeacherExpectedMath": "log_3(10ab)",
+      "OriginalSourceMathReviewed": "Source #10 log_3 2+log_3 a+log_3 11+log_3 b=log_3(22ab).",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Condense to one logarithm: log_b36−log_b9.",
+      "TeacherExpectedMath": "log_b4",
+      "OriginalSourceMathReviewed": "Source #11 log_b28−log_b7=log_b4.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Condense to one logarithm: ln a−ln b−ln c.",
+      "TeacherExpectedMath": "ln(a/(bc))",
+      "OriginalSourceMathReviewed": "Source #12 ln a−ln d−ln c=ln(a/(dc)).",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Condense to one logarithm: −log_b(1/5).",
+      "TeacherExpectedMath": "log_b5",
+      "OriginalSourceMathReviewed": "Source #13 −log_b(1/7)=log_b7.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Condense to one logarithm: (1/2)ln16.",
+      "TeacherExpectedMath": "ln4",
+      "OriginalSourceMathReviewed": "Source #14 (1/3)ln8=ln2.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Expand as much as possible: log(x^4y^3/z^2) (assume valid positive variables).",
+      "TeacherExpectedMath": "4log x+3log y−2log z",
+      "OriginalSourceMathReviewed": "Source #15 log(x^15 y^13/z^19)=15logx+13logy−19logz for positive arguments.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Expand as much as possible: ln(a^(-2)b^3/c^4) (assume valid positive variables).",
+      "TeacherExpectedMath": "−2ln a+3ln b−4ln c",
+      "OriginalSourceMathReviewed": "Source #16 ln(a^(−2)b^(−4)c^5)=−2lna−4lnb+5lnc for positive variables.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Expand as much as possible: log(sqrt(x^3/y^2)) (assume valid positive variables).",
+      "TeacherExpectedMath": "(3/2)log x−log y",
+      "OriginalSourceMathReviewed": "Source #17 sqrt(x^3 y^(−4)) expansion, positive variables.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Expand as much as possible: ln(y sqrt(y/(1−y))) (assume valid positive variables).",
+      "TeacherExpectedMath": "(3/2)ln y−(1/2)ln(1−y), 0<y<1",
+      "OriginalSourceMathReviewed": "Source #18 logarithm of y times sqrt(y/(1−y)), domain 0<y<1.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Expand as much as possible: log(x^2 y^3 cube_root(xy^2)) (assume valid positive variables).",
+      "TeacherExpectedMath": "(7/3)log x+(11/3)log y",
+      "OriginalSourceMathReviewed": "Source #19 log(x²y³ cube_root(x²y⁵))=(8/3)log x+(14/3)log y.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Condense: log(3x²)+log(4x³).",
+      "TeacherExpectedMath": "log(12x^5), x>0",
+      "OriginalSourceMathReviewed": "Source #20 log(2x^4)+log(3x^5)=log(6x^9), x>0.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Condense: ln(8x^5)−ln(2x²).",
+      "TeacherExpectedMath": "ln(4x³), x>0",
+      "OriginalSourceMathReviewed": "Source #21 ln(6x^9)−ln(3x²)=ln(2x^7), x>0.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Condense: 2log x+3log(x+2).",
+      "TeacherExpectedMath": "log(x²(x+2)³), x>0",
+      "OriginalSourceMathReviewed": "Source #22 2logx+3log(x+1)=log(x²(x+1)³), x>0.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Condense: log x−(1/2)log y+2log z.",
+      "TeacherExpectedMath": "log(xz²/sqrt(y))",
+      "OriginalSourceMathReviewed": "Source #23 logx−(1/2)logy+3logz=log(xz³/sqrt(y)).",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Condense: 3log_7 c+(1/2)log_7 a+log_7 b.",
+      "TeacherExpectedMath": "log_7(c³sqrt(a)b)",
+      "OriginalSourceMathReviewed": "Source #24 4log_7c+(1/3)log_7a+(1/3)log_7b=log_7(c⁴ cube_root(ab)).",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Write log_9(20) as a ratio of natural logs.",
+      "TeacherExpectedMath": "ln20/ln9",
+      "OriginalSourceMathReviewed": "Source #25 log_7(15)=ln15/ln7.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Write log_6(45) as base10 log ratio.",
+      "TeacherExpectedMath": "log45/log6",
+      "OriginalSourceMathReviewed": "Source #26 log_14(55.875)=log55.875/log14.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Given log_5(6)=a, log_5(11)=b, express log_11(5).",
+      "TeacherExpectedMath": "1/b",
+      "OriginalSourceMathReviewed": "Source #27 log_11(5)=1/b.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Given a=log_5(6), b=log_5(11), express log_6(55).",
+      "TeacherExpectedMath": "(1+b)/a because55=5·11",
+      "OriginalSourceMathReviewed": "Source #28 log_6(55)=(1+b)/a.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Given a=log_5(6), b=log_5(11), express log_11(6/11).",
+      "TeacherExpectedMath": "(a−b)/b",
+      "OriginalSourceMathReviewed": "Source #29 log_11(6/11)=(a−b)/b.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Evaluate log_2(1/8)−2log_2 2.",
+      "TeacherExpectedMath": "−3−2=−5",
+      "OriginalSourceMathReviewed": "Source #30 log_3(1/9)−3log_3 3=−2−3=−5.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Evaluate 4log_16 2 +(log_16 256)/(2log_16 4).",
+      "TeacherExpectedMath": "4·(1/4)+(2)/(2·1/2)=3",
+      "OriginalSourceMathReviewed": "Source #31 6log_8 2+(log_8 64)/(3log_8 4)=2+1=3.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "Evaluate 2log_9 3−4log_9 3+log_9(1/81).",
+      "TeacherExpectedMath": "1−2−2=−3",
+      "OriginalSourceMathReviewed": "Source #32 2(1/2)−4(1/2)+log_9(1/729)=−1−3=−4.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Evaluate log_2(17) with change of base to five decimals.",
+      "TeacherExpectedMath": "ln(17)/ln(2)≈4.08746",
+      "OriginalSourceMathReviewed": "Source #33 log_3 22=ln22/ln3.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Evaluate log_7(53) with change of base to five decimals.",
+      "TeacherExpectedMath": "ln(53)/ln(7)≈2.04033",
+      "OriginalSourceMathReviewed": "Source #34 log_8 65=ln65/ln8.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Evaluate log_5(4.25) with change of base to five decimals.",
+      "TeacherExpectedMath": "ln(4.25)/ln(5)≈0.89902",
+      "OriginalSourceMathReviewed": "Source #35 log_6 5.38=ln5.38/ln6.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Evaluate log_3(7.5) with change of base to five decimals.",
+      "TeacherExpectedMath": "ln(7.5)/ln(3)≈1.83404",
+      "OriginalSourceMathReviewed": "Source #36 log_4(15/2)=ln(7.5)/ln4.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Evaluate log_0.5(3.2) with change of base to five decimals.",
+      "TeacherExpectedMath": "ln(3.2)/ln(0.5)≈-1.67807",
+      "OriginalSourceMathReviewed": "Source #37 log_(1/2)4.7=ln4.7/ln0.5.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "Solve log_3(x+4)+log_3(x+2)=2, respecting domains.",
+      "TeacherExpectedMath": "(x+4)(x+2)=9 => x²+6x−1=0 =>x=−3+sqrt(10)>−2; reject −3−sqrt10.",
+      "OriginalSourceMathReviewed": "Source #38 log_12(2x+6)+log_12(x+2)=2 => x=6 domain x>−2.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Solve log_4(x+3)−log_4(x−1)=1.",
+      "TeacherExpectedMath": "(x+3)/(x−1)=4 => x=7/3, x>1.",
+      "OriginalSourceMathReviewed": "Source #39 log_6(x+2)−log_6(x−3)=1 => x=4, domain x>3.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Derive the logarithm power rule from exponent laws.",
+      "TeacherExpectedMath": "Let u=log_b m so b^u=m; (b^u)^k=m^k, hence log_b(m^k)=ku for m>0.",
+      "OriginalSourceMathReviewed": "Source #40 proof from b^x=m and b^(kx)=m^k.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Prove log_5(7)=1/log_7(5).",
+      "TeacherExpectedMath": "ln7/ln5=(ln5/ln7)^(-1).",
+      "OriginalSourceMathReviewed": "Source #41 reciprocal-base change-of-base identity.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Check whether log_16(625)=log_2(5).",
+      "TeacherExpectedMath": "Yes: 16=2^4 and625=5^4 so log_16(625)=4ln5/(4ln2)=log_2 5.",
+      "OriginalSourceMathReviewed": "Source #42 log_81(2401)=log_3 7 because81=3^4,2401=7^4.",
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_LOG_PROPERTY",
+      "SourceTextCopied": false,
+      "Runtime": "NOT_RUN"
+    }
+  ],
+  "OriginalSourceExercisesReviewed": 42,
+  "IndependentMathExerciseCount": 42,
+  "StageC": "REUSE_EXISTING_RICHV2_AND_TEACHER_MANUAL_SCORING",
+  "StageD": "NOT_RUN"
+}

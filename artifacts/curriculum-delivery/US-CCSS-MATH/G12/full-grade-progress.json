@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 25,
+  "ActiveLessonOrdinal": 26,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 25,
+  "FirstIncompleteLessonOrdinal": 26,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_24_OF_73",
-  "LastClosedLessonOrdinal": 24,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_25_OF_73",
+  "LastClosedLessonOrdinal": 25,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -1036,22 +1036,25 @@
       "LessonNumber": 5,
       "Title": "Logarithmic Properties",
       "SourceSection": "4.5",
-      "PdfPageStart": 396,
-      "PdfPageEnd": 405,
-      "ACStatus": "A_C_PENDING",
+      "PdfPageStart": 395,
+      "PdfPageEnd": 404,
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l05-abc-source-audit.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "OriginalMathSourceExercisesReviewed": 42,
+      "FirstPartyTeacherRubrics": 42,
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l05-abc-close-audit.json",
+      "ClosedAtUtc": "2026-11-07T16:53:51.582625+00:00",
+      "UpdatedUtc": "2026-11-07T16:53:51.582625+00:00"
     },
     {
       "Ordinal": 26,
@@ -2206,15 +2209,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 25,
+  "NextLessonOrdinal": 26,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 24,
+  "ReadyForStageD": 25,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 24,
+  "SourceVerifiedGrade12Lessons": 25,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2245,5 +2248,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T16:50:53.123905+00:00"
+  "UpdatedUtc": "2026-11-07T16:53:51.582625+00:00"
 }
