@@ -37,5 +37,257 @@
   ],
   "SourceExerciseTeacherRubricsAuthored": 0,
   "SourceImagesCopied": false,
-  "StageD": "NOT_RUN"
+  "StageD": "NOT_RUN",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Why does a quadratic polynomial need a branch restriction for a functional inverse, whereas y=x³ does not?",
+      "TeacherExpectedMath": "x² gives the same output for ±x, so is not injective over all real inputs. x³ is strictly increasing, so its inverse cube root is a function.",
+      "OriginalSourceMathReviewed": "An inverse is a function only if its original mapping is one-to-one on the stated domain.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Explain which branch of y=x²+6 would yield inverse y=√(x−6).",
+      "TeacherExpectedMath": "Restrict original x≥0; then the inverse outputs are nonnegative and its domain is x≥6.",
+      "OriginalSourceMathReviewed": "A quadratic has two branches; choose one to define a function inverse.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "What domain restriction does the inverse of f(x)=√(x+2) need?",
+      "TeacherExpectedMath": "The inverse f⁻¹(x)=x²−2 has domain x≥0, because original square-root outputs are nonnegative.",
+      "OriginalSourceMathReviewed": "The inverse domain equals the original range.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Write the general form of the inverse of y=(x−h)²+k on original x≥h.",
+      "TeacherExpectedMath": "Inverse f⁻¹(x)=h+√(x−k), x≥k.",
+      "OriginalSourceMathReviewed": "Restricted quadratic inverses use the principal positive square-root branch.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Invert f(x)=(x−5)² on x≥5.",
+      "TeacherExpectedMath": "f⁻¹(x)=5+√x for x≥0.",
+      "OriginalSourceMathReviewed": "Original source #5: f=(x−4)², x≥4; inverse 4+√x, x≥0.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Invert f(x)=(x+3)² on x≥−3.",
+      "TeacherExpectedMath": "f⁻¹(x)=−3+√x for x≥0.",
+      "OriginalSourceMathReviewed": "Original source #6: f=(x+2)², x≥−2; inverse −2+√x.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Invert f(x)=(x+2)²−4 on x≥−2.",
+      "TeacherExpectedMath": "f⁻¹(x)=−2+√(x+4) for x≥−4.",
+      "OriginalSourceMathReviewed": "Original source #7: f=(x+1)²−3 x≥−1, inverse −1+√(x+3).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Invert f(x)=5−√(x+1); give inverse input domain.",
+      "TeacherExpectedMath": "f⁻¹(x)=(5−x)²−1 for x≤5.",
+      "OriginalSourceMathReviewed": "Original source #8: 2−√(x+3), inverse (2−x)²−3, x≤2.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Invert f(x)=2x²+3, original x≤0.",
+      "TeacherExpectedMath": "f⁻¹(x)=−√((x−3)/2), x≥3.",
+      "OriginalSourceMathReviewed": "Original source #9: 3x²+5, x≤0; inverse −√((x−5)/3), x≥5.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Invert f(x)=15−x² for original x≥0.",
+      "TeacherExpectedMath": "f⁻¹(x)=√(15−x), x≤15.",
+      "OriginalSourceMathReviewed": "Original source #10: 12−x² x≥0; inverse √(12−x).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Invert f(x)=20−x² for original x≥0.",
+      "TeacherExpectedMath": "f⁻¹(x)=√(20−x), x≤20.",
+      "OriginalSourceMathReviewed": "Original source #11: 9−x² x≥0; inverse √(9−x).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Invert f(x)=4x²+1 for original x≥0.",
+      "TeacherExpectedMath": "f⁻¹(x)=√((x−1)/4)=(1/2)√(x−1), x≥1.",
+      "OriginalSourceMathReviewed": "Original source #12: 2x²+4 x≥0; inverse √((x−4)/2).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Find inverse of f(x)=x³+7.",
+      "TeacherExpectedMath": "f⁻¹(x)=∛(x−7), all real inputs.",
+      "OriginalSourceMathReviewed": "Original source #13: x³+5, inverse ∛(x−5).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Find inverse of f(x)=4x³−3.",
+      "TeacherExpectedMath": "f⁻¹(x)=∛((x+3)/4), all real inputs.",
+      "OriginalSourceMathReviewed": "Original source #14: 3x³+1, inverse ∛((x−1)/3).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Find inverse of f(x)=6−x³.",
+      "TeacherExpectedMath": "f⁻¹(x)=∛(6−x), all real inputs.",
+      "OriginalSourceMathReviewed": "Original source #15: 4−x³, inverse ∛(4−x).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Find inverse of f(x)=5−3x³.",
+      "TeacherExpectedMath": "f⁻¹(x)=∛((5−x)/3), all real inputs.",
+      "OriginalSourceMathReviewed": "Original source #16: 4−2x³, inverse ∛((4−x)/2).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Invert f(x)=√(3x+2), with inverse domain.",
+      "TeacherExpectedMath": "f⁻¹(x)=(x²−2)/3, x≥0.",
+      "OriginalSourceMathReviewed": "Original source #17: √(2x+1), inverse (x²−1)/2, x≥0.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Invert f(x)=√(5−2x), with inverse domain.",
+      "TeacherExpectedMath": "f⁻¹(x)=(5−x²)/2, x≥0.",
+      "OriginalSourceMathReviewed": "Original source #18: √(3−4x), inverse (3−x²)/4.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Invert f(x)=4+√(2x−6), with inverse domain.",
+      "TeacherExpectedMath": "f⁻¹(x)=((x−4)²+6)/2, x≥4.",
+      "OriginalSourceMathReviewed": "Original source #19: 9+√(4x−4), inverse ((x−9)²+4)/4.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Invert f(x)=7+√(4x−12), with inverse domain.",
+      "TeacherExpectedMath": "f⁻¹(x)=((x−7)²+12)/4, x≥7.",
+      "OriginalSourceMathReviewed": "Original source #20: 5+√(6x−8), inverse ((x−5)²+8)/6.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Invert f(x)=5+3∛x.",
+      "TeacherExpectedMath": "f⁻¹(x)=((x−5)/3)³.",
+      "OriginalSourceMathReviewed": "Original source #21: 9+2∛x, inverse ((x−9)/2)³.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Invert f(x)=7−2∛x.",
+      "TeacherExpectedMath": "f⁻¹(x)=((7−x)/2)³.",
+      "OriginalSourceMathReviewed": "Original source #22: 3−∛x, inverse (3−x)³.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Invert f(x)=5/(x+2).",
+      "TeacherExpectedMath": "f⁻¹(x)=5/x−2, x≠0.",
+      "OriginalSourceMathReviewed": "Original source #23: 2/(x+8), inverse 2/x−8.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Invert f(x)=4/(x−3).",
+      "TeacherExpectedMath": "f⁻¹(x)=4/x+3, x≠0.",
+      "OriginalSourceMathReviewed": "Original source #24: 3/(x−4), inverse 3/x+4.",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Invert f(x)=(x+2)/(x+5).",
+      "TeacherExpectedMath": "f⁻¹(x)=(2−5x)/(x−1), x≠1.",
+      "OriginalSourceMathReviewed": "Original source #25: (x+3)/(x+7), inverse (3−7x)/(x−1).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Invert f(x)=(x−3)/(x+4).",
+      "TeacherExpectedMath": "f⁻¹(x)=(3+4x)/(1−x), x≠1.",
+      "OriginalSourceMathReviewed": "Original source #26: (x−2)/(x+7), inverse (2+7x)/(1−x).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Invert f(x)=(2x+5)/(3−x).",
+      "TeacherExpectedMath": "f⁻¹(x)=(3x−5)/(x+2), x≠−2.",
+      "OriginalSourceMathReviewed": "Original source #27: (3x+4)/(5−4x), inverse (5x−4)/(4x+3).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Invert f(x)=(4x+1)/(3−2x).",
+      "TeacherExpectedMath": "f⁻¹(x)=(3x−1)/(2x+4), x≠−2.",
+      "OriginalSourceMathReviewed": "Original source #28: (5x+1)/(2−5x), inverse (2x−1)/(5x+5).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Invert f(x)=x²+4x, restricted x≥−2.",
+      "TeacherExpectedMath": "f⁻¹(x)=−2+√(x+4), x≥−4.",
+      "OriginalSourceMathReviewed": "Original source #29: x²+2x x≥−1, inverse −1+√(x+1).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Invert f(x)=x²+6x+2, restricted x≥−3.",
+      "TeacherExpectedMath": "f⁻¹(x)=−3+√(x+7), x≥−7.",
+      "OriginalSourceMathReviewed": "Original source #30: x²+4x+1 x≥−2, inverse −2+√(x+3).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Invert f(x)=x²−8x+4, restricted x≥4.",
+      "TeacherExpectedMath": "f⁻¹(x)=4+√(x+12), x≥−12.",
+      "OriginalSourceMathReviewed": "Original source #31: x²−6x+3 x≥3, inverse 3+√(x+6).",
+      "MarkingMode": "TEACHER_REVIEW_COMPOSITION_AND_DOMAIN",
+      "Runtime": "NOT_RUN"
+    }
+  ],
+  "FirstPartyIndependentStudentQuestionsAuthored": 31,
+  "SourceMathReviewedCount": 31
 }
