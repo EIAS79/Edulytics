@@ -20,3 +20,14 @@ ExerciseRoutingRuntimeBound=0 despite READY_FOR_STAGE_D.
 ## Next step
 Run GitHub Actions independent source/static checks and focused G12 .NET tests.
 Reconcile only proven source/runtime deficits and record actual run IDs.
+
+## Actual runtime contract failure inventory — 2026-11-07T20:16:41.716891+00:00
+
+Checked against RichLessonContentV2Registry.Validate, not just JSON syntax.
+72/73 resources have unsupported SchemaVersion 2; runtime accepts 1.
+- RUNTIME_COMMON_MISTAKES_BELOW_MIN_2: 31 lessons
+- RUNTIME_KEY_CONCEPTS_BELOW_MIN_3: 21 lessons
+- RUNTIME_RICHV2_SCHEMA_VERSION_UNSUPPORTED: 72 lessons
+- RUNTIME_WORKED_EXAMPLE_STEPS_BELOW_MIN_3: 71 lessons
+No invented filler content; repair documented deficiencies in source-aligned lessons sequentially.
+No D_VERIFIED or release decision has been made.

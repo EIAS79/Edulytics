@@ -23,8 +23,8 @@ for(let n=first;n<=last;n++){
   teacher=teacherIsCSharpSection11?{LessonCode:row.LessonCode}:JSON.parse(fs.readFileSync(teacherPath,'utf8'));}
  catch(e){fail(n,'INVALID_JSON '+e.message);continue;}
  checked++;
- if(!teacherIsCSharpSection11 && rich.SchemaVersion!==2)fail(n,'RICHV2_SCHEMA_NOT_2');
- if(teacherIsCSharpSection11 && rich.SchemaVersion!==1)fail(n,'SECTION11_EXISTING_SCHEMA_CHANGED');
+ if(rich.SchemaVersion!==1)fail(n,'RICHV2_RUNTIME_SCHEMA_UNSUPPORTED');
+
  if(!Array.isArray(rich.Lessons)||rich.Lessons.length!==1){fail(n,'RICHV2_NOT_EXACT_ONE_LESSON');continue;}
  const student=rich.Lessons[0];
  if(student.LessonCode!==row.LessonCode)fail(n,'RICHV2_LESSON_CODE_MISMATCH');
@@ -35,16 +35,16 @@ for(let n=first;n<=last;n++){
  if(teacher.LessonCode!==row.LessonCode)fail(n,'TEACHER_LESSON_CODE_MISMATCH');
  if(student.CultureCode!=='en')fail(n,'RICHV2_NOT_ENGLISH');
  if(!Array.isArray(student.ExplanationParagraphs)||student.ExplanationParagraphs.length<3)fail(n,'EXPLANATION_TOO_THIN');
- if(!Array.isArray(student.WorkedExamples)||!student.WorkedExamples.length)fail(n,'NO_WORKED_EXAMPLES');
- if(!Array.isArray(student.KeyConcepts)||!student.KeyConcepts.length)fail(n,'NO_KEY_CONCEPTS');
- if(!Array.isArray(student.CommonMistakes)||!student.CommonMistakes.length)fail(n,'NO_MISTAKES_GUIDANCE');
+ if(!Array.isArray(student.WorkedExamples)||student.WorkedExamples.length<3)fail(n,'WORKED_EXAMPLES_BELOW_RUNTIME_MINIMUM_3');
+ if(!Array.isArray(student.KeyConcepts)||student.KeyConcepts.length<3)fail(n,'KEY_CONCEPTS_BELOW_RUNTIME_MINIMUM_3');
+ if(!Array.isArray(student.CommonMistakes)||student.CommonMistakes.length<2)fail(n,'COMMON_MISTAKES_BELOW_RUNTIME_MINIMUM_2');
  if(!Array.isArray(student.Visuals))fail(n,'NO_VISUAL_COLLECTION');
- if(!Array.isArray(student.SummaryPoints)||!student.SummaryPoints.length)fail(n,'NO_SUMMARY');
+ if(!Array.isArray(student.SummaryPoints)||student.SummaryPoints.length<3)fail(n,'SUMMARY_BELOW_RUNTIME_MINIMUM_3');
  if(!rich.PackCode || (teacherIsCSharpSection11 ? rich.PackCode!=='US-CCSS-MATH' : !rich.PackCode.includes('U'+u+':L'+l)))fail(n,'RICHV2_PACK_CODE_MISMATCH');
  if(!rich.ContentVersion)fail(n,'CONTENT_VERSION_MISSING');
  if(Array.isArray(student.WorkedExamples))for(let i=0;i<student.WorkedExamples.length;i++){
   const w=student.WorkedExamples[i];
-  if(!w.Question||!w.Answer||!Array.isArray(w.Steps)||!w.Steps.length)fail(n,'WORKED_EXAMPLE_INCOMPLETE_'+(i+1));
+  if(!w.Title||!w.Question||!w.Method||!w.Answer||!Array.isArray(w.Steps)||w.Steps.length<3)fail(n,'WORKED_EXAMPLE_RUNTIME_CONTRACT_INVALID_'+(i+1));
  }
  // This is static content-shape inspection only; it cannot prove source equivalence,
  // mathematical correctness, runtime binding, teacher approval or visual accessibility.
