@@ -626,11 +626,13 @@
       "TaskFamily": "SKETCH_GRAPH_FROM_FEATURES",
       "AcademicSourceVerified": true,
       "FirstPartyIndependentMathQuestionVerified": false,
-      "TeacherAnswerVerified": false,
+      "TeacherAnswerVerified": true,
       "RequiresGraph": true,
       "SourceOriginalGraphicCopied": false,
-      "SourceMathReview": "PENDING_ORIGINAL_FIGURE_OR_EQUATION_VISUAL_CONFIRMATION",
-      "SourceTranscriptionRisk": "Source OCR renders g denominator as '3x² − 14 + 15', apparently missing an x term; exact denominator and source function must be verified visually from original page before teacher key."
+      "SourceMathReview": "REVIEWED_WITH_TEACHER_EXPECTED_MATH_FROM_VISUAL_ORIGINAL",
+      "SourceVisualPdfPage": 311,
+      "SourceTranscriptionRiskResolved": true,
+      "SourceTeacherExpectedMath": "Original PDF visually confirms denominator 3x²−14x+15=(3x−5)(x−3). Numerator 2x²+7x−15=(2x−3)(x+5). Thus x-intercepts (3/2,0), (−5,0); y-intercept (0,−1); vertical asymptotes x=5/3 and x=3; horizontal asymptote y=2/3; no common factors."
     },
     {
       "Number": 45,
@@ -784,7 +786,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 311,
+      "SourceGraphSemanticObservation": "Graph displays multiple rational branches and red dashed vertical asymptotes; graph-to-formula requires checking marked integer coordinates and intercept values.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 58,
@@ -794,7 +799,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 311,
+      "SourceGraphSemanticObservation": "Two vertical asymptotes separate three branches. Graph crosses the horizontal axis on the middle branch. Exact scale factor remains to establish.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 59,
@@ -804,7 +812,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 311,
+      "SourceGraphSemanticObservation": "Two red dashed vertical asymptotes. Outer branches rise and central branch crosses the horizontal axis. Teacher must infer factors from visible features.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 60,
@@ -814,7 +825,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 312,
+      "SourceGraphSemanticObservation": "Two vertical asymptotes frame a decreasing central branch; graph has an x-axis crossing and negative outer branches. Exact factor multiplicities require source coordinate verification.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 61,
@@ -824,7 +838,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 312,
+      "SourceGraphSemanticObservation": "One vertical asymptote, increasing left and right branches with opposite divergence; graph crosses x-axis in the left branch and in the right branch.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 62,
@@ -834,7 +851,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 312,
+      "SourceGraphSemanticObservation": "One vertical asymptote; left branch falls toward minus infinity and right branch descends from positive infinity, crossing x-axis at positive input.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 63,
@@ -844,7 +864,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 312,
+      "SourceGraphSemanticObservation": "Two vertical asymptotes; middle branch is below x-axis except at a tangent contact, indicating an even-multiplicity zero; outer branches separated.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 64,
@@ -854,7 +877,10 @@
       "FirstPartyIndependentMathQuestionVerified": false,
       "TeacherAnswerVerified": false,
       "RequiresGraph": true,
-      "SourceOriginalGraphicCopied": false
+      "SourceOriginalGraphicCopied": false,
+      "OriginalPdfPageVisuallyInspected": 312,
+      "SourceGraphSemanticObservation": "Two vertical asymptotes; middle branch touches x-axis at a local minimum and rises on both sides; compare denominator sign and repeated zero.",
+      "SourceMathReview": "SOURCE_GRAPH_VISUALLY_INSPECTED_EXACT_RATIONAL_MODEL_NOT_YET_VERIFIED"
     },
     {
       "Number": 65,
@@ -1233,8 +1259,7 @@
   "OriginalFigureAlternativesReviewed": 0,
   "CCSSAlignment": "PENDING_INDIVIDUAL_SKILL_CONFIRMATION",
   "BlockingReasons": [
-    "SOURCE_EXERCISE44_EXACT_DENOMINATOR_VISUAL_VERIFICATION_PENDING",
-    "ORIGINAL_EXERCISE_GRAPHS_57_TO_64_NEED_VISUAL_REVIEW",
+    "EXERCISE_GRAPHS_57_TO_64_NEED_COMPLETE_EXACT_MATH_MODEL_TEACHER_KEYS",
     "ALL_88_FIRST_PARTY_EXERCISE_ALTERNATIVES_AND_TEACHER_RUBRICS_NOT_AUTHORED",
     "23_SOURCE_FIGURE_SKILL_ALTERNATIVES_PENDING",
     "STAGE_C_STUDENT_ASSESSMENT_ROUTE_AND_REUSE_CONTRACT_PENDING"
@@ -1244,7 +1269,7 @@
   "Tests": "NOT_RUN",
   "CIRun": false,
   "StageD": "NOT_RUN",
-  "OriginalExerciseSourceMathReviewCount": 79,
+  "OriginalExerciseSourceMathReviewCount": 80,
   "OriginalExerciseSourceMathReviewNumbers": [
     1,
     2,
@@ -1289,6 +1314,7 @@
     41,
     42,
     43,
+    44,
     45,
     46,
     47,
@@ -1335,8 +1361,8 @@
     "targeted-rational-factor-roots-and-design-intercepts",
     "optimization-symbolic-derivative-steps-reviewed-manually"
   ],
-  "UpdatedAtUtc": "2026-11-07T15:20:52.576734+00:00",
-  "SourceExercise44TranscriptionBlocker": "Source OCR renders g denominator as '3x² − 14 + 15', apparently missing an x term; exact denominator and source function must be verified visually from original page before teacher key.",
+  "UpdatedAtUtc": "2026-11-07T15:23:00.628284+00:00",
+  "SourceExercise44TranscriptionBlocker": "RESOLVED_FROM_AUTHORIZED_LOCAL_PDF_VISUAL",
   "SourceGraphDependentExerciseNumbersStillUnreviewed": [
     57,
     58,
@@ -1346,5 +1372,20 @@
     62,
     63,
     64
-  ]
+  ],
+  "SourceOriginalGraphPanelsVisuallyInspected": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64
+  ],
+  "OriginalSourcePdfPagesVisuallyReviewedForExercises": [
+    311,
+    312
+  ],
+  "SourceExerciseGraphSemanticsInspectedWithoutExactTeacherKeys": 8
 }
