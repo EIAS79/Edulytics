@@ -1,0 +1,605 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L02",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalSourceExerciseNumber": 1,
+      "IndependentStudentMathQuestion": "Find lim_(x→3) (x²−9)/(x−3).",
+      "TeacherMathAnswer": "6 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 2,
+      "IndependentStudentMathQuestion": "Compute lim_(x→4) (x−4)(x+3)/(x−4).",
+      "TeacherMathAnswer": "7, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 3,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(5+x)−sqrt(5))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(5)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 4,
+      "IndependentStudentMathQuestion": "Compute lim_(x→6) [(1/x)−(1/6)]/(x−6).",
+      "TeacherMathAnswer": "−1/36, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 5,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 6,
+      "IndependentStudentMathQuestion": "If lim f=8 and lim g=2, find lim(3f−2g).",
+      "TeacherMathAnswer": "20 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 7,
+      "IndependentStudentMathQuestion": "Compute lim_(x→2) (x³−8)/(x−2).",
+      "TeacherMathAnswer": "12, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 8,
+      "IndependentStudentMathQuestion": "Compute lim_(x→3) 1/(x−3)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 9,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→4) of (5x²+4x+-1).",
+      "TeacherMathAnswer": "95.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 10,
+      "IndependentStudentMathQuestion": "Find lim_(x→5) (x²−25)/(x−5).",
+      "TeacherMathAnswer": "10 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 11,
+      "IndependentStudentMathQuestion": "Compute lim_(x→6) (x−6)(x+2)/(x−6).",
+      "TeacherMathAnswer": "8, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 12,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(7+x)−sqrt(7))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(7)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 13,
+      "IndependentStudentMathQuestion": "Compute lim_(x→8) [(1/x)−(1/8)]/(x−8).",
+      "TeacherMathAnswer": "−1/64, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 14,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 15,
+      "IndependentStudentMathQuestion": "If lim f=3 and lim g=1, find lim(3f−2g).",
+      "TeacherMathAnswer": "7 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 16,
+      "IndependentStudentMathQuestion": "Compute lim_(x→4) (x³−64)/(x−4).",
+      "TeacherMathAnswer": "48, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 17,
+      "IndependentStudentMathQuestion": "Compute lim_(x→5) 1/(x−5)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 18,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→6) of (4x²+1x+0).",
+      "TeacherMathAnswer": "150.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 19,
+      "IndependentStudentMathQuestion": "Find lim_(x→7) (x²−49)/(x−7).",
+      "TeacherMathAnswer": "14 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 20,
+      "IndependentStudentMathQuestion": "Compute lim_(x→8) (x−8)(x+1)/(x−8).",
+      "TeacherMathAnswer": "9, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 21,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(2+x)−sqrt(2))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(2)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 22,
+      "IndependentStudentMathQuestion": "Compute lim_(x→3) [(1/x)−(1/3)]/(x−3).",
+      "TeacherMathAnswer": "−1/9, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 23,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 24,
+      "IndependentStudentMathQuestion": "If lim f=5 and lim g=5, find lim(3f−2g).",
+      "TeacherMathAnswer": "5 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 25,
+      "IndependentStudentMathQuestion": "Compute lim_(x→6) (x³−216)/(x−6).",
+      "TeacherMathAnswer": "108, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 26,
+      "IndependentStudentMathQuestion": "Compute lim_(x→7) 1/(x−7)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 27,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→8) of (3x²+4x+1).",
+      "TeacherMathAnswer": "225.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 28,
+      "IndependentStudentMathQuestion": "Find lim_(x→2) (x²−4)/(x−2).",
+      "TeacherMathAnswer": "4 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 29,
+      "IndependentStudentMathQuestion": "Compute lim_(x→3) (x−3)(x+5)/(x−3).",
+      "TeacherMathAnswer": "8, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 30,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(4+x)−sqrt(4))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(4)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 31,
+      "IndependentStudentMathQuestion": "Compute lim_(x→5) [(1/x)−(1/5)]/(x−5).",
+      "TeacherMathAnswer": "−1/25, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 32,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 33,
+      "IndependentStudentMathQuestion": "If lim f=7 and lim g=4, find lim(3f−2g).",
+      "TeacherMathAnswer": "13 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 34,
+      "IndependentStudentMathQuestion": "Compute lim_(x→8) (x³−512)/(x−8).",
+      "TeacherMathAnswer": "192, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 35,
+      "IndependentStudentMathQuestion": "Compute lim_(x→2) 1/(x−2)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 36,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→3) of (2x²+1x+-2).",
+      "TeacherMathAnswer": "19.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 37,
+      "IndependentStudentMathQuestion": "Find lim_(x→4) (x²−16)/(x−4).",
+      "TeacherMathAnswer": "8 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 38,
+      "IndependentStudentMathQuestion": "Compute lim_(x→5) (x−5)(x+4)/(x−5).",
+      "TeacherMathAnswer": "9, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 39,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(6+x)−sqrt(6))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(6)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 40,
+      "IndependentStudentMathQuestion": "Compute lim_(x→7) [(1/x)−(1/7)]/(x−7).",
+      "TeacherMathAnswer": "−1/49, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 41,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 42,
+      "IndependentStudentMathQuestion": "If lim f=2 and lim g=3, find lim(3f−2g).",
+      "TeacherMathAnswer": "0 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 43,
+      "IndependentStudentMathQuestion": "Compute lim_(x→3) (x³−27)/(x−3).",
+      "TeacherMathAnswer": "27, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 44,
+      "IndependentStudentMathQuestion": "Compute lim_(x→4) 1/(x−4)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 45,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→5) of (1x²+4x+-1).",
+      "TeacherMathAnswer": "44.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 46,
+      "IndependentStudentMathQuestion": "Find lim_(x→6) (x²−36)/(x−6).",
+      "TeacherMathAnswer": "12 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 47,
+      "IndependentStudentMathQuestion": "Compute lim_(x→7) (x−7)(x+3)/(x−7).",
+      "TeacherMathAnswer": "10, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 48,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(8+x)−sqrt(8))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(8)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 49,
+      "IndependentStudentMathQuestion": "Compute lim_(x→2) [(1/x)−(1/2)]/(x−2).",
+      "TeacherMathAnswer": "−1/4, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 50,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 51,
+      "IndependentStudentMathQuestion": "If lim f=4 and lim g=2, find lim(3f−2g).",
+      "TeacherMathAnswer": "8 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 52,
+      "IndependentStudentMathQuestion": "Compute lim_(x→5) (x³−125)/(x−5).",
+      "TeacherMathAnswer": "75, since cube difference factor yields x²+ax+a².",
+      "OriginalSourceMathSkill": "Source higher power factoring",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 53,
+      "IndependentStudentMathQuestion": "Compute lim_(x→6) 1/(x−6)².",
+      "TeacherMathAnswer": "+infinity, no finite limit; denominator approaches0 positive.",
+      "OriginalSourceMathSkill": "Source limit domain restrictions",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 54,
+      "IndependentStudentMathQuestion": "Evaluate lim_(x→7) of (5x²+1x+0).",
+      "TeacherMathAnswer": "252.",
+      "OriginalSourceMathSkill": "Source polynomial limit by substitution",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 55,
+      "IndependentStudentMathQuestion": "Find lim_(x→8) (x²−64)/(x−8).",
+      "TeacherMathAnswer": "16 after factoring x²−a².",
+      "OriginalSourceMathSkill": "Source factorable quotient",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 56,
+      "IndependentStudentMathQuestion": "Compute lim_(x→2) (x−2)(x+2)/(x−2).",
+      "TeacherMathAnswer": "4, removable hole.",
+      "OriginalSourceMathSkill": "Source quotient cancellation",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 57,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) (sqrt(3+x)−sqrt(3))/x.",
+      "TeacherMathAnswer": "1/(2sqrt(3)) by conjugate rationalization.",
+      "OriginalSourceMathSkill": "Source radical conjugate",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 58,
+      "IndependentStudentMathQuestion": "Compute lim_(x→4) [(1/x)−(1/4)]/(x−4).",
+      "TeacherMathAnswer": "−1/16, using common denominator.",
+      "OriginalSourceMathSkill": "Source lowest common denominator",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 59,
+      "IndependentStudentMathQuestion": "Compute lim_(x→0) |x|/x.",
+      "TeacherMathAnswer": "Does not exist: left−1,right+1.",
+      "OriginalSourceMathSkill": "Source absolute value one-sided limit",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    },
+    {
+      "OriginalSourceExerciseNumber": 60,
+      "IndependentStudentMathQuestion": "If lim f=6 and lim g=1, find lim(3f−2g).",
+      "TeacherMathAnswer": "16 by limit laws.",
+      "OriginalSourceMathSkill": "Source sum/scale limit laws",
+      "MathSpotCheckVerified": true,
+      "SourceOriginalQuestionCopied": false,
+      "TeacherReview": "MANUAL_LIMITS_OR_CALCULUS"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Find lim_(x→5) (x²−25)/(x−5).",
+      "TeacherExpectedMath": "10 after factoring x²−a²."
+    },
+    {
+      "Number": 2,
+      "Question": "Compute lim_(x→6) (x−6)(x+2)/(x−6).",
+      "TeacherExpectedMath": "8, removable hole."
+    },
+    {
+      "Number": 3,
+      "Question": "Compute lim_(x→0) (sqrt(7+x)−sqrt(7))/x.",
+      "TeacherExpectedMath": "1/(2sqrt(7)) by conjugate rationalization."
+    },
+    {
+      "Number": 4,
+      "Question": "Compute lim_(x→8) [(1/x)−(1/8)]/(x−8).",
+      "TeacherExpectedMath": "−1/64, using common denominator."
+    },
+    {
+      "Number": 5,
+      "Question": "Compute lim_(x→0) |x|/x.",
+      "TeacherExpectedMath": "Does not exist: left−1,right+1."
+    },
+    {
+      "Number": 6,
+      "Question": "If lim f=3 and lim g=1, find lim(3f−2g).",
+      "TeacherExpectedMath": "7 by limit laws."
+    },
+    {
+      "Number": 7,
+      "Question": "Compute lim_(x→4) (x³−64)/(x−4).",
+      "TeacherExpectedMath": "48, since cube difference factor yields x²+ax+a²."
+    },
+    {
+      "Number": 8,
+      "Question": "Compute lim_(x→5) 1/(x−5)².",
+      "TeacherExpectedMath": "+infinity, no finite limit; denominator approaches0 positive."
+    },
+    {
+      "Number": 9,
+      "Question": "Evaluate lim_(x→6) of (4x²+1x+0).",
+      "TeacherExpectedMath": "150."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Find lim_(x→3) (x²−9)/(x−3)."
+    ],
+    "TeacherExpectedMath": [
+      "6 after factoring x²−a²."
+    ],
+    "PublisherQuestionCopied": false
+  },
+  "SourceMathExerciseCount": 60,
+  "StageC": "REUSE_RICHV2_MANUAL_CALCULUS_TEACHER_REVIEW",
+  "Runtime": "NOT_RUN"
+}

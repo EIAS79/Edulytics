@@ -1,0 +1,162 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U12:L02",
+  "ContentVersion": "us-ccss-g12-precalculus-u12-l02-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L02",
+      "CultureCode": "en",
+      "Title": "Finding Limits: Properties of Limits",
+      "ExplanationParagraphs": [
+        "Polynomial limits at finite a follow direct substitution.",
+        "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
+        "A 0/0 quotient needs factoring, common denominator or conjugate rationalization.",
+        "Absolute-value quotients may have different one-sided limits.",
+        "Factor and cancel only on punctured neighborhood and preserve original domain.",
+        "Independent Cool-down: evaluate a representative local example and explain the limiting or derivative reasoning."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluating the Limit of a Function Algebraically",
+          "Question": "Find lim_(x→3) (x²−9)/(x−3).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "6 after factoring x²−a²."
+          ],
+          "Answer": "6 after factoring x²−a².",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Function Algebraically",
+          "Question": "Compute lim_(x→4) (x−4)(x+3)/(x−4).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "7, removable hole."
+          ],
+          "Answer": "7, removable hole.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Polynomial Algebraically",
+          "Question": "Compute lim_(x→0) (sqrt(5+x)−sqrt(5))/x.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "1/(2sqrt(5)) by conjugate rationalization."
+          ],
+          "Answer": "1/(2sqrt(5)) by conjugate rationalization.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating a Limit of a Power",
+          "Question": "Compute lim_(x→6) [(1/x)−(1/6)]/(x−6).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "−1/36, using common denominator."
+          ],
+          "Answer": "−1/36, using common denominator.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Quotient by Factoring",
+          "Question": "Compute lim_(x→0) |x|/x.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Does not exist: left−1,right+1."
+          ],
+          "Answer": "Does not exist: left−1,right+1.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Quotient by Finding the LCD",
+          "Question": "If lim f=8 and lim g=2, find lim(3f−2g).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "20 by limit laws."
+          ],
+          "Answer": "20 by limit laws.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating a Limit Containing a Root Using a Conjugate",
+          "Question": "Compute lim_(x→2) (x³−8)/(x−2).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "12, since cube difference factor yields x²+ax+a²."
+          ],
+          "Answer": "12, since cube difference factor yields x²+ax+a².",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Quotient of a Function by Factoring",
+          "Question": "Compute lim_(x→3) 1/(x−3)².",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "+infinity, no finite limit; denominator approaches0 positive."
+          ],
+          "Answer": "+infinity, no finite limit; denominator approaches0 positive.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Evaluating the Limit of a Quotient with Absolute Values",
+          "Question": "Evaluate lim_(x→4) of (5x²+4x+-1).",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "95."
+          ],
+          "Answer": "95.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Calculus core concept",
+          "Definition": "Polynomial limits at finite a follow direct substitution.",
+          "Rule": "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
+          "Example": "6 after factoring x²−a²."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party calculus comparison table",
+          "Description": "Independent secant/limit/continuity concept chart.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Test",
+          "Rows": [
+            {
+              "Label": "Concept",
+              "Cells": [
+                "limit",
+                "continuity",
+                "derivative"
+              ]
+            },
+            {
+              "Label": "Check",
+              "Cells": [
+                "left=right",
+                "limit=f(a)",
+                "difference quotient"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Polynomial limits at finite a follow direct substitution.",
+        "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
+        "A 0/0 quotient needs factoring, common denominator or conjugate rationalization."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
+          "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
+          "Correction": "Factor/rationalize or compare one-sided limits."
+        }
+      ]
+    }
+  ]
+}
