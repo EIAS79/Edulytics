@@ -1,0 +1,132 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U10:L03",
+  "ContentVersion": "us-ccss-g12-precalculus-u10-l03-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L03",
+      "CultureCode": "en",
+      "Title": "The Parabola",
+      "ExplanationParagraphs": [
+        "A parabola is the set of points equidistant from a focus and a directrix.",
+        "Vertical parabola (x−h)²=4p(y−k); focus(h,k+p), directrix y=k−p.",
+        "Horizontal parabola (y−k)²=4p(x−h), focus(h+p,k).",
+        "Use signs of p to determine opening orientation.",
+        "Parabolic reflectors place receivers at focus; p=radius²/(4depth).",
+        "Independent Cool-down: identify the standard conic, state relevant foci/axis features, and verify the equation with an independent point."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Graphing a Parabola with Vertex (0, 0) and the x-axis as the Axis of Symmetry",
+          "Question": "Write vertical parabola with vertex(-1,-2), focus offset p=2.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=8(y−k), h=-1,k=-2."
+          ],
+          "Answer": "(x−h)²=8(y−k), h=-1,k=-2.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing a Parabola with Vertex (0, 0) and the y-axis as the Axis of Symmetry",
+          "Question": "Write vertical parabola with vertex(0,-1), focus offset p=-3.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=-12(y−k), h=0,k=-1."
+          ],
+          "Answer": "(x−h)²=-12(y−k), h=0,k=-1.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Writing the Equation of a Parabola in Standard Form Given its Focus and Directrix",
+          "Question": "Write vertical parabola with vertex(1,0), focus offset p=4.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=16(y−k), h=1,k=0."
+          ],
+          "Answer": "(x−h)²=16(y−k), h=1,k=0.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing a Parabola with Vertex (h, k) and Axis of Symmetry Parallel to the x-axis",
+          "Question": "Write vertical parabola with vertex(2,1), focus offset p=-5.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=-20(y−k), h=2,k=1."
+          ],
+          "Answer": "(x−h)²=-20(y−k), h=2,k=1.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing a Parabola from an Equation Given in General Form",
+          "Question": "Write vertical parabola with vertex(-2,2), focus offset p=1.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=4(y−k), h=-2,k=2."
+          ],
+          "Answer": "(x−h)²=4(y−k), h=-2,k=2.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Solving Applied Problems Involving Parabolas",
+          "Question": "Write vertical parabola with vertex(-1,3), focus offset p=-2.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "(x−h)²=-8(y−k), h=-1,k=3."
+          ],
+          "Answer": "(x−h)²=-8(y−k), h=-1,k=3.",
+          "Check": "Check conic parameters, domains and equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conic geometry",
+          "Definition": "A parabola is the set of points equidistant from a focus and a directrix.",
+          "Rule": "Vertical parabola (x−h)²=4p(y−k); focus(h,k+p), directrix y=k−p.",
+          "Example": "(x−h)²=8(y−k), h=-1,k=-2."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party conic classification and parameters",
+          "Description": "Original independent mathematical chart.",
+          "PrimaryLabel": "Conic",
+          "SecondaryLabel": "Signature",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "ellipse",
+                "parabola",
+                "hyperbola"
+              ]
+            },
+            {
+              "Label": "Eccentricity",
+              "Cells": [
+                "e<1",
+                "e=1",
+                "e>1"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "A parabola is the set of points equidistant from a focus and a directrix.",
+        "Vertical parabola (x−h)²=4p(y−k); focus(h,k+p), directrix y=k−p.",
+        "Horizontal parabola (y−k)²=4p(x−h), focus(h+p,k)."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore center, axis sign or domain constraints.",
+          "WhyWrong": "Changes conic branch/focus.",
+          "Correction": "Verify standard equation and orientation."
+        }
+      ]
+    }
+  ]
+}
