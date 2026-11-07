@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 40,
+  "ActiveLessonOrdinal": 41,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 40,
+  "FirstIncompleteLessonOrdinal": 41,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_39_OF_73",
-  "LastClosedLessonOrdinal": 39,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_40_OF_73",
+  "LastClosedLessonOrdinal": 40,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -1446,22 +1446,23 @@
       "LessonNumber": 5,
       "Title": "Solving Trigonometric Functions",
       "SourceSection": "7.5",
-      "PdfPageStart": 619,
-      "PdfPageEnd": 632,
-      "ACStatus": "A_C_PENDING",
+      "PdfPageStart": 618,
+      "PdfPageEnd": 631,
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u07-l05-source-academic-audit.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u07-l05-abc-close-audit.json",
+      "SourceMathExercisesReviewed": 106,
+      "ClosedAtUtc": "2026-11-07T18:18:57.323982+00:00"
     },
     {
       "Ordinal": 41,
@@ -2256,15 +2257,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 40,
+  "NextLessonOrdinal": 41,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 39,
+  "ReadyForStageD": 40,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 39,
+  "SourceVerifiedGrade12Lessons": 40,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2295,5 +2296,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T18:14:10.254551+00:00"
+  "UpdatedUtc": "2026-11-07T18:18:57.323982+00:00"
 }

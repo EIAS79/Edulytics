@@ -1,0 +1,288 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U07:L05",
+  "ContentVersion": "g12-u07-l05-trigonometric-equations-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L05",
+      "CultureCode": "en",
+      "Title": "Solving Trigonometric Equations",
+      "ExplanationParagraphs": [
+        "To solve sinx=a or cosx=a with real angles, first check |a|≤1, determine reference angles, and list every branch in the requested interval.",
+        "Tangent has π-periodic solutions x=arctan(a)+kπ; sine and cosine have two branches per full cycle except at extrema.",
+        "On [0,2π), include x=0 but exclude 2π. For equations in sin(kx) or cos(kx), find all solutions for kx over k revolutions before dividing by k.",
+        "For polynomial equations in trigonometric expressions, substitute u=sinx, cosx, or tanx, factor or apply quadratic formula; discard roots outside the feasible range.",
+        "Use Pythagorean, quotient and double-angle identities to unify mixed trig equations. Never divide by a factor that could be zero without checking it separately.",
+        "Graphical zeros corroborate algebraic solutions but numerical samples do not prove completeness. Domain restrictions prevent spurious answers from reciprocal expressions.",
+        "In triangle and line-of-sight problems, translate given rise, run or hypotenuse into asin, acos or atan and check the actual physical configuration.",
+        "Independent Cool-down: solve sinx=−1/2, solve 2cos²x−cosx−1=0 and find ramp angle for rise2m run6m.",
+        "Independent Try It 1: Solve sinx=0 in[0,2π).",
+        "Independent Try It 2: Solve cosx=−1/2 in[0,2π).",
+        "Independent Try It 3: Solve tanx=1 in[0,2π).",
+        "Independent Try It 4: Solve 2sin²x−sinx=0.",
+        "Independent Try It 5: Solve cos2x=0 in[0,2π).",
+        "Independent Try It 6: Find ramp angle for rise3,run4."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Linear cosine",
+          "Question": "Solve cosx=1/2 on[0,2π).",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/3,5π/3."
+          ],
+          "Answer": "π/3,5π/3.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Linear sine",
+          "Question": "Solve sinx=−1/2.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "7π/6,11π/6."
+          ],
+          "Answer": "7π/6,11π/6.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Linear tangent",
+          "Question": "Solve tanx=1.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/4,5π/4."
+          ],
+          "Answer": "π/4,5π/4.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Single trig equation",
+          "Question": "Solve 2sinx−1=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/6,5π/6."
+          ],
+          "Answer": "π/6,5π/6.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Cosecant",
+          "Question": "Solve cscx=2.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/6,5π/6; sinx≠0."
+          ],
+          "Answer": "π/6,5π/6; sinx≠0.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Tangent",
+          "Question": "Solve 2tanx=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "0,π."
+          ],
+          "Answer": "0,π.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "All tangent solutions",
+          "Question": "Solve tanx=√3.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/3+kπ; in[0,2π):π/3,4π/3."
+          ],
+          "Answer": "π/3+kπ; in[0,2π):π/3,4π/3.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Calculator sine",
+          "Question": "Solve sinx=.27 numerically.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "arcsin(.27),π−arcsin(.27)."
+          ],
+          "Answer": "arcsin(.27),π−arcsin(.27).",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Calculator secant",
+          "Question": "Solve secx=3.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "arccos(1/3),2π−arccos(1/3)."
+          ],
+          "Answer": "arccos(1/3),2π−arccos(1/3).",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Quadratic form",
+          "Question": "Solve 2sin²x−sinx−1=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "sinx=1 or−1/2; x=π/2,7π/6,11π/6."
+          ],
+          "Answer": "sinx=1 or−1/2; x=π/2,7π/6,11π/6.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Quadratic factoring",
+          "Question": "Solve 2cos²x−cosx−1=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "cosx=1 or−1/2; x=0,2π/3,4π/3."
+          ],
+          "Answer": "cosx=1 or−1/2; x=0,2π/3,4π/3.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Algebra",
+          "Question": "Solve (sinx+1)(cosx−1)=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "sinx=−1 or cosx=1: x=3π/2,0."
+          ],
+          "Answer": "sinx=−1 or cosx=1: x=3π/2,0.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Quadratic trig form",
+          "Question": "Solve sin²x=1/4.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "π/6,5π/6,7π/6,11π/6."
+          ],
+          "Answer": "π/6,5π/6,7π/6,11π/6.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Identity equation",
+          "Question": "Solve sin²x+cos²x=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "No real solutions, since LHS=1."
+          ],
+          "Answer": "No real solutions, since LHS=1.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Double angle",
+          "Question": "Solve sin2x=0.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "x=kπ/2; 0,π/2,π,3π/2."
+          ],
+          "Answer": "x=kπ/2; 0,π/2,π,3π/2.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Identity rewrite",
+          "Question": "Solve cos2x=cosx.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "2cos²x−cosx−1=0: cosx=1 or−1/2."
+          ],
+          "Answer": "2cos²x−cosx−1=0: cosx=1 or−1/2.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Multiple angle",
+          "Question": "Solve cos3x=1.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "x=0,2π/3,4π/3."
+          ],
+          "Answer": "x=0,2π/3,4π/3.",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Right triangle modeling",
+          "Question": "Ramp rise3ft, run4ft; find angle.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "arctan(3/4)."
+          ],
+          "Answer": "arctan(3/4).",
+          "Check": "Substitute all candidates and check no missing branches."
+        },
+        {
+          "Title": "Right triangle abstract",
+          "Question": "Side opposite5, adjacent12; find reference angle.",
+          "Method": "Isolate trig values, solve every branch, check domain and [0,2π) endpoints.",
+          "Steps": [
+            "arctan(5/12)."
+          ],
+          "Answer": "arctan(5/12).",
+          "Check": "Substitute all candidates and check no missing branches."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Trig solution sets",
+          "Definition": "sin and cos have 2π periodicity; tangent has π.",
+          "Rule": "Enumerate all in requested interval.",
+          "Example": "sinx=0: x=0,π in[0,2π)."
+        },
+        {
+          "Title": "Trig quadratics",
+          "Definition": "Treat u=sinx/cosx/tanx algebraically.",
+          "Rule": "Return to trig variable; filter domain and range.",
+          "Example": "2sin²x−sinx=0."
+        },
+        {
+          "Title": "Multiple-angle equations",
+          "Definition": "Solve in argument kx then divide.",
+          "Rule": "k full periods can yield extra roots.",
+          "Example": "sin2x=0 has four distinct roots in[0,2π)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent equation solution families",
+          "Description": "First-party trig root patterns.",
+          "PrimaryLabel": "Equation",
+          "SecondaryLabel": "Solutions",
+          "Rows": [
+            {
+              "Label": "Equation",
+              "Cells": [
+                "sinx=0",
+                "cosx=0",
+                "tanx=0"
+              ]
+            },
+            {
+              "Label": "Roots in[0,2π)",
+              "Cells": [
+                "0,π",
+                "π/2,3π/2",
+                "0,π"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Solve every branch in specified interval.",
+        "Check denominator and inverse-trig domains.",
+        "Use factoring, identities and graph checks.",
+        "Apply trig to real-world inverse-angle questions."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use only principal arcsin root.",
+          "WhyWrong": "Sine may have second quadrant solution.",
+          "Correction": "Include π−arcsin(a) branch."
+        },
+        {
+          "Mistake": "Include 2π in half-open interval.",
+          "WhyWrong": "[0,2π) excludes its upper endpoint.",
+          "Correction": "Normalize roots mod2π."
+        }
+      ]
+    }
+  ]
+}
