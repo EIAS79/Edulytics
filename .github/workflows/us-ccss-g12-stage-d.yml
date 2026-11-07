@@ -1,0 +1,66 @@
+name: Grade 12 Precalculus Stage D - Real Candidate Gates
+on:
+  push:
+    branches:
+      - curriculum/us-ccss-g12-precalculus-abc-20261106
+    paths:
+      - '.github/workflows/us-ccss-g12-stage-d.yml'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G12/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/curriculum/g12_stage_d_*.cjs'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g12-stage-d.yml'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G12/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/curriculum/g12_stage_d_*.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structural-source-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check 73 ordered lesson and Stage D ledger contracts
+        run: node tools/curriculum/g12_stage_d_structure_gate.cjs
+  shared-dotnet-build-and-first-lesson-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore solution
+        run: dotnet restore Edulytics.sln
+      - name: Compile full solution
+        run: dotnet build Edulytics.sln --no-restore --configuration Release
+      - name: Execute Grade 12 first-lesson source/registry tests on GitHub Actions
+        run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --no-build --no-restore --configuration Release --filter FullyQualifiedName~Grade12PrecalculusSection11SourceContractsTests --logger "trx;LogFileName=g12-u01-l01.trx" --results-directory ./artifacts/g12-stage-d-trx
+      - name: Upload focused test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade12-stage-d-first-lesson-tests
+          path: artifacts/g12-stage-d-trx/
+          if-no-files-found: ignore
+  fail-closed-final-release-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: structural-source-inventory
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source parity, runtime evidence and approval (expected red until complete)
+        run: node tools/curriculum/g12_stage_d_final_gate.cjs
