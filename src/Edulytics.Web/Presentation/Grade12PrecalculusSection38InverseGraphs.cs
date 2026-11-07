@@ -61,8 +61,12 @@ public static class Grade12PrecalculusSection38InverseGraphs
         {
             MathematicalPoint? previous = null;
             decimal? priorX = null;
-            var step = (hi-lo)/160m;
-            for (var i=0;i<=160;i++)
+            // Two independently sampled curves share ONE maximum-128-segment
+            // validated SVG. With 60 intervals each plus the y=x reflection
+            // reference, the combined total is at most 121, never >128.
+            const int intervalsPerCurve = 60;
+            var step = (hi-lo)/intervalsPerCurve;
+            for (var i=0;i<=intervalsPerCurve;i++)
             {
                 var x=lo+i*step;
                 if (poles.Any(p => Math.Abs(x-p)<.10m))
