@@ -52,6 +52,20 @@ jobs:
           name: grade12-stage-d-first-lesson-tests
           path: artifacts/g12-stage-d-trx/
           if-no-files-found: ignore
+  content-shard-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [G12-D1, G12-D2, G12-D3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check authoring schemas, question keys and lesson codes in each shard
+        run: node tools/curriculum/g12_stage_d_content_shard.cjs ${{ matrix.shard }}
   fail-closed-final-release-gate:
     runs-on: ubuntu-latest
     timeout-minutes: 10

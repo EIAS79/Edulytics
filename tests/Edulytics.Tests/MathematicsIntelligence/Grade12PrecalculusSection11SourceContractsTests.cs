@@ -367,7 +367,7 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
             figures.Select(x => x.OriginalFigureOrdinal));
         Assert.All(figures, x =>
             Assert.False(string.IsNullOrWhiteSpace(x.FirstPartyAlternative)));
-        Assert.Equal(5, figures.Count(x => x.AddedDrawing is not null));
+        Assert.Equal(8, figures.Count(x => x.AddedDrawing is not null));
         Assert.Contains("rises and falls", figures.Single(x =>
             x.OriginalFigureOrdinal == 10).FirstPartyAlternative);
         var fig10 = Assert.IsType<CoordinatePlaneVisualSpec>(figures.Single(x =>
