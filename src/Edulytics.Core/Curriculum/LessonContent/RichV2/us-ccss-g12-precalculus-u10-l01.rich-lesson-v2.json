@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U10:L01",
+  "ContentVersion": "us-ccss-g12-precalculus-u10-l01-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L01",
+      "CultureCode": "en",
+      "Title": "The Ellipse",
+      "ExplanationParagraphs": [
+        "Ellipse is locus with constant sum of distances to two foci.",
+        "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
+        "Focal c²=a²−b², vertices h±a and foci h±c.",
+        "Complete squares to convert general form and identify center.",
+        "Whispering chamber and arch applications model half-ellipses.",
+        "Independent Cool-down: identify the standard conic, state relevant foci/axis features, and verify the equation with an independent point."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Writing the Equation of an Ellipse Centered at the Origin in Standard Form",
+          "Question": "Define ellipse with semimajor a=8,semiminor b=3.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198."
+          ],
+          "Answer": "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Writing the Equation of an Ellipse Centered at a Point Other Than the Origin",
+          "Question": "Define ellipse with semimajor a=9,semiminor b=4.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258."
+          ],
+          "Answer": "Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Ellipse Centered at the Origin",
+          "Question": "Define ellipse with semimajor a=10,semiminor b=5.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254."
+          ],
+          "Answer": "Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Ellipse Centered at the Origin from an Equation Not in Standard Form",
+          "Question": "Define ellipse with semimajor a=11,semiminor b=2.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=22; c=sqrt(a²−b²)≈10.816654."
+          ],
+          "Answer": "Sum of focal distances=2a=22; c=sqrt(a²−b²)≈10.816654.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Ellipse Centered at (h, k)",
+          "Question": "Define ellipse with semimajor a=12,semiminor b=3.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=24; c=sqrt(a²−b²)≈11.61895."
+          ],
+          "Answer": "Sum of focal distances=2a=24; c=sqrt(a²−b²)≈11.61895.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Ellipse Centered at (h, k) by First Writing It in Standard Form",
+          "Question": "Define ellipse with semimajor a=13,semiminor b=4.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=26; c=sqrt(a²−b²)≈12.369317."
+          ],
+          "Answer": "Sum of focal distances=2a=26; c=sqrt(a²−b²)≈12.369317.",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Locating the Foci of a Whispering Chamber",
+          "Question": "Define ellipse with semimajor a=7,semiminor b=5.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Sum of focal distances=2a=14; c=sqrt(a²−b²)≈4.898979."
+          ],
+          "Answer": "Sum of focal distances=2a=14; c=sqrt(a²−b²)≈4.898979.",
+          "Check": "Check conic parameters, domains and equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conic geometry",
+          "Definition": "Ellipse is locus with constant sum of distances to two foci.",
+          "Rule": "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
+          "Example": "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party conic classification and parameters",
+          "Description": "Original independent mathematical chart.",
+          "PrimaryLabel": "Conic",
+          "SecondaryLabel": "Signature",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "ellipse",
+                "parabola",
+                "hyperbola"
+              ]
+            },
+            {
+              "Label": "Eccentricity",
+              "Cells": [
+                "e<1",
+                "e=1",
+                "e>1"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Ellipse is locus with constant sum of distances to two foci.",
+        "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
+        "Focal c²=a²−b², vertices h±a and foci h±c."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore center, axis sign or domain constraints.",
+          "WhyWrong": "Changes conic branch/focus.",
+          "Correction": "Verify standard equation and orientation."
+        }
+      ]
+    }
+  ]
+}
