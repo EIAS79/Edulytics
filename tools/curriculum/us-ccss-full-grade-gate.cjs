@@ -133,6 +133,12 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // A ninth path or unexpected future blob still FAILS CLOSED. This audit
   // is runtime compatibility only, NEVER a new G1 academic approval.
   // Live G1 practice and two-school HTTPS gates remain mandatory.
+  // 2026-11-07 Grade12 Stage D audited re-pin: the G11 210-addition
+  // historical engine snapshot remains independently asserted; subsequent
+  // 232 insertions / 1 trigonometric scale-bound replacement contain NO
+  // UsCcssG1 or usccss.g1. dispatch changes. See the independent
+  // G1/G11 additive compatibility test and full 13,485 G1 math regressions.
+  // A third shared SHA change still fails closed; this is not source review.
   const auditedG1UnaffectedDeltas=new Map([
     ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
       ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
@@ -141,9 +147,9 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','0557784611797e6a45d5219556bd630e642530e7']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','19ca4300c3a8c772a4624831987ae164489026e8']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','1a21ed278a0a1956a82b67bf4be2e1218b200fb3']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
