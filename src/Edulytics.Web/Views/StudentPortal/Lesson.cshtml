@@ -1972,6 +1972,24 @@
         @* First-party G12 unit circle drawings. No publisher images reproduced. *@
         @* Independent sinusoidal mathematical figures, not source art. *@
         @* Original first-party graphs for 6.2, skip denominator zeros. *@
+        @* Independent inverse-trig mathematical models, original Edulytics plots. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Principal inverse trigonometric function graphs">
+                <h2>Inverse trigonometric graphical investigations</h2>
+                <p>Compare principal domains and ranges of arcsin, arccos and arctan.
+                   All graphs are independently authored mathematical illustrations.</p>
+                @foreach (var task in Grade12PrecalculusSection63InverseTrigGraphs.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02")
         {
             <section class="lesson-source-aligned-activities"
