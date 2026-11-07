@@ -1,0 +1,101 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U11:L06",
+  "ContentVersion": "us-ccss-g12-precalculus-u11-l06-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L06",
+      "CultureCode": "en",
+      "Title": "Binomial Theorem",
+      "ExplanationParagraphs": [
+        "Binomial theorem: (a+b)^n=Σ_(k=0)^n C(n,k)a^(n−k)b^k.",
+        "Binomial coefficients form Pascal's triangle and obey C(n,k)=C(n,n−k).",
+        "Terms combine powers of a and b of total degree n.",
+        "Use factorial or recursion to calculate coefficients without expanding all products.",
+        "Independent Cool-down: calculate a representative source-family example and check the result with the definition."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding Binomial Coefficients",
+          "Question": "Expand (2x+2y)^3 using binomial theorem.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Σ coefficients for terms x^(n−j)y^j (j=0..n):[8, 24, 24, 8]."
+          ],
+          "Answer": "Σ coefficients for terms x^(n−j)y^j (j=0..n):[8, 24, 24, 8].",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Expanding a Binomial",
+          "Question": "Find binomial coefficient C(4,2).",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "6."
+          ],
+          "Answer": "6.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing a Given Term of a Binomial Expansion",
+          "Question": "Find coefficient of x^2y^3 in (4x+1y)^5.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "160."
+          ],
+          "Answer": "160.",
+          "Check": "Verify by substitution or counting."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Core definition",
+          "Definition": "Binomial theorem: (a+b)^n=Σ_(k=0)^n C(n,k)a^(n−k)b^k.",
+          "Rule": "Binomial coefficients form Pascal's triangle and obey C(n,k)=C(n,n−k).",
+          "Example": "Σ coefficients for terms x^(n−j)y^j (j=0..n):[8, 24, 24, 8]."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent mathematical progression and counting table",
+          "Description": "First-party numeric reference examples.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Progression",
+              "Cells": [
+                "arithmetic",
+                "geometric",
+                "probability"
+              ]
+            },
+            {
+              "Label": "Core formula",
+              "Cells": [
+                "a1+(n−1)d",
+                "a1r^(n−1)",
+                "favorable/total"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Binomial theorem: (a+b)^n=Σ_(k=0)^n C(n,k)a^(n−k)b^k.",
+        "Binomial coefficients form Pascal's triangle and obey C(n,k)=C(n,n−k).",
+        "Terms combine powers of a and b of total degree n."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse index, count, order or probability assumptions.",
+          "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
+          "Correction": "Identify model and count conditions before computing."
+        }
+      ]
+    }
+  ]
+}
