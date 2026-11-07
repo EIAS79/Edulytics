@@ -1976,6 +1976,24 @@
         @* First-party identities illustrations, not publisher images. *@
         @* Independent mathematical physical model graphs for 7.6. *@
         @* First-party law-of-sines oblique triangle diagrams. *@
+        @* Original oblique SAS diagrams for law-of-cosines investigations. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Law of Cosines oblique triangle diagrams">
+                <h2>Cosine law graphical investigations</h2>
+                <p>Practice two-side included-angle solutions and validate non-right
+                   triangle lengths using original mathematical diagrams.</p>
+                @foreach (var task in Grade12PrecalculusSection82CosineTriangleModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Source figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01")
         {
             <section class="lesson-source-aligned-activities"

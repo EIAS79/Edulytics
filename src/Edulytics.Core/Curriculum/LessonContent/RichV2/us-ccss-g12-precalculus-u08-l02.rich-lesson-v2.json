@@ -1,0 +1,154 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L02",
+  "ContentVersion": "g12-u08-l02-firstparty-oblique-law-of-cosines-heron-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L02",
+      "CultureCode": "en",
+      "Title": "Non-Right Triangles: Law of Cosines",
+      "ExplanationParagraphs": [
+        "Law of Cosines in a triangle opposite side a and included angle A: a²=b²+c²−2bc cosA. Use SAS to determine a missing side.",
+        "For SSS measurements, find an angle with cosA=(b²+c²−a²)/(2bc), after confirming positive lengths and triangle inequality.",
+        "At A=90°, cosA=0 and cosine law becomes the Pythagorean theorem. For A>90°, the opposite side is longest.",
+        "Heron's formula uses semiperimeter s=(a+b+c)/2 and area sqrt(s(s−a)(s−b)(s−c)) for a valid triangle.",
+        "The Law of Cosines also supports SSA feasibility by solving a quadratic for a missing third side; reject nonpositive and invalid solutions.",
+        "Applications include resultant distances between diverging vehicles, parallelogram diagonal lengths, regular polygon side chords and surveys.",
+        "Independent Cool-down: solve SAS sides7,9 included75°; find angle opposite7 in sides5,6,7; compute Heron area sides5,12,13.",
+        "Independent Try It 1: Find third side of SAS sides6,7 included45°.",
+        "Independent Try It 2: Find angle opposite10 in triangle sides6,8,10.",
+        "Independent Try It 3: Find length between two flight legs7,9 from common origin angle60°.",
+        "Independent Try It 4: Find area by Heron for sides5,5,6."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "SAS side",
+          "Question": "Find third side if two sides8,11 and included60°.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "c=sqrt(8²+11²−2·8·11·cos60°)=sqrt97."
+          ],
+          "Answer": "c=sqrt(8²+11²−2·8·11·cos60°)=sqrt97.",
+          "Check": "Check triangle inequality and dimensions."
+        },
+        {
+          "Title": "SSS angle",
+          "Question": "Find largest angle of sides5,6,8.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "Angle opposite8=arccos((25+36−64)/(2·5·6))=arccos(−3/60)."
+          ],
+          "Answer": "Angle opposite8=arccos((25+36−64)/(2·5·6))=arccos(−3/60).",
+          "Check": "Check triangle inequality and dimensions."
+        },
+        {
+          "Title": "Communication triangulation",
+          "Question": "Two signals travel3km and4km, angle between75°. Find relay separation.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "sqrt(3²+4²−24cos75°)km."
+          ],
+          "Answer": "sqrt(3²+4²−24cos75°)km.",
+          "Check": "Check triangle inequality and dimensions."
+        },
+        {
+          "Title": "Travel displacement",
+          "Question": "Two moves 10mi and12mi with turn30°. Find displacement.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "sqrt(10²+12²+2·10·12·cos30°)."
+          ],
+          "Answer": "sqrt(10²+12²+2·10·12·cos30°).",
+          "Check": "Check triangle inequality and dimensions."
+        },
+        {
+          "Title": "Heron area",
+          "Question": "Triangle sides13,14,15, find area.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "s21; area=sqrt(21·8·7·6)=84."
+          ],
+          "Answer": "s21; area=sqrt(21·8·7·6)=84.",
+          "Check": "Check triangle inequality and dimensions."
+        },
+        {
+          "Title": "Real-world Heron",
+          "Question": "Triangular parcel sides10,10,12m; find area.",
+          "Method": "Identify included or opposite angle and apply cosine law or Heron's formula.",
+          "Steps": [
+            "s16; area=sqrt(16·6·6·4)=48m²."
+          ],
+          "Answer": "s16; area=sqrt(16·6·6·4)=48m².",
+          "Check": "Check triangle inequality and dimensions."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Law of Cosines",
+          "Definition": "a²=b²+c²−2bc cosA.",
+          "Rule": "Opposite side a paired with angle A.",
+          "Example": "A90° reduces to a²=b²+c²."
+        },
+        {
+          "Title": "Find SSS angle",
+          "Definition": "cosA=(b²+c²−a²)/(2bc).",
+          "Rule": "Check triangle inequality first.",
+          "Example": "5-12-13 gives opposite13 angle90°."
+        },
+        {
+          "Title": "Heron's area",
+          "Definition": "Area=sqrt(s(s−a)(s−b)(s−c)).",
+          "Rule": "s=(a+b+c)/2.",
+          "Example": "13-14-15 area84."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent cosine law and Heron summary",
+          "Description": "Original mathematical formula comparison.",
+          "PrimaryLabel": "Known data",
+          "SecondaryLabel": "Technique",
+          "Rows": [
+            {
+              "Label": "Given",
+              "Cells": [
+                "SAS",
+                "SSS",
+                "SSS area"
+              ]
+            },
+            {
+              "Label": "Method",
+              "Cells": [
+                "a²=b²+c²−2bc cosA",
+                "arccos((b²+c²−a²)/(2bc))",
+                "Heron's formula"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Law of Cosines solves SAS and SSS.",
+        "Heron area uses three valid side lengths.",
+        "Use vector separation and diagonal geometry carefully."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use an angle not included between the two known sides.",
+          "WhyWrong": "Substitutes wrong cosine term.",
+          "Correction": "Label included angle and opposite unknown side."
+        },
+        {
+          "Mistake": "Apply Heron to invalid triangle side lengths.",
+          "WhyWrong": "Triangle inequality fails.",
+          "Correction": "Check a+b>c for each pairing."
+        }
+      ]
+    }
+  ]
+}
