@@ -188,18 +188,30 @@ public static class UsCcssAlg1Unit4FunctionQuestions
 
         if (family == FunctionImplicitClassificationFamily)
         {
-            var variant = random.Next(0, 5);
+            // The source skill needs at least ten distinct graph/relation cases.
+            var variant = random.Next(0, 16);
             var relation = variant switch
             {
                 0 => "2x+3y=9",
                 1 => "x=y²",
                 2 => "x²+y²=9",
                 3 => "y=x³",
-                _ => "y=√(4−x)"
+                4 => "y=\u221A(4\u2212x)",
+                5 => "y\u00B2=4x",
+                6 => "y=3x-7",
+                7 => "x=y\u00B3",
+                8 => "x\u00B2-y\u00B2=1",
+                9 => "y=|x-2|",
+                10 => "y\u00B2=x+6",
+                11 => "y=1/(x-5)",
+                12 => "x=(y-1)\u00B2",
+                13 => "y=-\u221A(x+2)",
+                14 => "x\u00B2+y\u00B2=4",
+                _ => "y=x\u00B2+3"
             };
             return new(family,
                 $"Determine whether {relation} defines y as a function of real x in its permitted domain. Enter yes or no; justify domain and branches to the teacher.",
-                variant is 0 or 3 or 4
+                variant is 0 or 3 or 4 or 6 or 7 or 9 or 11 or 13 or 15
                     ? "The relation assigns at most one real y-value to each permitted x."
                     : "At some permitted x the relation contains two different real y-values.",
                 AssessmentItemType.ShortAnswer,
@@ -349,7 +361,7 @@ public static class UsCcssAlg1Unit4FunctionQuestions
         {
             if (!ValidateImplicit(parameters, out var variant))
                 throw new InvalidOperationException("Invalid implicit relation parameters.");
-            return variant is 0 or 3 or 4 ? "yes" : "no";
+            return variant is 0 or 3 or 4 or 6 or 7 or 9 or 11 or 13 or 15 ? "yes" : "no";
         }
         if (family == FunctionTableLookupFamily)
         {
@@ -499,7 +511,7 @@ public static class UsCcssAlg1Unit4FunctionQuestions
     {
         variant = 0;
         return p is not null && p.TryGetValue("variant", out variant) &&
-            variant is >= 0 and <= 4;
+            variant is >= 0 and <= 15;
     }
 
     private static bool ValidateTableLookup(IReadOnlyDictionary<string,int>? p,
