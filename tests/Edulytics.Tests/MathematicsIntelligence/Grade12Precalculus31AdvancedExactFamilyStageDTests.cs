@@ -13,6 +13,65 @@ public sealed class Grade12Precalculus31AdvancedExactFamilyStageDTests
         "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
 
     [Fact]
+    public void All31NumericalFamiliesMatchIndependentlyComputedKnownAnswerVectors()
+    {
+        var baseParams = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["a"] = 3, ["b"] = 4, ["c"] = 5, ["d"] = 6,
+            ["x"] = 2, ["n"] = 4, ["k"] = 3
+        };
+        var cases = new (string Code, int Answer, int? N, int? K, int? A, int? B)[]
+        {
+            ("u03.l04.polynomial_evaluate", -6, null,null,null,null),
+            ("u03.l07.rational_asymptote",4,null,null,null,null),
+            ("u03.l09.direct_variation",12,null,null,null,null),
+            ("u05.l01.radians_to_degrees",90,null,null,null,null),
+            ("u05.l02.unit_circle_coordinate",0,0,null,null,null),
+            ("u05.l03.trigonometric_ratio",9,0,null,null,null),
+            ("u06.l01.sine_wave_maximum",7,null,null,null,null),
+            ("u06.l02.tangent_period",4,null,null,null,null),
+            ("u06.l03.inverse_sine_principal",30,null,30,null,null),
+            ("u07.l01.pythagorean_identity",5,2,null,null,null),
+            ("u07.l02.angle_sum_sine",-1,null,null,null,null),
+            ("u07.l05.trig_equation_solution_count",3,null,null,null,null),
+            ("u07.l06.trig_model_amplitude",3,null,null,null,null),
+            ("u08.l01.law_of_sines",3,null,null,null,null),
+            ("u08.l02.law_of_cosines",13,null,null,null,null),
+            ("u08.l03.polar_cartesian",3,0,null,null,null),
+            ("u08.l04.polar_curve_evaluate",7,0,null,null,null),
+            ("u08.l06.parametric_point",16,null,null,null,null),
+            ("u08.l07.parametric_slope",5,null,null,null,null),
+            ("u09.l04.partial_fraction_coefficient",4,null,null,null,null),
+            ("u09.l07.matrix_determinant",-2,null,null,null,null),
+            ("u10.l01.ellipse_major_axis",10,null,null,5,3),
+            ("u10.l02.hyperbola_transverse_axis",6,null,null,null,null),
+            ("u10.l03.parabola_focus",3,null,null,null,null),
+            ("u10.l05.polar_conic_radius",3,null,null,null,null),
+            ("u11.l04.arithmetic_series_sum",36,null,null,null,null),
+            ("u11.l05.permutations",24,null,null,null,null),
+            ("u11.l06.binomial_coefficient",4,null,null,null,null),
+            ("u12.l01.polynomial_limit",25,null,null,null,null),
+            ("u12.l02.removable_limit",6,null,null,null,null),
+            ("u12.l03.continuity_matching",10,null,null,null,null)
+        };
+        Assert.Equal(31, cases.Length);
+        foreach(var v in cases)
+        {
+            var p = new Dictionary<string, int>(baseParams, StringComparer.Ordinal);
+            if (v.N is int n) p["n"] = n;
+            if (v.K is int k) p["k"] = k;
+            if (v.A is int a) p["a"] = a;
+            if (v.B is int b) p["b"] = b;
+            var family = Grade12PrecalculusAdvancedNumericQuestions.Prefix + v.Code;
+            var expected = v.Answer.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            Assert.Equal(expected, Grade12PrecalculusAdvancedNumericQuestions.Solve(family,p));
+            Assert.True(Grade12PrecalculusAdvancedNumericQuestions.Verify(family,p,expected));
+            Assert.False(Grade12PrecalculusAdvancedNumericQuestions.Verify(family,p,
+                (v.Answer + 1).ToString(System.Globalization.CultureInfo.InvariantCulture)));
+        }
+    }
+
+    [Fact]
     public void EveryAdvancedOriginalFormulaHasAValidMathematicalOracleAcrossSeeds()
     {
         var failures = new List<string>();
