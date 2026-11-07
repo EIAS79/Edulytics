@@ -13,6 +13,36 @@ public sealed class Grade12Precalculus31AdvancedExactFamilyStageDTests
         "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
 
     [Fact]
+    public void EveryAdvancedOriginalFormulaHasAValidMathematicalOracleAcrossSeeds()
+    {
+        var failures = new List<string>();
+        foreach (var (suffix, section) in Grade12PrecalculusAdvancedNumericQuestions.All)
+        {
+            var family = Grade12PrecalculusAdvancedNumericQuestions.Prefix + suffix;
+            for (var seed = 1; seed <= 15; seed++)
+            {
+                try
+                {
+                    var item = Grade12PrecalculusAdvancedNumericQuestions.Build(
+                        family, new Random(91000 + seed), 1);
+                    var correct = Grade12PrecalculusAdvancedNumericQuestions.Solve(
+                        item.Family, item.Parameters);
+                    if (!Grade12PrecalculusAdvancedNumericQuestions.Verify(
+                        family, item.Parameters, correct))
+                        failures.Add(section + ": valid answer rejected");
+                }
+                catch (Exception ex)
+                {
+                    failures.Add(section + "/" + family + "/seed=" + seed +
+                        ": " + ex.GetType().Name + " - " + ex.Message);
+                }
+            }
+        }
+        Assert.True(failures.Count == 0,
+            "Exact Grade12 mathematical failures: " + string.Join(" | ", failures.Take(60)));
+    }
+
+    [Fact]
     public void All31AdvancedSourceSectionsHaveExplicitIndependentExactPractice()
     {
         var families=Grade12PrecalculusAdvancedNumericQuestions.All;
