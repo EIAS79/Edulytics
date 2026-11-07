@@ -64,7 +64,13 @@ def run():
         raise AssertionError("G12 teacher cannot access authorized dashboard")
     records=[]
     for ordinal,(code,lesson_id) in enumerate(expected,1):
-        content=html.unescape(get_page(student,"/student/learning/lesson/"+lesson_id))
+        print("G12_AUTH_HTTPS_LESSON_CHECK",ordinal,code,flush=True)
+        try:
+            content=html.unescape(get_page(student,"/student/learning/lesson/"+lesson_id))
+        except urllib.error.HTTPError as exc:
+            raise AssertionError(
+                f"G12_AUTHENTICATED_LESSON_HTTP_BLOCKED ordinal={ordinal} "
+                f"code={code} http={exc.code}; cannot claim student release") from exc
         if "rich-lesson-section" not in content:
             raise AssertionError(f"G12 U/L {code}: student did not see actual source-aligned RichV2")
         if code.endswith(("U08:L03","U08:L04")) and (
