@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 9,
+  "ActiveLessonOrdinal": 10,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 9,
+  "FirstIncompleteLessonOrdinal": 10,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_C_IN_PROGRESS_8_OF_73_OWNER_ACCEPTED_FIRSTPARTY_SOURCE_SKILL_MATH",
-  "LastClosedLessonOrdinal": 8,
+  "GradeStatus": "GRADE12_A_C_IN_PROGRESS_9_OF_73_OWNER_ACCEPTED_FIRSTPARTY_SOURCE_SKILL_AUTHORING",
+  "LastClosedLessonOrdinal": 9,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -467,20 +467,32 @@
       "SourceSection": "2.2",
       "PdfPageStart": 158,
       "PdfPageEnd": 176,
-      "ACStatus": "A_C_PENDING",
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
-      "EvidencePath": null,
+      "ReadyForStageD": true,
+      "Tests": "NOT_RUN",
+      "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u02-l02-abc-checkpoint.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "NOT_YET_REVIEWED"
-      ]
+      "BlockingReasons": [],
+      "FirstPartyRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u02-l02.rich-lesson-v2.json",
+      "AcademicOwnerAcceptedIndependentFirstPartyMathSourceSkillAuthoring": true,
+      "SourceOriginalLearningObjectivesCovered": 5,
+      "SourceWorkedExampleSkillsCovered": 13,
+      "SourceTryItSkillsCovered": 7,
+      "SourceFigureSkillsCrosswalked": 24,
+      "SourceNumberedExerciseSkillsAuthored": 76,
+      "SourceNumberedExerciseActionLeavesAuthored": 162,
+      "OriginalPublisherFiguresCopied": 0,
+      "ExactPublisherPixelAndVerbatimParityCertified": false,
+      "LiveRuntimeAndTeacherGradingVerified": false,
+      "ClosedAtUtc": "2026-11-07T09:56:04.519411+00:00",
+      "UpdatedUtc": "2026-11-07T09:56:04.519411+00:00",
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u02-l02-abc-close-audit.json"
     },
     {
       "Ordinal": 10,
@@ -2019,15 +2031,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 9,
+  "NextLessonOrdinal": 10,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 8,
+  "ReadyForStageD": 9,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 8,
+  "SourceVerifiedGrade12Lessons": 9,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2058,5 +2070,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T09:50:51.257394+00:00"
+  "UpdatedUtc": "2026-11-07T09:56:04.519411+00:00"
 }
