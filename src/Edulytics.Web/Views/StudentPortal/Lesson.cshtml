@@ -1922,6 +1922,28 @@
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
         @* G12 section 1.1: source-skill first-party instructional graphs, not
            the original textbook's 1:1 figures or automatically marked tasks. *@
+        @* Grade 12 Section 3.7: reuse the typed mathematics renderer for eight
+           independently authored graph interpretation tasks. No Stage D claim. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Independent rational graph interpretation practice">
+                <h2>Rational functions: interpret original Edulytics graphs</h2>
+                <p>Study each of these first-party teaching graphs. State a possible
+                   factored rational expression, its roots, and its vertical and
+                   horizontal asymptotes. Explain your reasoning to your teacher.
+                   These diagrams are not copied from OpenStax.</p>
+                @foreach (var task in Grade12PrecalculusSection37GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Independent practice @task.ExerciseNumber:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
         {
             <section class="lesson-source-aligned-activities"
