@@ -1,0 +1,204 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L01",
+  "ContentVersion": "g12-u09-l01-linear-system-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L01",
+      "CultureCode": "en",
+      "Title": "Systems of Linear Equations: Two Variables",
+      "ExplanationParagraphs": [
+        "A two-line system can have exactly one intersection, no solution for parallel distinct lines, or infinitely many points if coincident.",
+        "To solve by substitution, isolate one variable and substitute into the second equation.",
+        "To solve by elimination, add suitable scaled equations to remove one unknown; verify by substitution.",
+        "The determinant ae−bd is nonzero exactly when a 2×2 linear system has one unique solution.",
+        "A contradictory reduced equation0=nonzero is inconsistent; 0=0 with one line relation is dependent.",
+        "A feasible break-even point satisfies cost equals revenue with nonnegative product quantity.",
+        "Word problems require modeled unknowns, linear constraints and interpretation with units.",
+        "Independent Cool-down: solve3x+2y=11,x+y=4; classify x+y=2,2x+2y=5; solve cost100+5x=revenue15x.",
+        "Independent Try It 1: Solve x+y=5,x−y=1.",
+        "Independent Try It 2: Solve x+y=9,y=2x.",
+        "Independent Try It 3: Solve2x+3y=12,x−y=1.",
+        "Independent Try It 4: Solve x−2y=4,2x−4y=5.",
+        "Independent Try It 5: Solve3x+y=8,x+y=4.",
+        "Independent Try It 6: Solve x+y=6,2x+2y=12.",
+        "Independent Try It 7: Solve x/2+y/3=5/6,x/2−y/3=1/6.",
+        "Independent Try It 8: Classify x+2y=3,2x+4y=8."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check ordered pair",
+          "Question": "Does(2,3) satisfy x+y=5, 2x−y=1?",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "Yes."
+          ],
+          "Answer": "Yes.",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Graph intersection",
+          "Question": "y=x+1 and y=−x+5.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(2,3)."
+          ],
+          "Answer": "(2,3).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Substitution",
+          "Question": "x+y=7,y=2x+1.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(2,5)."
+          ],
+          "Answer": "(2,5).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Elimination",
+          "Question": "2x+3y=12,x−y=1.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(3,2)."
+          ],
+          "Answer": "(3,2).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Scale one equation",
+          "Question": "3x+2y=8,2x−y=1.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(2,1)."
+          ],
+          "Answer": "(2,1).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Scale both",
+          "Question": "4x+3y=11,3x−2y=4.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(2,1)."
+          ],
+          "Answer": "(2,1).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Fractional coefficients",
+          "Question": "x/2+y/3=5/6,x/2−y/3=1/6.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "(1,1)."
+          ],
+          "Answer": "(1,1).",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Inconsistent",
+          "Question": "x+y=1,2x+2y=4.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "No solutions."
+          ],
+          "Answer": "No solutions.",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Dependent",
+          "Question": "x+y=2,2x+2y=4.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "Infinite solutions."
+          ],
+          "Answer": "Infinite solutions.",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Break even",
+          "Question": "C=100+5x,R=15x.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "x=10."
+          ],
+          "Answer": "x=10.",
+          "Check": "Substitute."
+        },
+        {
+          "Title": "Application",
+          "Question": "Two numbers sum20, differ4.",
+          "Method": "Choose substitution/elimination and check both equations.",
+          "Steps": [
+            "12 and8."
+          ],
+          "Answer": "12 and8.",
+          "Check": "Substitute."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Consistent unique",
+          "Definition": "Two lines intersect once.",
+          "Rule": "Nonzero determinant.",
+          "Example": "x+y=5,x−y=1."
+        },
+        {
+          "Title": "Inconsistent",
+          "Definition": "Distinct parallel lines.",
+          "Rule": "0=nonzero.",
+          "Example": "x+y=1,2x+2y=4."
+        },
+        {
+          "Title": "Dependent",
+          "Definition": "Coincident lines.",
+          "Rule": "One equation multiple of other.",
+          "Example": "x+y=2,2x+2y=4."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent linear system classification",
+          "Description": "Mathematical line intersection outcomes.",
+          "PrimaryLabel": "System",
+          "SecondaryLabel": "Geometry",
+          "Rows": [
+            {
+              "Label": "Class",
+              "Cells": [
+                "one",
+                "none",
+                "infinite"
+              ]
+            },
+            {
+              "Label": "Lines",
+              "Cells": [
+                "intersect",
+                "parallel",
+                "coincident"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Solve and classify linear systems.",
+        "Verify both equations.",
+        "Model break-even situations."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Interpret 0=5 as dependent.",
+          "WhyWrong": "It is a contradiction.",
+          "Correction": "No solution."
+        }
+      ]
+    }
+  ]
+}
