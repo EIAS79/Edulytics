@@ -53,3 +53,18 @@ Counter({'worked_examples_existing_method_check_reused': 616, 'key_concepts_extr
 - Ledger: `D_TESTS_PASSED` for 72 lessons, `D_BLOCKED` for U01:L01 due unresolved handoff/source/rights/runtime assessment evidence; `D_VERIFIED=0`; `APPROVED=0`.
 - This code evidence does not retroactively validate A–B–C semantic or source parity; prior deterministic reformatting reused existing authored Method/Check text and still requires educator quality review.
 
+
+## Fail-closed authenticated student deployment check — 2026-11-07
+
+- Run: https://github.com/EIAS79/Edulytics/actions/runs/42413952553
+- Tested PR merge SHA: `8415ea3251c6f953be3bfb2b2a2d1522a8849107`; corresponding branch head `8c9559c1f665c98438074b34ac5ec7d6399ae9c1`.
+- Disposable PostgreSQL migration and HTTPS build/fixture succeeded; actual authenticated learner page **ordinal 1**, `PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01`, returned **HTTP 404**. No learner page verified for publication and no authenticated G12 attempt/gradebook sequence completed.
+- `GetPublishedForStudentAsync` requires a matching student-course context, canonical body metadata/status, and a published canonical translation. A RichV2 registry load does not meet these conditions.
+- Existing grade12 canonical source document `us-ccss-math-g12-precalculus-u01-l01-abc-draft.lesson-content-pack.json` explicitly remains `Draft`, with `ReviewEvidence: A-C INCOMPLETE`; remaining 72 canonical Grade12 content bodies have not been established in the inventory.
+- Stage D record updated: **all 73 lessons D_BLOCKED for production**, `D_VERIFIED=0`, `NO_GO_TECHNICAL`; no merge or Render deployment.
+
+## Mathematical correctness correction — Section 11.1
+
+- Commit [`fd20cbad`](https://github.com/EIAS79/Edulytics/commit/fd20cbad880b78c8efd9e1e98086c7eddc06977a) corrects **12** alternate-sequence teacher answer keys with signs initially calculated from the wrong sequence index, synchronizes **2** worked examples and **1** Try It, and introduces an independent `n=1..5` regression oracle.
+- Targeted local oracle PASS. This does not certify all source exercise keys, and does not authorize publishing Section 11.1.
+- Source parity counts/denominators, human review, public lesson status, complete authenticated G12 student/teacher E2E and full product regressions remain unresolved.
