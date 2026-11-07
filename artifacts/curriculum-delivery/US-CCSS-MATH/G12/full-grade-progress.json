@@ -1,15 +1,15 @@
 {
-  "ActiveLessonOrdinal": 21,
+  "ActiveLessonOrdinal": 22,
   "ActualG12RuntimeVerified": false,
   "CIRun": false,
   "CourseLabelGrade": 12,
   "CourseLogicalLevel": 13,
   "Curriculum": "US-CCSS-MATH",
-  "FirstIncompleteLessonOrdinal": 21,
+  "FirstIncompleteLessonOrdinal": 22,
   "G12BluePrintCourseIdentityAuthored": true,
   "Grade": 12,
-  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_20_OF_73",
-  "LastClosedLessonOrdinal": 20,
+  "GradeStatus": "GRADE12_A_B_C_IN_PROGRESS_21_OF_73",
+  "LastClosedLessonOrdinal": 21,
   "LessonEntries": [
     {
       "ACStatus": "READY_FOR_STAGE_D",
@@ -904,25 +904,29 @@
       "SourceSection": "4.1",
       "PdfPageStart": 343,
       "PdfPageEnd": 357,
-      "ACStatus": "A_C_IN_PROGRESS",
+      "ACStatus": "READY_FOR_STAGE_D",
       "SourceLocatorVerified": true,
       "SourceAtomicDenominatorVerified": false,
       "SemanticEquivalenceVerified": false,
       "VisualsVerified": false,
       "PracticeVerified": false,
       "RightsVerified": false,
-      "ReadyForStageD": false,
-      "Tests": "NOT_WRITTEN",
+      "ReadyForStageD": true,
+      "Tests": "TARGETED_LOCAL_ONLY",
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l01-source-inventory-and-corrected-boundary.json",
       "LastCommitSha": null,
-      "BlockingReasons": [
-        "12_WORKED_EXAMPLE_AND_12_TRYIT_ALTERNATIVES_NOT_YET_AUTHORED",
-        "68_NUMBERED_EXERCISES_REQUIRE_INDIVIDUAL_MATH_REVIEW",
-        "6_FIGURE_SKILL_ALTERNATIVES_PENDING",
-        "STAGE_C_TEACHER_ASSESSMENT_REUSE_ROUTING_PENDING"
-      ],
+      "BlockingReasons": [],
       "SourceBoundaryCorrectionVerified": true,
-      "UpdatedUtc": "2026-11-07T16:13:17.936013+00:00"
+      "UpdatedUtc": "2026-11-07T16:20:32.795373+00:00",
+      "OriginalMathSourceExercisesReviewed": 68,
+      "IndependentMathTeacherRubrics": 68,
+      "SourceFigureSkillsCovered": 6,
+      "OriginalPdfPagesVerified": [
+        343,
+        357
+      ],
+      "ClosureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l01-abc-close-audit.json",
+      "ClosedAtUtc": "2026-11-07T16:20:32.795373+00:00"
     },
     {
       "Ordinal": 22,
@@ -2173,15 +2177,15 @@
       ]
     }
   ],
-  "NextLessonOrdinal": 21,
+  "NextLessonOrdinal": 22,
   "NoFullSyncOrBuild": true,
   "Publication": "NOT_AUTHORIZED_BY_A_C",
-  "ReadyForStageD": 20,
+  "ReadyForStageD": 21,
   "SchemaVersion": 1,
   "SourceEdition": "OpenStax Precalculus, Rice University ©2017, Revision PR-2015-002(03/17)-BW, original 2014",
   "SourceSectionLocatorsIndexed": 73,
   "SourceSnapshotSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
-  "SourceVerifiedGrade12Lessons": 20,
+  "SourceVerifiedGrade12Lessons": 21,
   "StageD": "NOT_RUN",
   "TotalLessons": 73,
   "UnitCounts": [
@@ -2212,5 +2216,5 @@
     "Sequences, Probability and Counting Theory",
     "Introduction to Calculus"
   ],
-  "UpdatedUtc": "2026-11-07T16:13:17.936013+00:00"
+  "UpdatedUtc": "2026-11-07T16:20:32.795373+00:00"
 }

@@ -1,0 +1,77 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "Unit": 4,
+  "Lesson": 1,
+  "SourceSection": "4.1",
+  "Title": "Exponential Functions",
+  "Source": "OpenStax Precalculus 2017 original local PDF",
+  "SourceSHA256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "CorrectedPdfPages": [
+    343,
+    357
+  ],
+  "BlueprintIncorrectPdfPages": [
+    344,
+    358
+  ],
+  "SourceA": {
+    "Objectives": 4,
+    "WorkedExamples": 12,
+    "TryIts": 12,
+    "Figures": 6,
+    "NumberedExercises": 68,
+    "OriginalExercisesIndividuallyReviewed": 68,
+    "OriginalFiguresVisuallyInspected": true
+  },
+  "StageB": {
+    "IndependentWorked": 12,
+    "IndependentTryIt": 12,
+    "IndependentSourceSkillExercises": 68,
+    "IndependentTypedGraphAlternatives": 6,
+    "IndependentCoolDownQuestions": 3,
+    "StudentRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g12-precalculus-u04-l01.rich-lesson-v2.json",
+    "TeacherMathRubrics": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-g12-precalculus-u04-l01-firstparty-teacher-led.json",
+    "FigureSkillEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l01-six-firstparty-figure-skill-alternatives.json"
+  },
+  "StageC": {
+    "Decision": "REUSE_EXISTING_RICHV2_MANUAL_TEACHER_REVIEW_AND_TYPED_SVG_RENDERER",
+    "Routes": 68,
+    "RouteEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l01-stage-c-68-exponential-assessment-reuse-routes.json",
+    "NewMathEngine": false,
+    "AutoGradingPromised": false,
+    "AuthenticatedRuntimeVerified": false
+  },
+  "CCSSCandidates": [
+    "CCSS:HSF-LE.A.1",
+    "CCSS:HSF-LE.A.2",
+    "CCSS:HSA-SSE.B.3c"
+  ],
+  "CompleteFormalCCSSAlignmentCertified": false,
+  "PublisherOriginalNumericOrGraphicExactParityCertified": false,
+  "OriginalPublisherImagePixelsCopied": false,
+  "SourceAttributionAndLicense": "OpenStax/Rice University, CC BY 4.0 retained in course credits",
+  "TargetedChecksActuallyPerformed": [
+    "original PDF Section 4.1 boundary local pages343-357",
+    "68 source exercise skill review and independent teacher answers",
+    "12 worked 12 try-it 6 figures",
+    "independent cool-down",
+    "teacher marking reuse contracts",
+    "numeric checking of representative exponential and interest expressions",
+    "git diff check"
+  ],
+  "RuntimeChecksNotRun": [
+    "CI",
+    "Build",
+    "xUnit",
+    "E2E",
+    "Authenticated student/teacher",
+    "Publishing"
+  ],
+  "StageD": "NOT_RUN",
+  "CI": "NOT_RUN",
+  "Tests": "TARGETED_LOCAL_ONLY",
+  "ReadyForStageD": true,
+  "ClosedAtUtc": "2026-11-07T16:20:32.795373+00:00",
+  "NextSequentialOrdinal": 22
+}

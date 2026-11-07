@@ -15,7 +15,7 @@ worked=[
 ("Model graph intercept and ratio","Exponential graph has y-intercept 4 and points (1,8),(2,16). Find function.","f(x)=4·2^x, with positive range and horizontal asymptote y=0."),
 ("Fit exponential sequence from data","Observed readings x=0,1,2,3 are 5,15,45,135. Fit model.","Ratio 3 per unit, f(x)=5·3^x. Check all four observations."),
 ("Evaluate compound interest","Deposit $1,200 at APR 6% compounded quarterly for 3 years. Find amount.","A=1200(1+0.06/4)^(4·3)=1200(1.015)^12≈$1434.74."),
-("Solve compound interest for principal","What principal yields $2,000 after 2 years at 4% compounded monthly?","P=2000/(1+0.04/12)^(24)≈$1846.3 (calculate before rounding)."),
+("Solve compound interest for principal","What principal yields $2,000 after 2 years at 4% compounded monthly?","P=2000/(1+0.04/12)^(24)≈$1846.48 (calculate before rounding)."),
 ("Evaluate natural exponential","Evaluate 2e^(−1) to four decimal places.","2/e≈0.7358."),
 ("Continuous compounding growth","Deposit $3,500 at 5% compounded continuously for 4 years.","A=3500e^(0.05·4)=3500e^0.2≈$4274.91."),
 ("Continuous decay","A 100 g sample decays continuously at rate 0.07 per hour. Find 6-hour mass.","M(t)=100e^(−0.07t), so M(6)=100e^(−0.42)≈65.7047 g.")

@@ -89,7 +89,560 @@
     ],
     "PublisherRestrictedCoolDownCopied": false
   },
-  "FirstPartyIndependentStudentMathQuestions": [],
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Why does 3·1.1^x eventually grow faster than 100+5x?",
+      "TeacherExpectedMath": "Because the ratio for a fixed increment in x remains 1.1>1, while linear slope stays fixed; as x→∞, (1.1)^x/x→∞.",
+      "OriginalSourceMathematicsReviewed": "Source: any increasing exponential with base>1 ultimately dominates increasing linear function.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "For y=9(0.85)^t, determine growth or decay from the base.",
+      "TeacherExpectedMath": "Decay; base 0.85 in (0,1), a positive 15% decrease each unit t.",
+      "OriginalSourceMathematicsReviewed": "Source: b>1 exponential growth; 0<b<1 exponential decay for positive initial value.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Explain why APR is called nominal when interest compounds quarterly.",
+      "TeacherExpectedMath": "Stated APR differs from effective annual yield (1+r/4)^4−1 because interest-on-interest increases realized return.",
+      "OriginalSourceMathematicsReviewed": "Source: nominal rate is stated, effective APY accounts for within-year compounding.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "A zoo's animal population increases by exactly 15 animals each year. Is that exponential?",
+      "TeacherExpectedMath": "No; constant additive increase is linear N(t)=N0+15t.",
+      "OriginalSourceMathematicsReviewed": "Source wolves constant annual +25 is linear.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "A sample halves every 8 hours. Exponential or linear? Express model for initial 100 g.",
+      "TeacherExpectedMath": "Exponential decay M(t)=100(1/2)^(t/8), t≥0.",
+      "OriginalSourceMathematicsReviewed": "Source bacteria factor1/8 every24h is exponential decay.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "A painting appreciates 4% annually over 12 years. What type and model for starting value P?",
+      "TeacherExpectedMath": "Exponential growth V(t)=P(1.04)^t.",
+      "OriginalSourceMathematicsReviewed": "Source fixed 3.25% annual appreciation exponential growth.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Instructor gives $3 discount per appointment from original $60. Does sequence form exponential model?",
+      "TeacherExpectedMath": "No. Price for nth session P(n)=60−3(n−1), linear until valid nonnegative prices.",
+      "OriginalSourceMathematicsReviewed": "Source $5 less each session is constant difference not ratio.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "The height of a tossed ball is h(t)=−5t²+20t+3. Is this exponential?",
+      "TeacherExpectedMath": "No; quadratic polynomial in time.",
+      "OriginalSourceMathematicsReviewed": "Source h(t)=−4.9t²+18t+40 is quadratic not exponential.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Two forests have models A=100(1.02)^t, B=80(1.04)^t. Which has faster percentage growth?",
+      "TeacherExpectedMath": "B grows at 4% versus A at 2%.",
+      "OriginalSourceMathematicsReviewed": "Source B=82(1.029)^t has 2.9%, faster than A=115(1.025)^t at 2.5%.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "For same forest models A(0)=100 and B(0)=80, which starts larger and by how many?",
+      "TeacherExpectedMath": "A starts 20 trees larger.",
+      "OriginalSourceMathematicsReviewed": "Source A initially115 vs B82, difference33.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "For A=100(1.02)^t and B=80(1.04)^t, compare rounded populations at t=20.",
+      "TeacherExpectedMath": "A≈149, B≈175; B larger by approximately26 (round each first).",
+      "OriginalSourceMathematicsReviewed": "Source A(20)≈188, B(20)≈145; A larger by43 (using nearest whole separately).",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "For A=100(1.02)^t and B=80(1.04)^t, compare at t=100.",
+      "TeacherExpectedMath": "A≈724, B≈4040; B larger by≈3316 rounded independently.",
+      "OriginalSourceMathematicsReviewed": "Source as t=100, B's larger base1.029 eventually overtakes A's1.025 despite smaller initial value.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Explain why a smaller forest with bigger exponential growth rate eventually overtakes a larger forest.",
+      "TeacherExpectedMath": "If 0<aB<aA and bB>bA>1, ratio B/A=(aB/aA)(bB/bA)^t grows without bound. Finite resources may invalidate indefinite extrapolation.",
+      "OriginalSourceMathematicsReviewed": "Source B eventually dominates because 1.029>1.025. Resource availability limits extrapolation.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Classify y=200(1−t)^4 as exponential, decay, or neither.",
+      "TeacherExpectedMath": "Neither: variable is inside polynomial factor raised to fixed power, not a constant positive base raised to t.",
+      "OriginalSourceMathematicsReviewed": "Source 300(1−t)^5 is not an exponential function.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Classify y=120(1.03)^t.",
+      "TeacherExpectedMath": "Exponential growth at 3% per unit.",
+      "OriginalSourceMathematicsReviewed": "Source 220(1.06)^x is growth6%.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Classify f(x)=12(1.02)^(1/x) for x>0.",
+      "TeacherExpectedMath": "Not a standard exponential f(x)=ab^x with x linear in exponent; growth/decay label by b alone would be misleading.",
+      "OriginalSourceMathematicsReviewed": "Source 16.5(1.025)^(1/x) likewise does not have standard exponential form.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Classify y=500(0.92)^t.",
+      "TeacherExpectedMath": "Exponential decay at 8% per unit.",
+      "OriginalSourceMathematicsReviewed": "Source 11701(0.97)^t decays3%.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Find f(x)=ab^x through (0,4),(2,100), a,b>0.",
+      "TeacherExpectedMath": "a=4; b²=25 so b=5; f(x)=4·5^x.",
+      "OriginalSourceMathematicsReviewed": "Source (0,6),(3,750): a=6,b=5.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Find f(x)=ab^x through (0,300),(2,3), a,b>0.",
+      "TeacherExpectedMath": "a=300;b²=0.01 so b=0.1; f(x)=300(0.1)^x.",
+      "OriginalSourceMathematicsReviewed": "Source (0,2000),(2,20): a=2000,b=0.1.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Find f(x)=ab^x through (−1,2),(3,32).",
+      "TeacherExpectedMath": "Over four steps ratio16 implies b=2; a=4; f(x)=4·2^x.",
+      "OriginalSourceMathematicsReviewed": "Source (−1,1.5),(3,24): a=3,b=2.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Find f(x)=ab^x through (−1,8) and (3,2).",
+      "TeacherExpectedMath": "b^4=1/4 so b=(1/4)^(1/4)=1/√2; a=8b=4√2; f(x)=4√2(1/√2)^x.",
+      "OriginalSourceMathematicsReviewed": "Source (−2,6),(3,1): b^5=1/6, a=6b².",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Find f(x)=ab^x through (1,3) and (3,12).",
+      "TeacherExpectedMath": "b²=4 ->b=2; a=3/2; f(x)=1.5·2^x.",
+      "OriginalSourceMathematicsReviewed": "Source (3,1),(5,4): b=2, a=1/8.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Classify table x=1,2,3,4; y=12,17,22,27.",
+      "TeacherExpectedMath": "Linear: constant differences +5, y=5x+7.",
+      "OriginalSourceMathematicsReviewed": "Source x1..4, values70,40,10,−20 have differences−30; linear y=100−30x.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Classify x=1,2,3,4; y=18,9,4.5,2.25.",
+      "TeacherExpectedMath": "Exponential ratio1/2, f(x)=36(1/2)^x.",
+      "OriginalSourceMathematicsReviewed": "Source 70,49,34.3,24.01 ratio0.7; f(x)=100(0.7)^x.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Classify x=1,2,3,4; y=1,2,4,7.",
+      "TeacherExpectedMath": "Neither linear (differences1,2,3) nor exponential (ratios2,2,1.75).",
+      "OriginalSourceMathematicsReviewed": "Source 80,61,42.9,25.61 is neither exact constant difference nor ratio.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Classify x=1,2,3,4; y=6,18,54,162.",
+      "TeacherExpectedMath": "Exponential ratio3, f(x)=2·3^x.",
+      "OriginalSourceMathematicsReviewed": "Source 10,20,40,80 ratio2, f(x)=5·2^x.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Classify x=1,2,3,4; y=−2,2,6,10.",
+      "TeacherExpectedMath": "Linear difference4; y=4x−6.",
+      "OriginalSourceMathematicsReviewed": "Source −3.25,2,7.25,12.5 difference5.25; linear y=5.25x−8.5.",
+      "MarkingMode": "MANUAL_TEACHER_CONCEPTS_FORMULAS_NUMERICS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Calculate the value of $8,000 at APR 3% monthly compounding for 5 years.",
+      "TeacherExpectedMath": "A=8000(1+0.03/12)^60 = $9292.93.",
+      "OriginalSourceMathematicsReviewed": "Source A=10250(1+0.04/12)^120 ≈$15281.03.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Identify the initial principal from A=7200(1+0.05/4)^24.",
+      "TeacherExpectedMath": "P=$7200.",
+      "OriginalSourceMathematicsReviewed": "Source coefficient P=$10250.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "How long is A=7200(1+0.05/4)^24 invested, with quarterly compounding?",
+      "TeacherExpectedMath": "24 quarters/4=6 years.",
+      "OriginalSourceMathematicsReviewed": "Source 120 months/12=10 years.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Find future amount for $5,000 at APR 4% compounded semiannually for 10 years.",
+      "TeacherExpectedMath": "A=5000(1.02)^20≈$7429.74.",
+      "OriginalSourceMathematicsReviewed": "Source 6500(1+.036/2)^40≈$13268.58.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "How much more is $5,000 at 4% APR worth after 10 years if compounded weekly instead of semiannually?",
+      "TeacherExpectedMath": "Difference=5000[(1+.04/52)^520−(1+.04/2)^20]≈$28.24.",
+      "OriginalSourceMathematicsReviewed": "Source difference=6500[(1+.036/52)^1040−(1+.036/2)^40]≈$81.91.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Solve A=P(1+r/n)^(nt) for original principal P.",
+      "TeacherExpectedMath": "P=A/(1+r/n)^(nt), assuming positive base and n,t positive.",
+      "OriginalSourceMathematicsReviewed": "Source same formula P=A/(1+r/n)^(nt).",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Find principal needed for $12,000 at 6% APR compounded monthly for 4 years.",
+      "TeacherExpectedMath": "P=12000/(1+.06/12)^48≈$9445.18.",
+      "OriginalSourceMathematicsReviewed": "Source P=14472.74/(1+.055/12)^60≈$11000 nearest dollar.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "For $5000 at 4% compounded semiannually, find additional gain between years 10 and 15.",
+      "TeacherExpectedMath": "A15−A10=5000[(1.02)^30−(1.02)^20]≈$1627.07.",
+      "OriginalSourceMathematicsReviewed": "Source #31 account additional 5 years: 6500[(1+.036/2)^50−(1+.036/2)^40]≈$2591.39; source #34 account additional 5 years: 14472.74[(1+.055/12)^60−1]≈$4569.10.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Solve A=P(1+r/n)^(nt) for nominal APR r.",
+      "TeacherExpectedMath": "r=n[(A/P)^(1/(nt))−1], for P,A,n,t>0.",
+      "OriginalSourceMathematicsReviewed": "Source same APR inversion formula.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "If $8,000 becomes $10,000 in 5 years with semiannual compounding, find APR.",
+      "TeacherExpectedMath": "r=2[(10000/8000)^(1/10)−1]≈4.5130%.",
+      "OriginalSourceMathematicsReviewed": "Source r=2[(13373.53/9000)^(1/20)−1]≈4.0000%.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "A deposit of $3,000 grows to $5,000 in 8 years compounded monthly. Find APR.",
+      "TeacherExpectedMath": "r=12[(5000/3000)^(1/96)−1]≈6.4023%.",
+      "OriginalSourceMathematicsReviewed": "Source r=12[(38455/5500)^(1/360)−1]≈6.5000%.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Classify N(t)=500e^(0.04t).",
+      "TeacherExpectedMath": "Continuous exponential growth, rate k=0.04>0.",
+      "OriginalSourceMathematicsReviewed": "Source y=3742e^(0.75t) is continuous growth.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Classify N(t)=100e^(2/t) for positive t as standard constant-rate growth/decay.",
+      "TeacherExpectedMath": "Neither standard constant-rate exponential growth nor decay in t; its exponent 2/t is not kt.",
+      "OriginalSourceMathematicsReviewed": "Source 150e^(3.25/t) similarly not in standard a e^(kt) form; for t>0 decreases toward 150 non-constant proportional rate.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Classify M(t)=40e^(−0.2t).",
+      "TeacherExpectedMath": "Continuous exponential decay, rate k=−0.2.",
+      "OriginalSourceMathematicsReviewed": "Source y=2.25e^(−2t) continuous decay.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Find account A for $5,000 at 5% continuous interest over 6 years.",
+      "TeacherExpectedMath": "A=5000e^(0.05·6)≈$6749.29.",
+      "OriginalSourceMathematicsReviewed": "Source 12000e^(.072·30)≈$104053.65.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "How much less does $5,000 earn at 5% APR after six years with monthly rather than continuous compounding?",
+      "TeacherExpectedMath": "Continuous−monthly=5000[e^(.3)−(1+.05/12)^72]≈$4.21.",
+      "OriginalSourceMathematicsReviewed": "Source difference=12000[e^2.16−(1+.072/12)^360]≈$669.42.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Evaluate f(x)=3·4^x at x=−2.",
+      "TeacherExpectedMath": "f(−2)=3/16=0.1875.",
+      "OriginalSourceMathematicsReviewed": "Source 2·5^(−3)=2/125=0.016.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Evaluate f(x)=−5^(2x+3) at x=−1.",
+      "TeacherExpectedMath": "f(−1)=−5^1=−5.",
+      "OriginalSourceMathematicsReviewed": "Source f(−1)=−4^(2(−1)+3)=−4, negative sign outside exponent.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Evaluate f(x)=e^x at x=2.",
+      "TeacherExpectedMath": "e²≈7.3891.",
+      "OriginalSourceMathematicsReviewed": "Source e³≈20.0855.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "Evaluate f(x)=−3e^(x−2) at x=1.",
+      "TeacherExpectedMath": "−3/e≈-1.1036.",
+      "OriginalSourceMathematicsReviewed": "Source −2e^(−2)≈-0.2707.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "Evaluate f(x)=3·2^(−x+2)+1 at x=−1.",
+      "TeacherExpectedMath": "3·2³+1=25.",
+      "OriginalSourceMathematicsReviewed": "Source 2.7·4^(−(−2)+1)+1.5=2.7·64+1.5=174.3.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "Evaluate f(x)=2e^(x)−1 at x=3.",
+      "TeacherExpectedMath": "2e³−1≈39.1711.",
+      "OriginalSourceMathematicsReviewed": "Source 1.2e^(2·3)−0.3≈483.8146.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "Evaluate f(x)=−2·4^(−x)+2 at x=2.",
+      "TeacherExpectedMath": "−2/16+2=15/8=1.875.",
+      "OriginalSourceMathematicsReviewed": "Source −(3/2)3^(−2)+3/2=4/3≈1.3333.",
+      "MarkingMode": "TEACHER_REVIEW_EXPONENTIAL_FINANCIAL_UNITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "Fit positive exponential model f=ab^x passing through (0,4),(2,100).",
+      "TeacherExpectedMath": "a=4, b=5, so f(x)=4·5^x.",
+      "OriginalSourceMathematicsReviewed": "a≈3, b≈5; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Fit f=ab^x through (2,50),(5,25).",
+      "TeacherExpectedMath": "a≈79.3701, b≈0.793701; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "OriginalSourceMathematicsReviewed": "a≈350, b≈0.86; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "Fit f=ab^x through (10,40),(30,80).",
+      "TeacherExpectedMath": "a≈28.2843, b≈1.03526; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "OriginalSourceMathematicsReviewed": "a≈17.9999, b≈1.025; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "Fit f=ab^x through (1,32),(4,4).",
+      "TeacherExpectedMath": "b=1/2; a=64; f(x)=64(1/2)^x.",
+      "OriginalSourceMathematicsReviewed": "a≈155.499, b≈0.451236; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 55,
+      "IndependentStudentQuestion": "Fit f=ab^x through (0,200),(10,300).",
+      "TeacherExpectedMath": "a≈200, b≈1.04138; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "OriginalSourceMathematicsReviewed": "a≈277.899, b≈1.01; exponential f(x)=a·b^x, positive base. Rounded source input data limit precision.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 56,
+      "IndependentStudentQuestion": "Show formula for annual percentage yield when interest compounded quarterly.",
+      "TeacherExpectedMath": "APY=(1+r/4)^4−1 for stated nominal annual rate r.",
+      "OriginalSourceMathematicsReviewed": "Source monthly APY=(1+r/12)^12−1.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 57,
+      "IndependentStudentQuestion": "Derive general APY for n interest creditings per year and specialize to daily.",
+      "TeacherExpectedMath": "APY_n=(1+r/n)^n−1; daily with n=365.",
+      "OriginalSourceMathematicsReviewed": "Source same APY_n; daily n=365 (assuming 365-day convention).",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 58,
+      "IndependentStudentQuestion": "Rewrite f(x)=7(1.05)^x using natural exponential base.",
+      "TeacherExpectedMath": "f(x)=7e^(x ln 1.05), since b=e^(ln b).",
+      "OriginalSourceMathematicsReviewed": "Source a b^x=a e^((ln b)x), b>0.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 59,
+      "IndependentStudentQuestion": "Rewrite f(x)=100(0.8)^t as e-base continuous decay.",
+      "TeacherExpectedMath": "f(t)=100e^((ln 0.8)t), where ln0.8<0.",
+      "OriginalSourceMathematicsReviewed": "Source a(1/b)^x=a e^(−(ln b)x) for b>1.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 60,
+      "IndependentStudentQuestion": "For A(t)=500e^(0.03t), prove interest earned as fraction of original principal.",
+      "TeacherExpectedMath": "[A(t)−500]/500=e^(0.03t)−1.",
+      "OriginalSourceMathematicsReviewed": "Source (A−a)/a=e^(rt)−1.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 61,
+      "IndependentStudentQuestion": "A population begins at 12,000 in 2020 with 4% annual growth. Predict 2028.",
+      "TeacherExpectedMath": "P(2028)=12000(1.04)^8≈16423 individuals.",
+      "OriginalSourceMathematicsReviewed": "Source 23900(1.09)^8≈47622 foxes for2020.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 62,
+      "IndependentStudentQuestion": "A 200 mg radioactive sample halves every 20 hours. What remains after 35 hours?",
+      "TeacherExpectedMath": "M(35)=200(1/2)^(35/20)≈59.460mg.",
+      "OriginalSourceMathematicsReviewed": "Source 100(1/2)^(54/35)≈34.321mg.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 63,
+      "IndependentStudentQuestion": "An artwork rises from $20,000 in 2010 to $30,000 in 2020. Compute annual percentage and project 2025.",
+      "TeacherExpectedMath": "b=(30000/20000)^(1/10)≈1.041380; r≈4.138%; V2025=20000(1.5)^(15/10)≈$36742.35.",
+      "OriginalSourceMathematicsReviewed": "Source b=(145000/110000)^(1/20), annual rate≈1.391%; 2010 value≈$155368.09.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 64,
+      "IndependentStudentQuestion": "A car depreciates from $24,000 to $12,000 in 4 years. Project its value after 7 years.",
+      "TeacherExpectedMath": "V7=24000(1/2)^(7/4)≈$7135.24.",
+      "OriginalSourceMathematicsReviewed": "Source V2017=38000(11000/38000)^(10/6)≈$4813.55.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 65,
+      "IndependentStudentQuestion": "Find a required deposit for target $30,000 after 4 years at APR 5% compounded daily.",
+      "TeacherExpectedMath": "P=30000/(1+.05/365)^(365·4)≈$24562.26.",
+      "OriginalSourceMathematicsReviewed": "Source P=54000/(1+.082/365)^(365·5)≈$35838.76.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 66,
+      "IndependentStudentQuestion": "What APR compounded monthly raises $8,000 to $10,000 in 5 years?",
+      "TeacherExpectedMath": "r=12[(10000/8000)^(1/(12·5))−1]≈4.4712%.",
+      "OriginalSourceMathematicsReviewed": "Source nominal daily r=365[(15000/10000)^(1/(365·6))−1]≈6.7584%.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 67,
+      "IndependentStudentQuestion": "Compare $10,000 after 10 years at APR 4% with monthly vs continuous compounding.",
+      "TeacherExpectedMath": "Monthly=10000(1+.04/12)^120≈$14908.33; continuous=10000e^0.4≈$14918.25; extra≈$9.92.",
+      "OriginalSourceMathematicsReviewed": "Source A_monthly=13500(1+.0725/12)^300≈$82247.78; A_continuous=13500e^(0.0725·25)≈$82697.53; difference≈$449.75.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 68,
+      "IndependentStudentQuestion": "Compare $6,000 after 3 years at 5% APR: annual, quarterly, monthly and continuous compounding.",
+      "TeacherExpectedMath": "Annual≈$6945.75; quarterly≈$6964.53; monthly≈$6968.83; continuous≈$6971.01.",
+      "OriginalSourceMathematicsReviewed": "Source 4000,7% APR,9 years: annual≈$7353.84, quarterly≈$7469.63, monthly≈$7496.71, continuous≈$7510.44.",
+      "Rubric": "TEACHER_REVIEW_EXPONENTIAL_GROWTH_ROUNDING_UNITS_MODEL_LIMITS",
+      "Runtime": "NOT_RUN"
+    }
+  ],
   "RuntimeVerified": false,
-  "StageD": "NOT_RUN"
+  "StageD": "NOT_RUN",
+  "SourceExerciseMathReviewed": 68,
+  "IndependentExerciseTasksAuthored": 68,
+  "MathSourcePrecisionLimitations": "Exponential fit source graph coordinate datasets are rounded; use appropriate coefficient precision, not exact numeric parity.",
+  "StageCDecision": "REUSE_EXISTING_TEACHER_MANUAL_ASSESSMENT_AND_TYPED_GRAPH_RENDERER",
+  "StageCAssessmentRoutePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l01-stage-c-68-exponential-assessment-reuse-routes.json",
+  "OriginalSourceFigureSkillAlternatives": 6,
+  "GraphTeacherReviewMode": "DRAWING_REQUIRED_TEACHER_MANUAL_REVIEW",
+  "OriginalPublisherFiguresCopied": false
 }

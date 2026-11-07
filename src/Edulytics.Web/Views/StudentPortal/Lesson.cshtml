@@ -1959,6 +1959,27 @@
             </section>
         }
 
+        @* Independently authored Grade 12 exponential graphs for source skills.
+           Mathematical drawings are teacher-reviewed; runtime is reserved for Stage D. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Independent exponential mathematical graphs">
+                <h2>Exponential functions: six independent teaching graphs</h2>
+                <p>Investigate initial values, growth, decay, linear comparisons
+                   and the horizontal asymptote. These independently authored
+                   diagrams do not reproduce original textbook artwork.</p>
+                @foreach (var task in Grade12PrecalculusSection41GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Figure skill @task.OriginalSourceFigureSkill:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07")
         {
             <section class="lesson-source-aligned-activities"
