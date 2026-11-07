@@ -1,0 +1,197 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L06",
+  "ContentVersion": "g12-u08-l06-firstparty-parametric-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L06",
+      "CultureCode": "en",
+      "Title": "Parametric Equations",
+      "ExplanationParagraphs": [
+        "Parametric equations x=f(t), y=g(t) trace ordered positions as a parameter changes. They can represent curves not single-valued as y=f(x).",
+        "Eliminate the parameter algebraically, retaining any restrictions induced by exponential, logarithmic, radical or time domains.",
+        "The Cartesian locus generally does not preserve travel direction, time rate or whether a curve is traced repeatedly.",
+        "Directed line segment from A to B has x=xA+(xB−xA)t, y=yA+(yB−yA)t on 0≤t≤1.",
+        "Ellipse x²/a²+y²/b²=1 has parameterization x=a cos t, y=b sin t, t in [0,2π), for a,b>0.",
+        "An infinite family of parameterizations may share the same locus with differing speed and orientation.",
+        "Parametric curve intersections need not occur at the same parameter value; compare Cartesian loci and parameter ranges.",
+        "Independent Cool-down: eliminate t from x=4t−3,y=2t+1; parameterize a circle radius5; distinguish x=t²,y=t and x=t,y=t².",
+        "Independent Try It 1: x=2t,y=5t+1; eliminate t.",
+        "Independent Try It 2: x=t²,y=t; eliminate t.",
+        "Independent Try It 3: Line from(0,0) to(3,6).",
+        "Independent Try It 4: Eliminate x=e^t,y=t+3.",
+        "Independent Try It 5: Eliminate x=4cost,y=5sint.",
+        "Independent Try It 6: Parametrize y=sqrt(x),x≥0."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Parametric curve",
+          "Question": "For x=t,y=t² identify locus/direction.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "y=x², moving left to right as t increases."
+          ],
+          "Answer": "y=x², moving left to right as t increases.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Elimination",
+          "Question": "x=3t+1,y=2t−1.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "y=2(x−1)/3−1."
+          ],
+          "Answer": "y=2(x−1)/3−1.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Segment",
+          "Question": "From (1,2) to(4,8).",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "x=1+3t,y=2+6t,0≤t≤1."
+          ],
+          "Answer": "x=1+3t,y=2+6t,0≤t≤1.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Polynomial",
+          "Question": "x=t+2,y=t².",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "y=(x−2)²."
+          ],
+          "Answer": "y=(x−2)².",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Exponential",
+          "Question": "x=e^t,y=3t.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "y=3lnx,x>0."
+          ],
+          "Answer": "y=3lnx,x>0.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Logarithmic",
+          "Question": "x=ln t,y=t, t>0.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "y=e^x."
+          ],
+          "Answer": "y=e^x.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Ellipse",
+          "Question": "x=2cost,y=3sint.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "x²/4+y²/9=1."
+          ],
+          "Answer": "x²/4+y²/9=1.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Trig squared",
+          "Question": "x=3cost,y=4sint.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "x²/9+y²/16=1."
+          ],
+          "Answer": "x²/9+y²/16=1.",
+          "Check": "Preserve parameter domain and curve direction."
+        },
+        {
+          "Title": "Parametrize curve",
+          "Question": "y=2x²−4.",
+          "Method": "Evaluate coordinate pairs, eliminate t or construct a valid parametrization.",
+          "Steps": [
+            "x=t,y=2t²−4."
+          ],
+          "Answer": "x=t,y=2t²−4.",
+          "Check": "Preserve parameter domain and curve direction."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parameter elimination",
+          "Definition": "Substitute t into coordinates to describe the x-y locus.",
+          "Rule": "Retain restricted domain.",
+          "Example": "x=e^t implies x>0."
+        },
+        {
+          "Title": "Directed segment",
+          "Definition": "A+t(B−A),0≤t≤1.",
+          "Rule": "Endpoints at t=0 and t=1.",
+          "Example": "(0,0)→(2,3)."
+        },
+        {
+          "Title": "Ellipse parametric",
+          "Definition": "x=a cos t,y=b sin t.",
+          "Rule": "a,b positive; full turn0≤t<2π.",
+          "Example": "a=2,b=3."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party parametric evaluation table",
+          "Description": "Independent traced parabola coordinates x=t,y=t².",
+          "PrimaryLabel": "Parameter",
+          "SecondaryLabel": "Position",
+          "Rows": [
+            {
+              "Label": "t",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "x(t)",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y(t)",
+              "Cells": [
+                "4",
+                "1",
+                "0",
+                "1",
+                "4"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Parameter encodes position and direction.",
+        "Elimination may drop time information.",
+        "Specify restrictions and intervals.",
+        "Construct lines, ellipses and functions parametrically."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Compare two curves only at equal t.",
+          "WhyWrong": "Intersecting traces can arrive at different parameter values.",
+          "Correction": "Solve for independent parameters or Cartesian loci."
+        }
+      ]
+    }
+  ]
+}
