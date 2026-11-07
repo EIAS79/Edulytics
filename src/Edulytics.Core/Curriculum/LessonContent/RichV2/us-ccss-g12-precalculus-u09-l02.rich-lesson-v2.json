@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L02",
+  "ContentVersion": "g12-u09-l02-triple-systems-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L02",
+      "CultureCode": "en",
+      "Title": "Systems of Linear Equations: Three Variables",
+      "ExplanationParagraphs": [
+        "A three-by-three linear system can have one ordered triple, none, or infinitely many solutions.",
+        "Gaussian elimination adds multiples of equations to reach triangular form; then back substitute for z,y,x.",
+        "Elementary operations: swap two rows, scale by nonzero constant, or add a multiple of one row to another.",
+        "A contradiction0=nonzero means inconsistency. A redundant row0=0 may indicate dependent constraints.",
+        "Models for three categories use totals, ratios/differences and weighted sums, including tickets, money and population.",
+        "Check all three original equations and interpret physical feasibility.",
+        "Independent Cool-down: solve x+y+z=6,x−y=−1,y−z=−1 and classify conflicting scaled equations.",
+        "Independent Try It 1: Check (1,2,3) in x+y+z=6.",
+        "Independent Try It 2: Solve x+y+z=9,x−y=0,y−z=0.",
+        "Independent Try It 3: Three numbers sum30, in ratio1:2:3."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check triple",
+          "Question": "Verify (1,2,3) for x+y+z=6,2x+y+z=7,x+2y+z=8.",
+          "Method": "Eliminate variables and verify all equations.",
+          "Steps": [
+            "All true."
+          ],
+          "Answer": "All true.",
+          "Check": "Substitute full ordered triple."
+        },
+        {
+          "Title": "Elimination",
+          "Question": "Solve x+y+z=6,x−y=−1,y−z=−1.",
+          "Method": "Eliminate variables and verify all equations.",
+          "Steps": [
+            "(1,2,3)."
+          ],
+          "Answer": "(1,2,3).",
+          "Check": "Substitute full ordered triple."
+        },
+        {
+          "Title": "Application",
+          "Question": "Three groups x+y+z=60,y=2x,z=3x.",
+          "Method": "Eliminate variables and verify all equations.",
+          "Steps": [
+            "(10,20,30)."
+          ],
+          "Answer": "(10,20,30).",
+          "Check": "Substitute full ordered triple."
+        },
+        {
+          "Title": "Inconsistent system",
+          "Question": "x+y+z=5,2x+2y+2z=12.",
+          "Method": "Eliminate variables and verify all equations.",
+          "Steps": [
+            "No solutions."
+          ],
+          "Answer": "No solutions.",
+          "Check": "Substitute full ordered triple."
+        },
+        {
+          "Title": "Dependent system",
+          "Question": "x+y+z=6,2x+2y+2z=12, x−y=1.",
+          "Method": "Eliminate variables and verify all equations.",
+          "Steps": [
+            "Infinite solutions."
+          ],
+          "Answer": "Infinite solutions.",
+          "Check": "Substitute full ordered triple."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Three-variable solution",
+          "Definition": "An ordered triple satisfying every equation.",
+          "Rule": "Verify all three rows.",
+          "Example": "(1,2,3)."
+        },
+        {
+          "Title": "Elimination",
+          "Definition": "Transform to triangular system.",
+          "Rule": "Preserve equivalence under row operations.",
+          "Example": "Reduce to z then back substitute."
+        },
+        {
+          "Title": "Inconsistent",
+          "Definition": "Augmented row 0,0,0|nonzero.",
+          "Rule": "No common triple.",
+          "Example": "sum=5 vs twice sum=12."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent 3-variable elimination overview",
+          "Description": "Original row operation outline.",
+          "PrimaryLabel": "Step",
+          "SecondaryLabel": "Purpose",
+          "Rows": [
+            {
+              "Label": "Order",
+              "Cells": [
+                "eliminate x",
+                "eliminate y",
+                "solve z",
+                "back substitute"
+              ]
+            },
+            {
+              "Label": "Target",
+              "Cells": [
+                "2 rows",
+                "1 row",
+                "z",
+                "y,x"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Solve using triangular elimination.",
+        "Check dependent and inconsistent cases.",
+        "Build applied triples with totals and ratios."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Solve only first two equations.",
+          "WhyWrong": "Third equation may contradict pair solution.",
+          "Correction": "Always verify all three."
+        }
+      ]
+    }
+  ]
+}
