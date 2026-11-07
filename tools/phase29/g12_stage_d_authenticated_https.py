@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Isolated GitHub Actions-only Grade 12 authenticated HTTPS regression; never production."""
-import hashlib, html, json, os, re, urllib.error
+import hashlib, html, json, os, re, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 from g5_stage_d_authenticated_https import (
     sql, login_actor, get_page, BASE, UUID,
@@ -47,6 +47,61 @@ def adoption():
     if level!="13" or "PRECALC" not in key or not re.fullmatch(UUID,aid):
         raise AssertionError("G12 student adoption not explicit level-13 Precalculus: "+key+"/"+level)
     return aid,key
+
+def first_lesson_teacher_rubric(student, teacher, lesson_id):
+    """Test one actual human-gradeable U01L01 source task, not 73 rubrics."""
+    url="/student/g12/precalculus/rubric?lessonId="+lesson_id+"&exerciseNumber=1"
+    form=get_page(student,url)
+    token=extract_csrf(form)
+    if not token or 'name="explanation"' not in form:
+        raise AssertionError("G12 first lesson teacher-led student form unavailable")
+    reasoning=("A function gives every input exactly one output. The relation "
+        "(1,2),(1,3) fails because input 1 has two different outputs; "
+        "the relation (1,2),(2,3) is a function on the inputs 1 and 2.")
+    data=urllib.parse.urlencode({"lessonId":lesson_id,"exerciseNumber":1,
+        "explanation":reasoning,"__RequestVerificationToken":token}).encode()
+    with student.open(urllib.request.Request(BASE+
+        "/student/g12/precalculus/rubric/submit",data=data,
+        method="POST"),timeout=45) as response:
+        if response.status!=200:
+            raise AssertionError("G12 teacher-led student response not submitted")
+        response.read()
+    submission=one("""SELECT "Id"::text FROM "Grade12PrecalculusTeacherRubrics"
+        WHERE "CurriculumPedagogicalLessonId"='"""+lesson_id+"""'
+          AND "ExerciseNumber"=1 AND "TeacherScore" IS NULL;""",
+        "first lesson saved teacher-led answer")
+    page=get_page(teacher,"/school/g12/precalculus/rubric/"+submission)
+    ttoken=extract_csrf(page)
+    if not ttoken or page.count('name="marks"')!=4:
+        raise AssertionError("G12 assigned teacher cannot score four rubric criteria")
+    feedback="Reviewed function uniqueness and the distinct repeated-input examples."
+    body=urllib.parse.urlencode([
+        *(("marks",1) for _ in range(4)),
+        ("teacherFeedback",feedback),
+        ("__RequestVerificationToken",ttoken)]).encode()
+    path=BASE+"/school/g12/precalculus/rubric/"+submission
+    with teacher.open(urllib.request.Request(path,data=body,method="POST"),
+        timeout=45) as response:
+        if response.status!=200:
+            raise AssertionError("G12 teacher rubric review did not persist")
+        response.read()
+    result=one("""SELECT "TeacherScore"::text||'|'||"CriteriaJson"||'|'||"TeacherFeedback"
+        FROM "Grade12PrecalculusTeacherRubrics"
+        WHERE "Id"='"""+submission+"""';""",
+        "persisted four-part Grade12 teacher rubric")
+    score,criteria,saved=result.split("|",2)
+    if score!="4" or json.loads(criteria)!=[1,1,1,1] or saved!=feedback:
+        raise AssertionError("G12 teacher score or feedback was not persisted")
+    try:
+        teacher.open(urllib.request.Request(path,data=body,method="POST"),
+            timeout=45)
+        raise AssertionError("G12 immutable teacher grade was overwritten")
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (403,404,409):raise
+    return {"lessonOrdinal":1,"sourceExerciseNumber":1,
+            "teacherRubricId":submission,"score":4,
+            "criteriaPersisted":4,"duplicateReviewDenied":True}
+
 
 def run():
     must={"GITHUB_ACTIONS":"true","EDULYTICS_CI_REHEARSAL":"true",
@@ -133,6 +188,7 @@ def run():
         print("G12_PRACTICE_PERSISTENCE_CHECK",ordinal,code,flush=True)
     if len(all_lesson_practice)!=73:
         raise AssertionError("Grade12 cannot close a partial practice acceptance")
+    teacher_rubric=first_lesson_teacher_rubric(student,teacher,expected[0][1])
     report={"scope":"CI_DISPOSABLE_G12_AUTHENTICATED_HTTPS_NOT_PUBLICATION",
             "candidateSha":os.environ.get("GITHUB_SHA"),
             "sourceAcademicParity":"UNKNOWN","reviewerSignoff":"NOT_TESTED",
@@ -141,7 +197,8 @@ def run():
             "realPersistedCorrectAnswer":positive,"realPersistedMalformedAnswer":negative,
             "all73LessonPracticePositiveAndNegative":all_lesson_practice,
             "persistedExactPracticeLessonCount":len(all_lesson_practice),
-            "teacherGradebookPerLessonVerified":False}
+            "teacherGradebookPerLessonVerified":False,
+            "independentFirstLessonTeacherRubric":teacher_rubric}
     Path("/tmp/g12-stage-d-authenticated-73-lessons.json").write_text(
        json.dumps(report,ensure_ascii=False,indent=2,default=str),encoding="utf8")
     print("G12_AUTHENTICATED_73_LESSONS_146_REAL_GRADED_ATTEMPTS_PASS",len(records),flush=True)
