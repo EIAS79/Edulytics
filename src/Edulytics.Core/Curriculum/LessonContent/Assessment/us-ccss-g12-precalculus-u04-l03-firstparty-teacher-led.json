@@ -1,0 +1,668 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L03",
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Convert log_7(49)=2 into exponent form.",
+      "TeacherExpectedMath": "7^2=49.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 2,
+      "Question": "Convert 2^(-4)=1/16 into logarithm.",
+      "TeacherExpectedMath": "log_2(1/16)=-4.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 3,
+      "Question": "Evaluate log_3(81).",
+      "TeacherExpectedMath": "4.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 4,
+      "Question": "Evaluate log_5(1/125).",
+      "TeacherExpectedMath": "-3.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 5,
+      "Question": "Evaluate log(10^(-4)).",
+      "TeacherExpectedMath": "-4.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 6,
+      "Question": "Approximate log(80) to four decimals.",
+      "TeacherExpectedMath": "1.9031.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 7,
+      "Question": "Find Richter difference for intensity ratio1000.",
+      "TeacherExpectedMath": "log(1000)=3.",
+      "Mode": "TEACHER_MANUAL"
+    },
+    {
+      "Number": 8,
+      "Question": "Evaluate ln(e^(1/2)) and ln(-1) in real numbers.",
+      "TeacherExpectedMath": "1/2; ln(-1) undefined over real numbers.",
+      "Mode": "TEACHER_MANUAL"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Solve log_4(x)=3.",
+      "Express 5^(-2)=1/25 in logarithmic form.",
+      "Solve ln(x)=0 and decide whether ln(-2) is real."
+    ],
+    "TeacherExpectedMath": [
+      "x=64",
+      "log_5(1/25)=-2",
+      "x=1; ln(-2) is undefined over real numbers."
+    ],
+    "PublisherCoolDownCopied": false
+  },
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Define log base b of x and give restrictions on b and x.",
+      "TeacherExpectedMath": "log_b(x)=y exactly when b^y=x; b>0, b!=1 and x>0.",
+      "OriginalSourceMathematicsReviewed": "Original 1 asks the meaning of the base, argument, and exponent in log_b(x)=y.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "State how f(x)=log_3(x) and g(x)=3^x compose.",
+      "TeacherExpectedMath": "f(g(x))=x on R; g(f(x))=x on x>0.",
+      "OriginalSourceMathematicsReviewed": "Original 2 asks why logs and exponentials are mutually inverse.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Solve log_5(x)=3 by definition.",
+      "TeacherExpectedMath": "x=5^3=125.",
+      "OriginalSourceMathematicsReviewed": "Original 3 solves log_b(x)=y by exponentiating: x=b^y.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "What is log(1000) when base is omitted?",
+      "TeacherExpectedMath": "Common log is base10: log(1000)=3.",
+      "OriginalSourceMathematicsReviewed": "Original 4 identifies common logarithms as base10.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "What is ln(e^2) and what is its base?",
+      "TeacherExpectedMath": "ln is base e; ln(e^2)=2.",
+      "OriginalSourceMathematicsReviewed": "Original 5 defines natural logarithm with base e.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Rewrite log_2(32)=5 in exponential form.",
+      "TeacherExpectedMath": "2^5=32",
+      "OriginalSourceMathematicsReviewed": "log_4(q)=m => 4^m=q",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Rewrite log_7(49)=2 in exponential form.",
+      "TeacherExpectedMath": "7^2=49",
+      "OriginalSourceMathematicsReviewed": "log_a(b)=c => a^c=b",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Rewrite log_9(81)=2 in exponential form.",
+      "TeacherExpectedMath": "9^2=81",
+      "OriginalSourceMathematicsReviewed": "log_16(y)=x => 16^x=y",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Rewrite log_4(64)=3 in exponential form.",
+      "TeacherExpectedMath": "4^3=64",
+      "OriginalSourceMathematicsReviewed": "log_x(64)=y => x^y=64, x>0, x!=1",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Rewrite log_3(1/243)=-5 in exponential form.",
+      "TeacherExpectedMath": "3^(-5)=1/243",
+      "OriginalSourceMathematicsReviewed": "log_y(x)=-11 => y^(-11)=x",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Rewrite log_11(121)=2 in exponential form.",
+      "TeacherExpectedMath": "11^2=121",
+      "OriginalSourceMathematicsReviewed": "log_15(a)=b => 15^b=a",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Rewrite log_5(625)=4 in exponential form.",
+      "TeacherExpectedMath": "5^4=625",
+      "OriginalSourceMathematicsReviewed": "log_y(137)=x => y^x=137",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Rewrite log_2(128)=7 in exponential form.",
+      "TeacherExpectedMath": "2^7=128",
+      "OriginalSourceMathematicsReviewed": "log_13(142)=a => 13^a=142",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Rewrite log(100000)=5 in exponential form.",
+      "TeacherExpectedMath": "10^5=100000",
+      "OriginalSourceMathematicsReviewed": "log(v)=t => 10^t=v",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Rewrite ln(e^(-3))=-3 in exponential form.",
+      "TeacherExpectedMath": "e^(-3)=e^(-3)",
+      "OriginalSourceMathematicsReviewed": "ln(w)=n => e^n=w",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Rewrite 2^6=64 in logarithmic form.",
+      "TeacherExpectedMath": "log_2(64)=6",
+      "OriginalSourceMathematicsReviewed": "4^x=y => log_4(y)=x",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Rewrite 7^2=49 in logarithmic form.",
+      "TeacherExpectedMath": "log_7(49)=2",
+      "OriginalSourceMathematicsReviewed": "c^d=k => log_c(k)=d for c>0,c!=1",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Rewrite 3^(-4)=1/81 in logarithmic form.",
+      "TeacherExpectedMath": "log_3(1/81)=-4",
+      "OriginalSourceMathematicsReviewed": "m^(-7)=n => log_m(n)=-7 when m valid",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Rewrite 5^3=125 in logarithmic form.",
+      "TeacherExpectedMath": "log_5(125)=3",
+      "OriginalSourceMathematicsReviewed": "19^x=y => log_19(y)=x",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Rewrite 4^(-3)=1/64 in logarithmic form.",
+      "TeacherExpectedMath": "log_4(1/64)=-3",
+      "OriginalSourceMathematicsReviewed": "x^(-10/13)=y => log_x(y)=-10/13 for valid x",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Rewrite 8^2=64 in logarithmic form.",
+      "TeacherExpectedMath": "log_8(64)=2",
+      "OriginalSourceMathematicsReviewed": "n^4=103 => log_n(103)=4 for valid n",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Rewrite (2/3)^3=8/27 in logarithmic form.",
+      "TeacherExpectedMath": "log_(2/3)(8/27)=3",
+      "OriginalSourceMathematicsReviewed": "(7/5)^m=n => log_(7/5)(n)=m",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Rewrite 9^(-1)=1/9 in logarithmic form.",
+      "TeacherExpectedMath": "log_9(1/9)=-1",
+      "OriginalSourceMathematicsReviewed": "y^x=39/100 => log_y(39/100)=x for valid y",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Rewrite 10^(-2)=0.01 in logarithmic form.",
+      "TeacherExpectedMath": "log(0.01)=-2",
+      "OriginalSourceMathematicsReviewed": "10^a=b => log(b)=a",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Rewrite e^4=e^4 in logarithmic form.",
+      "TeacherExpectedMath": "ln(e^4)=4",
+      "OriginalSourceMathematicsReviewed": "e^k=h => ln(h)=k",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Solve for x: log_2(x)=4.",
+      "TeacherExpectedMath": "x=16",
+      "OriginalSourceMathematicsReviewed": "log_3(x)=2 => x=9",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Solve for x: log_3(x)=-2.",
+      "TeacherExpectedMath": "x=1/9",
+      "OriginalSourceMathematicsReviewed": "log_2(x)=-3 => x=1/8",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Solve for x: log_4(x)=3.",
+      "TeacherExpectedMath": "x=64",
+      "OriginalSourceMathematicsReviewed": "log_5(x)=2 => x=25",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Solve for x: log_5(x)=2.",
+      "TeacherExpectedMath": "x=25",
+      "OriginalSourceMathematicsReviewed": "log_3(x)=3 => x=27",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Solve for x: log_6(x)=-1.",
+      "TeacherExpectedMath": "x=1/6",
+      "OriginalSourceMathematicsReviewed": "log_2(x)=6 => x=64",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Solve for x: log_16(x)=0.5.",
+      "TeacherExpectedMath": "x=4",
+      "OriginalSourceMathematicsReviewed": "log_9(x)=1/2 => x=3",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "Solve for x: log_7(x)=2.",
+      "TeacherExpectedMath": "x=49",
+      "OriginalSourceMathematicsReviewed": "log_18(x)=2 => x=324",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Solve for x: log_8(x)=-2.",
+      "TeacherExpectedMath": "x=1/64",
+      "OriginalSourceMathematicsReviewed": "log_6(x)=-3 => x=1/216",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Solve for x: log(x)=4.",
+      "TeacherExpectedMath": "x=10000",
+      "OriginalSourceMathematicsReviewed": "log(x)=3 => x=1000",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Solve for x: ln(x)=1.",
+      "TeacherExpectedMath": "x=e",
+      "OriginalSourceMathematicsReviewed": "ln(x)=2 => x=e^2",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Simplify log(10^7).",
+      "TeacherExpectedMath": "7",
+      "OriginalSourceMathematicsReviewed": "Original log(100^8) = log(10^16)=16; printed exponent may flatten in text extraction.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Simplify 10^(log 27).",
+      "TeacherExpectedMath": "27",
+      "OriginalSourceMathematicsReviewed": "Original 10^(log 32)=32.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "Simplify 3 log(0.01).",
+      "TeacherExpectedMath": "-6",
+      "OriginalSourceMathematicsReviewed": "Original 2 log(0.0001)=2(-4)=-8.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Simplify e^(ln 2.5).",
+      "TeacherExpectedMath": "2.5",
+      "OriginalSourceMathematicsReviewed": "Original e^(ln 1.06)=1.06.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Simplify ln(e^(-1.25)).",
+      "TeacherExpectedMath": "-1.25",
+      "OriginalSourceMathematicsReviewed": "Original ln(e^(-5.03))=-5.03.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Simplify e^(ln 7.5)+2.",
+      "TeacherExpectedMath": "9.5",
+      "OriginalSourceMathematicsReviewed": "Original e^(ln 10.125)+4=14.125.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Evaluate log_4(1/64).",
+      "TeacherExpectedMath": "-3",
+      "OriginalSourceMathematicsReviewed": "Original log_3(1/27)=-3.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "Evaluate log_9(3).",
+      "TeacherExpectedMath": "1/2",
+      "OriginalSourceMathematicsReviewed": "Original log_6(sqrt(6))=1/2.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Evaluate log_2(1/16)+5.",
+      "TeacherExpectedMath": "1",
+      "OriginalSourceMathematicsReviewed": "Original log_2(1/8)+4=1.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Evaluate 5 log_16(4).",
+      "TeacherExpectedMath": "5/2",
+      "OriginalSourceMathematicsReviewed": "Original 6 log_8(4)=6*(2/3)=4.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Evaluate log(1000000).",
+      "TeacherExpectedMath": "6",
+      "OriginalSourceMathematicsReviewed": "Original log(10000)=4.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "Evaluate log(0.00001).",
+      "TeacherExpectedMath": "-5",
+      "OriginalSourceMathematicsReviewed": "Original log(0.001)=-3.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "Evaluate log(1)+9.",
+      "TeacherExpectedMath": "9",
+      "OriginalSourceMathematicsReviewed": "Original log(1)+7=7.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "Evaluate 3 log(10^(-2)).",
+      "TeacherExpectedMath": "-6",
+      "OriginalSourceMathematicsReviewed": "Original 2log(100^(-3))=2*(-6)=-12.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "Simplify ln(e^(3/4)).",
+      "TeacherExpectedMath": "3/4",
+      "OriginalSourceMathematicsReviewed": "Original ln(e^(1/3))=1/3.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "Evaluate ln(1).",
+      "TeacherExpectedMath": "0",
+      "OriginalSourceMathematicsReviewed": "Original ln(1)=0.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Simplify ln(e^(-0.5))+2.",
+      "TeacherExpectedMath": "1.5",
+      "OriginalSourceMathematicsReviewed": "Original ln(e^(-0.225))-3=-3.225.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "Simplify 10 ln(e^(3/5)).",
+      "TeacherExpectedMath": "6",
+      "OriginalSourceMathematicsReviewed": "Original 25ln(e^(2/5))=10.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "Evaluate log(0.02) to 3 decimals.",
+      "TeacherExpectedMath": "-1.699",
+      "OriginalSourceMathematicsReviewed": "Source log(0.04)≈-1.398.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 55,
+      "IndependentStudentQuestion": "Evaluate ln(12) to 3 decimals.",
+      "TeacherExpectedMath": "2.485",
+      "OriginalSourceMathematicsReviewed": "Source ln(15)≈2.708.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 56,
+      "IndependentStudentQuestion": "Evaluate ln(3/4) to 3 decimals.",
+      "TeacherExpectedMath": "-0.288",
+      "OriginalSourceMathematicsReviewed": "Source ln(4/5)≈-0.223.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 57,
+      "IndependentStudentQuestion": "Evaluate log(sqrt(3)) to 3 decimals.",
+      "TeacherExpectedMath": "0.239",
+      "OriginalSourceMathematicsReviewed": "Source log(sqrt(2))≈0.151.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 58,
+      "IndependentStudentQuestion": "Evaluate ln(sqrt(5)) to 3 decimals.",
+      "TeacherExpectedMath": "0.805",
+      "OriginalSourceMathematicsReviewed": "Source ln(sqrt(2))≈0.347.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 59,
+      "IndependentStudentQuestion": "Is x=0 in the real domain of log_5(x)?",
+      "TeacherExpectedMath": "No. Log domain x>0, because 5^y never equals zero for real y.",
+      "OriginalSourceMathematicsReviewed": "Original log(0) undefined.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 60,
+      "IndependentStudentQuestion": "Can log_5(x)=0? If yes, solve x.",
+      "TeacherExpectedMath": "Yes, x=1 because 5^0=1.",
+      "OriginalSourceMathematicsReviewed": "Original log(1)=0.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 61,
+      "IndependentStudentQuestion": "Solve ln(x)=3 for x.",
+      "TeacherExpectedMath": "x=e^3>0.",
+      "OriginalSourceMathematicsReviewed": "Original ln(x)=2 => x=e^2.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 62,
+      "IndependentStudentQuestion": "Evaluate log_2(8)/log_3(1/27); compare to -1.",
+      "TeacherExpectedMath": "3/(-3)=-1; true.",
+      "OriginalSourceMathematicsReviewed": "Original log_3(27)/log_4(1/64)=3/(-3)=-1.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 63,
+      "IndependentStudentQuestion": "Is ln(e^2)/ln(1)=2?",
+      "TeacherExpectedMath": "No. Denominator ln(1)=0; the quotient is undefined.",
+      "OriginalSourceMathematicsReviewed": "Original ln(e^1.725)/ln(1) undefined, so cannot equal1.725.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 64,
+      "IndependentStudentQuestion": "Camera exposure index EI=log_2(N^2/t). Find EI for f-stop N=4 and t=2 seconds.",
+      "TeacherExpectedMath": "EI=log_2(16/2)=log_2(8)=3.",
+      "OriginalSourceMathematicsReviewed": "Original EI=log_2(8^2/2)=5.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 65,
+      "IndependentStudentQuestion": "For EI=1 and t=8 seconds, solve f-stop N>0 in EI=log_2(N^2/t).",
+      "TeacherExpectedMath": "N^2/8=2, N^2=16, N=4.",
+      "OriginalSourceMathematicsReviewed": "Original EI=-2,t=16 leads N=2 positive.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 66,
+      "IndependentStudentQuestion": "An earthquake has magnitude 6.4 compared to magnitude 4.4. Compute intensity ratio.",
+      "TeacherExpectedMath": "I1/I2=10^(6.4-4.4)=100.",
+      "OriginalSourceMathematicsReviewed": "Original magnitudes9.0 and6.1 give intensity ratio 10^2.9≈794.",
+      "MarkingMode": "REUSE_EXISTING_MANUAL_TEACHER_MATH_RUBRIC",
+      "Runtime": "NOT_RUN",
+      "SourceTextCopied": false
+    }
+  ],
+  "OriginalNumberedExercisesReviewed": 66,
+  "IndependentExercisesAuthored": 66,
+  "StageCAssessmentMode": "REUSE_EXISTING_TEACHER_MANUAL_REVIEW",
+  "StageD": "NOT_RUN"
+}
