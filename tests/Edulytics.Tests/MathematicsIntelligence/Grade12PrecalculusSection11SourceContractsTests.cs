@@ -51,7 +51,7 @@ public sealed class Grade12PrecalculusSection11SourceContractsTests
         Assert.Contains(lesson.Visuals, visual => visual.Title.Contains("Vertical-line test",
             StringComparison.Ordinal));
         Assert.Contains(lesson.Visuals, visual =>
-            visual.Kind == "RatioTable" &&
+            visual.Kind == RichLessonVisualKind.RatioTable &&
             visual.Title == "Evaluate and solve from a displayed input-output table" &&
             visual.Rows.Count == 2 &&
             visual.Rows[0].Cells.Count == 4);
