@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U11:L02",
+  "ContentVersion": "us-ccss-g12-precalculus-u11-l02-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02",
+      "CultureCode": "en",
+      "Title": "Arithmetic Sequences",
+      "ExplanationParagraphs": [
+        "Arithmetic sequences have constant common difference d.",
+        "Explicit nth term a_n=a1+(n−1)d.",
+        "Recursive form a_n=a_(n−1)+d for n≥2.",
+        "Number of terms N=(last−first)/d+1 when d nonzero and N integer.",
+        "Models include constant monthly increases and fixed-rate progressions.",
+        "Independent Cool-down: calculate a representative source-family example and check the result with the definition."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding Common Differences",
+          "Question": "Identify common difference in [-2, -4, -6, -8, -10].",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "d=-2."
+          ],
+          "Answer": "d=-2.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing Terms of Arithmetic Sequences",
+          "Question": "Find a_8 given a1=-1, d=-1.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "-8."
+          ],
+          "Answer": "-8.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing Terms of Arithmetic Sequences",
+          "Question": "Write recurrence for arithmetic sequence first term0, difference2.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "a1=0,a_n=a_(n−1)+(2), n≥2."
+          ],
+          "Answer": "a1=0,a_n=a_(n−1)+(2), n≥2.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing a Recursive Formula for an Arithmetic Sequence",
+          "Question": "How many arithmetic terms from a1=1 to a_N=10 with d=1?",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "N=10."
+          ],
+          "Answer": "N=10.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the nth Term Explicit Formula for an Arithmetic Sequence",
+          "Question": "Arithmetic sequence a1=2, d=2: find sum a1+..+a_11.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "132."
+          ],
+          "Answer": "132.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Finding the Number of Terms in a Finite Arithmetic Sequence",
+          "Question": "Identify common difference in [3, 6, 9, 12, 15].",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "d=3."
+          ],
+          "Answer": "d=3.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Solving Application Problems with Arithmetic Sequences",
+          "Question": "Find a_13 given a1=4, d=-3.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "-32."
+          ],
+          "Answer": "-32.",
+          "Check": "Verify by substitution or counting."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Core definition",
+          "Definition": "Arithmetic sequences have constant common difference d.",
+          "Rule": "Explicit nth term a_n=a1+(n−1)d.",
+          "Example": "d=-2."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent mathematical progression and counting table",
+          "Description": "First-party numeric reference examples.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Progression",
+              "Cells": [
+                "arithmetic",
+                "geometric",
+                "probability"
+              ]
+            },
+            {
+              "Label": "Core formula",
+              "Cells": [
+                "a1+(n−1)d",
+                "a1r^(n−1)",
+                "favorable/total"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Arithmetic sequences have constant common difference d.",
+        "Explicit nth term a_n=a1+(n−1)d.",
+        "Recursive form a_n=a_(n−1)+d for n≥2."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse index, count, order or probability assumptions.",
+          "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
+          "Correction": "Identify model and count conditions before computing."
+        }
+      ]
+    }
+  ]
+}
