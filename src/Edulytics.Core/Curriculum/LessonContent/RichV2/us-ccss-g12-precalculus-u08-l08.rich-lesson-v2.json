@@ -1,0 +1,277 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L08",
+  "ContentVersion": "g12-u08-l08-firstparty-vectors-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08",
+      "CultureCode": "en",
+      "Title": "Vectors",
+      "ExplanationParagraphs": [
+        "Vectors in the plane have magnitude and direction, represented by ordered components <a,b> or ai+bj.",
+        "Displacement from initial P to terminal Q is Q−P; equivalent vectors have equal components regardless of placement.",
+        "Vector addition, subtraction and scalar multiplication operate componentwise; geometric addition uses head-to-tail triangles.",
+        "The length of v=(a,b) is sqrt(a²+b²); a unit vector is v/|v| when v≠0, and heading is quadrant-aware atan2(b,a).",
+        "Dot product u·v=u_x v_x+u_y v_y=|u||v|cosθ; use to determine angle for nonzero vectors.",
+        "Resolve force or velocity of magnitude r at angleθ into (r cosθ,r sinθ); resultant is componentwise sum.",
+        "Wind correction, relative motion and force equilibrium require the correct direction conventions and units.",
+        "Independent Cool-down: normalize(5,12), find angle between(1,0) and(1,1), and calculate net of east10 and north20 vectors.",
+        "Independent Try It 1: Magnitude of(6,8).",
+        "Independent Try It 2: Scalar3(-2,5).",
+        "Independent Try It 3: Dot (1,2)·(3,-1).",
+        "Independent Try It 4: Unit vector (3,4)."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Position vector",
+          "Question": "From(1,2) to(4,-2).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "(3,-4)."
+          ],
+          "Answer": "(3,-4).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Vector translation",
+          "Question": "Move vector(4,1) to origin.",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "Equivalent vector(4,1)."
+          ],
+          "Answer": "Equivalent vector(4,1).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Magnitude/direction",
+          "Question": "For v=(3,4).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "Magnitude5, direction≈53.13°."
+          ],
+          "Answer": "Magnitude5, direction≈53.13°.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Equal displacement",
+          "Question": "Compare (0,0)→(2,3) and(1,1)→(3,4).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "Equal vectors."
+          ],
+          "Answer": "Equal vectors.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Add/subtract",
+          "Question": "u=(2,3),v=(1,-2).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "u+v=(3,1),u−v=(1,5)."
+          ],
+          "Answer": "u+v=(3,1),u−v=(1,5).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Scalar multiplication",
+          "Question": "2(3,-4).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "(6,-8)."
+          ],
+          "Answer": "(6,-8).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Combination",
+          "Question": "u=(2,1),v=(3,-2), compute2u-v.",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "(1,4)."
+          ],
+          "Answer": "(1,4).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Components from direction",
+          "Question": "r=5, θ=30°.",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "(5sqrt3/2,5/2)."
+          ],
+          "Answer": "(5sqrt3/2,5/2).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Normalize",
+          "Question": "v=(5,12).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "(5/13,12/13)."
+          ],
+          "Answer": "(5/13,12/13).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Basis form",
+          "Question": "v=(-2,3).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "-2i+3j."
+          ],
+          "Answer": "-2i+3j.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Displacement form",
+          "Question": "From(-3,2) to(4,5).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "7i+3j."
+          ],
+          "Answer": "7i+3j.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Add basis",
+          "Question": "(2i+j)+(3i-4j).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "5i-3j."
+          ],
+          "Answer": "5i-3j.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Magnitude/angle",
+          "Question": "v=(0,-5).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "Magnitude5, direction270°."
+          ],
+          "Answer": "Magnitude5, direction270°.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Dot product",
+          "Question": "(2,3)·(4,-1).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "5."
+          ],
+          "Answer": "5.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Angle from dot",
+          "Question": "u=(1,0),v=(0,1).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "90° (dot0)."
+          ],
+          "Answer": "90° (dot0).",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Angle general",
+          "Question": "u=(1,1),v=(1,0).",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "45°."
+          ],
+          "Answer": "45°.",
+          "Check": "Check magnitude, direction and units."
+        },
+        {
+          "Title": "Wind vector",
+          "Question": "Aircraft north200, wind east30.",
+          "Method": "Use component vector operations, geometry and dot product.",
+          "Steps": [
+            "Ground velocity (30,200), speed sqrt40900≈202.24."
+          ],
+          "Answer": "Ground velocity (30,200), speed sqrt40900≈202.24.",
+          "Check": "Check magnitude, direction and units."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vector components",
+          "Definition": "v=(x2−x1,y2−y1).",
+          "Rule": "Terminal minus initial.",
+          "Example": "(1,2)→(3,5)=(2,3)."
+        },
+        {
+          "Title": "Unit vector",
+          "Definition": "u=v/|v| for nonzero v.",
+          "Rule": "Magnitude1.",
+          "Example": "(3,4)/5."
+        },
+        {
+          "Title": "Dot product",
+          "Definition": "u·v=u_x v_x+u_y v_y.",
+          "Rule": "cosθ=dot/(|u||v|).",
+          "Example": "(1,0)·(0,1)=0."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent vector operation table",
+          "Description": "Component arithmetic examples.",
+          "PrimaryLabel": "Operation",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "u",
+              "Cells": [
+                "(2,3)",
+                "(2,3)",
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "v",
+              "Cells": [
+                "(1,-2)",
+                "(1,-2)",
+                "(1,-2)"
+              ]
+            },
+            {
+              "Label": "Operation",
+              "Cells": [
+                "u+v",
+                "u-v",
+                "2u"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "(3,1)",
+                "(1,5)",
+                "(4,6)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Vector position and unit form.",
+        "Componentwise operations.",
+        "Dot product measures angle.",
+        "Resolve and sum forces and velocities."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat velocity magnitudes as directly additive.",
+          "WhyWrong": "Angles determine components.",
+          "Correction": "Add component vectors then compute magnitude."
+        }
+      ]
+    }
+  ]
+}

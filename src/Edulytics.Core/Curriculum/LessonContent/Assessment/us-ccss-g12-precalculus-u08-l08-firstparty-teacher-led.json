@@ -1,0 +1,832 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalExercise": 1,
+      "IndependentMathQuestion": "How are vectors normally notated?",
+      "TeacherMathAnswer": "Bold lowercase letters or an arrow over a symbol.",
+      "OriginalSourceSkill": "Source 1 notation.",
+      "MathSpotChecked": false,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 2,
+      "IndependentMathQuestion": "What distinguishes vector from an undirected segment?",
+      "TeacherMathAnswer": "Magnitude and direction; its displacement can be translated without changing vector.",
+      "OriginalSourceSkill": "Source 2 geometric meaning.",
+      "MathSpotChecked": false,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 3,
+      "IndependentMathQuestion": "What do i and j denote in R²?",
+      "TeacherMathAnswer": "Basis unit vectors i=(1,0), j=(0,1).",
+      "OriginalSourceSkill": "Source 3 standard basis.",
+      "MathSpotChecked": false,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 4,
+      "IndependentMathQuestion": "Define component form.",
+      "TeacherMathAnswer": "v=<terminal x−initial x, terminal y−initial y>.",
+      "OriginalSourceSkill": "Source 4 component form.",
+      "MathSpotChecked": false,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 5,
+      "IndependentMathQuestion": "In ai+bj, which coefficient is horizontal?",
+      "TeacherMathAnswer": "a horizontal i, b vertical j.",
+      "OriginalSourceSkill": "Source 5 coefficient roles.",
+      "MathSpotChecked": false,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 6,
+      "IndependentMathQuestion": "Find vector from P=(1, 5) to Q=(-2, -1), translated to origin.",
+      "TeacherMathAnswer": "Q−P=(-3, -6).",
+      "OriginalSourceSkill": "Source 6–8 displacement component.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 7,
+      "IndependentMathQuestion": "Find vector from P=(-5, 2) to Q=(2, -3), translated to origin.",
+      "TeacherMathAnswer": "Q−P=(7, -5).",
+      "OriginalSourceSkill": "Source 6–8 displacement component.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 8,
+      "IndependentMathQuestion": "Find vector from P=(6, -2) to Q=(-2, -6), translated to origin.",
+      "TeacherMathAnswer": "Q−P=(-8, -4).",
+      "OriginalSourceSkill": "Source 6–8 displacement component.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 9,
+      "IndependentMathQuestion": "Determine if vectors P=(0, 0)→Q=(3, -4) and R=(2, 1)→S=(5, -3) are equal.",
+      "TeacherMathAnswer": "u=(3, -4),v=(3, -4), equal=True.",
+      "OriginalSourceSkill": "Source 9–13 compare displacements.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 10,
+      "IndependentMathQuestion": "Determine if vectors P=(2, -2)→Q=(7, 3) and R=(-3, 0)→S=(2, 5) are equal.",
+      "TeacherMathAnswer": "u=(5, 5),v=(5, 5), equal=True.",
+      "OriginalSourceSkill": "Source 9–13 compare displacements.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 11,
+      "IndependentMathQuestion": "Determine if vectors P=(-3, 1)→Q=(1, 5) and R=(-1, -1)→S=(3, 3) are equal.",
+      "TeacherMathAnswer": "u=(4, 4),v=(4, 4), equal=True.",
+      "OriginalSourceSkill": "Source 9–13 compare displacements.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 12,
+      "IndependentMathQuestion": "Determine if vectors P=(1, 7)→Q=(-1, 2) and R=(0, 0)→S=(-2, -5) are equal.",
+      "TeacherMathAnswer": "u=(-2, -5),v=(-2, -5), equal=True.",
+      "OriginalSourceSkill": "Source 9–13 compare displacements.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 13,
+      "IndependentMathQuestion": "Determine if vectors P=(6, 3)→Q=(4, 5) and R=(1, 2)→S=(-1, 4) are equal.",
+      "TeacherMathAnswer": "u=(-2, 2),v=(-2, 2), equal=True.",
+      "OriginalSourceSkill": "Source 9–13 compare displacements.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 14,
+      "IndependentMathQuestion": "Express vector from (-2, 1) to (5, -4) using i and j.",
+      "TeacherMathAnswer": "7i+(-5)j.",
+      "OriginalSourceSkill": "Source 14–15 initial/terminal components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 15,
+      "IndependentMathQuestion": "Express vector from (3, 0) to (-2, -3) using i and j.",
+      "TeacherMathAnswer": "-5i+(-3)j.",
+      "OriginalSourceSkill": "Source 14–15 initial/terminal components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 16,
+      "IndependentMathQuestion": "Given u=(2, 4),v=(-3, -1),w=(5, -2), evaluate u+(v−w).",
+      "TeacherMathAnswer": "(-6, 5)",
+      "OriginalSourceSkill": "Source16 combine vector sums.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 17,
+      "IndependentMathQuestion": "Given u=(2, 4),v=(-3, -1), find 4v+2u.",
+      "TeacherMathAnswer": "(-8, 4)",
+      "OriginalSourceSkill": "Source17 scalar combination.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 18,
+      "IndependentMathQuestion": "For u=(3, -4),v=(2, 6), calculate u+v, u−v, 2u−3v.",
+      "TeacherMathAnswer": "sum=(5, 2), difference=(1, -10), combination=(0, -26).",
+      "OriginalSourceSkill": "Source 18–19 operations.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 19,
+      "IndependentMathQuestion": "For u=(-4, 3),v=(-2, 5), calculate u+v, u−v, 2u−3v.",
+      "TeacherMathAnswer": "sum=(-6, 8), difference=(-2, -2), combination=(-2, -9).",
+      "OriginalSourceSkill": "Source 18–19 operations.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 20,
+      "IndependentMathQuestion": "Find vector with 0.5 times |v|, same orientation, v=(-6, 8).",
+      "TeacherMathAnswer": "(-3.0, 4.0).",
+      "OriginalSourceSkill": "Source 20–21 scalar scaling.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 21,
+      "IndependentMathQuestion": "Find vector with 2 times |v|, opposite orientation, v=(4, 3).",
+      "TeacherMathAnswer": "(-8, -6).",
+      "OriginalSourceSkill": "Source 20–21 scalar scaling.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 22,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(5, 12).",
+      "TeacherMathAnswer": "v/|v|=(5/13,12/13), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 23,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(-3, 4).",
+      "TeacherMathAnswer": "v/|v|=(-3/5,4/5), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 24,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(7, -24).",
+      "TeacherMathAnswer": "v/|v|=(7/25,-24/25), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 25,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(-8, 15).",
+      "TeacherMathAnswer": "v/|v|=(-8/17,15/17), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 26,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(12, 16).",
+      "TeacherMathAnswer": "v/|v|=(12/20,16/20), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 27,
+      "IndependentMathQuestion": "Compute unit vector in direction of v=(-6, 8).",
+      "TeacherMathAnswer": "v/|v|=(-6/10,8/10), magnitude1.",
+      "OriginalSourceSkill": "Source 22–27 unit vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 28,
+      "IndependentMathQuestion": "Find magnitude and standard direction of v=(0, -5).",
+      "TeacherMathAnswer": "|v|≈5.000000, angle≈270.000000°.",
+      "OriginalSourceSkill": "Source 28–31 magnitude/direction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 29,
+      "IndependentMathQuestion": "Find magnitude and standard direction of v=(8, 6).",
+      "TeacherMathAnswer": "|v|≈10.000000, angle≈36.869898°.",
+      "OriginalSourceSkill": "Source 28–31 magnitude/direction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 30,
+      "IndependentMathQuestion": "Find magnitude and standard direction of v=(3, -7).",
+      "TeacherMathAnswer": "|v|≈7.615773, angle≈293.198591°.",
+      "OriginalSourceSkill": "Source 28–31 magnitude/direction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 31,
+      "IndependentMathQuestion": "Find magnitude and standard direction of v=(-5, -12).",
+      "TeacherMathAnswer": "|v|≈13.000000, angle≈247.380135°.",
+      "OriginalSourceSkill": "Source 28–31 magnitude/direction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 32,
+      "IndependentMathQuestion": "Compute dot product u=(4, -3),v=(-2, 5).",
+      "TeacherMathAnswer": "u·v=-23.",
+      "OriginalSourceSkill": "Source 32–35 dot product.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 33,
+      "IndependentMathQuestion": "Compute dot product u=(-2, -1),v=(1, 4).",
+      "TeacherMathAnswer": "u·v=-6.",
+      "OriginalSourceSkill": "Source 32–35 dot product.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 34,
+      "IndependentMathQuestion": "Compute dot product u=(-3, 6),v=(-4, 2).",
+      "TeacherMathAnswer": "u·v=24.",
+      "OriginalSourceSkill": "Source 32–35 dot product.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 35,
+      "IndependentMathQuestion": "Compute dot product u=(-5, 2),v=(3, -1).",
+      "TeacherMathAnswer": "u·v=-17.",
+      "OriginalSourceSkill": "Source 32–35 dot product.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 36,
+      "IndependentMathQuestion": "Draw v=(3, -2), 3v and (1/2)v from same origin.",
+      "TeacherMathAnswer": "Endpoints v=(3, -2),3v=(9, -6),half=(1.5, -1.0).",
+      "OriginalSourceSkill": "Source 36–38 scaled graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 37,
+      "IndependentMathQuestion": "Draw v=(-2, 5), 3v and (1/2)v from same origin.",
+      "TeacherMathAnswer": "Endpoints v=(-2, 5),3v=(-6, 15),half=(-1.0, 2.5).",
+      "OriginalSourceSkill": "Source 36–38 scaled graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 38,
+      "IndependentMathQuestion": "Draw v=(-4, -3), 3v and (1/2)v from same origin.",
+      "TeacherMathAnswer": "Endpoints v=(-4, -3),3v=(-12, -9),half=(-2.0, -1.5).",
+      "OriginalSourceSkill": "Source 36–38 scaled graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 39,
+      "IndependentMathQuestion": "Draw vectors u=(3, 1),v=(-1, 4) and u+v, u−v, 2u.",
+      "TeacherMathAnswer": "sum=(2, 5),diff=(4, -3),twice=(6, 2).",
+      "OriginalSourceSkill": "Source 39–41 geometric addition/subtraction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 40,
+      "IndependentMathQuestion": "Draw vectors u=(-2, 3),v=(4, 1) and u+v, u−v, 2u.",
+      "TeacherMathAnswer": "sum=(2, 4),diff=(-6, 2),twice=(-4, 6).",
+      "OriginalSourceSkill": "Source 39–41 geometric addition/subtraction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 41,
+      "IndependentMathQuestion": "Draw vectors u=(4, -3),v=(-2, -2) and u+v, u−v, 2u.",
+      "TeacherMathAnswer": "sum=(2, -5),diff=(6, -1),twice=(8, -6).",
+      "OriginalSourceSkill": "Source 39–41 geometric addition/subtraction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 42,
+      "IndependentMathQuestion": "Graph 2u+v given u=(2, -3),v=(1, 4).",
+      "TeacherMathAnswer": "Resultant endpoint (5, -2).",
+      "OriginalSourceSkill": "Source 42–43 combined graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 43,
+      "IndependentMathQuestion": "Graph 2u+v given u=(-2, 5),v=(3, -1).",
+      "TeacherMathAnswer": "Resultant endpoint (-1, 9).",
+      "OriginalSourceSkill": "Source 42–43 combined graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 44,
+      "IndependentMathQuestion": "Graph u−3v for u=(4, 2),v=(1, -3).",
+      "TeacherMathAnswer": "Resultant (1, 11).",
+      "OriginalSourceSkill": "Source 44–45 combination plotted.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 45,
+      "IndependentMathQuestion": "Graph u−3v for u=(-3, 5),v=(2, -2).",
+      "TeacherMathAnswer": "Resultant (-9, 11).",
+      "OriginalSourceSkill": "Source 44–45 combination plotted.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 46,
+      "IndependentMathQuestion": "Read independently drawn vector from origin to(4, -2) in component form.",
+      "TeacherMathAnswer": "v=<4,-2>.",
+      "OriginalSourceSkill": "Source 46–47 graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 47,
+      "IndependentMathQuestion": "Read independently drawn vector from origin to(-3, 5) in component form.",
+      "TeacherMathAnswer": "v=<-3,5>.",
+      "OriginalSourceSkill": "Source 46–47 graphical vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 48,
+      "IndependentMathQuestion": "Express vector from (1, 3) to(-4, 4) as ai+bj.",
+      "TeacherMathAnswer": "-5i+(1)j.",
+      "OriginalSourceSkill": "Source 48–50 initial/terminal point drawing.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 49,
+      "IndependentMathQuestion": "Express vector from (5, -2) to(-2, 3) as ai+bj.",
+      "TeacherMathAnswer": "-7i+(5)j.",
+      "OriginalSourceSkill": "Source 48–50 initial/terminal point drawing.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 50,
+      "IndependentMathQuestion": "Express vector from (4, 4) to(-4, 4) as ai+bj.",
+      "TeacherMathAnswer": "-8i+(0)j.",
+      "OriginalSourceSkill": "Source 48–50 initial/terminal point drawing.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 51,
+      "IndependentMathQuestion": "Find components of a vector magnitude8, direction30°.",
+      "TeacherMathAnswer": "(6.928203,4.000000).",
+      "OriginalSourceSkill": "Source 51–54 magnitude-direction to components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 52,
+      "IndependentMathQuestion": "Find components of a vector magnitude7, direction225°.",
+      "TeacherMathAnswer": "(-4.949747,-4.949747).",
+      "OriginalSourceSkill": "Source 51–54 magnitude-direction to components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 53,
+      "IndependentMathQuestion": "Find components of a vector magnitude3, direction330°.",
+      "TeacherMathAnswer": "(2.598076,-1.500000).",
+      "OriginalSourceSkill": "Source 51–54 magnitude-direction to components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 54,
+      "IndependentMathQuestion": "Find components of a vector magnitude6, direction120°.",
+      "TeacherMathAnswer": "(-3.000000,5.196152).",
+      "OriginalSourceSkill": "Source 51–54 magnitude-direction to components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 55,
+      "IndependentMathQuestion": "A 40lb weight on frictionless incline of15°; find normal/parallel gravitational components.",
+      "TeacherMathAnswer": "Normal=38.637lb, down ramp=10.353lb.",
+      "OriginalSourceSkill": "Source 55–56 inclined ramp force decomposition.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 56,
+      "IndependentMathQuestion": "A 30lb weight on frictionless incline of10°; find normal/parallel gravitational components.",
+      "TeacherMathAnswer": "Normal=29.544lb, down ramp=5.209lb.",
+      "OriginalSourceSkill": "Source 55–56 inclined ramp force decomposition.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 57,
+      "IndependentMathQuestion": "For force magnitude12lb at35°, find signed x,y components and magnitudes.",
+      "TeacherMathAnswer": "Fx≈9.8298lb,Fy≈6.8829lb; component magnitudes≈9.8298,6.8829.",
+      "OriginalSourceSkill": "Source 57–60 directional force components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 58,
+      "IndependentMathQuestion": "For force magnitude6lb at135°, find signed x,y components and magnitudes.",
+      "TeacherMathAnswer": "Fx≈-4.2426lb,Fy≈4.2426lb; component magnitudes≈4.2426,4.2426.",
+      "OriginalSourceSkill": "Source 57–60 directional force components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 59,
+      "IndependentMathQuestion": "For force magnitude7lb at55°, find signed x,y components and magnitudes.",
+      "TeacherMathAnswer": "Fx≈4.0150lb,Fy≈5.7341lb; component magnitudes≈4.0150,5.7341.",
+      "OriginalSourceSkill": "Source 57–60 directional force components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 60,
+      "IndependentMathQuestion": "For force magnitude3lb at20°, find signed x,y components and magnitudes.",
+      "TeacherMathAnswer": "Fx≈2.8191lb,Fy≈1.0261lb; component magnitudes≈2.8191,1.0261.",
+      "OriginalSourceSkill": "Source 57–60 directional force components.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 61,
+      "IndependentMathQuestion": "Walk successive independent vector steps [(3, 180), (2, 225)] (length miles, compass mathematical degree). Find total walked and direct distance home.",
+      "TeacherMathAnswer": "Total walked=5mi, final location≈(-4.41421,-1.41421), direct home≈4.63522mi.",
+      "OriginalSourceSkill": "Source 61–64 multi-leg walk resultants.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 62,
+      "IndependentMathQuestion": "Walk successive independent vector steps [(5, 90), (3, 45)] (length miles, compass mathematical degree). Find total walked and direct distance home.",
+      "TeacherMathAnswer": "Total walked=8mi, final location≈(2.12132,7.12132), direct home≈7.43056mi.",
+      "OriginalSourceSkill": "Source 61–64 multi-leg walk resultants.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 63,
+      "IndependentMathQuestion": "Walk successive independent vector steps [(3, 0), (2, 315), (4, 270), (2, 225)] (length miles, compass mathematical degree). Find total walked and direct distance home.",
+      "TeacherMathAnswer": "Total walked=11mi, final location≈(3.00000,-6.82843), direct home≈7.45838mi.",
+      "OriginalSourceSkill": "Source 61–64 multi-leg walk resultants.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 64,
+      "IndependentMathQuestion": "Walk successive independent vector steps [(5, 0), (4, 315), (3, 270), (2, 225)] (length miles, compass mathematical degree). Find total walked and direct distance home.",
+      "TeacherMathAnswer": "Total walked=14mi, final location≈(6.41421,-7.24264), direct home≈9.67460mi.",
+      "OriginalSourceSkill": "Source 61–64 multi-leg walk resultants.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 65,
+      "IndependentMathQuestion": "Walk steps [(3, 160), (5, 260), (4, 15)] (degree CCW from east). Give homeward distance and angle.",
+      "TeacherMathAnswer": "Return magnitude≈2.86813mi, homeward direction≈93.5258°.",
+      "OriginalSourceSkill": "Source 65–66 real directional displacement.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 66,
+      "IndependentMathQuestion": "Walk steps [(6, 40), (2, 285), (5, 210)] (degree CCW from east). Give homeward distance and angle.",
+      "TeacherMathAnswer": "Return magnitude≈0.97215mi, homeward direction≈143.7293°.",
+      "OriginalSourceSkill": "Source 65–66 real directional displacement.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 67,
+      "IndependentMathQuestion": "Plane airspeed500km/h due north with wind80km/h toward45° from east. Find ground speed and north-course deviation.",
+      "TeacherMathAnswer": "Ground vector≈(56.5685,556.5685), speed≈559.4359km/h, signed eastward deviation≈5.804°.",
+      "OriginalSourceSkill": "Source 67–68 wind ground speed and drift.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 68,
+      "IndependentMathQuestion": "Plane airspeed450km/h due north with wind60km/h toward315° from east. Find ground speed and north-course deviation.",
+      "TeacherMathAnswer": "Ground vector≈(42.4264,407.5736), speed≈409.7758km/h, signed eastward deviation≈5.943°.",
+      "OriginalSourceSkill": "Source 67–68 wind ground speed and drift.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 69,
+      "IndependentMathQuestion": "Plane speed530km/h must track north with wind50km/h toward45°; find heading correction east/west of north.",
+      "TeacherMathAnswer": "Air heading signed east-of-north≈-3.8249°; cancellation speed*sinθ=−wind east component.",
+      "OriginalSourceSkill": "Source 69–70 crosswind correction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 70,
+      "IndependentMathQuestion": "Plane speed470km/h must track north with wind65km/h toward315°; find heading correction east/west of north.",
+      "TeacherMathAnswer": "Air heading signed east-of-north≈-5.6120°; cancellation speed*sinθ=−wind east component.",
+      "OriginalSourceSkill": "Source 69–70 crosswind correction.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 71,
+      "IndependentMathQuestion": "Rotate point (4, 6) CCW by30° about origin.",
+      "TeacherMathAnswer": "New coordinates≈(0.46410,7.19615).",
+      "OriginalSourceSkill": "Source 71–72 rotation of vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 72,
+      "IndependentMathQuestion": "Rotate point (7, 2) CCW by45° about origin.",
+      "TeacherMathAnswer": "New coordinates≈(3.53553,6.36396).",
+      "OriginalSourceSkill": "Source 71–72 rotation of vectors.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 73,
+      "IndependentMathQuestion": "Vehicle travels30mph forward, object thrown12mph transversely inside it; find trajectory direction relative to road.",
+      "TeacherMathAnswer": "Velocity resultant (30 forward,12 sideways)mph; sideways angle≈21.801°, speed≈32.311mph.",
+      "OriginalSourceSkill": "Source 73–74 relative velocities.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 74,
+      "IndependentMathQuestion": "Vehicle travels50mph forward, object thrown9mph transversely inside it; find trajectory direction relative to road.",
+      "TeacherMathAnswer": "Velocity resultant (50 forward,9 sideways)mph; sideways angle≈10.204°, speed≈50.804mph.",
+      "OriginalSourceSkill": "Source 73–74 relative velocities.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 75,
+      "IndependentMathQuestion": "Weight 60lb on20° slope: force parallel/normal components.",
+      "TeacherMathAnswer": "Parallel≈20.521lb, normal≈56.382lb.",
+      "OriginalSourceSkill": "Source 75 ramp forces.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 76,
+      "IndependentMathQuestion": "Find resultant of forces [(10, 0), (20, 90), (7, 45)] (magnitudes lb,direction degrees).",
+      "TeacherMathAnswer": "R≈(14.9497,24.9497)lb, |R|≈29.0858lb, angle≈59.0702°.",
+      "OriginalSourceSkill": "Source 76–77 resultant forces.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 77,
+      "IndependentMathQuestion": "Find resultant of forces [(8, 0), (15, 225), (4, 150)] (magnitudes lb,direction degrees).",
+      "TeacherMathAnswer": "R≈(-6.0707,-8.6066)lb, |R|≈10.5322lb, angle≈234.8026°.",
+      "OriginalSourceSkill": "Source 76–77 resultant forces.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 78,
+      "IndependentMathQuestion": "Find equilibration force to cancel [(3, 0), (6, 90), (2, 45)] (lb, degrees).",
+      "TeacherMathAnswer": "F_eq≈(-4.41421,-7.41421)lb, magnitude≈8.62878, direction≈239.23162°.",
+      "OriginalSourceSkill": "Source 78–79 vector equilibrium.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    },
+    {
+      "OriginalExercise": 79,
+      "IndependentMathQuestion": "Find equilibration force to cancel [(4, 180), (5, 90), (3, 30)] (lb, degrees).",
+      "TeacherMathAnswer": "F_eq≈(1.40192,-6.50000)lb, magnitude≈6.64947, direction≈282.17115°.",
+      "OriginalSourceSkill": "Source 78–79 vector equilibrium.",
+      "MathSpotChecked": true,
+      "OriginalPublisherTextCopied": false,
+      "TeacherManualScoring": true,
+      "RuntimeVerified": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Magnitude of(6,8).",
+      "TeacherExpectedMath": "10."
+    },
+    {
+      "Number": 2,
+      "Question": "Scalar3(-2,5).",
+      "TeacherExpectedMath": "(-6,15)."
+    },
+    {
+      "Number": 3,
+      "Question": "Dot (1,2)·(3,-1).",
+      "TeacherExpectedMath": "1."
+    },
+    {
+      "Number": 4,
+      "Question": "Unit vector (3,4).",
+      "TeacherExpectedMath": "(3/5,4/5)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Normalize v=(5,12).",
+      "Find angle between(1,0) and(1,1).",
+      "Net velocity east10,north20."
+    ],
+    "TeacherExpectedMath": [
+      "(5/13,12/13).",
+      "45°.",
+      "(10,20), speed sqrt500≈22.361, bearing angle63.435° CCW from east."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "StageC": "REUSE_MANUAL_TEACHER_VECTOR_SCORING"
+}
