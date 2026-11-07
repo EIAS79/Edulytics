@@ -1933,6 +1933,26 @@
                    factored rational expression, its roots, and its vertical and
                    horizontal asymptotes. Explain your reasoning to your teacher.
                    These diagrams are not copied from OpenStax.</p>
+                <details class="student-card">
+                    <summary>Twenty-three figure-based mathematical skills</summary>
+                    <p>These are original Edulytics alternatives for the mathematical
+                       ideas referenced by the source chapter. They do not reproduce
+                       textbook illustrations. Use the eight independent graphs below
+                       to practice reading features and explaining their algebra.</p>
+                    <ol>
+                        @foreach (var figure in Grade12PrecalculusSection37FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Source skill figure @figure.OriginalFigureNumber:
+                                    @figure.Topic</strong>
+                                <p>@figure.IndependentModel</p>
+                                <p>@figure.StudentExplanation</p>
+                                <p>Related independent graph exercise:
+                                    @figure.RelatedIndependentGraphExercise</p>
+                            </li>
+                        }
+                    </ol>
+                </details>
                 @foreach (var task in Grade12PrecalculusSection37GraphModels.All)
                 {
                     <figure class="student-card">

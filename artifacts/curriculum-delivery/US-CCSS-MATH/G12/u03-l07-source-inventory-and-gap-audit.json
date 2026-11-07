@@ -1355,9 +1355,8 @@
   "OriginalFigureAlternativesReviewed": 0,
   "CCSSAlignment": "PENDING_INDIVIDUAL_SKILL_CONFIRMATION",
   "BlockingReasons": [
-    "23_SOURCE_FIGURE_SKILL_CROSSWALK_AND_INDEPENDENT_ALTERNATIVES_PENDING",
-    "STAGE_C_REUSE_EXTEND_ASSESSMENT_CONTRACT_PENDING",
-    "GRAPH_STUDENT_RENDERING_NOT_RUNTIME_TESTED_RESERVED_FOR_STAGE_D"
+    "STAGE_C_ASSESSMENT_REUSE_EXTEND_CONTRACT_PENDING",
+    "STAGE_D_RUNTIME_AND_INTEGRATION_TESTS_NOT_RUN_BY_DESIGN"
   ],
   "Status": "A_C_IN_PROGRESS",
   "ReadyForStageD": false,
@@ -1456,7 +1455,7 @@
     "targeted-rational-factor-roots-and-design-intercepts",
     "optimization-symbolic-derivative-steps-reviewed-manually"
   ],
-  "UpdatedAtUtc": "2026-11-07T15:30:28.591167+00:00",
+  "UpdatedAtUtc": "2026-11-07T15:33:24.331493+00:00",
   "SourceExercise44TranscriptionBlocker": "RESOLVED_FROM_AUTHORIZED_LOCAL_PDF_VISUAL",
   "SourceGraphDependentExerciseNumbersStillUnreviewed": [
     57,
@@ -1486,5 +1485,9 @@
   "FirstPartyIndependentMathQuestionCount": 88,
   "IndependentGraphTaskCount": 8,
   "IndependentGraphModelCodePath": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection37GraphModels.cs",
-  "GraphTaskStudentViewWiring": "AUTHORED_NOT_RUNTIME_VERIFIED"
+  "GraphTaskStudentViewWiring": "AUTHORED_NOT_RUNTIME_VERIFIED",
+  "SourceFigureConceptsCrosswalked": 23,
+  "FirstPartyIndependentFigureSkillAlternativesAuthored": 23,
+  "FirstPartyFigureAlternativesEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u03-l07-23-original-figure-skill-firstparty-alternatives.json",
+  "FigureAlternativeStudentViewWiring": "AUTHORED_NOT_RUNTIME_VERIFIED"
 }
