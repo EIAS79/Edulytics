@@ -1,0 +1,203 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L08",
+  "ContentVersion": "g12-u03-l08-firstparty-inverse-radical-draft-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08",
+      "CultureCode": "en",
+      "Title": "Inverses and Radical Functions",
+      "ExplanationParagraphs": [
+        "Original section skills: invert polynomial and rational functions, restrict non-one-to-one polynomial domains, invert radicals, analyze composed radical-rational domains and apply inverse models.",
+        "An inverse reflects ordered pairs across y=x. Always compare the original domain with the inverse range.",
+        "For quadratic inverses, impose the original increasing or decreasing branch before choosing the sign of a square root.",
+        "For radical or rational expressions, keep the original exclusions; clearing denominators and squaring may introduce invalid candidates.",
+        "Independent Cool-down draft: (a) invert f(x)=(x+2)² on x≥−2; (b) invert f(x)=√(x−4)+3; (c) find domain of √((x−1)/(x+2)).",
+        "Independent Try It 1: For f(x)=x³−5, write f⁻¹ and verify by composition.",
+        "Independent Try It 2: Find inverse of f(x)=(x+1)² on x≥−1.",
+        "Independent Try It 3: Find inverse of f(x)=(x−2)² on x≤2.",
+        "Independent Try It 4: Invert f(x)=1+√(3x−6).",
+        "Independent Try It 5: Invert f(x)=(2x−3)/(x+4)."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Verify inverse functions",
+          "Question": "Show f(x)=2x−7 and g(x)=(x+7)/2 are inverses.",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "f(g(x))=x and g(f(x))=x after simplifying both compositions."
+          ],
+          "Answer": "f(g(x))=x and g(f(x))=x after simplifying both compositions.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Inverse cubic polynomial",
+          "Question": "Invert f(x)=3x³+1 over real numbers.",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "Solve y=3x³+1 to get f⁻¹(y)=∛((y−1)/3)."
+          ],
+          "Answer": "Solve y=3x³+1 to get f⁻¹(y)=∛((y−1)/3).",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Domain-restricted quadratic",
+          "Question": "Find inverse of f(x)=(x−4)² for x≥4.",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "Its inverse is f⁻¹(y)=4+√y for y≥0; the positive square-root branch follows original restriction."
+          ],
+          "Answer": "Its inverse is f⁻¹(y)=4+√y for y≥0; the positive square-root branch follows original restriction.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Choose a quadratic inverse branch",
+          "Question": "Invert f(x)=6−(x+2)² for x≥−2.",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "f⁻¹(y)=−2+√(6−y) for y≤6; inverse outputs are ≥−2."
+          ],
+          "Answer": "f⁻¹(y)=−2+√(6−y) for y≤6; inverse outputs are ≥−2.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Inverse radical with domain",
+          "Question": "Invert f(x)=2+√(x−1).",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "f⁻¹(y)=(y−2)²+1, inverse input y≥2; original input x≥1."
+          ],
+          "Answer": "f⁻¹(y)=(y−2)²+1, inverse input y≥2; original input x≥1.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Cone application",
+          "Question": "A cone has height twice its radius and volume V=2πr³/3. Find r for V=18π.",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "r=∛(3V/(2π)); V=18π gives r=3 and height6 length units."
+          ],
+          "Answer": "r=∛(3V/(2π)); V=18π gives r=3 and height6 length units.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Radical of rational domain",
+          "Question": "Find domain of h(x)=√((x−2)/(x+3)).",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "Require (x−2)/(x+3)≥0 and x≠−3: (−∞,−3) ∪ [2,∞)."
+          ],
+          "Answer": "Require (x−2)/(x+3)≥0 and x≠−3: (−∞,−3) ∪ [2,∞).",
+          "Check": "Recompose and verify original domain/range restrictions."
+        },
+        {
+          "Title": "Inverse rational function",
+          "Question": "Invert f(x)=(3x+1)/(x−2).",
+          "Method": "Reverse input/output, solve and respect one-to-one domain restrictions.",
+          "Steps": [
+            "Solve y(x−2)=3x+1: inverse f⁻¹(y)=(2y+1)/(y−3), y≠3."
+          ],
+          "Answer": "Solve y(x−2)=3x+1: inverse f⁻¹(y)=(2y+1)/(y−3), y≠3.",
+          "Check": "Recompose and verify original domain/range restrictions."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse functions",
+          "Definition": "Interchange inputs and outputs; an inverse function exists if the original is one-to-one on its stated domain.",
+          "Rule": "Verify both compositions and exchange domain/range.",
+          "Example": "f(x)=2x−7 has inverse (x+7)/2."
+        },
+        {
+          "Title": "Restricted quadratic inverse",
+          "Definition": "A full parabola is not one-to-one; restrict to one monotone branch.",
+          "Rule": "The original branch determines ±√ after swapping x and y.",
+          "Example": "f(x)=(x−4)², x≥4 has inverse 4+√x."
+        },
+        {
+          "Title": "Radical inverse",
+          "Definition": "Undo the radical with squaring/cubing, but preserve range and domain restrictions.",
+          "Rule": "Squaring may introduce extraneous roots; always check against original range.",
+          "Example": "f(x)=√(x−1)+2 inverse (x−2)²+1, x≥2."
+        },
+        {
+          "Title": "Inverse rational functions",
+          "Definition": "Swap x,y then solve linearly for x; exclude denominator zeros in original and inverse.",
+          "Rule": "Check impossible horizontal-asymptote outputs are not in inverse domain.",
+          "Example": "(3x+1)/(x−2) has inverse (2x+1)/(x−3)."
+        },
+        {
+          "Title": "Radical rational domains",
+          "Definition": "A square root requires nonnegative radicand and nonzero original denominator.",
+          "Rule": "Use a sign chart of numerator zeros and denominator poles.",
+          "Example": "√((x−2)/(x+3)) permits x<−3 or x≥2."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Inverse function ordered pairs",
+          "Description": "Independent reflection table; swap inputs and outputs.",
+          "PrimaryLabel": "Original f",
+          "SecondaryLabel": "Inverse f⁻¹",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "Output f(x)=2x−7",
+              "Cells": [
+                "−7",
+                "−5",
+                "−3"
+              ]
+            },
+            {
+              "Label": "Inverse input",
+              "Cells": [
+                "−7",
+                "−5",
+                "−3"
+              ]
+            },
+            {
+              "Label": "Inverse output",
+              "Cells": [
+                "0",
+                "1",
+                "2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Verify inverse compositions.",
+        "Restrict quadratics to monotone branch.",
+        "Exchange domain and range.",
+        "Keep radical and denominator restrictions.",
+        "Interpret inverse models with physical units."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use both square-root branches for a single inverse function.",
+          "WhyWrong": "Without an original domain restriction a parabola is not one-to-one.",
+          "Correction": "Choose branch based on the restricted original domain."
+        },
+        {
+          "Mistake": "Ignore radical output constraints when inverting.",
+          "WhyWrong": "Squaring can introduce invalid extraneous cases.",
+          "Correction": "Record inverse domain from original range and check."
+        }
+      ]
+    }
+  ]
+}
