@@ -34,9 +34,9 @@ public static class Grade12PrecalculusSection84PolarCurveModels
         {
             var lines=new List<MathematicalSegment>();
             MathematicalPoint? prev=null;
-            for(int i=0;i<=600;i++)
+            for(int i=0;i<=120;i++)
             {
-                var theta=4d*Math.PI*i/600d;
+                var theta=4d*Math.PI*i/120d;
                 var v=kind switch
                 {
                     "circle"=>A*Math.Cos(theta),

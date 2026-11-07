@@ -36,9 +36,9 @@ public static class Grade12PrecalculusSection76PhysicalModelGraphs
         {
             var lines=new List<MathematicalSegment>();
             MathematicalPoint? previous=null;
-            for(int j=0;j<=300;j++)
+            for(int j=0;j<=120;j++)
             {
-                var x=12d*j/300d;
+                var x=12d*j/120d;
                 var y=amplitude*Math.Exp(-decay*x)*Math.Cos(2d*Math.PI*frequency*x)
                     +(trend ? .2d*x : 0d);
                 var next=new MathematicalPoint((decimal)x,(decimal)y);

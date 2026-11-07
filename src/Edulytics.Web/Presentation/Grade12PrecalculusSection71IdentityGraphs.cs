@@ -16,9 +16,9 @@ public static class Grade12PrecalculusSection71IdentityGraphs
         {
             var lines=new List<MathematicalSegment>();
             MathematicalPoint? prev=null;
-            for(var i=0;i<=300;i++)
+            for(var i=0;i<=120;i++)
             {
-                var x=-Math.PI*2+Math.PI*4*i/300d;
+                var x=-Math.PI*2+Math.PI*4*i/120d;
                 var y=f(x);
                 if(double.IsNaN(y)||double.IsInfinity(y)||Math.Abs(y)>7 || (n==4 && Math.Abs(Math.Sin(x))<0.05))
                 { prev=null;continue; }
