@@ -39,3 +39,17 @@ Converted only 72 Grade12 JSON document SchemaVersion values from 2 to 1, preser
 ## Targeted legacy RichV2 contract recovery
 
 Counter({'worked_examples_existing_method_check_reused': 616, 'key_concepts_extracted_from_existing_lesson': 41, 'common_mistakes_derived_from_existing_math_check': 31}); changed 71 lesson resources. This is a deterministic repackaging of existing lesson Method, Check, Explanation and Summary texts, NOT evidence of independent mathematical review. Runtime and human QA still pending.
+
+## Verified GitHub Actions runtime milestone — 2026-11-07
+
+- Workflow: https://github.com/EIAS79/Edulytics/actions/runs/42410721273
+- Tested **PR synthetic merge** SHA: `d7ad3c522fdeb457fc3bb6ebe8a2eaf45ae4f7e8` (branch head content SHA `17896e87fc4511ef4860711881eda9ee14f5dc89`).
+- Shared .NET Release build: **PASS**.
+- Grade12 Section1.1 source/renderer contract tests: **23/23 PASS**.
+- Grade12 73-lesson embedded RichV2 runtime registry tests: **74/74 PASS** (73 lesson theories + one inventory test).
+- Grade12 static content shards `G12-D1`, `G12-D2`, `G12-D3`: **PASS**, 28+21+24=73 lesson authoring resources.
+- Structural source inventory gate: **PASS**.
+- Final release gate: **FAIL, intentionally fail closed**. No authenticated learner/teacher E2E, classroom grading, per-lesson visual accessibility, source-element parity denominator, or release approval has been validated.
+- Ledger: `D_TESTS_PASSED` for 72 lessons, `D_BLOCKED` for U01:L01 due unresolved handoff/source/rights/runtime assessment evidence; `D_VERIFIED=0`; `APPROVED=0`.
+- This code evidence does not retroactively validate A–B–C semantic or source parity; prior deterministic reformatting reused existing authored Method/Check text and still requires educator quality review.
+
