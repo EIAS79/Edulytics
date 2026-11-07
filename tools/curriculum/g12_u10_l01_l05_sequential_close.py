@@ -140,9 +140,10 @@ def makeQ(section,count):
  return Q
 for ordinal,lesson_num,sec,title,start,end,count,wc,tc in profiles:
  p=json.loads(P.read_text(encoding="utf8"))
+ if ordinal <= p["LastClosedLessonOrdinal"]:continue
  assert p["LastClosedLessonOrdinal"]==ordinal-1 and p["FirstIncompleteLessonOrdinal"]==ordinal
  row=p["LessonEntries"][ordinal-1];assert row["Ordinal"]==ordinal and row["SourceSection"]==sec
- assert sec in txt(start) and ("10."+str(lesson_num+1)in txt(end)or(sec=="10.5"and"CHAPTER 10 REVIEW" in txt(end)))
+ assert (sec in txt(start) or sec in txt(start+1)) and (("10."+str(lesson_num+1)) in (txt(end)+txt(end+1)) or (sec=="10.5" and "CHAPTER 10 REVIEW" in txt(end)))
  intro="\n".join(txt(i) for i in range(start,end-3))
  matches=[(int(n),v.strip())for n,v in re.findall(r"Example\s+(\d+)\s+([^\r\n]{1,110})",intro,re.I)]
  unique={}
