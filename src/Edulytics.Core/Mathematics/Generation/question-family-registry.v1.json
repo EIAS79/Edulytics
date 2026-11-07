@@ -30573,6 +30573,82 @@
       "status": "Shadow",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.relations.one_to_one.classify",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-injective-relation",
+      "representations": [
+        "ordered_pairs",
+        "function_classification"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.relations.implicit.classify",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-implicit-function",
+      "representations": [
+        "implicit_equation",
+        "function_classification"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.table.lookup.invert",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-table-lookups",
+      "representations": [
+        "value_table",
+        "input_output"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.quadratic.output_roots.solve",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-quadratic-zero-products",
+      "representations": [
+        "quadratic_factorization",
+        "ordered_integer_roots"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
     }
   ],
   "variantPolicy": {
