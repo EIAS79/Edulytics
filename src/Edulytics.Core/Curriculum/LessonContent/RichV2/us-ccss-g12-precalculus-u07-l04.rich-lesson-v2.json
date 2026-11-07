@@ -26,7 +26,9 @@
           "Question": "Convert 2cos5xcos3x.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "cos8x+cos2x."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "cos8x+cos2x.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "cos8x+cos2x.",
           "Check": "Preserve both sides' common domain."
@@ -36,7 +38,9 @@
           "Question": "Convert 2sin5xcos3x.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "sin8x+sin2x."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "sin8x+sin2x.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "sin8x+sin2x.",
           "Check": "Preserve both sides' common domain."
@@ -46,7 +50,9 @@
           "Question": "Convert 2sin5xsin3x.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "cos2x−cos8x."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "cos2x−cos8x.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "cos2x−cos8x.",
           "Check": "Preserve both sides' common domain."
@@ -56,7 +62,9 @@
           "Question": "Convert sin5x−sin3x.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "2cos4x sinx."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "2cos4x sinx.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "2cos4x sinx.",
           "Check": "Preserve both sides' common domain."
@@ -66,7 +74,9 @@
           "Question": "Compute cos60°cos30°.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "sqrt3/8."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "sqrt3/8.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "sqrt3/8.",
           "Check": "Preserve both sides' common domain."
@@ -76,7 +86,9 @@
           "Question": "Prove cos(a+b)+cos(a−b)=2cos a cos b.",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "Add cosine sum/difference expansions."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "Add cosine sum/difference expansions.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "Add cosine sum/difference expansions.",
           "Check": "Preserve both sides' common domain."
@@ -86,7 +98,9 @@
           "Question": "Simplify (sin4x−sin2x)/(cos4x+cos2x).",
           "Method": "Use matching sum-product identity and verify with independent numeric sample.",
           "Steps": [
-            "tanx on denominator nonzero."
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "tanx on denominator nonzero.",
+            "Validate: Preserve both sides' common domain."
           ],
           "Answer": "tanx on denominator nonzero.",
           "Check": "Preserve both sides' common domain."
@@ -104,6 +118,12 @@
           "Definition": "sin a−sin b=2cos((a+b)/2)sin((a−b)/2).",
           "Rule": "Half-sum/half-difference order matters.",
           "Example": "sin5x−sin3x=2cos4xsinx."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Sum-to-product: sin a±sin b=2sin((a+b)/2)cos((a−b)/2) for plus, or2cos((a+b)/2)sin((a−b)/2) for minus.",
+          "Rule": "Keep denominator domains when simplifying rational trig forms.",
+          "Example": "Convert 2sin5xsin3x. Answer: cos2x−cos8x."
         }
       ],
       "Visuals": [
@@ -144,6 +164,11 @@
           "Mistake": "Reverse sine and cosine order in mixed products.",
           "WhyWrong": "Difference term changes sign.",
           "Correction": "Start from exact identities and use parity."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Preserve both sides' common domain."
         }
       ]
     }

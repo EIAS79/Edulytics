@@ -26,7 +26,9 @@
           "Question": "Given tanθ=1/3 QI, find tan2θ.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "2(1/3)/(1−1/9)=3/4."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "2(1/3)/(1−1/9)=3/4.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "2(1/3)/(1−1/9)=3/4.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -36,7 +38,9 @@
           "Question": "Given cosθ=3/5 QI, find cos2θ.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "2(3/5)²−1=−7/25."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "2(3/5)²−1=−7/25.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "2(3/5)²−1=−7/25.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -46,7 +50,9 @@
           "Question": "Prove sin2θ=2sinθ cosθ.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "sin(θ+θ)=sinθcosθ+cosθsinθ."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "sin(θ+θ)=sinθcosθ+cosθsinθ.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "sin(θ+θ)=sinθcosθ+cosθsinθ.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -56,7 +62,9 @@
           "Question": "Derive tan2θ.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "tan2θ=sin2θ/cos2θ=2tanθ/(1−tan²θ)."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "tan2θ=sin2θ/cos2θ=2tanθ/(1−tan²θ).",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "tan2θ=sin2θ/cos2θ=2tanθ/(1−tan²θ).",
           "Check": "Verify using Pythagorean relation and domain."
@@ -66,7 +74,9 @@
           "Question": "Express sin²(4x) using one cosine.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "(1−cos8x)/2."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "(1−cos8x)/2.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "(1−cos8x)/2.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -76,7 +86,9 @@
           "Question": "Reduce sin⁴x.",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "(3−4cos2x+cos4x)/8."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "(3−4cos2x+cos4x)/8.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "(3−4cos2x+cos4x)/8.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -86,7 +98,9 @@
           "Question": "Find sin(π/8).",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "sqrt(2−sqrt2)/2."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "sqrt(2−sqrt2)/2.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "sqrt(2−sqrt2)/2.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -96,7 +110,9 @@
           "Question": "Find cos(7π/8).",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "−sqrt(2+sqrt2)/2."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "−sqrt(2+sqrt2)/2.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "−sqrt(2+sqrt2)/2.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -106,7 +122,9 @@
           "Question": "If cosθ=3/5 and θ acute, find tan(θ/2).",
           "Method": "Apply double/half-angle identity and quadrant signs.",
           "Steps": [
-            "sinθ/(1+cosθ)=(4/5)/(8/5)=1/2."
+            "Plan: Apply double/half-angle identity and quadrant signs.",
+            "sinθ/(1+cosθ)=(4/5)/(8/5)=1/2.",
+            "Validate: Verify using Pythagorean relation and domain."
           ],
           "Answer": "sinθ/(1+cosθ)=(4/5)/(8/5)=1/2.",
           "Check": "Verify using Pythagorean relation and domain."
@@ -172,6 +190,11 @@
           "Mistake": "Take positive radical for every half-angle.",
           "WhyWrong": "Signs depend on quadrant.",
           "Correction": "Locate half-angle first."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify using Pythagorean relation and domain."
         }
       ]
     }

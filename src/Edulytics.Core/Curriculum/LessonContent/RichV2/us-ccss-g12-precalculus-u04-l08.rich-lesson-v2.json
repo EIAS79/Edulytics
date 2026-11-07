@@ -25,7 +25,9 @@
           "Question": "Points (0,5),(1,10),(2,20): find y=ab^x.",
           "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
           "Steps": [
-            "a=5,b=2, f(x)=5·2^x, all residuals zero."
+            "Plan: Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+            "a=5,b=2, f(x)=5·2^x, all residuals zero.",
+            "Validate: Verify fitted curve against original values and domain."
           ],
           "Answer": "a=5,b=2, f(x)=5·2^x, all residuals zero.",
           "Check": "Verify fitted curve against original values and domain."
@@ -35,7 +37,9 @@
           "Question": "Points (1,4),(e,7),(e²,10): fit y=a+b ln x.",
           "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
           "Steps": [
-            "a=4,b=3, y=4+3ln x."
+            "Plan: Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+            "a=4,b=3, y=4+3ln x.",
+            "Validate: Verify fitted curve against original values and domain."
           ],
           "Answer": "a=4,b=3, y=4+3ln x.",
           "Check": "Verify fitted curve against original values and domain."
@@ -45,7 +49,9 @@
           "Question": "P(0)=20, capacity100, at t=ln4 the population50 with rate1.",
           "Method": "Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
           "Steps": [
-            "P(t)=100/(1+4e^(−t)); P(0)=20, P(ln4)=50."
+            "Plan: Fit model structure, validate parameters on all points, interpret capacity and extrapolation.",
+            "P(t)=100/(1+4e^(−t)); P(0)=20, P(ln4)=50.",
+            "Validate: Verify fitted curve against original values and domain."
           ],
           "Answer": "P(t)=100/(1+4e^(−t)); P(0)=20, P(ln4)=50.",
           "Check": "Verify fitted curve against original values and domain."

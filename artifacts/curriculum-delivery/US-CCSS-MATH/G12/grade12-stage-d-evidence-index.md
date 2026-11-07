@@ -35,3 +35,7 @@ No D_VERIFIED or release decision has been made.
 ## Targeted runtime schema compatibility correction
 
 Converted only 72 Grade12 JSON document SchemaVersion values from 2 to 1, preserving lesson data byte-for-byte except the version marker. Educational step/concept/mistake deficiencies remain open; Stage D still NO_GO.
+
+## Targeted legacy RichV2 contract recovery
+
+Counter({'worked_examples_existing_method_check_reused': 616, 'key_concepts_extracted_from_existing_lesson': 41, 'common_mistakes_derived_from_existing_math_check': 31}); changed 71 lesson resources. This is a deterministic repackaging of existing lesson Method, Check, Explanation and Summary texts, NOT evidence of independent mathematical review. Runtime and human QA still pending.

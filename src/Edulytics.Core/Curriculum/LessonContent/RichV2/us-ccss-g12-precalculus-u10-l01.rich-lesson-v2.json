@@ -21,7 +21,9 @@
           "Question": "Define ellipse with semimajor a=8,semiminor b=3.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198.",
           "Check": "Check conic parameters, domains and equations."
@@ -31,7 +33,9 @@
           "Question": "Define ellipse with semimajor a=9,semiminor b=4.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258.",
           "Check": "Check conic parameters, domains and equations."
@@ -41,7 +45,9 @@
           "Question": "Define ellipse with semimajor a=10,semiminor b=5.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254.",
           "Check": "Check conic parameters, domains and equations."
@@ -51,7 +57,9 @@
           "Question": "Define ellipse with semimajor a=11,semiminor b=2.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=22; c=sqrt(a²−b²)≈10.816654."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=22; c=sqrt(a²−b²)≈10.816654.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=22; c=sqrt(a²−b²)≈10.816654.",
           "Check": "Check conic parameters, domains and equations."
@@ -61,7 +69,9 @@
           "Question": "Define ellipse with semimajor a=12,semiminor b=3.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=24; c=sqrt(a²−b²)≈11.61895."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=24; c=sqrt(a²−b²)≈11.61895.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=24; c=sqrt(a²−b²)≈11.61895.",
           "Check": "Check conic parameters, domains and equations."
@@ -71,7 +81,9 @@
           "Question": "Define ellipse with semimajor a=13,semiminor b=4.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=26; c=sqrt(a²−b²)≈12.369317."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=26; c=sqrt(a²−b²)≈12.369317.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=26; c=sqrt(a²−b²)≈12.369317.",
           "Check": "Check conic parameters, domains and equations."
@@ -81,7 +93,9 @@
           "Question": "Define ellipse with semimajor a=7,semiminor b=5.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Sum of focal distances=2a=14; c=sqrt(a²−b²)≈4.898979."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Sum of focal distances=2a=14; c=sqrt(a²−b²)≈4.898979.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Sum of focal distances=2a=14; c=sqrt(a²−b²)≈4.898979.",
           "Check": "Check conic parameters, domains and equations."
@@ -93,6 +107,18 @@
           "Definition": "Ellipse is locus with constant sum of distances to two foci.",
           "Rule": "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
           "Example": "Sum of focal distances=2a=16; c=sqrt(a²−b²)≈7.416198."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
+          "Rule": "For horizontal major axis centered(h,k), (x−h)²/a²+(y−k)²/b²=1 with a≥b>0.",
+          "Example": "Define ellipse with semimajor a=9,semiminor b=4. Answer: Sum of focal distances=2a=18; c=sqrt(a²−b²)≈8.062258."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Focal c²=a²−b², vertices h±a and foci h±c.",
+          "Rule": "Focal c²=a²−b², vertices h±a and foci h±c.",
+          "Example": "Define ellipse with semimajor a=10,semiminor b=5. Answer: Sum of focal distances=2a=20; c=sqrt(a²−b²)≈8.660254."
         }
       ],
       "Visuals": [
@@ -135,6 +161,11 @@
           "Mistake": "Ignore center, axis sign or domain constraints.",
           "WhyWrong": "Changes conic branch/focus.",
           "Correction": "Verify standard equation and orientation."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Check conic parameters, domains and equations."
         }
       ]
     }

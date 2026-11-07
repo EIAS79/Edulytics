@@ -22,7 +22,9 @@
           "Question": "Same bag red/blue/green counts=(3, 2, 4). P(red or blue)?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "5/9."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "5/9.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "5/9.",
           "Check": "Verify by substitution or counting."
@@ -32,7 +34,9 @@
           "Question": "Same bag counts=(4, 3, 5). P(not green)?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "7/12."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "7/12.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "7/12.",
           "Check": "Verify by substitution or counting."
@@ -42,7 +46,9 @@
           "Question": "Select2 balls without replacement from counts red=5, blue=4, green=6. P(2 red)?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "2/21."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "2/21.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "2/21.",
           "Check": "Verify by substitution or counting."
@@ -52,7 +58,9 @@
           "Question": "Roll two fair six-sided dice. Probability sum7?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "6/36=1/6."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "6/36=1/6.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "6/36=1/6.",
           "Check": "Verify by substitution or counting."
@@ -62,7 +70,9 @@
           "Question": "For independent events P(A)=7/16 and P(B)=1/16, find P(A∩B).",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "7/256."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "7/256.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "7/256.",
           "Check": "Verify by substitution or counting."
@@ -72,7 +82,9 @@
           "Question": "Bag has 8 red,2 blue,3 green. P(red)?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "8/13."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "8/13.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "8/13.",
           "Check": "Verify by substitution or counting."
@@ -84,6 +96,18 @@
           "Definition": "Probability assigns values between0 and1 to outcomes and sums to1 across an exhaustive partition.",
           "Rule": "For equally likely outcomes, P(A)=favorable/total.",
           "Example": "5/9."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "For equally likely outcomes, P(A)=favorable/total.",
+          "Rule": "For equally likely outcomes, P(A)=favorable/total.",
+          "Example": "Same bag counts=(4, 3, 5). P(not green)? Answer: 7/12."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Union: P(A∪B)=P(A)+P(B)−P(A∩B), simpler sum if disjoint.",
+          "Rule": "Union: P(A∪B)=P(A)+P(B)−P(A∩B), simpler sum if disjoint.",
+          "Example": "Select2 balls without replacement from counts red=5, blue=4, green=6. P(2 red)? Answer: 2/21."
         }
       ],
       "Visuals": [
@@ -126,6 +150,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

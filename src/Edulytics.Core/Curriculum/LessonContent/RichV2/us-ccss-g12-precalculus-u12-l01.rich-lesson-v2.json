@@ -21,7 +21,9 @@
           "Question": "At x→3 for f(x)=x², compute f(a±0.01) and infer limit.",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "left=8.9401,right=9.0601,limit=9."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "left=8.9401,right=9.0601,limit=9.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "left=8.9401,right=9.0601,limit=9.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -31,7 +33,9 @@
           "Question": "Find one-sided limits at x→4 of f(x)=x+4 if x<4, else x+3.",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "Left=8, right=7, two-sided does not exist."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Left=8, right=7, two-sided does not exist.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "Left=8, right=7, two-sided does not exist.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -41,7 +45,9 @@
           "Question": "From f(x)=1/(x−5)², describe limit x→5.",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "+infinity from both sides; no finite real limit."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "+infinity from both sides; no finite real limit.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "+infinity from both sides; no finite real limit.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -51,7 +57,9 @@
           "Question": "For f(x)=sin(x)/x for x≠0, what is limit at0?",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "1; function has removable discontinuity if f(0) not assigned1."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "1; function has removable discontinuity if f(0) not assigned1.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "1; function has removable discontinuity if f(0) not assigned1.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -63,6 +71,18 @@
           "Definition": "A limit describes approached function value as x approaches a point, whether or not f(a) is defined.",
           "Rule": "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
           "Example": "left=8.9401,right=9.0601,limit=9."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
+          "Rule": "Numerical tables near a from left/right estimate a limit, but require mathematical corroboration.",
+          "Example": "Find one-sided limits at x→4 of f(x)=x+4 if x<4, else x+3. Answer: Left=8, right=7, two-sided does not exist."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "A two-sided limit exists only if finite one-sided limits agree.",
+          "Rule": "A two-sided limit exists only if finite one-sided limits agree.",
+          "Example": "From f(x)=1/(x−5)², describe limit x→5. Answer: +infinity from both sides; no finite real limit."
         }
       ],
       "Visuals": [
@@ -105,6 +125,11 @@
           "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
           "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
           "Correction": "Factor/rationalize or compare one-sided limits."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify domain, one-sided values or difference quotient."
         }
       ]
     }

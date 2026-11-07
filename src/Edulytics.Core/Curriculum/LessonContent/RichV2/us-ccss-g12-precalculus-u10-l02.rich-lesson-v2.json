@@ -21,7 +21,9 @@
           "Question": "Write horizontal hyperbola centered(0,0), semitransverse a=3, conjugate b=2.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/9−(y−k)²/4=1; h=0,k=0."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/9−(y−k)²/4=1; h=0,k=0.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/9−(y−k)²/4=1; h=0,k=0.",
           "Check": "Check conic parameters, domains and equations."
@@ -31,7 +33,9 @@
           "Question": "Write horizontal hyperbola centered(1,1), semitransverse a=4, conjugate b=3.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/16−(y−k)²/9=1; h=1,k=1."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/16−(y−k)²/9=1; h=1,k=1.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/16−(y−k)²/9=1; h=1,k=1.",
           "Check": "Check conic parameters, domains and equations."
@@ -41,7 +45,9 @@
           "Question": "Write horizontal hyperbola centered(2,-1), semitransverse a=5, conjugate b=4.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/25−(y−k)²/16=1; h=2,k=-1."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/25−(y−k)²/16=1; h=2,k=-1.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/25−(y−k)²/16=1; h=2,k=-1.",
           "Check": "Check conic parameters, domains and equations."
@@ -51,7 +57,9 @@
           "Question": "Write horizontal hyperbola centered(-1,0), semitransverse a=6, conjugate b=5.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/36−(y−k)²/25=1; h=-1,k=0."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/36−(y−k)²/25=1; h=-1,k=0.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/36−(y−k)²/25=1; h=-1,k=0.",
           "Check": "Check conic parameters, domains and equations."
@@ -61,7 +69,9 @@
           "Question": "Write horizontal hyperbola centered(0,1), semitransverse a=7, conjugate b=1.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/49−(y−k)²/1=1; h=0,k=1."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/49−(y−k)²/1=1; h=0,k=1.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/49−(y−k)²/1=1; h=0,k=1.",
           "Check": "Check conic parameters, domains and equations."
@@ -71,7 +81,9 @@
           "Question": "Write horizontal hyperbola centered(1,-1), semitransverse a=8, conjugate b=2.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "(x−h)²/64−(y−k)²/4=1; h=1,k=-1."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "(x−h)²/64−(y−k)²/4=1; h=1,k=-1.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "(x−h)²/64−(y−k)²/4=1; h=1,k=-1.",
           "Check": "Check conic parameters, domains and equations."
@@ -83,6 +95,18 @@
           "Definition": "Hyperbola consists of two branches with constant difference of focal distances.",
           "Rule": "Horizontal hyperbola centered(h,k): (x−h)²/a²−(y−k)²/b²=1.",
           "Example": "(x−h)²/9−(y−k)²/4=1; h=0,k=0."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Horizontal hyperbola centered(h,k): (x−h)²/a²−(y−k)²/b²=1.",
+          "Rule": "Horizontal hyperbola centered(h,k): (x−h)²/a²−(y−k)²/b²=1.",
+          "Example": "Write horizontal hyperbola centered(1,1), semitransverse a=4, conjugate b=3. Answer: (x−h)²/16−(y−k)²/9=1; h=1,k=1."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Focal distance c²=a²+b² and asymptotes y−k=±(b/a)(x−h).",
+          "Rule": "Focal distance c²=a²+b² and asymptotes y−k=±(b/a)(x−h).",
+          "Example": "Write horizontal hyperbola centered(2,-1), semitransverse a=5, conjugate b=4. Answer: (x−h)²/25−(y−k)²/16=1; h=2,k=-1."
         }
       ],
       "Visuals": [
@@ -125,6 +149,11 @@
           "Mistake": "Ignore center, axis sign or domain constraints.",
           "WhyWrong": "Changes conic branch/focus.",
           "Correction": "Verify standard equation and orientation."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Check conic parameters, domains and equations."
         }
       ]
     }

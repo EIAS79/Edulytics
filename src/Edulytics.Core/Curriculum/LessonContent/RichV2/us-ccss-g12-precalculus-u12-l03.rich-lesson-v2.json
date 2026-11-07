@@ -21,7 +21,9 @@
           "Question": "Find discontinuity of f(x)=(x²−9)/(x−3) (unredefined).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "Removable at x=3; limit=6 but function undefined there."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Removable at x=3; limit=6 but function undefined there.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "Removable at x=3; limit=6 but function undefined there.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -31,7 +33,9 @@
           "Question": "For f(x)=x+4 if x<0, and x+3 if x≥0, continuous at0?",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "No, jump; left=4,right=3."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "No, jump; left=4,right=3.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "No, jump; left=4,right=3.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -41,7 +45,9 @@
           "Question": "At x→5, g(x)=1/(x−5) has which continuity type?",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "Infinite discontinuity, opposite-sign unbounded one-sided limits."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Infinite discontinuity, opposite-sign unbounded one-sided limits.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "Infinite discontinuity, opposite-sign unbounded one-sided limits.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -51,7 +57,9 @@
           "Question": "Define f(x)=x² for x≠6, f(6)=37. Is it continuous at x=6?",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "No, removable point mismatch: limit=36, value=37."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "No, removable point mismatch: limit=36, value=37.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "No, removable point mismatch: limit=36, value=37.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -61,7 +69,9 @@
           "Question": "Does continuous f(x)=x³−7 on interval[0,8] have a zero by IVT?",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "Yes, f(0)<0 and f(a+1)>0, so some c satisfies f(c)=0."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Yes, f(0)<0 and f(a+1)>0, so some c satisfies f(c)=0.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "Yes, f(0)<0 and f(a+1)>0, so some c satisfies f(c)=0.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -73,6 +83,18 @@
           "Definition": "Continuity at a requires f(a) defined, limit exists, and limit equals f(a).",
           "Rule": "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
           "Example": "Removable at x=3; limit=6 but function undefined there."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
+          "Rule": "Discontinuities include removable holes, finite jumps and infinite asymptotes.",
+          "Example": "For f(x)=x+4 if x<0, and x+3 if x≥0, continuous at0? Answer: No, jump; left=4,right=3."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "For piecewise functions check left and right formulas and assigned boundary value.",
+          "Rule": "For piecewise functions check left and right formulas and assigned boundary value.",
+          "Example": "At x→5, g(x)=1/(x−5) has which continuity type? Answer: Infinite discontinuity, opposite-sign unbounded one-sided limits."
         }
       ],
       "Visuals": [
@@ -115,6 +137,11 @@
           "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
           "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
           "Correction": "Factor/rationalize or compare one-sided limits."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify domain, one-sided values or difference quotient."
         }
       ]
     }

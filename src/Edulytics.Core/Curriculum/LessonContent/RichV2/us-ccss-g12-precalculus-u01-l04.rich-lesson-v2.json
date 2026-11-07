@@ -221,7 +221,8 @@
           "Method": "Perform the inner function first for composition; preserve the domain of every original operation.",
           "Steps": [
             "Start on the g graph at x=1 to obtain output 2.",
-            "Use 2 as the x-input on the f graph and read output 5."
+            "Use 2 as the x-input on the f graph and read output 5.",
+            "Validate: Read actual plotted coordinates, not the original input twice."
           ],
           "Answer": "f(g(1))=5.",
           "Check": "Read actual plotted coordinates, not the original input twice."
@@ -232,7 +233,8 @@
           "Method": "Perform the inner function first for composition; preserve the domain of every original operation.",
           "Steps": [
             "h(2)=7 and f(7)=49−14=35.",
-            "f(2)=4−4=0 and h(0)=3."
+            "f(2)=4−4=0 and h(0)=3.",
+            "Validate: The inner function must be evaluated before the outer function."
           ],
           "Answer": "f(h(2))=35 and h(f(2))=3.",
           "Check": "The inner function must be evaluated before the outer function."

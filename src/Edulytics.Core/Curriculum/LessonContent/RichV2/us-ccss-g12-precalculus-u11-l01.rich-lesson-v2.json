@@ -21,7 +21,9 @@
           "Question": "List first five terms of alternating a_n=(−1)^n(-1+n).",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[0, -1, 2, -3, 4]."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[0, -1, 2, -3, 4].",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[0, -1, 2, -3, 4].",
           "Check": "Verify by substitution or counting."
@@ -31,7 +33,9 @@
           "Question": "Evaluate a_n=n² if n even, otherwise n+0, for n=1..5.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[1, 4, 3, 16, 5]."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[1, 4, 3, 16, 5].",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[1, 4, 3, 16, 5].",
           "Check": "Verify by substitution or counting."
@@ -41,7 +45,9 @@
           "Question": "Recurrence a1=1, a_n=a_(n−1)+4: list five terms.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[1, 5, 9, 13, 17]."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[1, 5, 9, 13, 17].",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[1, 5, 9, 13, 17].",
           "Check": "Verify by substitution or counting."
@@ -51,7 +57,9 @@
           "Question": "Evaluate factorial expression (8!)/(6!).",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "56."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "56.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "56.",
           "Check": "Verify by substitution or counting."
@@ -61,7 +69,9 @@
           "Question": "For sequence 2n²+n, compute a_4.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "36."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "36.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "36.",
           "Check": "Verify by substitution or counting."
@@ -71,7 +81,9 @@
           "Question": "List first five terms of explicit sequence a_n=4+2(n−1).",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[4, 6, 8, 10, 12], indexed n=1..5."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[4, 6, 8, 10, 12], indexed n=1..5.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[4, 6, 8, 10, 12], indexed n=1..5.",
           "Check": "Verify by substitution or counting."
@@ -81,7 +93,9 @@
           "Question": "List first five terms of alternating a_n=(−1)^n(-2+n).",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[-1, 0, 1, -2, 3]."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[-1, 0, 1, -2, 3].",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[-1, 0, 1, -2, 3].",
           "Check": "Verify by substitution or counting."
@@ -93,6 +107,18 @@
           "Definition": "A sequence is an ordered list a1,a2,... indexed by positive integers.",
           "Rule": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
           "Example": "[0, -1, 2, -3, 4]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+          "Rule": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+          "Example": "Evaluate a_n=n² if n even, otherwise n+0, for n=1..5. Answer: [1, 4, 3, 16, 5]."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Alternating sequences often contain (-1)^n or (-1)^(n−1).",
+          "Rule": "Alternating sequences often contain (-1)^n or (-1)^(n−1).",
+          "Example": "Recurrence a1=1, a_n=a_(n−1)+4: list five terms. Answer: [1, 5, 9, 13, 17]."
         }
       ],
       "Visuals": [
@@ -135,6 +161,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

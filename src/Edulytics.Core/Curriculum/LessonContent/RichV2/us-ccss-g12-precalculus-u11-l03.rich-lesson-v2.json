@@ -21,7 +21,9 @@
           "Question": "Find a_4 for a1=2,ratio=3.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "54."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "54.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "54.",
           "Check": "Verify by substitution or counting."
@@ -31,7 +33,9 @@
           "Question": "Write recursive rule of geometric sequence a1=3,r=-2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "a_n=-2a_(n−1), n≥2."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "a_n=-2a_(n−1), n≥2.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "a_n=-2a_(n−1), n≥2.",
           "Check": "Verify by substitution or counting."
@@ -41,7 +45,9 @@
           "Question": "Compute first four geometric terms with a1=4,r=1/2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "[Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)]."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)].",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "[Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)].",
           "Check": "Verify by substitution or counting."
@@ -51,7 +57,9 @@
           "Question": "Find ratio of geometric sequence [5, 10, 20, 40].",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "r=2."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "r=2.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "r=2.",
           "Check": "Verify by substitution or counting."
@@ -61,7 +69,9 @@
           "Question": "Find a_8 for a1=1,ratio=3.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "2187."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "2187.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "2187.",
           "Check": "Verify by substitution or counting."
@@ -71,7 +81,9 @@
           "Question": "Write recursive rule of geometric sequence a1=2,r=-2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "a_n=-2a_(n−1), n≥2."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "a_n=-2a_(n−1), n≥2.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "a_n=-2a_(n−1), n≥2.",
           "Check": "Verify by substitution or counting."
@@ -83,6 +95,18 @@
           "Definition": "Geometric sequences have constant ratio r between consecutive nonzero terms.",
           "Rule": "Explicit nth term a_n=a1 r^(n−1).",
           "Example": "54."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Explicit nth term a_n=a1 r^(n−1).",
+          "Rule": "Explicit nth term a_n=a1 r^(n−1).",
+          "Example": "Write recursive rule of geometric sequence a1=3,r=-2. Answer: a_n=-2a_(n−1), n≥2."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Recursive a_n=r a_(n−1).",
+          "Rule": "Recursive a_n=r a_(n−1).",
+          "Example": "Compute first four geometric terms with a1=4,r=1/2. Answer: [Fraction(4, 1), Fraction(2, 1), Fraction(1, 1), Fraction(1, 2)]."
         }
       ],
       "Visuals": [
@@ -125,6 +149,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

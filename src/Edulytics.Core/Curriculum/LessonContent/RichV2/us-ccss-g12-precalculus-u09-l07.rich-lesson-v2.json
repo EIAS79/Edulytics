@@ -22,7 +22,9 @@
           "Question": "Verify mutual inverse of A=[[4, 1], [1, 5]] and B=[[Fraction(5, 19), Fraction(-1, 19)], [Fraction(-1, 19), Fraction(4, 19)]].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "AB=BA=I_2"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "AB=BA=I_2",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "AB=BA=I_2",
           "Check": "Verify dimensions, determinant or original equations."
@@ -32,7 +34,9 @@
           "Question": "Verify mutual inverse of A=[[5, 1], [1, 6]] and B=[[Fraction(6, 29), Fraction(-1, 29)], [Fraction(-1, 29), Fraction(5, 29)]].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "AB=BA=I_2"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "AB=BA=I_2",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "AB=BA=I_2",
           "Check": "Verify dimensions, determinant or original equations."
@@ -42,7 +46,9 @@
           "Question": "Find A^-1 for A=[[6, 1], [1, 6]] if it exists.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "[[Fraction(6, 35), Fraction(-1, 35)], [Fraction(-1, 35), Fraction(6, 35)]]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "[[Fraction(6, 35), Fraction(-1, 35)], [Fraction(-1, 35), Fraction(6, 35)]]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "[[Fraction(6, 35), Fraction(-1, 35)], [Fraction(-1, 35), Fraction(6, 35)]]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -52,7 +58,9 @@
           "Question": "Find A^-1 for A=[[7, 1], [1, 7]] if it exists.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "[[Fraction(7, 48), Fraction(-1, 48)], [Fraction(-1, 48), Fraction(7, 48)]]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "[[Fraction(7, 48), Fraction(-1, 48)], [Fraction(-1, 48), Fraction(7, 48)]]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "[[Fraction(7, 48), Fraction(-1, 48)], [Fraction(-1, 48), Fraction(7, 48)]]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -62,7 +70,9 @@
           "Question": "Find A^-1 for A=[[5, 1, 2], [1, 12, -1], [2, -1, 7]] if it exists.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "[[Fraction(83, 356), Fraction(-9, 356), Fraction(-25, 356)], [Fraction(-9, 356), Fraction(31, 356), Fraction(7, 356)], [Fraction(-25, 356), Fraction(7, 356), Fraction(59, 356)]]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "[[Fraction(83, 356), Fraction(-9, 356), Fraction(-25, 356)], [Fraction(-9, 356), Fraction(31, 356), Fraction(7, 356)], [Fraction(-25, 356), Fraction(7, 356), Fraction(59, 356)]]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "[[Fraction(83, 356), Fraction(-9, 356), Fraction(-25, 356)], [Fraction(-9, 356), Fraction(31, 356), Fraction(7, 356)], [Fraction(-25, 356), Fraction(7, 356), Fraction(59, 356)]]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -72,7 +82,9 @@
           "Question": "Solve [[5, 1], [1, 5]]·X=[7, 11] by inverse matrix A^-1b.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "X=[Fraction(1, 1), Fraction(2, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "X=[Fraction(1, 1), Fraction(2, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -82,7 +94,9 @@
           "Question": "Solve [[6, 1], [1, 6]]·X=[8, 13] by inverse matrix A^-1b.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "X=[Fraction(1, 1), Fraction(2, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "X=[Fraction(1, 1), Fraction(2, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -92,7 +106,9 @@
           "Question": "Solve [[5, 1, 2], [1, 6, -1], [2, -1, 10]]·X=[13, 10, 30] by inverse matrix A^-1b.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -102,7 +118,9 @@
           "Question": "Solve [[5, 1, 2], [1, 7, -1], [2, -1, 9]]·X=[13, 12, 27] by inverse matrix A^-1b.",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -114,6 +132,18 @@
           "Definition": "Operations follow matrix dimensions and algebraic identities.",
           "Rule": "Verify results against original constraints.",
           "Example": "Verify mutual inverse of A=[[4, 1], [1, 5]] and B=[[Fraction(5, 19), Fraction(-1, 19)], [Fraction(-1, 19), Fraction(4, 19)]]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "A inverse satisfies AA^-1=A^-1A=I.",
+          "Rule": "A inverse satisfies AA^-1=A^-1A=I.",
+          "Example": "Verify mutual inverse of A=[[5, 1], [1, 6]] and B=[[Fraction(6, 29), Fraction(-1, 29)], [Fraction(-1, 29), Fraction(5, 29)]]. Answer: AB=BA=I_2"
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "For nonsingular system AX=b, solution X=A^-1b.",
+          "Rule": "For nonsingular system AX=b, solution X=A^-1b.",
+          "Example": "Find A^-1 for A=[[6, 1], [1, 6]] if it exists. Answer: [[Fraction(6, 35), Fraction(-1, 35)], [Fraction(-1, 35), Fraction(6, 35)]]"
         }
       ],
       "Visuals": [
@@ -156,6 +186,11 @@
           "Mistake": "Ignore matrix dimension, rank or determinant restrictions.",
           "WhyWrong": "May produce undefined operation or false unique solution.",
           "Correction": "Inspect dimensions and singularity; check original equations."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify dimensions, determinant or original equations."
         }
       ]
     }

@@ -21,7 +21,9 @@
           "Question": "Identify common difference in [-2, -4, -6, -8, -10].",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "d=-2."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "d=-2.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "d=-2.",
           "Check": "Verify by substitution or counting."
@@ -31,7 +33,9 @@
           "Question": "Find a_8 given a1=-1, d=-1.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "-8."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "-8.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "-8.",
           "Check": "Verify by substitution or counting."
@@ -41,7 +45,9 @@
           "Question": "Write recurrence for arithmetic sequence first term0, difference2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "a1=0,a_n=a_(n−1)+(2), n≥2."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "a1=0,a_n=a_(n−1)+(2), n≥2.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "a1=0,a_n=a_(n−1)+(2), n≥2.",
           "Check": "Verify by substitution or counting."
@@ -51,7 +57,9 @@
           "Question": "How many arithmetic terms from a1=1 to a_N=10 with d=1?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "N=10."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "N=10.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "N=10.",
           "Check": "Verify by substitution or counting."
@@ -61,7 +69,9 @@
           "Question": "Arithmetic sequence a1=2, d=2: find sum a1+..+a_11.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "132."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "132.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "132.",
           "Check": "Verify by substitution or counting."
@@ -71,7 +81,9 @@
           "Question": "Identify common difference in [3, 6, 9, 12, 15].",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "d=3."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "d=3.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "d=3.",
           "Check": "Verify by substitution or counting."
@@ -81,7 +93,9 @@
           "Question": "Find a_13 given a1=4, d=-3.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "-32."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "-32.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "-32.",
           "Check": "Verify by substitution or counting."
@@ -93,6 +107,18 @@
           "Definition": "Arithmetic sequences have constant common difference d.",
           "Rule": "Explicit nth term a_n=a1+(n−1)d.",
           "Example": "d=-2."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Explicit nth term a_n=a1+(n−1)d.",
+          "Rule": "Explicit nth term a_n=a1+(n−1)d.",
+          "Example": "Find a_8 given a1=-1, d=-1. Answer: -8."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Recursive form a_n=a_(n−1)+d for n≥2.",
+          "Rule": "Recursive form a_n=a_(n−1)+d for n≥2.",
+          "Example": "Write recurrence for arithmetic sequence first term0, difference2. Answer: a1=0,a_n=a_(n−1)+(2), n≥2."
         }
       ],
       "Visuals": [
@@ -135,6 +161,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

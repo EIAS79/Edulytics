@@ -21,7 +21,9 @@
           "Question": "Classify conic quadratic form A=2,B=-2,C=3 using B²−4AC.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Discriminant -20: ellipse (assuming nondegenerate real conic)."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -20: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Discriminant -20: ellipse (assuming nondegenerate real conic).",
           "Check": "Check conic parameters, domains and equations."
@@ -31,7 +33,9 @@
           "Question": "Classify conic quadratic form A=3,B=-1,C=4 using B²−4AC.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Discriminant -47: ellipse (assuming nondegenerate real conic)."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -47: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Discriminant -47: ellipse (assuming nondegenerate real conic).",
           "Check": "Check conic parameters, domains and equations."
@@ -41,7 +45,9 @@
           "Question": "Classify conic quadratic form A=4,B=0,C=5 using B²−4AC.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Discriminant -80: ellipse (assuming nondegenerate real conic)."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -80: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Discriminant -80: ellipse (assuming nondegenerate real conic).",
           "Check": "Check conic parameters, domains and equations."
@@ -51,7 +57,9 @@
           "Question": "Classify conic quadratic form A=5,B=1,C=6 using B²−4AC.",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Discriminant -119: ellipse (assuming nondegenerate real conic)."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -119: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Discriminant -119: ellipse (assuming nondegenerate real conic).",
           "Check": "Check conic parameters, domains and equations."
@@ -63,6 +71,18 @@
           "Definition": "General conic quadratic Ax²+Bxy+Cy²+Dx+Ey+F=0 can be diagonalized by rotation.",
           "Rule": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
           "Example": "Discriminant -20: ellipse (assuming nondegenerate real conic)."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+          "Rule": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+          "Example": "Classify conic quadratic form A=3,B=-1,C=4 using B²−4AC. Answer: Discriminant -47: ellipse (assuming nondegenerate real conic)."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant.",
+          "Rule": "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant.",
+          "Example": "Classify conic quadratic form A=4,B=0,C=5 using B²−4AC. Answer: Discriminant -80: ellipse (assuming nondegenerate real conic)."
         }
       ],
       "Visuals": [
@@ -105,6 +125,11 @@
           "Mistake": "Ignore center, axis sign or domain constraints.",
           "WhyWrong": "Changes conic branch/focus.",
           "Correction": "Verify standard equation and orientation."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Check conic parameters, domains and equations."
         }
       ]
     }

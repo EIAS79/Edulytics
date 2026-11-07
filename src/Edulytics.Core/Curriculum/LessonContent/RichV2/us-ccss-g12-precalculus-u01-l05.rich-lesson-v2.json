@@ -77,7 +77,9 @@
           "Question": "A rooftop sensor records open area A(t) square metres; its redesigned value is always 3 m² higher. Express the transformation.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "A_new(t)=A(t)+3; each plotted y-coordinate increases by 3 while time stays fixed."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "A_new(t)=A(t)+3; each plotted y-coordinate increases by 3 while time stays fixed.",
+            "Validate: At each t, new output−old output=3 m²."
           ],
           "Answer": "A_new(t)=A(t)+3; each plotted y-coordinate increases by 3 while time stays fixed.",
           "Check": "At each t, new output−old output=3 m²."
@@ -87,7 +89,9 @@
           "Question": "For x=[0,2,4,6] and f(x)=[2,5,7,9], construct g(x)=f(x)−2.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g outputs [0,3,5,7], with inputs unchanged."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g outputs [0,3,5,7], with inputs unchanged.",
+            "Validate: The original and new rows have the same x-values."
           ],
           "Answer": "g outputs [0,3,5,7], with inputs unchanged.",
           "Check": "The original and new rows have the same x-values."
@@ -97,7 +101,9 @@
           "Question": "A shift schedule is represented by S(t). The plan begins one hour earlier without altering the output sequence. Define shifted function.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "T(t)=S(t+1), a horizontal shift left one hour."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "T(t)=S(t+1), a horizontal shift left one hour.",
+            "Validate: T(2)=S(3)."
           ],
           "Answer": "T(t)=S(t+1), a horizontal shift left one hour.",
           "Check": "T(2)=S(3)."
@@ -107,7 +113,9 @@
           "Question": "For f(1)=3,f(3)=5,f(5)=7, tabulate g(x)=f(x−2) at the appropriate new inputs.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(3)=3,g(5)=5,g(7)=7; every x-value shifts right 2."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(3)=3,g(5)=5,g(7)=7; every x-value shifts right 2.",
+            "Validate: g(x) reuses the former f-output at x−2."
           ],
           "Answer": "g(3)=3,g(5)=5,g(7)=7; every x-value shifts right 2.",
           "Check": "g(x) reuses the former f-output at x−2."
@@ -117,7 +125,9 @@
           "Question": "An upward parabola has the same shape as y=x² but a vertex at (−3,0). Find its rule.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(x)=(x+3)²; horizontal shift left 3."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(x)=(x+3)²; horizontal shift left 3.",
+            "Validate: g(−3)=0."
           ],
           "Answer": "g(x)=(x+3)²; horizontal shift left 3.",
           "Check": "g(−3)=0."
@@ -127,7 +137,9 @@
           "Question": "For a distance-to-cost function C(m) dollars for m miles, interpret C(m)+5 and C(m+5).",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "The first adds a $5 fee; the second prices five extra miles."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "The first adds a $5 fee; the second prices five extra miles.",
+            "Validate: The input and output units cannot be exchanged."
           ],
           "Answer": "The first adds a $5 fee; the second prices five extra miles.",
           "Check": "The input and output units cannot be exchanged."
@@ -137,7 +149,9 @@
           "Question": "Transform f(x)=|x| into h(x)=f(x−2)+3; state vertex and range.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "h(x)=|x−2|+3 with vertex (2,3), domain ℝ and range [3,∞)."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "h(x)=|x−2|+3 with vertex (2,3), domain ℝ and range [3,∞).",
+            "Validate: Inside −2 moves right; outside +3 moves up."
           ],
           "Answer": "h(x)=|x−2|+3 with vertex (2,3), domain ℝ and range [3,∞).",
           "Check": "Inside −2 moves right; outside +3 moves up."
@@ -147,7 +161,9 @@
           "Question": "A square-root curve begins at (−2,4) and retains the toolkit shape. Give its rule and domain/range.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(x)=√(x+2)+4; domain [−2,∞), range [4,∞)."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(x)=√(x+2)+4; domain [−2,∞), range [4,∞).",
+            "Validate: The startpoint is included."
           ],
           "Answer": "g(x)=√(x+2)+4; domain [−2,∞), range [4,∞).",
           "Check": "The startpoint is included."
@@ -157,7 +173,9 @@
           "Question": "Reflect f(x)=√x in each coordinate axis separately.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "Across x-axis: −√x with domain x≥0; across y-axis: √(−x) with domain x≤0."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "Across x-axis: −√x with domain x≥0; across y-axis: √(−x) with domain x≤0.",
+            "Validate: Output reflection changes sign; input reflection changes input direction."
           ],
           "Answer": "Across x-axis: −√x with domain x≥0; across y-axis: √(−x) with domain x≤0.",
           "Check": "Output reflection changes sign; input reflection changes input direction."
@@ -167,7 +185,9 @@
           "Question": "f(1)=2,f(3)=5,f(4)=7. Give −f(x) and f(−x) tabulations.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "−f: (1,−2),(3,−5),(4,−7); f(−x): (−1,2),(−3,5),(−4,7)."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "−f: (1,−2),(3,−5),(4,−7); f(−x): (−1,2),(−3,5),(−4,7).",
+            "Validate: Reflection over x-axis negates outputs; over y-axis negates inputs."
           ],
           "Answer": "−f: (1,−2),(3,−5),(4,−7); f(−x): (−1,2),(−3,5),(−4,7).",
           "Check": "Reflection over x-axis negates outputs; over y-axis negates inputs."
@@ -177,7 +197,9 @@
           "Question": "Transform y=2^x into k(x)=1−2^(−x); identify reflection and shift.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "Reflect horizontally y=2^(−x), then vertically −2^(−x), then up 1; range (−∞,1)."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "Reflect horizontally y=2^(−x), then vertically −2^(−x), then up 1; range (−∞,1).",
+            "Validate: At x=0 output 0; horizontal asymptote y=1."
           ],
           "Answer": "Reflect horizontally y=2^(−x), then vertically −2^(−x), then up 1; range (−∞,1).",
           "Check": "At x=0 output 0; horizontal asymptote y=1."
@@ -187,7 +209,9 @@
           "Question": "Classify f(x)=x³+4x.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "Odd, since f(−x)=−x³−4x=−f(x); origin symmetry."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "Odd, since f(−x)=−x³−4x=−f(x); origin symmetry.",
+            "Validate: Odd function domain must be symmetric about zero."
           ],
           "Answer": "Odd, since f(−x)=−x³−4x=−f(x); origin symmetry.",
           "Check": "Odd function domain must be symmetric about zero."
@@ -197,7 +221,9 @@
           "Question": "A city's weekly count is P(t). A new city follows twice the output at each corresponding week. Express graph relation.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "Q(t)=2P(t), vertical stretch factor 2."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "Q(t)=2P(t), vertical stretch factor 2.",
+            "Validate: x-coordinates unchanged."
           ],
           "Answer": "Q(t)=2P(t), vertical stretch factor 2.",
           "Check": "x-coordinates unchanged."
@@ -207,7 +233,9 @@
           "Question": "Given f(1)=4,f(2)=10,f(3)=12, form g(x)=(1/2)f(x).",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(1)=2,g(2)=5,g(3)=6."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(1)=2,g(2)=5,g(3)=6.",
+            "Validate: Outputs halve, domain unchanged."
           ],
           "Answer": "g(1)=2,g(2)=5,g(3)=6.",
           "Check": "Outputs halve, domain unchanged."
@@ -217,7 +245,9 @@
           "Question": "A transformed cubic passes through (1,3), (0,0), (−1,−3) and is g(x)=a·x³. Determine a.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "a=3, so g(x)=3x³; vertical stretch factor 3."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "a=3, so g(x)=3x³; vertical stretch factor 3.",
+            "Validate: At x=1, g(1)=3."
           ],
           "Answer": "a=3, so g(x)=3x³; vertical stretch factor 3.",
           "Check": "At x=1, g(1)=3."
@@ -227,7 +257,9 @@
           "Question": "An activity model Q(t) follows the original profile P but evolves three times as quickly. Write transformation.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "Q(t)=P(3t); each original event at t=a occurs at t=a/3."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "Q(t)=P(3t); each original event at t=a occurs at t=a/3.",
+            "Validate: Inside input ×3 means horizontal compression by 1/3."
           ],
           "Answer": "Q(t)=P(3t); each original event at t=a occurs at t=a/3.",
           "Check": "Inside input ×3 means horizontal compression by 1/3."
@@ -237,7 +269,9 @@
           "Question": "For f(2)=3,f(4)=5,f(6)=7, create g(x)=f(x/2) at known inputs.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(4)=3,g(8)=5,g(12)=7; x doubles for matching outputs."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(4)=3,g(8)=5,g(12)=7; x doubles for matching outputs.",
+            "Validate: The new graph stretches horizontally by 2."
           ],
           "Answer": "g(4)=3,g(8)=5,g(12)=7; x doubles for matching outputs.",
           "Check": "The new graph stretches horizontally by 2."
@@ -247,7 +281,9 @@
           "Question": "The original graph contains a feature (6,4) and transformed graph has feature (2,4) with unchanged height. State scaling.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(x)=f(3x), horizontal compression by factor 1/3."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(x)=f(3x), horizontal compression by factor 1/3.",
+            "Validate: g(2)=f(6)."
           ],
           "Answer": "g(x)=f(3x), horizontal compression by factor 1/3.",
           "Check": "g(2)=f(6)."
@@ -257,7 +293,9 @@
           "Question": "For f(3)=5,f(6)=8,f(9)=10, tabulate g(x)=2f(3x)+1.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "g(1)=11,g(2)=17,g(3)=21."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "g(1)=11,g(2)=17,g(3)=21.",
+            "Validate: Inputs divide by 3, outputs double then increase by 1."
           ],
           "Answer": "g(1)=11,g(2)=17,g(3)=21.",
           "Check": "Inputs divide by 3, outputs double then increase by 1."
@@ -267,7 +305,9 @@
           "Question": "For f(x)=|x|, give k(x)=f((x+2)/2)−3 and identify each transformation.",
           "Method": "Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
           "Steps": [
-            "k(x)=|(x+2)/2|−3=(1/2)|x+2|−3; vertex (−2,−3), range [−3,∞)."
+            "Plan: Use first-party input/output transformation rules, preserve units, and verify domain and marked graph points.",
+            "k(x)=|(x+2)/2|−3=(1/2)|x+2|−3; vertex (−2,−3), range [−3,∞).",
+            "Validate: Inside (x+2)/2 creates horizontal stretch 2 and left shift 2; outside −3 lowers graph."
           ],
           "Answer": "k(x)=|(x+2)/2|−3=(1/2)|x+2|−3; vertex (−2,−3), range [−3,∞).",
           "Check": "Inside (x+2)/2 creates horizontal stretch 2 and left shift 2; outside −3 lowers graph."

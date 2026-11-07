@@ -26,7 +26,9 @@
           "Question": "Prove sin²t+cos²t=1",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "Unit-circle equation x²+y²=1."
+            "Plan: Use algebraic identity and check denominators.",
+            "Unit-circle equation x²+y²=1.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "Unit-circle equation x²+y²=1.",
           "Check": "Verify on common domain."
@@ -36,7 +38,9 @@
           "Question": "Simplify sec t cos t",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1, for cos t≠0."
+            "Plan: Use algebraic identity and check denominators.",
+            "1, for cos t≠0.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1, for cos t≠0.",
           "Check": "Verify on common domain."
@@ -46,7 +50,9 @@
           "Question": "Simplify sin(-t)cos(-t)",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "−sin t cos t."
+            "Plan: Use algebraic identity and check denominators.",
+            "−sin t cos t.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "−sin t cos t.",
           "Check": "Verify on common domain."
@@ -56,7 +62,9 @@
           "Question": "Simplify sec²t−tan²t",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1, where cos t≠0."
+            "Plan: Use algebraic identity and check denominators.",
+            "1, where cos t≠0.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1, where cos t≠0.",
           "Check": "Verify on common domain."
@@ -66,7 +74,9 @@
           "Question": "Simplify tan t+cot t",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1/(sin t cos t), both nonzero."
+            "Plan: Use algebraic identity and check denominators.",
+            "1/(sin t cos t), both nonzero.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1/(sin t cos t), both nonzero.",
           "Check": "Verify on common domain."
@@ -76,7 +86,9 @@
           "Question": "Simplify cos(-t)−sin(-t)",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "cos t+sin t."
+            "Plan: Use algebraic identity and check denominators.",
+            "cos t+sin t.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "cos t+sin t.",
           "Check": "Verify on common domain."
@@ -86,7 +98,9 @@
           "Question": "Simplify cot t tan t",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1 on common domain."
+            "Plan: Use algebraic identity and check denominators.",
+            "1 on common domain.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1 on common domain.",
           "Check": "Verify on common domain."
@@ -96,7 +110,9 @@
           "Question": "Rewrite cos²t in terms of sine",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1−sin²t."
+            "Plan: Use algebraic identity and check denominators.",
+            "1−sin²t.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1−sin²t.",
           "Check": "Verify on common domain."
@@ -106,7 +122,9 @@
           "Question": "Simplify (sec t−tan t)(sec t+tan t)",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "1 on common domain."
+            "Plan: Use algebraic identity and check denominators.",
+            "1 on common domain.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "1 on common domain.",
           "Check": "Verify on common domain."
@@ -116,7 +134,9 @@
           "Question": "Simplify 1/(1+tan²t)",
           "Method": "Use algebraic identity and check denominators.",
           "Steps": [
-            "cos²t where cos t≠0."
+            "Plan: Use algebraic identity and check denominators.",
+            "cos²t where cos t≠0.",
+            "Validate: Verify on common domain."
           ],
           "Answer": "cos²t where cos t≠0.",
           "Check": "Verify on common domain."
@@ -182,6 +202,11 @@
           "Mistake": "Cancel denominators without domain restriction",
           "WhyWrong": "Original expression undefined at zeros",
           "Correction": "Retain original domain."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify on common domain."
         }
       ]
     }

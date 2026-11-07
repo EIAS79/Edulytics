@@ -21,7 +21,9 @@
           "Question": "Sum first 4 terms of geometric series a1=2,r=1/2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "15/4."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "15/4.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "15/4.",
           "Check": "Verify by substitution or counting."
@@ -31,7 +33,9 @@
           "Question": "Does infinite geometric series with a1=3,r=-2 converge?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "Does not converge: |r|≥1."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "Does not converge: |r|≥1.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "Does not converge: |r|≥1.",
           "Check": "Verify by substitution or counting."
@@ -41,7 +45,9 @@
           "Question": "Convert repeating two-digit decimal 0.(04) repeating to a fraction.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "4/99."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "4/99.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "4/99.",
           "Check": "Verify by substitution or counting."
@@ -51,7 +57,9 @@
           "Question": "End-period monthly savings of100, monthly rate1%, 7 deposits: future value?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "721.35 using P((1+i)^m−1)/i."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "721.35 using P((1+i)^m−1)/i.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "721.35 using P((1+i)^m−1)/i.",
           "Check": "Verify by substitution or counting."
@@ -61,7 +69,9 @@
           "Question": "Write sigma notation for [6, 7, 8, 9, 10, 11, 12, 13].",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "Σ_(k=0)^7(6+1k)."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "Σ_(k=0)^7(6+1k).",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "Σ_(k=0)^7(6+1k).",
           "Check": "Verify by substitution or counting."
@@ -71,7 +81,9 @@
           "Question": "Sum first 9 terms of arithmetic series a1=1 difference2.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "81."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "81.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "81.",
           "Check": "Verify by substitution or counting."
@@ -81,7 +93,9 @@
           "Question": "Sum first 10 terms of geometric series a1=2,r=-1/3.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "29524/19683."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "29524/19683.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "29524/19683.",
           "Check": "Verify by substitution or counting."
@@ -91,7 +105,9 @@
           "Question": "Does infinite geometric series with a1=3,r=2 converge?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "Does not converge: |r|≥1."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "Does not converge: |r|≥1.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "Does not converge: |r|≥1.",
           "Check": "Verify by substitution or counting."
@@ -101,7 +117,9 @@
           "Question": "Convert repeating two-digit decimal 0.(02) repeating to a fraction.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "2/99."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "2/99.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "2/99.",
           "Check": "Verify by substitution or counting."
@@ -113,6 +131,18 @@
           "Definition": "Series sum successive terms; arithmetic sum S_n=n(a1+an)/2.",
           "Rule": "Finite geometric sum a1(1−r^n)/(1−r), r≠1; if r=1, S_n=n a1.",
           "Example": "15/4."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Finite geometric sum a1(1−r^n)/(1−r), r≠1; if r=1, S_n=n a1.",
+          "Rule": "Finite geometric sum a1(1−r^n)/(1−r), r≠1; if r=1, S_n=n a1.",
+          "Example": "Does infinite geometric series with a1=3,r=-2 converge? Answer: Does not converge: |r|≥1."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Infinite geometric sum exists for |r|<1 and equals a1/(1−r).",
+          "Rule": "Infinite geometric sum exists for |r|<1 and equals a1/(1−r).",
+          "Example": "Convert repeating two-digit decimal 0.(04) repeating to a fraction. Answer: 4/99."
         }
       ],
       "Visuals": [
@@ -155,6 +185,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

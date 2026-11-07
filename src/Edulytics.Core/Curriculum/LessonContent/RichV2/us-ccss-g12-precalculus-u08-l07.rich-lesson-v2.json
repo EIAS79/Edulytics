@@ -25,7 +25,9 @@
           "Question": "Plot x=t,y=t².",
           "Method": "Compute plotted coordinate pairs and parameter orientation.",
           "Steps": [
-            "Parabola upward, motion left-to-right as t grows."
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "Parabola upward, motion left-to-right as t grows.",
+            "Validate: Trace only allowed t intervals."
           ],
           "Answer": "Parabola upward, motion left-to-right as t grows.",
           "Check": "Trace only allowed t intervals."
@@ -35,7 +37,9 @@
           "Question": "Plot x=4cost,y=2sint.",
           "Method": "Compute plotted coordinate pairs and parameter orientation.",
           "Steps": [
-            "Ellipse x²/16+y²/4=1, CCW."
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "Ellipse x²/16+y²/4=1, CCW.",
+            "Validate: Trace only allowed t intervals."
           ],
           "Answer": "Ellipse x²/16+y²/4=1, CCW.",
           "Check": "Trace only allowed t intervals."
@@ -45,7 +49,9 @@
           "Question": "x=t+2,y=t².",
           "Method": "Compute plotted coordinate pairs and parameter orientation.",
           "Steps": [
-            "y=(x−2)²."
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=(x−2)².",
+            "Validate: Trace only allowed t intervals."
           ],
           "Answer": "y=(x−2)².",
           "Check": "Trace only allowed t intervals."
@@ -55,7 +61,9 @@
           "Question": "x=t,y=sqrt(t), t≥0.",
           "Method": "Compute plotted coordinate pairs and parameter orientation.",
           "Steps": [
-            "y=sqrtx,x≥0."
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=sqrtx,x≥0.",
+            "Validate: Trace only allowed t intervals."
           ],
           "Answer": "y=sqrtx,x≥0.",
           "Check": "Trace only allowed t intervals."
@@ -65,7 +73,9 @@
           "Question": "x=10t,y=20t−16t².",
           "Method": "Compute plotted coordinate pairs and parameter orientation.",
           "Steps": [
-            "y=2x−.16x², 0≤t≤1.25s."
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=2x−.16x², 0≤t≤1.25s.",
+            "Validate: Trace only allowed t intervals."
           ],
           "Answer": "y=2x−.16x², 0≤t≤1.25s.",
           "Check": "Trace only allowed t intervals."
@@ -146,6 +156,11 @@
           "Mistake": "Ignore interval t∈[0,1].",
           "WhyWrong": "The full Cartesian graph includes unattained positions.",
           "Correction": "Trace only allowed parameter values."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Trace only allowed t intervals."
         }
       ]
     }

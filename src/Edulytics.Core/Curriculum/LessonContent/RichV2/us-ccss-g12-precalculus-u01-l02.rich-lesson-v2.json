@@ -405,7 +405,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Keep only first coordinates, since inputs define the domain.",
-            "Remove duplicates without changing the input values."
+            "Remove duplicates without changing the input values.",
+            "Validate: The repeated output 11 does not change the domain."
           ],
           "Answer": "{1,3,5,8}",
           "Check": "The repeated output 11 does not change the domain."
@@ -416,7 +417,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Powers with whole-number exponents exist at every real input.",
-            "No denominator or even radical restricts x."
+            "No denominator or even radical restricts x.",
+            "Validate: Substitute any real number; the polynomial is defined."
           ],
           "Answer": "(−∞,∞)",
           "Check": "Substitute any real number; the polynomial is defined."
@@ -427,7 +429,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Solve the forbidden denominator condition x−3=0.",
-            "Remove 3 from the real line and use an open endpoint on both sides."
+            "Remove 3 from the real line and use an open endpoint on both sides.",
+            "Validate: x=3 would divide by zero."
           ],
           "Answer": "(−∞,3)∪(3,∞)",
           "Check": "x=3 would divide by zero."
@@ -438,7 +441,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Enforce 11−2x≥0.",
-            "Solve −2x≥−11, reversing the inequality when dividing by a negative."
+            "Solve −2x≥−11, reversing the inequality when dividing by a negative.",
+            "Validate: The endpoint x=11/2 gives zero and is included."
           ],
           "Answer": "(−∞,11/2]",
           "Check": "The endpoint x=11/2 gives zero and is included."
@@ -449,7 +453,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "The first component includes both −1 and 2.",
-            "The second component excludes 4 and has no finite upper endpoint."
+            "The second component excludes 4 and has no finite upper endpoint.",
+            "Validate: Brackets include, parentheses exclude; infinity always uses a parenthesis."
           ],
           "Answer": "{x∈ℝ | −1≤x≤2 or x>4}; [−1,2]∪(4,∞)",
           "Check": "Brackets include, parentheses exclude; infinity always uses a parenthesis."
@@ -486,7 +491,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "The polynomial is defined for all real x.",
-            "As x→∞ the cubic grows without bound; as x→−∞ it decreases without bound."
+            "As x→∞ the cubic grows without bound; as x→−∞ it decreases without bound.",
+            "Validate: Continuity and unbounded opposite end behavior yield every real output."
           ],
           "Answer": "Domain (−∞,∞); range (−∞,∞)",
           "Check": "Continuity and unbounded opposite end behavior yield every real output."
@@ -497,7 +503,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "The denominator x−2 cannot equal zero, so x≠2.",
-            "Because the numerator is nonzero, the output cannot equal zero; every other real y occurs for x=2+4/y."
+            "Because the numerator is nonzero, the output cannot equal zero; every other real y occurs for x=2+4/y.",
+            "Validate: Check x=2 undefined and f(x)=0 impossible."
           ],
           "Answer": "Domain (−∞,2)∪(2,∞); range (−∞,0)∪(0,∞)",
           "Check": "Check x=2 undefined and f(x)=0 impossible."
@@ -508,7 +515,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Require x+1≥0, so x≥−1.",
-            "The principal square root is nonnegative, so multiplying by 3 preserves outputs y≥0."
+            "The principal square root is nonnegative, so multiplying by 3 preserves outputs y≥0.",
+            "Validate: At x=−1 the value is zero and larger inputs yield arbitrarily large outputs."
           ],
           "Answer": "Domain [−1,∞); range [0,∞)",
           "Check": "At x=−1 the value is zero and larger inputs yield arbitrarily large outputs."
@@ -531,7 +539,8 @@
           "Method": "Identify inputs, mathematical restrictions, endpoint inclusions and output values.",
           "Steps": [
             "Since 2<3, P(2)=20.",
-            "Since 5≥3, P(5)=20+8(2)=36."
+            "Since 5≥3, P(5)=20+8(2)=36.",
+            "Validate: At g=3 the second branch applies and gives 20."
           ],
           "Answer": "P(2)=20; P(5)=36",
           "Check": "At g=3 the second branch applies and gives 20."

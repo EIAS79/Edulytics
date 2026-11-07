@@ -22,7 +22,9 @@
           "Question": "Compute determinant of [[3, 1], [1, 7]].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "20"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "20",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "20",
           "Check": "Verify dimensions, determinant or original equations."
@@ -32,7 +34,9 @@
           "Question": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -42,7 +46,9 @@
           "Question": "Compute determinant of [[5, 1, 2], [1, 7, -1], [2, -1, 10]].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "303"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "303",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "303",
           "Check": "Verify dimensions, determinant or original equations."
@@ -52,7 +58,9 @@
           "Question": "Apply Cramer's rule to A=[[5, 1, 2], [1, 6, -1], [2, -1, 10]] and b=[13, 10, 30].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -62,7 +70,9 @@
           "Question": "Apply Cramer's rule to A=[[8, 1, 2], [1, 7, -1], [16, 2, 4]] and b=[16, 12, 32].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "det A=0; no unique solution, use elimination for classification."
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=0; no unique solution, use elimination for classification.",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "det A=0; no unique solution, use elimination for classification.",
           "Check": "Verify dimensions, determinant or original equations."
@@ -72,7 +82,9 @@
           "Question": "Apply Cramer's rule to A=[[7, 1, 2], [1, 11, -1], [2, -1, 10]] and b=[15, 20, 30].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -82,7 +94,9 @@
           "Question": "Compute determinant of [[6, 1, 2], [1, 6, -1], [2, -1, 8]].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "246"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "246",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "246",
           "Check": "Verify dimensions, determinant or original equations."
@@ -92,7 +106,9 @@
           "Question": "Apply Cramer's rule to A=[[9, 1, 2], [1, 11, -1], [2, -1, 9]] and b=[17, 20, 27].",
           "Method": "Use the specified matrix procedure and verify exact calculations.",
           "Steps": [
-            "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]"
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
           ],
           "Answer": "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
           "Check": "Verify dimensions, determinant or original equations."
@@ -104,6 +120,18 @@
           "Definition": "Operations follow matrix dimensions and algebraic identities.",
           "Rule": "Verify results against original constraints.",
           "Example": "Compute determinant of [[4, 1], [1, 5]]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "For2×2, determinant ad−bc.",
+          "Rule": "For2×2, determinant ad−bc.",
+          "Example": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13]. Answer: det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]"
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A).",
+          "Rule": "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A).",
+          "Example": "Compute determinant of [[5, 1, 2], [1, 7, -1], [2, -1, 10]]. Answer: 303"
         }
       ],
       "Visuals": [
@@ -146,6 +174,11 @@
           "Mistake": "Ignore matrix dimension, rank or determinant restrictions.",
           "WhyWrong": "May produce undefined operation or false unique solution.",
           "Correction": "Inspect dimensions and singularity; check original equations."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify dimensions, determinant or original equations."
         }
       ]
     }

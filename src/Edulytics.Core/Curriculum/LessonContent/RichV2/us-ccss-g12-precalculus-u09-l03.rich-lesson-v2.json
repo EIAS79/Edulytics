@@ -26,7 +26,9 @@
           "Question": "Solve y=x², y=x+2.",
           "Method": "Eliminate one variable, solve roots and test all original equations.",
           "Steps": [
-            "x=−1 or2, points(-1,1),(2,4)."
+            "Plan: Eliminate one variable, solve roots and test all original equations.",
+            "x=−1 or2, points(-1,1),(2,4).",
+            "Validate: Verify candidate points and inequality feasibility."
           ],
           "Answer": "x=−1 or2, points(-1,1),(2,4).",
           "Check": "Verify candidate points and inequality feasibility."
@@ -36,7 +38,9 @@
           "Question": "Solve x²+y²=25,y=0.",
           "Method": "Eliminate one variable, solve roots and test all original equations.",
           "Steps": [
-            "(±5,0)."
+            "Plan: Eliminate one variable, solve roots and test all original equations.",
+            "(±5,0).",
+            "Validate: Verify candidate points and inequality feasibility."
           ],
           "Answer": "(±5,0).",
           "Check": "Verify candidate points and inequality feasibility."
@@ -46,7 +50,9 @@
           "Question": "Solve x²+y²=9,x²+4y²=9.",
           "Method": "Eliminate one variable, solve roots and test all original equations.",
           "Steps": [
-            "(±3,0)."
+            "Plan: Eliminate one variable, solve roots and test all original equations.",
+            "(±3,0).",
+            "Validate: Verify candidate points and inequality feasibility."
           ],
           "Answer": "(±3,0).",
           "Check": "Verify candidate points and inequality feasibility."
@@ -56,7 +62,9 @@
           "Question": "Graph y>x².",
           "Method": "Eliminate one variable, solve roots and test all original equations.",
           "Steps": [
-            "Region strictly above parabola."
+            "Plan: Eliminate one variable, solve roots and test all original equations.",
+            "Region strictly above parabola.",
+            "Validate: Verify candidate points and inequality feasibility."
           ],
           "Answer": "Region strictly above parabola.",
           "Check": "Verify candidate points and inequality feasibility."
@@ -66,7 +74,9 @@
           "Question": "Graph y>x² and y<4.",
           "Method": "Eliminate one variable, solve roots and test all original equations.",
           "Steps": [
-            "x²<y<4, |x|<2."
+            "Plan: Eliminate one variable, solve roots and test all original equations.",
+            "x²<y<4, |x|<2.",
+            "Validate: Verify candidate points and inequality feasibility."
           ],
           "Answer": "x²<y<4, |x|<2.",
           "Check": "Verify candidate points and inequality feasibility."
@@ -133,6 +143,11 @@
           "Mistake": "Keep an extraneous squared root.",
           "WhyWrong": "A candidate may not satisfy original equations.",
           "Correction": "Back-substitute every point."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify candidate points and inequality feasibility."
         }
       ]
     }

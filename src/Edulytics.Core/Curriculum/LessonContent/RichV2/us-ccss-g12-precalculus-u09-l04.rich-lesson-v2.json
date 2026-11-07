@@ -26,7 +26,9 @@
           "Question": "(3x+5)/((x+1)(x+2)).",
           "Method": "Clear common denominator, match polynomial coefficients.",
           "Steps": [
-            "2/(x+1)+1/(x+2)."
+            "Plan: Clear common denominator, match polynomial coefficients.",
+            "2/(x+1)+1/(x+2).",
+            "Validate: Recombine rational expression for every allowed x."
           ],
           "Answer": "2/(x+1)+1/(x+2).",
           "Check": "Recombine rational expression for every allowed x."
@@ -36,7 +38,9 @@
           "Question": "(2x+3)/(x+1)².",
           "Method": "Clear common denominator, match polynomial coefficients.",
           "Steps": [
-            "2/(x+1)+1/(x+1)²."
+            "Plan: Clear common denominator, match polynomial coefficients.",
+            "2/(x+1)+1/(x+1)².",
+            "Validate: Recombine rational expression for every allowed x."
           ],
           "Answer": "2/(x+1)+1/(x+1)².",
           "Check": "Recombine rational expression for every allowed x."
@@ -46,7 +50,9 @@
           "Question": "(x²+3x+5)/((x+1)(x²+4)).",
           "Method": "Clear common denominator, match polynomial coefficients.",
           "Steps": [
-            "(3/5)/(x+1)+((2/5)x+13/5)/(x²+4)."
+            "Plan: Clear common denominator, match polynomial coefficients.",
+            "(3/5)/(x+1)+((2/5)x+13/5)/(x²+4).",
+            "Validate: Recombine rational expression for every allowed x."
           ],
           "Answer": "(3/5)/(x+1)+((2/5)x+13/5)/(x²+4).",
           "Check": "Recombine rational expression for every allowed x."
@@ -56,7 +62,9 @@
           "Question": "(x³+4x²+x+4)/(x²+1)².",
           "Method": "Clear common denominator, match polynomial coefficients.",
           "Steps": [
-            "x/(x²+1)+4/(x²+1)."
+            "Plan: Clear common denominator, match polynomial coefficients.",
+            "x/(x²+1)+4/(x²+1).",
+            "Validate: Recombine rational expression for every allowed x."
           ],
           "Answer": "x/(x²+1)+4/(x²+1).",
           "Check": "Recombine rational expression for every allowed x."
@@ -123,6 +131,11 @@
           "Mistake": "Omit middle powers for repeated factors.",
           "WhyWrong": "Insufficient basis for a general decomposition.",
           "Correction": "Include every power."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Recombine rational expression for every allowed x."
         }
       ]
     }

@@ -31,7 +31,9 @@
           "Question": "A one-to-one mapping has f(2)=7 and f(5)=12. Find the matching inverse values.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "f⁻¹(7)=2; f⁻¹(12)=5."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "f⁻¹(7)=2; f⁻¹(12)=5.",
+            "Validate: The inverse swaps coordinates (2,7)↔(7,2)."
           ],
           "Answer": "f⁻¹(7)=2; f⁻¹(12)=5.",
           "Check": "The inverse swaps coordinates (2,7)↔(7,2)."
@@ -41,7 +43,9 @@
           "Question": "Given f(x)=1/(x+3) and g(x)=1/x−3, determine if they are inverse functions including their proper domains.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "f(g(x))=x for x≠0; g(f(x))=x for x≠−3. Yes, they are inverse functions."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "f(g(x))=x for x≠0; g(f(x))=x for x≠−3. Yes, they are inverse functions.",
+            "Validate: Respect the distinct input restrictions."
           ],
           "Answer": "f(g(x))=x for x≠0; g(f(x))=x for x≠−3. Yes, they are inverse functions.",
           "Check": "Respect the distinct input restrictions."
@@ -51,7 +55,9 @@
           "Question": "Is g(x)=x/3 the inverse of f(x)=x³?",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "No. f(g(x))=x³/27. Correct inverse is g(x)=∛x."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "No. f(g(x))=x³/27. Correct inverse is g(x)=∛x.",
+            "Validate: A factor 1/3 does not undo a cube operation."
           ],
           "Answer": "No. f(g(x))=x³/27. Correct inverse is g(x)=∛x.",
           "Check": "A factor 1/3 does not undo a cube operation."
@@ -61,7 +67,9 @@
           "Question": "Explain how to make x², |x| and 1/x² invertible by an admissible branch restriction.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "For f(x)=x² choose x≥0 and inverse √x. For |x| choose x≥0; for 1/x² choose x>0 yielding 1/√y for y>0."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "For f(x)=x² choose x≥0 and inverse √x. For |x| choose x≥0; for 1/x² choose x>0 yielding 1/√y for y>0.",
+            "Validate: The original full real domains are not one-to-one."
           ],
           "Answer": "For f(x)=x² choose x≥0 and inverse √x. For |x| choose x≥0; for 1/x² choose x>0 yielding 1/√y for y>0.",
           "Check": "The original full real domains are not one-to-one."
@@ -71,7 +79,9 @@
           "Question": "A trip log gives f(20)=12 miles, f(40)=25 miles and f(60)=50 miles, with input minutes. Interpret f⁻¹(50).",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "f⁻¹(50)=60 minutes; the 50-mile reading occurs after 60 minutes."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "f⁻¹(50)=60 minutes; the 50-mile reading occurs after 60 minutes.",
+            "Validate: Inverse inputs carry miles, inverse outputs minutes."
           ],
           "Answer": "f⁻¹(50)=60 minutes; the 50-mile reading occurs after 60 minutes.",
           "Check": "Inverse inputs carry miles, inverse outputs minutes."
@@ -81,7 +91,9 @@
           "Question": "An independently plotted one-to-one linear model is g(x)=x−1. Find g(3) and g⁻¹(3) from points.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "g(3)=2, g⁻¹(3)=4; the input/output roles are reversed."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "g(3)=2, g⁻¹(3)=4; the input/output roles are reversed.",
+            "Validate: g(4)=3 confirms the inverse read."
           ],
           "Answer": "g(3)=2, g⁻¹(3)=4; the input/output roles are reversed.",
           "Check": "g(4)=3 confirms the inverse read."
@@ -91,7 +103,9 @@
           "Question": "Given C=(5/9)(F−32), express Fahrenheit F in terms of Celsius C.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "F=(9/5)C+32."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "F=(9/5)C+32.",
+            "Validate: Recomposing with C(F) returns the starting temperature."
           ],
           "Answer": "F=(9/5)C+32.",
           "Check": "Recomposing with C(F) returns the starting temperature."
@@ -101,7 +115,9 @@
           "Question": "For f(x)=3/(x−2)+5, solve for f⁻¹(x) and state both input domains.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "f⁻¹(x)=3/(x−5)+2; original x≠2; inverse x≠5."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "f⁻¹(x)=3/(x−5)+2; original x≠2; inverse x≠5.",
+            "Validate: Check both compositions on their allowed domains."
           ],
           "Answer": "f⁻¹(x)=3/(x−5)+2; original x≠2; inverse x≠5.",
           "Check": "Check both compositions on their allowed domains."
@@ -111,7 +127,9 @@
           "Question": "For f(x)=3+√(x−2), find inverse rule, domain and range.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "f⁻¹(x)=(x−3)²+2 for x≥3; original domain [2,∞), range [3,∞)."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "f⁻¹(x)=(x−3)²+2 for x≥3; original domain [2,∞), range [3,∞).",
+            "Validate: The inverse quadratic is restricted to x≥3."
           ],
           "Answer": "f⁻¹(x)=(x−3)²+2 for x≥3; original domain [2,∞), range [3,∞).",
           "Check": "The inverse quadratic is restricted to x≥3."
@@ -121,7 +139,9 @@
           "Question": "For f(x)=x+2 and f⁻¹(x)=x−2, plot three points from each and explain the symmetry.",
           "Method": "Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
           "Steps": [
-            "Source points (−1,1),(0,2),(2,4) reflect to inverse points (1,−1),(2,0),(4,2) across y=x."
+            "Plan: Swap input/output with one-to-one restrictions; verify by composition and inspect branch/domain.",
+            "Source points (−1,1),(0,2),(2,4) reflect to inverse points (1,−1),(2,0),(4,2) across y=x.",
+            "Validate: Reflected inverse swaps domain and range."
           ],
           "Answer": "Source points (−1,1),(0,2),(2,4) reflect to inverse points (1,−1),(2,0),(4,2) across y=x.",
           "Check": "Reflected inverse swaps domain and range."

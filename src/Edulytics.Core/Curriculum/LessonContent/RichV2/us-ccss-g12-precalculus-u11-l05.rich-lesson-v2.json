@@ -21,7 +21,9 @@
           "Question": "Choose one color from 3 and one shape from7; how many outcomes?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "21."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "21.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "21.",
           "Check": "Verify by substitution or counting."
@@ -31,7 +33,9 @@
           "Question": "Arrange 4 distinct objects in a row.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "24."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "24.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "24.",
           "Check": "Verify by substitution or counting."
@@ -41,7 +45,9 @@
           "Question": "Ordered selection of 5 from9 distinct objects.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "15120."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "15120.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "15120.",
           "Check": "Verify by substitution or counting."
@@ -51,7 +57,9 @@
           "Question": "Unordered selection of 6 from10 distinct objects.",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "210."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "210.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "210.",
           "Check": "Verify by substitution or counting."
@@ -61,7 +69,9 @@
           "Question": "How many subsets of a set with 2 elements?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "4."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "4.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "4.",
           "Check": "Verify by substitution or counting."
@@ -71,7 +81,9 @@
           "Question": "Choose one of 3 disjoint colors or6 disjoint patterns; how many single choices?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "9."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "9.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "9.",
           "Check": "Verify by substitution or counting."
@@ -81,7 +93,9 @@
           "Question": "Choose one color from 4 and one shape from7; how many outcomes?",
           "Method": "Use exact source-family sequence/combinatorial/probability relation.",
           "Steps": [
-            "28."
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "28.",
+            "Validate: Verify by substitution or counting."
           ],
           "Answer": "28.",
           "Check": "Verify by substitution or counting."
@@ -93,6 +107,18 @@
           "Definition": "Addition principle counts disjoint alternative options by summing possibilities.",
           "Rule": "Multiplication principle counts successive independent stages by multiplying counts.",
           "Example": "21."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Multiplication principle counts successive independent stages by multiplying counts.",
+          "Rule": "Multiplication principle counts successive independent stages by multiplying counts.",
+          "Example": "Arrange 4 distinct objects in a row. Answer: 24."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Ordered k selections from n distinct items: nPk=n!/(n−k)!.",
+          "Rule": "Ordered k selections from n distinct items: nPk=n!/(n−k)!.",
+          "Example": "Ordered selection of 5 from9 distinct objects. Answer: 15120."
         }
       ],
       "Visuals": [
@@ -135,6 +161,11 @@
           "Mistake": "Confuse index, count, order or probability assumptions.",
           "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
           "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
         }
       ]
     }

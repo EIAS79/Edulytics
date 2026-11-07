@@ -27,7 +27,9 @@
           "Question": "Compute cos(60°−45°) exactly.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "(sqrt6+sqrt2)/4"
+            "Plan: Use exact angle identities and check signs.",
+            "(sqrt6+sqrt2)/4",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "(sqrt6+sqrt2)/4",
           "Check": "Validate special angle values and original denominators."
@@ -37,7 +39,9 @@
           "Question": "Compute cos(60°+45°) exactly.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "(sqrt2−sqrt6)/4"
+            "Plan: Use exact angle identities and check signs.",
+            "(sqrt2−sqrt6)/4",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "(sqrt2−sqrt6)/4",
           "Check": "Validate special angle values and original denominators."
@@ -47,7 +51,9 @@
           "Question": "Compute sin(75°−30°).",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "sqrt2/2"
+            "Plan: Use exact angle identities and check signs.",
+            "sqrt2/2",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "sqrt2/2",
           "Check": "Validate special angle values and original denominators."
@@ -57,7 +63,9 @@
           "Question": "Compute sin(arccos3/5+arcsin5/13).",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "(4/5)(12/13)+(3/5)(5/13)=63/65."
+            "Plan: Use exact angle identities and check signs.",
+            "(4/5)(12/13)+(3/5)(5/13)=63/65.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "(4/5)(12/13)+(3/5)(5/13)=63/65.",
           "Check": "Validate special angle values and original denominators."
@@ -67,7 +75,9 @@
           "Question": "Find tan(45°+30°).",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "2+sqrt3."
+            "Plan: Use exact angle identities and check signs.",
+            "2+sqrt3.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "2+sqrt3.",
           "Check": "Validate special angle values and original denominators."
@@ -77,7 +87,9 @@
           "Question": "Expand sin(a+b−c).",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "sin(a+b)cosc−cos(a+b)sinc, expand pair."
+            "Plan: Use exact angle identities and check signs.",
+            "sin(a+b)cosc−cos(a+b)sinc, expand pair.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "sin(a+b)cosc−cos(a+b)sinc, expand pair.",
           "Check": "Validate special angle values and original denominators."
@@ -87,7 +99,9 @@
           "Question": "Express sin(π/7) using cosine.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "cos(π/2−π/7)=cos(5π/14)."
+            "Plan: Use exact angle identities and check signs.",
+            "cos(π/2−π/7)=cos(5π/14).",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "cos(π/2−π/7)=cos(5π/14).",
           "Check": "Validate special angle values and original denominators."
@@ -97,7 +111,9 @@
           "Question": "Verify sin(π−t)=sint.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "sinπcost−cosπsint=sint."
+            "Plan: Use exact angle identities and check signs.",
+            "sinπcost−cosπsint=sint.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "sinπcost−cosπsint=sint.",
           "Check": "Validate special angle values and original denominators."
@@ -107,7 +123,9 @@
           "Question": "Verify tan(π−t)=−tant.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "tan(-t) after periodicity."
+            "Plan: Use exact angle identities and check signs.",
+            "tan(-t) after periodicity.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "tan(-t) after periodicity.",
           "Check": "Validate special angle values and original denominators."
@@ -117,7 +135,9 @@
           "Question": "For lines slopes1 and0, find angle between them.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "tanθ=|1−0|/(1+0)=1 => θ=π/4."
+            "Plan: Use exact angle identities and check signs.",
+            "tanθ=|1−0|/(1+0)=1 => θ=π/4.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "tanθ=|1−0|/(1+0)=1 => θ=π/4.",
           "Check": "Validate special angle values and original denominators."
@@ -127,7 +147,9 @@
           "Question": "Two rays are at20° and50° above horizontal; find angle between.",
           "Method": "Use exact angle identities and check signs.",
           "Steps": [
-            "50°−20°=30°."
+            "Plan: Use exact angle identities and check signs.",
+            "50°−20°=30°.",
+            "Validate: Validate special angle values and original denominators."
           ],
           "Answer": "50°−20°=30°.",
           "Check": "Validate special angle values and original denominators."
@@ -201,6 +223,11 @@
           "Mistake": "Treat cos(a+b) as cosa cosb+sina sinb",
           "WhyWrong": "Cosine sum uses negative cross term.",
           "Correction": "Cos difference is the one with plus cross term."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Validate special angle values and original denominators."
         }
       ]
     }

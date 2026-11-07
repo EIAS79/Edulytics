@@ -23,7 +23,9 @@
           "Question": "Plot the first-party points (0,3),(1,5),(2,8),(3,9),(4,12); describe direction and whether a line makes sense.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "The pattern is strongly increasing and near-linear, but not perfectly collinear."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "The pattern is strongly increasing and near-linear, but not perfectly collinear.",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "The pattern is strongly increasing and near-linear, but not perfectly collinear.",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."
@@ -33,7 +35,9 @@
           "Question": "Choose a plausible straight line for data (0,3),(1,5),(2,8),(3,9),(4,12), and give its slope/intercept.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "A line of rough fit y≈2.2x+3; a visual estimate need not equal least squares exactly."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "A line of rough fit y≈2.2x+3; a visual estimate need not equal least squares exactly.",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "A line of rough fit y≈2.2x+3; a visual estimate need not equal least squares exactly.",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."
@@ -43,7 +47,9 @@
           "Question": "Using observed x=0 through4, predict y at x=2.5 and x=7 from y≈2.2x+3.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "y(2.5)≈8.5 interpolation; y(7)≈18.4 extrapolation with higher uncertainty."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "y(2.5)≈8.5 interpolation; y(7)≈18.4 extrapolation with higher uncertainty.",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "y(2.5)≈8.5 interpolation; y(7)≈18.4 extrapolation with higher uncertainty.",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."
@@ -53,7 +59,9 @@
           "Question": "For first-party scatter data x=0,1,2,3,4; y=3,5,8,9,12, compute least-squares line.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "m=2.2,b=3.0; minimize Σ(y−mx−b)²."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "m=2.2,b=3.0; minimize Σ(y−mx−b)².",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "m=2.2,b=3.0; minimize Σ(y−mx−b)².",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."
@@ -63,7 +71,9 @@
           "Question": "For the same five points compute r and interpret it.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "Pearson r≈0.992; positive, close to one; correlation does not prove causation."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "Pearson r≈0.992; positive, close to one; correlation does not prove causation.",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "Pearson r≈0.992; positive, close to one; correlation does not prove causation.",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."
@@ -73,7 +83,9 @@
           "Question": "Using least-squares y≈2.2x+3, estimate x=6 and state whether within observed window.",
           "Method": "Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
           "Steps": [
-            "y(6)=16.2; x6 exceeds observed [0,4], so extrapolation requiring domain caveat."
+            "Plan: Make paired-coordinate scatter observations; compute regression and correlation when appropriate.",
+            "y(6)=16.2; x6 exceeds observed [0,4], so extrapolation requiring domain caveat.",
+            "Validate: Compare fitted model to observed points and inspect extrapolation risk."
           ],
           "Answer": "y(6)=16.2; x6 exceeds observed [0,4], so extrapolation requiring domain caveat.",
           "Check": "Compare fitted model to observed points and inspect extrapolation risk."

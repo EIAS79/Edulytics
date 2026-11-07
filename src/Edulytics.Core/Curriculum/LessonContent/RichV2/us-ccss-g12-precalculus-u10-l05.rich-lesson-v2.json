@@ -21,7 +21,9 @@
           "Question": "Classify focus-origin polar conic r=3/(1+1.0cosθ).",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Eccentricity e=1.0, type parabola."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Eccentricity e=1.0, type parabola.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Eccentricity e=1.0, type parabola.",
           "Check": "Check conic parameters, domains and equations."
@@ -31,7 +33,9 @@
           "Question": "Classify focus-origin polar conic r=4/(1+1.5cosθ).",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Eccentricity e=1.5, type hyperbola."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Eccentricity e=1.5, type hyperbola.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Eccentricity e=1.5, type hyperbola.",
           "Check": "Check conic parameters, domains and equations."
@@ -41,7 +45,9 @@
           "Question": "Classify focus-origin polar conic r=5/(1+0.5cosθ).",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Eccentricity e=0.5, type ellipse."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Eccentricity e=0.5, type ellipse.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Eccentricity e=0.5, type ellipse.",
           "Check": "Check conic parameters, domains and equations."
@@ -51,7 +57,9 @@
           "Question": "Classify focus-origin polar conic r=6/(1+1.0cosθ).",
           "Method": "Use source-family geometric equation and independent parameters.",
           "Steps": [
-            "Eccentricity e=1.0, type parabola."
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Eccentricity e=1.0, type parabola.",
+            "Validate: Check conic parameters, domains and equations."
           ],
           "Answer": "Eccentricity e=1.0, type parabola.",
           "Check": "Check conic parameters, domains and equations."
@@ -63,6 +71,18 @@
           "Definition": "Focus-origin polar conic r=l/(1±e cosθ) or r=l/(1±e sinθ) depends on eccentricity e.",
           "Rule": "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
           "Example": "Eccentricity e=1.0, type parabola."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
+          "Rule": "0≤e<1 describes ellipse (circle if e=0), e=1 parabola, e>1 hyperbola.",
+          "Example": "Classify focus-origin polar conic r=4/(1+1.5cosθ). Answer: Eccentricity e=1.5, type hyperbola."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Convert x=r cosθ,y=r sinθ,r²=x²+y² and retain sign/domain restrictions after squaring.",
+          "Rule": "Convert x=r cosθ,y=r sinθ,r²=x²+y² and retain sign/domain restrictions after squaring.",
+          "Example": "Classify focus-origin polar conic r=5/(1+0.5cosθ). Answer: Eccentricity e=0.5, type ellipse."
         }
       ],
       "Visuals": [
@@ -105,6 +125,11 @@
           "Mistake": "Ignore center, axis sign or domain constraints.",
           "WhyWrong": "Changes conic branch/focus.",
           "Correction": "Verify standard equation and orientation."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Check conic parameters, domains and equations."
         }
       ]
     }

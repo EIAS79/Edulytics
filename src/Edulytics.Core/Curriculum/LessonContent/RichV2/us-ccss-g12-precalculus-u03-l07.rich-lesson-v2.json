@@ -30,7 +30,9 @@
           "Question": "For f(x)=1/(x−2), determine behavior as x approaches 2 from each side.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "As x→2−, f(x)→−∞; as x→2+, f(x)→+∞."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "As x→2−, f(x)→−∞; as x→2+, f(x)→+∞.",
+            "Validate: The denominator changes from negative to positive through zero."
           ],
           "Answer": "As x→2−, f(x)→−∞; as x→2+, f(x)→+∞.",
           "Check": "The denominator changes from negative to positive through zero."
@@ -40,7 +42,9 @@
           "Question": "Graph g(x)=−2/(x+3)+1 and state both asymptotes.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "Vertical x=−3; horizontal y=1; g(−2)=−1."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "Vertical x=−3; horizontal y=1; g(−2)=−1.",
+            "Validate: Apply translation left 3, up 1 and vertical reflection/stretch by 2."
           ],
           "Answer": "Vertical x=−3; horizontal y=1; g(−2)=−1.",
           "Check": "Apply translation left 3, up 1 and vertical reflection/stretch by 2."
@@ -50,7 +54,9 @@
           "Question": "A tank has 12 kg solute in 100 L and adds 2 kg/min and 5 L/min. Express the concentration after t minutes and its long-run level.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "C(t)=(12+2t)/(100+5t) kg/L, t≥0; as t→∞, C(t)→2/5 kg/L."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "C(t)=(12+2t)/(100+5t) kg/L, t≥0; as t→∞, C(t)→2/5 kg/L.",
+            "Validate: Divide total solute mass by total volume; compare leading coefficients."
           ],
           "Answer": "C(t)=(12+2t)/(100+5t) kg/L, t≥0; as t→∞, C(t)→2/5 kg/L.",
           "Check": "Divide total solute mass by total volume; compare leading coefficients."
@@ -60,7 +66,9 @@
           "Question": "Find the domain of h(x)=(x+1)/(x²−9).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "All real x except −3 and 3."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "All real x except −3 and 3.",
+            "Validate: Factor denominator (x−3)(x+3); never include zero-denominator points."
           ],
           "Answer": "All real x except −3 and 3.",
           "Check": "Factor denominator (x−3)(x+3); never include zero-denominator points."
@@ -70,7 +78,9 @@
           "Question": "Find vertical asymptotes of (x+1)/((x−2)(x+4)).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "x=2 and x=−4."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "x=2 and x=−4.",
+            "Validate: Neither denominator factor cancels with the numerator."
           ],
           "Answer": "x=2 and x=−4.",
           "Check": "Neither denominator factor cancels with the numerator."
@@ -80,7 +90,9 @@
           "Question": "For f(x)=((x−2)(x+3))/((x−2)(x+1)), identify the hole and vertical asymptote.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "Hole at (2,5/3); vertical asymptote x=−1; domain excludes both 2 and −1."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "Hole at (2,5/3); vertical asymptote x=−1; domain excludes both 2 and −1.",
+            "Validate: Cancel only to compute the limit; original function remains undefined at x=2."
           ],
           "Answer": "Hole at (2,5/3); vertical asymptote x=−1; domain excludes both 2 and −1.",
           "Check": "Cancel only to compute the limit; original function remains undefined at x=2."
@@ -90,7 +102,9 @@
           "Question": "Find the end behavior of (x²+2x+3)/(x+1).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "f(x)=x+1+2/(x+1); slant asymptote y=x+1."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "f(x)=x+1+2/(x+1); slant asymptote y=x+1.",
+            "Validate: Polynomial division gives the linear quotient and vanishing remainder ratio."
           ],
           "Answer": "f(x)=x+1+2/(x+1); slant asymptote y=x+1.",
           "Check": "Polynomial division gives the linear quotient and vanishing remainder ratio."
@@ -100,7 +114,9 @@
           "Question": "Find the horizontal asymptote of (3x²+1)/(2x²+5).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "y=3/2."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "y=3/2.",
+            "Validate: Equal polynomial degrees: leading coefficient ratio."
           ],
           "Answer": "y=3/2.",
           "Check": "Equal polynomial degrees: leading coefficient ratio."
@@ -110,7 +126,9 @@
           "Question": "Analyze (x²−1)/(x²−4).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "Vertical asymptotes x=−2, x=2; horizontal y=1; zeros x=±1."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "Vertical asymptotes x=−2, x=2; horizontal y=1; zeros x=±1.",
+            "Validate: Factor numerator and denominator and compare degrees."
           ],
           "Answer": "Vertical asymptotes x=−2, x=2; horizontal y=1; zeros x=±1.",
           "Check": "Factor numerator and denominator and compare degrees."
@@ -120,7 +138,9 @@
           "Question": "Find intercepts and asymptotes of (x−4)/(x+2).",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "x-intercept (4,0), y-intercept (0,−2), vertical x=−2, horizontal y=1."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "x-intercept (4,0), y-intercept (0,−2), vertical x=−2, horizontal y=1.",
+            "Validate: Numerator zero produces x-intercept only if denominator nonzero."
           ],
           "Answer": "x-intercept (4,0), y-intercept (0,−2), vertical x=−2, horizontal y=1.",
           "Check": "Numerator zero produces x-intercept only if denominator nonzero."
@@ -130,7 +150,9 @@
           "Question": "Sketch f(x)=x/(x²−1) with intercepts and asymptotes.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "Intercept (0,0); vertical x=±1; horizontal y=0. On (1,∞) graph is positive, on (0,1) negative."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "Intercept (0,0); vertical x=±1; horizontal y=0. On (1,∞) graph is positive, on (0,1) negative.",
+            "Validate: Use signs between critical inputs to place branches."
           ],
           "Answer": "Intercept (0,0); vertical x=±1; horizontal y=0. On (1,∞) graph is positive, on (0,1) negative.",
           "Check": "Use signs between critical inputs to place branches."
@@ -140,7 +162,9 @@
           "Question": "Construct f with simple vertical asymptotes −2 and 3, zero at 1 and y-intercept 1/3.",
           "Method": "Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
           "Steps": [
-            "f(x)=2(x−1)/((x+2)(x−3))."
+            "Plan: Factor and analyze the original domain, limits, intercepts and end behavior as appropriate.",
+            "f(x)=2(x−1)/((x+2)(x−3)).",
+            "Validate: Choose factored numerator/denominator and solve f(0)=1/3 for scale."
           ],
           "Answer": "f(x)=2(x−1)/((x+2)(x−3)).",
           "Check": "Choose factored numerator/denominator and solve f(0)=1/3 for scale."

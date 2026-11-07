@@ -29,7 +29,9 @@
           "Question": "Graph y=3sin(2t)+4.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "Amplitude3,periodπ,midline4."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude3,periodπ,midline4.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "Amplitude3,periodπ,midline4.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -39,7 +41,9 @@
           "Question": "For y=−5cos(πt/4), find amplitude and period.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "Amplitude5,period8."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude5,period8.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "Amplitude5,period8.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -49,7 +53,9 @@
           "Question": "Sketch y=2sin(πt/6) for t=0,3,6,9,12.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "Values0,2,0,−2,0."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Values0,2,0,−2,0.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "Values0,2,0,−2,0.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -59,7 +65,9 @@
           "Question": "Construct model temperature max30 at t=12, min10 at t=0, period24.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "T(t)=20−10cos(2πt/24)."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "T(t)=20−10cos(2πt/24).",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "T(t)=20−10cos(2πt/24).",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -69,7 +77,9 @@
           "Question": "A wheel rotates8 times/min with radius2m. Find displacement wave.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "D(t)=2cos(16πt), t minutes, suitable initial orientation."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=2cos(16πt), t minutes, suitable initial orientation.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "D(t)=2cos(16πt), t minutes, suitable initial orientation.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -79,7 +89,9 @@
           "Question": "Tide high4.5m at hour0, low0.5m at hour6, period12h.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "h(t)=2.5+2cos(πt/6)."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "h(t)=2.5+2cos(πt/6).",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "h(t)=2.5+2cos(πt/6).",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -89,7 +101,9 @@
           "Question": "Mass h(t)=6sin(4πt). Find frequency.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "2Hz,period.5s,amplitude6."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "2Hz,period.5s,amplitude6.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "2Hz,period.5s,amplitude6.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -99,7 +113,9 @@
           "Question": "Spring D(t)=3cos(10πt).",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "Amplitude3,frequency5Hz,period.2s."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude3,frequency5Hz,period.2s.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "Amplitude3,frequency5Hz,period.2s.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -109,7 +125,9 @@
           "Question": "Spring starts10cm, loses20% amplitude per second,2Hz.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "D(t)=10(.8)^t cos4πt."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=10(.8)^t cos4πt.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "D(t)=10(.8)^t cos4πt.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -119,7 +137,9 @@
           "Question": "D(t)=8e^(−.3t)cos6πt; identify frequency.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "3Hz, envelope8e^(−.3t)."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "3Hz, envelope8e^(−.3t).",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "3Hz, envelope8e^(−.3t).",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -129,7 +149,9 @@
           "Question": "D(t)=6e^(−.1t)sin8πt, identify envelope.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "6e^(−.1t), frequency4Hz."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "6e^(−.1t), frequency4Hz.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "6e^(−.1t), frequency4Hz.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -139,7 +161,9 @@
           "Question": "Spring pulled 4cm and oscillates2Hz starting downward.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "D(t)=4cos4πt."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=4cos4πt.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "D(t)=4cos4πt.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -149,7 +173,9 @@
           "Question": "Amplitude 10e^(−.5t), when below0.1?",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "t>ln100/.5≈9.2103 seconds."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "t>ln100/.5≈9.2103 seconds.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "t>ln100/.5≈9.2103 seconds.",
           "Check": "Validate extrema, frequency and physical constraints."
@@ -159,7 +185,9 @@
           "Question": "Graph y=5cos(2πt/8) for t=0,2,4,6,8.",
           "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
           "Steps": [
-            "Values5,0,−5,0,5."
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Values5,0,−5,0,5.",
+            "Validate: Validate extrema, frequency and physical constraints."
           ],
           "Answer": "Values5,0,−5,0,5.",
           "Check": "Validate extrema, frequency and physical constraints."

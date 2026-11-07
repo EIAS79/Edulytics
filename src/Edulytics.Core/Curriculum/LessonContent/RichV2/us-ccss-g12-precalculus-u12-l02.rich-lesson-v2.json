@@ -21,7 +21,9 @@
           "Question": "Find lim_(x→3) (x²−9)/(x−3).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "6 after factoring x²−a²."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "6 after factoring x²−a².",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "6 after factoring x²−a².",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -31,7 +33,9 @@
           "Question": "Compute lim_(x→4) (x−4)(x+3)/(x−4).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "7, removable hole."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "7, removable hole.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "7, removable hole.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -41,7 +45,9 @@
           "Question": "Compute lim_(x→0) (sqrt(5+x)−sqrt(5))/x.",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "1/(2sqrt(5)) by conjugate rationalization."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "1/(2sqrt(5)) by conjugate rationalization.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "1/(2sqrt(5)) by conjugate rationalization.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -51,7 +57,9 @@
           "Question": "Compute lim_(x→6) [(1/x)−(1/6)]/(x−6).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "−1/36, using common denominator."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "−1/36, using common denominator.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "−1/36, using common denominator.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -61,7 +69,9 @@
           "Question": "Compute lim_(x→0) |x|/x.",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "Does not exist: left−1,right+1."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Does not exist: left−1,right+1.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "Does not exist: left−1,right+1.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -71,7 +81,9 @@
           "Question": "If lim f=8 and lim g=2, find lim(3f−2g).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "20 by limit laws."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "20 by limit laws.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "20 by limit laws.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -81,7 +93,9 @@
           "Question": "Compute lim_(x→2) (x³−8)/(x−2).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "12, since cube difference factor yields x²+ax+a²."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "12, since cube difference factor yields x²+ax+a².",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "12, since cube difference factor yields x²+ax+a².",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -91,7 +105,9 @@
           "Question": "Compute lim_(x→3) 1/(x−3)².",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "+infinity, no finite limit; denominator approaches0 positive."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "+infinity, no finite limit; denominator approaches0 positive.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "+infinity, no finite limit; denominator approaches0 positive.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -101,7 +117,9 @@
           "Question": "Evaluate lim_(x→4) of (5x²+4x+-1).",
           "Method": "Use source-family limit, continuity or derivative definition.",
           "Steps": [
-            "95."
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "95.",
+            "Validate: Verify domain, one-sided values or difference quotient."
           ],
           "Answer": "95.",
           "Check": "Verify domain, one-sided values or difference quotient."
@@ -113,6 +131,18 @@
           "Definition": "Polynomial limits at finite a follow direct substitution.",
           "Rule": "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
           "Example": "6 after factoring x²−a²."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
+          "Rule": "Limit laws permit sums, products, quotients when denominator limit is nonzero.",
+          "Example": "Compute lim_(x→4) (x−4)(x+3)/(x−4). Answer: 7, removable hole."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "A 0/0 quotient needs factoring, common denominator or conjugate rationalization.",
+          "Rule": "A 0/0 quotient needs factoring, common denominator or conjugate rationalization.",
+          "Example": "Compute lim_(x→0) (sqrt(5+x)−sqrt(5))/x. Answer: 1/(2sqrt(5)) by conjugate rationalization."
         }
       ],
       "Visuals": [
@@ -155,6 +185,11 @@
           "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
           "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
           "Correction": "Factor/rationalize or compare one-sided limits."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify domain, one-sided values or difference quotient."
         }
       ]
     }

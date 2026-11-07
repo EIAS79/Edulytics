@@ -31,7 +31,9 @@
           "Question": "Does(2,3) satisfy x+y=5, 2x−y=1?",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "Yes."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "Yes.",
+            "Validate: Substitute."
           ],
           "Answer": "Yes.",
           "Check": "Substitute."
@@ -41,7 +43,9 @@
           "Question": "y=x+1 and y=−x+5.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(2,3)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(2,3).",
+            "Validate: Substitute."
           ],
           "Answer": "(2,3).",
           "Check": "Substitute."
@@ -51,7 +55,9 @@
           "Question": "x+y=7,y=2x+1.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(2,5)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(2,5).",
+            "Validate: Substitute."
           ],
           "Answer": "(2,5).",
           "Check": "Substitute."
@@ -61,7 +67,9 @@
           "Question": "2x+3y=12,x−y=1.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(3,2)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(3,2).",
+            "Validate: Substitute."
           ],
           "Answer": "(3,2).",
           "Check": "Substitute."
@@ -71,7 +79,9 @@
           "Question": "3x+2y=8,2x−y=1.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(2,1)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(2,1).",
+            "Validate: Substitute."
           ],
           "Answer": "(2,1).",
           "Check": "Substitute."
@@ -81,7 +91,9 @@
           "Question": "4x+3y=11,3x−2y=4.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(2,1)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(2,1).",
+            "Validate: Substitute."
           ],
           "Answer": "(2,1).",
           "Check": "Substitute."
@@ -91,7 +103,9 @@
           "Question": "x/2+y/3=5/6,x/2−y/3=1/6.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "(1,1)."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "(1,1).",
+            "Validate: Substitute."
           ],
           "Answer": "(1,1).",
           "Check": "Substitute."
@@ -101,7 +115,9 @@
           "Question": "x+y=1,2x+2y=4.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "No solutions."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "No solutions.",
+            "Validate: Substitute."
           ],
           "Answer": "No solutions.",
           "Check": "Substitute."
@@ -111,7 +127,9 @@
           "Question": "x+y=2,2x+2y=4.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "Infinite solutions."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "Infinite solutions.",
+            "Validate: Substitute."
           ],
           "Answer": "Infinite solutions.",
           "Check": "Substitute."
@@ -121,7 +139,9 @@
           "Question": "C=100+5x,R=15x.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "x=10."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "x=10.",
+            "Validate: Substitute."
           ],
           "Answer": "x=10.",
           "Check": "Substitute."
@@ -131,7 +151,9 @@
           "Question": "Two numbers sum20, differ4.",
           "Method": "Choose substitution/elimination and check both equations.",
           "Steps": [
-            "12 and8."
+            "Plan: Choose substitution/elimination and check both equations.",
+            "12 and8.",
+            "Validate: Substitute."
           ],
           "Answer": "12 and8.",
           "Check": "Substitute."
@@ -197,6 +219,11 @@
           "Mistake": "Interpret 0=5 as dependent.",
           "WhyWrong": "It is a contradiction.",
           "Correction": "No solution."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Substitute."
         }
       ]
     }
