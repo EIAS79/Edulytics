@@ -15,15 +15,23 @@ for(let n=first;n<=last;n++){
  const contentPath=path.join(root,'src/Edulytics.Core/Curriculum/LessonContent/RichV2',prefix+'.rich-lesson-v2.json');
  const teacherPath=path.join(root,'src/Edulytics.Core/Curriculum/LessonContent/Assessment',prefix+'-firstparty-teacher-led.json');
  if(!fs.existsSync(contentPath)){fail(n,'MISSING_RICHV2_JSON');continue;}
- if(!fs.existsSync(teacherPath)){fail(n,'MISSING_TEACHER_JSON');continue;}
+ const teacherIsCSharpSection11=n===1;
+ const sourceTeacherPath=path.join(root,'src/Edulytics.Web/Presentation/Grade12PrecalculusSection11TeacherGuidance.cs');
+ if(!fs.existsSync(teacherPath) && !(teacherIsCSharpSection11 && fs.existsSync(sourceTeacherPath))){fail(n,'MISSING_TEACHER_REFERENCE');continue;}
  let rich,teacher;
- try{rich=JSON.parse(fs.readFileSync(contentPath,'utf8'));teacher=JSON.parse(fs.readFileSync(teacherPath,'utf8'));}
+ try{rich=JSON.parse(fs.readFileSync(contentPath,'utf8'));
+  teacher=teacherIsCSharpSection11?{LessonCode:row.LessonCode}:JSON.parse(fs.readFileSync(teacherPath,'utf8'));}
  catch(e){fail(n,'INVALID_JSON '+e.message);continue;}
  checked++;
- if(rich.SchemaVersion!==2)fail(n,'RICHV2_SCHEMA_NOT_2');
+ if(!teacherIsCSharpSection11 && rich.SchemaVersion!==2)fail(n,'RICHV2_SCHEMA_NOT_2');
+ if(teacherIsCSharpSection11 && rich.SchemaVersion!==1)fail(n,'SECTION11_EXISTING_SCHEMA_CHANGED');
  if(!Array.isArray(rich.Lessons)||rich.Lessons.length!==1){fail(n,'RICHV2_NOT_EXACT_ONE_LESSON');continue;}
  const student=rich.Lessons[0];
  if(student.LessonCode!==row.LessonCode)fail(n,'RICHV2_LESSON_CODE_MISMATCH');
+ if(teacherIsCSharpSection11){
+  const sourceTeacher=fs.readFileSync(sourceTeacherPath,'utf8');
+  if(!sourceTeacher.includes('class Grade12PrecalculusSection11TeacherGuidance')||!sourceTeacher.includes('OriginalSourceExercise')) fail(n,'SECTION11_TEACHER_GUIDANCE_CONTRACT_MISSING');
+ }
  if(teacher.LessonCode!==row.LessonCode)fail(n,'TEACHER_LESSON_CODE_MISMATCH');
  if(student.CultureCode!=='en')fail(n,'RICHV2_NOT_ENGLISH');
  if(!Array.isArray(student.ExplanationParagraphs)||student.ExplanationParagraphs.length<3)fail(n,'EXPLANATION_TOO_THIN');
@@ -32,7 +40,7 @@ for(let n=first;n<=last;n++){
  if(!Array.isArray(student.CommonMistakes)||!student.CommonMistakes.length)fail(n,'NO_MISTAKES_GUIDANCE');
  if(!Array.isArray(student.Visuals))fail(n,'NO_VISUAL_COLLECTION');
  if(!Array.isArray(student.SummaryPoints)||!student.SummaryPoints.length)fail(n,'NO_SUMMARY');
- if(!rich.PackCode||!rich.PackCode.includes('U'+u+':L'+l))fail(n,'RICHV2_PACK_CODE_MISMATCH');
+ if(!rich.PackCode || (teacherIsCSharpSection11 ? rich.PackCode!=='US-CCSS-MATH' : !rich.PackCode.includes('U'+u+':L'+l)))fail(n,'RICHV2_PACK_CODE_MISMATCH');
  if(!rich.ContentVersion)fail(n,'CONTENT_VERSION_MISSING');
  if(Array.isArray(student.WorkedExamples))for(let i=0;i<student.WorkedExamples.length;i++){
   const w=student.WorkedExamples[i];
