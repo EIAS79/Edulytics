@@ -185,6 +185,7 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+         Grade12PrecalculusAdvancedNumericQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -487,6 +488,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
+            return Grade12PrecalculusAdvancedNumericQuestions.Verify(
+                family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
@@ -2194,6 +2198,15 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
+        {
+            var advanced = Grade12PrecalculusAdvancedNumericQuestions.Build(
+                family, random, scale);
+            return new ExactProblem(
+                advanced.Family, advanced.Prompt, advanced.Solution,
+                advanced.ItemType, advanced.Parameters);
+        }
 
         if (UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family))
         {
@@ -5851,6 +5864,9 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(problem.Family))
+            return Grade12PrecalculusAdvancedNumericQuestions.Solve(
+                problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(problem.Family))

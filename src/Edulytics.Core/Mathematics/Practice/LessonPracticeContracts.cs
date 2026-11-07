@@ -7187,6 +7187,30 @@ public static class LessonPracticeContractRegistry
             ["sequences.core.geometric_nth_term"],
             "G12_SECTION_11_3_GEOMETRIC_SEQUENCE_SUBSET", "READY_VERIFIED", Version);
 
+        // These 31 distinct mathematical question families implement an
+        // exact, bounded original skill from the corresponding Grade12
+        // section. They are subject to independent runtime certification and
+        // never auto-grade source figures, proofs or teacher-led assignments.
+        const string grade12Root =
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
+        foreach (var (subskill, section) in
+            Grade12PrecalculusAdvancedNumericQuestions.All)
+        {
+            var code = grade12Root + section;
+            if (byLesson.ContainsKey(code))
+                throw new InvalidOperationException(
+                    $"Grade12 contract collision: {code}");
+            var family = Grade12PrecalculusAdvancedNumericQuestions.Prefix + subskill;
+            byLesson[code] = new LessonPracticeContract(
+                code,
+                "g12.precalculus.exact." + subskill,
+                "FIRST_PARTY_G12_EXACT_NUMERICAL_SUBSKILL_NOT_FULL_SOURCE_PARITY",
+                [family],
+                "GRADE12_SECTION_MATCHED_MATHEMATICAL_SKILL_TEACHER_REVIEW_FOR_OPEN_TASKS",
+                "READY_VERIFIED",
+                Version);
+        }
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
