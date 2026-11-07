@@ -1,0 +1,622 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L04",
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Find domain and asymptote of ln(x+3).",
+      "TeacherExpectedMath": "x>−3, x=−3."
+    },
+    {
+      "Number": 2,
+      "Question": "Find domain and asymptote of ln(4−x).",
+      "TeacherExpectedMath": "x<4, x=4."
+    },
+    {
+      "Number": 3,
+      "Question": "Give points for log_3(x).",
+      "TeacherExpectedMath": "(1,0),(3,1),(9,2)."
+    },
+    {
+      "Number": 4,
+      "Question": "Shift y=log_2(x) right1.",
+      "TeacherExpectedMath": "y=log_2(x−1), asymptote1."
+    },
+    {
+      "Number": 5,
+      "Question": "Shift y=ln(x) up3.",
+      "TeacherExpectedMath": "y=ln(x)+3, asymptote0."
+    },
+    {
+      "Number": 6,
+      "Question": "Compress y=log_2(x) vertically by1/2.",
+      "TeacherExpectedMath": "y=(1/2)log_2(x)."
+    },
+    {
+      "Number": 7,
+      "Question": "Graph y=3log_2(x−2)+1, give domain.",
+      "TeacherExpectedMath": "x>2; asymptote2; point(3,1)."
+    },
+    {
+      "Number": 8,
+      "Question": "Reflect y=ln(x) about y-axis.",
+      "TeacherExpectedMath": "y=ln(−x), domain x<0."
+    },
+    {
+      "Number": 9,
+      "Question": "Solve log_2(x)=3.",
+      "TeacherExpectedMath": "x=8."
+    },
+    {
+      "Number": 10,
+      "Question": "Find asymptote for log(7−x).",
+      "TeacherExpectedMath": "x=7, domain x<7."
+    },
+    {
+      "Number": 11,
+      "Question": "Find equation of right shifted log_2 with asymptote x=3.",
+      "TeacherExpectedMath": "y=log_2(x−3), with point (4,0)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Graph y=log_2(x−3), including asymptote and intercept.",
+      "Find domain/asymptote of ln(5−x).",
+      "Solve ln(x+1)=0."
+    ],
+    "TeacherExpectedMath": [
+      "x>3, vertical asymptote x=3, x-intercept4.",
+      "x<5; vertical asymptote x=5.",
+      "x=0; original log argument1."
+    ],
+    "PublisherCoolDownCopied": false
+  },
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "How do the coordinates of y=4^x relate to y=log_4(x)?",
+      "TeacherExpectedMath": "Swap (x,y)↔(y,x), graph reflection across y=x.",
+      "OriginalSourceMathematicsReviewed": "Source1 exponential/logarithmic inverse graphs have swapped ordered pairs.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Does shifting log_3(x) upward by5 change its range?",
+      "TeacherExpectedMath": "No; the range remains all real numbers.",
+      "OriginalSourceMathematicsReviewed": "Source2 vertical shifts do not change full real logarithmic range.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "What horizontal translation changes the domain of ln(x)?",
+      "TeacherExpectedMath": "ln(x-3) shifts right3, domain x>3; vertical shifts do not change domain.",
+      "OriginalSourceMathematicsReviewed": "Source3 a shift in the argument changes the domain.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Why is x=0 excluded from log_2(x)?",
+      "TeacherExpectedMath": "2^y is positive for all real y and never zero; log has domain x>0.",
+      "OriginalSourceMathematicsReviewed": "Source4 0 cannot equal b^y for b>0.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Does y=ln(x) have a horizontal asymptote?",
+      "TeacherExpectedMath": "No; it has vertical asymptote x=0, while range is all real.",
+      "OriginalSourceMathematicsReviewed": "Source5 logarithmic parent has vertical not horizontal asymptote.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Give domain and range of f(x)=log_2(x+5).",
+      "TeacherExpectedMath": "x>−5; range R",
+      "OriginalSourceMathematicsReviewed": "log_3(x+4) domain x>−4, range R.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Give domain and range of f(x)=ln(3−x).",
+      "TeacherExpectedMath": "x<3; range R",
+      "OriginalSourceMathematicsReviewed": "ln(1/2−x) domain x<1/2, range R.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Give domain and range of f(x)=log_3(4x+8)−2.",
+      "TeacherExpectedMath": "x>−2; range R",
+      "OriginalSourceMathematicsReviewed": "log_5(2x+9)−2 domain x>−9/2, range R.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Give domain and range of f(x)=ln(5x+20)−4.",
+      "TeacherExpectedMath": "x>−4; range R",
+      "OriginalSourceMathematicsReviewed": "ln(4x+17)−5 domain x>−17/4, range R.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Give domain and range of f(x)=log_2(10−2x)+3.",
+      "TeacherExpectedMath": "x<5; range R",
+      "OriginalSourceMathematicsReviewed": "log_2(12−3x)−3 domain x<4, range R.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Determine domain and vertical asymptote for log_4(x−2).",
+      "TeacherExpectedMath": "x>2, asymptote x=2",
+      "OriginalSourceMathematicsReviewed": "log_b(x−5), x>5, asymptote x=5",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Determine domain and vertical asymptote for ln(7−x).",
+      "TeacherExpectedMath": "x<7, asymptote x=7",
+      "OriginalSourceMathematicsReviewed": "ln(3−x), x<3, asymptote x=3",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Determine domain and vertical asymptote for log(5x+10).",
+      "TeacherExpectedMath": "x>−2, asymptote x=−2",
+      "OriginalSourceMathematicsReviewed": "log(3x+1), x>−1/3, asymptote x=−1/3",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Determine domain and vertical asymptote for −2log(−x)+1.",
+      "TeacherExpectedMath": "x<0, asymptote x=0",
+      "OriginalSourceMathematicsReviewed": "3log(−x)+2, x<0, asymptote x=0",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Determine domain and vertical asymptote for −ln(2x+6)−2.",
+      "TeacherExpectedMath": "x>−3, asymptote x=−3",
+      "OriginalSourceMathematicsReviewed": "−ln(3x+9)−7, x>−3, asymptote x=−3",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Give domain and end behavior of y=ln(4−x).",
+      "TeacherExpectedMath": "x<4; x→4− gives−∞; x→−∞ gives+∞",
+      "OriginalSourceMathematicsReviewed": "ln(2−x), x<2, tends−∞ at2− and +∞ at−∞.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Give domain and end behavior of y=log(x−1/2).",
+      "TeacherExpectedMath": "x>1/2; x→(1/2)+ gives−∞; x→∞ gives+∞",
+      "OriginalSourceMathematicsReviewed": "log(x−3/7) x>3/7, tends−∞ at3/7+ and+∞ to the right.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Give domain and end behavior of y=−log(2x−6)+1.",
+      "TeacherExpectedMath": "x>3; at3+ result+∞, at∞ result−∞",
+      "OriginalSourceMathematicsReviewed": "−log(3x−4)+3 x>4/3, from +∞ to−∞.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Give domain and end behavior of y=ln(x+5)−2.",
+      "TeacherExpectedMath": "x>−5; at−5+ result−∞, at∞ result+∞",
+      "OriginalSourceMathematicsReviewed": "ln(2x+6)−5 x>−3, left end−∞, right end+∞.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Give domain and end behavior of y=log_3(8−2x)+1.",
+      "TeacherExpectedMath": "x<4; at4− result−∞, at−∞ result+∞",
+      "OriginalSourceMathematicsReviewed": "log_3(15−5x)+6 x<3, tends−∞ near3− and+∞ at−∞",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Find domain, range, and intercepts for y=log_2(x−2)+1.",
+      "TeacherExpectedMath": "domain x>2; x-intercept (5/2,0); no y-intercept; range R",
+      "OriginalSourceMathematicsReviewed": "Source log_4(x−1)+1, domain x>1, x-intercept5/4, no y-intercept.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Find domain, range, and intercepts for y=log(2x+6)+2.",
+      "TeacherExpectedMath": "domain x>−3; x-intercept ((0.01−6)/2,0)=(-2.995,0); y-intercept (0, log(6)+2)",
+      "OriginalSourceMathematicsReviewed": "Source log(5x+10)+3, x-intercept(0.001−10)/5 and y-intercept4.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Find domain, range, and intercepts for y=ln(−x)−1.",
+      "TeacherExpectedMath": "domain x<0; x-intercept (−e,0), no y-intercept",
+      "OriginalSourceMathematicsReviewed": "Source ln(−x)−2, x-intercept−e², no y-intercept.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Find domain, range, and intercepts for y=log_2(x+4)−3.",
+      "TeacherExpectedMath": "domain x>−4; x-intercept(4,0); y-intercept(0,−1)",
+      "OriginalSourceMathematicsReviewed": "Source log_2(x+2)−5, x-intercept30, y-intercept−4.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Find domain, range, and intercepts for y=2ln(x)−4.",
+      "TeacherExpectedMath": "domain x>0; x-intercept(e²,0); no y-intercept",
+      "OriginalSourceMathematicsReviewed": "Source 3ln(x)−9, x-intercept e³, no y-intercept.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve A for function y=log_10(x) and characterize growth.",
+      "TeacherExpectedMath": "A; increasing because its base is above1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "log(x) source26; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve B for function y=ln(x) and characterize growth.",
+      "TeacherExpectedMath": "B; increasing because its base is above1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "ln(x) source27; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve C for function y=log_2(x) and characterize growth.",
+      "TeacherExpectedMath": "C; increasing because its base is above1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "log_2(x) source28; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve D for function y=log_5(x) and characterize growth.",
+      "TeacherExpectedMath": "D; increasing because its base is above1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "log_5(x) source29; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve E for function y=log_25(x) and characterize growth.",
+      "TeacherExpectedMath": "E; increasing because its base is above1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "log_25(x) source30; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve F for function y=log_(1/3)(x) and characterize growth.",
+      "TeacherExpectedMath": "F; decreasing because its base is below1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "source31 log_(1/3)(x) decreases; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve G for function y=log_(1/2)(x) and characterize growth.",
+      "TeacherExpectedMath": "G; decreasing because its base is below1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "source32 log_2(x) increases; new graph intentionally changes base; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "In an independent labelled graph set, identify curve H for function y=log_(3/4)(x) and characterize growth.",
+      "TeacherExpectedMath": "H; decreasing because its base is below1; passes (1,0).",
+      "OriginalSourceMathematicsReviewed": "source33 log_(3/4)(x) decreases slowly; source-letter parity not claimed.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Graph and compare f(x)=log_2(x), g(x)=2^x.",
+      "TeacherExpectedMath": "Reflection over y=x; f domain x>0, g domain R.",
+      "OriginalSourceMathematicsReviewed": "Source34 common log and 10^x inverse graphs.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Graph and compare f(x)=log_2(x), g(x)=log_(1/2)(x).",
+      "TeacherExpectedMath": "g(x)=−f(x), x-axis reflection; both domain x>0.",
+      "OriginalSourceMathematicsReviewed": "Source35 common logarithm vs log_(1/2); compare directions.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Graph and compare f(x)=log_4(x), g(x)=ln(x).",
+      "TeacherExpectedMath": "For x>1, ln(x)>log_4(x), as ln4>1.",
+      "OriginalSourceMathematicsReviewed": "Source36 log_4 vs ln with shared(1,0) but different slopes.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Graph and compare f(x)=e^x, g(x)=ln(x).",
+      "TeacherExpectedMath": "Graph reflection across y=x, swapped domains/ranges.",
+      "OriginalSourceMathematicsReviewed": "Source37 e^x vs ln(x) inverse.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "Draw independent graph y=log_3(3−x) and characterize asymptote and direction.",
+      "TeacherExpectedMath": "domain x<3; vertical asymptote x=3; decreases as x increases",
+      "OriginalSourceMathematicsReviewed": "Source38 log_4(−x+2), domain x<2, reflected over y axis and shifted.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Draw independent graph y=−log_3(x+1) and characterize asymptote and direction.",
+      "TeacherExpectedMath": "domain x>−1; asymptote x=−1; decreases",
+      "OriginalSourceMathematicsReviewed": "Source39 −log_4(x+2), domain x>−2, reflected across x axis.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Draw independent graph y=log_3(x+1) and characterize asymptote and direction.",
+      "TeacherExpectedMath": "domain x>−1; asymptote x=−1; increases",
+      "OriginalSourceMathematicsReviewed": "Source40 log_4(x+2), domain x>−2, shifted left.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Sketch y=log_2(x+3) and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x>−3; asymptote x=−3; intercept x=−2",
+      "OriginalSourceMathematicsReviewed": "Source41 log_2(x+2), x>−2, intercept−1.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Sketch y=3log(x) and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x>0; x-intercept1; vertical stretch3",
+      "OriginalSourceMathematicsReviewed": "Source42 2log(x), factor2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "Sketch y=ln(−x) and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x<0; x-intercept−1; y-axis reflection",
+      "OriginalSourceMathematicsReviewed": "Source43 ln(−x) same mathematical skill.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Sketch y=log(2x+8)+1 and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x>−4; asymptote−4, x-intercept x=(0.1−8)/2",
+      "OriginalSourceMathematicsReviewed": "Source44 log(4x+16)+4 with asymptote−4.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Sketch y=log(9−3x)+2 and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x<3; vertical asymptote3; decreasing",
+      "OriginalSourceMathematicsReviewed": "Source45 log(6−3x)+1 with asymptote2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Sketch y=−(1/3)ln(x+2)−1 and give its domain, vertical asymptote and one feature.",
+      "TeacherExpectedMath": "domain x>−2; vertical asymptote−2; decreasing",
+      "OriginalSourceMathematicsReviewed": "Source46 −(1/2)ln(x+1)−3 with asymptote−1.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "An independent graph passes through (2,0), (3,1). Identify y=log_2(x−1) and describe transformations.",
+      "TeacherExpectedMath": "right shift1, asymptote x=1",
+      "OriginalSourceMathematicsReviewed": "Source47 uses parent log_2(x) and a transformed plotted graph.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "An independent graph passes through (1,2), (3,3). Identify y=log_3(x)+2 and describe transformations.",
+      "TeacherExpectedMath": "vertical shift up2, asymptote x=0",
+      "OriginalSourceMathematicsReviewed": "Source48 uses log_3(x) and a graph to identify a transformation.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "An independent graph passes through (1,0), (4,−1). Identify y=−log_4(x) and describe transformations.",
+      "TeacherExpectedMath": "reflection over x-axis, domain x>0",
+      "OriginalSourceMathematicsReviewed": "Source49 uses log_4(x) parent and an independent graph.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "An independent graph passes through (−1,0), (−5,1). Identify y=log_5(−x) and describe transformations.",
+      "TeacherExpectedMath": "y-axis reflection, domain x<0",
+      "OriginalSourceMathematicsReviewed": "Source50 uses log_5(x) parent and transformed graph.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "Solve and verify domain for log(x−1)=ln(x−1).",
+      "TeacherExpectedMath": "x=2, since ln(t)=log_10(t) implies ln t=0 and t=1",
+      "OriginalSourceMathematicsReviewed": "Source51 log(x−1)+2=ln(x−1)+2 has unique x=2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Solve and verify domain for 2log(2x−1)=2.",
+      "TeacherExpectedMath": "2x−1=10, so x=11/2, domain x>1/2",
+      "OriginalSourceMathematicsReviewed": "Source52 log(2x−3)+2=−log(2x−3)+5 implies x=(3+10^1.5)/2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "Solve and verify domain for ln(x−2)=−ln(x+2).",
+      "TeacherExpectedMath": "(x−2)(x+2)=1 => x=√5, x>2",
+      "OriginalSourceMathematicsReviewed": "Source53 ln(x−2)=−ln(x+1), x=(1+√13)/2 with x>2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "Solve and verify domain for ln(3x+1)=0.",
+      "TeacherExpectedMath": "3x+1=1 =>x=0; domain x>−1/3",
+      "OriginalSourceMathematicsReviewed": "Source54 mixed natural log terms requires −1/5<x<0 and numerical solution.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 55,
+      "IndependentStudentQuestion": "Solve and verify domain for log(1−x)=log(x+1).",
+      "TeacherExpectedMath": "x=0, both arguments positive for −1<x<1",
+      "OriginalSourceMathematicsReviewed": "Source55 mixed logarithm equation with domain −1<x<1 requires numerical check.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 56,
+      "IndependentStudentQuestion": "Compute log_7(1), and explain.",
+      "TeacherExpectedMath": "0 because7^0=1.",
+      "OriginalSourceMathematicsReviewed": "Source56 log_b1=0 for every valid b.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 57,
+      "IndependentStudentQuestion": "Compare y=log_(1/4)(x) with y=−log_4(x).",
+      "TeacherExpectedMath": "Identical: log_(1/4)(x)=−log_4(x).",
+      "OriginalSourceMathematicsReviewed": "Source57 (1/2) and2 bases yield same negative-log identity.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 58,
+      "IndependentStudentQuestion": "Prove log_(1/b)(x)=−log_b(x) for b>0, b!=1.",
+      "TeacherExpectedMath": "ln x/ln(1/b)=ln x/(−ln b)=−ln x/ln b.",
+      "OriginalSourceMathematicsReviewed": "Source58 proof by reciprocal-base exponent identity.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 59,
+      "IndependentStudentQuestion": "Find real domain of ln((x+1)/(x−2)).",
+      "TeacherExpectedMath": "(-∞,−1) ∪ (2,∞); strict positivity, exclude pole2.",
+      "OriginalSourceMathematicsReviewed": "Source59 ln((x+2)/(x−4)): (-∞,−2) ∪ (4,∞).",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    },
+    {
+      "SourceSkillReferenceExercise": 60,
+      "IndependentStudentQuestion": "Find x-intercepts of log((x+3)^2).",
+      "TeacherExpectedMath": "(x+3)^2=1 => x=−4 or −2; logarithm argument positive at both.",
+      "OriginalSourceMathematicsReviewed": "Source60 log((x+2)^2), intercepts−3 and−1, excludesx=−2.",
+      "AutoGradingClaimed": false,
+      "MarkingMode": "EXISTING_TEACHER_MANUAL_GRAPH_AND_MATH_RUBRIC",
+      "PublisherQuestionCopied": false
+    }
+  ],
+  "SourceNumberedExercisesReviewed": 60,
+  "IndependentExercisesAuthored": 60,
+  "StageCDecision": "REUSE_EXISTING_TEACHER_MANUAL_MATH_AND_RICHV2",
+  "RuntimeVerified": false,
+  "StageD": "NOT_RUN"
+}
