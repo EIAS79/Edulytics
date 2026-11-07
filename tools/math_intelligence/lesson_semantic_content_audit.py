@@ -188,9 +188,14 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
             continue
         by_code[lesson_code] = row
 
-    if len(by_code) != 5110:
+    # G12 supplements augment, rather than replace, the reviewed 5110
+    # canonical lessons. Check the exact new 73 code set, not only a total.
+    grade12 = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+    supplemental = {code for code in by_code if code.startswith(grade12)}
+    if len(by_code) != 5183 or len(supplemental) != 73:
         errors.append(
-            f"Effective learner-content snapshot expected 5110 lessons, got {len(by_code)}."
+            f"Effective learner snapshot expects 5110 prior plus 73 G12 "
+            f"lessons, got {len(by_code)} total / {len(supplemental)} G12."
         )
 
     return by_code, errors
