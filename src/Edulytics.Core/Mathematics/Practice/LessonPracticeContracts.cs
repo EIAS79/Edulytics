@@ -7194,13 +7194,13 @@ public static class LessonPracticeContractRegistry
         const string grade12Root =
             "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
         foreach (var (subskill, section) in
-            Grade12PrecalculusAdvancedNumericQuestions.All)
+            Grade12PrecalculusNumericalFamilyCatalog.All)
         {
             var code = grade12Root + section;
             if (byLesson.ContainsKey(code))
                 throw new InvalidOperationException(
                     $"Grade12 contract collision: {code}");
-            var family = Grade12PrecalculusAdvancedNumericQuestions.Prefix + subskill;
+            var family = Grade12PrecalculusNumericalFamilyCatalog.Prefix + subskill;
             byLesson[code] = new LessonPracticeContract(
                 code,
                 "g12.precalculus.exact." + subskill,
