@@ -1975,6 +1975,24 @@
         @* Independent inverse-trig mathematical models, original Edulytics plots. *@
         @* First-party identities illustrations, not publisher images. *@
         @* Independent mathematical physical model graphs for 7.6. *@
+        @* First-party law-of-sines oblique triangle diagrams. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Oblique triangle diagrams and Law of Sines">
+                <h2>Oblique triangle investigations</h2>
+                <p>Use the independent mathematical triangle models to practice
+                   side-angle pairing, SSA ambiguity and area from included angles.</p>
+                @foreach (var task in Grade12PrecalculusSection81ObliqueTriangleModels.All)
+                {
+                    <figure class="student-card">
+                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
         @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06")
         {
             <section class="lesson-source-aligned-activities"

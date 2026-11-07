@@ -1,0 +1,670 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "Define the altitude of a triangle.",
+      "TeacherMathematicalSolution": "The perpendicular distance from vertex to the line containing opposite side.",
+      "SourceMathematicsSkillReviewed": "Source1 altitude",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Compare right and oblique triangles.",
+      "TeacherMathematicalSolution": "Right triangle has90° angle; oblique triangle has no right angle, may be acute or obtuse.",
+      "SourceMathematicsSkillReviewed": "Source2 right vs oblique",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "When can Law of Sines determine an unknown angle?",
+      "TeacherMathematicalSolution": "When known opposite side-angle pair and another side yield sin(new angle)=side·sin(known angle)/known side.",
+      "SourceMathematicsSkillReviewed": "Source3 known side-angle pairing",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "State Law of Sines with correctly paired sides.",
+      "TeacherMathematicalSolution": "a/sinA=b/sinB=c/sinC; each angle opposite its paired side.",
+      "SourceMathematicsSkillReviewed": "Source4 numerator and opposite side",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Which given-data case may produce zero, one, or two triangles?",
+      "TeacherMathematicalSolution": "SSA, the non-included known angle opposite a known side.",
+      "SourceMathematicsSkillReviewed": "Source5 ambiguous case",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "Solve triangle A=45°, C=65°, and a=12.",
+      "TeacherMathematicalSolution": "B=70°, a≈12.000,b≈15.947,c≈15.381.",
+      "SourceMathematicsSkillReviewed": "Source6 AAS or ASA law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "Solve triangle A=35°, C=75°, and c=18.",
+      "TeacherMathematicalSolution": "B=70°, a≈10.689,b≈17.511,c≈18.000.",
+      "SourceMathematicsSkillReviewed": "Source7 AAS or ASA law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "Solve triangle A=60°, C=60°, and a=10.",
+      "TeacherMathematicalSolution": "B=60°, a≈10.000,b≈10.000,c≈10.000.",
+      "SourceMathematicsSkillReviewed": "Source8 AAS or ASA law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "Solve triangle A=25°, C=95°, and a=6.",
+      "TeacherMathematicalSolution": "B=60°, a≈6.000,b≈12.295,c≈14.143.",
+      "SourceMathematicsSkillReviewed": "Source9 AAS or ASA law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Solve triangle A=40°, C=30°, and b=8.",
+      "TeacherMathematicalSolution": "B=110°, a≈5.472,b≈8.000,c≈4.257.",
+      "SourceMathematicsSkillReviewed": "Source10 AAS or ASA law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "A=38°,B=52°, c=6. Find sideb by Law of Sines.",
+      "TeacherMathematicalSolution": "b≈4.728; C=90°.",
+      "SourceMathematicsSkillReviewed": "Source11 oblique missing side",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "A=135°,B=22°, b=11. Find sidea by Law of Sines.",
+      "TeacherMathematicalSolution": "a≈20.764; C=23°.",
+      "SourceMathematicsSkillReviewed": "Source12 oblique missing side",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "A=36°,B=22°, b=15. Find sidec by Law of Sines.",
+      "TeacherMathematicalSolution": "c≈33.958; C=122°.",
+      "SourceMathematicsSkillReviewed": "Source13 oblique missing side",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "SSA: A=119°, opposite a=14, other side b=26. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "No triangle; sine-rule candidate outside feasible angle range.",
+      "SourceMathematicsSkillReviewed": "Source14 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "SSA: A=113°, opposite a=32, other side b=10. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=16.72°, C=50.28°, c=26.740",
+      "SourceMathematicsSkillReviewed": "Source15 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "SSA: A=80°, opposite a=5.3, other side b=3.5. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=40.57°, C=59.43°, c=4.634",
+      "SourceMathematicsSkillReviewed": "Source16 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "SSA: A=35°, opposite a=12, other side b=17. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=54.35°, C=90.65°, c=20.920; B=125.65°, C=19.35°, c=6.931",
+      "SourceMathematicsSkillReviewed": "Source17 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "SSA: A=25°, opposite a=35, other side b=20.5. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=14.33°, C=140.67°, c=52.490",
+      "SourceMathematicsSkillReviewed": "Source18 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "SSA: A=43°, opposite a=7, other side b=9. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=61.27°, C=75.73°, c=9.947; B=118.73°, C=18.27°, c=3.217",
+      "SourceMathematicsSkillReviewed": "Source19 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "SSA: A=24°, opposite a=3, other side b=7. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=71.63°, C=84.37°, c=7.340; B=108.37°, C=47.63°, c=5.449",
+      "SourceMathematicsSkillReviewed": "Source20 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "SSA: A=10°, opposite a=5, other side b=13. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=26.84°, C=143.16°, c=17.264; B=153.16°, C=16.84°, c=8.341",
+      "SourceMathematicsSkillReviewed": "Source21 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "SSA: A=28°, opposite a=2.3, other side b=1.8. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=21.56°, C=130.44°, c=3.728",
+      "SourceMathematicsSkillReviewed": "Source22 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "SSA: A=119°, opposite a=8.2, other side b=11.3. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "No triangle; sine-rule candidate outside feasible angle range.",
+      "SourceMathematicsSkillReviewed": "Source23 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "SSA: A=22°, opposite a=5, other side b=24. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "No triangle; sine-rule candidate outside feasible angle range.",
+      "SourceMathematicsSkillReviewed": "Source24 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "SSA: A=20°, opposite a=6, other side b=13. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=47.82°, C=112.18°, c=16.245; B=132.18°, C=27.82°, c=8.187",
+      "SourceMathematicsSkillReviewed": "Source25 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "SSA: A=12°, opposite a=2, other side b=9. Count and solve all feasible triangles.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=69.33°, C=98.67°, c=9.509; B=110.67°, C=57.33°, c=8.097",
+      "SourceMathematicsSkillReviewed": "Source26 ambiguous SSA no/one/two triangles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Find oblique triangle area with adjacent sides5,8 and included angle35°.",
+      "TeacherMathematicalSolution": "Area=1/2·5·8·sin35°≈11.472 square units.",
+      "SourceMathematicsSkillReviewed": "Source27 SAS sine area formula",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Find oblique triangle area with adjacent sides11,7 and included angle28°.",
+      "TeacherMathematicalSolution": "Area=1/2·11·7·sin28°≈18.075 square units.",
+      "SourceMathematicsSkillReviewed": "Source28 SAS sine area formula",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Find oblique triangle area with adjacent sides30,24 and included angle75°.",
+      "TeacherMathematicalSolution": "Area=1/2·30·24·sin75°≈347.733 square units.",
+      "SourceMathematicsSkillReviewed": "Source29 SAS sine area formula",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Find oblique triangle area with adjacent sides7,4.5 and included angle43°.",
+      "TeacherMathematicalSolution": "Area=1/2·7·4.5·sin43°≈10.741 square units.",
+      "SourceMathematicsSkillReviewed": "Source30 SAS sine area formula",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Independently drawn triangle A=70°,B=50°, side a=10. Find sideb.",
+      "TeacherMathematicalSolution": "C=60°, b=10sin(50°)/sin(70°)≈8.15.",
+      "SourceMathematicsSkillReviewed": "Source31 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Independently drawn triangle A=25°,B=120°, side c=6. Find sidea.",
+      "TeacherMathematicalSolution": "C=35°, a=6sin(25°)/sin(35°)≈4.42.",
+      "SourceMathematicsSkillReviewed": "Source32 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Independently drawn triangle A=75°,B=45°, side b=15. Find sidec.",
+      "TeacherMathematicalSolution": "C=60°, c=15sin(60°)/sin(45°)≈18.37.",
+      "SourceMathematicsSkillReviewed": "Source33 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Independently drawn triangle A=110°,B=40°, side b=18. Find sidea.",
+      "TeacherMathematicalSolution": "C=30°, a=18sin(110°)/sin(40°)≈26.31.",
+      "SourceMathematicsSkillReviewed": "Source34 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Independently drawn triangle A=55°,B=45°, side c=11. Find sideb.",
+      "TeacherMathematicalSolution": "C=80°, b=11sin(45°)/sin(80°)≈7.90.",
+      "SourceMathematicsSkillReviewed": "Source35 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Independently drawn triangle A=111°,B=22°, side a=8.6. Find sidec.",
+      "TeacherMathematicalSolution": "C=47°, c=8.6sin(47°)/sin(111°)≈6.74.",
+      "SourceMathematicsSkillReviewed": "Source36 interpret triangle sketch and opposite sides",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=98°,a=10,b=5, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=29.68°, C=52.32°, c=7.992",
+      "SourceMathematicsSkillReviewed": "Source37 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=37°,a=8,b=11, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "2 triangle(s): B=55.84°, C=87.16°, c=13.277; B=124.16°, C=18.84°, c=4.293",
+      "SourceMathematicsSkillReviewed": "Source38 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=22°,a=13,b=5, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=8.28°, C=149.72°, c=17.500",
+      "SourceMathematicsSkillReviewed": "Source39 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=59°,a=5.7,b=5.3, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=52.85°, C=68.15°, c=6.172",
+      "SourceMathematicsSkillReviewed": "Source40 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=55°,a=24,b=21, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=45.79°, C=79.21°, c=28.781",
+      "SourceMathematicsSkillReviewed": "Source41 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=65°,a=12,b=10, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=49.05°, C=65.95°, c=12.091",
+      "SourceMathematicsSkillReviewed": "Source42 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "In an independent triangle diagram, given A=40°,a=10,b=8, find valid B angles and solve geometry.",
+      "TeacherMathematicalSolution": "1 triangle(s): B=30.95°, C=109.05°, c=14.705",
+      "SourceMathematicsSkillReviewed": "Source43 infer missing angle from geometry, obtuse selection and Law of Sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 16,10 meet at angle30°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈40.00.",
+      "SourceMathematicsSkillReviewed": "Source44 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 18,15 meet at angle25°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈57.05.",
+      "SourceMathematicsSkillReviewed": "Source45 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 4.5,3.5 meet at angle51°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈6.12.",
+      "SourceMathematicsSkillReviewed": "Source46 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 9,11 meet at angle58°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈41.98.",
+      "SourceMathematicsSkillReviewed": "Source47 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 25,18 meet at angle40°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈144.63.",
+      "SourceMathematicsSkillReviewed": "Source48 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Find triangle area from diagram where sides 30,14 meet at angle50°.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinC≈160.87.",
+      "SourceMathematicsSkillReviewed": "Source49 graphical area from included angle",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "A circle contains chord 5 with central angle130°. Find radius.",
+      "TeacherMathematicalSolution": "R=c/[2sin(θ/2)]≈2.758.",
+      "SourceMathematicsSkillReviewed": "Source50 circle radius or diameter from inscribed chord geometry",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "A circle contains chord 8.5 with central angle100°. Find radius.",
+      "TeacherMathematicalSolution": "R=c/[2sin(θ/2)]≈5.548.",
+      "SourceMathematicsSkillReviewed": "Source51 circle radius or diameter from inscribed chord geometry",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=55°,B=60°, opposite C side=8. Find other sides.",
+      "TeacherMathematicalSolution": "C=65°,a≈7.231,b≈7.644; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source52 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=50°,B=44°, opposite C side=13. Find other sides.",
+      "TeacherMathematicalSolution": "C=86°,a≈9.983,b≈9.053; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source53 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=48°,B=46°, opposite C side=4. Find other sides.",
+      "TeacherMathematicalSolution": "C=86°,a≈2.980,b≈2.884; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source54 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=125°,B=35°, opposite C side=12. Find other sides.",
+      "TeacherMathematicalSolution": "C=20°,a≈28.740,b≈20.124; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source55 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=35°,B=65°, opposite C side=7. Find other sides.",
+      "TeacherMathematicalSolution": "C=80°,a≈4.077,b≈6.442; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source56 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=74°,B=36°, opposite C side=5. Find other sides.",
+      "TeacherMathematicalSolution": "C=70°,a≈5.115,b≈3.128; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source57 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentStudentQuestion": "Independently split oblique figure into triangle with A=35°,B=65°, opposite C side=29. Find other sides.",
+      "TeacherMathematicalSolution": "C=80°,a≈16.890,b≈26.688; use paired Law of Sines.",
+      "SourceMathematicsSkillReviewed": "Source58 composite oblique figure and supplementary/altitude angles",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentStudentQuestion": "A tilted signpost has length L and leans10° from vertical away from a light source. A sun ray elevation60° gives shadow40ft. Find L by triangle laws.",
+      "TeacherMathematicalSolution": "Assuming ground shadow opposite post, L=40sin60°/sin(110°)≈36.86ft.",
+      "SourceMathematicsSkillReviewed": "Source59 tilted pole shadow and sine law",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentStudentQuestion": "Radar stations A,B are500ft apart; bearings to boat make triangle base angles70° and60°. Find boat distance from A and perpendicular distance to shore.",
+      "TeacherMathematicalSolution": "Angle C=50°, A-to-boat≈565.26ft, shore altitude≈531.17ft.",
+      "SourceMathematicsSkillReviewed": "Source60 two radar station triangulation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 61,
+      "IndependentStudentQuestion": "Two tracking stations70mi apart sight satellite in same direction at elevations83° and86° (farther angle smaller). Find height and slant from farther station.",
+      "TeacherMathematicalSolution": "h=70/(cot83°−cot86°)≈1324.31mi; slant≈1334.25mi.",
+      "SourceMathematicsSkillReviewed": "Source61 two-station satellite altitude",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 62,
+      "IndependentStudentQuestion": "A guy wire rises from an anchor on slope of 60°; triangle's angle at anchor=20°, at tower top=70°, downhill base=130m. Find cable length.",
+      "TeacherMathematicalSolution": "Remaining angle=90°, cable opposite70°, length≈122.16m.",
+      "SourceMathematicsSkillReviewed": "Source62 tower cable on a hill by law of sines",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 63,
+      "IndependentStudentQuestion": "A panel of length8ft is angled38° to horizontal, roof angle20°. Panel front touches roof, vertical brace at panel back: find brace length.",
+      "TeacherMathematicalSolution": "Vertical brace=panel(sin38°−cos38°tan20°)≈2.631ft.",
+      "SourceMathematicsSkillReviewed": "Source63 rooftop panel support geometry",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 64,
+      "IndependentStudentQuestion": "Plane sights near and far points on same side of nadir, separated6.5km, depression angles45° and35°. Find height and slant to far point.",
+      "TeacherMathematicalSolution": "h≈15.182km, slant≈26.468km; use cotangent difference.",
+      "SourceMathematicsSkillReviewed": "Source64 airplane angle-of-depression triangulation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 65,
+      "IndependentStudentQuestion": "Plane sights near and far points on same side of nadir, separated4.2km, depression angles56° and32°. Find height and slant to far point.",
+      "TeacherMathematicalSolution": "h≈4.536km, slant≈8.561km; use cotangent difference.",
+      "SourceMathematicsSkillReviewed": "Source65 airplane angle-of-depression triangulation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 66,
+      "IndependentStudentQuestion": "Two students on level street move 300ft closer to building; elevations change from39° to50°. Find height.",
+      "TeacherMathematicalSolution": "h=300/(cot39°−cot50°)≈757.96ft.",
+      "SourceMathematicsSkillReviewed": "Source66 two-position building height",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 67,
+      "IndependentStudentQuestion": "Two students on level street move 250ft closer to building; elevations change from35° to53°. Find height.",
+      "TeacherMathematicalSolution": "h=250/(cot35°−cot53°)≈370.59ft.",
+      "SourceMathematicsSkillReviewed": "Source67 two-position building height",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 68,
+      "IndependentStudentQuestion": "Cities A,C are97m apart, ∠A=101°,∠C=53°. Find distance AB.",
+      "TeacherMathematicalSolution": "B=26°, AB≈176.717m.",
+      "SourceMathematicsSkillReviewed": "Source68 lake distance triangulation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 69,
+      "IndependentStudentQuestion": "Two observers 3.5 miles apart view balloon between them at elevations27° and41°. Find balloon altitude.",
+      "TeacherMathematicalSolution": "h=3.5/(cot27°+cot41°)≈1.1243mi.",
+      "SourceMathematicsSkillReviewed": "Source69 balloon triangle altitude",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 70,
+      "IndependentStudentQuestion": "Two teams at altitude1mi, 0.5mi apart, view climber between them at elevations15° and22°. Find climber altitude.",
+      "TeacherMathematicalSolution": "Climber elevation above team≈0.081mi, absolute altitude≈1.081mi.",
+      "SourceMathematicsSkillReviewed": "Source70 stranded climber elevation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 71,
+      "IndependentStudentQuestion": "Streetlamp height10ft, two people height6ft stand symmetrically 20ft apart on opposite sides of pole. Find each shadow length and distance from lamp to tip.",
+      "TeacherMathematicalSolution": "Each person10ft from pole; shadow length=15ft; pole-to-tip≈25.000ft.",
+      "SourceMathematicsSkillReviewed": "Source71 shadows with equal height and angular elevation",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 72,
+      "IndependentStudentQuestion": "City C lies 35° west of north from B at distance70mi; city A is due east B, AC=100mi. Find AB.",
+      "TeacherMathematicalSolution": "AB=sqrt(100²−(70cos35°)²)−70sin35°≈41.777mi.",
+      "SourceMathematicsSkillReviewed": "Source72 triangle from compass bearings",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 73,
+      "IndependentStudentQuestion": "Triangle has two adjacent lengths 180,215, included angle80°. Find area.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinθ≈19056.030 square units.",
+      "SourceMathematicsSkillReviewed": "Source73 triangle real-world SAS area",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 74,
+      "IndependentStudentQuestion": "Triangle has two adjacent lengths 40,56, included angle135°. Find area.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinθ≈791.960 square units.",
+      "SourceMathematicsSkillReviewed": "Source74 triangle real-world SAS area",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 75,
+      "IndependentStudentQuestion": "Triangle has two adjacent lengths 1030,980, included angle62°. Find area.",
+      "TeacherMathematicalSolution": "Area=1/2ab sinθ≈445623.650 square units.",
+      "SourceMathematicsSkillReviewed": "Source75 triangle real-world SAS area",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 76,
+      "IndependentStudentQuestion": "An equilateral triangular sign has side30in. Find area.",
+      "TeacherMathematicalSolution": "A=s²sqrt3/4=225sqrt3≈389.711 in².",
+      "SourceMathematicsSkillReviewed": "Source76 equilateral triangular sign area",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    },
+    {
+      "SourceExercise": 77,
+      "IndependentStudentQuestion": "A table top is triangle with adjacent sides4ft and4.5ft, included angle106°. Find area.",
+      "TeacherMathematicalSolution": "A=.5·4·4.5·sin106°≈8.651ft².",
+      "SourceMathematicsSkillReviewed": "Source77 triangular dining table SAS area",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualGeometryMarking": true
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "A=45°,B=60°,a=10: find c.",
+      "TeacherExpectedMath": "c=10sin75/sin45."
+    },
+    {
+      "Number": 2,
+      "Question": "SSA A=35°,a=9,b=12: count triangles.",
+      "TeacherExpectedMath": "Two, since bsinA/a≈.7647, B≈49.87° or130.13° and A+B<180."
+    },
+    {
+      "Number": 3,
+      "Question": "SSA A=110°,a=10,b=14: count triangles.",
+      "TeacherExpectedMath": "No triangle; b>a opposite smaller angle conflict."
+    },
+    {
+      "Number": 4,
+      "Question": "SSA A=100°,a=15,b=8: find B.",
+      "TeacherExpectedMath": "B=arcsin(8sin100/15), one triangle."
+    },
+    {
+      "Number": 5,
+      "Question": "Area two adjacent sides6,7 included60°.",
+      "TeacherExpectedMath": "21sin60°=21sqrt3/2."
+    },
+    {
+      "Number": 6,
+      "Question": "Altitude base10, side8 makes angle35° to base.",
+      "TeacherExpectedMath": "8sin35°."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Solve triangle A40°,B60°,a10.",
+      "How many triangles if A35°,a9,b12?",
+      "Find area sides7,9 and included50°."
+    ],
+    "TeacherExpectedMath": [
+      "C80°,b=10sin60/sin40,c=10sin80/sin40.",
+      "Two triangles.",
+      "(63/2)sin50° square units."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "OriginalSourceExercisesReviewed": 77,
+  "StageC": "REUSE_EXISTING_MANUAL_TRIANGLE_MARKING",
+  "StageD": "NOT_RUN"
+}
