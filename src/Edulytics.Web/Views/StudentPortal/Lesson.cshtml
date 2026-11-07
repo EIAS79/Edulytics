@@ -1938,7 +1938,7 @@
                 @foreach (var graph in Grade12PrecalculusSection38InverseGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(graph.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(graph.Graph)
                         <figcaption>Independent graph practice @graph.RelatedExercise:
                             @graph.Title. @graph.DomainConstraint.</figcaption>
                     </figure>
@@ -1989,7 +1989,7 @@
                 @foreach (var task in Grade12PrecalculusSection84PolarCurveModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2006,7 +2006,7 @@
                 @foreach (var task in Grade12PrecalculusSection83PolarModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2023,7 +2023,7 @@
                 @foreach (var task in Grade12PrecalculusSection82CosineTriangleModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2040,7 +2040,7 @@
                 @foreach (var task in Grade12PrecalculusSection81ObliqueTriangleModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2057,7 +2057,7 @@
                 @foreach (var task in Grade12PrecalculusSection76PhysicalModelGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2072,7 +2072,7 @@
                 @foreach (var task in Grade12PrecalculusSection71IdentityGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>@task.Prompt</figcaption>
                     </figure>
                 }
@@ -2089,7 +2089,7 @@
                 @foreach (var task in Grade12PrecalculusSection63InverseTrigGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2106,7 +2106,7 @@
                 @foreach (var task in Grade12PrecalculusSection62TrigGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2123,7 +2123,7 @@
                 @foreach (var task in Grade12PrecalculusSection61SineCosineGraphs.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2141,7 +2141,7 @@
                 @foreach (var task in Grade12PrecalculusSection52UnitCircleModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2159,7 +2159,7 @@
                 @foreach (var task in Grade12PrecalculusSection51AngleModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Angle source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2177,7 +2177,7 @@
                 @foreach (var task in Grade12PrecalculusSection46GraphModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Graph skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2195,7 +2195,7 @@
                 @foreach (var task in Grade12PrecalculusSection44GraphModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Graph skill @task.SourceFigureSkill: @task.Prompt</figcaption>
                     </figure>
                 }
@@ -2215,7 +2215,7 @@
                 @foreach (var task in Grade12PrecalculusSection42GraphModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Figure skill @task.SourceFigureSkill:
                             @task.Prompt</figcaption>
                     </figure>
@@ -2234,7 +2234,7 @@
                 @foreach (var task in Grade12PrecalculusSection41GraphModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Figure skill @task.OriginalSourceFigureSkill:
                             @task.Prompt</figcaption>
                     </figure>
@@ -2274,7 +2274,7 @@
                 @foreach (var task in Grade12PrecalculusSection37GraphModels.All)
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(task.Graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
                         <figcaption>Independent practice @task.ExerciseNumber:
                             @task.Prompt</figcaption>
                     </figure>
@@ -2294,7 +2294,7 @@
                 @foreach (var graph in Grade12PrecalculusSection11Visuals.Build())
                 {
                     <figure class="student-card">
-                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(graph))
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(graph)
                         <figcaption>@graph.Accessibility.Description</figcaption>
                     </figure>
                 }
@@ -2317,7 +2317,7 @@
                                 @if (figure.AddedDrawing is { } drawing)
                                 {
                                     <figure class="student-lesson-graph">
-                                        @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawing))
+                                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(drawing)
                                         <figcaption>@drawing.Accessibility.Description</figcaption>
                                     </figure>
                                 }
@@ -2336,7 +2336,7 @@
                         <figure class="student-lesson-graph">
                             <figcaption><strong>@family.Title</strong>
                                 — Domain: @family.Domain. Range: @family.Range.</figcaption>
-                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(family.Graph))
+                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(family.Graph)
                         </figure>
                     }
                 </details>
@@ -2362,7 +2362,7 @@
                                     @if (Grade12PrecalculusSection11WindowVisuals.Find(task.Number) is { } windowGraph)
                                     {
                                         <figure class="student-lesson-graph">
-                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(windowGraph.Graph))
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(windowGraph.Graph)
                                             <figcaption>Exact output range: @windowGraph.ExactOutputRange.
                                                 Axis endpoint labels are source-window values; coordinates are normalized for rendering.</figcaption>
                                         </figure>
@@ -2370,7 +2370,7 @@
                                     @if (Grade12PrecalculusSection11ExerciseVisuals.Find(task.Number) is { } sourceSkillGraph)
                                     {
                                         <figure class="student-lesson-graph">
-                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(sourceSkillGraph))
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(sourceSkillGraph)
                                             <figcaption>@sourceSkillGraph.Accessibility.Description</figcaption>
                                         </figure>
                                     }
@@ -2404,7 +2404,7 @@
                                     if (Grade12PrecalculusSection11FigureAlternatives.Find(sourceFigure)?.AddedDrawing is { } drawn)
                                     {
                                         <figure class="student-lesson-graph">
-                                            @Html.Raw(AdvancedMathematicsVisualRenderer.RenderSvg(drawn))
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(drawn)
                                             <figcaption>@drawn.Accessibility.Description</figcaption>
                                         </figure>
                                     }

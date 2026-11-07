@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Html;
 using System.Globalization;
 using System.Net;
 using System.Text;
@@ -19,6 +20,12 @@ public static class AdvancedMathematicsVisualRenderer
     private const double Top = 34d;
     private const double Bottom = 398d;
     private const int CurveSamples = 240;
+
+    /// <summary>Render only validated, first-party mathematical SVG as trusted typed HTML.
+    /// All dynamic text in RenderSvg is HTML-encoded; caller cannot inject raw markup.
+    /// </summary>
+    public static IHtmlContent RenderTrustedSvg(MathematicalVisualSpec spec) =>
+        new HtmlString(RenderSvg(spec));
 
     public static string RenderSvg(MathematicalVisualSpec spec)
     {
