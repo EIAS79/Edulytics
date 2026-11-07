@@ -1,0 +1,573 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L04",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "FirstPartyStudentMathQuestion": "Does every polynomial quotient have a nontrivial partial fraction expansion?",
+      "TeacherMathAnswer": "No: polynomials and irreducible proper fractions may not split into two nonzero terms.",
+      "SourceMathSkill": "Source 1–5 conceptual partial fraction procedures",
+      "ExactNumericalIdentityChecked": false,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 2,
+      "FirstPartyStudentMathQuestion": "Why is decomposition unique under a prescribed denominator basis?",
+      "TeacherMathAnswer": "After equating numerator coefficients, independent basis functions yield unique coefficients.",
+      "SourceMathSkill": "Source 1–5 conceptual partial fraction procedures",
+      "ExactNumericalIdentityChecked": false,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 3,
+      "FirstPartyStudentMathQuestion": "How can graphs verify partial fractions?",
+      "TeacherMathAnswer": "Compare original rational graph with sum over common domain, including holes/poles.",
+      "SourceMathSkill": "Source 1–5 conceptual partial fraction procedures",
+      "ExactNumericalIdentityChecked": false,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 4,
+      "FirstPartyStudentMathQuestion": "How check decomposition algebraically?",
+      "TeacherMathAnswer": "Recombine fractions, simplify numerator and retain domain restrictions.",
+      "SourceMathSkill": "Source 1–5 conceptual partial fraction procedures",
+      "ExactNumericalIdentityChecked": false,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 5,
+      "FirstPartyStudentMathQuestion": "How use roots in the cover-up method?",
+      "TeacherMathAnswer": "Substitute a denominator factor root to isolate the corresponding coefficient.",
+      "SourceMathSkill": "Source 1–5 conceptual partial fraction procedures",
+      "ExactNumericalIdentityChecked": false,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 6,
+      "FirstPartyStudentMathQuestion": "Decompose (7x+17)/(x^2+5x+6) into A/(x+2)+B/(x+3).",
+      "TeacherMathAnswer": "A=3, B=4, x≠-2,-3.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 7,
+      "FirstPartyStudentMathQuestion": "Decompose (2x+3)/(x^2+7x+12) into A/(x+3)+B/(x+4).",
+      "TeacherMathAnswer": "A=-3, B=5, x≠-3,-4.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 8,
+      "FirstPartyStudentMathQuestion": "Decompose (-2)/(x^2+9x+20) into A/(x+4)+B/(x+5).",
+      "TeacherMathAnswer": "A=-2, B=2, x≠-4,-5.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 9,
+      "FirstPartyStudentMathQuestion": "Decompose (2x+9)/(x^2+11x+30) into A/(x+5)+B/(x+6).",
+      "TeacherMathAnswer": "A=-1, B=3, x≠-5,-6.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 10,
+      "FirstPartyStudentMathQuestion": "Decompose (4x+4)/(x^2+8x+7) into A/(x+1)+B/(x+7).",
+      "TeacherMathAnswer": "A=0, B=4, x≠-1,-7.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 11,
+      "FirstPartyStudentMathQuestion": "Decompose (6x+18)/(x^2+10x+16) into A/(x+2)+B/(x+8).",
+      "TeacherMathAnswer": "A=1, B=5, x≠-2,-8.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 12,
+      "FirstPartyStudentMathQuestion": "Decompose (4x+12)/(x^2+6x+9) into A/(x+3)+B/(x+3).",
+      "TeacherMathAnswer": "A=2, B=2, x≠-3,-3.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 13,
+      "FirstPartyStudentMathQuestion": "Decompose (6x+24)/(x^2+8x+16) into A/(x+4)+B/(x+4).",
+      "TeacherMathAnswer": "A=3, B=3, x≠-4,-4.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 14,
+      "FirstPartyStudentMathQuestion": "Decompose (x+5)/(x^2+10x+25) into A/(x+5)+B/(x+5).",
+      "TeacherMathAnswer": "A=-3, B=4, x≠-5,-5.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 15,
+      "FirstPartyStudentMathQuestion": "Decompose (3x-7)/(x^2+7x+6) into A/(x+1)+B/(x+6).",
+      "TeacherMathAnswer": "A=-2, B=5, x≠-1,-6.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 16,
+      "FirstPartyStudentMathQuestion": "Decompose (x-3)/(x^2+9x+14) into A/(x+2)+B/(x+7).",
+      "TeacherMathAnswer": "A=-1, B=2, x≠-2,-7.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 17,
+      "FirstPartyStudentMathQuestion": "Decompose (3x+9)/(x^2+11x+24) into A/(x+3)+B/(x+8).",
+      "TeacherMathAnswer": "A=0, B=3, x≠-3,-8.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 18,
+      "FirstPartyStudentMathQuestion": "Decompose (5x+19)/(x^2+7x+12) into A/(x+4)+B/(x+3).",
+      "TeacherMathAnswer": "A=1, B=4, x≠-4,-3.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 19,
+      "FirstPartyStudentMathQuestion": "Decompose (7x+33)/(x^2+9x+20) into A/(x+5)+B/(x+4).",
+      "TeacherMathAnswer": "A=2, B=5, x≠-5,-4.",
+      "SourceMathSkill": "Source 6–19 distinct linear factors",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 20,
+      "FirstPartyStudentMathQuestion": "Decompose (x+6)/(x^2+14x+49) into A/(x+7)+B/(x+7)².",
+      "TeacherMathAnswer": "A=1, B=-1, x≠-7.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 21,
+      "FirstPartyStudentMathQuestion": "Decompose (2x)/(x^2+2x+1) into A/(x+1)+B/(x+1)².",
+      "TeacherMathAnswer": "A=2, B=-2, x≠-1.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 22,
+      "FirstPartyStudentMathQuestion": "Decompose (3x+3)/(x^2+4x+4) into A/(x+2)+B/(x+2)².",
+      "TeacherMathAnswer": "A=3, B=-3, x≠-2.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 23,
+      "FirstPartyStudentMathQuestion": "Decompose (4x+8)/(x^2+6x+9) into A/(x+3)+B/(x+3)².",
+      "TeacherMathAnswer": "A=4, B=-4, x≠-3.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 24,
+      "FirstPartyStudentMathQuestion": "Decompose (5x+19)/(x^2+8x+16) into A/(x+4)+B/(x+4)².",
+      "TeacherMathAnswer": "A=5, B=-1, x≠-4.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 25,
+      "FirstPartyStudentMathQuestion": "Decompose (x+3)/(x^2+10x+25) into A/(x+5)+B/(x+5)².",
+      "TeacherMathAnswer": "A=1, B=-2, x≠-5.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 26,
+      "FirstPartyStudentMathQuestion": "Decompose (2x+9)/(x^2+12x+36) into A/(x+6)+B/(x+6)².",
+      "TeacherMathAnswer": "A=2, B=-3, x≠-6.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 27,
+      "FirstPartyStudentMathQuestion": "Decompose (3x+17)/(x^2+14x+49) into A/(x+7)+B/(x+7)².",
+      "TeacherMathAnswer": "A=3, B=-4, x≠-7.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 28,
+      "FirstPartyStudentMathQuestion": "Decompose (4x+3)/(x^2+2x+1) into A/(x+1)+B/(x+1)².",
+      "TeacherMathAnswer": "A=4, B=-1, x≠-1.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 29,
+      "FirstPartyStudentMathQuestion": "Decompose (5x+8)/(x^2+4x+4) into A/(x+2)+B/(x+2)².",
+      "TeacherMathAnswer": "A=5, B=-2, x≠-2.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 30,
+      "FirstPartyStudentMathQuestion": "Decompose (x)/(x^2+6x+9) into A/(x+3)+B/(x+3)².",
+      "TeacherMathAnswer": "A=1, B=-3, x≠-3.",
+      "SourceMathSkill": "Source 20–30 repeated linear factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 31,
+      "FirstPartyStudentMathQuestion": "Decompose (5x^2+7x)/(x^3+3x^2+6x+8) as A/(x+2)+(Bx+C)/(x^2+x+4).",
+      "TeacherMathAnswer": "A=1,B=4,C=-2.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 32,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^2+6x+7)/(x^3+5x^2+11x+15) as A/(x+3)+(Bx+C)/(x^2+2x+5).",
+      "TeacherMathAnswer": "A=2,B=1,C=-1.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 33,
+      "FirstPartyStudentMathQuestion": "Decompose (5x^2+8x+18)/(x^3+4x^2+6x+24) as A/(x+4)+(Bx+C)/(x^2+6).",
+      "TeacherMathAnswer": "A=3,B=2,C=0.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 34,
+      "FirstPartyStudentMathQuestion": "Decompose (7x^2+20x+33)/(x^3+6x^2+12x+35) as A/(x+5)+(Bx+C)/(x^2+x+7).",
+      "TeacherMathAnswer": "A=4,B=3,C=1.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 35,
+      "FirstPartyStudentMathQuestion": "Decompose (2x^2+2x-4)/(x^3+3x^2+5x+3) as A/(x+1)+(Bx+C)/(x^2+2x+3).",
+      "TeacherMathAnswer": "A=-2,B=4,C=2.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 36,
+      "FirstPartyStudentMathQuestion": "Decompose (-x-10)/(x^3+2x^2+4x+8) as A/(x+2)+(Bx+C)/(x^2+4).",
+      "TeacherMathAnswer": "A=-1,B=1,C=-3.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 37,
+      "FirstPartyStudentMathQuestion": "Decompose (2x^2+4x-6)/(x^3+4x^2+8x+15) as A/(x+3)+(Bx+C)/(x^2+x+5).",
+      "TeacherMathAnswer": "A=0,B=2,C=-2.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 38,
+      "FirstPartyStudentMathQuestion": "Decompose (4x^2+13x+2)/(x^3+6x^2+14x+24) as A/(x+4)+(Bx+C)/(x^2+2x+6).",
+      "TeacherMathAnswer": "A=1,B=3,C=-1.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 39,
+      "FirstPartyStudentMathQuestion": "Decompose (6x^2+20x+14)/(x^3+5x^2+7x+35) as A/(x+5)+(Bx+C)/(x^2+7).",
+      "TeacherMathAnswer": "A=2,B=4,C=0.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 40,
+      "FirstPartyStudentMathQuestion": "Decompose (4x^2+5x+10)/(x^3+2x^2+4x+3) as A/(x+1)+(Bx+C)/(x^2+x+3).",
+      "TeacherMathAnswer": "A=3,B=1,C=1.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 41,
+      "FirstPartyStudentMathQuestion": "Decompose (6x^2+14x+20)/(x^3+4x^2+8x+8) as A/(x+2)+(Bx+C)/(x^2+2x+4).",
+      "TeacherMathAnswer": "A=4,B=2,C=2.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 42,
+      "FirstPartyStudentMathQuestion": "Decompose (x^2+6x-19)/(x^3+3x^2+5x+15) as A/(x+3)+(Bx+C)/(x^2+5).",
+      "TeacherMathAnswer": "A=-2,B=3,C=-3.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 43,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^2+13x-14)/(x^3+5x^2+10x+24) as A/(x+4)+(Bx+C)/(x^2+x+6).",
+      "TeacherMathAnswer": "A=-1,B=4,C=-2.",
+      "SourceMathSkill": "Source 31–43 irreducible nonrepeated quadratic",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 44,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^3-x^2+14x-2)/(x^4+10x^2+25) as (Bx+C)/(x^2+5)+(Ax+D)/(x^2+5)².",
+      "TeacherMathAnswer": "B=3,C=-1,A=-1,D=3.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 45,
+      "FirstPartyStudentMathQuestion": "Decompose (x^3+x-1)/(x^4+2x^2+1) as (Bx+C)/(x^2+1)+(Ax+D)/(x^2+1)².",
+      "TeacherMathAnswer": "B=1,C=0,A=0,D=-1.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 46,
+      "FirstPartyStudentMathQuestion": "Decompose (2x^3+x^2+5x+2)/(x^4+4x^2+4) as (Bx+C)/(x^2+2)+(Ax+D)/(x^2+2)².",
+      "TeacherMathAnswer": "B=2,C=1,A=1,D=0.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 47,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^3+2x^2+11x+7)/(x^4+6x^2+9) as (Bx+C)/(x^2+3)+(Ax+D)/(x^2+3)².",
+      "TeacherMathAnswer": "B=3,C=2,A=2,D=1.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 48,
+      "FirstPartyStudentMathQuestion": "Decompose (x^3+3x^2+3x+14)/(x^4+8x^2+16) as (Bx+C)/(x^2+4)+(Ax+D)/(x^2+4)².",
+      "TeacherMathAnswer": "B=1,C=3,A=-1,D=2.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 49,
+      "FirstPartyStudentMathQuestion": "Decompose (2x^3-3x^2+10x-12)/(x^4+10x^2+25) as (Bx+C)/(x^2+5)+(Ax+D)/(x^2+5)².",
+      "TeacherMathAnswer": "B=2,C=-3,A=0,D=3.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 50,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^3-2x^2+4x-3)/(x^4+2x^2+1) as (Bx+C)/(x^2+1)+(Ax+D)/(x^2+1)².",
+      "TeacherMathAnswer": "B=3,C=-2,A=1,D=-1.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 51,
+      "FirstPartyStudentMathQuestion": "Decompose (x^3-x^2+4x-2)/(x^4+4x^2+4) as (Bx+C)/(x^2+2)+(Ax+D)/(x^2+2)².",
+      "TeacherMathAnswer": "B=1,C=-1,A=2,D=0.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 52,
+      "FirstPartyStudentMathQuestion": "Decompose (2x^3+5x+1)/(x^4+6x^2+9) as (Bx+C)/(x^2+3)+(Ax+D)/(x^2+3)².",
+      "TeacherMathAnswer": "B=2,C=0,A=-1,D=1.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 53,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^3+x^2+12x+6)/(x^4+8x^2+16) as (Bx+C)/(x^2+4)+(Ax+D)/(x^2+4)².",
+      "TeacherMathAnswer": "B=3,C=1,A=0,D=2.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 54,
+      "FirstPartyStudentMathQuestion": "Decompose (x^3+2x^2+6x+13)/(x^4+10x^2+25) as (Bx+C)/(x^2+5)+(Ax+D)/(x^2+5)².",
+      "TeacherMathAnswer": "B=1,C=2,A=1,D=3.",
+      "SourceMathSkill": "Source 44–54 repeated quadratic factor",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 55,
+      "FirstPartyStudentMathQuestion": "Decompose (57x^2+571x+1428)/(x^3+15x^2+75x+125) as A/(x+5)+C/(x+5)²+D/(x+5)³.",
+      "TeacherMathAnswer": "A=57,C=1,D=-2.",
+      "SourceMathSkill": "Source 55–56 repeated linear cubed",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 56,
+      "FirstPartyStudentMathQuestion": "Decompose (58x^2+234x+233)/(x^3+6x^2+12x+8) as A/(x+2)+C/(x+2)²+D/(x+2)³.",
+      "TeacherMathAnswer": "A=58,C=2,D=-3.",
+      "SourceMathSkill": "Source 55–56 repeated linear cubed",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 57,
+      "FirstPartyStudentMathQuestion": "Decompose (3x^2+20x+21)/(x^3+12x^2+45x+54) as A/(x+3)+B/(x+3)²+C/(x+6).",
+      "TeacherMathAnswer": "A=2,B=-4,C=1.",
+      "SourceMathSkill": "Source57–59 combined operations and partial fractions",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 58,
+      "FirstPartyStudentMathQuestion": "Decompose (5x^2+44x+81)/(x^3+15x^2+72x+112) as A/(x+4)+B/(x+4)²+C/(x+7).",
+      "TeacherMathAnswer": "A=3,B=-5,C=2.",
+      "SourceMathSkill": "Source57–59 combined operations and partial fractions",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    },
+    {
+      "SourceExercise": 59,
+      "FirstPartyStudentMathQuestion": "Decompose (7x^2+76x+187)/(x^3+18x^2+105x+200) as A/(x+5)+B/(x+5)²+C/(x+8).",
+      "TeacherMathAnswer": "A=4,B=-6,C=3.",
+      "SourceMathSkill": "Source57–59 combined operations and partial fractions",
+      "ExactNumericalIdentityChecked": true,
+      "OriginalPublisherExerciseCopied": false,
+      "Assessment": "MANUAL_RATIONAL_ALGEBRA"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Decompose (3x+4)/((x+1)(x+2)).",
+      "TeacherExpectedMath": "1/(x+1)+2/(x+2)."
+    },
+    {
+      "Number": 2,
+      "Question": "Decompose (2x+5)/(x+2)².",
+      "TeacherExpectedMath": "2/(x+2)+1/(x+2)²."
+    },
+    {
+      "Number": 3,
+      "Question": "Decompose (x²+4x+7)/((x+1)(x²+4)).",
+      "TeacherExpectedMath": "(4/5)/(x+1)+((1/5)x+19/5)/(x²+4)."
+    },
+    {
+      "Number": 4,
+      "Question": "Decompose (x³+2x²+x+2)/(x²+1)².",
+      "TeacherExpectedMath": "x/(x²+1)+2/(x²+1)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Decompose (3x+5)/((x+1)(x+2)).",
+      "State original domain.",
+      "Give basis for (x+2)²."
+    ],
+    "TeacherExpectedMath": [
+      "2/(x+1)+1/(x+2).",
+      "x≠−1,−2.",
+      "A/(x+2)+B/(x+2)²."
+    ],
+    "Copied": false
+  },
+  "StageC": "REUSE_MANUAL_TEACHER_RATIONAL_ALGEBRA"
+}

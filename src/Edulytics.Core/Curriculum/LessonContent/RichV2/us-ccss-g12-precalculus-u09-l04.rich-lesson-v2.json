@@ -1,0 +1,130 @@
+{
+  "SchemaVersion": 2,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L04",
+  "ContentVersion": "g12-u09-l04-partial-fraction-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L04",
+      "CultureCode": "en",
+      "Title": "Partial Fractions",
+      "ExplanationParagraphs": [
+        "A proper rational function with factorable denominator can be expanded into partial fractions according to irreducible factors.",
+        "For distinct linear factors use A/(x−a)+B/(x−b). For repeated linear factor (x−a)^m include every power denominator 1 through m.",
+        "For irreducible quadratic q(x), use linear numerator Bx+C; repeated powers q(x)^m require a separate linear numerator at every power.",
+        "Clear denominators and equate polynomial coefficients or substitute convenient roots to solve for constants.",
+        "Check decomposition by recombining and preserving every original denominator restriction.",
+        "Improper rational fractions first need polynomial long division.",
+        "Independent Cool-down: decompose (3x+5)/((x+1)(x+2)); check domain and give repeated-linear template.",
+        "Independent Try It 1: Decompose (3x+4)/((x+1)(x+2)).",
+        "Independent Try It 2: Decompose (2x+5)/(x+2)².",
+        "Independent Try It 3: Decompose (x²+4x+7)/((x+1)(x²+4)).",
+        "Independent Try It 4: Decompose (x³+2x²+x+2)/(x²+1)²."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distinct factors",
+          "Question": "(3x+5)/((x+1)(x+2)).",
+          "Method": "Clear common denominator, match polynomial coefficients.",
+          "Steps": [
+            "2/(x+1)+1/(x+2)."
+          ],
+          "Answer": "2/(x+1)+1/(x+2).",
+          "Check": "Recombine rational expression for every allowed x."
+        },
+        {
+          "Title": "Repeated linear",
+          "Question": "(2x+3)/(x+1)².",
+          "Method": "Clear common denominator, match polynomial coefficients.",
+          "Steps": [
+            "2/(x+1)+1/(x+1)²."
+          ],
+          "Answer": "2/(x+1)+1/(x+1)².",
+          "Check": "Recombine rational expression for every allowed x."
+        },
+        {
+          "Title": "Quadratic factor",
+          "Question": "(x²+3x+5)/((x+1)(x²+4)).",
+          "Method": "Clear common denominator, match polynomial coefficients.",
+          "Steps": [
+            "(3/5)/(x+1)+((2/5)x+13/5)/(x²+4)."
+          ],
+          "Answer": "(3/5)/(x+1)+((2/5)x+13/5)/(x²+4).",
+          "Check": "Recombine rational expression for every allowed x."
+        },
+        {
+          "Title": "Repeated quadratic",
+          "Question": "(x³+4x²+x+4)/(x²+1)².",
+          "Method": "Clear common denominator, match polynomial coefficients.",
+          "Steps": [
+            "x/(x²+1)+4/(x²+1)."
+          ],
+          "Answer": "x/(x²+1)+4/(x²+1).",
+          "Check": "Recombine rational expression for every allowed x."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distinct linear",
+          "Definition": "A/(x−a)+B/(x−b).",
+          "Rule": "Separate factor coefficients.",
+          "Example": "Denominator(x+1)(x+2)."
+        },
+        {
+          "Title": "Repeated factor",
+          "Definition": "Include all inverse powers.",
+          "Rule": "A/(x−a)+B/(x−a)²+...",
+          "Example": "(x+1)²."
+        },
+        {
+          "Title": "Irreducible quadratic",
+          "Definition": "(Bx+C)/q(x).",
+          "Rule": "Numerator degree less than 2.",
+          "Example": "x²+1."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party denominator decomposition patterns",
+          "Description": "Algebraic decomposition type table.",
+          "PrimaryLabel": "Factor type",
+          "SecondaryLabel": "Partial fractions",
+          "Rows": [
+            {
+              "Label": "Factor",
+              "Cells": [
+                "x+a",
+                "(x+a)²",
+                "x²+a"
+              ]
+            },
+            {
+              "Label": "Template",
+              "Cells": [
+                "A/(x+a)",
+                "A/(x+a)+B/(x+a)²",
+                "(Bx+C)/(x²+a)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Make rational function proper.",
+        "Factor denominator.",
+        "Build a full repeated-factor basis.",
+        "Solve and recombine coefficients."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omit middle powers for repeated factors.",
+          "WhyWrong": "Insufficient basis for a general decomposition.",
+          "Correction": "Include every power."
+        }
+      ]
+    }
+  ]
+}
