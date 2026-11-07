@@ -578,5 +578,29 @@
     "SourceExercise60": "Source asks radius as a function of V despite describing sphere area A; inverse uses A.",
     "SourceExercise64": "Source asks radius as a function of V despite describing cylinder area A; inverse uses A.",
     "SourceExercise65": "Source uses feet height with cubic inches volume; convert units before solving."
-  }
+  },
+  "IndependentCoolDown": {
+    "IndependentFirstPartyCoolDown": true,
+    "StudentQuestions": [
+      {
+        "Number": 1,
+        "Question": "Invert f(x)=(x+2)² on the original domain x≥−2.",
+        "TeacherExpectedMath": "f⁻¹(x)=−2+√x for x≥0."
+      },
+      {
+        "Number": 2,
+        "Question": "Invert f(x)=√(x−4)+3 and give the inverse input domain.",
+        "TeacherExpectedMath": "f⁻¹(x)=(x−3)²+4 for x≥3."
+      },
+      {
+        "Number": 3,
+        "Question": "Find the real domain of h(x)=√((x−1)/(x+2)).",
+        "TeacherExpectedMath": "(−∞,−2) ∪ [1,∞); x=−2 excluded and x=1 included."
+      }
+    ],
+    "Method": "TEACHER_REVIEW_COMPOSITION_DOMAIN_AND_SIGN_CHART",
+    "OriginalPublisherRestrictedCoolDownCopied": false,
+    "Runtime": "NOT_RUN"
+  },
+  "TeacherReviewGuidance": "Check both inverse compositions where well-defined, exchange of domain and range, restriction of non-one-to-one polynomial branches, radical sign interval endpoints, dimensional physical units and exceptions for degenerate symbolic parameters. Graph drawings and explanations require teacher review; no automatic grading asserted."
 }
