@@ -10805,6 +10805,28 @@
         "commonMistake": "عد الخانات بأكثر أو أقل من عشرة أو استخدام ٦ + ٥ = ١٠.",
         "summary": "أكوّن ١٠ من جزأين داخل إطار ٢×٥."
       }
+    },
+    {
+      "id": "uae-g1-u1-l12-arabic-missing-parts-ten-2025",
+      "titlePatterns": [
+        "^إيجاد الأجزاء الناقصة من العدد ١٠$",
+        "^Find Missing Parts of 10$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:12$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_PART_WHOLE_KNOWN_ONE_PART_FIXED_TOTAL_TEN_MISSING_PART",
+      "families": [
+        "uae.g1.u02.l11.make_ten_frame"
+      ],
+      "content": {
+        "concept": "إيجاد جزء ناقص من كل يساوي عشرة.",
+        "workedExample": "٦ + □ = ١٠، الجزء الناقص ٤.",
+        "solution": "أمثل الجزء المعلوم داخل إطار عشرة وأعد الخانات الباقية.",
+        "commonMistake": "عدم التمييز بين الجزء المعلوم والجزء المتبقي.",
+        "summary": "الجزء الناقص يكمل عشرة بالضبط."
+      }
     }
   ]
 }
