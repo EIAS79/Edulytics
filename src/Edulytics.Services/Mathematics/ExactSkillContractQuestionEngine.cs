@@ -4952,8 +4952,11 @@ public sealed class ExactSkillContractQuestionEngine
                  b < a && mode == 0,
             5 => a is >= 11 and <= 19 && b is >= 2 and <= 9 &&
                  a % 10 + b >= 10 && mode == 0,
+            // Subtracting 100 from 100 is valid: the generator can select
+            // ten complete tens from ten complete tens. The old <=90 bound
+            // incorrectly rejected correct solver output for that case.
             6 or 7 => a is >= 10 and <= 100 && a % 10 == 0 &&
-                 b is >= 10 and <= 90 && b % 10 == 0 && b <= a && mode == 0,
+                 b is >= 10 and <= 100 && b % 10 == 0 && b <= a && mode == 0,
             8 => a is >= 10 and <= 90 && a % 10 == 0 &&
                  b is >= 10 and <= 90 && b % 10 == 0 &&
                  (mode == 0 ? a + b <= 100 : b <= a) && mode is 0 or 1,

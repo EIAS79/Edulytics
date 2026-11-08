@@ -115,3 +115,9 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - English-only official-rebuild seeding test deliberately simulates the historical English-only source envelope. The actual published UAE G1 pack is Arabic canonical and does not acquire blanket permission for same-version English rewrites.
 - Grade 6 division-scaling pedagogical explanation now explicitly states that division by zero is prohibited, eliminating a vague `Undefined.` placeholder token that failed broad mathematics pedagogy certification.
 - These are cross-grade CI remediation changes; no production merge or deployment is claimed in this evidence note. CI will be checked on the new exact candidate SHA.
+
+## Full 5,183-lesson Practice V2 runtime boundary correction
+- In GitHub Actions Run 42521537468, full Practice V2 runtime certification reached UAE Grade 1 `PED:UAE-MOE-MATH:L1:COMMON:07:07` and correctly blocked the candidate: the independent exact verifier rejected a generated result for family `uae.g1.u07.l07.count_back_tens`.
+- Root cause: first-party generator legitimately permits ten tens minus ten tens (100 − 100 = 0), but Grade1 Unit6 independent verifier disallowed subtracting `b=100` by using `b <= 90`. Updated only the verifier bound for lessons 6 and 7 to permit b=100 subject to b<=a, tens divisibility, mode, and recomputed result checks.
+- Added `UaeGrade1ArabicHundredTensVerifierTests` testing both families, exact 100-100, rejection of invalid values and generated-sample verification. Historical US Grade 1 shared-engine proof remains Git-blob pinned with the revised UAE-only additive SHA; no US Grade1 family dispatch changes were authorized.
+- This is remediation evidence; certification outcome must be confirmed from a new exact-SHA Actions run before merger and Render publication.
