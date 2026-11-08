@@ -31948,6 +31948,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l09.add_three_with_strategy",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "three-addend-strategy-independent-sum-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -89,6 +89,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l06.act_out_problem_solving",
             "uae.g1.u04.l07.make_ten_add",
             "uae.g1.u04.l08.commutative_add",
+            "uae.g1.u04.l09.add_three_with_strategy",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -911,6 +912,24 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l09.add_three_with_strategy")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 9 &&
+                parameters.TryGetValue("b", out var b) && b is >= 1 and <= 9 &&
+                parameters.TryGetValue("c", out var c) && c is >= 1 and <= 9 &&
+                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 2 &&
+                (mode == 0 ? (a is >= 3 and <= 9 && a + b == 10 && c <= 8) :
+                 mode == 1 ? (a <= 7 && b == c && b <= 5) :
+                             (a <= 7 && b <= 7 && c <= 6)) &&
+                parameters.TryGetValue("pair", out var pair) &&
+                    pair == (mode == 1 ? b + c : a + b) &&
+                parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
+                value == total;
         }
         if (family == "uae.g1.u04.l08.commutative_add")
         {
@@ -3465,6 +3484,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1MakeTenAdd(random),
             "uae.g1.u04.l08.commutative_add" =>
                 BuildUaeGrade1CommutativeAdd(random),
+            "uae.g1.u04.l09.add_three_with_strategy" =>
+                BuildUaeGrade1ThreeAddends(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4446,6 +4467,29 @@ public sealed class ExactSkillContractQuestionEngine
 
     // Scoped addition-through-ten mechanic uses existing exact engine, not a new engine.
     // Reuses the exact family engine for addition commutativity; not a new engine.
+    // Uses existing exact numeric question engine; three-addend grouping within 20.
+    private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
+    {
+        const string family = "uae.g1.u04.l09.add_three_with_strategy";
+        var mode = random.Next(0, 3);
+        var a = mode == 0 ? random.Next(3, 10) : random.Next(1, 8);
+        var b = mode == 0 ? 10 - a : mode == 1 ? random.Next(1, 6) : random.Next(1, 8);
+        var c = mode == 1 ? b : mode == 0 ? random.Next(1, 9) : random.Next(1, 7);
+        var pair = mode == 1 ? b + c : a + b;
+        var total = a + b + c;
+        var prompt = mode switch
+        {
+            0 => $"اجمع ثلاثة أعداد بتكوين عشرة أولًا: ({a} + {b}) + {c}. ما المجموع النهائي؟",
+            1 => $"اجمع ثلاث مجموعات باستعمال المضاعف: {a} + ({b} + {c}). ما المجموع الكلي؟",
+            _ => $"لدي ثلاث مجموعات من {a} و{b} و{c} قطع. اختر زوجًا يسهل جمعه، ثم أوجد العدد الكلي."
+        };
+        return Problem(family, prompt,
+            "أحدد زوجًا مناسبًا، أحسبه، وأضيف المجموعة الثالثة مرة واحدة.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c), ("pair", pair),
+            ("total", total), ("mode", mode));
+    }
+
     private static ExactProblem BuildUaeGrade1CommutativeAdd(Random random)
     {
         const string family = "uae.g1.u04.l08.commutative_add";
@@ -6883,6 +6927,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["a"] + p["b"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u04.l08.commutative_add" =>
                 (p["mode"] == 0 ? p["a"] : p["total"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l09.add_three_with_strategy" =>
+                (p["a"] + p["b"] + p["c"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
