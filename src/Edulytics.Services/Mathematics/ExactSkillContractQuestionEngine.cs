@@ -97,6 +97,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l05.subtract_through_ten",
             "uae.g1.u05.l06.related_add_sub_facts",
             "uae.g1.u05.l07.fact_family_four_equations",
+            "uae.g1.u05.l08.missing_addend_part_whole",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -982,6 +983,15 @@ public sealed class ExactSkillContractQuestionEngine
             return p.TryGetValue("a", out var a) && a is >= 1 and <= 9 && p.TryGetValue("b", out var b) && b is >= 1 and <= 9 && p.TryGetValue("whole", out var whole) && whole == a + b && p.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["mode"] < 2 ? p["whole"] : p["mode"] == 2 ? p["b"] : p["a"]);
+        }
+        if (family == "uae.g1.u05.l08.missing_addend_part_whole")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("whole", out var whole) && whole is >= 4 and <= 20 && p.TryGetValue("known", out var known) && known >= 1 && known <= 10 && known < whole && p.TryGetValue("missing", out var missing) && missing == whole - known && p.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["whole"] - p["known"]);
         }
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
@@ -3570,6 +3580,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit4Lesson06(random),
             "uae.g1.u05.l07.fact_family_four_equations" =>
                 BuildUaeGrade1Unit4Lesson07(random),
+            "uae.g1.u05.l08.missing_addend_part_whole" =>
+                BuildUaeGrade1Unit4Lesson08(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4654,6 +4666,22 @@ public sealed class ExactSkillContractQuestionEngine
         return Problem(family, prompt,
             "تتكون عائلة الحقائق من الجزأين والكل، ومنها حقيقتا جمع وحقيقتا طرح.",
             AssessmentItemType.Numeric, ("a", a), ("b", b), ("whole", whole), ("mode", mode));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson08(Random random)
+    {
+        const string family = "uae.g1.u05.l08.missing_addend_part_whole";
+
+        var whole = random.Next(4, 21);
+        var known = random.Next(1, Math.Min(whole, 11));
+        var missing = whole - known;
+        var mode = random.Next(0, 2);
+        var prompt = mode == 0
+            ? $"أكمل جملة الجمع: {known} + ؟ = {whole}. استخدم حقيقة الطرح لإيجاد الجزء الناقص."
+            : $"لدي مجموعتان مجموعهما {whole}، إحدى المجموعتين فيها {known} قطع. أكمل: ؟ + {known} = {whole}.";
+        return Problem(family, prompt,
+            "الجزء المجهول يساوي الكل ناقص الجزء المعروف؛ أتحقق بالجمع.",
+            AssessmentItemType.Numeric, ("whole", whole), ("known", known), ("missing", missing), ("mode", mode));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -7133,6 +7161,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["b"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l07.fact_family_four_equations" =>
                 (p["mode"] < 2 ? p["whole"] : p["mode"] == 2 ? p["b"] : p["a"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l08.missing_addend_part_whole" =>
+                (p["whole"] - p["known"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
