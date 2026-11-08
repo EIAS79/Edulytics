@@ -93,6 +93,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l01.count_back_1_2_3",
             "uae.g1.u05.l02.number_line_subtract",
             "uae.g1.u05.l03.doubles_subtraction",
+            "uae.g1.u05.l04.story_subtraction_equation",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -942,6 +943,15 @@ public sealed class ExactSkillContractQuestionEngine
             return p.TryGetValue("part", out var part) && part is >= 1 and <= 10 && p.TryGetValue("whole", out var whole) && whole == 2 * part &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["part"]);
+        }
+        if (family == "uae.g1.u05.l04.story_subtraction_equation")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("whole", out var whole) && whole is >= 5 and <= 20 && p.TryGetValue("removed", out var removed) && removed >= 1 && removed <= 10 && removed < whole && p.TryGetValue("remaining", out var remaining) && remaining == whole - removed && p.TryGetValue("scene", out var scene) && scene is >= 0 and <= 2 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["whole"] - p["removed"]);
         }
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
@@ -3522,6 +3532,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit4Lesson02(random),
             "uae.g1.u05.l03.doubles_subtraction" =>
                 BuildUaeGrade1Unit4Lesson03(random),
+            "uae.g1.u05.l04.story_subtraction_equation" =>
+                BuildUaeGrade1Unit4Lesson04(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4542,6 +4554,21 @@ public sealed class ExactSkillContractQuestionEngine
             $"كون مجموعتين متساويتين، في كل منهما {part} مكعبات. إذا كان المجموع {whole} ثم أزلت إحدى المجموعتين، فأكمل {whole} − {part} = ؟.",
             "المضاعف هو مجموع مجموعتين متساويتين؛ إذا أزلت واحدة تبقى الأخرى.",
             AssessmentItemType.Numeric, ("part", part), ("whole", whole));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson04(Random random)
+    {
+        const string family = "uae.g1.u05.l04.story_subtraction_equation";
+
+        var whole = random.Next(5, 21);
+        var removed = random.Next(1, Math.Min(whole - 1, 10) + 1);
+        var remaining = whole - removed;
+        var scene = random.Next(0, 3);
+        var units = new[] { "أقلام", "مكعبات", "بطاقات" };
+        return Problem(family,
+            $"في صندوق {whole} من {units[scene]}، أعطينا {removed} منها لصديق. مثّل المسألة واكتب جملة طرح ثم اكتب العدد المتبقي: {whole} − {removed} = ؟.",
+            "أفهم وأخطط وأمثل الكل، ثم أحذف ما غادر، وأتحقق من الفرق بجمع الجزءين.",
+            AssessmentItemType.Numeric, ("whole", whole), ("removed", removed), ("remaining", remaining), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -7013,6 +7040,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["start"] - p["hops"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l03.doubles_subtraction" =>
                 (p["part"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l04.story_subtraction_equation" =>
+                (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
