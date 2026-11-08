@@ -80,6 +80,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u03.l11.subtract_9",
             "uae.g1.u03.l12.subtract_10",
             "uae.g1.u03.l13.related_add_subtract",
+            "uae.g1.u03.l14.true_false_subtraction",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -902,6 +903,14 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u03.l14.true_false_subtraction")
+        {
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 1 and <= 10 &&
+                parameters.TryGetValue("removed", out var removed) && removed >= 0 && removed <= whole &&
+                parameters.TryGetValue("shown", out var shown) && shown is >= 0 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                string.Equals(answer.Trim(), whole - removed == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
         }
         if (family == "uae.g1.u02.l13.true_false_addition")
         {
@@ -3329,6 +3338,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1SubtractionStory(random, family),
             "uae.g1.u03.l13.related_add_subtract" =>
                 BuildUaeGrade1RelatedFacts(random),
+            "uae.g1.u03.l14.true_false_subtraction" =>
+                BuildUaeGrade1TrueFalseSubtraction(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4306,6 +4317,29 @@ public sealed class ExactSkillContractQuestionEngine
             "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
             AssessmentItemType.Numeric,
             ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1TrueFalseSubtraction(Random random)
+    {
+        const string family = "uae.g1.u03.l14.true_false_subtraction";
+        var whole = random.Next(1, 11);
+        var removed = random.Next(0, whole + 1);
+        var correct = random.Next(0, 2) == 0;
+        var difference = whole - removed;
+        var shown = correct ? difference : (difference + 1) % 11;
+        var scene = random.Next(0, 4);
+        var statement = scene switch
+        {
+            0 => $"{whole} − {removed} = {shown}",
+            1 => $"{shown} = {whole} − {removed}",
+            2 => $"{whole} − {removed} = {shown}",
+            _ => $"{shown} = {whole} − {removed}"
+        };
+        return Problem(family,
+            $"هل العبارة {statement} صحيحة أم خطأ؟ ابدأ بـ {whole} نقطة واشطب {removed} ثم قارن الباقي.",
+            "أتأكد بعد شطب المطروح أن الباقي يساوي العدد المكتوب في الطرف الآخر.",
+            AssessmentItemType.ShortAnswer,
+            ("whole", whole), ("removed", removed), ("shown", shown), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1TrueFalseAddition(Random random)
@@ -6567,6 +6601,8 @@ public sealed class ExactSkillContractQuestionEngine
                 p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
             "uae.g1.u03.l13.related_add_subtract" =>
                 (p["removeLeft"] == 1 ? p["right"] : p["left"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u03.l14.true_false_subtraction" =>
+                p["whole"] - p["removed"] == p["shown"] ? "صحيحة" : "خطأ",
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>

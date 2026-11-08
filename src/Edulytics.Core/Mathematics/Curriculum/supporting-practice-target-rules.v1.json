@@ -11135,6 +11135,29 @@
         "commonMistake": "طرح العدد الأكبر من الأصغر بدل طرح جزء من الكل.",
         "summary": "ثلاثة أعداد مرتبطة تعطيني حقائق جمع وطرح."
       }
+    },
+    {
+      "id": "uae-g1-u2-l14-arabic-true-false-subtraction-2025",
+      "titlePatterns": [
+        "^العبارات الصحيحة والخطأ$",
+        "^العبارات الصحيحة والخطأ في الطرح$",
+        "^True and False Number Statements$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:14$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "COMPARE_SUBTRACTION_EQUATION_TRUTH_WITH_TAKE_AWAY_MODEL",
+      "families": [
+        "uae.g1.u03.l14.true_false_subtraction"
+      ],
+      "content": {
+        "concept": "أتحقق من تساوي طرفي جملة الطرح بتحديد الكل والمزال والباقي.",
+        "workedExample": "٩ − ٤ = ٥ صحيحة، و٨ − ٣ = ٢ خطأ.",
+        "solution": "أمثل الكل وأشطب المطروح ثم أقرأ الباقي وأقارنه بالناتج المعروض.",
+        "commonMistake": "عد العناصر المزالة بدل الباقية أو عدم تصحيح عبارة خاطئة.",
+        "summary": "أتحقق من الطرح ثم أضع «صحيحة» أو «خطأ» وأصلح الخطأ."
+      }
     }
   ]
 }
