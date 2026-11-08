@@ -6094,22 +6094,23 @@
     {
       "id": "uae-g1-1-4-read-and-write-9-and-10",
       "titlePatterns": [
-        "^Read and Write 9 and 10$"
+        "^Read and Write 9 and 10$",
+        "^قراءة وكتابة العددين [٩9] و[١1][٠0]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:04$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "COUNT_READ_WRITE_9_10",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l04.read_write_9_10"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write 9 and 10.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write 9 and 10."
+        "concept": "٩ تعني تسعة عناصر، و١٠ تعني عشرة. عند إضافة واحد إلى مجموعة من تسعة تصبح عشرة. في إطار عشرة، ٩ = تسع خانات مملوءة وخانة واحدة فارغة، و١٠ = عشر خانات مملوءة. العدد ١٠ يتكون من رقمين ١ ثم ٠؛ ليس ٠١.",
+        "workedExample": "مثال أصلي ١: إطار عشرة فيه ●●●●● / ●●●●□، أي تسع نقاط، أكتب ٩.",
+        "solution": "١. أرتب عناصر في مجموعتين لأعدّها من دون تكرار. ٢. أعدّ حتى تسعة، وأكتب الرقم ٩ وأقرأ «تسعة». ٣. أضيف عنصرًا آخر وأعدّ حتى عشرة، وأكتب ١٠ وأقرأ «عشرة».",
+        "commonMistake": "عدّ الخانة الفارغة نقطة، أو إسقاط العنصر العاشر، أو قراءة ١٠ على أنها ١ أو كتابة ٠١ بدل ١٠. أراجع العشرة بإطار من صفين، وألاحظ الصفر يأتي بعد الواحد عند كتابة ١٠.",
+        "summary": "تسعة ٩، وعشرة ١٠؛ أميزهما بفارق عنصر واحد وأكتب ١٠ بالترتيب الصحيح."
       }
     },
     {

@@ -1,9 +1,8 @@
-# UAE Grade 1 / Unit A / Lesson 4
+# UAE Grade 1 Unit A / Lesson 4
 
-Source: Arabic Grade 1 Student Book, cover 2025–2026, local source SHA256 BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44.
-Student textbook: printed pages A37–A42, PDF pages 54–59.
-Title: قراءة وكتابة العددين 9 و10. LessonCode preserved: PED:UAE-MOE-MATH:L1:COMMON:01:04.
-Identified source: numeric recognition, cardinality model, Arabic numeral writing, worked model, guided practice.
-Original authored learner material: Arabic explanation, number-specific examples, original dot/ten-frame notation, activity, teacher instructions, errors and original exit ticket. No copyrighted source image or long text copied.
-Stage C: exact count family uae.g1.u01.l04.read_write_9_10, allowed range 9–10, numeric exact grading plus teacher-reviewed handwriting and oral language.
-Open gaps: independent atomic enumeration across all textbook page elements not certified; runtime lesson-to-engine routing and RTL display unverified; Stage D tests NOT RUN.
+Source: Arabic Grade 1 Student Book, 2025–2026, SHA256 `BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44`. Printed A37–A42, PDF 54–59, verified visually. Atomic category map: [lesson-4-atomic-coverage.md](lesson-4-atomic-coverage.md).
+
+- Stage A: pedagogical elements reviewed page by page.
+- Stage B: original Arabic teaching, examples, independent tasks, mistake analysis, teacher guidance and original exit ticket.
+- Stage C: exact family `uae.g1.u01.l04.read_write_9_10` registered for this LessonCode, with deterministic numeric verifier and written targeted test; handwriting/oral tasks are human reviewed.
+- Status: **READY_FOR_STAGE_D**; test state `WRITTEN_NOT_RUN`, no Stage D or CI executed.
