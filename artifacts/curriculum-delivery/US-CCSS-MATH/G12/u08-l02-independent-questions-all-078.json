@@ -1,0 +1,632 @@
+{
+  "SchemaVersion": 1,
+  "Section": "8.2",
+  "Count": 78,
+  "IndependentMathProblemsTeacherKeys": [
+    {
+      "SourceExercise": 1,
+      "FirstPartyIndependentQuestion": "Which measurements allow Law of Cosines to find the missing side?",
+      "TeacherMathAnswer": "SAS: two side lengths and their included angle; a²=b²+c²−2bc cosA.",
+      "OriginalSourceMathematicsSkill": "Source1 SAS missing side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 2,
+      "FirstPartyIndependentQuestion": "Which measurements allow Law of Cosines to find a missing angle?",
+      "TeacherMathAnswer": "SSS: all three side lengths, with triangle inequality.",
+      "OriginalSourceMathematicsSkill": "Source2 SSS missing angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 3,
+      "FirstPartyIndependentQuestion": "Define semiperimeter s in Heron's area formula.",
+      "TeacherMathAnswer": "s=(a+b+c)/2; area=sqrt(s(s−a)(s−b)(s−c)).",
+      "OriginalSourceMathematicsSkill": "Source3 Heron's semiperimeter",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 4,
+      "FirstPartyIndependentQuestion": "How does Law of Cosines reduce to Pythagorean theorem?",
+      "TeacherMathAnswer": "At included angle90° cos90°=0 so c²=a²+b².",
+      "OriginalSourceMathematicsSkill": "Source4 cosine and Pythagoras",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 5,
+      "FirstPartyIndependentQuestion": "When does a non-right triangle require cosine law rather than right-angle Pythagoras?",
+      "TeacherMathAnswer": "For non-90° included angle in SAS/SSS oblique triangles.",
+      "OriginalSourceMathematicsSkill": "Source5 nonright geometry",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 6,
+      "FirstPartyIndependentQuestion": "Find side c of triangle with adjacent sides a=2.49,b=3.13 and included C=41.2°.",
+      "TeacherMathAnswer": "c=sqrt(a²+b²−2ab cosC)≈2.0661.",
+      "OriginalSourceMathematicsSkill": "Source6 oblique triangle missing side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 7,
+      "FirstPartyIndependentQuestion": "Find side c of triangle with adjacent sides a=6,b=7 and included C=120°.",
+      "TeacherMathAnswer": "c=sqrt(a²+b²−2ab cosC)≈11.2694.",
+      "OriginalSourceMathematicsSkill": "Source7 oblique triangle missing side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 8,
+      "FirstPartyIndependentQuestion": "Find side c of triangle with adjacent sides a=10.6,b=15.7 and included C=58.7°.",
+      "TeacherMathAnswer": "c=sqrt(a²+b²−2ab cosC)≈13.6357.",
+      "OriginalSourceMathematicsSkill": "Source8 oblique triangle missing side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 9,
+      "FirstPartyIndependentQuestion": "Find side c of triangle with adjacent sides a=18,b=23 and included C=115°.",
+      "TeacherMathAnswer": "c=sqrt(a²+b²−2ab cosC)≈34.6833.",
+      "OriginalSourceMathematicsSkill": "Source9 oblique triangle missing side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 10,
+      "FirstPartyIndependentQuestion": "Given A=119°, opposite a=26, second side b=14, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "c≈16.149 (1 triangle(s)); derived via quadratic cosine law.",
+      "OriginalSourceMathematicsSkill": "Source10 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 11,
+      "FirstPartyIndependentQuestion": "Given A=113°, opposite a=32, second side b=10, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "c≈26.740 (1 triangle(s)); derived via quadratic cosine law.",
+      "OriginalSourceMathematicsSkill": "Source11 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 12,
+      "FirstPartyIndependentQuestion": "Given A=67°, opposite a=38, second side b=49, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "No feasible triangle.",
+      "OriginalSourceMathematicsSkill": "Source12 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 13,
+      "FirstPartyIndependentQuestion": "Given A=43.1°, opposite a=184.2, second side b=242.8, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "c≈97.238; c≈257.328 (2 triangle(s)); derived via quadratic cosine law.",
+      "OriginalSourceMathematicsSkill": "Source13 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 14,
+      "FirstPartyIndependentQuestion": "Given A=36.6°, opposite a=186.2, second side b=242.2, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "c≈76.895; c≈311.990 (2 triangle(s)); derived via quadratic cosine law.",
+      "OriginalSourceMathematicsSkill": "Source14 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 15,
+      "FirstPartyIndependentQuestion": "Given A=50°, opposite a=45, second side b=105, solve all positive c using cosine law.",
+      "TeacherMathAnswer": "No feasible triangle.",
+      "OriginalSourceMathematicsSkill": "Source15 Law of Cosines SSA solving and feasibility",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 16,
+      "FirstPartyIndependentQuestion": "Triangle a=42, b=19, c=30. Find angleA by cosine law.",
+      "TeacherMathAnswer": "A=arccos((other sides squared−42²)/(2·other sides))≈116.182°.",
+      "OriginalSourceMathematicsSkill": "Source16 SSS angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 17,
+      "FirstPartyIndependentQuestion": "Triangle a=14, b=13, c=20. Find angleC by cosine law.",
+      "TeacherMathAnswer": "C=arccos((other sides squared−20²)/(2·other sides))≈95.518°.",
+      "OriginalSourceMathematicsSkill": "Source17 SSS angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 18,
+      "FirstPartyIndependentQuestion": "Triangle a=16, b=31, c=20. Find angleB by cosine law.",
+      "TeacherMathAnswer": "B=arccos((other sides squared−31²)/(2·other sides))≈118.461°.",
+      "OriginalSourceMathematicsSkill": "Source18 SSS angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 19,
+      "FirstPartyIndependentQuestion": "Triangle a=13, b=22, c=28. Find angleA by cosine law.",
+      "TeacherMathAnswer": "A=arccos((other sides squared−13²)/(2·other sides))≈26.869°.",
+      "OriginalSourceMathematicsSkill": "Source19 SSS angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 20,
+      "FirstPartyIndependentQuestion": "Triangle a=108, b=132, c=160. Find angleC by cosine law.",
+      "TeacherMathAnswer": "C=arccos((other sides squared−160²)/(2·other sides))≈82.973°.",
+      "OriginalSourceMathematicsSkill": "Source20 SSS angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 21,
+      "FirstPartyIndependentQuestion": "Solve full triangle A=35°, b=8,c=11.",
+      "TeacherMathAnswer": "a≈6.3898,B≈45.899°,C≈99.101°; A+B+C=180.",
+      "OriginalSourceMathematicsSkill": "Source21 complete SAS solution",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 22,
+      "FirstPartyIndependentQuestion": "Solve full triangle A=88°, b=4.4,c=5.2.",
+      "TeacherMathAnswer": "a≈6.6935,B≈41.068°,C≈50.932°; A+B+C=180.",
+      "OriginalSourceMathematicsSkill": "Source22 complete SAS solution",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 23,
+      "FirstPartyIndependentQuestion": "Solve full triangle A=121°, b=21,c=37.",
+      "TeacherMathAnswer": "a≈51.0918,B≈20.629°,C≈38.371°; A+B+C=180.",
+      "OriginalSourceMathematicsSkill": "Source23 complete SAS solution",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 24,
+      "FirstPartyIndependentQuestion": "Solve SSS triangle with a=13,b=11,c=15 angles.",
+      "TeacherMathAnswer": "A≈57.564°,B≈45.573°,C≈76.863°.",
+      "OriginalSourceMathematicsSkill": "Source24 SSS full triangle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 25,
+      "FirstPartyIndependentQuestion": "Solve SSS triangle with a=3.1,b=3.5,c=5 angles.",
+      "TeacherMathAnswer": "A≈37.841°,B≈43.839°,C≈98.320°.",
+      "OriginalSourceMathematicsSkill": "Source25 SSS full triangle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 26,
+      "FirstPartyIndependentQuestion": "Solve SSS triangle with a=51,b=25,c=29 angles.",
+      "TeacherMathAnswer": "A≈141.514°,B≈17.762°,C≈20.724°.",
+      "OriginalSourceMathematicsSkill": "Source26 SSS full triangle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 27,
+      "FirstPartyIndependentQuestion": "Find area by Heron's formula: side lengths18,21,32.",
+      "TeacherMathAnswer": "s=35.500000, area≈177.56249 square units.",
+      "OriginalSourceMathematicsSkill": "Source27 Heron area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 28,
+      "FirstPartyIndependentQuestion": "Find area by Heron's formula: side lengths20,26,37.",
+      "TeacherMathAnswer": "s=41.500000, area≈249.46831 square units.",
+      "OriginalSourceMathematicsSkill": "Source28 Heron area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 29,
+      "FirstPartyIndependentQuestion": "Find area by Heron's formula: side lengths0.5,0.3333333333333333,0.25.",
+      "TeacherMathAnswer": "s=0.541667, area≈0.03703 square units.",
+      "OriginalSourceMathematicsSkill": "Source29 Heron area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 30,
+      "FirstPartyIndependentQuestion": "Find area by Heron's formula: side lengths12.4,13.7,20.2.",
+      "TeacherMathAnswer": "s=23.150000, area≈83.29264 square units.",
+      "OriginalSourceMathematicsSkill": "Source30 Heron area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 31,
+      "FirstPartyIndependentQuestion": "Find area by Heron's formula: side lengths1.6,2.6,4.1.",
+      "TeacherMathAnswer": "s=4.150000, area≈0.90562 square units.",
+      "OriginalSourceMathematicsSkill": "Source31 Heron area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 32,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides6.5,5, included72°. Find third side.",
+      "TeacherMathAnswer": "c≈6.8676.",
+      "OriginalSourceMathematicsSkill": "Source32 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 33,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides4.5,3.4, included42°. Find third side.",
+      "TeacherMathAnswer": "c≈3.0116.",
+      "OriginalSourceMathematicsSkill": "Source33 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 34,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides12,15, included40°. Find third side.",
+      "TeacherMathAnswer": "c≈9.6553.",
+      "OriginalSourceMathematicsSkill": "Source34 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 35,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides30,23, included65°. Find third side.",
+      "TeacherMathAnswer": "c≈29.0824.",
+      "OriginalSourceMathematicsSkill": "Source35 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 36,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides225,305, included50°. Find third side.",
+      "TeacherMathAnswer": "c≈235.4302.",
+      "OriginalSourceMathematicsSkill": "Source36 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 37,
+      "FirstPartyIndependentQuestion": "Independent oblique diagram sides15,13, included123°. Find third side.",
+      "TeacherMathAnswer": "c≈24.6254.",
+      "OriginalSourceMathematicsSkill": "Source37 figure SAS unknown side",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 38,
+      "FirstPartyIndependentQuestion": "Given independently labeled SSS triangle with a=1.5,b=2.5,c=2.3, find angleA.",
+      "TeacherMathAnswer": "A≈36.1159°.",
+      "OriginalSourceMathematicsSkill": "Source38 diagram inferred unknown angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 39,
+      "FirstPartyIndependentQuestion": "Given independently labeled SSS triangle with a=115,b=125,c=100, find angleA.",
+      "TeacherMathAnswer": "A≈60.2643°.",
+      "OriginalSourceMathematicsSkill": "Source39 diagram inferred unknown angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 40,
+      "FirstPartyIndependentQuestion": "Given independently labeled SSS triangle with a=4.3,b=6.8,c=8.2, find angleA.",
+      "TeacherMathAnswer": "A≈31.5947°.",
+      "OriginalSourceMathematicsSkill": "Source40 diagram inferred unknown angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 41,
+      "FirstPartyIndependentQuestion": "Given independently labeled SSS triangle with a=38.7,b=40.6,c=23.3, find angleA.",
+      "TeacherMathAnswer": "A≈68.4950°.",
+      "OriginalSourceMathematicsSkill": "Source41 diagram inferred unknown angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 42,
+      "FirstPartyIndependentQuestion": "Given independently labeled SSS triangle with a=12,b=10,c=7, find angleA.",
+      "TeacherMathAnswer": "A≈87.9533°.",
+      "OriginalSourceMathematicsSkill": "Source42 diagram inferred unknown angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 43,
+      "FirstPartyIndependentQuestion": "Find third side of oblique triangle with sides28,20, included60°.",
+      "TeacherMathAnswer": "c≈24.9800.",
+      "OriginalSourceMathematicsSkill": "Source43 diagram and cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 44,
+      "FirstPartyIndependentQuestion": "Find third side of oblique triangle with sides16,10, included30°.",
+      "TeacherMathAnswer": "c≈8.8810.",
+      "OriginalSourceMathematicsSkill": "Source44 diagram and cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 45,
+      "FirstPartyIndependentQuestion": "Find third side of oblique triangle with sides13,20, included22°.",
+      "TeacherMathAnswer": "c≈9.3201.",
+      "OriginalSourceMathematicsSkill": "Source45 diagram and cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 46,
+      "FirstPartyIndependentQuestion": "Find third side of oblique triangle with sides9,5, included88°.",
+      "TeacherMathAnswer": "c≈10.1419.",
+      "OriginalSourceMathematicsSkill": "Source46 diagram and cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 47,
+      "FirstPartyIndependentQuestion": "Find area of graphical triangle side lengths12,8,17 by Heron.",
+      "TeacherMathAnswer": "Area≈43.5194 square units.",
+      "OriginalSourceMathematicsSkill": "Source47 diagram Heron's formula",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 48,
+      "FirstPartyIndependentQuestion": "Find area of graphical triangle side lengths50,36,22 by Heron.",
+      "TeacherMathAnswer": "Area≈352.7265 square units.",
+      "OriginalSourceMathematicsSkill": "Source48 diagram Heron's formula",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 49,
+      "FirstPartyIndependentQuestion": "Find area of graphical triangle side lengths1.9,2.6,4.3 by Heron.",
+      "TeacherMathAnswer": "Area≈1.4071 square units.",
+      "OriginalSourceMathematicsSkill": "Source49 diagram Heron's formula",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 50,
+      "FirstPartyIndependentQuestion": "Find area of graphical triangle side lengths12.5,8.9,16.2 by Heron.",
+      "TeacherMathAnswer": "Area≈55.2145 square units.",
+      "OriginalSourceMathematicsSkill": "Source50 diagram Heron's formula",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 51,
+      "FirstPartyIndependentQuestion": "Find area of graphical triangle side lengths6,7,8 by Heron.",
+      "TeacherMathAnswer": "Area≈20.3332 square units.",
+      "OriginalSourceMathematicsSkill": "Source51 diagram Heron's formula",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 52,
+      "FirstPartyIndependentQuestion": "A parallelogram sides16,10 with one diagonal12. Find other diagonal using parallelogram law.",
+      "TeacherMathAnswer": "d²+12²=2(16²+10²), other≈23.8328.",
+      "OriginalSourceMathematicsSkill": "Source52 parallelogram cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 53,
+      "FirstPartyIndependentQuestion": "A parallelogram sides11,17 with one diagonal22. Find other diagonal using parallelogram law.",
+      "TeacherMathAnswer": "d²+22²=2(11²+17²), other≈18.3303.",
+      "OriginalSourceMathematicsSkill": "Source53 parallelogram cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 54,
+      "FirstPartyIndependentQuestion": "Parallelogram sides28cm,40cm included angle100°; find shorter diagonal.",
+      "TeacherMathAnswer": "Shorter d≈44.6657cm (cos100°<0).",
+      "OriginalSourceMathematicsSkill": "Source54 parallelogram included obtuse angle",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 55,
+      "FirstPartyIndependentQuestion": "Regular 8-gon inscribed in circle radius8. Determine perimeter by chord lengths.",
+      "TeacherMathAnswer": "P=2nRsin(π/n)≈48.9835.",
+      "OriginalSourceMathematicsSkill": "Source55 regular polygon circumradius/perimeter",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 56,
+      "FirstPartyIndependentQuestion": "Regular 5-gon inscribed in circle radius12. Determine perimeter by chord lengths.",
+      "TeacherMathAnswer": "P=2nRsin(π/n)≈70.5342.",
+      "OriginalSourceMathematicsSkill": "Source56 regular polygon circumradius/perimeter",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 57,
+      "FirstPartyIndependentQuestion": "An oblique triangle has a=5,b=6, included angle52°. Sketch and calculate c.",
+      "TeacherMathAnswer": "c=sqrt(25+36−2·5·6cos52°)≈4.9051.",
+      "OriginalSourceMathematicsSkill": "Source57 derive and calculate third side from cosine relationship",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 58,
+      "FirstPartyIndependentQuestion": "An oblique triangle has a=5,b=6, included angle52°. Sketch and calculate c.",
+      "TeacherMathAnswer": "c=sqrt(25+36−2·5·6cos52°)≈4.9051.",
+      "OriginalSourceMathematicsSkill": "Source58 derive and calculate third side from cosine relationship",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 59,
+      "FirstPartyIndependentQuestion": "Find triangular area, adjacent sides5.3,3.4, included22°.",
+      "TeacherMathAnswer": "A=ab sinθ/2≈3.3752.",
+      "OriginalSourceMathematicsSkill": "Source59 SAS oblique triangle area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 60,
+      "FirstPartyIndependentQuestion": "Find triangular area, adjacent sides8,6, included80°.",
+      "TeacherMathAnswer": "A=ab sinθ/2≈23.6354.",
+      "OriginalSourceMathematicsSkill": "Source60 SAS oblique triangle area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 61,
+      "FirstPartyIndependentQuestion": "Find triangular area, adjacent sides12.8,18.8, included18°.",
+      "TeacherMathAnswer": "A=ab sinθ/2≈37.1809.",
+      "OriginalSourceMathematicsSkill": "Source61 SAS oblique triangle area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 62,
+      "FirstPartyIndependentQuestion": "Two sightline lengths 800,900 meet at angle70°. Find straight distance between endpoints.",
+      "TeacherMathAnswer": "d=sqrt(a²+b²−2ab cosθ)≈978.5147.",
+      "OriginalSourceMathematicsSkill": "Source62 surveyor/satellite distance",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 63,
+      "FirstPartyIndependentQuestion": "Two sightline lengths 370,350 meet at angle2.1°. Find straight distance between endpoints.",
+      "TeacherMathAnswer": "d=sqrt(a²+b²−2ab cosθ)≈23.9572.",
+      "OriginalSourceMathematicsSkill": "Source63 surveyor/satellite distance",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 64,
+      "FirstPartyIndependentQuestion": "Flight legs distance,bearing(clockwise from north)[(200, 40), (180, 170)]; find net distance and heading.",
+      "TeacherMathAnswer": "east=159.814,north=-24.057,distance=161.615,bearing=98.560°.",
+      "OriginalSourceMathematicsSkill": "Source64 aircraft course correction resultant",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 65,
+      "FirstPartyIndependentQuestion": "A tower113ft vertical on hill and anchor98ft uphill at34° to horizontal. Find cable from top to anchor.",
+      "TeacherMathAnswer": "Cable≈sqrt(113²+98²−2(113)(98)cos56°)=99.940ft.",
+      "OriginalSourceMathematicsSkill": "Source65 tower support wire cosine-law geometry",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 66,
+      "FirstPartyIndependentQuestion": "Ships depart same dock speed18mph bearing320° for10h and speed22mph bearing194° for10h. Find separation.",
+      "TeacherMathAnswer": "Distances180,220mi, angular separation126°, separation≈356.865mi.",
+      "OriginalSourceMathematicsSkill": "Source66 two ship bearings cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 67,
+      "FirstPartyIndependentQuestion": "Ships depart same dock speed18mph bearing327° for2h and speed4mph bearing60° for2h. Find separation.",
+      "TeacherMathAnswer": "Distances36,8mi, angular separation93°, separation≈37.285mi.",
+      "OriginalSourceMathematicsSkill": "Source67 two ship bearings cosine law",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 68,
+      "FirstPartyIndependentQuestion": "Triangular pool sides40ft,65ft enclosing50°. Find third side.",
+      "TeacherMathAnswer": "Third side≈49.8247ft.",
+      "OriginalSourceMathematicsSkill": "Source68 triangular pool length",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 69,
+      "FirstPartyIndependentQuestion": "Pilot travels1.5h at680mph, turns10° then travels2h same speed. Find net displacement.",
+      "TeacherMathAnswer": "Add successive vectors: d=sqrt(1020²+1360²+210201360cos10°)≈2371.1286mi.",
+      "OriginalSourceMathematicsSkill": "Source69 two successive flight legs",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 70,
+      "FirstPartyIndependentQuestion": "Three cities form triangle whose sides measure1744,714,2451 miles. Determine all angles.",
+      "TeacherMathAnswer": "Opposite side angles≈6.765°, 2.764°, 170.471°.",
+      "OriginalSourceMathematicsSkill": "Source70 city triangle SSS",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 71,
+      "FirstPartyIndependentQuestion": "Three cities form triangle whose sides measure140,442,315 miles. Determine all angles.",
+      "TeacherMathAnswer": "Opposite side angles≈9.056°, 150.203°, 20.741°.",
+      "OriginalSourceMathematicsSkill": "Source71 city triangle SSS",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 72,
+      "FirstPartyIndependentQuestion": "Two aircraft leave same point and travel1000mi at bearing20°, 1200mi at bearing150°. Find separation.",
+      "TeacherMathAnswer": "Angle between directions130°, separation≈1995.6679mi.",
+      "OriginalSourceMathematicsSkill": "Source72 divergent aircraft",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 73,
+      "FirstPartyIndependentQuestion": "Two aircraft leave same point and travel450.0mi at bearing270°, 630.0mi at bearing295°. Find separation.",
+      "TeacherMathAnswer": "Angle between directions25°, separation≈292.4440mi.",
+      "OriginalSourceMathematicsSkill": "Source73 divergent aircraft",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 74,
+      "FirstPartyIndependentQuestion": "Parallelogram sides15.4,9.8, area72.9; find longer diagonal.",
+      "TeacherMathAnswer": "sinθ=0.48304, |cosθ|=0.87560, longer diagonal≈24.4436.",
+      "OriginalSourceMathematicsSkill": "Source74 parallelogram area and diagonal",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 75,
+      "FirstPartyIndependentQuestion": "Quadrilateral consecutive sides4.5,7.9,9.4,12.9 and included angle117° between first two. Split at opposite diagonal, find area.",
+      "TeacherMathAnswer": "Diagonal≈10.7209, triangle area1≈15.8376,area2≈49.5373, total≈65.3750.",
+      "OriginalSourceMathematicsSkill": "Source75 quadrilateral decomposition into SAS and Heron",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 76,
+      "FirstPartyIndependentQuestion": "Quadrilateral consecutive sides5.7,7.2,9.4,12.8 and included angle106° between first two. Split at opposite diagonal, find area.",
+      "TeacherMathAnswer": "Diagonal≈10.3419, triangle area1≈19.7251,area2≈47.9657, total≈67.6908.",
+      "OriginalSourceMathematicsSkill": "Source76 quadrilateral decomposition into SAS and Heron",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 77,
+      "FirstPartyIndependentQuestion": "Land parcel triangular sides30,42 with included132°. Find area.",
+      "TeacherMathAnswer": "A=ab sinθ/2≈468.1812 square units.",
+      "OriginalSourceMathematicsSkill": "Source77 land area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    },
+    {
+      "SourceExercise": 78,
+      "FirstPartyIndependentQuestion": "Land parcel triangular sides110,250 with included85°. Find area.",
+      "TeacherMathAnswer": "A=ab sinθ/2≈13697.6771 square units.",
+      "OriginalSourceMathematicsSkill": "Source78 land area",
+      "PublisherOriginalTextCopied": false,
+      "ScoringMode": "TEACHER_MANUAL_OBLIQUE_GEOMETRY"
+    }
+  ],
+  "StageD": "NOT_RUN"
+}

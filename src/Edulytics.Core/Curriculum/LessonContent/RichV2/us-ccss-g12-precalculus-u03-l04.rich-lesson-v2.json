@@ -1,0 +1,308 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L04",
+  "ContentVersion": "g12-u03-l04-firstparty-polynomial-graphs-20261107",
+  "Lessons": [
+    {
+      "CultureCode": "en",
+      "Title": "Graphs of Polynomial Functions",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L04",
+      "ExplanationParagraphs": [
+        "Learning goals: distinguish smooth polynomial graphs from graphs with corners or discontinuities, factor to find zeros, recognize multiplicities, determine tails and turning-point bounds, sketch graphs and apply the Intermediate Value Theorem.",
+        "Polynomial p(x)=a∏(x−r)^m describes zeros and their multiplicities: odd m crosses the x-axis, even m touches it.",
+        "The leading coefficient and parity of total degree govern tails. A degree n polynomial has at most n−1 turning points; these are limits, not guaranteed counts.",
+        "When a continuous polynomial changes sign across an interval, the Intermediate Value Theorem guarantees at least one root inside, without claiming its exact position.",
+        "Construct a formula by multiplying factors corresponding to roots and use a known y-intercept or another coordinate to determine the scale a.",
+        "For optimization, compare all critical points in the physical interval plus endpoints; a local extremum alone may not be globally optimal.",
+        "Independent Edulytics Cool-down: (a) Describe end behavior and root multiplicity of −(x−2)²(x+1). (b) Show x³−x−1 has a zero in (1,2). (c) Construct a quadratic with double zero at3 and y-intercept8.",
+        "Independent Try It 1 — Root/axis intercepts. Find all real x-intercepts of p(x)=x⁴−10x²+9 and y-intercept.",
+        "Independent Try It 2 — Use multiplicity graph. A polynomial has simple zero x=−2, double zero x=1, another simple zero x=3. Explain crossing/touching.",
+        "Independent Try It 3 — Sketch given factors. Sketch p(x)=x(x−1)⁴(x+3)³ and classify tails.",
+        "Independent Try It 4 — Apply IVT with sign change. Show p(x)=x³−2x−2 has a real zero between x1 and x2.",
+        "Independent Try It 5 — Build from a graph description. A degree3 polynomial crosses at x=−1, touches at x=2 and passes through (0,8). Find lowest-degree formula.",
+        "Independent Try It 6 — Local extrema on interval. For f(x)=x³−3x on [−2,2], find global max/min including endpoints."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recognize smooth polynomial graphs",
+          "Question": "Among y=x³−x, y=|x| and y=1/x, classify which has a polynomial graph.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "x³−x is polynomial, smooth and continuous; |x| corner and 1/x gap/asymptote are not polynomials.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "x³−x is polynomial, smooth and continuous; |x| corner and 1/x gap/asymptote are not polynomials.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Factor a polynomial for its real zeros",
+          "Question": "Find x-intercepts of p(x)=x⁶−5x⁴+4x².",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "Factor x²(x²−1)(x²−4); zeros x=0,±1,±2; x0 has double multiplicity.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "Factor x²(x²−1)(x²−4); zeros x=0,±1,±2; x0 has double multiplicity.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Factor by grouping",
+          "Question": "Find zeros of p(x)=x³−3x²−4x+12.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "(x−3)(x−2)(x+2); zeros −2,2,3.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "(x−3)(x−2)(x+2); zeros −2,2,3.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Read intercepts from factored form",
+          "Question": "For p(x)=(x−2)²(2x+3), give x-zero multiplicities and y-intercept.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "x=2 multiplicity2 (touch), x=−3/2 multiplicity1 (cross), p(0)=12.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "x=2 multiplicity2 (touch), x=−3/2 multiplicity1 (cross), p(0)=12.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Find roots by testing possible factors",
+          "Question": "Find exact roots of p(x)=x³+3x²−4x−12.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "(x+3)(x−2)(x+2), roots −3,−2,2.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "(x+3)(x−2)(x+2), roots −3,−2,2.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Identify root multiplicity from factors",
+          "Question": "For p(x)=(x−2)³(x+1)², list zeros and graph crossing behavior.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "x=2 multiplicity3 crosses with flattening, x=−1 multiplicity2 touches/bounces.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "x=2 multiplicity3 crosses with flattening, x=−1 multiplicity2 touches/bounces.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Bound turning points",
+          "Question": "For degree7 polynomial, what is the maximum possible number of turning points and real x-intercepts?",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "At most6 turns, at most7 distinct real zeros.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "At most6 turns, at most7 distinct real zeros.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Sketch factored polynomial",
+          "Question": "Sketch p(x)=−2(x+3)²(x−5) with correct end behavior and root behavior.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "Degree3 leading−2; left up/right down; x=−3 double touches; x=5 simple crosses.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "Degree3 leading−2; left up/right down; x=−3 double touches; x=5 simple crosses.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Intermediate Value Theorem",
+          "Question": "Show p(x)=x³−3x−1 has a zero in (1,2).",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "p(1)=−3, p(2)=1; by continuity a real zero lies between.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "p(1)=−3, p(2)=1; by continuity a real zero lies between.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Fit polynomial from zeros and point",
+          "Question": "A polynomial has roots −1 simple and 3 double and passes through (0,−9). Find formula.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "p(x)=−(x+1)(x−3)², because p(0)=9a=−9 gives a=−1.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "p(x)=−(x+1)(x−3)², because p(0)=9a=−9 gives a=−1.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        },
+        {
+          "Title": "Optimize open box volume",
+          "Question": "Cut squares of width w from corners of 12×18 sheet, fold into box. Model V(w) and its physical domain.",
+          "Method": "Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+          "Steps": [
+            "Plan: Analyze factorization, zero multiplicity, tail degree, sign changes and valid domain.",
+            "V(w)=w(12−2w)(18−2w), 0<w<6; check derivative or graph on this domain for max.",
+            "Validate: Check evaluated zeros and signs with exact arithmetic."
+          ],
+          "Answer": "V(w)=w(12−2w)(18−2w), 0<w<6; check derivative or graph on this domain for max.",
+          "Check": "Check evaluated zeros and signs with exact arithmetic."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polynomial graph continuity",
+          "Definition": "Polynomials are continuous at every real input.",
+          "Rule": "No finite jumps, gaps or vertical asymptotes.",
+          "Example": "x³−x."
+        },
+        {
+          "Title": "Smoothness",
+          "Definition": "Polynomial graphs have derivatives of all orders.",
+          "Rule": "Sharp corners suggest non-polynomial rules.",
+          "Example": "|x| is not polynomial."
+        },
+        {
+          "Title": "Root factorization",
+          "Definition": "p(r)=0 iff (x−r) divides p(x).",
+          "Rule": "Find real x-intercepts from factored p(x).",
+          "Example": "(x−2)(x+1) zeros2,−1."
+        },
+        {
+          "Title": "Multiplicity",
+          "Definition": "Factor (x−r)^m establishes root multiplicity m.",
+          "Rule": "Even m touches, odd m crosses.",
+          "Example": "(x−1)² touches x1."
+        },
+        {
+          "Title": "Leading term tails",
+          "Definition": "Degree parity and sign of leading coefficient determine end behavior.",
+          "Rule": "Even: same direction, odd: opposite.",
+          "Example": "−x³ left up/right down."
+        },
+        {
+          "Title": "Y-intercept",
+          "Definition": "Evaluate p(0) for y-intercept.",
+          "Rule": "Often use it to determine unknown scalar factor.",
+          "Example": "a(x−1)(x+2) at zero −2a."
+        },
+        {
+          "Title": "Polynomial turning-point bound",
+          "Definition": "Degree n polynomial has at most n−1 turning points.",
+          "Rule": "No claim that maximum number must occur.",
+          "Example": "Degree5 at most4 turns."
+        },
+        {
+          "Title": "Intermediate Value Theorem",
+          "Definition": "A continuous function whose values at a and b have opposite signs has a zero in (a,b).",
+          "Rule": "Show f(a)f(b)<0 and cite continuity.",
+          "Example": "x³−3x−1 signs change between1 and2."
+        },
+        {
+          "Title": "Polynomial reconstruction",
+          "Definition": "Use zeros, multiplicities and a known nonzero point to determine scale.",
+          "Rule": "p(x)=a∏(x−r)^m.",
+          "Example": "Zeros simple−1, double3 lead degree3."
+        },
+        {
+          "Title": "Local versus global extrema",
+          "Definition": "Local maxima/minima can differ from interval-wide extrema.",
+          "Rule": "Check interval endpoints and interior critical points.",
+          "Example": "x³−3x on [−2,2]."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Root multiplicity graph behavior",
+          "Description": "Independent first-party root classification.",
+          "PrimaryLabel": "Multiplicity",
+          "SecondaryLabel": "Graph",
+          "Rows": [
+            {
+              "Label": "Power of factor",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "At root",
+              "Cells": [
+                "Crosses",
+                "Touches",
+                "Crosses/flattens",
+                "Touches/flattens"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "IVT sign-change demonstration",
+          "Description": "Independent polynomial p(x)=x³−3x−1.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "p(x)",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "p(x)",
+              "Cells": [
+                "−1",
+                "−3",
+                "1",
+                "17"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Polynomial graph is continuous and smooth.",
+        "Real zeros and multiplicities arise from factors.",
+        "Odd roots cross; even roots touch.",
+        "Leading term determines end behavior.",
+        "IVT detects at least one zero between opposite signs."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Thinking every zero corresponds to a crossing.",
+          "WhyWrong": "Even-multiplicity roots touch and reverse direction.",
+          "Correction": "Identify multiplicity of each factor."
+        },
+        {
+          "Mistake": "Treating IVT as finding an exact root.",
+          "WhyWrong": "It only guarantees existence between opposite signs.",
+          "Correction": "Use factorization or numerical root method for exact/approximate value."
+        },
+        {
+          "Mistake": "Using only critical points in constrained optimization.",
+          "WhyWrong": "A boundary value may be greater/smaller.",
+          "Correction": "Check both endpoints and valid interior critical points."
+        }
+      ]
+    }
+  ]
+}

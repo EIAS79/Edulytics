@@ -26,8 +26,9 @@ public static class CurriculumLevelIdentityRegistry
     private const string SharedPathwayToken = "SHARED";
 
     public sealed record AmericanHighSchoolCourse(string Code, string Label, string Pathway);
-    // Exact CourseCode, NativeLevel and Pathway from the nine accepted
-    // src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-*.json files.
+    // CourseCode, NativeLevel, Pathway identity from reviewed source-backed
+    // high-school Blueprints. PRECALC is an additional Grade 12-only course;
+    // it must not become an implicit choice for earlier HS grade levels.
     public static IReadOnlyList<AmericanHighSchoolCourse> SourceBackedAmericanHighSchoolCourses { get; } =
     [
         new("ALG1", "Algebra 1", "Traditional"),
@@ -38,7 +39,8 @@ public static class CurriculumLevelIdentityRegistry
         new("ADV-TRIG-GEO", "Advanced Trigonometry & Geometry", "Fourth Courses"),
         new("COMPLEX", "Complex Numbers", "Fourth Courses"),
         new("PROB-DECISION", "Probability & Decision Making", "Fourth Courses"),
-        new("VECTOR-MATRIX", "Vectors & Matrices", "Fourth Courses")
+        new("VECTOR-MATRIX", "Vectors & Matrices", "Fourth Courses"),
+        new("PRECALC", "Precalculus", "Advanced Precalculus")
     ];
 
     public static IReadOnlyList<CurriculumLevelIdentity> All { get; } =
@@ -94,6 +96,11 @@ public static class CurriculumLevelIdentityRegistry
         yield return Create(packCode, level with { Pathway = "Fourth Courses" });
         foreach (var course in SourceBackedAmericanHighSchoolCourses)
         {
+            // Only Grade 12 has the reviewed OpenStax Precalculus source
+            // baseline. Never expose an unrouted lower/higher grade adoption.
+            if (course.Code == "PRECALC" && level.LogicalLevel != 13)
+                continue;
+
             yield return new CurriculumLevelIdentity(
                 BuildKey(packCode, level.LogicalLevel, course.Pathway, course.Code),
                 NormalizePackCode(packCode),

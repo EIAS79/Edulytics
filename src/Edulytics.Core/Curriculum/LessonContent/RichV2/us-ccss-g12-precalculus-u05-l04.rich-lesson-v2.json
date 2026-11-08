@@ -1,0 +1,178 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U05:L04",
+  "ContentVersion": "g12-u05-l04-firstparty-right-triangle-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04",
+      "CultureCode": "en",
+      "Title": "Right Triangle Trigonometry",
+      "ExplanationParagraphs": [
+        "For acute angle A in a right triangle, sin A=opposite/hypotenuse, cos A=adjacent/hypotenuse and tan A=opposite/adjacent.",
+        "Cosecant, secant and cotangent are reciprocal ratios, respectively hypotenuse/opposite, hypotenuse/adjacent and adjacent/opposite.",
+        "The hypotenuse always lies opposite the right angle, no matter how triangle is oriented on the page.",
+        "For right-triangle acute angles A+B=90°; use cofunction identities sin A=cos B, tan A=cot B.",
+        "Special 30-60-90 and45-45-90 triangles provide exact side ratios 1:sqrt3:2 and1:1:sqrt2.",
+        "Use inverse sides with trig ratios to solve unknown lengths. Never round intermediate computations unnecessarily.",
+        "Angles of elevation and depression can be modeled by one or multiple right triangles. Label horizontal distances and vertical heights before selecting tangent.",
+        "Independent Cool-down: (1) find ratios in 5-12-13 triangle, (2) solve complementary angle to32°, (3) find tower height from100m at angle40°.",
+        "Independent Try It 1: Opposite4, adjacent3, hyp5: find all six trig functions.",
+        "Independent Try It 2: Find tanA for a 5-12-13 right triangle with opposite5.",
+        "Independent Try It 3: 45° triangle with hyp6: find each leg.",
+        "Independent Try It 4: Complete sin25°=cos(___°).",
+        "Independent Try It 5: Angle60°, adjacent10: find opposite.",
+        "Independent Try It 6: Ladder10m at70°: find vertical reach."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Right triangle ratio",
+          "Question": "Given opposite9,adjacent12,hyp15, find sin,cos,tan.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "sin3/5,cos4/5,tan3/4.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "sin3/5,cos4/5,tan3/4.",
+          "Check": "Use Pythagorean identity and physical length units."
+        },
+        {
+          "Title": "Angle orientation",
+          "Question": "Find sin/cos of acute angle30° even when triangle shifted on page.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "sin1/2,cos sqrt3/2 independent of placement.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "sin1/2,cos sqrt3/2 independent of placement.",
+          "Check": "Use Pythagorean identity and physical length units."
+        },
+        {
+          "Title": "Special triangle",
+          "Question": "For45-45-90 triangle hyp10, find legs.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "Each5sqrt2.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "Each5sqrt2.",
+          "Check": "Use Pythagorean identity and physical length units."
+        },
+        {
+          "Title": "Cofunction",
+          "Question": "Evaluate cos35° as a sine.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "cos35°=sin55°.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "cos35°=sin55°.",
+          "Check": "Use Pythagorean identity and physical length units."
+        },
+        {
+          "Title": "Missing side with tangent",
+          "Question": "Angle40°, adjacent20ft; find opposite.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "Opposite20tan40°≈16.78ft.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "Opposite20tan40°≈16.78ft.",
+          "Check": "Use Pythagorean identity and physical length units."
+        },
+        {
+          "Title": "Indirect height",
+          "Question": "At distance100m, elevation35° to tower. Find tower height.",
+          "Method": "Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+          "Steps": [
+            "Plan: Label opposite, adjacent and hypotenuse; choose correct trig ratio.",
+            "100tan35°≈70.02m.",
+            "Validate: Use Pythagorean identity and physical length units."
+          ],
+          "Answer": "100tan35°≈70.02m.",
+          "Check": "Use Pythagorean identity and physical length units."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "SOH-CAH-TOA",
+          "Definition": "sin=opp/hyp,cos=adj/hyp,tan=opp/adj.",
+          "Rule": "Relative to chosen acute angle.",
+          "Example": "3-4-5 triangle."
+        },
+        {
+          "Title": "Cofunction",
+          "Definition": "sin A=cos(90°−A), tan A=cot(90°−A).",
+          "Rule": "Use only complementary acute angles in right-triangle context.",
+          "Example": "sin20°=cos70°."
+        },
+        {
+          "Title": "Indirect measurement",
+          "Definition": "tanθ=height/horizontal distance.",
+          "Rule": "Assume flat horizontal baseline for basic problems.",
+          "Example": "height=distance·tanθ."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent right triangle side ratio table",
+          "Description": "First-party geometry table.",
+          "PrimaryLabel": "Known sides",
+          "SecondaryLabel": "Trig ratio",
+          "Rows": [
+            {
+              "Label": "Triangle",
+              "Cells": [
+                "3-4-5",
+                "5-12-13",
+                "8-15-17"
+              ]
+            },
+            {
+              "Label": "sin A (opp first)",
+              "Cells": [
+                "3/5",
+                "5/13",
+                "8/17"
+              ]
+            },
+            {
+              "Label": "cos A",
+              "Cells": [
+                "4/5",
+                "12/13",
+                "15/17"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Identify opposite/adjacent relative to angle.",
+        "Use trig ratios and reciprocal functions.",
+        "Apply special triangle ratios.",
+        "Model elevation/depression with labeled distances."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse adjacent side and hypotenuse.",
+          "WhyWrong": "Adjacent is a leg, hypotenuse opposite90°.",
+          "Correction": "Mark right angle and triangle first."
+        },
+        {
+          "Mistake": "Use tangent of degrees with calculator set to radians.",
+          "WhyWrong": "Numeric output incorrect.",
+          "Correction": "Match angle-mode units."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L07",
+  "ContentVersion": "g12-u08-l07-firstparty-parametric-graphs-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L07",
+      "CultureCode": "en",
+      "Title": "Parametric Equations: Graphs",
+      "ExplanationParagraphs": [
+        "Make a table of (t,x(t),y(t)) then plot points in increasing t with arrows for direction.",
+        "Parametric curves can trace the same Cartesian locus with different orientation and speeds, or trace a locus multiple times.",
+        "Recognize line and parabola parameterizations and closed circles and ellipses from trig parameterizations.",
+        "Retain parameter domain to determine which branch or segment is actually plotted. A restricted curve differs from the entire locus.",
+        "Lissajous curves combine distinct sine frequencies; parametric curves can form complex periodic trajectories.",
+        "Projectile motion ignoring air resistance can use x=vx t, y=y0+vy t−16t² when feet/seconds and g≈32ft/s².",
+        "Independent Cool-down: graph x=t²,y=t on t∈[-2,2], sketch circle x=5cost,y=5sint, and derive projectile y(x) from x=12t,y=20t−16t².",
+        "Independent Try It 1: Plot x=t,y=t²−1.",
+        "Independent Try It 2: Plot x=3cost,y=2sint.",
+        "Independent Try It 3: Graph x=t+1,y=sqrt(t), t≥0."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Point plotting",
+          "Question": "Plot x=t,y=t².",
+          "Method": "Compute plotted coordinate pairs and parameter orientation.",
+          "Steps": [
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "Parabola upward, motion left-to-right as t grows.",
+            "Validate: Trace only allowed t intervals."
+          ],
+          "Answer": "Parabola upward, motion left-to-right as t grows.",
+          "Check": "Trace only allowed t intervals."
+        },
+        {
+          "Title": "Trigonometric ellipse",
+          "Question": "Plot x=4cost,y=2sint.",
+          "Method": "Compute plotted coordinate pairs and parameter orientation.",
+          "Steps": [
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "Ellipse x²/16+y²/4=1, CCW.",
+            "Validate: Trace only allowed t intervals."
+          ],
+          "Answer": "Ellipse x²/16+y²/4=1, CCW.",
+          "Check": "Trace only allowed t intervals."
+        },
+        {
+          "Title": "Graph equivalent",
+          "Question": "x=t+2,y=t².",
+          "Method": "Compute plotted coordinate pairs and parameter orientation.",
+          "Steps": [
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=(x−2)².",
+            "Validate: Trace only allowed t intervals."
+          ],
+          "Answer": "y=(x−2)².",
+          "Check": "Trace only allowed t intervals."
+        },
+        {
+          "Title": "Restricted curve",
+          "Question": "x=t,y=sqrt(t), t≥0.",
+          "Method": "Compute plotted coordinate pairs and parameter orientation.",
+          "Steps": [
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=sqrtx,x≥0.",
+            "Validate: Trace only allowed t intervals."
+          ],
+          "Answer": "y=sqrtx,x≥0.",
+          "Check": "Trace only allowed t intervals."
+        },
+        {
+          "Title": "Projectile",
+          "Question": "x=10t,y=20t−16t².",
+          "Method": "Compute plotted coordinate pairs and parameter orientation.",
+          "Steps": [
+            "Plan: Compute plotted coordinate pairs and parameter orientation.",
+            "y=2x−.16x², 0≤t≤1.25s.",
+            "Validate: Trace only allowed t intervals."
+          ],
+          "Answer": "y=2x−.16x², 0≤t≤1.25s.",
+          "Check": "Trace only allowed t intervals."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Orientation",
+          "Definition": "Arrows follow increasing t.",
+          "Rule": "Sample t monotonically.",
+          "Example": "x=t,y=t²."
+        },
+        {
+          "Title": "Parametric ellipse",
+          "Definition": "x=a cos t,y=b sin t.",
+          "Rule": "CCW for a,b>0.",
+          "Example": "a=4,b=2."
+        },
+        {
+          "Title": "Projectile",
+          "Definition": "x=vxt,y=y0+vyt−16t².",
+          "Rule": "Time domain until landing.",
+          "Example": "x=10t,y=20t−16t²."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent ordered parabola positions",
+          "Description": "First-party x=t,y=t² coordinate table with direction.",
+          "PrimaryLabel": "Time",
+          "SecondaryLabel": "Coordinates",
+          "Rows": [
+            {
+              "Label": "t",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "4",
+                "1",
+                "0",
+                "1",
+                "4"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Plot t-coordinate pairs and direction arrows.",
+        "Respect intervals.",
+        "Compare Cartesian loci and parametric travel.",
+        "Represent projectiles and periodic curves."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore interval t∈[0,1].",
+          "WhyWrong": "The full Cartesian graph includes unattained positions.",
+          "Correction": "Trace only allowed parameter values."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Trace only allowed t intervals."
+        }
+      ]
+    }
+  ]
+}

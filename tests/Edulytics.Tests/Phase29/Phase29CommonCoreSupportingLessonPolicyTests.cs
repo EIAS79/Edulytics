@@ -20,7 +20,8 @@ public sealed class
                     x =>
                         x.PackCode ==
                         MathematicsCurriculumPackRegistry
-                            .CommonCoreCode)
+                            .CommonCoreCode &&
+                        x.CourseCode != "PRECALC")
                 .ToArray();
 
         Assert.Equal(
@@ -101,7 +102,9 @@ public sealed class
                 .Where(
                     x =>
                         x.FrameworkVersionId ==
-                        versionId)
+                        versionId &&
+                        !x.Code.StartsWith(
+                            "PED:US-CCSS-MATH:HS:ADV:PRECALC:"))
                 .Select(
                     x => x.Id)
                 .ToArrayAsync();

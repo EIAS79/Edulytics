@@ -1,0 +1,251 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L03",
+  "ContentVersion": "g12-u04-l03-firstparty-logarithms-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L03",
+      "CultureCode": "en",
+      "Title": "Logarithmic Functions",
+      "ExplanationParagraphs": [
+        "A logarithm is an exponent: log_b(x)=y if and only if b^y=x, with b>0, b!=1 and x>0.",
+        "y=b^x and y=log_b(x) are inverse functions. Their coordinates swap across the line y=x; the logarithm has domain (0,infinity), range all real, and vertical asymptote x=0.",
+        "Negative and zero inputs have no real logarithm. Negative logarithm outputs are allowed; log_b(1)=0 and log_b(b)=1.",
+        "Common log means log_10; natural log ln means log_e. Use 10^(log x)=x and e^(ln x)=x only for x>0.",
+        "Use exact exponent recognition before numerical calculator evaluation; do not confuse a logarithm with multiplying by its base.",
+        "Log intensity scales compare ratios: Delta magnitude = log_10(I1/I2), not the absolute intensity itself.",
+        "Independent Edulytics cooldown: (a) log_4(x)=3, (b) convert 5^(-2)=1/25, (c) solve ln(x)=0 and explain why ln(-2) is not real.",
+        "Independent Try It 1: Convert log_7(49)=2 into exponent form.",
+        "Independent Try It 2: Convert 2^(-4)=1/16 into logarithm.",
+        "Independent Try It 3: Evaluate log_3(81).",
+        "Independent Try It 4: Evaluate log_5(1/125).",
+        "Independent Try It 5: Evaluate log(10^(-4)).",
+        "Independent Try It 6: Approximate log(80) to four decimals.",
+        "Independent Try It 7: Find Richter difference for intensity ratio1000.",
+        "Independent Try It 8: Evaluate ln(e^(1/2)) and ln(-1) in real numbers."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Logarithmic to exponential",
+          "Question": "Convert log_2(64)=6.",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "2^6=64; use base^exponent=argument.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "2^6=64; use base^exponent=argument.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Exponential to logarithmic",
+          "Question": "Convert 3^(-2)=1/9.",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "log_3(1/9)=-2.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "log_3(1/9)=-2.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Exact mental logarithm",
+          "Question": "Evaluate log_5(125).",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "3, because 5^3=125.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "3, because 5^3=125.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Reciprocal logarithm",
+          "Question": "Evaluate log_4(1/16).",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "-2, because 4^(-2)=1/16.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "-2, because 4^(-2)=1/16.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Common logarithm",
+          "Question": "Evaluate log(100000).",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "5, because 10^5=100000.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "5, because 10^5=100000.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Approximate common log",
+          "Question": "Evaluate log(45) to four decimals.",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "1.6532; positive argument required.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "1.6532; positive argument required.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Logarithmic real-world intensity",
+          "Question": "One measured intensity is 250 times another. Find base10 magnitude difference.",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "log(250)≈2.398.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "log(250)≈2.398.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        },
+        {
+          "Title": "Natural logarithm and domain",
+          "Question": "Evaluate ln(e^(-3)) and explain ln(-2).",
+          "Method": "Identify exponential-log inverse relation and domain; verify by back substitution.",
+          "Steps": [
+            "Plan: Identify exponential-log inverse relation and domain; verify by back substitution.",
+            "ln(e^(-3))=-3; ln(-2) has no real value.",
+            "Validate: Raise the stated base to the logarithmic answer and confirm the argument."
+          ],
+          "Answer": "ln(e^(-3))=-3; ln(-2) has no real value.",
+          "Check": "Raise the stated base to the logarithmic answer and confirm the argument."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Logarithm definition",
+          "Definition": "log_b(x)=y means b^y=x, b>0,b!=1,x>0.",
+          "Rule": "Exponentiate both sides to convert forms.",
+          "Example": "log_2(32)=5."
+        },
+        {
+          "Title": "Common and natural logarithms",
+          "Definition": "log(x)=log_10(x) and ln(x)=log_e(x).",
+          "Rule": "Both require positive real arguments.",
+          "Example": "ln(e^2)=2."
+        },
+        {
+          "Title": "Reciprocal logarithm",
+          "Definition": "log_b(1/b^n)=-n.",
+          "Rule": "Use b^(-n)=1/b^n.",
+          "Example": "log_3(1/27)=-3."
+        },
+        {
+          "Title": "Inverse-function graph",
+          "Definition": "The graph of log_b(x) reflects the graph of b^x over y=x.",
+          "Rule": "Swap each point (x,y) to (y,x), exchanging domain and range.",
+          "Example": "(0,1) on 2^x maps to (1,0) on log_2(x)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Inverse exponential and logarithm ordered pairs",
+          "Description": "First-party mathematical alternative for original Figure 2: interchange coordinates, reflect across y=x; not an original publisher graphic.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "Exponential x",
+              "Cells": [
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "Exponential 2^x",
+              "Cells": [
+                "1/2",
+                "1",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "Log input",
+              "Cells": [
+                "1/2",
+                "1",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "Log_2 output",
+              "Cells": [
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent seismic intensity multiplier table",
+          "Description": "Skill-context replacement for original Figure 1 credited earthquake photograph. The licensed photograph is not copied; these are authored numeric values.",
+          "PrimaryLabel": "Magnitude difference",
+          "SecondaryLabel": "Relative intensity",
+          "Rows": [
+            {
+              "Label": "Delta magnitude",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Relative intensity 10^Delta",
+              "Cells": [
+                "1",
+                "10",
+                "100",
+                "1000"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Convert log and exponential notation.",
+        "Respect positive inputs.",
+        "Use common log and ln distinctly.",
+        "Use inverse identities with domain restrictions.",
+        "Interpret magnitude from intensity ratios."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Attempt real log(0) or log(-4).",
+          "WhyWrong": "No power of a positive base yields a nonpositive real value.",
+          "Correction": "Require x>0."
+        },
+        {
+          "Mistake": "Assume log_b(1)=1.",
+          "WhyWrong": "Any valid base to power0 equals1.",
+          "Correction": "log_b(1)=0."
+        }
+      ]
+    }
+  ]
+}

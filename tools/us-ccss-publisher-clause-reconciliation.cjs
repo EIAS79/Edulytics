@@ -9,10 +9,17 @@ const read = x => JSON.parse(fs.readFileSync(path.join(root, x), 'utf8'));
 const registry = read('artifacts/academic-us-ccss/01-authority-registry.json');
 const old = read('docs/curriculum/us-ccss-121-clause-publisher-evidence.json');
 const base = 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs';
-const names = fs.readdirSync(path.join(root,base)).filter(x =>
+const allNames = fs.readdirSync(path.join(root,base)).filter(x =>
   /^us-ccss-.*\.lesson-blueprint\.json$/.test(x)).sort();
+// The supplementary Precalculus owner-course has no 121-CCSS subordinate
+// clause mapping. Keep the historical 1560 official lessons and their exact
+// 121-clause comparison intact; independently require the added source pack.
+const advancedName = 'us-ccss-math-hs-advanced-precalculus-openstax-2017.lesson-blueprint.json';
+const names=allNames.filter(x=>x!==advancedName);
 const must = (v,s) => { if (!v) throw Error(s); };
-must(names.length === 17, 'Expected exactly 17 authoritative blueprint declarations');
+must(allNames.length===18 && allNames.includes(advancedName),
+  'Expected all 18 source blueprints including supplementary Grade12');
+must(names.length === 17, 'Expected 17 original official-subclause blueprint declarations');
 const lessons = names.flatMap(x => read(base+'/'+x).Lessons);
 must(lessons.length === 1560, 'Canonical publisher lesson count drift');
 const normalized = x => String(x||'').replace(/^CCSS:/i,'').toLowerCase();

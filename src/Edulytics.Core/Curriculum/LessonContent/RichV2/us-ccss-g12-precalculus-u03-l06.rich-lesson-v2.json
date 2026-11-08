@@ -1,0 +1,291 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L06",
+  "ContentVersion": "g12-u03-l06-firstparty-polynomial-zeros-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06",
+      "CultureCode": "en",
+      "Title": "Zeros of Polynomial Functions",
+      "ExplanationParagraphs": [
+        "Original source learning goals: evaluate a polynomial via remainder theorem, apply factor theorem and Rational Zero Theorem, find real/complex roots, construct factors, analyze Descartes sign changes and solve polynomial volume models.",
+        "The Remainder Theorem says division by x−k leaves p(k); the Factor Theorem specializes this to zero remainder. Rational roots must be tested, not assumed.",
+        "The Rational Zero Theorem gives possible fractions ±(factor of constant)/(factor of leading coefficient), reduced to lowest terms.",
+        "Nonreal zeros of real-coefficient polynomials occur in conjugate pairs. All n complex roots of degree n are counted with multiplicity.",
+        "Descartes' Rule of Signs restricts possible positive/negative real zero counts but does not identify roots; explicitly test candidates.",
+        "Contextual models such as cubic volume require rejecting nonpositive lengths or other impossible roots.",
+        "Independent Edulytics cool-down: (a) Find remainder of x³−2x²+5x−4 on division by x−1. (b) Factor x³−6x²+11x−6. (c) Construct monic polynomial with roots 2,±i.",
+        "Independent Try It 1 — Remainder at negative input. Find remainder of p(x)=x³−4x²+x+7 divided by x+2.",
+        "Independent Try It 2 — Factor theorem with known root. Find zeros of p(x)=x³−5x²+2x+8 given x−2 is a factor.",
+        "Independent Try It 3 — Rational zero possibilities. List possible rational zeros of 3x³−4x²−7x+2.",
+        "Independent Try It 4 — Find real and complex zeros. Solve p(x)=x³−x²+9x−9.",
+        "Independent Try It 5 — Real coefficients conjugate pair. Build monic cubic with zeros −2,3i,−3i.",
+        "Independent Try It 6 — Descartes sign possibilities. For p(x)=x⁴−2x³−x²+4x−4, give allowed positive and negative root counts.",
+        "Independent Try It 7 — Box model polynomial dimensions. A box height h, width h+1, length 2h+1 has volume30 cubic units. Find positive h and dimensions."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use remainder theorem",
+          "Question": "For p(x)=x⁴−3x²+2x−1, find remainder on division by x−2.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(2)=16−12+4−1=7.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(2)=16−12+4−1=7.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Use factor theorem and find roots",
+          "Question": "For p(x)=x³−4x²+x+6, show x−2 factor, then find all real zeros.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(2)=0, p(x)=(x−2)(x−3)(x+1); roots −1,2,3.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(2)=0, p(x)=(x−2)(x−3)(x+1); roots −1,2,3.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Generate rational zero candidates",
+          "Question": "List all possible rational roots of p(x)=2x³−5x²−4x+3.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "Candidates ±1,±3,±1/2,±3/2; theorem gives candidates not guaranteed roots.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "Candidates ±1,±3,±1/2,±3/2; theorem gives candidates not guaranteed roots.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Test rational candidates",
+          "Question": "Find all roots of p(x)=x³−6x²+11x−6 using rational candidate checks.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(x)=(x−1)(x−2)(x−3); roots1,2,3.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(x)=(x−1)(x−2)(x−3); roots1,2,3.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Repeated real zeros",
+          "Question": "Find real zero multiplicities of p(x)=x³−3x+2.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(x)=(x−1)²(x+2), x=1 double, −2 simple.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(x)=(x−1)²(x+2), x=1 double, −2 simple.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Conjugate complex roots",
+          "Question": "Solve p(x)=x³−x²+4x−4 over complex numbers.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p=(x−1)(x²+4); roots1,±2i.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p=(x−1)(x²+4); roots1,±2i.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Reconstruct polynomial from nonreal zeros",
+          "Question": "Construct monic polynomial with real coefficients and zeros 3,1+2i,1−2i.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(x)=(x−3)(x²−2x+5)=x³−5x²+11x−15.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(x)=(x−3)(x²−2x+5)=x³−5x²+11x−15.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Descartes sign changes",
+          "Question": "For p(x)=x⁴−3x³+2x−4, list possible numbers of positive and negative real roots.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "p(x) coefficient sign changes3→possible positive3 or1; p(−x)=x⁴+3x³−2x−4 sign changes1→negative1.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "p(x) coefficient sign changes3→possible positive3 or1; p(−x)=x⁴+3x³−2x−4 sign changes1→negative1.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        },
+        {
+          "Title": "Model a cubic box volume",
+          "Question": "A cake has length4 inches more than width w and height w/3. Its volume is 351 cubic inches. Find positive dimensions.",
+          "Method": "Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+          "Steps": [
+            "Plan: Use exact remainder evaluation, factorization, rational candidates, sign changes and physical validity.",
+            "w²(w+4)=1053, positive root w=9 inches; length13 inches, height3 inches.",
+            "Validate: Substitute each alleged zero and compare full factor product."
+          ],
+          "Answer": "w²(w+4)=1053, positive root w=9 inches; length13 inches, height3 inches.",
+          "Check": "Substitute each alleged zero and compare full factor product."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Remainder Theorem",
+          "Definition": "Remainder on division by x−k equals p(k).",
+          "Rule": "Evaluate directly rather than perform full division.",
+          "Example": "p(2)=7."
+        },
+        {
+          "Title": "Factor Theorem",
+          "Definition": "x−k is a factor iff p(k)=0.",
+          "Rule": "Zero remainder certifies root/factor.",
+          "Example": "p(2)=0 ⇒ x−2."
+        },
+        {
+          "Title": "Rational Zero Theorem",
+          "Definition": "For integer coefficients, any reduced rational root a/b has a dividing constant and b dividing leading coefficient.",
+          "Rule": "Candidates need testing; some roots irrational or complex.",
+          "Example": "p=2x³−5x²−4x+3 candidates ±1,±3,±1/2,±3/2."
+        },
+        {
+          "Title": "Synthetic root testing",
+          "Definition": "Substitute candidate and divide to lower polynomial degree.",
+          "Rule": "Repeat a root to detect multiplicity.",
+          "Example": "(x−1)² repeated root."
+        },
+        {
+          "Title": "Linear factorization",
+          "Definition": "Polynomial over complex numbers factors into degree1 factors counting multiplicity.",
+          "Rule": "Real-coefficient polynomials have nonreal conjugate pairs.",
+          "Example": "x²+4=(x−2i)(x+2i)."
+        },
+        {
+          "Title": "Complex conjugate zeros",
+          "Definition": "If coefficients are real and a+bi is a root with b≠0, a−bi also is.",
+          "Rule": "Multiply conjugate factors into real quadratic.",
+          "Example": "(x−1)²+4."
+        },
+        {
+          "Title": "Descartes' Rule of Signs",
+          "Definition": "Positive real zero count equals sign changes of p(x), or less by an even integer.",
+          "Rule": "Negative real zero count uses sign changes of p(−x).",
+          "Example": "3 sign changes allows3 or1."
+        },
+        {
+          "Title": "Polynomial from zeros",
+          "Definition": "Multiply (x−r) factors and solve scale from a known point.",
+          "Rule": "Repeated roots use powers and nonreal roots paired for real coefficients.",
+          "Example": "p=a(x−2)²(x+1)."
+        },
+        {
+          "Title": "Polynomial volume model",
+          "Definition": "Combine dimensional expressions with volume=length×width×height.",
+          "Rule": "Use only positive physical roots and correct units.",
+          "Example": "w(w+4)(w/3)=351."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party rational candidate trial",
+          "Description": "Possible candidates from constant3 and leading2.",
+          "PrimaryLabel": "Numerator",
+          "SecondaryLabel": "Candidate",
+          "Rows": [
+            {
+              "Label": "Possible |a|",
+              "Cells": [
+                "1",
+                "3"
+              ]
+            },
+            {
+              "Label": "Possible |b|",
+              "Cells": [
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "Reduced candidates",
+              "Cells": [
+                "±1,±3",
+                "±1/2,±3/2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Polynomial sign-change diagnostic",
+          "Description": "Descartes sign-change possibilities are bounds, not actual root counts.",
+          "PrimaryLabel": "Expression",
+          "SecondaryLabel": "Changes",
+          "Rows": [
+            {
+              "Label": "p(x)",
+              "Cells": [
+                "+",
+                "−",
+                "+",
+                "−"
+              ]
+            },
+            {
+              "Label": "Sign changes across terms",
+              "Cells": [
+                "",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Possible positive real zeros",
+              "Cells": [
+                "3",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Remainder at k is p(k), factor iff remainder0.",
+        "Rational candidates are possibilities, not certified zeros.",
+        "Nonreal roots occur in conjugate pairs for real polynomials.",
+        "Descartes gives sign-change bounds, not exact counts.",
+        "Volume model roots must satisfy positive dimensions."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating each Rational Zero Theorem candidate as an actual root.",
+          "WhyWrong": "It is only a finite list to test.",
+          "Correction": "Evaluate p(candidate) or synthetic divide."
+        },
+        {
+          "Mistake": "Forgetting complex conjugates in real-coefficient polynomial.",
+          "WhyWrong": "Nonreal zeros must come in conjugate pairs.",
+          "Correction": "Include the other conjugate factor."
+        },
+        {
+          "Mistake": "Treating Descartes possible count as actual count.",
+          "WhyWrong": "Counts decrease by even integers and complex roots may exist.",
+          "Correction": "Factor or inspect zeros separately."
+        }
+      ]
+    }
+  ]
+}

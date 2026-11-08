@@ -1,0 +1,581 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L08",
+  "IndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "Give a situation best modeled by logistic growth and its mathematical form.",
+      "TeacherExpectedMath": "Fish in a finite pond P(t)=L/(1+ae^(−kt)); limited food creates finite carrying capacity L.",
+      "OriginalSourceSkillReviewed": "Source #1 logistic fit scenarios with resource limits.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Define carrying capacity in a logistic model.",
+      "TeacherExpectedMath": "The limiting maximum L in P=L/(1+ae^(−kt)), for a,k,L>0.",
+      "OriginalSourceSkillReviewed": "Source #2 role of population ceiling and logistic formula.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "Explain exponential regression from a scatterplot.",
+      "TeacherExpectedMath": "Fit y=Ae^(kx) or ab^x by minimizing errors for positive data; inspect curve and residuals and avoid assuming correlation means causation.",
+      "OriginalSourceSkillReviewed": "Source #3 regression using graphing utility and fit evaluation.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "Describe a scatterplot best fit by logarithmic growth.",
+      "TeacherExpectedMath": "Rapid initial increase, then slowing while unbounded; y=a+b ln x for x>0, b>0.",
+      "OriginalSourceSkillReviewed": "Source #4 logarithmic scatter curve.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Interpret logistic y-intercept.",
+      "TeacherExpectedMath": "P(0)=L/(1+a), initial modeled population.",
+      "OriginalSourceSkillReviewed": "Source #5 logistic y-intercept is initial value.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "In independent set A=4e^(−.3x), B=3+2lnx, C=2(1.5)^x, D=6−lnx, E=20/(1+5e^(−.4x)), choose exponential decay.",
+      "TeacherExpectedMath": "A, positive downward exponential tending zero.",
+      "OriginalSourceSkillReviewed": "Source #6 decreasing exponential 10.209e^(−.294x) matches its source scatterplot.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "In same set, choose decreasing logarithmic curve.",
+      "TeacherExpectedMath": "D, 6−lnx decreases with x>0.",
+      "OriginalSourceSkillReviewed": "Source #7 5.598−1.912lnx decreases logarithmically.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "In same set, choose exponential growth.",
+      "TeacherExpectedMath": "C, 2(1.5)^x.",
+      "OriginalSourceSkillReviewed": "Source #8 2.104(1.479)^x exponential growth.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "In same set, choose increasing logarithmic curve.",
+      "TeacherExpectedMath": "B, 3+2lnx.",
+      "OriginalSourceSkillReviewed": "Source #9 4.607+2.733lnx increasing logarithm.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "In same set, choose a bounded sigmoid.",
+      "TeacherExpectedMath": "E, logistic ceiling20.",
+      "OriginalSourceSkillReviewed": "Source #10 14.005/(1+2.79e^(−.812x)) sigmoid.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Find initial and capacity for P=240/(1+7e^(−0.6t)).",
+      "TeacherExpectedMath": "Initial30, carrying capacity240.",
+      "OriginalSourceSkillReviewed": "Source #11 original P=175/(1+6.995e^(−.68t)); initial≈21.889 and capacity175.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Convert 500(1.07)^x to base e.",
+      "TeacherExpectedMath": "500e^((ln1.07)x), ln1.07≈0.06766.",
+      "OriginalSourceSkillReviewed": "Source #12 convert1550(1.085)^x to1550e^(ln1.085·x).",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "Solve 20−3ln p=14 for p.",
+      "TeacherExpectedMath": "lnp=2, p=e²≈7.39.",
+      "OriginalSourceSkillReviewed": "Source #13 67.682−5.792lnp=62 requires p=e^((67.682−62)/5.792).",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "Solve 100/(1+4e^(−0.5t))=50.",
+      "TeacherExpectedMath": "e^(−.5t)=1/4, t=ln4/.5≈2.77.",
+      "OriginalSourceSkillReviewed": "Source #14 solve original logistic90/(1+5e^(−.42t))=45, t=ln5/.42.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "Find y-intercept of P=100/(1+4e^(−.5t)).",
+      "TeacherExpectedMath": "P(0)=20.",
+      "OriginalSourceSkillReviewed": "Source #15 for original P=90/(1+5e^(−.42t)), intercept15.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "Describe graph P(t)=100/(1+9e^(−.5t)), 0≤t≤36 months.",
+      "TeacherExpectedMath": "Increasing sigmoid from10 to near100; inflection at ln9/.5 months, upper asymptote100.",
+      "OriginalSourceSkillReviewed": "Source #16 graph koi pond P=68/(1+16e^(−.28x)), x months to36.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Find initial fish in this model.",
+      "TeacherExpectedMath": "P(0)=100/10=10.",
+      "OriginalSourceSkillReviewed": "Source #17 original koi initial68/17=4.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "Find fish population after18 months.",
+      "TeacherExpectedMath": "P(18)=100/(1+9e^(−9))≈100 fish.",
+      "OriginalSourceSkillReviewed": "Source #18 evaluate koi after18 months.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Find time until fish count reaches40.",
+      "TeacherExpectedMath": "100/(1+9e^(−.5t))=40 =>e^(−.5t)=1/6, t=2ln6≈3.58 months.",
+      "OriginalSourceSkillReviewed": "Source #19 solve koi model for20 fish.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Find time until pond reaches half its carrying capacity.",
+      "TeacherExpectedMath": "P=50 implies 9e^(−.5t)=1, t=2ln9≈4.39 months.",
+      "OriginalSourceSkillReviewed": "Source #20 original koi at capacity half34 fish, solve t=ln16/.28.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "Describe wolf model P(t)=600/(1+59e^(−.4t)), over0–10 years.",
+      "TeacherExpectedMath": "Increasing logistic P(0)=10, upper asymptote600, inflection t=ln59/.4.",
+      "OriginalSourceSkillReviewed": "Source #21 graph wolves P=558/(1+54.8e^(−.462t)).",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "Find initial number of wolves.",
+      "TeacherExpectedMath": "P(0)=600/60=10.",
+      "OriginalSourceSkillReviewed": "Source #22 original initial558/55.8=10.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "Predict wolves after3 years.",
+      "TeacherExpectedMath": "P(3)=600/(1+59e^(−1.2))≈32.",
+      "OriginalSourceSkillReviewed": "Source #23 original wolf population at3y.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "Find time to reach100 wolves.",
+      "TeacherExpectedMath": "P=100 implies 59e^(−.4t)=5; t=ln(59/5)/.4≈6.17y.",
+      "OriginalSourceSkillReviewed": "Source #24 original solve for100 wolves.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Find wolf population half-capacity time.",
+      "TeacherExpectedMath": "P=300 =>t=ln59/.4≈10.19y.",
+      "OriginalSourceSkillReviewed": "Source #25 original wolves at half of558.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Plot scatter points x=[1, 2, 3, 4, 5, 6], y=[8, 16, 32, 64, 128, 256].",
+      "TeacherExpectedMath": "Plot points (1,8),(2,16),(3,32),(4,64),(5,128),(6,256), constant ratio2.",
+      "OriginalSourceSkillReviewed": "Source #26 plot Table7 observed growth x1–6.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Fit y=ab^x for those six growth points.",
+      "TeacherExpectedMath": "a=4,b=2; f(x)=4·2^x exactly.",
+      "OriginalSourceSkillReviewed": "Source #27 exponential regression Table7, noisy positive data.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Rewrite that exponential growth in base e.",
+      "TeacherExpectedMath": "f(x)=4e^((ln2)x).",
+      "OriginalSourceSkillReviewed": "Source #28 convert growth regression to e-base.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Describe fit of f(x)=4·2^x on the scatter.",
+      "TeacherExpectedMath": "All points lie exactly on the fitted curve; no residuals for the independent exact data.",
+      "OriginalSourceSkillReviewed": "Source #29 overlay regression curve on Table7 scatter.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Find x where growth model f(x)=100.",
+      "TeacherExpectedMath": "4·2^x=100 => x=log₂25≈4.644.",
+      "OriginalSourceSkillReviewed": "Source #30 regression intersection f(x)=4000.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Plot scatter x=[1, 2, 3, 4, 5, 6], y=[375.0, 281.25, 210.9375, 158.2031, 118.6523, 88.9893].",
+      "TeacherExpectedMath": "Six independent points from f(x)=500(0.75)^x, decreasing exponentially.",
+      "OriginalSourceSkillReviewed": "Source #31 graph original Table8 decay data.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Fit exponential y=ab^x for six decay points generated by f(x)=500(0.75)^x.",
+      "TeacherExpectedMath": "a=500,b=0.75; independent dataset is exact before rounding.",
+      "OriginalSourceSkillReviewed": "Source #32 regression of Table8 exponential decay.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Convert f(x)=500(0.75)^x to base e.",
+      "TeacherExpectedMath": "f(x)=500e^((ln0.75)x), k<0.",
+      "OriginalSourceSkillReviewed": "Source #33 convert Table8 fit to e-base.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Graph fitted exponential decay with its independent dataset.",
+      "TeacherExpectedMath": "The six points lie on y=500(0.75)^x before displayed rounding.",
+      "OriginalSourceSkillReviewed": "Source #34 overlay regression fit on Table8.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Solve 500(0.75)^x=250.",
+      "TeacherExpectedMath": "x=ln(0.5)/ln(.75)≈2.409.",
+      "OriginalSourceSkillReviewed": "Source #35 solve Table8 regression for250.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Plot x=1,...,6 with y=2+3lnx.",
+      "TeacherExpectedMath": "Values 2.000, 4.079, 5.296, 6.159, 6.828, 7.375.",
+      "OriginalSourceSkillReviewed": "Source #36 scatter original Table9 log growth.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "Fit y=a+b ln x for that log-growth table.",
+      "TeacherExpectedMath": "a=2,b=3 exactly prior to displayed rounding.",
+      "OriginalSourceSkillReviewed": "Source #37 logarithmic regression Table9.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "Evaluate fitted log-growth model at x=10.",
+      "TeacherExpectedMath": "2+3ln10≈8.908.",
+      "OriginalSourceSkillReviewed": "Source #38 predict Table9 fit at x10.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "Describe overlay of y=2+3lnx on scatter.",
+      "TeacherExpectedMath": "Passes all exact-model points, logarithmic slowing growth.",
+      "OriginalSourceSkillReviewed": "Source #39 overlay Table9 log regression curve.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "Solve 2+3lnx=7.",
+      "TeacherExpectedMath": "x=e^(5/3)≈5.294.",
+      "OriginalSourceSkillReviewed": "Source #40 find Table9 intersection at f(x)=7.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "Plot x=1,...,6 with y=10−2lnx.",
+      "TeacherExpectedMath": "Values 10.000, 8.614, 7.803, 7.227, 6.781, 6.416.",
+      "OriginalSourceSkillReviewed": "Source #41 scatter original Table10 log decay.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "Fit y=a+b ln x to that decreasing data.",
+      "TeacherExpectedMath": "a=10,b=−2.",
+      "OriginalSourceSkillReviewed": "Source #42 logarithmic regression Table10.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "Evaluate model at x=10.",
+      "TeacherExpectedMath": "10−2ln10≈5.395.",
+      "OriginalSourceSkillReviewed": "Source #43 predict Table10 log fit at x10.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "Graph model y=10−2lnx over positive x.",
+      "TeacherExpectedMath": "Monotone decreasing, vertical asymptote x=0.",
+      "OriginalSourceSkillReviewed": "Source #44 overlay Table10 logarithmic fit.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "Solve 10−2lnx=8.",
+      "TeacherExpectedMath": "lnx=1 ->x=e.",
+      "OriginalSourceSkillReviewed": "Source #45 original Table10 f(x)=8 intersection.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Plot x=1–10 with logistic data L=50,a=9,k=.5.",
+      "TeacherExpectedMath": "Points 7.74, 11.60, 16.62, 22.54, 28.76, 34.53, 39.32, 42.92, 45.46, 47.14.",
+      "OriginalSourceSkillReviewed": "Source #46 original Table11 sigmoid scatter.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Fit a logistic P=L/(1+ae^(−kx)) to independent data from 50/(1+9e^(−.5x)).",
+      "TeacherExpectedMath": "L=50,a=9,k=.5 are exact generating parameters.",
+      "OriginalSourceSkillReviewed": "Source #47 logistic regression Table11.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Graph logistic model against generating data.",
+      "TeacherExpectedMath": "Use P=50/(1+9e^(−.5x)); sigmoid with capacity50.",
+      "OriginalSourceSkillReviewed": "Source #48 overlay source logistic fit.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Predict carrying capacity of that logistic model.",
+      "TeacherExpectedMath": "50.",
+      "OriginalSourceSkillReviewed": "Source #49 original Table11 predicted logistic carrying capacity.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "Find time to half the capacity.",
+      "TeacherExpectedMath": "P=25 =>t=ln9/.5≈4.394.",
+      "OriginalSourceSkillReviewed": "Source #50 source logistic half capacity intersection.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Plot logistic data from 140/(1+6e^(−.4x)) on sample x=0,2,4,5,7,8,10,11,15,17.",
+      "TeacherExpectedMath": "Values 20.00, 37.88, 63.31, 77.26, 102.57, 112.49, 126.14, 130.39, 137.95, 139.07.",
+      "OriginalSourceSkillReviewed": "Source #51 scatter original Table12 observed logistic dataset.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Fit logistic to these independent data.",
+      "TeacherExpectedMath": "P=140/(1+6e^(−.4x)), generating parameters L=140,a=6,k=.4.",
+      "OriginalSourceSkillReviewed": "Source #52 logistic regression Table12.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "Graph logistic model with points at sample times.",
+      "TeacherExpectedMath": "Independent curve approaches140 and passes generated points exactly before rounding.",
+      "OriginalSourceSkillReviewed": "Source #53 overlay logistic regression on Table12.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentStudentQuestion": "Predict carrying capacity of P=140/(1+6e^(−.4x)).",
+      "TeacherExpectedMath": "140.",
+      "OriginalSourceSkillReviewed": "Source #54 carrying capacity of source fitted model.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentStudentQuestion": "Solve for half carrying capacity P=70.",
+      "TeacherExpectedMath": "t=ln6/.4≈4.479.",
+      "OriginalSourceSkillReviewed": "Source #55 find source logistic half-capacity time.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentStudentQuestion": "Prove (c−P(t))/P(t)=((c−P0)/P0)e^(−bt) for logistic P=c/(1+ae^(−bt)).",
+      "TeacherExpectedMath": "(c−P)/P=c/P−1=ae^(−bt); P0=c/(1+a) implies (c−P0)/P0=a.",
+      "OriginalSourceSkillReviewed": "Source #56 logistic identity and initial P0.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentStudentQuestion": "Fit exponential y=ab^x through (1,1) and (4,4); write its logarithmic inverse.",
+      "TeacherExpectedMath": "b=4^(1/3), a=1/b; inverse g(y)=1+3ln(y)/ln4, y>0.",
+      "OriginalSourceSkillReviewed": "Source #57 regress exponential and logarithmic functions through identity-axis points and compare.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentStudentQuestion": "Verify the preceding logarithmic function is the inverse of fitted exponential.",
+      "TeacherExpectedMath": "g(ab^x)=1+(3/ln4)ln(b^(x−1))=x; both contain (1,1) and (4,4).",
+      "OriginalSourceSkillReviewed": "Source #58 inverse conjecture verification.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentStudentQuestion": "Derive inverse of f(t)=c/(1+ae^(−bt)) for positive a,b,c and unrestricted t.",
+      "TeacherExpectedMath": "t=(1/b)ln(a y/(c−y)), 0<y<c.",
+      "OriginalSourceSkillReviewed": "Source #59 inverse logistic derivation.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentStudentQuestion": "For P(t)=30/(1+5e^(−.4t)), give intercept/asymptotes and inverse.",
+      "TeacherExpectedMath": "P(0)=5, horizontal asymptotes y=0 and y=30 for full real t; inverse t=2.5ln(5y/(30−y)), 0<y<30; inverse x-intercept y=5 and vertical asymptotes y=0,30.",
+      "OriginalSourceSkillReviewed": "Source #60 source model20/(1+4e^(−.5t)), inverse reflection, intercepts and asymptotes.",
+      "PublisherOriginalTextCopied": false,
+      "TeacherManualScoring": true,
+      "RegressionRuntimeVerified": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Fit exponential y=ab^x through (0,3),(2,12).",
+      "TeacherExpectedMath": "a=3,b=2; f(x)=3·2^x."
+    },
+    {
+      "Number": 2,
+      "Question": "Fit logarithmic y=a+b ln x from (1,2),(e,6).",
+      "TeacherExpectedMath": "a=2,b=4; y=2+4lnx."
+    },
+    {
+      "Number": 3,
+      "Question": "For L=80,a=3,k=.5, find initial and half-capacity time.",
+      "TeacherExpectedMath": "P(0)=20, t=ln3/.5≈2.197."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Fit exponential through (0,2),(1,6).",
+      "Find initial/capacity of 120/(1+5e^(−.3t)).",
+      "Explain why comparing residuals matters after fitting regression."
+    ],
+    "TeacherExpectedMath": [
+      "f(x)=2·3^x.",
+      "Initial20, carrying capacity120.",
+      "Residual patterns reveal systematic model mismatch; compare actual versus predicted."
+    ],
+    "PublisherOriginalCoolDownCopied": false
+  },
+  "RegressionMathSourceExercisesReviewed": 60,
+  "ExistingManualTeacherReview": true,
+  "AutoRegressionRuntimeNotVerified": true,
+  "StageD": "NOT_RUN"
+}

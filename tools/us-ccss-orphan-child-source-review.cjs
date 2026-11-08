@@ -19,9 +19,15 @@ function audit(candidateRoster=roster){
  const familyRegistry=load('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json');
  const g3shadow=load('artifacts/academic-us-ccss/05-three-orphan-child-math-shadow-candidates.json');
  const dir='src/Edulytics.Core/Curriculum/LessonBlueprints/Packs';
- const names=fs.readdirSync(path.join(root,dir))
+ const allNames=fs.readdirSync(path.join(root,dir))
    .filter(x=>/^us-ccss-.*\.lesson-blueprint\.json$/.test(x)).sort();
- must(names.length===17,'Expected all 17 publisher blueprint editions');
+ const advanced='us-ccss-math-hs-advanced-precalculus-openstax-2017.lesson-blueprint.json';
+ const names=allNames.filter(x=>x!==advanced);
+ // Owner-approved advanced Precalculus is an additional 73-source course,
+ // not one of the original 121 official subordinate CCSS clause sources.
+ must(allNames.length===18 && allNames.includes(advanced),
+  'Expected 17 official publisher courses plus the owner Grade12 source');
+ must(names.length===17,'Expected 17 original CCSS clause publisher editions');
  const lessons=names.flatMap(name=>load(dir+'/'+name).Lessons);
  must(lessons.length===1560,'1560 canonical publisher lesson count drift');
  must(reconciled.summary.clauses===121 &&

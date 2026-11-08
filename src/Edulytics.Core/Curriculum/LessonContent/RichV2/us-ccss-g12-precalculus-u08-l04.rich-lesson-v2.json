@@ -1,0 +1,222 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L04",
+  "ContentVersion": "g12-u08-l04-firstparty-polar-curve-graphs-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L04",
+      "CultureCode": "en",
+      "Title": "Polar Coordinates: Graphs",
+      "ExplanationParagraphs": [
+        "Polar graphs are traced by θ varying through a selected domain, plotting point(r(θ)cosθ,r(θ)sinθ) and accounting for negative r.",
+        "Test potential symmetry across polar axis, lineθ=π/2 and pole, noting substitution is a sufficient but not always necessary test.",
+        "Circles include r=a cosθ (center on x-axis) and r=a sinθ (center on y-axis). Cardioids are r=a±a sinθ or r=a±a cosθ.",
+        "A general limaçon r=a+b cosθ (or sine) has an inner loop if |a|<|b|; a cusp if |a|=|b|; dimpled/convex forms otherwise.",
+        "Lemniscates have forms r²=a²cos2θ or r²=a²sin2θ and are defined only where right-hand side≥0.",
+        "Rose curves r=a cos(nθ) or r=a sin(nθ) have n petals for odd integer n and2n petals for even n; petal magnitude |a|.",
+        "Archimedean spirals r=a+bθ expand linearly with θ. Nontrivial curves may require numerical graphical investigation.",
+        "To locate curve intersections, solve for equal radii at a common θ, but also check poles and signed-radius alternative representations.",
+        "Independent Cool-down: classify r=2+2cosθ, count petals of r=3sin4θ, and find polar-axis symmetry of r=5−2cosθ.",
+        "Independent Try It 1: Test symmetry of r=3+cosθ.",
+        "Independent Try It 2: Find max radius r=5−5cosθ.",
+        "Independent Try It 3: Graph r=2cosθ.",
+        "Independent Try It 4: Graph r=2+2cosθ.",
+        "Independent Try It 5: How many petals does r=3sin5θ have?",
+        "Independent Try It 6: Graph r=2θ on[0,2π]."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Symmetry test",
+          "Question": "Does r=3+2cosθ have polar-axis symmetry?",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Yes, r(−θ)=r(θ).",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Yes, r(−θ)=r(θ).",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Polar zeros and max",
+          "Question": "For r=2−2cosθ find zeros and maximum.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Zeroθ=0; max4 atθ=π.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Zeroθ=0; max4 atθ=π.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Circle",
+          "Question": "Graph r=4cosθ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Circle x²+y²=4x, center(2,0),radius2.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Circle x²+y²=4x, center(2,0),radius2.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Cardioid",
+          "Question": "Graph r=3+3sinθ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Cardioid cusp θ=3π/2, maximum6 atπ/2.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Cardioid cusp θ=3π/2, maximum6 atπ/2.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Limaçon no loop",
+          "Question": "Graph r=5+2cosθ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Radii3..7, no inner loop.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Radii3..7, no inner loop.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Inner loop",
+          "Question": "Graph r=1+3cosθ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Inner-loop limaçon, negative radii when cosθ<−1/3.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Inner-loop limaçon, negative radii when cosθ<−1/3.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Lemniscate",
+          "Question": "Graph r²=9cos2θ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Two-lobed horizontal lemniscate, |r|≤3 on cos2θ≥0.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Two-lobed horizontal lemniscate, |r|≤3 on cos2θ≥0.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Rose even",
+          "Question": "Graph r=3cos4θ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "8 petals, each length3.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "8 petals, each length3.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Rose odd",
+          "Question": "Graph r=2sin3θ.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "3 petals, each length2.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "3 petals, each length2.",
+          "Check": "Inspect signed radius and parameter domain."
+        },
+        {
+          "Title": "Spiral",
+          "Question": "Graph r=θ for θ≥0.",
+          "Method": "Use polar symmetry, radius zeros and family shape; verify key angles.",
+          "Steps": [
+            "Plan: Use polar symmetry, radius zeros and family shape; verify key angles.",
+            "Archimedean spiral increases radius linearly with angle.",
+            "Validate: Inspect signed radius and parameter domain."
+          ],
+          "Answer": "Archimedean spiral increases radius linearly with angle.",
+          "Check": "Inspect signed radius and parameter domain."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cardioid/limaçon",
+          "Definition": "r=a±b sinθ or cosθ.",
+          "Rule": "Relative |a| and |b| determines inner loop/cusp.",
+          "Example": "r=2+2cosθ cardioid."
+        },
+        {
+          "Title": "Rose curves",
+          "Definition": "r=a sin(nθ) or a cos(nθ).",
+          "Rule": "n odd:n petals; n even:2n petals.",
+          "Example": "r=3sin2θ ->4 petals."
+        },
+        {
+          "Title": "Lemniscate",
+          "Definition": "r²=a²cos2θ or a²sin2θ.",
+          "Rule": "Only angles giving nonnegative r².",
+          "Example": "r²=9cos2θ."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent polar curve classification",
+          "Description": "Original polar curve family comparison.",
+          "PrimaryLabel": "Family",
+          "SecondaryLabel": "Signature",
+          "Rows": [
+            {
+              "Label": "Curve",
+              "Cells": [
+                "circle",
+                "cardioid",
+                "limaçon",
+                "rose",
+                "spiral"
+              ]
+            },
+            {
+              "Label": "Example",
+              "Cells": [
+                "r=2cosθ",
+                "r=2+2cosθ",
+                "r=3+2sinθ",
+                "r=3cos3θ",
+                "r=θ"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Graph by signed radius and correct parameter domain.",
+        "Recognize circles, cardioids, limaçons, roses and lemniscates.",
+        "Check special intersection points and pole."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat negative r as impossible.",
+          "WhyWrong": "Negative polar radius plots opposite the angle.",
+          "Correction": "Convert to Cartesian before rejecting."
+        },
+        {
+          "Mistake": "Claim every equal geometric intersection has same θ.",
+          "WhyWrong": "Equivalent polar pairs may differ by π and radial sign.",
+          "Correction": "Check signed-radius and pole separately."
+        }
+      ]
+    }
+  ]
+}

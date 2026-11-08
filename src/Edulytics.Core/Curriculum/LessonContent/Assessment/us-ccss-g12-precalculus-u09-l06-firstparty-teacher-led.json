@@ -1,0 +1,539 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L06",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalExercise": 1,
+      "IndependentStudentMathQuestion": "Can every finite linear system become augmented matrix?",
+      "TeacherMathAnswer": "Yes when coefficients and constants aligned to variable order.",
+      "SourceSkillFamily": "Source1–5 row operation concepts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 2,
+      "IndependentStudentMathQuestion": "Can every augmented matrix represent linear equations?",
+      "TeacherMathAnswer": "Yes each row gives coefficients and RHS.",
+      "SourceSkillFamily": "Source1–5 row operation concepts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 3,
+      "IndependentStudentMathQuestion": "Are row-operation sequences unique?",
+      "TeacherMathAnswer": "No; elementary row-equivalent paths can differ.",
+      "SourceSkillFamily": "Source1–5 row operation concepts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 4,
+      "IndependentStudentMathQuestion": "What if pivot is zero?",
+      "TeacherMathAnswer": "Swap with a row below having nonzero coefficient when available.",
+      "SourceSkillFamily": "Source1–5 row operation concepts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 5,
+      "IndependentStudentMathQuestion": "Can a zero row yield unique solution?",
+      "TeacherMathAnswer": "Not by itself if fewer independent constraints than variables; inspect rank.",
+      "SourceSkillFamily": "Source1–5 row operation concepts",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 6,
+      "IndependentStudentMathQuestion": "Write augmented matrix for A=[[4, 1], [1, 5]] and b=[6, 11].",
+      "TeacherMathAnswer": "[[4, 1, 6], [1, 5, 11]]",
+      "SourceSkillFamily": "Source6–10 equation to augmented",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 7,
+      "IndependentStudentMathQuestion": "Write augmented matrix for A=[[5, 1], [1, 6]] and b=[7, 13].",
+      "TeacherMathAnswer": "[[5, 1, 7], [1, 6, 13]]",
+      "SourceSkillFamily": "Source6–10 equation to augmented",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 8,
+      "IndependentStudentMathQuestion": "Write augmented matrix for A=[[8, 1, 2], [1, 7, -1], [2, -1, 7]] and b=[16, 12, 21].",
+      "TeacherMathAnswer": "[[8, 1, 2, 16], [1, 7, -1, 12], [2, -1, 7, 21]]",
+      "SourceSkillFamily": "Source6–10 equation to augmented",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 9,
+      "IndependentStudentMathQuestion": "Write augmented matrix for A=[[9, 1, 2], [1, 8, -1], [2, -1, 8]] and b=[17, 14, 24].",
+      "TeacherMathAnswer": "[[9, 1, 2, 17], [1, 8, -1, 14], [2, -1, 8, 24]]",
+      "SourceSkillFamily": "Source6–10 equation to augmented",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 10,
+      "IndependentStudentMathQuestion": "Write augmented matrix for A=[[5, 1, 2], [1, 9, -1], [2, -1, 9]] and b=[13, 16, 27].",
+      "TeacherMathAnswer": "[[5, 1, 2, 13], [1, 9, -1, 16], [2, -1, 9, 27]]",
+      "SourceSkillFamily": "Source6–10 equation to augmented",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 11,
+      "IndependentStudentMathQuestion": "Translate augmented matrix [[4, 1, 6], [1, 7, 15]] into equations.",
+      "TeacherMathAnswer": "Coefficient rows A=[[4, 1], [1, 7]] and RHS b=[6, 15]",
+      "SourceSkillFamily": "Source11–15 augmented to equations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 12,
+      "IndependentStudentMathQuestion": "Translate augmented matrix [[5, 1, 7], [1, 5, 11]] into equations.",
+      "TeacherMathAnswer": "Coefficient rows A=[[5, 1], [1, 5]] and RHS b=[7, 11]",
+      "SourceSkillFamily": "Source11–15 augmented to equations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 13,
+      "IndependentStudentMathQuestion": "Translate augmented matrix [[6, 1, 8], [1, 6, 13]] into equations.",
+      "TeacherMathAnswer": "Coefficient rows A=[[6, 1], [1, 6]] and RHS b=[8, 13]",
+      "SourceSkillFamily": "Source11–15 augmented to equations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 14,
+      "IndependentStudentMathQuestion": "Translate augmented matrix [[7, 1, 9], [1, 7, 15]] into equations.",
+      "TeacherMathAnswer": "Coefficient rows A=[[7, 1], [1, 7]] and RHS b=[9, 15]",
+      "SourceSkillFamily": "Source11–15 augmented to equations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 15,
+      "IndependentStudentMathQuestion": "Translate augmented matrix [[3, 1, 5], [1, 5, 11]] into equations.",
+      "TeacherMathAnswer": "Coefficient rows A=[[3, 1], [1, 5]] and RHS b=[5, 11]",
+      "SourceSkillFamily": "Source11–15 augmented to equations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 16,
+      "IndependentStudentMathQuestion": "Classify augmented system [[4, 1, 6], [8, 2, 12]].",
+      "TeacherMathAnswer": "Infinitely many solutions: redundant row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 17,
+      "IndependentStudentMathQuestion": "Classify augmented system [[5, 1, 7], [10, 2, 15]].",
+      "TeacherMathAnswer": "No solution: inconsistent scaled row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 18,
+      "IndependentStudentMathQuestion": "Solve [[6, 1], [1, 5]]·X=[8, 11] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 19,
+      "IndependentStudentMathQuestion": "Solve [[7, 1], [1, 6]]·X=[9, 13] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 20,
+      "IndependentStudentMathQuestion": "Solve [[3, 1], [1, 7]]·X=[5, 15] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 21,
+      "IndependentStudentMathQuestion": "Solve [[4, 1], [1, 5]]·X=[6, 11] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 22,
+      "IndependentStudentMathQuestion": "Solve [[5, 1], [1, 6]]·X=[7, 13] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 23,
+      "IndependentStudentMathQuestion": "Solve [[6, 1], [1, 7]]·X=[8, 15] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 24,
+      "IndependentStudentMathQuestion": "Solve [[7, 1], [1, 5]]·X=[9, 11] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 25,
+      "IndependentStudentMathQuestion": "Solve [[3, 1], [1, 6]]·X=[5, 13] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 26,
+      "IndependentStudentMathQuestion": "Classify augmented system [[4, 1, 6], [8, 2, 12]].",
+      "TeacherMathAnswer": "Infinitely many solutions: redundant row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 27,
+      "IndependentStudentMathQuestion": "Classify augmented system [[5, 1, 7], [10, 2, 15]].",
+      "TeacherMathAnswer": "No solution: inconsistent scaled row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 28,
+      "IndependentStudentMathQuestion": "Solve [[6, 1], [1, 6]]·X=[8, 13] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 29,
+      "IndependentStudentMathQuestion": "Solve [[7, 1], [1, 7]]·X=[9, 15] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 30,
+      "IndependentStudentMathQuestion": "Solve [[3, 1], [1, 5]]·X=[5, 11] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 31,
+      "IndependentStudentMathQuestion": "Solve [[4, 1], [1, 6]]·X=[6, 13] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 32,
+      "IndependentStudentMathQuestion": "Solve [[5, 1], [1, 7]]·X=[7, 15] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 33,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 11, -1], [2, -1, 8]]·X=[16, 20, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 34,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 12, -1], [2, -1, 9]]·X=[17, 22, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 35,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 6, -1], [2, -1, 10]]·X=[13, 10, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 36,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 7, -1], [2, -1, 7]]·X=[14, 12, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 37,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 8, -1], [2, -1, 8]]·X=[15, 14, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 38,
+      "IndependentStudentMathQuestion": "Classify augmented system [[8, 1, 2, 16], [1, 9, -1, 16], [16, 2, 4, 32]].",
+      "TeacherMathAnswer": "Infinitely many solutions: redundant row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 39,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 10, -1], [2, -1, 10]]·X=[17, 18, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 40,
+      "IndependentStudentMathQuestion": "Classify augmented system [[5, 1, 2, 13], [1, 11, -1, 20], [10, 2, 4, 26]].",
+      "TeacherMathAnswer": "Infinitely many solutions: redundant row.",
+      "SourceSkillFamily": "Source16–50 dependent or inconsistent echelon",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 41,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 12, -1], [2, -1, 8]]·X=[14, 22, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 42,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 6, -1], [2, -1, 9]]·X=[15, 10, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 43,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 7, -1], [2, -1, 10]]·X=[16, 12, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 44,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 8, -1], [2, -1, 7]]·X=[17, 14, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 45,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 9, -1], [2, -1, 8]]·X=[13, 16, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 46,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 10, -1], [2, -1, 9]]·X=[14, 18, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 47,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 11, -1], [2, -1, 10]]·X=[15, 20, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 48,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 12, -1], [2, -1, 7]]·X=[16, 22, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 49,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 6, -1], [2, -1, 8]]·X=[17, 10, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 50,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 7, -1], [2, -1, 9]]·X=[13, 12, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source16–50 Gaussian and application",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 51,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 8, -1], [2, -1, 10]]·X=[14, 14, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 52,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 9, -1], [2, -1, 7]]·X=[15, 16, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 53,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 10, -1], [2, -1, 8]]·X=[16, 18, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 54,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 11, -1], [2, -1, 9]]·X=[17, 20, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 55,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 12, -1], [2, -1, 10]]·X=[13, 22, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 56,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 6, -1], [2, -1, 7]]·X=[14, 10, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 57,
+      "IndependentStudentMathQuestion": "Solve [[7, 1, 2], [1, 7, -1], [2, -1, 8]]·X=[15, 12, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 58,
+      "IndependentStudentMathQuestion": "Solve [[8, 1, 2], [1, 8, -1], [2, -1, 9]]·X=[16, 14, 27] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 59,
+      "IndependentStudentMathQuestion": "Solve [[9, 1, 2], [1, 9, -1], [2, -1, 10]]·X=[17, 16, 30] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 60,
+      "IndependentStudentMathQuestion": "Solve [[5, 1, 2], [1, 10, -1], [2, -1, 7]]·X=[13, 18, 21] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 61,
+      "IndependentStudentMathQuestion": "Solve [[6, 1, 2], [1, 11, -1], [2, -1, 8]]·X=[14, 20, 24] by Gaussian row elimination.",
+      "TeacherMathAnswer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkillFamily": "Source51–61 applied finance matrices",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Write augmented matrix for A=[[4, 1], [1, 5]] and b=[6, 11].",
+      "TeacherExpectedMath": "[[4, 1, 6], [1, 5, 11]]"
+    },
+    {
+      "Number": 2,
+      "Question": "Write augmented matrix for A=[[5, 1], [1, 6]] and b=[7, 13].",
+      "TeacherExpectedMath": "[[5, 1, 7], [1, 6, 13]]"
+    },
+    {
+      "Number": 3,
+      "Question": "Write augmented matrix for A=[[8, 1, 2], [1, 7, -1], [2, -1, 7]] and b=[16, 12, 21].",
+      "TeacherExpectedMath": "[[8, 1, 2, 16], [1, 7, -1, 12], [2, -1, 7, 21]]"
+    },
+    {
+      "Number": 4,
+      "Question": "Write augmented matrix for A=[[9, 1, 2], [1, 8, -1], [2, -1, 8]] and b=[17, 14, 24].",
+      "TeacherExpectedMath": "[[9, 1, 2, 17], [1, 8, -1, 14], [2, -1, 8, 24]]"
+    },
+    {
+      "Number": 5,
+      "Question": "Write augmented matrix for A=[[5, 1, 2], [1, 9, -1], [2, -1, 9]] and b=[13, 16, 27].",
+      "TeacherExpectedMath": "[[5, 1, 2, 13], [1, 9, -1, 16], [2, -1, 9, 27]]"
+    },
+    {
+      "Number": 6,
+      "Question": "Translate augmented matrix [[4, 1, 6], [1, 7, 15]] into equations.",
+      "TeacherExpectedMath": "Coefficient rows A=[[4, 1], [1, 7]] and RHS b=[6, 15]"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Write augmented matrix for A=[[4, 1], [1, 5]] and b=[6, 11]."
+    ],
+    "TeacherExpectedMath": [
+      "[[4, 1, 6], [1, 5, 11]]"
+    ],
+    "PublisherOriginalCopied": false
+  },
+  "OriginalExerciseMathSkills": 61,
+  "StageC": "REUSE_MANUAL_TEACHER_MATRIX_SCORING",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

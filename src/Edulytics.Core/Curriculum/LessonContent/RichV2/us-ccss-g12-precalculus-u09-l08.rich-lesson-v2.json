@@ -1,0 +1,186 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L08",
+  "ContentVersion": "us-ccss-g12-precalculus-u09-l08-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L08",
+      "CultureCode": "en",
+      "Title": "Solving Systems with Cramer's Rule",
+      "ExplanationParagraphs": [
+        "Determinants of square matrices are scalars computed by signed expansion.",
+        "For2×2, determinant ad−bc.",
+        "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A).",
+        "Interchanging rows changes determinant sign; scaling one row scales determinant.",
+        "For det(A)=0 there is no unique solution; classify using elimination.",
+        "Model quantities with two- or three-variable equations and solve using determinants.",
+        "Independent Cool-down: demonstrate a valid example of the section's central operation and check exact answer."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding the Determinant of a 2 × 2 Matrix",
+          "Question": "Compute determinant of [[3, 1], [1, 7]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "20",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "20",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using Cramer’s Rule to Solve a 2 × 2 System",
+          "Question": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Finding the Determinant of a 3 × 3 Matrix",
+          "Question": "Compute determinant of [[5, 1, 2], [1, 7, -1], [2, -1, 10]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "303",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "303",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving a 3 × 3 System Using Cramer’s Rule",
+          "Question": "Apply Cramer's rule to A=[[5, 1, 2], [1, 6, -1], [2, -1, 10]] and b=[13, 10, 30].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "det A=257, det substituted=[Fraction(257, 1), Fraction(514, 1), Fraction(771, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using Cramer’s Rule to Solve an Inconsistent System",
+          "Question": "Apply Cramer's rule to A=[[8, 1, 2], [1, 7, -1], [16, 2, 4]] and b=[16, 12, 32].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=0; no unique solution, use elimination for classification.",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "det A=0; no unique solution, use elimination for classification.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Use Cramer’s Rule to Solve a Dependent System",
+          "Question": "Apply Cramer's rule to A=[[7, 1, 2], [1, 11, -1], [2, -1, 10]] and b=[15, 20, 30].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "det A=705, det substituted=[Fraction(705, 1), Fraction(1410, 1), Fraction(2115, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Illustrating Properties of Determinants",
+          "Question": "Compute determinant of [[6, 1, 2], [1, 6, -1], [2, -1, 8]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "246",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "246",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using Cramer’s Rule and Determinant Properties to Solve a System",
+          "Question": "Apply Cramer's rule to A=[[9, 1, 2], [1, 11, -1], [2, -1, 9]] and b=[17, 20, 27].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "det A=825, det substituted=[Fraction(825, 1), Fraction(1650, 1), Fraction(2475, 1)], X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mathematical validity",
+          "Definition": "Operations follow matrix dimensions and algebraic identities.",
+          "Rule": "Verify results against original constraints.",
+          "Example": "Compute determinant of [[4, 1], [1, 5]]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "For2×2, determinant ad−bc.",
+          "Rule": "For2×2, determinant ad−bc.",
+          "Example": "Apply Cramer's rule to A=[[3, 1], [1, 6]] and b=[5, 13]. Answer: det A=17, det substituted=[Fraction(17, 1), Fraction(34, 1)], X=[Fraction(1, 1), Fraction(2, 1)]"
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A).",
+          "Rule": "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A).",
+          "Example": "Compute determinant of [[5, 1, 2], [1, 7, -1], [2, -1, 10]]. Answer: 303"
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party matrix operations guide",
+          "Description": "Independently authored concept table.",
+          "PrimaryLabel": "Operation",
+          "SecondaryLabel": "Constraint",
+          "Rows": [
+            {
+              "Label": "Action",
+              "Cells": [
+                "add",
+                "multiply",
+                "invert"
+              ]
+            },
+            {
+              "Label": "Requirement",
+              "Cells": [
+                "equal shape",
+                "matching inner dims",
+                "square nonsingular"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Determinants of square matrices are scalars computed by signed expansion.",
+        "For2×2, determinant ad−bc.",
+        "For det(A)≠0, Cramer's rule x_i=det(A_i)/det(A)."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore matrix dimension, rank or determinant restrictions.",
+          "WhyWrong": "May produce undefined operation or false unique solution.",
+          "Correction": "Inspect dimensions and singularity; check original equations."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify dimensions, determinant or original equations."
+        }
+      ]
+    }
+  ]
+}

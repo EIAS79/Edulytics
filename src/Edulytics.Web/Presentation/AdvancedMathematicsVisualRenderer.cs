@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Html;
 using System.Globalization;
 using System.Net;
 using System.Text;
@@ -19,6 +20,12 @@ public static class AdvancedMathematicsVisualRenderer
     private const double Top = 34d;
     private const double Bottom = 398d;
     private const int CurveSamples = 240;
+
+    /// <summary>Render only validated, first-party mathematical SVG as trusted typed HTML.
+    /// All dynamic text in RenderSvg is HTML-encoded; caller cannot inject raw markup.
+    /// </summary>
+    public static IHtmlContent RenderTrustedSvg(MathematicalVisualSpec spec) =>
+        new HtmlString(RenderSvg(spec));
 
     public static string RenderSvg(MathematicalVisualSpec spec)
     {
@@ -55,12 +62,30 @@ public static class AdvancedMathematicsVisualRenderer
         var plot = new PlotContext(spec.Window);
         var sb = Start(spec.Accessibility);
         Axes(sb, plot);
+        foreach (var tick in spec.XAxisTicks)
+        {
+            var x = plot.X(tick.Value);
+            var zeroY = plot.Y(0m);
+            sb.Append($"<line x1='{F(x)}' y1='{F(zeroY - 4d)}' " +
+                $"x2='{F(x)}' y2='{F(zeroY + 4d)}' class='amv-axis'/>");
+            Label(sb, x, zeroY + 20d, tick.Label, "amv-axis-label");
+        }
+        foreach (var tick in spec.YAxisTicks)
+        {
+            var y = plot.Y(tick.Value);
+            var zeroX = plot.X(0m);
+            sb.Append($"<line x1='{F(zeroX - 4d)}' y1='{F(y)}' " +
+                $"x2='{F(zeroX + 4d)}' y2='{F(y)}' class='amv-axis'/>");
+            Label(sb, zeroX - 30d, y - 6d, tick.Label, "amv-axis-label");
+        }
 
         foreach (var segment in spec.Segments)
             Segment(sb, plot, segment);
 
         foreach (var point in spec.Points)
             Point(sb, plot, point);
+        foreach (var openPoint in spec.OpenPoints)
+            OpenPoint(sb, plot, openPoint);
 
         return End(sb);
     }
@@ -643,6 +668,19 @@ public static class AdvancedMathematicsVisualRenderer
             Label(sb, x + 10d, y - 10d, point.Label!);
     }
 
+    private static void OpenPoint(
+        StringBuilder sb,
+        PlotContext plot,
+        MathematicalPoint point)
+    {
+        var x = plot.X(point.X);
+        var y = plot.Y(point.Y);
+        sb.Append(
+            $"<circle cx='{F(x)}' cy='{F(y)}' r='5' class='amv-open-point'/>");
+        if (!string.IsNullOrWhiteSpace(point.Label))
+            Label(sb, x + 10d, y - 10d, point.Label!);
+    }
+
     private static MathematicalAxisWindow BoundsFor(
         IReadOnlyList<MathematicalPoint> points)
     {
@@ -702,7 +740,7 @@ public static class AdvancedMathematicsVisualRenderer
             ".amv-bg{fill:#fff}.amv-grid{stroke:#d7e0e7;stroke-width:1}" +
             ".amv-axis{stroke:#173c47;stroke-width:2}.amv-axis-label,.amv-label{fill:#173c47;font:600 14px system-ui,sans-serif}" +
             ".amv-segment{stroke:#173c47;stroke-width:3;fill:none}.amv-dashed{stroke-dasharray:8 6}" +
-            ".amv-point{fill:#173c47;stroke:#fff;stroke-width:2}.amv-guide{stroke:#7a8c96;stroke-width:1.5;stroke-dasharray:5 5}" +
+            ".amv-point{fill:#173c47;stroke:#fff;stroke-width:2}.amv-open-point{fill:#fff;stroke:#173c47;stroke-width:3}.amv-guide{stroke:#7a8c96;stroke-width:1.5;stroke-dasharray:5 5}" +
             ".amv-vector{stroke:#173c47;stroke-width:3}.amv-bracket{stroke:#173c47;stroke-width:3;fill:none}" +
             ".amv-matrix-value{fill:#173c47;font:700 17px ui-monospace,monospace}" +
             ".amv-polygon{fill:#eef4f7;stroke:#173c47;stroke-width:2}" +

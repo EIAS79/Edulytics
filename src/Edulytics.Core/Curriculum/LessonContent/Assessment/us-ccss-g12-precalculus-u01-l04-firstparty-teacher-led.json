@@ -1,0 +1,1402 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04",
+  "SourceBookSection": "Authorized local OpenStax Precalculus (2017), Section 1.4",
+  "OriginalNamedNumberedExercises": 97,
+  "FirstPartyStudentSourceSkillQuestions": 97,
+  "SourceExactVerbatimParityClaim": false,
+  "PublisherOriginalGraphicsEmbedded": false,
+  "StudentQuestions": [
+    {
+      "Number": 1,
+      "Skill": "VERBAL",
+      "Question": "Explain how to determine the real domain of a quotient of two functions with an example of a cancelled but excluded input.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 2,
+      "Skill": "VERBAL",
+      "Question": "Define composition (f∘g)(x) with an example specifying which operation happens first.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 3,
+      "Skill": "VERBAL",
+      "Question": "Can different composition orders ever yield the same result? Supply one pair which commutes and one which does not.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 4,
+      "Skill": "VERBAL",
+      "Question": "State the domain rule for the composition f∘g, including a numerical counterexample for a missing intermediate value.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 5,
+      "Skill": "POINTWISE_FOUR_OPERATIONS",
+      "Question": "For f(x)=x²+2x and g(x)=6−x², calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 6,
+      "Skill": "POINTWISE_FOUR_OPERATIONS",
+      "Question": "For f(x)=−3x²+x and g(x)=5, calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 7,
+      "Skill": "POINTWISE_FOUR_OPERATIONS",
+      "Question": "For f(x)=2x²+4x and g(x)=1/(2x), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 8,
+      "Skill": "POINTWISE_FOUR_OPERATIONS",
+      "Question": "For f(x)=1/(x−4) and g(x)=1/(6−x), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 9,
+      "Skill": "POINTWISE_FOUR_OPERATIONS",
+      "Question": "For f(x)=3x² and g(x)=√(x−5), calculate and simplify f+g, f−g, f·g and f/g; state each original operation's exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 10,
+      "Skill": "POINTWISE_QUOTIENT_DOMAIN",
+      "Question": "For f(x)=√x and g(x)=|x−3|, find g(x)/f(x) and its real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 11,
+      "Skill": "FIVE_NESTED_COMPOSITIONS",
+      "Question": "For independent f(x)=2x²+1 and g(x)=3x−5, find f(g(2)), f(g(x)), g(f(x)), g(g(x)), and f(f(−2)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 12,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=x²+1, g(x)=√(x+2); simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 13,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=√x+2, g(x)=x²+3; simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 14,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=|x|, g(x)=5x+1; simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 15,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=∛x, g(x)=(x+1)/x³; simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 16,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=1/(x−6), g(x)=7/x+6; simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 17,
+      "Skill": "TWO_FUNCTION_COMPOSITIONS",
+      "Question": "Compute f(g(x)) and g(f(x)) separately for f(x)=1/(x−4), g(x)=2/x+4; simplify and state all original-composition domain restrictions.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 18,
+      "Skill": "THREE_FUNCTION_COMPOSITION",
+      "Question": "For f(x)=x⁴+6, g(x)=x−6, h(x)=√x, compute f(g(h(x))) and state its exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 19,
+      "Skill": "THREE_FUNCTION_COMPOSITION",
+      "Question": "For f(x)=x²+1, g(x)=1/x, h(x)=x+3, compute f(g(h(x))) and state its exact real domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 20,
+      "Skill": "COMPOSITION_TWO_ORDERS_AND_QUOTIENT",
+      "Question": "For f(x)=1/x, g(x)=x−3: (a) find f∘g, (b) its domain, (c) find g∘f, (d) its domain, and (e) f/g with its domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 21,
+      "Skill": "ROOT_AND_RECIPROCAL_COMPOSITION",
+      "Question": "For f(x)=√(2−4x), g(x)=−3/x, find g(f(x)) and its exact real domain. Explain why the root must be strictly positive.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 22,
+      "Skill": "NESTED_RATIONAL_EVALUATION",
+      "Question": "For f(x)=(1−x)/x and g(x)=1/(1+x²), find g(f(x)) and evaluate at x=2.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 23,
+      "Skill": "THREE_COMPOSITE_DOMAINS",
+      "Question": "Given p(x)=1/√x and m(x)=x²−4, give exact domains of first function divided by second, first composed with second, and second composed with first.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 24,
+      "Skill": "THREE_COMPOSITE_DOMAINS",
+      "Question": "Given q(x)=1/√x and h(x)=x²−9, give exact domains of first function divided by second, first composed with second, and second composed with first.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 25,
+      "Skill": "NESTED_RADICAL_DOMAIN",
+      "Question": "For f(x)=1/x and g(x)=√(x−1), find the exact domain of f(g(x)) in interval notation.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 26,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=(x+2)². Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 27,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=(x−5)³. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 28,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=3/(x−5). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 29,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=4/(x+2)². Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 30,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=4+∛x. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 31,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=∛(1/(2x−3)). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 32,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=1/(3x²−4)^(-3). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 33,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=fourth_root((3x−2)/(x+5)). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 34,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=((8+x³)/(8−x³))⁴. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 35,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=√(2x+6). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 36,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=(5x−1)³. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 37,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=∛(x−1). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 38,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=|x²+7|. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 39,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=1/(x−2)³. Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 40,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=(1/(2x−3))². Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 41,
+      "Skill": "DECOMPOSE_OUTER_INNER",
+      "Question": "Find explicit inner g and outer f such that f(g(x))=H(x)=√((2x−1)/(3x+4)). Verify by substitution and preserve the correct domain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 42,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(g(3)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 43,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(g(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 44,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(f(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 45,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(f(0)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 46,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(f(5)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 47,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read f(f(4)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 48,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(g(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 49,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn x/y plots of the finite functions f(x)=x+1 and g(x)=6−x for real x∈[−2,6], and only interpret nested inputs when they remain in both plotted domains. Read g(g(0)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 50,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read g(f(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 51,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read g(f(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 52,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(4)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 53,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(1)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 54,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(h(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 55,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read h(f(2)) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 56,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(h(4))) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 57,
+      "Skill": "COMPOSITION_FROM_INDEPENDENT_GRAPHS",
+      "Question": "Use independently drawn continuous graphs of f(x)=x+1, g(x)=x−2 and h(x)=4−x for real x∈[−2,6], evaluating only where each intermediate input is plotted. Read f(g(f(−2))) from the coordinate graphs, showing the intermediate graph input/output values.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 58,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(g(8)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 59,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(g(5)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 60,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(f(5)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 61,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 62,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(f(4)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 63,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate f(f(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 64,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(g(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 65,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using Independent table for source skill: x=0..9, f(x)=[7, 6, 5, 8, 4, 0, 2, 1, 9, 3], g(x)=[9, 5, 6, 2, 1, 8, 7, 3, 4, 0], evaluate g(g(6)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 66,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(g(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 67,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(g(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 68,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(f(2)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 69,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 70,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate g(g(1)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 71,
+      "Skill": "FINITE_TABLE_NESTED_LOOKUP",
+      "Question": "Using x∈{−3,−2,−1,0,1,2,3}, f(x)=x+1, g(x)=2−x (independent first-party table), evaluate f(f(3)). First show the inner table result; if the intermediate is not tabulated, state undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 72,
+      "Skill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "Question": "Using f(x)=4x+8, g(x)=7−x², evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 73,
+      "Skill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "Question": "Using f(x)=5x+7, g(x)=4−2x², evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 74,
+      "Skill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "Question": "Using f(x)=√(x+4), g(x)=12−x³, evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 75,
+      "Skill": "TWO_NUMERIC_NESTED_COMPOSITIONS",
+      "Question": "Using f(x)=1/(x+2), g(x)=4x+3, evaluate f(g(0)) and g(f(0)), stating when a composition is undefined.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 76,
+      "Skill": "SINGLE_NESTED_COMPOSITION",
+      "Question": "For f(x)=2x²+1 and g(x)=3x+5, compute f(g(2)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 77,
+      "Skill": "SINGLE_NESTED_COMPOSITION",
+      "Question": "For f(x)=2x²+1 and g(x)=3x+5, simplify f(g(x)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 78,
+      "Skill": "SINGLE_NESTED_COMPOSITION",
+      "Question": "For f(x)=2x²+1 and g(x)=3x+5, compute g(f(−3)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 79,
+      "Skill": "SINGLE_NESTED_COMPOSITION",
+      "Question": "For f(x)=2x²+1 and g(x)=3x+5, simplify g(g(x)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 80,
+      "Skill": "COMPOSITION_COMPARE_SYMBOLIC",
+      "Question": "Given f(x)=x³+1,g(x)=∛(x−1), calculate f(g(x)) and g(f(x)) and compare both domains.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 81,
+      "Skill": "COMPOSITION_COMPARE_NUMERIC",
+      "Question": "For the same f(x)=x³+1,g(x)=∛(x−1), calculate f(g(2)) and g(f(2)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 82,
+      "Skill": "INVERSE_COMPOSITION_DOMAIN",
+      "Question": "Given f(x)=x³+1 and g(x)=∛(x−1), state the real domain of g(f(x)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 83,
+      "Skill": "INVERSE_COMPOSITION_DOMAIN",
+      "Question": "Given f(x)=x³+1 and g(x)=∛(x−1), state the real domain of f(g(x)).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 84,
+      "Skill": "SELF_INVERSE_COUNTEREXAMPLE",
+      "Question": "For f(x)=1/x on x≠0, find f(f(x)). Is it true that every f satisfies f(f(x))=x? Prove or disprove.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 85,
+      "Skill": "COMPOSITION_POWER_ORDER",
+      "Question": "For F(x)=(x+1)^5, f(x)=x^5 and g(x)=x+1, determine if (g∘f)(x)=F(x).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 86,
+      "Skill": "COMPOSITION_POWER_ORDER",
+      "Question": "For F(x)=(x+1)^5, f(x)=x^5 and g(x)=x+1, determine if (f∘g)(x)=F(x).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 87,
+      "Skill": "TWO_COMPOSITIONS_WITH_RESTRICTIONS",
+      "Question": "Given f(x)=x²+2 for x≥0 and g(x)=√(x−2) for x≥2, compute f(g(6)) and g(f(6)), checking each intermediate input.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 88,
+      "Skill": "TWO_SYMBOLIC_COMPOSITIONS_WITH_RESTRICTIONS",
+      "Question": "For f(x)=x²+2 on x≥0 and g(x)=√(x−2) on x≥2, simplify g(f(a)) and f(g(a)) and give the domains.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 89,
+      "Skill": "TWO_COMPOSITIONS_WITH_RESTRICTIONS",
+      "Question": "Given f(x)=x²+2 for x≥0 and g(x)=√(x−2) for x≥2, compute f(g(11)) and g(f(11)), checking each intermediate input.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 90,
+      "Skill": "APPLIED_UNIT_COMPOSITION_ORDER",
+      "Question": "Let D(p) be items demanded at unit price p dollars and C(q) the dollars needed to produce q items. Which composition yields production cost if the price is $6? Explain.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 91,
+      "Skill": "APPLIED_INVERSE_COMPOSITION_CHOICE",
+      "Question": "Let S(d) be a health-safety monitoring score as a function of sensor input d, and m(t) the sensor reading after t minutes. Write the equation that finds when the score reaches 4.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 92,
+      "Skill": "SUCCESSIVE_DISCOUNTS",
+      "Question": "An item first receives a 30% discount and then a further 15% discount. Write the final price function of original price x with sequential composition.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 93,
+      "Skill": "CIRCLE_AREA_OF_COMPOSED_RADIUS",
+      "Question": "A circular surface ripple's radius obeys r(t)=5√(t+2) inches for t≥0 minutes. Derive area A(t) and calculate A(2).",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 94,
+      "Skill": "CIRCLE_AREA_OF_COMPOSED_LINEAR_RADIUS",
+      "Question": "A growing circular field has radius r(t)=2t+1 metres. Find area A(t) for time t≥0.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 95,
+      "Skill": "TIME_EVALUATION_OF_COMPOSED_AREA",
+      "Question": "Using A(t)=π(2t+1)² for a circular field, calculate the area after five minutes.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 96,
+      "Skill": "SPHERE_RADIUS_OF_VOLUME_AND_TIME",
+      "Question": "A spherical balloon receives air so V(t)=10+20t cubic inches for t≥0. Its radius obeys r(V)=∛(3V/(4π)). Derive r(t) and find the exact time at which r=10 inches.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "Number": 97,
+      "Skill": "MODEL_CHAIN_AND_EQUATION",
+      "Question": "A model predicts N(T)=23T²−56T+1 units for temperature T in (3,33), with T(t)=5t+1.5 degrees after t hours. (a) Form N(T(t)); (b) solve N(T(t))=6752 for eligible t, rounding to 2 decimal places.",
+      "ScoreMode": "TEACHER_REVIEW_REQUIRED"
+    }
+  ],
+  "TeacherExpectedMathematics": [
+    {
+      "Number": 1,
+      "ExpectedAnswerOrReview": "Intersect the separate domains and exclude any input where the original divisor is zero.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 2,
+      "ExpectedAnswerOrReview": "f(g(x)), inner g first then f; check intermediate result.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 3,
+      "ExpectedAnswerOrReview": "Yes; f(x)=x+1,g(x)=x+2 commute, while f(x)=x²,g(x)=x+1 generally do not.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 4,
+      "ExpectedAnswerOrReview": "{x∈D(g):g(x)∈D(f)}.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 5,
+      "ExpectedAnswerOrReview": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x∈ℝ except divisor zeros x=±√6.",
+      "OriginalSourceActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ]
+    },
+    {
+      "Number": 6,
+      "ExpectedAnswerOrReview": "Apply all four pointwise operations, preserve unsimplified domain restrictions; all real inputs.",
+      "OriginalSourceActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ]
+    },
+    {
+      "Number": 7,
+      "ExpectedAnswerOrReview": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≠0 for all four; divisor g never zero on its domain.",
+      "OriginalSourceActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ]
+    },
+    {
+      "Number": 8,
+      "ExpectedAnswerOrReview": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≠4,6 for all four; denominator g nonzero for allowed x.",
+      "OriginalSourceActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ]
+    },
+    {
+      "Number": 9,
+      "ExpectedAnswerOrReview": "Apply all four pointwise operations, preserve unsimplified domain restrictions; x≥5 for +,−,×; x>5 for quotient f/g.",
+      "OriginalSourceActions": [
+        "addition with domain",
+        "subtraction with domain",
+        "multiplication with domain",
+        "quotient with original domain"
+      ]
+    },
+    {
+      "Number": 10,
+      "ExpectedAnswerOrReview": "|x−3|/√x with x>0, because the denominator is zero at x=0.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 11,
+      "ExpectedAnswerOrReview": "f(g(2))=3; f(g(x))=2(3x−5)²+1; g(f(x))=6x²−2; g(g(x))=9x−20; f(f(−2))=163.",
+      "OriginalSourceActions": [
+        "f(g(2))",
+        "f(g(x))",
+        "g(f(x))",
+        "g(g(x))",
+        "f(f(−2))"
+      ]
+    },
+    {
+      "Number": 12,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 13,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 14,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 15,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 16,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 17,
+      "ExpectedAnswerOrReview": "Teacher substitutes g into f and f into g, verifies the exact domain at both layers and checks all restricted denominator/root inputs.",
+      "OriginalSourceActions": [
+        "f∘g and domain",
+        "g∘f and domain"
+      ]
+    },
+    {
+      "Number": 18,
+      "ExpectedAnswerOrReview": "Evaluate h then g then f; teacher verifies nested simplification and every intermediate domain.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 19,
+      "ExpectedAnswerOrReview": "Evaluate h then g then f; teacher verifies nested simplification and every intermediate domain.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 20,
+      "ExpectedAnswerOrReview": "(a) 1/(x−3); (b) x≠3; (c) 1/x−3; (d) x≠0; (e) 1/[x(x−3)] with x≠0,3.",
+      "OriginalSourceActions": [
+        "f∘g",
+        "domain f∘g",
+        "g∘f",
+        "domain g∘f",
+        "quotient/domain"
+      ]
+    },
+    {
+      "Number": 21,
+      "ExpectedAnswerOrReview": "−3/√(2−4x), x<1/2; radicand zero is forbidden to outer reciprocal.",
+      "OriginalSourceActions": [
+        "composition formula",
+        "domain with strict endpoint"
+      ]
+    },
+    {
+      "Number": 22,
+      "ExpectedAnswerOrReview": "g(f(x))=x²/[x²+(1−x)²], x≠0; g(f(2))=4/5.",
+      "OriginalSourceActions": [
+        "nested formula and domain",
+        "numeric evaluation at 2"
+      ]
+    },
+    {
+      "Number": 23,
+      "ExpectedAnswerOrReview": "Determine strict positivity for square-root denominator, exclusions for the polynomial divisor, and nested-domain preimage correctly.",
+      "OriginalSourceActions": [
+        "quotient real domain",
+        "first∘second domain",
+        "second∘first domain"
+      ]
+    },
+    {
+      "Number": 24,
+      "ExpectedAnswerOrReview": "Determine strict positivity for square-root denominator, exclusions for the polynomial divisor, and nested-domain preimage correctly.",
+      "OriginalSourceActions": [
+        "quotient real domain",
+        "first∘second domain",
+        "second∘first domain"
+      ]
+    },
+    {
+      "Number": 25,
+      "ExpectedAnswerOrReview": "(1,∞), because x≥1 is necessary for g, and √(x−1) cannot be zero.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 26,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 27,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 28,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 29,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 30,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 31,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 32,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 33,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 34,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 35,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 36,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 37,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 38,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 39,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 40,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 41,
+      "ExpectedAnswerOrReview": "Any valid composition with consistent domains and a correct recomposition is acceptable; teacher checks original restricted input set.",
+      "OriginalSourceActions": [
+        "identify inner map",
+        "identify outer map",
+        "substitute and verify domain"
+      ]
+    },
+    {
+      "Number": 42,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 43,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 44,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 45,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 46,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 47,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 48,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 49,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 50,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 51,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 52,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 53,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 54,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 55,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 56,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 57,
+      "ExpectedAnswerOrReview": "Teacher verifies both/all successive x-y graph reads and undefined intermediate values; never assume the original publisher plotted data.",
+      "OriginalSourceActions": [
+        "trace each graph in nested order",
+        "state output or undefined"
+      ]
+    },
+    {
+      "Number": 58,
+      "ExpectedAnswerOrReview": "Inner function at 8 gives 4; composite result is 4.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 59,
+      "ExpectedAnswerOrReview": "Inner function at 5 gives 8; composite result is 9.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 60,
+      "ExpectedAnswerOrReview": "Inner function at 5 gives 0; composite result is 9.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 61,
+      "ExpectedAnswerOrReview": "Inner function at 3 gives 8; composite result is 4.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 62,
+      "ExpectedAnswerOrReview": "Inner function at 4 gives 4; composite result is 4.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 63,
+      "ExpectedAnswerOrReview": "Inner function at 1 gives 6; composite result is 2.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 64,
+      "ExpectedAnswerOrReview": "Inner function at 2 gives 6; composite result is 7.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 65,
+      "ExpectedAnswerOrReview": "Inner function at 6 gives 7; composite result is 3.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 66,
+      "ExpectedAnswerOrReview": "Inner function at 1 gives 1; composite result is 2.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 67,
+      "ExpectedAnswerOrReview": "Inner function at 2 gives 0; composite result is 1.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 68,
+      "ExpectedAnswerOrReview": "Inner function at 2 gives 3; composite result is -1.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 69,
+      "ExpectedAnswerOrReview": "Inner function at 3 gives 4; composite result is undefined.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 70,
+      "ExpectedAnswerOrReview": "Inner function at 1 gives 1; composite result is 1.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 71,
+      "ExpectedAnswerOrReview": "Inner function at 3 gives 4; composite result is undefined.",
+      "OriginalSourceActions": [
+        "read inner tabular value",
+        "validate next input",
+        "read outer output"
+      ]
+    },
+    {
+      "Number": 72,
+      "ExpectedAnswerOrReview": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "OriginalSourceActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ]
+    },
+    {
+      "Number": 73,
+      "ExpectedAnswerOrReview": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "OriginalSourceActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ]
+    },
+    {
+      "Number": 74,
+      "ExpectedAnswerOrReview": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "OriginalSourceActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ]
+    },
+    {
+      "Number": 75,
+      "ExpectedAnswerOrReview": "Teacher evaluates each inner result then applies outer expression; checks radical and division restrictions.",
+      "OriginalSourceActions": [
+        "f(g(0))",
+        "g(f(0))"
+      ]
+    },
+    {
+      "Number": 76,
+      "ExpectedAnswerOrReview": "g(2)=11; f(11)=243.",
+      "OriginalSourceActions": [
+        "nested numeric"
+      ]
+    },
+    {
+      "Number": 77,
+      "ExpectedAnswerOrReview": "2(3x+5)²+1=18x²+60x+51.",
+      "OriginalSourceActions": [
+        "nested symbolic"
+      ]
+    },
+    {
+      "Number": 78,
+      "ExpectedAnswerOrReview": "f(−3)=19, g(19)=62.",
+      "OriginalSourceActions": [
+        "nested numeric"
+      ]
+    },
+    {
+      "Number": 79,
+      "ExpectedAnswerOrReview": "9x+20.",
+      "OriginalSourceActions": [
+        "nested symbolic"
+      ]
+    },
+    {
+      "Number": 80,
+      "ExpectedAnswerOrReview": "f(g(x))=x; g(f(x))=x for all real x; both are inverses on ℝ.",
+      "OriginalSourceActions": [
+        "f∘g",
+        "g∘f",
+        "compare domains"
+      ]
+    },
+    {
+      "Number": 81,
+      "ExpectedAnswerOrReview": "Each equals 2.",
+      "OriginalSourceActions": [
+        "two nested values"
+      ]
+    },
+    {
+      "Number": 82,
+      "ExpectedAnswerOrReview": "(−∞,∞).",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 83,
+      "ExpectedAnswerOrReview": "(−∞,∞).",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 84,
+      "ExpectedAnswerOrReview": "f(f(x))=x on x≠0. Not true for arbitrary f, e.g. f(x)=x+1 gives x+2.",
+      "OriginalSourceActions": [
+        "compute on original domain",
+        "prove counterexample"
+      ]
+    },
+    {
+      "Number": 85,
+      "ExpectedAnswerOrReview": "False, x^5+1≠(x+1)^5 generally.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 86,
+      "ExpectedAnswerOrReview": "True for every real x.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 87,
+      "ExpectedAnswerOrReview": "f(g(6))=(6−2)+2=6; g(f(6))=√((6²+2)−2)=6.",
+      "OriginalSourceActions": [
+        "first direction",
+        "reverse direction"
+      ]
+    },
+    {
+      "Number": 88,
+      "ExpectedAnswerOrReview": "g(f(a))=a for a≥0; f(g(a))=a for a≥2. The former root yields |a| before imposing a≥0.",
+      "OriginalSourceActions": [
+        "g∘f and domain",
+        "f∘g and domain"
+      ]
+    },
+    {
+      "Number": 89,
+      "ExpectedAnswerOrReview": "f(g(11))=(11−2)+2=11; g(f(11))=√((11²+2)−2)=11.",
+      "OriginalSourceActions": [
+        "first direction",
+        "reverse direction"
+      ]
+    },
+    {
+      "Number": 90,
+      "ExpectedAnswerOrReview": "C(D(6)); inner price→units, outer units→dollars.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 91,
+      "ExpectedAnswerOrReview": "Solve S(m(t))=4 for t. Other expression orders have incompatible quantity meanings.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 92,
+      "ExpectedAnswerOrReview": "P(x)=0.85(0.70x)=0.595x; total reduction is 40.5%, not 45%.",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 93,
+      "ExpectedAnswerOrReview": "A(t)=π(5√(t+2))²=25π(t+2) in²; A(2)=100π in².",
+      "OriginalSourceActions": [
+        "area composition",
+        "time evaluation"
+      ]
+    },
+    {
+      "Number": 94,
+      "ExpectedAnswerOrReview": "A(t)=π(2t+1)² m².",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 95,
+      "ExpectedAnswerOrReview": "A(5)=121π m².",
+      "OriginalSourceActions": [
+        "complete question with correct restrictions"
+      ]
+    },
+    {
+      "Number": 96,
+      "ExpectedAnswerOrReview": "r(t)=∛(3(10+20t)/(4π)); 10+20t=4000π/3 so t=200π/3−1/2 seconds.",
+      "OriginalSourceActions": [
+        "compose volume to radius",
+        "solve target radius time"
+      ]
+    },
+    {
+      "Number": 97,
+      "ExpectedAnswerOrReview": "N(t)=23(5t+1.5)²−56(5t+1.5)+1; solve the resulting quadratic, rejecting roots outside 3<5t+1.5<33.",
+      "OriginalSourceActions": [
+        "compose formulas",
+        "solve and filter by contextual domain"
+      ]
+    }
+  ],
+  "StudentPortalRuntime": "NOT_RUN",
+  "TeacherAuthenticatedGradebookRuntime": "NOT_RUN",
+  "CI": "NOT_RUN",
+  "PreserveAttribution": "CC_BY_4_SOURCE_CREDIT_REQUIRED"
+}

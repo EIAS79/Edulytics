@@ -29,12 +29,12 @@ public sealed class LessonPracticeInteractionRegistryTests
     [Fact]
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
-        // Preserve pre-G11 baseline: exactly eight new Algebra 2 families added.
+        // Preserve eight Algebra 2 families; Grade 12 Section 1.1 adds four explicit function interactions.
         var algebra2 = LessonPracticeInteractionRegistry.All
             .Where(x => x.FamilyId.StartsWith("usccss.g11.alg2.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(8, algebra2.Length);
-        Assert.Equal(1656, LessonPracticeInteractionRegistry.All.Count - algebra2.Length);
+        Assert.Equal(1691, LessonPracticeInteractionRegistry.All.Count - algebra2.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

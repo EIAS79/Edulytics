@@ -1,0 +1,573 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02",
+  "IndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "Describe how to obtain csc graph from sine.",
+      "TeacherExpectedMath": "Reciprocal y=1/sinx where sinx≠0; asymptotes x=kπ.",
+      "SourceMathSkillReviewed": "Source #1 sine-to-cosecant reciprocal relationship.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Describe how to obtain sec graph from cosine.",
+      "TeacherExpectedMath": "Reciprocal y=1/cosx where cosx≠0; asymptotes x=π/2+kπ.",
+      "SourceMathSkillReviewed": "Source #2 cosine-to-secant.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "Why does tangent repeat after π?",
+      "TeacherExpectedMath": "tan(x+π)=sin(x+π)/cos(x+π)=tanx where defined.",
+      "SourceMathSkillReviewed": "Source #3 tangent π-periodicity.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "Can y=cscx have an x-intercept?",
+      "TeacherExpectedMath": "No: cscx=1/sinx never zero on its domain.",
+      "SourceMathSkillReviewed": "Source #4 cosecant no x-intercept.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Compare periods of sine and cosecant.",
+      "TeacherExpectedMath": "Both have fundamental period2π.",
+      "SourceMathSkillReviewed": "Source #5 period of csc vs sin.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "Among first-party labelled graphs, identify function y=tanx from its asymptote pattern.",
+      "TeacherExpectedMath": "increasing branches with x=π/2+kπ asymptotes.",
+      "SourceMathSkillReviewed": "Source #6 graph identification Figure18, independent first-party plotted curves.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "Among first-party labelled graphs, identify function y=secx from its asymptote pattern.",
+      "TeacherExpectedMath": "reciprocal cosine arcs, asymptotes π/2+kπ.",
+      "SourceMathSkillReviewed": "Source #7 graph identification Figure18, independent first-party plotted curves.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "Among first-party labelled graphs, identify function y=cscx from its asymptote pattern.",
+      "TeacherExpectedMath": "reciprocal sine arcs, asymptotes kπ.",
+      "SourceMathSkillReviewed": "Source #8 graph identification Figure18, independent first-party plotted curves.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "Among first-party labelled graphs, identify function y=cotx from its asymptote pattern.",
+      "TeacherExpectedMath": "decreasing branches, asymptotes kπ.",
+      "SourceMathSkillReviewed": "Source #9 graph identification Figure18, independent first-party plotted curves.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Find period and horizontal shift for independent y=2tan(4.00000x+(-16.00000))+0.",
+      "TeacherExpectedMath": "period≈0.78540; shift=−C/B≈4.00000.",
+      "SourceMathSkillReviewed": "Source #10 2tan(4x−32): periodπ/4 shift8.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Find period and horizontal shift for independent y=2sec(0.78540x+(0.78540))+0.",
+      "TeacherExpectedMath": "period≈8.00000; shift=−C/B≈-1.00000.",
+      "SourceMathSkillReviewed": "Source #11 2sec((π/4)(x+1)): period8 shift−1.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Find period and horizontal shift for independent y=6csc(1.04720x+(3.14159))+0.",
+      "TeacherExpectedMath": "period≈6.00000; shift=−C/B≈-3.00000.",
+      "SourceMathSkillReviewed": "Source #12 6csc((π/3)x+π): period6 shift−3.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "If tan t=−2, find tan(−t).",
+      "TeacherExpectedMath": "2, tangent odd.",
+      "SourceMathSkillReviewed": "Source #13 tan is odd.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "If sec t=3, find sec(−t).",
+      "TeacherExpectedMath": "3, secant even.",
+      "SourceMathSkillReviewed": "Source #14 sec is even.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "If csc t=−4, find csc(−t).",
+      "TeacherExpectedMath": "4, cosecant odd.",
+      "SourceMathSkillReviewed": "Source #15 csc odd.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "If t sin t=5, find (−t)sin(−t).",
+      "TeacherExpectedMath": "5, product of two odd functions is even.",
+      "SourceMathSkillReviewed": "Source #16 xsinx even.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Rewrite cot(−x)cos(−x)+sin(−x) with positive argument x.",
+      "TeacherExpectedMath": "−cotx·cosx−sinx, original defined where sinx≠0.",
+      "SourceMathSkillReviewed": "Source #17 odd/even rewrites.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "Rewrite cos(−x)+tan(−x)sin(−x).",
+      "TeacherExpectedMath": "cosx+tanx·sinx (two odd negatives multiply positive).",
+      "SourceMathSkillReviewed": "Source #18 even/odd rewrites.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Plot two periods of independent y=2tan(4x+-16)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈0.78540, phase shift≈4.00000, vertical multiplier 2, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #19 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Plot two periods of independent y=2sec(0.7854x+0.7854)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈8.00000, phase shift≈-1.00000, vertical multiplier 2, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #20 graph of transformed sec and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "Plot two periods of independent y=6csc(1.0472x+3.1416)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.00000, phase shift≈-3.00000, vertical multiplier 6, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #21 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "Plot two periods of independent y=1tan(1.5708x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈2.00000, phase shift≈0.00000, vertical multiplier 1, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #22 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "Plot two periods of independent y=1tan(1x+-1.5708)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈3.14159, phase shift≈1.57080, vertical multiplier 1, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #23 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "Plot two periods of independent y=4tan(1x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈3.14159, phase shift≈0.00000, vertical multiplier 4, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #24 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Plot two periods of independent y=1tan(1x+0.7854)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈3.14159, phase shift≈-0.78540, vertical multiplier 1, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #25 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Plot two periods of independent y=3.1416tan(3.1416x+-3.1416)+(-3.14159); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈1.00000, phase shift≈1.00000, vertical multiplier 3.14159, vertical shift -3.14159; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #26 graph of transformed tan and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Plot two periods of independent y=2csc(1x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.28319, phase shift≈0.00000, vertical multiplier 2, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #27 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Plot two periods of independent y=-0.25csc(1x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.28319, phase shift≈0.00000, vertical multiplier -0.25, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #28 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Plot two periods of independent y=4sec(3x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈2.09440, phase shift≈0.00000, vertical multiplier 4, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #29 graph of transformed sec and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Plot two periods of independent y=-3cot(2x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈1.57080, phase shift≈0.00000, vertical multiplier -3, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #30 graph of transformed cot and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Plot two periods of independent y=7sec(5x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈1.25664, phase shift≈0.00000, vertical multiplier 7, vertical shift 0; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #31 graph of transformed sec and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Plot two periods of independent y=0.9csc(3.1416x+0)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈2.00000, phase shift≈0.00000, vertical multiplier 0.9, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #32 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Plot two periods of independent y=2csc(1x+0.7854)+(-1); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.28319, phase shift≈-0.78540, vertical multiplier 2, vertical shift -1; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #33 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Plot two periods of independent y=-1sec(1x+-1.0472)+(-2); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.28319, phase shift≈1.04720, vertical multiplier -1, vertical shift -2; asymptotes when cos(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #34 graph of transformed sec and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Plot two periods of independent y=1.4csc(1x+-0.7854)+(0); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈6.28319, phase shift≈0.78540, vertical multiplier 1.4, vertical shift 0; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #35 graph of transformed csc and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Plot two periods of independent y=5cot(1x+1.5708)+(-3); identify period and vertical asymptotes.",
+      "TeacherExpectedMath": "period≈3.14159, phase shift≈-1.57080, vertical multiplier 5, vertical shift -3; asymptotes when sin(Bx+C)=0.",
+      "SourceMathSkillReviewed": "Source #36 graph of transformed cot and asymptotes.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "Write a tangent function with A=1, periodπ/3, shift right h=0.7854, vertical offset2.",
+      "TeacherExpectedMath": "y=1tan(3(x−(0.785398)))+(2).",
+      "SourceMathSkillReviewed": "Source #37 graph tangent with given amplitude factor, period and phase shift.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "Write a tangent function with A=-2, periodπ/4, shift right h=-0.7854, vertical offset-2.",
+      "TeacherExpectedMath": "y=-2tan(4(x−(-0.785398)))+(-2).",
+      "SourceMathSkillReviewed": "Source #38 graph tangent with given amplitude factor, period and phase shift.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=2tan(1x+0)+(0). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=2tan(1x+0)+(0), period=3.1416.",
+      "SourceMathSkillReviewed": "Source #39 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=4sec(1.5708x+0)+(0). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=4sec(1.5708x+0)+(0), period=4.0000.",
+      "SourceMathSkillReviewed": "Source #40 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=3csc(2x+0)+(0). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=3csc(2x+0)+(0), period=3.1416.",
+      "SourceMathSkillReviewed": "Source #41 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=5cot(2x+0.7854)+(0). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=5cot(2x+0.7854)+(0), period=1.5708.",
+      "SourceMathSkillReviewed": "Source #42 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=-2tan(0.5x+0)+(1). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=-2tan(0.5x+0)+(1), period=6.2832.",
+      "SourceMathSkillReviewed": "Source #43 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=-3sec(1x+0)+(2). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=-3sec(1x+0)+(2), period=6.2832.",
+      "SourceMathSkillReviewed": "Source #44 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "An independent mathematical graph is generated from y=1cot(100x+0)+(0). Recover equation and period.",
+      "TeacherExpectedMath": "Equation y=1cot(100x+0)+(0), period=0.0314.",
+      "SourceMathSkillReviewed": "Source #45 reverse-engineering transformed tangent/secant/cosecant/cotangent graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Describe graph |cscx| and where undefined.",
+      "TeacherExpectedMath": "Values≥1; vertical asymptotes x=kπ.",
+      "SourceMathSkillReviewed": "Source #46 |cscx|.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Describe graph |cotx|.",
+      "TeacherExpectedMath": "Nonnegative branches; vertical asymptotes x=kπ, zeros x=π/2+kπ.",
+      "SourceMathSkillReviewed": "Source #47 |cotx|.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Describe graph 3cscx.",
+      "TeacherExpectedMath": "Range(-∞,-3]∪[3,∞); asymptotes x=kπ.",
+      "SourceMathSkillReviewed": "Source #48 scaled csc.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Simplify cscx/secx, on common domain.",
+      "TeacherExpectedMath": "cotx, requiring sinx≠0 and cosx≠0.",
+      "SourceMathSkillReviewed": "Source #49 csc/sec=cot.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "Simplify 1+sec²x−tan²x.",
+      "TeacherExpectedMath": "2 because sec²−tan²=1; domain cosx≠0.",
+      "SourceMathSkillReviewed": "Source #50 trig identity graph constant2.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Find period of sec(0.02x).",
+      "TeacherExpectedMath": "2π/.02=100π.",
+      "SourceMathSkillReviewed": "Source #51 sec(0.001x) very long period.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Find period of cot(50πx).",
+      "TeacherExpectedMath": "π/(50π)=1/50.",
+      "SourceMathSkillReviewed": "Source #52 cot(100πx) tiny period.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "Simplify sin²x+cos²x.",
+      "TeacherExpectedMath": "1 for all real x.",
+      "SourceMathSkillReviewed": "Source #53 Pythagorean identity graph.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentStudentQuestion": "Light-beam displacement f(t)=12tan((π/8)t) feet on[0,4). Find period, asymptote and f(1).",
+      "TeacherExpectedMath": "Period8s, first positive asymptote t=4s; f(1)=12tan(π/8)≈4.97ft.",
+      "SourceMathSkillReviewed": "Source #54 light beam 20tan(πx/10) period10 and asymptote5.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentStudentQuestion": "Boat distance from observer d(x)=2secx km for −π/2<x<π/2. Find minimum and distance atπ/3.",
+      "TeacherExpectedMath": "Minimum2km at x=0; d(π/3)=4km; divergent as x→±π/2.",
+      "SourceMathSkillReviewed": "Source #55 fisherman boat d=1.5sec x, domain and minimum.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentStudentQuestion": "Comet hypothetical g(t)=100000csc((π/20)t)km, 0<t<20 days. Find minimum, g(5), asymptotes.",
+      "TeacherExpectedMath": "Minimum100000km at t=10; g(5)=100000sqrt2≈141421km; asymptotes at t=0,20.",
+      "SourceMathSkillReviewed": "Source #56 comet csc(πx/30) domain0..30 days.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentStudentQuestion": "A rocket sighted from point3mi away has elevation θ(t)=πt/100 for0≤t<50s. Model altitude and limit.",
+      "TeacherExpectedMath": "h(t)=3tan(πt/100)mi, h(0)=0, h(25)=3mi, diverges as t→50− (model breaks down).",
+      "SourceMathSkillReviewed": "Source #57 rocket h=2tan(πx/120), interval0..60.",
+      "OriginalPublisherQuestionCopied": false,
+      "ManualTeacherMarking": true,
+      "RuntimeVerified": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Graph y=tan(2x).",
+      "TeacherExpectedMath": "Periodπ/2, asymptotes x=π/4+kπ/2."
+    },
+    {
+      "Number": 2,
+      "Question": "Graph y=−2tan(x+π/4).",
+      "TeacherExpectedMath": "Periodπ, shift leftπ/4, reflected."
+    },
+    {
+      "Number": 3,
+      "Question": "Graph y=3tanx+1.",
+      "TeacherExpectedMath": "Periodπ, vertical shift1."
+    },
+    {
+      "Number": 4,
+      "Question": "Graph y=sec(x−π/2).",
+      "TeacherExpectedMath": "Period2π; asymptotes x=kπ."
+    },
+    {
+      "Number": 5,
+      "Question": "Graph y=−3sec(2x).",
+      "TeacherExpectedMath": "Periodπ; range(-∞,-3]∪[3,∞)."
+    },
+    {
+      "Number": 6,
+      "Question": "Graph y=2csc(3x).",
+      "TeacherExpectedMath": "Period2π/3, asymptotes x=kπ/3."
+    },
+    {
+      "Number": 7,
+      "Question": "Graph y=−cot(4x).",
+      "TeacherExpectedMath": "Periodπ/4, asymptotes x=kπ/4."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "For y=2tan(3x), find period and asymptotes.",
+      "For y=−4cscx+1, find range.",
+      "Simplify cscx/secx on original common domain."
+    ],
+    "TeacherExpectedMath": [
+      "Periodπ/3; vertical asymptotes x=π/6+kπ/3.",
+      "y≤−3 or y≥5.",
+      "cotx, original sin and cos nonzero."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "SourceNumberedMathExercisesReviewed": 57,
+  "StageC": "REUSE_EXISTING_RICHV2_AND_TEACHER_MANUAL_GRAPH_REVIEW",
+  "StageD": "NOT_RUN"
+}

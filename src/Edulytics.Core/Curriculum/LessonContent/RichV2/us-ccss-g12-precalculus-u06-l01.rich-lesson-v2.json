@@ -1,0 +1,275 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U06:L01",
+  "ContentVersion": "g12-u06-l01-firstparty-sinusoidal-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L01",
+      "CultureCode": "en",
+      "Title": "Graphs of the Sine and Cosine Functions",
+      "ExplanationParagraphs": [
+        "Sine and cosine have amplitude1, period2π, and values between−1 and1. Cosine is sine shifted leftπ/2.",
+        "A general sinusoid y=A sin(Bx+C)+D or A cos(Bx+C)+D has amplitude |A|, period2π/|B| for B≠0, horizontal shift−C/B, midline y=D and range[D−|A|,D+|A|].",
+        "The sign of A reflects about the midline. Use five evenly spaced key points across a full period to sketch an independent wave.",
+        "When A=0 or B=0 the model becomes constant and the standard period formula is inapplicable.",
+        "Cosine is even and sine is odd. Phase-shifted sinusoids require transformed input for symmetry discussions.",
+        "For uniform wheel motion, height h(t)=center−radius cos(ωt) if starting at the bottom; ω=2π/period.",
+        "Independent Cool-down: determine period/phase of y=−3sin(2x−π)+1, list sine zeros in[0,2π) and model wheel center8m radius7m period10s.",
+        "Independent Try It 1: Period of sin(5x).",
+        "Independent Try It 2: Amplitude of −4cosx.",
+        "Independent Try It 3: Phase shift of sin(2x+π).",
+        "Independent Try It 4: Midline of 3cosx−2.",
+        "Independent Try It 5: For y=2sin(4x)+1 give period/range.",
+        "Independent Try It 6: Find max/min y=5cosx+4.",
+        "Independent Try It 7: Find amplitude and period y=−2sin(2x).",
+        "Independent Try It 8: Graph y=−3cosx.",
+        "Independent Try It 9: Graph y=4sin(x−π/4)+3.",
+        "Independent Try It 10: For y=2cos(3x)−1 find period.",
+        "Independent Try It 11: Wheel center5m,radius4m, period10s, starts bottom: find h(5)."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Period of sine",
+          "Question": "Find period of f(x)=sin(4x).",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "2π/4=π/2.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "2π/4=π/2.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Amplitude",
+          "Question": "Find amplitude of g(x)=−3cosx.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "3.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "3.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Phase shift",
+          "Question": "Find phase shift of h(x)=2sin(3x−π).",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "π/3 right.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "π/3 right.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Vertical translation",
+          "Question": "Find midline of y=sinx+5.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "y=5.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "y=5.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Interpret transformed equation",
+          "Question": "For y=4sin(2x+π)+1 find amplitude, period, shift and range.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Amplitude4, periodπ, leftπ/2, range[-3,5].",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Amplitude4, periodπ, leftπ/2, range[-3,5].",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Read sine graph",
+          "Question": "Graph y=2sinx+3; identify maximum/minimum.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Max5,min1,midline3.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Max5,min1,midline3.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Read cosine graph",
+          "Question": "Graph y=3cos(2x)−2; identify period, range.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Periodπ, range[-5,1].",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Periodπ, range[-5,1].",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Sine amplitude and period",
+          "Question": "Graph y=−2sin(3x).",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Amplitude2, period2π/3.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Amplitude2, period2π/3.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Cosine transformed",
+          "Question": "Graph g(x)=−2cos(x−π/3)+1.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Amplitude2,period2π,shift rightπ/3,midline1.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Amplitude2,period2π,shift rightπ/3,midline1.",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Properties",
+          "Question": "For y=5sin(x/2)+2 find period and range.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "Period4π, range[-3,7].",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "Period4π, range[-3,7].",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Circular motion",
+          "Question": "Wheel radius2m, height center3m, period8sec; started bottom.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "h(t)=3−2cos(2πt/8).",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "h(t)=3−2cos(2πt/8).",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Vertical wheel position",
+          "Question": "A radius7m wheel centered8m above ground, rotating once20s, started bottom.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "h(t)=8−7cos(πt/10).",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "h(t)=8−7cos(πt/10).",
+          "Check": "Substitute at key quarter-period points."
+        },
+        {
+          "Title": "Ferris wheel height",
+          "Question": "Wheel radius10m, center11m, period12min, started bottom; find at6min.",
+          "Method": "Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+          "Steps": [
+            "Plan: Identify A,B,C,D, verify period, extrema, midline, and phase direction.",
+            "h(6)=21m.",
+            "Validate: Substitute at key quarter-period points."
+          ],
+          "Answer": "h(6)=21m.",
+          "Check": "Substitute at key quarter-period points."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Amplitude",
+          "Definition": "Magnitude |A| of vertical oscillation about midline.",
+          "Rule": "Does not include vertical offset.",
+          "Example": "−3sinx+2 amplitude3."
+        },
+        {
+          "Title": "Period",
+          "Definition": "2π/|B| for nonconstant sinusoid.",
+          "Rule": "B≠0 and A≠0 for nonconstant curve.",
+          "Example": "cos(4x) periodπ/2."
+        },
+        {
+          "Title": "Phase shift",
+          "Definition": "−C/B for Bx+C, B≠0.",
+          "Rule": "Mind sign inside the input.",
+          "Example": "sin(x−π) shift rightπ."
+        },
+        {
+          "Title": "Circular height",
+          "Definition": "Center height+radius sin/cos wave.",
+          "Rule": "Start position determines sine versus negative cosine.",
+          "Example": "h=5−4cos(2πt/10)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original sine/cosine periodic anchor values",
+          "Description": "Independent quarter-cycle table.",
+          "PrimaryLabel": "Angle",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "π/2",
+                "π",
+                "3π/2"
+              ]
+            },
+            {
+              "Label": "sinx",
+              "Cells": [
+                "0",
+                "1",
+                "0",
+                "−1"
+              ]
+            },
+            {
+              "Label": "cosx",
+              "Cells": [
+                "1",
+                "0",
+                "−1",
+                "0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Amplitude |A| and midline D.",
+        "Period2π/|B| for nonconstant waves.",
+        "Phase shift−C/B.",
+        "Model cyclic height with correct start angle."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Period=2πB.",
+          "WhyWrong": "Horizontal scale inversely changes period.",
+          "Correction": "2π/|B|."
+        },
+        {
+          "Mistake": "Take shift=C/B for Bx+C.",
+          "WhyWrong": "Sign is reversed.",
+          "Correction": "Shift−C/B."
+        }
+      ]
+    }
+  ]
+}

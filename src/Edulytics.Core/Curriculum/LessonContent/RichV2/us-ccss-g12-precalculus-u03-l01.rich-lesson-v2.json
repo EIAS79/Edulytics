@@ -1,0 +1,290 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L01",
+  "ContentVersion": "g12-u03-l01-firstparty-source-math-skill-authoring-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L01",
+      "CultureCode": "en",
+      "Title": "Complex Numbers",
+      "ExplanationParagraphs": [
+        "Learning goals: write square roots of negative reals in terms of i, plot complex coordinates, add/subtract and multiply/divide complex numbers.",
+        "The imaginary unit i satisfies i²=−1. A complex number is a+bi with independently real and imaginary coefficients.",
+        "Complex numbers form ordered-coordinate points (real,imaginary) in the plane. Addition is component-wise and subtraction reverses each component of the subtrahend.",
+        "Multiply using distribution and i²=−1. For a quotient, multiply numerator and denominator by the conjugate of a nonzero complex denominator.",
+        "The powers of i cycle every four. To evaluate complex-valued functions, substitute and simplify algebraically, checking that original rational denominators are not zero.",
+        "Independent Edulytics cool-down: (a) Plot z=−3+2i. (b) Compute (2−i)(3+2i). (c) Simplify (3+i)/(1−i). (d) Find i^26.",
+        "Independent Try It 1 — Negative-root conversion. Simplify √(−48).",
+        "Independent Try It 2 — Complex coordinate plotting. Plot 4−5i on complex axes.",
+        "Independent Try It 3 — Complex subtraction. Find (5+2i)−(3−4i).",
+        "Independent Try It 4 — Multiply real and complex. Find −2(3+5i).",
+        "Independent Try It 5 — Multiply two complex numbers. Find (3−2i)(1+4i).",
+        "Independent Try It 6 — Polynomial substitution. Evaluate f(z)=z²−z at z=3−i.",
+        "Independent Try It 7 — Rational substitution. Evaluate (z+1)/(z−2) at z=i."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simplify a negative square root",
+          "Question": "Write √(−25) as a complex number a+bi.",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "5i, because i²=−1.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "5i, because i²=−1.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Plot complex coordinate",
+          "Question": "Represent −2+3i in the Argand plane.",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "Point (−2,3), with real axis horizontal and imaginary axis vertical.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "Point (−2,3), with real axis horizontal and imaginary axis vertical.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Add two complex numbers",
+          "Question": "Compute (4−3i)+(2+5i).",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "6+2i.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "6+2i.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Scale a complex number",
+          "Question": "Compute −3(2+4i).",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "−6−12i.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "−6−12i.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Multiply complex binomials",
+          "Question": "Multiply (2+3i)(4−i).",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "11+10i, because i²=−1.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "11+10i, because i²=−1.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Take complex conjugates",
+          "Question": "Find conjugates of 5−2i and −3i.",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "5+2i and 3i.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "5+2i and 3i.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Divide using conjugate",
+          "Question": "Compute (2+3i)/(1−i) in standard complex form.",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "(−1/2)+(5/2)i by multiplying numerator/denominator by (1+i).",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "(−1/2)+(5/2)i by multiplying numerator/denominator by (1+i).",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Substitute complex input in polynomial",
+          "Question": "For f(z)=z²+2z+1, calculate f(2+i).",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "(2+i)²+2(2+i)+1=8+6i.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "(2+i)²+2(2+i)+1=8+6i.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Substitute complex input in rational function",
+          "Question": "For g(z)=(z+2)/(z+1), evaluate g(i).",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "(2+i)/(1+i)=(3−i)/2.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "(2+i)/(1+i)=(3−i)/2.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        },
+        {
+          "Title": "Reduce high power of i",
+          "Question": "Evaluate i^37 using the four-step cycle.",
+          "Method": "Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+          "Steps": [
+            "Plan: Use standard complex algebra and i²=−1; show exact real/imaginary components.",
+            "i because 37≡1 mod4.",
+            "Validate: Verify with pairwise multiplication/conjugate and required denominators."
+          ],
+          "Answer": "i because 37≡1 mod4.",
+          "Check": "Verify with pairwise multiplication/conjugate and required denominators."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Imaginary unit",
+          "Definition": "i is defined by i²=−1.",
+          "Rule": "For real a>0, √(−a)=i√a.",
+          "Example": "√−9=3i."
+        },
+        {
+          "Title": "Complex standard form",
+          "Definition": "z=a+bi with a,b real.",
+          "Rule": "Re(z)=a, Im(z)=b.",
+          "Example": "2−3i has Re2, Im−3."
+        },
+        {
+          "Title": "Complex plane",
+          "Definition": "Plot (a,b) for complex a+bi.",
+          "Rule": "Horizontal axis real; vertical axis imaginary.",
+          "Example": "−2+3i→(−2,3)."
+        },
+        {
+          "Title": "Addition/subtraction",
+          "Definition": "Combine real parts and imaginary parts separately.",
+          "Rule": "(a+bi)+(c+di)=(a+c)+(b+d)i.",
+          "Example": "(1+i)+(2−3i)=3−2i."
+        },
+        {
+          "Title": "Complex multiplication",
+          "Definition": "Distribute and replace i² by −1.",
+          "Rule": "(a+bi)(c+di)=(ac−bd)+(ad+bc)i.",
+          "Example": "(1+i)(1−i)=2."
+        },
+        {
+          "Title": "Conjugate",
+          "Definition": "Conjugate of a+bi is a−bi.",
+          "Rule": "z·conj(z)=a²+b².",
+          "Example": "Conjugate 2−i is 2+i."
+        },
+        {
+          "Title": "Complex quotient",
+          "Definition": "Multiply numerator and denominator by denominator conjugate.",
+          "Rule": "A nonzero complex denominator gives a positive real a²+b².",
+          "Example": "(1+i)/(1−i)=i."
+        },
+        {
+          "Title": "Powers of i",
+          "Definition": "Powers repeat every four.",
+          "Rule": "i^n is 1,i,−1,−i for n mod4=0,1,2,3.",
+          "Example": "i^37=i."
+        },
+        {
+          "Title": "Complex substitution",
+          "Definition": "Polynomial/rational functions may accept complex inputs if denominators are nonzero.",
+          "Rule": "Use complex multiplication and conjugates to simplify.",
+          "Example": "(2+i)²=3+4i."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Complex coordinate pairs",
+          "Description": "Independent mapping from standard form to the Argand plane.",
+          "PrimaryLabel": "Complex number",
+          "SecondaryLabel": "Coordinate",
+          "Rows": [
+            {
+              "Label": "z",
+              "Cells": [
+                "2+3i",
+                "−2+3i",
+                "2−3i",
+                "−2−3i"
+              ]
+            },
+            {
+              "Label": "(Re,Im)",
+              "Cells": [
+                "(2,3)",
+                "(−2,3)",
+                "(2,−3)",
+                "(−2,−3)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Cyclic imaginary powers",
+          "Description": "The values repeat every four exponent steps.",
+          "PrimaryLabel": "n mod4",
+          "SecondaryLabel": "i^n",
+          "Rows": [
+            {
+              "Label": "Exponent remainder",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "1",
+                "i",
+                "−1",
+                "−i"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "i²=−1; √(−a)=i√a for a>0.",
+        "Plot a+bi at (a,b).",
+        "Complex arithmetic combines real and imaginary components.",
+        "Conjugates rationalize a complex denominator.",
+        "i^n has period four."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating i² as +1.",
+          "WhyWrong": "Defining identity is i²=−1.",
+          "Correction": "Reduce i² before collecting terms."
+        },
+        {
+          "Mistake": "Plotting a+bi as (b,a).",
+          "WhyWrong": "Real axis is horizontal and imaginary vertical.",
+          "Correction": "Plot (Re,Im)=(a,b)."
+        },
+        {
+          "Mistake": "Dividing real and imaginary parts term by term.",
+          "WhyWrong": "Complex denominator must be handled as a whole.",
+          "Correction": "Use its complex conjugate."
+        }
+      ]
+    }
+  ]
+}

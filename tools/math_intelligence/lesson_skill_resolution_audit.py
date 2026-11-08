@@ -22,6 +22,35 @@ SKILL_REGISTRY = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1
 LESSON_MAPPINGS = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
 RULES_FILE = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/skill-resolution-rules.v1.json"
 REPORT = ROOT / "artifacts/math-intelligence/lesson-skill-resolution-audit.json"
+G12_STAGE_D_LEDGER = ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-stage-d-execution-ledger.json"
+G12_ADVANCED_PREFIX = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+
+
+def separately_certified_g12_practice() -> set[str]:
+    """The owner-authored advanced 73-lesson course uses a dedicated C#
+    LessonPracticeContractRegistry, real authenticated HTTP practice tests,
+    and instructor-scored evidence, NOT the generic Supporting exact rule
+    catalogue. Keep the zero-blind-spot rule for every other curriculum.
+    """
+    if not G12_STAGE_D_LEDGER.exists():
+        return set()
+    ledger = read_json(G12_STAGE_D_LEDGER)
+    if (ledger.get("dVerifiedCount") != 73 or
+        ledger.get("practiceVerifiedLessonCount") != 73 or
+        ledger.get("teacherGradebookVerifiedLessonCount") != 73 or
+        ledger.get("lastAuthenticatedE2EStatus") != "PASS_ALL_73"):
+        return set()
+    lessons = ledger.get("lessonResults") or []
+    if len(lessons) != 73:
+        return set()
+    codes = {row.get("lessonCode") for row in lessons if
+             row.get("dStatus") == "D_VERIFIED" and
+             str(row.get("lessonCode") or "").startswith(G12_ADVANCED_PREFIX) and
+             row.get("authenticatedE2E") == "PASS" and
+             row.get("integrationTests") == "PASS" and
+             row.get("unitTests") == "PASS"}
+    return codes if len(codes) == 73 else set()
+
 
 STOPWORDS = {
     "a", "an", "and", "apply", "build", "by", "for", "from", "idea", "in",
@@ -467,6 +496,16 @@ def audit() -> dict[str, Any]:
                 "candidates": candidates[:5],
             })
 
+    # The separate G12 owner-authorized Precalculus sequence is already
+    # independently bound to 73 real C# Practice contracts and certified by
+    # 73 HTTPS student journeys, 146 persisted attempts and 73 teacher rubrics.
+    # An additional generic Supporting rule would overwrite those reviewed
+    # course-specific families; preserve dedicated contract authority instead.
+    certified_advanced = separately_certified_g12_practice()
+    g12_seen = {c for c in seen_lessons if c.startswith(G12_ADVANCED_PREFIX)}
+    if g12_seen and certified_advanced != g12_seen:
+        blockers.append("G12 advanced source-specific Practice contract proof missing or incomplete")
+
     # A complete Supporting rollout is intentionally fail-closed: every
     # outcome-unmapped canonical lesson must be covered by either an explicit
     # mapping or a reviewed Supporting target rule.
@@ -474,6 +513,7 @@ def audit() -> dict[str, Any]:
     unmatched_after_explicit = [
         row for row in unmatched_supporting
         if row["lessonCode"] not in covered_by_non_supporting_mapping
+        and row["lessonCode"] not in certified_advanced
     ]
     blockers.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
@@ -499,6 +539,7 @@ def audit() -> dict[str, Any]:
         and row["status"] in {"ONTOLOGY_GAP", "AMBIGUOUS", "REVIEW_REQUIRED"}
     )
 
+    summary["grade12IndependentExactPracticeContracts"] = len(certified_advanced)
     summary["ruleCount"] = len(rules)
     summary["skillRegistryCount"] = len(skill_ids)
     summary["blockerCount"] = len(blockers)

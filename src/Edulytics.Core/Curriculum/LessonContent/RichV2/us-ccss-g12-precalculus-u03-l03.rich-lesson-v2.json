@@ -1,0 +1,346 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L03",
+  "ContentVersion": "g12-u03-l03-firstparty-source-skill-math-20261107",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03",
+      "CultureCode": "en",
+      "Title": "Power Functions and Polynomial Functions",
+      "ExplanationParagraphs": [
+        "Learning goals: identify power functions and their end behavior; identify polynomials; find polynomial degree and leading coefficient.",
+        "A power function is a single term a·x^n. Polynomial functions are finite sums of nonnegative integer powers with real coefficients.",
+        "At large |x|, the leading term dominates: even-degree tails have the same sign, odd-degree tails opposite signs. For positive leading coefficients, the right tail rises; negative falls.",
+        "Factors reveal real zeros. At a zero of odd multiplicity the curve crosses the horizontal axis; at even multiplicity it touches or bounces.",
+        "A degree-n polynomial has at most n distinct real zeros and at most n−1 turning points, and a polynomial graph is continuous and smooth.",
+        "Independent Edulytics cool-down: (a) Is 4x³−2x a single power function? (b) Determine tails for −2x⁷+5x². (c) Find degree and real zeros of 3x(x−1)²(x+2).",
+        "Independent Try It 1 — Classify polynomial and power. Is 2x²·4x³ a power function? Is x⁵−x a power function?",
+        "Independent Try It 2 — Even negative power tails. State end behavior of −5x⁴.",
+        "Independent Try It 3 — Leading coefficient after rearranging. For 4x²−x⁶+2x−6 determine degree and leading coefficient.",
+        "Independent Try It 4 — Least degree from turning points. A smooth continuous curve changes direction 3 times and tails both rise. What minimum polynomial degree is possible?",
+        "Independent Try It 5 — Expand factors and infer tails. Find leading term and degree of 0.2(x−2)(x+1)(x−5).",
+        "Independent Try It 6 — Find polynomial zeros. Find intercepts of f(x)=2x³−6x²−20x.",
+        "Independent Try It 7 — Maximum turning point count. For degree12 polynomial, state max x-intercepts and turning points.",
+        "Independent Try It 8 — Use graph root multiplicity. A polynomial graph touches at x=2 and crosses at x=−1. Find a simple polynomial model.",
+        "Independent Try It 9 — Crossing behavior from factors. For f(x)=0.2(x−2)(x+1)(x−5), state intercept crossing behavior."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recognize a single power term",
+          "Question": "For each f(x)=3x⁴, g(x)=x³−x and h(x)=7 identify a power function or sum of powers.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "f is power a·xⁿ, g is polynomial not single power, h=7·x⁰ is constant power.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "f is power a·xⁿ, g is polynomial not single power, h=7·x⁰ is constant power.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Even positive end behavior",
+          "Question": "Describe end behavior of f(x)=4x⁶.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "As x→±∞, f(x)→+∞, positive even leading power.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "As x→±∞, f(x)→+∞, positive even leading power.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Odd negative end behavior",
+          "Question": "Describe end behavior of f(x)=−2x⁵.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "As x→−∞ f→+∞ and x→+∞ f→−∞.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "As x→−∞ f→+∞ and x→+∞ f→−∞.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Recognize polynomials",
+          "Question": "Classify f(x)=x³−2x²+1, g(x)=√x+2, h(x)=1/x.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Only f is polynomial; nonnegative integer exponents required.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Only f is polynomial; nonnegative integer exponents required.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Read leading degree and coefficient",
+          "Question": "For f(x)=−3x⁷+2x⁴−1, determine degree, leading term, coefficient.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Degree7, leading term −3x⁷, leading coefficient −3.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Degree7, leading term −3x⁷, leading coefficient −3.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Infer degree from end behavior",
+          "Question": "A continuous smooth polynomial graph goes down at left and up at right, with 4 turning points. Find lowest plausible degree.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Odd degree with positive leading coefficient; at least degree5.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Odd degree with positive leading coefficient; at least degree5.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Determine product degree and sign",
+          "Question": "For f(x)=−2x²(x−1)(x+3), find leading coefficient, degree and end behavior.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Leading term −2x⁴, degree4, both ends negative.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Leading term −2x⁴, degree4, both ends negative.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Intercepts from factored polynomial",
+          "Question": "For p(x)=(x−2)(x+1)(x−4), find y-intercept and all zeros.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Zeros 2,−1,4; p(0)=8.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Zeros 2,−1,4; p(0)=8.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Factor quadratic in x²",
+          "Question": "Find real zeros and y-intercept for f(x)=x⁴−5x²+4.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "(x²−1)(x²−4); zeros ±1,±2; f(0)=4.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "(x²−1)(x²−4); zeros ±1,±2; f(0)=4.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Bound turning points",
+          "Question": "What maximum number of real zeros and turning points can a nonzero degree6 polynomial have?",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "At most6 distinct real zeros and5 turning points.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "At most6 distinct real zeros and5 turning points.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Reason from plotted intercepts",
+          "Question": "A polynomial has three distinct x-intercepts and two changes of direction, crossing the axis each time. What minimum degree is possible?",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Degree3 is possible; at least3 from distinct zeros, at least3 from two turning points.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Degree3 is possible; at least3 from distinct zeros, at least3 from two turning points.",
+          "Check": "Verify leading term and evaluate given roots."
+        },
+        {
+          "Title": "Local behavior from simple factors",
+          "Question": "For p(x)=−3x(x+2)(x−4), classify crossings, y-intercept and end behavior.",
+          "Method": "Use polynomial definitions, factorization, parity, degree and end behavior.",
+          "Steps": [
+            "Plan: Use polynomial definitions, factorization, parity, degree and end behavior.",
+            "Zeros −2,0,4 all multiplicity1 crossing; degree3 leading −3; left up right down.",
+            "Validate: Verify leading term and evaluate given roots."
+          ],
+          "Answer": "Zeros −2,0,4 all multiplicity1 crossing; degree3 leading −3; left up right down.",
+          "Check": "Verify leading term and evaluate given roots."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Power function",
+          "Definition": "One term a·xⁿ with constant a and exponent n≥0 for polynomial power functions.",
+          "Rule": "The exponent is power, a its coefficient.",
+          "Example": "−3x⁵."
+        },
+        {
+          "Title": "Polynomial definition",
+          "Definition": "Finite sum of nonnegative integer powers of x with real coefficients.",
+          "Rule": "Fractional or negative x powers are not polynomials.",
+          "Example": "2x³−x+7."
+        },
+        {
+          "Title": "Degree",
+          "Definition": "Largest exponent with nonzero coefficient.",
+          "Rule": "Product degrees add unless zero polynomial factors.",
+          "Example": "x²(x−1) degree3."
+        },
+        {
+          "Title": "Leading coefficient",
+          "Definition": "Coefficient of the highest-degree term.",
+          "Rule": "Leading term determines both end behaviors.",
+          "Example": "−2x⁶+5 has leading coefficient −2."
+        },
+        {
+          "Title": "Even-degree behavior",
+          "Definition": "Both tails of a polynomial travel in the same vertical direction.",
+          "Rule": "Sign of leading coefficient decides up or down.",
+          "Example": "−x⁴ → both down."
+        },
+        {
+          "Title": "Odd-degree behavior",
+          "Definition": "Polynomial tails travel in opposite vertical directions.",
+          "Rule": "Positive leading→left down/right up.",
+          "Example": "x³ → down-left/up-right."
+        },
+        {
+          "Title": "Roots and intercepts",
+          "Definition": "An x-intercept has p(x)=0; y-intercept p(0).",
+          "Rule": "Factored form makes zeros explicit.",
+          "Example": "(x−2)(x+1) roots 2,−1."
+        },
+        {
+          "Title": "Multiplicity",
+          "Definition": "Odd root multiplicity crosses x-axis, even multiplicity touches/bounces.",
+          "Rule": "Graph behavior near a root depends on multiplicity parity.",
+          "Example": "(x−2)² touches at2."
+        },
+        {
+          "Title": "Turning point bound",
+          "Definition": "Degree n≥1 polynomial has at most n−1 turning points.",
+          "Rule": "Number of distinct real roots at most n.",
+          "Example": "Degree5 max4 turns."
+        },
+        {
+          "Title": "Continuity/smoothness",
+          "Definition": "Polynomial graphs are continuous and smooth without corners or discontinuities.",
+          "Rule": "A graph with a hole or jump cannot be a polynomial graph.",
+          "Example": "x³−4x is continuous."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Polynomial tails from leading term",
+          "Description": "First-party summary of degree parity and leading sign.",
+          "PrimaryLabel": "Degree",
+          "SecondaryLabel": "Tails",
+          "Rows": [
+            {
+              "Label": "Degree parity",
+              "Cells": [
+                "Even",
+                "Even",
+                "Odd",
+                "Odd"
+              ]
+            },
+            {
+              "Label": "Leading sign",
+              "Cells": [
+                "+",
+                "−",
+                "+",
+                "−"
+              ]
+            },
+            {
+              "Label": "Left tail",
+              "Cells": [
+                "Up",
+                "Down",
+                "Down",
+                "Up"
+              ]
+            },
+            {
+              "Label": "Right tail",
+              "Cells": [
+                "Up",
+                "Down",
+                "Up",
+                "Down"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent cubic polynomial values",
+          "Description": "Values for p(x)=x(x−2)(x+2) around roots.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "p(x)",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "−3",
+                "−2",
+                "−1",
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "p(x)",
+              "Cells": [
+                "−15",
+                "0",
+                "3",
+                "0",
+                "−3",
+                "0",
+                "15"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Power function is one term; polynomial finite sum.",
+        "Degree is highest nonzero power and leading coefficient controls tails.",
+        "Odd/even degree determines whether tails match.",
+        "Factorization gives roots and multiplicities.",
+        "Degree n bounds real zeros and turning points."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling x⁻² a polynomial.",
+          "WhyWrong": "Exponent is a negative integer.",
+          "Correction": "Polynomial powers must be nonnegative integers."
+        },
+        {
+          "Mistake": "Concluding root multiplicity from leading sign.",
+          "WhyWrong": "Crossing/touching needs local factor multiplicity.",
+          "Correction": "Factor around each zero."
+        },
+        {
+          "Mistake": "Claiming degree n guarantees n real zeros.",
+          "WhyWrong": "n is only the maximum; some roots can be complex or repeated.",
+          "Correction": "Use at most n distinct real zeros."
+        }
+      ]
+    }
+  ]
+}

@@ -7024,6 +7024,193 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // OpenStax Precalculus 2017 Section 1.1 (Grade 12): reuse only four
+        // independently implemented function family mechanics. This is a
+        // PARTIAL skill-scoped digital route, NOT an assertion that all 92
+        // original exercises, graph drawings, answers or teacher rubrics are
+        // digitally graded or that the lesson passed Stage D.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01"] =
+            new LessonPracticeContract(
+                "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+                "supporting.functions.core",
+                "PRECALC_FUNCTION_RELATIONS_INJECTIVITY_IMPLICIT_TABLE_ROOTS_PARTIAL",
+                [
+                    "functions.relations.unique_output.classify",
+                    "functions.relations.one_to_one.classify",
+                    "functions.relations.implicit.classify",
+                    "functions.table.lookup.invert",
+                    "functions.quadratic.output_roots.solve",
+                    "functions.notation.evaluate_context",
+                    "functions.domain_range.context_bounds",
+                    "functions.absolute_value.translate_evaluate"
+                ],
+                "G12_SECTION_1_1_FOUR_REUSED_FOUR_EXTENDED_FAMILIES_NOT_92_SOURCE_PARITY",
+                "READY_VERIFIED",
+                Version)
+            {
+                SkillIds = ["supporting.functions.core", "functions.evaluate.exact"]
+            };
+
+        // Stage D lesson-specific exact subset. These contracts only certify the
+        // tested numerical generator family. Graphs, explanations, source
+        // exercise mapping and teacher rubric remain separately assessed.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L04",
+            "functions.inverse.composition",
+            "COMPOSITION_INVERSE_EXACT_PARTIAL",
+            ["usccss.hs.inverse_composition"],
+            "FIRSTPARTY_SECTION_1_4_COMPOSITION_EXACT_SUBSET_TEACHER_PROSE",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L05",
+            "functions.absolute_value.translate",
+            "TRANSFORMATION_TRANSLATION_EXACT_PARTIAL",
+            ["functions.absolute_value.translate_evaluate"],
+            "FIRSTPARTY_SECTION_1_5_FUNCTION_TRANSLATION_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L06",
+            "functions.absolute_value.translate",
+            "ABSOLUTE_VALUE_TRANSLATION_EXACT_PARTIAL",
+            ["functions.absolute_value.translate_evaluate", "functions.absolute_error.from_target"],
+            "FIRSTPARTY_SECTION_1_6_ABSOLUTE_VALUE_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L01",
+            "functions.average_rate_of_change",
+            "LINEAR_SLOPE_EXACT_PARTIAL",
+            ["geometry.coordinate.gradient_between_points"],
+            "FIRSTPARTY_SECTION_2_1_SLOPE_SUBSET_TEACHER_LINEAR_MODELS",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L02",
+            "functions.graph.key_features",
+            "LINEAR_INTERCEPT_EXACT_PARTIAL",
+            ["geometry.coordinate.y_intercept_from_rule"],
+            "FIRSTPARTY_SECTION_2_2_Y_INTERCEPT_SUBSET_TEACHER_GRAPH",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U02:L04",
+            "functions.model.linear_data",
+            "LINEAR_REGRESSION_PREDICTION_EXACT_PARTIAL",
+            ["statistics.linear_model.predict", "statistics.linear_model.residual"],
+            "FIRSTPARTY_SECTION_2_4_LINEAR_MODEL_SUBSET_TEACHER_FIT",
+            "READY_VERIFIED",
+            Version);
+
+        // Additional Stage D exact numeric subsets selected for matching
+        // independently authored Grade12 lesson skills. These are not a
+        // blanket adaptation of a textbook exercise bank and do not grade
+        // proofs, source illustrations, submissions, or teacher rubrics.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08", "functions.inverse.composition",
+            "RESTRICTED_QUADRATIC_INVERSE_EXACT_PARTIAL",
+            ["usccss.hs.restricted_inverse"],
+            "G12_SECTION_3_8_RESTRICTED_INVERSE_SUBSET_TEACHER_RADICAL_GRAPHS", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01", "functions.exponential.growth",
+            "EXPONENTIAL_GROWTH_EVALUATION_EXACT_PARTIAL",
+            ["functions.exponential.growth.evaluate"],
+            "G12_SECTION_4_1_EXPONENTIAL_EVALUATION_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02", "functions.exponential.graph.interpret",
+            "EXPONENTIAL_GROWTH_EVALUATION_EXACT_PARTIAL",
+            ["functions.exponential.growth.evaluate"],
+            "G12_SECTION_4_2_EXPONENTIAL_GRAPH_NUMERICAL_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L07", "functions.exponential.model.choose",
+            "EXPONENTIAL_GROWTH_MODEL_EVALUATION_EXACT_PARTIAL",
+            ["functions.exponential.growth.evaluate"],
+            "G12_SECTION_4_7_EXPONENTIAL_MODELS_EXACT_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L01", "algebra.linear.systems.two_by_two.solve",
+            "TWO_BY_TWO_LINEAR_SYSTEM_EXACT_PARTIAL",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "G12_SECTION_9_1_TWO_VARIABLE_LINEAR_SYSTEM_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L06", "algebra.linear.systems.two_by_two.solve",
+            "GAUSSIAN_TWO_BY_TWO_ELIMINATION_EXACT_PARTIAL",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "G12_SECTION_9_6_ELIMINATION_TWO_VARIABLE_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L08", "algebra.linear.systems.two_by_two.solve",
+            "CRAMER_TWO_BY_TWO_NUMERICAL_SUBSET",
+            ["algebra.linear.systems.two_by_two.integer_coefficients"],
+            "G12_SECTION_9_8_CRAMER_TWO_VARIABLE_SYSTEM_SUBSET_TEACHER_DETERMINANT", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L07"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L07", "probability.theoretical.core",
+            "PROBABILITY_COMPLEMENT_EXACT_PARTIAL",
+            ["probability.theoretical.complement"],
+            "G12_SECTION_11_7_PROBABILITY_COMPLEMENT_SUBSET", "READY_VERIFIED", Version);
+
+        // Stage D: arithmetic/sequence/vector/trigonometry exact subsets.
+        // No source-atom, diagram, proof, human rubric or full digital parity
+        // certification can be inferred from these numerical mechanics.
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L03", "functions.quadratic.equations",
+            "POLYNOMIAL_QUADRATIC_SPECIAL_CASE_EXACT_PARTIAL",
+            ["functions.quadratic.output_roots.solve"],
+            "G12_SECTION_3_3_QUADRATIC_POLYNOMIAL_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L06", "functions.quadratic.equations",
+            "POLYNOMIAL_ZERO_QUADRATIC_SPECIAL_CASE_EXACT_PARTIAL",
+            ["functions.quadratic.output_roots.solve"],
+            "G12_SECTION_3_6_POLYNOMIAL_QUADRATIC_ROOT_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L04", "trigonometry.right_triangle.ratio",
+            "RIGHT_TRIANGLE_TRIGONOMETRY_EXACT_PARTIAL",
+            ["trigonometry.right_triangle.ratio_exact", "trigonometry.right_triangle.find_side_exact"],
+            "G12_SECTION_5_4_RIGHT_TRIANGLE_MEASUREMENT_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L08", "vectors.operations",
+            "VECTOR_EXACT_ARITHMETIC_PARTIAL",
+            ["vectors.add.exact_rational", "vectors.subtract.exact_rational", "vectors.magnitude.exact", "vectors.dot.exact_rational"],
+            "G12_SECTION_8_8_VECTOR_ARITHMETIC_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01", "sequences.core",
+            "EXPLICIT_SEQUENCE_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.geometric_nth_term"],
+            "G12_SECTION_11_1_SEQUENCE_NOTATION_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L02", "sequences.arithmetic",
+            "ARITHMETIC_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
+            "G12_SECTION_11_2_ARITHMETIC_SEQUENCE_SUBSET", "READY_VERIFIED", Version);
+        byLesson["PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L03", "sequences.geometric",
+            "GEOMETRIC_NTH_TERM_EXACT_PARTIAL",
+            ["sequences.core.geometric_nth_term"],
+            "G12_SECTION_11_3_GEOMETRIC_SEQUENCE_SUBSET", "READY_VERIFIED", Version);
+
+        // These 31 distinct mathematical question families implement an
+        // exact, bounded original skill from the corresponding Grade12
+        // section. They are subject to independent runtime certification and
+        // never auto-grade source figures, proofs or teacher-led assignments.
+        const string grade12Root =
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
+        foreach (var (subskill, section) in
+            Grade12PrecalculusNumericalFamilyCatalog.All)
+        {
+            var code = grade12Root + section;
+            if (byLesson.ContainsKey(code))
+                throw new InvalidOperationException(
+                    $"Grade12 contract collision: {code}");
+            var family = Grade12PrecalculusNumericalFamilyCatalog.Prefix + subskill;
+            byLesson[code] = new LessonPracticeContract(
+                code,
+                "g12.precalculus.exact." + subskill,
+                "FIRST_PARTY_G12_EXACT_NUMERICAL_SUBSKILL_NOT_FULL_SOURCE_PARITY",
+                [family],
+                "GRADE12_SECTION_MATCHED_MATHEMATICAL_SKILL_TEACHER_REVIEW_FOR_OPEN_TASKS",
+                "READY_VERIFIED",
+                Version);
+        }
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

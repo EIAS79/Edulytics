@@ -1,0 +1,799 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07",
+  "OriginalNumberedSourceExercises": 88,
+  "IndependentTryItStudentQuestions": [
+    {
+      "Number": 1,
+      "Question": "For f(x)=−1/(x+4), determine f(x) as x→−4− and x→−4+.",
+      "TeacherExpectedMath": "Left +∞, right −∞.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 2,
+      "Question": "For g(x)=3/(x−1)−2 identify both asymptotes.",
+      "TeacherExpectedMath": "Vertical x=1; horizontal y=−2.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 3,
+      "Question": "A tank holds 30 g in 60 L; add 3 g/min and 2 L/min. Write c(t) and its long-run level.",
+      "TeacherExpectedMath": "(30+3t)/(60+2t), tends to 3/2 g/L.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 4,
+      "Question": "Find domain of (x−5)/(x²−16).",
+      "TeacherExpectedMath": "All reals except −4 and 4.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 5,
+      "Question": "For (x²−9)/(x−3), locate the hole.",
+      "TeacherExpectedMath": "Hole at (3,6); the original domain excludes 3.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 6,
+      "Question": "Find end asymptote for (4x²+3)/(x²+1).",
+      "TeacherExpectedMath": "Horizontal y=4.",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 7,
+      "Question": "Find x/y intercepts of (x+3)/(x−2).",
+      "TeacherExpectedMath": "x-intercept (−3,0); y-intercept (0,−3/2).",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    },
+    {
+      "Number": 8,
+      "Question": "Construct a rational function with zero x=2, vertical asymptote x=−1, horizontal asymptote y=3.",
+      "TeacherExpectedMath": "f(x)=3(x−2)/(x+1).",
+      "TeacherReviewStatus": "DRAFT_NOT_STUDENT_RUNTIME_VERIFIED"
+    }
+  ],
+  "OriginalExerciseFirstPartyCoverageStatus": "88_OF_88_INDEPENDENT_EXERCISE_ALTERNATIVES_AUTHORED_EIGHT_TYPED_GRAPH_MODELS_RUNTIME_NOT_VERIFIED",
+  "OriginalSourceImagesCopied": false,
+  "StageDStudentTeacherRuntime": "NOT_RUN",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Explain why p(x)=x³−2x+4 is polynomial while r(x)=(x²+1)/(x−3) is rational.",
+      "TeacherExpectedMath": "p uses nonnegative integer exponents and no nonconstant denominator. r is a quotient of polynomials and is undefined at x=3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Compare continuity of p(x)=2x²+1 and r(x)=1/(x+1) over real inputs.",
+      "TeacherExpectedMath": "p is continuous at every real x; r is undefined and has a vertical asymptote at x=−1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Explain why r(x)=(x−4)(x+2)/((x−4)(x−1)) has a hole at x=4.",
+      "TeacherExpectedMath": "A common factor x−4 cancels in the expression, but the original domain excludes 4. The simplified value at 4 is (4+2)/(4−1)=2, giving hole (4,2).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Give an example of a rational function with no vertical asymptotes and justify it.",
+      "TeacherExpectedMath": "1/(x²+4): the denominator has no real zeros, so no real vertical asymptotes.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Give a rational function with no real x-intercepts and justify it.",
+      "TeacherExpectedMath": "(x²+1)/(x−2): the numerator is always positive, so no x-intercepts; domain excludes 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x+2)/(x−4).",
+      "TeacherExpectedMath": "All real x except 4.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "Find the original domain of f(x)=(x−3)/(x²−9) and classify each excluded input.",
+      "TeacherExpectedMath": "Exclude −3 and 3; x=3 is a hole at y=1/6 and x=−3 is a vertical asymptote.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x²+1)/(x²+x−6).",
+      "TeacherExpectedMath": "Factor denominator (x+3)(x−2). Exclude −3 and 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Find the domain of f(x)=(x+5)/(x⁴−10x²+9).",
+      "TeacherExpectedMath": "Denominator=(x²−1)(x²−9). Exclude −3,−1,1,3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Find domain, vertical and horizontal asymptotes of 7/(x+5).",
+      "TeacherExpectedMath": "Exclude −5; vertical x=−5; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Find domain and asymptotes of 3/(2x−7).",
+      "TeacherExpectedMath": "Exclude 7/2; vertical x=7/2; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Find domain and asymptotes of x/(x²−16).",
+      "TeacherExpectedMath": "Exclude −4 and 4; vertical x=±4; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (x+1)/(x²−3x−10).",
+      "TeacherExpectedMath": "Denominator=(x−5)(x+2). Exclude 5 and −2; both are vertical asymptotes, horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "Find real vertical and horizontal asymptotes of (x+6)/(x³−8).",
+      "TeacherExpectedMath": "Denominator real zero x=2, numerator nonzero there. Vertical x=2; horizontal y=0. Domain excludes 2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (2x+1)/(x³−9x).",
+      "TeacherExpectedMath": "Denominator x(x−3)(x+3). Exclude −3,0,3; all vertical, horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (x²−4)/(x(x+3)(x+5)).",
+      "TeacherExpectedMath": "Exclude −5,−3,0; numerator nonzero at all three, so verticals there; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "Classify all discontinuities and the horizontal asymptote of (x−4)/(x²−16).",
+      "TeacherExpectedMath": "Domain excludes −4 and 4; hole at (4,1/8); vertical asymptote x=−4; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "Find domain and vertical/horizontal asymptotes of (x+2)/(x−1).",
+      "TeacherExpectedMath": "Exclude 1; vertical x=1; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "Find domain and asymptotes of (6−3x)/(2x+1).",
+      "TeacherExpectedMath": "Exclude −1/2; vertical x=−1/2; horizontal y=−3/2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "Find the x- and y-intercepts of (x−6)/(x²+1).",
+      "TeacherExpectedMath": "x-intercept (6,0); y-intercept (0,−6).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "Find intercepts and hole of f(x)=x/(x²+2x).",
+      "TeacherExpectedMath": "Original domain excludes 0 and −2; simplifies to 1/(x+2). Hole at (0,1/2); no x-intercept and no y-intercept.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "Find intercepts of (x²−5x+4)/(x²+4x+3).",
+      "TeacherExpectedMath": "x-intercepts (1,0) and (4,0); y-intercept (0,4/3). Denominator roots −1,−3 do not cancel.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Find all real intercepts of (x²+x+2)/(x²−5x+6).",
+      "TeacherExpectedMath": "No x-intercepts: numerator discriminant 1−8<0; y-intercept (0,1/3).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Find the x- and y-intercepts of (50−2x²)/(x²−9).",
+      "TeacherExpectedMath": "x-intercepts (−5,0) and (5,0); y-intercept (0,−50/9). Denominator excludes ±3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_AND_TARGETED_ARITHMETIC_CHECKED",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Determine local one-sided behavior and long-run level of x/(3x+2).",
+      "TeacherExpectedMath": "Vertical x=−2/3; horizontal y=1/3; as x→−2/3− function→+∞ and x→−2/3+ function→−∞.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Analyze local and end behavior of 3x/(x−4).",
+      "TeacherExpectedMath": "Vertical x=4; horizontal y=3; left side tends −∞ and right side +∞.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Analyze local and end behavior of −3x/(x−4).",
+      "TeacherExpectedMath": "Vertical x=4; horizontal y=−3; left side tends +∞ and right side −∞.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Analyze the local and end behavior of (x²−1)/(x²−9).",
+      "TeacherExpectedMath": "Vertical x=±3; horizontal y=1. At −3: left +∞, right −∞. At 3: left −∞, right +∞.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Find the vertical and horizontal asymptotes and local signs of (x²−16)/(x²−1).",
+      "TeacherExpectedMath": "Vertical x=±1; horizontal y=1. At −1: left −∞, right +∞. At 1: left +∞, right −∞.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Find the slant asymptote of (6x²+5x)/(2x+1).",
+      "TeacherExpectedMath": "Divide to get 3x+1−1/(2x+1). Slant y=3x+1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Find the slant asymptote of (8x²−3)/(2x−1).",
+      "TeacherExpectedMath": "Divide to get 4x+2−1/(2x−1). Slant y=4x+2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "Find the slant asymptote of (12x²+8x+1)/(3x+2).",
+      "TeacherExpectedMath": "Divide to get 4x+1/(3x+2). Slant y=4x.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Find end-behavior slant asymptote of (4x³+x)/(2x²+1).",
+      "TeacherExpectedMath": "Divide to get 2x−x/(2x²+1). Slant y=2x.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Find the slant asymptote of (x²+3x+1)/(x−2).",
+      "TeacherExpectedMath": "Divide to get x+5+11/(x−2). Slant y=x+5.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Graph a reciprocal shifted three units down; state both asymptotes.",
+      "TeacherExpectedMath": "f(x)=1/x−3; vertical x=0, horizontal y=−3. Use two reciprocal-shaped branches.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Graph a reciprocal shifted left two and up one; identify both asymptotes.",
+      "TeacherExpectedMath": "f(x)=1/(x+2)+1; vertical x=−2, horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Graph the reciprocal squared shifted three units left; identify asymptotes.",
+      "TeacherExpectedMath": "f(x)=1/(x+3)²; vertical x=−3, horizontal y=0. Both branches positive.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "Graph reciprocal squared shifted right two and up three; identify asymptotes.",
+      "TeacherExpectedMath": "f(x)=1/(x−2)²+3; vertical x=2, horizontal y=3. Both branches above y=3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "Sketch f=(3x−2)/(x+1) with all intercepts and asymptotes.",
+      "TeacherExpectedMath": "x-intercept (2/3,0); y-intercept (0,−2); vertical x=−1; horizontal y=3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "Sketch f=(x+4)/(2x−1) with all intercepts and asymptotes.",
+      "TeacherExpectedMath": "x-intercept (−4,0); y-intercept (0,−4); vertical x=1/2; horizontal y=1/2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Sketch f=5/(x−1)² with intercepts and asymptotes.",
+      "TeacherExpectedMath": "No x-intercept; y-intercept (0,5); vertical x=1; horizontal y=0. Positive on each side.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Sketch f=3/(x+2)² with intercepts and asymptotes.",
+      "TeacherExpectedMath": "No x-intercept; y-intercept (0,3/4); vertical x=−2; horizontal y=0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "Sketch f=(x²−4)/(x²−9) and label key features.",
+      "TeacherExpectedMath": "x-intercepts (±2,0); y-intercept (0,4/9); vertical x=±3; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Sketch g=(2x²−5x−3)/(x²−1) and label key features.",
+      "TeacherExpectedMath": "x-intercepts (−1/2,0),(3,0); y-intercept (0,3); vertical x=±1; horizontal y=2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Identify the hole, intercepts and asymptotes of (x²+3x+2)/(x²−1).",
+      "TeacherExpectedMath": "After cancelling x+1, hole (−1,−1/2); vertical x=1; x-intercept −2; y-intercept −2; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Identify the hole, intercepts and asymptotes of (x²−5x+6)/(x²−4).",
+      "TeacherExpectedMath": "After cancelling x−2, hole (2,−1/4); vertical x=−2; x-intercept 3; y-intercept −3/2; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "Sketch (x²+4x+3)/(x−2), recording intercepts and end behavior.",
+      "TeacherExpectedMath": "x-intercepts −3,−1; y-intercept −3/2; vertical x=2; slant y=x+6.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "Sketch (2x²+x−3)/(x−3), recording intercepts and end behavior.",
+      "TeacherExpectedMath": "x-intercepts −3/2,1; y-intercept 1; vertical x=3; slant y=2x+7.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "For f=(x−2)(x+1)(x−4)/((x+3)²(x−5)), sketch from factored features.",
+      "TeacherExpectedMath": "Zeros 2,−1,4; y-intercept −8/45; vertical x=−3 (double),5; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "For g=(x+3)²(x−2)/((x−4)(x+2)(x+5)), sketch from factored features.",
+      "TeacherExpectedMath": "Zeros −3 (double),2; y-intercept 9/20; vertical x=4,−2,−5; horizontal y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "Construct a rational function with verticals ±2, x-intercepts −1 and 3, y-intercept 3/4.",
+      "TeacherExpectedMath": "f=(x+1)(x−3)/((x−2)(x+2)); f(0)=3/4.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Construct a rational function with verticals −2 and −5, x-intercepts 1 and 4, y-intercept 2/5.",
+      "TeacherExpectedMath": "f=(x−1)(x−4)/((x+2)(x+5)); f(0)=2/5.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "Construct a rational function with verticals −2 and −6, zeros 3 and −1, horizontal y=5.",
+      "TeacherExpectedMath": "f=5(x−3)(x+1)/((x+2)(x+6)).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "Construct a rational function with verticals −1 and 4, zeros −2 and 2, horizontal y=−3.",
+      "TeacherExpectedMath": "f=−3(x+2)(x−2)/((x+1)(x−4)).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 55,
+      "IndependentStudentQuestion": "Construct a rational function with vertical x=−2, double zero x=3, y-intercept 9/2.",
+      "TeacherExpectedMath": "f=(x−3)²/(x+2); at x=0 value 9/2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 56,
+      "IndependentStudentQuestion": "Construct a rational function with vertical x=4, double zero x=−1, y-intercept −1/4.",
+      "TeacherExpectedMath": "f=(x+1)²/(x−4); at x=0 value −1/4.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 57,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 57. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x−1)/((x+2)(x−3)); vertical asymptotes x=−2,3; x-intercept(s) x=1; horizontal asymptote y=0; y-intercept (0,1/6). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 58,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 58. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x+2)/((x+3)(x−2)); vertical asymptotes x=−3,2; x-intercept(s) x=−2; horizontal asymptote y=0; y-intercept (0,−1/3). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 59,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 59. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x−2)/((x+1)(x−4)); vertical asymptotes x=−1,4; x-intercept(s) x=2; horizontal asymptote y=0; y-intercept (0,1/2). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 60,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 60. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x+1)/((x+3)(x−4)); vertical asymptotes x=−3,4; x-intercept(s) x=−1; horizontal asymptote y=0; y-intercept (0,−1/12). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 61,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 61. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x−1)/(x−2); vertical asymptotes x=2; x-intercept(s) x=1; horizontal asymptote y=1; y-intercept (0,1/2). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 62,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 62. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x+3)/(x+1); vertical asymptotes x=−1; x-intercept(s) x=−3; horizontal asymptote y=1; y-intercept (0,3). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 63,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 63. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x−2)²/((x+2)(x−4)); vertical asymptotes x=−2,4; x-intercept(s) x=2 double; horizontal asymptote y=1; y-intercept (0,−1/2). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 64,
+      "IndependentStudentQuestion": "Interpret the independently authored graph labelled Exercise 64. State one rational formula consistent with the plotted branches, all x-intercepts (with multiplicities), vertical asymptotes and horizontal asymptote.",
+      "TeacherExpectedMath": "One consistent first-party function is f(x)=(x−1)²/((x+3)(x−4)); vertical asymptotes x=−3,4; x-intercept(s) x=1 double; horizontal asymptote y=1; y-intercept (0,−1/12). Explain each factor using crossings/tangencies and branch behavior.",
+      "MarkingMode": "TEACHER_REVIEW_GRAPH_INTERPRETATION",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORING_AND_TYPED_GRAPH_MODEL",
+      "LinkedGraphSource": "Grade12PrecalculusSection37GraphModels",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 65,
+      "IndependentStudentQuestion": "Create a value table for f(x)=1/(x+1) near x=−1 and far from it.",
+      "TeacherExpectedMath": "For x=−1.1,−0.9 values −10,+10; as x→−1− value→−∞, x→−1+ value→+∞; as |x|→∞ value→0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 66,
+      "IndependentStudentQuestion": "Create a table for g(x)=(x+2)/(x−2) near its vertical and horizontal asymptotes.",
+      "TeacherExpectedMath": "g=1+4/(x−2), vertical x=2, horizontal y=1; g(1.9)=−39, g(2.1)=41.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 67,
+      "IndependentStudentQuestion": "Use a near-asymptote table to examine h(x)=3x/(x−1).",
+      "TeacherExpectedMath": "h=3+3/(x−1), vertical x=1, horizontal y=3; h(0.9)=−27, h(1.1)=33.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 68,
+      "IndependentStudentQuestion": "Examine the limits of k(x)=3x/(x−2)² around x=2 and at infinity.",
+      "TeacherExpectedMath": "As x→2 from either side, k→+∞; as |x|→∞, k→0.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 69,
+      "IndependentStudentQuestion": "Examine the limits of r(x)=x²/(x−2)² near x=2 and at infinity.",
+      "TeacherExpectedMath": "Both one-sided outputs tend +∞ near x=2; the horizontal asymptote is y=1.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 70,
+      "IndependentStudentQuestion": "Use signs to solve 3/(x−2)>0.",
+      "TeacherExpectedMath": "x>2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 71,
+      "IndependentStudentQuestion": "Use signs to solve 5/(3x+6)>0.",
+      "TeacherExpectedMath": "x>−2.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 72,
+      "IndependentStudentQuestion": "Solve 4/((x+2)(x−3))>0.",
+      "TeacherExpectedMath": "x<−2 or x>3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 73,
+      "IndependentStudentQuestion": "Solve (x−1)/((x+2)(x−4))>0 using sign intervals.",
+      "TeacherExpectedMath": "−2<x<1 or x>4.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 74,
+      "IndependentStudentQuestion": "Solve (x−2)²/((x+1)²(x−3))>0.",
+      "TeacherExpectedMath": "x>3.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 75,
+      "IndependentStudentQuestion": "Locate the removable discontinuity of (x²−9)/(x−3).",
+      "TeacherExpectedMath": "Simplifies to x+3 for x≠3; hole at (3,6).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 76,
+      "IndependentStudentQuestion": "Locate the removable discontinuity of (x³+8)/(x+2).",
+      "TeacherExpectedMath": "Simplifies to x²−2x+4 for x≠−2; hole at (−2,12).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 77,
+      "IndependentStudentQuestion": "Locate the hole of (x²−2x−8)/(x−4).",
+      "TeacherExpectedMath": "Simplifies to x+2 for x≠4; hole at (4,6).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 78,
+      "IndependentStudentQuestion": "Locate the hole of (3x²+10x+3)/(x+3).",
+      "TeacherExpectedMath": "Simplifies to 3x+1 for x≠−3; hole at (−3,−8).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 79,
+      "IndependentStudentQuestion": "Locate the hole of (x³−3x²)/(x−3).",
+      "TeacherExpectedMath": "Simplifies to x² for x≠3; hole at (3,9).",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 80,
+      "IndependentStudentQuestion": "A tank has 120 L of solution containing 6 kg solute. Add 4 L/min containing 2 kg/min solute. Find C(t) and its limiting concentration.",
+      "TeacherExpectedMath": "C(t)=(6+2t)/(120+4t) kg/L, t≥0. Limit 1/2 kg/L.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 81,
+      "IndependentStudentQuestion": "A tank initially has 80 gal and 12 lb solute. Add 5 gal/min and 1 lb solute/min. Find C(t) and its long-run level.",
+      "TeacherExpectedMath": "C(t)=(12+t)/(80+5t) lb/gal, t≥0. Limit 1/5 lb/gal.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 82,
+      "IndependentStudentQuestion": "For a drug model D(t)=3t/(4+t²), describe its concentration for large t and its peak time for t≥0.",
+      "TeacherExpectedMath": "D(t)→0 as t→∞. Derivative proportional to 4−t²; maximum at t=2 hours.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 83,
+      "IndependentStudentQuestion": "For D(t)=60t/(t²+36), find the time of maximal concentration for t≥0.",
+      "TeacherExpectedMath": "Derivative proportional to 36−t²; maximum at t=6 hours.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 84,
+      "IndependentStudentQuestion": "An open box with square base holds 64 in³. Find dimensions minimizing material surface area.",
+      "TeacherExpectedMath": "h=64/x² and S=x²+256/x. At minimum x³=128; x=∛128 inches and h=x/2 inches.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 85,
+      "IndependentStudentQuestion": "A closed box with square base holds 27 ft³. Base material $0.40/ft², top $0.20/ft², sides $0.10/ft². Find least-cost dimensions.",
+      "TeacherExpectedMath": "h=27/x² and cost C=0.6x²+10.8/x dollars. Min x³=9, so x=∛9 ft and height h=3x ft.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 86,
+      "IndependentStudentQuestion": "A closed right circular cylinder has volume 54π in³. Find radius and height minimizing its surface area.",
+      "TeacherExpectedMath": "h=54/r²; S=2πr²+108π/r. Minimum radius r=3 inches and height h=6 inches.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 87,
+      "IndependentStudentQuestion": "An open-top cylinder has volume 32π m³. Find radius and height minimizing surface area.",
+      "TeacherExpectedMath": "h=32/r²; S=πr²+64π/r. Min r=∛32 m and h=r.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 88,
+      "IndependentStudentQuestion": "A closed cylinder has volume 16π in³. Top and bottom material cost 3 cents/in², side material 1 cent/in². Find least-cost radius and height.",
+      "TeacherExpectedMath": "h=16/r²; cost C=6πr²+32π/r cents. Min r³=8/3, r=∛(8/3) inches, h=6r inches.",
+      "MarkingMode": "TEACHER_REVIEW",
+      "AcademicQuestionStatus": "INDEPENDENT_AUTHORED_TARGETED_MATH_REVIEW",
+      "Runtime": "NOT_RUN"
+    }
+  ],
+  "FirstPartyIndependentStudentQuestionsAuthored": 88,
+  "OriginalPublisherGraphicBitmapsCopied": false,
+  "IndependentCoolDown": {
+    "OriginalIndependentEdulyticsCoolDown": true,
+    "StudentQuestions": [
+      {
+        "Number": 1,
+        "Prompt": "For f(x)=(x²−4)/(x²+x−6), state original domain, hole location, vertical and horizontal asymptotes.",
+        "Expected": "Denominator (x+3)(x−2), numerator (x−2)(x+2). Original domain excludes x=−3 and 2; hole at (2,4/5), vertical x=−3, horizontal y=1."
+      },
+      {
+        "Number": 2,
+        "Prompt": "For g(x)=(x−1)²/((x+2)(x−3)), state roots and their multiplicities, vertical poles, horizontal asymptote and y-intercept.",
+        "Expected": "Double root x=1; vertical x=−2 and x=3; horizontal y=1; y-intercept (0,−1/6)."
+      },
+      {
+        "Number": 3,
+        "Prompt": "A tank initially has 50 L solution and 5 kg solute. Add 5 L/min liquid containing 1 kg/min solute. Express C(t) and its limiting value with units.",
+        "Expected": "C(t)=(5+t)/(50+5t) kg/L for t≥0; limit 1/5 kg/L."
+      }
+    ],
+    "MarkingMode": "TEACHER_REVIEW_EXACT_MATH_WITH_REASONING",
+    "Runtime": "NOT_RUN",
+    "CopiedRestrictedPublisherCoolDown": false
+  },
+  "TeacherOnlyMarkingGuidance": "Check algebraic factorization, denominator exclusions before cancellation, sign chart and graphical branch reasoning, valid contextual input restrictions and physical units. Graphs and free responses require teacher review; do not automatically grade drawings."
+}

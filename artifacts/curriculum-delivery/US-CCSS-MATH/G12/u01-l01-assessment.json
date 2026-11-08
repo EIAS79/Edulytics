@@ -1,0 +1,390 @@
+{
+  "ContentVersion": "g12-u01-l01-abc-draft-20261106",
+  "Course": "US-CCSS-MATH:G12",
+  "FirstPartyCoolDown": {
+    "Authorship": "Edulytics original — not represented as the source book's teacher-only assessment.",
+    "Prompt": "(a) Determine whether R={(1,2),(1,4),(2,4)} is a function and justify. (b) For f(x)=x²−2x+1 find f(−1). (c) Is h(x)=x² one-to-one on x≥0? Justify using a formula or a horizontal-line sketch.",
+    "Expected": "(a) No, input 1 maps to both 2 and 4. (b) f(−1)=1+2+1=4. (c) Yes on x≥0: the square function is strictly increasing there, so each nonnegative output has one domain input.",
+    "ScoreRubric": [
+      {
+        "Criterion": "Correctly identifies conflicting outputs for input 1",
+        "Points": 1
+      },
+      {
+        "Criterion": "Computes substitution f(−1)=4 with intermediate steps",
+        "Points": 1
+      },
+      {
+        "Criterion": "States why x² on x≥0 is one-to-one, including domain restriction",
+        "Points": 1
+      },
+      {
+        "Criterion": "Explains vertical/horizontal line meaning or algebraic reasoning coherently",
+        "Points": 1
+      }
+    ],
+    "Evaluator": "Teacher-led written response; do not auto-mark an unseen diagram or explanation.",
+    "DigitalCorrectnessEngine": "NOT_YET_ROUTED_TO_GRADE12",
+    "DeliveryStatus": "STUDENT_VIEW_AND_TEACHER_PER_EXERCISE_SUBMISSION_CODE_AUTHORED_NOT_RUNTIME_VERIFIED",
+    "TeacherReviewItemNumber": 93,
+    "SeparateFromOriginalSectionExerciseCount": true,
+    "DatabaseMigration": "WRITTEN_NOT_APPLIED"
+  },
+  "LearningGoals": [
+    "Determine from ordered pairs, tables, formulas and descriptions whether each input has a single output.",
+    "Use function notation to express and evaluate outputs and solve for valid inputs.",
+    "Determine whether an established function is one-to-one under its stated domain.",
+    "Interpret vertical-line and horizontal-line tests for graphs and implicit relations.",
+    "Identify basic toolkit function families and domain restrictions."
+  ],
+  "Lesson": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01",
+  "OwnerAcademicStatus": "OWNER_AUTHORING_DIRECTION_APPROVED; CONTENT_AND_RIGHTS_CLOSURE_NOT_YET_COMPLETE",
+  "Practice": {
+    "ReuseCandidates": [
+      {
+        "Family": "functions.relations.unique_output.classify",
+        "ReuseReason": "Classifying an input-output relation; validate prompt and expected answer when bound to the selected Grade12 lesson.",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.notation.evaluate_context",
+        "ReuseReason": "Numerical function notation substitution with contextual output",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.domain_range.context_bounds",
+        "ReuseReason": "Domain/range restriction in context; only subset of section objectives",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.absolute_value.translate_evaluate",
+        "ReuseReason": "Function evaluation and toolkit graph transformation; does not replace arbitrary graph reading",
+        "Status": "KNOWN_EXISTING_ENGINE_GRADE12_MAPPING_NOT_VERIFIED"
+      },
+      {
+        "Family": "functions.relations.one_to_one.classify",
+        "ReuseReason": "Extend the existing exact ordered-pair function engine to assess injectivity of finite relations with distinct inputs and possible repeated outputs; does not auto-grade original graph tasks.",
+        "Status": "EXTENDED_EXISTING_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.relations.implicit.classify",
+        "ReuseReason": "Implicit equation/branch classification with real domain",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.table.lookup.invert",
+        "ReuseReason": "Evaluate and invert a finite numeric function table",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
+      },
+      {
+        "Family": "functions.quadratic.output_roots.solve",
+        "ReuseReason": "Solve a factored quadratic output equation for both distinct real integer roots",
+        "Status": "EXTENDED_EXISTING_FUNCTION_ENGINE_WRITTEN_NOT_RUN"
+      }
+    ],
+    "ForbidSubstitutions": [
+      "Do not substitute generic arithmetic for vertical-line/horizontal-line graphical tests.",
+      "Do not claim that classifying a numeric input-output table automatically grades a drawn function graph.",
+      "Do not use the G11 Algebra 2 curriculum course identity for this Grade12 Precalculus course."
+    ],
+    "MissingFamiliesOrCapabilities": [
+      "Original graphic constructs and drawings require authenticated Stage D review of the authored graph-coordinate teacher route.",
+      "Full automatic scoring is not claimed for all 92 original-numbered source tasks; partial existing exact families and teacher-scoped rubrics are explicitly distinguished.",
+      "Exact symbolically equivalent arbitrary function-solving and difference quotient automation is not implemented; the source skill is delivered in a human-scored task.",
+      "Original source exercise 52(b) exact numerical root is not supplied by the printed image; teacher must not confuse the first-party x=7 answer with original source exactness."
+    ],
+    "EngineDecision": "REUSE_WHERE_SEMANTICALLY_MATCHED; EXTEND_IF_NARROW_GAP; DO_NOT_BUILD_NEW_UNLESS_DISTINCT_INTERACTION",
+    "PracticeReady": "STAGE_C_AUTHORING_COMPLETE_92_TEACHER_SCORABLE_TASKS_8_REUSED_OR_EXTENDED_FAMILY_CONTRACTS_TESTS_WRITTEN_NOT_RUN",
+    "Tests": "WRITTEN_NOT_RUN",
+    "StageD": "NOT_RUN",
+    "ExerciseRoutingManifestPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
+    "ExerciseRoutingCount": 92,
+    "ExerciseRoutingStatus": "ALL_92_SOURCE_LEARNING_TASKS_TEACHER_LED_AND_PRECISE_FAMILY_REUSE_MAPPED; RUNTIME_TO_STAGE_D",
+    "ExerciseRoutingGroups": [
+      {
+        "Category": "VERBAL_DEFINITIONS",
+        "Count": 5
+      },
+      {
+        "Category": "RELATIONS_AND_IMPLICIT_EQUATIONS",
+        "Count": 21
+      },
+      {
+        "Category": "FUNCTION_NOTATION_AND_SOLVING",
+        "Count": 13
+      },
+      {
+        "Category": "GRAPH_LINE_TESTS",
+        "Count": 20
+      },
+      {
+        "Category": "ORDERED_PAIRS_AND_TABLE_RELATIONS",
+        "Count": 6
+      },
+      {
+        "Category": "TABLE_FUNCTION_LOOKUP",
+        "Count": 2
+      },
+      {
+        "Category": "FUNCTION_EVALUATION",
+        "Count": 8
+      },
+      {
+        "Category": "GRAPHING_VIEWPORT",
+        "Count": 12
+      },
+      {
+        "Category": "APPLICATIONS_AND_PROOF",
+        "Count": 5
+      }
+    ],
+    "ExtendedFamilyDesign": "EXACT_FINITE_RELATION_ONE_TO_ONE_CLASSIFICATION; NO_GRAPH_AUTOGRADING",
+    "ExtendedFamilyTestStatus": "WRITTEN_NOT_RUN",
+    "ExtendedFamiliesCount": 4,
+    "ExactFamilyCountForGrade12": 8,
+    "SourceNumberedExerciseAssessmentContracts": 92,
+    "SourceExerciseTeacherChecklistLeaves": 162,
+    "SourceExercisesFullyAutoGraded1To1": 0,
+    "StageCQuestionFamilyPlan": {
+      "TEACHER_LED_PROOF": 5,
+      "EXACT_FINITE_RELATION_SKILL_ANALOGUE": 2,
+      "PARTIAL_FIXED_VARIANTS_PLUS_TEACHER": 19,
+      "PARTIAL_NUMERIC_PLUS_TEACHER_SYMBOLIC": 5,
+      "TEACHER_LED_SYMBOLIC_DIFFERENCE_QUOTIENT": 2,
+      "PARTIAL_EXACT_SKILL_PLUS_TEACHER_MULTIPART": 6,
+      "TEACHER_LED_SOURCE_GRAPH": 15,
+      "PARTIAL_FINITE_RELATION_PLUS_TEACHER_GRAPH": 5,
+      "EXACT_RELATION_CLASSIFICATION_SKILL_ANALOGUE": 6,
+      "EXACT_TABLE_LOOKUP_SKILL_ANALOGUE": 2,
+      "PARTIAL_NUMERIC_PLUS_TEACHER_FIVE_INPUTS": 6,
+      "PARTIAL_VALUE_ARITHMETIC_PLUS_TEACHER": 2,
+      "TEACHER_LED_GRAPH_WINDOW_REQUIRED": 12,
+      "TEACHER_LED_CONTEXT_AND_UNITS": 4,
+      "PARTIAL_INJECTIVITY_PLUS_TEACHER_PROOF": 1
+    },
+    "SourceExerciseExactAutomaticGrade1To1": 0
+  },
+  "SchemaVersion": 1,
+  "SourceElementVerification": {
+    "OriginalExamplesLocated": 15,
+    "OriginalTryItsLocated": 12,
+    "FigureNumbersLocated": 15,
+    "OriginalExerciseNumberRange": "1–92",
+    "FullSourceDenominatorVerified": false,
+    "ExactExampleToDigitalMappings": 0,
+    "FigureRightsClearance": false,
+    "ReviewAndPracticeTestChapterResources": "NOT_YET_ATOMICALLY_CROSSWALKED",
+    "Status": "SOURCE_ELEMENTS_IDENTIFIED_MATCHING_IN_PROGRESS"
+  },
+  "TeacherReview": {
+    "Audience": "Assigned mathematics teacher",
+    "SourceSection": "1.1 Functions and Function Notation",
+    "Materials": "Coordinate paper, ruler, graphing utility as available, student response log.",
+    "Procedure": [
+      "Show the input-output rule using two counterexamples; ask the learner to label independent variable and domain.",
+      "Inspect a table with repeated input and a repeated output. Require an explanation of the distinction.",
+      "Ask students to plot y=x², y²=x and y=|x|−1 with labeled axes and scale.",
+      "Ask for a vertical-line and horizontal-line classification justified by intersections and domain.",
+      "Review the first-party Cool-down using the four-point rubric, with teacher overrides and documented feedback.",
+      "Graph-reading practice from source section 1.1 page 36: use independently redrawn, labelled representations; apply the graph rubric for exercises 52–59 and explicitly flag source exercise 52 part (b) as approximate without an exact function rule."
+    ],
+    "AutomatedScoreClaim": false,
+    "RuntimeIntegration": "NOT_IMPLEMENTED_FOR_G12",
+    "DocumentationStatus": "AUTHORED_NOT_TESTED",
+    "Section11GraphReadRubric": {
+      "OriginalSourcePage": 36,
+      "OriginalFigureEmbeddedInEdulytics": false,
+      "SourceExercises": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "HumanEvaluator": "Assigned mathematics teacher",
+      "Criteria": [
+        "For exercise 52, credit f(−1)≈1 when read against labelled axes; do not assert an exact solution to f(x)=3 that is not resolved by the displayed graph.",
+        "For exercise 53, verify f(0)=1 and x=−2 or x=2 when f(x)=−3.",
+        "For exercise 54, verify f(4)=−3 and x=−6 or x=0 when f(x)=1.",
+        "For 55–59, apply vertical first and horizontal second: 55 is not a function; 56 and 59 are functions but not one-to-one; 57 and 58 are one-to-one.",
+        "Check each student's axes, horizontal/vertical intersections, domain and any graphical uncertainty; record manual feedback."
+      ],
+      "AutoMarkingAllowed": false,
+      "RuntimeDeliveryStatus": "AUTHORED_NOT_INTEGRATED",
+      "Tests": "WRITTEN_NOT_RUN"
+    },
+    "Section11VerticalLineGraphRubric": {
+      "SourcePdfPage": 35,
+      "OriginalSourceExercises": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "OriginalFigureEmbeddedInEdulytics": false,
+      "HumanEvaluator": "Assigned mathematics teacher",
+      "AnswerKey": {
+        "40": "FUNCTION",
+        "41": "NOT_A_FUNCTION",
+        "42": "FUNCTION",
+        "43": "FUNCTION",
+        "44": "NOT_A_FUNCTION",
+        "45": "FUNCTION",
+        "46": "NOT_A_FUNCTION",
+        "47": "FUNCTION",
+        "48": "NOT_A_FUNCTION",
+        "49": "FUNCTION",
+        "50": "NOT_A_FUNCTION",
+        "51": "FUNCTION"
+      },
+      "CriticalErrorCorrected": "Exercise 46 is NOT a function. At x=1 the two horizontal rays give y≈3 and y≈−3; upper open endpoint at x=0 and lower open endpoint at x≈2 do not remove the domain overlap.",
+      "Instructions": [
+        "First draw each relation as an accessible first-party representation with labelled axes; do not substitute source screenshot or claim original figures are licensed separately.",
+        "Ask the learner whether every permitted x has at most one y. At x=0, an excluded point is not a second output.",
+        "For exercises 41,44,46,48,50 require a specific vertical line with two distinct intersection heights. A curve failing the test is not a function.",
+        "For exercises 40,42,43,45,47,49,51 require the learner to explain why at most one y is produced for each permissible input.",
+        "Record manual justification and feedback; this source reading alone does not enable auto-scoring or gradebook persistence."
+      ],
+      "RuntimeDeliveryStatus": "AUTHORED_NOT_INTEGRATED",
+      "AutoMarkingAllowed": false,
+      "Tests": "WRITTEN_NOT_RUN"
+    },
+    "AuthoredTeacherOnlyAnswerGuidance": {
+      "Activities": 105,
+      "OriginalSectionExerciseKeys": 92,
+      "OriginalEdulyticsCoolDown": 93,
+      "FirstPartyTryItKeys": "94-105",
+      "Code": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11TeacherGuidance.cs",
+      "RoleProtectedView": "src/Edulytics.Web/Views/Grade12PrecalculusRubricTeacher/Review.cshtml",
+      "TeacherScope": "MAY_REVIEW_SCHOOL_CLASS_LESSON_ENROLLMENT",
+      "SourceGraph52B": "UNRESOLVED_EXACT_VALUE_NO_AUTOSCORING",
+      "Delivery": "AUTHORED_NOT_RUNTIME_VERIFIED",
+      "Tests": "WRITTEN_NOT_RUN"
+    }
+  },
+  "Unit": 1,
+  "VisualRepresentationDrafts": {
+    "Authoring": "Edulytics first-party table and equation visuals, not original PDF images",
+    "StructuredRichV2VisualsWritten": 5,
+    "SourceFigureOneToOneParityVerified": false,
+    "GraphRenderer": "EXISTING_TYPED_ADVANCED_MATHEMATICS_SVG_RENDERER_REUSED; ORIGINAL_SOURCE_FIGURES_NOT_REPRODUCED",
+    "Accessibility": "Full equation/table descriptions provided; actual accessible graphical interaction still pending",
+    "StageD": "NOT_RUN",
+    "FirstPartyAdvancedGraphSpecsAuthored": 5,
+    "StudentLessonViewWiring": "AUTHORED_NO_AUTHENTICATED_RUNTIME_TEST",
+    "GraphReadExample12Correspondence": "MATCHED_NUMERICAL_GRAPH_READ_ANSWERS_VIA_FIRST_PARTY_CURVE_NOT_FULL_ORIGINAL_FIGURE_PARITY",
+    "FirstPartySourceSkillExerciseGraphCount": 20,
+    "FirstPartyExerciseGraphFile": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11ExerciseVisuals.cs",
+    "FirstPartyGraphBasedSourceNumbers": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "OriginalGraph52ExactResult": "UNRESOLVED_ORIGINAL_SOURCE; FIRST_PARTY_ANALOGUE_HAS_DEFINED_EXACT_RULE",
+    "OriginalFigureRights": "NO_ORIGINAL_SOURCE_GRAPH_COPIED; 19_FIRST_PARTY_DIDACTIC_DIAGRAMS",
+    "FirstPartySourceSkillTableVisualCount": 14,
+    "OriginalToolkitGraphsReproduced": false,
+    "ExactWindowFirstPartyGraphsAuthored": 12,
+    "ExactWindowSourceSectionExerciseNumbers": "76-87",
+    "ExactWindowTargets": "quadratic, cubic, square-root, cube-root over very small to very large domains",
+    "GlobalMathematicsRendererAxisLimitsModified": false,
+    "ExactWindowRendererCompile": "PASSED_ISOLATED_0_WARNINGS_ERRORS",
+    "StudentRuntimeAndScreenReaderVerification": "NOT_RUN",
+    "FirstPartyToolkitFunctionFamilyGraphsAuthored": 9,
+    "ToolkitSourceSkillCoverage": "NINE_BASIC_FUNCTION_FAMILIES_DIAGRAMS_AUTHORED",
+    "ToolkitCompile": "TARGETED_ISOLATED_COMPILE_0_WARNINGS_0_ERRORS",
+    "ToolkitOriginalSourceFigureParity": false,
+    "OriginalFigureSkillsIdentified": 15,
+    "FirstPartyAccessibleFigureAlternativesAuthored": 15,
+    "OriginalPublisherImagesCopied": 0,
+    "OriginalFigurePixelParityClaim": false,
+    "FigureAlternativesIsolatedCompile": "PASSED_ZERO_WARNINGS_ERRORS",
+    "OriginalToolkitTable13SampleFamiliesVerified": 9,
+    "SourceToolkitTable13OriginalImageCopied": false,
+    "SourceToolkitGraphFigurePixelIdentityClaim": false
+  },
+  "SourceExerciseRoutingManifest": {
+    "Path": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-exercise-routing.json",
+    "SourceExerciseCount": 92,
+    "SourceMathReviewedCount": 91,
+    "OriginalGraph52ExactReadingUnverified": true,
+    "TeacherScoringRuntime": "NOT_VERIFIED",
+    "SourceOfTruth": "UPSTREAM_EXACT_PER_ITEM_ROUTE; displaces earlier generic grouping",
+    "EdulyticsDigitalParityVerified": 0
+  },
+  "FirstPartySectionExerciseBank": {
+    "ArtifactPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank.json",
+    "StudentViewCSharp": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11Exercises.cs",
+    "StudentView": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "OriginalExercisesAddressedByNumber": 92,
+    "UserFacingQuestionsAuthored": 92,
+    "SourceMatched": 0,
+    "SourceFigureMediaEmbedded": 0,
+    "TeacherPersistence": "NOT_YET_CONNECTED",
+    "MachineGrading": "NOT_YET_92_EXERCISE_COVERAGE",
+    "State": "AUTHORED_NOT_RUNTIME_VERIFIED",
+    "Tests": "WRITTEN_NOT_RUN",
+    "TeacherGuidePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u01-l01-first-party-exercise-bank-teacher-review.json",
+    "TeacherSubmissionPersistenceContract": "G12_EXERCISE_SCOPED_SCHOOL_CLASS_STUDENT_LESSON_EXERCISE_TABLE_AUTHORED_NOT_MIGRATED",
+    "TeacherSubmissionView": "src/Edulytics.Web/Views/Grade12PrecalculusRubricStudent/Index.cshtml",
+    "TeacherEvaluationView": "src/Edulytics.Web/Views/Grade12PrecalculusRubricTeacher/Review.cshtml",
+    "StudentTeacherRoutes": "AUTHORED_NOT_RUNTIME_TESTED",
+    "DatabaseMigration": "WRITTEN_NOT_APPLIED_DURING_A_B_C",
+    "TeacherRubricMaximumScore": 4,
+    "TeacherScoringContract": "FOUR_CRITERIA_ONE_POINT_EACH_A_B_C_AUTHORED_RUNTIME_NOT_TESTED",
+    "TeacherOriginalPartChecklistSource": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11SourcePartChecklist.cs",
+    "SourceExerciseAtomicTeacherReviewChecklistCount": 162,
+    "OriginalExactGraph52BSourceAnswer": "UNRESOLVED_NOT_FABRICATED",
+    "SourceExerciseAtomicChecklistStatus": "AUTHORED_NOT_RUNTIME_TESTED",
+    "AccessibleStudentGraphEvidenceFields": "SOURCE_EXERCISES_40_TO_59_OPTIONAL; SOURCE_WINDOW_EXERCISES_76_TO_87_REQUIRED",
+    "GraphEvidenceDataContract": "SERVER_VALIDATED_TEXT_COORDINATE_DESCRIPTION_STORED_WITH_ORIGINAL_REASONING_FOR_TEACHER",
+    "ActualStudentDrawnGraphUpload": "NOT_IMPLEMENTED",
+    "AuthenticatedRuntimeTest": "NOT_RUN",
+    "Exercise52TeacherScoreSourceBoundary": "STUDENT_FIRST_PARTY_X_EQUALS_7_VALID; ORIGINAL_EXACT_SOURCE_GRAPH_ROOT_NOT_CLAIMED"
+  },
+  "FirstPartyTryIts": {
+    "Count": 12,
+    "OriginalSourceTryItCount": 12,
+    "TeacherSubmissionItemNumbers": [
+      94,
+      105
+    ],
+    "StudentView": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml",
+    "Code": "src/Edulytics.Web/Presentation/Grade12PrecalculusSection11Exercises.cs",
+    "Reviewer": "Assigned mathematics teacher",
+    "Status": "AUTHORING_DELIVERY_AND_TEACHER_ROUTE_WRITTEN_NOT_RUNTIME_VERIFIED",
+    "Tests": "WRITTEN_NOT_RUN",
+    "SourceTryItSemanticParity": "NOT_CERTIFIED"
+  },
+  "StageCReadyForStageD": true,
+  "StageDTests": "NOT_RUN",
+  "AuthenticStudentTeacherSubmissionVerified": false
+}

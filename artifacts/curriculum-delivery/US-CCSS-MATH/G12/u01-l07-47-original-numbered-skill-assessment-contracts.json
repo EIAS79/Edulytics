@@ -1,0 +1,658 @@
+{
+  "SchemaVersion": 1,
+  "SourceSHA256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "OriginalSectionNumberedExercises": 47,
+  "FirstPartyNumberedIndependentSourceSkills": 47,
+  "PublisherOriginalFiguresCopied": false,
+  "OriginalSourceExactWordingOrGraphPixelParityClaim": false,
+  "StageD": "NOT_RUN",
+  "Items": [
+    {
+      "Number": 1,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERBAL",
+      "IndependentStudentSourceSkillQuestion": "Explain the horizontal-line test for determining whether f has a functional inverse.",
+      "TeacherExpectedMathematics": "If every horizontal line meets graph at most once, each output identifies at most one input; f is one-to-one.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 2,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERBAL",
+      "IndependentStudentSourceSkillQuestion": "Explain why unrestricted f(x)=x² cannot be inverted as a function and give a valid domain restriction.",
+      "TeacherExpectedMathematics": "Inputs x and −x share output; restrict to x≥0 to get inverse √x, or x≤0 to get −√x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 3,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERBAL",
+      "IndependentStudentSourceSkillQuestion": "Can a one-to-one function be its own inverse? Give an example and prove.",
+      "TeacherExpectedMathematics": "Yes; f(x)=5−x yields f(f(x))=x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 4,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERBAL",
+      "IndependentStudentSourceSkillQuestion": "Does one-to-one require continuous monotonicity? Explain with domain caveat.",
+      "TeacherExpectedMathematics": "Not always; injectivity only requires distinct allowed inputs to have distinct outputs, including piecewise/disconnected domains.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 5,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERBAL",
+      "IndependentStudentSourceSkillQuestion": "Describe the algebraic algorithm for constructing an inverse and checking allowed domains.",
+      "TeacherExpectedMathematics": "Set y=f(x), solve uniquely for x, swap variables, restrict inverse input to original range, verify compositions.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 6,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "SELF_INVERSE_PROOF",
+      "IndependentStudentSourceSkillQuestion": "For arbitrary real a, prove f(x)=a−x is its own inverse.",
+      "TeacherExpectedMathematics": "f(f(x))=a−(a−x)=x for every real x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 7,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=x+3; state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=x−3; ℝ.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 8,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=x+5; state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=x−5; ℝ.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 9,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=2−x; state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=2−x; ℝ.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 10,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=3−x; state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=3−x; ℝ.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 11,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=x/(x+2); state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=2x/(1−x); f domain x≠−2; inverse domain x≠1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 12,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "ALGEBRAIC_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Find and simplify the inverse of the one-to-one real function f(x)=(2x+3)/(5x+4); state original and inverse domains.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=(3−4x)/(5x−2); f domain x≠−4/5; inverse domain x≠2/5.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "solve y=f(x) for x",
+        "swap variables",
+        "verify input restrictions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 13,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "RESTRICT_SQUARE_AND_INVERT",
+      "IndependentStudentSourceSkillQuestion": "Restrict f(x)=(x+7)² to a nondecreasing one-to-one domain, then derive the exact inverse rule and its domain.",
+      "TeacherExpectedMathematics": "Original domain [−7,∞); f⁻¹(x)=√x−7; inverse domain [0,∞).",
+      "OriginalExerciseNamedCognitiveActions": [
+        "select valid increasing branch",
+        "compute inverse",
+        "state domains"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 14,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "RESTRICT_SQUARE_AND_INVERT",
+      "IndependentStudentSourceSkillQuestion": "Restrict f(x)=(x−6)² to a nondecreasing one-to-one domain, then derive the exact inverse rule and its domain.",
+      "TeacherExpectedMathematics": "Original domain [6,∞); f⁻¹(x)=√x+6; inverse domain [0,∞).",
+      "OriginalExerciseNamedCognitiveActions": [
+        "select valid increasing branch",
+        "compute inverse",
+        "state domains"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 15,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "RESTRICT_SQUARE_AND_INVERT",
+      "IndependentStudentSourceSkillQuestion": "Restrict f(x)=x²−5 to a nondecreasing one-to-one domain, then derive the exact inverse rule and its domain.",
+      "TeacherExpectedMathematics": "Original domain [0,∞); f⁻¹(x)=√(x+5); inverse domain [−5,∞).",
+      "OriginalExerciseNamedCognitiveActions": [
+        "select valid increasing branch",
+        "compute inverse",
+        "state domains"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 16,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERIFY_RATIONAL_INVERSE_PAIR",
+      "IndependentStudentSourceSkillQuestion": "Given f(x)=x/(x+2) and g(x)=2x/(1−x), compute both compositions and explain whether they are mutual inverses.",
+      "TeacherExpectedMathematics": "Both compositions equal x with proper excluded denominator inputs; yes, inverse pair.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "f(g(x)) with domain",
+        "g(f(x)) with domain",
+        "conclude inverses"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 17,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERIFY_CUBE_ROOT_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "Prove that f(x)=∛(x−1) and g(x)=x³+1 are inverse functions on the real line.",
+      "TeacherExpectedMathematics": "f(g(x))=∛(x³)=x and g(f(x))=(∛(x−1))³+1=x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 18,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "VERIFY_AFFINE_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "For f(x)=−3x+5 and g(x)=(5−x)/3, verify both compositions.",
+      "TeacherExpectedMathematics": "f(g(x))=x, g(f(x))=x for all real x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 19,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of f(x)=√x, x≥0. Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "one-to-one: strictly increasing on [0,∞)",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 20,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of f(x)=∛(3x+1). Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "one-to-one: strictly increasing on ℝ",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 21,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of f(x)=−5x+1. Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "one-to-one: strictly decreasing on ℝ",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 22,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of f(x)=x³−27. Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "one-to-one: strictly increasing on ℝ",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 23,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of An independent strictly increasing piecewise-linear curve through (−2,−3),(0,1),(3,4). Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "one-to-one: each horizontal line intersects at most once",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 24,
+      "SourcePdfPage": 126,
+      "PedagogicSourceSkill": "HORIZONTAL_LINE_TEST_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "Use an independently drawn coordinate graph of An independent U-shaped quadratic curve y=(x−1)² on all real x. Decide if it is one-to-one and justify from horizontal-line intersections.",
+      "TeacherExpectedMathematics": "not one-to-one: e.g. x=0 and x=2 both give y=1",
+      "OriginalExerciseNamedCognitiveActions": [
+        "draw or inspect labelled independent model",
+        "apply horizontal-line test"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 25,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "READ_ORIGINAL_AND_INVERSE_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "An independent one-to-one plotted model has f(x)=x+1 for x∈[−3,5]. Find f(0).",
+      "TeacherExpectedMathematics": "f(0)=1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 26,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "READ_ORIGINAL_AND_INVERSE_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "For the same plotted model f(x)=x+1 on [−3,5], solve f(x)=0.",
+      "TeacherExpectedMathematics": "x=−1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 27,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "READ_ORIGINAL_AND_INVERSE_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "For the same plotted model f(x)=x+1 on [−3,5], find f⁻¹(0).",
+      "TeacherExpectedMathematics": "−1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 28,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "READ_ORIGINAL_AND_INVERSE_GRAPH",
+      "IndependentStudentSourceSkillQuestion": "For the same plotted model f(x)=x+1 on [−3,5], solve f⁻¹(x)=0.",
+      "TeacherExpectedMathematics": "x=1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 29,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "GRAPH_INVERSIONS_AND_DOMAIN_RANGE",
+      "IndependentStudentSourceSkillQuestion": "On an independent full finite graph f(x)=2x−4 over [0,6], sketch the inverse across y=x.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=(x+4)/2 for x∈[−4,8].",
+      "OriginalExerciseNamedCognitiveActions": [
+        "reflect domain and range",
+        "draw inverse labelled"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 30,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "GRAPH_INVERSIONS_AND_DOMAIN_RANGE",
+      "IndependentStudentSourceSkillQuestion": "On the same complete graph f(x)=2x−4 for x∈[0,6], find f(6) and f⁻¹(2).",
+      "TeacherExpectedMathematics": "f(6)=8; f⁻¹(2)=3.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "read original",
+        "read inverse"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 31,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "GRAPH_INVERSIONS_AND_DOMAIN_RANGE",
+      "IndependentStudentSourceSkillQuestion": "For the complete independently drawn graph f(x)=2x−4 on [0,6], give the exact original domain.",
+      "TeacherExpectedMathematics": "[0,6].",
+      "OriginalExerciseNamedCognitiveActions": [
+        "read included x window"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 32,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "GRAPH_INVERSIONS_AND_DOMAIN_RANGE",
+      "IndependentStudentSourceSkillQuestion": "For the complete independently drawn graph f(x)=2x−4 on [0,6], give the exact original range.",
+      "TeacherExpectedMathematics": "[−4,8].",
+      "OriginalExerciseNamedCognitiveActions": [
+        "read attained outputs"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 33,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERSE_PAIR_LOOKUP",
+      "IndependentStudentSourceSkillQuestion": "If f(6)=7 and f is one-to-one, evaluate f⁻¹(7).",
+      "TeacherExpectedMathematics": "6",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 34,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERSE_PAIR_LOOKUP",
+      "IndependentStudentSourceSkillQuestion": "If f(3)=2 for one-to-one f, find f⁻¹(2).",
+      "TeacherExpectedMathematics": "3",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 35,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERSE_PAIR_LOOKUP",
+      "IndependentStudentSourceSkillQuestion": "If f⁻¹(−4)=−8, deduce f(−8).",
+      "TeacherExpectedMathematics": "−4",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 36,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERSE_PAIR_LOOKUP",
+      "IndependentStudentSourceSkillQuestion": "If f⁻¹(−2)=−1, deduce f(−1).",
+      "TeacherExpectedMathematics": "−2",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 37,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERT_FINITE_TABLE",
+      "IndependentStudentSourceSkillQuestion": "Using the finite one-to-one function table x=0..9 with f(x)=[8, 0, 7, 4, 2, 6, 5, 3, 9, 1], f(1). Show which entry is used.",
+      "TeacherExpectedMathematics": "0",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 38,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERT_FINITE_TABLE",
+      "IndependentStudentSourceSkillQuestion": "Using the finite one-to-one function table x=0..9 with f(x)=[8, 0, 7, 4, 2, 6, 5, 3, 9, 1], solve f(x)=3. Show which entry is used.",
+      "TeacherExpectedMathematics": "x=7",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 39,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERT_FINITE_TABLE",
+      "IndependentStudentSourceSkillQuestion": "Using the finite one-to-one function table x=0..9 with f(x)=[8, 0, 7, 4, 2, 6, 5, 3, 9, 1], f⁻¹(0). Show which entry is used.",
+      "TeacherExpectedMathematics": "1",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 40,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "INVERT_FINITE_TABLE",
+      "IndependentStudentSourceSkillQuestion": "Using the finite one-to-one function table x=0..9 with f(x)=[8, 0, 7, 4, 2, 6, 5, 3, 9, 1], solve f⁻¹(x)=7. Show which entry is used.",
+      "TeacherExpectedMathematics": "x=3",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 41,
+      "SourcePdfPage": 127,
+      "PedagogicSourceSkill": "CREATE_INVERSE_TABLE",
+      "IndependentStudentSourceSkillQuestion": "A finite one-to-one mapping has pairs (3,1),(6,4),(9,7),(13,12),(14,16). Construct a full table of its inverse.",
+      "TeacherExpectedMathematics": "Inverse pairs (1,3),(4,6),(7,9),(12,13),(16,14).",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 42,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "TECHNOLOGY_INVERSE_RECIPROCAL",
+      "IndependentStudentSourceSkillQuestion": "Find f⁻¹ for f(x)=3/(x−2), then graph both on correctly labelled axes. State all asymptote and domain exclusions.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=3/x+2, x≠0; original f x≠2. Graphs reflect across y=x.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "inverse formula",
+        "plot original and inverse",
+        "state domains"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 43,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "TECHNOLOGY_INVERSE_CUBIC",
+      "IndependentStudentSourceSkillQuestion": "Find inverse of f(x)=x³−1 and sketch both original and inverse.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=∛(x+1), domain all real.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 44,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "TECHNOLOGY_INVERSE_RECIPROCAL_TRANSLATE",
+      "IndependentStudentSourceSkillQuestion": "Find inverse of f(x)=1/x−1 with its exact real domain and range; draw a source-skill graph of both functions.",
+      "TeacherExpectedMathematics": "f⁻¹(x)=1/(x+1); inverse domain x≠−1, range y≠0; original domain x≠0, range y≠−1.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "inverse algebra",
+        "domain and range",
+        "independent graphs"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 45,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "TEMPERATURE_UNIT_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "A Celsius-to-Fahrenheit conversion is F(C)=(9/5)C+32. Derive its inverse, and explain the input/output units.",
+      "TeacherExpectedMathematics": "C(F)=(5/9)(F−32). Input °F, output °C.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "show all required reasoning and exact result"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 46,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "CIRCUMFERENCE_RADIUS_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "For a circle with nonnegative radius r, C(r)=2πr. Derive inverse r(C) and evaluate r(36π), explaining units.",
+      "TeacherExpectedMathematics": "r(C)=C/(2π) for C≥0; r(36π)=18 length units.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "derive physical inverse",
+        "evaluate specific circumference",
+        "state domain units"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 47,
+      "SourcePdfPage": 128,
+      "PedagogicSourceSkill": "CONSTANT_SPEED_TIME_INVERSE",
+      "IndependentStudentSourceSkillQuestion": "A driver moves at constant 50 miles/hour, so d(t)=50t miles for t≥0. Derive t(d) and interpret t(180).",
+      "TeacherExpectedMathematics": "t(d)=d/50 hours for d≥0 miles; t(180)=3.6 hours.",
+      "OriginalExerciseNamedCognitiveActions": [
+        "derive inverse",
+        "evaluate travel time",
+        "explain dimensions"
+      ],
+      "OriginalPublisherVerbatimSourceQuestionCopied": false,
+      "OriginalPublisherFigurePixelReused": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    }
+  ]
+}

@@ -30573,6 +30573,671 @@
       "status": "Shadow",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "functions.relations.one_to_one.classify",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-injective-relation",
+      "representations": [
+        "ordered_pairs",
+        "function_classification"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.relations.implicit.classify",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-implicit-function",
+      "representations": [
+        "implicit_equation",
+        "function_classification"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.table.lookup.invert",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-table-lookups",
+      "representations": [
+        "value_table",
+        "input_output"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "functions.quadratic.output_roots.solve",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "alg1-u04-quadratic-zero-products",
+      "representations": [
+        "quadratic_factorization",
+        "ordered_integer_roots"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "functions.relations.definition"
+    },
+    {
+      "id": "g12.precalculus.u03.l04.polynomial_evaluate",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U03:L04"
+    },
+    {
+      "id": "g12.precalculus.u03.l07.rational_asymptote",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U03:L07"
+    },
+    {
+      "id": "g12.precalculus.u03.l09.direct_variation",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U03:L09"
+    },
+    {
+      "id": "g12.precalculus.u05.l01.radians_to_degrees",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U05:L01"
+    },
+    {
+      "id": "g12.precalculus.u05.l02.unit_circle_coordinate",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U05:L02"
+    },
+    {
+      "id": "g12.precalculus.u05.l03.trigonometric_ratio",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U05:L03"
+    },
+    {
+      "id": "g12.precalculus.u06.l01.sine_wave_maximum",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U06:L01"
+    },
+    {
+      "id": "g12.precalculus.u06.l02.tangent_period",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U06:L02"
+    },
+    {
+      "id": "g12.precalculus.u06.l03.inverse_sine_principal",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U06:L03"
+    },
+    {
+      "id": "g12.precalculus.u07.l01.pythagorean_identity",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U07:L01"
+    },
+    {
+      "id": "g12.precalculus.u07.l02.angle_sum_sine",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U07:L02"
+    },
+    {
+      "id": "g12.precalculus.u07.l05.trig_equation_solution_count",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U07:L05"
+    },
+    {
+      "id": "g12.precalculus.u07.l06.trig_model_amplitude",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U07:L06"
+    },
+    {
+      "id": "g12.precalculus.u08.l01.law_of_sines",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L01"
+    },
+    {
+      "id": "g12.precalculus.u08.l02.law_of_cosines",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L02"
+    },
+    {
+      "id": "g12.precalculus.u08.l03.polar_cartesian",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L03"
+    },
+    {
+      "id": "g12.precalculus.u08.l04.polar_curve_evaluate",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L04"
+    },
+    {
+      "id": "g12.precalculus.u08.l06.parametric_point",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L06"
+    },
+    {
+      "id": "g12.precalculus.u08.l07.parametric_slope",
+      "version": 1,
+      "skillId": "supporting.functions.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U08:L07"
+    },
+    {
+      "id": "g12.precalculus.u09.l04.partial_fraction_coefficient",
+      "version": 1,
+      "skillId": "supporting.algebra.expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U09:L04"
+    },
+    {
+      "id": "g12.precalculus.u09.l07.matrix_determinant",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U09:L07"
+    },
+    {
+      "id": "g12.precalculus.u10.l01.ellipse_major_axis",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U10:L01"
+    },
+    {
+      "id": "g12.precalculus.u10.l02.hyperbola_transverse_axis",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U10:L02"
+    },
+    {
+      "id": "g12.precalculus.u10.l03.parabola_focus",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U10:L03"
+    },
+    {
+      "id": "g12.precalculus.u10.l05.polar_conic_radius",
+      "version": 1,
+      "skillId": "supporting.geometry.analytic",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U10:L05"
+    },
+    {
+      "id": "g12.precalculus.u11.l04.arithmetic_series_sum",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U11:L04"
+    },
+    {
+      "id": "g12.precalculus.u11.l05.permutations",
+      "version": 1,
+      "skillId": "supporting.combinatorics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U11:L05"
+    },
+    {
+      "id": "g12.precalculus.u11.l06.binomial_coefficient",
+      "version": 1,
+      "skillId": "supporting.combinatorics.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U11:L06"
+    },
+    {
+      "id": "g12.precalculus.u12.l01.polynomial_limit",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U12:L01"
+    },
+    {
+      "id": "g12.precalculus.u12.l02.removable_limit",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U12:L02"
+    },
+    {
+      "id": "g12.precalculus.u12.l03.continuity_matching",
+      "version": 1,
+      "skillId": "supporting.calculus.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade12-independent-numeric-math-reference-vectors-and-seeded-variants-not-full-publisher-source-parity",
+      "representations": [
+        "numeric",
+        "mathematical_expression"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true,
+      "sourceLessonSkillId": "US-CCSS-MATH:G12:U12:L03"
     }
   ],
   "variantPolicy": {

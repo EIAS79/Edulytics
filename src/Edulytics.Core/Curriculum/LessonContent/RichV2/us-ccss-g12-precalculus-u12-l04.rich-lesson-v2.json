@@ -1,0 +1,222 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U12:L04",
+  "ContentVersion": "us-ccss-g12-precalculus-u12-l04-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U12:L04",
+      "CultureCode": "en",
+      "Title": "Derivatives",
+      "ExplanationParagraphs": [
+        "Derivative f'(a)=lim_(h→0)[f(a+h)−f(a)]/h when finite limit exists.",
+        "Power rule (x^n)'=n x^(n−1) and linearity differentiate polynomials.",
+        "Differentiate reciprocal and radical functions within their smooth domains.",
+        "Derivative is instantaneous rate; average rate is secant slope.",
+        "A corner or jump can prevent differentiability; differentiability implies continuity.",
+        "Tangent line y−f(a)=f'(a)(x−a); applied derivatives include marginal cost and velocity.",
+        "Independent Cool-down: evaluate a representative local example and explain the limiting or derivative reasoning."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Finding the Average Rate of Change",
+          "Question": "Differentiate f(x)=3x³+2x²+-1x+2.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "f'(x)=9x²+4x+(-1).",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "f'(x)=9x²+4x+(-1).",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Derivative of a Polynomial Function",
+          "Question": "Differentiate f(x)=1/(x+4), x≠−4.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "f'(x)=−1/(x+4)².",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "f'(x)=−1/(x+4)².",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Derivative of a Rational Function",
+          "Question": "Differentiate f(x)=sqrt(x+5), x>−5.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "f'(x)=1/(2sqrt(x+5)).",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "f'(x)=1/(2sqrt(x+5)).",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Derivative of a Function with a Root",
+          "Question": "Find instantaneous slope of y=6x²+5x at x=5.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "65.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "65.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Instantaneous Rate of Change",
+          "Question": "For y=x², estimate tangent slope at x=6 by symmetric secants.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "12 as h→0; [f(k+h)−f(k−h)]/(2h)=2k.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "12 as h→0; [f(k+h)−f(k−h)]/(2h)=2k.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Estimating the Derivative at a Point on the Graph of a Function",
+          "Question": "Marginal cost for C(q)=100+8q+2q² at q=1.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "C'(q)=8+4q, marginal at q=1 is 12.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "C'(q)=8+4q, marginal at q=1 is 12.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding a Marginal Cost",
+          "Question": "Interpret derivative of displacement s(t)=2t²+3t at t=2.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "Instantaneous velocity s'(t)=4t+3; at t=2 velocity 11 units/time.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "Instantaneous velocity s'(t)=4t+3; at t=2 velocity 11 units/time.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Interpreting a Derivative in Context",
+          "Question": "Is f(x)=|x−3| differentiable at x=3?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "No; continuous corner, one-sided slopes−1 and+1.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "No; continuous corner, one-sided slopes−1 and+1.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Determining Where a Function Is Continuous and Differentiable from a Graph",
+          "Question": "Find tangent line to y=4x²+5x at x=4.",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "y−(84)=37(x−4).",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "y−(84)=37(x−4).",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Equation of a Line Tangent to a Function at a Point",
+          "Question": "Object s(t)=5t²+1t meters: instantaneous velocity at t=5 seconds?",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "v(t)=10t+1 m/s; v(5)=51 m/s.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "v(t)=10t+1 m/s; v(5)=51 m/s.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        },
+        {
+          "Title": "Finding the Instantaneous Velocity",
+          "Question": "Find average rate of change of f(x)=6x²+2x on interval[1,3].",
+          "Method": "Use source-family limit, continuity or derivative definition.",
+          "Steps": [
+            "Plan: Use source-family limit, continuity or derivative definition.",
+            "26, because secant slope=a(1+3)+b.",
+            "Validate: Verify domain, one-sided values or difference quotient."
+          ],
+          "Answer": "26, because secant slope=a(1+3)+b.",
+          "Check": "Verify domain, one-sided values or difference quotient."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Calculus core concept",
+          "Definition": "Derivative f'(a)=lim_(h→0)[f(a+h)−f(a)]/h when finite limit exists.",
+          "Rule": "Power rule (x^n)'=n x^(n−1) and linearity differentiate polynomials.",
+          "Example": "f'(x)=9x²+4x+(-1)."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Power rule (x^n)'=n x^(n−1) and linearity differentiate polynomials.",
+          "Rule": "Power rule (x^n)'=n x^(n−1) and linearity differentiate polynomials.",
+          "Example": "Differentiate f(x)=1/(x+4), x≠−4. Answer: f'(x)=−1/(x+4)²."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Differentiate reciprocal and radical functions within their smooth domains.",
+          "Rule": "Differentiate reciprocal and radical functions within their smooth domains.",
+          "Example": "Differentiate f(x)=sqrt(x+5), x>−5. Answer: f'(x)=1/(2sqrt(x+5))."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party calculus comparison table",
+          "Description": "Independent secant/limit/continuity concept chart.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Test",
+          "Rows": [
+            {
+              "Label": "Concept",
+              "Cells": [
+                "limit",
+                "continuity",
+                "derivative"
+              ]
+            },
+            {
+              "Label": "Check",
+              "Cells": [
+                "left=right",
+                "limit=f(a)",
+                "difference quotient"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Derivative f'(a)=lim_(h→0)[f(a+h)−f(a)]/h when finite limit exists.",
+        "Power rule (x^n)'=n x^(n−1) and linearity differentiate polynomials.",
+        "Differentiate reciprocal and radical functions within their smooth domains."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substitute directly into0/0 or assume a hole changes approached limit.",
+          "WhyWrong": "Limit concerns nearby behavior, not isolated point value.",
+          "Correction": "Factor/rationalize or compare one-sided limits."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify domain, one-sided values or difference quotient."
+        }
+      ]
+    }
+  ]
+}

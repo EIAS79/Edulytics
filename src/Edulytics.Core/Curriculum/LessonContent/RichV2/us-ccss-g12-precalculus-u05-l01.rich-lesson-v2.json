@@ -1,0 +1,244 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U05:L01",
+  "ContentVersion": "g12-u05-l01-firstparty-angles-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L01",
+      "CultureCode": "en",
+      "Title": "Angles",
+      "ExplanationParagraphs": [
+        "An angle consists of two rays with shared vertex. Standard position places vertex at origin, initial ray on positive x-axis and terminal ray after a directed rotation.",
+        "Counterclockwise rotation is positive and clockwise negative. Angles that differ by integer multiples of360° or2π are coterminal.",
+        "One radian subtends an arc equal in length to the circle radius; 180°=πrad, so multiply degrees byπ/180 to get radians.",
+        "Quadrantal angles terminate on axes; common special angles 30°,45°,60°,90° have exact π fractions.",
+        "Given arc radius r>0 and angle θ in radians, s=rθ; the geometric length is nonnegative for arc magnitude |θ|.",
+        "A sector with central angle θ≥0 radians has area A=(1/2)r²θ. Always convert degree measure to radians before applying this formula.",
+        "Angular speed ω=Δθ/Δt in rad/time; linear speed v=rω in distance/time. Convert wheel revolutions per minute to radians per time unit.",
+        "Independent Cool-down: convert−210° to radians, find arc length r=4cm θ=3π/4, and find wheel RPM for ω=πrad/s.",
+        "Independent Try It 1: Sketch negative −60° in standard position.",
+        "Independent Try It 2: A circle radius6m has 12m arc. Find radian angle.",
+        "Independent Try It 3: Convert 7π/4 to degrees.",
+        "Independent Try It 4: Convert 225° to radians.",
+        "Independent Try It 5: Normalize 1120° to[0,360).",
+        "Independent Try It 6: Normalize −470° to[0,360).",
+        "Independent Try It 7: Normalize 17π/6 to[0,2π).",
+        "Independent Try It 8: Find arc length r=3cm θ=5π/6.",
+        "Independent Try It 9: Find sector area r=5in θ=π/3.",
+        "Independent Try It 10: A fan makes 3 rotations in 2s. Find angular speed.",
+        "Independent Try It 11: Wheel radius0.5m spinning4rad/s: find v."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Standard-position angle",
+          "Question": "Sketch 135° with vertex at origin and initial ray +x.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "Positive CCW rotation to quadrant II, terminal point on unit circle(−sqrt2/2,sqrt2/2).",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "Positive CCW rotation to quadrant II, terminal point on unit circle(−sqrt2/2,sqrt2/2).",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Central angle radians",
+          "Question": "A radius5cm arc has length7cm. Find central angle.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "θ=s/r=7/5=1.4rad.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "θ=s/r=7/5=1.4rad.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Radians to degrees",
+          "Question": "Convert 5π/6 radians to degrees.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "5·180/6=150°.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "5·180/6=150°.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Degrees to radians",
+          "Question": "Convert −135° to radians.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "−135π/180=−3π/4.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "−135π/180=−3π/4.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Coterminal positive angle",
+          "Question": "Find coterminal of 820° in[0,360).",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "820−2·360=100°.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "820−2·360=100°.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Coterminal negative angle",
+          "Question": "Find coterminal of −125° in[0,360).",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "−125+360=235°.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "−125+360=235°.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Coterminal in radians",
+          "Question": "Find coterminal of −11π/6 in[0,2π).",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "−11π/6+2π=π/6.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "−11π/6+2π=π/6.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Arc length",
+          "Question": "Circle radius9cm has central angle2π/3. Find arc length.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "s=rθ=9·2π/3=6πcm.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "s=rθ=9·2π/3=6πcm.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Sector area",
+          "Question": "Circle radius4m with central angle3π/4. Find area.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "A=(1/2)r²θ=(1/2)·16·3π/4=6πm².",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "A=(1/2)r²θ=(1/2)·16·3π/4=6πm².",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Angular speed",
+          "Question": "A wheel makes five revolutions in 10s. Find angular speed.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "ω=5·2π/10=πrad/s.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "ω=5·2π/10=πrad/s.",
+          "Check": "Check quadrant, sign and dimensions."
+        },
+        {
+          "Title": "Linear speed",
+          "Question": "Wheel radius0.4m spins at3rad/s. Find tangential speed.",
+          "Method": "Use directed angle geometry, exact π conversion and appropriate units.",
+          "Steps": [
+            "Plan: Use directed angle geometry, exact π conversion and appropriate units.",
+            "v=rω=0.4·3=1.2m/s.",
+            "Validate: Check quadrant, sign and dimensions."
+          ],
+          "Answer": "v=rω=0.4·3=1.2m/s.",
+          "Check": "Check quadrant, sign and dimensions."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Directed standard angle",
+          "Definition": "Vertex at origin, initial ray along +x, terminal ray determined by oriented angle.",
+          "Rule": "CCW positive, CW negative.",
+          "Example": "−60° ends in quadrant IV."
+        },
+        {
+          "Title": "Radians",
+          "Definition": "θ=s/r; 2π radians is one full revolution.",
+          "Rule": "Multiply degrees byπ/180.",
+          "Example": "120°=2π/3."
+        },
+        {
+          "Title": "Arc and sector",
+          "Definition": "For θ≥0 in radians, s=rθ and A=r²θ/2.",
+          "Rule": "Keep linear vs square units distinct.",
+          "Example": "r=2,θ=π => s=2π, area2π."
+        },
+        {
+          "Title": "Angular and linear speed",
+          "Definition": "ω=dθ/dt and v=rω.",
+          "Rule": "Convert rev/min to2π rad/rev.",
+          "Example": "2RPM=4πrad/min."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party degree–radian conversion anchors",
+          "Description": "Independent angular conversion grid; not publisher artwork.",
+          "PrimaryLabel": "Degrees",
+          "SecondaryLabel": "Radians",
+          "Rows": [
+            {
+              "Label": "Degrees",
+              "Cells": [
+                "30",
+                "45",
+                "60",
+                "90"
+              ]
+            },
+            {
+              "Label": "Radians",
+              "Cells": [
+                "π/6",
+                "π/4",
+                "π/3",
+                "π/2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Sketch signed terminal rays correctly.",
+        "Convert degrees and radians exactly.",
+        "Normalize coterminal angles.",
+        "Use s=rθ and A=r²θ/2.",
+        "Distinguish ω from v and check units."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Insert degrees directly into s=rθ.",
+          "WhyWrong": "The formula assumes radians.",
+          "Correction": "Convert first to radians."
+        },
+        {
+          "Mistake": "Treat negative rotation as negative physical arc length.",
+          "WhyWrong": "Directed displacement can be negative, physical distance cannot.",
+          "Correction": "Use magnitude when the question asks distance."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L05",
+  "IndependentStudentMathQuestions": [
+    {
+      "OriginalExercise": 1,
+      "IndependentStudentMathQuestion": "Can 2×3 and3×2 matrices be added?",
+      "TeacherMathAnswer": "No: same shape needed.",
+      "SourceSkillFamily": "Source1–5 matrix rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 2,
+      "IndependentStudentMathQuestion": "When is row times column defined?",
+      "TeacherMathAnswer": "Row1×n times n×1 yields scalar (1×1).",
+      "SourceSkillFamily": "Source1–5 matrix rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 3,
+      "IndependentStudentMathQuestion": "Can AB and BA both be defined?",
+      "TeacherMathAnswer": "Yes if A and B square of same size, not necessarily same product.",
+      "SourceSkillFamily": "Source1–5 matrix rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 4,
+      "IndependentStudentMathQuestion": "Does any pair of square matrices multiply?",
+      "TeacherMathAnswer": "Yes if same square order; rectangular equal dimensions also require inner dimensions match.",
+      "SourceSkillFamily": "Source1–5 matrix rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 5,
+      "IndependentStudentMathQuestion": "Does AB always equal BA?",
+      "TeacherMathAnswer": "No: matrix product generally noncommutative.",
+      "SourceSkillFamily": "Source1–5 matrix rules",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 6,
+      "IndependentStudentMathQuestion": "Attempt adding 2×2 A=[[4, 1], [1, 5]] and3×3 B=[[6, 1, 2], [1, 12, -1], [2, -1, 9]].",
+      "TeacherMathAnswer": "Undefined: unequal dimensions.",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 7,
+      "IndependentStudentMathQuestion": "Add matrices A=[[5, 1], [1, 6]],C=[[1, 2], [0, 2]].",
+      "TeacherMathAnswer": "[[6, 3], [1, 8]]",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 8,
+      "IndependentStudentMathQuestion": "Add matrices A=[[6, 1], [1, 7]],C=[[1, 3], [1, 2]].",
+      "TeacherMathAnswer": "[[7, 4], [2, 9]]",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 9,
+      "IndependentStudentMathQuestion": "Attempt adding 2×2 A=[[7, 1], [1, 5]] and3×3 B=[[9, 1, 2], [1, 8, -1], [2, -1, 8]].",
+      "TeacherMathAnswer": "Undefined: unequal dimensions.",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 10,
+      "IndependentStudentMathQuestion": "Add matrices A=[[3, 1], [1, 6]],C=[[1, 2], [-2, 2]].",
+      "TeacherMathAnswer": "[[4, 3], [-1, 8]]",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 11,
+      "IndependentStudentMathQuestion": "Add matrices A=[[4, 1], [1, 7]],C=[[1, 3], [-1, 2]].",
+      "TeacherMathAnswer": "[[5, 4], [0, 9]]",
+      "SourceSkillFamily": "Source6–11 matrix add/subtract",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 12,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[5, 1], [1, 5]] by 2.",
+      "TeacherMathAnswer": "[[10, 2], [2, 10]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 13,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[6, 1], [1, 6]] by 3.",
+      "TeacherMathAnswer": "[[18, 3], [3, 18]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 14,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[7, 1], [1, 7]] by -3.",
+      "TeacherMathAnswer": "[[-21, -3], [-3, -21]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 15,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[3, 1], [1, 5]] by -2.",
+      "TeacherMathAnswer": "[[-6, -2], [-2, -10]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 16,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[4, 1], [1, 6]] by -1.",
+      "TeacherMathAnswer": "[[-4, -1], [-1, -6]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 17,
+      "IndependentStudentMathQuestion": "Scale matrix A=[[5, 1], [1, 7]] by 0.",
+      "TeacherMathAnswer": "[[0, 0], [0, 0]]",
+      "SourceSkillFamily": "Source12–17 scalar multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 18,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[6, 1], [1, 5]] by C=[[1, 1], [1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(7, 1), Fraction(8, 1)], [Fraction(6, 1), Fraction(11, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 19,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[7, 1], [1, 6]] by C=[[1, 2], [2, 2]].",
+      "TeacherMathAnswer": "[[Fraction(9, 1), Fraction(16, 1)], [Fraction(13, 1), Fraction(14, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 20,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[3, 1], [1, 7]] by C=[[1, 3], [-2, 2]].",
+      "TeacherMathAnswer": "[[Fraction(1, 1), Fraction(11, 1)], [Fraction(-13, 1), Fraction(17, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 21,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[4, 1], [1, 5]] by C=[[1, 1], [-1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(3, 1), Fraction(6, 1)], [Fraction(-4, 1), Fraction(11, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 22,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[5, 1], [1, 6]] by C=[[1, 2], [0, 2]].",
+      "TeacherMathAnswer": "[[Fraction(5, 1), Fraction(12, 1)], [Fraction(1, 1), Fraction(14, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 23,
+      "IndependentStudentMathQuestion": "Multiply matrices A=[[6, 1], [1, 7]] by C=[[1, 3], [1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(7, 1), Fraction(20, 1)], [Fraction(8, 1), Fraction(17, 1)]]",
+      "SourceSkillFamily": "Source18–23 matrix multiplication",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 24,
+      "IndependentStudentMathQuestion": "Compute 1A−C, A=[[7, 1], [1, 5]],C=[[1, 1], [2, 2]].",
+      "TeacherMathAnswer": "[[6, 0], [-1, 3]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 25,
+      "IndependentStudentMathQuestion": "Compute 2A−C, A=[[3, 1], [1, 6]],C=[[1, 2], [-2, 2]].",
+      "TeacherMathAnswer": "[[5, 0], [4, 10]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 26,
+      "IndependentStudentMathQuestion": "Compute 3A−C, A=[[4, 1], [1, 7]],C=[[1, 3], [-1, 2]].",
+      "TeacherMathAnswer": "[[11, 0], [4, 19]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 27,
+      "IndependentStudentMathQuestion": "Compute 4A−C, A=[[5, 1], [1, 5]],C=[[1, 1], [0, 2]].",
+      "TeacherMathAnswer": "[[19, 3], [4, 18]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 28,
+      "IndependentStudentMathQuestion": "Compute 1A−C, A=[[6, 1], [1, 6]],C=[[1, 2], [1, 2]].",
+      "TeacherMathAnswer": "[[5, -1], [0, 4]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 29,
+      "IndependentStudentMathQuestion": "Compute 2A−C, A=[[7, 1], [1, 7]],C=[[1, 3], [2, 2]].",
+      "TeacherMathAnswer": "[[13, -1], [0, 12]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 30,
+      "IndependentStudentMathQuestion": "Compute 3A−C, A=[[3, 1], [1, 5]],C=[[1, 1], [-2, 2]].",
+      "TeacherMathAnswer": "[[8, 2], [5, 13]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 31,
+      "IndependentStudentMathQuestion": "Compute 4A−C, A=[[4, 1], [1, 6]],C=[[1, 2], [-1, 2]].",
+      "TeacherMathAnswer": "[[15, 2], [5, 22]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 32,
+      "IndependentStudentMathQuestion": "Compute 1A−C, A=[[5, 1], [1, 7]],C=[[1, 3], [0, 2]].",
+      "TeacherMathAnswer": "[[4, -2], [1, 5]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 33,
+      "IndependentStudentMathQuestion": "Compute 2A−C, A=[[6, 1], [1, 5]],C=[[1, 1], [1, 2]].",
+      "TeacherMathAnswer": "[[11, 1], [1, 8]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 34,
+      "IndependentStudentMathQuestion": "Compute 3A−C, A=[[7, 1], [1, 6]],C=[[1, 2], [2, 2]].",
+      "TeacherMathAnswer": "[[20, 1], [1, 16]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 35,
+      "IndependentStudentMathQuestion": "Compute 4A−C, A=[[3, 1], [1, 7]],C=[[1, 3], [-2, 2]].",
+      "TeacherMathAnswer": "[[11, 1], [6, 26]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 36,
+      "IndependentStudentMathQuestion": "Compute 1A−C, A=[[4, 1], [1, 5]],C=[[1, 1], [-1, 2]].",
+      "TeacherMathAnswer": "[[3, 0], [2, 3]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 37,
+      "IndependentStudentMathQuestion": "Compute 2A−C, A=[[5, 1], [1, 6]],C=[[1, 2], [0, 2]].",
+      "TeacherMathAnswer": "[[9, 0], [2, 10]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 38,
+      "IndependentStudentMathQuestion": "Compute 3A−C, A=[[6, 1], [1, 7]],C=[[1, 3], [1, 2]].",
+      "TeacherMathAnswer": "[[17, 0], [2, 19]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 39,
+      "IndependentStudentMathQuestion": "Compute 4A−C, A=[[7, 1], [1, 5]],C=[[1, 1], [2, 2]].",
+      "TeacherMathAnswer": "[[27, 3], [2, 18]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 40,
+      "IndependentStudentMathQuestion": "Compute 1A−C, A=[[3, 1], [1, 6]],C=[[1, 2], [-2, 2]].",
+      "TeacherMathAnswer": "[[2, -1], [3, 4]]",
+      "SourceSkillFamily": "Source24–40 combined matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 41,
+      "IndependentStudentMathQuestion": "Compute A² for A=[[4, 1], [1, 7]].",
+      "TeacherMathAnswer": "[[Fraction(17, 1), Fraction(11, 1)], [Fraction(11, 1), Fraction(50, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 42,
+      "IndependentStudentMathQuestion": "Compute AC for A=[[5, 1], [1, 5]],C=[[1, 1], [0, 2]].",
+      "TeacherMathAnswer": "[[Fraction(5, 1), Fraction(7, 1)], [Fraction(1, 1), Fraction(11, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 43,
+      "IndependentStudentMathQuestion": "Compute A² for A=[[6, 1], [1, 6]].",
+      "TeacherMathAnswer": "[[Fraction(37, 1), Fraction(12, 1)], [Fraction(12, 1), Fraction(37, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 44,
+      "IndependentStudentMathQuestion": "Compute AC for A=[[7, 1], [1, 7]],C=[[1, 3], [2, 2]].",
+      "TeacherMathAnswer": "[[Fraction(9, 1), Fraction(23, 1)], [Fraction(15, 1), Fraction(17, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 45,
+      "IndependentStudentMathQuestion": "Compute A² for A=[[3, 1], [1, 5]].",
+      "TeacherMathAnswer": "[[Fraction(10, 1), Fraction(8, 1)], [Fraction(8, 1), Fraction(26, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 46,
+      "IndependentStudentMathQuestion": "Compute AC for A=[[4, 1], [1, 6]],C=[[1, 2], [-1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(3, 1), Fraction(10, 1)], [Fraction(-5, 1), Fraction(14, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 47,
+      "IndependentStudentMathQuestion": "Compute A² for A=[[5, 1], [1, 7]].",
+      "TeacherMathAnswer": "[[Fraction(26, 1), Fraction(12, 1)], [Fraction(12, 1), Fraction(50, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 48,
+      "IndependentStudentMathQuestion": "Compute AC for A=[[6, 1], [1, 5]],C=[[1, 1], [1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(7, 1), Fraction(8, 1)], [Fraction(6, 1), Fraction(11, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 49,
+      "IndependentStudentMathQuestion": "Compute A² for A=[[7, 1], [1, 6]].",
+      "TeacherMathAnswer": "[[Fraction(50, 1), Fraction(13, 1)], [Fraction(13, 1), Fraction(37, 1)]]",
+      "SourceSkillFamily": "Source41–49 products and powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 50,
+      "IndependentStudentMathQuestion": "Compute A·C−2A with A=[[3, 1], [1, 7]],C=[[1, 3], [-2, 2]].",
+      "TeacherMathAnswer": "[[Fraction(-5, 1), Fraction(9, 1)], [Fraction(-15, 1), Fraction(3, 1)]]",
+      "SourceSkillFamily": "Source50–54 technology matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 51,
+      "IndependentStudentMathQuestion": "Compute A·C−2A with A=[[4, 1], [1, 5]],C=[[1, 1], [-1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(-5, 1), Fraction(4, 1)], [Fraction(-6, 1), Fraction(1, 1)]]",
+      "SourceSkillFamily": "Source50–54 technology matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 52,
+      "IndependentStudentMathQuestion": "Compute A·C−2A with A=[[5, 1], [1, 6]],C=[[1, 2], [0, 2]].",
+      "TeacherMathAnswer": "[[Fraction(-5, 1), Fraction(10, 1)], [Fraction(-1, 1), Fraction(2, 1)]]",
+      "SourceSkillFamily": "Source50–54 technology matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 53,
+      "IndependentStudentMathQuestion": "Compute A·C−2A with A=[[6, 1], [1, 7]],C=[[1, 3], [1, 2]].",
+      "TeacherMathAnswer": "[[Fraction(-5, 1), Fraction(18, 1)], [Fraction(6, 1), Fraction(3, 1)]]",
+      "SourceSkillFamily": "Source50–54 technology matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 54,
+      "IndependentStudentMathQuestion": "Compute A·C−2A with A=[[7, 1], [1, 5]],C=[[1, 1], [2, 2]].",
+      "TeacherMathAnswer": "[[Fraction(-5, 1), Fraction(7, 1)], [Fraction(9, 1), Fraction(1, 1)]]",
+      "SourceSkillFamily": "Source50–54 technology matrix operations",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 55,
+      "IndependentStudentMathQuestion": "Calculate swap-matrix B^2, B=[[1, 0, 0], [0, 0, 1], [0, 1, 0]].",
+      "TeacherMathAnswer": "[[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+      "SourceSkillFamily": "Source55–59 matrix powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 56,
+      "IndependentStudentMathQuestion": "Calculate swap-matrix B^3, B=[[1, 0, 0], [0, 0, 1], [0, 1, 0]].",
+      "TeacherMathAnswer": "[[1, 0, 0], [0, 0, 1], [0, 1, 0]]",
+      "SourceSkillFamily": "Source55–59 matrix powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 57,
+      "IndependentStudentMathQuestion": "Calculate swap-matrix B^4, B=[[1, 0, 0], [0, 0, 1], [0, 1, 0]].",
+      "TeacherMathAnswer": "[[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+      "SourceSkillFamily": "Source55–59 matrix powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 58,
+      "IndependentStudentMathQuestion": "Calculate swap-matrix B^5, B=[[1, 0, 0], [0, 0, 1], [0, 1, 0]].",
+      "TeacherMathAnswer": "[[1, 0, 0], [0, 0, 1], [0, 1, 0]]",
+      "SourceSkillFamily": "Source55–59 matrix powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    },
+    {
+      "OriginalExercise": 59,
+      "IndependentStudentMathQuestion": "Calculate swap-matrix B^6, B=[[1, 0, 0], [0, 0, 1], [0, 1, 0]].",
+      "TeacherMathAnswer": "[[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+      "SourceSkillFamily": "Source55–59 matrix powers",
+      "IndependentMathValidated": true,
+      "PublisherQuestionCopied": false
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Attempt adding 2×2 A=[[4, 1], [1, 5]] and3×3 B=[[6, 1, 2], [1, 12, -1], [2, -1, 9]].",
+      "TeacherExpectedMath": "Undefined: unequal dimensions."
+    },
+    {
+      "Number": 2,
+      "Question": "Add matrices A=[[5, 1], [1, 6]],C=[[1, 2], [0, 2]].",
+      "TeacherExpectedMath": "[[6, 3], [1, 8]]"
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Attempt adding 2×2 A=[[4, 1], [1, 5]] and3×3 B=[[6, 1, 2], [1, 12, -1], [2, -1, 9]]."
+    ],
+    "TeacherExpectedMath": [
+      "Undefined: unequal dimensions."
+    ],
+    "PublisherOriginalCopied": false
+  },
+  "OriginalExerciseMathSkills": 59,
+  "StageC": "REUSE_MANUAL_TEACHER_MATRIX_SCORING",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}

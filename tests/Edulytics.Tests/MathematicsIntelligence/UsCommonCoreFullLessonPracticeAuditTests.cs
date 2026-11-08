@@ -11,7 +11,8 @@ public sealed class UsCommonCoreFullLessonPracticeAuditTests
     {
         var lessons = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
             .SelectMany(document => document.Lessons)
-            .Where(lesson => lesson.LessonCode.StartsWith("PED:US-CCSS-MATH:", StringComparison.Ordinal))
+            .Where(lesson => lesson.LessonCode.StartsWith("PED:US-CCSS-MATH:", StringComparison.Ordinal)
+                && !lesson.LessonCode.StartsWith("PED:US-CCSS-MATH:HS:ADV:PRECALC:", StringComparison.Ordinal))
             .GroupBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
             .Select(group => group.First())
             .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)

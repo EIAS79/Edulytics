@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U10:L04",
+  "ContentVersion": "us-ccss-g12-precalculus-u10-l04-firstparty-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U10:L04",
+      "CultureCode": "en",
+      "Title": "Rotation of Axis",
+      "ExplanationParagraphs": [
+        "General conic quadratic Ax²+Bxy+Cy²+Dx+Ey+F=0 can be diagonalized by rotation.",
+        "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+        "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant.",
+        "Rotating axes leaves geometric locus unchanged and turns symmetric quadratic form into eigenbasis.",
+        "Check degenerate forms separately; discriminant alone does not prove real nondegenerate shape.",
+        "Independent Cool-down: identify the standard conic, state relevant foci/axis features, and verify the equation with an independent point."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identifying a Conic from Its General Form",
+          "Question": "Classify conic quadratic form A=2,B=-2,C=3 using B²−4AC.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -20: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
+          ],
+          "Answer": "Discriminant -20: ellipse (assuming nondegenerate real conic).",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Finding a New Representation of an Equation after Rotating through a Given Angle",
+          "Question": "Classify conic quadratic form A=3,B=-1,C=4 using B²−4AC.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -47: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
+          ],
+          "Answer": "Discriminant -47: ellipse (assuming nondegenerate real conic).",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Rewriting an Equation with respect to the x´ and y´ axes without the x´y´ Term",
+          "Question": "Classify conic quadratic form A=4,B=0,C=5 using B²−4AC.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -80: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
+          ],
+          "Answer": "Discriminant -80: ellipse (assuming nondegenerate real conic).",
+          "Check": "Check conic parameters, domains and equations."
+        },
+        {
+          "Title": "Graphing an Equation That Has No x´y´ Terms",
+          "Question": "Classify conic quadratic form A=5,B=1,C=6 using B²−4AC.",
+          "Method": "Use source-family geometric equation and independent parameters.",
+          "Steps": [
+            "Plan: Use source-family geometric equation and independent parameters.",
+            "Discriminant -119: ellipse (assuming nondegenerate real conic).",
+            "Validate: Check conic parameters, domains and equations."
+          ],
+          "Answer": "Discriminant -119: ellipse (assuming nondegenerate real conic).",
+          "Check": "Check conic parameters, domains and equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conic geometry",
+          "Definition": "General conic quadratic Ax²+Bxy+Cy²+Dx+Ey+F=0 can be diagonalized by rotation.",
+          "Rule": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+          "Example": "Discriminant -20: ellipse (assuming nondegenerate real conic)."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+          "Rule": "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+          "Example": "Classify conic quadratic form A=3,B=-1,C=4 using B²−4AC. Answer: Discriminant -47: ellipse (assuming nondegenerate real conic)."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant.",
+          "Rule": "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant.",
+          "Example": "Classify conic quadratic form A=4,B=0,C=5 using B²−4AC. Answer: Discriminant -80: ellipse (assuming nondegenerate real conic)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party conic classification and parameters",
+          "Description": "Original independent mathematical chart.",
+          "PrimaryLabel": "Conic",
+          "SecondaryLabel": "Signature",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "ellipse",
+                "parabola",
+                "hyperbola"
+              ]
+            },
+            {
+              "Label": "Eccentricity",
+              "Cells": [
+                "e<1",
+                "e=1",
+                "e>1"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "General conic quadratic Ax²+Bxy+Cy²+Dx+Ey+F=0 can be diagonalized by rotation.",
+        "Conic discriminant B²−4AC identifies nondegenerate ellipse, parabola or hyperbola.",
+        "To remove xy term choose tan(2θ)=B/(A−C), use atan2 for quadrant."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore center, axis sign or domain constraints.",
+          "WhyWrong": "Changes conic branch/focus.",
+          "Correction": "Verify standard equation and orientation."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Check conic parameters, domains and equations."
+        }
+      ]
+    }
+  ]
+}

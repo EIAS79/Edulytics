@@ -1,0 +1,268 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L09",
+  "ContentVersion": "g12-u03-l09-firstparty-variation-abc-four-figure-alternatives",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L09",
+      "CultureCode": "en",
+      "Title": "Modeling Using Variation",
+      "ExplanationParagraphs": [
+        "Three original-source goals: model direct, inverse, and joint variation, determine the shared constant and evaluate the model at changed inputs.",
+        "Direct variation is y=kxⁿ; for n=1 the graph is a line through the origin. For other powers the graph may be nonlinear even though variation is direct.",
+        "Inverse variation is y=k/xⁿ, where x≠0, and its graph displays domain exclusions and decreasing or increasing branch behavior depending on signs and powers.",
+        "Joint variation uses a single nonzero constant of variation and products of powers or quotients; use source values to find k and preserve physical units.",
+        "An applied law can have direct dependence on some variables and inverse dependence on others; do not confuse 'inverse variation' with 'inverse function'.",
+        "Independent first-party Cool-down: (a) Model revenue varying directly with units. (b) Model light intensity varying inversely with squared distance. (c) A jointly varying force F=kv²A is calibrated and evaluated.",
+        "Independent Try It 1: y varies directly as x². When x=3, y=18. Find y for x=5.",
+        "Independent Try It 2: y varies inversely as x³. When x=2, y=24. Find y for x=4.",
+        "Independent Try It 3: q varies directly as a²b and inversely as c. If q=12 at a=2,b=3,c=2, find q at a=3,b=4,c=6.",
+        "Figure-skill alternative 1: Original publisher Figure 1 illustrates earnings y=0.16s; a first-party alternative uses e=0.1s, s∈{0,200,400,600}, e∈{0,20,40,60}. Constant positive rate leads to origin line and proportional increases.",
+        "Figure-skill alternative 2: Original source Figure 2 illustrates y=(25/8)x³ at x=2 and x=6; independent first-party graph uses y=2x³ with points (0,0),(1,2),(2,16),(3,54). Higher-power direct variation curves even though multiplier k remains constant.",
+        "Figure-skill alternative 3: Original Figure 3 illustrates a reciprocal form. Independent alternative y=24/x for x>0 with (1,24),(2,12),(3,8),(6,4). Doubling x halves y for inverse first-power variation.",
+        "Figure-skill alternative 4: Original Figure 4 illustrates inverse cube y=200/x³. Independent alternative y=64/x³ for x>0, points (2,8),(4,1),(8,1/8). Doubling x divides output by 8 and the x=0 domain exclusion remains."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Direct variation and commission",
+          "Question": "Commission C varies directly with sale price s. If a sale of $5000 pays $400, find C for a $7500 sale.",
+          "Method": "Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+          "Steps": [
+            "Plan: Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+            "k=400/5000=0.08; C=0.08s; for s=7500, C=$600.",
+            "Validate: Substitute the calibration point and verify the resulting constant."
+          ],
+          "Answer": "k=400/5000=0.08; C=0.08s; for s=7500, C=$600.",
+          "Check": "Substitute the calibration point and verify the resulting constant."
+        },
+        {
+          "Title": "Power variation",
+          "Question": "y varies directly with x cubed. If y=16 at x=2, find y at x=4.",
+          "Method": "Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+          "Steps": [
+            "Plan: Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+            "k=16/8=2; y=2x³, so y(4)=128.",
+            "Validate: Substitute the calibration point and verify the resulting constant."
+          ],
+          "Answer": "k=16/8=2; y=2x³, so y(4)=128.",
+          "Check": "Substitute the calibration point and verify the resulting constant."
+        },
+        {
+          "Title": "Inverse variation",
+          "Question": "Intensity varies inversely with square of distance. If I=27 at distance 2 m, find I at distance 6 m.",
+          "Method": "Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+          "Steps": [
+            "Plan: Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+            "k=27×4=108, I=108/d²; at d=6, I=3.",
+            "Validate: Substitute the calibration point and verify the resulting constant."
+          ],
+          "Answer": "k=27×4=108, I=108/d²; at d=6, I=3.",
+          "Check": "Substitute the calibration point and verify the resulting constant."
+        },
+        {
+          "Title": "Joint variation",
+          "Question": "Cost C varies jointly with workers w and hours h and inversely with productivity p. If C=60 when w=3,h=4,p=2, compute C for w=5,h=6,p=3.",
+          "Method": "Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+          "Steps": [
+            "Plan: Translate variation wording, solve k from a measured point, substitute the target values and check units.",
+            "C=kwh/p, k=60×2/(3×4)=10; C=10×5×6/3=100.",
+            "Validate: Substitute the calibration point and verify the resulting constant."
+          ],
+          "Answer": "C=kwh/p, k=60×2/(3×4)=10; C=10×5×6/3=100.",
+          "Check": "Substitute the calibration point and verify the resulting constant."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Direct variation",
+          "Definition": "y=kxⁿ for a specified n and k≠0.",
+          "Rule": "Compute k=y/xⁿ, x≠0.",
+          "Example": "y=3x²."
+        },
+        {
+          "Title": "Inverse variation",
+          "Definition": "y=k/xⁿ, x≠0.",
+          "Rule": "Compute k=yxⁿ.",
+          "Example": "y=12/x²."
+        },
+        {
+          "Title": "Joint variation",
+          "Definition": "One quantity is proportional to a product or quotient of powers of multiple quantities.",
+          "Rule": "Use one constant k, not one per independent variable.",
+          "Example": "F=kv²A."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distinguish direct versus inverse variation",
+          "Description": "First-party variation sample based on exact values.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "y value",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "Direct y=8x",
+              "Cells": [
+                "8",
+                "16",
+                "32"
+              ]
+            },
+            {
+              "Label": "Inverse y=8/x",
+              "Cells": [
+                "8",
+                "4",
+                "2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent diagram for direct variation: commission rate",
+          "Description": "Original mathematical skill from source Figure 1; no publisher diagram copied.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "Sale s ($)",
+              "Cells": [
+                "0",
+                "200",
+                "400",
+                "600"
+              ]
+            },
+            {
+              "Label": "Commission e=0.1s ($)",
+              "Cells": [
+                "0",
+                "20",
+                "40",
+                "60"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent diagram for cubic variation",
+          "Description": "Original Figure 2 source skill; coordinates can be plotted as an increasing cubic.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "y=2x³",
+              "Cells": [
+                "0",
+                "2",
+                "16",
+                "54"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent inverse variation table",
+          "Description": "Graphing y=24/x on x>0 shows a decreasing reciprocal branch.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "y=24/x",
+              "Cells": [
+                "24",
+                "12",
+                "8",
+                "4"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent inverse cube variation table",
+          "Description": "Graph y=64/x³ on x>0 and discuss change factor under doubling.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "y=64/x³",
+              "Cells": [
+                "8",
+                "1",
+                "1/8"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Identify direct/inverse/joint dependence and powers.",
+        "Use one constant k.",
+        "Check dimensions and calibration measurements.",
+        "Direct variation may be nonlinear for powers other than one.",
+        "Avoid conflating inverse variation and inverse function."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Model all direct variation with y=kx only.",
+          "WhyWrong": "Direct powers x², x³ and radicals are valid models.",
+          "Correction": "Preserve the specified exponent n."
+        },
+        {
+          "Mistake": "Assign separate constants to each jointly varying factor.",
+          "WhyWrong": "A joint variation law uses one k.",
+          "Correction": "Write y=kx^az^b/w^c then solve k once."
+        }
+      ]
+    }
+  ]
+}

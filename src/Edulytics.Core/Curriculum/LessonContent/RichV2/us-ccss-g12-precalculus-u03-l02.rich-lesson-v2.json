@@ -1,0 +1,302 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U03:L02",
+  "ContentVersion": "g12-u03-l02-original-math-skills-firstparty-20261107",
+  "Lessons": [
+    {
+      "CultureCode": "en",
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L02",
+      "Title": "Quadratic Functions",
+      "ExplanationParagraphs": [
+        "Original source objectives: identify a parabola’s axis, vertex and intercepts; convert general and vertex forms; determine domain/range and maxima/minima; find complex and real roots; model constrained quadratic optimization.",
+        "A quadratic f(x)=ax²+bx+c (a≠0) has axis x=−b/(2a). Writing f(x)=a(x−h)²+k exposes vertex (h,k) and its maximum or minimum.",
+        "For intercepts set x=0 for y and set f(x)=0 for x. The discriminant Δ=b²−4ac determines real intersections versus complex conjugate solutions.",
+        "The vertex controls range and optimizes a maximum area, revenue or height when its x-value lies in the physical model’s admissible domain.",
+        "For projectile formulas, report both algebraic roots but reject negative physical time and state units.",
+        "Independent Edulytics Cool-down: (a) Rewrite 2x²−12x+11 in vertex form. (b) Find real/complex roots of x²+4=0. (c) Maximize R(p)=−3p²+90p under p≥0.",
+        "Independent Try It 1 — Vertex from graph. A parabola has vertex (1,−3) and passes through (2,−1). Find its equation.",
+        "Independent Try It 2 — Complete square. Rewrite x²−4x+7 in vertex form.",
+        "Independent Try It 3 — Domain and range. Determine range of −2(x+3)²+5.",
+        "Independent Try It 4 — Solve real and complex roots. Find roots of 2x²−4x+5.",
+        "Independent Try It 5 — Projectile optimization. h(t)=−16t²+96t+112. Find peak time and height; positive impact time."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify parabola characteristics",
+          "Question": "For f(x)=(x−2)^2−9 identify vertex, symmetry axis, intercepts, and opening.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "Vertex (2,−9), axis x=2, opens up, zeros x=−1 and x=5, y-intercept (0,−5).",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "Vertex (2,−9), axis x=2, opens up, zeros x=−1 and x=5, y-intercept (0,−5).",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Write a quadratic from a transformed parabola",
+          "Question": "A parabola has vertex (3,−4) and passes through (4,−2). Give vertex and general form.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "f(x)=2(x−3)^2−4=2x²−12x+14.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "f(x)=2(x−3)^2−4=2x²−12x+14.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Convert general to vertex form",
+          "Question": "Complete square in f(x)=2x²−8x+5 and find its vertex.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "f(x)=2(x−2)^2−3; vertex (2,−3).",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "f(x)=2(x−2)^2−3; vertex (2,−3).",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Find domain and range",
+          "Question": "Find range of f(x)=−3x²+12x−7 over real inputs.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "f(x)=−3(x−2)^2+5: domain R, range (−∞,5].",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "f(x)=−3(x−2)^2+5: domain R, range (−∞,5].",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Maximize an enclosure",
+          "Question": "With 80 feet of fencing for three sides and an existing fourth wall, maximize rectangular area.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "2w+l=80, A=80w−2w²; optimum w=20 feet, l=40 feet, area800 ft².",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "2w+l=80, A=80w−2w²; optimum w=20 feet, l=40 feet, area800 ft².",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Maximize linear-demand revenue",
+          "Question": "A seller can sell q=400−5p items at unit price p dollars. Find revenue-maximizing price and quantity.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "R(p)=400p−5p²; max p=40 dollars, q=200 items, revenue $8000.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "R(p)=400p−5p²; max p=40 dollars, q=200 items, revenue $8000.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Find quadratic intercepts",
+          "Question": "For f(x)=3x²−x−2 find both x-intercepts and y-intercept.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "Factors (3x+2)(x−1); x=−2/3 and1, y-intercept −2.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "Factors (3x+2)(x−1); x=−2/3 and1, y-intercept −2.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Solve a nonfactorable quadratic",
+          "Question": "Find exact x-intercepts of f(x)=2x²+4x−1.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "x=(−4±√24)/4=−1±√6/2.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "x=(−4±√24)/4=−1±√6/2.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Solve a quadratic over complex numbers",
+          "Question": "Solve x²+2x+5=0.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "x=−1±2i; discriminant=−16.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "x=−1±2i; discriminant=−16.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        },
+        {
+          "Title": "Model a projectile",
+          "Question": "h(t)=−16t²+64t+20 for t≥0 seconds. Find peak time/height and positive time reaching h=0.",
+          "Method": "Apply complete square, vertex/discriminant, exact roots and model domain.",
+          "Steps": [
+            "Plan: Apply complete square, vertex/discriminant, exact roots and model domain.",
+            "Peak t=2s, h=84ft; impact t=2+√21/2≈4.291s; negative root physically excluded.",
+            "Validate: Substitute into original quadratic and verify physical constraints."
+          ],
+          "Answer": "Peak t=2s, h=84ft; impact t=2+√21/2≈4.291s; negative root physically excluded.",
+          "Check": "Substitute into original quadratic and verify physical constraints."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadratic general form",
+          "Definition": "f(x)=ax²+bx+c, a≠0.",
+          "Rule": "a>0 opens upward, a<0 downward.",
+          "Example": "x²−4x+1."
+        },
+        {
+          "Title": "Vertex form",
+          "Definition": "f(x)=a(x−h)²+k has vertex (h,k).",
+          "Rule": "Axis x=h; y extremum k.",
+          "Example": "2(x−3)²−1."
+        },
+        {
+          "Title": "Vertex coordinate",
+          "Definition": "For ax²+bx+c, h=−b/(2a).",
+          "Rule": "Evaluate k=f(h) without rounding.",
+          "Example": "x²−6x+2 vertex x=3."
+        },
+        {
+          "Title": "Quadratic domain/range",
+          "Definition": "Unrestricted quadratic has domain R and vertex-controlled range.",
+          "Rule": "Open up: [k,∞), open down: (−∞,k].",
+          "Example": "−(x−1)²+4 has range y≤4."
+        },
+        {
+          "Title": "Zeros and discriminant",
+          "Definition": "Roots solve ax²+bx+c=0 and Δ=b²−4ac.",
+          "Rule": "Positive Δ two distinct real, zero double real, negative two nonreal conjugates.",
+          "Example": "x²+4 has roots ±2i."
+        },
+        {
+          "Title": "Quadratic formula",
+          "Definition": "x=(−b±√(b²−4ac))/(2a).",
+          "Rule": "Preserve exact radicals and complex solutions.",
+          "Example": "x²+2x+5 roots −1±2i."
+        },
+        {
+          "Title": "Graph intercepts",
+          "Definition": "y-intercept is (0,c), x-intercepts solve f(x)=0.",
+          "Rule": "A parabola may have 0,1,2 real horizontal intersections.",
+          "Example": "x²+1 none."
+        },
+        {
+          "Title": "Optimization by vertex",
+          "Definition": "A quadratic model with negative leading coefficient peaks at its vertex.",
+          "Rule": "Verify physical input domain before optimizing.",
+          "Example": "Revenue 400p−5p² maximum at p40."
+        },
+        {
+          "Title": "Transformation",
+          "Definition": "a scales/reflections; h shifts horizontal; k shifts vertical.",
+          "Rule": "Use vertex form to read transformed y=x².",
+          "Example": "−2(x+3)²+5."
+        },
+        {
+          "Title": "Contextual domains",
+          "Definition": "Time/distance/production may be nonnegative and bounded.",
+          "Rule": "Reject nonphysical negative-time projectile root.",
+          "Example": "Height h(t) for t≥0."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party parabola vertex symmetry table",
+          "Description": "The symmetric quadratic y=(x−2)²−9.",
+          "PrimaryLabel": "x",
+          "SecondaryLabel": "f(x)",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "−1",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "f(x)",
+              "Cells": [
+                "0",
+                "−5",
+                "−8",
+                "−9",
+                "−8",
+                "−5",
+                "0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Revenue maximum from price",
+          "Description": "Revenue from demand q=400−5p.",
+          "PrimaryLabel": "Price",
+          "SecondaryLabel": "Revenue",
+          "Rows": [
+            {
+              "Label": "p dollars",
+              "Cells": [
+                "0",
+                "20",
+                "40",
+                "60",
+                "80"
+              ]
+            },
+            {
+              "Label": "R(p) dollars",
+              "Cells": [
+                "0",
+                "6000",
+                "8000",
+                "6000",
+                "0"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "The quadratic vertex form is a(x−h)²+k.",
+        "h=−b/(2a), axis x=h.",
+        "Sign of a determines opening; vertex value determines range.",
+        "Discriminant determines real versus complex zeros.",
+        "Contextual optimization must observe admissible inputs."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using x=b/(2a) instead of −b/(2a).",
+          "WhyWrong": "The sign of the linear coefficient must be reversed.",
+          "Correction": "Use h=−b/(2a)."
+        },
+        {
+          "Mistake": "Claiming negative discriminant means no solutions.",
+          "WhyWrong": "It means no real roots, but there are complex solutions.",
+          "Correction": "Write exact complex conjugate roots."
+        },
+        {
+          "Mistake": "Optimizing outside the physical range.",
+          "WhyWrong": "The mathematical vertex can be outside permissible time or quantity.",
+          "Correction": "Check domain endpoints and units."
+        }
+      ]
+    }
+  ]
+}

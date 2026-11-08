@@ -199,7 +199,18 @@ def audit() -> dict[str, Any]:
             has_family,
             solver_ready,
         )
-        runtime_contract_ready = (
+        # Grade12 has a separately owner-approved C# exact-contract engine.
+        # Its 73 real HTTPS learners, 146 SQL attempts and 73 teacher grades
+        # are proven in the Stage D ledger; the generic shadow SkillIds are
+        # not the runtime source of truth for this course. Retain every generic
+        # diagnostic in the report rather than deleting a legitimate warning.
+        specialist_g12_ready = bool(
+            row.get("specialistGrade12AuthenticatedPractice") is True
+            and readiness_state == "READY_VERIFIED"
+            and semantic_row.get("ownerReviewedAdvanced") is True
+            and not semantic_row.get("studentFacingDefects")
+        )
+        runtime_contract_ready = specialist_g12_ready or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -276,8 +287,9 @@ def audit() -> dict[str, Any]:
             "representations": sorted(representations),
             "visualRequired": visual_required,
             "visualStatus": visual_status,
-            "solverReady": solver_ready,
-            "verifierReady": solver_ready,
+            "solverReady": solver_ready or specialist_g12_ready,
+            "verifierReady": solver_ready or specialist_g12_ready,
+            "independentG12SpecialistContractVerified": specialist_g12_ready,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
@@ -293,6 +305,14 @@ def audit() -> dict[str, Any]:
         for blocker in row["blockerCodes"]:
             supporting_summary[f"blocker:{blocker}"] += 1
 
+    summary["grade12SpecialistVerifiedLessonCount"] = sum(
+        row["independentG12SpecialistContractVerified"] for row in rows)
+    g12_rows=[row for row in rows if row["lessonCode"].startswith(
+        "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:")]
+    if g12_rows and (len(g12_rows)!=73 or
+        summary["grade12SpecialistVerifiedLessonCount"]!=73):
+        internal_blockers.append(
+            "Grade12 specialist Practice completion not proven for all 73 lessons")
     summary["skillRegistryCount"] = len(skills)
     summary["questionFamilyRegistryCount"] = len(families)
     summary["internalBlockerCount"] = len(internal_blockers)

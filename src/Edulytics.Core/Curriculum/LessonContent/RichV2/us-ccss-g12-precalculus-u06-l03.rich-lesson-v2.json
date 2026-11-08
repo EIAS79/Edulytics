@@ -1,0 +1,217 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U06:L03",
+  "ContentVersion": "g12-u06-l03-firstparty-inverse-trig-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03",
+      "CultureCode": "en",
+      "Title": "Inverse Trigonometric Functions",
+      "ExplanationParagraphs": [
+        "Inverse sine, cosine and tangent return principal angles for trig ratios; sin−1 x means arcsin(x), not reciprocal cosecant.",
+        "arcsin domain[-1,1], range[-π/2,π/2]; arccos domain[-1,1], range[0,π]; arctan domain all real, range(−π/2,π/2).",
+        "Since periodic sine/cosine/tangent are not one-to-one over all real inputs, we restrict their domains before inverting.",
+        "sin(arcsin u)=u for |u|≤1, cos(arccos u)=u for |u|≤1, tan(arctan u)=u for real u; inverse-trig of trig yields principal representative, not always original angle.",
+        "Use a reference triangle and Pythagorean relation to evaluate compositions such as cos(arcsin u)=sqrt(1−u²).",
+        "Inverse-trig graphs reflect the selected principal branch over y=x; domain and range exchange.",
+        "Use arcsin for opposite/hypotenuse, arccos for adjacent/hypotenuse, and arctan for opposite/adjacent, ensuring appropriate geometric side restrictions.",
+        "Independent Cool-down: find arccos(−sqrt2/2), simplify cos(arcsin(3/5)), and find road elevation with rise100ft over horizontal500ft.",
+        "Independent Try It 1: Find arcsin(−sqrt2/2).",
+        "Independent Try It 2: Evaluate arccos(−1).",
+        "Independent Try It 3: Estimate arctan(2).",
+        "Independent Try It 4: A ladder hyp10ft, vertical9ft: find ground angle.",
+        "Independent Try It 5: Evaluate arcsin(sin(3π/4)).",
+        "Independent Try It 6: Evaluate arccos(cos(−π/4)).",
+        "Independent Try It 7: Find cos(arcsin(4/5)).",
+        "Independent Try It 8: Find sin(arctan(3/4)).",
+        "Independent Try It 9: Simplify tan(arcsin(x/3)) for |x|<3."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Inverse relation",
+          "Question": "If sinθ=.5 on principal branch, find arcsin(.5).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "π/6.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "π/6.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Special inverse",
+          "Question": "Evaluate arccos(−1/2), arctan(1).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "2π/3, π/4.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "2π/3, π/4.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Calculator",
+          "Question": "Estimate arcsin(.3) to 4 decimals.",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "0.3047rad.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "0.3047rad.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Right triangle inverse",
+          "Question": "Opposite8,adjacent15: find angle.",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "arctan(8/15)≈0.4900rad.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "arctan(8/15)≈0.4900rad.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Inverse composition",
+          "Question": "Evaluate arctan(tan(−π/3)).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "−π/3 (principal interval).",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "−π/3 (principal interval).",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Inverse cosine of sine",
+          "Question": "Evaluate arccos(sinπ/6).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "π/3.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "π/3.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Sine of inverse cosine",
+          "Question": "Evaluate sin(arccos3/5).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "4/5.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "4/5.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Sine of inverse tangent",
+          "Question": "Evaluate sin(arctan5/12).",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "5/13.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "5/13.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        },
+        {
+          "Title": "Cosine of inverse sine",
+          "Question": "Evaluate cos(arcsin(x/2)) for |x|≤2.",
+          "Method": "Evaluate principal angle and enforce inverse domain/range.",
+          "Steps": [
+            "Plan: Evaluate principal angle and enforce inverse domain/range.",
+            "sqrt(4−x²)/2, nonnegative.",
+            "Validate: Apply trig back to answer and ensure branch restriction."
+          ],
+          "Answer": "sqrt(4−x²)/2, nonnegative.",
+          "Check": "Apply trig back to answer and ensure branch restriction."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse sine",
+          "Definition": "arcsin maps [-1,1] to[-π/2,π/2].",
+          "Rule": "Principal sine-inverse interval.",
+          "Example": "arcsin(1/2)=π/6."
+        },
+        {
+          "Title": "Inverse cosine",
+          "Definition": "arccos maps[-1,1] to[0,π].",
+          "Rule": "Not arccos(cosθ)=θ for arbitrary θ.",
+          "Example": "arccos(−1/2)=2π/3."
+        },
+        {
+          "Title": "Inverse tangent",
+          "Definition": "arctan maps R to(−π/2,π/2).",
+          "Rule": "tan(arctan x)=x.",
+          "Example": "arctan1=π/4."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party principal inverse-trigonometry ranges",
+          "Description": "Independent domain/range concept summary.",
+          "PrimaryLabel": "Inverse function",
+          "SecondaryLabel": "Domain and output",
+          "Rows": [
+            {
+              "Label": "Function",
+              "Cells": [
+                "arcsin",
+                "arccos",
+                "arctan"
+              ]
+            },
+            {
+              "Label": "Domain",
+              "Cells": [
+                "[-1,1]",
+                "[-1,1]",
+                "R"
+              ]
+            },
+            {
+              "Label": "Range",
+              "Cells": [
+                "[-π/2,π/2]",
+                "[0,π]",
+                "(−π/2,π/2)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Inverse principal value outputs an angle.",
+        "Respect inverse function domains and ranges.",
+        "Use reference triangles for compositions.",
+        "Interpret arcsin/arccos/arctan physically."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Read arcsin as1/sin.",
+          "WhyWrong": "Inverse function is not reciprocal.",
+          "Correction": "Cosecant is1/sin, arcsin returns an angle."
+        },
+        {
+          "Mistake": "Treat arccos(cos(−π/4)) as−π/4.",
+          "WhyWrong": "Negative angle outside arccos principal range.",
+          "Correction": "Resultπ/4."
+        }
+      ]
+    }
+  ]
+}

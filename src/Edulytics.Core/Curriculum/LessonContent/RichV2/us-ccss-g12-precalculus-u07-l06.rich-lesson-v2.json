@@ -1,0 +1,274 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U07:L06",
+  "ContentVersion": "g12-u07-l06-firstparty-periodic-damped-models-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06",
+      "CultureCode": "en",
+      "Title": "Modeling with Trigonometric Equations",
+      "ExplanationParagraphs": [
+        "A sinusoid y=A sin(Bt+C)+D or A cos(Bt+C)+D models periodic rise and fall with amplitude |A|, midlineD and period2π/|B|.",
+        "Use measurements (maximum/minimum, time between repeated extrema and timing of a reference event) to fit physical temperature, tide, rainfall and wheel models.",
+        "Model time spent above/below a threshold by solving the trigonometric inequality over a single period, including correct strict endpoints.",
+        "Regular harmonic motion D(t)=A cos(2πft+φ) has frequency f cycles per unit time and period1/f.",
+        "A damped oscillation D(t)=A e^(−ct)cos(2πft+φ) has a decaying amplitude envelope |A|e^(−ct), c>0. A fixed stability/rest criterion should be applied to the envelope, not the first zero-crossing.",
+        "Seasonal trends may combine a long-term linear or exponential baseline with an oscillatory term, e.g. population growth plus a 12-month seasonal component.",
+        "For vector flights, resolve individual distances into north/east components before computing the resultant and its bearing.",
+        "Independent Cool-down: create Ferris wheel equation radius6,center7,period8 and bottom start; determine spring period frequency3Hz; find time when A(t)=10e^(−.5t) first falls below.1.",
+        "Independent Try It 1: Model 24h temperature mean15,amp5,peak noon.",
+        "Independent Try It 2: Spring y=4cos(8πt), find frequency.",
+        "Independent Try It 3: Wheel radius10m,period12min, starts bottom, center11m.",
+        "Independent Try It 4: Damped spring 5(.9)^t cos(6πt), identify envelope.",
+        "Independent Try It 5: Find t where amplitude8e^(−.4t) drops below1.",
+        "Independent Try It 6: Fit model y=4·2^x+3sin(πx/2), evaluate atx3."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Transformation",
+          "Question": "Graph y=3sin(2t)+4.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude3,periodπ,midline4.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "Amplitude3,periodπ,midline4.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Amplitude/period",
+          "Question": "For y=−5cos(πt/4), find amplitude and period.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude5,period8.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "Amplitude5,period8.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Key-point graph",
+          "Question": "Sketch y=2sin(πt/6) for t=0,3,6,9,12.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Values0,2,0,−2,0.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "Values0,2,0,−2,0.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Periodic criteria",
+          "Question": "Construct model temperature max30 at t=12, min10 at t=0, period24.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "T(t)=20−10cos(2πt/24).",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "T(t)=20−10cos(2πt/24).",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Periodicity",
+          "Question": "A wheel rotates8 times/min with radius2m. Find displacement wave.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=2cos(16πt), t minutes, suitable initial orientation.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "D(t)=2cos(16πt), t minutes, suitable initial orientation.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Tidal model",
+          "Question": "Tide high4.5m at hour0, low0.5m at hour6, period12h.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "h(t)=2.5+2cos(πt/6).",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "h(t)=2.5+2cos(πt/6).",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Interpret motion",
+          "Question": "Mass h(t)=6sin(4πt). Find frequency.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "2Hz,period.5s,amplitude6.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "2Hz,period.5s,amplitude6.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Frequency/displacement",
+          "Question": "Spring D(t)=3cos(10πt).",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Amplitude3,frequency5Hz,period.2s.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "Amplitude3,frequency5Hz,period.2s.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Damped model",
+          "Question": "Spring starts10cm, loses20% amplitude per second,2Hz.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=10(.8)^t cos4πt.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "D(t)=10(.8)^t cos4πt.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Damped cosine",
+          "Question": "D(t)=8e^(−.3t)cos6πt; identify frequency.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "3Hz, envelope8e^(−.3t).",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "3Hz, envelope8e^(−.3t).",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Damped sine",
+          "Question": "D(t)=6e^(−.1t)sin8πt, identify envelope.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "6e^(−.1t), frequency4Hz.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "6e^(−.1t), frequency4Hz.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Spring oscillation",
+          "Question": "Spring pulled 4cm and oscillates2Hz starting downward.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "D(t)=4cos4πt.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "D(t)=4cos4πt.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Damping threshold",
+          "Question": "Amplitude 10e^(−.5t), when below0.1?",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "t>ln100/.5≈9.2103 seconds.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "t>ln100/.5≈9.2103 seconds.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        },
+        {
+          "Title": "Oscillatory cosine",
+          "Question": "Graph y=5cos(2πt/8) for t=0,2,4,6,8.",
+          "Method": "Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+          "Steps": [
+            "Plan: Fit physical units, period, mean/amplitude and orientation; check time-domain.",
+            "Values5,0,−5,0,5.",
+            "Validate: Validate extrema, frequency and physical constraints."
+          ],
+          "Answer": "Values5,0,−5,0,5.",
+          "Check": "Validate extrema, frequency and physical constraints."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Periodic wave",
+          "Definition": "y=D+Acos(2π(t−peak)/T).",
+          "Rule": "T positive, use peak and midline.",
+          "Example": "T=12h tide oscillation."
+        },
+        {
+          "Title": "Damped harmonic",
+          "Definition": "D(t)=A e^(−ct)cos(2πft+φ), c>0.",
+          "Rule": "Envelope |A|e^(−ct).",
+          "Example": "10(.8)^t cos4πt."
+        },
+        {
+          "Title": "Trend plus seasonality",
+          "Definition": "Mean baseline(t)+Acos(2πt/12).",
+          "Rule": "A season does not force a declining cumulative quantity.",
+          "Example": "Monthly species count trend."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent seasonal and harmonic model parameters",
+          "Description": "First-party math table.",
+          "PrimaryLabel": "Model",
+          "SecondaryLabel": "Parameters",
+          "Rows": [
+            {
+              "Label": "Process",
+              "Cells": [
+                "Daily temperature",
+                "Spring oscillator",
+                "Damped spring"
+              ]
+            },
+            {
+              "Label": "Period",
+              "Cells": [
+                "24 hours",
+                "1/f",
+                "1/f"
+              ]
+            },
+            {
+              "Label": "Amplitude",
+              "Cells": [
+                "|A|",
+                "|A|",
+                "|A|e^(−ct)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Fit mean/amplitude/period/phase.",
+        "Compare thresholds across a full cycle.",
+        "Distinguish periodic and damped motion.",
+        "Use dimensional and physical validation."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat crossing equilibrium as rest for a damped spring.",
+          "WhyWrong": "It passes through zero on every cycle before dissipating.",
+          "Correction": "Use envelope threshold for permanent near-rest."
+        },
+        {
+          "Mistake": "Fit cumulative rainfall with an unmodified oscillating sine.",
+          "WhyWrong": "Cumulative volume cannot decrease.",
+          "Correction": "Use nonnegative rainfall rate and integrate."
+        }
+      ]
+    }
+  ]
+}

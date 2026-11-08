@@ -1,0 +1,494 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L07",
+  "ContentVersion": "g12-u04-l07-firstparty-models-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L07",
+      "CultureCode": "en",
+      "Title": "Exponential and Logarithmic Models",
+      "ExplanationParagraphs": [
+        "Exponential growth/decay f(t)=A0e^(kt) has initial A0>0 and rate k, positive for growth, negative for decay.",
+        "Half-life T>0 leads to A(t)=A0(1/2)^(t/T). Doubling time for growth k>0 is ln2/k.",
+        "Newton's cooling is T(t)=Ts+(T0−Ts)e^(−kt); the sign of T0−Ts determines approach direction.",
+        "Logistic growth L/(1+ae^(−kt)), L>0, a>0, k>0, approaches carrying capacity L; time to double depends on starting point.",
+        "Fit a model to observed data by using constant ratios, constant differences, or logarithmic shape. Do not extrapolate beyond meaningful physical conditions.",
+        "With b>0, b!=1, b^t=e^((ln b)t); y=ln(x²) is defined for x≠0, while 2lnx requires x>0.",
+        "Orders of magnitude compare multiplicative factors of 10. Plot powers of ten by their common logarithms.",
+        "Independent Cool-down: (a) 50g with half-life4h at12h, (b) find a logistic carrying capacity, (c) compare domains of ln(x²) and2lnx.",
+        "Independent Try It 1: Give model for100g, half-life4h.",
+        "Independent Try It 2: Time until25% remains if half-life8 years.",
+        "Independent Try It 3: Doubling time for P(t)=20e^(0.1t).",
+        "Independent Try It 4: Cool liquid50° in room70°; after1h it is60°. When will it be65°?",
+        "Independent Try It 5: Estimate P(2) for P=200/(1+3e^(−.8t)).",
+        "Independent Try It 6: Classify data x=1,2,3 y=4,8,16.",
+        "Independent Try It 7: Rewrite f(x)=4(0.7)^x in e-base form."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Graph exponential growth",
+          "Question": "For f(t)=15e^(0.3t), find initial level, direction and f(4).",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "f(0)=15, increasing; f(4)=15e^1.2≈49.80.",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "f(0)=15, increasing; f(4)=15e^1.2≈49.80.",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Radioactive decay model",
+          "Question": "A 100g sample has half-life5 days. Find A(t).",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "A(t)=100(1/2)^(t/5).",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "A(t)=100(1/2)^(t/5).",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Find sample age",
+          "Question": "Half-life100 years, remaining fraction0.3. Find age.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "t=100ln(.3)/ln(.5)≈174 years.",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "t=100ln(.3)/ln(.5)≈174 years.",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Doubling-time model",
+          "Question": "A bacterial count120 doubles every4h. Model and find at12h.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "P(t)=120·2^(t/4); P(12)=960.",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "P(t)=120·2^(t/4); P(12)=960.",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Newton cooling",
+          "Question": "Temperature initially95°, room25°, after5min it is60°. Find decay rate.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "e^(−5k)=(60−25)/(95−25)=1/2; k=ln2/5 per minute.",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "e^(−5k)=(60−25)/(95−25)=1/2; k=ln2/5 per minute.",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Logistic growth",
+          "Question": "P=600/(1+5e^(−.7t)); initial and carrying capacity.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "P(0)=100; carrying capacity600.",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "P(0)=100; carrying capacity600.",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Choose model from data",
+          "Question": "x=1,2,4,8; y=0,2,4,6. Choose model.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "Logarithmic y=2log_2(x).",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "Logarithmic y=2log_2(x).",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        },
+        {
+          "Title": "Convert model to e base",
+          "Question": "Rewrite 9(1.2)^t using e.",
+          "Method": "Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+          "Steps": [
+            "Plan: Choose exponential, decay, logistic or logarithmic representation and preserve physical domain.",
+            "9e^((ln1.2)t).",
+            "Validate: Reevaluate input values, units, and limiting behavior."
+          ],
+          "Answer": "9e^((ln1.2)t).",
+          "Check": "Reevaluate input values, units, and limiting behavior."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exponential models",
+          "Definition": "f(t)=A0e^(kt), A0>0.",
+          "Rule": "Positive k growth; negative k decay.",
+          "Example": "20e^(−0.2t)."
+        },
+        {
+          "Title": "Half-life and doubling",
+          "Definition": "T_half=ln2/|k| for exponential decay; T_double=ln2/k for growth.",
+          "Rule": "Use correct units and positive time.",
+          "Example": "Four half-lives leaves1/16."
+        },
+        {
+          "Title": "Logistic capacity",
+          "Definition": "P(t)=L/(1+ae^(−kt)), L,a,k>0.",
+          "Rule": "P(t) approaches L, not infinity.",
+          "Example": "200/(1+4e^(−t))."
+        },
+        {
+          "Title": "Model fitting",
+          "Definition": "Choose linear, exponential, logarithmic or logistic according to observed change and context.",
+          "Rule": "Verify domain and recognize extrapolation limits.",
+          "Example": "log₂(x) fits doubling x with additive y increments."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent radioactive inventory starting100g, half-life2h",
+          "Description": "Independently authored table for source Figure 1 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "100",
+                "50",
+                "25",
+                "12.5"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent growth 2e^(0.5t)",
+          "Description": "Independently authored table for source Figure 2 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "2",
+                "3.297",
+                "5.437",
+                "8.963"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent decay 3e^(−0.5t)",
+          "Description": "Independently authored table for source Figure 3 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "3",
+                "1.820",
+                "1.104",
+                "0.669"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Growth/decay compared at time t",
+          "Description": "Independently authored table for source Figure 4 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "8",
+                "12",
+                "18",
+                "27"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent doubling 10·2^t",
+          "Description": "Independently authored table for source Figure 5 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "10",
+                "20",
+                "40",
+                "80"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Logistic carrying capacity200",
+          "Description": "Independently authored table for source Figure 6 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "40.000",
+                "58.375",
+                "80.922",
+                "105.679"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Logistic 300/(1+9e^(−t))",
+          "Description": "Independently authored table for source Figure 7 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "30.000",
+                "69.591",
+                "135.256",
+                "207.170"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Logarithmic sample points x=1,2,4,8",
+          "Description": "Independently authored table for source Figure 8 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "1",
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Logarithmic model 2log₂ x",
+          "Description": "Independently authored table for source Figure 9 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "1",
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "0",
+                "2",
+                "4",
+                "6"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Positive-side ln(x²) sample",
+          "Description": "Independently authored table for source Figure 10 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "1",
+                "2",
+                "4",
+                "8"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "0",
+                "1.386",
+                "2.773",
+                "4.159"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Negative-side ln(x²) sample",
+          "Description": "Independently authored table for source Figure 11 mathematical skill; not publisher image.",
+          "PrimaryLabel": "Input sample",
+          "SecondaryLabel": "Modeled output",
+          "Rows": [
+            {
+              "Label": "Input",
+              "Cells": [
+                "−1",
+                "−2",
+                "−4",
+                "−8"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "0",
+                "1.386",
+                "2.773",
+                "4.159"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Growth and decay rates determine time behavior.",
+        "Half-life uses fraction1/2.",
+        "Newton cooling approaches room temperature.",
+        "Logistic models have carrying capacity.",
+        "Select models from data and interpret log scale."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat logistic doubling time as constant.",
+          "WhyWrong": "Growth slows near carrying capacity.",
+          "Correction": "Solve for target population using the specific logistic equation."
+        },
+        {
+          "Mistake": "Treat an indefinite exponential forecast as guaranteed.",
+          "WhyWrong": "Finite resources and changing physical conditions invalidate long-term extrapolation.",
+          "Correction": "State model and valid context."
+        }
+      ]
+    }
+  ]
+}

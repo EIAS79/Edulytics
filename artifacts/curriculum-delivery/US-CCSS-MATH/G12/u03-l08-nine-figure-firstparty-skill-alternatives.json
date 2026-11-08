@@ -1,0 +1,93 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "Unit": 3,
+  "Lesson": 8,
+  "SourceSection": "3.8",
+  "OriginalFigureCount": 9,
+  "IndependentFigureConcepts": [
+    {
+      "OriginalFigureNumber": 1,
+      "Title": "Cone volume and inverse radius",
+      "IndependentMathematicalModel": "For a cone with h=2r, use V=2πr³/3 to obtain r=∛(3V/(2π)). Require V≥0 and r≥0.",
+      "StudentTeacherExplanation": "An inverse of a cubic measurement model returns a physical length from volume.",
+      "RelatedSourceExerciseNumber": 59,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 2,
+      "Title": "Physical parabolic trough cross section",
+      "IndependentMathematicalModel": "Use a symmetric parabolic trough model y=x²/2 and compare widths at nonnegative depths; width w=2√(2y).",
+      "StudentTeacherExplanation": "Physical dimensions select a nonnegative root even when the mathematical parabola has both signs.",
+      "RelatedSourceExerciseNumber": 57,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 3,
+      "Title": "Parabola coordinate restriction",
+      "IndependentMathematicalModel": "For y=x²/2, restrict x≥0 to obtain x=√(2y), or x≤0 to obtain x=−√(2y).",
+      "StudentTeacherExplanation": "A full parabola is not one-to-one; each monotone half yields an inverse.",
+      "RelatedSourceExerciseNumber": 32,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 4,
+      "Title": "Cubic curve and inverse reflected about y=x",
+      "IndependentMathematicalModel": "For f(x)=x³+1, f⁻¹(x)=∛(x−1); swap ordered pairs (0,1) and (1,0).",
+      "StudentTeacherExplanation": "Inverse graphs reflect across y=x; every original input-output pair is swapped.",
+      "RelatedSourceExerciseNumber": 36,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 5,
+      "Title": "Both quadratic branches represent different inverse functions",
+      "IndependentMathematicalModel": "For f(x)=(x−4)², x≥4 gives inverse 4+√x while x≤4 gives inverse 4−√x.",
+      "StudentTeacherExplanation": "Choosing an inverse branch is dictated by the original restricted domain.",
+      "RelatedSourceExerciseNumber": 35,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 6,
+      "Title": "Quadratic and inverse branch reflection",
+      "IndependentMathematicalModel": "For f(x)=(x−2)²−1, x≥2, inverse g(x)=2+√(x+1), x≥−1.",
+      "StudentTeacherExplanation": "Graph original and inverse to display reflection and exchange of domain and range.",
+      "RelatedSourceExerciseNumber": 39,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 7,
+      "Title": "Quadratic translated vertex and inverse",
+      "IndependentMathematicalModel": "For f(x)=(x+1)²−3 on x≥−1, inverse −1+√(x+3) for x≥−3.",
+      "StudentTeacherExplanation": "The vertex coordinate (−1,−3) reverses to (−3,−1) on inverse.",
+      "RelatedSourceExerciseNumber": 34,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 8,
+      "Title": "Radical function and inverse reflection",
+      "IndependentMathematicalModel": "For f(x)=1+√(x−1), x≥1, inverse g(x)=(x−1)²+1 for x≥1.",
+      "StudentTeacherExplanation": "A square-root curve and its restricted quadratic inverse reflect about y=x.",
+      "RelatedSourceExerciseNumber": 32,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    },
+    {
+      "OriginalFigureNumber": 9,
+      "Title": "Radical of a rational function requires nonnegative radicand",
+      "IndependentMathematicalModel": "For y=√((x−2)/(x+3)), use sign intervals about −3 (excluded) and 2 (included); domain (−∞,−3)∪[2,∞).",
+      "StudentTeacherExplanation": "A sign chart, not cancellation or taking real square roots of negative values, determines allowable inputs.",
+      "RelatedSourceExerciseNumber": 42,
+      "PublisherImageCopied": false,
+      "ExactPublisherFigureReproductionClaimed": false
+    }
+  ],
+  "OriginalPublisherGraphicBitmapsCopied": false,
+  "StageD": "NOT_RUN"
+}

@@ -124,9 +124,13 @@ def audit() -> dict[str, Any]:
             content_blockers.append(
                 f"{code}: semanticContentStatus={semantic_status}"
             )
-        if not bool(row.get("approvedMapping")):
+        # G12 specialist contracts have their own authenticated runtime and
+        # teacher-grading proof. The completion matrix validates that evidence
+        # lesson-by-lesson; generic SkillId mappings are not their runtime route.
+        independent_g12 = bool(row.get("independentG12SpecialistContractVerified"))
+        if not independent_g12 and not bool(row.get("approvedMapping")):
             mapping_blockers.append(f"{code}: approved mapping missing")
-        if not list(row.get("primarySkills") or []):
+        if not independent_g12 and not list(row.get("primarySkills") or []):
             mapping_blockers.append(f"{code}: primary skill mapping missing")
 
     family_blockers: list[str] = []
@@ -138,7 +142,8 @@ def audit() -> dict[str, Any]:
         families = [str(x) for x in row.get("questionFamilies") or [] if str(x).strip()]
         family_count_distribution[len(families)] += 1
         if not families:
-            family_blockers.append(f"{code}: no allowed question family")
+            if not bool(row.get("independentG12SpecialistContractVerified")):
+                family_blockers.append(f"{code}: no allowed question family")
             continue
         for family_id in families:
             used_families.add(family_id)

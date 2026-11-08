@@ -45,6 +45,8 @@ public sealed record MathematicalPoint(
     decimal Y,
     string? Label = null);
 
+public sealed record MathematicalAxisTick(decimal Value, string Label);
+
 public sealed record MathematicalSegment(
     MathematicalPoint Start,
     MathematicalPoint End,
@@ -74,7 +76,14 @@ public sealed record CoordinatePlaneVisualSpec(
     MathematicalVisualAccessibility Accessibility)
     : MathematicalVisualSpec(
         MathematicalVisualKind.CoordinatePlane,
-        Accessibility);
+        Accessibility)
+{
+    // Optional unfilled endpoint markers for strict/open interval graphs.
+    // Kept separate from Points to preserve existing constructor contracts.
+    public IReadOnlyList<MathematicalPoint> OpenPoints { get; init; } = [];
+    public IReadOnlyList<MathematicalAxisTick> XAxisTicks { get; init; } = [];
+    public IReadOnlyList<MathematicalAxisTick> YAxisTicks { get; init; } = [];
+}
 
 public sealed record FunctionGraphVisualSpec(
     MathematicalAxisWindow Window,
@@ -190,6 +199,29 @@ public static class MathematicalVisualSpecValidator
             case CoordinatePlaneVisualSpec coordinate:
                 ValidateWindow(coordinate.Window);
                 ValidatePoints(coordinate.Points);
+                ValidatePoints(coordinate.OpenPoints);
+                if (coordinate.XAxisTicks.Count > MaximumPoints)
+                    throw new ArgumentOutOfRangeException(nameof(coordinate.XAxisTicks));
+                foreach (var tick in coordinate.XAxisTicks)
+                {
+                    ValidateCoordinate(tick.Value, nameof(tick.Value));
+                    if (tick.Value < coordinate.Window.XMin ||
+                        tick.Value > coordinate.Window.XMax ||
+                        string.IsNullOrWhiteSpace(tick.Label))
+                        throw new ArgumentOutOfRangeException(nameof(coordinate.XAxisTicks));
+                    ValidateLabel(tick.Label);
+                }
+                if (coordinate.YAxisTicks.Count > MaximumPoints)
+                    throw new ArgumentOutOfRangeException(nameof(coordinate.YAxisTicks));
+                foreach (var tick in coordinate.YAxisTicks)
+                {
+                    ValidateCoordinate(tick.Value, nameof(tick.Value));
+                    if (tick.Value < coordinate.Window.YMin ||
+                        tick.Value > coordinate.Window.YMax ||
+                        string.IsNullOrWhiteSpace(tick.Label))
+                        throw new ArgumentOutOfRangeException(nameof(coordinate.YAxisTicks));
+                    ValidateLabel(tick.Label);
+                }
                 ValidateSegments(coordinate.Segments);
                 break;
 

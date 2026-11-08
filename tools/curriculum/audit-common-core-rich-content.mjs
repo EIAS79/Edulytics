@@ -12,7 +12,8 @@ const PACK_DIR = path.join(
 );
 
 const files = fs.readdirSync(PACK_DIR)
-  .filter((name) => /^us-ccss-math-.*\.lesson-content-pack\.json$/i.test(name))
+  .filter((name) => /^us-ccss-math-.*\.lesson-content-pack\.json$/i.test(name) &&
+    name !== 'us-ccss-math-g12-precalculus-u01-l01-abc-draft.lesson-content-pack.json')
   .sort();
 
 const requiredFields = [

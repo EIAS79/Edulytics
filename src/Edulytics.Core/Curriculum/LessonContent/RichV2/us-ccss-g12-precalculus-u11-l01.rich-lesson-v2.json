@@ -1,0 +1,173 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U11:L01",
+  "ContentVersion": "us-ccss-g12-precalculus-u11-l01-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L01",
+      "CultureCode": "en",
+      "Title": "Sequences and their Notations",
+      "ExplanationParagraphs": [
+        "A sequence is an ordered list a1,a2,... indexed by positive integers.",
+        "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+        "Alternating sequences often contain (-1)^n or (-1)^(n−1).",
+        "Piecewise sequences depend on index parity or an interval.",
+        "Factorials n!=n(n−1)...1, with0!=1.",
+        "Independent Cool-down: calculate a representative source-family example and check the result with the definition."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Writing the Terms of a Sequence Defined by an Explicit Formula",
+          "Question": "List first five terms of alternating a_n=(−1)^n(-1+n).",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[0, 1, -2, 3, -4].",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "[0, 1, -2, 3, -4].",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of an Alternating Sequence Defined by an Explicit Formula",
+          "Question": "Evaluate a_n=n² if n even, otherwise n+0, for n=1..5.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[1, 4, 3, 16, 5].",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "[1, 4, 3, 16, 5].",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of a Sequence Defined by a Piecewise Explicit Formula",
+          "Question": "Recurrence a1=1, a_n=a_(n−1)+4: list five terms.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[1, 5, 9, 13, 17].",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "[1, 5, 9, 13, 17].",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing an Explicit Formula for the nth Term of a Sequence",
+          "Question": "Evaluate factorial expression (8!)/(6!).",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "56.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "56.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of a Sequence Defined by a Recursive Formula",
+          "Question": "For sequence 2n²+n, compute a_4.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "36.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "36.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of a Sequence Defined by a Recursive Formula",
+          "Question": "List first five terms of explicit sequence a_n=4+2(n−1).",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[4, 6, 8, 10, 12], indexed n=1..5.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "[4, 6, 8, 10, 12], indexed n=1..5.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Writing the Terms of a Sequence Using Factorials",
+          "Question": "List first five terms of alternating a_n=(−1)^n(-2+n).",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "[1, 0, -1, 2, -3].",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "[1, 0, -1, 2, -3].",
+          "Check": "Verify by substitution or counting."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Core definition",
+          "Definition": "A sequence is an ordered list a1,a2,... indexed by positive integers.",
+          "Rule": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+          "Example": "[0, -1, 2, -3, 4]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+          "Rule": "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+          "Example": "Evaluate a_n=n² if n even, otherwise n+0, for n=1..5. Answer: [1, 4, 3, 16, 5]."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Alternating sequences often contain (-1)^n or (-1)^(n−1).",
+          "Rule": "Alternating sequences often contain (-1)^n or (-1)^(n−1).",
+          "Example": "Recurrence a1=1, a_n=a_(n−1)+4: list five terms. Answer: [1, 5, 9, 13, 17]."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent mathematical progression and counting table",
+          "Description": "First-party numeric reference examples.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Progression",
+              "Cells": [
+                "arithmetic",
+                "geometric",
+                "probability"
+              ]
+            },
+            {
+              "Label": "Core formula",
+              "Cells": [
+                "a1+(n−1)d",
+                "a1r^(n−1)",
+                "favorable/total"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "A sequence is an ordered list a1,a2,... indexed by positive integers.",
+        "An explicit rule evaluates a_n directly from n; recursive rule uses previous terms and initial condition.",
+        "Alternating sequences often contain (-1)^n or (-1)^(n−1)."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse index, count, order or probability assumptions.",
+          "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
+          "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
+        }
+      ]
+    }
+  ]
+}

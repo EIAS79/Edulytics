@@ -1,0 +1,169 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U08:L01",
+  "ContentVersion": "g12-u08-l01-firstparty-oblique-law-of-sines-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01",
+      "CultureCode": "en",
+      "Title": "Non-Right Triangles: Law of Sines",
+      "ExplanationParagraphs": [
+        "The Law of Sines relates sides to opposite angles: a/sin A=b/sin B=c/sin C for a nondegenerate triangle, A+B+C=180°.",
+        "ASA and AAS data determine one triangle. An SSA configuration can generate no triangle, one triangle, or two depending on feasibility and the supplementary angle.",
+        "To resolve SSA, calculate sin B=b sin A/a. Reject values outside[-1,1] and test both B=arcsin(...) and180°−B. Retain only triangles with A+B<180°.",
+        "A triangle has area=(1/2)ab sin C for sides a,b enclosing angle C. The altitude relative to side a is b sin C.",
+        "Applications include angled sightlines, satellite tracking, height measurement, non-right polygon components, and shadow geometry.",
+        "For physical problems, determine if angles are internal or elevation/depression, verify units and choose the geometrically feasible triangle.",
+        "Independent Cool-down: solve A=40°, B=60°,a=10; classify SSA A=35°,a=9,b=12; and find area sides7,9 enclosing50°.",
+        "Independent Try It 1: A=45°,B=60°,a=10: find c.",
+        "Independent Try It 2: SSA A=35°,a=9,b=12: count triangles.",
+        "Independent Try It 3: SSA A=110°,a=10,b=14: count triangles.",
+        "Independent Try It 4: SSA A=100°,a=15,b=8: find B.",
+        "Independent Try It 5: Area two adjacent sides6,7 included60°.",
+        "Independent Try It 6: Altitude base10, side8 makes angle35° to base."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "AAS triangle",
+          "Question": "Given A=40°, B=60°, a=10, solve triangle.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "C=80°, b=10sin60/sin40, c=10sin80/sin40.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "C=80°, b=10sin60/sin40, c=10sin80/sin40.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        },
+        {
+          "Title": "SSA ambiguous",
+          "Question": "Given A=30°,a=7,b=10 find all triangles.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "sinB=5/7, both B≈45.58° and134.42° feasible; two triangles.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "sinB=5/7, both B≈45.58° and134.42° feasible; two triangles.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        },
+        {
+          "Title": "SSA no triangle",
+          "Question": "Given A=120°,a=5,b=7.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "No triangle because opposite longest obtuse angle side cannot be shorter than b.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "No triangle because opposite longest obtuse angle side cannot be shorter than b.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        },
+        {
+          "Title": "SSA one triangle",
+          "Question": "Given A=100°,a=10,b=6.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "Only acute B=arcsin(6sin100/10), obtuse supplement invalid.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "Only acute B=arcsin(6sin100/10), obtuse supplement invalid.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        },
+        {
+          "Title": "Area via sine",
+          "Question": "Find area with sides8,11 and included angle35°.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "0.5·8·11·sin35°≈25.237 square units.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "0.5·8·11·sin35°≈25.237 square units.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        },
+        {
+          "Title": "Altitude from triangle",
+          "Question": "Triangle two sides a=12,c=15 included angle40°. Find altitude relative to side12.",
+          "Method": "Draw labeled triangle and pair each side with its opposite angle.",
+          "Steps": [
+            "Plan: Draw labeled triangle and pair each side with its opposite angle.",
+            "Altitude h=15sin40°≈9.642.",
+            "Validate: All angles positive and sum180°, sides match sine ratios."
+          ],
+          "Answer": "Altitude h=15sin40°≈9.642.",
+          "Check": "All angles positive and sum180°, sides match sine ratios."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Law of Sines",
+          "Definition": "a/sinA=b/sinB=c/sinC.",
+          "Rule": "Opposite sides and angles must pair.",
+          "Example": "A40°, B60°, a10 ->b10sin60/sin40."
+        },
+        {
+          "Title": "SSA ambiguity",
+          "Definition": "Angle-side-side data may give0,1,2 triangles.",
+          "Rule": "Check both arcsine and supplementary branch against angle sum.",
+          "Example": "A30°, a7,b10 yields two."
+        },
+        {
+          "Title": "Oblique area",
+          "Definition": "Area=ab sinC/2 for included angleC.",
+          "Rule": "Use degrees or radians correctly.",
+          "Example": "a6,b8,C30° area12."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party SSA feasibility table",
+          "Description": "Independent triangle decision grid.",
+          "PrimaryLabel": "Candidate",
+          "SecondaryLabel": "Decision",
+          "Rows": [
+            {
+              "Label": "Data type",
+              "Cells": [
+                "ASA/AAS",
+                "SSA",
+                "SAS"
+              ]
+            },
+            {
+              "Label": "Method",
+              "Cells": [
+                "one triangle",
+                "0/1/2 possible",
+                "Law of Cosines typically"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Pair opposite side and angle.",
+        "Check both arcsine branches in SSA.",
+        "Use included angle for area.",
+        "Verify oblique geometry and units."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Discard the supplementary arcsine solution.",
+          "WhyWrong": "May omit a second feasible SSA triangle.",
+          "Correction": "Test B and180°−B."
+        },
+        {
+          "Mistake": "Use adjacent instead of opposite side with sine law.",
+          "WhyWrong": "Gives wrong proportions.",
+          "Correction": "Label a opposite A, etc."
+        }
+      ]
+    }
+  ]
+}

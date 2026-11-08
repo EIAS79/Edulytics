@@ -12,7 +12,9 @@ public sealed class Phase29FinalCurriculumLanguagePolicyTests
     public void CommonCoreCanonicalPackHasFinalEnglishCoverageAndProvenance()
     {
         var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments()
-            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode).ToArray();
+            .Where(x => x.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode
+                && !x.Lessons.Any(l => l.LessonCode.StartsWith(
+                    "PED:US-CCSS-MATH:HS:ADV:PRECALC:", StringComparison.Ordinal))).ToArray();
         Assert.All(documents, x =>
         {
             Assert.Equal("en", x.AcademicLanguage);

@@ -1,0 +1,694 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L07",
+  "IndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "State two ways to graph parametric equations.",
+      "TeacherMath": "Make a t,x(t),y(t) table and plot oriented points; or graph directly in parametric mode.",
+      "OriginalSourceMathSkill": "Source 1 graph methods.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "How does parametric point plotting differ from Cartesian y=f(x)?",
+      "TeacherMath": "Use the same t to calculate both x and y and track ordered t direction.",
+      "OriginalSourceMathSkill": "Source 2 plotting order.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "What do arrows on parametric curves represent?",
+      "TeacherMath": "Direction of travel as parameter increases.",
+      "OriginalSourceMathSkill": "Source 3 orientation arrows.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "Name three common parametric graph types.",
+      "TeacherMath": "Lines, parabolas, ellipses/circles; also Lissajous and projectile trajectories.",
+      "OriginalSourceMathSkill": "Source 4 curve types.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Why parametric graphs help with projectiles?",
+      "TeacherMath": "They encode horizontal and vertical coordinates as functions of time, showing flight path and direction.",
+      "OriginalSourceMathSkill": "Source 5 projectile application.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent upward parabola y=x²−2 at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(-2, 2), (-1, -1), (0, -2), (1, -1), (2, 2)]; trace in increasing t; upward parabola y=x²−2.",
+      "OriginalSourceMathSkill": "Source 6 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent right-shifted parabola y=(x−1)² at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(-1, 4), (0, 1), (1, 0), (2, 1), (3, 4)]; trace in increasing t; right-shifted parabola y=(x−1)².",
+      "OriginalSourceMathSkill": "Source 7 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent line y=10−2x at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(1, 8), (2, 6), (3, 4), (4, 2), (5, 0)]; trace in increasing t; line y=10−2x.",
+      "OriginalSourceMathSkill": "Source 8 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent line y=3−x at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(0, 3), (-1, 4), (-2, 5), (-3, 6), (-4, 7)]; trace in increasing t; line y=3−x.",
+      "OriginalSourceMathSkill": "Source 9 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent cubic x=(y+1)³ at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(-8, -3), (-1, -2), (0, -1), (1, 0), (8, 1)]; trace in increasing t; cubic x=(y+1)³.",
+      "OriginalSourceMathSkill": "Source 10 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Plot parametric coordinates for independent sideways parabola x=(y−1)² at t=[-2, -1, 0, 1, 2]; add orientation arrows.",
+      "TeacherMath": "Ordered coordinates [(4, -1), (1, 0), (0, 1), (1, 2), (4, 3)]; trace in increasing t; sideways parabola x=(y−1)².",
+      "OriginalSourceMathSkill": "Source 11 table-based oriented parametric graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Sketch independent parametric y=sqrt(x) from origin rightward; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(0, 0.0), (1, 1.0), (4, 2.0), (9, 3.0)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 12 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "Sketch independent parametric left branch x=−sqrt(y), y≥0; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(-0.0, 0), (-1.0, 1), (-2.0, 4), (-3.0, 9)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 13 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "Sketch independent parametric corner with t orientation; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(2, -1), (3, 0), (4, 1), (3, 2), (2, 3)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 14 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "Sketch independent parametric oriented corner; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(4, 3), (3, 4), (2, 5), (1, 4), (0, 3)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 15 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "Sketch independent parametric ellipse x²/9+y²/4=1; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(0.0, 2.0), (3.0, 0.0), (0.0, -2.0), (-3.0, -0.0)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 16 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Sketch independent parametric ellipse x²/4+y²/25=1; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(0.0, 5.0), (2.0, 0.0), (0.0, -5.0), (-2.0, -0.0)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 17 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "Sketch independent parametric parabolic locus x=4−y²; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(4.0, -0.0), (0.0, -2.0), (4.0, -0.0), (0.0, 2.0)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 18 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Sketch independent parametric line segment x/3−y/3=1; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(3.0, -0.0), (0.0, -3.0), (3.0, -0.0), (0.0, -3.0)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 19 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Sketch independent parametric hyperbola x²−y²=1, right branch; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(1.21163, -0.68414), (1.0, 0.0), (1.21163, 0.68414)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 20 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "Sketch independent parametric y=x²−1 with |x|≥1; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(1.21163, 0.46804), (1.0, 0.0), (1.21163, 0.46804)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 21 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "Sketch independent parametric x=y²,y>0; plot sample parameter values.",
+      "TeacherMath": "t→(x,y):[(7.38906, 2.71828), (1.0, 1.0), (0.13534, 0.36788)]. Preserve physical parameter domain and increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source 22 graph/range/orientation family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "Write the Cartesian locus of parametric curve downward parabola y=−(x−1)² and indicate orientation.",
+      "TeacherMath": "downward parabola y=−(x−1)²; derive by eliminating t; direction determined by increasing parameter.",
+      "OriginalSourceMathSkill": "Source 23 Cartesian equivalence and oriented graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "Write the Cartesian locus of parametric curve cubic x=(y−1)³ and indicate orientation.",
+      "TeacherMath": "cubic x=(y−1)³; derive by eliminating t; direction determined by increasing parameter.",
+      "OriginalSourceMathSkill": "Source 24 Cartesian equivalence and oriented graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Write the Cartesian locus of parametric curve ellipse x²/9+y²/4=1 and indicate orientation.",
+      "TeacherMath": "ellipse x²/9+y²/4=1; derive by eliminating t; direction determined by increasing parameter.",
+      "OriginalSourceMathSkill": "Source 25 Cartesian equivalence and oriented graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Write the Cartesian locus of parametric curve circle radius5 and indicate orientation.",
+      "TeacherMath": "circle radius5; derive by eliminating t; direction determined by increasing parameter.",
+      "OriginalSourceMathSkill": "Source 26 Cartesian equivalence and oriented graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Write the Cartesian locus of parametric curve parabola x=y²,y<0 and indicate orientation.",
+      "TeacherMath": "parabola x=y²,y<0; derive by eliminating t; direction determined by increasing parameter.",
+      "OriginalSourceMathSkill": "Source 27 Cartesian equivalence and oriented graph.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 28: sample t interval [0.000,4.000].",
+      "TeacherMath": "Ordered sample points [(0.0, 0.0), (1.0, 2.0), (4.0, 4.0), (9.0, 6.0), (16.0, 8.0)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 28 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 29: sample t interval [-3.000,3.000].",
+      "TeacherMath": "Ordered sample points [(-6.0, 9.0), (-3.0, 2.25), (0.0, 0.0), (3.0, 2.25), (6.0, 9.0)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 29 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 30: sample t interval [0.000,4.000].",
+      "TeacherMath": "Ordered sample points [(0.0, 4.0), (1.0, 3.87298), (2.0, 3.4641), (3.0, 2.64575), (4.0, 0.0)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 30 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 31: sample t interval [1.000,5.000].",
+      "TeacherMath": "Ordered sample points [(-1.0, 1.0), (-2.0, 1.41421), (-3.0, 1.73205), (-4.0, 2.0), (-5.0, 2.23607)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 31 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 32: sample t interval [0.000,3.142].",
+      "TeacherMath": "Ordered sample points [(-3.0, 0.0), (-2.12132, 3.53553), (-0.0, 5.0), (2.12132, 3.53553), (3.0, 0.0)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 32 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Graph restricted independent parametric curve 33: sample t interval [-0.800,0.800].",
+      "TeacherMath": "Ordered sample points [(-1.43532, -1.02964), (-1.0857, -0.42279), (-1.0, 0.0), (-1.0857, 0.42279), (-1.43532, 1.02964)]; orientation from first to last.",
+      "OriginalSourceMathSkill": "Source 33 restricted-domain parametric plot.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Plot x=2cos(3t),y=2cos(1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-2.0, -2.0), (-0.0, 0.0), (2.0, 2.0)]. Relative frequencies 3 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 34 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Plot x=3cos(5t),y=3cos(1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-3.0, -3.0), (0.0, 0.0), (3.0, 3.0)]. Relative frequencies 5 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 35 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Plot x=4cos(7t),y=4cos(1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-4.0, -4.0), (-0.0, 0.0), (4.0, 4.0)]. Relative frequencies 7 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 36 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "Plot x=5cos(9t),y=5cos(1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-5.0, -5.0), (0.0, 0.0), (5.0, 5.0)]. Relative frequencies 9 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 37 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "Plot x=50cos(99t),y=50cos(1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-50.0, -50.0), (0.0, 0.0), (50.0, 50.0)]. Relative frequencies 99 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 38 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "Plot x=2cos(5t),y=2cos(-1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-2.0, -2.0), (0.0, 0.0), (2.0, 2.0)]. Relative frequencies 5 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 39 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "Plot x=3cos(7t),y=3cos(-1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-3.0, -3.0), (-0.0, 0.0), (3.0, 3.0)]. Relative frequencies 7 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 40 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "Plot x=4cos(9t),y=4cos(-1t), -π≤t≤0.",
+      "TeacherMath": "Points t=−π,−π/2,0: [(-4.0, -4.0), (0.0, 0.0), (4.0, 4.0)]. Relative frequencies 9 and 1; trace orientation.",
+      "OriginalSourceMathSkill": "Source 41 frequency pair a,b parametric analysis.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "Describe shape/direction of parametric left-opening parabola x=−y²/9.",
+      "TeacherMath": "left-opening parabola x=−y²/9; increasing t determines curve travel.",
+      "OriginalSourceMathSkill": "Source 42 qualitative parabola direction.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "Describe shape/direction of parametric upward parabola.",
+      "TeacherMath": "upward parabola; increasing t determines curve travel.",
+      "OriginalSourceMathSkill": "Source 43 qualitative parabola direction.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "Describe shape/direction of parametric downward parabola.",
+      "TeacherMath": "downward parabola; increasing t determines curve travel.",
+      "OriginalSourceMathSkill": "Source 44 qualitative parabola direction.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "Parameterize counterclockwise circle radius4 centered at origin.",
+      "TeacherMath": "x=4cost,y=4sint, 0≤t<2π.",
+      "OriginalSourceMathSkill": "Source45 CCW circle.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Parameterize ellipse with semiaxes6 and2, CCW.",
+      "TeacherMath": "x=6cost,y=2sint, 0≤t<2π.",
+      "OriginalSourceMathSkill": "Source46 CCW ellipse.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(1t),y=sin(3t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (0.7071, 0.7071), (1.0, -1.0), (0.0, 0.0), (-1.0, 1.0)]; frequencies 1:3; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(3t),y=sin(1t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (0.7071, 0.7071), (-1.0, 1.0), (0.0, 0.0), (1.0, -1.0)]; frequencies 3:1; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(2t),y=sin(2t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (1.0, 1.0), (0.0, 0.0), (-0.0, -0.0), (0.0, 0.0)]; frequencies 2:2; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(4t),y=sin(4t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (0.0, 0.0), (-0.0, -0.0), (-0.0, -0.0), (-0.0, -0.0)]; frequencies 4:4; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(2t),y=sin(5t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (1.0, -0.7071), (0.0, 1.0), (-0.0, 0.0), (0.0, -1.0)]; frequencies 2:5; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Plot Lissajous x=sin(5t),y=sin(2t),0≤t<2π with orientation.",
+      "TeacherMath": "Key points [(0.0, 0.0), (-0.7071, 1.0), (1.0, 0.0), (0.0, -0.0), (-1.0, 0.0)]; frequencies 5:2; trace actual continuous curve between points.",
+      "OriginalSourceMathSkill": "Source47–52 Lissajous family.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "Given a first-party curve x=4cos(1t),y=3sin(2t), recover amplitudes and frequencies.",
+      "TeacherMath": "a=4,b=1,c=3,d=2; points [(4.0, 0.0), (2.828, 3.0), (0.0, 0.0)].",
+      "OriginalSourceMathSkill": "Source53–56 reverse graph parameter recognition.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentStudentQuestion": "Given a first-party curve x=3cos(2t),y=5sin(1t), recover amplitudes and frequencies.",
+      "TeacherMath": "a=3,b=2,c=5,d=1; points [(3.0, 0.0), (0.0, 3.536), (-3.0, 5.0)].",
+      "OriginalSourceMathSkill": "Source53–56 reverse graph parameter recognition.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentStudentQuestion": "Given a first-party curve x=5cos(3t),y=2sin(4t), recover amplitudes and frequencies.",
+      "TeacherMath": "a=5,b=3,c=2,d=4; points [(5.0, 0.0), (-3.536, 0.0), (-0.0, -0.0)].",
+      "OriginalSourceMathSkill": "Source53–56 reverse graph parameter recognition.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentStudentQuestion": "Given a first-party curve x=2cos(4t),y=4sin(3t), recover amplitudes and frequencies.",
+      "TeacherMath": "a=2,b=4,c=4,d=3; points [(2.0, 0.0), (-2.0, 2.828), (2.0, -4.0)].",
+      "OriginalSourceMathSkill": "Source53–56 reverse graph parameter recognition.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentStudentQuestion": "Graph three independent creeping parametric traces x1=cost−2,y1=sint+t; x2=cost+t,y2=sint−2; x3=t−sint,y3=cost−2 on [0.000,6.283].",
+      "TeacherMath": "Sample endpoints and midpoints [[(-1.0, 0.0), (-3.0, 3.1416), (-1.0, 6.2832)], [(1.0, -2.0), (2.1416, -2.0), (7.2832, -2.0)], [(0.0, -1.0), (3.1416, -3.0), (6.2832, -1.0)]]; trace between points.",
+      "OriginalSourceMathSkill": "Source57–59 parametric cycloid orientation/domain effect.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentStudentQuestion": "Graph three independent creeping parametric traces x1=cost−2,y1=sint+t; x2=cost+t,y2=sint−2; x3=t−sint,y3=cost−2 on [0.000,12.566].",
+      "TeacherMath": "Sample endpoints and midpoints [[(-1.0, 0.0), (-1.0, 6.2832), (-1.0, 12.5664)], [(1.0, -2.0), (7.2832, -2.0), (13.5664, -2.0)], [(0.0, -1.0), (6.2832, -1.0), (12.5664, -1.0)]]; trace between points.",
+      "OriginalSourceMathSkill": "Source57–59 parametric cycloid orientation/domain effect.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentStudentQuestion": "Graph three independent creeping parametric traces x1=cost−2,y1=sint+t; x2=cost+t,y2=sint−2; x3=t−sint,y3=cost−2 on [-12.566,18.850].",
+      "TeacherMath": "Sample endpoints and midpoints [[(-1.0, -12.5664), (-3.0, 3.1416), (-1.0, 18.8496)], [(-11.5664, -2.0), (2.1416, -2.0), (19.8496, -2.0)], [(-12.5664, -1.0), (3.1416, -3.0), (18.8496, -1.0)]]; trace between points.",
+      "OriginalSourceMathSkill": "Source57–59 parametric cycloid orientation/domain effect.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentStudentQuestion": "Which axis contains linear drift in x=sin t+t, y=cos t?",
+      "TeacherMath": "x-axis because x has additive t, while y oscillates boundedly.",
+      "OriginalSourceMathSkill": "Source60 creeping axis.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 61,
+      "IndependentStudentQuestion": "What changes if sin and cos are swapped between x(t) and y(t)?",
+      "TeacherMath": "Parametric orientation, reflection/rotation and starting point can change; locus may or may not remain the same.",
+      "OriginalSourceMathSkill": "Source61 sin/cos switching.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 62,
+      "IndependentStudentQuestion": "What changes if t interval changes for x=t−sin t, y=1−cos t?",
+      "TeacherMath": "Curve segment and count of traced cycloid arches; direction stays increasing t.",
+      "OriginalSourceMathSkill": "Source62 parameter domain.",
+      "MathematicalSpotCheck": false,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 63,
+      "IndependentStudentQuestion": "Projectile x=12t,y=0+18t−16t² (feet). Eliminate t, find positive landing time.",
+      "TeacherMath": "y=0+(18/12)x−(16/144)x², landing t≈1.12500s, x≈13.5000ft.",
+      "OriginalSourceMathSkill": "Source63–64 projectile rectangular locus and time.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 64,
+      "IndependentStudentQuestion": "Projectile x=7t,y=5+13t−16t² (feet). Eliminate t, find positive landing time.",
+      "TeacherMath": "y=5+(13/7)x−(16/49)x², landing t≈1.09729s, x≈7.6810ft.",
+      "OriginalSourceMathSkill": "Source63–64 projectile rectangular locus and time.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 65,
+      "IndependentStudentQuestion": "Give projectile x(t),y(t) at60ft/s angle45°.",
+      "TeacherMath": "x=42.426407t, y=42.426407t−16t².",
+      "OriginalSourceMathSkill": "Source65–69 projectile launch and max height.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 66,
+      "IndependentStudentQuestion": "Find horizontal range before ground impact.",
+      "TeacherMath": "t∈[0,5.30330], x∈[0,225.00000].",
+      "OriginalSourceMathSkill": "Source65–69 projectile launch and max height.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 67,
+      "IndependentStudentQuestion": "Find landing time.",
+      "TeacherMath": "5.30330s.",
+      "OriginalSourceMathSkill": "Source65–69 projectile launch and max height.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 68,
+      "IndependentStudentQuestion": "Find maximum height.",
+      "TeacherMath": "28.12500ft.",
+      "OriginalSourceMathSkill": "Source65–69 projectile launch and max height.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 69,
+      "IndependentStudentQuestion": "Find time to maximum height.",
+      "TeacherMath": "1.32583s.",
+      "OriginalSourceMathSkill": "Source65–69 projectile launch and max height.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 70,
+      "IndependentStudentQuestion": "Sketch an independent epicycloid-like parametric curve on t∈[0,2π].",
+      "TeacherMath": "Key samples [(11.0, 0.0), (-1.0, 12.0), (-13.0, 0.0), (-1.0, -12.0)], trace full continuous parametric trajectory and show increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source70–73 named parametric curves.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 71,
+      "IndependentStudentQuestion": "Sketch an independent hypocycloid-like parametric curve on t∈[0,2π].",
+      "TeacherMath": "Key samples [(0.0, 3.0), (7.0, -0.0), (0.0, -3.0), (-7.0, 0.0)], trace full continuous parametric trajectory and show increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source70–73 named parametric curves.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 72,
+      "IndependentStudentQuestion": "Sketch an independent hypotrochoid-like parametric curve on t∈[0,2π].",
+      "TeacherMath": "Key samples [(4.0, 4.0), (-2.0, -0.0), (4.0, -4.0), (-6.0, -0.0)], trace full continuous parametric trajectory and show increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source70–73 named parametric curves.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    },
+    {
+      "SourceExercise": 73,
+      "IndependentStudentQuestion": "Sketch an independent rose-like parametric curve on t∈[0,2π].",
+      "TeacherMath": "Key samples [(0.0, 0.0), (0.0, 0.0), (-0.0, 0.0), (-0.0, -0.0)], trace full continuous parametric trajectory and show increasing-t orientation.",
+      "OriginalSourceMathSkill": "Source70–73 named parametric curves.",
+      "MathematicalSpotCheck": true,
+      "OriginalSourceQuestionCopied": false,
+      "TeacherMarking": "MANUAL_PARAMETRIC_GRAPH"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Plot x=t,y=t²−1.",
+      "TeacherExpectedMath": "Upward parabola with vertex(0,-1), left-to-right."
+    },
+    {
+      "Number": 2,
+      "Question": "Plot x=3cost,y=2sint.",
+      "TeacherExpectedMath": "Ellipse x²/9+y²/4=1, CCW."
+    },
+    {
+      "Number": 3,
+      "Question": "Graph x=t+1,y=sqrt(t), t≥0.",
+      "TeacherExpectedMath": "y=sqrt(x−1), x≥1."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Graph x=t²,y=t, -2≤t≤2.",
+      "Graph x=5cost,y=5sint.",
+      "Eliminate x=12t,y=20t−16t²."
+    ],
+    "TeacherExpectedMath": [
+      "x=y², y in[-2,2], arrows increasing y.",
+      "Circle radius5 CCW.",
+      "y=(5/3)x−x²/9."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "StageC": "MANUAL_TEACHER_PARAMETRIC_GRAPH_SCORING"
+}

@@ -1,0 +1,176 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U07:L04",
+  "ContentVersion": "g12-u07-l04-original-product-sum-math-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L04",
+      "CultureCode": "en",
+      "Title": "Sum-to-Product and Product-to-Sum Formulas",
+      "ExplanationParagraphs": [
+        "Product-to-sum: 2cos a cos b=cos(a+b)+cos(a−b), 2sin a sin b=cos(a−b)−cos(a+b).",
+        "Mixed products: 2sin a cos b=sin(a+b)+sin(a−b), 2cos a sin b=sin(a+b)−sin(a−b).",
+        "Sum-to-product: sin a±sin b=2sin((a+b)/2)cos((a−b)/2) for plus, or2cos((a+b)/2)sin((a−b)/2) for minus.",
+        "Cosine sum: cos a+cos b=2cos((a+b)/2)cos((a−b)/2). Cosine difference=−2sin((a+b)/2)sin((a−b)/2).",
+        "Use these identities to factor trig equations and compare graphs. Avoid canceling factors at zeros of original denominators.",
+        "Independent Cool-down: express 2sin6x cos2x as a sum, convert cos7x−cos3x to product, and simplify sin5x−sinx.",
+        "Independent Try It 1: Convert 2cos4xcosx.",
+        "Independent Try It 2: Convert 2sin4xsinx.",
+        "Independent Try It 3: Convert sin7x+sin3x.",
+        "Independent Try It 4: Evaluate sin30°cos60°.",
+        "Independent Try It 5: Prove sin(a+b)−sin(a−b)=2cos a sin b."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cosine product",
+          "Question": "Convert 2cos5xcos3x.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "cos8x+cos2x.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "cos8x+cos2x.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Sine cosine product",
+          "Question": "Convert 2sin5xcos3x.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "sin8x+sin2x.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "sin8x+sin2x.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Sine product",
+          "Question": "Convert 2sin5xsin3x.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "cos2x−cos8x.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "cos2x−cos8x.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Sine difference",
+          "Question": "Convert sin5x−sin3x.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "2cos4x sinx.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "2cos4x sinx.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Exact product",
+          "Question": "Compute cos60°cos30°.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "sqrt3/8.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "sqrt3/8.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Sum cosine proof",
+          "Question": "Prove cos(a+b)+cos(a−b)=2cos a cos b.",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "Add cosine sum/difference expansions.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "Add cosine sum/difference expansions.",
+          "Check": "Preserve both sides' common domain."
+        },
+        {
+          "Title": "Reciprocal proof",
+          "Question": "Simplify (sin4x−sin2x)/(cos4x+cos2x).",
+          "Method": "Use matching sum-product identity and verify with independent numeric sample.",
+          "Steps": [
+            "Plan: Use matching sum-product identity and verify with independent numeric sample.",
+            "tanx on denominator nonzero.",
+            "Validate: Preserve both sides' common domain."
+          ],
+          "Answer": "tanx on denominator nonzero.",
+          "Check": "Preserve both sides' common domain."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product to sum",
+          "Definition": "2sin a cos b=sin(a+b)+sin(a−b).",
+          "Rule": "Use sine/cosine parity for negative differences.",
+          "Example": "2sin3xcosx=sin4x+sin2x."
+        },
+        {
+          "Title": "Sum to product",
+          "Definition": "sin a−sin b=2cos((a+b)/2)sin((a−b)/2).",
+          "Rule": "Half-sum/half-difference order matters.",
+          "Example": "sin5x−sin3x=2cos4xsinx."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Sum-to-product: sin a±sin b=2sin((a+b)/2)cos((a−b)/2) for plus, or2cos((a+b)/2)sin((a−b)/2) for minus.",
+          "Rule": "Keep denominator domains when simplifying rational trig forms.",
+          "Example": "Convert 2sin5xsin3x. Answer: cos2x−cos8x."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party sum-product conversion",
+          "Description": "Independent formula comparison.",
+          "PrimaryLabel": "Operation",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Product",
+              "Cells": [
+                "2cos a cos b=cos(a+b)+cos(a−b)",
+                "2sin a sin b=cos(a−b)−cos(a+b)"
+              ]
+            },
+            {
+              "Label": "Sum",
+              "Cells": [
+                "sin a+sin b=2sin((a+b)/2)cos((a−b)/2)",
+                "cos a+cos b=2cos((a+b)/2)cos((a−b)/2)"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Two-angle product-to-sum and sum-to-product formulas.",
+        "Apply correct sine/cosine sign patterns.",
+        "Keep denominator domains when simplifying rational trig forms."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse sine and cosine order in mixed products.",
+          "WhyWrong": "Difference term changes sign.",
+          "Correction": "Start from exact identities and use parity."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Preserve both sides' common domain."
+        }
+      ]
+    }
+  ]
+}

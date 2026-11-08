@@ -1,0 +1,229 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U06:L02",
+  "ContentVersion": "g12-u06-l02-firstparty-other-trig-graphs-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02",
+      "CultureCode": "en",
+      "Title": "Graphs of the Other Trigonometric Functions",
+      "ExplanationParagraphs": [
+        "Tangent and cotangent have periodπ and vertical asymptotes caused by their denominators. Secant and cosecant are reciprocal cosine/sine with fundamental period2π.",
+        "For y=A·tan(Bx+C)+D and y=A·cot(Bx+C)+D, the period is π/|B|, phase shift−C/B, for B≠0 and A≠0.",
+        "For y=A·sec(Bx+C)+D and y=A·csc(Bx+C)+D, period2π/|B|, asymptotes where cosine or sine in denominator vanishes.",
+        "Secant/cosecant range consists of values at least |A| above or below the midline D; their branches do not cross their vertical asymptotes.",
+        "Use parities sec even, tan/cot/csc odd and exact identities sec²−tan²=1 and sin²+cos²=1.",
+        "Real-world tangent models may diverge at a finite angle but the physical interpretation breaks down before an infinite displacement.",
+        "Independent Cool-down: find period and asymptotes of 2tan(3x); describe range of −4cscx+1; and simplify cscx/secx.",
+        "Independent Try It 1: Graph y=tan(2x).",
+        "Independent Try It 2: Graph y=−2tan(x+π/4).",
+        "Independent Try It 3: Graph y=3tanx+1.",
+        "Independent Try It 4: Graph y=sec(x−π/2).",
+        "Independent Try It 5: Graph y=−3sec(2x).",
+        "Independent Try It 6: Graph y=2csc(3x).",
+        "Independent Try It 7: Graph y=−cot(4x)."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compressed tangent",
+          "Question": "Graph y=tan(3x), give period and vertical asymptotes.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ/3; asymptotes x=π/6+kπ/3.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ/3; asymptotes x=π/6+kπ/3.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Shifted tangent",
+          "Question": "Graph y=2tan(x−π/4).",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ; phase rightπ/4; asymptotes x=3π/4+kπ.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ; phase rightπ/4; asymptotes x=3π/4+kπ.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Stretched tangent",
+          "Question": "Graph y=−3tanx.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Vertical reflection/stretch3, periodπ.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Vertical reflection/stretch3, periodπ.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Secant variation",
+          "Question": "Graph y=2secx.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Range(-∞,-2]∪[2,∞); asymptotesπ/2+kπ.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Range(-∞,-2]∪[2,∞); asymptotesπ/2+kπ.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Phase-shift secant",
+          "Question": "Graph y=sec(2x+π/2).",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ; asymptotes x=kπ/2.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ; asymptotes x=kπ/2.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Cosecant variation",
+          "Question": "Graph y=3cscx.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Range(-∞,-3]∪[3,∞), asymptotes kπ.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Range(-∞,-3]∪[3,∞), asymptotes kπ.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Cosecant stretch/shift",
+          "Question": "Graph y=−2csc(2x)+1.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ, range(-∞,-1]∪[3,∞), asymptotes x=kπ/2.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ, range(-∞,-1]∪[3,∞), asymptotes x=kπ/2.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Cotangent",
+          "Question": "Graph y=−cotx.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ; increasing on each interval(kπ,(k+1)π).",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ; increasing on each interval(kπ,(k+1)π).",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Modified cotangent",
+          "Question": "Graph y=3cot(2x−π/2)+1.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "Periodπ/2; shift rightπ/4.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "Periodπ/2; shift rightπ/4.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        },
+        {
+          "Title": "Real-world tangent model",
+          "Question": "Observer3mi from rocket with θ=πt/100, t<50s.",
+          "Method": "Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+          "Steps": [
+            "Plan: Find source-family reciprocal/quotient asymptotes, period, phase and range.",
+            "h(t)=3tan(πt/100) miles.",
+            "Validate: Test domain and branch intervals; do not connect across discontinuities."
+          ],
+          "Answer": "h(t)=3tan(πt/100) miles.",
+          "Check": "Test domain and branch intervals; do not connect across discontinuities."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tangent/cotangent period",
+          "Definition": "π/|B| for A tan(Bx+C) or A cot(Bx+C), nonconstant.",
+          "Rule": "Exclude denominator zeros.",
+          "Example": "tan(4x) periodπ/4."
+        },
+        {
+          "Title": "Secant/cosecant range",
+          "Definition": "For A≠0, range (-∞,D−|A|] ∪ [D+|A|,∞).",
+          "Rule": "Asymptotes occur at reciprocal denominator zeros.",
+          "Example": "2cscx+1 ranges y≤−1 or y≥3."
+        },
+        {
+          "Title": "Phase shift",
+          "Definition": "−C/B in transformed trig functions.",
+          "Rule": "B≠0; use shift direction correctly.",
+          "Example": "tan(x−π/4) shifts rightπ/4."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Trigonometric reciprocal graph domains",
+          "Description": "First-party conceptual table independent of publisher graphs.",
+          "PrimaryLabel": "Function",
+          "SecondaryLabel": "Asymptote positions",
+          "Rows": [
+            {
+              "Label": "Graph",
+              "Cells": [
+                "tan",
+                "cot",
+                "sec",
+                "csc"
+              ]
+            },
+            {
+              "Label": "Vertical asymptotes",
+              "Cells": [
+                "π/2+kπ",
+                "kπ",
+                "π/2+kπ",
+                "kπ"
+              ]
+            },
+            {
+              "Label": "Fundamental period",
+              "Cells": [
+                "π",
+                "π",
+                "2π",
+                "2π"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "π-periodic tangent/cotangent.",
+        "2π-periodic secant/cosecant.",
+        "Domain exclusions create vertical asymptotes.",
+        "Reciprocal ranges and signs."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Draw continuous stroke across vertical asymptote.",
+          "WhyWrong": "Function is undefined there.",
+          "Correction": "Separate branches at denominator zeros."
+        },
+        {
+          "Mistake": "Treat secant like tangent periodπ.",
+          "WhyWrong": "secant sign changes under x+π.",
+          "Correction": "Secant/cosecant period2π."
+        }
+      ]
+    }
+  ]
+}

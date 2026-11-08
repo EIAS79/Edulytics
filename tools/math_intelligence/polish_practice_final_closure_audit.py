@@ -154,10 +154,24 @@ def audit() -> dict[str, Any]:
             )
 
     summary = matrix.get("summary") or {}
+    # The existing full catalogue has 5,110 lessons. Grade 12 contributes
+    # exactly 73 additional canonical OpenStax Precalculus lessons when present.
+    # Preserve the legacy denominator when this check runs on main without G12,
+    # and fail closed for partial or unexpected Grade 12 introductions.
+    grade12_prefix = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+    grade12_count = sum(
+        str(row.get("lessonCode") or "").startswith(grade12_prefix)
+        for row in rows
+    )
+    if grade12_count not in (0, 73):
+        blockers.append(
+            f"Grade 12 candidate must contain exactly 73 lessons, got {grade12_count}"
+        )
+    expected_catalogue_count = 5110 + grade12_count
     required_global = {
-        "lessonCount": 5110,
-        "practiceEligibleLessonCount": 5110,
-        "READY_VERIFIED": 5110,
+        "lessonCount": expected_catalogue_count,
+        "practiceEligibleLessonCount": expected_catalogue_count,
+        "READY_VERIFIED": expected_catalogue_count,
         "internalBlockerCount": 0,
     }
     for key, expected in required_global.items():

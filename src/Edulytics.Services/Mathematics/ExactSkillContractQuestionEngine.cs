@@ -185,6 +185,7 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+         Grade12PrecalculusAdvancedNumericQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -487,6 +488,9 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
+            return Grade12PrecalculusAdvancedNumericQuestions.Verify(
+                family, parameters, answer);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Verify(family, parameters, answer);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(family))
@@ -2194,6 +2198,15 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
+        {
+            var advanced = Grade12PrecalculusAdvancedNumericQuestions.Build(
+                family, random, scale);
+            return new ExactProblem(
+                advanced.Family, advanced.Prompt, advanced.Solution,
+                advanced.ItemType, advanced.Parameters);
+        }
 
         if (UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(family))
         {
@@ -5503,6 +5516,11 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
         var triple = triples[random.Next(triples.Length)];
+        // Preserve exact ratios while diversifying numerically distinct
+        // triangles for certified 10-question practice sessions.
+        var multiplier = random.Next(1, Math.Max(13, scale + 1));
+        triple = (triple.Opposite * multiplier,
+            triple.Adjacent * multiplier, triple.Hypotenuse * multiplier);
         var ratioType = random.Next(0, 3);
         var numerator = ratioType switch
         {
@@ -5536,7 +5554,7 @@ public sealed class ExactSkillContractQuestionEngine
     {
         var triples = new (int Opposite, int Adjacent, int Hypotenuse)[] { (3, 4, 5), (5, 12, 13), (8, 15, 17) };
         var triple = triples[random.Next(triples.Length)];
-        var multiplier = random.Next(1, Math.Max(2, scale + 1));
+        var multiplier = random.Next(1, Math.Max(13, scale + 1));
         var opposite = triple.Opposite * multiplier;
         var adjacent = triple.Adjacent * multiplier;
         var hypotenuse = triple.Hypotenuse * multiplier;
@@ -5846,6 +5864,9 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (Grade12PrecalculusAdvancedNumericQuestions.Supports(problem.Family))
+            return Grade12PrecalculusAdvancedNumericQuestions.Solve(
+                problem.Family, p);
         if (UsCcssG7Unit1Lesson1ScaledCopyQuestions.Supports(problem.Family))
             return UsCcssG7Unit1Lesson1ScaledCopyQuestions.Solve(problem.Family, p);
         if (UsCcssG7Unit1Lesson2CorrespondenceQuestions.Supports(problem.Family))

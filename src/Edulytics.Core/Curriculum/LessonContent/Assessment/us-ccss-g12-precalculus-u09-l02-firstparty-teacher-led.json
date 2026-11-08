@@ -1,0 +1,667 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L02",
+  "IndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentQuestion": "Can a system of three linear equations have exactly two isolated solutions?",
+      "IndependentTeacherAnswer": "No; solution set affine subspace, so 0,1 or infinitely many.",
+      "SourceSkill": "Source1–5 verbal triple system classification",
+      "MathSpotChecked": false,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentQuestion": "Does one valid ordered triple guarantee uniqueness?",
+      "IndependentTeacherAnswer": "No. Example x=1,y=2,z unconstrained has infinite.",
+      "SourceSkill": "Source1–5 verbal triple system classification",
+      "MathSpotChecked": false,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentQuestion": "Does a failed candidate triple prove inconsistency?",
+      "IndependentTeacherAnswer": "No: it only disproves that candidate.",
+      "SourceSkill": "Source1–5 verbal triple system classification",
+      "MathSpotChecked": false,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentQuestion": "Must Gaussian elimination use one prescribed row order?",
+      "IndependentTeacherAnswer": "No. Elementary row operations in different orders may lead same solution set.",
+      "SourceSkill": "Source1–5 verbal triple system classification",
+      "MathSpotChecked": false,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentQuestion": "Can substitution and elimination both solve 3×3 systems?",
+      "IndependentTeacherAnswer": "Yes; multiple valid procedures exist.",
+      "SourceSkill": "Source1–5 verbal triple system classification",
+      "MathSpotChecked": false,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentQuestion": "Does candidate [-2, -1, 0] satisfy matrix rows [[3, 1, 1], [1, 4, 1], [2, 1, 5]] with RHS [-7, -6, -5]?",
+      "IndependentTeacherAnswer": "True; computed left sides [-7, -6, -5]",
+      "SourceSkill": "Source6–10 check ordered triple",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentQuestion": "Does candidate [-1, 0, -1] satisfy matrix rows [[3, 1, 1], [1, 4, 1], [2, 1, 5]] with RHS [-4, -2, -7]?",
+      "IndependentTeacherAnswer": "True; computed left sides [-4, -2, -7]",
+      "SourceSkill": "Source6–10 check ordered triple",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentQuestion": "Does candidate [0, 1, 2] satisfy matrix rows [[3, 1, 1], [1, 4, 1], [2, 1, 5]] with RHS [3, 7, 11]?",
+      "IndependentTeacherAnswer": "False; computed left sides [3, 6, 11]",
+      "SourceSkill": "Source6–10 check ordered triple",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentQuestion": "Does candidate [1, -1, 1] satisfy matrix rows [[3, 1, 1], [1, 4, 1], [2, 1, 5]] with RHS [3, -2, 6]?",
+      "IndependentTeacherAnswer": "True; computed left sides [3, -2, 6]",
+      "SourceSkill": "Source6–10 check ordered triple",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentQuestion": "Does candidate [2, 0, 0] satisfy matrix rows [[3, 1, 1], [1, 4, 1], [2, 1, 5]] with RHS [6, 2, 4]?",
+      "IndependentTeacherAnswer": "True; computed left sides [6, 2, 4]",
+      "SourceSkill": "Source6–10 check ordered triple",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, 0], [1, 8, -1], [1, 2, 11]] and RHS [4, -5, -23] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(-1, 1), Fraction(-2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, -2], [1, 5, -1], [-1, 2, 6]] and RHS [14, 3, -8] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(2, 1), Fraction(0, 1), Fraction(-1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -1], [1, 6, -1], [0, 2, 7]] and RHS [22, 9, 2] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(3, 1), Fraction(1, 1), Fraction(0, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, 0], [1, 7, -1], [1, 2, 8]] and RHS [-22, 10, 9] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(2, 1), Fraction(1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, -2], [1, 8, -1], [-1, 2, 9]] and RHS [-14, -20, 16] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(-2, 1), Fraction(2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, -1], [1, 5, -1], [0, 2, 10]] and RHS [-9, -9, 28] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-1, 1), Fraction(-1, 1), Fraction(3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, 0], [1, 6, -1], [1, 2, 11]] and RHS [0, -4, 44] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(0, 1), Fraction(0, 1), Fraction(4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -2], [1, 7, -1], [-1, 2, 6]] and RHS [16, 12, -23] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(1, 1), Fraction(-4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, -1], [1, 8, -1], [16, 2, -2]] and RHS [21, 21, 43] by exact elimination.",
+      "IndependentTeacherAnswer": "no solution",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, 0], [1, 5, -1], [8, 2, 0]] and RHS [10, -5, 20] by exact elimination.",
+      "IndependentTeacherAnswer": "infinitely many solutions",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, -2], [1, 6, -1], [-1, 2, 9]] and RHS [-14, -8, -8] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(-1, 1), Fraction(-1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, -1], [1, 7, -1], [0, 2, 10]] and RHS [-12, -2, 0] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(0, 1), Fraction(0, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, 0], [1, 8, -1], [14, 2, 0]] and RHS [-6, 6, -12] by exact elimination.",
+      "IndependentTeacherAnswer": "infinitely many solutions",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, -2], [1, 5, -1], [-1, 2, 6]] and RHS [-2, 8, 16] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(0, 1), Fraction(2, 1), Fraction(2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, -1], [1, 6, -1], [0, 2, 7]] and RHS [-1, -14, 17] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(-2, 1), Fraction(3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, 0], [1, 7, -1], [1, 2, 8]] and RHS [9, -9, 32] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(2, 1), Fraction(-1, 1), Fraction(4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, -2], [1, 8, -1], [12, 2, -4]] and RHS [26, 7, 53] by exact elimination.",
+      "IndependentTeacherAnswer": "no solution",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -1], [1, 5, -1], [0, 2, 10]] and RHS [-17, 5, -28] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(1, 1), Fraction(-3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, 0], [1, 6, -1], [1, 2, 11]] and RHS [-14, 12, -20] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(2, 1), Fraction(-2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, -2], [1, 7, -1], [-1, 2, 6]] and RHS [-4, -14, -9] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-1, 1), Fraction(-2, 1), Fraction(-1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, -1], [1, 8, -1], [0, 2, 7]] and RHS [-1, -8, -2] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(0, 1), Fraction(-1, 1), Fraction(0, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, 0], [1, 5, -1], [1, 2, 8]] and RHS [6, 0, 9] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(0, 1), Fraction(1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -2], [1, 6, -1], [-1, 2, 9]] and RHS [11, 6, 18] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(2, 1), Fraction(1, 1), Fraction(2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, -1], [1, 7, -1], [0, 2, 10]] and RHS [23, 14, 34] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(3, 1), Fraction(2, 1), Fraction(3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, 0], [1, 8, -1], [1, 2, 11]] and RHS [-14, -23, 37] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(-2, 1), Fraction(4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, -2], [1, 5, -1], [-1, 2, 6]] and RHS [-3, -3, -24] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(-1, 1), Fraction(-4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, -1], [1, 6, -1], [0, 2, 7]] and RHS [-3, 2, -21] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-1, 1), Fraction(0, 1), Fraction(-3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, 0], [1, 7, -1], [14, 2, 0]] and RHS [1, 9, 3] by exact elimination.",
+      "IndependentTeacherAnswer": "no solution",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, -2], [1, 8, -1], [-1, 2, 9]] and RHS [12, 18, -6] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(2, 1), Fraction(-1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, -1], [1, 5, -1], [8, 2, -2]] and RHS [6, -8, 12] by exact elimination.",
+      "IndependentTeacherAnswer": "infinitely many solutions",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, 0], [1, 6, -1], [1, 2, 11]] and RHS [14, -4, 12] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(3, 1), Fraction(-1, 1), Fraction(1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, -2], [1, 7, -1], [-1, 2, 6]] and RHS [-22, -5, 15] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(0, 1), Fraction(2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -1], [1, 8, -1], [0, 2, 7]] and RHS [-16, 3, 23] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(1, 1), Fraction(3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, 0], [1, 5, -1], [1, 2, 8]] and RHS [-6, 5, 35] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-1, 1), Fraction(2, 1), Fraction(4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, -2], [1, 6, -1], [-1, 2, 9]] and RHS [6, -8, -40] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(0, 1), Fraction(-2, 1), Fraction(-4, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentQuestion": "Solve triple coefficient matrix [[5, 1, -1], [1, 7, -1], [0, 2, 10]] and RHS [7, -3, -32] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(1, 1), Fraction(-1, 1), Fraction(-3, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentQuestion": "Solve triple coefficient matrix [[6, 1, 0], [1, 8, -1], [1, 2, 11]] and RHS [12, 4, -20] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(2, 1), Fraction(0, 1), Fraction(-2, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentQuestion": "Solve triple coefficient matrix [[7, 1, -2], [1, 5, -1], [-1, 2, 6]] and RHS [24, 9, -7] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(3, 1), Fraction(1, 1), Fraction(-1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentQuestion": "Solve triple coefficient matrix [[8, 1, -1], [1, 6, -1], [0, 2, 7]] and RHS [-22, 9, 4] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-3, 1), Fraction(2, 1), Fraction(0, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentQuestion": "Solve triple coefficient matrix [[4, 1, 0], [1, 7, -1], [1, 2, 8]] and RHS [-10, -17, 2] by exact elimination.",
+      "IndependentTeacherAnswer": "unique [Fraction(-2, 1), Fraction(-2, 1), Fraction(1, 1)]",
+      "SourceSkill": "Source11–50 substitution/elimination, dependent/inconsistent and rational systems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentQuestion": "Three quantities have ratio1:2:3 and sum 60. Solve using 3 unknowns.",
+      "IndependentTeacherAnswer": "x=10,y=20,z=30.",
+      "SourceSkill": "Source51–52 numeric ratio problems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentQuestion": "Three quantities have ratio1:2:3 and sum 70. Solve using 3 unknowns.",
+      "IndependentTeacherAnswer": "x=35/3,y=70/3,z=35.",
+      "SourceSkill": "Source51–52 numeric ratio problems",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three generations: total300, parents twice grandparents, children30 more than parents.",
+      "IndependentTeacherAnswer": "children=138; parents=108; grandparents=54; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Animal shelter total240, cats20 more dogs, rabbits half dogs.",
+      "IndependentTeacherAnswer": "cats=108; dogs=88; rabbits=44; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three grocery bills total90, first equals second minus5, third equals first plus10.",
+      "IndependentTeacherAnswer": "first=25; second=30; third=35; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three taxed goods before-tax total100; weighted taxes sum8.50; first twice second.",
+      "IndependentTeacherAnswer": "goods1=25; 2=25/2; 3=125/2; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Salary three employees total150000, first exceeds second10000, third equals second minus5000.",
+      "IndependentTeacherAnswer": "salaries=175000/3; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three ticket types totals200, prices15,20,30 yields4000, seniors twice students.",
+      "IndependentTeacherAnswer": "student=0; adult=200; senior=0; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three event tickets total250, prices10,15,20 yield3500, adults twice children.",
+      "IndependentTeacherAnswer": "child=75; adult=150; senior=25; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Coins total300, pennies nickels dimes value17 dollars, number nickels equals dimes.",
+      "IndependentTeacherAnswer": "pennies=1100/13; nickels=1400/13; dimes=1400/13; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 61,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Car prices total110000, inflation cost rises8500 at8%,5%,12%, first costs10000 more than second.",
+      "IndependentTeacherAnswer": "carA=540000/11; carB=430000/11; carC=240000/11; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 62,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three investments total100000 earn interest4000 at5%,4%,3%; second twice third.",
+      "IndependentTeacherAnswer": "investments=25000; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 63,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three accounts total120000 earn interest4200 at3%,4%,2%; first four times third.",
+      "IndependentTeacherAnswer": "accounts=40000; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 64,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three investments total100000 interest3600 at4%,3%,2%; first twice second.",
+      "IndependentTeacherAnswer": "investments=64000; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 65,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three consumption shares sum40, US is four times China plus1, US triple Japan plus4.",
+      "IndependentTeacherAnswer": "US=499/19; Japan=141/19; China=120/19; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 66,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three production shares sum35; Saudi+US=25; Saudi−Russia=3.",
+      "IndependentTeacherAnswer": "Saudi=13; US=12; Russia=10; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 67,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three imports sum50%; Saudi−Mexico=2; Saudi−Canada=1.",
+      "IndependentTeacherAnswer": "Saudi=53/3; Mexico=47/3; Canada=50/3; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 68,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three regions produce65%, Gulf+Texas=50%, Texas−Alaska=4%.",
+      "IndependentTeacherAnswer": "Gulf=31; Texas=19; Alaska=15; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 69,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Three groups sum60%, birds−fish=1%, fish−mammals=2%.",
+      "IndependentTeacherAnswer": "mammals=55/4; birds=61/2; fish=63/4; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    },
+    {
+      "SourceExercise": 70,
+      "IndependentQuestion": "Build and solve an independent 3-variable model: Food consumption shares red,poultry,fish sum100%; fish=poultry/4−4; red=poultry+18.",
+      "IndependentTeacherAnswer": "red=506/9; poultry=344/9; fish=50/9; interpret constraints and units.",
+      "SourceSkill": "Source53–70 applied triple systems and percentages",
+      "MathSpotChecked": true,
+      "OriginalQuestionCopied": false,
+      "Scoring": "MANUAL_TRIPLE"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Check (1,2,3) in x+y+z=6.",
+      "TeacherExpectedMath": "Yes."
+    },
+    {
+      "Number": 2,
+      "Question": "Solve x+y+z=9,x−y=0,y−z=0.",
+      "TeacherExpectedMath": "(3,3,3)."
+    },
+    {
+      "Number": 3,
+      "Question": "Three numbers sum30, in ratio1:2:3.",
+      "TeacherExpectedMath": "(5,10,15)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Solve x+y+z=6,x−y=−1,y−z=−1.",
+      "Classify x+y+z=3,2x+2y+2z=7.",
+      "Find 3 numbers total60 in ratio1:2:3."
+    ],
+    "TeacherExpectedMath": [
+      "(1,2,3).",
+      "Inconsistent.",
+      "(10,20,30)."
+    ],
+    "PublisherCopied": false
+  },
+  "StageC": "REUSE_MANUAL_TEACHER_TRIPLE_MARKING"
+}

@@ -1,0 +1,238 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L04",
+  "ContentVersion": "g12-u04-l04-firstparty-log-graphs-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L04",
+      "CultureCode": "en",
+      "Title": "Graphs of Logarithmic Functions",
+      "ExplanationParagraphs": [
+        "The parent y=log_b(x), b>0 and b!=1, has domain x>0, full real range, vertical asymptote x=0, and x-intercept(1,0).",
+        "For y=a·log_b(c(x−h))+k, solve the complete argument positivity constraint first; the asymptote is at the argument zero whenever c!=0.",
+        "Replacing x by −x reflects a logarithmic graph over the y-axis and changes its domain. A negative multiplier reflects over the x-axis.",
+        "Horizontal translations change logarithmic domains and vertical asymptotes; vertical translations do not change full real range.",
+        "Graphs of b^x and log_b(x) reflect across y=x; use independent points and graph reasoned features.",
+        "Before solving equations combining logarithms, restrict every argument to be strictly positive. Verify candidate roots in the original equations.",
+        "Independent Cool-down: (a) graph y=log_2(x−3), (b) give domain and asymptote of ln(5−x), (c) solve ln(x+1)=0.",
+        "Independent Try It 1: Find domain and asymptote of ln(x+3).",
+        "Independent Try It 2: Find domain and asymptote of ln(4−x).",
+        "Independent Try It 3: Give points for log_3(x).",
+        "Independent Try It 4: Shift y=log_2(x) right1.",
+        "Independent Try It 5: Shift y=ln(x) up3.",
+        "Independent Try It 6: Compress y=log_2(x) vertically by1/2.",
+        "Independent Try It 7: Graph y=3log_2(x−2)+1, give domain.",
+        "Independent Try It 8: Reflect y=ln(x) about y-axis.",
+        "Independent Try It 9: Solve log_2(x)=3.",
+        "Independent Try It 10: Find asymptote for log(7−x).",
+        "Independent Try It 11: Find equation of right shifted log_2 with asymptote x=3."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Domain of a right shift",
+          "Question": "Find domain of log_3(x−4).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "x>4, vertical asymptote x=4.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "x>4, vertical asymptote x=4.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Shift with reversal",
+          "Question": "Find domain of ln(6−2x).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "x<3, vertical asymptote x=3.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "x<3, vertical asymptote x=3.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Graph logarithm from points",
+          "Question": "Give three points for log_2(x).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "(1,0),(2,1),(4,2); domain x>0, asymptote0.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "(1,0),(2,1),(4,2); domain x>0, asymptote0.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Horizontal shift",
+          "Question": "Graph log_3(x+2).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "Shift left2, asymptote−2; point (−1,0).",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "Shift left2, asymptote−2; point (−1,0).",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Vertical shift",
+          "Question": "Graph ln(x)−4.",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "Shift down4, vertical asymptote x=0, full real range.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "Shift down4, vertical asymptote x=0, full real range.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Vertical compression",
+          "Question": "Graph (1/2)log_4(x).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "For x=1,4,16 outputs 0,1/2,1.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "For x=1,4,16 outputs 0,1/2,1.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Combined stretch and shift",
+          "Question": "Graph 2log_3(x−1)+2.",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "Domain x>1, asymptote1, graph passes (2,2).",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "Domain x>1, asymptote1, graph passes (2,2).",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Reflection of logarithm",
+          "Question": "Graph −log_2(−x).",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "Domain x<0, asymptote0, point (−1,0); increasing over negative x.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "Domain x<0, asymptote0, point (−1,0); increasing over negative x.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Approximate a logarithmic solution",
+          "Question": "Solve ln(x)=2.5 approximately.",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "x=e^2.5≈12.182.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "x=e^2.5≈12.182.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Identify vertical asymptote",
+          "Question": "For g(x)=log(5−2x) find vertical asymptote.",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "5−2x=0 => x=2.5, domain x<2.5.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "5−2x=0 => x=2.5, domain x<2.5.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        },
+        {
+          "Title": "Write from shifted graph",
+          "Question": "Graph passes (3,0),(5,1) with vertical asymptote x=2. Give logarithmic equation.",
+          "Method": "Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+          "Steps": [
+            "Plan: Check strictly positive log arguments, transform parent graph, verify intercepts and asymptote.",
+            "y=log_3(x−2), because (3−2)=1, (5−2)=3.",
+            "Validate: Verify domain against function argument and transformed anchor points."
+          ],
+          "Answer": "y=log_3(x−2), because (3−2)=1, (5−2)=3.",
+          "Check": "Verify domain against function argument and transformed anchor points."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Logarithm domain",
+          "Definition": "log_b(u(x)) is real when u(x)>0.",
+          "Rule": "Strict positivity; zero and negative arguments invalid.",
+          "Example": "ln(x−4) requires x>4."
+        },
+        {
+          "Title": "Vertical asymptote",
+          "Definition": "A logarithmic graph approaches a vertical boundary where its argument tends zero from the positive side.",
+          "Rule": "Solve u(x)=0, then check valid approach direction.",
+          "Example": "ln(3−x) has asymptote x=3."
+        },
+        {
+          "Title": "Graph transformations",
+          "Definition": "Log graph transforms by shifts, stretches and reflections.",
+          "Rule": "x−h moves right; x+h moves left; negative multiplier reflects across x-axis.",
+          "Example": "−log_2(x+1)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent logarithmic graph sample",
+          "Description": "First-party x,y anchor coordinates, suitable for manual graphing and teacher review.",
+          "PrimaryLabel": "Argument x",
+          "SecondaryLabel": "Value log_2 x",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1/4",
+                "1/2",
+                "1",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "log_2(x)",
+              "Cells": [
+                "−2",
+                "−1",
+                "0",
+                "1",
+                "2"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Domain by argument>0.",
+        "Log graphs have vertical asymptotes.",
+        "Use shifts/reflections of parent graph.",
+        "Validate intersections numerically where necessary."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Allow logarithm argument zero.",
+          "WhyWrong": "No real logarithm at zero.",
+          "Correction": "Use strict positivity."
+        },
+        {
+          "Mistake": "Treat upward shift as changing log domain.",
+          "WhyWrong": "Vertical shift only changes y-values.",
+          "Correction": "Find domain from unshifted argument."
+        }
+      ]
+    }
+  ]
+}

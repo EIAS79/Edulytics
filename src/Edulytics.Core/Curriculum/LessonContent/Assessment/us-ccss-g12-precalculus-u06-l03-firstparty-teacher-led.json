@@ -1,0 +1,566 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03",
+  "IndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "State principal ranges of arcsin and arccos.",
+      "TeacherExpectedMath": "arcsin outputs[-π/2,π/2], arccos outputs[0,π], chosen one-to-one branches.",
+      "OriginalSourceSkillReviewed": "Source #1 inverse sine/cosine different principal ranges.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Evaluate arccos(cos(−π/3)) and explain principal value.",
+      "TeacherExpectedMath": "π/3; arccos ranges[0,π], not negative angle.",
+      "OriginalSourceSkillReviewed": "Source #2 arccos(cos(−π/6))=π/6.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "Interpret arcsin(1/2)=π/6.",
+      "TeacherExpectedMath": "Sine of π/6 equals1/2, π/6 lies in principal range.",
+      "OriginalSourceSkillReviewed": "Source #3 inverse sine meaning.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "Find arcsec(2) using arccos.",
+      "TeacherExpectedMath": "arccos(1/2)=π/3 on conventional principal arcsec branch.",
+      "OriginalSourceSkillReviewed": "Source #4 sec inverse via cos inverse.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "Explain why arcsin requires sine restricted to[-π/2,π/2].",
+      "TeacherExpectedMath": "Original sine not injective; selected interval gives one-to-one onto[-1,1].",
+      "OriginalSourceSkillReviewed": "Source #5 sine restricted interval.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "Is arccos(cos t)=t for all real t?",
+      "TeacherExpectedMath": "No; result lies[0,π], equality only when t in principal interval.",
+      "OriginalSourceSkillReviewed": "Source #6 composition not global identity.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "Prove arccos(−x)=π−arccos(x) for |x|≤1.",
+      "TeacherExpectedMath": "Because cos(π−θ)=−cosθ and both θ,π−θ in[0,π].",
+      "OriginalSourceSkillReviewed": "Source #7 arccos negative argument identity.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "Find principal value arcsin(1/2).",
+      "TeacherExpectedMath": "π/6.",
+      "OriginalSourceSkillReviewed": "Source #8 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "Find principal value arcsin(−sqrt2/2).",
+      "TeacherExpectedMath": "−π/4.",
+      "OriginalSourceSkillReviewed": "Source #9 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Find principal value arccos(sqrt3/2).",
+      "TeacherExpectedMath": "π/6.",
+      "OriginalSourceSkillReviewed": "Source #10 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Find principal value arccos(−1/2).",
+      "TeacherExpectedMath": "2π/3.",
+      "OriginalSourceSkillReviewed": "Source #11 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Find principal value arctan(1).",
+      "TeacherExpectedMath": "π/4.",
+      "OriginalSourceSkillReviewed": "Source #12 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "Find principal value arctan(−sqrt3).",
+      "TeacherExpectedMath": "−π/3.",
+      "OriginalSourceSkillReviewed": "Source #13 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "Find principal value arctan(−1).",
+      "TeacherExpectedMath": "−π/4.",
+      "OriginalSourceSkillReviewed": "Source #14 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "Find principal value arctan(sqrt3).",
+      "TeacherExpectedMath": "π/3.",
+      "OriginalSourceSkillReviewed": "Source #15 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "Find principal value arctan(−1/sqrt3).",
+      "TeacherExpectedMath": "−π/6.",
+      "OriginalSourceSkillReviewed": "Source #16 exact principal inverse sine cosine or tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Evaluate arccos(-0.3) in radians to2 decimals.",
+      "TeacherExpectedMath": "1.88rad.",
+      "OriginalSourceSkillReviewed": "Source #17 calculator inverse trig value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "Evaluate arcsin(0.2) in radians to2 decimals.",
+      "TeacherExpectedMath": "0.20rad.",
+      "OriginalSourceSkillReviewed": "Source #18 calculator inverse trig value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Evaluate arccos(0.6) in radians to2 decimals.",
+      "TeacherExpectedMath": "0.93rad.",
+      "OriginalSourceSkillReviewed": "Source #19 calculator inverse trig value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Evaluate arccos(0.75) in radians to2 decimals.",
+      "TeacherExpectedMath": "0.72rad.",
+      "OriginalSourceSkillReviewed": "Source #20 calculator inverse trig value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "Evaluate arctan(5) in radians to2 decimals.",
+      "TeacherExpectedMath": "1.37rad.",
+      "OriginalSourceSkillReviewed": "Source #21 calculator inverse trig value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "Right triangle has opposite leg7 and adjacent leg24. Find acute angleθ in radians.",
+      "TeacherExpectedMath": "θ=arctan(7/24)≈0.28rad.",
+      "OriginalSourceSkillReviewed": "Source #22 inverse trig missing angle in right triangle.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "Right triangle has opposite leg8 and adjacent leg15. Find acute angleθ in radians.",
+      "TeacherExpectedMath": "θ=arctan(8/15)≈0.49rad.",
+      "OriginalSourceSkillReviewed": "Source #23 inverse trig missing angle in right triangle.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "Find arcsin(cosπ).",
+      "TeacherExpectedMath": "−π/2 because cosπ=−1.",
+      "OriginalSourceSkillReviewed": "Source #24 arcsin(cosπ).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Find arctan(sinπ).",
+      "TeacherExpectedMath": "0.",
+      "OriginalSourceSkillReviewed": "Source #25 tan inverse of sinπ.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Find arccos(sin(π/6)).",
+      "TeacherExpectedMath": "π/3 because sinπ/6=1/2.",
+      "OriginalSourceSkillReviewed": "Source #26 arccos(sinπ/3), nontrivial special value.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Find arctan(sin(π/2)).",
+      "TeacherExpectedMath": "π/4 because sinπ/2=1.",
+      "OriginalSourceSkillReviewed": "Source #27 arctan(sinπ/3).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "Find arcsin(cos(−π/2)).",
+      "TeacherExpectedMath": "0.",
+      "OriginalSourceSkillReviewed": "Source #28 arcsin(cos−π/2).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "Find arctan(sin(4π/3)).",
+      "TeacherExpectedMath": "arctan(−sqrt3/2), no standard rational π multiple.",
+      "OriginalSourceSkillReviewed": "Source #29 arctan(sin4π/3) not a standard angle.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Find arcsin(sin(5π/6)).",
+      "TeacherExpectedMath": "π/6, principal arcsin.",
+      "OriginalSourceSkillReviewed": "Source #30 arcsin(sin5π/6).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "Find arctan(sin(−5π/2)).",
+      "TeacherExpectedMath": "−π/4 because sin(−5π/2)=−1.",
+      "OriginalSourceSkillReviewed": "Source #31 arctan(sin−5π/2).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "Find cos(arcsin(3/5)).",
+      "TeacherExpectedMath": "4/5; cosine nonnegative on arcsin principal range.",
+      "OriginalSourceSkillReviewed": "Source #32 cos(arcsin4/5).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "Find sin(arccos(5/13)).",
+      "TeacherExpectedMath": "12/13; sine nonnegative on arccos principal range.",
+      "OriginalSourceSkillReviewed": "Source #33 sin(arccos3/5).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "Find sin(arctan(3/4)).",
+      "TeacherExpectedMath": "3/5 by3-4-5 triangle.",
+      "OriginalSourceSkillReviewed": "Source #34 sin(arctan4/3).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "Find cos(arctan(5/12)).",
+      "TeacherExpectedMath": "12/13 by5-12-13 triangle.",
+      "OriginalSourceSkillReviewed": "Source #35 cos(arctan12/5).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "Find cos(arcsin(1/2)).",
+      "TeacherExpectedMath": "sqrt3/2.",
+      "OriginalSourceSkillReviewed": "Source #36 cos(arcsin1/2).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "Simplify tan(arcsin(x)) for |x|<1.",
+      "TeacherExpectedMath": "x/sqrt(1−x²).",
+      "OriginalSourceSkillReviewed": "Source #37 tan(arcsin(x−1)), require |x−1|<1.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "Simplify sin(arccos(2x)) for |x|≤1/2.",
+      "TeacherExpectedMath": "sqrt(1−4x²), nonnegative.",
+      "OriginalSourceSkillReviewed": "Source #38 sin(arccos(1−x)).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "Simplify cos(arcsin(1/x)) for |x|≥1.",
+      "TeacherExpectedMath": "sqrt(1−1/x²), nonnegative.",
+      "OriginalSourceSkillReviewed": "Source #39 cos(arcsin1/x).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "Simplify cos(arctan(4x−1)) for real x.",
+      "TeacherExpectedMath": "1/sqrt(1+(4x−1)²).",
+      "OriginalSourceSkillReviewed": "Source #40 cos(arctan3x−1).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "Simplify tan(arcsin(x/2)) for |x|<2.",
+      "TeacherExpectedMath": "x/sqrt(4−x²).",
+      "OriginalSourceSkillReviewed": "Source #41 tan(arcsin(x+1/2)).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "Compute (arcsin(1/2)+arccos(sqrt3/2))/(arccos(1/2)+arcsin(0)).",
+      "TeacherExpectedMath": "(π/6+π/6)/(π/3+0)=1.",
+      "OriginalSourceSkillReviewed": "Source #42 quotient of exact inverse trig special values.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "For θ=arcsin(x/(x+2)), x≥0, express cosθ.",
+      "TeacherExpectedMath": "2sqrt(x+1)/(x+2), because (x+2)²−x²=4(x+1).",
+      "OriginalSourceSkillReviewed": "Source #43 cosθ if sinθ=x/(x+1).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "With same θ, express secθ.",
+      "TeacherExpectedMath": "(x+2)/(2sqrt(x+1)).",
+      "OriginalSourceSkillReviewed": "Source #44 sec with given sine.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "With same θ, express cotθ for x>0.",
+      "TeacherExpectedMath": "2sqrt(x+1)/x.",
+      "OriginalSourceSkillReviewed": "Source #45 cot given sine.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Simplify cos(arcsin(x/(x+2))) for x≥0.",
+      "TeacherExpectedMath": "2sqrt(x+1)/(x+2).",
+      "OriginalSourceSkillReviewed": "Source #46 cos(arcsin x/(x+1)).",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Simplify arctan(x/(2sqrt(x+1))) for x>0 as an angle.",
+      "TeacherExpectedMath": "It is the principal angle whose tangent is x/(2sqrt(x+1)); equals arcsin(x/(x+2)) for x>0.",
+      "OriginalSourceSkillReviewed": "Source #47 arctan(x/sqrt(2x+1)) inverse-trig composition.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Sketch y=arcsin x; state domain and range.",
+      "TeacherExpectedMath": "Domain[-1,1], range[-π/2,π/2], increasing, passes(0,0).",
+      "OriginalSourceSkillReviewed": "Source #48 arcsin domain/range.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "Sketch y=arccos x; state domain/range.",
+      "TeacherExpectedMath": "Domain[-1,1],range[0,π], decreasing, passes(0,π/2).",
+      "OriginalSourceSkillReviewed": "Source #49 arccos domain/range.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "Sketch y=arctan x; domain/range.",
+      "TeacherExpectedMath": "Domain R, range(−π/2,π/2), horizontal asymptotes y=±π/2.",
+      "OriginalSourceSkillReviewed": "Source #50 arctan graph and range.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Find real x satisfying sinx=arcsin(x) numerically.",
+      "TeacherExpectedMath": "x=0 on x in[-1,1]; principal inverse has greater magnitude than sinx for nonzero x.",
+      "OriginalSourceSkillReviewed": "Source #51 sine and arcsine intersection.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "Approximate root cosx=arccos(x) for x in[-1,1].",
+      "TeacherExpectedMath": "x≈0.739085 (unique root in[0,1]).",
+      "OriginalSourceSkillReviewed": "Source #52 cos and inverse cosine graph intersection.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "A 10ft ladder leans against a wall and reaches9ft high. Find angle with vertical wall.",
+      "TeacherExpectedMath": "Angle=arccos(9/10)≈0.4510rad.",
+      "OriginalSourceSkillReviewed": "Source #53 ladder13ft reaches12ft, angle with building.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 54,
+      "IndependentStudentQuestion": "A 1mi sloping road rises200ft. Find elevation angle in radians.",
+      "TeacherExpectedMath": "arcsin(200/5280)≈0.03789rad.",
+      "OriginalSourceSkillReviewed": "Source #54 0.6mi road elevation150ft, using hypotenuse.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 55,
+      "IndependentStudentQuestion": "Isosceles triangle sides10,10,base12: find base angle.",
+      "TeacherExpectedMath": "cosθ=6/10=.6 =>θ=arccos(.6)≈0.92730rad.",
+      "OriginalSourceSkillReviewed": "Source #55 isosceles sides9,base8, find angle between leg and base.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 56,
+      "IndependentStudentQuestion": "Estimate arctan(1000) without calculator.",
+      "TeacherExpectedMath": "Nearπ/2, slightly below: π/2−~0.001rad.",
+      "OriginalSourceSkillReviewed": "Source #56 arctan(10000) close toπ/2.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 57,
+      "IndependentStudentQuestion": "Roof truss right triangle base10ft,height5ft. Find acute angle at base.",
+      "TeacherExpectedMath": "arctan(5/10)≈0.46365rad.",
+      "OriginalSourceSkillReviewed": "Source #57 roof truss adjacent height4 and base12.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 58,
+      "IndependentStudentQuestion": "Line y=(4/7)x: find angle with +x axis.",
+      "TeacherExpectedMath": "arctan(4/7)≈0.51915rad.",
+      "OriginalSourceSkillReviewed": "Source #58 slope3/5 inverse tangent.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 59,
+      "IndependentStudentQuestion": "Line y=−(2/5)x: find acute angle with negative x-axis.",
+      "TeacherExpectedMath": "arctan(2/5)≈0.38051rad.",
+      "OriginalSourceSkillReviewed": "Source #59 negative slope3/7 angle with negative x-axis.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 60,
+      "IndependentStudentQuestion": "Find road percent grade for elevation angle5°.",
+      "TeacherExpectedMath": "100tan5°≈8.75%.",
+      "OriginalSourceSkillReviewed": "Source #60 road angle4°, percent grade100tan4°.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 61,
+      "IndependentStudentQuestion": "A 15ft ladder has base8ft from wall. Does its elevation fall between35° and45°?",
+      "TeacherExpectedMath": "Angle arccos(8/15)≈57.77°, so no.",
+      "OriginalSourceSkillReviewed": "Source #61 20ft ladder base10ft yields60°, outside35-45°.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    },
+    {
+      "SourceExercise": 62,
+      "IndependentStudentQuestion": "A 12ft ladder makes angle40° to ground. Find base distance.",
+      "TeacherExpectedMath": "12cos40°≈9.193ft.",
+      "OriginalSourceSkillReviewed": "Source #62 15ft ladder angle42°, horizontal reach.",
+      "PublisherTextCopied": false,
+      "TeacherReview": "MANUAL_INVERSE_TRIG_MATH"
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Find arcsin(−sqrt2/2).",
+      "TeacherExpectedMath": "−π/4."
+    },
+    {
+      "Number": 2,
+      "Question": "Evaluate arccos(−1).",
+      "TeacherExpectedMath": "π."
+    },
+    {
+      "Number": 3,
+      "Question": "Estimate arctan(2).",
+      "TeacherExpectedMath": "1.1071rad."
+    },
+    {
+      "Number": 4,
+      "Question": "A ladder hyp10ft, vertical9ft: find ground angle.",
+      "TeacherExpectedMath": "arcsin(.9)≈1.1198rad."
+    },
+    {
+      "Number": 5,
+      "Question": "Evaluate arcsin(sin(3π/4)).",
+      "TeacherExpectedMath": "π/4."
+    },
+    {
+      "Number": 6,
+      "Question": "Evaluate arccos(cos(−π/4)).",
+      "TeacherExpectedMath": "π/4."
+    },
+    {
+      "Number": 7,
+      "Question": "Find cos(arcsin(4/5)).",
+      "TeacherExpectedMath": "3/5."
+    },
+    {
+      "Number": 8,
+      "Question": "Find sin(arctan(3/4)).",
+      "TeacherExpectedMath": "3/5."
+    },
+    {
+      "Number": 9,
+      "Question": "Simplify tan(arcsin(x/3)) for |x|<3.",
+      "TeacherExpectedMath": "x/sqrt(9−x²)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Find arccos(−sqrt2/2).",
+      "Simplify cos(arcsin(3/5)).",
+      "Road rises100ft over horizontal500ft; find angle of elevation in degrees."
+    ],
+    "TeacherExpectedMath": [
+      "3π/4.",
+      "4/5.",
+      "arctan(1/5)≈11.310°."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "OriginalSourceExercisesReviewed": 62,
+  "StageC": "REUSE_EXISTING_MANUAL_INVERSE_TRIG_AND_RICHV2",
+  "StageD": "NOT_RUN"
+}

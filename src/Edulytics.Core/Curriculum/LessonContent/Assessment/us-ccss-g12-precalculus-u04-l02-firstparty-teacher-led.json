@@ -1,0 +1,545 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02",
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Compare y=4^x and y=(1/4)^x at x=−1,0,1.",
+      "TeacherExpectedMath": "(1/4,1,4) versus (4,1,1/4); reflect in y-axis."
+    },
+    {
+      "Number": 2,
+      "Question": "Graph h(x)=3^(x−1)−2 and give asymptote and range.",
+      "TeacherExpectedMath": "Shift right1/down2; y=−2; range (−2,∞)."
+    },
+    {
+      "Number": 3,
+      "Question": "Approximate x where 3^x=7.",
+      "TeacherExpectedMath": "x≈ln7/ln3≈1.771."
+    },
+    {
+      "Number": 4,
+      "Question": "Give formula and intercept for stretching y=(1/2)^x by factor 5.",
+      "TeacherExpectedMath": "y=5(1/2)^x, y-intercept (0,5)."
+    },
+    {
+      "Number": 5,
+      "Question": "Reflect y=3^x about the x-axis and identify range.",
+      "TeacherExpectedMath": "y=−3^x; range (−∞,0)."
+    },
+    {
+      "Number": 6,
+      "Question": "Reflect y=2^x across y-axis then shift up1.",
+      "TeacherExpectedMath": "g(x)=2^(−x)+1; horizontal y=1, range (1,∞)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Analyze g(x)=2^(x−1)−3 for asymptote, intercept, domain, range.",
+      "Reflect f(x)=3^x over the y-axis and give formula.",
+      "Estimate intersection of y=2^x and y=6 to 3 decimals."
+    ],
+    "TeacherExpectedMath": [
+      "Asymptote y=−3, intercept (0,−5/2), domain R, range (−3,∞).",
+      "g(x)=3^(−x)=(1/3)^x.",
+      "x≈2.585."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceSkillReferenceExercise": 1,
+      "IndependentStudentQuestion": "Explain the horizontal asymptote of y=2^(x+1)+3.",
+      "TeacherExpectedMath": "Horizontal asymptote y=3; as x→−∞, y approaches3 from above.",
+      "OriginalSourceMathematicsReviewed": "Original source: y=k describes end behavior for translated exponential y=ab^x+k.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 2,
+      "IndependentStudentQuestion": "Why is transformation notation useful for y=−3·2^(x−1)+4?",
+      "TeacherExpectedMath": "Read shift right1, vertical scale3, reflection across x-axis and shift up4 directly; asymptote y=4.",
+      "OriginalSourceMathematicsReviewed": "Original: recognize sign, shift, stretch, intercept and range without graphing every point anew.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 3,
+      "IndependentStudentQuestion": "Reflect y=4^x across y-axis, then stretch vertically by factor2.",
+      "TeacherExpectedMath": "g(x)=2·4^(−x), y-intercept2; domain R, range (0,∞).",
+      "OriginalSourceMathematicsReviewed": "Source f=3^x -> reflection y-axis and stretch4: g=4·3^(−x), y-intercept4.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 4,
+      "IndependentStudentQuestion": "Reflect y=2^(−x) across y-axis and scale vertically by 1/3.",
+      "TeacherExpectedMath": "g(x)=(1/3)·2^x; intercept1/3, domain R, positive range.",
+      "OriginalSourceMathematicsReviewed": "Source starting (1/2)^(−x)=2^x, reflect y-axis and multiply1/5 =>(1/5)(1/2)^x.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 5,
+      "IndependentStudentQuestion": "Reflect y=5^x across x-axis then shift up9.",
+      "TeacherExpectedMath": "g(x)=−5^x+9; y-intercept8; domain R; range (−∞,9).",
+      "OriginalSourceMathematicsReviewed": "Source −10^x+7; intercept6, range(−∞,7).",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 6,
+      "IndependentStudentQuestion": "Shift y=1.5^x right2, stretch by3, reflect x-axis and shift down4.",
+      "TeacherExpectedMath": "g(x)=−3(1.5)^(x−2)−4; y-intercept −3/2.25−4=−16/3; range (−∞,−4).",
+      "OriginalSourceMathematicsReviewed": "Source g(x)=−2(1.68)^(x−3)−3, y-int≈−3.422, range(−∞,−3).",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 7,
+      "IndependentStudentQuestion": "From h(x)=−(1/3)·(1/5)^(x−1)+2, shift down2, left1, stretch by3, reflect x-axis.",
+      "TeacherExpectedMath": "g(x)=(1/5)^x, y-intercept1; domain R, range (0,∞).",
+      "OriginalSourceMathematicsReviewed": "Source starting f=−(1/2)(1/4)^(x−2)+4 then down4, left2, stretch4, reflect x gives g=2(1/4)^x.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 8,
+      "IndependentStudentQuestion": "Draw f(x)=2(1/3)^x and its y-axis reflection; give intercept.",
+      "TeacherExpectedMath": "Reflected g(x)=2·3^x; both have y-intercept2 and horizontal asymptote0.",
+      "OriginalSourceMathematicsReviewed": "Source f=3(1/2)^x reflects to3·2^x; y-int3.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 9,
+      "IndependentStudentQuestion": "Draw f(x)=−3(0.2)^x and its y-axis reflection.",
+      "TeacherExpectedMath": "g(x)=−3·5^x; both y-intercept−3 and negative range.",
+      "OriginalSourceMathematicsReviewed": "Source f=−2(0.25)^x reflect to−2·4^x; intercept−2.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 10,
+      "IndependentStudentQuestion": "Draw f(x)=5(1.5)^(−x) and its y-axis reflection.",
+      "TeacherExpectedMath": "g(x)=5(1.5)^x; intercept5 for both.",
+      "OriginalSourceMathematicsReviewed": "Source 6(1.75)^(−x) reflects to6(1.75)^x.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 11,
+      "IndependentStudentQuestion": "Compare y=2(0.5)^x, y=2(1.5)^x, y=2(3)^x in the same coordinate axes.",
+      "TeacherExpectedMath": "All intersect at (0,2); base0.5 decreases; 1.5 and3 grow, with 3 faster as x increases.",
+      "OriginalSourceMathematicsReviewed": "Source 3(1/4)^x,3(2)^x,3(4)^x share (0,3); last grows fastest.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 12,
+      "IndependentStudentQuestion": "Compare y=0.5(2)^x, y=2(2)^x, y=5(2)^x on one plot.",
+      "TeacherExpectedMath": "All have base2 and same horizontal asymptote y=0; vertical multipliers yield intercept 0.5,2,5.",
+      "OriginalSourceMathematicsReviewed": "Source (1/4)3^x,2·3^x,4·3^x share base3, different intercepts.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 13,
+      "IndependentStudentQuestion": "Using the independent labeled set A=2(.6)^x, B=4(.6)^x, C=2(.85)^x, D=2(1.3)^x, E=4(1.3)^x, F=2(1.7)^x, choose function matching y-intercept2 and decay ratio0.6.",
+      "TeacherExpectedMath": "A; a=2 and b=0.6.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching skill: identify initial height a and decay base b for 2(.69)^x; exact publisher letter not claimed.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 14,
+      "IndependentStudentQuestion": "From independent set A-F, select intercept2 and growth factor1.3.",
+      "TeacherExpectedMath": "D; y=2(1.3)^x.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching: 2(1.28)^x, positive growth and y-intercept2.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 15,
+      "IndependentStudentQuestion": "From independent set A-F, select intercept2 and slow decay factor0.85.",
+      "TeacherExpectedMath": "C; y=2(.85)^x.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching: 2(.81)^x, slower decay than b=.69.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 16,
+      "IndependentStudentQuestion": "From independent set A-F, select intercept4 and growth factor1.3.",
+      "TeacherExpectedMath": "E; y=4(1.3)^x.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching: 4(1.28)^x, larger y-intercept than 2.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 17,
+      "IndependentStudentQuestion": "From independent set A-F, select intercept2 and fastest growth factor1.7.",
+      "TeacherExpectedMath": "F; y=2(1.7)^x.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching: 2(1.59)^x, steepest positive growth among base>1 at matching intercept.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 18,
+      "IndependentStudentQuestion": "From independent set A-F, select intercept4 and decay factor0.6.",
+      "TeacherExpectedMath": "B; y=4(.6)^x.",
+      "OriginalSourceMathematicsReviewed": "Source figure12 matching: 4(.69)^x, intercept4 and exponential decay.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 19,
+      "IndependentStudentQuestion": "In a new labeled set A=2(.5)^x,B=6(.8)^x,C=1(.3)^x,D=3(1.8)^x,E=4(1.3)^x,F=.5(1.1)^x, which has largest base?",
+      "TeacherExpectedMath": "D with b=1.8.",
+      "OriginalSourceMathematicsReviewed": "Source figure13: compare largest positive growth ratio b, not visual height alone.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 20,
+      "IndependentStudentQuestion": "In that independent labeled set A-F, which has smallest base?",
+      "TeacherExpectedMath": "C with b=0.3.",
+      "OriginalSourceMathematicsReviewed": "Source figure13: steepest decay ratio below1 is minimum b.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 21,
+      "IndependentStudentQuestion": "In independent labeled set A-F, which has largest initial a?",
+      "TeacherExpectedMath": "B with a=6 at x=0.",
+      "OriginalSourceMathematicsReviewed": "Source figure13: compare y-intercepts (0,a).",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 22,
+      "IndependentStudentQuestion": "In independent labeled set A-F, which has smallest initial a?",
+      "TeacherExpectedMath": "F with a=0.5.",
+      "OriginalSourceMathematicsReviewed": "Source figure13: compare y-intercepts independently of base.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 23,
+      "IndependentStudentQuestion": "Draw y=3·2^x and its x-axis reflection.",
+      "TeacherExpectedMath": "Reflected g(x)=−3·2^x; y-int ±3; ranges positive and negative respectively.",
+      "OriginalSourceMathematicsReviewed": "Source 1/2·4^x reflects to−1/2·4^x.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 24,
+      "IndependentStudentQuestion": "Draw y=2(.8)^x−1 and its x-axis reflection.",
+      "TeacherExpectedMath": "Reflected −2(.8)^x+1; asymptotes original −1, reflected+1.",
+      "OriginalSourceMathematicsReviewed": "Source 3(.75)^x−1 -> reflection −3(.75)^x+1.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 25,
+      "IndependentStudentQuestion": "Draw y=−5·3^x+1 and its x-axis reflection.",
+      "TeacherExpectedMath": "Reflected y=5·3^x−1; original range(−∞,1); reflected range(−1,∞).",
+      "OriginalSourceMathematicsReviewed": "Source −4·2^x+2 -> reflection 4·2^x−2.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 26,
+      "IndependentStudentQuestion": "Graph f(x)=3^(−x). Give horizontal asymptote, domain and range.",
+      "TeacherExpectedMath": "y=0; domain R, range (0,∞); exponential decay.",
+      "OriginalSourceMathematicsReviewed": "Source 2^(−x) same positive range and asymptote0.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 27,
+      "IndependentStudentQuestion": "Graph g(x)=3^(x+2). Give asymptote, domain and range.",
+      "TeacherExpectedMath": "y=0; domain R, range (0,∞); shift left2.",
+      "OriginalSourceMathematicsReviewed": "Source 2^(x+3) shifts left3, asymptote0.",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 28,
+      "IndependentStudentQuestion": "Graph h(x)=3^x−4. Give asymptote, domain and range.",
+      "TeacherExpectedMath": "y=−4; domain R; range(−4,∞).",
+      "OriginalSourceMathematicsReviewed": "Source 2^x−2, asymptote y=−2 and range(−2,∞).",
+      "TeacherMarkingMode": "MANUAL_TRANSFORMATION_GRAPH_INTERPRETATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 29,
+      "IndependentStudentQuestion": "Describe both end limits and asymptote of y=−3·2^x−4.",
+      "TeacherExpectedMath": "As x→+∞, y→−∞; as x→−∞, y→−4 from below. Horizontal asymptote y=−4.",
+      "OriginalSourceMathematicsReviewed": "Source f=−5·4^x−1 tends−∞ as x→∞ and−1 from below as x→−∞.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 30,
+      "IndependentStudentQuestion": "Describe end behavior of f(x)=4(0.25)^x−3.",
+      "TeacherExpectedMath": "As x→+∞, f→−3 from above; as x→−∞, f→+∞.",
+      "OriginalSourceMathematicsReviewed": "Source 3(1/2)^x−2 tends−2 as x→∞, +∞ as x→−∞.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 31,
+      "IndependentStudentQuestion": "Describe end behavior of f(x)=5·3^(−x)+2.",
+      "TeacherExpectedMath": "As x→+∞, f→2 from above; as x→−∞, f→∞.",
+      "OriginalSourceMathematicsReviewed": "Source 3·4^(−x)+2 tends2 from above for x→∞ and∞ for x→−∞.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 32,
+      "IndependentStudentQuestion": "Shift y=5^x up2.",
+      "TeacherExpectedMath": "g(x)=5^x+2, horizontal asymptote y=2.",
+      "OriginalSourceMathematicsReviewed": "Source 4^x shifted up4 gives 4^x+4.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 33,
+      "IndependentStudentQuestion": "Shift y=5^x down3.",
+      "TeacherExpectedMath": "g(x)=5^x−3, asymptote y=−3.",
+      "OriginalSourceMathematicsReviewed": "Source 4^x shifted down3 gives 4^x−3.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 34,
+      "IndependentStudentQuestion": "Shift y=5^x two units left.",
+      "TeacherExpectedMath": "g(x)=5^(x+2), asymptote0.",
+      "OriginalSourceMathematicsReviewed": "Source shift 4^x left2 gives 4^(x+2).",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 35,
+      "IndependentStudentQuestion": "Shift y=5^x three units right.",
+      "TeacherExpectedMath": "g(x)=5^(x−3).",
+      "OriginalSourceMathematicsReviewed": "Source shift 4^x right5 gives 4^(x−5).",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 36,
+      "IndependentStudentQuestion": "Reflect y=5^x across x-axis.",
+      "TeacherExpectedMath": "g(x)=−5^x, negative range.",
+      "OriginalSourceMathematicsReviewed": "Source reflection of4^x across x-axis gives−4^x.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 37,
+      "IndependentStudentQuestion": "Reflect y=5^x across y-axis.",
+      "TeacherExpectedMath": "g(x)=5^(−x)=(1/5)^x, positive decay.",
+      "OriginalSourceMathematicsReviewed": "Source 4^(−x)=(1/4)^x.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 38,
+      "IndependentStudentQuestion": "A newly plotted curve is y=−2^x+1. Describe parent transformations.",
+      "TeacherExpectedMath": "Reflect 2^x across x-axis, translate up1; y-intercept0; horizontal asymptote1, range(−∞,1).",
+      "OriginalSourceMathematicsReviewed": "Source figure original #38 is an exponential transform with negative branches; exact graphic-to-formula identity not claimed.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 39,
+      "IndependentStudentQuestion": "An independently plotted curve has y=−3^(x−1)+2. Identify transformations and asymptote.",
+      "TeacherExpectedMath": "Reflect across x-axis, shift right1, up2; horizontal y=2; y-intercept 2−1/3.",
+      "OriginalSourceMathematicsReviewed": "Source original graph #39 requires reading negative exponential branch and vertical translation; no exact source plot reproduction.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 40,
+      "IndependentStudentQuestion": "An independent plot displays y=4−2^(−x). Identify transformations and asymptote.",
+      "TeacherExpectedMath": "Reflect y=2^x across y-axis and x-axis, shift up4; asymptote y=4; range (−∞,4).",
+      "OriginalSourceMathematicsReviewed": "Source original graph #40 shows transformed exponential rising towards a positive horizontal limit; distinct first-party model.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 41,
+      "IndependentStudentQuestion": "Identify an exponential function from its independent graph with points (0,−2),(1,−4),(2,−8).",
+      "TeacherExpectedMath": "f(x)=−2·2^x, negative and decreasing, horizontal y=0.",
+      "OriginalSourceMathematicsReviewed": "Source original graph #41 is a graph-reading function reconstruction requiring distinct marked coordinates.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 42,
+      "IndependentStudentQuestion": "Identify an exponential function from its independent graph with points (0,−1),(1,−2),(2,−2.5) and asymptote −3.",
+      "TeacherExpectedMath": "f(x)=2(1/2)^x−3: f(0)=−1, f(1)=−2, f(2)=−2.5.",
+      "OriginalSourceMathematicsReviewed": "Source original graph #42 requires reconstructing negative translated decay from its graph.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 43,
+      "IndependentStudentQuestion": "Find g(5) for g(x)=2·3^(x−2).",
+      "TeacherExpectedMath": "g(5)=2·3³=54.",
+      "OriginalSourceMathematicsReviewed": "Source g(x)=(1/3)7^(x−2) at x6 gives 2401/3.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 44,
+      "IndependentStudentQuestion": "Find f(4) for f(x)=5·2^(x−1)−3.",
+      "TeacherExpectedMath": "f(4)=5·8−3=37.",
+      "OriginalSourceMathematicsReviewed": "Source f(5)=4·2^(5−1)−2=62.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 45,
+      "IndependentStudentQuestion": "Find h(−5) for h(x)=−(1/4)(1/2)^x+3.",
+      "TeacherExpectedMath": "h(−5)=−(1/4)·32+3=−5.",
+      "OriginalSourceMathematicsReviewed": "Source −(1/2)(1/2)^(−7)+6=−58.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 46,
+      "IndependentStudentQuestion": "Solve −16=−2^x numerically.",
+      "TeacherExpectedMath": "2^x=16, x=4.",
+      "OriginalSourceMathematicsReviewed": "Source −50=−(1/2)^(−x)=−2^x, so x=ln50/ln2≈5.644.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 47,
+      "IndependentStudentQuestion": "Solve 36=(1/4)·(1/3)^x for x.",
+      "TeacherExpectedMath": "(1/3)^x=144; x=ln144/ln(1/3)≈-4.524.",
+      "OriginalSourceMathematicsReviewed": "Source 116=(1/4)(1/8)^x gives x=ln464/ln(1/8)≈-2.953.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 48,
+      "IndependentStudentQuestion": "Solve 19=2·3^x+1.",
+      "TeacherExpectedMath": "3^x=9, x=2.",
+      "OriginalSourceMathematicsReviewed": "Source 12=2·3^x+1 yields x=ln(11/2)/ln3≈1.552.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 49,
+      "IndependentStudentQuestion": "Solve 7=4·(1/2)^(x−1)−1.",
+      "TeacherExpectedMath": "(1/2)^(x−1)=2 ->x=0.",
+      "OriginalSourceMathematicsReviewed": "Source 5=3(1/2)^(x−1)−2 ->x=1+ln(7/3)/ln(1/2)≈-0.222.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 50,
+      "IndependentStudentQuestion": "Solve −18=−2·2^(x+2)+2.",
+      "TeacherExpectedMath": "−20=−2·2^(x+2), 2^(x+2)=10 -> x=log₂10−2≈1.322.",
+      "OriginalSourceMathematicsReviewed": "Source −30=−4·2^(x+2)+2 ->2^(x+2)=8 ->x=1.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 51,
+      "IndependentStudentQuestion": "Relate graphs of y=3^x and y=(1/3)^x.",
+      "TeacherExpectedMath": "(1/3)^x=3^(−x)=f(−x), reflection of f across y-axis.",
+      "OriginalSourceMathematicsReviewed": "Source b^x and (1/b)^x=b^(−x) reflect over y-axis for b>0,b≠1.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 52,
+      "IndependentStudentQuestion": "Prove y=b^(−x) is the y-axis reflection of f(x)=b^x.",
+      "TeacherExpectedMath": "For every (x,b^x), reflected point (−x,b^x) satisfies g(−x)=b^(−(−x))=b^x; g(x)=f(−x).",
+      "OriginalSourceMathematicsReviewed": "Source same identity for any b>0,b≠1.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 53,
+      "IndependentStudentQuestion": "Compare f(x)=3^x, g(x)=3^(x−2), h(x)=(1/9)·3^x.",
+      "TeacherExpectedMath": "g(x)=3^(x−2)=3^x·3^(−2)=(1/9)3^x=h(x). Both g,h shift f right2.",
+      "OriginalSourceMathematicsReviewed": "Source 4^(x−2)=(1/16)4^x.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    },
+    {
+      "SourceSkillReferenceExercise": 54,
+      "IndependentStudentQuestion": "Prove b^(x−n)=(1/b^n)b^x for b>0.",
+      "TeacherExpectedMath": "Exponent rule b^(x−n)=b^x/b^n=b^(−n)b^x. Both are right-translation by n.",
+      "OriginalSourceMathematicsReviewed": "Source same general identity.",
+      "TeacherMarkingMode": "MANUAL_GRAPH_RECONSTRUCTION_AND_EXPONENTIAL_EQUATION",
+      "OriginalPublisherGraphicCopied": false,
+      "Runtime": "NOT_RUN"
+    }
+  ],
+  "AuthenticatedRuntime": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "IndependentSourceSkillExercisesAuthored": 54,
+  "StageCAssessmentRoutes": "artifacts/curriculum-delivery/US-CCSS-MATH/G12/u04-l02-stage-c-54-teacher-assessment-reuse-routes.json",
+  "TeacherMarkingPolicy": "FREE_RESPONSE_AND_GRAPHING_REQUIRE_TEACHER_MANUAL_REVIEW",
+  "ExistingGraphRendererReused": true,
+  "AutoGradingClaimed": false
+}

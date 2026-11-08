@@ -1,0 +1,83 @@
+@model Edulytics.Web.Controllers.G12PrecalcRubricTeacherPage
+@using Edulytics.Web.Presentation
+@{ ViewData["Title"] = "Precalculus — teacher assessment"; }
+<h1>Grade 12 Precalculus, @(Grade12PrecalculusTeacherTaskBank.DisplayLabel(Model.LessonCode, Model.Submission.ExerciseNumber)) — teacher assessment</h1>
+<p>Student: @Model.Submission.StudentProfileId</p>
+<p>Submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
+@if (Grade12PrecalculusTeacherTaskBank.Find(Model.LessonCode,
+    Model.Submission.ExerciseNumber) is { } originalTask)
+{
+    <section class="student-card" aria-label="Teacher review original exercise prompt">
+        <h2>Assigned exercise</h2>
+        <p>@originalTask.Prompt</p>
+    </section>
+}
+<pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>
+@if (Model.LessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+    Grade12PrecalculusSection11TeacherGuidance.Find(Model.Submission.ExerciseNumber) is { } note)
+{
+    <section class="student-card" aria-label="Teacher-only mathematical review guidance">
+        <h2>Teacher-only mathematical review guidance</h2>
+        <p>@note.ExpectedMathematics</p>
+        <p><em>@note.Caveat</em></p>
+        <p>This reference is not an automatic grade. Inspect the student's own
+           proof, diagram and all requested subparts before awarding marks.</p>
+    </section>
+}
+@if (Model.LessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+    Grade12PrecalculusSection11SourcePartChecklist.ForExercise(
+    Model.Submission.ExerciseNumber) is { Count: > 0 } sourceParts)
+{
+    <section class="student-card" aria-label="Original exercise completeness checklist">
+        <h2>Source-aligned exercise checklist</h2>
+        <p>Review each requested original mathematical action against the
+           learner's complete first-party response. This checklist supports
+           teacher judgment, not a separate automatic score or a claim
+           that original publisher artwork is reproduced.</p>
+        <ol>
+            @foreach (var part in sourceParts)
+            {
+                <li>
+                    <strong>@part.Label:</strong> @part.RequestedSkill
+                    @if (part.OriginalSourceNumericalResultUnresolved)
+                    {
+                        <p><strong>Precision warning:</strong> The exact original
+                           graphical result cannot be confirmed from the
+                           printed image. Do not award or deduct marks based on
+                           an invented source-specific numerical root.</p>
+                    }
+                </li>
+            }
+        </ol>
+    </section>
+}
+@if (Model.Submission.TeacherScore is int score)
+{
+    <p>Teacher score: @score / 4</p>
+    <p>Feedback: @Model.Submission.TeacherFeedback</p>
+}
+else
+{
+    <p>Inspect original reasoning, domain restrictions, all requested subparts and
+       any separately submitted graph. Score each of four criteria using your own
+       judgment; the platform does not grade drawings or explanations automatically.</p>
+    <form method="post" action="/school/g12/precalculus/rubric/@Model.Submission.Id">
+        @Html.AntiForgeryToken()
+        @for (var i = 0; i < Model.Criteria.Length; i++)
+        {
+            <div>
+                <label for="criterion-@i">@(i + 1). @Model.Criteria[i]</label>
+                <select id="criterion-@i" name="marks" required>
+                    <option value="">Choose a mark</option>
+                    <option value="0">0 — Not demonstrated</option>
+                    <option value="1">1 — Demonstrated</option>
+                </select>
+            </div>
+        }
+        <label for="teacherFeedback">Teacher feedback (10–2000 characters)</label>
+        <textarea id="teacherFeedback" name="teacherFeedback" required minlength="10"
+                  maxlength="2000" rows="5"></textarea>
+        <button type="submit">Save teacher assessment</button>
+    </form>
+}
+<a href="/school/g12/precalculus/rubric">Back to review queue</a>

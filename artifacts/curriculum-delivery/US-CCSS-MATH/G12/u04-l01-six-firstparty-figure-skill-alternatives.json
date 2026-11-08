@@ -1,0 +1,58 @@
+{
+  "SchemaVersion": 1,
+  "Source": "OpenStax 2017 Section 4.1 local PDF",
+  "SourceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "OriginalFigureCount": 6,
+  "FirstPartyIndependentFigureSkills": [
+    {
+      "SourceFigureNumber": 1,
+      "Skill": "Basic exponential growth y=b^x; positive range, y-intercept and y=0 asymptote",
+      "IndependentModel": "Independent y=3^x with x=-2,0,1,2 giving y=1/9,1,3,9.",
+      "Reasoning": "The graph rises with y-intercept (0,1) and approaches zero to the left; compare constant ratios.",
+      "RelatedOriginalExerciseSkill": 1,
+      "SourceGraphicCopied": false
+    },
+    {
+      "SourceFigureNumber": 2,
+      "Skill": "Compare exponential growth with linear growth",
+      "IndependentModel": "Independent A=20+5x and B=20(1.3)^x on x≥0.",
+      "Reasoning": "Linear additive differences are constant; exponential ratios are constant and eventually grow faster.",
+      "RelatedOriginalExerciseSkill": 1,
+      "SourceGraphicCopied": false
+    },
+    {
+      "SourceFigureNumber": 3,
+      "Skill": "Fit exponential population model from initial and later samples",
+      "IndependentModel": "Independent P(t)=80(1.12)^t for t≥0, with initial P(0)=80.",
+      "Reasoning": "Exponential model can be used for bounded time but indefinite biological forecasts need constraints.",
+      "RelatedOriginalExerciseSkill": 61,
+      "SourceGraphicCopied": false
+    },
+    {
+      "SourceFigureNumber": 4,
+      "Skill": "Exponential decay through two mathematical points",
+      "IndependentModel": "Independent y=2.5(0.65)^x, with values at x=0 and x=2.",
+      "Reasoning": "Base between zero and one yields decay and horizontal asymptote y=0.",
+      "RelatedOriginalExerciseSkill": 21,
+      "SourceGraphicCopied": false
+    },
+    {
+      "SourceFigureNumber": 5,
+      "Skill": "Derive a graph's exponential equation from intercept and second point",
+      "IndependentModel": "Independent f(x)=2·2^x with points (0,2),(2,8).",
+      "Reasoning": "Recover initial multiplier a from x=0; b from output ratio over two input steps.",
+      "RelatedOriginalExerciseSkill": 22,
+      "SourceGraphicCopied": false
+    },
+    {
+      "SourceFigureNumber": 6,
+      "Skill": "Analyze a noninteger initial value on an exponential graph",
+      "IndependentModel": "Independent f(x)=sqrt(2)·1.4^x, with f(0)=sqrt(2), f(1)=1.4sqrt(2).",
+      "Reasoning": "The initial value can be irrational and model growth remains exponential.",
+      "RelatedOriginalExerciseSkill": 18,
+      "SourceGraphicCopied": false
+    }
+  ],
+  "ExactPublisherGraphicParity": false,
+  "StageD": "NOT_RUN"
+}

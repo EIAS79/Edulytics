@@ -1,0 +1,1160 @@
+{
+  "SchemaVersion": 1,
+  "SourceSha256": "f0a83745e1ea5b4200bac371afb64615742528e4d31e1e4d241623a38e454e7d",
+  "OriginalNumberedSourceExercises": 81,
+  "FirstPartyQuestionBank": 81,
+  "OriginalPublisherMediaCopied": 0,
+  "OriginalSourceGraphExercisesAdaptedToIndependentMathModels": true,
+  "SourcePublisherExactVisualPixelFidelityCertified": false,
+  "StageD": "NOT_RUN",
+  "Items": [
+    {
+      "Number": 1,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "VERBAL",
+      "FirstPartyStudentPrompt": "Explain the difference between an input shift and an output shift in g(x)=f(x−3)+2.",
+      "TeacherExpectedMathematics": "An input shift moves right 3; an output shift moves up 2.",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 2,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "VERBAL",
+      "FirstPartyStudentPrompt": "Compare a horizontal scaling g(x)=f(2x) with vertical scaling h(x)=2f(x).",
+      "TeacherExpectedMathematics": "g compresses horizontally by 1/2; h stretches vertically by 2.",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 3,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "VERBAL",
+      "FirstPartyStudentPrompt": "Contrast 0.5f(x) with f(0.5x).",
+      "TeacherExpectedMathematics": "0.5f(x) halves outputs; f(0.5x) doubles x-scale.",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 4,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "VERBAL",
+      "FirstPartyStudentPrompt": "Describe reflections g(x)=−f(x) and h(x)=f(−x) and what each axis means.",
+      "TeacherExpectedMathematics": "Negating output reflects across x-axis; negating input reflects across y-axis.",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 5,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "VERBAL",
+      "FirstPartyStudentPrompt": "Explain an algebraic test of even and odd parity and the domain prerequisite.",
+      "TeacherExpectedMathematics": "Even: f(−x)=f(x); odd: f(−x)=−f(x); symmetric domain needed.",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 6,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "SHIFT_TOOLKIT_FORMULA",
+      "FirstPartyStudentPrompt": "Apply the original Section 1.5 source-skill shifts to the sqrt toolkit parent: substitute input (x+2) and apply output shift (+1). Give formula and relevant domain.",
+      "TeacherExpectedMathematics": "√(x+2)+1, domain [−2,∞)",
+      "OriginalSourcePedagogicActions": [
+        "translate input and output",
+        "derive final formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 7,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "SHIFT_TOOLKIT_FORMULA",
+      "FirstPartyStudentPrompt": "Apply the original Section 1.5 source-skill shifts to the absolute toolkit parent: substitute input (x−1) and apply output shift (−3). Give formula and relevant domain.",
+      "TeacherExpectedMathematics": "|x−1|−3, vertex (1,−3)",
+      "OriginalSourcePedagogicActions": [
+        "translate input and output",
+        "derive final formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 8,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "SHIFT_TOOLKIT_FORMULA",
+      "FirstPartyStudentPrompt": "Apply the original Section 1.5 source-skill shifts to the reciprocal toolkit parent: substitute input (x−3) and apply output shift (−4). Give formula and relevant domain.",
+      "TeacherExpectedMathematics": "1/(x−3)−4, x≠3",
+      "OriginalSourcePedagogicActions": [
+        "translate input and output",
+        "derive final formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 9,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "SHIFT_TOOLKIT_FORMULA",
+      "FirstPartyStudentPrompt": "Apply the original Section 1.5 source-skill shifts to the reciprocal-square toolkit parent: substitute input (x+4) and apply output shift (+2). Give formula and relevant domain.",
+      "TeacherExpectedMathematics": "1/(x+4)²+2, x≠−4",
+      "OriginalSourcePedagogicActions": [
+        "translate input and output",
+        "derive final formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 10,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x−49); explain input versus output units.",
+      "TeacherExpectedMathematics": "right 49",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 11,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x+43); explain input versus output units.",
+      "TeacherExpectedMathematics": "left 43",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 12,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x+3); explain input versus output units.",
+      "TeacherExpectedMathematics": "left 3",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 13,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x−4); explain input versus output units.",
+      "TeacherExpectedMathematics": "right 4",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 14,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x)+5; explain input versus output units.",
+      "TeacherExpectedMathematics": "up 5",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 15,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x)+8; explain input versus output units.",
+      "TeacherExpectedMathematics": "up 8",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 16,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x)−2; explain input versus output units.",
+      "TeacherExpectedMathematics": "down 2",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 17,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x)−7; explain input versus output units.",
+      "TeacherExpectedMathematics": "down 7",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 18,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x−2)+3; explain input versus output units.",
+      "TeacherExpectedMathematics": "right 2 then up 3",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 19,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "TRANSLATION_DESCRIPTION",
+      "FirstPartyStudentPrompt": "Classify the horizontal and vertical transformations in g(x)=f(x+4)−1; explain input versus output units.",
+      "TeacherExpectedMathematics": "left 4 then down 1",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 20,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "INCREASING_DECREASING_OF_TRANSFORMED_TOOLKIT",
+      "FirstPartyStudentPrompt": "Analyze the real function f(x)=4(x+1)²−5. State the permitted x-domain and intervals of increase/decrease, with any turning point or endpoint.",
+      "TeacherExpectedMathematics": "decreasing (−∞,−1), increasing (−1,∞); vertex (−1,−5)",
+      "OriginalSourcePedagogicActions": [
+        "identify real domain",
+        "classify increasing and decreasing intervals"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 21,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "INCREASING_DECREASING_OF_TRANSFORMED_TOOLKIT",
+      "FirstPartyStudentPrompt": "Analyze the real function f(x)=5(x+3)²−2. State the permitted x-domain and intervals of increase/decrease, with any turning point or endpoint.",
+      "TeacherExpectedMathematics": "decreasing (−∞,−3), increasing (−3,∞); vertex (−3,−2)",
+      "OriginalSourcePedagogicActions": [
+        "identify real domain",
+        "classify increasing and decreasing intervals"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 22,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "INCREASING_DECREASING_OF_TRANSFORMED_TOOLKIT",
+      "FirstPartyStudentPrompt": "Analyze the real function f(x)=√(4−x). State the permitted x-domain and intervals of increase/decrease, with any turning point or endpoint.",
+      "TeacherExpectedMathematics": "decreasing (−∞,4); domain (−∞,4]",
+      "OriginalSourcePedagogicActions": [
+        "identify real domain",
+        "classify increasing and decreasing intervals"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 23,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "INCREASING_DECREASING_OF_TRANSFORMED_TOOLKIT",
+      "FirstPartyStudentPrompt": "Analyze the real function f(x)=−3√x−1. State the permitted x-domain and intervals of increase/decrease, with any turning point or endpoint.",
+      "TeacherExpectedMathematics": "decreasing (0,∞); domain [0,∞)",
+      "OriginalSourcePedagogicActions": [
+        "identify real domain",
+        "classify increasing and decreasing intervals"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 24,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "EXPONENTIAL_SHIFT_GRAPH",
+      "FirstPartyStudentPrompt": "Sketch y=2^x+1 from independent labelled points of y=2^x at x=−1,0,1,2. Identify the transformed horizontal asymptote.",
+      "TeacherExpectedMathematics": "Shift parent 2^x up by 1. Graph y=2^x+1 with all real inputs.",
+      "OriginalSourcePedagogicActions": [
+        "plot four transformed coordinates",
+        "write horizontal asymptote"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 25,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "EXPONENTIAL_SHIFT_GRAPH",
+      "FirstPartyStudentPrompt": "Sketch y=2^x−3 from independent labelled points of y=2^x at x=−1,0,1,2. Identify the transformed horizontal asymptote.",
+      "TeacherExpectedMathematics": "Shift parent 2^x down by 3. Graph y=2^x−3 with all real inputs.",
+      "OriginalSourcePedagogicActions": [
+        "plot four transformed coordinates",
+        "write horizontal asymptote"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 26,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "EXPONENTIAL_SHIFT_GRAPH",
+      "FirstPartyStudentPrompt": "Sketch y=2^x−1 from independent labelled points of y=2^x at x=−1,0,1,2. Identify the transformed horizontal asymptote.",
+      "TeacherExpectedMathematics": "Shift parent 2^x down by 1. Graph y=2^x−1 with all real inputs.",
+      "OriginalSourcePedagogicActions": [
+        "plot four transformed coordinates",
+        "write horizontal asymptote"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 27,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "DRAW_TOOLKIT_TRANSLATED_GRAPH",
+      "FirstPartyStudentPrompt": "Independently sketch the function f(x)=(t+1)²−3 with axes, key points, endpoints, and permitted domain. Name the transformed toolkit parent.",
+      "TeacherExpectedMathematics": "quadratic shifted left 1 and down 3, vertex (−1,−3)",
+      "OriginalSourcePedagogicActions": [
+        "identify parent",
+        "label shifts",
+        "draw correct shape and endpoints"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 28,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "DRAW_TOOLKIT_TRANSLATED_GRAPH",
+      "FirstPartyStudentPrompt": "Independently sketch the function f(x)=|x−1|+4 with axes, key points, endpoints, and permitted domain. Name the transformed toolkit parent.",
+      "TeacherExpectedMathematics": "absolute value shifted right 1 and up 4, vertex (1,4)",
+      "OriginalSourcePedagogicActions": [
+        "identify parent",
+        "label shifts",
+        "draw correct shape and endpoints"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 29,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "DRAW_TOOLKIT_TRANSLATED_GRAPH",
+      "FirstPartyStudentPrompt": "Independently sketch the function f(x)=(x−2)³−1 with axes, key points, endpoints, and permitted domain. Name the transformed toolkit parent.",
+      "TeacherExpectedMathematics": "cubic shifted right 2 and down 1, inflection at (2,−1)",
+      "OriginalSourcePedagogicActions": [
+        "identify parent",
+        "label shifts",
+        "draw correct shape and endpoints"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 30,
+      "SourcePDFPage": 101,
+      "SourceSkillGroup": "DRAW_TOOLKIT_TRANSLATED_GRAPH",
+      "FirstPartyStudentPrompt": "Independently sketch the function f(x)=3+√(t+2) with axes, key points, endpoints, and permitted domain. Name the transformed toolkit parent.",
+      "TeacherExpectedMathematics": "square-root shifted left 2 and up 3, startpoint (−2,3)",
+      "OriginalSourcePedagogicActions": [
+        "identify parent",
+        "label shifts",
+        "draw correct shape and endpoints"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 31,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "TABULAR_HORIZONTAL_AND_VERTICAL_IDENTIFICATION",
+      "FirstPartyStudentPrompt": "Given tabulated f(-2)=−2,f(-1)=−1,f(0)=−3,f(1)=1,f(2)=2; g(-1)=−2,g(0)=−1,g(1)=−3,g(2)=1,g(3)=2; h(-2)=−1,h(-1)=0,h(0)=−2,h(1)=2,h(2)=3. Express g,h as input/output translations of f using the same finite source-skill representation.",
+      "TeacherExpectedMathematics": "g(x)=f(x−1), h(x)=f(x)+1",
+      "OriginalSourcePedagogicActions": [
+        "identify g input shift",
+        "identify h output shift"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 32,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "TABULAR_HORIZONTAL_AND_VERTICAL_IDENTIFICATION",
+      "FirstPartyStudentPrompt": "Given tabulated f(-2)=−1,f(-1)=−3,f(0)=4,f(1)=2,f(2)=1; g(-3)=−1,g(-2)=−3,g(-1)=4,g(0)=2,g(1)=1; h(-2)=−2,h(-1)=−4,h(0)=3,h(1)=1,h(2)=0. Express g,h as input/output translations of f using the same finite source-skill representation.",
+      "TeacherExpectedMathematics": "g(x)=f(x+1), h(x)=f(x)−1",
+      "OriginalSourcePedagogicActions": [
+        "identify g input shift",
+        "identify h output shift"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 33,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: An upward parabola has vertex (2,1) and passes through (3,2). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=(x−2)²+1, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 34,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A downward-opening parabola has vertex (−1,0) and passes through (0,−1). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=−(x+1)², with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 35,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: An upward V-shape has vertex (−2,−3) and passes through (−1,−2). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=|x+2|−3, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 36,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A root-shaped curve starts at included (−1,−2) and passes through (0,−1), rising rightward. Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=√(x+1)−2, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 37,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A decreasing-to-the-left negative-root curve has included right endpoint (4,0), passes (3,−1), and extends left/down. Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=−√(4−x), with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 38,
+      "SourcePDFPage": 102,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: An increasing cubic has inflection point (−1,−2) and passes (0,−1). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=(x+1)³−2, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 39,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: An upward V-shape has vertex (1,1) and passes (2,3). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=2|x−1|+1, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 40,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A downward V-shape has vertex (−3,2) and passes (−2,1). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=−|x+3|+2, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 41,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A rightward rising square-root curve begins at included (2,3) and passes (3,4). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=√(x−2)+3, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 42,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A rightward decreasing negative-root curve starts at included (−4,0), passes (−3,−1), and extends right/down. Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=−√(x+4), with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 43,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A narrow upward parabola has vertex (1,−4) and passes (2,−1). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=3(x−1)²−4, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 44,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A decreasing cubic has inflection point (−1,0) and passes (0,−2). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=−2(x+1)³, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 45,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: An upward V-shape has vertex (2,0) and passes (4,1). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=(1/2)|x−2|, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 46,
+      "SourcePDFPage": 103,
+      "SourceSkillGroup": "GRAPH_TO_TOOLKIT_EXPRESSION",
+      "FirstPartyStudentPrompt": "An independent source-skill graph is described by labelled coordinate information: A reciprocal branch graph has asymptotes x=−2,y=1 and passes (−1,2). Reconstruct the graph from the description and determine its exact equation and real domain. Do not assume it is an image of the publisher's original graph.",
+      "TeacherExpectedMathematics": "One valid equation is y=1/(x+2)+1, with the domain determined by the described toolkit family; teacher checks anchor coordinates and endpoint/asymptote conditions.",
+      "OriginalSourcePedagogicActions": [
+        "identify source parent graphic skill",
+        "state transformation",
+        "give matching formula and domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 47,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=3x⁴ as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "even",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 48,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=√x as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "neither; real domain x≥0 not symmetric",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 49,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=1/x+3x as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "odd, on symmetric domain x≠0",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 50,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=(x−2)² as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "neither",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 51,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=2x⁴ as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "even",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 52,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "EVEN_ODD_NEITHER",
+      "FirstPartyStudentPrompt": "Classify f(x)=2x−x³ as even, odd or neither. Compute f(−x), compare with f(x) and −f(x), and check symmetry of the domain.",
+      "TeacherExpectedMathematics": "odd",
+      "OriginalSourcePedagogicActions": [
+        "domain symmetry check",
+        "f(-x) identity",
+        "classification"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 53,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=−f(x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "reflect over horizontal x-axis",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 54,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=f(−x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "reflect over vertical y-axis",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 55,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=4f(x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "vertical stretch 4",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 56,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=6f(x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "vertical stretch 6",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 57,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=f(5x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "horizontal compression to 1/5",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 58,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=f(2x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "horizontal compression to 1/2",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 59,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=f(x/3), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "horizontal stretch 3",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 60,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=f(x/5), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "horizontal stretch 5",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 61,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=3f(−x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "reflect across y-axis then vertical stretch 3",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 62,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "SCALE_AND_REFLECT_GENERAL_FUNCTION",
+      "FirstPartyStudentPrompt": "Given g(x)=−f(3x), describe the transformation of a generic graph f, including whether the factor applies to input or output.",
+      "TeacherExpectedMathematics": "horizontal compression 1/3 then reflect across x-axis",
+      "OriginalSourcePedagogicActions": [
+        "compute and justify complete transformation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 63,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 63, sketch and analyze the independent resulting function g(x)=|−4x|. Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "4|x|; y-axis reflection then horizontal compression factor 1/4 of |x|",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 64,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 64, sketch and analyze the independent resulting function g(x)=−√(x/2). Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "negative square root, horizontal stretch 2 then x-axis reflection; domain x≥0",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 65,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 65, sketch and analyze the independent resulting function g(x)=(1/3)/(x+2)²−3. Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "vertical compression 1/3, left 2, down 3; x≠−2",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 66,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 66, sketch and analyze the independent resulting function g(x)=8/(x−4)+2. Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "vertical stretch 8, right 4, up 2; x≠4",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 67,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 67, sketch and analyze the independent resulting function g(x)=(1/2)(x−5)²+1. Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "quadratic vertical compression half, right 5, up 1",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 68,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_TOOLKIT_TRANSFORM_FORMULA",
+      "FirstPartyStudentPrompt": "Using the transformation order given for original source skill 68, sketch and analyze the independent resulting function g(x)=((x+4)/3)²−3. Identify each shift/scale/reflection and relevant domain.",
+      "TeacherExpectedMathematics": "quadratic horizontal stretch 3, left 4, down 3",
+      "OriginalSourcePedagogicActions": [
+        "sketch resulting graph",
+        "decompose transformations",
+        "state domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 69,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=4(x+1)²−5 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "vertex (−1,−5), up-opening quadratic, width compressed vertically via factor4",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 70,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=5(x+3)²−2 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "vertex (−3,−2), up-opening quadratic, vertical stretch5",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 71,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=−2|x−4|+3 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "vertex (4,3), reflected V opening down, stretch2",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 72,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=−3√x−1 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "startpoint (0,−1), reflected root with vertical stretch3, x≥0",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 73,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=(1/2)x³ from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "cubic vertically compressed by 1/2",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 74,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=(1/3)|x−2| from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "V vertex (2,0), vertically compressed by 1/3",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 75,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=(x/3)³−3 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "cubic horizontal stretch3, down3",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 76,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=(x/4)³+1 from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "cubic horizontal stretch4, up1",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 77,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "COMBINED_FUNCTION_GRAPH",
+      "FirstPartyStudentPrompt": "Draw an independent graph of f(x)=√(4−x) from its transformed toolkit parent, naming shifts/reflections/scales and stating its real domain and key graph feature.",
+      "TeacherExpectedMathematics": "root reflected horizontally and right shifted4, x≤4",
+      "OriginalSourcePedagogicActions": [
+        "identify parent rule",
+        "graph and label transformation",
+        "give domain"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 78,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "TRANSFORM_ARBITRARY_SOURCE_GRAPH",
+      "FirstPartyStudentPrompt": "An independent source-skill graph of f contains points (−2,1),(0,3),(2,0). Apply g(x)=f(x)−2, then sketch the transformed points and join with the original corresponding graph shape.",
+      "TeacherExpectedMathematics": "subtract 2 from every plotted y, x unchanged",
+      "OriginalSourcePedagogicActions": [
+        "transform three labelled coordinates",
+        "sketch points with correct horizontal/vertical orientation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 79,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "TRANSFORM_ARBITRARY_SOURCE_GRAPH",
+      "FirstPartyStudentPrompt": "An independent source-skill graph of f contains points (−2,1),(0,3),(2,0). Apply g(x)=−f(x), then sketch the transformed points and join with the original corresponding graph shape.",
+      "TeacherExpectedMathematics": "reflect every plotted point (x,y) to (x,−y)",
+      "OriginalSourcePedagogicActions": [
+        "transform three labelled coordinates",
+        "sketch points with correct horizontal/vertical orientation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 80,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "TRANSFORM_ARBITRARY_SOURCE_GRAPH",
+      "FirstPartyStudentPrompt": "An independent source-skill graph of f contains points (−2,1),(0,3),(2,0). Apply g(x)=f(x+1), then sketch the transformed points and join with the original corresponding graph shape.",
+      "TeacherExpectedMathematics": "shift every original point left 1",
+      "OriginalSourcePedagogicActions": [
+        "transform three labelled coordinates",
+        "sketch points with correct horizontal/vertical orientation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    },
+    {
+      "Number": 81,
+      "SourcePDFPage": 104,
+      "SourceSkillGroup": "TRANSFORM_ARBITRARY_SOURCE_GRAPH",
+      "FirstPartyStudentPrompt": "An independent source-skill graph of f contains points (−2,1),(0,3),(2,0). Apply g(x)=f(x−2), then sketch the transformed points and join with the original corresponding graph shape.",
+      "TeacherExpectedMathematics": "shift every original point right 2",
+      "OriginalSourcePedagogicActions": [
+        "transform three labelled coordinates",
+        "sketch points with correct horizontal/vertical orientation"
+      ],
+      "FirstPartyIndependentMathSourceSkillAlternative": true,
+      "OriginalPublisherPixelOrExactVerbatimParityClaim": false,
+      "TeacherManualScoring": "AUTHORING_COMPLETE_RUNTIME_NOT_TESTED"
+    }
+  ]
+}

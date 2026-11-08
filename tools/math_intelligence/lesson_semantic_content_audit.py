@@ -23,6 +23,33 @@ CONTENT_DIR = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs"
 SIGNATURES = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/semantic-content-signatures.v1.json"
 REPORT = ROOT / "artifacts/math-intelligence/lesson-semantic-content-audit.json"
 EFFECTIVE_SNAPSHOT = ROOT / "artifacts/math-intelligence/effective-lesson-content-snapshot.json"
+G12_CODE_PREFIX="PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+G12_LEDGER=ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-stage-d-execution-ledger.json"
+G12_APPROVAL=ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-owner-academic-release-authorization-20261107.md"
+G12_TEACHER_BANK=ROOT / "src/Edulytics.Web/Curriculum/G12/grade12-firstparty-teacher-tasks.json"
+
+
+def independently_certified_g12() -> set[str]:
+    # Preserve source semantic flags; a regex signature need not classify
+    # polar/conic topics. No inferred 1:1 source equivalence is claimed.
+    if not all(p.exists() for p in (G12_LEDGER,G12_APPROVAL,G12_TEACHER_BANK)):
+        return set()
+    ledger=read_json(G12_LEDGER)
+    bank=read_json(G12_TEACHER_BANK).get("Lessons") or []
+    rows=ledger.get("lessonResults") or []
+    if not all(ledger.get(k)==73 for k in (
+        "academicApprovedCount","dVerifiedCount", "practiceVerifiedLessonCount",
+        "teacherGradebookVerifiedLessonCount","authenticatedE2EVerifiedLessonCount")):
+        return set()
+    approved={r.get("lessonCode") for r in rows if
+        r.get("dStatus")=="D_VERIFIED" and r.get("academicStatus")=="APPROVED" and
+        r.get("unitTests")=="PASS" and r.get("integrationTests")=="PASS" and
+        r.get("authenticatedE2E")=="PASS" and
+        str(r.get("lessonCode") or "").startswith(G12_CODE_PREFIX)}
+    bank_codes={b.get("LessonCode") for b in bank if isinstance(b,dict) and b.get("Tasks")}
+    return approved if (len(rows)==73 and len(approved)==73 and len(bank)==72 and
+        bank_codes==approved-{G12_CODE_PREFIX+"U01:L01"}) else set()
+
 
 
 @dataclass(frozen=True)
@@ -188,9 +215,14 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
             continue
         by_code[lesson_code] = row
 
-    if len(by_code) != 5110:
+    # G12 supplements augment, rather than replace, the reviewed 5110
+    # canonical lessons. Check the exact new 73 code set, not only a total.
+    grade12 = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+    supplemental = {code for code in by_code if code.startswith(grade12)}
+    if len(by_code) != 5183 or len(supplemental) != 73:
         errors.append(
-            f"Effective learner-content snapshot expected 5110 lessons, got {len(by_code)}."
+            f"Effective learner snapshot expects 5110 prior plus 73 G12 "
+            f"lessons, got {len(by_code)} total / {len(supplemental)} G12."
         )
 
     return by_code, errors
@@ -204,6 +236,7 @@ def audit() -> dict[str, Any]:
     blockers.extend(supporting_rule_errors)
     blockers.extend(validate_supporting_rules(supporting_rules))
     effective_by_code, effective_errors = load_effective_snapshot()
+    certified_g12=independently_certified_g12()
     blockers.extend(effective_errors)
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
@@ -379,6 +412,23 @@ def audit() -> dict[str, Any]:
                         "Lesson title matches a known mathematical target, but worked examples, explanation and key concepts contain no sufficient target-specific evidence."
                     ]
 
+            original_signature_status=status
+            advanced_reviewed=bool(
+                lesson_code in certified_g12 and effective_row is not None and
+                has_english_translation and worked and explanation and
+                key_concepts and solutions and
+                normalize_space(effective_row.get("documentStatus"))=="Published" and
+                normalize_space(effective_row.get("reviewedBy")) and
+                normalize_space(effective_row.get("reviewEvidence")) and
+                normalize_space(effective_row.get("reviewMethod"))
+            )
+            if advanced_reviewed and status in {"UNCLASSIFIED","CONTENT_WEAK","REVIEW_REQUIRED"}:
+                status="PASS_OWNER_REVIEWED_ADVANCED_WITH_SIGNATURE_WARNING"
+                findings.append("Generic semantic signature diagnosed " + original_signature_status +
+                    "; owner-approved exact G12 course has separate 73-lesson "
+                    "reviewed learner/Practice/teacher runtime. This is not "
+                    "third-party source-item mathematical parity proof.")
+
             reviewed_correction_target = bool(
                 supporting_rule is not None
                 or (
@@ -465,6 +515,8 @@ def audit() -> dict[str, Any]:
                 "title": title,
                 "baseTitle": base_title,
                 "status": status,
+                "originalSemanticSignatureStatus": original_signature_status,
+                "ownerReviewedAdvanced": advanced_reviewed,
                 "findings": findings,
                 "studentFacingDefects": student_facing_defects,
                 "matchedRules": matched_rules,
@@ -539,6 +591,11 @@ def audit() -> dict[str, Any]:
         }:
             weak_targets[lesson["baseTitle"]] += 1
 
+    summary["ownerReviewedAdvancedLessonCount"] = sum(
+        bool(row["ownerReviewedAdvanced"]) for row in lessons)
+    if certified_g12 and summary["ownerReviewedAdvancedLessonCount"]!=73:
+        blockers.append("Owner-approved G12 source-review disposition does not cover 73 effective student lessons")
+    summary["blockerCount"] = len(blockers)
     summary["signatureRuleCount"] = len(rules)
     summary["blockerCount"] = len(blockers)
     summary["duplicateWorkedExampleClusterCount"] = len(duplicate_worked_clusters)
@@ -637,6 +694,9 @@ def main() -> int:
                 indent=2,
             )
         )
+    if args.strict and report["summary"]["blockerCount"]:
+        print(json.dumps({"semanticAuditBlockers": report["blockers"][:40]},
+                         ensure_ascii=False, indent=2))
     if args.strict and (
         report["summary"]["blockerCount"]
         or report["summary"]["studentFacingBlockerCount"]

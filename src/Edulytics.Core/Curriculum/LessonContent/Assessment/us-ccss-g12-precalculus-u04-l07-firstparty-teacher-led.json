@@ -1,0 +1,544 @@
+{
+  "SchemaVersion": 1,
+  "Course": "US-CCSS-MATH:G12",
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L07",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "IndependentStudentQuestion": "Explain how radioactive half-life relates to exponential models.",
+      "TeacherMath": "A(t)=A0(1/2)^(t/T) where T>0 is half-life; decreasing exponential.",
+      "OriginalSourceMathReviewed": "Source #1 half-life corresponds to exponential decay and determines decay rate.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 2,
+      "IndependentStudentQuestion": "Explain why the remaining carbon-14 fraction can date an artifact.",
+      "TeacherMath": "A measured remaining fraction r>0 implies age t=T ln(r)/ln(1/2); assumes a known historical starting fraction and unchanged system.",
+      "OriginalSourceMathReviewed": "Source #2 carbon dating uses carbon-14 half-life for appropriate biological archaeological material.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 3,
+      "IndependentStudentQuestion": "For a population doubling every 8 years, give a model and define doubling time.",
+      "TeacherMath": "P(t)=P0·2^(t/8), t in years; doubling time determines k=ln2/8.",
+      "OriginalSourceMathReviewed": "Source #3 doubling time is associated with exponential growth.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 4,
+      "IndependentStudentQuestion": "Write Newton's cooling law and give three applications.",
+      "TeacherMath": "T(t)=Ts+(T0−Ts)e^(−kt), k>0; cooling soup, hot metal, cooked food.",
+      "OriginalSourceMathReviewed": "Source #4 states Newton cooling model and applications.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 5,
+      "IndependentStudentQuestion": "What is an order of magnitude and why does it matter?",
+      "TeacherMath": "An order-of-magnitude difference is a factor of 10 on a base10 scale; helpful comparing vastly different intensities.",
+      "OriginalSourceMathReviewed": "Source #5 orders of magnitude clarify multiplicative scale.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 6,
+      "IndependentStudentQuestion": "A body has temperature T(t)=20e^(−0.04t)+70 °F. Find after30 minutes.",
+      "TeacherMath": "T(30)=20e^(−1.2)+70≈76°F.",
+      "OriginalSourceMathReviewed": "Source #6 T=68e^(−.0174t)+72 at t=90 min.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 7,
+      "IndependentStudentQuestion": "For P(t)=200/(1+4e^(−0.5t)), find initial population.",
+      "TeacherMath": "P(0)=200/5=40.",
+      "OriginalSourceMathReviewed": "Source #7 logistic f=150/(1+8e^(−2x)), f(0)=150/9≈16.7.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 8,
+      "IndependentStudentQuestion": "For P(t)=200/(1+4e^(−0.5t)), find population at t=6.",
+      "TeacherMath": "P(6)=200/(1+4e^(−3))≈166.8.",
+      "OriginalSourceMathReviewed": "Source #8 f(4)=150/(1+8e^(−8))≈149.6.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 9,
+      "IndependentStudentQuestion": "For P(t)=200/(1+4e^(−0.5t)), find carrying capacity.",
+      "TeacherMath": "200, because e^(−0.5t)→0 as t→∞.",
+      "OriginalSourceMathReviewed": "Source #9 carrying capacity 150.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 10,
+      "IndependentStudentQuestion": "Describe graph P(t)=200/(1+4e^(−0.5t)), t≥0.",
+      "TeacherMath": "Initially40, increasing sigmoid, inflection at t=ln4/.5 and P=100, asymptote P=200.",
+      "OriginalSourceMathReviewed": "Source #10 graph logistic f=150/(1+8e^(−2t)).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 11,
+      "IndependentStudentQuestion": "Identify table x=0,1,2,3 with y=3,6,12,24 and fit model.",
+      "TeacherMath": "Exponential ratio2; f(x)=3·2^x.",
+      "OriginalSourceMathReviewed": "Source #11 table f(x)≈1.2^x is exponential, ratios near1.2.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 12,
+      "IndependentStudentQuestion": "Rewrite f(x)=5(0.8)^x as an e-base function.",
+      "TeacherMath": "f(x)=5e^((ln0.8)x), ln0.8<0.",
+      "OriginalSourceMathReviewed": "Source #12 1.68(0.65)^x becomes1.68e^((ln.65)x).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 13,
+      "IndependentStudentQuestion": "Classify data x=1,2,3,4 and y=2,4,6,8.",
+      "TeacherMath": "Linear y=2x.",
+      "OriginalSourceMathReviewed": "Source #13 given scatter data resemble logarithmic growth, so use graph shape.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 14,
+      "IndependentStudentQuestion": "Classify data x=0,1,2,3 and y=2,3,4.5,6.75.",
+      "TeacherMath": "Exponential y=2(1.5)^x.",
+      "OriginalSourceMathReviewed": "Source #14 table ratio≈1.2 each step, exponential.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 15,
+      "IndependentStudentQuestion": "Classify data x=1,2,4,8 and y=0,1,2,3.",
+      "TeacherMath": "Logarithmic y=log_2(x).",
+      "OriginalSourceMathReviewed": "Source #15 curve rises slowly with decreasing increments, logarithmic.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 16,
+      "IndependentStudentQuestion": "Classify data x=1,2,3,4 and y=3,8,13,18.",
+      "TeacherMath": "Linear y=5x−2.",
+      "OriginalSourceMathReviewed": "Source #16 table near constant slope ≈3 over x changes, linear.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 17,
+      "IndependentStudentQuestion": "Explain the graph for fish P(t)=300/(1+5e^(−0.4t)).",
+      "TeacherMath": "P(0)=50, rising sigmoid to carrying capacity300, inflection at t=ln5/.4.",
+      "OriginalSourceMathReviewed": "Source #17 graph logistic fish P=1000/(1+9e^(−.6t)).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 18,
+      "IndependentStudentQuestion": "For that fish model find initial population.",
+      "TeacherMath": "P(0)=300/6=50 fish.",
+      "OriginalSourceMathReviewed": "Source #18 P(0)=1000/10=100.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 19,
+      "IndependentStudentQuestion": "Find time until fish P(t)=300/(1+5e^(−0.4t)) doubles from50 to100.",
+      "TeacherMath": "300/(1+5e^(−.4t))=100 => e^(−.4t)=2/5, t=ln(5/2)/.4≈2.3 years.",
+      "OriginalSourceMathReviewed": "Source #19 logistic doubling time is not constant; solve P(t)=200 for source initial100.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 20,
+      "IndependentStudentQuestion": "Find that fish population at t=3.",
+      "TeacherMath": "P(3)=300/(1+5e^(−1.2))≈120 fish.",
+      "OriginalSourceMathReviewed": "Source #20 source logistic at t2 ≈270 fish.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 21,
+      "IndependentStudentQuestion": "For same model find time when P=270.",
+      "TeacherMath": "e^(−.4t)=1/45, t=ln45/.4≈9.5 years.",
+      "OriginalSourceMathReviewed": "Source #21 solve source logistic when P=900, t=ln81/.6.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 22,
+      "IndependentStudentQuestion": "State the carrying capacity for fish P(t)=300/(1+5e^(−0.4t)).",
+      "TeacherMath": "300 fish; horizontal long-term asymptote.",
+      "OriginalSourceMathReviewed": "Source #22 source carrying capacity1000.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 23,
+      "IndependentStudentQuestion": "A 64-g isotope sample has half-life3 hours. How long until4 grams remain?",
+      "TeacherMath": "64/4=16=2^4, four half-lives, t=12 hours.",
+      "OriginalSourceMathReviewed": "Source #23 132.8 to8.3 factor16, four half-lives times2.045 minutes.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 24,
+      "IndependentStudentQuestion": "For continuous growth P=P0e^(rt), derive t for multiplication by factorM>1.",
+      "TeacherMath": "M=e^(rt) =>t=lnM/r, r>0.",
+      "OriginalSourceMathReviewed": "Source #24 symbolic derivation of multiplication time.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 25,
+      "IndependentStudentQuestion": "Solve M=(2/3)log10(S/S0) for S.",
+      "TeacherMath": "S=S0·10^(3M/2), S0>0.",
+      "OriginalSourceMathReviewed": "Source #25 seismic moment inversion.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 26,
+      "IndependentStudentQuestion": "Find initial logistic population f(t)=600/(1+11e^(−.5t)).",
+      "TeacherMath": "f(0)=600/12=50.",
+      "OriginalSourceMathReviewed": "Source #26 logistic intercept c/(1+a).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 27,
+      "IndependentStudentQuestion": "Prove b^x=e^(x ln b) for b>0.",
+      "TeacherMath": "b=e^(lnb), so b^x=(e^lnb)^x=e^(xlnb).",
+      "OriginalSourceMathReviewed": "Source #27 standard base-conversion identity.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 28,
+      "IndependentStudentQuestion": "A drug retains 80% each hour. Find its half-life.",
+      "TeacherMath": "t=ln(.5)/ln(.8)≈3.11 hours.",
+      "OriginalSourceMathReviewed": "Source #28 drug 70% retained each hour, half-life ln.5/ln.7.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 29,
+      "IndependentStudentQuestion": "A 100mg drug retains 80% hourly. Model and amount after3 hours.",
+      "TeacherMath": "A(t)=100(.8)^t mg; A(3)=51.2mg.",
+      "OriginalSourceMathReviewed": "Source #29 125(.7)^t, t3≈43mg.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 30,
+      "IndependentStudentQuestion": "Find amount after10 hours in preceding drug model.",
+      "TeacherMath": "A(10)=100(.8)^10≈10.74mg.",
+      "OriginalSourceMathReviewed": "Source #30 125(.7)^10≈3.53mg.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 31,
+      "IndependentStudentQuestion": "A decaying sample loses 2% per day continuously. Find half-life.",
+      "TeacherMath": "T=ln2/.02≈35 days.",
+      "OriginalSourceMathReviewed": "Source #31 iodine-125 continuous1.15% per day, half-life ln2/.0115.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 32,
+      "IndependentStudentQuestion": "A 0.8g sample decays at continuous rate2% per day. Find mass after40 days.",
+      "TeacherMath": "A(t)=0.8e^(−.02t), A(40)≈0.359g.",
+      "OriginalSourceMathReviewed": "Source #32 iodine-125 0.5e^(−.0115t), t60.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 33,
+      "IndependentStudentQuestion": "A 200g sample becomes50g after20 minutes. Fit exponential and find half-life.",
+      "TeacherMath": "A(t)=200e^((ln.25/20)t); half-life10 minutes.",
+      "OriginalSourceMathReviewed": "Source #33 radioactive sample 250g to32g in250 min, solve rate and half-life.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 34,
+      "IndependentStudentQuestion": "A nuclide has half-life1000 years. Find its continuous annual decay rate.",
+      "TeacherMath": "k=−ln2/1000≈-0.000693 per year, decline magnitude≈0.0693%/year.",
+      "OriginalSourceMathReviewed": "Source #34 radium-226 half-life1590 years, rate ln2/1590.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 35,
+      "IndependentStudentQuestion": "A nuclide has half-life8 hours. Find continuous hourly decay rate.",
+      "TeacherMath": "k=−ln2/8≈-0.08664 per hour.",
+      "OriginalSourceMathReviewed": "Source #35 erbium-165 half-life10.4h.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 36,
+      "IndependentStudentQuestion": "An artifact has 50% remaining isotope with half-life5700 years. Find estimated age.",
+      "TeacherMath": "t=5700 years under constant-decay model.",
+      "OriginalSourceMathReviewed": "Source #36 C14 remaining60%, age≈5730 ln(.6)/ln(.5) years.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 37,
+      "IndependentStudentQuestion": "Bacteria start at500 and double every30 minutes. Find count after2h.",
+      "TeacherMath": "4 doublings, 500·2^4=8000 bacteria.",
+      "OriginalSourceMathReviewed": "Source #37 1350 initial double20min, after3hours nine doublings.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 38,
+      "IndependentStudentQuestion": "For population P(5)=200, P(15)=800 fit P(t)=A e^(kt).",
+      "TeacherMath": "k=ln4/10≈0.138629/min; A=200e^(−5k)=100.",
+      "OriginalSourceMathReviewed": "Source #38 source P5=360,P20=1000, infer A by exp interpolation.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 39,
+      "IndependentStudentQuestion": "For previous P(t), find doubling time.",
+      "TeacherMath": "T=ln2/k=5 minutes.",
+      "OriginalSourceMathReviewed": "Source #39 from same source P5,P20, doubling time15ln2/ln(1000/360).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 40,
+      "IndependentStudentQuestion": "Liquid starts100°F, room70°F; after10min it is90°F. Find cooling model.",
+      "TeacherMath": "T(t)=70+30e^(−kt), k=ln(3/2)/10≈0.040547/min.",
+      "OriginalSourceMathReviewed": "Source #40 soup 100°F, room69°, after15min95°, fit k.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 41,
+      "IndependentStudentQuestion": "Using that model, when does liquid reach80°F?",
+      "TeacherMath": "30e^(−kt)=10; t=10ln3/ln(3/2)≈27.095 minutes.",
+      "OriginalSourceMathReviewed": "Source #41 find time soup cools to80°F with source fitted k.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 42,
+      "IndependentStudentQuestion": "Using same model, find temperature after60min.",
+      "TeacherMath": "T(60)=70+30(2/3)^6≈73°F.",
+      "OriginalSourceMathReviewed": "Source #42 soup temperature at2.5h (150min).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 43,
+      "IndependentStudentQuestion": "Food begins160°F in a 70°F room; after20min it is130°F. Write cooling model.",
+      "TeacherMath": "T(t)=70+90e^(−kt), k=ln(3/2)/20 per minute.",
+      "OriginalSourceMathReviewed": "Source #43 turkey 165°F room75°, after30min145°, solve cooling rate.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 44,
+      "IndependentStudentQuestion": "Using that food model find temperature after40min.",
+      "TeacherMath": "70+90(2/3)^2=110°F.",
+      "OriginalSourceMathReviewed": "Source #44 source turkey temp after50min.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 45,
+      "IndependentStudentQuestion": "Using that food model, find time to reach100°F.",
+      "TeacherMath": "90e^(−kt)=30; t=20ln3/ln(3/2)≈54.190 minutes.",
+      "OriginalSourceMathReviewed": "Source #45 source turkey t until110°F.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 46,
+      "IndependentStudentQuestion": "Find x where log10(x)=−2.",
+      "TeacherMath": "x=10^(−2)=0.010.",
+      "OriginalSourceMathReviewed": "Source #46 read numeric x from marked logarithmic axis.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 47,
+      "IndependentStudentQuestion": "Find x where log10(x)=1.5.",
+      "TeacherMath": "x=10^1.5≈31.623.",
+      "OriginalSourceMathReviewed": "Source #47 read numeric x from second logarithmic-axis figure.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 48,
+      "IndependentStudentQuestion": "Put sound intensities10^(−8),10^(−2),10^3 W/m² on a base10 log scale.",
+      "TeacherMath": "Positions −8,−2,+3 (log10 of each intensity).",
+      "OriginalSourceMathReviewed": "Source #48 sound logarithmic positions whisper10^−10, vacuum10^−4, jet10².",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 49,
+      "IndependentStudentQuestion": "A second seismic event has 100 times the energy of an event magnitude4.0. Find new magnitude.",
+      "TeacherMath": "M2=4+(2/3)log10(100)=5.333...≈5.33.",
+      "OriginalSourceMathReviewed": "Source #49 magnitude3.9 with 750 times energy ->3.9+(2/3)log10(750).",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 50,
+      "IndependentStudentQuestion": "For rumor model N(t)=400/(1+39e^(−.5t)), find starting count.",
+      "TeacherMath": "N(0)=400/40=10 people.",
+      "OriginalSourceMathReviewed": "Source #50 rumor N=500/(1+49e^(−.7t)), start10.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 51,
+      "IndependentStudentQuestion": "Using the rumor model, find people informed after4 days.",
+      "TeacherMath": "N(4)=400/(1+39e^−2)≈64.",
+      "OriginalSourceMathReviewed": "Source #51 source rumor after3days.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 52,
+      "IndependentStudentQuestion": "What value does N(t)=400/(1+39e^(−.5t)) approach?",
+      "TeacherMath": "400 people as t→∞, the carrying capacity.",
+      "OriginalSourceMathReviewed": "Source #52 source rumor tends500 people.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    },
+    {
+      "SourceExercise": 53,
+      "IndependentStudentQuestion": "A 20mg dye sample falls to5mg in10 min. Choose a continuous exponential model.",
+      "TeacherMath": "A(t)=20e^(kt), k=ln(5/20)/10=−ln4/10 ≈−0.138629/min; A(t)=20e^(−0.138629t).",
+      "OriginalSourceMathReviewed": "Source #53 13mg to4.75mg in12min, select decaying exponential with k=ln(4.75/13)/12≈−0.0839.",
+      "OriginalTextCopied": false,
+      "TeacherManualReview": true,
+      "AuthenticatedRuntimeVerified": false
+    }
+  ],
+  "OriginalSourceExercisesReviewed": 53,
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "SourceTryItReference": 14,
+      "Question": "Give model for100g, half-life4h.",
+      "TeacherExpectedMath": "100(1/2)^(t/4)."
+    },
+    {
+      "Number": 2,
+      "SourceTryItReference": 15,
+      "Question": "Time until25% remains if half-life8 years.",
+      "TeacherExpectedMath": "16 years."
+    },
+    {
+      "Number": 3,
+      "SourceTryItReference": 16,
+      "Question": "Doubling time for P(t)=20e^(0.1t).",
+      "TeacherExpectedMath": "ln2/.1≈6.931 time units."
+    },
+    {
+      "Number": 4,
+      "SourceTryItReference": 17,
+      "Question": "Cool liquid50° in room70°; after1h it is60°. When will it be65°?",
+      "TeacherExpectedMath": "T=70−20·(1/2)^t; reach65 after2 hours."
+    },
+    {
+      "Number": 5,
+      "SourceTryItReference": 18,
+      "Question": "Estimate P(2) for P=200/(1+3e^(−.8t)).",
+      "TeacherExpectedMath": "≈124.6."
+    },
+    {
+      "Number": 6,
+      "SourceTryItReference": 19,
+      "Question": "Classify data x=1,2,3 y=4,8,16.",
+      "TeacherExpectedMath": "Exponential f(x)=2·2^x."
+    },
+    {
+      "Number": 7,
+      "SourceTryItReference": 20,
+      "Question": "Rewrite f(x)=4(0.7)^x in e-base form.",
+      "TeacherExpectedMath": "4e^((ln0.7)x)."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "50g sample has half-life4h; how much at12h?",
+      "Find carrying capacity of P(t)=700/(1+6e^(−.2t)).",
+      "Compare real domains ln(x²) and2lnx."
+    ],
+    "TeacherExpectedMath": [
+      "50/8=6.25g.",
+      "700.",
+      "ln(x²) defined x≠0; 2lnx only x>0."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "StageC": "REUSE_RICHV2_TEACHER_MANUAL_MATH_AND_RATIO_TABLES",
+  "StageD": "NOT_RUN"
+}

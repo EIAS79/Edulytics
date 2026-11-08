@@ -1920,6 +1920,560 @@
 
     <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@grade5OriginalDisplayTitle</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
+        @* G12 section 1.1: source-skill first-party instructional graphs, not
+           the original textbook's 1:1 figures or automatically marked tasks. *@
+        @* Grade 12 Section 3.7: reuse the typed mathematics renderer for eight
+           independently authored graph interpretation tasks. No Stage D claim. *@
+        @* Independent Grade 12 section 3.8 source-skill inverse reflections.
+           Not reproductions of OpenStax artwork; runtime reserved for Stage D. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L08")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="First-party inverse functions and radical graphs">
+                <h2>Inverse functions: graphs and mathematical constraints</h2>
+                <p>Compare each function and inverse about the line y=x.
+                   The independent graphs below are practice models. Explain
+                   the original domain restrictions and the corresponding inverse
+                   range. No source textbook images are reproduced.</p>
+                @foreach (var graph in Grade12PrecalculusSection38InverseGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(graph.Graph)
+                        <figcaption>Independent graph practice @graph.RelatedExercise:
+                            @graph.Title. @graph.DomainConstraint.</figcaption>
+                    </figure>
+                }
+                <details class="student-card">
+                    <summary>Nine original-source figure concepts: independent alternatives</summary>
+                    <ol>
+                        @foreach (var item in Grade12PrecalculusSection38FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Figure skill @item.Number: @item.Title</strong>
+                                <p>@item.Model</p><p>@item.TeacherExplanation</p>
+                                <p>Related first-party practice: @item.Exercise</p>
+                            </li>
+                        }
+                    </ol>
+                </details>
+            </section>
+        }
+
+        @* Independently authored Grade 12 exponential graphs for source skills.
+           Mathematical drawings are teacher-reviewed; runtime is reserved for Stage D. *@
+        @* Grade 12 Section 4.2: original first-party typed math graphs.
+           The publisher figure skills are covered, not replicated as pixels. *@
+        @* Grade 12 log-graph first-party mathematical artwork.
+           Source math skill alignment only; publisher figures not reused. *@
+        @* OpenStax 2017 Section 4.6 source-skill alternatives:
+           two original Edulytics graphical investigations, not publisher art. *@
+        @* Grade 12 Section 5.1 original directed-angle mathematical sketches.
+           Figure skills aligned; original textbook artwork is not copied. *@
+        @* First-party G12 unit circle drawings. No publisher images reproduced. *@
+        @* Independent sinusoidal mathematical figures, not source art. *@
+        @* Original first-party graphs for 6.2, skip denominator zeros. *@
+        @* Independent inverse-trig mathematical models, original Edulytics plots. *@
+        @* First-party identities illustrations, not publisher images. *@
+        @* Independent mathematical physical model graphs for 7.6. *@
+        @* First-party law-of-sines oblique triangle diagrams. *@
+        @* Original oblique SAS diagrams for law-of-cosines investigations. *@
+        @* First-party polar point diagrams for Section 8.3. *@
+        @* First-party polar curve mathematics for Section 8.4. *@
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L04")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Polar cardioid limacon rose and spiral mathematical models">
+                <h2>Independent polar curve investigations</h2>
+                <p>Compare radius sign, symmetry, petals, and graph classification.
+                   Diagrams are original mathematical examples.</p>
+                @foreach (var task in Grade12PrecalculusSection84PolarCurveModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L03")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Polar coordinate point and grid illustrations">
+                <h2>Polar coordinate mathematical investigations</h2>
+                <p>Convert signed-radius points to and from Cartesian form.
+                   All plots are independent mathematical diagrams.</p>
+                @foreach (var task in Grade12PrecalculusSection83PolarModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Law of Cosines oblique triangle diagrams">
+                <h2>Cosine law graphical investigations</h2>
+                <p>Practice two-side included-angle solutions and validate non-right
+                   triangle lengths using original mathematical diagrams.</p>
+                @foreach (var task in Grade12PrecalculusSection82CosineTriangleModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Oblique triangle diagrams and Law of Sines">
+                <h2>Oblique triangle investigations</h2>
+                <p>Use the independent mathematical triangle models to practice
+                   side-angle pairing, SSA ambiguity and area from included angles.</p>
+                @foreach (var task in Grade12PrecalculusSection81ObliqueTriangleModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L06")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Original periodic and damped physical model graphs">
+                <h2>Physical sinusoid models</h2>
+                <p>Compare undamped periodic motion, seasonal trends and decaying
+                   spring amplitudes using independently plotted curves.</p>
+                @foreach (var task in Grade12PrecalculusSection76PhysicalModelGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U07:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Trigonometric identity graphical comparisons">
+                <h2>Trigonometric identity graphs</h2>
+                @foreach (var task in Grade12PrecalculusSection71IdentityGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>@task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L03")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Principal inverse trigonometric function graphs">
+                <h2>Inverse trigonometric graphical investigations</h2>
+                <p>Compare principal domains and ranges of arcsin, arccos and arctan.
+                   All graphs are independently authored mathematical illustrations.</p>
+                @foreach (var task in Grade12PrecalculusSection63InverseTrigGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Tangent cotangent secant cosecant mathematical graphs">
+                <h2>Independent reciprocal and quotient function graphs</h2>
+                <p>Investigate periods, shifts and asymptotes. Diagrams are original
+                   and graphical explanations require teacher verification.</p>
+                @foreach (var task in Grade12PrecalculusSection62TrigGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U06:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Sine and cosine sinusoidal graphs">
+                <h2>Sinusoidal graphical investigations</h2>
+                <p>Determine the amplitude, period, phase and midline of each
+                   independent graph. Mathematical reasoning requires teacher review.</p>
+                @foreach (var task in Grade12PrecalculusSection61SineCosineGraphs.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Unit circle and sine cosine graphical investigations">
+                <h2>Unit circle graphical investigations</h2>
+                <p>Identify coordinates (cos t, sin t), reference angles and quadrant
+                   signs on original mathematical diagrams. Teacher review required
+                   for open-ended geometric explanations.</p>
+                @foreach (var task in Grade12PrecalculusSection52UnitCircleModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Figure skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U05:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Directed angles and radians">
+                <h2>Directed angle investigations</h2>
+                <p>Use the mathematical diagrams to discuss signed turns, coterminal
+                   rays, arc length, sectors, and radian measures. The drawings
+                   are independently authored and require teacher interpretation.</p>
+                @foreach (var task in Grade12PrecalculusSection51AngleModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Angle source skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L06")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Exponential and logarithmic equation graph investigations">
+                <h2>Independent graphical checks of equation solutions</h2>
+                <p>Check one case without an intersection, and one logarithmic
+                   intersection. Domain and graphical answer interpretation
+                   require teacher review.</p>
+                @foreach (var task in Grade12PrecalculusSection46GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Graph skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L04")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Logarithmic graph skill alternatives">
+                <h2>Nineteen independent logarithmic graphical investigations</h2>
+                <p>Examine the vertical asymptotes, valid domains, shifts and reflections.
+                   The diagrams are original Edulytics plots. Explain your conclusions
+                   and have your teacher review free-response graphical answers.</p>
+                @foreach (var task in Grade12PrecalculusSection44GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Graph skill @task.SourceFigureSkill: @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L02")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Exponential function transformations and graph reasoning">
+                <h2>Exponential graph reasoning: thirteen figure-skill alternatives</h2>
+                <p>Investigate each independently authored graph, its intercepts,
+                   asymptote, growth or decay ratio, translations and reflections.
+                   For multi-curve comparisons, use the explicitly named functions
+                   and explain their distinct initial values and ratios.
+                   Drawing and explanations require teacher review.</p>
+                @foreach (var task in Grade12PrecalculusSection42GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Figure skill @task.SourceFigureSkill:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Independent exponential mathematical graphs">
+                <h2>Exponential functions: six independent teaching graphs</h2>
+                <p>Investigate initial values, growth, decay, linear comparisons
+                   and the horizontal asymptote. These independently authored
+                   diagrams do not reproduce original textbook artwork.</p>
+                @foreach (var task in Grade12PrecalculusSection41GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Figure skill @task.OriginalSourceFigureSkill:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U03:L07")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="Independent rational graph interpretation practice">
+                <h2>Rational functions: interpret original Edulytics graphs</h2>
+                <p>Study each of these first-party teaching graphs. State a possible
+                   factored rational expression, its roots, and its vertical and
+                   horizontal asymptotes. Explain your reasoning to your teacher.
+                   These diagrams are not copied from OpenStax.</p>
+                <details class="student-card">
+                    <summary>Twenty-three figure-based mathematical skills</summary>
+                    <p>These are original Edulytics alternatives for the mathematical
+                       ideas referenced by the source chapter. They do not reproduce
+                       textbook illustrations. Use the eight independent graphs below
+                       to practice reading features and explaining their algebra.</p>
+                    <ol>
+                        @foreach (var figure in Grade12PrecalculusSection37FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Source skill figure @figure.OriginalFigureNumber:
+                                    @figure.Topic</strong>
+                                <p>@figure.IndependentModel</p>
+                                <p>@figure.StudentExplanation</p>
+                                <p>Related independent graph exercise:
+                                    @figure.RelatedIndependentGraphExercise</p>
+                            </li>
+                        }
+                    </ol>
+                </details>
+                @foreach (var task in Grade12PrecalculusSection37GraphModels.All)
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(task.Graph)
+                        <figcaption>Independent practice @task.ExerciseNumber:
+                            @task.Prompt</figcaption>
+                    </figure>
+                }
+            </section>
+        }
+
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities"
+                     aria-label="First-party function graph teaching">
+                <h2>Function graphs — input, output and one-to-one</h2>
+                <p>These independently authored graphs show vertical-line and
+                    horizontal-line reasoning. They are teaching models, not
+                    reproductions of the original exercise figures. Written and
+                    drawn explanations require teacher review.</p>
+                @foreach (var graph in Grade12PrecalculusSection11Visuals.Build())
+                {
+                    <figure class="student-card">
+                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(graph)
+                        <figcaption>@graph.Accessibility.Description</figcaption>
+                    </figure>
+                }
+                <details class="student-card">
+                    <summary>Figure-based explanations — original first-party alternatives</summary>
+                    <p>Fifteen brief alternatives explain the mathematical ideas
+                       represented by the source lesson illustrations. They
+                       are not copies of the original publisher diagrams.
+                       Original task diagrams may require teacher reference.</p>
+                    <ol>
+                        @foreach (var figure in Grade12PrecalculusSection11FigureAlternatives.All)
+                        {
+                            <li>
+                                <strong>Illustration @figure.OriginalFigureOrdinal: @figure.Topic</strong>
+                                <p>@figure.FirstPartyAlternative</p>
+                                @if (figure.LinkedFirstPartyGraphExercise is int sourceNumber)
+                                {
+                                    <p>Related independent graph practice: exercise @sourceNumber.</p>
+                                }
+                                @if (figure.AddedDrawing is { } drawing)
+                                {
+                                    <figure class="student-lesson-graph">
+                                        @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(drawing)
+                                        <figcaption>@drawing.Accessibility.Description</figcaption>
+                                    </figure>
+                                }
+                            </li>
+                        }
+                    </ol>
+                </details>
+                <details class="student-card">
+                    <summary>Nine basic function families — interactive reading practice</summary>
+                    <p>Use these original Edulytics coordinate diagrams to identify
+                       the domain and range. Explain any missing input, branch,
+                       or non-negative restriction. The source book's images have
+                       not been copied.</p>
+                    @foreach (var family in Grade12PrecalculusSection11ToolkitGraphs.All)
+                    {
+                        <figure class="student-lesson-graph">
+                            <figcaption><strong>@family.Title</strong>
+                                — Domain: @family.Domain. Range: @family.Range.</figcaption>
+                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(family.Graph)
+                        </figure>
+                    }
+                </details>
+            </section>
+        }
+        @if (Model.LessonCode == "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U01:L01")
+        {
+            <section class="lesson-source-aligned-activities" aria-label="First-party Section 1.1 practice">
+                <h2>Function notation and relations — practice bank</h2>
+                <p>92 first-party practice tasks organized by mathematical skill.
+                   For diagrams and written reasoning, show work to the assigned teacher;
+                   these are not automatically marked and do not replace the original
+                   textbook figures or constitute a completed teacher submission.</p>
+                @foreach (var group in Grade12PrecalculusSection11Exercises.All.GroupBy(x => x.Skill))
+                {
+                    <details class="student-card">
+                        <summary>@group.Key (@group.Count() tasks)</summary>
+                        <ol>
+                            @foreach (var task in group)
+                            {
+                                <li value="@task.Number">
+                                    <strong>Task @task.Number:</strong> @task.Prompt
+                                    @if (Grade12PrecalculusSection11WindowVisuals.Find(task.Number) is { } windowGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(windowGraph.Graph)
+                                            <figcaption>Exact output range: @windowGraph.ExactOutputRange.
+                                                Axis endpoint labels are source-window values; coordinates are normalized for rendering.</figcaption>
+                                        </figure>
+                                    }
+                                    @if (Grade12PrecalculusSection11ExerciseVisuals.Find(task.Number) is { } sourceSkillGraph)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(sourceSkillGraph)
+                                            <figcaption>@sourceSkillGraph.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
+                                    @if (task.ReviewMode == "TEACHER_DIAGRAM_REQUIRED")
+                                    {
+                                        <p><em>Teacher-reviewed sketch and mathematical justification required.</em></p>
+                                    }
+                                    <a asp-controller="Grade12PrecalculusRubricStudent"
+                                       asp-action="Index" asp-route-lessonId="@Model.Id"
+                                       asp-route-exerciseNumber="@task.Number">
+                                        Submit exercise @task.Number for teacher review
+                                    </a>
+                                </li>
+                            }
+                        </ol>
+                    </details>
+                }
+                <section class="student-card" aria-label="Edulytics first-party Try It activities">
+                    <h3>Try It — independent practice</h3>
+                    <p>12 new first-party tasks aligned to the section skills.
+                       Written reasoning and graphs are reviewed by the assigned
+                       mathematics teacher, not automatically scored.</p>
+                    <ol>
+                        @foreach (var task in Grade12PrecalculusSection11Exercises.TryIts)
+                        {
+                            <li>
+                                <strong>Try It @(task.Number - 93):</strong> @task.Prompt
+                                @if (task.Number is 104 or 105)
+                                {
+                                    var sourceFigure = task.Number == 104 ? 14 : 13;
+                                    if (Grade12PrecalculusSection11FigureAlternatives.Find(sourceFigure)?.AddedDrawing is { } drawn)
+                                    {
+                                        <figure class="student-lesson-graph">
+                                            @AdvancedMathematicsVisualRenderer.RenderTrustedSvg(drawn)
+                                            <figcaption>@drawn.Accessibility.Description</figcaption>
+                                        </figure>
+                                    }
+                                }
+                                <a asp-controller="Grade12PrecalculusRubricStudent"
+                                   asp-action="Index" asp-route-lessonId="@Model.Id"
+                                   asp-route-exerciseNumber="@task.Number">
+                                    Submit Try It @(task.Number - 93) for teacher review
+                                </a>
+                            </li>
+                        }
+                    </ol>
+                </section>
+                <section class="student-card" aria-label="Edulytics original concept extensions">
+                    <h3>Additional function concept explanations</h3>
+                    <p>Six independent Edulytics explanations and practice references
+                       address the source section's six optional media topics.
+                       They are not embedded third-party videos.</p>
+                    <ol>
+                        @foreach (var resource in Grade12PrecalculusSection11SupportResources.All)
+                        {
+                            <li>
+                                <strong>@resource.Title</strong>
+                                <p>@resource.FirstPartyExplanation</p>
+                                <p>Related practice task numbers: @resource.RelatedPracticeNumbers</p>
+                            </li>
+                        }
+                    </ol>
+                </section>
+                <section class="student-card" aria-label="Edulytics original Cool-down">
+                    <h3>Cool-down — explain what you know</h3>
+                    <p>@Grade12PrecalculusSection11Exercises.CoolDown.Prompt</p>
+                    <a asp-controller="Grade12PrecalculusRubricStudent" asp-action="Index"
+                       asp-route-lessonId="@Model.Id"
+                       asp-route-exerciseNumber="@Grade12PrecalculusSection11Exercises.CoolDownNumber">
+                        Submit the Cool-down for teacher review
+                    </a>
+                </section>
+            </section>
+        }
+        @if (Model.LessonCode.StartsWith(
+                Grade12PrecalculusTeacherTaskBank.LessonPrefix, StringComparison.Ordinal) &&
+             Model.LessonCode != Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+             Grade12PrecalculusTeacherTaskBank.All.TryGetValue(Model.LessonCode, out var g12SourceTasks))
+        {
+            <section class="lesson-source-aligned-activities" aria-label="First-party teacher-reviewed Precalculus exercises">
+                <h2>Precalculus ? first-party teacher-reviewed source exercises</h2>
+                <p>These lesson-specific mathematics activities require a written explanation or
+                   labelled graph where appropriate. Your assigned mathematics teacher reviews
+                   your work; answers are not automatically marked.</p>
+                <details class="student-card">
+                    <summary>View all @g12SourceTasks.Count original Edulytics exercises for this lesson</summary>
+                    <ol>
+                        @foreach (var task in g12SourceTasks)
+                        {
+                            <li value="@task.Number">
+                                <p><strong>Exercise @task.Number:</strong> @task.Prompt</p>
+                                <a asp-controller="Grade12PrecalculusRubricStudent"
+                                   asp-action="Index"
+                                   asp-route-lessonId="@Model.Id"
+                                   asp-route-exerciseNumber="@task.Number">
+                                    Submit exercise @task.Number for teacher review
+                                </a>
+                            </li>
+                        }
+                    </ol>
+                </details>
+            </section>
+        }
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />

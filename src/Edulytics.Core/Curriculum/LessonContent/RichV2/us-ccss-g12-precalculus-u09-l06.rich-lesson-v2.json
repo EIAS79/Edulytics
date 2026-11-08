@@ -1,0 +1,223 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U09:L06",
+  "ContentVersion": "us-ccss-g12-precalculus-u09-l06-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U09:L06",
+      "CultureCode": "en",
+      "Title": "Solving Systems with Gaussian Elimination",
+      "ExplanationParagraphs": [
+        "Represent equations as augmented [A|b] with aligned variables.",
+        "Swap rows, scale a row by nonzero, add a multiple of another row.",
+        "Row-echelon form permits back-substitution.",
+        "Zero pivot may require row swap.",
+        "Rows0=nonzero are inconsistent.",
+        "A redundant row may leave free variables.",
+        "Apply augmented matrices to finance and three-unknown applications.",
+        "Independent Cool-down: demonstrate a valid example of the section's central operation and check exact answer."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Writing the Augmented Matrix for a System of Equations",
+          "Question": "Write augmented matrix for A=[[4, 1], [1, 5]] and b=[6, 11].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "[[4, 1, 6], [1, 5, 11]]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "[[4, 1, 6], [1, 5, 11]]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Writing a System of Equations from an Augmented Matrix Form",
+          "Question": "Translate augmented matrix [[4, 1, 6], [1, 7, 15]] into equations.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "Coefficient rows A=[[4, 1], [1, 7]] and RHS b=[6, 15]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "Coefficient rows A=[[4, 1], [1, 7]] and RHS b=[6, 15]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving a 2 × 2 System by Gaussian Elimination",
+          "Question": "Classify augmented system [[4, 1, 6], [8, 2, 12]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "Infinitely many solutions: redundant row.",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "Infinitely many solutions: redundant row.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Using Gaussian Elimination to Solve a System of Equations",
+          "Question": "Classify augmented system [[5, 1, 7], [10, 2, 15]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "No solution: inconsistent scaled row.",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "No solution: inconsistent scaled row.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving a Dependent System",
+          "Question": "Classify augmented system [[4, 1, 6], [8, 2, 12]].",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "Infinitely many solutions: redundant row.",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "Infinitely many solutions: redundant row.",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Performing Row Operations on a 3 × 3 Augmented Matrix to Obtain Row-Echelon Form",
+          "Question": "Solve [[8, 1, 2], [1, 11, -1], [2, -1, 8]]·X=[16, 20, 24] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving a System of Linear Equations Using Matrices",
+          "Question": "Solve [[5, 1, 2], [1, 6, -1], [2, -1, 10]]·X=[13, 10, 30] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving a Dependent System of Linear Equations Using Matrices",
+          "Question": "Solve [[6, 1, 2], [1, 7, -1], [2, -1, 7]]·X=[14, 12, 21] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Solving Systems of Equations with Matrices Using a Calculator",
+          "Question": "Solve [[5, 1, 2], [1, 7, -1], [2, -1, 9]]·X=[13, 12, 27] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Applying 2 × 2 Matrices to Finance",
+          "Question": "Solve [[9, 1, 2], [1, 11, -1], [2, -1, 9]]·X=[17, 20, 27] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        },
+        {
+          "Title": "Applying 3 × 3 Matrices to Finance",
+          "Question": "Solve [[8, 1, 2], [1, 8, -1], [2, -1, 9]]·X=[16, 14, 27] by Gaussian row elimination.",
+          "Method": "Use the specified matrix procedure and verify exact calculations.",
+          "Steps": [
+            "Plan: Use the specified matrix procedure and verify exact calculations.",
+            "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+            "Validate: Verify dimensions, determinant or original equations."
+          ],
+          "Answer": "X=[Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)]",
+          "Check": "Verify dimensions, determinant or original equations."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mathematical validity",
+          "Definition": "Operations follow matrix dimensions and algebraic identities.",
+          "Rule": "Verify results against original constraints.",
+          "Example": "Write augmented matrix for A=[[4, 1], [1, 5]] and b=[6, 11]."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Swap rows, scale a row by nonzero, add a multiple of another row.",
+          "Rule": "Swap rows, scale a row by nonzero, add a multiple of another row.",
+          "Example": "Translate augmented matrix [[4, 1, 6], [1, 7, 15]] into equations. Answer: Coefficient rows A=[[4, 1], [1, 7]] and RHS b=[6, 15]"
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Row-echelon form permits back-substitution.",
+          "Rule": "Row-echelon form permits back-substitution.",
+          "Example": "Classify augmented system [[4, 1, 6], [8, 2, 12]]. Answer: Infinitely many solutions: redundant row."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party matrix operations guide",
+          "Description": "Independently authored concept table.",
+          "PrimaryLabel": "Operation",
+          "SecondaryLabel": "Constraint",
+          "Rows": [
+            {
+              "Label": "Action",
+              "Cells": [
+                "add",
+                "multiply",
+                "invert"
+              ]
+            },
+            {
+              "Label": "Requirement",
+              "Cells": [
+                "equal shape",
+                "matching inner dims",
+                "square nonsingular"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Represent equations as augmented [A|b] with aligned variables.",
+        "Swap rows, scale a row by nonzero, add a multiple of another row.",
+        "Row-echelon form permits back-substitution."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore matrix dimension, rank or determinant restrictions.",
+          "WhyWrong": "May produce undefined operation or false unique solution.",
+          "Correction": "Inspect dimensions and singularity; check original equations."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify dimensions, determinant or original equations."
+        }
+      ]
+    }
+  ]
+}

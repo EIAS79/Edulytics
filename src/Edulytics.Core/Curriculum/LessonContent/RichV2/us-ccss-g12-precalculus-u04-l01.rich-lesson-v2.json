@@ -1,0 +1,265 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U04:L01",
+  "ContentVersion": "g12-u04-l01-firstparty-exponential-authoring-draft",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U04:L01",
+      "CultureCode": "en",
+      "Title": "Exponential Functions",
+      "ExplanationParagraphs": [
+        "An exponential function has the form f(x)=a·b^x (a≠0, b>0, b≠1). Its base is a repeated ratio, unlike constant differences in linear models.",
+        "Evaluate powers first, then products and translations. With positive a, b>1 means exponential growth and 0<b<1 means exponential decay.",
+        "To fit a model, infer b from output ratios over equal changes in x and solve a from one given point. A table with constant differences is linear; constant nonzero ratios can be exponential.",
+        "Compound interest uses A=P(1+r/n)^(nt), where the APR r is a decimal, n is compoundings per year and t is measured in years.",
+        "Continuous compounding A=Pe^(rt), while continuous growth or decay models are f(t)=ae^(kt) with k positive for growth and negative for decay.",
+        "Currency results should be rounded only after evaluating the full expression; for population and physical quantities, include units and context.",
+        "Independent Edulytics Cool-down: identify whether 5(1.2)^x is growth, fit exponential with f(0)=3 and f(2)=48, and calculate continuous interest on $1000 for 2 years at 4%.",
+        "Independent Try It 1: Classify x^4, (3/4)^x, and 7x.",
+        "Independent Try It 2: Find 2·3^(x−1)+1 at x=3.",
+        "Independent Try It 3: A city has 20,000 people growing 2% annually. Model 5-year population.",
+        "Independent Try It 4: A bacteria culture starts at 200 and doubles every 3 hours. Express count at t hours.",
+        "Independent Try It 5: Exponential f(0)=7 and f(2)=63. Find model.",
+        "Independent Try It 6: Given graph points (0,6),(1,18),(2,54), write f.",
+        "Independent Try It 7: Table y=4,12,36 at x=1,2,3. Find f=ab^x.",
+        "Independent Try It 8: Find amount of $1,000 at 8% APR compounded twice annually for 2 years.",
+        "Independent Try It 9: What deposit gives $5000 after 1 year at 12% compounded monthly?",
+        "Independent Try It 10: Evaluate e²/2.",
+        "Independent Try It 11: Find $2,000 after 3 years at 3% continuous interest.",
+        "Independent Try It 12: Mass starts at 60 and decays at 10% continuous rate. Find after 5 units."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recognize an exponential function",
+          "Question": "Which is exponential: 5x², 5(2)^x, or 5x+2?",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "The function 5(2)^x is exponential: x is in the exponent and base 2 is positive and not 1.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "The function 5(2)^x is exponential: x is in the exponent and base 2 is positive and not 1.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Evaluate powers and order",
+          "Question": "Evaluate g(x)=3·2^(x+1)−4 at x=2.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "g(2)=3·2³−4=20.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "g(2)=3·2³−4=20.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Interpret a growth model",
+          "Question": "A colony starts at 500 cells and grows 8% per hour. Model and predict after 3 hours.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "N(t)=500(1.08)^t; N(3)=500(1.08)³≈629.856 cells. Counts may be rounded to 630.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "N(t)=500(1.08)^t; N(3)=500(1.08)³≈629.856 cells. Counts may be rounded to 630.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Find model with known initial value",
+          "Question": "An investment is worth 800 initially and rises by factor 1.1 annually. Write value function.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "V(t)=800(1.1)^t for t≥0. Initial value V(0)=800.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "V(t)=800(1.1)^t for t≥0. Initial value V(0)=800.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Find exponential function from two points",
+          "Question": "An exponential f(x)=ab^x satisfies f(1)=6 and f(3)=54. Find f.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "f(3)/f(1)=b²=9 so b=3; a=6/3=2. f(x)=2·3^x.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "f(3)/f(1)=b²=9 so b=3; a=6/3=2. f(x)=2·3^x.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Model graph intercept and ratio",
+          "Question": "Exponential graph has y-intercept 4 and points (1,8),(2,16). Find function.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "f(x)=4·2^x, with positive range and horizontal asymptote y=0.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "f(x)=4·2^x, with positive range and horizontal asymptote y=0.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Fit exponential sequence from data",
+          "Question": "Observed readings x=0,1,2,3 are 5,15,45,135. Fit model.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "Ratio 3 per unit, f(x)=5·3^x. Check all four observations.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "Ratio 3 per unit, f(x)=5·3^x. Check all four observations.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Evaluate compound interest",
+          "Question": "Deposit $1,200 at APR 6% compounded quarterly for 3 years. Find amount.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "A=1200(1+0.06/4)^(4·3)=1200(1.015)^12≈$1434.74.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "A=1200(1+0.06/4)^(4·3)=1200(1.015)^12≈$1434.74.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Solve compound interest for principal",
+          "Question": "What principal yields $2,000 after 2 years at 4% compounded monthly?",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "P=2000/(1+0.04/12)^(24)≈$1846.48 (calculate before rounding).",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "P=2000/(1+0.04/12)^(24)≈$1846.48 (calculate before rounding).",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Evaluate natural exponential",
+          "Question": "Evaluate 2e^(−1) to four decimal places.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "2/e≈0.7358.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "2/e≈0.7358.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Continuous compounding growth",
+          "Question": "Deposit $3,500 at 5% compounded continuously for 4 years.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "A=3500e^(0.05·4)=3500e^0.2≈$4274.91.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "A=3500e^(0.05·4)=3500e^0.2≈$4274.91.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        },
+        {
+          "Title": "Continuous decay",
+          "Question": "A 100 g sample decays continuously at rate 0.07 per hour. Find 6-hour mass.",
+          "Method": "Use exact exponential model, ratio, domain and appropriate units.",
+          "Steps": [
+            "Plan: Use exact exponential model, ratio, domain and appropriate units.",
+            "M(t)=100e^(−0.07t), so M(6)=100e^(−0.42)≈65.7047 g.",
+            "Validate: Check initial value and exponential ratio; evaluate formula and units independently."
+          ],
+          "Answer": "M(t)=100e^(−0.07t), so M(6)=100e^(−0.42)≈65.7047 g.",
+          "Check": "Check initial value and exponential ratio; evaluate formula and units independently."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exponential function",
+          "Definition": "f(x)=a·b^x, a≠0, b>0 and b≠1.",
+          "Rule": "An exponential has constant output ratio for equal input increments.",
+          "Example": "f(x)=4·2^x."
+        },
+        {
+          "Title": "Growth and decay",
+          "Definition": "With positive initial amount, exponential base b>1 grows, 0<b<1 decays.",
+          "Rule": "B=1+r for growth by fraction r, B=1−r for decay.",
+          "Example": "200(1.08)^t or 200(0.92)^t."
+        },
+        {
+          "Title": "Compound interest",
+          "Definition": "A=P(1+r/n)^(nt).",
+          "Rule": "Nominal APR r as decimal; n annual periods, t years; P and A share currency.",
+          "Example": "1200(1+0.06/4)^12."
+        },
+        {
+          "Title": "Natural exponential",
+          "Definition": "e≈2.718281828; continuous compounding or natural exponential model.",
+          "Rule": "For A=Pe^(rt), rate r=0.05 means 5% per year.",
+          "Example": "3500e^(0.2)."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Linear differences versus exponential ratios",
+          "Description": "Independent table demonstrating the source's comparison skill.",
+          "PrimaryLabel": "Input x",
+          "SecondaryLabel": "Output y",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "Linear 5+3x",
+              "Cells": [
+                "5",
+                "8",
+                "11",
+                "14"
+              ]
+            },
+            {
+              "Label": "Exponential 5·2^x",
+              "Cells": [
+                "5",
+                "10",
+                "20",
+                "40"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Identify exponential ratio, not additive difference.",
+        "Use positive bases not 1.",
+        "Distinguish growth from decay.",
+        "Fit initial value and base from pairs.",
+        "Use compound versus continuous interest correctly."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat APR 6% as 6 in an exponent.",
+          "WhyWrong": "APR must be a decimal (0.06).",
+          "Correction": "Convert percentage to decimal before applying A=P(1+r/n)^(nt)."
+        },
+        {
+          "Mistake": "Assume constant increases imply exponential data.",
+          "WhyWrong": "Constant differences indicate linear, not exponential, behavior.",
+          "Correction": "Check ratios for equally spaced inputs."
+        }
+      ]
+    }
+  ]
+}

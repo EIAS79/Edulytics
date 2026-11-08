@@ -91,7 +91,8 @@ function scanBlueprints(dir) {
 function run() {
   const dir = path.join(root, 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs');
   const report = scanBlueprints(dir);
-  if (report.blueprintCount !== 17) throw Error('Expected 17 US CCSS publisher blueprint files');
+  // 17 prior course blueprints + 1 owner-approved G12 advanced source.
+  if (report.blueprintCount !== 18) throw Error('Expected all 18 US CCSS publisher blueprints to be screened');
   const blocked = report.entries.filter(x => x.status.startsWith('BLOCKED_'));
   const result = {
     scope: 'US-CCSS-MATH:G1-G12', editionSpecificRightsScreen: 'TECHNICAL_ONLY',

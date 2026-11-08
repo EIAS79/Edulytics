@@ -1,0 +1,630 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U08:L04",
+  "FirstPartyIndependentStudentMathQuestions": [
+    {
+      "SourceExercise": 1,
+      "FirstPartyStudentPolarGraphQuestion": "Explain three common polar graph symmetries.",
+      "TeacherMathematicalAnswer": "Reflect across polar axis (x-axis), lineθ=π/2 (y-axis), and pole (origin).",
+      "OriginalSourceGraphSkill": "Source1 polar symmetries",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 2,
+      "FirstPartyStudentPolarGraphQuestion": "Relate polar-axis and θ=π/2 symmetries to Cartesian axes.",
+      "TeacherMathematicalAnswer": "Polar axis corresponds x-axis; lineπ/2 corresponds y-axis; pole corresponds origin.",
+      "OriginalSourceGraphSkill": "Source2 symmetry axes",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 3,
+      "FirstPartyStudentPolarGraphQuestion": "Outline a systematic method to graph r=f(θ).",
+      "TeacherMathematicalAnswer": "Test symmetry, zeros, extrema, sign of r; sample θ and plot signed radius; connect continuously where valid.",
+      "OriginalSourceGraphSkill": "Source3 polar graph procedure",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 4,
+      "FirstPartyStudentPolarGraphQuestion": "Distinguish cardioid, limaçon and lemniscate.",
+      "TeacherMathematicalAnswer": "Cardioid has cusp a=b, limaçon a±b sin/cos may have loops, lemniscate is figure-eight r²=a²sin2θ/cos2θ.",
+      "OriginalSourceGraphSkill": "Source4 polar curve families",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 5,
+      "FirstPartyStudentPolarGraphQuestion": "How does the ratio a/b classify r=a+b cosθ?",
+      "TeacherMathematicalAnswer": "|a|=|b| cardioid, |a|<|b| inner-loop limaçon, |a|>|b| no inner loop (dimple/convex depends ratio).",
+      "OriginalSourceGraphSkill": "Source5 coefficients determine shape",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 6,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=5cos3θ.",
+      "TeacherMathematicalAnswer": "r(−θ)=r(θ), so polar-axis reflection symmetry.",
+      "OriginalSourceGraphSkill": "Source6 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 7,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=3−3cosθ.",
+      "TeacherMathematicalAnswer": "r(−θ)=r(θ), polar-axis symmetry.",
+      "OriginalSourceGraphSkill": "Source7 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 8,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=3+2sinθ.",
+      "TeacherMathematicalAnswer": "r(π−θ)=r(θ), vertical θ=π/2 symmetry.",
+      "OriginalSourceGraphSkill": "Source8 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 9,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=3sin2θ.",
+      "TeacherMathematicalAnswer": "r(θ+π)=r(θ), and appropriate angular reflections yield four-petal symmetry.",
+      "OriginalSourceGraphSkill": "Source9 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 10,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=4.",
+      "TeacherMathematicalAnswer": "Circular radius4, symmetry in all axes and about pole.",
+      "OriginalSourceGraphSkill": "Source10 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 11,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=2θ.",
+      "TeacherMathematicalAnswer": "Archimedean spiral on θ≥0, no global reflection symmetry in fixed domain.",
+      "OriginalSourceGraphSkill": "Source11 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 12,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=4cos(θ/2).",
+      "TeacherMathematicalAnswer": "Even in θ on symmetric domain; test negative radius representation for complete curve.",
+      "OriginalSourceGraphSkill": "Source12 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 13,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=2/θ.",
+      "TeacherMathematicalAnswer": "Defined θ≠0; compare r(−θ)=−r(θ), domain-specific pole rotation relation.",
+      "OriginalSourceGraphSkill": "Source13 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 14,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r=3sqrt(1−cos²θ).",
+      "TeacherMathematicalAnswer": "r=3|sinθ|, symmetric about both coordinate axes.",
+      "OriginalSourceGraphSkill": "Source14 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 15,
+      "FirstPartyStudentPolarGraphQuestion": "Test symmetry and valid θ-domain for polar equation r²=5sin2θ.",
+      "TeacherMathematicalAnswer": "Lemniscate along diagonal; test θ→θ+π and sign/domain constraints.",
+      "OriginalSourceGraphSkill": "Source15 polar symmetry substitution",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 16,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=3cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "circle center(1.5,0), radius1.5.",
+      "OriginalSourceGraphSkill": "Source16 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 17,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=4sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "circle center(0,2), radius2.",
+      "OriginalSourceGraphSkill": "Source17 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 18,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=2+2cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "right-facing cardioid cusp atθ=π.",
+      "OriginalSourceGraphSkill": "Source18 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 19,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=2−2cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "left-facing cardioid cusp atθ=0.",
+      "OriginalSourceGraphSkill": "Source19 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 20,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=5−5sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "down-facing cardioid.",
+      "OriginalSourceGraphSkill": "Source20 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 21,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=3+3sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "up-facing cardioid.",
+      "OriginalSourceGraphSkill": "Source21 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 22,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=3+2sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "limaçon without inner loop, 1≤r≤5.",
+      "OriginalSourceGraphSkill": "Source22 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 23,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=7+4sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "limaçon without inner loop,3≤r≤11.",
+      "OriginalSourceGraphSkill": "Source23 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 24,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=4+3cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "limaçon without inner loop,1≤r≤7.",
+      "OriginalSourceGraphSkill": "Source24 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 25,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=5+4cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "limaçon without inner loop,1≤r≤9.",
+      "OriginalSourceGraphSkill": "Source25 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 26,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=10+9cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "limaçon without inner loop,1≤r≤19.",
+      "OriginalSourceGraphSkill": "Source26 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 27,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=1+3sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "inner-loop limaçon, r can be negative.",
+      "OriginalSourceGraphSkill": "Source27 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 28,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=2+5sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "inner-loop limaçon, signed radius range[-3,7].",
+      "OriginalSourceGraphSkill": "Source28 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 29,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=5+7sinθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "inner-loop limaçon, signed radius range[-2,12].",
+      "OriginalSourceGraphSkill": "Source29 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 30,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=2+4cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "inner-loop limaçon, radius range[-2,6].",
+      "OriginalSourceGraphSkill": "Source30 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 31,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=5+6cosθ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "inner-loop limaçon, signed radius range[-1,11].",
+      "OriginalSourceGraphSkill": "Source31 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 32,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r²=36cos2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "horizontal lemniscate; |r|≤6 where cos2θ≥0.",
+      "OriginalSourceGraphSkill": "Source32 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 33,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r²=10cos2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "horizontal lemniscate; |r|≤sqrt10.",
+      "OriginalSourceGraphSkill": "Source33 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 34,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r²=4sin2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "diagonal lemniscate; |r|≤2.",
+      "OriginalSourceGraphSkill": "Source34 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 35,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r²=10sin2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "diagonal lemniscate; |r|≤sqrt10.",
+      "OriginalSourceGraphSkill": "Source35 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 36,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=3sin2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "four-petal rose, petal length3.",
+      "OriginalSourceGraphSkill": "Source36 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 37,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=3cos2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "four-petal rose, petal length3.",
+      "OriginalSourceGraphSkill": "Source37 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 38,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=5sin3θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "three-petal rose, petal length5.",
+      "OriginalSourceGraphSkill": "Source38 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 39,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=4sin4θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "eight-petal rose, petal length4.",
+      "OriginalSourceGraphSkill": "Source39 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 40,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=4sin5θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "five-petal rose, petal length4.",
+      "OriginalSourceGraphSkill": "Source40 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 41,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=−θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "Archimedean spiral with negative signed radius.",
+      "OriginalSourceGraphSkill": "Source41 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 42,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=2θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "Archimedean spiral with increasing positive radius.",
+      "OriginalSourceGraphSkill": "Source42 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 43,
+      "FirstPartyStudentPolarGraphQuestion": "Graph the independently authored polar curve r=−3θ and identify type, characteristic axes/loops.",
+      "TeacherMathematicalAnswer": "Archimedean spiral with negative radius scaling3.",
+      "OriginalSourceGraphSkill": "Source43 graph family circle/cardioid/limaçon/lemniscate/rose/spiral",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 44,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=1/θ, θ>0 on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "hyperbolic spiral; r→∞ as θ→0+, r→0 as θ→∞.",
+      "OriginalSourceGraphSkill": "Source44 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 45,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=1/sqrtθ, θ>0 on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "Lituus-like spiral, radius decays as inverse sqrtθ.",
+      "OriginalSourceGraphSkill": "Source45 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 46,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=2sinθtanθ on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "cissoid-like polar curve, poles where cosθ=0 unless removable.",
+      "OriginalSourceGraphSkill": "Source46 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 47,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=2sqrt(1−sin²θ) on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "r=2|cosθ|; investigate polar reflected circle-like loci.",
+      "OriginalSourceGraphSkill": "Source47 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 48,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=5+cos4θ on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "fourfold ripple, radius range[4,6].",
+      "OriginalSourceGraphSkill": "Source48 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 49,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=2−sin2θ on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "bounded radial ripple, r∈[1,3].",
+      "OriginalSourceGraphSkill": "Source49 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 50,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=θ²,θ≥0 on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "rapidly expanding power spiral.",
+      "OriginalSourceGraphSkill": "Source50 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 51,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=θ+1,θ≥0 on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "linearly growing Archimedean-type spiral.",
+      "OriginalSourceGraphSkill": "Source51 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 52,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=θsinθ on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "oscillatory signed-radius spiral with zeros kπ.",
+      "OriginalSourceGraphSkill": "Source52 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 53,
+      "FirstPartyStudentPolarGraphQuestion": "Plot r=θcosθ on a suitable domain; describe zeros, poles and radial envelope.",
+      "TeacherMathematicalAnswer": "oscillatory signed-radius spiral zeros π/2+kπ.",
+      "OriginalSourceGraphSkill": "Source53 technology graph and qualitative features",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 54,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=θ, r=−θ.",
+      "TeacherMathematicalAnswer": "Opposite signed radii shift plotted direction byπ; compare same θ domain.",
+      "OriginalSourceGraphSkill": "Source54 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 55,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=θ, r=θ+sinθ.",
+      "TeacherMathematicalAnswer": "Second spiral has bounded radial modulation ±1.",
+      "OriginalSourceGraphSkill": "Source55 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 56,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=sinθ+θ, r=sinθ−θ.",
+      "TeacherMathematicalAnswer": "Opposite radial growth direction plus sine modulation.",
+      "OriginalSourceGraphSkill": "Source56 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 57,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=2sin(θ/2), r=θsin(θ/2).",
+      "TeacherMathematicalAnswer": "Same sine angular zeros; second grows radial envelope with θ.",
+      "OriginalSourceGraphSkill": "Source57 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 58,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=sin(cos3θ), r=sin3θ.",
+      "TeacherMathematicalAnswer": "Different nested angular oscillation symmetries and zero positions.",
+      "OriginalSourceGraphSkill": "Source58 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 59,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=sin(3θ/2) over θ∈[0,4π] vs [0,8π].",
+      "TeacherMathematicalAnswer": "Increasing domain reveals repeated tracing and/or new lobes; determine parameter tracing period.",
+      "OriginalSourceGraphSkill": "Source59 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 60,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=sinθ+(sin(5θ/2))³.",
+      "TeacherMathematicalAnswer": "Mixed angular frequencies generate multi-lobed radial perturbations.",
+      "OriginalSourceGraphSkill": "Source60 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 61,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=3sin3θ, r=2sin3θ, r=sin3θ.",
+      "TeacherMathematicalAnswer": "Same3-petal orientations, petal sizes scale3,2,1.",
+      "OriginalSourceGraphSkill": "Source61 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 62,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=3+3cosθ, r=2+2cosθ, r=1+cosθ.",
+      "TeacherMathematicalAnswer": "Same cardioid shape and orientation, scale3:2:1.",
+      "OriginalSourceGraphSkill": "Source62 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 63,
+      "FirstPartyStudentPolarGraphQuestion": "Compare first-party polar plots: r=3θ, r=2θ, r=θ.",
+      "TeacherMathematicalAnswer": "Same spiral family with radial scale3,2,1.",
+      "OriginalSourceGraphSkill": "Source63 paired polar graph differences",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 64,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=3+2sinθ and r=2 for0≤θ<2π.",
+      "TeacherMathematicalAnswer": "3+2sinθ=2 -> sinθ=−1/2, θ=7π/6,11π/6, r=2.",
+      "OriginalSourceGraphSkill": "Source64 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 65,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=6−4cosθ and r=4.",
+      "TeacherMathematicalAnswer": "cosθ=1/2 -> θ=π/3,5π/3, r=4.",
+      "OriginalSourceGraphSkill": "Source65 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 66,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=1+sinθ and r=3sinθ.",
+      "TeacherMathematicalAnswer": "sinθ=1/2 -> θ=π/6,5π/6,r=3/2.",
+      "OriginalSourceGraphSkill": "Source66 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 67,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=1+cosθ and r=3cosθ.",
+      "TeacherMathematicalAnswer": "cosθ=1/2 -> θ=π/3,5π/3,r=3/2.",
+      "OriginalSourceGraphSkill": "Source67 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 68,
+      "FirstPartyStudentPolarGraphQuestion": "Find same-parameter intersections r=cos2θ and r=sin2θ.",
+      "TeacherMathematicalAnswer": "tan2θ=1 -> θ=π/8+kπ/2, k=0,1,2,3; pole is also shared geometrically.",
+      "OriginalSourceGraphSkill": "Source68 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 69,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=sin²2θ and r=1−cos4θ.",
+      "TeacherMathematicalAnswer": "1−cos4θ=2sin²2θ: equality only when sin2θ=0, giving shared pole.",
+      "OriginalSourceGraphSkill": "Source69 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 70,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=sqrt3 and r=2sinθ.",
+      "TeacherMathematicalAnswer": "θ=π/3,2π/3,r=sqrt3.",
+      "OriginalSourceGraphSkill": "Source70 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 71,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r²=sinθ and r²=cosθ with real signed r.",
+      "TeacherMathematicalAnswer": "θ=π/4 with r=±sqrt(sqrt2/2); other branches subject to nonnegative r².",
+      "OriginalSourceGraphSkill": "Source71 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    },
+    {
+      "SourceExercise": 72,
+      "FirstPartyStudentPolarGraphQuestion": "Find intersections r=1+cosθ and r=1−sinθ.",
+      "TeacherMathematicalAnswer": "cosθ=−sinθ -> θ=3π/4,7π/4 with corresponding positive r.",
+      "OriginalSourceGraphSkill": "Source72 polar curve intersection",
+      "PublisherFigureCopied": false,
+      "TeacherManualGraphMarking": true
+    }
+  ],
+  "IndependentTryIt": [
+    {
+      "Number": 1,
+      "Question": "Test symmetry of r=3+cosθ.",
+      "TeacherExpectedMath": "Polar-axis symmetry."
+    },
+    {
+      "Number": 2,
+      "Question": "Find max radius r=5−5cosθ.",
+      "TeacherExpectedMath": "10 atθ=π."
+    },
+    {
+      "Number": 3,
+      "Question": "Graph r=2cosθ.",
+      "TeacherExpectedMath": "Circle center(1,0),radius1."
+    },
+    {
+      "Number": 4,
+      "Question": "Graph r=2+2cosθ.",
+      "TeacherExpectedMath": "Right-facing cardioid."
+    },
+    {
+      "Number": 5,
+      "Question": "How many petals does r=3sin5θ have?",
+      "TeacherExpectedMath": "Five."
+    },
+    {
+      "Number": 6,
+      "Question": "Graph r=2θ on[0,2π].",
+      "TeacherExpectedMath": "Archimedean spiral radius from0 to4π."
+    }
+  ],
+  "IndependentCoolDown": {
+    "StudentQuestions": [
+      "Classify r=2+2cosθ.",
+      "Count petals r=3sin4θ.",
+      "Test r=5−2cosθ for polar-axis symmetry."
+    ],
+    "TeacherExpectedMath": [
+      "Cardioid cusp atθ=π.",
+      "8 petals.",
+      "Yes because cos(−θ)=cosθ."
+    ],
+    "OriginalPublisherCoolDownCopied": false
+  },
+  "SourceExercisesReviewed": 72,
+  "StageC": "REUSE_EXISTING_MANUAL_POLAR_GRAPH_MARKING",
+  "StageD": "NOT_RUN"
+}

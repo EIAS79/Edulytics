@@ -1,0 +1,173 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH:G12:PRECALC:OPENSTAX-2017:U11:L05",
+  "ContentVersion": "us-ccss-g12-precalculus-u11-l05-abc",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:U11:L05",
+      "CultureCode": "en",
+      "Title": "Counting Principles",
+      "ExplanationParagraphs": [
+        "Addition principle counts disjoint alternative options by summing possibilities.",
+        "Multiplication principle counts successive independent stages by multiplying counts.",
+        "Ordered k selections from n distinct items: nPk=n!/(n−k)!.",
+        "Unordered combinations nCk=n!/(k!(n−k)!).",
+        "A set of n distinct items has2^n subsets including empty set.",
+        "Independent Cool-down: calculate a representative source-family example and check the result with the definition."
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Using the Addition Principle",
+          "Question": "Choose one color from 3 and one shape from7; how many outcomes?",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "21.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "21.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Using the Multiplication Principle",
+          "Question": "Arrange 4 distinct objects in a row.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "24.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "24.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Finding the Number of Permutations Using the Multiplication Principle",
+          "Question": "Ordered selection of 5 from9 distinct objects.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "15120.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "15120.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "using the Multiplication Principle?",
+          "Question": "Unordered selection of 6 from10 distinct objects.",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "210.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "210.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "have the same answers?",
+          "Question": "How many subsets of a set with 2 elements?",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "4.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "4.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Finding the Number of Subsets of a Set",
+          "Question": "Choose one of 3 disjoint colors or6 disjoint patterns; how many single choices?",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "9.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "9.",
+          "Check": "Verify by substitution or counting."
+        },
+        {
+          "Title": "Finding the Number of Permutations of n Non-Distinct Objects",
+          "Question": "Choose one color from 4 and one shape from7; how many outcomes?",
+          "Method": "Use exact source-family sequence/combinatorial/probability relation.",
+          "Steps": [
+            "Plan: Use exact source-family sequence/combinatorial/probability relation.",
+            "28.",
+            "Validate: Verify by substitution or counting."
+          ],
+          "Answer": "28.",
+          "Check": "Verify by substitution or counting."
+        }
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Core definition",
+          "Definition": "Addition principle counts disjoint alternative options by summing possibilities.",
+          "Rule": "Multiplication principle counts successive independent stages by multiplying counts.",
+          "Example": "21."
+        },
+        {
+          "Title": "Derived lesson principle 2",
+          "Definition": "Multiplication principle counts successive independent stages by multiplying counts.",
+          "Rule": "Multiplication principle counts successive independent stages by multiplying counts.",
+          "Example": "Arrange 4 distinct objects in a row. Answer: 24."
+        },
+        {
+          "Title": "Derived lesson principle 3",
+          "Definition": "Ordered k selections from n distinct items: nPk=n!/(n−k)!.",
+          "Rule": "Ordered k selections from n distinct items: nPk=n!/(n−k)!.",
+          "Example": "Ordered selection of 5 from9 distinct objects. Answer: 15120."
+        }
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent mathematical progression and counting table",
+          "Description": "First-party numeric reference examples.",
+          "PrimaryLabel": "Concept",
+          "SecondaryLabel": "Formula",
+          "Rows": [
+            {
+              "Label": "Progression",
+              "Cells": [
+                "arithmetic",
+                "geometric",
+                "probability"
+              ]
+            },
+            {
+              "Label": "Core formula",
+              "Cells": [
+                "a1+(n−1)d",
+                "a1r^(n−1)",
+                "favorable/total"
+              ]
+            }
+          ],
+          "Items": [],
+          "SecondaryItems": []
+        }
+      ],
+      "Videos": [],
+      "SummaryPoints": [
+        "Addition principle counts disjoint alternative options by summing possibilities.",
+        "Multiplication principle counts successive independent stages by multiplying counts.",
+        "Ordered k selections from n distinct items: nPk=n!/(n−k)!."
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confuse index, count, order or probability assumptions.",
+          "WhyWrong": "Leads to incorrect exponent, multiplicity or denominator.",
+          "Correction": "Identify model and count conditions before computing."
+        },
+        {
+          "Mistake": "Accepting an answer without validating the original problem conditions.",
+          "WhyWrong": "An algebraic candidate can violate a given domain, interval, sign, model assumption or unit restriction.",
+          "Correction": "Verify by substitution or counting."
+        }
+      ]
+    }
+  ]
+}
