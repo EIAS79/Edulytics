@@ -148,6 +148,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u10.l10.fourths_equal",
             "uae.g1.u11.l01.cubes_prisms",
             "uae.g1.u11.l02.cones_cylinders",
+            "uae.g1.u11.l03.three_d_pattern",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -3738,6 +3739,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeG1Final29(99, family, random),
             "uae.g1.u11.l02.cones_cylinders" =>
                 BuildUaeG1Final29(100, family, random),
+            "uae.g1.u11.l03.three_d_pattern" =>
+                BuildUaeG1Final29(101, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -7930,6 +7933,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u11.l01.cubes_prisms" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u11.l02.cones_cylinders" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u11.l03.three_d_pattern" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
