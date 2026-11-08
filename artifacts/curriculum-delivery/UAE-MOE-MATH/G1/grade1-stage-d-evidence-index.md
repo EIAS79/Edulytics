@@ -24,3 +24,12 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Repair: change eight UAE Unit4 verifier branches to use actual parameters dictionary, and rename shadowed parser variable from value to parsedUaeValue. No test is declared passed on the new repair SHA.
 - Link: https://github.com/EIAS79/Edulytics/actions/runs/42508673780
 - Final gate remains NO_GO; authenticated multi-role E2E not run.
+
+## Second actual GitHub-hosted Stage D attempt
+- Run 42508979016, exact branch SHA 42a885219ba718e5494c42f1b758cf3b95adb8a5.
+- Restore PASS and full .NET solution Build PASS.
+- Grade 1 focused .NET tests: 110 executed; **47 PASS, 63 FAIL**, no skipped tests in selected suite. All 63 were first route-resolution assertions for new lesson families, not yet math correctness outcomes.
+- Confirmed source: official Practice projection chose the new Arabic academic translation while reviewed target-rule title patterns were anchored to original English metadata, even though each rule has an exact LessonCode anchor.
+- Repair: preserve Arabic as canonical, attempt reviewed exact-code English metadata only for scoped Practice routing after canonical lookup fails. Preserve fail-closed skill/family and code-anchor validation.
+- Source evidence gate remains BLOCKED; authenticated E2E remains NOT_RUN. No D_VERIFIED claims.
+- Run URL: https://github.com/EIAS79/Edulytics/actions/runs/42508979016

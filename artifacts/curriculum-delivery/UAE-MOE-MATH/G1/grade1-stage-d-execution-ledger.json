@@ -3868,20 +3868,23 @@
     }
   ],
   "buildLatestAttempt": {
-    "runId": 42508673780,
-    "jobId": 128816777244,
-    "testedSha": "b806fa6e37196a9cd7e2b6d911a6e83c7af4ee6b",
-    "testedRefKind": "pull_request_head",
-    "status": "FAIL",
-    "compileErrors": [
-      "CS0103",
-      "CS0136",
-      "CS0165"
-    ],
-    "sourceFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42508673780",
-    "stageDRepair": "Fixed shadowed C# verifier locals and reference to undeclared p in UAE unit4 scoped branches",
+    "runId": 42508979016,
+    "jobId": 128817702438,
+    "testedSha": "42a885219ba718e5494c42f1b758cf3b95adb8a5",
+    "testedRefKind": "push",
+    "status": "BUILD_PASS__UAE_TESTS_63_FAILED_47_PASSED",
+    "restore": "PASS",
+    "fullSolutionBuild": "PASS",
+    "targetedTestSuite": {
+      "total": 110,
+      "passed": 47,
+      "failed": 63,
+      "skipped": 0
+    },
+    "testFailureRoot": "LessonPracticeCapabilityResolver.TryResolve failed in 63 new G1 scoped tests; Arabic canonical translation does not match anchored English-metadata lesson practice titles",
+    "fix": "Use reviewed exact LessonCode-matched English metadata as routing-only fallback without changing Arabic lesson content; retest required",
+    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42508979016",
     "retest": "NOT_RUN_ON_REPAIR_SHA"
   },
-  "lastKnownGitHubRunId": 42508673780
+  "lastKnownGitHubRunId": 42508979016
 }

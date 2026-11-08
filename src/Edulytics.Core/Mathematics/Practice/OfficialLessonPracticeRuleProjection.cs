@@ -146,16 +146,52 @@ internal static class OfficialLessonPracticeRuleProjection
                         continue;
                     }
 
+                    // Resolve the Arabic canonical learner translation first.
+                    // A reviewed exact-LessonCode rule may still use the existing
+                    // English metadata title. Use it only for code-anchored
+                    // Practice routing; never as a learner-content fallback.
                     var translation = ChooseTranslation(pack, lesson);
-                    if (translation is not null &&
+                    SupportingPracticeTargetRule? canonicalRule = null;
+                    if (translation is not null)
+                    {
                         SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
                             lesson.LessonCode,
                             translation.Title,
                             translation.Explanation,
                             translation.KeyConceptsAndRules,
                             translation.WorkedExamples,
-                            out var canonicalRule) &&
-                        canonicalRule is not null &&
+                            out canonicalRule);
+                    }
+
+                    if ((canonicalRule is null ||
+                         !IsRuntimeReadyRule(canonicalRule, skillIds, familyById)) &&
+                        string.Equals(pack.PackCode,
+                            MathematicsCurriculumPackRegistry.UaeCode,
+                            StringComparison.Ordinal))
+                    {
+                        var metadataTranslation = lesson.Translations.FirstOrDefault(
+                            t => t.CultureCode.StartsWith("en",
+                                StringComparison.OrdinalIgnoreCase));
+                        if (metadataTranslation is not null &&
+                            !ReferenceEquals(metadataTranslation, translation) &&
+                            SupportingPracticeTargetRuleRegistry.TryResolveReviewedOfficialLesson(
+                                lesson.LessonCode,
+                                metadataTranslation.Title,
+                                metadataTranslation.Explanation,
+                                metadataTranslation.KeyConceptsAndRules,
+                                metadataTranslation.WorkedExamples,
+                                out var metadataRule) &&
+                            metadataRule is not null &&
+                            metadataRule.CodePatterns.Contains(
+                                "^" + lesson.LessonCode + "$",
+                                StringComparer.Ordinal) &&
+                            IsRuntimeReadyRule(metadataRule, skillIds, familyById))
+                        {
+                            canonicalRule = metadataRule;
+                        }
+                    }
+
+                    if (canonicalRule is not null &&
                         IsRuntimeReadyRule(canonicalRule, skillIds, familyById))
                     {
                         projected.Add(new LessonPracticeContract(
