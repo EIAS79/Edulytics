@@ -1,0 +1,14 @@
+# UAE Grade 1 printed unit 6 lesson 4: استراتيجية حل المسائل: التخمين والتحقق والمراجعة
+
+Arabic student source: Grade 1 Common 2019–2020 local 02-1.pdf, SHA-256 B9E92BD0A3E66A57DF48DA85D569ED95A1CBA2D0F30232DFF79048950C30E4F3, pages PDF 142–147 (printed 471–476). Pages visually inspected using read-only contact-sheet renders. 2025–2026 Arabic term-3 MOE guide confirms 8 printed U6 lessons, but matching current 2025–2026 student teaching pages have not been verified; no parity claim with those unavailable pages. Non-licensed publisher illustrations and text not reproduced.
+
+| Source page | Source element category | Original Edulytics equivalent |
+|---|---|---|
+| PDF 142 | مطبوعة 471 | افتتاح الدرس وهدف العلاقة بين العشرات والآحاد: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+| PDF 143 | مطبوعة 472 | نموذج محسوس وشروح المعلم والأمثلة المحلولة: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+| PDF 144 | مطبوعة 473 | ممارسة موجهة وربط جملة عددية بالمجموعات: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+| PDF 145 | مطبوعة 474 | تطبيقات عددية متدرجة والتحقق من النتائج: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+| PDF 146 | مطبوعة 475 | تطبيقات قصصية وتقييم اختيار العملية: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+| PDF 147 | مطبوعة 476 | واجب منزلي أو تقويم ختامي ومراجعة المفهوم: تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l04.guess_check_revise |
+
+Stage A: reviewed existing lesson, compared goals, age-appropriate whole-number ranges, manipulatives, base-ten models, guided examples, story problems, independent/home activities and assessment. Stage B: existing valid identity preserved; authored distinct Arabic instruction, three worked examples, concrete models and exercises, misconception analysis, teacher direction and original exit ticket. Stage C: reused existing exact engine with lesson-scoped family uae.g1.u07.l04.guess_check_revise, strict original-parameter independent verifier and targeted test WRITTEN_NOT_RUN; teacher reviews drawings and explanations. No full build, CI or Stage D.
