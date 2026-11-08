@@ -12,8 +12,12 @@ on:
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Core/Mathematics/**'
       - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/**'
       - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
       - 'tools/curriculum/uae_g1_stage_d_gate.py'
+      - 'tools/curriculum/uae_g1_stage_d_authenticated_https.py'
+      - 'tools/curriculum/uae_g1_stage_d_browser_rtl.py'
   workflow_dispatch:
 
 permissions:
@@ -110,6 +114,12 @@ jobs:
         with:
           name: uae-g1-stage-d-102-authenticated-https-${{ github.run_id }}
           path: artifacts/uae-g1-stage-d/runtime/
+      - name: Retrieve actual Chromium visual artifact for this same Actions run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-browser-rtl-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/browser-rtl/
       - name: Evaluate real run-linked final CI, source, RTL and approvals (fail-closed)
         run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase final
       - name: Upload actual candidate safety results, even on NO_GO
@@ -159,8 +169,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Compile dedicated UAE G1 HTTPS probe
-        run: python3 -m py_compile tools/curriculum/uae_g1_stage_d_authenticated_https.py
+      - name: Compile dedicated UAE G1 HTTPS and Chromium RTL probes
+        run: |
+          python3 -m py_compile tools/curriculum/uae_g1_stage_d_authenticated_https.py
+          python3 -m py_compile tools/curriculum/uae_g1_stage_d_browser_rtl.py
       - name: Build and migrate disposable PostgreSQL only
         run: |
           set -euo pipefail
@@ -170,6 +182,10 @@ jobs:
           dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output /tmp/g1-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install pinned Playwright Chromium for real Arabic desktop/mobile screenshots
+        run: |
+          python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
       - name: Real HTTPS with four authenticated UAE roles and all 102 pages/204 persisted grades
         env:
           Edulytics__Deployment__CleanBootstrap: 'false'
@@ -220,11 +236,26 @@ jobs:
             tail -n 130 /tmp/g1-web.log | grep -Eiv 'password|credential|secret' || true
             exit 1
           fi
+          # A real Chromium engine, not HTML markers alone: both desktop/mobile,
+          # every canonical Arabic lesson and eight full-page evidence images.
+          if ! python3 tools/curriculum/uae_g1_stage_d_browser_rtl.py; then
+            echo 'UAE Grade1 authenticated Chromium RTL visual smoke probe failed'
+            tail -n 90 /tmp/g1-web.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
       - name: Preserve real UAE Grade1 disposable E2E evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: uae-g1-stage-d-102-authenticated-https-${{ github.run_id }}
           path: /tmp/uae-g1-stage-d-authenticated-102-lessons.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve Grade1 real Chromium RTL screenshot and responsive DOM evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-browser-rtl-${{ github.run_id }}
+          path: /tmp/uae-g1-stage-d-browser-rtl/
           if-no-files-found: warn
           retention-days: 30

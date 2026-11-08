@@ -209,6 +209,40 @@ def report(phase):
                 missing_technical.append(
                     "G1_AUTHENTICATED_RUNTIME_COUNT_OR_SHA_MISMATCH"
                 )
+        # Cross-check real browser pixels, not merely HTML dir/lang attributes.
+        # Browser smoke PASS is separate from human screenshot/a11y sign-off.
+        browser_path = Path(
+            "artifacts/uae-g1-stage-d/browser-rtl/report.json"
+        )
+        if not browser_path.is_file():
+            missing_technical.append("G1_CHROMIUM_RTL_BROWSER_ARTIFACT_MISSING")
+        else:
+            try:
+                browser = read(browser_path)
+                pages = browser.get("pages", [])
+                required_browser = (
+                    browser.get("candidateSha") == current_sha and
+                    browser.get("studentAuthenticated") is True and
+                    browser.get("rtlDesktopLessons") == 102 and
+                    browser.get("rtlMobileLessons") == 102 and
+                    browser.get("screenshotsWritten") == 8 and
+                    len(pages) == 204 and
+                    len({(p.get("lessonCode"), p.get("viewportWidth"))
+                         for p in pages}) == 204 and
+                    all(
+                        p.get("browserRtlComputedStyle") is True and
+                        p.get("arabicActualDOM") is True and
+                        p.get("allSixCanonicalSections") is True and
+                        p.get("noArabicBodyOverflow") is True
+                        for p in pages
+                    )
+                )
+            except (ValueError, OSError, TypeError, AttributeError):
+                required_browser = False
+            if not required_browser:
+                missing_technical.append(
+                    "G1_CHROMIUM_102_DESKTOP_MOBILE_SHA_OR_RTL_MISMATCH"
+                )
         if stage_d.get("DVerifiedLessonCount") != 102:
             missing_technical.append("STAGE_D_NOT_VERIFIED_FOR_ALL_102_LESSONS")
         if stage_d.get("rights") != "CLEARED":
