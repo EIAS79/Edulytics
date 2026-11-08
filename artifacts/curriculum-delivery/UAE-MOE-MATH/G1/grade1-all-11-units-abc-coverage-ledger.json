@@ -5,8 +5,8 @@
   "Pathway": "Common",
   "TargetLanguage": "ar",
   "ReferenceStatus": "PROVISIONAL",
-  "EvidenceMethod": "Local 368-page Arabic Grade 1 book cover, table of contents and printed book termination inspected",
-  "SourceFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\رياضيات كتاب الطالب 1 22_2.pdf",
+  "EvidenceMethod": "2025-2026 Arabic student book / 8 pages of lesson 1 inspected plus 2019-2020 Arabic volumes and 2025-2026 term 2/3 MOE comprehensive-guide TOC; see grade1-verified-arabic-source-baseline-20261108.md",
+  "SourceFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_01\\01_Student_Books\\01.pdf",
   "SourceCoverYear": "2025-2026",
   "SourcePdfPages": 368,
   "SourcePdfSHA256": "BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44",
@@ -14,7 +14,7 @@
     7,
     17
   ],
-  "DocumentScopeNote": "Book PDF pages end at the end of pedagogical unit 3 (after the preliminary unit A and pedagogical units 1, 2 and 3). The cover/TOC advertises later units but their instructional pages are not in the selected PDF. Other local files are not certified as replacement Grade 1 volume. This absence cannot be fixed by guessing from the TOC.",
+  "DocumentScopeNote": "The 368-page 2025-2026 student volume teaches through pedagogical U3; later-volume reference availability is documented separately. 2019-2020 student PDFs 02 (U4), 03 (U7-U10) and 2025-2026 MOE guides for terms 2/3 support grade structure, but do not alone prove every student-book exercise was examined. 102 lessons include introductory unit A; no lesson is closed until A-C evidence complete.",
   "Units": [
     {
       "UnitIndex": 0,
@@ -54,7 +54,8 @@
       "LessonCount": 8,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "OLDER_STUDENT_U4_PLUS_MOE_2025_2026_TERM2_GUIDE"
     },
     {
       "UnitIndex": 5,
@@ -62,7 +63,8 @@
       "LessonCount": 15,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "MOE_2025_2026_TERM2_GUIDE_STUDENT_BOOK_PAGES_UNVERIFIED"
     },
     {
       "UnitIndex": 6,
@@ -70,7 +72,8 @@
       "LessonCount": 8,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "MOE_2025_2026_TERM3_GUIDE_STUDENT_BOOK_PAGES_UNVERIFIED"
     },
     {
       "UnitIndex": 7,
@@ -78,7 +81,8 @@
       "LessonCount": 6,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "OLDER_STUDENT_2019_2020_PLUS_MOE_2025_2026_TERM3_GUIDE"
     },
     {
       "UnitIndex": 8,
@@ -86,7 +90,8 @@
       "LessonCount": 9,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "OLDER_STUDENT_2019_2020_PLUS_MOE_2025_2026_TERM3_GUIDE"
     },
     {
       "UnitIndex": 9,
@@ -94,7 +99,8 @@
       "LessonCount": 10,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "OLDER_STUDENT_2019_2020_PLUS_MOE_2025_2026_TERM3_GUIDE"
     },
     {
       "UnitIndex": 10,
@@ -102,7 +108,8 @@
       "LessonCount": 4,
       "ArabicLessonsPrepared": 0,
       "SourcePresenceInSelectedPdf": "TOC_ONLY",
-      "ReadyForStageD": false
+      "ReadyForStageD": false,
+      "ArabicReferenceCoverage": "OLDER_STUDENT_2019_2020_PLUS_MOE_2025_2026_TERM3_GUIDE"
     }
   ],
   "Lessons": [
@@ -112,12 +119,15 @@
       "LessonIndex": 1,
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:01:01",
       "TitleFromExistingManifestEn": "Read and Write Numbers 1 to 5",
-      "SourcePdfState": "PDF_1_HAS_EDUCATIONAL_PAGES_NOT_FULLY_RECONCILED",
+      "SourcePdfState": "PDF_PAGES_34_TO_41_DIRECTLY_INSPECTED",
       "StageABCScope": "A_C_EXPLICIT_GAP",
       "ArabicContentAdded": true,
       "FullAtomicSourceComparison": false,
       "StageCTestExecuted": false,
-      "AcademicClosure": false
+      "AcademicClosure": false,
+      "SourcePageAudit": "lesson-1-atomic-coverage.md",
+      "StageBRefinement": "ORIGINAL_ARABIC_COUNT_READ_TRACE_WRITE",
+      "StageCBlocker": "RUNTIME_FAMILY_ROUTING"
     },
     {
       "Ordinal": 2,
@@ -1455,5 +1465,6 @@
   ],
   "StageDTests": "NOT_RUN",
   "CI": "NOT_RUN",
-  "Build": "NOT_RUN"
+  "Build": "NOT_RUN",
+  "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md"
 }
