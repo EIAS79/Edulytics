@@ -11202,6 +11202,28 @@
         "commonMistake": "خلط عدد القطع بقيم فئات نقدية مختلفة؛ المطلوب جميعها فلس واحد.",
         "summary": "عُد من العدد الأول مع كل فلس جديد."
       }
+    },
+    {
+      "id": "uae-g1-u3-l3-arabic-add-number-line-2025",
+      "titlePatterns": [
+        "^استخدام خط الأعداد للجمع$",
+        "^Use a Number Line to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:03$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "NUMBER_LINE_RIGHTWARD_SINGLE_UNIT_JUMPS_0_TO_12",
+      "families": [
+        "uae.g1.u04.l03.add_on_number_line"
+      ],
+      "content": {
+        "concept": "الجمع على خط ٠ إلى ١٢ بالانتقال قفزات إلى اليمين.",
+        "workedExample": "٥ + ٣: من ٥ اقفز ٦،٧،٨؛ المجموع ٨.",
+        "solution": "أبدأ من العدد الأكبر وأقفز خطوة واحدة لكل جزء مضاف.",
+        "commonMistake": "عدّ موضع البداية قفزة أو القفز يسارًا.",
+        "summary": "أتحرك يمينًا على خط الأعداد حتى أصل إلى المجموع."
+      }
     }
   ]
 }

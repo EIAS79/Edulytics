@@ -31838,6 +31838,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l03.add_on_number_line",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-0-to12-numberline-add-by-unit-hops-right",
+      "representations": [
+        "symbolic",
+        "number_line",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
