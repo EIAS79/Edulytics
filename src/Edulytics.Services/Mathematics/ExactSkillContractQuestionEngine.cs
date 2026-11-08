@@ -915,11 +915,13 @@ public sealed class ExactSkillContractQuestionEngine
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 7 &&
-                parameters.TryGetValue("b", out var b) && b is >= 1 and <= 6 &&
+            return parameters.TryGetValue("a", out var a) &&
+                parameters.TryGetValue("b", out var b) &&
                 parameters.TryGetValue("c", out var c) && c is >= 0 and <= 4 &&
-                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
-                (mode == 1 ? c >= 1 : c == 0) &&
+                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 4 &&
+                (mode == 4
+                    ? (a is >= 3 and <= 9 && b == a && c == 0)
+                    : (a is >= 1 and <= 7 && b is >= 1 and <= 6 && (mode == 1 ? c >= 1 : c == 0))) &&
                 parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == (mode == 2 ? b : total);
@@ -4414,12 +4416,18 @@ public sealed class ExactSkillContractQuestionEngine
         const string family = "uae.g1.u04.l06.act_out_problem_solving";
         var a = random.Next(1, 8);
         var b = random.Next(1, 7);
-        var mode = random.Next(0, 4);
+        var mode = random.Next(0, 5);
+        if (mode == 4)
+        {
+            a = random.Next(3, 10);
+            b = a;
+        }
         var c = mode == 1 ? random.Next(1, 5) : 0;
         var total = a + b + c;
         var prompt = mode switch
         {
             1 => $"مثّل القصة بمجموعات من القطع: في ثلاث سلال {a} و{b} و{c} أشياء. كم العدد الكلي؟ اكتب جملة الجمع.",
+            4 => $"مثّل مجموعتين متساويتين: في كل مجموعة {a} مكعبات. اكتب {a} + {b} = ؟.",
             2 => $"مثّل القصة: لدي {total} سيارة، وفي مجموعة {a} سيارات؛ كم سيارة في المجموعة الأخرى؟ أرسم الكل وأحدد الجزء المعروف.",
             3 => $"مثّل بأصابعك مجموعتين: {a} أزهار ثم {b} أزهار أخرى؛ كم زهرة الآن؟",
             _ => $"مثّل بأدوات العد: لدي {a} طيور ثم وصلت {b} أخرى؛ اكتب العدد الكلي."

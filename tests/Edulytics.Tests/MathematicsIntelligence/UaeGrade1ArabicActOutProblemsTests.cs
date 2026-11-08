@@ -7,6 +7,17 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class UaeGrade1ArabicActOutProblemsTests
 {
     [Fact]
+    public void ActOut_EqualGroups_AreExactAndRejectMalformedInput()
+    {
+        const string family = "uae.g1.u04.l06.act_out_problem_solving";
+        var p = new Dictionary<string, int> { ["a"] = 8, ["b"] = 8, ["c"] = 0, ["total"] = 16, ["mode"] = 4 };
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, "١٦"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "١٥"));
+        p["b"] = 7;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "١٥"));
+    }
+
+    [Fact]
     public void ActOut_GeneratesValidGroupsOrMissingPart()
     {
         const string code = "PED:UAE-MOE-MATH:L1:COMMON:04:06";
