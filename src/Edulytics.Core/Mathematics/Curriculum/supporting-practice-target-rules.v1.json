@@ -10937,6 +10937,28 @@
         "commonMistake": "افتراض أن وجود صفر يجعل الناتج صفرًا دائمًا.",
         "summary": "عدم الإزالة يبقي الكل، وإزالة الجميع تبقي صفرًا."
       }
+    },
+    {
+      "id": "uae-g1-u2-l5-arabic-vertical-subtraction-2025",
+      "titlePatterns": [
+        "^الطرح الرأسي$",
+        "^Vertical Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:05$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "VERTICAL_ONE_DIGIT_SUBTRACTION_WHOLE_TAKE_AWAY",
+      "families": [
+        "uae.g1.u03.l05.vertical_subtraction"
+      ],
+      "content": {
+        "concept": "كتابة الطرح في عمود مع الناتج تحت الخط.",
+        "workedExample": "٩ − ٣ = ٦ رأسيًا؛ الكل فوق المطروح.",
+        "solution": "أمثل الكل وأشطب المطروح، وأرتب الأعداد رأسيًا.",
+        "commonMistake": "عكس الأعلى والأسفل أو وضع الناتج فوق الخط.",
+        "summary": "الطرح الرأسي يساوي الطرح الأفقي للأعداد نفسها."
+      }
     }
   ]
 }
