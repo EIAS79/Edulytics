@@ -28,3 +28,9 @@ This cross-check supports the **102-unit-lesson count and order for planning**. 
 ## Resume checkpoint
 
 Branch: `curriculum/uae-g1-arabic-abc-20261108`. Lesson 1: `PED:UAE-MOE-MATH:L1:COMMON:01:01`; original source PDF p.34–41; status `A_C_EXPLICIT_GAP`, blockers `FULL_ATOMIC_SOURCE_AUDIT`, `RUNTIME_FAMILY_ROUTING`, `RTL_UI_NOT_VERIFIED`. Six authored Arabic lessons were prepared on branch, **none yet closed**. Proceed only with lesson 1 until closure evidence is complete; no Stage D/CI run.
+
+## Update — 02-1.pdf supplementary Grade 1 student source
+
+On 2026-11-08 the user added `C:\Users\khali\Downloads\New folder (2)\emirates\Grade_01\01_Student_Books\02-1.pdf` (194 PDF pages; SHA-256 `B9E92BD0A3E66A57DF48DA85D569ED95A1CBA2D0F30232DFF79048950C30E4F3`). Direct visual check of PDF cover pages 1–2 confirms Arabic Grade 1 Common **2019–2020**, and PDF TOC pages 4–6 show units 5 (`القيمة المكانية`) and 6 (`جمع الأعداد المكونة من رقمين وطرحها`). This adds an older student-book candidate for the previously uncovered segments; it does **not** establish that 2025–2026 student lesson pages for those units were read. Teacher guide 2025–2026 still governs newer outcomes, with student-level variation to be reconciled per lesson. The older absence statement in the initial baseline above is superseded only as to local file availability, not as to modern edition or source element certification.
+
+Latest sequential A–B–C ledger closes first 19 lessons and sets cursor 20. No Stage D/CI tests executed; do not interpret this source update as completion for units 5/6.
