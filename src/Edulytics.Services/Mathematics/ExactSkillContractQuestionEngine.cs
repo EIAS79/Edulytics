@@ -50,6 +50,12 @@ public sealed class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g1.u01.l01.read_write_1_5",
+            "uae.g1.u01.l02.zero_cardinality",
+            "uae.g1.u01.l03.read_write_6_8",
+            "uae.g1.u01.l04.read_write_9_10",
+            "uae.g1.u01.l05.read_write_11_15",
+            "uae.g1.u01.l06.read_write_16_20",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -819,6 +825,20 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
         // addition of two dot cubes up to 10. Fail closed for tampered tasks.
+        if (family.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal))
+        {
+            var (minimum, maximum) = UaeGrade1CountingRange(family);
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return minimum >= 0 &&
+                parameters.TryGetValue("count", out var count) &&
+                count >= minimum && count <= maximum &&
+                parameters.TryGetValue("scene", out var scene) &&
+                scene is >= 0 and <= 9 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var response) &&
+                response == count;
+        }
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
                 count is >= 1 and <= 20 &&
@@ -3148,6 +3168,18 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "uae.g1.u01.l01.read_write_1_5" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l02.zero_cardinality" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l03.read_write_6_8" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l04.read_write_9_10" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l05.read_write_11_15" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l06.read_write_16_20" =>
+                BuildUaeGrade1Count(family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4015,6 +4047,39 @@ public sealed class ExactSkillContractQuestionEngine
             "List HH, HT, TH, TT. Exactly one head occurs in HT and TH, so 2 of 4 equally likely outcomes are favourable.",
             AssessmentItemType.ShortAnswer,
             ("variant", variant));
+    }
+
+    private static (int Minimum, int Maximum) UaeGrade1CountingRange(string family) => family switch
+    {
+        "uae.g1.u01.l01.read_write_1_5" => (1, 5),
+        "uae.g1.u01.l02.zero_cardinality" => (0, 0),
+        "uae.g1.u01.l03.read_write_6_8" => (6, 8),
+        "uae.g1.u01.l04.read_write_9_10" => (9, 10),
+        "uae.g1.u01.l05.read_write_11_15" => (11, 15),
+        "uae.g1.u01.l06.read_write_16_20" => (16, 20),
+        _ => (-1, -1)
+    };
+
+    // Extends the existing exact-counting kernel; no new Mathematics engine.
+    private static ExactProblem BuildUaeGrade1Count(string family, Random random)
+    {
+        var (minimum, maximum) = UaeGrade1CountingRange(family);
+        if (minimum < 0)
+            throw new InvalidOperationException($"Unsupported UAE Grade 1 counting family: {family}");
+        var count = random.Next(minimum, maximum + 1);
+        var scene = random.Next(0, 10);
+        string[] objects = ["خرزات", "أزرار", "نجوم", "أقلام", "مكعبات",
+                            "زهور", "دوائر", "كرات", "ملصقات", "أشكال"];
+        var firstFrame = new string('●', Math.Min(count, 10)).PadRight(10, '□');
+        var secondFrame = count > 10
+            ? " | " + new string('●', count - 10).PadRight(10, '□')
+            : string.Empty;
+        return Problem(
+            family,
+            $"عدّ {objects[scene]} النموذج واكتب الرقم: {firstFrame}{secondFrame}. كم عنصرًا؟",
+            "عدّ كل نقطة مرة واحدة؛ وعند وجود إطارين اجمع عشرة الإطار الأول وآحاد الإطار الثاني. الإطارات الفارغة تمثل صفرًا.",
+            AssessmentItemType.Numeric,
+            ("count", count), ("scene", scene));
     }
 
     private static ExactProblem BuildG1L01Counting(Random random, int scale)
@@ -6205,6 +6270,8 @@ public sealed class ExactSkillContractQuestionEngine
 
         return problem.Family switch
         {
+            var uaeFamily when uaeFamily.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal) =>
+                p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
