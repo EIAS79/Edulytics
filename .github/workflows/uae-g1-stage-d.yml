@@ -1,0 +1,114 @@
+name: UAE Grade 1 Arabic Stage D - Real Candidate Gates
+
+on:
+  push:
+    branches:
+      - curriculum/uae-g1-stage-d-20261108
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g1-stage-d.yml'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G1/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - 'tools/curriculum/uae_g1_stage_d_gate.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uae-g1-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+  CI: 'true'
+
+jobs:
+  structural-and-source-handoff:
+    name: UAE G1 structural and independent source handoff
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact 102-lesson registry, source identity and Arabic canonical content
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase structural
+      - name: Fail closed on unknown source-element denominators and newer-edition gaps
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase handoff
+      - name: Upload Stage D source gate evidence (including failures)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-source-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/
+          retention-days: 30
+
+  shared-build-and-grader:
+    name: UAE G1 one isolated build + exact math and lesson routing tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore entire solution once
+        run: dotnet restore Edulytics.sln
+      - name: Compile solution and all targeted tests
+        run: dotnet build Edulytics.sln --configuration Release --no-restore
+      - name: Run UAE Grade 1 source-aligned family and verifier tests
+        run: |
+          mkdir -p artifacts/uae-g1-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade1Arabic|FullyQualifiedName~UaeGrade1Related' \
+            --logger 'trx;LogFileName=uae-g1-family.trx' \
+            --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Run UAE official source identity and student exposure policy checks
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeOfficialReferenceCoverageTests|FullyQualifiedName~UaeStudentLessonExposurePolicyTests' \
+            --logger 'trx;LogFileName=uae-g1-catalogue.trx' \
+            --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Preserve .NET test evidence on fail/pass
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/trx/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  final-ci-and-release-safety:
+    name: Fail closed until real auth E2E, source parity and required checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    if: always()
+    needs: [structural-and-source-handoff, shared-build-and-grader]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save actual dependency results and ref
+        shell: bash
+        env:
+          SOURCE_JOB_RESULT: ${{ needs.structural-and-source-handoff.result }}
+          DOTNET_JOB_RESULT: ${{ needs.shared-build-and-grader.result }}
+        run: |
+          mkdir -p artifacts/uae-g1-stage-d
+          printf 'source_job=%s\ndotnet_job=%s\ngithub_sha=%s\nref=%s\nrun_id=%s\n' \
+            "$SOURCE_JOB_RESULT" "$DOTNET_JOB_RESULT" \
+            "$GITHUB_SHA" "$GITHUB_REF" "$GITHUB_RUN_ID" \
+            > artifacts/uae-g1-stage-d/job-results.txt
+      - name: Final release gate — NO_GO until isolated authenticated multi-role E2E and RTL/DB/rights
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase final
+      - name: Upload actual candidate safety results, even on NO_GO
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-final-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/
+          retention-days: 30
