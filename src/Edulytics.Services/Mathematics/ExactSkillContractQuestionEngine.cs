@@ -71,6 +71,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u03.l01.subtraction_stories",
             "uae.g1.u03.l02.model_subtraction",
             "uae.g1.u03.l03.subtraction_number_sentences",
+            "uae.g1.u03.l04.subtract_zero_or_all",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -903,13 +904,14 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 string.Equals(answer.Trim(), left + right == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
         }
-        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences")
+        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
             return parameters.TryGetValue("whole", out var whole) && whole is >= 1 and <= 10 &&
-                parameters.TryGetValue("removed", out var removed) && removed is >= 1 && removed <= whole &&
+                parameters.TryGetValue("removed", out var removed) && removed >= 0 && removed <= whole &&
+                (family == "uae.g1.u03.l04.subtract_zero_or_all" ? removed == 0 || removed == whole : removed >= 1) &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == whole - removed;
@@ -3285,6 +3287,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1SubtractionStory(random, family),
             "uae.g1.u03.l03.subtraction_number_sentences" =>
                 BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l04.subtract_zero_or_all" =>
+                BuildUaeGrade1SubtractionStory(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4217,12 +4221,15 @@ public sealed class ExactSkillContractQuestionEngine
     private static ExactProblem BuildUaeGrade1SubtractionStory(Random random, string family)
     {
         var whole = random.Next(2, 11);
-        var removed = random.Next(1, whole + 1);
+        var removed = family == "uae.g1.u03.l04.subtract_zero_or_all" ?
+            (random.Next(0, 2) == 0 ? 0 : whole) : random.Next(1, whole + 1);
         var scene = random.Next(0, 6);
         string[] objects = ["أقلام", "زهور", "أوراق", "بطاقات", "كرات", "مكعبات"];
         var before = new string('●', whole);
         var after = new string('●', whole - removed);
-        var prompt = family == "uae.g1.u03.l03.subtraction_number_sentences" ?
+        var prompt = family == "uae.g1.u03.l04.subtract_zero_or_all" ?
+            $"لدي {whole} عناصر؛ أزيل {removed}. ما عدد العناصر الباقية؟ أكمل {whole} − {removed} = ؟. ابدأ بالنقاط {before} ثم عدّ ما بقي: {after}" :
+            family == "uae.g1.u03.l03.subtraction_number_sentences" ?
             $"أكمل جملة الطرح العددية: {whole} − {removed} = ؟. أشطب {removed} من {whole} نقاط: {before}، ثم أعد ما بقي." :
             family == "uae.g1.u03.l02.model_subtraction" ?
             $"مخطط جزء/جزء/كل: الكل {whole} {before}، الجزء المعروف {removed}، الجزء المجهول ؟. أكمل {whole} − {removed} = ؟. المتبقي: {after}" :
@@ -6491,7 +6498,7 @@ public sealed class ExactSkillContractQuestionEngine
                 p["right"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u02.l13.true_false_addition" =>
                 p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
-            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" =>
+            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),

@@ -10915,6 +10915,28 @@
         "commonMistake": "استخدام الجمع أو وضع المزال مكان الباقي.",
         "summary": "جملة طرح صحيحة تمثل عملية إزالة فعلية."
       }
+    },
+    {
+      "id": "uae-g1-u2-l4-arabic-subtract-zero-all-2025",
+      "titlePatterns": [
+        "^طرح الصفر وطرح الكل$",
+        "^Subtract Zero and Subtract All$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:04$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "SUBTRACT_ZERO_OR_WHOLE_IDENTITY_COMPLETE_REMOVAL",
+      "families": [
+        "uae.g1.u03.l04.subtract_zero_or_all"
+      ],
+      "content": {
+        "concept": "ن − ٠ = ن و ن − ن = ٠.",
+        "workedExample": "٤ − ٠ = ٤ و٤ − ٤ = ٠.",
+        "solution": "لا أزيل شيئًا في الحالة الأولى وأزيل الجميع في الثانية.",
+        "commonMistake": "افتراض أن وجود صفر يجعل الناتج صفرًا دائمًا.",
+        "summary": "عدم الإزالة يبقي الكل، وإزالة الجميع تبقي صفرًا."
+      }
     }
   ]
 }
