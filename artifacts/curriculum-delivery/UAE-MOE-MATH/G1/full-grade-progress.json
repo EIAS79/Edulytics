@@ -114,8 +114,11 @@
   "candidateSha": null,
   "sourceSnapshotId": "sha256:571ca1f4d8687100dfec0c239a4c9718f0104a5b65d81731398de6d21e1f1718",
   "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-  "runIds": [],
-  "lastKnownRunStatus": "NOT_RUN",
+  "runIds": [
+    42508673780
+  ],
+  "lastKnownRunStatus": "FAIL_BUILD_AT_B806FA6E",
   "releaseDecision": "NO_GO_TECHNICAL",
-  "note": "Real isolated GitHub runner tests must supply exact SHA and Run ID; no local tests on source-reading device."
+  "note": "Real isolated GitHub runner tests must supply exact SHA and Run ID; no local tests on source-reading device.",
+  "lastTestedSha": "b806fa6e37196a9cd7e2b6d911a6e83c7af4ee6b"
 }

@@ -942,8 +942,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("right", out var right) && right is >= 1 and <= 4 &&
                 left + right <= 10 &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
-                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == left + right;
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == left + right;
         }
         if (family == "uae.g1.u02.l04.add_zero")
         {
@@ -954,8 +954,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("right", out var right) && right is >= 0 and <= 9 &&
                 (left == 0 || right == 0) &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
-                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == left + right;
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == left + right;
         }
         if (family is "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine" or "uae.g1.u02.l11.make_ten_frame")
         {
@@ -970,80 +970,80 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("left", out var left) && left >= 0 && left <= total &&
                 parameters.TryGetValue("right", out var right) && right >= 0 && left + right == total &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
-                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == right;
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == right;
         }
         if (family == "uae.g1.u05.l01.count_back_1_2_3")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("start", out var start) && start is >= 4 and <= 20 && p.TryGetValue("steps", out var steps) && steps is >= 1 and <= 3 && p.TryGetValue("result", out var result) && result == start - steps && result >= 0 &&
+            return parameters.TryGetValue("start", out var start) && start is >= 4 and <= 20 && parameters.TryGetValue("steps", out var steps) && steps is >= 1 and <= 3 && parameters.TryGetValue("result", out var result) && result == start - steps && result >= 0 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["start"] - p["steps"]);
+                v == (parameters["start"] - parameters["steps"]);
         }
         if (family == "uae.g1.u05.l02.number_line_subtract")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("start", out var start) && start is >= 5 and <= 20 && p.TryGetValue("hops", out var hops) && hops is >= 1 and <= 9 && hops <= start && p.TryGetValue("result", out var result) && result == start - hops &&
+            return parameters.TryGetValue("start", out var start) && start is >= 5 and <= 20 && parameters.TryGetValue("hops", out var hops) && hops is >= 1 and <= 9 && hops <= start && parameters.TryGetValue("result", out var result) && result == start - hops &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["start"] - p["hops"]);
+                v == (parameters["start"] - parameters["hops"]);
         }
         if (family == "uae.g1.u05.l03.doubles_subtraction")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("part", out var part) && part is >= 1 and <= 10 && p.TryGetValue("whole", out var whole) && whole == 2 * part &&
+            return parameters.TryGetValue("part", out var part) && part is >= 1 and <= 10 && parameters.TryGetValue("whole", out var whole) && whole == 2 * part &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["part"]);
+                v == (parameters["part"]);
         }
         if (family == "uae.g1.u05.l04.story_subtraction_equation")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("whole", out var whole) && whole is >= 5 and <= 20 && p.TryGetValue("removed", out var removed) && removed >= 1 && removed <= 10 && removed < whole && p.TryGetValue("remaining", out var remaining) && remaining == whole - removed && p.TryGetValue("scene", out var scene) && scene is >= 0 and <= 2 &&
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 5 and <= 20 && parameters.TryGetValue("removed", out var removed) && removed >= 1 && removed <= 10 && removed < whole && parameters.TryGetValue("remaining", out var remaining) && remaining == whole - removed && parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 2 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["whole"] - p["removed"]);
+                v == (parameters["whole"] - parameters["removed"]);
         }
         if (family == "uae.g1.u05.l05.subtract_through_ten")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("whole", out var whole) && whole is >= 11 and <= 18 && p.TryGetValue("removed", out var removed) && removed is >= 2 and <= 9 && p.TryGetValue("toTen", out var toTen) && toTen == whole - 10 && toTen < removed && p.TryGetValue("rest", out var rest) && rest == removed - toTen && rest >= 1 && p.TryGetValue("result", out var result) && result == whole - removed && result == 10 - rest &&
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 11 and <= 18 && parameters.TryGetValue("removed", out var removed) && removed is >= 2 and <= 9 && parameters.TryGetValue("toTen", out var toTen) && toTen == whole - 10 && toTen < removed && parameters.TryGetValue("rest", out var rest) && rest == removed - toTen && rest >= 1 && parameters.TryGetValue("result", out var result) && result == whole - removed && result == 10 - rest &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["whole"] - p["removed"]);
+                v == (parameters["whole"] - parameters["removed"]);
         }
         if (family == "uae.g1.u05.l06.related_add_sub_facts")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("a", out var a) && a is >= 2 and <= 9 && p.TryGetValue("b", out var b) && b is >= 2 and <= 10 && p.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+            return parameters.TryGetValue("a", out var a) && a is >= 2 and <= 9 && parameters.TryGetValue("b", out var b) && b is >= 2 and <= 10 && parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["b"]);
+                v == (parameters["b"]);
         }
         if (family == "uae.g1.u05.l07.fact_family_four_equations")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("a", out var a) && a is >= 1 and <= 9 && p.TryGetValue("b", out var b) && b is >= 1 and <= 9 && p.TryGetValue("whole", out var whole) && whole == a + b && p.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
+            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 9 && parameters.TryGetValue("b", out var b) && b is >= 1 and <= 9 && parameters.TryGetValue("whole", out var whole) && whole == a + b && parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["mode"] < 2 ? p["whole"] : p["mode"] == 2 ? p["b"] : p["a"]);
+                v == (parameters["mode"] < 2 ? parameters["whole"] : parameters["mode"] == 2 ? parameters["b"] : parameters["a"]);
         }
         if (family == "uae.g1.u05.l08.missing_addend_part_whole")
         {
             var normalized = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
-            return p.TryGetValue("whole", out var whole) && whole is >= 4 and <= 20 && p.TryGetValue("known", out var known) && known >= 1 && known <= 10 && known < whole && p.TryGetValue("missing", out var missing) && missing == whole - known && p.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 4 and <= 20 && parameters.TryGetValue("known", out var known) && known >= 1 && known <= 10 && known < whole && parameters.TryGetValue("missing", out var missing) && missing == whole - known && parameters.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
-                v == (p["whole"] - p["known"]);
+                v == (parameters["whole"] - parameters["known"]);
         }
         if (UaeG1Final29Ordinal(family) >= 74)
             return VerifyUaeG1Final29(family, parameters, answer);
@@ -1066,8 +1066,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("pair", out var pair) &&
                     pair == (mode == 1 ? b + c : a + b) &&
                 parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
-                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == total;
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == total;
         }
         if (family == "uae.g1.u04.l08.commutative_add")
         {
@@ -1079,8 +1079,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
                 parameters.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
-                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == (mode == 0 ? a : total);
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == (mode == 0 ? a : total);
         }
         if (family == "uae.g1.u04.l07.make_ten_add")
         {
@@ -1093,8 +1093,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("remainder", out var remainder) && remainder == b - toTen && remainder >= 1 &&
                 parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
-                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == total;
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == total;
         }
         if (family == "uae.g1.u04.l06.act_out_problem_solving")
         {
@@ -1109,8 +1109,8 @@ public sealed class ExactSkillContractQuestionEngine
                     ? (a is >= 3 and <= 9 && b == a && c == 0)
                     : (a is >= 1 and <= 7 && b is >= 1 and <= 6 && (mode == 1 ? c >= 1 : c == 0))) &&
                 parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
-                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == (mode == 2 ? b : total);
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == (mode == 2 ? b : total);
         }
         if (family == "uae.g1.u04.l05.near_doubles_add")
         {
@@ -1131,8 +1131,8 @@ public sealed class ExactSkillContractQuestionEngine
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
             return parameters.TryGetValue("equalAddend", out var equalAddend) && equalAddend is >= 1 and <= 10 &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
-                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == equalAddend + equalAddend;
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == equalAddend + equalAddend;
         }
         if (family == "uae.g1.u04.l03.add_on_number_line")
         {
@@ -1200,8 +1200,8 @@ public sealed class ExactSkillContractQuestionEngine
                  family == "uae.g1.u03.l11.subtract_9" ? whole == 9 :
                  family == "uae.g1.u03.l12.subtract_10" ? whole == 10 : removed >= 1) &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
-                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
-                value == whole - removed;
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == whole - removed;
         }
         if (family == "uae.g1.u03.l13.related_add_subtract")
         {

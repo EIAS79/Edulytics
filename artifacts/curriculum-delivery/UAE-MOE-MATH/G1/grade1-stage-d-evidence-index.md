@@ -16,3 +16,11 @@
 - Release: **NO_GO_TECHNICAL** until actual compiler, grader tests, isolated multi-role E2E, RTL, CI, semantic/edition and rights gates.
 
 The Stage D gate is fail-closed. The structural job may pass while the separate academic-source handoff and final release gates correctly fail. A green isolated .NET test job alone does not constitute full-grade D verification. Preserve last stable A–B–C branch and do not merge or deploy.
+
+## First actual GitHub-hosted Stage D attempt
+- Run ID 42508673780 on SHA b806fa6e37196a9cd7e2b6d911a6e83c7af4ee6b.
+- Structural Arabic/source identity checks PASS; source-element parity gate FAIL CLOSED (unknown denominator/newer student volumes).
+- Restore PASS; full solution Build FAILED due CS0103 / CS0136 / CS0165 in UAE Grade 1 verifier, so subsequent targeted tests SKIPPED.
+- Repair: change eight UAE Unit4 verifier branches to use actual parameters dictionary, and rename shadowed parser variable from value to parsedUaeValue. No test is declared passed on the new repair SHA.
+- Link: https://github.com/EIAS79/Edulytics/actions/runs/42508673780
+- Final gate remains NO_GO; authenticated multi-role E2E not run.

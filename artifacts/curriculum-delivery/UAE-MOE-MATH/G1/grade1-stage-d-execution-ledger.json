@@ -129,7 +129,7 @@
   "integrationTests": "NOT_RUN",
   "authenticatedE2E": "NOT_RUN",
   "arabicRtlVisual": "NOT_RUN",
-  "finalCI": "NOT_RUN",
+  "finalCI": "FAIL",
   "rights": "NOT_VERIFIED",
   "humanApproval": "NOT_VERIFIED",
   "releaseDecision": "NO_GO_TECHNICAL",
@@ -3866,5 +3866,22 @@
       "dStatus": "D_PENDING_A_C_EVIDENCE",
       "updatedAtUtc": "2026-11-08T18:10:08+00:00"
     }
-  ]
+  ],
+  "buildLatestAttempt": {
+    "runId": 42508673780,
+    "jobId": 128816777244,
+    "testedSha": "b806fa6e37196a9cd7e2b6d911a6e83c7af4ee6b",
+    "testedRefKind": "pull_request_head",
+    "status": "FAIL",
+    "compileErrors": [
+      "CS0103",
+      "CS0136",
+      "CS0165"
+    ],
+    "sourceFile": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42508673780",
+    "stageDRepair": "Fixed shadowed C# verifier locals and reference to undeclared p in UAE unit4 scoped branches",
+    "retest": "NOT_RUN_ON_REPAIR_SHA"
+  },
+  "lastKnownGitHubRunId": 42508673780
 }
