@@ -78,3 +78,12 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Browser screenshot, responsive RTL, WCAG/a11y, real classroom UAT, current-edition source parity, human/rights approval and production rollout remain NOT VERIFIED.
 - Stage D lesson final classification stays 0/102 D_VERIFIED; recorded per-lesson technical test PASS is not academic clearance.
 - Final gate deliberately returned NO_GO because of missing independent evidence.
+
+## Eighth actual GitHub-hosted Stage D run — real Chromium automation passed; reviewer found visual defects
+- GitHub Run 42513905658; tested SHA 0db86200383982c53aea617000bfa922835f0b25; https://github.com/EIAS79/Edulytics/actions/runs/42513905658
+- Full solution Build and 118 selected .NET tests PASS; 102/102 authenticated Arabic lesson pages and 204/204 persisted Practice correct/malformed grades PASS.
+- Actual Playwright Chromium browser **102/102 desktop (1280px)** and **102/102 mobile (390px)** course reader checks PASS; all 8 sample full-page screenshots downloaded and verified with artifact SHA-256.
+- Manual inspection of screenshots FOUND English section headings, English Understand–Represent–Check generic concept diagrams, and an unconfigured YouTube discovery pane on Arabic lessons. Therefore visual acceptance **NOT APPROVED** even though automated RTL DOM passed.
+- Scope-specific correction authored: Arabic section/navigation headings; lesson parser option stops generic fallback visuals only for UAE G1; suppress unconfigured YouTube on G1. Other programmes' render defaults retained.
+- Expanded next run Chromium assertions require Arabic headings and no generic diagram/broken video pane; reviewer has NOT approved that change until the new candidate passes and screenshots are inspected.
+- Semantic source exercise denominators still UNKNOWN, newer T2/T3 Arabic student editions not verified, and no rights/human release approval. **NO_GO**.

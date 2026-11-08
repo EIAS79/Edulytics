@@ -6,7 +6,7 @@
   "Stage": "D",
   "GeneratedUtc": "2026-11-08T18:10:08+00:00",
   "baseABCSha": "78bded7ad1427e08c345455d44d3110fdc27efb1",
-  "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+  "candidateSha": "0db86200383982c53aea617000bfa922835f0b25",
   "sourceSnapshotId": "sha256:571ca1f4d8687100dfec0c239a4c9718f0104a5b65d81731398de6d21e1f1718",
   "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
   "schemaMigrationVersion": "NOT_DETERMINED",
@@ -128,8 +128,8 @@
   "unitTests": "PASS_110_OF_110",
   "integrationTests": "PASS_8_OF_8",
   "authenticatedE2E": "PASS_102_PAGES_204_PERSISTED",
-  "arabicRtlVisual": "HTML_MARKER_PASS_BROWSER_NOT_VERIFIED",
-  "finalCI": "FAIL_SOURCE_AND_HUMAN_RTL_RIGHTS_APPROVAL",
+  "arabicRtlVisual": "AUTOMATED_CHROMIUM_102_DESKTOP_AND_102_MOBILE_PASS_BUT_MANUAL_VISUAL_DEFECTS",
+  "finalCI": "FAIL_SOURCE_EDITION_SEMANTIC_PARITY_AND_HUMAN_VISUAL_APPROVAL",
   "rights": "NOT_VERIFIED",
   "humanApproval": "NOT_VERIFIED",
   "releaseDecision": "NO_GO_TECHNICAL",
@@ -4500,8 +4500,8 @@
     "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110",
     "sourceSemanticEquivalence": "UNKNOWN"
   },
-  "lastKnownGitHubRunId": 42512661110,
-  "lastTestedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+  "lastKnownGitHubRunId": 42513905658,
+  "lastTestedSha": "0db86200383982c53aea617000bfa922835f0b25",
   "authenticatedE2ELatestAttempt": {
     "runId": 42512661110,
     "testedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
@@ -4524,5 +4524,20 @@
     "rtlVisualA11yScreenshot": "NOT_TESTED",
     "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110",
     "artifactName": "uae-g1-stage-d-102-authenticated-https-42512661110"
+  },
+  "browserRtlLatestAttempt": {
+    "runId": 42513905658,
+    "testedSha": "0db86200383982c53aea617000bfa922835f0b25",
+    "testedRefKind": "push",
+    "automatedRtlDesktop": 102,
+    "automatedRtlMobile": 102,
+    "screenshotEvidence": 8,
+    "browserVersion": "Chromium 141.0.7390.37",
+    "screenshotShaIntegrity": "8_OF_8_PASS",
+    "humanImageReview": "ISSUES_FOUND_ENGLISH_SECTION_HEADERS_AND_GENERIC_DIAGRAM_AND_UNCONFIGURED_MEDIA",
+    "response": "Grade1-scoped Arabic UI titles; suppress ungrounded generic concept fallback; remove unconfigured media widget",
+    "retestOnNewSha": "NOT_YET_EXECUTED",
+    "humanVisualApproval": "NOT_GRANTED",
+    "githubRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42513905658"
   }
 }

@@ -233,7 +233,10 @@ def report(phase):
                         p.get("browserRtlComputedStyle") is True and
                         p.get("arabicActualDOM") is True and
                         p.get("allSixCanonicalSections") is True and
-                        p.get("noArabicBodyOverflow") is True
+                        p.get("noArabicBodyOverflow") is True and
+                        p.get("allSixSectionTitlesArabic") is True and
+                        p.get("noGenericEnglishInstructionalDiagram") is True and
+                        p.get("noUnconfiguredVideoWidget") is True
                         for p in pages
                     )
                 )

@@ -31,3 +31,9 @@
 - Per-lesson Stage D technical runtime checks: 102/102 PASS (no academic equivalence inferred).
 - Final Stage D D_VERIFIED closures: **0/102**.
 - First remaining incomplete lesson: ordinal **1**, not rebranded as complete.
+
+## Real Chromium visual review / regression action
+- Tested SHA 0db86200383982c53aea617000bfa922835f0b25 — Run 42513905658: automated 102 desktop + 102 mobile browser RTL smoke PASS; 8 actual screenshots uploaded and hash verified.
+- Manual image review identified **English core lesson headings, generic English concept models, and an unavailable media widget** on Arabic Grade 1 learner screens. These are real quality defects, not hidden by CI PASS.
+- Grade-1-only fixes authored and stricter screenshot checks added. **Retest not yet run on new candidate**. Human screenshot/a11y approval still UNVERIFIED.
+- Final source academic gap unchanged: 102 lesson-semantic denominators unknown and newer T2/T3 student exercise parity unavailable; **NO_GO**.

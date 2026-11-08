@@ -60,10 +60,43 @@ def inspect(page, ordinal, code, lesson_id, width, screenshot=False):
         raise AssertionError(f"UAE Grade1 browser visual DOM invalid ordinal={ordinal}, attrs={attrs}")
     if attrs["scrollWidth"] > attrs["clientWidth"] + 16:
         raise AssertionError(f"UAE Grade1 Arabic content horizontally overflows width={width}, ordinal={ordinal}, attrs={attrs}")
+    actual_headers = [
+        h.strip() for h in root.locator(
+            ".lesson-learning-section__header h2"
+        ).all_inner_texts()
+    ]
+    expected_headers = [
+        "الشرح", "المفاهيم والقواعد", "أمثلة محلولة",
+        "الحل خطوة بخطوة", "الأخطاء الشائعة", "ملخص الدرس"
+    ]
+    if actual_headers != expected_headers:
+        raise AssertionError(
+            f"UAE Grade1 lesson heading localization invalid at {ordinal}: {actual_headers}"
+        )
+    body_text = root.inner_text()
+    for placeholder in ("Concept model", "Understand", "Represent",
+                        "Instructional diagram"):
+        if placeholder in body_text:
+            raise AssertionError(
+                f"UAE Grade1 unapproved English placeholder {placeholder} at {ordinal}"
+            )
+    if page.locator(".lesson-mode-tab--active").count() and (
+        page.locator(".lesson-mode-tab--active").inner_text().strip() != "الدرس"
+    ):
+        raise AssertionError(
+            f"UAE Grade1 lesson navigation not localized at {ordinal}"
+        )
+    if "YouTube discovery could not load right now" in page.content():
+        raise AssertionError(
+            f"UAE Grade1 unconfigured YouTube widget leaked into canonical lesson {ordinal}"
+        )
     row = {
         "lessonOrdinalSorted":ordinal,"lessonCode":code,"viewportWidth":width,
         "browserRtlComputedStyle":True,"arabicActualDOM":True,
         "allSixCanonicalSections":True,"noArabicBodyOverflow":True,
+        "allSixSectionTitlesArabic":True,
+        "noGenericEnglishInstructionalDiagram":True,
+        "noUnconfiguredVideoWidget":True,
         "contentTextLength":attrs["textLength"],
     }
     if screenshot:

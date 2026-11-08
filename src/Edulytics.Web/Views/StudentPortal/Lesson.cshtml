@@ -32,16 +32,20 @@
         ViewData["Grade3AuthoredActivityAdoptionId"] is Guid g3AdoptionId
             ? g3AdoptionId
             : (Guid?)null;
-    ViewData["UseYouTubeStudioV2"] = true;
+    var isUaeGrade1Arabic = Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal);
+    var lessonNavTitle = isUaeGrade1Arabic ? "الدرس" : S["Lesson"].Value;
+    var practiceNavTitle = isUaeGrade1Arabic ? "التدريب" : P["Practice"].Value;
+    var backToLessonsTitle = isUaeGrade1Arabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
+    ViewData["UseYouTubeStudioV2"] = !isUaeGrade1Arabic;
 
     var sections = new[]
     {
-        new LessonReaderSection("01", L["Explanation"], "explanation", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.Explanation), sectionKind: "explanation")),
-        new LessonReaderSection("02", L["KeyConceptsAndRules"], "concepts", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.KeyConceptsAndRules), sectionKind: "concepts")),
-        new LessonReaderSection("03", L["WorkedExamples"], "examples", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.WorkedExamples), sectionKind: "examples")),
-        new LessonReaderSection("04", L["StepByStepSolutions"], "steps", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.StepByStepSolutions), orderedSteps: true, sectionKind: "steps")),
-        new LessonReaderSection("05", L["CommonMistakes"], "mistakes", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.CommonMistakes), sectionKind: "mistakes")),
-        new LessonReaderSection("06", L["QuickSummary"], "summary", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.QuickSummary), sectionKind: "summary"))
+        new LessonReaderSection("01", isUaeGrade1Arabic ? "الشرح" : L["Explanation"].Value, "explanation", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.Explanation), sectionKind: "explanation", includeFallbackVisual: !isUaeGrade1Arabic)),
+        new LessonReaderSection("02", isUaeGrade1Arabic ? "المفاهيم والقواعد" : L["KeyConceptsAndRules"].Value, "concepts", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.KeyConceptsAndRules), sectionKind: "concepts")),
+        new LessonReaderSection("03", isUaeGrade1Arabic ? "أمثلة محلولة" : L["WorkedExamples"].Value, "examples", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.WorkedExamples), sectionKind: "examples", includeFallbackVisual: !isUaeGrade1Arabic)),
+        new LessonReaderSection("04", isUaeGrade1Arabic ? "الحل خطوة بخطوة" : L["StepByStepSolutions"].Value, "steps", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.StepByStepSolutions), orderedSteps: true, sectionKind: "steps")),
+        new LessonReaderSection("05", isUaeGrade1Arabic ? "الأخطاء الشائعة" : L["CommonMistakes"].Value, "mistakes", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.CommonMistakes), sectionKind: "mistakes")),
+        new LessonReaderSection("06", isUaeGrade1Arabic ? "ملخص الدرس" : L["QuickSummary"].Value, "summary", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.QuickSummary), sectionKind: "summary"))
     };
 }
 <style>
@@ -91,19 +95,19 @@
     }
 </style>
 <div class="lesson-reader lesson-reader--student">
-    <a class="lesson-reader-back" asp-action="Learning"><span aria-hidden="true">←</span> @L["BackToLessons"]</a>
+    <a class="lesson-reader-back" asp-action="Learning"><span aria-hidden="true">←</span> @backToLessonsTitle</a>
 
     @if (unifiedPracticeAdoptionId.HasValue)
     {
-        <nav class="lesson-mode-tabs" aria-label="@S["Lesson"] / @P["Practice"]">
-            <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@S["Lesson"]</span>
+        <nav class="lesson-mode-tabs" aria-label="@lessonNavTitle / @practiceNavTitle">
+            <span class="lesson-mode-tab lesson-mode-tab--active" aria-current="page">@lessonNavTitle</span>
             <form asp-controller="StudentPractice" asp-action="StartLessonPractice" method="post">
                 @Html.AntiForgeryToken()
                 @* A fresh lesson page render is a new user action; do not reuse the CSRF token as the idempotency identity. *@
                 <input type="hidden" name="_idempotencyKey" value="@(Guid.NewGuid().ToString("N"))" />
                 <input type="hidden" name="curriculumAdoptionId" value="@unifiedPracticeAdoptionId.Value" />
                 <input type="hidden" name="lessonId" value="@Model.Id" />
-                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@P["Practice"]</button>
+                <button class="lesson-mode-tab lesson-mode-tab--practice" type="submit">@practiceNavTitle</button>
             </form>
         </nav>
     }
@@ -2586,7 +2590,9 @@
             }
         }
 
-        <partial name="_LessonYouTubeStudio"
+        @if (!isUaeGrade1Arabic)
+        {
+            <partial name="_LessonYouTubeStudio"
                  model="@(new LessonYouTubeStudioViewModel(
                      Model.Id,
                      Model.LessonCode,
@@ -2595,6 +2601,7 @@
                      Model.FrameworkName,
                      Model.RichContent,
                      Url.Action("LessonYouTube", "StudentPortal", new { id = Model.Id }) ?? string.Empty))" />
+        }
         <partial name="_LessonReviewedResources" model="Model" />
         @if (Model.LessonCode == "PED:US-CCSS-MATH:G1:U01:L01")
         {
