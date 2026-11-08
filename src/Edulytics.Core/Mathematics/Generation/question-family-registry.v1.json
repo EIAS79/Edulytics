@@ -31762,6 +31762,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l13.related_add_subtract",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-addition-fact-implies-two-related-subtractions-exact",
+      "representations": [
+        "symbolic",
+        "visual",
+        "part_part_whole"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

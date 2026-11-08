@@ -11113,6 +11113,28 @@
         "commonMistake": "عد العناصر المشطوبة بدل الباقية أو اعتبار ١٠ − ٠ = ٠.",
         "summary": "أطرح من ١٠ ثم أتحقق بجمع الناتج والمطروح."
       }
+    },
+    {
+      "id": "uae-g1-u2-l13-arabic-relate-add-subtract-2025",
+      "titlePatterns": [
+        "^ربط الجمع بالطرح$",
+        "^Relate Addition and Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:13$"
+      ],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "FACT_FAMILY_ADD_PARTS_TO_WHOLE_INFER_MISSING_SUBTRACTION_RESULT",
+      "families": [
+        "uae.g1.u03.l13.related_add_subtract"
+      ],
+      "content": {
+        "concept": "من الجمع أ + ب = ك نستنتج ك − أ = ب وك − ب = أ.",
+        "workedExample": "٣ + ٤ = ٧ ولذلك ٧ − ٣ = ٤ و٧ − ٤ = ٣.",
+        "solution": "أمثل جزأين وكلًا وأبدأ الطرح من الكل.",
+        "commonMistake": "طرح العدد الأكبر من الأصغر بدل طرح جزء من الكل.",
+        "summary": "ثلاثة أعداد مرتبطة تعطيني حقائق جمع وطرح."
+      }
     }
   ]
 }
