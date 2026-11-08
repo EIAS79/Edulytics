@@ -10871,6 +10871,28 @@
         "commonMistake": "حساب عدد الأشياء المزالة بدل الباقية.",
         "summary": "الكل − الجزء المغادر = الباقي."
       }
+    },
+    {
+      "id": "uae-g1-u2-l2-arabic-model-subtraction-2025",
+      "titlePatterns": [
+        "^تمثيل الطرح$",
+        "^Model Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:02$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "PART_PART_WHOLE_KNOWN_WHOLE_AND_PART_FIND_REMAINING",
+      "families": [
+        "uae.g1.u03.l02.model_subtraction"
+      ],
+      "content": {
+        "concept": "استنتاج الجزء المجهول من الكل والجزء المعلوم.",
+        "workedExample": "٩ هو الكل و٦ أحد الجزأين؛ الآخر ٣.",
+        "solution": "أعد جميع العناصر ثم أعزل الجزء المعلوم وأحصي الباقي.",
+        "commonMistake": "الخلط بين الكل وأحد الجزأين.",
+        "summary": "الكل − الجزء = الجزء الآخر."
+      }
     }
   ]
 }
