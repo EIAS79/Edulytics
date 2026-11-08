@@ -81,7 +81,9 @@ jobs:
             (SELECT count(*) FROM "Schools");"""
           result = subprocess.check_output(['psql','-h','127.0.0.1','-U','postgres','-d','edulytics_clean_ci','-A','-t','-F','|','-c',sql],text=True).strip()
           data = tuple(map(int,result.split('|')))
-          expected = (4,5110,5749,5110,0,0,0)
+          # The 73 published G12 Precalculus lessons add 73 lesson metadata/content rows
+          # and two distinct outcome links to the canonical clean seed.
+          expected = (4,5183,5751,5183,0,0,0)
           print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected)
           assert data == expected, 'Database invariant failure'
           PY
