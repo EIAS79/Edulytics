@@ -121,6 +121,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u07.l06.subtract_tens",
             "uae.g1.u07.l07.count_back_tens",
             "uae.g1.u07.l08.inverse_tens",
+            "uae.g1.u08.l01.tally_fives",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -1016,6 +1017,8 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["whole"] - p["known"]);
         }
+        if (UaeG1Final29Ordinal(family) >= 74)
+            return VerifyUaeG1Final29(family, parameters, answer);
         if (UaeGrade1Unit6Ordinal(family) > 0)
             return VerifyUaeGrade1Unit6(family, parameters, answer);
         if (UaeGrade1Unit5Ordinal(family) > 0)
@@ -3655,6 +3658,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit6(7, family, random),
             "uae.g1.u07.l08.inverse_tens" =>
                 BuildUaeGrade1Unit6(8, family, random),
+            "uae.g1.u08.l01.tally_fives" =>
+                BuildUaeG1Final29(74, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4880,6 +4885,245 @@ public sealed class ExactSkillContractQuestionEngine
             c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
         return int.TryParse(normalized, NumberStyles.Integer,
             CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    // First-party Grade 1 Arabic U7–U10 exact practice; open-ended modeling
+    // is expressly teacher-reviewed, not asserted as automatically graded.
+    private static int UaeG1Final29Ordinal(string family) => family switch
+    {
+        "uae.g1.u08.l01.tally_fives" => 74,
+        "uae.g1.u08.l02.record_table" => 75,
+        "uae.g1.u08.l03.make_picture_graph" => 76,
+        "uae.g1.u08.l04.read_picture_graph" => 77,
+        "uae.g1.u08.l05.make_bar_graph" => 78,
+        "uae.g1.u08.l06.read_bar_graph" => 79,
+        "uae.g1.u09.l01.compare_lengths" => 80,
+        "uae.g1.u09.l02.order_lengths" => 81,
+        "uae.g1.u09.l03.nonstandard_measure" => 82,
+        "uae.g1.u09.l04.guess_check_length" => 83,
+        "uae.g1.u09.l05.analog_hour" => 84,
+        "uae.g1.u09.l06.digital_hour" => 85,
+        "uae.g1.u09.l07.analog_half" => 86,
+        "uae.g1.u09.l08.digital_half" => 87,
+        "uae.g1.u09.l09.hour_or_half" => 88,
+        "uae.g1.u10.l01.square_rectangle" => 89,
+        "uae.g1.u10.l02.triangle_trapezoid" => 90,
+        "uae.g1.u10.l03.circle_properties" => 91,
+        "uae.g1.u10.l04.compare_shapes" => 92,
+        "uae.g1.u10.l05.compose_2d" => 93,
+        "uae.g1.u10.l06.more_composite_2d" => 94,
+        "uae.g1.u10.l07.logical_shape_clue" => 95,
+        "uae.g1.u10.l08.equal_shares" => 96,
+        "uae.g1.u10.l09.halves_equal" => 97,
+        "uae.g1.u10.l10.fourths_equal" => 98,
+        "uae.g1.u11.l01.cubes_prisms" => 99,
+        "uae.g1.u11.l02.cones_cylinders" => 100,
+        "uae.g1.u11.l03.three_d_pattern" => 101,
+        "uae.g1.u11.l04.compose_solids" => 102,
+        _ => -1
+    };
+
+    private static bool VerifyUaeG1Final29(string family,
+        IReadOnlyDictionary<string,int> p, string answer)
+    {
+        int lesson=UaeG1Final29Ordinal(family);
+        if (lesson < 74 || lesson > 102 ||
+            !p.TryGetValue("a",out var a) ||
+            !p.TryGetValue("b",out var b) ||
+            !p.TryGetValue("c",out var c) ||
+            !p.TryGetValue("mode",out var mode) ||
+            !p.TryGetValue("result",out var result)) return false;
+        var valid=lesson switch
+        {
+            74 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            75 or 76 or 79 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            77 => a is >= 1 and <= 10 && b is >= 1 and <= 10 && c==0 && mode==0,
+            78 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            80 => a is >= 2 and <= 20 && b is >= 2 and <= 20 && c==0 && mode==0,
+            81 => a is >= 2 and <= 20 && b is >= 2 and <= 20 && c is >= 2 and <= 20 && mode==0,
+            82 => a is >= 1 and <= 12 && b==0 && c==0 && mode==0,
+            83 => a is >= 10 and <= 25 && b is >= 1 and <= 9 && c==0 && mode==0,
+            84 or 85 or 86 or 87 => a is >= 1 and <= 12 && b==0 && c==0 && mode==0,
+            88 => a is >= 1 and <= 12 && b==0 && c==0 && mode is 0 or 1,
+            89 or 90 or 92 or 95 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            91 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            93 or 94 => a is >= 1 and <= 5 && b is >= 1 and <= 5 && c==0 && mode==0,
+            96 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            97 => a is >= 2 and <= 20 && a%2==0 && b==0 && c==0 && mode==0,
+            98 => a is >= 4 and <= 24 && a%4==0 && b==0 && c==0 && mode==0,
+            99 or 100 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            101 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            102 => a is >= 1 and <= 4 && b is >= 1 and <= 4 && c==0 && mode==0,
+            _ => false
+        };
+        if (!valid) return false;
+        var expected=lesson switch
+        {
+            74 or 78 or 82 or 84 or 85 or 86 or 87 => a,
+            75 or 76 or 79 or 93 or 94 or 102 => a+b,
+            77 => Math.Abs(a-b),
+            80 => Math.Max(a,b),
+            81 => Math.Min(a,Math.Min(b,c)),
+            83 => a-b,
+            88 => mode * 30,
+            89 => 4,
+            90 or 92 or 95 => mode==0 ? 3 : 4,
+            91 => 0,
+            96 => mode==0 ? 2 : 4,
+            97 => a/2,
+            98 => a/4,
+            99 => mode==0 ? 6 : 8,
+            100 => mode==0 ? 1 : 2,
+            101 => mode==0 ? 1 : 2,
+            _ => -1
+        };
+        if (expected!=result) return false;
+        var normalized=new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0'+c-'٠') :
+            c is >= '۰' and <= '۹' ? (char)('0'+c-'۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+           CultureInfo.InvariantCulture,out var v) && v==expected;
+    }
+
+    private static ExactProblem BuildUaeG1Final29(int lesson,string family,Random random)
+    {
+        int a=0,b=0,c=0,mode=0,result=0;
+        string question="";
+        switch (lesson)
+        {
+            case 74:
+                a=random.Next(1,10);b=random.Next(1,10);result=a;
+                question=$"نتائج تصويت: التفاح {new string('│',a)}، الموز {new string('│',b)}. أعد تنظيم كل خمس علامات ثم أكتب أصوات التفاح.";
+                break;
+            case 75:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"سجل الجدول فئتي الكتب {a} والأقلام {b}. ما العدد الكلي المسجل؟ اشرح طريقة تنظيم الصفوف.";
+                break;
+            case 76:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"تمثيل بالصور من تأليف Edulytics (كل رمز = عنصر): الطائرات {new string('●',a)} والسيارات {new string('●',b)}. كم رمزًا أحتاج لرسم الفئتين؟";
+                break;
+            case 77:
+                a=random.Next(1,11);b=random.Next(1,11);result=Math.Abs(a-b);
+                question=$"مفتاح الرسم: كل ★ يمثل طفلًا. الأخضر {new string('★',a)} والأصفر {new string('★',b)}. كم الفرق في عدد الأطفال؟";
+                break;
+            case 78:
+                a=random.Next(1,10);b=random.Next(1,10);result=a;
+                question=$"ارسم عمودًا للفئة أ بارتفاع {a} وحدات وعمودًا للفئة ب بارتفاع {b} وحدات، وكل مربع يمثل عنصرًا. كم مربعًا في العمود أ؟";
+                break;
+            case 79:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"رسم أعمدة على مقياس وحدة: القراءة {new string('■',a)} والرسم {new string('■',b)}. كم إجمالي الوحدات في العمودين؟";
+                break;
+            case 80:
+                a=random.Next(2,21);b=random.Next(2,21);result=Math.Max(a,b);
+                question=$"شريطان من مكعبات متساوية، طول الأول {a} وحدات والثاني {b} وحدات. بعد محاذاة طرفيهما ما طول الشريط الأطول؟";
+                break;
+            case 81:
+                a=random.Next(2,21);b=random.Next(2,21);c=random.Next(2,21);
+                result=Math.Min(a,Math.Min(b,c));
+                question=$"أرتب أشرطة أطوالها {a} و{b} و{c} مكعبات. ما طول أقصر شريط؟";
+                break;
+            case 82:
+                a=random.Next(1,13);result=a;
+                question=$"شريط طوله {new string('▭',a)}، كل ▭ مكعب وحدة واحدة، متلاصقة بلا فجوات. كم وحدة طول الشريط؟";
+                break;
+            case 83:
+                a=random.Next(10,26);b=random.Next(1,10);result=a-b;
+                question=$"الطول الكلي للشريط {a} وحدات، وغطيت منه {b}. خمّن الباقي أولًا ثم تحقق وعدل تخمينك؛ كم وحدة لم تُغط؟";
+                break;
+            case 84:
+                a=random.Next(1,13);result=a;
+                var hours=new[]{"🕐","🕑","🕒","🕓","🕔","🕕","🕖","🕗","🕘","🕙","🕚","🕛"};
+                question=$"الساعة التناظرية {hours[a-1]}. عقرب الدقائق عند ١٢؛ ما رقم الساعة؟";
+                break;
+            case 85:
+                a=random.Next(1,13);result=a;
+                question=$"شاشة الساعة الرقمية: {a:00}:00. ما رقم الساعة عندما تكون الدقائق صفرًا؟";
+                break;
+            case 86:
+                a=random.Next(1,13);result=a;
+                var halfHours=new[]{"🕜","🕝","🕞","🕟","🕠","🕡","🕢","🕣","🕤","🕥","🕦","🕧"};
+                question=$"ساعة تناظرية تشير إلى {halfHours[a-1]}، والعقرب الطويل عند ٦؛ أي ساعة ونصف يمثلها؟ اكتب رقم الساعة.";
+                break;
+            case 87:
+                a=random.Next(1,13);result=a;
+                question=$"تظهر الساعة الرقمية {a:00}:30. اكتب رقم الساعة التي مضى منها نصف ساعة.";
+                break;
+            case 88:
+                a=random.Next(1,13);mode=random.Next(0,2);result=mode*30;
+                question=$"الساعة الرقمية {a:00}:{(mode==0 ? "00" : "30")}. كم دقيقة مضت بعد بداية الساعة الحالية؟";
+                break;
+            case 89:
+                mode=random.Next(0,2);result=4;
+                question=mode==0 ? "المربع □ شكل مستوٍ مغلق؛ كم ضلعًا مستقيمًا له؟" :
+                    "المستطيل ▭ شكل مستوٍ مغلق؛ كم ضلعًا مستقيمًا له؟";
+                break;
+            case 90:
+                mode=random.Next(0,2);result=mode==0?3:4;
+                question=mode==0?"مثلث △ له كم ضلعًا مستقيمًا؟":
+                    "شبه منحرف له ضلعان متوازيان؛ كم ضلعًا مستقيمًا له؟";
+                break;
+            case 91:
+                mode=random.Next(0,2);result=0;
+                question=mode==0?"كم ضلعًا مستقيمًا في محيط دائرة ○؟":
+                    "كم رأسًا (زاوية) للدائرة ○ التي حدها منحنٍ؟";
+                break;
+            case 92:
+                mode=random.Next(0,2);result=mode==0?3:4;
+                question=mode==0?"قارن مثلثًا بمستطيل: كم رأسًا للمثلث؟":
+                    "قارن مستطيلًا بمثلث: كم رأسًا للمستطيل؟";
+                break;
+            case 93:
+                a=random.Next(1,6);b=random.Next(1,6);result=a+b;
+                question=$"أنشئ رسمًا هندسيًا أصليًا من {a} مثلثات و{b} مستطيلات دون تداخل. كم قطعة هندسية استعملت؟";
+                break;
+            case 94:
+                a=random.Next(1,6);b=random.Next(1,6);result=a+b;
+                question=$"أعيد ترتيب {a} مربعات و{b} مثلثات لأكوّن شكلاً مركبًا جديدًا دون إضافة أو حذف. كم قطعة تكوّن الشكل؟";
+                break;
+            case 95:
+                mode=random.Next(0,2);result=mode==0?3:4;
+                question=mode==0?"أبحث عن شكل مستوٍ مغلق له ثلاثة أضلاع. كم رأسًا له؟":
+                    "أبحث عن شكل مستوٍ مغلق له أربعة أضلاع. كم رأسًا له؟";
+                break;
+            case 96:
+                mode=random.Next(0,2);result=mode==0?2:4;
+                question=$"أقسم مستطيلًا إلى {(mode==0?"نصفين متساويين":"أرباع متساوية")}. كم جزءًا متساويًا يجب أن أرسم؟";
+                break;
+            case 97:
+                a=2*random.Next(1,11);result=a/2;
+                question=$"أقسم {a} دائرة بالتساوي بين طفلين، كم دائرة في نصف المجموعة؟";
+                break;
+            case 98:
+                a=4*random.Next(1,7);result=a/4;
+                question=$"أقسم {a} قطعة على أربع مجموعات متساوية؛ كم قطعة في الربع الواحد؟";
+                break;
+            case 99:
+                mode=random.Next(0,2);result=mode==0?6:8;
+                question=mode==0?"المكعب جسم ثلاثي الأبعاد؛ كم وجهًا مسطحًا له؟":
+                    "المنشور المستطيل جسم ثلاثي الأبعاد؛ كم رأسًا له؟";
+                break;
+            case 100:
+                mode=random.Next(0,2);result=mode==0?1:2;
+                question=mode==0?"المخروط له رأس واحد وقاعدة دائرية مستوية؛ كم قاعدة دائرية له؟":
+                    "الأسطوانة لها سطح منحني وقاعدتان دائريتان؛ كم قاعدة مستوية دائرية لها؟";
+                break;
+            case 101:
+                mode=random.Next(0,2);result=mode==0?1:2;
+                question=mode==0?"النمط: مخروط، أسطوانة، مخروط، أسطوانة، ... اكتب ١ للمخروط و٢ للأسطوانة. رمز الشكل التالي؟":
+                    "النمط: أسطوانة، مخروط، أسطوانة، مخروط، ... اكتب ١ للمخروط و٢ للأسطوانة. رمز الشكل التالي؟";
+                break;
+            case 102:
+                a=random.Next(1,5);b=random.Next(1,5);result=a+b;
+                question=$"أكوّن مجسمًا مركبًا من {a} مكعبات و{b} أسطوانات، دون تفكيك الأجزاء. كم جسمًا ثلاثي الأبعاد استعملت؟";
+                break;
+            default:throw new InvalidOperationException("Unsupported UAE G1 last 29 lesson ordinal");
+        }
+        return Problem(family,question,
+            "أستخدم رسمًا أصليًا أو نموذجًا محسوسًا مناسبًا للمهارة، وأتحقق من العدد أو الزمن أو الشكل. تقييم الرسم والتفسير عمل المعلم.",
+            AssessmentItemType.Numeric,("a",a),("b",b),("c",c),
+            ("mode",mode),("result",result));
     }
 
     private static ExactProblem BuildUaeGrade1Unit6(int lesson, string family, Random random)
@@ -7554,6 +7798,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u07.l07.count_back_tens" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u07.l08.inverse_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l01.tally_fives" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
