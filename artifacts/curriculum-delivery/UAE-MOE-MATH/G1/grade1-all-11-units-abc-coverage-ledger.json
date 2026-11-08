@@ -44,7 +44,7 @@
       "UnitIndex": 3,
       "TitleEn": "Addition Strategies to 20",
       "LessonCount": 9,
-      "ArabicLessonsPrepared": 0,
+      "ArabicLessonsPrepared": 1,
       "SourcePresenceInSelectedPdf": "CONTENT_PRESENT",
       "ReadyForStageD": false
     },
@@ -648,12 +648,15 @@
       "LessonIndex": 1,
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:04:01",
       "TitleFromExistingManifestEn": "Add by Counting On 1, 2, or 3",
-      "SourcePdfState": "PDF_1_HAS_EDUCATIONAL_PAGES_NOT_FULLY_RECONCILED",
-      "StageABCScope": "NOT_STARTED",
-      "ArabicContentAdded": false,
-      "FullAtomicSourceComparison": false,
+      "SourcePdfState": "PDF_PAGES_296_TO_301_DIRECTLY_VISUALLY_INSPECTED",
+      "StageABCScope": "READY_FOR_STAGE_D",
+      "ArabicContentAdded": true,
+      "FullAtomicSourceComparison": true,
       "StageCTestExecuted": false,
-      "AcademicClosure": false
+      "AcademicClosure": true,
+      "SourcePageAudit": "lesson-34-atomic-coverage.md",
+      "TestsRun": "WRITTEN_NOT_RUN",
+      "StageCBlocker": null
     },
     {
       "Ordinal": 35,
@@ -1544,12 +1547,12 @@
     "ExistingBlueprint": 102,
     "ExistingContentPack": 102,
     "Units": 11,
-    "ArabicPrepared": 33,
+    "ArabicPrepared": 34,
     "EducationalPagesInSelectedPdfUnits": 4,
     "EducationalPagesMissingSelectedPdfLessons": 60,
-    "ReadyForStageD": 33
+    "ReadyForStageD": 34
   },
-  "ContinuationCursor": 34,
+  "ContinuationCursor": 35,
   "CriticalGaps": [
     "Complete Grade 1 Arabic source volumes for pedagogical units 4–10",
     "Full atomic source element comparison of candidate lessons",
@@ -1561,8 +1564,8 @@
   "Build": "NOT_RUN",
   "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md",
   "ClosureEvidence": {
-    "closedLessonCount": 33,
-    "firstOpenLessonOrdinal": 34,
-    "verification": "Six printed subtraction true/false student-book pages directly viewed; exact-scoped answer verifier statically inspected; test WRITTEN_NOT_RUN"
+    "closedLessonCount": 34,
+    "firstOpenLessonOrdinal": 35,
+    "verification": "Lesson 34 printed 211-216 visually read; count-on 1-3 generator with exact numeric verifier written; Stage D tests WRITTEN_NOT_RUN"
   }
 }

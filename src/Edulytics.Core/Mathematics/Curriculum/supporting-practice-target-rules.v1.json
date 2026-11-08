@@ -11158,6 +11158,28 @@
         "commonMistake": "عد العناصر المزالة بدل الباقية أو عدم تصحيح عبارة خاطئة.",
         "summary": "أتحقق من الطرح ثم أضع «صحيحة» أو «خطأ» وأصلح الخطأ."
       }
+    },
+    {
+      "id": "uae-g1-u3-l1-arabic-count-on-1-2-3-2025",
+      "titlePatterns": [
+        "^الجمع بالعدّ التصاعدي بمقدار ١ أو ٢ أو ٣$",
+        "^Add by Counting On 1, 2, or 3$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:01$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "COUNT_ON_FROM_GREATER_NUMBER_ONE_TWO_THREE_STEPS_UP_TO20",
+      "families": [
+        "uae.g1.u04.l01.count_on_1_2_3"
+      ],
+      "content": {
+        "concept": "ابدأ من العدد الأكبر وزد بمقدار ١ أو ٢ أو ٣ في قفزات متتابعة.",
+        "workedExample": "٨ + ٣: أبدأ عند ٨ وأقفز إلى ٩ ثم ١٠ ثم ١١.",
+        "solution": "عدد القفزات يساوي العدد المضاف، وآخر عدد يساوي المجموع.",
+        "commonMistake": "احتساب العدد الأول قفزة إضافية أو عد قفزات أكثر من المطلوب.",
+        "summary": "ابدأ بالعدد الأكبر وأعدّ قفزات +١ أو +٢ أو +٣."
+      }
     }
   ]
 }
