@@ -84,6 +84,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l01.count_on_1_2_3",
             "uae.g1.u04.l02.count_on_fils",
             "uae.g1.u04.l03.add_on_number_line",
+            "uae.g1.u04.l04.doubles_add",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -906,6 +907,16 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l04.doubles_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("equalAddend", out var equalAddend) && equalAddend is >= 1 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
+                value == equalAddend + equalAddend;
         }
         if (family == "uae.g1.u04.l03.add_on_number_line")
         {
@@ -3385,6 +3396,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1CountOnFils(random),
             "uae.g1.u04.l03.add_on_number_line" =>
                 BuildUaeGrade1NumberLineAddition(random),
+            "uae.g1.u04.l04.doubles_add" =>
+                BuildUaeGrade1Doubles(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4362,6 +4375,19 @@ public sealed class ExactSkillContractQuestionEngine
             "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
             AssessmentItemType.Numeric,
             ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1Doubles(Random random)
+    {
+        const string family = "uae.g1.u04.l04.doubles_add";
+        var equalAddend = random.Next(1, 11);
+        var scene = random.Next(0, 4);
+        var group = new string('●', equalAddend);
+        return Problem(family,
+            $"كوّن مجموعتين متساويتين: {group} | {group}. اكتب المضاعف وأكمل {equalAddend} + {equalAddend} = ؟.",
+            "أجمع مجموعتين لهما العدد نفسه؛ الناتج يساوي ضعفي هذا العدد.",
+            AssessmentItemType.Numeric,
+            ("equalAddend", equalAddend), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1NumberLineAddition(Random random)
@@ -6698,6 +6724,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["start"] + p["added"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u04.l03.add_on_number_line" =>
                 (p["start"] + p["hops"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l04.doubles_add" =>
+                (p["equalAddend"] * 2).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
