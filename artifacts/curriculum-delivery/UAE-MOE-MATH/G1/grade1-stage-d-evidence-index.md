@@ -107,3 +107,11 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Restored the exact historical Grade5 H1 markup on non-UAE pages while preserving Arabic G1 H1 localized metadata.
 - Updated US G1/G11 additive engine compatibility proof to require the pre-existing shared engine main blob, the exact candidate +1766/-0 UAE-only addition blob, unchanged original US G1 family dispatch, and all original Grade11 families.
 - Local node smoke: 8/8 original G5 / US G1-G11 guard tests PASS. Entire related .NET, main PR and authenticated E2E must still rerun on the new SHA; no new CI success is yet claimed.
+
+## Cross-grade independent CI remediation before production merge
+- Owner-approved UAE G1 adds exactly 100 routed Practice interaction families. The shared registry now resolves all 63 contract-defined UAE G1 families as contract-driven (including comparison-named families), keeps 35 exact-integer keypad and two enum-text structured routes. Historical US families remain separately counted.
+- Existing V2 reader and YouTube tests now recognize the Arabic-only title/video conditions without suppressing legacy G5 display. Rich V2 rollout regression expressly records 102 Arabic first-party canonical lessons as not eligible for the English/Polish runtime compiler rather than silently counting them as ready.
+- US G1 96-lesson historical academic evidence remains pinned to its original SHA; the 1766-line, zero-deletion UAE-only exact-engine addition is permitted only at a frozen Git blob, with the independent US G1/G11 delta test protecting unchanged US G1 dispatch.
+- English-only official-rebuild seeding test deliberately simulates the historical English-only source envelope. The actual published UAE G1 pack is Arabic canonical and does not acquire blanket permission for same-version English rewrites.
+- Grade 6 division-scaling pedagogical explanation now explicitly states that division by zero is prohibited, eliminating a vague `Undefined.` placeholder token that failed broad mathematics pedagogy certification.
+- These are cross-grade CI remediation changes; no production merge or deployment is claimed in this evidence note. CI will be checked on the new exact candidate SHA.

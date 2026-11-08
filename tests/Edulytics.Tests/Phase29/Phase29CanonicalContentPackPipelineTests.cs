@@ -522,6 +522,17 @@ public sealed class Phase29CanonicalContentPackPipelineTests
                     "PED:UAE-MOE-MATH:L1:COMMON:01:01")
             .ToList();
 
+        // This test specifically validates the legacy approved English
+        // rebuild policy. The new Arabic-canonical UAE G1 pack intentionally
+        // must NOT be treated as freely replaceable same-version English.
+        // Simulate only the former English-only official rebuild envelope;
+        // never change the real embedded Arabic-canonical document.
+        document.AcademicLanguage = "en";
+        document.CurriculumTranslationRequired = false;
+        foreach (var row in document.Lessons)
+            row.Translations = row.Translations
+                .Where(x => x.CultureCode == "en").ToList();
+
         var seeder =
             new MathematicsCanonicalLessonContentSeeder(db);
 

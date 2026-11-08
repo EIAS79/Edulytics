@@ -34,7 +34,15 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("usccss.g11.alg2.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(8, algebra2.Length);
-        Assert.Equal(1691, LessonPracticeInteractionRegistry.All.Count - algebra2.Length);
+        // Preserve the legacy 1,691 families independently of the
+        // 100 new UAE Grade 1 first-party exact lesson families.
+        var uaeGrade1 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g1.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(100, uaeGrade1.Length);
+        Assert.Equal(1691,
+            LessonPracticeInteractionRegistry.All.Count -
+            algebra2.Length - uaeGrade1.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

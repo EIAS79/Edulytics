@@ -112,7 +112,7 @@ public sealed class ArabicApplicationLocalizationTests
             Path.Combine(root, "src", "Edulytics.Services", "LessonContent", "LessonContentService.cs"));
 
         Assert.Contains(
-            "SelectAcademicContent(\n                    content.Translations,\n                    context.FrameworkCode)",
+            "SelectAcademicContent(\n                    content.Translations,\n                    context.FrameworkCode,\n                    lesson.Code)",
             service.Replace("\r\n", "\n", StringComparison.Ordinal),
             StringComparison.Ordinal);
         Assert.DoesNotContain(

@@ -147,7 +147,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','19ca4300c3a8c772a4624831987ae164489026e8']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','1f350526a18542b23f9cd3ba0a9d178b1c388694']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
       ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',

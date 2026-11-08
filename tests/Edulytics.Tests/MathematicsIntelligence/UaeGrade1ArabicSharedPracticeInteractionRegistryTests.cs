@@ -17,6 +17,12 @@ public sealed class UaeGrade1ArabicSharedPracticeInteractionRegistryTests
             .ToArray();
 
         Assert.Equal(100, rows.Length);
+        // Contract-defined UAE comparisons must not turn into generic
+        // relation-choice widgets merely due to the family ID's name.
+        foreach (var row in rows.Where(x => x.AnswerType == "contract_defined"))
+        {
+            Assert.Equal(LessonPracticeInteractionKind.ContractDriven, row.InteractionKind);
+        }
         Assert.Equal(35, rows.Count(x =>
             x.AnswerType == "exact_integer" &&
             x.InteractionKind == LessonPracticeInteractionKind.IntegerKeypad));
