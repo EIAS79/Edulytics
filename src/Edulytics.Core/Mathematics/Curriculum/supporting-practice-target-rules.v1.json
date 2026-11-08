@@ -6712,16 +6712,16 @@
         "^PED:UAE-MOE-MATH:L1:COMMON:05:02$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "SUBTRACT_WITH_NUMBER_LINE_BACKWARD_HOPS",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l02.number_line_subtract"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use a Number Line to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use a Number Line to Subtract."
+        "concept": "تمثيل الطرح بقفزات إلى اليسار على خط أعداد صحيح يبدأ من الصفر، وعدّ القفزات وحساب الفرق.",
+        "workedExample": "لأحل ١٠ − ٣ أضع إصبعي عند ١٠ وأقفز يسارًا إلى ٩، ثم ٨، ثم ٧؛ الباقي ٧.",
+        "solution": "في الطرح نبدأ عند العدد الكلي ونقفز باتجاه الأعداد الأصغر بعدد الخطوات المطروحة. قيمة نقطة الوصول هي الفرق، ولا تُحسب نقطة البداية كقفزة.",
+        "commonMistake": "التحرك إلى اليمين كالجمع، أو الخلط بين عدد القفزات وبين العدد الذي نهبط عنده، أو بدء القفزة من الصفر.",
+        "summary": "أرسم خط أعداد وأمثل ١٣ − ٤؛ أبدأ عند ١٣ وأصل إلى ٩ بعد أربع قفزات."
       }
     },
     {

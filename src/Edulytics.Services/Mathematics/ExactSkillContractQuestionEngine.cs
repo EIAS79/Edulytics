@@ -91,6 +91,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l08.commutative_add",
             "uae.g1.u04.l09.add_three_with_strategy",
             "uae.g1.u05.l01.count_back_1_2_3",
+            "uae.g1.u05.l02.number_line_subtract",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -922,6 +923,15 @@ public sealed class ExactSkillContractQuestionEngine
             return p.TryGetValue("start", out var start) && start is >= 4 and <= 20 && p.TryGetValue("steps", out var steps) && steps is >= 1 and <= 3 && p.TryGetValue("result", out var result) && result == start - steps && result >= 0 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["start"] - p["steps"]);
+        }
+        if (family == "uae.g1.u05.l02.number_line_subtract")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("start", out var start) && start is >= 5 and <= 20 && p.TryGetValue("hops", out var hops) && hops is >= 1 and <= 9 && hops <= start && p.TryGetValue("result", out var result) && result == start - hops &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["start"] - p["hops"]);
         }
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
@@ -3498,6 +3508,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1ThreeAddends(random),
             "uae.g1.u05.l01.count_back_1_2_3" =>
                 BuildUaeGrade1Unit4Lesson01(random),
+            "uae.g1.u05.l02.number_line_subtract" =>
+                BuildUaeGrade1Unit4Lesson02(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4492,6 +4504,20 @@ public sealed class ExactSkillContractQuestionEngine
             $"ابدأ من {start}، وعد إلى الخلف {steps} خطوات: {line}. أكمل {start} − {steps} = ؟",
             "ابدأ بعدد معلوم، وانتقل خطوة إلى الخلف لكل واحد مطروح دون أن تعد نقطة البداية.",
             AssessmentItemType.Numeric, ("start", start), ("steps", steps), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson02(Random random)
+    {
+        const string family = "uae.g1.u05.l02.number_line_subtract";
+
+        var start = random.Next(5, 21);
+        var hops = random.Next(1, Math.Min(9, start) + 1);
+        var result = start - hops;
+        var line = string.Join("  ", Enumerable.Range(0, start + 1));
+        return Problem(family,
+            $"خط الأعداد: {line}. ابدأ من {start} وارسم {hops} قفزات متساوية إلى الخلف. عند أي عدد تصل؟",
+            "أبدأ بالعدد الكلي، وأتحرك يسارًا بعدد القفزات المطلوب؛ نقطة النهاية هي الفرق.",
+            AssessmentItemType.Numeric, ("start", start), ("hops", hops), ("result", result));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -6959,6 +6985,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l01.count_back_1_2_3" =>
                 (p["start"] - p["steps"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l02.number_line_subtract" =>
+                (p["start"] - p["hops"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
