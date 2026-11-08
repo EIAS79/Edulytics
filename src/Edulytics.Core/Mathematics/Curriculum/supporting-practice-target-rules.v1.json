@@ -6775,16 +6775,16 @@
         "^PED:UAE-MOE-MATH:L1:COMMON:05:06$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "INVERSE_RELATION_ADDITION_SUBTRACTION",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l06.related_add_sub_facts"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use Related Addition and Subtraction Facts.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use Related Addition and Subtraction Facts."
+        "concept": "استعمال حقيقة جمع معلومة لحساب فرق مرتبط والتحقق من الناتج بعكس العملية.",
+        "workedExample": "أعرف ٧ + ٥ = ١٢؛ لذلك ١٢ − ٧ = ٥، ويمكنني التحقق بأن ٥ + ٧ = ١٢.",
+        "solution": "في عائلة واحدة من جزءين وكل: أ + ب = ك، إذن ك − أ = ب وك − ب = أ. نتحقق بعملية جمع تُعيد الكل.",
+        "commonMistake": "طرح الجزء من مجموع غير مرتبط، أو الخلط بين أي عدد هو الكل، أو عدّ العملية العكسية دليلًا أن الطرح تبادلي.",
+        "summary": "إذا كان ٦ + ٧ = ١٣، أكتب ١٣ − ٦ = ٧، ثم أتحقق بإعادة الجمع."
       }
     },
     {

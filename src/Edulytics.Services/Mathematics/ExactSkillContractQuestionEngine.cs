@@ -95,6 +95,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l03.doubles_subtraction",
             "uae.g1.u05.l04.story_subtraction_equation",
             "uae.g1.u05.l05.subtract_through_ten",
+            "uae.g1.u05.l06.related_add_sub_facts",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -962,6 +963,15 @@ public sealed class ExactSkillContractQuestionEngine
             return p.TryGetValue("whole", out var whole) && whole is >= 11 and <= 18 && p.TryGetValue("removed", out var removed) && removed is >= 2 and <= 9 && p.TryGetValue("toTen", out var toTen) && toTen == whole - 10 && toTen < removed && p.TryGetValue("rest", out var rest) && rest == removed - toTen && rest >= 1 && p.TryGetValue("result", out var result) && result == whole - removed && result == 10 - rest &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["whole"] - p["removed"]);
+        }
+        if (family == "uae.g1.u05.l06.related_add_sub_facts")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("a", out var a) && a is >= 2 and <= 9 && p.TryGetValue("b", out var b) && b is >= 2 and <= 10 && p.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["b"]);
         }
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
@@ -3546,6 +3556,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit4Lesson04(random),
             "uae.g1.u05.l05.subtract_through_ten" =>
                 BuildUaeGrade1Unit4Lesson05(random),
+            "uae.g1.u05.l06.related_add_sub_facts" =>
+                BuildUaeGrade1Unit4Lesson06(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4597,6 +4609,19 @@ public sealed class ExactSkillContractQuestionEngine
             "جزّئ العدد المطروح إلى جزء للوصول للعشرة وجزء متبقٍ، ثم أطرح الجزأين بالتتابع.",
             AssessmentItemType.Numeric, ("whole", whole), ("removed", removed),
             ("toTen", toTen), ("rest", rest), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson06(Random random)
+    {
+        const string family = "uae.g1.u05.l06.related_add_sub_facts";
+
+        var a = random.Next(2, 10);
+        var b = random.Next(2, 11);
+        var total = a + b;
+        return Problem(family,
+            $"أعرف حقيقة الجمع {a} + {b} = {total}. أستخدمها لإكمال حقيقة الطرح المترابطة: {total} − {a} = ؟.",
+            "الكل ناقص جزء يساوي الجزء الآخر؛ أتحقق بالجمع.",
+            AssessmentItemType.Numeric, ("a", a), ("b", b), ("total", total));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -7072,6 +7097,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l05.subtract_through_ten" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l06.related_add_sub_facts" =>
+                (p["b"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
