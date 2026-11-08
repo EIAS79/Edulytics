@@ -77,6 +77,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u03.l08.subtract_4_5",
             "uae.g1.u03.l09.subtract_6_7",
             "uae.g1.u03.l10.subtract_8",
+            "uae.g1.u03.l11.subtract_9",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -909,7 +910,7 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 string.Equals(answer.Trim(), left + right == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
         }
-        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8")
+        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
@@ -918,7 +919,8 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("removed", out var removed) && removed >= 0 && removed <= whole &&
                 (family == "uae.g1.u03.l04.subtract_zero_or_all" ? removed == 0 || removed == whole :
                  family == "uae.g1.u03.l08.subtract_4_5" ? whole is 4 or 5 :
-                 family == "uae.g1.u03.l09.subtract_6_7" ? whole is 6 or 7 : family == "uae.g1.u03.l10.subtract_8" ? whole == 8 : removed >= 1) &&
+                 family == "uae.g1.u03.l09.subtract_6_7" ? whole is 6 or 7 : family == "uae.g1.u03.l10.subtract_8" ? whole == 8 :
+                 family == "uae.g1.u03.l11.subtract_9" ? whole == 9 : removed >= 1) &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == whole - removed;
@@ -3306,6 +3308,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1SubtractionStory(random, family),
             "uae.g1.u03.l10.subtract_8" =>
                 BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l11.subtract_9" =>
+                BuildUaeGrade1SubtractionStory(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4237,18 +4241,19 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildUaeGrade1SubtractionStory(Random random, string family)
     {
-        var whole = family == "uae.g1.u03.l10.subtract_8" ? 8 :
+        var whole = family == "uae.g1.u03.l11.subtract_9" ? 9 :
+            family == "uae.g1.u03.l10.subtract_8" ? 8 :
             family == "uae.g1.u03.l09.subtract_6_7" ? random.Next(6, 8) :
             family == "uae.g1.u03.l08.subtract_4_5" ? random.Next(4, 6) : random.Next(2, 11);
         var removed = family == "uae.g1.u03.l04.subtract_zero_or_all" ?
             (random.Next(0, 2) == 0 ? 0 : whole) :
             family == "uae.g1.u03.l07.compare_groups" ? random.Next(1, whole) :
-            family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" ? random.Next(0, whole + 1) : random.Next(1, whole + 1);
+            family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" ? random.Next(0, whole + 1) : random.Next(1, whole + 1);
         var scene = random.Next(0, 6);
         string[] objects = ["أقلام", "زهور", "أوراق", "بطاقات", "كرات", "مكعبات"];
         var before = new string('●', whole);
         var after = new string('●', whole - removed);
-        var prompt = family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" ?
+        var prompt = family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" ?
             $"الطرح من {whole}: أرسم {whole} قطع {before} وأشطب {removed}؛ أكمل {whole} − {removed} = ؟. القطع المتبقية: {after}" :
             family == "uae.g1.u03.l07.compare_groups" ?
             $"قارن المجموعتين: المجموعة الأولى {whole} {objects[scene]} {before}، والمجموعة الثانية {removed} {objects[scene]} {new string('○', removed)}. صِل بينها واحدًا لواحد. كم عنصرًا أكثر في المجموعة الأولى؟ أكمل {whole} − {removed} = ؟." :
@@ -6525,7 +6530,7 @@ public sealed class ExactSkillContractQuestionEngine
                 p["right"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u02.l13.true_false_addition" =>
                 p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
-            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" =>
+            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),

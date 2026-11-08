@@ -11069,6 +11069,28 @@
         "commonMistake": "تصحيح ٨ − ٥ = ٢ إلى ٨ − ٥ = ٣.",
         "summary": "طرح عدد من ٨ والتحقق بالجمع."
       }
+    },
+    {
+      "id": "uae-g1-u2-l11-arabic-subtract-nine-2025",
+      "titlePatterns": [
+        "^الطرح من ٩$",
+        "^Subtract from 9$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:11$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_NINE_ALLOW_ZERO_AND_ALL",
+      "families": [
+        "uae.g1.u03.l11.subtract_9"
+      ],
+      "content": {
+        "concept": "الطرح من ٩ بنموذج تسع قطع.",
+        "workedExample": "٩ − ٣ = ٦ و٩ − ٥ = ٤.",
+        "solution": "أشطب المطروح من تسع قطع وأعد الباقي.",
+        "commonMistake": "عدم عد القطع المتبقية بدقة.",
+        "summary": "الكل ٩، أطرح جزءًا وأجد الباقي."
+      }
     }
   ]
 }
