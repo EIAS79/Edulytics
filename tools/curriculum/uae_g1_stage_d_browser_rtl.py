@@ -90,6 +90,17 @@ def inspect(page, ordinal, code, lesson_id, width, screenshot=False):
         raise AssertionError(
             f"UAE Grade1 unconfigured YouTube widget leaked into canonical lesson {ordinal}"
         )
+    hero = page.locator(".lesson-reader-hero")
+    if (
+        hero.locator(".lesson-library-eyebrow").inner_text().strip() != "محتوى الدرس" or
+        hero.locator(".student-subject-code").inner_text().strip() != "رياضيات" or
+        hero.locator(".lesson-reader-hero__unit").count() != 0 or
+        hero.locator("h1").get_attribute("lang") != "ar" or
+        hero.evaluate("e => getComputedStyle(e).direction") != "rtl"
+    ):
+        raise AssertionError(
+            f"UAE Grade1 hero still has non-Arabic/duplicated metadata at {ordinal}"
+        )
     row = {
         "lessonOrdinalSorted":ordinal,"lessonCode":code,"viewportWidth":width,
         "browserRtlComputedStyle":True,"arabicActualDOM":True,
@@ -97,6 +108,7 @@ def inspect(page, ordinal, code, lesson_id, width, screenshot=False):
         "allSixSectionTitlesArabic":True,
         "noGenericEnglishInstructionalDiagram":True,
         "noUnconfiguredVideoWidget":True,
+        "localizedHeroMetadata":True,
         "contentTextLength":attrs["textLength"],
     }
     if screenshot:

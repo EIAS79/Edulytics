@@ -1922,7 +1922,31 @@
         <div class="school-alert school-alert-error" role="alert">@error</div>
     }
 
-    <header class="lesson-reader-hero"><div class="lesson-reader-hero__main"><div class="lesson-reader-hero__topline"><span class="student-subject-code">@Model.SubjectCode</span></div><p class="lesson-library-eyebrow">@L["LearningContent"]</p><h1>@grade5OriginalDisplayTitle</h1><p class="lesson-reader-hero__unit">@Model.TopicName</p><div class="lesson-reader-meta"><span><small>@L["Grade"]</small><strong>@Model.GradeName</strong></span><span><small>@L["Framework"]</small><strong>@Model.FrameworkName</strong></span></div></div></header>
+    <header class="lesson-reader-hero" dir="@(isUaeGrade1Arabic ? "rtl" : null)">
+        <div class="lesson-reader-hero__main">
+            <div class="lesson-reader-hero__topline">
+                <span class="student-subject-code">@(isUaeGrade1Arabic ? "رياضيات" : Model.SubjectCode)</span>
+            </div>
+            <p class="lesson-library-eyebrow">@(isUaeGrade1Arabic ? "محتوى الدرس" : L["LearningContent"].Value)</p>
+            <h1 lang="@(isUaeGrade1Arabic ? "ar" : System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)">@grade5OriginalDisplayTitle</h1>
+            @* The old UAE Grade 1 UnitTitle duplicates the Arabic title in
+               English. Do not present an unrelated English subtitle. *@
+            @if (!isUaeGrade1Arabic)
+            {
+                <p class="lesson-reader-hero__unit">@Model.TopicName</p>
+            }
+            <div class="lesson-reader-meta">
+                <span>
+                    <small>@(isUaeGrade1Arabic ? "الصف" : L["Grade"].Value)</small>
+                    <strong>@(isUaeGrade1Arabic ? "الأول" : Model.GradeName)</strong>
+                </span>
+                <span>
+                    <small>@(isUaeGrade1Arabic ? "المنهج" : L["Framework"].Value)</small>
+                    <strong>@(isUaeGrade1Arabic ? "رياضيات وزارة التربية والتعليم الإماراتية" : Model.FrameworkName)</strong>
+                </span>
+            </div>
+        </div>
+    </header>
     <div class="lesson-reader-layout @(Model.Outcomes.Count == 0 ? "lesson-reader-layout--full" : null)"><main class="lesson-reader-main">
         @* G12 section 1.1: source-skill first-party instructional graphs, not
            the original textbook's 1:1 figures or automatically marked tasks. *@

@@ -87,3 +87,10 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Scope-specific correction authored: Arabic section/navigation headings; lesson parser option stops generic fallback visuals only for UAE G1; suppress unconfigured YouTube on G1. Other programmes' render defaults retained.
 - Expanded next run Chromium assertions require Arabic headings and no generic diagram/broken video pane; reviewer has NOT approved that change until the new candidate passes and screenshots are inspected.
 - Semantic source exercise denominators still UNKNOWN, newer T2/T3 Arabic student editions not verified, and no rights/human release approval. **NO_GO**.
+
+## Ninth isolated CI run — Arabic lesson sections fixed; hero metadata still required review
+- Run [#42514953244](https://github.com/EIAS79/Edulytics/actions/runs/42514953244), tested SHA `6b85e026bd1dfea61d3919684cc195a281488d04`.
+- Solution Build / 118 previously selected .NET checks PASS, 102 authenticated student pages and 204 persisted Practice grading probes PASS, Chromium RTL 102 desktop + 102 mobile PASS.
+- The real captured screenshots confirm all six core section headings in Arabic, generic English fallback teaching diagrams removed, and unconfigured YouTube discovery removed for UAE Grade 1.
+- Remaining visual issue found in images: hero metadata included English lesson/unit subtitle, grade/programme labels; scoped Arabic hero correction authored after this run and requires its own new SHA/CI evidence. Global student navigation follows user UI language settings and is not represented as a canonical Arabic teaching section.
+- Historical 2019–2020 term-2/3 student source gap and 102 source exercise-element parity unknown; no rights, human academic approval, or D_VERIFIED.

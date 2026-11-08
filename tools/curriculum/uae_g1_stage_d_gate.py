@@ -236,7 +236,8 @@ def report(phase):
                         p.get("noArabicBodyOverflow") is True and
                         p.get("allSixSectionTitlesArabic") is True and
                         p.get("noGenericEnglishInstructionalDiagram") is True and
-                        p.get("noUnconfiguredVideoWidget") is True
+                        p.get("noUnconfiguredVideoWidget") is True and
+                        p.get("localizedHeroMetadata") is True
                         for p in pages
                     )
                 )
