@@ -90,6 +90,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l07.make_ten_add",
             "uae.g1.u04.l08.commutative_add",
             "uae.g1.u04.l09.add_three_with_strategy",
+            "uae.g1.u05.l01.count_back_1_2_3",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -912,6 +913,15 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u05.l01.count_back_1_2_3")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("start", out var start) && start is >= 4 and <= 20 && p.TryGetValue("steps", out var steps) && steps is >= 1 and <= 3 && p.TryGetValue("result", out var result) && result == start - steps && result >= 0 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["start"] - p["steps"]);
         }
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
@@ -3486,6 +3496,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1CommutativeAdd(random),
             "uae.g1.u04.l09.add_three_with_strategy" =>
                 BuildUaeGrade1ThreeAddends(random),
+            "uae.g1.u05.l01.count_back_1_2_3" =>
+                BuildUaeGrade1Unit4Lesson01(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4468,6 +4480,20 @@ public sealed class ExactSkillContractQuestionEngine
     // Scoped addition-through-ten mechanic uses existing exact engine, not a new engine.
     // Reuses the exact family engine for addition commutativity; not a new engine.
     // Uses existing exact numeric question engine; three-addend grouping within 20.
+    private static ExactProblem BuildUaeGrade1Unit4Lesson01(Random random)
+    {
+        const string family = "uae.g1.u05.l01.count_back_1_2_3";
+
+        var start = random.Next(4, 21);
+        var steps = random.Next(1, Math.Min(3, start) + 1);
+        var result = start - steps;
+        var line = string.Join(" ← ", Enumerable.Range(0, steps + 1).Select(i => (start - i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"ابدأ من {start}، وعد إلى الخلف {steps} خطوات: {line}. أكمل {start} − {steps} = ؟",
+            "ابدأ بعدد معلوم، وانتقل خطوة إلى الخلف لكل واحد مطروح دون أن تعد نقطة البداية.",
+            AssessmentItemType.Numeric, ("start", start), ("steps", steps), ("result", result));
+    }
+
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
     {
         const string family = "uae.g1.u04.l09.add_three_with_strategy";
@@ -6931,6 +6957,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["a"] + p["b"] + p["c"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l01.count_back_1_2_3" =>
+                (p["start"] - p["steps"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
