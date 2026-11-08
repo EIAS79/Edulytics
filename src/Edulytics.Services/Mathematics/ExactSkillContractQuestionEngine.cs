@@ -134,6 +134,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u09.l05.analog_hour",
             "uae.g1.u09.l06.digital_hour",
             "uae.g1.u09.l07.analog_half",
+            "uae.g1.u09.l08.digital_half",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -3696,6 +3697,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeG1Final29(85, family, random),
             "uae.g1.u09.l07.analog_half" =>
                 BuildUaeG1Final29(86, family, random),
+            "uae.g1.u09.l08.digital_half" =>
+                BuildUaeG1Final29(87, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -7860,6 +7863,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u09.l06.digital_hour" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u09.l07.analog_half" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l08.digital_half" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
