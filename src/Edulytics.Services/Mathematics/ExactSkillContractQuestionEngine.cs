@@ -65,6 +65,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u02.l07.make_four_five",
             "uae.g1.u02.l08.make_six_seven",
             "uae.g1.u02.l09.make_eight",
+            "uae.g1.u02.l10.make_nine",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -872,14 +873,15 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == left + right;
         }
-        if (family is "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight")
+        if (family is "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
             return parameters.TryGetValue("total", out var total) &&
                 (family == "uae.g1.u02.l07.make_four_five" ? total is 4 or 5 :
-                 family == "uae.g1.u02.l08.make_six_seven" ? total is 6 or 7 : total == 8) &&
+                 family == "uae.g1.u02.l08.make_six_seven" ? total is 6 or 7 :
+                 family == "uae.g1.u02.l09.make_eight" ? total == 8 : total == 9) &&
                 parameters.TryGetValue("left", out var left) && left >= 0 && left <= total &&
                 parameters.TryGetValue("right", out var right) && right >= 0 && left + right == total &&
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
@@ -3245,6 +3247,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1ComposeNumber(random, family),
             "uae.g1.u02.l09.make_eight" =>
                 BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l10.make_nine" =>
+                BuildUaeGrade1ComposeNumber(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4176,7 +4180,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     private static ExactProblem BuildUaeGrade1ComposeNumber(Random random, string family)
     {
-        var total = family == "uae.g1.u02.l09.make_eight" ? 8 :
+        var total = family == "uae.g1.u02.l10.make_nine" ? 9 :
+            family == "uae.g1.u02.l09.make_eight" ? 8 :
             family == "uae.g1.u02.l08.make_six_seven" ? random.Next(6, 8) : random.Next(4, 6);
         var left = random.Next(0, total + 1);
         var right = total - left;
@@ -6398,7 +6403,7 @@ public sealed class ExactSkillContractQuestionEngine
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l04.add_zero" or "uae.g1.u02.l05.vertical_addition" or "uae.g1.u02.l06.write_story_equation" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
-            "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" =>
+            "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine" =>
                 p["right"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
