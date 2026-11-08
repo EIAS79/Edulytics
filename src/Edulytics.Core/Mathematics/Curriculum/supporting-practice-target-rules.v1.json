@@ -10849,6 +10849,28 @@
         "commonMistake": "افتراض أن وجود علامة المساواة يعني العبارة صحيحة.",
         "summary": "صحيحة إذا تساوى الطرفان، وخطأ إذا اختلفا."
       }
+    },
+    {
+      "id": "uae-g1-u2-l1-arabic-subtraction-stories-2025",
+      "titlePatterns": [
+        "^قصص الطرح$",
+        "^Subtraction Stories$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:01$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "TAKE_AWAY_FROM_WHOLE_COUNT_REMAINING_TO_10",
+      "families": [
+        "uae.g1.u03.l01.subtraction_stories"
+      ],
+      "content": {
+        "concept": "نمثل ما ذهب من المجموعة ونعد العناصر الباقية.",
+        "workedExample": "٦ أقلام، أخذنا قلمين؛ ٦ − ٢ = ٤.",
+        "solution": "أعد الكل ثم أشطب ما أُزيل، وأعد الباقي.",
+        "commonMistake": "حساب عدد الأشياء المزالة بدل الباقية.",
+        "summary": "الكل − الجزء المغادر = الباقي."
+      }
     }
   ]
 }

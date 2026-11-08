@@ -31563,6 +31563,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l01.subtraction_stories",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-take-away-whole-1-to-10-removal-1-to-whole-exact-difference",
+      "representations": [
+        "visual",
+        "contextual",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
