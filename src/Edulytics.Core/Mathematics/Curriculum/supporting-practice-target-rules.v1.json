@@ -10827,6 +10827,28 @@
         "commonMistake": "عدم التمييز بين الجزء المعلوم والجزء المتبقي.",
         "summary": "الجزء الناقص يكمل عشرة بالضبط."
       }
+    },
+    {
+      "id": "uae-g1-u1-l13-arabic-true-false-number-statements-2025",
+      "titlePatterns": [
+        "^العبارات الصحيحة والخطأ$",
+        "^True and False Number Statements$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:13$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "EVALUATE_EQUALITY_TRUTH_OF_ADDITION_STATEMENT_AND_CORRECT_FALSE",
+      "families": [
+        "uae.g1.u02.l13.true_false_addition"
+      ],
+      "content": {
+        "concept": "تحقق من مساواة جمل الجمع وصحح العبارات الخاطئة.",
+        "workedExample": "٣ + ٢ = ٥ صحيحة، و٣ + ٢ = ٦ خطأ.",
+        "solution": "أحسب مجموع الجزأين وأقارنه بالطرف الآخر.",
+        "commonMistake": "افتراض أن وجود علامة المساواة يعني العبارة صحيحة.",
+        "summary": "صحيحة إذا تساوى الطرفان، وخطأ إذا اختلفا."
+      }
     }
   ]
 }

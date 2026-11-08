@@ -28,9 +28,9 @@
       "UnitIndex": 1,
       "TitleEn": "Addition Concepts",
       "LessonCount": 13,
-      "ArabicLessonsPrepared": 12,
+      "ArabicLessonsPrepared": 13,
       "SourcePresenceInSelectedPdf": "CONTENT_PRESENT",
-      "ReadyForStageD": false
+      "ReadyForStageD": true
     },
     {
       "UnitIndex": 2,
@@ -415,12 +415,15 @@
       "LessonIndex": 13,
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:02:13",
       "TitleFromExistingManifestEn": "True and False Number Statements",
-      "SourcePdfState": "PDF_1_HAS_EDUCATIONAL_PAGES_NOT_FULLY_RECONCILED",
-      "StageABCScope": "NOT_STARTED",
-      "ArabicContentAdded": false,
-      "FullAtomicSourceComparison": false,
+      "SourcePdfState": "PDF_PAGES_172_TO_177_DIRECTLY_VISUALLY_INSPECTED",
+      "StageABCScope": "READY_FOR_STAGE_D",
+      "ArabicContentAdded": true,
+      "FullAtomicSourceComparison": true,
       "StageCTestExecuted": false,
-      "AcademicClosure": false
+      "AcademicClosure": true,
+      "SourcePageAudit": "lesson-19-atomic-coverage.md",
+      "TestsRun": "WRITTEN_NOT_RUN",
+      "StageCBlocker": null
     },
     {
       "Ordinal": 20,
@@ -1506,12 +1509,12 @@
     "ExistingBlueprint": 102,
     "ExistingContentPack": 102,
     "Units": 11,
-    "ArabicPrepared": 18,
+    "ArabicPrepared": 19,
     "EducationalPagesInSelectedPdfUnits": 4,
     "EducationalPagesMissingSelectedPdfLessons": 60,
-    "ReadyForStageD": 18
+    "ReadyForStageD": 19
   },
-  "ContinuationCursor": 19,
+  "ContinuationCursor": 20,
   "CriticalGaps": [
     "Complete Grade 1 Arabic source volumes for pedagogical units 4–10",
     "Full atomic source element comparison of candidate lessons",
@@ -1523,8 +1526,8 @@
   "Build": "NOT_RUN",
   "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md",
   "ClosureEvidence": {
-    "closedLessonCount": 18,
-    "firstOpenLessonOrdinal": 19,
-    "verification": "Lesson18 PDF 166-171 inspected, existing ten-frame family reused with exact missing-part validation, test WRITTEN_NOT_RUN"
+    "closedLessonCount": 19,
+    "firstOpenLessonOrdinal": 20,
+    "verification": "Lesson19 all six textbook pages read; exact truth of addition equality family statically inspected, targeted test WRITTEN_NOT_RUN"
   }
 }

@@ -67,6 +67,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u02.l09.make_eight",
             "uae.g1.u02.l10.make_nine",
             "uae.g1.u02.l11.make_ten_frame",
+            "uae.g1.u02.l13.true_false_addition",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -889,6 +890,15 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u02.l13.true_false_addition")
+        {
+            return parameters.TryGetValue("left", out var left) && left is >= 0 and <= 9 &&
+                parameters.TryGetValue("right", out var right) && right is >= 0 and <= 9 &&
+                left + right <= 10 &&
+                parameters.TryGetValue("shown", out var shown) && shown is >= 0 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                string.Equals(answer.Trim(), left + right == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
         }
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
@@ -3253,6 +3263,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1ComposeNumber(random, family),
             "uae.g1.u02.l11.make_ten_frame" =>
                 BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l13.true_false_addition" =>
+                BuildUaeGrade1TrueFalseAddition(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4180,6 +4192,29 @@ public sealed class ExactSkillContractQuestionEngine
             "مثل المجموعتين في شكلين مختلفين، ضمّهما، ثم عدّ جميع العناصر مرة واحدة.",
             AssessmentItemType.Numeric,
             ("left", left), ("right", right), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1TrueFalseAddition(Random random)
+    {
+        const string family = "uae.g1.u02.l13.true_false_addition";
+        var left = random.Next(0, 8);
+        var right = random.Next(0, Math.Min(4, 10 - left) + 1);
+        var sum = left + right;
+        var correct = random.Next(0, 2) == 0;
+        var shown = correct ? sum : (sum + 1) % 11;
+        var scene = random.Next(0, 4);
+        var equation = scene switch
+        {
+            0 => $"{left} + {right} = {shown}",
+            1 => $"{shown} = {left} + {right}",
+            2 => $"{left} + {right} = {shown}",
+            _ => $"{shown} = {right} + {left}"
+        };
+        return Problem(family,
+            $"هل العبارة {equation} صحيحة أم خطأ؟ احسب وتحقق بالنقاط قبل اختيار الإجابة.",
+            "أحسب المجموع الحقيقي ثم أقارنه بالطرف الآخر من علامة المساواة.",
+            AssessmentItemType.ShortAnswer,
+            ("left", left), ("right", right), ("shown", shown), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1ComposeNumber(Random random, string family)
@@ -6414,6 +6449,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine" or "uae.g1.u02.l11.make_ten_frame" =>
                 p["right"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u02.l13.true_false_addition" =>
+                p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
