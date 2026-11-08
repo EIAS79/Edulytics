@@ -1,6 +1,6 @@
 # UAE Grade 1, Unit A Lesson 4: source-to-original-coverage
 
-The Arabic Grade 1 2025–2026 student book (`Grade_01\\01_Student_Books\\01.pdf`, SHA256 `BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44`) was directly inspected on Our-CS: PDF pp. 54–59, printed A37–A42. 
+The Arabic Grade 1 2025–2026 student book (`Grade_01\\01_Student_Books\\01.pdf`, SHA256 `BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44`) was directly inspected on Our-CS: PDF pp. 54–59, printed A37–A42.
 
 | Student page / PDF page | Observed element | Independently authored Edulytics equivalent |
 |---|---|---|
