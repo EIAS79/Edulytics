@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify exact 102-lesson registry, source identity and Arabic canonical content
         run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase structural
-      - name: Fail closed on unknown source-element denominators and newer-edition gaps
+      - name: Verify source facts or grade-wide owner acceptance with disclosed unknown parity
         run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase handoff
       - name: Upload Stage D source gate evidence (including failures)
         if: always()
@@ -79,6 +79,9 @@ jobs:
             --filter 'FullyQualifiedName~UaeOfficialReferenceCoverageTests|FullyQualifiedName~UaeStudentLessonExposurePolicyTests' \
             --logger 'trx;LogFileName=uae-g1-catalogue.trx' \
             --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Run existing US lesson reader and presentation impact regressions
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             --configuration Release --no-build --no-restore             --filter 'FullyQualifiedName~Phase29LessonReaderFinalPolishTests|FullyQualifiedName~Phase29LessonContentVisualContractTests|FullyQualifiedName~CommonCorePhase04SourceEntityPresentationTests'             --logger 'trx;LogFileName=uae-g1-impact-regression.trx'             --results-directory artifacts/uae-g1-stage-d/trx
       - name: Preserve .NET test evidence on fail/pass
         if: always()
         uses: actions/upload-artifact@v4
@@ -89,7 +92,7 @@ jobs:
           retention-days: 30
 
   final-ci-and-release-safety:
-    name: Fail closed until real auth E2E, source parity and required checks
+    name: UAE G1 owner-accepted curriculum — exact-SHA auth, RTL and regression release safety
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     if: always()
@@ -120,7 +123,13 @@ jobs:
         with:
           name: uae-g1-stage-d-browser-rtl-${{ github.run_id }}
           path: artifacts/uae-g1-stage-d/browser-rtl/
-      - name: Evaluate real run-linked final CI, source, RTL and approvals (fail-closed)
+      - name: Retrieve actual .NET regressions from this run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/trx/
+      - name: Evaluate run-linked technical CI and grade-wide owner's first-party approval
         run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase final
       - name: Upload actual candidate safety results, even on NO_GO
         if: always()

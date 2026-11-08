@@ -94,3 +94,9 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - The real captured screenshots confirm all six core section headings in Arabic, generic English fallback teaching diagrams removed, and unconfigured YouTube discovery removed for UAE Grade 1.
 - Remaining visual issue found in images: hero metadata included English lesson/unit subtitle, grade/programme labels; scoped Arabic hero correction authored after this run and requires its own new SHA/CI evidence. Global student navigation follows user UI language settings and is not represented as a canonical Arabic teaching section.
 - Historical 2019–2020 term-2/3 student source gap and 102 source exercise-element parity unknown; no rights, human academic approval, or D_VERIFIED.
+
+## Grade 1 academic owner authorization — November 8, 2026
+- Owner explicitly authorized adoption/publication after source caveats were disclosed. Separate artifact: grade1-owner-academic-publication-authorization-20261108.json.
+- 102/102 D_VERIFIED refers to Stage D independently proven runtime and the grade-wide owner academic acceptance on candidate 2fea8f852, Run 42515500494.
+- Independent semantic source-parity remains UNKNOWN across 102 lessons; 60 T2/T3 lessons use 2019–2020 Arabic student originals as a selected fallback. No claim of latest exercise parity or independent publisher certification.
+- Third-party rights are NOT certified by owner instruction. Final release must pass new exact-SHA CI and be observed live on Render.

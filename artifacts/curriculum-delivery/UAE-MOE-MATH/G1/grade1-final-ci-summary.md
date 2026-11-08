@@ -1,39 +1,36 @@
-# UAE Grade 1 Stage D — real 102-lesson CI evidence
+# UAE Grade 1 — Owner-approved Stage D / release candidate
 
-**NO_GO_TECHNICAL — not yet authorized to merge or publish.**
+## Academic decision and scope
 
-### Tested candidate
-- Branch: curriculum/uae-g1-stage-d-20261108
-- Tested SHA: 430453453cbb2eab6f672b99419e9dbe65b4f9b9
-- GitHub Actions Run ID: 42512661110
-- CI URL: https://github.com/EIAS79/Edulytics/actions/runs/42512661110
-- Full solution Build: PASS
-- Grade 1 exact generator/verifier tests: **110/110 PASS**
-- Official curriculum reference and exposure policy tests: **8/8 PASS**
-- Independent source structure and Arabic metadata: **102/102 PASS**
-- Ephemeral PostgreSQL18 migrations + seed: **PASS** (5183 catalogue lessons)
-- Isolated authenticated Grade1 102 Arabic lesson pages, six full sections and HTML RTL wrapper: **102/102 PASS**
-- Actual server-generated scoped correct Practice answers persisted as grade 1: **102/102 PASS**
-- Deliberately malformed answers rejected, grade zero persisted: **102/102 PASS**
-- Combined persisted graded attempts: **204/204 PASS**
-- Student/teacher/supervisor/admin logins: **PASS**; cross-school lesson isolation: **PASS**
+- Scope: UAE-MOE-MATH Grade 1 Common, 102 Arabic lessons, 11 technical units across three school terms.
+- Product owner's academic decision: **APPROVED FOR PUBLICATION OF FIRST-PARTY EDULYTICS CONTENT**, explicitly requested on November 8, 2026.
+- Authorization evidence: `grade1-owner-academic-publication-authorization-20261108.json`.
+- Approval is NOT UAE Ministry of Education certification or third-party/publisher source clearance.
 
-### Academic and release blockers
-- Semantic numerator/denominator at source teaching/activity/exercise-element granularity: **UNKNOWN for 102 lessons**. Therefore no 100% semantic parity claim.
-- Newer Arabic official student editions for lessons 43–102: **UNVERIFIED**; older 2019–2020 Arabic student files form the selected baseline.
-- Actual browser screenshots, RTL layout, responsive visuals and WCAG/a11y: **NOT VERIFIED**. HTML lang=ar and dir=rtl are necessary but not visual acceptance.
-- Teacher-scored drawings, authored activity fidelity, real student UAT: **NOT VERIFIED**.
-- Independent copyright/rights clearance and final human review: **NOT VERIFIED**.
-- Final CI and production: **NO_GO**; no PR merge, deployment or production database change.
+## Last proven independent technical candidate (before owner authorization commit)
 
-### Exact progress
-- A–B–C recorded: 102/102 READY_FOR_STAGE_D.
-- Per-lesson Stage D technical runtime checks: 102/102 PASS (no academic equivalence inferred).
-- Final Stage D D_VERIFIED closures: **0/102**.
-- First remaining incomplete lesson: ordinal **1**, not rebranded as complete.
+- SHA: `2fea8f8521d4561469477a6ab6332178ef307996`
+- GitHub Actions: https://github.com/EIAS79/Edulytics/actions/runs/42515500494
+- Full .NET solution Build: **PASS**
+- Grade 1 generator, verifier, lesson-route and localized reader tests: **122/122 PASS**
+- UAE official reference/policy: **8/8 PASS**
+- Ephemeral PostgreSQL migration and seeded curriculum: **PASS**
+- Authenticated student pages: **102/102 PASS**
+- Stored graded responses: **102/102 correct + 102/102 malformed rejected, 204 total PASS**
+- Four authenticated school roles and cross-tenant lesson denial: **PASS**
+- Chromium learner HTML/RTL and layout: **102 desktop + 102 mobile PASS**, eight screenshots; full human WCAG audit not certified.
+- Technical Stage D with grade-wide academic owner acceptance: **102/102 D_VERIFIED**, with source-equivalence caveat below.
 
-## Real Chromium visual review / regression action
-- Tested SHA 0db86200383982c53aea617000bfa922835f0b25 — Run 42513905658: automated 102 desktop + 102 mobile browser RTL smoke PASS; 8 actual screenshots uploaded and hash verified.
-- Manual image review identified **English core lesson headings, generic English concept models, and an unavailable media widget** on Arabic Grade 1 learner screens. These are real quality defects, not hidden by CI PASS.
-- Grade-1-only fixes authored and stricter screenshot checks added. **Retest not yet run on new candidate**. Human screenshot/a11y approval still UNVERIFIED.
-- Final source academic gap unchanged: 102 lesson-semantic denominators unknown and newer T2/T3 student exercise parity unavailable; **NO_GO**.
+## What has NOT been independently certified
+
+- Source semantic 1:1 numerator/denominator: **UNKNOWN across 102 lessons**; no claims of 100% exercise, example, or figure equivalence.
+- Selected student editions: 42 lessons from 2025–2026 Arabic edition and 60 from 2019–2020 Arabic editions. No independent latest-year Arabic student exercise-equivalence claim for lessons 43–102.
+- Third-party asset rights: owner's first-party authorship declaration, not blanket authorization to copy externally owned figures/text. A source asset or license review is still applicable if a future lesson includes such materials.
+- Human full WCAG/a11y and real classroom learner UAT: not claimed.
+- Grade 1 is an independently Edulytics-authored mathematics offering aligned to selected UAE sources; **not** an official textbook reproduction or ministry-certified 2026–2027 identical exercise edition.
+
+## Release control
+
+The owner authorization is recorded, but the new release candidate must pass full solution build, Grade 1 tests, UAE policy tests, existing US presentation regressions, real 102-lesson authenticated HTTPS, all 204 persisted grading attempts and real Chromium desktop/mobile on its exact SHA. These results are never inferred merely from the owner's decision.
+
+**Release deployment status: NOT YET PUBLISHED** until the exact new SHA is tested, merged, and Render reports a live commit. CI source gate documents independently unverified source parity as an explicitly owner-accepted academic limitation, not as a falsified 100% source coverage claim.

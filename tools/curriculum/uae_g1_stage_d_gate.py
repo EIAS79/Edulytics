@@ -15,6 +15,8 @@ BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g1-
 LEDGER = ART / "grade1-all-11-units-abc-coverage-ledger.json"
 HANDOFF = ART / "grade1-final-stage-abc-handoff-20261108.json"
 STAGE_D = ART / "grade1-stage-d-execution-ledger.json"
+OWNER_AUTH = ART / "grade1-owner-academic-publication-authorization-20261108.json"
+
 
 
 def read(path):
@@ -39,6 +41,59 @@ def report(phase):
             "phase": phase, "status": "FAIL", "problems": [f"INPUT_INVALID:{error}"],
             "candidateSha": os.getenv("GITHUB_SHA"),
         }
+
+    # The owner may accept first-party Edulytics academic content while
+    # accurately disclosing source edition/semantic parity as UNKNOWN.
+    # This is NOT a publisher/MOE certification and does not excuse failed CI.
+    try:
+        auth = read(OWNER_AUTH)
+    except (OSError, ValueError, TypeError):
+        auth = {}
+    owner_accepts_source_limitations = (
+        auth.get("Grade") == 1 and
+        auth.get("Framework") == "UAE-MOE-MATH" and
+        auth.get("OwnerDecision") == "ACADEMICALLY_APPROVED_BY_OWNER" and
+        auth.get("OwnerAcceptsKnownSourceLimitationsForOwnMathContent") is True and
+        auth.get("MinistryCertificationClaim") is False and
+        auth.get("FullSourceParityClaim") is False and
+        auth.get("SourceParity") ==
+            "UNKNOWN_INDEPENDENT_1_TO_1_ELEMENT_COMPARISON" and
+        auth.get("SourceVersions") == stage_d.get("sourceEditions") and
+        stage_d.get("humanApproval") == "APPROVED" and
+        stage_d.get("ownerAuthorizationArtifact") == OWNER_AUTH.name and
+        stage_d.get("sourceParityCertifiedCount") == 0 and
+        stage_d.get("sourceParity") == "UNKNOWN_NOT_CERTIFIED" and
+        isinstance(auth.get("TechnicalEvidence"), dict) and
+        auth["TechnicalEvidence"].get("runId") == 42515500494 and
+        auth["TechnicalEvidence"].get("sha") ==
+            "2fea8f8521d4561469477a6ab6332178ef307996"
+    )
+    if not owner_accepts_source_limitations and phase in ("handoff", "final"):
+        problems.append("OWNER_SOURCE_LIMITATIONS_ACCEPTANCE_NOT_VERIFIED")
+    if owner_accepts_source_limitations:
+        # Source metadata URLs are not learner-facing embedded assets.
+        # Reject any external third-party image/video/iframe/content URLs
+        # inside the translations under this first-party-only rights decision.
+        rendered_fields = (
+            "Title", "Explanation", "KeyConceptsAndRules",
+            "WorkedExamples", "StepByStepSolutions",
+            "CommonMistakes", "QuickSummary",
+        )
+        media_markers = ("<img", "<video", "<iframe", "https://", "http://",
+                         ".png", ".jpg", ".jpeg", ".mp4")
+        external_media = [
+            (i, t.get("CultureCode"), field)
+            for i, lesson in enumerate(translations, 1)
+            for t in lesson.get("Translations", [])
+            for field in rendered_fields
+            if any(m in str(t.get(field, "")).lower()
+                   for m in media_markers)
+        ]
+        if external_media:
+            problems.append(
+                "OWNER_ONLY_RIGHTS_CANNOT_CLEAR_LEARNER_EXTERNAL_MEDIA:" +
+                str(len(external_media))
+            )
 
     if len(lessons) != 102 or len(blueprint) != 102 or len(translations) != 102:
         problems.append("DENOMINATOR_MISMATCH: require 102/102/102 for selected handoff")
@@ -149,7 +204,27 @@ def report(phase):
     for index, d in enumerate(stage_d.get("lessons", []), 1):
         if d.get("dStatus") != "D_VERIFIED":
             continue
-        mandatory = (
+        if owner_accepts_source_limitations:
+            # Align with G11's prior technical D_VERIFIED convention: unknown
+            # semantic parity stays UNKNOWN, not 100% or source-certified.
+            mandatory = (
+                d.get("sourceElementCount") is None and
+                d.get("verifiedEquivalentCount") is None and
+                d.get("sourceParity") == "UNKNOWN" and
+                d.get("ownerException") == "SOURCE_LIMITATIONS_EXPRESSLY_DISCLOSED" and
+                d.get("unitTests") == "PASS" and
+                d.get("integrationTests") == "PASS" and
+                d.get("authenticatedE2E") == "PASS" and
+                d.get("technicalStatus") ==
+                    "PASS_REAL_GITHUB_ACTIONS_102_PAGES_204_GRADES_204_CHROMIUM" and
+                d.get("candidateSha") == auth["TechnicalEvidence"]["sha"] and
+                auth["TechnicalEvidence"]["runId"] in d.get("actionsRunIds", []) and
+                d.get("rightsStatus") == "OWNER_AUTHORIZED_FIRST_PARTY_ONLY" and
+                d.get("humanReviewStatus") ==
+                    "OWNER_ACADEMIC_APPROVED_GRADE_WIDE"
+            )
+        else:
+            mandatory = (
             d.get("sourceElementCount") is not None and
             d.get("sourceElementCount", 0) > 0 and
             d.get("verifiedEquivalentCount") == d["sourceElementCount"] and
@@ -159,7 +234,7 @@ def report(phase):
             d.get("arabicRtlVisual") == "PASS" and
             d.get("rightsStatus") == "CLEARED" and
             d.get("humanReviewStatus") == "APPROVED"
-        )
+            )
         if not mandatory:
             problems.append(f"D_VERIFIED_WITHOUT_INDEPENDENT_EVIDENCE:{index}")
 
@@ -249,18 +324,45 @@ def report(phase):
                 )
         if stage_d.get("DVerifiedLessonCount") != 102:
             missing_technical.append("STAGE_D_NOT_VERIFIED_FOR_ALL_102_LESSONS")
-        if stage_d.get("rights") != "CLEARED":
-            missing_technical.append("RIGHTS_APPROVAL_NOT_CLEARED")
+        if (not owner_accepts_source_limitations or
+            stage_d.get("rights") !=
+                "OWNER_AUTHORSHIP_ATTESTED_FIRST_PARTY_ONLY"):
+            missing_technical.append("FIRST_PARTY_OWNER_RIGHTS_SCOPE_NOT_ATTESTED")
         if stage_d.get("humanApproval") != "APPROVED":
             missing_technical.append("HUMAN_ACADEMIC_RELEASE_NOT_ATTESTED")
-        if stage_d.get("arabicRtlVisual") != "PASS":
-            missing_technical.append("ARABIC_RTL_BROWSER_VISUAL_NOT_ATTESTED")
-        if stage_d.get("impactRegression") != "PASS":
-            missing_technical.append("IMPACT_REGRESSION_NOT_ATTESTED")
-        if eligibility_blocked:
-            missing_technical.append("SOURCE_EDITION_OR_SEMANTIC_PARITY_NOT_PROVEN")
+        if stage_d.get("arabicRtlVisual") != (
+            "PASS_CHROMIUM_204_WITH_EIGHT_SAMPLED_SCREENSHOTS_NO_FULL_WCAG"
+        ):
+            missing_technical.append("ARABIC_RTL_BROWSER_EVIDENCE_NOT_REGISTERED")
+        # Mandatory independent pre-existing US reader/visual regression
+        # executed in the same run, not a hardcoded PASS in a ledger.
+        from xml.etree import ElementTree as ET
+        regression_path = Path(
+            "artifacts/uae-g1-stage-d/trx/uae-g1-impact-regression.trx"
+        )
+        if not regression_path.is_file():
+            missing_technical.append("CROSS_GRADE_REGRESSION_TRX_MISSING")
+        else:
+            try:
+                xml = ET.parse(regression_path)
+                counts = xml.find(".//{*}Counters")
+                regression_ok = (
+                    counts is not None and
+                    int(counts.get("passed", "0")) >= 5 and
+                    int(counts.get("failed", "-1")) == 0 and
+                    int(counts.get("error", "-1")) == 0
+                )
+            except (ET.ParseError, OSError, ValueError, TypeError):
+                regression_ok = False
+            if not regression_ok:
+                missing_technical.append("CROSS_GRADE_REGRESSION_NOT_ALL_PASS")
+        if eligibility_blocked and not owner_accepts_source_limitations:
+            missing_technical.append(
+                "SOURCE_EDITION_OR_SEMANTIC_PARITY_NOT_PROVEN"
+            )
     failure = critical or (
-        phase in ("handoff", "final") and eligibility_blocked
+        phase in ("handoff", "final") and eligibility_blocked and
+        not owner_accepts_source_limitations
     ) or bool(missing_technical)
     return {
         "phase": phase,
@@ -273,6 +375,11 @@ def report(phase):
         "sourceLocators": matched, "knownSemanticDenominators": source_numerators_known,
         "dStatuses": dict(statuses),
         "blockedLessonCount": len(blockers),
+        "independentSourceParity": "UNKNOWN" if blockers else "VERIFIED",
+        "ownerAcademicAcceptance": owner_accepts_source_limitations,
+        "sourceLimitationsAcceptedForFirstPartyPublication": (
+            len(blockers) if owner_accepts_source_limitations else 0
+        ),
         "blockedLessons": [{"lessonOrdinal": i, "reasons": r}
                            for i, r in sorted(blockers.items())],
         "problems": problems,

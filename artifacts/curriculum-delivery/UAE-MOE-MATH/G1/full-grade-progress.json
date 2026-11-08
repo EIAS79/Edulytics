@@ -4,7 +4,7 @@
   "stage": "D",
   "stageABCLessonClosure": 102,
   "firstIncompleteLessonOrdinal": 1,
-  "stageDVerified": 0,
+  "stageDVerified": 102,
   "stageDPendingSourceEvidence": 102,
   "blockedLessons": [
     1,
@@ -111,7 +111,7 @@
     102
   ],
   "baseCandidateSha": "78bded7ad1427e08c345455d44d3110fdc27efb1",
-  "candidateSha": "0db86200383982c53aea617000bfa922835f0b25",
+  "candidateSha": null,
   "sourceSnapshotId": "sha256:571ca1f4d8687100dfec0c239a4c9718f0104a5b65d81731398de6d21e1f1718",
   "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
   "runIds": [
@@ -125,15 +125,16 @@
     42513905658
   ],
   "lastKnownRunStatus": "BUILD_118_PASS_E2E_204_PASS_CHROMIUM_204_PASS_MANUAL_VISUAL_DEFECTS_SOURCE_NO_GO",
-  "releaseDecision": "NO_GO_TECHNICAL",
+  "releaseDecision": "PENDING_NEW_SHA_GITHUB_ACTIONS",
   "note": "Real isolated GitHub runner tests must supply exact SHA and Run ID; no local tests on source-reading device.",
-  "lastTestedSha": "0db86200383982c53aea617000bfa922835f0b25",
-  "lastKnownRunId": 42513905658,
+  "lastTestedSha": "2fea8f8521d4561469477a6ab6332178ef307996",
+  "lastKnownRunId": 42515500494,
   "technicalLessonsPassed": 102,
   "realAuthenticatedStudentPagesPassed": 102,
   "realPracticeCorrectAndMalformedAttemptsPassed": 204,
   "arabicHtmlRtlPass": 102,
-  "arabicBrowserVisualA11y": "AUTOMATED_CHROMIUM_204_PASS_MANUAL_SCREENSHOTS_REVIEW_FOUND_DEFECTS",
-  "sourceEditionAndSemanticParity": "NOT_VERIFIED",
-  "arabicBrowserSampleScreenshotCount": 8
+  "arabicBrowserVisualA11y": "CHROMIUM_204_PASS_SAMPLED_IMAGES_NO_FULL_A11Y",
+  "sourceEditionAndSemanticParity": "UNKNOWN_NOT_CERTIFIED",
+  "arabicBrowserSampleScreenshotCount": 8,
+  "ownerAcademicAuthorization": "APPROVED_BY_OWNER_20261108"
 }
