@@ -6028,22 +6028,23 @@
     {
       "id": "uae-g1-1-1-read-and-write-numbers-1-to-5",
       "titlePatterns": [
-        "^Read and Write Numbers 1 to 5$"
+        "^Read and Write Numbers 1 to 5$",
+        "^قراءة وكتابة الأعداد من [١1] إلى [٥5]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:01$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "COUNT_READ_TRACE_WRITE_1_5",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l01.read_write_1_5"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers 1 to 5.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers 1 to 5."
+        "concept": "عدّ مجموعات من ١ إلى ٥ وربط كل كمية برقمها وكلمة العدد وكتابته.",
+        "workedExample": "أعدّ ● ● ● مرة واحدة لكل نقطة ثم أكتب ٣ وأقرأ «ثلاثة».",
+        "solution": "أشير إلى كل عنصر مرة واحدة، أقرأ العدد الأخير، أختار الرقم ثم أتتبّع كتابته.",
+        "commonMistake": "لا أكرر عدّ عنصر ولا أخلط بين قراءة العدد وكتابته؛ يراجع المعلم التتبع اليدوي.",
+        "summary": "العد والرقم والكلمة والكتابة ضمن ١–٥؛ التصحيح الآلي للكمية فقط."
       }
     },
     {

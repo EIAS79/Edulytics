@@ -8,13 +8,19 @@
   "SourceSha256": "BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44",
   "StageA": "PAGE_BY_PAGE_ELEMENT_CATEGORIES_RECONCILED",
   "StageB": "ARABIC_ORIGINAL_CONTENT_REFINED",
-  "StageC": "EXACT_ENGINE_FAMILY_EXTENDED_TEST_WRITTEN_NOT_RUN",
-  "Status": "A_C_EXPLICIT_GAP",
-  "Blockers": [
-    "RUNTIME_FAMILY_ROUTING"
-  ],
+  "StageC": "EXACT_LESSON_SCOPED_FAMILY_REGISTERED_AND_STATICALLY_ROUTED_TEST_WRITTEN_NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
+  "Blockers": [],
   "TestsRun": "WRITTEN_NOT_RUN",
   "StageDNotes": [
-    "RTL learner display not yet executed; Stage D responsibility, not a claim of A-C test success"
-  ]
+    "Full runtime/UI/CI and source-exercise-regression tests not run in Stage A-B-C",
+    "Arabic RTL rendering deferred to Stage D"
+  ],
+  "SourcePageAudit": "lesson-1-atomic-coverage.md",
+  "StageCStaticEvidence": [
+    "Reviewed rule anchored to original LessonCode and Arabic/English title",
+    "Question-family registry supports lesson Practice routing",
+    "ExactSkillContractQuestionEngine family supported; generated and verified via written, not executed, targeted test"
+  ],
+  "ClosedUtc": "2026-11-08T05:26:44.961Z"
 }

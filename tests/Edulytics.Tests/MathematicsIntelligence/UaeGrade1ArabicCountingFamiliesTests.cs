@@ -1,3 +1,4 @@
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 namespace Edulytics.Tests.MathematicsIntelligence;
 // WRITTEN_NOT_RUN in Stage A–B–C.
@@ -27,5 +28,27 @@ public sealed class UaeGrade1ArabicCountingFamiliesTests
     var p=new Dictionary<string,int> { ["count"]=0, ["scene"]=0 };
     Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g1.u01.l02.zero_cardinality",p,"٠"));
     Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g1.u01.l02.zero_cardinality",p,"١"));
+ }
+
+ [Fact]
+ public void FirstArabicLesson_UsesOnlyItsSourceScopedExactCountingFamily()
+ {
+   const string lessonCode = "PED:UAE-MOE-MATH:L1:COMMON:01:01";
+   const string family = "uae.g1.u01.l01.read_write_1_5";
+   Assert.True(LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract));
+   Assert.NotNull(contract);
+   Assert.Equal("READY_VERIFIED", contract.Readiness);
+   Assert.Equal(new[] { family }, contract.AllowedQuestionFamilies);
+   Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+   var generated = new ExactSkillContractQuestionEngine().Generate(
+       "stage18", lessonCode, new[] { family },
+       ExactSkillQuestionDifficulty.Standard, 3, 42, Array.Empty<string>());
+   Assert.All(generated, question =>
+   {
+       Assert.Equal(family, question.Family);
+       Assert.InRange(question.Parameters["count"], 1, 5);
+       Assert.True(ExactSkillContractQuestionEngine.Verify(
+           family, question.Parameters, question.CorrectAnswer));
+   });
  }
 }

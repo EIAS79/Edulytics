@@ -120,14 +120,17 @@
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:01:01",
       "TitleFromExistingManifestEn": "Read and Write Numbers 1 to 5",
       "SourcePdfState": "PDF_PAGES_34_TO_41_DIRECTLY_INSPECTED",
-      "StageABCScope": "A_C_EXPLICIT_GAP",
+      "StageABCScope": "READY_FOR_STAGE_D",
       "ArabicContentAdded": true,
-      "FullAtomicSourceComparison": false,
+      "FullAtomicSourceComparison": true,
       "StageCTestExecuted": false,
-      "AcademicClosure": false,
+      "AcademicClosure": true,
       "SourcePageAudit": "lesson-1-atomic-coverage.md",
       "StageBRefinement": "ORIGINAL_ARABIC_COUNT_READ_TRACE_WRITE",
-      "StageCBlocker": "RUNTIME_FAMILY_ROUTING"
+      "StageCBlocker": null,
+      "ClosedUtc": "2026-11-08T05:26:44.961Z",
+      "TestsRun": "WRITTEN_NOT_RUN",
+      "CodeReviewEvidence": "lesson-1-atomic-coverage.md"
     },
     {
       "Ordinal": 2,
@@ -1452,11 +1455,7 @@
     "EducationalPagesMissingSelectedPdfLessons": 60,
     "ReadyForStageD": 0
   },
-  "ContinuationCursor": {
-    "Ordinal": 1,
-    "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:01:01",
-    "Reason": "First lesson still A_C_EXPLICIT_GAP; cannot advance under sequential closure policy"
-  },
+  "ContinuationCursor": 2,
   "CriticalGaps": [
     "Complete Grade 1 Arabic source volumes for pedagogical units 4–10",
     "Full atomic source element comparison of candidate lessons",
@@ -1466,5 +1465,11 @@
   "StageDTests": "NOT_RUN",
   "CI": "NOT_RUN",
   "Build": "NOT_RUN",
-  "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md"
+  "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md",
+  "ClosureEvidence": {
+    "closedLessonCount": 1,
+    "firstOpenLessonOrdinal": 2,
+    "verification": "TARGETED_STATIC_CONTENT_AND_REGISTRY_INSPECTION; TESTS_NOT_RUN",
+    "lastClosedLessonCommit": "TO_BE_BOUND_TO_COMMIT_URL"
+  }
 }
