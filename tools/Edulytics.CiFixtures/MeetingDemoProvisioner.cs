@@ -354,7 +354,22 @@ internal static class MeetingDemoProvisioner
                 "true", StringComparison.OrdinalIgnoreCase);
         // Preserve the existing Grade 6/8 disposable fixture selection on main,
         // while selecting Grade 10 Geometry only when explicitly opted in.
+        // UAE G1 Stage D: two disposable school tenants, a Grade 1 Arabic
+        // primary school and an unrelated US school for cross-tenant denial.
+        // This mode never changes production/permanent demo school selection.
         var activeSchools = disposableCi &&
+            string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal)
+            ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
+                .Select(s => s.Key == "uae-primary"
+                    ? s with
+                    {
+                        DefaultCulture = "ar",
+                        PrimaryLoginLogicalLevel = 1,
+                        SecondaryLoginLogicalLevel = 2
+                    }
+                    : s)
+                .ToArray()
+            : disposableCi &&
             (string.Equals(ciProgramme, "US-CCSS-G6", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "US-CCSS-G8", StringComparison.Ordinal))
             ? Schools.Where(s => s.Key is "commoncore-middle" or "commoncore-secondary").ToArray()

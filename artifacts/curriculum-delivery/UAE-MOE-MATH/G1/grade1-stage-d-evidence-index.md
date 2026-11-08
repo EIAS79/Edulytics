@@ -47,3 +47,11 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Scope of corrective patch: allow one and only one runtime-ready reviewed rule with a literal anchored LessonCode for UAE Grade 1, after Arabic canonical metadata routing fails. No arbitrary keyword/title fallback or test count reduction.
 - New patch requires actual GitHub-hosted retest; it is not pre-marked PASS.
 - Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42510442246
+
+## Fifth actual GitHub-hosted Stage D attempt — independent technical gates green
+- SHA: 57553141a4be9974c076f97aec2caf589f73d9c2. Run: 42510784139 (push).
+- Solution Build PASS. Grade 1 family/verifier suite: **110/110 PASS**. UAE policy/reference checks: **8/8 PASS**.
+- 102-lesson structural source identity and Arabic canonical content gate PASS; source-element parity gate remains FAIL CLOSED because lesson-specific source-element denominators are not independently evidenced.
+- New CI-only authenticated E2E job created to test 102 actual Arabic student pages and 204 persisted practice attempts on an ephemeral PostgreSQL server, using a dedicated UAE Grade 1 primary school and cross-school control. Results **NOT_RUN** until new commit workflow.
+- Human Arabic RTL/a11y/browser screenshots, copyright/source editions, owner release rights and real deployment **UNVERIFIED**; no D_VERIFIED.
+- Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42510784139

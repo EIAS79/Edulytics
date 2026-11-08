@@ -129,7 +129,7 @@
   "integrationTests": "NOT_RUN",
   "authenticatedE2E": "NOT_RUN",
   "arabicRtlVisual": "NOT_RUN",
-  "finalCI": "FAIL",
+  "finalCI": "FAIL_SOURCE_PARITY_AND_E2E_NOT_VERIFIED",
   "rights": "NOT_VERIFIED",
   "humanApproval": "NOT_VERIFIED",
   "releaseDecision": "NO_GO_TECHNICAL",
@@ -3868,23 +3868,27 @@
     }
   ],
   "buildLatestAttempt": {
-    "runId": 42508979016,
-    "jobId": 128817702438,
-    "testedSha": "42a885219ba718e5494c42f1b758cf3b95adb8a5",
+    "runId": 42510784139,
+    "testedSha": "57553141a4be9974c076f97aec2caf589f73d9c2",
     "testedRefKind": "push",
-    "status": "BUILD_PASS__UAE_TESTS_63_FAILED_47_PASSED",
-    "restore": "PASS",
+    "status": "BUILD_PASS_118_TESTS_PASS",
     "fullSolutionBuild": "PASS",
-    "targetedTestSuite": {
+    "grade1ExactFamilyTests": {
       "total": 110,
-      "passed": 47,
-      "failed": 63,
+      "passed": 110,
+      "failed": 0,
       "skipped": 0
     },
-    "testFailureRoot": "LessonPracticeCapabilityResolver.TryResolve failed in 63 new G1 scoped tests; Arabic canonical translation does not match anchored English-metadata lesson practice titles",
-    "fix": "Use reviewed exact LessonCode-matched English metadata as routing-only fallback without changing Arabic lesson content; retest required",
-    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42508979016",
-    "retest": "NOT_RUN_ON_REPAIR_SHA"
+    "UaePolicyAndReferenceTests": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42510784139",
+    "isolatedAuthenticatedE2E": "NOT_RUN_AT_THIS_SHA",
+    "sourceElementParity": "UNVERIFIED"
   },
-  "lastKnownGitHubRunId": 42508979016
+  "lastKnownGitHubRunId": 42510784139,
+  "lastTestedSha": "57553141a4be9974c076f97aec2caf589f73d9c2"
 }
