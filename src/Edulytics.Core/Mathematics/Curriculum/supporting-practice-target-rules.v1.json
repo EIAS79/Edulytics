@@ -11180,6 +11180,28 @@
         "commonMistake": "احتساب العدد الأول قفزة إضافية أو عد قفزات أكثر من المطلوب.",
         "summary": "ابدأ بالعدد الأكبر وأعدّ قفزات +١ أو +٢ أو +٣."
       }
+    },
+    {
+      "id": "uae-g1-u3-l2-arabic-count-on-fils-2025",
+      "titlePatterns": [
+        "^العدّ التصاعدي باستخدام ١ فلس للجمع$",
+        "^Count On to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:02$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "COUNT_ON_ADDITIVE_GROUPS_OF_ONE_FILS_COINS",
+      "families": [
+        "uae.g1.u04.l02.count_on_fils"
+      ],
+      "content": {
+        "concept": "عد تصاعدي بإضافة عملات متساوية، كل منها فلس واحد.",
+        "workedExample": "٨ فلوس + عملتان من فئة فلس واحد = ١٠ فلوس.",
+        "solution": "أبدأ من ٨ وأعد ٩ ثم ١٠ مع إضافة العملتين.",
+        "commonMistake": "خلط عدد القطع بقيم فئات نقدية مختلفة؛ المطلوب جميعها فلس واحد.",
+        "summary": "عُد من العدد الأول مع كل فلس جديد."
+      }
     }
   ]
 }

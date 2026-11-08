@@ -82,6 +82,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u03.l13.related_add_subtract",
             "uae.g1.u03.l14.true_false_subtraction",
             "uae.g1.u04.l01.count_on_1_2_3",
+            "uae.g1.u04.l02.count_on_fils",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -904,6 +905,18 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l02.count_on_fils")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 4 and <= 10 &&
+                parameters.TryGetValue("added", out var added) && added is >= 1 and <= 3 &&
+                start + added <= 13 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == start + added;
         }
         if (family == "uae.g1.u04.l01.count_on_1_2_3")
         {
@@ -3355,6 +3368,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1TrueFalseSubtraction(random),
             "uae.g1.u04.l01.count_on_1_2_3" =>
                 BuildUaeGrade1CountOn(random),
+            "uae.g1.u04.l02.count_on_fils" =>
+                BuildUaeGrade1CountOnFils(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4332,6 +4347,20 @@ public sealed class ExactSkillContractQuestionEngine
             "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
             AssessmentItemType.Numeric,
             ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1CountOnFils(Random random)
+    {
+        const string family = "uae.g1.u04.l02.count_on_fils";
+        var start = random.Next(4, 11);
+        var added = random.Next(1, 4);
+        var scene = random.Next(0, 4);
+        var hops = string.Join("، ", Enumerable.Range(1, added).Select(i => (start + i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"لدي {start} عملات من فئة فلس واحد، ثم أضيف {added} عملات أخرى من الفئة نفسها. أبدأ من {start} وأعد {hops}. كم فلسًا أصبح لدي؟",
+            "كل قطعة قيمتها فلس واحد؛ أعد من العدد الأول خطوة عن كل قطعة جديدة.",
+            AssessmentItemType.Numeric,
+            ("start", start), ("added", added), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1CountOn(Random random)
@@ -6636,6 +6665,8 @@ public sealed class ExactSkillContractQuestionEngine
                 p["whole"] - p["removed"] == p["shown"] ? "صحيحة" : "خطأ",
             "uae.g1.u04.l01.count_on_1_2_3" =>
                 (p["start"] + p["step"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l02.count_on_fils" =>
+                (p["start"] + p["added"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
