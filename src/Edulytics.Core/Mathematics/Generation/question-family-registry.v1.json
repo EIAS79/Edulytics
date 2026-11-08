@@ -10381,6 +10381,114 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g1.u01.l01.read_write_1_5",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-uA-l01-count-1-to-5-exact-independent-verify",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u01.l02.zero_cardinality",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-unitA-l02-zero-cardinality-exact-recompute",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u01.l03.read_write_6_8",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-unitA-l03-exact-count-independent-recompute",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u01.l04.read_write_9_10",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-unitA-l04-exact-count-independent-recompute",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u01.l05.read_write_11_15",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-unitA-l05-exact-count-11-15",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u01.l06.read_write_16_20",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-unitA-l06-exact-count-16-20",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "supporting.number.teen_decompose",
       "version": 1,
       "skillId": "supporting.number.real",
@@ -31238,6 +31346,1645 @@
       "productionRouting": false,
       "lessonPracticeRouting": true,
       "sourceLessonSkillId": "US-CCSS-MATH:G12:U12:L03"
+    },
+    {
+      "id": "uae.g1.u02.l01.addition_stories",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade1-add-two-story-groups-total-at-most-10-verified-by-parameters",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l02.model_addition",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-addition-part-part-whole-count-verified-with-two-operands",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l03.addition_number_sentences",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-addition-number-sentence-partial-expression-equivalent",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l04.add_zero",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-zero-addend-either-side-verified-0-to-9",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l05.vertical_addition",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-vertical-addition-two-nonnegative-summands-total-at-most-10",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l06.write_story_equation",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-two-group-story-equation-and-exact-sum-2-to-10",
+      "representations": [
+        "symbolic",
+        "visual",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l07.make_four_five",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-part-part-whole-missing-part-fixed-sum-4-or-5",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l08.make_six_seven",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-missing-part-exact-fixed-total-6-or-7",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l09.make_eight",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-exact-missing-part-fixed-total-8",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l10.make_nine",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-missing-part-exact-fixed-total-9",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l11.make_ten_frame",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-ten-frame-fixed-10-two-row-five-cell-missing-part",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l13.true_false_addition",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "uae-g1-addition-equality-truth-arabic-correct-incorrect",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l01.subtraction_stories",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-take-away-whole-1-to-10-removal-1-to-whole-exact-difference",
+      "representations": [
+        "visual",
+        "contextual",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l02.model_subtraction",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-part-whole-remaining-part-within-10",
+      "representations": [
+        "visual",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l03.subtraction_number_sentences",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-subtraction-number-sentence-whole-minus-part-exact",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l04.subtract_zero_or_all",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-subtract-zero-or-entire-whole-exact",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l05.vertical_subtraction",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-vertical-subtraction-exact-nonnegative-difference",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l07.compare_groups",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-compare-two-positive-groups-larger-minus-smaller-to-10",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l08.subtract_4_5",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-exact-subtract-0-through-whole-from-fixed-4-or-5",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l09.subtract_6_7",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-exact-subtraction-from-6-or-7-with-zero-and-all",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l10.subtract_8",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-fixed-minuend-8-zero-to-whole-exact-difference",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l11.subtract_9",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-fixed-minuend-nine-exact-0-to-9",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l12.subtract_10",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-fixed-minuend-10-subtract-0-through-10-exact",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l13.related_add_subtract",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-addition-fact-implies-two-related-subtractions-exact",
+      "representations": [
+        "symbolic",
+        "visual",
+        "part_part_whole"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l14.true_false_subtraction",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "uae-g1-subtraction-statement-truth-vs-written-difference",
+      "representations": [
+        "symbolic",
+        "visual",
+        "teacher_reasoning_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l01.count_on_1_2_3",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-count-on-one-to-three-from-larger-number-up-to-20",
+      "representations": [
+        "symbolic",
+        "number_line",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l02.count_on_fils",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-one-fils-equal-value-coins-count-on-from-group",
+      "representations": [
+        "symbolic",
+        "visual",
+        "coin_count"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l03.add_on_number_line",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-0-to12-numberline-add-by-unit-hops-right",
+      "representations": [
+        "symbolic",
+        "number_line",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l04.doubles_add",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-identical-addends-double-one-through-ten",
+      "representations": [
+        "symbolic",
+        "two_equal_cube_groups",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l05.near_doubles_add",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-adjacent-addends-doubles-plus-or-minus-one",
+      "representations": [
+        "symbolic",
+        "cube_bars",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l06.act_out_problem_solving",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g1-act-out-two-or-three-groups-or-missing-part-to20",
+      "representations": [
+        "symbolic",
+        "manipulatives",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l07.make_ten_add",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-make-ten-independent-original-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l08.commutative_add",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "independent-swapped-addend-vs-total-mode-verify",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l09.add_three_with_strategy",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "three-addend-strategy-independent-sum-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l01.count_back_1_2_3",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l02.number_line_subtract",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l03.doubles_subtraction",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l04.story_subtraction_equation",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l05.subtract_through_ten",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l06.related_add_sub_facts",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l07.fact_family_four_equations",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u05.l08.missing_addend_part_whole",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-grade1-unit4-source-bounded-independent-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l01.ordinal_1_10",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l02.numbers_11_19",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l03.groups_of_ten",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l04.count_tens_fils",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l05.ten_and_some_more",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l06.tens_and_ones",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l07.make_table",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l08.numbers_to_100",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l09.ten_more_ten_less",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l10.count_fives_fils",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l11.compare_models",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l12.compare_symbols",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l13.hundreds_tens_ones",
+      "version": 1,
+      "skillId": "supporting.number.place_value_rounding",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l14.count_to_120",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l15.read_write_to_120",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l01.add_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l02.count_on_tens_ones",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l03.add_tens_ones",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l04.guess_check_revise",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l05.regroup_ones_for_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l06.subtract_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l07.count_back_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u07.l08.inverse_tens",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "bounded-uae-g1-u6-independent-two-digit-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l01.tally_fives",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l02.record_table",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l03.make_picture_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l04.read_picture_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l05.make_bar_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u08.l06.read_bar_graph",
+      "version": 1,
+      "skillId": "supporting.statistics.charts",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l01.compare_lengths",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l02.order_lengths",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l03.nonstandard_measure",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l04.guess_check_length",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l05.analog_hour",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l06.digital_hour",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l07.analog_half",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l08.digital_half",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u09.l09.hour_or_half",
+      "version": 1,
+      "skillId": "supporting.measurement.practical",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l01.square_rectangle",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l02.triangle_trapezoid",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l03.circle_properties",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l04.compare_shapes",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l05.compose_2d",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l06.more_composite_2d",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l07.logical_shape_clue",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l08.equal_shares",
+      "version": 1,
+      "skillId": "fractions.represent.interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l09.halves_equal",
+      "version": 1,
+      "skillId": "fractions.represent.interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u10.l10.fourths_equal",
+      "version": 1,
+      "skillId": "fractions.represent.interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u11.l01.cubes_prisms",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u11.l02.cones_cylinders",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u11.l03.three_d_pattern",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u11.l04.compose_solids",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-u7-10-source-bounded-numeric-recomputation",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

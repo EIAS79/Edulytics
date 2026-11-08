@@ -1,0 +1,3 @@
+# UAE G1 lesson 64 A–B–C evidence
+
+Existing code PED:UAE-MOE-MATH:L1:COMMON:06:14; source is 2019–2020 Grade 1 Arabic student 02-1.pdf SHA B9E92BD0A3E66A57DF48DA85D569ED95A1CBA2D0F30232DFF79048950C30E4F3 PDF 101–106 (printed 429–434); verified all source pages visually and recorded categories at lesson-64-atomic-coverage.md. 2025–2026 term-2 guide supports the lesson order, not newer student-exercise matching. First-party Arabic explanation, age-appropriate models, teacher review, exact skill family uae.g1.u06.l14.count_to_120, targeted regression WRITTEN_NOT_RUN. No Stage D/CI/full build. READY_FOR_STAGE_D for the selected available source only.

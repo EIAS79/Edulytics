@@ -1,0 +1,270 @@
+name: UAE Grade 1 Arabic Stage D - Real Candidate Gates
+
+on:
+  push:
+    branches:
+      - curriculum/uae-g1-stage-d-20261108
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g1-stage-d.yml'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G1/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+      - 'tools/curriculum/uae_g1_stage_d_gate.py'
+      - 'tools/curriculum/uae_g1_stage_d_authenticated_https.py'
+      - 'tools/curriculum/uae_g1_stage_d_browser_rtl.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uae-g1-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+  CI: 'true'
+
+jobs:
+  structural-and-source-handoff:
+    name: UAE G1 structural and independent source handoff
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact 102-lesson registry, source identity and Arabic canonical content
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase structural
+      - name: Verify source facts or grade-wide owner acceptance with disclosed unknown parity
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase handoff
+      - name: Upload Stage D source gate evidence (including failures)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-source-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/
+          retention-days: 30
+
+  shared-build-and-grader:
+    name: UAE G1 one isolated build + exact math and lesson routing tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore entire solution once
+        run: dotnet restore Edulytics.sln
+      - name: Compile solution and all targeted tests
+        run: dotnet build Edulytics.sln --configuration Release --no-restore
+      - name: Run UAE Grade 1 source-aligned family and verifier tests
+        run: |
+          mkdir -p artifacts/uae-g1-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade1Arabic|FullyQualifiedName~UaeGrade1Related' \
+            --logger 'trx;LogFileName=uae-g1-family.trx' \
+            --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Run UAE official source identity and student exposure policy checks
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj \
+            --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeOfficialReferenceCoverageTests|FullyQualifiedName~UaeStudentLessonExposurePolicyTests' \
+            --logger 'trx;LogFileName=uae-g1-catalogue.trx' \
+            --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Run existing US lesson reader and presentation impact regressions
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj             --configuration Release --no-build --no-restore             --filter 'FullyQualifiedName~Phase29LessonReaderFinalPolishTests|FullyQualifiedName~Phase29LessonContentVisualContractTests|FullyQualifiedName~CommonCorePhase04SourceEntityPresentationTests'             --logger 'trx;LogFileName=uae-g1-impact-regression.trx'             --results-directory artifacts/uae-g1-stage-d/trx
+      - name: Preserve .NET test evidence on fail/pass
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/trx/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  final-ci-and-release-safety:
+    name: UAE G1 owner-accepted curriculum — exact-SHA auth, RTL and regression release safety
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    if: always()
+    needs: [structural-and-source-handoff, shared-build-and-grader, isolated-grade1-102-lesson-authenticated-https]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save actual dependency results and ref
+        shell: bash
+        env:
+          SOURCE_JOB_RESULT: ${{ needs.structural-and-source-handoff.result }}
+          DOTNET_JOB_RESULT: ${{ needs.shared-build-and-grader.result }}
+          E2E_JOB_RESULT: ${{ needs.isolated-grade1-102-lesson-authenticated-https.result }}
+        run: |
+          mkdir -p artifacts/uae-g1-stage-d
+          printf 'source_job=%s\ndotnet_job=%s\ne2e_job=%s\ngithub_sha=%s\nref=%s\nrun_id=%s\n' \
+            "$SOURCE_JOB_RESULT" "$DOTNET_JOB_RESULT" "$E2E_JOB_RESULT" \
+            "$GITHUB_SHA" "$GITHUB_REF" "$GITHUB_RUN_ID" \
+            > artifacts/uae-g1-stage-d/job-results.txt
+      - name: Retrieve actual authenticated UAE G1 E2E artifact for this Actions run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-102-authenticated-https-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/runtime/
+      - name: Retrieve actual Chromium visual artifact for this same Actions run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-browser-rtl-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/browser-rtl/
+      - name: Retrieve actual .NET regressions from this run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/trx/
+      - name: Evaluate run-linked technical CI and grade-wide owner's first-party approval
+        run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase final
+      - name: Upload actual candidate safety results, even on NO_GO
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-final-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/
+          retention-days: 30
+
+  isolated-grade1-102-lesson-authenticated-https:
+    name: UAE G1 all 102 Arabic learner pages + 204 persisted Practice attempts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G1
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile dedicated UAE G1 HTTPS and Chromium RTL probes
+        run: |
+          python3 -m py_compile tools/curriculum/uae_g1_stage_d_authenticated_https.py
+          python3 -m py_compile tools/curriculum/uae_g1_stage_d_browser_rtl.py
+      - name: Build and migrate disposable PostgreSQL only
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --configuration Release --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output /tmp/g1-web-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install pinned Playwright Chromium for real Arabic desktop/mobile screenshots
+        run: |
+          python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+      - name: Real HTTPS with four authenticated UAE roles and all 102 pages/204 persisted grades
+        env:
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          RENDER_SERVICE_ID: ci-disposable
+        run: |
+          set -euo pipefail
+          export Edulytics__MeetingDemo__Password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$Edulytics__MeetingDemo__Password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g1-fixture.log 2>&1; then
+            echo 'UAE Grade1 disposable school fixture did not complete'
+            tail -n 90 /tmp/g1-fixture.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g1-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/g1-key.pem -out /tmp/g1-cert.pem \
+            -subj '/CN=localhost' \
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g1-identity.pfx \
+            -inkey /tmp/g1-key.pem -in /tmp/g1-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          cp /tmp/g1-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g1-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          export ASPNETCORE_CONTENTROOT=/tmp/g1-web-publish
+          dotnet /tmp/g1-web-publish/Edulytics.Web.dll > /tmp/g1-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 100); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready > /dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              tail -n 110 /tmp/g1-web.log | grep -Eiv 'password|credential|secret' || true
+              exit 1
+            fi
+            sleep 3
+          done
+          test "$ready" = true
+          if ! python3 tools/curriculum/uae_g1_stage_d_authenticated_https.py; then
+            echo 'UAE Grade1 authenticated isolated HTTPS probe failed; sanitized app diagnostics:'
+            tail -n 130 /tmp/g1-web.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+          # A real Chromium engine, not HTML markers alone: both desktop/mobile,
+          # every canonical Arabic lesson and eight full-page evidence images.
+          if ! python3 tools/curriculum/uae_g1_stage_d_browser_rtl.py; then
+            echo 'UAE Grade1 authenticated Chromium RTL visual smoke probe failed'
+            tail -n 90 /tmp/g1-web.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+      - name: Preserve real UAE Grade1 disposable E2E evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-102-authenticated-https-${{ github.run_id }}
+          path: /tmp/uae-g1-stage-d-authenticated-102-lessons.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve Grade1 real Chromium RTL screenshot and responsive DOM evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g1-stage-d-browser-rtl-${{ github.run_id }}
+          path: /tmp/uae-g1-stage-d-browser-rtl/
+          if-no-files-found: warn
+          retention-days: 30

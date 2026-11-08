@@ -50,6 +50,106 @@ public sealed class ExactSkillContractQuestionEngine
     private static readonly IReadOnlySet<string> SupportedFamilies =
         new HashSet<string>(StringComparer.Ordinal)
         {
+            "uae.g1.u01.l01.read_write_1_5",
+            "uae.g1.u01.l02.zero_cardinality",
+            "uae.g1.u01.l03.read_write_6_8",
+            "uae.g1.u01.l04.read_write_9_10",
+            "uae.g1.u01.l05.read_write_11_15",
+            "uae.g1.u01.l06.read_write_16_20",
+            "uae.g1.u02.l01.addition_stories",
+            "uae.g1.u02.l02.model_addition",
+            "uae.g1.u02.l03.addition_number_sentences",
+            "uae.g1.u02.l04.add_zero",
+            "uae.g1.u02.l05.vertical_addition",
+            "uae.g1.u02.l06.write_story_equation",
+            "uae.g1.u02.l07.make_four_five",
+            "uae.g1.u02.l08.make_six_seven",
+            "uae.g1.u02.l09.make_eight",
+            "uae.g1.u02.l10.make_nine",
+            "uae.g1.u02.l11.make_ten_frame",
+            "uae.g1.u02.l13.true_false_addition",
+            "uae.g1.u03.l01.subtraction_stories",
+            "uae.g1.u03.l02.model_subtraction",
+            "uae.g1.u03.l03.subtraction_number_sentences",
+            "uae.g1.u03.l04.subtract_zero_or_all",
+            "uae.g1.u03.l05.vertical_subtraction",
+            "uae.g1.u03.l07.compare_groups",
+            "uae.g1.u03.l08.subtract_4_5",
+            "uae.g1.u03.l09.subtract_6_7",
+            "uae.g1.u03.l10.subtract_8",
+            "uae.g1.u03.l11.subtract_9",
+            "uae.g1.u03.l12.subtract_10",
+            "uae.g1.u03.l13.related_add_subtract",
+            "uae.g1.u03.l14.true_false_subtraction",
+            "uae.g1.u04.l01.count_on_1_2_3",
+            "uae.g1.u04.l02.count_on_fils",
+            "uae.g1.u04.l03.add_on_number_line",
+            "uae.g1.u04.l04.doubles_add",
+            "uae.g1.u04.l05.near_doubles_add",
+            "uae.g1.u04.l06.act_out_problem_solving",
+            "uae.g1.u04.l07.make_ten_add",
+            "uae.g1.u04.l08.commutative_add",
+            "uae.g1.u04.l09.add_three_with_strategy",
+            "uae.g1.u05.l01.count_back_1_2_3",
+            "uae.g1.u05.l02.number_line_subtract",
+            "uae.g1.u05.l03.doubles_subtraction",
+            "uae.g1.u05.l04.story_subtraction_equation",
+            "uae.g1.u05.l05.subtract_through_ten",
+            "uae.g1.u05.l06.related_add_sub_facts",
+            "uae.g1.u05.l07.fact_family_four_equations",
+            "uae.g1.u05.l08.missing_addend_part_whole",
+            "uae.g1.u06.l01.ordinal_1_10",
+            "uae.g1.u06.l02.numbers_11_19",
+            "uae.g1.u06.l03.groups_of_ten",
+            "uae.g1.u06.l04.count_tens_fils",
+            "uae.g1.u06.l05.ten_and_some_more",
+            "uae.g1.u06.l06.tens_and_ones",
+            "uae.g1.u06.l07.make_table",
+            "uae.g1.u06.l08.numbers_to_100",
+            "uae.g1.u06.l09.ten_more_ten_less",
+            "uae.g1.u06.l10.count_fives_fils",
+            "uae.g1.u06.l11.compare_models",
+            "uae.g1.u06.l12.compare_symbols",
+            "uae.g1.u06.l13.hundreds_tens_ones",
+            "uae.g1.u06.l14.count_to_120",
+            "uae.g1.u06.l15.read_write_to_120",
+            "uae.g1.u07.l01.add_tens",
+            "uae.g1.u07.l02.count_on_tens_ones",
+            "uae.g1.u07.l03.add_tens_ones",
+            "uae.g1.u07.l04.guess_check_revise",
+            "uae.g1.u07.l05.regroup_ones_for_tens",
+            "uae.g1.u07.l06.subtract_tens",
+            "uae.g1.u07.l07.count_back_tens",
+            "uae.g1.u07.l08.inverse_tens",
+            "uae.g1.u08.l01.tally_fives",
+            "uae.g1.u08.l02.record_table",
+            "uae.g1.u08.l03.make_picture_graph",
+            "uae.g1.u08.l04.read_picture_graph",
+            "uae.g1.u08.l05.make_bar_graph",
+            "uae.g1.u08.l06.read_bar_graph",
+            "uae.g1.u09.l01.compare_lengths",
+            "uae.g1.u09.l02.order_lengths",
+            "uae.g1.u09.l03.nonstandard_measure",
+            "uae.g1.u09.l04.guess_check_length",
+            "uae.g1.u09.l05.analog_hour",
+            "uae.g1.u09.l06.digital_hour",
+            "uae.g1.u09.l07.analog_half",
+            "uae.g1.u09.l08.digital_half",
+            "uae.g1.u09.l09.hour_or_half",
+            "uae.g1.u10.l01.square_rectangle",
+            "uae.g1.u10.l02.triangle_trapezoid",
+            "uae.g1.u10.l03.circle_properties",
+            "uae.g1.u10.l04.compare_shapes",
+            "uae.g1.u10.l05.compose_2d",
+            "uae.g1.u10.l06.more_composite_2d",
+            "uae.g1.u10.l07.logical_shape_clue",
+            "uae.g1.u10.l08.equal_shares",
+            "uae.g1.u10.l09.halves_equal",
+            "uae.g1.u10.l10.fourths_equal",
+            "uae.g1.u11.l01.cubes_prisms",
+            "uae.g1.u11.l02.cones_cylinders",
+            "uae.g1.u11.l03.three_d_pattern",
+            "uae.g1.u11.l04.compose_solids",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -819,6 +919,303 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
         // addition of two dot cubes up to 10. Fail closed for tampered tasks.
+        if (family.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal))
+        {
+            var (minimum, maximum) = UaeGrade1CountingRange(family);
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return minimum >= 0 &&
+                parameters.TryGetValue("count", out var count) &&
+                count >= minimum && count <= maximum &&
+                parameters.TryGetValue("scene", out var scene) &&
+                scene is >= 0 and <= 9 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var response) &&
+                response == count;
+        }
+        if (family is "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l05.vertical_addition" or "uae.g1.u02.l06.write_story_equation")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("left", out var left) && left is >= 1 and <= 7 &&
+                parameters.TryGetValue("right", out var right) && right is >= 1 and <= 4 &&
+                left + right <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == left + right;
+        }
+        if (family == "uae.g1.u02.l04.add_zero")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("left", out var left) && left is >= 0 and <= 9 &&
+                parameters.TryGetValue("right", out var right) && right is >= 0 and <= 9 &&
+                (left == 0 || right == 0) &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == left + right;
+        }
+        if (family is "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine" or "uae.g1.u02.l11.make_ten_frame")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("total", out var total) &&
+                (family == "uae.g1.u02.l07.make_four_five" ? total is 4 or 5 :
+                 family == "uae.g1.u02.l08.make_six_seven" ? total is 6 or 7 :
+                 family == "uae.g1.u02.l09.make_eight" ? total == 8 :
+                 family == "uae.g1.u02.l10.make_nine" ? total == 9 : total == 10) &&
+                parameters.TryGetValue("left", out var left) && left >= 0 && left <= total &&
+                parameters.TryGetValue("right", out var right) && right >= 0 && left + right == total &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == right;
+        }
+        if (family == "uae.g1.u05.l01.count_back_1_2_3")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 4 and <= 20 && parameters.TryGetValue("steps", out var steps) && steps is >= 1 and <= 3 && parameters.TryGetValue("result", out var result) && result == start - steps && result >= 0 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["start"] - parameters["steps"]);
+        }
+        if (family == "uae.g1.u05.l02.number_line_subtract")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 5 and <= 20 && parameters.TryGetValue("hops", out var hops) && hops is >= 1 and <= 9 && hops <= start && parameters.TryGetValue("result", out var result) && result == start - hops &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["start"] - parameters["hops"]);
+        }
+        if (family == "uae.g1.u05.l03.doubles_subtraction")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("part", out var part) && part is >= 1 and <= 10 && parameters.TryGetValue("whole", out var whole) && whole == 2 * part &&
+                parameters.TryGetValue("scene", out var context) && context is >= 0 and <= 2 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["part"]);
+        }
+        if (family == "uae.g1.u05.l04.story_subtraction_equation")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 5 and <= 20 && parameters.TryGetValue("removed", out var removed) && removed >= 1 && removed <= 10 && removed < whole && parameters.TryGetValue("remaining", out var remaining) && remaining == whole - removed && parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 2 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["whole"] - parameters["removed"]);
+        }
+        if (family == "uae.g1.u05.l05.subtract_through_ten")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 11 and <= 18 && parameters.TryGetValue("removed", out var removed) && removed is >= 2 and <= 9 && parameters.TryGetValue("toTen", out var toTen) && toTen == whole - 10 && toTen < removed && parameters.TryGetValue("rest", out var rest) && rest == removed - toTen && rest >= 1 && parameters.TryGetValue("result", out var result) && result == whole - removed && result == 10 - rest &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["whole"] - parameters["removed"]);
+        }
+        if (family == "uae.g1.u05.l06.related_add_sub_facts")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 2 and <= 9 && parameters.TryGetValue("b", out var b) && b is >= 2 and <= 10 && parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["b"]);
+        }
+        if (family == "uae.g1.u05.l07.fact_family_four_equations")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 9 && parameters.TryGetValue("b", out var b) && b is >= 1 and <= 9 && parameters.TryGetValue("whole", out var whole) && whole == a + b && parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["mode"] < 2 ? parameters["whole"] : parameters["mode"] == 2 ? parameters["b"] : parameters["a"]);
+        }
+        if (family == "uae.g1.u05.l08.missing_addend_part_whole")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 4 and <= 20 && parameters.TryGetValue("known", out var known) && known >= 1 && known <= 10 && known < whole && parameters.TryGetValue("missing", out var missing) && missing == whole - known && parameters.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (parameters["whole"] - parameters["known"]);
+        }
+        if (UaeG1Final29Ordinal(family) >= 74)
+            return VerifyUaeG1Final29(family, parameters, answer);
+        if (UaeGrade1Unit6Ordinal(family) > 0)
+            return VerifyUaeGrade1Unit6(family, parameters, answer);
+        if (UaeGrade1Unit5Ordinal(family) > 0)
+            return VerifyUaeGrade1Unit5(family, parameters, answer);
+        if (family == "uae.g1.u04.l09.add_three_with_strategy")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 9 &&
+                parameters.TryGetValue("b", out var b) && b is >= 1 and <= 9 &&
+                parameters.TryGetValue("c", out var c) && c is >= 1 and <= 9 &&
+                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 2 &&
+                (mode == 0 ? (a is >= 3 and <= 9 && a + b == 10 && c <= 8) :
+                 mode == 1 ? (a <= 7 && b == c && b <= 5) :
+                             (a <= 7 && b <= 7 && c <= 6)) &&
+                parameters.TryGetValue("pair", out var pair) &&
+                    pair == (mode == 1 ? b + c : a + b) &&
+                parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == total;
+        }
+        if (family == "uae.g1.u04.l08.commutative_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 0 and <= 10 &&
+                parameters.TryGetValue("b", out var b) && b is >= 0 and <= 10 &&
+                parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+                parameters.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == (mode == 0 ? a : total);
+        }
+        if (family == "uae.g1.u04.l07.make_ten_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 6 and <= 9 &&
+                parameters.TryGetValue("b", out var b) && b is >= 2 and <= 9 &&
+                parameters.TryGetValue("toTen", out var toTen) && toTen == 10 - a &&
+                parameters.TryGetValue("remainder", out var remainder) && remainder == b - toTen && remainder >= 1 &&
+                parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == total;
+        }
+        if (family == "uae.g1.u04.l06.act_out_problem_solving")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) &&
+                parameters.TryGetValue("b", out var b) &&
+                parameters.TryGetValue("c", out var c) && c is >= 0 and <= 4 &&
+                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 4 &&
+                (mode == 4
+                    ? (a is >= 3 and <= 9 && b == a && c == 0)
+                    : (a is >= 1 and <= 7 && b is >= 1 and <= 6 && (mode == 1 ? c >= 1 : c == 0))) &&
+                parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == (mode == 2 ? b : total);
+        }
+        if (family == "uae.g1.u04.l05.near_doubles_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("base", out var baseValue) && baseValue is >= 2 and <= 9 &&
+                parameters.TryGetValue("delta", out var delta) && delta is -1 or 1 &&
+                parameters.TryGetValue("orientation", out var orientation) && orientation is 0 or 1 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == 2 * baseValue + delta;
+        }
+        if (family == "uae.g1.u04.l04.doubles_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("equalAddend", out var equalAddend) && equalAddend is >= 1 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == equalAddend + equalAddend;
+        }
+        if (family == "uae.g1.u04.l03.add_on_number_line")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 1 and <= 11 &&
+                parameters.TryGetValue("hops", out var hops) && hops is >= 1 and <= 4 &&
+                start + hops <= 12 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == start + hops;
+        }
+        if (family == "uae.g1.u04.l02.count_on_fils")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 4 and <= 10 &&
+                parameters.TryGetValue("added", out var added) && added is >= 1 and <= 3 &&
+                start + added <= 13 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == start + added;
+        }
+        if (family == "uae.g1.u04.l01.count_on_1_2_3")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("start", out var start) && start is >= 1 and <= 19 &&
+                parameters.TryGetValue("step", out var step) && step is >= 1 and <= 3 &&
+                start + step <= 20 &&
+                parameters.TryGetValue("orientation", out var orientation) && orientation is 0 or 1 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == start + step;
+        }
+        if (family == "uae.g1.u03.l14.true_false_subtraction")
+        {
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 1 and <= 10 &&
+                parameters.TryGetValue("removed", out var removed) && removed >= 0 && removed <= whole &&
+                parameters.TryGetValue("shown", out var shown) && shown is >= 0 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                string.Equals(answer.Trim(), whole - removed == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
+        }
+        if (family == "uae.g1.u02.l13.true_false_addition")
+        {
+            return parameters.TryGetValue("left", out var left) && left is >= 0 and <= 9 &&
+                parameters.TryGetValue("right", out var right) && right is >= 0 and <= 9 &&
+                left + right <= 10 &&
+                parameters.TryGetValue("shown", out var shown) && shown is >= 0 and <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                string.Equals(answer.Trim(), left + right == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
+        }
+        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("whole", out var whole) && whole is >= 1 and <= 10 &&
+                parameters.TryGetValue("removed", out var removed) && removed >= 0 && removed <= whole &&
+                (family == "uae.g1.u03.l04.subtract_zero_or_all" ? removed == 0 || removed == whole :
+                 family == "uae.g1.u03.l08.subtract_4_5" ? whole is 4 or 5 :
+                 family == "uae.g1.u03.l09.subtract_6_7" ? whole is 6 or 7 : family == "uae.g1.u03.l10.subtract_8" ? whole == 8 :
+                 family == "uae.g1.u03.l11.subtract_9" ? whole == 9 :
+                 family == "uae.g1.u03.l12.subtract_10" ? whole == 10 : removed >= 1) &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsedUaeValue) &&
+                parsedUaeValue == whole - removed;
+        }
+        if (family == "uae.g1.u03.l13.related_add_subtract")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("left", out var left) && left is >= 1 and <= 9 &&
+                parameters.TryGetValue("right", out var right) && right is >= 1 and <= 9 &&
+                left + right <= 10 &&
+                parameters.TryGetValue("removeLeft", out var removeLeft) && removeLeft is 0 or 1 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var parsed) &&
+                parsed == (removeLeft == 1 ? right : left);
+        }
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
                 count is >= 1 and <= 20 &&
@@ -3148,6 +3545,206 @@ public sealed class ExactSkillContractQuestionEngine
 
         return family switch
         {
+            "uae.g1.u01.l01.read_write_1_5" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l02.zero_cardinality" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l03.read_write_6_8" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l04.read_write_9_10" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l05.read_write_11_15" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u01.l06.read_write_16_20" =>
+                BuildUaeGrade1Count(family, random),
+            "uae.g1.u02.l01.addition_stories" =>
+                BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l02.model_addition" =>
+                BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l03.addition_number_sentences" =>
+                BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l04.add_zero" =>
+                BuildUaeGrade1AdditionZero(random),
+            "uae.g1.u02.l05.vertical_addition" =>
+                BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l06.write_story_equation" =>
+                BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l07.make_four_five" =>
+                BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l08.make_six_seven" =>
+                BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l09.make_eight" =>
+                BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l10.make_nine" =>
+                BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l11.make_ten_frame" =>
+                BuildUaeGrade1ComposeNumber(random, family),
+            "uae.g1.u02.l13.true_false_addition" =>
+                BuildUaeGrade1TrueFalseAddition(random),
+            "uae.g1.u03.l01.subtraction_stories" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l02.model_subtraction" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l03.subtraction_number_sentences" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l04.subtract_zero_or_all" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l05.vertical_subtraction" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l07.compare_groups" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l08.subtract_4_5" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l09.subtract_6_7" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l10.subtract_8" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l11.subtract_9" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l12.subtract_10" =>
+                BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l13.related_add_subtract" =>
+                BuildUaeGrade1RelatedFacts(random),
+            "uae.g1.u03.l14.true_false_subtraction" =>
+                BuildUaeGrade1TrueFalseSubtraction(random),
+            "uae.g1.u04.l01.count_on_1_2_3" =>
+                BuildUaeGrade1CountOn(random),
+            "uae.g1.u04.l02.count_on_fils" =>
+                BuildUaeGrade1CountOnFils(random),
+            "uae.g1.u04.l03.add_on_number_line" =>
+                BuildUaeGrade1NumberLineAddition(random),
+            "uae.g1.u04.l04.doubles_add" =>
+                BuildUaeGrade1Doubles(random),
+            "uae.g1.u04.l05.near_doubles_add" =>
+                BuildUaeGrade1NearDoubles(random),
+            "uae.g1.u04.l06.act_out_problem_solving" =>
+                BuildUaeGrade1ActOut(random),
+            "uae.g1.u04.l07.make_ten_add" =>
+                BuildUaeGrade1MakeTenAdd(random),
+            "uae.g1.u04.l08.commutative_add" =>
+                BuildUaeGrade1CommutativeAdd(random),
+            "uae.g1.u04.l09.add_three_with_strategy" =>
+                BuildUaeGrade1ThreeAddends(random),
+            "uae.g1.u05.l01.count_back_1_2_3" =>
+                BuildUaeGrade1Unit4Lesson01(random),
+            "uae.g1.u05.l02.number_line_subtract" =>
+                BuildUaeGrade1Unit4Lesson02(random),
+            "uae.g1.u05.l03.doubles_subtraction" =>
+                BuildUaeGrade1Unit4Lesson03(random),
+            "uae.g1.u05.l04.story_subtraction_equation" =>
+                BuildUaeGrade1Unit4Lesson04(random),
+            "uae.g1.u05.l05.subtract_through_ten" =>
+                BuildUaeGrade1Unit4Lesson05(random),
+            "uae.g1.u05.l06.related_add_sub_facts" =>
+                BuildUaeGrade1Unit4Lesson06(random),
+            "uae.g1.u05.l07.fact_family_four_equations" =>
+                BuildUaeGrade1Unit4Lesson07(random),
+            "uae.g1.u05.l08.missing_addend_part_whole" =>
+                BuildUaeGrade1Unit4Lesson08(random),
+            "uae.g1.u06.l01.ordinal_1_10" =>
+                BuildUaeGrade1Unit5(1, family, random),
+            "uae.g1.u06.l02.numbers_11_19" =>
+                BuildUaeGrade1Unit5(2, family, random),
+            "uae.g1.u06.l03.groups_of_ten" =>
+                BuildUaeGrade1Unit5(3, family, random),
+            "uae.g1.u06.l04.count_tens_fils" =>
+                BuildUaeGrade1Unit5(4, family, random),
+            "uae.g1.u06.l05.ten_and_some_more" =>
+                BuildUaeGrade1Unit5(5, family, random),
+            "uae.g1.u06.l06.tens_and_ones" =>
+                BuildUaeGrade1Unit5(6, family, random),
+            "uae.g1.u06.l07.make_table" =>
+                BuildUaeGrade1Unit5(7, family, random),
+            "uae.g1.u06.l08.numbers_to_100" =>
+                BuildUaeGrade1Unit5(8, family, random),
+            "uae.g1.u06.l09.ten_more_ten_less" =>
+                BuildUaeGrade1Unit5(9, family, random),
+            "uae.g1.u06.l10.count_fives_fils" =>
+                BuildUaeGrade1Unit5(10, family, random),
+            "uae.g1.u06.l11.compare_models" =>
+                BuildUaeGrade1Unit5(11, family, random),
+            "uae.g1.u06.l12.compare_symbols" =>
+                BuildUaeGrade1Unit5(12, family, random),
+            "uae.g1.u06.l13.hundreds_tens_ones" =>
+                BuildUaeGrade1Unit5(13, family, random),
+            "uae.g1.u06.l14.count_to_120" =>
+                BuildUaeGrade1Unit5(14, family, random),
+            "uae.g1.u06.l15.read_write_to_120" =>
+                BuildUaeGrade1Unit5(15, family, random),
+            "uae.g1.u07.l01.add_tens" =>
+                BuildUaeGrade1Unit6(1, family, random),
+            "uae.g1.u07.l02.count_on_tens_ones" =>
+                BuildUaeGrade1Unit6(2, family, random),
+            "uae.g1.u07.l03.add_tens_ones" =>
+                BuildUaeGrade1Unit6(3, family, random),
+            "uae.g1.u07.l04.guess_check_revise" =>
+                BuildUaeGrade1Unit6(4, family, random),
+            "uae.g1.u07.l05.regroup_ones_for_tens" =>
+                BuildUaeGrade1Unit6(5, family, random),
+            "uae.g1.u07.l06.subtract_tens" =>
+                BuildUaeGrade1Unit6(6, family, random),
+            "uae.g1.u07.l07.count_back_tens" =>
+                BuildUaeGrade1Unit6(7, family, random),
+            "uae.g1.u07.l08.inverse_tens" =>
+                BuildUaeGrade1Unit6(8, family, random),
+            "uae.g1.u08.l01.tally_fives" =>
+                BuildUaeG1Final29(74, family, random),
+            "uae.g1.u08.l02.record_table" =>
+                BuildUaeG1Final29(75, family, random),
+            "uae.g1.u08.l03.make_picture_graph" =>
+                BuildUaeG1Final29(76, family, random),
+            "uae.g1.u08.l04.read_picture_graph" =>
+                BuildUaeG1Final29(77, family, random),
+            "uae.g1.u08.l05.make_bar_graph" =>
+                BuildUaeG1Final29(78, family, random),
+            "uae.g1.u08.l06.read_bar_graph" =>
+                BuildUaeG1Final29(79, family, random),
+            "uae.g1.u09.l01.compare_lengths" =>
+                BuildUaeG1Final29(80, family, random),
+            "uae.g1.u09.l02.order_lengths" =>
+                BuildUaeG1Final29(81, family, random),
+            "uae.g1.u09.l03.nonstandard_measure" =>
+                BuildUaeG1Final29(82, family, random),
+            "uae.g1.u09.l04.guess_check_length" =>
+                BuildUaeG1Final29(83, family, random),
+            "uae.g1.u09.l05.analog_hour" =>
+                BuildUaeG1Final29(84, family, random),
+            "uae.g1.u09.l06.digital_hour" =>
+                BuildUaeG1Final29(85, family, random),
+            "uae.g1.u09.l07.analog_half" =>
+                BuildUaeG1Final29(86, family, random),
+            "uae.g1.u09.l08.digital_half" =>
+                BuildUaeG1Final29(87, family, random),
+            "uae.g1.u09.l09.hour_or_half" =>
+                BuildUaeG1Final29(88, family, random),
+            "uae.g1.u10.l01.square_rectangle" =>
+                BuildUaeG1Final29(89, family, random),
+            "uae.g1.u10.l02.triangle_trapezoid" =>
+                BuildUaeG1Final29(90, family, random),
+            "uae.g1.u10.l03.circle_properties" =>
+                BuildUaeG1Final29(91, family, random),
+            "uae.g1.u10.l04.compare_shapes" =>
+                BuildUaeG1Final29(92, family, random),
+            "uae.g1.u10.l05.compose_2d" =>
+                BuildUaeG1Final29(93, family, random),
+            "uae.g1.u10.l06.more_composite_2d" =>
+                BuildUaeG1Final29(94, family, random),
+            "uae.g1.u10.l07.logical_shape_clue" =>
+                BuildUaeG1Final29(95, family, random),
+            "uae.g1.u10.l08.equal_shares" =>
+                BuildUaeG1Final29(96, family, random),
+            "uae.g1.u10.l09.halves_equal" =>
+                BuildUaeG1Final29(97, family, random),
+            "uae.g1.u10.l10.fourths_equal" =>
+                BuildUaeG1Final29(98, family, random),
+            "uae.g1.u11.l01.cubes_prisms" =>
+                BuildUaeG1Final29(99, family, random),
+            "uae.g1.u11.l02.cones_cylinders" =>
+                BuildUaeG1Final29(100, family, random),
+            "uae.g1.u11.l03.three_d_pattern" =>
+                BuildUaeG1Final29(101, family, random),
+            "uae.g1.u11.l04.compose_solids" =>
+                BuildUaeG1Final29(102, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4015,6 +4612,1026 @@ public sealed class ExactSkillContractQuestionEngine
             "List HH, HT, TH, TT. Exactly one head occurs in HT and TH, so 2 of 4 equally likely outcomes are favourable.",
             AssessmentItemType.ShortAnswer,
             ("variant", variant));
+    }
+
+    private static (int Minimum, int Maximum) UaeGrade1CountingRange(string family) => family switch
+    {
+        "uae.g1.u01.l01.read_write_1_5" => (1, 5),
+        "uae.g1.u01.l02.zero_cardinality" => (0, 0),
+        "uae.g1.u01.l03.read_write_6_8" => (6, 8),
+        "uae.g1.u01.l04.read_write_9_10" => (9, 10),
+        "uae.g1.u01.l05.read_write_11_15" => (11, 15),
+        "uae.g1.u01.l06.read_write_16_20" => (16, 20),
+        _ => (-1, -1)
+    };
+
+    // Extends the existing exact-counting kernel; no new Mathematics engine.
+    private static ExactProblem BuildUaeGrade1Count(string family, Random random)
+    {
+        var (minimum, maximum) = UaeGrade1CountingRange(family);
+        if (minimum < 0)
+            throw new InvalidOperationException($"Unsupported UAE Grade 1 counting family: {family}");
+        var count = random.Next(minimum, maximum + 1);
+        var scene = random.Next(0, 10);
+        string[] objects = ["خرزات", "أزرار", "نجوم", "أقلام", "مكعبات",
+                            "زهور", "دوائر", "كرات", "ملصقات", "أشكال"];
+        var firstFrame = new string('●', Math.Min(count, 10)).PadRight(10, '□');
+        var secondFrame = count > 10
+            ? " | " + new string('●', count - 10).PadRight(10, '□')
+            : string.Empty;
+        return Problem(
+            family,
+            $"عدّ {objects[scene]} النموذج واكتب الرقم: {firstFrame}{secondFrame}. كم عنصرًا؟",
+            "عدّ كل نقطة مرة واحدة؛ وعند وجود إطارين اجمع عشرة الإطار الأول وآحاد الإطار الثاني. الإطارات الفارغة تمثل صفرًا.",
+            AssessmentItemType.Numeric,
+            ("count", count), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1AdditionStory(Random random, string family)
+    {
+        var left = random.Next(1, 8);
+        var right = random.Next(1, Math.Min(4, 10 - left) + 1);
+        var scene = random.Next(0, 6);
+        string[] objects = ["كرات", "مكعبات", "أزهار", "أقلام", "ملصقات", "حبات خرز"];
+        var first = new string('●', left);
+        var second = new string('●', right);
+        var prompt = family switch
+        {
+            "uae.g1.u02.l02.model_addition" =>
+                $"أكمل مخطط الجزأين والكل: الجزء الأول {left}: {first} | الجزء الثاني {right}: {second} | الكل: ؟",
+            "uae.g1.u02.l03.addition_number_sentences" =>
+                $"اكتب المجموع لإكمال جملة الجمع: {left} + {right} = ؟. تحقق بالنقاط: {first} | {second}",
+            "uae.g1.u02.l05.vertical_addition" =>
+                $"أكمل الجمع الرأسي: {left}\n+ {right}\n────\n؟. تحقق بالنقاط: {first} | {second}",
+            "uae.g1.u02.l06.write_story_equation" =>
+                $"اقرأ القصة: كان معي {left} {objects[scene]}، ثم حصلت على {right} أخرى. كم أصبح المجموع؟ أفهم العددين، أخطط للجمع، أكمل جملة {left} + {right} = ؟، ثم أتحقق بالنقاط: {first} | {second}",
+            _ => $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟"
+        };
+        return Problem(family,
+            prompt,
+            "مثل المجموعتين في شكلين مختلفين، ضمّهما، ثم عدّ جميع العناصر مرة واحدة.",
+            AssessmentItemType.Numeric,
+            ("left", left), ("right", right), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1RelatedFacts(Random random)
+    {
+        const string family = "uae.g1.u03.l13.related_add_subtract";
+        var left = random.Next(1, 8);
+        var right = random.Next(1, Math.Min(4, 10 - left) + 1);
+        var total = left + right;
+        var removeLeft = random.Next(0, 2);
+        var removed = removeLeft == 1 ? left : right;
+        return Problem(family,
+            $"أربط الجمع بالطرح: {left} + {right} = {total}. إذا أزلت {removed} من {total} فكم يبقى؟ أكمل {total} − {removed} = ؟، واشرح كيف يساعدك الجمع.",
+            "أبدأ من الكل، وأزيل أحد الجزأين، وأجد الجزء الآخر.",
+            AssessmentItemType.Numeric,
+            ("left", left), ("right", right), ("removeLeft", removeLeft));
+    }
+
+    private static ExactProblem BuildUaeGrade1SubtractionStory(Random random, string family)
+    {
+        var whole = family == "uae.g1.u03.l12.subtract_10" ? 10 :
+            family == "uae.g1.u03.l11.subtract_9" ? 9 :
+            family == "uae.g1.u03.l10.subtract_8" ? 8 :
+            family == "uae.g1.u03.l09.subtract_6_7" ? random.Next(6, 8) :
+            family == "uae.g1.u03.l08.subtract_4_5" ? random.Next(4, 6) : random.Next(2, 11);
+        var removed = family == "uae.g1.u03.l04.subtract_zero_or_all" ?
+            (random.Next(0, 2) == 0 ? 0 : whole) :
+            family == "uae.g1.u03.l07.compare_groups" ? random.Next(1, whole) :
+            family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" ? random.Next(0, whole + 1) : random.Next(1, whole + 1);
+        var scene = random.Next(0, 6);
+        string[] objects = ["أقلام", "زهور", "أوراق", "بطاقات", "كرات", "مكعبات"];
+        var before = new string('●', whole);
+        var after = new string('●', whole - removed);
+        var prompt = family is "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" ?
+            $"الطرح من {whole}: أرسم {whole} قطع {before} وأشطب {removed}؛ أكمل {whole} − {removed} = ؟. القطع المتبقية: {after}" :
+            family == "uae.g1.u03.l07.compare_groups" ?
+            $"قارن المجموعتين: المجموعة الأولى {whole} {objects[scene]} {before}، والمجموعة الثانية {removed} {objects[scene]} {new string('○', removed)}. صِل بينها واحدًا لواحد. كم عنصرًا أكثر في المجموعة الأولى؟ أكمل {whole} − {removed} = ؟." :
+            family == "uae.g1.u03.l05.vertical_subtraction" ?
+            $"أكمل الطرح الرأسي: {whole}\n− {removed}\n────\n؟. تحقق بالرسم: {before} ثم اشطب {removed} نقاط." :
+            family == "uae.g1.u03.l04.subtract_zero_or_all" ?
+            $"لدي {whole} عناصر؛ أزيل {removed}. ما عدد العناصر الباقية؟ أكمل {whole} − {removed} = ؟. ابدأ بالنقاط {before} ثم عدّ ما بقي: {after}" :
+            family == "uae.g1.u03.l03.subtraction_number_sentences" ?
+            $"أكمل جملة الطرح العددية: {whole} − {removed} = ؟. أشطب {removed} من {whole} نقاط: {before}، ثم أعد ما بقي." :
+            family == "uae.g1.u03.l02.model_subtraction" ?
+            $"مخطط جزء/جزء/كل: الكل {whole} {before}، الجزء المعروف {removed}، الجزء المجهول ؟. أكمل {whole} − {removed} = ؟. المتبقي: {after}" :
+            $"كان هناك {whole} من {objects[scene]}. أُخذ منها {removed}. كم بقي؟ {whole} − {removed} = ؟. قبل: {before} | بعد: {after}";
+        return Problem(family,
+            prompt,
+            "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
+            AssessmentItemType.Numeric,
+            ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    // Scoped addition-through-ten mechanic uses existing exact engine, not a new engine.
+    // Reuses the exact family engine for addition commutativity; not a new engine.
+    // Uses existing exact numeric question engine; three-addend grouping within 20.
+    private static ExactProblem BuildUaeGrade1Unit4Lesson01(Random random)
+    {
+        const string family = "uae.g1.u05.l01.count_back_1_2_3";
+
+        var start = random.Next(4, 21);
+        var steps = random.Next(1, Math.Min(3, start) + 1);
+        var result = start - steps;
+        var line = string.Join(" ← ", Enumerable.Range(0, steps + 1).Select(i => (start - i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"ابدأ من {start}، وعد إلى الخلف {steps} خطوات: {line}. أكمل {start} − {steps} = ؟",
+            "ابدأ بعدد معلوم، وانتقل خطوة إلى الخلف لكل واحد مطروح دون أن تعد نقطة البداية.",
+            AssessmentItemType.Numeric, ("start", start), ("steps", steps), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson02(Random random)
+    {
+        const string family = "uae.g1.u05.l02.number_line_subtract";
+
+        var start = random.Next(5, 21);
+        var hops = random.Next(1, Math.Min(9, start) + 1);
+        var result = start - hops;
+        var line = string.Join("  ", Enumerable.Range(0, start + 1));
+        return Problem(family,
+            $"خط الأعداد: {line}. ابدأ من {start} وارسم {hops} قفزات متساوية إلى الخلف. عند أي عدد تصل؟",
+            "أبدأ بالعدد الكلي، وأتحرك يسارًا بعدد القفزات المطلوب؛ نقطة النهاية هي الفرق.",
+            AssessmentItemType.Numeric, ("start", start), ("hops", hops), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson03(Random random)
+    {
+        const string family = "uae.g1.u05.l03.doubles_subtraction";
+        var part = random.Next(1, 11);
+        var whole = 2 * part;
+        var scene = random.Next(0, 3);
+        var items = new[] { "مكعبات", "خرزات", "بطاقات" };
+        return Problem(family,
+            $"أكوّن مجموعتين متساويتين من {items[scene]}، في كل مجموعة {part}. " +
+            $"المجموع {whole}؛ إذا أزلت مجموعة كاملة، فأكمل {whole} − {part} = ؟.",
+            "عند حذف مجموعة من مضاعف مكوّن من مجموعتين متساويتين تبقى المجموعة الأخرى.",
+            AssessmentItemType.Numeric, ("part", part), ("whole", whole), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson04(Random random)
+    {
+        const string family = "uae.g1.u05.l04.story_subtraction_equation";
+
+        var whole = random.Next(5, 21);
+        var removed = random.Next(1, Math.Min(whole - 1, 10) + 1);
+        var remaining = whole - removed;
+        var scene = random.Next(0, 3);
+        var units = new[] { "أقلام", "مكعبات", "بطاقات" };
+        return Problem(family,
+            $"في صندوق {whole} من {units[scene]}، أعطينا {removed} منها لصديق. مثّل المسألة واكتب جملة طرح ثم اكتب العدد المتبقي: {whole} − {removed} = ؟.",
+            "أفهم وأخطط وأمثل الكل، ثم أحذف ما غادر، وأتحقق من الفرق بجمع الجزءين.",
+            AssessmentItemType.Numeric, ("whole", whole), ("removed", removed), ("remaining", remaining), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson05(Random random)
+    {
+        const string family = "uae.g1.u05.l05.subtract_through_ten";
+
+        var whole = random.Next(11, 19);
+        var toTen = whole - 10;
+        var removed = random.Next(toTen + 1, 10);
+        var rest = removed - toTen;
+        var result = whole - removed;
+        return Problem(family,
+            $"حل {whole} − {removed} بتكوين عشرة: اطرح {toTen} أولًا للوصول إلى ١٠، ثم اطرح {rest} من ١٠. ما الناتج؟",
+            "جزّئ العدد المطروح إلى جزء للوصول للعشرة وجزء متبقٍ، ثم أطرح الجزأين بالتتابع.",
+            AssessmentItemType.Numeric, ("whole", whole), ("removed", removed),
+            ("toTen", toTen), ("rest", rest), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson06(Random random)
+    {
+        const string family = "uae.g1.u05.l06.related_add_sub_facts";
+
+        var a = random.Next(2, 10);
+        var b = random.Next(2, 11);
+        var total = a + b;
+        return Problem(family,
+            $"أعرف حقيقة الجمع {a} + {b} = {total}. أستخدمها لإكمال حقيقة الطرح المترابطة: {total} − {a} = ؟.",
+            "الكل ناقص جزء يساوي الجزء الآخر؛ أتحقق بالجمع.",
+            AssessmentItemType.Numeric, ("a", a), ("b", b), ("total", total));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson07(Random random)
+    {
+        const string family = "uae.g1.u05.l07.fact_family_four_equations";
+
+        var a = random.Next(1, 10);
+        var b = random.Next(1, 10);
+        var whole = a + b;
+        var mode = random.Next(0, 4);
+        var prompt = mode switch
+        {
+            0 => $"مثلث حقائق: الجزآن {a} و{b}، الكل {whole}. أكمل: {a} + {b} = ؟",
+            1 => $"مثلث حقائق: الجزآن {a} و{b}، الكل {whole}. أكمل الجمع المعكوس: {b} + {a} = ؟",
+            2 => $"مثلث حقائق: الجزآن {a} و{b}، الكل {whole}. أكمل: {whole} − {a} = ؟",
+            _ => $"مثلث حقائق: الجزآن {a} و{b}، الكل {whole}. أكمل: {whole} − {b} = ؟"
+        };
+        return Problem(family, prompt,
+            "تتكون عائلة الحقائق من الجزأين والكل، ومنها حقيقتا جمع وحقيقتا طرح.",
+            AssessmentItemType.Numeric, ("a", a), ("b", b), ("whole", whole), ("mode", mode));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson08(Random random)
+    {
+        const string family = "uae.g1.u05.l08.missing_addend_part_whole";
+
+        var whole = random.Next(4, 21);
+        var known = random.Next(1, Math.Min(whole, 11));
+        var missing = whole - known;
+        var mode = random.Next(0, 2);
+        var prompt = mode == 0
+            ? $"أكمل جملة الجمع: {known} + ؟ = {whole}. استخدم حقيقة الطرح لإيجاد الجزء الناقص."
+            : $"لدي مجموعتان مجموعهما {whole}، إحدى المجموعتين فيها {known} قطع. أكمل: ؟ + {known} = {whole}.";
+        return Problem(family, prompt,
+            "الجزء المجهول يساوي الكل ناقص الجزء المعروف؛ أتحقق بالجمع.",
+            AssessmentItemType.Numeric, ("whole", whole), ("known", known), ("missing", missing), ("mode", mode));
+    }
+
+    // First-party UAE Grade 1 Place Value questions, fixed lesson-scoped family IDs.
+    // Reuses the existing exact math engine; no separate engine and no copied publisher exercises.
+    private static int UaeGrade1Unit5Ordinal(string family) => family switch
+    {
+        "uae.g1.u06.l01.ordinal_1_10" => 1,
+        "uae.g1.u06.l02.numbers_11_19" => 2,
+        "uae.g1.u06.l03.groups_of_ten" => 3,
+        "uae.g1.u06.l04.count_tens_fils" => 4,
+        "uae.g1.u06.l05.ten_and_some_more" => 5,
+        "uae.g1.u06.l06.tens_and_ones" => 6,
+        "uae.g1.u06.l07.make_table" => 7,
+        "uae.g1.u06.l08.numbers_to_100" => 8,
+        "uae.g1.u06.l09.ten_more_ten_less" => 9,
+        "uae.g1.u06.l10.count_fives_fils" => 10,
+        "uae.g1.u06.l11.compare_models" => 11,
+        "uae.g1.u06.l12.compare_symbols" => 12,
+        "uae.g1.u06.l13.hundreds_tens_ones" => 13,
+        "uae.g1.u06.l14.count_to_120" => 14,
+        "uae.g1.u06.l15.read_write_to_120" => 15,
+        _ => -1
+    };
+
+    private static bool VerifyUaeGrade1Unit5(string family,
+        IReadOnlyDictionary<string, int> p, string answer)
+    {
+        var lesson = UaeGrade1Unit5Ordinal(family);
+        if (lesson < 1 || !p.TryGetValue("n", out var n) ||
+            !p.TryGetValue("aux", out var aux) ||
+            !p.TryGetValue("mode", out var mode) ||
+            !p.TryGetValue("result", out var result)) return false;
+        var expected = lesson switch
+        {
+            1 or 2 or 13 or 15 => n,
+            3 or 4 or 7 => n * 10,
+            5 or 6 or 8 => n * 10 + aux,
+            9 => n + mode * 10,
+            10 => n * 5,
+            11 => Math.Max(n, aux),
+            12 => n > aux ? 1 : n < aux ? -1 : 0,
+            14 => n + 1,
+            _ => -1000
+        };
+        var valid = lesson switch
+        {
+            1 => n is >= 1 and <= 10 && aux == 0 && mode is 0 or 1,
+            2 => n is >= 11 and <= 19 && aux == n - 10 && mode is >= 0 and <= 2,
+            3 or 4 => n is >= 1 and <= 10 && aux == 0 && mode is 0 or 1,
+            5 => n is >= 1 and <= 9 && aux is >= 1 and <= 9 && mode == 0,
+            6 => n is >= 1 and <= 9 && aux is >= 0 and <= 9 && mode == 0,
+            7 => n is >= 1 and <= 8 && aux == 10 && mode is 0 or 1,
+            8 => n is >= 1 and <= 10 && aux is >= 0 and <= 9 &&
+                 (n != 10 || aux == 0) && mode == 0,
+            9 => n is >= 10 and <= 90 && (mode is -1 or 1) && aux == 0,
+            10 => n is >= 1 and <= 20 && aux == 0 && mode == 0,
+            11 or 12 => n is >= 0 and <= 100 && aux is >= 0 and <= 100 && mode == 0,
+            13 => n is >= 100 and <= 120 && aux == n % 10 && mode == n / 10 % 10,
+            14 => n is >= 1 and <= 119 && aux == 0 && mode == 0,
+            15 => n is >= 1 and <= 120 && aux == 0 && mode == 0,
+            _ => false
+        };
+        if (!valid || expected != result) return false;
+        if (lesson == 12)
+            return answer.Trim() == (expected == 1 ? ">" : expected == -1 ? "<" : "=");
+        var normalized = new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+            c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    // Edulytics-original Grade 1 U6: exact lesson-bounded two-digit arithmetic.
+    private static int UaeGrade1Unit6Ordinal(string family) => family switch
+    {
+        "uae.g1.u07.l01.add_tens" => 1,
+        "uae.g1.u07.l02.count_on_tens_ones" => 2,
+        "uae.g1.u07.l03.add_tens_ones" => 3,
+        "uae.g1.u07.l04.guess_check_revise" => 4,
+        "uae.g1.u07.l05.regroup_ones_for_tens" => 5,
+        "uae.g1.u07.l06.subtract_tens" => 6,
+        "uae.g1.u07.l07.count_back_tens" => 7,
+        "uae.g1.u07.l08.inverse_tens" => 8,
+        _ => -1
+    };
+
+    private static bool VerifyUaeGrade1Unit6(string family,
+        IReadOnlyDictionary<string, int> p, string answer)
+    {
+        var lesson = UaeGrade1Unit6Ordinal(family);
+        if (lesson < 1 || !p.TryGetValue("a", out var a) ||
+            !p.TryGetValue("b", out var b) || !p.TryGetValue("mode", out var mode) ||
+            !p.TryGetValue("result", out var result)) return false;
+        var valid = lesson switch
+        {
+            1 => a is >= 10 and <= 90 && a % 10 == 0 &&
+                 b is >= 10 and <= 90 && b % 10 == 0 && a + b <= 100 && mode == 0,
+            2 => a is >= 10 and <= 89 && b >= 1 && a + b <= 100 &&
+                 (mode == 0 && b <= 9 || mode == 1 && b % 10 == 0 && b <= 70),
+            3 => a is >= 10 and <= 89 && b is >= 1 and <= 89 && a + b <= 100 &&
+                 a % 10 + b % 10 < 10 && mode == 0,
+            4 => a is >= 10 and <= 90 && b is >= 1 and <= 49 &&
+                 b < a && mode == 0,
+            5 => a is >= 11 and <= 19 && b is >= 2 and <= 9 &&
+                 a % 10 + b >= 10 && mode == 0,
+            // Subtracting 100 from 100 is valid: the generator can select
+            // ten complete tens from ten complete tens. The old <=90 bound
+            // incorrectly rejected correct solver output for that case.
+            6 or 7 => a is >= 10 and <= 100 && a % 10 == 0 &&
+                 b is >= 10 and <= 100 && b % 10 == 0 && b <= a && mode == 0,
+            8 => a is >= 10 and <= 90 && a % 10 == 0 &&
+                 b is >= 10 and <= 90 && b % 10 == 0 &&
+                 (mode == 0 ? a + b <= 100 : b <= a) && mode is 0 or 1,
+            _ => false
+        };
+        var expected = lesson switch
+        {
+            1 or 2 or 3 or 5 => a + b,
+            4 or 6 or 7 => a - b,
+            8 => mode == 0 ? a + b : a - b,
+            _ => -1
+        };
+        if (!valid || result != expected) return false;
+        var normalized = new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+            c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    // First-party Grade 1 Arabic U7–U10 exact practice; open-ended modeling
+    // is expressly teacher-reviewed, not asserted as automatically graded.
+    private static int UaeG1Final29Ordinal(string family) => family switch
+    {
+        "uae.g1.u08.l01.tally_fives" => 74,
+        "uae.g1.u08.l02.record_table" => 75,
+        "uae.g1.u08.l03.make_picture_graph" => 76,
+        "uae.g1.u08.l04.read_picture_graph" => 77,
+        "uae.g1.u08.l05.make_bar_graph" => 78,
+        "uae.g1.u08.l06.read_bar_graph" => 79,
+        "uae.g1.u09.l01.compare_lengths" => 80,
+        "uae.g1.u09.l02.order_lengths" => 81,
+        "uae.g1.u09.l03.nonstandard_measure" => 82,
+        "uae.g1.u09.l04.guess_check_length" => 83,
+        "uae.g1.u09.l05.analog_hour" => 84,
+        "uae.g1.u09.l06.digital_hour" => 85,
+        "uae.g1.u09.l07.analog_half" => 86,
+        "uae.g1.u09.l08.digital_half" => 87,
+        "uae.g1.u09.l09.hour_or_half" => 88,
+        "uae.g1.u10.l01.square_rectangle" => 89,
+        "uae.g1.u10.l02.triangle_trapezoid" => 90,
+        "uae.g1.u10.l03.circle_properties" => 91,
+        "uae.g1.u10.l04.compare_shapes" => 92,
+        "uae.g1.u10.l05.compose_2d" => 93,
+        "uae.g1.u10.l06.more_composite_2d" => 94,
+        "uae.g1.u10.l07.logical_shape_clue" => 95,
+        "uae.g1.u10.l08.equal_shares" => 96,
+        "uae.g1.u10.l09.halves_equal" => 97,
+        "uae.g1.u10.l10.fourths_equal" => 98,
+        "uae.g1.u11.l01.cubes_prisms" => 99,
+        "uae.g1.u11.l02.cones_cylinders" => 100,
+        "uae.g1.u11.l03.three_d_pattern" => 101,
+        "uae.g1.u11.l04.compose_solids" => 102,
+        _ => -1
+    };
+
+    private static bool VerifyUaeG1Final29(string family,
+        IReadOnlyDictionary<string,int> p, string answer)
+    {
+        int lesson=UaeG1Final29Ordinal(family);
+        if (lesson < 74 || lesson > 102 ||
+            !p.TryGetValue("a",out var a) ||
+            !p.TryGetValue("b",out var b) ||
+            !p.TryGetValue("c",out var c) ||
+            !p.TryGetValue("mode",out var mode) ||
+            !p.TryGetValue("result",out var result)) return false;
+        var valid=lesson switch
+        {
+            74 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            75 or 76 or 79 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            77 => a is >= 1 and <= 10 && b is >= 1 and <= 10 && c==0 && mode==0,
+            78 => a is >= 1 and <= 9 && b is >= 1 and <= 9 && c==0 && mode==0,
+            80 => a is >= 2 and <= 20 && b is >= 2 and <= 20 && c==0 && mode==0,
+            81 => a is >= 2 and <= 20 && b is >= 2 and <= 20 && c is >= 2 and <= 20 && mode==0,
+            82 => a is >= 1 and <= 12 && b==0 && c==0 && mode==0,
+            83 => a is >= 10 and <= 25 && b is >= 1 and <= 9 && c==0 && mode==0,
+            84 or 85 or 86 or 87 => a is >= 1 and <= 12 && b==0 && c==0 && mode==0,
+            88 => a is >= 1 and <= 12 && b==0 && c==0 && mode is 0 or 1,
+            89 or 90 or 92 or 95 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            91 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            93 or 94 => a is >= 1 and <= 5 && b is >= 1 and <= 5 && c==0 && mode==0,
+            96 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            97 => a is >= 2 and <= 20 && a%2==0 && b==0 && c==0 && mode is 0 or 1,
+            98 => a is >= 4 and <= 24 && a%4==0 && b==0 && c==0 && mode is >= 0 and <= 2,
+            99 or 100 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            101 => a is >= 1 and <= 12 && b==0 && c==0 && mode is 0 or 1,
+            102 => a is >= 1 and <= 4 && b is >= 1 and <= 4 && c==0 && mode==0,
+            _ => false
+        };
+        if (!valid) return false;
+        var expected=lesson switch
+        {
+            74 or 78 or 82 or 84 or 85 or 86 or 87 => a,
+            75 or 76 or 79 or 93 or 94 or 102 => a+b,
+            77 => Math.Abs(a-b),
+            80 => Math.Max(a,b),
+            81 => Math.Min(a,Math.Min(b,c)),
+            83 => a-b,
+            88 => mode * 30,
+            89 => 4*a,
+            90 or 92 or 95 => (mode==0 ? 3 : 4)*a,
+            91 => mode==0 ? 0 : a,
+            96 => (mode==0 ? 2 : 4)*a,
+            97 => a/2,
+            98 => a/4,
+            99 => (mode==0 ? 6 : 8)*a,
+            100 => (mode==0 ? 1 : 2)*a,
+            101 => mode==0 ? (a%2==1 ? 1 : 2) : (a%2==1 ? 2 : 1),
+            _ => -1
+        };
+        if (expected!=result) return false;
+        var normalized=new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0'+c-'٠') :
+            c is >= '۰' and <= '۹' ? (char)('0'+c-'۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+           CultureInfo.InvariantCulture,out var v) && v==expected;
+    }
+
+    private static ExactProblem BuildUaeG1Final29(int lesson,string family,Random random)
+    {
+        int a=0,b=0,c=0,mode=0,result=0;
+        string question="";
+        switch (lesson)
+        {
+            case 74:
+                a=random.Next(1,10);b=random.Next(1,10);result=a;
+                question=$"نتائج تصويت: التفاح {new string('│',a)}، الموز {new string('│',b)}. أعد تنظيم كل خمس علامات ثم أكتب أصوات التفاح.";
+                break;
+            case 75:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"سجل الجدول فئتي الكتب {a} والأقلام {b}. ما العدد الكلي المسجل؟ اشرح طريقة تنظيم الصفوف.";
+                break;
+            case 76:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"تمثيل بالصور من تأليف Edulytics (كل رمز = عنصر): الطائرات {new string('●',a)} والسيارات {new string('●',b)}. كم رمزًا أحتاج لرسم الفئتين؟";
+                break;
+            case 77:
+                a=random.Next(1,11);b=random.Next(1,11);result=Math.Abs(a-b);
+                question=$"مفتاح الرسم: كل ★ يمثل طفلًا. الأخضر {new string('★',a)} والأصفر {new string('★',b)}. كم الفرق في عدد الأطفال؟";
+                break;
+            case 78:
+                a=random.Next(1,10);b=random.Next(1,10);result=a;
+                question=$"ارسم عمودًا للفئة أ بارتفاع {a} وحدات وعمودًا للفئة ب بارتفاع {b} وحدات، وكل مربع يمثل عنصرًا. كم مربعًا في العمود أ؟";
+                break;
+            case 79:
+                a=random.Next(1,10);b=random.Next(1,10);result=a+b;
+                question=$"رسم أعمدة على مقياس وحدة: القراءة {new string('■',a)} والرسم {new string('■',b)}. كم إجمالي الوحدات في العمودين؟";
+                break;
+            case 80:
+                a=random.Next(2,21);b=random.Next(2,21);result=Math.Max(a,b);
+                question=$"شريطان من مكعبات متساوية، طول الأول {a} وحدات والثاني {b} وحدات. بعد محاذاة طرفيهما ما طول الشريط الأطول؟";
+                break;
+            case 81:
+                a=random.Next(2,21);b=random.Next(2,21);c=random.Next(2,21);
+                result=Math.Min(a,Math.Min(b,c));
+                question=$"أرتب أشرطة أطوالها {a} و{b} و{c} مكعبات. ما طول أقصر شريط؟";
+                break;
+            case 82:
+                a=random.Next(1,13);result=a;
+                question=$"شريط طوله {new string('▭',a)}، كل ▭ مكعب وحدة واحدة، متلاصقة بلا فجوات. كم وحدة طول الشريط؟";
+                break;
+            case 83:
+                a=random.Next(10,26);b=random.Next(1,10);result=a-b;
+                question=$"الطول الكلي للشريط {a} وحدات، وغطيت منه {b}. خمّن الباقي أولًا ثم تحقق وعدل تخمينك؛ كم وحدة لم تُغط؟";
+                break;
+            case 84:
+                a=random.Next(1,13);result=a;
+                var hours=new[]{"🕐","🕑","🕒","🕓","🕔","🕕","🕖","🕗","🕘","🕙","🕚","🕛"};
+                question=$"الساعة التناظرية {hours[a-1]}. عقرب الدقائق عند ١٢؛ ما رقم الساعة؟";
+                break;
+            case 85:
+                a=random.Next(1,13);result=a;
+                question=$"شاشة الساعة الرقمية: {a:00}:00. ما رقم الساعة عندما تكون الدقائق صفرًا؟";
+                break;
+            case 86:
+                a=random.Next(1,13);result=a;
+                var halfHours=new[]{"🕜","🕝","🕞","🕟","🕠","🕡","🕢","🕣","🕤","🕥","🕦","🕧"};
+                question=$"ساعة تناظرية تشير إلى {halfHours[a-1]}، والعقرب الطويل عند ٦؛ أي ساعة ونصف يمثلها؟ اكتب رقم الساعة.";
+                break;
+            case 87:
+                a=random.Next(1,13);result=a;
+                question=$"تظهر الساعة الرقمية {a:00}:30. اكتب رقم الساعة التي مضى منها نصف ساعة.";
+                break;
+            case 88:
+                a=random.Next(1,13);mode=random.Next(0,2);result=mode*30;
+                question=$"الساعة الرقمية {a:00}:{(mode==0 ? "00" : "30")}. كم دقيقة مضت بعد بداية الساعة الحالية؟";
+                break;
+            case 89:
+                a=random.Next(1,11);mode=random.Next(0,2);result=4*a;
+                question=mode==0
+                    ? $"أعرض {a} مربعات منفصلة □، ولكل مربع أربعة أضلاع مستقيمة. كم ضلعًا في المربعات جميعًا؟"
+                    : $"أعرض {a} مستطيلات منفصلة ▭، ولكل مستطيل أربعة أضلاع مستقيمة. كم ضلعًا في المستطيلات جميعًا؟";
+                break;
+            case 90:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أرتب {a} مثلثات منفصلة △، لكل منها ثلاثة أضلاع. كم ضلعًا في المثلثات كلها؟"
+                    : $"أرتب {a} أشباه منحرف منفصلة، لكل منها أربعة أضلاع. كم ضلعًا لجميع الأشكال؟";
+                break;
+            case 91:
+                a=random.Next(1,11);mode=random.Next(0,2);result=mode==0?0:a;
+                question=mode==0
+                    ? $"هناك {a} دوائر منفصلة ○ في الرسم. كم ضلعًا مستقيمًا في حدود هذه الدوائر كلها؟"
+                    : $"هناك {a} دوائر منفصلة ○؛ لكل دائرة حد منحني مغلق واحد. كم حدًا منحنيًا مغلقًا لكل الدوائر؟";
+                break;
+            case 92:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أقارن مجموعة فيها {a} مثلثات بمجموعة مستطيلات. كم رأسًا للمثلثات المنفصلة جميعًا؟"
+                    : $"أقارن مجموعة فيها {a} مستطيلات بمجموعة مثلثات. كم رأسًا للمستطيلات المنفصلة جميعًا؟";
+                break;
+            case 93:
+                a=random.Next(1,6);b=random.Next(1,6);result=a+b;
+                question=$"أنشئ رسمًا هندسيًا أصليًا من {a} مثلثات و{b} مستطيلات دون تداخل. كم قطعة هندسية استعملت؟";
+                break;
+            case 94:
+                a=random.Next(1,6);b=random.Next(1,6);result=a+b;
+                question=$"أعيد ترتيب {a} مربعات و{b} مثلثات لأكوّن شكلاً مركبًا جديدًا دون إضافة أو حذف. كم قطعة تكوّن الشكل؟";
+                break;
+            case 95:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أستدل على الشكل: له ثلاثة أضلاع وثلاثة رؤوس. لدي {a} أشكال منفصلة منه. كم رأسًا لجميعها؟"
+                    : $"أستدل على الشكل: له أربعة أضلاع متساوية وأربع زوايا. لدي {a} أشكال منفصلة منه. كم رأسًا لجميعها؟";
+                break;
+            case 96:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?2:4);
+                question=$"أقسم {a} شرائط متساوية، كل شريط على حدة إلى {(mode==0?"نصفين متساويين":"أرباع متساوية")}. كم جزءًا متساويًا في جميع الشرائط بعد التقسيم؟";
+                break;
+            case 97:
+                a=2*random.Next(1,11);mode=random.Next(0,2);result=a/2;
+                question=mode==0
+                    ? $"أقسم {a} دائرة بالتساوي بين طفلين، كم دائرة في نصف المجموعة؟"
+                    : $"أوزع {a} بطاقة بالتساوي على صندوقين، كم بطاقة يمثل نصف المجموعة في كل صندوق؟";
+                break;
+            case 98:
+                a=4*random.Next(1,7);mode=random.Next(0,3);result=a/4;
+                question=mode switch
+                {
+                    0 => $"أقسم {a} قطعة على أربع مجموعات متساوية؛ كم قطعة في الربع الواحد؟",
+                    1 => $"أوزع {a} بطاقة على أربعة صناديق بالتساوي، كم بطاقة في ربع المجموعة؟",
+                    _ => $"أقسم {a} مكعبًا بين أربعة أطفال بالتساوي، كم مكعبًا يأخذ كل طفل؟"
+                };
+                break;
+            case 99:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?6:8);
+                question=mode==0
+                    ? $"أفحص {a} مكعبات منفصلة، لكل مكعب ستة أوجه مربعة. كم وجهًا مسطحًا لها إجمالًا؟"
+                    : $"أفحص {a} مناشير مستطيلة منفصلة، لكل منشور ثمانية رؤوس. كم رأسًا للمجسمات جميعًا؟";
+                break;
+            case 100:
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?1:2);
+                question=mode==0
+                    ? $"هناك {a} مخاريط منفصلة، لكل مخروط قاعدة دائرية واحدة. كم قاعدة دائرية لها كلها؟"
+                    : $"هناك {a} أسطوانات منفصلة، لكل أسطوانة قاعدتان دائريتان. كم قاعدة دائرية لها جميعًا؟";
+                break;
+            case 101:
+                a=random.Next(1,13);mode=random.Next(0,2);
+                result=mode==0 ? (a%2==1?1:2) : (a%2==1?2:1);
+                question=mode==0
+                    ? $"النمط المتناوب: مخروط، أسطوانة، مخروط، أسطوانة، ... ما رمز الشكل عند الموضع {a}؟ اكتب ١ للمخروط و٢ للأسطوانة."
+                    : $"النمط المتناوب: أسطوانة، مخروط، أسطوانة، مخروط، ... ما رمز الشكل عند الموضع {a}؟ اكتب ١ للمخروط و٢ للأسطوانة.";
+                break;
+            case 102:
+                a=random.Next(1,5);b=random.Next(1,5);result=a+b;
+                question=$"أكوّن مجسمًا مركبًا من {a} مكعبات و{b} أسطوانات، دون تفكيك الأجزاء. كم جسمًا ثلاثي الأبعاد استعملت؟";
+                break;
+            default:throw new InvalidOperationException("Unsupported UAE G1 last 29 lesson ordinal");
+        }
+        return Problem(family,question,
+            "أستخدم رسمًا أصليًا أو نموذجًا محسوسًا مناسبًا للمهارة، وأتحقق من العدد أو الزمن أو الشكل. تقييم الرسم والتفسير عمل المعلم.",
+            AssessmentItemType.Numeric,("a",a),("b",b),("c",c),
+            ("mode",mode),("result",result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit6(int lesson, string family, Random random)
+    {
+        var a = 0; var b = 0; var mode = 0; var result = 0; var prompt = "";
+        switch (lesson)
+        {
+            case 1:
+                a = random.Next(1, 10) * 10;
+                b = random.Next(1, 11 - a / 10) * 10;
+                result = a + b;
+                prompt = $"أمثل {a} بقضبان عشرات، ثم أضيف {b} بقضبان أخرى. كم الكل؟";
+                break;
+            case 2:
+                a = random.Next(10, 90); mode = random.Next(0, 2);
+                b = mode == 0 ? random.Next(1, Math.Min(9, 100 - a) + 1) :
+                    random.Next(1, Math.Min(7, (100 - a) / 10) + 1) * 10;
+                result = a + b;
+                prompt = $"أبدأ من {a} وأعد تصاعديًا {(mode == 0 ? "بالآحاد" : "بالعشرات")} حتى أضيف {b}. ما المجموع؟";
+                break;
+            case 3:
+                a = random.Next(11, 75);
+                if (a % 10 == 9) a--;
+                var onesMax = 9 - a % 10;
+                var tensMax = (100 - a - onesMax) / 10;
+                b = 10 * random.Next(0, Math.Max(1, Math.Min(8, tensMax + 1))) +
+                    random.Next(1, onesMax + 1);
+                result = a + b;
+                prompt = $"أجمع الآحاد مع الآحاد والعشرات مع العشرات: {a} + {b} = ؟. اكتب المجموع.";
+                break;
+            case 4:
+                a = random.Next(20, 71); b = random.Next(1, Math.Min(30, a - 1));
+                result = a - b;
+                var guess = Math.Max(0, result - 2);
+                prompt = $"لدي {a} كرة منها {b} حمراء والباقي خضراء. أخمّن أن الخضراء {guess} وأتحقق من المجموع. كم كرة خضراء بالفعل؟";
+                break;
+            case 5:
+                a = random.Next(11, 20);
+                b = random.Next(10 - a % 10, 10);
+                result = a + b;
+                prompt = $"أجمع {a} + {b}. عند وصول الآحاد إلى عشرة أو أكثر أعيد تجميع عشر آحاد كعشرة. ما الناتج؟";
+                break;
+            case 6:
+                a = random.Next(1, 11) * 10;
+                b = random.Next(1, a / 10 + 1) * 10;
+                result = a - b;
+                prompt = $"لدي {a} مكعبًا في حزم من عشرة، وأزيل {b} مكعبًا في حزم كاملة. ما الفرق؟";
+                break;
+            case 7:
+                a = random.Next(1, 11) * 10;
+                b = random.Next(1, a / 10 + 1) * 10;
+                result = a - b;
+                var line = string.Join(" ← ", Enumerable.Range(0, b / 10 + 1).Select(i => a - i * 10));
+                prompt = $"استخدم خط الأعداد، وابدأ عند {a} وعد تنازليًا بخطوات عشرية لإيجاد {a} − {b}: {line}. ما الفرق؟";
+                break;
+            case 8:
+                a = random.Next(1, 10) * 10; mode = random.Next(0, 2);
+                b = mode == 0 ? random.Next(1, 11 - a / 10) * 10 :
+                    random.Next(1, a / 10 + 1) * 10;
+                result = mode == 0 ? a + b : a - b;
+                prompt = mode == 0
+                    ? $"أكمل {a} + {b} = ؟، ثم اكتب حقيقة طرح عكسية للتحقق."
+                    : $"أكمل {a} − {b} = ؟، ثم اكتب حقيقة جمع مترابطة للتحقق.";
+                break;
+            default: throw new InvalidOperationException("Unsupported UAE G1 U6 lesson");
+        }
+        return Problem(family, prompt,
+            "أمثل العشرات والآحاد أو أختبر تخميني، وأتحقق من الجزء والكل والعملية المناسبة.",
+            AssessmentItemType.Numeric, ("a", a), ("b", b), ("mode", mode), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit5(int lesson, string family, Random random)
+    {
+        var n = 0; var aux = 0; var mode = 0; var result = 0; var prompt = "";
+        switch (lesson)
+        {
+            case 1:
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n;
+                prompt = $"في طابور عشرة أطفال، يوجد {n - 1} أطفال قبل الطفل المحدد من جهة {(mode == 0 ? "اليمين" : "اليسار")}. ما موضعه الترتيبي من تلك الجهة؟";
+                break;
+            case 2:
+                n = random.Next(11, 20); aux = n - 10; mode = random.Next(0, 3); result = n;
+                prompt = mode switch
+                {
+                    0 => $"إطار عشر خانات ممتلئ ومعه {aux} نقاط منفصلة. ما العدد؟",
+                    1 => $"حزمة من عشرة مكعبات ومعها {aux} مكعبات مفردة. اكتب العدد.",
+                    _ => $"لدينا عشرة آحاد مجمعة، ثم {aux} آحاد إضافية في صينية العد. ما العدد؟"
+                };
+                break;
+            case 3:
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"لدي {n} قضبان عشرات، في كل قضيب عشر قطع. كم قطعة؟"
+                    : $"أعد بالقفزات العشرية {n} مرات من صفر على خط الأعداد. إلى أي عدد أصل؟";
+                break;
+            case 4:
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"في المحفظة {n} عملات معدنية قيمة كل واحدة ١٠ فلوس. كم فلسًا في المحفظة؟"
+                    : $"على الطاولة {n} عملات من فئة ١٠ فلوس؛ أعد كل عملة بعشرة. ما القيمة الكلية بالفلس؟";
+                break;
+            case 5:
+                n = random.Next(1, 10); aux = random.Next(1, 10); result = n * 10 + aux;
+                prompt = $"لدي {n} حزم من عشر خرزات ومعها {aux} خرزات منفردة. كم خرزة إجمالًا؟";
+                break;
+            case 6:
+                n = random.Next(1, 10); aux = random.Next(0, 10); result = n * 10 + aux;
+                prompt = $"جدول القيمة المكانية: العشرات {n} والآحاد {aux}. ما العدد؟";
+                break;
+            case 7:
+                n = random.Next(1, 9); aux = 10; mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"أكتب جدول قراءة: أنجز ١٠ بطاقات كل يوم؛ بعد {n} أيام كم بطاقة أتممت؟"
+                    : $"في جدول صناديق الصف عشر بطاقات في كل صندوق. إذا كان لدي {n} صناديق، ما عدد البطاقات؟";
+                break;
+            case 8:
+                n = random.Next(1, 11); aux = n == 10 ? 0 : random.Next(0, 10);
+                result = n * 10 + aux;
+                prompt = $"في جدول العشرات والآحاد {n} عشرات و{aux} آحاد. اكتب العدد حتى ١٠٠.";
+                break;
+            case 9:
+                n = random.Next(10, 91); mode = random.Next(0, 2) == 0 ? -1 : 1;
+                result = n + 10 * mode;
+                prompt = $"ما العدد الذي يساوي {n} {(mode == 1 ? "زائد" : "ناقص")} عشرة؟ الآحاد ثابتة.";
+                break;
+            case 10:
+                n = random.Next(1, 21); result = n * 5;
+                prompt = $"أعد بالخمسات: لدي {n} عملات من فئة ٥ فلوس. كم فلسًا؟";
+                break;
+            case 11:
+                n = random.Next(0, 101); aux = random.Next(0, 101);
+                result = Math.Max(n, aux);
+                prompt = $"أمثل العددين {n} و{aux} بقضبان عشرات وآحاد. ما قيمة العدد الأكبر؟";
+                break;
+            case 12:
+                n = random.Next(0, 101); aux = random.Next(0, 101);
+                result = n > aux ? 1 : n < aux ? -1 : 0;
+                prompt = $"اكتب الرمز > أو < أو = المناسب للمقارنة {n} □ {aux}.";
+                break;
+            case 13:
+                n = random.Next(100, 121); aux = n % 10; mode = n / 10 % 10;
+                result = n;
+                prompt = $"لدي مئة واحدة و{mode} عشرات و{aux} آحاد. اكتب العدد بالأرقام.";
+                break;
+            case 14:
+                n = random.Next(1, 120); result = n + 1;
+                prompt = $"أكمل العد بالترتيب في مخطط الأعداد إلى ١٢٠: {n}، ؟. ما العدد اللاحق؟";
+                break;
+            case 15:
+                n = random.Next(1, 121); result = n;
+                prompt = $"اقرأ العدد الممثل في مخطط الأعداد والموضع {n} ثم اكتبه بالأرقام. يراجع المعلم القراءة الشفوية.";
+                break;
+            default:
+                throw new InvalidOperationException($"Unsupported UAE G1 Place Value lesson: {lesson}");
+        }
+        return Problem(family, prompt,
+            "أراجع التمثيل العربي للعدد والقيمة المكانية أو ترتيب العد، وأتحقق من الإجابة.",
+            lesson == 12 ? AssessmentItemType.ShortAnswer : AssessmentItemType.Numeric,
+            ("n", n), ("aux", aux), ("mode", mode), ("result", result));
+    }
+
+    private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
+    {
+        const string family = "uae.g1.u04.l09.add_three_with_strategy";
+        var mode = random.Next(0, 3);
+        var a = mode == 0 ? random.Next(3, 10) : random.Next(1, 8);
+        var b = mode == 0 ? 10 - a : mode == 1 ? random.Next(1, 6) : random.Next(1, 8);
+        var c = mode == 1 ? b : mode == 0 ? random.Next(1, 9) : random.Next(1, 7);
+        var pair = mode == 1 ? b + c : a + b;
+        var total = a + b + c;
+        var prompt = mode switch
+        {
+            0 => $"اجمع ثلاثة أعداد بتكوين عشرة أولًا: ({a} + {b}) + {c}. ما المجموع النهائي؟",
+            1 => $"اجمع ثلاث مجموعات باستعمال المضاعف: {a} + ({b} + {c}). ما المجموع الكلي؟",
+            _ => $"لدي ثلاث مجموعات من {a} و{b} و{c} قطع. اختر زوجًا يسهل جمعه، ثم أوجد العدد الكلي."
+        };
+        return Problem(family, prompt,
+            "أحدد زوجًا مناسبًا، أحسبه، وأضيف المجموعة الثالثة مرة واحدة.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c), ("pair", pair),
+            ("total", total), ("mode", mode));
+    }
+
+    private static ExactProblem BuildUaeGrade1CommutativeAdd(Random random)
+    {
+        const string family = "uae.g1.u04.l08.commutative_add";
+        var a = random.Next(0, 11);
+        var b = random.Next(0, 11);
+        var mode = random.Next(0, 2);
+        var scene = random.Next(0, 4);
+        var total = a + b;
+        var prompt = mode == 0
+            ? $"عند تبديل ترتيب الحدين في الجمع يبقى المجموع ثابتًا. أكمل {a} + {b} = {b} + ؟. اكتب العدد الناقص."
+            : $"مثّل مجموعتين من {a} و{b} قطع، ثم بدّل ترتيبهما: {b} + {a} = ؟. ما المجموع بعد التبديل؟";
+        return Problem(family, prompt,
+            "أغير ترتيب الحدين فقط؛ لا أغير العددين ولا أضيف عناصر إلى الكل.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("total", total), ("mode", mode), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1MakeTenAdd(Random random)
+    {
+        const string family = "uae.g1.u04.l07.make_ten_add";
+        var a = random.Next(6, 10);
+        var b = random.Next(11 - a, 10);
+        var toTen = 10 - a;
+        var remainder = b - toTen;
+        var total = a + b;
+        var scene = random.Next(0, 4);
+        var objects = new[] { "كرات", "خرزات", "مكعبات", "ملصقات" };
+        var frame = new string('●', a).PadRight(10, '□');
+        return Problem(family,
+            $"لدي {a} من {objects[scene]} في إطار عشرة: {frame}، وأضفت {b} أخرى. أنقل {toTen} لإكمال العشرة ويبقى {remainder}. ما المجموع الكلي؟ اكتب الناتج.",
+            "أكمل عشرة من أجزاء المجموعة الثانية ثم أضف ما تبقى: عشرة زائد الباقي.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("toTen", toTen), ("remainder", remainder),
+            ("total", total), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1ActOut(Random random)
+    {
+        const string family = "uae.g1.u04.l06.act_out_problem_solving";
+        var a = random.Next(1, 8);
+        var b = random.Next(1, 7);
+        var mode = random.Next(0, 5);
+        if (mode == 4)
+        {
+            a = random.Next(3, 10);
+            b = a;
+        }
+        var c = mode == 1 ? random.Next(1, 5) : 0;
+        var total = a + b + c;
+        var prompt = mode switch
+        {
+            1 => $"مثّل القصة بمجموعات من القطع: في ثلاث سلال {a} و{b} و{c} أشياء. كم العدد الكلي؟ اكتب جملة الجمع.",
+            4 => $"مثّل مجموعتين متساويتين: في كل مجموعة {a} مكعبات. اكتب {a} + {b} = ؟.",
+            2 => $"مثّل القصة: لدي {total} سيارة، وفي مجموعة {a} سيارات؛ كم سيارة في المجموعة الأخرى؟ أرسم الكل وأحدد الجزء المعروف.",
+            3 => $"مثّل بأصابعك مجموعتين: {a} أزهار ثم {b} أزهار أخرى؛ كم زهرة الآن؟",
+            _ => $"مثّل بأدوات العد: لدي {a} طيور ثم وصلت {b} أخرى؛ اكتب العدد الكلي."
+        };
+        return Problem(family, prompt,
+            "أفهم، أخطط، أمثل الأجزاء والكل، ثم أتحقق من صحة الجملة في القصة.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c), ("total", total), ("mode", mode));
+    }
+
+    private static ExactProblem BuildUaeGrade1NearDoubles(Random random)
+    {
+        const string family = "uae.g1.u04.l05.near_doubles_add";
+        var baseValue = random.Next(2, 10);
+        var delta = random.Next(0, 2) == 0 ? -1 : 1;
+        var orientation = random.Next(0, 2);
+        var scene = random.Next(0, 4);
+        var left = orientation == 0 ? baseValue : baseValue + delta;
+        var right = orientation == 0 ? baseValue + delta : baseValue;
+        var action = delta == 1 ? "أضف واحدًا" : "أنقص واحدًا";
+        return Problem(family,
+            $"أكمل {left} + {right} = ؟ باستخدام المضاعف {baseValue} + {baseValue}. {action} من ناتج المضاعف لتجد الإجابة.",
+            "أستعمل حقيقة المضاعفات ثم أصححها بإضافة أو طرح واحد.",
+            AssessmentItemType.Numeric,
+            ("base", baseValue), ("delta", delta), ("orientation", orientation), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1Doubles(Random random)
+    {
+        const string family = "uae.g1.u04.l04.doubles_add";
+        var equalAddend = random.Next(1, 11);
+        var scene = random.Next(0, 4);
+        var group = new string('●', equalAddend);
+        return Problem(family,
+            $"كوّن مجموعتين متساويتين: {group} | {group}. اكتب المضاعف وأكمل {equalAddend} + {equalAddend} = ؟.",
+            "أجمع مجموعتين لهما العدد نفسه؛ الناتج يساوي ضعفي هذا العدد.",
+            AssessmentItemType.Numeric,
+            ("equalAddend", equalAddend), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1NumberLineAddition(Random random)
+    {
+        const string family = "uae.g1.u04.l03.add_on_number_line";
+        var start = random.Next(2, 12);
+        var hops = random.Next(1, Math.Min(4, 12 - start) + 1);
+        var scene = random.Next(0, 4);
+        var numbers = string.Join("، ", Enumerable.Range(1, hops).Select(i => (start + i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"على خط الأعداد من ٠ إلى ١٢، ابدأ من {start} ثم تحرك يمينًا {hops} قفزات بالترتيب: {numbers}. أوجد {start} + {hops} = ؟.",
+            "أتقدم خطوة واحدة إلى اليمين في كل قفزة حتى أصل إلى المجموع.",
+            AssessmentItemType.Numeric,
+            ("start", start), ("hops", hops), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1CountOnFils(Random random)
+    {
+        const string family = "uae.g1.u04.l02.count_on_fils";
+        var start = random.Next(4, 11);
+        var added = random.Next(1, 4);
+        var scene = random.Next(0, 4);
+        var hops = string.Join("، ", Enumerable.Range(1, added).Select(i => (start + i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"لدي {start} عملات من فئة فلس واحد، ثم أضيف {added} عملات أخرى من الفئة نفسها. أبدأ من {start} وأعد {hops}. كم فلسًا أصبح لدي؟",
+            "كل قطعة قيمتها فلس واحد؛ أعد من العدد الأول خطوة عن كل قطعة جديدة.",
+            AssessmentItemType.Numeric,
+            ("start", start), ("added", added), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1CountOn(Random random)
+    {
+        const string family = "uae.g1.u04.l01.count_on_1_2_3";
+        var start = random.Next(4, 18);
+        var step = random.Next(1, Math.Min(3, 20 - start) + 1);
+        var orientation = random.Next(0, 2);
+        var left = orientation == 0 ? start : step;
+        var right = orientation == 0 ? step : start;
+        var jumps = string.Join("، ", Enumerable.Range(1, step).Select(i => (start + i).ToString(CultureInfo.InvariantCulture)));
+        return Problem(family,
+            $"أكمل الجمع {left} + {right} = ؟. ابدأ العد من {start} ثم تقدم {step} خطوات؛ أعداد القفزات: {jumps}. ما العدد الأخير؟",
+            "أبدأ من العدد الأكبر ثم أزيد واحدًا لكل قفزة، ولا أعد رقم البداية قفزة.",
+            AssessmentItemType.Numeric,
+            ("start", start), ("step", step), ("orientation", orientation));
+    }
+
+    private static ExactProblem BuildUaeGrade1TrueFalseSubtraction(Random random)
+    {
+        const string family = "uae.g1.u03.l14.true_false_subtraction";
+        var whole = random.Next(1, 11);
+        var removed = random.Next(0, whole + 1);
+        var correct = random.Next(0, 2) == 0;
+        var difference = whole - removed;
+        var shown = correct ? difference : (difference + 1) % 11;
+        var scene = random.Next(0, 4);
+        var statement = scene switch
+        {
+            0 => $"{whole} − {removed} = {shown}",
+            1 => $"{shown} = {whole} − {removed}",
+            2 => $"{whole} − {removed} = {shown}",
+            _ => $"{shown} = {whole} − {removed}"
+        };
+        return Problem(family,
+            $"هل العبارة {statement} صحيحة أم خطأ؟ ابدأ بـ {whole} نقطة واشطب {removed} ثم قارن الباقي.",
+            "أتأكد بعد شطب المطروح أن الباقي يساوي العدد المكتوب في الطرف الآخر.",
+            AssessmentItemType.ShortAnswer,
+            ("whole", whole), ("removed", removed), ("shown", shown), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1TrueFalseAddition(Random random)
+    {
+        const string family = "uae.g1.u02.l13.true_false_addition";
+        var left = random.Next(0, 8);
+        var right = random.Next(0, Math.Min(4, 10 - left) + 1);
+        var sum = left + right;
+        var correct = random.Next(0, 2) == 0;
+        var shown = correct ? sum : (sum + 1) % 11;
+        var scene = random.Next(0, 4);
+        var equation = scene switch
+        {
+            0 => $"{left} + {right} = {shown}",
+            1 => $"{shown} = {left} + {right}",
+            2 => $"{left} + {right} = {shown}",
+            _ => $"{shown} = {right} + {left}"
+        };
+        return Problem(family,
+            $"هل العبارة {equation} صحيحة أم خطأ؟ احسب وتحقق بالنقاط قبل اختيار الإجابة.",
+            "أحسب المجموع الحقيقي ثم أقارنه بالطرف الآخر من علامة المساواة.",
+            AssessmentItemType.ShortAnswer,
+            ("left", left), ("right", right), ("shown", shown), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1ComposeNumber(Random random, string family)
+    {
+        var total = family == "uae.g1.u02.l11.make_ten_frame" ? 10 :
+            family == "uae.g1.u02.l10.make_nine" ? 9 :
+            family == "uae.g1.u02.l09.make_eight" ? 8 :
+            family == "uae.g1.u02.l08.make_six_seven" ? random.Next(6, 8) : random.Next(4, 6);
+        var left = random.Next(0, total + 1);
+        var right = total - left;
+        var scene = random.Next(0, 4);
+        var first = new string('●', left);
+        var second = new string('○', right);
+        var frame = family == "uae.g1.u02.l11.make_ten_frame" ?
+            string.Concat(Enumerable.Range(0, 5).Select(i => i < left ? "●" : "○")) + "\n" +
+            string.Concat(Enumerable.Range(5, 5).Select(i => i < left ? "●" : "○")) :
+            $"{first} | {second}";
+        return Problem(family,
+            $"كوّن العدد {total}: الجزء الأول {left}، والجزء المفقود ؟. أكمل {left} + ؟ = {total}. النموذج: {frame}",
+            "أمثل العدد الكلي بدوائر وأعد الجزء المتبقي بعد تمييز الجزء الأول.",
+            AssessmentItemType.Numeric,
+            ("left", left), ("right", right), ("total", total), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1AdditionZero(Random random)
+    {
+        const string family = "uae.g1.u02.l04.add_zero";
+        var count = random.Next(1, 10);
+        var zeroFirst = random.Next(0, 2) == 0;
+        var scene = random.Next(0, 4);
+        var left = zeroFirst ? 0 : count;
+        var right = zeroFirst ? count : 0;
+        var dots = new string('●', count);
+        return Problem(family,
+            $"أكمل جملة الجمع: {left} + {right} = ؟. مثل العدد بالنقاط {dots} واترك مجموعة الصفر فارغة.",
+            "إضافة الصفر لا تغير العدد؛ أعد عناصر المجموعة غير الفارغة.",
+            AssessmentItemType.Numeric,
+            ("left", left), ("right", right), ("scene", scene));
     }
 
     private static ExactProblem BuildG1L01Counting(Random random, int scale)
@@ -6205,6 +7822,158 @@ public sealed class ExactSkillContractQuestionEngine
 
         return problem.Family switch
         {
+            var uaeFamily when uaeFamily.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal) =>
+                p["count"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l04.add_zero" or "uae.g1.u02.l05.vertical_addition" or "uae.g1.u02.l06.write_story_equation" =>
+                (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u02.l07.make_four_five" or "uae.g1.u02.l08.make_six_seven" or "uae.g1.u02.l09.make_eight" or "uae.g1.u02.l10.make_nine" or "uae.g1.u02.l11.make_ten_frame" =>
+                p["right"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u02.l13.true_false_addition" =>
+                p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
+            "uae.g1.u03.l13.related_add_subtract" =>
+                (p["removeLeft"] == 1 ? p["right"] : p["left"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u03.l14.true_false_subtraction" =>
+                p["whole"] - p["removed"] == p["shown"] ? "صحيحة" : "خطأ",
+            "uae.g1.u04.l01.count_on_1_2_3" =>
+                (p["start"] + p["step"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l02.count_on_fils" =>
+                (p["start"] + p["added"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l03.add_on_number_line" =>
+                (p["start"] + p["hops"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l04.doubles_add" =>
+                (p["equalAddend"] * 2).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l05.near_doubles_add" =>
+                (p["base"] * 2 + p["delta"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l06.act_out_problem_solving" =>
+                (p["mode"] == 2 ? p["b"] : p["total"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l07.make_ten_add" =>
+                (p["a"] + p["b"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l08.commutative_add" =>
+                (p["mode"] == 0 ? p["a"] : p["total"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l09.add_three_with_strategy" =>
+                (p["a"] + p["b"] + p["c"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
+                (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l01.count_back_1_2_3" =>
+                (p["start"] - p["steps"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l02.number_line_subtract" =>
+                (p["start"] - p["hops"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l03.doubles_subtraction" =>
+                (p["part"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l04.story_subtraction_equation" =>
+                (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l05.subtract_through_ten" =>
+                (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l06.related_add_sub_facts" =>
+                (p["b"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l07.fact_family_four_equations" =>
+                (p["mode"] < 2 ? p["whole"] : p["mode"] == 2 ? p["b"] : p["a"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l08.missing_addend_part_whole" =>
+                (p["whole"] - p["known"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l01.ordinal_1_10" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l02.numbers_11_19" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l03.groups_of_ten" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l04.count_tens_fils" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l05.ten_and_some_more" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l06.tens_and_ones" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l07.make_table" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l08.numbers_to_100" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l09.ten_more_ten_less" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l10.count_fives_fils" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l11.compare_models" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l12.compare_symbols" =>
+                (p["result"] == 1 ? ">" : p["result"] == -1 ? "<" : "="),
+            "uae.g1.u06.l13.hundreds_tens_ones" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l14.count_to_120" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l15.read_write_to_120" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l01.add_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l02.count_on_tens_ones" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l03.add_tens_ones" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l04.guess_check_revise" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l05.regroup_ones_for_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l06.subtract_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l07.count_back_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l08.inverse_tens" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l01.tally_fives" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l02.record_table" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l03.make_picture_graph" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l04.read_picture_graph" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l05.make_bar_graph" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l06.read_bar_graph" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l01.compare_lengths" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l02.order_lengths" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l03.nonstandard_measure" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l04.guess_check_length" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l05.analog_hour" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l06.digital_hour" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l07.analog_half" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l08.digital_half" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u09.l09.hour_or_half" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l01.square_rectangle" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l02.triangle_trapezoid" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l03.circle_properties" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l04.compare_shapes" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l05.compose_2d" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l06.more_composite_2d" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l07.logical_shape_clue" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l08.equal_shares" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l09.halves_equal" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u10.l10.fourths_equal" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u11.l01.cubes_prisms" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u11.l02.cones_cylinders" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u11.l03.three_d_pattern" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u11.l04.compose_solids" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>

@@ -197,7 +197,7 @@ public sealed class RichLessonExternalHelpTests
             StringComparison.Ordinal);
 
         Assert.Contains(
-            "ViewData[\"UseYouTubeStudioV2\"] = true",
+            "ViewData[\"UseYouTubeStudioV2\"] = !isUaeGrade1Arabic",
             lessonView,
             StringComparison.Ordinal);
         Assert.Contains(

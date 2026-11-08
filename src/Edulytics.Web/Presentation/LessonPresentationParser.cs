@@ -217,7 +217,8 @@ public static class LessonPresentationParser
     public static IReadOnlyList<LessonPresentationItem> Parse(
         string? value,
         bool orderedSteps = false,
-        string sectionKind = "")
+        string sectionKind = "",
+        bool includeFallbackVisual = true)
     {
         if (string.IsNullOrWhiteSpace(value))
         {
@@ -260,7 +261,8 @@ public static class LessonPresentationParser
         }
 
         if (
-            sectionKind is "explanation" or "examples" &&
+            includeFallbackVisual &&
+            sectionKind is ("explanation" or "examples") &&
             result.All(x => !x.IsVisual))
         {
             var fallback = TryCreateFallbackVisual(safe);

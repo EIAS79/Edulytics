@@ -146,8 +146,11 @@ public sealed class RichLessonContentV2RolloutTests
         });
 
         Assert.Equal(curatedLessons.Length, readyCurated);
-        Assert.Equal(5183 - readyCurated, readyRuntime);
-        Assert.Equal(0, blockedLocalized);
+        // UAE G1 now serves its complete canonical Arabic lesson sections
+        // directly, intentionally excluding 102 Arabic lessons from the
+        // English/Polish-only Rich V2 runtime compiler.
+        Assert.Equal(102, blockedLocalized);
+        Assert.Equal(5183 - readyCurated - blockedLocalized, readyRuntime);
         Assert.Equal(0, blockedContract);
         Assert.Equal(0, blockedGeneration);
 

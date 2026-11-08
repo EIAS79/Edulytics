@@ -210,6 +210,13 @@ public static class LessonPracticeInteractionRegistry
            answerType=="exact_integer")
             return LessonPracticeInteractionKind.IntegerKeypad;
 
+        // UAE Grade 1 supports structured exact-response families, including
+        // compare_models/compare_symbols: a word in the ID must never replace
+        // the declared answer contract with a bare <,=,> response widget.
+        if (familyId.StartsWith("uae.g1.", StringComparison.Ordinal) &&
+            answerType == "contract_defined")
+            return LessonPracticeInteractionKind.ContractDriven;
+
         // Declared numeric answer type is authoritative. Families named compare*
         // may ask for a numerical gap, not a <, =, > relation.
         if (answerType=="exact_integer")

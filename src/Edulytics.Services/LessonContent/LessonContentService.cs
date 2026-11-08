@@ -313,7 +313,8 @@ public sealed class LessonContentService : ILessonContentService
 
                 var translation = SelectAcademicContent(
                     content.Translations,
-                    context.FrameworkCode);
+                    context.FrameworkCode,
+                    lesson.Code);
                 if (translation is null)
                     continue;
 
@@ -406,7 +407,8 @@ public sealed class LessonContentService : ILessonContentService
 
         var translation = SelectAcademicContent(
             content.Translations,
-            context.FrameworkCode);
+            context.FrameworkCode,
+            lesson.Code);
         if (translation is null)
         {
             return LessonContentQueryResult<StudentLessonDetail>.Failure(
@@ -438,13 +440,17 @@ public sealed class LessonContentService : ILessonContentService
                 ResolveIsSupporting(lesson))
             {
                 LessonCode = lesson.Code,
-                RichContent =
-                    RichLessonContentV2Registry.Find(
+                // UAE Grade 1 Arabic already has six complete first-party
+                // canonical sections. An English RichV2 fallback would hide
+                // them. Keep the authoritative Arabic body visible in full.
+                RichContent = IsUaeG1ArabicLesson(lesson.Code)
+                    ? null
+                    : RichLessonContentV2Registry.Find(
                         lesson.Code,
                         translation.CultureCode)
-                    ?? RichLessonContentV2RuntimeComposer.TryCompose(
-                        lesson.Code,
-                        translation)
+                      ?? RichLessonContentV2RuntimeComposer.TryCompose(
+                          lesson.Code,
+                          translation)
             });
     }
 
@@ -488,7 +494,8 @@ public sealed class LessonContentService : ILessonContentService
         {
             body = SelectAcademicContent(
                 content.Translations,
-                context.FrameworkCode);
+                context.FrameworkCode,
+                lesson.Code);
         }
 
         var outcomes = await _lessons.ListOfficialOutcomesAsync(
@@ -513,7 +520,7 @@ public sealed class LessonContentService : ILessonContentService
                 outcomes)
             {
                 IsSupporting = ResolveIsSupporting(lesson),
-                RichContent = body is null
+                RichContent = body is null || IsUaeG1ArabicLesson(lesson.Code)
                     ? null
                     : RichLessonContentV2Registry.Find(
                         lesson.Code,
@@ -754,17 +761,34 @@ public sealed class LessonContentService : ILessonContentService
             ? context.CurriculumLevelLabel
             : context.GradeName;
 
+    // The framework-level UAE AcademicLanguage is still "en" for older UAE
+    // tracks. Grade 1 Common has an independently authored Arabic pack; do
+    // not change the language of other UAE grade/track publications.
+    private static bool IsUaeG1ArabicLesson(string? lessonCode) =>
+        !string.IsNullOrWhiteSpace(lessonCode) &&
+        lessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L1:COMMON:",
+            StringComparison.Ordinal);
+
     private static CanonicalLessonTranslationRecord? SelectAcademicContent(
         IReadOnlyList<CanonicalLessonTranslationRecord> translations,
-        string frameworkCode)
+        string frameworkCode,
+        string lessonCode)
     {
-        var academicLanguage = MathematicsCurriculumPackRegistry.All
-            .Single(x => string.Equals(
-                x.Code,
-                frameworkCode,
-                StringComparison.Ordinal))
-            .AcademicLanguage;
+        var academicLanguage = IsUaeG1ArabicLesson(lessonCode) &&
+                               string.Equals(
+                                   frameworkCode,
+                                   MathematicsCurriculumPackRegistry.UaeCode,
+                                   StringComparison.Ordinal)
+            ? "ar"
+            : MathematicsCurriculumPackRegistry.All
+                .Single(x => string.Equals(
+                    x.Code,
+                    frameworkCode,
+                    StringComparison.Ordinal))
+                .AcademicLanguage;
 
+        // No English fallback if the approved Grade 1 Arabic body is missing.
         return translations.FirstOrDefault(x =>
             NormalizeCulture(x.CultureCode) == NormalizeCulture(academicLanguage));
     }

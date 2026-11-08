@@ -2745,7 +2745,7 @@ internal static class UsCcssG6Unit2RatioQuestions
             new("A base-ten diagram can represent decimal quantities split into equal groups. 1=yes,0=no.",1,"Fractional place values."),
             new("4.5÷0.09=0.5. 1=yes,0=no.",0,"Quotient50."),
             new("Equal split of dollars can be checked by converting the result to cents before division. 1=yes,0=no.",1,"Avoids decimal point confusion."),
-            new("When scaling division, zero cannot be used as a multiplier for both numbers, because divisor would be0. 1=yes,0=no.",1,"Undefined."),
+            new("When scaling division, zero cannot be used as a multiplier for both numbers, because divisor would be0. 1=yes,0=no.",1,"Multiplying the divisor by zero gives zero; division by zero is not permitted."),
             new("Paper area is found by multiplying both side lengths in same unit. 1=yes,0=no.",1,"Square units.")
         ],
         [L0513DecimalQuotients] =

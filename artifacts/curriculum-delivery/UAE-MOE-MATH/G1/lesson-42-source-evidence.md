@@ -1,0 +1,3 @@
+# UAE Grade 1 Lesson 42 — A–B–C evidence
+
+PED:UAE-MOE-MATH:L1:COMMON:04:09; original Arabic 2025–2026 student 01.pdf SHA-256 BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44; six student pages PDF346–351 (printed261–266) visually audited. Full map in lesson-42-atomic-coverage.md. Independent examples/teaching model built in Arabic; counters, pair making ten, doubles, three-number stories, false-answer explanation and cooldown all covered. Scoped exact Practice family uae.g1.u04.l09.add_three_with_strategy registered, independent answer verifier and regression authored, WRITTEN_NOT_RUN. READY_FOR_STAGE_D. No Stage D/CI/full build.

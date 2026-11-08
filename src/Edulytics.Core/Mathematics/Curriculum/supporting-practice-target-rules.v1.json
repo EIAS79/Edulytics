@@ -6028,127 +6028,133 @@
     {
       "id": "uae-g1-1-1-read-and-write-numbers-1-to-5",
       "titlePatterns": [
-        "^Read and Write Numbers 1 to 5$"
+        "^Read and Write Numbers 1 to 5$",
+        "^قراءة وكتابة الأعداد من [١1] إلى [٥5]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:01$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "COUNT_READ_TRACE_WRITE_1_5",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l01.read_write_1_5"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers 1 to 5.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers 1 to 5."
+        "concept": "عدّ مجموعات من ١ إلى ٥ وربط كل كمية برقمها وكلمة العدد وكتابته.",
+        "workedExample": "أعدّ ● ● ● مرة واحدة لكل نقطة ثم أكتب ٣ وأقرأ «ثلاثة».",
+        "solution": "أشير إلى كل عنصر مرة واحدة، أقرأ العدد الأخير، أختار الرقم ثم أتتبّع كتابته.",
+        "commonMistake": "لا أكرر عدّ عنصر ولا أخلط بين قراءة العدد وكتابته؛ يراجع المعلم التتبع اليدوي.",
+        "summary": "العد والرقم والكلمة والكتابة ضمن ١–٥؛ التصحيح الآلي للكمية فقط."
       }
     },
     {
       "id": "uae-g1-1-2-read-and-write-zero",
       "titlePatterns": [
-        "^Read and Write Zero$"
+        "^Read and Write Zero$",
+        "^قراءة وكتابة الصفر$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:02$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "ZERO_EMPTY_CARDINALITY",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l02.zero_cardinality"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Zero.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Zero."
+        "concept": "الصفر هو عدد عناصر المجموعة الفارغة، مع قراءة وكتابة الرقم.",
+        "workedExample": "أعدّ نقاط الإطار الفارغ: لا توجد نقاط؛ أكتب ٠.",
+        "solution": "أنظر إلى المجموعة لا الوعاء، أتأكد أن عدد العناصر صفر، ثم أكتب ٠.",
+        "commonMistake": "لا تحسب الوعاء عنصرًا؛ لا تصنف المجموعة التي فيها نقطة واحدة على أنها صفر.",
+        "summary": "الصفر ومجموعة خالية؛ المقارنات الشفهية والخط باليد يراجعها المعلم."
       }
     },
     {
       "id": "uae-g1-1-3-read-and-write-6-7-and-8",
       "titlePatterns": [
-        "^Read and Write 6, 7, and 8$"
+        "^Read and Write 6, 7, and 8$",
+        "^قراءة وكتابة الأعداد [٦6] و[٧7] و[٨8]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:03$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "COUNT_READ_WRITE_6_8",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l03.read_write_6_8"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write 6, 7, and 8.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write 6, 7, and 8."
+        "concept": "٦ تعني ستة عناصر، ٧ سبعة عناصر، ٨ ثمانية عناصر. أعدّ مرة واحدة لكل شيء، وأكتب الرقم المناسب مع اسمه العربي. ألاحظ أن الانتقال من ستة إلى سبعة ومن سبعة إلى ثمانية يكون بإضافة عنصر واحد، وأتتبّع شكل الأرقام لكتابتها بوضوح.",
+        "workedExample": "مثال أصلي ١: أمامي ●●● | ●●●؛ أعدّ ست نقاط وأكتب ٦ وأقرأ «ستة».",
+        "solution": "١. أضع مجموعة من ستة أو سبعة أو ثمانية أشياء أمامي. ٢. أُشير لكل عنصر مرة واحدة وأنطق تسلسل الأعداد. ٣. أسمي العدد الأخير وأقرأ كلمة العدد على البطاقة.",
+        "commonMistake": "إسقاط عنصر عند عدّ مجموعة كبيرة نسبيًا، أو عدّه مرتين، أو الخلط بين الرقمين ٦ و٨، أو التوقف عند ٧ مع وجود عنصر ثامن. أعيد العدّ بالتحريك أو التأشير وأطابق الكمية بالرقم.",
+        "summary": "أقرأ وأكتب وأمثل الأعداد ٦ و٧ و٨؛ وأتحقق من كل كمية بالعد المنظم مرة واحدة لكل عنصر."
       }
     },
     {
       "id": "uae-g1-1-4-read-and-write-9-and-10",
       "titlePatterns": [
-        "^Read and Write 9 and 10$"
+        "^Read and Write 9 and 10$",
+        "^قراءة وكتابة العددين [٩9] و[١1][٠0]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:04$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "COUNT_READ_WRITE_9_10",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l04.read_write_9_10"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write 9 and 10.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write 9 and 10."
+        "concept": "٩ تعني تسعة عناصر، و١٠ تعني عشرة. عند إضافة واحد إلى مجموعة من تسعة تصبح عشرة. في إطار عشرة، ٩ = تسع خانات مملوءة وخانة واحدة فارغة، و١٠ = عشر خانات مملوءة. العدد ١٠ يتكون من رقمين ١ ثم ٠؛ ليس ٠١.",
+        "workedExample": "مثال أصلي ١: إطار عشرة فيه ●●●●● / ●●●●□، أي تسع نقاط، أكتب ٩.",
+        "solution": "١. أرتب عناصر في مجموعتين لأعدّها من دون تكرار. ٢. أعدّ حتى تسعة، وأكتب الرقم ٩ وأقرأ «تسعة». ٣. أضيف عنصرًا آخر وأعدّ حتى عشرة، وأكتب ١٠ وأقرأ «عشرة».",
+        "commonMistake": "عدّ الخانة الفارغة نقطة، أو إسقاط العنصر العاشر، أو قراءة ١٠ على أنها ١ أو كتابة ٠١ بدل ١٠. أراجع العشرة بإطار من صفين، وألاحظ الصفر يأتي بعد الواحد عند كتابة ١٠.",
+        "summary": "تسعة ٩، وعشرة ١٠؛ أميزهما بفارق عنصر واحد وأكتب ١٠ بالترتيب الصحيح."
       }
     },
     {
       "id": "uae-g1-1-5-read-and-write-numbers-11-to-15",
       "titlePatterns": [
-        "^Read and Write Numbers 11 to 15$"
+        "^Read and Write Numbers 11 to 15$",
+        "^قراءة وكتابة الأعداد من [١1][١1] إلى [١1][٥5]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:05$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "TEN_FRAME_11_TO_15_READ_WRITE",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l05.read_write_11_15"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers 11 to 15.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers 11 to 15."
+        "concept": "١١ = ١٠ + ١، و١٢ = ١٠ + ٢، و١٣ = ١٠ + ٣، و١٤ = ١٠ + ٤، و١٥ = ١٠ + ٥. أملأ إطار العشرة الأول وأضيف ١–٥ في الثاني. أقرأ أحد عشر، اثنا عشر، ثلاثة عشر، أربعة عشر، خمسة عشر. لا أكتب ٥١ بدل ١٥.",
+        "workedExample": "مثال أصلي ١: لدي إطار عشرة كامل وإطار ثان فيه ●. أكتب ١٠ + ١ = ١١ وأنطق «أحد عشر».",
+        "solution": "١. أعدّ عشرة عناصر في إطار من صفين، وأتأكد من امتلاء الخانات العشر. ٢. أضع ١–٥ عناصر إضافية في الإطار الثاني. ٣. أقرأ العدد باستخدام العشرة والآحاد، ثم أنطق اسمه الصحيح.",
+        "commonMistake": "نسيان العشرة الأولى أو عدّ عناصر الإطار الثاني بدل المجموعة كلها؛ قلب رقمي العدد مثل ٥١ بدل ١٥؛ نسيان أن عشرة موجودة بالفعل؛ الخلط بين أسماء أحد عشر واثني عشر. أصحح برسم إطار كامل ثم إضافة الآحاد والقراءة قبل الكتابة.",
+        "summary": "أمثل وأقرأ وأكتب ١١–١٥: عشرة كاملة وآحاد من ١ إلى ٥، مع رسم وكتابة صحيحة."
       }
     },
     {
       "id": "uae-g1-1-6-read-and-write-numbers-16-to-20",
       "titlePatterns": [
-        "^Read and Write Numbers 16 to 20$"
+        "^Read and Write Numbers 16 to 20$",
+        "^قراءة وكتابة الأعداد من [١1][٦6] إلى [٢2][٠0]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:06$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "TEN_FRAME_16_TO_20_READ_WRITE",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l06.read_write_16_20"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers 16 to 20.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers 16 to 20."
+        "concept": "١٦ = ١٠ + ٦، ١٧ = ١٠ + ٧، ١٨ = ١٠ + ٨، ١٩ = ١٠ + ٩، ٢٠ = ١٠ + ١٠. ٢٠ يعني عشرين عنصرًا، لا عنصرين. أعدّ من دون تكرار وأقرأ الأسماء «ستة عشر»، «سبعة عشر»، «ثمانية عشر»، «تسعة عشر»، «عشرون». أكتب العدد برقمين بالترتيب الصحيح.",
+        "workedExample": "مثال أصلي ١: إطار مكتمل فيه عشر نقاط، وإطار ثان فيه ست نقاط: ١٠ + ٦ = ١٦؛ أكتب ١٦.",
+        "solution": "١. أملأ الإطار الأول بعشرة أشياء، وأتأكد أنه يمثل عشرة واحدة. ٢. أضع من ستة إلى عشرة أشياء في الإطار الثاني بحسب العدد المطلوب. ٣. أعدّ المجموع أو أستخدم ١٠ + الباقي لأقرأ العدد.",
+        "commonMistake": "الخلط بين ١٦ و٦١ أو ٢٠ و٢؛ عدّ خانة فارغة كأنها عنصر؛ إسقاط العشرة الأولى؛ اعتبار ٢٠ عشرة واحدة؛ نسيان الرقم صفر عند كتابة عشرين. أعالج ذلك بإكمال إطارين وقراءة العدد بعد التمثيل.",
+        "summary": "أقرأ وأكتب ١٦–٢٠ بعشرة كاملة و٦–١٠ آحاد إضافية؛ ٢٠ عشرتان كاملتان."
       }
     },
     {
@@ -6616,1097 +6622,1145 @@
     {
       "id": "uae-g1-4-7-make-10-to-add",
       "titlePatterns": [
-        "^Make 10 to Add$"
+        "^Make 10 to Add$",
+        "^تكوين\\ ١٠\\ للجمع$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:04:07$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "MAKE_TEN_TRANSFER_FROM_SECOND_ADDEND",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u04.l07.make_ten_add"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make 10 to Add.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make 10 to Add."
+        "concept": "كوّن عشرة أولًا بنقل بعض قطع العدد الثاني ثم أضف الباقي.",
+        "workedExample": "٨ + ٥: أنقل ٢ من ٥ إلى ٨، ويبقى ٣، إذن ١٠ + ٣ = ١٣.",
+        "solution": "حدد ١٠−أ، وقسّم ب إلى هذا الجزء والباقي، وتحقق من أ+ب = ١٠+الباقي.",
+        "commonMistake": "لا تضف القطع المنقولة مرتين.",
+        "summary": "أكمل العشرة ثم أضف ما بقي من العدد الثاني."
       }
     },
     {
       "id": "uae-g1-4-8-add-in-any-order",
       "titlePatterns": [
-        "^Add in Any Order$"
+        "^Add in Any Order$",
+        "^الجمع\\ بأي\\ ترتيب$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:04:08$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "ADDITION_COMMUTATIVITY_AND_MISSING_SWAPPED_ADDEND",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u04.l08.commutative_add"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Add in Any Order.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Add in Any Order."
+        "concept": "عند تبديل الحدين يبقى مجموعهما ثابتًا.",
+        "workedExample": "٥ + ٤ = ٤ + ٥ = ٩.",
+        "solution": "حافظ على العددين، بدّل ترتيب المجموعتين، وتحقق من ثبات المجموع.",
+        "commonMistake": "العدد المفقود في جملة الإبدال ليس المجموع دائمًا.",
+        "summary": "أ + ب = ب + أ في الجمع."
       }
     },
     {
       "id": "uae-g1-4-9-add-three-numbers",
       "titlePatterns": [
-        "^Add Three Numbers$"
+        "^Add Three Numbers$",
+        "^جمع\\ ثلاثة\\ أعداد$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:04:09$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "THREE_ADDENDS_PAIR_MAKES_TEN_OR_DOUBLES",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u04.l09.add_three_with_strategy"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Add Three Numbers.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Add Three Numbers."
+        "concept": "اجمع زوجًا يصنع عشرة أو مضاعفًا قبل إضافة العدد الثالث.",
+        "workedExample": "٦ + ٤ + ٣ = (٦ + ٤) + ٣ = ١٣.",
+        "solution": "حدد الزوج الاستراتيجي ثم أضف العدد غير المستخدم.",
+        "commonMistake": "لا تنس الحد الثالث ولا تحسب أي حد مرتين.",
+        "summary": "ثلاثة حدود، زوج مختار، ثم إضافة الباقي."
       }
     },
     {
       "id": "uae-g1-5-1-subtract-by-counting-back-1-2-or-3",
       "titlePatterns": [
-        "^Subtract by Counting Back 1, 2, or 3$"
+        "^Subtract by Counting Back 1, 2, or 3$",
+        "^الطرح\\ بالعد\\ التنازلي\\ بمقدار\\ ١\\ أو\\ ٢\\ أو\\ ٣$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:01$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "COUNT_BACK_ONE_TO_THREE",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l01.count_back_1_2_3"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Subtract by Counting Back 1, 2, or 3.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Subtract by Counting Back 1, 2, or 3."
+        "concept": "طرح عدد صغير بالانتقال إلى الخلف خطوة واحدة أو خطوتين أو ثلاث خطوات، دون إعادة عدّ نقطة البداية.",
+        "workedExample": "أمثل ٩ أحجار، ثم أحذف حجرين: أقول ٨ ثم ٧، إذن ٩ − ٢ = ٧.",
+        "solution": "لا نعد العدد الذي بدأنا عنده خطوةً للطرح؛ إذا طرحنا ٣ ننطق ثلاث قيم أصغر على التوالي. العدد المطروح هو عدد الخطوات وليس رقم أول محطة.",
+        "commonMistake": "عدّ عدد البداية ضمن الخطوات، أو عدّ خطوتين عند طرح ثلاث، أو الاتجاه إلى اليمين بدل اليسار.",
+        "summary": "أبدأ عند ١١ وأعود ثلاث خطوات؛ أكتب ١١ − ٣ = ٨، وأحدد خطوات ١٠ ثم ٩ ثم ٨."
       }
     },
     {
       "id": "uae-g1-5-2-use-a-number-line-to-subtract",
       "titlePatterns": [
-        "^Use a Number Line to Subtract$"
+        "^Use a Number Line to Subtract$",
+        "^استخدام\\ خط\\ الأعداد\\ للطرح$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:02$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "SUBTRACT_WITH_NUMBER_LINE_BACKWARD_HOPS",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l02.number_line_subtract"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use a Number Line to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use a Number Line to Subtract."
+        "concept": "تمثيل الطرح بقفزات إلى اليسار على خط أعداد صحيح يبدأ من الصفر، وعدّ القفزات وحساب الفرق.",
+        "workedExample": "لأحل ١٠ − ٣ أضع إصبعي عند ١٠ وأقفز يسارًا إلى ٩، ثم ٨، ثم ٧؛ الباقي ٧.",
+        "solution": "في الطرح نبدأ عند العدد الكلي ونقفز باتجاه الأعداد الأصغر بعدد الخطوات المطروحة. قيمة نقطة الوصول هي الفرق، ولا تُحسب نقطة البداية كقفزة.",
+        "commonMistake": "التحرك إلى اليمين كالجمع، أو الخلط بين عدد القفزات وبين العدد الذي نهبط عنده، أو بدء القفزة من الصفر.",
+        "summary": "أرسم خط أعداد وأمثل ١٣ − ٤؛ أبدأ عند ١٣ وأصل إلى ٩ بعد أربع قفزات."
       }
     },
     {
       "id": "uae-g1-5-3-use-doubles-to-subtract",
       "titlePatterns": [
-        "^Use Doubles to Subtract$"
+        "^Use Doubles to Subtract$",
+        "^استخدام\\ المضاعفات\\ للطرح$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:03$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "SUBTRACTION_FROM_KNOWN_DOUBLES",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l03.doubles_subtraction"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use Doubles to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use Doubles to Subtract."
+        "concept": "ربط حقيقة مضاعف في الجمع بطرح أحد الجزأين المتساويين من الكل.",
+        "workedExample": "أكوّن مجموعتين من خمس خرزات؛ ٥ + ٥ = ١٠، وإذا أزلت خمسًا تبقى ٥: ١٠ − ٥ = ٥.",
+        "solution": "إذا كان الكل مكوّنًا من مجموعتين متساويتين أ + أ، فإن حذف إحدى المجموعتين يترك العدد أ. لا تستخدم المضاعف إن لم يكن الجزآن متساويين.",
+        "commonMistake": "خلط ناتج الجمع مع ناتج الطرح، أو اختيار حدين غير متساويين وتسميتهما مضاعفًا، أو نسيان أن المطلوب هو الجزء الباقي.",
+        "summary": "٨ + ٨ = ١٦؛ عند طرح ٨ من ١٦ يبقى ٨، وأوضح ذلك بمجموعتين من دوائر مختلفة اللون."
       }
     },
     {
       "id": "uae-g1-5-5-make-10-to-subtract",
       "titlePatterns": [
-        "^Make 10 to Subtract$"
+        "^Make 10 to Subtract$",
+        "^تكوين\\ ١٠\\ للطرح$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:05$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "DECOMPOSE_SUBTRAHEND_AND_BRIDGE_TEN",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l05.subtract_through_ten"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make 10 to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make 10 to Subtract."
+        "concept": "تفكيك العدد المطروح إلى جزء يوصِل المطروح منه إلى عشرة، ثم طرح الباقي من عشرة.",
+        "workedExample": "لطرح ٨ من ١٥ أبدأ بحذف ٥ لأصل إلى ١٠، ويبقى من الثمانية ٣؛ أطرح ٣ من ١٠ فيكون الناتج ٧.",
+        "solution": "إذا كان العدد الكلي ١٠ + آحاد، وأريد طرح عدد يتجاوز الآحاد، فأطرح الآحاد أولًا للوصول إلى ١٠؛ أطرح ما بقي من المطروح. يجب أن يساوي مجموع الجزأين المطروح الأصلي.",
+        "commonMistake": "طرح الجزء الذي يوصِل إلى عشرة مرتين، أو تفكيك المطروح إلى مجموع لا يساويه، أو كتابة ١٠ زائد الباقي بدل ١٠ ناقص الباقي.",
+        "summary": "أحل ١٦ − ٩: أصل إلى ١٠ بطرح ٦، وأطرح الباقي ٣ لأحصل على ٧."
       }
     },
     {
       "id": "uae-g1-5-6-use-related-addition-and-subtraction-facts",
       "titlePatterns": [
-        "^Use Related Addition and Subtraction Facts$"
+        "^Use Related Addition and Subtraction Facts$",
+        "^استخدام\\ حقائق\\ الجمع\\ والطرح\\ المترابطة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:06$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "INVERSE_RELATION_ADDITION_SUBTRACTION",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l06.related_add_sub_facts"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use Related Addition and Subtraction Facts.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use Related Addition and Subtraction Facts."
+        "concept": "استعمال حقيقة جمع معلومة لحساب فرق مرتبط والتحقق من الناتج بعكس العملية.",
+        "workedExample": "أعرف ٧ + ٥ = ١٢؛ لذلك ١٢ − ٧ = ٥، ويمكنني التحقق بأن ٥ + ٧ = ١٢.",
+        "solution": "في عائلة واحدة من جزءين وكل: أ + ب = ك، إذن ك − أ = ب وك − ب = أ. نتحقق بعملية جمع تُعيد الكل.",
+        "commonMistake": "طرح الجزء من مجموع غير مرتبط، أو الخلط بين أي عدد هو الكل، أو عدّ العملية العكسية دليلًا أن الطرح تبادلي.",
+        "summary": "إذا كان ٦ + ٧ = ١٣، أكتب ١٣ − ٦ = ٧، ثم أتحقق بإعادة الجمع."
       }
     },
     {
       "id": "uae-g1-5-7-fact-families",
       "titlePatterns": [
-        "^Fact Families$"
+        "^Fact Families$",
+        "^عائلات\\ الحقائق$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:07$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "PART_PART_WHOLE_FOUR_RELATED_EQUATIONS",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l07.fact_family_four_equations"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Fact Families.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Fact Families."
+        "concept": "استنتاج أربع جمل مترابطة من عددين يمثلان جزءين وعدد ثالث يمثل الكل، مع التمييز بين الجمع والطرح.",
+        "workedExample": "المثلث يحتوي ٤ و٧ والكل ١١؛ أكتب ٤ + ٧ = ١١، ٧ + ٤ = ١١، ١١ − ٤ = ٧، ١١ − ٧ = ٤.",
+        "solution": "في مثلث الحقائق يكون الكل هو العدد الأكبر والجزآن مجموعهما الكل. الجملتان في الجمع تتبادلان الحدين، وفي الطرح نبدأ بالكل ونطرح جزءًا لنحصل على الآخر.",
+        "commonMistake": "وضع الكل في خانة الجزء، أو كتابة فرق بسالب من طرح جزء من جزء، أو استعمال عدد خارج الثلاثية، أو عدّ الجملة المكررة خطأً حين يتساوى الجزآن.",
+        "summary": "لمثلث جزآه ٨ و٥ وكله ١٣، أكتب حقيقتين للجمع وحقيقتين للطرح وأبرر أن الأعداد لا تتغير."
       }
     },
     {
       "id": "uae-g1-5-8-missing-addends",
       "titlePatterns": [
-        "^Missing Addends$"
+        "^Missing Addends$",
+        "^الحدود\\ الجمعية\\ الناقصة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:05:08$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UNKNOWN_PART_BY_INVERSE_SUBTRACTION",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l08.missing_addend_part_whole"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Missing Addends.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Missing Addends."
+        "concept": "إيجاد الجزء غير المعروف في جملة جمع أو جدول جزء/جزء/كل باستخدام حقيقة طرح مترابطة.",
+        "workedExample": "لدي ١٣ قطعة، منها ٥ حمراء والباقي أصفر. الجزء الناقص ١٣ − ٥ = ٨؛ أكتب ٥ + ٨ = ١٣.",
+        "solution": "إذا عرفت الكل وأحد الجزأين، أطرح الجزء المعروف من الكل لأجد الجزء الناقص. توضع الإجابة في الخانة المجهولة لا مكان المجموع. يمكن أن يكون الحد الأول أو الثاني هو المجهول.",
+        "commonMistake": "وضع قيمة الكل في الفراغ، أو طرح الكل من الجزء، أو افتراض أن الجزء المفقود يساوي الجزء المعروف، أو نسيان التحقق بجمع الجزأين.",
+        "summary": "في جملة ٦ + ؟ = ١٤، أجد العدد الناقص ٨ لأن ١٤ − ٦ = ٨، وأتحقق بجمع ٦ + ٨."
       }
     },
     {
       "id": "uae-g1-6-1-ordinal-numbers-to-10",
       "titlePatterns": [
-        "^Ordinal Numbers to 10$"
+        "^Ordinal Numbers to 10$",
+        "^الأعداد\\ الترتيبية\\ حتى\\ ١٠$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:01$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "ORDINAL_POSITION",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_1_EXACT_SKILL",
       "families": [
-        "supporting.number.ordinal_position"
+        "uae.g1.u06.l01.ordinal_1_10"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Ordinal Numbers to 10.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Ordinal Numbers to 10."
+        "concept": "يحدد موضع عنصر في صف مرتب من عشرة عناصر باستخدام الأول والثاني وحتى العاشر، ويميّز الترتيب عن عدد العناصر.",
+        "workedExample": "في طابور المدرسة سبعة أطفال؛ يقف زيد بعد خمسة أطفال. زيد هو السادس، وليس الطفل الخامس.",
+        "solution": "يحدد موضع عنصر في صف مرتب من عشرة عناصر باستخدام الأول والثاني وحتى العاشر، ويميّز الترتيب عن عدد العناصر.",
+        "commonMistake": "الخلط بين عدد الأشياء وترتيب الشيء أو البدء من آخر الصف دون تحديد اتجاه القراءة.",
+        "summary": "في طابور من عشرة أطفال، يقف أحمد قبل الرابع مباشرة؛ موقعه الثالث. يراجع المعلم التحديد على الرسم."
       }
     },
     {
       "id": "uae-g1-6-2-numbers-11-to-19",
       "titlePatterns": [
-        "^Numbers 11 to 19$"
+        "^Numbers 11 to 19$",
+        "^الأعداد\\ من\\ ١١\\ إلى\\ ١٩$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:02$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "TEEN_DECOMPOSE",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_2_EXACT_SKILL",
       "families": [
-        "supporting.number.teen_decompose"
+        "uae.g1.u06.l02.numbers_11_19"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Numbers 11 to 19.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Numbers 11 to 19."
+        "concept": "يمثل كل عدد من ١١ إلى ١٩ بعشرة كاملة وآحاد إضافية، ويقرأ العدد ويكتبه بالأرقام العربية.",
+        "workedExample": "أملأ إطار عشر خانات ثم أضع أربع نقاط منفصلة؛ هذا ١٤ لأن ١٠ + ٤ = ١٤.",
+        "solution": "يمثل كل عدد من ١١ إلى ١٩ بعشرة كاملة وآحاد إضافية، ويقرأ العدد ويكتبه بالأرقام العربية.",
+        "commonMistake": "قلب ١٦ إلى ٦١ أو تجاهل العشرة المكتملة أو حساب إحدى النقاط مرتين.",
+        "summary": "أكوّن عشرة وخمس نقاط إضافية، ثم أكتب العدد ١٥ وأشرح أنه عشرة وخمسة."
       }
     },
     {
       "id": "uae-g1-6-3-tens",
       "titlePatterns": [
-        "^Tens$"
+        "^Tens$",
+        "^العشرات$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:03$"
       ],
       "skillId": "supporting.number.place_value_rounding",
-      "mechanic": "PLACE_VALUE",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_3_EXACT_SKILL",
       "families": [
-        "supporting.number.place_value"
+        "uae.g1.u06.l03.groups_of_ten"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Tens.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Tens."
+        "concept": "يميز العشرة كوحدة من عشرة آحاد، ويجمع مجموعات كاملة من العشرات حتى عشر مجموعات تساوي مئة.",
+        "workedExample": "أكوّن ثلاث حزم في كل واحدة عشر قطع، فأجد ١٠ + ١٠ + ١٠ = ٣٠.",
+        "solution": "يميز العشرة كوحدة من عشرة آحاد، ويجمع مجموعات كاملة من العشرات حتى عشر مجموعات تساوي مئة.",
+        "commonMistake": "عدّ عدد الحزم واعتباره عدد الآحاد بدل ضربه في عشرة.",
+        "summary": "إذا لدي خمس حزم من عشر مكعبات، فقيمتها ٥٠ مكعبًا."
       }
     },
     {
       "id": "uae-g1-6-4-count-by-tens",
       "titlePatterns": [
-        "^Count by Tens$"
+        "^Count by Tens$",
+        "^العد\\ بالعشرات\\ باستخدام\\ ١٠\\ فلوس$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:04$"
       ],
       "skillId": "supporting.sequences.core",
-      "mechanic": "SKIP_COUNT",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_4_EXACT_SKILL",
       "families": [
-        "supporting.sequences.skip_count"
+        "uae.g1.u06.l04.count_tens_fils"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count by Tens.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count by Tens."
+        "concept": "يستخدم قيمة قطعة نقدية من فئة عشرة فلوس ليعد بالقفز بمقدار عشرة ويجد المبلغ الكلي.",
+        "workedExample": "ثلاث قطع من فئة ١٠ فلوس تساوي ٣٠ فلسًا: ١٠، ٢٠، ٣٠.",
+        "solution": "يستخدم قيمة قطعة نقدية من فئة عشرة فلوس ليعد بالقفز بمقدار عشرة ويجد المبلغ الكلي.",
+        "commonMistake": "عد النقود باعتبار كل قطعة فلسًا واحدًا بدل قيمتها الفعلية عشرة فلوس.",
+        "summary": "خمس قطع من فئة ١٠ فلوس، المجموع ٥٠ فلسًا."
       }
     },
     {
       "id": "uae-g1-6-5-ten-and-some-more",
       "titlePatterns": [
-        "^Ten and Some More$"
+        "^Ten and Some More$",
+        "^العشرة\\ والأعداد\\ الزائدة\\ عليها$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:05$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "TEEN_DECOMPOSE",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_5_EXACT_SKILL",
       "families": [
-        "supporting.number.teen_decompose"
+        "uae.g1.u06.l05.ten_and_some_more"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Ten and Some More.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Ten and Some More."
+        "concept": "يعد مجموعات من عشرة كاملة مع آحاد منفردة، ويكتب العدد بوصفه عشرات وآحادًا حتى ٩٩.",
+        "workedExample": "أرتب ٣٧ خرزة في ثلاث حزم من عشرة وسبع خرزات مفردة، وأكتب ٣٧.",
+        "solution": "يعد مجموعات من عشرة كاملة مع آحاد منفردة، ويكتب العدد بوصفه عشرات وآحادًا حتى ٩٩.",
+        "commonMistake": "كتابة عدد العشرات بجوار الآحاد بصورة معكوسة مثل ٣٤ بدل ٤٣.",
+        "summary": "إذا جهزت سبع حزم من عشرة وخمس قطع منفردة فأكتب ٧٥."
       }
     },
     {
       "id": "uae-g1-6-8-numbers-to-100",
       "titlePatterns": [
-        "^Numbers to 100$"
+        "^Numbers to 100$",
+        "^الأعداد\\ حتى\\ ١٠٠$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:08$"
       ],
       "skillId": "supporting.number.place_value_rounding",
-      "mechanic": "PLACE_VALUE",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_8_EXACT_SKILL",
       "families": [
-        "supporting.number.place_value"
+        "uae.g1.u06.l08.numbers_to_100"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Numbers to 100.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Numbers to 100."
+        "concept": "يقرأ ويكتب الأعداد حتى مئة باستخدام أعمدة العشرات والآحاد، ويمثلها بقضبان وعناصر منفردة.",
+        "workedExample": "العدد ٤٨ يعني أربع عشرات وثمانية آحاد؛ أكتب الرقم ٤ في العشرات و٨ في الآحاد.",
+        "solution": "يقرأ ويكتب الأعداد حتى مئة باستخدام أعمدة العشرات والآحاد، ويمثلها بقضبان وعناصر منفردة.",
+        "commonMistake": "قراءة منزلة العشرات كآحاد أو تفسير ١٠٠ كعشر آحاد.",
+        "summary": "خمس عشرات وتسعة آحاد تمثل العدد ٥٩."
       }
     },
     {
       "id": "uae-g1-6-9-ten-more-and-ten-less",
       "titlePatterns": [
-        "^Ten More and Ten Less$"
+        "^Ten More and Ten Less$",
+        "^الزيادة\\ بالعشرات\\ والنقصان\\ بالعشرات$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:09$"
       ],
       "skillId": "supporting.number.place_value_rounding",
-      "mechanic": "PLACE_VALUE",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_9_EXACT_SKILL",
       "families": [
-        "supporting.number.place_value"
+        "uae.g1.u06.l09.ten_more_ten_less"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Ten More and Ten Less.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Ten More and Ten Less."
+        "concept": "يضيف عشرة أو يطرح عشرة مع بقاء رقم الآحاد ثابتًا، ويستعمل خط الأعداد ومكعبات العشرات.",
+        "workedExample": "أبدأ من ٣٧، عشر زيادة تعطيني ٤٧؛ الآحاد ٧ لم تتغير.",
+        "solution": "يضيف عشرة أو يطرح عشرة مع بقاء رقم الآحاد ثابتًا، ويستعمل خط الأعداد ومكعبات العشرات.",
+        "commonMistake": "تغيير خانة الآحاد بدل العشرات أو طرح عشرة من عدد أقل من عشرة دون بيان المجال.",
+        "summary": "عشرة أكثر من ٥٦ هو ٦٦؛ عشرة أقل هو ٤٦."
       }
     },
     {
       "id": "uae-g1-6-10-count-by-fives",
       "titlePatterns": [
-        "^Count by Fives$"
+        "^Count by Fives$",
+        "^العد\\ بالخمسات\\ باستخدام\\ ٥\\ فلوس$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:10$"
       ],
       "skillId": "supporting.sequences.core",
-      "mechanic": "SKIP_COUNT",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_10_EXACT_SKILL",
       "families": [
-        "supporting.sequences.skip_count"
+        "uae.g1.u06.l10.count_fives_fils"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count by Fives.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count by Fives."
+        "concept": "يستخدم قطعة نقدية قيمتها خمسة فلوس ليعد بالخمسات حتى مئة ويكتب المبلغ الإجمالي.",
+        "workedExample": "أعدّ أربع قطع من ٥ فلوس: ٥، ١٠، ١٥، ٢٠ فلسًا.",
+        "solution": "يستخدم قطعة نقدية قيمتها خمسة فلوس ليعد بالخمسات حتى مئة ويكتب المبلغ الإجمالي.",
+        "commonMistake": "اعتبار القطعة النقدية بفلس واحد أو القفز بمقدار عشرة بدل خمسة.",
+        "summary": "سبع قطع من فئة ٥ فلوس، أعدّ بالخمسات حتى ٣٥ فلسًا."
       }
     },
     {
       "id": "uae-g1-6-11-use-models-to-compare-numbers",
       "titlePatterns": [
-        "^Use Models to Compare Numbers$"
+        "^Use Models to Compare Numbers$",
+        "^استخدام\\ النماذج\\ لمقارنة\\ الأعداد$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:11$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMBER_COMPARE_ORDER",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_11_EXACT_SKILL",
       "families": [
-        "supporting.number.compare_order"
+        "uae.g1.u06.l11.compare_models"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use Models to Compare Numbers.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use Models to Compare Numbers."
+        "concept": "يقارن عددين حتى مئة باستخدام النماذج والقضبان العشرية، ويحدد الأكبر والأصغر أو التساوي.",
+        "workedExample": "أعرض ٣٤ في ثلاث عشرات وأربع آحاد، و٤٢ في أربع عشرات واثنين آحاد؛ ٤٢ أكبر.",
+        "solution": "يقارن عددين حتى مئة باستخدام النماذج والقضبان العشرية، ويحدد الأكبر والأصغر أو التساوي.",
+        "commonMistake": "مقارنة الآحاد أولًا عندما يختلف عدد العشرات، أو اعتبار اختلاف اللون اختلافًا في العدد.",
+        "summary": "بين ٥٦ و٦١ العدد الأكبر ٦١ لأن لديه ست عشرات لا خمس."
       }
     },
     {
       "id": "uae-g1-6-12-use-symbols-to-compare-numbers",
       "titlePatterns": [
-        "^Use Symbols to Compare Numbers$"
+        "^Use Symbols to Compare Numbers$",
+        "^استخدام\\ الرموز\\ لمقارنة\\ الأعداد$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:12$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMBER_COMPARE_ORDER",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_12_EXACT_SKILL",
       "families": [
-        "supporting.number.compare_order"
+        "uae.g1.u06.l12.compare_symbols"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Use Symbols to Compare Numbers.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Use Symbols to Compare Numbers."
+        "concept": "يختار الرمز المناسب > أو < أو = عند مقارنة عددين حتى مئة ويراجع اتجاه الرمز مع القيم.",
+        "workedExample": "لأقارن ٦٤ و٣٦ أكتب ٦٤ > ٣٦، لأن ست عشرات أكبر من ثلاث.",
+        "solution": "يختار الرمز المناسب > أو < أو = عند مقارنة عددين حتى مئة ويراجع اتجاه الرمز مع القيم.",
+        "commonMistake": "عكس فتحة رمز > أو <، أو استخدام علامة مساواة لأعداد مختلفة.",
+        "summary": "العدد ٤٧ أصغر من ٧٤؛ أكتب ٤٧ < ٧٤."
       }
     },
     {
-      "id": "uae-g1-6-13-count-backward-to-120",
+      "id": "uae-g1-6-13-numbers-to-120-corrected",
       "titlePatterns": [
-        "^Count Backward to 120$"
+        "^Numbers to 120$",
+        "^الأعداد\\ حتى\\ ١٢٠$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:13$"
       ],
-      "skillId": "supporting.sequences.core",
-      "mechanic": "SKIP_COUNT",
+      "skillId": "supporting.number.place_value_rounding",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_13_EXACT_SKILL",
       "families": [
-        "supporting.sequences.skip_count"
+        "uae.g1.u06.l13.hundreds_tens_ones"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count Backward to 120.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count Backward to 120."
+        "concept": "يميز المئة والعشرات والآحاد، ويقرأ ويكتب أعدادًا من ١٠٠ إلى ١٢٠ بنموذج مئة وقضبان عشرات ومكعبات منفردة.",
+        "workedExample": "أمثّل ١١٤ بمربع مئة وقضيب عشرة وأربع قطع مفردة، أي ١٠٠ + ١٠ + ٤.",
+        "solution": "يميز المئة والعشرات والآحاد، ويقرأ ويكتب أعدادًا من ١٠٠ إلى ١٢٠ بنموذج مئة وقضبان عشرات ومكعبات منفردة.",
+        "commonMistake": "الخلط بين ١١٦ و١٦، أو اعتبار ١٠٠ عشرة واحدة، أو إهمال منزلة المئات.",
+        "summary": "إذا لدي مئة واحدة وعشرة واحدة وسبعة آحاد أكتب ١١٧."
       }
     },
     {
       "id": "uae-g1-6-14-count-to-120",
       "titlePatterns": [
-        "^Count to 120$"
+        "^Count to 120$",
+        "^العد\\ حتى\\ ١٢٠$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:14$"
       ],
       "skillId": "supporting.sequences.core",
-      "mechanic": "SKIP_COUNT",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_14_EXACT_SKILL",
       "families": [
-        "supporting.sequences.skip_count"
+        "uae.g1.u06.l14.count_to_120"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count to 120.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count to 120."
+        "concept": "يستعمل مخطط الأعداد من ١ إلى ١٢٠ ليعد بالترتيب ويجد العدد التالي، مع الانتقال الصحيح بين نهايات العشرات.",
+        "workedExample": "على المخطط أبدأ من ٢٨؛ يليه ٢٩ ثم ٣٠.",
+        "solution": "يستعمل مخطط الأعداد من ١ إلى ١٢٠ ليعد بالترتيب ويجد العدد التالي، مع الانتقال الصحيح بين نهايات العشرات.",
+        "commonMistake": "الانتقال من ٩٩ إلى ٩٠ أو من ١١٩ إلى ١١٠ بدل ١٢٠.",
+        "summary": "العدد اللاحق للعدد ١٠٩ هو ١١٠."
       }
     },
     {
       "id": "uae-g1-6-15-read-and-write-numbers-to-120",
       "titlePatterns": [
-        "^Read and Write Numbers to 120$"
+        "^Read and Write Numbers to 120$",
+        "^قراءة\\ وكتابة\\ الأعداد\\ حتى\\ ١٢٠$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:06:15$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_15_EXACT_SKILL",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u06.l15.read_write_to_120"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers to 120.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers to 120."
+        "concept": "يقرأ ويكتب الأعداد من ١ إلى ١٢٠ بالأرقام وبالكلمات، ويكمل الأعداد الناقصة في مخطط الأعداد.",
+        "workedExample": "أكتب مئة وخمسة بالأرقام ١٠٥، وأوضح أن عشراتها صفر.",
+        "solution": "يقرأ ويكتب الأعداد من ١ إلى ١٢٠ بالأرقام وبالكلمات، ويكمل الأعداد الناقصة في مخطط الأعداد.",
+        "commonMistake": "حذف رقم المئة أو قلب منازل العدد أو كتابة العدد المنطوق على نحو مغاير.",
+        "summary": "أقرأ العدد ١١٣ وأكتبه بالأرقام والكلمات، ويستمع المعلم إلى النطق الصحيح."
       }
     },
     {
       "id": "uae-g1-7-1-add-tens",
       "titlePatterns": [
-        "^Add Tens$"
+        "^Add Tens$",
+        "^جمع\\ العشرات$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:01$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_1_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l01.add_tens"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Add Tens.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Add Tens."
+        "concept": "جمع عشرات كاملة باستعمال قضبان العشرات، وفهم أن عشرات + عشرات تبقى عشرات حتى مئة",
+        "workedExample": "ثلاث حزم من عشرة مع أربع حزم أخرى تساوي سبع عشرات؛ ٣٠ + ٤٠ = ٧٠.",
+        "solution": "جمع عشرات كاملة باستعمال قضبان العشرات، وفهم أن عشرات + عشرات تبقى عشرات حتى مئة",
+        "commonMistake": "الخلط بين أربعة قضبان وبين أربع قطع مفردة، أو جمع العشرات كآحاد فقط.",
+        "summary": "إذا كانت لدي ٤ عشرات وأضفت ٣ عشرات فالنتيجة ٧٠، وأتحقق بعدد القضبان."
       }
     },
     {
       "id": "uae-g1-7-2-count-on-by-tens-and-ones-to-add",
       "titlePatterns": [
-        "^Count On by Tens and Ones to Add$"
+        "^Count On by Tens and Ones to Add$",
+        "^العد\\ التصاعدي\\ بالعشرات\\ والآحاد\\ للجمع$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:02$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_2_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l02.count_on_tens_ones"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count On by Tens and Ones to Add.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count On by Tens and Ones to Add."
+        "concept": "إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة",
+        "workedExample": "أبدأ من ٣٦ وأضيف عشرين: ٤٦ ثم ٥٦، فتكون ٣٦ + ٢٠ = ٥٦.",
+        "solution": "إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة",
+        "commonMistake": "القفز بواحد عند إضافة عشرة، أو تغيير الآحاد عند إضافة عشرات.",
+        "summary": "أنطلق من ٥٤ وأضيف عشرين؛ أصل إلى ٧٤ بعد قفزتين بالعشرات."
       }
     },
     {
       "id": "uae-g1-7-3-add-tens-and-ones",
       "titlePatterns": [
-        "^Add Tens and Ones$"
+        "^Add Tens and Ones$",
+        "^جمع\\ العشرات\\ والآحاد$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:03$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_3_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l03.add_tens_ones"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Add Tens and Ones.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Add Tens and Ones."
+        "concept": "جمع وحدات عشرات وآحاد وفق جدول القيمة المكانية، على أن يُجمع كل عمود مع مثيله دون حمل في هذه المهارة",
+        "workedExample": "أجمع ٢٣ + ٤٥، فأجمع الآحاد ٣ + ٥ = ٨ والعشرات ٢ + ٤ = ٦؛ المجموع ٦٨.",
+        "solution": "جمع وحدات عشرات وآحاد وفق جدول القيمة المكانية، على أن يُجمع كل عمود مع مثيله دون حمل في هذه المهارة",
+        "commonMistake": "وضع الآحاد تحت العشرات أو جمع العددين على أنهما رقم واحد أو نسيان قيم العشرات.",
+        "summary": "أجمع ٢٤ + ٣٢ بجمع الآحاد ٤ + ٢ = ٦ والعشرات ٢٠ + ٣٠ = ٥٠ فأجد ٥٦."
       }
     },
     {
       "id": "uae-g1-7-5-add-tens-and-ones-with-regrouping",
       "titlePatterns": [
-        "^Add Tens and Ones with Regrouping$"
+        "^Add Tens and Ones with Regrouping$",
+        "^جمع\\ العشرات\\ والآحاد\\ مع\\ إعادة\\ التجميع$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:05$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_5_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l05.regroup_ones_for_tens"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Add Tens and Ones with Regrouping.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Add Tens and Ones with Regrouping."
+        "concept": "جمع الآحاد في عددين عندما يصبح عدد الآحاد عشرة أو أكثر، ونقل عشر آحاد لتكوين عشرة إضافية",
+        "workedExample": "أجمع ١٦ + ٧؛ ثلاثة عشر آحادًا تعني عشرة وثلاث آحاد، فأجد ٢٣.",
+        "solution": "جمع الآحاد في عددين عندما يصبح عدد الآحاد عشرة أو أكثر، ونقل عشر آحاد لتكوين عشرة إضافية",
+        "commonMistake": "ترك أكثر من تسعة آحاد في خانة الآحاد أو نسيان إضافة العشرة الجديدة.",
+        "summary": "١٧ + ٨ = ٢٥؛ أستبدل عشر آحاد بعشرة واحدة وأترك خمس آحاد."
       }
     },
     {
       "id": "uae-g1-7-6-subtract-tens",
       "titlePatterns": [
-        "^Subtract Tens$"
+        "^Subtract Tens$",
+        "^طرح\\ العشرات$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:06$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_6_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l06.subtract_tens"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Subtract Tens.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Subtract Tens."
+        "concept": "طرح مجموعات عشرية كاملة مع تمثيل عملية الإزالة بقضبان عشرات وإبقاء بقية المجموعات",
+        "workedExample": "لأطرح ٣٠ من ٨٠ أزيل ثلاثة قضبان من ثمانية، فتتبقى خمسة = ٥٠.",
+        "solution": "طرح مجموعات عشرية كاملة مع تمثيل عملية الإزالة بقضبان عشرات وإبقاء بقية المجموعات",
+        "commonMistake": "التعامل مع ٦٠ كستة آحاد أو عكس ترتيب المطروح والمطروح منه.",
+        "summary": "الفرق ٦٠ − ٣٠ = ٣٠ لأن ست عشرات ناقص ثلاث تساوي ثلاث عشرات."
       }
     },
     {
       "id": "uae-g1-7-7-count-back-by-tens-to-subtract",
       "titlePatterns": [
-        "^Count Back by Tens to Subtract$"
+        "^Count Back by Tens to Subtract$",
+        "^العد\\ التنازلي\\ بالعشرات\\ للطرح$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:07$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_7_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l07.count_back_tens"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Count Back by Tens to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Count Back by Tens to Subtract."
+        "concept": "العد إلى الخلف بقفزات عشرية متساوية على خط أعداد من صفر إلى مئة لتمثيل طرح عشرات",
+        "workedExample": "لأحل ٧٠ − ٣٠ أبدأ من ٧٠، ثم أقفز إلى ٦٠، ٥٠، ٤٠؛ الفرق ٤٠.",
+        "solution": "العد إلى الخلف بقفزات عشرية متساوية على خط أعداد من صفر إلى مئة لتمثيل طرح عشرات",
+        "commonMistake": "عد نقطة البداية كقفزة أو التحرك يمينًا بدلاً من اليسار، أو القفز بمقدار واحد.",
+        "summary": "أعود أربع عشرات من ٧٠ فأصل إلى ٣٠ بعد قفزات ٦٠، ٥٠، ٤٠، ٣٠."
       }
     },
     {
       "id": "uae-g1-7-8-relate-adding-and-subtracting-tens",
       "titlePatterns": [
-        "^Relate Adding and Subtracting Tens$"
+        "^Relate Adding and Subtracting Tens$",
+        "^ربط\\ جمع\\ العشرات\\ وطرحها$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:07:08$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_8_EXACT",
       "families": [
-        "number.whole.add_subtract.within_100.apply"
+        "uae.g1.u07.l08.inverse_tens"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Relate Adding and Subtracting Tens.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Relate Adding and Subtracting Tens."
+        "concept": "الربط بين حقيقة جمع العشرات وحقيقة طرحها باستخدام الكل والجزأين والتحقق بالعملية العكسية",
+        "workedExample": "أعرف أن ٣٠ + ٤٠ = ٧٠، لذا ٧٠ − ٣٠ = ٤٠، وبذلك أتحقق من الفرق.",
+        "solution": "الربط بين حقيقة جمع العشرات وحقيقة طرحها باستخدام الكل والجزأين والتحقق بالعملية العكسية",
+        "commonMistake": "الخلط بين الجزأين والكل أو استخدام طرح لا يرتبط بنفس الأعداد.",
+        "summary": "أعرف ٤٠ + ٢٠ = ٦٠؛ لذلك ٦٠ − ٤٠ = ٢٠ وأتحقق ٤٠ + ٢٠ = ٦٠."
       }
     },
     {
       "id": "uae-g1-8-3-make-picture-graphs",
       "titlePatterns": [
-        "^Make Picture Graphs$"
+        "^Make Picture Graphs$",
+        "^رسم\\ التمثيلات\\ البيانية\\ بالصور$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:08:03$"
       ],
       "skillId": "supporting.statistics.charts",
-      "mechanic": "CATEGORY_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_3_EXACT_MECHANIC",
       "families": [
-        "supporting.statistics.compare_category_counts",
-        "supporting.statistics.category_total"
+        "uae.g1.u08.l03.make_picture_graph"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make Picture Graphs.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make Picture Graphs."
+        "concept": "إنشاء تمثيل بياني بالصور من بيانات الفئات، بحيث تمثل كل صورة عنصرًا واحدًا ويظل ترميز الصور ثابتًا.",
+        "workedExample": "إذا اختار ٤ أطفال الموز و٣ التفاح، أرسم أربع صور موز وثلاث صور تفاح؛ كل صورة = طفل واحد.",
+        "solution": "إنشاء تمثيل بياني بالصور من بيانات الفئات، بحيث تمثل كل صورة عنصرًا واحدًا ويظل ترميز الصور ثابتًا.",
+        "commonMistake": "إهمال مفتاح التمثيل أو إعطاء كل رمز قيمة مختلفة أو وضع عدد رموز لا يطابق البيانات.",
+        "summary": "إذا كان عدد نجوم الصف ٣ فلابد من رسم ثلاث صور نجمة عند مفتاح صورة واحدة = صوت واحد."
       }
     },
     {
       "id": "uae-g1-8-4-read-picture-graphs",
       "titlePatterns": [
-        "^Read Picture Graphs$"
+        "^Read Picture Graphs$",
+        "^قراءة\\ التمثيلات\\ البيانية\\ بالصور$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:08:04$"
       ],
       "skillId": "supporting.statistics.charts",
-      "mechanic": "CATEGORY_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_4_EXACT_MECHANIC",
       "families": [
-        "supporting.statistics.compare_category_counts",
-        "supporting.statistics.category_total"
+        "uae.g1.u08.l04.read_picture_graph"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read Picture Graphs.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read Picture Graphs."
+        "concept": "قراءة عدد الرموز في كل فئة بمفتاح ثابت، واستخراج الإجمالي والمقارنة والفارق.",
+        "workedExample": "لو عرض الرسم أربع شموس وثلاث غيوم ومفتاح الرمز واحد، فالفرق شمس واحدة.",
+        "solution": "قراءة عدد الرموز في كل فئة بمفتاح ثابت، واستخراج الإجمالي والمقارنة والفارق.",
+        "commonMistake": "اعتبار رمزين أحدهما أكبر حجمًا قيمتين مختلفتين أو ترك مفتاح الصورة أو عدم المقارنة الصحيحة.",
+        "summary": "في رسم ٧ سمكات خضراء و٤ زرقاء؛ الفرق ٣ سمكات."
       }
     },
     {
       "id": "uae-g1-8-5-make-bar-graphs",
       "titlePatterns": [
-        "^Make Bar Graphs$"
+        "^Make Bar Graphs$",
+        "^رسم\\ التمثيلات\\ البيانية\\ بالأعمدة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:08:05$"
       ],
       "skillId": "supporting.statistics.charts",
-      "mechanic": "CATEGORY_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_5_EXACT_MECHANIC",
       "families": [
-        "supporting.statistics.compare_category_counts",
-        "supporting.statistics.category_total"
+        "uae.g1.u08.l05.make_bar_graph"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make Bar Graphs.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make Bar Graphs."
+        "concept": "إنشاء أعمدة بوحدات متساوية لكل فئة ووضع تسميات الفئات وعدد العناصر دون خلط ارتفاع العمود بعرضه.",
+        "workedExample": "لفئة الأقلام ٥ أصوات، أرسم عمودًا فيه خمس خلايا متساوية على مقياس ١ لكل خلية.",
+        "solution": "إنشاء أعمدة بوحدات متساوية لكل فئة ووضع تسميات الفئات وعدد العناصر دون خلط ارتفاع العمود بعرضه.",
+        "commonMistake": "اختيار عرض العمود لتمثيل العدد بدل الارتفاع، أو حذف اسم الفئة أو تغيير مقياس الوحدات.",
+        "summary": "عمود عدد زياراته ٦ يجب أن يضم ست وحدات رأسية متساوية."
       }
     },
     {
       "id": "uae-g1-8-6-read-bar-graphs",
       "titlePatterns": [
-        "^Read Bar Graphs$"
+        "^Read Bar Graphs$",
+        "^قراءة\\ التمثيلات\\ البيانية\\ بالأعمدة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:08:06$"
       ],
       "skillId": "supporting.statistics.charts",
-      "mechanic": "CATEGORY_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_6_EXACT_MECHANIC",
       "families": [
-        "supporting.statistics.compare_category_counts",
-        "supporting.statistics.category_total"
+        "uae.g1.u08.l06.read_bar_graph"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read Bar Graphs.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read Bar Graphs."
+        "concept": "قراءة أعمدة فئات واضحة المقياس، وحساب المجموع والفرق وتحديد الأعلى والأقل.",
+        "workedExample": "ارتفاع عمود القصص ٦ وعمود المجلات ٤، فالفرق اثنان.",
+        "solution": "قراءة أعمدة فئات واضحة المقياس، وحساب المجموع والفرق وتحديد الأعلى والأقل.",
+        "commonMistake": "قراءة العمود من منتصف التدريج بدل الصفر، أو مقارنة عرض الأعمدة بدل ارتفاعها.",
+        "summary": "عمود ٦ كتب وعمود ٣ كتب؛ المجموع ٩."
       }
     },
     {
       "id": "uae-g1-9-1-compare-lengths",
       "titlePatterns": [
-        "^Compare Lengths$"
+        "^Compare Lengths$",
+        "^مقارنة\\ الأطوال$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:01$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "MEASUREMENT_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_1_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.compare"
+        "uae.g1.u09.l01.compare_lengths"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Compare Lengths.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Compare Lengths."
+        "concept": "المقارنة المباشرة بين جسمين بعد محاذاة طرفيهما وتحديد الأطول والأقصر أو المتساوي.",
+        "workedExample": "عند محاذاة بداية شريط طوله ٨ مكعبات مع آخر طوله ٥، يكون الأول أطول.",
+        "solution": "المقارنة المباشرة بين جسمين بعد محاذاة طرفيهما وتحديد الأطول والأقصر أو المتساوي.",
+        "commonMistake": "مقارنة جسمين من نقطتي بداية مختلفتين بدل محاذاة الطرفين.",
+        "summary": "قلمان بطول ٩ و٦ وحدات؛ الأطول هو ذو التسع."
       }
     },
     {
       "id": "uae-g1-9-2-compare-and-order-lengths",
       "titlePatterns": [
-        "^Compare and Order Lengths$"
+        "^Compare and Order Lengths$",
+        "^مقارنة\\ الأطوال\\ وترتيبها$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:02$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "MEASUREMENT_COMPARE",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_2_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.compare"
+        "uae.g1.u09.l02.order_lengths"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Compare and Order Lengths.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Compare and Order Lengths."
+        "concept": "ترتيب ثلاثة أجسام من الأقصر إلى الأطول أو بالعكس بعد توحيد نقطة البداية.",
+        "workedExample": "الأشرطة ٣ و٦ و٤ وحدات؛ ترتيبها من الأقصر ٣، ٤، ٦.",
+        "solution": "ترتيب ثلاثة أجسام من الأقصر إلى الأطول أو بالعكس بعد توحيد نقطة البداية.",
+        "commonMistake": "تغيير وحدة القياس أو استخدام مكان الجسم على الورقة بدل طوله الحقيقي.",
+        "summary": "أطوال ٤ و٧ و٥؛ الأقصر ٤ والأطول ٧."
       }
     },
     {
       "id": "uae-g1-9-3-nonstandard-units-of-length",
       "titlePatterns": [
-        "^Nonstandard Units of Length$"
+        "^Nonstandard Units of Length$",
+        "^قياس\\ الأطوال\\ بوحدات\\ غير\\ قياسية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:03$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "UNIT_ITERATION",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_3_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.unit_iteration"
+        "uae.g1.u09.l03.nonstandard_measure"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Nonstandard Units of Length.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Nonstandard Units of Length."
+        "concept": "عد وحدات قياس متساوية متلاصقة بلا فراغات أو تراكب لمعرفة طول جسم بوحدات غير قياسية.",
+        "workedExample": "يغطي طول كتاب ٥ مشابك ورق متساوية طرفًا إلى طرف؛ طوله خمسة مشابك.",
+        "solution": "عد وحدات قياس متساوية متلاصقة بلا فراغات أو تراكب لمعرفة طول جسم بوحدات غير قياسية.",
+        "commonMistake": "ترك فجوات أو تداخل وحدات القياس أو استخدام وحدات مختلفة الأحجام للمقارنة.",
+        "summary": "شريط يغطيه ستة مشابك متساوية بلا تداخل؛ طوله ٦ مشابك."
       }
     },
     {
       "id": "uae-g1-9-5-time-to-the-hour-analog-clock",
       "titlePatterns": [
-        "^Time to the Hour: Analog Clock$"
+        "^Time to the Hour: Analog Clock$",
+        "^الوقت\\ بالساعة:\\ الساعة\\ التناظرية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:05$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "CLOCK_HALF_HOUR",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_5_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.clock_half_hour"
+        "uae.g1.u09.l05.analog_hour"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Time to the Hour: Analog Clock.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Time to the Hour: Analog Clock."
+        "concept": "قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢.",
+        "workedExample": "عند عقرب الدقائق على ١٢ والساعات على ٤، أقول الساعة الرابعة تمامًا.",
+        "solution": "قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢.",
+        "commonMistake": "قراءة عقرب الدقائق بوصفه ساعات أو اعتبار ١٢ دقيقة عند وقت الساعة التامة.",
+        "summary": "عقرب الدقائق على ١٢ والساعات على ٥: الساعة الخامسة تمامًا."
       }
     },
     {
       "id": "uae-g1-9-6-time-to-the-hour-digital-clock",
       "titlePatterns": [
-        "^Time to the Hour: Digital Clock$"
+        "^Time to the Hour: Digital Clock$",
+        "^الوقت\\ بالساعة:\\ الساعة\\ الرقمية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:06$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "CLOCK_HALF_HOUR",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_6_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.clock_half_hour"
+        "uae.g1.u09.l06.digital_hour"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Time to the Hour: Digital Clock.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Time to the Hour: Digital Clock."
+        "concept": "قراءة الساعة الرقمية بتحديد رقم الساعات وصفر الدقائق عند تمام الساعة.",
+        "workedExample": "الشاشة ٠٨:٠٠ تعني الثامنة تمامًا لأن خانة الدقائق صفر.",
+        "solution": "قراءة الساعة الرقمية بتحديد رقم الساعات وصفر الدقائق عند تمام الساعة.",
+        "commonMistake": "قراءة الرقمين بعد النقطتين ساعات أو كتابة ٠٤:٠٤ بدل ٠٤:٠٠.",
+        "summary": "٠٣:٠٠ تُقرأ الثالثة تمامًا."
       }
     },
     {
       "id": "uae-g1-9-7-time-to-the-half-hour-analog-clock",
       "titlePatterns": [
-        "^Time to the Half Hour: Analog Clock$"
+        "^Time to the Half Hour: Analog Clock$",
+        "^الوقت\\ بنصف\\ الساعة:\\ الساعة\\ التناظرية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:07$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "CLOCK_HALF_HOUR",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_7_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.clock_half_hour"
+        "uae.g1.u09.l07.analog_half"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Time to the Half Hour: Analog Clock.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Time to the Half Hour: Analog Clock."
+        "concept": "قراءة ساعة عندما يشير عقرب الدقائق إلى ٦ ويكون عقرب الساعات بين ساعتين متتاليتين.",
+        "workedExample": "عند الدقائق على ٦ والساعات بين ٣ و٤، أقرأ الثالثة والنصف.",
+        "solution": "قراءة ساعة عندما يشير عقرب الدقائق إلى ٦ ويكون عقرب الساعات بين ساعتين متتاليتين.",
+        "commonMistake": "وضع عقرب الساعات بالضبط على الساعة اللاحقة عند النصف أو قراءة الدقيقة على ٦ بوصفها ست دقائق.",
+        "summary": "العقرب الطويل على ٦ والقصير بين ٧ و٨؛ السابعة والنصف."
       }
     },
     {
       "id": "uae-g1-9-8-time-to-the-half-hour-digital-clock",
       "titlePatterns": [
-        "^Time to the Half Hour: Digital Clock$"
+        "^Time to the Half Hour: Digital Clock$",
+        "^الوقت\\ بنصف\\ الساعة:\\ الساعة\\ الرقمية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:09:08$"
       ],
       "skillId": "supporting.measurement.practical",
-      "mechanic": "CLOCK_HALF_HOUR",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_8_EXACT_MECHANIC",
       "families": [
-        "supporting.measurement.clock_half_hour"
+        "uae.g1.u09.l08.digital_half"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Time to the Half Hour: Digital Clock.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Time to the Half Hour: Digital Clock."
+        "concept": "قراءة وكتابة ساعة رقمية يكون جزء الدقائق فيها ٣٠ ويعبّر عنها بالنصف.",
+        "workedExample": "الوقت ٠٦:٣٠ يُقرأ السادسة والنصف.",
+        "solution": "قراءة وكتابة ساعة رقمية يكون جزء الدقائق فيها ٣٠ ويعبّر عنها بالنصف.",
+        "commonMistake": "الخلط بين ٣٠ دقيقة وثلاثين ساعة أو كتابة :٠٣ بدل :٣٠.",
+        "summary": "الساعة ٠٧:٣٠ تعني السابعة والنصف."
       }
     },
     {
       "id": "uae-g1-10-1-squares-and-rectangles",
       "titlePatterns": [
-        "^Squares and Rectangles$"
+        "^Squares and Rectangles$",
+        "^المربع\\ والمستطيل$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:01$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SHAPE_DIMENSION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_1_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.shape_dimension"
+        "uae.g1.u10.l01.square_rectangle"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Squares and Rectangles.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Squares and Rectangles."
+        "concept": "تسمية المربع والمستطيل بوصفهما شكلين ثنائيين لهما أربعة أضلاع وأربع زوايا، وتمييز تساوي أضلاع المربع.",
+        "workedExample": "للمربع أربعة أضلاع متساوية وأربع زوايا؛ يمكن رسمه على شبكة مربعات.",
+        "solution": "تسمية المربع والمستطيل بوصفهما شكلين ثنائيين لهما أربعة أضلاع وأربع زوايا، وتمييز تساوي أضلاع المربع.",
+        "commonMistake": "اعتبار المستطيل شكلًا ثلاثي الأبعاد أو نسيان الفرق بين تساوي الأضلاع وتساوي الأضلاع المتقابلة.",
+        "summary": "للمربع ٤ أضلاع و٤ رؤوس."
       }
     },
     {
       "id": "uae-g1-10-2-triangles-and-trapezoids",
       "titlePatterns": [
-        "^Triangles and Trapezoids$"
+        "^Triangles and Trapezoids$",
+        "^المثلث\\ وشبه\\ المنحرف$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:02$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SHAPE_DIMENSION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_2_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.shape_dimension"
+        "uae.g1.u10.l02.triangle_trapezoid"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Triangles and Trapezoids.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Triangles and Trapezoids."
+        "concept": "التعرف إلى المثلث ذي ثلاثة أضلاع ورؤوس وشبه المنحرف ذي أربعة أضلاع ورؤوس عبر رسوم مختلفة الاتجاه.",
+        "workedExample": "المثلث ذو ثلاثة أضلاع وثلاثة رؤوس حتى لو دار.",
+        "solution": "التعرف إلى المثلث ذي ثلاثة أضلاع ورؤوس وشبه المنحرف ذي أربعة أضلاع ورؤوس عبر رسوم مختلفة الاتجاه.",
+        "commonMistake": "تصنيف الشكل بحسب اتجاهه في الصفحة بدل عدد الأضلاع والرؤوس.",
+        "summary": "المثلث ٣ أضلاع، وشبه المنحرف ٤."
       }
     },
     {
       "id": "uae-g1-10-4-compare-shapes",
       "titlePatterns": [
-        "^Compare Shapes$"
+        "^Compare Shapes$",
+        "^مقارنة\\ الأشكال$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:04$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SHAPE_DIMENSION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_4_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.shape_dimension"
+        "uae.g1.u10.l04.compare_shapes"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Compare Shapes.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Compare Shapes."
+        "concept": "مقارنة الأشكال المستوية بحسب عدد الأضلاع والرؤوس والخصائص بدل الحجم أو اللون.",
+        "workedExample": "المثلث ذو ٣ رؤوس، أما المستطيل فله ٤، ولذلك يختلفان في عدد الرؤوس.",
+        "solution": "مقارنة الأشكال المستوية بحسب عدد الأضلاع والرؤوس والخصائص بدل الحجم أو اللون.",
+        "commonMistake": "تصنيف الأشكال حسب لونها وحده أو الخلط بين عدد الرؤوس والحجم.",
+        "summary": "مثلث ٣ رؤوس ومستطيل ٤ رؤوس."
       }
     },
     {
       "id": "uae-g1-10-5-composite-shapes",
       "titlePatterns": [
-        "^Composite Shapes$"
+        "^Composite Shapes$",
+        "^الأشكال\\ المركبة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:05$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SHAPE_DIMENSION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_5_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.shape_dimension"
+        "uae.g1.u10.l05.compose_2d"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Composite Shapes.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Composite Shapes."
+        "concept": "إنشاء شكل مستوٍ مركب من مثلثات ومستطيلات ومربعات مع عد القطع المحددة في النموذج.",
+        "workedExample": "أرسم بيتًا من مستطيل ومثلث سقف؛ الشكل يتكون من قطعتين.",
+        "solution": "إنشاء شكل مستوٍ مركب من مثلثات ومستطيلات ومربعات مع عد القطع المحددة في النموذج.",
+        "commonMistake": "عد الخطوط الجديدة أجزاء منفصلة بلا تمييز حدود القطع المركبة.",
+        "summary": "بيت من مستطيل ومثلث: جزآن."
       }
     },
     {
       "id": "uae-g1-10-6-more-composite-shapes",
       "titlePatterns": [
-        "^More Composite Shapes$"
+        "^More Composite Shapes$",
+        "^المزيد\\ من\\ الأشكال\\ المركبة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:06$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SHAPE_DIMENSION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_6_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.shape_dimension"
+        "uae.g1.u10.l06.more_composite_2d"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches More Composite Shapes.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for More Composite Shapes."
+        "concept": "تحليل أشكال مستوية مركبة من أجزاء هندسية معلومة وبناؤها بطرق متعددة مع الحفاظ على العدد والشكل.",
+        "workedExample": "يتكوّن شكل من مستطيل وثلاثة مثلثات؛ يمكن عد أربعة أجزاء.",
+        "solution": "تحليل أشكال مستوية مركبة من أجزاء هندسية معلومة وبناؤها بطرق متعددة مع الحفاظ على العدد والشكل.",
+        "commonMistake": "تجاهل القطع المتداخلة أو اعتبار تغيير ترتيب القطع تغييرًا في عدد الأجزاء.",
+        "summary": "من مربع واحد ومثلثين يتكون شكل من ٣ قطع."
       }
     },
     {
       "id": "uae-g1-10-8-equal-shares",
       "titlePatterns": [
-        "^Equal Shares$"
+        "^Equal Shares$",
+        "^الأجزاء\\ المتساوية$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:08$"
       ],
       "skillId": "fractions.represent.interpret",
-      "mechanic": "FRACTION_REPRESENTATION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_8_EXACT_MECHANIC",
       "families": [
-        "fractions.represent.interpret.fraction_bar"
+        "uae.g1.u10.l08.equal_shares"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Equal Shares.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Equal Shares."
+        "concept": "تقسيم شكل أو مجموعة إلى قسمين أو أربعة أقسام متساوية والتحقق من تساوي الأجزاء لا مجرد عددها.",
+        "workedExample": "أقسم مستطيلًا منصفًا إلى جزأين متساويين؛ كل جزء نصف.",
+        "solution": "تقسيم شكل أو مجموعة إلى قسمين أو أربعة أقسام متساوية والتحقق من تساوي الأجزاء لا مجرد عددها.",
+        "commonMistake": "اعتبار كل تقسيم إلى جزأين نصفين بغض النظر عن مساحة الجزأين.",
+        "summary": "شريط مقسوم إلى ٤ أجزاء بنفس الحجم: أربعة أجزاء متساوية."
       }
     },
     {
       "id": "uae-g1-10-9-halves",
       "titlePatterns": [
-        "^Halves$"
+        "^Halves$",
+        "^الأنصاف$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:09$"
       ],
       "skillId": "fractions.represent.interpret",
-      "mechanic": "FRACTION_REPRESENTATION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_9_EXACT_MECHANIC",
       "families": [
-        "fractions.represent.interpret.fraction_bar"
+        "uae.g1.u10.l09.halves_equal"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Halves.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Halves."
+        "concept": "إيجاد نصف شكل أو مجموعة عن طريق قسمتها إلى جزأين متساويين، مع إثبات أن النصفين يكوّنان الكل.",
+        "workedExample": "إذا تشارك طفلان ٨ مكعبات بالتساوي، يأخذ كل منهما ٤ مكعبات، أي نصف المجموعة.",
+        "solution": "إيجاد نصف شكل أو مجموعة عن طريق قسمتها إلى جزأين متساويين، مع إثبات أن النصفين يكوّنان الكل.",
+        "commonMistake": "إعطاء واحد ثلاثة قطع والآخر خمسًا وتسميتها نصفين.",
+        "summary": "نصف ٦ دوائر هو ٣ دوائر."
       }
     },
     {
       "id": "uae-g1-10-10-fourths",
       "titlePatterns": [
-        "^Fourths$"
+        "^Fourths$",
+        "^الأرباع$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:10:10$"
       ],
       "skillId": "fractions.represent.interpret",
-      "mechanic": "FRACTION_REPRESENTATION",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_10_EXACT_MECHANIC",
       "families": [
-        "fractions.represent.interpret.fraction_bar"
+        "uae.g1.u10.l10.fourths_equal"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Fourths.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Fourths."
+        "concept": "تقسيم شكل أو مجموعة إلى أربعة أجزاء متساوية وقراءة الربع بوصفه جزءًا واحدًا من أربعة.",
+        "workedExample": "أقسم ١٢ حبة خرز إلى أربع مجموعات متساوية، كل مجموعة ثلاث حبات.",
+        "solution": "تقسيم شكل أو مجموعة إلى أربعة أجزاء متساوية وقراءة الربع بوصفه جزءًا واحدًا من أربعة.",
+        "commonMistake": "تقسيم الشكل إلى أربعة أجزاء مختلفة الأحجام وتسميتها أرباعًا.",
+        "summary": "ربع ٢٠ قطعة هو ٥ قطع."
       }
     },
     {
       "id": "uae-g1-11-1-cubes-and-prisms",
       "titlePatterns": [
-        "^Cubes and Prisms$"
+        "^Cubes and Prisms$",
+        "^المكعبات\\ والمناشير$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:11:01$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SOLID_FACE_COUNT",
+      "mechanic": "SOURCE_G1_UNIT_11_LESSON_1_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.face_count"
+        "uae.g1.u11.l01.cubes_prisms"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Cubes and Prisms.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Cubes and Prisms."
+        "concept": "تمييز المكعب والمنشور المستطيل بوصفهما مجسمين لهما أوجه مستوية وحواف ورؤوس، مع عد الأوجه والرؤوس.",
+        "workedExample": "المكعب له ٦ أوجه مربعة و٨ رؤوس؛ يمكن بناء نموذج من مكعب صغير.",
+        "solution": "تمييز المكعب والمنشور المستطيل بوصفهما مجسمين لهما أوجه مستوية وحواف ورؤوس، مع عد الأوجه والرؤوس.",
+        "commonMistake": "عد الحواف بدل الأوجه، أو الخلط بين الوجه المربع والمجسم المكعب.",
+        "summary": "للمكعب ستة أوجه وثمانية رؤوس."
       }
     },
     {
       "id": "uae-g1-11-2-cones-and-cylinders",
       "titlePatterns": [
-        "^Cones and Cylinders$"
+        "^Cones and Cylinders$",
+        "^المخروط\\ والأسطوانة$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:11:02$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SOLID_FACE_COUNT",
+      "mechanic": "SOURCE_G1_UNIT_11_LESSON_2_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.face_count"
+        "uae.g1.u11.l02.cones_cylinders"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Cones and Cylinders.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Cones and Cylinders."
+        "concept": "تمييز المخروط ذي قاعدة دائرية واحدة ورأس واحد والأسطوانة ذات قاعدتين دائريتين ولا رؤوس.",
+        "workedExample": "المخروط له قاعدة دائرية واحدة ورأس مدبب واحد.",
+        "solution": "تمييز المخروط ذي قاعدة دائرية واحدة ورأس واحد والأسطوانة ذات قاعدتين دائريتين ولا رؤوس.",
+        "commonMistake": "عد السطح المنحني كقاعدة دائرية أخرى أو افتراض أن الأسطوانة لها رأس.",
+        "summary": "الأسطوانة لها قاعدتان دائريتان، والمخروط قاعدة واحدة."
       }
     },
     {
       "id": "uae-g1-11-4-compose-three-dimensional-shapes",
       "titlePatterns": [
-        "^Compose Three-Dimensional Shapes$"
+        "^Compose Three-Dimensional Shapes$",
+        "^تكوين\\ الأشكال\\ ثلاثية\\ الأبعاد$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:11:04$"
       ],
       "skillId": "supporting.geometry.properties",
-      "mechanic": "SOLID_FACE_COUNT",
+      "mechanic": "SOURCE_G1_UNIT_11_LESSON_4_EXACT_MECHANIC",
       "families": [
-        "supporting.geometry.face_count"
+        "uae.g1.u11.l04.compose_solids"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Compose Three-Dimensional Shapes.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Compose Three-Dimensional Shapes."
+        "concept": "تكوين مجسم مركب من مكعبات ومناشير وأسطوانات ومخاريط، مع تسمية وعد الأجزاء المستخدمة.",
+        "workedExample": "أضع مخروطًا فوق مكعب لصنع برج بسيط، فأستخدم مجسمين.",
+        "solution": "تكوين مجسم مركب من مكعبات ومناشير وأسطوانات ومخاريط، مع تسمية وعد الأجزاء المستخدمة.",
+        "commonMistake": "اعتبار الشكل المركب شكلًا واحدًا عند السؤال عن عدد الأجزاء أو نسيان تمييز المجسمات المكونة له.",
+        "summary": "مكعب وأسطوانتان ومخروط: أربعة مجسمات مكونة."
       }
     },
     {
@@ -10553,6 +10607,978 @@
         "solution": "Combine exponents using a^m × a^n = a^(m+n), a^m ÷ a^n = a^(m−n), or (a^m)^n = a^(mn), and express negative powers as exact fractions.",
         "commonMistake": "Do not multiply bases or misread a negative exponent as a negative number; do not substitute logarithms.",
         "summary": "Verify the equivalent exact numerical value using the integer-exponent rules."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l1-arabic-addition-stories-2025",
+      "titlePatterns": [
+        "^قصص الجمع$",
+        "^Addition Stories$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:01$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "JOIN_TWO_GROUPS_STORY_WITH_TOTAL_AT_MOST_10",
+      "families": [
+        "uae.g1.u02.l01.addition_stories"
+      ],
+      "content": {
+        "concept": "ضم مجموعتين ضمن ١٠ لتفسير قصة جمع عربية.",
+        "workedExample": "٣ مكعبات و٢ إضافيتان تصبح ٥.",
+        "solution": "نحدد الجزأين، نمثلهما، نعدّ الكل، ونتحقق من العدد.",
+        "commonMistake": "لا نعد أي عنصر مرتين أو نكتفي بمجموعة واحدة.",
+        "summary": "قصص جمع ذات جزأين وتمثيل مرئي وتحقق عددي."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l2-arabic-part-whole-model-2025",
+      "titlePatterns": [
+        "^تمثيل الجمع$",
+        "^Model Addition$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:02$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_PART_WHOLE_TWO_GROUPS_TOTAL_AT_MOST_10",
+      "families": [
+        "uae.g1.u02.l02.model_addition"
+      ],
+      "content": {
+        "concept": "رسم وتمثيل الجزء والجزء والكل حتى ١٠.",
+        "workedExample": "٤ نقاط و٣ نقاط تشكل سبع نقاط في خانة الكل.",
+        "solution": "أمثل الجزأين ثم أعيد عدّ الكل وأكتب مجموع العددين.",
+        "commonMistake": "لا أنقل قيمة جزء واحد وحده إلى خانة الكل.",
+        "summary": "الجزء + الجزء = الكل بمخطط ورموز أصلية."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l3-arabic-addition-equations-2025",
+      "titlePatterns": [
+        "^جمل الجمع العددية$",
+        "^Addition Number Sentences$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:03$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "WRITE_ADDITION_EQUATION_FROM_TWO_GROUPS_TOTAL_TO_10",
+      "families": [
+        "uae.g1.u02.l03.addition_number_sentences"
+      ],
+      "content": {
+        "concept": "كتابة جملة جمع العدد الأول + العدد الثاني = المجموع ضمن ١٠.",
+        "workedExample": "٣ دوائر حمراء و٢ زرقاء تمثل ٣ + ٢ = ٥.",
+        "solution": "أحدد جزأين ثم أكتب + و= والكل ثم أتحقق بعدد النقاط.",
+        "commonMistake": "لا أخلط علامتي + و= ولا أكتب جزءًا واحدًا بدل الكل.",
+        "summary": "جمل عددية صحيحة وتمثيلات ملموسة للجزأين والمجموع."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l4-arabic-add-zero-2025",
+      "titlePatterns": [
+        "^جمع العدد ٠$",
+        "^جمع العدد 0$",
+        "^Add Zero$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:04$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "ZERO_ADDEND_EITHER_SIDE_RETURNS_NUMBER",
+      "families": [
+        "uae.g1.u02.l04.add_zero"
+      ],
+      "content": {
+        "concept": "إضافة الصفر لا تغير عدد العناصر.",
+        "workedExample": "٦ + ٠ = ٦ و٠ + ٦ = ٦ بنموذج مجموعة فارغة.",
+        "solution": "أمثل الصفر بمجموعة فارغة وأعد العناصر الأخرى.",
+        "commonMistake": "الناتج ليس صفرًا لمجرد وجود الصفر في السؤال.",
+        "summary": "ن + ٠ = ن، ٠ + ن = ن."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l5-arabic-vertical-addition-2025",
+      "titlePatterns": [
+        "^الجمع الرأسي$",
+        "^Vertical Addition$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:05$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "VERTICAL_ONE_DIGIT_ADDITION_TWO_GROUPS_TO_10",
+      "families": [
+        "uae.g1.u02.l05.vertical_addition"
+      ],
+      "content": {
+        "concept": "محاذاة العددين رأسيًا وجمعهما بمجموع لا يزيد عن ١٠.",
+        "workedExample": "٣ في الأعلى و٢ في السطر التالي مع علامة +، والمجموع ٥ تحت الخط.",
+        "solution": "أمثل المجموعتين ثم أرتب الأعداد في عمود وأتحقق بجملة أفقية.",
+        "commonMistake": "عدم محاذاة الأرقام وكتابة المجموع في سطر غير صحيح.",
+        "summary": "مجموع الأعداد واحد أفقيًا ورأسيًا."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l6-arabic-write-story-equation-2025",
+      "titlePatterns": [
+        "^استراتيجية حل المسألة: كتابة جملة عددية$",
+        "^Problem Solving: Write a Number Sentence$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:06$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "FOUR_STEP_STORY_COMPREHENSION_TO_ADDITION_EQUATION_SUM_UP_TO_10",
+      "families": [
+        "uae.g1.u02.l06.write_story_equation"
+      ],
+      "content": {
+        "concept": "أفهم المعطيات، أخطط، أكتب جملة جمع، ثم أتحقق.",
+        "workedExample": "طائران وثلاثة طيور أخرى: ٢ + ٣ = ٥.",
+        "solution": "أحدد جزأي القصة وأكتب + و= ثم أتحقق بالرسم.",
+        "commonMistake": "عدم تحديد المطلوب أو الإجابة بعدد غير مرتبط بالقصة.",
+        "summary": "أفهم، أخطط، أحل، أتحقق."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l7-arabic-compose-four-five-2025",
+      "titlePatterns": [
+        "^طرائق تكوين العددين ٤ و٥$",
+        "^طرق تكوين العددين ٤ و٥$",
+        "^Ways to Make 4 and 5$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:07$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_PART_WHOLE_COMPLETION_FIXED_TOTAL_4_OR_5",
+      "families": [
+        "uae.g1.u02.l07.make_four_five"
+      ],
+      "content": {
+        "concept": "تفكيك ٤ و٥ إلى جزأين باستخدام ألوان مختلفة.",
+        "workedExample": "٢ + ٢ = ٤ و٢ + ٣ = ٥؛ يمكن أن يكون أحد الجزأين صفرًا.",
+        "solution": "أرسم ٤ أو ٥ دوائر وأحدد الجزء الأول ثم أعد الباقي.",
+        "commonMistake": "الحصول على مجموع غير ٤ أو ٥ أو عدم احتساب الجزء الفارغ.",
+        "summary": "مجموع الجزأين يظل ثابتًا رغم تبديلهما."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l8-arabic-compose-six-seven-2025",
+      "titlePatterns": [
+        "^طرائق تكوين العددين ٦ و٧$",
+        "^Ways to Make 6 and 7$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:08$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_WHOLE_MISSING_PART_FIXED_TOTAL_6_OR_7",
+      "families": [
+        "uae.g1.u02.l08.make_six_seven"
+      ],
+      "content": {
+        "concept": "تفكيك العددين ٦ و٧ إلى مجموعتين بألوان مختلفة.",
+        "workedExample": "٤ + ٢ = ٦، و٣ + ٤ = ٧.",
+        "solution": "أمثل الكل ثم أعد المتبقي بعد تعيين جزء أول.",
+        "commonMistake": "تغيير المجموع أو إهمال المجموعة الفارغة.",
+        "summary": "الجزآن يتغيران لكن مجموعهما يظل ٦ أو ٧."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l9-arabic-compose-eight-2025",
+      "titlePatterns": [
+        "^طرائق تكوين العدد ٨$",
+        "^Ways to Make 8$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:09$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_WHOLE_MISSING_PART_FIXED_TOTAL_8",
+      "families": [
+        "uae.g1.u02.l09.make_eight"
+      ],
+      "content": {
+        "concept": "تقسيم ٨ إلى جزأين بعدد دوائر ثابت.",
+        "workedExample": "٣ + ٥ = ٨، و١ + ٧ = ٨.",
+        "solution": "أرسم ثماني نقاط ثم أعد ما يتبقى من الجزء الأول.",
+        "commonMistake": "اختيار جزأين مجموعهما لا يساوي ٨.",
+        "summary": "أُبقي المجموع ٨ وأغيّر الجزأين."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l10-arabic-compose-nine-2025",
+      "titlePatterns": [
+        "^طرائق تكوين العدد ٩$",
+        "^Ways to Make 9$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:10$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_PART_WHOLE_MISSING_PART_EXACT_TOTAL_9",
+      "families": [
+        "uae.g1.u02.l10.make_nine"
+      ],
+      "content": {
+        "concept": "تفكيك تسع قطع إلى مجموعتين.",
+        "workedExample": "٣ + ٦ = ٩، و٤ + ٥ = ٩.",
+        "solution": "أعد الجزء الثاني من الباقي بعد تلوين الأول.",
+        "commonMistake": "تغيير الكل أثناء التوزيع.",
+        "summary": "أغير الجزأين مع بقاء المجموع ٩."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l11-arabic-compose-ten-frame-2025",
+      "titlePatterns": [
+        "^طرائق تكوين العدد ١٠$",
+        "^طرق تكوين العدد ١٠$",
+        "^Ways to Make 10$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:11$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "TEN_FRAME_TWO_ROWS_FIVE_CELLS_MISSING_PART_FIXED_TOTAL_10",
+      "families": [
+        "uae.g1.u02.l11.make_ten_frame"
+      ],
+      "content": {
+        "concept": "إطار عشرة صفان × خمس خانات ومجموع جزأين يساوي ١٠.",
+        "workedExample": "٦ + ٤ = ١٠ باستعمال ست دوائر وأربع دوائر داخل إطار عشرة.",
+        "solution": "أضع الجزء الأول في الإطار وأعد الخانات المتبقية.",
+        "commonMistake": "عد الخانات بأكثر أو أقل من عشرة أو استخدام ٦ + ٥ = ١٠.",
+        "summary": "أكوّن ١٠ من جزأين داخل إطار ٢×٥."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l12-arabic-missing-parts-ten-2025",
+      "titlePatterns": [
+        "^إيجاد الأجزاء الناقصة من العدد ١٠$",
+        "^Find Missing Parts of 10$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:12$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "PART_PART_WHOLE_KNOWN_ONE_PART_FIXED_TOTAL_TEN_MISSING_PART",
+      "families": [
+        "uae.g1.u02.l11.make_ten_frame"
+      ],
+      "content": {
+        "concept": "إيجاد جزء ناقص من كل يساوي عشرة.",
+        "workedExample": "٦ + □ = ١٠، الجزء الناقص ٤.",
+        "solution": "أمثل الجزء المعلوم داخل إطار عشرة وأعد الخانات الباقية.",
+        "commonMistake": "عدم التمييز بين الجزء المعلوم والجزء المتبقي.",
+        "summary": "الجزء الناقص يكمل عشرة بالضبط."
+      }
+    },
+    {
+      "id": "uae-g1-u1-l13-arabic-true-false-number-statements-2025",
+      "titlePatterns": [
+        "^العبارات الصحيحة والخطأ$",
+        "^True and False Number Statements$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:02:13$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "EVALUATE_EQUALITY_TRUTH_OF_ADDITION_STATEMENT_AND_CORRECT_FALSE",
+      "families": [
+        "uae.g1.u02.l13.true_false_addition"
+      ],
+      "content": {
+        "concept": "تحقق من مساواة جمل الجمع وصحح العبارات الخاطئة.",
+        "workedExample": "٣ + ٢ = ٥ صحيحة، و٣ + ٢ = ٦ خطأ.",
+        "solution": "أحسب مجموع الجزأين وأقارنه بالطرف الآخر.",
+        "commonMistake": "افتراض أن وجود علامة المساواة يعني العبارة صحيحة.",
+        "summary": "صحيحة إذا تساوى الطرفان، وخطأ إذا اختلفا."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l1-arabic-subtraction-stories-2025",
+      "titlePatterns": [
+        "^قصص الطرح$",
+        "^Subtraction Stories$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:01$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "TAKE_AWAY_FROM_WHOLE_COUNT_REMAINING_TO_10",
+      "families": [
+        "uae.g1.u03.l01.subtraction_stories"
+      ],
+      "content": {
+        "concept": "نمثل ما ذهب من المجموعة ونعد العناصر الباقية.",
+        "workedExample": "٦ أقلام، أخذنا قلمين؛ ٦ − ٢ = ٤.",
+        "solution": "أعد الكل ثم أشطب ما أُزيل، وأعد الباقي.",
+        "commonMistake": "حساب عدد الأشياء المزالة بدل الباقية.",
+        "summary": "الكل − الجزء المغادر = الباقي."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l2-arabic-model-subtraction-2025",
+      "titlePatterns": [
+        "^تمثيل الطرح$",
+        "^Model Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:02$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "PART_PART_WHOLE_KNOWN_WHOLE_AND_PART_FIND_REMAINING",
+      "families": [
+        "uae.g1.u03.l02.model_subtraction"
+      ],
+      "content": {
+        "concept": "استنتاج الجزء المجهول من الكل والجزء المعلوم.",
+        "workedExample": "٩ هو الكل و٦ أحد الجزأين؛ الآخر ٣.",
+        "solution": "أعد جميع العناصر ثم أعزل الجزء المعلوم وأحصي الباقي.",
+        "commonMistake": "الخلط بين الكل وأحد الجزأين.",
+        "summary": "الكل − الجزء = الجزء الآخر."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l3-arabic-subtraction-sentences-2025",
+      "titlePatterns": [
+        "^جمل الطرح العددية$",
+        "^Subtraction Number Sentences$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:03$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "SUBTRACTION_SYMBOLIC_EQUATION_FROM_CROSSED_OUT_GROUPS",
+      "families": [
+        "uae.g1.u03.l03.subtraction_number_sentences"
+      ],
+      "content": {
+        "concept": "الكل − المزال = الباقي مع الرمزين − و=.",
+        "workedExample": "٥ قطع، أزيل ٢ فأكتب ٥ − ٢ = ٣.",
+        "solution": "أحدد الكل والمزال وأشطب المزال ثم أكتب الناتج.",
+        "commonMistake": "استخدام الجمع أو وضع المزال مكان الباقي.",
+        "summary": "جملة طرح صحيحة تمثل عملية إزالة فعلية."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l4-arabic-subtract-zero-all-2025",
+      "titlePatterns": [
+        "^طرح الصفر وطرح الكل$",
+        "^Subtract Zero and Subtract All$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:04$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "SUBTRACT_ZERO_OR_WHOLE_IDENTITY_COMPLETE_REMOVAL",
+      "families": [
+        "uae.g1.u03.l04.subtract_zero_or_all"
+      ],
+      "content": {
+        "concept": "ن − ٠ = ن و ن − ن = ٠.",
+        "workedExample": "٤ − ٠ = ٤ و٤ − ٤ = ٠.",
+        "solution": "لا أزيل شيئًا في الحالة الأولى وأزيل الجميع في الثانية.",
+        "commonMistake": "افتراض أن وجود صفر يجعل الناتج صفرًا دائمًا.",
+        "summary": "عدم الإزالة يبقي الكل، وإزالة الجميع تبقي صفرًا."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l5-arabic-vertical-subtraction-2025",
+      "titlePatterns": [
+        "^الطرح الرأسي$",
+        "^Vertical Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:05$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "VERTICAL_ONE_DIGIT_SUBTRACTION_WHOLE_TAKE_AWAY",
+      "families": [
+        "uae.g1.u03.l05.vertical_subtraction"
+      ],
+      "content": {
+        "concept": "كتابة الطرح في عمود مع الناتج تحت الخط.",
+        "workedExample": "٩ − ٣ = ٦ رأسيًا؛ الكل فوق المطروح.",
+        "solution": "أمثل الكل وأشطب المطروح، وأرتب الأعداد رأسيًا.",
+        "commonMistake": "عكس الأعلى والأسفل أو وضع الناتج فوق الخط.",
+        "summary": "الطرح الرأسي يساوي الطرح الأفقي للأعداد نفسها."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l6-arabic-draw-subtraction-diagram-2025",
+      "titlePatterns": [
+        "^استراتيجية حل المسألة: رسم مخطط$",
+        "^Problem Solving: Draw a Diagram$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:06$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FOUR_STEP_TAKE_AWAY_STORY_WITH_DRAWN_CROSS_OUT_MODEL",
+      "families": [
+        "uae.g1.u03.l01.subtraction_stories"
+      ],
+      "content": {
+        "concept": "رسم كل العناصر وشطب ما أزيل لمعرفة الباقي.",
+        "workedExample": "٧ زهور نشطب ٣ فيبقى ٤، ٧ − ٣ = ٤.",
+        "solution": "أفهم المعطيات، أرسم الكل، أشطب ما أزيل، وأعد الباقي.",
+        "commonMistake": "الخلط بين الرموز التي أزيلت والرموز المتبقية.",
+        "summary": "أفهم، أخطط بالرسم، أحل، أتحقق."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l7-arabic-compare-groups-2025",
+      "titlePatterns": [
+        "^مقارنة المجموعات$",
+        "^Compare Groups$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:07$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "ONE_TO_ONE_COMPARE_LARGER_SMALLER_DIFFERENCE_TO_10",
+      "families": [
+        "uae.g1.u03.l07.compare_groups"
+      ],
+      "content": {
+        "concept": "مقارنة مجموعتين بالمطابقة واحدًا لواحد لمعرفة «كم أكثر/أقل».",
+        "workedExample": "٧ عناصر مقابل ٣؛ الفرق ٤ عناصر، ٧ − ٣ = ٤.",
+        "solution": "أطابق العناصر ثم أطرح الأصغر من الأكبر لأحسب غير المتطابق.",
+        "commonMistake": "جمع المجموعتين بدل إيجاد الفرق أو الخلط بين الفرق والجزء المزال.",
+        "summary": "العدد الأكبر − العدد الأصغر = الفرق."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l8-arabic-subtract-4-5-2025",
+      "titlePatterns": [
+        "^الطرح من ٤ و٥$",
+        "^Subtract from 4 and 5$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:08$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "EXACT_TAKE_AWAY_FROM_FOUR_OR_FIVE_ALLOW_ZERO_AND_ALL",
+      "families": [
+        "uae.g1.u03.l08.subtract_4_5"
+      ],
+      "content": {
+        "concept": "أشطب بعضًا من ٤ أو ٥ أشياء وأحسب الباقي.",
+        "workedExample": "٥ − ٣ = ٢ و٤ − ٠ = ٤.",
+        "solution": "أمثل الكل وأشطب المطروح ثم أعد الباقي.",
+        "commonMistake": "عد الأشياء المشطوبة بدل الباقية.",
+        "summary": "٤ أو ٥ ناقص جزء منهما يساوي المتبقي."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l9-arabic-subtract-6-7-2025",
+      "titlePatterns": [
+        "^الطرح من ٦ و٧$",
+        "^Subtract from 6 and 7$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:09$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "EXACT_TAKE_AWAY_FROM_SIX_OR_SEVEN_ALLOW_ZERO_AND_WHOLE",
+      "families": [
+        "uae.g1.u03.l09.subtract_6_7"
+      ],
+      "content": {
+        "concept": "الطرح من ٦ أو ٧ بنماذج مشطوبة.",
+        "workedExample": "٦ − ٣ = ٣ و٧ − ٥ = ٢.",
+        "solution": "أعد الكل وأشطب المطروح وأتحقق بالجمع.",
+        "commonMistake": "عد العناصر المزالة كباقية.",
+        "summary": "أطرح من ٦ أو ٧ وأجد ما تبقى."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l10-arabic-subtract-eight-2025",
+      "titlePatterns": [
+        "^الطرح من ٨$",
+        "^Subtract from 8$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:10$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_8_EXACT_TAKE_AWAY_ZERO_THROUGH_WHOLE",
+      "families": [
+        "uae.g1.u03.l10.subtract_8"
+      ],
+      "content": {
+        "concept": "الطرح من ٨ مع تمثيل عدد كلي ثابت.",
+        "workedExample": "٨ − ٤ = ٤",
+        "solution": "أرسم ٨ عناصر وأشطب المطروح وأعد الباقي.",
+        "commonMistake": "تصحيح ٨ − ٥ = ٢ إلى ٨ − ٥ = ٣.",
+        "summary": "طرح عدد من ٨ والتحقق بالجمع."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l11-arabic-subtract-nine-2025",
+      "titlePatterns": [
+        "^الطرح من ٩$",
+        "^Subtract from 9$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:11$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_NINE_ALLOW_ZERO_AND_ALL",
+      "families": [
+        "uae.g1.u03.l11.subtract_9"
+      ],
+      "content": {
+        "concept": "الطرح من ٩ بنموذج تسع قطع.",
+        "workedExample": "٩ − ٣ = ٦ و٩ − ٥ = ٤.",
+        "solution": "أشطب المطروح من تسع قطع وأعد الباقي.",
+        "commonMistake": "عدم عد القطع المتبقية بدقة.",
+        "summary": "الكل ٩، أطرح جزءًا وأجد الباقي."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l12-arabic-subtract-ten-2025",
+      "titlePatterns": [
+        "^الطرح من ١٠$",
+        "^Subtract from 10$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:12$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_TEN_SUBTRACT_ZERO_THROUGH_TEN",
+      "families": [
+        "uae.g1.u03.l12.subtract_10"
+      ],
+      "content": {
+        "concept": "طرح أي عدد حتى ١٠ من عشر قطع.",
+        "workedExample": "١٠ − ٧ = ٣ و١٠ − ٠ = ١٠.",
+        "solution": "أشطب العدد المطروح من عشر قطع وأعد الباقي.",
+        "commonMistake": "عد العناصر المشطوبة بدل الباقية أو اعتبار ١٠ − ٠ = ٠.",
+        "summary": "أطرح من ١٠ ثم أتحقق بجمع الناتج والمطروح."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l13-arabic-relate-add-subtract-2025",
+      "titlePatterns": [
+        "^ربط الجمع بالطرح$",
+        "^Relate Addition and Subtraction$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:13$"
+      ],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "FACT_FAMILY_ADD_PARTS_TO_WHOLE_INFER_MISSING_SUBTRACTION_RESULT",
+      "families": [
+        "uae.g1.u03.l13.related_add_subtract"
+      ],
+      "content": {
+        "concept": "من الجمع أ + ب = ك نستنتج ك − أ = ب وك − ب = أ.",
+        "workedExample": "٣ + ٤ = ٧ ولذلك ٧ − ٣ = ٤ و٧ − ٤ = ٣.",
+        "solution": "أمثل جزأين وكلًا وأبدأ الطرح من الكل.",
+        "commonMistake": "طرح العدد الأكبر من الأصغر بدل طرح جزء من الكل.",
+        "summary": "ثلاثة أعداد مرتبطة تعطيني حقائق جمع وطرح."
+      }
+    },
+    {
+      "id": "uae-g1-u2-l14-arabic-true-false-subtraction-2025",
+      "titlePatterns": [
+        "^العبارات الصحيحة والخطأ$",
+        "^العبارات الصحيحة والخطأ في الطرح$",
+        "^True and False Number Statements$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:14$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "COMPARE_SUBTRACTION_EQUATION_TRUTH_WITH_TAKE_AWAY_MODEL",
+      "families": [
+        "uae.g1.u03.l14.true_false_subtraction"
+      ],
+      "content": {
+        "concept": "أتحقق من تساوي طرفي جملة الطرح بتحديد الكل والمزال والباقي.",
+        "workedExample": "٩ − ٤ = ٥ صحيحة، و٨ − ٣ = ٢ خطأ.",
+        "solution": "أمثل الكل وأشطب المطروح ثم أقرأ الباقي وأقارنه بالناتج المعروض.",
+        "commonMistake": "عد العناصر المزالة بدل الباقية أو عدم تصحيح عبارة خاطئة.",
+        "summary": "أتحقق من الطرح ثم أضع «صحيحة» أو «خطأ» وأصلح الخطأ."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l1-arabic-count-on-1-2-3-2025",
+      "titlePatterns": [
+        "^الجمع بالعدّ التصاعدي بمقدار ١ أو ٢ أو ٣$",
+        "^Add by Counting On 1, 2, or 3$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:01$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "COUNT_ON_FROM_GREATER_NUMBER_ONE_TWO_THREE_STEPS_UP_TO20",
+      "families": [
+        "uae.g1.u04.l01.count_on_1_2_3"
+      ],
+      "content": {
+        "concept": "ابدأ من العدد الأكبر وزد بمقدار ١ أو ٢ أو ٣ في قفزات متتابعة.",
+        "workedExample": "٨ + ٣: أبدأ عند ٨ وأقفز إلى ٩ ثم ١٠ ثم ١١.",
+        "solution": "عدد القفزات يساوي العدد المضاف، وآخر عدد يساوي المجموع.",
+        "commonMistake": "احتساب العدد الأول قفزة إضافية أو عد قفزات أكثر من المطلوب.",
+        "summary": "ابدأ بالعدد الأكبر وأعدّ قفزات +١ أو +٢ أو +٣."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l2-arabic-count-on-fils-2025",
+      "titlePatterns": [
+        "^العدّ التصاعدي باستخدام ١ فلس للجمع$",
+        "^Count On to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:02$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "COUNT_ON_ADDITIVE_GROUPS_OF_ONE_FILS_COINS",
+      "families": [
+        "uae.g1.u04.l02.count_on_fils"
+      ],
+      "content": {
+        "concept": "عد تصاعدي بإضافة عملات متساوية، كل منها فلس واحد.",
+        "workedExample": "٨ فلوس + عملتان من فئة فلس واحد = ١٠ فلوس.",
+        "solution": "أبدأ من ٨ وأعد ٩ ثم ١٠ مع إضافة العملتين.",
+        "commonMistake": "خلط عدد القطع بقيم فئات نقدية مختلفة؛ المطلوب جميعها فلس واحد.",
+        "summary": "عُد من العدد الأول مع كل فلس جديد."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l3-arabic-add-number-line-2025",
+      "titlePatterns": [
+        "^استخدام خط الأعداد للجمع$",
+        "^Use a Number Line to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:03$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "NUMBER_LINE_RIGHTWARD_SINGLE_UNIT_JUMPS_0_TO_12",
+      "families": [
+        "uae.g1.u04.l03.add_on_number_line"
+      ],
+      "content": {
+        "concept": "الجمع على خط ٠ إلى ١٢ بالانتقال قفزات إلى اليمين.",
+        "workedExample": "٥ + ٣: من ٥ اقفز ٦،٧،٨؛ المجموع ٨.",
+        "solution": "أبدأ من العدد الأكبر وأقفز خطوة واحدة لكل جزء مضاف.",
+        "commonMistake": "عدّ موضع البداية قفزة أو القفز يسارًا.",
+        "summary": "أتحرك يمينًا على خط الأعداد حتى أصل إلى المجموع."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l4-arabic-doubles-to20-2025",
+      "titlePatterns": [
+        "^استخدام المضاعفات للجمع$",
+        "^Use Doubles to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:04$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "EQUAL_ADDENDS_DOUBLE_UP_TO20",
+      "families": [
+        "uae.g1.u04.l04.doubles_add"
+      ],
+      "content": {
+        "concept": "المضاعفات جمع مجموعتين متساويتين ن+ن.",
+        "workedExample": "٥ + ٥ = ١٠، و٧ + ٧ = ١٤.",
+        "solution": "أمثل ن عناصر في مجموعتين وأحسب العدد الكلي ٢ن.",
+        "commonMistake": "اعتبار حدين مختلفين حقيقة مضاعفات.",
+        "summary": "مضاعف العدد هو العدد زائد نفسه."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l5-arabic-near-doubles-2025",
+      "titlePatterns": [
+        "^استخدام شبه المضاعفات للجمع$",
+        "^Use Near Doubles to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:05$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "NEAR_DOUBLES_PLUS_OR_MINUS_ONE_TWO_ADJACENT_ADDENDS_UP_TO20",
+      "families": [
+        "uae.g1.u04.l05.near_doubles_add"
+      ],
+      "content": {
+        "concept": "العدد الثاني يختلف عن الأول بمقدار واحد؛ المجموع قريب من المضاعف.",
+        "workedExample": "٥ + ٦ = (٥ + ٥) + ١ = ١١؛ ٥ + ٤ = (٥ + ٥) − ١ = ٩.",
+        "solution": "أحسب المضاعف ثم أضيف أو أطرح واحدًا حسب المجموعة الأخرى.",
+        "commonMistake": "نسيان الزيادة أو النقصان أو استخدام اتجاه خاطئ.",
+        "summary": "شبه المضاعفات: مجموع حدين متتاليين."
+      }
+    },
+    {
+      "id": "uae-g1-u3-l6-arabic-act-it-out-2025",
+      "titlePatterns": [
+        "^استراتيجية حل المسائل: مثّلها بنفسك$",
+        "^Problem Solving: Act It Out$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:06$"
+      ],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "ACT_OUT_TWO_THREE_GROUP_ADDITION_OR_KNOWN_WHOLE_MISSING_PART",
+      "families": [
+        "uae.g1.u04.l06.act_out_problem_solving"
+      ],
+      "content": {
+        "concept": "أفهم، أخطط، أمثل وأحل، أتحقق باستخدام أشياء ملموسة.",
+        "workedExample": "٣ عصافير + ٢ = ٥؛ ثلاثة صناديق ٢+٤+٦=١٢.",
+        "solution": "أمثل كل مجموعة بعددها الصحيح ثم أضمها أو أحدد الجزء الناقص.",
+        "commonMistake": "نسيان إحدى المجموعات أو اتخاذ عملية لا تعبّر عن القصة.",
+        "summary": "التمثيل الملموس يوضح علاقة الأجزاء بالكل."
+      }
+    },
+    {
+      "id": "uae-g1-5-4-problem-solving-write-number-sentence",
+      "titlePatterns": [
+        "^Problem Solving: Write a Number Sentence$",
+        "^حل\\ المسائل:\\ كتابة\\ جملة\\ عددية$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:05:04$"
+      ],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "MAP_REMOVAL_STORY_TO_SUBTRACTION_SENTENCE",
+      "families": [
+        "uae.g1.u05.l04.story_subtraction_equation"
+      ],
+      "content": {
+        "concept": "ترجمة مسألة لفظية عن أخذ مجموعة أو غياب أفراد إلى جملة طرح فيها الكل والمطروح والمتبقي.",
+        "workedExample": "على رف ٩ كتب، استعارت مريم ٤ كتب. أكتب ٩ − ٤ = ٥؛ التسعة هي الكل والأربعة ما استعارته.",
+        "solution": "أحدد ما أملكه أولًا وما غادر أو استُخدم، وأطرح الجزء الذاهب من الكل؛ أكتب الكل − الجزء = المتبقي. قد تتطلب القصة إضافة إذا وصلت أشياء، فلا أستخدم الطرح لمجرد وجود كلمات تدل على حركة.",
+        "commonMistake": "عكس الكل والمطروح، أو كتابة جمع عندما نقص عدد الأفراد، أو إعطاء النتيجة بلا وحدة القصة ولا تفسير.",
+        "summary": "لدي ١١ مكعبًا، أعطيت ٤ لصديقي. الجملة ١١ − ٤ = ٧، وأبين ما يمثل كل عدد."
+      }
+    },
+    {
+      "id": "uae-g1-6-6-exact-original-lesson",
+      "titlePatterns": [
+        "^Tens and Ones$",
+        "^العشرات\\ والآحاد$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:06:06$"
+      ],
+      "skillId": "supporting.number.real",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_6_EXACT_SKILL",
+      "families": [
+        "uae.g1.u06.l06.tens_and_ones"
+      ],
+      "content": {
+        "concept": "يعيد تجميع عشرة آحاد في عشرة واحدة، ويحلل الأعداد حتى ٩٩ إلى منزلة العشرات ومنزلة الآحاد.",
+        "workedExample": "أكوّن ٢٨ من عشرين وحدة وثماني آحاد، أي عشرتين وثمانية آحاد.",
+        "solution": "يعيد تجميع عشرة آحاد في عشرة واحدة، ويحلل الأعداد حتى ٩٩ إلى منزلة العشرات ومنزلة الآحاد.",
+        "commonMistake": "اعتبار عشرة آحاد عشر آحاد مستقلة بعد التجميع، أو قلب عمودي العشرات والآحاد.",
+        "summary": "عندما أنظم ٦٧ عنصرًا، أجد ٦ عشرات و٧ آحاد."
+      }
+    },
+    {
+      "id": "uae-g1-6-7-exact-original-lesson",
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Make\\ a\\ Table$",
+        "^استراتيجية\\ حل\\ المسائل:\\ رسم\\ جدول$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:06:07$"
+      ],
+      "skillId": "supporting.sequences.core",
+      "mechanic": "UAE_G1_PRINTED_U5_LESSON_7_EXACT_SKILL",
+      "families": [
+        "uae.g1.u06.l07.make_table"
+      ],
+      "content": {
+        "concept": "يستخدم جدولًا من عمودين لتنظيم الزيادة المنتظمة عشر مرات، ويجد مجموع مجموعات تزداد بعشرة في كل خطوة.",
+        "workedExample": "إذا جمعت عشر صفحات كل يوم لمدة أربعة أيام، أملأ جدولًا: يوم ١: ١٠؛ يوم ٢: ٢٠؛ يوم ٣: ٣٠؛ يوم ٤: ٤٠.",
+        "solution": "يستخدم جدولًا من عمودين لتنظيم الزيادة المنتظمة عشر مرات، ويجد مجموع مجموعات تزداد بعشرة في كل خطوة.",
+        "commonMistake": "عدم ترتيب الأيام أو الصفوف، أو كتابة القيمة نفسها في كل صف بدل الزيادة الثابتة.",
+        "summary": "ثلاث حقائب فيها عشر كرات في كل منها؛ أدخل ١٠ ثم ٢٠ ثم ٣٠ في جدول التراكم."
+      }
+    },
+    {
+      "id": "uae-g1-7-4-guess-check-revise-exact",
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:07:04$"
+      ],
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Guess,\\ Check,\\ and\\ Revise$",
+        "^استراتيجية\\ حل\\ المسائل:\\ التخمين\\ والتحقق\\ والمراجعة$"
+      ],
+      "skillId": "number.whole.add_subtract",
+      "mechanic": "UAE_G1_PRINTED_U6_LESSON_4_EXACT",
+      "families": [
+        "uae.g1.u07.l04.guess_check_revise"
+      ],
+      "content": {
+        "concept": "تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل",
+        "workedExample": "لدي ٢٨ كرة منها ١١ زرقاء والباقي صفراء؛ أخمّن أن الصفراء ١٥، وأتحقق: ١١ + ١٥ = ٢٦ فلا يكفي. أراجع إلى ١٧ لأن ١١ + ١٧ = ٢٨.",
+        "solution": "تمثيل مسألة ذات كمية كلية وجزء معروف وجزء مجهول، وتجربة تقدير ثم اختبار المجموع وتعديله حتى يطابق الكل",
+        "commonMistake": "الاكتفاء بأول تخمين دون اختبار، أو تعديل الجزء المعروف بدل المجهول، أو نسيان التحقق.",
+        "summary": "في سلة ٣٧ تفاحة منها ٢٢ حمراء؛ المجهول ١٥، لأن ٢٢ + ١٥ = ٣٧."
+      }
+    },
+    {
+      "id": "uae-g1-8-1-original-specific-family",
+      "titlePatterns": [
+        "^Tally\\ Charts$",
+        "^جداول\\ العلامات$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:08:01$"
+      ],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_1_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u08.l01.tally_fives"
+      ],
+      "content": {
+        "concept": "تنظيم عدد الأصوات في جدول علامات إحصاء وتجميع كل خمس علامات بخط مائل مع كتابة المجموع الصحيح.",
+        "workedExample": "سجلت ليلى ٧ أصوات لكتابها المفضل، فرسمت مجموعة خمسة وعلامتين إضافيتين، وكتبت المجموع ٧.",
+        "solution": "تنظيم عدد الأصوات في جدول علامات إحصاء وتجميع كل خمس علامات بخط مائل مع كتابة المجموع الصحيح.",
+        "commonMistake": "نسيان أن العلامة الخامسة تتقاطع مع الأربع السابقة، أو الخلط بين عدد العلامات واسم الفئة.",
+        "summary": "في فئة الأزهار خمس علامات مجمعة وعلامتان منفردتان؛ العدد ٧."
+      }
+    },
+    {
+      "id": "uae-g1-8-2-original-specific-family",
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Make\\ a\\ Table$",
+        "^استراتيجية\\ حل\\ المسائل:\\ رسم\\ جدول$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:08:02$"
+      ],
+      "skillId": "supporting.statistics.charts",
+      "mechanic": "SOURCE_G1_UNIT_8_LESSON_2_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u08.l02.record_table"
+      ],
+      "content": {
+        "concept": "رسم جدول بفئات وعدد عناصر كل فئة لاستخراج الإجمالي أو الفرق؛ تحديد أسماء الصفوف ثم التحقق من صحة العد.",
+        "workedExample": "أضع في جدول ثلاث سيارات حمراء وأربع زرقاء؛ المجموع ٣ + ٤ = ٧ سيارات.",
+        "solution": "رسم جدول بفئات وعدد عناصر كل فئة لاستخراج الإجمالي أو الفرق؛ تحديد أسماء الصفوف ثم التحقق من صحة العد.",
+        "commonMistake": "إغفال عناوين الفئات أو كتابة إجمالي لا يساوي مجموع خلايا الجدول.",
+        "summary": "جدول يعرض ٣ طائرات و٥ سيارات؛ المجموع ٨."
+      }
+    },
+    {
+      "id": "uae-g1-9-4-original-specific-family",
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Guess,\\ Check,\\ and\\ Revise$",
+        "^استراتيجية\\ حل\\ المسائل:\\ التخمين\\ والتحقق\\ والمراجعة$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:09:04$"
+      ],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_4_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u09.l04.guess_check_length"
+      ],
+      "content": {
+        "concept": "اختيار تقدير أولي لطول من وحدات متماثلة ثم اختبار ذلك بوضع الوحدات ومراجعة التخمين.",
+        "workedExample": "خمنت أن طول ورقة ٥ مشابك، وبعد ترتيبها دون فراغات وجدت ٧؛ أصحح تقديري إلى ٧.",
+        "solution": "اختيار تقدير أولي لطول من وحدات متماثلة ثم اختبار ذلك بوضع الوحدات ومراجعة التخمين.",
+        "commonMistake": "اعتبار التخمين نتيجة نهائية أو تغيير وحدة القياس للتحقق من التقدير.",
+        "summary": "تقدير ٥ قطع، وقياس فعلي ٨ قطع؛ أصحح التقدير إلى ٨."
+      }
+    },
+    {
+      "id": "uae-g1-9-9-original-specific-family",
+      "titlePatterns": [
+        "^Time to the Hour and Half Hour$",
+        "^الوقت\\ بالساعة\\ ونصف\\ الساعة$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:09:09$"
+      ],
+      "skillId": "supporting.measurement.practical",
+      "mechanic": "SOURCE_G1_UNIT_9_LESSON_9_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u09.l09.hour_or_half"
+      ],
+      "content": {
+        "concept": "تمييز أوقات الساعة الكاملة ونصف الساعة في وجهي ساعة رقمي وتناظري، وربط :٠٠ بتمام الساعة و:٣٠ بالنصف.",
+        "workedExample": "في ٠٣:٠٠ الدقائق صفر والساعة الثالثة تمامًا.",
+        "solution": "تمييز أوقات الساعة الكاملة ونصف الساعة في وجهي ساعة رقمي وتناظري، وربط :٠٠ بتمام الساعة و:٣٠ بالنصف.",
+        "commonMistake": "قراءة :٣٠ على أنها ساعة تامة أو عدم مطابقة عقرب الدقائق للقيمة الرقمية.",
+        "summary": "في الوقت ٠٤:٣٠، مرت ٣٠ دقيقة بعد الرابعة."
+      }
+    },
+    {
+      "id": "uae-g1-10-3-original-specific-family",
+      "titlePatterns": [
+        "^Circles$",
+        "^الدائرة$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:10:03$"
+      ],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_3_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u10.l03.circle_properties"
+      ],
+      "content": {
+        "concept": "التعرف إلى الدائرة كشكل مستوٍ ذي حد منحني مغلق بلا أضلاع مستقيمة أو رؤوس.",
+        "workedExample": "أرسم دائرة بخط مغلق منحنٍ؛ ليس لها زاوية حادة أو رأس.",
+        "solution": "التعرف إلى الدائرة كشكل مستوٍ ذي حد منحني مغلق بلا أضلاع مستقيمة أو رؤوس.",
+        "commonMistake": "الخلط بين الدائرة والكرة المجسمة، أو عد انحناء الدائرة ضلعًا مستقيمًا.",
+        "summary": "الدائرة ليست لها أضلاع مستقيمة ولا رؤوس."
+      }
+    },
+    {
+      "id": "uae-g1-10-7-original-specific-family",
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Use\\ Logical\\ Reasoning$",
+        "^استراتيجية\\ حل\\ المسائل:\\ استخدام\\ التفكير\\ المنطقي$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:10:07$"
+      ],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SOURCE_G1_UNIT_10_LESSON_7_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u10.l07.logical_shape_clue"
+      ],
+      "content": {
+        "concept": "استخدام دلائل عدد الأضلاع والرؤوس للتمييز بين أشكال مستوية واستبعاد البدائل غير المطابقة.",
+        "workedExample": "إذا كان للشكل ٣ أضلاع، أستبعد المربع والدائرة وأختار مثلثًا.",
+        "solution": "استخدام دلائل عدد الأضلاع والرؤوس للتمييز بين أشكال مستوية واستبعاد البدائل غير المطابقة.",
+        "commonMistake": "اعتماد دليل واحد غير كافٍ للحسم، أو تجاهل دليل يتعارض مع الشكل المختار.",
+        "summary": "شكل ذو ٣ أضلاع و٣ رؤوس هو مثلث."
+      }
+    },
+    {
+      "id": "uae-g1-11-3-original-specific-family",
+      "titlePatterns": [
+        "^Problem\\ Solving:\\ Find\\ a\\ Pattern$",
+        "^استراتيجية\\ حل\\ المسائل:\\ البحث\\ عن\\ نمط$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:11:03$"
+      ],
+      "skillId": "supporting.geometry.properties",
+      "mechanic": "SOURCE_G1_UNIT_11_LESSON_3_EXACT_MECHANIC",
+      "families": [
+        "uae.g1.u11.l03.three_d_pattern"
+      ],
+      "content": {
+        "concept": "اكتشاف نمط تكراري لمجسمات مثل مكعب ثم أسطوانة أو مخروط، وتحديد المجسم الذي يأتي بعده.",
+        "workedExample": "إذا تكرر مكعب، أسطوانة، مكعب، أسطوانة فالخامس مكعب.",
+        "solution": "اكتشاف نمط تكراري لمجسمات مثل مكعب ثم أسطوانة أو مخروط، وتحديد المجسم الذي يأتي بعده.",
+        "commonMistake": "اختيار المجسم التالي بناءً على اللون وحده أو تجاهل طول وحدة التكرار.",
+        "summary": "في النمط مكعب، أسطوانة، مكعب، أسطوانة، المكعب هو التالي."
       }
     }
   ]

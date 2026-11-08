@@ -1,0 +1,1 @@
+UAE Grade 1 Lesson 30 — الطرح من ٩. Arabic source PDF 258–263, printed 173–178 visually reviewed; see lesson-30-atomic-coverage.md. Original Arabic pedagogy and fixed-nine exact subtraction family uae.g1.u03.l11.subtract_9. Test WRITTEN_NOT_RUN. READY_FOR_STAGE_D; Stage D and CI not run.

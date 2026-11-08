@@ -1,0 +1,43 @@
+{
+  "Unit": "A",
+  "LessonCount": 6,
+  "ArabicContentPrepared": 6,
+  "LessonsClosed": 6,
+  "TestsRun": "NOT_RUN",
+  "LessonCommits": [
+    {
+      "Lesson": 1,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "cac31b56b1698a015c95b63e6eec46bfb83f73d1"
+    },
+    {
+      "Lesson": 2,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "b2edc07f7a2573562bb7703d1cae9765324069db"
+    },
+    {
+      "Lesson": 3,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "e8ddcb856de802ba57b5c0461a48c6910dcab717"
+    },
+    {
+      "Lesson": 4,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "8a041929f3aa730c96afcec42bb6406c98ba63d3"
+    },
+    {
+      "Lesson": 5,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "e87670d0ae82ba4d42b7f4daf15d00d5d02be521"
+    },
+    {
+      "Lesson": 6,
+      "Status": "READY_FOR_STAGE_D",
+      "InitialPreparationCommit": "a607a51c42f9b9786af8356478652ad23101767b"
+    }
+  ],
+  "Unresolved": [
+    "Stage D runtime/UI/RTL and CI checks remain NOT_RUN (not an A-B-C closure blocker)"
+  ],
+  "SummaryEvidence": "Lessons 1-6 stage-a-c-checkpoint.json on this branch each records READY_FOR_STAGE_D; see grade1-all-11-units-abc-coverage-ledger.json"
+}
