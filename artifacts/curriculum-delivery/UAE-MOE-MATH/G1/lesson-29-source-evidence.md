@@ -1,0 +1,1 @@
+UAE G1 lesson 29, الطرح من ٨. Original Arabic student source PDF 252–257, print 167–172 visually read. Source map: lesson-29-atomic-coverage.md. Original teaching material linked to stable LessonCode PED:UAE-MOE-MATH:L1:COMMON:03:10. Exact scoped family uae.g1.u03.l10.subtract_8; targeted test WRITTEN_NOT_RUN. No Stage D or CI. READY_FOR_STAGE_D.

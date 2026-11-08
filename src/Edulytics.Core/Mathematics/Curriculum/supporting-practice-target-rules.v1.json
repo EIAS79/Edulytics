@@ -11047,6 +11047,28 @@
         "commonMistake": "عد العناصر المزالة كباقية.",
         "summary": "أطرح من ٦ أو ٧ وأجد ما تبقى."
       }
+    },
+    {
+      "id": "uae-g1-u2-l10-arabic-subtract-eight-2025",
+      "titlePatterns": [
+        "^الطرح من ٨$",
+        "^Subtract from 8$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:10$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_8_EXACT_TAKE_AWAY_ZERO_THROUGH_WHOLE",
+      "families": [
+        "uae.g1.u03.l10.subtract_8"
+      ],
+      "content": {
+        "concept": "الطرح من ٨ مع تمثيل عدد كلي ثابت.",
+        "workedExample": "٨ − ٤ = ٤",
+        "solution": "أرسم ٨ عناصر وأشطب المطروح وأعد الباقي.",
+        "commonMistake": "تصحيح ٨ − ٥ = ٢ إلى ٨ − ٥ = ٣.",
+        "summary": "طرح عدد من ٨ والتحقق بالجمع."
+      }
     }
   ]
 }
