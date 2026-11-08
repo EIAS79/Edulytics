@@ -189,12 +189,16 @@
       "LessonIndex": 5,
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:01:05",
       "TitleFromExistingManifestEn": "Read and Write Numbers 11 to 15",
-      "SourcePdfState": "PDF_1_HAS_EDUCATIONAL_PAGES_NOT_FULLY_RECONCILED",
-      "StageABCScope": "A_C_EXPLICIT_GAP",
+      "SourcePdfState": "PDF_PAGES_60_TO_70_DIRECTLY_INSPECTED",
+      "StageABCScope": "READY_FOR_STAGE_D",
       "ArabicContentAdded": true,
-      "FullAtomicSourceComparison": false,
+      "FullAtomicSourceComparison": true,
       "StageCTestExecuted": false,
-      "AcademicClosure": false
+      "AcademicClosure": true,
+      "SourcePageAudit": "lesson-5-atomic-coverage.md",
+      "StageCBlocker": null,
+      "TestsRun": "WRITTEN_NOT_RUN",
+      "ClosedUtc": "2026-11-08T05:34:28.727Z"
     },
     {
       "Ordinal": 6,
@@ -1467,7 +1471,7 @@
     "EducationalPagesMissingSelectedPdfLessons": 60,
     "ReadyForStageD": 0
   },
-  "ContinuationCursor": 5,
+  "ContinuationCursor": 6,
   "CriticalGaps": [
     "Complete Grade 1 Arabic source volumes for pedagogical units 4–10",
     "Full atomic source element comparison of candidate lessons",
@@ -1479,8 +1483,8 @@
   "Build": "NOT_RUN",
   "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md",
   "ClosureEvidence": {
-    "closedLessonCount": 4,
-    "firstOpenLessonOrdinal": 5,
-    "verification": "SOURCE_PAGE_VISUAL_REVIEW_AND_STATIC_CONSISTENCY; TESTS_NOT_RUN"
+    "closedLessonCount": 5,
+    "firstOpenLessonOrdinal": 6,
+    "verification": "SOURCE_VISUAL_INSPECTION_AND_STATIC_REGISTRY_CHECK; TARGETED_TESTS_NOT_RUN"
   }
 }

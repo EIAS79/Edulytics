@@ -6,14 +6,15 @@
     70
   ],
   "SourceSha256": "BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44",
-  "StageA": "PARTIAL_ELEMENT_RECONCILIATION",
-  "StageB": "ARABIC_CONTENT_AUTHORED",
-  "StageC": "EXACT_ENGINE_FAMILY_EXTENDED_TEST_WRITTEN_NOT_RUN",
-  "Status": "A_C_EXPLICIT_GAP",
-  "Blockers": [
-    "FULL_ATOMIC_SOURCE_AUDIT",
-    "RUNTIME_FAMILY_ROUTING",
-    "RTL_UI_NOT_VERIFIED"
-  ],
-  "TestsRun": "WRITTEN_NOT_RUN"
+  "StageA": "ELEVEN_STUDENT_SOURCE_PAGES_INSPECTED_AND_ELEMENTS_RECONCILED",
+  "StageB": "ARABIC_TEN_FRAME_CONTENT_REFINED",
+  "StageC": "EXACT_TEN_FRAME_COUNT_FAMILY_REGISTERED_AND_TEST_WRITTEN_NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
+  "Blockers": [],
+  "TestsRun": "WRITTEN_NOT_RUN",
+  "SourcePageAudit": "lesson-5-atomic-coverage.md",
+  "ClosedUtc": "2026-11-08T05:34:28.727Z",
+  "StageDNotes": [
+    "No Stage D/CI/E2E tests executed; runtime RTL verification remains Stage D"
+  ]
 }
