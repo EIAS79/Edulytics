@@ -113,6 +113,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u06.l13.hundreds_tens_ones",
             "uae.g1.u06.l14.count_to_120",
             "uae.g1.u06.l15.read_write_to_120",
+            "uae.g1.u07.l01.add_tens",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -1008,6 +1009,8 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["whole"] - p["known"]);
         }
+        if (UaeGrade1Unit6Ordinal(family) > 0)
+            return VerifyUaeGrade1Unit6(family, parameters, answer);
         if (UaeGrade1Unit5Ordinal(family) > 0)
             return VerifyUaeGrade1Unit5(family, parameters, answer);
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
@@ -3629,6 +3632,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit5(14, family, random),
             "uae.g1.u06.l15.read_write_to_120" =>
                 BuildUaeGrade1Unit5(15, family, random),
+            "uae.g1.u07.l01.add_tens" =>
+                BuildUaeGrade1Unit6(1, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4799,6 +4804,130 @@ public sealed class ExactSkillContractQuestionEngine
             c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
         return int.TryParse(normalized, NumberStyles.Integer,
             CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    // Edulytics-original Grade 1 U6: exact lesson-bounded two-digit arithmetic.
+    private static int UaeGrade1Unit6Ordinal(string family) => family switch
+    {
+        "uae.g1.u07.l01.add_tens" => 1,
+        "uae.g1.u07.l02.count_on_tens_ones" => 2,
+        "uae.g1.u07.l03.add_tens_ones" => 3,
+        "uae.g1.u07.l04.guess_check_revise" => 4,
+        "uae.g1.u07.l05.regroup_ones_for_tens" => 5,
+        "uae.g1.u07.l06.subtract_tens" => 6,
+        "uae.g1.u07.l07.count_back_tens" => 7,
+        "uae.g1.u07.l08.inverse_tens" => 8,
+        _ => -1
+    };
+
+    private static bool VerifyUaeGrade1Unit6(string family,
+        IReadOnlyDictionary<string, int> p, string answer)
+    {
+        var lesson = UaeGrade1Unit6Ordinal(family);
+        if (lesson < 1 || !p.TryGetValue("a", out var a) ||
+            !p.TryGetValue("b", out var b) || !p.TryGetValue("mode", out var mode) ||
+            !p.TryGetValue("result", out var result)) return false;
+        var valid = lesson switch
+        {
+            1 => a is >= 10 and <= 90 && a % 10 == 0 &&
+                 b is >= 10 and <= 90 && b % 10 == 0 && a + b <= 100 && mode == 0,
+            2 => a is >= 10 and <= 89 && b >= 1 && a + b <= 100 &&
+                 (mode == 0 && b <= 9 || mode == 1 && b % 10 == 0 && b <= 70),
+            3 => a is >= 10 and <= 89 && b is >= 1 and <= 89 && a + b <= 100 &&
+                 a % 10 + b % 10 < 10 && mode == 0,
+            4 => a is >= 10 and <= 90 && b is >= 1 and <= 49 &&
+                 b < a && mode == 0,
+            5 => a is >= 11 and <= 19 && b is >= 2 and <= 9 &&
+                 a % 10 + b >= 10 && mode == 0,
+            6 or 7 => a is >= 10 and <= 100 && a % 10 == 0 &&
+                 b is >= 10 and <= 90 && b % 10 == 0 && b <= a && mode == 0,
+            8 => a is >= 10 and <= 90 && a % 10 == 0 &&
+                 b is >= 10 and <= 90 && b % 10 == 0 &&
+                 (mode == 0 ? a + b <= 100 : b <= a) && mode is 0 or 1,
+            _ => false
+        };
+        var expected = lesson switch
+        {
+            1 or 2 or 3 or 5 => a + b,
+            4 or 6 or 7 => a - b,
+            8 => mode == 0 ? a + b : a - b,
+            _ => -1
+        };
+        if (!valid || result != expected) return false;
+        var normalized = new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+            c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit6(int lesson, string family, Random random)
+    {
+        var a = 0; var b = 0; var mode = 0; var result = 0; var prompt = "";
+        switch (lesson)
+        {
+            case 1:
+                a = random.Next(1, 10) * 10;
+                b = random.Next(1, 11 - a / 10) * 10;
+                result = a + b;
+                prompt = $"أمثل {a} بقضبان عشرات، ثم أضيف {b} بقضبان أخرى. كم الكل؟";
+                break;
+            case 2:
+                a = random.Next(10, 90); mode = random.Next(0, 2);
+                b = mode == 0 ? random.Next(1, Math.Min(9, 100 - a) + 1) :
+                    random.Next(1, Math.Min(7, (100 - a) / 10) + 1) * 10;
+                result = a + b;
+                prompt = $"أبدأ من {a} وأعد تصاعديًا {(mode == 0 ? "بالآحاد" : "بالعشرات")} حتى أضيف {b}. ما المجموع؟";
+                break;
+            case 3:
+                a = random.Next(11, 75);
+                if (a % 10 == 9) a--;
+                var onesMax = 9 - a % 10;
+                var tensMax = (100 - a - onesMax) / 10;
+                b = 10 * random.Next(0, Math.Max(1, Math.Min(8, tensMax + 1))) +
+                    random.Next(1, onesMax + 1);
+                result = a + b;
+                prompt = $"أجمع الآحاد مع الآحاد والعشرات مع العشرات: {a} + {b} = ؟. اكتب المجموع.";
+                break;
+            case 4:
+                a = random.Next(20, 71); b = random.Next(1, Math.Min(30, a - 1));
+                result = a - b;
+                var guess = Math.Max(0, result - 2);
+                prompt = $"لدي {a} كرة منها {b} حمراء والباقي خضراء. أخمّن أن الخضراء {guess} وأتحقق من المجموع. كم كرة خضراء بالفعل؟";
+                break;
+            case 5:
+                a = random.Next(11, 20);
+                b = random.Next(10 - a % 10, 10);
+                result = a + b;
+                prompt = $"أجمع {a} + {b}. عند وصول الآحاد إلى عشرة أو أكثر أعيد تجميع عشر آحاد كعشرة. ما الناتج؟";
+                break;
+            case 6:
+                a = random.Next(1, 11) * 10;
+                b = random.Next(1, a / 10 + 1) * 10;
+                result = a - b;
+                prompt = $"لدي {a} مكعبًا في حزم من عشرة، وأزيل {b} مكعبًا في حزم كاملة. ما الفرق؟";
+                break;
+            case 7:
+                a = random.Next(1, 11) * 10;
+                b = random.Next(1, a / 10 + 1) * 10;
+                result = a - b;
+                var line = string.Join(" ← ", Enumerable.Range(0, b / 10 + 1).Select(i => a - i * 10));
+                prompt = $"استخدم خط الأعداد، وابدأ عند {a} وعد تنازليًا بخطوات عشرية لإيجاد {a} − {b}: {line}. ما الفرق؟";
+                break;
+            case 8:
+                a = random.Next(1, 10) * 10; mode = random.Next(0, 2);
+                b = mode == 0 ? random.Next(1, 11 - a / 10) * 10 :
+                    random.Next(1, a / 10 + 1) * 10;
+                result = mode == 0 ? a + b : a - b;
+                prompt = mode == 0
+                    ? $"أكمل {a} + {b} = ؟، ثم اكتب حقيقة طرح عكسية للتحقق."
+                    : $"أكمل {a} − {b} = ؟، ثم اكتب حقيقة جمع مترابطة للتحقق.";
+                break;
+            default: throw new InvalidOperationException("Unsupported UAE G1 U6 lesson");
+        }
+        return Problem(family, prompt,
+            "أمثل العشرات والآحاد أو أختبر تخميني، وأتحقق من الجزء والكل والعملية المناسبة.",
+            AssessmentItemType.Numeric, ("a", a), ("b", b), ("mode", mode), ("result", result));
     }
 
     private static ExactProblem BuildUaeGrade1Unit5(int lesson, string family, Random random)
@@ -7388,6 +7517,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u06.l14.count_to_120" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u06.l15.read_write_to_120" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u07.l01.add_tens" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
