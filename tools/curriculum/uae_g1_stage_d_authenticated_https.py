@@ -97,17 +97,6 @@ def check_school_adoption():
     return adoption, key
 
 
-def assert_rendered_arabic(student, lesson, code):
-    page = html.unescape(get_page(
-        student, "/student/learning/lesson/" + lesson + "?culture=ar"
-    ))
-    if "rich-lesson-section" not in page:
-        raise AssertionError(f"UAE G1 no real rich lesson content for {code}")
-    translation = next((x for x in code["Translations"]
-                        if x["CultureCode"] == "ar"), None) if isinstance(code, dict) else None
-    return page
-
-
 def run():
     required_environment()
     ordered, canonical = check_catalogue()
@@ -139,7 +128,10 @@ def run():
             raise
         cross_tenant_denied = True
     else:
-        cross_tenant_denied = "rich-lesson-section" not in foreign_page
+        cross_tenant_denied = (
+            "rich-lesson-section" not in foreign_page and
+            "uae-g1-original-arabic-lesson" not in foreign_page
+        )
     if not cross_tenant_denied:
         raise AssertionError("UAE Grade 1 cross-school lesson access LEAKED")
 
@@ -148,17 +140,22 @@ def run():
         page = html.unescape(get_page(
             student, "/student/learning/lesson/" + lesson_id + "?culture=ar"
         ))
-        if "rich-lesson-section" not in page:
-            raise AssertionError(f"UAE G1 scoped student lesson unavailable {index}: {code}")
+        if 'class="uae-g1-original-arabic-lesson" lang="ar" dir="rtl"' not in page:
+            raise AssertionError(f"UAE G1 scoped canonical Arabic/RTL lesson unavailable {index}: {code}")
+        for section_kind in ("explanation", "concepts", "examples",
+                             "steps", "mistakes", "summary"):
+            if f"lesson-learning-section--{section_kind}" not in page:
+                raise AssertionError(
+                    f"UAE G1 missing canonical Arabic section {section_kind}: {code}"
+                )
         arabic = next((t for t in canonical[code]["Translations"]
                        if t["CultureCode"] == "ar"), None)
         if not arabic or arabic["Title"] not in page:
             raise AssertionError(f"UAE G1 canonical Arabic title not served for {code}")
         # HTML check is not screenshot/visual a11y sign-off.
-        rtl_markup = bool(re.search(
-            r'<(?:html|body)\b[^>]*(?:dir\s*=\s*["\x27]rtl|lang\s*=\s*["\x27]ar)',
-            page, re.IGNORECASE
-        ))
+        rtl_markup = (
+            'class="uae-g1-original-arabic-lesson" lang="ar" dir="rtl"' in page
+        )
         practice_page = get_page(student, "/student/practice")
         csrf = extract_csrf(practice_page)
         nonce = extract_idempotency_key(practice_page)

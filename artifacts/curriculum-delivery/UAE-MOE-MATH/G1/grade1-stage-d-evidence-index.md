@@ -55,3 +55,13 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - New CI-only authenticated E2E job created to test 102 actual Arabic student pages and 204 persisted practice attempts on an ephemeral PostgreSQL server, using a dedicated UAE Grade 1 primary school and cross-school control. Results **NOT_RUN** until new commit workflow.
 - Human Arabic RTL/a11y/browser screenshots, copyright/source editions, owner release rights and real deployment **UNVERIFIED**; no D_VERIFIED.
 - Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42510784139
+
+## Sixth actual GitHub-hosted Stage D attempt — isolated HTTPS surfaced Arabic display bug
+- Run: 42511577450. SHA: 80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec.
+- Full solution Build, 110 Grade 1 targeted exact tests and 8 reference/policy tests remained PASS.
+- Disposable PostgreSQL 18 migration and clean seed PASS (5183 catalogue lessons); isolated UAE and unrelated foreign school fixtures PASS. Four authenticated role logins and student HTTP 200 first lesson confirmed.
+- **FAILED** when the learner page did not show the Arabic canonical title for lesson 1; 102 pages/204 persisted grades NOT executed. Failure trace is an actual source-language selection bug.
+- Root fix: scope academic language to UAE Grade 1 Common ar in LessonContentService, while preserving en for unaffected UAE levels; suppress English RichV2 fallback and render all six authored Arabic canonical teaching sections inside RTL wrapper. Test assertion updated to reject missing Arabic title/sections and foreign leakage.
+- Final gate changed from unconditional failure to evidence-driven fail-closed conditions; absent source parity, human/rights approvals, RTL browser evidence still block publication.
+- Source evidence gate remains FAIL; no D_VERIFIED or publication.
+- Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42511577450

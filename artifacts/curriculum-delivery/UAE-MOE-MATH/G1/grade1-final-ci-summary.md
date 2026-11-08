@@ -17,3 +17,8 @@ Status: **NO_GO_TECHNICAL** as of tested SHA 57553141a4be9974c076f97aec2caf589f7
 GitHub source: https://github.com/EIAS79/Edulytics/actions/runs/42510784139
 
 This is a run-linked honest progress report, not final acceptance.
+
+## Isolated HTTP/DB attempt #42511577450
+- **Failed on first lesson** because canonical Arabic title was not served; run had already migrated PostgreSQL and seeded all 5183 catalogue records.
+- New patch is a proposed runtime correction, NOT a passing E2E result. Must retest on new SHA.
+- Stage D verified lessons: 0. Publication NO_GO.

@@ -104,7 +104,13 @@ jobs:
             "$SOURCE_JOB_RESULT" "$DOTNET_JOB_RESULT" "$E2E_JOB_RESULT" \
             "$GITHUB_SHA" "$GITHUB_REF" "$GITHUB_RUN_ID" \
             > artifacts/uae-g1-stage-d/job-results.txt
-      - name: Final release gate — NO_GO until isolated authenticated multi-role E2E and RTL/DB/rights
+      - name: Retrieve actual authenticated UAE G1 E2E artifact for this Actions run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g1-stage-d-102-authenticated-https-${{ github.run_id }}
+          path: artifacts/uae-g1-stage-d/runtime/
+      - name: Evaluate real run-linked final CI, source, RTL and approvals (fail-closed)
         run: python3 tools/curriculum/uae_g1_stage_d_gate.py --phase final
       - name: Upload actual candidate safety results, even on NO_GO
         if: always()

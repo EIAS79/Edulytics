@@ -129,7 +129,7 @@
   "integrationTests": "NOT_RUN",
   "authenticatedE2E": "NOT_RUN",
   "arabicRtlVisual": "NOT_RUN",
-  "finalCI": "FAIL_SOURCE_PARITY_AND_E2E_NOT_VERIFIED",
+  "finalCI": "FAIL_E2E_CANONICAL_ARABIC_NOT_SERVED_AND_SOURCE_PARITY",
   "rights": "NOT_VERIFIED",
   "humanApproval": "NOT_VERIFIED",
   "releaseDecision": "NO_GO_TECHNICAL",
@@ -3889,6 +3889,28 @@
     "isolatedAuthenticatedE2E": "NOT_RUN_AT_THIS_SHA",
     "sourceElementParity": "UNVERIFIED"
   },
-  "lastKnownGitHubRunId": 42510784139,
-  "lastTestedSha": "57553141a4be9974c076f97aec2caf589f73d9c2"
+  "lastKnownGitHubRunId": 42511577450,
+  "lastTestedSha": "80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec",
+  "authenticatedE2ELatestAttempt": {
+    "runId": 42511577450,
+    "testedSha": "80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec",
+    "testedRefKind": "push",
+    "isolatedPostgreSQLMigration": "PASS",
+    "cleanSeed": {
+      "frameworks": 4,
+      "pedagogicalLessons": 5183,
+      "postgresProseRows": 0
+    },
+    "disposableSchoolFixture": "PASS",
+    "fourRoleLogins": "PASS_TO_FIRST_LESSON",
+    "crossSchoolAccess": "DENIED_TO_FIRST_LESSON",
+    "authenticatedStudentPage": "HTTP_200_FIRST_LESSON",
+    "arabicCanonicalStudentTitle": "FAILED_FIRST_LESSON",
+    "correctPracticePersistence": "NOT_REACHED",
+    "malformedPracticePersistence": "NOT_REACHED",
+    "sourceCause": "LessonContentService.SelectAcademicContent selected UAE global en; Grade 1 lesson pack canonical ar ignored",
+    "fix": "LessonCode-scoped Arabic selection and bypass English-only RichV2 fallback; show complete six Arabic canonical sections in RTL",
+    "retest": "NOT_RUN_ON_NEW_CANDIDATE_SHA",
+    "evidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42511577450"
+  }
 }

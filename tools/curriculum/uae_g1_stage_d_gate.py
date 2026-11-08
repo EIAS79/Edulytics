@@ -108,25 +108,122 @@ def report(phase):
         else:
             blockers.setdefault(index, []).append("SOURCE_ELEMENT_DENOMINATOR_UNKNOWN")
         if index >= 43:
-            blockers.setdefault(index, []).append(
-                "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+            # Later units currently use a real but older 2019–2020 Arabic
+            # student edition. A teacher's guide is not evidence of the
+            # exercises in a newer student book. Future independent audit
+            # may clear this only with a verified newer student PDF identity.
+            newer = d.get("newerArabicStudentEditionAudit", {})
+            newer_evidenced = (
+                isinstance(newer, dict) and
+                newer.get("status") == "STUDENT_EDITION_INDEPENDENTLY_VERIFIED" and
+                newer.get("editionYear") in ("2025-2026", "2026-2027") and
+                isinstance(newer.get("sourceSha256"), str) and
+                len(newer["sourceSha256"]) == 64 and
+                isinstance(newer.get("pdfPageRange"), list) and
+                len(newer["pdfPageRange"]) == 2 and
+                newer.get("allSourceExerciseFamiliesAudited") is True and
+                newer.get("reviewerApproval") == "APPROVED"
             )
+            if not newer_evidenced:
+                blockers.setdefault(index, []).append(
+                    "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+                )
 
     if matched != 102:
         problems.append("SOURCE_PAGE_AND_SHA_RECORDS_INCOMPLETE")
     if closed != 102:
         problems.append("ABC_READY_RECORDS_INCOMPLETE")
-    if stage_d.get("firstIncompleteLessonOrdinal") != 1:
-        problems.append("D_FIRST_INCOMPLETE_CURSOR_MUST_START_1")
+    first_incomplete = next(
+        (i for i, d in enumerate(stage_d.get("lessons", []), 1)
+         if d.get("dStatus") != "D_VERIFIED"), None
+    )
+    if stage_d.get("firstIncompleteLessonOrdinal") != first_incomplete:
+        problems.append("D_FIRST_INCOMPLETE_CURSOR_INCONSISTENT")
+    if stage_d.get("DVerifiedLessonCount") != sum(
+        x.get("dStatus") == "D_VERIFIED" for x in stage_d.get("lessons", [])
+    ):
+        problems.append("D_VERIFIED_DENOMINATOR_INCONSISTENT")
+
+    # Never mark a lesson D_VERIFIED solely on the previous ABC checkpoint:
+    # each promoted lesson must have its own semantic and runtime approvals.
+    for index, d in enumerate(stage_d.get("lessons", []), 1):
+        if d.get("dStatus") != "D_VERIFIED":
+            continue
+        mandatory = (
+            d.get("sourceElementCount") is not None and
+            d.get("sourceElementCount", 0) > 0 and
+            d.get("verifiedEquivalentCount") == d["sourceElementCount"] and
+            d.get("unitTests") == "PASS" and
+            d.get("integrationTests") == "PASS" and
+            d.get("authenticatedE2E") == "PASS" and
+            d.get("arabicRtlVisual") == "PASS" and
+            d.get("rightsStatus") == "CLEARED" and
+            d.get("humanReviewStatus") == "APPROVED"
+        )
+        if not mandatory:
+            problems.append(f"D_VERIFIED_WITHOUT_INDEPENDENT_EVIDENCE:{index}")
 
     critical = bool(problems)
     eligibility_blocked = bool(blockers)
     statuses = collections.Counter(d.get("dStatus", "UNKNOWN")
                                    for d in stage_d.get("lessons", []))
-    failure = critical or phase in ("handoff", "final") and eligibility_blocked
+    missing_technical = []
     if phase == "final":
-        # Final fail-closed until exact SHA runtime, auth/DB, RTL and rights/approval.
-        failure = True
+        job_evidence = Path("artifacts/uae-g1-stage-d/job-results.txt")
+        jobs = {}
+        if job_evidence.is_file():
+            jobs = dict(
+                line.strip().split("=", 1)
+                for line in job_evidence.read_text(encoding="utf-8").splitlines()
+                if "=" in line
+            )
+        current_sha = os.getenv("GITHUB_SHA")
+        if not current_sha or jobs.get("github_sha") != current_sha:
+            missing_technical.append("FINAL_CI_SHA_EVIDENCE_MISSING_OR_MISMATCH")
+        for job in ("source_job", "dotnet_job", "e2e_job"):
+            if jobs.get(job) != "success":
+                missing_technical.append(f"REQUIRED_JOB_NOT_SUCCESS:{job}")
+        runtime_path = Path(
+            "artifacts/uae-g1-stage-d/runtime/"
+            "uae-g1-stage-d-authenticated-102-lessons.json"
+        )
+        if not runtime_path.is_file():
+            missing_technical.append("G1_102_AUTHENTICATED_RUNTIME_ARTIFACT_MISSING")
+        else:
+            try:
+                runtime = read(runtime_path)
+                required_runtime = (
+                    runtime.get("candidateSha") == current_sha and
+                    runtime.get("lessonPageCount") == 102 and
+                    runtime.get("correctAttemptPersistenceCount") == 102 and
+                    runtime.get("malformedAttemptRejectionCount") == 102 and
+                    runtime.get("crossSchoolAccessDenied") is True and
+                    all(runtime.get("roleLogins", {}).get(role) is True
+                        for role in ("student", "teacher",
+                                     "subjectSupervisor", "schoolAdmin")) and
+                    len(runtime.get("lessons", [])) == 102
+                )
+            except (ValueError, OSError, TypeError):
+                required_runtime = False
+            if not required_runtime:
+                missing_technical.append(
+                    "G1_AUTHENTICATED_RUNTIME_COUNT_OR_SHA_MISMATCH"
+                )
+        if stage_d.get("DVerifiedLessonCount") != 102:
+            missing_technical.append("STAGE_D_NOT_VERIFIED_FOR_ALL_102_LESSONS")
+        if stage_d.get("rights") != "CLEARED":
+            missing_technical.append("RIGHTS_APPROVAL_NOT_CLEARED")
+        if stage_d.get("humanApproval") != "APPROVED":
+            missing_technical.append("HUMAN_ACADEMIC_RELEASE_NOT_ATTESTED")
+        if stage_d.get("arabicRtlVisual") != "PASS":
+            missing_technical.append("ARABIC_RTL_BROWSER_VISUAL_NOT_ATTESTED")
+        if stage_d.get("impactRegression") != "PASS":
+            missing_technical.append("IMPACT_REGRESSION_NOT_ATTESTED")
+        if eligibility_blocked:
+            missing_technical.append("SOURCE_EDITION_OR_SEMANTIC_PARITY_NOT_PROVEN")
+    failure = critical or (
+        phase in ("handoff", "final") and eligibility_blocked
+    ) or bool(missing_technical)
     return {
         "phase": phase,
         "status": "FAIL" if failure else "PASS",
@@ -141,15 +238,12 @@ def report(phase):
         "blockedLessons": [{"lessonOrdinal": i, "reasons": r}
                            for i, r in sorted(blockers.items())],
         "problems": problems,
-        "release": "NO_GO_TECHNICAL" if phase == "final" else
-                   "D_PENDING_A_C_EVIDENCE",
-        "missingTechnicalEvidence": ([
-            "FULL_BUILD_AND_TARGETED_TESTS_PINNED_TO_SHA",
-            "AUTHENTICATED_MULTI_ROLE_E2E_ON_ISOLATED_DB",
-            "ARABIC_RTL_VISUAL_ACCESSIBILITY",
-            "IMPACT_REGRESSION", "REQUIRED_FINAL_CI",
-            "HUMAN_AND_RIGHTS_APPROVAL", "PRODUCTION_DEPLOYMENT_VERIFICATION",
-        ] if phase == "final" else []),
+        "release": (
+            "RELEASE_CANDIDATE_CI_PASS" if phase == "final" and not failure
+            else "NO_GO_TECHNICAL" if phase == "final"
+            else "D_PENDING_A_C_EVIDENCE"
+        ),
+        "missingTechnicalEvidence": missing_technical,
     }
 
 
