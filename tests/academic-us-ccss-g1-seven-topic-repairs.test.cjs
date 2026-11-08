@@ -43,7 +43,9 @@ test('the seven new Grade 1 repairs are exactly bounded and fully source/SHA gua
  assert.equal(record.academicSignoff,'NOT_GRANTED');
  assert.equal(record.releaseDecision,'NO-GO');
  assert.equal(record.sourcePackImmutable,true);
- assert.match(selector,/const int expectedSourceBoundCorrectionCount = 12 \+ 19 \+ 3 \+ 7(?: \+ \d+)*;/);
+ assert.match(selector,/const int expectedSourceBoundCorrectionCount = 286;/);
+  assert.match(selector,/\[":G1:"\] = 144/);
+  assert.match(selector,/\[":G2:"\] = 131/);
  assert.match(materializer,/CommonCoreG1SourceGroundedInstructionalCorrections\s*\.Apply\(document\)/);
  assert.match(source,/Refusing G1 instruction correction of unexpected prose/);
  assert.match(source,/Refusing to overwrite unrecognized G1 persisted text/);
