@@ -70,6 +70,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u02.l13.true_false_addition",
             "uae.g1.u03.l01.subtraction_stories",
             "uae.g1.u03.l02.model_subtraction",
+            "uae.g1.u03.l03.subtraction_number_sentences",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -902,7 +903,7 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 string.Equals(answer.Trim(), left + right == shown ? "صحيحة" : "خطأ", StringComparison.Ordinal);
         }
-        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction")
+        if (family is "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
@@ -3282,6 +3283,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1SubtractionStory(random, family),
             "uae.g1.u03.l02.model_subtraction" =>
                 BuildUaeGrade1SubtractionStory(random, family),
+            "uae.g1.u03.l03.subtraction_number_sentences" =>
+                BuildUaeGrade1SubtractionStory(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4219,7 +4222,9 @@ public sealed class ExactSkillContractQuestionEngine
         string[] objects = ["أقلام", "زهور", "أوراق", "بطاقات", "كرات", "مكعبات"];
         var before = new string('●', whole);
         var after = new string('●', whole - removed);
-        var prompt = family == "uae.g1.u03.l02.model_subtraction" ?
+        var prompt = family == "uae.g1.u03.l03.subtraction_number_sentences" ?
+            $"أكمل جملة الطرح العددية: {whole} − {removed} = ؟. أشطب {removed} من {whole} نقاط: {before}، ثم أعد ما بقي." :
+            family == "uae.g1.u03.l02.model_subtraction" ?
             $"مخطط جزء/جزء/كل: الكل {whole} {before}، الجزء المعروف {removed}، الجزء المجهول ؟. أكمل {whole} − {removed} = ؟. المتبقي: {after}" :
             $"كان هناك {whole} من {objects[scene]}. أُخذ منها {removed}. كم بقي؟ {whole} − {removed} = ؟. قبل: {before} | بعد: {after}";
         return Problem(family,
@@ -6486,7 +6491,7 @@ public sealed class ExactSkillContractQuestionEngine
                 p["right"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u02.l13.true_false_addition" =>
                 p["left"] + p["right"] == p["shown"] ? "صحيحة" : "خطأ",
-            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" =>
+            "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
