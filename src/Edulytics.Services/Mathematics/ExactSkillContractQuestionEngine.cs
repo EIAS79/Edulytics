@@ -98,6 +98,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l06.related_add_sub_facts",
             "uae.g1.u05.l07.fact_family_four_equations",
             "uae.g1.u05.l08.missing_addend_part_whole",
+            "uae.g1.u06.l01.ordinal_1_10",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -993,6 +994,8 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["whole"] - p["known"]);
         }
+        if (UaeGrade1Unit5Ordinal(family) > 0)
+            return VerifyUaeGrade1Unit5(family, parameters, answer);
         if (family == "uae.g1.u04.l09.add_three_with_strategy")
         {
             var normalized = new string(answer.Trim().Select(c =>
@@ -3582,6 +3585,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit4Lesson07(random),
             "uae.g1.u05.l08.missing_addend_part_whole" =>
                 BuildUaeGrade1Unit4Lesson08(random),
+            "uae.g1.u06.l01.ordinal_1_10" =>
+                BuildUaeGrade1Unit5(1, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4682,6 +4687,155 @@ public sealed class ExactSkillContractQuestionEngine
         return Problem(family, prompt,
             "الجزء المجهول يساوي الكل ناقص الجزء المعروف؛ أتحقق بالجمع.",
             AssessmentItemType.Numeric, ("whole", whole), ("known", known), ("missing", missing), ("mode", mode));
+    }
+
+    // First-party UAE Grade 1 Place Value questions, fixed lesson-scoped family IDs.
+    // Reuses the existing exact math engine; no separate engine and no copied publisher exercises.
+    private static int UaeGrade1Unit5Ordinal(string family) => family switch
+    {
+        "uae.g1.u06.l01.ordinal_1_10" => 1,
+        "uae.g1.u06.l02.numbers_11_19" => 2,
+        "uae.g1.u06.l03.groups_of_ten" => 3,
+        "uae.g1.u06.l04.count_tens_fils" => 4,
+        "uae.g1.u06.l05.ten_and_some_more" => 5,
+        "uae.g1.u06.l06.tens_and_ones" => 6,
+        "uae.g1.u06.l07.make_table" => 7,
+        "uae.g1.u06.l08.numbers_to_100" => 8,
+        "uae.g1.u06.l09.ten_more_ten_less" => 9,
+        "uae.g1.u06.l10.count_fives_fils" => 10,
+        "uae.g1.u06.l11.compare_models" => 11,
+        "uae.g1.u06.l12.compare_symbols" => 12,
+        "uae.g1.u06.l13.hundreds_tens_ones" => 13,
+        "uae.g1.u06.l14.count_to_120" => 14,
+        "uae.g1.u06.l15.read_write_to_120" => 15,
+        _ => -1
+    };
+
+    private static bool VerifyUaeGrade1Unit5(string family,
+        IReadOnlyDictionary<string, int> p, string answer)
+    {
+        var lesson = UaeGrade1Unit5Ordinal(family);
+        if (lesson < 1 || !p.TryGetValue("n", out var n) ||
+            !p.TryGetValue("aux", out var aux) ||
+            !p.TryGetValue("mode", out var mode) ||
+            !p.TryGetValue("result", out var result)) return false;
+        var expected = lesson switch
+        {
+            1 or 2 or 13 or 15 => n,
+            3 or 4 or 7 => n * 10,
+            5 or 6 or 8 => n * 10 + aux,
+            9 => n + mode * 10,
+            10 => n * 5,
+            11 => Math.Max(n, aux),
+            12 => n > aux ? 1 : n < aux ? -1 : 0,
+            14 => n + 1,
+            _ => -1000
+        };
+        var valid = lesson switch
+        {
+            1 => n is >= 1 and <= 10 && aux == 0 && mode == 0,
+            2 => n is >= 11 and <= 19 && aux == n - 10 && mode == 0,
+            3 or 4 => n is >= 1 and <= 10 && aux == 0 && mode == 0,
+            5 => n is >= 1 and <= 9 && aux is >= 1 and <= 9 && mode == 0,
+            6 => n is >= 1 and <= 9 && aux is >= 0 and <= 9 && mode == 0,
+            7 => n is >= 1 and <= 8 && aux == 10 && mode == 0,
+            8 => n is >= 1 and <= 10 && aux is >= 0 and <= 9 &&
+                 (n != 10 || aux == 0) && mode == 0,
+            9 => n is >= 10 and <= 90 && (mode is -1 or 1) && aux == 0,
+            10 => n is >= 1 and <= 20 && aux == 0 && mode == 0,
+            11 or 12 => n is >= 0 and <= 100 && aux is >= 0 and <= 100 && mode == 0,
+            13 => n is >= 100 and <= 120 && aux == n % 10 && mode == n / 10 % 10,
+            14 => n is >= 1 and <= 119 && aux == 0 && mode == 0,
+            15 => n is >= 1 and <= 120 && aux == 0 && mode == 0,
+            _ => false
+        };
+        if (!valid || expected != result) return false;
+        if (lesson == 12)
+            return answer.Trim() == (expected == 1 ? ">" : expected == -1 ? "<" : "=");
+        var normalized = new string(answer.Trim().Select(c =>
+            c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+            c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+        return int.TryParse(normalized, NumberStyles.Integer,
+            CultureInfo.InvariantCulture, out var value) && value == expected;
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit5(int lesson, string family, Random random)
+    {
+        var n = 0; var aux = 0; var mode = 0; var result = 0; var prompt = "";
+        switch (lesson)
+        {
+            case 1:
+                n = random.Next(1, 11); result = n;
+                prompt = $"يوجد عشرة أطفال في طابور يبدأ من جهة السهم. ما رقم موضع الطفل عند الموقع الترتيبي {n} من البداية؟";
+                break;
+            case 2:
+                n = random.Next(11, 20); aux = n - 10; result = n;
+                prompt = $"أمامك إطار من عشر نقاط ممتلئ ومعه {aux} نقاط منفصلة. ما العدد المكتوب بالأرقام؟";
+                break;
+            case 3:
+                n = random.Next(1, 11); result = n * 10;
+                prompt = $"لدي {n} حزم من عشر قطع لكل حزمة. كم قطعة إجمالًا؟";
+                break;
+            case 4:
+                n = random.Next(1, 11); result = n * 10;
+                prompt = $"لدي {n} قطع نقدية، قيمة كل قطعة ١٠ فلوس. أعد بالعشرات، فكم فلسًا؟";
+                break;
+            case 5:
+                n = random.Next(1, 10); aux = random.Next(1, 10); result = n * 10 + aux;
+                prompt = $"لدي {n} حزم من عشر خرزات ومعها {aux} خرزات منفردة. كم خرزة إجمالًا؟";
+                break;
+            case 6:
+                n = random.Next(1, 10); aux = random.Next(0, 10); result = n * 10 + aux;
+                prompt = $"جدول القيمة المكانية: العشرات {n} والآحاد {aux}. ما العدد؟";
+                break;
+            case 7:
+                n = random.Next(1, 9); aux = 10; result = n * 10;
+                prompt = $"أجمع ١٠ بطاقات يوميًا. أكمل جدول الأيام حتى اليوم {n}: كم بطاقة جمعت؟";
+                break;
+            case 8:
+                n = random.Next(1, 11); aux = n == 10 ? 0 : random.Next(0, 10);
+                result = n * 10 + aux;
+                prompt = $"في جدول العشرات والآحاد {n} عشرات و{aux} آحاد. اكتب العدد حتى ١٠٠.";
+                break;
+            case 9:
+                n = random.Next(10, 91); mode = random.Next(0, 2) == 0 ? -1 : 1;
+                result = n + 10 * mode;
+                prompt = $"ما العدد الذي يساوي {n} {(mode == 1 ? "زائد" : "ناقص")} عشرة؟ الآحاد ثابتة.";
+                break;
+            case 10:
+                n = random.Next(1, 21); result = n * 5;
+                prompt = $"أعد بالخمسات: لدي {n} عملات من فئة ٥ فلوس. كم فلسًا؟";
+                break;
+            case 11:
+                n = random.Next(0, 101); aux = random.Next(0, 101);
+                result = Math.Max(n, aux);
+                prompt = $"أمثل العددين {n} و{aux} بقضبان عشرات وآحاد. ما قيمة العدد الأكبر؟";
+                break;
+            case 12:
+                n = random.Next(0, 101); aux = random.Next(0, 101);
+                result = n > aux ? 1 : n < aux ? -1 : 0;
+                prompt = $"اكتب الرمز > أو < أو = المناسب للمقارنة {n} □ {aux}.";
+                break;
+            case 13:
+                n = random.Next(100, 121); aux = n % 10; mode = n / 10 % 10;
+                result = n;
+                prompt = $"لدي مئة واحدة و{mode} عشرات و{aux} آحاد. اكتب العدد بالأرقام.";
+                break;
+            case 14:
+                n = random.Next(1, 120); result = n + 1;
+                prompt = $"أكمل العد بالترتيب في مخطط الأعداد إلى ١٢٠: {n}، ؟. ما العدد اللاحق؟";
+                break;
+            case 15:
+                n = random.Next(1, 121); result = n;
+                prompt = $"اقرأ العدد الممثل في مخطط الأعداد والموضع {n} ثم اكتبه بالأرقام. يراجع المعلم القراءة الشفوية.";
+                break;
+            default:
+                throw new InvalidOperationException($"Unsupported UAE G1 Place Value lesson: {lesson}");
+        }
+        return Problem(family, prompt,
+            "أراجع التمثيل العربي للعدد والقيمة المكانية أو ترتيب العد، وأتحقق من الإجابة.",
+            lesson == 12 ? AssessmentItemType.ShortAnswer : AssessmentItemType.Numeric,
+            ("n", n), ("aux", aux), ("mode", mode), ("result", result));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -7163,6 +7317,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["mode"] < 2 ? p["whole"] : p["mode"] == 2 ? p["b"] : p["a"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l08.missing_addend_part_whole" =>
                 (p["whole"] - p["known"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l01.ordinal_1_10" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
