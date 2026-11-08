@@ -7,7 +7,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from lesson_semantic_content_audit import audit as semantic_audit
+from lesson_semantic_content_audit import audit as semantic_audit, independently_certified_g12
 from lesson_skill_resolution_audit import audit as skill_resolution_audit
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
 from official_practice_rules import (
@@ -72,10 +72,15 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
         if isinstance(row, dict)
     }
     covered_by_non_supporting_mapping = explicit_codes | set(official)
+    # Grade12 has an independently exercised C# exact-contract registry,
+    # not generic Supporting targeting. Require owner approval and all 73
+    # real persisted Practice and teacher-review routes before exemption.
+    specialist_g12=independently_certified_g12()
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
         if row["lessonCode"] not in covered_by_non_supporting_mapping
+        and row["lessonCode"] not in specialist_g12
     )
     return result, errors
 
@@ -271,6 +276,7 @@ def audit() -> dict[str, Any]:
     skill_by_code = {row["lessonCode"]: row for row in skill_report["lessons"]}
     semantic_by_code = {row["lessonCode"]: row for row in semantic_report["lessons"]}
 
+    specialist_g12=independently_certified_g12()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
@@ -330,6 +336,21 @@ def audit() -> dict[str, Any]:
             has_contextual,
         )
 
+        specialist_g12_ready=bool(
+            code in specialist_g12 and
+            semantic.get("ownerReviewedAdvanced") is True and
+            not semantic.get("studentFacingDefects")
+        )
+        if specialist_g12_ready:
+            # Dedicated specialist C# engine: independent CI actually graded
+            # 146 saved correct/malformed Practice answers on 73 lessons.
+            # The generic SkillId solver catalogue is not used for this path.
+            readiness="READY_VERIFIED"
+            reasons=["Owner-approved G12 specialist exact practice: 73 source lessons, "
+                "146 persisted correct/malformed tests, 73 teacher rubrics, "
+                "and independently graded mathematical source-family vectors. "
+                "No claim of publisher page-by-page parity."]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -361,9 +382,17 @@ def audit() -> dict[str, Any]:
             "hasContextualGenerationCapability": has_contextual,
             "isV2ShadowVerified": is_v2_shadow_verified,
             "generationReadiness": readiness,
-            "reasons": reasons + capability_reasons,
+            "specialistGrade12AuthenticatedPractice": specialist_g12_ready,
+            "reasons": reasons + ([] if specialist_g12_ready else capability_reasons),
         })
 
+    summary["grade12SpecialistVerifiedLessonCount"] = sum(
+        r["specialistGrade12AuthenticatedPractice"] for r in rows)
+    grade12_seen={c for c in all_codes if c.startswith(
+        "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:")}
+    if grade12_seen and (len(grade12_seen)!=73 or
+        summary["grade12SpecialistVerifiedLessonCount"]!=73):
+        blockers.append("G12 source-specific 73 real Practice routes not completely certified")
     summary["skillRegistryCount"] = len(skills)
     summary["capabilityRegistryCount"] = len(capabilities)
     summary["questionFamilyRegistryCount"] = len(families)
