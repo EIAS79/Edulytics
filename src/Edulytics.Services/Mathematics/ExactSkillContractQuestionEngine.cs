@@ -86,6 +86,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l03.add_on_number_line",
             "uae.g1.u04.l04.doubles_add",
             "uae.g1.u04.l05.near_doubles_add",
+            "uae.g1.u04.l06.act_out_problem_solving",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -908,6 +909,20 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l06.act_out_problem_solving")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 1 and <= 7 &&
+                parameters.TryGetValue("b", out var b) && b is >= 1 and <= 6 &&
+                parameters.TryGetValue("c", out var c) && c is >= 0 and <= 4 &&
+                parameters.TryGetValue("mode", out var mode) && mode is >= 0 and <= 3 &&
+                (mode == 1 ? c >= 1 : c == 0) &&
+                parameters.TryGetValue("total", out var total) && total == a + b + c && total <= 20 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
+                value == (mode == 2 ? b : total);
         }
         if (family == "uae.g1.u04.l05.near_doubles_add")
         {
@@ -3413,6 +3428,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Doubles(random),
             "uae.g1.u04.l05.near_doubles_add" =>
                 BuildUaeGrade1NearDoubles(random),
+            "uae.g1.u04.l06.act_out_problem_solving" =>
+                BuildUaeGrade1ActOut(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4390,6 +4407,27 @@ public sealed class ExactSkillContractQuestionEngine
             "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
             AssessmentItemType.Numeric,
             ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1ActOut(Random random)
+    {
+        const string family = "uae.g1.u04.l06.act_out_problem_solving";
+        var a = random.Next(1, 8);
+        var b = random.Next(1, 7);
+        var mode = random.Next(0, 4);
+        var c = mode == 1 ? random.Next(1, 5) : 0;
+        var total = a + b + c;
+        var prompt = mode switch
+        {
+            1 => $"مثّل القصة بمجموعات من القطع: في ثلاث سلال {a} و{b} و{c} أشياء. كم العدد الكلي؟ اكتب جملة الجمع.",
+            2 => $"مثّل القصة: لدي {total} سيارة، وفي مجموعة {a} سيارات؛ كم سيارة في المجموعة الأخرى؟ أرسم الكل وأحدد الجزء المعروف.",
+            3 => $"مثّل بأصابعك مجموعتين: {a} أزهار ثم {b} أزهار أخرى؛ كم زهرة الآن؟",
+            _ => $"مثّل بأدوات العد: لدي {a} طيور ثم وصلت {b} أخرى؛ اكتب العدد الكلي."
+        };
+        return Problem(family, prompt,
+            "أفهم، أخطط، أمثل الأجزاء والكل، ثم أتحقق من صحة الجملة في القصة.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("c", c), ("total", total), ("mode", mode));
     }
 
     private static ExactProblem BuildUaeGrade1NearDoubles(Random random)
@@ -6760,6 +6798,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["equalAddend"] * 2).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u04.l05.near_doubles_add" =>
                 (p["base"] * 2 + p["delta"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l06.act_out_problem_solving" =>
+                (p["mode"] == 2 ? p["b"] : p["total"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>

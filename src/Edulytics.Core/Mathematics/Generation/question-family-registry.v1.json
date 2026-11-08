@@ -31895,6 +31895,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u04.l06.act_out_problem_solving",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-act-out-two-or-three-groups-or-missing-part-to20",
+      "representations": [
+        "symbolic",
+        "manipulatives",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
