@@ -4136,7 +4136,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u02.l03.addition_number_sentences" =>
                 $"اكتب المجموع لإكمال جملة الجمع: {left} + {right} = ؟. تحقق بالنقاط: {first} | {second}",
             "uae.g1.u02.l05.vertical_addition" =>
-                $"أكمل الجمع الرأسي: {left}\\n+ {right}\\n────\\n؟. تحقق بالنقاط: {first} | {second}",
+                $"أكمل الجمع الرأسي: {left}\n+ {right}\n────\n؟. تحقق بالنقاط: {first} | {second}",
             _ => $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟"
         };
         return Problem(family,
