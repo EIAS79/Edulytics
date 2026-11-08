@@ -10399,6 +10399,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "uae.g1.u01.l02.zero_cardinality",
+      "version": 1,
+      "skillId": "supporting.number.real",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-unitA-l02-zero-cardinality-exact-recompute",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "supporting.number.teen_decompose",
       "version": 1,
       "skillId": "supporting.number.real",

@@ -1,9 +1,10 @@
-# UAE Grade 1 / Unit A / Lesson 2
+# UAE Grade 1 / Unit A / Lesson 2 — Arabic zero
 
-Source: Arabic Grade 1 Student Book, cover 2025–2026, local source SHA256 BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44.
-Student textbook: printed pages A25–A30, PDF pages 42–47.
-Title: قراءة وكتابة الصفر. LessonCode preserved: PED:UAE-MOE-MATH:L1:COMMON:01:02.
-Identified source: numeric recognition, cardinality model, Arabic numeral writing, worked model, guided practice.
-Original authored learner material: Arabic explanation, number-specific examples, original dot/ten-frame notation, activity, teacher instructions, errors and original exit ticket. No copyrighted source image or long text copied.
-Stage C: exact count family uae.g1.u01.l02.zero_cardinality, allowed range 0–0, numeric exact grading plus teacher-reviewed handwriting and oral language.
-Open gaps: independent atomic enumeration across all textbook page elements not certified; runtime lesson-to-engine routing and RTL display unverified; Stage D tests NOT RUN.
+2025–2026 Arabic Grade 1 Student Book, local `Grade_01\\01_Student_Books\\01.pdf`, SHA256 `BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44`. **Printed A25–A30, PDF 42–47**, opened and visually examined on Our-CS.
+
+Element coverage: [lesson-2-atomic-coverage.md](lesson-2-atomic-coverage.md). Native textbook pictures/text not redistributed.
+
+- Stage A: six pages inspected; differentiate 0 from nonzero objects and model all objects leaving a set.
+- Stage B: original Arabic explanation, worked examples with empty set, independent/homework tasks, teacher-led tracing, errors, and original exit ticket.
+- Stage C: exact count family `uae.g1.u01.l02.zero_cardinality`, numerically constrained to 0; lesson-code/Arabic-title reviewed contract; written but **NOT RUN** target test. Oral/handwriting/drawing remain teacher-reviewed.
+- Status: **READY_FOR_STAGE_D**. RTL runtime/CI tests not run by A-B-C.

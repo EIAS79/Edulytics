@@ -6050,22 +6050,23 @@
     {
       "id": "uae-g1-1-2-read-and-write-zero",
       "titlePatterns": [
-        "^Read and Write Zero$"
+        "^Read and Write Zero$",
+        "^قراءة وكتابة الصفر$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:02$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "ZERO_EMPTY_CARDINALITY",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l02.zero_cardinality"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Zero.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Zero."
+        "concept": "الصفر هو عدد عناصر المجموعة الفارغة، مع قراءة وكتابة الرقم.",
+        "workedExample": "أعدّ نقاط الإطار الفارغ: لا توجد نقاط؛ أكتب ٠.",
+        "solution": "أنظر إلى المجموعة لا الوعاء، أتأكد أن عدد العناصر صفر، ثم أكتب ٠.",
+        "commonMistake": "لا تحسب الوعاء عنصرًا؛ لا تصنف المجموعة التي فيها نقطة واحدة على أنها صفر.",
+        "summary": "الصفر ومجموعة خالية؛ المقارنات الشفهية والخط باليد يراجعها المعلم."
       }
     },
     {

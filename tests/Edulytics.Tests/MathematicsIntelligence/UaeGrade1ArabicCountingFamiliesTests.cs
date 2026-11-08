@@ -51,4 +51,28 @@ public sealed class UaeGrade1ArabicCountingFamiliesTests
            family, question.Parameters, question.CorrectAnswer));
    });
  }
+
+ [Fact]
+ public void SecondArabicLesson_ZeroOnly_UsesExactSourceScopedFamily()
+ {
+   const string lessonCode = "PED:UAE-MOE-MATH:L1:COMMON:01:02";
+   const string family = "uae.g1.u01.l02.zero_cardinality";
+   Assert.True(LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract));
+   Assert.NotNull(contract);
+   Assert.Equal("READY_VERIFIED", contract.Readiness);
+   Assert.Equal(new[] { family }, contract.AllowedQuestionFamilies);
+   Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+   var generated = new ExactSkillContractQuestionEngine().Generate(
+       "stage18", lessonCode, new[] { family },
+       ExactSkillQuestionDifficulty.Standard, 3, 73, Array.Empty<string>());
+   Assert.All(generated, question =>
+   {
+       Assert.Equal(0, question.Parameters["count"]);
+       Assert.Equal(family, question.Family);
+       Assert.True(ExactSkillContractQuestionEngine.Verify(
+           family, question.Parameters, "٠"));
+       Assert.False(ExactSkillContractQuestionEngine.Verify(
+           family, question.Parameters, "١"));
+   });
+ }
 }
