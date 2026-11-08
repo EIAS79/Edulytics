@@ -1,0 +1,1 @@
+UAE G1 lesson 28 — الطرح من ٦ و٧. Six Arabic student-book pages PDF 244–249 / printed 159–164 visually inspected. See lesson-28-atomic-coverage.md. Arabic content independently authored; exact subtraction family uae.g1.u03.l09.subtract_6_7 bound to 6 or 7 with proper numeric grading. Targeted test WRITTEN_NOT_RUN; RTL/CI/Stage D not run. READY_FOR_STAGE_D.
