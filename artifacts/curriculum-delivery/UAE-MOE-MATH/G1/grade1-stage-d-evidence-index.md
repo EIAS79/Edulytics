@@ -40,3 +40,10 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - This commit expands genuinely different source skill cases (two-sided ordinals, ten-frames and tens/coins, shapes, halves/quarters, repeated solids and patterns) instead of lowering tests, fixes two exact anchored legacy English title regexes and retains Arabic as canonical.
 - Test repair on this new SHA must be re-executed; no new PASS is claimed.
 - Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42509613157
+
+## Fourth actual GitHub-hosted Stage D attempt
+- Run ID 42510442246 on source SHA acc20b2fa9fa30ab173d0df197ebcc713abd12b6.
+- Restore PASS, full solution Build PASS; 110 focused Grade 1 tests executed: **108 PASS, 2 FAIL**. Finite pool defects from prior attempt repaired; the two failures are original lesson 56 and 88 exact Practice route resolution.
+- Scope of corrective patch: allow one and only one runtime-ready reviewed rule with a literal anchored LessonCode for UAE Grade 1, after Arabic canonical metadata routing fails. No arbitrary keyword/title fallback or test count reduction.
+- New patch requires actual GitHub-hosted retest; it is not pre-marked PASS.
+- Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42510442246

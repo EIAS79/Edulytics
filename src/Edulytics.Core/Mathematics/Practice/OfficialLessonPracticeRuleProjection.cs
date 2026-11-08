@@ -191,6 +191,30 @@ internal static class OfficialLessonPracticeRuleProjection
                         }
                     }
 
+                    // Stage D source-level exact-code fallback for UAE G1:
+                    // only one reviewed anchored rule for this lesson identity
+                    // may authorize Practice. This avoids title alias ambiguity
+                    // without broad title, keyword or language fallback.
+                    if ((canonicalRule is null ||
+                         !IsRuntimeReadyRule(canonicalRule, skillIds, familyById)) &&
+                        string.Equals(pack.PackCode,
+                            MathematicsCurriculumPackRegistry.UaeCode,
+                            StringComparison.Ordinal) &&
+                        lesson.LessonCode.StartsWith(
+                            "PED:UAE-MOE-MATH:L1:COMMON:",
+                            StringComparison.Ordinal))
+                    {
+                        var exactAnchor = "^" + lesson.LessonCode + "$";
+                        var exactCodeRules = SupportingPracticeTargetRuleRegistry.All
+                            .Where(rule => rule.CodePatterns.Count == 1 &&
+                                string.Equals(rule.CodePatterns[0],
+                                    exactAnchor, StringComparison.Ordinal) &&
+                                IsRuntimeReadyRule(rule, skillIds, familyById))
+                            .ToArray();
+                        if (exactCodeRules.Length == 1)
+                            canonicalRule = exactCodeRules[0];
+                    }
+
                     if (canonicalRule is not null &&
                         IsRuntimeReadyRule(canonicalRule, skillIds, familyById))
                     {
