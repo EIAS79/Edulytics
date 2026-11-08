@@ -19,8 +19,7 @@ public sealed class UaeGrade1ArabicMakeTenFrameTests
   Assert.All(items,q=>{
    Assert.Equal(10,q.Parameters["total"]);
    Assert.Equal(10,q.Parameters["left"]+q.Parameters["right"]);
-   Assert.Contains("●",q.Prompt);
-   Assert.Contains("○",q.Prompt);
+   Assert.Equal(10,q.Prompt.Count(c => c is '●' or '○'));
    Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
    Assert.False(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,"99"));
   });
