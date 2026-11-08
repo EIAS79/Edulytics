@@ -60,6 +60,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u02.l02.model_addition",
             "uae.g1.u02.l03.addition_number_sentences",
             "uae.g1.u02.l04.add_zero",
+            "uae.g1.u02.l05.vertical_addition",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -843,7 +844,7 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var response) &&
                 response == count;
         }
-        if (family is "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences")
+        if (family is "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l05.vertical_addition")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
@@ -3216,6 +3217,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1AdditionStory(random, family),
             "uae.g1.u02.l04.add_zero" =>
                 BuildUaeGrade1AdditionZero(random),
+            "uae.g1.u02.l05.vertical_addition" =>
+                BuildUaeGrade1AdditionStory(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4132,6 +4135,8 @@ public sealed class ExactSkillContractQuestionEngine
                 $"أكمل مخطط الجزأين والكل: الجزء الأول {left}: {first} | الجزء الثاني {right}: {second} | الكل: ؟",
             "uae.g1.u02.l03.addition_number_sentences" =>
                 $"اكتب المجموع لإكمال جملة الجمع: {left} + {right} = ؟. تحقق بالنقاط: {first} | {second}",
+            "uae.g1.u02.l05.vertical_addition" =>
+                $"أكمل الجمع الرأسي: {left}\\n+ {right}\\n────\\n؟. تحقق بالنقاط: {first} | {second}",
             _ => $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟"
         };
         return Problem(family,
@@ -6347,7 +6352,7 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var uaeFamily when uaeFamily.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal) =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
-            "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l04.add_zero" =>
+            "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" or "uae.g1.u02.l04.add_zero" or "uae.g1.u02.l05.vertical_addition" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
