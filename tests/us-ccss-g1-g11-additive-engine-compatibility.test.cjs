@@ -22,7 +22,7 @@ const g1Critical=[
 ];
 const expectedOld={
   'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e'],
-  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','19ca4300c3a8c772a4624831987ae164489026e8'],
+  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','1f350526a18542b23f9cd3ba0a9d178b1c388694'],
   'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0d5cd3d3f294decd4d36d158563606b3f4708823']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
@@ -51,19 +51,23 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   const oldAdded=oldDiff.split('\n').filter(x=>x.startsWith('+')&&!x.startsWith('+++')).map(x=>x.slice(1));
   assert.equal(oldAdded.length,210);
   assert.ok(oldAdded.every(x=>!x.includes('usccss.g1.')&&!x.includes('UsCcssG1')));
-  // Newer Grade12 source-specific wiring must leave first-grade routing
-  // untouched. One existing exact-trigonometry scale bound was repaired.
-  assert.equal(git('rev-parse','HEAD:'+engine),
+  // The previous published G11/G12 engine is byte-pinned in main.
+  // The UAE G1 first-party authoring adds only 1,766 lines with NO
+  // deletions; it must not alter US G1 families or dispatch.
+  assert.equal(git('rev-parse','origin/main:'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
-  assert.equal(git('diff','--numstat',courseBase,'HEAD','--',engine),
-    '232\t1\t'+engine);
-  const delta=git('diff','--unified=0',courseBase,'HEAD','--',engine);
+  assert.equal(git('rev-parse','HEAD:'+engine),
+    '1f350526a18542b23f9cd3ba0a9d178b1c388694');
+  assert.equal(git('diff','--numstat','origin/main','HEAD','--',engine),
+    '1766\t0\t'+engine);
+  const delta=git('diff','--unified=0','origin/main','HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||
     (x.startsWith('-')&&!x.startsWith('---')));
   assert.ok(changed.every(x=>!x.includes('usccss.g1.')&&!x.includes('UsCcssG1')));
   const deleted=changed.filter(x=>x.startsWith('-'));
-  assert.deepEqual(deleted,['-        var multiplier = random.Next(1, Math.Max(2, scale + 1));']);
+  assert.deepEqual(deleted,[]);
+  assert.ok(changed.some(x=>x.includes('uae.g1.u01.l01.read_write_1_5')));
   const source=fs.readFileSync(path.join(root,engine),'utf8');
   const entries=JSON.parse(fs.readFileSync(path.join(root,familyRegistry),'utf8'));
   const newFamilies=entries.families.filter(x=>x.id?.startsWith('usccss.g11.alg2.'));

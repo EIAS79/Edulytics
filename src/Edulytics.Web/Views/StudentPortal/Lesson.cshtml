@@ -1928,7 +1928,15 @@
                 <span class="student-subject-code">@(isUaeGrade1Arabic ? "رياضيات" : Model.SubjectCode)</span>
             </div>
             <p class="lesson-library-eyebrow">@(isUaeGrade1Arabic ? "محتوى الدرس" : L["LearningContent"].Value)</p>
-            <h1 lang="@(isUaeGrade1Arabic ? "ar" : System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)">@grade5OriginalDisplayTitle</h1>
+            @if (isUaeGrade1Arabic)
+            {
+                <h1 lang="ar">@grade5OriginalDisplayTitle</h1>
+            }
+            else
+            {
+                @* Preserve the historical G5 2021 title renderer exactly. *@
+                <h1>@grade5OriginalDisplayTitle</h1>
+            }
             @* The old UAE Grade 1 UnitTitle duplicates the Arabic title in
                English. Do not present an unrelated English subtitle. *@
             @if (!isUaeGrade1Arabic)

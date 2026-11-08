@@ -100,3 +100,10 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - 102/102 D_VERIFIED refers to Stage D independently proven runtime and the grade-wide owner academic acceptance on candidate 2fea8f852, Run 42515500494.
 - Independent semantic source-parity remains UNKNOWN across 102 lessons; 60 T2/T3 lessons use 2019–2020 Arabic student originals as a selected fallback. No claim of latest exercise parity or independent publisher certification.
 - Third-party rights are NOT certified by owner instruction. Final release must pass new exact-SHA CI and be observed live on Render.
+
+## Main-branch PR integration defect and repair
+- PR #628 targeted main and revealed 35 new UAE G1 question families with unsupported answerType numeric. The global shared LessonPracticeInteractionRegistry failed initialization, breaking 11 unrelated original US Grade1 maths tests and one B001 practice test. Corrected only those 35 UAE G1 family metadata entries to the supported exact_integer answer contract; no legacy family metadata changed.
+- Added a targeted test of all 100 UAE G1 shared Practice interaction contracts (35 exact_integer, 63 contract_defined, 2 enum_text).
+- Restored the exact historical Grade5 H1 markup on non-UAE pages while preserving Arabic G1 H1 localized metadata.
+- Updated US G1/G11 additive engine compatibility proof to require the pre-existing shared engine main blob, the exact candidate +1766/-0 UAE-only addition blob, unchanged original US G1 family dispatch, and all original Grade11 families.
+- Local node smoke: 8/8 original G5 / US G1-G11 guard tests PASS. Entire related .NET, main PR and authenticated E2E must still rerun on the new SHA; no new CI success is yet claimed.
