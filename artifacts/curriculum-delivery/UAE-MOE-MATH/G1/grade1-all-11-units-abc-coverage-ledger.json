@@ -44,7 +44,7 @@
       "UnitIndex": 3,
       "TitleEn": "Addition Strategies to 20",
       "LessonCount": 9,
-      "ArabicLessonsPrepared": 4,
+      "ArabicLessonsPrepared": 5,
       "SourcePresenceInSelectedPdf": "CONTENT_PRESENT",
       "ReadyForStageD": false
     },
@@ -712,12 +712,15 @@
       "LessonIndex": 5,
       "LessonCode": "PED:UAE-MOE-MATH:L1:COMMON:04:05",
       "TitleFromExistingManifestEn": "Use Near Doubles to Add",
-      "SourcePdfState": "PDF_1_HAS_EDUCATIONAL_PAGES_NOT_FULLY_RECONCILED",
-      "StageABCScope": "NOT_STARTED",
-      "ArabicContentAdded": false,
-      "FullAtomicSourceComparison": false,
+      "SourcePdfState": "PDF_PAGES_320_TO_325_DIRECTLY_VISUALLY_INSPECTED",
+      "StageABCScope": "READY_FOR_STAGE_D",
+      "ArabicContentAdded": true,
+      "FullAtomicSourceComparison": true,
       "StageCTestExecuted": false,
-      "AcademicClosure": false
+      "AcademicClosure": true,
+      "SourcePageAudit": "lesson-38-atomic-coverage.md",
+      "TestsRun": "WRITTEN_NOT_RUN",
+      "StageCBlocker": null
     },
     {
       "Ordinal": 39,
@@ -1556,12 +1559,12 @@
     "ExistingBlueprint": 102,
     "ExistingContentPack": 102,
     "Units": 11,
-    "ArabicPrepared": 37,
+    "ArabicPrepared": 38,
     "EducationalPagesInSelectedPdfUnits": 4,
     "EducationalPagesMissingSelectedPdfLessons": 60,
-    "ReadyForStageD": 37
+    "ReadyForStageD": 38
   },
-  "ContinuationCursor": 38,
+  "ContinuationCursor": 39,
   "CriticalGaps": [
     "Complete Grade 1 Arabic source volumes for pedagogical units 4–10",
     "Full atomic source element comparison of candidate lessons",
@@ -1573,8 +1576,8 @@
   "Build": "NOT_RUN",
   "AdditionalArabicSourceManifest": "grade1-verified-arabic-source-baseline-20261108.md",
   "ClosureEvidence": {
-    "closedLessonCount": 37,
-    "firstOpenLessonOrdinal": 38,
-    "verification": "Lesson37 six printed pages 229-234 read, two equal addends and transfer review; scoped doubles exact family with test WRITTEN_NOT_RUN"
+    "closedLessonCount": 38,
+    "firstOpenLessonOrdinal": 39,
+    "verification": "Lesson38 PDF 320-325 inspected, near-doubles plus/minus-one family authored test WRITTEN_NOT_RUN"
   }
 }

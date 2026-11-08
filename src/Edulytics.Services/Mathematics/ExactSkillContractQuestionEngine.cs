@@ -85,6 +85,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l02.count_on_fils",
             "uae.g1.u04.l03.add_on_number_line",
             "uae.g1.u04.l04.doubles_add",
+            "uae.g1.u04.l05.near_doubles_add",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -907,6 +908,18 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l05.near_doubles_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("base", out var baseValue) && baseValue is >= 2 and <= 9 &&
+                parameters.TryGetValue("delta", out var delta) && delta is -1 or 1 &&
+                parameters.TryGetValue("orientation", out var orientation) && orientation is 0 or 1 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var result) &&
+                result == 2 * baseValue + delta;
         }
         if (family == "uae.g1.u04.l04.doubles_add")
         {
@@ -3398,6 +3411,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1NumberLineAddition(random),
             "uae.g1.u04.l04.doubles_add" =>
                 BuildUaeGrade1Doubles(random),
+            "uae.g1.u04.l05.near_doubles_add" =>
+                BuildUaeGrade1NearDoubles(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4375,6 +4390,23 @@ public sealed class ExactSkillContractQuestionEngine
             "أمثل الكل وأحذف ما ذهب ثم أعد الباقي، وأتحقق بجمع الباقي والمزال.",
             AssessmentItemType.Numeric,
             ("whole", whole), ("removed", removed), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1NearDoubles(Random random)
+    {
+        const string family = "uae.g1.u04.l05.near_doubles_add";
+        var baseValue = random.Next(2, 10);
+        var delta = random.Next(0, 2) == 0 ? -1 : 1;
+        var orientation = random.Next(0, 2);
+        var scene = random.Next(0, 4);
+        var left = orientation == 0 ? baseValue : baseValue + delta;
+        var right = orientation == 0 ? baseValue + delta : baseValue;
+        var action = delta == 1 ? "أضف واحدًا" : "أنقص واحدًا";
+        return Problem(family,
+            $"أكمل {left} + {right} = ؟ باستخدام المضاعف {baseValue} + {baseValue}. {action} من ناتج المضاعف لتجد الإجابة.",
+            "أستعمل حقيقة المضاعفات ثم أصححها بإضافة أو طرح واحد.",
+            AssessmentItemType.Numeric,
+            ("base", baseValue), ("delta", delta), ("orientation", orientation), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1Doubles(Random random)
@@ -6726,6 +6758,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["start"] + p["hops"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u04.l04.doubles_add" =>
                 (p["equalAddend"] * 2).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l05.near_doubles_add" =>
+                (p["base"] * 2 + p["delta"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>

@@ -11246,6 +11246,28 @@
         "commonMistake": "اعتبار حدين مختلفين حقيقة مضاعفات.",
         "summary": "مضاعف العدد هو العدد زائد نفسه."
       }
+    },
+    {
+      "id": "uae-g1-u3-l5-arabic-near-doubles-2025",
+      "titlePatterns": [
+        "^استخدام شبه المضاعفات للجمع$",
+        "^Use Near Doubles to Add$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:04:05$"
+      ],
+      "skillId": "number.whole.add",
+      "mechanic": "NEAR_DOUBLES_PLUS_OR_MINUS_ONE_TWO_ADJACENT_ADDENDS_UP_TO20",
+      "families": [
+        "uae.g1.u04.l05.near_doubles_add"
+      ],
+      "content": {
+        "concept": "العدد الثاني يختلف عن الأول بمقدار واحد؛ المجموع قريب من المضاعف.",
+        "workedExample": "٥ + ٦ = (٥ + ٥) + ١ = ١١؛ ٥ + ٤ = (٥ + ٥) − ١ = ٩.",
+        "solution": "أحسب المضاعف ثم أضيف أو أطرح واحدًا حسب المجموعة الأخرى.",
+        "commonMistake": "نسيان الزيادة أو النقصان أو استخدام اتجاه خاطئ.",
+        "summary": "شبه المضاعفات: مجموع حدين متتاليين."
+      }
     }
   ]
 }
