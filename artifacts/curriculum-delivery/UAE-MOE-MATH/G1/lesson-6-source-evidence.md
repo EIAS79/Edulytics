@@ -1,9 +1,8 @@
-# UAE Grade 1 / Unit A / Lesson 6
+# UAE Grade 1 Unit A / Lesson 6
 
-Source: Arabic Grade 1 Student Book, cover 2025–2026, local source SHA256 BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44.
-Student textbook: printed pages A54–A64, PDF pages 71–81.
-Title: قراءة وكتابة الأعداد من 16 إلى 20. LessonCode preserved: PED:UAE-MOE-MATH:L1:COMMON:01:06.
-Identified source: numeric recognition, cardinality model, Arabic numeral writing, worked model, guided practice.
-Original authored learner material: Arabic explanation, number-specific examples, original dot/ten-frame notation, activity, teacher instructions, errors and original exit ticket. No copyrighted source image or long text copied.
-Stage C: exact count family uae.g1.u01.l06.read_write_16_20, allowed range 16–20, numeric exact grading plus teacher-reviewed handwriting and oral language.
-Open gaps: independent atomic enumeration across all textbook page elements not certified; runtime lesson-to-engine routing and RTL display unverified; Stage D tests NOT RUN.
+Source: Arabic Grade 1 Student Book 2025–2026, 11 visually inspected pages (printed A54–A64, PDF 71–81), SHA256 `BF2C47A9F2F5457AB4ABF48EFE5603BD6D946CD1A8A09B4BA1BC57120EFEAE44`. Source elements: [lesson-6-atomic-coverage.md](lesson-6-atomic-coverage.md).
+
+- Stage A: page-by-page ten-frame, number word, writing and exercises matched by learning skill/goal.
+- Stage B: original Arabic rich examples and differentiated practice, teacher instructions, error analysis and exit ticket.
+- Stage C: reviewed source-scoped exact numeric contract `uae.g1.u01.l06.read_write_16_20` in lesson registry, tests written **NOT RUN**, nonnumeric drawing/oral elements teacher-led.
+- Status: **READY_FOR_STAGE_D**. No Stage D/E2E/CI performed.

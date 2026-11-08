@@ -133,4 +133,24 @@ public sealed class UaeGrade1ArabicCountingFamiliesTests
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
     });
  }
+
+ [Fact]
+ public void ArabicUnitALesson6_UsesExactTwoTenFrameCountRange()
+ {
+    const string lessonCode = "PED:UAE-MOE-MATH:L1:COMMON:01:06";
+    const string family = "uae.g1.u01.l06.read_write_16_20";
+    Assert.True(LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract));
+    Assert.NotNull(contract);
+    Assert.Equal(new[] { family }, contract.AllowedQuestionFamilies);
+    Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+    var generated = new ExactSkillContractQuestionEngine().Generate(
+        "stage18", lessonCode, new[] { family },
+        ExactSkillQuestionDifficulty.Standard, 3, 474, Array.Empty<string>());
+    Assert.All(generated, q =>
+    {
+        Assert.InRange(q.Parameters["count"], 16, 20);
+        Assert.Equal(family, q.Family);
+        Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
+    });
+ }
 }

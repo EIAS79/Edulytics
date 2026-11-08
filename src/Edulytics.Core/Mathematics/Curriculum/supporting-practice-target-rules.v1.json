@@ -6138,22 +6138,23 @@
     {
       "id": "uae-g1-1-6-read-and-write-numbers-16-to-20",
       "titlePatterns": [
-        "^Read and Write Numbers 16 to 20$"
+        "^Read and Write Numbers 16 to 20$",
+        "^قراءة وكتابة الأعداد من [١1][٦6] إلى [٢2][٠0]$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L1:COMMON:01:06$"
       ],
       "skillId": "supporting.number.real",
-      "mechanic": "NUMERAL_IDENTITY",
+      "mechanic": "TEN_FRAME_16_TO_20_READ_WRITE",
       "families": [
-        "supporting.number.numeral_identity"
+        "uae.g1.u01.l06.read_write_16_20"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Read and Write Numbers 16 to 20.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Read and Write Numbers 16 to 20."
+        "concept": "١٦ = ١٠ + ٦، ١٧ = ١٠ + ٧، ١٨ = ١٠ + ٨، ١٩ = ١٠ + ٩، ٢٠ = ١٠ + ١٠. ٢٠ يعني عشرين عنصرًا، لا عنصرين. أعدّ من دون تكرار وأقرأ الأسماء «ستة عشر»، «سبعة عشر»، «ثمانية عشر»، «تسعة عشر»، «عشرون». أكتب العدد برقمين بالترتيب الصحيح.",
+        "workedExample": "مثال أصلي ١: إطار مكتمل فيه عشر نقاط، وإطار ثان فيه ست نقاط: ١٠ + ٦ = ١٦؛ أكتب ١٦.",
+        "solution": "١. أملأ الإطار الأول بعشرة أشياء، وأتأكد أنه يمثل عشرة واحدة. ٢. أضع من ستة إلى عشرة أشياء في الإطار الثاني بحسب العدد المطلوب. ٣. أعدّ المجموع أو أستخدم ١٠ + الباقي لأقرأ العدد.",
+        "commonMistake": "الخلط بين ١٦ و٦١ أو ٢٠ و٢؛ عدّ خانة فارغة كأنها عنصر؛ إسقاط العشرة الأولى؛ اعتبار ٢٠ عشرة واحدة؛ نسيان الرقم صفر عند كتابة عشرين. أعالج ذلك بإكمال إطارين وقراءة العدد بعد التمثيل.",
+        "summary": "أقرأ وأكتب ١٦–٢٠ بعشرة كاملة و٦–١٠ آحاد إضافية؛ ٢٠ عشرتان كاملتان."
       }
     },
     {
