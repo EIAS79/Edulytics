@@ -33,3 +33,10 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Repair: preserve Arabic as canonical, attempt reviewed exact-code English metadata only for scoped Practice routing after canonical lookup fails. Preserve fail-closed skill/family and code-anchor validation.
 - Source evidence gate remains BLOCKED; authenticated E2E remains NOT_RUN. No D_VERIFIED claims.
 - Run URL: https://github.com/EIAS79/Edulytics/actions/runs/42508979016
+
+## Third actual GitHub-hosted Stage D attempt
+- Run ID 42509613157, tested SHA 716780e3e2e80a3f0345985a316ea4caadbfd2a5.
+- Restore and full solution build PASS; 110 focused tests executed: 91 PASS, 19 FAIL. The 19 failures include narrow finite exact question pools and two unresolved English metadata route anchors. Official source parity still blocked; E2E/RTL pending.
+- This commit expands genuinely different source skill cases (two-sided ordinals, ten-frames and tens/coins, shapes, halves/quarters, repeated solids and patterns) instead of lowering tests, fixes two exact anchored legacy English title regexes and retains Arabic as canonical.
+- Test repair on this new SHA must be re-executed; no new PASS is claimed.
+- Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42509613157

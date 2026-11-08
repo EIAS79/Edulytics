@@ -997,6 +997,7 @@ public sealed class ExactSkillContractQuestionEngine
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
             return parameters.TryGetValue("part", out var part) && part is >= 1 and <= 10 && parameters.TryGetValue("whole", out var whole) && whole == 2 * part &&
+                parameters.TryGetValue("scene", out var context) && context is >= 0 and <= 2 &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (parameters["part"]);
         }
@@ -4757,13 +4758,15 @@ public sealed class ExactSkillContractQuestionEngine
     private static ExactProblem BuildUaeGrade1Unit4Lesson03(Random random)
     {
         const string family = "uae.g1.u05.l03.doubles_subtraction";
-
         var part = random.Next(1, 11);
         var whole = 2 * part;
+        var scene = random.Next(0, 3);
+        var items = new[] { "مكعبات", "خرزات", "بطاقات" };
         return Problem(family,
-            $"كون مجموعتين متساويتين، في كل منهما {part} مكعبات. إذا كان المجموع {whole} ثم أزلت إحدى المجموعتين، فأكمل {whole} − {part} = ؟.",
-            "المضاعف هو مجموع مجموعتين متساويتين؛ إذا أزلت واحدة تبقى الأخرى.",
-            AssessmentItemType.Numeric, ("part", part), ("whole", whole));
+            $"أكوّن مجموعتين متساويتين من {items[scene]}، في كل مجموعة {part}. " +
+            $"المجموع {whole}؛ إذا أزلت مجموعة كاملة، فأكمل {whole} − {part} = ؟.",
+            "عند حذف مجموعة من مضاعف مكوّن من مجموعتين متساويتين تبقى المجموعة الأخرى.",
+            AssessmentItemType.Numeric, ("part", part), ("whole", whole), ("scene", scene));
     }
 
     private static ExactProblem BuildUaeGrade1Unit4Lesson04(Random random)
@@ -4890,12 +4893,12 @@ public sealed class ExactSkillContractQuestionEngine
         };
         var valid = lesson switch
         {
-            1 => n is >= 1 and <= 10 && aux == 0 && mode == 0,
-            2 => n is >= 11 and <= 19 && aux == n - 10 && mode == 0,
-            3 or 4 => n is >= 1 and <= 10 && aux == 0 && mode == 0,
+            1 => n is >= 1 and <= 10 && aux == 0 && mode is 0 or 1,
+            2 => n is >= 11 and <= 19 && aux == n - 10 && mode is >= 0 and <= 2,
+            3 or 4 => n is >= 1 and <= 10 && aux == 0 && mode is 0 or 1,
             5 => n is >= 1 and <= 9 && aux is >= 1 and <= 9 && mode == 0,
             6 => n is >= 1 and <= 9 && aux is >= 0 and <= 9 && mode == 0,
-            7 => n is >= 1 and <= 8 && aux == 10 && mode == 0,
+            7 => n is >= 1 and <= 8 && aux == 10 && mode is 0 or 1,
             8 => n is >= 1 and <= 10 && aux is >= 0 and <= 9 &&
                  (n != 10 || aux == 0) && mode == 0,
             9 => n is >= 10 and <= 90 && (mode is -1 or 1) && aux == 0,
@@ -5029,14 +5032,14 @@ public sealed class ExactSkillContractQuestionEngine
             83 => a is >= 10 and <= 25 && b is >= 1 and <= 9 && c==0 && mode==0,
             84 or 85 or 86 or 87 => a is >= 1 and <= 12 && b==0 && c==0 && mode==0,
             88 => a is >= 1 and <= 12 && b==0 && c==0 && mode is 0 or 1,
-            89 or 90 or 92 or 95 => a==0 && b==0 && c==0 && mode is 0 or 1,
-            91 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            89 or 90 or 92 or 95 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            91 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
             93 or 94 => a is >= 1 and <= 5 && b is >= 1 and <= 5 && c==0 && mode==0,
-            96 => a==0 && b==0 && c==0 && mode is 0 or 1,
-            97 => a is >= 2 and <= 20 && a%2==0 && b==0 && c==0 && mode==0,
-            98 => a is >= 4 and <= 24 && a%4==0 && b==0 && c==0 && mode==0,
-            99 or 100 => a==0 && b==0 && c==0 && mode is 0 or 1,
-            101 => a==0 && b==0 && c==0 && mode is 0 or 1,
+            96 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            97 => a is >= 2 and <= 20 && a%2==0 && b==0 && c==0 && mode is 0 or 1,
+            98 => a is >= 4 and <= 24 && a%4==0 && b==0 && c==0 && mode is >= 0 and <= 2,
+            99 or 100 => a is >= 1 and <= 10 && b==0 && c==0 && mode is 0 or 1,
+            101 => a is >= 1 and <= 12 && b==0 && c==0 && mode is 0 or 1,
             102 => a is >= 1 and <= 4 && b is >= 1 and <= 4 && c==0 && mode==0,
             _ => false
         };
@@ -5050,15 +5053,15 @@ public sealed class ExactSkillContractQuestionEngine
             81 => Math.Min(a,Math.Min(b,c)),
             83 => a-b,
             88 => mode * 30,
-            89 => 4,
-            90 or 92 or 95 => mode==0 ? 3 : 4,
-            91 => 0,
-            96 => mode==0 ? 2 : 4,
+            89 => 4*a,
+            90 or 92 or 95 => (mode==0 ? 3 : 4)*a,
+            91 => mode==0 ? 0 : a,
+            96 => (mode==0 ? 2 : 4)*a,
             97 => a/2,
             98 => a/4,
-            99 => mode==0 ? 6 : 8,
-            100 => mode==0 ? 1 : 2,
-            101 => mode==0 ? 1 : 2,
+            99 => (mode==0 ? 6 : 8)*a,
+            100 => (mode==0 ? 1 : 2)*a,
+            101 => mode==0 ? (a%2==1 ? 1 : 2) : (a%2==1 ? 2 : 1),
             _ => -1
         };
         if (expected!=result) return false;
@@ -5139,24 +5142,28 @@ public sealed class ExactSkillContractQuestionEngine
                 question=$"الساعة الرقمية {a:00}:{(mode==0 ? "00" : "30")}. كم دقيقة مضت بعد بداية الساعة الحالية؟";
                 break;
             case 89:
-                mode=random.Next(0,2);result=4;
-                question=mode==0 ? "المربع □ شكل مستوٍ مغلق؛ كم ضلعًا مستقيمًا له؟" :
-                    "المستطيل ▭ شكل مستوٍ مغلق؛ كم ضلعًا مستقيمًا له؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=4*a;
+                question=mode==0
+                    ? $"أعرض {a} مربعات منفصلة □، ولكل مربع أربعة أضلاع مستقيمة. كم ضلعًا في المربعات جميعًا؟"
+                    : $"أعرض {a} مستطيلات منفصلة ▭، ولكل مستطيل أربعة أضلاع مستقيمة. كم ضلعًا في المستطيلات جميعًا؟";
                 break;
             case 90:
-                mode=random.Next(0,2);result=mode==0?3:4;
-                question=mode==0?"مثلث △ له كم ضلعًا مستقيمًا؟":
-                    "شبه منحرف له ضلعان متوازيان؛ كم ضلعًا مستقيمًا له؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أرتب {a} مثلثات منفصلة △، لكل منها ثلاثة أضلاع. كم ضلعًا في المثلثات كلها؟"
+                    : $"أرتب {a} أشباه منحرف منفصلة، لكل منها أربعة أضلاع. كم ضلعًا لجميع الأشكال؟";
                 break;
             case 91:
-                mode=random.Next(0,2);result=0;
-                question=mode==0?"كم ضلعًا مستقيمًا في محيط دائرة ○؟":
-                    "كم رأسًا (زاوية) للدائرة ○ التي حدها منحنٍ؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=mode==0?0:a;
+                question=mode==0
+                    ? $"هناك {a} دوائر منفصلة ○ في الرسم. كم ضلعًا مستقيمًا في حدود هذه الدوائر كلها؟"
+                    : $"هناك {a} دوائر منفصلة ○؛ لكل دائرة حد منحني مغلق واحد. كم حدًا منحنيًا مغلقًا لكل الدوائر؟";
                 break;
             case 92:
-                mode=random.Next(0,2);result=mode==0?3:4;
-                question=mode==0?"قارن مثلثًا بمستطيل: كم رأسًا للمثلث؟":
-                    "قارن مستطيلًا بمثلث: كم رأسًا للمستطيل؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أقارن مجموعة فيها {a} مثلثات بمجموعة مستطيلات. كم رأسًا للمثلثات المنفصلة جميعًا؟"
+                    : $"أقارن مجموعة فيها {a} مستطيلات بمجموعة مثلثات. كم رأسًا للمستطيلات المنفصلة جميعًا؟";
                 break;
             case 93:
                 a=random.Next(1,6);b=random.Next(1,6);result=a+b;
@@ -5167,36 +5174,48 @@ public sealed class ExactSkillContractQuestionEngine
                 question=$"أعيد ترتيب {a} مربعات و{b} مثلثات لأكوّن شكلاً مركبًا جديدًا دون إضافة أو حذف. كم قطعة تكوّن الشكل؟";
                 break;
             case 95:
-                mode=random.Next(0,2);result=mode==0?3:4;
-                question=mode==0?"أبحث عن شكل مستوٍ مغلق له ثلاثة أضلاع. كم رأسًا له؟":
-                    "أبحث عن شكل مستوٍ مغلق له أربعة أضلاع. كم رأسًا له؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?3:4);
+                question=mode==0
+                    ? $"أستدل على الشكل: له ثلاثة أضلاع وثلاثة رؤوس. لدي {a} أشكال منفصلة منه. كم رأسًا لجميعها؟"
+                    : $"أستدل على الشكل: له أربعة أضلاع متساوية وأربع زوايا. لدي {a} أشكال منفصلة منه. كم رأسًا لجميعها؟";
                 break;
             case 96:
-                mode=random.Next(0,2);result=mode==0?2:4;
-                question=$"أقسم مستطيلًا إلى {(mode==0?"نصفين متساويين":"أرباع متساوية")}. كم جزءًا متساويًا يجب أن أرسم؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?2:4);
+                question=$"أقسم {a} شرائط متساوية، كل شريط على حدة إلى {(mode==0?"نصفين متساويين":"أرباع متساوية")}. كم جزءًا متساويًا في جميع الشرائط بعد التقسيم؟";
                 break;
             case 97:
-                a=2*random.Next(1,11);result=a/2;
-                question=$"أقسم {a} دائرة بالتساوي بين طفلين، كم دائرة في نصف المجموعة؟";
+                a=2*random.Next(1,11);mode=random.Next(0,2);result=a/2;
+                question=mode==0
+                    ? $"أقسم {a} دائرة بالتساوي بين طفلين، كم دائرة في نصف المجموعة؟"
+                    : $"أوزع {a} بطاقة بالتساوي على صندوقين، كم بطاقة يمثل نصف المجموعة في كل صندوق؟";
                 break;
             case 98:
-                a=4*random.Next(1,7);result=a/4;
-                question=$"أقسم {a} قطعة على أربع مجموعات متساوية؛ كم قطعة في الربع الواحد؟";
+                a=4*random.Next(1,7);mode=random.Next(0,3);result=a/4;
+                question=mode switch
+                {
+                    0 => $"أقسم {a} قطعة على أربع مجموعات متساوية؛ كم قطعة في الربع الواحد؟",
+                    1 => $"أوزع {a} بطاقة على أربعة صناديق بالتساوي، كم بطاقة في ربع المجموعة؟",
+                    _ => $"أقسم {a} مكعبًا بين أربعة أطفال بالتساوي، كم مكعبًا يأخذ كل طفل؟"
+                };
                 break;
             case 99:
-                mode=random.Next(0,2);result=mode==0?6:8;
-                question=mode==0?"المكعب جسم ثلاثي الأبعاد؛ كم وجهًا مسطحًا له؟":
-                    "المنشور المستطيل جسم ثلاثي الأبعاد؛ كم رأسًا له؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?6:8);
+                question=mode==0
+                    ? $"أفحص {a} مكعبات منفصلة، لكل مكعب ستة أوجه مربعة. كم وجهًا مسطحًا لها إجمالًا؟"
+                    : $"أفحص {a} مناشير مستطيلة منفصلة، لكل منشور ثمانية رؤوس. كم رأسًا للمجسمات جميعًا؟";
                 break;
             case 100:
-                mode=random.Next(0,2);result=mode==0?1:2;
-                question=mode==0?"المخروط له رأس واحد وقاعدة دائرية مستوية؛ كم قاعدة دائرية له؟":
-                    "الأسطوانة لها سطح منحني وقاعدتان دائريتان؛ كم قاعدة مستوية دائرية لها؟";
+                a=random.Next(1,11);mode=random.Next(0,2);result=a*(mode==0?1:2);
+                question=mode==0
+                    ? $"هناك {a} مخاريط منفصلة، لكل مخروط قاعدة دائرية واحدة. كم قاعدة دائرية لها كلها؟"
+                    : $"هناك {a} أسطوانات منفصلة، لكل أسطوانة قاعدتان دائريتان. كم قاعدة دائرية لها جميعًا؟";
                 break;
             case 101:
-                mode=random.Next(0,2);result=mode==0?1:2;
-                question=mode==0?"النمط: مخروط، أسطوانة، مخروط، أسطوانة، ... اكتب ١ للمخروط و٢ للأسطوانة. رمز الشكل التالي؟":
-                    "النمط: أسطوانة، مخروط، أسطوانة، مخروط، ... اكتب ١ للمخروط و٢ للأسطوانة. رمز الشكل التالي؟";
+                a=random.Next(1,13);mode=random.Next(0,2);
+                result=mode==0 ? (a%2==1?1:2) : (a%2==1?2:1);
+                question=mode==0
+                    ? $"النمط المتناوب: مخروط، أسطوانة، مخروط، أسطوانة، ... ما رمز الشكل عند الموضع {a}؟ اكتب ١ للمخروط و٢ للأسطوانة."
+                    : $"النمط المتناوب: أسطوانة، مخروط، أسطوانة، مخروط، ... ما رمز الشكل عند الموضع {a}؟ اكتب ١ للمخروط و٢ للأسطوانة.";
                 break;
             case 102:
                 a=random.Next(1,5);b=random.Next(1,5);result=a+b;
@@ -5285,20 +5304,29 @@ public sealed class ExactSkillContractQuestionEngine
         switch (lesson)
         {
             case 1:
-                n = random.Next(1, 11); result = n;
-                prompt = $"يوجد عشرة أطفال في طابور يبدأ من جهة السهم. ما رقم موضع الطفل عند الموقع الترتيبي {n} من البداية؟";
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n;
+                prompt = $"في طابور عشرة أطفال، يوجد {n - 1} أطفال قبل الطفل المحدد من جهة {(mode == 0 ? "اليمين" : "اليسار")}. ما موضعه الترتيبي من تلك الجهة؟";
                 break;
             case 2:
-                n = random.Next(11, 20); aux = n - 10; result = n;
-                prompt = $"أمامك إطار من عشر نقاط ممتلئ ومعه {aux} نقاط منفصلة. ما العدد المكتوب بالأرقام؟";
+                n = random.Next(11, 20); aux = n - 10; mode = random.Next(0, 3); result = n;
+                prompt = mode switch
+                {
+                    0 => $"إطار عشر خانات ممتلئ ومعه {aux} نقاط منفصلة. ما العدد؟",
+                    1 => $"حزمة من عشرة مكعبات ومعها {aux} مكعبات مفردة. اكتب العدد.",
+                    _ => $"لدينا عشرة آحاد مجمعة، ثم {aux} آحاد إضافية في صينية العد. ما العدد؟"
+                };
                 break;
             case 3:
-                n = random.Next(1, 11); result = n * 10;
-                prompt = $"لدي {n} حزم من عشر قطع لكل حزمة. كم قطعة إجمالًا؟";
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"لدي {n} قضبان عشرات، في كل قضيب عشر قطع. كم قطعة؟"
+                    : $"أعد بالقفزات العشرية {n} مرات من صفر على خط الأعداد. إلى أي عدد أصل؟";
                 break;
             case 4:
-                n = random.Next(1, 11); result = n * 10;
-                prompt = $"لدي {n} قطع نقدية، قيمة كل قطعة ١٠ فلوس. أعد بالعشرات، فكم فلسًا؟";
+                n = random.Next(1, 11); mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"في المحفظة {n} عملات معدنية قيمة كل واحدة ١٠ فلوس. كم فلسًا في المحفظة؟"
+                    : $"على الطاولة {n} عملات من فئة ١٠ فلوس؛ أعد كل عملة بعشرة. ما القيمة الكلية بالفلس؟";
                 break;
             case 5:
                 n = random.Next(1, 10); aux = random.Next(1, 10); result = n * 10 + aux;
@@ -5309,8 +5337,10 @@ public sealed class ExactSkillContractQuestionEngine
                 prompt = $"جدول القيمة المكانية: العشرات {n} والآحاد {aux}. ما العدد؟";
                 break;
             case 7:
-                n = random.Next(1, 9); aux = 10; result = n * 10;
-                prompt = $"أجمع ١٠ بطاقات يوميًا. أكمل جدول الأيام حتى اليوم {n}: كم بطاقة جمعت؟";
+                n = random.Next(1, 9); aux = 10; mode = random.Next(0, 2); result = n * 10;
+                prompt = mode == 0
+                    ? $"أكتب جدول قراءة: أنجز ١٠ بطاقات كل يوم؛ بعد {n} أيام كم بطاقة أتممت؟"
+                    : $"في جدول صناديق الصف عشر بطاقات في كل صندوق. إذا كان لدي {n} صناديق، ما عدد البطاقات؟";
                 break;
             case 8:
                 n = random.Next(1, 11); aux = n == 10 ? 0 : random.Next(0, 10);
