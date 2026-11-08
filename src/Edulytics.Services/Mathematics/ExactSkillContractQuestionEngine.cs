@@ -94,6 +94,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l02.number_line_subtract",
             "uae.g1.u05.l03.doubles_subtraction",
             "uae.g1.u05.l04.story_subtraction_equation",
+            "uae.g1.u05.l05.subtract_through_ten",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -950,6 +951,15 @@ public sealed class ExactSkillContractQuestionEngine
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
                 c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
             return p.TryGetValue("whole", out var whole) && whole is >= 5 and <= 20 && p.TryGetValue("removed", out var removed) && removed >= 1 && removed <= 10 && removed < whole && p.TryGetValue("remaining", out var remaining) && remaining == whole - removed && p.TryGetValue("scene", out var scene) && scene is >= 0 and <= 2 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
+                v == (p["whole"] - p["removed"]);
+        }
+        if (family == "uae.g1.u05.l05.subtract_through_ten")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return p.TryGetValue("whole", out var whole) && whole is >= 11 and <= 18 && p.TryGetValue("removed", out var removed) && removed is >= 2 and <= 9 && p.TryGetValue("toTen", out var toTen) && toTen == whole - 10 && toTen < removed && p.TryGetValue("rest", out var rest) && rest == removed - toTen && rest >= 1 && p.TryGetValue("result", out var result) && result == whole - removed && result == 10 - rest &&
                 int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var v) &&
                 v == (p["whole"] - p["removed"]);
         }
@@ -3534,6 +3544,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit4Lesson03(random),
             "uae.g1.u05.l04.story_subtraction_equation" =>
                 BuildUaeGrade1Unit4Lesson04(random),
+            "uae.g1.u05.l05.subtract_through_ten" =>
+                BuildUaeGrade1Unit4Lesson05(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4569,6 +4581,22 @@ public sealed class ExactSkillContractQuestionEngine
             $"في صندوق {whole} من {units[scene]}، أعطينا {removed} منها لصديق. مثّل المسألة واكتب جملة طرح ثم اكتب العدد المتبقي: {whole} − {removed} = ؟.",
             "أفهم وأخطط وأمثل الكل، ثم أحذف ما غادر، وأتحقق من الفرق بجمع الجزءين.",
             AssessmentItemType.Numeric, ("whole", whole), ("removed", removed), ("remaining", remaining), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1Unit4Lesson05(Random random)
+    {
+        const string family = "uae.g1.u05.l05.subtract_through_ten";
+
+        var whole = random.Next(11, 19);
+        var toTen = whole - 10;
+        var removed = random.Next(toTen + 1, 10);
+        var rest = removed - toTen;
+        var result = whole - removed;
+        return Problem(family,
+            $"حل {whole} − {removed} بتكوين عشرة: اطرح {toTen} أولًا للوصول إلى ١٠، ثم اطرح {rest} من ١٠. ما الناتج؟",
+            "جزّئ العدد المطروح إلى جزء للوصول للعشرة وجزء متبقٍ، ثم أطرح الجزأين بالتتابع.",
+            AssessmentItemType.Numeric, ("whole", whole), ("removed", removed),
+            ("toTen", toTen), ("rest", rest), ("result", result));
     }
 
     private static ExactProblem BuildUaeGrade1ThreeAddends(Random random)
@@ -7041,6 +7069,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u05.l03.doubles_subtraction" =>
                 (p["part"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u05.l04.story_subtraction_equation" =>
+                (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u05.l05.subtract_through_ten" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),

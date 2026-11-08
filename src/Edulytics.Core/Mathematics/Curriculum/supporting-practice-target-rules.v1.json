@@ -6754,16 +6754,16 @@
         "^PED:UAE-MOE-MATH:L1:COMMON:05:05$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "DECOMPOSE_SUBTRAHEND_AND_BRIDGE_TEN",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u05.l05.subtract_through_ten"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make 10 to Subtract.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make 10 to Subtract."
+        "concept": "تفكيك العدد المطروح إلى جزء يوصِل المطروح منه إلى عشرة، ثم طرح الباقي من عشرة.",
+        "workedExample": "لطرح ٨ من ١٥ أبدأ بحذف ٥ لأصل إلى ١٠، ويبقى من الثمانية ٣؛ أطرح ٣ من ١٠ فيكون الناتج ٧.",
+        "solution": "إذا كان العدد الكلي ١٠ + آحاد، وأريد طرح عدد يتجاوز الآحاد، فأطرح الآحاد أولًا للوصول إلى ١٠؛ أطرح ما بقي من المطروح. يجب أن يساوي مجموع الجزأين المطروح الأصلي.",
+        "commonMistake": "طرح الجزء الذي يوصِل إلى عشرة مرتين، أو تفكيك المطروح إلى مجموع لا يساويه، أو كتابة ١٠ زائد الباقي بدل ١٠ ناقص الباقي.",
+        "summary": "أحل ١٦ − ٩: أصل إلى ١٠ بطرح ٦، وأطرح الباقي ٣ لأحصل على ٧."
       }
     },
     {
