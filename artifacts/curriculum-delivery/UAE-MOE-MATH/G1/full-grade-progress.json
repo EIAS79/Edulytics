@@ -111,7 +111,7 @@
     102
   ],
   "baseCandidateSha": "78bded7ad1427e08c345455d44d3110fdc27efb1",
-  "candidateSha": null,
+  "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
   "sourceSnapshotId": "sha256:571ca1f4d8687100dfec0c239a4c9718f0104a5b65d81731398de6d21e1f1718",
   "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
   "runIds": [
@@ -120,11 +120,18 @@
     42509613157,
     42510442246,
     42510784139,
-    42511577450
+    42511577450,
+    42512661110
   ],
-  "lastKnownRunStatus": "118_TESTS_PASS_E2E_ARABIC_TITLE_FAIL_SOURCE_NO_GO",
+  "lastKnownRunStatus": "BUILD_118_PASS_E2E_102_ARABIC_AND_204_GRADED_PASS_SOURCE_NO_GO",
   "releaseDecision": "NO_GO_TECHNICAL",
   "note": "Real isolated GitHub runner tests must supply exact SHA and Run ID; no local tests on source-reading device.",
-  "lastTestedSha": "80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec",
-  "lastKnownRunId": 42511577450
+  "lastTestedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+  "lastKnownRunId": 42512661110,
+  "technicalLessonsPassed": 102,
+  "realAuthenticatedStudentPagesPassed": 102,
+  "realPracticeCorrectAndMalformedAttemptsPassed": 204,
+  "arabicHtmlRtlPass": 102,
+  "arabicBrowserVisualA11y": "NOT_VERIFIED",
+  "sourceEditionAndSemanticParity": "NOT_VERIFIED"
 }

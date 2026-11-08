@@ -6,11 +6,11 @@
   "Stage": "D",
   "GeneratedUtc": "2026-11-08T18:10:08+00:00",
   "baseABCSha": "78bded7ad1427e08c345455d44d3110fdc27efb1",
-  "candidateSha": null,
+  "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
   "sourceSnapshotId": "sha256:571ca1f4d8687100dfec0c239a4c9718f0104a5b65d81731398de6d21e1f1718",
   "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
   "schemaMigrationVersion": "NOT_DETERMINED",
-  "testedRefKind": "NOT_RUN",
+  "testedRefKind": "push",
   "expectedLessonCount": 102,
   "technicalUnitCount": 11,
   "printedUnitCount": 10,
@@ -125,11 +125,11 @@
     "2025-2026": 42,
     "2019-2020": 60
   },
-  "unitTests": "NOT_RUN",
-  "integrationTests": "NOT_RUN",
-  "authenticatedE2E": "NOT_RUN",
-  "arabicRtlVisual": "NOT_RUN",
-  "finalCI": "FAIL_E2E_CANONICAL_ARABIC_NOT_SERVED_AND_SOURCE_PARITY",
+  "unitTests": "PASS_110_OF_110",
+  "integrationTests": "PASS_8_OF_8",
+  "authenticatedE2E": "PASS_102_PAGES_204_PERSISTED",
+  "arabicRtlVisual": "HTML_MARKER_PASS_BROWSER_NOT_VERIFIED",
+  "finalCI": "FAIL_SOURCE_AND_HUMAN_RTL_RIGHTS_APPROVAL",
   "rights": "NOT_VERIFIED",
   "humanApproval": "NOT_VERIFIED",
   "releaseDecision": "NO_GO_TECHNICAL",
@@ -147,28 +147,34 @@
         41
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-1-atomic-coverage.md",
         "lesson-1-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 2,
@@ -183,28 +189,34 @@
         47
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-2-atomic-coverage.md",
         "lesson-2-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 3,
@@ -219,28 +231,34 @@
         53
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-3-atomic-coverage.md",
         "lesson-3-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 4,
@@ -255,28 +273,34 @@
         59
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-4-atomic-coverage.md",
         "lesson-4-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 5,
@@ -291,28 +315,34 @@
         70
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-5-atomic-coverage.md",
         "lesson-5-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 6,
@@ -327,28 +357,34 @@
         81
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-6-atomic-coverage.md",
         "lesson-6-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 7,
@@ -363,28 +399,34 @@
         101
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-7-atomic-coverage.md",
         "lesson-7-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 8,
@@ -399,28 +441,34 @@
         107
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-8-atomic-coverage.md",
         "lesson-8-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 9,
@@ -435,28 +483,34 @@
         113
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-9-atomic-coverage.md",
         "lesson-9-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 10,
@@ -471,28 +525,34 @@
         119
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-10-atomic-coverage.md",
         "lesson-10-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 11,
@@ -507,28 +567,34 @@
         127
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-11-atomic-coverage.md",
         "lesson-11-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 12,
@@ -543,28 +609,34 @@
         133
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-12-atomic-coverage.md",
         "lesson-12-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 13,
@@ -579,28 +651,34 @@
         139
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-13-atomic-coverage.md",
         "lesson-13-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 14,
@@ -615,28 +693,34 @@
         145
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-14-atomic-coverage.md",
         "lesson-14-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 15,
@@ -651,28 +735,34 @@
         151
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-15-atomic-coverage.md",
         "lesson-15-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 16,
@@ -687,28 +777,34 @@
         159
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-16-atomic-coverage.md",
         "lesson-16-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 17,
@@ -723,28 +819,34 @@
         165
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-17-atomic-coverage.md",
         "lesson-17-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 18,
@@ -759,28 +861,34 @@
         171
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-18-atomic-coverage.md",
         "lesson-18-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 19,
@@ -795,28 +903,34 @@
         177
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-19-atomic-coverage.md",
         "lesson-19-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 20,
@@ -831,28 +945,34 @@
         199
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-20-atomic-coverage.md",
         "lesson-20-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 21,
@@ -867,28 +987,34 @@
         205
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-21-atomic-coverage.md",
         "lesson-21-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 22,
@@ -903,28 +1029,34 @@
         211
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-22-atomic-coverage.md",
         "lesson-22-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 23,
@@ -939,28 +1071,34 @@
         217
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-23-atomic-coverage.md",
         "lesson-23-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 24,
@@ -975,28 +1113,34 @@
         223
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-24-atomic-coverage.md",
         "lesson-24-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 25,
@@ -1011,28 +1155,34 @@
         231
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-25-atomic-coverage.md",
         "lesson-25-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 26,
@@ -1047,28 +1197,34 @@
         237
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-26-atomic-coverage.md",
         "lesson-26-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 27,
@@ -1083,28 +1239,34 @@
         243
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-27-atomic-coverage.md",
         "lesson-27-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 28,
@@ -1119,28 +1281,34 @@
         249
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-28-atomic-coverage.md",
         "lesson-28-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 29,
@@ -1155,28 +1323,34 @@
         257
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-29-atomic-coverage.md",
         "lesson-29-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 30,
@@ -1191,28 +1365,34 @@
         263
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-30-atomic-coverage.md",
         "lesson-30-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 31,
@@ -1227,28 +1407,34 @@
         269
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-31-atomic-coverage.md",
         "lesson-31-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 32,
@@ -1263,28 +1449,34 @@
         275
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-32-atomic-coverage.md",
         "lesson-32-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 33,
@@ -1299,28 +1491,34 @@
         281
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-33-atomic-coverage.md",
         "lesson-33-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 34,
@@ -1335,28 +1533,34 @@
         301
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-34-atomic-coverage.md",
         "lesson-34-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 35,
@@ -1371,28 +1575,34 @@
         307
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-35-atomic-coverage.md",
         "lesson-35-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 36,
@@ -1407,28 +1617,34 @@
         313
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-36-atomic-coverage.md",
         "lesson-36-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 37,
@@ -1443,28 +1659,34 @@
         319
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-37-atomic-coverage.md",
         "lesson-37-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 38,
@@ -1479,28 +1701,34 @@
         325
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-38-atomic-coverage.md",
         "lesson-38-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 39,
@@ -1515,28 +1743,34 @@
         333
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-39-atomic-coverage.md",
         "lesson-39-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 40,
@@ -1551,28 +1785,34 @@
         339
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-40-atomic-coverage.md",
         "lesson-40-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 41,
@@ -1587,28 +1827,34 @@
         345
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-41-atomic-coverage.md",
         "lesson-41-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 42,
@@ -1623,28 +1869,34 @@
         351
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
-        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN"
+        "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-42-atomic-coverage.md",
         "lesson-42-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 43,
@@ -1659,29 +1911,35 @@
         19
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-43-atomic-coverage.md",
         "lesson-43-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 44,
@@ -1696,29 +1954,35 @@
         25
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-44-atomic-coverage.md",
         "lesson-44-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 45,
@@ -1733,29 +1997,35 @@
         31
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-45-atomic-coverage.md",
         "lesson-45-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 46,
@@ -1770,29 +2040,35 @@
         37
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-46-atomic-coverage.md",
         "lesson-46-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 47,
@@ -1807,29 +2083,35 @@
         45
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-47-atomic-coverage.md",
         "lesson-47-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 48,
@@ -1844,29 +2126,35 @@
         51
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-48-atomic-coverage.md",
         "lesson-48-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 49,
@@ -1881,29 +2169,35 @@
         57
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-49-atomic-coverage.md",
         "lesson-49-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 50,
@@ -1918,29 +2212,35 @@
         63
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-50-atomic-coverage.md",
         "lesson-50-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 51,
@@ -1955,29 +2255,35 @@
         23
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-51-atomic-coverage.md",
         "lesson-51-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 52,
@@ -1992,29 +2298,35 @@
         29
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-52-atomic-coverage.md",
         "lesson-52-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 53,
@@ -2029,29 +2341,35 @@
         35
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-53-atomic-coverage.md",
         "lesson-53-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 54,
@@ -2066,29 +2384,35 @@
         41
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-54-atomic-coverage.md",
         "lesson-54-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 55,
@@ -2103,29 +2427,35 @@
         48
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-55-atomic-coverage.md",
         "lesson-55-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 56,
@@ -2140,29 +2470,35 @@
         54
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-56-atomic-coverage.md",
         "lesson-56-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 57,
@@ -2177,29 +2513,35 @@
         62
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-57-atomic-coverage.md",
         "lesson-57-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 58,
@@ -2214,29 +2556,35 @@
         68
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-58-atomic-coverage.md",
         "lesson-58-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 59,
@@ -2251,29 +2599,35 @@
         74
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-59-atomic-coverage.md",
         "lesson-59-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 60,
@@ -2288,29 +2642,35 @@
         80
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-60-atomic-coverage.md",
         "lesson-60-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 61,
@@ -2325,29 +2685,35 @@
         86
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-61-atomic-coverage.md",
         "lesson-61-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 62,
@@ -2362,29 +2728,35 @@
         92
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-62-atomic-coverage.md",
         "lesson-62-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 63,
@@ -2399,29 +2771,35 @@
         100
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-63-atomic-coverage.md",
         "lesson-63-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 64,
@@ -2436,29 +2814,35 @@
         106
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-64-atomic-coverage.md",
         "lesson-64-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 65,
@@ -2473,29 +2857,35 @@
         112
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-65-atomic-coverage.md",
         "lesson-65-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 66,
@@ -2510,29 +2900,35 @@
         129
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-66-atomic-coverage.md",
         "lesson-66-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 67,
@@ -2547,29 +2943,35 @@
         135
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-67-atomic-coverage.md",
         "lesson-67-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 68,
@@ -2584,29 +2986,35 @@
         141
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-68-atomic-coverage.md",
         "lesson-68-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 69,
@@ -2621,29 +3029,35 @@
         147
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-69-atomic-coverage.md",
         "lesson-69-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 70,
@@ -2658,29 +3072,35 @@
         153
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-70-atomic-coverage.md",
         "lesson-70-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 71,
@@ -2695,29 +3115,35 @@
         161
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-71-atomic-coverage.md",
         "lesson-71-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 72,
@@ -2732,29 +3158,35 @@
         167
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-72-atomic-coverage.md",
         "lesson-72-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 73,
@@ -2769,29 +3201,35 @@
         173
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-73-atomic-coverage.md",
         "lesson-73-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 74,
@@ -2806,29 +3244,35 @@
         36
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-74-atomic-coverage.md",
         "lesson-74-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 75,
@@ -2843,29 +3287,35 @@
         42
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-75-atomic-coverage.md",
         "lesson-75-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 76,
@@ -2880,29 +3330,35 @@
         48
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-76-atomic-coverage.md",
         "lesson-76-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 77,
@@ -2917,29 +3373,35 @@
         54
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-77-atomic-coverage.md",
         "lesson-77-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 78,
@@ -2954,29 +3416,35 @@
         62
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-78-atomic-coverage.md",
         "lesson-78-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 79,
@@ -2991,29 +3459,35 @@
         68
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-79-atomic-coverage.md",
         "lesson-79-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 80,
@@ -3028,29 +3502,35 @@
         90
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-80-atomic-coverage.md",
         "lesson-80-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 81,
@@ -3065,29 +3545,35 @@
         96
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-81-atomic-coverage.md",
         "lesson-81-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 82,
@@ -3102,29 +3588,35 @@
         102
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-82-atomic-coverage.md",
         "lesson-82-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 83,
@@ -3139,29 +3631,35 @@
         108
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-83-atomic-coverage.md",
         "lesson-83-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 84,
@@ -3176,29 +3674,35 @@
         116
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-84-atomic-coverage.md",
         "lesson-84-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 85,
@@ -3213,29 +3717,35 @@
         122
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-85-atomic-coverage.md",
         "lesson-85-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 86,
@@ -3250,29 +3760,35 @@
         128
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-86-atomic-coverage.md",
         "lesson-86-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 87,
@@ -3287,29 +3803,35 @@
         134
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-87-atomic-coverage.md",
         "lesson-87-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 88,
@@ -3324,29 +3846,35 @@
         140
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-88-atomic-coverage.md",
         "lesson-88-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 89,
@@ -3361,29 +3889,35 @@
         162
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-89-atomic-coverage.md",
         "lesson-89-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 90,
@@ -3398,29 +3932,35 @@
         168
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-90-atomic-coverage.md",
         "lesson-90-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 91,
@@ -3435,29 +3975,35 @@
         174
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-91-atomic-coverage.md",
         "lesson-91-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 92,
@@ -3472,29 +4018,35 @@
         180
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-92-atomic-coverage.md",
         "lesson-92-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 93,
@@ -3509,29 +4061,35 @@
         188
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-93-atomic-coverage.md",
         "lesson-93-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 94,
@@ -3546,29 +4104,35 @@
         194
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-94-atomic-coverage.md",
         "lesson-94-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 95,
@@ -3583,29 +4147,35 @@
         200
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-95-atomic-coverage.md",
         "lesson-95-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 96,
@@ -3620,29 +4190,35 @@
         208
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-96-atomic-coverage.md",
         "lesson-96-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 97,
@@ -3657,29 +4233,35 @@
         214
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-97-atomic-coverage.md",
         "lesson-97-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 98,
@@ -3694,29 +4276,35 @@
         220
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-98-atomic-coverage.md",
         "lesson-98-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 99,
@@ -3731,29 +4319,35 @@
         238
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-99-atomic-coverage.md",
         "lesson-99-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 100,
@@ -3768,29 +4362,35 @@
         244
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-100-atomic-coverage.md",
         "lesson-100-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 101,
@@ -3805,29 +4405,35 @@
         252
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-101-atomic-coverage.md",
         "lesson-101-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     },
     {
       "lessonOrdinal": 102,
@@ -3842,34 +4448,40 @@
         258
       ],
       "contentVersion": "p29-uae-g1-common-t1-ogl-v1-v1",
-      "candidateSha": null,
-      "testedRefKind": "NOT_RUN",
+      "candidateSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
+      "testedRefKind": "push",
       "sourceElementCount": null,
       "verifiedEquivalentCount": null,
       "sourceParity": null,
-      "unitTests": "NOT_RUN",
-      "integrationTests": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
-      "arabicRtlVisual": "NOT_RUN",
+      "unitTests": "PASS",
+      "integrationTests": "PASS",
+      "authenticatedE2E": "PASS",
+      "arabicRtlVisual": "HTML_RTL_MARKER_PASS_BROWSER_SCREENSHOT_NOT_TESTED",
       "practiceFamilyCoverage": null,
       "rightsStatus": "NOT_VERIFIED",
       "humanReviewStatus": "NOT_VERIFIED",
       "openDefects": [
         "SOURCE_ELEMENT_DENOMINATOR_UNKNOWN",
-        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED"
+        "NEWER_ARABIC_STUDENT_EXERCISE_EDITION_NOT_VERIFIED",
+        "BROWSER_RTL_VISUAL_ACCESSIBILITY_NOT_VERIFIED",
+        "ACADEMIC_AND_RIGHTS_REVIEW_NOT_VERIFIED"
       ],
-      "actionsRunIds": [],
+      "actionsRunIds": [
+        42512661110
+      ],
       "evidencePaths": [
         "lesson-102-atomic-coverage.md",
         "lesson-102-source-evidence.md"
       ],
       "dStatus": "D_PENDING_A_C_EVIDENCE",
-      "updatedAtUtc": "2026-11-08T18:10:08+00:00"
+      "updatedAtUtc": "2026-11-08T18:10:08+00:00",
+      "technicalStatus": "PASS_ISOLATED_RUN_NOT_SOURCE_CLEARANCE",
+      "e2eEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110"
     }
   ],
   "buildLatestAttempt": {
-    "runId": 42510784139,
-    "testedSha": "57553141a4be9974c076f97aec2caf589f73d9c2",
+    "runId": 42512661110,
+    "testedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
     "testedRefKind": "push",
     "status": "BUILD_PASS_118_TESTS_PASS",
     "fullSolutionBuild": "PASS",
@@ -3885,32 +4497,32 @@
       "failed": 0,
       "skipped": 0
     },
-    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42510784139",
-    "isolatedAuthenticatedE2E": "NOT_RUN_AT_THIS_SHA",
-    "sourceElementParity": "UNVERIFIED"
+    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110",
+    "sourceSemanticEquivalence": "UNKNOWN"
   },
-  "lastKnownGitHubRunId": 42511577450,
-  "lastTestedSha": "80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec",
+  "lastKnownGitHubRunId": 42512661110,
+  "lastTestedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
   "authenticatedE2ELatestAttempt": {
-    "runId": 42511577450,
-    "testedSha": "80c3813ac18d5dfa2dbee7b2ffe1ff8863366eec",
+    "runId": 42512661110,
+    "testedSha": "430453453cbb2eab6f672b99419e9dbe65b4f9b9",
     "testedRefKind": "push",
+    "status": "PASS",
     "isolatedPostgreSQLMigration": "PASS",
     "cleanSeed": {
       "frameworks": 4,
-      "pedagogicalLessons": 5183,
-      "postgresProseRows": 0
+      "pedagogicalLessons": 5183
     },
     "disposableSchoolFixture": "PASS",
-    "fourRoleLogins": "PASS_TO_FIRST_LESSON",
-    "crossSchoolAccess": "DENIED_TO_FIRST_LESSON",
-    "authenticatedStudentPage": "HTTP_200_FIRST_LESSON",
-    "arabicCanonicalStudentTitle": "FAILED_FIRST_LESSON",
-    "correctPracticePersistence": "NOT_REACHED",
-    "malformedPracticePersistence": "NOT_REACHED",
-    "sourceCause": "LessonContentService.SelectAcademicContent selected UAE global en; Grade 1 lesson pack canonical ar ignored",
-    "fix": "LessonCode-scoped Arabic selection and bypass English-only RichV2 fallback; show complete six Arabic canonical sections in RTL",
-    "retest": "NOT_RUN_ON_NEW_CANDIDATE_SHA",
-    "evidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42511577450"
+    "fourRoleLogins": "PASS",
+    "crossSchoolAccess": "DENIED",
+    "authenticatedArabicStudentPages": 102,
+    "correctPracticeGradePersisted": 102,
+    "malformedAnswerRejectedAndPersisted": 102,
+    "totalGradedAttempts": 204,
+    "sourceEditionParity": "UNVERIFIED",
+    "rtlHtmlAttribute": "PASS",
+    "rtlVisualA11yScreenshot": "NOT_TESTED",
+    "actualEvidenceUrl": "https://github.com/EIAS79/Edulytics/actions/runs/42512661110",
+    "artifactName": "uae-g1-stage-d-102-authenticated-https-42512661110"
   }
 }

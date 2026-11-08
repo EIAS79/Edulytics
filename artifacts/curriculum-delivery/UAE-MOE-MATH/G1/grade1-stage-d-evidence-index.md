@@ -65,3 +65,16 @@ The Stage D gate is fail-closed. The structural job may pass while the separate 
 - Final gate changed from unconditional failure to evidence-driven fail-closed conditions; absent source parity, human/rights approvals, RTL browser evidence still block publication.
 - Source evidence gate remains FAIL; no D_VERIFIED or publication.
 - Evidence: https://github.com/EIAS79/Edulytics/actions/runs/42511577450
+
+## Seventh actual isolated CI run — 102 Arabic pages and 204 persisted grades PASS
+- Tested SHA: 430453453cbb2eab6f672b99419e9dbe65b4f9b9. Run ID: 42512661110. Run URL: https://github.com/EIAS79/Edulytics/actions/runs/42512661110
+- Full solution Build PASS; 110/110 UAE Grade 1 exact questions/verifier tests PASS; 8/8 UAE reference/policy tests PASS.
+- Disposable PostgreSQL 18 migrations and clean seed PASS, 5183 catalogue lessons; 2 isolated school tenants seeded.
+- Authenticated student, teacher, supervisor and admin logins PASS. Foreign-school student's access to this learner lesson denied.
+- All 102 authenticated canonical Arabic learner pages serve six authored teaching sections under ar/RTL wrapper PASS, recorded by 102 independent page checks.
+- 102 server-owned correctly answered Practice questions persisted with correct grading, plus 102 malformed responses persisted as grade zero; 204 real HTTPS/DB attempts PASS.
+- Evidence artifacts: uae-g1-stage-d-102-authenticated-https-42512661110, uae-g1-stage-d-dotnet-42512661110.
+- Source exercise-level numerator/denominator remains UNKNOWN for 102/102, and newer Arabic T2/T3 student exercise editions remain unverified.
+- Browser screenshot, responsive RTL, WCAG/a11y, real classroom UAT, current-edition source parity, human/rights approval and production rollout remain NOT VERIFIED.
+- Stage D lesson final classification stays 0/102 D_VERIFIED; recorded per-lesson technical test PASS is not academic clearance.
+- Final gate deliberately returned NO_GO because of missing independent evidence.

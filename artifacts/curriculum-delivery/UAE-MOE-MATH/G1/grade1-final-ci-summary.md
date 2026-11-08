@@ -1,24 +1,33 @@
-# UAE Grade 1 — Stage D / Final CI candidate
+# UAE Grade 1 Stage D — real 102-lesson CI evidence
 
-Status: **NO_GO_TECHNICAL** as of tested SHA 57553141a4be9974c076f97aec2caf589f73d9c2.
+**NO_GO_TECHNICAL — not yet authorized to merge or publish.**
 
-## Actual GitHub-hosted tests
-- Full solution Build: **PASS**.
-- UAE Grade 1 exact question families / verifier: **110/110 PASS**.
-- UAE official reference/policy checks: **8/8 PASS**.
-- 102 lesson source identity / canonical Arabic structural check: **PASS**.
-- Source-element 100% semantic parity: **BLOCKED, not proven**.
-- Newer Arabic student source edition coverage for lesson ordinals 43–102: **UNVERIFIED**.
-- Isolated four-role authenticated HTTPS, 102 pages, 204 persisted Practice grades, PostgreSQL migration: **NEW WORKFLOW CREATED, RESULTS NOT RUN as of this summary**.
-- Arabic RTL visual/a11y screenshots, required regression, human/rights validation: **NOT VERIFIED**.
-- Stage D verified lesson closures: **0/102**. An A–B–C READY_FOR_STAGE_D marker is not D_VERIFIED.
-- Final release: **NO_GO_TECHNICAL**; no merge, migration or production deployment.
+### Tested candidate
+- Branch: curriculum/uae-g1-stage-d-20261108
+- Tested SHA: 430453453cbb2eab6f672b99419e9dbe65b4f9b9
+- GitHub Actions Run ID: 42512661110
+- CI URL: https://github.com/EIAS79/Edulytics/actions/runs/42512661110
+- Full solution Build: PASS
+- Grade 1 exact generator/verifier tests: **110/110 PASS**
+- Official curriculum reference and exposure policy tests: **8/8 PASS**
+- Independent source structure and Arabic metadata: **102/102 PASS**
+- Ephemeral PostgreSQL18 migrations + seed: **PASS** (5183 catalogue lessons)
+- Isolated authenticated Grade1 102 Arabic lesson pages, six full sections and HTML RTL wrapper: **102/102 PASS**
+- Actual server-generated scoped correct Practice answers persisted as grade 1: **102/102 PASS**
+- Deliberately malformed answers rejected, grade zero persisted: **102/102 PASS**
+- Combined persisted graded attempts: **204/204 PASS**
+- Student/teacher/supervisor/admin logins: **PASS**; cross-school lesson isolation: **PASS**
 
-GitHub source: https://github.com/EIAS79/Edulytics/actions/runs/42510784139
+### Academic and release blockers
+- Semantic numerator/denominator at source teaching/activity/exercise-element granularity: **UNKNOWN for 102 lessons**. Therefore no 100% semantic parity claim.
+- Newer Arabic official student editions for lessons 43–102: **UNVERIFIED**; older 2019–2020 Arabic student files form the selected baseline.
+- Actual browser screenshots, RTL layout, responsive visuals and WCAG/a11y: **NOT VERIFIED**. HTML lang=ar and dir=rtl are necessary but not visual acceptance.
+- Teacher-scored drawings, authored activity fidelity, real student UAT: **NOT VERIFIED**.
+- Independent copyright/rights clearance and final human review: **NOT VERIFIED**.
+- Final CI and production: **NO_GO**; no PR merge, deployment or production database change.
 
-This is a run-linked honest progress report, not final acceptance.
-
-## Isolated HTTP/DB attempt #42511577450
-- **Failed on first lesson** because canonical Arabic title was not served; run had already migrated PostgreSQL and seeded all 5183 catalogue records.
-- New patch is a proposed runtime correction, NOT a passing E2E result. Must retest on new SHA.
-- Stage D verified lessons: 0. Publication NO_GO.
+### Exact progress
+- A–B–C recorded: 102/102 READY_FOR_STAGE_D.
+- Per-lesson Stage D technical runtime checks: 102/102 PASS (no academic equivalence inferred).
+- Final Stage D D_VERIFIED closures: **0/102**.
+- First remaining incomplete lesson: ordinal **1**, not rebranded as complete.
