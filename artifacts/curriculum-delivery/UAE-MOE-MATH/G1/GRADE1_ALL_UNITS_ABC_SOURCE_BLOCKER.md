@@ -1,3 +1,7 @@
+## Latest closure superseding the historical cursor
+
+> **Latest verified handoff (2026-11-08T17:39:32Z):** The operational cursor in older paragraphs below is historical. All **102/102 existing Blueprint lessons** now have recorded \`READY_FOR_STAGE_D\` checkpoints, with the complete final handoff in [grade1-final-stage-abc-handoff-20261108.md](grade1-final-stage-abc-handoff-20261108.md). **This does not resolve the edition-level source dependency:** student-book exercises for the newer 2025–2026/2026–2027 terms are not verified for lessons 43–102. The previous edition blocker must not be silently converted to a newer-edition 100% parity claim. Stage D/CI NOT RUN.
+
 # UAE Grade 1 / Stage A–B–C — source coverage and sequential closure gate
 
 Updated after the 2025–2026 Arabic guide and older Arabic student-book volumes became available.
