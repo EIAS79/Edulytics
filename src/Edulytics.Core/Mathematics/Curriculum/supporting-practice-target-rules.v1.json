@@ -6628,16 +6628,16 @@
         "^PED:UAE-MOE-MATH:L1:COMMON:04:07$"
       ],
       "skillId": "number.whole.add_subtract",
-      "mechanic": "WHOLE_ADD_SUBTRACT",
+      "mechanic": "MAKE_TEN_TRANSFER_FROM_SECOND_ADDEND",
       "families": [
-        "number.whole.add_subtract.within_20.reasonable"
+        "uae.g1.u04.l07.make_ten_add"
       ],
       "content": {
-        "concept": "Practice the exact mathematical idea named in this verified UAE textbook lesson.",
-        "workedExample": "Use a short representative example that matches Make 10 to Add.",
-        "solution": "Identify the quantities and operation or representation, solve step by step, then verify the result.",
-        "commonMistake": "Do not choose an operation or representation that conflicts with the lesson target.",
-        "summary": "Apply the verified practice family for Make 10 to Add."
+        "concept": "كوّن عشرة أولًا بنقل بعض قطع العدد الثاني ثم أضف الباقي.",
+        "workedExample": "٨ + ٥: أنقل ٢ من ٥ إلى ٨، ويبقى ٣، إذن ١٠ + ٣ = ١٣.",
+        "solution": "حدد ١٠−أ، وقسّم ب إلى هذا الجزء والباقي، وتحقق من أ+ب = ١٠+الباقي.",
+        "commonMistake": "لا تضف القطع المنقولة مرتين.",
+        "summary": "أكمل العشرة ثم أضف ما بقي من العدد الثاني."
       }
     },
     {
