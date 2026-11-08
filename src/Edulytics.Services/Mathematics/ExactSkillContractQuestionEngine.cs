@@ -111,6 +111,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u06.l11.compare_models",
             "uae.g1.u06.l12.compare_symbols",
             "uae.g1.u06.l13.hundreds_tens_ones",
+            "uae.g1.u06.l14.count_to_120",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -3623,6 +3624,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Unit5(12, family, random),
             "uae.g1.u06.l13.hundreds_tens_ones" =>
                 BuildUaeGrade1Unit5(13, family, random),
+            "uae.g1.u06.l14.count_to_120" =>
+                BuildUaeGrade1Unit5(14, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -7378,6 +7381,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u06.l12.compare_symbols" =>
                 (p["result"] == 1 ? ">" : p["result"] == -1 ? "<" : "="),
             "uae.g1.u06.l13.hundreds_tens_ones" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u06.l14.count_to_120" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
