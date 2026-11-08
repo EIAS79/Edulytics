@@ -39,6 +39,12 @@ public sealed class Grade12PrecalculusAllTeacherRubricSourceBanksTests
             }
         }
         Assert.True(n >= 72);
+        // Reviewer finding P2: the original U07:L05 student exercise bank
+        // includes item 106, which must persist through the DB range check.
+        var critical = Grade12PrecalculusTeacherTaskBank.All[
+            Grade12PrecalculusTeacherTaskBank.LessonPrefix + "U07:L05"];
+        Assert.Contains(critical, item => item.Number == 106);
+        Assert.Equal(106,critical.Max(item=>item.Number));
         Assert.Null(Grade12PrecalculusTeacherTaskBank.Find(
             "PED:US-CCSS-MATH:G5:U01:L01",1));
     }

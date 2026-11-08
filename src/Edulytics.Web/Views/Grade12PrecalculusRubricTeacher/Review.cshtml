@@ -4,6 +4,14 @@
 <h1>Grade 12 Precalculus, @(Grade12PrecalculusTeacherTaskBank.DisplayLabel(Model.LessonCode, Model.Submission.ExerciseNumber)) — teacher assessment</h1>
 <p>Student: @Model.Submission.StudentProfileId</p>
 <p>Submitted @Model.Submission.SubmittedAtUtc.ToString("u")</p>
+@if (Grade12PrecalculusTeacherTaskBank.Find(Model.LessonCode,
+    Model.Submission.ExerciseNumber) is { } originalTask)
+{
+    <section class="student-card" aria-label="Teacher review original exercise prompt">
+        <h2>Assigned exercise</h2>
+        <p>@originalTask.Prompt</p>
+    </section>
+}
 <pre style="white-space:pre-wrap">@Model.Submission.ResponseText</pre>
 @if (Model.LessonCode == Grade12PrecalculusTeacherTaskBank.FirstLesson &&
     Grade12PrecalculusSection11TeacherGuidance.Find(Model.Submission.ExerciseNumber) is { } note)

@@ -2445,6 +2445,35 @@
                 </section>
             </section>
         }
+        @if (Model.LessonCode.StartsWith(
+                Grade12PrecalculusTeacherTaskBank.LessonPrefix, StringComparison.Ordinal) &&
+             Model.LessonCode != Grade12PrecalculusTeacherTaskBank.FirstLesson &&
+             Grade12PrecalculusTeacherTaskBank.All.TryGetValue(Model.LessonCode, out var g12SourceTasks))
+        {
+            <section class="lesson-source-aligned-activities" aria-label="First-party teacher-reviewed Precalculus exercises">
+                <h2>Precalculus ? first-party teacher-reviewed source exercises</h2>
+                <p>These lesson-specific mathematics activities require a written explanation or
+                   labelled graph where appropriate. Your assigned mathematics teacher reviews
+                   your work; answers are not automatically marked.</p>
+                <details class="student-card">
+                    <summary>View all @g12SourceTasks.Count original Edulytics exercises for this lesson</summary>
+                    <ol>
+                        @foreach (var task in g12SourceTasks)
+                        {
+                            <li value="@task.Number">
+                                <p><strong>Exercise @task.Number:</strong> @task.Prompt</p>
+                                <a asp-controller="Grade12PrecalculusRubricStudent"
+                                   asp-action="Index"
+                                   asp-route-lessonId="@Model.Id"
+                                   asp-route-exerciseNumber="@task.Number">
+                                    Submit exercise @task.Number for teacher review
+                                </a>
+                            </li>
+                        }
+                    </ol>
+                </details>
+            </section>
+        }
         @if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />

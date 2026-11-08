@@ -95,7 +95,8 @@ public sealed class Grade12PrecalculusRubricTeacherController(Grade12Precalculus
         if (row is null) return NotFound();
         if (!await rubric.MayReviewAsync(actor, row, ct)) return NotFound();
         var lessonCode = await rubric.LessonCodeAsync(row.LessonId, ct);
-        if (lessonCode is null) return NotFound();
+        if (lessonCode is null || Grade12PrecalculusTeacherTaskBank.Find(
+            lessonCode, row.ExerciseNumber) is null) return NotFound();
         return View(new G12PrecalcRubricTeacherPage(
             row, G12PrecalcRubricStorage.Criteria, lessonCode));
     }

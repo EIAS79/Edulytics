@@ -70,7 +70,7 @@ public sealed class Grade12PrecalculusTeacherRubric : Migration
         migrationBuilder.Sql("""
             ALTER TABLE "Grade12PrecalculusTeacherRubrics"
             ADD CONSTRAINT "CK_G12PrecalcRubric_ExerciseNumberRange"
-            CHECK ("ExerciseNumber" BETWEEN 1 AND 105);
+            CHECK ("ExerciseNumber" BETWEEN 1 AND 10000);
             """);
     }
 
