@@ -1,0 +1,14 @@
+# UAE Grade 1 printed unit 6 lesson 2: العد التصاعدي بالعشرات والآحاد للجمع
+
+Arabic student source: Grade 1 Common 2019–2020 local 02-1.pdf, SHA-256 B9E92BD0A3E66A57DF48DA85D569ED95A1CBA2D0F30232DFF79048950C30E4F3, pages PDF 130–135 (printed 459–464). Pages visually inspected using read-only contact-sheet renders. 2025–2026 Arabic term-3 MOE guide confirms 8 printed U6 lessons, but matching current 2025–2026 student teaching pages have not been verified; no parity claim with those unavailable pages. Non-licensed publisher illustrations and text not reproduced.
+
+| Source page | Source element category | Original Edulytics equivalent |
+|---|---|---|
+| PDF 130 | مطبوعة 459 | افتتاح الدرس وهدف العلاقة بين العشرات والآحاد: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+| PDF 131 | مطبوعة 460 | نموذج محسوس وشروح المعلم والأمثلة المحلولة: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+| PDF 132 | مطبوعة 461 | ممارسة موجهة وربط جملة عددية بالمجموعات: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+| PDF 133 | مطبوعة 462 | تطبيقات عددية متدرجة والتحقق من النتائج: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+| PDF 134 | مطبوعة 463 | تطبيقات قصصية وتقييم اختيار العملية: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+| PDF 135 | مطبوعة 464 | واجب منزلي أو تقويم ختامي ومراجعة المفهوم: إضافة عشرات أو آحاد إلى عدد من رقمين عن طريق العد بالقفز عشر خطوات أو خطوة واحدة مع الحفاظ على قيمة كل منزلة | الشرح والنماذج والأنشطة الأصلية وFamily uae.g1.u07.l02.count_on_tens_ones |
+
+Stage A: reviewed existing lesson, compared goals, age-appropriate whole-number ranges, manipulatives, base-ten models, guided examples, story problems, independent/home activities and assessment. Stage B: existing valid identity preserved; authored distinct Arabic instruction, three worked examples, concrete models and exercises, misconception analysis, teacher direction and original exit ticket. Stage C: reused existing exact engine with lesson-scoped family uae.g1.u07.l02.count_on_tens_ones, strict original-parameter independent verifier and targeted test WRITTEN_NOT_RUN; teacher reviews drawings and explanations. No full build, CI or Stage D.
