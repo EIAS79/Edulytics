@@ -88,6 +88,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u04.l05.near_doubles_add",
             "uae.g1.u04.l06.act_out_problem_solving",
             "uae.g1.u04.l07.make_ten_add",
+            "uae.g1.u04.l08.commutative_add",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -910,6 +911,19 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
                 value == right;
+        }
+        if (family == "uae.g1.u04.l08.commutative_add")
+        {
+            var normalized = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("a", out var a) && a is >= 0 and <= 10 &&
+                parameters.TryGetValue("b", out var b) && b is >= 0 and <= 10 &&
+                parameters.TryGetValue("total", out var total) && total == a + b && total <= 20 &&
+                parameters.TryGetValue("mode", out var mode) && mode is 0 or 1 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 3 &&
+                int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
+                value == (mode == 0 ? a : total);
         }
         if (family == "uae.g1.u04.l07.make_ten_add")
         {
@@ -3449,6 +3463,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1ActOut(random),
             "uae.g1.u04.l07.make_ten_add" =>
                 BuildUaeGrade1MakeTenAdd(random),
+            "uae.g1.u04.l08.commutative_add" =>
+                BuildUaeGrade1CommutativeAdd(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4429,6 +4445,24 @@ public sealed class ExactSkillContractQuestionEngine
     }
 
     // Scoped addition-through-ten mechanic uses existing exact engine, not a new engine.
+    // Reuses the exact family engine for addition commutativity; not a new engine.
+    private static ExactProblem BuildUaeGrade1CommutativeAdd(Random random)
+    {
+        const string family = "uae.g1.u04.l08.commutative_add";
+        var a = random.Next(0, 11);
+        var b = random.Next(0, 11);
+        var mode = random.Next(0, 2);
+        var scene = random.Next(0, 4);
+        var total = a + b;
+        var prompt = mode == 0
+            ? $"عند تبديل ترتيب الحدين في الجمع يبقى المجموع ثابتًا. أكمل {a} + {b} = {b} + ؟. اكتب العدد الناقص."
+            : $"مثّل مجموعتين من {a} و{b} قطع، ثم بدّل ترتيبهما: {b} + {a} = ؟. ما المجموع بعد التبديل؟";
+        return Problem(family, prompt,
+            "أغير ترتيب الحدين فقط؛ لا أغير العددين ولا أضيف عناصر إلى الكل.",
+            AssessmentItemType.Numeric,
+            ("a", a), ("b", b), ("total", total), ("mode", mode), ("scene", scene));
+    }
+
     private static ExactProblem BuildUaeGrade1MakeTenAdd(Random random)
     {
         const string family = "uae.g1.u04.l07.make_ten_add";
@@ -6847,6 +6881,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["mode"] == 2 ? p["b"] : p["total"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u04.l07.make_ten_add" =>
                 (p["a"] + p["b"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u04.l08.commutative_add" =>
+                (p["mode"] == 0 ? p["a"] : p["total"]).ToString(CultureInfo.InvariantCulture),
             "uae.g1.u03.l01.subtraction_stories" or "uae.g1.u03.l02.model_subtraction" or "uae.g1.u03.l03.subtraction_number_sentences" or "uae.g1.u03.l04.subtract_zero_or_all" or "uae.g1.u03.l05.vertical_subtraction" or "uae.g1.u03.l07.compare_groups" or "uae.g1.u03.l08.subtract_4_5" or "uae.g1.u03.l09.subtract_6_7" or "uae.g1.u03.l10.subtract_8" or "uae.g1.u03.l11.subtract_9" or "uae.g1.u03.l12.subtract_10" =>
                 (p["whole"] - p["removed"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
