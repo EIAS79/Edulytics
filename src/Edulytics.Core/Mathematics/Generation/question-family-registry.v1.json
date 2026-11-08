@@ -31672,6 +31672,24 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u03.l08.subtract_4_5",
+      "version": 1,
+      "skillId": "number.whole.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-exact-subtract-0-through-whole-from-fixed-4-or-5",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

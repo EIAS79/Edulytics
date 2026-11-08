@@ -11003,6 +11003,28 @@
         "commonMistake": "جمع المجموعتين بدل إيجاد الفرق أو الخلط بين الفرق والجزء المزال.",
         "summary": "العدد الأكبر − العدد الأصغر = الفرق."
       }
+    },
+    {
+      "id": "uae-g1-u2-l8-arabic-subtract-4-5-2025",
+      "titlePatterns": [
+        "^الطرح من ٤ و٥$",
+        "^Subtract from 4 and 5$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:08$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "EXACT_TAKE_AWAY_FROM_FOUR_OR_FIVE_ALLOW_ZERO_AND_ALL",
+      "families": [
+        "uae.g1.u03.l08.subtract_4_5"
+      ],
+      "content": {
+        "concept": "أشطب بعضًا من ٤ أو ٥ أشياء وأحسب الباقي.",
+        "workedExample": "٥ − ٣ = ٢ و٤ − ٠ = ٤.",
+        "solution": "أمثل الكل وأشطب المطروح ثم أعد الباقي.",
+        "commonMistake": "عد الأشياء المشطوبة بدل الباقية.",
+        "summary": "٤ أو ٥ ناقص جزء منهما يساوي المتبقي."
+      }
     }
   ]
 }

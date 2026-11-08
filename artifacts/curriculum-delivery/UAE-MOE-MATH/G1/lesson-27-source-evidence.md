@@ -1,0 +1,1 @@
+UAE G1 lesson 27 — الطرح من ٤ و٥. Verified 2025–2026 Arabic student book PDF 238–243, print 153–158. Source element mapping lesson-27-atomic-coverage.md. Original Arabic content, targeted subtraction 4 or 5 family uae.g1.u03.l08.subtract_4_5; tests WRITTEN_NOT_RUN. Teacher evaluates diagrams. Status READY_FOR_STAGE_D, no Stage D/CI.
