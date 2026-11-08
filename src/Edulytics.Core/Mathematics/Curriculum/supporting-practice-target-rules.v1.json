@@ -11091,6 +11091,28 @@
         "commonMistake": "عدم عد القطع المتبقية بدقة.",
         "summary": "الكل ٩، أطرح جزءًا وأجد الباقي."
       }
+    },
+    {
+      "id": "uae-g1-u2-l12-arabic-subtract-ten-2025",
+      "titlePatterns": [
+        "^الطرح من ١٠$",
+        "^Subtract from 10$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L1:COMMON:03:12$"
+      ],
+      "skillId": "number.whole.subtract",
+      "mechanic": "FIXED_MINUEND_TEN_SUBTRACT_ZERO_THROUGH_TEN",
+      "families": [
+        "uae.g1.u03.l12.subtract_10"
+      ],
+      "content": {
+        "concept": "طرح أي عدد حتى ١٠ من عشر قطع.",
+        "workedExample": "١٠ − ٧ = ٣ و١٠ − ٠ = ١٠.",
+        "solution": "أشطب العدد المطروح من عشر قطع وأعد الباقي.",
+        "commonMistake": "عد العناصر المشطوبة بدل الباقية أو اعتبار ١٠ − ٠ = ٠.",
+        "summary": "أطرح من ١٠ ثم أتحقق بجمع الناتج والمطروح."
+      }
     }
   ]
 }
