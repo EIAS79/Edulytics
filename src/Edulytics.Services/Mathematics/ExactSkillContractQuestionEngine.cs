@@ -125,6 +125,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u08.l02.record_table",
             "uae.g1.u08.l03.make_picture_graph",
             "uae.g1.u08.l04.read_picture_graph",
+            "uae.g1.u08.l05.make_bar_graph",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -3669,6 +3670,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeG1Final29(76, family, random),
             "uae.g1.u08.l04.read_picture_graph" =>
                 BuildUaeG1Final29(77, family, random),
+            "uae.g1.u08.l05.make_bar_graph" =>
+                BuildUaeG1Final29(78, family, random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -7815,6 +7818,8 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u08.l03.make_picture_graph" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "uae.g1.u08.l04.read_picture_graph" =>
+                p["result"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u08.l05.make_bar_graph" =>
                 p["result"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
