@@ -31346,6 +31346,24 @@
       "productionRouting": false,
       "lessonPracticeRouting": true,
       "sourceLessonSkillId": "US-CCSS-MATH:G12:U12:L03"
+    },
+    {
+      "id": "uae.g1.u02.l01.addition_stories",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-grade1-add-two-story-groups-total-at-most-10-verified-by-parameters",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

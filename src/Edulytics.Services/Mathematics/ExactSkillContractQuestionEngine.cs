@@ -56,6 +56,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u01.l04.read_write_9_10",
             "uae.g1.u01.l05.read_write_11_15",
             "uae.g1.u01.l06.read_write_16_20",
+            "uae.g1.u02.l01.addition_stories",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -838,6 +839,18 @@ public sealed class ExactSkillContractQuestionEngine
                 scene is >= 0 and <= 9 &&
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var response) &&
                 response == count;
+        }
+        if (family == "uae.g1.u02.l01.addition_stories")
+        {
+            var normalizedAnswer = new string(answer.Trim().Select(c =>
+                c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
+                c is >= '۰' and <= '۹' ? (char)('0' + c - '۰') : c).ToArray());
+            return parameters.TryGetValue("left", out var left) && left is >= 1 and <= 7 &&
+                parameters.TryGetValue("right", out var right) && right is >= 1 and <= 4 &&
+                left + right <= 10 &&
+                parameters.TryGetValue("scene", out var scene) && scene is >= 0 and <= 5 &&
+                int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value) &&
+                value == left + right;
         }
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
@@ -3180,6 +3193,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1Count(family, random),
             "uae.g1.u01.l06.read_write_16_20" =>
                 BuildUaeGrade1Count(family, random),
+            "uae.g1.u02.l01.addition_stories" =>
+                BuildUaeGrade1AdditionStory(random),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4080,6 +4095,22 @@ public sealed class ExactSkillContractQuestionEngine
             "عدّ كل نقطة مرة واحدة؛ وعند وجود إطارين اجمع عشرة الإطار الأول وآحاد الإطار الثاني. الإطارات الفارغة تمثل صفرًا.",
             AssessmentItemType.Numeric,
             ("count", count), ("scene", scene));
+    }
+
+    private static ExactProblem BuildUaeGrade1AdditionStory(Random random)
+    {
+        const string family = "uae.g1.u02.l01.addition_stories";
+        var left = random.Next(1, 8);
+        var right = random.Next(1, Math.Min(4, 10 - left) + 1);
+        var scene = random.Next(0, 6);
+        string[] objects = ["كرات", "مكعبات", "أزهار", "أقلام", "ملصقات", "حبات خرز"];
+        var first = new string('●', left);
+        var second = new string('●', right);
+        return Problem(family,
+            $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟",
+            "مثل المجموعتين في شكلين مختلفين، ضمّهما، ثم عدّ جميع العناصر مرة واحدة.",
+            AssessmentItemType.Numeric,
+            ("left", left), ("right", right), ("scene", scene));
     }
 
     private static ExactProblem BuildG1L01Counting(Random random, int scale)
@@ -6272,6 +6303,8 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var uaeFamily when uaeFamily.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal) =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
+            "uae.g1.u02.l01.addition_stories" =>
+                (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
