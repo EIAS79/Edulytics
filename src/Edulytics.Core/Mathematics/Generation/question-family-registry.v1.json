@@ -31382,6 +31382,24 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u02.l03.addition_number_sentences",
+      "version": 1,
+      "skillId": "number.whole.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "numeric",
+      "verificationPolicy": "uae-g1-addition-number-sentence-partial-expression-equivalent",
+      "representations": [
+        "symbolic",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

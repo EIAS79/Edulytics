@@ -58,6 +58,7 @@ public sealed class ExactSkillContractQuestionEngine
             "uae.g1.u01.l06.read_write_16_20",
             "uae.g1.u02.l01.addition_stories",
             "uae.g1.u02.l02.model_addition",
+            "uae.g1.u02.l03.addition_number_sentences",
             "usccss.g1.u01.l01.count_collection_to20",
             "usccss.g1.u01.l01.add_dot_cubes_to10",
             "number.whole.add.direct",
@@ -841,7 +842,7 @@ public sealed class ExactSkillContractQuestionEngine
                 int.TryParse(normalizedAnswer, NumberStyles.Integer, CultureInfo.InvariantCulture, out var response) &&
                 response == count;
         }
-        if (family is "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition")
+        if (family is "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences")
         {
             var normalizedAnswer = new string(answer.Trim().Select(c =>
                 c is >= '٠' and <= '٩' ? (char)('0' + c - '٠') :
@@ -3198,6 +3199,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildUaeGrade1AdditionStory(random, family),
             "uae.g1.u02.l02.model_addition" =>
                 BuildUaeGrade1AdditionStory(random, family),
+            "uae.g1.u02.l03.addition_number_sentences" =>
+                BuildUaeGrade1AdditionStory(random, family),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 BuildG1L01Counting(random, scale),
             "usccss.g1.u01.l01.add_dot_cubes_to10" =>
@@ -4108,9 +4111,14 @@ public sealed class ExactSkillContractQuestionEngine
         string[] objects = ["كرات", "مكعبات", "أزهار", "أقلام", "ملصقات", "حبات خرز"];
         var first = new string('●', left);
         var second = new string('●', right);
-        var prompt = family == "uae.g1.u02.l02.model_addition"
-            ? $"أكمل مخطط الجزأين والكل: الجزء الأول {left}: {first} | الجزء الثاني {right}: {second} | الكل: ؟"
-            : $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟";
+        var prompt = family switch
+        {
+            "uae.g1.u02.l02.model_addition" =>
+                $"أكمل مخطط الجزأين والكل: الجزء الأول {left}: {first} | الجزء الثاني {right}: {second} | الكل: ؟",
+            "uae.g1.u02.l03.addition_number_sentences" =>
+                $"اكتب المجموع لإكمال جملة الجمع: {left} + {right} = ؟. تحقق بالنقاط: {first} | {second}",
+            _ => $"لدي {left} {objects[scene]} ثم أضفت {right} أخرى. الجزء الأول: {first} | الجزء الثاني: {second}. كم العدد الكلي؟"
+        };
         return Problem(family,
             prompt,
             "مثل المجموعتين في شكلين مختلفين، ضمّهما، ثم عدّ جميع العناصر مرة واحدة.",
@@ -6308,7 +6316,7 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var uaeFamily when uaeFamily.StartsWith("uae.g1.u01.l0", StringComparison.Ordinal) =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
-            "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" =>
+            "uae.g1.u02.l01.addition_stories" or "uae.g1.u02.l02.model_addition" or "uae.g1.u02.l03.addition_number_sentences" =>
                 (p["left"] + p["right"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g1.u01.l01.count_collection_to20" =>
                 p["count"].ToString(CultureInfo.InvariantCulture),
