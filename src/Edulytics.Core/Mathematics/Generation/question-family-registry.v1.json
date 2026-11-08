@@ -32152,6 +32152,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g1.u06.l04.count_tens_fils",
+      "version": 1,
+      "skillId": "supporting.sequences.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "uae-g1-unit5-source-bounded-exact-parameter-recompute",
+      "representations": [
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
