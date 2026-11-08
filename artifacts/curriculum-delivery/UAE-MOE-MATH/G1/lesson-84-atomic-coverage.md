@@ -1,0 +1,18 @@
+# Source comparison — UAE G1 lesson 84: الوقت بالساعة: الساعة التناظرية
+
+Selected locally available Arabic Grade 1 Student Book: 03.pdf, printed 2019–2020, SHA-256 2C3E5D47A2AD849CE0109641AA757A92F29D417C25B1EE99FE3851814679A1E1.
+UAE source printed unit 8, lesson 5, PDF pages 111–116, book printed pages 595–600.
+The source is Arabic and physically inspected in read-only local contact sheets, and topic order reconciled with the printed index. No claim that these are 2025–2026/2026–2027 student exercise pages, and no copied copyrighted text/images.
+
+| PDF page | Printed page | Source component mapped | Original Edulytics equivalent |
+|---|---|---|---|
+| 111 | 595 | عنوان المهارة، وضعية استكشاف ونموذج بصري | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+| 112 | 596 | مثال محلول وتدرج التعليم والتسمية الرياضية | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+| 113 | 597 | ممارسة موجهة ورسم أو تمثيل أصلي | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+| 114 | 598 | تدريبات مستقلة وتفسير الكميات أو الأشكال | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+| 115 | 599 | تطبيق سياقي أو مقارنة أو استدلال | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+| 116 | 600 | واجب منزلي أو تقويم ومراجعة المهارة | قراءة ساعة بعقرب دقائق يشير إلى ١٢ وعقرب ساعات يشير إلى ساعة صحيحة من ١ إلى ١٢. |
+
+**A:** Existing lesson retained and compared against source lesson title, objective, visual model, worked reasoning, category/counter/clock/shape representation, application, practice and written home task; older source edition recorded.
+**B:** Original Arabic teaching, three explicit worked examples, original glyph-based visual model, guided and independent practice, misconception, teacher-led open response and authored exit item are present. Open drawings, clock sketches and 3D model construction are graded by teacher, not declared machine-graded.
+**C:** Reused existing exact question engine; one scoped family uae.g1.u09.l05.analog_hour in skill supporting.measurement.practical with parameter validator, numeric generated response and a targeted regression authored WRITTEN_NOT_RUN. No Stage D, full build or CI.
