@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l12",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l13",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 lessons 1–12 sequentially A–B–C closed with local source scope only",
+  "ReviewEvidence": "G3 13 sequential A–B–C lessons, local 2025–2026 student plus older teacher, target edition unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -546,23 +546,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:08",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 8; official Arabic title: جمع الأعداد المكونة من أربعة أرقام",
+      "TitleSourceReference": "2025–2026 UAE G3 Arabic Student unit2 L8 101–106; teacher 2020–2021 guide 101–104",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 8",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp101–106 / PDF 122–127; teacher older guide printed pp101–104",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "97ec36d7a4eacd22b257d8df85703782a91eb4eddf7c705f4fa5ba5069b1e34b",
+      "SourceEdition": "Local Arabic student 2025–2026 verified; teacher 2020–2021 verified; target 2026–2027 UNKNOWN",
+      "SourceRights": "Edulytics first-party authored explanations and arithmetic representations",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "7c1fea3a72afe648eabcb515016d8f4867000be4f57e5c2100ffab4436b6e26a",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L08_ORIGINAL_ARABIC_A_B_C_SHARED_EXACT_ENGINE_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -573,6 +573,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Add Four-Digit Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "جمع الأعداد المكوّنة من أربعة أرقام",
+          "Explanation": "عند جمع عددين من أربعة أرقام نرتب الآحاد والعشرات والمئات والآلاف في أعمدة متقابلة. نبدأ من الآحاد ثم العشرات فالمئات فالآلاف، ونعيد تجميع عشر وحدات من أي منزلة إلى وحدة واحدة في المنزلة الأعلى. قبل الحساب نقدر مجموع الحدين إلى أقرب مئة أو ألف للتحقق من معقولية الناتج. ويمكن كتابة المجموع في صورة مخطط شريطي يمثل الكميتين والكمية الكلية المجهولة. يمكن تغيير ترتيب الحدين للتحقق بخاصية الإبدال.",
+          "KeyConceptsAndRules": "قاعدة الجمع العمودي: لكل منزلة نجمع رقمَي الحدين مع الحمل من المنزلة السابقة. نكتب باقي القسمة على عشرة في المنزلة الحالية وننقل الجزء الأعلى إلى المنزلة التالية. مثال ٤٬٣٧٦ + ١٬٣٦٥ = ٥٬٧٤١؛ آحاد ٦+٥=١١ ننقل عشرة، عشرات ٧+٦+١=١٤ ننقل مئة، مئات ٣+٣+١=٧، آلاف ٤+١=٥. إذا كانت المئات ٩ واحتجنا نقلًا إلى الآلاف نتأكد من صحة التجميع. كل عدد يحتفظ بقيمته حتى لو قرأناه بالصيغة الموسعة.",
+          "WorkedExamples": "مثال ١: ٤٬٣٧٦ + ١٬٣٦٥ = ٥٬٧٤١. نقدر ٤٬٤٠٠ + ١٬٤٠٠ = ٥٬٨٠٠؛ الناتج قريب. مثال ٢: ٣٬٢٩٥ + ٣٬٩٩٩ = ٧٬٢٩٤؛ نعيد الجمع ٣٬٩٩٩ + ٣٬٢٩٥ للحصول على النتيجة نفسها. مثال ٣: ٤٬٠٩١ + ٢٬٢٣٨ = ٦٬٣٢٩: الآحاد ١+٨=٩، العشرات ٩+٣=١٢ نقل إلى المئات، المئات ٠+٢+١=٣، الآلاف ٤+٢=٦. مثال ٤: ٥٬٥٥٥ + ٣٬٥٥٥ = ٩٬١١٠ مع نقل في الآحاد والعشرات والمئات.",
+          "StepByStepSolutions": "١) حدد كل حد جمعي وما الذي تمثله الأعداد في المسألة. ٢) قدّر المجموع إلى أقرب مئة أو ألف. ٣) اكتب الأعداد عموديًا مع محاذاة الآحاد والعشرات والمئات والآلاف. ٤) اجمع الآحاد وانقل عشرة إذا لزم. ٥) اجمع العشرات مع الحمل وانقل مئة إذا لزم. ٦) اجمع المئات مع الحمل وانقل ألفًا إذا لزم. ٧) اجمع الآلاف، ثم تحقق من قرب المجموع من التقدير. ٨) عند المسألة اللفظية، أرفق وحدة العدد وتمثيلًا شريطيًا يوضح الجزء والكل.",
+          "CommonMistakes": "الخطأ: نسيان حمل واحد من ٦+٥ عند ٤٬٣٧٦ + ١٬٣٦٥؛ تصبح العشرات أقل من حقيقتها. الخطأ: محاذاة ٣٠٠ تحت الآحاد في ٤٬٢٩٥ + ٣٠٠؛ يجب وضع ٣ في خانة المئات. الخطأ: كتابة ٩٬٩٩٩ + ١ = ٩٬٩١٠؛ الصحيح ١٠٬٠٠٠ بسبب انتقال كل المنازل. الخطأ: اتخاذ التقدير نتيجة نهائية بدل استخدامه للتحقق فقط. الخطأ: تغيير المجموع عند تبديل ترتيب الحدين، رغم أن الجمع تبديلي.",
+          "QuickSummary": "أجمع أعداد أربعة أرقام بمحاذاة المنازل وإعادة التجميع، ثم أتحقق بالتقدير وخاصية الإبدال. نشاط إغلاق أصلي: أوجد ٢٬٧٤٨ + ٣٬١٦٧ واكتب تقديرًا إلى أقرب مئة، ثم تحقق بترتيب الحدين المعكوس. المفتاح: المجموع ٥٬٩١٥؛ التقدير ٢٬٧٠٠ + ٣٬٢٠٠ = ٥٬٩٠٠ تقريبًا."
         }
       ]
     },
