@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l17",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l18",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 sequential 17/109 A-B-C source scoped; selected Arabic student 2025–2026, target 2026–2027 parity unknown.",
+  "ReviewEvidence": "G3 sequential 18/109 locally scoped A–B–C, no 2026–2027 exact source parity claim.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -761,23 +761,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 3 / Lesson 4; official Arabic title: نشاط عملي: الطرح مع إعادة التجميع",
+      "TitleSourceReference": "Locally confirmed Arabic Grade3 2025–2026 student Unit3 L04 pp147–152 and older teacher 2020–2021 pp147–152",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U03:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 3 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pages147–152, PDF168–173",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "b0503e14627baf1cd046308ae23c822500440d7125cdc8cfba5368528988430d",
+      "SourceEdition": "Student selected 2025–2026, teacher supplementary 2020–2021; 2026–2027 edition exact parity unknown",
+      "SourceRights": "First-party textual/illustrative base-ten-block descriptions, publisher illustrations not copied",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "1e895582a5d1598aa0808ffbe63bea11ce6739ee4c8358c7c98eb2c9e206331f",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U03_L04_ARABIC_SOURCE_SCOPED_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -788,6 +788,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Subtract with Regrouping: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: الطرح مع إعادة التجميع",
+          "Explanation": "نمثل الأعداد باستخدام مكعبات القيمة المكانية: لوح مئة، قضيب عشرة، ومكعب آحاد. إذا كان لدينا آحاد أقل من التي نريد طرحها، نفكّ عشرة واحدة إلى عشرة آحاد دون أن تتغير القيمة الكلية. وإذا كانت العشرات أقل من العشرات المطروحة، نفكّ مئة واحدة إلى عشر عشرات. هذا يسمى إعادة التجميع، وهو تبديل شكل العدد لا تغييره. يساعد رسم النموذج قبل الطرح على فهم السبب الذي يجعل الاقتراض ممكنًا، ثم نتحقق من الفرق بالجمع.",
+          "KeyConceptsAndRules": "١ عشرة = ١٠ آحاد، و١ مئة = ١٠ عشرات. إذا كانت آحاد العدد الأول أقل من آحاد المطروح، ننقص عشرة واحدة ونضيف ١٠ إلى الآحاد؛ وإذا كانت العشرات غير كافية ننقص مئة ونضيف ١٠ إلى العشرات. القاعدة: القيمة الإجمالية قبل وبعد إعادة التجميع متساوية. في ٤٣٢ − ٣١٥: نبدّل عشرة من ٣ عشرات إلى ١٠ آحاد، فيصير لدينا ٢ عشرات و١٢ آحاد، ثم نطرح. للتحقق: الفرق + المطروح = العدد الأصلي.",
+          "WorkedExamples": "مثال ١: ٤٣٢ − ٣١٥. في النموذج ٤ ألواح مئات، ٣ قضبان عشرات، ٢ آحاد. نبدّل قضيب عشرات بعشرة آحاد، فتصبح ١٢ آحادًا و٢ عشرتين. نزيل ٥ آحاد فتبقى ٧، ونزيل عشرة من العشرتين فتبقى عشرة واحدة، ثم نزيل ٣ مئات من ٤ فتبقى مئة واحدة؛ الناتج ١١٧، والتحقق ١١٧ + ٣١٥ = ٤٣٢. مثال ٢: ٥٢١ − ٢٧٣. نبدّل عشرة واحدة لنحصل على ١١ آحادًا؛ ١١ − ٣ = ٨. لا تكفي عشرة واحدة لطرح ٧ عشرات؛ نبدّل مئة واحدة إلى ١٠ عشرات ليصبح لدينا ١١ عشرة؛ ١١ − ٧ = ٤ عشرات، والمئات ٤ − ٢ = ٢؛ الناتج ٢٤٨. مثال ٣: ٣٠٤ − ١٢٨: نبدّل مئة إلى ١٠ عشرات ثم عشرة إلى ١٠ آحاد؛ ١٤ − ٨ = ٦، ٩ − ٢ = ٧، ٢ − ١ = ١، الناتج ١٧٦.",
+          "StepByStepSolutions": "١) أمثّل العدد الأول بلوحات المئات وقضبان العشرات ومكعبات الآحاد أو أرسمها بخطوط ومربعات أصلية. ٢) أحدد مقدار الآحاد والعشرات والمئات المطلوب حذفها. ٣) أُعيد تجميع عشرة إلى ١٠ آحاد عندما لا تكفي الآحاد. ٤) أعيد تجميع مئة إلى ١٠ عشرات إذا لم تكفِ العشرات. ٥) أحذف ما يمثّل المطروح من كل منزلة، ثم أعدّ المكعبات الباقية. ٦) أكتب جملة الطرح الرأسية وأتحقق بإعادة الجمع.",
+          "CommonMistakes": "إزالة عشرة من العشرات دون إضافة عشرة آحاد إلى النموذج، وبذلك تتغير قيمة العدد. نسيان أن العشرات صارت أقل بواحدة بعد إعادة التجميع. محاولة طرح ٧ آحاد من ٢ دون تفكيك عشرة أو الاستعانة بمكعبات أخرى. اعتبار إعادة التجميع جمعًا جديدًا يزيد القيمة الكلية، بينما لا تتغير. الاكتفاء بالناتج دون التحقق بالعملية العكسية أو تفسير النموذج.",
+          "QuickSummary": "أبدّل عشرة إلى ١٠ آحاد، أو مئة إلى ١٠ عشرات عند الحاجة، ثم أطرح بالمكعبات وأتحقق بالجمع. نشاط إغلاق أصلي: مثّل ٦٤٣ − ٢١٨ بمئات وعشرات وآحاد، واكتب عملية إعادة التجميع والفرق. الإجابة: ٦٤٣ = ٦ مئات + ٣ عشرات + ١٣ آحاد بعد فك عشرة؛ نطرح ٨ آحاد فتبقى ٥، ثم ١ عشرة فتبقى ٢، ثم ٢ مئة فتبقى ٤؛ الناتج ٤٢٥، والتحقق ٤٢٥ + ٢١٨ = ٦٤٣. يقوّم المعلم صحة التبديل والرسم وشرح الحفاظ على القيمة."
         }
       ]
     },
