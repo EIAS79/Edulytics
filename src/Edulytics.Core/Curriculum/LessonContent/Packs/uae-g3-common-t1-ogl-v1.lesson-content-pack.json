@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l14",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l15",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 1 5/5 and Unit 2 9/9 source-scoped A–B–C closed, first 14/109 sequential. Selected student 2025–2026, target 2026–2027 parity UNKNOWN; no Stage D/CI executed.",
+  "ReviewEvidence": "G3 A–B–C sequential through lesson15, source-scoped locally confirmed 2025–2026, target edition 2026–2027 unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -632,23 +632,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 3 / Lesson 1; official Arabic title: الطرح ذهنياً",
+      "TitleSourceReference": "Arabic student Common 2025–2026 Term 1 Grade3 Unit3 Lesson1 pp127–132; older teacher 2020–2021 pp127–130",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U03:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 3 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed 127–132; PDF 148–153",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "3eefb06c80e6ac4eee3f2a77364818624a93b61ad8fbbe0407eaff775178e3bd",
+      "SourceEdition": "Selected locally confirmed 2025–2026 student / 2020–2021 teacher reference; 2026–2027 parity UNKNOWN",
+      "SourceRights": "First-party Edulytics teaching examples and descriptions, local source only for goals; no publisher illustrations/text copied.",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "6bc76d2bfa34d831081f4b7b63f61235272b2b601e820428ccb2c19c4c5f5224",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U03_L01_ARABIC_SOURCE_SCOPED_A_B_C_READY_FOR_STAGE_D__TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -659,6 +659,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Mental Subtraction: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الطرح ذهنيًا",
+          "Explanation": "الطرح الذهني يساعدنا على معرفة الفرق دون كتابة خوارزمية مطولة. أفكك العدد المطروح إلى عشرات وآحاد: لطرح ٤٧ من ١٢٤ أطرح أولًا ٤٠ فيتبقى ٨٤، ثم أطرح ٧ فتبقى ٧٧. ويمكن تسهيل الطرح من ٩ أو ٩٩ باستعمال التعويض: ٣٢٥ − ٩٩ = ٣٢٥ − ١٠٠ + ١ = ٢٢٦. الطرح عكس الجمع؛ أتحقق دائمًا بأن الفرق + المطروح = العدد الأصلي. يوجد أيضًا عددان خاصان: طرح صفر من عدد لا يغيّره، وطرح العدد من نفسه يعطي صفرًا.",
+          "KeyConceptsAndRules": "لتطرح ذهنيًا أ − (عشرات + آحاد) أبدأ بالعشرات ثم الآحاد، مع الحفاظ على القيمة. قاعدة التعويض: أ − (١٠٠ − ١) = أ − ١٠٠ + ١، وأ − (١٠ − ١) = أ − ١٠ + ١. تجزئة العدد الأصغر مفيدة في مثال ٤٢ − ١٨: أطرح ١٠ ثم ٨؛ الناتج ٢٤. لا يجوز تبديل المطروح والعدد الذي نطرح منه: ١٢٤ − ٤٧ لا يساوي ٤٧ − ١٢٤. إذا تساوى العددان ففرقهما صفر؛ إذا طرحنا صفرًا يبقى العدد كما هو.",
+          "WorkedExamples": "مثال ١: ١٢٤ − ٤٧: ١٢٤ − ٤٠ = ٨٤، ثم ٨٤ − ٧ = ٧٧. نتحقق: ٧٧ + ٤٧ = ١٢٤. مثال ٢: ٢٨٠ − ٩٩ = ٢٨٠ − ١٠٠ + ١ = ١٨١، وهو نفس ناتج الطرح المباشر. مثال ٣: ٥٦٣ − ٢١٨: ٥٦٣ − ٢٠٠ = ٣٦٣؛ ٣٦٣ − ١٠ = ٣٥٣؛ ٣٥٣ − ٨ = ٣٤٥. مثال ٤: ٨٨٨ − ٠ = ٨٨٨، و٨٨٨ − ٨٨٨ = ٠. مخطط خط أعداد أصلي: ١٢٤ ←(−٤٠) ٨٤ ←(−٧) ٧٧.",
+          "StepByStepSolutions": "١) حدد العدد الأكبر والمطروح والفرق المطلوب، مع التحقق من معنى المسألة. ٢) افصل المطروح إلى عشرات وآحاد، أو مئات وعشرات وآحاد للأعداد الأكبر. ٣) اطرح قيمة المكان الأعلى أولًا ثم الأدنى، وأبقِ ناتج كل خطوة واضحًا. ٤) إذا كان المطروح ٩ أو ٩٩، اطرح ١٠ أو ١٠٠ ثم أعِد ١. ٥) تحقق بإعادة جمع المطروح مع الفرق أو باستخدام خط أعداد. ٦) اكتب وحدة الإجابة عند مسائل المال أو القياسات.",
+          "CommonMistakes": "الخطأ: ٢٠٠ − ٩٩ = ١٠٠ لأن ٩٩ قريبة من ١٠٠؛ الصحيح ١٠١ بعد إضافة ١ تعويضًا. الخطأ: ١٢٤ − ٤٧ = ٨٧ بعد طرح ٤٠ فقط؛ لم يُطرح رقم الآحاد ٧، والصحيح ٧٧. الخطأ: طرح ٠ يؤدي إلى ٠؛ الصحيح بقاء العدد. الخطأ: تبديل العددين لأن الطرح إبدالي؛ الطرح ليس عملية إبدالية. الخطأ: استخدام التعويض بإضافة واحد إلى المطروح بدل إرجاعه إلى الناتج.",
+          "QuickSummary": "لأطرح ذهنيًا أفكك المطروح إلى عشرات وآحاد، أو أستخدم التعويض مع ٩ و٩٩ وأتحقق بالجمع. نشاط إغلاق أصلي: أحسب ٤٣٢ − ٢٩ و٥٠٤ − ٩٩ و٣٧٠ − ٠؛ ثم أشرح طريقتي وأتحقق من إحدى النتائج بالجمع. الإجابات الإرشادية: ٤٠٣، ٤٠٥، ٣٧٠. توجيه المعلم: تفكيك ٢٩ إلى ٣٠ − ١ والتأكد من حفظ الفرق؛ التصحيح الشفهي حسب تبرير المتعلم."
         }
       ]
     },

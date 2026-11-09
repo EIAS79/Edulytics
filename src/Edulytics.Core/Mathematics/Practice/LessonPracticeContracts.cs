@@ -7284,6 +7284,13 @@ public static class LessonPracticeContractRegistry
             "UAE_G3_2025_2026_ARABIC_STUDENT_PP107_112_2026_2027_PARITY_UNKNOWN_STAGE_D_NOT_RUN",
             "READY_VERIFIED",
             Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:01",
+            "number.subtraction.mental_strategies",
+            "SPLIT_TENS_ONES_AND_COMPENSATE_99",
+            ["uae.g2.u07.l01.decompose_hundred_subtract", "uae.g2.u07.l03.subtract_ten_hundred_mental", "uae.g3.u03.l01.mental_split_subtract"],
+            "UAE_G3_2025_2026_STUDENT_PP127_132_2026_2027_SOURCE_PARITY_UNKNOWN_STAGE_D_PENDING",
+            "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

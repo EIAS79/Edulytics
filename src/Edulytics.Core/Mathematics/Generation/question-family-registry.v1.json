@@ -35111,6 +35111,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u03.l01.mental_split_subtract",
+      "version": 1,
+      "skillId": "number.subtraction.mental_strategies",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G3_U03_L01_MENTAL_SPLIT_COMPENSATION_LOCAL_ARABIC_2025_2026_STAGE_D_NOT_RUN",
+      "representations": [
+        "number_line",
+        "decomposition",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
