@@ -22,8 +22,8 @@ const g1Critical=[
 ];
 const expectedOld={
   'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e'],
-  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','dc404cd775a68e6b7231eb1031a61001773cb815'],
-  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0d5cd3d3f294decd4d36d158563606b3f4708823']
+  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','ea6989494b3190676b7343e29da659bb3bf07afe'],
+  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','db9a3f92f18bf7b0b14c9448ddd3e62657d54f8d']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
   assert.equal(git('merge-base','--is-ancestor',g1Proof,'HEAD'),'');
@@ -57,9 +57,9 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   assert.equal(git('rev-parse','origin/main:'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
-    'dc404cd775a68e6b7231eb1031a61001773cb815');
+    'ea6989494b3190676b7343e29da659bb3bf07afe');
   assert.equal(git('diff','--numstat','origin/main','HEAD','--',engine),
-    '1769\t0\t'+engine);
+    '1770\t0\t'+engine);
   const delta=git('diff','--unified=0','origin/main','HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||

@@ -239,7 +239,7 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
  const expected=new Map([
   ['fractions.divide_whole_numbers',5],
   ['geometry.area',5],
-  ['geometry.area_tiling',43],
+  ['geometry.area_tiling',44],
   ['geometry.similarity.scale_factor',8]
  ]);
  for(const [skillId,count] of expected){
