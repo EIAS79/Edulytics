@@ -34,7 +34,8 @@
             : (Guid?)null;
     var isUaeGrade1Arabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
-        (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:01:", StringComparison.Ordinal) || Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:02:", StringComparison.Ordinal));
+        (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:01:", StringComparison.Ordinal) || Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:02:", StringComparison.Ordinal) ||
+         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:03:", StringComparison.Ordinal));
     var lessonNavTitle = isUaeGrade1Arabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaeGrade1Arabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaeGrade1Arabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
