@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l24",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l25",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G3 source-scoped A-B-C lessons1–24 complete, Stage D not run.",
+  "ReviewEvidence": "UAE G3 lessons 1–25 A–B–C source-scoped sequentially; selected 2025–2026 Arabic student and older teacher; Stage D/CI NOT_RUN, target 2026–2027 parity unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1062,23 +1062,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 4 / Lesson 4; official Arabic title: المصفوفات والضرب",
+      "TitleSourceReference": "UAE G3 Common Arabic student T1 2025–2026 pp205–210; older 2020–2021 teacher guide pp207–210; 2026–2027 parity unverified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U04:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 4 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed pp205–210, PDF pp226–231; locally checked older teacher pp207–210",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "99371b8ce03fbee3c79d6485d10dc1938514bee0c16fb6e4fe6b7cfadf4dc6e7",
+      "SourceEdition": "2025–2026 locally verified Arabic student; 2020–2021 teacher supplemental; target 2026–2027 UNKNOWN",
+      "SourceRights": "Only skill/representation goals derived from source; all learner-facing narrative, points diagram and cooldown independently authored by Edulytics",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "99d8545bb8311772315979e4f65106c05732ed31fcb1f64c15f27e4c872994d2",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U04_L04_ARABIC_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1089,6 +1089,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Arrays and Multiplication: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المصفوفات والضرب",
+          "Explanation": "المصفوفة ترتيب منتظم للأشياء في صفوف أفقية وأعمدة رأسية. الصفوف متساوية في عدد العناصر، والأعمدة كذلك. لحساب عدد العناصر كلها نعد الصفوف ونحدد العناصر في كل صف، ثم نضرب عدد الصفوف في عدد العناصر في الصف. ويمكن أن نمثل النتيجة بجمع متكرر. إذا أدرنا المصفوفة ربع دورة، يتبادل عدد الصفوف والأعمدة لكن يظل العدد الكلي نفسه؛ وهذا تمثيل بصري لخاصية الإبدال في الضرب. يمكن استخدام مصفوفات النقاط والمربعات لتمثيل مجموعات متساوية في مواقف من الحياة.",
+          "KeyConceptsAndRules": "عدد عناصر المصفوفة = عدد الصفوف × عدد العناصر في كل صف. في ٣ صفوف و٤ أعمدة يوجد ٣ × ٤ = ١٢ عنصرًا؛ الجمع المقابل ٤ + ٤ + ٤ = ١٢. وعند تدويرها يوجد ٤ صفوف و٣ أعمدة: ٤ × ٣ = ١٢ و٣ + ٣ + ٣ + ٣ = ١٢. خاصية الإبدال: أ × ب = ب × أ. إذا عرفت الناتج وأحد العاملين، يمكنني تحديد العامل الناقص عن طريق العد المتساوي أو القسمة عند التمكن منها، مثل ٤ × □ = ٢٠ فيكون □ = ٥. ظهور صف واحد لا يمنع كتابة جملة ضرب.",
+          "WorkedExamples": "المثال ١: تمثيل نصي أصلي: ● ● ● ● / ● ● ● ● / ● ● ● ●؛ المصفوفة ٣ صفوف و٤ أعمدة؛ ٤ + ٤ + ٤ = ١٢ و٣ × ٤ = ١٢. المثال ٢: شبكة ٢ صف × ٥ أعمدة؛ عدد المربعات ١٠. ويمكن تدويرها إلى ٥ صفوف × عمودين فيظل الناتج ١٠. المثال ٣: في مكتبة ٦ رفوف عليها ٣ كتب في كل رف، في المجموع ٦ × ٣ = ١٨ كتابًا. المثال ٤: المصفوفة ٤ صفوف وفيها ٢٨ نقطة، إذًا في كل صف ٧ نقاط لأن ٤ × ٧ = ٢٨.",
+          "StepByStepSolutions": "١) أميز الصفوف الأفقية والأعمدة الرأسية في نموذج المصفوفة. ٢) أعد الصفوف وأعد العناصر في صف واحد. ٣) أكتب جمعًا متكررًا بعدد الصفوف. ٤) أكتب جملة الضرب وأحسب الناتج. ٥) أبدل العاملين أو أدير المصفوفة لأرى أن العدد الكلي لا يتغير. ٦) إذا كانت خانة أحد العاملين مجهولة، أحدد العدد الذي يتكرر ليعطي الناتج ثم أتحقق بالضرب. ٧) في المسائل اللفظية أكتب الوحدة في الإجابة.",
+          "CommonMistakes": "خطأ: اعتبار ٣ صفوف فيها ٤ عناصر يساوي ٣ + ٤ = ٧؛ الصحيح ٣ × ٤ = ١٢. خطأ: الاعتقاد أن دوران المصفوفة يضاعف العناصر؛ الخاصية تبدّل العاملين فقط. خطأ: عكس عدد الصفوف في جملة الجمع المتكرر؛ إن كانت ٤ عناصر في كل من ٣ صفوف فنجمع ٤ ثلاث مرات. خطأ: عند ٦ × □ = ٢٤ كتابة ٢٤ في الخانة؛ العامل المفقود هو ٤. خطأ: رسم صفوف بأعداد مختلفة وتسميتها مصفوفة منتظمة؛ ينبغي تساوي طول الصفوف.",
+          "QuickSummary": "أقرأ عدد الصفوف والأعمدة وأحوّل المصفوفة إلى جمع متكرر وجملة ضرب، وأستعمل الإبدال لإنتاج جملة ثانية بنفس الناتج. نشاط إغلاق أصلي من Edulytics: ارسم ٣ صفوف في كل منها ٥ نقاط؛ اكتب ٥ + ٥ + ٥ ثم ٣ × ٥، وبعد تدوير النموذج اكتب جملة الإبدال. أكمل ٤ × □ = ٢٨. الإجابات: ١٥، ٥ × ٣ = ١٥، العامل الناقص ٧. يراجع المعلم الرسم وتفسير الإبدال."
         }
       ]
     },

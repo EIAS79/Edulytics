@@ -35207,6 +35207,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u04.l04.find_missing_array_factor",
+      "version": 1,
+      "skillId": "number.multiplication.array_factors",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "UAE-G3-U04-L04-SELECTED-2025-2026-AR-STAGE-D-NOT-RUN",
+      "representations": [
+        "dot_array",
+        "grid",
+        "missing_factor_equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
