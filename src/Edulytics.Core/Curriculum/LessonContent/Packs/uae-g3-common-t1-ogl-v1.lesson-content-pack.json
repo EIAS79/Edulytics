@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l04",
+  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l05",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 A–B–C sequential closed through ordinal 37 (local source 2025–2026; Stage D NOT_RUN)",
+  "ReviewEvidence": "G3 A–B–C sequential closed through ordinal 38 (local source 2025–2026; Stage D NOT_RUN)",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1621,23 +1621,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 5; official Arabic title: القسمة على 5",
+      "TitleSourceReference": "Grade 3 Arabic student 2025–2026 pp313–318, teacher 2020–2021 corresponding lesson",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed 313–318, PDF 334–339",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "2961f8b6b16410a3e896754610713c53aad20cdedc278bf0f891a2b8c2f1ebb1",
+      "SourceEdition": "2025–2026 student local + older 2020–2021 teacher, target 2026–2027 UNKNOWN",
+      "SourceRights": "Independent authored Edulytics Arabic text; local PDF for educational source comparison only",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "3b27d771c348c16fa26f6ab5913251383f1f89785aa46625c404c8de46a2676a",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U06_L05_ARABIC_A_B_C_SOURCE_SCOPED_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1648,6 +1648,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Divide by 5: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القسمة على ٥",
+          "Explanation": "أقسم عددًا على ٥ عندما أوزع الكمية بالتساوي على خمس مجموعات أو أبحث عن عدد المجموعات التي تضم كل منها خمس قطع. يمكنني تكوين مجموعات متساوية بقطع العد، أو طرح العدد ٥ تكرارًا حتى أصل إلى صفر، أو استخدام حقيقة ضرب معروفة. العلاقة العكسية تجعل حساب ٤٠÷٥ سهلًا إذا عرفت أن ٥×٨=٤٠.",
+          "KeyConceptsAndRules": "في جملة ٣٥÷٥=٧، الرقم ٣٥ هو المقسوم، و٥ المقسوم عليه، و٧ ناتج القسمة. للتحقق نكتب ٧×٥=٣٥. القسمة التامة على ٥ للأعداد الصحيحة تنطبق عندما ينتهي العدد بـ٠ أو ٥؛ ولكن لا بد من مراعاة نطاق النتائج المقصودة في جدول حقائق الضرب. يمكن استعمال الطرح المتكرر: ٢٠،١٥،١٠،٥،٠؛ أربع مرات طرح للعدد ٥، إذن ٢٠÷٥=٤.",
+          "WorkedExamples": "مثال ١: وزعت ٢٥ قلمًا على خمس طاولات بالتساوي؛ لكل طاولة ٥ أقلام، لأن ٢٥÷٥=٥. مثال ٢: ثمن قطعة واحدة ٥ دراهم، ومعك ٤٥ درهمًا؛ تستطيع شراء ٩ قطع، لأن ٩×٥=٤٥. مثال ٣: ٣٠÷٥=٦: يمكن تمثيلها بست مجموعات من خمس نقاط. مثال ٤: ١٠÷٥=٢ و٢×٥=١٠؛ هاتان حقيقتان مترابطتان.",
+          "StepByStepSolutions": "١) أحدد العدد الكلي، ثم أفهم هل سأقسم إلى خمس مجموعات أم أضع خمس وحدات في كل مجموعة. ٢) أرسم المجموعات أو أستعمل قطع العد. ٣) أوزع بالتساوي أو أطرح خمس وحدات في كل خطوة حتى أصل إلى الصفر. ٤) أكتب جملة القسمة والناتج. ٥) أتحقق بالضرب في ٥ وبالتأكد من حصول كل مجموعة على كمية متساوية. ٦) إذا كان العدد غير قابل للقسمة التامة على ٥، فلا أخفي الباقي.",
+          "CommonMistakes": "خطأ: ٢٠÷٥=١٥ لأنني طرحت ٥ مرة واحدة؛ الناتج الصحيح ٤. خطأ: ٤٥÷٥=٥ لأن العدد ٥ هو المقسوم عليه؛ الصحيح ٩. خطأ: توزيع ٣٠ قطعة على خمس مجموعات بحيث تصبح مجموعة فيها ٥ وأخرى ٧ ثم عدها قسمة متساوية؛ الصحيح ٦ لكل مجموعة. خطأ: ٢٥÷٥=١٢٥ لأنني ضربت بدلاً من القسمة؛ الصحيح ٥.",
+          "QuickSummary": "أقسم على ٥ بالتوزيع المتساوي أو بالطرح المتكرر أو بحقائق الضرب العكسية. نشاط إغلاق أصلي: ٤٠ بطاقة توزع بالتساوي على خمس مجموعات؛ كم بطاقة في كل مجموعة؟ اكتب جملة قسمة وجملة ضرب للتحقق. الإجابة: ٨؛ ٤٠÷٥=٨، و٨×٥=٤٠."
         }
       ]
     },
