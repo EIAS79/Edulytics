@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l01",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 Arabic adaptation in progress; U01 L01 source pp.9-14 reviewed, remaining 108 lessons not yet A-B-C closed; do not equate Published legacy status to stage-D pass.",
+  "ReviewEvidence": "Grade 3 Stage A-B-C in progress, source-scoped U01 L01–L02 complete; target 2026–2027 source exercise parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -73,23 +73,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 1 / Lesson 2; official Arabic title: مقارنة الأعداد",
+      "TitleSourceReference": "UAE Grade 3 Common Arabic 2025-2026 Term1 student pages 15–20; Grade 3 2026–2027 edition unverified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U01:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 1 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed pp.15-20; PDF pp.36-41",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "c787cbf565991ac78370f5f13642b3cb487ccd4b0bffcccb9f511d8c470ef50b",
+      "SourceEdition": "2025-2026 Arabic student edition Term 1; target 2026–2027 parity UNKNOWN",
+      "SourceRights": "Student + old teacher copies used solely for scope; all Edulytics-facing text/visuals independent and original",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "e5d1263907c53c002d02819e01730b6533ce02f0089d7b9409e335b26b904450",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "ARABIC_EDULYTICS_AUTHORED_G3_U01_L02_A_B_C; STAGE_D_NOT_RUN; 2026_2027_PARITY_UNKNOWN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -100,6 +100,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Compare Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مقارنة الأعداد",
+          "Explanation": "نقارن العددين بتحديد المنزلة الأعلى قيمة أولاً، لا بالنظر إلى الرقم الأخير. إذا اختلف عدد الآلاف، فالعدد ذو آلاف أكثر هو الأكبر. إذا تساوت الآلاف، ننتقل إلى المئات ثم العشرات ثم الآحاد، حتى نعثر على أول اختلاف. نكتب > عندما يكون العدد الأول أكبر، و< عندما يكون أصغر، و= إذا تطابقت جميع منازلهما. يمكن التأكد من المقارنة بمخطط قيمة مكانية أو خط أعداد: العدد الذي يقع إلى اليمين أكبر.",
+          "KeyConceptsAndRules": "للمقارنة بين عددين ضمن ٠–٩٬٩٩٩ نضع الأرقام في أعمدة الآلاف والمئات والعشرات والآحاد، ونقارن من أعلى منزلة إلى أدناها. إذا اشترك العددان في الآلاف والمئات واختلفا في العشرات، نقرر النتيجة عند العشرات دون الحاجة إلى الآحاد. مثال: ٤٬٣٧١ > ٤٬٣١٩ لأن ٧ عشرات أكبر من ١ عشرة. وإذا كان كلاهما ٢٬٥٠٦ فالعلاقة =. الصفر في إحدى المنازل لا يُهمل.",
+          "WorkedExamples": "مثال ١: أي العددين أكبر: ٣٬٥٠٨ أو ٣٬٥٨٠؟ آلافهما ٣، مئاتهما ٥، وفي العشرات ٠ مقابل ٨؛ إذن ٣٬٥٠٨ < ٣٬٥٨٠. مثال ٢: ٩٧٥ و١٬٠٠٤: الثاني أكبر لأنه يملك ألفًا والأول لا يملك آلافًا. مثال ٣: ثلاثة أعداد: ٧٬٠٤٠، ٧٬٤٠٠، ٧٬٠٠٤؛ الأكبر ٧٬٤٠٠، والأصغر ٧٬٠٠٤. التمثيل البصري الأصلي: |آلاف|مئات|عشرات|آحاد|؛ ٣|٥|٠|٨ مقابل ٣|٥|٨|٠؛ نؤشر إلى أول عمود مختلف بدءًا بالآلاف.",
+          "StepByStepSolutions": "١) اقرأ العددين وحدد كل منزلة فيهما. ٢) ضع أرقام العددين في مخططين لهما الأعمدة نفسها. ٣) ابدأ بالآلاف، ثم المئات، ثم العشرات، ثم الآحاد. ٤) عند أول اختلاف، الرقم الأكبر في هذه المنزلة يحدد العدد الأكبر؛ وإذا لم يختلف أي رقم فاكتب =. ٥) اكتب الجملة العددية بالعلامة الصحيحة وتأكد على خط أعداد عند الحاجة. ٦) لطلب اختيار الأكبر أو الأصغر من مجموعة، قارن الأعداد بالتتابع.",
+          "CommonMistakes": "الخطأ: مقارنة ٤٬٠٢٨ و٣٬٩٩٩ بالنظر إلى ٩ > ٨؛ الصحيح ٤٬٠٢٨ > ٣٬٩٩٩ لأن الآلاف ٤ > ٣. الخطأ: اعتبار ٧٬٠٢٠ = ٧٬٢٠٠ لأن الأرقام هي نفسها؛ الصحيح أن مواضعها مختلفة. الخطأ: قلب علامة > مع اتجاه النص العربي؛ تظل نقطة الفتحة في اتجاه العدد الأكبر رياضيًا. الخطأ: تجاهل الصفر الداخلي في ٥٬٠٠٨ عند المقارنة بأعداد لها المئات والعشرات.",
+          "QuickSummary": "أقارن من أكبر منزلة (الآلاف ثم المئات ثم العشرات ثم الآحاد)، وأكتب > أو < أو = وفق أول اختلاف، وأتحقق بخط الأعداد. نشاط إغلاق من تأليف Edulytics: ١) ضع علامة بين ٥٬٠٦١ و٥٬١٠٦. ٢) أيهما أكبر: ٢٬٩٩٩ أم ٣٬٠٠١؟ ٣) برر دون النظر إلى الآحاد. إجابات المعلم: <، ٣٬٠٠١؛ الاختلاف الحاسم في منزلة الآلاف للمثال الثاني."
         }
       ]
     },
