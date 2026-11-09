@@ -7245,6 +7245,11 @@ public static class LessonPracticeContractRegistry
             ["uae.g2.u01.l01.commutative_add","uae.g2.u01.l01.additive_zero","uae.g3.u02.l01.associative_add"],
             "G3_U02_L01_2025_2026_STUDENT_PP55_60_TEACHER_2020_2021_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:02","number.addition.table_patterns","SUM_MISSING_ADDEND_PARITY_PATTERN",
+            ["uae.g3.u02.l02.addition_table_sum", "uae.g3.u02.l02.missing_table_addend", "uae.g3.u02.l02.even_odd_step2"],
+            "G3_2025_2026_ARABIC_STUDENT_PP61_66_AND_OLD_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

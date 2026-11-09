@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l06",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l07",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 6 lessons sequentially A–B–C source-scoped, target 2026–27 parity UNKNOWN",
+  "ReviewEvidence": "Seven sequential G3 A–B–C lessons done under local 2025–2026, 2026–27 parity unknown",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -288,23 +288,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 2; official Arabic title: الأنماط في جدول الجمع",
+      "TitleSourceReference": "UAE Grade 3 Common Arabic 2025–2026 T1 pp61–66; teacher objective pp61A etc older 2020–2021",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp61–66 PDF pp82–87",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "7ba4dfa8559c3e285255ee11dec2694967502ad7cb61130fba0948951b741a47",
+      "SourceEdition": "Local 2025–2026 student, teacher reference 2020–2021; target 2026–2027 UNKNOWN",
+      "SourceRights": "Edulytics original mathematical descriptions; no publisher copied artwork",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "e04f05d5f0048f616d6558a21d38808a6f74994c5e6926611c20656cdd4dc81d",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L02_ARABIC_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -315,6 +315,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Patterns in the Addition Table: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الأنماط في جدول الجمع",
+          "Explanation": "جدول الجمع يرتب الأعداد من ٠ إلى ١٠ على صف أفقي وعمود رأسي؛ الخانة عند تقاطع العددين تعرض مجموعهما. عندما نتحرك خطوة واحدة إلى اليمين في صف ثابت يزيد المجموع واحدًا، وعندما نتحرك خطوة واحدة إلى أسفل في عمود ثابت يزيد أيضًا واحدًا. لون الصفوف أو الأعمدة المختلفة لا يغير النتيجة. الصف والعمود اللذان يبدأان بالصفر يعيدان الأعداد نفسها. ينتج عن جمع عددين زوجيين عدد زوجي، وعن جمع عدد زوجي بفردي عدد فردي. وبسبب إبدال الجمع يكون جدول النتائج متناظرًا حول القطر الرئيسي.",
+          "KeyConceptsAndRules": "قاعدة الخانة: مجموع رقم الصف ورقم العمود. الخط الأول مع صفر: أ + ٠ = أ. الإبدال يجعل الخانة (٣،٦) مساوية للخانة (٦،٣). عمود ثابت إذا زاد رقم الصف ١ زاد المجموع ١، وإذا قفزنا صفين زاد المجموع ٢. مثال نمط زوجي: ٠، ٢، ٤، ٦، ٨، ... ونمط فردي: ١، ٣، ٥، ٧، ٩، ... في نطاق الجدول ٠–٢٠. يمكن استعمال خط قطري للعثور على جميع أزواج الحدّين التي تعطي مجموعًا محددًا.",
+          "WorkedExamples": "مثال ١: لإيجاد ٤ + ٧، ابحث عن صف ٤ وعمود ٧، فتحصل على ١١. وبعكس الصف والعمود ٧ + ٤ تجد ١١ أيضًا. مثال ٢: في العمود ٥، عندما تتحرك من صف ٢ إلى صف ٣ تتغير القيمة ٧ → ٨، ثم ٩؛ النمط زيادة واحد. مثال ٣: بعد ٢، ٤، ٦، ٨ في قطر الأعداد الزوجية يظهر ١٠. مثال ٤: إذا كانت خلية صف ٦ تساوي ١٠، فالعمود ٤ لأن ٦ + ٤ = ١٠.",
+          "StepByStepSolutions": "١) اقرأ اسم الصف والعمود في جدول الجمع. ٢) تتبع الصف أفقيًا حتى تقاطع العمود المقصود. ٣) اقرأ المجموع ودوّن جملة الجمع. ٤) لفحص نمط، انتقل بخطوات متساوية وراقب مقدار التغير. ٥) لتمييز الزوجي والفردي افحص الانتقال بمقدار ٢. ٦) تحقق من تناسق خانتي (أ،ب) و(ب،أ). ٧) لإيجاد حد مجهول اطرح الحد المعروف من المجموع أو عدّ من الحد المعروف على الجدول.",
+          "CommonMistakes": "الخطأ: ٤ + ٥ في جدول الجمع تساوي ٤ لأننا اخترنا صف ٤؛ الصحيح ٩ عند التقاطع. الخطأ: زيادة نتيجتين عند التحرك صفًا واحدًا؛ الصحيح زيادة واحدة. الخطأ: كل مجموعين متتاليين في الصف متساويان؛ الصحيح يزيدان واحدًا. الخطأ: جمع عددين فرديين يعطي فرديًا؛ الصحيح يعطي زوجيًا. الخطأ: خلط ترقيم بداية الصف والعمود وفقد خاصية الصفر.",
+          "QuickSummary": "أقرأ تقاطع الصف والعمود في جدول الجمع وأتعرف أنماط +١ و+٢ والزوجية والفردية والإبدال. نشاط إغلاق أصلي: ما ناتج ٣ + ٦؟ ماذا يحدث للناتج عند الانتقال من (٣،٦) إلى (٤،٦)؟ أكمل ١، ٣، ٥، ٧، __. إجابات المعلم: ٩، يزيد واحدًا إلى ١٠، والعدد ٩."
         }
       ]
     },
