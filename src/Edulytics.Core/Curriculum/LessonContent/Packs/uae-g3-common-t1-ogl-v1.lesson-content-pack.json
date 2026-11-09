@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l21",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l22",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE Grade3 lessons 1–21 sequentially A–B–C source-scoped; Unit3 seven lessons closed, Stage D not run, 2026–2027 target source parity UNKNOWN.",
+  "ReviewEvidence": "UAE Grade3 lessons 1–22 A–B–C source scoped; Unit4 lesson1 original Arabic group models; tests and Stage D not run.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -933,23 +933,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 4 / Lesson 1; official Arabic title: نشاط عملي: تمثيل مسائل الضرب",
+      "TitleSourceReference": "UAE Grade 3 Common Arabic Term1 student 2025–2026 pp187–192 and teacher 2020–2021 lesson1; target edition 2026–2027 not verified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U04:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 4 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp187–192, PDF pp208–213; Teacher guide 2020–2021 corresponding pages187–192",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "764520ffa768e01615bcfa1c22ea4d82f9ec411e2450d68569b3e8ae03481195",
+      "SourceEdition": "Arabic student 2025–2026, teacher guide 2020–2021, target 2026–2027 parity unknown",
+      "SourceRights": "Original Edulytics text and point diagrams only; educational scope compared to locally accessible books; protected artwork not transferred",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "6207c98e96ee766f21f55c78c2024295ab8e510f9e47992322692c93f48549cd",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U04_L01_ARABIC_STAGE_ABC_SOURCE_SCOPED_READY_FOR_STAGE_D_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -960,6 +960,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Model Multiplication Problems: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: تمثيل مسائل الضرب",
+          "Explanation": "نكتشف معنى الضرب بترتيب أشياء محسوسة في مجموعات متساوية، مثل ثلاث صناديق تحتوي كل منها أربع قطع. يحدد عدد المجموعات وعدد القطع في كل مجموعة المجموع الكلي. نبدأ برسم دوائر مستقلة للمجموعات، ونرسم داخل كل دائرة العدد نفسه من النقاط، ثم نكتب جمعًا متكررًا. بعد التأكد من تساوي المجموعات يمكن كتابة جملة ضرب مختصرة. مجموعات غير متساوية لا تُمثل مباشرة بضرب واحد من دون إعادة تنظيم.",
+          "KeyConceptsAndRules": "عدد المجموعات × عدد العناصر في المجموعة = المجموع الكلي. مثال: ٣ مجموعات بكل منها ٤ نجوم تعني ٤ + ٤ + ٤ = ١٢، ونكتب ٣ × ٤ = ١٢. في جملة الضرب الأولى نعد المجموعات ثم العناصر في كل مجموعة وفق اتفاق التمثيل. يمكن تكوين المجموع الكلي نفسه بترتيبات متساوية مختلفة، مثل ٢ × ٦ و٣ × ٤. نموذج الدوائر والنقاط يدعم الفهم حتى لو اختلف اتجاه قراءة الجملة داخل صفحة عربية RTL.",
+          "WorkedExamples": "مثال أصلي ١: أربع علب، في كل علبة ٣ أقلام. ارسم [●●●] [●●●] [●●●] [●●●]. الجمع ٣ + ٣ + ٣ + ٣ = ١٢، والضرب ٤ × ٣ = ١٢. مثال ٢: ١٨ قطعة يمكن توزيعها في ٦ مجموعات من ٣ قطع، أو ٣ مجموعات من ٦ قطع، ويتساوى الإجمالي. مثال ٣: مجموعتان من ٥ خرزات تمثل ٥ + ٥ = ١٠، أي ٢ × ٥ = ١٠. لاحظ أن المجموعة [●●] و[●●●●] ليست مجموعات متساوية؛ ينبغي أولًا إعادة توزيع عناصرها إن أمكن.",
+          "StepByStepSolutions": "١) اقرأ المسألة وحدد ما الذي يُعد: الصناديق أم العناصر. ٢) اكتب عدد المجموعات. ٣) ارسم دائرة أو مستطيلًا بسيطًا لكل مجموعة. ٤) ضع العدد نفسه من العلامات في كل دائرة. ٥) دوّن جملة الجمع المتكرر بمقدار ثابت. ٦) حوّلها إلى ضرب: عدد المجموعات × عناصر المجموعة. ٧) احسب المجموع وتحقق بعدّ جميع العلامات. ٨) اطلب من الطالب شرح رسمه شفهيًا للمعلم.",
+          "CommonMistakes": "الخطأ: ٤ مجموعات من ٣ عناصر تعني ٤ + ٤ + ٤ = ١٢ مع وصف الأربع مجموعات؛ قد تكون النتيجة متساوية، لكن الرسم والجمع يجب أن يعكسا عدد المجموعات الحقيقي وعناصر كل واحدة. الخطأ: جمع أعداد غير متساوية وتسميته ضربًا متكررًا. الخطأ: نسيان إحدى المجموعات عند الانتقال من الرسم إلى العدد. الخطأ: حساب عدد الدوائر فقط بدل إجمالي النقاط. الخطأ: اعتقاد أن تغيير ترتيب الألوان يغير عدد العناصر.",
+          "QuickSummary": "أمثل مجموعات متساوية بنقاط ثم أحول الجمع المتكرر إلى جملة ضرب. نشاط إغلاق أصلي لـEdulytics: ارسم ٣ أطباق في كل منها ٥ ثمار، واكتب جملة الجمع وجملة الضرب، ثم صف توزيعًا متساويًا آخر لـ١٥ ثمرة. دليل المعلم: ٥ + ٥ + ٥ = ١٥، ٣ × ٥ = ١٥، ويمكن ٥ مجموعات من ٣؛ تُراجع الرسومات والتبرير يدويًا."
         }
       ]
     },
