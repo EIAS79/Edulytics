@@ -1,0 +1,4 @@
+# G3 Unit 1 Lesson 4 — التقريب إلى أقرب عشرة
+
+Verified newest local Grade 3 Common Arabic Student Term 1 (2025–2026): printed pp.29–34 / PDF 50–55, SHA-256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`. Older teacher guide 2020–2021 used as teaching reference only. Source classroom items 1–32 and homework 1–15 mapped by page in JSON. Skills: place-value chart, nearest-ten number-line, half-way digit 5 up, regrouping and contextual estimation; first-party Arabic explanation and authored cooldown.
+Reuse existing ExactSkillContractQuestionEngine with one numerical family and varied textual/number-line prompts, no duplicate engine. Reasoning/drawn proof teacher scored. Stage D and CI NOT_RUN; selected edition only, target 2026–2027 parity UNKNOWN. No images or proprietary prose copied.

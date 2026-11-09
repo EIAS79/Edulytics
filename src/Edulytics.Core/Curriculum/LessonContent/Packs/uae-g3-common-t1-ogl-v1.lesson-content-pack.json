@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l03",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 A–B–C source-scoped U01 L01–L03 closed, 2026–2027 parity UNKNOWN",
+  "ReviewEvidence": "Grade 3 Unit 1 lessons 1–4 source scoped A–B–C, 2026-2027 parity unknown",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -159,23 +159,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 1 / Lesson 4; official Arabic title: التقريب إلى أقرب عشرة",
+      "TitleSourceReference": "UAE Grade 3 Arabic student Common Term 1 2025–2026 pp.29–34",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U01:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 1 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed pp.29-34, PDF pp.50-55",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "020800be01030a353e947a3e349f2aa2fde358e918b64414c90992cb1ce3b53e",
+      "SourceEdition": "2025-2026 local; target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original Edulytics instructional text; locally referenced books only for scope",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "55f024c34e8ed97891702c5742d32b1124de5a234b5b0a6ae1371f1740700ca9",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "ARABIC_EDULYTICS_U01_L04_STAGE_ABC_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -186,6 +186,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Round to the Nearest Ten: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التقريب إلى أقرب عشرة",
+          "Explanation": "التقريب يعني إيجاد قيمة قريبة يسهل استعمالها. لتقريب عدد صحيح إلى أقرب عشرة، حدد منزلتي العشرات والآحاد. إذا كان رقم الآحاد ٠ أو ١ أو ٢ أو ٣ أو ٤ نحتفظ بالعشرات ونضع صفرًا في الآحاد، وإذا كان رقم الآحاد ٥ أو ٦ أو ٧ أو ٨ أو ٩ نزيد العشرات واحدة ونضع صفرًا في الآحاد. إذا كانت العشرات ٩ وحدثت زيادة نُجري إعادة تجميع إلى المئات أو الآلاف. نرى النتيجة أيضًا على خط أعداد بين مضاعفين متجاورين للعشرة.",
+          "KeyConceptsAndRules": "أقرب عشرة: المضاعف الأقرب للعدد من ١٠. القانون للأعداد الصحيحة غير السالبة: الناتج = ١٠ × الجزء الصحيح من ((العدد + ٥) ÷ ١٠). عند الآحاد ٥ نقرّب إلى العشرة الأكبر وفق اصطلاح هذا الدرس؛ مثال: ١٣٥ → ١٤٠. عند الآحاد ٤ نقرّب إلى الأصغر؛ مثال: ١٣٤ → ١٣٠. الأعداد المضاعفة للعشرة لا تتغير عند التقريب. في ٩٩٧، أقرب عشرة هي ١٬٠٠٠.",
+          "WorkedExamples": "مثال ١: على خط الأعداد ٤٢٠ ← ٤٢٣ → ٤٣٠، العدد ٤٢٣ أقرب إلى ٤٢٠ بثلاث خطوات، وإلى ٤٣٠ بسبع؛ التقريب ٤٢٠. مثال ٢: العدد ٦٨٥ يقع في منتصف المسافة بين ٦٨٠ و٦٩٠؛ نختار ٦٩٠. مثال ٣: ٢٬٩٩٨ يقرب إلى ٣٬٠٠٠ لأن الآحاد ٨ وتزداد العشرات مع إعادة التجميع. مثال ٤: قرّب ٧٣٠: يساوي بالفعل مضاعفًا للعشرة ويبقى ٧٣٠.",
+          "StepByStepSolutions": "١) اقرأ العدد وحدد منزلة العشرات. ٢) ضع دائرة حول رقم العشرات وانظر إلى الآحاد على يمينه. ٣) إذا كانت الآحاد ٠–٤ أبق العشرات، وإذا كانت ٥–٩ زدها واحدًا مع الحمل عند الحاجة. ٤) استبدل الآحاد بصفر. ٥) تحقق بأن الناتج من مضاعفات ١٠ وبأنه الأقرب على خط الأعداد. ٦) عند حل مسائل التقدير، احتفظ بالوحدة المناسبة مثل زائرًا أو بطاقة.",
+          "CommonMistakes": "خطأ: تقريب ١٢٥ إلى ١٢٠ لأن ٥ أصغر من ٦؛ الصحيح ١٣٠ وفق قاعدة المنتصف إلى الأعلى. خطأ: تقريب ٣٩٨ إلى ٣٩٠؛ الصحيح ٤٠٠ لأن الآحاد ٨ وتحدث إعادة تجميع. خطأ: تقريب ٨٤ إلى ٩٠ بمجرد رؤية ٨ في العشرات؛ الصحيح ٨٠ لأن الآحاد ٤. خطأ: إلغاء جميع المنازل بعد العشرات في عدد من أربعة أرقام؛ يجب الاحتفاظ بالآلاف والمئات مع إعادة التجميع الصحيح.",
+          "QuickSummary": "أنظر إلى الآحاد لأقرر التقريب إلى أقرب عشرة وأتحقق على خط الأعداد. نشاط إغلاق أصلي: قرّب ٢٬٤٣٤ و٢٬٤٣٥ و٢٬٩٩٧ إلى أقرب عشرة، واشرح الاختلاف بين أول مثالين. الإجابات: ٢٬٤٣٠، ٢٬٤٤٠، ٣٬٠٠٠؛ لأن ٤ لا يزيد العشرات أما ٥ فيزيدها."
         }
       ]
     },
