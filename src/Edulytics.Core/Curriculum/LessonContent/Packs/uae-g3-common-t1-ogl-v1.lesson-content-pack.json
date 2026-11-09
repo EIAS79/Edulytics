@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l09",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l10",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 9 sequential A–B–C lessons; 2026–2027 exact parity UNKNOWN",
+  "ReviewEvidence": "Grade3 ten sequential A–B–C lesson checkpoints, target year exact parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -417,23 +417,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 5; official Arabic title: تقدير المجاميع",
+      "TitleSourceReference": "Arabic Grade3 2025–2026 student unit2 lesson5 pp81–86; older teacher lesson5 pp81A–81B",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp81–86 / PDF pp102–107; Grade_03 2020–2021 teacher pp81A–81B",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "470bf8e009e1d0a2f86bef6afd8674ae4482617637ba904cbe6f51fc2d22a603",
+      "SourceEdition": "Student 2025–2026 verified, teacher 2020–2021 old; 2026–2027 parity unknown",
+      "SourceRights": "Original Edulytics authored Arabic instruction and mathematical examples",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "c01b6e8393f00bb07be30492864d0322a92083687730075b6a82da36cdf2fed1",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L05_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -444,6 +444,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Estimate Sums: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تقدير المجاميع",
+          "Explanation": "التقدير هو إيجاد مجموع تقريبي مناسب عندما لا نحتاج الإجابة الدقيقة. نقرّب كل حد جمعي إلى أقرب عشرة أو مئة أو أعلى منزلة مناسبة، ثم نجمع الأعداد المقربة. مثلًا ١٥٣ + ١٣٨: إلى أقرب عشرة ١٥٠ + ١٤٠ = ٢٩٠ تقريبًا، وإلى أقرب مئة ٢٠٠ + ١٠٠ = ٣٠٠ تقريبًا. التقدير ليس هو المجموع الدقيق ٢٩١، بل يساعد على فحص معقولية النتائج والتخطيط.",
+          "KeyConceptsAndRules": "١) اختر درجة التقريب المطلوبة: عشرات أو مئات أو أعلى منزلة. ٢) قرّب كل حد على حدة: ٠–٤ ننزل و٥–٩ نصعد بحسب المنزلة المجاورة. ٣) اجمع الحدين بعد التقريب. ٤) اكتب «تقريبًا» وأوضح منزلة التقريب. ٥) قد يكون التقدير أكبر أو أصغر من المجموع الدقيق؛ ليس شرطًا أن يكون مطابقًا. ٦) إلى أعلى منزلة يعني في عدد من أربعة أرقام أقرب ألف، وفي عدد ثلاثي أقرب مئة، وفي عدد ثنائي أقرب عشرة.",
+          "WorkedExamples": "مثال ١: ٣٤٢ + ٦٣٧ إلى أقرب مئة: ٣٠٠ + ٦٠٠ = ٩٠٠ تقريبًا. مثال ٢: ٣٨٠ + ٤٣٧ إلى أقرب مئة: ٤٠٠ + ٤٠٠ = ٨٠٠ تقريبًا، بينما المجموع الدقيق ٨١٧. مثال ٣: ٣١٢ + ٢٧ إلى أقرب عشرة: ٣١٠ + ٣٠ = ٣٤٠ تقريبًا. مثال ٤: ٢٬١٣٦ شخصًا إذا قرّبنا إلى أقرب عشرة نحصل على ٢٬١٤٠، وإلى أقرب مئة ٢٬١٠٠؛ لذلك تكون درجة التقدير مهمة.",
+          "StepByStepSolutions": "١) حدد هل المسألة تطلب تقديرًا أم نتيجة دقيقة. ٢) اختر أساس التقريب ١٠ أو ١٠٠ أو ١٬٠٠٠. ٣) قرّب كل عدد مستقلاً اعتمادًا على الرقم الواقع على يمين المنزلة. ٤) اجمع العددين التقريبيين، وأظهر العملية لا الناتج فقط. ٥) إذا كان المجموع الدقيق متاحًا، قارنه بتقديرك لتقرر هل الإجابة معقولة. ٦) فسر سبب اختيار منزلة التقريب بحسب الحاجة.",
+          "CommonMistakes": "الخطأ: جمع ٣٨٠ + ٤٣٧ أولًا ثم تقريب ٨١٧ إلى ٨٠٠ باعتباره دائمًا نفس تقدير مجموع الحدين؛ قد يتوافق عرضًا لكن القاعدة المطلوبة تقريب كل حد أولًا. الخطأ: تقريب ١٥٣ إلى أقرب عشرة على أنه ٢٠٠؛ هذا تقريب إلى المئة. الخطأ: اعتبار التقدير إجابة دقيقة. الخطأ: كتابة ٤٬١٤٠ → ٤٬٠٠٠ عند التقريب إلى مئة؛ الصحيح ٤٬١٠٠.",
+          "QuickSummary": "أقدّر المجموع بتقريب كل حد إلى المنزلة المطلوبة ثم أجمع القيم المقربة وأقارنها بالناتج الدقيق عند الحاجة. نشاط إغلاق أصلي: قدّر ٢٦٨ + ٤١٧ إلى أقرب عشرة وإلى أقرب مئة. الإجابات: ٢٧٠ + ٤٢٠ = ٦٩٠ تقريبًا؛ ٣٠٠ + ٤٠٠ = ٧٠٠ تقريبًا. ناقش لماذا اختلف التقديران."
         }
       ]
     },

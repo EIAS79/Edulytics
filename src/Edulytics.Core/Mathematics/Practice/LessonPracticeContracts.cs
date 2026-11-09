@@ -7258,6 +7258,10 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:04"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:02:04","number.addition.mental_3digit","DECOMPOSE_AND_COMPENSATE_EXACT",
             ["uae.g3.u02.l04.mental_addition"],"G3_2025_2026_STUDENT_PP73_78_STAGE_D_NOT_RUN","READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:05","number.addition.estimate_sum","ROUND_BOTH_ADDENDS_FIRST_THEN_SUM",
+            ["uae.g3.u02.l05.estimate_sum_by_rounding"],"G3_STUDENT_PP81_86_TEACHER_81A_B_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

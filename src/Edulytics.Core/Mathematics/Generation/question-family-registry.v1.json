@@ -35053,6 +35053,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u02.l05.estimate_sum_by_rounding",
+      "version": 1,
+      "skillId": "number.addition.estimate_sum",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u02-l05-student-teacher-local-stage-d-not-run",
+      "representations": [
+        "place_value_chart",
+        "number_line",
+        "numeric_estimate"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

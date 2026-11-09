@@ -1,0 +1,3 @@
+# Grade 3 Unit 2 Lesson 5 — تقدير المجاميع
+
+Arabic student T1 **2025–2026** printed pp81–86 / PDF 102–107, SHA-256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`. Local older teacher guide 2020–2021 pp81A–81B read: target explicitly estimates sums using rounding, maps tens vs hundreds, uses number line and alternative accepted approximations. 21 class + 11 homework numbered activities recorded. First-party Arabic definitions, worked examples, original cooldown and one exact-scored estimation family using rounding each addend then summing (tens/hundreds/highest place). Teacher-rubric tasks for explanations. 2026–2027 version parity UNKNOWN. Tests written but NOT_RUN; StageD and CI NOT_RUN.
