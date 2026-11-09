@@ -55,14 +55,14 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   // Compare against the immutable pre-G1 production commit rather than
   // the moving origin/main ref, which contains the accepted Grade 1 changes
   // AFTER merge. Preserve the original US G1 and G11 source hashes.
-  // UAE G1 and G2 add 1,770 reviewed lines total, delete zero and
+  // UAE G1 and G2 add 1,871 reviewed lines total, delete zero and
   // change no US G1 dispatch. The pre-G1 production anchor remains fixed.
   assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
     'ea6989494b3190676b7343e29da659bb3bf07afe');
   assert.equal(git('diff','--numstat',preUaeG1Release,'HEAD','--',engine),
-    '1770\t0\t'+engine);
+    '1871\t0\t'+engine);
   const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||

@@ -239,14 +239,18 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
  const expected=new Map([
   ['fractions.divide_whole_numbers',5],
   ['geometry.area',5],
-  ['geometry.area_tiling',44],
+  ['geometry.area_tiling',43],
   ['geometry.similarity.scale_factor',8]
  ]);
  for(const [skillId,count] of expected){
   const skill=bySkill.get(skillId);
   assert.ok(skill,'Missing registered domain skill '+skillId);
   assert.equal(skill.v2Status,'ShadowVerified');
-  const matching=families.filter(f=>f.skillId===skillId);
+  // The published UAE G2 family is not part of the G5/G6 historical shadow cohort.
+  const matching=families.filter(f=>
+   f.skillId===skillId &&
+   f.status==='ShadowVerified' &&
+   f.productionRouting===false);
   assert.equal(matching.length,count,'Expected source-specific question families: '+skillId);
   assert.deepEqual(new Set(skill.v2QuestionFamilies),
    new Set(matching.map(f=>f.id)),'Two-way skill/family mapping mismatch: '+skillId);
