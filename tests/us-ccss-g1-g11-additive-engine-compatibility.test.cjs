@@ -54,12 +54,18 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   // The previous published G11/G12 engine is byte-pinned in main.
   // The UAE G1 first-party authoring adds only 1,769 lines with NO
   // deletions; it must not alter US G1 families or dispatch.
-  assert.equal(git('rev-parse','origin/main:'+engine),
-    '19ca4300c3a8c772a4624831987ae164489026e8');
+  const publishedEngine=git('rev-parse','origin/main:'+engine);
+  // Before G2 merge, main is the previously published G1/G11 baseline.
+  // After merge, main must be the exact owner-reviewed G2 additive extension.
+  assert.ok([
+    '19ca4300c3a8c772a4624831987ae164489026e8',
+    'ea6989494b3190676b7343e29da659bb3bf07afe'
+  ].includes(publishedEngine));
   assert.equal(git('rev-parse','HEAD:'+engine),
     'ea6989494b3190676b7343e29da659bb3bf07afe');
+  const preMerge=publishedEngine==='19ca4300c3a8c772a4624831987ae164489026e8';
   assert.equal(git('diff','--numstat','origin/main','HEAD','--',engine),
-    '1770\t0\t'+engine);
+    preMerge ? '1770\t0\t'+engine : '');
   const delta=git('diff','--unified=0','origin/main','HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||
@@ -67,7 +73,11 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   assert.ok(changed.every(x=>!x.includes('usccss.g1.')&&!x.includes('UsCcssG1')));
   const deleted=changed.filter(x=>x.startsWith('-'));
   assert.deepEqual(deleted,[]);
-  assert.ok(changed.some(x=>x.includes('uae.g1.u01.l01.read_write_1_5')));
+  if(preMerge){
+    assert.ok(changed.some(x=>x.includes('uae.g1.u01.l01.read_write_1_5')));
+  } else {
+    assert.deepEqual(changed,[], 'After merge no unpinned mathematics engine edits');
+  }
   const source=fs.readFileSync(path.join(root,engine),'utf8');
   const entries=JSON.parse(fs.readFileSync(path.join(root,familyRegistry),'utf8'));
   const newFamilies=entries.families.filter(x=>x.id?.startsWith('usccss.g11.alg2.'));
