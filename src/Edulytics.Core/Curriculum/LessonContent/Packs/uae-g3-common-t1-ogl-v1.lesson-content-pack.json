@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l30",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l31",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 lessons 1–30 A–B–C source-scoped; no Stage D or CI; 2026–2027 source parity UNKNOWN",
+  "ReviewEvidence": "Sequential A–B–C 31/109 source-scoped, U05 L04 using division/multiplication inverse model; target 2026–2027 unverified",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1320,23 +1320,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 5 / Lesson 4; official Arabic title: نشاط عملي: علاقة القسمة بالضرب",
+      "TitleSourceReference": "Locally selected Grade3 Arabic 2025–2026 student Unit5 Lesson4 printed259–264; teacher 2020–2021 supplemental; 2026–2027 unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U05:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 5 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed pp259–264, PDF pp280–285; teacher older pp259–264",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "7f5e363b1a1f299347f105893aebd1bc17cc16d928e3fd4c52d37e25530fdc6d",
+      "SourceEdition": "Student 2025–2026 local, teacher 2020–2021 supplemental, target 2026–2027 parity unknown",
+      "SourceRights": "First-party Edulytics Arabic explanation, examples and diagrams; local source only for math skills",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "8745928b0930c226b1c0ae21971beb26625ec83c950b6a6242a2e8f04ff84013",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U05_L04_SOURCE_SCOPED_ARABIC_ABC_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1347,6 +1347,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Relate Division to Multiplication: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: علاقة القسمة بالضرب",
+          "Explanation": "الضرب والقسمة عمليتان عكسيتان. عندما أعرف العدد الكلي وعدد المجموعات المتساوية، أستعمل القسمة لإيجاد عناصر كل مجموعة، ثم أضرب الناتج في عدد المجموعات لأتأكد من الكل. إذا رتبت ٢٤ مكعبًا في ٤ صفوف متساوية، فعدد المكعبات في الصف ٦. جملة القسمة ٢٤ ÷ ٤ = ٦، والجملة المرتبطة ٤ × ٦ = ٢٤. توضح المصفوفة أن عدد الصفوف × عدد العناصر في كل صف يساوي العدد الكلي، وتسمح بتبديل الصفوف والأعمدة دون تغيير العدد الكلي.",
+          "KeyConceptsAndRules": "الارتباط الأساسي: إذا أ × ب = ج، إذن ج ÷ أ = ب وج ÷ ب = أ طالما أن أ وب غير صفريين. عند ٣ × ٧ = ٢١ يمكن كتابة ٢١ ÷ ٣ = ٧ و٢١ ÷ ٧ = ٣. المقسوم هو الكل، والمقسوم عليه هو حجم المجموعة أو عدد المجموعات، والناتج يحدد القيمة الأخرى. أتحقق من صحة جملة القسمة بتحويلها إلى ضرب وأتحقق من تناسب كل جزء من النموذج.",
+          "WorkedExamples": "مثال أول من تأليف Edulytics: ١٨ قطعة مرتبة في ٣ صفوف؛ أكتب ١٨ ÷ ٣ = ٦ ثم ٣ × ٦ = ١٨. إذا قُلبت المصفوفة تصبح ٦ صفوف في كل منها ٣، ويتحقق ١٨ ÷ ٦ = ٣. مثال ثان: ٣٢ بطاقة توضع بالتساوي في ٨ صناديق. ٣٢ ÷ ٨ = ٤ لأن ٨ × ٤ = ٣٢. مثال ثالث: ٥ × □ = ٣٥، وبالقسمة ٣٥ ÷ ٥ = ٧؛ إذن القيمة المفقودة هي ٧. نموذج نصي: [●●●●] [●●●●] [●●●●] = ١٢؛ ٣ × ٤ = ١٢، ١٢ ÷ ٣ = ٤.",
+          "StepByStepSolutions": "١) أمثل العدد الكلي بنقاط أو مكعبات أو مصفوفة. ٢) أحدد عدد الصفوف أو عدد المجموعات. ٣) أوزع عناصر الكل بالتساوي وأعد عناصر كل صف. ٤) أكتب جملة القسمة: الكل ÷ عدد الصفوف = عدد العناصر في كل صف. ٥) أكتب جملة الضرب المرتبطة: الصفوف × عناصر الصف = الكل. ٦) إن كان أحد العاملين مجهولًا أستخدم القسمة لإيجاده. ٧) أتحقق بأن عدد الأشياء المستعملة يساوي الكل ولا توجد عناصر منسية.",
+          "CommonMistakes": "خطأ: اعتبار المقسوم هو عدد المجموعات في جملة ٢٤ ÷ ٤؛ المقسوم هو ٢٤. خطأ: عند ١٨ ÷ ٣ = ٦ كتابة ٣ × ٦ = ٩؛ الصحيح ١٨. خطأ: استخدام القسمة كعملية إبدال؛ ٢٤ ÷ ٦ تختلف عن ٦ ÷ ٢٤ رغم أن ضرب العاملين يتبدل. خطأ: رسم أربعة صفوف مختلفة في العدد ثم ادعاء مصفوفة متساوية؛ لا بد أن تتساوى الأطوال. خطأ: نسيان أن القسمة على صفر غير معرفة، فلا تظهر في جملة عكسية صحيحة.",
+          "QuickSummary": "أقارن جملة قسمة بجملة ضرب مرتبطة وأستخدم مجموعات متساوية أو مصفوفة للتحقق من الإجابة. نشاط إغلاق Edulytics: رتب ٢٠ نقطة في ٤ صفوف متساوية، ثم أوجد ٢٠ ÷ ٤، واكتب جملة ضرب للتحقق وجملة قسمة أخرى باستخدام عدد النقاط في الصف. مفتاح المعلم: ٥ نقاط بكل صف، ٢٠ ÷ ٤ = ٥، ٤ × ٥ = ٢٠، ٢٠ ÷ ٥ = ٤؛ يتم التحقق يدويًا من الرسم."
         }
       ]
     },
