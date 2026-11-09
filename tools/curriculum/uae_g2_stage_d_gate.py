@@ -41,6 +41,8 @@ def structural():
         problems.append("BLUEPRINT_LESSON_UNIT_TITLE_DRIFT")
     if p.get("AcademicLanguage")!="ar":
         problems.append("ACADEMIC_LANGUAGE_NOT_AR")
+    if p.get("SourceResolution")=="PreviousOfficialFallback" and not p.get("FallbackReason"):
+        problems.append("SOURCE_FALLBACK_REASON_REQUIRED")
     view=(ROOT/"src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml").read_text(encoding="utf-8-sig")
     if "uae-g2-original-arabic-lesson" not in view or "isUaePrimaryArabic" not in view:
         problems.append("G2_ARABIC_RTL_LEARNER_VIEW_NOT_GUARDED")
