@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l18",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l19",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 sequential 18/109 locally scoped A–B–C, no 2026–2027 exact source parity claim.",
+  "ReviewEvidence": "Grade 3 source-scoped A–B–C through ordinal19, 2026–2027 source parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -804,23 +804,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 3 / Lesson 5; official Arabic title: طرح الأعداد المكونة من ثلاثة أرقام",
+      "TitleSourceReference": "Grade3 Arabic student 2025–2026 U03 L05 printed pp153–158 and teacher older 2020–2021",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U03:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 3 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed153–158, PDF174–179",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "7eb41ad6d9d728efad153a72ef2dedf2d69033181a3591c86160edf3760ca09a",
+      "SourceEdition": "Student 2025–2026 selected, teacher 2020–2021 supplemental, target 2026–2027 unknown",
+      "SourceRights": "Local source used for comparison of goals and models only; all Edulytics-facing text is original",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "25cd42aaaa9afc0f25dca541b6ca14d9d0a3dda754bdf7f12d46b34d30a8b73b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U03_L05_SOURCE_SCOPED_A_B_C_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -831,6 +831,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Subtract Three-Digit Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "طرح الأعداد المكونة من ثلاثة أرقام",
+          "Explanation": "لطرح عددين من ثلاثة أرقام، أكتب كل رقم في عمود منزلته: الآحاد أسفل الآحاد، والعشرات أسفل العشرات، والمئات أسفل المئات. أبدأ بالآحاد ثم العشرات فالمئات. إذا كان الرقم العلوي أصغر من السفلي في منزلة، أعيد تجميع عشرة من المنزلة الأعلى إلى عشرة من المنزلة الحالية؛ إذا احتجت إلى عشرات أكثر، يمكن تفكيك مئة إلى عشر عشرات. أراجع النتيجة بتقدير الفرق إلى أقرب مئة ثم بالجمع العكسي: الفرق + المطروح = العدد الذي طرحت منه.",
+          "KeyConceptsAndRules": "الطرح غير إبدالي: العدد الذي نطرح منه − العدد المطروح = الفرق. محاذاة الأعمدة إلزامية حتى عند وجود عدد من خانتين أسفل عدد من ثلاث. للاستلاف من العشرات نحول عشرة واحدة إلى ١٠ آحاد، ومن المئات نحول مئة إلى ١٠ عشرات. القيمة الكلية لا تتغير بالتبديل. يمكن التحقق من أي طرح بجمع الفرق مع المطروح، وبالتقدير من منزلة المئات للحكم على معقولية النتيجة.",
+          "WorkedExamples": "مثال ١: ٦٤٢ − ٢٧٥. نعيد تجميع عشرة لأن ٢ آحاد لا تكفي لطرح ٥: تصبح الآحاد ١٢ والعشرات ٣. ثم نعيد تجميع مئة لأن ٣ عشرات لا تكفي لطرح ٧: تصبح العشرات ١٣ والمئات ٥. الناتج ٣٦٧، والتحقق ٣٦٧ + ٢٧٥ = ٦٤٢. مثال ٢: ٧١٤ − ١٣٨: نعيد تجميع عشرة إلى ١٤ آحاد، ١٤−٨=٦، ثم لا تكفي عشرات ٠ لطرح ٣، فنفك مئة ونحصل على ١٠ عشرات؛ ١٠−٣=٧، والمئات ٦−١=٥، فيكون ٥٧٦. مثال ٣: ٥٣٠ − ١٢٦ = ٤٠٤، تحقق بالجمع ٤٠٤+١٢٦=٥٣٠. نمثل العملية برسم أصلي نصي لأعمدة [مئات|عشرات|آحاد]، ونكتب التبديل فوق المنزلة.",
+          "StepByStepSolutions": "١) اكتب العددين رأسيًا بمحاذاة المنازل. ٢) اطرح الآحاد، وأعد التجميع من العشرات إذا لم تكفِ. ٣) اطرح العشرات، وأعد التجميع من المئات إذا لم تكفِ. ٤) اطرح المئات بعد تحديثها. ٥) اكتب الفرق بالأرقام مع وحدة المسألة. ٦) تحقق بجمع الفرق والمطروح واستعمل تقديرًا تقريبيًا للحكم على معقولية العدد.",
+          "CommonMistakes": "طرح الرقم الأصغر من الأكبر في العمود حتى لو كان الرقم السفلي أكبر؛ يجب إعادة التجميع في اتجاه صحيح. نسيان إنقاص العشرات أو المئات التي أخذنا منها. تغيير ترتيب العددين عندما يصبح الطرح صعبًا. التعامل مع ٠ في العشرات دون الاستلاف من المئات عند الحاجة. كتابة الناتج من دون التحقق من مواقعه وقيم المنازل.",
+          "QuickSummary": "أحاذي الآحاد والعشرات والمئات، وأعيد التجميع عند الحاجة، وأتحقق بجمع الفرق والمطروح. نشاط إغلاق أصلي: اطرح ٨٤٣ − ٢٦٨ واشرح عمليتي إعادة التجميع، ثم تحقق. المفتاح: ٥٧٥؛ ٥٧٥ + ٢٦٨ = ٨٤٣. يقوّم المعلم ضبط المنازل، إعادة التجميع، وطريقة التحقق."
         }
       ]
     },
