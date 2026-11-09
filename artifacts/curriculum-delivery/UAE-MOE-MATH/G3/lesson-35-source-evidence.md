@@ -1,0 +1,3 @@
+# G3 U06 L02 — الضرب في ٢
+
+Source student Arabic 2025–2026 printed pp295–300/PDF316–321 SHA256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`, teacher older 2020–2021 aligned for goal/models. 16 classroom exercises and 8 homework tasks tracked individually by printed page in `lesson-35-atomic-coverage.json`. Skills: repeated addition of 2, doubling, pairs, arrays, bar diagrams and word problems, even outcomes. Edulytics original Arabic explanation/cooldown and generated exact fact family reuse common U06 handler introduced in L01. Teacher checks diagrams and reasoning. Source year 2026–2027 NOT_VERIFIED; C# tests authored NOT_RUN, CI/StageD NOT_RUN.

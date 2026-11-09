@@ -35302,6 +35302,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l02.multiply_by_two",
+      "version": 1,
+      "skillId": "number.multiplication.times_two",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u06-l02-times-two-2025-2026-source-scoped",
+      "representations": [
+        "equal_groups",
+        "array",
+        "number_line",
+        "bar_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

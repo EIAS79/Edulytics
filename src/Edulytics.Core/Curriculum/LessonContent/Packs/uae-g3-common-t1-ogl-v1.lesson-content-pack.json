@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l01",
+  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 source-scoped A–B–C sequential through ordinal 34; target 2026–2027 parity UNKNOWN.",
+  "ReviewEvidence": "Grade3 source-scoped Arabic lessons 1–35, U6 L02 completed; StageD deferred.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1492,23 +1492,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 2; official Arabic title: الضرب في 2",
+      "TitleSourceReference": "Selected Grade3 Arabic student 2025–2026 pp295–300, teacher reference older 2020–2021",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf, printed pp295–300, PDF 316–321; teacher 2020–2021 printed pp295–300",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "5dc357a81eede9ac7ac6a7813c2226906338a8660d8193c0f044b460f0dadfc0",
+      "SourceEdition": "2025–2026 local student/2020–2021 teacher; target year 2026–2027 not certified",
+      "SourceRights": "Original Edulytics Arabic instructional writing and representations, local books consulted only to establish learning objectives",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "4671acce1f7f56ba2b9ded5f2fadf0d7d2cb62c0a271208f1cbf39b2ac6459e6",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U06_L02_A_B_C_SOURCE_SCOPED_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1519,6 +1519,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 2: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ٢",
+          "Explanation": "الضرب في اثنين يعني جمع مجموعتين متساويتين أو تكرار العدد ٢ عددًا معلومًا من المرات. يمكن تمثيل كل زوج بوحدتين أو برسم صفوف وأعمدة في مصفوفة، وكذلك بالقفز بمقدار ٢ على خط الأعداد. كل ناتج لضرب عدد صحيح في ٢ هو عدد زوجي. أستخدم النموذج أولًا لأحدد عدد المجموعات وما تحتويه كل مجموعة، ثم أكتب جملة الضرب والإجابة.",
+          "KeyConceptsAndRules": "٢ × ن = ن + ن (مضاعفة العدد ن). كذلك ن × ٢ = ٢ + ٢ + ... (ن مرة)؛ يمكن إبدال العاملين دون تغير الناتج. نمط العد بالقفز: ٠،٢،٤،٦،٨،١٠،١٢،١٤،١٦،١٨،٢٠. إذا كان لدينا ٧ صفوف وكل صف يحوي عنصرين، فإن عدد العناصر = ٧×٢=١٤. عكس ذلك: ١٤÷٢=٧. الضرب في ٠ يعطي صفرًا.",
+          "WorkedExamples": "مثال ١: ٨ فرق، في كل فريق لاعبان؛ أمثل ثماني مجموعات من نقطتين: (●●) (●●) (●●) (●●) (●●) (●●) (●●) (●●). المجموع ١٦، إذن ٨×٢=١٦. مثال ٢: حذاءان في كل زوج، ولديك ٥ أزواج؛ ٢+٢+٢+٢+٢=١٠، أي ٥×٢=١٠. مثال ٣: أرسم مصفوفة من ٤ صفوف وعمودين، فأعد ثماني خلايا: ٤×٢=٨. مثال ٤: ٢×٠=٠ لأن لا مجموعات مأهولة.",
+          "StepByStepSolutions": "١) أقرأ المسألة وأحدد عدد المجموعات، ثم عدد الأشياء في كل واحدة. ٢) أرسم نقطتين لكل مجموعة أو أمثل مجموعتين مساويتين بقيم العدد. ٣) أكتب الجمع المتكرر وجملة الضرب: عدد المجموعات × ٢ = الناتج. ٤) أحسب بالقفز بمقدار ٢ أو بإيجاد ضعف عدد المجموعات. ٥) أتحقق بأن الناتج زوجي، وبجملة قسمة مرتبطة أو بعدّ النقاط. ٦) أذكر وحدة الناتج إن كانت المسألة عن أدوات أو مسافة أو نقود.",
+          "CommonMistakes": "الخطأ: ٨×٢=١٠ لأننا جمعنا ٨+٢؛ الصحيح ١٦. الخطأ: رسم صفين وفي كل صف ثماني نقاط ثم تسجيل ٢ فقط؛ يجب عد جميع النقاط. الخطأ: توقع ناتج فردي عند ضرب عدد صحيح في ٢؛ الناتج زوجي دائمًا. الخطأ: كتابة ٢×٥=٧؛ الصحيح ١٠. الخطأ: اعتبار ٠×٢=٢؛ الصحيح صفر.",
+          "QuickSummary": "أستطيع حساب ضرب أي عدد مناسب في ٢ بالمضاعفة أو بتكوين أزواج أو القفز على خط أعداد. نشاط إغلاق أصلي: ارسم ست مجموعات كل منها نقطتان، ثم اكتب جملة ضرب وجملة جمع مكرّر. الإجابات: ٦×٢=١٢؛ ٢+٢+٢+٢+٢+٢=١٢. تحقق بأن ١٢÷٢=٦."
         }
       ]
     },
