@@ -312,6 +312,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade3Unit5Lesson01Questions.Supports(family.Trim()) ||
           UaeGrade3Unit5Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit5Lesson06Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit6Questions.Supports(family.Trim()) ||
           UaeGrade2Unit6Questions.Supports(family.Trim()) ||
           UaeGrade2Unit7Questions.Supports(family.Trim()) ||
           UaeGrade2Unit8Questions.Supports(family.Trim()) ||
@@ -674,6 +675,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit5Lesson03Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit5Lesson06Questions.Supports(family))
             return UaeGrade3Unit5Lesson06Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit6Questions.Supports(family))
+            return UaeGrade3Unit6Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit6Questions.Supports(family))
             return UaeGrade2Unit6Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit7Questions.Supports(family))
@@ -3771,6 +3774,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade3Unit5Lesson06Questions.Supports(family))
         {
             var q = UaeGrade3Unit5Lesson06Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit6Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit6Questions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade2Unit6Questions.Supports(family))
@@ -7785,6 +7793,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit5Lesson03Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit5Lesson06Questions.Supports(problem.Family))
             return UaeGrade3Unit5Lesson06Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit6Questions.Supports(problem.Family))
+            return UaeGrade3Unit6Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit6Questions.Supports(problem.Family))
             return UaeGrade2Unit6Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit7Questions.Supports(problem.Family))

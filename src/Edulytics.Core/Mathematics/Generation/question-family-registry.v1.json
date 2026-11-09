@@ -35283,6 +35283,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l01.multiplication_table_pattern",
+      "version": 1,
+      "skillId": "number.multiplication.table_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "local-2025-2026-Grade3-U06-L01-math-stage-d-not-run",
+      "representations": [
+        "multiplication_table",
+        "array",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
