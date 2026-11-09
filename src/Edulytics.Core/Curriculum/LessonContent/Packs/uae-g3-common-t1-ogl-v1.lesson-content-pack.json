@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l25",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l26",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "UAE G3 lessons 1–25 A–B–C source-scoped sequentially; selected 2025–2026 Arabic student and older teacher; Stage D/CI NOT_RUN, target 2026–2027 parity unknown.",
+  "ReviewEvidence": "Lessons 1–26 A-B-C sequential source-scoped; current target 2026–2027 textbook edition unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1105,23 +1105,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 4 / Lesson 5; official Arabic title: استقصاء حل المسائل: رسم جدول",
+      "TitleSourceReference": "Local selected Arabic 2025–2026 Grade3 Student T1 Unit4 Lesson5 pp213–218; Grade3 2026–2027 parity unverified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U04:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 4 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student 2025–2026 printed pp213–218, PDF pp234–239; older teacher guide 2020–2021 parallel U04 L05",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "32532036864d9e79de033bc52b48af7c2c1a96e540925089df3789756d6c542c",
+      "SourceEdition": "2025–2026 local student selected, 2020–2021 old teacher auxiliary; target 2026–2027 UNKNOWN",
+      "SourceRights": "Mathematical objective and strategy drawn from local source, explanatory examples and tables are independently authored for Edulytics; no book images/text published",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "d5aa5216d78c72055d3fdd174f0af30d5fa6cc7e114e9af070f0c8daf6e19e8e",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U04_L05_ARABIC_ABC_SOURCE_SCOPED_READY_FOR_STAGE_D__TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1132,6 +1132,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Make a Table: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: استراتيجية رسم جدول",
+          "Explanation": "عندما تتضمن المسألة أكثر من اختيار، أستطيع تنظيم جميع الحالات الممكنة في جدول ذي صفوف وأعمدة بدل التخمين. يمثل كل صف اختيارًا من المجموعة الأولى، ويمثل كل عمود اختيارًا من المجموعة الثانية؛ وعند تقاطعهما أكتب الحالة المركبة. أتحقق من أنني لم أهمل حالة أو أكررها، ثم أعد الخلايا المكتملة. أستخدم استراتيجية: أفهم المعطيات، أخطط لرسم جدول، أحل بملء الخانات، وأتحقق بمراجعة كل الاحتمالات. وفي المسائل الزمنية أو العددية، يمكن رسم جدول بقيم متتابعة لمتابعة مقدار ثابت في كل خطوة.",
+          "KeyConceptsAndRules": "إذا كان لدي ٣ اختيارات من فئة أولى و٢ من فئة ثانية، يكون الجدول ٣ صفوف × عمودين ويعرض ٦ حالات: (أ،١)، (أ،٢)، (ب،١)، (ب،٢)، (ج،١)، (ج،٢). أضع عنوانًا واضحًا لكل صف وعمود، وكل خانة تمثل اختيارًا واحدًا من كل فئة. يمكن التحقق بعدد الخلايا = عدد الصفوف × عدد الأعمدة عندما تكون الخيارات مستقلة ومسموحًا بكل زوج. وفي جدول التراكم الحسابي: العدد بعد ك خطوات = ك × المقدار المتكرر، بشرط ثبات المقدار وعدم وجود قيمة ابتدائية مختلفة.",
+          "WorkedExamples": "مثال ١ من تأليف Edulytics: توجد ٣ نكهات عصير (تفاح، برتقال، عنب) وحجمان (صغير، كبير). ارسم ٣ صفوف للنكهات وعمودين للأحجام. صف التفاح: (تفاح، صغير)، (تفاح، كبير)؛ البرتقال: (برتقال، صغير)، (برتقال، كبير)؛ العنب: (عنب، صغير)، (عنب، كبير). عدد الخيارات ٦. مثال ٢: توجد قاعدتان لتصميم لوحة (مربعة، دائرية)، و٤ ألوان؛ جدول ٢ × ٤ يحصي ٨ لوحات ممكنة إذا سُمح بكل تركيب. مثال ٣: يحصل نادي على ١٢٠ درهمًا كل أسبوع. سجّل في جدول: الأسبوع ١ ← ١٢٠، ٢ ← ٢٤٠، ٣ ← ٣٦٠، ٤ ← ٤٨٠، ثم حدد الإجمالي بعد أربعة أسابيع. هذا جدول تراكمي وليس جدول توافيق، لكن المبدأ هو انتظام الصفوف والأعمدة وفحص الخانات.",
+          "StepByStepSolutions": "١) حدد ما المطلوب: عدد الاختيارات أم نمط كمية بمرور الزمن. ٢) في مسألة الاختيارات اكتب عناصر الفئة الأولى في الصفوف والثانية في الأعمدة، وفي مسألة الزمن اكتب وحدات الزمن وقيمتها في صفوف. ٣) املأ كل خانة بناتج الاختيارين أو الكمية المناسبة للخطوة. ٤) راجع أن جميع الخيارات مُمثلة مرة واحدة دون حذف أو تكرار. ٥) عد الخلايا، أو اجمع القيم/أكمل النمط وفق المطلوب. ٦) تحقق بعملية حسابية ثانية أو رسم مصفوفة وبشرح كيف يعكس الجدول جميع الحالات.",
+          "CommonMistakes": "الخطأ: جمع ٣ نكهات + حجمين ثم اعتبار عدد المشروبات الممكنة ٥؛ الصحيح ٣ × ٢ = ٦ إذا كان لكل نكهة حجمان. الخطأ: تسجيل (تفاح، صغير) مرتين وترك (عنب، كبير)؛ يجب مراجعة كل تقاطع. الخطأ: عد عنوان الصف كأنه حالة إضافية؛ تُعد الخانات الداخلية فقط. الخطأ: ضرب عدد الخيارات حتى لو منعت المسألة بعض الأزواج؛ في هذه الحالة أشطب الحالات الممنوعة وأعد المسموح فقط. الخطأ: الخلط بين قيمة أسبوع واحد والإجمالي التراكمي في جدول المتتابعات.",
+          "QuickSummary": "أرسم جدولًا منظمًا لعرض الاختيارات أو القيم المتتابعة، وأراجع كل صف وعمود قبل حساب الإجمالي. نشاط إغلاق Edulytics الأصلي: في متجر ٢ نوع من الحلوى و٣ أحجام للعلبة. ارسم جدول ٢ × ٣، واكتب حالة واحدة في كل خانة، ثم احسب العدد الكلي، وفسر لماذا لا يصلح ٢ + ٣. إجابة المعلم: ٦ حالات مختلفة، والضرب لأن لكل نوع ٣ أحجام. يقيّم المعلم صحة رسم الجدول وتغطية الخانات والشرح."
         }
       ]
     },
