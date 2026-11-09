@@ -33,7 +33,7 @@ jobs:
           name: g2-stage-d-structural
           path: artifacts/uae-g2-stage-d/
   source:
-    name: G2 source parity and edition gate - fail closed
+    name: G2 local source SHA and owner-accepted edition scope (2026 parity UNKNOWN)
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -78,6 +78,31 @@ jobs:
     needs: [structural, source, dotnet, e2e]
     steps:
       - uses: actions/checkout@v4
+      - name: Retrieve this-run structural evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: g2-stage-d-structural
+          path: artifacts/uae-g2-stage-d/gates/
+      - name: Retrieve this-run source-scoped evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: g2-stage-d-source
+          path: artifacts/uae-g2-stage-d/gates/
+      - name: Retrieve this-run .NET test output
+        uses: actions/download-artifact@v4
+        with:
+          name: g2-stage-d-dotnet
+          path: artifacts/uae-g2-stage-d/trx/
+      - name: Retrieve this-run authenticated Grade 2 HTTPS proof
+        uses: actions/download-artifact@v4
+        with:
+          name: uae-g2-stage-d-99-authenticated-https-${{ github.run_id }}
+          path: artifacts/uae-g2-stage-d/runtime/
+      - name: Retrieve this-run real Chromium RTL proof
+        uses: actions/download-artifact@v4
+        with:
+          name: uae-g2-stage-d-browser-rtl-${{ github.run_id }}
+          path: artifacts/uae-g2-stage-d/browser/
       - name: Evidence-bound fail-closed summary
         env:
           STRUCTURAL_JOB_RESULT: ${{ needs.structural.result }}
