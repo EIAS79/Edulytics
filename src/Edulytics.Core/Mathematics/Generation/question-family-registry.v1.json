@@ -35341,6 +35341,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l04.multiply_by_five",
+      "version": 1,
+      "skillId": "number.multiplication.by_five",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u06-l04-local-2025-2026-stage-d-not-run",
+      "representations": [
+        "five_skip_count",
+        "array",
+        "coins"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

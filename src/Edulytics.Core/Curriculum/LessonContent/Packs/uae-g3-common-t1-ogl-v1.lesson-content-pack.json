@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l03",
+  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 A–B–C sequential closed through ordinal 36 (local source 2025–2026; Stage D NOT_RUN)",
+  "ReviewEvidence": "G3 A–B–C sequential closed through ordinal 37 (local source 2025–2026; Stage D NOT_RUN)",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1578,23 +1578,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 4; official Arabic title: الضرب في 5",
+      "TitleSourceReference": "Grade 3 Arabic student 2025–2026 pp307–312, teacher 2020–2021 corresponding lesson",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed 307–312, PDF 328–333",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "8c667e5d97195edf834206469a3558e45ae99c3182dd39cffcf0232d25b78e07",
+      "SourceEdition": "2025–2026 student local + older 2020–2021 teacher, target 2026–2027 UNKNOWN",
+      "SourceRights": "Independent authored Edulytics Arabic text; local PDF for educational source comparison only",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "0aec6e5a1b46ec4f08d47a08a00cd9afd6a169c41bacac87797c4cecd6707f8f",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U06_L04_ARABIC_A_B_C_SOURCE_SCOPED_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1605,6 +1605,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 5: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ٥",
+          "Explanation": "الضرب في ٥ هو تكوين مجموعات تحتوي كل مجموعة منها خمس وحدات. يمكن حساب الناتج بإضافة ٥ مرارًا أو العد بالقفز: ٠،٥،١٠،١٥،٢٠،٢٥،٣٠،٣٥،٤٠،٤٥،٥٠. يمكن تمثيل ذلك بمصفوفة أعمدة أو صفوف، وبقطع نقدية افتراضية قيمتها ٥ وحدات. تساعدنا العلاقة بين الضرب في ٥ والعد بالقفز على حل مسائل النقود والمجموعات في حياتنا.",
+          "KeyConceptsAndRules": "ن × ٥ = ٥+٥+... (ن مرة). نمط نواتج الضرب في ٥ ينتهي برقم الآحاد ٠ أو ٥. إذا كان العامل الآخر زوجيًا انتهى الناتج بصفر، وإذا كان فرديًا انتهى بخمسة. قاعدة الإبدال: ٦×٥=٥×٦. مثال: ٧×٥=٣٥، ويمكن أيضًا معرفة أنها ٥×(٥+٢)=٢٥+١٠=٣٥ عند استعمال التوزيع بطريقة مناسبة.",
+          "WorkedExamples": "مثال ١: أربع مجموعات فيها خمس قطع: (●●●●●) أربع مرات، إذن ٤×٥=٢٠. مثال ٢: ست بطاقات قيمة كل منها ٥ دراهم؛ القيمة الكلية ٦×٥=٣٠ درهمًا. مثال ٣: أكمل: ١٠،١٥،٢٠،__،__؛ نضيف ٥ في كل مرة فتصبح ٢٥،٣٠. مثال ٤: ٩×٥=٤٥ ويمكن إبدال ترتيب العوامل إلى ٥×٩=٤٥.",
+          "StepByStepSolutions": "١) أحدد عدد المجموعات ووجود خمس وحدات في كل مجموعة. ٢) أرسم صفوفًا من خمس نقاط أو خمسة أعمدة في مصفوفة مناسبة. ٣) أعد بخمسات أو أكتب جمعًا متكررًا. ٤) أكتب جملة الضرب وأوجد الناتج. ٥) أتأكد أن رقم الآحاد ٠ أو ٥، ثم أتحقق بالإبدال أو العد. ٦) عند استعمال النقود أكتب وحدة المبلغ بوضوح.",
+          "CommonMistakes": "خطأ: ٥×٤=٩؛ الصحيح ٢٠. خطأ: عد بخمسات ثم أضيف ٥ مرة إضافية لم تكن في عدد المجموعات؛ يجب أن تكون القفزات مساوية للعامل. خطأ: الظن أن كل ناتج للضرب في ٥ ينتهي بـ٥؛ مع العوامل الزوجية ينتهي بالصفر. خطأ: ٧×٥=٣٠ بدل ٣٥ بسبب إسقاط قفزة واحدة.",
+          "QuickSummary": "أضرب في ٥ بالعد بالقفز أو المصفوفات، وأتحقق من نهاية الناتج بصفر أو خمسة. نشاط إغلاق Edulytics: لدى خمسة فرق، في كل فريق ٨ لاعبين؛ كم لاعبًا؟ اكتب جمعًا متكررًا وجملة ضرب بطريقتين. الناتج ٤٠، و٨+٨+٨+٨+٨=٤٠، و٥×٨=٨×٥=٤٠."
         }
       ]
     },
