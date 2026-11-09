@@ -14,6 +14,11 @@ PACK=ROOT/"src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g2-common-t1-og
 BP=ROOT/"src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g2-common-t1-ogl-v1.lesson-blueprint.json"
 MANIFEST=ROOT/"docs/curriculum/UAE_G2_COMMON_OFFICIAL_MANIFEST.json"
 FIELDS=("Explanation","KeyConceptsAndRules","WorkedExamples","StepByStepSolutions","CommonMistakes","QuickSummary")
+PDF_SHA_BY_UNIT={
+    **{n:"867b35b6cfa6f2d01b71af47ccda7c8e8a916e964d54face15d4e17ac600335" for n in range(1,5)},
+    **{n:"1b04e49007d899041189d2750f70893b1649bf5933f3afeed2e078e897fb5ecb" for n in range(5,9)},
+    **{n:"0b888c3918421a411118cfe2b5436b155d4695b6582742c87babd8fe94173784" for n in range(9,13)}
+}
 def read(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 def structural():
@@ -41,6 +46,8 @@ def structural():
         if i>len(p["Lessons"]): break
         row=p["Lessons"][i-1]
         translations=[t for t in row.get("Translations",[]) if t.get("CultureCode")=="ar"]
+        if i<=len(b['Lessons']) and b['Lessons'][i-1].get('Title')!=title:
+            problems.append(f'BLUEPRINT_ARABIC_TITLE_MISMATCH:{i}')
         if len(translations)!=1:
             problems.append(f"ARABIC_TRANSLATION_MISSING:{i}")
         else:
@@ -76,7 +83,12 @@ def source():
         a=read(ART/f"lesson-{i}-atomic-coverage.json")
         lhs=cp.get("SourceSha256","")
         rhs=row.get("SourceSha256","")
-        if lhs and rhs and lhs.lower()!=rhs.lower():
+        unit=int(row["LessonCode"].split(":")[-2])
+        verified_pdf_sha=PDF_SHA_BY_UNIT[unit]
+        atomic_sha=a.get("SourceSha256") or a.get("SourcePdfSha256")
+        if (not rhs or rhs.lower()!=verified_pdf_sha or
+            not atomic_sha or atomic_sha.lower()!=verified_pdf_sha or
+            (lhs and lhs.lower()!=verified_pdf_sha)):
             inconsistencies.append(i)
         if (a.get("OneToOneExerciseParity")=="INDEPENDENTLY_CERTIFIED" and
             cp.get("2026_2027ExerciseExactParity")=="CERTIFIED"):
@@ -95,6 +107,7 @@ def source():
     return problems,{"2026_27Numerator":None,"2026_27Denominator":None,
                      "certifiedIndividualLessons":individuallyCertified,
                      "sourceShaInconsistentOrdinals":inconsistencies,
+                     "verifiedLocalBookShaChecks":len(p["Lessons"])-len(inconsistencies),
                      "sourceParity":"UNKNOWN"}
 def final():
     keys=("STRUCTURAL_JOB_RESULT","SOURCE_JOB_RESULT","DOTNET_JOB_RESULT",

@@ -92,7 +92,7 @@ jobs:
           name: g2-stage-d-final
           path: artifacts/uae-g2-stage-d/
   e2e:
-    name: UAE G2 all 99 Arabic learner pages + 198 persisted Practice attempts
+    name: UAE G2 all 99 Arabic learner pages + 297 persisted Practice attempts
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     services:
@@ -147,7 +147,7 @@ jobs:
         run: |
           python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
           python3 -m playwright install --with-deps chromium
-      - name: Real HTTPS with four authenticated UAE roles and all 99 pages/198 persisted grades
+      - name: Real HTTPS with four authenticated UAE roles and all 99 pages/297 persisted grades
         env:
           Edulytics__Deployment__CleanBootstrap: 'false'
           Edulytics__MeetingDemo__ResetAndSeed: 'true'
