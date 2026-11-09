@@ -7310,6 +7310,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g2.u07.l04.regroup_tens_for_ones", "uae.g2.u07.l05.regroup_hundreds_for_tens", "uae.g2.u07.l06.subtract_three_digit", "uae.g2.u07.l07.vertical_three_digit_sub"],
             "G3_STUDENT_2025_2026_PP153_158_GRADE2_EXACT_REUSE_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:06", "number.subtraction.four_digit_regroup",
+            "FOUR_DIGIT_VERTICAL_SUBTRACT_WITH_INVERSE_CHECK",
+            ["uae.g3.u03.l06.four_digit_subtract_exact","uae.g2.u07.l08.story_equation_sub"],
+            "UAE_G3_2025_2026_STUDENT_PP159_164_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

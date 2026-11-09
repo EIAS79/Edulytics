@@ -35169,6 +35169,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u03.l06.four_digit_subtract_exact",
+      "version": 1,
+      "skillId": "number.subtraction.four_digit_regroup",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u03-l06-2025-2026-source-scoped-stage-d-not-run",
+      "representations": [
+        "place_value_chart",
+        "vertical_subtraction",
+        "inverse_addition"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l19",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l20",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 source-scoped A–B–C through ordinal19, 2026–2027 source parity UNKNOWN",
+  "ReviewEvidence": "Grade3 source-scoped A-B-C sequential through ordinal20 (2026–2027 target edition UNKNOWN)",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -847,23 +847,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 3 / Lesson 6; official Arabic title: طرح الأعداد المكونة من أربعة أرقام",
+      "TitleSourceReference": "Student locally verified Arabic 2025–2026 U3 L06 printed pp159–164, older teacher 2020–2021 supplementary",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U03:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 3 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed159–164 PDF180–185",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "a64b98c2194ea5f1f1e1f03b0ebae1220c317b0df926e59274ba509db35501f3",
+      "SourceEdition": "2025–2026 student, 2020–2021 teacher, 2026–2027 exact target parity UNKNOWN",
+      "SourceRights": "First-party Edulytics Arabic explanation and new numeric exercises; local publisher material not redistributed",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "78b4ab1c257630fcbd41b85b83216741f5c88fb1849cf518ad732c5a9030bf89",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U03_L06_SOURCE_SCOPED_ARABIC_A_B_C_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -874,6 +874,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Subtract Four-Digit Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "طرح الأعداد المكونة من أربعة أرقام",
+          "Explanation": "عندما أطرح أعدادًا من أربع خانات أرتبها في مخطط القيمة المكانية: الآلاف والمئات والعشرات والآحاد. أبدأ بالآحاد من اليمين، ثم العشرات والمئات والآلاف. إذا كان الرقم العلوي في منزلة أقل من الرقم السفلي، أُعيد تجميع وحدة واحدة من المنزلة الأعلى إلى عشر وحدات من المنزلة الحالية، مع إنقاص المنزلة التي أُخذت منها. قد نحتاج إلى أكثر من تبديل في عملية واحدة. ثم أتأكد من صحة الفرق بجمعه إلى العدد المطروح ومقارنة الناتج بالعدد الأصلي.",
+          "KeyConceptsAndRules": "١ ألف = ١٠ مئات، ١ مئة = ١٠ عشرات، ١ عشرة = ١٠ آحاد. الطرح يبدأ من الآحاد. عند عدم كفاية آحاد العدد نعيد تجميع عشرة، ثم نتابع؛ وإذا كانت العشرات أو المئات غير كافية نستعير من المنزلة الأعلى مع الحفاظ على قيمة العدد. نكتب العددين بمحاذاة المنازل حتى إذا احتوى أحدهما أرقامًا أقل. للتحقق: (المطروح منه − المطروح) + المطروح = المطروح منه. يمكن تقريب الأعداد إلى أعلى منزلة للحكم على معقولية الفرق، لكن التقدير لا يحل محل الناتج الدقيق.",
+          "WorkedExamples": "مثال ١: ٦٬٣١٤ − ٢٬٦٨٧. الآحاد ٤ تحتاج عشرة فتصير ١٤−٧=٧؛ العشرات بعد الاستلاف ٠ وتحتاج مئة فتصير ١٠−٨=٢؛ المئات بعد التبديل ٢ وتحتاج ألفًا فتصير ١٢−٦=٦؛ الآلاف ٥−٢=٣. الناتج ٣٬٦٢٧، والتحقق ٣٬٦٢٧ + ٢٬٦٨٧ = ٦٬٣١٤. مثال ٢: ٤٬٨٢٠ − ١٬٣٠٥ = ٣٬٥١٥، ويمكن التحقق بالجملة ٣٬٥١٥ + ١٬٣٠٥ = ٤٬٨٢٠. مثال ٣: ٧٬١٠٢ − ٣٬٩٧٥: أستعير عبر العشرات عند الحاجة ثم من الآلاف إلى المئات، فيكون الفرق ٣٬١٢٧، والتحقق ٣٬١٢٧ + ٣٬٩٧٥ = ٧٬١٠٢. تمثيل بصري نصي مستقل: [آلاف|مئات|عشرات|آحاد]؛ أضع كل رقم في عموده وأدوّن قيمة كل تبادل.",
+          "StepByStepSolutions": "١) أضع الأعداد واحدًا تحت الآخر وفق قيمة المنزلة. ٢) أطرح الآحاد وأحوّل عشرة إلى ١٠ آحاد عند الحاجة. ٣) أطرح العشرات، وأحوّل مئة إلى ١٠ عشرات إذا لزم. ٤) أطرح المئات، وأحوّل ألفًا إلى ١٠ مئات عند الحاجة. ٥) أطرح الآلاف وأكتب الفرق بوحدته. ٦) أقدّر الفرق وأتحقق من الناتج الدقيق بالجمع العكسي.",
+          "CommonMistakes": "نسيان إنقاص المنزلة التي أخذنا منها عند إعادة التجميع. التعامل مع الصفر كأنه يسمح بالاستلاف من نفسه دون الرجوع إلى منزلة أعلى. عدم محاذاة الآلاف والمئات والعشرات والآحاد في الطرح الرأسي. اعتبار التقدير إلى أقرب ألف هو الإجابة الدقيقة. قلب ترتيب العددين أو عدم إجراء تحقق بالجمع.",
+          "QuickSummary": "أحاذي المنازل الأربع، وأطرح من الآحاد حتى الآلاف، وأعيد التجميع عند الحاجة وأتحقق بالجمع. نشاط إغلاق من Edulytics: احسب ٨٬٤١٣ − ٣٬٦٧٨، ثم وضّح مواقع إعادة التجميع وتحقق. الجواب ٤٬٧٣٥؛ ٤٬٧٣٥ + ٣٬٦٧٨ = ٨٬٤١٣. معيار المعلم: ضبط الأعمدة والتبادل والتحقق."
         }
       ]
     },
