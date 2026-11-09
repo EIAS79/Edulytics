@@ -7377,6 +7377,11 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u04.l04.find_missing_array_factor"],
             "UAE_G3_STUDENT_2025_2026_PP259_264_OLDER_TEACHER_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:05","number.division.multiplication_fact_families","TWO_MULTIPLICATION_TWO_DIVISION_INVERSE_FACTS",
+            ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u04.l04.find_missing_array_factor"],
+            "UAE_G3_STUDENT_2025_2026_PP265_270_OLD_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

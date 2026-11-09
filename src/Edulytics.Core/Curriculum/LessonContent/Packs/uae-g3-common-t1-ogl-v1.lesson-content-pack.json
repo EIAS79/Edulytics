@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l31",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l32",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Sequential A–B–C 31/109 source-scoped, U05 L04 using division/multiplication inverse model; target 2026–2027 unverified",
+  "ReviewEvidence": "Grade3 A–B–C source scoped ordinals 1–32, unit5 fact families; target 2026–2027 unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1363,23 +1363,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 5 / Lesson 5; official Arabic title: العمليات العكسية",
+      "TitleSourceReference": "Local Grade3 student Arabic 2025–2026 Unit5 Lesson5 pp265–270; corresponding teacher 2020–2021, target 2026–2027 unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U05:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 5 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student 2025–2026 printed pp265–270, PDF pp286–291; teacher older 2020–2021 Unit5 L05",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "90a7abedee03032daf744a172d22dfed0d5839a8b4d19089ad0d1c5fb59bd295",
+      "SourceEdition": "2025–2026 selected local student, teacher 2020–2021 supplemental, 2026–2027 unverified",
+      "SourceRights": "Edulytics independently authored fact-family explanation and practice; no original book artwork/wording reproduced",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "161a6ac6feb22f4927a1b6b6c414f78af9cade9cdf230ec5e0329fd0d3393c6b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U05_L05_ARABIC_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1390,6 +1390,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Inverse Operations: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "العمليات العكسية",
+          "Explanation": "العمليات العكسية تساعدنا على العودة إلى العدد الأصلي أو التأكد من الحل. الضرب والقسمة عمليتان عكسيتان: إذا عرفت عاملين وحاصل ضربهما، يمكن كتابة جملتي ضرب وجملتي قسمة تربط الأعداد نفسها. تسمى هذه الجمل عائلة الحقائق. أستخدم جدولًا أو مصفوفة أو صفوفًا متساوية لتحديد العاملين وحاصل الضرب. وإذا كان العاملان متساويين، قد تتكرر الجمل ولذلك لا نحتاج أربعة جمل مختلفة بالضرورة.",
+          "KeyConceptsAndRules": "لأي عددين صحيحين موجبين أ وب، إذا كان ج=أ×ب، فالجمل المرتبطة هي أ×ب=ج، ب×أ=ج، ج÷أ=ب، ج÷ب=أ. مثال: ٤ و٦ و٢٤ يعطي ٤×٦=٢٤، ٦×٤=٢٤، ٢٤÷٤=٦، ٢٤÷٦=٤. الخاصية الإبدالية للضرب تضمن ثبات حاصل الضرب عند تبادل العاملين، لكن القسمة ليست إبدالية. وعند أ=ب يمكن أن تتطابق بعض جمل عائلة الحقائق مثل ٣×٣=٩، ٩÷٣=٣.",
+          "WorkedExamples": "مثال ١ أصلي: لدي صفان وفي كل صف ٧ مكعبات؛ العدد الكلي ١٤. عائلة الحقائق: ٢×٧=١٤، ٧×٢=١٤، ١٤÷٢=٧، ١٤÷٧=٢. مثال ٢: الأعداد ٣،٨،٢٤ تشكل عائلة حقائق لأن ٣×٨=٢٤؛ سأكتب جملتي ضرب وجملتي قسمة وأتحقق من صحة كل واحدة. مثال ٣: أريد معرفة العدد المفقود في □×٥=٣٥؛ أستعمل ٣٥÷٥=٧. مثال ٤: الأعداد ٥،٥،٢٥ تعطينا ٥×٥=٢٥ و٢٥÷٥=٥، ولا أعد النسخ المتطابقة حقائق جديدة.",
+          "StepByStepSolutions": "١) أتعرف العاملين والعدد الكلي (ناتج الضرب) في الرسم أو نص المسألة. ٢) أتأكد أن حاصل ضرب العاملين يساوي العدد الكلي. ٣) أكتب جملة ضرب باستخدام العاملين بهذا الترتيب. ٤) أبدل موضع العاملين لكتابة الجملة الثانية. ٥) أبدأ جمل القسمة بالعدد الكلي، وأقسمه على كل عامل لإيجاد العامل الآخر. ٦) أستخدم إحدى جمل القسمة للتحقق من جملة الضرب أو العكس. ٧) أراجع الحالات ذات العاملين المتساويين لتجنب اعتبار الجمل المكررة معلومات مختلفة.",
+          "CommonMistakes": "الخطأ: في عائلة الأعداد ٤،٧،٢٨ كتابة ٢٨÷٧=٣؛ الصحيح ٤. الخطأ: اعتبار ٢٨÷٤=٧ و٤÷٢٨=٧ جملتين مرتبطتين صحيحتين؛ الجملة الثانية خطأ لأن القسمة ليست إبدالية. الخطأ: عد أي ثلاثة أعداد عائلة حقائق دون اختبار الضرب، مثل ٣،٥،١٠؛ ليست صحيحة لأن ٣×٥≠١٠. الخطأ: عند كتابة □×٦=٢٤ تخمين العدد بدل استخدام ٢٤÷٦=٤. الخطأ: إغفال وحدة الإجابة في مسألة مجموعات متساوية.",
+          "QuickSummary": "العاملان وناتج الضرب يكوّنون عائلة حقائق ترتبط فيها جملتا الضرب بجملتي القسمة. نشاط إغلاق Edulytics الأصلي: اكتب عائلة الحقائق للأعداد ٤،٨،٣٢، ثم حل □×٨=٣٢ واشرح لماذا لا تصح ٨÷٣٢=٤. مفتاح المعلم: ٤×٨=٣٢، ٨×٤=٣٢، ٣٢÷٤=٨، ٣٢÷٨=٤؛ المجهول ٤، والقسمة غير إبدالية."
         }
       ]
     },
