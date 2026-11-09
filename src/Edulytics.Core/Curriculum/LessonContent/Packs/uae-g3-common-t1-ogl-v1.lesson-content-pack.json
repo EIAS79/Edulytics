@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l06",
+  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l07",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 sequential A–B–C through lesson39, local 2025–2026; target year unknown, tests/StageD NOT_RUN",
+  "ReviewEvidence": "Grade3 U06 sequential A–B–C source-scoped through ordinal 40; StageD CI NOT_RUN; 2026–2027 source unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1707,23 +1707,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:07",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 7; official Arabic title: الضرب في 10",
+      "TitleSourceReference": "UAE Grade3 Common Arabic student 2025–2026 pp327–332; teacher 2020–2021 corresponding edition",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 7",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed pp327–332 PDF 348–353",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "0b61d5a73426b54dc2d8696d48aa254d430b27c19afce0d25822de61c0c20695",
+      "SourceEdition": "2025–2026 latest local Arabic student / teacher older 2020–2021; target 2026–2027 parity unknown",
+      "SourceRights": "Independent Edulytics Arabic teaching text, no textbook pages/images copied; educational objectives compared locally",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "95d621297779b12cf6f1e9a813934a90b25fa9297335b75bbd0691bbbdd37155",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U06_L07_SOURCE_SCOPED_A_B_C_ARABIC_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1734,6 +1734,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 10: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ١٠",
+          "Explanation": "أضرب عددًا صحيحًا في عشرة عندما أجد مجموعات متساوية، كل مجموعة منها عشر وحدات. أستطيع العد بالقفز على خط الأعداد: ٠،١٠،٢٠،٣٠،٤٠،٥٠،٦٠،٧٠،٨٠،٩٠،١٠٠. وإذا كان العامل الآخر عددًا صحيحًا، فإن حاصل ضربه في ١٠ يتكون من عدد من العشرات يساوي هذا العامل؛ مثل ٧ عشرات = ٧٠. تساعدنا الرسوم وقطع القيمة المكانية على تفسير النتائج بدل حفظ قاعدة الصفر دون فهمها.",
+          "KeyConceptsAndRules": "ن × ١٠ = ن عشرات. للأعداد الصحيحة في هذا الدرس ينتج عن الضرب في ١٠ رقم آحاد قيمته صفر. وبخاصية الإبدال: ٤ × ١٠ = ١٠ × ٤ = ٤٠. يمكن تمثيل الناتج بجمع عشرات متساوية أو بالقفز بعشر خطوات، أو بضرب عدد المجموعات في ١٠. إذا كان ١٠×□=٦٠، فإن العامل المجهول هو ٦؛ يمكن التحقق بالقسمة ٦٠÷١٠=٦.",
+          "WorkedExamples": "مثال ١: ثمانية فرق، في كل فريق ١٠ لاعبين؛ ٨×١٠=٨٠ لاعبًا. نموذج: ثمانية أشرطة متساوية من عشر نقاط تمثل ٨ عشرات. مثال ٢: على خط أعداد أصلي ننتقل ١٠،٢٠،٣٠،٤٠،٥٠؛ خمس قفزات تساوي ٥×١٠=٥٠. مثال ٣: ١٠×٣=٣٠، وبالإبدال ٣×١٠=٣٠. مثال ٤: إذا كان ١٠×□=٩٠ فالعدد المجهول ٩ لأن ٩ عشرات = ٩٠.",
+          "StepByStepSolutions": "١) أحدد كم مجموعة، وهل في كل مجموعة عشر وحدات. ٢) أمثلها بقضبان عشرات أو خط أعداد مع قفزات طولها ١٠. ٣) أكتب الجمع المتكرر للعشرات إذا لزم. ٤) أحسب عدد المجموعات × ١٠ وأكتب الناتج بوحدة المسألة. ٥) أتحقق بإبدال العاملين أو بمقارنة عدد القفزات. ٦) إذا كان أحد العوامل مجهولًا، أقسم الناتج على العامل المعروف.",
+          "CommonMistakes": "الخطأ: ٦×١٠=١٦ لأننا جمعنا ٦+١٠؛ الصحيح ٦٠. الخطأ: ٣٠ يمثل ٣ آحاد؛ الصحيح ٣ عشرات. الخطأ: ١٠×٠=١٠؛ الصحيح صفر. الخطأ: تخطي عدد إضافي من القفزات على خط الأعداد وتسجيل ناتج أعلى بعشرة. الخطأ: التعامل مع وضع الصفر في نهاية العدد كقاعدة عامة للكسور أو الأعداد العشرية؛ هذا الدرس عن الأعداد الصحيحة.",
+          "QuickSummary": "الضرب في ١٠ يكوّن عشرات كاملة. نشاط إغلاق أصلي: ٧ صناديق، في كل صندوق ١٠ مكعبات. أوجد العدد الكلي، ومثّله بقفزات العشرة ثم اكتب معادلة تحقق. الإجابة ٧٠ مكعبًا، ٧×١٠=٧٠ و٧٠÷١٠=٧."
         }
       ]
     },

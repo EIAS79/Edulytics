@@ -35398,6 +35398,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l07.multiply_by_ten",
+      "version": 1,
+      "skillId": "number.multiplication.by_ten",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade3-unit6-lesson07-2025-2026-selected-source-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "ten_rods",
+        "repeated_addition"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

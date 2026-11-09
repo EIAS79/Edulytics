@@ -7417,6 +7417,11 @@ public static class LessonPracticeContractRegistry
             "LOOK_FOR_PATTERN_ADDITIVE_DOUBLING_HALVING_REPETITION",
             ["uae.g3.u06.l06.find_mul_div_pattern"],"UAE_G3_2025_2026_STUDENT_PP321_326_TEACHER_OLDER_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:07","number.multiplication.by_ten","TENS_GROUPS_SKIP_COUNT_AND_INVERSE_FACTOR",
+            ["uae.g3.u06.l07.multiply_by_ten","uae.g3.u06.l01.multiplication_table_pattern"],
+            "UAE_G3_2025_2026_STUDENT_PP327_332_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
