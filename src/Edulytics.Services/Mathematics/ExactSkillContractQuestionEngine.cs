@@ -286,6 +286,7 @@ public sealed class ExactSkillContractQuestionEngine
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
           UaeGrade2Unit1Lessons02And13Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit2Questions.Supports(family.Trim()) ||
          SupportedFamilies.Contains(family.Trim()) ||
          Grade12PrecalculusAdvancedNumericQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
@@ -594,6 +595,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
             return UaeGrade2Unit1Lessons02And13Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit2Questions.Supports(family))
+            return UaeGrade2Unit2Questions.Verify(family, parameters, answer);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
                 family, parameters, answer);
@@ -3558,6 +3561,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
         {
             var q = UaeGrade2Unit1Lessons02And13Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit2Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit2Questions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         return family switch
@@ -7502,6 +7510,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit1Lesson01Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(problem.Family))
             return UaeGrade2Unit1Lessons02And13Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit2Questions.Supports(problem.Family))
+            return UaeGrade2Unit2Questions.Solve(problem.Family, p);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(problem.Family))
             return Grade12PrecalculusAdvancedNumericQuestions.Solve(
                 problem.Family, p);
