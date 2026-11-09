@@ -52,8 +52,22 @@ internal static class UaeGrade3Unit6Questions
        prompt=mode==0?$"اقسم {5*b} على ٥: كم جزءًا في كل مجموعة؟":$"لديك {5*b} قطعة، ووضعت خمس قطع في كل علبة. كم علبة؟";
        break;
      case Pattern:
-       mode=random.Next(3);a=new[]{2,5,10}[mode];b=random.Next(0,8);value=(b+3)*a;
-       prompt=$"ابحث عن قاعدة هذا النمط ثم أكمله: {b*a}، {(b+1)*a}، {(b+2)*a}، □.";
+       mode=random.Next(5);
+       if(mode<3)
+       {
+          a=new[]{2,5,10}[mode];b=random.Next(0,8);value=(b+3)*a;
+          prompt=$"ابحث عن قاعدة نمط الزيادة الثابتة ثم أكمله: {b*a}، {(b+1)*a}، {(b+2)*a}، □.";
+       }
+       else if(mode==3)
+       {
+          a=2;b=random.Next(1,4);value=1<<(b+3);
+          prompt=$"ابحث عن نمط المضاعفة ثم أكمله: {1<<b}، {1<<(b+1)}، {1<<(b+2)}، □.";
+       }
+       else
+       {
+          a=2;b=random.Next(4,8);value=1<<(b-3);
+          prompt=$"لاحظ نمط القسمة على اثنين ثم أكمله: {1<<b}، {1<<(b-1)}، {1<<(b-2)}، □.";
+       }
        break;
      case Mul10:
        a=10;b=random.Next(0,11);value=10*b;mode=random.Next(2);
@@ -86,7 +100,12 @@ internal static class UaeGrade3Unit6Questions
      Div2 => a==2&&b is >=0 and <=10&&mode is >=0 and <=1,
      Mul5 => a==5&&b is >=0 and <=10&&mode is >=0 and <=1,
      Div5 => a==5&&b is >=0 and <=10&&mode is >=0 and <=1,
-     Pattern => mode is >=0 and <=2 && a==(mode==0?2:mode==1?5:10)&&b is >=0 and <=7,
+     Pattern => mode switch {
+         >=0 and <=2 => a==(mode==0?2:mode==1?5:10)&&b is >=0 and <=7,
+         3 => a==2&&b is >=1 and <=3,
+         4 => a==2&&b is >=4 and <=7,
+         _ => false
+     },
      Mul10 => a==10&&b is >=0 and <=10&&mode is >=0 and <=1,
      MulTens => a is >=2 and <=9 && b is >=10 and <=90 && b%10==0 && mode is >=0 and <=1,
      Div10 => a==10&&b is >=0 and <=10&&mode is >=0 and <=1,
@@ -96,7 +115,7 @@ internal static class UaeGrade3Unit6Questions
     expected=family switch{
        Table => mode==0?a*b:mode==1?b:a*(b+1),
        Div2 or Div5 or Div10 => b,
-       Pattern => (b+3)*a,
+       Pattern => mode==3?1<<(b+3):mode==4?1<<(b-3):(b+3)*a,
        _ => a*b
     };
     return result==expected;

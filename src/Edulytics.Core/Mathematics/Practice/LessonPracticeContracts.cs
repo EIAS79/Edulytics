@@ -7412,6 +7412,11 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u06.l05.divide_by_five","uae.g3.u05.l01.model_equal_groups_division"],
             "UAE_G3_LOCAL_2025_2026_STUDENT_PP313_318_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:06","number.patterns.multiplication_division",
+            "LOOK_FOR_PATTERN_ADDITIVE_DOUBLING_HALVING_REPETITION",
+            ["uae.g3.u06.l06.find_mul_div_pattern"],"UAE_G3_2025_2026_STUDENT_PP321_326_TEACHER_OLDER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

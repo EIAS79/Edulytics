@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-t1-v1-ar-a-b-c-u06-l05",
+  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 A–B–C sequential closed through ordinal 38 (local source 2025–2026; Stage D NOT_RUN)",
+  "ReviewEvidence": "Grade3 sequential A–B–C through lesson39, local 2025–2026; target year unknown, tests/StageD NOT_RUN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1664,23 +1664,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 6; official Arabic title: استقصاء حل المسائل: البحث عن نمط",
+      "TitleSourceReference": "UAE Grade3 Common Arabic 2025–2026, Unit6 L06 pp321–326; older teacher guide pp321–326",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed321–326 PDF342–347; older teacher guide 2020–2021 corresponding",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "23a5b869ec87612ef52d6b1c783c78bda9dabacaddc8a613bbc0400faf20292b",
+      "SourceEdition": "2025–2026 student edition; teacher 2020–2021 supplemental; target 2026–2027 parity unverified",
+      "SourceRights": "Original Edulytics Arabic text and noncopied numeric models; textbook pages cited for source skill only",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "4a852a1a0a5f9ec2cab5efda47426c63f8d2f4ec317be1c5066397c4fb8815fb",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "GRADE3_U06_L06_SOURCE_SCOPED_A_B_C_WITH_DOUBLING_AND_HALVING_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1691,6 +1691,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Find a Pattern: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل المسائل: البحث عن نمط",
+          "Explanation": "نبحث عن نمط عندما تتكرر قاعدة واضحة في الأعداد أو الأشكال أو الألوان. قد يزيد عدد الأشياء بمقدار ثابت، أو يتضاعف في كل خطوة، أو ينقسم إلى النصف، أو تتكرر الألوان بترتيب دوري. لحل المسألة أقرأ المعطيات، أنظمها في جدول بحسب ترتيب الخطوة، أبحث عن علاقة كل قيمة بالتي تليها، ثم أطبق القاعدة وأتحقق من صحة التوقع. لا يفترض أن كل نمط من نوع الجمع؛ مثال ٢،٤،٨،١٦ هو مضاعفة كل مرة وليس إضافة ٢.",
+          "KeyConceptsAndRules": "نمط الزيادة بمقدار د: أ، أ+د، أ+٢د. نمط المضاعفة: أ، ٢أ، ٤أ، ٨أ. نمط التنصيف للأعداد الزوجية: أ، أ÷٢، أ÷٤. ونمط دوري مثل أحمر، أزرق، أخضر يعيد نفسه كل ثلاث خطوات. تحديد قاعدة واحدة من قيم قليلة ليس دائمًا برهانًا وحيدًا؛ نتحقق من ملاءمتها لكل المعطيات والسياق، ثم نستعملها للتوقع. على جدول الخطوات يجب التمييز بين رقم الصف وقيمة الصف.",
+          "WorkedExamples": "مثال ١: أعداد مكعبات البناء في الصفوف الأربعة الأولى هي ٢،٤،٨،١٦؛ يتضاعف العدد كل مرة، فالصف الخامس ٣٢ والسادس ٦٤. مثال ٢: متجر يحصل في الأيام الأولى على ٣،٤،٥،٦ نقاط؛ قاعدة الزيادة نقطة يوميًا، وفي اليوم التاسع ١١ نقطة. مثال ٣: ٦٤،٣٢،١٦،٨،__؛ الناتج التالي ٤ لأن كل حد نصف سابقه. مثال ٤: يكرر الطالب ألوانًا: أصفر، أزرق، أحمر، أصفر، أزرق، أحمر، ...، فالرمز السابع أصفر. نمثل الأنماط برسومات مستقلة وجداول نصية من تأليف Edulytics.",
+          "StepByStepSolutions": "١) أفهم المطلوب: قيمة في خطوة لاحقة أو قاعدة تكرار. ٢) أنظم المعطيات في جدول: رقم الخطوة، القيمة أو الرمز. ٣) أختبر الفرق الثابت، ثم الضرب أو القسمة، ثم التكرار الدوري إذا كانت المعطيات شكلية. ٤) أتأكد من أن القاعدة توافق كل الأعداد المعطاة، وليس أول انتقال فقط. ٥) أستمر حتى الخطوة المطلوبة دون تغيير ترتيب القيم. ٦) أكتب تفسيرًا مختصرًا وأتحقق بعكس العملية حين يكون ذلك ممكنًا.",
+          "CommonMistakes": "خطأ: إكمال ٢،٤،٨،١٦ بالعدد ١٨ لأننا جمعنا ٢؛ الصحيح ٣٢ لأن القاعدة مضاعفة. خطأ: في ٤٨،٢٤،١٢ إضافة ١٢ للحصول على ٢٤؛ الصحيح الحد التالي ٦ عند التنصيف. خطأ: إكمال تكرار أحمر-أزرق-أخضر باللون نفسه دائمًا؛ النمط دوري من ثلاثة ألوان. خطأ: الخلط بين رقم اليوم ومجموع الإيراد عند وجود زيادة يومية. خطأ: تعميم قاعدة من انتقال واحد فقط دون اختبار باقي الحدود.",
+          "QuickSummary": "أحل المسألة بجدول أو خط أعداد أو رسم، وأحدد هل القاعدة جمع ثابت أو مضاعفة أو تنصيف أو تكرار دوري. نشاط إغلاق أصلي: أكمل ٣،٦،١٢،٢٤،__،__ و٤٠،٢٠،١٠،__، ثم اشرح قاعدة كل نمط. إجابات المعلم: ٤٨،٩٦ للمضاعفة، و٥ للتنصيف. واطلب مثالًا لدورة ألوان من ثلاثة رموز."
         }
       ]
     },
