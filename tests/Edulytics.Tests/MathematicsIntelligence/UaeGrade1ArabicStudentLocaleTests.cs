@@ -59,6 +59,27 @@ public sealed class UaeGrade1ArabicStudentLocaleTests
 
     [Theory]
     [InlineData("PED:UAE-MOE-MATH:L2:COMMON:01:01")]
+    [InlineData("PED:UAE-MOE-MATH:L2:COMMON:05:01")]
+    [InlineData("PED:UAE-MOE-MATH:L2:COMMON:12:05")]
+    public void Grade2Common_UsesReviewedArabicAcademicContent(string code)
+    {
+        var chosen = Choose(MathematicsCurriculumPackRegistry.UaeCode,
+            code, [Content("en", "English placeholder"), Content("ar", "رياضيات الصف الثاني")]);
+        Assert.NotNull(chosen);
+        Assert.Equal("ar", chosen.CultureCode);
+        Assert.Equal("رياضيات الصف الثاني", chosen.Title);
+    }
+
+    [Fact]
+    public void MissingArabicGrade2Body_DoesNotLeakEnglishFallback()
+    {
+        const string code = "PED:UAE-MOE-MATH:L2:COMMON:01:01";
+        Assert.Null(Choose(MathematicsCurriculumPackRegistry.UaeCode,
+            code, [Content("en", "Unapproved English fallback")]));
+    }
+
+    [Theory]
+    [InlineData("PED:UAE-MOE-MATH:L3:COMMON:01:01")]
     [InlineData("PED:UAE-MOE-MATH:L11:ADVANCED:05:01:MULTIVARIABLE-LINEAR-SYSTEMS-AND-ELEMENTARY-ROW-OPERATIONS")]
     public void OtherUaeGrades_KeepExistingEnglishDefault(string code)
     {

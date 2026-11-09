@@ -761,9 +761,9 @@ public sealed class LessonContentService : ILessonContentService
             ? context.CurriculumLevelLabel
             : context.GradeName;
 
-    // The framework-level UAE AcademicLanguage is still "en" for older UAE
-    // tracks. Grade 1 Common has an independently authored Arabic pack; do
-    // not change the language of other UAE grade/track publications.
+    // UAE Grade 1 and Grade 2 Common have owner-authored Arabic canonical
+    // learning bodies; never fall back to English when Arabic is absent.
+    // Other UAE levels and other curricula keep their existing language policy.
     private static bool IsUaeG1ArabicLesson(string? lessonCode) =>
         !string.IsNullOrWhiteSpace(lessonCode) &&
         lessonCode.StartsWith(
@@ -775,11 +775,9 @@ public sealed class LessonContentService : ILessonContentService
         string frameworkCode,
         string lessonCode)
     {
-        var reviewedG2Arabic =
-            !string.IsNullOrWhiteSpace(lessonCode) &&
-            lessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) &&
-            translations.Any(x => NormalizeCulture(x.CultureCode) == "ar");
-        var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) || reviewedG2Arabic) &&
+        var grade2Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal);
+        var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) || grade2Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
