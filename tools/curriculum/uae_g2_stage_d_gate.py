@@ -31,6 +31,9 @@ def structural():
         problems.append("BLUEPRINT_ORDER_OR_DUPLICATE")
     if p.get("AcademicLanguage")!="ar":
         problems.append("ACADEMIC_LANGUAGE_NOT_AR")
+    view=(ROOT/"src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml").read_text(encoding="utf-8-sig")
+    if "uae-g2-original-arabic-lesson" not in view or "isUaePrimaryArabic" not in view:
+        problems.append("G2_ARABIC_RTL_LEARNER_VIEW_NOT_GUARDED")
     if b.get("LogicalLevel")!=2 or b.get("Pathway")!="Common":
         problems.append("BLUEPRINT_LEVEL_OR_PATHWAY_WRONG")
     passed=0

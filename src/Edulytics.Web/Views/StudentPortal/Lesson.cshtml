@@ -32,32 +32,22 @@
         ViewData["Grade3AuthoredActivityAdoptionId"] is Guid g3AdoptionId
             ? g3AdoptionId
             : (Guid?)null;
-    var isUaeGrade1Arabic =
+    var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
-        (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:01:", StringComparison.Ordinal) || Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:02:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:03:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:04:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:05:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:06:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:07:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:08:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:09:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:10:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:11:", StringComparison.Ordinal) ||
-         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:12:", StringComparison.Ordinal));
-    var lessonNavTitle = isUaeGrade1Arabic ? "الدرس" : S["Lesson"].Value;
-    var practiceNavTitle = isUaeGrade1Arabic ? "التدريب" : P["Practice"].Value;
-    var backToLessonsTitle = isUaeGrade1Arabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
-    ViewData["UseYouTubeStudioV2"] = !isUaeGrade1Arabic;
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal);
+    var lessonNavTitle = isUaePrimaryArabic ? "الدرس" : S["Lesson"].Value;
+    var practiceNavTitle = isUaePrimaryArabic ? "التدريب" : P["Practice"].Value;
+    var backToLessonsTitle = isUaePrimaryArabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
+    ViewData["UseYouTubeStudioV2"] = !isUaePrimaryArabic;
 
     var sections = new[]
     {
-        new LessonReaderSection("01", isUaeGrade1Arabic ? "الشرح" : L["Explanation"].Value, "explanation", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.Explanation), sectionKind: "explanation", includeFallbackVisual: !isUaeGrade1Arabic)),
-        new LessonReaderSection("02", isUaeGrade1Arabic ? "المفاهيم والقواعد" : L["KeyConceptsAndRules"].Value, "concepts", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.KeyConceptsAndRules), sectionKind: "concepts")),
-        new LessonReaderSection("03", isUaeGrade1Arabic ? "أمثلة محلولة" : L["WorkedExamples"].Value, "examples", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.WorkedExamples), sectionKind: "examples", includeFallbackVisual: !isUaeGrade1Arabic)),
-        new LessonReaderSection("04", isUaeGrade1Arabic ? "الحل خطوة بخطوة" : L["StepByStepSolutions"].Value, "steps", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.StepByStepSolutions), orderedSteps: true, sectionKind: "steps")),
-        new LessonReaderSection("05", isUaeGrade1Arabic ? "الأخطاء الشائعة" : L["CommonMistakes"].Value, "mistakes", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.CommonMistakes), sectionKind: "mistakes")),
-        new LessonReaderSection("06", isUaeGrade1Arabic ? "ملخص الدرس" : L["QuickSummary"].Value, "summary", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.QuickSummary), sectionKind: "summary"))
+        new LessonReaderSection("01", isUaePrimaryArabic ? "الشرح" : L["Explanation"].Value, "explanation", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.Explanation), sectionKind: "explanation", includeFallbackVisual: !isUaePrimaryArabic)),
+        new LessonReaderSection("02", isUaePrimaryArabic ? "المفاهيم والقواعد" : L["KeyConceptsAndRules"].Value, "concepts", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.KeyConceptsAndRules), sectionKind: "concepts")),
+        new LessonReaderSection("03", isUaePrimaryArabic ? "أمثلة محلولة" : L["WorkedExamples"].Value, "examples", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.WorkedExamples), sectionKind: "examples", includeFallbackVisual: !isUaePrimaryArabic)),
+        new LessonReaderSection("04", isUaePrimaryArabic ? "الحل خطوة بخطوة" : L["StepByStepSolutions"].Value, "steps", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.StepByStepSolutions), orderedSteps: true, sectionKind: "steps")),
+        new LessonReaderSection("05", isUaePrimaryArabic ? "الأخطاء الشائعة" : L["CommonMistakes"].Value, "mistakes", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.CommonMistakes), sectionKind: "mistakes")),
+        new LessonReaderSection("06", isUaePrimaryArabic ? "ملخص الدرس" : L["QuickSummary"].Value, "summary", LessonPresentationParser.Parse(StudentLessonPresentationFilter.Clean(Model.QuickSummary), sectionKind: "summary"))
     };
 }
 <style>
@@ -1934,13 +1924,13 @@
         <div class="school-alert school-alert-error" role="alert">@error</div>
     }
 
-    <header class="lesson-reader-hero" dir="@(isUaeGrade1Arabic ? "rtl" : null)">
+    <header class="lesson-reader-hero" dir="@(isUaePrimaryArabic ? "rtl" : null)">
         <div class="lesson-reader-hero__main">
             <div class="lesson-reader-hero__topline">
-                <span class="student-subject-code">@(isUaeGrade1Arabic ? "رياضيات" : Model.SubjectCode)</span>
+                <span class="student-subject-code">@(isUaePrimaryArabic ? "رياضيات" : Model.SubjectCode)</span>
             </div>
-            <p class="lesson-library-eyebrow">@(isUaeGrade1Arabic ? "محتوى الدرس" : L["LearningContent"].Value)</p>
-            @if (isUaeGrade1Arabic)
+            <p class="lesson-library-eyebrow">@(isUaePrimaryArabic ? "محتوى الدرس" : L["LearningContent"].Value)</p>
+            @if (isUaePrimaryArabic)
             {
                 <h1 lang="ar">@grade5OriginalDisplayTitle</h1>
             }
@@ -1951,18 +1941,18 @@
             }
             @* The old UAE Grade 1 UnitTitle duplicates the Arabic title in
                English. Do not present an unrelated English subtitle. *@
-            @if (!isUaeGrade1Arabic)
+            @if (!isUaePrimaryArabic)
             {
                 <p class="lesson-reader-hero__unit">@Model.TopicName</p>
             }
             <div class="lesson-reader-meta">
                 <span>
-                    <small>@(isUaeGrade1Arabic ? "الصف" : L["Grade"].Value)</small>
-                    <strong>@(isUaeGrade1Arabic ? (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
+                    <small>@(isUaePrimaryArabic ? "الصف" : L["Grade"].Value)</small>
+                    <strong>@(isUaePrimaryArabic ? (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
                 </span>
                 <span>
-                    <small>@(isUaeGrade1Arabic ? "المنهج" : L["Framework"].Value)</small>
-                    <strong>@(isUaeGrade1Arabic ? "رياضيات وزارة التربية والتعليم الإماراتية" : Model.FrameworkName)</strong>
+                    <small>@(isUaePrimaryArabic ? "المنهج" : L["Framework"].Value)</small>
+                    <strong>@(isUaePrimaryArabic ? "رياضيات وزارة التربية والتعليم الإماراتية" : Model.FrameworkName)</strong>
                 </span>
             </div>
         </div>
@@ -2612,13 +2602,11 @@
         }
         else
         {
-            @if (Model.LessonCode.StartsWith(
-                     "PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal))
+            @if (isUaePrimaryArabic)
             {
-                @* Preserve all six reviewed Arabic teaching sections. Existing
-                   English-only RichV2 fallback must not replace canonical
-                   Grade 1 instruction, examples or teacher-led activities. *@
-                <div class="uae-g1-original-arabic-lesson" lang="ar" dir="rtl">
+                @* Preserve the full original Arabic teaching body in G1 and G2. *@
+                <div class="@(Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal)
+                         ? "uae-g2-original-arabic-lesson" : "uae-g1-original-arabic-lesson")" lang="ar" dir="rtl">
                     @foreach (var section in sections)
                     {
                         <partial name="_LessonReaderSection" model="section" />
@@ -2634,7 +2622,7 @@
             }
         }
 
-        @if (!isUaeGrade1Arabic)
+        @if (!isUaePrimaryArabic)
         {
             <partial name="_LessonYouTubeStudio"
                  model="@(new LessonYouTubeStudioViewModel(
