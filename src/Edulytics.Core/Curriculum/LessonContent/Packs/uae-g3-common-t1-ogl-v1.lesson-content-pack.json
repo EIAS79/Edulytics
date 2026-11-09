@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l32",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l33",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 A–B–C source scoped ordinals 1–32, unit5 fact families; target 2026–2027 unknown.",
+  "ReviewEvidence": "G3 source-scoped A–B–C 33/109, Units1–5 closed; 2026–2027 parity unknown; tests and CI not run",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1406,23 +1406,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 5 / Lesson 6; official Arabic title: استقصاء حل المسائل: استخدام النماذج",
+      "TitleSourceReference": "Locally verified 2025–2026 Arabic G3 Unit5 Lesson6 Student printed271–276, older teacher 2020–2021, 2026–2027 source unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U05:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 5 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed pp271–276, PDF pp292–297; teacher 2020–2021 pp271–276",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "df0d59880f85a01817a9f7174236883f760bb1cee0f0f43c2904099d562a4718",
+      "SourceEdition": "2025–2026 student T1 local, 2020–2021 teacher supplemental; 2026–2027 target unknown",
+      "SourceRights": "All explanatory content, bar models, question examples and cooldown independently authored by Edulytics; no copied pages/images",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "151f783a31807a91e34d64d360a59d733e8dbd5c04c1f1ab0f567e8ebb8d8e5b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U05_L06_SOURCE_SCOPED_ARABIC_A_B_C_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1433,6 +1433,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Use Models: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: استراتيجية استخدام النماذج",
+          "Explanation": "أستخدم النماذج لفهم مسألة لفظية قبل إجراء العمليات الحسابية. النموذج يمكن أن يكون قطع عد أو دوائر للمجموعات أو مخطط أشرطة يوضح الكل والأجزاء. أتبع أربع خطوات: أفهم المعلومات والمعطيات، أخطط لنموذج يمثّل العلاقة بينها، أحل وأكتب الجملة العددية، ثم أتحقق من أن الإجابة منطقية. في مسائل المشاركة المتساوية يساعدني عدد الحاويات والقطع في كل حاوية على تحديد عملية القسمة، وفي المسائل متعددة الخطوات قد أحتاج إلى جمع أو طرح قبل القسمة.",
+          "KeyConceptsAndRules": "إذا كانت الكمية الكلية تساوي عدد المجموعات × الكمية في كل مجموعة، فنستخدم القسمة لإيجاد العدد المجهول. أحسب أولًا أي زيادة أو نقص وارد في القصة، ثم أمثل المتبقي. مثال: لدينا ٣٠ كتابًا، أُعير منها ٦، ثم وُزع الباقي على ٤ رفوف متساوية؛ المتبقي ٢٤ كتابًا، ولكل رف ٦ كتب. المخطط: [الكل ٣٠] = [المستخدم ٦] + [المتبقي ٢٤] = ٤ × [٦ لكل رف]. يجب أن يكون النموذج متطابقًا مع الكلمات: لا أستعمل الضرب إذا كان المطلوب عدد الأشياء في المجموعة الواحدة عند معرفة المجموعات والكل.",
+          "WorkedExamples": "مثال ١ أصلي: أعدّ فريق ٢٧ بطاقة وقسمها إلى ٣ مجموعات متساوية. أرسم ثلاث دوائر وأضع في كل منها ٩ نقاط؛ ٢٧÷٣=٩ وتحقق ٣×٩=٢٧. مثال ٢: في مخزن ٣٥ قلمًا، وزّع المعلم ٥ على السبورة، ثم قسم الباقي على ٦ فرق؛ أحسب ٣٥−٥=٣٠ ثم ٣٠÷٦=٥ أقلام للفريق. أرسم شريطًا للكل يحوي جزءًا ٥ وآخر ٣٠ وأقسم الجزء ٣٠ إلى ٦ أجزاء متساوية. مثال ٣: لدى معلمة ٤٨ ملصقًا، وتخصص ٨ لكل طالب؛ كم طالبًا؟ أمثل شريطًا من ست مجموعات كل منها ٨، فعدد الطلاب ٦ لأن ٤٨÷٨=٦.",
+          "StepByStepSolutions": "١) أقرأ النص وأحدد ما هو معلوم وما المطلوب، وأكتب وحدة الإجابة. ٢) أختار نموذجًا ملائمًا: دوائر، مصفوفة، شريط للكل والأجزاء، أو جدول. ٣) أمثل كل معلومة في مكانها الصحيح، وأفصل بين أي كمية مستخدمة أو مضافة وبين الكمية التي ستقسم. ٤) أحسب أولًا الجمع أو الطرح إذا كانت المسألة متعددة الخطوات. ٥) أقسم الكمية المعنية بالتساوي على عدد المجموعات أو حجم المجموعة حسب السؤال. ٦) أكتب جملة عددية وخطوة تحقق بالضرب أو العملية العكسية. ٧) أقارن النتيجة بالنص وأسأل هل الإجابة منطقية وهل النموذج يغطي كل عنصر؟",
+          "CommonMistakes": "الخطأ: في ٣٥ قلمًا استُخدم منها ٥، ثم قُسم الباقي على ٦، حساب ٣٥÷٦ مباشرة؛ يجب طرح ٥ أولًا. الخطأ: عد عدد الدوائر بدل عدد الأشياء في كل دائرة عندما يطلب السؤال الحجم؛ اقرأ المطلوب. الخطأ: رسم أجزاء غير متساوية رغم وصف التوزيع بأنه بالتساوي. الخطأ: قبول ناتج لا يعيد العدد الكلي عند ضربه في عدد المجموعات. الخطأ: إغفال الوحدات وتقديم الناتج ٦ دون بيان أنه ٦ طلاب أو أقلام.",
+          "QuickSummary": "أفهم نص المسألة، وأمثلها بنموذج يوضح الكل والأجزاء، وأحل خطوة خطوة وأتحقق. نشاط إغلاق Edulytics الأصلي: كان لدى مكتبة ٢٨ بطاقة؛ استخدمت ٤ بطاقات ثم وزعت الباقي بالتساوي على ٦ أطفال. ارسم نموذج شريط، وأوجد نصيب كل طفل وأثبت الحل. مفتاح المعلم: ٢٨−٤=٢٤؛ ٢٤÷٦=٤ بطاقات لكل طفل، والتحقق ٦×٤+٤=٢٨. يقيّم المعلم جودة الرسم ووضوح المرحلتين."
         }
       ]
     },

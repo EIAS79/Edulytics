@@ -35264,6 +35264,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u05.l06.modeled_division_word_problem",
+      "version": 1,
+      "skillId": "number.division.model_word_problem",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G3-U05-L06-MULTISTEP-MODELED-DIVISION-NOT-RUN-STAGE-D",
+      "representations": [
+        "tape_diagram",
+        "counter_groups",
+        "word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
