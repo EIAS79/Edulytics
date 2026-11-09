@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l26",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l27",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Lessons 1–26 A-B-C sequential source-scoped; current target 2026–2027 textbook edition unknown.",
+  "ReviewEvidence": "A–B–C sequentially 27/109 locally source-scoped; 4/14 units completed; 2026–27 target edition unknown",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1148,23 +1148,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:04:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 4 / Lesson 6; official Arabic title: استخدام الضرب لإيجاد التوافيق",
+      "TitleSourceReference": "Locally verified 2025–2026 Grade3 Common student Arabic T1 U04 L06 pp219–224, older teacher 2020–2021; 2026–2027 unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U04:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 4 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; 2025–2026 student printed pp219–224, PDF pp240–245; old teacher 2020–2021 lesson pp219–224",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "2d73043a631b6b99abd5d140c0bf7c093646c6b1da11705641b0f0e93fad0ec1",
+      "SourceEdition": "2025–2026 local student; older 2020–2021 teacher supplemental; target 2026–2027 not verified",
+      "SourceRights": "Independent instructional narrative and text models authored for Edulytics, local sources only for goals; no original book pages/images copied",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "58583463a56cccae03d32cf4e3319950d197cc9433d86f33ca72bba5a8a6bc36",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U04_L06_SOURCE_SCOPED_ARABIC_A_B_C_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1175,6 +1175,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Use Multiplication to Find Combinations: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استخدام الضرب لإيجاد التوافيق",
+          "Explanation": "التوافيق هي الخيارات المختلفة الممكنة عندما نجمع اختيارًا من مجموعة مع اختيار من مجموعة أخرى. إذا توفر ٣ أنواع من الأغلفة و٤ ألوان للبطاقة، يمكن إنشاء ١٢ تركيبة متميزة؛ لأن كل غلاف يمكن إقرانه بكل لون. نعرض جميع الأزواج بمخطط شجرة: نرسم فرعًا لكل خيار من المجموعة الأولى، وتتفرع منه جميع خيارات المجموعة الثانية. عدد نهايات فروع الشجرة هو العدد الكلي للحالات، ويمكن التحقق منه بضرب عدد الخيارات الأولى في عدد الخيارات الثانية عندما تكون جميع الأزواج مسموحة.",
+          "KeyConceptsAndRules": "إذا كان في المجموعة الأولى أ اختيارات وفي الثانية ب اختيارات مستقلة، فإن عدد التوافيق = أ × ب. مثال: ٣ ألوان من القبعات و٢ نوع من الشارات تعطي ٣ × ٢ = ٦ تصميمات. يحوي مخطط الشجرة ٣ فروع رئيسية، ولكل منها فرعان فرعيان، فتكون نهايات الفروع ٦. لا نعد الخيار الواحد دون شريكه توفيقًا كاملًا، ولا نعد الزوج نفسه مرتين. إذا كان أحد الخيارات غير مسموحًا نعد النهايات المسموح بها فقط؛ القانون المباشر أ×ب يفترض إمكان الجمع بين كل خيارين.",
+          "WorkedExamples": "مثال ١ من تأليف Edulytics: لديها ٣ حقائب بألوان مختلفة و٢ نوع من ملصقات الاسم؛ نرسم لكل حقيبة فرعين للملصق: حقيبة أ ← ملصق ١، ٢؛ حقيبة ب ← ١، ٢؛ حقيبة ج ← ١، ٢. نهايات الشجرة ٦؛ ٣ × ٢ = ٦. مثال ٢: في مقهى ٤ أنواع من العصير وحجمان للكوب، العدد ٤ × ٢ = ٨ طلبات مختلفة. مثال ٣: ٢ نوع من الدفاتر و٣ أغلفة و٤ ألوان للقلم: نمد الشجرة خطوة ثالثة، فنحصل على ٢ × ٣ × ٤ = ٢٤ حالة، لكن نبدأ بإتقان فرعين للمجموعتين الأوليين.",
+          "StepByStepSolutions": "١) أفهم المسألة وأحدد المجموعتين اللتين سنختار منهما. ٢) أعد الخيارات المختلفة في كل مجموعة. ٣) أرسم فرعًا أوليًا لكل اختيار في المجموعة الأولى. ٤) من نهاية كل فرع أرسم فرعًا لكل اختيار في المجموعة الثانية. ٥) أسمي كل نهاية باسم الزوج الذي تمثله؛ وأراجع عدم الإغفال أو التكرار. ٦) أعد جميع نهايات الفروع ثم أكتب جملة الضرب للتحقق، مثل ٣ × ٢ = ٦. ٧) إذا كان خيار أو تركيب ممنوعًا أشطبه وأعد النتائج الفعلية.",
+          "CommonMistakes": "خطأ: يوجد ٤ نكهات و٢ حجم، إذن ٤ + ٢ = ٦ اختيارات؛ الصحيح ٤ × ٢ = ٨، لأن كل نكهة تتصل بالحجمين. خطأ: رسم فرع واحد فقط من إحدى النكهات وتجاهل بقية الأحجام؛ يجب تكرار خيارات المجموعة الثانية من كل فرع أول. خطأ: عدّ النكهة نفسها على أنها اختيار نهائي دون تحديد الحجم؛ كل نتيجة زوج متكامل. خطأ: استخدام أ×ب عندما بعض التراكيب غير مسموحة؛ يجب عد الأزواج المسموح بها فقط. خطأ: اعتبار ترتيب الرسم وحده يغير عدد التركيبات؛ يمكن تبادل موضعي المجموعتين مع ثبات إجمالي الأزواج.",
+          "QuickSummary": "أستخدم مخطط الشجرة لأعرض كل اختيار من المجموعة الأولى مع كل اختيار من الثانية، ثم أضرب عدد الاختيارات لحساب جميع الحالات المسموح بها. نشاط إغلاق Edulytics الأصلي: أمام طالب نوعان من الحقيبة و٣ أنواع من الملصقات؛ ارسم شجرة وسمِّ جميع الأزواج، ثم اكتب جملة ضرب تبيّن العدد الكلي. إجابات المعلم: ٦ نهايات، ٢ × ٣ = ٦، مع التحقق من تسمية كل زوج مرة واحدة. يُقيّم الرسم وشرح الاكتمال يدويًا."
         }
       ]
     },
