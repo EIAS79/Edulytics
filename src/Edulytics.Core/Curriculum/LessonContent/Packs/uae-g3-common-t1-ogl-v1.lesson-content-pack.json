@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l28",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l29",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Sequential A–B–C 28/109 source-scoped, latest confirmed local Grade3 Common Arabic 2025–2026; Stage D NOT_RUN; target 2026–2027 unknown",
+  "ReviewEvidence": "Sequential A–B–C 29/109 source-scoped, local Arabic student 2025–2026 and teacher 2020–2021; 2026–2027 unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1234,23 +1234,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 5 / Lesson 2; official Arabic title: القسمة إلى أجزاء متساوية",
+      "TitleSourceReference": "Selected local Arabic Grade3 Common 2025–2026 student T1 Unit5 L02 pp245–250; older teacher guide 2020–2021, 2026–2027 parity UNKNOWN",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U05:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 5 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed 245–250, PDF 266–271; older teacher 2020–2021 same lesson",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "58681687202592b6fce6fc09b22fd7457512a3a7a5c4ba4b13e9378cb2821f0d",
+      "SourceEdition": "Student 2025–2026 locally selected; teacher 2020–2021 supplementary; target 2026–2027 unverified",
+      "SourceRights": "Independent Edulytics Arabic instructional text, activities and textual models; no publisher prose or images redistributed.",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "d6762ee9bb955e6bf2a227560faa53271aeaa29b76568c559cd8b1b14161eb76",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U05_L02_SOURCE_SCOPED_A_B_C_ARABIC_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1261,6 +1261,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Divide into Equal Parts: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القسمة إلى أجزاء متساوية",
+          "Explanation": "أستخدم القسمة لأوزع عددًا كليًا من الأشياء إلى عدد معلوم من المجموعات المتساوية. يجب أن يحصل كل فرد أو مجموعة على العدد نفسه. أمثل الكل بعدادات، وأجهز العدد المحدد من الدوائر أو الحاويات، ثم أنقل عنصرًا إلى كل حاوية بالتتابع حتى تنتهي العناصر. عدد العناصر في حاوية واحدة هو ناتج القسمة. ويمكن ترتيب الأشياء في مصفوفة: يمثل كل صف مجموعة متساوية. أستطيع أيضًا حل المسألة إذا عرفت عدد العناصر في المجموعة الواحدة وأردت إيجاد عدد المجموعات.",
+          "KeyConceptsAndRules": "إذا قُسّم العدد الكلي بالتساوي على عدد المجموعات: ١٨ ÷ ٣ = ٦؛ وهذا يعني ٣ مجموعات، في كل منها ٦ عناصر. إذا علمت عدد العناصر في كل مجموعة: ١٨ ÷ ٦ = ٣، أي ٣ مجموعات. أتحقق دائمًا بعملية الضرب: ٣ × ٦ = ١٨. ترتبط القسمة بالمجموعات المتساوية وبمصفوفات الصفوف والأعمدة. إذا لم يكن العدد الكلي من مضاعفات عدد المجموعات، قد يتبقى عنصر أو أكثر، فلا أصف القسمة بأنها توزيع كامل بالتساوي دون ذكر الباقي.",
+          "WorkedExamples": "مثال من تأليف Edulytics: توزع مدرسة ٢٤ قلمًا على ٦ فرق متساوية. أمثل ٦ دوائر وأضع قلمًا في كل منها حتى تنفد الـ٢٤ قلمًا؛ لكل فريق ٤ أقلام. جملة القسمة ٢٤ ÷ ٦ = ٤ والتحقق ٦ × ٤ = ٢٤. مثال ثان: ٢١ كرة ستوضع في أكياس، في كل كيس ٧ كرات. أضع ٧ في الكيس الأول ثم الثاني ثم الثالث، فعدد الأكياس ٣؛ ٢١ ÷ ٧ = ٣. مثال ثالث: مصفوفة أصلية من ٤ صفوف فيها ٥ نقاط في كل صف، مجموعها ٢٠. نعرف ٢٠ ÷ ٤ = ٥ و٢٠ ÷ ٥ = ٤.",
+          "StepByStepSolutions": "١) أحدد المقسوم: مجموع العناصر كلها. ٢) أحدد المقسوم عليه من نص المسألة: عدد المجموعات أو حجم كل مجموعة. ٣) أختار قطع عد أو أرسم عددًا من الدوائر يوافق عدد المجموعات المطلوبة. ٤) إذا كان عدد المجموعات معلومًا، أوزع عنصرًا واحدًا في كل مجموعة بالدور؛ وإذا كان الحجم معلومًا، أجمع العناصر في حزم بهذا الحجم. ٥) أتأكد من تساوي حجم المجموعات وعدم ضياع عناصر. ٦) أكتب جملة القسمة مع تسمية وحدة الناتج. ٧) أستخدم حاصل ضرب الناتج والمقسوم عليه للتحقق.",
+          "CommonMistakes": "خطأ: في مسألة ٢٠ قلمًا على ٤ طلاب، الإجابة ٤ أقلام لكل طالب لأن الرقم ٤ ظهر في السؤال؛ الصحيح ٥ أقلام لكل طالب. خطأ: تقسيم ١٧ قطعة إلى ٤ مجموعات والقول إن كل مجموعة تحصل على ٤ قطع بلا باقٍ؛ بعد توزيع ٤ لكل مجموعة تتبقى قطعة واحدة. خطأ: الخلط بين عدد الحاويات وعدد الأشياء في كل حاوية؛ اقرأ ما يطلبه السؤال. خطأ: رسم صفوف غير متساوية ثم كتابة عملية قسمة تامة؛ يجب تسوية المجموعات. خطأ: كتابة جملة الضرب ٤ × ٥ = ٩ بدل ٢٠.",
+          "QuickSummary": "أمثل الكل بمكعبات أو نقاط، وأوزعه إلى أجزاء متساوية أو أكوّن مجموعات بالحجم المحدد، ثم أكتب القسمة وأتحقق بالضرب. نشاط إغلاق Edulytics: لدينا ٢٤ ورقة، وزعها على ٤ مجموعات متساوية، وارسم المجموعات واكتب العدد في كل منها وجملة القسمة. ثم حدد عدد المجموعات لو احتوت الواحدة ٦ أوراق. الإجابات: ٢٤ ÷ ٤ = ٦ ورقات للمجموعة، و٢٤ ÷ ٦ = ٤ مجموعات. يراجع المعلم تساوي الصفوف وصحة التفسير."
         }
       ]
     },
