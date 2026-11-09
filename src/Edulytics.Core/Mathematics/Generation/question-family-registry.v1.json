@@ -34426,6 +34426,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g2.u10.l08.area_unit_squares",
+      "version": 1,
+      "skillId": "geometry.area_tiling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g2-term3-source-bounded-runtime-unrun",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
