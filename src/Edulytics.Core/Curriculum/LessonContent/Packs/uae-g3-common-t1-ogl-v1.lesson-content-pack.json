@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l11",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l12",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 sequential 11 source-scoped A–B–C lessons; 2026–27 parity UNKNOWN",
+  "ReviewEvidence": "G3 lessons 1–12 sequentially A–B–C closed with local source scope only",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -503,23 +503,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:07",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 7; official Arabic title: جمع الأعداد المكونة من ثلاثة أرقام",
+      "TitleSourceReference": "Arabic UAE G3 Student 2025–2026 printed93–98 and 2020–2021 Teacher corresponding pp93–96",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 7",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp93–98 / PDF 114–119; teacher guide corresponding pp93–96",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "5ce86b4757d0b53fb6ca5b22bb0436afa8c7b93febda049f7efd2ed1ab641680",
+      "SourceEdition": "Locally verified student 2025–2026 and older teacher 2020–2021, 2026–27 parity UNKNOWN",
+      "SourceRights": "Original Edulytics Arabic explanation, computation and numerical models",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "8a010ca9f00dc65281fe77cf346d73a0aca46a3e7ee12d41fa9e525476d01ae4",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L07_STAGE_ABC_REUSED_GRADE2_ADD3_FAMILIES_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -530,6 +530,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Add Three-Digit Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "جمع الأعداد المكونة من ثلاثة أرقام",
+          "Explanation": "لجمع عددين مكوّنين من ثلاثة أرقام نرتبهما في أعمدة الآحاد والعشرات والمئات ثم نجمع من اليمين إلى اليسار حسابيًا: الآحاد أولًا، فالعشرات، ثم المئات. إذا كان مجموع الآحاد ١٠ أو أكثر نعيد تجميع عشر آحاد في عشرة منقولة، وإذا كان مجموع العشرات ١٠ أو أكثر نعيد تجميع عشر عشرات في مئة. قبل الجمع يمكن تقدير الناتج لأقرب عشرة أو مئة، وبعد الجمع نتحقق بخاصية الإبدال أو التقدير.",
+          "KeyConceptsAndRules": "القيمة المكانية تحكم محاذاة الأرقام: لا أجمع الآحاد مع العشرات. إذا كان رقمًا آحاديًا مضافًا لعدد ثلاثي، أضعه تحت الآحاد. عند جمع ٧ + ٨ = ١٥ نسجل ٥ في الآحاد وننقل ١ عشرة. عندما نجمع ٥ عشرات + ٦ عشرات + ١ عشرة منقولة = ١٢ عشرات نسجل ٢ عشرات وننقل ١ مئة. التحقق بالتقدير ليس بديلًا عن الناتج الدقيق بل دليل على معقوليته.",
+          "WorkedExamples": "مثال ١: ١٢٧ + ٥٨ = ١٨٥: الآحاد ٧+٨=١٥، نكتب ٥ وننقل ١؛ العشرات ٢+٥+١=٨؛ المئات ١. مثال ٢: ١٧٥ + ٢٢٥ = ٤٠٠: آحاد ٥+٥=١٠ ننقل ١، عشرات ٧+٢+١=١٠ ننقل ١، المئات ١+٢+١=٤. مثال ٣: ٣٤٢ + ١٥٦ = ٤٩٨ دون نقل من الآحاد. مثال ٤: نتحقق من ٢٧٩ + ١٩ = ٢٩٨ بتقدير ٢٨٠ + ٢٠ = ٣٠٠؛ الناتج قريب من التقدير.",
+          "StepByStepSolutions": "١) اكتب العددين مع محاذاة الآحاد والعشرات والمئات. ٢) قدّر تقريبًا المجموع إلى أقرب عشرة أو مئة. ٣) اجمع الآحاد وسجّل رقم الآحاد وانقل العشرة إذا لزم. ٤) اجمع العشرات مع أي عشرة منقولة وانقل مئة عند الحاجة. ٥) اجمع المئات مع أي مئة منقولة. ٦) اقرأ المجموع كاملًا وأعد الجمع بترتيب مبدّل إن أردت للتحقق. ٧) اشرح سبب أي إعادة تجميع في كل منزلة.",
+          "CommonMistakes": "الخطأ: كتابة ١٥ كلها في خانة الآحاد عند ٧+٨؛ الصحيح تسجيل ٥ ونقل عشرة. الخطأ: عند ١٧٥ + ٢٢٥ كتابتها ٣٩٠ لأننا نسينا الحمل؛ الصحيح ٤٠٠. الخطأ: محاذاة ١٩ تحت المئات والعشرات بدل العشرات والآحاد؛ يجب الحفاظ على الأعمدة. الخطأ: قبول إجابة بعيدة جدًا عن التقدير دون إعادة حساب. الخطأ: جمع المئات أولًا ثم إهمال أي حمل قادم من العشرات.",
+          "QuickSummary": "أحاذي المنازل وأجمع الآحاد ثم العشرات ثم المئات مع إعادة التجميع عند الحاجة وأتحقق بتقدير أو بخاصية الإبدال. نشاط إغلاق أصلي: أوجد ٢٦٨ + ١٥٧، وبيّن عدد مرات إعادة التجميع. مفتاح المعلم: ٤٢٥؛ الآحاد ٨+٧=١٥، العشرات ٦+٥+١=١٢؛ أعيد التجميع مرتين."
         }
       ]
     },
