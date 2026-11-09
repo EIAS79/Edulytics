@@ -7328,6 +7328,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g2.u02.l04.repeated_add_equal_groups"],
             "UAE_G3_2025_2026_STUDENT_PP187_192_TEACHER_2020_2021_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:02","number.multiplication.repeated_addition",
+            "CONVERT_EQUAL_GROUPS_REPEATED_ADDITION_TO_MULTIPLICATION",
+            ["uae.g2.u02.l04.repeated_add_equal_groups"],
+            "UAE_G3_2025_2026_STUDENT_PP193_198_TEACHER_2020_2021_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
