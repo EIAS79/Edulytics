@@ -7397,6 +7397,11 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:02"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:06:02","number.multiplication.times_two","DOUBLES_ARRAYS_EQUAL_GROUPS_REPEATED_ADDITION",
             ["uae.g3.u06.l02.multiply_by_two"],"G3_STUDENT_2025_2026_295_300_STAGE_D_PENDING","READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:03","number.division.by_two","TWO_EQUAL_GROUPS_AND_INVERSE_MULTIPLICATION",
+            ["uae.g3.u06.l03.divide_by_two","uae.g3.u05.l01.model_equal_groups_division"],
+            "UAE_G3_LOCAL_2025_2026_STUDENT_PP301_306_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
