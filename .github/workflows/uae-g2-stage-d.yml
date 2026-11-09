@@ -91,7 +91,7 @@ jobs:
         with:
           name: g2-stage-d-final
           path: artifacts/uae-g2-stage-d/
-  isolated-grade1-99-lesson-authenticated-https:
+  e2e:
     name: UAE G2 all 99 Arabic learner pages + 198 persisted Practice attempts
     runs-on: ubuntu-24.04
     timeout-minutes: 90
@@ -163,7 +163,7 @@ jobs:
             exit 1
           fi
           grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g2-fixture.log
-          openssl req -x509 -newkey rsa:1988 -nodes -days 1 \
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
             -keyout /tmp/g2-key.pem -out /tmp/g2-cert.pem \
             -subj '/CN=localhost' \
             -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
