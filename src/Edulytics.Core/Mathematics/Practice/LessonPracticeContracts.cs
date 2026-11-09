@@ -7236,6 +7236,10 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L3:COMMON:01:04","number.rounding.nearest_ten","ROUND_TO_NEAREST_TEN",
             ["uae.g3.u01.l04.round_nearest_ten"],"G3_2025_2026_ARABIC_SOURCE_PP29_34_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:05","number.rounding.nearest_hundred","ROUND_TO_NEAREST_HUNDRED",
+            ["uae.g3.u01.l05.round_nearest_hundred"],"G3_2025_2026_STUDENT_PP35_40_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

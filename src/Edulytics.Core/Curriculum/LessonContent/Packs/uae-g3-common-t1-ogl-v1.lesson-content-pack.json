@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l04",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l05",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 Unit 1 lessons 1–4 source scoped A–B–C, 2026-2027 parity unknown",
+  "ReviewEvidence": "Grade 3 Unit 1 A–B–C lessons 1–5 source scoped; target 2026–27 source UNKNOWN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -202,23 +202,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 1 / Lesson 5; official Arabic title: التقريب إلى أقرب مئة",
+      "TitleSourceReference": "UAE Grade3 Arabic student T1 2025–2026 printed pp.35–40; target 2026–2027 unverified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U01:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 1 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student printed pp.35–40; PDF pp.56–61",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "a01349bdcb25ee5074b179ee8679c89160ffe69d3cd1dfeee5f628b3f1911c13",
+      "SourceEdition": "2025–2026 locally verified source, 2026–2027 target source unknown",
+      "SourceRights": "Original Edulytics authored lesson and diagrams, local book only for target comparison",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "9bdb9a3775f74737a6ca6e8975f59d79915a09fd4dfa9f3b9f724e4a6f06ffff",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "ARABIC_EDULYTICS_U01_L05_STAGE_ABC_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -229,6 +229,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Round to the Nearest Hundred: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التقريب إلى أقرب مئة",
+          "Explanation": "نستخدم التقريب إلى المئة عندما نحتاج عددًا تقديريًا سهل الحساب. نحدد منزلة المئات، ثم ننظر إلى رقم العشرات مباشرة إلى يمينها. إذا كان العشرات من ٠ إلى ٤ نبقي المئات كما هي ونحوّل العشرات والآحاد إلى صفرين. وإذا كانت العشرات من ٥ إلى ٩ نضيف مئة واحدة، ثم نجعل العشرات والآحاد صفرًا. يحدث انتقال إلى الألف التالي إذا كانت المئات ٩ وأضفنا واحدة. وعلى خط الأعداد يكون الناتج أقرب أحد مضاعفي المئة المحيطين بالعدد.",
+          "KeyConceptsAndRules": "القانون: أقرب مئة = ١٠٠ × الجزء الصحيح من ((العدد + ٥٠) ÷ ١٠٠) للأعداد الصحيحة غير السالبة. ٣٬٤٤٩ تقرب إلى ٣٬٤٠٠، و٣٬٤٥٠ تقرب إلى ٣٬٥٠٠ (المنتصف إلى الأعلى). مثال بأصفار: ٦٬٠٤٩ → ٦٬٠٠٠ بينما ٦٬٠٥٠ → ٦٬١٠٠. عندما تكون قيمة العدد نفسه مضاعفًا للمئة يبقى كما هو. عند تقريب عدد إلى مئة، لا يكفي النظر إلى الآحاد: منزلة العشرات هي التي تحسم القرار.",
+          "WorkedExamples": "مثال ١: على خط الأعداد بين ٢٬٣٠٠ و٢٬٤٠٠ يقع ٢٬٣٧٢؛ أقرب إلى ٢٬٤٠٠ لأنه تجاوز المنتصف ٢٬٣٥٠. مثال ٢: ٧٬٤٢٨ تقرب إلى ٧٬٤٠٠ لأن العشرات ٢. مثال ٣: ١٬٩٩٠ تقرب إلى ٢٬٠٠٠ لأن العشرات ٩، ونضيف مئة مع إعادة التجميع. مثال ٤: ٤٬٠٠٠ تقرب إلى ٤٬٠٠٠، لأنها مئة كاملة بالفعل. تمثيل أصلي نصي لخط الأعداد: ٥٬٢٠٠ — ٥٬٢٥٠ (المنتصف) — ٥٬٣٠٠؛ عدد ٥٬٢٦٤ يقع يمين المنتصف، فنتيجته ٥٬٣٠٠.",
+          "StepByStepSolutions": "١) حدد قيمة المئة التي سيقرب إليها العدد. ٢) ضع دائرة حول رقم المئات، ثم انظر إلى العشرات. ٣) إذا كانت العشرات ٠–٤ اترك المئات، وإذا كانت ٥–٩ أضف مئة واحدة. ٤) ضع صفرين في العشرات والآحاد، وراع إعادة التجميع إلى الآلاف. ٥) تحقق بتعيين الحد الأدنى والحد الأعلى على خط أعداد ١٠٠–١٠٠، ومقارنة المسافتين. ٦) إذا كانت المسألة عن أموال أو مسافات، حافظ على وحدة القياس.",
+          "CommonMistakes": "الخطأ: ٤٬٣٤٨ تقرب إلى ٤٬٤٠٠ لأن الآحاد ٨؛ الصحيح ٤٬٣٠٠ لأن العشرات ٤. الخطأ: ٩٥٠ تقرب إلى ٩٠٠؛ الصحيح ١٬٠٠٠ لأن المنتصف يرتفع إلى المئة التالية. الخطأ: ١٬٩٩٠ تقرب إلى ١٬٩٠٠؛ الصحيح ٢٬٠٠٠ مع الحمل. الخطأ: التقريب إلى أقرب مئة يغيّر جميع المنازل الأخرى إلى صفر؛ الصحيح أن منزلة الآلاف تُحافظ عليها أو تتغير بإعادة التجميع فقط.",
+          "QuickSummary": "لتقريب عدد إلى المئة أنظر إلى العشرات: ٠–٤ أسفل، ٥–٩ أعلى، ثم أجعل العشرات والآحاد صفرين وأتحقق بخط الأعداد. نشاط الإغلاق الأصلي: قرّب ٤٬٣٤٩ و٤٬٣٥٠ و١٬٩٨١ إلى أقرب مئة وفسر حالة المنتصف. الإجابات: ٤٬٣٠٠، ٤٬٤٠٠، ٢٬٠٠٠؛ ٥ في العشرات يجعل ٤٬٣٥٠ أقرب إلى ٤٬٤٠٠ وفق القاعدة."
         }
       ]
     },
