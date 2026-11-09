@@ -1,0 +1,21 @@
+{
+  "LessonOrdinal": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L2:COMMON:01:01",
+  "StartedUtc": "2026-11-09T01:10:14.546988+00:00",
+  "ClosedUtc": null,
+  "DurationSeconds": null,
+  "StageA": "LOCAL_SOURCE_VISUALLY_REVIEWED_TITLE_CORRECTED_EXERCISE_PARITY_PENDING",
+  "StageB": "AUTHORED_ARABIC_WITH_NUMERIC_AND_DOT_MODELS",
+  "StageC": "TWO_EXACT_FAMILIES_IMPLEMENTED_AND_REGISTERED_IN_EXISTING_ENGINE",
+  "Status": "A_C_EXPLICIT_GAP",
+  "SourceGap": "2026-2027 target Arabic learner book unavailable; independent 1-to-1 exercise verification incomplete",
+  "TestsWritten": "WRITTEN_NOT_RUN",
+  "TestsRun": "NOT_RUN",
+  "CI": "NOT_RUN",
+  "StageD": "NOT_RUN",
+  "CriticalGaps": [
+    "Target 2026-2027 Arabic learner edition not locally available",
+    "Per-question source 1:1 semantic equivalence not independently verified",
+    "Runtime and code compilation intentionally not run during A-B-C"
+  ]
+}

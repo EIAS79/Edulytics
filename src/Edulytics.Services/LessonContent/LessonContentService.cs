@@ -775,7 +775,11 @@ public sealed class LessonContentService : ILessonContentService
         string frameworkCode,
         string lessonCode)
     {
-        var academicLanguage = IsUaeG1ArabicLesson(lessonCode) &&
+        var reviewedG2Arabic =
+            !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) &&
+            translations.Any(x => NormalizeCulture(x.CultureCode) == "ar");
+        var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) || reviewedG2Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,

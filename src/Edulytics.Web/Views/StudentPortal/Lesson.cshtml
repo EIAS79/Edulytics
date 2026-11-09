@@ -32,7 +32,9 @@
         ViewData["Grade3AuthoredActivityAdoptionId"] is Guid g3AdoptionId
             ? g3AdoptionId
             : (Guid?)null;
-    var isUaeGrade1Arabic = Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal);
+    var isUaeGrade1Arabic =
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
+        Model.LessonCode == "PED:UAE-MOE-MATH:L2:COMMON:01:01";
     var lessonNavTitle = isUaeGrade1Arabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaeGrade1Arabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaeGrade1Arabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
@@ -1946,7 +1948,7 @@
             <div class="lesson-reader-meta">
                 <span>
                     <small>@(isUaeGrade1Arabic ? "الصف" : L["Grade"].Value)</small>
-                    <strong>@(isUaeGrade1Arabic ? "الأول" : Model.GradeName)</strong>
+                    <strong>@(isUaeGrade1Arabic ? (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
                 </span>
                 <span>
                     <small>@(isUaeGrade1Arabic ? "المنهج" : L["Framework"].Value)</small>

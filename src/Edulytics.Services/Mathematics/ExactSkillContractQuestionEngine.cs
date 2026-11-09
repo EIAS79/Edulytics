@@ -284,7 +284,8 @@ public sealed class ExactSkillContractQuestionEngine
 
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
-        (SupportedFamilies.Contains(family.Trim()) ||
+        (UaeGrade2Unit1Lesson01Questions.Supports(family.Trim()) ||
+         SupportedFamilies.Contains(family.Trim()) ||
          Grade12PrecalculusAdvancedNumericQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
@@ -588,6 +589,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UaeGrade2Unit1Lesson01Questions.Supports(family))
+            return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
                 family, parameters, answer);
@@ -3527,6 +3530,12 @@ public sealed class ExactSkillContractQuestionEngine
             var t001=UsCcssT001ExactQuestions.Build(family,random);
             return new ExactProblem(t001.Family,t001.Prompt,t001.Solution,
                 t001.ItemType,t001.Parameters);
+        }
+        if (UaeGrade2Unit1Lesson01Questions.Supports(family))
+        {
+            var item = UaeGrade2Unit1Lesson01Questions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
         }
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
@@ -7481,6 +7490,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UaeGrade2Unit1Lesson01Questions.Supports(problem.Family))
+            return UaeGrade2Unit1Lesson01Questions.Solve(problem.Family, p);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(problem.Family))
             return Grade12PrecalculusAdvancedNumericQuestions.Solve(
                 problem.Family, p);
