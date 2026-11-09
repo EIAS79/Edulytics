@@ -7291,6 +7291,10 @@ public static class LessonPracticeContractRegistry
             ["uae.g2.u07.l01.decompose_hundred_subtract", "uae.g2.u07.l03.subtract_ten_hundred_mental", "uae.g3.u03.l01.mental_split_subtract"],
             "UAE_G3_2025_2026_STUDENT_PP127_132_2026_2027_SOURCE_PARITY_UNKNOWN_STAGE_D_PENDING",
             "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:02","number.subtraction.estimate_differences","ESTIMATE_DIFFERENCE_TENS_HUNDREDS_HIGHEST_PLACE",
+            ["uae.g3.u03.l02.estimate_difference_by_rounding"],"G3_LOCAL_2025_2026_STUDENT_PP133_138_2026_2027_PARITY_UNKNOWN_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

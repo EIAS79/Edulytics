@@ -1,0 +1,3 @@
+# G3 U03 L02 — تقدير الفروق
+
+Local Arabic student Term1 **2025–2026** printed pp133–138 / PDF pp154–159 (SHA `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`), teacher old 2020–2021 guide pp133–138. 16 classroom + 10 homework numbered items mapped by mathematical skill. Source distinguishes rounding to nearest **ten**, **hundred**, or **highest place** for each number; subtraction and contextual money/distance. Original Arabic explanations, worked comparisons, and cooldown were authored without source wording/images. New numeric family extends existing exact Practice engine; no redundant engine. Free-response explanations remain teacher-graded. Stage D and CI NOT_RUN; target 2026–2027 textbook parity UNKNOWN.
