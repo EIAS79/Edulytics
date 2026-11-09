@@ -34540,6 +34540,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g2.u11.l06.measurement_data",
+      "version": 1,
+      "skillId": "measurement.data.interpret",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g2-term3-source-bounded-runtime-unrun",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "visual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
