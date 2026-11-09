@@ -2,20 +2,23 @@
   "LessonOrdinal": 1,
   "LessonCode": "PED:UAE-MOE-MATH:L2:COMMON:01:01",
   "StartedUtc": "2026-11-09T01:10:14.546988+00:00",
-  "ClosedUtc": null,
+  "ClosedUtc": "2026-11-09T01:24:22Z",
   "DurationSeconds": null,
-  "StageA": "LOCAL_SOURCE_VISUALLY_REVIEWED_TITLE_CORRECTED_EXERCISE_PARITY_PENDING",
-  "StageB": "AUTHORED_ARABIC_WITH_NUMERIC_AND_DOT_MODELS",
-  "StageC": "TWO_EXACT_FAMILIES_IMPLEMENTED_AND_REGISTERED_IN_EXISTING_ENGINE",
-  "Status": "A_C_EXPLICIT_GAP",
-  "SourceGap": "2026-2027 target Arabic learner book unavailable; independent 1-to-1 exercise verification incomplete",
+  "StageA": "SELECTED_2025_2026_SOURCE_29_OF_29_MATH_TARGET_EQUIVALENCE_REVIEWED",
+  "StageB": "ARABIC_ORIGINAL_READY_FOR_STAGE_D_VALIDATION",
+  "StageC": "TWO_EXACT_FAMILIES_IMPLEMENTED_REGISTERED_WITH_TESTS_WRITTEN_NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
+  "SourceGap": null,
   "TestsWritten": "WRITTEN_NOT_RUN",
   "TestsRun": "NOT_RUN",
   "CI": "NOT_RUN",
   "StageD": "NOT_RUN",
   "CriticalGaps": [
-    "Target 2026-2027 Arabic learner edition not locally available",
-    "Per-question source 1:1 semantic equivalence not independently verified",
-    "Runtime and code compilation intentionally not run during A-B-C"
-  ]
+    "2026-2027 textbook correspondence not certified; owner-approved local latest 2025-2026 selected",
+    "Runtime .NET CI E2E intentionally deferred to Stage D"
+  ],
+  "SourceItemsObserved": 29,
+  "SourceItemsMatchedToOriginalEdulyticsMathTargets": 29,
+  "SourceScopeOfReadiness": "SELECTED_LOCAL_2025_2026_STUDENT_BOOK_ONLY",
+  "TargetEdition2026_2027Parity": "UNKNOWN_NOT_CERTIFIED"
 }
