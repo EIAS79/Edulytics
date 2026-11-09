@@ -246,7 +246,15 @@ test('Grade 5 and dependent grade 6/7 exact practice skill links resolve without
   const skill=bySkill.get(skillId);
   assert.ok(skill,'Missing registered domain skill '+skillId);
   assert.equal(skill.v2Status,'ShadowVerified');
-  const matching=families.filter(f=>f.skillId===skillId);
+  // The published UAE G2 family is not part of the G5/G6 historical shadow cohort.
+  // This historical G5/G6/G7 shadow snapshot is US-CCSS-only. A new
+  // UAE G2 family can share the same SkillId and ShadowVerified metadata
+  // without becoming a member of this independently pinned US cohort.
+  const matching=families.filter(f=>
+   f.skillId===skillId &&
+   !f.id?.startsWith('uae.g2.') &&
+   f.status==='ShadowVerified' &&
+   f.productionRouting===false);
   assert.equal(matching.length,count,'Expected source-specific question families: '+skillId);
   assert.deepEqual(new Set(skill.v2QuestionFamilies),
    new Set(matching.map(f=>f.id)),'Two-way skill/family mapping mismatch: '+skillId);

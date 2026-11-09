@@ -285,6 +285,17 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+          UaeGrade2Unit1Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit1Lessons02And13Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit2Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit3Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit4Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit5Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit6Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit7Questions.Supports(family.Trim()) ||
+          UaeGrade2Unit8Questions.Supports(family.Trim()) ||
+          UaeGrade2Term3Questions.Supports(family.Trim()) ||
+         SupportedFamilies.Contains(family.Trim()) ||
          Grade12PrecalculusAdvancedNumericQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
@@ -588,6 +599,26 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UaeGrade2Unit1Lesson01Questions.Supports(family))
+            return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
+            return UaeGrade2Unit1Lessons02And13Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit2Questions.Supports(family))
+            return UaeGrade2Unit2Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit3Questions.Supports(family))
+            return UaeGrade2Unit3Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit4Questions.Supports(family))
+            return UaeGrade2Unit4Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit5Questions.Supports(family))
+            return UaeGrade2Unit5Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit6Questions.Supports(family))
+            return UaeGrade2Unit6Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit7Questions.Supports(family))
+            return UaeGrade2Unit7Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Unit8Questions.Supports(family))
+            return UaeGrade2Unit8Questions.Verify(family, parameters, answer);
+        if (UaeGrade2Term3Questions.Supports(family))
+            return UaeGrade2Term3Questions.Verify(family, parameters, answer);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(family))
             return Grade12PrecalculusAdvancedNumericQuestions.Verify(
                 family, parameters, answer);
@@ -3528,6 +3559,12 @@ public sealed class ExactSkillContractQuestionEngine
             return new ExactProblem(t001.Family,t001.Prompt,t001.Solution,
                 t001.ItemType,t001.Parameters);
         }
+        if (UaeGrade2Unit1Lesson01Questions.Supports(family))
+        {
+            var item = UaeGrade2Unit1Lesson01Questions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution,
+                item.ItemType, item.Parameters);
+        }
         if (SupportingPracticeCompletionEngine.Supports(family))
         {
             var supporting = SupportingPracticeCompletionEngine.Build(
@@ -3543,6 +3580,51 @@ public sealed class ExactSkillContractQuestionEngine
                 supporting.Parameters);
         }
 
+        if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit1Lessons02And13Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit2Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit2Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit3Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit3Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit4Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit4Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit5Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit5Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit6Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit6Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit7Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit7Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Unit8Questions.Supports(family))
+        {
+            var q = UaeGrade2Unit8Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade2Term3Questions.Supports(family))
+        {
+            var q = UaeGrade2Term3Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
         return family switch
         {
             "uae.g1.u01.l01.read_write_1_5" =>
@@ -7481,6 +7563,26 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UaeGrade2Unit1Lesson01Questions.Supports(problem.Family))
+            return UaeGrade2Unit1Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit1Lessons02And13Questions.Supports(problem.Family))
+            return UaeGrade2Unit1Lessons02And13Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit2Questions.Supports(problem.Family))
+            return UaeGrade2Unit2Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit3Questions.Supports(problem.Family))
+            return UaeGrade2Unit3Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit4Questions.Supports(problem.Family))
+            return UaeGrade2Unit4Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit5Questions.Supports(problem.Family))
+            return UaeGrade2Unit5Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit6Questions.Supports(problem.Family))
+            return UaeGrade2Unit6Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit7Questions.Supports(problem.Family))
+            return UaeGrade2Unit7Questions.Solve(problem.Family, p);
+        if (UaeGrade2Unit8Questions.Supports(problem.Family))
+            return UaeGrade2Unit8Questions.Solve(problem.Family, p);
+        if (UaeGrade2Term3Questions.Supports(problem.Family))
+            return UaeGrade2Term3Questions.Solve(problem.Family, p);
         if (Grade12PrecalculusAdvancedNumericQuestions.Supports(problem.Family))
             return Grade12PrecalculusAdvancedNumericQuestions.Solve(
                 problem.Family, p);

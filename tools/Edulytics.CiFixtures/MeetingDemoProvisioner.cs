@@ -357,15 +357,17 @@ internal static class MeetingDemoProvisioner
         // UAE G1 Stage D: two disposable school tenants, a Grade 1 Arabic
         // primary school and an unrelated US school for cross-tenant denial.
         // This mode never changes production/permanent demo school selection.
-        var activeSchools = disposableCi &&
-            string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal)
+        var isUaeEarlyGradeCi = disposableCi &&
+            (string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "UAE-G2", StringComparison.Ordinal));
+        var activeSchools = isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
                     ? s with
                     {
                         DefaultCulture = "ar",
-                        PrimaryLoginLogicalLevel = 1,
-                        SecondaryLoginLogicalLevel = 2
+                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G2" ? 2 : 1,
+                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G2" ? 1 : 2
                     }
                     : s)
                 .ToArray()

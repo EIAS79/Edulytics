@@ -40,9 +40,13 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g1.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(100, uaeGrade1.Length);
+        var uaeGrade2 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g2.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(90, uaeGrade2.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
-            algebra2.Length - uaeGrade1.Length);
+            algebra2.Length - uaeGrade1.Length - uaeGrade2.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

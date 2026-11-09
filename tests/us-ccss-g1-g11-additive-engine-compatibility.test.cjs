@@ -23,8 +23,8 @@ const g1Critical=[
 ];
 const expectedOld={
   'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e'],
-  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','dc404cd775a68e6b7231eb1031a61001773cb815'],
-  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0d5cd3d3f294decd4d36d158563606b3f4708823']
+  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','ea6989494b3190676b7343e29da659bb3bf07afe'],
+  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','db9a3f92f18bf7b0b14c9448ddd3e62657d54f8d']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
   assert.equal(git('merge-base','--is-ancestor',g1Proof,'HEAD'),'');
@@ -55,13 +55,14 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   // Compare against the immutable pre-G1 production commit rather than
   // the moving origin/main ref, which contains the accepted Grade 1 changes
   // AFTER merge. Preserve the original US G1 and G11 source hashes.
-  // UAE G1 adds 1,769 lines, deletes zero and changes no US G1 dispatch.
+  // UAE G1 and G2 add 1,871 reviewed lines total, delete zero and
+  // change no US G1 dispatch. The pre-G1 production anchor remains fixed.
   assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
-    'dc404cd775a68e6b7231eb1031a61001773cb815');
+    'ea6989494b3190676b7343e29da659bb3bf07afe');
   assert.equal(git('diff','--numstat',preUaeG1Release,'HEAD','--',engine),
-    '1769\t0\t'+engine);
+    '1871\t0\t'+engine);
   const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||

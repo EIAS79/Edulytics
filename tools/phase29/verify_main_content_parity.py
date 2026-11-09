@@ -61,6 +61,13 @@ def run():
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         errors.append(f"Grade1 pinned owner academic delta invalid: {exc}")
         g1_owner_content = set()
+    # Scope-pinned 99-lesson owner release; no 2026-27 exercise parity claim.
+    try:
+        from verify_g2_owner_academic_content_delta import validate as validate_g2
+        g2_owner_content = validate_g2()
+    except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade2 pinned owner academic delta invalid: {exc}")
+        g2_owner_content = set()
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -111,9 +118,11 @@ def run():
         if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
             g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade4-im-k5-2021.lesson-blueprint.json"
             g1_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g1-common-t1-ogl-v1.lesson-blueprint.json"
+            g2_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g2-common-t1-ogl-v1.lesson-blueprint.json"
             if not (
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
-                (path == g1_blueprint and len(g1_owner_content) == 102)
+                (path == g1_blueprint and len(g1_owner_content) == 102) or
+                (path == g2_blueprint and len(g2_owner_content) == 99)
             ):
                 errors.append(f"changed original lesson blueprint: {path}")
         verified_blueprints += 1
@@ -247,16 +256,16 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content
+    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
                            if key not in approved and key not in g4_owner_authored
                            and key not in g5_owner_content and key not in g6_first_party
-                           and key not in g1_owner_content and baseline[key] != candidate[key]]
+                           and key not in g1_owner_content and key not in g2_owner_content and baseline[key] != candidate[key]]
     if unexpected_metadata:
         errors.append(f"unapproved lesson metadata changes: {unexpected_metadata[:6]}")
-    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} g6FirstPartyTechnicalOnly={len(g6_first_party)} g1OwnerAcademicApprovedUnknownSourceParity={len(g1_owner_content)} release=NO_GO_SOURCE_PARITY_NOT_CERTIFIED")
+    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} g6FirstPartyTechnicalOnly={len(g6_first_party)} g1OwnerAcademicApprovedUnknownSourceParity={len(g1_owner_content)} g2OwnerAcademicApprovedUnknownSourceParity={len(g2_owner_content)} release=NO_GO_SOURCE_PARITY_NOT_CERTIFIED")
     for e in errors: print("ERROR:",e)
     return 1 if errors else 0
 

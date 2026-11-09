@@ -130,6 +130,13 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // have been checked by the existing 96-lesson G1 maths job and 13,598
   // cross-grade .NET tests; the G11 engine diff from main is exactly
   // 210 additions / zero deletions (see exact compatibility test).
+  // UAE Grade2 Stage D 2026-11-09 (owner approved, independently tested):
+  // only the exact approved first-party G2 engine and numeric HTTP probe
+  // additive revisions above are re-pinned. US G1 source, solver dispatch,
+  // original 96 lesson evidence and 124 affected paths remain unchanged.
+  // Fresh candidate G1 cross-grade math and authenticated acceptance gates
+  // remain mandatory; this historical compatibility check is not source-parity
+  // certification or retroactive classroom UAT.
   // A ninth path or unexpected future blob still FAILS CLOSED. This audit
   // is runtime compatibility only, NEVER a new G1 academic approval.
   // Live G1 practice and two-school HTTPS gates remain mandatory.
@@ -147,7 +154,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','dc404cd775a68e6b7231eb1031a61001773cb815']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','ea6989494b3190676b7343e29da659bb3bf07afe']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
       ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','c1b1898e7c5d27af8cb086ba6403f8073600279e']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
@@ -155,7 +162,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0d5cd3d3f294decd4d36d158563606b3f4708823']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','db9a3f92f18bf7b0b14c9448ddd3e62657d54f8d']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
