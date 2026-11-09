@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l13",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l14",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 13 sequential A–B–C lessons, local 2025–2026 student plus older teacher, target edition unverified.",
+  "ReviewEvidence": "G3 Unit 1 5/5 and Unit 2 9/9 source-scoped A–B–C closed, first 14/109 sequential. Selected student 2025–2026, target 2026–2027 parity UNKNOWN; no Stage D/CI executed.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -589,23 +589,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:09",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 9; official Arabic title: استقصاء حل المسائل: الإجابات المنطقية",
+      "TitleSourceReference": "Grade 3 Common locally verified Arabic student Term 1 2025–2026 Unit 2 Lesson 9 printed pp107–112; teacher 2020–2021 guide lesson 9",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 9",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed pp107–112; PDF pp128–133",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "603ab45f0c8a3bd76c89a262a0324439e5e1717802b0efe3136ba42953442665",
+      "SourceEdition": "Selected local Arabic student 2025–2026, teacher 2020–2021 supplemental; 2026–2027 target edition unknown",
+      "SourceRights": "Local textbook used to verify pedagogical skill and lesson sequence; learner material, questions and models are original Edulytics content. No textbook wording or images copied.",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "c6d2eeb5698d098ef91b61a8829d823ee3a8fa71c960ced40d5250a7aab21e69",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "ARABIC_EDULYTICS_G3_U02_L09_SOURCE_SCOPED_A_B_C; TARGET_EDITION_2026_2027_UNVERIFIED; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -616,6 +616,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Reasonable Answers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: الإجابات المنطقية",
+          "Explanation": "الإجابة المنطقية هي إجابة معقولة بالنسبة إلى الأعداد ومعنى المسألة، وليست مجرد ناتج يمكن كتابته. عندما يقدّم شخص تقديرًا لعدد الزوار أو المسافة أو التكاليف، أقرر هل هذا التقدير قريب من القيمة المتوقعة. أتبع أربع خطوات: أفهم المسألة وأحدد المطلوب، أخطط باستخدام التقريب أو النموذج الملائم، أحل بالتقدير أو الحساب الدقيق، ثم أتحقق وأوضح لماذا النتيجة منطقية أو غير منطقية. يمكن تقريب كل حد جمعي إلى أقرب مئة لتكوين تقدير مرجعي، ثم مقارنة إجابة صديق بهذا التقدير، مع مراعاة أن التقدير ليس العدد الدقيق.",
+          "KeyConceptsAndRules": "أولًا أختار مستوى التقريب المناسب لحجم العدد: عشرة أو مئة أو ألف. لأعداد من ثلاث أو أربع خانات، يمكن تقريب كل حد إلى أقرب مئة، ثم جمع التقديرات. مثال: ٨١٢ ≈ ٨٠٠، و٦٧٩ ≈ ٧٠٠، و٥١٤ ≈ ٥٠٠؛ التقدير المرجعي لمجموعها ٢٬٠٠٠. المجموع الدقيق ٢٬٠٠٥، ولذلك ٢٬٠٠٠ معقول. إذا قيل إن المجموع نحو ٣٬٥٠٠ فالتقدير بعيد بشكل واضح ويحتاج إعادة النظر. افحص الوحدة والسياق أيضًا: لا يمكن أن تقل كمية مبيعات موجبة بعد إضافة مبيعات جديدة. في الأسئلة المقيّدة بقاعدة التقريب إلى أقرب مئة، تكون إجابة «نعم» صحيحة عندما يطابق التقدير المعلن جمع الأعداد بعد تقريب كل حد، و«لا» إذا خالفه.",
+          "WorkedExamples": "مثال ١: سجّلت ثلاث مجموعات ٨١٢ و٦٧٩ و٥١٤ نقطة. قرّب إلى أقرب مئة: ٨٠٠ + ٧٠٠ + ٥٠٠ = ٢٬٠٠٠. احسب المجموع الدقيق عند الحاجة: ٨١٢ + ٦٧٩ + ٥١٤ = ٢٬٠٠٥. لذلك القول «نحو ألفي نقطة» منطقي. مثال ٢: قطعت ثلاث سيارات ١٬٤٩٠ و١٬٦٣٥ و٤٧٥ كم. التقدير ١٬٥٠٠ + ١٬٦٠٠ + ٥٠٠ = ٣٬٦٠٠ كم، والمجموع الدقيق ٣٬٦٠٠ كم. القول «نحو ٤٬٩٠٠ كم» بعيد عن التقدير، فلا أقبله دون مراجعة. مثال ٣: أجرى فريقان ٣٧٤ و٤٢٦ استجابة، فيكون التقدير إلى أقرب مئة ٤٠٠ + ٤٠٠ = ٨٠٠، والمجموع الفعلي ٨٠٠. تبرير المعقولية يذكر عدد المجموعات والتقدير والفرق وليس كلمة «نعم» وحدها.",
+          "StepByStepSolutions": "١) افهم: اقرأ المسألة وحدد الأعداد والوحدة والسؤال الذي تحتاج إلى الحكم عليه. ٢) خطّط: اختر تقريبا إلى أقرب عشرة أو مئة أو ألف بحسب الدقة المطلوبة. ٣) حل: قرّب كل عدد واجمع، ويمكنك حساب الإجابة الدقيقة بشكل مستقل. ٤) تحقّق: قارن جواب المسألة بالتقدير المرجعي وبمقدار الفرق؛ هل يشبه ما تتوقعه من جمع الكميات؟ ٥) فسّر القرار في جملة عربية واضحة، مع وحدة القياس. ٦) إذا ظهر اختلاف كبير أو فقدت منزلة أو وحدة، أعد التقريب والجمع قبل قبول النتيجة.",
+          "CommonMistakes": "الخطأ: الجواب ٢٬٠٠٠ صحيح تمامًا لأن مجموع ٨١٢ و٦٧٩ و٥١٤ يساوي ٢٬٠٠٠؛ الصحيح أن ٢٬٠٠٠ تقدير منطقي، بينما المجموع الدقيق ٢٬٠٠٥. الخطأ: قبول ٣٬٠٠٠ تقديرًا لمجموع ١٬٤٩٠ و١٬٦٣٥ و٤٧٥ دون حساب تقريب مناسب؛ الناتج المرجعي ٣٬٦٠٠. الخطأ: خلط كيلومتر بدرهم عند الجمع؛ لا تُجمع وحدات مختلفة. الخطأ: الاعتماد على كلمة «تقريبًا» لتبرير أي عدد مهما ابتعد عن القيمة المتوقعة. الخطأ: استعمال علامة «=» للحديث عن تقدير غير مطابق؛ الأفضل استخدام «≈» أو «حوالي».",
+          "QuickSummary": "أفهم المعطيات وأخطط بالتقريب، ثم أقارن تقديرًا مع النتيجة وأفسّر هل هو منطقي. نشاط إغلاق أصلي: استقبل مركزان ٦٢٤ و٨٧٨ زائرًا. هل تقدير ١٬٥٠٠ زائر قريب من المجموع؟ برر بأقرب مئة، ثم احسب المجموع الدقيق. إجابة المعلم: ٦٠٠ + ٩٠٠ = ١٬٥٠٠ تقدير منطقي؛ المجموع الدقيق ١٬٥٠٢ زائر. rubric: فهم السؤال (درجة)، تقريب سليم (درجتان)، قرار منطقي (درجة)، تبرير الفرق (درجتان)، إجابة دقيقة ووحدة (درجتان)."
         }
       ]
     },

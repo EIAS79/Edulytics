@@ -35091,6 +35091,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u02.l09.reasonable_estimate_verdict",
+      "version": 1,
+      "skillId": "number.addition.reasonable_answers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "boolean",
+      "verificationPolicy": "G3_2025_2026_REASONABLE_ANSWERS_ROUNDED_TO_HUNDREDS_SOURCE_SCOPED_TESTS_NOT_RUN",
+      "representations": [
+        "contextual_word_problem",
+        "rounded_sum",
+        "numeric_reasoning",
+        "comparison"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
