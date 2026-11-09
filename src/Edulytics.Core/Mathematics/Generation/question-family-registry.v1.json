@@ -34977,6 +34977,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u02.l03.add_place_step",
+      "version": 1,
+      "skillId": "number.addition.place_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u02-l03-local-source-2025-2026-stage-d-not-run",
+      "representations": [
+        "place_value_chart",
+        "number_sequence",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u02.l03.find_missing_step",
+      "version": 1,
+      "skillId": "number.addition.place_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u02-l03-local-source-2025-2026-stage-d-not-run",
+      "representations": [
+        "place_value_chart",
+        "number_sequence",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u02.l03.complete_pattern",
+      "version": 1,
+      "skillId": "number.addition.place_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g3-u02-l03-local-source-2025-2026-stage-d-not-run",
+      "representations": [
+        "place_value_chart",
+        "number_sequence",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

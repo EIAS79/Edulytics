@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l07",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l08",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Seven sequential G3 A–B–C lessons done under local 2025–2026, 2026–27 parity unknown",
+  "ReviewEvidence": "Eight sequential G3 A–B–C source scoped; target 2026–2027 UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -331,23 +331,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 3; official Arabic title: أنماط الجمع",
+      "TitleSourceReference": "2025–2026 Arabic Grade 3 source pp67–72 and teacher older 2020–2021 guide pp67–72",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp67–72 / PDF pp88–93",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "0fdf29e928109b17d3e1932bd5b3b6137eefc0cbf8137733f921a4133ba2fe74",
+      "SourceEdition": "2025–2026 student, 2020–2021 teacher reference; 2026–2027 target unknown",
+      "SourceRights": "Original Edulytics narrative and numeric representations",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "a1ab235a149e5c566f7205092b7f6ea0eba379601d50bea36dd3e3ad4ea21f0d",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L03_ARABIC_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -358,6 +358,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Addition Patterns: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "أنماط الجمع",
+          "Explanation": "تساعدنا القيمة المكانية على ملاحظة أنماط الأعداد عند جمع ١ أو ١٠ أو ١٠٠ أو ١٬٠٠٠. عندما أضيف واحدًا تزيد الآحاد، وعندما أضيف عشرة تزيد العشرات، وعندما أضيف مئة تزيد المئات، وعندما أضيف ألفًا تزيد الآلاف. أحيانًا تتغير أكثر من منزلة بسبب إعادة التجميع، مثل ٢٬٩٩٠ + ١٠ = ٣٬٠٠٠. في الأنماط نحدد مقدار الزيادة الثابت من الفرق بين كل حد والذي يليه، ثم نكتب الحد المفقود أو التالي.",
+          "KeyConceptsAndRules": "إذا كان النمط تصاعديًا بفارق ثابت د فإن الحد التالي = الحد الحالي + د. مصادر هذا الدرس تركز على د = ١ أو ١٠ أو ١٠٠ أو ١٬٠٠٠ في الأعداد حتى ١٠٬٠٠٠. المثال ٤٬٣٢١، ٤٬٤٢١، ٤٬٥٢١ يزيد ١٠٠ كل مرة. عند حمل منزلة: ٩٬٩٩٩ + ١ = ١٠٬٠٠٠. لا تفترض أن أرقام بقية المنازل لا تتغير دائمًا؛ إعادة التجميع قد تؤثر في أكثر من عمود. عند إيجاد الزيادة المجهولة نحسب الفرق بين العددين.",
+          "WorkedExamples": "مثال ١: من ١٬٢٦٨ إلى ١٬٣٦٨ يزيد العدد بمقدار ١٠٠ لأن المئات زادت واحدة. مثال ٢: ٨٬٩٥٠، ٨٬٩٦٠، ٨٬٩٧٠، ٨٬٩٨٠، ... النمط +١٠. مثال ٣: ٦٬٩٠٠ + ١٠٠ = ٧٬٠٠٠؛ حدثت إعادة تجميع المئات إلى الآلاف. مثال ٤: لإكمال ٥٬٢٠٣، ٥٬٣٠٣، □، ٥٬٥٠٣ نحدد الفارق +١٠٠ فيكون المفقود ٥٬٤٠٣. تمثيل نصي مستقل: آحاد | عشرات | مئات | آلاف؛ قبل وبعد الجمع نضع الأرقام في الأعمدة ونحدد المنزلة التي تغيرت.",
+          "StepByStepSolutions": "١) اكتب الأعداد في مخطط القيمة المكانية من الآحاد إلى الآلاف. ٢) قارن حدين متتاليين واحسب مقدار الزيادة. ٣) حدد إن كانت الزيادة ١، ١٠، ١٠٠ أو ١٬٠٠٠. ٤) أضف المقدار ذاته إلى كل حد وتحقق من ثبات الفارق. ٥) عند الوصول إلى ٩ في منزلة معينة، نفّذ إعادة التجميع إذا لزم. ٦) اختبر النمط بجمع الفارق في الاتجاه الصحيح وفسره بالكلمات أو على خط أعداد.",
+          "CommonMistakes": "الخطأ: ٣٬٩٩٩ + ١ = ٣٬٩٩٠؛ الصحيح ٤٬٠٠٠. الخطأ: ٢٬٩٧٥، ٣٬٠٧٥، ٣٬١٧٥ هو نمط +١٠؛ الصحيح +١٠٠. الخطأ: عند جمع ألف يتغير فقط رقم الآلاف حتى لو حدث حمل؛ يجب حساب المجموع كاملًا. الخطأ: ترتيب أعداد النمط بحسب أرقام آحادها فقط بدل الفرق العددي الكلي.",
+          "QuickSummary": "في أنماط الجمع أبحث عن مقدار التغير الثابت، ثم أضيفه متتبعًا القيمة المكانية وإعادة التجميع. نشاط إغلاق أصلي: أكمل ٣٬٩٨٠، ٣٬٩٩٠، __، ٤٬٠١٠، و٦٬٧٥٠، ٦٬٨٥٠، __. أجب: ما النمط في كل سلسلة؟ إجابات المعلم: ٤٬٠٠٠ (+١٠)، ٦٬٩٥٠ (+١٠٠)."
         }
       ]
     },
