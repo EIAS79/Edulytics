@@ -34,6 +34,11 @@ def structural():
         problems.append("PACK_ORDER_OR_DUPLICATE")
     if blue!=[x[0] for x in expected] or len(set(blue))!=99:
         problems.append("BLUEPRINT_ORDER_OR_DUPLICATE")
+    titles_by_unit={u["n"]:u["ar"] for u in m["Units"]}
+    if len(b.get("Units",[]))!=12 or any(u.get("Title")!=titles_by_unit.get(u.get("Number")) for u in b["Units"]):
+        problems.append("BLUEPRINT_UNIT_TITLE_DRIFT_FROM_ARABIC_MANIFEST")
+    if any(row.get("UnitTitle")!=titles_by_unit.get(row.get("UnitNumber")) for row in b["Lessons"]):
+        problems.append("BLUEPRINT_LESSON_UNIT_TITLE_DRIFT")
     if p.get("AcademicLanguage")!="ar":
         problems.append("ACADEMIC_LANGUAGE_NOT_AR")
     view=(ROOT/"src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml").read_text(encoding="utf-8-sig")
@@ -65,7 +70,7 @@ def structural():
             problems.append(f"STAGE_A_C_ARTIFACTS_MISSING:{i}")
         else:
             cp=read(checkpoint)
-            if (cp.get("LessonOrdinal")==i and cp.get("LessonCode")==code and
+            if (cp.get("LessonOrdinal", cp.get("Ordinal", cp.get("GlobalOrdinal")))==i and cp.get("LessonCode")==code and
                 cp.get("Status")=="READY_FOR_STAGE_D"):
                 passed+=1
             else: problems.append(f"STAGE_A_C_CHECKPOINT_INVALID:{i}")

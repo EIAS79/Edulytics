@@ -285,6 +285,7 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+          UaeGrade2Unit1Lesson01Questions.Supports(family.Trim()) ||
           UaeGrade2Unit1Lessons02And13Questions.Supports(family.Trim()) ||
           UaeGrade2Unit2Questions.Supports(family.Trim()) ||
           UaeGrade2Unit3Questions.Supports(family.Trim()) ||
