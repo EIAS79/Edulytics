@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l02",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade 3 Stage A-B-C in progress, source-scoped U01 L01–L02 complete; target 2026–2027 source exercise parity UNKNOWN",
+  "ReviewEvidence": "Grade 3 A–B–C source-scoped U01 L01–L03 closed, 2026–2027 parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -116,23 +116,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 1 / Lesson 3; official Arabic title: ترتيب الأعداد",
+      "TitleSourceReference": "Latest verified local UAE G3 Arabic student T1 2025-2026 printed 21–26; target 2026–2027 unverified",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U01:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 1 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed 21-26; PDF 42-47",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "8c61f2699e8377fe293283c4b9af9580fcbab73773710e360b3f3ff72ed0d9f6",
+      "SourceEdition": "2025-2026 Arabic student edition (2026–2027 parity unknown)",
+      "SourceRights": "Original Edulytics instructional text/visuals; local books referenced only for target/skill comparison",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "ef001deec24ab16e41336ed15fbb80738d0d1206d03b3b0e018f27fbe37f0ea1",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "ARABIC_EDULYTICS_G3_U01_L03_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -143,6 +143,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Order Numbers: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "ترتيب الأعداد",
+          "Explanation": "بعد مقارنة الأعداد، نستطيع ترتيب ثلاثة أعداد أو أكثر تصاعديًا من الأصغر إلى الأكبر أو تنازليًا من الأكبر إلى الأصغر. نقارن أولًا منزلة الآلاف، ثم المئات، ثم العشرات، ثم الآحاد. إذا كان أحد الأعداد من ثلاث خانات والآخر من أربع، فهو عادة الأصغر من العدد الرباعي الموجب. يوضح خط الأعداد ترتيبًا بصريًا: النقاط الواقعة يسار الخط أصغر من الواقعة يمينه. لترتيب أعداد الأسعار أو المسافات أو أطوال الحيوانات، نحدد قيمة كل كمية ونبقي الوحدة المشتركة.",
+          "KeyConceptsAndRules": "الترتيب التصاعدي: الأصغر ثم الأكبر، مثال ٣٠٤ < ٤٠٣ < ٤٣٠. الترتيب التنازلي: الأكبر ثم الأصغر، مثال ٥٬٠١٢ > ٥٬٠٠٢ > ٤٬٩٩٩. مخطط المنزلة يساعد في أول اختلاف، والصفر لا يحذف من داخل العدد. يجوز استعمال < في السلسلة التصاعدية و> في السلسلة التنازلية، مع بقاء اتجاه المعنى ثابتًا في سطر عربي RTL. الأعداد المتساوية متكافئة ويمكن عرضها جنبًا إلى جنب.",
+          "WorkedExamples": "مثال ١: رتب تصاعديًا ١٬٤٠٥ و٨٩٥ و١٬٠٤٥. أولًا ٨٩٥ ليس له آلاف؛ بين العددين الآخرين تساوت الآلاف واختلفت المئات: ٠ < ٤؛ الناتج ٨٩٥ < ١٬٠٤٥ < ١٬٤٠٥. مثال ٢: لدى ثلاث مجموعات ٣٬٢١٠ و٣٬١٢٠ و٣٬٢٠١ بطاقة. الترتيب تنازليًا ٣٬٢١٠ > ٣٬٢٠١ > ٣٬١٢٠ لأن مقارنة المئات والعشرات ثم الآحاد تحدد النتيجة. تصور بالأرقام على خط أصلي: ٨٩٥ — ١٬٠٤٥ — ١٬٤٠٥ من اليسار إلى اليمين.",
+          "StepByStepSolutions": "١) اكتب الأعداد في قائمة وحدد هل المطلوب تصاعد أم تنازل. ٢) قارن كل عددين بدءًا بالآلاف ثم المئات ثم العشرات ثم الآحاد. ٣) حدد الأصغر أولًا إذا كان تصاعديًا، أو الأكبر إذا كان تنازليًا. ٤) أخرج العدد المختار من المجموعة المتبقية وكرر حتى تنتهي. ٥) ضع رمز المقارنة المناسب بين الأعداد المرتبة. ٦) تأكد من ترتيب مواقعها على خط أعداد أو بمقارنات متتابعة.",
+          "CommonMistakes": "الخطأ: ٧٬٠٤٠ < ٦٬٩٩٩ لأن ٠ < ٩؛ الصحيح أن ٧٬٠٤٠ أكبر بسبب منزلة الآلاف. الخطأ: قراءة سلسلة ٨٨٠ > ٨٠٨ > ٨٨٨ على أنها تنازلية؛ الصحيح ٨٨٨ > ٨٨٠ > ٨٠٨. الخطأ: تغيير معنى العلامات بسبب اتجاه الكتابة؛ يجب قراءة العلاقة رياضيًا من العدد الأول إلى الثاني. الخطأ: فقد الصفر الداخلي عند نقل الأعداد؛ ٢٬٠٣٥ مختلف عن ٢٬٣٥٠.",
+          "QuickSummary": "أقارن المنازل من الأعلى للأدنى، ثم أرتب كل القيم تصاعديًا أو تنازليًا وأتحقق على خط أعداد. نشاط الإغلاق الأصلي: رتب ٤٬١٢٠ و٤٬٠٢١ و٣٬٩٩٩ تصاعديًا ثم تنازليًا. مفتاح المعلم: ٣٬٩٩٩ < ٤٬٠٢١ < ٤٬١٢٠ والعكس ٤٬١٢٠ > ٤٬٠٢١ > ٣٬٩٩٩. اطلب تعليل أول اختلاف في كل مقارنة."
         }
       ]
     },
