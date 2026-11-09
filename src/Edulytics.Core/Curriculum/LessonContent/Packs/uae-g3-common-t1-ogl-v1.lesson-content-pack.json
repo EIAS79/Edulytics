@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l29",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l30",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Sequential A–B–C 29/109 source-scoped, local Arabic student 2025–2026 and teacher 2020–2021; 2026–2027 unknown.",
+  "ReviewEvidence": "G3 lessons 1–30 A–B–C source-scoped; no Stage D or CI; 2026–2027 source parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1277,23 +1277,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:05:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 5 / Lesson 3; official Arabic title: علاقة القسمة بالطرح",
+      "TitleSourceReference": "Local Grade3 Common Arabic student T1 2025–2026 Unit 5 L03 pp251–256; teacher 2020–2021 for instructional scope",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U05:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 5 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; student 2025–2026 printed pp251–256, PDF pp272–277; old teacher guide 2020–2021 same lesson",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "c783dec08acf25442980734e93b0d1b3a671103c980525d077518dc58e64b071",
+      "SourceEdition": "Locally confirmed student 2025–2026; teacher 2020–2021; target 2026–2027 parity UNKNOWN",
+      "SourceRights": "First-party Edulytics Arabic and number-line text models; student and teacher originals referenced for goals only",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "521ad8ea5f4a3e237ed3073ab2fc4be46544924d080522540abc1e0691433332",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U05_L03_ARABIC_ABC_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1304,6 +1304,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Relate Division to Subtraction: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "علاقة القسمة بالطرح",
+          "Explanation": "الطرح المتكرر طريقة لفهم القسمة: أبدأ بعدد كلي، ثم أطرح منه المجموعة نفسها مرة بعد مرة إلى أن أصل إلى الصفر. عدد مرات الطرح يساوي ناتج القسمة إذا لم يتبق شيء. على خط الأعداد أرسم قفزات متساوية إلى الخلف من المقسوم إلى الصفر؛ عدد القفزات هو ناتج القسمة. تتوافق كل قفزة مع مجموعة ذات حجم ثابت، لذلك تربط هذه الاستراتيجية بين الطرح والمجموعات المتساوية والقسمة. ويمكن التحقق بالضرب أو بالجمع المتكرر.",
+          "KeyConceptsAndRules": "إذا كان ١٨ ÷ ٣، نطرح ٣ مرات متتابعة: ١٨ → ١٥ → ١٢ → ٩ → ٦ → ٣ → ٠؛ حدثت ٦ خطوات، إذن ١٨ ÷ ٣ = ٦. إذا طرحت المقدار ٣ من عدد ١٨ ست مرات يكون ٦ × ٣ = ١٨. المقسوم هو العدد الذي نبدأ منه، والمقسوم عليه قيمة كل قفزة، وناتج القسمة عدد القفزات. إذا توقفت عند عدد موجب أصغر من حجم القفزة، فهذا باقٍ وليس تقسيمًا بلا باقٍ. لا تستخدم عدد الحدود الظاهرة في السلسلة بدل عدد الفروق أو القفزات.",
+          "WorkedExamples": "مثال أصلي ١: لحساب ٢٠ ÷ ٤، ارسم خطًا يبدأ من ٢٠ مع قفزات خلفية: ٢٠، ١٦، ١٢، ٨، ٤، ٠. خمس قفزات، إذن ٢٠ ÷ ٤ = ٥؛ تحقق ٥ × ٤ = ٢٠. مثال ٢: ١٢ قطعة حلوى توضع في أكياس من ٣ قطع؛ كل مرة أحذف ٣ من العدد المتبقي: ١٢→٩→٦→٣→٠؛ ٤ أكياس. مثال ٣: ٢٤ ÷ ٦ = ٤ لأن قفزات الخلف هي ٢٤→١٨→١٢→٦→٠. نموذج نصي مستقل لخط الأعداد: ٠ — ٤ — ٨ — ١٢ — ١٦ — ٢٠؛ القفز من ٢٠ إلى صفر بمقدار ٤ يتطلب خمس قفزات.",
+          "StepByStepSolutions": "١) حدد المقسوم والمقسوم عليه في السؤال. ٢) اكتب المقسوم على بداية سلسلة أو نهاية خط الأعداد. ٣) اطرح قيمة المقسوم عليه من العدد الحالي، وسجل العدد الجديد. ٤) كرر العملية حتى تصل إلى الصفر، ولا تسمح بأعداد سالبة عند حساب قسمة بلا باقٍ. ٥) عد عمليات الطرح أو القفزات لا عدد القيم المكتوبة. ٦) اكتب جملة القسمة ومعنى الناتج في السياق. ٧) تحقق بضرب عدد القفزات في حجم كل قفزة، وقارنه بالمقسوم.",
+          "CommonMistakes": "الخطأ: عند ١٢ ÷ ٣ عد القيم ١٢،٩،٦،٣،٠ فالحاصل ٥؛ الصحيح أن عدد القفزات ٤ وليس عدد القيم ٥. الخطأ: طرح ١ مرة واحدة ثم اعتبار الناتج القسمة؛ يجب تكرار مقدار المقسوم عليه ثابتًا. الخطأ: اعتبار ١٣ ÷ ٤ قسمة تامة: بعد ثلاث قفزات يبقى ١، وينبغي توضيح الباقي. الخطأ: كتابة ٢٠ ÷ ٤ = ٤ لأن الخطوات حجمها ٤؛ الصحيح الناتج ٥ لأنه عدد القفزات. الخطأ: إكمال سلسلة بعد الصفر إلى أعداد سالبة في سياق توزيع قطع معدودة.",
+          "QuickSummary": "القسمة تساوي عدد مرات طرح مقدار ثابت حتى أصل إلى الصفر. أرسم خط أعداد وأعد القفزات وأتحقق بالضرب. نشاط إغلاق Edulytics: احسب ١٥ ÷ ٥ بالطرح المتكرر وسجل كل خطوة وارسم القفزات. الإجابة ١٥ → ١٠ → ٥ → ٠، ثلاث قفزات، والناتج ٣. ثم فسر لماذا ٣ × ٥ = ١٥. يراجع المعلم عدد القفزات وصحة الرسم."
         }
       ]
     },

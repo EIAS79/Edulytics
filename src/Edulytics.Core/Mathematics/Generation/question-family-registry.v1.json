@@ -35245,6 +35245,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u05.l03.repeated_subtraction_division",
+      "version": 1,
+      "skillId": "number.division.repeated_subtraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G3-U05-L03-REPEATED-SUBTRACTION-MATH-EXACT-STAGE-D-NOT-RUN",
+      "representations": [
+        "number_line_backward_jumps",
+        "repeated_subtraction",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
