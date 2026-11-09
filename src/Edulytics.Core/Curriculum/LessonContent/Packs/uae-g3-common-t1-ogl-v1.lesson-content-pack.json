@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l16",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l17",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 16/109 lessons sequentially source-scoped A–B–C, 2026–2027 edition parity unknown.",
+  "ReviewEvidence": "G3 sequential 17/109 A-B-C source scoped; selected Arabic student 2025–2026, target 2026–2027 parity unknown.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -718,23 +718,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:03:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 3 / Lesson 3; official Arabic title: استقصاء حل المسائل: إجابة تقديرية أم دقيقة",
+      "TitleSourceReference": "UAE G3 Common Arabic student term1 2025–2026 U3 lesson3 printed pp139–144, supplemental teacher edition 2020–2021",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U03:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 3 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pages139-144 (PDF160-165)",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "e6d98f1cbc83f444c86ff54fb623db1fa8c10980ccf892bfd5876d59e27bf2b7",
+      "SourceEdition": "Local student 2025–2026; target 2026–2027 exact parity unknown",
+      "SourceRights": "Books referenced for objectives/skills; first-party Edulytics Arabic prose/examples only; no protected source images/text transferred",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "afe87fdb0dd2be4d3dfbc692a082ae7f3aa74f0456e952255961605bcd7a2b1b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U03_L03_A_B_C_SOURCE_SCOPED_READY_FOR_STAGE_D_TESTS_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -745,6 +745,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Estimate or Exact Answer: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: إجابة تقديرية أم إجابة دقيقة",
+          "Explanation": "يتوقف نوع الإجابة على صياغة المسألة. عندما يطلب السؤال «تقريبًا» أو «نحو كم»، نستخدم قيمة تقديرية قريبة من الحقيقة عن طريق تقريب الأعداد إلى عشرة أو مئة أو ألف ثم إجراء العملية. وعندما يطلب عددًا فعليًا أو مبلغًا لازمًا أو الباقي بالضبط، نستخدم حسابًا دقيقًا بالأعداد الأصلية. أتبع أربع خطوات: أفهم السؤال وأحدد الكميات ووحداتها؛ أخطط فأختار التقدير أو الدقة؛ أحل باستخدام عملية مناسبة؛ ثم أتحقق وأشرح لماذا تلائم إجابتي سياق المسألة. قد يكون التقريب خطرًا عند التحقق من كفاية نقود قليلة لثمن محدد.",
+          "KeyConceptsAndRules": "الإجابة التقديرية تستخدم التقريب ويعبّر عنها بكلمة «حوالي» أو علامة ≈. الإجابة الدقيقة تستعمل الأعداد الأصلية وعلامة =. عادة تشير «نحو/تقريبًا» إلى التقدير، و«بالضبط/فعليًا/كم يتبقى/هل تكفي النقود؟» إلى الحساب الدقيق. أختار العملية بحسب السؤال: لإيجاد الفرق أطرح الأصغر من الأكبر عندما يكونان كمية ونقصًا. أتحقق من الفرق بجمع الناتج والمطروح. لا أخلط بين تقريب عددين والتأكد من صحة مبلغ مالي فعلي.",
+          "WorkedExamples": "مثال ١: استقبل متحف ١٬٤٨٢ زائرًا أمس و٨٩١ اليوم. إذا سُئلت عن الفرق التقريبي، فأقرّب إلى أقرب مئة: ١٬٥٠٠ − ٩٠٠ ≈ ٦٠٠ زائر. مثال ٢: لدى مخزن ٣٦٤ بطاقة، وخرجت ٢٧٨؛ البطاقات الباقية بالضبط ٣٦٤ − ٢٧٨ = ٨٦. أتحقق: ٨٦ + ٢٧٨ = ٣٦٤. مثال ٣: ثمن حاجة ١٩٩ درهمًا، والطالب معه ١٩٨؛ لا تكفي النقود، مع أن العددين يقربان إلى ٢٠٠؛ التقدير هنا لا يحسم قرار الدفع. مثال ٤: إذا وصل ٤٧٨ و٣١٦ شخصًا إلى قاعتين، فيمكن أن نقدر الإجمالي إلى أقرب مئة بنحو ٥٠٠ + ٣٠٠ ≈ ٨٠٠ شخص.",
+          "StepByStepSolutions": "١) أقرأ المعطيات وأضع خطًا تحت كلمة «تقريبًا» أو «بالضبط» إن وردت. ٢) أختار نوع الإجابة المطلوب من سياق المسألة وليس من حجم الأعداد. ٣) أحدد العملية والمعنى والوحدة. ٤) إن اخترت تقديرًا، أقرّب الأعداد ثم أجمع أو أطرح. وإن اخترت إجابة دقيقة، أحسب بالأعداد الأصلية. ٥) أتحقق بالعملية العكسية أو بمقارنة الجواب بحجم الأعداد. ٦) أشرح في جملة لماذا النوع المختار مناسب.",
+          "CommonMistakes": "تقديم تقدير عندما تكون الدقة شرطًا لشراء سلعة أو تحديد عدد أدوات متبقية. وضع علامة = بين العدد الدقيق والتقدير المختلف عنه. اختيار العملية دون فهم المطلوب. التقريب إلى أعلى منزلة رغم أن الفارق درهم واحد قد يغيّر الإجابة. اعتبار كل نتيجة عددية إجابة دقيقة حتى بعد تقريب الأعداد.",
+          "QuickSummary": "أفهم المطلوب، أحدد تقديرية أم دقيقة، أحل، أتحقق، وأعلل. نشاط ختامي من تأليف Edulytics: (١) عدد زوار مهرجان ١٬٣٦٠ أمس و٧١٠ اليوم؛ هل الفرق «تقريبًا» يحتاج تقديرًا؟ قدّره إلى المئة. (٢) لدى مدرسة ٢٥١ بطاقة وصرفت ١٦٨؛ كم بطاقة بقيت بالضبط؟ الإجابات: الأولى تقديرية ١٬٤٠٠ − ٧٠٠ ≈ ٧٠٠، الثانية دقيقة ٨٣ بطاقة. يقوّم المعلم التفسير واختيار النوع والتحقق."
         }
       ]
     },
