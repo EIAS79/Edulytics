@@ -35417,6 +35417,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l08.multiply_by_tens",
+      "version": 1,
+      "skillId": "number.multiplication.multiples_of_ten",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade3-unit6-lesson08-2025-2026-selected-source-stage-d-not-run",
+      "representations": [
+        "tens_rods",
+        "place_value",
+        "equal_groups"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

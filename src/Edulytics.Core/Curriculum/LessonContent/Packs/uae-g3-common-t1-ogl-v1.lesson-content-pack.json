@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l07",
+  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l08",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U06 sequential A–B–C source-scoped through ordinal 40; StageD CI NOT_RUN; 2026–2027 source unverified.",
+  "ReviewEvidence": "Grade3 U06 sequential A–B–C source-scoped through ordinal 41; StageD CI NOT_RUN; 2026–2027 source unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1750,23 +1750,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:08",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 8; official Arabic title: الضرب في مضاعفات العدد 10",
+      "TitleSourceReference": "UAE Grade3 Common Arabic student 2025–2026 pp333–338; teacher 2020–2021 corresponding edition",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 8",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed pp333–338 PDF 354–359",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "7bcf29456441378d6aab28220ec8def50d34e657c7d0de0f1d985095ef9c319d",
+      "SourceEdition": "2025–2026 latest local Arabic student / teacher older 2020–2021; target 2026–2027 parity unknown",
+      "SourceRights": "Independent Edulytics Arabic teaching text, no textbook pages/images copied; educational objectives compared locally",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "63463e62467679939ae3b48859b25b0f0848ec99952fdacb96c7bbb6c1dc65df",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U06_L08_SOURCE_SCOPED_A_B_C_ARABIC_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1777,6 +1777,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by Multiples of 10: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في مضاعفات العدد ١٠",
+          "Explanation": "مضاعفات العشرة هي ١٠،٢٠،٣٠،٤٠،٥٠،٦٠،٧٠،٨٠،٩٠... يمكنني ضرب عدد في مضاعف من هذه المضاعفات باستعمال حقيقة ضرب أصغر ثم تحويل الوحدات إلى عشرات. مثلًا ٣×٤=١٢، ولذلك ٣×٤٠ هو ١٢ عشرة، أي ١٢٠. نمثل ذلك بقضبان العشرات أو جمع ٤٠ ثلاث مرات. استعمل المهارة لحساب الأعداد والمبالغ والمسافات.",
+          "KeyConceptsAndRules": "إذا كان ب عددًا صحيحًا من ١ إلى ٩، فإن أ×(ب×١٠)=(أ×ب)×١٠. هذه خاصية التجميع في الضرب مع القيمة المكانية. ٥×٣٠=٥×٣×١٠=١٥٠. القيم المكانية: ١٥ عشرة = ١٥٠ وحدة. لناتج ضرب عدد صحيح في مضاعف ١٠ رقم آحاد يساوي صفرًا؛ وقد يزيد الناتج عن ١٠٠. مثال متقدم لتوسيع المهارة: ٥×٣٠٠ = ٥×٣×١٠٠ = ١٥٠٠؛ نستخدم نفس الفكرة على المئات.",
+          "WorkedExamples": "مثال ١: ٣ صفوف، في كل صف ٢٠ مقعدًا. احسب ٣×٢=٦ ثم ٦ عشرات = ٦٠، أو ٢٠+٢٠+٢٠=٦٠. مثال ٢: ٤×٥٠ = ٤×٥×١٠ = ٢٠×١٠ = ٢٠٠. مثال ٣: ٢×٨٠=١٦٠؛ أمثلها بـ١٦ قضيب عشرات. مثال ٤: ٥×٣٠٠=١٥٠٠ كتوسّع؛ إذ ٣٠٠ ثلاث مئات وخمس مجموعات = ١٥ مئة.",
+          "StepByStepSolutions": "١) أكتب المضاعف: ٤٠ = ٤×١٠ مثلًا. ٢) أستبدل مضاعف العشرة بعامله الأساسي وعشرة: ٦×٤٠=٦×٤×١٠. ٣) أحسب حقيقة الضرب ٦×٤=٢٤. ٤) أفسر الناتج ٢٤ عشرة وأكتب ٢٤٠. ٥) أتحقق بجمع المجموعات أو باستخدام قضبان العشرات. ٦) أكتب وحدة الجواب عند مسائل الواقع.",
+          "CommonMistakes": "الخطأ: ٣×٢٠=٣×٢+١٠=١٦؛ الصحيح ٦٠. الخطأ: ٥×٦٠=٣٠؛ الصحيح ٣٠٠ لأن ٣٠ هي عدد العشرات. الخطأ: ٤×٣٠=١٢٠٠؛ الصحيح ١٢٠، ولا نضيف صفرين بلا سبب. الخطأ: نسيان أن ٣×٢٠ و٢٠×٣ لهما الناتج نفسه. الخطأ: جمع ٢٠ ثلاث مرات ثم تسجيل ٨٠ بدلًا من ٦٠.",
+          "QuickSummary": "أجد حقيقة الضرب الأساسية ثم أحوّل الناتج إلى عشرات. نشاط إغلاق أصلي: لدى خمس فرق، لكل فريق ٤٠ بطاقة. أوجد المجموع بطريقتين: خاصية التجميع والجمع المتكرر. الإجابة ٥×٤٠=(٥×٤)×١٠=٢٠٠، و٤٠+٤٠+٤٠+٤٠+٤٠=٢٠٠."
         }
       ]
     },
