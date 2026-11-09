@@ -33022,6 +33022,24 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g2.u01.l02.count_on_number_line",
+      "version": 1,
+      "skillId": "number.whole.add_subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g2-u01-source-recompute-to-be-stage-d-tested",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
