@@ -2,7 +2,7 @@
 """UAE Grade 2 Stage D authenticated 99-lesson HTTPS/DB probe. CI-only; never production.
 
 Per lesson: canonical Arabic student page, isolated real scoped Practice
-generation, correct and malformed grade persistence. This proves runtime
+generation, correct, valid-format wrong, and malformed grade persistence. This proves runtime
 self-consistency, NOT source-edition academic parity or human RTL acceptance.
 """
 import hashlib
@@ -170,6 +170,16 @@ def run():
                 f"UAE G2 scoped correct Practice failed for ordinal {index} {code}: {positive}"
             )
         practice_page = get_page(student, "/student/practice")
+        wrong = probe_lesson(
+            student, BASE, lesson_id, extract_adoption(practice_page),
+            extract_csrf(practice_page), extract_idempotency_key(practice_page),
+            sql, answer_mode="well_formed_wrong"
+        )
+        if wrong.get("status") != "WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED":
+            raise AssertionError(
+                f"UAE G2 valid-format wrong answer not rejected at {index} {code}: {wrong}"
+            )
+        practice_page = get_page(student, "/student/practice")
         negative = probe_lesson(
             student, BASE, lesson_id, extract_adoption(practice_page),
             extract_csrf(practice_page), extract_idempotency_key(practice_page),
@@ -186,6 +196,7 @@ def run():
             "servedArabicCanonicalTitle": True,
             "htmlRtlMarker": rtl_markup,
             "correct": positive,
+            "wellFormedWrong": wrong,
             "malformed": negative,
         })
         print("UAE_G2_REAL_HTTPS_LESSON_AND_GRADE", index, code, flush=True)
@@ -207,12 +218,13 @@ def run():
         "adoptionKey": adoption_key,
         "lessonPageCount": 99,
         "correctAttemptPersistenceCount": 99,
+        "wrongAttemptPersistenceCount": 99,
         "malformedAttemptRejectionCount": 99,
         "htmlRtlMarkedCount": sum(x["htmlRtlMarker"] for x in records),
         "lessons": records,
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("UAE_G2_99_AUTH_HTTPS_198_PRACTICE_ATTEMPTS_PASS", flush=True)
+    print("UAE_G2_99_AUTH_HTTPS_297_PRACTICE_ATTEMPTS_PASS", flush=True)
 
 
 if __name__ == "__main__":
