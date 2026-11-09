@@ -7316,6 +7316,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u03.l06.four_digit_subtract_exact","uae.g2.u07.l08.story_equation_sub"],
             "UAE_G3_2025_2026_STUDENT_PP159_164_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:07","number.subtraction.cross_zero_regroup",
+            "VERTICAL_SUBTRACT_CHAINED_ZERO_REGROUP_AND_INVERSE_VERIFY",
+            ["uae.g3.u03.l06.four_digit_subtract_exact","uae.g3.u03.l07.subtract_across_zeros_exact"],
+            "UAE_G3_2025_2026_ARABIC_STUDENT_PP165_170_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -35188,6 +35188,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u03.l07.subtract_across_zeros_exact",
+      "version": 1,
+      "skillId": "number.subtraction.cross_zero_regroup",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "UAE-G3-U03-L07-LOCAL-2025-2026-MATH-EXACT-STAGE-D-NOT-RUN",
+      "representations": [
+        "place_value_chart",
+        "base_ten_blocks",
+        "vertical_algorithm"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
