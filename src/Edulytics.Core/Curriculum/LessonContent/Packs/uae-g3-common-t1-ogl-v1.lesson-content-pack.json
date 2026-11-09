@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l08",
+  "ContentVersion": "p29-uae-g3-common-t1-ogl-v1-ar-ac-l09",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Eight sequential G3 A–B–C source scoped; target 2026–2027 UNKNOWN",
+  "ReviewEvidence": "G3 9 sequential A–B–C lessons; 2026–2027 exact parity UNKNOWN",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -374,23 +374,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:02:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 2 / Lesson 4; official Arabic title: الجمع ذهنياً",
+      "TitleSourceReference": "UAE Common Grade3 Arabic student 2025–2026 pp73–78, teacher 2020–2021 pages73A–78",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U02:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 2 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf printed pp73–78 / PDF pp94–99; old 2020–2021 teacher guide matching pages",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "ac801ad7bb917f094023100b29720db823de412db16e40d309c105eec2d3b43d",
+      "SourceEdition": "Local 2025–2026 Student verified; 2020–2021 teacher supplement; 2026–2027 parity unverified",
+      "SourceRights": "First-party Arabic explanation, examples and exercises; source lesson used for math objective",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "7a1f58871cab0718a8062e9269a56f3400fbaf52ef952f5f608c03225525c5ec",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U02_L04_ARABIC_A_B_C_SOURCE_SCOPED_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -401,6 +401,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Mental Addition: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الجمع ذهنياً",
+          "Explanation": "الجمع الذهني هو إيجاد المجموع من غير الاعتماد على خطوات الجمع العمودي. نستخدم القيمة المكانية لتفكيك كل عدد إلى مئات وعشرات وآحاد، أو نغيّر حدًا جمعيًا مؤقتًا ليصبح عددًا أسهل ثم نعوض التغيير في الحد الآخر حتى يبقى المجموع ثابتًا. مثلًا ٦٣ + ٢٨: نضيف ٢ إلى ٢٨ لتصبح ٣٠ ونطرح ٢ من ٦٣ فتصبح ٦١؛ ثم ٦١ + ٣٠ = ٩١. هذه طريقة تعويض وليست تقريبًا تقديريًا، لأننا نحافظ على المجموع الصحيح تمامًا.",
+          "KeyConceptsAndRules": "التفكيك: (١٤٢ + ٢٣٦) = (١٠٠ + ٢٠٠) + (٤٠ + ٣٠) + (٢ + ٦) = ٣٧٨. التعويض المحافظ على المجموع: أ + ب = (أ − ك) + (ب + ك) بشرط عدم فقد أي كمية. عندما يكون الحد ٩٩ يمكن تحويله إلى ١٠٠ وزيادة الحد المقابل أو إنقاصه بمقدار مناسب: ٢٣٤ + ٩٩ = ٢٣٣ + ١٠٠ = ٣٣٣. اختيار طريقة لا تتطلب إعادة تجميع كثيرة يجعل الحساب أسهل. يجب التفريق بين المجموع الدقيق والتقدير بالتقريب.",
+          "WorkedExamples": "مثال ١: ١٥٢ + ١٢٧ = ١٠٠ + ١٠٠ + ٥٠ + ٢٠ + ٢ + ٧ = ٢٧٩. مثال ٢: ٤٦ + ٥٧: نجعل ٤٦ ← ٥٠ بإضافة ٤، وننقص ٥٧ إلى ٥٣؛ ٥٠ + ٥٣ = ١٠٣. مثال ٣: ٧٨ + ٩٩ = ٧٧ + ١٠٠ = ١٧٧. مثال ٤: في حافلة ٢٩ تلميذًا وصعد ٣٣ آخرون، نستعمل ٢٩ + ٣٣ = ٣٠ + ٣٢ = ٦٢. نماذج المنازل الأصلية: ٢٧٠ + ٣٠ + ٥ + ٤ = ٣٠٩؛ ترتيب مجموع العشرات والآحاد يوفر خطوات.",
+          "StepByStepSolutions": "١) اقرأ العددين وحدد مواضع الآحاد والعشرات والمئات. ٢) اختر التفكيك أو تكوين عشرة/مئة كاملة. ٣) عند التعويض أضف مقدارًا إلى حد واطرح المقدار نفسه من الحد الآخر. ٤) احسب أجزاء المنازل أو الأعداد الكاملة ذهنيًا. ٥) اجمع الأجزاء دون أن تفقد شيئًا منها. ٦) تحقق بمقارنة المجموع قبل التعويض وبعده أو بإجراء جمع تقليدي للتحقق عند الحاجة.",
+          "CommonMistakes": "خطأ: ٥٦ + ٣٦ = ٦٠ + ٣٦ = ٩٦؛ الصحيح عند زيادة الأول ٤ أن ننقص الثاني ٤، فيكون ٦٠ + ٣٢ = ٩٢. خطأ: ١٣٤ + ٩٩ = ١٣٤ + ١٠٠ = ٢٣٤؛ الصحيح طرح ١ من ١٣٤ فالناتج ٢٣٣. خطأ: الخلط بين التقدير والحساب الذهني الدقيق. خطأ: نسيان آحاد أحد الحدين أثناء تفكيك العدد إلى مئات وعشرات وآحاد.",
+          "QuickSummary": "أحسب مجموع عددين ذهنياً بتفكيك المنازل أو بتعويض متساوٍ بين الحدين، مع الاحتفاظ بالمجموع الدقيق. نشاط إغلاق أصلي: أوجد ٦٨ + ٢٧ و١٣٥ + ٩٩ بطريقتين، وفسّر لماذا ٧٠ + ٢٥ يساوي ٦٨ + ٢٧. إجابات المعلم: ٩٥، ٢٣٤؛ لأننا زدنا الأول ٢ ونقصنا الثاني ٢."
         }
       ]
     },

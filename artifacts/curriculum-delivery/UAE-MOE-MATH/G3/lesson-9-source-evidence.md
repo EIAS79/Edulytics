@@ -1,0 +1,3 @@
+# G3 Unit 2 Lesson 4 — الجمع ذهنياً
+
+Student latest local Arabic 2025–2026 printed pp73–78/PDF 94–99, SHA-256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`. Older 2020–2021 teacher guidance reviewed for exact mental strategies and differentiated practice. Classroom 1–17, homework 1–10 identified and mapped numerically. Skills: decomposing hundreds/tens/ones, rounding one addend to make tens/hundreds while offsetting the other addend exactly (not estimation); reasoning teacher-scored. One existing-exact-engine family with two strategy prompts, Arabic original instructional text and cooldown. No copied publisher graphics/text. 2026–2027 parity UNKNOWN; unit tests WRITTEN_NOT_RUN; CI/StageD NOT_RUN.

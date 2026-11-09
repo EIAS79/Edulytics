@@ -7255,6 +7255,9 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u02.l03.add_place_step", "uae.g3.u02.l03.find_missing_step", "uae.g3.u02.l03.complete_pattern"],
             "G3_2025_2026_ARABIC_STUDENT_PP67_72_TEACHER_GUIDE_OLDER_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:04","number.addition.mental_3digit","DECOMPOSE_AND_COMPENSATE_EXACT",
+            ["uae.g3.u02.l04.mental_addition"],"G3_2025_2026_STUDENT_PP73_78_STAGE_D_NOT_RUN","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
