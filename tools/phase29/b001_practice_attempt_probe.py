@@ -192,7 +192,7 @@ def syntactically_valid_wrong_answer(correct, family=None):
         raise ValueError("Valid-wrong fixture not distinct from expected")
     return wrong
 
-def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answer_mode="correct"):
+def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answer_mode="correct",wrong_answer_profile=None):
     """Generate, submit and check one real scoped Practice question."""
     if answer_mode not in ("correct","malformed","well_formed_wrong"):
         return {"status":"INVALID_PROBE_ANSWER_MODE"}
@@ -295,7 +295,12 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             # A survey requiring human participants cannot be auto-tested.
             if synthetic_survey:
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
-            answer=syntactically_valid_wrong_answer(answer,family)
+            # G2 reuses many first-party/shared numeric and category families.
+            # Opt-in only: never change existing US or G1 negative controls.
+            if wrong_answer_profile=="uae-g2":
+                answer=grade6_syntactically_valid_wrong_answer(answer)
+            else:
+                answer=syntactically_valid_wrong_answer(answer,family)
         if answer_mode=="malformed":
             # Deliberately invalid for numbers, expressions, category lists and
             # survey tally protocols alike. The source generation family

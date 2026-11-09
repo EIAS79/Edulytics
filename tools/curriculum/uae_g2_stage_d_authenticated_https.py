@@ -173,7 +173,7 @@ def run():
         wrong = probe_lesson(
             student, BASE, lesson_id, extract_adoption(practice_page),
             extract_csrf(practice_page), extract_idempotency_key(practice_page),
-            sql, answer_mode="well_formed_wrong"
+            sql, answer_mode="well_formed_wrong", wrong_answer_profile="uae-g2"
         )
         if wrong.get("status") != "WELL_FORMED_WRONG_ANSWER_REJECTED_AND_PERSISTED":
             raise AssertionError(
