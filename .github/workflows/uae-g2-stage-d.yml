@@ -1,0 +1,93 @@
+name: UAE Grade 2 Arabic Stage D - actual isolated candidate checks
+on:
+  push:
+    branches: [curriculum/uae-g2-arabic-abc-20261109]
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g2-stage-d.yml'
+      - 'tools/curriculum/uae_g2_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G2/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uae-g2-stage-d-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  DOTNET_NOLOGO: '1'
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+jobs:
+  structural:
+    name: G2 exact 99 lesson identities and Arabic bodies
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/curriculum/uae_g2_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-stage-d-structural
+          path: artifacts/uae-g2-stage-d/
+  source:
+    name: G2 source parity and edition gate - fail closed
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/curriculum/uae_g2_stage_d_gate.py --phase source
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-stage-d-source
+          path: artifacts/uae-g2-stage-d/
+  dotnet:
+    name: G2 shared build and real question verifier/regression tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: dotnet restore Edulytics.sln
+      - run: dotnet build Edulytics.sln --configuration Release --no-restore
+      - name: Execute all Grade 2 written-but-unrun exact-family tests
+        run: |
+          mkdir -p artifacts/uae-g2-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade2' --logger 'trx;LogFileName=grade2-math.trx' \
+            --results-directory artifacts/uae-g2-stage-d/trx
+      - name: G1 shared and US learner content regressions
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade1Arabic|FullyQualifiedName~UaeGrade1Related|FullyQualifiedName~Phase29LessonReaderFinalPolishTests|FullyQualifiedName~Phase29LessonContentVisualContractTests' \
+            --logger 'trx;LogFileName=grade1-us-regression.trx' --results-directory artifacts/uae-g2-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-stage-d-dotnet
+          path: artifacts/uae-g2-stage-d/trx/
+          if-no-files-found: ignore
+  final:
+    name: G2 final candidate truth - not equivalent to publication
+    runs-on: ubuntu-24.04
+    if: always()
+    needs: [structural, source, dotnet]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Evidence-bound fail-closed summary
+        env:
+          STRUCTURAL_JOB_RESULT: ${{ needs.structural.result }}
+          SOURCE_JOB_RESULT: ${{ needs.source.result }}
+          DOTNET_JOB_RESULT: ${{ needs.dotnet.result }}
+          AUTHENTICATED_E2E_JOB_RESULT: NOT_RUN
+          ARABIC_BROWSER_JOB_RESULT: NOT_RUN
+        run: python3 tools/curriculum/uae_g2_stage_d_gate.py --phase final
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g2-stage-d-final
+          path: artifacts/uae-g2-stage-d/
