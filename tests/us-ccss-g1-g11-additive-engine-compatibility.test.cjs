@@ -8,6 +8,7 @@ const root=path.resolve(__dirname,'..');
 const git=(...args)=>cp.execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
 const g1Proof='e702b36328ff90cbb01e7ac81a4a90c06e165989';
 const courseBase='4c02c262c5b52feae4b0c2209231acdfc1310d83';
+const preUaeG1Release='dc76fa4b2bc30dcb1a8af6a9b184ca4c381e25fb';
 const engine='src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs';
 const familyRegistry='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
 const legacyG1Paths=new Set(JSON.parse(fs.readFileSync(
@@ -51,33 +52,25 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   const oldAdded=oldDiff.split('\n').filter(x=>x.startsWith('+')&&!x.startsWith('+++')).map(x=>x.slice(1));
   assert.equal(oldAdded.length,210);
   assert.ok(oldAdded.every(x=>!x.includes('usccss.g1.')&&!x.includes('UsCcssG1')));
-  // The previous published G11/G12 engine is byte-pinned in main.
-  // The UAE G1 first-party authoring adds only 1,769 lines with NO
-  // deletions; it must not alter US G1 families or dispatch.
-  const publishedEngine=git('rev-parse','origin/main:'+engine);
-  // Before G2 merge, main is the previously published G1/G11 baseline.
-  // After merge, main must be the exact owner-reviewed G2 additive extension.
-  assert.ok([
-    '19ca4300c3a8c772a4624831987ae164489026e8',
-    'ea6989494b3190676b7343e29da659bb3bf07afe'
-  ].includes(publishedEngine));
+  // Compare against the immutable pre-G1 production commit rather than
+  // the moving origin/main ref, which contains the accepted Grade 1 changes
+  // AFTER merge. Preserve the original US G1 and G11 source hashes.
+  // UAE G1 and G2 add 1,770 reviewed lines total, delete zero and
+  // change no US G1 dispatch. The pre-G1 production anchor remains fixed.
+  assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
+    '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
     'ea6989494b3190676b7343e29da659bb3bf07afe');
-  const preMerge=publishedEngine==='19ca4300c3a8c772a4624831987ae164489026e8';
-  assert.equal(git('diff','--numstat','origin/main','HEAD','--',engine),
-    preMerge ? '1770\t0\t'+engine : '');
-  const delta=git('diff','--unified=0','origin/main','HEAD','--',engine);
+  assert.equal(git('diff','--numstat',preUaeG1Release,'HEAD','--',engine),
+    '1770\t0\t'+engine);
+  const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||
     (x.startsWith('-')&&!x.startsWith('---')));
   assert.ok(changed.every(x=>!x.includes('usccss.g1.')&&!x.includes('UsCcssG1')));
   const deleted=changed.filter(x=>x.startsWith('-'));
   assert.deepEqual(deleted,[]);
-  if(preMerge){
-    assert.ok(changed.some(x=>x.includes('uae.g1.u01.l01.read_write_1_5')));
-  } else {
-    assert.deepEqual(changed,[], 'After merge no unpinned mathematics engine edits');
-  }
+  assert.ok(changed.some(x=>x.includes('uae.g1.u01.l01.read_write_1_5')));
   const source=fs.readFileSync(path.join(root,engine),'utf8');
   const entries=JSON.parse(fs.readFileSync(path.join(root,familyRegistry),'utf8'));
   const newFamilies=entries.families.filter(x=>x.id?.startsWith('usccss.g11.alg2.'));
