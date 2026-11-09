@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l08",
+  "ContentVersion": "uae-g3-common-t1-ar-a-b-c-u06-l09",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U06 sequential A–B–C source-scoped through ordinal 41; StageD CI NOT_RUN; 2026–2027 source unverified.",
+  "ReviewEvidence": "Grade3 U06 sequential A–B–C source-scoped through ordinal 42; StageD CI NOT_RUN; 2026–2027 source unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1793,23 +1793,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:06:09",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 6 / Lesson 9; official Arabic title: القسمة على 10",
+      "TitleSourceReference": "UAE Grade3 Common Arabic student 2025–2026 pp339–344; teacher 2020–2021 corresponding edition",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U06:L09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 6 / Lesson 9",
+      "SourceLocator": "Grade_03/01_Student_Books/01_compressed.pdf; printed pp339–344 PDF 360–365",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "7c65c3318ee29d04459809335c1f8d69c96c82477f4081ae10388a407ec8b999",
+      "SourceEdition": "2025–2026 latest local Arabic student / teacher older 2020–2021; target 2026–2027 parity unknown",
+      "SourceRights": "Independent Edulytics Arabic teaching text, no textbook pages/images copied; educational objectives compared locally",
+      "SourceSha256": "965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806",
       "CanonicalBodySha256": "e013086d055c648ea92708d186cfd4494d238b1712d832351d84e403832ab8a4",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "UAE_G3_U06_L09_SOURCE_SCOPED_A_B_C_ARABIC_STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1820,6 +1820,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Divide by 10: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القسمة على ١٠",
+          "Explanation": "القسمة على ١٠ تعني توزيع عدد من الوحدات على عشر مجموعات متساوية أو تقسيمه إلى مجموعات تضم كل واحدة عشر وحدات، حسب سياق المسألة. عند قسمة مضاعف صحيح للعشرة عليها، نعد عدد مجموعات العشرة، أو نطرح ١٠ تكرارًا حتى نصل إلى الصفر. يرتبط ذلك بحقيقة الضرب: إذا كان ١٠×٨=٨٠ فإن ٨٠÷١٠=٨. يمكن استعمال خط أعداد وقضبان عشرات لتبرير الإجابة.",
+          "KeyConceptsAndRules": "المقسوم ÷ ١٠ = عدد مجموعات العشرة إذا كان المقسوم من مضاعفات ١٠. ٣٠÷١٠=٣؛ تحقق ٣×١٠=٣٠. للأعداد الصحيحة غير السالبة إذا كان العدد لا ينتهي بالصفر قد يكون هناك باقٍ عند القسمة على ١٠؛ لا يجوز حذف رقم الآحاد واعتبار الباقي صفرًا. ١٠÷١٠=١، و٠÷١٠=٠. يمكن أيضًا استعمال الطرح المتكرر أو تتبع قفزات بمقدار ١٠ على خط أعداد.",
+          "WorkedExamples": "مثال ١: ٥٠ قطعة حلوى تُوضع عشر قطع في كل كيس؛ نحتاج ٥ أكياس، ٥٠÷١٠=٥. مثال ٢: من ٧٠ نطرح ١٠ سبع مرات للوصول إلى صفر، إذن ٧٠÷١٠=٧. مثال ٣: ٩٠÷١٠=٩ لأن ٩×١٠=٩٠. مثال ٤: ٦٠ بطاقة توزع على عشر فرق بالتساوي، فيحصل كل فريق على ٦ بطاقات؛ معادلة التحقق ١٠×٦=٦٠.",
+          "StepByStepSolutions": "١) أفهم هل أبحث عن عشر مجموعات متساوية أم مجموعات تحتوي عشرة عناصر. ٢) أمثل العدد بقضبان عشرات أو أنظم قطع العد في مجموعات. ٣) أعدّ المجموعات أو أطرح ١٠ تكرارًا وصولًا للصفر. ٤) أكتب جملة القسمة وناتجها. ٥) أتحقق بضرب الناتج في ١٠ وإعادة المقارنة مع العدد الكلي. ٦) أشرح أي باقٍ محتمل عند أعداد ليست مضاعفات ١٠.",
+          "CommonMistakes": "خطأ: ٥٠÷١٠=٥٠ لأننا لم نقلل العدد؛ الصحيح ٥. خطأ: ٩٠÷١٠=٨ لأننا أسقطنا قفزة واحدة؛ الصحيح ٩. خطأ: الخلط بين ١٠÷٥ و٥÷١٠؛ يتغير معنى القسمة بترتيب الأعداد. خطأ: ٧٥÷١٠=٧ قسمة تامة دون باقٍ؛ الصحيح ٧ مجموعات عشرية ويبقى ٥، ويمكن تعلم التمثيل العشري لاحقًا. خطأ: استعمال حقائق الضرب دون التحقق من عدد المجموعات في مسألة لفظية.",
+          "QuickSummary": "أقسم مضاعف العشرة بقسمة تمثّل مجموعات عشرية أو طرح ١٠ تكرارًا، ثم أتحقق بالضرب. نشاط إغلاق أصلي: ٨٠ قطعة موزعة بالتساوي على عشر علب؛ كم قطعة في كل علبة؟ اكتب جملة القسمة والضرب المرتبطة. الحل ٨٠÷١٠=٨، و١٠×٨=٨٠."
         }
       ]
     },

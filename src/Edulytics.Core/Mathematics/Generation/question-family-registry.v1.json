@@ -35436,6 +35436,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u06.l09.divide_by_ten",
+      "version": 1,
+      "skillId": "number.division.by_ten",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade3-unit6-lesson09-2025-2026-selected-source-stage-d-not-run",
+      "representations": [
+        "repeated_subtraction",
+        "number_line",
+        "ten_groups"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
