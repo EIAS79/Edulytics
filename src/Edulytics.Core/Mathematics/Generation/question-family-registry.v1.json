@@ -35894,6 +35894,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u09.l06.evaluate_expression",
+      "version": 1,
+      "skillId": "number.algebra.evaluate_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u09-l06-source-scoped-tests-not-run",
+      "representations": [
+        "math_expression",
+        "array",
+        "bar_model",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
