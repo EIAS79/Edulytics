@@ -7660,6 +7660,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u11.l04.mass_word_problem"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_669_674_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:05","measurement.time.minute",
+            "READ_ANALOG_DIGITAL_CLOCK_HOUR_MINUTE",
+            ["uae.g3.u11.l05.time_to_minute"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_677_682_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
