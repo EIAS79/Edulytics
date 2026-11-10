@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l07",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l08",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U07 L07 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
+  "ReviewEvidence": "Grade3 U07 L08 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2137,23 +2137,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:07:08",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 7 / Lesson 8; official Arabic title: القسمة مع 0 و1",
+      "TitleSourceReference": "Grade 3 Arabic local student volume 2, U07 Lesson 8, printed pp.403-408",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U07:L08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 7 / Lesson 8",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.403-408, PDF pp.53-58",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "8765ba559aa612eebdce5e6d18839248d1027fb8c72869bdfabab41194f4b7e5",
+      "SourceEdition": "LOCAL_ARABIC_VOLUME_2; PDF creation 2020-12-21, printed year unverified; target 2026-2027 UNKNOWN",
+      "SourceRights": "Local text/image used as skill reference only; teaching prose, numerical examples and text visuals independently authored by Edulytics.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "e9ee2a4c4ff7fa0b2a721baf5cb51d0c85df6ddca19f6acf54bb741ca51bb7de",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "EDULYTICS_G3_U07_L08_AR_A_B_C_SOURCE_SCOPED; TARGET_EDITION_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2164,6 +2164,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Divide with 0 and 1: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القسمة مع ٠ و١",
+          "Explanation": "هدف التعلم: أميز بين قسمة الصفر على عدد غير صفري، وقسمة عدد على ١، وقسمة عدد غير صفري على نفسه، وأعرف أن القسمة على صفر غير معرفة. صفر قطع يوزع على ثلاث مجموعات: [ ] [ ] [ ]؛ في كل مجموعة صفر، إذن ٠ ÷ ٣ = ٠. ست قطع في مجموعة واحدة: [●●●●●●]، إذن ٦ ÷ ١ = ٦.",
+          "KeyConceptsAndRules": "أميز بين قسمة الصفر على عدد غير صفري، وقسمة عدد على ١، وقسمة عدد غير صفري على نفسه، وأعرف أن القسمة على صفر غير معرفة. وأربط كل رمز في المعادلة بمعناه في النموذج؛ لا أكتفي بحفظ الناتج دون تفسير.",
+          "WorkedExamples": "مثال: ١٢ ÷ ١ = ١٢، و١٢ ÷ ١٢ = ١، و٠ ÷ ٤ = ٠؛ لكن ٤ ÷ ٠ لا معنى له في الحساب المعتاد، فلا نقول إن الناتج صفر. التمثيل أصلي من Edulytics وليس صورة مقتبسة.",
+          "StepByStepSolutions": "أحدد المقسوم والمقسوم عليه بدقة. أتحقق أولًا أن المقسوم عليه ليس صفرًا، ثم أستخدم خاصية القسمة المناسبة وأراجع بالضرب.",
+          "CommonMistakes": "العبارتان ٠ ÷ ٤ و٤ ÷ ٠ ليستا متشابهتين: الأولى تساوي صفرًا والثانية غير معرفة. كذلك ٠ ÷ ٠ غير معرفة.",
+          "QuickSummary": "أطبق مهارة القسمة مع ٠ و١ بأكثر من تمثيل وأفسر النتيجة. نشاط إغلاق: احسب ٠ ÷ ٥ و٧ ÷ ١ و٧ ÷ ٧، واذكر لماذا لا نحسب ٧ ÷ ٠. الإجابات: ٠، ٧، ١؛ والأخيرة غير معرفة."
         }
       ]
     },

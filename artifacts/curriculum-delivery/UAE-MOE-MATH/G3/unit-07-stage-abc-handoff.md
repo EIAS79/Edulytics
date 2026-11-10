@@ -1,0 +1,3 @@
+# UAE Grade 3 Common — Unit 7 — A-B-C source-scoped handoff
+
+Lessons 43–50, 8/8 sequential source-scoped educational checkpoints. Verified local Arabic student source: Volume 2 printed pp.359–408, 02_compressed.pdf, SHA-256 63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58. Printed edition year unverified (PDF created December 2020). 2026–2027 textbook parity UNKNOWN; owner publication decision does not certify rights or runtime. Original Arabic models, explanations, examples, Cool-downs and lesson-specific numeric families routed via existing exact engine. Manual drawing/explanation requires teacher rubrics. StageD tests WRITTEN_NOT_RUN, CI NOT_RUN, no merge/deploy.
