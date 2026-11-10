@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l04",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l05",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U07 L04 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
+  "ReviewEvidence": "Grade3 U07 L05 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2008,23 +2008,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:07:05",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 7 / Lesson 5; official Arabic title: القسمة على 4",
+      "TitleSourceReference": "Grade 3 Arabic local student volume 2, U07 Lesson 5, printed pp.383-388",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U07:L05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 7 / Lesson 5",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.383-388, PDF pp.33-38",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "feed16c25c6014cc0cbf5f94196aa8719bb727ae7337bb5e3b54cbb653dc5e63",
+      "SourceEdition": "LOCAL_ARABIC_VOLUME_2; PDF creation 2020-12-21, printed year unverified; target 2026-2027 UNKNOWN",
+      "SourceRights": "Local text/image used as skill reference only; teaching prose, numerical examples and text visuals independently authored by Edulytics.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "9a541bbf52cb5f0437cac3721d949689c4ac5ba2e7198ad37b449b6a466081bb",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "EDULYTICS_G3_U07_L05_AR_A_B_C_SOURCE_SCOPED; TARGET_EDITION_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2035,6 +2035,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Divide by 4: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القسمة على ٤",
+          "Explanation": "هدف التعلم: أقسم كمية إلى مجموعات متساوية بواقع أربعة في كل مجموعة، أو أوزعها على أربع مجموعات، وأستخدم حقيقة الضرب العكسية. أضع ٢٠ قطعة في صفوف من أربع: ●●●● / ●●●● / ●●●● / ●●●● / ●●●●؛ خمسة صفوف، لذا ٢٠ ÷ ٤ = ٥.",
+          "KeyConceptsAndRules": "أقسم كمية إلى مجموعات متساوية بواقع أربعة في كل مجموعة، أو أوزعها على أربع مجموعات، وأستخدم حقيقة الضرب العكسية. وأربط كل رمز في المعادلة بمعناه في النموذج؛ لا أكتفي بحفظ الناتج دون تفسير.",
+          "WorkedExamples": "مثال: لدى ٣٢ ورقة، نضع أربع أوراق في كل ملف؛ عدد الملفات ٣٢ ÷ ٤ = ٨، وبالتحقق ٨ × ٤ = ٣٢. التمثيل أصلي من Edulytics وليس صورة مقتبسة.",
+          "StepByStepSolutions": "أحدد معنى المقسوم عليه، أرسم المجموعات، أعدّ بزيادات أربع إلى العدد المطلوب، وأتحقق بعملية الضرب.",
+          "CommonMistakes": "لا تكتب ٣٢ ÷ ٤ = ٢٨ بإجراء الطرح مرة واحدة؛ القسمة تتطلب تقسيمًا متساويًا. القسمة على صفر غير معرفة.",
+          "QuickSummary": "أطبق مهارة القسمة على ٤ بأكثر من تمثيل وأفسر النتيجة. نشاط إغلاق: رتّب ٢٨ دائرة في مجموعات تحتوي أربع دوائر. كم مجموعة؟ الإجابة ٧، وارسم صفوفًا متساوية."
         }
       ]
     },

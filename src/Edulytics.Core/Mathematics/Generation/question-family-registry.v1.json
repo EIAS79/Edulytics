@@ -35534,6 +35534,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u07.l05.divide_by_four",
+      "version": 1,
+      "skillId": "number.division.by_four",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u07-l05-local-volume2-stage-d-not-run",
+      "representations": [
+        "equal_groups",
+        "number_line",
+        "diagram",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
