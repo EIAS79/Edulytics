@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 10 through lesson 5, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 10 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3169,23 +3169,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:10:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 10 / Lesson 6; official Arabic title: الكسور المكافئة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 10 L6; printed pp.595-600; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U10:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 10 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.595-600; PDF pp.245-250",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "eeaeac7e23d5bc623292c824464d7ce142e0acc11cd652ff49a4392967a545b2",
+      "SourceEdition": "Local Arabic Volume 2 (file PDF metadata 2020-12-21); printed edition unknown, target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "ae4fe0a6d9ace62ce6d00bb596330892d685489f88abd834c7e98770dd92dec3",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U10_L06_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3196,6 +3196,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Equivalent Fractions: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الكسور المتكافئة",
+          "Explanation": "هدف التعلم: أتعرف الكسور المتكافئة باستخدام نموذج المساحة وخط الأعداد وأستنتج قاعدة تضاعف البسط والمقام بالعامل نفسه. مستطيل أول مقسم إلى نصفين ومظلل نصف واحد؛ مستطيل مماثل مقسم إلى أرباع ومظلل ربعان.",
+          "KeyConceptsAndRules": "عند ضرب البسط والمقام في العدد الموجب نفسه لا تتغير قيمة الكسر؛ مثل ١/٢ = ٢/٤ = ٤/٨.",
+          "WorkedExamples": "مثال: ٣/٤ = ٦/٨ لأن ضرب البسط والمقام في ٢ يضاعف عدد الأجزاء ويحافظ على المساحة الملونة.",
+          "StepByStepSolutions": "أمثل الكسر الأول، أزيد عدد تقسيمات كل جزء بالتساوي، أعد أجزاء الكسر الجديد وأتحقق بالمقارنة على خط الأعداد.",
+          "CommonMistakes": "لا تضاعف المقام دون البسط؛ الكسر ٣/٨ ليس مكافئًا لـ٣/٤.",
+          "QuickSummary": "نشاط إغلاق: أكمل ٢/٣ = □/٦؛ البسط المفقود ٤ وارسم تمثيلًا للتحقق."
         }
       ]
     },
