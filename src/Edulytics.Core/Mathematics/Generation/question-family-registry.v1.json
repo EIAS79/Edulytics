@@ -36134,6 +36134,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u11.l01.capacity_units",
+      "version": 1,
+      "skillId": "measurement.capacity.units",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u11-l01-source-scoped-tests-not-run",
+      "representations": [
+        "measurement_tool",
+        "measurement_table",
+        "time_line",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

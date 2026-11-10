@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l08",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l01",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 10 through lesson 8, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 11 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3298,23 +3298,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:11:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 11 / Lesson 1; official Arabic title: نشاط عملي: تقدير السعة وقياسها",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 11 L1; printed pp.651-656; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U11:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 11 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.651-656; PDF pp.34-39",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "f7806e445d4cd5e33a58cbc7c09190479bbd97834d066604a10a2edde79dac64",
+      "SourceEdition": "Local Arabic Volume 3, source OCR degraded, visual student pages verified; metadata 2018 / target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "a1530ccc4bc4f515bd9e7183b18029f3f41db55e2082e5d8dd4b30c4d495b2e6",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U11_L01_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3325,6 +3325,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Estimate and Measure Capacity: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: تقدير السعة وقياسها",
+          "Explanation": "هدف التعلم: أقدر السعة وأقيس كمية السائل باستخدام أدوات مناسبة، وأميز بين اللتر والملليلتر. قدّر سعة كأس ثم قسها في مخبار ذي تدريجات منتظمة، وسجل التقدير والقياس والفرق بينهما.",
+          "KeyConceptsAndRules": "سعة الوعاء مقدار السائل الذي يمكن أن يحويه. ١ لتر = ١٠٠٠ ملليلتر. نقرأ التدريج من مستوى السائل بصورة صحيحة.",
+          "WorkedExamples": "مثال: سعة زجاجة ٢ لتر و٢٠٠ ملليلتر تعادل ٢٢٠٠ ملليلتر. يمكن كتابة ذلك في جدول السعة.",
+          "StepByStepSolutions": "أختار أداة قياس مناسبة وأحدد وحدة السعة، أقدر أولًا، أقيس وأقرأ تدريج السائل، أقارن بالقيمة المقدّرة.",
+          "CommonMistakes": "لا تخلط بين الملليلتر واللتر، ولا تقرأ التدريج من زاوية خاطئة. سعة الكوب ليست كتلة الكوب.",
+          "QuickSummary": "نشاط إغلاق: قدر أيهما أكبر سعة، زجاجة سعتها ١ لتر أو كأس سعتها ٣٠٠ ملليلتر، واذكر السبب. ١٠٠٠ ملليلتر أكبر من ٣٠٠."
         }
       ]
     },
