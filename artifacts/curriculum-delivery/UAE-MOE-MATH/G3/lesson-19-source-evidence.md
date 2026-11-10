@@ -1,0 +1,3 @@
+# UAE G3 U03 L05 — طرح الأعداد المكونة من ثلاثة أرقام
+
+Latest local Arabic student selected 2025–2026 printed pp153–158, PDF174–179 SHA256 965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806. Older 2020–2021 teacher book supplemental. 15 classroom and 10 home questions mapped by number; skills include vertical subtraction with regrouping, accuracy/inverse verification, context and comparison with estimation. First-party Arabic teaching and cooldown, four Grade2 already-implemented numeric family contracts reused, no new engine. Any pictorial model and verbal rationale teacher scored. 2026–2027 target edition parity UNKNOWN. Stage D runtime/CI NOT_RUN.

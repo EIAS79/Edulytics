@@ -1,0 +1,3 @@
+# G3 U06 L06 — استقصاء حل المسائل: البحث عن نمط
+
+Student Arabic 2025–2026 printed pp321–326 (PDF 342–347), SHA256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`; 2020–2021 teacher guide for the search-for-pattern strategy. 7 numbered classroom tasks, 5 numbered homework tasks, plus unnumbered geometric doubling (2,4,8,16→32,64) and halving (48,24,12→6) examples. Found real coverage gap: existing pre-authored shared U06 family only had +2/+5/+10. Extended same handler to generate, validate and solve **doubling and halving** patterns. Cyclic colors and open reasoning remain teacher-scored. Independent Arabic explanation, error analysis, examples, cooldown. Source scoped, target 2026–2027 book unknown. Runtime tests/CI/StageD **NOT_RUN**.

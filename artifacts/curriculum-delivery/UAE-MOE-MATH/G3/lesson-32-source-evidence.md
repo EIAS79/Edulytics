@@ -1,0 +1,3 @@
+# UAE Grade3 U05 L05 — العمليات العكسية
+
+Selected student Arabic 2025–2026 pp265–270, PDF286–291 SHA256 `965226EF7935798F4EBCC317646C74D86E6A592BD7E8F6ABDD479C3E40670806`, old teacher 2020–2021 supplemental. Numbered class Q1–19 and homework Q1–15 (34 total) mapped to source. Objective two multiplication facts + two inverse division facts from factor-product triples, arrays, missing factor and word problems. Edulytics-original Arabic explanation, examples, textual arrays and authored cooldown. Existing two exact families reused, NO new engine. Teacher scores complete fact family and models. Stage D and CI **NOT_RUN**; tests WRITTEN_NOT_RUN. 2026–2027 target edition parity UNKNOWN. No publisher prose/images redistributed.

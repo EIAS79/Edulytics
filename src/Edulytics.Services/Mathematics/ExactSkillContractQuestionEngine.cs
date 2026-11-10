@@ -291,6 +291,36 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade2Unit3Questions.Supports(family.Trim()) ||
           UaeGrade2Unit4Questions.Supports(family.Trim()) ||
           UaeGrade2Unit5Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit1Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit1Lesson05Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson02Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson03Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson04Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson05Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson08Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit2Lesson09Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit3Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit3Lesson02Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit3Lesson03Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit3Lesson06Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit3Lesson07Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit4Lesson04Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit5Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit5Lesson03Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit5Lesson06Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit6Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit7Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit8Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit9Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit10Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit11Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit12Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit13Questions.Supports(family.Trim()) ||
+          UaeGrade3Unit14Questions.Supports(family.Trim()) ||
           UaeGrade2Unit6Questions.Supports(family.Trim()) ||
           UaeGrade2Unit7Questions.Supports(family.Trim()) ||
           UaeGrade2Unit8Questions.Supports(family.Trim()) ||
@@ -611,6 +641,66 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit4Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit5Questions.Supports(family))
             return UaeGrade2Unit5Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit1Questions.Supports(family))
+            return UaeGrade3Unit1Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit1Lesson02Questions.Supports(family))
+            return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit1Lesson03Questions.Supports(family))
+            return UaeGrade3Unit1Lesson03Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit1Lesson04Questions.Supports(family))
+            return UaeGrade3Unit1Lesson04Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit1Lesson05Questions.Supports(family))
+            return UaeGrade3Unit1Lesson05Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson01Questions.Supports(family))
+            return UaeGrade3Unit2Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson02Questions.Supports(family))
+            return UaeGrade3Unit2Lesson02Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson03Questions.Supports(family))
+            return UaeGrade3Unit2Lesson03Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson04Questions.Supports(family))
+            return UaeGrade3Unit2Lesson04Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson05Questions.Supports(family))
+            return UaeGrade3Unit2Lesson05Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson08Questions.Supports(family))
+            return UaeGrade3Unit2Lesson08Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit2Lesson09Questions.Supports(family))
+            return UaeGrade3Unit2Lesson09Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit3Lesson01Questions.Supports(family))
+            return UaeGrade3Unit3Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit3Lesson02Questions.Supports(family))
+            return UaeGrade3Unit3Lesson02Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit3Lesson03Questions.Supports(family))
+            return UaeGrade3Unit3Lesson03Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit3Lesson06Questions.Supports(family))
+            return UaeGrade3Unit3Lesson06Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit3Lesson07Questions.Supports(family))
+            return UaeGrade3Unit3Lesson07Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit4Lesson04Questions.Supports(family))
+            return UaeGrade3Unit4Lesson04Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit5Lesson01Questions.Supports(family))
+            return UaeGrade3Unit5Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit5Lesson03Questions.Supports(family))
+            return UaeGrade3Unit5Lesson03Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit5Lesson06Questions.Supports(family))
+            return UaeGrade3Unit5Lesson06Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit6Questions.Supports(family))
+            return UaeGrade3Unit6Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit7Questions.Supports(family))
+            return UaeGrade3Unit7Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit8Questions.Supports(family))
+            return UaeGrade3Unit8Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit9Questions.Supports(family))
+            return UaeGrade3Unit9Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit10Questions.Supports(family))
+            return UaeGrade3Unit10Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit11Questions.Supports(family))
+            return UaeGrade3Unit11Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit12Questions.Supports(family))
+            return UaeGrade3Unit12Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit13Questions.Supports(family))
+            return UaeGrade3Unit13Questions.Verify(family, parameters, answer);
+        if (UaeGrade3Unit14Questions.Supports(family))
+            return UaeGrade3Unit14Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit6Questions.Supports(family))
             return UaeGrade2Unit6Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit7Questions.Supports(family))
@@ -3603,6 +3693,156 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade2Unit5Questions.Supports(family))
         {
             var q = UaeGrade2Unit5Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit1Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit1Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit1Lesson02Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit1Lesson02Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit1Lesson03Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit1Lesson03Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit1Lesson04Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit1Lesson04Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit1Lesson05Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit1Lesson05Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson01Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson01Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson02Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson02Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson03Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson03Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson04Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson04Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson05Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson05Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson08Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson08Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit2Lesson09Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit2Lesson09Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit3Lesson01Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit3Lesson01Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit3Lesson02Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit3Lesson02Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit3Lesson03Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit3Lesson03Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit3Lesson06Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit3Lesson06Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit3Lesson07Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit3Lesson07Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit4Lesson04Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit4Lesson04Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit5Lesson01Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit5Lesson01Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit5Lesson03Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit5Lesson03Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit5Lesson06Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit5Lesson06Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit6Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit6Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit7Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit7Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit8Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit8Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit9Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit9Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit10Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit10Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit11Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit11Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit12Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit12Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit13Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit13Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade3Unit14Questions.Supports(family))
+        {
+            var q = UaeGrade3Unit14Questions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade2Unit6Questions.Supports(family))
@@ -7575,6 +7815,66 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit4Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit5Questions.Supports(problem.Family))
             return UaeGrade2Unit5Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit1Questions.Supports(problem.Family))
+            return UaeGrade3Unit1Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
+            return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))
+            return UaeGrade3Unit1Lesson03Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit1Lesson04Questions.Supports(problem.Family))
+            return UaeGrade3Unit1Lesson04Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit1Lesson05Questions.Supports(problem.Family))
+            return UaeGrade3Unit1Lesson05Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson01Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson02Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson02Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson03Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson03Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson04Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson04Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson05Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson05Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson08Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson08Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit2Lesson09Questions.Supports(problem.Family))
+            return UaeGrade3Unit2Lesson09Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit3Lesson01Questions.Supports(problem.Family))
+            return UaeGrade3Unit3Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit3Lesson02Questions.Supports(problem.Family))
+            return UaeGrade3Unit3Lesson02Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit3Lesson03Questions.Supports(problem.Family))
+            return UaeGrade3Unit3Lesson03Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit3Lesson06Questions.Supports(problem.Family))
+            return UaeGrade3Unit3Lesson06Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit3Lesson07Questions.Supports(problem.Family))
+            return UaeGrade3Unit3Lesson07Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit4Lesson04Questions.Supports(problem.Family))
+            return UaeGrade3Unit4Lesson04Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit5Lesson01Questions.Supports(problem.Family))
+            return UaeGrade3Unit5Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit5Lesson03Questions.Supports(problem.Family))
+            return UaeGrade3Unit5Lesson03Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit5Lesson06Questions.Supports(problem.Family))
+            return UaeGrade3Unit5Lesson06Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit6Questions.Supports(problem.Family))
+            return UaeGrade3Unit6Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit7Questions.Supports(problem.Family))
+            return UaeGrade3Unit7Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit8Questions.Supports(problem.Family))
+            return UaeGrade3Unit8Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit9Questions.Supports(problem.Family))
+            return UaeGrade3Unit9Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit10Questions.Supports(problem.Family))
+            return UaeGrade3Unit10Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit11Questions.Supports(problem.Family))
+            return UaeGrade3Unit11Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit12Questions.Supports(problem.Family))
+            return UaeGrade3Unit12Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit13Questions.Supports(problem.Family))
+            return UaeGrade3Unit13Questions.Solve(problem.Family, p);
+        if (UaeGrade3Unit14Questions.Supports(problem.Family))
+            return UaeGrade3Unit14Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit6Questions.Supports(problem.Family))
             return UaeGrade2Unit6Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit7Questions.Supports(problem.Family))

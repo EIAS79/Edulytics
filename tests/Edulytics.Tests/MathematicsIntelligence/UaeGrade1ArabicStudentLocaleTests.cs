@@ -80,6 +80,18 @@ public sealed class UaeGrade1ArabicStudentLocaleTests
 
     [Theory]
     [InlineData("PED:UAE-MOE-MATH:L3:COMMON:01:01")]
+    [InlineData("PED:UAE-MOE-MATH:L3:COMMON:14:10")]
+    public void Grade3Common_UsesArabicAndCannotLeakEnglish(string code)
+    {
+        var selected = Choose(MathematicsCurriculumPackRegistry.UaeCode,
+            code, [Content("en", "Unapproved English fallback"), Content("ar", "??? ???? ????")]);
+        Assert.NotNull(selected);
+        Assert.Equal("ar", selected.CultureCode);
+        Assert.Null(Choose(MathematicsCurriculumPackRegistry.UaeCode,
+            code, [Content("en", "Unapproved English fallback")]));
+    }
+
+    [Theory]
     [InlineData("PED:UAE-MOE-MATH:L11:ADVANCED:05:01:MULTIVARIABLE-LINEAR-SYSTEMS-AND-ELEMENTARY-ROW-OPERATIONS")]
     public void OtherUaeGrades_KeepExistingEnglishDefault(string code)
     {

@@ -7211,6 +7211,629 @@ public static class LessonPracticeContractRegistry
                 Version);
         }
 
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:01",
+            "number.place_value.to_thousands",
+            "FOUR_DIGIT_PLACE_VALUE_COMPOSITION",
+            ["uae.g3.u01.l01.digit_value", "uae.g3.u01.l01.compose_four_digits", "uae.g3.u01.l01.expanded_to_standard"],
+            "UAE_G3_2025_2026_ARABIC_STUDENT_PP9_14_STAGE_D_PENDING",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:02",
+            "number.place_value.comparison_to_9999",
+            "FOUR_DIGIT_RELATION_AND_SELECTION",
+            ["uae.g3.u01.l02.compare_4digit_relation", "uae.g3.u01.l02.find_greater", "uae.g3.u01.l02.find_smaller"],
+            "UAE_G3_2025_2026_ARABIC_STUDENT_PP15_20_STAGE_D_PENDING",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:03","number.order.to_thousands","ORDER_THREE_ASC_DESC_AND_MIDDLE",
+            ["uae.g3.u01.l03.order_three_ascending", "uae.g3.u01.l03.order_three_descending", "uae.g3.u01.l03.identify_middle_number"],
+            "UAE_G3_2025_2026_STUDENT_PP21_26_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:04","number.rounding.nearest_ten","ROUND_TO_NEAREST_TEN",
+            ["uae.g3.u01.l04.round_nearest_ten"],"G3_2025_2026_ARABIC_SOURCE_PP29_34_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:01:05","number.rounding.nearest_hundred","ROUND_TO_NEAREST_HUNDRED",
+            ["uae.g3.u01.l05.round_nearest_hundred"],"G3_2025_2026_STUDENT_PP35_40_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:01","number.addition.properties","COMMUTATIVE_ASSOCIATIVE_IDENTITY",
+            ["uae.g2.u01.l01.commutative_add","uae.g2.u01.l01.additive_zero","uae.g3.u02.l01.associative_add"],
+            "G3_U02_L01_2025_2026_STUDENT_PP55_60_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:02","number.addition.table_patterns","SUM_MISSING_ADDEND_PARITY_PATTERN",
+            ["uae.g3.u02.l02.addition_table_sum", "uae.g3.u02.l02.missing_table_addend", "uae.g3.u02.l02.even_odd_step2"],
+            "G3_2025_2026_ARABIC_STUDENT_PP61_66_AND_OLD_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:03","number.addition.place_patterns","ONE_TEN_HUNDRED_THOUSAND_INCREMENT",
+            ["uae.g3.u02.l03.add_place_step", "uae.g3.u02.l03.find_missing_step", "uae.g3.u02.l03.complete_pattern"],
+            "G3_2025_2026_ARABIC_STUDENT_PP67_72_TEACHER_GUIDE_OLDER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:04","number.addition.mental_3digit","DECOMPOSE_AND_COMPENSATE_EXACT",
+            ["uae.g3.u02.l04.mental_addition"],"G3_2025_2026_STUDENT_PP73_78_STAGE_D_NOT_RUN","READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:05","number.addition.estimate_sum","ROUND_BOTH_ADDENDS_FIRST_THEN_SUM",
+            ["uae.g3.u02.l05.estimate_sum_by_rounding"],"G3_STUDENT_PP81_86_TEACHER_81A_B_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:06","number.addition.base_ten_model","BASE_TEN_BLOCKS_REGROUP_ONES_TENS",
+            ["uae.g2.u06.l04.regroup_ones_add", "uae.g2.u06.l05.regroup_tens_add", "uae.g2.u06.l06.add_three_digits"],
+            "G3_STUDENT_PP87_92_TEACHER_87A_88_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:07","number.addition.three_digit_standard","PLACE_VALUE_VERTICAL_AND_REGROUP",
+            ["uae.g2.u06.l07.vertical_three_digit_add", "uae.g2.u06.l04.regroup_ones_add", "uae.g2.u06.l05.regroup_tens_add"],
+            "G3_STUDENT_PP93_98_TEACHER_PP93_96_OLD_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:08","number.addition.four_digit_with_regroup","VERTICAL_FOUR_DIGIT_PLACE_VALUE_AND_CARRY",
+            ["uae.g3.u02.l08.add_four_digit"],"G3_STUDENT_PP101_106_TEACHER_101_104_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:02:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:02:09",
+            "number.addition.reasonable_answers",
+            "ESTIMATE_EVALUATE_AND_EXPLAIN_APPROXIMATE_SUM",
+            ["uae.g3.u02.l05.estimate_sum_by_rounding", "uae.g3.u02.l09.reasonable_estimate_verdict"],
+            "UAE_G3_2025_2026_ARABIC_STUDENT_PP107_112_2026_2027_PARITY_UNKNOWN_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",
+            Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:01",
+            "number.subtraction.mental_strategies",
+            "SPLIT_TENS_ONES_AND_COMPENSATE_99",
+            ["uae.g2.u07.l01.decompose_hundred_subtract", "uae.g2.u07.l03.subtract_ten_hundred_mental", "uae.g3.u03.l01.mental_split_subtract"],
+            "UAE_G3_2025_2026_STUDENT_PP127_132_2026_2027_SOURCE_PARITY_UNKNOWN_STAGE_D_PENDING",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:02","number.subtraction.estimate_differences","ESTIMATE_DIFFERENCE_TENS_HUNDREDS_HIGHEST_PLACE",
+            ["uae.g3.u03.l02.estimate_difference_by_rounding"],"G3_LOCAL_2025_2026_STUDENT_PP133_138_2026_2027_PARITY_UNKNOWN_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:03", "number.subtraction.estimate_or_exact_decision",
+            "DECIDE_ESTIMATE_OR_EXACT_BY_CONTEXT",
+            ["uae.g3.u03.l02.estimate_difference_by_rounding", "uae.g2.u07.l08.story_equation_sub", "uae.g3.u03.l03.choose_estimate_or_exact"],
+            "UAE_G3_STUDENT_2025_2026_PP139_144_STAGE_D_PENDING", "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:04","number.subtraction.regroup_base_ten_models","REGROUP_TEN_TO_ONES_AND_HUNDRED_TO_TENS",
+            ["uae.g2.u07.l04.regroup_tens_for_ones", "uae.g2.u07.l05.regroup_hundreds_for_tens", "uae.g2.u07.l06.subtract_three_digit"],
+            "UAE_G3_2025_2026_STUDENT_PP147_152_BASE_TEN_MODELS_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:05","number.subtraction.three_digit_exact","THREE_DIGIT_VERTICAL_REGROUP_AND_CHECK",
+            ["uae.g2.u07.l04.regroup_tens_for_ones", "uae.g2.u07.l05.regroup_hundreds_for_tens", "uae.g2.u07.l06.subtract_three_digit", "uae.g2.u07.l07.vertical_three_digit_sub"],
+            "G3_STUDENT_2025_2026_PP153_158_GRADE2_EXACT_REUSE_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:06", "number.subtraction.four_digit_regroup",
+            "FOUR_DIGIT_VERTICAL_SUBTRACT_WITH_INVERSE_CHECK",
+            ["uae.g3.u03.l06.four_digit_subtract_exact","uae.g2.u07.l08.story_equation_sub"],
+            "UAE_G3_2025_2026_STUDENT_PP159_164_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:03:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:03:07","number.subtraction.cross_zero_regroup",
+            "VERTICAL_SUBTRACT_CHAINED_ZERO_REGROUP_AND_INVERSE_VERIFY",
+            ["uae.g3.u03.l06.four_digit_subtract_exact","uae.g3.u03.l07.subtract_across_zeros_exact"],
+            "UAE_G3_2025_2026_ARABIC_STUDENT_PP165_170_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:01","number.multiplication.equal_groups",
+            "CONCRETE_EQUAL_GROUPS_TO_REPEATED_ADDITION_AND_MULTIPLICATION",
+            ["uae.g2.u02.l04.repeated_add_equal_groups"],
+            "UAE_G3_2025_2026_STUDENT_PP187_192_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:02","number.multiplication.repeated_addition",
+            "CONVERT_EQUAL_GROUPS_REPEATED_ADDITION_TO_MULTIPLICATION",
+            ["uae.g2.u02.l04.repeated_add_equal_groups"],
+            "UAE_G3_2025_2026_STUDENT_PP193_198_TEACHER_2020_2021_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:03","number.multiplication.arrays",
+            "MODEL_ROWS_COLUMNS_REPEATED_ADDITION_AND_COMMUTATIVITY",
+            ["uae.g2.u02.l05.repeated_add_arrays"],
+            "UAE_G3_2025_2026_STUDENT_PP199_204_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:04","number.multiplication.array_factors",
+            "ARRAY_PRODUCT_COMMUTATIVE_PROPERTY_AND_MISSING_FACTOR",
+            ["uae.g2.u02.l05.repeated_add_arrays","uae.g3.u04.l04.find_missing_array_factor"],
+            "G3_2025_2026_STUDENT_PP205_210_2020_2021_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:05", "number.multiplication.table_strategy", "TWO_CATEGORY_CROSS_TABLE_AND_CUMULATIVE_SEQUENCE",
+            ["uae.g2.u02.l05.repeated_add_arrays","uae.g3.u04.l04.find_missing_array_factor"],
+            "UAE_G3_2025_2026_STUDENT_PP213_218_OLD_TEACHER_TABLE_STRATEGY_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:04:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:04:06", "number.multiplication.combinations_tree",
+            "TWO_STAGE_COMBINATIONS_TREE_LEAF_COUNT_AND_FACTOR_PRODUCT",
+            ["uae.g2.u02.l05.repeated_add_arrays","uae.g3.u04.l04.find_missing_array_factor"],
+            "UAE_G3_ARABIC_STUDENT_2025_2026_PP219_224_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:01", "number.division.equal_groups_models", "MODEL_DIVIDEND_DIVISOR_QUOTIENT_IN_EQUAL_GROUPS",
+            ["uae.g3.u05.l01.model_equal_groups_division"],
+            "UAE_G3_2025_2026_STUDENT_PP239_244_TEACHER_2020_2021_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:02", "number.division.equal_parts", "EQUAL_SHARE_GROUPS_AND_MISSING_DIVISOR",
+            ["uae.g3.u05.l01.model_equal_groups_division"],
+            "UAE_G3_STUDENT_2025_2026_PP245_250_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:03","number.division.repeated_subtraction","REPEATED_SUBTRACT_TO_ZERO_AND_COUNT_JUMPS",
+            ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u05.l03.repeated_subtraction_division"],
+            "G3_2025_2026_STUDENT_PP251_256_TEACHER_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:04", "number.division.inverse_multiplication", "ARRAY_PRODUCT_AND_INVERSE_DIVISION",
+            ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u04.l04.find_missing_array_factor"],
+            "UAE_G3_STUDENT_2025_2026_PP259_264_OLDER_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:05","number.division.multiplication_fact_families","TWO_MULTIPLICATION_TWO_DIVISION_INVERSE_FACTS",
+            ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u04.l04.find_missing_array_factor"],
+            "UAE_G3_STUDENT_2025_2026_PP265_270_OLD_TEACHER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:05:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:05:06","number.division.model_word_problem",
+            "TAPE_DIAGRAM_EQUAL_GROUPS_AND_TWO_STEP_CONTEXT",
+            ["uae.g3.u05.l01.model_equal_groups_division","uae.g3.u05.l06.modeled_division_word_problem"],
+            "UAE_G3_LOCAL_STUDENT_2025_2026_PP271_276_TEACHER_OLDER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:01","number.multiplication.table_patterns",
+            "TABLE_ROW_COLUMN_INTERSECTION_MISSING_FACTOR_AND_PATTERN",
+            ["uae.g3.u06.l01.multiplication_table_pattern"],
+            "UAE_G3_2025_2026_STUDENT_PRINTED_289_294_TEACHER_OLD_2020_2021_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:02","number.multiplication.times_two","DOUBLES_ARRAYS_EQUAL_GROUPS_REPEATED_ADDITION",
+            ["uae.g3.u06.l02.multiply_by_two"],"G3_STUDENT_2025_2026_295_300_STAGE_D_PENDING","READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:03","number.division.by_two","TWO_EQUAL_GROUPS_AND_INVERSE_MULTIPLICATION",
+            ["uae.g3.u06.l03.divide_by_two","uae.g3.u05.l01.model_equal_groups_division"],
+            "UAE_G3_LOCAL_2025_2026_STUDENT_PP301_306_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:04","number.multiplication.by_five","SKIP_COUNT_FIVE_ARRAY_COIN_AND_WORD_PROBLEM",
+            ["uae.g3.u06.l04.multiply_by_five"],
+            "UAE_G3_LOCAL_2025_2026_STUDENT_PP307_312_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:05","number.division.by_five","EQUAL_GROUP_SHARE_FIVE_REPEATED_SUBTRACT_INVERSE_FACT",
+            ["uae.g3.u06.l05.divide_by_five","uae.g3.u05.l01.model_equal_groups_division"],
+            "UAE_G3_LOCAL_2025_2026_STUDENT_PP313_318_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:06","number.patterns.multiplication_division",
+            "LOOK_FOR_PATTERN_ADDITIVE_DOUBLING_HALVING_REPETITION",
+            ["uae.g3.u06.l06.find_mul_div_pattern"],"UAE_G3_2025_2026_STUDENT_PP321_326_TEACHER_OLDER_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:07","number.multiplication.by_ten","TENS_GROUPS_SKIP_COUNT_AND_INVERSE_FACTOR",
+            ["uae.g3.u06.l07.multiply_by_ten","uae.g3.u06.l01.multiplication_table_pattern"],
+            "UAE_G3_2025_2026_STUDENT_PP327_332_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:08","number.multiplication.multiples_of_ten","BASIC_FACT_TIMES_TEN_PLACE_VALUE_AND_WORD_PROBLEM",
+            ["uae.g3.u06.l08.multiply_by_tens","uae.g3.u06.l07.multiply_by_ten"],
+            "UAE_G3_2025_2026_STUDENT_PP333_338_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:06:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:06:09","number.division.by_ten","TEN_EQUAL_GROUPS_REPEATED_SUBTRACTION_INVERSE_FACT",
+            ["uae.g3.u06.l09.divide_by_ten"],
+            "UAE_G3_2025_2026_STUDENT_PP339_344_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:01","number.multiplication.times_three",
+            "THREE_EQUAL_GROUPS_NUMBERLINE_ARRAY_AND_INVERSE_MISSING_FACTOR",
+            ["uae.g3.u07.l01.multiply_by_three"],
+            "UAE_G3_LOCAL_VOLUME2_PP359_364_YEAR_UNVERIFIED_STAGE_D_PENDING",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:02","number.division.by_three",
+            "SHARE_IN_THREE_EQUAL_GROUPS_REPEATED_SUBTRACTION_INVERSE",
+            ["uae.g3.u07.l02.divide_by_three"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_365_370_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:03","number.multiplication.doubling_fact",
+            "DOUBLE_2X_FACT_TO_4X_ARRAY_AND_PART_WHOLE",
+            ["uae.g3.u07.l03.double_known_fact"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_371_376_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:04","number.multiplication.times_four",
+            "FOUR_EQUAL_GROUPS_ARRAY_DOUBLE_TWO_FACT",
+            ["uae.g3.u07.l04.multiply_by_four"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_377_382_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:05","number.division.by_four",
+            "FOUR_EQUAL_GROUPS_MULTIPLICATION_INVERSE",
+            ["uae.g3.u07.l05.divide_by_four"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_383_388_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:06","number.problem_solving.info_sufficiency",
+            "IDENTIFY_RELEVANT_EXTRA_OR_MISSING_QUANTITY_TEACHER_REASON",
+            ["uae.g3.u07.l06.information_sufficient"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_391_396_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:07","number.multiplication.zero_one_identity",
+            "ZERO_PROPERTY_MULTIPLICATIVE_IDENTITY_MODELS",
+            ["uae.g3.u07.l07.multiply_zero_one"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_397_402_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:08","number.division.zero_one_identity",
+            "ZERO_DIVIDEND_ONE_DIVISOR_SELF_DIVISION_UNDEFINED_ZERO_DIVISOR",
+            ["uae.g3.u07.l08.divide_zero_one"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_403_408_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:01","number.multiplication.times_six",
+            "SIX_EQUAL_GROUPS_DECOMPOSE_THREE_PLUS_THREE",
+            ["uae.g3.u08.l01.multiply_six"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_423_428_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:02","number.multiplication.times_seven",
+            "SEVEN_GROUPS_FIVE_PLUS_TWO_ARRAY",
+            ["uae.g3.u08.l02.multiply_seven"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_429_434_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:03","number.division.by_six_seven",
+            "INVERSE_FACTS_DIVISION_BY_SIX_AND_SEVEN",
+            ["uae.g3.u08.l03.divide_six_seven"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_435_440_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:04","number.multiplication.times_eight",
+            "DOUBLE_FOUR_FACT_EIGHT_GROUPS",
+            ["uae.g3.u08.l04.multiply_eight"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_443_448_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:05","number.multiplication.times_nine",
+            "TEN_MINUS_ONE_PROPERTY_NINE_GROUPS",
+            ["uae.g3.u08.l05.multiply_nine"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_449_454_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:06","number.division.by_eight_nine",
+            "INVERSE_FACTS_DIVISION_BY_EIGHT_AND_NINE",
+            ["uae.g3.u08.l06.divide_eight_nine"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_455_460_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:07","number.problem_solving.organized_lists",
+            "SYSTEMATIC_ENUMERATION_MULTIPLICATIVE_COMBINATIONS",
+            ["uae.g3.u08.l07.organized_list_combinations"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_463_468_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:08","number.multiplication.eleven_twelve",
+            "BREAK_TEN_PLUS_ONE_OR_TWO_FACTS",
+            ["uae.g3.u08.l08.multiply_eleven_twelve"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_469_474_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:09","number.division.eleven_twelve",
+            "INVERSE_MULTIPLICATION_DIVISION_BY_ELEVEN_TWELVE",
+            ["uae.g3.u08.l09.divide_eleven_twelve"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_475_480_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:01","number.multiplication.decompose",
+            "SPLIT_FACTOR_INTO_PARTS_MULTIPLICATION_ARRAYS",
+            ["uae.g3.u09.l01.decompose_multiplication"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_495_500_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:02","number.multiplication.distributive",
+            "MULTIPLY_SUM_BY_DISTRIBUTING_FACTOR",
+            ["uae.g3.u09.l02.distributive_property"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_501_506_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:03","number.multiplication.three_factors",
+            "MODEL_PRODUCT_OF_THREE_FACTORS_WITH_GROUPS",
+            ["uae.g3.u09.l03.multiply_three_factors"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_507_512_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:04","number.multiplication.associative",
+            "GROUP_THREE_FACTORS_WITHOUT_CHANGING_PRODUCT",
+            ["uae.g3.u09.l04.associative_property"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_513_518_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:05","number.algebra.write_expressions",
+            "TRANSLATE_WORDS_TO_NUMERIC_EXPRESSIONS",
+            ["uae.g3.u09.l05.write_expression"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_521_526_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:06","number.algebra.evaluate_expressions",
+            "EVALUATE_WITH_OPERATIONS_AND_PARENTHESES",
+            ["uae.g3.u09.l06.evaluate_expression"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_527_532_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:07","number.algebra.equations",
+            "RELATE_WORD_PROBLEM_TO_EQUALITY_AND_UNKNOWN",
+            ["uae.g3.u09.l07.write_equation"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_533_538_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:08","number.problem_solving.two_step",
+            "SEQUENTIAL_MULTIPLY_ADD_OR_SUBTRACT_WITH_UNITS",
+            ["uae.g3.u09.l08.two_step_word_problem"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_539_544_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:09","number.problem_solving.logical_reasoning",
+            "REASONED_COMPARISON_EQUALITIES_MULTIPLICATIVE_STRUCTURES",
+            ["uae.g3.u09.l09.logical_reasoning"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_545_550_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:01","number.fraction.unit",
+            "UNIT_FRACTIONS_EQUAL_PARTS_ONE_WHOLE",
+            ["uae.g3.u10.l01.unit_fractions"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_563_568_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:02","number.fraction.part_whole",
+            "FRACTION_OF_ONE_WHOLE_SHADED_PARTS",
+            ["uae.g3.u10.l02.part_of_whole"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_569_574_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:03","number.fraction.part_set",
+            "FRACTION_OF_SET_EQUAL_GROUPING",
+            ["uae.g3.u10.l03.part_of_set"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_575_580_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:04","number.fraction.problem_diagram",
+            "DRAW_FRACTION_MODEL_FROM_WORD_INFORMATION",
+            ["uae.g3.u10.l04.design_fraction_diagram"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_581_586_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:05","number.fraction.number_line",
+            "EQUAL_INTERVALS_POINT_AT_NUMERATOR_STEPS",
+            ["uae.g3.u10.l05.fraction_number_line"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_589_594_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:06","number.fraction.equivalent",
+            "MULTIPLY_NUMERATOR_DENOMINATOR_EQUAL_FACTOR",
+            ["uae.g3.u10.l06.equivalent_fractions"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_595_600_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:07","number.fraction.whole",
+            "FRACTION_NUMERATOR_EQUALS_DENOMINATOR_ONE_WHOLE",
+            ["uae.g3.u10.l07.fraction_as_whole"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_601_606_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:08","number.fraction.compare",
+            "SAME_DENOMINATOR_AND_SAME_NUMERATOR_AREA_LINE",
+            ["uae.g3.u10.l08.compare_fractions"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_607_612_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:01","measurement.capacity.units",
+            "MEASURE_ESTIMATE_MILLILITERS_AND_LITERS",
+            ["uae.g3.u11.l01.capacity_units"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_651_656_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:02","measurement.capacity.problems",
+            "CAPACITY_ADDITION_SUBTRACTION_UNIT_CONVERSION",
+            ["uae.g3.u11.l02.capacity_word_problem"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_657_662_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:03","measurement.mass.units",
+            "ESTIMATE_MASS_GRAMS_KILOGRAMS_SCALE",
+            ["uae.g3.u11.l03.mass_units"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_663_668_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:04","measurement.mass.problems",
+            "MASS_ADDITION_MULTIPLICATION_IN_GRAMS",
+            ["uae.g3.u11.l04.mass_word_problem"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_669_674_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:05","measurement.time.minute",
+            "READ_ANALOG_DIGITAL_CLOCK_HOUR_MINUTE",
+            ["uae.g3.u11.l05.time_to_minute"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_677_682_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:06","measurement.time.elapsed",
+            "ELAPSED_TIME_NUMBER_LINE_HOUR_AND_MINUTES",
+            ["uae.g3.u11.l06.elapsed_time"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_683_688_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:07","number.problem_solving.work_backward",
+            "INVERSE_OPERATIONS_BACKWARD_FROM_KNOWN_END",
+            ["uae.g3.u11.l07.work_backward"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_689_694_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:01","statistics.data.tally",
+            "CLASSIFICATION_TALLY_RECORD_FREQUENCY_TABLE",
+            ["uae.g3.u12.l01.tally_record"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_709_714_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:02","statistics.graph.scaled_pictograph",
+            "PICTOGRAPH_KEY_MULTIPLY_SYMBOLS_BY_SCALE",
+            ["uae.g3.u12.l02.scaled_picture_graph"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_715_720_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:03","statistics.graph.bar_chart",
+            "BAR_CHART_LABEL_AXIS_SCALE_COMPARISON",
+            ["uae.g3.u12.l03.bar_graph"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_721_726_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:04","statistics.graph.convert_picture_bar",
+            "CONVERT_PICTOGRAPH_TO_BAR_MATCH_SCALE",
+            ["uae.g3.u12.l04.picture_bar_graph_compare"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_727_732_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:05","statistics.graph.line_plot",
+            "COUNT_X_MARKS_ON_NUMBER_LINE_ANALYZE_COUNTS",
+            ["uae.g3.u12.l05.line_plot"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_733_738_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:06","number.problem_solving.data_patterns",
+            "NUMBER_SENSE_PATTERN_GRAPH_LOGIC_REASONING",
+            ["uae.g3.u12.l06.number_sense_pattern"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_741_746_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:01","geometry.foundations.point_line_ray",
+            "POINT_LINE_SEGMENT_RAY_ENDPOINTS",
+            ["uae.g3.u13.l01.line_point_ray"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_763_768_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:02","geometry.angles.visual_classification",
+            "FORM_ANGLES_CLASSIFY_BY_RIGHT_ANGLE",
+            ["uae.g3.u13.l02.angle_types"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_769_774_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:03","geometry.polygons.sides_vertices",
+            "CLOSED_STRAIGHT_LINE_SHAPES_COUNT_SIDES",
+            ["uae.g3.u13.l03.polygons"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_775_780_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:04","geometry.triangles.classification",
+            "TRIANGLE_BY_SIDES_AND_RIGHT_ANGLE",
+            ["uae.g3.u13.l04.triangle_types"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_781_786_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:05","geometry.quadrilaterals.classification",
+            "QUADRILATERAL_SQUARE_RECTANGLE_RHOMBUS_TRAPEZOID",
+            ["uae.g3.u13.l05.quadrilaterals"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_787_792_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:06","geometry.quadrilaterals.attributes",
+            "SHARED_PROPERTIES_TWO_PARALLEL_PAIRS_AND_FOUR_SIDES",
+            ["uae.g3.u13.l06.quadrilateral_attributes"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_795_800_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:07","geometry.problem_solving.justification",
+            "JUSTIFY_WITH_DIAGRAM_COUNTEREXAMPLE_AND_TABLE",
+            ["uae.g3.u13.l07.investigate_justify"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_801_806_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:08","geometry.partition_equal_areas",
+            "PARTITION_SHAPES_INTO_EQUAL_AREA_PIECES",
+            ["uae.g3.u13.l08.partition_shapes"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_807_812_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:09","geometry.solid_figures.faces_vertices",
+            "SOLID_FIGURES_FLAT_FACES_CURVED_SURFACES_VERTICES",
+            ["uae.g3.u13.l09.solid_figures"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_813_818_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:10"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:10","geometry.solid_figures.classification_nets",
+            "SOLID_SHAPES_NET_FACES_EDGES_VERTICES",
+            ["uae.g3.u13.l10.more_solids"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_819_824_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:01","geometry.perimeter.hands_on",
+            "MEASURE_ADD_OUTER_BOUNDARY_SIDES",
+            ["uae.g3.u14.l01.find_perimeter"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_837_842_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:02","geometry.perimeter.calculation",
+            "PERIMETER_SUM_ALL_POLYGON_SIDES",
+            ["uae.g3.u14.l02.perimeter"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_843_848_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:03","geometry.area.unit_square_count",
+            "COVER_SURFACE_WITH_NONOVERLAPPING_UNIT_SQUARES",
+            ["uae.g3.u14.l03.understand_area"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_849_854_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:04","geometry.area.measure_grid",
+            "COUNT_FULL_AND_PARTIAL_GRID_SQUARES",
+            ["uae.g3.u14.l04.measure_area"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_855_860_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:05","geometry.area.tile_rectangle",
+            "TILE_RECTANGLE_ROWS_COLUMNS_WITH_UNIT_SQUARES",
+            ["uae.g3.u14.l05.tile_rectangles"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_863_868_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:06","geometry.area.rectangle_formula",
+            "RECTANGLE_AREA_LENGTH_TIMES_WIDTH",
+            ["uae.g3.u14.l06.rectangle_area"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_869_874_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:07","geometry.area.distributive",
+            "AREA_PARTITION_DISTRIBUTIVE_MULTIPLICATION",
+            ["uae.g3.u14.l07.area_distributive"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_875_880_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:08","geometry.area.composite_shapes",
+            "COMPOSITE_AREA_DECOMPOSE_NONOVERLAP_RECTANGLES",
+            ["uae.g3.u14.l08.composite_area"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_881_886_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:09","geometry.area_perimeter.compare",
+            "CONTRAST_RECTANGLE_AREA_PERIMETER_UNITS",
+            ["uae.g3.u14.l09.area_perimeter"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_889_894_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:10"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:10","geometry.problem_solving.area_diagram",
+            "DRAW_LABEL_DIMENSIONS_AREA_PERIMETER_REASON",
+            ["uae.g3.u14.l10.problem_solving_diagram"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
