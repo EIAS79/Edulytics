@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 14 through lesson 5, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 14 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4502,23 +4502,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:14:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 14 / Lesson 6; official Arabic title: مساحة المستطيل",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 14 L6; printed pp.869-874; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U14:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 14 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.869-874; PDF pp.252-257",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "b3939ec6d013797c425a4a8d37ebe07f8e08a7573720c257d0a525fb3e2a7db1",
+      "SourceEdition": "Local Grade3 Arabic Volume3 scanned source; target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "cbd82469d1f7be2957995878ba831ad5d16ceddf81ce30bdc55631dceb99bf7b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U14_L06_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4529,6 +4529,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Area of a Rectangle: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مساحة المستطيل",
+          "Explanation": "هدف التعلم: أستعمل طول المستطيل وعرضه لحساب المساحة وأحل مسائل تطبيقية تقاس بالمتر أو السنتيمتر المربع. إذا كان الطول ٨ سم والعرض ٤ سم، أرسم ثمانية أعمدة وأربعة صفوف لتوضيح ٣٢ مربعًا.",
+          "KeyConceptsAndRules": "مساحة المستطيل = الطول × العرض عندما تكون وحدتا الطول والعرض متماثلتين؛ الناتج وحدة مربعة.",
+          "WorkedExamples": "مثال: حديقة مستطيلة ١٠ م × ٧ م مساحتها ٧٠ م²، أما محيطها فهو ٣٤ م فلا نخلط بينهما.",
+          "StepByStepSolutions": "أحدد البعدين ووحداتهما، أضرب الطول في العرض، أكتب الوحدة المربعة وأراجع الناتج بنموذج شبكي.",
+          "CommonMistakes": "لا تجمع الطول والعرض للحصول على المساحة؛ الجمع مرتبط بالمحيط لا بالمساحة.",
+          "QuickSummary": "نشاط إغلاق: مستطيل ٩ سم × ٥ سم؛ احسب مساحته ٤٥ سم² وارسم شبكة للتحقق."
         }
       ]
     },
