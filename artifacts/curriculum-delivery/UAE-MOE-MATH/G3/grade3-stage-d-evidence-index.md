@@ -14,3 +14,5 @@ Stage D workflow: .github/workflows/uae-g3-stage-d.yml.
 Source handoff: grade3-a-c-handoff.md explicitly states edition parity UNKNOWN.
 Authenticated HTTPS all 109 pages, database-backed attempts, teacher/supervisor/admin tenant isolation, mobile RTL screenshots: NOT_RUN.
 Rights and full-source equivalence: PENDING/UNKNOWN. Release NO_GO. No merge, Render deploy or production UAT.
+
+Owner-approved first-party academic publishing instruction recorded at grade3-owner-academic-approval.md; no unverified official-edition parity is claimed.

@@ -124,8 +124,41 @@ def final_blockers():
                 "DOTNET_JOB_RESULT", "E2E_JOB_RESULT"):
         if os.environ.get(key) != "success":
             blockers.append(f"{key} != success (actual: {os.environ.get(key, 'NOT_RUN')})")
-    blockers.append("No authenticated 109-lesson HTTPS, persisted attempts and RTL visual evidence")
-    blockers.append("No same-SHA rights, academic parity and merge/Render release approval")
+    expected_sha = snapshot_sha()
+    runtime_path = OUT / "runtime/uae-g3-stage-d-authenticated-109-lessons.json"
+    browser_path = OUT / "browser/report.json"
+    if not runtime_path.is_file():
+        blockers.append("Missing authenticated 109-lesson HTTPS and persisted attempt artifact for current run")
+    else:
+        runtime = read(runtime_path)
+        for key, count in {
+            "lessonPageCount":109,
+            "correctAttemptPersistenceCount":109,
+            "wrongAttemptPersistenceCount":109,
+            "malformedAttemptRejectionCount":109,
+            "htmlRtlMarkedCount":109
+        }.items():
+            if runtime.get(key) != count:
+                blockers.append(f"Runtime {key} {runtime.get(key)} != {count}")
+        if runtime.get("candidateSha") != expected_sha:
+            blockers.append("Runtime artifact SHA does not match CI checkout SHA")
+        if runtime.get("crossSchoolAccessDenied") is not True:
+            blockers.append("No independently verified cross-school denial")
+        if set(runtime.get("roleLogins", {}).values()) != {True}:
+            blockers.append("Four-role authenticated login proof incomplete")
+        if len(runtime.get("lessons",[])) != 109:
+            blockers.append("Authenticated practice evidence missing registered lessons")
+    if not browser_path.is_file():
+        blockers.append("Missing Chromium desktop/mobile authenticated RTL evidence")
+    else:
+        browser = read(browser_path)
+        if (browser.get("rtlDesktopLessons"), browser.get("rtlMobileLessons")) != (109,109):
+            blockers.append("Chromium did not render 109/109 desktop and mobile lessons")
+        if browser.get("candidateSha") != expected_sha:
+            blockers.append("Chromium artifact SHA does not match CI checkout SHA")
+        if browser.get("screenshotsWritten", 0) < 8:
+            blockers.append("Chromium screenshot sample evidence missing")
+    blockers.append("No documented final source/rights gate, main merge SHA or Render production UAT")
     return blockers
 
 def main():

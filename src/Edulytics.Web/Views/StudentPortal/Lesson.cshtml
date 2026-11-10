@@ -32,9 +32,12 @@
         ViewData["Grade3AuthoredActivityAdoptionId"] is Guid g3AdoptionId
             ? g3AdoptionId
             : (Guid?)null;
+    var isUaeGrade3Arabic =
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L3:COMMON:", StringComparison.Ordinal);
     var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
-        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal);
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ||
+        isUaeGrade3Arabic;
     var lessonNavTitle = isUaePrimaryArabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaePrimaryArabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaePrimaryArabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
@@ -1948,7 +1951,7 @@
             <div class="lesson-reader-meta">
                 <span>
                     <small>@(isUaePrimaryArabic ? "الصف" : L["Grade"].Value)</small>
-                    <strong>@(isUaePrimaryArabic ? (Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
+                    <strong>@(isUaePrimaryArabic ? (isUaeGrade3Arabic ? "???? ??????" : Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
                 </span>
                 <span>
                     <small>@(isUaePrimaryArabic ? "المنهج" : L["Framework"].Value)</small>
@@ -2512,7 +2515,18 @@
                 </details>
             </section>
         }
-        @if (Model.RichContent is not null)
+        @if (isUaeGrade3Arabic)
+        {
+            @* UAE Common Grade 3: always deliver the complete author-written Arabic
+               lesson-specific content, not unrelated generic V2 English fallback. *@
+            <div class="uae-g3-original-arabic-lesson" lang="ar" dir="rtl">
+                @foreach (var section in sections)
+                {
+                    <partial name="_LessonReaderSection" model="section" />
+                }
+            </div>
+        }
+        else if (Model.RichContent is not null)
         {
             <partial name="_RichLessonContentV2" model="Model.RichContent" />
             @* Grade 6 and Grade 8 A-B-C authoring include six complete

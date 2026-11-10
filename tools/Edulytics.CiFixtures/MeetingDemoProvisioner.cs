@@ -359,15 +359,18 @@ internal static class MeetingDemoProvisioner
         // This mode never changes production/permanent demo school selection.
         var isUaeEarlyGradeCi = disposableCi &&
             (string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal) ||
-             string.Equals(ciProgramme, "UAE-G2", StringComparison.Ordinal));
+             string.Equals(ciProgramme, "UAE-G2", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "UAE-G3", StringComparison.Ordinal));
         var activeSchools = isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
                     ? s with
                     {
                         DefaultCulture = "ar",
-                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G2" ? 2 : 1,
-                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G2" ? 1 : 2
+                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G3" ? 3 :
+                            ciProgramme == "UAE-G2" ? 2 : 1,
+                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G3" ? 2 :
+                            ciProgramme == "UAE-G2" ? 1 : 2
                     }
                     : s)
                 .ToArray()
