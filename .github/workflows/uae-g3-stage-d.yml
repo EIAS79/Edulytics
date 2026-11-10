@@ -1,0 +1,118 @@
+name: UAE Grade 3 Common Arabic Stage D - fail-closed candidate gates
+
+on:
+  push:
+    branches: [curriculum/uae-g3-arabic-a-b-c-20261109]
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g3-stage-d.yml'
+      - 'tools/curriculum/uae_g3_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G3/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uae-g3-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+  CI: 'true'
+
+jobs:
+  structural:
+    name: G3 109 unique IDs and Arabic lesson contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g3_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-structural-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/grade3-structural-gate.json
+          retention-days: 30
+
+  source_handoff:
+    name: G3 source/teacher/2026-27 parity gate (fail closed)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g3_stage_d_gate.py --phase handoff
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-source-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/grade3-handoff-gate.json
+          retention-days: 30
+
+  dotnet:
+    name: G3 shared build, exact math and G1-G2-US regressions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore solution once
+        run: dotnet restore Edulytics.sln
+      - name: Compile solution including G3 questions and all test sources
+        run: dotnet build Edulytics.sln -c Release --no-restore
+      - name: Run UAE Grade 3 unit and exact mathematics tests
+        run: |
+          mkdir -p artifacts/uae-g3-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade3' \
+            --logger 'trx;LogFileName=uae-g3-math.trx' \
+            --results-directory artifacts/uae-g3-stage-d/trx
+      - name: Run UAE G1/G2 and US learner-content regressions
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore \
+            --filter 'FullyQualifiedName~UaeGrade1Arabic|FullyQualifiedName~UaeGrade1Related|FullyQualifiedName~UaeGrade2|FullyQualifiedName~Phase29LessonReaderFinalPolishTests|FullyQualifiedName~Phase29LessonContentVisualContractTests|FullyQualifiedName~CommonCorePhase04SourceEntityPresentationTests' \
+            --logger 'trx;LogFileName=g1-g2-us-regressions.trx' \
+            --results-directory artifacts/uae-g3-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/trx/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  final:
+    name: G3 exact-SHA final truth - no unverified E2E/source release
+    if: always()
+    needs: [structural, source_handoff, dotnet]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record actual workflow statuses and fail closed
+        env:
+          STRUCTURAL_JOB_RESULT: ${{ needs.structural.result }}
+          SOURCE_JOB_RESULT: ${{ needs.source_handoff.result }}
+          DOTNET_JOB_RESULT: ${{ needs.dotnet.result }}
+          E2E_JOB_RESULT: NOT_RUN
+        run: python3 tools/curriculum/uae_g3_stage_d_gate.py --phase final
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g3-stage-d-final-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/grade3-final-gate.json
+          retention-days: 30
