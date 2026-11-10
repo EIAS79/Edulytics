@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l02",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 11 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 11 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3384,23 +3384,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:11:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 11 / Lesson 3; official Arabic title: نشاط عملي: تقدير الكتلة وقياسها",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 11 L3; printed pp.663-668; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U11:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 11 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.663-668; PDF pp.46-51",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "bdbb4738af3087899d0700266e980aec0c6f3d12312cd2623883af089c3b3352",
+      "SourceEdition": "Local Arabic Volume 3, source OCR degraded, visual student pages verified; metadata 2018 / target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "fba233a015a7766d096a3c9dd411a16b8588f68ba40d3f21b0c74fb5e06c1c3c",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U11_L03_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3411,6 +3411,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Estimate and Measure Mass: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: تقدير الكتلة وقياسها",
+          "Explanation": "هدف التعلم: أقدر كتلة الأشياء وأقيسها بالميزان، وأختار وحدة الجرام أو الكيلوجرام بحسب مقدار الكتلة. أزن ممحاة أو كتابًا على ميزان، ثم أقارن التقدير والقياس وأختار الوحدة الأنسب.",
+          "KeyConceptsAndRules": "الكتلة تقيس مقدار المادة، ١ كيلوجرام = ١٠٠٠ جرام. لا تتحدد الكتلة دائمًا بالحجم الظاهري للجسم.",
+          "WorkedExamples": "مثال: كتلة حقيبة ٣ كيلوجرامات و٢٠٠ جرام تعادل ٣٢٠٠ جرام؛ كتلة قلم واحد تقاس عادة بالجرام.",
+          "StepByStepSolutions": "أختار الميزان ووحدة القياس، أقدّر الكتلة وأستعمل الميزان، أسجل القراءة وأقارنها بتقديري.",
+          "CommonMistakes": "لا تعكس الجرام والكيلوجرام؛ لا تظن أن الجسم الأكبر حجمًا دائمًا أثقل.",
+          "QuickSummary": "نشاط إغلاق: أي وحدة مناسبة لكتلة ثمرة تفاح وكتلة دراجة، الجرام أم الكيلوجرام؟ فسّر اختيارك."
         }
       ]
     },

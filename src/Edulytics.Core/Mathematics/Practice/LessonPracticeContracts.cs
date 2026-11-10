@@ -7648,6 +7648,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u11.l02.capacity_word_problem"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_657_662_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:11:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:11:03","measurement.mass.units",
+            "ESTIMATE_MASS_GRAMS_KILOGRAMS_SCALE",
+            ["uae.g3.u11.l03.mass_units"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_663_668_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
