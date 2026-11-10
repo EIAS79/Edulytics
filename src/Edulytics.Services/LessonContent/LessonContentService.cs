@@ -761,7 +761,7 @@ public sealed class LessonContentService : ILessonContentService
             ? context.CurriculumLevelLabel
             : context.GradeName;
 
-    // UAE Grade 1 and Grade 2 Common have owner-authored Arabic canonical
+    // UAE Grade 1/2/3 Common have owner-authored Arabic canonical
     // learning bodies; never fall back to English when Arabic is absent.
     // Other UAE levels and other curricula keep their existing language policy.
     private static bool IsUaeG1ArabicLesson(string? lessonCode) =>
@@ -777,7 +777,9 @@ public sealed class LessonContentService : ILessonContentService
     {
         var grade2Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal);
-        var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) || grade2Arabic) &&
+        var grade3Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L3:COMMON:", StringComparison.Ordinal);
+        var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) || grade2Arabic || grade3Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
@@ -790,7 +792,7 @@ public sealed class LessonContentService : ILessonContentService
                     StringComparison.Ordinal))
                 .AcademicLanguage;
 
-        // No English fallback if the approved Grade 1 Arabic body is missing.
+        // No English fallback when approved UAE Common G1/G2/G3 Arabic body is missing.
         return translations.FirstOrDefault(x =>
             NormalizeCulture(x.CultureCode) == NormalizeCulture(academicLanguage));
     }
