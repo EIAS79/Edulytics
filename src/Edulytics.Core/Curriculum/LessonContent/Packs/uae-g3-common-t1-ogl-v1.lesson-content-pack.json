@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 11 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 11 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3427,23 +3427,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:11:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 11 / Lesson 4; official Arabic title: حل مسائل الكتلة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 11 L4; printed pp.669-674; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U11:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 11 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.669-674; PDF pp.52-57",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "6020712ee13acd3f3547828a5a8dd46cbc3c0ed607e6f33069efcebe52e446ed",
+      "SourceEdition": "Local Arabic Volume 3, source OCR degraded, visual student pages verified; metadata 2018 / target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "c3dc107c143fff9bae97cc8050a17ba9171b56e40a23e56e4af0f04ce9f7a28e",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U11_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3454,6 +3454,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Mass Problems: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل مسائل الكتلة",
+          "Explanation": "هدف التعلم: أستخدم الجمع والطرح والضرب لحل مسائل الكتلة مع قراءة وحدات الميزان ومقارنة النتائج. خمسة صناديق كتلة الواحد ١٥٠ جرامًا؛ أرسم خمس وحدات متساوية في مخطط ثم أحسب ٧٥٠ جرامًا.",
+          "KeyConceptsAndRules": "أوحّد وحدات الكتل قبل العمليات وأتحقق أن وحدة الناتج جرام أو كيلوجرام صحيحة.",
+          "WorkedExamples": "مثال: كتلة ثلاث حقائب متساوية ٢٥٠ جرامًا للحقيبة = ٣ × ٢٥٠ = ٧٥٠ جرامًا.",
+          "StepByStepSolutions": "أقرأ المعطيات والميزان، أحدد العمليات اللازمة، أوحّد الوحدات، أحسب وأوضح الجواب مع وحدة الكتلة.",
+          "CommonMistakes": "لا تترك وحدة القياس في الإجابة ولا تقارن قيم كيلوجرامات بقيم جرامات مباشرة.",
+          "QuickSummary": "نشاط إغلاق: أربع علب كتلة الواحدة ٢٠٠ جرام. ما الكتلة الإجمالية؟ ٨٠٠ جرام."
         }
       ]
     },
