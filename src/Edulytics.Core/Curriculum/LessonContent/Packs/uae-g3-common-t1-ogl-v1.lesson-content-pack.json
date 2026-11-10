@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l09",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l01",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 9 through lesson 9, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 10 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2954,23 +2954,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:10:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 10 / Lesson 1; official Arabic title: كسور الوحدات",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 10 L1; printed pp.563-568; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U10:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 10 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.563-568; PDF pp.213-218",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "22cd3c4c115f51542c73238d78915af2347005304bc4cdbec6cfd77e2fe8aa03",
+      "SourceEdition": "Local Arabic Volume 2 (file PDF metadata 2020-12-21); printed edition unknown, target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "317b89e56b1648518633471d756c0db5493a1647c31323c743de4531117cd5ba",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U10_L01_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2981,6 +2981,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Unit Fractions: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "كسور الوحدات",
+          "Explanation": "هدف التعلم: أتعرف كسر الوحدة عندما أقسم الكل إلى أجزاء متساوية وأختار جزءًا واحدًا. مستطيل واحد مقسم إلى أربعة مستطيلات متساوية؛ تظليل واحد يعطي الكسر ١/٤.",
+          "KeyConceptsAndRules": "١/ن هو جزء واحد من ن أجزاء متساوية. البسط ١ والمقام عدد الأجزاء التي تكوّن الكل، ولا تُقبل الأجزاء غير المتساوية.",
+          "WorkedExamples": "مثال: قسّم شريطًا إلى ستة أجزاء متساوية ولون جزءًا واحدًا. الكسر الممثل ١/٦ وليس ٦/١.",
+          "StepByStepSolutions": "أحدد الكل وأرسم حدوده، أقسمه بالتساوي، أعد الأجزاء وأحدد جزءًا واحدًا وأكتب ١ فوق مقام الأجزاء.",
+          "CommonMistakes": "لا يكفي أن تكون أربعة أجزاء مختلفة لتسمى أرباعًا؛ لا بد من تساوي مساحاتها.",
+          "QuickSummary": "نشاط إغلاق: ارسم دائرة مقسمة إلى ٣ قطاعات متساوية، ظلل واحدًا واكتب الكسر ١/٣. الرسم يراجعه المعلم."
         }
       ]
     },

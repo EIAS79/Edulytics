@@ -7588,6 +7588,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u09.l09.logical_reasoning"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_545_550_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:10:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:10:01","number.fraction.unit",
+            "UNIT_FRACTIONS_EQUAL_PARTS_ONE_WHOLE",
+            ["uae.g3.u10.l01.unit_fractions"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_563_568_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
