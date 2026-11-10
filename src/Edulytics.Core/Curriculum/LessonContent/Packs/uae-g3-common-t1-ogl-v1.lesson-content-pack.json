@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 12 through lesson 5, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 12 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3814,23 +3814,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:12:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 12 / Lesson 6; official Arabic title: استقصاء حل المسائل: حل المسائل الأنماط",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 12 L6; printed pp.741-746; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U12:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 12 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.741-746; PDF pp.124-129",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "30d1bfdd73950349f862d02f993bbd4f569e57e9f6e11eb6df8c964e155e7807",
+      "SourceEdition": "Local Arabic Grade3 volume3 (visually read, OCR degraded), printed year unverified; 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "ff8c2142cf2d3460e523215f0b3f09c96c68d7f5009b91feb80deda210223ea6",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U12_L06_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3841,6 +3841,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Patterns: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: الحس العددي والأنماط",
+          "Explanation": "هدف التعلم: أستخدم الحس العددي لأكتشف نمطًا في بيانات منظمة وأفسر إن كانت إجابتي معقولة. الأعداد ٣،٦،٩،١٢ تتقدم بثلاثة كل مرة؛ العدد التالي ١٥. يظهر ذلك بنقاط متساوية المسافات على خط.",
+          "KeyConceptsAndRules": "أبحث عن تغير ثابت أو عن تكرار في الفئات، وأراجع النمط على جدول أو خط أعداد قبل الاستنتاج.",
+          "WorkedExamples": "مثال: قيم ٨،١٣،١٨،٢٣ تزداد خمسًا؛ القيمة التالية ٢٨. أتحقق بطرح كل حد من التالي.",
+          "StepByStepSolutions": "أنظم البيانات، أفحص الفروق بين حدود متتالية، أقترح قاعدة واضحة، أختبرها ثم أجيب عن المطلوب.",
+          "CommonMistakes": "لا تستنتج قاعدة من حد واحد؛ ولا تفرض استمرار نمط من غير التحقق من المعطيات.",
+          "QuickSummary": "نشاط إغلاق: استمر بالنمط ٤،٨،١٢،١٦، □؛ العدد التالي ٢٠، واشرح تغير أربع وحدات."
         }
       ]
     },
