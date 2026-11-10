@@ -7744,6 +7744,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l05.quadrilaterals"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_787_792_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:06","geometry.quadrilaterals.attributes",
+            "SHARED_PROPERTIES_TWO_PARALLEL_PAIRS_AND_FOUR_SIDES",
+            ["uae.g3.u13.l06.quadrilateral_attributes"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_795_800_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

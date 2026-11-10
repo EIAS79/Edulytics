@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 13 through lesson 5, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 13 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4072,23 +4072,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:13:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 13 / Lesson 6; official Arabic title: السمات المشتركة للأشكال الرباعية",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 13 L6; printed pp.795-800; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U13:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 13 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.795-800; PDF pp.178-183",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "b60281ee01c10612b9eef9901253d1ad399a15929c69dbff6ce70c622a6b87d8",
+      "SourceEdition": "Local Arabic Volume 3 scanned pages, printed edition and target 2026-2027 parity not certified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "565b38fa77754ff2c0ac051074913f8f03038b14cdce71628d53103af6964967",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U13_L06_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4099,6 +4099,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Common Attributes of Quadrilaterals: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "السمات المشتركة للأشكال الرباعية",
+          "Explanation": "هدف التعلم: أستقصي الخصائص المشتركة بين المربع والمستطيل والمعين ومتوازي الأضلاع وأقارن الشروط المميزة. جدول تقاطعي يحتوي أعمدة للتوازي والزوايا القائمة وتساوي الأضلاع؛ أضع علامة لكل خاصية حسب الشكل.",
+          "KeyConceptsAndRules": "جميع هذه الأشكال أربعة أضلاع ولها زوجان من الأضلاع المتوازية، ولكن تساوي الزوايا والأضلاع يميز الأنواع الفرعية.",
+          "WorkedExamples": "مثال: المربع والمعين لهما أربعة أضلاع متساوية، لكن المربع له أربع زوايا قائمة بينما المعين المائل لا يشترط ذلك.",
+          "StepByStepSolutions": "أرسم الأشكال، أراجع الخصائص واحدة تلو الأخرى، أنظمها في جدول وأدعم الحكم بمثال.",
+          "CommonMistakes": "لا تستنتج أن كل معين مربع أو أن كل متوازي أضلاع مستطيل.",
+          "QuickSummary": "نشاط إغلاق: اذكر خاصيتين مشتركتين للمربع والمستطيل وخاصية تميز المربع. يراجع المعلم التفسير."
         }
       ]
     },
