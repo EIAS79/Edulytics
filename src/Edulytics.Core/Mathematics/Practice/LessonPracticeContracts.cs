@@ -7510,6 +7510,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u08.l05.multiply_nine"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_449_454_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:06","number.division.by_eight_nine",
+            "INVERSE_FACTS_DIVISION_BY_EIGHT_AND_NINE",
+            ["uae.g3.u08.l06.divide_eight_nine"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_455_460_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
