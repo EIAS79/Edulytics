@@ -7702,6 +7702,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u12.l04.picture_bar_graph_compare"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_727_732_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:05","statistics.graph.line_plot",
+            "COUNT_X_MARKS_ON_NUMBER_LINE_ANALYZE_COUNTS",
+            ["uae.g3.u12.l05.line_plot"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_733_738_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
