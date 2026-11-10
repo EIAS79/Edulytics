@@ -35494,6 +35494,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u07.l03.double_known_fact",
+      "version": 1,
+      "skillId": "number.multiplication.doubling_fact",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u07-l03-local-volume2-stage-d-not-run",
+      "representations": [
+        "equal_groups",
+        "number_line",
+        "diagram",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

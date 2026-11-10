@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l02",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U07 L02 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
+  "ReviewEvidence": "Grade3 U07 L03 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -1922,23 +1922,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:07:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 7 / Lesson 3; official Arabic title: نشاط عملي: مضاعفة حقيقة معروفة",
+      "TitleSourceReference": "Grade 3 Arabic local student volume 2, U07 Lesson 3, printed pp.371-376",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U07:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 7 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.371-376, PDF pp.21-26",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "9546ab72445475493db0b1132c6845dd138e3bdee31f97e10dc3bdc79dae9bc4",
+      "SourceEdition": "LOCAL_ARABIC_VOLUME_2; PDF creation 2020-12-21, printed year unverified; target 2026-2027 UNKNOWN",
+      "SourceRights": "Local text/image used as skill reference only; teaching prose, numerical examples and text visuals independently authored by Edulytics.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "de246796993172668912aad6c6b963cd5a751629488d1a455c6dc6914a6d2ae7",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "EDULYTICS_G3_U07_L03_AR_A_B_C_SOURCE_SCOPED; TARGET_EDITION_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1949,6 +1949,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Double a Known Fact: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: مضاعفة حقيقة معروفة",
+          "Explanation": "هدف التعلم: أستعمل حقيقة ضرب في ٢ أعرفها لإيجاد حقيقة ضرب في ٤ عن طريق المضاعفة، وأبيّن ذلك بمصفوفتين. ارسم صفين من خمس نقاط ثم صفين مماثلين تحتهما: ●●●●● / ●●●●● / ●●●●● / ●●●●●. المجموع ٢٠، لأن ٢ × ٥ = ١٠، وضعف ١٠ يساوي ٢٠.",
+          "KeyConceptsAndRules": "أستعمل حقيقة ضرب في ٢ أعرفها لإيجاد حقيقة ضرب في ٤ عن طريق المضاعفة، وأبيّن ذلك بمصفوفتين. وأربط كل رمز في المعادلة بمعناه في النموذج؛ لا أكتفي بحفظ الناتج دون تفسير.",
+          "WorkedExamples": "مثال: إذا كان ٢ × ٧ = ١٤، فإن ٤ × ٧ = ١٤ + ١٤ = ٢٨. ويمكن أيضًا كتابة (٢ + ٢) × ٧. التمثيل أصلي من Edulytics وليس صورة مقتبسة.",
+          "StepByStepSolutions": "أحدد حقيقة ٢ × العدد، أضاعف الناتج، وأعيد جمع صفوف المصفوفة الأربع لأتأكد أن الحساب يمثل ٤ مجموعات بالفعل.",
+          "CommonMistakes": "لا تضاعف عاملًا ثم تضاعف الناتج مرة ثانية؛ هذا يحسب ثمانية أمثال بدل أربعة. لا تضف ٢ إلى الناتج، بل أضف الناتج إلى نفسه.",
+          "QuickSummary": "أطبق مهارة نشاط عملي: مضاعفة حقيقة معروفة بأكثر من تمثيل وأفسر النتيجة. نشاط إغلاق: أوجد ٤ × ٩ باستخدام ٢ × ٩، ثم ارسم أربع صفوف من تسع نقاط. الإجابة: ١٨ + ١٨ = ٣٦."
         }
       ]
     },
