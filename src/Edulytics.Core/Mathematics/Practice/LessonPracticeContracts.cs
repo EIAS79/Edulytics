@@ -7438,6 +7438,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u07.l01.multiply_by_three"],
             "UAE_G3_LOCAL_VOLUME2_PP359_364_YEAR_UNVERIFIED_STAGE_D_PENDING",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:07:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:07:02","number.division.by_three",
+            "SHARE_IN_THREE_EQUAL_GROUPS_REPEATED_SUBTRACTION_INVERSE",
+            ["uae.g3.u07.l02.divide_by_three"],
+            "UAE_G3_LOCAL_ARABIC_VOLUME2_PRINTED_365_370_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
