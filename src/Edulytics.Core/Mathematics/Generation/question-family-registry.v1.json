@@ -36234,6 +36234,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u11.l06.elapsed_time",
+      "version": 1,
+      "skillId": "measurement.time.elapsed",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u11-l06-source-scoped-tests-not-run",
+      "representations": [
+        "measurement_tool",
+        "measurement_table",
+        "time_line",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

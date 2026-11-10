@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 11 through lesson 5, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 11 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3513,23 +3513,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:11:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 11 / Lesson 6; official Arabic title: الفترات الزمنية",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 11 L6; printed pp.683-688; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U11:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 11 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.683-688; PDF pp.66-71",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "09a15b6a7bec0b82849ef82b74407d87631352e6e3e7c2256300203880aaf7c1",
+      "SourceEdition": "Local Arabic Volume 3, source OCR degraded, visual student pages verified; metadata 2018 / target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "ca2d9ab797a8d1e15331a1e5efdbc7a3ce8d9d5388c3a0497f6d838e66a1eec0",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U11_L06_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3540,6 +3540,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Elapsed Time: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الفترات الزمنية",
+          "Explanation": "هدف التعلم: أحسب الزمن المنقضي بين وقتين باستخدام خط زمني والقفزات بالدقائق والساعات. من ٨:١٥ إلى ٩:٠٠ توجد ٤٥ دقيقة، ومن ٩:٠٠ إلى ٩:٢٠ عشرون دقيقة، فالإجمالي ٦٥ دقيقة.",
+          "KeyConceptsAndRules": "كل ساعة ٦٠ دقيقة. يمكن تقسيم الفترة إلى قفزات ٥ و١٠ و٣٠ و٦٠ دقيقة لجمع الفترات بدقة.",
+          "WorkedExamples": "مثال: بدأ النشاط ٢:٣٥ وانتهى ٣:١٠، قفز ٢٥ دقيقة إلى ٣:٠٠ ثم ١٠ دقائق إلى ٣:١٠؛ المدة ٣٥ دقيقة.",
+          "StepByStepSolutions": "أكتب البداية والنهاية، أرسم خطًا زمنيًا أو أستخدم تحويل الدقائق، أجمع الفترات وأتحقق من ساعة النهاية.",
+          "CommonMistakes": "لا تطرح قيم الدقائق كما لو كانت عشرية؛ الفرق بين ١:٥٠ و٢:١٠ هو ٢٠ دقيقة لا ٦٠.",
+          "QuickSummary": "نشاط إغلاق: بدأ درس عند ٩:٤٠ وانتهى ١٠:١٥. كم استغرق؟ ٣٥ دقيقة مع بيان قفزتين."
         }
       ]
     },
