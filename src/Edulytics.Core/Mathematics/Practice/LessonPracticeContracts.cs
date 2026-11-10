@@ -7678,6 +7678,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u11.l07.work_backward"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_689_694_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:01","statistics.data.tally",
+            "CLASSIFICATION_TALLY_RECORD_FREQUENCY_TABLE",
+            ["uae.g3.u12.l01.tally_record"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_709_714_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
