@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l06",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l07",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U07 L06 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
+  "ReviewEvidence": "Grade3 U07 L07 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2094,23 +2094,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:07:07",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 7 / Lesson 7; official Arabic title: الضرب في 0 و1",
+      "TitleSourceReference": "Grade 3 Arabic local student volume 2, U07 Lesson 7, printed pp.397-402",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U07:L07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 7 / Lesson 7",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.397-402, PDF pp.47-52",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "fb6f253b07330ef0d5ce1662ec630cbf692d82d0c0cf64b2debb8d3874261f01",
+      "SourceEdition": "LOCAL_ARABIC_VOLUME_2; PDF creation 2020-12-21, printed year unverified; target 2026-2027 UNKNOWN",
+      "SourceRights": "Local text/image used as skill reference only; teaching prose, numerical examples and text visuals independently authored by Edulytics.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "77b20de3f56525a54ec3dba8fbee695613c63e2d51eb6e75ec92533f1eef081f",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "EDULYTICS_G3_U07_L07_AR_A_B_C_SOURCE_SCOPED; TARGET_EDITION_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2121,6 +2121,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 0 and 1: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ٠ و١",
+          "Explanation": "هدف التعلم: أفهم خاصية الصفر في الضرب وخاصية العنصر المحايد ١ باستخدام مجموعات وأمثلة واقعية. ثلاثة صناديق فارغة: □ □ □، في كل صندوق صفر من الأقلام؛ ٣ × ٠ = ٠. صندوق واحد فيه خمس قطع: [●●●●●]، لذا ١ × ٥ = ٥.",
+          "KeyConceptsAndRules": "أفهم خاصية الصفر في الضرب وخاصية العنصر المحايد ١ باستخدام مجموعات وأمثلة واقعية. وأربط كل رمز في المعادلة بمعناه في النموذج؛ لا أكتفي بحفظ الناتج دون تفسير.",
+          "WorkedExamples": "مثال: ٠ × ٨ = ٠، و٨ × ٠ = ٠، بينما ١ × ٨ = ٨ و٨ × ١ = ٨؛ أتحقق بمعنى عدد المجموعات وحجم المجموعة. التمثيل أصلي من Edulytics وليس صورة مقتبسة.",
+          "StepByStepSolutions": "أحدد هل أحد العاملين صفر أو واحد. إذا كان صفرًا فالناتج صفر، وإذا كان واحدًا فالناتج العامل الآخر، ثم أوضح التمثيل المناسب.",
+          "CommonMistakes": "خطأ: ٨ × ٠ = ٨ لأن العامل ٨ كبير؛ الصحيح صفر. وخطأ: ٨ × ١ = ٩؛ الصحيح ٨ لأن الواحد لا يغير العامل.",
+          "QuickSummary": "أطبق مهارة الضرب في ٠ و١ بأكثر من تمثيل وأفسر النتيجة. نشاط إغلاق: اكتب نواتج ٩ × ٠ و٠ × ٩ و٩ × ١ و١ × ٩، ثم فسّر واحدًا منها بالرسم. النتائج ٠، ٠، ٩، ٩."
         }
       ]
     },
