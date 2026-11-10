@@ -7690,6 +7690,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u12.l02.scaled_picture_graph"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_715_720_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:12:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:12:03","statistics.graph.bar_chart",
+            "BAR_CHART_LABEL_AXIS_SCALE_COMPARISON",
+            ["uae.g3.u12.l03.bar_graph"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_721_726_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

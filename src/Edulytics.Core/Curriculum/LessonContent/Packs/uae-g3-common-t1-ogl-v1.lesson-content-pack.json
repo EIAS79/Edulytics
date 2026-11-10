@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l02",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 12 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 12 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3685,23 +3685,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:12:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 12 / Lesson 3; official Arabic title: التمثيلات البيانية بالأعمدة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 12 L3; printed pp.721-726; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U12:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 12 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.721-726; PDF pp.104-109",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "5f1f1c401e328eb8daeaa7e2166c405b81b55ff89c18bf62ee689cc94ce72efb",
+      "SourceEdition": "Local Arabic Grade3 volume3 (visually read, OCR degraded), printed year unverified; 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "f0db4c4225ea0309109a1fc2e8e57a5eee7b6bda984320a55e7176e0b6cc7d51",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U12_L03_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3712,6 +3712,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Bar Graphs: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التمثيلات البيانية بالأعمدة",
+          "Explanation": "هدف التعلم: أنظم بيانات الفئات في تمثيل بالأعمدة، وأقرأ عنوان الرسم ومحوريه وأقارن قيم الأعمدة. جدول: الأقلام ٦، الدفاتر ٤، المساطر ٢؛ أرسم ثلاثة أعمدة عند القيم ٦ و٤ و٢.",
+          "KeyConceptsAndRules": "يبدأ المحور العددي من الصفر عادة ويستخدم مقياسًا ثابتًا؛ ارتفاع العمود يعبر عن تكرار فئته.",
+          "WorkedExamples": "مثال: عمود الفئة أ ارتفاعه ٩ وعمود ب ٥؛ الفرق ٤، والمجموع ١٤.",
+          "StepByStepSolutions": "أكتب عنوانًا ومحوري الفئة والتكرار، أختار مقياسًا منتظمًا، أرسم الأعمدة بنفس العرض وأستخرج الفروق والمجاميع.",
+          "CommonMistakes": "لا تغير مقياس المحور بين عمودين، ولا ترسم قيمًا دون تسميات واضحة.",
+          "QuickSummary": "نشاط إغلاق: عمودان ٧ و٣؛ كم مجموعهما وفرقُهما؟ ١٠ و٤. ارسمهما بمقياس وحدة واحدة."
         }
       ]
     },

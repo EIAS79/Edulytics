@@ -36316,6 +36316,27 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u12.l03.bar_graph",
+      "version": 1,
+      "skillId": "statistics.graph.bar_chart",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u12-l03-source-scoped-tests-not-run",
+      "representations": [
+        "tally",
+        "scaled_pictograph",
+        "bar_chart",
+        "line_plot",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
