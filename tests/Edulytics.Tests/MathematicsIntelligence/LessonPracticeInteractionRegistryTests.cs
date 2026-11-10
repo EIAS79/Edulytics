@@ -44,9 +44,16 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g2.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(90, uaeGrade2.Length);
+        // Grade 3 adds 107 explicitly typed presentation families. Protect the
+        // pre-existing 1,691-family baseline without misclassifying new UAE
+        // families as legacy or reducing registry coverage.
+        var uaeGrade3 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g3.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(107, uaeGrade3.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
-            algebra2.Length - uaeGrade1.Length - uaeGrade2.Length);
+            algebra2.Length - uaeGrade1.Length - uaeGrade2.Length - uaeGrade3.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,
