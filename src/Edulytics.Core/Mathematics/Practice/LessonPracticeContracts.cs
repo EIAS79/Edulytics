@@ -7780,6 +7780,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l01.find_perimeter"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_837_842_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:02","geometry.perimeter.calculation",
+            "PERIMETER_SUM_ALL_POLYGON_SIDES",
+            ["uae.g3.u14.l02.perimeter"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_843_848_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

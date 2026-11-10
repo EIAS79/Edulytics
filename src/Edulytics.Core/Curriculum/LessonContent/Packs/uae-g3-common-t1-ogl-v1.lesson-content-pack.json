@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l01",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 14 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 14 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4330,23 +4330,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:14:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 14 / Lesson 2; official Arabic title: المحيط",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 14 L2; printed pp.843-848; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U14:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 14 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.843-848; PDF pp.226-231",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "c83ec504dec975e384f482f06487d5ca6ca593cb9042f5c908dcd06cbb85f7da",
+      "SourceEdition": "Local Grade3 Arabic Volume3 scanned source; target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "7d46225855f70d20304b071ea77dd2047ae50afb7f5b12f45c30bf313d5a49a4",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U14_L02_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4357,6 +4357,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Perimeter: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المحيط",
+          "Explanation": "هدف التعلم: أحسب محيط المضلعات المنتظمة وغير المنتظمة بجمع أطوال الأضلاع الخارجية، وأحل مسائل واقعية عن الأسوار. أضع علامات على كل ضلع في مخطط مضلع، أجمع الأطوال بالتتابع ثم أراجع بعد رسم الحد الخارجي.",
+          "KeyConceptsAndRules": "يُقاس المحيط بوحدات الطول. للمستطيل طول ضلعيه المتقابلين متساوٍ؛ محيطه يساوي ٢ × (الطول + العرض).",
+          "WorkedExamples": "مثال: مستطيل ٩ م × ٤ م محيطه ٩ + ٤ + ٩ + ٤ = ٢٦ م؛ مثلث متساوي الأضلاع طول ضلعه ٥ سم محيطه ١٥ سم.",
+          "StepByStepSolutions": "أحدد جميع الأطوال المطلوبة، أكمل الناقص إن لزم بعلاقات الشكل، ثم أجمع أطوال الحد الخارجي وأكتب الوحدة.",
+          "CommonMistakes": "لا تكتب المحيط بالمتر المربع، ولا تتجاهل ضلعًا صغيرًا في شكل غير منتظم.",
+          "QuickSummary": "نشاط إغلاق: حديقة ٨ م × ٦ م. ما طول السياج المحيط بها؟ ٢٨ مترًا."
         }
       ]
     },
