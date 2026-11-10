@@ -7570,6 +7570,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u09.l06.evaluate_expression"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_527_532_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:07","number.algebra.equations",
+            "RELATE_WORD_PROBLEM_TO_EQUALITY_AND_UNKNOWN",
+            ["uae.g3.u09.l07.write_equation"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_533_538_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
