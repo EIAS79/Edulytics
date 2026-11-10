@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u08-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u08-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 8 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 8 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2309,23 +2309,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:08:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 8 / Lesson 4; official Arabic title: الضرب في 8",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 8 L4; printed pp.443-448; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U08:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 8 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.443-448; PDF pp.93-98",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "4e6c11b0c38798033894e1fb5b0fc559c931efaefbe6350ebd1ea0d9afec00b0",
+      "SourceEdition": "Local Arabic Grade 3 Volume 2 PDF with creation metadata 2020-12-21; printed edition and 2026-2027 parity unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "b4cc4884cecb70c261a0eabf45cfbdce3ac07e37d49257641d8fa986664eba9c",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U08_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2336,6 +2336,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 8: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ٨",
+          "Explanation": "هدف التعلم: أحسب الضرب في ٨ بمضاعفة حقيقة الضرب في ٤ أو بمصفوفات متساوية. مصفوفة من ٨ صفوف وتسعة أعمدة، نقسمها إلى مجموعتين كل منها ٤ × ٩.",
+          "KeyConceptsAndRules": "٨ × ن = (٤ × ن) + (٤ × ن)؛ وهي مجموعات متساوية يمكن تجزئتها إلى نصفين من أربع مجموعات.",
+          "WorkedExamples": "مثال: ٨ × ٩ = ٤ × ٩ + ٤ × ٩ = ٣٦ + ٣٦ = ٧٢. أتحقق بجمع ٩ ثماني مرات.",
+          "StepByStepSolutions": "أحدد مضاعفة حقيقة ٤، أحسب الجزأين، أو أنظم مجموعات من ثمانية وأتأكد من المجموع.",
+          "CommonMistakes": "لا تتعامل مع ٨ × ٩ بوصفه ٨ + ٩؛ ولا تضاعف العاملين معًا لأن هذا يضاعف الناتج أربع مرات.",
+          "QuickSummary": "نشاط إغلاق: أوجد ٨ × ٧ بمضاعفة ٤ × ٧. الإجابة ٢٨ + ٢٨ = ٥٦."
         }
       ]
     },
