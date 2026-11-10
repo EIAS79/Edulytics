@@ -36610,6 +36610,27 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u14.l01.find_perimeter",
+      "version": 1,
+      "skillId": "geometry.perimeter.hands_on",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u14-l01-source-scoped-tests-not-run",
+      "representations": [
+        "unit_square",
+        "grid",
+        "rectangle_diagram",
+        "perimeter_outline",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -7774,6 +7774,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l10.more_solids"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_819_824_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:01","geometry.perimeter.hands_on",
+            "MEASURE_ADD_OUTER_BOUNDARY_SIDES",
+            ["uae.g3.u14.l01.find_perimeter"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_837_842_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
