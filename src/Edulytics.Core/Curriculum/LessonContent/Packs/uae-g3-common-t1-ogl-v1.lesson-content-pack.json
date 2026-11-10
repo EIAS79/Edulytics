@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 14 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 14 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4416,23 +4416,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:14:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 14 / Lesson 4; official Arabic title: قياس المساحة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 14 L4; printed pp.855-860; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U14:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 14 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.855-860; PDF pp.238-243",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "c42f61fa8a61a6a53f0f7e4bbe66b17df4c85131ef2cb40c47b521f4f8b0a101",
+      "SourceEdition": "Local Grade3 Arabic Volume3 scanned source; target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "0b6d8bbe7fb06962a60e3e72c756dc09bd885d24528f62fc8907b4c610fcf607",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U14_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4443,6 +4443,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Measure Area: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "قياس المساحة",
+          "Explanation": "هدف التعلم: أقيس مساحة الأشكال المرسومة على شبكة، وأجمع المربعات الكاملة وأجزاء المربعات عند الحاجة. أرسم شكلًا يشغل شبكة ٤ × ٥ وأزيل من زاوية أربعة مربعات، فتكون المساحة ٢٠ − ٤ = ١٦ وحدة مربعة.",
+          "KeyConceptsAndRules": "مربع الوحدة يمثل وحدة مربعة من المساحة. يمكن تفكيك الأشكال المركبة إلى مستطيلات صغيرة مع الحفاظ على إجمالي المساحة.",
+          "WorkedExamples": "مثال: مستطيل ٦ أعمدة و٣ صفوف مساحته ١٨ وحدة مربعة؛ إذا حذف مربعان بقي ١٦.",
+          "StepByStepSolutions": "أعين مربع الوحدة، أعدّ المربعات كاملة، أضم أجزاء المربعات لتكوين وحدات عند الإمكان ثم أتأكد من عدم تكرار أي جزء.",
+          "CommonMistakes": "لا تخلط بين المحيط ومساحة الشكل؛ فقد تختلف المساحة مع ثبات المحيط.",
+          "QuickSummary": "نشاط إغلاق: شبكة من ٥ × ٤ مربعات حُذف منها ٢ × ٢. ما المساحة الباقية؟ ١٦ وحدة مربعة."
         }
       ]
     },
