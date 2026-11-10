@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l02",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 10 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 10 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3040,23 +3040,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:10:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 10 / Lesson 3; official Arabic title: جزء من مجموعة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 10 L3; printed pp.575-580; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U10:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 10 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.575-580; PDF pp.225-230",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "01ae735cf737deab6bac7cd939863c118d344d2040ef607c1c4b2231d5817e4a",
+      "SourceEdition": "Local Arabic Volume 2 (file PDF metadata 2020-12-21); printed edition unknown, target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "674dd4478eaaedc9075c52d44b919e4d6efe21957703fe8156cf9d762585872d",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U10_L03_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3067,6 +3067,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Part of a Set: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "جزء من مجموعة",
+          "Explanation": "هدف التعلم: أحدد كسرًا من مجموعة أشياء متشابهة أو مختلفة مع بقاء المجموعة الكاملة مرجعًا للكسر. ست كرات، اثنتان زرقاوان وأربع حمراء. الكرات الزرقاء تمثل ٢/٦ من كل المجموعة.",
+          "KeyConceptsAndRules": "إذا كانت المجموعة تحوي ب عناصر، ووقع الاختيار على أ منها، فالكسر أ/ب، وقد أحتاج لتقسيم المجموعة إلى مجموعات متساوية.",
+          "WorkedExamples": "مثال: من ١٢ قلمًا، ثلاثة أقلام خضراء، إذن الجزء الأخضر ٣/١٢، أو ١/٤ من الأقلام عند تقسيمها إلى أربع مجموعات متساوية.",
+          "StepByStepSolutions": "أحسب عدد عناصر المجموعة كلها، أعد عناصر الفئة المختارة، أكتب البسط والمقام، وأراجع أن الكل لم يتغير.",
+          "CommonMistakes": "لا تكتب عدد العناصر الملونة مكان مقام الكسر؛ المقام يمثل المجموعة كلها.",
+          "QuickSummary": "نشاط إغلاق: توجد ٨ بطاقات، ٣ صفراء و٥ زرقاء. ما كسر الصفراء؟ ٣/٨ مع تفسير معنى الكل."
         }
       ]
     },
