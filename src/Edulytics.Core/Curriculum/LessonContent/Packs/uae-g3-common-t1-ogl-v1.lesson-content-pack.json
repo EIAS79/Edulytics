@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l06",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u14-l07",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 14 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 14 through lesson 7, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4545,23 +4545,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:14:07",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 14 / Lesson 7; official Arabic title: نشاط عملي: المساحة وخاصية التوزيع",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 14 L7; printed pp.875-880; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U14:L07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 14 / Lesson 7",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.875-880; PDF pp.258-263",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "9645948516ea8a330d978eeacb0a44007538760e8973606b47fd31ba2d96247c",
+      "SourceEdition": "Local Grade3 Arabic Volume3 scanned source; target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "a91e45eb3179f5315d96d7b4517af53f4b9d54ed7abc926aa2b828b65768ceed",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U14_L07_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4572,6 +4572,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Area and the Distributive Property: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: المساحة وخاصية التوزيع",
+          "Explanation": "هدف التعلم: أقسم مستطيلًا إلى مستطيلين أصغر لتفسير خاصية التوزيع وحساب مساحة الكل بمجموع مساحتي الجزأين. ارسم مستطيلًا ارتفاعه ٦ وحدات وعرضه ٨، قسم العرض إلى ٥ و٣؛ تصبح المساحة ٦ × ٥ + ٦ × ٣.",
+          "KeyConceptsAndRules": "للمستطيل ارتفاع أ وعرض ب + ج، المساحة = أ×ب + أ×ج؛ لا يحدث تداخل أو فراغ بين الجزأين.",
+          "WorkedExamples": "مثال: ٦ × (٥ + ٣) = ٣٠ + ١٨ = ٤٨ وحدة مربعة، يساوي حساب ٦ × ٨ مباشرة.",
+          "StepByStepSolutions": "أحدد المستطيل الكامل وخط تقسيم واضحًا، أحسب مساحة الجزأين وأجمعهما مع تفسير تساوي الناتجين.",
+          "CommonMistakes": "لا تضرب الارتفاع في جزء واحد فقط؛ ولا تضف مساحات أجزاء تتداخل بعضها ببعض.",
+          "QuickSummary": "نشاط إغلاق: قسم مستطيلًا ٧ × ٩ إلى عرض ٤ و٥؛ المساحة ٧×٤ + ٧×٥ = ٦٣ وحدة مربعة."
         }
       ]
     },
