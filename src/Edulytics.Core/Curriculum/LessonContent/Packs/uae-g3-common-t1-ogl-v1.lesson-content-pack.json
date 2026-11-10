@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l01",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u11-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 11 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 11 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3341,23 +3341,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:11:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 11 / Lesson 2; official Arabic title: حل مسائل السعة",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 11 L2; printed pp.657-662; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U11:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 11 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.657-662; PDF pp.40-45",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "fa6e83e62b597ddddcd849f514025ae4327b4888e472a2fac2a716769aed2db6",
+      "SourceEdition": "Local Arabic Volume 3, source OCR degraded, visual student pages verified; metadata 2018 / target 2026-2027 parity UNKNOWN",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "4827fd4c4c514fdf15812a53faa49d7d3d8c2ebf001c3ba343c44c1400431cd9",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U11_L02_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3368,6 +3368,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Capacity Problems: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل مسائل السعة",
+          "Explanation": "هدف التعلم: أحل مسائل لفظية تتطلب جمع أو طرح كميات السعة مع المحافظة على وحدة القياس المناسبة. جدول للسعة يحتوي ١ لتر و٥٠٠ ملليلتر من العصير، وبعد إضافة ٢٥٠ ملليلتر أوجد الإجمالي ١٧٥٠ ملليلتر.",
+          "KeyConceptsAndRules": "لا أجمع لترات مع ملليلترات قبل توحيد الوحدة؛ أحوّل اللتر إلى ألف ملليلتر ثم أجري العملية المناسبة.",
+          "WorkedExamples": "مثال: يوجد ٢ لتر من الماء. استهلكنا ٦٠٠ ملليلتر. الباقي ٢٠٠٠ − ٦٠٠ = ١٤٠٠ ملليلتر.",
+          "StepByStepSolutions": "أحدد السؤال ووحدة الجواب، أحول جميع القيم إلى وحدة مشتركة، أجمع أو أطرح، ثم أتحقق من معقولية الناتج.",
+          "CommonMistakes": "لا تطرح ٦٠٠ من ٢ بدلًا من تحويل اللترات. تجنب الخلط بين السعة والكتلة.",
+          "QuickSummary": "نشاط إغلاق: وعاء به ١ لتر و٢٠٠ ملليلتر، أضف ٣٠٠ ملليلتر. كم السعة الجديدة؟ ١٥٠٠ ملليلتر."
         }
       ]
     },
