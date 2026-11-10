@@ -35834,6 +35834,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u09.l03.multiply_three_factors",
+      "version": 1,
+      "skillId": "number.multiplication.three_factors",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u09-l03-source-scoped-tests-not-run",
+      "representations": [
+        "math_expression",
+        "array",
+        "bar_model",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

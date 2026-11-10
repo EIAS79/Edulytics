@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l02",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l03",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 9 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 9 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2653,23 +2653,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:09:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 9 / Lesson 3; official Arabic title: نشاط عملي: ضرب ثلاثة عوامل",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 9 L3; printed pp.507-512; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U09:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 9 / Lesson 3",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.507-512; PDF pp.157-162",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "c75a5b41e09fd0a21e79544c35822b3e3fcbe12bbc3fe6e87aac52be415cf46e",
+      "SourceEdition": "Local Arabic Volume 2, PDF created 2020-12-21; printed edition year and target 2026-2027 unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "f08973c59cdc6132be90983963920fe8742befa159b8747139e562a8e70f46e8",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U09_L03_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2680,6 +2680,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Multiply Three Factors: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: ضرب ثلاثة عوامل",
+          "Explanation": "هدف التعلم: أمثل ضرب ثلاثة عوامل ضمن مجموعات ومجموعات فرعية وأحسب الناتج بدقة. صندوقان بكل صندوق ٣ صفوف من ٤ قطع: ٢ × (٣ × ٤) = ٢ × ١٢ = ٢٤.",
+          "KeyConceptsAndRules": "عند ضرب ثلاثة عوامل أضرب أي عاملين ثم الناتج في الثالث؛ عدد العناصر لا يتغير إذا غيّرت التجميع.",
+          "WorkedExamples": "مثال: (٣ × ٤) × ٢ = ١٢ × ٢ = ٢٤؛ ومن الجهة الأخرى ٣ × (٤ × ٢) = ٣ × ٨ = ٢٤.",
+          "StepByStepSolutions": "أحدد العوامل الثلاثة ومعنى كل منها، أمثل مجموعة داخل مجموعة، أضرب عاملين، ثم الثالث وأراجع الناتج.",
+          "CommonMistakes": "لا تجمع العوامل الثلاثة بدلاً من ضربها؛ ولا تخلط تغيير التجميع بتغيير عدد المجموعات.",
+          "QuickSummary": "نشاط إغلاق: رسم مجموعتين، بكل واحدة ٣ أكياس وفي كل كيس ٥ كرات. العدد ٢ × ٣ × ٥ = ٣٠."
         }
       ]
     },
