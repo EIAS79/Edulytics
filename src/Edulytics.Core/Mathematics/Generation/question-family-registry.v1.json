@@ -36463,6 +36463,27 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u13.l04.triangle_types",
+      "version": 1,
+      "skillId": "geometry.triangles.classification",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u13-l04-source-scoped-tests-not-run",
+      "representations": [
+        "point_segment_ray",
+        "angle_model",
+        "polygon_diagram",
+        "solid_model",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 13 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 13 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3986,23 +3986,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:13:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 13 / Lesson 4; official Arabic title: نشاط عملي: المثلثات",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 13 L4; printed pp.781-786; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U13:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 13 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.781-786; PDF pp.164-169",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "0be2daeae69d4889b0dfabfd0a6d6472aab2beaeb0355eaef698cb0c8df41fc3",
+      "SourceEdition": "Local Arabic Volume 3 scanned pages, printed edition and target 2026-2027 parity not certified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "3c47590c15d42fe2a14ecce7854d04d149f480703aae0225443eddbb3e1c8381",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U13_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4013,6 +4013,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Triangles: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: المثلثات",
+          "Explanation": "هدف التعلم: أقارن المثلثات بحسب أضلاعها وزواياها وأتعرف المثلث القائم والمتساوي الأضلاع والمتساوي الساقين والمختلف الأضلاع. استخدم ثلاثة أعواد بأطوال ٥،٥،٦ لتشكيل مثلث متساوي الساقين، وقارن بأعواد ٥،٦،٧.",
+          "KeyConceptsAndRules": "للمثلث ثلاثة أضلاع وثلاث زوايا؛ المتساوي الأضلاع له ثلاثة أضلاع متساوية والمتساوي الساقين له ضلعان متساويان على الأقل.",
+          "WorkedExamples": "مثال: أطوال أضلاع ٤ و٤ و٤ تنتج مثلثًا متساوي الأضلاع، بينما ٤ و٥ و٦ تعطي مثلثًا مختلف الأضلاع.",
+          "StepByStepSolutions": "أتحقق أن الأضلاع تشكل مثلثًا، أقارن أطوالها ثم أنظر إلى الزوايا لأتأكد من وجود زاوية قائمة.",
+          "CommonMistakes": "لا تستنتج نوع المثلث من اتجاهه على الورقة، ولا تخلط بين زاوية حادة وضلع قصير.",
+          "QuickSummary": "نشاط إغلاق: صنف المثلث ٦،٦،٤ من حيث الأضلاع؛ متساوي الساقين. ارسمه مع تبرير."
         }
       ]
     },

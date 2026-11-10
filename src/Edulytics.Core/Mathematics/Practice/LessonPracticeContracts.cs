@@ -7732,6 +7732,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l03.polygons"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_775_780_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:04","geometry.triangles.classification",
+            "TRIANGLE_BY_SIDES_AND_RIGHT_ANGLE",
+            ["uae.g3.u13.l04.triangle_types"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_781_786_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
