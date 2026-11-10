@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 9 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 9 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2696,23 +2696,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:09:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 9 / Lesson 4; official Arabic title: خاصية التجميع",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 9 L4; printed pp.513-518; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U09:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 9 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.513-518; PDF pp.163-168",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "3c3a82dfb5b72f98090e74dae56260cc19b7373e86b24bf8b742b125feed57d1",
+      "SourceEdition": "Local Arabic Volume 2, PDF created 2020-12-21; printed edition year and target 2026-2027 unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "fa442e89091353def5e4ec64f99559660909a132e5b654ef5762c31cfe76c0cf",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U09_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2723,6 +2723,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Associative Property: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "خاصية التجميع",
+          "Explanation": "هدف التعلم: أتعرف خاصية التجميع في الضرب وأغير موضع الأقواس دون تغيير ترتيب العوامل أو ناتج الضرب. ثلاثة أقسام، بكل قسم مجموعتان، في كل مجموعة أربع نقاط؛ (٣ × ٢) × ٤ = ٣ × (٢ × ٤) = ٢٤.",
+          "KeyConceptsAndRules": "(أ × ب) × ج = أ × (ب × ج)؛ يختلف الحساب الوسيط ولكن الناتج نفسه، ولا يساوي هذا جمع العوامل.",
+          "WorkedExamples": "مثال: (٢ × ٥) × ٤ = ١٠ × ٤ = ٤٠، بينما ٢ × (٥ × ٤) = ٢ × ٢٠ = ٤٠.",
+          "StepByStepSolutions": "أختار تجميعًا يوفر حقائق معروفة، أحسب ثم أعيد بالتجميع الآخر للتحقق وأوضح سبب ثبات الناتج.",
+          "CommonMistakes": "لا تنقل الأقواس بطريقة تستبدل الضرب بالجمع؛ وعند التعبير اللفظي يجب الحفاظ على معنى المجموعات.",
+          "QuickSummary": "نشاط إغلاق: احسب (٣ × ٢) × ٥ ثم ٣ × (٢ × ٥). كلاهما ٣٠، واشرح علاقة الأقواس."
         }
       ]
     },
