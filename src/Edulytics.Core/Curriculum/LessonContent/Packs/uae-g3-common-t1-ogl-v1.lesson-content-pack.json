@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l08",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l09",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 9 through lesson 8, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 9 through lesson 9, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2911,23 +2911,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:09:09",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 9 / Lesson 9; official Arabic title: استقصاء حل المسائل: استخدام التفكير المنطقي",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 9 L9; printed pp.545-550; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U09:L09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 9 / Lesson 9",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.545-550; PDF pp.195-200",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "ea68cac3cacf919f203a1f860ca82a6a21fbeb0c2b3c4c2739bc0f068a3a1e2f",
+      "SourceEdition": "Local Arabic Volume 2, PDF created 2020-12-21; printed edition year and target 2026-2027 unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "66ccc440439255ca78c1bbbcae69fe7c80b9ce2746299f594f6134a35acf26c0",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U09_L09_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2938,6 +2938,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Use Logical Reasoning: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: استخدام التفكير المنطقي",
+          "Explanation": "هدف التعلم: أستخدم التفكير المنطقي والتنظيم للكشف عن العلاقات الرياضية والتحقق من صحة استنتاجي. عند مقارنة ٣ + ٥ × ٢ و(٣ + ٥) × ٢ أرسم ثمانية عناصر في مجموعتين لأحدد معنى الأقواس.",
+          "KeyConceptsAndRules": "أميز ما إذا كانت عبارتان متساويتين بالأدلة؛ أفكك الأعداد أو أكتب جدولًا أو أبحث عن مثال مضاد عند الحاجة.",
+          "WorkedExamples": "مثال: ٣ × (٥ + ٢) = ٢١؛ و٣ × ٥ + ٣ × ٢ = ٢١، لأن التوزيع صحيح. أما ٣ + ٥ × ٢ = ١٣.",
+          "StepByStepSolutions": "أفهم كل شرط، أرتب المعطيات، أجرب تمثيلًا، أعتمد الحساب والسبب، أراجع النتيجة مع السؤال.",
+          "CommonMistakes": "لا تعتقد أن عبارتين متساويتان لمجرد اشتراكهما في الأرقام؛ الأقواس وترتيب العمليات يؤثران.",
+          "QuickSummary": "نشاط إغلاق: هل ٤ × (٣ + ٢) تساوي ٤ × ٣ + ٤ × ٢؟ اشرح بمصفوفة. كلاهما ٢٠ ويُراجع المعلم التعليل."
         }
       ]
     },
