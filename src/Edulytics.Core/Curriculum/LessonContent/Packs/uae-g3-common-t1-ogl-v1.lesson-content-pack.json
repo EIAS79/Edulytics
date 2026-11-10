@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l07",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l08",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 10 through lesson 7, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 10 through lesson 8, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3255,23 +3255,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:10:08",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 10 / Lesson 8; official Arabic title: مقارنة الكسور",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 10 L8; printed pp.607-612; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U10:L08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 10 / Lesson 8",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.607-612; PDF pp.257-262",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "df969178d89c376a60bfa24494e571e1a900ae36763812f898d0f9b62a9ee227",
+      "SourceEdition": "Local Arabic Volume 2 (file PDF metadata 2020-12-21); printed edition unknown, target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "04a3a6be79b31730090c09879afc086fe6e4390253685c3df548020a7787950e",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U10_L08_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3282,6 +3282,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Compare Fractions: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مقارنة الكسور",
+          "Explanation": "هدف التعلم: أقارن كسرين بمقامين متساويين أو بسطين متساويين باستخدام نماذج متساوية الحجم وخط الأعداد. شريطان متساويان مقسمان إلى أرباع، الأول ملون فيه ٣ أجزاء والثاني جزء واحد، إذن ٣/٤ > ١/٤.",
+          "KeyConceptsAndRules": "مع المقام نفسه يكون الكسر الأكبر ذو البسط الأكبر. ومع البسط الواحد يكون الكسر ذو المقام الأصغر أكبر إذا كان الكل متساويًا.",
+          "WorkedExamples": "مثال: ٢/٥ < ٤/٥ لأن ٢ < ٤، و١/٣ > ١/٤ لأن الجزء الثالث أكبر من الرابع لنفس الكل.",
+          "StepByStepSolutions": "أتحقق أن الشكلين يمثلان الكل نفسه، ألاحظ تساوي البسط أو المقام، أقارن بنموذج أو خط الأعداد وأكتب علامة صحيحة.",
+          "CommonMistakes": "لا تقارن البسطين والمقامين عشوائيًا؛ العدد الأصغر في المقام مع بسط واحد يعني أجزاء أكبر.",
+          "QuickSummary": "نشاط إغلاق: ضع > أو < بين ٣/٦ و٥/٦، وبين ١/٣ و١/٥. الإجابات < ثم > مع توضيح نموذج."
         }
       ]
     },
