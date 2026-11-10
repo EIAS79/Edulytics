@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l09",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l10",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 13 through lesson 9, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 13 through lesson 10, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -4244,23 +4244,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:13:10",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 13 / Lesson 10; official Arabic title: المزيد من المجسمات",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 13 L10; printed pp.819-824; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U13:L10",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 13 / Lesson 10",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.819-824; PDF pp.202-207",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "2bf4c4ac1ed193f4e24207c0120de10a989a08903a31d85e89e433013ba76eeb",
+      "SourceEdition": "Local Arabic Volume 3 scanned pages, printed edition and target 2026-2027 parity not certified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "ef68488c953a9ca3a463164c9902369615590e97662b07e1134c6431134f374b",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U13_L10_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -4271,6 +4271,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "More Solid Figures: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المزيد من المجسمات",
+          "Explanation": "هدف التعلم: أميز المجسمات المركبة وشبكاتها وأقارن عدد الأوجه والحروف والرؤوس للمنشور والهرم. أفرد شبكة مكعب مرسومة من ستة مربعات متساوية دون تداخل وأعيد تخيل طيها إلى مكعب.",
+          "KeyConceptsAndRules": "المنشور الثلاثي له قاعدتان مثلثتان وثلاثة أوجه جانبية، والهرم ذو القاعدة المربعة له قاعدة واحدة وأربع أوجه مثلثة.",
+          "WorkedExamples": "مثال: المنشور الثلاثي له خمسة أوجه وتسعة أحرف وستة رؤوس؛ والهرم الرباعي له خمسة أوجه وثمانية أحرف وخمسة رؤوس.",
+          "StepByStepSolutions": "أحدد القاعدة والأوجه الجانبية، أختبر شكل الشبكة، وأعد الأوجه والأحرف والرؤوس مع التحقق من النموذج.",
+          "CommonMistakes": "لا تفترض أن الهرم منشور؛ عدد القواعد مختلف، ولا تقبل شبكة لا تُغلق المجسم بعد طيها.",
+          "QuickSummary": "نشاط إغلاق: كم وجهًا في هرم ذي قاعدة مربعة؟ ٥ أوجه، مع تحديد القاعدة والأربعة المثلثة."
         }
       ]
     },

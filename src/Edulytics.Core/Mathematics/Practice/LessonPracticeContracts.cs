@@ -7768,6 +7768,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l09.solid_figures"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_813_818_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:10"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:10","geometry.solid_figures.classification_nets",
+            "SOLID_SHAPES_NET_FACES_EDGES_VERTICES",
+            ["uae.g3.u13.l10.more_solids"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_819_824_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
