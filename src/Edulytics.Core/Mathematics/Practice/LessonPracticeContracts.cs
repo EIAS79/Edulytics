@@ -7738,6 +7738,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l04.triangle_types"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_781_786_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:05","geometry.quadrilaterals.classification",
+            "QUADRILATERAL_SQUARE_RECTANGLE_RHOMBUS_TRAPEZOID",
+            ["uae.g3.u13.l05.quadrilaterals"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_787_792_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
