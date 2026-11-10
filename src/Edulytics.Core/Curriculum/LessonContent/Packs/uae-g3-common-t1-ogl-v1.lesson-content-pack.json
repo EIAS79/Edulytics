@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l01",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 9 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 9 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2610,23 +2610,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:09:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 9 / Lesson 2; official Arabic title: خاصية التوزيع",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 9 L2; printed pp.501-506; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U09:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 9 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.501-506; PDF pp.151-156",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "aca9f43b7b49d5e0a46f3dcd16b8cddea5f165aa4bb5d022b0f75a4839b2b09b",
+      "SourceEdition": "Local Arabic Volume 2, PDF created 2020-12-21; printed edition year and target 2026-2027 unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "ff494517f5f015005a48a7b1c29428d5e669f888e5f27cc7841bc15e94b746a7",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U09_L02_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2637,6 +2637,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Distributive Property: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "خاصية التوزيع",
+          "Explanation": "هدف التعلم: أستعمل خاصية التوزيع لحساب حاصل ضرب عامل في مجموع جزأين باستخدام مصفوفات وأرقام. مصفوفة ٨ صفوف × ٦ أعمدة يمكن تقسيم كل صف إلى خمسة مربعات ومربع: ٨ × ٥ + ٨ × ١.",
+          "KeyConceptsAndRules": "أ × (ب + ج) = (أ × ب) + (أ × ج)؛ التوزيع يغير طريقة الحساب ولا يغير العدد الكلي.",
+          "WorkedExamples": "مثال: ٨ × ٦ = ٨ × (٥ + ١) = ٤٠ + ٨ = ٤٨.",
+          "StepByStepSolutions": "أفكك أحد العاملين، أوزع العامل الثابت على الجزأين، أجمع الناتجين وأتأكد بالمصفوفة.",
+          "CommonMistakes": "خطأ: توزيع العامل على الجزء الأول فقط؛ يجب ضرب العامل في كلا الجزأين.",
+          "QuickSummary": "نشاط إغلاق: استخدم التوزيع لإيجاد ٧ × ٨ = ٧ × (٥ + ٣) = ٣٥ + ٢١ = ٥٦."
         }
       ]
     },

@@ -7540,6 +7540,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u09.l01.decompose_multiplication"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_495_500_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:09:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:09:02","number.multiplication.distributive",
+            "MULTIPLY_SUM_BY_DISTRIBUTING_FACTOR",
+            ["uae.g3.u09.l02.distributive_property"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_501_506_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
