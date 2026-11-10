@@ -39,6 +39,8 @@ jobs:
       - run: python3 tools/curriculum/uae_g3_stage_d_gate.py --phase structural
       - name: Validate all 107 G3 question family SkillIds and linked capabilities
         run: python3 tools/math_intelligence/math_registry_integrity.py --strict
+      - name: Audit all 109 Grade 3 registered skill/Practice lesson mappings
+        run: python3 tools/math_intelligence/lesson_skill_resolution_audit.py --strict
       - if: always()
         uses: actions/upload-artifact@v4
         with:
