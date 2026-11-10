@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u08-l09",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u09-l01",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 8 through lesson 9, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 9 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2567,23 +2567,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:09:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 9 / Lesson 1; official Arabic title: نشاط عملي: تفكيك الأعداد للضرب",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 9 L1; printed pp.495-500; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U09:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 9 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.495-500; PDF pp.145-150",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "270af35580574ad4d0f943a9771a6030c4ea7061b64488b07a85aaa49d843cc2",
+      "SourceEdition": "Local Arabic Volume 2, PDF created 2020-12-21; printed edition year and target 2026-2027 unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "415faedc6bde232c9f38cfaffa37b1a1002f3bce6ce437cd511b9fc573733964",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U09_L01_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2594,6 +2594,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Hands-on: Decompose Numbers for Multiplication: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "نشاط عملي: تفكيك الأعداد للضرب",
+          "Explanation": "هدف التعلم: أفكك أحد عوامل الضرب إلى عددين وأستعمل نموذج مصفوفة لتكوين نواتج جزئية متساوية مع الناتج الأصلي. مصفوفة من ٤ صفوف و٧ أعمدة تُجزأ إلى ٥ أعمدة وعمودين؛ تصبح ٤ × ٥ و٤ × ٢.",
+          "KeyConceptsAndRules": "إذا كان ب = ج + د، فإن أ × ب = أ × ج + أ × د. أقسم المصفوفة وأجمع عدد عناصر كل جزء دون فقد أي صف أو عمود.",
+          "WorkedExamples": "مثال: ٤ × ٧ = ٤ × (٥ + ٢) = ٢٠ + ٨ = ٢٨؛ تحقق بعدّ ٢٨ نقطة.",
+          "StepByStepSolutions": "أحدد العاملين، أفكك أحدهما إلى مجموع جزأين، أرسم الجزأين، أضرب كل جزء وأجمع الناتجين.",
+          "CommonMistakes": "لا تكتب ٤ × (٥ + ٢) = ٤ × ٥ + ٢؛ لا بد من ضرب كل جزء في ٤.",
+          "QuickSummary": "نشاط إغلاق: فَكّك ٦ × ٨ إلى ٦ × ٥ و٦ × ٣. الناتج ٣٠ + ١٨ = ٤٨؛ يراجع المعلم المصفوفة."
         }
       ]
     },
