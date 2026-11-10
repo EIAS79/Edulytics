@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u08-l07",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u08-l08",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 8 through lesson 7, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 8 through lesson 8, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2481,23 +2481,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:08:08",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 8 / Lesson 8; official Arabic title: الضرب في 11 و12",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 8 L8; printed pp.469-474; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U08:L08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 8 / Lesson 8",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.469-474; PDF pp.119-124",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "d666e164c580a84439b6890f2fc1fd311d2f9b6d9d0e6cda60579e6a1bde7b07",
+      "SourceEdition": "Local Arabic Grade 3 Volume 2 PDF with creation metadata 2020-12-21; printed edition and 2026-2027 parity unverified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "c30f2b2f2f87356b8594457aa748179fcd0632a1d56a0efd06099038a515b7e9",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U08_L08_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2508,6 +2508,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Multiply by 11 and 12: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الضرب في ١١ و١٢",
+          "Explanation": "هدف التعلم: أضرب عددًا كليًا في ١١ أو ١٢ باستعمال عشر مجموعات ومجموعة أو مجموعتين إضافيتين. في ١٢ صفًا من سبع نقاط أفصل عشرة صفوف عن صفين: ٧٠ نقطة + ١٤ نقطة.",
+          "KeyConceptsAndRules": "١١ × ن = (١٠ × ن) + ن؛ و١٢ × ن = (١٠ × ن) + (٢ × ن). يمكن تمثيل ذلك بمصفوفة مقسمة.",
+          "WorkedExamples": "مثال: ١٢ × ٧ = ١٠ × ٧ + ٢ × ٧ = ٧٠ + ١٤ = ٨٤؛ و١١ × ٦ = ٦٠ + ٦ = ٦٦.",
+          "StepByStepSolutions": "أفكك العامل إلى ١٠ و١ أو ٢، أحسب النواتج الجزئية، ثم أجمع وأراجع المصفوفة.",
+          "CommonMistakes": "لا تضع صفرًا في نهاية عدد بلا تفسير عند الضرب في ١١ أو ١٢؛ التفكيك الحسابي مطلوب.",
+          "QuickSummary": "نشاط إغلاق: أوجد ١١ × ٨ و١٢ × ٨ بالتفكيك. الإجابتان ٨٨ و٩٦."
         }
       ]
     },
