@@ -10,7 +10,7 @@ import os
 from pathlib import Path
 import urllib.request
 from playwright.sync_api import sync_playwright
-from uae_g2_stage_d_authenticated_https import (
+from uae_g3_stage_d_authenticated_https import (
     required_environment, check_catalogue, login_actor, BASE, STUDENT
 )
 
