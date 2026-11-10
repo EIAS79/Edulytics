@@ -36094,6 +36094,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u10.l07.fraction_as_whole",
+      "version": 1,
+      "skillId": "number.fraction.whole",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u10-l07-source-scoped-tests-not-run",
+      "representations": [
+        "fraction_area_model",
+        "fraction_strip",
+        "number_line",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
