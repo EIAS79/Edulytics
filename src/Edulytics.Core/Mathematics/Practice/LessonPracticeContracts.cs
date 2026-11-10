@@ -7528,6 +7528,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u08.l08.multiply_eleven_twelve"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_469_474_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:09","number.division.eleven_twelve",
+            "INVERSE_MULTIPLICATION_DIVISION_BY_ELEVEN_TWELVE",
+            ["uae.g3.u08.l09.divide_eleven_twelve"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_475_480_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
