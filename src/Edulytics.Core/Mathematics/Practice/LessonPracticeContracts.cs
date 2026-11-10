@@ -7798,6 +7798,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l04.measure_area"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_855_860_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:14:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:14:05","geometry.area.tile_rectangle",
+            "TILE_RECTANGLE_ROWS_COLUMNS_WITH_UNIT_SQUARES",
+            ["uae.g3.u14.l05.tile_rectangles"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_863_868_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
