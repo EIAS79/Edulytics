@@ -104,18 +104,72 @@ def inspect():
     return checks, blockers, warnings
 
 def source_handoff_blockers():
+    """Allow owner-authorized first-party local-source release with explicit UNKNOWN parity.
+    Never equate this with certification against the unreviewed 2026-2027 books.
+    """
     blockers = []
     handoff = ART / "grade3-a-c-handoff.md"
     if not handoff.is_file():
-        blockers.append("Missing required aggregate grade3-a-c-handoff.md")
+        blockers.append("Missing aggregate Grade3 source-scoped A-C handoff")
     else:
-        text = handoff.read_text(encoding="utf-8")
-        if "UNKNOWN" in text or "NOT_CERTIFIED" in text:
-            blockers.append("The source handoff explicitly leaves 2026-2027 equivalence unverified")
-    # A-B-C evidence is skill-scoped to local books; no 1:1 independently
-    # verified official-2026-27 denominator is present in this candidate.
-    blockers.append("Official 2026-2027 source edition and complete per-item semantic parity UNKNOWN")
-    blockers.append("Teacher-guide/rights and human-review gates not independently certified")
+        scope = handoff.read_text(encoding="utf-8")
+        if "UNKNOWN" not in scope or "109" not in scope:
+            blockers.append("Handoff does not disclose limited 109-lesson source scope")
+    owner_file=ART/"grade3-owner-academic-publication-authorization-20261110.json"
+    if not owner_file.is_file():
+        return blockers+["Missing project owner academic release decision"]
+    owner=read(owner_file)
+    required={
+       "OwnerDecision":"ACADEMICALLY_APPROVED_BY_OWNER",
+       "OwnerAcceptsKnownSourceLimitationsForOriginalContentRelease":True,
+       "Independent2026_2027ElementParity":"UNKNOWN",
+       "SourceParityIsNotReleaseClaim":True,
+       "ThirdPartyAssetClearance":"NOT_INDEPENDENTLY_CERTIFIED",
+       "NoFalseCIClaim":True
+    }
+    for key,value in required.items():
+        if owner.get(key)!=value:
+            blockers.append("Owner academic scope contract invalid: "+key)
+    pdfs=owner.get("SelectedLocalSourceSha256",{})
+    names={
+        **{i:"01_compressed.pdf" for i in range(1,7)},
+        **{i:"02_compressed.pdf" for i in range(7,11)},
+        **{i:"03_compressed.pdf" for i in range(11,15)}
+    }
+    pack=read(PACK)
+    selected=0
+    for i,lesson in enumerate(pack.get("Lessons",[]),1):
+        code=lesson.get("LessonCode","")
+        try:unit=int(code.split(":")[-2])
+        except (ValueError,IndexError):
+            blockers.append(f"Lesson {i} has unparseable Unit Code");continue
+        expected=pdfs.get(names.get(unit))
+        if not expected or lesson.get("SourceSha256","").upper()!=expected.upper():
+            blockers.append(f"Lesson {i} selected local source SHA mismatch");continue
+        cp=read(ART/f"lesson-{i}-stage-a-c-checkpoint.json")
+        evidence=read(ART/f"lesson-{i}-atomic-coverage.json")
+        for actual in [
+            cp.get("StudentSourceSha256"),cp.get("SourceSha256"),
+            evidence.get("StudentSourceSha256"),
+            evidence.get("SourceStudentSha256"),
+            evidence.get("StudentPdfSha256"),evidence.get("SourceSha256"),
+            evidence.get("sourceSha256")
+        ]:
+            if actual and str(actual).upper()!=expected.upper():
+                blockers.append(f"Lesson {i} conflicting source snapshot SHA")
+        selected+=1
+        ar=next((t for t in lesson.get("Translations",[])
+                 if t.get("CultureCode")=="ar"),{})
+        for value in ar.values():
+            if not isinstance(value,str):continue
+            if any(marker in value.lower() for marker in (
+                 "<img","<iframe","<svg","https://","http://",
+                 "mcgraw","??????","?????? ??????")):
+                blockers.append(f"Lesson {i} student body contains unreviewed third-party link or asset tag")
+    if selected!=109:
+        blockers.append(f"Local source-identity evidence {selected}/109")
+    # Official-current-edition semantic parity and third-party licensing are
+    # explicitly NOT certified; owner acceptance is distinct from those claims.
     return blockers
 
 def final_blockers():
@@ -148,6 +202,29 @@ def final_blockers():
             blockers.append("Four-role authenticated login proof incomplete")
         if len(runtime.get("lessons",[])) != 109:
             blockers.append("Authenticated practice evidence missing registered lessons")
+    for step,filename in (
+        ("structural","grade3-structural-gate.json"),
+        ("source","grade3-handoff-gate.json")):
+        fp=OUT/step/filename
+        if not fp.is_file():
+            blockers.append(f"{step} current-run evidence JSON missing")
+            continue
+        report=read(fp)
+        if report.get("status")!="PASS" or report.get("candidateSha")!=expected_sha:
+            blockers.append(f"{step} evidence not green for checked SHA")
+    import xml.etree.ElementTree as ET
+    for filename in ("uae-g3-math.trx","g1-g2-us-regressions.trx"):
+        fp=OUT/"trx"/filename
+        if not fp.is_file():
+            blockers.append("Current-run TRX unavailable: "+filename)
+            continue
+        try:
+            xml=ET.parse(fp).getroot()
+            counters=next((x for x in xml.iter() if x.tag.endswith("Counters")),None)
+            if counters is None or int(counters.get("total",0))<1 or int(counters.get("failed",1))!=0:
+                blockers.append("TRX does not contain actual all-passing tests: "+filename)
+        except Exception:
+            blockers.append("TRX cannot be parsed: "+filename)
     if not browser_path.is_file():
         blockers.append("Missing Chromium desktop/mobile authenticated RTL evidence")
     else:
@@ -158,7 +235,6 @@ def final_blockers():
             blockers.append("Chromium artifact SHA does not match CI checkout SHA")
         if browser.get("screenshotsWritten", 0) < 8:
             blockers.append("Chromium screenshot sample evidence missing")
-    blockers.append("No documented final source/rights gate, main merge SHA or Render production UAT")
     return blockers
 
 def main():
@@ -177,6 +253,9 @@ def main():
         testedRefKind=os.environ.get("GITHUB_REF_TYPE", "local_branch"),
         sourceSnapshotId="UNKNOWN_MULTI_VOLUME_PARTIAL_HANDOFF",
         targetEditionParity="UNKNOWN",
+        academicReleaseScope="OWNER_APPROVED_LIMITED_FIRST_PARTY_SCOPE",
+        sourceParityIsNotReleaseClaim=True,
+        releaseVerification="PRE_MERGE_CI_CANDIDATE_ONLY",
         unitCount=checks["units"], lessonCount=checks["lessons"],
         checks=checks, blockerCount=len(blockers),
         blockers=blockers, warnings=warnings,

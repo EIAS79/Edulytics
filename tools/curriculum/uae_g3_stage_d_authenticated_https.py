@@ -90,10 +90,10 @@ def check_school_adoption():
       WHERE u."Email"='""" + STUDENT + """' AND s."SchoolCode"='""" + SCHOOL + """';
     """
     adoption, level, key, culture = one(q, "Grade3 Arabic student adoption").split("|", 3)
-    if not re.fullmatch(UUID, adoption) or level != "2" or culture != "ar":
+    if not re.fullmatch(UUID, adoption) or level != "3" or culture != "ar":
         raise AssertionError(f"UAE G3 adoption/culture mismatch: {level}/{culture}")
-    if "UAE" not in key.upper() and "2" not in key:
-        raise AssertionError("UAE G3 adoption key not UAE level 1")
+    if "UAE" not in key.upper() and "3" not in key:
+        raise AssertionError("UAE G3 adoption key not UAE Grade 3")
     return adoption, key
 
 

@@ -113,6 +113,21 @@ jobs:
         with:
           name: uae-g3-stage-d-browser-rtl-${{ github.run_id }}
           path: artifacts/uae-g3-stage-d/browser/
+      - name: Retrieve current-run structural source identity artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: g3-stage-d-structural-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/structural/
+      - name: Retrieve current-run selected local-source proof
+        uses: actions/download-artifact@v4
+        with:
+          name: g3-stage-d-source-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/source/
+      - name: Retrieve current-run .NET test result artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: g3-stage-d-dotnet-${{ github.run_id }}
+          path: artifacts/uae-g3-stage-d/trx/
       - name: Evaluate dependency status and actual evidence artifacts
         env:
           STRUCTURAL_JOB_RESULT: ${{ needs.structural.result }}
