@@ -7714,6 +7714,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u12.l06.number_sense_pattern"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_741_746_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:01","geometry.foundations.point_line_ray",
+            "POINT_LINE_SEGMENT_RAY_ENDPOINTS",
+            ["uae.g3.u13.l01.line_point_ray"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_763_768_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

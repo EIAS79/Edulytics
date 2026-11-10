@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l06",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u13-l01",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 12 through lesson 6, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 13 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3857,23 +3857,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:13:01",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 13 / Lesson 1; official Arabic title: النقطة والمستقيم والقطعة المستقيمة والشعاع",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 13 L1; printed pp.763-768; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U13:L01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 13 / Lesson 1",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.763-768; PDF pp.146-151",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "b1d62d817a92ff15eb1b5fbbc8c8dafe7b878ad2b88701ef154864f85ab79bc6",
+      "SourceEdition": "Local Arabic Volume 3 scanned pages, printed edition and target 2026-2027 parity not certified",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "1edd5b31a3b4150f844b56254473d59397067413386729a6ff8035bcae69be95",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U13_L01_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3884,6 +3884,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Point, Line, Line Segment, and Ray: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "النقطة والمستقيم والقطعة المستقيمة والشعاع",
+          "Explanation": "هدف التعلم: أميز النقطة والخط المستقيم والقطعة المستقيمة والشعاع وأصف النهايات والامتدادات بالأشكال والرموز. ارسم نقطتين أ وب، صلهما بقطعة، ثم مدد الخط من الطرفين لتمثيل مستقيم، أو من أ عبر ب لتمثيل شعاع.",
+          "KeyConceptsAndRules": "النقطة موقع محدد، والمستقيم يمتد في اتجاهين دون نهاية، والقطعة المستقيمة لها نقطتا نهاية، والشعاع يبدأ بنقطة ويمتد باتجاه واحد.",
+          "WorkedExamples": "مثال: قطعة مستقيمة AB لها نقطتا نهاية، بينما الشعاع AB له نقطة البداية A فقط، والمستقيم AB ليس له نهايات.",
+          "StepByStepSolutions": "أحدد هل توجد نقطة أو طرفان أو امتداد سهمي، أرسم النموذج وأعطيه اسمًا صحيحًا.",
+          "CommonMistakes": "لا تسم الشَّعاع قطعة مستقيمة لأنه يمتد في اتجاه واحد، ولا تُطلق على المستقيم اسم نقطة.",
+          "QuickSummary": "نشاط إغلاق: ارسم قطعة مستقيمة ثم شعاعًا من أحد طرفيها، وبيّن عدد نقاط نهاية كل شكل. الإجابة ٢ و١."
         }
       ]
     },
