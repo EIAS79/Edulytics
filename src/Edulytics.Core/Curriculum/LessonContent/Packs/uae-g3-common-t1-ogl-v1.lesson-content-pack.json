@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l03",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u10-l04",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 10 through lesson 3, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 10 through lesson 4, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3083,23 +3083,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:10:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 10 / Lesson 4; official Arabic title: استقصاء حل المسائل: تصميم رسم تخطيطي",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 10 L4; printed pp.581-586; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U10:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 10 / Lesson 4",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.581-586; PDF pp.231-236",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "f06f7d8fe0758d07766c6c318595310684aa0421d97b01638ad8d0fe993b9224",
+      "SourceEdition": "Local Arabic Volume 2 (file PDF metadata 2020-12-21); printed edition unknown, target 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "b41f57712b8a34b0798993dda08dc64848ce28528fbeb1447d6a647689e7d7c5",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U10_L04_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3110,6 +3110,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Draw a Diagram: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: تصميم رسم تخطيطي",
+          "Explanation": "هدف التعلم: أختار رسمًا تخطيطيًا صحيحًا لموقف كسور، وأوضح العلاقة بين عدد الأجزاء والجزء المحدد. رسم شريط مقسم إلى ٨ خانات متساوية وتظليل ٣ خانات لتمثيل ٣/٨.",
+          "KeyConceptsAndRules": "لتمثيل كسر من كل، أقسم الشكل إلى أجزاء متساوية قبل تظليل المطلوب؛ يمكن تمثيل ذلك في جدول أو شريط أجزاء أو دائرة.",
+          "WorkedExamples": "مثال: اشترى تلاميذ ٨ قصص، قرؤوا خمسًا؛ ارسم ثمانية مربعات ولون خمسة، فالكسر المقروء ٥/٨.",
+          "StepByStepSolutions": "أفهم المطلوب، أحدد الكل، أرسم عددًا مناسبًا من الأجزاء المتساوية، أميز الجزء وأتأكد من الكسر الناتج.",
+          "CommonMistakes": "لا تستنتج كسرًا من رسم لا يوضح حجم الكل أو لا يحقق تساوي الأجزاء.",
+          "QuickSummary": "نشاط إغلاق: استخدم رسمًا لتمثيل ٢/٥ من مجموعة ١٠ أزرار، وأوجد العدد الملون ٤. الرسم يراجعه المعلم."
         }
       ]
     },

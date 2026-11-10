@@ -36034,6 +36034,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u10.l04.design_fraction_diagram",
+      "version": 1,
+      "skillId": "number.fraction.problem_diagram",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u10-l04-source-scoped-tests-not-run",
+      "representations": [
+        "fraction_area_model",
+        "fraction_strip",
+        "number_line",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
