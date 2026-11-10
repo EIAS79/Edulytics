@@ -35694,6 +35694,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u08.l05.multiply_nine",
+      "version": 1,
+      "skillId": "number.multiplication.times_nine",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u08-l05-source-scoped-tests-not-run",
+      "representations": [
+        "array",
+        "number_line",
+        "equal_groups",
+        "teacher_rubric"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

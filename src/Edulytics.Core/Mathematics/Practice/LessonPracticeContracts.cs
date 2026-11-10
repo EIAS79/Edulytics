@@ -7504,6 +7504,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u08.l04.multiply_eight"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_443_448_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:08:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:08:05","number.multiplication.times_nine",
+            "TEN_MINUS_ONE_PROPERTY_NINE_GROUPS",
+            ["uae.g3.u08.l05.multiply_nine"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_449_454_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
