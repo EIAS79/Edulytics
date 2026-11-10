@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l05",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u07-l06",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "Grade3 U07 L05 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
+  "ReviewEvidence": "Grade3 U07 L06 Arabic first-party A-B-C based on selected local volume 2. 2026–27 parity UNKNOWN, CI StageD NOT_RUN.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -2051,23 +2051,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:07:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 7 / Lesson 6; official Arabic title: استقصاء حل المسائل: معلومات إضافية أو ناقصة",
+      "TitleSourceReference": "Grade 3 Arabic local student volume 2, U07 Lesson 6, printed pp.391-396",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U07:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 7 / Lesson 6",
+      "SourceLocator": "Grade_03/01_Student_Books/02_compressed.pdf; printed pp.391-396, PDF pp.41-46",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "b0b06e0418cb682e70fa525e6dc739c65181eee2c210850dcac85053d6fcdcf5",
+      "SourceEdition": "LOCAL_ARABIC_VOLUME_2; PDF creation 2020-12-21, printed year unverified; target 2026-2027 UNKNOWN",
+      "SourceRights": "Local text/image used as skill reference only; teaching prose, numerical examples and text visuals independently authored by Edulytics.",
+      "SourceSha256": "63F0488C5371A1C5257884BFF44717509739D186BB9FE6E2CC25C543CE5A3A58",
       "CanonicalBodySha256": "1f6118893c704b5c2acca7d45a5e9235e1772045b4dd505f6f5a3782648fd386",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "EDULYTICS_G3_U07_L06_AR_A_B_C_SOURCE_SCOPED; TARGET_EDITION_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2078,6 +2078,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Problem Solving: Extra or Missing Information: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: معلومات إضافية أو ناقصة",
+          "Explanation": "هدف التعلم: أحدد المطلوب والمعطيات اللازمة لحل المسألة، وأميز المعلومة الزائدة من المعلومة الناقصة قبل اختيار عملية ضرب أو قسمة. مخطط مستقل: المعطيات ← المطلوب ← هل تكفي الأعداد والعلاقة؟ نعم: اكتب عملية مناسبة؛ لا: حدد المعلومة الناقصة؛ ثم راجع الوحدات.",
+          "KeyConceptsAndRules": "أحدد المطلوب والمعطيات اللازمة لحل المسألة، وأميز المعلومة الزائدة من المعلومة الناقصة قبل اختيار عملية ضرب أو قسمة. وأربط كل رمز في المعادلة بمعناه في النموذج؛ لا أكتفي بحفظ الناتج دون تفسير.",
+          "WorkedExamples": "مثال ١: أربع حقائب في كل حقيبة ستة دفاتر، ولون واحدة أحمر؛ اللون زائد، وعدد الدفاتر ٤ × ٦ = ٢٤. مثال ٢: خمس حقائب من الدفاتر دون عدد الدفاتر في الحقيبة؛ لا يمكن إيجاد المجموع قبل معرفة حجم الحقيبة. التمثيل أصلي من Edulytics وليس صورة مقتبسة.",
+          "StepByStepSolutions": "أقرأ السؤال، أضع خطًا تحت المطلوب، أستخرج الأعداد مع وحداتها، أختبر كفاية المعلومات وأهمل الزائد فقط، ثم أشرح لماذا الحساب ممكن أو غير ممكن.",
+          "CommonMistakes": "لا تخترع قيمة للمعلومة الناقصة. لا تدخل معلومة اللون أو الوقت في عملية لا تحتاجها. إذا لم تكف المعطيات فلا تدّعِ إجابة رقمية دقيقة.",
+          "QuickSummary": "أطبق مهارة استقصاء حل المسائل: معلومات إضافية أو ناقصة بأكثر من تمثيل وأفسر النتيجة. نشاط إغلاق: لدى ٣ طاولات وفي كل طاولة ٤ مقاعد، وطول الطاولة متران. كم مقعدًا؟ أي معلومة زائدة؟ الإجابة ١٢ مقعدًا؛ الطول زائد. راجع التفسير شفهيًا."
         }
       ]
     },
