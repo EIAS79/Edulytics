@@ -35455,6 +35455,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g3.u07.l01.multiply_by_three",
+      "version": 1,
+      "skillId": "number.multiplication.times_three",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g3-u07-l01-local-student-volume2-stage-d-not-run",
+      "representations": [
+        "equal_groups",
+        "number_line",
+        "array"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
