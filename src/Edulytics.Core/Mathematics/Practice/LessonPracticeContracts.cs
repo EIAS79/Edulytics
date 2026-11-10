@@ -7726,6 +7726,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u13.l02.angle_types"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_769_774_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L3:COMMON:13:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L3:COMMON:13:03","geometry.polygons.sides_vertices",
+            "CLOSED_STRAIGHT_LINE_SHAPES_COUNT_SIDES",
+            ["uae.g3.u13.l03.polygons"],
+            "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_775_780_STAGED_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
