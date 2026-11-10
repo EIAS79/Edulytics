@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l01",
+  "ContentVersion": "uae-g3-common-ar-a-b-c-u12-l02",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": true,
   "TargetCurriculumPeriod": "2026-2027 (target; local selected source 2025-2026)",
@@ -25,7 +25,7 @@
   "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
   "Status": "Published",
   "ReviewedBy": "Edulytics Phase 29 deterministic curriculum review",
-  "ReviewEvidence": "G3 Unit 12 through lesson 1, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
+  "ReviewEvidence": "G3 Unit 12 through lesson 2, local source scoped, StageD CI NOT_RUN, 2026-2027 parity unverified.",
   "Lessons": [
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:01:01",
@@ -3642,23 +3642,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L3:COMMON:12:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 3 Student Edition / Unit 12 / Lesson 2; official Arabic title: التمثيلات البيانية بالصور ذي المقياس",
+      "TitleSourceReference": "Local student Arabic volume 2 Unit 12 L2; printed pp.715-720; source target edition unknown",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G3:COMMON:ANNUAL:U12:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 3 Common / Annual / Unit 12 / Lesson 2",
+      "SourceLocator": "Grade_03/01_Student_Books/03_compressed.pdf; printed pp.715-720; PDF pp.98-103",
       "SourceTitle": "UAE Grade 3 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
-      "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "357a2e1d84747cb74b2b1f9c5ff71a836fc780cffb64423a4585bbf8ffc3a005",
+      "SourceEdition": "Local Arabic Grade3 volume3 (visually read, OCR degraded), printed year unverified; 2026-2027 parity unknown",
+      "SourceRights": "Original authored explanations and practice; source pages used only to map mathematical skills, not copied or distributed.",
+      "SourceSha256": "81B05FCA887D8F28DFDCD02553A557268C3B20AD4C6C5E3595489C59A9821638",
       "CanonicalBodySha256": "1e7aad7f031ca35d68c7cbf07abd0743de79e1fbebb16b89ae65c70db28b5ece",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "G3_U12_L02_ARABIC_A_B_C_SOURCE_SCOPED; TARGET_PARITY_UNKNOWN; STAGE_D_NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3669,6 +3669,16 @@
           "StepByStepSolutions": "Step 1: Identify the information. Step 2: Choose a model or operation. Step 3: Solve carefully. Step 4: Explain the answer. Step 5: Check it another way.",
           "CommonMistakes": "Do not skip place-value, regrouping, unit, fraction, graph, or shape details that change the result.",
           "QuickSummary": "Scaled Picture Graphs: model it, solve it, explain it, and check it."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التمثيلات البيانية المصورة ذات المقياس",
+          "Explanation": "هدف التعلم: أقرأ التمثيل البياني بالصور المصحوب بمفتاح مقياس وأحدد قيمة كل رمز والفرق بين الفئات. ثلاث صور لحقيبة، المفتاح: كل صورة تعني حقيبتين؛ الكمية ٣ × ٢ = ٦ حقائب.",
+          "KeyConceptsAndRules": "في التمثيل المصور قد يساوي الرمز الواحد أكثر من عنصر، مثل ٢ أو ٥ أو ١٠، لذا أضرب عدد الرموز في قيمة الرمز وفق المفتاح.",
+          "WorkedExamples": "مثال: توجد خمس صور نجوم، كل نجمة = ٤ تلاميذ؛ العدد ٢٠ تلميذًا، وليس خمسة.",
+          "StepByStepSolutions": "أقرأ عنوان الرسم ومفتاحه والفئات، أعد الرموز، أضرب في المقياس وأجيب مع وحدة العناصر.",
+          "CommonMistakes": "لا تعدّ الرموز فقط عندما يمثل كل رمز عدة أشياء؛ ولا تخلط الصورة الجزئية بالصورة الكاملة.",
+          "QuickSummary": "نشاط إغلاق: أربعة رموز، كل رمز = ٥ كتب؛ كم كتابًا؟ ٢٠ كتابًا مع شرح قيمة المفتاح."
         }
       ]
     },
