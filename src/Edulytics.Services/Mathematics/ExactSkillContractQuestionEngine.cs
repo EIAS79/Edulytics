@@ -299,6 +299,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson03MentalQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -664,6 +665,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson02PatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(family))
             return UaeGrade4Unit2Lesson03MentalQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson04EstimateQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3754,6 +3757,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(family))
         {
             var q = UaeGrade4Unit2Lesson03MentalQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson04EstimateQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -7887,6 +7895,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson02PatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(problem.Family))
             return UaeGrade4Unit2Lesson03MentalQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson04EstimateQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))
