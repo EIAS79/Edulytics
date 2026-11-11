@@ -7378,6 +7378,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l07.is_factor", "uae.g4.u03.l07.nth_multiple", "uae.g4.u03.l07.factor_pair"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP173_178_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:08", "number.reasonableness_estimation",
+            "EVALUATE_ESTIMATES_AND_FEASIBILITY",
+            ["uae.g4.u03.l08.sum_estimate", "uae.g4.u03.l08.savings_feasible", "uae.g4.u03.l08.travel_feasible"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP179_184_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
