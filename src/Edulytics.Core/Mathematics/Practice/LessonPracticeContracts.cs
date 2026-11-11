@@ -7269,6 +7269,13 @@ public static class LessonPracticeContractRegistry
              "uae.g4.u01.l06.find_remaining"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP43_48_TEACHER_REVIEW_OPEN_EXPLANATION_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:02:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:02:01",
+            "number.properties.addition_and_subtraction",
+            "COMMUTATIVE_ASSOCIATIVE_IDENTITY_SUBTRACTION_RULES",
+            ["uae.g4.u02.l01.commutative_add", "uae.g4.u02.l01.associative_add", "uae.g4.u02.l01.additive_identity", "uae.g4.u02.l01.subtract_zero", "uae.g4.u02.l01.subtract_self"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP61_66_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
