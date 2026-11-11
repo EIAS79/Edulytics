@@ -7470,6 +7470,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u05.l02.estimate_two_digit_product", "uae.g4.u05.l02.estimate_above_or_below"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP285_290_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:05:03", "number.area_distributive_two_digit",
+            "AREA_MODEL_DISTRIBUTIVE_TWO_DIGIT",
+            ["uae.g4.u05.l03.area_two_digit_product", "uae.g4.u05.l03.area_tens_partial", "uae.g4.u05.l03.area_ones_partial"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP293_298_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
