@@ -39467,6 +39467,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l02.sum_numerator",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l02-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "fraction_strip"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l02.simplified_sum_numerator",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l02-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "fraction_strip"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l02.simplified_sum_denominator",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l02-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "fraction_strip"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
