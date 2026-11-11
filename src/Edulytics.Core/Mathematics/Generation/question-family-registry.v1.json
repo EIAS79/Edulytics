@@ -40398,6 +40398,46 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l04.base_ten_sum",
+      "version": 1,
+      "skillId": "decimals.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u11-l04-abc-stage-d-not-run",
+      "representations": [
+        "base_ten_blocks",
+        "decimal_grid",
+        "place_value",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l04.regroup_unit",
+      "version": 1,
+      "skillId": "decimals.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u11-l04-abc-stage-d-not-run",
+      "representations": [
+        "base_ten_blocks",
+        "decimal_grid",
+        "place_value",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

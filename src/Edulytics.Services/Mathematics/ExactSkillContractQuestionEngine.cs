@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit11EstimationQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit11DecimalRoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10MoneyQuestions.Supports(family.Trim()) ||
@@ -761,6 +762,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family))
+            return UaeGrade4Unit11DecimalArithmeticQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit11EstimationQuestions.Supports(family))
             return UaeGrade4Unit11EstimationQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit11DecimalRoundingQuestions.Supports(family))
@@ -4024,6 +4027,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit11DecimalArithmeticQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit11EstimationQuestions.Supports(family))
         {
@@ -8355,6 +8363,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(problem.Family))
+            return UaeGrade4Unit11DecimalArithmeticQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit11EstimationQuestions.Supports(problem.Family))
             return UaeGrade4Unit11EstimationQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit11DecimalRoundingQuestions.Supports(problem.Family))
