@@ -39562,6 +39562,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l04.difference_numerator",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l04-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "simplified_difference"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l04.reduced_difference_numerator",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l04-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "simplified_difference"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l04.reduced_difference_denominator",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l04-abc-stage-d-not-run",
+      "representations": [
+        "fraction",
+        "number_line",
+        "simplified_difference"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
