@@ -7372,6 +7372,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l06.triple_product", "uae.g4.u03.l06.missing_factor", "uae.g4.u03.l06.grouped_product"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP167_172_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:07", "number.factors_and_multiples",
+            "FACTOR_PAIRS_AND_WHOLE_NUMBER_MULTIPLES",
+            ["uae.g4.u03.l07.is_factor", "uae.g4.u03.l07.nth_multiple", "uae.g4.u03.l07.factor_pair"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP173_178_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
