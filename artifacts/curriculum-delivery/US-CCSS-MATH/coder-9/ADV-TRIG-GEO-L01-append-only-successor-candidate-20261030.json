@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "kind": "COURSE_OWNED_L01_APPEND_ONLY_SUCCESSOR_CANDIDATE_NOT_APPROVAL",
+  "reviewRequestedAtUtc": "2026-10-30T13:07:43.867Z",
+  "courseCode": "ADV-TRIG-GEO",
+  "unitCode": "U01",
+  "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+  "source": "MVP Secondary Mathematics III task 7.5, original publisher student/teacher pages 50-53 on Our-CS",
+  "verifiedSourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+  "candidateGitContentSha": "26f2caad139f0be6785ef9d2d51ff3f1201a2bac",
+  "candidatePackBlobSha": "f833fb790d640e930996db4897982ebc5b257fc5",
+  "candidateBodyShaAlgorithm": "SHA256(UTF8 join with newline: title:<title>,explanation:<text>,keyConceptsAndRules:<text>,workedExamples:<text>,stepByStepSolutions:<text>,commonMistakes:<text>,quickSummary:<text>)",
+  "candidateBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
+  "candidateEnglishTranslationJsonSha256": "f1494a58ad52d3c97c7d4db4b4f73aa75a4564ab406fd32850c8529fdd451aed",
+  "candidateFieldSha256": {
+    "title": "2abfecff1d81cf32d48830a9e872a58cbc4c7eddf8c402bcad156db0c0e0af10",
+    "explanation": "30017fe45aa609b1df438b708ff823d77d543e2ef7859cd03d0c2a59e817046f",
+    "keyConceptsAndRules": "aab92af72bfee69059f3b2cb2820ade1c1566a44de79d7618feffd51e15ace48",
+    "workedExamples": "5d3e70366181f009d59a4c233e196618f084ed7499b35e7e21bdb85ce3a6e32c",
+    "stepByStepSolutions": "0553730f56f9a5f6d625699d9865f6d103e8cead0a772787793f5b4cc63c08c4",
+    "commonMistakes": "344dce3310fb4448f5b30c5d545578a9cf0e05e0946db8fd2037b7c011fb0067",
+    "quickSummary": "d871c4c244f23bfed7614d7912648b09bc6457aded184668c07c4dbf465af779"
+  },
+  "retainedHistoricalCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+  "retainedHistoricalContentVersion": "phase30-common-core-rich-content-v1",
+  "approvedSuccessorVersion": null,
+  "approvedPredecessor": null,
+  "independentReviewer": null,
+  "independentAcademicVerdict": "PENDING",
+  "versionOwnerVerdict": "PENDING",
+  "academicTaskAgreement": "MATHEMATICS_REPAIRED_SOURCE_VISUAL_EQUIVALENCE_PENDING",
+  "practiceCandidate": {
+    "courseOnlyCode": "src/Edulytics.Core/Mathematics/Practice/UsCcssHsAdvTrigGeoU01L01PracticeCandidate.cs",
+    "candidateFixtureTest": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests.cs",
+    "sourceFamily": "trig.unit_circle_reflection_exact",
+    "existingKernelOnReadOnlyPR600": "trig.unit_circle_source_exact_angles",
+    "sourceCaseIds": [
+      "l01-reflection-cos",
+      "l01-rotation-sin",
+      "l01-fullturn-cos",
+      "l01-tangent-pole"
+    ],
+    "scorableCandidates": 3,
+    "negativeDomainCases": 1,
+    "studentRoute": "PENDING_DENY",
+    "automaticProofScoring": false,
+    "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+    "decimalApproximationAllowed": false,
+    "collisionWithReadOnlyPr600": "CURRENT_SHARED_VERIFIER_DECIMAL_TOLERANCE_MUST_BE_SCOPED_GUARDED_BEFORE_STUDENT_ROUTING",
+    "policyOwner": "Coder9 within own files; central verifier/routing only after Supervisor3 grants exclusive file-specific lease",
+    "sourceCodeSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+    "courseOnlyFixturesUpdated": true,
+    "positiveAndNegativeTests": "AUTHORED_NOT_RUN",
+    "gradeAndPersistedAttempts": "NOT_RUN_STAGE_D"
+  },
+  "parityFailure": {
+    "validator": "tools/phase29/verify_main_content_parity.py",
+    "failingWorkflows": [
+      "V2 Original Curriculum and JSON Parity",
+      "V2 Phase 2-3-6-8-11-12 Acceptance",
+      "Neon Clean Rebuild - Offline Content Inventory",
+      "US CCSS Authenticated Academic Acceptance"
+    ],
+    "actualCauseWithinCourse": "The main-branch original body has changed in U01 L01-L05 without a signed scoped successor; source body hashes were deliberately retained as historical records.",
+    "allowedEightLessonManifest": "docs/curriculum/us-ccss-verified-body-repairs.v1.json",
+    "allowedSevenCandidateManifest": "docs/curriculum/us-ccss-phase04-hs-content-repair-pilot.json",
+    "courseL01ListedInNeither": true,
+    "guardBypassPermitted": false,
+    "requiredRemediation": "Owner-approved append-only successor and scoped baseline-to-new-body validation; do not change central parity validator without authorized exclusive lease."
+  },
+  "externalBlockers": [
+    {
+      "code": "A_SOURCE_ACCEPTANCE",
+      "owner": "Supervisor 3 or separate independent authorized reviewer",
+      "status": "PENDING",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-source-task-acceptance-packet-20261030.md"
+    },
+    {
+      "code": "B_AUTHORIZE_PREDECESSOR_SUCCESSOR",
+      "owner": "Authorized curriculum content version owner",
+      "status": "PENDING",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-append-only-successor-candidate-20261030.json"
+    },
+    {
+      "code": "C_CENTRAL_ROUTE_LEASE",
+      "owner": "Supervisor 3 grants an exact Coder9 lease only after Coder8 and Coder7 release and PR conflict verification",
+      "status": "NOT_GRANTED_WAIT_CODER8_THEN_CODER7_RELEASE",
+      "requiresFiles": [
+        "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+        "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+      ]
+    },
+    {
+      "code": "C_DECIMAL_POLICY_MISMATCH",
+      "owner": "Coder 9 on leased integration files",
+      "status": "POLICY_RECONCILED_IN_COURSE_ONLY_CODE_RUNTIME_CONFLICT_OPEN",
+      "note": "Exact-only is chosen. Both L01 fixture manifests and candidate adapter now disallow decimals. PR #600 shared engine tolerance differs; route remains blocked until a leased scoped verifier honors exact-only."
+    }
+  ],
+  "gates": {
+    "A_CLOSED": false,
+    "B_CLOSED": false,
+    "C_PREPARED": true,
+    "C_CLOSED": false,
+    "READY_FOR_STAGE_D": false,
+    "UNIT_ABC_CLOSED": false
+  },
+  "newAutomatedTests": "NOT_RUN_PER_SUP3_V4_ACADEMIC_VERSION_ORDER",
+  "priorNodeEvidence": {
+    "sha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+    "status": "PASS_10_OF_10_SOURCE_ONLY"
+  },
+  "lastCoder9SubmissionAtUtc": "2026-10-30T13:42:53.864Z",
+  "courseCandidateCodeCommit": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+  "sourceOriginalMainBlobSha": "a89c8e4bf717d2cde90b9d7846a9331d095bfc6e",
+  "currentCandidatePackBlobSha": "f833fb790d640e930996db4897982ebc5b257fc5",
+  "preciseBodyLineage": {
+    "originRef": "main",
+    "originalContentPackBlobSha": "a89c8e4bf717d2cde90b9d7846a9331d095bfc6e",
+    "candidateContentPackBlobSha": "f833fb790d640e930996db4897982ebc5b257fc5",
+    "previousCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+    "proposedSuccessorCanonicalBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
+    "sourceSha256Unchanged": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+    "englishTranslationJsonSha256": "f1494a58ad52d3c97c7d4db4b4f73aa75a4564ab406fd32850c8529fdd451aed",
+    "fieldDigestsPreserved": true,
+    "historicalStoredContentVersion": "phase30-common-core-rich-content-v1",
+    "requestedSuccessorVersion": "PENDING_VERSION_OWNER_SELECTION",
+    "predecessorApproval": "PENDING",
+    "newCanonicalDigestFieldMutation": "PROHIBITED_BEFORE_VERSION_OWNER_APPROVAL",
+    "parityValidatorMutation": "NOT_REQUESTED_WITHOUT_AUTHORIZED_INDEPENDENT_SAFETY_REVIEW"
+  },
+  "independentSourceScopeReview": {
+    "reviewerRole": "Supervisor 3",
+    "reviewDescription": "Independent reread original MVP 7.5 student/teacher pp. 50-53 and report content-scope correspondence; V4 order.",
+    "scopeReviewStatus": "SOURCE_SCOPE_REVIEWED_NOT_RENDERED_EQUIVALENCE_ACCEPTANCE",
+    "academicDecision": "PENDING",
+    "namedAcademicReviewer": null,
+    "independentlyAcceptedCandidateSha": null,
+    "signedAtUtc": null,
+    "pendingVisualCriteria": [
+      "Actual student renderer shows or accessibly replaces the right-triangle cofunction model for acute angles",
+      "Generic four-quadrant unit-circle coordinate reflection diagram or verified accessible nonvisual alternative",
+      "All six pi-x/pi+x/2pi-x graph comparisons supplied as actual graphical evidence or approved accessible data representation, distinct from a proof",
+      "Tangent quotient algebra includes exact cos(theta)!=0 domain and undefined poles; not a numerical-only explanation",
+      "6-point teacher reasoning rubric usable for arbitrary-angle proof rather than numeric matching",
+      "Check graphic rights, exact learner-visible rendering and accessibility for third-party publisher figures"
+    ]
+  }
+}

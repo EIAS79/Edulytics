@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "kind": "CODER_9_PROPOSED_PRACTICE_CONTRACT_FIXTURES_NOT_REGISTERED",
+  "courseCode": "ADV-TRIG-GEO",
+  "pathway": "Fourth Courses",
+  "targetEdition": "CCSSM-2010",
+  "runtimeMappingExists": false,
+  "integratorOnlyPaths": [
+    "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+  ],
+  "courseAdoptionIssue": 453,
+  "practiceIntegrationIssue": 587,
+  "notes": [
+    "Fixtures specify proposed expected behavior and do not prove that any live question generator exists.",
+    "A representative fixed numeric case is NOT question diversity. Global owner must implement parameterized families and diverse generated questions with validity checks.",
+    "A symbolic or numeric response is not automatic proof of a mathematical construction; explanatory reasoning requires rubric/human review.",
+    "Trig inputs must declare radians/degrees; validate restrictions and undefined tangent.",
+    "Malformed and excluded-domain inputs fail closed without scoring, cross-course leakage, or persisted fake attempts."
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+      "standard": [
+        "CCSS:HSF-TF.A.3",
+        "CCSS:HSF-TF.A.4"
+      ],
+      "sourceTask": "7.5 Maintaining Your Identity",
+      "mechanic": "trig.unit_circle_reflection_exact",
+      "generatorParameters": {
+        "thetaRadians": "pi/6",
+        "function": "cos",
+        "transformation": "pi-theta",
+        "angleMode": "radians"
+      },
+      "prompt": "Evaluate cos(pi - pi/6) exactly using the unit circle.",
+      "expected": {
+        "type": "exact_symbolic",
+        "canonical": "-sqrt(3)/2",
+        "numeric": -0.8660254037844386,
+        "independentOracleTolerance": 1e-9,
+        "tolerancePurpose": "INDEPENDENT_MATH_ORACLE_ONLY_NEVER_STUDENT_DECIMAL_ACCEPTANCE"
+      },
+      "accepted": [
+        "-sqrt(3)/2",
+        "-sqrt(12)/4",
+          "-sqrt(27)/6",
+          "-3/sqrt(12)"
+      ],
+      "incorrect": [
+        "sqrt(3)/2",
+        "-1/2"
+      ],
+      "malformed": [
+        "cos(",
+        "banana",
+        "<script>",
+        "NaN",
+        "Infinity"
+      ],
+      "excluded": [
+        {
+          "input": "tan(pi/2)",
+          "reason": "undefined tangent because cosine is zero"
+        }
+      ],
+      "humanRubric": "When asked to prove a reflection identity, grade the reflected unit-circle coordinates and domain qualifications; a numeric-only answer is not a proof.",
+      "rejectedDecimal": [
+        "-0.8660254037844386",
+        "-0.866",
+        "-8.660254037844386e-1"
+      ],
+      "policy": {
+        "answerMode": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalAcceptance": false,
+        "status": "PENDING_SELECTED_RUNTIME_VERIFIER",
+        "standaloneReviewerClassifier": true,
+        "studentRoute": false,
+        "positiveExactExamples": [
+          "-sqrt(3)/2",
+          "-sqrt(12)/4",
+          "-sqrt(27)/6",
+          "-3/sqrt(12)"
+        ],
+        "negativeWrongSignExamples": [
+          "sqrt(3)/2",
+          "-1/2"
+        ],
+        "negativeMalformedExamples": [
+          "cos(",
+          "banana",
+          "<script>",
+          "NaN",
+          "Infinity"
+        ],
+        "tanPole": "OUT_OF_DOMAIN_AND_NOT_SCORABLE",
+        "humanRubric": "HUMAN_REQUIRED_6_POINTS_NO_AUTOMATED_PROOF_CREDIT",
+        "collision": "Read-only PR #600 shared exact-angle verifier accepts finite near-equal decimals; C9's exact-only acceptance must be enforced in actual leased routing before C_CLOSED."
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+      "standard": [
+        "CCSS:HSF-TF.B.6"
+      ],
+      "sourceTask": "7.8H The Amazing Inverse Trig Function Race",
+      "mechanic": "trig.principal_inverse",
+      "generatorParameters": {
+        "function": "arcsin",
+        "argument": "sin(5*pi/6)",
+        "angleMode": "radians",
+        "principalRange": "[-pi/2,pi/2]"
+      },
+      "prompt": "Evaluate arcsin(sin(5*pi/6)) in radians.",
+      "expected": {
+        "type": "principal_radian",
+        "canonical": "pi/6",
+        "numeric": 0.5235987755982988,
+        "tolerance": 1e-9
+      },
+      "accepted": [
+        "pi/6",
+        "0.5235987755982988"
+      ],
+      "incorrect": [
+        "5*pi/6",
+        "-pi/6"
+      ],
+      "malformed": [
+        "arcsin(",
+        "not an angle"
+      ],
+      "excluded": [
+        {
+          "input": "arcsin(1.2)",
+          "reason": "outside real arcsine domain [-1,1]"
+        },
+        {
+          "input": "pi/2",
+          "reason": "incorrect answer to this instance though belongs to principal range"
+        }
+      ],
+      "humanRubric": "Require an explanation that global sine is non-injective and that principal arcsine range is restricted."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+      "standard": [
+        "CCSS:HSF-TF.B.7"
+      ],
+      "sourceTask": "7.6 Hidden Identities",
+      "mechanic": "trig.model_all_time_solutions",
+      "generatorParameters": {
+        "model": "S(t)=10+4*sin(pi*t/6)",
+        "target": 12,
+        "intervalSeconds": "[0,12)",
+        "angleMode": "radians"
+      },
+      "prompt": "A signal obeys S(t)=10+4*sin(pi*t/6) for 0<=t<12 seconds. List all times S(t)=12.",
+      "expected": {
+        "type": "unordered_set_with_units",
+        "canonical": [
+          1,
+          5
+        ],
+        "units": "seconds",
+        "tolerance": 1e-9
+      },
+      "accepted": [
+        "1, 5",
+        "{5,1}",
+        "t=1 s and t=5 s"
+      ],
+      "incorrect": [
+        "1",
+        "5,13",
+        "pi/6,5*pi/6"
+      ],
+      "malformed": [
+        "soon",
+        "t=?+"
+      ],
+      "excluded": [
+        {
+          "input": "13",
+          "reason": "outside [0,12) even though periodic extension repeats"
+        }
+      ],
+      "humanRubric": "Full credit requires both times, verified inverse-reference-angle reasoning, interpretation as seconds and an observed graphing/technology check; independent model is not claimed as original MVP task."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+      "standard": [
+        "CCSS:HSG-GMD.A.2"
+      ],
+      "sourceTask": "7.12 Cavalieri to the Rescue",
+      "mechanic": "solid_geometry.cavalieri_sphere_volume",
+      "generatorParameters": {
+        "sphereRadius": 3,
+        "unit": "cm",
+        "crossSectionVariable": "z",
+        "heightInterval": "[0,3]"
+      },
+      "prompt": "Give the exact volume of a sphere of radius 3 cm using the Cavalieri hemisphere/cylinder-minus-cone comparison.",
+      "expected": {
+        "type": "volume_exact",
+        "canonical": "36*pi",
+        "units": "cm^3",
+        "numeric": 113.09733552923255,
+        "tolerance": 1e-8
+      },
+      "accepted": [
+        "36*pi cm^3",
+        "113.09733552923255 cm^3"
+      ],
+      "incorrect": [
+        "9*pi",
+        "18*pi",
+        "36*pi cm^2"
+      ],
+      "malformed": [
+        "sphere-ish",
+        "36//pi"
+      ],
+      "excluded": [
+        {
+          "input": "A(0)=9*pi alone",
+          "reason": "matching one cross-section is not a proof of equal volumes"
+        }
+      ],
+      "humanRubric": "Require equality A_hemisphere(z)=pi*(9-z^2)=A_cylinder-minus-cone(z) for every 0<=z<=3 and correct doubled-volume argument; numeric grading cannot replace the explanation."
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+      "standard": [
+        "CCSS:HSG-GPE.A.3"
+      ],
+      "sourceTask": "6.10H Operating on a Shoestring; 6.11H What Happens If ...? separate source coverage",
+      "mechanic": "coordinates.focal_distance_conics",
+      "generatorParameters": {
+        "kind": "ellipse",
+        "foci": [
+          [
+            -3,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "sumDistances": 10
+      },
+      "prompt": "Derive the ellipse equation with foci (-3,0), (3,0), where the sum of distances is 10.",
+      "expected": {
+        "type": "equivalent_equation",
+        "canonical": "x^2/25+y^2/16=1",
+        "a": 5,
+        "bSquared": 16,
+        "c": 3
+      },
+      "accepted": [
+        "16*x^2+25*y^2=400",
+        "x^2/25+y^2/16=1"
+      ],
+      "incorrect": [
+        "x^2/16+y^2/25=1",
+        "x^2/25-y^2/16=1"
+      ],
+      "malformed": [
+        "x^2/",
+        "E=mc^2"
+      ],
+      "excluded": [
+        {
+          "input": "a=2,c=3",
+          "reason": "ellipse requires a>c; total path length cannot be less than focal separation"
+        }
+      ],
+      "additionalCases": [
+        {
+          "kind": "hyperbola",
+          "foci": [
+            [
+              -5,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "absoluteDifference": 6,
+          "expected": "x^2/9-y^2/16=1",
+          "accepted": [
+            "16*x^2-9*y^2=144"
+          ],
+          "incorrect": [
+            "x^2/9+y^2/16=1"
+          ],
+          "excluded": "difference 12 exceeds focal separation 10"
+        }
+      ],
+      "humanRubric": "Symbolic simplification and distance-formula derivation require structural equivalence and no extraneous roots. Hyperbola component is an Edulytiks original extension to satisfy HSG-GPE.A.3, NOT publisher 6.10H equivalence."
+    }
+  ]
+}
