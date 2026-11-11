@@ -47,6 +47,51 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         if (documents.Count == 0)
             return;
 
+        // The UAE official rebuild intentionally retired earlier pedagogical
+        // projections while their embedded historical content packs remain in
+        // source control for auditability. Do not re-seed a UAE document unless
+        // every LessonCode still belongs to the accepted pedagogical graph.
+        // Other curricula remain fail-closed in SeedOneAsync.
+        var uaeDocuments =
+            documents
+                .Where(document =>
+                    document.PackCode ==
+                        MathematicsCurriculumPackRegistry.UaeCode)
+                .ToArray();
+
+        if (uaeDocuments.Length != 0)
+        {
+            var uaeCodes =
+                uaeDocuments
+                    .SelectMany(document =>
+                        document.Lessons.Select(lesson => lesson.LessonCode))
+                    .Distinct(StringComparer.Ordinal)
+                    .ToArray();
+
+            var acceptedUaeCodes =
+                await _db.CurriculumPedagogicalLessons
+                    .AsNoTracking()
+                    .Where(lesson => uaeCodes.Contains(lesson.Code))
+                    .Select(lesson => lesson.Code)
+                    .Distinct()
+                    .ToArrayAsync(ct);
+
+            var acceptedUaeCodeSet =
+                acceptedUaeCodes.ToHashSet(StringComparer.Ordinal);
+
+            documents =
+                documents
+                    .Where(document =>
+                        document.PackCode !=
+                            MathematicsCurriculumPackRegistry.UaeCode ||
+                        document.Lessons.All(lesson =>
+                            acceptedUaeCodeSet.Contains(lesson.LessonCode)))
+                    .ToArray();
+        }
+
+        if (documents.Count == 0)
+            return;
+
         await SeedDocumentsAsync(documents, ct);
     }
 
