@@ -39961,6 +39961,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l03.hundredths_decimal",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u10-l03-abc-stage-d-not-run",
+      "representations": [
+        "hundred_grid",
+        "decimal_fraction",
+        "money_fils"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l03.hundredths_fraction_numerator",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l03-abc-stage-d-not-run",
+      "representations": [
+        "hundred_grid",
+        "decimal_fraction",
+        "money_fils"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
