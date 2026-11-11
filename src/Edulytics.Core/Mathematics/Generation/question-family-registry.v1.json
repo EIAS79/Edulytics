@@ -38848,6 +38848,24 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u06.l11.weeks_to_save_target",
+      "version": 1,
+      "skillId": "number.multistep_word_problems_with_division",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u06-l11-source-stage-d-not-run",
+      "representations": [
+        "equation",
+        "word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
