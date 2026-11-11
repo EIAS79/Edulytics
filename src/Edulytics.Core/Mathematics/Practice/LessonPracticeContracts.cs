@@ -7476,6 +7476,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u05.l03.area_two_digit_product", "uae.g4.u05.l03.area_tens_partial", "uae.g4.u05.l03.area_ones_partial"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP293_298_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:05:04", "number.column_multiply_two_digit_factors",
+            "VERTICAL_TWO_DIGIT_MULTIPLICATION_PARTIAL_PRODUCTS",
+            ["uae.g4.u05.l03.area_two_digit_product", "uae.g4.u05.l03.area_tens_partial", "uae.g4.u05.l03.area_ones_partial"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP299_304_REUSED_EXACT_FAMILIES_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
