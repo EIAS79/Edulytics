@@ -7248,6 +7248,18 @@ public static class LessonPracticeContractRegistry
              "uae.g4.u01.l04.middle_of_three"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP29_36_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:01:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:01:05",
+            "number.rounding.to_millions",
+            "WHOLE_NUMBER_ROUND_TO_PLACE_UP_TO_MILLIONS",
+            ["uae.g4.u01.l05.round_nearest_ten",
+             "uae.g4.u01.l05.round_nearest_hundred",
+             "uae.g4.u01.l05.round_nearest_thousand",
+             "uae.g4.u01.l05.round_nearest_ten_thousand",
+             "uae.g4.u01.l05.round_nearest_hundred_thousand",
+             "uae.g4.u01.l05.round_nearest_million"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP37_42_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
