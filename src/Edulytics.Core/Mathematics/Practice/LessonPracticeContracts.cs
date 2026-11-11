@@ -7446,6 +7446,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u04.l09.multidigit_product", "uae.g4.u04.l09.partial_hundreds", "uae.g4.u04.l09.round_estimate"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP247_252_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:10"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:04:10", "number.exact_vs_estimated_answers",
+            "CHOOSE_ESTIMATION_OR_EXACT_ANSWER",
+            ["uae.g4.u04.l10.choose_answer_precision", "uae.g4.u04.l09.multidigit_product", "uae.g4.u04.l09.round_estimate"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP255_260_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
