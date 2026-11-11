@@ -7346,6 +7346,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l02.count_subtraction_jumps", "uae.g4.u03.l02.equal_groups_quotient", "uae.g4.u03.l02.reconstruct_dividend"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP141_146_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:03",
+            "number.multiplicative_comparison",
+            "TIMES_AS_MANY_AND_UNKNOWN_FACTOR_COMPARISON",
+            ["uae.g4.u03.l03.times_as_many", "uae.g4.u03.l03.unknown_comparison_base", "uae.g4.u03.l03.unknown_multiplier"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP147_152_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
