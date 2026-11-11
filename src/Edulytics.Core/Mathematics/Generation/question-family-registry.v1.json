@@ -39082,6 +39082,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u07.l09.multi_step_rule",
+      "version": 1,
+      "skillId": "algebra.evaluate_two_operation_equation",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u07-l08-source-stage-d-not-run",
+      "representations": [
+        "equation",
+        "table",
+        "model"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
