@@ -7464,6 +7464,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u05.l01.tens_product", "uae.g4.u05.l01.unknown_tens_factor"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP279_284_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:05:02", "number.estimate_two_digit_factors",
+            "ROUND_BOTH_FACTORS_TO_TENS_COMPARE_ESTIMATE",
+            ["uae.g4.u05.l02.estimate_two_digit_product", "uae.g4.u05.l02.estimate_above_or_below"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP285_290_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

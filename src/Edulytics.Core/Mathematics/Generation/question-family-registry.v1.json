@@ -38504,6 +38504,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u05.l02.estimate_two_digit_product",
+      "version": 1,
+      "skillId": "number.estimate_two_digit_factors",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u05-l02-student-source-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u05.l02.estimate_above_or_below",
+      "version": 1,
+      "skillId": "number.estimate_two_digit_factors",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u05-l02-student-source-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
