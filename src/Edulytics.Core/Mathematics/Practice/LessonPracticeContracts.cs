@@ -7221,6 +7221,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G4_ARABIC_STUDENT_04_01_PRINTED_PP11_16_STAGE_D_NOT_RUN",
             "READY_VERIFIED",
             Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:01:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:01:02",
+            "number.place_value.read_write_to_millions",
+            "ARABIC_WORDS_AND_DIGITS_TO_SEVEN_DIGIT_STANDARD_FORM",
+            ["uae.g4.u01.l01.compose_seven_digits",
+             "uae.g4.u01.l01.expanded_to_standard",
+             "uae.g4.u01.l02.words_to_standard"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP17_22_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

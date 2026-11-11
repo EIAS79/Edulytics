@@ -10,29 +10,41 @@ internal static class UaeGrade4Unit1Lesson01Questions
     internal const string DigitValue = "uae.g4.u01.l01.digit_value_to_millions";
     internal const string Compose = "uae.g4.u01.l01.compose_seven_digits";
     internal const string Expanded = "uae.g4.u01.l01.expanded_to_standard";
+    internal const string WordToStandard = "uae.g4.u01.l02.words_to_standard";
     internal sealed record Item(string Family, string Prompt, string Solution,
         AssessmentItemType ItemType, IReadOnlyDictionary<string, int> Parameters);
 
     private static readonly int[] Multipliers =
         [1_000_000, 100_000, 10_000, 1_000, 100, 10, 1];
+    private static readonly string[] SmallArabicNumbers =
+        ["صفر","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة"];
     private static readonly string[] Positions =
         ["الملايين", "مئات الألوف", "عشرات الألوف", "آحاد الألوف",
          "المئات", "العشرات", "الآحاد"];
 
     internal static bool Supports(string? family) =>
-        family is DigitValue or Compose or Expanded;
+        family is DigitValue or Compose or Expanded or WordToStandard;
 
     public static Item Build(string family, Random rng)
     {
         if (!Supports(family))
             throw new InvalidOperationException("Unknown G4 place-value family");
         int number = rng.Next(1_000_000, 10_000_000);
+        if (family == WordToStandard)
+        {
+            // Arabic words in the student lesson; exact three-group number.
+            number = rng.Next(3, 10) * 1_000_000
+                   + rng.Next(3, 10) * 1_000
+                   + rng.Next(1, 10);
+        }
         int[] digits = Multipliers.Select(m => number / m % 10).ToArray();
         int pos = family == DigitValue ? rng.Next(0, 7) : -1;
         string prompt = family switch
         {
             DigitValue =>
                 $"في العدد {number}، ما قيمة الرقم في منزلة {Positions[pos]}؟",
+            WordToStandard =>
+                $"اكتب بالصيغة القياسية: {SmallArabicNumbers[digits[0]]} ملايين و{SmallArabicNumbers[digits[3]]} آلاف و{SmallArabicNumbers[digits[6]]}.",
             Compose =>
                 $"كوّن العدد بالصيغة القياسية من الأرقام حسب ترتيب المنازل: {string.Join("، ", digits)}.",
             _ => $"اكتب الصيغة القياسية: {string.Join(" + ", digits.Zip(Multipliers, (d, m) => d*m).Where(v=>v!=0))}."
