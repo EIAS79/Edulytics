@@ -40265,6 +40265,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l01.round_whole",
+      "version": 1,
+      "skillId": "decimals.round",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u11-l01-abc-stage-d-not-run",
+      "representations": [
+        "decimal_place_value",
+        "number_line",
+        "rounding"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l01.round_tenth",
+      "version": 1,
+      "skillId": "decimals.round",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u11-l01-abc-stage-d-not-run",
+      "representations": [
+        "decimal_place_value",
+        "number_line",
+        "rounding"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l01.round_hundredth",
+      "version": 1,
+      "skillId": "decimals.round",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u11-l01-abc-stage-d-not-run",
+      "representations": [
+        "decimal_place_value",
+        "number_line",
+        "rounding"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
