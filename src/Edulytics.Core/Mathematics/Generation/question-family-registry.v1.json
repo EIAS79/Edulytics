@@ -40037,6 +40037,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l06.nearest_benchmark",
+      "version": 1,
+      "skillId": "fractions.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l06-abc-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "benchmark_fraction",
+        "fraction"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l06.compared_to_half",
+      "version": 1,
+      "skillId": "fractions.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l06-abc-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "benchmark_fraction",
+        "fraction"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
