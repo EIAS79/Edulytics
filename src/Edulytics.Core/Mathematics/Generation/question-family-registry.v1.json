@@ -39353,6 +39353,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u08.l09.mixed_as_fourths",
+      "version": 1,
+      "skillId": "fractions.mixed_numbers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u08-l09-abc-stage-d-not-run",
+      "representations": [
+        "mixed_number",
+        "fraction_bar",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u08.l09.mixed_unit_fraction_count",
+      "version": 1,
+      "skillId": "fractions.mixed_numbers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u08-l09-abc-stage-d-not-run",
+      "representations": [
+        "mixed_number",
+        "fraction_bar",
+        "number_line"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
