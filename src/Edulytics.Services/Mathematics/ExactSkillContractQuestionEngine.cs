@@ -297,6 +297,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit1RoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit1FourStepQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -658,6 +659,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit1FourStepQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family))
             return UaeGrade4Unit2Lesson01PropertiesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson02PatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3738,6 +3741,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family))
         {
             var q = UaeGrade4Unit2Lesson01PropertiesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson02PatternsQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -7867,6 +7875,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit1FourStepQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(problem.Family))
             return UaeGrade4Unit2Lesson01PropertiesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson02PatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))

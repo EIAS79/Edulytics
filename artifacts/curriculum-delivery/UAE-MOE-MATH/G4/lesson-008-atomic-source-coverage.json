@@ -1,0 +1,86 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:02",
+  "grade": 4,
+  "unit": 2,
+  "studentFile": "04-01.pdf",
+  "sha256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "printedPages": [
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+  ],
+  "pdfPages": [
+    90,
+    91,
+    92,
+    93,
+    94,
+    95
+  ],
+  "title": "أنماط الجمع والطرح",
+  "skillElements": [
+    {
+      "item": "نمط الزيادة بالواحد والعشرة والمئة والألف",
+      "source": "68-69",
+      "solution": "AddStep family",
+      "status": "COVERED"
+    },
+    {
+      "item": "نمط النقصان بمقادير ثابتة",
+      "source": "68-69",
+      "solution": "SubStep family",
+      "status": "COVERED"
+    },
+    {
+      "item": "جدول التغير بالعد بحسب القيمة المكانية",
+      "source": "67-68",
+      "solution": "RichV2 and NumberLine",
+      "status": "COVERED"
+    },
+    {
+      "item": "إكمال جملة عددية فيها مجهول",
+      "source": "68-69",
+      "solution": "MissingStep family",
+      "status": "COVERED"
+    },
+    {
+      "item": "تحديد قواعد التتابع وإكمال النمط",
+      "source": "69-70",
+      "solution": "NextTerm family",
+      "status": "COVERED"
+    },
+    {
+      "item": "مسائل السلم والاتجاه الزيادي والنقصاني",
+      "source": "70",
+      "solution": "RichV2 and steps rubric",
+      "status": "COVERED_TEACHER_REVIEW"
+    },
+    {
+      "item": "البحث عن الخطأ في نمط عددي",
+      "source": "70",
+      "solution": "RichV2 common mistakes and teacher review",
+      "status": "COVERED_TEACHER_REVIEW"
+    },
+    {
+      "item": "فهم النمط والمفردات والتقييم والواجب",
+      "source": "67-72",
+      "solution": "Arabic explanation, examples, cooldown",
+      "status": "COVERED"
+    }
+  ],
+  "cooldown": {
+    "prompt": "أكمل النمط: ٤٥٬٦٠٠، ٤٥٬٧٠٠، ٤٥٬٨٠٠، __ ثم اشرح القاعدة.",
+    "expected": "٤٥٬٩٠٠؛ نزيد ١٠٠ في كل مرة",
+    "teacherReview": "مراجعة تفسير القاعدة"
+  },
+  "stageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "scopedTests": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  }
+}

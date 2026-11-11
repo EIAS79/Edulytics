@@ -7276,6 +7276,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u02.l01.commutative_add", "uae.g4.u02.l01.associative_add", "uae.g4.u02.l01.additive_identity", "uae.g4.u02.l01.subtract_zero", "uae.g4.u02.l01.subtract_self"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP61_66_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:02:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:02:02",
+            "number.patterns.add_subtract_place_value",
+            "ADD_SUB_STEP_PATTERNS_UP_TO_HUNDRED_THOUSANDS",
+            ["uae.g4.u02.l02.add_place_step", "uae.g4.u02.l02.subtract_place_step", "uae.g4.u02.l02.find_missing_step", "uae.g4.u02.l02.continue_pattern"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP67_72_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
