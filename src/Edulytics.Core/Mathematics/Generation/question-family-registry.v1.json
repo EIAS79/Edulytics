@@ -40075,6 +40075,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l07.sum_hundredths",
+      "version": 1,
+      "skillId": "decimals.operation",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l07-abc-stage-d-not-run",
+      "representations": [
+        "hundredths_grid",
+        "fraction_equation",
+        "place_value"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l07.sum_decimal",
+      "version": 1,
+      "skillId": "decimals.operation",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u10-l07-abc-stage-d-not-run",
+      "representations": [
+        "hundredths_grid",
+        "fraction_equation",
+        "place_value"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
