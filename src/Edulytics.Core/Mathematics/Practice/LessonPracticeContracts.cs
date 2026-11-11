@@ -7283,6 +7283,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u02.l02.add_place_step", "uae.g4.u02.l02.subtract_place_step", "uae.g4.u02.l02.find_missing_step", "uae.g4.u02.l02.continue_pattern"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP67_72_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:02:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:02:03",
+            "number.mental_addition_subtraction",
+            "MENTAL_FRIENDLY_NUMBER_COMPENSATION_PLACE_VALUE",
+            ["uae.g4.u02.l03.make_friendly_ten", "uae.g4.u02.l03.compensate_addition", "uae.g4.u02.l03.break_apart_subtraction", "uae.g4.u02.l03.subtract_thousands"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP73_78_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
