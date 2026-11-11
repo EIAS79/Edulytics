@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:08:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:08:02", "supporting.number.factors_primes",
+            "PRIME_COMPOSITE_CLASSIFICATION_AND_FACTOR_COUNT",
+            ["uae.g4.u08.l02.prime_composite_classification", "uae.g4.u08.l02.positive_factor_count"],
+            "UAE_G4_STUDENT_04_02_08_PP491_496_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:08:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:08:01", "supporting.number.factors_primes",
             "FACTOR_PAIRS_AND_MULTIPLE_DIVISIBILITY",
