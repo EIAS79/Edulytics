@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:08:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:08:01", "supporting.number.factors_primes",
+            "FACTOR_PAIRS_AND_MULTIPLE_DIVISIBILITY",
+            ["uae.g4.u08.l01.missing_factor", "uae.g4.u08.l01.is_multiple"],
+            "UAE_G4_STUDENT_04_02_08_PP485_490_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:09"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:07:09", "algebra.evaluate_two_operation_equation",
             "MULTI_OPERATION_EQUATION_INPUT_OUTPUT_TABLE",
