@@ -7260,6 +7260,15 @@ public static class LessonPracticeContractRegistry
              "uae.g4.u01.l05.round_nearest_million"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP37_42_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:01:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:01:06",
+            "problem_solving.four_steps_with_whole_numbers",
+            "FOUR_STEPS_DIFFERENCE_TOTAL_REMAINING_TEACHER_RUBRIC",
+            ["uae.g4.u01.l06.find_increase",
+             "uae.g4.u01.l06.find_total",
+             "uae.g4.u01.l06.find_remaining"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP43_48_TEACHER_REVIEW_OPEN_EXPLANATION_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
