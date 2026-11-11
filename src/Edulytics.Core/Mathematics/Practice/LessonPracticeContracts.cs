@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:11:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:11:03", "decimals.estimate",
+            "CHOOSE_ESTIMATE_OR_EXACT_COST",
+            ["uae.g4.u11.l03.approximate_ticket_cost", "uae.g4.u11.l03.exact_ticket_cost_fils"],
+            "UAE_G4_STUDENT_04_02_11_PP729_734_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:11:02"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:11:02", "decimals.estimate",
             "ESTIMATE_DECIMAL_SUMS_DIFFERENCES",

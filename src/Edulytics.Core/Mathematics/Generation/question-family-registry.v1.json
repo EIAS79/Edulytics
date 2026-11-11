@@ -40360,6 +40360,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l03.approximate_ticket_cost",
+      "version": 1,
+      "skillId": "decimals.estimate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u11-l03-abc-stage-d-not-run",
+      "representations": [
+        "money_dirhams",
+        "decimal_rounding",
+        "estimation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u11.l03.exact_ticket_cost_fils",
+      "version": 1,
+      "skillId": "decimals.estimate",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u11-l03-abc-stage-d-not-run",
+      "representations": [
+        "money_dirhams",
+        "decimal_rounding",
+        "estimation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
