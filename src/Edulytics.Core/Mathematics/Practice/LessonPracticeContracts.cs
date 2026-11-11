@@ -7384,6 +7384,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l08.sum_estimate", "uae.g4.u03.l08.savings_feasible", "uae.g4.u03.l08.travel_feasible"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP179_184_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:04:01", "number.multiply_multiples_ten",
+            "MULTIPLY_SINGLE_DIGIT_BY_10_100_1000_MULTIPLES",
+            ["uae.g4.u04.l01.multiply_power_of_ten", "uae.g4.u04.l01.unknown_factor_power_ten", "uae.g4.u04.l01.compare_powers_ten"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP197_202_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
