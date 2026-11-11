@@ -7408,6 +7408,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u04.l03.model_two_digit_product", "uae.g4.u04.l03.model_tens_product", "uae.g4.u04.l03.model_ones_product"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP215_220_REUSE_U04L03_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:04:05", "number.column_multiply_two_digit_by_one",
+            "COLUMN_MULTIPLICATION_TWO_DIGIT_BY_ONE",
+            ["uae.g4.u04.l03.model_two_digit_product",
+             "uae.g4.u04.l03.model_tens_product",
+             "uae.g4.u04.l03.model_ones_product"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP223_228_REUSE_EXISTING_EXACT_FAMILIES_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
