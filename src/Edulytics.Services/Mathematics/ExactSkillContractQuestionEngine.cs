@@ -318,6 +318,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit5Lesson01TensQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
@@ -722,6 +723,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit5Lesson01TensQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family))
             return UaeGrade4Unit5Lesson02EstimateProductsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family))
+            return UaeGrade4Unit5Lesson05MultiStepQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
             return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -3909,6 +3912,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family))
         {
             var q = UaeGrade4Unit5Lesson02EstimateProductsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit5Lesson05MultiStepQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
@@ -8085,6 +8093,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit5Lesson01TensQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(problem.Family))
             return UaeGrade4Unit5Lesson02EstimateProductsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(problem.Family))
+            return UaeGrade4Unit5Lesson05MultiStepQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(problem.Family))
             return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
