@@ -304,6 +304,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -679,6 +680,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family))
             return UaeGrade4Unit2Lesson08BarModelQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson09MultiStepQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3794,6 +3797,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family))
         {
             var q = UaeGrade4Unit2Lesson08BarModelQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson09MultiStepQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -7937,6 +7945,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(problem.Family))
             return UaeGrade4Unit2Lesson08BarModelQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson09MultiStepQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))

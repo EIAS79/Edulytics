@@ -7325,6 +7325,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u02.l08.bar_part_whole", "uae.g4.u02.l08.bar_compare", "uae.g4.u02.l08.bar_missing_part"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP107_112_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:02:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:02:09",
+            "number.multistep_add_subtract",
+            "MULTISTEP_EQUATION_WITH_UNKNOWN",
+            ["uae.g4.u02.l09.add_then_subtract", "uae.g4.u02.l09.subtract_then_add", "uae.g4.u02.l09.add_three_parts", "uae.g4.u02.l09.subtract_two_costs"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP113_118_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
