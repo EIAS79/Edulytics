@@ -40189,6 +40189,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l10.coin_total_fils",
+      "version": 1,
+      "skillId": "money.value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l10-abc-stage-d-not-run",
+      "representations": [
+        "currency_fils",
+        "decimal_dirham",
+        "money_word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l10.coin_wallet_difference",
+      "version": 1,
+      "skillId": "money.value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l10-abc-stage-d-not-run",
+      "representations": [
+        "currency_fils",
+        "decimal_dirham",
+        "money_word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
