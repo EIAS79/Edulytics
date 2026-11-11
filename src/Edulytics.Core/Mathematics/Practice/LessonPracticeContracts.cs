@@ -7339,6 +7339,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l01.array_product", "uae.g4.u03.l01.array_quotient", "uae.g4.u03.l01.unknown_factor", "uae.g4.u03.l01.inverse_fact"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP135_140_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:02",
+            "number.division_as_repeated_subtraction",
+            "EQUAL_DECREMENT_NUMBERLINE_DIVISION",
+            ["uae.g4.u03.l02.count_subtraction_jumps", "uae.g4.u03.l02.equal_groups_quotient", "uae.g4.u03.l02.reconstruct_dividend"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP141_146_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
