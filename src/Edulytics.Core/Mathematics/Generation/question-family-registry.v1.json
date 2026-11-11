@@ -38702,6 +38702,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u06.l02.estimate_compatible_quotient",
+      "version": 1,
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u06-l02-source-stage-d-not-run",
+      "representations": [
+        "equation",
+        "compatible_numbers"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u06.l02.compatible_dividend",
+      "version": 1,
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u06-l02-source-stage-d-not-run",
+      "representations": [
+        "equation",
+        "compatible_numbers"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

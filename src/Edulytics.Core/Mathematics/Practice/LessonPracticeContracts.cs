@@ -7500,6 +7500,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u06.l01.divide_powers_10_100_1000", "uae.g4.u06.l01.missing_quotient_place_value"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP329_334_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:06:02", "number.estimate_quotient_compatible_numbers",
+            "ESTIMATE_QUOTIENT_COMPATIBLE_NUMBERS",
+            ["uae.g4.u06.l02.estimate_compatible_quotient", "uae.g4.u06.l02.compatible_dividend"],
+            "UAE_G4_STUDENT_04_01_PP335_340_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
