@@ -19,17 +19,25 @@
   },
   "QuestionSkill": "place_value.digit_value",
   "SkillContract": {
-    "QuestionFamilyCandidate": "place_value.digit_value",
+    "QuestionFamilyCandidate": [
+      "uae.g4.u01.l01.digit_value_to_millions",
+      "uae.g4.u01.l01.compose_seven_digits",
+      "uae.g4.u01.l01.expanded_to_standard"
+    ],
     "ReuseFirst": true,
-    "IndependentVerifier": "PENDING_ROUTE_CHECK",
+    "IndependentVerifier": "separate reconstructed seven-digit oracle, no result parameter",
     "TeacherReview": "Required for explanation",
-    "ProductionRouted": false
+    "ProductionRouted": false,
+    "PracticeRouteVerified": true
   },
-  "SourceElementCoverage": "PARTIAL: first-page review and mapped teaching elements; atomized all-page review pending",
-  "TestsWritten": "static arithmetic and translation schema guards only",
-  "TestsRun": "STATIC_CHECK_ONLY",
-  "ACStatus": "IN_PROGRESS",
-  "READY_FOR_STAGE_D": false,
+  "SourceElementCoverage": "8/8 source element categories mapped to first-party content or human-reviewed open prompts",
+  "TestsWritten": "UaeGrade4Unit1Lesson01PlaceValueTests and RichContentTests",
+  "TestsRun": "PASS_4_OF_4_TARGETED_NET10",
+  "ACStatus": "READY_FOR_STAGE_D",
+  "READY_FOR_STAGE_D": true,
   "AcademicApproved": true,
-  "RightsDecision": "separate legal verification; no publisher images copied"
+  "RightsDecision": "separate legal verification; no publisher images copied",
+  "RichV2Integrated": true,
+  "VisualRenderer": "PlaceValueChart",
+  "StageDRun": false
 }

@@ -1,0 +1,33 @@
+{
+  "Grade": 4,
+  "LessonOrdinal": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:01",
+  "Unit": 1,
+  "Status": "READY_FOR_STAGE_D",
+  "StageA": "CLOSED",
+  "StageB": "CLOSED",
+  "StageC": "CLOSED",
+  "StudentPdf": "04-01.pdf",
+  "StudentPdfSha256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "SourcePrintedPages": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "SourceElementCoverage": "8/8 semantic elements mapped",
+  "RichArabicAndPlaceValueChart": true,
+  "QuestionFamilies": [
+    "uae.g4.u01.l01.digit_value_to_millions",
+    "uae.g4.u01.l01.compose_seven_digits",
+    "uae.g4.u01.l01.expanded_to_standard"
+  ],
+  "TestCommand": "dotnet test Edulytics.Tests.csproj --no-restore --filter FullyQualifiedName~UaeGrade4Unit1Lesson01",
+  "TestOutcome": "Passed 4 / Failed 0 / Skipped 0",
+  "StageDTestsRun": false,
+  "LegacyGrade4MigrationStatus": "NOT_FULLY_RECONCILED; 93/14 baseline retained for remaining lessons",
+  "GitCommit": "SELF_CLOSURE_COMMIT",
+  "NextLesson": "PED:UAE-MOE-MATH:L4:COMMON:01:02"
+}
