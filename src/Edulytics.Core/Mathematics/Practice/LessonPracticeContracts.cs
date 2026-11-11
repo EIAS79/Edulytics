@@ -7332,6 +7332,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u02.l09.add_then_subtract", "uae.g4.u02.l09.subtract_then_add", "uae.g4.u02.l09.add_three_parts", "uae.g4.u02.l09.subtract_two_costs"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP113_118_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:01",
+            "number.multiplication_division_fact_families",
+            "MULTIPLICATION_DIVISION_INVERSE_ARRAY_FACTS",
+            ["uae.g4.u03.l01.array_product", "uae.g4.u03.l01.array_quotient", "uae.g4.u03.l01.unknown_factor", "uae.g4.u03.l01.inverse_fact"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP135_140_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
