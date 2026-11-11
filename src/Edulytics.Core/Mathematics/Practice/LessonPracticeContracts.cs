@@ -7239,6 +7239,15 @@ public static class LessonPracticeContractRegistry
              "uae.g4.u01.l03.select_smaller"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP23_28_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:01:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:01:04",
+            "number.place_value.order_to_millions",
+            "ORDER_THREE_WHOLE_NUMBERS_ASC_DESC_MIDDLE",
+            ["uae.g4.u01.l04.order_three_ascending",
+             "uae.g4.u01.l04.order_three_descending",
+             "uae.g4.u01.l04.middle_of_three"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP29_36_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

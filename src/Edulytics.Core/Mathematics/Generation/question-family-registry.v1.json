@@ -36949,6 +36949,60 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l04.order_three_ascending",
+      "version": 1,
+      "skillId": "number.place_value.order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g4-u01-l04-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l04.order_three_descending",
+      "version": 1,
+      "skillId": "number.place_value.order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g4-u01-l04-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l04.middle_of_three",
+      "version": 1,
+      "skillId": "number.place_value.order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u01-l04-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
