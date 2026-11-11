@@ -10,7 +10,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
-        int dividend=r.Next(20,100),divisor=r.Next(2,10);
+        int dividend=r.Next(20,1000),divisor=r.Next(2,10);
         string prompt=f==Quotient
           ?$"مثّل {dividend} ÷ {divisor} بمكعبات العشرات والآحاد ثم اكتب ناتج القسمة الصحيح دون الباقي."
           :$"قسّم {dividend} إلى {divisor} مجموعات متساوية باستخدام مكعبات القيمة المكانية. كم آحادًا تتبقى؟";
@@ -21,7 +21,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     {
         expected=0;
         if(!Supports(f)||p.Count!=2||!p.TryGetValue("dividend",out int n)||
-           !p.TryGetValue("divisor",out int d)||n is <20 or >99||d is <2 or >9)return false;
+           !p.TryGetValue("divisor",out int d)||n is <20 or >999||d is <2 or >9)return false;
         expected=f==Quotient?n/d:n%d;
         return true;
     }
