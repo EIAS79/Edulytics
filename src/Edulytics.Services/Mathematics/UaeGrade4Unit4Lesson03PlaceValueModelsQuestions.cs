@@ -11,7 +11,7 @@ internal static class UaeGrade4Unit4Lesson03PlaceValueModelsQuestions
     internal static Item Build(string f,Random rng)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported G4 model");
-        int multiplier=rng.Next(2,6),tens=rng.Next(1,8),ones=rng.Next(1,10);
+        int multiplier=rng.Next(2,10),tens=rng.Next(1,8),ones=rng.Next(1,10);
         string prompt=f switch
         {
             Full=>$"أمثل بالمكعبات {multiplier} مجموعات كل منها {tens*10+ones}. كم مكعبًا بالمجموع؟",
@@ -26,7 +26,7 @@ internal static class UaeGrade4Unit4Lesson03PlaceValueModelsQuestions
         v=0;
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("multiplier",out var a)||
            !p.TryGetValue("tens",out var t)||!p.TryGetValue("ones",out var u)||
-           a is <2 or >5||t is <1 or >7||u is <1 or >9)return false;
+           a is <2 or >9||t is <1 or >7||u is <1 or >9)return false;
         v=f switch {Full=>a*(10*t+u),Tens=>a*t*10,_=>a*u};
         return true;
     }
