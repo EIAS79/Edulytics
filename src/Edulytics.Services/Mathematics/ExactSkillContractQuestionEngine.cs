@@ -301,6 +301,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit2Lesson03MentalQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -670,6 +671,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson04EstimateQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family))
             return UaeGrade4Unit2Lesson05AdditionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson06SubtractionQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3770,6 +3773,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family))
         {
             var q = UaeGrade4Unit2Lesson05AdditionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson06SubtractionQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -7907,6 +7915,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit2Lesson04EstimateQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(problem.Family))
             return UaeGrade4Unit2Lesson05AdditionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson06SubtractionQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))
