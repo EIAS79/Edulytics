@@ -39866,6 +39866,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l01.place_value_decimal",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u10-l01-abc-stage-d-not-run",
+      "representations": [
+        "hundred_grid",
+        "decimal_place_table",
+        "currency_fils"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l01.hundredths_count",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l01-abc-stage-d-not-run",
+      "representations": [
+        "hundred_grid",
+        "decimal_place_table",
+        "currency_fils"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l01.tenths_digit",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l01-abc-stage-d-not-run",
+      "representations": [
+        "hundred_grid",
+        "decimal_place_table",
+        "currency_fils"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

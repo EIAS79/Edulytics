@@ -34,7 +34,7 @@ def main():
     x=next(z for z in pack["Lessons"] if z["LessonCode"]==code)
     x["SourceSha256"]=sha
     x["TitleSourceReference"]=f"{spec['StudentPdf']} PDF pp{spec['PdfStart']}-{spec['PdfEnd']} printed pp{spec['PrintedStart']}-{spec['PrintedEnd']}"
-    x["SourceEdition"]="2025-2026 local Arabic student source; 2026-2027 full annual scope not independently verified"
+    x["SourceEdition"]=spec.get("SourceEdition","Local Arabic source; 2026-2027 annual syllabus not independently verified")
     x["AdaptationStatus"]="Independently authored Arabic Edulytics lesson, source skill matched; A-B-C tests required; Stage D not run"
     x["Translations"]=[z for z in x["Translations"] if z["CultureCode"]!="ar"]
     x["Translations"].append({"CultureCode":"ar","Title":lesson["Title"],
@@ -67,7 +67,7 @@ def main():
         assert family not in known
         registry["families"].append({"id":family,"version":1,"skillId":spec["SkillId"],
         "requiredCapabilities":["lesson.practice.exact.generate","lesson.practice.exact.verify"],
-        "answerType":"exact_integer",
+        "answerType":spec.get("FamilyAnswerTypes",{}).get(family,"exact_integer"),
         "verificationPolicy":f"g4-u{unit:02}-l{index:02}-abc-stage-d-not-run",
         "representations":spec["Representations"],"status":"ShadowVerified",
         "productionRouting":False,"lessonPracticeRouting":True})

@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:10:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:10:01", "decimals.place_value",
+            "TENTHS_HUNDREDTHS_PLACE_VALUE_GRID",
+            ["uae.g4.u10.l01.place_value_decimal", "uae.g4.u10.l01.hundredths_count", "uae.g4.u10.l01.tenths_digit"],
+            "UAE_G4_STUDENT_04_02_10_PP633_638_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:09:09"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:09:09", "fractions.multiply_whole",
             "FRACTION_BY_WHOLE_PRODUCT_AND_MIXED_NUMBER",
