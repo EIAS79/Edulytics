@@ -38306,6 +38306,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u04.l02.estimate_rounded_product",
+      "version": 1,
+      "skillId": "number.rounding_to_estimate_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u04-l02-student-source-stage-d-not-run",
+      "representations": [
+        "contextual",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u04.l02.estimate_above_below",
+      "version": 1,
+      "skillId": "number.rounding_to_estimate_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u04-l02-student-source-stage-d-not-run",
+      "representations": [
+        "contextual",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -7390,6 +7390,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u04.l01.multiply_power_of_ten", "uae.g4.u04.l01.unknown_factor_power_ten", "uae.g4.u04.l01.compare_powers_ten"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP197_202_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:04:02", "number.rounding_to_estimate_products",
+            "ROUND_GREATEST_PLACE_COMPARE_ESTIMATE_TO_ACTUAL",
+            ["uae.g4.u04.l02.estimate_rounded_product", "uae.g4.u04.l02.estimate_above_below"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP203_208_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
