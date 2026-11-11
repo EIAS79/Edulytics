@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:09:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:09:01", "fractions.add",
+            "MODEL_ADD_LIKE_DENOMINATORS_AND_DECOMPOSITION",
+            ["uae.g4.u09.l01.model_add_like_denominators", "uae.g4.u09.l01.model_decompose_fraction"],
+            "UAE_G4_STUDENT_04_02_09_PP561_566_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:08:10"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:08:10", "fractions.mixed_numbers",
             "MIXED_TO_IMPROPER_AND_IMPROPER_TO_MIXED",

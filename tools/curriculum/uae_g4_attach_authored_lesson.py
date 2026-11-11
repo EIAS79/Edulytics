@@ -47,7 +47,7 @@ def main():
     dump(cp,pack)
     contracts=ROOT/"src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
     cs=contracts.read_text(encoding="utf-8-sig")
-    previous=f"PED:UAE-MOE-MATH:L4:COMMON:{unit:02}:{index-1:02}"
+    previous=next(x["LessonCode"] for x in blueprint["Lessons"] if x["SortOrder"]==ordinal-1)
     anchor=f'        byLesson["{previous}"] = new LessonPracticeContract('
     assert cs.count(anchor)==1 and f'byLesson["{code}"]' not in cs
     families=", ".join('"'+f+'"' for f in spec["Families"])

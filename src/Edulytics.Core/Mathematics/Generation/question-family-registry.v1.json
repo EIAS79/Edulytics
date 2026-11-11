@@ -39429,6 +39429,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l01.model_add_like_denominators",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l01-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "unit_fraction",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l01.model_decompose_fraction",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l01-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "unit_fraction",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
