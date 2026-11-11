@@ -39771,6 +39771,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l08.model_repeated_sum",
+      "version": 1,
+      "skillId": "fractions.multiply_whole",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l08-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "unit_fraction",
+        "repeated_addition"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l08.model_unit_fraction_count",
+      "version": 1,
+      "skillId": "fractions.multiply_whole",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l08-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "unit_fraction",
+        "repeated_addition"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
