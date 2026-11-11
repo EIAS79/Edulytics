@@ -318,6 +318,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit5Lesson01TensQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Supports(family.Trim()) ||
@@ -728,6 +729,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit5Lesson01TensQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family))
             return UaeGrade4Unit6Lesson01DivisionPowersQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family))
+            return UaeGrade4Unit7Lesson01ShapePatternQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family))
             return UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(family))
@@ -3927,6 +3930,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family))
         {
             var q = UaeGrade4Unit6Lesson01DivisionPowersQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit7Lesson01ShapePatternQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family))
@@ -8133,6 +8141,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit5Lesson01TensQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(problem.Family))
             return UaeGrade4Unit6Lesson01DivisionPowersQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(problem.Family))
+            return UaeGrade4Unit7Lesson01ShapePatternQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(problem.Family))
             return UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(problem.Family))

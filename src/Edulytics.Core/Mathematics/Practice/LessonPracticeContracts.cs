@@ -7560,6 +7560,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u06.l11.weeks_to_save_target", "uae.g4.u05.l05.missing_after_groups"],
             "UAE_G4_STUDENT_04_01_PP393_398_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:07:01", "patterns.non_numeric_repeating_patterns",
+            "NONNUMERIC_PATTERN_REPEAT_AND_EXTEND",
+            ["uae.g4.u07.l01.repeating_pattern_unit_length", "uae.g4.u07.l01.repeating_pattern_symbol_position"],
+            "UAE_G4_STUDENT_04_02_07_PP413_418_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

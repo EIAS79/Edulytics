@@ -38866,6 +38866,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u07.l01.repeating_pattern_unit_length",
+      "version": 1,
+      "skillId": "patterns.non_numeric_repeating_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u07-l01-source-stage-d-not-run",
+      "representations": [
+        "symbolic_pattern",
+        "pattern_blocks"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u07.l01.repeating_pattern_symbol_position",
+      "version": 1,
+      "skillId": "patterns.non_numeric_repeating_patterns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u07-l01-source-stage-d-not-run",
+      "representations": [
+        "symbolic_pattern",
+        "pattern_blocks"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
