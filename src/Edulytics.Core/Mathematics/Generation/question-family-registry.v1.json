@@ -39619,6 +39619,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l05.missing_fraction_part",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l05-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "inverse_operation",
+        "whole_fraction"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u09.l05.reverse_operation",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u09-l05-abc-stage-d-not-run",
+      "representations": [
+        "fraction_strip",
+        "inverse_operation",
+        "whole_fraction"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

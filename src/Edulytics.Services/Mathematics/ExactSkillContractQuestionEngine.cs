@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Supports(family.Trim()) ||
@@ -750,6 +751,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family))
             return UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(family))
@@ -3991,6 +3994,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family))
         {
@@ -8267,6 +8275,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(problem.Family))
             return UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(problem.Family))
