@@ -40151,6 +40151,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l09.relevant_sum",
+      "version": 1,
+      "skillId": "decimals.operation",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l09-abc-stage-d-not-run",
+      "representations": [
+        "information_filter",
+        "hundredths_equation",
+        "word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l09.relevant_decimal",
+      "version": 1,
+      "skillId": "decimals.operation",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g4-u10-l09-abc-stage-d-not-run",
+      "representations": [
+        "information_filter",
+        "hundredths_equation",
+        "word_problem"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -12,7 +12,7 @@ internal static class UaeGrade4Unit10Lesson07DecimalAdditionQuestions
     internal static Item Build(string f,Random random)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported decimal fraction addition");
-        int t=random.Next(0,10),h=random.Next(0,10),irrelevant=random.Next(2,9);
+        int t=random.Next(0,10),h=random.Next(0,f is RelevantSum or RelevantDecimal ? 70 : 10),irrelevant=random.Next(2,9);
         var p=new Dictionary<string,int>{{"tenths",t},{"hundredths",h},{"otherDays",irrelevant}};
         string prompt=f switch{
             SumHundredths=>$"أوجد {t}/١٠ + {h}/١٠٠. ما بسط المجموع عند كتابته بمقام ١٠٠؟",
@@ -28,7 +28,7 @@ internal static class UaeGrade4Unit10Lesson07DecimalAdditionQuestions
         answer=0m;
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("tenths",out int t)||
             !p.TryGetValue("hundredths",out int h)||!p.TryGetValue("otherDays",out int days)||
-            t is <0 or >9||h is <0 or >9||days is <2 or >9)return false;
+            t is <0 or >9||h<0||h>(f is RelevantSum or RelevantDecimal ? 69 : 9)||days is <2 or >9)return false;
         int sum=10*t+h;
         answer=f is SumDecimal or RelevantDecimal?sum/100m:sum;
         return true;
