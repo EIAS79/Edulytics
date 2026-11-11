@@ -7396,6 +7396,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u04.l02.estimate_rounded_product", "uae.g4.u04.l02.estimate_above_below"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP203_208_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:04:03", "number.multiply_two_digit_place_value_models",
+            "BASE_TEN_BLOCKS_PARTIAL_PRODUCTS",
+            ["uae.g4.u04.l03.model_two_digit_product", "uae.g4.u04.l03.model_tens_product", "uae.g4.u04.l03.model_ones_product"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP209_214_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

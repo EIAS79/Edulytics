@@ -314,6 +314,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit3Lesson08ReasonablenessQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -709,6 +710,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family))
             return UaeGrade4Unit4Lesson02EstimateProductsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3874,6 +3877,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family))
         {
             var q = UaeGrade4Unit4Lesson02EstimateProductsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -8037,6 +8045,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(problem.Family))
             return UaeGrade4Unit4Lesson02EstimateProductsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))
