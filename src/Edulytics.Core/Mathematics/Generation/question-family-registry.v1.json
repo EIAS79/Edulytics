@@ -37679,6 +37679,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u02.l08.bar_part_whole",
+      "version": 1,
+      "skillId": "number.bar_model_word_problems",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u02-l08-local-student-source-stage-d-not-run",
+      "representations": [
+        "bar_model",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u02.l08.bar_compare",
+      "version": 1,
+      "skillId": "number.bar_model_word_problems",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u02-l08-local-student-source-stage-d-not-run",
+      "representations": [
+        "bar_model",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u02.l08.bar_missing_part",
+      "version": 1,
+      "skillId": "number.bar_model_word_problems",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u02-l08-local-student-source-stage-d-not-run",
+      "representations": [
+        "bar_model",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
