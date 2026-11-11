@@ -7512,6 +7512,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
             "UAE_G4_STUDENT_04_01_PP341_346_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:06:04", "number.division_model_word_problem",
+            "DIVISION_DRAW_EQUAL_GROUPS_MODEL",
+            ["uae.g4.u06.l04.model_after_removing_items_quotient", "uae.g4.u06.l04.model_after_removing_items_remainder"],
+            "UAE_G4_STUDENT_04_01_PP347_352_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
