@@ -36892,6 +36892,63 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l03.compare_whole_numbers",
+      "version": 1,
+      "skillId": "number.place_value.compare_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "g4-u01-l03-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic",
+        "place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l03.select_greater",
+      "version": 1,
+      "skillId": "number.place_value.compare_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u01-l03-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic",
+        "place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u01.l03.select_smaller",
+      "version": 1,
+      "skillId": "number.place_value.compare_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u01-l03-student-arabic-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "symbolic",
+        "place_value_chart"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
