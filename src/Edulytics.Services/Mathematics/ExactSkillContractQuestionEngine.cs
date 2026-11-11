@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit8EquivalentFractionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit8Lesson01FactorMultipleQuestions.Supports(family.Trim()) ||
@@ -741,6 +742,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson05SimplestFormQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(family))
             return UaeGrade4Unit8EquivalentFractionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(family))
@@ -3964,6 +3967,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson05SimplestFormQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(family))
         {
@@ -8195,6 +8203,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson05SimplestFormQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(problem.Family))
             return UaeGrade4Unit8EquivalentFractionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(problem.Family))
