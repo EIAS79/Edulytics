@@ -7366,6 +7366,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u03.l05.commutative_missing_factor", "uae.g4.u03.l05.identity", "uae.g4.u03.l05.zero", "uae.g4.u03.l05.divide_by_one", "uae.g4.u03.l05.divide_by_self", "uae.g4.u03.l05.zero_dividend"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP161_166_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:03:06", "number.associative_multiplication",
+            "THREE_FACTOR_ASSOCIATIVE_PROPERTY",
+            ["uae.g4.u03.l06.triple_product", "uae.g4.u03.l06.missing_factor", "uae.g4.u03.l06.grouped_product"],
+            "UAE_G4_STUDENT_04_01_PRINTED_PP167_172_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

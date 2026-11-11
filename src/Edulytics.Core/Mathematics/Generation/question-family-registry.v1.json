@@ -38093,6 +38093,57 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u03.l06.triple_product",
+      "version": 1,
+      "skillId": "number.associative_multiplication",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u03-l06-student-source-stage-d-not-run",
+      "representations": [
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u03.l06.missing_factor",
+      "version": 1,
+      "skillId": "number.associative_multiplication",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u03-l06-student-source-stage-d-not-run",
+      "representations": [
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u03.l06.grouped_product",
+      "version": 1,
+      "skillId": "number.associative_multiplication",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u03-l06-student-source-stage-d-not-run",
+      "representations": [
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
