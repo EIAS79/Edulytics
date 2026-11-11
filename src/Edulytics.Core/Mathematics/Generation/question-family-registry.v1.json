@@ -38738,6 +38738,42 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u06.l03.base_ten_quotient",
+      "version": 1,
+      "skillId": "number.base_ten_division_with_remainders",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u06-l03-source-stage-d-not-run",
+      "representations": [
+        "base_ten_blocks",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u06.l03.base_ten_remainder",
+      "version": 1,
+      "skillId": "number.base_ten_division_with_remainders",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u06-l03-source-stage-d-not-run",
+      "representations": [
+        "base_ten_blocks",
+        "equation"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
