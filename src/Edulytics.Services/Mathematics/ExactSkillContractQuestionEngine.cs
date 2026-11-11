@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family.Trim()) ||
@@ -757,6 +758,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family))
+            return UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family))
             return UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family))
@@ -4012,6 +4015,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family))
         {
@@ -8323,6 +8331,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(problem.Family))
             return UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(problem.Family))

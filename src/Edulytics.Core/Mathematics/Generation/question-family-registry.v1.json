@@ -40113,6 +40113,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l08.decimal_compare",
+      "version": 1,
+      "skillId": "decimals.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l08-abc-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "hundredths_grid",
+        "place_value_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u10.l08.larger_hundredths",
+      "version": 1,
+      "skillId": "decimals.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u10-l08-abc-stage-d-not-run",
+      "representations": [
+        "number_line",
+        "hundredths_grid",
+        "place_value_table"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
