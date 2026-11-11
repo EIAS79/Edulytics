@@ -7584,6 +7584,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l02.constant_numeric_step", "uae.g4.u07.l02.alternating_numeric_rule"],
             "UAE_G4_STUDENT_04_02_07_PP431_436_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:07:05", "algebra.input_output_add_subtract",
+            "INPUT_OUTPUT_ADDITION_SUBTRACTION_RULES",
+            ["uae.g4.u07.l05.input_add_rule", "uae.g4.u07.l05.input_subtract_rule"],
+            "UAE_G4_STUDENT_04_02_07_PP439_444_STAGE_D_NOT_RUN",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",
