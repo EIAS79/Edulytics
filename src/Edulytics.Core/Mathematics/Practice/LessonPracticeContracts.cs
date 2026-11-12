@@ -7752,6 +7752,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u13.l01.plot_read_value", "uae.g4.u13.l01.plot_difference"],
             "UAE_G4_STUDENT_04_03_PP851_856_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:12:06", "geometry.unit_cube_volume",
+            "COUNT_UNIT_CUBES_IN_LAYERS",
+            ["uae.g4.u12.l06.unit_cube_volume", "uae.g4.u12.l06.layer_unit_squares"],
+            "UAE_G4_STUDENT_04_03_PP827_832_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:12:05", "geometry.solid_properties",
             "IDENTIFY_3D_FACES_EDGES_VERTICES",
