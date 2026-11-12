@@ -113,7 +113,7 @@ public sealed class RichLessonContentV2RolloutTests
             }
         }
 
-        Assert.Equal(5183, rows.Count);
+        Assert.Equal(5183 - 93 + 132, rows.Count);
         // Curated count is data-driven: newly authored grades must not fail
         // rollout merely because the historical global total was pinned.
         // A curated sidecar with an unknown lesson or unexpected locale
