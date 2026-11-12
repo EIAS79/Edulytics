@@ -828,6 +828,47 @@ public sealed class MathematicsPedagogicalLessonSeeder
         }
     }
 
+    // Grade 4 Common changed academic sources from the legacy 93-lesson English
+    // sequence to the selected 132-lesson Arabic sequence. The same LessonCode
+    // alone does not establish the same academic identity. Never repurpose the
+    // persisted lesson UUID and all its relationships by rewriting its title
+    // on the existing framework version. A separately versioned migration must
+    // preserve the old material and explicitly establish new identities.
+    private static void EnsureNoUnsafeGrade4IdentityMutation(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        const string grade4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+        if (!current.Code.StartsWith(grade4Prefix, StringComparison.Ordinal) &&
+            !expected.Code.StartsWith(grade4Prefix, StringComparison.Ordinal))
+            return;
+
+        if (!string.Equals(current.Code, expected.Code, StringComparison.Ordinal) ||
+            !string.Equals(current.Title, expected.Title, StringComparison.Ordinal) ||
+            current.FrameworkVersionId != expected.FrameworkVersionId)
+        {
+            throw new InvalidOperationException(
+                "UAE Grade 4 lesson identity collision: refusing to rewrite " +
+                "persisted English/old textbook lessons as different Arabic " +
+                "academic content in the same framework version. " +
+                "Release requires a separately versioned and rehearsed mapping.");
+        }
+    }
+
+    private static void EnsureNoUnsafeGrade4Retirement(
+        CurriculumPedagogicalLesson obsolete)
+    {
+        if (obsolete.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L4:COMMON:",
+                StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException(
+                "UAE Grade 4 legacy canonical content exists on a stale lesson. " +
+                "Do not delete or reattach it by coincidental LessonCode; " +
+                "migrate on an isolated framework version with explicit mapping.");
+        }
+    }
+
     private async Task UpsertLessonsAsync(
         IReadOnlyCollection<CurriculumPedagogicalLesson> expected,
         CancellationToken ct)
@@ -847,6 +888,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         {
             if (byId.TryGetValue(row.Id, out var current))
             {
+                EnsureNoUnsafeGrade4IdentityMutation(current, row);
                 if (!TryReconcileAcceptedUaeOfficialLessonProjection(
                         current,
                         row) &&
@@ -1108,7 +1150,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             foreach (var content in canonicalContents)
             {
                 var obsolete = staleById[content.PedagogicalLessonId];
-
+                EnsureNoUnsafeGrade4Retirement(obsolete);
                 if (expectedByIdentity.TryGetValue(
                         (obsolete.FrameworkVersionId, obsolete.Code),
                         out var target))
