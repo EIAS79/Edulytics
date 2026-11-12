@@ -24,6 +24,87 @@ RULES_FILE = ROOT / "src/Edulytics.Core/Mathematics/Curriculum/skill-resolution-
 REPORT = ROOT / "artifacts/math-intelligence/lesson-skill-resolution-audit.json"
 G12_STAGE_D_LEDGER = ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G12/grade12-stage-d-execution-ledger.json"
 G12_ADVANCED_PREFIX = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+G4_PREFIX = "PED:UAE-MOE-MATH:L4:COMMON:"
+G4_CONTENT = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g4-common-t1-ogl-v1.lesson-content-pack.json"
+G4_CONTRACTS = ROOT / "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+G4_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
+G4_SOURCE_HANDOFF = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G4/grade4-a-c-source-handoff.json"
+G4_REVIEWED_SUPPORT = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G4/grade4-reviewed-supporting-skill-reuse.json"
+G4_FAMILIES = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+G4_SKILLS = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
+
+
+def separately_certified_g4_practice() -> set[str]:
+    """Prove all selected G4 lessons have exact source-scoped C# Practice contracts.
+
+    The generic Supporting-rule engine cannot override the separately audited
+    grade-specific contracts, just as with the prior 73-lesson G12 course.
+    Never exempt a lesson merely because its code begins with the G4 prefix.
+    """
+    if not all(path.is_file() for path in (
+        G4_CONTENT, G4_CONTRACTS, G4_BLUEPRINT, G4_SOURCE_HANDOFF,
+        G4_REVIEWED_SUPPORT, G4_FAMILIES, G4_SKILLS)):
+        return set()
+    try:
+        content = read_json(G4_CONTENT)
+        blueprint = read_json(G4_BLUEPRINT)
+        handoff = read_json(G4_SOURCE_HANDOFF)
+        support = read_json(G4_REVIEWED_SUPPORT)
+        skills = {row["id"] for row in read_json(G4_SKILLS)["skills"]}
+        families = {row["id"]: row for row in read_json(G4_FAMILIES)["families"]}
+        source = G4_CONTRACTS.read_text(encoding="utf-8-sig")
+    except (OSError, KeyError, ValueError, TypeError):
+        return set()
+    content_codes = [x.get("LessonCode") for x in content.get("Lessons", [])]
+    blueprint_codes = [x.get("LessonCode") for x in blueprint.get("Lessons", [])]
+    mappings = handoff.get("lessonMappings", [])
+    source_codes = [x.get("code") for x in mappings]
+    if (len(content_codes) != 132 or len(set(content_codes)) != 132 or
+        blueprint_codes != content_codes or source_codes != content_codes or
+        any(x.get("ordinal") != i or x.get("stageABC") != "READY_FOR_STAGE_D"
+            or not x.get("sourceLocator") or
+            x.get("sourcePdfSha256") != handoff.get("studentBooks", {}).get(x.get("sourcePdf"))
+            for i, x in enumerate(mappings, 1))):
+        return set()
+    pattern = re.compile(
+        r'byLesson\\["(PED:UAE-MOE-MATH:L4:COMMON:\\d{2}:\\d{2})"\\]\\s*'
+        r'=\\s*new LessonPracticeContract\\(\\s*"([^"]+)",\\s*'
+        r'"([^"]+)",\\s*"([^"]+)",\\s*\\[([^\\]]+)\\],', re.S)
+    rows = pattern.findall(source)
+    if len(rows) != 132 or {r[0] for r in rows} != set(content_codes):
+        return set()
+    reviewed = {r["lessonCode"]: r for r in support.get("lessons", [])}
+    for code, declared_code, skill, mechanic, raw_families in rows:
+        if code != declared_code or not code.startswith(G4_PREFIX) or skill not in skills or not mechanic:
+            return set()
+        family_ids = re.findall(r'"([^"]+)"', raw_families)
+        if not family_ids:
+            return set()
+        declaration_start = source.find('byLesson["' + code + '"]')
+        declaration_end = source.find(';', declaration_start)
+        declaration = source[declaration_start:declaration_end + 1]
+        extra = re.search(r'SkillIds\\s*=\\s*\\[([^\\]]+)\\]', declaration)
+        declared_skills = {skill}
+        if extra:
+            declared_skills.update(re.findall(r'"([^"]+)"', extra.group(1)))
+        if not declared_skills <= skills:
+            return set()
+        for family_id in family_ids:
+            family = families.get(family_id)
+            if family is None or family.get("lessonPracticeRouting") is not True:
+                return set()
+            family_skill = family.get("skillId")
+            if family_skill not in declared_skills:
+                return set()
+            if family_skill != skill:
+                review = reviewed.get(code)
+                if not (review and review.get("primarySkillId") == skill and
+                        family_id in review.get("supportedFamilyIds", []) and
+                        family_skill in review.get("declaredSkills", []) and
+                        review.get("sourceLocator") and review.get("mathematicalRationale")):
+                    return set()
+    return set(content_codes)
+
 
 
 def separately_certified_g12_practice() -> set[str]:
@@ -502,6 +583,10 @@ def audit() -> dict[str, Any]:
     # An additional generic Supporting rule would overwrite those reviewed
     # course-specific families; preserve dedicated contract authority instead.
     certified_advanced = separately_certified_g12_practice()
+    certified_grade4 = separately_certified_g4_practice()
+    g4_seen = {c for c in seen_lessons if c.startswith(G4_PREFIX)}
+    if g4_seen and certified_grade4 != g4_seen:
+        blockers.append("G4 132 source-specific exact Practice contracts missing, altered or unverified")
     g12_seen = {c for c in seen_lessons if c.startswith(G12_ADVANCED_PREFIX)}
     if g12_seen and certified_advanced != g12_seen:
         blockers.append("G12 advanced source-specific Practice contract proof missing or incomplete")
@@ -514,6 +599,7 @@ def audit() -> dict[str, Any]:
         row for row in unmatched_supporting
         if row["lessonCode"] not in covered_by_non_supporting_mapping
         and row["lessonCode"] not in certified_advanced
+        and row["lessonCode"] not in certified_grade4
     ]
     blockers.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
@@ -540,6 +626,7 @@ def audit() -> dict[str, Any]:
     )
 
     summary["grade12IndependentExactPracticeContracts"] = len(certified_advanced)
+    summary["grade4IndependentExactPracticeContracts"] = len(certified_grade4)
     summary["ruleCount"] = len(rules)
     summary["skillRegistryCount"] = len(skill_ids)
     summary["blockerCount"] = len(blockers)
