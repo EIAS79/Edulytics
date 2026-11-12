@@ -83,8 +83,11 @@ def structural():
     checks["blueprintMetadataLessonCount"] = b.get("AcquisitionDiagnostics", {}).get("LessonCount")
     if not checks["arabicAcademicLanguage"] or checks["arabicTranslationsPresent"] != 132:
         errors.append("Arabic-first Grade 4 content metadata or translations are incomplete")
-    if checks["contentReleaseStatus"] == "Published":
-        errors.append("Content claims Published before Stage D release evidence")
+    # Published is the learner runtime visibility status inside a candidate.
+    # It is NOT evidence of a production deployment, which final CI verifies.
+    checks["contentReadyForLearnerRuntime"] = checks["contentReleaseStatus"] == "Published"
+    if not checks["contentReadyForLearnerRuntime"]:
+        errors.append("The Grade4 candidate cannot be exercised by learners while canonical content remains Draft")
     if checks["blueprintMetadataUnitCount"] != 16 or checks["blueprintMetadataLessonCount"] != 132:
         errors.append("Blueprint acquisition diagnostics retain obsolete 14-unit/93-lesson scope")
     expected = [6,9,8,11,6,11,9,10,9,11,10,7,3,9,5,8]
