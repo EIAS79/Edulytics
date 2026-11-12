@@ -73,9 +73,9 @@ def separately_certified_g4_practice() -> set[str]:
             for i, x in enumerate(mappings, 1))):
         return g4_audit_failure("G4 catalogue, handoff mapping or source hashes mismatch")
     pattern = re.compile(
-        r'byLesson\\["(PED:UAE-MOE-MATH:L4:COMMON:\\d{2}:\\d{2})"\\]\\s*'
-        r'=\\s*new LessonPracticeContract\\(\\s*"([^"]+)",\\s*'
-        r'"([^"]+)",\\s*"([^"]+)",\\s*\\[([^\\]]+)\\],', re.S)
+        r'byLesson\["(PED:UAE-MOE-MATH:L4:COMMON:\d{2}:\d{2})"\]\s*'
+        r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+        r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\],', re.S)
     rows = pattern.findall(source)
     if len(rows) != 132 or {r[0] for r in rows} != set(content_codes):
         return g4_audit_failure("G4 Practice contracts count/code mismatch")
@@ -89,7 +89,7 @@ def separately_certified_g4_practice() -> set[str]:
         declaration_start = source.find('byLesson["' + code + '"]')
         declaration_end = source.find(';', declaration_start)
         declaration = source[declaration_start:declaration_end + 1]
-        extra = re.search(r'SkillIds\\s*=\\s*\\[([^\\]]+)\\]', declaration)
+        extra = re.search(r'SkillIds\s*=\s*\[([^\]]+)\]', declaration)
         declared_skills = {skill}
         if extra:
             declared_skills.update(re.findall(r'"([^"]+)"', extra.group(1)))
