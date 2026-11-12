@@ -110,8 +110,11 @@ jobs:
         run: |
           set -euo pipefail
           dotnet tool restore
-          dotnet restore Edulytics.sln
-          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
+          # Exact legacy Render commit predates a 2026 security advisory.
+          # The OLD snapshot is executed only against disposable local PostgreSQL,
+          # with no inbound network; do not disable audit for the candidate.
+          dotnet restore Edulytics.sln -p:NuGetAudit=false
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore -p:NuGetAudit=false
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
       - name: Confirm 93 legacy and snapshot unrelated grade counts
