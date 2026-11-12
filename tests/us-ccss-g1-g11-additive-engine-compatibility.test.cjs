@@ -98,7 +98,7 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
     for(const line of current) if(oldIndex<baseline.length && line===baseline[oldIndex]) oldIndex++;
     assert.equal(oldIndex,baseline.length,'Published non-Grade4 lines must survive unchanged: '+file);
   }
-    const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
+  const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||
     (x.startsWith('-')&&!x.startsWith('---')));
