@@ -188,45 +188,75 @@ def run():
         g4_dir = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G4"
         approval = json.loads((g4_dir / "grade4-owner-approved-93-to-132-replacement.json").read_text(encoding="utf8"))
         migration = json.loads((g4_dir / "grade4-migration-validation.json").read_text(encoding="utf8"))
-        rows = migration["mapping"]
-        audited = {}
-        for row in rows:
-            code = row["oldLessonCode"]
-            key = ("UAE-MOE-MATH", code)
-            if key in audited:
-                raise ValueError(f"duplicate legacy mapping: {code}")
-            audited[key] = row
-            if key not in baseline:
-                raise ValueError(f"unrecognized legacy lesson: {code}")
-            if row.get("classification") == "LEGACY_ID_NOT_PRESENT":
-                if key in candidate or row.get("currentLessonCode") is not None:
-                    raise ValueError(f"absent legacy ID unexpectedly reused: {code}")
-            elif row.get("classification") == "SAME_ID_DIFFERENT_TITLE_COLLISION":
-                if key not in candidate or row.get("currentLessonCode") != code:
-                    raise ValueError(f"changed legacy ID not accounted for: {code}")
-            else:
-                raise ValueError(f"unreviewed legacy classification: {code}")
-        if not (
+        # Once the exact 132-lesson owner-approved candidate is merged into
+        # main, the old 93 IDs are no longer in the Git baseline. A follow-up
+        # production hotfix must instead prove it has retained the precise
+        # approved released blueprint, without accepting an arbitrary rewrite.
+        released_blueprint = (
+            "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/"
+            "uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
+        )
+        approved_blob = "d3aef0a9ca39e28cf91cdedee3c0b58d45baa036"
+        already_released = (
             approval.get("ownerRequestedReplacement") is True
             and approval.get("scope") == "UAE Grade 4 Common only"
             and approval.get("legacyPedagogicalLessonCount") == 93
             and approval.get("newPedagogicalLessonCount") == 132
-            and approval.get("targetFrameworkVersionCode") == "MOE-2026-2027-T1"
             and migration.get("oldLessonCount") == 93
             and migration.get("newLessonCount") == 132
-            and migration.get("identityCollisionCount") == 83
-            and migration.get("absentOldIdCount") == 10
-            and len(g4_legacy) == 93
-            and len(g4_new) == 132
-            and len(rows) == 93
-            and set(audited) == g4_legacy
-            and len(g4_missing) == 10
-            and len(g4_changed) == 83
-            and all(k in g4_changed for k in g4_legacy - g4_missing)
-            and all(audited[k]["classification"] == "LEGACY_ID_NOT_PRESENT" for k in g4_missing)
-        ):
-            raise ValueError("93-to-132 replacement audit does not match exact candidate delta")
-        g4_replacement_authorized = True
+            and len(g4_legacy) == 132
+            and g4_legacy == g4_new
+            and not g4_missing
+            and not g4_changed
+            and subprocess.check_output(
+                ["git", "rev-parse", f"origin/main:{released_blueprint}"],
+                cwd=ROOT, text=True).strip() == approved_blob
+            and subprocess.check_output(
+                ["git", "hash-object", str(ROOT / released_blueprint)],
+                cwd=ROOT, text=True).strip() == approved_blob
+        )
+        if already_released:
+            g4_replacement_authorized = True
+        else:
+            rows = migration["mapping"]
+            audited = {}
+            for row in rows:
+                code = row["oldLessonCode"]
+                key = ("UAE-MOE-MATH", code)
+                if key in audited:
+                    raise ValueError(f"duplicate legacy mapping: {code}")
+                audited[key] = row
+                if key not in baseline:
+                    raise ValueError(f"unrecognized legacy lesson: {code}")
+                if row.get("classification") == "LEGACY_ID_NOT_PRESENT":
+                    if key in candidate or row.get("currentLessonCode") is not None:
+                        raise ValueError(f"absent legacy ID unexpectedly reused: {code}")
+                elif row.get("classification") == "SAME_ID_DIFFERENT_TITLE_COLLISION":
+                    if key not in candidate or row.get("currentLessonCode") != code:
+                        raise ValueError(f"changed legacy ID not accounted for: {code}")
+                else:
+                    raise ValueError(f"unreviewed legacy classification: {code}")
+            if not (
+                approval.get("ownerRequestedReplacement") is True
+                and approval.get("scope") == "UAE Grade 4 Common only"
+                and approval.get("legacyPedagogicalLessonCount") == 93
+                and approval.get("newPedagogicalLessonCount") == 132
+                and approval.get("targetFrameworkVersionCode") == "MOE-2026-2027-T1"
+                and migration.get("oldLessonCount") == 93
+                and migration.get("newLessonCount") == 132
+                and migration.get("identityCollisionCount") == 83
+                and migration.get("absentOldIdCount") == 10
+                and len(g4_legacy) == 93
+                and len(g4_new) == 132
+                and len(rows) == 93
+                and set(audited) == g4_legacy
+                and len(g4_missing) == 10
+                and len(g4_changed) == 83
+                and all(k in g4_changed for k in g4_legacy - g4_missing)
+                and all(audited[k]["classification"] == "LEGACY_ID_NOT_PRESENT" for k in g4_missing)
+            ):
+                raise ValueError("93-to-132 replacement audit does not match exact candidate delta")
+            g4_replacement_authorized = True
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError) as exc:
         errors.append(f"UAE Grade4 narrowly-scoped owner replacement audit failed: {exc}")
     unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set())
