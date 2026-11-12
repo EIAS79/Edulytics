@@ -7752,6 +7752,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u13.l01.plot_read_value", "uae.g4.u13.l01.plot_difference"],
             "UAE_G4_STUDENT_04_03_PP851_856_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:12:04", "geometry.solids_nets",
+            "FOLD_NETS_INTO_3D_SOLIDS",
+            ["uae.g4.u12.l04.net_missing_faces", "uae.g4.u12.l04.net_total_faces"],
+            "UAE_G4_STUDENT_04_03_PP813_818_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:03"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:12:03", "geometry.reflection_symmetry",
             "AXIS_OF_SYMMETRY_REFLECTION",
