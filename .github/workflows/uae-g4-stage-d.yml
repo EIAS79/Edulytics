@@ -116,7 +116,11 @@ jobs:
           dotnet restore Edulytics.sln -p:NuGetAudit=false
           dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -p:NuGetAudit=false
           dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore -p:NuGetAudit=false
-          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          # dotnet-ef starts a fresh implicit build without the legacy audit
+          # override unless --no-build is set. Compile this frozen startup
+          # project explicitly, then use the already-compiled binaries.
+          dotnet build src/Edulytics.Web/Edulytics.Web.csproj --no-restore -p:NuGetAudit=false
+          dotnet ef database update --no-build --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
       - name: Confirm 93 legacy and snapshot unrelated grade counts
         run: |
