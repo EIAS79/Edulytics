@@ -18,6 +18,7 @@ MP = ROOT / "docs/curriculum/UAE_G4_COMMON_OFFICIAL_MANIFEST.json"
 BP = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
 CP = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g4-common-t1-ogl-v1.lesson-content-pack.json"
 REG = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+SKILLS = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
 CON = ROOT / "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
 OUTPUT = ROOT / "artifacts/uae-g4-stage-d"
 
@@ -88,6 +89,39 @@ def structural():
     if contract_missing:
         errors.append(f"{len(contract_missing)} lesson Practice contracts missing")
         details["practiceContractMissing"] = contract_missing
+    known_skill_ids = {x["id"] for x in load(SKILLS)["skills"]}
+    family_owners = {x["id"]: x["skillId"] for x in reg["families"]}
+    pattern = re.compile(
+        r'byLesson\["(PED:UAE-MOE-MATH:L4:COMMON:\d{2}:\d{2})"\]\s*'
+        r'=\s*new LessonPracticeContract\(\s*"[^"]+",\s*'
+        r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]',
+        re.S)
+    contract_rows = pattern.findall(contracts)
+    unknown_contract_skills, cross_skill_family_uses = [], []
+    for lesson_code, skill, mechanic, listed in contract_rows:
+        family_list = re.findall(r'"([^"]+)"', listed)
+        if skill not in known_skill_ids:
+            unknown_contract_skills.append(
+                {"lessonCode":lesson_code,"skillId":skill,"strategy":mechanic})
+        for f in family_list:
+            family_skill = family_owners.get(f)
+            if family_skill != skill:
+                cross_skill_family_uses.append({
+                    "lessonCode":lesson_code,"contractSkillId":skill,
+                    "questionFamily":f,"registeredFamilySkillId":family_skill})
+    checks["parsedPracticeContracts"] = len(contract_rows)
+    checks["unknownContractSkillIdCount"] = len(unknown_contract_skills)
+    checks["unreviewedCrossSkillFamilyCount"] = len(cross_skill_family_uses)
+    details["unknownContractSkillIds"] = unknown_contract_skills
+    details["crossSkillFamilyReuseRequiringEvidence"] = cross_skill_family_uses
+    if len(contract_rows)!=132:
+        errors.append("Exact Grade4 contract parser does not resolve all 132 contracts")
+    if unknown_contract_skills:
+        errors.append(
+            f"{len(unknown_contract_skills)} Practice contracts reference unknown SkillIds")
+    if cross_skill_family_uses:
+        errors.append(
+            f"{len(cross_skill_family_uses)} cross-skill question-family usages lack reviewed equivalence evidence")
     family_ids = {x["id"] for x in reg["families"]}
     details["questionFamilyRegistrySize"] = len(family_ids)
     checkpoint_ok, absent, mismatched = 0, [], []

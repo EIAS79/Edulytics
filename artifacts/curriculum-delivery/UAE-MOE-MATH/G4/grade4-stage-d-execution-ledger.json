@@ -1,7 +1,7 @@
 {
   "Stage": "D",
   "Status": "D_BLOCKED",
-  "ReleaseDecision": "NO_GO_SOURCE_100",
+  "ReleaseDecision": "NO_GO_SOURCE_100_AND_TECHNICAL",
   "Grade": 4,
   "Pathway": "Common",
   "TargetYear": "2026-2027",
@@ -47,6 +47,12 @@
     "no authenticated saved attempts across all eligible lessons",
     "no desktop/mobile Arabic RTL visual evidence for the full grade",
     "no independent publication rights verification",
-    "no complete final CI run and validated Render deployment"
-  ]
+    "no complete final CI run and validated Render deployment",
+    "14 lesson Practice contracts use unknown SkillIds and 45 family uses have different registered skill identities without reviewed equivalence."
+  ],
+  "UnknownLessonPracticeSkillIds": 14,
+  "CrossSkillFamilyReferencesRequiringReview": 45,
+  "StrictRegistryIntegrityBlockersAfterRepair": 0,
+  "StructuralGateStatus": "BLOCKED_CONTRACT_IDENTITY",
+  "SupportingSkillResolutionUnmappedGrade4": 59
 }

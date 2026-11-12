@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify all SkillIds and capability registry references
+        run: python3 tools/math_intelligence/math_registry_integrity.py --strict
       - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase structural
       - if: always()
         uses: actions/upload-artifact@v4
