@@ -41878,6 +41878,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u12.l07.prism_volume",
+      "version": 1,
+      "skillId": "geometry.rectangular_prism_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u12-l07-abc-stage-d-not-run",
+      "representations": [
+        "original_diagram",
+        "geometry_model",
+        "numeric_answer"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u12.l07.prism_missing_height",
+      "version": 1,
+      "skillId": "geometry.rectangular_prism_volume",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u12-l07-abc-stage-d-not-run",
+      "representations": [
+        "original_diagram",
+        "geometry_model",
+        "numeric_answer"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
