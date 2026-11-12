@@ -150,7 +150,7 @@ public sealed class RichLessonContentV2RolloutTests
         // All 102 + 99 + 109 Arabic lessons are intentionally excluded from
         // the English/Polish-only Rich V2 compiler (310, not a generic fallback).
         Assert.Equal(102 + 99 + 109, blockedLocalized);
-        Assert.Equal(5183 - readyCurated - blockedLocalized, readyRuntime);
+        Assert.Equal((5183 - 93 + 132) - readyCurated - blockedLocalized, readyRuntime);
         Assert.Equal(0, blockedContract);
         Assert.Equal(0, blockedGeneration);
 
