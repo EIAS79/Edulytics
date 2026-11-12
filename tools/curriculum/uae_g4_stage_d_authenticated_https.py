@@ -28,7 +28,7 @@ TEACHER = "uae-primary.teacher.primary@edulytiks.com"
 SUPERVISOR = "uae-primary.supervisor@edulytiks.com"
 ADMIN = "uae-primary.admin@edulytiks.com"
 FOREIGN = "commoncore-primary.student.primary@edulytiks.com"
-PREFIX = "PED:UAE-MOE-MATH:L3:COMMON:"
+PREFIX = "PED:UAE-MOE-MATH:L4:COMMON:"
 
 
 def required_environment():
@@ -61,7 +61,7 @@ def check_catalogue():
     rows = sql("""
       SELECT "Code"||'|'||"Id"::text
       FROM "CurriculumPedagogicalLessons"
-      WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L3:COMMON:%'
+      WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'
       ORDER BY "Code";
     """).splitlines()
     parsed = [x.split("|", 1) for x in rows]
@@ -90,9 +90,9 @@ def check_school_adoption():
       WHERE u."Email"='""" + STUDENT + """' AND s."SchoolCode"='""" + SCHOOL + """';
     """
     adoption, level, key, culture = one(q, "Grade4 Arabic student adoption").split("|", 3)
-    if not re.fullmatch(UUID, adoption) or level != "3" or culture != "ar":
+    if not re.fullmatch(UUID, adoption) or level != "4" or culture != "ar":
         raise AssertionError(f"UAE G4 adoption/culture mismatch: {level}/{culture}")
-    if "UAE" not in key.upper() and "3" not in key:
+    if "UAE" not in key.upper() and "4" not in key:
         raise AssertionError("UAE G4 adoption key not UAE Grade 4")
     return adoption, key
 
