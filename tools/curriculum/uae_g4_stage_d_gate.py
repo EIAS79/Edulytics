@@ -203,6 +203,30 @@ def source():
         checks["all132SourceLocatorsPresent"] = len(handoff_data.get("lessonMappings", [])) == 132
         checks["annualPlanSha256Present"] = bool(handoff_data.get("annualPlan", {}).get("sha256"))
         checks["sourceSnapshotIdRecorded"] = bool(handoff_data.get("SourceSnapshotId"))
+        # A third-party annual-plan file hash authenticates the downloaded
+        # bytes, not the ministry's issuance or the 2026-27 prescribed scope.
+        # Never turn owner academic signoff into fabricated source authority.
+        annual_plan = handoff_data.get("annualPlan", {})
+        checks["annualPlanAuthorityVerified"] = annual_plan.get("publisherVerification") in (
+            "OFFICIAL_MOE_ORIGIN_VERIFIED",
+            "SIGNED_MOE",
+            "OFFICIAL_MOE_ARCHIVE_VERIFIED",
+        )
+        lesson_mappings = handoff_data.get("lessonMappings", [])
+        missing_rows = [
+            x.get("ordinal") for x in lesson_mappings
+            if not isinstance(x.get("annualPlanExactRowId"), str)
+            or not x["annualPlanExactRowId"].strip()
+            or x["annualPlanExactRowId"].startswith("NOT_")
+        ]
+        checks["all132AnnualPlanRowsReconciled"] = (
+            len(lesson_mappings) == 132 and not missing_rows)
+        details["unreconciledAnnualPlanOrdinals"] = missing_rows
+        details["annualPlanPublisherVerification"] = annual_plan.get("publisherVerification")
+        if not checks["annualPlanAuthorityVerified"]:
+            errors.append("Annual 2026-27 plan has no verified ministry provenance; recorded hash alone is not authority")
+        if not checks["all132AnnualPlanRowsReconciled"]:
+            errors.append(f"{len(missing_rows)} lessons lack a verified exact 2026-27 annual-plan row mapping")
         if not all(checks.get(x, False) for x in [
           "ownerAcademicApprovalRecorded","all132SourceLocatorsPresent",
           "annualPlanSha256Present","sourceSnapshotIdRecorded"]):
