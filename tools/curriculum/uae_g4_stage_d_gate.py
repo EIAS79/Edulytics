@@ -103,6 +103,9 @@ def structural():
         errors.append(f"{len(contract_missing)} lesson Practice contracts missing")
         details["practiceContractMissing"] = contract_missing
     known_skill_ids = {x["id"] for x in load(SKILLS)["skills"]}
+    support_file = G / "grade4-reviewed-supporting-skill-reuse.json"
+    support_doc = load(support_file) if support_file.is_file() else {"lessons": []}
+    reviewed_by_code = {x["lessonCode"]: x for x in support_doc["lessons"]}
     family_owners = {x["id"]: x["skillId"] for x in reg["families"]}
     pattern = re.compile(
         r'byLesson\["(PED:UAE-MOE-MATH:L4:COMMON:\d{2}:\d{2})"\]\s*'
@@ -111,20 +114,44 @@ def structural():
         re.S)
     contract_rows = pattern.findall(contracts)
     unknown_contract_skills, cross_skill_family_uses = [], []
+    reviewed_supporting_reuse = []
     for lesson_code, skill, mechanic, listed in contract_rows:
         family_list = re.findall(r'"([^"]+)"', listed)
         if skill not in known_skill_ids:
             unknown_contract_skills.append(
                 {"lessonCode":lesson_code,"skillId":skill,"strategy":mechanic})
+        start = contracts.find('byLesson["'+lesson_code+'"]')
+        stop = contracts.find(';', start)
+        declaration = contracts[start:stop+1]
+        extra = re.search(r'SkillIds\s*=\s*\[([^\]]+)\]',declaration)
+        declared = {skill}
+        if extra:
+            declared.update(re.findall(r'"([^"]+)"',extra.group(1)))
+        review = reviewed_by_code.get(lesson_code)
         for f in family_list:
             family_skill = family_owners.get(f)
             if family_skill != skill:
-                cross_skill_family_uses.append({
-                    "lessonCode":lesson_code,"contractSkillId":skill,
-                    "questionFamily":f,"registeredFamilySkillId":family_skill})
+                is_documented = bool(
+                    review and review["primarySkillId"] == skill and
+                    f in review["supportedFamilyIds"] and
+                    family_skill in review["declaredSkills"] and
+                    family_skill in declared and
+                    all(k in known_skill_ids for k in declared) and
+                    review.get("sourceLocator") and
+                    review.get("mathematicalRationale"))
+                if is_documented:
+                    reviewed_supporting_reuse.append({
+                        "lessonCode":lesson_code,"questionFamily":f,
+                        "familySkillId":family_skill})
+                else:
+                    cross_skill_family_uses.append({
+                        "lessonCode":lesson_code,"contractSkillId":skill,
+                        "questionFamily":f,"registeredFamilySkillId":family_skill})
     checks["parsedPracticeContracts"] = len(contract_rows)
     checks["unknownContractSkillIdCount"] = len(unknown_contract_skills)
     checks["unreviewedCrossSkillFamilyCount"] = len(cross_skill_family_uses)
+    checks["explicitReviewedSupportingFamilyReuseCount"] = len(reviewed_supporting_reuse)
+    details["reviewedSupportingPracticeOnly"] = reviewed_supporting_reuse
     details["unknownContractSkillIds"] = unknown_contract_skills
     details["crossSkillFamilyReuseRequiringEvidence"] = cross_skill_family_uses
     if len(contract_rows)!=132:

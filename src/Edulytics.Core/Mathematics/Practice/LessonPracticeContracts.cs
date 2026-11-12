@@ -7229,7 +7229,7 @@ public static class LessonPracticeContractRegistry
              "uae.g4.u01.l01.expanded_to_standard",
              "uae.g4.u01.l02.words_to_standard"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP17_22_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.place_value.read_write_to_millions", "number.place_value.to_millions"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:01:03"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:01:03",
             "number.place_value.compare_to_millions",
@@ -7359,7 +7359,7 @@ public static class LessonPracticeContractRegistry
             "CHOOSE_ADDITIVE_OR_MULTIPLICATIVE_COMPARISON",
             ["uae.g4.u02.l08.bar_compare", "uae.g4.u03.l03.times_as_many", "uae.g4.u03.l03.unknown_comparison_base", "uae.g4.u03.l03.unknown_multiplier"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP153_158_REUSE_EXISTING_FAMILIES_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.additive_vs_multiplicative_comparison", "number.bar_model_word_problems", "number.multiplicative_comparison"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:03:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:03:05", "number.mult_div_properties",
             "COMMUTATIVE_IDENTITY_ZERO_DIVISION_BY_ONE_AND_SELF",
@@ -7451,7 +7451,7 @@ public static class LessonPracticeContractRegistry
             "CHOOSE_ESTIMATION_OR_EXACT_ANSWER",
             ["uae.g4.u04.l10.choose_answer_precision", "uae.g4.u04.l09.multidigit_product", "uae.g4.u04.l09.round_estimate"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP255_260_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.exact_vs_estimated_answers", "number.multiply_multidigit_by_one"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:11"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:11", "number.multidigit_multiply_with_zeros",
             "MULTIDIGIT_ZERO_PLACEHOLDER_MULTIPLICATION",
@@ -7523,7 +7523,7 @@ public static class LessonPracticeContractRegistry
             "TWO_DIGIT_LONG_DIVISION_WITH_REMAINDER",
             ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
             "UAE_G4_STUDENT_04_01_PP353_358_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.base_ten_division_with_remainders", "number.long_division_with_remainders"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:06"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:06:06", "number.interpret_division_remainders",
             "DIVISION_REMAINDER_CONTEXT_INTERPRETATION",
@@ -7559,7 +7559,7 @@ public static class LessonPracticeContractRegistry
             "MULTISTEP_SUBTRACT_THEN_DIVIDE_WORD_PROBLEMS",
             ["uae.g4.u06.l11.weeks_to_save_target", "uae.g4.u05.l05.missing_after_groups"],
             "UAE_G4_STUDENT_04_01_PP393_398_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.multistep_word_problems", "number.multistep_word_problems_with_division"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:07:01", "patterns.non_numeric_repeating_patterns",
             "NONNUMERIC_PATTERN_REPEAT_AND_EXTEND",
@@ -7577,13 +7577,13 @@ public static class LessonPracticeContractRegistry
             "ARITHMETIC_GEOMETRIC_SEQUENCE_GENERATION",
             ["uae.g4.u07.l02.constant_numeric_step", "uae.g4.u07.l03.multiply_sequence", "uae.g4.u07.l03.divide_sequence"],
             "UAE_G4_STUDENT_04_02_07_PP425_430_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.numeric_sequences_identify_extend", "number.sequence_generate_terms"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:04"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:07:04", "number.problem_solving_search_for_pattern",
             "SEARCH_FOR_PATTERN_WORD_PROBLEM",
             ["uae.g4.u07.l02.constant_numeric_step", "uae.g4.u07.l02.alternating_numeric_rule"],
             "UAE_G4_STUDENT_04_02_07_PP431_436_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["number.numeric_sequences_identify_extend", "number.problem_solving_search_for_pattern"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:07:05", "algebra.input_output_add_subtract",
             "INPUT_OUTPUT_ADDITION_SUBTRACTION_RULES",
@@ -8040,13 +8040,13 @@ public static class LessonPracticeContractRegistry
             "MULTI_OPERATION_EQUATION_INPUT_OUTPUT_TABLE",
             ["uae.g4.u07.l08.two_step_rule", "uae.g4.u07.l09.multi_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP465_470_STAGE_D_NOT_RUN",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version) { SkillIds = ["algebra.evaluate_two_operation_equation", "algebra.order_of_operations"] };
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:07:08"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:07:08", "algebra.evaluate_two_operation_equation",
             "TWO_OPERATION_EQUATION_INPUT_OUTPUT",
             ["uae.g4.u07.l08.two_step_rule", "uae.g4.u07.l09.multi_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP459_464_STAGE_D_NOT_RUN",
-            "READY_VERIFIED",Version);
+            "READY_VERIFIED",Version) { SkillIds = ["algebra.evaluate_two_operation_equation", "algebra.order_of_operations"] };
         byLesson["PED:UAE-MOE-MATH:L3:COMMON:01:01"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L3:COMMON:01:01",
             "number.place_value.to_thousands",

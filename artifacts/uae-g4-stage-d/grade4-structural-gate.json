@@ -2,11 +2,11 @@
   "phase": "structural",
   "grade": 4,
   "pathway": "Common",
-  "candidateSha": "f188ba9b2b14ef0fd7f861439f132c5ece8c90a7",
-  "timestampUtc": "2026-11-12T02:19:00.092901+00:00",
+  "candidateSha": "da546283c9c558bf3a30347754a8f53130697759",
+  "timestampUtc": "2026-11-12T02:27:42.118971+00:00",
   "status": "BLOCKED",
   "errors": [
-    "45 cross-skill question-family usages lack reviewed equivalence evidence"
+    "29 cross-skill question-family usages lack reviewed equivalence evidence"
   ],
   "checks": {
     "manifestUnitCount": 16,
@@ -44,49 +44,96 @@
     "presentPracticeContracts": 132,
     "parsedPracticeContracts": 132,
     "unknownContractSkillIdCount": 0,
-    "unreviewedCrossSkillFamilyCount": 45,
+    "unreviewedCrossSkillFamilyCount": 29,
+    "explicitReviewedSupportingFamilyReuseCount": 16,
     "readyAbcCheckpoints": 132
   },
   "details": {
+    "reviewedSupportingPracticeOnly": [
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
+        "questionFamily": "uae.g4.u01.l01.compose_seven_digits",
+        "familySkillId": "number.place_value.to_millions"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
+        "questionFamily": "uae.g4.u01.l01.expanded_to_standard",
+        "familySkillId": "number.place_value.to_millions"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+        "questionFamily": "uae.g4.u02.l08.bar_compare",
+        "familySkillId": "number.bar_model_word_problems"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+        "questionFamily": "uae.g4.u03.l03.times_as_many",
+        "familySkillId": "number.multiplicative_comparison"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+        "questionFamily": "uae.g4.u03.l03.unknown_comparison_base",
+        "familySkillId": "number.multiplicative_comparison"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+        "questionFamily": "uae.g4.u03.l03.unknown_multiplier",
+        "familySkillId": "number.multiplicative_comparison"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
+        "questionFamily": "uae.g4.u04.l09.multidigit_product",
+        "familySkillId": "number.multiply_multidigit_by_one"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
+        "questionFamily": "uae.g4.u04.l09.round_estimate",
+        "familySkillId": "number.multiply_multidigit_by_one"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
+        "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+        "familySkillId": "number.base_ten_division_with_remainders"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
+        "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+        "familySkillId": "number.base_ten_division_with_remainders"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:11",
+        "questionFamily": "uae.g4.u05.l05.missing_after_groups",
+        "familySkillId": "number.multistep_word_problems"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:03",
+        "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
+        "familySkillId": "number.numeric_sequences_identify_extend"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
+        "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
+        "familySkillId": "number.numeric_sequences_identify_extend"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
+        "questionFamily": "uae.g4.u07.l02.alternating_numeric_rule",
+        "familySkillId": "number.numeric_sequences_identify_extend"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:09",
+        "questionFamily": "uae.g4.u07.l08.two_step_rule",
+        "familySkillId": "algebra.order_of_operations"
+      },
+      {
+        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:08",
+        "questionFamily": "uae.g4.u07.l08.two_step_rule",
+        "familySkillId": "algebra.order_of_operations"
+      }
+    ],
     "unknownContractSkillIds": [],
     "crossSkillFamilyReuseRequiringEvidence": [
       {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
-        "contractSkillId": "number.place_value.read_write_to_millions",
-        "questionFamily": "uae.g4.u01.l01.compose_seven_digits",
-        "registeredFamilySkillId": "number.place_value.to_millions"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
-        "contractSkillId": "number.place_value.read_write_to_millions",
-        "questionFamily": "uae.g4.u01.l01.expanded_to_standard",
-        "registeredFamilySkillId": "number.place_value.to_millions"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
-        "contractSkillId": "number.additive_vs_multiplicative_comparison",
-        "questionFamily": "uae.g4.u02.l08.bar_compare",
-        "registeredFamilySkillId": "number.bar_model_word_problems"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
-        "contractSkillId": "number.additive_vs_multiplicative_comparison",
-        "questionFamily": "uae.g4.u03.l03.times_as_many",
-        "registeredFamilySkillId": "number.multiplicative_comparison"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
-        "contractSkillId": "number.additive_vs_multiplicative_comparison",
-        "questionFamily": "uae.g4.u03.l03.unknown_comparison_base",
-        "registeredFamilySkillId": "number.multiplicative_comparison"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
-        "contractSkillId": "number.additive_vs_multiplicative_comparison",
-        "questionFamily": "uae.g4.u03.l03.unknown_multiplier",
-        "registeredFamilySkillId": "number.multiplicative_comparison"
-      },
-      {
         "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:04",
         "contractSkillId": "number.area_model_partial_products",
         "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
@@ -175,18 +222,6 @@
         "contractSkillId": "number.column_multiplication_regroup",
         "questionFamily": "uae.g4.u04.l03.model_ones_product",
         "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
-        "contractSkillId": "number.exact_vs_estimated_answers",
-        "questionFamily": "uae.g4.u04.l09.multidigit_product",
-        "registeredFamilySkillId": "number.multiply_multidigit_by_one"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
-        "contractSkillId": "number.exact_vs_estimated_answers",
-        "questionFamily": "uae.g4.u04.l09.round_estimate",
-        "registeredFamilySkillId": "number.multiply_multidigit_by_one"
       },
       {
         "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:11",
@@ -225,18 +260,6 @@
         "registeredFamilySkillId": "number.area_distributive_two_digit"
       },
       {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
-        "contractSkillId": "number.long_division_with_remainders",
-        "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
-        "registeredFamilySkillId": "number.base_ten_division_with_remainders"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
-        "contractSkillId": "number.long_division_with_remainders",
-        "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
-        "registeredFamilySkillId": "number.base_ten_division_with_remainders"
-      },
-      {
         "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:07",
         "contractSkillId": "number.long_division_first_quotient_digit",
         "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
@@ -283,42 +306,6 @@
         "contractSkillId": "number.quotient_with_zero_placeholder",
         "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
         "registeredFamilySkillId": "number.base_ten_division_with_remainders"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:11",
-        "contractSkillId": "number.multistep_word_problems_with_division",
-        "questionFamily": "uae.g4.u05.l05.missing_after_groups",
-        "registeredFamilySkillId": "number.multistep_word_problems"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:03",
-        "contractSkillId": "number.sequence_generate_terms",
-        "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
-        "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
-        "contractSkillId": "number.problem_solving_search_for_pattern",
-        "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
-        "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
-        "contractSkillId": "number.problem_solving_search_for_pattern",
-        "questionFamily": "uae.g4.u07.l02.alternating_numeric_rule",
-        "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:09",
-        "contractSkillId": "algebra.evaluate_two_operation_equation",
-        "questionFamily": "uae.g4.u07.l08.two_step_rule",
-        "registeredFamilySkillId": "algebra.order_of_operations"
-      },
-      {
-        "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:08",
-        "contractSkillId": "algebra.evaluate_two_operation_equation",
-        "questionFamily": "uae.g4.u07.l08.two_step_rule",
-        "registeredFamilySkillId": "algebra.order_of_operations"
       }
     ],
     "questionFamilyRegistrySize": 2303,
@@ -326,7 +313,7 @@
     "mismatchedCheckpoints": [],
     "sourceHashManifest": "9c01e113d0eaff35499d02aa068fb222f1056905b71a8bff89123a7d0f6a65f7",
     "blueprintHash": "eb438490d567f6550e3fef70ff6abff5d4317bfa469a53a980f2d50eee863a56",
-    "contentHash": "06df7d8a8310d61ba8cd934ccd94b4edf094d0ed148a7a57504027bb37edc440"
+    "contentHash": "cca698e4b226af2fab62d1dd5f33e3b52563d5aaa95799bc482c163c38c9c328"
   },
   "notAuthenticatedE2eEvidence": true,
   "notPublicationEvidence": true
