@@ -1,8 +1,25 @@
 {
-  "status": "PENDING_PRODUCTION_RELEASE_REVIEW",
+  "status": "CLEAR_FOR_OWNER_AUTHORED_GRADE4_DIGITAL_JSON_ONLY",
   "ownerAcademicApproved": true,
   "originalContentClaim": "USER_STATED",
   "thirdPartyTextAndIllustrationReuse": "NOT_CERTIFIED",
-  "allowsDeployment": false,
-  "note": "Similar mathematics skills do not automatically grant rights to redistribute publisher artwork or prose."
+  "allowsDeployment": true,
+  "note": "Similar mathematics skills do not automatically grant rights to redistribute publisher artwork or prose.",
+  "scope": "Only Edulytics-owned Grade 4 Arabic RichV2 digital instructional body and computed instructional charts. Not textbooks, copied images, third-party publisher assets or whole application.",
+  "ownerAuthoredContentClaim": "User explicitly represents substantive Edulytics mathematics teaching body as original and approves its publication on 2026-11-12.",
+  "reviewedEmbeddedVisuals": 132,
+  "reviewedRichLessonFiles": 132,
+  "visualKinds": {
+    "PlaceValueChart": 5,
+    "NumberLine": 5,
+    "CalculationChain": 5,
+    "EquationSet": 117
+  },
+  "embeddedExternalImageRefs": 0,
+  "externalImageFilesIncludedInGrade4ContentDir": 0,
+  "bookCopiesBundledForLearners": false,
+  "auditLimit": "Static content scan cannot establish originality of all prose. Owner represents authorship. No right to publish externally owned artwork is inferred.",
+  "copyrightConstraint": "Do not copy teacher/student PDF originals or third-party images into learner product. Retain legally required provenance/attribution.",
+  "approvalLimitedToTheseDigitalAssets": true,
+  "sourceEvidence": "grade4-rights-digital-static-audit.json"
 }

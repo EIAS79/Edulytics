@@ -1,7 +1,7 @@
 {
   "Stage": "D",
   "Status": "D_BLOCKED",
-  "ReleaseDecision": "NO_GO_SOURCE_100_AND_TECHNICAL",
+  "ReleaseDecision": "NO_GO_MIGRATION_AUTH_E2E_CI",
   "Grade": 4,
   "Pathway": "Common",
   "TargetYear": "2026-2027",
@@ -38,7 +38,7 @@
   "RenderDeploymentSha": null,
   "CiRunIds": [],
   "OwnerAcademicApproval": "OWNER_APPROVAL_STATED_SEPARATELY",
-  "CopyrightRightsCleared": false,
+  "CopyrightRightsCleared": true,
   "TimestampUtc": "2026-11-12T01:30:06.676214+00:00",
   "KnownSecurityWarning": "Historical NU1903 from 10.0.11; patched local package and runtime tag to 10.0.15, Docker image and production deployment not verified",
   "Blockers": [
@@ -50,7 +50,8 @@
     "no complete final CI run and validated Render deployment",
     "14 lesson Practice contracts use unknown SkillIds and 45 family uses have different registered skill identities without reviewed equivalence.",
     "Ten Stage C skill mappings remain under source/contract ownership review; no silent remapping.",
-    "14 primary SkillIds registered as unverified Stage C definitions; 45 cross-skill family references remain unresolved and unchanged."
+    "14 primary SkillIds registered as unverified Stage C definitions; 45 cross-skill family references remain unresolved and unchanged.",
+    "Owner authorship clears the 132 authored digital JSON packs only; no licence for original publisher artwork or PDFs is implied."
   ],
   "UnknownLessonPracticeSkillIds": 0,
   "CrossSkillFamilyReferencesRequiringReview": 45,
@@ -63,5 +64,8 @@
   "PostPatchScopedMathAndScaleTestsPassed": 641,
   "PostPatchScopedMathAndScaleTestsFailed": 0,
   "PostPatchSecurityRegressionLog": "artifacts/uae-g4-stage-d/grade4-patched-redis-regression.log",
-  "StageCPendingDAliasSkillIdsAdded": 14
+  "StageCPendingDAliasSkillIdsAdded": 14,
+  "OwnerAuthoredDigitalContentRightsAudit": "PASS_STATIC_DIGITAL_ASSETS_ONLY",
+  "SourceGateStatus": "PASS_ON_OWNER_APPROVAL_AND_HASHED_SOURCE",
+  "DigitallyBundledExternalPublisherAssets": 0
 }
