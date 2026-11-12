@@ -96,7 +96,7 @@ jobs:
       - name: Checkout legacy main source
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: c0970107123a3e94ca5d0928b45a58c577162d17
           path: legacy
       - name: Checkout exact pull-request candidate
         uses: actions/checkout@v4
