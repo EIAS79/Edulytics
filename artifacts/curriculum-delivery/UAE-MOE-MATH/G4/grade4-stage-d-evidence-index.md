@@ -12,3 +12,5 @@ Initial preflight baseline SHA: f0c50b4e922ca0a033ea57dd0ecc65e74d7f2581
 - Deep contract alignment: grade4-contract-skill-family-alignment.json, includes lesson-level evidence for 14/45 flagged links.
 - Strict question-family-to-skill registry audit: 0 unresolved after registering 72 missing Grade4 SkillIds.
 - Global Supporting skill-resolution audit: 59 missing explicit target mappings remain; no fabricated E2E validation.
+- Stage C exact skills: 49 formerly missing mappings added with recorded matching family owner and existing checkpoint; 10 remain for source review.
+- Security hotfix: Web Redis SignalR package 10.0.15 and Docker ASP.NET runtime tag 10.0.15; focused math/scale regression 641/641 passed, production image unverified.

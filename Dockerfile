@@ -49,7 +49,7 @@ RUN EDULYTICS_CONNECTION_STRING="Host=localhost;Port=5432;Database=edulytics_bui
     --output /app/efbundle \
     --force
 
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:10.0.15 AS runtime
 
 # Npgsql / EF migration bundle can require the system Kerberos GSSAPI
 # library before ASP.NET binds its HTTP port. The base ASP.NET runtime

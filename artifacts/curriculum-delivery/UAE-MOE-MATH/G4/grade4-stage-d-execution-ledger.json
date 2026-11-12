@@ -40,7 +40,7 @@
   "OwnerAcademicApproval": "OWNER_APPROVAL_STATED_SEPARATELY",
   "CopyrightRightsCleared": false,
   "TimestampUtc": "2026-11-12T01:30:06.676214+00:00",
-  "KnownSecurityWarning": "NU1903 Microsoft.AspNetCore.SignalR.StackExchangeRedis 10.0.11",
+  "KnownSecurityWarning": "Historical NU1903 from 10.0.11; patched local package and runtime tag to 10.0.15, Docker image and production deployment not verified",
   "Blockers": [
     "signed A-B-C source handoff and authoritative 2026-2027 source not proven",
     "legacy identity aliases and real learner migration not tested",
@@ -48,11 +48,18 @@
     "no desktop/mobile Arabic RTL visual evidence for the full grade",
     "no independent publication rights verification",
     "no complete final CI run and validated Render deployment",
-    "14 lesson Practice contracts use unknown SkillIds and 45 family uses have different registered skill identities without reviewed equivalence."
+    "14 lesson Practice contracts use unknown SkillIds and 45 family uses have different registered skill identities without reviewed equivalence.",
+    "Ten Stage C skill mappings remain under source/contract ownership review; no silent remapping."
   ],
   "UnknownLessonPracticeSkillIds": 14,
   "CrossSkillFamilyReferencesRequiringReview": 45,
   "StrictRegistryIntegrityBlockersAfterRepair": 0,
   "StructuralGateStatus": "BLOCKED_CONTRACT_IDENTITY",
-  "SupportingSkillResolutionUnmappedGrade4": 59
+  "SupportingSkillResolutionUnmappedGrade4": 10,
+  "StageCSafeExactSkillMapsAdded": 49,
+  "SignalRRedisPatchedPackage": "10.0.15",
+  "RuntimeDockerPinnedTag": "mcr.microsoft.com/dotnet/aspnet:10.0.15",
+  "PostPatchScopedMathAndScaleTestsPassed": 641,
+  "PostPatchScopedMathAndScaleTestsFailed": 0,
+  "PostPatchSecurityRegressionLog": "artifacts/uae-g4-stage-d/grade4-patched-redis-regression.log"
 }
