@@ -274,10 +274,22 @@ def migration():
     details["isolatedNeonBranchRequest"] = data.get("isolatedNeonBranchRequest")
     details["identityCollisions"] = data.get("sameCodeDifferentTitleOldLessons")
     details["oldLessonIdsAbsent"] = data.get("oldLessonIdsAbsentFromNewBlueprint")
-    if not checks["differentFrameworkVersion"]:
-        errors.append("New Arabic 132-lesson candidate reuses production version identity of legacy 93 English lessons")
+    replacement = G / "grade4-owner-approved-93-to-132-replacement.json"
+    checks["ownerApprovedSameVersionReplacementPlanPresent"] = replacement.exists()
+    if checks["ownerApprovedSameVersionReplacementPlanPresent"]:
+        plan = load(replacement)
+        checks["ownerApprovedSameVersionReplacementBackupRecorded"] = (
+            plan.get("ownerRequestedReplacement") is True and
+            plan.get("legacyPedagogicalLessonCount") == 93 and
+            plan.get("newPedagogicalLessonCount") == 132 and
+            len(plan.get("localBackupSha256", {})) == 2 and
+            plan.get("scope") == "UAE Grade 4 Common only")
+    else:
+        checks["ownerApprovedSameVersionReplacementBackupRecorded"] = False
+    if not checks["differentFrameworkVersion"] and not checks["ownerApprovedSameVersionReplacementBackupRecorded"]:
+        errors.append("Same-framework Grade 4 replacement lacks owner approval and exact local legacy backup proof")
     if not checks["isolatedMigrationAndRollbackPassed"]:
-        errors.append("No isolated PostgreSQL migration, preserving all legacy canonical content, was rehearsed and rolled back")
+        errors.append("Owner-approved 93-to-132 replacement has not been rehearsed and rolled back safely; production replacement remains forbidden")
     return report("migration", errors, checks, details)
 
 def final():

@@ -2,12 +2,11 @@
   "phase": "migration",
   "grade": 4,
   "pathway": "Common",
-  "candidateSha": "bb1d8f4642eda63b0f3b2280605c090eaed94e5f",
-  "timestampUtc": "2026-11-12T02:50:44.131001+00:00",
+  "candidateSha": "1fca132306640b8551f19c64d0e0722e53d73706",
+  "timestampUtc": "2026-11-12T08:46:18.057663+00:00",
   "status": "BLOCKED",
   "errors": [
-    "New Arabic 132-lesson candidate reuses production version identity of legacy 93 English lessons",
-    "No isolated PostgreSQL migration, preserving all legacy canonical content, was rehearsed and rolled back"
+    "Owner-approved 93-to-132 replacement has not been rehearsed and rolled back safely; production replacement remains forbidden"
   ],
   "checks": {
     "productionLegacyLessonCount": 93,
@@ -16,7 +15,9 @@
     "targetVersion": "MOE-2026-2027-T1",
     "legacyVersion": "MOE-2026-2027-T1",
     "differentFrameworkVersion": false,
-    "isolatedMigrationAndRollbackPassed": false
+    "isolatedMigrationAndRollbackPassed": false,
+    "ownerApprovedSameVersionReplacementPlanPresent": true,
+    "ownerApprovedSameVersionReplacementBackupRecorded": true
   },
   "details": {
     "isolatedNeonBranchRequest": "FAILED_BRANCH_LIMIT_EXCEEDED",
