@@ -156,6 +156,13 @@ jobs:
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-content-before
           test "$(cat /tmp/g4-content-before)" = "93"
+      - name: Reproduce genuine non-UAE US G4 legacy title drift and preserve it
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c \
+            "UPDATE \"CurriculumPedagogicalLessons\" SET \"Title\" = \"Title\" || ' [retained legacy drift]' WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' RETURNING \"Code\"" | grep -qx 'PED:US-CCSS-MATH:G4:U01:L01'
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]'" | grep -qx 1
       - name: Build candidate replacement importer
         working-directory: candidate
         run: |
@@ -184,6 +191,10 @@ jobs:
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-after
           cmp /tmp/non-g4-before /tmp/non-g4-after
+          # The US G4 lesson title drift deliberately introduced above must
+          # remain exactly as it was: UAE publication has no authority to fix it.
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]'" | grep -qx 1
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%' AND \"Title\" LIKE 'Math Is %'" | grep -qx 0
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
       - name: Test second startup without re-deleting 132 canonical records
