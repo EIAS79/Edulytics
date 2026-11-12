@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit12GeometryOneQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit16GeometryQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit15PerimeterAreaQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit14MetricMeasurementQuestions.Supports(family.Trim()) ||
@@ -766,6 +767,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(family))
+            return UaeGrade4Unit12GeometryOneQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit16GeometryQuestions.Supports(family))
             return UaeGrade4Unit16GeometryQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit15PerimeterAreaQuestions.Supports(family))
@@ -4039,6 +4042,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit12GeometryOneQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit16GeometryQuestions.Supports(family))
         {
@@ -8395,6 +8403,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(problem.Family))
+            return UaeGrade4Unit12GeometryOneQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit16GeometryQuestions.Supports(problem.Family))
             return UaeGrade4Unit16GeometryQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit15PerimeterAreaQuestions.Supports(problem.Family))

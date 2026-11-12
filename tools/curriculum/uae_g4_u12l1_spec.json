@@ -1,49 +1,49 @@
 {
-  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:13:01",
-  "Title": "نشاط عملي: التمثيلات البيانية بالنقاط",
-  "UnitTitle": "التمثيلات البيانية",
-  "UnitIndex": 13,
+  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:12:01",
+  "Title": "رسم النقاط والمستقيمات والأشعة",
+  "UnitTitle": "الهندسة (1)",
+  "UnitIndex": 12,
   "LessonIndex": 1,
-  "Ordinal": 108,
+  "Ordinal": 101,
   "StudentPdf": "04-03.pdf",
-  "PrintedStart": 851,
-  "PrintedEnd": 856,
-  "PdfStart": 90,
-  "PdfEnd": 95,
+  "PrintedStart": 795,
+  "PrintedEnd": 800,
+  "PdfStart": 34,
+  "PdfEnd": 39,
   "SourceSha256": "8d3a8f20f9d4ac6cd75c0b688453b92dace8e44af04a78a58b7c32be8d675668",
-  "SourceEdition": "UAE Grade 4 Arabic 2025-2026 scanned original local student textbook; source page images reviewed; 2026-2027 syllabus not independently confirmed",
-  "SkillId": "data.graphs",
-  "StrategyCode": "PLOT_TEMPERATURE_POINTS",
+  "SourceEdition": "Student-selected UAE Arabic Grade4 local textbook 2025-2026, reconciled with school annual lesson plan 2026-2027",
+  "SkillId": "geometry.points_lines_rays",
+  "StrategyCode": "DISTINGUISH_POINT_LINE_RAY_SEGMENT",
   "Families": [
-    "uae.g4.u13.l01.plot_read_value",
-    "uae.g4.u13.l01.plot_difference"
+    "uae.g4.u12.l01.rays_from_point",
+    "uae.g4.u12.l01.segments_from_points"
   ],
   "NewFamilies": [
-    "uae.g4.u13.l01.plot_read_value",
-    "uae.g4.u13.l01.plot_difference"
+    "uae.g4.u12.l01.rays_from_point",
+    "uae.g4.u12.l01.segments_from_points"
   ],
   "Representations": [
-    "point_graph",
-    "line_graph",
-    "pie_graph",
-    "table_data"
+    "original_diagram",
+    "geometry_model",
+    "numeric_answer"
   ],
   "SkillChecks": [
-    "إنشاء جدول بيانات",
-    "تحديد تدريج المحور الرأسي",
-    "تحديد التدريج الزمني",
-    "وضع نقاط (الزمن،القيمة)",
-    "قراءة نقطة محددة",
-    "حساب الفرق بين قيمتين",
-    "المقارنة بين نقاط البيانات",
-    "التحقق من صحة الرسم"
+    "تمييز النقطة من الخط",
+    "تعريف المستقيم الممتد في الاتجاهين",
+    "تعريف القطعة المستقيمة ذات طرفين",
+    "تعريف الشعاع ذي نقطة بداية",
+    "رسم نقطة وتسمية موضعها",
+    "رسم مستقيم وشعاع وقطعة مستقيمة",
+    "تسمية النقاط على رسم هندسي",
+    "عد الأشعة أو القطع دون تكرار"
   ],
   "CoolDown": {
-    "prompt": "في مخطط نقاط قيمه ٣٠، ٣٢، ٣٦، ٤٤، ٤٦؛ ما قيمة النقطة الثالثة؟",
-    "expected": "٣٦.",
-    "teacherReview": "التحقق من قراءة البيانات والتمثيل"
+    "prompt": "ارسم شعاعًا يبدأ من A ويمر عبر B، ثم حدد نقطة بدايته.",
+    "expected": "نقطة البداية A، مع سهم في اتجاه B.",
+    "teacherReview": "التأكد من صحة الرسم وتفسير الإجابة"
   },
   "PassedTests": 6,
   "UnitClosed": false,
-  "NextLesson": "U13 L02"
+  "UnitStartOrdinal": 101,
+  "NextLesson": "U12 L02"
 }

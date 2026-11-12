@@ -7752,6 +7752,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u13.l01.plot_read_value", "uae.g4.u13.l01.plot_difference"],
             "UAE_G4_STUDENT_04_03_PP851_856_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:12:01", "geometry.points_lines_rays",
+            "DISTINGUISH_POINT_LINE_RAY_SEGMENT",
+            ["uae.g4.u12.l01.rays_from_point", "uae.g4.u12.l01.segments_from_points"],
+            "UAE_G4_STUDENT_04_03_PP795_800_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:11:10"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:11:10", "decimals.subtract",
             "DECIMAL_SUBTRACTION_COLUMN_ALIGNED",
