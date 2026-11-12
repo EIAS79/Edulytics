@@ -61,6 +61,37 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         if (documents.Count == 0)
             return;
 
+        // During the explicit one-shot 93-to-132 UAE G4 production release,
+        // never reconcile unrelated historical US/Cambridge/UAE metadata.
+        // The guard is the same exact owner token checked by the pedagogical
+        // seeder and Program startup; ordinary and clean CI seeding is unchanged.
+        if (string.Equals(
+                Environment.GetEnvironmentVariable(
+                    "EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132"),
+                "CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132",
+                StringComparison.Ordinal))
+        {
+            const string grade4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+            foreach (var document in documents)
+            {
+                document.Lessons = document.Lessons
+                    .Where(x => x.LessonCode.StartsWith(
+                        grade4Prefix, StringComparison.Ordinal))
+                    .ToList();
+            }
+
+            var grade4Documents = documents
+                .Where(x => x.Lessons.Count != 0)
+                .ToArray();
+            if (grade4Documents.Length != 1 ||
+                grade4Documents.Sum(x => x.Lessons.Count) != 132)
+                throw new InvalidOperationException(
+                    "Scoped UAE Grade4 metadata release requires exactly 132 canonical lessons.");
+
+            await SeedDocumentsAsync(grade4Documents, ct, metadataOnly: true);
+            return;
+        }
+
         await SeedDocumentsAsync(documents, ct, metadataOnly: true);
     }
 

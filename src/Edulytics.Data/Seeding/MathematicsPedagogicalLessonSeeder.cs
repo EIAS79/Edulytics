@@ -107,10 +107,29 @@ public sealed class MathematicsPedagogicalLessonSeeder
             await using var replacementTransaction =
                 await _db.Database.BeginTransactionAsync(ct);
 
+            // Production's older non-Grade4 titles/metadata can differ from the
+            // rebuild fixture. Owner approval covers ONLY UAE Grade 4, not
+            // repairing or rewriting US/Cambridge/other UAE lesson identities.
+            const string grade4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+            var grade4Lessons = expectedLessons
+                .Where(x => x.Code.StartsWith(grade4Prefix, StringComparison.Ordinal))
+                .ToArray();
+            var grade4Ids = grade4Lessons.Select(x => x.Id).ToHashSet();
+            var grade4Mappings = expectedMappings
+                .Where(x => grade4Ids.Contains(x.PedagogicalLessonId))
+                .ToArray();
+
             await ReplaceOnlyVerifiedLegacyGrade4Async(expectedLessons, ct);
-            await UpsertLessonsAsync(expectedLessons, ct);
-            await UpsertMappingsAsync(expectedLessons, expectedMappings, ct);
-            await RemoveStaleLessonsSafelyAsync(expectedLessons, ct);
+            await UpsertLessonsAsync(grade4Lessons, ct);
+            await UpsertMappingsAsync(grade4Lessons, grade4Mappings, ct);
+            // The strict replacement helper has already removed exactly the
+            // approved 93 historical Grade4 records. Never run the global stale
+            // lesson retirement under this narrowly scoped production token.
+            var count = await _db.CurriculumPedagogicalLessons.CountAsync(
+                x => x.Code.StartsWith(grade4Prefix), ct);
+            if (count != 132)
+                throw new InvalidOperationException(
+                    "UAE Grade4 scoped replacement must leave exactly 132 lessons.");
             await replacementTransaction.CommitAsync(ct);
         }
         else
