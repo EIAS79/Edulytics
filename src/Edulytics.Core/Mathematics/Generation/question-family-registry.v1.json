@@ -41450,6 +41450,46 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u15.l04.draw_degrees",
+      "version": 1,
+      "skillId": "geometry.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u15-l04-abc-stage-d-not-run",
+      "representations": [
+        "protractor",
+        "angle_rays",
+        "polygon_diagram",
+        "grid"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u15.l04.draw_supplement",
+      "version": 1,
+      "skillId": "geometry.angles",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u15-l04-abc-stage-d-not-run",
+      "representations": [
+        "protractor",
+        "angle_rays",
+        "polygon_diagram",
+        "grid"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
