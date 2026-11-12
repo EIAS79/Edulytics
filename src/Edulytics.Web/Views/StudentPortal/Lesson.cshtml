@@ -34,10 +34,13 @@
             : (Guid?)null;
     var isUaeGrade3Arabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L3:COMMON:", StringComparison.Ordinal);
+    var isUaeGrade4Arabic =
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal);
     var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ||
-        isUaeGrade3Arabic;
+        isUaeGrade3Arabic ||
+        isUaeGrade4Arabic;
     var lessonNavTitle = isUaePrimaryArabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaePrimaryArabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaePrimaryArabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
@@ -1951,7 +1954,7 @@
             <div class="lesson-reader-meta">
                 <span>
                     <small>@(isUaePrimaryArabic ? "الصف" : L["Grade"].Value)</small>
-                    <strong>@(isUaePrimaryArabic ? (isUaeGrade3Arabic ? "???? ??????" : Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
+                    <strong>@(isUaePrimaryArabic ? (isUaeGrade4Arabic ? "??????" : isUaeGrade3Arabic ? "??????" : Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
                 </span>
                 <span>
                     <small>@(isUaePrimaryArabic ? "المنهج" : L["Framework"].Value)</small>
@@ -2515,11 +2518,11 @@
                 </details>
             </section>
         }
-        @if (isUaeGrade3Arabic)
+        @if (isUaeGrade3Arabic || isUaeGrade4Arabic)
         {
-            @* UAE Common Grade 3: always deliver the complete author-written Arabic
-               lesson-specific content, not unrelated generic V2 English fallback. *@
-            <div class="uae-g3-original-arabic-lesson" lang="ar" dir="rtl">
+            @* UAE Grades 3/4: render all six authored Arabic teaching sections
+               instead of substituting unrelated generic V2 fallback content. *@
+            <div class="@(isUaeGrade4Arabic ? "uae-g4-original-arabic-lesson" : "uae-g3-original-arabic-lesson")" lang="ar" dir="rtl">
                 @foreach (var section in sections)
                 {
                     <partial name="_LessonReaderSection" model="section" />
