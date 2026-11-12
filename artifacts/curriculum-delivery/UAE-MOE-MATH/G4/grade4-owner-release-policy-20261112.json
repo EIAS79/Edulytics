@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "UAE-G4-OWNER-FIRST-PARTY-RELEASE-20261112",
+  "scope": "Edulytics owner-authored UAE Grade 4 Common Arabic course",
+  "releasePath": "OWNER_APPROVED_ORIGINAL_CONTENT_WITH_DISCLOSED_EDITION_LIMITS",
+  "ownerAcademicApprovalRecorded": true,
+  "ownerExplicitPublicationAuthorization": true,
+  "ownerApprovalEvidence": "Owner 2026-11-12 conversation approved original Edulytics 132-lesson G4 course and same Grade2/Grade3 release acceptance policy; owner explicitly asked to complete to production",
+  "approvedGrade": 4,
+  "approvedPathway": "Common",
+  "approvedLessonCount": 132,
+  "approvedUnitCount": 16,
+  "sourceSnapshotId": "sha256:256206d086c93377e15201a575502b590f981600029816dbbbaab31edd5bd486",
+  "selectedTextbookEditionParity": "UNKNOWN",
+  "independentOfficial2026_2027LessonScopeCertified": false,
+  "independentOfficialAnnualPlanRowMapping": "UNKNOWN",
+  "currentYearTextbookSeriesEquivalence": "UNKNOWN",
+  "claimPolicy": "Never assert Ministry certified 2026-27 textbook lesson parity, annual allocation, or publisher endorsement; provenance limitations must remain visible in internal release records",
+  "noFalseCertifications": true,
+  "selectedSourceBooks": "Seven owner-selected local UAE Grade 4 Arabic student PDFs; SHA-256 and 132 printed lesson page locators recorded in grade4-a-c-source-handoff.json",
+  "contentRightsScope": "Only Edulytics owner-authored digital content in grade4-rights-release-clearance.json; no unlicensed textbook prose or illustrations",
+  "requiredReleaseGates": [
+    "132 unique lesson catalogue and all ABC checkpoints",
+    "all selected-source locators and source SHA mapping",
+    "dedicated mathematics, authenticated HTTPS and RTL",
+    "isolated old-93 to new-132 PostgreSQL rehearsal plus production dependency checks",
+    "independent rights audit",
+    "full product regression, cross-grade CI and exact-SHA merge checks",
+    "production Render live and 132 lesson verification"
+  ],
+  "comparablePreviousPolicy": [
+    "PR #628 UAE G1: owner-approved first-party release with official 2026-27 textbook parity UNKNOWN",
+    "PR #630 UAE G2: owner-approved first-party release with independent 2026-27 exercise parity UNKNOWN",
+    "PR #631 UAE G3: owner-approved first-party release with exact 2026-27 publisher edition parity UNKNOWN"
+  ],
+  "policyEffect": "Allows owner-scoped first-party publication after all technical and rights gates pass while preserving unknown independent Ministry source parity; not a waiver of failed technical checks, missing sources or rights",
+  "productionDataScope": "Only owner-approved transactional replacement of old 93 Grade 4 lessons with 132 new; no cross-grade records, 2 Grade4 school adoptions or learner history may be deleted",
+  "status": "OWNER_APPROVED_RELEASE_POLICY_RECORDED"
+}
