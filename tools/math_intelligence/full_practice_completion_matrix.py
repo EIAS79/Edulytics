@@ -210,7 +210,12 @@ def audit() -> dict[str, Any]:
             and semantic_row.get("ownerReviewedAdvanced") is True
             and not semantic_row.get("studentFacingDefects")
         )
-        runtime_contract_ready = specialist_g12_ready or (
+        specialist_g4_ready = bool(
+            row.get("specialistGrade4ExactPractice") is True
+            and readiness_state == "READY_VERIFIED"
+            and not semantic_row.get("studentFacingDefects")
+        )
+        runtime_contract_ready = specialist_g12_ready or specialist_g4_ready or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -287,9 +292,10 @@ def audit() -> dict[str, Any]:
             "representations": sorted(representations),
             "visualRequired": visual_required,
             "visualStatus": visual_status,
-            "solverReady": solver_ready or specialist_g12_ready,
-            "verifierReady": solver_ready or specialist_g12_ready,
+            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready,
+            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready,
             "independentG12SpecialistContractVerified": specialist_g12_ready,
+            "independentG4ExactPracticeContractVerified": specialist_g4_ready,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
@@ -305,6 +311,14 @@ def audit() -> dict[str, Any]:
         for blocker in row["blockerCodes"]:
             supporting_summary[f"blocker:{blocker}"] += 1
 
+    summary["grade4SpecialistVerifiedLessonCount"] = sum(
+        row["independentG4ExactPracticeContractVerified"] for row in rows)
+    g4_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L4:COMMON:")]
+    if g4_rows and (len(g4_rows) != 132 or
+        summary["grade4SpecialistVerifiedLessonCount"] != 132):
+        internal_blockers.append(
+            "Grade4 exact Practice completion not proven for all 132 source lessons")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(
