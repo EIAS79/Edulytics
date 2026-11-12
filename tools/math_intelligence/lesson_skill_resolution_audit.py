@@ -34,6 +34,12 @@ G4_FAMILIES = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-
 G4_SKILLS = ROOT / "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json"
 
 
+def g4_audit_failure(reason: str) -> set[str]:
+    import sys
+    print("G4_INDEPENDENT_PRACTICE_PROOF_BLOCKED: " + reason, file=sys.stderr)
+    return set()
+
+
 def separately_certified_g4_practice() -> set[str]:
     """Prove all selected G4 lessons have exact source-scoped C# Practice contracts.
 
@@ -44,7 +50,7 @@ def separately_certified_g4_practice() -> set[str]:
     if not all(path.is_file() for path in (
         G4_CONTENT, G4_CONTRACTS, G4_BLUEPRINT, G4_SOURCE_HANDOFF,
         G4_REVIEWED_SUPPORT, G4_FAMILIES, G4_SKILLS)):
-        return set()
+        return g4_audit_failure("missing required G4 audit input file")
     try:
         content = read_json(G4_CONTENT)
         blueprint = read_json(G4_BLUEPRINT)
@@ -54,7 +60,7 @@ def separately_certified_g4_practice() -> set[str]:
         families = {row["id"]: row for row in read_json(G4_FAMILIES)["families"]}
         source = G4_CONTRACTS.read_text(encoding="utf-8-sig")
     except (OSError, KeyError, ValueError, TypeError):
-        return set()
+        return g4_audit_failure("invalid G4 audit input JSON")
     content_codes = [x.get("LessonCode") for x in content.get("Lessons", [])]
     blueprint_codes = [x.get("LessonCode") for x in blueprint.get("Lessons", [])]
     mappings = handoff.get("lessonMappings", [])
@@ -65,21 +71,21 @@ def separately_certified_g4_practice() -> set[str]:
             or not x.get("sourceLocator") or
             x.get("sourcePdfSha256") != handoff.get("studentBooks", {}).get(x.get("sourcePdf"))
             for i, x in enumerate(mappings, 1))):
-        return set()
+        return g4_audit_failure("G4 catalogue, handoff mapping or source hashes mismatch")
     pattern = re.compile(
         r'byLesson\\["(PED:UAE-MOE-MATH:L4:COMMON:\\d{2}:\\d{2})"\\]\\s*'
         r'=\\s*new LessonPracticeContract\\(\\s*"([^"]+)",\\s*'
         r'"([^"]+)",\\s*"([^"]+)",\\s*\\[([^\\]]+)\\],', re.S)
     rows = pattern.findall(source)
     if len(rows) != 132 or {r[0] for r in rows} != set(content_codes):
-        return set()
+        return g4_audit_failure("G4 Practice contracts count/code mismatch")
     reviewed = {r["lessonCode"]: r for r in support.get("lessons", [])}
     for code, declared_code, skill, mechanic, raw_families in rows:
         if code != declared_code or not code.startswith(G4_PREFIX) or skill not in skills or not mechanic:
-            return set()
+            return g4_audit_failure("G4 Practice code, skill or mechanic mismatch")
         family_ids = re.findall(r'"([^"]+)"', raw_families)
         if not family_ids:
-            return set()
+            return g4_audit_failure("G4 Practice family list empty")
         declaration_start = source.find('byLesson["' + code + '"]')
         declaration_end = source.find(';', declaration_start)
         declaration = source[declaration_start:declaration_end + 1]
@@ -88,21 +94,21 @@ def separately_certified_g4_practice() -> set[str]:
         if extra:
             declared_skills.update(re.findall(r'"([^"]+)"', extra.group(1)))
         if not declared_skills <= skills:
-            return set()
+            return g4_audit_failure("G4 referenced extra skill absent from registry")
         for family_id in family_ids:
             family = families.get(family_id)
             if family is None or family.get("lessonPracticeRouting") is not True:
-                return set()
+                return g4_audit_failure("G4 family missing or route flag disabled")
             family_skill = family.get("skillId")
             if family_skill not in declared_skills:
-                return set()
+                return g4_audit_failure("G4 family skill not declared on exact contract")
             if family_skill != skill:
                 review = reviewed.get(code)
                 if not (review and review.get("primarySkillId") == skill and
                         family_id in review.get("supportedFamilyIds", []) and
                         family_skill in review.get("declaredSkills", []) and
                         review.get("sourceLocator") and review.get("mathematicalRationale")):
-                    return set()
+                    return g4_audit_failure("G4 cross-skill family reuse missing reviewed evidence")
     return set(content_codes)
 
 
