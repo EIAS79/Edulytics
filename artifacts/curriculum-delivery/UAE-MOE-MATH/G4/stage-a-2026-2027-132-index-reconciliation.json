@@ -1,5 +1,5 @@
 {
-  "Status": "GEOMETRY_I_MISSING_LESSON_GAP_CONFIRMED",
+  "Status": "SOURCE_MAPPING_132_COMPLETE_AND_TARGETED_TESTS_PASSED",
   "PlanTargetLessonCount": 132,
   "PlanTargetUnitCount": 16,
   "ExistingSourceMappedLessonsPreserved": 125,
@@ -51,7 +51,7 @@
       "Title": "رسم النقاط والمستقيمات والأشعة",
       "StudentBookPdfPageStart": 34,
       "StudentBookPdfPageEnd": 39,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 102,
@@ -60,7 +60,7 @@
       "Title": "رسم المستقيمات المتوازية والمتعامدة",
       "StudentBookPdfPageStart": 40,
       "StudentBookPdfPageEnd": 45,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 103,
@@ -69,7 +69,7 @@
       "Title": "رسم خطوط التناظر المحوري",
       "StudentBookPdfPageStart": 46,
       "StudentBookPdfPageEnd": 51,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 104,
@@ -78,7 +78,7 @@
       "Title": "نشاط عملي: تكوين أشكال ثلاثية الأبعاد",
       "StudentBookPdfPageStart": 52,
       "StudentBookPdfPageEnd": 57,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 105,
@@ -87,7 +87,7 @@
       "Title": "الأشكال ثلاثية الأبعاد",
       "StudentBookPdfPageStart": 58,
       "StudentBookPdfPageEnd": 65,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 106,
@@ -96,7 +96,7 @@
       "Title": "نشاط عملي: إيجاد الحجم",
       "StudentBookPdfPageStart": 66,
       "StudentBookPdfPageEnd": 71,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     },
     {
       "Ordinal": 107,
@@ -105,7 +105,13 @@
       "Title": "حجم المناشير",
       "StudentBookPdfPageStart": 72,
       "StudentBookPdfPageEnd": 81,
-      "StageABC": "PENDING_REPAIR"
+      "StageABC": "READY_FOR_STAGE_D"
     }
-  ]
+  ],
+  "GradeReadyCount": 132,
+  "ClosedUnitCount": 16,
+  "ActualSourcePagesInspected": true,
+  "AnnualPlanOfficialMinistryOriginVerified": false,
+  "RegressionVerification": "Focused migration regression for units 13-16 passed",
+  "AcademicCaveat": "Unit 12 learner facing visual interaction uses equation and explanatory visual models; interactive diagrams should be evaluated in Stage D."
 }
