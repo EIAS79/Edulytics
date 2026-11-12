@@ -13,7 +13,7 @@ public sealed class CleanNeonEmbeddedJsonReadTests
     public void CanonicalIndex_ContainsAuditedUniqueJsonLessonIdentities()
     {
         var index = new EmbeddedCanonicalLessonContentIndex();
-        Assert.Equal(5183, index.Count);
+        Assert.Equal(5183 - 93 + 132, index.Count);
         Assert.True(index.TryGet("PED:UAE:G9:ADV:T1:L1-2", out var body));
         Assert.Equal(CanonicalLessonContentStatus.Published, body.Status);
         Assert.NotEmpty(body.Translations);
