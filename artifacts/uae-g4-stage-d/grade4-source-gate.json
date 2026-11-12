@@ -2,29 +2,30 @@
   "phase": "source",
   "grade": 4,
   "pathway": "Common",
-  "candidateSha": "36f130f592c46423542fb6072f155b99b0f5b496",
-  "timestampUtc": "2026-11-12T01:23:48.139209+00:00",
+  "candidateSha": "c227a554ff1cb14851ea8033ade7c8517f3df340",
+  "timestampUtc": "2026-11-12T02:45:19.415381+00:00",
   "status": "BLOCKED",
   "errors": [
-    "Missing mandatory signed grade4-a-c-handoff.md",
-    "2026-2027 annual-plan ministry origin remains unverified",
-    "2 lesson source locators are empty in handoff audit",
-    "No evidence of publication rights clearance",
-    "SourceSnapshotId not established in an auditable handoff"
+    "Learner-visible third-party image/text rights not cleared for production"
   ],
   "checks": {
-    "signedSourceHandoffPresent": false,
+    "sourceHandoffPresent": true,
+    "sourceSnapshotHandoffPresent": true,
+    "ownerAcademicApprovalRecorded": true,
+    "all132SourceLocatorsPresent": true,
+    "annualPlanSha256Present": true,
+    "sourceSnapshotIdRecorded": true,
     "auditCount": 132,
     "auditEntries": 132,
-    "publicationRightsClearancePresent": false,
-    "sourceSnapshotIdPresent": false
+    "ministrySignatureVerified": false,
+    "publicationRightsReviewPresent": true,
+    "publicationRightsCleared": false,
+    "sourceSnapshotIdPresent": true
   },
   "details": {
     "annualPlanOrigin": "Third-party-hosted annual 2026-2027 lesson distribution; authoritative ministry origin not independently verified",
-    "missingSourceLocatorOrdinals": [
-      7,
-      8
-    ]
+    "annualPlanCaveat": "Third-party-hosted annual plan, no ministry signature claim",
+    "missingSourceLocatorOrdinals": []
   },
   "notAuthenticatedE2eEvidence": true,
   "notPublicationEvidence": true

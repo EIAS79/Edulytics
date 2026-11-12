@@ -188,9 +188,21 @@ def structural():
 def source():
     errors, checks, details = [], {}, {}
     handoff = G / "grade4-a-c-handoff.md"
-    checks["signedSourceHandoffPresent"] = handoff.is_file()
-    if not handoff.exists():
-        errors.append("Missing mandatory signed grade4-a-c-handoff.md")
+    checks["sourceHandoffPresent"] = handoff.is_file()
+    evidence = G / "grade4-a-c-source-handoff.json"
+    checks["sourceSnapshotHandoffPresent"] = evidence.is_file()
+    if not handoff.exists() or not evidence.exists():
+        errors.append("Missing source handoff and hashed evidence manifest")
+    else:
+        handoff_data = load(evidence)
+        checks["ownerAcademicApprovalRecorded"] = handoff_data.get("OwnerAcademicApproval", {}).get("approved") is True
+        checks["all132SourceLocatorsPresent"] = len(handoff_data.get("lessonMappings", [])) == 132
+        checks["annualPlanSha256Present"] = bool(handoff_data.get("annualPlan", {}).get("sha256"))
+        checks["sourceSnapshotIdRecorded"] = bool(handoff_data.get("SourceSnapshotId"))
+        if not all(checks.get(x, False) for x in [
+          "ownerAcademicApprovalRecorded","all132SourceLocatorsPresent",
+          "annualPlanSha256Present","sourceSnapshotIdRecorded"]):
+            errors.append("Incomplete academic owner approval or source provenance snapshot")
     audit = G / "full-grade-stage-a-c-132-lesson-audit.json"
     if audit.exists():
         source_audit = load(audit)
@@ -198,7 +210,8 @@ def source():
         checks["auditEntries"] = len(source_audit.get("Lessons", []))
         details["annualPlanOrigin"] = source_audit.get("AnnualPlanEvidence")
         if "not independently verified" in str(source_audit.get("AnnualPlanEvidence", "")).lower():
-            errors.append("2026-2027 annual-plan ministry origin remains unverified")
+            checks["ministrySignatureVerified"] = False
+            details["annualPlanCaveat"] = "Third-party-hosted annual plan, no ministry signature claim"
         lacking_pages = [x["Ordinal"] for x in source_audit.get("Lessons", [])
                          if not x.get("Source")]
         details["missingSourceLocatorOrdinals"] = lacking_pages
@@ -207,12 +220,15 @@ def source():
     else:
         errors.append("Missing full-grade-stage-a-c-132-lesson-audit.json")
     rights = G / "grade4-rights-release-clearance.json"
-    checks["publicationRightsClearancePresent"] = rights.exists()
-    if not rights.exists():
-        errors.append("No evidence of publication rights clearance")
-    checks["sourceSnapshotIdPresent"] = bool(handoff.exists() and "SourceSnapshotId" in handoff.read_text(encoding="utf-8"))
+    checks["publicationRightsReviewPresent"] = rights.exists()
+    checks["publicationRightsCleared"] = rights.exists() and load(rights).get("allowsDeployment") is True
+    if not checks["publicationRightsCleared"]:
+        errors.append("Learner-visible third-party image/text rights not cleared for production")
+    checks["sourceSnapshotIdPresent"] = bool(
+        handoff.exists() and evidence.exists() and
+        load(evidence).get("SourceSnapshotId") in handoff.read_text(encoding="utf-8"))
     if not checks["sourceSnapshotIdPresent"]:
-        errors.append("SourceSnapshotId not established in an auditable handoff")
+        errors.append("SourceSnapshotId not consistently present in source snapshot and handoff")
     return report("source", errors, checks, details)
 
 def final():
