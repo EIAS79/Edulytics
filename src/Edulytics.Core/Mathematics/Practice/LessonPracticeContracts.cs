@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:06", "geometry.polygons",
+            "TRIANGLES_PROPERTIES_AND_SUM",
+            ["uae.g4.u15.l06.triangle_perimeter", "uae.g4.u15.l06.triangle_missing_angle"],
+            "UAE_G4_STUDENT_04_03_PP1031_1036_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:15:05", "geometry.angles",
             "ANGLE_ADDITION_SUBTRACTION",
