@@ -110,7 +110,7 @@ jobs:
         run: |
           set -euo pipefail
           dotnet tool restore
-          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet restore Edulytics.sln
           dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
@@ -126,7 +126,7 @@ jobs:
         working-directory: candidate
         run: |
           set -euo pipefail
-          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet restore Edulytics.sln
           dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
       - name: Reject accidental replacement without precise owner token
         working-directory: candidate
