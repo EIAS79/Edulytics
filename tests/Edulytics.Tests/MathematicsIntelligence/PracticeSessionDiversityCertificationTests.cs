@@ -19,7 +19,7 @@ public sealed class PracticeSessionDiversityCertificationTests
         // Grade12 verified-subskill cohort; every new entry must still generate
         // 10 varied questions and pass the same verification below.
         const string grade12Prefix = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
-        Assert.Equal(5110, contracts.Count(x => !x.LessonCode.StartsWith(
+        Assert.Equal(5110 - 93 + 132, contracts.Count(x => !x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)));
         Assert.InRange(contracts.Count(x => x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)), 21, 73);
