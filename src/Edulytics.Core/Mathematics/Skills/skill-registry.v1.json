@@ -3828,6 +3828,1123 @@
       "v2Status": "ShadowVerified",
       "v2Capabilities": [],
       "v2QuestionFamilies": []
+    },
+    {
+      "id": "algebra.evaluate_two_operation_equation",
+      "domain": "algebra",
+      "canonicalName": "المعادلات التي تتضمن عمليات متعددة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l09.multi_step_rule"
+      ]
+    },
+    {
+      "id": "algebra.input_output_add_subtract",
+      "domain": "algebra",
+      "canonicalName": "قواعد الجمع والطرح",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l05.input_add_rule",
+        "uae.g4.u07.l05.input_subtract_rule"
+      ]
+    },
+    {
+      "id": "algebra.input_output_multiply_divide",
+      "domain": "algebra",
+      "canonicalName": "قواعد الضرب والقسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l06.input_divide_rule",
+        "uae.g4.u07.l06.input_multiply_rule"
+      ]
+    },
+    {
+      "id": "algebra.order_of_operations",
+      "domain": "algebra",
+      "canonicalName": "ترتيب العمليات / نشاط عملي: المعادلات التي تتضمن عمليتين",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l07.order_multiply_before_add",
+        "uae.g4.u07.l08.two_step_rule"
+      ]
+    },
+    {
+      "id": "data.graphs",
+      "domain": "data",
+      "canonicalName": "التمثيلات البيانية الخطية / التمثيلات البيانية الدائرية / نشاط عملي: التمثيلات البيانية بالنقاط",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u13.l01.plot_difference",
+        "uae.g4.u13.l01.plot_read_value",
+        "uae.g4.u13.l02.line_graph_increase",
+        "uae.g4.u13.l02.line_graph_max",
+        "uae.g4.u13.l03.pie_category_percent",
+        "uae.g4.u13.l03.pie_rest_percent"
+      ]
+    },
+    {
+      "id": "data.line_plot",
+      "domain": "data",
+      "canonicalName": "عرض بيانات القياس في التمثيل البياني بالنقاط المجمعة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u14.l02.dot_plot_most",
+        "uae.g4.u14.l02.dot_plot_total"
+      ]
+    },
+    {
+      "id": "decimals.add",
+      "domain": "decimals",
+      "canonicalName": "جمع الأعداد العشرية / خواص الجمع / نشاط عملي: جمع الأعداد العشرية باستخدام النماذج / نشاط عملي: جمع الأعداد العشرية باستخدام مكعبات نظام العد العشري",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u11.l04.base_ten_sum",
+        "uae.g4.u11.l04.regroup_unit",
+        "uae.g4.u11.l05.fractional_hundredths",
+        "uae.g4.u11.l05.model_sum",
+        "uae.g4.u11.l06.column_sum",
+        "uae.g4.u11.l06.whole_part",
+        "uae.g4.u11.l07.associative_sum",
+        "uae.g4.u11.l07.commutative_sum"
+      ]
+    },
+    {
+      "id": "decimals.compare",
+      "domain": "decimals",
+      "canonicalName": "مقارنة الأعداد العشرية وترتيبها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u10.l08.decimal_compare",
+        "uae.g4.u10.l08.larger_hundredths"
+      ]
+    },
+    {
+      "id": "decimals.estimate",
+      "domain": "decimals",
+      "canonicalName": "استقصاء حل المسائل: التقدير أم الإجابة الدقيقة / تقدير المجاميع والفروق",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u11.l02.estimate_difference_whole",
+        "uae.g4.u11.l02.estimate_sum_whole",
+        "uae.g4.u11.l03.approximate_ticket_cost",
+        "uae.g4.u11.l03.exact_ticket_cost_fils"
+      ]
+    },
+    {
+      "id": "decimals.operation",
+      "domain": "decimals",
+      "canonicalName": "استخدام النماذج والقيمة المكانية في الجمع / استقصاء حل المسائل: تحديد المعلومات الإضافية أو الناقصة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u10.l07.sum_decimal",
+        "uae.g4.u10.l07.sum_hundredths",
+        "uae.g4.u10.l09.relevant_decimal",
+        "uae.g4.u10.l09.relevant_sum"
+      ]
+    },
+    {
+      "id": "decimals.place_value",
+      "domain": "decimals",
+      "canonicalName": "الأجزاء من مئة / الأعشار (الأجزاء من عشرة) / نشاط عملي: القيمة المكانية في الأجزاء من عشرة والأجزاء من مئة / نشاط عملي: تمثيل الكسور والأعداد العشرية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u10.l01.hundredths_count",
+        "uae.g4.u10.l01.place_value_decimal",
+        "uae.g4.u10.l01.tenths_digit",
+        "uae.g4.u10.l02.tenths_count",
+        "uae.g4.u10.l02.tenths_decimal",
+        "uae.g4.u10.l03.hundredths_decimal",
+        "uae.g4.u10.l03.hundredths_fraction_numerator",
+        "uae.g4.u10.l04.decimal_to_hundredths",
+        "uae.g4.u10.l04.decimal_to_tenths"
+      ]
+    },
+    {
+      "id": "decimals.round",
+      "domain": "decimals",
+      "canonicalName": "تقريب الأعداد العشرية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u11.l01.round_hundredth",
+        "uae.g4.u11.l01.round_tenth",
+        "uae.g4.u11.l01.round_whole"
+      ]
+    },
+    {
+      "id": "decimals.subtract",
+      "domain": "decimals",
+      "canonicalName": "طرح الأعداد العشرية / نشاط عملي: طرح الأعداد العشرية باستخدام النماذج / نشاط عملي: طرح الأعداد العشرية باستخدام مكعبات نظام العد العشري",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u11.l08.base_ten_difference",
+        "uae.g4.u11.l08.regroup_unit",
+        "uae.g4.u11.l09.fractional_hundredths",
+        "uae.g4.u11.l09.model_difference",
+        "uae.g4.u11.l10.check_addition",
+        "uae.g4.u11.l10.column_difference"
+      ]
+    },
+    {
+      "id": "fractions.add",
+      "domain": "fractions",
+      "canonicalName": "جمع الأعداد الكسرية / جمع الكسور المتشابهة / نشاط عملي: استخدام النماذج في جمع الكسور المتشابهة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u09.l01.model_add_like_denominators",
+        "uae.g4.u09.l01.model_decompose_fraction",
+        "uae.g4.u09.l02.simplified_sum_denominator",
+        "uae.g4.u09.l02.simplified_sum_numerator",
+        "uae.g4.u09.l02.sum_numerator",
+        "uae.g4.u09.l06.sum_fraction_numerator",
+        "uae.g4.u09.l06.sum_improper_numerator",
+        "uae.g4.u09.l06.sum_whole"
+      ]
+    },
+    {
+      "id": "fractions.compare",
+      "domain": "fractions",
+      "canonicalName": "استخدام الكسور المعيارية للمقارنة والترتيب / تقريب الكسور / مقارنة الكسور وترتيبها",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u08.l06.compare_fraction_sign",
+        "uae.g4.u08.l06.select_smaller_fraction",
+        "uae.g4.u08.l07.benchmark_order",
+        "uae.g4.u08.l07.compare_with_half",
+        "uae.g4.u10.l06.compared_to_half",
+        "uae.g4.u10.l06.nearest_benchmark"
+      ]
+    },
+    {
+      "id": "fractions.mixed_numbers",
+      "domain": "fractions",
+      "canonicalName": "الأعداد الكسرية / الأعداد الكسرية والكسور المعتلة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u08.l09.mixed_as_fourths",
+        "uae.g4.u08.l09.mixed_unit_fraction_count",
+        "uae.g4.u08.l10.improper_remainder",
+        "uae.g4.u08.l10.improper_whole"
+      ]
+    },
+    {
+      "id": "fractions.multiply_whole",
+      "domain": "fractions",
+      "canonicalName": "ضرب الكسور في الأعداد الكلية / نشاط عملي: تمثيل الكسور وعمليات الضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u09.l08.model_repeated_sum",
+        "uae.g4.u09.l08.model_unit_fraction_count",
+        "uae.g4.u09.l09.product_numerator",
+        "uae.g4.u09.l09.product_remainder",
+        "uae.g4.u09.l09.product_whole"
+      ]
+    },
+    {
+      "id": "fractions.subtract",
+      "domain": "fractions",
+      "canonicalName": "استقصاء حل المسائل: الحل بترتيب عكسي / طرح الأعداد الكسرية / طرح الكسور المتشابهة / نشاط عملي: استخدام النماذج في طرح الكسور المتشابهة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u09.l03.model_remaining_parts",
+        "uae.g4.u09.l03.model_removed_parts",
+        "uae.g4.u09.l04.difference_numerator",
+        "uae.g4.u09.l04.reduced_difference_denominator",
+        "uae.g4.u09.l04.reduced_difference_numerator",
+        "uae.g4.u09.l05.missing_fraction_part",
+        "uae.g4.u09.l05.reverse_operation",
+        "uae.g4.u09.l07.difference_fraction_numerator",
+        "uae.g4.u09.l07.difference_improper_numerator",
+        "uae.g4.u09.l07.difference_whole"
+      ]
+    },
+    {
+      "id": "geometry.angles",
+      "domain": "geometry",
+      "canonicalName": "تصنيف الزوايا / حل المسائل باستخدام الزوايا / رسم الزوايا / قياس الزوايا / نشاط عملي: رسم الزوايا",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u16.l01.construct_degrees",
+        "uae.g4.u16.l01.straight_remaining",
+        "uae.g4.u16.l02.classify_degrees",
+        "uae.g4.u16.l02.distance_to_right_angle",
+        "uae.g4.u16.l03.compare_degrees",
+        "uae.g4.u16.l03.measure_degrees",
+        "uae.g4.u16.l04.draw_degrees",
+        "uae.g4.u16.l04.draw_supplement",
+        "uae.g4.u16.l05.add_angles",
+        "uae.g4.u16.l05.subtract_angles"
+      ]
+    },
+    {
+      "id": "geometry.parallel_perpendicular",
+      "domain": "geometry",
+      "canonicalName": "رسم المستقيمات المتوازية والمتعامدة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l02.line_relation",
+        "uae.g4.u12.l02.right_angle_complement"
+      ]
+    },
+    {
+      "id": "geometry.points_lines_rays",
+      "domain": "geometry",
+      "canonicalName": "رسم النقاط والمستقيمات والأشعة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l01.rays_from_point",
+        "uae.g4.u12.l01.segments_from_points"
+      ]
+    },
+    {
+      "id": "geometry.polygons",
+      "domain": "geometry",
+      "canonicalName": "استقصاء حل المسائل: رسم شكل / المثلثات / رباعيات الأضلاع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u16.l06.triangle_missing_angle",
+        "uae.g4.u16.l06.triangle_perimeter",
+        "uae.g4.u16.l07.quadrilateral_missing_angle",
+        "uae.g4.u16.l07.quadrilateral_perimeter",
+        "uae.g4.u16.l08.model_grid_total",
+        "uae.g4.u16.l08.model_shape_count"
+      ]
+    },
+    {
+      "id": "geometry.rectangular_prism_volume",
+      "domain": "geometry",
+      "canonicalName": "حجم المناشير",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l07.prism_missing_height",
+        "uae.g4.u12.l07.prism_volume"
+      ]
+    },
+    {
+      "id": "geometry.reflection_symmetry",
+      "domain": "geometry",
+      "canonicalName": "رسم خطوط التناظر المحوري",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l03.mirrored_points",
+        "uae.g4.u12.l03.symmetry_axes"
+      ]
+    },
+    {
+      "id": "geometry.solid_properties",
+      "domain": "geometry",
+      "canonicalName": "الأشكال ثلاثية الأبعاد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l05.solid_faces",
+        "uae.g4.u12.l05.solid_vertices"
+      ]
+    },
+    {
+      "id": "geometry.solids_nets",
+      "domain": "geometry",
+      "canonicalName": "نشاط عملي: تكوين أشكال ثلاثية الأبعاد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l04.net_missing_faces",
+        "uae.g4.u12.l04.net_total_faces"
+      ]
+    },
+    {
+      "id": "geometry.unit_cube_volume",
+      "domain": "geometry",
+      "canonicalName": "نشاط عملي: إيجاد الحجم",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u12.l06.layer_unit_squares",
+        "uae.g4.u12.l06.unit_cube_volume"
+      ]
+    },
+    {
+      "id": "measurement.metric",
+      "domain": "measurement",
+      "canonicalName": "الوحدات المترية للسعة / الوحدات المترية للطول / الوحدات المترية للكتلة / تحويل الوحدات الزمنية / تحويل الوحدات المترية / حل مسائل القياس",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u14.l01.time_minutes",
+        "uae.g4.u14.l01.time_with_minutes",
+        "uae.g4.u14.l04.centimeters_millimeters",
+        "uae.g4.u14.l04.meters_centimeters",
+        "uae.g4.u14.l05.combined_milliliters",
+        "uae.g4.u14.l05.liters_milliliters",
+        "uae.g4.u14.l06.combined_grams",
+        "uae.g4.u14.l06.kilograms_grams",
+        "uae.g4.u14.l08.convert_cm",
+        "uae.g4.u14.l08.convert_mm",
+        "uae.g4.u14.l09.measurement_time_minutes",
+        "uae.g4.u14.l09.measurement_total_ml"
+      ]
+    },
+    {
+      "id": "money.change",
+      "domain": "money",
+      "canonicalName": "تحديد الباقي",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u10.l11.change_fils",
+        "uae.g4.u10.l11.count_up_to_next_dirham"
+      ]
+    },
+    {
+      "id": "money.value",
+      "domain": "money",
+      "canonicalName": "قيمة العملات المعدنية والأوراق النقدية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u10.l10.coin_total_fils",
+        "uae.g4.u10.l10.coin_wallet_difference"
+      ]
+    },
+    {
+      "id": "number.area_distributive_two_digit",
+      "domain": "number",
+      "canonicalName": "نشاط عملي: استخدام خاصية التوزيع في الضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u05.l03.area_ones_partial",
+        "uae.g4.u05.l03.area_tens_partial",
+        "uae.g4.u05.l03.area_two_digit_product"
+      ]
+    },
+    {
+      "id": "number.associative_multiplication",
+      "domain": "number",
+      "canonicalName": "خاصية التجميع في الضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l06.grouped_product",
+        "uae.g4.u03.l06.missing_factor",
+        "uae.g4.u03.l06.triple_product"
+      ]
+    },
+    {
+      "id": "number.bar_model_word_problems",
+      "domain": "number",
+      "canonicalName": "استقصاء حل المسائل: تصميم مخطط شريطي",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l08.bar_compare",
+        "uae.g4.u02.l08.bar_missing_part",
+        "uae.g4.u02.l08.bar_part_whole"
+      ]
+    },
+    {
+      "id": "number.base_ten_division_with_remainders",
+      "domain": "number",
+      "canonicalName": "نشاط عملي: استخدام القيمة المكانية للقسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l03.base_ten_quotient",
+        "uae.g4.u06.l03.base_ten_remainder"
+      ]
+    },
+    {
+      "id": "number.divide_multiples_by_one_digit",
+      "domain": "number",
+      "canonicalName": "قسمة مضاعفات الأعداد ١٠ و١٠٠ و١٠٠٠",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l01.divide_powers_10_100_1000",
+        "uae.g4.u06.l01.missing_quotient_place_value"
+      ]
+    },
+    {
+      "id": "number.division_as_repeated_subtraction",
+      "domain": "number",
+      "canonicalName": "علاقة القسمة بالطرح",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l02.count_subtraction_jumps",
+        "uae.g4.u03.l02.equal_groups_quotient",
+        "uae.g4.u03.l02.reconstruct_dividend"
+      ]
+    },
+    {
+      "id": "number.division_model_word_problem",
+      "domain": "number",
+      "canonicalName": "استقصاء حل المسائل: تصميم نموذج",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l04.model_after_removing_items_quotient",
+        "uae.g4.u06.l04.model_after_removing_items_remainder"
+      ]
+    },
+    {
+      "id": "number.estimate_add_subtract",
+      "domain": "number",
+      "canonicalName": "تقدير المجاميع والفروق",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l04.diff_nearest_hundred",
+        "uae.g4.u02.l04.diff_nearest_ten_thousand",
+        "uae.g4.u02.l04.diff_nearest_thousand",
+        "uae.g4.u02.l04.sum_nearest_hundred",
+        "uae.g4.u02.l04.sum_nearest_ten_thousand",
+        "uae.g4.u02.l04.sum_nearest_thousand"
+      ]
+    },
+    {
+      "id": "number.estimate_quotient_compatible_numbers",
+      "domain": "number",
+      "canonicalName": "تقدير نواتج القسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l02.compatible_dividend",
+        "uae.g4.u06.l02.estimate_compatible_quotient"
+      ]
+    },
+    {
+      "id": "number.estimate_two_digit_factors",
+      "domain": "number",
+      "canonicalName": "تقدير نواتج الضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u05.l02.estimate_above_or_below",
+        "uae.g4.u05.l02.estimate_two_digit_product"
+      ]
+    },
+    {
+      "id": "number.exact_vs_estimated_answers",
+      "domain": "number",
+      "canonicalName": "استقصاء حل المسائل: الإجابة التقديرية أم الإجابة الدقيقة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u04.l10.choose_answer_precision"
+      ]
+    },
+    {
+      "id": "number.factors_and_multiples",
+      "domain": "number",
+      "canonicalName": "العوامل والمضاعفات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l07.factor_pair",
+        "uae.g4.u03.l07.is_factor",
+        "uae.g4.u03.l07.nth_multiple"
+      ]
+    },
+    {
+      "id": "number.interpret_division_remainders",
+      "domain": "number",
+      "canonicalName": "التعامل مع باقي القسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l06.extra_groups_round_up",
+        "uae.g4.u06.l06.leftover_items"
+      ]
+    },
+    {
+      "id": "number.mental_addition_subtraction",
+      "domain": "number",
+      "canonicalName": "الجمع والطرح الذهني",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l03.break_apart_subtraction",
+        "uae.g4.u02.l03.compensate_addition",
+        "uae.g4.u02.l03.make_friendly_ten",
+        "uae.g4.u02.l03.subtract_thousands"
+      ]
+    },
+    {
+      "id": "number.mult_div_properties",
+      "domain": "number",
+      "canonicalName": "خصائص الضرب وقواعد القسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l05.commutative_missing_factor",
+        "uae.g4.u03.l05.divide_by_one",
+        "uae.g4.u03.l05.divide_by_self",
+        "uae.g4.u03.l05.identity",
+        "uae.g4.u03.l05.zero",
+        "uae.g4.u03.l05.zero_dividend"
+      ]
+    },
+    {
+      "id": "number.multiplication_division_fact_families",
+      "domain": "number",
+      "canonicalName": "العلاقة بين الضرب والقسمة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l01.array_product",
+        "uae.g4.u03.l01.array_quotient",
+        "uae.g4.u03.l01.inverse_fact",
+        "uae.g4.u03.l01.unknown_factor"
+      ]
+    },
+    {
+      "id": "number.multiplicative_comparison",
+      "domain": "number",
+      "canonicalName": "الضرب في صورة مقارنة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l03.times_as_many",
+        "uae.g4.u03.l03.unknown_comparison_base",
+        "uae.g4.u03.l03.unknown_multiplier"
+      ]
+    },
+    {
+      "id": "number.multiplicative_table_strategy",
+      "domain": "number",
+      "canonicalName": "استقصاء حل المسائل: رسم جدول",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u05.l06.table_number_of_days",
+        "uae.g4.u05.l06.table_total"
+      ]
+    },
+    {
+      "id": "number.multiply_multidigit_by_one",
+      "domain": "number",
+      "canonicalName": "الضرب في عدد متعدد الأرقام",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u04.l09.multidigit_product",
+        "uae.g4.u04.l09.partial_hundreds",
+        "uae.g4.u04.l09.round_estimate"
+      ]
+    },
+    {
+      "id": "number.multiply_multiples_ten",
+      "domain": "number",
+      "canonicalName": "ضرب مضاعفات الأعداد ١٠ و١٠٠ و١٠٠٠",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u04.l01.compare_powers_ten",
+        "uae.g4.u04.l01.multiply_power_of_ten",
+        "uae.g4.u04.l01.unknown_factor_power_ten"
+      ]
+    },
+    {
+      "id": "number.multiply_two_digit_by_tens",
+      "domain": "number",
+      "canonicalName": "الضرب في العشرات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u05.l01.tens_product",
+        "uae.g4.u05.l01.unknown_tens_factor"
+      ]
+    },
+    {
+      "id": "number.multiply_two_digit_place_value_models",
+      "domain": "number",
+      "canonicalName": "نشاط عملي: استخدام القيمة المكانية للضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u04.l03.model_ones_product",
+        "uae.g4.u04.l03.model_tens_product",
+        "uae.g4.u04.l03.model_two_digit_product"
+      ]
+    },
+    {
+      "id": "number.multistep_add_subtract",
+      "domain": "number",
+      "canonicalName": "حل المسائل الكلامية المكونة من عدة خطوات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l09.add_then_subtract",
+        "uae.g4.u02.l09.add_three_parts",
+        "uae.g4.u02.l09.subtract_then_add",
+        "uae.g4.u02.l09.subtract_two_costs"
+      ]
+    },
+    {
+      "id": "number.multistep_word_problems",
+      "domain": "number",
+      "canonicalName": "حل المسائل الكلامية المكونة من عدة خطوات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u05.l05.missing_after_groups",
+        "uae.g4.u05.l05.net_weekly_savings"
+      ]
+    },
+    {
+      "id": "number.multistep_word_problems_with_division",
+      "domain": "number",
+      "canonicalName": "حل المسائل الكلامية متعددة الخطوات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u06.l11.weeks_to_save_target"
+      ]
+    },
+    {
+      "id": "number.numeric_sequences_identify_extend",
+      "domain": "number",
+      "canonicalName": "الأنماط العددية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l02.alternating_numeric_rule",
+        "uae.g4.u07.l02.constant_numeric_step"
+      ]
+    },
+    {
+      "id": "number.patterns.add_subtract_place_value",
+      "domain": "number",
+      "canonicalName": "أنماط الجمع والطرح",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l02.add_place_step",
+        "uae.g4.u02.l02.continue_pattern",
+        "uae.g4.u02.l02.find_missing_step",
+        "uae.g4.u02.l02.subtract_place_step"
+      ]
+    },
+    {
+      "id": "number.place_value.compare_to_millions",
+      "domain": "number",
+      "canonicalName": "مقارنة الأعداد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l03.compare_whole_numbers",
+        "uae.g4.u01.l03.select_greater",
+        "uae.g4.u01.l03.select_smaller"
+      ]
+    },
+    {
+      "id": "number.place_value.order_to_millions",
+      "domain": "number",
+      "canonicalName": "ترتيب الأعداد",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l04.middle_of_three",
+        "uae.g4.u01.l04.order_three_ascending",
+        "uae.g4.u01.l04.order_three_descending"
+      ]
+    },
+    {
+      "id": "number.place_value.read_write_to_millions",
+      "domain": "number",
+      "canonicalName": "قراءة وكتابة أعداد متعددة الأرقام",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l02.words_to_standard"
+      ]
+    },
+    {
+      "id": "number.place_value.to_millions",
+      "domain": "number",
+      "canonicalName": "القيمة المكانية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l01.compose_seven_digits",
+        "uae.g4.u01.l01.digit_value_to_millions",
+        "uae.g4.u01.l01.expanded_to_standard"
+      ]
+    },
+    {
+      "id": "number.properties.addition_and_subtraction",
+      "domain": "number",
+      "canonicalName": "خواص الجمع وقواعد الطرح",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l01.additive_identity",
+        "uae.g4.u02.l01.associative_add",
+        "uae.g4.u02.l01.commutative_add",
+        "uae.g4.u02.l01.subtract_self",
+        "uae.g4.u02.l01.subtract_zero"
+      ]
+    },
+    {
+      "id": "number.reasonableness_estimation",
+      "domain": "number",
+      "canonicalName": "استقصاء حل المسائل: الإجابات المنطقية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u03.l08.savings_feasible",
+        "uae.g4.u03.l08.sum_estimate",
+        "uae.g4.u03.l08.travel_feasible"
+      ]
+    },
+    {
+      "id": "number.rounding.to_millions",
+      "domain": "number",
+      "canonicalName": "استخدام القيمة المكانية للتقريب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l05.round_nearest_hundred",
+        "uae.g4.u01.l05.round_nearest_hundred_thousand",
+        "uae.g4.u01.l05.round_nearest_million",
+        "uae.g4.u01.l05.round_nearest_ten",
+        "uae.g4.u01.l05.round_nearest_ten_thousand",
+        "uae.g4.u01.l05.round_nearest_thousand"
+      ]
+    },
+    {
+      "id": "number.rounding_to_estimate_products",
+      "domain": "number",
+      "canonicalName": "التقريب لتقدير ناتج الضرب",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u04.l02.estimate_above_below",
+        "uae.g4.u04.l02.estimate_rounded_product"
+      ]
+    },
+    {
+      "id": "number.sequence_generate_terms",
+      "domain": "number",
+      "canonicalName": "المتتاليات",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l03.divide_sequence",
+        "uae.g4.u07.l03.multiply_sequence"
+      ]
+    },
+    {
+      "id": "number.subtraction_across_zeros",
+      "domain": "number",
+      "canonicalName": "الطرح مع وجود الأصفار",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l07.subtract_through_zero_five",
+        "uae.g4.u02.l07.subtract_through_zero_four",
+        "uae.g4.u02.l07.subtract_through_zero_six"
+      ]
+    },
+    {
+      "id": "number.whole_addition_with_regrouping",
+      "domain": "number",
+      "canonicalName": "جمع الأعداد الكلية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l05.add_four_digits",
+        "uae.g4.u02.l05.add_six_digits",
+        "uae.g4.u02.l05.missing_addend"
+      ]
+    },
+    {
+      "id": "number.whole_subtraction_with_regrouping",
+      "domain": "number",
+      "canonicalName": "طرح الأعداد الكلية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u02.l06.missing_subtrahend",
+        "uae.g4.u02.l06.subtract_four_digits",
+        "uae.g4.u02.l06.subtract_six_digits"
+      ]
+    },
+    {
+      "id": "patterns.non_numeric_repeating_patterns",
+      "domain": "patterns",
+      "canonicalName": "الأنماط غير العددية",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u07.l01.repeating_pattern_symbol_position",
+        "uae.g4.u07.l01.repeating_pattern_unit_length"
+      ]
+    },
+    {
+      "id": "problem_solving",
+      "domain": "problem_solving",
+      "canonicalName": "استقصاء حل المسائل: إنشاء قائمة منظمة / استقصاء حل المسائل: التخمين والتحقق والمراجعة",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u14.l03.guess_check_product",
+        "uae.g4.u14.l03.guess_check_remaining",
+        "uae.g4.u14.l07.organized_list_pairs",
+        "uae.g4.u14.l07.organized_list_triplets"
+      ]
+    },
+    {
+      "id": "problem_solving.four_steps_with_whole_numbers",
+      "domain": "problem_solving",
+      "canonicalName": "استقصاء حل المسائل: استخدام خطة الخطوات الأربع",
+      "v2Status": "StageCAuthoredPendingD",
+      "v2Capabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "v2QuestionFamilies": [
+        "uae.g4.u01.l06.find_increase",
+        "uae.g4.u01.l06.find_remaining",
+        "uae.g4.u01.l06.find_total"
+      ]
     }
   ]
 }
