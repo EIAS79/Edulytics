@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+"""Fail-closed, evidence-based Stage D preflight for UAE Grade 4 Common.
+
+This script audits repository evidence, never claims authenticated E2E or
+production status from static files. Run with --phase structural/source/final.
+"""
+import argparse
+import hashlib
+import json
+import pathlib
+import re
+import subprocess
+from datetime import datetime, timezone
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+G = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G4"
+MP = ROOT / "docs/curriculum/UAE_G4_COMMON_OFFICIAL_MANIFEST.json"
+BP = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
+CP = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g4-common-t1-ogl-v1.lesson-content-pack.json"
+REG = ROOT / "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+CON = ROOT / "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+OUTPUT = ROOT / "artifacts/uae-g4-stage-d"
+
+def load(path):
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def candidate_sha():
+    p = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT,
+                       capture_output=True, text=True, check=False)
+    return p.stdout.strip() if p.returncode == 0 else None
+
+def report(phase, errors, checks, details):
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    data = {
+        "phase": phase, "grade": 4, "pathway": "Common",
+        "candidateSha": candidate_sha(),
+        "timestampUtc": datetime.now(timezone.utc).isoformat(),
+        "status": "PASS" if not errors else "BLOCKED",
+        "errors": errors, "checks": checks, "details": details,
+        "notAuthenticatedE2eEvidence": True,
+        "notPublicationEvidence": True,
+    }
+    path = OUTPUT / f"grade4-{phase}-gate.json"
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"phase": phase, "status": data["status"], "errors": errors,
+                      "checks": checks, "candidateSha": data["candidateSha"]},
+                     ensure_ascii=False, indent=2))
+    print("EVIDENCE", path)
+    return not errors
+
+def structural():
+    errors, checks, details = [], {}, {}
+    for p in (MP, BP, CP, REG, CON):
+        if not p.is_file():
+            errors.append(f"Missing {p.relative_to(ROOT)}")
+    if errors:
+        return report("structural", errors, checks, details)
+    m, b, c, reg = load(MP), load(BP), load(CP), load(REG)
+    codes = [x["LessonCode"] for x in b["Lessons"]]
+    content_codes = [x["LessonCode"] for x in c["Lessons"]]
+    unit_counts = [len(x["ls"]) for x in m["Units"]]
+    checks["manifestUnitCount"] = len(m["Units"])
+    checks["manifestLessonCount"] = m["LessonCount"]
+    checks["unitLessonCountTotal"] = sum(unit_counts)
+    checks["blueprintLessonCount"] = len(codes)
+    checks["contentPackLessonCount"] = len(content_codes)
+    checks["uniqueBlueprintCodes"] = len(set(codes))
+    checks["uniqueContentCodes"] = len(set(content_codes))
+    checks["orderedBlueprint"] = [x["SortOrder"] for x in b["Lessons"]] == list(range(1, 133))
+    checks["unitCounts"] = unit_counts
+    checks["curriculumUnit12"] = m["Units"][11]["title"]
+    expected = [6,9,8,11,6,11,9,10,9,11,10,7,3,9,5,8]
+    if unit_counts != expected: errors.append("Unit-wise lesson counts do not match reconciled 16-unit index")
+    if not (m["LessonCount"] == len(codes) == len(content_codes) == 132):
+        errors.append("Manifest / blueprint / content pack count discrepancy")
+    if len(set(codes)) != 132 or set(codes) != set(content_codes):
+        errors.append("Missing, duplicate, or extra LessonCodes")
+    if not checks["orderedBlueprint"]:
+        errors.append("Blueprint order differs from 1..132")
+    if m["Units"][11]["title"] != "الهندسة (1)":
+        errors.append("Unit 12 Geometry (1) missing")
+    contracts = CON.read_text(encoding="utf-8-sig")
+    contract_missing = [code for code in codes if f'byLesson["{code}"]' not in contracts]
+    checks["presentPracticeContracts"] = 132 - len(contract_missing)
+    if contract_missing:
+        errors.append(f"{len(contract_missing)} lesson Practice contracts missing")
+        details["practiceContractMissing"] = contract_missing
+    family_ids = {x["id"] for x in reg["families"]}
+    details["questionFamilyRegistrySize"] = len(family_ids)
+    checkpoint_ok, absent, mismatched = 0, [], []
+    for i, code in enumerate(codes, 1):
+        f = G / f"lesson-{i:03}-stage-a-c-checkpoint.json"
+        if not f.exists():
+            absent.append(i)
+            continue
+        x = load(f)
+        if x.get("LessonOrdinal") == i and x.get("LessonCode") == code and x.get("Status") == "READY_FOR_STAGE_D":
+            checkpoint_ok += 1
+        else:
+            mismatched.append(i)
+    checks["readyAbcCheckpoints"] = checkpoint_ok
+    details["absentCheckpoints"] = absent
+    details["mismatchedCheckpoints"] = mismatched
+    if checkpoint_ok != 132:
+        errors.append(f"Only {checkpoint_ok}/132 A-B-C checkpoints match curriculum index")
+    details["sourceHashManifest"] = sha(MP)
+    details["blueprintHash"] = sha(BP)
+    details["contentHash"] = sha(CP)
+    return report("structural", errors, checks, details)
+
+def source():
+    errors, checks, details = [], {}, {}
+    handoff = G / "grade4-a-c-handoff.md"
+    checks["signedSourceHandoffPresent"] = handoff.is_file()
+    if not handoff.exists():
+        errors.append("Missing mandatory signed grade4-a-c-handoff.md")
+    audit = G / "full-grade-stage-a-c-132-lesson-audit.json"
+    if audit.exists():
+        source_audit = load(audit)
+        checks["auditCount"] = source_audit.get("LessonCount")
+        checks["auditEntries"] = len(source_audit.get("Lessons", []))
+        details["annualPlanOrigin"] = source_audit.get("AnnualPlanEvidence")
+        if "not independently verified" in str(source_audit.get("AnnualPlanEvidence", "")).lower():
+            errors.append("2026-2027 annual-plan ministry origin remains unverified")
+        lacking_pages = [x["Ordinal"] for x in source_audit.get("Lessons", [])
+                         if not x.get("Source")]
+        details["missingSourceLocatorOrdinals"] = lacking_pages
+        if lacking_pages:
+            errors.append(f"{len(lacking_pages)} lesson source locators are empty in handoff audit")
+    else:
+        errors.append("Missing full-grade-stage-a-c-132-lesson-audit.json")
+    rights = G / "grade4-rights-release-clearance.json"
+    checks["publicationRightsClearancePresent"] = rights.exists()
+    if not rights.exists():
+        errors.append("No evidence of publication rights clearance")
+    checks["sourceSnapshotIdPresent"] = bool(handoff.exists() and "SourceSnapshotId" in handoff.read_text(encoding="utf-8"))
+    if not checks["sourceSnapshotIdPresent"]:
+        errors.append("SourceSnapshotId not established in an auditable handoff")
+    return report("source", errors, checks, details)
+
+def final():
+    errors, checks, details = [], {}, {}
+    required = ["structural", "source", "math", "migration",
+                "authenticated-e2e", "arabic-visual", "rights", "ci"]
+    for name in required:
+        p = OUTPUT / f"grade4-{name}-gate.json"
+        valid = p.is_file() and load(p).get("status") == "PASS"
+        checks[name] = valid
+        if not valid:
+            errors.append(f"Final same-SHA gate missing or blocked: {name}")
+    if len({load(OUTPUT / f"grade4-{k}-gate.json").get("candidateSha")
+            for k in required if (OUTPUT / f"grade4-{k}-gate.json").exists()}) > 1:
+        errors.append("Gate artifacts reference different CandidateSha values")
+    return report("final", errors, checks, details)
+
+if __name__ == "__main__":
+    p = argparse.ArgumentParser()
+    p.add_argument("--phase", choices=["structural", "source", "final"], required=True)
+    a = p.parse_args()
+    good = {"structural": structural, "source": source, "final": final}[a.phase]()
+    raise SystemExit(0 if good else 1)

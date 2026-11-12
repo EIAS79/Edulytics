@@ -1,0 +1,78 @@
+name: UAE Grade 4 Stage D - 132 lessons fail-closed candidate
+on:
+  push:
+    branches: [curriculum/uae-g4-arabic-a-b-c-20261111]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structural:
+    name: G4 132 lesson IDs, catalogue, contracts
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-structural
+          path: artifacts/uae-g4-stage-d/grade4-structural-gate.json
+          if-no-files-found: error
+  source:
+    name: Signed annual source and rights handoff required
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase source
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-source
+          path: artifacts/uae-g4-stage-d/grade4-source-gate.json
+          if-no-files-found: error
+  math:
+    name: Grade 4 compile and math tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: All Grade4 tests
+        run: |
+          mkdir -p artifacts/uae-g4-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade4' --logger 'trx;LogFileName=uae-g4-math.trx' --results-directory artifacts/uae-g4-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-math
+          path: artifacts/uae-g4-stage-d/trx
+          if-no-files-found: warn
+  final:
+    name: Fail-closed no-merge-no-deploy release gate
+    if: always()
+    needs: [structural, source, math]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase final
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-final
+          path: artifacts/uae-g4-stage-d/grade4-final-gate.json
+          if-no-files-found: error
