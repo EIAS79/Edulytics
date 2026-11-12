@@ -125,9 +125,37 @@ def run():
             continue
         if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
             g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade4-im-k5-2021.lesson-blueprint.json"
+            uae_g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
+            # The UAE G4 academic replacement is not a generic storage-only edit.
+            # Accept ONLY the audited source and candidate Git blobs. Any other
+            # alteration remains an error, including a future unreviewed rewrite.
+            uae_g4_exact = False
+            if path == uae_g4_blueprint:
+                old_blob = subprocess.check_output(
+                    ["git", "rev-parse", f"origin/main:{path}"],
+                    cwd=ROOT, text=True).strip()
+                new_blob = subprocess.check_output(
+                    ["git", "hash-object", str(current)],
+                    cwd=ROOT, text=True).strip()
+                approval = json.loads((ROOT /
+                    "artifacts/curriculum-delivery/UAE-MOE-MATH/G4/grade4-owner-approved-93-to-132-replacement.json"
+                ).read_text(encoding="utf8"))
+                blueprint_doc = json.loads(current.read_text(encoding="utf8"))
+                uae_g4_exact = (
+                    old_blob == "9886574a71cdc0ffd0bda58f6331ef9eb1d67eb2"
+                    and new_blob == "d3aef0a9ca39e28cf91cdedee3c0b58d45baa036"
+                    and approval.get("ownerRequestedReplacement") is True
+                    and approval.get("scope") == "UAE Grade 4 Common only"
+                    and blueprint_doc.get("PackCode") == "UAE-MOE-MATH"
+                    and blueprint_doc.get("LogicalLevel") == 4
+                    and blueprint_doc.get("Pathway") == "Common"
+                    and blueprint_doc.get("AcquisitionDiagnostics", {}).get("UnitCount") == 16
+                    and blueprint_doc.get("AcquisitionDiagnostics", {}).get("LessonCount") == 132
+                )
             g1_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g1-common-t1-ogl-v1.lesson-blueprint.json"
             g2_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g2-common-t1-ogl-v1.lesson-blueprint.json"
             if not (
+                uae_g4_exact or
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
                 (path == g1_blueprint and len(g1_owner_content) == 102) or
                 (path == g2_blueprint and len(g2_owner_content) == 99)
