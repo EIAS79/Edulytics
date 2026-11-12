@@ -7752,6 +7752,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u13.l01.plot_read_value", "uae.g4.u13.l01.plot_difference"],
             "UAE_G4_STUDENT_04_03_PP851_856_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:12:03", "geometry.reflection_symmetry",
+            "AXIS_OF_SYMMETRY_REFLECTION",
+            ["uae.g4.u12.l03.symmetry_axes", "uae.g4.u12.l03.mirrored_points"],
+            "UAE_G4_STUDENT_04_03_PP807_812_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:02"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:12:02", "geometry.parallel_perpendicular",
             "PARALLEL_PERPENDICULAR_CLASSIFICATION",
