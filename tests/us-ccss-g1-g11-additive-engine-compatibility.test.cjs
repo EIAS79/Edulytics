@@ -89,11 +89,11 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
     [engine,670],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',828]
   ]){
-    const changes=git('diff','--numstat',preG4,'HEAD','--',file).split('\\t');
+    const changes=git('diff','--numstat',preG4,'HEAD','--',file).split('\t');
     assert.equal(changes[0],String(expectedDelta));
     assert.equal(changes[1],'0');
-    const baseline=cp.execFileSync('git',['show',preG4+':'+file],{cwd:root,encoding:'utf8'}).split('\\n');
-    const current=fs.readFileSync(path.join(root,file),'utf8').split('\\n');
+    const baseline=cp.execFileSync('git',['show',preG4+':'+file],{cwd:root,encoding:'utf8'}).split('\n');
+    const current=fs.readFileSync(path.join(root,file),'utf8').split('\n');
     let oldIndex=0;
     for(const line of current) if(oldIndex<baseline.length && line===baseline[oldIndex]) oldIndex++;
     assert.equal(oldIndex,baseline.length,'Published non-Grade4 lines must survive unchanged: '+file);
