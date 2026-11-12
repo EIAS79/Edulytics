@@ -26,7 +26,7 @@ jobs:
           path: artifacts/uae-g4-stage-d/grade4-structural-gate.json
           if-no-files-found: error
   source:
-    name: Signed annual source and rights handoff required
+    name: G4 local-book source and owner-scoped release (official edition UNKNOWN)
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
