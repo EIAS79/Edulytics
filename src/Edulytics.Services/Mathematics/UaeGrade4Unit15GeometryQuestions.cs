@@ -19,8 +19,8 @@ internal static class UaeGrade4Unit15GeometryQuestions
   if(!Supports(f))throw new InvalidOperationException("Unsupported geometry family");
   int a=random.Next(20,70),b=random.Next(10,50),c=random.Next(10,50);
   if(f.Contains(".l02."))a=random.Next(20,161);
-  if(f.Contains(".l06.")){a=random.Next(20,60);b=random.Next(20,60);c=random.Next(10,30);}
-  if(f.Contains(".l07.")){a=random.Next(40,85);b=random.Next(40,85);c=random.Next(40,85);}
+  if(f.Contains(".l06.")){a=random.Next(20,60);b=random.Next(20,60);c=random.Next(Math.Abs(a-b)+1,a+b);}
+  if(f.Contains(".l07.")){a=random.Next(65,85);b=random.Next(65,85);c=random.Next(65,85);}
   if(f.Contains(".l08.")){a=random.Next(2,10);b=random.Next(2,10);c=random.Next(1,5);}
   var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
   string prompt=f switch
@@ -50,7 +50,8 @@ internal static class UaeGrade4Unit15GeometryQuestions
    result=0;
    if(!Supports(f)||p.Count!=3||!p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
       a is <1 or >180||b is <1 or >180||c is <1 or >180||(f.Contains(".l06.")&&a+b>=180)||
-      (f.Contains(".l07.")&&a+b+c>=360))return false;
+      (f.Contains(".l07.")&&(a+b+c>=360||a+b+c<=180))||
+      (f=="uae.g4.u15.l06.triangle_perimeter"&&(a+b<=c||a+c<=b||b+c<=a)))return false;
    result=f switch
    {
     "uae.g4.u15.l01.construct_degrees" or "uae.g4.u15.l03.measure_degrees" or "uae.g4.u15.l04.draw_degrees" or "uae.g4.u15.l05.subtract_angles"=>a,

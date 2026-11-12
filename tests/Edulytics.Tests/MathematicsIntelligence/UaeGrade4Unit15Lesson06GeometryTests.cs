@@ -24,8 +24,8 @@ public sealed class UaeGrade4Unit15Lesson06GeometryTests
  }
  [Theory]
  [InlineData(40,30,20)]
- [InlineData(60,40,20)]
- [InlineData(50,25,15)]
+ [InlineData(50,40,20)]
+ [InlineData(35,25,15)]
  public void SolvesDeterministicGeometryProblems(int a,int b,int c)
  {
   var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
