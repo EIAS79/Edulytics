@@ -107,7 +107,13 @@ def audit() -> dict[str, Any]:
     for row in eligible:
         code = str(row.get("lessonCode") or "")
         semantic_status = str(row.get("semanticContentStatus") or "")
-        uae_verified_practice = (
+        independent_g4 = bool(
+            row.get("independentG4ExactPracticeContractVerified") is True
+            and row.get("terminalPracticeStatus") == "READY_VERIFIED"
+            and row.get("solverReady") is True
+            and row.get("verifierReady") is True
+        )
+        uae_verified_practice = independent_g4 or (
             str(row.get("packCode") or "") == "UAE-MOE-MATH"
             and str(row.get("sourceType") or "") == "OfficialMapped"
             and row.get("terminalPracticeStatus") == "READY_VERIFIED"
@@ -128,9 +134,14 @@ def audit() -> dict[str, Any]:
         # teacher-grading proof. The completion matrix validates that evidence
         # lesson-by-lesson; generic SkillId mappings are not their runtime route.
         independent_g12 = bool(row.get("independentG12SpecialistContractVerified"))
-        if not independent_g12 and not bool(row.get("approvedMapping")):
+        # G4's reviewed C# contracts independently prove their exact lesson
+        # SkillId and question families with 132 source locators and signed
+        # owner release scope.  The generic Supporting map must not override
+        # a real Grade4 runtime contract. Preserve generic diagnostics in the
+        # completion matrix rather than misreporting Ministry parity.
+        if not (independent_g12 or independent_g4) and not bool(row.get("approvedMapping")):
             mapping_blockers.append(f"{code}: approved mapping missing")
-        if not independent_g12 and not list(row.get("primarySkills") or []):
+        if not (independent_g12 or independent_g4) and not list(row.get("primarySkills") or []):
             mapping_blockers.append(f"{code}: primary skill mapping missing")
 
     family_blockers: list[str] = []
@@ -142,7 +153,8 @@ def audit() -> dict[str, Any]:
         families = [str(x) for x in row.get("questionFamilies") or [] if str(x).strip()]
         family_count_distribution[len(families)] += 1
         if not families:
-            if not bool(row.get("independentG12SpecialistContractVerified")):
+            if not (bool(row.get("independentG12SpecialistContractVerified")) or
+                    bool(row.get("independentG4ExactPracticeContractVerified"))):
                 family_blockers.append(f"{code}: no allowed question family")
             continue
         for family_id in families:
@@ -161,6 +173,16 @@ def audit() -> dict[str, Any]:
                 )
             for domain in row.get("domains") or []:
                 family_by_domain[str(domain)].add(family_id)
+
+    # Refuse partial/undeclared G4 exemptions. Every row is independently
+    # validated against the selected student-book index and C# question bank.
+    grade4_rows = [row for row in eligible if str(row.get("lessonCode") or "").startswith(
+        "PED:UAE-MOE-MATH:L4:COMMON:")]
+    if grade4_rows and (len(grade4_rows) != 132 or
+        sum(bool(row.get("independentG4ExactPracticeContractVerified"))
+            for row in grade4_rows) != 132):
+        mapping_blockers.append(
+            "Grade4 exact-contract exception requires all 132 independently certified lessons")
 
     visual_blockers: list[str] = []
     visual_required = [row for row in eligible if bool(row.get("visualRequired"))]
