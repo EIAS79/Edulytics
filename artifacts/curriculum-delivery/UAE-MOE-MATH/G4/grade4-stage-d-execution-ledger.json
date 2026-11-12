@@ -1,7 +1,7 @@
 {
   "Stage": "D",
   "Status": "D_BLOCKED",
-  "ReleaseDecision": "NO_GO_MIGRATION_AUTH_E2E_CI",
+  "ReleaseDecision": "NO_GO_MIGRATION_AUTH_E2E_AND_FINAL_CI",
   "Grade": 4,
   "Pathway": "Common",
   "TargetYear": "2026-2027",
@@ -54,9 +54,9 @@
     "Owner authorship clears the 132 authored digital JSON packs only; no licence for original publisher artwork or PDFs is implied."
   ],
   "UnknownLessonPracticeSkillIds": 0,
-  "CrossSkillFamilyReferencesRequiringReview": 45,
+  "CrossSkillFamilyReferencesRequiringReview": 0,
   "StrictRegistryIntegrityBlockersAfterRepair": 0,
-  "StructuralGateStatus": "BLOCKED_CROSS_SKILL_FAMILY_IDENTITY",
+  "StructuralGateStatus": "PASS",
   "SupportingSkillResolutionUnmappedGrade4": 10,
   "StageCSafeExactSkillMapsAdded": 49,
   "SignalRRedisPatchedPackage": "10.0.15",
@@ -66,6 +66,15 @@
   "PostPatchSecurityRegressionLog": "artifacts/uae-g4-stage-d/grade4-patched-redis-regression.log",
   "StageCPendingDAliasSkillIdsAdded": 14,
   "OwnerAuthoredDigitalContentRightsAudit": "PASS_STATIC_DIGITAL_ASSETS_ONLY",
-  "SourceGateStatus": "PASS_ON_OWNER_APPROVAL_AND_HASHED_SOURCE",
-  "DigitallyBundledExternalPublisherAssets": 0
+  "SourceGateStatus": "PASS_DIGITAL_SCOPE_AND_DOCUMENTED_OWNER_APPROVAL",
+  "DigitallyBundledExternalPublisherAssets": 0,
+  "Grade4ExactFamilyRegistryAuditBlockers": 0,
+  "BroaderSupportingSkillResolutionAuditBlockers": 83,
+  "LatestLocalFilteredGrade4MathTestsPassed": 645,
+  "LatestLocalFilteredGrade4MathTestsFailed": 0,
+  "MigrationGateStatus": "BLOCKED_PRODUCTION_VERSION_IDENTITY_COLLISION",
+  "NeonIsolatedBranchCreation": "FAILED_BRANCH_LIMIT_EXCEEDED",
+  "RenderLiveCommit": "c0970107123a3e94ca5d0928b45a58c577162d17",
+  "GitHubSameShaFinalCIResult": "NOT_VERIFIED",
+  "LastUpdatedUtc": "2026-11-12T02:58:27.823596+00:00"
 }
