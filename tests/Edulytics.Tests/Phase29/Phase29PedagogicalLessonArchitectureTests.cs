@@ -381,8 +381,10 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
                                     x.OfficialLessonNodeId &&
                                 node.NodeKind == "Lesson")));
 
+        // The owner-approved UAE G4 replacement retires 10 stale legacy
+        // official-reference lesson links; it does not alter other grades.
         Assert.Equal(
-            1373,
+            1373 - 10,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>
