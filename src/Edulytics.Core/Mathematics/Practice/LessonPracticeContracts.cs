@@ -7602,154 +7602,154 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:08"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:08", "geometry.polygons",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:08", "geometry.polygons",
             "DRAW_GEOMETRIC_MODEL_TO_SOLVE",
-            ["uae.g4.u15.l08.model_shape_count", "uae.g4.u15.l08.model_grid_total"],
+            ["uae.g4.u16.l08.model_shape_count", "uae.g4.u16.l08.model_grid_total"],
             "UAE_G4_STUDENT_04_03_PP1043_1048_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:07"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:07", "geometry.polygons",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:07", "geometry.polygons",
             "QUADRILATERALS_PROPERTIES",
-            ["uae.g4.u15.l07.quadrilateral_perimeter", "uae.g4.u15.l07.quadrilateral_missing_angle"],
+            ["uae.g4.u16.l07.quadrilateral_perimeter", "uae.g4.u16.l07.quadrilateral_missing_angle"],
             "UAE_G4_STUDENT_04_03_PP1037_1042_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:06"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:06", "geometry.polygons",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:06", "geometry.polygons",
             "TRIANGLES_PROPERTIES_AND_SUM",
-            ["uae.g4.u15.l06.triangle_perimeter", "uae.g4.u15.l06.triangle_missing_angle"],
+            ["uae.g4.u16.l06.triangle_perimeter", "uae.g4.u16.l06.triangle_missing_angle"],
             "UAE_G4_STUDENT_04_03_PP1031_1036_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:05"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:05", "geometry.angles",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:05", "geometry.angles",
             "ANGLE_ADDITION_SUBTRACTION",
-            ["uae.g4.u15.l05.add_angles", "uae.g4.u15.l05.subtract_angles"],
+            ["uae.g4.u16.l05.add_angles", "uae.g4.u16.l05.subtract_angles"],
             "UAE_G4_STUDENT_04_03_PP1023_1030_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:04"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:04", "geometry.angles",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:04", "geometry.angles",
             "DRAW_ANGLES_AT_REQUESTED_MEASURE",
-            ["uae.g4.u15.l04.draw_degrees", "uae.g4.u15.l04.draw_supplement"],
+            ["uae.g4.u16.l04.draw_degrees", "uae.g4.u16.l04.draw_supplement"],
             "UAE_G4_STUDENT_04_03_PP1017_1022_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:03"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:03", "geometry.angles",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:03", "geometry.angles",
             "MEASURE_ANGLES_PROTRACTOR",
-            ["uae.g4.u15.l03.measure_degrees", "uae.g4.u15.l03.compare_degrees"],
+            ["uae.g4.u16.l03.measure_degrees", "uae.g4.u16.l03.compare_degrees"],
             "UAE_G4_STUDENT_04_03_PP1011_1016_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:02"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:02", "geometry.angles",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:02", "geometry.angles",
             "CLASSIFY_ACUTE_RIGHT_OBTUSE",
-            ["uae.g4.u15.l02.classify_degrees", "uae.g4.u15.l02.distance_to_right_angle"],
+            ["uae.g4.u16.l02.classify_degrees", "uae.g4.u16.l02.distance_to_right_angle"],
             "UAE_G4_STUDENT_04_03_PP1005_1010_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:01"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:15:01", "geometry.angles",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:16:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:16:01", "geometry.angles",
             "CONSTRUCT_ANGLES_WITH_RAYS",
-            ["uae.g4.u15.l01.construct_degrees", "uae.g4.u15.l01.straight_remaining"],
+            ["uae.g4.u16.l01.construct_degrees", "uae.g4.u16.l01.straight_remaining"],
             "UAE_G4_STUDENT_04_03_PP999_1004_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:05"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:14:05", "geometry.perimeter_area",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:05", "geometry.perimeter_area",
             "COMPARE_PERIMETER_AND_AREA",
-            ["uae.g4.u14.l05.area_from_dimensions", "uae.g4.u14.l05.perimeter_from_dimensions"],
+            ["uae.g4.u15.l05.area_from_dimensions", "uae.g4.u15.l05.perimeter_from_dimensions"],
             "UAE_G4_STUDENT_04_03_PP977_982_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:04"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:14:04", "geometry.perimeter_area",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:04", "geometry.perimeter_area",
             "RECTANGLE_SQUARE_AREA_FORMULAS",
-            ["uae.g4.u14.l04.area_rectangle", "uae.g4.u14.l04.area_square"],
+            ["uae.g4.u15.l04.area_rectangle", "uae.g4.u15.l04.area_square"],
             "UAE_G4_STUDENT_04_03_PP971_976_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:03"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:14:03", "geometry.perimeter_area",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:03", "geometry.perimeter_area",
             "TILED_AREA_UNIT_SQUARE_MODELS",
-            ["uae.g4.u14.l03.area_tiles", "uae.g4.u14.l03.area_rows_columns"],
+            ["uae.g4.u15.l03.area_tiles", "uae.g4.u15.l03.area_rows_columns"],
             "UAE_G4_STUDENT_04_03_PP965_970_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:02"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:14:02", "geometry.perimeter_area",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:02", "geometry.perimeter_area",
             "SOLVE_SIMPLER_PERIMETER_AREA",
-            ["uae.g4.u14.l02.simple_area", "uae.g4.u14.l02.simple_perimeter"],
+            ["uae.g4.u15.l02.simple_area", "uae.g4.u15.l02.simple_perimeter"],
             "UAE_G4_STUDENT_04_03_PP957_962_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:01"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:14:01", "geometry.perimeter_area",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:01", "geometry.perimeter_area",
             "PERIMETER_RECTANGLE_SQUARE",
-            ["uae.g4.u14.l01.perimeter_rectangle", "uae.g4.u14.l01.perimeter_square"],
+            ["uae.g4.u15.l01.perimeter_rectangle", "uae.g4.u15.l01.perimeter_square"],
             "UAE_G4_STUDENT_04_03_PP951_956_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:09"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:09", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:09"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:09", "measurement.metric",
             "MULTISTEP_METRIC_MEASUREMENT_PROBLEMS",
-            ["uae.g4.u13.l09.measurement_total_ml", "uae.g4.u13.l09.measurement_time_minutes"],
+            ["uae.g4.u14.l09.measurement_total_ml", "uae.g4.u14.l09.measurement_time_minutes"],
             "UAE_G4_STUDENT_04_03_PP933_938_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:08"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:08", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:08"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:08", "measurement.metric",
             "METRIC_MEASUREMENT_CONVERSION_TABLES",
-            ["uae.g4.u13.l08.convert_mm", "uae.g4.u13.l08.convert_cm"],
+            ["uae.g4.u14.l08.convert_mm", "uae.g4.u14.l08.convert_cm"],
             "UAE_G4_STUDENT_04_03_PP927_932_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:07"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:07", "problem_solving",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:07"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:07", "problem_solving",
             "ORGANIZED_LIST_COMBINATIONS",
-            ["uae.g4.u13.l07.organized_list_pairs", "uae.g4.u13.l07.organized_list_triplets"],
+            ["uae.g4.u14.l07.organized_list_pairs", "uae.g4.u14.l07.organized_list_triplets"],
             "UAE_G4_STUDENT_04_03_PP921_926_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:06"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:06", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:06", "measurement.metric",
             "METRIC_MASS_KILOGRAMS_GRAMS",
-            ["uae.g4.u13.l06.kilograms_grams", "uae.g4.u13.l06.combined_grams"],
+            ["uae.g4.u14.l06.kilograms_grams", "uae.g4.u14.l06.combined_grams"],
             "UAE_G4_STUDENT_04_03_PP913_918_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:05"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:05", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:05"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:05", "measurement.metric",
             "METRIC_CAPACITY_LITERS_MILLILITERS",
-            ["uae.g4.u13.l05.liters_milliliters", "uae.g4.u13.l05.combined_milliliters"],
+            ["uae.g4.u14.l05.liters_milliliters", "uae.g4.u14.l05.combined_milliliters"],
             "UAE_G4_STUDENT_04_03_PP907_912_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:04"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:04", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:04"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:04", "measurement.metric",
             "METRIC_LENGTH_CONVERSIONS",
-            ["uae.g4.u13.l04.meters_centimeters", "uae.g4.u13.l04.centimeters_millimeters"],
+            ["uae.g4.u14.l04.meters_centimeters", "uae.g4.u14.l04.centimeters_millimeters"],
             "UAE_G4_STUDENT_04_03_PP901_906_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:03"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:03", "problem_solving",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:03", "problem_solving",
             "GUESS_CHECK_REVISE_PROBLEM_SOLVING",
-            ["uae.g4.u13.l03.guess_check_product", "uae.g4.u13.l03.guess_check_remaining"],
+            ["uae.g4.u14.l03.guess_check_product", "uae.g4.u14.l03.guess_check_remaining"],
             "UAE_G4_STUDENT_04_03_PP895_900_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:02"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:02", "data.line_plot",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:02", "data.line_plot",
             "MEASUREMENT_GROUPED_DOT_PLOTS",
-            ["uae.g4.u13.l02.dot_plot_total", "uae.g4.u13.l02.dot_plot_most"],
+            ["uae.g4.u14.l02.dot_plot_total", "uae.g4.u14.l02.dot_plot_most"],
             "UAE_G4_STUDENT_04_03_PP889_894_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:01"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:13:01", "measurement.metric",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:14:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:14:01", "measurement.metric",
             "TIME_UNIT_CONVERSION_HOURS_MINUTES",
-            ["uae.g4.u13.l01.time_minutes", "uae.g4.u13.l01.time_with_minutes"],
+            ["uae.g4.u14.l01.time_minutes", "uae.g4.u14.l01.time_with_minutes"],
             "UAE_G4_STUDENT_04_03_PP883_888_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:03"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:12:03", "data.graphs",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:13:03", "data.graphs",
             "PIE_CHART_PERCENTAGE_SECTORS",
-            ["uae.g4.u12.l03.pie_category_percent", "uae.g4.u12.l03.pie_rest_percent"],
+            ["uae.g4.u13.l03.pie_category_percent", "uae.g4.u13.l03.pie_rest_percent"],
             "UAE_G4_STUDENT_04_03_PP863_868_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:02"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:12:02", "data.graphs",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:02"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:13:02", "data.graphs",
             "LINE_GRAPHS_TREND_AND_CHANGE",
-            ["uae.g4.u12.l02.line_graph_max", "uae.g4.u12.l02.line_graph_increase"],
+            ["uae.g4.u13.l02.line_graph_max", "uae.g4.u13.l02.line_graph_increase"],
             "UAE_G4_STUDENT_04_03_PP857_862_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
-        byLesson["PED:UAE-MOE-MATH:L4:COMMON:12:01"] = new LessonPracticeContract(
-            "PED:UAE-MOE-MATH:L4:COMMON:12:01", "data.graphs",
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:01"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:13:01", "data.graphs",
             "PLOT_TEMPERATURE_POINTS",
-            ["uae.g4.u12.l01.plot_read_value", "uae.g4.u12.l01.plot_difference"],
+            ["uae.g4.u13.l01.plot_read_value", "uae.g4.u13.l01.plot_difference"],
             "UAE_G4_STUDENT_04_03_PP851_856_STAGE_D_NOT_RUN",
             "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:11:10"] = new LessonPracticeContract(
