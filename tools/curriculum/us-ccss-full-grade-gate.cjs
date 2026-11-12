@@ -160,15 +160,15 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','b5a81ef4d5e5809092f6dece3d312e6f6ccc2df6']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','d84a61ebc37e8ca026f95906720bfaef3ea56081']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','95cdcb9ce1df3d5ad8ae6da6ad977c86a56c4311']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0060af6edb1c5f354eeea5aeabc1ae7717fcbb6a']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d778e602928ff252573365dce53e7e3e31ab708d']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
