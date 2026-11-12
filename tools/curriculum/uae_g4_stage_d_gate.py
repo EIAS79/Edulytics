@@ -1,3 +1,4 @@
+import xml.etree.ElementTree as ET
 #!/usr/bin/env python3
 """Fail-closed, evidence-based Stage D preflight for UAE Grade 4 Common.
 
@@ -231,6 +232,31 @@ def source():
         errors.append("SourceSnapshotId not consistently present in source snapshot and handoff")
     return report("source", errors, checks, details)
 
+def math():
+    errors, checks, details = [], {}, {}
+    folder = OUTPUT / "trx"
+    candidates = sorted(folder.glob("*.trx")) if folder.exists() else []
+    checks["trxFiles"] = len(candidates)
+    if len(candidates) != 1:
+        return report("math", ["One Grade4 TRX result is required from same candidate build"], checks, details)
+    try:
+        root = ET.parse(candidates[0]).getroot()
+        summary = next((node for node in root.iter() if node.tag.rsplit("}",1)[-1] == "Counters"), None)
+        if summary is None:
+            errors.append("TRX file has no Counters element")
+        else:
+            counts = {k:int(v) for k,v in summary.attrib.items() if v.isdigit()}
+            details["trxCounters"] = counts
+            checks["passed"] = counts.get("passed",0)
+            checks["failed"] = counts.get("failed",-1)
+            checks["total"] = counts.get("total",0)
+            checks["skipped"] = counts.get("notExecuted",0)
+            if checks["passed"] < 645 or checks["total"] != checks["passed"] or checks["failed"] or checks["skipped"]:
+                errors.append("Grade4 filtered CI tests did not satisfy minimum 645/645 passing and zero failing/skipped")
+    except (OSError, ET.ParseError, ValueError) as ex:
+        errors.append("Failed to parse Grade4 TRX: " + str(ex))
+    return report("math", errors, checks, details)
+
 def migration():
     errors, checks, details = [], {}, {}
     p = G / "grade4-production-migration-risk.json"
@@ -271,7 +297,7 @@ def final():
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--phase", choices=["structural", "source", "migration", "final"], required=True)
+    p.add_argument("--phase", choices=["structural", "source", "migration", "math", "final"], required=True)
     a = p.parse_args()
-    good = {"structural": structural, "source": source, "migration": migration, "final": final}[a.phase]()
+    good = {"structural": structural, "source": source, "migration": migration, "math": math, "final": final}[a.phase]()
     raise SystemExit(0 if good else 1)

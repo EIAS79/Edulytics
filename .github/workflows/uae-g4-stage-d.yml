@@ -56,11 +56,16 @@ jobs:
           mkdir -p artifacts/uae-g4-stage-d/trx
           dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade4' --logger 'trx;LogFileName=uae-g4-math.trx' --results-directory artifacts/uae-g4-stage-d/trx
       - if: always()
+        name: Validate TRX results from this same-sha build
+        run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase math
+      - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: g4-math
-          path: artifacts/uae-g4-stage-d/trx
-          if-no-files-found: warn
+          path: |
+            artifacts/uae-g4-stage-d/trx
+            artifacts/uae-g4-stage-d/grade4-math-gate.json
+          if-no-files-found: error
   migration:
     name: No destructive Grade 4 legacy curriculum identity transition
     runs-on: ubuntu-24.04
@@ -86,6 +91,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - if: always()
+        uses: actions/download-artifact@v4
+        with:
+          pattern: g4-*
+          merge-multiple: true
+          path: artifacts/uae-g4-stage-d
       - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase final
       - if: always()
         uses: actions/upload-artifact@v4
