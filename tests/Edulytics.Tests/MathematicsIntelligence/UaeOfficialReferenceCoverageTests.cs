@@ -69,6 +69,17 @@ public sealed class UaeOfficialReferenceCoverageTests
             x => (x.LogicalLevel == 5 || x.LogicalLevel == 6) &&
                  string.Equals(x.Pathway, "Advanced", StringComparison.OrdinalIgnoreCase));
 
+        var grade4 = Assert.Single(blueprints, x =>
+            x.LogicalLevel == 4 &&
+            string.Equals(x.Pathway, "Common",
+                StringComparison.OrdinalIgnoreCase));
+        Assert.Equal(132, grade4.Lessons.Count);
+        Assert.Equal(49, grade4.Lessons.Count(x =>
+            x.OutcomeCodes.Count == 0 &&
+            string.IsNullOrWhiteSpace(x.OfficialReferenceCode)));
+        Assert.Equal(83, grade4.Lessons.Count(x =>
+            !string.IsNullOrWhiteSpace(x.OfficialReferenceCode)));
+
         foreach (var blueprint in blueprints)
         {
             Assert.All(
@@ -82,9 +93,27 @@ public sealed class UaeOfficialReferenceCoverageTests
 
                     Assert.False(isSupporting);
 
-                    Assert.True(
-                        lesson.OutcomeCodes.Count > 0 ||
-                        !string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode));
+                    // The G4 owner-authored source audit explicitly records
+                    // 49 lessons without an accepted official reference node.
+                    // Do not invent official outcomes or imply source parity:
+                    // the independent authority/release gate stays mandatory.
+                    if (blueprint.LogicalLevel == 4 &&
+                        string.Equals(blueprint.Pathway, "Common",
+                            StringComparison.OrdinalIgnoreCase) &&
+                        string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode) &&
+                        lesson.OutcomeCodes.Count == 0)
+                    {
+                        Assert.StartsWith(
+                            "PED:UAE-MOE-MATH:L4:COMMON:",
+                            lesson.LessonCode, StringComparison.Ordinal);
+                        Assert.Empty(lesson.Alignments);
+                    }
+                    else
+                    {
+                        Assert.True(
+                            lesson.OutcomeCodes.Count > 0 ||
+                            !string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode));
+                    }
                 });
         }
     }
