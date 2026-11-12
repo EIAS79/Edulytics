@@ -115,9 +115,9 @@ public sealed class RichLessonExternalHelpTests
     public void Phase8A_RoundingLesson_ResolvesReviewedEmbeddedVideo()
     {
         var help = RichLessonExternalHelpRegistry.Resolve(
-            "PED:UAE-MOE-MATH:L4:COMMON:02:04",
-            "Round Multi-Digit Numbers",
-            "en");
+            "PED:UAE-MOE-MATH:L4:COMMON:01:05",
+            "استخدام القيمة المكانية للتقريب",
+            "ar");
 
         var video = Assert.Single(help.ApprovedVideos);
         Assert.Equal("YouTube", video.Provider);
