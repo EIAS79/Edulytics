@@ -359,6 +359,21 @@ var runStartupDataMaintenance =
         "Edulytics:Deployment:RunStartupDataMaintenance") ??
     !cleanBootstrap;
 
+// Owner-approved Grade 4 replacement cannot be a silent no-op when production
+// maintenance is disabled. The exact migration token is checked again inside
+// the pedagogical seeder, before any existing lesson/content can be removed.
+if (string.Equals(
+        Environment.GetEnvironmentVariable(
+            "EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132"),
+        "CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132",
+        StringComparison.Ordinal) &&
+    !runStartupDataMaintenance)
+{
+    throw new InvalidOperationException(
+        "Grade 4 93-to-132 replacement was requested but RunStartupDataMaintenance " +
+        "is disabled. Refusing a rollout that would leave the old curriculum unchanged.");
+}
+
 if (cleanBootstrap && !readCanonicalJson)
 {
     throw new InvalidOperationException(

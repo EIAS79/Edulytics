@@ -230,7 +230,7 @@ public sealed class CatalogueContentPracticeDivergenceInventoryTests
                     WriteIndented = true
                 }));
 
-        Assert.Equal(5183, rows.Count);
+        Assert.Equal(5183 - 93 + 132, rows.Count);
         Assert.Empty(missingCapabilities);
         Assert.Empty(presentationMissing);
 

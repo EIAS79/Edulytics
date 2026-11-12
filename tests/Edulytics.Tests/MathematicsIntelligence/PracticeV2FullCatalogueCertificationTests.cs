@@ -8,8 +8,9 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class PracticeV2FullCatalogueCertificationTests
 {
-    // Existing 5110 canonical lessons plus 73 Grade12 Precalculus.
-    private const int ExpectedLessonCount = 5183;
+    // 5,110 previously indexed lessons (including 93 old UAE G4),
+    // replace only those 93 with 132 (+39), retain 73 G12 Precalculus.
+    private const int ExpectedLessonCount = 5222;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_PRACTICE_V2_CERTIFICATION";
 

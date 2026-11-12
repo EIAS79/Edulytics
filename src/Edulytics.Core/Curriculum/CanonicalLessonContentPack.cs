@@ -6,7 +6,8 @@ namespace Edulytics.Core.Curriculum;
 public enum CurriculumSourceResolutionStatus
 {
     CurrentOfficial = 1,
-    PreviousOfficialFallback = 2
+    PreviousOfficialFallback = 2,
+    OwnerSelectedStudentBookCrosscheck = 3
 }
 
 public enum PedagogicalSourceType
@@ -202,8 +203,9 @@ public static class CanonicalLessonContentPackContract
                 $"Unsupported curriculum source resolution: {document.SourceResolution}.");
         }
 
-        if (document.SourceResolution ==
-            CurriculumSourceResolutionStatus.PreviousOfficialFallback)
+        if (document.SourceResolution is
+            CurriculumSourceResolutionStatus.PreviousOfficialFallback or
+            CurriculumSourceResolutionStatus.OwnerSelectedStudentBookCrosscheck)
         {
             Require(
                 document.FallbackReason,
@@ -212,7 +214,7 @@ public static class CanonicalLessonContentPackContract
         else if (!string.IsNullOrWhiteSpace(document.FallbackReason))
         {
             throw new InvalidOperationException(
-                "FallbackReason is only valid for PreviousOfficialFallback.");
+                "FallbackReason is only valid for an explicitly documented source fallback or owner-selected student-book cross-check.");
         }
 
         if (document.SourcePolicyVersion is < 1 or > 2)

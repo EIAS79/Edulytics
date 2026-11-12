@@ -10,7 +10,7 @@ public sealed class UnifiedPracticeConsolidationTests
         "UAE-MOE-MATH:L04:COMMON";
 
     private const string UaeRoundingLesson =
-        "PED:UAE-MOE-MATH:L4:COMMON:02:04";
+        "PED:UAE-MOE-MATH:L4:COMMON:01:05";
 
     [Fact]
     public void U1_UaeRoundingLesson_IsReadyVerified()
@@ -25,10 +25,10 @@ public sealed class UnifiedPracticeConsolidationTests
             LessonPracticeCapabilityResolver.ReadyVerified,
             contract!.Readiness);
         Assert.Equal(
-            "supporting.number.place_value_rounding",
+            "number.rounding.to_millions",
             contract.SkillId);
         Assert.Contains(
-            "supporting.number.rounding",
+            "uae.g4.u01.l05.round_nearest_hundred",
             contract.AllowedQuestionFamilies);
     }
 
@@ -73,7 +73,7 @@ public sealed class UnifiedPracticeConsolidationTests
             AdaptivePracticeEligibilityReasonCodes.Eligible,
             result.ReasonCode);
         Assert.Equal(
-            "supporting.number.place_value_rounding",
+            "number.rounding.to_millions",
             result.SkillId);
     }
 

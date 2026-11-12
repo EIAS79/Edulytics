@@ -102,6 +102,19 @@ public static class RichLessonExternalHelpRegistry
                         "mathantics",
                         "en",
                         "Explains rounding through place value, nearest multiples and number-line reasoning that matches this lesson skill.")
+                ],
+                // Grade 4 2026-27 moved the actual rounding skill to U01 L05.
+                // The former U02 L04 lesson now estimates sums/differences,
+                // so the reviewed rounding video must not follow its reused ID.
+                ["number.rounding.to_millions"] =
+                [
+                    ApprovedVideo(
+                        "YouTube",
+                        "fd-E18EqSVk",
+                        "Math Antics - Rounding",
+                        "mathantics",
+                        "en",
+                        "Reviewed place-value rounding guidance for nearest tens through millions.")
                 ]
             };
 

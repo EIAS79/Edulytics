@@ -229,6 +229,10 @@ internal static class YouTubeLessonSemanticContextResolver
         if (LessonPracticeContractRegistry.TryResolve(lessonCode, out var practice) &&
             practice is not null)
         {
+            // Some source-grounded lessons reuse secondary question families
+            // whose SkillIds list is intentionally ordered by family owner.
+            // Dynamic help must still target the lesson's PRIMARY exact skill.
+            skills.Add(practice.SkillId);
             skills.AddRange(practice.SkillIds);
         }
 

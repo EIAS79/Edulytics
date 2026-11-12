@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "pathway": "Common",
+  "academicYear": "2026-2027",
+  "reportType": "INDEPENDENT_SOURCE_SCOPE_RECONCILIATION",
+  "publicationDecision": "NO_GO_SOURCE_AUTHORITY_UNRESOLVED",
+  "academicOwner": {
+    "approved": true,
+    "scope": "Edulytics first-party authored Grade 4 math course and publication; not a claim of official ministry textbook edition certification"
+  },
+  "sourceHandoff": "grade4-a-c-source-handoff.json",
+  "selectedSource": {
+    "unitCount": 16,
+    "lessonCount": 132,
+    "sourcePdfCount": 7,
+    "sourceEditionObserved": "2025-2026 (04-03 inside 2024-2025)",
+    "sourceLocatorStatus": "132/132 book page locators documented",
+    "annualDistributionSourceStatus": "THIRD_PARTY_ARCHIVE_NOT_AUTHENTICATED",
+    "exactAnnualLessonRowsMapped": 0
+  },
+  "primaryCurrentYearAuthorities": [
+    {
+      "scopeType": "OFFICIAL_YEAR_STUDY_PLAN",
+      "url": "https://www.moe.gov.ae/ar/guides/Pages/Study-Plan-for-the-2026-2027-Academic-Year-Ministry-Curriculum.aspx",
+      "actualPdfUrl": "https://www.moe.gov.ae/en/guides/Documents/Study%20Plan%20for%20the%202026-2027%20Academic%20Year%20(Ministry%20Curriculum)/Study%20Plan%20for%20the%202026-2027%20Academic%20Year%20(Ministry%20Curriculum)%20AR.pdf",
+      "pdfPageIndex": 4,
+      "printedPageNumber": 5,
+      "provenFact": "Grade 4: six mathematics periods weekly in the 2026-27 study plan",
+      "lessonRowsPresent": false,
+      "claimLimit": "Cannot certify a 132-item course scope from a weekly schedule"
+    },
+    {
+      "scopeType": "MOE_BOOKS_DISTRIBUTOR_CATALOGUE",
+      "url": "https://www.tawzea.ae/en/moe/listing/1/books-g04",
+      "listedItem": "G04 - 420-T1-27 - Reveal Math - G04 - Vol1 - T1",
+      "academicYearCatalogue": "2026-2027",
+      "term": "Term-1",
+      "claimLimit": "Current-year textbook product listing, not a signed 132-lesson academic distribution or a verified SHA match for supplied 2025 PDF volumes"
+    }
+  ],
+  "identifiedConflicts": [
+    {
+      "type": "YEAR_EDITION_MISMATCH",
+      "status": "UNRESOLVED",
+      "details": "Selected source PDF covers state 2025-26 (one inner 2024-25), whereas target release year is 2026-27"
+    },
+    {
+      "type": "SERIES_EQUIVALENCE_NOT_VERIFIED",
+      "status": "UNRESOLVED",
+      "details": "2026-27 MOE book catalogue lists G04 Reveal Math Vol1 Term1; exact relationship to owner-selected seven Arabic PDFs not independently established"
+    },
+    {
+      "type": "NO_ANNUAL_LESSON_ROW_MAP",
+      "status": "UNRESOLVED",
+      "details": "Third-party annual-plan file SHA is recorded, but verified Ministry provenance and all 132 per-lesson annual mapping rows are absent"
+    },
+    {
+      "type": "BOOK_INDEX_STRUCTURE_DIFF",
+      "status": "UNRESOLVED",
+      "details": "2026-27 secondary-hosted Reveal index has Unit 2 Multi-Digit Structure and Unit 3 Addition/Subtraction and 14-unit earlier Reveal pattern, while user-selected Arabic student PDF set organizes 16 units with U01 place value, U02 addition, U03 multiplication/division. Do not declare a 1:1 prescribed scope without the actual current-year volume comparison."
+    }
+  ],
+  "rightsStatement": "Owner-approved original Edulytics content; no independent sublicense claim over third-party books or illustrations",
+  "ciReleaseEffect": "This document is an evidence audit, not a waiver or PASS; do not merge, migrate production or deploy by treating it as Ministry authorization.",
+  "secondaryYearTextbookIndexEvidence": {
+    "url": "https://www.mrsasmaa.com/files/elementary/004/matchnn/%D8%A7%D9%84%D9%81%D8%B5%D9%84%20%D8%A7%D9%84%D8%A3%D9%88%D9%84/%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8/%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D8%A8-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%D8%A9-%D8%A7%D9%84%D8%B5%D9%81-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-%D8%B1%D9%8A%D9%81%D9%8A%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D9%85-%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A-2026-2027",
+    "observedFrom": "2026-09-08 unofficial textbook cache descriptive table",
+    "topics": "2026-27 listing includes Unit 2 Generalize Place-Value Structure, Unit 3 Addition/Subtraction, Unit 4 Multiplication as Comparison; older Reveal index has 14 units, selected 2025 Arabic index has 16",
+    "limitation": "Secondary hosting alone cannot establish signed 2026-27 Ministry grade4 lesson inventory; uploaded PDF edition may differ"
+  }
+}

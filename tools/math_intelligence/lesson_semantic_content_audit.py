@@ -215,14 +215,23 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
             continue
         by_code[lesson_code] = row
 
-    # G12 supplements augment, rather than replace, the reviewed 5110
-    # canonical lessons. Check the exact new 73 code set, not only a total.
+    # The 5,110-lesson prior baseline included exactly 93 old UAE Grade 4
+    # entries. Owner-approved replacement removes only those 93 and includes
+    # 132 selected-source Arabic Grade 4 entries (+39), then retains all 73
+    # independently certified G12 Precalculus lessons unchanged.
     grade12 = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
+    grade4 = "PED:UAE-MOE-MATH:L4:COMMON:"
     supplemental = {code for code in by_code if code.startswith(grade12)}
-    if len(by_code) != 5183 or len(supplemental) != 73:
+    grade4_replacement = {code for code in by_code if code.startswith(grade4)}
+    untouched_base = set(by_code) - supplemental - grade4_replacement
+    if (len(by_code) != 5222 or len(supplemental) != 73 or
+        len(grade4_replacement) != 132 or len(untouched_base) != 5017):
         errors.append(
-            f"Effective learner snapshot expects 5110 prior plus 73 G12 "
-            f"lessons, got {len(by_code)} total / {len(supplemental)} G12."
+            "Effective learner snapshot requires 5,017 unchanged prior, "
+            "132 owner-approved UAE Grade 4, and 73 G12 lessons; "
+            f"got {len(untouched_base)} prior, "
+            f"{len(grade4_replacement)} G4, {len(supplemental)} G12, "
+            f"{len(by_code)} total."
         )
 
     return by_code, errors

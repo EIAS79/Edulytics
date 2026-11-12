@@ -1,0 +1,92 @@
+{
+  "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:01",
+  "unit": 2,
+  "unitName": "جمع الأعداد الكلية وطرحها",
+  "studentFile": "04-01.pdf",
+  "studentSourceSha256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "printedPages": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+  ],
+  "pdfPages": [
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "lessonName": "خواص الجمع وقواعد الطرح",
+  "coverage": [
+    {
+      "item": "التبديل في الجمع",
+      "studentPages": "61,63,65",
+      "edulytics": "RichV2 Arabic key concept + exact family commutative_add",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "التجميع في الجمع",
+      "studentPages": "61,63,65",
+      "edulytics": "RichV2 Arabic worked example + associative_add",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "المحايد الجمعي",
+      "studentPages": "61,62,63,65",
+      "edulytics": "RichV2 + additive_identity",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "قاعدة طرح الصفر",
+      "studentPages": "62,63,65",
+      "edulytics": "RichV2 + subtract_zero",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "قاعدة طرح العدد من نفسه",
+      "studentPages": "62,63",
+      "edulytics": "RichV2 + subtract_self",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "التمارين الموجهة والمستقلة",
+      "studentPages": "62,63,65,66",
+      "edulytics": "five exact practice families and authored mathematics examples",
+      "status": "ORIGINAL_SKILL_COVERED"
+    },
+    {
+      "item": "مسائل لفظية واستدلال",
+      "studentPages": "61,64",
+      "edulytics": "Arabic worked examples; teacher-reviewed explanations",
+      "status": "ORIGINAL_SKILL_COVERED_WITH_TEACHER_REVIEW"
+    },
+    {
+      "item": "واجب منزلي ومفردات",
+      "studentPages": "65,66",
+      "edulytics": "Arabic concepts, examples, cooldown and review rubric",
+      "status": "ORIGINAL_SKILL_COVERED"
+    }
+  ],
+  "cooldown": {
+    "prompt": "أكمل ٣٦ + ٠ = ؟ ثم أوجد ٣٦ − ٠ و٣٦ − ٣٦ واشرح اختلاف القاعدتين.",
+    "expectedAnswers": [
+      "٣٦",
+      "٣٦",
+      "٠"
+    ],
+    "review": "إجابات الأعداد يتحقق منها المحرك، وشرح القواعد يراجعه المعلم"
+  },
+  "tests": {
+    "scoped": "UaeGrade4Unit2Lesson01PropertiesTests",
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "stageD": false
+  },
+  "finalStatus": "READY_FOR_STAGE_D",
+  "sourcePolicy": "Source is locally supplied student book, not legacy Edulytics; original first-party Arabic prose and visual; source publisher art not copied"
+}

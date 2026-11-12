@@ -167,7 +167,20 @@ def audit() -> dict[str, Any]:
         blockers.append(
             f"Grade 12 candidate must contain exactly 73 lessons, got {grade12_count}"
         )
-    expected_catalogue_count = 5110 + grade12_count
+    # The source-selected UAE G4 owner-authored replacement changes exactly
+    # 93 existing lesson identities to 132, adding 39 to the canonical total.
+    # Preserve the 5,110 historical baseline on older/reusable snapshots,
+    # reject any partially installed or silently drifting G4 catalogue.
+    grade4_prefix = "PED:UAE-MOE-MATH:L4:COMMON:"
+    grade4_count = sum(
+        str(row.get("lessonCode") or "").startswith(grade4_prefix)
+        for row in rows
+    )
+    if grade4_count not in (93, 132):
+        blockers.append(
+            f"UAE Grade4 must retain 93 legacy or exactly 132 owner-approved replacement lessons; got {grade4_count}"
+        )
+    expected_catalogue_count = 5110 - 93 + grade4_count + grade12_count
     required_global = {
         "lessonCount": expected_catalogue_count,
         "practiceEligibleLessonCount": expected_catalogue_count,

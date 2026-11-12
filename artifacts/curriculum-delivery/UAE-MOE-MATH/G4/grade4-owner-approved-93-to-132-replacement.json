@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scope": "UAE Grade 4 Common only",
+  "ownerRequestedReplacement": true,
+  "ownerInstruction": "Delete the old Grade 4 93 lessons and replace with the selected 132 Grade 4 Arabic lessons; no parallel Neon database required.",
+  "legacyPedagogicalLessonCount": 93,
+  "legacyCanonicalContentCount": 93,
+  "newPedagogicalLessonCount": 132,
+  "targetFrameworkVersionCode": "MOE-2026-2027-T1",
+  "localBackupLocation": "Owner-authorized Windows device, UAE Grade_04 directory; intentionally not committed to GitHub.",
+  "localBackupSha256": {
+    "g4_production_old_93_lessons_backup_20261112.json": "0417d366eee40e08be6fe1553d729c37217bbb22ad0e7a14b5c11f0d7f7cfb64",
+    "g4_production_old_93_contents_backup_20261112.json": "f8c5570b15b9c95dfefb6106cde2a996805d8a85615dddf13078f204f3c5ff8b"
+  },
+  "legacyFingerprint": "55b7798964f7f3e93c9186037cbed0c55702a82f265edf69e2089b851def2084",
+  "requiredOneShotActivationToken": "CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132",
+  "environmentKey": "EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132",
+  "codePath": "src/Edulytics.Data/Seeding/MathematicsPedagogicalLessonSeeder.cs",
+  "protection": [
+    "Reject different legacy fingerprint, content count or foreign Grade4 student dependencies.",
+    "Use PostgreSQL transaction around Grade4 lesson/content deletion and new pedagogical upsert.",
+    "Keep all other grade data, shared UAE framework and school adoptions untouched.",
+    "Require all 132 deterministic replacement target identities prevalidated before delete.",
+    "Mark source snapshots and no student-attempt data as prerequisites.",
+    "Never execute on production until new code and embedded content passes release tests."
+  ],
+  "stageDStatus": "READY_FOR_ISOLATED_OR_APPROVED_MAINTENANCE_REHEARSAL_ONLY",
+  "productionOldLessonsDeleted": false,
+  "productionNewLessonsInserted": false,
+  "productionDeployTriggered": false
+}

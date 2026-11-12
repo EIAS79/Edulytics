@@ -1,0 +1,430 @@
+name: UAE Grade 4 Stage D - 132 lessons fail-closed candidate
+on:
+  push:
+    branches: [curriculum/uae-g4-arabic-a-b-c-20261111]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structural:
+    name: G4 132 lesson IDs, catalogue, contracts
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all SkillIds and capability registry references
+        run: python3 tools/math_intelligence/math_registry_integrity.py --strict
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-structural
+          path: artifacts/uae-g4-stage-d/grade4-structural-gate.json
+          if-no-files-found: error
+  source:
+    name: G4 local-book source and owner-scoped release (official edition UNKNOWN)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase source
+      - name: Validate bounded owner-authored digital asset rights evidence independently of source provenance
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          root=pathlib.Path("artifacts/curriculum-delivery/UAE-MOE-MATH/G4")
+          audit=json.loads((root/"grade4-rights-digital-static-audit.json").read_text())
+          clearance=json.loads((root/"grade4-rights-release-clearance.json").read_text())
+          assert audit["richLessonCount"]==132 and audit["externalImagesEmbedded"]==0
+          assert clearance["allowsDeployment"] is True
+          assert clearance["approvalLimitedToTheseDigitalAssets"] is True
+          out=pathlib.Path("artifacts/uae-g4-stage-d/grade4-rights-gate.json")
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text(json.dumps({"phase":"rights","status":"PASS",
+            "candidateSha":os.environ["GITHUB_SHA"],
+            "checks":{"reviewedRichLessonFiles":132,"externalArtworkEmbedded":0},
+            "scope":"Owner-authored digital Grade4 JSON only, no copied publisher art",
+            "humanAuthorshipVerification":"OWNER_REPRESENTATION_ONLY"},indent=2))
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-rights
+          path: artifacts/uae-g4-stage-d/grade4-rights-gate.json
+          if-no-files-found: error
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-source
+          path: artifacts/uae-g4-stage-d/grade4-source-gate.json
+          if-no-files-found: error
+  math:
+    name: Grade 4 compile and math tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: All Grade4 tests
+        run: |
+          mkdir -p artifacts/uae-g4-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade4' --logger 'trx;LogFileName=uae-g4-math.trx' --results-directory artifacts/uae-g4-stage-d/trx
+      - if: always()
+        name: Validate TRX results from this same-sha build
+        run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase math
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-math
+          path: |
+            artifacts/uae-g4-stage-d/trx
+            artifacts/uae-g4-stage-d/grade4-math-gate.json
+          if-no-files-found: error
+  migration:
+    name: Rehearse exact 93-to-132 replacement in ephemeral PostgreSQL 18
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      ConnectionStrings__MigrationConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      PGPASSWORD: postgres
+      DOTNET_NOLOGO: 'true'
+    steps:
+      - name: Checkout legacy main source
+        uses: actions/checkout@v4
+        with:
+          ref: c0970107123a3e94ca5d0928b45a58c577162d17
+          path: legacy
+      - name: Checkout exact pull-request candidate
+        uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore legacy tools, apply PostgreSQL migrations and seed 93 old Grade4 lessons
+        working-directory: legacy
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          # Exact legacy Render commit predates a 2026 security advisory.
+          # The OLD snapshot is executed only against disposable local PostgreSQL,
+          # with no inbound network; do not disable audit for the candidate.
+          dotnet restore Edulytics.sln -p:NuGetAudit=false
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj -p:NuGetAudit=false
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore -p:NuGetAudit=false
+          # dotnet-ef starts a fresh implicit build without the legacy audit
+          # override unless --no-build is set. Compile this frozen startup
+          # project explicitly, then use the already-compiled binaries.
+          dotnet restore src/Edulytics.Web/Edulytics.Web.csproj -p:NuGetAudit=false
+          dotnet build src/Edulytics.Web/Edulytics.Web.csproj --no-restore -p:NuGetAudit=false
+          dotnet ef database update --no-build --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Confirm 93 legacy and snapshot unrelated grade counts
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-before
+          test "$(cat /tmp/g4-before)" = "93"
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-before
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-content-before
+          test "$(cat /tmp/g4-content-before)" = "93"
+      - name: Build candidate replacement importer
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          dotnet restore Edulytics.sln
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
+      - name: Reject accidental replacement without precise owner token
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          if dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj > /tmp/g4-unguarded-attempt.log 2>&1; then
+            echo "ERROR: candidate mutated legacy without owner token"; exit 1
+          fi
+          grep -E "identity collision|baseline drift|refusing" /tmp/g4-unguarded-attempt.log || true
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 93
+      - name: Apply explicitly approved same-database replacement
+        working-directory: candidate
+        env:
+          EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
+        run: |
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Check 132 Arabic lessons, 132 metadata and no other-grade data loss
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-after
+          cmp /tmp/non-g4-before /tmp/non-g4-after
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%' AND \"Title\" LIKE 'Math Is %'" | grep -qx 0
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
+      - name: Test second startup without re-deleting 132 canonical records
+        working-directory: candidate
+        env:
+          EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
+        run: |
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Publish same-candidate PostgreSQL rehearsal evidence
+        if: success()
+        working-directory: candidate
+        run: |
+          mkdir -p artifacts/uae-g4-stage-d
+          python3 - <<'PY'
+          import os,json
+          output={"phase":"migration","status":"PASS","grade":4,
+            "candidateSha":os.environ["GITHUB_SHA"],
+            "checks":{"legacyGrade4Lessons":93,"replacementGrade4Lessons":132,
+              "replacementCanonicalContents":132,
+              "sameVersionOwnerApprovedReplacement":True,
+              "negativeNoTokenTest":True,"secondRunIdempotent":True,
+              "nonGrade4RowsPreserved":True,
+              "rehearsedInEphemeralPostgreSQL":True},
+            "note":"This evidence is from isolated CI PostgreSQL, not a production migration or Render live smoke.",
+            "notPublicationEvidence":True}
+          with open("artifacts/uae-g4-stage-d/grade4-migration-gate.json","w",encoding="utf-8") as f:
+            json.dump(output,f,indent=2)
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-migration
+          path: candidate/artifacts/uae-g4-stage-d/grade4-migration-gate.json
+          if-no-files-found: warn
+  e2e:
+    name: UAE G4 all 132 Arabic learner pages + 396 persisted Practice attempts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 95
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G4
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile dedicated UAE G4 HTTPS and Chromium RTL probes
+        run: |
+          python3 -m py_compile tools/curriculum/uae_g4_stage_d_authenticated_https.py
+          python3 -m py_compile tools/curriculum/uae_g4_stage_d_browser_rtl.py
+      - name: Build and migrate disposable PostgreSQL only
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln --configuration Release --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output /tmp/g2-web-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Install pinned Playwright Chromium for real Arabic desktop/mobile screenshots
+        run: |
+          python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+      - name: Real HTTPS with four authenticated UAE roles and all 132 pages/396 persisted grades
+        env:
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          RENDER_SERVICE_ID: ci-disposable
+        run: |
+          set -euo pipefail
+          export Edulytics__MeetingDemo__Password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$Edulytics__MeetingDemo__Password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g2-fixture.log 2>&1; then
+            echo 'UAE Grade4 disposable school fixture did not complete'
+            tail -n 90 /tmp/g2-fixture.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g2-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
+            -keyout /tmp/g2-key.pem -out /tmp/g2-cert.pem \
+            -subj '/CN=localhost' \
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g2-identity.pfx \
+            -inkey /tmp/g2-key.pem -in /tmp/g2-cert.pem \
+            -passout pass:local-test-tls >/dev/null 2>&1
+          cp /tmp/g2-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g2-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          export ASPNETCORE_CONTENTROOT=/tmp/g2-web-publish
+          dotnet /tmp/g2-web-publish/Edulytics.Web.dll > /tmp/g2-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 100); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready > /dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              tail -n 110 /tmp/g2-web.log | grep -Eiv 'password|credential|secret' || true
+              exit 1
+            fi
+            sleep 3
+          done
+          test "$ready" = true
+          if ! python3 tools/curriculum/uae_g4_stage_d_authenticated_https.py; then
+            echo 'UAE Grade4 authenticated isolated HTTPS probe failed; sanitized app diagnostics:'
+            tail -n 130 /tmp/g2-web.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+          # A real Chromium engine, not HTML markers alone: both desktop/mobile,
+          # every canonical Arabic lesson and eight full-page evidence images.
+          if ! python3 tools/curriculum/uae_g4_stage_d_browser_rtl.py; then
+            echo 'UAE Grade4 authenticated Chromium RTL visual smoke probe failed'
+            tail -n 90 /tmp/g2-web.log | grep -Eiv 'password|credential|secret' || true
+            exit 1
+          fi
+      - name: Derive real authenticated and Chromium gates from measured evidence
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/uae-g4-stage-d
+          python3 - <<'PY'
+          import os,json,pathlib
+          output=pathlib.Path("artifacts/uae-g4-stage-d")
+          auth=json.loads(pathlib.Path("/tmp/uae-g4-stage-d-authenticated-132-lessons.json").read_text())
+          visual=json.loads(pathlib.Path("/tmp/uae-g4-stage-d-browser-rtl/report.json").read_text())
+          sha=os.environ["GITHUB_SHA"]
+          assert auth["candidateSha"]==visual["candidateSha"]==sha
+          assert auth["grade"]==4 and auth["lessonPageCount"]==132
+          assert auth["correctAttemptPersistenceCount"]==132
+          assert auth["wrongAttemptPersistenceCount"]==132
+          assert auth["malformedAttemptRejectionCount"]==132
+          assert auth["crossSchoolAccessDenied"] is True
+          assert all(auth["roleLogins"].values())
+          assert visual["rtlDesktopLessons"]==132 and visual["rtlMobileLessons"]==132
+          assert visual["screenshotsWritten"]>=8
+          for phase,checks in (
+              ("authenticated-e2e",{"learnerPages":132,"persistedAnswerAttempts":396,
+                  "fiveRoleLogins":True,"crossTenantAccessDenied":True}),
+              ("arabic-visual",{"chromiumDesktopPages":132,"chromiumMobilePages":132,
+                  "screenshotSamples":visual["screenshotsWritten"],"humanReview":"NOT_DONE"})):
+              (output/f"grade4-{phase}-gate.json").write_text(json.dumps({
+                "phase":phase,"status":"PASS","candidateSha":sha,
+                "checks":checks,"limitedToDisposableCi":True,
+                "humanAcademicApproval":"NOT_CLAIMED"},indent=2))
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-authenticated-e2e
+          path: artifacts/uae-g4-stage-d/grade4-authenticated-e2e-gate.json
+          if-no-files-found: warn
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-arabic-visual
+          path: artifacts/uae-g4-stage-d/grade4-arabic-visual-gate.json
+          if-no-files-found: warn
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-browser-screenshot-evidence
+          path: /tmp/uae-g4-stage-d-browser-rtl/
+          if-no-files-found: warn
+  final:
+    name: Fail-closed no-merge-no-deploy release gate
+    if: always()
+    needs: [structural, source, math, migration, e2e]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - if: always()
+        uses: actions/download-artifact@v4
+        with:
+          pattern: g4-*
+          merge-multiple: true
+          path: artifacts/uae-g4-stage-d
+      - name: Check actual successful upstream CI jobs and artifact hashes
+        env:
+          UPSTREAM_RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib
+          upstream=json.loads(os.environ["UPSTREAM_RESULTS"])
+          expected=["structural","source","math","migration","e2e"]
+          all_success=all(upstream.get(k,{}).get("result")=="success" for k in expected)
+          folder=pathlib.Path("artifacts/uae-g4-stage-d")
+          required=["structural","source","math","migration","authenticated-e2e","arabic-visual","rights"]
+          observed=[]
+          for phase in required:
+              file=folder/f"grade4-{phase}-gate.json"
+              if file.is_file():
+                  value=json.loads(file.read_text(encoding="utf8"))
+                  if value.get("status")=="PASS" and value.get("candidateSha")==os.environ["GITHUB_SHA"]:
+                      observed.append(phase)
+          passed=all_success and set(observed)==set(required)
+          folder.mkdir(parents=True,exist_ok=True)
+          (folder/"grade4-ci-gate.json").write_text(json.dumps({
+              "phase":"ci","status":"PASS" if passed else "BLOCKED",
+              "candidateSha":os.environ["GITHUB_SHA"],
+              "checks":{"upstreamResults":{k:upstream.get(k,{}).get("result") for k in expected},
+                        "successfulArtifacts":observed},
+              "doesNotVerifyRenderDeployment":True},indent=2))
+          PY
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase final
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-final
+          path: artifacts/uae-g4-stage-d/grade4-final-gate.json
+          if-no-files-found: error

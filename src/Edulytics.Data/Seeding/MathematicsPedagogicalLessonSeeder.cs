@@ -97,18 +97,28 @@ public sealed class MathematicsPedagogicalLessonSeeder
             expectedMappings,
             blueprintLessonIds);
 
-        await UpsertLessonsAsync(
-            expectedLessons,
-            ct);
+        if (IsExplicitGrade4ReplacementToken(
+                Environment.GetEnvironmentVariable(
+                    "EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132")))
+        {
+            // One-shot, owner-approved replacement of the exact backed-up
+            // Grade 4 baseline. No Neon branch and no other grade deletion.
+            // All pedagogical delete/insert steps commit or roll back together.
+            await using var replacementTransaction =
+                await _db.Database.BeginTransactionAsync(ct);
 
-        await UpsertMappingsAsync(
-            expectedLessons,
-            expectedMappings,
-            ct);
-
-        await RemoveStaleLessonsSafelyAsync(
-            expectedLessons,
-            ct);
+            await ReplaceOnlyVerifiedLegacyGrade4Async(expectedLessons, ct);
+            await UpsertLessonsAsync(expectedLessons, ct);
+            await UpsertMappingsAsync(expectedLessons, expectedMappings, ct);
+            await RemoveStaleLessonsSafelyAsync(expectedLessons, ct);
+            await replacementTransaction.CommitAsync(ct);
+        }
+        else
+        {
+            await UpsertLessonsAsync(expectedLessons, ct);
+            await UpsertMappingsAsync(expectedLessons, expectedMappings, ct);
+            await RemoveStaleLessonsSafelyAsync(expectedLessons, ct);
+        }
     }
 
     private async Task BuildUaeAsync(
@@ -828,6 +838,154 @@ public sealed class MathematicsPedagogicalLessonSeeder
         }
     }
 
+    // Grade 4 Common changed academic sources from the legacy 93-lesson English
+    // sequence to the selected 132-lesson Arabic sequence. The same LessonCode
+    // alone does not establish the same academic identity. Never repurpose the
+    // persisted lesson UUID and all its relationships by rewriting its title
+    // on the existing framework version. A separately versioned migration must
+    // preserve the old material and explicitly establish new identities.
+    private static void EnsureNoUnsafeGrade4IdentityMutation(
+        CurriculumPedagogicalLesson current,
+        CurriculumPedagogicalLesson expected)
+    {
+        const string grade4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+        if (!current.Code.StartsWith(grade4Prefix, StringComparison.Ordinal) &&
+            !expected.Code.StartsWith(grade4Prefix, StringComparison.Ordinal))
+            return;
+
+        if (!string.Equals(current.Code, expected.Code, StringComparison.Ordinal) ||
+            !string.Equals(current.Title, expected.Title, StringComparison.Ordinal) ||
+            current.FrameworkVersionId != expected.FrameworkVersionId)
+        {
+            throw new InvalidOperationException(
+                "UAE Grade 4 lesson identity collision: refusing to rewrite " +
+                "persisted English/old textbook lessons as different Arabic " +
+                "academic content in the same framework version. " +
+                "Release requires a separately versioned and rehearsed mapping.");
+        }
+    }
+
+    private static void EnsureNoUnsafeGrade4Retirement(
+        CurriculumPedagogicalLesson obsolete)
+    {
+        if (obsolete.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L4:COMMON:",
+                StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException(
+                "UAE Grade 4 legacy canonical content exists on a stale lesson. " +
+                "Do not delete or reattach it by coincidental LessonCode; " +
+                "migrate on an isolated framework version with explicit mapping.");
+        }
+    }
+
+    // Production Grade 4 93→132 owner-approved replacement; this trigger
+    // is intentionally not enabled for an ordinary app startup.
+    private static bool IsExplicitGrade4ReplacementToken(string? value) =>
+        string.Equals(
+            value,
+            "CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132",
+            StringComparison.Ordinal);
+
+    private static string FingerprintLegacyGrade4(
+        IEnumerable<CurriculumPedagogicalLesson> lessons)
+    {
+        var canonical = string.Join(
+            "\n",
+            lessons
+                .OrderBy(x => x.Code, StringComparer.Ordinal)
+                .Select(x => $"{x.Code}|{x.Title}|{x.Id:D}"));
+        return Convert.ToHexString(
+            SHA256.HashData(Encoding.UTF8.GetBytes(canonical)))
+            .ToLowerInvariant();
+    }
+
+    private async Task ReplaceOnlyVerifiedLegacyGrade4Async(
+        IReadOnlyCollection<CurriculumPedagogicalLesson> expectedLessons,
+        CancellationToken ct)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+        const string expectedOldFingerprint =
+            "55b7798964f7f3e93c9186037cbed0c55702a82f265edf69e2089b851def2084";
+
+        var expectedGrade4 = expectedLessons
+            .Where(x => x.Code.StartsWith(prefix, StringComparison.Ordinal))
+            .OrderBy(x => x.Code, StringComparer.Ordinal)
+            .ToArray();
+
+        if (expectedGrade4.Length != 132 ||
+            expectedGrade4.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 132 ||
+            expectedGrade4.Select(x => x.FrameworkVersionId).Distinct().Count() != 1)
+            throw new InvalidOperationException(
+                "Grade 4 replacement requires exactly 132 unique validated target lesson identities.");
+
+        var old = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix))
+            .AsNoTracking()
+            .ToArrayAsync(ct);
+
+        if (old.Length == 132)
+        {
+            var targetById = expectedGrade4.ToDictionary(x => x.Id);
+            if (old.All(x =>
+                    targetById.TryGetValue(x.Id, out var target) &&
+                    target.Code == x.Code && target.Title == x.Title &&
+                    target.FrameworkVersionId == x.FrameworkVersionId))
+                return; // Second startup after successful owner-approved swap.
+            throw new InvalidOperationException(
+                "Grade 4 has 132 persisted lessons but titles or deterministic IDs differ; refusing overwrite.");
+        }
+
+        if (old.Length == 0)
+            return; // Fresh installation; nothing to remove.
+
+        if (old.Length != 93 ||
+            FingerprintLegacyGrade4(old) != expectedOldFingerprint ||
+            old.Any(x => x.FrameworkVersionId != expectedGrade4[0].FrameworkVersionId))
+            throw new InvalidOperationException(
+                "Production Grade 4 93-lesson baseline differs from the backed-up owner-approved snapshot.");
+
+        var oldIds = old.Select(x => x.Id).ToArray();
+        var content = await _db.CurriculumLessonContents
+            .Where(x => oldIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+
+        if (content.Length != 93)
+            throw new InvalidOperationException(
+                "Refusing Grade 4 replace: expected exactly 93 backed-up canonical content rows.");
+
+        var contentIds = content.Select(x => x.Id).ToArray();
+        if (await _db.CurriculumLessonContentTranslations
+                .AnyAsync(x => contentIds.Contains(x.CurriculumLessonContentId), ct) ||
+            await _db.AssessmentItems.AnyAsync(x =>
+                x.CurriculumPedagogicalLessonId.HasValue &&
+                oldIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+            await _db.PracticeAttempts.AnyAsync(x =>
+                x.CurriculumPedagogicalLessonId.HasValue &&
+                oldIds.Contains(x.CurriculumPedagogicalLessonId.Value), ct) ||
+            await _db.AdaptivePracticeSessions.AnyAsync(x =>
+                oldIds.Contains(x.CurriculumPedagogicalLessonId), ct) ||
+            await _db.AdaptivePracticeShadowObservations.AnyAsync(x =>
+                oldIds.Contains(x.CurriculumPedagogicalLessonId), ct))
+        {
+            throw new InvalidOperationException(
+                "Grade 4 old lessons have learner/assessment/content-translation dependencies. " +
+                "Manual migration needed; automatic deletion is forbidden.");
+        }
+
+        var oldMappings = await _db.CurriculumPedagogicalLessonOutcomes
+            .Where(x => oldIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+
+        _db.CurriculumPedagogicalLessonOutcomes.RemoveRange(oldMappings);
+        _db.CurriculumLessonContents.RemoveRange(content);
+        _db.CurriculumPedagogicalLessons.RemoveRange(old);
+        await _db.SaveChangesAsync(ct);
+
+        Console.WriteLine(
+            "G4_OWNER_REPLACEMENT_REMOVED_93_LEGACY_LESSONS_AND_CONTENTS_TRANSACTION_PENDING");
+    }
+
     private async Task UpsertLessonsAsync(
         IReadOnlyCollection<CurriculumPedagogicalLesson> expected,
         CancellationToken ct)
@@ -847,6 +1005,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         {
             if (byId.TryGetValue(row.Id, out var current))
             {
+                EnsureNoUnsafeGrade4IdentityMutation(current, row);
                 if (!TryReconcileAcceptedUaeOfficialLessonProjection(
                         current,
                         row) &&
@@ -1108,7 +1267,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             foreach (var content in canonicalContents)
             {
                 var obsolete = staleById[content.PedagogicalLessonId];
-
+                EnsureNoUnsafeGrade4Retirement(obsolete);
                 if (expectedByIdentity.TryGetValue(
                         (obsolete.FrameworkVersionId, obsolete.Code),
                         out var target))

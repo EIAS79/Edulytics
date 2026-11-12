@@ -292,6 +292,73 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade2Unit4Questions.Supports(family.Trim()) ||
           UaeGrade2Unit5Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Questions.Supports(family.Trim()) ||
+          UaeGrade4Unit1Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade4Unit1ComparisonQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit1RoundingQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit1FourStepQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson03MentalQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson01FactFamiliesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson05PropertiesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson06AssociativeQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit3Lesson08ReasonablenessQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson09MultiDigitQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit5Lesson01TensQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit12GeometryOneQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit16GeometryQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit15PerimeterAreaQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit14MetricMeasurementQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit13GraphsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit11EstimationQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit11DecimalRoundingQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10MoneyQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson09MixedNumberQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson06FractionComparisonQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8EquivalentFractionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit8Lesson01FactorMultipleQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit7AlgebraRulesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family.Trim()) ||
+          UaeGrade4DistinctAlgorithmsQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson03Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Lesson04Questions.Supports(family.Trim()) ||
@@ -643,6 +710,140 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit5Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Questions.Supports(family))
             return UaeGrade3Unit1Questions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit1Lesson01Questions.Supports(family))
+            return UaeGrade4Unit1Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit1ComparisonQuestions.Supports(family))
+            return UaeGrade4Unit1ComparisonQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit1RoundingQuestions.Supports(family))
+            return UaeGrade4Unit1RoundingQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit1FourStepQuestions.Supports(family))
+            return UaeGrade4Unit1FourStepQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson01PropertiesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson02PatternsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson03MentalQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson04EstimateQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson05AdditionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson06SubtractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson08BarModelQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family))
+            return UaeGrade4Unit2Lesson09MultiStepQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson01FactFamiliesQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson01FactFamiliesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson05PropertiesQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson05PropertiesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson06AssociativeQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson06AssociativeQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit3Lesson08ReasonablenessQuestions.Supports(family))
+            return UaeGrade4Unit3Lesson08ReasonablenessQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson02EstimateProductsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson09MultiDigitQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson09MultiDigitQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit5Lesson01TensQuestions.Supports(family))
+            return UaeGrade4Unit5Lesson01TensQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family))
+            return UaeGrade4Unit6Lesson01DivisionPowersQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family))
+            return UaeGrade4Unit7Lesson01ShapePatternQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family))
+            return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
+            return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(family))
+            return UaeGrade4Unit12GeometryOneQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit16GeometryQuestions.Supports(family))
+            return UaeGrade4Unit16GeometryQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit15PerimeterAreaQuestions.Supports(family))
+            return UaeGrade4Unit15PerimeterAreaQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit14MetricMeasurementQuestions.Supports(family))
+            return UaeGrade4Unit14MetricMeasurementQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit13GraphsQuestions.Supports(family))
+            return UaeGrade4Unit13GraphsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family))
+            return UaeGrade4Unit11DecimalArithmeticQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit11EstimationQuestions.Supports(family))
+            return UaeGrade4Unit11EstimationQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit11DecimalRoundingQuestions.Supports(family))
+            return UaeGrade4Unit11DecimalRoundingQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10MoneyQuestions.Supports(family))
+            return UaeGrade4Unit10MoneyQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family))
+            return UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family))
+            return UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family))
+            return UaeGrade4Unit10Lesson06FractionRoundingQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family))
+            return UaeGrade4Unit10DecimalPlaceValueQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
+            return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson06MixedAdditionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Supports(family))
+            return UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson09MixedNumberQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson09MixedNumberQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson06FractionComparisonQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson06FractionComparisonQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson05SimplestFormQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(family))
+            return UaeGrade4Unit8EquivalentFractionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit8Lesson01FactorMultipleQuestions.Supports(family))
+            return UaeGrade4Unit8Lesson01FactorMultipleQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit7AlgebraRulesQuestions.Supports(family))
+            return UaeGrade4Unit7AlgebraRulesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family))
+            return UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(family))
+            return UaeGrade4Unit6Lesson04DivisionModelQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Supports(family))
+            return UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Supports(family))
+            return UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family))
+            return UaeGrade4Unit5Lesson02EstimateProductsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family))
+            return UaeGrade4Unit5Lesson05MultiStepQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4DistinctAlgorithmsQuestions.Supports(family))
+            return UaeGrade4DistinctAlgorithmsQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
+            return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
             return UaeGrade3Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade3Unit1Lesson03Questions.Supports(family))
@@ -3698,6 +3899,341 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade3Unit1Questions.Supports(family))
         {
             var q = UaeGrade3Unit1Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit1Lesson01Questions.Supports(family))
+        {
+            var q = UaeGrade4Unit1Lesson01Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit1ComparisonQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit1ComparisonQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit1RoundingQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit1RoundingQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit1FourStepQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit1FourStepQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson01PropertiesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson02PatternsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson03MentalQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson04EstimateQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson05AdditionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson06SubtractionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson08BarModelQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit2Lesson09MultiStepQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson01FactFamiliesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson01FactFamiliesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson05PropertiesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson05PropertiesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson06AssociativeQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson06AssociativeQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit3Lesson08ReasonablenessQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit3Lesson08ReasonablenessQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson02EstimateProductsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson09MultiDigitQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson09MultiDigitQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit5Lesson01TensQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit5Lesson01TensQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit6Lesson01DivisionPowersQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit7Lesson01ShapePatternQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit7Lesson02NumericPatternsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit12GeometryOneQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit16GeometryQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit16GeometryQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit15PerimeterAreaQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit15PerimeterAreaQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit14MetricMeasurementQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit14MetricMeasurementQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit13GraphsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit13GraphsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit11DecimalArithmeticQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit11EstimationQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit11EstimationQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit11DecimalRoundingQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit11DecimalRoundingQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit10MoneyQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10MoneyQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10Lesson06FractionRoundingQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit10DecimalPlaceValueQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9FractionMultiplicationQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson06MixedAdditionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson09MixedNumberQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson09MixedNumberQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson06FractionComparisonQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson06FractionComparisonQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson05SimplestFormQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8EquivalentFractionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit8Lesson01FactorMultipleQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit8Lesson01FactorMultipleQuestions.Build(family, random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade4Unit7AlgebraRulesQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit7AlgebraRulesQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit6Lesson04DivisionModelQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit5Lesson02EstimateProductsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit5Lesson05MultiStepQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4DistinctAlgorithmsQuestions.Supports(family))
+        {
+            var q = UaeGrade4DistinctAlgorithmsQuestions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
         if (UaeGrade3Unit1Lesson02Questions.Supports(family))
@@ -7817,6 +8353,140 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade2Unit5Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Questions.Supports(problem.Family))
             return UaeGrade3Unit1Questions.Solve(problem.Family, p);
+        if (UaeGrade4Unit1Lesson01Questions.Supports(problem.Family))
+            return UaeGrade4Unit1Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade4Unit1ComparisonQuestions.Supports(problem.Family))
+            return UaeGrade4Unit1ComparisonQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit1RoundingQuestions.Supports(problem.Family))
+            return UaeGrade4Unit1RoundingQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit1FourStepQuestions.Supports(problem.Family))
+            return UaeGrade4Unit1FourStepQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson01PropertiesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson01PropertiesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson02PatternsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson02PatternsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson03MentalQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson03MentalQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson04EstimateQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson04EstimateQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson05AdditionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson05AdditionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson06SubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson06SubtractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson07ZeroSubtractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson08BarModelQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson08BarModelQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit2Lesson09MultiStepQuestions.Supports(problem.Family))
+            return UaeGrade4Unit2Lesson09MultiStepQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson01FactFamiliesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson01FactFamiliesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson02RepeatedSubtractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson03MultiplicativeComparisonQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson05PropertiesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson05PropertiesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson06AssociativeQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson06AssociativeQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson07FactorsMultiplesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit3Lesson08ReasonablenessQuestions.Supports(problem.Family))
+            return UaeGrade4Unit3Lesson08ReasonablenessQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson01MultiplesOfPowersOfTenQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson02EstimateProductsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson02EstimateProductsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson09MultiDigitQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson09MultiDigitQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson10PrecisionChoiceQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit5Lesson01TensQuestions.Supports(problem.Family))
+            return UaeGrade4Unit5Lesson01TensQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit6Lesson01DivisionPowersQuestions.Supports(problem.Family))
+            return UaeGrade4Unit6Lesson01DivisionPowersQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(problem.Family))
+            return UaeGrade4Unit7Lesson01ShapePatternQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit12GeometryOneQuestions.Supports(problem.Family))
+            return UaeGrade4Unit12GeometryOneQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit16GeometryQuestions.Supports(problem.Family))
+            return UaeGrade4Unit16GeometryQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit15PerimeterAreaQuestions.Supports(problem.Family))
+            return UaeGrade4Unit15PerimeterAreaQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit14MetricMeasurementQuestions.Supports(problem.Family))
+            return UaeGrade4Unit14MetricMeasurementQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit13GraphsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit13GraphsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(problem.Family))
+            return UaeGrade4Unit11DecimalArithmeticQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit11EstimationQuestions.Supports(problem.Family))
+            return UaeGrade4Unit11EstimationQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit11DecimalRoundingQuestions.Supports(problem.Family))
+            return UaeGrade4Unit11DecimalRoundingQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10MoneyQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10MoneyQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10Lesson08DecimalComparisonQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10Lesson06FractionRoundingQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(problem.Family))
+            return UaeGrade4Unit10DecimalPlaceValueQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson06MixedAdditionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson04FractionSubtractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson03LikeFractionSubtractionModelsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson02LikeFractionAdditionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit9Lesson01LikeFractionModelsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson10ImproperFractionsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson09MixedNumberQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson09MixedNumberQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson07BenchmarkFractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson06FractionComparisonQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson06FractionComparisonQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson05SimplestFormQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson05SimplestFormQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8EquivalentFractionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8EquivalentFractionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson02PrimeCompositeQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit8Lesson01FactorMultipleQuestions.Supports(problem.Family))
+            return UaeGrade4Unit8Lesson01FactorMultipleQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit7AlgebraRulesQuestions.Supports(problem.Family))
+            return UaeGrade4Unit7AlgebraRulesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit6Lesson03BaseTenDivisionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit6Lesson04DivisionModelQuestions.Supports(problem.Family))
+            return UaeGrade4Unit6Lesson04DivisionModelQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Supports(problem.Family))
+            return UaeGrade4Unit6Lesson06InterpretRemainderQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Supports(problem.Family))
+            return UaeGrade4Unit6Lesson02EstimateDivisionQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit5Lesson02EstimateProductsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit5Lesson02EstimateProductsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit5Lesson05MultiStepQuestions.Supports(problem.Family))
+            return UaeGrade4Unit5Lesson05MultiStepQuestions.Solve(problem.Family, p);
+        if (UaeGrade4DistinctAlgorithmsQuestions.Supports(problem.Family))
+            return UaeGrade4DistinctAlgorithmsQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Supports(problem.Family))
+            return UaeGrade4Unit4Lesson03PlaceValueModelsQuestions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson02Questions.Supports(problem.Family))
             return UaeGrade3Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade3Unit1Lesson03Questions.Supports(problem.Family))

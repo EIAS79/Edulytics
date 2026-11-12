@@ -125,9 +125,37 @@ def run():
             continue
         if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
             g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade4-im-k5-2021.lesson-blueprint.json"
+            uae_g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json"
+            # The UAE G4 academic replacement is not a generic storage-only edit.
+            # Accept ONLY the audited source and candidate Git blobs. Any other
+            # alteration remains an error, including a future unreviewed rewrite.
+            uae_g4_exact = False
+            if path == uae_g4_blueprint:
+                old_blob = subprocess.check_output(
+                    ["git", "rev-parse", f"origin/main:{path}"],
+                    cwd=ROOT, text=True).strip()
+                new_blob = subprocess.check_output(
+                    ["git", "hash-object", str(current)],
+                    cwd=ROOT, text=True).strip()
+                approval = json.loads((ROOT /
+                    "artifacts/curriculum-delivery/UAE-MOE-MATH/G4/grade4-owner-approved-93-to-132-replacement.json"
+                ).read_text(encoding="utf8"))
+                blueprint_doc = json.loads(current.read_text(encoding="utf8"))
+                uae_g4_exact = (
+                    old_blob == "9886574a71cdc0ffd0bda58f6331ef9eb1d67eb2"
+                    and new_blob == "d3aef0a9ca39e28cf91cdedee3c0b58d45baa036"
+                    and approval.get("ownerRequestedReplacement") is True
+                    and approval.get("scope") == "UAE Grade 4 Common only"
+                    and blueprint_doc.get("PackCode") == "UAE-MOE-MATH"
+                    and blueprint_doc.get("LogicalLevel") == 4
+                    and blueprint_doc.get("Pathway") == "Common"
+                    and blueprint_doc.get("AcquisitionDiagnostics", {}).get("UnitCount") == 16
+                    and blueprint_doc.get("AcquisitionDiagnostics", {}).get("LessonCount") == 132
+                )
             g1_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g1-common-t1-ogl-v1.lesson-blueprint.json"
             g2_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g2-common-t1-ogl-v1.lesson-blueprint.json"
             if not (
+                uae_g4_exact or
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
                 (path == g1_blueprint and len(g1_owner_content) == 102) or
                 (path == g2_blueprint and len(g2_owner_content) == 99)
@@ -139,7 +167,72 @@ def run():
     changed = sorted(key for key in baseline.keys() & candidate.keys()
                      if baseline[key].get("Translations", baseline[key].get("translations"))
                      != candidate[key].get("Translations", candidate[key].get("translations")))
-    if missing: errors.append(f"missing original lesson identities: {len(missing)}; sample {missing[:5]}")
+    # Owner-authorized replacement is confined to the 93 original UAE G4 Common
+    # identities. Each old identity must be audited, even when it disappears.
+    # This only changes parity classification; the independent migration,
+    # historical-record and source-authority release gates still apply.
+    g4_legacy = {
+        key for key in baseline
+        if key[0] == "UAE-MOE-MATH" and
+        key[1].startswith("PED:UAE-MOE-MATH:L4:COMMON:")
+    }
+    g4_new = {
+        key for key in candidate
+        if key[0] == "UAE-MOE-MATH" and
+        key[1].startswith("PED:UAE-MOE-MATH:L4:COMMON:")
+    }
+    g4_missing = set(missing) & g4_legacy
+    g4_changed = set(changed) & g4_legacy
+    g4_replacement_authorized = False
+    try:
+        g4_dir = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G4"
+        approval = json.loads((g4_dir / "grade4-owner-approved-93-to-132-replacement.json").read_text(encoding="utf8"))
+        migration = json.loads((g4_dir / "grade4-migration-validation.json").read_text(encoding="utf8"))
+        rows = migration["mapping"]
+        audited = {}
+        for row in rows:
+            code = row["oldLessonCode"]
+            key = ("UAE-MOE-MATH", code)
+            if key in audited:
+                raise ValueError(f"duplicate legacy mapping: {code}")
+            audited[key] = row
+            if key not in baseline:
+                raise ValueError(f"unrecognized legacy lesson: {code}")
+            if row.get("classification") == "LEGACY_ID_NOT_PRESENT":
+                if key in candidate or row.get("currentLessonCode") is not None:
+                    raise ValueError(f"absent legacy ID unexpectedly reused: {code}")
+            elif row.get("classification") == "SAME_ID_DIFFERENT_TITLE_COLLISION":
+                if key not in candidate or row.get("currentLessonCode") != code:
+                    raise ValueError(f"changed legacy ID not accounted for: {code}")
+            else:
+                raise ValueError(f"unreviewed legacy classification: {code}")
+        if not (
+            approval.get("ownerRequestedReplacement") is True
+            and approval.get("scope") == "UAE Grade 4 Common only"
+            and approval.get("legacyPedagogicalLessonCount") == 93
+            and approval.get("newPedagogicalLessonCount") == 132
+            and approval.get("targetFrameworkVersionCode") == "MOE-2026-2027-T1"
+            and migration.get("oldLessonCount") == 93
+            and migration.get("newLessonCount") == 132
+            and migration.get("identityCollisionCount") == 83
+            and migration.get("absentOldIdCount") == 10
+            and len(g4_legacy) == 93
+            and len(g4_new) == 132
+            and len(rows) == 93
+            and set(audited) == g4_legacy
+            and len(g4_missing) == 10
+            and len(g4_changed) == 83
+            and all(k in g4_changed for k in g4_legacy - g4_missing)
+            and all(audited[k]["classification"] == "LEGACY_ID_NOT_PRESENT" for k in g4_missing)
+        ):
+            raise ValueError("93-to-132 replacement audit does not match exact candidate delta")
+        g4_replacement_authorized = True
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError) as exc:
+        errors.append(f"UAE Grade4 narrowly-scoped owner replacement audit failed: {exc}")
+    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set())
+    if unexpected_missing:
+        errors.append(f"missing original lesson identities outside accepted Grade4 replacement: {sorted(unexpected_missing)[:5]}")
+
 
     # Hash-pinned, source-preserving US-CCSS pedagogical corrections only.
     # Main already contains the first two approved repairs. For those entries,
@@ -264,11 +357,12 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content
+    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | (g4_changed if g4_replacement_authorized else set())
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
                            if key not in approved and key not in g4_owner_authored
+                           and (not g4_replacement_authorized or key not in g4_changed)
                            and key not in g5_owner_content and key not in g6_first_party
                            and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and baseline[key] != candidate[key]]
     if unexpected_metadata:

@@ -1,0 +1,43 @@
+{
+  "LessonOrdinal": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:01",
+  "Grade": 4,
+  "Unit": 1,
+  "TitleArabic": "القيمة المكانية",
+  "StudentPdf": "04-01.pdf",
+  "StudentPdfSha256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "PrintedPageStart": 11,
+  "PrintedPageEnd": 16,
+  "PdfPageStart": 34,
+  "PdfPageEnd": 39,
+  "LearningObjective": "تحديد منزلة الرقم وقيمته في عدد كلي حتى الملايين وتفسير أثر الانتقال بين المنازل.",
+  "LessonContentIntegrated": true,
+  "ArabicTranslationAdded": true,
+  "Cooldown": {
+    "question": "في العدد ٣٬٤٧٢٬٠٥١ ما قيمة الرقم ٧؟ وما قيمة الرقم ٤؟",
+    "answer": "٧٠٬٠٠٠ و٤٠٠٬٠٠٠"
+  },
+  "QuestionSkill": "place_value.digit_value",
+  "SkillContract": {
+    "QuestionFamilyCandidate": [
+      "uae.g4.u01.l01.digit_value_to_millions",
+      "uae.g4.u01.l01.compose_seven_digits",
+      "uae.g4.u01.l01.expanded_to_standard"
+    ],
+    "ReuseFirst": true,
+    "IndependentVerifier": "separate reconstructed seven-digit oracle, no result parameter",
+    "TeacherReview": "Required for explanation",
+    "ProductionRouted": false,
+    "PracticeRouteVerified": true
+  },
+  "SourceElementCoverage": "8/8 source element categories mapped to first-party content or human-reviewed open prompts",
+  "TestsWritten": "UaeGrade4Unit1Lesson01PlaceValueTests and RichContentTests",
+  "TestsRun": "PASS_4_OF_4_TARGETED_NET10",
+  "ACStatus": "READY_FOR_STAGE_D",
+  "READY_FOR_STAGE_D": true,
+  "AcademicApproved": true,
+  "RightsDecision": "separate legal verification; no publisher images copied",
+  "RichV2Integrated": true,
+  "VisualRenderer": "PlaceValueChart",
+  "StageDRun": false
+}

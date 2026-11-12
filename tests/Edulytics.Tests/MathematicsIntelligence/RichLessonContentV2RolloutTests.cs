@@ -113,7 +113,7 @@ public sealed class RichLessonContentV2RolloutTests
             }
         }
 
-        Assert.Equal(5183, rows.Count);
+        Assert.Equal(5183 - 93 + 132, rows.Count);
         // Curated count is data-driven: newly authored grades must not fail
         // rollout merely because the historical global total was pinned.
         // A curated sidecar with an unknown lesson or unexpected locale
@@ -142,7 +142,14 @@ public sealed class RichLessonContentV2RolloutTests
         Assert.All(curatedLessons, lesson =>
         {
             Assert.Contains(lesson.LessonCode, canonicalCodes);
-            Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
+            // Grade 4 has its own reviewed, first-party Arabic Rich sidecars.
+            // Other curated cohorts must remain English, never silently
+            // reclassify an arbitrary language as an accepted locale.
+            if (lesson.LessonCode.StartsWith(
+                "PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal))
+                Assert.Equal("ar", NormalizeCulture(lesson.CultureCode));
+            else
+                Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
         });
 
         Assert.Equal(curatedLessons.Length, readyCurated);
@@ -150,7 +157,7 @@ public sealed class RichLessonContentV2RolloutTests
         // All 102 + 99 + 109 Arabic lessons are intentionally excluded from
         // the English/Polish-only Rich V2 compiler (310, not a generic fallback).
         Assert.Equal(102 + 99 + 109, blockedLocalized);
-        Assert.Equal(5183 - readyCurated - blockedLocalized, readyRuntime);
+        Assert.Equal((5183 - 93 + 132) - readyCurated - blockedLocalized, readyRuntime);
         Assert.Equal(0, blockedContract);
         Assert.Equal(0, blockedGeneration);
 

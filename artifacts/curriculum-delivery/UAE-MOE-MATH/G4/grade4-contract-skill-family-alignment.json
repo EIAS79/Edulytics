@@ -1,0 +1,351 @@
+{
+  "stage": "D",
+  "status": "D_BLOCKED",
+  "source": "current active Grade4 Practice contracts and skills/family registries",
+  "preliminaryCandidateSha": "f8408c6fc755348ddf6f6227e85a9a165c800642",
+  "unregisteredContractSkills": [
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+      "skillId": "number.additive_vs_multiplicative_comparison",
+      "strategy": "CHOOSE_ADDITIVE_OR_MULTIPLICATIVE_COMPARISON"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:04",
+      "skillId": "number.area_model_partial_products",
+      "strategy": "AREA_MODEL_TWO_DIGIT_BY_ONE_DIGIT_PARTIAL_PRODUCTS"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05",
+      "skillId": "number.column_multiply_two_digit_by_one",
+      "strategy": "COLUMN_MULTIPLICATION_TWO_DIGIT_BY_ONE"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:06",
+      "skillId": "number.regroup_base_ten_models",
+      "strategy": "BASE_TEN_BLOCKS_REGROUPING"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:07",
+      "skillId": "number.distributive_property",
+      "strategy": "DISTRIBUTIVE_PROPERTY_TWO_DIGIT_MULTIPLICATION"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:08",
+      "skillId": "number.column_multiplication_regroup",
+      "strategy": "COLUMN_MULTIPLICATION_WITH_REGROUPING"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:11",
+      "skillId": "number.multidigit_multiply_with_zeros",
+      "strategy": "MULTIDIGIT_ZERO_PLACEHOLDER_MULTIPLICATION"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:04",
+      "skillId": "number.column_multiply_two_digit_factors",
+      "strategy": "VERTICAL_TWO_DIGIT_MULTIPLICATION_PARTIAL_PRODUCTS"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
+      "skillId": "number.long_division_with_remainders",
+      "strategy": "TWO_DIGIT_LONG_DIVISION_WITH_REMAINDER"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:07",
+      "skillId": "number.long_division_first_quotient_digit",
+      "strategy": "DIVISION_POSITION_FIRST_QUOTIENT_DIGIT"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:08",
+      "skillId": "number.divide_by_partial_quotients",
+      "strategy": "DIVIDE_WITH_PARTIAL_QUOTIENTS_DISTRIBUTION"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:09",
+      "skillId": "number.long_division_large_numbers",
+      "strategy": "LONG_DIVISION_FOUR_DIGIT_BY_ONE_DIGIT"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:10",
+      "skillId": "number.quotient_with_zero_placeholder",
+      "strategy": "LONG_DIVISION_ZERO_IN_QUOTIENT"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
+      "skillId": "number.problem_solving_search_for_pattern",
+      "strategy": "SEARCH_FOR_PATTERN_WORD_PROBLEM"
+    }
+  ],
+  "crossSkillQuestionFamilyReuse": [
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
+      "contractSkillId": "number.place_value.read_write_to_millions",
+      "questionFamily": "uae.g4.u01.l01.compose_seven_digits",
+      "registeredFamilySkillId": "number.place_value.to_millions"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:02",
+      "contractSkillId": "number.place_value.read_write_to_millions",
+      "questionFamily": "uae.g4.u01.l01.expanded_to_standard",
+      "registeredFamilySkillId": "number.place_value.to_millions"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+      "contractSkillId": "number.additive_vs_multiplicative_comparison",
+      "questionFamily": "uae.g4.u02.l08.bar_compare",
+      "registeredFamilySkillId": "number.bar_model_word_problems"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+      "contractSkillId": "number.additive_vs_multiplicative_comparison",
+      "questionFamily": "uae.g4.u03.l03.times_as_many",
+      "registeredFamilySkillId": "number.multiplicative_comparison"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+      "contractSkillId": "number.additive_vs_multiplicative_comparison",
+      "questionFamily": "uae.g4.u03.l03.unknown_comparison_base",
+      "registeredFamilySkillId": "number.multiplicative_comparison"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:03:04",
+      "contractSkillId": "number.additive_vs_multiplicative_comparison",
+      "questionFamily": "uae.g4.u03.l03.unknown_multiplier",
+      "registeredFamilySkillId": "number.multiplicative_comparison"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:04",
+      "contractSkillId": "number.area_model_partial_products",
+      "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:04",
+      "contractSkillId": "number.area_model_partial_products",
+      "questionFamily": "uae.g4.u04.l03.model_tens_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:04",
+      "contractSkillId": "number.area_model_partial_products",
+      "questionFamily": "uae.g4.u04.l03.model_ones_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05",
+      "contractSkillId": "number.column_multiply_two_digit_by_one",
+      "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05",
+      "contractSkillId": "number.column_multiply_two_digit_by_one",
+      "questionFamily": "uae.g4.u04.l03.model_tens_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:05",
+      "contractSkillId": "number.column_multiply_two_digit_by_one",
+      "questionFamily": "uae.g4.u04.l03.model_ones_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:06",
+      "contractSkillId": "number.regroup_base_ten_models",
+      "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:06",
+      "contractSkillId": "number.regroup_base_ten_models",
+      "questionFamily": "uae.g4.u04.l03.model_tens_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:06",
+      "contractSkillId": "number.regroup_base_ten_models",
+      "questionFamily": "uae.g4.u04.l03.model_ones_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:07",
+      "contractSkillId": "number.distributive_property",
+      "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:07",
+      "contractSkillId": "number.distributive_property",
+      "questionFamily": "uae.g4.u04.l03.model_tens_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:07",
+      "contractSkillId": "number.distributive_property",
+      "questionFamily": "uae.g4.u04.l03.model_ones_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:08",
+      "contractSkillId": "number.column_multiplication_regroup",
+      "questionFamily": "uae.g4.u04.l03.model_two_digit_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:08",
+      "contractSkillId": "number.column_multiplication_regroup",
+      "questionFamily": "uae.g4.u04.l03.model_tens_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:08",
+      "contractSkillId": "number.column_multiplication_regroup",
+      "questionFamily": "uae.g4.u04.l03.model_ones_product",
+      "registeredFamilySkillId": "number.multiply_two_digit_place_value_models"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
+      "contractSkillId": "number.exact_vs_estimated_answers",
+      "questionFamily": "uae.g4.u04.l09.multidigit_product",
+      "registeredFamilySkillId": "number.multiply_multidigit_by_one"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:10",
+      "contractSkillId": "number.exact_vs_estimated_answers",
+      "questionFamily": "uae.g4.u04.l09.round_estimate",
+      "registeredFamilySkillId": "number.multiply_multidigit_by_one"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:11",
+      "contractSkillId": "number.multidigit_multiply_with_zeros",
+      "questionFamily": "uae.g4.u04.l09.multidigit_product",
+      "registeredFamilySkillId": "number.multiply_multidigit_by_one"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:11",
+      "contractSkillId": "number.multidigit_multiply_with_zeros",
+      "questionFamily": "uae.g4.u04.l09.partial_hundreds",
+      "registeredFamilySkillId": "number.multiply_multidigit_by_one"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:04:11",
+      "contractSkillId": "number.multidigit_multiply_with_zeros",
+      "questionFamily": "uae.g4.u04.l09.round_estimate",
+      "registeredFamilySkillId": "number.multiply_multidigit_by_one"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:04",
+      "contractSkillId": "number.column_multiply_two_digit_factors",
+      "questionFamily": "uae.g4.u05.l03.area_two_digit_product",
+      "registeredFamilySkillId": "number.area_distributive_two_digit"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:04",
+      "contractSkillId": "number.column_multiply_two_digit_factors",
+      "questionFamily": "uae.g4.u05.l03.area_tens_partial",
+      "registeredFamilySkillId": "number.area_distributive_two_digit"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:05:04",
+      "contractSkillId": "number.column_multiply_two_digit_factors",
+      "questionFamily": "uae.g4.u05.l03.area_ones_partial",
+      "registeredFamilySkillId": "number.area_distributive_two_digit"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
+      "contractSkillId": "number.long_division_with_remainders",
+      "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:05",
+      "contractSkillId": "number.long_division_with_remainders",
+      "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:07",
+      "contractSkillId": "number.long_division_first_quotient_digit",
+      "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:07",
+      "contractSkillId": "number.long_division_first_quotient_digit",
+      "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:08",
+      "contractSkillId": "number.divide_by_partial_quotients",
+      "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:08",
+      "contractSkillId": "number.divide_by_partial_quotients",
+      "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:09",
+      "contractSkillId": "number.long_division_large_numbers",
+      "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:09",
+      "contractSkillId": "number.long_division_large_numbers",
+      "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:10",
+      "contractSkillId": "number.quotient_with_zero_placeholder",
+      "questionFamily": "uae.g4.u06.l03.base_ten_quotient",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:10",
+      "contractSkillId": "number.quotient_with_zero_placeholder",
+      "questionFamily": "uae.g4.u06.l03.base_ten_remainder",
+      "registeredFamilySkillId": "number.base_ten_division_with_remainders"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:06:11",
+      "contractSkillId": "number.multistep_word_problems_with_division",
+      "questionFamily": "uae.g4.u05.l05.missing_after_groups",
+      "registeredFamilySkillId": "number.multistep_word_problems"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:03",
+      "contractSkillId": "number.sequence_generate_terms",
+      "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
+      "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
+      "contractSkillId": "number.problem_solving_search_for_pattern",
+      "questionFamily": "uae.g4.u07.l02.constant_numeric_step",
+      "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:04",
+      "contractSkillId": "number.problem_solving_search_for_pattern",
+      "questionFamily": "uae.g4.u07.l02.alternating_numeric_rule",
+      "registeredFamilySkillId": "number.numeric_sequences_identify_extend"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:09",
+      "contractSkillId": "algebra.evaluate_two_operation_equation",
+      "questionFamily": "uae.g4.u07.l08.two_step_rule",
+      "registeredFamilySkillId": "algebra.order_of_operations"
+    },
+    {
+      "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:07:08",
+      "contractSkillId": "algebra.evaluate_two_operation_equation",
+      "questionFamily": "uae.g4.u07.l08.two_step_rule",
+      "registeredFamilySkillId": "algebra.order_of_operations"
+    }
+  ],
+  "note": "Cross skill families may be pedagogically valid reuse but require source-alignment review. No dummy SkillIds or new engines were generated."
+}

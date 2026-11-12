@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "stage": "A_B_C_CANDIDATE_NOT_ROUTED",
+  "lessonCode": "PED:UAE-MOE-MATH:L4:COMMON:01:01",
+  "grade": 4,
+  "pathway": "Common",
+  "unitCandidate": "القيمة المكانية",
+  "title": "القيمة المكانية",
+  "language": "ar",
+  "direction": "rtl",
+  "source": {
+    "studentFile": "04-01.pdf",
+    "printedEdition": "2025-2026",
+    "pdfPages": [
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "printedPages": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "authorityStatus": "candidate pending 2026-2027 annual reconciliation",
+    "examEvidence": "Bridge 2026-2027 Term 1 exam structure p2: place value to millions",
+    "status": "SOURCE_VERIFIED_PARTIAL"
+  },
+  "learningObjectives": [
+    "تحديد منزلة كل رقم في عدد كلي حتى الملايين وقيمته الفعلية",
+    "تكوين العدد وتحليله إلى مجموع قيم منازله",
+    "تفسير تغير قيمة الرقم بعامل عشرة عند نقله منزلة واحدة إلى اليسار",
+    "توظيف مخطط المنازل في حل مسألة عددية وشرح طريقة التفكير"
+  ],
+  "authoredArabic": {
+    "introduction": "تختلف قيمة الرقم الواحد باختلاف موضعه داخل العدد. في العدد ٤٬٦٤٢٬١٨٣ يظهر الرقم ٤ مرتين: الأول في منزلة الملايين وقيمته ٤٬٠٠٠٬٠٠٠، والثاني في منزلة عشرات الألوف وقيمته ٤٠٬٠٠٠. نقرأ العدد على ثلاث دورات: الملايين، والألوف، والآحاد.",
+    "rule": "للرقم في كل منزلة قيمة تساوي الرقم مضروبًا في قيمة تلك المنزلة. الانتقال منزلة واحدة إلى اليسار يجعل القيمة عشرة أمثالها، والانتقال يمينًا يجعلها عُشرها.",
+    "workedExamples": [
+      {
+        "prompt": "في العدد ٣٬٧٥٢٬٤٠٦، ما قيمة الرقم ٥؟",
+        "steps": [
+          "اقرأ العدد من اليمين: آحاد، عشرات، مئات، آحاد الألوف، عشرات الألوف، مئات الألوف، الملايين.",
+          "يقع الرقم ٥ في منزلة عشرات الألوف.",
+          "٥ × ١٠٬٠٠٠ = ٥٠٬٠٠٠."
+        ],
+        "answer": "٥٠٬٠٠٠"
+      },
+      {
+        "prompt": "حلّل العدد ٢٬٣٠٤٬٠٧١ إلى مجموع القيم المكانية.",
+        "steps": [
+          "استخرج قيم الأرقام غير الصفرية في منازلها.",
+          "اجمع ٢٬٠٠٠٬٠٠٠ و٣٠٠٬٠٠٠ و٤٬٠٠٠ و٧٠ و١."
+        ],
+        "answer": "٢٬٠٠٠٬٠٠٠ + ٣٠٠٬٠٠٠ + ٤٬٠٠٠ + ٧٠ + ١"
+      },
+      {
+        "prompt": "إذا انتقل الرقم ٦ من منزلة المئات إلى منزلة الألوف، كيف تتغير قيمته؟",
+        "steps": [
+          "قيمة ٦ في منزلة المئات هي ٦٠٠.",
+          "قيمة ٦ في منزلة الألوف هي ٦٬٠٠٠.",
+          "٦٬٠٠٠ ÷ ٦٠٠ = ١٠."
+        ],
+        "answer": "تصبح قيمته عشرة أمثال قيمته السابقة."
+      }
+    ],
+    "visual": {
+      "kind": "place-value-chart",
+      "columns": [
+        "آحاد الملايين",
+        "مئات الألوف",
+        "عشرات الألوف",
+        "آحاد الألوف",
+        "المئات",
+        "العشرات",
+        "الآحاد"
+      ],
+      "exampleDigits": [
+        3,
+        7,
+        5,
+        2,
+        4,
+        0,
+        6
+      ],
+      "instruction": "تنفذ كمكوّن رسومي أصلي بحدود دورات الملايين والألوف والآحاد؛ لا تُعاد صورة صفحة المصدر."
+    },
+    "commonMistakes": [
+      "الخلط بين الرقم نفسه وقيمته المكانية",
+      "إهمال الصفر بوصفه حافظًا للمنزلة",
+      "اعتبار الانتقال منزلة إلى اليسار زيادة ثابتة بدل الضرب في عشرة",
+      "قراءة الدورات العددية دون تحديد حدود كل دورة"
+    ],
+    "cooldown": {
+      "prompt": "اكتب قيمة الرقم ٧ في العدد ٥٬٧٠٢٬١٩٤، ثم وضّح كيف تختلف هذه القيمة عن قيمة الرقم نفسه في العدد ٥٬٠٧٢٬١٩٤.",
+      "answerKey": "٧٠٠٬٠٠٠ مقابل ٧٠٬٠٠٠؛ الأولى عشرة أمثال الثانية.",
+      "teacherRubric": "نقطتان لتحديد القيمتين، نقطة لتفسير انتقال المنزلة، ونقطة لشرح علاقة الضرب في عشرة. تُراجع الإجابات اللفظية من المعلم."
+    }
+  },
+  "skillContractCandidate": {
+    "skill": "place_value.identify_and_explain_to_millions",
+    "questionFamilies": [
+      "place_value.digit_value",
+      "place_value.expanded_form",
+      "place_value.shift_left_tenfold"
+    ],
+    "forbiddenFamilies": [
+      "decimal.place_value",
+      "fraction.equivalence"
+    ],
+    "answerType": [
+      "integer",
+      "expanded_expression",
+      "teacher_review_text"
+    ],
+    "renderer": "place_value_chart_required",
+    "grader": "exact_integer_or_normalized_expanded_form",
+    "independentVerifier": "integer_place_value_oracle",
+    "teacherReview": "required_for_explanations",
+    "routingStatus": "NOT_INTEGRATED"
+  },
+  "testFixturesWrittenNotRun": [
+    {
+      "number": 3752406,
+      "digit": 5,
+      "expectedPlace": "ten_thousands",
+      "expectedValue": 50000
+    },
+    {
+      "number": 4002030,
+      "digit": 2,
+      "expectedPlace": "thousands",
+      "expectedValue": 2000
+    },
+    {
+      "number": 3000406,
+      "digit": 0,
+      "expectedValue": 0,
+      "ambiguity": "specify position when digit repeats"
+    },
+    {
+      "number": 600,
+      "shiftLeftOnePlace": 6000,
+      "expectedFactor": 10
+    },
+    {
+      "number": 9999999,
+      "expectedRange": "up_to_millions"
+    }
+  ],
+  "status": {
+    "sourceScopeFinal": false,
+    "legacyMigrationReady": false,
+    "teacherGuideReviewed": false,
+    "rendererIntegrated": false,
+    "graderIntegrated": false,
+    "testsRun": false,
+    "abcClosed": false,
+    "readyForStageD": false
+  }
+}

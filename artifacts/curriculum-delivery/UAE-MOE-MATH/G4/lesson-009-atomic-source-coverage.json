@@ -1,0 +1,87 @@
+{
+  "Grade": 4,
+  "Unit": 2,
+  "LessonOrdinal": 9,
+  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:03",
+  "Title": "الجمع والطرح الذهني",
+  "StudentPdf": "04-01.pdf",
+  "Sha256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "PrintedPages": [
+    73,
+    74,
+    75,
+    76,
+    77,
+    78
+  ],
+  "PdfPages": [
+    96,
+    97,
+    98,
+    99,
+    100,
+    101
+  ],
+  "SourceElements": [
+    {
+      "title": "التعويض عند جمع عددين لتكوين عشرة أو مئة",
+      "implementation": "RichV2 worked examples + make_friendly_ten and compensate_addition",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "الجمع الذهني لمقادير متعددة المنازل",
+      "implementation": "RichV2 examples, independent exact numeric tasks",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "الطرح الذهني بالتجزئة والتعويض",
+      "implementation": "break_apart_subtraction and worked example",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "طرح الألوف من الألوف",
+      "implementation": "subtract_thousands and place value explanation",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "تدريب موجه على تكوين عدد مناسب",
+      "implementation": "Arabic original guided examples and test fixtures",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "التمارين المستقلة والتحقق بالعملية العكسية",
+      "implementation": "4 exact families plus reverse-operation checks",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "مسائل حياتية واستدلال وتفسير طريقة الحل",
+      "implementation": "RichV2 prose and separate teacher-reviewed explanatory responses",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    },
+    {
+      "title": "مراجعة المفردات والتقويم والواجب",
+      "implementation": "Original cooldown, lesson summary and 3 targeted tests",
+      "coverage": "ORIGINAL_MATHEMATICAL_EQUIVALENT"
+    }
+  ],
+  "SourceCoverage": "8/8 mathematical element categories; not reproduction of publisher text/images",
+  "CoolDown": {
+    "question": "احسب ٣٩٩ + ٨٧ ذهنيًا وفسر كيف عوضت العدد الذي أضفته.",
+    "expected": "٤٨٦؛ حولت ٣٩٩ إلى ٤٠٠ وأنقصت واحدًا من ٨٧",
+    "verbalExplanation": "teacher review"
+  },
+  "PracticeFamilies": [
+    "make_friendly_ten",
+    "compensate_addition",
+    "break_apart_subtraction",
+    "subtract_thousands"
+  ],
+  "Tests": {
+    "filter": "UaeGrade4Unit2Lesson03MentalTests",
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "StageDTestsRun": false,
+  "Status": "READY_FOR_STAGE_D"
+}

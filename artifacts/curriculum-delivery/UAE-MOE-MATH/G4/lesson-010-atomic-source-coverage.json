@@ -1,0 +1,75 @@
+{
+  "Grade": 4,
+  "Unit": 2,
+  "LessonOrdinal": 10,
+  "LessonCode": "PED:UAE-MOE-MATH:L4:COMMON:02:04",
+  "Title": "تقدير المجاميع والفروق",
+  "StudentPdf": "04-01.pdf",
+  "StudentPdfSHA256": "859afc2c8e370d9360c25df32c821788458fc1f3808ad0045a0bc142c795daf3",
+  "StudentPrintedPages": [
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "StudentPdfPages": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "SourceElementCoverage": [
+    {
+      "element": "التقريب إلى أقرب مئة للمجموع",
+      "implementation": "sum_nearest_hundred",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "التقريب إلى أقرب مئة للفرق",
+      "implementation": "diff_nearest_hundred",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "التقريب إلى أقرب ألف للمجموع",
+      "implementation": "sum_nearest_thousand",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "التقريب إلى أقرب ألف للفرق",
+      "implementation": "diff_nearest_thousand",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "التقريب إلى أقرب عشرة آلاف للمجموع",
+      "implementation": "sum_nearest_ten_thousand",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "التقريب إلى أقرب عشرة آلاف للفرق",
+      "implementation": "diff_nearest_ten_thousand",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "مسائل الحياة الواقعية ومهارة اختيار المنزلة",
+      "implementation": "RichV2 examples and teacher-reviewed reasoning",
+      "status": "ORIGINAL_EQUIVALENT"
+    },
+    {
+      "element": "تقويم منزلة التقريب ومعقولية التقدير",
+      "implementation": "Original cooldown, visual and scoped tests",
+      "status": "ORIGINAL_EQUIVALENT"
+    }
+  ],
+  "CoolDown": {
+    "prompt": "قدّر ٤٬٦٨٢ + ٢٬٣١٩ إلى أقرب مئة، واشرح خطواتك.",
+    "expected": "٤٬٧٠٠ + ٢٬٣٠٠ = ٧٬٠٠٠ تقريبًا",
+    "explanation": "teacher review"
+  },
+  "TestOutcome": "3 passed, 0 failed, 0 skipped, scoped NET10",
+  "StageDTestsRun": false,
+  "Status": "READY_FOR_STAGE_D"
+}
