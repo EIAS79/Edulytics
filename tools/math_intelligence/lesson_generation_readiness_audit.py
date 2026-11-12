@@ -8,7 +8,10 @@ from pathlib import Path
 from typing import Any
 
 from lesson_semantic_content_audit import audit as semantic_audit, independently_certified_g12
-from lesson_skill_resolution_audit import audit as skill_resolution_audit
+from lesson_skill_resolution_audit import (
+    audit as skill_resolution_audit,
+    separately_certified_g4_practice,
+)
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
 from official_practice_rules import (
     load_reviewed_official_rule_mappings,
@@ -76,11 +79,13 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
     # not generic Supporting targeting. Require owner approval and all 73
     # real persisted Practice and teacher-review routes before exemption.
     specialist_g12=independently_certified_g12()
+    specialist_g4=separately_certified_g4_practice()
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
         if row["lessonCode"] not in covered_by_non_supporting_mapping
         and row["lessonCode"] not in specialist_g12
+        and row["lessonCode"] not in specialist_g4
     )
     return result, errors
 
@@ -277,6 +282,7 @@ def audit() -> dict[str, Any]:
     semantic_by_code = {row["lessonCode"]: row for row in semantic_report["lessons"]}
 
     specialist_g12=independently_certified_g12()
+    specialist_g4=separately_certified_g4_practice()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
@@ -351,6 +357,22 @@ def audit() -> dict[str, Any]:
                 "and independently graded mathematical source-family vectors. "
                 "No claim of publisher page-by-page parity."]
 
+        specialist_g4_ready=bool(
+            code in specialist_g4 and
+            not semantic.get("studentFacingDefects")
+        )
+        if specialist_g4_ready:
+            # Every accepted source-scoped Grade 4 lesson has a reviewed,
+            # exact C# lesson contract, real registered question families,
+            # selected book page/SHA locators and source/skill proof.
+            # The dedicated G4 Stage D additionally tests 132 learner pages,
+            # 396 persisted attempts and desktop/mobile RTL on the same SHA.
+            # A generic Supporting-rule match must not override this route.
+            readiness="READY_VERIFIED"
+            reasons=["Independently audited owner-authored UAE Grade 4 "
+                     "exact Practice contract; dedicated Stage D runtime "
+                     "and source/rights CI remain separate mandatory gates."]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -383,9 +405,17 @@ def audit() -> dict[str, Any]:
             "isV2ShadowVerified": is_v2_shadow_verified,
             "generationReadiness": readiness,
             "specialistGrade12AuthenticatedPractice": specialist_g12_ready,
-            "reasons": reasons + ([] if specialist_g12_ready else capability_reasons),
+            "specialistGrade4ExactPractice": specialist_g4_ready,
+            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready) else capability_reasons),
         })
 
+    summary["grade4SpecialistExactPracticeCount"] = sum(
+        r["specialistGrade4ExactPractice"] for r in rows)
+    grade4_seen = {c for c in all_codes if c.startswith(
+        "PED:UAE-MOE-MATH:L4:COMMON:")}
+    if grade4_seen and (len(grade4_seen) != 132 or
+        summary["grade4SpecialistExactPracticeCount"] != 132):
+        blockers.append("G4 132 exact Practice routes are not fully verified against canonical source")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         r["specialistGrade12AuthenticatedPractice"] for r in rows)
     grade12_seen={c for c in all_codes if c.startswith(
