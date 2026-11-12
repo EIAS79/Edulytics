@@ -34,7 +34,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase source
-      - name: Validate bounded owner-authored digital asset rights evidence
+      - name: Validate bounded owner-authored digital asset rights evidence independently of source provenance
+        if: always()
         run: |
           python3 - <<'PY'
           import json,os,pathlib
