@@ -24,7 +24,7 @@ const g1Critical=[
 const expectedOld={
   'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a'],
   [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','d84a61ebc37e8ca026f95906720bfaef3ea56081'],
-  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0060af6edb1c5f354eeea5aeabc1ae7717fcbb6a']
+  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d778e602928ff252573365dce53e7e3e31ab708d']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
   assert.equal(git('merge-base','--is-ancestor',g1Proof,'HEAD'),'');
@@ -80,7 +80,7 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
     '1\t1\t'+probe);
   const probeDiff=git('diff','--unified=0',grade2Published,'HEAD','--',probe);
   assert.ok(probeDiff.includes('-            if wrong_answer_profile=="uae-g2":'));
-  assert.ok(probeDiff.includes('+            if wrong_answer_profile in ("uae-g2", "uae-g3"):'));
+  assert.ok(probeDiff.includes('+            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4"):'));
   // UAE Grade 4 contributes only reviewed additive registrations.
   // Preserve the entire published main-branch engine and contract lines;
   // a changed, deleted or replaced pre-existing US/G1 path fails here.
