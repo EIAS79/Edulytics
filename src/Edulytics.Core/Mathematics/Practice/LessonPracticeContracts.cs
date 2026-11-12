@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:06"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:13:06", "measurement.metric",
+            "METRIC_MASS_KILOGRAMS_GRAMS",
+            ["uae.g4.u13.l06.kilograms_grams", "uae.g4.u13.l06.combined_grams"],
+            "UAE_G4_STUDENT_04_03_PP913_918_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:13:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:13:05", "measurement.metric",
             "METRIC_CAPACITY_LITERS_MILLILITERS",
