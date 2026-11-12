@@ -22,8 +22,8 @@ const g1Critical=[
   'tools/phase29/acceptance_two_school_https.py'
 ];
 const expectedOld={
-  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','95cdcb9ce1df3d5ad8ae6da6ad977c86a56c4311'],
-  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','b5a81ef4d5e5809092f6dece3d312e6f6ccc2df6'],
+  'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a'],
+  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','d84a61ebc37e8ca026f95906720bfaef3ea56081'],
   'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','0060af6edb1c5f354eeea5aeabc1ae7717fcbb6a']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
@@ -61,17 +61,17 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
-    'b5a81ef4d5e5809092f6dece3d312e6f6ccc2df6');
+    'd84a61ebc37e8ca026f95906720bfaef3ea56081');
   assert.equal(git('diff','--numstat',preUaeG1Release,'HEAD','--',engine),
-    '2171\t0\t'+engine);
+    '2841\t0\t'+engine);
   // Explicitly constrain the G3-only additive changes, rather than blindly
   // accepting a moving SHA or dropping the original US G1 negative control.
   const grade2Published='d4448d58b43d46a73b2f8bed6128524f6c003caf';
   assert.equal(git('diff','--numstat',grade2Published,'HEAD','--',engine),
-    '300\t0\t'+engine);
+    '970\t0\t'+engine);
   assert.equal(git('diff','--numstat',grade2Published,'HEAD','--',
     'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),
-    '623\t0\tsrc/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
+    '1451\t0\tsrc/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
   // The legacy HTTPS probe accepts an additional opt-in Grade 3 wrong-answer
   // profile; preserve the exact Grade 2/US/G1 branches and guard the only
   // permitted one-line replacement with a reviewed Git blob digest.
@@ -81,7 +81,24 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   const probeDiff=git('diff','--unified=0',grade2Published,'HEAD','--',probe);
   assert.ok(probeDiff.includes('-            if wrong_answer_profile=="uae-g2":'));
   assert.ok(probeDiff.includes('+            if wrong_answer_profile in ("uae-g2", "uae-g3"):'));
-  const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
+  // UAE Grade 4 contributes only reviewed additive registrations.
+  // Preserve the entire published main-branch engine and contract lines;
+  // a changed, deleted or replaced pre-existing US/G1 path fails here.
+  const preG4='c0970107123a3e94ca5d0928b45a58c577162d17';
+  for(const [file,expectedDelta] of [
+    [engine,670],
+    ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',828]
+  ]){
+    const changes=git('diff','--numstat',preG4,'HEAD','--',file).split('\\t');
+    assert.equal(changes[0],String(expectedDelta));
+    assert.equal(changes[1],'0');
+    const baseline=cp.execFileSync('git',['show',preG4+':'+file],{cwd:root,encoding:'utf8'}).split('\\n');
+    const current=fs.readFileSync(path.join(root,file),'utf8').split('\\n');
+    let oldIndex=0;
+    for(const line of current) if(oldIndex<baseline.length && line===baseline[oldIndex]) oldIndex++;
+    assert.equal(oldIndex,baseline.length,'Published non-Grade4 lines must survive unchanged: '+file);
+  }
+    const delta=git('diff','--unified=0',preUaeG1Release,'HEAD','--',engine);
   const changed=delta.split('\n').filter(x=>
     (x.startsWith('+')&&!x.startsWith('+++'))||
     (x.startsWith('-')&&!x.startsWith('---')));
