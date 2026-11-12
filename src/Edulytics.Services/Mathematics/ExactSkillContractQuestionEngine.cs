@@ -321,6 +321,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit7Lesson01ShapePatternQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson02NumericPatternsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family.Trim()) ||
+          UaeGrade4Unit13MetricMeasurementQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit12GraphsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit11EstimationQuestions.Supports(family.Trim()) ||
@@ -763,6 +764,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Verify(family, parameters, answer);
+        if (UaeGrade4Unit13MetricMeasurementQuestions.Supports(family))
+            return UaeGrade4Unit13MetricMeasurementQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit12GraphsQuestions.Supports(family))
             return UaeGrade4Unit12GraphsQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(family))
@@ -4030,6 +4033,11 @@ public sealed class ExactSkillContractQuestionEngine
         {
             var q = UaeGrade4Unit7Lesson03SequencesQuestions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade4Unit13MetricMeasurementQuestions.Supports(family))
+        {
+            var q = UaeGrade4Unit13MetricMeasurementQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit12GraphsQuestions.Supports(family))
         {
@@ -8371,6 +8379,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit7Lesson02NumericPatternsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit7Lesson03SequencesQuestions.Supports(problem.Family))
             return UaeGrade4Unit7Lesson03SequencesQuestions.Solve(problem.Family, p);
+        if (UaeGrade4Unit13MetricMeasurementQuestions.Supports(problem.Family))
+            return UaeGrade4Unit13MetricMeasurementQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit12GraphsQuestions.Supports(problem.Family))
             return UaeGrade4Unit12GraphsQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit11DecimalArithmeticQuestions.Supports(problem.Family))
