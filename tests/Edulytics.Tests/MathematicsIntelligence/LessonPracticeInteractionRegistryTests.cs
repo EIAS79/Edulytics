@@ -51,9 +51,17 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g3.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(107, uaeGrade3.Length);
+        // The owner-authored Grade 4 132-lesson release adds exactly 295
+        // separately routed question families. Keep the legacy baseline
+        // unchanged and certify the entire expanded registry below.
+        var uaeGrade4 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g4.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(295, uaeGrade4.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
-            algebra2.Length - uaeGrade1.Length - uaeGrade2.Length - uaeGrade3.Length);
+            algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
+            uaeGrade3.Length - uaeGrade4.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,
