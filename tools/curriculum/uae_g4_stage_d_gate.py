@@ -223,10 +223,51 @@ def source():
             len(lesson_mappings) == 132 and not missing_rows)
         details["unreconciledAnnualPlanOrdinals"] = missing_rows
         details["annualPlanPublisherVerification"] = annual_plan.get("publisherVerification")
-        if not checks["annualPlanAuthorityVerified"]:
-            errors.append("Annual 2026-27 plan has no verified ministry provenance; recorded hash alone is not authority")
-        if not checks["all132AnnualPlanRowsReconciled"]:
-            errors.append(f"{len(missing_rows)} lessons lack a verified exact 2026-27 annual-plan row mapping")
+        # The owner may publish original Edulytics instruction under the same
+        # explicitly disclosed edition-parity UNKNOWN policy used for UAE G1-G3.
+        # This is NEVER a claim of Ministry-certified 2026-27 textbook parity.
+        policy_file = G / "grade4-owner-release-policy-20261112.json"
+        policy = load(policy_file) if policy_file.is_file() else {}
+        checks["ownerFirstPartyPublicationPolicyPresent"] = bool(policy)
+        checks["ownerApprovedIndependentEdulyticsRelease"] = (
+            policy.get("ownerAcademicApprovalRecorded") is True and
+            policy.get("ownerExplicitPublicationAuthorization") is True and
+            policy.get("approvedGrade") == 4 and
+            policy.get("approvedPathway") == "Common" and
+            policy.get("approvedLessonCount") == 132 and
+            policy.get("approvedUnitCount") == 16 and
+            policy.get("sourceSnapshotId") == handoff_data.get("SourceSnapshotId") and
+            policy.get("selectedTextbookEditionParity") == "UNKNOWN" and
+            policy.get("independentOfficial2026_2027LessonScopeCertified") is False and
+            policy.get("independentOfficialAnnualPlanRowMapping") == "UNKNOWN" and
+            policy.get("noFalseCertifications") is True and
+            policy.get("releasePath") ==
+              "OWNER_APPROVED_ORIGINAL_CONTENT_WITH_DISCLOSED_EDITION_LIMITS")
+        checks["official2026_27TextbookParityCertified"] = (
+            checks["annualPlanAuthorityVerified"] and
+            checks["all132AnnualPlanRowsReconciled"])
+        details["officialMinistryEditionParity"] = (
+            "VERIFIED" if checks["official2026_27TextbookParityCertified"]
+            else "UNKNOWN_NOT_CERTIFIED")
+        details["publicationBasis"] = (
+            "OWNER_APPROVED_EDULYTICS_ORIGINAL_WITH_EDITION_LIMITS"
+            if checks["ownerApprovedIndependentEdulyticsRelease"]
+            else "NO_OWNER_SCOPED_EXCEPTION")
+        if not checks["official2026_27TextbookParityCertified"] and not checks["ownerApprovedIndependentEdulyticsRelease"]:
+            errors.append("No verified 2026-27 Ministry scope and no explicitly approved original Edulytics UNKNOWN-parity release policy")
+        # A valid owner exception changes the permissible product claim and
+        # release scope, not the underlying provenance or unresolved row IDs.
+        checks["all132BookLocatorsAndHashesValid"] = (
+            len(lesson_mappings) == 132 and
+            all(x.get("ordinal") == i and
+                x.get("stageABC") == "READY_FOR_STAGE_D" and
+                isinstance(x.get("sourceLocator"), str) and
+                x["sourceLocator"].strip() and
+                x.get("sourcePdf") in handoff_data.get("studentBooks", {}) and
+                x.get("sourcePdfSha256") == handoff_data["studentBooks"][x["sourcePdf"]]
+                for i, x in enumerate(lesson_mappings, 1)))
+        if not checks["all132BookLocatorsAndHashesValid"]:
+            errors.append("A-B-C 132 source page mappings, selected PDF hashes or sequential IDs are inconsistent")
         if not all(checks.get(x, False) for x in [
           "ownerAcademicApprovalRecorded","all132SourceLocatorsPresent",
           "annualPlanSha256Present","sourceSnapshotIdRecorded"]):
@@ -236,6 +277,8 @@ def source():
         source_audit = load(audit)
         checks["auditCount"] = source_audit.get("LessonCount")
         checks["auditEntries"] = len(source_audit.get("Lessons", []))
+        if checks["auditCount"] != 132 or checks["auditEntries"] != 132:
+            errors.append("Incomplete 132-lesson source audit")
         details["annualPlanOrigin"] = source_audit.get("AnnualPlanEvidence")
         if "not independently verified" in str(source_audit.get("AnnualPlanEvidence", "")).lower():
             checks["ministrySignatureVerified"] = False
