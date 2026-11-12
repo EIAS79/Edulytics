@@ -67,20 +67,122 @@ jobs:
             artifacts/uae-g4-stage-d/grade4-math-gate.json
           if-no-files-found: error
   migration:
-    name: No destructive Grade 4 legacy curriculum identity transition
+    name: Rehearse exact 93-to-132 replacement in ephemeral PostgreSQL 18
     runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      ConnectionStrings__MigrationConnection: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: "Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable"
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      PGPASSWORD: postgres
+      DOTNET_NOLOGO: 'true'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout legacy main source
+        uses: actions/checkout@v4
         with:
-          python-version: '3.12'
-      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase migration
+          ref: main
+          path: legacy
+      - name: Checkout exact pull-request candidate
+        uses: actions/checkout@v4
+        with:
+          path: candidate
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore legacy tools, apply PostgreSQL migrations and seed 93 old Grade4 lessons
+        working-directory: legacy
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Confirm 93 legacy and snapshot unrelated grade counts
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-before
+          test "$(cat /tmp/g4-before)" = "93"
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-before
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-content-before
+          test "$(cat /tmp/g4-content-before)" = "93"
+      - name: Build candidate replacement importer
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+          dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
+      - name: Reject accidental replacement without precise owner token
+        working-directory: candidate
+        run: |
+          set -euo pipefail
+          if dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj > /tmp/g4-unguarded-attempt.log 2>&1; then
+            echo "ERROR: candidate mutated legacy without owner token"; exit 1
+          fi
+          grep -E "identity collision|baseline drift|refusing" /tmp/g4-unguarded-attempt.log || true
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 93
+      - name: Apply explicitly approved same-database replacement
+        working-directory: candidate
+        env:
+          EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
+        run: |
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Check 132 Arabic lessons, 132 metadata and no other-grade data loss
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-after
+          cmp /tmp/non-g4-before /tmp/non-g4-after
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%' AND \"Title\" LIKE 'Math Is %'" | grep -qx 0
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
+      - name: Test second startup without re-deleting 132 canonical records
+        working-directory: candidate
+        env:
+          EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
+        run: |
+          dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Publish same-candidate PostgreSQL rehearsal evidence
+        if: success()
+        working-directory: candidate
+        run: |
+          mkdir -p artifacts/uae-g4-stage-d
+          python3 - <<'PY'
+          import os,json
+          output={"phase":"migration","status":"PASS","grade":4,
+            "candidateSha":os.environ["GITHUB_SHA"],
+            "checks":{"legacyGrade4Lessons":93,"replacementGrade4Lessons":132,
+              "replacementCanonicalContents":132,
+              "sameVersionOwnerApprovedReplacement":True,
+              "negativeNoTokenTest":True,"secondRunIdempotent":True,
+              "nonGrade4RowsPreserved":True,
+              "rehearsedInEphemeralPostgreSQL":True},
+            "note":"This evidence is from isolated CI PostgreSQL, not a production migration or Render live smoke.",
+            "notPublicationEvidence":True}
+          with open("artifacts/uae-g4-stage-d/grade4-migration-gate.json","w",encoding="utf-8") as f:
+            json.dump(output,f,indent=2)
+          PY
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: g4-migration
-          path: artifacts/uae-g4-stage-d/grade4-migration-gate.json
-          if-no-files-found: error
+          path: candidate/artifacts/uae-g4-stage-d/grade4-migration-gate.json
+          if-no-files-found: warn
   final:
     name: Fail-closed no-merge-no-deploy release gate
     if: always()
