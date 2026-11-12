@@ -73,6 +73,19 @@ def structural():
     checks["orderedBlueprint"] = [x["SortOrder"] for x in b["Lessons"]] == list(range(1, 133))
     checks["unitCounts"] = unit_counts
     checks["curriculumUnit12"] = m["Units"][11]["title"]
+    checks["arabicAcademicLanguage"] = c.get("AcademicLanguage") == "ar"
+    checks["arabicTranslationsPresent"] = sum(
+        1 for lesson in c["Lessons"]
+        if any(t.get("CultureCode") == "ar" for t in lesson.get("Translations", [])))
+    checks["contentReleaseStatus"] = c.get("Status")
+    checks["blueprintMetadataUnitCount"] = b.get("AcquisitionDiagnostics", {}).get("UnitCount")
+    checks["blueprintMetadataLessonCount"] = b.get("AcquisitionDiagnostics", {}).get("LessonCount")
+    if not checks["arabicAcademicLanguage"] or checks["arabicTranslationsPresent"] != 132:
+        errors.append("Arabic-first Grade 4 content metadata or translations are incomplete")
+    if checks["contentReleaseStatus"] == "Published":
+        errors.append("Content claims Published before Stage D release evidence")
+    if checks["blueprintMetadataUnitCount"] != 16 or checks["blueprintMetadataLessonCount"] != 132:
+        errors.append("Blueprint acquisition diagnostics retain obsolete 14-unit/93-lesson scope")
     expected = [6,9,8,11,6,11,9,10,9,11,10,7,3,9,5,8]
     if unit_counts != expected: errors.append("Unit-wise lesson counts do not match reconciled 16-unit index")
     if not (m["LessonCount"] == len(codes) == len(content_codes) == 132):
