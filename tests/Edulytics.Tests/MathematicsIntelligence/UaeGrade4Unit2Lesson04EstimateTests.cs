@@ -51,4 +51,3 @@ public sealed class UaeGrade4Unit2Lesson04EstimateTests
         Assert.Equal(RichLessonVisualKind.CalculationChain,Assert.Single(l.Visuals).Kind);
     }
 }
-
