@@ -8,8 +8,9 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
-    // 5110 historical canonical lessons plus 73 owner-approved G12 Precalculus.
-    private const int ExpectedLessonCount = 5183;
+    // 5,110 prior including 93 legacy UAE Grade 4; replace those 93
+    // with 132 source-grounded G4 lessons (+39), keep all 73 G12 lessons.
+    private const int ExpectedLessonCount = 5222;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
