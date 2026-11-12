@@ -7602,6 +7602,12 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add", "uae.g4.u07.l08.two_step_rule"],
             "UAE_G4_STUDENT_04_02_07_PP451_456_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:03"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L4:COMMON:15:03", "geometry.angles",
+            "MEASURE_ANGLES_PROTRACTOR",
+            ["uae.g4.u15.l03.measure_degrees", "uae.g4.u15.l03.compare_degrees"],
+            "UAE_G4_STUDENT_04_03_PP1011_1016_STAGE_D_NOT_RUN",
+            "READY_VERIFIED", Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:15:02"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:15:02", "geometry.angles",
             "CLASSIFY_ACUTE_RIGHT_OBTUSE",
