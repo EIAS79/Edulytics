@@ -2527,6 +2527,19 @@
                 {
                     <partial name="_LessonReaderSection" model="section" />
                 }
+                @if (isUaeGrade4Arabic && Model.RichContent?.Visuals.Count > 0)
+                {
+                    @* First-party student-book skill models: do not drop the
+                       rich place-value tables, number lines and arithmetic diagrams
+                       when rendering the full six Arabic lesson sections. *@
+                    <section class="uae-g4-original-rich-models" aria-label="?????? ???????? ?????????">
+                        <h2>?????? ???????? ?????????</h2>
+                        @foreach (var visual in Model.RichContent.Visuals)
+                        {
+                            <partial name="_RichLessonVisual" model="visual" />
+                        }
+                    </section>
+                }
             </div>
         }
         else if (Model.RichContent is not null)
