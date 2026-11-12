@@ -49,17 +49,19 @@
     "no independent publication rights verification",
     "no complete final CI run and validated Render deployment",
     "14 lesson Practice contracts use unknown SkillIds and 45 family uses have different registered skill identities without reviewed equivalence.",
-    "Ten Stage C skill mappings remain under source/contract ownership review; no silent remapping."
+    "Ten Stage C skill mappings remain under source/contract ownership review; no silent remapping.",
+    "14 primary SkillIds registered as unverified Stage C definitions; 45 cross-skill family references remain unresolved and unchanged."
   ],
-  "UnknownLessonPracticeSkillIds": 14,
+  "UnknownLessonPracticeSkillIds": 0,
   "CrossSkillFamilyReferencesRequiringReview": 45,
   "StrictRegistryIntegrityBlockersAfterRepair": 0,
-  "StructuralGateStatus": "BLOCKED_CONTRACT_IDENTITY",
+  "StructuralGateStatus": "BLOCKED_CROSS_SKILL_FAMILY_IDENTITY",
   "SupportingSkillResolutionUnmappedGrade4": 10,
   "StageCSafeExactSkillMapsAdded": 49,
   "SignalRRedisPatchedPackage": "10.0.15",
   "RuntimeDockerPinnedTag": "mcr.microsoft.com/dotnet/aspnet:10.0.15",
   "PostPatchScopedMathAndScaleTestsPassed": 641,
   "PostPatchScopedMathAndScaleTestsFailed": 0,
-  "PostPatchSecurityRegressionLog": "artifacts/uae-g4-stage-d/grade4-patched-redis-regression.log"
+  "PostPatchSecurityRegressionLog": "artifacts/uae-g4-stage-d/grade4-patched-redis-regression.log",
+  "StageCPendingDAliasSkillIdsAdded": 14
 }
