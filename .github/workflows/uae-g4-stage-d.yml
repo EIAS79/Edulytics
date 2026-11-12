@@ -61,10 +61,25 @@ jobs:
           name: g4-math
           path: artifacts/uae-g4-stage-d/trx
           if-no-files-found: warn
+  migration:
+    name: No destructive Grade 4 legacy curriculum identity transition
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g4_stage_d_gate.py --phase migration
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g4-migration
+          path: artifacts/uae-g4-stage-d/grade4-migration-gate.json
+          if-no-files-found: error
   final:
     name: Fail-closed no-merge-no-deploy release gate
     if: always()
-    needs: [structural, source, math]
+    needs: [structural, source, math, migration]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4

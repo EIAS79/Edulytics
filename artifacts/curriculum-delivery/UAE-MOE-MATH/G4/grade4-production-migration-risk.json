@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "source": "Read-only SQL against connected Neon Edulytiks production branch on 2026-11-12",
+  "NeonProjectId": "tiny-lab-44877119",
+  "NeonProductionBranchId": "br-frosty-block-b52tnjky",
+  "legacyFrameworkVersionCode": "MOE-2026-2027-T1",
+  "candidateFrameworkVersionCode": "MOE-2026-2027-T1",
+  "legacyGrade4PedagogicalLessons": 93,
+  "legacyGrade4CanonicalContents": 93,
+  "legacyGrade4ContentTranslations": 0,
+  "legacyGrade4PracticeAttempts": 0,
+  "legacyGrade4AdaptiveSessions": 0,
+  "legacyGrade4AssessmentItems": 0,
+  "frameworkVersionSchoolAdoptionsAcrossAllGrades": 40,
+  "sameCodeDifferentTitleOldLessons": 83,
+  "oldLessonIdsAbsentFromNewBlueprint": 10,
+  "isolatedDryRunCompleted": false,
+  "isolatedNeonBranchRequest": "FAILED_BRANCH_LIMIT_EXCEEDED",
+  "productionWriteAttempted": false,
+  "preservationRisk": "HIGH",
+  "riskNotes": [
+    "40 adoptions are framework-version-wide and NOT necessarily grade4-specific",
+    "Existing 93 canonical contents must remain attached to their original academic identity",
+    "Current candidate uses the same framework version code with a different 132-lesson sequence",
+    "The seeders can mutate/remove old rows; Grade4 fail-closed guard now blocks these changes",
+    "Do not merge or deploy until isolated versioned migration rehearsal preserves original records and validates new lesson IDs."
+  ],
+  "status": "D_BLOCKED_MIGRATION_VERSION_COLLISION"
+}

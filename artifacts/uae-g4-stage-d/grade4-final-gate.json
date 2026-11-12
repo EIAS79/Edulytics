@@ -1,0 +1,29 @@
+{
+  "phase": "final",
+  "grade": 4,
+  "pathway": "Common",
+  "candidateSha": "bb1d8f4642eda63b0f3b2280605c090eaed94e5f",
+  "timestampUtc": "2026-11-12T02:50:44.316195+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "Final same-SHA gate missing or blocked: math",
+    "Final same-SHA gate missing or blocked: migration",
+    "Final same-SHA gate missing or blocked: authenticated-e2e",
+    "Final same-SHA gate missing or blocked: arabic-visual",
+    "Final same-SHA gate missing or blocked: rights",
+    "Final same-SHA gate missing or blocked: ci"
+  ],
+  "checks": {
+    "structural": true,
+    "source": true,
+    "math": false,
+    "migration": false,
+    "authenticated-e2e": false,
+    "arabic-visual": false,
+    "rights": false,
+    "ci": false
+  },
+  "details": {},
+  "notAuthenticatedE2eEvidence": true,
+  "notPublicationEvidence": true
+}

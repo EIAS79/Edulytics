@@ -231,6 +231,29 @@ def source():
         errors.append("SourceSnapshotId not consistently present in source snapshot and handoff")
     return report("source", errors, checks, details)
 
+def migration():
+    errors, checks, details = [], {}, {}
+    p = G / "grade4-production-migration-risk.json"
+    if not p.is_file():
+        return report("migration", ["Missing Grade 4 isolated database migration risk record"], checks, details)
+    data = load(p)
+    blueprint = load(BP)
+    checks["productionLegacyLessonCount"] = data.get("legacyGrade4PedagogicalLessons")
+    checks["preservedCanonicalContentsExpected"] = data.get("legacyGrade4CanonicalContents")
+    checks["crossGradeFrameworkSchoolAdoptions"] = data.get("frameworkVersionSchoolAdoptionsAcrossAllGrades")
+    checks["targetVersion"] = blueprint.get("VersionCode")
+    checks["legacyVersion"] = data.get("legacyFrameworkVersionCode")
+    checks["differentFrameworkVersion"] = blueprint.get("VersionCode") != data.get("legacyFrameworkVersionCode")
+    checks["isolatedMigrationAndRollbackPassed"] = data.get("isolatedDryRunCompleted") is True
+    details["isolatedNeonBranchRequest"] = data.get("isolatedNeonBranchRequest")
+    details["identityCollisions"] = data.get("sameCodeDifferentTitleOldLessons")
+    details["oldLessonIdsAbsent"] = data.get("oldLessonIdsAbsentFromNewBlueprint")
+    if not checks["differentFrameworkVersion"]:
+        errors.append("New Arabic 132-lesson candidate reuses production version identity of legacy 93 English lessons")
+    if not checks["isolatedMigrationAndRollbackPassed"]:
+        errors.append("No isolated PostgreSQL migration, preserving all legacy canonical content, was rehearsed and rolled back")
+    return report("migration", errors, checks, details)
+
 def final():
     errors, checks, details = [], {}, {}
     required = ["structural", "source", "math", "migration",
@@ -248,7 +271,7 @@ def final():
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--phase", choices=["structural", "source", "final"], required=True)
+    p.add_argument("--phase", choices=["structural", "source", "migration", "final"], required=True)
     a = p.parse_args()
-    good = {"structural": structural, "source": source, "final": final}[a.phase]()
+    good = {"structural": structural, "source": source, "migration": migration, "final": final}[a.phase]()
     raise SystemExit(0 if good else 1)

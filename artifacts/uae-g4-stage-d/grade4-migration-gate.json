@@ -1,0 +1,28 @@
+{
+  "phase": "migration",
+  "grade": 4,
+  "pathway": "Common",
+  "candidateSha": "bb1d8f4642eda63b0f3b2280605c090eaed94e5f",
+  "timestampUtc": "2026-11-12T02:50:44.131001+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "New Arabic 132-lesson candidate reuses production version identity of legacy 93 English lessons",
+    "No isolated PostgreSQL migration, preserving all legacy canonical content, was rehearsed and rolled back"
+  ],
+  "checks": {
+    "productionLegacyLessonCount": 93,
+    "preservedCanonicalContentsExpected": 93,
+    "crossGradeFrameworkSchoolAdoptions": 40,
+    "targetVersion": "MOE-2026-2027-T1",
+    "legacyVersion": "MOE-2026-2027-T1",
+    "differentFrameworkVersion": false,
+    "isolatedMigrationAndRollbackPassed": false
+  },
+  "details": {
+    "isolatedNeonBranchRequest": "FAILED_BRANCH_LIMIT_EXCEEDED",
+    "identityCollisions": 83,
+    "oldLessonIdsAbsent": 10
+  },
+  "notAuthenticatedE2eEvidence": true,
+  "notPublicationEvidence": true
+}
