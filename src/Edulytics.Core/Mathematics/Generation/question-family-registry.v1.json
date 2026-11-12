@@ -41802,6 +41802,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u12.l05.solid_faces",
+      "version": 1,
+      "skillId": "geometry.solid_properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u12-l05-abc-stage-d-not-run",
+      "representations": [
+        "original_diagram",
+        "geometry_model",
+        "numeric_answer"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g4.u12.l05.solid_vertices",
+      "version": 1,
+      "skillId": "geometry.solid_properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "g4-u12-l05-abc-stage-d-not-run",
+      "representations": [
+        "original_diagram",
+        "geometry_model",
+        "numeric_answer"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
