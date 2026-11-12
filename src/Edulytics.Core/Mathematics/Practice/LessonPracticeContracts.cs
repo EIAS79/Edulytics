@@ -7405,39 +7405,31 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:04"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:04", "number.area_model_partial_products",
             "AREA_MODEL_TWO_DIGIT_BY_ONE_DIGIT_PARTIAL_PRODUCTS",
-            ["uae.g4.u04.l03.model_two_digit_product", "uae.g4.u04.l03.model_tens_product", "uae.g4.u04.l03.model_ones_product"],
+            ["uae.g4.u04.l04.array_product","uae.g4.u04.l04.array_partial_tens"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP215_220_REUSE_U04L03_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:05"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:05", "number.column_multiply_two_digit_by_one",
             "COLUMN_MULTIPLICATION_TWO_DIGIT_BY_ONE",
-            ["uae.g4.u04.l03.model_two_digit_product",
-             "uae.g4.u04.l03.model_tens_product",
-             "uae.g4.u04.l03.model_ones_product"],
+            ["uae.g4.u04.l05.vertical_product","uae.g4.u04.l05.units_carry"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP223_228_REUSE_EXISTING_EXACT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:06"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:06", "number.regroup_base_ten_models",
             "BASE_TEN_BLOCKS_REGROUPING",
-            ["uae.g4.u04.l03.model_two_digit_product",
-             "uae.g4.u04.l03.model_tens_product",
-             "uae.g4.u04.l03.model_ones_product"],
+            ["uae.g4.u04.l06.regroup_tens","uae.g4.u04.l06.regroup_product"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP229_234_REUSE_EXACT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:07"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:07", "number.distributive_property",
             "DISTRIBUTIVE_PROPERTY_TWO_DIGIT_MULTIPLICATION",
-            ["uae.g4.u04.l03.model_two_digit_product",
-             "uae.g4.u04.l03.model_tens_product",
-             "uae.g4.u04.l03.model_ones_product"],
+            ["uae.g4.u04.l07.distributive_tens","uae.g4.u04.l07.distributive_sum"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP235_240_REUSED_EXTENDED_EXACT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:08"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:08", "number.column_multiplication_regroup",
             "COLUMN_MULTIPLICATION_WITH_REGROUPING",
-            ["uae.g4.u04.l03.model_two_digit_product",
-             "uae.g4.u04.l03.model_tens_product",
-             "uae.g4.u04.l03.model_ones_product"],
+            ["uae.g4.u04.l08.vertical_three_digit_product","uae.g4.u04.l08.vertical_units_carry"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP241_246_REUSED_EXTENDED_EXACT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:09"] = new LessonPracticeContract(
@@ -7455,7 +7447,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:04:11"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:04:11", "number.multidigit_multiply_with_zeros",
             "MULTIDIGIT_ZERO_PLACEHOLDER_MULTIPLICATION",
-            ["uae.g4.u04.l09.multidigit_product", "uae.g4.u04.l09.partial_hundreds", "uae.g4.u04.l09.round_estimate"],
+            ["uae.g4.u04.l11.zero_place_value_product","uae.g4.u04.l11.added_zero_places"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP261_264_REUSED_MULTIDIGIT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:01"] = new LessonPracticeContract(
@@ -7479,7 +7471,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:04"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:05:04", "number.column_multiply_two_digit_factors",
             "VERTICAL_TWO_DIGIT_MULTIPLICATION_PARTIAL_PRODUCTS",
-            ["uae.g4.u05.l03.area_two_digit_product", "uae.g4.u05.l03.area_tens_partial", "uae.g4.u05.l03.area_ones_partial"],
+            ["uae.g4.u05.l04.two_digit_column_product","uae.g4.u05.l04.two_digit_tens_partial"],
             "UAE_G4_STUDENT_04_01_PRINTED_PP299_304_REUSED_EXACT_FAMILIES_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:05:05"] = new LessonPracticeContract(
@@ -7533,25 +7525,25 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:07"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:06:07", "number.long_division_first_quotient_digit",
             "DIVISION_POSITION_FIRST_QUOTIENT_DIGIT",
-            ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
+            ["uae.g4.u06.l07.first_quotient_digit","uae.g4.u06.l07.first_quotient_place_value"],
             "UAE_G4_STUDENT_04_01_PP367_372_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:08"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:06:08", "number.divide_by_partial_quotients",
             "DIVIDE_WITH_PARTIAL_QUOTIENTS_DISTRIBUTION",
-            ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
+            ["uae.g4.u06.l08.partial_quotient_sum","uae.g4.u06.l08.partial_quotient_remainder"],
             "UAE_G4_STUDENT_04_01_PP373_378_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:09"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:06:09", "number.long_division_large_numbers",
             "LONG_DIVISION_FOUR_DIGIT_BY_ONE_DIGIT",
-            ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
+            ["uae.g4.u06.l09.large_quotient","uae.g4.u06.l09.large_remainder"],
             "UAE_G4_STUDENT_04_01_PP379_384_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:10"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L4:COMMON:06:10", "number.quotient_with_zero_placeholder",
             "LONG_DIVISION_ZERO_IN_QUOTIENT",
-            ["uae.g4.u06.l03.base_ten_quotient", "uae.g4.u06.l03.base_ten_remainder"],
+            ["uae.g4.u06.l10.zero_middle_quotient","uae.g4.u06.l10.zero_middle_remainder"],
             "UAE_G4_STUDENT_04_01_PP387_392_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L4:COMMON:06:11"] = new LessonPracticeContract(

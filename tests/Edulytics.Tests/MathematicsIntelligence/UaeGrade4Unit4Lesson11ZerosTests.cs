@@ -9,7 +9,7 @@ public sealed class UaeGrade4Unit4Lesson11ZerosTests
     public void ExistingMultidigitFamiliesAreReusedAndValidated()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var contract));
-        Assert.Equal(3,contract!.AllowedQuestionFamilies.Count);
+        Assert.Equal(2,contract!.AllowedQuestionFamilies.Count);
         var engine=new ExactSkillContractQuestionEngine();
         foreach(var family in contract.AllowedQuestionFamilies)
         {

@@ -9,7 +9,7 @@ public sealed class UaeGrade4Unit4Lesson04AreaModelsTests
     public void ReusesThreeCorrectTwoDigitAreaFamilies()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var contract));
-        Assert.Equal(3,contract!.AllowedQuestionFamilies.Count);
+        Assert.Equal(2,contract!.AllowedQuestionFamilies.Count);
         var engine=new ExactSkillContractQuestionEngine();
         foreach(var f in contract.AllowedQuestionFamilies)
         {
@@ -20,7 +20,7 @@ public sealed class UaeGrade4Unit4Lesson04AreaModelsTests
             {
                 Assert.True(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(f,q.Parameters,"-5"));
-                Assert.Equal(3,q.Parameters.Count);
+                Assert.Equal(4,q.Parameters.Count);
             }
         }
     }

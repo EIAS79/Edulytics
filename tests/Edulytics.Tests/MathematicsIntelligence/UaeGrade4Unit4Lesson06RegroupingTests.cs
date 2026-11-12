@@ -9,7 +9,7 @@ public sealed class UaeGrade4Unit4Lesson06RegroupingTests
     public void RegroupingLessonReusesExactBaseTenFamilies()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var contract));
-        Assert.Equal(3,contract!.AllowedQuestionFamilies.Count);
+        Assert.Equal(2,contract!.AllowedQuestionFamilies.Count);
         var engine=new ExactSkillContractQuestionEngine();
         foreach(var family in contract.AllowedQuestionFamilies)
         {
@@ -20,7 +20,7 @@ public sealed class UaeGrade4Unit4Lesson06RegroupingTests
             {
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
                 Assert.False(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,"-3"));
-                Assert.Equal(3,q.Parameters.Count);
+                Assert.Equal(4,q.Parameters.Count);
             }
         }
     }

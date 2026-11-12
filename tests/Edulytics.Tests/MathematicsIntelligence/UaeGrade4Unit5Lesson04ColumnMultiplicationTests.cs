@@ -9,7 +9,7 @@ public sealed class UaeGrade4Unit5Lesson04ColumnMultiplicationTests
     public void ColumnMultiplicationReusesAllAreaFamilies()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var contract));
-        Assert.Equal(3,contract!.AllowedQuestionFamilies.Count);
+        Assert.Equal(2,contract!.AllowedQuestionFamilies.Count);
         var engine=new ExactSkillContractQuestionEngine();
         foreach(var f in contract.AllowedQuestionFamilies)
         {
