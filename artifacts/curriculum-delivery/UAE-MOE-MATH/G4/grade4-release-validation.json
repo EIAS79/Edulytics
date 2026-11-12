@@ -1,5 +1,5 @@
 {
-  "status": "NO_GO_MIGRATION_AUTH_E2E_AND_FINAL_CI",
+  "status": "NO_GO_GLOBAL_REGRESSION_AND_SOURCE_PARITY",
   "published": false,
   "merged": false,
   "renderDeploySha": null,
@@ -8,8 +8,28 @@
   "currentRenderLiveSha": "c0970107123a3e94ca5d0928b45a58c577162d17",
   "sourceGate": "PASS",
   "structuralGate": "PASS",
-  "migrationGate": "BLOCKED",
+  "migrationGate": "PASS_EPHEMERAL_REHEARSAL_ONLY_NOT_PRODUCTION",
   "localGrade4MathPassed": 645,
-  "authenticatedLearnerTests": "NOT_RUN",
-  "isolatedMigration": "BLOCKED_NEON_BRANCH_QUOTA"
+  "authenticatedLearnerTests": "PASS_132_ARABIC_LESSON_PAGES_396_PERSISTED_ATTEMPTS_CI",
+  "isolatedMigration": "PASS_EPHEMERAL_POSTGRES18_OLD93_TO_NEW132",
+  "stageDCandidateVerifiedSha": "4e0c7e540882150f68f57bf7d017510446482053",
+  "stageDWorkflowRunId": 43265207253,
+  "stageDWorkflowJobsPassed": 6,
+  "globalRegressionRunId": 43265207278,
+  "globalRegression": {
+    "passed": 16129,
+    "failed": 15,
+    "total": 16144
+  },
+  "mainParityRunId": 43265207650,
+  "mainParity": {
+    "missingLegacyLessonIds": 10,
+    "changedLegacyBodies": 83,
+    "status": "FAILED_REQUIRES_SCOPED_COMPATIBILITY"
+  },
+  "currentCandidateShaAtAssessment": "c88cc68d1a25abf089375aeace5946b6574451c8",
+  "currentCandidateAllGates": "PENDING_NEW_CI_AND_SOURCE_AUTHORITY",
+  "officialReferenceGap": 49,
+  "sourceAuthority": "UNVERIFIED_MINISTRY_ORIGIN_FOR_2026_2027_ANNUAL_PLAN",
+  "productionWritesPerformed": false
 }
