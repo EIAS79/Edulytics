@@ -45831,6 +45831,24 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u08.l03.subtract_like_extended_fraction",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_fraction",
+      "verificationPolicy": "g5-like-subtract-13-28-stageD-NOT_RUN",
+      "representations": [
+        "fraction_bars",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
