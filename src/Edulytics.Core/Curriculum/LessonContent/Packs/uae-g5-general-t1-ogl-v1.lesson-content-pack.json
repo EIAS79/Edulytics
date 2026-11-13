@@ -2309,23 +2309,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:02",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 5 Student Edition / Unit 6 / Lesson 2; official Arabic title: ترتيب العمليات",
+      "TitleSourceReference": "Owner-selected Arabic 02-1.pdf U06 L02 printed pp411–416 / PDF24–29; ترتيب العمليات",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G5:GENERAL:ANNUAL:U06:L02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 5 General / Annual / Unit 6 / Lesson 2",
+      "SourceLocator": "Grade_05/01_Student_Books/02-1.pdf printed411–416, PDF24–29",
       "SourceTitle": "UAE Grade 5 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
+      "SourceEdition": "Owner-selected 2025–2026 Arabic; official 2026–2027 detailed index unverified",
       "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "a665b52c365574406bc1705c5dde51ef2cb9cd0ceda720d24444fa66fc0bd42b",
+      "SourceSha256": "f0a111404b9e94bbc598f1ff4a7f80d68e434c54d3a30155858994404ddf5ab6",
       "CanonicalBodySha256": "a71e09efa440b214302a7b41938b5c2c269121b274bf0e2e27bf7e366620af07",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Arabic RichV2 and exact order/parentheses/exponent families extended in existing G4 algebra rules engine; tests written NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2336,6 +2336,16 @@
           "StepByStepSolutions": "Step 1: Identify the information and goal. Step 2: Choose an operation, model, graph, or geometric relationship. Step 3: Solve accurately. Step 4: Interpret the result. Step 5: Verify it independently.",
           "CommonMistakes": "Do not lose place value, units, fraction equivalence, decimal position, operation order, or geometric conditions.",
           "QuickSummary": "Order of Operations: choose the right representation, solve accurately, explain, and check."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "ترتيب العمليات",
+          "Explanation": "ترتيب العمليات قواعد تحدد أي خطوة نؤديها أولًا في تعبير يحتوي على أكثر من عملية. أبدأ بما داخل الأقواس، ثم الأسس، ثم الضرب والقسمة من اليسار إلى اليمين، وأخيرًا الجمع والطرح من اليسار إلى اليمين. الأقواس المتداخلة تُحل من الداخل إلى الخارج.",
+          "KeyConceptsAndRules": "١٢×٤+١٠×٨ = ٤٨+٨٠ = ١٢٨. في ٢٠−{٤+[٤+(١٠÷٢)]}: أقسم ١٠ على ٢ فأحصل على ٥، ثم ٤+٥=٩ ثم ٤+٩=١٣ ثم ٢٠−١٣=٧. الأسس تُحسب قبل الضرب والجمع: ٢²=٤، و٤²=١٦.",
+          "WorkedExamples": "في ٢٨+[(٢×٤²)÷٨]، أحسب ٤²=١٦ ثم ٢×١٦=٣٢، ثم ٣٢÷٨=٤، وأخيرًا ٢٨+٤=٣٢. وإذا حسبت ٥×(٩٢−١٨) فإن القوس أولًا: ٩٢−١٨=٧٤ ثم ٥×٧٤=٣٧٠.",
+          "StepByStepSolutions": "١. أبحث عن الأقواس وأبدأ بالأعمق. ٢. أحسب الأسس. ٣. أطبق الضرب والقسمة بالترتيب من اليسار إلى اليمين. ٤. أطبق الجمع والطرح من اليسار إلى اليمين. ٥. أراجع ترتيب الخطوات بالنظر إلى التعبير الأصلي.",
+          "CommonMistakes": "لا أجمع قبل الضرب عندما لا توجد أقواس تفرض ذلك. لا أستبدل الأس بضرب الأساس في الأس: ٤²=١٦ وليس ٨. عندما توجد عمليات بالمرتبة نفسها أنفذها من اليسار لليمين، ولا أتجاهل الأقواس المتداخلة.",
+          "QuickSummary": "الأقواس ← الأسس ← الضرب والقسمة ← الجمع والطرح، ومن اليسار إلى اليمين عند تساوي الرتبة."
         }
       ]
     },

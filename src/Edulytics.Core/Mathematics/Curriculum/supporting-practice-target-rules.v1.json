@@ -14780,6 +14780,27 @@
         "commonMistake": "لا أهمل عدد تكرارات الجزء أو أخلط بين التعبير العددي وقيمته.",
         "summary": "أكتب تعبيرين متكافئين ثم أتحقق من مجموع الأجزاء."
       }
+    },
+    {
+      "id": "uae-g5-u06-l02-order-of-operations",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:02$"
+      ],
+      "skillId": "number.algebra.evaluate_expressions",
+      "mechanic": "PARENTHESES_EXPONENTS_MULTIPLY_ADD",
+      "families": [
+        "uae.g5.u06.l02.multiply_before_add",
+        "uae.g5.u06.l02.nested_parentheses",
+        "uae.g5.u06.l02.exponents_before_products"
+      ],
+      "content": {
+        "concept": "الأقواس أولًا ثم الأسس ثم الضرب والقسمة ثم الجمع والطرح مع مراعاة اليسار إلى اليمين في المرتبة نفسها.",
+        "workedExample": "١٢×٤+١٠×٨=٤٨+٨٠=١٢٨.",
+        "solution": "أُكمل كل مستوى بالترتيب، ثم أتحقق باستبدال الخطوات في التعبير.",
+        "commonMistake": "لا أجمع ٤+١٠ قبل الضرب.",
+        "summary": "أحترم ترتيب العمليات والأقواس."
+      }
     }
   ]
 }

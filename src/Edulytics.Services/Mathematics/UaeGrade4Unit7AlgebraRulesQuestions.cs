@@ -16,11 +16,16 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     internal const string G5Two="uae.g5.u06.l01.two_group_bar_total";
     internal const string G5Paired="uae.g5.u06.l01.paired_group_expression_value";
     private static bool IsG5Bar(string? family)=>family is G5Equal or G5Two or G5Paired;
+    internal const string G5OrderBasic="uae.g5.u06.l02.multiply_before_add";
+    internal const string G5OrderNested="uae.g5.u06.l02.nested_parentheses";
+    internal const string G5OrderPowers="uae.g5.u06.l02.exponents_before_products";
+    private static bool IsG5Order(string? f)=>f is G5OrderBasic or G5OrderNested or G5OrderPowers;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f);
+    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported algebra rule family");
+        if(IsG5Order(f))return BuildG5Order(f,r);
         if(IsG5Bar(f))return BuildG5Bar(f,r);
         int n=r.Next(15,76),change=r.Next(2,10),factor=r.Next(2,7);
         var p=new Dictionary<string,int>{{"input",n},{"change",change},{"factor",factor}};
@@ -74,9 +79,68 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
         return true;
     }
 
+
+    private static int Grade5Pow(int n,int exponent)
+    {
+        int value=1;
+        for(int i=0;i<exponent;i++)value=checked(value*n);
+        return value;
+    }
+    private static Item BuildG5Order(string f,Random r)
+    {
+        int a,b,c,d;
+        string question;
+        if(f==G5OrderBasic)
+        {
+            a=r.Next(15,71);b=r.Next(2,10);c=r.Next(2,10);d=0;
+            question=$"احسب {a} + {b} × {c}. ابدأ بالضرب ثم الجمع.";
+        }
+        else if(f==G5OrderNested)
+        {
+            b=r.Next(2,13);d=r.Next(2,9);int q=r.Next(2,13);
+            c=d*q;a=b+q+r.Next(5,35);
+            question=$"أوجد قيمة {a} − {{ {b} + ({c} ÷ {d}) }} مبتدئًا بالأقواس الداخلية.";
+        }
+        else
+        {
+            a=r.Next(2,7);b=r.Next(2,4);c=r.Next(2,12);d=r.Next(2,12);
+            question=$"احسب {a} أس {b} + {c} × {d} وفق ترتيب العمليات.";
+        }
+        return new Item(f,question,
+            "أحسب الأقواس ثم الأسس ثم الضرب والقسمة من اليسار لليمين ثم الجمع والطرح من اليسار لليمين.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"d",d}});
+    }
+    private static bool ValidG5Order(string? f,IReadOnlyDictionary<string,int> p,out int result)
+    {
+        result=0;
+        if(!IsG5Order(f)||p.Count!=4||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("c",out int c)||!p.TryGetValue("d",out int d))
+            return false;
+        if(f==G5OrderBasic)
+        {
+            if(a is <15 or >70||b is <2 or >9||c is <2 or >9||d!=0)return false;
+            result=checked(a+b*c);
+        }
+        else if(f==G5OrderNested)
+        {
+            if(b is <2 or >12||d is <2 or >8||c%d!=0||
+               c/d is <2 or >12||a<b+c/d+5||a>b+c/d+34)return false;
+            result=checked(a-(b+c/d));
+        }
+        else
+        {
+            if(a is <2 or >6||b is <2 or >3||c is <2 or >11||d is <2 or >11)return false;
+            result=checked(Grade5Pow(a,b)+c*d);
+        }
+        return result>=0;
+    }
+
     private static bool Valid(string? f,IReadOnlyDictionary<string,int> p,out int x)
     {
         x=0;
+        if(IsG5Order(f))return ValidG5Order(f,p,out x);
         if(IsG5Bar(f))return ValidG5Bar(f,p,out x);
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("input",out int n)||
            !p.TryGetValue("change",out int c)||!p.TryGetValue("factor",out int k)||
