@@ -5,11 +5,14 @@ internal static class UaeGrade4Unit10Lesson08DecimalComparisonQuestions
 {
     internal const string Compare="uae.g4.u10.l08.decimal_compare";
     internal const string Larger="uae.g4.u10.l08.larger_hundredths";
+    internal const string G5Compare="uae.g5.u01.l07.compare_decimal_to_thousandths";
+    internal const string G5Greater="uae.g5.u01.l07.select_greater_decimal";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Compare or Larger;
+    internal static bool Supports(string? family)=>family is Compare or Larger or G5Compare or G5Greater;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal comparison");
+        if (family is G5Compare or G5Greater) return BuildG5(family,random);
         int a=random.Next(0,100),b=random.Next(0,100);
         if(a==b)b=(b+1)%100;
         var p=new Dictionary<string,int>{{"firstHundredths",a},{"secondHundredths",b}};
@@ -32,11 +35,13 @@ internal static class UaeGrade4Unit10Lesson08DecimalComparisonQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is G5Compare or G5Greater) return SolveG5(family,p);
         if(!Valid(family,p,out int answer))throw new InvalidOperationException("Invalid decimal comparison");
         return answer.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is G5Compare or G5Greater) return VerifyG5(family,p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {
@@ -45,5 +50,63 @@ internal static class UaeGrade4Unit10Lesson08DecimalComparisonQuestions
             _=>c
         }).Where(c=>c is not ' ' and not ',' and not '٬' and not '\u00a0').ToArray());
         return int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&actual==expected;
+    }
+    // Extend the reviewed Grade 4 comparison implementation without changing G4 families.
+    // Every decimal is represented by its exact integer number of thousandths.
+    private static Item BuildG5(string family,Random random)
+    {
+        int a=random.Next(0,300_001),b=random.Next(0,300_001);
+        if(family==G5Compare&&random.Next(7)==0)b=a;
+        if(family==G5Greater&&a==b)b=(a==300_000?299_999:a+1);
+        var p=new Dictionary<string,int>
+        { ["firstThousandths"]=a,["secondThousandths"]=b };
+        string first=(a/1000m).ToString("0.000",CultureInfo.InvariantCulture);
+        string second=(b/1000m).ToString("0.000",CultureInfo.InvariantCulture);
+        string question=family==G5Compare
+            ? $"ضع > أو < أو = بين العددين: {first} □ {second}."
+            : $"ما العدد الأكبر: {first} أم {second}؟ اكتب العدد العشري.";
+        return new Item(family,question,
+            "ساوِ عدد الخانات العشرية بالأصفار، ثم قارن المنازل من اليسار.",
+            family==G5Compare?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,p);
+    }
+
+    private static bool ValidG5(string family,IReadOnlyDictionary<string,int> p,
+        out int a,out int b)
+    {
+        a=b=0;
+        return family is G5Compare or G5Greater&&p.Count==2&&
+            p.TryGetValue("firstThousandths",out a)&&
+            p.TryGetValue("secondThousandths",out b)&&
+            a is >=0 and <=300_000&&b is >=0 and <=300_000&&
+            (family==G5Compare||a!=b);
+    }
+
+    private static string SolveG5(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5(family,p,out int a,out int b))
+            throw new InvalidOperationException("Invalid G5 decimal comparison.");
+        return family==G5Compare
+            ? a>b?">":a<b?"<":"="
+            : (Math.Max(a,b)/1000m).ToString("0.000",CultureInfo.InvariantCulture);
+    }
+
+    private static bool VerifyG5(string family,
+        IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5(family,p,out int a,out int b)||string.IsNullOrWhiteSpace(answer))
+            return false;
+        if(family==G5Compare)return answer.Trim()==(a<b?"<":a>b?">":"=");
+        string normalized=new(answer.Trim().Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',
+            _=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00A0').ToArray());
+        if(normalized.Length>20||normalized.Count(x=>x=='.')>1||
+           !normalized.All(x=>x is >= '0' and <= '9' or '.'))return false;
+        return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal result)&&
+            result*1000m==(a>b?a:b);
     }
 }

@@ -42570,6 +42570,44 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l07.compare_decimal_to_thousandths",
+      "version": 1,
+      "skillId": "decimals.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "g5-arabic-student-printed49-54-exact-thousandths-int-comparison-reparse-tests-not-run",
+      "representations": [
+        "number_line",
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l07.select_greater_decimal",
+      "version": 1,
+      "skillId": "decimals.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g5-arabic-student-printed49-54-exact-thousandths-int-comparison-reparse-tests-not-run",
+      "representations": [
+        "number_line",
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
