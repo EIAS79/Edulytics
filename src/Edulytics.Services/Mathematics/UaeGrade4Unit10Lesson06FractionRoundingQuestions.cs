@@ -6,7 +6,7 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     internal const string NearestBenchmark="uae.g4.u10.l06.nearest_benchmark";
     internal const string ComparedToHalf="uae.g4.u10.l06.compared_to_half";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is NearestBenchmark or ComparedToHalf or G5MixedNumberWhole || G5EstimateFamily(family);
+    internal static bool Supports(string? family)=>family is NearestBenchmark or ComparedToHalf or G5MixedNumberWhole || G5EstimateFamily(family)||G5ProductEstimate(family);
 
     // Reuse original G4 benchmark rounding for G5 proper fractions;
     // extend only mixed number rounding to the nearest integer.
@@ -14,6 +14,9 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     internal const string G5EstimateMixedSum="uae.g5.u08.l08.estimate_mixed_sum";
     internal const string G5ReasonableSum="uae.g5.u08.l08.check_reasonable_sum";
     internal const string G5EstimateMixedDifference="uae.g5.u08.l09.estimate_mixed_difference";
+    internal const string G5EstimateFractionProduct="uae.g5.u09.l02.estimate_fraction_product_quarters";
+    internal const string G5EstimateFractionWhole="uae.g5.u09.l02.estimate_whole_fraction_compatible";
+    private static bool G5ProductEstimate(string? f)=>f is G5EstimateFractionProduct or G5EstimateFractionWhole;
     private static bool G5EstimateFamily(string? f)=>f is G5EstimateMixedSum or G5ReasonableSum or G5EstimateMixedDifference;
     private static Item BuildG5MixedNumberWhole(Random random)
     {
@@ -110,11 +113,81 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
         return actual==want;
     }
 
+
+    // Grade5 estimation reuses the Grade4 nearest-benchmark mechanism.
+    // Outputs are machine-checkable number of quarters or compatible units.
+    private static int HalfUnitBenchmark(int n,int d)=>4*n<d?0:4*n<3*d?1:2;
+    private static Item BuildG5ProductEstimate(string family,Random random)
+    {
+        if(family==G5EstimateFractionWhole)
+        {
+            int whole=random.Next(11,40),d=random.Next(2,9),n=random.Next(1,d);
+            int compatible=((whole+d/2)/d)*d;
+            return new Item(family,$"للتقدير، قرّب {whole} إلى عدد متوافق مع المقام {d}. ما تقدير {n}/{d} من {whole}؟ اكتب القيمة الكلية التقديرية.",
+              $"العدد المتوافق هو {compatible}، وأخذ {n}/{d} منه يعني قسمة ثم ضرب.",
+              AssessmentItemType.Numeric,new Dictionary<string,int>{{"whole",whole},{"denominator",d},{"numerator",n}});
+        }
+        int d1=random.Next(3,13),d2=random.Next(3,13);
+        int n1=random.Next(1,d1),n2=random.Next(1,d2);
+        return new Item(family,
+          $"قرّب {n1}/{d1} و{n2}/{d2} كلاً منهما إلى ٠ أو ١/٢ أو ١، ثم قدّر حاصل الضرب. كم ربعًا في الناتج التقريبي؟ اكتب ٠ أو ١ أو ٢ أو ٤.",
+          "أقارن كل كسر بالصفر والنصف والواحد وأضرب الكسرين المرجعيين.",
+          AssessmentItemType.Numeric,new Dictionary<string,int>{{"n1",n1},{"d1",d1},{"n2",n2},{"d2",d2}});
+    }
+    private static bool G5ProductValid(string family,IReadOnlyDictionary<string,int> p,
+        out int estimate)
+    {
+        estimate=0;
+        if(family==G5EstimateFractionWhole)
+        {
+            if(p.Count!=3||!p.TryGetValue("whole",out int whole)||
+               !p.TryGetValue("denominator",out int d)||
+               !p.TryGetValue("numerator",out int n)||
+               whole is <11 or >39 || d is <2 or >8 || n<1||n>=d)return false;
+            int compatible=((whole+d/2)/d)*d;
+            estimate=compatible/d*n;return true;
+        }
+        if(family!=G5EstimateFractionProduct||p.Count!=4||
+           !p.TryGetValue("n1",out int n1)||!p.TryGetValue("d1",out int d1)||
+           !p.TryGetValue("n2",out int n2)||!p.TryGetValue("d2",out int d2)||
+           d1 is <3 or >12 || d2 is <3 or >12 ||
+           n1<1||n1>=d1||n2<1||n2>=d2)return false;
+        estimate=HalfUnitBenchmark(n1,d1)*HalfUnitBenchmark(n2,d2);
+        return true;
+    }
+    private static string SolveG5ProductEstimate(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!G5ProductValid(f,p,out int estimate))
+            throw new InvalidOperationException("Invalid G5 fractional product estimate.");
+        return estimate.ToString(CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5ProductEstimate(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!G5ProductValid(f,p,out int _)||string.IsNullOrWhiteSpace(answer)||
+           answer.Length>24)return false;
+        string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬')
+            .Select(ch=>ch switch {>= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+               >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),_=>ch}).ToArray());
+        if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int supplied))return false;
+        if(f==G5EstimateFractionWhole)
+        {
+            int d=p["denominator"],whole=p["whole"];
+            int left=whole%d,right=d-left;
+            int near=whole-left+(left>=right?d:0);
+            return supplied==near/d*p["numerator"];
+        }
+        int n1=p["n1"],d1=p["d1"],n2=p["n2"],d2=p["d2"];
+        int first=n1*4<d1?0:n1*4<3*d1?1:2;
+        int second=n2*4<d2?0:n2*4<3*d2?1:2;
+        return supplied==first*second;
+    }
+
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported benchmark rounding family");
         if(family==G5MixedNumberWhole)return BuildG5MixedNumberWhole(random);
         if(G5EstimateFamily(family))return BuildG5Estimation(family,random);
+        if(G5ProductEstimate(family))return BuildG5ProductEstimate(family,random);
         int d=random.Next(4,17),n=random.Next(1,d);
         var p=new Dictionary<string,int>{{"numerator",n},{"denominator",d}};
         string prompt=family==NearestBenchmark?
@@ -138,6 +211,7 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     {
         if(f==G5MixedNumberWhole)return SolveG5MixedNumberWhole(p);
         if(G5EstimateFamily(f))return SolveG5Estimation(f,p);
+        if(G5ProductEstimate(f))return SolveG5ProductEstimate(f,p);
         if(!Valid(f,p,out int a))throw new InvalidOperationException("Invalid benchmark rounding parameters");
         return a.ToString(CultureInfo.InvariantCulture);
     }
@@ -145,6 +219,7 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     {
         if(f==G5MixedNumberWhole)return VerifyG5MixedNumberWhole(p,answer);
         if(G5EstimateFamily(f))return VerifyG5Estimation(f,p,answer);
+        if(G5ProductEstimate(f))return VerifyG5ProductEstimate(f,p,answer);
         if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {
