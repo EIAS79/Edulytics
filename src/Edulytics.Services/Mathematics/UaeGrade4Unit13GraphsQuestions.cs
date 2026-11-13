@@ -10,7 +10,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -65,10 +65,71 @@ internal static class UaeGrade4Unit13GraphsQuestions
      return actual==(f==G5MapHorizontal?dx:f==G5MapVertical?dy:dx+dy);
  }
 
+
+ // UAE G5 U06 L10: coordinate reading on first-quadrant grid, shared graph engine.
+ // Short-answer ordered pair has structured-entry routing; drawings are manual.
+ internal const string G5CoordX="uae.g5.u06.l10.coordinate_x";
+ internal const string G5CoordY="uae.g5.u06.l10.coordinate_y";
+ internal const string G5CoordPair="uae.g5.u06.l10.write_ordered_pair";
+ private static bool IsG5Coordinates(string? f)=>f is G5CoordX or G5CoordY or G5CoordPair;
+ private static Item BuildG5Coordinates(string f,Random rng)
+ {
+     int x=rng.Next(1,8),y=rng.Next(1,8);
+     var p=new Dictionary<string,int>{{"x",x},{"y",y}};
+     string q=f switch
+     {
+         G5CoordX=>$"على شبكة في الربع الأول، النقطة أ عند ({x}، {y}). ما الإحداثي الأفقي x؟",
+         G5CoordY=>$"على شبكة في الربع الأول، النقطة أ عند ({x}، {y}). ما الإحداثي الرأسي y؟",
+         _=>$"من نقطة الأصل تحرك {x} وحدات يمينًا و{y} وحدات لأعلى. اكتب الزوج المرتب (x,y) للنقطة."
+     };
+     return new Item(f,q,
+         "العدد الأول هو الإحداثي الأفقي x والعدد الثاني هو الإحداثي الرأسي y.",
+         f==G5CoordPair?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Coordinates(string f,IReadOnlyDictionary<string,int> p,
+     out int x,out int y)
+ {
+     x=y=0;
+     return IsG5Coordinates(f)&&p.Count==2&&p.TryGetValue("x",out x)&&
+            p.TryGetValue("y",out y)&&x is >=1 and <=7 && y is >=1 and <=7;
+ }
+ private static string SolveG5Coordinates(string f,IReadOnlyDictionary<string,int> p)
+ {
+     if(!ValidG5Coordinates(f,p,out int x,out int y))
+         throw new InvalidOperationException("Invalid G5 coordinate problem");
+     return f==G5CoordX?x.ToString(CultureInfo.InvariantCulture):
+            f==G5CoordY?y.ToString(CultureInfo.InvariantCulture):
+            $"({x},{y})";
+ }
+ private static bool VerifyG5Coordinates(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+     if(!ValidG5Coordinates(f,p,out int x,out int y)||
+        string.IsNullOrWhiteSpace(answer)||answer.Length>32)return false;
+     string s=new(answer.Trim().Select(ch=>ch switch
+       {
+          >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+          >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+          '،'=>',',
+          _=>ch
+       }).Where(ch=>!char.IsWhiteSpace(ch)).ToArray());
+     if(f==G5CoordPair)
+     {
+         if(s.Length<5||s[0]!='('||s[^1]!=')')return false;
+         var parts=s[1..^1].Split(',');
+         return parts.Length==2&&
+             int.TryParse(parts[0],NumberStyles.None,CultureInfo.InvariantCulture,out int px)&&
+             int.TryParse(parts[1],NumberStyles.None,CultureInfo.InvariantCulture,out int py)&&
+             px==x&&py==y;
+     }
+     if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+     return actual==(f==G5CoordX?x:y);
+ }
+
  private static bool IsPie(string f)=>f is PieCategory or PieRest;
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Coordinates(f))return BuildG5Coordinates(f,random);
    if(IsG5Map(f))return BuildG5Map(f,random);
    Dictionary<string,int> p;
    if(IsPie(f))
@@ -115,12 +176,14 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Coordinates(f))return SolveG5Coordinates(f,p);
    if(IsG5Map(f))return SolveG5Map(f,p);
    if(!Valid(f,p,out int result))throw new InvalidOperationException("Invalid graph data");
    return result.ToString(CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Coordinates(f))return VerifyG5Coordinates(f,p,answer);
    if(IsG5Map(f))return VerifyG5Map(f,p,answer);
    if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
    string normalized=new(answer.Trim().Select(c=>c switch
