@@ -86,10 +86,10 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
             if(p.Count!=4||!p.TryGetValue("a",out int a)||
                !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
                !IsPrime(a)||!IsPrime(b)||!IsPrime(c)||
-               a is >7 or <2||b is >7 or <2||c is >7 or <2||
+               a is >13 or <2||b is >13 or <2||c is >13 or <2||
                n%(a*b*c)!=0)return false;
             int missing=n/(a*b*c);
-            if(!IsPrime(missing)||missing>7)return false;
+            if(!IsPrime(missing)||missing>13)return false;
             answer=missing;
             return true;
         }

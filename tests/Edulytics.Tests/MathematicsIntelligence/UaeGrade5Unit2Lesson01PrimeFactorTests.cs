@@ -46,7 +46,7 @@ public sealed class UaeGrade5Unit2Lesson01PrimeFactorTests
         var p=new Dictionary<string,int>{{"n",104},{"a",2},{"b",2},{"c",13}};
         const string missing="uae.g5.u02.l01.complete_factor_tree";
         // This fixture deliberately tests the source's four-prime factor tree.
-        Assert.False(ExactSkillContractQuestionEngine.Verify(missing,p,"2"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(missing,p,"2"));
         p["n"]=2*2*3*7;
         p["c"]=7;
         Assert.True(ExactSkillContractQuestionEngine.Verify(missing,p,"٣"));
