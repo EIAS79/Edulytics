@@ -15425,6 +15425,26 @@
         "commonMistake": "لا أهمل الوحدة المستلفة.",
         "summary": "إعادة تسمية الأعداد الكسرية للطرح."
       }
+    },
+    {
+      "id": "uae-g5-u09-l01-fraction-of-number",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:01$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "أقسم العدد إلى مجموعات متساوية ثم آخذ عددًا منها.",
+        "workedExample": "١/٣ من ١٥=٥.",
+        "solution": "أقسم الكل على المقام وأضرب في البسط.",
+        "commonMistake": "لا أقسم على البسط.",
+        "summary": "جزء من عدد باستخدام نموذج شريطي."
+      }
     }
   ]
 }
