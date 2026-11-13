@@ -32,7 +32,7 @@
       "Pages": [
         30
       ],
-      "Status": "ORIGINAL_ARABIC_CANDIDATE",
+      "Status": "ORIGINAL_ARABIC_AUTHORED",
       "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
     },
     {
@@ -42,7 +42,7 @@
         30,
         31
       ],
-      "Status": "ORIGINAL_VISUAL_CANDIDATE",
+      "Status": "ORIGINAL_VISUAL_AUTHORED",
       "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
     },
     {
@@ -52,7 +52,7 @@
         31,
         32
       ],
-      "Status": "ORIGINAL_ARABIC_CANDIDATE",
+      "Status": "ORIGINAL_ARABIC_AUTHORED",
       "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
     },
     {
@@ -62,7 +62,7 @@
         31,
         32
       ],
-      "Status": "EXACT_DIGITAL_ASSESSMENT_AUTHORED_NOT_RUNTIME_VERIFIED"
+      "Status": "EXACT_DIGITAL_ASSESSMENT_AUTHORED_PENDING_STAGE_D"
     },
     {
       "SourceElementId": "G5-01-01-05",
@@ -122,11 +122,14 @@
     "Tests": "WRITTEN_NOT_RUN",
     "Status": "STAGE_C_AUTHORED_NOT_EXECUTED"
   },
-  "StageA": "LOCAL_2025_2026_PAGES_REVIEWED__CURRENT_SEQUENCE_UNKNOWN",
-  "StageB": "RICH_ARABIC_CANDIDATE",
-  "StageC": "G5_EXACT_ENGINE_EXTENSION__SKILL_AND_FAMILY_REGISTRIES__REVIEWED_EXACT_CODE_RULE_WRITTEN_NOT_RUN",
-  "Status": "A_C_IN_PROGRESS",
+  "StageA": "LOCAL_STUDENT_2025_2026_PDF_PAGES_30_35_CLOSED__2026_2027_RESEQUENCING_UNVERIFIED",
+  "StageB": "ORIGINAL_ARABIC_CONTENT_RICHV2_CLOSED__RUNTIME_NOT_VERIFIED",
+  "StageC": "EXACT_INT64_PRACTICE_SKILL_FAMILIES_3_AND_GRADER_VERIFIER_AUTHORED__TESTS_WRITTEN_NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
   "TestsRun": "NOT_RUN",
   "StageDRun": false,
-  "Rights": "Only internal source page hashes and original learner content"
+  "Rights": "Only internal source page hashes and original learner content",
+  "SourceSelectionScope": "Owner-selected local Arabic student book with year-neutral skill alignment. Grade 5 official 2026–2027 lesson order is NOT verified.",
+  "ABCSourceShapeChecks": "PASSED_STATIC_JSON_AND_JAVASCRIPT_MATH_INSPECTION_ONLY",
+  "ReadinessMeaning": "A/B/C authored and structurally aligned to selected local book; NOT StageD verification, NOT full 2026-27 official source parity"
 }
