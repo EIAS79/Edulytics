@@ -14422,6 +14422,27 @@
         "commonMistake": "الاعتماد على التقدير دون اختبار حاصل الضرب.",
         "summary": "أعدل رقم الحاصل حتى تصبح القسمة صحيحة."
       }
+    },
+    {
+      "id": "uae-g5-u04-l05-large-number-long-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:05$"
+      ],
+      "skillId": "number.long_division_large_numbers",
+      "mechanic": "LONG_DIVISION_LARGE_NUMBER_TWO_THREE_DIGIT_DIVISOR",
+      "families": [
+        "uae.g5.u04.l05.large_quotient",
+        "uae.g5.u04.l05.large_remainder",
+        "uae.g5.u04.l05.zero_place_quotient"
+      ],
+      "content": {
+        "concept": "أقسم أعدادًا كبيرة على عدد من رقمين أو ثلاثة مع المحافظة على مواضع صفر الحاصل.",
+        "workedExample": "٢٢٬٥٠٠÷٧٥=٣٠٠؛ لأن ٧٥×٣٠٠=٢٢٬٥٠٠.",
+        "solution": "اكتب أرقام الحاصل في منازلها، أنزل رقمًا في كل دورة، وتحقق بالمضاعفة والباقي.",
+        "commonMistake": "إسقاط الصفر الداخلي أو التأخر في إنزال رقم يغير قيمة الحاصل.",
+        "summary": "أراجع حاصل القسمة المطولة بالضرب والباقي."
+      }
     }
   ]
 }

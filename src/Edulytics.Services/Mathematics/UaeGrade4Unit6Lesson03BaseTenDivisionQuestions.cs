@@ -5,6 +5,10 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
 {
     internal const string Quotient="uae.g4.u06.l03.base_ten_quotient";
     internal const string Remainder="uae.g4.u06.l03.base_ten_remainder";
+    internal const string G5U4LargeQuotient="uae.g5.u04.l05.large_quotient";
+    internal const string G5U4LargeRemainder="uae.g5.u04.l05.large_remainder";
+    internal const string G5U4LargeZero="uae.g5.u04.l05.zero_place_quotient";
+    private static bool IsG5U4Large(string? f)=>f is G5U4LargeQuotient or G5U4LargeRemainder or G5U4LargeZero;
     internal const string G5U4AdjustQuotient="uae.g5.u04.l04.corrected_trial_quotient";
     internal const string G5U4AdjustHigh="uae.g5.u04.l04.trial_too_high_indicator";
     internal const string G5U4AdjustRemainder="uae.g5.u04.l04.adjusted_remainder";
@@ -39,10 +43,11 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f) || IsG5U4Long(f) || IsG5U4Adjust(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f) || IsG5U4Long(f) || IsG5U4Adjust(f) || IsG5U4Large(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
+        if(IsG5U4Large(f))return BuildG5U4Large(f,r);
         if(IsG5U4Adjust(f))return BuildG5U4Adjust(f,r);
         if(IsG5U4Long(f))return BuildG5U4Long(f,r);
         if(IsG5U4Block(f))return BuildG5U4Block(f,r);
@@ -63,6 +68,61 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
 
 
 
+
+
+    // Extend the existing exact long-division engine to five-digit dividends
+    // and, where applicable, three-digit divisors. Preserve G4/G5 U3 routes.
+    private static Item BuildG5U4Large(string f,Random random)
+    {
+        int divisor,quotient;
+        if(f==G5U4LargeZero)
+        {
+            divisor=random.Next(50,201);
+            quotient=random.Next(2,5)*100+random.Next(1,10);
+        }
+        else
+        {
+            divisor=random.Next(12,902);
+            int qMin=Math.Max(12,(10_000+divisor-1)/divisor);
+            int qMax=Math.Min(3200,90_000/divisor);
+            quotient=random.Next(qMin,qMax+1);
+        }
+        int n=checked(divisor*quotient+random.Next(0,divisor));
+        string prompt=f switch
+        {
+            G5U4LargeQuotient=>$"اقسم العدد الكبير {n} على {divisor} بالقسمة المطولة، واكتب الحاصل الصحيح دون الباقي.",
+            G5U4LargeRemainder=>$"في قسمة {n} على {divisor}، ما الباقي بعد إيجاد الحاصل الكامل؟",
+            _=>$"اقسم {n} على {divisor}. انتبه إلى الصفر داخل منازل الحاصل: ما حاصل القسمة الصحيح دون الباقي؟"
+        };
+        return new Item(f,prompt,
+            "ابدأ من أعلى منزلة، ثم اقسم واضرب واطرح وأنزل، وضع صفرًا في الحاصل عندما تكون المنزلة أصغر من المقسوم عليه.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",n},{"divisor",divisor}});
+    }
+    private static bool ValidG5U4Large(string f,IReadOnlyDictionary<string,int> p,out int answer)
+    {
+        answer=0;
+        if(!IsG5U4Large(f)||p.Count!=2||
+           !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+           n is <10_000 or >99_999||d is <12 or >901||n/d is <12 or >3200)return false;
+        int q=n/d;
+        if(f==G5U4LargeZero && (d is <50 or >200||q/100 is <2 or >4||
+            q%100 is <1 or >9))return false;
+        answer=f==G5U4LargeRemainder?n%d:q;
+        return true;
+    }
+    private static bool VerifyG5U4Large(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5U4Large(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim()
+            .Where(ch=>ch!=','&&ch!='٬'&&ch!=' '&&ch!='\u00a0'&&ch!='\u202f')
+            .Select(ch=>ch is >= '٠' and <= '٩'?(char)('0'+ch-'٠'):
+                        ch is >= '۰' and <= '۹'?(char)('0'+ch-'۰'):ch).ToArray());
+        if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        int n=p["dividend"],d=p["divisor"];
+        return f==G5U4LargeRemainder
+            ?v>=0&&v<d&&(n-v)%d==0
+            :v>=0&&(long)v*d<=n&&n-(long)v*d<d;
+    }
 
     // G5 Unit 4 L04: retain the G4 exact long-division solver architecture.
     // Trial is a proposed quotient, NOT an answer field.
@@ -453,6 +513,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsG5U4Large(f))return ValidG5U4Large(f,p,out expected);
         if(IsG5U4Adjust(f))return ValidG5U4Adjust(f,p,out expected);
         if(IsG5U4Long(f))return ValidG5U4Long(f,p,out expected);
         if(IsG5U4Block(f))return ValidG5U4Block(f,p,out expected);
@@ -475,6 +536,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5U4Large(f))return VerifyG5U4Large(f,p,answer);
         if(IsG5U4Adjust(f))return VerifyG5U4Adjust(f,p,answer);
         if(IsG5U4Long(f))return VerifyG5U4Long(f,p,answer);
         if(IsG5U4Block(f))return VerifyG5U4Block(f,p,answer);
