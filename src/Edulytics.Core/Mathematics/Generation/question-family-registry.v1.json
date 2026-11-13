@@ -43605,6 +43605,42 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l11.equal_group_count",
+      "version": 1,
+      "skillId": "number.division.equal_groups_remainder_models",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-student-print221-226-group-remainder-model-numeric-recompute-tests-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l11.model_leftover_count",
+      "version": 1,
+      "skillId": "number.division.equal_groups_remainder_models",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-student-print221-226-group-remainder-model-numeric-recompute-tests-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

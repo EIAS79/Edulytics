@@ -14278,6 +14278,26 @@
         "commonMistake": "حذف صفر وسط الحاصل يغير قيمة العدد.",
         "summary": "الصفر الوسطي جزء من القيمة المكانية للحاصل."
       }
+    },
+    {
+      "id": "uae-g5-u03-l11-remainder-equal-groups",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:11$"
+      ],
+      "skillId": "number.division.equal_groups_remainder_models",
+      "mechanic": "EQUAL_GROUP_MODEL_AND_REMAINDER",
+      "families": [
+        "uae.g5.u03.l11.equal_group_count",
+        "uae.g5.u03.l11.model_leftover_count"
+      ],
+      "content": {
+        "concept": "التوزيع المتساوي يقسم العدد إلى مجموعات كاملة وباقي غير موزع.",
+        "workedExample": "٤٦÷٣=١٥ والباقي١، لأن ٣×١٥+١=٤٦.",
+        "solution": "امثل مجموعات متساوية، احسب عناصر كل مجموعة والباقي، وتحقق.",
+        "commonMistake": "لا توزع عناصر الباقي في مجموعة واحدة فقط.",
+        "summary": "عدد المجموعات × عدد العناصر + الباقي = المقسوم."
+      }
     }
   ]
 }
