@@ -44061,6 +44061,60 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u05.l01.round_decimal_to_whole",
+      "version": 1,
+      "skillId": "number.rounding_to_estimate_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G5-Arabic-local-2025-26-print-303-308-decimal-rounded-whole-and-ten-estimation-independent-recompute-NOT_RUN",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u05.l01.round_both_factors",
+      "version": 1,
+      "skillId": "number.rounding_to_estimate_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G5-Arabic-local-2025-26-print-303-308-decimal-rounded-whole-and-ten-estimation-independent-recompute-NOT_RUN",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u05.l01.estimate_above_exact",
+      "version": 1,
+      "skillId": "number.rounding_to_estimate_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "G5-Arabic-local-2025-26-print-303-308-decimal-rounded-whole-and-ten-estimation-independent-recompute-NOT_RUN",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

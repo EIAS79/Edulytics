@@ -14465,6 +14465,27 @@
         "commonMistake": "مساواة الهدف ليست تجاوزه، كما يجب توحيد وحدات المساحة والعدد.",
         "summary": "أحل مسألة أبسط ثم أتحقق في سياق المسألة الأصلية."
       }
+    },
+    {
+      "id": "uae-g5-u05-l01-decimal-product-estimation",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:01$"
+      ],
+      "skillId": "number.rounding_to_estimate_products",
+      "mechanic": "ROUND_DECIMAL_PRODUCT_ESTIMATION",
+      "families": [
+        "uae.g5.u05.l01.round_decimal_to_whole",
+        "uae.g5.u05.l01.round_both_factors",
+        "uae.g5.u05.l01.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "أقدر حاصل ضرب عدد عشري في عدد كلي بتقريب العدد العشري إلى كلي مناسب وقد أقرب العامل الآخر إلى عشرة.",
+        "workedExample": "٥٩٫٨×٥≈٦٠×٥=٣٠٠؛ الناتج الدقيق قريب من التقدير.",
+        "solution": "أقرب وفق المطلوب ثم أضرب وأقارن بناتج الضرب الدقيق لتقرير المعقولية.",
+        "commonMistake": "حساب الناتج الدقيق وتسميته تقديرًا أو تجاهل العامل الذي طُلب تقريبه.",
+        "summary": "أستخدم أعدادًا متوافقة لأقدّر حاصل الضرب وأفسر مقدار التقريب."
+      }
     }
   ]
 }
