@@ -14073,6 +14073,28 @@
         "commonMistake": "إهمال الصفر الدال على منزلة العشرات.",
         "summary": "أحسب النواتج الجزئية وأجمع وأتحقق بالتقدير."
       }
+    },
+    {
+      "id": "uae-g5-u03-l01-fact-family-inverse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:01$"
+      ],
+      "skillId": "number.whole.divide",
+      "mechanic": "MULTIPLICATION_DIVISION_FACT_FAMILY",
+      "families": [
+        "uae.g5.u03.l01.quotient_from_fact",
+        "uae.g5.u03.l01.missing_multiplier",
+        "uae.g5.u03.l01.missing_divisor",
+        "uae.g5.u03.l01.related_product"
+      ],
+      "content": {
+        "concept": "استخدم عائلة حقائق تربط العدد المقسوم بالمقسوم عليه وناتج القسمة.",
+        "workedExample": "٦×٨=٤٨، إذن ٤٨÷٦=٨ و٤٨÷٨=٦.",
+        "solution": "ابحث عن حقيقة الضرب ثم اعكسها إلى قسمة.",
+        "commonMistake": "لا تخلط بين المقسوم والمقسوم عليه، ولا تقسّم على صفر.",
+        "summary": "الضرب والقسمة عمليتان عكسيتان."
+      }
     }
   ]
 }
