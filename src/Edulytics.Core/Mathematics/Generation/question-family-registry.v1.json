@@ -43533,6 +43533,42 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l09.first_digit_place",
+      "version": 1,
+      "skillId": "number.long_division.first_quotient_digit_place",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade5-student-print-209-214-quotient-leading-position-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l09.first_quotient_digit",
+      "version": 1,
+      "skillId": "number.long_division.first_quotient_digit_place",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-grade5-student-print-209-214-quotient-leading-position-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

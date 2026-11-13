@@ -12,17 +12,21 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     internal const string G5PartialTens="uae.g5.u03.l07.tens_partial_quotient";
     internal const string G5LongQuotient="uae.g5.u03.l08.long_division_quotient";
     internal const string G5LongRemainder="uae.g5.u03.l08.long_division_remainder";
+    internal const string G5FirstPlace="uae.g5.u03.l09.first_digit_place";
+    internal const string G5FirstDigit="uae.g5.u03.l09.first_quotient_digit";
+    private static bool IsG5First(string? f)=>f is G5FirstPlace or G5FirstDigit;
     private static bool IsG5Long(string? f)=>f is G5LongQuotient or G5LongRemainder;
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
         if(IsG5(f))return BuildG5(f,r);
         if(IsG5Partial(f))return BuildG5Partial(f,r);
         if(IsG5Long(f))return BuildG5Long(f,r);
+        if(IsG5First(f))return BuildG5First(f,r);
         int dividend=r.Next(20,10000),divisor=r.Next(2,10);
         string prompt=f==Quotient
           ?$"مثّل {dividend} ÷ {divisor} بمكعبات العشرات والآحاد ثم اكتب ناتج القسمة الصحيح دون الباقي."
@@ -137,12 +141,50 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         return value>=0&&value<d&&(long)quotient*d+value==n;
     }
 
+
+    private static Item BuildG5First(string f,Random r)
+    {
+        int n=r.Next(100,10_000),d=r.Next(2,10);
+        string prompt=f==G5FirstPlace
+           ?$"في القسمة المطولة {n} ÷ {d}، ما قيمة منزلة أول رقم غير صفري في الحاصل (١ أو ١٠ أو ١٠٠ أو ١٠٠٠)؟"
+           :$"في القسمة المطولة {n} ÷ {d}، ما أول رقم غير صفري يُكتب في الحاصل من اليسار؟";
+        return new Item(f,prompt,
+           "قارن أول منزلة بالمقسوم عليه، ثم ضم الرقم التالي عند الحاجة قبل كتابة أول رقم في الحاصل.",
+           AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",n},{"divisor",d}});
+    }
+    private static bool ValidG5First(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5First(f)||p.Count!=2||
+            !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+            n is <100 or >9999||d is <2 or >9)return false;
+        int q=n/d,place=1;
+        while(q>=10){q/=10;place*=10;}
+        expected=f==G5FirstPlace?place:q;
+        return true;
+    }
+    private static bool VerifyG5First(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!IsG5First(f)||p.Count!=2||
+           !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+           n is <100 or >9999||d is <2 or >9||string.IsNullOrWhiteSpace(answer))
+            return false;
+        int q=n/d;
+        string digits=q.ToString(CultureInfo.InvariantCulture);
+        int expected=f==G5FirstPlace? (int)Math.Pow(10,digits.Length-1):digits[0]-'0';
+        string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
+            .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):
+                      c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
+        return int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&actual==expected;
+    }
+
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
         if(IsG5(f))return ValidG5(f,p,out expected);
         if(IsG5Partial(f))return ValidG5Partial(f,p,out expected);
         if(IsG5Long(f))return ValidG5Long(f,p,out expected);
+        if(IsG5First(f))return ValidG5First(f,p,out expected);
         if(!Supports(f)||p.Count!=2||!p.TryGetValue("dividend",out int n)||
            !p.TryGetValue("divisor",out int d)||n is <20 or >9999||d is <2 or >9)return false;
         expected=f==Quotient?n/d:n%d;
@@ -156,6 +198,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(IsG5Long(f))return VerifyG5Long(f,p,answer);
+        if(IsG5First(f))return VerifyG5First(f,p,answer);
         if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
             .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());

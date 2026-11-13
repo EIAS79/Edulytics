@@ -14238,6 +14238,26 @@
         "commonMistake": "لا تنزل رقمًا أو تكتب رقم الحاصل في موضع خاطئ.",
         "summary": "قسمة ثلاثة وأربعة أرقام على مقسوم عليه من رقم واحد."
       }
+    },
+    {
+      "id": "uae-g5-u03-l09-leading-quotient-position",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:09$"
+      ],
+      "skillId": "number.long_division.first_quotient_digit_place",
+      "mechanic": "FIRST_QUOTIENT_DIGIT_AND_PLACE",
+      "families": [
+        "uae.g5.u03.l09.first_digit_place",
+        "uae.g5.u03.l09.first_quotient_digit"
+      ],
+      "content": {
+        "concept": "يبدأ أول رقم في الحاصل عند أول منزلة يمكن تقسيمها على المقسوم عليه.",
+        "workedExample": "١٣٥÷٣=٤٥؛ أول رقم ٤ في العشرات.",
+        "solution": "قارن المنزلة الأولى، وضُم التالية عند الحاجة، وأكمل القسمة.",
+        "commonMistake": "وضع الرقم الأول في منزلة لا تكفي للقسمة.",
+        "summary": "أحدد منزلة بدء الحاصل ورقمه الأول قبل متابعة القسمة."
+      }
     }
   ]
 }
