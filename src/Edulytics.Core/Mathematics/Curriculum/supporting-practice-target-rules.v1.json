@@ -14361,6 +14361,26 @@
         "commonMistake": "التقدير لا يساوي دائمًا الحاصل الدقيق.",
         "summary": "أقدر ناتج قسمة رقم كبير على مقسوم عليه من رقمين وأتحقق من معقوليته."
       }
+    },
+    {
+      "id": "uae-g5-u04-l02-base-ten-two-digit-grouping",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:02$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "BASE_TEN_TWO_DIGIT_GROUPS",
+      "families": [
+        "uae.g5.u04.l02.base_ten_group_quotient",
+        "uae.g5.u04.l02.base_ten_group_remainder"
+      ],
+      "content": {
+        "concept": "أمثل المقسوم بمكعبات المئات والعشرات والآحاد، وأعيد التجميع ثم أقسم على عدد من رقمين.",
+        "workedExample": "156÷12=13 لأن 12×13=156؛ ويمكن إعادة تجميع المئة إلى عشر عشرات ثم الآحاد.",
+        "solution": "مثّل المقسوم؛ وزّع المئات والعشرات ثم بدّل البواقي إلى آحاد وأكمل المجموعات.",
+        "commonMistake": "لا تخلط بين الباقي ونصيب المجموعة ولا توزع العشرات كآحاد دون إعادة تجميع.",
+        "summary": "أعيد التجميع وأتحقق من المقسوم = المقسوم عليه × الحاصل + الباقي."
+      }
     }
   ]
 }

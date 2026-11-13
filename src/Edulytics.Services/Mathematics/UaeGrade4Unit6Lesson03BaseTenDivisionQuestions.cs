@@ -5,6 +5,9 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
 {
     internal const string Quotient="uae.g4.u06.l03.base_ten_quotient";
     internal const string Remainder="uae.g4.u06.l03.base_ten_remainder";
+    internal const string G5U4BlockQuotient="uae.g5.u04.l02.base_ten_group_quotient";
+    internal const string G5U4BlockRemainder="uae.g5.u04.l02.base_ten_group_remainder";
+    private static bool IsG5U4Block(string? f)=>f is G5U4BlockQuotient or G5U4BlockRemainder;
     internal const string G5Quotient="uae.g5.u03.l03.two_digit_quotient";
     internal const string G5Remainder="uae.g5.u03.l03.two_digit_remainder";
     internal const string G5Distributed="uae.g5.u03.l07.distributed_quotient";
@@ -29,10 +32,11 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
+        if(IsG5U4Block(f))return BuildG5U4Block(f,r);
         if(IsG5(f))return BuildG5(f,r);
         if(IsG5Partial(f))return BuildG5Partial(f,r);
         if(IsG5Long(f))return BuildG5Long(f,r);
@@ -46,6 +50,42 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
           :$"قسّم {dividend} إلى {divisor} مجموعات متساوية باستخدام مكعبات القيمة المكانية. كم آحادًا تتبقى؟";
         return new Item(f,prompt,"أوزع العشرات، وأعيد تجميع العشرات المتبقية إلى آحاد، ثم أوزع الآحاد بالتساوي.",
             AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",dividend},{"divisor",divisor}});
+    }
+
+
+    // G5 U04 L02: extend the same base-ten regrouping mechanism to a
+    // two-digit group count. No change to previously registered families.
+    private static Item BuildG5U4Block(string family,Random random)
+    {
+        int divisor=random.Next(11,23),quotient=random.Next(9,19),remainder=random.Next(0,divisor);
+        int dividend=checked(divisor*quotient+remainder);
+        string prompt=family==G5U4BlockQuotient
+            ?$"مثّل {dividend} بمكعبات القيمة المكانية ثم أعد تجميع المئات والعشرات ووزّعها على {divisor} مجموعة متساوية. كم قطعة في كل مجموعة كاملة؟"
+            :$"في توزيع {dividend} مكعبًا إلى {divisor} مجموعة متساوية باستخدام المئات والعشرات والآحاد، كم مكعبًا يبقى بعد توزيع المجموعات الكاملة؟";
+        return new Item(family,prompt,
+            "أحوّل مئة إلى عشر عشرات ثم أحوّل العشرات عند الحاجة إلى آحاد. أتحقق: المقسوم = عدد المجموعات × نصيب المجموعة + الباقي.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",dividend},{"divisor",divisor}});
+    }
+    private static bool ValidG5U4Block(string family,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5U4Block(family)||p.Count!=2||
+           !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+           d is <11 or >22||n is <99 or >418||n/d is <9 or >18)return false;
+        expected=family==G5U4BlockQuotient?n/d:n%d;
+        return true;
+    }
+    private static bool VerifyG5U4Block(string family,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5U4Block(family,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string s=new(answer.Trim().Where(x=>x!=','&&x!='٬'&&x!=' '&&x!='\u00a0'&&x!='\u202f')
+            .Select(x=>x is >= '٠' and <= '٩'?(char)('0'+x-'٠'):
+                       x is >= '۰' and <= '۹'?(char)('0'+x-'۰'):x).ToArray());
+        if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        int n=p["dividend"],d=p["divisor"];
+        return family==G5U4BlockQuotient
+            ?v>=0&&(long)v*d<=n&&n-(long)v*d<d
+            :v>=0&&v<d&&(n-v)%d==0;
     }
 
     // Lesson-specific range extension of the existing base-ten division engine.
@@ -322,6 +362,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsG5U4Block(f))return ValidG5U4Block(f,p,out expected);
         if(IsG5(f))return ValidG5(f,p,out expected);
         if(IsG5Partial(f))return ValidG5Partial(f,p,out expected);
         if(IsG5Long(f))return ValidG5Long(f,p,out expected);
@@ -341,6 +382,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5U4Block(f))return VerifyG5U4Block(f,p,answer);
         if(IsG5Long(f))return VerifyG5Long(f,p,answer);
         if(IsG5First(f))return VerifyG5First(f,p,answer);
         if(IsG5Zero(f))return VerifyG5Zero(f,p,answer);
