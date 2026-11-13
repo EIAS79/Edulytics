@@ -12,6 +12,9 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string NetMissing="uae.g4.u12.l04.net_missing_faces";
  internal const string NetFull="uae.g4.u12.l04.net_total_faces";
  internal const string SolidFaces="uae.g4.u12.l05.solid_faces";
+ internal const string G5NetType="uae.g5.u12.l07.net_solid_classification";
+ internal const string G5NetFaces="uae.g5.u12.l07.net_total_faces";
+ internal const string G5NetMatching="uae.g5.u12.l07.net_congruent_matching_faces";
  internal const string SolidVertices="uae.g4.u12.l05.solid_vertices";
  internal const string CubeCount="uae.g4.u12.l06.unit_cube_volume";
  internal const string LayerArea="uae.g4.u12.l06.layer_unit_squares";
@@ -19,7 +22,8 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string MissingHeight="uae.g4.u12.l07.prism_missing_height";
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
-  SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight];
+  SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
+  G5NetType,G5NetFaces,G5NetMatching];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -30,6 +34,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(family is RightComplement)a=random.Next(0,91);
   if(family is Axes)a=random.Next(1,5);
   if(family is SolidFaces or SolidVertices)a=random.Next(1,4);
+  if(family is G5NetType or G5NetFaces or G5NetMatching)a=random.Next(1,3);
   if(family is NetMissing)a=random.Next(2,6);
   var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
   string solid=a==1?"مكعب":a==2?"منشور مستطيل":"منشور ثلاثي";
@@ -44,6 +49,15 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
    NetMissing=>$"شبكة مكعب يجب أن تحتوي ٦ مربعات. إذا رسمنا {a} مربعات، كم مربعًا متبقيًا؟",
    NetFull=>$"كم وجهًا مربعًا في شبكة كاملة لمكعب؟",
    SolidFaces=>$"كم وجهًا في {solid}؟",
+   G5NetType=>a==1
+    ? $"شبكة صالحة من ستة مربعات متطابقة ضلع كل منها {b} سم. ما نوع المجسم بعد الطي؟ اكتب ٠ للمكعب أو ١ للمنشور مستطيل القاعدة غير المكعب."
+    : $"شبكة صالحة من ستة أوجه مستطيلة لمجسم أبعاده {b} سم و{c+10} سم و{b+c+15} سم. ما نوعه بعد الطي؟ اكتب ٠ للمكعب أو ١ للمنشور مستطيل القاعدة غير المكعب.",
+   G5NetFaces=>a==1
+    ? $"شبكة صالحة لمكعب طول حرفه {b} سم. كم وجهًا للمجسم بعد الطي؟"
+    : $"شبكة صالحة لمنشور مستطيل القاعدة أبعاده {b} سم و{c+10} سم و{b+c+15} سم. كم وجهًا للمجسم بعد الطي؟",
+   G5NetMatching=>a==1
+    ? $"لشبكة مكعب طول حرفه {b} سم ستة أوجه. كم وجهًا مطابقًا لوجه مربع واحد عند مقارنة جميع الأوجه مع احتساب الوجه نفسه؟"
+    : $"منشور مستطيل القاعدة ذو ثلاثة أبعاد مختلفة {b} سم و{c+10} سم و{b+c+15} سم، كم وجهًا يطابق أكبر وجه من أوجهه مع احتساب الوجه نفسه؟",
    SolidVertices=>$"كم رأسًا في {solid}؟",
    CubeCount=>$"منشور مستطيل طوله {a} مكعبات وعرضه {b} مكعبات وارتفاعه {c} طبقات. كم مكعب وحدة يحتوي؟",
    LayerArea=>$"في طبقة من مكعبات الوحدة طولها {a} مكعبات وعرضها {b} مكعبات. كم مربع وحدة في الطبقة الواحدة؟",
@@ -63,6 +77,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is RightComplement && a>90)return false;
   if(f is Axes && a is <1 or >4)return false;
   if(f is SolidFaces or SolidVertices && a is <1 or >3)return false;
+  if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
   if(f is CubeCount or LayerArea or PrismVolume or MissingHeight && a<1)return false;
@@ -77,6 +92,9 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     NetMissing=>6-a,
     NetFull=>6,
     SolidFaces=>a==3?5:6,
+    G5NetType=>a==1?0:1,
+    G5NetFaces=>6,
+    G5NetMatching=>a==1?6:2,
     SolidVertices=>a==3?6:8,
     CubeCount or PrismVolume=>a*b*c,
     LayerArea=>a*b,
