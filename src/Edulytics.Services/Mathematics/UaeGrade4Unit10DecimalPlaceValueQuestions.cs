@@ -16,17 +16,22 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal const string Grade5TenthsPercent="uae.g5.u01.l03.tenths_to_percent";
     internal const string Grade5ThousandthsDecimal="uae.g5.u01.l04.thousandths_decimal";
     internal const string Grade5ThousandthsNumerator="uae.g5.u01.l04.thousandths_numerator";
+    internal const string Grade5DigitPlaceValue="uae.g5.u01.l05.decimal_digit_place_value";
+    internal const string Grade5PlaceFactor="uae.g5.u01.l05.place_factor_ten";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is PlaceValueDecimal or HundredthsCount or TenthsDigit
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
         or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
-        or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator;
+        or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator
+        or Grade5DigitPlaceValue or Grade5PlaceFactor;
     private static bool IsDecimal(string family)=>family is PlaceValueDecimal or TenthsDecimal or HundredthsDecimal;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return BuildGrade5Thousandths(family,random);
+        if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
+            return BuildGrade5DecimalPositions(family,random);
         int whole=family is PlaceValueDecimal or HundredthsCount or TenthsDigit ? random.Next(0,5):0;
         // Stage C extension for G5: include 0% and 100% without changing G4 output.
         if ((family is Grade5HundredthsPercent or Grade5TenthsPercent) && random.Next(10)==0)
@@ -82,6 +87,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     {
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return SolveGrade5Thousandths(family,p);
+        if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
+            return SolveGrade5DecimalPositions(family,p);
         if(!Valid(family,p,out decimal result))throw new InvalidOperationException("Invalid decimal parameters");
         string fmt=family switch {TenthsDecimal=>"0.0",PlaceValueDecimal or HundredthsDecimal=>"0.00",_=>"0"};
         return result.ToString(fmt,CultureInfo.InvariantCulture);
@@ -90,6 +97,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     {
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return VerifyGrade5Thousandths(family,p,answer);
+        if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
+            return VerifyGrade5DecimalPositions(family,p,answer);
         if(!Valid(family,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {
@@ -162,5 +171,96 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
             CultureInfo.InvariantCulture,out decimal actual) &&
             actual*1000m==numerator;
+    }
+    private static Item BuildGrade5DecimalPositions(string family,Random random)
+    {
+        if (family==Grade5PlaceFactor)
+        {
+            int digit=random.Next(1,10),largerPlace=random.Next(1,3);
+            int smallerPlace=random.Next(largerPlace+1,4);
+            var p=new Dictionary<string,int>
+            { ["digit"]=digit,["largerPlace"]=largerPlace,["smallerPlace"]=smallerPlace };
+            string larger=largerPlace==1?"الأعشار":"أجزاء المئة";
+            string smaller=smallerPlace==2?"أجزاء المئة":"أجزاء الألف";
+            return new Item(family,
+                $"كم ضعفًا قيمة الرقم {digit} في منزلة {larger} مقارنة بقيمته في منزلة {smaller}؟",
+                "كل منزلة على يسار الأخرى قيمتها عشرة أضعافها.",
+                AssessmentItemType.Numeric,p);
+        }
+        int numerator=random.Next(1,1000),place=random.Next(1,4);
+        string placeName=place==1?"الأعشار":place==2?"أجزاء المئة":"أجزاء الألف";
+        var parameters=new Dictionary<string,int>
+        { ["numerator"]=numerator,["denominator"]=1000,["place"]=place };
+        return new Item(family,
+            $"ما قيمة الرقم في منزلة {placeName} للعدد ٠٫{numerator:000}؟ اكتب عددًا عشريًا.",
+            "قيمة الرقم تعتمد على منزلته: أعشار، أجزاء المئة أو أجزاء الألف.",
+            AssessmentItemType.Numeric,parameters);
+    }
+
+    private static bool ValidGrade5Positions(string family,
+        IReadOnlyDictionary<string,int> p,out decimal expected)
+    {
+        expected=0m;
+        if(family==Grade5DigitPlaceValue)
+        {
+            if(p.Count!=3||!p.TryGetValue("numerator",out int n)||
+               n is <0 or >999||!p.TryGetValue("denominator",out int d)||
+               d!=1000||!p.TryGetValue("place",out int place)||
+               place is <1 or >3) return false;
+            int digit=place==1?n/100:place==2?n/10%10:n%10;
+            expected=place==1?digit/10m:place==2?digit/100m:digit/1000m;
+            return true;
+        }
+        if(family==Grade5PlaceFactor)
+        {
+            if(p.Count!=3||!p.TryGetValue("digit",out int digit)||
+               digit is <1 or >9||!p.TryGetValue("largerPlace",out int high)||
+               !p.TryGetValue("smallerPlace",out int low)||
+               high is <1 or >2||low is <2 or >3||low<=high) return false;
+            expected=low-high==1?10m:100m;
+            return true;
+        }
+        return false;
+    }
+
+    private static string SolveGrade5DecimalPositions(string family,
+        IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidGrade5Positions(family,p,out decimal value))
+            throw new InvalidOperationException("Invalid Grade 5 decimal positions.");
+        return family==Grade5PlaceFactor
+            ? value.ToString("0",CultureInfo.InvariantCulture)
+            : value.ToString("0.000",CultureInfo.InvariantCulture);
+    }
+
+    private static bool VerifyGrade5DecimalPositions(string family,
+        IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidGrade5Positions(family,p,out _) ||
+           string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim().Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',
+            _=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00A0').ToArray());
+        if(normalized.Length>20||normalized.Count(x=>x=='.')>1||
+           !normalized.All(x=>x is >= '0' and <= '9' or '.'))return false;
+        if(!decimal.TryParse(normalized,
+            family==Grade5PlaceFactor?NumberStyles.None:NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal provided))return false;
+
+        // Independent direct check from position and numerator, without Solve().
+        if(family==Grade5PlaceFactor)
+        {
+            int high=p["largerPlace"],low=p["smallerPlace"],factor=1;
+            for(int index=high;index<low;index++)factor*=10;
+            return provided==factor;
+        }
+        int n=p["numerator"],position=p["place"];
+        int scale=position==1?100:position==2?10:1;
+        int divisor=position==1?10:position==2?100:1000;
+        return provided==(n/scale%10)/(decimal)divisor;
     }
 }
