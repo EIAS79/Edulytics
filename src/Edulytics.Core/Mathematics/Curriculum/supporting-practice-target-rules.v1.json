@@ -16034,6 +16034,28 @@
         "commonMistake": "عد السيقان بدل الأوراق، أو حذف الأوراق المكررة، أو ترك ترتيب الأوراق عشوائيًا.",
         "summary": "أعرض البيانات مع مفتاح واضح وأستخرج الحقائق العددية؛ الرسم العملي والتفسير المفتوح يراجعهما المعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l01-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:01$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "SIMPLE_POLYGON_IDENTIFICATION_AND_REGULARITY",
+      "families": [
+        "uae.g5.u12.l01.polygon_or_nonpolygon",
+        "uae.g5.u12.l01.polygon_side_count",
+        "uae.g5.u12.l01.polygon_vertex_count",
+        "uae.g5.u12.l01.regular_polygon"
+      ],
+      "content": {
+        "concept": "المضلع شكل مستو مغلق من قطع مستقيمة، والمنتظم له أضلاع متطابقة وزوايا متطابقة.",
+        "workedExample": "الشكل السداسي له ٦ أضلاع و٦ رؤوس؛ إذا تساوت الأضلاع والزوايا فهو منتظم.",
+        "solution": "أفحص الإغلاق والاستقامة وعدم التقاطع، ثم أعد الأضلاع والرؤوس وأطبق شرطي الانتظام.",
+        "commonMistake": "اعتبار كل شكل مغلق مضلعًا أو اعتبار تساوي الأضلاع وحده كافيًا للانتظام.",
+        "summary": "الاسم بحسب الأضلاع؛ العدد نفسه للرؤوس؛ الرسم وتبرير التناظر والانتظام يراجعهما المعلم."
+      }
     }
   ]
 }

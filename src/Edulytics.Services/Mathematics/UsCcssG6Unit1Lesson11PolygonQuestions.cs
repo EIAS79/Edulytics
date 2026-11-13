@@ -13,22 +13,35 @@ internal static class UsCcssG6Unit1Lesson11PolygonQuestions
 {
     public const string Classification = "usccss.g6.u01.l11.polygon_classification";
     public const string Area = "usccss.g6.u01.l11.source_polygon_area";
+    public const string G5Shape = "uae.g5.u12.l01.polygon_or_nonpolygon";
+    public const string G5Sides = "uae.g5.u12.l01.polygon_side_count";
+    public const string G5Vertices = "uae.g5.u12.l01.polygon_vertex_count";
+    public const string G5Regular = "uae.g5.u12.l01.regular_polygon";
     internal sealed record Problem(string Family,string Prompt,string Explanation,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
 
-    public static bool Supports(string? family) => family is Classification or Area;
+    public static bool Supports(string? family) => family is Classification or Area or G5Shape or G5Sides or G5Vertices or G5Regular;
     private static int Count(string family) =>
-        family == Classification ? 10 : family == Area ? 12 : 0;
+        family == Classification ? 10 : family == Area ? 12 :
+        family == G5Shape ? 8 : family == G5Sides || family == G5Vertices ? 6 :
+        family == G5Regular ? 8 : 0;
 
     public static Problem Build(string family,Random random)
     {
         if(!Supports(family))throw new ArgumentException("Unsupported original G6 polygon family",nameof(family));
         ArgumentNullException.ThrowIfNull(random);
         int v=random.Next(Count(family));
-        var x=family==Classification?ClassificationProblem(v):AreaProblem(v);
-        return new Problem(family,x.Prompt,x.Explanation+
-            " Teacher separately checks polygon outline, valid triangulation, " +
-            "the student's original drawing and explanation.",
+        var x=family switch
+        {
+            Classification=>ClassificationProblem(v),
+            Area=>AreaProblem(v),
+            _=>G5PolygonProblem(family,v)
+        };
+        string teacherReview=family is G5Shape or G5Sides or G5Vertices or G5Regular
+            ? " يراجع المعلم رسم الطالب وحدود الشكل وتبرير التصنيف باللغة العربية."
+            : " Teacher separately checks polygon outline, valid triangulation, " +
+              "the student's original drawing and explanation.";
+        return new Problem(family,x.Prompt,x.Explanation+teacherReview,
             AssessmentItemType.Numeric,new Dictionary<string,int>{{"variant",v}});
     }
 
@@ -48,6 +61,9 @@ internal static class UsCcssG6Unit1Lesson11PolygonQuestions
             9=>0m, // Self-crossing path not a simple polygon
             _=>throw new ArgumentOutOfRangeException(nameof(v))
         },
+        G5Shape=>v is 0 or 3 or 5 or 7 ? 1m : 0m,
+        G5Sides or G5Vertices=>v switch {0=>3m,1=>4m,2=>5m,3=>6m,4=>7m,5=>8m,_=>throw new ArgumentOutOfRangeException(nameof(v))},
+        G5Regular=>v is 0 or 2 or 4 or 6 ? 1m : 0m,
         Area=>v switch
         {
             0=>12m, // Original 11.3 quadrilateral A
@@ -78,6 +94,17 @@ internal static class UsCcssG6Unit1Lesson11PolygonQuestions
         if(!Valid(family,p)||string.IsNullOrWhiteSpace(text)||text!=text.Trim())
             return false;
         var expected=Answer(family,p!["variant"]);
+        if(family is G5Shape or G5Sides or G5Vertices or G5Regular)
+        {
+            string normalized=new(text.Select(ch=>ch switch
+            {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                _=>ch
+            }).ToArray());
+            return normalized.Length<=16 && int.TryParse(normalized,NumberStyles.None,
+                CultureInfo.InvariantCulture,out int g5Integer) && g5Integer==expected;
+        }
         if(family==Classification)
             return text is ("0" or "1") &&
                 text==expected.ToString(CultureInfo.InvariantCulture);
@@ -100,6 +127,42 @@ internal static class UsCcssG6Unit1Lesson11PolygonQuestions
         Supports(family) && p is {Count:1} && p.TryGetValue("variant",out int v) &&
         v>=0 && v<Count(family!);
 
+    private static (string Prompt,string Explanation) G5PolygonProblem(string family,int v)
+    {
+        if(family==G5Shape)
+        {
+            string[] descriptions=[
+                "حد مستو مغلق من خمس قطع مستقيمة لا تتقاطع إلا عند رؤوسها",
+                "إطار بيضاوي مغلق ذو خط منحني",
+                "ثلاث قطع مستقيمة متصلة طرفًا بطرف ولكن يوجد فراغ بين البداية والنهاية",
+                "مضلع مقعر مغلق من ست قطع مستقيمة لا يتقاطع حدّه",
+                "مسار رباعي مستقيم مغلق لكن ضلعين غير متجاورين يتقاطعان",
+                "حد مغلق يتكون من أربع قطع مستقيمة متصلة بلا تقاطع",
+                "حد مغلق فيه ضلع مستقيم واحد وثلاثة أقواس منحنية",
+                "شكل ثماني الأضلاع مغلق لا تتقاطع أضلاعه إلا عند رؤوسها"
+            ];
+            return ($"الوصف: {descriptions[v]}. هل يُعد مضلعًا بسيطًا؟ اكتب ١ نعم أو ٠ لا.",
+                "المضلع المستوي حد مغلق من قطع مستقيمة متصلة دون تقاطع بين غير المتجاور.");
+        }
+        if(family==G5Sides || family==G5Vertices)
+        {
+            string[] names=["مثلث","شكل رباعي","شكل خماسي الأضلاع","شكل سداسي الأضلاع","شكل سباعي الأضلاع","شكل ثماني الأضلاع"];
+            return ($"لديك {names[v]} منتظم أو غير منتظم. ما عدد {(family==G5Sides?"الأضلاع":"الرؤوس")}؟",
+                "في كل مضلع عدد الأضلاع يساوي عدد الرؤوس، ولا يتعلق الأمر بانتظامه.");
+        }
+        string[] rules=[
+            "مربع جميع أضلاعه متساوية وزواياه الأربع قائمة",
+            "مستطيل طوله أكبر من عرضه وزواياه الأربع قائمة",
+            "سداسي جميع أضلاعه متساوية وزواياه الداخلية الست متساوية",
+            "معين أضلاعه متساوية لكن زواياه متبادلة ٦٠° و١٢٠°",
+            "مثلث متساوي الأضلاع وزواياه الثلاث متساوية",
+            "مثلث متساوي الساقين ضلعاه فقط متساويان",
+            "ثماني الأضلاع جميع أضلاعه متساوية وجميع زواياه متساوية",
+            "خماسي له أضلاع متساوية لكن ليست جميع زواياه متساوية"
+        ];
+        return ($"الشكل: {rules[v]}. هل هو مضلع منتظم؟ اكتب ١ نعم أو ٠ لا.",
+            "الانتظام يشترط تساوي الأضلاع جميعها وتساوي الزوايا الداخلية جميعها.");
+    }
     private static (string Prompt,string Explanation) ClassificationProblem(int v) => v switch
     {
         0=>("Original practice1 figure A is a closed arrow whose boundary uses straight, noncrossing line segments. Is it a plane polygon? 1=yes,0=no.","The concave arrow is a polygon with straight closed boundary."),
