@@ -14006,6 +14006,28 @@
         "commonMistake": "عدم ضرب العامل في الحد الثاني.",
         "summary": "التوزيع على الجمع والطرح مع التحقق."
       }
+    },
+    {
+      "id": "uae-g5-u02-l08-estimate-products",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:08$"
+      ],
+      "skillId": "number.rounding_to_estimate_products",
+      "mechanic": "ESTIMATE_PRODUCTS_ONE_BOTH_COMPATIBLE",
+      "families": [
+        "uae.g5.u02.l08.round_one_factor",
+        "uae.g5.u02.l08.round_both_factors",
+        "uae.g5.u02.l08.compatible_factors",
+        "uae.g5.u02.l08.estimate_high_or_low"
+      ],
+      "content": {
+        "concept": "تقدير حاصل الضرب باستخدام التقريب أو أعداد متوافقة.",
+        "workedExample": "١٥٤ × ٢١ ≈ ١٥٠ × ٢٠ = ٣٠٠٠ أو ٢٠٠ × ٢٠ = ٤٠٠٠ بعد تحديد الطريقة.",
+        "solution": "اختر العامل أو العاملين المطلوب تقريبهما، ثم اضرب الناتج المقرب.",
+        "commonMistake": "عدم الخلط بين الناتج الدقيق والتقريبي.",
+        "summary": "حدد خطة التقريب ثم قدر وتحقق."
+      }
     }
   ]
 }
