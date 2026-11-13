@@ -374,23 +374,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:09",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 5 Student Edition / Unit 1 / Lesson 9; official Arabic title: استقصاء حل المسائل: استخدام خطة الخطوات الأربع",
+      "TitleSourceReference": "Owner-selected Arabic student 01.pdf printed pp61–66, PDF pp80–85; heading: استقصاء حل المسائل / الاستراتيجية: استخدام خطة الخطوات الأربع",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G5:GENERAL:ANNUAL:U01:L09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 5 General / Annual / Unit 1 / Lesson 9",
+      "SourceLocator": "Grade_05/01_Student_Books/01.pdf, PDF pp80–85 (printed 61–66)",
       "SourceTitle": "UAE Grade 5 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
+      "SourceEdition": "Arabic student edition 2025–2026; owner-selected skill-based reference; 2026–2027 official sequence not confirmed",
       "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "1fdd15f43d293eec172a4577b60264ed06ff201aeeb725c232983eccc17fae13",
+      "SourceSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
       "CanonicalBodySha256": "7e0ab8ff330d4493113d3e7b6799a937acc03acc87fc4f6f5bd418d2a20f7346",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Locally source-checked Arabic explanation/RichV2 staged; extends existing G4 four-step engine with G5 multistep/inverse families; tests written NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -401,6 +401,16 @@
           "StepByStepSolutions": "Step 1: Identify the information and goal. Step 2: Choose an operation, model, graph, or geometric relationship. Step 3: Solve accurately. Step 4: Interpret the result. Step 5: Verify it independently.",
           "CommonMistakes": "Do not lose place value, units, fraction equivalence, decimal position, operation order, or geometric conditions.",
           "QuickSummary": "Problem Solving: Use the Four-Step Plan: choose the right representation, solve accurately, explain, and check."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استقصاء حل المسائل: استخدام خطة الخطوات الأربع",
+          "Explanation": "خطة حل المسائل ذات الخطوات الأربع تتكون من: أفهم المعطيات والمطلوب، أخطط للعملية أو النموذج، أحل بالترتيب المناسب، ثم أتحقق باستخدام التعويض أو العملية العكسية. بعض المسائل تحتاج أكثر من عملية، وقد يكون العدد المطلوب هو القيمة الأصلية وليس الباقي.",
+          "KeyConceptsAndRules": "أفهم: أفصل المعطيات عن المطلوب. أخطط: أرسم جدولًا أو أكتب معادلة وأحدد ترتيب العمليات. أحل: أنفذ العمليات بدقة مع الحفاظ على الوحدات. أتحقق: أعيد الناتج للمسألة أو أستخدم العمليات العكسية. إذا كان الإجمالي معلومًا وأجزاء منه معلومة، أطرح مجموع الأجزاء لإيجاد الجزء المجهول.",
+          "WorkedExamples": "إذا سارت طفلة ٥ كم و٨ كم و١٣ كم خلال ثلاثة أيام وبلغ المجموع ٣٤ كم خلال أربعة أيام فإن مسافة اليوم الرابع = ٣٤−(٥+٨+١٣)=٨ كم. وإذا استُخدم ٨٦ و٣٣ من شريط وبقي ٩٩ فإن الطول الأصلي = ٨٦+٣٣+٩٩=٢١٨. وإذا كانت الميزانية ٦١ درهمًا واشترى الطالب عبوتين سعر الواحدة ٢٠، ثم اشترى قطعًا سعرها ٧ من الباقي، فعدد القطع = (٦١−٤٠)÷٧=٣.",
+          "StepByStepSolutions": "١. اقرأ النص، وحدد كل معطى ووحدته. ٢. عيّن المطلوب والخطوات الحسابية المناسبة، وقدّم جدولًا أو معادلة. ٣. نفذ العمليات بالترتيب الصحيح. ٤. أعد حساب المسألة للتحقق من تطابق الناتج مع الشروط، واكتب تفسيرًا مفهومًا.",
+          "CommonMistakes": "لا تجمع كل الأعداد دون فهم سياق المسألة؛ إذا كان الإجمالي معلومًا فالمجهول قد يساوي الإجمالي ناقص المعلوم. انتبه إلى أن الباقي بعد شراء وحدات متساوية يتطلب القسمة على سعر الوحدة، وليس الطرح مرة ثانية. لا تنس وحدات الكيلومتر أو الدرهم.",
+          "QuickSummary": "أفهم ← أخطط ← أحل ← أتحقق. أختار العمليات بحسب السؤال وأستخدم العكس أو التعويض لأتحقق من الناتج."
         }
       ]
     },
