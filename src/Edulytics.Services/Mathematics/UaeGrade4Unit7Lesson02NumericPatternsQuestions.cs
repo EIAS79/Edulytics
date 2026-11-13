@@ -14,10 +14,11 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
     internal const string G5U6Compare="uae.g5.u06.l07.compare_three_six_growth";
     private static bool IsG5U6(string? f)=>f is G5U6Squares or G5U6Diagonal or G5U6Triangles or G5U6Compare;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Constant or Alternating || IsG5(f) || IsG5U6(f);
+    internal static bool Supports(string? f)=>f is Constant or Alternating || IsG5(f) || IsG5U6(f) || IsG5L08(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported numeric pattern");
+        if(IsG5L08(f))return BuildG5L08(f,r);
         if(IsG5U6(f))return BuildG5U6(f,r);
         if(IsG5(f))return BuildG5(f,r);
         int start=r.Next(20,100),step=r.Next(2,10),index=r.Next(4,9);
@@ -84,6 +85,80 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
             }).ToArray());
         return int.TryParse(value,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&
             actual==expected;
+    }
+
+    
+    // Grade 5 Unit 6 Lesson 8: numeric subskills of additive/multiplicative
+    // patterns and comparisons. Reuse G4 engine; do not alter G4 constraints.
+    internal const string G5L08Add="uae.g5.u06.l08.next_additive_term";
+    internal const string G5L08Multiply="uae.g5.u06.l08.next_multiplicative_term";
+    internal const string G5L08Compare="uae.g5.u06.l08.compare_weekly_growth";
+    private static bool IsG5L08(string? f)=>f is G5L08Add or G5L08Multiply or G5L08Compare;
+
+    private static Item BuildG5L08(string f, Random random)
+    {
+        if(f==G5L08Compare)
+        {
+            int weeks=random.Next(4,9),a=3,b=6;
+            return new Item(f,$"تسير هدى ٣ كيلومترات إضافية كل أسبوع، وتسير ريم ٦ كيلومترات إضافية كل أسبوع. بدأتا من المسافة نفسها. بعد {weeks} أسابيع، كم تزيد المسافة التراكمية لريم عن هدى؟",
+                "قارن زيادتي النمطين عند عدد الأسابيع نفسه.",AssessmentItemType.Numeric,
+                new Dictionary<string,int>{{"weeks",weeks},{"a",a},{"b",b}});
+        }
+        int start=random.Next(2,12),step=f==G5L08Add?random.Next(2,10):random.Next(2,4);
+        int[] values=new int[4];values[0]=start;
+        for(int i=1;i<values.Length;i++)values[i]=f==G5L08Add?values[i-1]+step:values[i-1]*step;
+        return new Item(f,$"أكمل المتتالية {string.Join("، ",values)}، □.",
+            f==G5L08Add?"أحسب الفرق الثابت بين كل حدين.":"أحدد عامل الضرب الثابت بين الحدود.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"start",start},{"step",step},{"terms",4}});
+    }
+
+    private static bool ValidG5L08(string f,IReadOnlyDictionary<string,int> p,out int answer)
+    {
+        answer=0;
+        if(!IsG5L08(f))return false;
+        if(f==G5L08Compare)
+        {
+            if(p.Count!=3||!p.TryGetValue("weeks",out int n)||
+               !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+               n is <4 or >8||a!=3||b!=6)return false;
+            answer=(b-a)*n;return true;
+        }
+        if(p.Count!=3||!p.TryGetValue("start",out int s)||
+           !p.TryGetValue("step",out int d)||!p.TryGetValue("terms",out int t)||
+           s is <2 or >11||t!=4||
+           (f==G5L08Add&&(d is <2 or >9))||
+           (f==G5L08Multiply&&(d is <2 or >3)))return false;
+        answer=s;
+        for(int i=0;i<t;i++)answer=f==G5L08Add?answer+d:checked(answer*d);
+        return true;
+    }
+
+    private static string SolveG5L08(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5L08(f,p,out int expected))
+            throw new InvalidOperationException("Invalid Grade5 U06 L08 numeric-pattern parameters");
+        return expected.ToString(CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5L08(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5L08(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+        string normalized=new(answer.Trim().Where(ch=>ch is not ',' and not '٬' &&
+            !char.IsWhiteSpace(ch)).Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            _=>ch
+        }).ToArray());
+        if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+        int expected;
+        if(f==G5L08Compare)expected=(p["b"]-p["a"])*p["weeks"];
+        else
+        {
+            expected=p["start"];
+            for(int i=0;i<4;i++)
+                expected=f==G5L08Add?expected+p["step"]:expected*p["step"];
+        }
+        return actual==expected;
     }
 
     private static decimal PowerTen(int exp)
@@ -186,6 +261,7 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5L08(f))return SolveG5L08(f,p);
         if(IsG5U6(f))return SolveG5U6(f,p);
         if(IsG5(f))return SolveG5(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid pattern");
@@ -193,6 +269,7 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5L08(f))return VerifyG5L08(f,p,answer);
         if(IsG5U6(f))return VerifyG5U6(f,p,answer);
         if(IsG5(f))return VerifyG5(f,p,answer);
         if(!Valid(f,p,out var x)||string.IsNullOrWhiteSpace(answer))return false;
