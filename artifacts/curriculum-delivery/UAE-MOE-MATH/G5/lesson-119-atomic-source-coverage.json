@@ -1,0 +1,90 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 119,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:05",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    199,
+    200,
+    201,
+    202,
+    203,
+    204
+  ],
+  "SourcePrintedPages": [
+    903,
+    904,
+    905,
+    906,
+    907,
+    908
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تمييز أربعة أضلاع وأربع زوايا في رباعي الأضلاع",
+    "تحديد الأزواج المتقابلة المتوازية والمتطابقة",
+    "تمييز الزوايا القائمة والزوايا المتقابلة المتطابقة",
+    "فهم خصائص المربع والمستطيل والمعين ومتوازي الأضلاع وشبه المنحرف"
+  ],
+  "SourceElements": [
+    {
+      "Category": "hands-on quadrilateral side/angle measurement across four examples",
+      "Pages": [
+        903,
+        904
+      ],
+      "Coverage": "teacher workmat and original Arabic explanations"
+    },
+    {
+      "Category": "practice with one/two parallel pairs and congruence",
+      "Pages": [
+        905
+      ],
+      "Coverage": "exact numeric geometry families and teacher visual checks"
+    },
+    {
+      "Category": "applied trapezoid and classification questions",
+      "Pages": [
+        906
+      ],
+      "Coverage": "trapezoid features, parallel/congruent angles"
+    },
+    {
+      "Category": "homework completion and geometry reasoning",
+      "Pages": [
+        907,
+        908
+      ],
+      "Coverage": "original independent review and rubric"
+    }
+  ],
+  "Engine": "REUSE UaeGrade4Unit16GeometryQuestions (already supports exact quadrilateral geometry). Extend 4 Grade5 source-specific families.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l05.opposite_parallel_pairs",
+    "uae.g5.u12.l05.opposite_equal_pairs",
+    "uae.g5.u12.l05.right_angle_count",
+    "uae.g5.u12.l05.opposite_equal_angle_pairs"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "رباعي على هيئة شبه منحرف قائم غير مستطيل. كم زوجًا من الأضلاع المتقابلة المتوازية، وكم زاوية قائمة؟",
+    "Answer": "زوج واحد وزاويتان قائمتان.",
+    "TeacherRubric": "يحدد الزوج المتوازي والزوايا القائمة بالرسم ويشرح لماذا ليس مستطيلاً."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_QUADRILATERAL_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson05QuadrilateralPropertiesTests.cs",
+  "TestsRun": "FOCUSED_4_PASSED; L118_REGRESSION_2_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Physical ruler and protractor measurements",
+    "Student diagram of opposing parallel and equal sides"
+  ],
+  "SourceRights": "Original Edulytics Arabic explanations and practice; no textbook figure copied."
+}

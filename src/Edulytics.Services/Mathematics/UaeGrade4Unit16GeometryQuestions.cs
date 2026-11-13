@@ -15,9 +15,16 @@ internal static class UaeGrade4Unit16GeometryQuestions
  "uae.g5.u12.l02.congruent_side_count","uae.g5.u12.l02.acute_angle_count",
  "uae.g5.u12.l02.right_angle_count","uae.g5.u12.l02.obtuse_angle_count",
  "uae.g5.u12.l02.third_angle",
- "uae.g5.u12.l03.triangle_side_type","uae.g5.u12.l03.triangle_angle_type"];
+ "uae.g5.u12.l03.triangle_side_type","uae.g5.u12.l03.triangle_angle_type",
+ "uae.g5.u12.l05.opposite_parallel_pairs","uae.g5.u12.l05.opposite_equal_pairs",
+ "uae.g5.u12.l05.right_angle_count","uae.g5.u12.l05.opposite_equal_angle_pairs"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? f)=>f is not null&&Families.Contains(f);
+ private static bool IsG5Quad(string? f)=>f is
+  "uae.g5.u12.l05.opposite_parallel_pairs" or
+  "uae.g5.u12.l05.opposite_equal_pairs" or
+  "uae.g5.u12.l05.right_angle_count" or
+  "uae.g5.u12.l05.opposite_equal_angle_pairs";
  private static bool IsG5Triangle(string? f)=>f is
   "uae.g5.u12.l02.congruent_side_count" or
   "uae.g5.u12.l02.acute_angle_count" or
@@ -29,6 +36,7 @@ internal static class UaeGrade4Unit16GeometryQuestions
  internal static Item Build(string f,Random random)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported geometry family");
+  if(IsG5Quad(f))return BuildG5Quad(f,random);
   if(IsG5Triangle(f))return BuildG5Triangle(f,random);
   int a=random.Next(20,70),b=random.Next(10,50),c=random.Next(10,50);
   if(f.Contains(".l02."))a=random.Next(20,161);
@@ -83,12 +91,14 @@ internal static class UaeGrade4Unit16GeometryQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Quad(f))return SolveG5Quad(f,p);
    if(IsG5Triangle(f))return SolveG5Triangle(f,p);
    if(!Valid(f,p,out int ans))throw new InvalidOperationException("Invalid geometry parameters");
    return ans.ToString(CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+  if(IsG5Quad(f))return VerifyG5Quad(f,p,answer);
   if(IsG5Triangle(f))return VerifyG5Triangle(f,p,answer);
   if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
   string normalized=new(answer.Trim().Select(c=>c switch{
@@ -196,6 +206,79 @@ internal static class UaeGrade4Unit16GeometryQuestions
    _=>180-a-b
   };
   return submitted==independent;
+ }
+
+
+ // UAE Grade 5 U12 Lesson 5: reuse the existing quadrilateral geometry service.
+ // Physical measurements/drawings are separately assessed by the teacher.
+ private static readonly string[] Grade5QuadrilateralDescriptions =
+ [
+  "مربع بأربعة أضلاع متطابقة وأربع زوايا قائمة",
+  "مستطيل غير مربع، له أربع زوايا قائمة وزوجان من الأضلاع المتقابلة المتطابقة",
+  "متوازي أضلاع مائل ليس مستطيلًا ولا معينًا",
+  "معين مائل ليس مربعًا: أربعة أضلاع متطابقة دون زوايا قائمة",
+  "شبه منحرف متساوي الساقين ليس مستطيلًا وله زوج واحد فقط متوازٍ",
+  "شبه منحرف قائم غير مستطيل، له زاويتان قائمتان وزوج متوازٍ واحد فقط",
+  "رباعي محدب مختلف الأضلاع، لا يحتوي على ضلعين متقابلين متوازيين أو متطابقين",
+  "رباعي على هيئة طائرة ورقية غير معين، له زوجان من الأضلاع المتجاورة المتطابقة لا المتقابلة"
+ ];
+ private static Item BuildG5Quad(string family,Random rng)
+ {
+  int kind=rng.Next(Grade5QuadrilateralDescriptions.Length);
+  var p=new Dictionary<string,int>{{"kind",kind}};
+  string task=family switch
+  {
+   "uae.g5.u12.l05.opposite_parallel_pairs"=>
+    "كم زوجًا من الأضلاع المتقابلة المتوازية في هذا الرباعي؟",
+   "uae.g5.u12.l05.opposite_equal_pairs"=>
+    "كم زوجًا من الأضلاع المتقابلة المتطابقة في الطول؟",
+   "uae.g5.u12.l05.right_angle_count"=>
+    "كم زاوية قائمة في هذا الرباعي؟",
+   _=>"كم زوجًا من الزوايا المتقابلة المتطابقة في القياس؟"
+  };
+  return new Item(family,$"الشكل الموصوف: {Grade5QuadrilateralDescriptions[kind]}. {task}",
+   "أفحص الأضلاع المتقابلة لا المتجاورة وأفرق بين التوازي والتطابق، ثم أحدد الزوايا القائمة. يراجع المعلم الرسم والقياس العملي.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Quad(string family,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Quad(family)||p.Count!=1||
+    !p.TryGetValue("kind",out int kind)||kind<0||kind>=Grade5QuadrilateralDescriptions.Length)return false;
+  expected=family switch
+  {
+   "uae.g5.u12.l05.opposite_parallel_pairs"=>kind<4?2:kind<6?1:0,
+   "uae.g5.u12.l05.opposite_equal_pairs"=>kind<4?2:0,
+   "uae.g5.u12.l05.right_angle_count"=>kind<2?4:kind==5?2:0,
+   "uae.g5.u12.l05.opposite_equal_angle_pairs"=>kind<4?2:kind==7?1:0,
+   _=>throw new InvalidOperationException("Unknown Grade5 quadrilateral family")
+  };
+  return true;
+ }
+ private static string SolveG5Quad(string family,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Quad(family,p,out int result))throw new InvalidOperationException("Invalid quadrilateral kind");
+  return result.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Quad(string family,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+  if(!ValidG5Quad(family,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>16)return false;
+  string normalized=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).ToArray());
+  if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int value))return false;
+  int kind=p["kind"];
+  int independent=family switch
+  {
+   "uae.g5.u12.l05.opposite_parallel_pairs"=>new[]{2,2,2,2,1,1,0,0}[kind],
+   "uae.g5.u12.l05.opposite_equal_pairs"=>new[]{2,2,2,2,0,0,0,0}[kind],
+   "uae.g5.u12.l05.right_angle_count"=>new[]{4,4,0,0,0,2,0,0}[kind],
+   _=>new[]{2,2,2,2,0,0,0,1}[kind]
+  };
+  return value==independent;
  }
 
 }
