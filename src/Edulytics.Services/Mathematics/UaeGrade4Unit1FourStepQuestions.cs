@@ -15,15 +15,20 @@ internal static class UaeGrade4Unit1FourStepQuestions
     internal const string G5Initial="uae.g5.u01.l09.find_starting_total";
     internal const string G5Budget="uae.g5.u01.l09.budget_purchase_count";
     internal const string G5Undo="uae.g5.u01.l09.undo_four_steps";
+    internal const string G5TableScale="uae.g5.u02.l05.table_population_scale";
+    internal const string G5TableDouble="uae.g5.u02.l05.table_weekly_doubling";
+    internal const string G5TableRate="uae.g5.u02.l05.table_constant_rate";
+    private static bool IsG5Table(string? f)=>f is G5TableScale or G5TableDouble or G5TableRate;
     private static bool IsG5(string? f)=>f is G5Missing or G5Initial or G5Budget or G5Undo;
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family);
+    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family);
 
     public static Item Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported four-step family");
         if (IsG5(family)) return BuildG5(family, rng);
+        if (IsG5Table(family)) return BuildG5Table(family,rng);
         int a=rng.Next(150_000,450_000),b=rng.Next(150_000,450_000);
         string prompt=family switch
         {
@@ -39,6 +44,58 @@ internal static class UaeGrade4Unit1FourStepQuestions
 
     // Four-step Grade 5 story parameters contain only given quantities.
     // The answer is derived by the generator's solver and recomputed by Verify.
+
+    // G5 Unit 2 L05 reuses the existing four-step numeric question pipeline.
+    // Tables and original explanatory reasoning remain in the RichV2 lesson.
+    private static Item BuildG5Table(string family,Random random)
+    {
+        int x,y,z;
+        string prompt;
+        IReadOnlyDictionary<string,int> p;
+        if(family==G5TableScale)
+        {
+            x=random.Next(12,91);y=100;z=10000;
+            prompt=$"إذا كان من كل {y} أسرة عدد {x} يحقق شرطًا، فكم أسرة تقريبًا من أصل {z} أسرة تحقق الشرط نفسه؟ أكمل جدول التناسب.";
+            p=new Dictionary<string,int>{{"a",x},{"b",y},{"c",z}};
+        }
+        else if(family==G5TableDouble)
+        {
+            x=random.Next(1,6);y=random.Next(2,9);z=2;
+            prompt=$"بدأ ادخار أسبوعي بـ {x} دراهم في الأسبوع الأول، ثم تضاعف مبلغ كل أسبوع عن سابقه. كم درهمًا يُدّخر في الأسبوع رقم {y}؟ أنشئ جدولًا.";
+            p=new Dictionary<string,int>{{"a",x},{"b",y},{"c",z}};
+        }
+        else
+        {
+            x=random.Next(10,101);y=random.Next(1,11);z=random.Next(2,13)*y;
+            prompt=$"يتسع نشاط لـ {x} مشاركين خلال {y} دقائق. باستخدام جدول منتظم للمجموعات، كم مشاركًا يستوعب خلال {z} دقيقة بالمعدل نفسه؟";
+            p=new Dictionary<string,int>{{"a",x},{"b",y},{"c",z}};
+        }
+        return new Item(family,prompt,
+            "اكتب عمودي المعطيات والقيمة المقابلة لكل مرحلة ثم تحقق من معدل النمو أو التناسب.",
+            AssessmentItemType.Numeric,p);
+    }
+    private static bool ValidG5Table(string family,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5Table(family)||p.Count!=3||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("c",out int c))return false;
+        if(family==G5TableScale)
+        {
+            if(a is <12 or >90||b!=100||c!=10000)return false;
+            expected=checked(a*(c/b));return true;
+        }
+        if(family==G5TableDouble)
+        {
+            if(a is <1 or >5||b is <2 or >8||c!=2)return false;
+            expected=a;
+            for(int i=1;i<b;i++)expected=checked(expected*2);
+            return true;
+        }
+        if(a is <10 or >100||b is <1 or >10||c<2*b||c>12*b||c%b!=0)return false;
+        expected=checked(a*(c/b));return true;
+    }
+
     private static Item BuildG5(string family, Random rng)
     {
         int a, b, c, d;
@@ -108,6 +165,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
     {
         expected=0;
         if(IsG5(family)) return ValidG5(family,p,out expected);
+        if(IsG5Table(family)) return ValidG5Table(family,p,out expected);
         if(!Supports(family)||p.Count!=2||!p.TryGetValue("a",out int a)||
            !p.TryGetValue("b",out int b)||
            a<150_000||a>=450_000||b<150_000||b>=450_000)return false;
