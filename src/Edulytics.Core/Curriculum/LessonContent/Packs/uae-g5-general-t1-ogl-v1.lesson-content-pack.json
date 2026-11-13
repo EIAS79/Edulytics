@@ -933,23 +933,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:03",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 5 Student Edition / Unit 3 / Lesson 3; official Arabic title: قسمة الأعداد المكونة من رقمين",
+      "TitleSourceReference": "Grade5 Arabic local student 2025–2026, 01.pdf printed pp169–174: قسمة الأعداد المكونة من رقمين",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G5:GENERAL:ANNUAL:U03:L03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 5 General / Annual / Unit 3 / Lesson 3",
+      "SourceLocator": "Grade_05/01_Student_Books/01.pdf printed pp169–174",
       "SourceTitle": "UAE Grade 5 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
+      "SourceEdition": "Owner-selected Arabic student 2025–2026; official 2026–2027 order not confirmed",
       "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "bd2f223deaa6bffb8292185ad3d339bec1ce91a24f9043a517d20ac4b4882508",
+      "SourceSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
       "CanonicalBodySha256": "2e29e371e664593cc4fe64b68339bf5234ab42c7f48ed6c69f3178082d899c5d",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Existing L22 Arabic repaired with first-party RichV2; exact G4 division engine extended for two-digit G5 input, tests written NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -960,6 +960,16 @@
           "StepByStepSolutions": "Step 1: Identify the information and goal. Step 2: Choose an operation, model, graph, or geometric relationship. Step 3: Solve accurately. Step 4: Interpret the result. Step 5: Verify it independently.",
           "CommonMistakes": "Do not lose place value, units, fraction equivalence, decimal position, operation order, or geometric conditions.",
           "QuickSummary": "Divide Two-Digit Numbers: choose the right representation, solve accurately, explain, and check."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "قسمة الأعداد المكونة من رقمين",
+          "Explanation": "للقسمة على رقم واحد أبدأ بالعشرات ثم الآحاد، وأقسم أكبر منزلة ممكنة وأكتب جزء الناتج في مكانه الصحيح. إذا لم تُقسم العشرات كاملة أعيد تجميع ما تبقى منها إلى آحاد وأُنزل آحاد العدد. عند وجود باقٍ أكتبه منفصلًا وهو أقل من المقسوم عليه.",
+          "KeyConceptsAndRules": "المقسوم = المقسوم عليه × ناتج القسمة + الباقي. في القسمة المطولة أقسم ثم أضرب ثم أطرح ثم أنزل الرقم التالي. لا يجوز القسمة على الصفر. يظل الباقي أقل من المقسوم عليه.",
+          "WorkedExamples": "٧٥÷٥=١٥؛ أقسم سبع عشرات على خمسة، ثم أنزل خمس آحاد وأقسم. ٥٧÷٤=١٤ والباقي١ لأن ٤×١٤+١=٥٧. ٨٧÷٦=١٤ والباقي٣ لأن ٦×١٤+٣=٨٧.",
+          "StepByStepSolutions": "١. أبدأ من أكبر منزلة وأحدد أول جزء يمكن قسمته. ٢. أقسم وأكتب رقم الناتج في منزلته. ٣. أضرب المقسوم عليه في الجزء الناتج وأطرح. ٤. أُنزل الرقم التالي وأكمل القسمة. ٥. أتحقق بضرب الناتج في المقسوم عليه وإضافة الباقي.",
+          "CommonMistakes": "لا أنس تنزيل رقم الآحاد. لا أجعل الباقي مساويًا أو أكبر من المقسوم عليه. لا أخلط بين ٥٧÷٤ و٤÷٥٧ أو أحاول القسمة على الصفر.",
+          "QuickSummary": "أقسم العشرات ثم الآحاد مع إعادة التجميع وأكتب الناتج والباقي الصحيح، ثم أتحقق بضرب المقسوم عليه في الحاصل وإضافة الباقي."
         }
       ]
     },

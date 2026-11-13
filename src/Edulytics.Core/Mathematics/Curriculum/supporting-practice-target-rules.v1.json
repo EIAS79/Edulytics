@@ -14115,6 +14115,26 @@
         "commonMistake": "لا تحسب عدد البواقي أكثر من المقسوم عليه.",
         "summary": "أفهم ناتج القسمة والباقي باستخدام نماذج القيمة المكانية."
       }
+    },
+    {
+      "id": "uae-g5-u03-l03-two-digit-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:03$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "TWO_DIGIT_DIVISION_WITH_REMAINDER",
+      "families": [
+        "uae.g5.u03.l03.two_digit_quotient",
+        "uae.g5.u03.l03.two_digit_remainder"
+      ],
+      "content": {
+        "concept": "قسمة الأعداد من رقمين باستخدام العشرات والآحاد والباقي.",
+        "workedExample": "٨٧÷٦ = ١٤ والباقي ٣.",
+        "solution": "أقسم وأضرب وأطرح ثم أنزل الرقم التالي، وأتحقق بالضرب.",
+        "commonMistake": "يجب أن يكون الباقي أقل من المقسوم عليه، ولا تقسيم على صفر.",
+        "summary": "اكتب الحاصل والباقي وتحقق بالمضاعفة."
+      }
     }
   ]
 }

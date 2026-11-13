@@ -1,0 +1,65 @@
+{
+  "Grade": 5,
+  "Unit": 3,
+  "LessonOrdinal": 22,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:03",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    169,
+    170,
+    171,
+    172,
+    173,
+    174
+  ],
+  "SourceEdition": "Owner-selected 2025–2026 Arabic",
+  "TargetYear": "2026–2027",
+  "OfficialYearIndex": "NOT_VERIFIED",
+  "Coverage": [
+    {
+      "Scope": "tens-ones long division",
+      "Pages": [
+        169,
+        170
+      ],
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l03-ar.rich-lesson-v2.json"
+    },
+    {
+      "Scope": "remainder algorithm and guided practice",
+      "Pages": [
+        170,
+        171
+      ],
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l03-ar.rich-lesson-v2.json"
+    },
+    {
+      "Scope": "word problems and zero divisor",
+      "Pages": [
+        172,
+        174
+      ],
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l03-ar.rich-lesson-v2.json"
+    },
+    {
+      "Scope": "homework and independent two-digit division",
+      "Pages": [
+        173,
+        174
+      ],
+      "Artifact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit3Lesson03TwoDigitDivisionTests.cs"
+    }
+  ],
+  "ExistingEngine": "UaeGrade4Unit6Lesson03BaseTenDivisionQuestions extended",
+  "Families": [
+    "uae.g5.u03.l03.two_digit_quotient",
+    "uae.g5.u03.l03.two_digit_remainder"
+  ],
+  "SkillId": "number.base_ten_division_with_remainders",
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXACT_EXTENSION_STAGED_NOT_RUN",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}
