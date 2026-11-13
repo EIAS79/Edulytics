@@ -28,11 +28,16 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string G5Volume="uae.g5.u12.l09.model_volume_cm3";
  internal const string G5MissingLayers="uae.g5.u12.l09.model_missing_layers";
  internal const string MissingHeight="uae.g4.u12.l07.prism_missing_height";
+ internal const string G5VolumeLwh="uae.g5.u12.l10.volume_lwh";
+ internal const string G5VolumeBh="uae.g5.u12.l10.volume_base_area_height";
+ internal const string G5PrismHeight="uae.g5.u12.l10.missing_prism_height";
+ internal const string G5VolumeCompare="uae.g5.u12.l10.compare_prism_volumes";
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
   SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
   G5NetType,G5NetFaces,G5NetMatching,G5SolidType,G5SolidFaces,G5SolidEdges,G5SolidVertices,
-  G5Layer,G5CubeTotal,G5Volume,G5MissingLayers];
+  G5Layer,G5CubeTotal,G5Volume,G5MissingLayers,
+  G5VolumeLwh,G5VolumeBh,G5PrismHeight,G5VolumeCompare];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -85,6 +90,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
    G5MissingLayers=>$"حجم منشور مستطيل {a*b*c} سم³ ومساحة قاعدته {a*b} سم². ما ارتفاعه بوحدة السنتيمتر أو عدد طبقات مكعبات ١ سم؟",
    LayerArea=>$"في طبقة من مكعبات الوحدة طولها {a} مكعبات وعرضها {b} مكعبات. كم مربع وحدة في الطبقة الواحدة؟",
    PrismVolume=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. ما حجمه بالسم المكعب؟",
+   G5VolumeLwh=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
+   G5VolumeBh=>$"مساحة قاعدة منشور مستطيل {a*b} سم² وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
+   G5PrismHeight=>$"حجم منشور مستطيل {a*b*c} سم³ ومساحة قاعدته {a*b} سم². احسب ارتفاعه بالسنتيمتر.",
+   G5VolumeCompare=>$"صندوق أ أبعاده {a} سم و{b+1} سم و{c} سم، وصندوق ب أبعاده {a+1} سم و{b} سم و{c} سم. أيهما أكبر حجمًا؟ اكتب ٠ إذا تساويا، ١ إذا كان أ أكبر، ٢ إذا كان ب أكبر.",
    _=>$"منشور مستطيل حجمه {a*b*c} سم³، طول قاعدته {a} سم وعرضها {b} سم. ما ارتفاعه بالسنتيمتر؟"
   };
   return new Item(family,prompt,
@@ -104,7 +113,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
-  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers && a<1)return false;
+  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare && a<1)return false;
   result=f switch
   {
     Rays=>a-1,
@@ -128,6 +137,9 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     G5Layer=>a*b,
     G5CubeTotal or G5Volume=>a*b*c,
     G5MissingLayers=>c,
+    G5VolumeLwh or G5VolumeBh=>a*b*c,
+    G5PrismHeight=>c,
+    G5VolumeCompare=>a==b?0:a>b?1:2,
     LayerArea=>a*b,
     MissingHeight=>c,
     _=>throw new InvalidOperationException("Unsupported family")

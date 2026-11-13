@@ -16234,6 +16234,28 @@
         "commonMistake": "جمع الأبعاد أو الخلط بين الوحدات المربعة والمكعبة أو عد طبقة واحدة فقط.",
         "summary": "التدريبات العددية منضبطة؛ تركيب النموذج المكعبي الحقيقي يراجع المعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l10-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:10$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "PRISM_VOLUME_LWH_AND_BASE_HEIGHT",
+      "families": [
+        "uae.g5.u12.l10.volume_lwh",
+        "uae.g5.u12.l10.volume_base_area_height",
+        "uae.g5.u12.l10.missing_prism_height",
+        "uae.g5.u12.l10.compare_prism_volumes"
+      ],
+      "content": {
+        "concept": "منشور مستطيل القاعدة: الحجم=الطول×العرض×الارتفاع أو مساحة القاعدة×الارتفاع، مع توحيد الوحدات.",
+        "workedExample": "٣٠×١٥×٢٠ سم=٩٠٠٠ سم³، وهو نفسه ٤٥٠ سم² ×٢٠ سم.",
+        "solution": "أضرب العوامل أو أقسم الحجم على مساحة القاعدة لإيجاد الارتفاع، وللمقارنة أحسب كلا الحجمين بالوحدة نفسها.",
+        "commonMistake": "خلط الوحدات المربعة والمكعبة أو مقارنة منشورين دون توحيد الوحدات.",
+        "summary": "أطبق قانون الحجم بطريقتين ومقارنة أحجام واقعية وتقدير نماذج، وتقييم الرسم للمعلم."
+      }
     }
   ]
 }
