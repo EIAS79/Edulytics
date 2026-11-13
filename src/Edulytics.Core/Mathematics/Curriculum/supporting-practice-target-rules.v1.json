@@ -16212,6 +16212,28 @@
         "commonMistake": "تسمية أي مجسم له ستة أوجه مكعبًا أو عد الخطوط المتقطعة كأحرف زائدة.",
         "summary": "العد العددي من وصف هندسي واضح؛ النظر في رسوم معقدة وأجسام حقيقية يراجع بشريًا."
       }
+    },
+    {
+      "id": "uae-g5-u12-l09-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:09$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "UNIT_CUBE_LAYER_VOLUME_MODELS",
+      "families": [
+        "uae.g5.u12.l09.model_cubes_per_layer",
+        "uae.g5.u12.l09.model_total_unit_cubes",
+        "uae.g5.u12.l09.model_volume_cm3",
+        "uae.g5.u12.l09.model_missing_layers"
+      ],
+      "content": {
+        "concept": "أبني منشورًا بلا فجوات من مكعبات الوحدة: مكعبات الطبقة = طول×عرض، والحجم = مكعبات الطبقة×عدد الطبقات.",
+        "workedExample": "قاعدة ٣×٢ وأربع طبقات = ٦ مكعبات في الطبقة و٢٤ مكعبًا إجمالًا أو ٢٤ سم³.",
+        "solution": "أحسب مساحة القاعدة ثم عدد الطبقات أو العكس وأكتب الوحدات المكعبة.",
+        "commonMistake": "جمع الأبعاد أو الخلط بين الوحدات المربعة والمكعبة أو عد طبقة واحدة فقط.",
+        "summary": "التدريبات العددية منضبطة؛ تركيب النموذج المكعبي الحقيقي يراجع المعلم."
+      }
     }
   ]
 }
