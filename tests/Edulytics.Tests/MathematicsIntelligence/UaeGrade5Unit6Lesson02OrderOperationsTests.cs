@@ -22,9 +22,9 @@ public sealed class UaeGrade5Unit6Lesson02OrderOperationsTests
     }
     [Fact] public void OrderPowersAndNestedBracketsDoNotPermitWrongAnswers()
     {
-        var p=new Dictionary<string,int>{{"a",12},{"b",4},{"c",8},{"d",0}};
+        var p=new Dictionary<string,int>{{"a",20},{"b",4},{"c",8},{"d",0}};
         const string basic="uae.g5.u06.l02.multiply_before_add";
-        Assert.True(ExactSkillContractQuestionEngine.Verify(basic,p,"٤٤"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(basic,p,"٥٢"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(basic,p,"128"));
         p["a"]=20;p["b"]=4;p["c"]=10;p["d"]=2;
         const string nested="uae.g5.u06.l02.nested_parentheses";
