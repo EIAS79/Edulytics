@@ -25,6 +25,11 @@ internal static class UaeGrade3Unit12Questions
  internal const string G5DotMedian="uae.g5.u11.l10.dot_median";
  internal const string G5DotMode="uae.g5.u11.l10.dot_mode";
  internal const string G5DotRange="uae.g5.u11.l10.dot_range";
+ internal const string G5StemCount="uae.g5.u11.l11.leaf_count_at_stem";
+ internal const string G5StemMedian="uae.g5.u11.l11.stem_median";
+ internal const string G5StemRange="uae.g5.u11.l11.stem_range";
+ internal const string G5StemModeFrequency="uae.g5.u11.l11.stem_mode_frequency";
+ internal const string G5StemKth="uae.g5.u11.l11.ordered_kth";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
@@ -36,10 +41,12 @@ internal static class UaeGrade3Unit12Questions
  private static bool IsG5Mean(string? f)=>f is G5MeanFive or G5MeanMissing or G5MeanHalf;
  private static bool IsG5MedianMode(string? f)=>f is G5MedianOdd or G5MedianEven or G5ModeSingle or G5ModeTwo or G5ModeNone;
  private static bool IsG5DotPlot(string? f)=>f is G5DotFrequency or G5DotTotal or G5DotMedian or G5DotMode or G5DotRange;
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f) || IsG5MedianMode(f) || IsG5DotPlot(f);
+ private static bool IsG5StemLeaf(string? f)=>f is G5StemCount or G5StemMedian or G5StemRange or G5StemModeFrequency or G5StemKth;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f) || IsG5MedianMode(f) || IsG5DotPlot(f) || IsG5StemLeaf(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5StemLeaf(f))return BuildG5StemLeaf(f,rng);
   if(IsG5DotPlot(f))return BuildG5DotPlot(f,rng);
   if(IsG5MedianMode(f))return BuildG5MedianMode(f,rng);
   if(IsG5Mean(f))return BuildG5Mean(f,rng);
@@ -109,6 +116,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5StemLeaf(f))return SolveG5StemLeaf(f,p);
   if(IsG5DotPlot(f))return SolveG5DotPlot(f,p);
   if(IsG5MedianMode(f))return SolveG5MedianMode(f,p);
   if(IsG5Mean(f))return SolveG5Mean(f,p);
@@ -119,6 +127,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5StemLeaf(f))return VerifyG5StemLeaf(f,p,answer);
   if(IsG5DotPlot(f))return VerifyG5DotPlot(f,p,answer);
   if(IsG5MedianMode(f))return VerifyG5MedianMode(f,p,answer);
   if(IsG5Mean(f))return VerifyG5Mean(f,p,answer);
@@ -545,6 +554,92 @@ internal static class UaeGrade3Unit12Questions
    G5DotMode=>values.GroupBy(x=>x).OrderByDescending(g=>g.Count()).First().Key,
    G5DotRange=>values.Max()-values.Min(),
    _=>throw new InvalidOperationException("Unknown Grade5 dot family")
+  };
+  return submitted==independent;
+ }
+
+
+ // Grade 5 U11 L11 hand-on stem-and-leaf. The exact numerical
+ // interpretation reuses the statistics engine, while drawing and explaining
+ // the plot is observed by the teacher.
+ private static Item BuildG5StemLeaf(string f,Random rng)
+ {
+  int stem=rng.Next(2,6),n=rng.Next(9,15);
+  int repeated=10*stem+rng.Next(1,8);
+  var values=new List<int>{repeated,repeated,10*(stem+1)+rng.Next(0,10),
+   10*(stem+2)+rng.Next(0,10)};
+  for(int i=4;i<n;i++)values.Add(10*(stem+rng.Next(0,3))+rng.Next(0,10));
+  values.Sort();
+  int targetStem=stem+rng.Next(0,3),k=rng.Next(2,n);
+  var p=new Dictionary<string,int>{{"n",n},{"targetStem",targetStem},{"k",k}};
+  for(int i=0;i<n;i++)p.Add($"v{i}",values[i]);
+  string stemLines=string.Join("؛ ",values.GroupBy(x=>x/10).Select(g=>
+    $"{g.Key} | {string.Join(" ",g.Select(x=>x%10))}"));
+  string prompt=$"مفتاح المخطط: ٢|٣ يعني ٢٣. الساق | الأوراق: {stemLines}. ";
+  prompt+=f switch
+  {
+   G5StemCount=>$"كم ورقة توجد عند الساق {targetStem}؟",
+   G5StemMedian=>"ما الوسيط لجميع البيانات؟",
+   G5StemRange=>"ما المدى؟",
+   G5StemModeFrequency=>"ما أكبر عدد مرات لتكرار قيمة واحدة؟",
+   G5StemKth=>$"ما القيمة في الترتيب {k} من الأصغر بعد ترتيب جميع الأوراق؟",
+   _=>throw new InvalidOperationException("Unknown stem-leaf family")
+  };
+  return new Item(f,prompt,
+   "أقرأ كل ساق على أنها عشرات وكل ورقة آحاد، ولا أحذف المكرر. لاستنتاج الوسيط أرتب المشاهدات وأختار الأوسط أو متوسط الأوسطين، وللمدى أطرح الحدين.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5StemLeaf(string f,IReadOnlyDictionary<string,int> p,out decimal expected)
+ {
+  expected=0;
+  if(!IsG5StemLeaf(f)||!p.TryGetValue("n",out int n)||n is <9 or >14||
+     !p.TryGetValue("k",out int k)||k<1||k>n||
+     !p.TryGetValue("targetStem",out int stem)||stem is <1 or >8||
+     p.Count!=n+3)return false;
+  var data=new int[n];
+  for(int i=0;i<n;i++)
+  {
+   if(!p.TryGetValue($"v{i}",out int value)||value is <10 or >89)return false;
+   data[i]=value;
+  }
+  Array.Sort(data);
+  expected=f switch
+  {
+   G5StemCount=>data.Count(x=>x/10==stem),
+   G5StemMedian=>(data[(n-1)/2]+data[n/2])/2m,
+   G5StemRange=>data[^1]-data[0],
+   G5StemModeFrequency=>data.GroupBy(x=>x).Max(g=>g.Count()),
+   G5StemKth=>data[k-1],
+   _=>throw new InvalidOperationException("Unknown stem-leaf family")
+  };
+  return true;
+ }
+ private static string SolveG5StemLeaf(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5StemLeaf(f,p,out decimal result))
+   throw new InvalidOperationException("Invalid stem-leaf data");
+  return result.ToString("0.##",CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5StemLeaf(string f,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5StemLeaf(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string value=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   '٫'=>'.', _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!decimal.TryParse(value,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal submitted))return false;
+  int n=p["n"];
+  int[] values=Enumerable.Range(0,n).Select(i=>p[$"v{i}"]).OrderBy(x=>x).ToArray();
+  decimal independent=f switch
+  {
+   G5StemCount=>values.Count(x=>x/10==p["targetStem"]),
+   G5StemMedian=>(values[(n-1)/2]+values[n/2])/2m,
+   G5StemRange=>values.Max()-values.Min(),
+   G5StemModeFrequency=>values.GroupBy(x=>x).Max(g=>g.Count()),
+   G5StemKth=>values[p["k"]-1],
+   _=>throw new InvalidOperationException("Unknown stem-leaf family")
   };
   return submitted==independent;
  }

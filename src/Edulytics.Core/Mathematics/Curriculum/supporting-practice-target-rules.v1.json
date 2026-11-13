@@ -16011,6 +16011,29 @@
         "commonMistake": "حذف قيم مكررة أو تغيير مقياس المحور أو اعتبار أكبر قيمة هي المنوال.",
         "summary": "أتحقق من مجموع العلامات وأفسر التكرار والوسيط والمنوال والمدى؛ الرسم الفعلي وتبرير القيم المتطرفة للمعلم."
       }
+    },
+    {
+      "id": "uae-g5-u11-l11-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:11$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "STEM_LEAF_ORDERED_RECONSTRUCTION",
+      "families": [
+        "uae.g5.u11.l11.leaf_count_at_stem",
+        "uae.g5.u11.l11.stem_median",
+        "uae.g5.u11.l11.stem_range",
+        "uae.g5.u11.l11.stem_mode_frequency",
+        "uae.g5.u11.l11.ordered_kth"
+      ],
+      "content": {
+        "concept": "كل ورقة تمثل قيمة أصلية واحدة، وتحدد الساق العشرات والورقة الآحاد؛ يجب توضيح المفتاح.",
+        "workedExample": "٢|١ ٤ ٤؛ ٣|٢ ٣ ٥: القيم ٢١،٢٤،٢٤،٣٢،٣٣،٣٥؛ الوسيط ٢٨.",
+        "solution": "أستعيد القيم من المفتاح، وأرتبها مع المكرر لأحسب التكرار والوسيط والمدى.",
+        "commonMistake": "عد السيقان بدل الأوراق، أو حذف الأوراق المكررة، أو ترك ترتيب الأوراق عشوائيًا.",
+        "summary": "أعرض البيانات مع مفتاح واضح وأستخرج الحقائق العددية؛ الرسم العملي والتفسير المفتوح يراجعهما المعلم."
+      }
     }
   ]
 }

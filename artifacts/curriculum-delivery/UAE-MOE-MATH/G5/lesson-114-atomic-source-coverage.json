@@ -1,0 +1,91 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 114,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:11",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    150,
+    151,
+    152,
+    153,
+    154,
+    155
+  ],
+  "SourcePrintedPages": [
+    853,
+    854,
+    855,
+    856,
+    857,
+    858
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "ترتيب بيانات إلى سيقان (عشرات) وأوراق (آحاد) مع مفتاح واضح",
+    "الحفاظ على الأوراق المكررة وعد جميع المشاهدات",
+    "استنتاج وسيط ومدى وتكرار وموضع عددي من مخطط السيقان والأوراق",
+    "مقارنة مجموعات بيانات وتفسير ملاءمة المخطط"
+  ],
+  "SourceElements": [
+    {
+      "Category": "introduce stem/leaf key, separate tens/ones and draw sorted leaves",
+      "Pages": [
+        853
+      ],
+      "Coverage": "original Arabic modeling with tens and ones"
+    },
+    {
+      "Category": "guided hands-on plot from cycling times and explaining strengths",
+      "Pages": [
+        854
+      ],
+      "Coverage": "teacher-reviewed drawing and explanation"
+    },
+    {
+      "Category": "independent data tables, median and range comparisons",
+      "Pages": [
+        855,
+        856
+      ],
+      "Coverage": "exact numeric families for key reading, median, range and stem count"
+    },
+    {
+      "Category": "homework, outlier and consumer price examples",
+      "Pages": [
+        857,
+        858
+      ],
+      "Coverage": "original walkthrough, cooldown and open-response rubric"
+    }
+  ],
+  "Engine": "REUSE existing statistics engine UaeGrade3Unit12Questions, extend 5 stem-and-leaf exact families",
+  "SkillId": "statistics.center_spread.core",
+  "QuestionFamilies": [
+    "uae.g5.u11.l11.leaf_count_at_stem",
+    "uae.g5.u11.l11.stem_median",
+    "uae.g5.u11.l11.stem_range",
+    "uae.g5.u11.l11.stem_mode_frequency",
+    "uae.g5.u11.l11.ordered_kth"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "في مخطط السيقان ٢ | ١ ٤ ٤؛ ٣ | ٢ ٣ ٥، كم ورقة توجد وما الوسيط؟",
+    "Answer": "٦ أوراق؛ الوسيط ٢٨.",
+    "TeacherRubric": "المفتاح ٢|١=٢١؛ القيم الست مرتبة والوسطان ٢٤ و٣٢."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_STEM_LEAF_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit11Lesson11StemLeafTests.cs",
+  "TestsRun": "FOCUSED_5_PASSED; REGRESSION_112_113_10_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Hand-drawn stem and leaf plot from raw observations",
+    "Open-ended comparison of data distributions"
+  ],
+  "SourceRights": "Original Edulytics student-facing prose/examples; protected textbook content not copied."
+}

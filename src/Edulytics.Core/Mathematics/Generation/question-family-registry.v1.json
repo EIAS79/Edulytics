@@ -47033,6 +47033,116 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l11.leaf_count_at_stem",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l11-stem-leaf-source-exact-StageD-NOT_RUN",
+      "representations": [
+        "stem_leaf_key",
+        "ordered_leaves",
+        "median",
+        "range",
+        "repeat_count",
+        "teacher_plot_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l11.stem_median",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l11-stem-leaf-source-exact-StageD-NOT_RUN",
+      "representations": [
+        "stem_leaf_key",
+        "ordered_leaves",
+        "median",
+        "range",
+        "repeat_count",
+        "teacher_plot_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l11.stem_range",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l11-stem-leaf-source-exact-StageD-NOT_RUN",
+      "representations": [
+        "stem_leaf_key",
+        "ordered_leaves",
+        "median",
+        "range",
+        "repeat_count",
+        "teacher_plot_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l11.stem_mode_frequency",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l11-stem-leaf-source-exact-StageD-NOT_RUN",
+      "representations": [
+        "stem_leaf_key",
+        "ordered_leaves",
+        "median",
+        "range",
+        "repeat_count",
+        "teacher_plot_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l11.ordered_kth",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l11-stem-leaf-source-exact-StageD-NOT_RUN",
+      "representations": [
+        "stem_leaf_key",
+        "ordered_leaves",
+        "median",
+        "range",
+        "repeat_count",
+        "teacher_plot_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
