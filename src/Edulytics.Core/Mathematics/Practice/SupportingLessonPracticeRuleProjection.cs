@@ -68,6 +68,24 @@ internal static class SupportingLessonPracticeRuleProjection
                         continue;
                     }
 
+                    // G5 U06 L06 source-model guard: the generic algebra-expression
+                    // rule generates English signed-coefficient/simplification
+                    // tasks unrelated to the Arabic student-book model objective.
+                    // Fail closed for that generic rule until an independently
+                    // verified lesson-specific family and teacher model rubric
+                    // are approved. Never silently route the fallback as READY.
+                    if (string.Equals(
+                            lesson.LessonCode,
+                            "PED:UAE-MOE-MATH:L5:GENERAL:06:06",
+                            StringComparison.Ordinal) &&
+                        string.Equals(
+                            rule.SkillId,
+                            "supporting.algebra.expressions",
+                            StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+
                     if (!skillIds.Contains(rule.SkillId) ||
                         rule.Families.Count == 0 ||
                         rule.Families.Any(familyId =>
