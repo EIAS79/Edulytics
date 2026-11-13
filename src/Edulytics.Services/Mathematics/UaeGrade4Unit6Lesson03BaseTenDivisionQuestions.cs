@@ -71,7 +71,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         expected=0;
         if(!IsG5U4Block(family)||p.Count!=2||
            !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
-           d is <11 or >22||n is <99 or >418||n/d is <9 or >18)return false;
+           d is <11 or >22||n is <99 or >505||n/d is <9 or >22)return false;
         expected=family==G5U4BlockQuotient?n/d:n%d;
         return true;
     }
