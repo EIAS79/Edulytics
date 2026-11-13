@@ -3,6 +3,10 @@ using Edulytics.Core.Enums;
 namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade4Unit11DecimalArithmeticQuestions
 {
+ private const string G5Product="uae.g5.u05.l02.model_decimal_product";
+ private const string G5Hundredths="uae.g5.u05.l02.model_shaded_hundredths";
+ private const string G5Wholes="uae.g5.u05.l02.model_complete_wholes";
+ private static bool IsG5(string? f)=>f is G5Product or G5Hundredths or G5Wholes;
  internal static readonly HashSet<string> Families=[
   "uae.g4.u11.l04.base_ten_sum","uae.g4.u11.l04.regroup_unit",
   "uae.g4.u11.l05.model_sum","uae.g4.u11.l05.fractional_hundredths",
@@ -12,12 +16,13 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
   "uae.g4.u11.l09.model_difference","uae.g4.u11.l09.fractional_hundredths",
   "uae.g4.u11.l10.column_difference","uae.g4.u11.l10.check_addition"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f!=null&&Families.Contains(f);
+ internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f));
  private static bool IsSubtract(string f)=>f.Contains(".l08.")||f.Contains(".l09.")||f.Contains(".l10.");
  private static bool IsProperty(string f)=>f.Contains(".l07.");
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported grade 4 decimal arithmetic");
+   if(IsG5(f))return BuildG5(f,random);
    int a=random.Next(125,1500);
    int b=random.Next(25,IsSubtract(f)?a:1500);
    int c=IsProperty(f)?random.Next(10,600):0;
@@ -38,9 +43,48 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
    };
    return new Item(f,question,"مثل العددين في المنازل المتناظرة واحسب بالأجزاء من مئة، ثم أعد تجميع الوحدة عند الحاجة.",AssessmentItemType.Numeric,p);
  }
+
+ private static Item BuildG5(string f,Random rng)
+ {
+   int t=rng.Next(1,10),groups=rng.Next(2,6);
+   string prompt=f switch
+   {
+     G5Product=>$"في {groups} شبكات ظلّل {t} أعشار في كل واحدة. ما ناتج {t}/10 × {groups} بالصورة العشرية؟",
+     G5Hundredths=>$"ظلّل {t} أعشار في كل واحدة من {groups} شبكات المئة، ما إجمالي المربعات المظللة من أجزاء المئة؟",
+     _=>$"في {groups} نماذج بكل منها {t} أعشار، كم وحدة كاملة تكونت من الأجزاء المظللة؟"
+   };
+   return new Item(f,prompt,"أجمع الأعشار وأُعيد تجميع كل عشرة أعشار إلى وحدة.",
+       AssessmentItemType.Numeric,new Dictionary<string,int>{{"tenths",t},{"groups",groups}});
+ }
+ private static bool ValidG5(string f,IReadOnlyDictionary<string,int> p,out decimal expected)
+ {
+   expected=0m;
+   if(!IsG5(f)||p.Count!=2||!p.TryGetValue("tenths",out int t)||
+       !p.TryGetValue("groups",out int g)||t is <1 or >9||g is <2 or >5)return false;
+   expected=f switch {G5Product=>t*g/10m,G5Hundredths=>t*g*10m,_=>(t*g)/10};
+   return true;
+ }
+ private static bool VerifyG5(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+   if(!ValidG5(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+   string s=new(answer.Trim().Select(ch=>ch switch{
+      >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+      >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+      '٫'=>'.',_=>ch
+   }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0').ToArray());
+   if(!decimal.TryParse(s,f==G5Product?NumberStyles.AllowDecimalPoint:NumberStyles.None,
+       CultureInfo.InvariantCulture,out decimal value))return false;
+   int t=p["tenths"],g=p["groups"];
+   return f switch{
+     G5Product=>value*10m==t*g,
+     G5Hundredths=>value==t*g*10m,
+     _=>value==Math.Floor((t*g)/10m)};
+ }
+
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if(IsG5(f))return ValidG5(f,p,out result);
    if(!Supports(f)||p.Count!=3||!p.TryGetValue("aHundredths",out int a)||
       !p.TryGetValue("bHundredths",out int b)||!p.TryGetValue("cHundredths",out int c)||
       a is <0 or >20000||b is <0 or >20000||c is <0 or >20000||
@@ -64,6 +108,7 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5(f))return VerifyG5(f,p,answer);
    if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
    string normalized=new(answer.Trim().Select(c=>c switch{
       >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
