@@ -2954,23 +2954,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:07:06",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 5 Student Edition / Unit 7 / Lesson 6; official Arabic title: المقارنة بين الكسور",
+      "TitleSourceReference": "Local Arabic student 02-1.pdf printed pp519–524, PDF pp132–137: المقارنة بين الكسور",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G5:GENERAL:ANNUAL:U07:L06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 5 General / Annual / Unit 7 / Lesson 6",
+      "SourceLocator": "Grade_05/01_Student_Books/02-1.pdf printed pp519–524 / PDF pp132–137",
       "SourceTitle": "UAE Grade 5 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
+      "SourceEdition": "Owner-selected Arabic student 2025–2026; official 2026–2027 sequence unverified",
       "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "cf4cc4f17a0bd0f6e4e01bf92f5c1bfd13619aee27413dc15386be902d7db09d",
+      "SourceSha256": "f0a111404b9e94bbc598f1ff4a7f80d68e434c54d3a30155858994404ddf5ab6",
       "CanonicalBodySha256": "6f4dbf44a747574bbe57aaf399776967ac73a8dcbaf8300e8acc83de51f425b0",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic RichV2 and G4 fraction-comparison engine extended to denominator 24; StageD tests NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2981,6 +2981,16 @@
           "StepByStepSolutions": "Step 1: Identify the information and goal. Step 2: Choose an operation, model, graph, or geometric relationship. Step 3: Solve accurately. Step 4: Interpret the result. Step 5: Verify it independently.",
           "CommonMistakes": "Do not lose place value, units, fraction equivalence, decimal position, operation order, or geometric conditions.",
           "QuickSummary": "Compare Fractions: choose the right representation, solve accurately, explain, and check."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المقارنة بين الكسور",
+          "Explanation": "لمقارنة كسرين بمقامين مختلفين، أوجد المضاعف المشترك الأصغر للمقامين ثم أنشئ كسورًا مكافئة بالمقام نفسه. اضرب البسط والمقام في العدد نفسه، وقارن البسطين فقط بعد التوحيد. يمكن استخدام نموذج شريطي أو الضرب التبادلي للتحقق.",
+          "KeyConceptsAndRules": "الكسور المكافئة تساوي الكسر الأصلي؛ ٢/٣ = ٤/٦ و٥/٦ أكبر من ٤/٦. للمقامين ٥ و٢ يكون المقام المشترك الأصغر ١٠، فتتحول ٣/٥ إلى ٦/١٠ و١/٢ إلى ٥/١٠. عند تساوي البسط، المقام الأكبر يعني جزءًا أصغر.",
+          "WorkedExamples": "٢/٣ < ٥/٦ لأن ٢/٣=٤/٦. و٣/٥ > ١/٢ لأن ٣/٥=٦/١٠ و١/٢=٥/١٠. و١/٣ < ١/٥ غير صحيح؛ عند تساوي البسط ١/٣ أكبر من ١/٥. للتحقق يمكن مقارنة حاصلَي الضرب التبادلي.",
+          "StepByStepSolutions": "١. اقرأ الكسرين. ٢. أوجد م.م.أ للمقامين. ٣. اضرب البسط والمقام لكل كسر في العامل الملائم. ٤. قارن البسطين بالمقام نفسه واكتب الرمز. ٥. تحقق بنموذج أو حاصل الضرب التبادلي.",
+          "CommonMistakes": "لا تضرب المقام وحده وتبقي البسط كما هو، لأن ذلك يغير القيمة. لا تختَر الكسر صاحب المقام الأكبر باعتباره الأكبر تلقائيًا. وإذا تساوت القيم فاستخدم = حتى لو اختلف شكل البسط والمقام.",
+          "QuickSummary": "أوحّد المقامات بأصغر مضاعف مشترك، أنشئ كسورًا مكافئة، أقارن البسطين وأتحقق."
         }
       ]
     },

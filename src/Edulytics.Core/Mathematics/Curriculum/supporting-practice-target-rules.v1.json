@@ -15096,6 +15096,27 @@
         "commonMistake": "الخلط بين ع.م.أ وم.م.أ.",
         "summary": "أوجد م.م.أ لعددين أو ثلاثة."
       }
+    },
+    {
+      "id": "uae-g5-u07-l06-fraction-compare",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:06$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "FRACTION_COMPARE_COMMON_DENOMINATOR",
+      "families": [
+        "uae.g5.u07.l06.compare_common_denominator",
+        "uae.g5.u07.l06.find_least_common_denominator",
+        "uae.g5.u07.l06.equivalent_numerator"
+      ],
+      "content": {
+        "concept": "كوّن كسورًا متكافئة بالمقام المشترك الأصغر وقارن البسوط.",
+        "workedExample": "٢/٣ = ٤/٦ < ٥/٦.",
+        "solution": "أوجد م.م.أ للمقامين، ثم أحوّل وأقارن.",
+        "commonMistake": "تغيير المقام دون البسط.",
+        "summary": "قارن الكسور بكسور مكافئة."
+      }
     }
   ]
 }
