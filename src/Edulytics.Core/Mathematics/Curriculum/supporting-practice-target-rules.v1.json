@@ -15881,6 +15881,29 @@
         "commonMistake": "اعتبار أي توقع حقيقة مؤكدة أو تعميم عينة متحيزة على مجتمع كامل.",
         "summary": "الأجوبة الرقمية شرطية على استمرار النمط أو تمثيل العينة؛ جودة الافتراض يراجعها المعلم."
       }
+    },
+    {
+      "id": "uae-g5-u11-l05-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:05$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "ANALYZE_LINE_GRAPH_MAX_CHANGE_INTERPOLATION_AND_EXTRAPOLATION",
+      "families": [
+        "uae.g5.u11.l02.line_plot_read_point",
+        "uae.g5.u11.l02.line_plot_total_change",
+        "uae.g5.u11.l02.line_plot_max_value",
+        "uae.g5.u11.l04.linear_next_prediction",
+        "uae.g5.u11.l04.linear_future_prediction"
+      ],
+      "content": {
+        "concept": "تحليل التمثيلات الخطية يتضمن تحديد القيم العليا والدنيا وفترات الزيادة والنقصان والثبات واستنتاج معدل التغير والتوقع المشروط.",
+        "workedExample": "قيمة السيارة ٢٠ كم بعد ساعة و٤٠ بعد ساعتين؛ المعدل ٢٠ كم في الساعة، والتوقع بعد ثلاث ساعات ٦٠ كم عند ثبات المعدل.",
+        "solution": "أقرأ محور x ومحور y، وأحدد النقاط بالترتيب، وأحسب التغير من فرق قيمتين وأتحقق من النموذج الزمني.",
+        "commonMistake": "الاستقراء من قراءة نقطة واحدة أو الخلط بين ارتفاع نقطة ومعدل تغير منحنى.",
+        "summary": "أميز ما يمكن قراءته مباشرة وما يستلزم توقعًا مشروطًا بالمعدل، وأراجع وحدات القياس."
+      }
     }
   ]
 }
