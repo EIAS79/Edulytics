@@ -5,11 +5,15 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
 {
     internal const string Constant="uae.g4.u07.l02.constant_numeric_step";
     internal const string Alternating="uae.g4.u07.l02.alternating_numeric_rule";
+    private const string G5Sequence="uae.g5.u05.l07.decimal_factor_ten_pattern",G5Arithmetic="uae.g5.u05.l07.arithmetic_step_pattern",
+      G5Table="uae.g5.u05.l07.table_double_minus_one",G5Discount="uae.g5.u05.l07.ten_percent_discount_pattern";
+    private static bool IsG5(string? f)=>f is G5Sequence or G5Arithmetic or G5Table or G5Discount;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Constant or Alternating;
+    internal static bool Supports(string? f)=>f is Constant or Alternating || IsG5(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported numeric pattern");
+        if(IsG5(f))return BuildG5(f,r);
         int start=r.Next(20,100),step=r.Next(2,10),index=r.Next(4,9);
         var values=new List<int>{start};
         for(int i=1;i<index;i++)
@@ -20,6 +24,95 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
             f==Constant?"أبحث عن الفرق الثابت بين الأعداد وأطبقه.":"أبحث عن قاعدتين تتناوبان بين طرح عدد وإضافة عدد مختلف.",
             AssessmentItemType.Numeric,new Dictionary<string,int>{{"start",start},{"step",step},{"index",index}});
     }
+
+    private static decimal PowerTen(int exp)
+    {
+        decimal result=1m;for(int i=0;i<exp;i++)result*=10m;return result;
+    }
+    private static Item BuildG5(string family,Random random)
+    {
+        IReadOnlyDictionary<string,int> p;
+        string prompt;
+        if(family==G5Sequence)
+        {
+            int milli=random.Next(10,900001),dir=random.Next(2)==0?-1:1;
+            decimal value=milli/1000m;
+            string sequence=string.Join("، ",Enumerable.Range(0,4).Select(i=>
+                (value*(dir==1?PowerTen(i):1m/PowerTen(i)))
+                  .ToString("0.#######",CultureInfo.InvariantCulture)));
+            p=new Dictionary<string,int>{{"seedMilli",milli},{"direction",dir},{"length",4}};
+            prompt=$"اكتشف النمط وأكمل: {sequence}، □.";
+        }
+        else if(family==G5Arithmetic)
+        {
+            int start=random.Next(3,101),step=random.Next(2,11);
+            p=new Dictionary<string,int>{{"start",start},{"step",step},{"length",3}};
+            prompt=$"أكمل {start}، {start+step}، {start+2*step}، □.";
+        }
+        else if(family==G5Table)
+        {
+            int input=random.Next(5,51);
+            p=new Dictionary<string,int>{{"input",input}};
+            prompt=$"إذا كان ٥→٩ و١٠→١٩ و١٥→٢٩، فما المخرج للمدخل {input}؟";
+        }
+        else
+        {
+            int cents=random.Next(20,901)*10;
+            p=new Dictionary<string,int>{{"priceCents",cents}};
+            prompt=$"سعر سلعة {(cents/100m).ToString("0.00",CultureInfo.InvariantCulture)} درهمًا. ما سعرها بعد خصم ١٠٪؟";
+        }
+        return new Item(family,prompt,"أحدد القاعدة وأطبقها ثم أتحقق من الحدود السابقة.",
+            AssessmentItemType.Numeric,p);
+    }
+    private static bool ValidG5(string f,IReadOnlyDictionary<string,int> p,out decimal result)
+    {
+        result=0m;if(!IsG5(f))return false;
+        if(f==G5Sequence)
+        {
+            if(p.Count!=3||!p.TryGetValue("seedMilli",out int s)||
+                !p.TryGetValue("direction",out int d)||!p.TryGetValue("length",out int len)||
+                s is <10 or >900000||(d!=1&&d!=-1)||len!=4)return false;
+            result=s/1000m*(d==1?PowerTen(len):1m/PowerTen(len));return true;
+        }
+        if(f==G5Arithmetic)
+        {
+            if(p.Count!=3||!p.TryGetValue("start",out int s)||!p.TryGetValue("step",out int d)||
+                !p.TryGetValue("length",out int len)||s is <3 or >100||d is <2 or >10||len!=3)return false;
+            result=s+d*len;return true;
+        }
+        if(f==G5Table)
+        {
+            if(p.Count!=1||!p.TryGetValue("input",out int x)||x is <5 or >50)return false;
+            result=2*x-1;return true;
+        }
+        if(p.Count!=1||!p.TryGetValue("priceCents",out int cents)||
+           cents is <200 or >9000||cents%10!=0)return false;
+        result=cents*9/1000m;return true;
+    }
+    private static string SolveG5(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5(f,p,out decimal result))throw new InvalidOperationException("Invalid G5 pattern");
+        return result.ToString("0.#######",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string s=new(answer.Trim().Select(c=>c switch{
+          >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+          >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+          '٫'=>'.',_=>c
+        }).Where(c=>c is not ' ' and not '٬' and not '\u00a0').ToArray());
+        if(s.Length>30||!s.All(c=>c is >= '0' and <= '9' or '.'))return false;
+        if(!decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal provided))return false;
+        decimal expected=f switch{
+          G5Sequence=>p["seedMilli"]/1000m*(p["direction"]==1?PowerTen(4):1m/PowerTen(4)),
+          G5Arithmetic=>p["start"]+3*p["step"],
+          G5Table=>2*p["input"]-1,
+          _=>p["priceCents"]*9/1000m
+        };
+        return provided==expected;
+    }
+
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int result)
     {
         result=0;
@@ -32,11 +125,13 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5(f))return SolveG5(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid pattern");
         return x.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5(f))return VerifyG5(f,p,answer);
         if(!Valid(f,p,out var x)||string.IsNullOrWhiteSpace(answer))return false;
         var s=new string(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
             .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
