@@ -14,7 +14,8 @@ internal static class UaeGrade4Unit16GeometryQuestions
  "uae.g4.u16.l08.model_shape_count","uae.g4.u16.l08.model_grid_total",
  "uae.g5.u12.l02.congruent_side_count","uae.g5.u12.l02.acute_angle_count",
  "uae.g5.u12.l02.right_angle_count","uae.g5.u12.l02.obtuse_angle_count",
- "uae.g5.u12.l02.third_angle"];
+ "uae.g5.u12.l02.third_angle",
+ "uae.g5.u12.l03.triangle_side_type","uae.g5.u12.l03.triangle_angle_type"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? f)=>f is not null&&Families.Contains(f);
  private static bool IsG5Triangle(string? f)=>f is
@@ -22,7 +23,9 @@ internal static class UaeGrade4Unit16GeometryQuestions
   "uae.g5.u12.l02.acute_angle_count" or
   "uae.g5.u12.l02.right_angle_count" or
   "uae.g5.u12.l02.obtuse_angle_count" or
-  "uae.g5.u12.l02.third_angle";
+  "uae.g5.u12.l02.third_angle" or
+  "uae.g5.u12.l03.triangle_side_type" or
+  "uae.g5.u12.l03.triangle_angle_type";
  internal static Item Build(string f,Random random)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported geometry family");
@@ -100,7 +103,7 @@ internal static class UaeGrade4Unit16GeometryQuestions
  private static Item BuildG5Triangle(string f,Random rng)
  {
   int a,b,c;
-  if(f=="uae.g5.u12.l02.congruent_side_count")
+  if(f is "uae.g5.u12.l02.congruent_side_count" or "uae.g5.u12.l03.triangle_side_type")
   {
    int[][] sideSets=[[5,5,5],[6,6,9],[4,5,6],[7,8,10],[4,7,7],[3,4,5]];
    int[] chosen=sideSets[rng.Next(sideSets.Length)];
@@ -126,6 +129,10 @@ internal static class UaeGrade4Unit16GeometryQuestions
     $"زوايا مثلث {a}° و{b}° و{c}°. كم زاوية منفرجة فيه؟",
    "uae.g5.u12.l02.third_angle"=>
     $"زاويتان في مثلث {a}° و{b}°. ما قياس الزاوية الثالثة بالدرجات؟",
+   "uae.g5.u12.l03.triangle_side_type"=>
+    $"أطوال ثلاثة أضلاع صالحة لمثلث: {a} سم و{b} سم و{c} سم. صنّف نوعه بحسب الأضلاع: ٠ متساوي الأضلاع، ١ متساوي الساقين غير المتساوي الأضلاع، ٢ مختلف الأضلاع.",
+   "uae.g5.u12.l03.triangle_angle_type"=>
+    $"زوايا مثلث {a}° و{b}° و{c}°. صنّف المثلث: ٠ حاد الزوايا، ١ قائم الزاوية، ٢ منفرج الزاوية.",
    _=>throw new InvalidOperationException("Unknown G5 triangle family")
   };
   return new Item(f,question,
@@ -138,10 +145,12 @@ internal static class UaeGrade4Unit16GeometryQuestions
   if(!IsG5Triangle(family)||p.Count!=3||
    !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
    !p.TryGetValue("c",out int c)||a<=0||b<=0||c<=0)return false;
-  if(family=="uae.g5.u12.l02.congruent_side_count")
+  if(family is "uae.g5.u12.l02.congruent_side_count" or "uae.g5.u12.l03.triangle_side_type")
   {
    if(a>50||b>50||c>50||a+b<=c||a+c<=b||b+c<=a)return false;
-   result=a==b&&b==c?3:a==b||b==c||a==c?2:0;
+   result=family=="uae.g5.u12.l03.triangle_side_type"
+       ? a==b&&b==c?0:a==b||b==c||a==c?1:2
+       : a==b&&b==c?3:a==b||b==c||a==c?2:0;
    return true;
   }
   if(a>=180||b>=180||c>=180||a+b+c!=180)return false;
@@ -150,6 +159,8 @@ internal static class UaeGrade4Unit16GeometryQuestions
    "uae.g5.u12.l02.acute_angle_count"=>new[]{a,b,c}.Count(v=>v<90),
    "uae.g5.u12.l02.right_angle_count"=>new[]{a,b,c}.Count(v=>v==90),
    "uae.g5.u12.l02.obtuse_angle_count"=>new[]{a,b,c}.Count(v=>v>90),
+   "uae.g5.u12.l03.triangle_angle_type"=>new[]{a,b,c}.Any(v=>v>90)?2:
+       new[]{a,b,c}.Any(v=>v==90)?1:0,
    _=>180-a-b
   };
   return true;
@@ -178,6 +189,10 @@ internal static class UaeGrade4Unit16GeometryQuestions
    "uae.g5.u12.l02.acute_angle_count"=>(a<90?1:0)+(b<90?1:0)+(c<90?1:0),
    "uae.g5.u12.l02.right_angle_count"=>(a==90?1:0)+(b==90?1:0)+(c==90?1:0),
    "uae.g5.u12.l02.obtuse_angle_count"=>(a>90?1:0)+(b>90?1:0)+(c>90?1:0),
+   "uae.g5.u12.l03.triangle_side_type"=>
+    a==b&&b==c?0:a==b||b==c||a==c?1:2,
+   "uae.g5.u12.l03.triangle_angle_type"=>
+    a>90||b>90||c>90?2:a==90||b==90||c==90?1:0,
    _=>180-a-b
   };
   return submitted==independent;

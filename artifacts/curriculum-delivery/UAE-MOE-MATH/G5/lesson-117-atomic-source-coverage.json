@@ -1,0 +1,92 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 117,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:03",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    186,
+    187,
+    188,
+    189,
+    190,
+    191
+  ],
+  "SourcePrintedPages": [
+    889,
+    890,
+    891,
+    892,
+    893,
+    894
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تصنيف المثلث حسب الأطوال إلى متساوي الأضلاع، متساوي الساقين، مختلف الأضلاع",
+    "تصنيف المثلث حسب الزوايا إلى حاد وقائم ومنفرج",
+    "التحقق من متباينة المثلث وصحة القياسات",
+    "تفسير أن كلا التصنيفين مستقلان"
+  ],
+  "SourceElements": [
+    {
+      "Category": "triangle side classification with examples",
+      "Pages": [
+        889
+      ],
+      "Coverage": "side category examples cross-checked"
+    },
+    {
+      "Category": "acute, right, obtuse angle classification",
+      "Pages": [
+        890,
+        891
+      ],
+      "Coverage": "angle categories, independent examples and exact families"
+    },
+    {
+      "Category": "mathematical reasoning, boundary edge cases",
+      "Pages": [
+        892
+      ],
+      "Coverage": "source activities and first-party open explanation"
+    },
+    {
+      "Category": "homework and real-world triangles",
+      "Pages": [
+        893,
+        894
+      ],
+      "Coverage": "practice and teacher classification rubric"
+    }
+  ],
+  "SourceMathCaveat": "Printed p.890 includes diagram labeled with 2 cm,2 cm,4 cm: such lengths violate strict triangle inequality. Do not use as a mathematically valid triangle dataset; first-party exercises use only valid triples.",
+  "Engine": "REUSE UaeGrade4Unit16GeometryQuestions from L116; extend two classification families and reuse four prior exact families.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l03.triangle_side_type",
+    "uae.g5.u12.l03.triangle_angle_type",
+    "uae.g5.u12.l02.congruent_side_count",
+    "uae.g5.u12.l02.acute_angle_count",
+    "uae.g5.u12.l02.right_angle_count",
+    "uae.g5.u12.l02.obtuse_angle_count"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "مثلث أضلاعه ٧،٧،١٠ سم، وزواياه ٥٠°،٥٠°،٨٠°. ما تصنيفه بالأضلاع وبالزوايا؟",
+    "Answer": "متساوي الساقين وحاد الزوايا.",
+    "TeacherRubric": "يشرح استقلال التصنيفين والتحقق من مجموع زوايا ١٨٠ ومتباينة المثلث."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "TWO_CLASSIFICATION_FAMILIES_PLUS_REUSED_TRIANGLE_EXACT_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson03TriangleClassificationTests.cs",
+  "TestsRun": "FOCUSED_2_PASSED; L116_REGRESSION_5_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Real-world triangle pictures/drawings and written justification"
+  ],
+  "SourceRights": "First-party learner-facing examples, no publisher diagrams copied."
+}

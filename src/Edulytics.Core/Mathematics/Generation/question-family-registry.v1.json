@@ -47332,6 +47332,46 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l03.triangle_side_type",
+      "version": 1,
+      "skillId": "geometry.polygons",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l03-triangle-sides-angles-classify-StageD-NOT_RUN",
+      "representations": [
+        "triangle_side_lengths",
+        "triangle_angles",
+        "valid_triangle_inequality",
+        "teacher_classification_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l03.triangle_angle_type",
+      "version": 1,
+      "skillId": "geometry.polygons",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l03-triangle-sides-angles-classify-StageD-NOT_RUN",
+      "representations": [
+        "triangle_side_lengths",
+        "triangle_angles",
+        "valid_triangle_inequality",
+        "teacher_classification_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

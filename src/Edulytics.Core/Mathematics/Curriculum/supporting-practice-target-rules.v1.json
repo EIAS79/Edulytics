@@ -16079,6 +16079,30 @@
         "commonMistake": "اعتبار زاوية ٩٠° حادة أو افتراض وجود زاويتين قائمتين في مثلث.",
         "summary": "القياسات العددية تتحقق آليًا، أما القياس اليدوي بالمسطرة والمنقلة ورسم مثلث فيقيمه المعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l03-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:03$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "TRIANGLE_SIDE_AND_ANGLE_TYPE",
+      "families": [
+        "uae.g5.u12.l03.triangle_side_type",
+        "uae.g5.u12.l03.triangle_angle_type",
+        "uae.g5.u12.l02.congruent_side_count",
+        "uae.g5.u12.l02.acute_angle_count",
+        "uae.g5.u12.l02.right_angle_count",
+        "uae.g5.u12.l02.obtuse_angle_count"
+      ],
+      "content": {
+        "concept": "يختلف تصنيف المثلث بالأضلاع عن تصنيفه بالزوايا، ولا بد أن تكون الأطوال صالحة هندسيًا.",
+        "workedExample": "٧،٧،١٠: متساوي الساقين؛ ٩٠،٣٥،٥٥: قائم الزاوية.",
+        "solution": "أتحقق من متباينة المثلث وأحصي الأطوال المتساوية؛ ثم أقارن أكبر زاوية بـ٩٠°.",
+        "commonMistake": "اعتبار أطوال ٢،٢،٤ مثلثًا أو الخلط بين تصنيف الأضلاع والزوايا.",
+        "summary": "تدريبات التصنيف العددي قابلة للتحقق؛ رسم المثلث وشرح الاختلافات يراجعهما المعلم."
+      }
     }
   ]
 }
