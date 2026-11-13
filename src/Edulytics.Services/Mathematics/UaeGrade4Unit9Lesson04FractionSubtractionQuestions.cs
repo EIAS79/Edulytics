@@ -151,7 +151,7 @@ internal static class UaeGrade4Unit9Lesson04FractionSubtractionQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
-        if(family==G5Extended)return VerifyG5Extended(family==G5Extended?p:p,answer);
+        if(family==G5Extended)return VerifyG5Extended(p,answer);
         if(G5Unlike(family))return VerifyG5Unlike(family,p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch{
