@@ -1,0 +1,72 @@
+{
+  "Grade": 5,
+  "Unit": 4,
+  "LessonOrdinal": 35,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:04:03",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "Common/General",
+  "TargetYear": "2026–2027",
+  "Official2026_2027DetailedSequenceVerified": false,
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    263,
+    264,
+    265,
+    266,
+    267,
+    268
+  ],
+  "SourcePdfPages": [
+    282,
+    283,
+    284,
+    285,
+    286,
+    287
+  ],
+  "Coverage": [
+    {
+      "scope": "two-digit long division and first-quotient position",
+      "printed": [
+        263,
+        264
+      ],
+      "artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u04-l03-ar.rich-lesson-v2.json"
+    },
+    {
+      "scope": "guided and independent exercises with remainder",
+      "printed": [
+        264,
+        265,
+        266
+      ],
+      "artifact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit4Lesson03TwoDigitDivisionTests.cs"
+    },
+    {
+      "scope": "homework and error analysis",
+      "printed": [
+        267,
+        268
+      ],
+      "artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u04-l03-ar.rich-lesson-v2.json"
+    }
+  ],
+  "SkillId": "number.base_ten_division_with_remainders",
+  "QuestionFamilies": [
+    "uae.g5.u04.l03.two_digit_long_quotient",
+    "uae.g5.u04.l03.two_digit_long_remainder"
+  ],
+  "EngineReuse": "UaeGrade4Unit6Lesson03BaseTenDivisionQuestions extended, no new engine",
+  "CoolDown": {
+    "type": "Original Edulytics",
+    "question": "قسّم ١٬١٢٧ قطعة على ٢٥ مجموعة. ما الحاصل والباقي؟",
+    "expected": "٤٥ والباقي ٢",
+    "teacherReview": "position of quotient digits and written justification"
+  },
+  "StageA": "CLOSED_LOCAL",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_ENGINE_AND_REGISTRIES_AUTHORED",
+  "Tests": "NOT_RUN",
+  "StageD": false
+}

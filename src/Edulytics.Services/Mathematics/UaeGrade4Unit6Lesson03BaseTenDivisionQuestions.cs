@@ -5,6 +5,9 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
 {
     internal const string Quotient="uae.g4.u06.l03.base_ten_quotient";
     internal const string Remainder="uae.g4.u06.l03.base_ten_remainder";
+    internal const string G5U4LongQuotient="uae.g5.u04.l03.two_digit_long_quotient";
+    internal const string G5U4LongRemainder="uae.g5.u04.l03.two_digit_long_remainder";
+    private static bool IsG5U4Long(string? f)=>f is G5U4LongQuotient or G5U4LongRemainder;
     internal const string G5U4BlockQuotient="uae.g5.u04.l02.base_ten_group_quotient";
     internal const string G5U4BlockRemainder="uae.g5.u04.l02.base_ten_group_remainder";
     private static bool IsG5U4Block(string? f)=>f is G5U4BlockQuotient or G5U4BlockRemainder;
@@ -32,10 +35,11 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f) || IsG5U4Long(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
+        if(IsG5U4Long(f))return BuildG5U4Long(f,r);
         if(IsG5U4Block(f))return BuildG5U4Block(f,r);
         if(IsG5(f))return BuildG5(f,r);
         if(IsG5Partial(f))return BuildG5Partial(f,r);
@@ -52,6 +56,41 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
             AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",dividend},{"divisor",divisor}});
     }
 
+
+
+    // G5 U04 L03 shares the G4/U3 exact long-division engine; new source range
+    // uses two-digit divisors and 3–4 digit dividends, with quotient and remainder.
+    private static Item BuildG5U4Long(string f,Random rng)
+    {
+        int divisor=rng.Next(11,99),quotient=rng.Next(3,53),remainder=rng.Next(0,divisor);
+        int dividend=checked(divisor*quotient+remainder);
+        string prompt=f==G5U4LongQuotient
+            ?$"اقسم {dividend} على {divisor} بالقسمة المطولة؛ اكتب ناتج القسمة الصحيح دون الباقي."
+            :$"اقسم {dividend} على {divisor} باستخدام التقدير والضرب والطرح؛ ما الباقي بعد توزيع المجموعات الكاملة؟";
+        return new Item(f,prompt,"قدّر، ثم اقسم واضرب واطرح وأنزل الرقم التالي. تحقق بأن الباقي أصغر من المقسوم عليه.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",dividend},{"divisor",divisor}});
+    }
+    private static bool ValidG5U4Long(string f,IReadOnlyDictionary<string,int> p,out int value)
+    {
+        value=0;
+        if(!IsG5U4Long(f)||p.Count!=2||!p.TryGetValue("dividend",out int n)||
+           !p.TryGetValue("divisor",out int d)||d is <11 or >98||
+           n is <33 or >5194||n/d is <3 or >52)return false;
+        value=f==G5U4LongQuotient?n/d:n%d;
+        return true;
+    }
+    private static bool VerifyG5U4Long(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5U4Long(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string raw=new(answer.Trim().Where(ch=>ch!=','&&ch!='٬'&&ch!=' '&&ch!='\u00a0'&&ch!='\u202f')
+            .Select(ch=>ch is >= '٠' and <= '٩'?(char)('0'+ch-'٠'):
+                        ch is >= '۰' and <= '۹'?(char)('0'+ch-'۰'):ch).ToArray());
+        if(!int.TryParse(raw,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        int n=p["dividend"],d=p["divisor"];
+        return f==G5U4LongQuotient
+            ?v>=0&&(long)v*d<=n&&n-(long)v*d<d
+            :v>=0&&v<d&&(n-v)%d==0;
+    }
 
     // G5 U04 L02: extend the same base-ten regrouping mechanism to a
     // two-digit group count. No change to previously registered families.
@@ -362,6 +401,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsG5U4Long(f))return ValidG5U4Long(f,p,out expected);
         if(IsG5U4Block(f))return ValidG5U4Block(f,p,out expected);
         if(IsG5(f))return ValidG5(f,p,out expected);
         if(IsG5Partial(f))return ValidG5Partial(f,p,out expected);
@@ -382,6 +422,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5U4Long(f))return VerifyG5U4Long(f,p,answer);
         if(IsG5U4Block(f))return VerifyG5U4Block(f,p,answer);
         if(IsG5Long(f))return VerifyG5Long(f,p,answer);
         if(IsG5First(f))return VerifyG5First(f,p,answer);

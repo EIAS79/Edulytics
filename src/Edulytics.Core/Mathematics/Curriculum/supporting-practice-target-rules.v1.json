@@ -14381,6 +14381,26 @@
         "commonMistake": "لا تخلط بين الباقي ونصيب المجموعة ولا توزع العشرات كآحاد دون إعادة تجميع.",
         "summary": "أعيد التجميع وأتحقق من المقسوم = المقسوم عليه × الحاصل + الباقي."
       }
+    },
+    {
+      "id": "uae-g5-u04-l03-two-digit-exact-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:03$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "TWO_DIGIT_LONG_DIVISION_QUOTIENT_REMAINDER",
+      "families": [
+        "uae.g5.u04.l03.two_digit_long_quotient",
+        "uae.g5.u04.l03.two_digit_long_remainder"
+      ],
+      "content": {
+        "concept": "أقسم عددًا من ثلاث أو أربع خانات على عدد من رقمين بالقسمة المطولة مع التقدير والمراجعة.",
+        "workedExample": "٨٣٦÷٧٦=١١ لأن ٧٦×١١=٨٣٦.",
+        "solution": "أقدّر حاصل القسمة، أقسم، أضرب، أطرح، أنزل وأراجع الباقي.",
+        "commonMistake": "إسقاط خطوة الإنزال أو اختيار رقم حاصل أكبر من اللازم يجعل حاصل الضرب أكبر من المقسوم.",
+        "summary": "أتحقق باستخدام المقسوم = المقسوم عليه×الحاصل+الباقي."
+      }
     }
   ]
 }
