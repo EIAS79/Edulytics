@@ -365,7 +365,7 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     private static bool Valid(string? f,IReadOnlyDictionary<string,int> p,out int x)
     {
         x=0;
-        if(IsG5SubInt(f))return ValidG5SubInt(f,p,out x);
+        if(f is not null && IsG5SubInt(f))return ValidG5SubInt(f,p,out x);
         if(IsG5Order(f))return ValidG5Order(f,p,out x);
         if(IsG5Bar(f))return ValidG5Bar(f,p,out x);
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("input",out int n)||
