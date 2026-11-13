@@ -20,6 +20,11 @@ internal static class UaeGrade3Unit12Questions
  internal const string G5ModeSingle="uae.g5.u11.l09.single_mode";
  internal const string G5ModeTwo="uae.g5.u11.l09.two_modes_count";
  internal const string G5ModeNone="uae.g5.u11.l09.no_mode_count";
+ internal const string G5DotFrequency="uae.g5.u11.l10.dot_frequency";
+ internal const string G5DotTotal="uae.g5.u11.l10.dot_total";
+ internal const string G5DotMedian="uae.g5.u11.l10.dot_median";
+ internal const string G5DotMode="uae.g5.u11.l10.dot_mode";
+ internal const string G5DotRange="uae.g5.u11.l10.dot_range";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
@@ -30,10 +35,12 @@ internal static class UaeGrade3Unit12Questions
  private static bool IsG5Share(string? f)=>f is G5ShareTwo or G5ShareThree or G5ShareMissing;
  private static bool IsG5Mean(string? f)=>f is G5MeanFive or G5MeanMissing or G5MeanHalf;
  private static bool IsG5MedianMode(string? f)=>f is G5MedianOdd or G5MedianEven or G5ModeSingle or G5ModeTwo or G5ModeNone;
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f) || IsG5MedianMode(f);
+ private static bool IsG5DotPlot(string? f)=>f is G5DotFrequency or G5DotTotal or G5DotMedian or G5DotMode or G5DotRange;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f) || IsG5MedianMode(f) || IsG5DotPlot(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5DotPlot(f))return BuildG5DotPlot(f,rng);
   if(IsG5MedianMode(f))return BuildG5MedianMode(f,rng);
   if(IsG5Mean(f))return BuildG5Mean(f,rng);
   if(IsG5Share(f))return BuildG5Share(f,rng);
@@ -102,6 +109,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5DotPlot(f))return SolveG5DotPlot(f,p);
   if(IsG5MedianMode(f))return SolveG5MedianMode(f,p);
   if(IsG5Mean(f))return SolveG5Mean(f,p);
   if(IsG5Share(f))return SolveG5Share(f,p);
@@ -111,6 +119,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5DotPlot(f))return VerifyG5DotPlot(f,p,answer);
   if(IsG5MedianMode(f))return VerifyG5MedianMode(f,p,answer);
   if(IsG5Mean(f))return VerifyG5Mean(f,p,answer);
   if(IsG5Share(f))return VerifyG5Share(f,p,answer);
@@ -452,6 +461,92 @@ internal static class UaeGrade3Unit12Questions
    _=>throw new InvalidOperationException("Unknown Grade5 median/mode family")
   };
   return got==independent;
+ }
+
+
+ // Grade 5 U11 L10: numerical reading of dot plots; drawing the
+ // actual axis and narrative about outliers remain teacher-reviewed.
+ // All answers are reconstructed from five source data frequencies.
+ private static Item BuildG5DotPlot(string family,Random rng)
+ {
+  int start=rng.Next(8,41),step=rng.Next(1,4);
+  int[] frequencies=Enumerable.Range(0,5).Select(_=>rng.Next(1,5)).ToArray();
+  if(family==G5DotMode)frequencies[2]=6; // The unique highest count.
+  var p=new Dictionary<string,int>{{"a",start},{"s",step}};
+  for(int i=0;i<5;i++)p.Add($"f{i}",frequencies[i]);
+  string plot=string.Join("؛ ",Enumerable.Range(0,5).Select(i=>
+      $"{start+i*step}: {new string('X',frequencies[i])}"));
+  string prompt="يمثل كل X مشاهدة واحدة في مخطط النقاط: "+plot+". ";
+  prompt+=family switch
+  {
+   G5DotFrequency=>$"كم مشاهدة عند القيمة {start+2*step}؟",
+   G5DotTotal=>"ما إجمالي المشاهدات؟",
+   G5DotMedian=>"ما وسيط جميع البيانات عند عد العلامات المكررة؟",
+   G5DotMode=>"ما القيمة الأكثر تكرارًا (المنوال)؟",
+   G5DotRange=>"ما مدى البيانات؟",
+   _=>throw new InvalidOperationException("Unsupported Grade5 dot-plot family")
+  };
+  return new Item(family,prompt,
+   "كل علامة X مشاهدة واحدة. لقراءة التكرار أعد العلامات، ولإيجاد الوسيط أرتب جميع المشاهدات مع تكرارها، وللمنوال أختار أعلى تكرار، وللمدى أطرح أصغر قيمة من أكبرها.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5DotPlot(string family,IReadOnlyDictionary<string,int> p,out decimal result)
+ {
+  result=0;
+  if(!IsG5DotPlot(family)||p.Count!=7||!p.TryGetValue("a",out int a)||
+     !p.TryGetValue("s",out int step)||a is <0 or >80||step is <1 or >4||a+4*step>100)return false;
+  int[] counts=new int[5];
+  for(int i=0;i<5;i++)
+  {
+   if(!p.TryGetValue($"f{i}",out int count)||count is <1 or >6)return false;
+   counts[i]=count;
+  }
+  if(family==G5DotMode && counts.Count(x=>x==counts.Max())!=1)return false;
+  int[] data=Enumerable.Range(0,5)
+    .SelectMany(i=>Enumerable.Repeat(a+i*step,counts[i])).OrderBy(x=>x).ToArray();
+  if(data.Length<5||data.Length>30)return false;
+  result=family switch
+  {
+   G5DotFrequency=>counts[2],
+   G5DotTotal=>data.Length,
+   G5DotMedian=>(data[(data.Length-1)/2]+data[data.Length/2])/2m,
+   G5DotMode=>a+Array.IndexOf(counts,counts.Max())*step,
+   G5DotRange=>data[^1]-data[0],
+   _=>throw new InvalidOperationException("Unexpected Grade5 dot family")
+  };
+  return true;
+ }
+ private static string SolveG5DotPlot(string family,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5DotPlot(family,p,out decimal answer))
+   throw new InvalidOperationException("Invalid Grade5 dot plot");
+  return answer.ToString("0.##",CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5DotPlot(string family,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5DotPlot(family,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string value=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   '٫'=>'.',
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!decimal.TryParse(value,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal submitted))return false;
+  int first=p["a"],step=p["s"];
+  int[] counts=Enumerable.Range(0,5).Select(i=>p[$"f{i}"]).ToArray();
+  int[] values=Enumerable.Range(0,5).SelectMany(i=>Enumerable.Repeat(first+i*step,counts[i]))
+    .OrderBy(x=>x).ToArray();
+  decimal independent=family switch
+  {
+   G5DotFrequency=>values.Count(x=>x==first+2*step),
+   G5DotTotal=>values.Length,
+   G5DotMedian=>(values[(values.Length-1)/2]+values[values.Length/2])/2m,
+   G5DotMode=>values.GroupBy(x=>x).OrderByDescending(g=>g.Count()).First().Key,
+   G5DotRange=>values.Max()-values.Min(),
+   _=>throw new InvalidOperationException("Unknown Grade5 dot family")
+  };
+  return submitted==independent;
  }
 
 }

@@ -1,0 +1,85 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 113,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:10",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    144,
+    145,
+    146,
+    147,
+    148,
+    149
+  ],
+  "SourcePrintedPages": [
+    847,
+    848,
+    849,
+    850,
+    851,
+    852
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تمثيل القيم المتكررة بعلامات X على خط أعداد منتظم",
+    "تحديد تكرار قيمة وإجمالي المشاهدات من مخطط النقاط",
+    "حساب الوسيط والمنوال والمدى من بيانات مخطط النقاط",
+    "تحليل وجود قيمة متطرفة وتوضيح تفسيرها بالحجة"
+  ],
+  "SourceElements": [
+    {
+      "Category": "construct dot plots from survey counts, scale and one X per observation",
+      "Pages": [
+        847
+      ],
+      "Coverage": "original Arabic axis-count explanation and examples"
+    },
+    {
+      "Category": "homework plotted observations and interpreting frequencies",
+      "Pages": [
+        848,
+        851
+      ],
+      "Coverage": "original walkthrough, practice and cooldown"
+    },
+    {
+      "Category": "read range/outlier and compare center measures",
+      "Pages": [
+        849,
+        850,
+        852
+      ],
+      "Coverage": "source-grounded content and five numeric question families; graph drawing and verbal reasoning teacher-reviewed"
+    }
+  ],
+  "Engine": "REUSE existing UaeGrade3Unit12Questions engine; extend 5 dot plot data-reconstruction families",
+  "SkillId": "statistics.center_spread.core",
+  "QuestionFamilies": [
+    "uae.g5.u11.l10.dot_frequency",
+    "uae.g5.u11.l10.dot_total",
+    "uae.g5.u11.l10.dot_median",
+    "uae.g5.u11.l10.dot_mode",
+    "uae.g5.u11.l10.dot_range"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "إذا كان التمثيل ٤: XX، ٥: XXX، ٦: X، ٧: XXXX، احسب عدد القيم والمنوال والمدى.",
+    "Answer": "عدد المشاهدات ١٠، والمنوال ٧، والمدى ٣.",
+    "TeacherRubric": "١٠ علامات؛ الأعلى أربعة عند ٧؛ المدى ٧−٤=٣."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_DOT_PLOT_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit11Lesson10DotPlotTests.cs",
+  "TestsRun": "FOCUSED_5_PASSED; L112_REGRESSION_5_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Drawing accurate point plot with a linear scale",
+    "Explaining suspected outlier in the source context"
+  ],
+  "SourceRights": "Original Edulytics lesson and practice; no source artwork/protected exercises copied."
+}
