@@ -15265,6 +15265,27 @@
         "commonMistake": "لا أجمع المقامات أو أغير المقام وحده.",
         "summary": "جمع الكسور بدقة والتقدير للتحقق."
       }
+    },
+    {
+      "id": "uae-g5-u08-l06-unlike-subtract-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:06$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "UNLIKE_FRACTION_SUBTRACT_MODEL",
+      "families": [
+        "uae.g5.u08.l06.model_subtract_common_denominator",
+        "uae.g5.u08.l06.model_subtract_difference",
+        "uae.g5.u08.l06.model_second_equivalent_numerator"
+      ],
+      "content": {
+        "concept": "تمثيل طرح الكسور غير المتشابهة بشرائط متساوية.",
+        "workedExample": "٣/٤−١/٦=٩/١٢−٢/١٢=٧/١٢.",
+        "solution": "المقام المشترك ثم طرح البسطين والتبسيط.",
+        "commonMistake": "لا تطرح المقامين.",
+        "summary": "شرائط الكسور والطرح الدقيق."
+      }
     }
   ]
 }
