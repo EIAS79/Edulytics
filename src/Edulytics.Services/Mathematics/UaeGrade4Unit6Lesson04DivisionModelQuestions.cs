@@ -10,15 +10,22 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     internal const string G5ModelGroups="uae.g5.u05.l12.model_decimal_equal_groups";
     internal const string G5ModelHundredths="uae.g5.u05.l12.model_decimal_hundredths_count";
     private static bool IsG5DecimalModel(string? f)=>f is G5ModelGroups or G5ModelHundredths;
+
+    internal const string G5DivideExact="uae.g5.u05.l13.exact_decimal_divide";
+    internal const string G5DivideContext="uae.g5.u05.l13.contextual_decimal_unit_rate";
+    internal const string G5DivideDigit="uae.g5.u05.l13.quotient_tenths_digit";
+    private static bool IsG5DecimalQuotient(string? f)=>f is G5DivideExact or G5DivideContext or G5DivideDigit;
+
     internal const string G5TenthsEach="uae.g5.u05.l10.tenths_per_group";
     internal const string G5WholeEach="uae.g5.u05.l10.whole_units_per_group";
     private static bool IsG5(string? f)=>f is G5DecimalGroup or G5TenthsEach or G5WholeEach;
     internal const string Remainder="uae.g4.u06.l04.model_after_removing_items_remainder";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5WholeDecimal(f) || IsG5DecimalModel(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5WholeDecimal(f) || IsG5DecimalModel(f) || IsG5DecimalQuotient(f);
     internal static Item Build(string f,Random random)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown model division family");
+        if(IsG5DecimalQuotient(f))return BuildG5DecimalQuotient(f,random);
         if(IsG5DecimalModel(f))return BuildG5DecimalModel(f,random);
         if(IsG5WholeDecimal(f))return BuildG5WholeDecimal(f,random);
         if(IsG5(f))return BuildG5(f,random);
@@ -32,6 +39,71 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
 
 
+
+
+    // U05 L13 extends the already routed equal-group engine to exact
+    // decimal-by-decimal division; only given integer-scaled operands persist.
+    private static int G5Gcd(int a,int b)
+    {
+        while(b!=0){int t=a%b;a=b;b=t;}
+        return a;
+    }
+    private static Item BuildG5DecimalQuotient(string f,Random random)
+    {
+        int[] divisors=[3,4,5,10,12,15,20,25,30,40,45,50,60,75,80,100,120,125,130,140,150];
+        int d=divisors[random.Next(divisors.Length)];
+        int step=100/G5Gcd(100,d);
+        int quotientMilli=random.Next(50,900001)/step*step;
+        quotientMilli=Math.Max(step,quotientMilli);
+        int n=checked(quotientMilli*d/100);
+        decimal dividend=n/1000m,divisor=d/100m;
+        string lhs=dividend.ToString("0.###",CultureInfo.InvariantCulture);
+        string rhs=divisor.ToString("0.##",CultureInfo.InvariantCulture);
+        string prompt=f switch
+        {
+            G5DivideContext=>$"لدى جمعية {lhs} كغم من مادة، تعبّئها في عبوات سعة {rhs} كغم. كم عبوة مكافئة يمكن تكوينها؟",
+            G5DivideDigit=>$"في ناتج القسمة {lhs} ÷ {rhs}، ما الرقم في منزلة الأعشار من حاصل القسمة الدقيق؟",
+            _=>$"أوجد {lhs} ÷ {rhs} دون تقريب. اضرب الطرفين بقوة عشرة مناسبة ثم تحقق بالضرب."
+        };
+        return new Item(f,prompt,
+            "أضرب المقسوم والمقسوم عليه بالقوة العشرية نفسها حتى يصبح المقسوم عليه كليًا، ثم أقسم وأضرب الناتج للتحقق.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"dividendThousandths",n},{"divisorHundredths",d}});
+    }
+    private static bool ValidG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,out int n,out int d)
+    {
+        n=d=0;
+        return IsG5DecimalQuotient(f)&&p.Count==2&&
+          p.TryGetValue("dividendThousandths",out n)&&p.TryGetValue("divisorHundredths",out d)&&
+          n is >=1 and <=900000&&d is >=2 and <=150&&
+          n*100%d==0&&n*100/d is >=1 and <=900000;
+    }
+    private static string SolveG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5DecimalQuotient(f,p,out int n,out int d))
+            throw new InvalidOperationException("Invalid decimal-by-decimal division parameters");
+        int qMilli=n*100/d;
+        decimal result=f==G5DivideDigit?(qMilli/100)%10:qMilli/1000m;
+        return result.ToString("0.###",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5DecimalQuotient(f,p,out int n,out int d)||
+           string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim().Select(ch=>ch switch
+        {
+          >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+          >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+          '٫'=>'.',_=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0' and not '\u202f').ToArray());
+        if(normalized.Length>24||!normalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+        var style=f==G5DivideDigit?NumberStyles.None:NumberStyles.AllowDecimalPoint;
+        if(!decimal.TryParse(normalized,style,CultureInfo.InvariantCulture,out decimal entered))return false;
+        // Independent verifier uses multiplication by the divisor rather than
+        // Solve's scaled quotient integer reconstruction.
+        return f==G5DivideDigit?entered==((n*100/d/100)%10):
+          entered*d*10m==n;
+    }
 
     // Grade 5 U05:L12: reuse the same equal-group engine for hundredth-size
     // blocks. Persist only dividend/divisor hundredths, not solutions.
@@ -207,6 +279,7 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5DecimalQuotient(f))return SolveG5DecimalQuotient(f,p);
         if(IsG5DecimalModel(f))return SolveG5DecimalModel(f,p);
         if(IsG5WholeDecimal(f))return SolveG5WholeDecimal(f,p);
         if(IsG5(f))return SolveG5(f,p);
@@ -215,6 +288,7 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5DecimalQuotient(f))return VerifyG5DecimalQuotient(f,p,answer);
         if(IsG5DecimalModel(f))return VerifyG5DecimalModel(f,p,answer);
         if(IsG5WholeDecimal(f))return VerifyG5WholeDecimal(f,p,answer);
         if(IsG5(f))return VerifyG5(f,p,answer);

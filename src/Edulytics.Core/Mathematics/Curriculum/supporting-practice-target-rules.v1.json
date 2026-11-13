@@ -14717,6 +14717,27 @@
         "commonMistake": "لا تعتبر ٠٫٨ ثماني وحدات، ولا تقسّم دون توحيد الوحدة.",
         "summary": "النموذج يوضح عدد المجموعات المتساوية من أجزاء المئة."
       }
+    },
+    {
+      "id": "uae-g5-u05-l13-decimal-by-decimal-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:13$"
+      ],
+      "skillId": "number.division_model_word_problem",
+      "mechanic": "DECIMAL_DIVISION_EXACT_TWO_SCALES",
+      "families": [
+        "uae.g5.u05.l13.exact_decimal_divide",
+        "uae.g5.u05.l13.contextual_decimal_unit_rate",
+        "uae.g5.u05.l13.quotient_tenths_digit"
+      ],
+      "content": {
+        "concept": "أضرب المقسوم والمقسوم عليه بالقوة العشرية نفسها حتى يكون المقسوم عليه عددًا كليًا.",
+        "workedExample": "٦٫٨٩÷١٫٣=٥٫٣، لأن ٦٨٫٩÷١٣=٥٫٣.",
+        "solution": "أُحوِّل المقسوم عليه إلى عدد كلي ثم أجد الحاصل الدقيق وأتحقق بالضرب.",
+        "commonMistake": "تحريك الفاصلة في طرف واحد فقط يغير الحاصل.",
+        "summary": "قسمة الأعداد العشرية بدقة والتحقق من الحاصل."
+      }
     }
   ]
 }
