@@ -15,6 +15,10 @@ internal static class UaeGrade4Unit1FourStepQuestions
     internal const string G5Initial="uae.g5.u01.l09.find_starting_total";
     internal const string G5Budget="uae.g5.u01.l09.budget_purchase_count";
     internal const string G5Undo="uae.g5.u01.l09.undo_four_steps";
+    internal const string G5InfoDivide="uae.g5.u03.l13.ignore_extra_and_divide";
+    internal const string G5InfoCompare="uae.g5.u03.l13.ignore_extra_and_compare";
+    internal const string G5InfoSufficient="uae.g5.u03.l13.classify_sufficient_information";
+    private static bool IsG5Info(string? f)=>f is G5InfoDivide or G5InfoCompare or G5InfoSufficient;
     internal const string G5TableScale="uae.g5.u02.l05.table_population_scale";
     internal const string G5TableDouble="uae.g5.u02.l05.table_weekly_doubling";
     internal const string G5TableRate="uae.g5.u02.l05.table_constant_rate";
@@ -22,13 +26,14 @@ internal static class UaeGrade4Unit1FourStepQuestions
     private static bool IsG5(string? f)=>f is G5Missing or G5Initial or G5Budget or G5Undo;
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family);
+    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family) || IsG5Info(family);
 
     public static Item Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported four-step family");
         if (IsG5(family)) return BuildG5(family, rng);
         if (IsG5Table(family)) return BuildG5Table(family,rng);
+        if (IsG5Info(family)) return BuildG5Info(family,rng);
         int a=rng.Next(150_000,450_000),b=rng.Next(150_000,450_000);
         string prompt=family switch
         {
@@ -161,11 +166,59 @@ internal static class UaeGrade4Unit1FourStepQuestions
         return expected>0;
     }
 
+
+    // Grade5 information diagnostics reuse the existing four-step exact engine.
+    private static Item BuildG5Info(string family,Random random)
+    {
+        int a,b,c;string prompt;
+        if(family==G5InfoDivide)
+        {
+            a=random.Next(5,31);b=random.Next(2,13);c=random.Next(1,16);
+            prompt=$"لدى مدرسة {a*b} كتابًا، تعبئ كل صندوق بـ{b} كتب. ثمن الملصق {c} دراهم. كم صندوقًا تحتاج؟ تجاهل المعلومة الزائدة.";
+        }
+        else if(family==G5InfoCompare)
+        {
+            a=random.Next(50,150);b=random.Next(10,a);c=random.Next(1,15);
+            prompt=$"في مخزن أ {a} علبة وفي مخزن ب {b} علبة. يفتح المخزنان الساعة {c}. كم علبة أكثر في المخزن أ؟";
+        }
+        else
+        {
+            a=random.Next(0,2);b=random.Next(2,31);c=random.Next(2,7);
+            prompt=a==0
+                ?$"يعطي معلم {c} أقلام لكل طالب دون ذكر عدد الطلاب. هل تكفي المعطيات لحساب إجمالي الأقلام؟ اكتب ١ للكافية أو ٠ للناقصة."
+                :$"يعطي معلم {c} أقلام لكل طالب من {b} طلاب. هل تكفي المعطيات لحساب إجمالي الأقلام؟ اكتب ١ للكافية أو ٠ للناقصة.";
+        }
+        return new Item(family,prompt,"حدد المطلوب وما يلزمه، واستبعد الوصف الزائد ولا تخترع بيانات ناقصة.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}});
+    }
+    private static bool ValidG5Info(string family,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5Info(family)||p.Count!=3||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("c",out int c))return false;
+        switch(family)
+        {
+            case G5InfoDivide:
+                if(a is <5 or >30||b is <2 or >12||c is <1 or >15)return false;
+                expected=a;break;
+            case G5InfoCompare:
+                if(a is <50 or >149||b is <10 or >148||b>=a||c is <1 or >14)return false;
+                expected=a-b;break;
+            case G5InfoSufficient:
+                if(a is <0 or >1||b is <2 or >30||c is <2 or >6)return false;
+                expected=a;break;
+            default:return false;
+        }
+        return true;
+    }
+
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
         if(IsG5(family)) return ValidG5(family,p,out expected);
         if(IsG5Table(family)) return ValidG5Table(family,p,out expected);
+        if(IsG5Info(family)) return ValidG5Info(family,p,out expected);
         if(!Supports(family)||p.Count!=2||!p.TryGetValue("a",out int a)||
            !p.TryGetValue("b",out int b)||
            a<150_000||a>=450_000||b<150_000||b>=450_000)return false;
