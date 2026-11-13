@@ -45342,6 +45342,60 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l11.graph_value_at_hour",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u06-l11-linear-graph-rate-source-skill-written-not-run",
+      "representations": [
+        "line_graph",
+        "table_data"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l11.compare_linear_rentals",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u06-l11-linear-graph-rate-source-skill-written-not-run",
+      "representations": [
+        "line_graph",
+        "table_data"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l11.graph_linear_increase",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u06-l11-linear-graph-rate-source-skill-written-not-run",
+      "representations": [
+        "line_graph",
+        "table_data"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

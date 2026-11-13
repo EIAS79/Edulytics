@@ -10,7 +10,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -125,10 +125,90 @@ internal static class UaeGrade4Unit13GraphsQuestions
      return actual==(f==G5CoordX?x:y);
  }
 
+
+ // G5 U06 L11: numeric subskills of linearly increasing table/point graphs.
+ // Reuse G4 shared graph engine; plotting and graph choice stay teacher-reviewed.
+ internal const string G5GraphValue="uae.g5.u06.l11.graph_value_at_hour";
+ internal const string G5GraphCompare="uae.g5.u06.l11.compare_linear_rentals";
+ internal const string G5GraphIncrease="uae.g5.u06.l11.graph_linear_increase";
+ private static bool IsG5GraphPattern(string? f)=>f is G5GraphValue or G5GraphCompare or G5GraphIncrease;
+ private static Item BuildG5GraphPattern(string f,Random random)
+ {
+     if(f==G5GraphCompare)
+     {
+         int a=random.Next(2,8),b=random.Next(a+1,16),h=random.Next(2,5);
+         return new Item(f,$"خطة أ لاستئجار دراجة تكلف {a} دراهم للساعة، وخطة ب تكلف {b} درهمًا للساعة. بعد {h} ساعات، كم يزيد ثمن الخطة ب عن أ؟",
+           "كون جدول الساعات ١–٤ ثم ارسم النقطتين على مخطط وانظر إلى الفرق الرأسي.",
+           AssessmentItemType.Numeric,new Dictionary<string,int>{{"a",a},{"b",b},{"h",h}});
+     }
+     int rate=random.Next(2,15);
+     if(f==G5GraphValue)
+     {
+         int h=random.Next(2,5);
+         return new Item(f,$"على تمثيل بياني يربط الساعات بالتكلفة: النقاط (١،{rate})، (٢،{2*rate})، (٣،{3*rate}). ما الإحداثي الرأسي للتكلفة عند الساعة {h}؟",
+          "ألاحظ أن كل ساعة ترفع التكلفة بقيمة ثابتة، وأطبق القاعدة.",
+          AssessmentItemType.Numeric,new Dictionary<string,int>{{"rate",rate},{"h",h}});
+     }
+     int from=random.Next(1,3),to=random.Next(3,5);
+     return new Item(f,$"توضح نقاط نمط خطي تكلفة بواقع {rate} دراهم للساعة. ما مقدار زيادة التكلفة من الساعة {from} إلى الساعة {to}؟",
+      "أحسب التغير في الساعات ثم أضرب في معدل التكلفة لكل ساعة.",
+      AssessmentItemType.Numeric,new Dictionary<string,int>{{"rate",rate},{"from",from},{"to",to}});
+ }
+ private static bool ValidG5GraphPattern(string f,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+     expected=0;
+     if(!IsG5GraphPattern(f))return false;
+     if(f==G5GraphCompare)
+     {
+         if(p.Count!=3||!p.TryGetValue("a",out int a)||
+            !p.TryGetValue("b",out int b)||!p.TryGetValue("h",out int h)||
+            a is <2 or >7||b<=a||b>15||h is <2 or >4)return false;
+         expected=(b-a)*h;return true;
+     }
+     if(f==G5GraphValue)
+     {
+         if(p.Count!=2||!p.TryGetValue("rate",out int rate)||
+            !p.TryGetValue("h",out int h)||rate is <2 or >14||h is <2 or >4)
+            return false;
+         expected=rate*h;return true;
+     }
+     if(p.Count!=3||!p.TryGetValue("rate",out int r)||
+        !p.TryGetValue("from",out int a0)||!p.TryGetValue("to",out int a1)||
+        r is <2 or >14||a0 is <1 or >2||a1 is <3 or >4)return false;
+     expected=r*(a1-a0);return true;
+ }
+ private static string SolveG5GraphPattern(string f,IReadOnlyDictionary<string,int> p)
+ {
+     if(!ValidG5GraphPattern(f,p,out int expected))
+         throw new InvalidOperationException("Invalid Grade5 U6 L11 linear graph parameters");
+     return expected.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5GraphPattern(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+     if(!ValidG5GraphPattern(f,p,out _)||
+        string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+     string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬')
+       .Select(ch=>ch switch
+       {
+         >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+         >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+         _=>ch
+       }).ToArray());
+     if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+     int expected=f switch
+     {
+         G5GraphCompare=>(p["b"]-p["a"])*p["h"],
+         G5GraphValue=>p["rate"]*p["h"],
+         _=>p["rate"]*(p["to"]-p["from"])
+     };
+     return actual==expected;
+ }
+
  private static bool IsPie(string f)=>f is PieCategory or PieRest;
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5GraphPattern(f))return BuildG5GraphPattern(f,random);
    if(IsG5Coordinates(f))return BuildG5Coordinates(f,random);
    if(IsG5Map(f))return BuildG5Map(f,random);
    Dictionary<string,int> p;
@@ -176,6 +256,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5GraphPattern(f))return SolveG5GraphPattern(f,p);
    if(IsG5Coordinates(f))return SolveG5Coordinates(f,p);
    if(IsG5Map(f))return SolveG5Map(f,p);
    if(!Valid(f,p,out int result))throw new InvalidOperationException("Invalid graph data");
@@ -183,6 +264,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5GraphPattern(f))return VerifyG5GraphPattern(f,p,answer);
    if(IsG5Coordinates(f))return VerifyG5Coordinates(f,p,answer);
    if(IsG5Map(f))return VerifyG5Map(f,p,answer);
    if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
