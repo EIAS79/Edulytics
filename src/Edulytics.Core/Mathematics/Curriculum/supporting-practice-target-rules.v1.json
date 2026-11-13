@@ -14258,6 +14258,26 @@
         "commonMistake": "وضع الرقم الأول في منزلة لا تكفي للقسمة.",
         "summary": "أحدد منزلة بدء الحاصل ورقمه الأول قبل متابعة القسمة."
       }
+    },
+    {
+      "id": "uae-g5-u03-l10-quotients-with-zero",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:10$"
+      ],
+      "skillId": "number.division.zero_in_quotient",
+      "mechanic": "LONG_DIVISION_MIDDLE_ZERO_QUOTIENT",
+      "families": [
+        "uae.g5.u03.l10.middle_zero_quotient",
+        "uae.g5.u03.l10.middle_zero_remainder"
+      ],
+      "content": {
+        "concept": "أحافظ على الصفر داخل الحاصل إذا كانت منزلة وسطية أقل من المقسوم عليه.",
+        "workedExample": "٣٢٧÷٣=١٠٩؛ ٨١٥÷٢=٤٠٧ والباقي١.",
+        "solution": "ابدأ القسمة وأدخل الصفر في وسط الحاصل ثم تابع إنزال المنازل.",
+        "commonMistake": "حذف صفر وسط الحاصل يغير قيمة العدد.",
+        "summary": "الصفر الوسطي جزء من القيمة المكانية للحاصل."
+      }
     }
   ]
 }

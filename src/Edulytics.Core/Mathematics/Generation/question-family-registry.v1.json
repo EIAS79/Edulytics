@@ -43569,6 +43569,42 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l10.middle_zero_quotient",
+      "version": 1,
+      "skillId": "number.division.zero_in_quotient",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-local-print-215-220-internal-zero-recompute-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u03.l10.middle_zero_remainder",
+      "version": 1,
+      "skillId": "number.division.zero_in_quotient",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-local-print-215-220-internal-zero-recompute-not-run",
+      "representations": [
+        "calculation_chain",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
