@@ -10,13 +10,15 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
     internal const string ProductRemainder="uae.g4.u09.l09.product_remainder";
     internal const string G5TwoMixed="uae.g5.u09.l07.multiply_two_mixed";
     internal const string G5MixedByFraction="uae.g5.u09.l07.multiply_mixed_by_fraction";
+    internal const string G5Scaling="uae.g5.u09.l08.classify_scaling";
     private static bool G5MixedProduct(string? f)=>f is G5TwoMixed or G5MixedByFraction;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is ModelRepeatedSum or UnitFractionCount or ProductNumerator or ProductWhole or ProductRemainder || G5MixedProduct(f);
+    internal static bool Supports(string? f)=>f is ModelRepeatedSum or UnitFractionCount or ProductNumerator or ProductWhole or ProductRemainder || G5MixedProduct(f) || f==G5Scaling;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported fraction multiplication");
         if(G5MixedProduct(family))return BuildG5MixedProduct(family,random);
+        if(family==G5Scaling)return BuildG5Scaling(random);
         int d=random.Next(2,13),n=random.Next(1,d),count=random.Next(2,8);
         var p=new Dictionary<string,int>{{"denominator",d},{"numerator",n},{"repeatCount",count}};
         string prompt=family switch
@@ -29,6 +31,44 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
         };
         return new Item(family,prompt,"الضرب في عدد كلي يعادل جمع الكسر نفسه عدة مرات، ثم أعد تجميع الوحدات الكاملة.",
             AssessmentItemType.Numeric,p);
+    }
+
+
+    // Scaling a positive whole number: compare the second factor to one.
+    // This extends the existing fraction multiplication engine without changing G4 families.
+    private static Item BuildG5Scaling(Random random)
+    {
+        int whole=random.Next(2,13),den=random.Next(2,11);
+        int kind=random.Next(0,3);
+        int num=kind==0?random.Next(1,den):kind==1?den:random.Next(den+1,den*2+1);
+        return new Item(G5Scaling,
+            $"من دون حساب حاصل الضرب كاملًا: قارن {whole} × {num}/{den} بالعدد {whole}. اكتب 1 إذا كان الناتج أكبر، أو 2 إذا كان أصغر، أو 3 إذا كان يساويه.",
+            "قارن عامل المقياس بالواحد: أكبر من ١ يكبّر العدد الموجب، وأصغر من ١ يصغّره، ومساوٍ للواحد لا يغيّره.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"whole",whole},{"num",num},{"den",den}});
+    }
+    private static bool ValidG5Scaling(IReadOnlyDictionary<string,int> p,out int result)
+    {
+        result=0;
+        if(p.Count!=3||!p.TryGetValue("whole",out int whole)||
+           !p.TryGetValue("num",out int num)||!p.TryGetValue("den",out int den)||
+           whole is <2 or >12||den is <2 or >10||num<1||num>2*den)return false;
+        result=num>den?1:num<den?2:3;
+        return true;
+    }
+    private static string SolveG5Scaling(IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5Scaling(p,out int result))throw new InvalidOperationException("Invalid G5 scaling operands");
+        return result.ToString(CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5Scaling(IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5Scaling(p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim().Select(c=>c switch{
+            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+            _=>c}).ToArray());
+        return int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&actual==expected;
     }
 
     private static int GcdG5(int a,int b){while(b!=0){int t=a%b;a=b;b=t;}return a;}
@@ -97,12 +137,14 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
         if(G5MixedProduct(family))return SolveG5MixedProduct(family,p);
+        if(family==G5Scaling)return SolveG5Scaling(p);
         if(!Valid(family,p,out int result))throw new InvalidOperationException("Invalid fraction multiplication parameters");
         return result.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
         if(G5MixedProduct(family))return VerifyG5MixedProduct(family,p,answer);
+        if(family==G5Scaling)return VerifyG5Scaling(p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {

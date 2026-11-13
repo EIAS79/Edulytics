@@ -15564,6 +15564,25 @@
         "commonMistake": "لا أضرب الجزأين الكليين وحدهما.",
         "summary": "ضرب الأعداد الكسرية بدقة."
       }
+    },
+    {
+      "id": "uae-g5-u09-l08-scaling",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:08$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_MULTIPLICATION_SCALING_CLASSIFICATION",
+      "families": [
+        "uae.g5.u09.l08.classify_scaling"
+      ],
+      "content": {
+        "concept": "أتوقع تكبير العدد الموجب أو تصغيره بمقارنة عامل المقياس بالواحد.",
+        "workedExample": "٢×٥/٨=١ و١/٤، أقل من ٢.",
+        "solution": "قارن العامل بالواحد ثم تحقق بحاصل الضرب.",
+        "commonMistake": "لا تفترض أن كل عملية ضرب تزيد القيمة.",
+        "summary": "عامل أكبر من ١ يكبّر، وعامل بين ٠ و١ يصغّر، والواحد لا يغيّر."
+      }
     }
   ]
 }
