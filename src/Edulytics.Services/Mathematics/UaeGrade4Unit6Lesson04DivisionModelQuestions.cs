@@ -75,7 +75,7 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
         n=d=0;
         return IsG5DecimalQuotient(f)&&p.Count==2&&
           p.TryGetValue("dividendThousandths",out n)&&p.TryGetValue("divisorHundredths",out d)&&
-          n is >=1 and <=900000&&d is >=2 and <=150&&
+          n is >=1 and <=1350000&&d is >=2 and <=150&&
           n*100%d==0&&n*100/d is >=1 and <=900000;
     }
     private static string SolveG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p)
