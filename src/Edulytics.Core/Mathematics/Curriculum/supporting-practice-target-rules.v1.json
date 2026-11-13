@@ -14738,6 +14738,27 @@
         "commonMistake": "تحريك الفاصلة في طرف واحد فقط يغير الحاصل.",
         "summary": "قسمة الأعداد العشرية بدقة والتحقق من الحاصل."
       }
+    },
+    {
+      "id": "uae-g5-u05-l14-decimal-divide-powers-ten",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:14$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_DIVIDE_POWER_OF_TEN",
+      "families": [
+        "uae.g5.u05.l14.decimal_divide_power_ten",
+        "uae.g5.u05.l14.decimal_left_shift_places",
+        "uae.g5.u05.l14.equal_payment_decimal"
+      ],
+      "content": {
+        "concept": "عند القسمة على ١٠ أو ١٠٠ أو ١٠٠٠ تنتقل الفاصلة يسارًا بمقدار الأس.",
+        "workedExample": "٣٦٫٤ ÷ ١٠٠ = ٠٫٣٦٤.",
+        "solution": "حدد الأس، وانقل الفاصلة لليسار مع الأصفار المطلوبة، وتحقق بالضرب.",
+        "commonMistake": "لا تحرك الفاصلة إلى اليمين؛ هذا يضرب العدد ولا يقسمه.",
+        "summary": "قسمة الأعداد العشرية على قوى العشرة."
+      }
     }
   ]
 }

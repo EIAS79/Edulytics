@@ -11,6 +11,8 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private const string DecimalFactor="uae.g5.u05.l05.multiply_decimal_factors",DecimalRate="uae.g5.u05.l05.apply_decimal_price_rate",DecimalPoint="uae.g5.u05.l05.restore_decimal_point";
  private const string DecimalPow="uae.g5.u05.l06.decimal_times_power_ten",DecimalShift="uae.g5.u05.l06.decimal_shift_positions",DecimalPricePow="uae.g5.u05.l06.price_times_power_ten";
  private static bool IsG5Pow(string? f)=>f is DecimalPow or DecimalShift or DecimalPricePow;
+ private const string DividePow="uae.g5.u05.l14.decimal_divide_power_ten",DivideShift="uae.g5.u05.l14.decimal_left_shift_places",DividePrice="uae.g5.u05.l14.equal_payment_decimal";
+ private static bool IsG5DividePow(string? f)=>f is DividePow or DivideShift or DividePrice;
  private static bool IsG5Factor(string? f)=>f is DecimalFactor or DecimalRate or DecimalPoint;
  private static bool IsG5Area(string? f)=>f is AreaProduct or AreaCells or AreaExtended;
  private static bool IsG5Whole(string? f)=>f is WholeProduct or UnitCost or PointPlacement;
@@ -24,12 +26,13 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
   "uae.g4.u11.l09.model_difference","uae.g4.u11.l09.fractional_hundredths",
   "uae.g4.u11.l10.column_difference","uae.g4.u11.l10.check_addition"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f)||IsG5Area(f)||IsG5Factor(f)||IsG5Pow(f));
+ internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f)||IsG5Area(f)||IsG5Factor(f)||IsG5Pow(f)||IsG5DividePow(f));
  private static bool IsSubtract(string f)=>f.Contains(".l08.")||f.Contains(".l09.")||f.Contains(".l10.");
  private static bool IsProperty(string f)=>f.Contains(".l07.");
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported grade 4 decimal arithmetic");
+   if(IsG5DividePow(f))return BuildG5DividePow(f,random);
    if(IsG5Pow(f))return BuildG5Pow(f,random);
    if(IsG5Factor(f))return BuildG5Factor(f,random);
    if(IsG5Area(f))return BuildG5Area(f,random);
@@ -59,6 +62,58 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
 
 
 
+
+
+ // UAE Grade5 U05 L14: inverse of existing exact decimal multiplication
+ // by 10^k. Integer-scaled dividend preserves up to six decimal places.
+ private static Item BuildG5DividePow(string f,Random random)
+ {
+     int exponent=random.Next(1,f==DividePrice?3:4);
+     int valueThousandths;
+     if(f==DividePrice)
+     {
+         int centsPerInstallment=random.Next(10,701);
+         valueThousandths=checked(centsPerInstallment*G5TenPower(exponent)*10);
+     }
+     else valueThousandths=random.Next(1,999001);
+     string amount=(valueThousandths/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+     int divisor=G5TenPower(exponent);
+     string prompt=f switch
+     {
+         DivideShift=>$"عند قسمة {amount} على ١٠ أس {exponent}، كم منزلة تنتقل الفاصلة العشرية إلى اليسار؟",
+         DividePrice=>$"قيمة فاتورة {amount} درهمًا، تُقسم إلى {divisor} دفعات متساوية. كم قيمة كل دفعة بالدرهم دون تقريب؟",
+         _=>$"احسب {amount} ÷ ١٠ أس {exponent} دون تقريب. تحقق من إجابتك بالضرب."
+     };
+     return new Item(f,prompt,
+         "القسمة على قوة عشرة تنقل الفاصلة إلى اليسار بعدد مراتب الأس؛ أضيف الأصفار الضرورية وأتحقق بالضرب.",
+         AssessmentItemType.Numeric,new Dictionary<string,int>{{"thousandths",valueThousandths},{"pow",exponent}});
+ }
+ private static bool ValidG5DividePow(string f,IReadOnlyDictionary<string,int> p,out decimal expected)
+ {
+     expected=0m;
+     if(!IsG5DividePow(f)||p.Count!=2||
+         !p.TryGetValue("thousandths",out int v)||!p.TryGetValue("pow",out int exponent)||
+         v is <1 or >999000||exponent is <1 or >3||
+         (f==DividePrice&&(exponent>2||v% (G5TenPower(exponent)*10)!=0)))
+         return false;
+     expected=f==DivideShift?exponent:v/(1000m*G5TenPower(exponent));
+     return true;
+ }
+ private static bool VerifyG5DividePow(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+     if(!ValidG5DividePow(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+     string normalized=new(answer.Trim().Select(ch=>ch switch
+     {
+         >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+         >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+         '٫'=>'.',_=>ch
+     }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0' and not '\u202f').ToArray());
+     if(normalized.Length>32||!normalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+     var style=f==DivideShift?NumberStyles.None:NumberStyles.AllowDecimalPoint;
+     if(!decimal.TryParse(normalized,style,CultureInfo.InvariantCulture,out decimal answerValue))return false;
+     return f==DivideShift?answerValue==p["pow"]:
+         answerValue*1000m*G5TenPower(p["pow"])==p["thousandths"];
+ }
 
  // Decimal 10^k reuses existing decimal engine with thousandth precision.
  private static int G5TenPower(int exponent)=>exponent switch{1=>10,2=>100,3=>1000,
@@ -260,6 +315,7 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if(IsG5DividePow(f))return ValidG5DividePow(f,p,out result);
    if(IsG5Pow(f))return ValidG5Pow(f,p,out result);
    if(IsG5Factor(f))return ValidG5Factor(f,p,out result);
    if(IsG5Area(f))return ValidG5Area(f,p,out result);
@@ -284,10 +340,11 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString((IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
+    return ans.ToString(IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5DividePow(f))return VerifyG5DividePow(f,p,answer);
    if(IsG5Pow(f))return VerifyG5Pow(f,p,answer);
    if(IsG5Factor(f))return VerifyG5Factor(f,p,answer);
    if(IsG5Area(f))return VerifyG5Area(f,p,answer);
