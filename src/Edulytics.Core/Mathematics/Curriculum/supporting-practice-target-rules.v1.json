@@ -14218,6 +14218,26 @@
         "commonMistake": "لا تجمع الأجزاء نفسها بدل نواتج القسمة الجزئية.",
         "summary": "قسم الأجزاء ثم اجمع النواتج الجزئية."
       }
+    },
+    {
+      "id": "uae-g5-u03-l08-long-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:08$"
+      ],
+      "skillId": "number.long_division.three_four_digit_one_digit",
+      "mechanic": "LONG_DIVISION_THREE_FOUR_DIGITS",
+      "families": [
+        "uae.g5.u03.l08.long_division_quotient",
+        "uae.g5.u03.l08.long_division_remainder"
+      ],
+      "content": {
+        "concept": "القسمة المطولة من أعلى منزلة إلى أدنى منزلة مع تتبع الباقي.",
+        "workedExample": "٨٥٢÷٤=٢١٣؛ و٧٩٤٦÷٦=١٣٢٤ والباقي٢.",
+        "solution": "اقسم، اضرب، اطرح، أنزّل، ثم تحقق بحاصل×مقسوم عليه+باق.",
+        "commonMistake": "لا تنزل رقمًا أو تكتب رقم الحاصل في موضع خاطئ.",
+        "summary": "قسمة ثلاثة وأربعة أرقام على مقسوم عليه من رقم واحد."
+      }
     }
   ]
 }
