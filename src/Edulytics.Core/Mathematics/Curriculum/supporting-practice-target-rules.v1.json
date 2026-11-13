@@ -14050,6 +14050,29 @@
         "commonMistake": "نسيان حمل قيمة العشرات عند إعادة التجميع.",
         "summary": "أحسب الناتج الدقيق وأتحقق بالتقدير."
       }
+    },
+    {
+      "id": "uae-g5-u02-l10-two-digit-product",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:10$"
+      ],
+      "skillId": "number.whole.multiply.two_digit_partial_products",
+      "mechanic": "MULTI_DIGIT_BY_TWO_DIGIT_PARTIAL_PRODUCTS",
+      "families": [
+        "uae.g5.u02.l10.multiply_two_digit_factor",
+        "uae.g5.u02.l10.ones_partial",
+        "uae.g5.u02.l10.tens_partial",
+        "uae.g5.u02.l10.estimate_product",
+        "uae.g5.u02.l10.three_digit_challenge"
+      ],
+      "content": {
+        "concept": "استخدم خاصية التوزيع لضرب عدد في عامل من رقمين.",
+        "workedExample": "١٧٤×٢٣=٥٢٢+٣٤٨٠=٤٠٠٢.",
+        "solution": "أضرب في الآحاد ثم العشرات ثم أجمع مع مراعاة المنازل.",
+        "commonMistake": "إهمال الصفر الدال على منزلة العشرات.",
+        "summary": "أحسب النواتج الجزئية وأجمع وأتحقق بالتقدير."
+      }
     }
   ]
 }
