@@ -45396,6 +45396,60 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u07.l01.division_as_fraction",
+      "version": 1,
+      "skillId": "number.fractions.division_as_fraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_fraction",
+      "verificationPolicy": "uae-g5-u07-l01-local-student-equal-sharing-test-not-run",
+      "representations": [
+        "fraction_bar",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u07.l01.quotient_whole_part",
+      "version": 1,
+      "skillId": "number.fractions.division_as_fraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u07-l01-local-student-equal-sharing-test-not-run",
+      "representations": [
+        "fraction_bar",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u07.l01.quotient_remainder",
+      "version": 1,
+      "skillId": "number.fractions.division_as_fraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u07-l01-local-student-equal-sharing-test-not-run",
+      "representations": [
+        "fraction_bar",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
