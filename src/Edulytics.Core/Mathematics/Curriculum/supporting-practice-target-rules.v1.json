@@ -15406,6 +15406,25 @@
         "commonMistake": "لا تطرح أجزاء غير متساوية أو تهمل إعادة التسمية.",
         "summary": "طرح عددين كسريين والتحقق."
       }
+    },
+    {
+      "id": "uae-g5-u08-l13-borrow-regroup",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:13$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "MIXED_SUBTRACT_WITH_REGROUPING",
+      "families": [
+        "uae.g5.u08.l13.borrow_mixed_difference"
+      ],
+      "content": {
+        "concept": "إعادة تسمية وحدة كاملة قبل طرح جزء كسري أكبر.",
+        "workedExample": "٤ و١/٤−٢ و٥/٨=١ و٥/٨.",
+        "solution": "أوحّد المقام وأستلف وحدة وأطرح وأبسّط.",
+        "commonMistake": "لا أهمل الوحدة المستلفة.",
+        "summary": "إعادة تسمية الأعداد الكسرية للطرح."
+      }
     }
   ]
 }

@@ -8,7 +8,8 @@ internal static class UaeGrade4Unit9Lesson07MixedSubtractionQuestions
     internal const string Improper="uae.g4.u09.l07.difference_improper_numerator";
     internal const string G5MixedDifferenceFraction="uae.g5.u08.l12.mixed_difference_fraction";
     internal const string G5MixedDifferenceWhole="uae.g5.u08.l12.mixed_difference_whole";
-    private static bool IsG5Mixed(string? f)=>f is G5MixedDifferenceFraction or G5MixedDifferenceWhole;
+    internal const string G5BorrowMixedDifference="uae.g5.u08.l13.borrow_mixed_difference";
+    private static bool IsG5Mixed(string? f)=>f is G5MixedDifferenceFraction or G5MixedDifferenceWhole or G5BorrowMixedDifference;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is Whole or Fraction or Improper || IsG5Mixed(family);
     internal static Item Build(string family,Random random)
@@ -38,14 +39,25 @@ internal static class UaeGrade4Unit9Lesson07MixedSubtractionQuestions
         int w1=rng.Next(3,10),w2=rng.Next(1,w1);
         int d1=rng.Next(2,11),d2=rng.Next(2,12);
         int n1=rng.Next(1,d1),n2=rng.Next(1,d2);
+        if(f==G5BorrowMixedDifference)
+        {
+            // A borrowed unit is required when the first fractional part is smaller.
+            for(int i=0;i<128 && n1*d2>=n2*d1;i++)
+            {
+                d1=rng.Next(3,11);d2=rng.Next(3,12);
+                n1=rng.Next(1,d1);n2=rng.Next(1,d2);
+            }
+            if(n1*d2>=n2*d1)
+                throw new InvalidOperationException("Could not generate a regrouping example.");
+        }
         var p=new Dictionary<string,int>{{"w1",w1},{"n1",n1},{"d1",d1},
             {"w2",w2},{"n2",n2},{"d2",d2}};
-        string prompt=f==G5MixedDifferenceFraction
+        string prompt=f is G5MixedDifferenceFraction or G5BorrowMixedDifference
             ?$"أوجد الفرق {w1} و{n1}/{d1} − {w2} و{n2}/{d2}، ثم اكتب الناتج في صورة كسر مبسط (بسط/مقام)."
             :$"بعد طرح {w2} و{n2}/{d2} من {w1} و{n1}/{d1}، كم وحدة كاملة في الفرق؟";
         return new Item(f,prompt,
            "حوّل الأعداد الكسرية إلى كسور غير فعلية، وحّد المقامات ثم اطرح وتحقق بالجمع.",
-           f==G5MixedDifferenceFraction?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,p);
+           f is G5MixedDifferenceFraction or G5BorrowMixedDifference ?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,p);
     }
     private static bool G5Valid(string f,IReadOnlyDictionary<string,int> p,
         out int w1,out int n1,out int d1,out int w2,out int n2,out int d2)
@@ -57,7 +69,8 @@ internal static class UaeGrade4Unit9Lesson07MixedSubtractionQuestions
             p.TryGetValue("n2",out n2)&&p.TryGetValue("d2",out d2)&&
             w1 is >=3 and <=9 && w2>=1&&w2<w1 &&
             d1 is >=2 and <=10 &&d2 is >=2 and <=11 &&
-            n1>=1&&n1<d1&&n2>=1&&n2<d2;
+            n1>=1&&n1<d1&&n2>=1&&n2<d2&&
+            (f!=G5BorrowMixedDifference||n1*d2<n2*d1);
     }
     private static string SolveG5Mixed(string f,IReadOnlyDictionary<string,int> p)
     {
