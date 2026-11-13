@@ -14298,6 +14298,27 @@
         "commonMistake": "لا توزع عناصر الباقي في مجموعة واحدة فقط.",
         "summary": "عدد المجموعات × عدد العناصر + الباقي = المقسوم."
       }
+    },
+    {
+      "id": "uae-g5-u03-l12-contextual-remainder",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:12$"
+      ],
+      "skillId": "number.division.contextual_remainder_interpretation",
+      "mechanic": "REMAINDER_REAL_WORLD_INTERPRETATION",
+      "families": [
+        "uae.g5.u03.l12.minimum_groups_ceil",
+        "uae.g5.u03.l12.full_groups_floor",
+        "uae.g5.u03.l12.leftover_amount"
+      ],
+      "content": {
+        "concept": "يختلف قرار التعامل مع الباقي بحسب السؤال العملي.",
+        "workedExample": "٥٠÷٨=٦ والباقي٢؛ نحتاج ٧ سيارات لنقل الجميع.",
+        "solution": "احسب الحاصل والباقي، ثم اختر الاكتفاء بالحاصل أو إضافة مجموعة أو تفسير الباقي.",
+        "commonMistake": "لا تضف مجموعة كاملة عند السؤال عن العلب الممتلئة فقط.",
+        "summary": "اقرأ السياق لتحديد التصرف الصحيح مع الباقي."
+      }
     }
   ]
 }

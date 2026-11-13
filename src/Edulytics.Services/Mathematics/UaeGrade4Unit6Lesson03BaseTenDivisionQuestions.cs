@@ -18,6 +18,10 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     internal const string G5ZeroRemainder="uae.g5.u03.l10.middle_zero_remainder";
     internal const string G5ModelGroup="uae.g5.u03.l11.equal_group_count";
     internal const string G5ModelLeftover="uae.g5.u03.l11.model_leftover_count";
+    internal const string G5RemainderCeil="uae.g5.u03.l12.minimum_groups_ceil";
+    internal const string G5RemainderFloor="uae.g5.u03.l12.full_groups_floor";
+    internal const string G5RemainderLeftover="uae.g5.u03.l12.leftover_amount";
+    private static bool IsG5ContextRemainder(string? f)=>f is G5RemainderCeil or G5RemainderFloor or G5RemainderLeftover;
     private static bool IsG5Model(string? f)=>f is G5ModelGroup or G5ModelLeftover;
     private static bool IsG5Zero(string? f)=>f is G5ZeroQuotient or G5ZeroRemainder;
     private static bool IsG5First(string? f)=>f is G5FirstPlace or G5FirstDigit;
@@ -25,7 +29,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
@@ -35,6 +39,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         if(IsG5First(f))return BuildG5First(f,r);
         if(IsG5Zero(f))return BuildG5Zero(f,r);
         if(IsG5Model(f))return BuildG5Model(f,r);
+        if(IsG5ContextRemainder(f))return BuildG5ContextRemainder(f,r);
         int dividend=r.Next(20,10000),divisor=r.Next(2,10);
         string prompt=f==Quotient
           ?$"مثّل {dividend} ÷ {divisor} بمكعبات العشرات والآحاد ثم اكتب ناتج القسمة الصحيح دون الباقي."
@@ -262,6 +267,58 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
             &&provided==expected;
     }
 
+
+    // Contextual remainder interpretation extends numeric division, not G4 logic.
+    private static Item BuildG5ContextRemainder(string f,Random random)
+    {
+        int d=random.Next(2,10),q=random.Next(5,38),r=random.Next(1,d);
+        int n=q*d+r;
+        string prompt=f switch
+        {
+            G5RemainderCeil=>$"يريد {n} طالبًا ركوب حافلات صغيرة تسع كل واحدة {d} طلاب. كم حافلة نحتاج لنقل جميع الطلاب؟",
+            G5RemainderFloor=>$"لديك {n} لعبة وتملأ كل علبة مكتملة بـ{d} ألعاب. كم علبة مكتملة فقط تستطيع تجهيزها؟",
+            _=>$"نوزع {n} كرة على مجموعات متساوية تضم كل منها {d} كرات. كم كرة تتبقى دون مجموعة كاملة؟"
+        };
+        return new Item(f,prompt,
+            "فسّر الباقي حسب السؤال: أضف مجموعة لنقل الجميع، أو استخدم المجموعات الممتلئة فقط، أو اكتب الباقي.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",n},{"divisor",d}});
+    }
+    private static bool ValidG5ContextRemainder(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5ContextRemainder(f)||p.Count!=2||
+           !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+           n is <11 or >350||d is <2 or >9||n%d==0||n/d is <5 or >37)
+           return false;
+        int quotient=n/d;
+        expected=f switch
+        {
+            G5RemainderCeil=>quotient+1,
+            G5RemainderFloor=>quotient,
+            _=>n%d
+        };
+        return true;
+    }
+    private static bool VerifyG5ContextRemainder(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5ContextRemainder(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))
+            return false;
+        string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
+            .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):
+                      c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
+        if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int provided))
+            return false;
+        int n=p["dividend"],d=p["divisor"];
+        // Context-aware independent check uses inequalities and composition,
+        // not a memorized answer field.
+        return f switch
+        {
+            G5RemainderCeil=>provided*d>=n&&(provided-1)*d<n,
+            G5RemainderFloor=>provided*d<n&&(provided+1)*d>n,
+            _=>provided>=0&&provided<d&&((n-provided)%d)==0&&provided==expected
+        };
+    }
+
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
@@ -271,6 +328,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         if(IsG5First(f))return ValidG5First(f,p,out expected);
         if(IsG5Zero(f))return ValidG5Zero(f,p,out expected);
         if(IsG5Model(f))return ValidG5Model(f,p,out expected);
+        if(IsG5ContextRemainder(f))return ValidG5ContextRemainder(f,p,out expected);
         if(!Supports(f)||p.Count!=2||!p.TryGetValue("dividend",out int n)||
            !p.TryGetValue("divisor",out int d)||n is <20 or >9999||d is <2 or >9)return false;
         expected=f==Quotient?n/d:n%d;
@@ -287,6 +345,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         if(IsG5First(f))return VerifyG5First(f,p,answer);
         if(IsG5Zero(f))return VerifyG5Zero(f,p,answer);
         if(IsG5Model(f))return VerifyG5Model(f,p,answer);
+        if(IsG5ContextRemainder(f))return VerifyG5ContextRemainder(f,p,answer);
         if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
             .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
