@@ -46600,6 +46600,66 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l04.linear_next_prediction",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l04-Arabic-data-prediction-exact-with-teacher-statistical-review-StageD-NOT_RUN",
+      "representations": [
+        "line_graph",
+        "survey_table",
+        "numeric_prediction",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l04.linear_future_prediction",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l04-Arabic-data-prediction-exact-with-teacher-statistical-review-StageD-NOT_RUN",
+      "representations": [
+        "line_graph",
+        "survey_table",
+        "numeric_prediction",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l04.sample_scaled_estimate",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l04-Arabic-data-prediction-exact-with-teacher-statistical-review-StageD-NOT_RUN",
+      "representations": [
+        "line_graph",
+        "survey_table",
+        "numeric_prediction",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

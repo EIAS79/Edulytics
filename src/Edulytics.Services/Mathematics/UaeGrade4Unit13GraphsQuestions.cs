@@ -4,6 +4,9 @@ namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade4Unit13GraphsQuestions
 {
  internal const string PlotValue="uae.g4.u13.l01.plot_read_value";
+ internal const string G5PredictNext="uae.g5.u11.l04.linear_next_prediction";
+ internal const string G5PredictFuture="uae.g5.u11.l04.linear_future_prediction";
+ internal const string G5PredictSample="uae.g5.u11.l04.sample_scaled_estimate";
  internal const string G5DoubleFinal="uae.g5.u11.l03.double_line_final_difference";
  internal const string G5DoubleGrowth="uae.g5.u11.l03.double_line_growth";
  internal const string G5LineRead="uae.g5.u11.l02.line_plot_read_point";
@@ -15,7 +18,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f) || IsG5Double(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f) || IsG5Double(f) || IsG5Predict(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -213,6 +216,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Predict(f))return BuildG5Predict(f,random);
    if(IsG5Double(f))return BuildG5Double(f,random);
    if(IsG5Line(f))return BuildG5Line(f,random);
    if(IsG5GraphPattern(f))return BuildG5GraphPattern(f,random);
@@ -263,6 +267,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Predict(f))return SolveG5Predict(f,p);
    if(IsG5Double(f))return SolveG5Double(f,p);
    if(IsG5Line(f))return SolveG5Line(f,p);
    if(IsG5GraphPattern(f))return SolveG5GraphPattern(f,p);
@@ -273,6 +278,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Predict(f))return VerifyG5Predict(f,p,answer);
    if(IsG5Double(f))return VerifyG5Double(f,p,answer);
    if(IsG5Line(f))return VerifyG5Line(f,p,answer);
    if(IsG5GraphPattern(f))return VerifyG5GraphPattern(f,p,answer);
@@ -402,6 +408,66 @@ internal static class UaeGrade4Unit13GraphsQuestions
   if(!int.TryParse(value,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
   return actual==(family==G5DoubleFinal?
     Math.Abs(p["d"]-p["h"]):p["h"]-p["e"]);
+ }
+
+
+ // Grade 5 U11 L04: extrapolate an explicitly constant time-series pattern;
+ // sample-based projection is exact arithmetic, but statistical validity
+ // depends on representativeness and must be reviewed by a teacher.
+ private static bool IsG5Predict(string? f)=>f is G5PredictNext or G5PredictFuture or G5PredictSample;
+ private static Item BuildG5Predict(string f,Random rng)
+ {
+  int a=rng.Next(7,23),b=rng.Next(2,10),m=rng.Next(2,9);
+  var p=new Dictionary<string,int>{{"a",a},{"b",b},{"m",m}};
+  string prompt=f switch
+  {
+   G5PredictNext=>$"يسجل خط بياني نمو نبات في الأسابيع ١–٤: {a}، {a+b}، {a+2*b}، {a+3*b} سم. إذا استمر معدل النمو نفسه، فما طوله المتوقع في الأسبوع ٥؟",
+   G5PredictFuture=>$"تظهر قيم خط بياني في الأسابيع ١–٤: {a}، {a+b}، {a+2*b}، {a+3*b}. إذا استمرت الزيادة المنتظمة، ما القيمة المتوقعة في الأسبوع ٦؟",
+   G5PredictSample=>$"في مسح من ١٠ طلاب، اختار {a%7+1} منهم الحافلة. إذا كانت العينة ممثلة حقًا لجميع طلاب مدرسة عددهم {m*100} طالب، فما العدد المتوقع الذي يختار الحافلة؟",
+   _=>throw new InvalidOperationException("Invalid G5 prediction family")
+  };
+  return new Item(f,prompt,"أحدد النمط الثابت أو نسبة العينة أولًا، ثم أمد الخط أو أضرب النسبة في حجم المجتمع، وأراجع مدى ملاءمة التوقع.",
+    AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Predict(string family,IReadOnlyDictionary<string,int> p,out int value)
+ {
+  value=0;
+  if(!IsG5Predict(family)||p.Count!=3||!p.TryGetValue("a",out int a)||
+     !p.TryGetValue("b",out int b)||!p.TryGetValue("m",out int m)||
+     a is <7 or >22||b is <2 or >9||m is <2 or >8)return false;
+  value=family switch
+  {
+   G5PredictNext=>a+4*b,
+   G5PredictFuture=>a+5*b,
+   G5PredictSample=>(a%7+1)*m*10,
+   _=>throw new InvalidOperationException("Unsupported prediction family")
+  };
+  return true;
+ }
+ private static string SolveG5Predict(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Predict(f,p,out int v))
+   throw new InvalidOperationException("Invalid Grade5 prediction data");
+  return v.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Predict(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+  if(!ValidG5Predict(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string value=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(value,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+  int a=p["a"],b=p["b"],m=p["m"];
+  int oracle=f switch
+  {
+   G5PredictNext=>a+4*b,
+   G5PredictFuture=>a+5*b,
+   _=>(a%7+1)*10*m
+  };
+  return actual==oracle;
  }
 
 }

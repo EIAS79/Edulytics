@@ -9534,12 +9534,10 @@
     {
       "id": "uae-official-g3g5-auto-collecting-data",
       "titlePatterns": [
-        "^Collect and Record Data$",
-        "^Make Predictions from Data$"
+        "^Collect and Record Data$"
       ],
       "codePatterns": [
-        "^PED:UAE-MOE-MATH:L3:COMMON:12:01$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:04$"
+        "^PED:UAE-MOE-MATH:L3:COMMON:12:01$"
       ],
       "skillId": "supporting.statistics.data_collection",
       "mechanic": "DATA_COLLECTION",
@@ -15861,6 +15859,27 @@
         "solution": "أحدد التاريخ والنقطة على كل خط، وأقرأ القيم أو الفروق من مقياس موحّد وأتحقق بالجدول.",
         "commonMistake": "مقارنة خطين دون مراعاة مقياس موحّد أو تفسير ارتفاع الخط بوصفه زيادة فعلية دون قراءة القيم.",
         "summary": "أقرأ نقاط الرسم ثم أستخرج الفرق والاتجاه لكل خط؛ شرح الاتجاهات يحتاج مراجعة المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l04-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:04$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "LINE_GRAPH_PATTERN_EXTRAPOLATION_AND_SAMPLE_ESTIMATE",
+      "families": [
+        "uae.g5.u11.l04.linear_next_prediction",
+        "uae.g5.u11.l04.linear_future_prediction",
+        "uae.g5.u11.l04.sample_scaled_estimate"
+      ],
+      "content": {
+        "concept": "استقراء بيانات خط بياني يعتمد على نمط ثابت قابل للفحص، وتقدير المجتمع من عينة يمثل حسابًا مشروطًا بملاءمة العينة.",
+        "workedExample": "نبات طوله ٨، ١١، ١٤، ١٧ سم في أربعة أسابيع؛ إذا استمر النمو ٣ سم كل أسبوع، فالمتوقع للأسبوع الخامس ٢٠ سم.",
+        "solution": "أحسب فروق البيانات، أتحقق من ثبات المعدل، ثم أمد الخط لفترة واحدة. وللعينة أضرب نسبة الخيار في عدد المجتمع.",
+        "commonMistake": "اعتبار أي توقع حقيقة مؤكدة أو تعميم عينة متحيزة على مجتمع كامل.",
+        "summary": "الأجوبة الرقمية شرطية على استمرار النمط أو تمثيل العينة؛ جودة الافتراض يراجعها المعلم."
       }
     }
   ]

@@ -1,0 +1,83 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 107,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:04",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "SourcePrintedPages": [
+    809,
+    810,
+    811,
+    812,
+    813,
+    814
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "استخدام مخطط أو جدول بيانات لوضع توقع مشروط بنمط متكرر",
+    "استكمال نمط عددي أو خطي بافتراض استمرار معدل التغير",
+    "استخدام نسب عينة لتقدير عدد ضمن مجتمع مع توضيح الافتراض",
+    "تمييز التوقع عن القيمة المؤكدة وفحص معقولية الناتج"
+  ],
+  "SourceElements": [
+    {
+      "Category": "class survey and extrapolation introduction",
+      "Pages": [
+        809
+      ],
+      "Coverage": "original conditional proportion example and confidence notes"
+    },
+    {
+      "Category": "tally/count and pattern reasoning",
+      "Pages": [
+        810,
+        811,
+        812
+      ],
+      "Coverage": "original warnings about trend model, exact generator families and teacher-rubric"
+    },
+    {
+      "Category": "homework linear prediction and estimate",
+      "Pages": [
+        813,
+        814
+      ],
+      "Coverage": "original savings/reading trend and scaled-survey predictions"
+    }
+  ],
+  "Engine": "EXTEND UaeGrade4Unit13GraphsQuestions Grade4 shared line graph engine, adding three source-scoped Grade5 prediction families",
+  "SkillId": "data.graphs",
+  "QuestionFamilies": [
+    "uae.g5.u11.l04.linear_next_prediction",
+    "uae.g5.u11.l04.linear_future_prediction",
+    "uae.g5.u11.l04.sample_scaled_estimate"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "سجلت الدقائق ١ إلى ٤ قراءة ١٢، ١٧، ٢٢، ٢٧ صفحة. إذا استمر النمط، ما التوقع عند الدقيقة السادسة؟ ولماذا يبقى هذا توقعًا؟",
+    "Answer": "٣٧ صفحة تقريبًا؛ بشرط استمرار معدل ٥ صفحات كل دقيقة",
+    "TeacherRubric": "فروق متساوية ٥، تمديد مرحلتين ٣٢ ثم ٣٧، وضوح شرط ثبات المعدل وأنه غير مضمون."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "THREE_G5_SOURCE_ALIGNED_EXACT_PREDICTION_FAMILIES_AUTHORED_NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson04PredictionTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Judging sample representativeness",
+    "Interpreting uncertainty in future trend estimates"
+  ],
+  "SourceRights": "Only source objective/page references used; all student content original."
+}
