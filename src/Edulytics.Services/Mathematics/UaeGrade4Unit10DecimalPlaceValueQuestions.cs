@@ -24,11 +24,71 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
         or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
         or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator
-        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal;
+        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal || IsG5Model(family);
+
+    // G5 U07 L07 extends the existing decimal PlaceValue engine with
+    // equivalent ten-part and hundred-part fraction models; no new engine.
+    internal const string G5ModelTenths="uae.g5.u07.l07.model_tenths_decimal";
+    internal const string G5ModelHundredths="uae.g5.u07.l07.model_hundredths_decimal";
+    internal const string G5CountShaded="uae.g5.u07.l07.count_shaded_hundredths";
+    private static bool IsG5Model(string? family)=>
+        family is G5ModelTenths or G5ModelHundredths or G5CountShaded;
+
+    private static Item BuildG5Model(string family,Random rng)
+    {
+        int[] options=family==G5ModelTenths?[2,5,10]:[4,10,20,25,50,100];
+        int d=options[rng.Next(options.Length)],n=rng.Next(1,d);
+        string prompt=family switch
+        {
+            G5ModelTenths=>$"ظلل {n} من {d} أجزاء متساوية في شريط ثم اكتب قيمة الكسر {n}/{d} كعدد عشري.",
+            G5ModelHundredths=>$"مثّل الكسر {n}/{d} على شبكة من مئة مربع متساوٍ، ثم اكتب قيمته كعدد عشري.",
+            _=>$"مثّل الكسر {n}/{d} على شبكة مئة مربع. كم مربعًا ستظلل؟"
+        };
+        return new Item(family,prompt,
+            "أنشئ كسرًا مكافئًا مقامه ١٠ أو ١٠٠ ثم انتقل إلى العدد العشري؛ كل جزء من مئة يساوي ٠٫٠١.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"n",n},{"d",d}});
+    }
+    private static bool ValidG5Model(string family,IReadOnlyDictionary<string,int> p,
+        out int shaded)
+    {
+        shaded=0;
+        if(!IsG5Model(family)||p.Count!=2||
+           !p.TryGetValue("n",out int n)||!p.TryGetValue("d",out int d)||
+           n is <1 or >99||d is <2 or >100||n>=d||
+           100%d!=0||
+           (family==G5ModelTenths&&10%d!=0))return false;
+        shaded=n*(100/d);
+        return true;
+    }
+    private static string SolveG5Model(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5Model(family,p,out int shaded))
+            throw new InvalidOperationException("Invalid G5 hundred-grid parameters.");
+        return family==G5CountShaded?shaded.ToString(CultureInfo.InvariantCulture):
+            (shaded/100m).ToString("0.00",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5Model(string family,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5Model(family,p,out int shaded)||string.IsNullOrWhiteSpace(answer)||
+           answer.Length>30)return false;
+        string normalized=new(answer.Trim().Select(ch=>ch switch{
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',_=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0').ToArray());
+        if(family==G5CountShaded)
+            return int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,
+                out int actual)&&actual==shaded;
+        return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal actualDecimal)&&
+            actualDecimal*100m==shaded;
+    }
+
     private static bool IsDecimal(string family)=>family is PlaceValueDecimal or TenthsDecimal or HundredthsDecimal;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
+        if(IsG5Model(family))return BuildG5Model(family,random);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return BuildGrade5Thousandths(family,random);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
@@ -88,6 +148,7 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5Model(family))return SolveG5Model(family,p);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return SolveGrade5Thousandths(family,p);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
@@ -100,6 +161,7 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5Model(family))return VerifyG5Model(family,p,answer);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return VerifyGrade5Thousandths(family,p,answer);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
