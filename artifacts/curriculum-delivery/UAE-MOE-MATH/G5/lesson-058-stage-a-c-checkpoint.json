@@ -3,10 +3,10 @@
   "Unit": 6,
   "LessonOrdinal": 58,
   "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:06",
-  "Status": "A_C_EXPLICIT_GAP",
+  "Status": "READY_FOR_STAGE_D",
   "StageA": "CLOSED",
   "StageB": "CLOSED",
-  "StageC": "A_C_EXPLICIT_GAP",
+  "StageC": "CLOSED_STAGED_NOT_EXECUTED",
   "SourcePrintedPages": [
     437,
     438,
@@ -26,8 +26,12 @@
     "explain_real_world_expression"
   ],
   "ArabicLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u06-l06-ar.rich-lesson-v2.json",
-  "QuestionFamiliesApproved": [],
-  "ReadinessReason": "Generic English supporting.algebra family requests negative coefficients and symbolic simplification, not source-specific concrete model interpretation. Fail-closed projection guard staged; authored teacher rubric only. Must implement and verify exact model family before marking READY_FOR_STAGE_D.",
+  "QuestionFamiliesApproved": [
+    "uae.g5.u06.l06.model_unknown_plus",
+    "uae.g5.u06.l06.model_unknown_minus",
+    "uae.g5.u06.l06.model_repeated_group"
+  ],
+  "ReadinessReason": "All source model objectives represented by Arabic rich lesson and three new source-specific structured-expression generator/solver/verifier families, with reviewed exact-code rule, interaction metadata and teacher rubric for open drawings. Test cases written but NOT_RUN.",
   "StaticFixtures": {
     "unknownPlusFive": 9,
     "subtractThree": 8,
@@ -36,6 +40,7 @@
   },
   "TestsRun": "NOT_RUN",
   "StageDRun": false,
-  "NextOrdinal": 58,
-  "HumanReviewRequired": true
+  "NextOrdinal": 59,
+  "HumanReviewRequired": true,
+  "SkillId": "number.algebra.write_expressions"
 }
