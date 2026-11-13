@@ -13881,6 +13881,27 @@
         "commonMistake": "لا تتوقف عند عامل مركب مثل ٦ أو ٩.",
         "summary": "العوامل الأولية جميعها أولية ويعيد حاصل ضربها العدد."
       }
+    },
+    {
+      "id": "uae-g5-u02-l02-prime-pattern-growth",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:02$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "PRIME_FACTOR_PATTERNS",
+      "families": [
+        "uae.g5.u02.l02.fold_holes",
+        "uae.g5.u02.l02.triangle_growth",
+        "uae.g5.u02.l02.repeated_growth"
+      ],
+      "content": {
+        "concept": "الضرب المتكرر وتحليل النتائج إلى عوامل أولية.",
+        "workedExample": "٢،٤،٨،١٦،٣٢.",
+        "solution": "أكرر الضرب بعامل النمو في كل مرحلة.",
+        "commonMistake": "لا تستبدل الضرب بجمع ثابت.",
+        "summary": "العامل المكرر يحدد النمط."
+      }
     }
   ]
 }

@@ -10,10 +10,46 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     internal const string G5Factorize="uae.g5.u02.l01.prime_factorize";
     internal const string G5FactorCount="uae.g5.u02.l01.prime_factor_count";
     internal const string G5MissingPrime="uae.g5.u02.l01.complete_factor_tree";
+    internal const string G5FoldHoles="uae.g5.u02.l02.fold_holes";
+    internal const string G5TriangleGrowth="uae.g5.u02.l02.triangle_growth";
+    internal const string G5RepeatedGrowth="uae.g5.u02.l02.repeated_growth";
+    private static bool IsG5Pattern(string? f)=>f is G5FoldHoles or G5TriangleGrowth or G5RepeatedGrowth;
     private static bool IsG5(string? family)=>
         family is G5Factorize or G5FactorCount or G5MissingPrime;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Classification or FactorCount || IsG5(family);
+    internal static bool Supports(string? family)=>family is Classification or FactorCount || IsG5(family) || IsG5Pattern(family);
+
+
+    // Grade5: exact powers derived from the existing prime-factor pattern model.
+    private static Item BuildG5Pattern(string family,Random rng)
+    {
+        int initial=family==G5TriangleGrowth?1:rng.Next(1,5);
+        int factor=family==G5TriangleGrowth?4:family==G5FoldHoles?2:rng.Next(2,5);
+        int rounds=rng.Next(2,6);
+        string prompt=family switch
+        {
+            G5FoldHoles=>$"في البداية {initial} ثقوب، ويزداد عددها إلى الضعف مع كل طية. كم ثقبًا بعد {rounds} طيات؟",
+            G5TriangleGrowth=>$"ينقسم المثلث إلى أربعة مثلثات في كل مرحلة. كم مثلثًا بعد {rounds} مراحل إذا بدأنا بمثلث واحد؟",
+            _=>$"يبدأ نمط بعدد {initial}، ثم نضربه في {factor} كل مرحلة. ما العدد بعد {rounds} مراحل؟"
+        };
+        return new Item(family,prompt,"اضرب عامل النمو في العدد السابق بكل مرحلة وتحقق بجدول.",AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"initial",initial},{"factor",factor},{"rounds",rounds}});
+    }
+    private static bool ValidG5Pattern(string family,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5Pattern(family)||p.Count!=3||
+           !p.TryGetValue("initial",out int initial)||
+           !p.TryGetValue("factor",out int factor)||
+           !p.TryGetValue("rounds",out int rounds)||rounds is <2 or >5)
+            return false;
+        if(family==G5FoldHoles&&(factor!=2||initial is <1 or >4))return false;
+        if(family==G5TriangleGrowth&&(factor!=4||initial!=1))return false;
+        if(family==G5RepeatedGrowth&&(factor is <2 or >4||initial is <1 or >4))return false;
+        int value=initial;
+        for(int i=0;i<rounds;i++)value=checked(value*factor);
+        expected=value;return true;
+    }
 
     private static bool IsPrime(int n)
     {
@@ -152,6 +188,7 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported number theory family.");
         if(IsG5(family)) return BuildG5(family,random);
+        if(IsG5Pattern(family)) return BuildG5Pattern(family,random);
         int n=family==Classification?random.Next(0,96):random.Next(2,96);
         if(family==Classification&&random.Next(0,8)==0)n=random.Next(0,2);
         string prompt=family==Classification?
@@ -166,6 +203,7 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     {
         answer=0;
         if(IsG5(family)) return ValidG5Numeric(family,p,out answer);
+        if(IsG5Pattern(family)) return ValidG5Pattern(family,p,out answer);
         if(!Supports(family)||p.Count!=1||!p.TryGetValue("n",out int n)||n is <0 or >120||
            (family==FactorCount&&n<2))return false;
         answer=family==Classification?Category(n):Count(n);
