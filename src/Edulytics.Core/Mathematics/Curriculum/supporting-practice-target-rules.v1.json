@@ -15386,6 +15386,26 @@
         "commonMistake": "لا تجمع المقامات أو تهمل الوحدة المتكونة من الكسر غير الفعلي.",
         "summary": "جمع الأعداد الكسرية مع إعادة التجميع."
       }
+    },
+    {
+      "id": "uae-g5-u08-l12-mixed-subtraction",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:12$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "MIXED_NUMBER_SUBTRACTION",
+      "families": [
+        "uae.g5.u08.l12.mixed_difference_fraction",
+        "uae.g5.u08.l12.mixed_difference_whole"
+      ],
+      "content": {
+        "concept": "طرح الأعداد الكسرية بعد توحيد المقامات.",
+        "workedExample": "٦ و١١/١٦−٢ و٥/٨=٤ و١/١٦.",
+        "solution": "وحّد المقامات، ثم اطرح مع إعادة التسمية عند الحاجة.",
+        "commonMistake": "لا تطرح أجزاء غير متساوية أو تهمل إعادة التسمية.",
+        "summary": "طرح عددين كسريين والتحقق."
+      }
     }
   ]
 }

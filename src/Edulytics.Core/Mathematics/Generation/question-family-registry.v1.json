@@ -46047,6 +46047,42 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u08.l12.mixed_difference_fraction",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_fraction",
+      "verificationPolicy": "uae-g5-u08-l12-mixed-subtract-arabic-student-619-624-tests-not-run",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u08.l12.mixed_difference_whole",
+      "version": 1,
+      "skillId": "fractions.subtract",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u08-l12-mixed-subtract-arabic-student-619-624-tests-not-run",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
