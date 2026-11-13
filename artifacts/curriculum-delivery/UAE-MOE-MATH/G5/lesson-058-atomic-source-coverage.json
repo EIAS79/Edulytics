@@ -1,0 +1,94 @@
+{
+  "Grade": 5,
+  "Unit": 6,
+  "LessonOrdinal": 58,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:06",
+  "Status": "A_C_EXPLICIT_GAP",
+  "SourceEdition": "Arabic 2025–2026 owner-selected student book",
+  "TargetYear": "2026–2027 — exact detailed lesson order NOT_LOCKED",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\02-1.pdf",
+  "SourcePdfSha256": "f0a111404b9e94bbc598f1ff4a7f80d68e434c54d3a30155858994404ddf5ab6",
+  "SourcePrintedPages": [
+    437,
+    438,
+    439,
+    440
+  ],
+  "SourcePdfPages": [
+    50,
+    51,
+    52,
+    53
+  ],
+  "SourceElements": [
+    {
+      "Type": "unknown-container-concrete-model",
+      "Pages": [
+        437,
+        438
+      ],
+      "Coverage": "ORIGINAL_ARABIC_RICHV2_MODEL_CONCEPT_AND_SYMBOL_TABLE"
+    },
+    {
+      "Type": "variable-sum-difference-and-interpretation",
+      "Pages": [
+        438,
+        439
+      ],
+      "Coverage": "ORIGINAL_AUTHORED_EXAMPLES_AND_COMMON_MISTAKES"
+    },
+    {
+      "Type": "substitution-repeated-variable-and-simple-multiplication",
+      "Pages": [
+        438,
+        439
+      ],
+      "Coverage": "FIRST_PARTY_ARABIC_EXAMPLES_AND_STAGED_STATIC_FIXTURES"
+    },
+    {
+      "Type": "real-life-context-and-explanation-of-subtraction",
+      "Pages": [
+        439,
+        440
+      ],
+      "Coverage": "FIRST_PARTY_WORD_PROBLEMS_AND_TEACHER_RUBRIC"
+    },
+    {
+      "Type": "human-guided-model-drawing",
+      "Pages": [
+        437,
+        441
+      ],
+      "Coverage": "ORIGINAL_SYMBOLIC_VISUAL_PLUS_TEACHER_REVIEW_NEEDED"
+    }
+  ],
+  "EngineDecision": "REUSE_FIRST: existing supporting algebra engine reviewed; current generic English signed-coefficient and simplification families do not cover this objective. Until a lesson-scoped exact model/interpretation family is validated, generic route is explicitly fail-closed; no unverified Practice authorization.",
+  "ExistingGenericFamilyRisk": [
+    "supporting.algebra.simplify",
+    "supporting.algebra.substitute",
+    "supporting.algebra.expressions.mixed"
+  ],
+  "TeacherRubric": {
+    "Source": "ORIGINAL_EDULYTICS",
+    "Prompt": "اعرض صندوقًا فيه عدد مجهول x من القطع وبجواره ٥ قطع، ثم اطلب من الطالب كتابة التعبير وتفسيره. غيّر المشهد إلى أخذ ٣ قطع من الصندوق واطلب توضيح سبب عدم صحة ٣−x.",
+    "Criteria": [
+      "يحدد المجهول دون افتراض أنه صفر",
+      "يكتب x+٥ ويشرح الإضافة",
+      "يكتب x−٣ وليس ٣−x عند الإزالة",
+      "يفسر الأقواس عند تكرار المجموعة",
+      "يتحقق من المعنى عدديًا إذا عُرفت قيمة المتغير"
+    ]
+  },
+  "CoolDown": {
+    "Source": "ORIGINAL_EDULYTICS",
+    "Question": "لدى طالب صندوق فيه x لعبة، وأربع لعب على الطاولة؛ أخرج لعبتين من الصندوق. اكتب تعبيرًا للمجموع وفسره إذا x=٨.",
+    "Answer": "(x−٢)+٤=١٠ ألعاب"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ARABIC_CONTENT_AND_VISUALS",
+  "StageC": "EXPLICIT_GAP_MODEL_CONTRACT_NOT_VERIFIED",
+  "GenericPracticeRoute": "BLOCKED_FOR_THIS_LESSON",
+  "StageDRun": false,
+  "TestsRun": "NOT_RUN",
+  "SourceRightsNote": "Textbook pictures and copyrighted examples not copied; learner-facing explanations and diagrams are original."
+}
