@@ -1,0 +1,119 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 3,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:03",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourceEdition": "Owner-selected 2025–2026 Arabic Student",
+  "SourcePdfPages": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "SourcePrintedPages": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "OfficialYear2026_2027SourceSequence": "UNVERIFIED",
+  "SourceElements": [
+    {
+      "Id": "G5-01-03-01",
+      "Category": "objective-tenths-hundredths-percent",
+      "Pages": [
+        42
+      ],
+      "Coverage": "ARABIC_ORIGINAL"
+    },
+    {
+      "Id": "G5-01-03-02",
+      "Category": "ten-strip-model",
+      "Pages": [
+        42,
+        43
+      ],
+      "Coverage": "FRACTION_BARS_AND_ORIGINAL_EXAMPLES"
+    },
+    {
+      "Id": "G5-01-03-03",
+      "Category": "hundred-grid-model",
+      "Pages": [
+        42,
+        43
+      ],
+      "Coverage": "FRACTION_BARS_AND_RATIO_TABLE_ORIGINAL"
+    },
+    {
+      "Id": "G5-01-03-04",
+      "Category": "numerical-decimal-conversion",
+      "Pages": [
+        43,
+        44
+      ],
+      "Coverage": "EXACT_REUSED_G4_FAMILIES"
+    },
+    {
+      "Id": "G5-01-03-05",
+      "Category": "percent-conversion-and-comparison",
+      "Pages": [
+        44,
+        45
+      ],
+      "Coverage": "EXACT_G5_PERCENT_EXTENSION"
+    },
+    {
+      "Id": "G5-01-03-06",
+      "Category": "practice-and-word-problems",
+      "Pages": [
+        45,
+        46,
+        47
+      ],
+      "Coverage": "ORIGINAL_PARALLEL_EXAMPLES_AND_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-01-03-07",
+      "Category": "vocabulary-and-assessment",
+      "Pages": [
+        47
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN"
+    }
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.place_value",
+    "Strategy": "REUSE existing G4 decimal exact engine, EXTEND with two percent families; no new engine",
+    "AllowedQuestionFamilies": [
+      "uae.g4.u10.l02.tenths_decimal",
+      "uae.g4.u10.l03.hundredths_decimal",
+      "uae.g4.u10.l03.hundredths_fraction_numerator",
+      "uae.g5.u01.l03.hundredths_to_percent",
+      "uae.g5.u01.l03.tenths_to_percent"
+    ],
+    "Renderer": "NumericEntry for decimals, IntegerKeypad for percents; FractionBars + RatioTable originals",
+    "IndependentVerifier": "G4 existing decimal verifier extended percent exact integer and 0/100,100/100 bounds",
+    "ManualTasks": "TEACHER_REVIEW_REQUIRED model drawing and explanations",
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "CoolDown": {
+    "AuthoredSubstitute": true,
+    "Question": "مثل الكسرين ٦/١٠ و٣٥/١٠٠ بعدد عشري ونسبة مئوية. هل الكسران متساويان؟",
+    "Answer": "٠٫٦ = ٦٠٪، و٠٫٣٥ = ٣٥٪، وهما غير متساويين.",
+    "Rubric": "النموذج المتساوي وتقابل الأجزاء العشرية والمئوية"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE_2025_2026",
+  "StageB": "CLOSED_ORIGINAL_RTL_ARABIC_RICHV2",
+  "StageC": "EXACT_REUSE_AND_PERCENT_EXTENSION_WRITTEN_NOT_RUN",
+  "NoStageD": true,
+  "TestsRun": "NOT_RUN",
+  "RuntimeVerified": false
+}

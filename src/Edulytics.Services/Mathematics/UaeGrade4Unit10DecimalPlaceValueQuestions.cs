@@ -12,17 +12,24 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal const string HundredthsFraction="uae.g4.u10.l03.hundredths_fraction_numerator";
     internal const string DecimalToHundredths="uae.g4.u10.l04.decimal_to_hundredths";
     internal const string DecimalToTenths="uae.g4.u10.l04.decimal_to_tenths";
+    internal const string Grade5HundredthsPercent="uae.g5.u01.l03.hundredths_to_percent";
+    internal const string Grade5TenthsPercent="uae.g5.u01.l03.tenths_to_percent";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is PlaceValueDecimal or HundredthsCount or TenthsDigit
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
-        or DecimalToHundredths or DecimalToTenths;
+        or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent;
     private static bool IsDecimal(string family)=>family is PlaceValueDecimal or TenthsDecimal or HundredthsDecimal;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
         int whole=family is PlaceValueDecimal or HundredthsCount or TenthsDigit ? random.Next(0,5):0;
-        int tenths=random.Next(0,10);
-        int hundredths=family is TenthsDecimal or TenthsCount or DecimalToTenths?0:random.Next(0,10);
+        // Stage C extension for G5: include 0% and 100% without changing G4 output.
+        if ((family is Grade5HundredthsPercent or Grade5TenthsPercent) && random.Next(10)==0)
+            whole=1;
+        int tenths=(family is Grade5HundredthsPercent or Grade5TenthsPercent) && whole==1
+            ? 0 : random.Next(0,10);
+        int hundredths=family is TenthsDecimal or TenthsCount or DecimalToTenths or Grade5TenthsPercent
+            ? 0 : (family==Grade5HundredthsPercent && whole==1 ? 0 : random.Next(0,10));
         var p=new Dictionary<string,int>{{"whole",whole},{"tenths",tenths},{"hundredths",hundredths}};
         string prompt=family switch
         {
@@ -34,6 +41,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
             HundredthsDecimal=>$"اكتب {tenths*10+hundredths} جزءًا من مئة في صورة عدد عشري.",
             HundredthsFraction=>$"ما بسط الكسر الذي مقامه ١٠٠ ويمثل {tenths} أعشار و{hundredths} أجزاء من مئة؟",
             DecimalToHundredths=>$"كم جزءًا من مئة في العدد ٠٫{tenths}{hundredths}؟",
+            Grade5HundredthsPercent=>$"لوّنت {whole*100+tenths*10+hundredths} مربعًا من شبكة مؤلفة من ١٠٠ مربع؛ ما النسبة المئوية؟ اكتب العدد فقط.",
+            Grade5TenthsPercent=>$"ظلّلت {whole*10+tenths} أجزاء من شريط مقسم إلى ١٠ أجزاء متساوية؛ اكتب النسبة المئوية عددًا فقط.",
             _=>$"اكتب ٠٫{tenths} على صورة كسر مقامه ١٠. ما البسط؟"
         };
         return new Item(family,prompt,"ضع كل رقم في منزلته: آحاد، أعشار، أجزاء مئة؛ كل عشر يساوي عشرة أجزاء من مئة.",
@@ -45,8 +54,10 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         if(!Supports(family)||p.Count!=3||!p.TryGetValue("whole",out int whole)||
            !p.TryGetValue("tenths",out int t)||!p.TryGetValue("hundredths",out int h)||
            whole is <0 or >6||t is <0 or >9||h is <0 or >9||
-           (family is TenthsDecimal or TenthsCount or DecimalToTenths && h!=0)||
-           (family is HundredthsDecimal or HundredthsFraction or DecimalToHundredths or DecimalToTenths && whole!=0))return false;
+           (family is TenthsDecimal or TenthsCount or DecimalToTenths or Grade5TenthsPercent && h!=0)||
+           (family is HundredthsDecimal or HundredthsFraction or DecimalToHundredths or DecimalToTenths && whole!=0)||
+           ((family is Grade5HundredthsPercent or Grade5TenthsPercent) &&
+            (whole>1 || (whole==1 && (t!=0 || h!=0)))))return false;
         answer=family switch
         {
             PlaceValueDecimal=>whole+t/10m+h/100m,
@@ -56,6 +67,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
             TenthsCount=>t,
             HundredthsDecimal=>t/10m+h/100m,
             HundredthsFraction or DecimalToHundredths=>t*10+h,
+            Grade5HundredthsPercent=>whole*100+t*10+h,
+            Grade5TenthsPercent=>(whole*10+t)*10,
             _=>t
         };
         return true;
