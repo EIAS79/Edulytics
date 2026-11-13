@@ -42366,6 +42366,78 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l02.compare_to_millions",
+      "version": 1,
+      "skillId": "number.place_value.compare_and_order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "grade5-source-comparison-order-9digit-independent-verifier-test-written-not-run",
+      "representations": [
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l02.select_greater",
+      "version": 1,
+      "skillId": "number.place_value.compare_and_order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade5-source-comparison-order-9digit-independent-verifier-test-written-not-run",
+      "representations": [
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l02.order_four_ascending",
+      "version": 1,
+      "skillId": "number.place_value.compare_and_order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade5-source-comparison-order-9digit-independent-verifier-test-written-not-run",
+      "representations": [
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l02.order_four_descending",
+      "version": 1,
+      "skillId": "number.place_value.compare_and_order_to_millions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "grade5-source-comparison-order-9digit-independent-verifier-test-written-not-run",
+      "representations": [
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
