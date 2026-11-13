@@ -7,15 +7,19 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     internal const string G5DecimalGroup="uae.g5.u05.l10.tenths_equal_group_quotient";
     internal const string G5Exact="uae.g5.u05.l11.exact_decimal_by_whole",G5Rounded="uae.g5.u05.l11.round_decimal_quotient_hundredth",G5Digit="uae.g5.u05.l11.quotient_hundredths_digit";
     private static bool IsG5WholeDecimal(string? f)=>f is G5Exact or G5Rounded or G5Digit;
+    internal const string G5ModelGroups="uae.g5.u05.l12.model_decimal_equal_groups";
+    internal const string G5ModelHundredths="uae.g5.u05.l12.model_decimal_hundredths_count";
+    private static bool IsG5DecimalModel(string? f)=>f is G5ModelGroups or G5ModelHundredths;
     internal const string G5TenthsEach="uae.g5.u05.l10.tenths_per_group";
     internal const string G5WholeEach="uae.g5.u05.l10.whole_units_per_group";
     private static bool IsG5(string? f)=>f is G5DecimalGroup or G5TenthsEach or G5WholeEach;
     internal const string Remainder="uae.g4.u06.l04.model_after_removing_items_remainder";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5WholeDecimal(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5WholeDecimal(f) || IsG5DecimalModel(f);
     internal static Item Build(string f,Random random)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown model division family");
+        if(IsG5DecimalModel(f))return BuildG5DecimalModel(f,random);
         if(IsG5WholeDecimal(f))return BuildG5WholeDecimal(f,random);
         if(IsG5(f))return BuildG5(f,random);
         int group=random.Next(2,9),each=random.Next(2,26),removed=random.Next(1,10);
@@ -27,6 +31,51 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
             AssessmentItemType.Numeric,new Dictionary<string,int>{{"total",total},{"removed",removed},{"groups",group}});
     }
 
+
+
+    // Grade 5 U05:L12: reuse the same equal-group engine for hundredth-size
+    // blocks. Persist only dividend/divisor hundredths, not solutions.
+    private static Item BuildG5DecimalModel(string f,Random random)
+    {
+        int divisorHundredths=random.Next(2,91),groups=random.Next(2,11);
+        int dividendHundredths=checked(divisorHundredths*groups);
+        string n=(dividendHundredths/100m).ToString("0.##",CultureInfo.InvariantCulture);
+        string d=(divisorHundredths/100m).ToString("0.##",CultureInfo.InvariantCulture);
+        string prompt=f==G5ModelGroups
+            ?$"باستخدام شبكة أجزاء المئة، كوّن مجموعات قيمة كل واحدة {d} من العدد {n}. كم مجموعة متساوية؟"
+            :$"لتمثيل قسمة {n} ÷ {d} بمكعبات أجزاء المئة، كم مربعًا من المئة نمثل به العدد {n} قبل التقسيم؟";
+        return new Item(f,prompt,
+            "أحوّل الوحدات والأعشار إلى أجزاء من مئة، ثم أعد المجموعات وأتحقق بضرب المقسوم عليه في الحاصل.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"dividendHundredths",dividendHundredths},{"divisorHundredths",divisorHundredths}});
+    }
+    private static bool ValidG5DecimalModel(string f,IReadOnlyDictionary<string,int> p,
+        out int dividendHundredths,out int divisorHundredths)
+    {
+        dividendHundredths=divisorHundredths=0;
+        return IsG5DecimalModel(f)&&p.Count==2&&
+           p.TryGetValue("dividendHundredths",out dividendHundredths)&&
+           p.TryGetValue("divisorHundredths",out divisorHundredths)&&
+           divisorHundredths is >=2 and <=90&&
+           dividendHundredths>=2*divisorHundredths&&
+           dividendHundredths<=10*divisorHundredths&&
+           dividendHundredths%divisorHundredths==0;
+    }
+    private static string SolveG5DecimalModel(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5DecimalModel(f,p,out int n,out int d))
+            throw new InvalidOperationException("Invalid decimal equal-group model");
+        return (f==G5ModelGroups?n/d:n).ToString(CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5DecimalModel(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5DecimalModel(f,p,out int n,out int d)||string.IsNullOrWhiteSpace(answer))return false;
+        string s=new(answer.Trim().Where(ch=>ch is not ' ' and not '٬' and not ',' and not '\u00a0' and not '\u202f')
+            .Select(ch=>ch is >= '٠' and <= '٩'?(char)('0'+ch-'٠'):
+                ch is >= '۰' and <= '۹'?(char)('0'+ch-'۰'):ch).ToArray());
+        if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int got))return false;
+        return f==G5ModelGroups?got*d==n:got==n;
+    }
 
     // Extend existing equal-group engine for long division of hundredths
     // by an integer, retaining exact thousandths and rounding only on request.
@@ -158,6 +207,7 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5DecimalModel(f))return SolveG5DecimalModel(f,p);
         if(IsG5WholeDecimal(f))return SolveG5WholeDecimal(f,p);
         if(IsG5(f))return SolveG5(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid division model");
@@ -165,6 +215,7 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5DecimalModel(f))return VerifyG5DecimalModel(f,p,answer);
         if(IsG5WholeDecimal(f))return VerifyG5WholeDecimal(f,p,answer);
         if(IsG5(f))return VerifyG5(f,p,answer);
         if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
