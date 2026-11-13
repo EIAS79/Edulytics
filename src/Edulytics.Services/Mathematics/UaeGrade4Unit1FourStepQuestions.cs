@@ -11,6 +11,11 @@ internal static class UaeGrade4Unit1FourStepQuestions
     internal const string Remaining="uae.g4.u01.l06.find_remaining";
     // UAE Grade 5 Common expands this already-supported four-step engine
     // with inverse and multiplication/division reasoning; Grade 4 unchanged.
+    internal const string G5U4SimpleRate="uae.g5.u04.l06.equal_group_unit_rate";
+    internal const string G5U4SimpleScale="uae.g5.u04.l06.simpler_scaled_groups";
+    internal const string G5U4SimpleArea="uae.g5.u04.l06.remaining_area";
+    internal const string G5U4SimpleWeeks="uae.g5.u04.l06.saving_weeks_strictly_more";
+    private static bool IsG5U4Simple(string? f)=>f is G5U4SimpleRate or G5U4SimpleScale or G5U4SimpleArea or G5U4SimpleWeeks;
     internal const string G5Missing="uae.g5.u01.l09.find_missing_distance";
     internal const string G5Initial="uae.g5.u01.l09.find_starting_total";
     internal const string G5Budget="uae.g5.u01.l09.budget_purchase_count";
@@ -26,11 +31,12 @@ internal static class UaeGrade4Unit1FourStepQuestions
     private static bool IsG5(string? f)=>f is G5Missing or G5Initial or G5Budget or G5Undo;
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family) || IsG5Info(family);
+    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family) || IsG5Info(family) || IsG5U4Simple(family);
 
     public static Item Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported four-step family");
+        if (IsG5U4Simple(family)) return BuildG5U4Simple(family,rng);
         if (IsG5(family)) return BuildG5(family, rng);
         if (IsG5Table(family)) return BuildG5Table(family,rng);
         if (IsG5Info(family)) return BuildG5Info(family,rng);
@@ -45,6 +51,81 @@ internal static class UaeGrade4Unit1FourStepQuestions
             "أفهم المعطيات، أحدد العملية، أحسب، ثم أتحقق بالعملية العكسية.",
             AssessmentItemType.Numeric,
             new Dictionary<string,int>{{"a",a},{"b",b}});
+    }
+
+
+    // UAE G5 Common U04 L06: extend the existing four-step engine with
+    // unit rate, scale, area decomposition, and strict saving threshold.
+    private static Item BuildG5U4Simple(string f,Random rng)
+    {
+        string prompt;
+        Dictionary<string,int> p;
+        if(f is G5U4SimpleRate or G5U4SimpleScale)
+        {
+            int groups=rng.Next(6,31),perGroup=rng.Next(5,61);
+            int total=groups*perGroup,target=rng.Next(3,16);
+            p=new Dictionary<string,int>{{"groups",groups},{"total",total}};
+            if(f==G5U4SimpleScale)p["target"]=target;
+            prompt=f==G5U4SimpleRate
+                ?$"توزع {total} قطعة على {groups} مجموعة بالتساوي. كم قطعة في مجموعة واحدة؟"
+                :$"توزع {total} قطعة على {groups} مجموعة بالتساوي. كم قطعة نحتاج إلى {target} مجموعات مماثلة؟";
+        }
+        else if(f==G5U4SimpleArea)
+        {
+            int length=rng.Next(6,21),width=rng.Next(5,16),side=rng.Next(2,5);
+            p=new Dictionary<string,int>{{"length",length},{"width",width},{"side",side}};
+            prompt=$"حديقة طولها {length} مترًا وعرضها {width} مترًا، وبداخلها مساحة مربعة غير مزروعة طول ضلعها {side} مترًا. ما مساحة الجزء الباقي بالمتر المربع؟";
+        }
+        else
+        {
+            int income=rng.Next(50,121),spend=rng.Next(5,41),target=rng.Next(180,851);
+            p=new Dictionary<string,int>{{"income",income},{"spend",spend},{"target",target}};
+            prompt=$"يكسب شخص {income} درهمًا في الأسبوع وينفق {spend} درهمًا. كم أسبوعًا يحتاج ليدخر أكثر من {target} درهمًا؟";
+        }
+        return new Item(f,prompt,"أفهم المسألة وأحدد وحدة أصغر أو جزءًا أبسط، ثم أعد تركيب الإجابة وأتحقق من الشرط.",
+            AssessmentItemType.Numeric,p);
+    }
+    private static bool ValidG5U4Simple(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5U4Simple(f))return false;
+        if(f is G5U4SimpleRate or G5U4SimpleScale)
+        {
+            if(p.Count!=(f==G5U4SimpleRate?2:3)||
+               !p.TryGetValue("groups",out int groups)||!p.TryGetValue("total",out int total)||
+               groups is <6 or >30||total is <30 or >15_000||total%groups!=0||
+               total/groups is <5 or >500)return false;
+            if(f==G5U4SimpleRate){expected=total/groups;return true;}
+            if(!p.TryGetValue("target",out int target)||target is <3 or >15)return false;
+            expected=checked(total/groups*target);return true;
+        }
+        if(f==G5U4SimpleArea)
+        {
+            if(p.Count!=3||!p.TryGetValue("length",out int length)||
+               !p.TryGetValue("width",out int width)||!p.TryGetValue("side",out int side)||
+               length is <6 or >20||width is <5 or >15||side is <2 or >4||
+               side>=Math.Min(length,width))return false;
+            expected=length*width-side*side;return expected>0;
+        }
+        if(p.Count!=3||!p.TryGetValue("income",out int income)||
+           !p.TryGetValue("spend",out int spend)||!p.TryGetValue("target",out int goal)||
+           income is <50 or >120||spend is <5 or >40||income-spend<10||
+           goal is <180 or >850)return false;
+        expected=goal/(income-spend)+1;
+        return true;
+    }
+    private static bool VerifyG5U4Simple(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5U4Simple(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim().Where(ch=>ch!=','&&ch!='٬'&&ch!=' '&&ch!='\u00a0'&&ch!='\u202f')
+            .Select(ch=>ch is >= '٠' and <= '٩'?(char)('0'+ch-'٠'):
+                        ch is >= '۰' and <= '۹'?(char)('0'+ch-'۰'):ch).ToArray());
+        if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        if(f==G5U4SimpleRate)return (long)v*p["groups"]==p["total"];
+        if(f==G5U4SimpleScale)return (long)v*p["groups"]==(long)p["total"]*p["target"];
+        if(f==G5U4SimpleArea)return v+p["side"]*p["side"]==p["length"]*p["width"];
+        int net=p["income"]-p["spend"],goal=p["target"];
+        return v>=1&&(long)(v-1)*net<=goal&&(long)v*net>goal;
     }
 
     // Four-step Grade 5 story parameters contain only given quantities.
@@ -216,6 +297,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsG5U4Simple(family)) return ValidG5U4Simple(family,p,out expected);
         if(IsG5(family)) return ValidG5(family,p,out expected);
         if(IsG5Table(family)) return ValidG5Table(family,p,out expected);
         if(IsG5Info(family)) return ValidG5Info(family,p,out expected);
@@ -233,6 +315,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5U4Simple(family))return VerifyG5U4Simple(family,p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim()
             .Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
