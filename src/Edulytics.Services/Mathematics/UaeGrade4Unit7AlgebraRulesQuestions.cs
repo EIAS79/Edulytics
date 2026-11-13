@@ -20,11 +20,16 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     internal const string G5OrderNested="uae.g5.u06.l02.nested_parentheses";
     internal const string G5OrderPowers="uae.g5.u06.l02.exponents_before_products";
     private static bool IsG5Order(string? f)=>f is G5OrderBasic or G5OrderNested or G5OrderPowers;
+    internal const string G5WriteMultiplySubtract="uae.g5.u06.l03.write_multiply_then_subtract";
+    internal const string G5WriteSumDivide="uae.g5.u06.l03.write_sum_then_divide";
+    internal const string G5WriteGroupSum="uae.g5.u06.l03.write_group_times_sum";
+    private static bool IsG5Writing(string? f)=>f is G5WriteMultiplySubtract or G5WriteSumDivide or G5WriteGroupSum;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f);
+    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f) || IsG5Writing(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported algebra rule family");
+        if(IsG5Writing(f))return BuildG5Writing(f,r);
         if(IsG5Order(f))return BuildG5Order(f,r);
         if(IsG5Bar(f))return BuildG5Bar(f,r);
         int n=r.Next(15,76),change=r.Next(2,10),factor=r.Next(2,7);
@@ -137,6 +142,82 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
         return result>=0;
     }
 
+
+    // Writing expressions needs exact symbolic answers rather than a numeric
+    // answer disguised as the target skill. The teacher reviews other equivalent
+    // expressions beyond the two normalized variants accepted below.
+    private static Item BuildG5Writing(string f,Random r)
+    {
+        int a=r.Next(2,7),b=r.Next(3,13),c;
+        string question;
+        if(f==G5WriteMultiplySubtract)
+        {
+            c=r.Next(1,Math.Min(6,a*b));
+            question=$"اكتب تعبيرًا عدديًا دون إيجاد قيمته: اشترى {a} أشخاص تذاكر ثمن الواحدة {b} دراهم، ثم خُصم {c} دراهم من المجموع.";
+        }
+        else if(f==G5WriteSumDivide)
+        {
+            c=r.Next(2,7);
+            question=$"اكتب تعبيرًا عدديًا: اجمع {a} و{b} أولًا ثم اقسم المجموع على {c}. لا تحسب القيمة.";
+        }
+        else
+        {
+            c=r.Next(3,13);
+            question=$"اكتب تعبيرًا عدديًا: اشترى كل واحد من {a} أصدقاء غرضًا بسعر {b} درهمًا وآخر بسعر {c} دراهم. لا تحسب الإجمالي.";
+        }
+        return new Item(f,question,
+            "أقرأ تسلسل الكلمات: ثم، مجموع، خصم، ولكل؛ أستخدم الأقواس إذا كان الجمع أو الطرح يجب إجراؤه قبل الضرب أو القسمة.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}});
+    }
+    private static bool ValidG5Writing(string f,IReadOnlyDictionary<string,int> p,
+        out int a,out int b,out int c)
+    {
+        a=b=c=0;
+        if(!IsG5Writing(f)||p.Count!=3||
+            !p.TryGetValue("a",out a)||!p.TryGetValue("b",out b)||
+            !p.TryGetValue("c",out c)||a is <2 or >6||b is <3 or >12)
+            return false;
+        if(f==G5WriteMultiplySubtract)
+            return c>=1&&c<=5&&c<a*b;
+        if(f==G5WriteSumDivide)
+            return c is >=2 and <=6;
+        return c is >=3 and <=12;
+    }
+    private static string SolveG5Writing(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5Writing(f,p,out int a,out int b,out int c))
+            throw new InvalidOperationException("Invalid numeric-expression authoring parameters.");
+        return f switch
+        {
+            G5WriteMultiplySubtract=>$"{a}×{b}−{c}",
+            G5WriteSumDivide=>$"({a}+{b})÷{c}",
+            _=>$"{a}×({b}+{c})"
+        };
+    }
+    private static bool VerifyG5Writing(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5Writing(f,p,out int a,out int b,out int c)||
+           string.IsNullOrWhiteSpace(answer)||answer.Length>120)return false;
+        string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch)&&ch!='\u00a0')
+            .Select(ch=>ch switch
+            {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '*'=>'×','/'=>'÷','-'=>'−',_=>ch
+            }).ToArray());
+        string[] accepted=f switch
+        {
+            G5WriteMultiplySubtract=>
+                [$"{a}×{b}−{c}",$"{b}×{a}−{c}"],
+            G5WriteSumDivide=>
+                [$"({a}+{b})÷{c}",$"({b}+{a})÷{c}"],
+            _=>[$"{a}×({b}+{c})",$"{a}×({c}+{b})",
+                 $"({b}+{c})×{a}",$"({c}+{b})×{a}"]
+        };
+        return accepted.Contains(normalized,StringComparer.Ordinal);
+    }
+
     private static bool Valid(string? f,IReadOnlyDictionary<string,int> p,out int x)
     {
         x=0;
@@ -159,11 +240,13 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5Writing(f))return SolveG5Writing(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid input-output rule");
         return x.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5Writing(f))return VerifyG5Writing(f,p,answer);
         if(!Valid(f,p,out int x)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')
             .Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
