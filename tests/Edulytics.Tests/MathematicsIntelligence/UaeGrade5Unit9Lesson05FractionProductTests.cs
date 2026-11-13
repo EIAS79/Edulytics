@@ -17,6 +17,8 @@ public sealed class UaeGrade5Unit9Lesson05FractionProductTests
         const string f="supporting.fractions.multiply";
         var p=new Dictionary<string,int>{{"n1",2},{"d1",3},{"n2",3},{"d2",5}};
         Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,"2/5"));
-        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"6/15"));
+        // An equivalent non-reduced fraction is mathematically correct.
+        Assert.True(ExactSkillContractQuestionEngine.Verify(f,p,"6/15"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(f,p,"7/15"));
     }
 }

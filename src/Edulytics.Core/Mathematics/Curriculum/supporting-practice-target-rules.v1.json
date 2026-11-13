@@ -16300,6 +16300,28 @@
         "commonMistake": "جمع أحجام متداخلة مرتين أو تجاهل الوحدات المكعبة.",
         "summary": "النماذج العددية قابلة للتحقق؛ قراءة الرسم وتحديد الأجزاء البشرية للمعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l13-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:13$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "MATH_MODEL_PROBLEM_SOLVING_EXACT",
+      "families": [
+        "uae.g5.u12.l13.model_total_units",
+        "uae.g5.u12.l13.model_missing_layers",
+        "uae.g5.u12.l13.model_loop_stations",
+        "uae.g5.u12.l13.model_tiles_per_row"
+      ],
+      "content": {
+        "concept": "أفهم المسألة وأخطط بنموذج ثم أحل وأتحقق من معقولية الناتج.",
+        "workedExample": "٩ مكعبات في كل طبقة وست طبقات =٥٤ مكعبًا؛ المسار المغلق طوله١٥٠ م ومحطة كل١٥ م =١٠ محطات.",
+        "solution": "أستخدم نموذج صفوف أو طبقات أو مسار دائري حسب المسألة، وأضرب أو أقسم حسب المطلوب.",
+        "commonMistake": "تكرار نقطة البداية والنهاية في مسار مغلق أو إهمال تمثيل وحدات القياس.",
+        "summary": "يُختبر الحساب بدقة وتُراجع النماذج والرسومات والتبريرات بشريًا."
+      }
     }
   ]
 }

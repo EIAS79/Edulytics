@@ -33,9 +33,9 @@ public sealed class UaeGrade5Unit3Lesson10ZeroQuotientsTests
         Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_quotient",p,"19"));
         p["dividend"]=815;p["divisor"]=2;
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_remainder",p,"1"));
-        p["dividend"]=4324;p["divisor"]=4;
-        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_quotient",p,"1081"));
+        p["dividend"]=3624;p["divisor"]=4;
+        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_quotient",p,"906"));
         p["divisor"]=0;
-        Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_quotient",p,"1081"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g5.u03.l10.middle_zero_quotient",p,"906"));
     }
 }

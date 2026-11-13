@@ -40,6 +40,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string G5TopBase="uae.g5.u12.l12.base_plus_top";
  internal const string G5Cutout="uae.g5.u12.l12.prism_with_removed_section";
  internal const string G5MissingTop="uae.g5.u12.l12.upper_volume_from_total";
+ internal const string G5ModelTotal="uae.g5.u12.l13.model_total_units";
+ internal const string G5ModelLayers="uae.g5.u12.l13.model_missing_layers";
+ internal const string G5ModelLoop="uae.g5.u12.l13.model_loop_stations";
+ internal const string G5ModelTiles="uae.g5.u12.l13.model_tiles_per_row";
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
   SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
@@ -47,7 +51,8 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   G5Layer,G5CubeTotal,G5Volume,G5MissingLayers,
   G5VolumeLwh,G5VolumeBh,G5PrismHeight,G5VolumeCompare,
   G5CompositeBase,G5CompositeUpper,G5CompositeTotal,G5CompositeError,
-  G5SumPrisms,G5TopBase,G5Cutout,G5MissingTop];
+  G5SumPrisms,G5TopBase,G5Cutout,G5MissingTop,
+  G5ModelTotal,G5ModelLayers,G5ModelLoop,G5ModelTiles];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -103,6 +108,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
    G5VolumeLwh=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
    G5CompositeBase=>$"نموذج من مكعبات حجم كل منها ١ سم³، طبقة القاعدة مستطيل طوله {a+2} مكعبات وعرضه {b+2} مكعبات. كم مكعبًا في القاعدة؟",
    G5SumPrisms=>$"مجسم مركب من منشورين مستطيلين متصلين عند وجه دون أي تداخل حجمي. أبعاد الأول {a}×{b}×{c} سم، والثاني {a+1}×{b}×{c+1} سم. احسب الحجم الكلي بالسم المكعب.",
+   G5ModelTotal=>$"نموذج صندوق من مكعبات وحدة، في كل صف {a} مكعبات وفي كل طبقة {b} صفوف، وهناك {c} طبقات. كم مكعبًا في الصندوق؟",
+   G5ModelLayers=>$"صندوق يحتوي {a*b*c} مكعب وحدة، وفي كل طبقة {a*b} مكعبًا. أنشئ نموذجًا من طبقات متساوية، ثم احسب عدد الطبقات.",
+   G5ModelLoop=>$"طول مسار دائري مغلق {a*b} مترًا، وتوضع محطة واحدة كل {b} أمتار على المحيط. كم محطة مميزة على المسار دون تكرار نقطة البداية؟",
+   G5ModelTiles=>$"مصفوفة مستطيلة فيها {a*b} قطعة بلاط موزعة بالتساوي على {b} صفوف. كم قطعة في كل صف؟",
    G5TopBase=>$"قاعدة صلبة أبعادها {a+2}×{b+2}×{c} سم. فوقها منشور أبعاده {a}×{b}×٢ سم، ولا يوجد تداخل. ما حجم المجسم المركب بالسم المكعب؟",
    G5Cutout=>$"منشور مستطيل كامل أبعاده {a+2}×{b+2}×{c+2} سم، قُطع منه جزء بأبعاد {a}×{b}×{c} سم داخله. ما الحجم الباقي بالسم المكعب؟",
    G5MissingTop=>$"حجم مجسم مركب من قاعدة وكتلة علوية دون تداخل هو {(a+2)*(b+2)*c+2*a*b} سم³. أبعاد القاعدة {a+2}×{b+2}×{c} سم. ما حجم الكتلة العلوية بالسم المكعب؟",
@@ -131,7 +140,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
-  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare or G5CompositeBase or G5CompositeUpper or G5CompositeTotal or G5CompositeError or G5SumPrisms or G5TopBase or G5Cutout or G5MissingTop && a<1)return false;
+  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare or G5CompositeBase or G5CompositeUpper or G5CompositeTotal or G5CompositeError or G5SumPrisms or G5TopBase or G5Cutout or G5MissingTop or G5ModelTotal or G5ModelLayers or G5ModelLoop or G5ModelTiles && a<1)return false;
   result=f switch
   {
     Rays=>a-1,
@@ -165,6 +174,9 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     G5TopBase=>(a+2)*(b+2)*c+2*a*b,
     G5Cutout=>(a+2)*(b+2)*(c+2)-a*b*c,
     G5MissingTop=>2*a*b,
+    G5ModelTotal=>a*b*c,
+    G5ModelLayers=>c,
+    G5ModelLoop or G5ModelTiles=>a,
     LayerArea=>a*b,
     MissingHeight=>c,
     _=>throw new InvalidOperationException("Unsupported family")

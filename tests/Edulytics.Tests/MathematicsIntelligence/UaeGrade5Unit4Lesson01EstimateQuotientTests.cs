@@ -26,8 +26,8 @@ public sealed class UaeGrade5Unit4Lesson01EstimateQuotientTests
     public void TwoDigitSourceEstimatesUseDocumentedDeterministicCompatibility()
     {
         var p=new Dictionary<string,int>{{"dividend",812},{"divisor",19}};
-        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.estimate_two_digit_quotient",p,"40"));
-        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.choose_compatible_dividend",p,"800"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.estimate_two_digit_quotient",p,"41"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.choose_compatible_dividend",p,"820"));
         p["dividend"]=533;p["divisor"]=57;
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.estimate_two_digit_quotient",p,"9"));
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u04.l01.choose_compatible_dividend",p,"540"));

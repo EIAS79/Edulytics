@@ -312,7 +312,8 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
                 AssessmentItemType.Numeric,p);
         }
         int x=r.Next(2,11),y=r.Next(x,20),k=r.Next(2,10);
-        if(f==G5SubSquare)k=r.Next(2,Math.Min(10,x*x+1));
+        // Upper bound is exclusive: never generate k >= a*a, which the validator rejects.
+        if(f==G5SubSquare)k=r.Next(2,Math.Min(10,x*x));
         string promptInt=f==G5SubBracket
             ?$"إذا كان a={x} وb={y}، أوجد قيمة (b − a) + {k}."
             :$"إذا كان a={x}، أوجد قيمة a × a − {k}.";

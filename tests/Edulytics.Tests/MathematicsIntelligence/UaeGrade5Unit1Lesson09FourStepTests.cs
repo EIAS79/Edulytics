@@ -45,7 +45,7 @@ public sealed class UaeGrade5Unit1Lesson09FourStepTests
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u01.l09.budget_purchase_count",budget,"3"));
         budget["d"]=0;
         Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g5.u01.l09.budget_purchase_count",budget,"3"));
-        var undo=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"d",4}};
-        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u01.l09.undo_four_steps",undo,"15"));
+        var undo=new Dictionary<string,int>{{"a",3},{"b",6},{"c",7},{"d",8}};
+        Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g5.u01.l09.undo_four_steps",undo,"27"));
     }
 }
