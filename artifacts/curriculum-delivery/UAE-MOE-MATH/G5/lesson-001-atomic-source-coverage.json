@@ -62,7 +62,7 @@
         31,
         32
       ],
-      "Status": "EXACT_DIGITAL_ASSESSMENT_NOT_YET_BOUND"
+      "Status": "EXACT_DIGITAL_ASSESSMENT_AUTHORED_NOT_RUNTIME_VERIFIED"
     },
     {
       "SourceElementId": "G5-01-01-05",
@@ -97,33 +97,34 @@
     "OriginalTeacherContentInspected": false
   },
   "SkillContract": {
-    "Target": "place-value-to-billions",
-    "ExistingReuseCandidate": "UaeGrade4Unit1Lesson01Questions up to millions; insufficient G5 billion bounds without extension",
+    "Target": "number.place_value.to_billions",
+    "ExistingReuseCandidate": "G4 exact place-value structure extended with ten base-10 digits and Int64 numeric answer; G4 unchanged",
     "AllowedQuestionFamilies": [
-      "digit-value-to-billions (NOT REGISTERED)",
-      "compose-standard-form-to-billions (NOT REGISTERED)",
-      "expanded-to-standard-to-billions (NOT REGISTERED)"
+      "uae.g5.u01.l01.digit_value_to_billions",
+      "uae.g5.u01.l01.compose_ten_digits",
+      "uae.g5.u01.l01.expanded_to_standard"
     ],
-    "AnswerType": "exact signed 64-bit integer",
+    "AnswerType": "exact_integer (Int64)",
     "Forbidden": [
       "rounding-only",
       "generic arithmetic",
-      "int32-only digit value",
-      "unverified multiple-choice"
+      "int32-overflow",
+      "incorrect official-year provenance"
     ],
-    "Renderer": "Arabic place-value chart / numeric answer",
-    "Grader": "NOT_CONNECTED",
-    "IndependentVerifier": "NOT_CONNECTED",
+    "Renderer": "IntegerKeypad + original Arabic PlaceValueChart",
+    "Grader": "G5 exact Solve (weighted positional sum)",
+    "IndependentVerifier": "G5 exact Verify (base-ten repeated accumulation)",
     "TeacherReview": [
       "reasoning",
       "error analysis",
       "word explanation"
     ],
-    "Tests": "WRITTEN_NOT_RUN"
+    "Tests": "WRITTEN_NOT_RUN",
+    "Status": "STAGE_C_AUTHORED_NOT_EXECUTED"
   },
   "StageA": "LOCAL_2025_2026_PAGES_REVIEWED__CURRENT_SEQUENCE_UNKNOWN",
   "StageB": "RICH_ARABIC_CANDIDATE",
-  "StageC": "EXACT_PRACTICE_NOT_BOUND",
+  "StageC": "G5_EXACT_ENGINE_EXTENSION__SKILL_AND_FAMILY_REGISTRIES__REVIEWED_EXACT_CODE_RULE_WRITTEN_NOT_RUN",
   "Status": "A_C_IN_PROGRESS",
   "TestsRun": "NOT_RUN",
   "StageDRun": false,
