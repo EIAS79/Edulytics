@@ -1,0 +1,89 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 111,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:08",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    132,
+    133,
+    134,
+    135,
+    136,
+    137
+  ],
+  "SourcePrintedPages": [
+    835,
+    836,
+    837,
+    838,
+    839,
+    840
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "حساب المتوسط الحسابي من مجموع البيانات وعدد القيم",
+    "استخراج متوسط صحيح أو عشري والمحافظة على الدقة",
+    "إيجاد قيمة مفقودة عند معرفة المتوسط ومجموع بقية البيانات",
+    "تحليل أثر إضافة قيمة كبيرة والتحقق بالضرب العكسي"
+  ],
+  "SourceElements": [
+    {
+      "Category": "formal arithmetic mean definition and 12-values example",
+      "Pages": [
+        835
+      ],
+      "Coverage": "Arabic definition, original worked mean model"
+    },
+    {
+      "Category": "unknown third value and mean computation",
+      "Pages": [
+        836
+      ],
+      "Coverage": "exact mean/missing generator and worked inverse oracle"
+    },
+    {
+      "Category": "guided independent mean and unknown value practice",
+      "Pages": [
+        837,
+        838
+      ],
+      "Coverage": "original numeric examples with teacher rationale"
+    },
+    {
+      "Category": "homework means, grouped examples and context",
+      "Pages": [
+        839,
+        840
+      ],
+      "Coverage": "original mean/decimal worked examples and CoolDown"
+    }
+  ],
+  "Engine": "EXTEND existing statistics engine UaeGrade3Unit12Questions with 3 Grade5 exact mean families; accepts nonnegative decimal mean where appropriate",
+  "SkillId": "statistics.center_spread.core",
+  "QuestionFamilies": [
+    "uae.g5.u11.l08.arithmetic_mean_five",
+    "uae.g5.u11.l08.missing_value_given_mean",
+    "uae.g5.u11.l08.mean_half_decimal"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "أوجد المتوسط الحسابي للقيم ١٤، ١٦، ١٨، ٢٢، ٢٠ وتحقق بالضرب.",
+    "Answer": "١٨، والتحقق ١٨ × ٥ = ٩٠ وهو مجموع القيم",
+    "TeacherRubric": "عدد القيم ٥، المجموع ٩٠، القسمة ٩٠÷٥=١٨، والتحقق العكسي."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_MEAN_INTEGER_DECIMAL_MISSING_FAMILIES_AUTHORED_NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson08MeanTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Open-ended analysis of outliers and large values",
+    "Physical representations and verbal justifications"
+  ],
+  "SourceRights": "Original Edulytics student content; no protected textbook item reproduction."
+}

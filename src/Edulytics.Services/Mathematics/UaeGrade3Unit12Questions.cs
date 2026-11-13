@@ -12,6 +12,9 @@ internal static class UaeGrade3Unit12Questions
  internal const string G5ShareTwo="uae.g5.u11.l07.equal_share_two_groups";
  internal const string G5ShareThree="uae.g5.u11.l07.equal_share_three_groups";
  internal const string G5ShareMissing="uae.g5.u11.l07.equal_share_missing_group";
+ internal const string G5MeanFive="uae.g5.u11.l08.arithmetic_mean_five";
+ internal const string G5MeanMissing="uae.g5.u11.l08.missing_value_given_mean";
+ internal const string G5MeanHalf="uae.g5.u11.l08.mean_half_decimal";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
@@ -20,10 +23,12 @@ internal static class UaeGrade3Unit12Questions
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  private static bool IsG5Tally(string? f)=>f is G5TallyFrequency or G5TallyTotal or G5TallyRange;
  private static bool IsG5Share(string? f)=>f is G5ShareTwo or G5ShareThree or G5ShareMissing;
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f);
+ private static bool IsG5Mean(string? f)=>f is G5MeanFive or G5MeanMissing or G5MeanHalf;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5Mean(f))return BuildG5Mean(f,rng);
   if(IsG5Share(f))return BuildG5Share(f,rng);
   if(IsG5Tally(f))return BuildG5Tally(f,rng);
   int a=0,b=0,mode=rng.Next(2),result=0;string prompt,solution;
@@ -90,6 +95,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5Mean(f))return SolveG5Mean(f,p);
   if(IsG5Share(f))return SolveG5Share(f,p);
   if(IsG5Tally(f))return SolveG5Tally(f,p);
   if(!Valid(f,p,out int n))throw new InvalidOperationException("Invalid data problem parameters");
@@ -97,6 +103,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5Mean(f))return VerifyG5Mean(f,p,answer);
   if(IsG5Share(f))return VerifyG5Share(f,p,answer);
   if(IsG5Tally(f))return VerifyG5Tally(f,p,answer);
   if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
@@ -247,6 +254,88 @@ internal static class UaeGrade3Unit12Questions
    G5ShareThree=>(p["a"]+p["b"]+p["c"])/3,
    _=>3*p["m"]-(p["a"]+p["b"])
   });
+ }
+
+
+ // UAE Grade 5 U11 L08 arithmetic mean. Existing statistics contract
+ // extension keeps G3 and L07 families stable; no shared engine duplicated.
+ private static Item BuildG5Mean(string f,Random rng)
+ {
+  int m=rng.Next(10,26),x=rng.Next(1,5),y=rng.Next(1,5);
+  var p=new Dictionary<string,int>();
+  string prompt;
+  if(f==G5MeanFive)
+  {
+   int a=m-x,b=m-y,c=m,d=m+y,e=m+x;
+   p.Add("a",a);p.Add("b",b);p.Add("c",c);p.Add("d",d);p.Add("e",e);
+   prompt=$"سجل خمسة طلاب عدد الدقائق التالية في نشاط القراءة: {a}، {b}، {c}، {d}، {e}. ما المتوسط الحسابي للدقائق؟";
+  }
+  else if(f==G5MeanMissing)
+  {
+   int a=m+2*x,b=m+y,c=m-x,d=m-y;
+   p.Add("a",a);p.Add("b",b);p.Add("c",c);p.Add("d",d);p.Add("m",m);
+   prompt=$"متوسط خمسة قياسات هو {m}. القياسات الأربعة المعروفة {a}، {b}، {c}، {d}. ما القياس الخامس المفقود؟";
+  }
+  else if(f==G5MeanHalf)
+  {
+   int a=m-1,b=m+1,c=m+2,d=m;
+   p.Add("a",a);p.Add("b",b);p.Add("c",c);p.Add("d",d);
+   prompt=$"درجات أربعة طلاب هي {a}، {b}، {c}، {d}. احسب المتوسط الحسابي بدقة، وقد تكون النتيجة عشرية.";
+  }
+  else throw new InvalidOperationException("Unsupported G5 mean family");
+  return new Item(f,prompt,
+     "أجمع القيم وأقسم على عددها. للعنصر الناقص أضرب المتوسط في عدد العناصر ثم أطرح القيم المعروفة. أتحقق بإعادة حساب المتوسط.",
+     AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Mean(string f,IReadOnlyDictionary<string,int> p,out decimal result)
+ {
+  result=0;
+  if(!IsG5Mean(f)||!p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+     !p.TryGetValue("c",out int c)||!p.TryGetValue("d",out int d)||
+     a is <1 or >50||b is <1 or >50||c is <1 or >50||d is <1 or >50)return false;
+  if(f==G5MeanFive)
+  {
+   if(p.Count!=5||!p.TryGetValue("e",out int e)||e is <1 or >50)return false;
+   result=(a+b+c+d+e)/5m;
+  }
+  else if(f==G5MeanMissing)
+  {
+   if(p.Count!=5||!p.TryGetValue("m",out int mean)||mean is <5 or >30)return false;
+   result=5*mean-a-b-c-d;
+   if(result is <0 or >50)return false;
+  }
+  else
+  {
+   if(p.Count!=4)return false;
+   result=(a+b+c+d)/4m;
+  }
+  return true;
+ }
+ private static string SolveG5Mean(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Mean(f,p,out decimal value))
+   throw new InvalidOperationException("Invalid Grade5 mean dataset");
+  return value.ToString("0.##",CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Mean(string f,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5Mean(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string s=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   '٫'=>'.',
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal submitted))return false;
+  int a=p["a"],b=p["b"],c=p["c"],d=p["d"];
+  decimal independentlyCalculated=f switch
+  {
+   G5MeanFive=>(a+b+c+d+p["e"])/5m,
+   G5MeanMissing=>5*p["m"]-a-b-c-d,
+   _=>(a+b+c+d)/4m
+  };
+  return submitted==independentlyCalculated;
  }
 
 }

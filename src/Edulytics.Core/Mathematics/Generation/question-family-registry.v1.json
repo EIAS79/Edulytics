@@ -46758,6 +46758,66 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l08.arithmetic_mean_five",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l08-Arabic-source-decimal-mean-exact-StageD-NOT_RUN",
+      "representations": [
+        "integer_mean",
+        "decimal_mean",
+        "missing_value",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l08.missing_value_given_mean",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l08-Arabic-source-decimal-mean-exact-StageD-NOT_RUN",
+      "representations": [
+        "integer_mean",
+        "decimal_mean",
+        "missing_value",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l08.mean_half_decimal",
+      "version": 1,
+      "skillId": "statistics.center_spread.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u11-l08-Arabic-source-decimal-mean-exact-StageD-NOT_RUN",
+      "representations": [
+        "integer_mean",
+        "decimal_mean",
+        "missing_value",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

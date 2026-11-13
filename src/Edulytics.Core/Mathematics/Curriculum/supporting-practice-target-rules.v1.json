@@ -9861,7 +9861,6 @@
         "^Median and Mode$"
       ],
       "codePatterns": [
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:08$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:11:09$"
       ],
       "skillId": "statistics.center_spread.core",
@@ -15944,6 +15943,27 @@
         "solution": "أجمع جميع القطع وأقسم عددها على عدد المجموعات؛ للتحقق أعيد التوزيع أو أضرب المتوسط في عدد المجموعات.",
         "commonMistake": "القسمة على عدد القطع بدل عدد المجموعات، أو توزيع القطع من مجموعة دون جمعها.",
         "summary": "يجب أن يظل مجموع العناصر ثابتًا بعد إعادة التوزيع ويكون نصيب كل مجموعة مساويًا للمتوسط."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l08-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:08$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "ARITHMETIC_MEAN_EXACT_AND_UNKNOWN_RECONSTRUCTION",
+      "families": [
+        "uae.g5.u11.l08.arithmetic_mean_five",
+        "uae.g5.u11.l08.missing_value_given_mean",
+        "uae.g5.u11.l08.mean_half_decimal"
+      ],
+      "content": {
+        "concept": "المتوسط الحسابي = مجموع البيانات ÷ عددها، وقد يكون عددًا عشريًا لا يظهر بين القيم نفسها.",
+        "workedExample": "للقيم ٥، ٦، ٩، ١٠ يكون المتوسط (٥+٦+٩+١٠)÷٤=٧٫٥.",
+        "solution": "أحدد عدد القيم ثم أحسب المجموع وأقسم؛ للعدد المجهول أحسب المجموع المطلوب من المتوسط وأطرح القيم المعروفة.",
+        "commonMistake": "القسمة على قيمة البيانات بدل عددها أو تقريب المتوسط قبل حل المسألة.",
+        "summary": "يمكن التحقق بإعادة ضرب المتوسط في عدد القيم ومقارنته بمجموعها."
       }
     }
   ]
