@@ -14634,6 +14634,27 @@
         "commonMistake": "الخلط بين محايد الضرب (١) وصفر الضرب.",
         "summary": "حدد الخاصية وطبقها وفسر سبب صحة الناتج."
       }
+    },
+    {
+      "id": "uae-g5-u05-l09-decimal-compatible-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:09$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "ESTIMATE_DECIMAL_DIVISION_COMPATIBLE",
+      "families": [
+        "uae.g5.u05.l09.estimate_decimal_quotient",
+        "uae.g5.u05.l09.compatible_decimal_dividend",
+        "uae.g5.u05.l09.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "قدّر ناتج قسمة العشري باستخدام أعداد متوافقة.",
+        "workedExample": "٧٨٫٧٤÷٤٢≈٨٠÷٤٠=٢.",
+        "solution": "أقرب المقسوم والمقسوم عليه إلى أعداد يسهل قسمتها.",
+        "commonMistake": "لا تساوِ بين التقدير والحاصل الدقيق.",
+        "summary": "قدّر القسمة وتحقق بالضرب."
+      }
     }
   ]
 }
