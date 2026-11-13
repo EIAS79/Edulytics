@@ -14135,6 +14135,27 @@
         "commonMistake": "يجب أن يكون الباقي أقل من المقسوم عليه، ولا تقسيم على صفر.",
         "summary": "اكتب الحاصل والباقي وتحقق بالمضاعفة."
       }
+    },
+    {
+      "id": "uae-g5-u03-l04-division-patterns",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:04$"
+      ],
+      "skillId": "number.division.patterns_powers_of_ten",
+      "mechanic": "DIVISION_PATTERNS_COMMON_POWER_TEN",
+      "families": [
+        "uae.g5.u03.l04.scale_dividend",
+        "uae.g5.u03.l04.cancel_common_zeros",
+        "uae.g5.u03.l04.quotient_with_tens_divisor"
+      ],
+      "content": {
+        "concept": "استخدم حقائق القسمة وأنماط قوى العشرة ومضاعفاتها.",
+        "workedExample": "٥٤٠٠÷٩٠=٦٠ وليس ٦؛ قسمة العددين على ١٠ تنتج ٥٤٠÷٩.",
+        "solution": "اختصر عامل العشرة من الطرفين عند وجوده ثم احسب.",
+        "commonMistake": "حذف الأصفار من المقسوم وحده يغيّر الحاصل.",
+        "summary": "استخدم أنماط القسمة وتحقق بالضرب."
+      }
     }
   ]
 }

@@ -11,12 +11,17 @@ internal static class UaeGrade4Unit6Lesson01DivisionPowersQuestions
     internal const string G5UnknownDivisor="uae.g5.u03.l01.missing_divisor";
     internal const string G5Product="uae.g5.u03.l01.related_product";
     private static bool IsG5(string? f)=>f is G5Quotient or G5UnknownMultiplier or G5UnknownDivisor or G5Product;
+    internal const string G5ScaleDividend="uae.g5.u03.l04.scale_dividend";
+    internal const string G5CancelZeros="uae.g5.u03.l04.cancel_common_zeros";
+    internal const string G5TensDivisor="uae.g5.u03.l04.quotient_with_tens_divisor";
+    private static bool IsG5Scaled(string? f)=>f is G5ScaleDividend or G5CancelZeros or G5TensDivisor;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Divide or Inverse || IsG5(f);
+    internal static bool Supports(string? f)=>f is Divide or Inverse || IsG5(f) || IsG5Scaled(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported multiplication/division family");
         if(IsG5(f))return BuildG5(f,r);
+        if(IsG5Scaled(f))return BuildG5Scaled(f,r);
         int factor=r.Next(2,10),digits=r.Next(2,10),zeros=r.Next(1,4);
         int place=zeros==1?10:zeros==2?100:1000;
         int dividend=factor*digits*place;
@@ -56,10 +61,40 @@ internal static class UaeGrade4Unit6Lesson01DivisionPowersQuestions
         return true;
     }
 
+
+    // Reuse the place-value fact engine for the Grade 5 tens/zeros division patterns.
+    private static int Pow10G5(int zeros)=>zeros==1?10:100;
+    private static Item BuildG5Scaled(string f,Random rng)
+    {
+        int factor=rng.Next(2,10),quotient=rng.Next(11,91),zeros=rng.Next(1,3);
+        int place=Pow10G5(zeros),dividend=factor*quotient*place;
+        int divisor=f==G5ScaleDividend?factor:factor*place;
+        string prompt=f switch
+        {
+            G5ScaleDividend=>$"اعتمد على حقيقة الضرب ثم أوجد {dividend} ÷ {divisor}؛ انتبه إلى تغير قيمة المنزلة.",
+            G5CancelZeros=>$"احذف الأصفار المشتركة من طرفي القسمة دون تغيير الناتج ثم أوجد {dividend} ÷ {divisor}.",
+            _=>$"كم ناتج قسمة {dividend} على {divisor} باستخدام نمط العشرات أو المئات؟"
+        };
+        return new Item(f,prompt,
+            "أختصر عاملاً مشتركًا من قوى العشرة في المقسوم والمقسوم عليه فقط، أو أضاعف الحاصل إذا زاد المقسوم وحده.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"factor",factor},{"quotient",quotient},{"zeros",zeros}});
+    }
+    private static bool ValidG5Scaled(string f,IReadOnlyDictionary<string,int> p,out int result)
+    {
+        result=0;
+        if(!IsG5Scaled(f)||p.Count!=3||
+           !p.TryGetValue("factor",out int factor)||!p.TryGetValue("quotient",out int q)||
+           !p.TryGetValue("zeros",out int zeros)||
+           factor<2||factor>9||q<11||q>90||zeros<1||zeros>2)return false;
+        result=f==G5ScaleDividend?q*Pow10G5(zeros):q;
+        return true;
+    }
+
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
         if(IsG5(f))return ValidG5(f,p,out expected);
+        if(IsG5Scaled(f))return ValidG5Scaled(f,p,out expected);
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("factor",out var a)||!p.TryGetValue("digits",out var b)||
            !p.TryGetValue("zeros",out var z)||a is <2 or >9||b is <2 or >9||z is <1 or >3)return false;
         expected=b*(z==1?10:z==2?100:1000);
