@@ -119,7 +119,7 @@ private static bool IsG5(string? family) =>
 private static Item BuildG5(string family, Random rng)
 {
     int a=rng.Next(2,10), b=rng.Next(1,10), c=rng.Next(1,10);
-    if(family==G5LogicalRemaining)c=rng.Next(1,a*b);
+    // These legacy family IDs retain stable registry routing; generated tasks now use source-aligned logical clues.
     var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
     string question=family switch
     {
@@ -134,8 +134,8 @@ private static Item BuildG5(string family, Random rng)
         G5MassKg=>$"حوّل {a*1000+b*10} جرامًا إلى كيلوجرامات بالعدد العشري.",
         G5CapMl=>$"حوّل {a} لترات و{b} أعشار اللتر إلى ملليلترات.",
         G5CapL=>$"حوّل {a*1000+b*10} ملليلتر إلى لترات بالعدد العشري.",
-        G5LogicalRemaining=>$"في {a} صناديق، بكل صندوق {b} كرات. استُخدم {c} كرات. كم كرة بقيت؟ استعمل جدولًا وتحقق من الناتج.",
-        G5LogicalOriginal=>$"استُخدم {a} عنصرًا للمجموعة الأولى و{b} للثانية وبقي {c} عناصر. كم عدد العناصر في البداية؟ استخدم التخطيط العكسي.",
+        G5LogicalRemaining=>$"ثلاث أشجار ارتفاعاتها {a*100+b} و{a*100+b+c} و{a*100+b+2*c} سنتيمترًا. شجرة مريم أطول من شجرة سارة وأقصر من شجرة هدى. ما ارتفاع شجرة مريم بالسنتيمتر؟ نظّم المعطيات واستبعد القيم غير الممكنة.",
+        G5LogicalOriginal=>$"أعمار ثلاث أشجار هي {a} و{a+b} و{a+b+c} سنوات. شجرة النخيل أكبر عمرًا من شجرة الليمون، والليمون أكبر من شجرة الزيتون. كم عمر شجرة النخيل؟ ضع الأعمار في جدول من الأصغر إلى الأكبر.",
         _=>throw new InvalidOperationException("Unsupported G5 metric family.")
     };
     return new Item(family,question,
@@ -150,8 +150,7 @@ private static bool TryG5Answer(string family,IReadOnlyDictionary<string,int> p,
     expected=0m;
     if(!IsG5(family)||p.Count!=3||!p.TryGetValue("a",out int a)||
        !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
-       a is <2 or >9||b is <1 or >9||c is <1 or >9||
-       (family==G5LogicalRemaining&&c>=a*b))return false;
+       a is <2 or >9||b is <1 or >9||c is <1 or >9)return false;
     expected=family switch
     {
         G5PlotCount=>a,
@@ -165,7 +164,7 @@ private static bool TryG5Answer(string family,IReadOnlyDictionary<string,int> p,
         G5MassKg=>a+b/100m,
         G5CapMl=>a*1000+b*100,
         G5CapL=>a+b/100m,
-        G5LogicalRemaining=>a*b-c,
+        G5LogicalRemaining=>a*100+b+c,
         G5LogicalOriginal=>a+b+c,
         _=>throw new InvalidOperationException("Unsupported G5 metric family.")
     };
