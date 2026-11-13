@@ -16,6 +16,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string G5NetFaces="uae.g5.u12.l07.net_total_faces";
  internal const string G5NetMatching="uae.g5.u12.l07.net_congruent_matching_faces";
  internal const string SolidVertices="uae.g4.u12.l05.solid_vertices";
+ internal const string G5SolidType="uae.g5.u12.l08.solid_type";
+ internal const string G5SolidFaces="uae.g5.u12.l08.solid_faces";
+ internal const string G5SolidEdges="uae.g5.u12.l08.solid_edges";
+ internal const string G5SolidVertices="uae.g5.u12.l08.solid_vertices";
  internal const string CubeCount="uae.g4.u12.l06.unit_cube_volume";
  internal const string LayerArea="uae.g4.u12.l06.layer_unit_squares";
  internal const string PrismVolume="uae.g4.u12.l07.prism_volume";
@@ -23,7 +27,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
   SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
-  G5NetType,G5NetFaces,G5NetMatching];
+  G5NetType,G5NetFaces,G5NetMatching,G5SolidType,G5SolidFaces,G5SolidEdges,G5SolidVertices];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -33,11 +37,17 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(family is LineRelation)a=new[]{0,45,90}[random.Next(3)];
   if(family is RightComplement)a=random.Next(0,91);
   if(family is Axes)a=random.Next(1,5);
-  if(family is SolidFaces or SolidVertices)a=random.Next(1,4);
+  if(family is SolidFaces or SolidVertices or G5SolidType or G5SolidFaces or G5SolidEdges or G5SolidVertices)a=random.Next(1,4);
   if(family is G5NetType or G5NetFaces or G5NetMatching)a=random.Next(1,3);
   if(family is NetMissing)a=random.Next(2,6);
   var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
   string solid=a==1?"مكعب":a==2?"منشور مستطيل":"منشور ثلاثي";
+  string solidDescription=a switch
+  {
+    1=>$"مجسم جميع أوجهه ستة مربعات متطابقة طول ضلع المربع {b} سم",
+    2=>$"مجسم بقاعدتين مستطيلتين متطابقتين وأربعة أوجه جانبية مستطيلة؛ أبعاده {b} سم و{b+c} سم و{b+2*c} سم",
+    _=>$"مجسم بقاعدتين مثلثيتين متطابقتين وثلاثة أوجه جانبية مستطيلة، طول إحدى حواف القاعدة {b} سم والارتفاع {c} سم"
+  };
   string prompt=family switch
   {
    Rays=>$"على رسم {a} نقاط مختلفة، كم شعاعًا يمكن رسمه من نقطة محددة نحو بقية النقاط؟",
@@ -59,6 +69,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     ? $"لشبكة مكعب طول حرفه {b} سم ستة أوجه. كم وجهًا مطابقًا لوجه مربع واحد عند مقارنة جميع الأوجه مع احتساب الوجه نفسه؟"
     : $"منشور مستطيل القاعدة ذو ثلاثة أبعاد مختلفة {b} سم و{c+10} سم و{b+c+15} سم، كم وجهًا يطابق أكبر وجه من أوجهه مع احتساب الوجه نفسه؟",
    SolidVertices=>$"كم رأسًا في {solid}؟",
+   G5SolidType=>$"وصف المجسم: {solidDescription}. اختر نوعه: ٠ مكعب، ١ منشور مستطيل القاعدة غير مكعب، ٢ منشور ثلاثي.",
+   G5SolidFaces=>$"وصف المجسم: {solidDescription}. كم وجهًا لهذا المجسم؟",
+   G5SolidEdges=>$"وصف المجسم: {solidDescription}. كم حرفًا (حافة) لهذا المجسم؟",
+   G5SolidVertices=>$"وصف المجسم: {solidDescription}. كم رأسًا لهذا المجسم؟",
    CubeCount=>$"منشور مستطيل طوله {a} مكعبات وعرضه {b} مكعبات وارتفاعه {c} طبقات. كم مكعب وحدة يحتوي؟",
    LayerArea=>$"في طبقة من مكعبات الوحدة طولها {a} مكعبات وعرضها {b} مكعبات. كم مربع وحدة في الطبقة الواحدة؟",
    PrismVolume=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. ما حجمه بالسم المكعب؟",
@@ -76,7 +90,8 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is LineRelation && a is not (0 or 45 or 90))return false;
   if(f is RightComplement && a>90)return false;
   if(f is Axes && a is <1 or >4)return false;
-  if(f is SolidFaces or SolidVertices && a is <1 or >3)return false;
+  if(f is SolidFaces or SolidVertices or G5SolidType or G5SolidFaces or G5SolidEdges or G5SolidVertices &&
+      a is <1 or >3)return false;
   if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
@@ -96,6 +111,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     G5NetFaces=>6,
     G5NetMatching=>a==1?6:2,
     SolidVertices=>a==3?6:8,
+    G5SolidType=>a-1,
+    G5SolidFaces=>a==3?5:6,
+    G5SolidEdges=>a==3?9:12,
+    G5SolidVertices=>a==3?6:8,
     CubeCount or PrismVolume=>a*b*c,
     LayerArea=>a*b,
     MissingHeight=>c,
