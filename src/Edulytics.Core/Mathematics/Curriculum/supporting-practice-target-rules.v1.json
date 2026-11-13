@@ -9534,13 +9534,11 @@
     {
       "id": "uae-official-g3g5-auto-collecting-data",
       "titlePatterns": [
-        "^Collect and Organize Data$",
         "^Collect and Record Data$",
         "^Make Predictions from Data$"
       ],
       "codePatterns": [
         "^PED:UAE-MOE-MATH:L3:COMMON:12:01$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:01$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:11:04$"
       ],
       "skillId": "supporting.statistics.data_collection",
@@ -10205,7 +10203,6 @@
       "id": "uae-official-g3g5-auto-unit-conversion",
       "titlePatterns": [
         "^Capacity Problems$",
-        "^Convert Metric Capacity Units$",
         "^Convert Metric Length Units$",
         "^Convert Metric Mass Units$",
         "^Hands-on: Estimate and Measure Capacity$",
@@ -10232,8 +10229,7 @@
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:02$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:03$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:04$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:10:05$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:10:06$"
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:05$"
       ],
       "skillId": "supporting.measurement.practical",
       "mechanic": "UNIT_CONVERSION",
@@ -15761,6 +15757,67 @@
         "solution": "أضرب ٢٫٠٥ في ١٠٠٠. تنتقل الفاصلة ثلاث منازل نحو اليمين. القيمة ٢٠٥٠ جرام.",
         "commonMistake": "الضرب عند الانتقال من جرام إلى كيلوجرام",
         "summary": "عند المقارنة أو حساب مجموع كتل أضع جميع القيم في وحدة واحدة. تحقق بالتعويض في العلاقة العكسية، واختر الجرام للأشياء الصغيرة والكيلوجرام للأثقل."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l06-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:06$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "METRIC_CAPACITY_CONVERSION",
+      "families": [
+        "uae.g5.u10.l06.liters_tenths_to_milliliters",
+        "uae.g5.u10.l06.milliliters_to_liters"
+      ],
+      "content": {
+        "concept": "١ لتر = ١٠٠٠ ملليلتر؛ التحويل بضرب أو قسمة ١٠٠٠ مع الحفاظ على المنازل العشرية.",
+        "workedExample": "٢٫٠٥ لتر = ٢٠٥٠ ملليلتر.",
+        "solution": "أضرب ٢٫٠٥ في ١٠٠٠ وأتحقق بالقسمة العكسية.",
+        "commonMistake": "القسمة عند تحويل لتر إلى ملليلتر أو إسقاط صفر عشري.",
+        "summary": "أوحد وحدات السعة للمقارنة وأتحقق من معقولية كل نتيجة."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l07-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:07$"
+      ],
+      "skillId": "problem_solving",
+      "mechanic": "LOGICAL_ORDERING_FROM_CLUES",
+      "families": [
+        "uae.g5.u10.l07.logical_remaining",
+        "uae.g5.u10.l07.logical_original_total"
+      ],
+      "content": {
+        "concept": "التفكير المنطقي ينظم أدلة أكبر/أصغر لاستبعاد الخيارات المخالفة.",
+        "workedExample": "إذا كان طول ليلى أقل من مروى وأقل مروى من رنا، تأخذ مروى الطول الأوسط.",
+        "solution": "رتب القيم ثم اربط كل قيمة بشرط الترتيب واختبر جميع المعطيات.",
+        "commonMistake": "الحكم من شرط واحد بدل جميع الشروط.",
+        "summary": "أحدد الشروط وأستخدم الجدول والاستبعاد ثم أتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l01-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:01$"
+      ],
+      "skillId": "statistics.data.tally",
+      "mechanic": "CATEGORICAL_TALLY_FREQUENCY",
+      "families": [
+        "uae.g5.u11.l01.tally_category_frequency",
+        "uae.g5.u11.l01.tally_total_frequency",
+        "uae.g5.u11.l01.tally_frequency_range"
+      ],
+      "content": {
+        "concept": "المسح يجمع بيانات لفئات، وتُعرض في جدول علامات إحصاء يقابله تكرار صحيح لكل فئة.",
+        "workedExample": "اختيرت القراءة ٥ مرات والرياضة ٤ والرسم ٣: المجموع ١٢ استجابة.",
+        "solution": "صنّف كل استجابة مرة واحدة، ودوّن علامات العد في مجموعات خمسة، ثم اكتب عددها وقارن التكرارات.",
+        "commonMistake": "نسيان فئة أو إدخال استجابة مرتين أو عدم تطابق علامات الإحصاء مع عمود التكرار.",
+        "summary": "يجب أن يساوي مجموع التكرارات عدد الاستجابات الخام، مع تمييز أعلى فئة وأقل فئة."
       }
     }
   ]

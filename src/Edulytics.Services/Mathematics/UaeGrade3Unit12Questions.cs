@@ -6,16 +6,21 @@ namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade3Unit12Questions
 {
  internal const string Tally="uae.g3.u12.l01.tally_record";
+ internal const string G5TallyFrequency="uae.g5.u11.l01.tally_category_frequency";
+ internal const string G5TallyTotal="uae.g5.u11.l01.tally_total_frequency";
+ internal const string G5TallyRange="uae.g5.u11.l01.tally_frequency_range";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
  internal const string Line="uae.g3.u12.l05.line_plot";
  internal const string Pattern="uae.g3.u12.l06.number_sense_pattern";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern;
+ private static bool IsG5Tally(string? f)=>f is G5TallyFrequency or G5TallyTotal or G5TallyRange;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5Tally(f))return BuildG5Tally(f,rng);
   int a=0,b=0,mode=rng.Next(2),result=0;string prompt,solution;
   switch(f)
   {
@@ -80,14 +85,85 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5Tally(f))return SolveG5Tally(f,p);
   if(!Valid(f,p,out int n))throw new InvalidOperationException("Invalid data problem parameters");
   return n.ToString(CultureInfo.InvariantCulture);
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5Tally(f))return VerifyG5Tally(f,p,answer);
   if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
   string s=new string(answer.Trim().Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):
    c is >= '۰' and <= '۹'?(char)('0'+c-'۰'):c).ToArray());
   return int.TryParse(s,NumberStyles.Integer,CultureInfo.InvariantCulture,out int n)&&n==expected;
  }
+
+ // Grade 5 Arabic Unit 11 lesson 1. Extend the existing tally-table engine
+ // without modifying legacy G3 behaviour or trusting a stored result parameter.
+ // A real classroom survey remains a teacher-observed physical activity.
+ private static Item BuildG5Tally(string family,Random rng)
+ {
+  int a=rng.Next(3,9),b=rng.Next(2,8),c=rng.Next(2,7),d=rng.Next(1,6);
+  var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"d",d}};
+  var responses=Enumerable.Repeat("القراءة",a)
+    .Concat(Enumerable.Repeat("الرياضة",b))
+    .Concat(Enumerable.Repeat("الرسم",c))
+    .Concat(Enumerable.Repeat("البرمجة",d))
+    .OrderBy(_=>rng.Next()).ToArray();
+  string question="أُجري مسح عن النشاط المفضل. هذه الإجابات الخام: "+
+    string.Join("، ",responses)+". ";
+  question+=family switch
+  {
+   G5TallyFrequency=>"أنشئ جدول علامات إحصاء ثم اكتب تكرار اختيار الرسم.",
+   G5TallyTotal=>"أنشئ جدول تكرار بأربع فئات. كم طالبًا شارك في المسح؟",
+   G5TallyRange=>"بعد إنشاء جدول التكرار، ما الفرق بين أعلى تكرار وأقل تكرار؟",
+   _=>throw new InvalidOperationException("Unknown Grade5 tally family")
+  };
+  return new Item(family,question,
+   "أضع علامة واحدة لكل إجابة في فئتها، وأجمع العلامات في مجموعات من خمسة، ثم أتحقق من عدد المشاركين ومقارنة التكرارات.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Tally(string f,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Tally(f)||p.Count!=4||
+     !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+     !p.TryGetValue("c",out int c)||!p.TryGetValue("d",out int d)||
+     a is <3 or >8||b is <2 or >7||c is <2 or >6||d is <1 or >5)
+   return false;
+  expected=f switch
+  {
+   G5TallyFrequency=>c,
+   G5TallyTotal=>a+b+c+d,
+   G5TallyRange=>new[]{a,b,c,d}.Max()-new[]{a,b,c,d}.Min(),
+   _=>throw new InvalidOperationException("Unknown Grade5 tally family")
+  };
+  return true;
+ }
+ private static string SolveG5Tally(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Tally(f,p,out int result))
+   throw new InvalidOperationException("Invalid Grade5 tally data");
+  return result.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Tally(string f,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5Tally(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string value=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(value,NumberStyles.None,CultureInfo.InvariantCulture,out int submitted))return false;
+  int a=p["a"],b=p["b"],c=p["c"],d=p["d"];
+  int independentlyExpected=f switch
+  {
+   G5TallyFrequency=>c,
+   G5TallyTotal=>a+b+c+d,
+   _=>Math.Max(Math.Max(a,b),Math.Max(c,d))-Math.Min(Math.Min(a,b),Math.Min(c,d))
+  };
+  return submitted==independentlyExpected;
+ }
+
 }

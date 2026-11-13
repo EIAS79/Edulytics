@@ -46443,6 +46443,63 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l01.tally_category_frequency",
+      "version": 1,
+      "skillId": "statistics.data.tally",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l01-local-arabic-tally-frequencies-exact-StageD-NOT_RUN",
+      "representations": [
+        "tally_table",
+        "category_counts",
+        "source_aligned_original_survey"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l01.tally_total_frequency",
+      "version": 1,
+      "skillId": "statistics.data.tally",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l01-local-arabic-tally-frequencies-exact-StageD-NOT_RUN",
+      "representations": [
+        "tally_table",
+        "category_counts",
+        "source_aligned_original_survey"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l01.tally_frequency_range",
+      "version": 1,
+      "skillId": "statistics.data.tally",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l01-local-arabic-tally-frequencies-exact-StageD-NOT_RUN",
+      "representations": [
+        "tally_table",
+        "category_counts",
+        "source_aligned_original_survey"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

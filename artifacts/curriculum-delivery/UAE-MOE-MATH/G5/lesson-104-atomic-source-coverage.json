@@ -1,0 +1,92 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 104,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:01",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    88,
+    89,
+    90,
+    91,
+    92,
+    93
+  ],
+  "SourcePrintedPages": [
+    791,
+    792,
+    793,
+    794,
+    795,
+    796
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "جمع استجابات مسح وتصنيفها في فئات غير متداخلة",
+    "إنشاء جدول علامات إحصاء وتكرار بالاعتماد على البيانات الخام",
+    "استخراج التكرار الأكبر والأقل ومجموع الاستجابات والتحقق من اكتمال البيانات"
+  ],
+  "SourceElements": [
+    {
+      "Category": "survey definition and tally/frequency table introduction",
+      "Pages": [
+        791
+      ],
+      "Coverage": "original Arabic RichV2 explanation and worked tally table"
+    },
+    {
+      "Category": "categorical data sorting and group tally",
+      "Pages": [
+        792,
+        793
+      ],
+      "Coverage": "independent sample datasets, frequency and total exact generator"
+    },
+    {
+      "Category": "read maximum/minimum frequencies and fix counting error",
+      "Pages": [
+        794
+      ],
+      "Coverage": "source-aligned highest-minus-lowest exact family and original error analysis"
+    },
+    {
+      "Category": "homework frequency table and tally structure",
+      "Pages": [
+        795,
+        796
+      ],
+      "Coverage": "worked original review and CoolDown with teacher verification"
+    }
+  ],
+  "Engine": "EXTEND existing UaeGrade3Unit12Questions tally/data engine, G3 legacy unchanged; exact G5 3 families",
+  "SkillId": "statistics.data.tally",
+  "QuestionFamilies": [
+    "uae.g5.u11.l01.tally_category_frequency",
+    "uae.g5.u11.l01.tally_total_frequency",
+    "uae.g5.u11.l01.tally_frequency_range"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "في مسح عن الهوايات سجّل ٦ قراءة، ٤ رسم، ٥ رياضة، ٣ برمجة. ما مجموع الطلاب، وما الفرق بين أعلى تكرار وأقل تكرار؟",
+    "Answer": "١٨ طالبًا؛ الفرق ٣",
+    "TeacherRubric": "أربع فئات صحيحة، مجموع ٦+٤+٥+٣=١٨، أكثر تكرار ٦ وأقل ٣ والفرق ٣، مع التحقق من تطابق العلامات والتكرار."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_GRADE5_FAMILIES_AND_SKILL_RULE_STAGED__TESTS_NOT_RUN",
+  "PriorLessonRouteRepairs": [
+    "U10 L06 specific capacity family mapping instead of generic unit conversion",
+    "U10 L07 specific logical ordering mapping preserved in existing engine"
+  ],
+  "TestsWritten": "UaeGrade5Unit11Lesson01TallyPracticeTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Actual student survey collection and classification",
+    "Fidelity of manual tally columns and rationale"
+  ],
+  "SourceRights": "Source objectives and page locators only. Student-facing data and explanations independently authored."
+}
