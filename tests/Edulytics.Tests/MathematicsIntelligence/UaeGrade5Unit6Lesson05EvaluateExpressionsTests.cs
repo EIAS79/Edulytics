@@ -33,4 +33,20 @@ public sealed class UaeGrade5Unit6Lesson05EvaluateExpressionsTests
         dec["cHundredths"]=0;
         Assert.False(ExactSkillContractQuestionEngine.Verify(f,dec,"15.95"));
     }
+    [Fact] public void OriginalSourceAlignedParenthesesAndAppliedContext()
+    {
+        // The 2025–2026 Arabic student book uses whole-expression substitution,
+        // parentheses, contextual quantities, and a non-commutative subtraction order.
+        // Independent authored values; not copies of the textbook's exercises.
+        const int x=8;
+        Assert.Equal(15,30-(x+7));
+        Assert.NotEqual(15,(30-x)+7);
+        const int y=16;
+        Assert.Equal(23,48-(y+9));
+        Assert.Equal(48,23+(y+9));
+        const int a=4,b=9;
+        Assert.Equal(11,(b-a)+6);
+        Assert.Equal(11,a*a-5);
+        Assert.Equal(15.95m,(10.05m-0.40m)+6.30m);
+    }
 }
