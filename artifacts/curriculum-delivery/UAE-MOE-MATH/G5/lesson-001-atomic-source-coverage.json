@@ -1,0 +1,131 @@
+{
+  "LessonOrdinal": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:01",
+  "Grade": 5,
+  "Unit": 1,
+  "Pathway": "General/Common",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourceEdition": "Arabic Student 2025-2026",
+  "SourcePdfPages": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "SourcePrintedPages": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "TargetAcademicYear": "2026–2027",
+  "AnnualSequenceStatus": "UNVERIFIED__2026_2027_RESEQUENCED",
+  "SourceElements": [
+    {
+      "SourceElementId": "G5-01-01-01",
+      "Type": "objective-and-title",
+      "Pages": [
+        30
+      ],
+      "Status": "ORIGINAL_ARABIC_CANDIDATE",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-02",
+      "Type": "place-value-model",
+      "Pages": [
+        30,
+        31
+      ],
+      "Status": "ORIGINAL_VISUAL_CANDIDATE",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-03",
+      "Type": "standard-word-expanded-forms",
+      "Pages": [
+        31,
+        32
+      ],
+      "Status": "ORIGINAL_ARABIC_CANDIDATE",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-04",
+      "Type": "guided-and-independent-practice",
+      "Pages": [
+        31,
+        32
+      ],
+      "Status": "EXACT_DIGITAL_ASSESSMENT_NOT_YET_BOUND"
+    },
+    {
+      "SourceElementId": "G5-01-01-05",
+      "Type": "word-problem-and-reasoning",
+      "Pages": [
+        33
+      ],
+      "Status": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "SourceElementId": "G5-01-01-06",
+      "Type": "homework-and-error-analysis",
+      "Pages": [
+        34,
+        35
+      ],
+      "Status": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "SourceElementId": "G5-01-01-07",
+      "Type": "vocabulary-and-check",
+      "Pages": [
+        35
+      ],
+      "Status": "COOLDOWN_ORIGINAL_SUBSTITUTE"
+    }
+  ],
+  "CoolDown": {
+    "Question": "في العدد ٣٬٠٥٧٬٤٠٢٬٠١٨ ما قيمة الرقم ٥؟ اكتب العدد أيضًا بالصورة التحليلية.",
+    "Expected": "٥٠٬٠٠٠٬٠٠٠؛ ٣٬٠٠٠٬٠٠٠٬٠٠٠ + ٥٠٬٠٠٠٬٠٠٠ + ٧٬٠٠٠٬٠٠٠ + ٤٠٠٬٠٠٠ + ٢٬٠٠٠ + ١٠ + ٨",
+    "Rubric": "دقة المنزلة والقيمة، الحفاظ على الأصفار والتحقق من مجموع الأجزاء",
+    "OriginalTeacherContentInspected": false
+  },
+  "SkillContract": {
+    "Target": "place-value-to-billions",
+    "ExistingReuseCandidate": "UaeGrade4Unit1Lesson01Questions up to millions; insufficient G5 billion bounds without extension",
+    "AllowedQuestionFamilies": [
+      "digit-value-to-billions (NOT REGISTERED)",
+      "compose-standard-form-to-billions (NOT REGISTERED)",
+      "expanded-to-standard-to-billions (NOT REGISTERED)"
+    ],
+    "AnswerType": "exact signed 64-bit integer",
+    "Forbidden": [
+      "rounding-only",
+      "generic arithmetic",
+      "int32-only digit value",
+      "unverified multiple-choice"
+    ],
+    "Renderer": "Arabic place-value chart / numeric answer",
+    "Grader": "NOT_CONNECTED",
+    "IndependentVerifier": "NOT_CONNECTED",
+    "TeacherReview": [
+      "reasoning",
+      "error analysis",
+      "word explanation"
+    ],
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "StageA": "LOCAL_2025_2026_PAGES_REVIEWED__CURRENT_SEQUENCE_UNKNOWN",
+  "StageB": "RICH_ARABIC_CANDIDATE",
+  "StageC": "EXACT_PRACTICE_NOT_BOUND",
+  "Status": "A_C_IN_PROGRESS",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Rights": "Only internal source page hashes and original learner content"
+}
