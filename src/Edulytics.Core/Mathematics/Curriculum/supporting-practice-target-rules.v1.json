@@ -14507,6 +14507,27 @@
         "commonMistake": "١٤ عُشرًا ليست ٠٫١٤ وإنما ١٫٤.",
         "summary": "الضرب العشري جمع متكرر لنماذج متساوية من الأعشار."
       }
+    },
+    {
+      "id": "uae-g5-u05-l03-decimal-whole-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:03$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_MULTIPLY_WHOLE_HUNDREDTHS",
+      "families": [
+        "uae.g5.u05.l03.decimal_times_whole",
+        "uae.g5.u05.l03.unit_price_total",
+        "uae.g5.u05.l03.decimal_point_placement"
+      ],
+      "content": {
+        "concept": "أضرب العشري في عدد كلي وأحافظ على المنازل.",
+        "workedExample": "٠٫٩٦×٣=٢٫٨٨",
+        "solution": "ضرب ٩٦×٣ ثم القسمة على ١٠٠.",
+        "commonMistake": "٢٨٨ ليست الناتج النهائي.",
+        "summary": "أعد الفاصلة بدقة وتحقق بالتقدير."
+      }
     }
   ]
 }
