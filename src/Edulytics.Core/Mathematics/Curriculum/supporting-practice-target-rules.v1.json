@@ -14401,6 +14401,27 @@
         "commonMistake": "إسقاط خطوة الإنزال أو اختيار رقم حاصل أكبر من اللازم يجعل حاصل الضرب أكبر من المقسوم.",
         "summary": "أتحقق باستخدام المقسوم = المقسوم عليه×الحاصل+الباقي."
       }
+    },
+    {
+      "id": "uae-g5-u04-l04-adjust-two-digit-quotients",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:04$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "ADJUST_QUOTIENT_TRIAL_BY_PRODUCT_AND_REMAINDER",
+      "families": [
+        "uae.g5.u04.l04.corrected_trial_quotient",
+        "uae.g5.u04.l04.trial_too_high_indicator",
+        "uae.g5.u04.l04.adjusted_remainder"
+      ],
+      "content": {
+        "concept": "أراجع رقم الحاصل المؤقت بالضرب وأعدله إذا كان حاصل الضرب كبيرًا أو الباقي كبيرًا.",
+        "workedExample": "٢٣٨÷٦٢: ٤ مرتفع لأن ٤×٦٢=٢٤٨>٢٣٨، فنجرّب ٣ والباقي ٥٢.",
+        "solution": "أضرب ثم أقارن؛ ارفع أو اخفض تقدير الحاصل حتى يكون الباقي بين صفر والمقسوم عليه.",
+        "commonMistake": "الاعتماد على التقدير دون اختبار حاصل الضرب.",
+        "summary": "أعدل رقم الحاصل حتى تصبح القسمة صحيحة."
+      }
     }
   ]
 }

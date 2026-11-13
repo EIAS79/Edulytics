@@ -1535,23 +1535,23 @@
     {
       "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:04:04",
       "TitleProvenance": "PedagogicalSource",
-      "TitleSourceReference": "UAE Grade 5 Student Edition / Unit 4 / Lesson 4; official Arabic title: تعديل نواتج القسمة",
+      "TitleSourceReference": "Local Arabic student Grade_05/01.pdf printed pp271–276 PDF pp290–295; تعديل نواتج القسمة",
       "OutcomeCodes": [],
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G5:GENERAL:ANNUAL:U04:L04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 5 General / Annual / Unit 4 / Lesson 4",
+      "SourceLocator": "Grade_05/01_Student_Books/01.pdf printed pp271–276 / PDF pp290–295",
       "SourceTitle": "UAE Grade 5 Mathematics Student Edition",
       "SourcePublisher": "UAE Ministry of Education / McGraw-Hill Education",
-      "SourceEdition": "UAE Edition; current-term cross-check 2025-2026",
+      "SourceEdition": "Owner-selected Arabic student book 2025–2026, target-year 2026–2027 index not verified",
       "SourceRights": "Official textbook used only for curriculum scope, ordering and title provenance. Learner-facing explanations are independently authored by Edulytics.",
-      "SourceSha256": "91b41b03ec629453c1b2038a40b2a06261e5c7bc9fdabf067204ccb77c23fa06",
+      "SourceSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
       "CanonicalBodySha256": "6c8ccd376f4b1846a4aa09fae8de0c277c9d1d981da29d1ef8530f0608336226",
       "SourceVerifiedAtUtc": "2026-10-04T00:00:00Z",
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "Locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic + shared G4 long division trial-adjustment extension, tests NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1562,6 +1562,16 @@
           "StepByStepSolutions": "Step 1: Identify the information and goal. Step 2: Choose an operation, model, graph, or geometric relationship. Step 3: Solve accurately. Step 4: Interpret the result. Step 5: Verify it independently.",
           "CommonMistakes": "Do not lose place value, units, fraction equivalence, decimal position, operation order, or geometric conditions.",
           "QuickSummary": "Adjust Quotients: choose the right representation, solve accurately, explain, and check."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تعديل نواتج القسمة",
+          "Explanation": "أحيانًا يعطي التقدير رقمًا مرتفعًا أو منخفضًا في حاصل القسمة. أحسب حاصل ضرب المقسوم عليه في الرقم المقدر: إذا تجاوز الجزء المقسوم فهو مرتفع وأخفضه، وإذا بقي فرق أكبر من المقسوم عليه أزيده. لا أقبل الحل حتى يكون الباقي غير سالب وأصغر من المقسوم عليه.",
+          "KeyConceptsAndRules": "إذا كان حاصل ضرب المقسوم عليه×رقم الحاصل أكبر من المقسوم أخفض الرقم. إذا لم يتجاوز حاصل الضرب المقسوم لكن الباقي يساوي المقسوم عليه أو يزيد عليه أرفع الرقم. العلاقة النهائية: المقسوم = المقسوم عليه × الحاصل + الباقي، حيث ٠ ≤ الباقي < المقسوم عليه.",
+          "WorkedExamples": "في ١٤٤÷١٦ التقدير ٨ أقل من الصحيح لأن ١٦×٨=١٢٨، والباقي ١٦؛ الحاصل ٩. في ٢٣٨÷٦٢ تجربة ٤ مرتفعة لأن ٦٢×٤=٢٤٨>٢٣٨؛ نجرب ٣ فيتبقى ٥٢. في ١٢٥٢÷٣٢ الحاصل ٣٩ والباقي ٤، لأن ٣٢×٤٠=١٢٨٠ مرتفع بينما ٣٢×٣٩=١٢٤٨.",
+          "StepByStepSolutions": "١. أقدّر رقم الحاصل المناسب. ٢. أضرب المقسوم عليه في الرقم المؤقت. ٣. إذا تجاوز الناتج المقسوم أخفض الرقم، وإذا بلغ الباقي المقسوم عليه أرفعه. ٤. أتحقق من المعادلة والحد الأعلى للباقي.",
+          "CommonMistakes": "إذا ١٦×٨=١٢٨ و١٤٤−١٢٨=١٦ فلا يُقبل الناتج ٨ والباقي ١٦؛ لأن الباقي لا يجوز أن يساوي المقسوم عليه. وإذا كان ٦٢×٤=٢٤٨>٢٣٨ فتقدير ٤ مرتفع ويجب خفضه.",
+          "QuickSummary": "أجرب، أضرب، أراجع الفارق، ثم أعدل الحاصل حتى يكون الباقي أقل من المقسوم عليه."
         }
       ]
     },

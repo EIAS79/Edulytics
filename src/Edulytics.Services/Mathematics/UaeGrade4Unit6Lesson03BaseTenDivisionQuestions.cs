@@ -5,6 +5,10 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
 {
     internal const string Quotient="uae.g4.u06.l03.base_ten_quotient";
     internal const string Remainder="uae.g4.u06.l03.base_ten_remainder";
+    internal const string G5U4AdjustQuotient="uae.g5.u04.l04.corrected_trial_quotient";
+    internal const string G5U4AdjustHigh="uae.g5.u04.l04.trial_too_high_indicator";
+    internal const string G5U4AdjustRemainder="uae.g5.u04.l04.adjusted_remainder";
+    private static bool IsG5U4Adjust(string? f)=>f is G5U4AdjustQuotient or G5U4AdjustHigh or G5U4AdjustRemainder;
     internal const string G5U4LongQuotient="uae.g5.u04.l03.two_digit_long_quotient";
     internal const string G5U4LongRemainder="uae.g5.u04.l03.two_digit_long_remainder";
     private static bool IsG5U4Long(string? f)=>f is G5U4LongQuotient or G5U4LongRemainder;
@@ -35,10 +39,11 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f) || IsG5U4Long(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f) || IsG5Long(f) || IsG5First(f) || IsG5Zero(f) || IsG5Model(f) || IsG5ContextRemainder(f) || IsG5U4Block(f) || IsG5U4Long(f) || IsG5U4Adjust(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
+        if(IsG5U4Adjust(f))return BuildG5U4Adjust(f,r);
         if(IsG5U4Long(f))return BuildG5U4Long(f,r);
         if(IsG5U4Block(f))return BuildG5U4Block(f,r);
         if(IsG5(f))return BuildG5(f,r);
@@ -57,6 +62,53 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     }
 
 
+
+
+    // G5 Unit 4 L04: retain the G4 exact long-division solver architecture.
+    // Trial is a proposed quotient, NOT an answer field.
+    private static Item BuildG5U4Adjust(string f,Random rng)
+    {
+        int divisor=rng.Next(11,91),quotient=rng.Next(3,56),remainder=rng.Next(0,divisor);
+        int n=checked(divisor*quotient+remainder),trial=quotient+(rng.Next(2)==0?-1:1);
+        string question=f switch
+        {
+            G5U4AdjustQuotient=>$"في قسمة {n} على {divisor} جرّب أحد الطلاب ناتجًا قدره {trial}. تحقق بضرب {divisor}×{trial} ثم اكتب الحاصل الصحيح.",
+            G5U4AdjustHigh=>$"في قسمة {n}÷{divisor} جُرّب الحاصل {trial}. اكتب ١ إذا كان مرتفعًا جدًا (حاصل الضرب يتجاوز المقسوم)، وإلا اكتب ٠.",
+            _=>$"بعد تصحيح تقدير {trial} لحاصل {n}÷{divisor}، ما الباقي الصحيح بعد القسمة؟"
+        };
+        return new Item(f,question,"أضرب المقسوم عليه في الحاصل المؤقت، وأرفعه أو أخفضه حتى يصبح الفرق غير سالب وأصغر من المقسوم عليه.",
+            AssessmentItemType.Numeric,new Dictionary<string,int>{{"dividend",n},{"divisor",divisor},{"trial",trial}});
+    }
+    private static bool ValidG5U4Adjust(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5U4Adjust(f)||p.Count!=3||!p.TryGetValue("dividend",out int n)||
+           !p.TryGetValue("divisor",out int d)||!p.TryGetValue("trial",out int trial)||
+           d is <11 or >90||n is <33 or >5039||
+           n/d is <3 or >55||Math.Abs(trial-n/d)!=1)return false;
+        expected=f switch
+        {
+            G5U4AdjustQuotient=>n/d,
+            G5U4AdjustHigh=>trial*d>n?1:0,
+            _=>n%d
+        };
+        return true;
+    }
+    private static bool VerifyG5U4Adjust(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5U4Adjust(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+        string s=new(answer.Trim().Where(ch=>ch!=','&&ch!='٬'&&ch!=' '&&ch!='\u00a0'&&ch!='\u202f')
+            .Select(ch=>ch is >= '٠' and <= '٩'?(char)('0'+ch-'٠'):
+                        ch is >= '۰' and <= '۹'?(char)('0'+ch-'۰'):ch).ToArray());
+        if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        int n=p["dividend"],d=p["divisor"],trial=p["trial"];
+        return f switch
+        {
+            G5U4AdjustQuotient=>v>=0&&(long)v*d<=n&&n-(long)v*d<d,
+            G5U4AdjustHigh=>v is 0 or 1 && (v==1)==((long)trial*d>n),
+            _=>v>=0&&v<d&&(n-v)%d==0
+        };
+    }
 
     // G5 U04 L03 shares the G4/U3 exact long-division engine; new source range
     // uses two-digit divisors and 3–4 digit dividends, with quotient and remainder.
@@ -401,6 +453,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsG5U4Adjust(f))return ValidG5U4Adjust(f,p,out expected);
         if(IsG5U4Long(f))return ValidG5U4Long(f,p,out expected);
         if(IsG5U4Block(f))return ValidG5U4Block(f,p,out expected);
         if(IsG5(f))return ValidG5(f,p,out expected);
@@ -422,6 +475,7 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5U4Adjust(f))return VerifyG5U4Adjust(f,p,answer);
         if(IsG5U4Long(f))return VerifyG5U4Long(f,p,answer);
         if(IsG5U4Block(f))return VerifyG5U4Block(f,p,answer);
         if(IsG5Long(f))return VerifyG5Long(f,p,answer);
