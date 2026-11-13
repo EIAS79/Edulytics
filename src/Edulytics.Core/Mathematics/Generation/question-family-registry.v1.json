@@ -47372,6 +47372,44 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l04.radius_diameter_exact",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l04-radius-diameter-chord-Arabic-StageD-NOT_RUN",
+      "representations": [
+        "circle_center_radius_chord_diameter",
+        "radius_diameter_relation",
+        "teacher_construction_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l04.circle_segment_classify",
+      "version": 1,
+      "skillId": "supporting.geometry.circles_loci",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l04-radius-diameter-chord-Arabic-StageD-NOT_RUN",
+      "representations": [
+        "circle_center_radius_chord_diameter",
+        "radius_diameter_relation",
+        "teacher_construction_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

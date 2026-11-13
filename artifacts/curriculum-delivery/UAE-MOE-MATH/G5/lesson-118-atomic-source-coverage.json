@@ -1,0 +1,88 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 118,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:04",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    193,
+    194,
+    195,
+    196,
+    197,
+    198
+  ],
+  "SourcePrintedPages": [
+    897,
+    898,
+    899,
+    900,
+    901,
+    902
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تحديد مركز الدائرة وأنصاف أقطارها وقطرها وأوتارها",
+    "تمييز الوتر عن القطر بدقة",
+    "حساب قطر من نصف قطر والعكس بوحدات طول صحيحة",
+    "بناء دائرة بفرجار مع تحديد مكوناتها"
+  ],
+  "SourceElements": [
+    {
+      "Category": "circle center, radius, chord, diameter from source diagram",
+      "Pages": [
+        897
+      ],
+      "Coverage": "Arabic definitions reauthored independently"
+    },
+    {
+      "Category": "d=2r and r=d/2 and exact examples",
+      "Pages": [
+        898,
+        899
+      ],
+      "Coverage": "reused shared exact solver and Arabic numerical tasks"
+    },
+    {
+      "Category": "real-world diameter-radius, ruler/compass drawing",
+      "Pages": [
+        900
+      ],
+      "Coverage": "teacher construction and application rubric"
+    },
+    {
+      "Category": "homework and independent checks",
+      "Pages": [
+        901,
+        902
+      ],
+      "Coverage": "original exact numerical models, no publisher figure copied"
+    }
+  ],
+  "Engine": "REUSE existing SupportingPracticeCompletionEngine CircleRadiusDiameter, extend Arabic Grade5 source-specific family and segment classification.",
+  "SkillId": "supporting.geometry.circles_loci",
+  "QuestionFamilies": [
+    "uae.g5.u12.l04.radius_diameter_exact",
+    "uae.g5.u12.l04.circle_segment_classify"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "نصف قطر دائرة ٩ سم، وقطعة أخرى تصل نقطتين على المحيط دون مرور بالمركز. احسب القطر، وصنف القطعة الأخرى.",
+    "Answer": "القطر ١٨ سم؛ القطعة الأخرى وتر غير قطري.",
+    "TeacherRubric": "يفرق بين قطر الدائرة والوتر وبين قياسهما."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_CIRCLE_RADIUS_DIAMETER_AND_SEGMENT_CLASSIFICATION_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson04CirclesTests.cs",
+  "TestsRun": "FOCUSED_2_PASSED; L117_REGRESSION_2_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Original circle construction with a compass",
+    "Identify labeled segments in the student's own drawing"
+  ],
+  "SourceRights": "Independently authored original Arabic explanations; no original textbook artwork copied."
+}
