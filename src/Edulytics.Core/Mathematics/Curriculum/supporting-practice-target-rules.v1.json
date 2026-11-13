@@ -14928,6 +14928,27 @@
         "commonMistake": "لا تستخدم فرقًا ثابتًا لنمط ضربي.",
         "summary": "أتعرف على النمط وأفسر القاعدة وأكمل الجداول."
       }
+    },
+    {
+      "id": "uae-g5-u06-l09-map-grid",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:09$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "MAP_GRID_MOVEMENT",
+      "families": [
+        "uae.g5.u06.l09.map_horizontal_steps",
+        "uae.g5.u06.l09.map_vertical_steps",
+        "uae.g5.u06.l09.map_shortest_grid_route"
+      ],
+      "content": {
+        "concept": "أرسم مواقع المعالم على خريطة شبكة وأصف الطريق أفقيًا ورأسيًا.",
+        "workedExample": "من (١،١) إلى (٤،٥): ثلاث وحدات يمينًا وأربع وحدات أعلى.",
+        "solution": "أعد وحدات الانتقال حسب الاتجاه وأتحقق من نقطة النهاية.",
+        "commonMistake": "لا أعد النقاط بدل الفواصل أو أستخدم حركة قطرية عند منعها.",
+        "summary": "مواقع الخريطة، الاتجاهات، وعدد وحدات الطريق."
+      }
     }
   ]
 }

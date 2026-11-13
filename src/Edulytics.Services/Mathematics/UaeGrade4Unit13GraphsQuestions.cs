@@ -10,11 +10,66 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest;
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f);
+
+ // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
+ // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
+ internal const string G5MapHorizontal="uae.g5.u06.l09.map_horizontal_steps";
+ internal const string G5MapVertical="uae.g5.u06.l09.map_vertical_steps";
+ internal const string G5MapRoute="uae.g5.u06.l09.map_shortest_grid_route";
+ private static bool IsG5Map(string? f)=>f is G5MapHorizontal or G5MapVertical or G5MapRoute;
+ private static Item BuildG5Map(string f,Random random)
+ {
+     int sx=random.Next(0,5),sy=random.Next(0,5),tx=random.Next(2,8),ty=random.Next(2,8);
+     if(sx==tx&&sy==ty)tx=7;
+     var p=new Dictionary<string,int>{{"sx",sx},{"sy",sy},{"tx",tx},{"ty",ty}};
+     string start=$"({sx}، {sy})",goal=$"({tx}، {ty})";
+     string prompt=f switch
+     {
+         G5MapHorizontal=>$"في خريطة شبكة وحدية، تقع المدرسة عند {start} وتقع المكتبة عند {goal}. كم خطوة أفقية، يمينًا أو يسارًا، تفصل الموقعين؟",
+         G5MapVertical=>$"في خريطة شبكة وحدية، تقع المدرسة عند {start} وتقع الحديقة عند {goal}. كم خطوة رأسية، أعلى أو أسفل، تفصل الموقعين؟",
+         _=>$"على شبكة وحدية، انطلق من {start} إلى {goal} بالسير أفقيًا ورأسيًا دون حركة قطرية. كم خطوة على أقصر طريق شبكي؟"
+     };
+     return new Item(f,prompt,"أرسم الخريطة، وأحسب الفارق الأفقي والرأسي من مواقع النقطتين دون الحركة القطرية.",
+         AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Map(string f,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+     expected=0;
+     if(!IsG5Map(f)||p.Count!=4||
+        !p.TryGetValue("sx",out int sx)||!p.TryGetValue("sy",out int sy)||
+        !p.TryGetValue("tx",out int tx)||!p.TryGetValue("ty",out int ty)||
+        new[]{sx,sy,tx,ty}.Any(v=>v is <0 or >7)||
+        (sx==tx&&sy==ty))return false;
+     int dx=Math.Abs(tx-sx),dy=Math.Abs(ty-sy);
+     expected=f switch {G5MapHorizontal=>dx,G5MapVertical=>dy,_=>dx+dy};
+     return true;
+ }
+ private static string SolveG5Map(string f,IReadOnlyDictionary<string,int> p)
+ {
+     if(!ValidG5Map(f,p,out int v))throw new InvalidOperationException("Invalid Grade5 map data");
+     return v.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Map(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+     if(!ValidG5Map(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>20)return false;
+     string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬')
+        .Select(ch=>ch switch
+        {
+           >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+           _=>ch
+        }).ToArray());
+     if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+     int dx=Math.Abs(p["tx"]-p["sx"]),dy=Math.Abs(p["ty"]-p["sy"]);
+     return actual==(f==G5MapHorizontal?dx:f==G5MapVertical?dy:dx+dy);
+ }
+
  private static bool IsPie(string f)=>f is PieCategory or PieRest;
  internal static Item Build(string f,Random random)
  {
-   if(!Supports(f))throw new InvalidOperationException("Unsupported grade4 graph family");
+   if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Map(f))return BuildG5Map(f,random);
    Dictionary<string,int> p;
    if(IsPie(f))
    {
@@ -60,11 +115,13 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Map(f))return SolveG5Map(f,p);
    if(!Valid(f,p,out int result))throw new InvalidOperationException("Invalid graph data");
    return result.ToString(CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Map(f))return VerifyG5Map(f,p,answer);
    if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
    string normalized=new(answer.Trim().Select(c=>c switch
    {
