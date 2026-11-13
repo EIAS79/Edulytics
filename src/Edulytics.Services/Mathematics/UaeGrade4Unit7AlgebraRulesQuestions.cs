@@ -272,7 +272,7 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
         if(!ValidG5Model(f,p,out int n,out int groups)||
            string.IsNullOrWhiteSpace(answer)||answer.Length>80)return false;
         string value=new(answer.Trim()
-            .Where(ch=>!char.IsWhiteSpace(ch)&&ch!='\\u00a0')
+            .Where(ch=>!char.IsWhiteSpace(ch)&&ch!='\u00a0')
             .Select(ch=>ch switch
             {
                 >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
