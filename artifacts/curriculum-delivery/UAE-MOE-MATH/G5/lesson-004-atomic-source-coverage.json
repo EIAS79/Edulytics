@@ -1,0 +1,126 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 4,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:04",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourceEdition": "Owner-selected 2025–2026 Arabic Student",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+  ],
+  "SourcePrintedPages": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "Official2026_2027Sequence": "NOT_VERIFIED; local 2025–2026 source used for equivalence",
+  "SourceElements": [
+    {
+      "Id": "G5-U01-L04-01",
+      "Category": "objective-fraction-to-decimal-10-100-1000",
+      "Pages": [
+        48
+      ],
+      "Coverage": "ARABIC_ORIGINAL"
+    },
+    {
+      "Id": "G5-U01-L04-02",
+      "Category": "representations-bar-grid-cube",
+      "Pages": [
+        48,
+        49
+      ],
+      "Coverage": "ORIGINAL_FRACTION_BARS_AND_PLACE_CHART"
+    },
+    {
+      "Id": "G5-U01-L04-03",
+      "Category": "guided-fractions-to-decimal-and-vocabulary",
+      "Pages": [
+        49,
+        50
+      ],
+      "Coverage": "REUSE_G4_TENTHS_HUNDREDTHS"
+    },
+    {
+      "Id": "G5-U01-L04-04",
+      "Category": "thousandths-exercises",
+      "Pages": [
+        49,
+        50
+      ],
+      "Coverage": "G5_EXACT_THOUSANDTHS_EXTENSIONS"
+    },
+    {
+      "Id": "G5-U01-L04-05",
+      "Category": "homework-models",
+      "Pages": [
+        51,
+        52
+      ],
+      "Coverage": "ORIGINAL_RICH_EXAMPLES_AND_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-U01-L04-06",
+      "Category": "error-analysis-95-over1000-not-0.950",
+      "Pages": [
+        51
+      ],
+      "Coverage": "ORIGINAL_ERROR_ANALYSIS"
+    },
+    {
+      "Id": "G5-U01-L04-07",
+      "Category": "word-problems-and-tests",
+      "Pages": [
+        52,
+        53
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN_TEACHER_RUBRIC"
+    }
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.place_value",
+    "Strategy": "Reuse G4 hundredths/tenths; extend SAME engine for thousandths using two new families; do not add new engine.",
+    "AllowedQuestionFamilies": [
+      "uae.g4.u10.l02.tenths_decimal",
+      "uae.g4.u10.l03.hundredths_decimal",
+      "uae.g5.u01.l04.thousandths_decimal",
+      "uae.g5.u01.l04.thousandths_numerator"
+    ],
+    "AnswerTypes": [
+      "exact_decimal",
+      "exact_integer"
+    ],
+    "Renderer": "NumericEntry + original FractionBars and PlaceValueChart",
+    "Grader": "ExactSkillContractQuestionEngine + UaeGrade4Unit10DecimalPlaceValueQuestions extended",
+    "IndependentVerifier": "Decimal numerator×1000 check and parameter domain separated from solver",
+    "Manual": [
+      "visual shading",
+      "word-problem reasoning"
+    ],
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "CoolDown": {
+    "Status": "EDULYTICS_AUTHORED_SUBSTITUTE",
+    "Question": "اكتب ٨/١٠٠٠ و٨/١٠٠ بالأعداد العشرية، وفسر أيهما أكبر.",
+    "Answer": "٠٫٠٠٨ و٠٫٠٨، والثاني أكبر.",
+    "Rubric": "التحويل الصحيح والمحافظة على الأصفار وتبرير المقارنة"
+  },
+  "StageA": "CLOSED_OWNER_SELECTED_ARABIC_STUDENT_PDF",
+  "StageB": "CLOSED_FIRST_PARTY_ARABIC_V2",
+  "StageC": "REUSE_PLUS_EXTENSION_FOUR_EXACT_FAMILIES_WRITTEN_NOT_RUN",
+  "StageDRun": false,
+  "TestsRun": "NOT_RUN",
+  "RuntimeVerified": false,
+  "Rights": "No publisher original images or full proprietary text committed"
+}

@@ -14,14 +14,19 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal const string DecimalToTenths="uae.g4.u10.l04.decimal_to_tenths";
     internal const string Grade5HundredthsPercent="uae.g5.u01.l03.hundredths_to_percent";
     internal const string Grade5TenthsPercent="uae.g5.u01.l03.tenths_to_percent";
+    internal const string Grade5ThousandthsDecimal="uae.g5.u01.l04.thousandths_decimal";
+    internal const string Grade5ThousandthsNumerator="uae.g5.u01.l04.thousandths_numerator";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is PlaceValueDecimal or HundredthsCount or TenthsDigit
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
-        or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent;
+        or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
+        or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator;
     private static bool IsDecimal(string family)=>family is PlaceValueDecimal or TenthsDecimal or HundredthsDecimal;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
+        if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
+            return BuildGrade5Thousandths(family,random);
         int whole=family is PlaceValueDecimal or HundredthsCount or TenthsDigit ? random.Next(0,5):0;
         // Stage C extension for G5: include 0% and 100% without changing G4 output.
         if ((family is Grade5HundredthsPercent or Grade5TenthsPercent) && random.Next(10)==0)
@@ -75,12 +80,16 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
+            return SolveGrade5Thousandths(family,p);
         if(!Valid(family,p,out decimal result))throw new InvalidOperationException("Invalid decimal parameters");
         string fmt=family switch {TenthsDecimal=>"0.0",PlaceValueDecimal or HundredthsDecimal=>"0.00",_=>"0"};
         return result.ToString(fmt,CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
+            return VerifyGrade5Thousandths(family,p,answer);
         if(!Valid(family,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {
@@ -92,5 +101,66 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         if(normalized.Length>20||!normalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
         var style=IsDecimal(family)?NumberStyles.AllowDecimalPoint:NumberStyles.None;
         return decimal.TryParse(normalized,style,CultureInfo.InvariantCulture,out decimal actual)&&actual==expected;
+    }
+    // Extend this same reviewed decimal-place engine to the thousandths place.
+    // Separate parameter shape prevents any Grade 4 family from changing.
+    private static Item BuildGrade5Thousandths(string family, Random random)
+    {
+        int numerator = random.Next(0,1001);
+        var parameters = new Dictionary<string,int>
+        { ["numerator"]=numerator,["denominator"]=1000 };
+        string prompt = family==Grade5ThousandthsDecimal
+            ? $"اكتب الكسر {numerator}/١٠٠٠ في صورة عدد عشري حتى أجزاء الألف."
+            : $"العدد العشري ٠٫{numerator:000} يمثل كسرًا مقامه ١٠٠٠. ما البسط؟";
+        if (numerator==1000 && family==Grade5ThousandthsNumerator)
+            prompt="اكتب بسط الكسر الذي مقامه ١٠٠٠ ويساوي ١٫٠٠٠.";
+        return new Item(family,prompt,
+            "ضع ثلاثة أرقام بعد الفاصلة، ويمكنك استعمال أصفار على اليسار؛ ٩٥/١٠٠٠ = ٠٫٠٩٥.",
+            AssessmentItemType.Numeric,parameters);
+    }
+
+    private static bool ValidGrade5Thousandths(string family,
+        IReadOnlyDictionary<string,int> p,out int numerator)
+    {
+        numerator=0;
+        return family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator &&
+            p.Count==2 && p.TryGetValue("numerator",out numerator) &&
+            p.TryGetValue("denominator",out int denominator) &&
+            denominator==1000 && numerator is >=0 and <=1000;
+    }
+
+    private static string SolveGrade5Thousandths(string family,
+        IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidGrade5Thousandths(family,p,out int numerator))
+            throw new InvalidOperationException("Invalid Grade 5 thousandths parameters.");
+        return family==Grade5ThousandthsDecimal
+            ? (numerator/1000m).ToString("0.000",CultureInfo.InvariantCulture)
+            : numerator.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private static bool VerifyGrade5Thousandths(string family,
+        IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidGrade5Thousandths(family,p,out int numerator) ||
+           string.IsNullOrWhiteSpace(answer)) return false;
+        string normalized = new(answer.Trim().Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',
+            _=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00A0' and not '\u202F').ToArray());
+        if(normalized.Length>20 || normalized.Count(ch=>ch=='.')>1 ||
+           !normalized.All(ch=>ch is >= '0' and <= '9' or '.')) return false;
+
+        if(family==Grade5ThousandthsNumerator)
+            return int.TryParse(normalized,NumberStyles.None,
+                CultureInfo.InvariantCulture,out int n) && n==numerator;
+        // Verify independently from the fraction's rational numerator and
+        // denominator; never reuse SolveGrade5Thousandths.
+        return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal actual) &&
+            actual*1000m==numerator;
     }
 }

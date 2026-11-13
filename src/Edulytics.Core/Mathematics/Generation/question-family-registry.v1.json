@@ -42476,6 +42476,44 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l04.thousandths_decimal",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "uae-g5-local-student-printed29-34-thousandths-rational-independent-check-tests-not-run",
+      "representations": [
+        "fraction_bar",
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u01.l04.thousandths_numerator",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-local-student-printed29-34-thousandths-rational-independent-check-tests-not-run",
+      "representations": [
+        "fraction_bar",
+        "place_value_chart",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
