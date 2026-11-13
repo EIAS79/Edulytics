@@ -18,12 +18,13 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal const string Grade5ThousandthsNumerator="uae.g5.u01.l04.thousandths_numerator";
     internal const string Grade5DigitPlaceValue="uae.g5.u01.l05.decimal_digit_place_value";
     internal const string Grade5PlaceFactor="uae.g5.u01.l05.place_factor_ten";
+    internal const string Grade5ExpandedDecimal="uae.g5.u01.l06.expanded_decimal_to_standard";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is PlaceValueDecimal or HundredthsCount or TenthsDigit
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
         or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
         or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator
-        or Grade5DigitPlaceValue or Grade5PlaceFactor;
+        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal;
     private static bool IsDecimal(string family)=>family is PlaceValueDecimal or TenthsDecimal or HundredthsDecimal;
     internal static Item Build(string family,Random random)
     {
@@ -32,6 +33,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
             return BuildGrade5Thousandths(family,random);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
             return BuildGrade5DecimalPositions(family,random);
+        if (family==Grade5ExpandedDecimal)
+            return BuildGrade5ExpandedDecimal(random);
         int whole=family is PlaceValueDecimal or HundredthsCount or TenthsDigit ? random.Next(0,5):0;
         // Stage C extension for G5: include 0% and 100% without changing G4 output.
         if ((family is Grade5HundredthsPercent or Grade5TenthsPercent) && random.Next(10)==0)
@@ -89,6 +92,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
             return SolveGrade5Thousandths(family,p);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
             return SolveGrade5DecimalPositions(family,p);
+        if (family==Grade5ExpandedDecimal)
+            return SolveGrade5ExpandedDecimal(p);
         if(!Valid(family,p,out decimal result))throw new InvalidOperationException("Invalid decimal parameters");
         string fmt=family switch {TenthsDecimal=>"0.0",PlaceValueDecimal or HundredthsDecimal=>"0.00",_=>"0"};
         return result.ToString(fmt,CultureInfo.InvariantCulture);
@@ -99,6 +104,8 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
             return VerifyGrade5Thousandths(family,p,answer);
         if (family is Grade5DigitPlaceValue or Grade5PlaceFactor)
             return VerifyGrade5DecimalPositions(family,p,answer);
+        if (family==Grade5ExpandedDecimal)
+            return VerifyGrade5ExpandedDecimal(p,answer);
         if(!Valid(family,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {
@@ -262,5 +269,52 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         int scale=position==1?100:position==2?10:1;
         int divisor=position==1?10:position==2?100:1000;
         return provided==(n/scale%10)/(decimal)divisor;
+    }
+    private static Item BuildGrade5ExpandedDecimal(Random random)
+    {
+        int whole=random.Next(0,500), t=random.Next(0,10),
+            h=random.Next(0,10),th=random.Next(0,10);
+        var p=new Dictionary<string,int>
+        { ["whole"]=whole,["tenths"]=t,["hundredths"]=h,["thousandths"]=th };
+        return new Item(Grade5ExpandedDecimal,
+            $"اكتب ( {whole} × ١ ) + ( {t} × ١/١٠ ) + ( {h} × ١/١٠٠ ) + ( {th} × ١/١٠٠٠ ) في الصيغة القياسية.",
+            "ضع الآحاد والأعشار وأجزاء المئة والألف في مواضعها ثم تحقق من القيمة.",
+            AssessmentItemType.Numeric,p);
+    }
+    private static bool ValidGrade5ExpandedDecimal(IReadOnlyDictionary<string,int> p,
+        out int whole,out int t,out int h,out int th)
+    {
+        whole=t=h=th=0;
+        return p.Count==4&&p.TryGetValue("whole",out whole)&&
+            p.TryGetValue("tenths",out t)&&p.TryGetValue("hundredths",out h)&&
+            p.TryGetValue("thousandths",out th)&&whole is >=0 and <500&&
+            t is >=0 and <=9&&h is >=0 and <=9&&th is >=0 and <=9;
+    }
+    private static string SolveGrade5ExpandedDecimal(IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidGrade5ExpandedDecimal(p,out int whole,out int t,out int h,out int th))
+            throw new InvalidOperationException("Invalid G5 decimal expansion.");
+        decimal value=whole+t/10m+h/100m+th/1000m;
+        return value.ToString("0.000",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyGrade5ExpandedDecimal(
+        IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidGrade5ExpandedDecimal(p,out int whole,out int t,out int h,out int th)||
+            string.IsNullOrWhiteSpace(answer))return false;
+        string normalized=new(answer.Trim().Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',
+            _=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00A0').ToArray());
+        if(normalized.Length>20||normalized.Count(ch=>ch=='.')>1||
+            !normalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+        if(!decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal value))return false;
+        // Independent integer-thousandths recomposition vs Solve's decimal sum.
+        int thousandthUnits=whole*1000+t*100+h*10+th;
+        return value*1000m==thousandthUnits;
     }
 }
