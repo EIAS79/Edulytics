@@ -7,13 +7,18 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
     internal const string Remainder="uae.g4.u06.l03.base_ten_remainder";
     internal const string G5Quotient="uae.g5.u03.l03.two_digit_quotient";
     internal const string G5Remainder="uae.g5.u03.l03.two_digit_remainder";
+    internal const string G5Distributed="uae.g5.u03.l07.distributed_quotient";
+    internal const string G5PartialSum="uae.g5.u03.l07.sum_partial_quotients";
+    internal const string G5PartialTens="uae.g5.u03.l07.tens_partial_quotient";
+    private static bool IsG5Partial(string? f)=>f is G5Distributed or G5PartialSum or G5PartialTens;
     private static bool IsG5(string? f)=>f is G5Quotient or G5Remainder;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f);
+    internal static bool Supports(string? f)=>f is Quotient or Remainder || IsG5(f) || IsG5Partial(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unknown base-ten division family");
         if(IsG5(f))return BuildG5(f,r);
+        if(IsG5Partial(f))return BuildG5Partial(f,r);
         int dividend=r.Next(20,10000),divisor=r.Next(2,10);
         string prompt=f==Quotient
           ?$"مثّل {dividend} ÷ {divisor} بمكعبات العشرات والآحاد ثم اكتب ناتج القسمة الصحيح دون الباقي."
@@ -42,10 +47,55 @@ internal static class UaeGrade4Unit6Lesson03BaseTenDivisionQuestions
         result=f==G5Quotient?n/d:n%d;
         return true;
     }
+
+    // G5 partial quotients share this existing numerical division engine.
+    // Persistence contains source parameters only, never a solved answer.
+    private static Item BuildG5Partial(string f, Random r)
+    {
+        int divisor, quotient, dividend;
+        do
+        {
+            divisor=r.Next(2,8);
+            quotient=r.Next(100,450);
+            dividend=divisor*quotient;
+        }
+        while(dividend>999 || (quotient/10)%10==0);
+        int hundreds=(quotient/100)*100;
+        int tens=((quotient/10)%10)*10;
+        int ones=quotient%10;
+        int a=divisor*hundreds,b=divisor*tens,c=divisor*ones;
+        string prompt=f switch
+        {
+            G5Distributed=>$"باستخدام خاصية التوزيع احسب ({a} + {b} + {c}) ÷ {divisor}، واكتب الحاصل.",
+            G5PartialSum=>$"اقسم {dividend} على {divisor} بنواتج القسمة الجزئية: اطرح {a} ثم {b} ثم {c}. ما مجموع الحواصل الجزئية؟",
+            _=>$"في قسمة {dividend} على {divisor} اخترنا الأجزاء {a} و{b} و{c}. ما ناتج القسمة الجزئي للجزء {b}؟"
+        };
+        return new Item(f,prompt,
+            "اقسم كل جزء متوافق على المقسوم عليه نفسه، واجمع نواتج القسمة الجزئية وتحقق بالضرب.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"dividend",dividend},{"divisor",divisor}});
+    }
+    private static bool ValidG5Partial(string f,IReadOnlyDictionary<string,int> p,out int result)
+    {
+        result=0;
+        if(!IsG5Partial(f)||p.Count!=2||
+           !p.TryGetValue("dividend",out int n)||!p.TryGetValue("divisor",out int d)||
+           n is <200 or >999||d is <2 or >7||n%d!=0)return false;
+        int quotient=n/d;
+        if(quotient is <100 or >=450 || (quotient/10)%10==0)return false;
+        int hundreds=(quotient/100)*100;
+        int tens=((quotient/10)%10)*10;
+        int ones=quotient%10;
+        if(checked(d*hundreds+d*tens+d*ones)!=n)return false;
+        result=f==G5PartialTens?tens:hundreds+tens+ones;
+        return true;
+    }
+
     private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
         if(IsG5(f))return ValidG5(f,p,out expected);
+        if(IsG5Partial(f))return ValidG5Partial(f,p,out expected);
         if(!Supports(f)||p.Count!=2||!p.TryGetValue("dividend",out int n)||
            !p.TryGetValue("divisor",out int d)||n is <20 or >9999||d is <2 or >9)return false;
         expected=f==Quotient?n/d:n%d;
