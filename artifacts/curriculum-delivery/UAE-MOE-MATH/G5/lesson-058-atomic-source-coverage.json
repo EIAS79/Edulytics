@@ -3,7 +3,7 @@
   "Unit": 6,
   "LessonOrdinal": 58,
   "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:06",
-  "Status": "A_C_EXPLICIT_GAP",
+  "Status": "READY_FOR_STAGE_D",
   "SourceEdition": "Arabic 2025–2026 owner-selected student book",
   "TargetYear": "2026–2027 — exact detailed lesson order NOT_LOCKED",
   "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\02-1.pdf",
@@ -62,7 +62,7 @@
       "Coverage": "ORIGINAL_SYMBOLIC_VISUAL_PLUS_TEACHER_REVIEW_NEEDED"
     }
   ],
-  "EngineDecision": "REUSE_FIRST: existing supporting algebra engine reviewed; current generic English signed-coefficient and simplification families do not cover this objective. Until a lesson-scoped exact model/interpretation family is validated, generic route is explicitly fail-closed; no unverified Practice authorization.",
+  "EngineDecision": "REUSE_AND_EXTEND: UaeGrade4Unit7AlgebraRulesQuestions extended with three Arabic source-scoped structured expression families; rejects misordered subtraction and omitted group parentheses; teacher reviews open drawings.",
   "ExistingGenericFamilyRisk": [
     "supporting.algebra.simplify",
     "supporting.algebra.substitute",
@@ -86,9 +86,16 @@
   },
   "StageA": "CLOSED_LOCAL_SOURCE",
   "StageB": "CLOSED_ARABIC_CONTENT_AND_VISUALS",
-  "StageC": "EXPLICIT_GAP_MODEL_CONTRACT_NOT_VERIFIED",
-  "GenericPracticeRoute": "BLOCKED_FOR_THIS_LESSON",
+  "StageC": "CLOSED_EXACT_MODEL_FAMILIES_STAGED_NOT_RUN",
+  "GenericPracticeRoute": "EXCLUDED_BY_EXACT_LESSON_CODE_REVIEWED_RULE_AND_PROJECTION_GUARD",
   "StageDRun": false,
   "TestsRun": "NOT_RUN",
-  "SourceRightsNote": "Textbook pictures and copyrighted examples not copied; learner-facing explanations and diagrams are original."
+  "SourceRightsNote": "Textbook pictures and copyrighted examples not copied; learner-facing explanations and diagrams are original.",
+  "SkillId": "number.algebra.write_expressions",
+  "QuestionFamilies": [
+    "uae.g5.u06.l06.model_unknown_plus",
+    "uae.g5.u06.l06.model_unknown_minus",
+    "uae.g5.u06.l06.model_repeated_group"
+  ],
+  "LessonPracticeRoutingEvidence": "OfficialLessonPracticeRuleProjection chooses unique reviewed exact-code rule prior to generic title matching, and all three families have lessonPracticeRouting and verificationPolicy metadata; tests WRITTEN_NOT_RUN."
 }
