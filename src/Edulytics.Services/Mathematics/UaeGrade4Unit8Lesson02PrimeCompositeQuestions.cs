@@ -5,8 +5,136 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
 {
     internal const string Classification="uae.g4.u08.l02.prime_composite_classification";
     internal const string FactorCount="uae.g4.u08.l02.positive_factor_count";
+    // UAE Grade 5 Common: exact complete prime factorization / tree continuation
+    // extends the existing G4 prime/composite engine without changing G4 scope.
+    internal const string G5Factorize="uae.g5.u02.l01.prime_factorize";
+    internal const string G5FactorCount="uae.g5.u02.l01.prime_factor_count";
+    internal const string G5MissingPrime="uae.g5.u02.l01.complete_factor_tree";
+    private static bool IsG5(string? family)=>
+        family is G5Factorize or G5FactorCount or G5MissingPrime;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Classification or FactorCount;
+    internal static bool Supports(string? family)=>family is Classification or FactorCount || IsG5(family);
+
+    private static bool IsPrime(int n)
+    {
+        if(n<2)return false;
+        for(int divisor=2;divisor*divisor<=n;divisor++)
+            if(n%divisor==0)return false;
+        return true;
+    }
+
+    private static int[] Factorize(int n)
+    {
+        var factors=new List<int>();
+        for(int divisor=2;divisor<=n/divisor;divisor++)
+        {
+            while(n%divisor==0)
+            {
+                factors.Add(divisor);
+                n/=divisor;
+            }
+        }
+        if(n>1)factors.Add(n);
+        return factors.ToArray();
+    }
+
+    private static Item BuildG5(string family,Random random)
+    {
+        if(family==G5MissingPrime)
+        {
+            int[] primes=[2,3,5,7];
+            int a=primes[random.Next(primes.Length)];
+            int b=primes[random.Next(primes.Length)];
+            int c=primes[random.Next(primes.Length)];
+            int missing=primes[random.Next(primes.Length)];
+            int n=a*b*c*missing;
+            var parameters=new Dictionary<string,int>
+            {
+                ["n"]=n,["a"]=a,["b"]=b,["c"]=c
+            };
+            return new Item(family,
+                $"أكمل شجرة العوامل الأولية للعدد {n}: {a} × {b} × □ × {c}. ما العامل الأولي المفقود؟",
+                "احسب حاصل ضرب العوامل المعلومة، اقسم العدد عليه، ثم تحقق أن الناتج عدد أولي.",
+                AssessmentItemType.Numeric,parameters);
+        }
+
+        int value=random.Next(12,2801);
+        while(IsPrime(value))value=random.Next(12,2801);
+        string prompt=family==G5Factorize
+            ? $"حلل العدد {value} إلى عوامل أولية، واكتب العوامل مفصولة بعلامة ×."
+            : $"عند تحليل العدد {value} إلى عوامله الأولية، كم عدد العوامل مع حساب التكرار؟";
+        return new Item(family,prompt,
+            "اقسم على أصغر عدد أولي ممكن حتى يصبح الناتج ١، ثم تحقق بضرب العوامل جميعًا.",
+            family==G5Factorize?AssessmentItemType.ShortAnswer:AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"n",value}});
+    }
+
+    private static bool ValidG5Numeric(string family,
+        IReadOnlyDictionary<string,int> p,out int answer)
+    {
+        answer=0;
+        if(!IsG5(family)||!p.TryGetValue("n",out int n)||
+           n<4||n>2800||IsPrime(n))return false;
+        if(family==G5FactorCount)
+        {
+            if(p.Count!=1)return false;
+            answer=Factorize(n).Length;
+            return true;
+        }
+        if(family==G5MissingPrime)
+        {
+            if(p.Count!=4||!p.TryGetValue("a",out int a)||
+               !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+               !IsPrime(a)||!IsPrime(b)||!IsPrime(c)||
+               a is >7 or <2||b is >7 or <2||c is >7 or <2||
+               n%(a*b*c)!=0)return false;
+            int missing=n/(a*b*c);
+            if(!IsPrime(missing)||missing>7)return false;
+            answer=missing;
+            return true;
+        }
+        return false;
+    }
+
+    private static string FactorizationString(IReadOnlyDictionary<string,int> p)
+    {
+        if(p.Count!=1||!p.TryGetValue("n",out int n)||
+           n<4||n>2800||IsPrime(n))
+            throw new InvalidOperationException("Invalid full-factorization question.");
+        return string.Join("×",Factorize(n));
+    }
+
+    private static bool VerifyFullFactorization(
+        IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(p.Count!=1||!p.TryGetValue("n",out int n)||
+           n<4||n>2800||IsPrime(n)||string.IsNullOrWhiteSpace(answer))
+            return false;
+        string normalized=new(answer.Trim()
+            .Select(ch=>ch switch
+            {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                'x' or 'X' or '×' or '·'=>'*',
+                _=>ch
+            })
+            .Where(ch=>ch!=' '&&ch!='\u00A0'&&ch!='\u202F')
+            .ToArray());
+        string[] parts=normalized.Split('*');
+        if(parts.Length<2||parts.Length>12)return false;
+        long product=1;
+        foreach(string token in parts)
+        {
+            if(!int.TryParse(token,NumberStyles.None,
+                CultureInfo.InvariantCulture,out int factor)||
+               !IsPrime(factor)||factor>2800)
+                return false;
+            product*=factor;
+            if(product>n)return false;
+        }
+        return product==n;
+    }
+
     private static int Count(int n)
     {
         if(n<1)return 0;
@@ -23,6 +151,7 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported number theory family.");
+        if(IsG5(family)) return BuildG5(family,random);
         int n=family==Classification?random.Next(0,96):random.Next(2,96);
         if(family==Classification&&random.Next(0,8)==0)n=random.Next(0,2);
         string prompt=family==Classification?
@@ -36,6 +165,7 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p,out int answer)
     {
         answer=0;
+        if(IsG5(family)) return ValidG5Numeric(family,p,out answer);
         if(!Supports(family)||p.Count!=1||!p.TryGetValue("n",out int n)||n is <0 or >120||
            (family==FactorCount&&n<2))return false;
         answer=family==Classification?Category(n):Count(n);
@@ -43,11 +173,13 @@ internal static class UaeGrade4Unit8Lesson02PrimeCompositeQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==G5Factorize) return FactorizationString(p);
         if(!Valid(family,p,out int a))throw new InvalidOperationException("Invalid prime problem.");
         return a.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family==G5Factorize) return VerifyFullFactorization(p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(c=>c switch
         {

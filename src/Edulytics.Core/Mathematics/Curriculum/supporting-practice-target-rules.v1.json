@@ -13860,6 +13860,27 @@
         "commonMistake": "لا تجمع إجماليًا مع الأجزاء المعطاة أو تهمل أثر المشتريات.",
         "summary": "الفهم، التخطيط، الحل، التحقق."
       }
+    },
+    {
+      "id": "uae-g5-u02-l01-prime-factorization-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:01$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "PRIME_FACTORIZATION_TREE",
+      "families": [
+        "uae.g5.u02.l01.prime_factorize",
+        "uae.g5.u02.l01.prime_factor_count",
+        "uae.g5.u02.l01.complete_factor_tree"
+      ],
+      "content": {
+        "concept": "حلل العدد إلى عوامله الأولية مع التكرار حتى تنتهي كل الفروع بأعداد أولية.",
+        "workedExample": "٣٦ = ٢×٢×٣×٣.",
+        "solution": "قسم على أصغر عدد أولي وأعد العملية ثم تحقق بالضرب.",
+        "commonMistake": "لا تتوقف عند عامل مركب مثل ٦ أو ٩.",
+        "summary": "العوامل الأولية جميعها أولية ويعيد حاصل ضربها العدد."
+      }
     }
   ]
 }

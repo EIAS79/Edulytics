@@ -1,0 +1,96 @@
+{
+  "Grade": 5,
+  "Unit": 2,
+  "LessonOrdinal": 10,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:01",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "SourcePrintedPages": [
+    81,
+    82,
+    83,
+    84,
+    85,
+    86
+  ],
+  "SourceEdition": "Owner-selected local Arabic 2025–2026",
+  "Official2026_2027SourceOrder": "UNKNOWN",
+  "SourceElements": [
+    {
+      "Type": "prime-composite-concept",
+      "Pages": [
+        81
+      ],
+      "Artifact": "original-Arabic"
+    },
+    {
+      "Type": "factor-tree-model-36",
+      "Pages": [
+        81,
+        82
+      ],
+      "Artifact": "original-CalculationChain"
+    },
+    {
+      "Type": "homework-42-50-81",
+      "Pages": [
+        83,
+        85
+      ],
+      "Artifact": "first-party-analogous-exercises"
+    },
+    {
+      "Type": "prime-factor-of-2800",
+      "Pages": [
+        84
+      ],
+      "Artifact": "rich-worked-example"
+    },
+    {
+      "Type": "missing-factor-and-error-analysis",
+      "Pages": [
+        83,
+        86
+      ],
+      "Artifact": "G5-exact-families-and-teacher-review"
+    }
+  ],
+  "SkillContract": {
+    "ReusedEngine": "UaeGrade4Unit8Lesson02PrimeCompositeQuestions",
+    "SkillId": "supporting.number.factors_primes",
+    "Families": [
+      "uae.g5.u02.l01.prime_factorize",
+      "uae.g5.u02.l01.prime_factor_count",
+      "uae.g5.u02.l01.complete_factor_tree"
+    ],
+    "AnswerTypes": [
+      "contract_defined product of prime factors",
+      "exact_integer factor count",
+      "exact_integer missing factor"
+    ],
+    "Grader": "Existing exact-engine route extended for Grade5",
+    "IndependentVerifier": "Prime-factor product and prime-only test; numeric answer recomputed by exact parameters",
+    "TestsWritten": "UaeGrade5Unit2Lesson01PrimeFactorTests",
+    "TestsRun": "NOT_RUN"
+  },
+  "CoolDown": {
+    "Source": "EDULYTICS_ORIGINAL",
+    "Question": "حلل العدد ٩٠ إلى عوامل أولية، ثم بيّن لماذا لا يصح التوقف عند ٩ × ١٠.",
+    "Answer": "٢ × ٣ × ٣ × ٥",
+    "Rubric": "all factors prime, product matches 90, errors about composite terminal factors explained"
+  },
+  "StageA": "CLOSED_SOURCE_COMPARISON",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXACT_PRIME_FACTORIZATION_ENGINE_EXTENSION_STAGED",
+  "StageDRun": false,
+  "TestsRun": "NOT_RUN"
+}
