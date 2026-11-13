@@ -24,7 +24,51 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
         or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
         or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator
-        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal || IsG5Model(family);
+        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal || IsG5Model(family) || family==G5ReducibleDecimal;
+
+
+    // Grade5 U07 L08: fraction with an initially non-decimal denominator
+    // can still give a terminating decimal after reducing (9/12=3/4=0.75).
+    internal const string G5ReducibleDecimal="uae.g5.u07.l08.reducible_fraction_to_decimal";
+    private static Item BuildG5ReducibleDecimal(Random random)
+    {
+        (int n,int d)[] pairs=[(9,12),(3,6),(12,15),(18,24),
+            (16,40),(14,20),(15,75),(36,45)];
+        var choice=pairs[random.Next(pairs.Length)];
+        return new Item(G5ReducibleDecimal,
+            $"بسّط الكسر {choice.n}/{choice.d} إذا لزم ثم اكتبه في صورة عدد عشري منتهٍ.",
+            "أوجد كسرًا مكافئًا مقامه ١٠ أو ١٠٠، أو اقسم البسط على المقام بعد الاختصار.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"n",choice.n},{"d",choice.d}});
+    }
+    private static bool ValidG5ReducibleDecimal(IReadOnlyDictionary<string,int> p,
+        out int hundredths)
+    {
+        hundredths=0;
+        if(p.Count!=2||!p.TryGetValue("n",out int n)||
+           !p.TryGetValue("d",out int d)||d is <2 or >100||n<1||n>=d||
+           (n*100)%d!=0)return false;
+        hundredths=n*100/d;
+        return true;
+    }
+    private static string SolveG5ReducibleDecimal(IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5ReducibleDecimal(p,out int hundredths))
+            throw new InvalidOperationException("Invalid terminating fraction parameters");
+        return (hundredths/100m).ToString("0.00",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5ReducibleDecimal(IReadOnlyDictionary<string,int> p,string? response)
+    {
+        if(!ValidG5ReducibleDecimal(p,out int hundredths)||
+           string.IsNullOrWhiteSpace(response)||response.Length>32)return false;
+        string normalized=new(response.Trim().Select(ch=>ch switch {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',_=>ch
+        }).Where(ch=>ch is not ' ' and not '\u00a0').ToArray());
+        return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal given)&&given*100m==hundredths;
+    }
 
     // G5 U07 L07 extends the existing decimal PlaceValue engine with
     // equivalent ten-part and hundred-part fraction models; no new engine.
@@ -88,6 +132,7 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
+        if(family==G5ReducibleDecimal)return BuildG5ReducibleDecimal(random);
         if(IsG5Model(family))return BuildG5Model(family,random);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return BuildGrade5Thousandths(family,random);
@@ -148,6 +193,7 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==G5ReducibleDecimal)return SolveG5ReducibleDecimal(p);
         if(IsG5Model(family))return SolveG5Model(family,p);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return SolveGrade5Thousandths(family,p);
@@ -161,6 +207,7 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family==G5ReducibleDecimal)return VerifyG5ReducibleDecimal(p,answer);
         if(IsG5Model(family))return VerifyG5Model(family,p,answer);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return VerifyGrade5Thousandths(family,p,answer);

@@ -45777,6 +45777,24 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u07.l08.reducible_fraction_to_decimal",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "grade5-local-fractions-to-decimals-reducible-cases-tests-not-run",
+      "representations": [
+        "fraction_bars",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
