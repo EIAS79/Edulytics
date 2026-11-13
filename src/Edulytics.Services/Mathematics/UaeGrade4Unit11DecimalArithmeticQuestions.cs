@@ -9,6 +9,8 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private const string WholeProduct="uae.g5.u05.l03.decimal_times_whole",UnitCost="uae.g5.u05.l03.unit_price_total",PointPlacement="uae.g5.u05.l03.decimal_point_placement";
  private const string AreaProduct="uae.g5.u05.l04.area_tenths_product",AreaCells="uae.g5.u05.l04.area_shaded_hundredths",AreaExtended="uae.g5.u05.l04.area_extended_product";
  private const string DecimalFactor="uae.g5.u05.l05.multiply_decimal_factors",DecimalRate="uae.g5.u05.l05.apply_decimal_price_rate",DecimalPoint="uae.g5.u05.l05.restore_decimal_point";
+ private const string DecimalPow="uae.g5.u05.l06.decimal_times_power_ten",DecimalShift="uae.g5.u05.l06.decimal_shift_positions",DecimalPricePow="uae.g5.u05.l06.price_times_power_ten";
+ private static bool IsG5Pow(string? f)=>f is DecimalPow or DecimalShift or DecimalPricePow;
  private static bool IsG5Factor(string? f)=>f is DecimalFactor or DecimalRate or DecimalPoint;
  private static bool IsG5Area(string? f)=>f is AreaProduct or AreaCells or AreaExtended;
  private static bool IsG5Whole(string? f)=>f is WholeProduct or UnitCost or PointPlacement;
@@ -22,12 +24,13 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
   "uae.g4.u11.l09.model_difference","uae.g4.u11.l09.fractional_hundredths",
   "uae.g4.u11.l10.column_difference","uae.g4.u11.l10.check_addition"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f)||IsG5Area(f)||IsG5Factor(f));
+ internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f)||IsG5Area(f)||IsG5Factor(f)||IsG5Pow(f));
  private static bool IsSubtract(string f)=>f.Contains(".l08.")||f.Contains(".l09.")||f.Contains(".l10.");
  private static bool IsProperty(string f)=>f.Contains(".l07.");
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported grade 4 decimal arithmetic");
+   if(IsG5Pow(f))return BuildG5Pow(f,random);
    if(IsG5Factor(f))return BuildG5Factor(f,random);
    if(IsG5Area(f))return BuildG5Area(f,random);
    if(IsG5Whole(f))return BuildG5Whole(f,random);
@@ -55,6 +58,49 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
 
 
 
+
+
+ // Decimal 10^k reuses existing decimal engine with thousandth precision.
+ private static int G5TenPower(int exponent)=>exponent switch{1=>10,2=>100,3=>1000,
+   _=>throw new InvalidOperationException("Unsupported power of ten")};
+ private static Item BuildG5Pow(string f,Random rng)
+ {
+   int value=rng.Next(1,f==DecimalPricePow?10000:99001),pow=rng.Next(1,4);
+   string x=(value/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+   int baseTen=G5TenPower(pow);
+   string prompt=f switch
+   {
+     DecimalShift=>$"عند ضرب {x} في ١٠ أس {pow}، كم منزلة تنتقل الفاصلة العشرية إلى اليمين؟",
+     DecimalPricePow=>$"ثمن الوحدة {x} درهمًا. ما تكلفة {baseTen} وحدة متساوية؟",
+     _=>$"أوجد {x} × ١٠ أس {pow} دون تقريب."
+   };
+   return new Item(f,prompt,"كل ضربة بعشرة تنقل الفاصلة منزلة واحدة يمينًا.",
+      AssessmentItemType.Numeric,new Dictionary<string,int>{{"thousandths",value},{"pow",pow}});
+ }
+ private static bool ValidG5Pow(string f,IReadOnlyDictionary<string,int> p,out decimal expected)
+ {
+   expected=0m;
+   if(!IsG5Pow(f)||p.Count!=2||!p.TryGetValue("thousandths",out int v)||
+      !p.TryGetValue("pow",out int pow)||v is <1 or >99000||pow is <1 or >3||
+      (f==DecimalPricePow&&v>9999))return false;
+   expected=f==DecimalShift?pow:(decimal)v*G5TenPower(pow)/1000m;
+   return true;
+ }
+ private static bool VerifyG5Pow(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+   if(!ValidG5Pow(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+   string s=new(answer.Trim().Select(ch=>ch switch
+   {
+      >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+      >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+      '٫'=>'.',_=>ch
+   }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0').ToArray());
+   if(s.Length>24||!s.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+   if(!decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,
+      out decimal v))return false;
+   return f==DecimalShift?v==p["pow"]:
+      v*1000m==(decimal)p["thousandths"]*G5TenPower(p["pow"]);
+ }
 
  // Decimal multiplication reuses shared decimal engine. Persist hundredths
  // only, and reconstruct product without loss of up to four decimal places.
@@ -214,6 +260,7 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if(IsG5Pow(f))return ValidG5Pow(f,p,out result);
    if(IsG5Factor(f))return ValidG5Factor(f,p,out result);
    if(IsG5Area(f))return ValidG5Area(f,p,out result);
    if(IsG5Whole(f))return ValidG5Whole(f,p,out result);
@@ -241,6 +288,7 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Pow(f))return VerifyG5Pow(f,p,answer);
    if(IsG5Factor(f))return VerifyG5Factor(f,p,answer);
    if(IsG5Area(f))return VerifyG5Area(f,p,answer);
    if(IsG5Whole(f))return VerifyG5Whole(f,p,answer);
