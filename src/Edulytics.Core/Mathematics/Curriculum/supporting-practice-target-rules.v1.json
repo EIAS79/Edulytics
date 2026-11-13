@@ -14822,6 +14822,27 @@
         "commonMistake": "لا أستبدل (١٠+٦)÷٤ بالتعبير ١٠+٦÷٤.",
         "summary": "أكتب تعبيرًا عدديًا يراعي الترتيب والمعنى."
       }
+    },
+    {
+      "id": "uae-g5-u06-l04-work-backward-reuse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:04$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "FOUR_STEP_MULTISTEP_INVERSE",
+      "families": [
+        "uae.g5.u01.l09.undo_four_steps",
+        "uae.g5.u01.l09.find_starting_total",
+        "uae.g5.u01.l09.find_missing_distance"
+      ],
+      "content": {
+        "concept": "أستخدم العمليات العكسية بدءًا من نتيجة المسألة حتى أستعيد العدد المجهول.",
+        "workedExample": "(x÷٣)+٦−٤=١٣، إذن x=(١٣+٤−٦)×٣=٣٣.",
+        "solution": "اعكس ترتيب العمليات، ثم تحقق بإعادتها إلى الأمام.",
+        "commonMistake": "تغيير العملية دون عكس ترتيبها يؤدي إلى جواب غير صحيح.",
+        "summary": "أبدأ بالنهاية، أرجع بالعمليات، وأتحقق من البداية."
+      }
     }
   ]
 }
