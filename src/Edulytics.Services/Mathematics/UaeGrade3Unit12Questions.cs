@@ -15,6 +15,11 @@ internal static class UaeGrade3Unit12Questions
  internal const string G5MeanFive="uae.g5.u11.l08.arithmetic_mean_five";
  internal const string G5MeanMissing="uae.g5.u11.l08.missing_value_given_mean";
  internal const string G5MeanHalf="uae.g5.u11.l08.mean_half_decimal";
+ internal const string G5MedianOdd="uae.g5.u11.l09.median_odd_five";
+ internal const string G5MedianEven="uae.g5.u11.l09.median_even_four";
+ internal const string G5ModeSingle="uae.g5.u11.l09.single_mode";
+ internal const string G5ModeTwo="uae.g5.u11.l09.two_modes_count";
+ internal const string G5ModeNone="uae.g5.u11.l09.no_mode_count";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
@@ -24,10 +29,12 @@ internal static class UaeGrade3Unit12Questions
  private static bool IsG5Tally(string? f)=>f is G5TallyFrequency or G5TallyTotal or G5TallyRange;
  private static bool IsG5Share(string? f)=>f is G5ShareTwo or G5ShareThree or G5ShareMissing;
  private static bool IsG5Mean(string? f)=>f is G5MeanFive or G5MeanMissing or G5MeanHalf;
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f);
+ private static bool IsG5MedianMode(string? f)=>f is G5MedianOdd or G5MedianEven or G5ModeSingle or G5ModeTwo or G5ModeNone;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f) || IsG5Mean(f) || IsG5MedianMode(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5MedianMode(f))return BuildG5MedianMode(f,rng);
   if(IsG5Mean(f))return BuildG5Mean(f,rng);
   if(IsG5Share(f))return BuildG5Share(f,rng);
   if(IsG5Tally(f))return BuildG5Tally(f,rng);
@@ -95,6 +102,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5MedianMode(f))return SolveG5MedianMode(f,p);
   if(IsG5Mean(f))return SolveG5Mean(f,p);
   if(IsG5Share(f))return SolveG5Share(f,p);
   if(IsG5Tally(f))return SolveG5Tally(f,p);
@@ -103,6 +111,7 @@ internal static class UaeGrade3Unit12Questions
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5MedianMode(f))return VerifyG5MedianMode(f,p,answer);
   if(IsG5Mean(f))return VerifyG5Mean(f,p,answer);
   if(IsG5Share(f))return VerifyG5Share(f,p,answer);
   if(IsG5Tally(f))return VerifyG5Tally(f,p,answer);
@@ -336,6 +345,113 @@ internal static class UaeGrade3Unit12Questions
    _=>(a+b+c+d)/4m
   };
   return submitted==independentlyCalculated;
+ }
+
+
+ // Grade 5 Unit 11 lesson 9: source-bound median and mode in the existing
+ // statistics engine. Every answer is derived from the supplied data, never
+ // a client-submitted expected result. Free-form justifications remain teacher-reviewed.
+ private static Item BuildG5MedianMode(string family,Random rng)
+ {
+  int n=rng.Next(9,40);
+  var p=new Dictionary<string,int>();
+  int[] values;
+  if(family==G5MedianOdd)
+  {
+   values=new[]{n-5,n-1,n,n+4,n+8};
+   p.Add("a",values[0]);p.Add("b",values[1]);p.Add("c",values[2]);
+   p.Add("d",values[3]);p.Add("e",values[4]);
+  }
+  else if(family==G5MedianEven)
+  {
+   values=new[]{n-4,n,n+1,n+7};
+   p.Add("a",values[0]);p.Add("b",values[1]);p.Add("c",values[2]);p.Add("d",values[3]);
+  }
+  else if(family==G5ModeSingle)
+  {
+   values=new[]{n,n,n,n+2,n+4,n+6};
+   p.Add("a",n);p.Add("b",n+2);p.Add("c",n+4);p.Add("d",n+6);
+  }
+  else if(family==G5ModeTwo)
+  {
+   values=new[]{n,n,n+2,n+2,n+4,n+6};
+   p.Add("a",n);p.Add("b",n+2);p.Add("c",n+4);p.Add("d",n+6);
+  }
+  else if(family==G5ModeNone)
+  {
+   values=new[]{n,n+2,n+4,n+6,n+8};
+   p.Add("a",values[0]);p.Add("b",values[1]);p.Add("c",values[2]);
+   p.Add("d",values[3]);p.Add("e",values[4]);
+  }
+  else throw new InvalidOperationException("Unsupported Grade5 median-mode family");
+  var scrambled=values.OrderBy(_=>rng.Next()).ToArray();
+  string prompt=$"البيانات: {string.Join("، ",scrambled)}. ";
+  prompt+=family switch
+  {
+   G5MedianOdd or G5MedianEven=>"ما الوسيط؟ رتب البيانات أولًا، ثم اكتب الناتج بدقة.",
+   G5ModeSingle=>"ما قيمة المنوال؟",
+   _=>"كم عدد المنوالات المتميزة في هذه المجموعة؟ إذا لم يوجد منوال فاكتب ٠."
+  };
+  return new Item(family,prompt,
+   "لإيجاد الوسيط أرتب القيم وأختار الأوسط أو متوسط الأوسطين. ولإيجاد المنوال أحصي تكرار كل قيمة وأقارن التكرارات؛ لا يوجد منوال عند تساوي جميع التكرارات.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5MedianMode(string f,IReadOnlyDictionary<string,int> p,out decimal result)
+ {
+  result=0;
+  if(!IsG5MedianMode(f)||p.Count!=(f is G5MedianOdd or G5ModeNone?5:4)||
+     !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+     !p.TryGetValue("c",out int c)||!p.TryGetValue("d",out int d))return false;
+  int e=0;
+  if((f is G5MedianOdd or G5ModeNone) && !p.TryGetValue("e",out e))return false;
+  int[] data=f switch
+  {
+   G5MedianOdd or G5ModeNone=>new[]{a,b,c,d,e},
+   G5MedianEven=>new[]{a,b,c,d},
+   G5ModeSingle=>new[]{a,a,a,b,c,d},
+   G5ModeTwo=>new[]{a,a,b,b,c,d},
+   _=>throw new InvalidOperationException("Unexpected family")
+  };
+  if(data.Any(x=>x is <0 or >100))return false;
+  if((f is G5ModeSingle or G5ModeTwo) && new[]{a,b,c,d}.Distinct().Count()!=4)return false;
+  if(f==G5ModeNone && data.Distinct().Count()!=data.Length)return false;
+  int[] sorted=data.OrderBy(x=>x).ToArray();
+  if(f==G5MedianOdd)result=sorted[2];
+  else if(f==G5MedianEven)result=(sorted[1]+sorted[2])/2m;
+  else if(f==G5ModeSingle)result=a;
+  else if(f==G5ModeTwo)result=data.GroupBy(x=>x).Count(g=>g.Count()==2);
+  else result=0;
+  return true;
+ }
+ private static string SolveG5MedianMode(string family,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5MedianMode(family,p,out decimal expected))
+   throw new InvalidOperationException("Invalid Grade5 median/mode dataset");
+  return expected.ToString("0.##",CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5MedianMode(string family,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5MedianMode(family,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string normalized=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   '٫'=>'.',
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,out decimal got))return false;
+  int a=p["a"],b=p["b"],c=p["c"],d=p["d"];
+  decimal independent=family switch
+  {
+   G5MedianOdd=>new[]{a,b,c,d,p["e"]}.OrderBy(x=>x).ElementAt(2),
+   G5MedianEven=>(new[]{a,b,c,d}.OrderBy(x=>x).ElementAt(1)+
+                 new[]{a,b,c,d}.OrderBy(x=>x).ElementAt(2))/2m,
+   G5ModeSingle=>a,
+   G5ModeTwo=>new[]{a,a,b,b,c,d}.GroupBy(x=>x).Count(g=>g.Count()==2),
+   G5ModeNone=>0,
+   _=>throw new InvalidOperationException("Unknown Grade5 median/mode family")
+  };
+  return got==independent;
  }
 
 }

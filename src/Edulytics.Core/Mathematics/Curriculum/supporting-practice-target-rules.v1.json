@@ -15965,6 +15965,29 @@
         "commonMistake": "القسمة على قيمة البيانات بدل عددها أو تقريب المتوسط قبل حل المسألة.",
         "summary": "يمكن التحقق بإعادة ضرب المتوسط في عدد القيم ومقارنته بمجموعها."
       }
+    },
+    {
+      "id": "uae-g5-u11-l09-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:09$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "MEDIAN_MODE_ODD_EVEN_TIES_NO_MODE",
+      "families": [
+        "uae.g5.u11.l09.median_odd_five",
+        "uae.g5.u11.l09.median_even_four",
+        "uae.g5.u11.l09.single_mode",
+        "uae.g5.u11.l09.two_modes_count",
+        "uae.g5.u11.l09.no_mode_count"
+      ],
+      "content": {
+        "concept": "الوسيط القيمة الوسطى بعد الترتيب، وللعدد الزوجي متوسط القيمتين الأوسطين؛ والمنوال أكثر قيمة تكرارًا، وقد يتعدد أو لا يوجد.",
+        "workedExample": "البيانات ٣، ٥، ٥، ٧، ٩، ١١: الوسيط (٥+٧)÷٢=٦، والمنوال ٥.",
+        "solution": "رتب القيم لتعيين الوسيط، ثم أنشئ قائمة تكرارات لتحديد المنوال أو المنوالات.",
+        "commonMistake": "اختيار وسيط قبل الترتيب أو أكبر قيمة بدل الأكثر تكرارًا، أو افتراض منوال واحد دائمًا.",
+        "summary": "أتحقق من عدد القيم وتكرار كل عنصر؛ وقد لا يتطابق الوسيط والمنوال."
+      }
     }
   ]
 }

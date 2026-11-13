@@ -1,0 +1,103 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 112,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:09",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+  ],
+  "SourcePrintedPages": [
+    841,
+    842,
+    843,
+    844,
+    845,
+    846
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "ترتيب البيانات وتحديد الوسيط عند عدد فردي أو زوجي من القيم",
+    "حساب متوسط القيمتين الأوسطين دون تقريب غير مطلوب",
+    "إيجاد المنوال من التكرارات والتعرف على المنوالين أو عدم وجود منوال",
+    "المقارنة بين المتوسط الحسابي والوسيط والمنوال وشرح الاختيار"
+  ],
+  "SourceElements": [
+    {
+      "Category": "median definition, single/even central observations and contextual table",
+      "Pages": [
+        841
+      ],
+      "Coverage": "Arabic original lesson concepts and odd/even models"
+    },
+    {
+      "Category": "mode definition, ties and no unique mode, guided problems",
+      "Pages": [
+        842
+      ],
+      "Coverage": "Arabic explanations and independent practice families"
+    },
+    {
+      "Category": "individual exercises with integer and decimal datasets",
+      "Pages": [
+        843
+      ],
+      "Coverage": "original worked cases and independent numerical practice"
+    },
+    {
+      "Category": "problem solving and mathematical reasoning tasks",
+      "Pages": [
+        844
+      ],
+      "Coverage": "teacher review reserved for explanations and argumentation"
+    },
+    {
+      "Category": "homework scaffold and median/mode reminder",
+      "Pages": [
+        845
+      ],
+      "Coverage": "original cooldown and revision"
+    },
+    {
+      "Category": "assessment including mean/median/mode comparison",
+      "Pages": [
+        846
+      ],
+      "Coverage": "distinctions among center measures"
+    }
+  ],
+  "Engine": "REUSE existing UaeGrade3Unit12Questions statistics engine, extend for 5 exact Grade5 median/mode families; free-response reasoning stays teacher-reviewed",
+  "SkillId": "statistics.center_spread.core",
+  "QuestionFamilies": [
+    "uae.g5.u11.l09.median_odd_five",
+    "uae.g5.u11.l09.median_even_four",
+    "uae.g5.u11.l09.single_mode",
+    "uae.g5.u11.l09.two_modes_count",
+    "uae.g5.u11.l09.no_mode_count"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "البيانات ٣، ٥، ٥، ٧، ٩، ١١. أوجد الوسيط والمنوال وبرر الخطوتين.",
+    "Answer": "الوسيط ٦، المنوال ٥.",
+    "TeacherRubric": "ترتيب ٦ قيم؛ الوسطان ٥ و٧، المتوسط ٦؛ العدد ٥ مكرر مرتين، سواه مرة."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_MEDIAN_ODD_EVEN_SINGLE_MULTI_NO_MODE_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit11Lesson09MedianModeTests.cs",
+  "TestsRun": "FOCUSED_5_PASSED_ON_LOCAL_ISOLATED_CLONE; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Written justification of mode/no-mode and median decisions",
+    "Real student data collection and group comparison"
+  ],
+  "SourceRights": "Original Edulytics prose and examples; no protected textbook items copied."
+}
