@@ -45813,6 +45813,24 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u08.l02.add_like_extended_fraction",
+      "version": 1,
+      "skillId": "fractions.add",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_fraction",
+      "verificationPolicy": "g5-like-fractions-denominators-13-28-StageD-NOT_RUN",
+      "representations": [
+        "fraction_bars",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

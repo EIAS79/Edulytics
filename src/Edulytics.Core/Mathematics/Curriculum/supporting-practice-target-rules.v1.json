@@ -15180,6 +15180,28 @@
         "commonMistake": "تقريب كل الكسور الأصغر من واحد إلى الصفر.",
         "summary": "قرب الكسور بمرجع واضح."
       }
+    },
+    {
+      "id": "uae-g5-u08-l02-add-like-fractions",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:02$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "ADD_LIKE_FRACTIONS",
+      "families": [
+        "uae.g4.u09.l02.sum_numerator",
+        "uae.g4.u09.l02.simplified_sum_numerator",
+        "uae.g4.u09.l02.simplified_sum_denominator",
+        "uae.g5.u08.l02.add_like_extended_fraction"
+      ],
+      "content": {
+        "concept": "أجمع البسطين مع الحفاظ على المقام.",
+        "workedExample": "٥/٦+٥/٦=١٠/٦=١ و٢/٣.",
+        "solution": "أجمع البسطين وأبسّط.",
+        "commonMistake": "لا أجمع المقامين.",
+        "summary": "أجمع وأبسط الكسور المتشابهة."
+      }
     }
   ]
 }
