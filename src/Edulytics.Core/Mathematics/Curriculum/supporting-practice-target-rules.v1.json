@@ -16256,6 +16256,28 @@
         "commonMistake": "خلط الوحدات المربعة والمكعبة أو مقارنة منشورين دون توحيد الوحدات.",
         "summary": "أطبق قانون الحجم بطريقتين ومقارنة أحجام واقعية وتقدير نماذج، وتقييم الرسم للمعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l11-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:11$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "COMPOSITE_UNIT_CUBE_LAYER_ADDITION",
+      "families": [
+        "uae.g5.u12.l11.base_layer_cubes",
+        "uae.g5.u12.l11.upper_layers_cubes",
+        "uae.g5.u12.l11.composite_total_cubes",
+        "uae.g5.u12.l11.incorrect_product_correction"
+      ],
+      "content": {
+        "concept": "المجسم المركب من قاعدة وأجزاء إضافية يُحسب حجمه بجمع أحجام أجزاء لا تتداخل.",
+        "workedExample": "قاعدة ٤×٣=١٢ مكعبًا؛ أعلى ٢×٢×٢=٨؛ الإجمالي ٢٠ سم³.",
+        "solution": "احسب مكعبات القاعدة والجزء العلوي مستقلين ثم اجمع.",
+        "commonMistake": "ضرب عدد مكعبات القاعدة في الجزء الأعلى بدل جمعهما.",
+        "summary": "تقييم الرسم والتركيب الحقيقي للمعلم، وحساب المكعبات آلي بدقة."
+      }
     }
   ]
 }

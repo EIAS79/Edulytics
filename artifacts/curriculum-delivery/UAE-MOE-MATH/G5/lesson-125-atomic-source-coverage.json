@@ -1,0 +1,78 @@
+{
+    "Grade":  5,
+    "Unit":  12,
+    "LessonOrdinal":  125,
+    "LessonCode":  "PED:UAE-MOE-MATH:L5:GENERAL:12:11",
+    "Status":  "READY_FOR_STAGE_D",
+    "SourcePdfPath":  "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+    "SourcePdfSha256":  "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+    "SourcePdfPages":  [
+                           237,
+                           238,
+                           239,
+                           240,
+                           241,
+                           242
+                       ],
+    "SourcePrintedPages":  [
+                               941,
+                               942,
+                               943,
+                               944,
+                               945,
+                               946
+                           ],
+    "SourceEdition":  "Owner-selected Arabic Student 2025–2026",
+    "Objectives":  [
+                       "تكوين مجسمات مركبة بمكعبات وحدة",
+                       "تمييز طبقة القاعدة من الطبقات الإضافية",
+                       "تقسيم المركب إلى منشورين غير متداخلين",
+                       "جمع عدد المكعبات وأحجامها وتصحيح خطأ ضرب الأجزاء"
+                   ],
+    "SourceElements":  [
+                           {
+                               "Category":  "first model base and upper cube counts",
+                               "Pages":  [
+                                             941,
+                                             942
+                                         ],
+                               "Coverage":  "original numerical tasks and teacher construction"
+                           },
+                           {
+                               "Category":  "student composite layouts and counts",
+                               "Pages":  [
+                                             943,
+                                             944
+                                         ],
+                               "Coverage":  "exact additive logic and teacher drawing"
+                           },
+                           {
+                               "Category":  "homework 6+4=10 and error 12×10 versus 12+10",
+                               "Pages":  [
+                                             945,
+                                             946
+                                         ],
+                               "Coverage":  "independent practice and misconception correction"
+                           }
+                       ],
+    "Engine":  "REUSE UaeGrade4Unit12GeometryOneQuestions; add four additive composite-unit-cube family routes.",
+    "SkillId":  "geometry.polygons",
+    "QuestionFamilies":  [
+                             "uae.g5.u12.l11.base_layer_cubes",
+                             "uae.g5.u12.l11.upper_layers_cubes",
+                             "uae.g5.u12.l11.composite_total_cubes",
+                             "uae.g5.u12.l11.incorrect_product_correction"
+                         ],
+    "StageA":  "CLOSED_LOCAL_ARABIC_SOURCE",
+    "StageB":  "CLOSED_ORIGINAL_ARABIC_RICHV2",
+    "StageC":  "COMPOSITE_UNIT_CUBE_FAMILIES_FOCUSED_TEST_PASSED",
+    "TestsWritten":  "UaeGrade5Unit12Lesson11CompositeModelsTests.cs",
+    "TestsRun":  "FOCUSED_4_PASSED; L124_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+    "StageDRun":  false,
+    "Official2026_2027Index":  "NOT_VERIFIED",
+    "TeacherReviewRequired":  [
+                                  "Draw original 3D model",
+                                  "Verify no overlapping or missing unit cubes"
+                              ],
+    "SourceRights":  "Original Edulytics text; textbook drawings not copied."
+}

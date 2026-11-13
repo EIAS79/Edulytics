@@ -32,12 +32,17 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string G5VolumeBh="uae.g5.u12.l10.volume_base_area_height";
  internal const string G5PrismHeight="uae.g5.u12.l10.missing_prism_height";
  internal const string G5VolumeCompare="uae.g5.u12.l10.compare_prism_volumes";
+ internal const string G5CompositeBase="uae.g5.u12.l11.base_layer_cubes";
+ internal const string G5CompositeUpper="uae.g5.u12.l11.upper_layers_cubes";
+ internal const string G5CompositeTotal="uae.g5.u12.l11.composite_total_cubes";
+ internal const string G5CompositeError="uae.g5.u12.l11.incorrect_product_correction";
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
   SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
   G5NetType,G5NetFaces,G5NetMatching,G5SolidType,G5SolidFaces,G5SolidEdges,G5SolidVertices,
   G5Layer,G5CubeTotal,G5Volume,G5MissingLayers,
-  G5VolumeLwh,G5VolumeBh,G5PrismHeight,G5VolumeCompare];
+  G5VolumeLwh,G5VolumeBh,G5PrismHeight,G5VolumeCompare,
+  G5CompositeBase,G5CompositeUpper,G5CompositeTotal,G5CompositeError];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -91,6 +96,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
    LayerArea=>$"في طبقة من مكعبات الوحدة طولها {a} مكعبات وعرضها {b} مكعبات. كم مربع وحدة في الطبقة الواحدة؟",
    PrismVolume=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. ما حجمه بالسم المكعب؟",
    G5VolumeLwh=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
+   G5CompositeBase=>$"نموذج من مكعبات حجم كل منها ١ سم³، طبقة القاعدة مستطيل طوله {a+2} مكعبات وعرضه {b+2} مكعبات. كم مكعبًا في القاعدة؟",
+   G5CompositeUpper=>$"فوق قاعدة أكبر وُضعت كتلة إضافية مستقلة أبعادها {a} مكعبات طولًا و{b} عرضًا و{c} طبقات. كم مكعبًا في الجزء العلوي فقط؟",
+   G5CompositeTotal=>$"شكل مركب بلا فجوات: قاعدة ارتفاعها طبقة واحدة أبعادها {a+2}×{b+2} مكعبات، وفوقها جزء أبعاده {a}×{b}×{c} طبقات إضافية. كم مكعب وحدة يلزم؟",
+   G5CompositeError=>$"قاعدة من {(a+2)*(b+2)} مكعب وحدة وجزء علوي إضافي من {a*b*c} مكعبات بلا تداخل. طالب ضرب العددين بدل جمعهما. ما الإجمالي الصحيح لحجم الشكل بالسم³؟",
    G5VolumeBh=>$"مساحة قاعدة منشور مستطيل {a*b} سم² وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
    G5PrismHeight=>$"حجم منشور مستطيل {a*b*c} سم³ ومساحة قاعدته {a*b} سم². احسب ارتفاعه بالسنتيمتر.",
    G5VolumeCompare=>$"صندوق أ أبعاده {a} سم و{b+1} سم و{c} سم، وصندوق ب أبعاده {a+1} سم و{b} سم و{c} سم. أيهما أكبر حجمًا؟ اكتب ٠ إذا تساويا، ١ إذا كان أ أكبر، ٢ إذا كان ب أكبر.",
@@ -113,7 +122,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
-  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare && a<1)return false;
+  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare or G5CompositeBase or G5CompositeUpper or G5CompositeTotal or G5CompositeError && a<1)return false;
   result=f switch
   {
     Rays=>a-1,
@@ -140,6 +149,9 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     G5VolumeLwh or G5VolumeBh=>a*b*c,
     G5PrismHeight=>c,
     G5VolumeCompare=>a==b?0:a>b?1:2,
+    G5CompositeBase=>(a+2)*(b+2),
+    G5CompositeUpper=>a*b*c,
+    G5CompositeTotal or G5CompositeError=>(a+2)*(b+2)+a*b*c,
     LayerArea=>a*b,
     MissingHeight=>c,
     _=>throw new InvalidOperationException("Unsupported family")
