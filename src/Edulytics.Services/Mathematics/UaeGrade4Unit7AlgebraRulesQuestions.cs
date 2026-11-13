@@ -24,11 +24,17 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     internal const string G5WriteSumDivide="uae.g5.u06.l03.write_sum_then_divide";
     internal const string G5WriteGroupSum="uae.g5.u06.l03.write_group_times_sum";
     private static bool IsG5Writing(string? f)=>f is G5WriteMultiplySubtract or G5WriteSumDivide or G5WriteGroupSum;
+    internal const string G5SubBracket="uae.g5.u06.l05.substitute_bracket_add";
+    internal const string G5SubSquare="uae.g5.u06.l05.substitute_squared_subtract";
+    internal const string G5SubDecimal="uae.g5.u06.l05.substitute_decimal_values";
+    private static bool IsG5SubInt(string? f)=>f is G5SubBracket or G5SubSquare;
+    private static bool IsG5SubDecimal(string? f)=>f==G5SubDecimal;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f) || IsG5Writing(f);
+    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f) || IsG5Writing(f) || IsG5SubInt(f) || IsG5SubDecimal(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported algebra rule family");
+        if(IsG5SubInt(f)||IsG5SubDecimal(f))return BuildG5Sub(f,r);
         if(IsG5Writing(f))return BuildG5Writing(f,r);
         if(IsG5Order(f))return BuildG5Order(f,r);
         if(IsG5Bar(f))return BuildG5Bar(f,r);
@@ -218,9 +224,71 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
         return accepted.Contains(normalized,StringComparer.Ordinal);
     }
 
+
+    private static Item BuildG5Sub(string f,Random r)
+    {
+        if(IsG5SubDecimal(f))
+        {
+            int a=r.Next(10,291),b=r.Next(100,1201),c=r.Next(a,1501);
+            var p=new Dictionary<string,int>{{"aHundredths",a},{"bHundredths",b},{"cHundredths",c}};
+            string prompt=$"إذا كان a={a/100m:0.##} وb={b/100m:0.##} وc={c/100m:0.##}، أوجد قيمة (c − a) + b.";
+            return new Item(f,prompt,"أستبدل المتغيرات بقيمها وأجمع وأطرح الأعداد العشرية مع محاذاة الفواصل.",
+                AssessmentItemType.Numeric,p);
+        }
+        int x=r.Next(2,11),y=r.Next(x,20),k=r.Next(2,10);
+        if(f==G5SubSquare)k=r.Next(2,Math.Min(10,x*x+1));
+        string promptInt=f==G5SubBracket
+            ?$"إذا كان a={x} وb={y}، أوجد قيمة (b − a) + {k}."
+            :$"إذا كان a={x}، أوجد قيمة a × a − {k}.";
+        return new Item(f,promptInt,"استبدل الحرف بقيمته العددية، ثم احسب الأقواس أو الضرب قبل الطرح.",
+            AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"a",x},{"b",y},{"c",k}});
+    }
+    private static bool ValidG5SubInt(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsG5SubInt(f)||p.Count!=3||
+           !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+           !p.TryGetValue("c",out int k)||a is <2 or >10||
+           b<a||b>19||k is <2 or >9)return false;
+        if(f==G5SubSquare&&k>=a*a)return false;
+        expected=f==G5SubBracket?b-a+k:a*a-k;
+        return true;
+    }
+    private static bool ValidG5SubDecimal(IReadOnlyDictionary<string,int> p,
+        out int a,out int b,out int c)
+    {
+        a=b=c=0;
+        return p.Count==3&&
+           p.TryGetValue("aHundredths",out a)&&p.TryGetValue("bHundredths",out b)&&
+           p.TryGetValue("cHundredths",out c)&&
+           a is >=10 and <=290&&b is >=100 and <=1200&&c>=a&&c<=1500;
+    }
+    private static string SolveG5SubDecimal(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!IsG5SubDecimal(f)||!ValidG5SubDecimal(p,out int a,out int b,out int c))
+            throw new InvalidOperationException("Invalid decimal substitution parameters");
+        return ((c-a+b)/100m).ToString("0.##",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG5SubDecimal(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!IsG5SubDecimal(f)||!ValidG5SubDecimal(p,out int a,out int b,out int c)||
+           string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+        string s=new(answer.Trim().Select(ch=>ch switch
+        {
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',_=>ch
+        }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0').ToArray());
+        if(!s.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+        return decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,
+            out decimal actual)&&actual*100m==c-a+b;
+    }
+
     private static bool Valid(string? f,IReadOnlyDictionary<string,int> p,out int x)
     {
         x=0;
+        if(IsG5SubInt(f))return ValidG5SubInt(f,p,out x);
         if(IsG5Order(f))return ValidG5Order(f,p,out x);
         if(IsG5Bar(f))return ValidG5Bar(f,p,out x);
         if(!Supports(f)||p.Count!=3||!p.TryGetValue("input",out int n)||
@@ -240,12 +308,14 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5SubDecimal(f))return SolveG5SubDecimal(f,p);
         if(IsG5Writing(f))return SolveG5Writing(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid input-output rule");
         return x.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5SubDecimal(f))return VerifyG5SubDecimal(f,p,answer);
         if(IsG5Writing(f))return VerifyG5Writing(f,p,answer);
         if(!Valid(f,p,out int x)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Where(c=>c!=','&&c!='٬'&&c!=' '&&c!='\u00a0')

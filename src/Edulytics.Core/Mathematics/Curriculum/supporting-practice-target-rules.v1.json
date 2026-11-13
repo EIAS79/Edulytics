@@ -14843,6 +14843,27 @@
         "commonMistake": "تغيير العملية دون عكس ترتيبها يؤدي إلى جواب غير صحيح.",
         "summary": "أبدأ بالنهاية، أرجع بالعمليات، وأتحقق من البداية."
       }
+    },
+    {
+      "id": "uae-g5-u06-l05-substitute-and-evaluate",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:05$"
+      ],
+      "skillId": "number.algebra.evaluate_expressions",
+      "mechanic": "VARIABLE_SUBSTITUTION_INTEGERS_AND_DECIMALS",
+      "families": [
+        "uae.g5.u06.l05.substitute_bracket_add",
+        "uae.g5.u06.l05.substitute_squared_subtract",
+        "uae.g5.u06.l05.substitute_decimal_values"
+      ],
+      "content": {
+        "concept": "أستبدل كل متغير بالقيمة المعطاة ثم أحسب التعبير حسب ترتيب العمليات.",
+        "workedExample": "إذا a=٤ وb=٩ فإن (b−a)+٦ = (٩−٤)+٦=١١.",
+        "solution": "ضع العدد مكان الحرف واحسب الأقواس والضرب ثم الجمع والطرح.",
+        "commonMistake": "لا تعتبر الحرف قيمة ثابتة في كل مسألة ولا تخلط بين ٢a وa+٢.",
+        "summary": "استبدل المتغيرات واحسب التعبير بدقة."
+      }
     }
   ]
 }
