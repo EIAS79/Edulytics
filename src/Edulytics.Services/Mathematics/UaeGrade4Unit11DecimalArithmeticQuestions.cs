@@ -7,6 +7,8 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private const string G5Hundredths="uae.g5.u05.l02.model_shaded_hundredths";
  private const string G5Wholes="uae.g5.u05.l02.model_complete_wholes";
  private const string WholeProduct="uae.g5.u05.l03.decimal_times_whole",UnitCost="uae.g5.u05.l03.unit_price_total",PointPlacement="uae.g5.u05.l03.decimal_point_placement";
+ private const string AreaProduct="uae.g5.u05.l04.area_tenths_product",AreaCells="uae.g5.u05.l04.area_shaded_hundredths",AreaExtended="uae.g5.u05.l04.area_extended_product";
+ private static bool IsG5Area(string? f)=>f is AreaProduct or AreaCells or AreaExtended;
  private static bool IsG5Whole(string? f)=>f is WholeProduct or UnitCost or PointPlacement;
  private static bool IsG5(string? f)=>f is G5Product or G5Hundredths or G5Wholes;
  internal static readonly HashSet<string> Families=[
@@ -18,12 +20,13 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
   "uae.g4.u11.l09.model_difference","uae.g4.u11.l09.fractional_hundredths",
   "uae.g4.u11.l10.column_difference","uae.g4.u11.l10.check_addition"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f));
+ internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f)||IsG5Whole(f)||IsG5Area(f));
  private static bool IsSubtract(string f)=>f.Contains(".l08.")||f.Contains(".l09.")||f.Contains(".l10.");
  private static bool IsProperty(string f)=>f.Contains(".l07.");
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported grade 4 decimal arithmetic");
+   if(IsG5Area(f))return BuildG5Area(f,random);
    if(IsG5Whole(f))return BuildG5Whole(f,random);
    if(IsG5(f))return BuildG5(f,random);
    int a=random.Next(125,1500);
@@ -47,6 +50,49 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
    return new Item(f,question,"مثل العددين في المنازل المتناظرة واحسب بالأجزاء من مئة، ثم أعد تجميع الوحدة عند الحاجة.",AssessmentItemType.Numeric,p);
  }
 
+
+
+ // Area-grid model: preserve up to four decimal places (e.g. 0.11×0.5=0.055).
+ private static Item BuildG5Area(string f,Random rng)
+ {
+    int a=f==AreaExtended?rng.Next(10,241):rng.Next(1,10)*10;
+    int b=rng.Next(1,10)*10;
+    var p=new Dictionary<string,int>{{"aHundredths",a},{"bHundredths",b}};
+    string x=(a/100m).ToString("0.##",CultureInfo.InvariantCulture);
+    string y=(b/100m).ToString("0.##",CultureInfo.InvariantCulture);
+    string prompt=f switch
+    {
+       AreaCells=>$"في شبكة ١٠×١٠، ظلّل منطقة تمثل {x} × {y}. كم جزءًا من المئة يحتوي التقاطع المظلل؟",
+       AreaExtended=>$"باستخدام شبكة الأعشار والمئة، أوجد مساحة النموذج {x} × {y} عددًا عشريًا.",
+       _=>$"مثل {x} × {y} على شبكة المئة. ما ناتج الضرب في الصورة العشرية؟"
+    };
+    return new Item(f,prompt,"أضرب عدد الأجزاء ثم أحول من أجزاء من عشرة أو مئة إلى ناتج عشري.",
+      AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Area(string f,IReadOnlyDictionary<string,int> p,out decimal expected)
+ {
+    expected=0m;
+    if(!IsG5Area(f)||p.Count!=2||
+      !p.TryGetValue("aHundredths",out int a)||!p.TryGetValue("bHundredths",out int b)||
+      a is <10 or >240||b is <10 or >90||b%10!=0||
+      (f!=AreaExtended&&(a>90||a%10!=0)))return false;
+    expected=f==AreaCells?(decimal)a*b/100m:(decimal)a*b/10000m;
+    return true;
+ }
+ private static bool VerifyG5Area(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+    if(!ValidG5Area(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
+    string s=new(answer.Trim().Select(ch=>ch switch{
+      >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+      >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+      '٫'=>'.',_=>ch
+    }).Where(ch=>ch is not ' ' and not '٬' and not '\u00a0').ToArray());
+    if(s.Length>24||!s.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+    if(!decimal.TryParse(s,NumberStyles.AllowDecimalPoint,CultureInfo.InvariantCulture,
+      out decimal v))return false;
+    int a=p["aHundredths"],b=p["bHundredths"];
+    return f==AreaCells?v*100m==(decimal)a*b:v*10000m==(decimal)a*b;
+ }
 
  // Reuse decimal arithmetic engine: persist unscaled hundredths, never answers.
  private static Item BuildG5Whole(string f,Random rng)
@@ -124,6 +170,7 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if(IsG5Area(f))return ValidG5Area(f,p,out result);
    if(IsG5Whole(f))return ValidG5Whole(f,p,out result);
    if(IsG5(f))return ValidG5(f,p,out result);
    if(!Supports(f)||p.Count!=3||!p.TryGetValue("aHundredths",out int a)||
@@ -145,10 +192,11 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString("0.##",CultureInfo.InvariantCulture);
+    return ans.ToString(IsG5Area(f)?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Area(f))return VerifyG5Area(f,p,answer);
    if(IsG5Whole(f))return VerifyG5Whole(f,p,answer);
    if(IsG5(f))return VerifyG5(f,p,answer);
    if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
