@@ -14177,6 +14177,26 @@
         "commonMistake": "لا تعامل التقدير كناتج دقيق.",
         "summary": "قدّر الناتج وتحقق من معقوليته."
       }
+    },
+    {
+      "id": "uae-g5-u03-l06-large-division-models",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:06$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "BASE_TEN_HUNDREDS_TENS_ONES_DIVISION",
+      "families": [
+        "uae.g4.u06.l03.base_ten_quotient",
+        "uae.g4.u06.l03.base_ten_remainder"
+      ],
+      "content": {
+        "concept": "قسمة عدد ثلاثي الأرقام باستعمال مئات وعشرات وآحاد.",
+        "workedExample": "٣٣٦÷٣=١١٢ بتوزيع المئات والعشرات والآحاد.",
+        "solution": "أقسم المئات ثم العشرات ثم الآحاد مع إعادة تجميع الباقي.",
+        "commonMistake": "إسقاط قيم المنازل عند إعادة التجميع.",
+        "summary": "استخدم نموذج القيمة المكانية لتمثيل القسمة الكبيرة والتحقق."
+      }
     }
   ]
 }
