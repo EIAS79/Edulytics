@@ -16278,6 +16278,28 @@
         "commonMistake": "ضرب عدد مكعبات القاعدة في الجزء الأعلى بدل جمعهما.",
         "summary": "تقييم الرسم والتركيب الحقيقي للمعلم، وحساب المكعبات آلي بدقة."
       }
+    },
+    {
+      "id": "uae-g5-u12-l12-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:12$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "ADDITIVE_SUBTRACTIVE_COMPOSITE_PRISM_VOLUME",
+      "families": [
+        "uae.g5.u12.l12.sum_two_prisms",
+        "uae.g5.u12.l12.base_plus_top",
+        "uae.g5.u12.l12.prism_with_removed_section",
+        "uae.g5.u12.l12.upper_volume_from_total"
+      ],
+      "content": {
+        "concept": "أقسم المجسم المركب إلى مناشير غير متداخلة، وأجمع الأحجام أو أطرح حجم الجزء المحذوف.",
+        "workedExample": "قاعدة ١٠×٩×٤ حجمها ٣٦٠، وأعلى ٣×٤×٢ حجمه ٢٤، المجموع ٣٨٤ م³.",
+        "solution": "احسب كل حجم من ط×ع×ا ثم اجمع أو اطرح الجزء المزال.",
+        "commonMistake": "جمع أحجام متداخلة مرتين أو تجاهل الوحدات المكعبة.",
+        "summary": "النماذج العددية قابلة للتحقق؛ قراءة الرسم وتحديد الأجزاء البشرية للمعلم."
+      }
     }
   ]
 }

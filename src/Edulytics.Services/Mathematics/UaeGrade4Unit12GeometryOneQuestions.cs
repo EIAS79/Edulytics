@@ -36,13 +36,18 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
  internal const string G5CompositeUpper="uae.g5.u12.l11.upper_layers_cubes";
  internal const string G5CompositeTotal="uae.g5.u12.l11.composite_total_cubes";
  internal const string G5CompositeError="uae.g5.u12.l11.incorrect_product_correction";
+ internal const string G5SumPrisms="uae.g5.u12.l12.sum_two_prisms";
+ internal const string G5TopBase="uae.g5.u12.l12.base_plus_top";
+ internal const string G5Cutout="uae.g5.u12.l12.prism_with_removed_section";
+ internal const string G5MissingTop="uae.g5.u12.l12.upper_volume_from_total";
  internal static readonly HashSet<string> Families=[
   Rays,Segments,LineRelation,RightComplement,Axes,Mirror,NetMissing,NetFull,
   SolidFaces,SolidVertices,CubeCount,LayerArea,PrismVolume,MissingHeight,
   G5NetType,G5NetFaces,G5NetMatching,G5SolidType,G5SolidFaces,G5SolidEdges,G5SolidVertices,
   G5Layer,G5CubeTotal,G5Volume,G5MissingLayers,
   G5VolumeLwh,G5VolumeBh,G5PrismHeight,G5VolumeCompare,
-  G5CompositeBase,G5CompositeUpper,G5CompositeTotal,G5CompositeError];
+  G5CompositeBase,G5CompositeUpper,G5CompositeTotal,G5CompositeError,
+  G5SumPrisms,G5TopBase,G5Cutout,G5MissingTop];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? family)=>family is not null&&Families.Contains(family);
  internal static Item Build(string family,Random random)
@@ -97,6 +102,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
    PrismVolume=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. ما حجمه بالسم المكعب؟",
    G5VolumeLwh=>$"منشور مستطيل طوله {a} سم وعرضه {b} سم وارتفاعه {c} سم. احسب حجمه بالسم المكعب.",
    G5CompositeBase=>$"نموذج من مكعبات حجم كل منها ١ سم³، طبقة القاعدة مستطيل طوله {a+2} مكعبات وعرضه {b+2} مكعبات. كم مكعبًا في القاعدة؟",
+   G5SumPrisms=>$"مجسم مركب من منشورين مستطيلين متصلين عند وجه دون أي تداخل حجمي. أبعاد الأول {a}×{b}×{c} سم، والثاني {a+1}×{b}×{c+1} سم. احسب الحجم الكلي بالسم المكعب.",
+   G5TopBase=>$"قاعدة صلبة أبعادها {a+2}×{b+2}×{c} سم. فوقها منشور أبعاده {a}×{b}×٢ سم، ولا يوجد تداخل. ما حجم المجسم المركب بالسم المكعب؟",
+   G5Cutout=>$"منشور مستطيل كامل أبعاده {a+2}×{b+2}×{c+2} سم، قُطع منه جزء بأبعاد {a}×{b}×{c} سم داخله. ما الحجم الباقي بالسم المكعب؟",
+   G5MissingTop=>$"حجم مجسم مركب من قاعدة وكتلة علوية دون تداخل هو {(a+2)*(b+2)*c+2*a*b} سم³. أبعاد القاعدة {a+2}×{b+2}×{c} سم. ما حجم الكتلة العلوية بالسم المكعب؟",
    G5CompositeUpper=>$"فوق قاعدة أكبر وُضعت كتلة إضافية مستقلة أبعادها {a} مكعبات طولًا و{b} عرضًا و{c} طبقات. كم مكعبًا في الجزء العلوي فقط؟",
    G5CompositeTotal=>$"شكل مركب بلا فجوات: قاعدة ارتفاعها طبقة واحدة أبعادها {a+2}×{b+2} مكعبات، وفوقها جزء أبعاده {a}×{b}×{c} طبقات إضافية. كم مكعب وحدة يلزم؟",
    G5CompositeError=>$"قاعدة من {(a+2)*(b+2)} مكعب وحدة وجزء علوي إضافي من {a*b*c} مكعبات بلا تداخل. طالب ضرب العددين بدل جمعهما. ما الإجمالي الصحيح لحجم الشكل بالسم³؟",
@@ -122,7 +131,7 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
   if(f is G5NetType or G5NetFaces or G5NetMatching && a is <1 or >2)return false;
   if(f is NetMissing && a is <1 or >6)return false;
   if(f is Rays or Segments && a<2)return false;
-  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare or G5CompositeBase or G5CompositeUpper or G5CompositeTotal or G5CompositeError && a<1)return false;
+  if(f is CubeCount or LayerArea or PrismVolume or MissingHeight or G5Layer or G5CubeTotal or G5Volume or G5MissingLayers or G5VolumeLwh or G5VolumeBh or G5PrismHeight or G5VolumeCompare or G5CompositeBase or G5CompositeUpper or G5CompositeTotal or G5CompositeError or G5SumPrisms or G5TopBase or G5Cutout or G5MissingTop && a<1)return false;
   result=f switch
   {
     Rays=>a-1,
@@ -152,6 +161,10 @@ internal static class UaeGrade4Unit12GeometryOneQuestions
     G5CompositeBase=>(a+2)*(b+2),
     G5CompositeUpper=>a*b*c,
     G5CompositeTotal or G5CompositeError=>(a+2)*(b+2)+a*b*c,
+    G5SumPrisms=>a*b*c+(a+1)*b*(c+1),
+    G5TopBase=>(a+2)*(b+2)*c+2*a*b,
+    G5Cutout=>(a+2)*(b+2)*(c+2)-a*b*c,
+    G5MissingTop=>2*a*b,
     LayerArea=>a*b,
     MissingHeight=>c,
     _=>throw new InvalidOperationException("Unsupported family")
