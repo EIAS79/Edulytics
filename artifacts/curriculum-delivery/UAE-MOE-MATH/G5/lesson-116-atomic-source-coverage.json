@@ -1,0 +1,93 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 116,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:02",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    180,
+    181,
+    182,
+    183,
+    184,
+    185
+  ],
+  "SourcePrintedPages": [
+    883,
+    884,
+    885,
+    886,
+    887,
+    888
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "قياس أضلاع المثلث ومقارنة التطابق",
+    "قياس الزوايا وتصنيف الحادة والقائمة والمنفرجة",
+    "عدد الزوايا الحادة والقائمة والمنفرجة في المثلث",
+    "استنتاج الزاوية الثالثة من مجموع ١٨٠ درجة"
+  ],
+  "SourceElements": [
+    {
+      "Category": "activity measure sides with ruler and compare matched lengths",
+      "Pages": [
+        883,
+        884
+      ],
+      "Coverage": "source conceptual modeling and teacher physical evaluation"
+    },
+    {
+      "Category": "activity measure angles with protractor, compare",
+      "Pages": [
+        883,
+        884
+      ],
+      "Coverage": "source angle measurements and exact practice families"
+    },
+    {
+      "Category": "practice classify sides and angle types, plus angle sum",
+      "Pages": [
+        885,
+        886
+      ],
+      "Coverage": "original content and source-aligned numeric original examples"
+    },
+    {
+      "Category": "homework practice and explanatory rubric",
+      "Pages": [
+        887,
+        888
+      ],
+      "Coverage": "independent exact assessment with human review of measurement"
+    }
+  ],
+  "Engine": "REUSE UaeGrade4Unit16GeometryQuestions geometry engine; extend 5 Grade5 triangle families",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l02.congruent_side_count",
+    "uae.g5.u12.l02.acute_angle_count",
+    "uae.g5.u12.l02.right_angle_count",
+    "uae.g5.u12.l02.obtuse_angle_count",
+    "uae.g5.u12.l02.third_angle"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "مثلث أطواله ٥،٥،٨ سم وزواياه ٤٠°،٦٠°،٨٠°. كم ضلعًا متطابقًا وكم زاوية حادة؟",
+    "Answer": "ضلعان متطابقان وثلاث زوايا حادة.",
+    "TeacherRubric": "تحقق من متباينة المثلث ومن مقارنة الزوايا الثلاث بـ٩٠°."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_TRIANGLE_SIDES_ANGLES_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson02TriangleMeasureTests.cs",
+  "TestsRun": "FOCUSED_5_PASSED; L115_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Actual ruler and protractor measurements",
+    "Independent original triangle drawing and comparison"
+  ],
+  "SourceRights": "Original Edulytics examples, not reproducing publisher artwork."
+}

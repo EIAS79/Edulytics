@@ -16056,6 +16056,29 @@
         "commonMistake": "اعتبار كل شكل مغلق مضلعًا أو اعتبار تساوي الأضلاع وحده كافيًا للانتظام.",
         "summary": "الاسم بحسب الأضلاع؛ العدد نفسه للرؤوس؛ الرسم وتبرير التناظر والانتظام يراجعهما المعلم."
       }
+    },
+    {
+      "id": "uae-g5-u12-l02-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:02$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "TRIANGLE_CONGRUENT_SIDES_ANGLE_COUNT",
+      "families": [
+        "uae.g5.u12.l02.congruent_side_count",
+        "uae.g5.u12.l02.acute_angle_count",
+        "uae.g5.u12.l02.right_angle_count",
+        "uae.g5.u12.l02.obtuse_angle_count",
+        "uae.g5.u12.l02.third_angle"
+      ],
+      "content": {
+        "concept": "أقارن قياسات أضلاع المثلث وزواياه، وأتذكر أن مجموع زواياه ١٨٠°.",
+        "workedExample": "الأطوال ٥،٥،٥ لها ثلاثة أضلاع متطابقة؛ الزوايا ٩٠،٣٥،٥٥ بها زاوية قائمة واحدة.",
+        "solution": "أعد الأضلاع المتساوية وأنواع الزوايا بالنسبة إلى ٩٠°، وأحسب الناقصة بطرح مجموع المعلومتين من ١٨٠°.",
+        "commonMistake": "اعتبار زاوية ٩٠° حادة أو افتراض وجود زاويتين قائمتين في مثلث.",
+        "summary": "القياسات العددية تتحقق آليًا، أما القياس اليدوي بالمسطرة والمنقلة ورسم مثلث فيقيمه المعلم."
+      }
     }
   ]
 }
