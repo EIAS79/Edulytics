@@ -9,6 +9,9 @@ internal static class UaeGrade3Unit12Questions
  internal const string G5TallyFrequency="uae.g5.u11.l01.tally_category_frequency";
  internal const string G5TallyTotal="uae.g5.u11.l01.tally_total_frequency";
  internal const string G5TallyRange="uae.g5.u11.l01.tally_frequency_range";
+ internal const string G5ShareTwo="uae.g5.u11.l07.equal_share_two_groups";
+ internal const string G5ShareThree="uae.g5.u11.l07.equal_share_three_groups";
+ internal const string G5ShareMissing="uae.g5.u11.l07.equal_share_missing_group";
  internal const string Picture="uae.g3.u12.l02.scaled_picture_graph";
  internal const string Bars="uae.g3.u12.l03.bar_graph";
  internal const string Mixed="uae.g3.u12.l04.picture_bar_graph_compare";
@@ -16,10 +19,12 @@ internal static class UaeGrade3Unit12Questions
  internal const string Pattern="uae.g3.u12.l06.number_sense_pattern";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  private static bool IsG5Tally(string? f)=>f is G5TallyFrequency or G5TallyTotal or G5TallyRange;
- public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f);
+ private static bool IsG5Share(string? f)=>f is G5ShareTwo or G5ShareThree or G5ShareMissing;
+ public static bool Supports(string? f)=>f is Tally or Picture or Bars or Mixed or Line or Pattern || IsG5Tally(f) || IsG5Share(f);
  public static Item Build(string f,Random rng)
  {
   if(!Supports(f))throw new InvalidOperationException("Unsupported Grade3 data question");
+  if(IsG5Share(f))return BuildG5Share(f,rng);
   if(IsG5Tally(f))return BuildG5Tally(f,rng);
   int a=0,b=0,mode=rng.Next(2),result=0;string prompt,solution;
   switch(f)
@@ -85,12 +90,14 @@ internal static class UaeGrade3Unit12Questions
  }
  public static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5Share(f))return SolveG5Share(f,p);
   if(IsG5Tally(f))return SolveG5Tally(f,p);
   if(!Valid(f,p,out int n))throw new InvalidOperationException("Invalid data problem parameters");
   return n.ToString(CultureInfo.InvariantCulture);
  }
  public static bool Verify(string f,IReadOnlyDictionary<string,int> p,string answer)
  {
+  if(IsG5Share(f))return VerifyG5Share(f,p,answer);
   if(IsG5Tally(f))return VerifyG5Tally(f,p,answer);
   if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
   string s=new string(answer.Trim().Select(c=>c is >= '٠' and <= '٩'?(char)('0'+c-'٠'):
@@ -164,6 +171,82 @@ internal static class UaeGrade3Unit12Questions
    _=>Math.Max(Math.Max(a,b),Math.Max(c,d))-Math.Min(Math.Min(a,b),Math.Min(c,d))
   };
   return submitted==independentlyExpected;
+ }
+
+
+ // Grade 5 U11 lesson 7: physical equal-share model of arithmetic mean.
+ // The teacher inspects actual counters/redistribution; numeric answer is exact.
+ // No expected "result" is placed in the client-facing parameters.
+ private static Item BuildG5Share(string family,Random random)
+ {
+  int mean=random.Next(9,21),x=random.Next(1,5),y=random.Next(1,5);
+  int a=mean+x,b=mean-x,c=mean-x-y;
+  var p=new Dictionary<string,int>();
+  string prompt=family switch
+  {
+   G5ShareTwo=>$"في مجموعتين من القطع النقدية، الأولى {a} والثانية {b}. إذا وزعنا جميع القطع بالتساوي على مجموعتين، كم قطعة في كل مجموعة؟",
+   G5ShareThree=>$"ثلاث مجموعات من الكرات تحتوي {mean+x} و{mean+y} و{mean-x-y} كرة. انقل الكرات بينها حتى تتساوى. كم كرة في كل مجموعة؟",
+   G5ShareMissing=>$"نريد التوزيع بالتساوي على ثلاث مجموعات بمعدل {mean} قطع لكل مجموعة. لدى المجموعة الأولى {mean+x} وللثانية {mean+y}. كم قطعة يجب أن تضمها المجموعة الثالثة؟",
+   _=>throw new InvalidOperationException("Unsupported mean-model family")
+  };
+  if(family==G5ShareTwo)
+  {
+   p.Add("a",a);p.Add("b",b);p.Add("n",2);
+  }
+  else if(family==G5ShareThree)
+  {
+   p.Add("a",mean+x);p.Add("b",mean+y);p.Add("c",c);p.Add("n",3);
+  }
+  else
+  {
+   p.Add("a",mean+x);p.Add("b",mean+y);p.Add("m",mean);p.Add("n",3);
+  }
+  return new Item(family,prompt,
+    "أجمع العناصر من جميع المجموعات ثم أقسمها على عدد المجموعات. في سؤال العدد الناقص أضرب المتوسط في عدد المجموعات ثم أطرح الأعداد المعلومة. يمكن التحقق بإعادة توزيع حقيقية.",
+    AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Share(string family,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Share(family)||!p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+     !p.TryGetValue("n",out int n)||a is <1 or >30||b is <1 or >30)return false;
+  if(family==G5ShareTwo)
+  {
+   if(p.Count!=3||n!=2||(a+b)%2!=0)return false;
+   expected=(a+b)/2;return expected is >=5 and <=20;
+  }
+  if(family==G5ShareThree)
+  {
+   if(p.Count!=4||n!=3||!p.TryGetValue("c",out int c)||c is <0 or >20||
+      (a+b+c)%3!=0)return false;
+   expected=(a+b+c)/3;return expected is >=5 and <=20;
+  }
+  if(p.Count!=4||n!=3||!p.TryGetValue("m",out int m)||m is <5 or >20)return false;
+  expected=3*m-a-b;
+  return expected is >=0 and <=20;
+ }
+ private static string SolveG5Share(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Share(f,p,out int answer))
+   throw new InvalidOperationException("Invalid Grade5 fair-share dataset");
+  return answer.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Share(string f,IReadOnlyDictionary<string,int> p,string answer)
+ {
+  if(!ValidG5Share(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string s=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int value))return false;
+  return value==(f switch
+  {
+   G5ShareTwo=>(p["a"]+p["b"])/2,
+   G5ShareThree=>(p["a"]+p["b"]+p["c"])/3,
+   _=>3*p["m"]-(p["a"]+p["b"])
+  });
  }
 
 }

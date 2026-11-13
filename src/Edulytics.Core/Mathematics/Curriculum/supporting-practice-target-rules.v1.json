@@ -9861,7 +9861,6 @@
         "^Median and Mode$"
       ],
       "codePatterns": [
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:07$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:11:08$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:11:09$"
       ],
@@ -15924,6 +15923,27 @@
         "solution": "أنظم أزواج (x,y) وأمثل النقاط وأحدد موضع المنتصف أو مدد خطًا فقط إذا كان افتراض الخطية مناسبًا.",
         "commonMistake": "رسم خط يوصل البيانات ثم افتراض أن كل متغيرين بينهما علاقة خطية مؤكدة.",
         "summary": "صحة الرسم وتقدير القيمة يتوقفان على المحاور وعلاقة البيانات وفرضية التغير الخطي."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l07-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:07$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "MEAN_EQUAL_SHARING_MODEL",
+      "families": [
+        "uae.g5.u11.l07.equal_share_two_groups",
+        "uae.g5.u11.l07.equal_share_three_groups",
+        "uae.g5.u11.l07.equal_share_missing_group"
+      ],
+      "content": {
+        "concept": "المتوسط الحسابي يمثل التوزيع العادل؛ نجمع القيم ثم نقسم المجموع على عدد المجموعات، ونستطيع إيجاد قيمة ناقصة بمعرفة المتوسط.",
+        "workedExample": "مجموعة ٨ كرات وأخرى ٤: المجموع ١٢، المتوسط ٦ كرات لكل مجموعة.",
+        "solution": "أجمع جميع القطع وأقسم عددها على عدد المجموعات؛ للتحقق أعيد التوزيع أو أضرب المتوسط في عدد المجموعات.",
+        "commonMistake": "القسمة على عدد القطع بدل عدد المجموعات، أو توزيع القطع من مجموعة دون جمعها.",
+        "summary": "يجب أن يظل مجموع العناصر ثابتًا بعد إعادة التوزيع ويكون نصيب كل مجموعة مساويًا للمتوسط."
       }
     }
   ]

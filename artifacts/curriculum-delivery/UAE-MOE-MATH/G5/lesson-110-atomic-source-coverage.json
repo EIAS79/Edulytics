@@ -1,0 +1,82 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 110,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:07",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    126,
+    127,
+    128,
+    129,
+    130,
+    131
+  ],
+  "SourcePrintedPages": [
+    829,
+    830,
+    831,
+    832,
+    833,
+    834
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تمثيل معنى المتوسط الحسابي من خلال النقل والتوزيع المتساوي باستخدام مجموعتين أو ثلاث",
+    "حساب نصيب المجموعة من مجموع العناصر وعدد المجموعات",
+    "إيجاد المجموعة الناقصة انطلاقًا من متوسط معلوم والتحقق"
+  ],
+  "SourceElements": [
+    {
+      "Category": "hands-on 2-group equal sharing and coins",
+      "Pages": [
+        829,
+        830
+      ],
+      "Coverage": "original Arabic RichV2 equal sharing and teacher-observed physical manipulation"
+    },
+    {
+      "Category": "multi-plate models and teacher questions",
+      "Pages": [
+        831,
+        832
+      ],
+      "Coverage": "3-group generator, original worked examples and numerical oracle"
+    },
+    {
+      "Category": "homework equal sharing and missing group",
+      "Pages": [
+        833,
+        834
+      ],
+      "Coverage": "original missing-group family, reverse total verification, teacher rubric"
+    }
+  ],
+  "Engine": "EXTEND existing UaeGrade3Unit12Questions statistics engine (reused dispatcher) with three G5 fair-share exact families, legacy G3 untouched",
+  "SkillId": "statistics.center_spread.core",
+  "QuestionFamilies": [
+    "uae.g5.u11.l07.equal_share_two_groups",
+    "uae.g5.u11.l07.equal_share_three_groups",
+    "uae.g5.u11.l07.equal_share_missing_group"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "ثلاثة أطباق فيها ٥ و٨ و١١ قطعة. أعد توزيعها بالتساوي. كم قطعة لكل طبق؟",
+    "Answer": "٨ قطع في كل طبق",
+    "TeacherRubric": "عد المجموع ٢٤، قسمة صحيحة ٢٤÷٣=٨، ثبات المجموع، وصف نقل القطع بطريقة قابلة للتنفيذ."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "THREE_SOURCE_ALIGNED_EXACT_EQUAL_SHARE_FAMILIES_STAGED_NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson07FairShareTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Actual counters redistribution in physical activity",
+    "Explanations for equal sharing with indivisible materials"
+  ],
+  "SourceRights": "Original Edulytics content; source pages metadata only."
+}
