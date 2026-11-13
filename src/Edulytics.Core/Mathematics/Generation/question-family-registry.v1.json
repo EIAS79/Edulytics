@@ -47494,6 +47494,48 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l06.quadrilateral_most_specific",
+      "version": 1,
+      "skillId": "geometry.polygons",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l06-quadrilateral-type-StageD-NOT_RUN",
+      "representations": [
+        "property_hierarchy",
+        "quadrilateral_classification",
+        "square_rectangle_rhombus",
+        "trapezoid_specific",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u12.l06.quadrilateral_subclass",
+      "version": 1,
+      "skillId": "geometry.polygons",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "uae-g5-u12-l06-quadrilateral-type-StageD-NOT_RUN",
+      "representations": [
+        "property_hierarchy",
+        "quadrilateral_classification",
+        "square_rectangle_rhombus",
+        "trapezoid_specific",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

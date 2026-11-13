@@ -17,14 +17,17 @@ internal static class UaeGrade4Unit16GeometryQuestions
  "uae.g5.u12.l02.third_angle",
  "uae.g5.u12.l03.triangle_side_type","uae.g5.u12.l03.triangle_angle_type",
  "uae.g5.u12.l05.opposite_parallel_pairs","uae.g5.u12.l05.opposite_equal_pairs",
- "uae.g5.u12.l05.right_angle_count","uae.g5.u12.l05.opposite_equal_angle_pairs"];
+ "uae.g5.u12.l05.right_angle_count","uae.g5.u12.l05.opposite_equal_angle_pairs",
+ "uae.g5.u12.l06.quadrilateral_most_specific","uae.g5.u12.l06.quadrilateral_subclass"];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
  internal static bool Supports(string? f)=>f is not null&&Families.Contains(f);
  private static bool IsG5Quad(string? f)=>f is
   "uae.g5.u12.l05.opposite_parallel_pairs" or
   "uae.g5.u12.l05.opposite_equal_pairs" or
   "uae.g5.u12.l05.right_angle_count" or
-  "uae.g5.u12.l05.opposite_equal_angle_pairs";
+  "uae.g5.u12.l05.opposite_equal_angle_pairs" or
+  "uae.g5.u12.l06.quadrilateral_most_specific" or
+  "uae.g5.u12.l06.quadrilateral_subclass";
  private static bool IsG5Triangle(string? f)=>f is
   "uae.g5.u12.l02.congruent_side_count" or
   "uae.g5.u12.l02.acute_angle_count" or
@@ -226,6 +229,7 @@ internal static class UaeGrade4Unit16GeometryQuestions
  {
   int kind=rng.Next(Grade5QuadrilateralDescriptions.Length);
   var p=new Dictionary<string,int>{{"kind",kind}};
+  if(family=="uae.g5.u12.l06.quadrilateral_subclass")p.Add("target",rng.Next(0,5));
   string task=family switch
   {
    "uae.g5.u12.l05.opposite_parallel_pairs"=>
@@ -234,23 +238,44 @@ internal static class UaeGrade4Unit16GeometryQuestions
     "كم زوجًا من الأضلاع المتقابلة المتطابقة في الطول؟",
    "uae.g5.u12.l05.right_angle_count"=>
     "كم زاوية قائمة في هذا الرباعي؟",
+   "uae.g5.u12.l06.quadrilateral_most_specific"=>
+    "اختر الاسم الأكثر تحديدًا: ٠ شبه منحرف، ١ متوازي أضلاع غير معين أو مستطيل، ٢ معين غير مربع، ٣ مستطيل غير مربع، ٤ مربع، ٥ رباعي آخر.",
+   "uae.g5.u12.l06.quadrilateral_subclass"=>
+    $"هل ينتمي إلى فئة {new[]{"متوازي الأضلاع","المستطيلات","المعينات","المربعات","أشباه المنحرف ذات زوج متواز واحد"}[p["target"]]}؟ اكتب ١ نعم أو ٠ لا.",
    _=>"كم زوجًا من الزوايا المتقابلة المتطابقة في القياس؟"
   };
   return new Item(family,$"الشكل الموصوف: {Grade5QuadrilateralDescriptions[kind]}. {task}",
    "أفحص الأضلاع المتقابلة لا المتجاورة وأفرق بين التوازي والتطابق، ثم أحدد الزوايا القائمة. يراجع المعلم الرسم والقياس العملي.",
    AssessmentItemType.Numeric,p);
  }
+ private static int G5QuadrilateralLabel(int kind)=>kind switch
+ {
+  0=>4,1=>3,2=>1,3=>2,4 or 5=>0,_=>5
+ };
+ private static bool G5QuadrilateralIsSubclass(int kind,int target)=>target switch
+ {
+  0=>kind<4,
+  1=>kind is 0 or 1,
+  2=>kind is 0 or 3,
+  3=>kind==0,
+  4=>kind is 4 or 5,
+  _=>false
+ };
  private static bool ValidG5Quad(string family,IReadOnlyDictionary<string,int> p,out int expected)
  {
   expected=0;
-  if(!IsG5Quad(family)||p.Count!=1||
-    !p.TryGetValue("kind",out int kind)||kind<0||kind>=Grade5QuadrilateralDescriptions.Length)return false;
+  bool isSub=family=="uae.g5.u12.l06.quadrilateral_subclass";
+  if(!IsG5Quad(family)||p.Count!=(isSub?2:1)||
+    !p.TryGetValue("kind",out int kind)||kind<0||kind>=Grade5QuadrilateralDescriptions.Length||
+    (isSub && (!p.TryGetValue("target",out int target)||target<0||target>4)))return false;
   expected=family switch
   {
    "uae.g5.u12.l05.opposite_parallel_pairs"=>kind<4?2:kind<6?1:0,
    "uae.g5.u12.l05.opposite_equal_pairs"=>kind<4?2:0,
    "uae.g5.u12.l05.right_angle_count"=>kind<2?4:kind==5?2:0,
    "uae.g5.u12.l05.opposite_equal_angle_pairs"=>kind<4?2:kind==7?1:0,
+   "uae.g5.u12.l06.quadrilateral_most_specific"=>G5QuadrilateralLabel(kind),
+   "uae.g5.u12.l06.quadrilateral_subclass"=>G5QuadrilateralIsSubclass(kind,p["target"])?1:0,
    _=>throw new InvalidOperationException("Unknown Grade5 quadrilateral family")
   };
   return true;
@@ -276,6 +301,15 @@ internal static class UaeGrade4Unit16GeometryQuestions
    "uae.g5.u12.l05.opposite_parallel_pairs"=>new[]{2,2,2,2,1,1,0,0}[kind],
    "uae.g5.u12.l05.opposite_equal_pairs"=>new[]{2,2,2,2,0,0,0,0}[kind],
    "uae.g5.u12.l05.right_angle_count"=>new[]{4,4,0,0,0,2,0,0}[kind],
+   "uae.g5.u12.l06.quadrilateral_most_specific"=>new[]{4,3,1,2,0,0,5,5}[kind],
+   "uae.g5.u12.l06.quadrilateral_subclass"=>p["target"] switch
+   {
+    0=>kind<4?1:0,
+    1=>kind is 0 or 1?1:0,
+    2=>kind is 0 or 3?1:0,
+    3=>kind==0?1:0,
+    _=>kind is 4 or 5?1:0
+   },
    _=>new[]{2,2,2,2,0,0,0,1}[kind]
   };
   return value==independent;

@@ -16145,6 +16145,30 @@
         "commonMistake": "استنتاج أن كل معين مربع، أو أن كل رباعي ذي زوج متوازٍ هو مستطيل.",
         "summary": "الرسم والقياس اليدوي للمراجعة؛ الأسئلة الرقمية من أوصاف هندسية محددة."
       }
+    },
+    {
+      "id": "uae-g5-u12-l06-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:06$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "QUADRILATERAL_HIERARCHY_EXACT",
+      "families": [
+        "uae.g5.u12.l06.quadrilateral_most_specific",
+        "uae.g5.u12.l06.quadrilateral_subclass",
+        "uae.g5.u12.l05.opposite_parallel_pairs",
+        "uae.g5.u12.l05.opposite_equal_pairs",
+        "uae.g5.u12.l05.right_angle_count",
+        "uae.g5.u12.l05.opposite_equal_angle_pairs"
+      ],
+      "content": {
+        "concept": "تصنف رباعيات الأضلاع بحسب الأزواج المتوازية والأضلاع المتساوية والزوايا القائمة؛ المربع مستطيل ومعين.",
+        "workedExample": "مربع له أربعة أضلاع متساوية وأربع زوايا قائمة، وله جميع خصائص المستطيل والمعين.",
+        "solution": "أقارن عدد الأزواج المتوازية والشروط الأخرى ثم أختار أضيق فئة تستوفي جميع القيود.",
+        "commonMistake": "القول إن المربع ليس مستطيلًا، أو تسمية شبه المنحرف ذي الزوج الوحيد متوازي أضلاع.",
+        "summary": "الفئات لها علاقة احتواء، والاسم الأكثر تحديدًا يعتمد على جميع الخصائص."
+      }
     }
   ]
 }

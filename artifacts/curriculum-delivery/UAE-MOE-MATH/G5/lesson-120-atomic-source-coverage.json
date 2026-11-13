@@ -1,0 +1,92 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 120,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:06",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    205,
+    206,
+    207,
+    208,
+    209,
+    210
+  ],
+  "SourcePrintedPages": [
+    909,
+    910,
+    911,
+    912,
+    913,
+    914
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تصنيف رباعي الأضلاع من خواص متوازيات الأضلاع والمستطيلات والمعينات والمربعات",
+    "معرفة علاقة الاحتواء بين المربع والمستطيل والمعين ومتوازي الأضلاع",
+    "تمييز شبه المنحرف ذي الزوج الواحد من الأضلاع المتوازية",
+    "تبرير اختيار النوع الأكثر تحديدًا"
+  ],
+  "SourceElements": [
+    {
+      "Category": "classification diagram including square/rectangle/rhombus/parallelogram/trapezoid",
+      "Pages": [
+        909
+      ],
+      "Coverage": "hierarchy and source vocabulary independently reauthored"
+    },
+    {
+      "Category": "guided application and geometry patterns",
+      "Pages": [
+        910
+      ],
+      "Coverage": "original examples and teacher visual exercises"
+    },
+    {
+      "Category": "classification logical claims and discussion",
+      "Pages": [
+        911,
+        912
+      ],
+      "Coverage": "explicit true/false reasoning and classification families"
+    },
+    {
+      "Category": "homework and review",
+      "Pages": [
+        913,
+        914
+      ],
+      "Coverage": "source-aligned numeric classification tasks"
+    }
+  ],
+  "Engine": "REUSE UaeGrade4Unit16GeometryQuestions quadrilateral engine from L119, extend two hierarchy families and reuse four factual property families.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l06.quadrilateral_most_specific",
+    "uae.g5.u12.l06.quadrilateral_subclass",
+    "uae.g5.u12.l05.opposite_parallel_pairs",
+    "uae.g5.u12.l05.opposite_equal_pairs",
+    "uae.g5.u12.l05.right_angle_count",
+    "uae.g5.u12.l05.opposite_equal_angle_pairs"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "رباعي له أربعة أضلاع متساوية وأربع زوايا قائمة. صنّفه بأضيق اسم واذكر فئتين أعلى.",
+    "Answer": "مربع؛ وهو أيضًا مستطيل ومعين.",
+    "TeacherRubric": "يبرر تحقق شروط التوازي والزوايا والأضلاع."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_QUADRILATERAL_HIERARCHY_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson06ClassifyQuadrilateralsTests.cs",
+  "TestsRun": "FOCUSED_2_PASSED; L119_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Diagrams and explanations of class containment",
+    "Independent real-world quadrilateral classification"
+  ],
+  "SourceRights": "Independently authored Arabic explanatory text, no original textbook figures copied."
+}
