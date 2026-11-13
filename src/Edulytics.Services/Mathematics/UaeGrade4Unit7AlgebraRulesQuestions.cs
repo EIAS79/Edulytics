@@ -27,13 +27,18 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     internal const string G5SubBracket="uae.g5.u06.l05.substitute_bracket_add";
     internal const string G5SubSquare="uae.g5.u06.l05.substitute_squared_subtract";
     internal const string G5SubDecimal="uae.g5.u06.l05.substitute_decimal_values";
+    internal const string G5ModelAdd="uae.g5.u06.l06.model_unknown_plus";
+    internal const string G5ModelSubtract="uae.g5.u06.l06.model_unknown_minus";
+    internal const string G5ModelGroups="uae.g5.u06.l06.model_repeated_group";
+    private static bool IsG5Model(string? f)=>f is G5ModelAdd or G5ModelSubtract or G5ModelGroups;
     private static bool IsG5SubInt(string? f)=>f is G5SubBracket or G5SubSquare;
     private static bool IsG5SubDecimal(string? f)=>f==G5SubDecimal;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f) || IsG5Writing(f) || IsG5SubInt(f) || IsG5SubDecimal(f);
+    internal static bool Supports(string? f)=>f is Add or Subtract or Multiply or Divide or Order or TwoStep or MultiStep || IsG5Bar(f) || IsG5Order(f) || IsG5Writing(f) || IsG5Model(f) || IsG5SubInt(f) || IsG5SubDecimal(f);
     internal static Item Build(string f,Random r)
     {
         if(!Supports(f))throw new InvalidOperationException("Unsupported algebra rule family");
+        if(IsG5Model(f))return BuildG5Model(f,r);
         if(IsG5SubInt(f)||IsG5SubDecimal(f))return BuildG5Sub(f,r);
         if(IsG5Writing(f))return BuildG5Writing(f,r);
         if(IsG5Order(f))return BuildG5Order(f,r);
@@ -225,6 +230,77 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     }
 
 
+    // UAE Grade 5 Arabic student U06 L06 printed 437–440.
+    // Original model-to-expression tasks reuse this exact symbolic engine
+    // rather than introducing a separate solver or generic signed algebra.
+    private static Item BuildG5Model(string f,Random r)
+    {
+        int n=r.Next(2,10);
+        int groups=f==G5ModelGroups?r.Next(2,6):0;
+        string prompt=f switch
+        {
+            G5ModelAdd=>$"يوجد صندوق مغلق به x قطع غير معلومة، وإلى جانبه {n} قطع ظاهرة. اكتب تعبيرًا جبريًا يمثل إجمالي القطع. لا تفترض أن الصندوق فارغ.",
+            G5ModelSubtract=>$"كان في صندوق x قطعة، ثم أخذنا منه {n} قطع. اكتب تعبيرًا جبريًا لعدد القطع الباقية. انتبه لترتيب الطرح.",
+            _=>$"لديك {groups} مجموعات متشابهة، في كل مجموعة صندوق فيه x قطع غير معلومة ومعه {n} قطع ظاهرة. اكتب تعبيرًا جبريًا للمجموع الكلي دون إيجاد قيمته."
+        };
+        return new Item(f,prompt,
+            "أحدد العدد المجهول x وأمثله بصندوق، ثم أترجم الإضافة أو الإزالة أو تكرار المجموعة مع الحفاظ على الأقواس.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string,int>{{"n",n},{"groups",groups}});
+    }
+    private static bool ValidG5Model(string f,IReadOnlyDictionary<string,int> p,
+        out int n,out int groups)
+    {
+        n=groups=0;
+        return IsG5Model(f)&&p.Count==2&&p.TryGetValue("n",out n)&&
+            p.TryGetValue("groups",out groups)&&n is >=2 and <=9&&
+            (f==G5ModelGroups?groups is >=2 and <=5:groups==0);
+    }
+    private static string SolveG5Model(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG5Model(f,p,out int n,out int groups))
+            throw new InvalidOperationException("Invalid source model expression parameters");
+        return f switch
+        {
+            G5ModelAdd=>$"x+{n}",
+            G5ModelSubtract=>$"x−{n}",
+            _=>$"{groups}×(x+{n})"
+        };
+    }
+    private static bool VerifyG5Model(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidG5Model(f,p,out int n,out int groups)||
+           string.IsNullOrWhiteSpace(answer)||answer.Length>80)return false;
+        string value=new(answer.Trim()
+            .Where(ch=>!char.IsWhiteSpace(ch)&&ch!='\\u00a0')
+            .Select(ch=>ch switch
+            {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                'س' or 'X'=>'x',
+                '*' or '·'=>'×',
+                '-'=>'−',
+                _=>ch
+            }).ToArray());
+        string[] accepted=f switch
+        {
+            G5ModelAdd=>[$"x+{n}",$"{n}+x"],
+            G5ModelSubtract=>[$"x−{n}"],
+            _=>[
+                $"{groups}(x+{n})",
+                $"{groups}×(x+{n})",
+                $"{groups}×({n}+x)",
+                $"(x+{n})×{groups}",
+                $"({n}+x)×{groups}",
+                $"{groups}x+{groups*n}",
+                $"{groups}×x+{groups*n}",
+                $"{groups*n}+{groups}x",
+                $"{groups*n}+{groups}×x"
+            ]
+        };
+        return accepted.Contains(value,StringComparer.Ordinal);
+    }
+
     private static Item BuildG5Sub(string f,Random r)
     {
         if(IsG5SubDecimal(f))
@@ -308,6 +384,7 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     }
     internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(IsG5Model(f))return SolveG5Model(f,p);
         if(IsG5SubDecimal(f))return SolveG5SubDecimal(f,p);
         if(IsG5Writing(f))return SolveG5Writing(f,p);
         if(!Valid(f,p,out int x))throw new InvalidOperationException("Invalid input-output rule");
@@ -315,6 +392,7 @@ internal static class UaeGrade4Unit7AlgebraRulesQuestions
     }
     internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsG5Model(f))return VerifyG5Model(f,p,answer);
         if(IsG5SubDecimal(f))return VerifyG5SubDecimal(f,p,answer);
         if(IsG5Writing(f))return VerifyG5Writing(f,p,answer);
         if(!Valid(f,p,out int x)||string.IsNullOrWhiteSpace(answer))return false;
