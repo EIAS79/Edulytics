@@ -45047,6 +45047,63 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l06.model_unknown_plus",
+      "version": 1,
+      "skillId": "number.algebra.write_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g5-ar-u06-l06-unknown-container-and-visible-additive-model-source-scoped-structural-verifier-tests-not-run",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "ratio_table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l06.model_unknown_minus",
+      "version": 1,
+      "skillId": "number.algebra.write_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g5-ar-u06-l06-unknown-container-remove-known-count-source-scoped-structural-verifier-tests-not-run",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "ratio_table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u06.l06.model_repeated_group",
+      "version": 1,
+      "skillId": "number.algebra.write_expressions",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "contract_defined",
+      "verificationPolicy": "g5-ar-u06-l06-repeated-unknown-and-visible-group-model-source-scoped-structural-verifier-tests-not-run",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "ratio_table"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
