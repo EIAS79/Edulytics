@@ -1,0 +1,64 @@
+{
+  "Grade": 5,
+  "Unit": 3,
+  "LessonOrdinal": 24,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:05",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    183,
+    184,
+    185,
+    186,
+    187,
+    188
+  ],
+  "SourceEdition": "Owner-selected Arabic student 2025–2026",
+  "TargetYear": "2026–2027",
+  "OfficialOrderVerified": false,
+  "SourceCoverage": [
+    {
+      "Pages": [
+        183,
+        184
+      ],
+      "Topic": "compatible numbers and worked quotient estimation",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l05-ar.rich-lesson-v2.json"
+    },
+    {
+      "Pages": [
+        185
+      ],
+      "Topic": "independent estimation and explain strategy",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l05-ar.rich-lesson-v2.json"
+    },
+    {
+      "Pages": [
+        186,
+        187
+      ],
+      "Topic": "word problems and compatible division practice",
+      "Artifact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit3Lesson05EstimateQuotientsTests.cs"
+    },
+    {
+      "Pages": [
+        188
+      ],
+      "Topic": "reasoning and homework",
+      "Artifact": "original cooldown and teacher rubric"
+    }
+  ],
+  "EngineReuse": "UaeGrade4Unit6Lesson02EstimateDivisionQuestions extended",
+  "SkillId": "number.estimate_quotient_compatible_numbers",
+  "Families": [
+    "uae.g5.u03.l05.estimate_compatible_quotient",
+    "uae.g5.u03.l05.select_compatible_dividend",
+    "uae.g5.u03.l05.is_estimate_above_exact"
+  ],
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXACT_G4_ENGINE_EXTENSION_STAGED"
+}

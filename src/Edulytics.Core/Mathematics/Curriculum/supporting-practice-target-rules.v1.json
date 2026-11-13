@@ -14156,6 +14156,27 @@
         "commonMistake": "حذف الأصفار من المقسوم وحده يغيّر الحاصل.",
         "summary": "استخدم أنماط القسمة وتحقق بالضرب."
       }
+    },
+    {
+      "id": "uae-g5-u03-l05-estimate-compatible-quotient",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:05$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "ESTIMATE_QUOTIENT_COMPATIBLE_DIVIDEND",
+      "families": [
+        "uae.g5.u03.l05.estimate_compatible_quotient",
+        "uae.g5.u03.l05.select_compatible_dividend",
+        "uae.g5.u03.l05.is_estimate_above_exact"
+      ],
+      "content": {
+        "concept": "قدّر ناتج القسمة باختيار أعداد متوافقة.",
+        "workedExample": "٢٠٨÷٨≈٢٠٠÷٨=٢٥.",
+        "solution": "أختار أقرب مضاعف مناسب للمقسوم عليه وأقسم.",
+        "commonMistake": "لا تعامل التقدير كناتج دقيق.",
+        "summary": "قدّر الناتج وتحقق من معقوليته."
+      }
     }
   ]
 }
