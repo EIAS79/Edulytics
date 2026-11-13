@@ -66,7 +66,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
         }
         else
         {
-            x=random.Next(10,101);y=random.Next(1,11);z=random.Next(2,13)*y;
+            x=random.Next(10,201);y=random.Next(1,11);z=random.Next(2,13)*y;
             prompt=$"يتسع نشاط لـ {x} مشاركين خلال {y} دقائق. باستخدام جدول منتظم للمجموعات، كم مشاركًا يستوعب خلال {z} دقيقة بالمعدل نفسه؟";
             p=new Dictionary<string,int>{{"a",x},{"b",y},{"c",z}};
         }
@@ -92,7 +92,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
             for(int i=1;i<b;i++)expected=checked(expected*2);
             return true;
         }
-        if(a is <10 or >100||b is <1 or >10||c<2*b||c>12*b||c%b!=0)return false;
+        if(a is <10 or >200||b is <1 or >10||c<2*b||c>12*b||c%b!=0)return false;
         expected=checked(a*(c/b));return true;
     }
 
