@@ -1,0 +1,90 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 106,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:03",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "SourcePrintedPages": [
+    803,
+    804,
+    805,
+    806,
+    807,
+    808
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "قراءة بيانات متغيرة زمنيا من تمثيل خطي",
+    "وصف ارتفاع وانخفاض واستقرار سلسلة عبر الزمن",
+    "قراءة التمثيلات الخطية المزدوجة ومقارنة مجموعتين",
+    "استخراج الفرق العددي والتغير والتحقق من تساوي الوحدات والتدريج"
+  ],
+  "SourceElements": [
+    {
+      "Category": "single-line population data and trends",
+      "Pages": [
+        803
+      ],
+      "Coverage": "original interpretation notes and numeric lookup"
+    },
+    {
+      "Category": "double-line comparison of two changing datasets",
+      "Pages": [
+        804
+      ],
+      "Coverage": "source-aligned dual-series questions and original key/rubric"
+    },
+    {
+      "Category": "read chart axes and population/rainfall comparison",
+      "Pages": [
+        805,
+        806
+      ],
+      "Coverage": "explanation and original trend/difference model"
+    },
+    {
+      "Category": "homework single and double line readings",
+      "Pages": [
+        807,
+        808
+      ],
+      "Coverage": "independent original model and exact practice with verifier"
+    }
+  ],
+  "Engine": "EXTEND EXISTING G4 Unit13 Graphs engine, preserving all existing G4 and G5 families; new exact 2 dual-line families plus source-aligned reuse L02 numeric readers",
+  "SkillId": "data.graphs",
+  "QuestionFamilies": [
+    "uae.g5.u11.l03.double_line_final_difference",
+    "uae.g5.u11.l03.double_line_growth",
+    "uae.g5.u11.l02.line_plot_read_point",
+    "uae.g5.u11.l02.line_plot_max_value"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "الأسبوع الرابع: أ=١٩ وب=٢٢، والأسبوع الأول ب=١١. أوجد الفرق في الأسبوع الرابع، ومقدار تغير ب عبر الفترة.",
+    "Answer": "الفرق ٣ وحدات؛ التغير في ب ١١ وحدة",
+    "TeacherRubric": "محور زمن واحد ومقياس متسق، تفسير الفرق في الزمن نفسه: ٢٢−١٩=٣، والتغير عبر خط ب: ٢٢−١١=١١."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "REUSED_LINE_FAMILIES_AND_TWO_NEW_DUAL_LINE_EXACT_AUTHORED_NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson03DoubleLinePracticeTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Graph construction from original data and written trend interpretation",
+    "Adequate axes/key for dual series"
+  ],
+  "SourceRights": "Original content and source location only, no protected textbook task reproduction."
+}

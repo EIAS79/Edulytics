@@ -4,6 +4,8 @@ namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade4Unit13GraphsQuestions
 {
  internal const string PlotValue="uae.g4.u13.l01.plot_read_value";
+ internal const string G5DoubleFinal="uae.g5.u11.l03.double_line_final_difference";
+ internal const string G5DoubleGrowth="uae.g5.u11.l03.double_line_growth";
  internal const string G5LineRead="uae.g5.u11.l02.line_plot_read_point";
  internal const string G5LineChange="uae.g5.u11.l02.line_plot_total_change";
  internal const string G5LineMaximum="uae.g5.u11.l02.line_plot_max_value";
@@ -13,7 +15,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f) || IsG5Double(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -211,6 +213,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Double(f))return BuildG5Double(f,random);
    if(IsG5Line(f))return BuildG5Line(f,random);
    if(IsG5GraphPattern(f))return BuildG5GraphPattern(f,random);
    if(IsG5Coordinates(f))return BuildG5Coordinates(f,random);
@@ -260,6 +263,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Double(f))return SolveG5Double(f,p);
    if(IsG5Line(f))return SolveG5Line(f,p);
    if(IsG5GraphPattern(f))return SolveG5GraphPattern(f,p);
    if(IsG5Coordinates(f))return SolveG5Coordinates(f,p);
@@ -269,6 +273,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Double(f))return VerifyG5Double(f,p,answer);
    if(IsG5Line(f))return VerifyG5Line(f,p,answer);
    if(IsG5GraphPattern(f))return VerifyG5GraphPattern(f,p,answer);
    if(IsG5Coordinates(f))return VerifyG5Coordinates(f,p,answer);
@@ -343,6 +348,60 @@ internal static class UaeGrade4Unit13GraphsQuestions
    _=>Math.Max(Math.Max(Math.Max(a,b),Math.Max(c,d)),e)
   };
   return actual==independent;
+ }
+
+
+ // G5 U11 L03: compare two time-series with the same unit, dates and y-scale.
+ // The independent verifier recalculates directly from the source observations.
+ private static bool IsG5Double(string? family)=>family is G5DoubleFinal or G5DoubleGrowth;
+ private static Item BuildG5Double(string family,Random rng)
+ {
+  int a=rng.Next(10,19), b=a+rng.Next(1,5), c=b-rng.Next(1,3),
+      d=c+rng.Next(2,7), e=rng.Next(11,19), f=e+rng.Next(2,6),
+      g=f+rng.Next(2,6), h=g+rng.Next(2,6);
+  var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"d",d},
+   {"e",e},{"f",f},{"g",g},{"h",h}};
+  string table=$"خلال الأعوام ٢٠٢١، ٢٠٢٢، ٢٠٢٣، ٢٠٢٤ سجلت المجموعة أ: {a}، {b}، {c}، {d} وحدة، والمجموعة ب: {e}، {f}، {g}، {h} وحدة.";
+  string prompt=family==G5DoubleFinal?
+    $"{table} ارسم تمثيلًا خطيًا مزدوجًا بالمحور الرأسي نفسه؛ ما الفرق الموجب بين المجموعتين في ٢٠٢٤؟":
+    $"{table} بعد رسم الخطين، ما مقدار الزيادة في المجموعة ب بين ٢٠٢١ و٢٠٢٤؟";
+  return new Item(family,prompt,
+    "أحدد الأزواج المرتبة لكل مجموعة بالمقياس نفسه وأضع مفتاحًا لكل خط، ثم أقرأ القيم المطلوبة من الجدول أو الرسم وأطرح بدقة.",
+    AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Double(string family,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Double(family)||p.Count!=8||
+    !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+    !p.TryGetValue("c",out int c)||!p.TryGetValue("d",out int d)||
+    !p.TryGetValue("e",out int e)||!p.TryGetValue("f",out int f)||
+    !p.TryGetValue("g",out int g)||!p.TryGetValue("h",out int h)||
+    a is <10 or >18||b-a is <1 or >4||b-c is <1 or >2||
+    d-c is <2 or >6||e is <11 or >18||f-e is <2 or >5||
+    g-f is <2 or >5||h-g is <2 or >5)return false;
+  expected=family==G5DoubleFinal?Math.Abs(d-h):h-e;
+  return true;
+ }
+ private static string SolveG5Double(string family,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Double(family,p,out int expected))
+   throw new InvalidOperationException("Invalid G5 double line graph parameters");
+  return expected.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Double(string family,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+  if(!ValidG5Double(family,p,out _)||
+    string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string value=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(value,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+  return actual==(family==G5DoubleFinal?
+    Math.Abs(p["d"]-p["h"]):p["h"]-p["e"]);
  }
 
 }
