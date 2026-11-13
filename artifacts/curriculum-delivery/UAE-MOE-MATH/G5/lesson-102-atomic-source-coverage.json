@@ -1,0 +1,98 @@
+{
+  "Grade": 5,
+  "Unit": 10,
+  "LessonOrdinal": 102,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:10:06",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+  ],
+  "SourcePrintedPages": [
+    765,
+    766,
+    767,
+    768,
+    769,
+    770
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "التحويل من لترات إلى ملليلترات ومن ملليلترات إلى لترات",
+    "تطبيق العلاقة ١ لتر = ١٠٠٠ ملليلتر بدقة تشمل الكسور العشرية",
+    "توحيد الوحدات لحل المسائل والمقارنات وتقييم معقولية الناتج"
+  ],
+  "SourceElements": [
+    {
+      "Category": "title, essential question, metric unit definition",
+      "Pages": [
+        765
+      ],
+      "Coverage": "Arabic explanation, ratio table and original model"
+    },
+    {
+      "Category": "worked examples, liter-to-milliliter and reverse conversion",
+      "Pages": [
+        765,
+        766
+      ],
+      "Coverage": "Original worked examples and explicit inverse checks"
+    },
+    {
+      "Category": "guided practice, independent decimal conversions and comparisons",
+      "Pages": [
+        766,
+        767
+      ],
+      "Coverage": "Two registered exact generator families plus source-aligned examples; comparison reasoning teacher rubric"
+    },
+    {
+      "Category": "contextual word problems and mathematical reasoning",
+      "Pages": [
+        768
+      ],
+      "Coverage": "Independent original contextual problems, teacher-reviewed reasoning"
+    },
+    {
+      "Category": "homework examples and word problems",
+      "Pages": [
+        769,
+        770
+      ],
+      "Coverage": "Original example, verified Cool-down and reuse of existing numeric practice"
+    }
+  ],
+  "Engine": "REUSE existing UaeGrade4Unit14MetricMeasurementQuestions.G5CapMl/G5CapL (no new engine)",
+  "SkillId": "measurement.metric",
+  "QuestionFamilies": [
+    "uae.g5.u10.l06.liters_tenths_to_milliliters",
+    "uae.g5.u10.l06.milliliters_to_liters",
+    "uae.g4.u14.l05.liters_milliliters"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "خزان فيه ١٫٧٥ لتر ماء، وأضيف إليه ٦٥٠ ملليلترًا. ما السعة الإجمالية بالملليلتر وباللتر؟",
+    "Answer": "٢٤٠٠ ملليلتر = ٢٫٤ لتر",
+    "TeacherRubric": "توحيد الوحدة: ١٫٧٥ لتر = ١٧٥٠ ملليلتر؛ جمع صحيح: ١٧٥٠ + ٦٥٠ = ٢٤٠٠؛ تحويل عكسي صحيح: ٢٫٤ لتر. راقب كتابة الوحدة واختيارها."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_FAMILIES_ALREADY_IN_ENGINE_AND_REGISTRY__TESTS_NOT_RUN",
+  "StaticValidationEvidence": [
+    "Original Arabic lesson title matches Unit 10 lesson 6 manifest",
+    "Existing engine supports G5CapMl and G5CapL with exact decimal Solve and Verify",
+    "Question-family registry routes both to measurement.metric with verification policy",
+    "Existing test UaeGrade5Unit10MetricPracticeTests includes both families"
+  ],
+  "TestsWritten": "UaeGrade5Unit10MetricPracticeTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "SourceRights": "Only source-location metadata; learner content and visual are independently authored."
+}
