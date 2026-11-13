@@ -31,11 +31,73 @@ internal static class UaeGrade4Unit1FourStepQuestions
     private static bool IsG5(string? f)=>f is G5Missing or G5Initial or G5Budget or G5Undo;
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family) || IsG5Info(family) || IsG5U4Simple(family);
+    internal static bool Supports(string? family)=>family is Increase or Sum or Remaining || IsG5(family) || IsG5Table(family) || IsG5Info(family) || IsG5U4Simple(family) || IsGuess(family);
+
+
+    // Grade5 U7 L4 numeric checks of guess/check/revise; free-form reasoning remains teacher-reviewed.
+    internal const string GuessCars="uae.g5.u07.l04.cars_from_total_wheels";
+    internal const string GuessTickets="uae.g5.u07.l04.adults_from_ticket_revenue";
+    internal const string GuessTest="uae.g5.u07.l04.validate_guess_wheels";
+    private static bool IsGuess(string? f)=>f is GuessCars or GuessTickets or GuessTest;
+    private static Item BuildGuess(string f,Random rng)
+    {
+        if(f==GuessTickets)
+        {
+            int tickets=rng.Next(6,21),adults=rng.Next(1,tickets),amount=18*adults+12*(tickets-adults);
+            return new Item(f,$"بيعت {tickets} تذكرة للكبار والصغار بسعر ١٨ و١٢ درهمًا، وحُصل {amount} درهمًا. ما عدد تذاكر الكبار؟",
+              "خمّن عدد الكبار، ثم احسب المبلغ وراجع التخمين.",
+              AssessmentItemType.Numeric,new Dictionary<string,int>{{"tickets",tickets},{"amount",amount}});
+        }
+        int total=rng.Next(5,23),cars=rng.Next(1,total),wheels=4*cars+2*(total-cars);
+        if(f==GuessTest)
+        {
+            int guess=rng.Next(2)==0?cars:Math.Clamp(cars+(rng.Next(2)==0?-1:1),0,total);
+            return new Item(f,$"لدى معرض {total} مركبة، بينها سيارات بأربع عجلات ودراجات بعجلتين، مجموع عجلاتها {wheels}. هل تخمين {guess} سيارات صحيح؟ اكتب ١ لنعم و٠ للا.",
+              "اختبر العدد الكلي ثم عدد العجلات.",
+              AssessmentItemType.Numeric,new Dictionary<string,int>{{"total",total},{"wheels",wheels},{"guess",guess}});
+        }
+        return new Item(f,$"في معرض {total} مركبة من سيارات بأربع عجلات ودراجات بعجلتين، ومجموع عجلاتها {wheels}. كم سيارة توجد؟",
+          "خمّن عدد السيارات واختبر مجموع العجلات وعدّل التخمين.",
+          AssessmentItemType.Numeric,new Dictionary<string,int>{{"total",total},{"wheels",wheels}});
+    }
+    private static bool ValidGuess(string f,IReadOnlyDictionary<string,int> p,out int expected)
+    {
+        expected=0;
+        if(!IsGuess(f))return false;
+        if(f==GuessTickets)
+        {
+            if(p.Count!=2||!p.TryGetValue("tickets",out int tickets)||!p.TryGetValue("amount",out int amount)||
+              tickets is <6 or >20 || amount<=12*tickets||amount>=18*tickets||
+              (amount-12*tickets)%6!=0)return false;
+            expected=(amount-12*tickets)/6;return expected>0&&expected<tickets;
+        }
+        if(!p.TryGetValue("total",out int total)||!p.TryGetValue("wheels",out int wheels)||
+            total is <5 or >22||wheels<=2*total||wheels>=4*total||
+            (wheels-2*total)%2!=0)return false;
+        int cars=(wheels-2*total)/2;
+        if(f==GuessCars){if(p.Count!=2)return false;expected=cars;return true;}
+        if(p.Count!=3||!p.TryGetValue("guess",out int guess)||guess<0||guess>total)return false;
+        expected=guess==cars?1:0;return true;
+    }
+    private static bool VerifyGuess(string f,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!ValidGuess(f,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>20)return false;
+        string s=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬')
+          .Select(ch=>ch switch{ >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                                 >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),_=>ch}).ToArray());
+        if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int v))return false;
+        if(f==GuessTickets)return v>0&&v<p["tickets"]&&v*18+(p["tickets"]-v)*12==p["amount"];
+        int total=p["total"];
+        if(f==GuessCars)return v>0&&v<total&&v*4+(total-v)*2==p["wheels"];
+        if(v is not 0 and not 1)return false;
+        bool matches=4*p["guess"]+2*(total-p["guess"])==p["wheels"];
+        return v==(matches?1:0);
+    }
 
     public static Item Build(string family,Random rng)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported four-step family");
+        if (IsGuess(family)) return BuildGuess(family,rng);
         if (IsG5U4Simple(family)) return BuildG5U4Simple(family,rng);
         if (IsG5(family)) return BuildG5(family, rng);
         if (IsG5Table(family)) return BuildG5Table(family,rng);
@@ -297,6 +359,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
     private static bool Valid(string family,IReadOnlyDictionary<string,int> p,out int expected)
     {
         expected=0;
+        if(IsGuess(family))return ValidGuess(family,p,out expected);
         if(IsG5U4Simple(family)) return ValidG5U4Simple(family,p,out expected);
         if(IsG5(family)) return ValidG5(family,p,out expected);
         if(IsG5Table(family)) return ValidG5Table(family,p,out expected);
@@ -315,6 +378,7 @@ internal static class UaeGrade4Unit1FourStepQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(IsGuess(family))return VerifyGuess(family,p,answer);
         if(IsG5U4Simple(family))return VerifyG5U4Simple(family,p,answer);
         if(!Valid(family,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim()
