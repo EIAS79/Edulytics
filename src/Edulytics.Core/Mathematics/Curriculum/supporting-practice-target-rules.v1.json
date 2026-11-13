@@ -14028,6 +14028,28 @@
         "commonMistake": "عدم الخلط بين الناتج الدقيق والتقريبي.",
         "summary": "حدد خطة التقريب ثم قدر وتحقق."
       }
+    },
+    {
+      "id": "uae-g5-u02-l09-one-digit-multiplication",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:09$"
+      ],
+      "skillId": "number.multiply_multidigit_by_one",
+      "mechanic": "ONE_DIGIT_MULTIPLICATION_WITH_REGROUPING",
+      "families": [
+        "uae.g5.u02.l09.exact_one_digit_product",
+        "uae.g5.u02.l09.ones_partial",
+        "uae.g5.u02.l09.tens_partial",
+        "uae.g5.u02.l09.round_and_estimate"
+      ],
+      "content": {
+        "concept": "ضرب أعداد من رقمين أو ثلاثة في رقم واحد مع إعادة التجميع.",
+        "workedExample": "٢٤٦×٧ = ١٤٠٠+٢٨٠+٤٢ = ١٧٢٢.",
+        "solution": "أضرب منزلة الآحاد ثم العشرات ثم المئات، وأعيد تجميع القيم حسب المنازل.",
+        "commonMistake": "نسيان حمل قيمة العشرات عند إعادة التجميع.",
+        "summary": "أحسب الناتج الدقيق وأتحقق بالتقدير."
+      }
     }
   ]
 }

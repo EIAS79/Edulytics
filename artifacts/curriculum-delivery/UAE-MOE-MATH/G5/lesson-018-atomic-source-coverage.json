@@ -1,0 +1,80 @@
+{
+  "Grade": 5,
+  "Unit": 2,
+  "LessonOrdinal": 18,
+  "LessonNumber": 9,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:09",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136
+  ],
+  "SourcePdfPages": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+  ],
+  "SourceEdition": "Owner-selected Arabic student 2025–2026",
+  "TargetYear": "2026–2027",
+  "OfficialIndexVerified": false,
+  "SourceCoverage": [
+    {
+      "Id": "G5-U2-L9-1",
+      "Pages": [
+        149,
+        150
+      ],
+      "Type": "regrouping and place-value multiplication",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u02-l09-ar.rich-lesson-v2.json"
+    },
+    {
+      "Id": "G5-U2-L9-2",
+      "Pages": [
+        150,
+        151
+      ],
+      "Type": "guided and independent products",
+      "Artifact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit2Lesson09OneDigitMultiplicationTests.cs"
+    },
+    {
+      "Id": "G5-U2-L9-3",
+      "Pages": [
+        152,
+        153
+      ],
+      "Type": "word problems and estimation",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u02-l09-ar.rich-lesson-v2.json"
+    },
+    {
+      "Id": "G5-U2-L9-4",
+      "Pages": [
+        154
+      ],
+      "Type": "homework and math reasoning",
+      "Artifact": "teacher review rubric"
+    }
+  ],
+  "EngineReuse": "UaeGrade4Unit4Lesson09MultiDigitQuestions extended with grade5 families",
+  "SkillId": "number.multiply_multidigit_by_one",
+  "Families": [
+    "uae.g5.u02.l09.exact_one_digit_product",
+    "uae.g5.u02.l09.ones_partial",
+    "uae.g5.u02.l09.tens_partial",
+    "uae.g5.u02.l09.round_and_estimate"
+  ],
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ARABIC_ORIGINAL",
+  "StageC": "CLOSED_EXTENDED_EXISTING_ENGINE",
+  "TestsWritten": "UaeGrade5Unit2Lesson09OneDigitMultiplicationTests",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}
