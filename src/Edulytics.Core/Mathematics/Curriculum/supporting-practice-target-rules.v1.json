@@ -15075,6 +15075,27 @@
         "commonMistake": "لا تقبل تخمينًا يحقق شرطًا واحدًا فقط.",
         "summary": "تخمين وتحقق ومراجعة."
       }
+    },
+    {
+      "id": "uae-g5-u07-l05-lcm-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:05$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "LCM_TWO_AND_THREE",
+      "families": [
+        "uae.g5.u07.l05.lcm_two_numbers",
+        "uae.g5.u07.l05.lcm_three_numbers",
+        "uae.g5.u07.l05.test_common_multiple"
+      ],
+      "content": {
+        "concept": "المضاعف المشترك الأصغر أصغر مضاعف موجب مشترك لعددين أو أكثر.",
+        "workedExample": "م.م.أ(٦،٨)=٢٤، لا ٢.",
+        "solution": "اكتب المضاعفات أو العوامل الأولية وتحقق من القسمة.",
+        "commonMistake": "الخلط بين ع.م.أ وم.م.أ.",
+        "summary": "أوجد م.م.أ لعددين أو ثلاثة."
+      }
     }
   ]
 }

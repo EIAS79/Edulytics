@@ -1,0 +1,86 @@
+{
+  "Grade": 5,
+  "Unit": 7,
+  "LessonOrdinal": 68,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:07:05",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\02-1.pdf",
+  "SourcePdfSha256": "f0a111404b9e94bbc598f1ff4a7f80d68e434c54d3a30155858994404ddf5ab6",
+  "SourcePrintedPages": [
+    513,
+    514,
+    515,
+    516,
+    517,
+    518
+  ],
+  "SourcePdfPages": [
+    126,
+    127,
+    128,
+    129,
+    130,
+    131
+  ],
+  "SourceEdition": "Owner-selected Arabic 2025–2026 local",
+  "Official2026_2027Order": "UNVERIFIED",
+  "SourceElements": [
+    {
+      "Type": "multiples-and-recurrence",
+      "Pages": [
+        513,
+        514,
+        517
+      ],
+      "Coverage": "ORIGINAL_ARABIC_EXAMPLES_AND_NUMBER_LINE"
+    },
+    {
+      "Type": "factorization-two-numbers",
+      "Pages": [
+        514,
+        515
+      ],
+      "Coverage": "EXACT_LCM_TWO_NUMBERS"
+    },
+    {
+      "Type": "independent-two-or-three",
+      "Pages": [
+        515,
+        516
+      ],
+      "Coverage": "EXACT_LCM_TRIPLE"
+    },
+    {
+      "Type": "reasoning-homework-and-check",
+      "Pages": [
+        516,
+        517,
+        518
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN_TEACHER_EXPLANATION"
+    }
+  ],
+  "SourceErrorCorrection": {
+    "PrintedPage": 516,
+    "Description": "Worked error-analysis box states LCM(6,8)=2; 2 is a common factor, not a common multiple. Correct LCM(6,8)=24.",
+    "Action": "Use mathematically correct first-party examples; do not reproduce error."
+  },
+  "SkillId": "supporting.number.factors_primes",
+  "QuestionFamilies": [
+    "uae.g5.u07.l05.lcm_two_numbers",
+    "uae.g5.u07.l05.lcm_three_numbers",
+    "uae.g5.u07.l05.test_common_multiple"
+  ],
+  "Engine": "REUSE/EXTEND UaeGrade4Unit8Lesson01FactorMultipleQuestions; no new engine",
+  "CoolDown": {
+    "Source": "EDULYTICS_ORIGINAL",
+    "Question": "يُراجع مختبر عيناته كل ٨ أيام وآخر كل ١٢ يومًا. إذا بدأت المراجعتان اليوم، فبعد كم يوم تتزامنان مجددًا؟",
+    "Answer": "٢٤ يومًا",
+    "HumanReview": true
+  },
+  "StageA": "CLOSED_LOCAL_BOOK",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "AUTHORED_EXISTING_ENGINE_EXTENSION_AND_TESTS_NOT_RUN",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}
