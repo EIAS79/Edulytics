@@ -46660,6 +46660,44 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l06.scatter_midpoint_interpolation",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l06-Arabic-source-paired-data-interpolation-StageD-NOT_RUN",
+      "representations": [
+        "ordered_pairs",
+        "scatter_graph",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u11.l06.scatter_linear_extrapolation",
+      "version": 1,
+      "skillId": "data.graphs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "uae-g5-u11-l06-Arabic-source-paired-data-interpolation-StageD-NOT_RUN",
+      "representations": [
+        "ordered_pairs",
+        "scatter_graph",
+        "teacher_rubric"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

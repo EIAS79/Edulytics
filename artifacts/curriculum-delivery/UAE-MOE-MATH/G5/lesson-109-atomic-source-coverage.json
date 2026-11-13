@@ -1,0 +1,89 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 109,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:06",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    118,
+    119,
+    120,
+    121,
+    122,
+    123
+  ],
+  "SourcePrintedPages": [
+    821,
+    822,
+    823,
+    824,
+    825,
+    826
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "اختيار خطة من أربع خطوات لإنشاء تمثيل بياني من جدول",
+    "تمثيل أزواج مرتبة لمتغيرين وتفسير علاقة تقريبية",
+    "استخدام الاستيفاء الخطي لتقدير قيمة بين قياسين مناسبين",
+    "فحص منطقية الاستقراء وحدود الدقة"
+  ],
+  "SourceElements": [
+    {
+      "Category": "four-step problem-solving strategy from paired-variable data",
+      "Pages": [
+        821
+      ],
+      "Coverage": "original Arabic understanding/plan/solve/check structure"
+    },
+    {
+      "Category": "temperature and quantity paired measurements",
+      "Pages": [
+        822
+      ],
+      "Coverage": "original source-scoped interpolation family and teacher reasoning"
+    },
+    {
+      "Category": "draw chart from real-world data table",
+      "Pages": [
+        823,
+        824
+      ],
+      "Coverage": "source-aligned skill contract with original visual modeling"
+    },
+    {
+      "Category": "homework table-to-graph environmental population trends",
+      "Pages": [
+        825,
+        826
+      ],
+      "Coverage": "original graph-creation explanation, teacher-rubric"
+    }
+  ],
+  "Engine": "EXTEND existing UaeGrade4Unit13GraphsQuestions with two paired-data source-aligned exact families; reuse graph total-change",
+  "SkillId": "data.graphs",
+  "QuestionFamilies": [
+    "uae.g5.u11.l06.scatter_midpoint_interpolation",
+    "uae.g5.u11.l06.scatter_linear_extrapolation",
+    "uae.g5.u11.l02.line_plot_total_change"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "عند (٢٤ درجة، ٤٨ لترًا) و(٣٤ درجة، ٦٨ لترًا)، قدّر الكمية عند ٢٩ درجة بافتراض خطية العلاقة واذكر سبب حذرنا من الاستقراء.",
+    "Answer": "حوالي ٥٨ لترًا، مشروطًا بالعلاقة الخطية؛ الاستقراء خارج القياسات غير مؤكد",
+    "TeacherRubric": "تسمية المحورين ووحدتيهما، استعمال المنتصف x=٢٩ والمنتصف y=٥٨، تبرير افتراض الخطية وبيان عدم اليقين."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "PAIRED_VARIABLE_GRAPH_INTERPOLATION_EXACT_ENGINE_STAGED_NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson06PairedDataTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Choice of chart and graph axes",
+    "Hypothesis of linear relation in paired data"
+  ],
+  "SourceRights": "No protected textbook prose/images copied; Edulytics original student content."
+}

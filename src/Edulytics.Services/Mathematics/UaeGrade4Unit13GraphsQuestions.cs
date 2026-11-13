@@ -4,6 +4,8 @@ namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade4Unit13GraphsQuestions
 {
  internal const string PlotValue="uae.g4.u13.l01.plot_read_value";
+ internal const string G5ScatterMid="uae.g5.u11.l06.scatter_midpoint_interpolation";
+ internal const string G5ScatterNext="uae.g5.u11.l06.scatter_linear_extrapolation";
  internal const string G5PredictNext="uae.g5.u11.l04.linear_next_prediction";
  internal const string G5PredictFuture="uae.g5.u11.l04.linear_future_prediction";
  internal const string G5PredictSample="uae.g5.u11.l04.sample_scaled_estimate";
@@ -18,7 +20,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f) || IsG5Double(f) || IsG5Predict(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f) || IsG5Double(f) || IsG5Predict(f) || IsG5Scatter(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -216,6 +218,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Scatter(f))return BuildG5Scatter(f,random);
    if(IsG5Predict(f))return BuildG5Predict(f,random);
    if(IsG5Double(f))return BuildG5Double(f,random);
    if(IsG5Line(f))return BuildG5Line(f,random);
@@ -267,6 +270,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Scatter(f))return SolveG5Scatter(f,p);
    if(IsG5Predict(f))return SolveG5Predict(f,p);
    if(IsG5Double(f))return SolveG5Double(f,p);
    if(IsG5Line(f))return SolveG5Line(f,p);
@@ -278,6 +282,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Scatter(f))return VerifyG5Scatter(f,p,answer);
    if(IsG5Predict(f))return VerifyG5Predict(f,p,answer);
    if(IsG5Double(f))return VerifyG5Double(f,p,answer);
    if(IsG5Line(f))return VerifyG5Line(f,p,answer);
@@ -468,6 +473,53 @@ internal static class UaeGrade4Unit13GraphsQuestions
    _=>(a%7+1)*10*m
   };
   return actual==oracle;
+ }
+
+
+ // G5 U11 L06: source-scoped paired-variable graph from a table.
+ // A scatter-style relationship is not guaranteed linear; numeric estimates
+ // here explicitly state the simplifying interpolation/extrapolation hypothesis.
+ private static bool IsG5Scatter(string? f)=>f is G5ScatterMid or G5ScatterNext;
+ private static Item BuildG5Scatter(string family,Random rng)
+ {
+  int a=rng.Next(42,71),b=rng.Next(3,10),c=rng.Next(20,41);
+  var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
+  string raw=$"قياس تجربة: عند {c} درجة مئوية أنتجت آلة {a} لترًا، وعند {c+10} درجات أنتجت {a+2*b} لترًا.";
+  string question=family==G5ScatterMid?
+    $"{raw} أنشئ تمثيلًا بيانيًا للأزواج (الحرارة، الكمية)، وافترض تغيرًا خطيًا بين النقطتين. كم لترًا تتوقع عند {c+5} درجات؟":
+    $"{raw} إذا استمرت العلاقة الخطية نفسها خارج مدى القياس، كم لترًا تتوقع عند {c+15} درجة؟";
+  return new Item(family,question,
+   "أسجل الأزواج (x,y)، وأختار محاور وتدرجًا ملائمين، وأحسب مقدار التغير بين القياسين؛ النتيجة مشروطة بافتراض خطية العلاقة.",
+   AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Scatter(string f,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Scatter(f)||p.Count!=3||
+     !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+     !p.TryGetValue("c",out int c)||a is <42 or >70||
+     b is <3 or >9||c is <20 or >40)return false;
+  expected=f==G5ScatterMid?a+b:a+3*b;
+  return true;
+ }
+ private static string SolveG5Scatter(string f,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Scatter(f,p,out int value))
+    throw new InvalidOperationException("Invalid G5 scatter paired data");
+  return value.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Scatter(string f,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+  if(!ValidG5Scatter(f,p,out _)||
+     string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string normalized=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int submitted))return false;
+  return submitted==(f==G5ScatterMid?p["a"]+p["b"]:p["a"]+3*p["b"]);
  }
 
 }
