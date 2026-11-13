@@ -4,13 +4,16 @@ namespace Edulytics.Services.Mathematics;
 internal static class UaeGrade4Unit13GraphsQuestions
 {
  internal const string PlotValue="uae.g4.u13.l01.plot_read_value";
+ internal const string G5LineRead="uae.g5.u11.l02.line_plot_read_point";
+ internal const string G5LineChange="uae.g5.u11.l02.line_plot_total_change";
+ internal const string G5LineMaximum="uae.g5.u11.l02.line_plot_max_value";
  internal const string PlotDifference="uae.g4.u13.l01.plot_difference";
  internal const string LineMax="uae.g4.u13.l02.line_graph_max";
  internal const string LineIncrease="uae.g4.u13.l02.line_graph_increase";
  internal const string PieCategory="uae.g4.u13.l03.pie_category_percent";
  internal const string PieRest="uae.g4.u13.l03.pie_rest_percent";
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f);
+ internal static bool Supports(string? f)=>f is PlotValue or PlotDifference or LineMax or LineIncrease or PieCategory or PieRest || IsG5Map(f) || IsG5Coordinates(f) || IsG5GraphPattern(f) || IsG5Line(f);
 
  // UAE G5 U06 L09: exact numeric subskills of mapping routes on a
  // unit grid. Reuse shared G4 graph engine; freehand sketch teacher-reviewed.
@@ -208,6 +211,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  internal static Item Build(string f,Random random)
  {
    if(!Supports(f))throw new InvalidOperationException("Unsupported graph family");
+   if(IsG5Line(f))return BuildG5Line(f,random);
    if(IsG5GraphPattern(f))return BuildG5GraphPattern(f,random);
    if(IsG5Coordinates(f))return BuildG5Coordinates(f,random);
    if(IsG5Map(f))return BuildG5Map(f,random);
@@ -256,6 +260,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+   if(IsG5Line(f))return SolveG5Line(f,p);
    if(IsG5GraphPattern(f))return SolveG5GraphPattern(f,p);
    if(IsG5Coordinates(f))return SolveG5Coordinates(f,p);
    if(IsG5Map(f))return SolveG5Map(f,p);
@@ -264,6 +269,7 @@ internal static class UaeGrade4Unit13GraphsQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if(IsG5Line(f))return VerifyG5Line(f,p,answer);
    if(IsG5GraphPattern(f))return VerifyG5GraphPattern(f,p,answer);
    if(IsG5Coordinates(f))return VerifyG5Coordinates(f,p,answer);
    if(IsG5Map(f))return VerifyG5Map(f,p,answer);
@@ -275,4 +281,68 @@ internal static class UaeGrade4Unit13GraphsQuestions
    }).Where(c=>c is not ' ' and not ',' and not '٬' and not '\u00a0').ToArray());
    return int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&actual==expected;
  }
+
+ // Grade 5 Arabic Unit 11 lesson 2: plot 5 time/value pairs, then read
+ // a point, total change, or maximum. Teacher reviews actual graph drawing.
+ private static bool IsG5Line(string? family)=>family is G5LineRead or G5LineChange or G5LineMaximum;
+ private static Item BuildG5Line(string family,Random rng)
+ {
+  int a=rng.Next(12,31),b=a+rng.Next(2,8),c=b+rng.Next(2,8),
+      d=c-rng.Next(1,5),e=d+rng.Next(2,9);
+  var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"d",d},{"e",e}};
+  string data=$"بيانات تجربة قياس كل ساعة: الزمن ١، ٢، ٣، ٤، ٥ ساعات. القيم بالترتيب {a}، {b}، {c}، {d}، {e} وحدة.";
+  string prompt=family switch
+  {
+    G5LineRead=>$"{data} ارسم النقاط (الزمن، القيمة) ثم ما قيمة y عند الساعة الثالثة؟",
+    G5LineChange=>$"{data} بعد تمثيل البيانات بخط بياني، كم الفرق الموجب بين القيمة عند البداية والقيمة عند النهاية؟",
+    G5LineMaximum=>$"{data} مثل البيانات بخط بياني؛ ما أعلى قيمة على محور y بين الأوقات الخمسة؟",
+    _=>throw new InvalidOperationException("Unsupported G5 line family")
+  };
+  return new Item(family,prompt,
+    "أحدد المحور الأفقي للوقت والرأسي للقيمة، أختار تدريجًا ثابتًا، وأمثل الأزواج المرتبة وأربط النقاط بالترتيب، ثم أقرأ المطلوب.",
+    AssessmentItemType.Numeric,p);
+ }
+ private static bool ValidG5Line(string family,IReadOnlyDictionary<string,int> p,out int expected)
+ {
+  expected=0;
+  if(!IsG5Line(family)||p.Count!=5||!p.TryGetValue("a",out int a)||
+    !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+    !p.TryGetValue("d",out int d)||!p.TryGetValue("e",out int e)||
+    a is <12 or >30||b<=a||b>a+7||c<=b||c>b+7||
+    d>=c||d<c-4||e<=d||e>d+8)return false;
+  expected=family switch
+  {
+   G5LineRead=>c,
+   G5LineChange=>Math.Abs(e-a),
+   G5LineMaximum=>new[]{a,b,c,d,e}.Max(),
+   _=>throw new InvalidOperationException("Unsupported G5 line family")
+  };
+  return true;
+ }
+ private static string SolveG5Line(string family,IReadOnlyDictionary<string,int> p)
+ {
+  if(!ValidG5Line(family,p,out int value))
+   throw new InvalidOperationException("Invalid Grade5 U11 line graph data");
+  return value.ToString(CultureInfo.InvariantCulture);
+ }
+ private static bool VerifyG5Line(string family,IReadOnlyDictionary<string,int> p,string? answer)
+ {
+  if(!ValidG5Line(family,p,out _)||string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+  string s=new(answer.Trim().Select(ch=>ch switch
+  {
+   >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+   >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+   _=>ch
+  }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+  if(!int.TryParse(s,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
+  int a=p["a"],b=p["b"],c=p["c"],d=p["d"],e=p["e"];
+  int independent=family switch
+  {
+   G5LineRead=>c,
+   G5LineChange=>Math.Abs(e-a),
+   _=>Math.Max(Math.Max(Math.Max(a,b),Math.Max(c,d)),e)
+  };
+  return actual==independent;
+ }
+
 }
