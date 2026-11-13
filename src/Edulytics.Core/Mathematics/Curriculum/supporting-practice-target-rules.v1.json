@@ -15159,6 +15159,27 @@
         "commonMistake": "تغيير المقام دون البسط أو اعتبار ١/٥=٠٫٥.",
         "summary": "اكتب الكسور كأعداد عشرية مكافئة."
       }
+    },
+    {
+      "id": "uae-g5-u08-l01-fraction-rounding",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:01$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "FRACTION_BENCHMARK_ROUNDING",
+      "families": [
+        "uae.g4.u10.l06.nearest_benchmark",
+        "uae.g4.u10.l06.compared_to_half",
+        "uae.g5.u08.l01.round_mixed_number_to_whole"
+      ],
+      "content": {
+        "concept": "تقريب كسور إلى الصفر أو النصف أو الواحد.",
+        "workedExample": "٢/١٠٠≈٠ و٤/٩≈١/٢ و٧/٨≈١.",
+        "solution": "حدد الأقرب على خط الأعداد.",
+        "commonMistake": "تقريب كل الكسور الأصغر من واحد إلى الصفر.",
+        "summary": "قرب الكسور بمرجع واضح."
+      }
     }
   ]
 }

@@ -45795,6 +45795,24 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g5.u08.l01.round_mixed_number_to_whole",
+      "version": 1,
+      "skillId": "fractions.compare",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "grade5-02pdf-fractions-mixed-rounding-stageD-not-run",
+      "representations": [
+        "number_line",
+        "symbolic"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
