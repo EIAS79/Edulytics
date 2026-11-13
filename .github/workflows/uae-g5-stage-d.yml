@@ -1,0 +1,110 @@
+name: UAE Grade 5 Common Stage D - fail-closed diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g5-stage-d.yml'
+      - 'tools/curriculum/uae_g5_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G5/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uae-g5-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  CI: 'true'
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+jobs:
+  structural:
+    name: G5 127 IDs, Arabic and registrations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g5_stage_d_gate.py --phase structural
+      - run: python3 tools/math_intelligence/math_registry_integrity.py --strict
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g5-structural-${{ github.run_id }}
+          path: artifacts/uae-g5-stage-d/grade5-structural-gate.json
+          if-no-files-found: ignore
+          retention-days: 30
+  source:
+    name: G5 official 2026-2027 source and handoff
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 tools/curriculum/uae_g5_stage_d_gate.py --phase source
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g5-source-${{ github.run_id }}
+          path: artifacts/uae-g5-stage-d/grade5-source-gate.json
+          if-no-files-found: error
+          retention-days: 30
+  math:
+    name: G5 candidate math and UAE/US shared regressions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Restore once, build Release once
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+      - name: Grade 5 exact mathematics and lesson tests
+        run: |
+          mkdir -p artifacts/uae-g5-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade5' --logger 'trx;LogFileName=g5.trx' --results-directory artifacts/uae-g5-stage-d/trx
+      - name: Impacted G1-G4 UAE and US reader regressions
+        run: |
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade1Arabic|FullyQualifiedName~UaeGrade2|FullyQualifiedName~UaeGrade3|FullyQualifiedName~UaeGrade4|FullyQualifiedName~Phase29LessonReaderFinalPolishTests|FullyQualifiedName~Phase29LessonContentVisualContractTests|FullyQualifiedName~CommonCorePhase04SourceEntityPresentationTests' --logger 'trx;LogFileName=g5-impact.trx' --results-directory artifacts/uae-g5-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g5-math-${{ github.run_id }}
+          path: artifacts/uae-g5-stage-d/trx/
+          if-no-files-found: ignore
+          retention-days: 30
+  final:
+    name: G5 evidence-linked NO-GO while runtime/source missing
+    if: always()
+    needs: [structural, source, math]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate candidate dependency results, no automatic approval
+        env:
+          STRUCTURAL_RESULT: ${{ needs.structural.result }}
+          SOURCE_RESULT: ${{ needs.source.result }}
+          MATH_RESULT: ${{ needs.math.result }}
+          E2E_RESULT: NOT_RUN
+        run: python3 tools/curriculum/uae_g5_stage_d_gate.py --phase final
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g5-final-${{ github.run_id }}
+          path: artifacts/uae-g5-stage-d/grade5-final-gate.json
+          if-no-files-found: error
+          retention-days: 30
