@@ -15583,6 +15583,26 @@
         "commonMistake": "لا تفترض أن كل عملية ضرب تزيد القيمة.",
         "summary": "عامل أكبر من ١ يكبّر، وعامل بين ٠ و١ يصغّر، والواحد لا يغيّر."
       }
+    },
+    {
+      "id": "uae-g5-u09-l09-unit-fraction-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:09$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "UNIT_FRACTION_DIVISION",
+      "families": [
+        "uae.g5.u09.l09.whole_divide_unit_fraction",
+        "uae.g5.u09.l09.unit_fraction_divide_whole"
+      ],
+      "content": {
+        "concept": "قسمة عدد كلي على كسر وحدة تعني عد كسور الوحدة في الكل، وقسمة كسر الوحدة على عدد كلي تعني تجزئة الجزء.",
+        "workedExample": "٤÷١/٢=٨، و١/٥÷٢=١/١٠.",
+        "solution": "استخدم رقائق الكسور ثم تحقق بالضرب.",
+        "commonMistake": "التبادل غير الصحيح بين عمليتي القسمة.",
+        "summary": "أعد الأجزاء المتساوية وأتحقق من النتائج."
+      }
     }
   ]
 }
