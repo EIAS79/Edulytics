@@ -14340,6 +14340,27 @@
         "commonMistake": "لا تدخل كل رقم في المعادلة بلا داع.",
         "summary": "أميز المعطيات الزائدة والناقصة وأحل ما تسمح به المعطيات."
       }
+    },
+    {
+      "id": "uae-g5-u04-l01-two-digit-division-estimates",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:01$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "DIVIDE_TWO_DIGIT_ESTIMATE_COMPATIBLE",
+      "families": [
+        "uae.g5.u04.l01.estimate_two_digit_quotient",
+        "uae.g5.u04.l01.choose_compatible_dividend",
+        "uae.g5.u04.l01.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "تقريب المقسوم عليه إلى عشرات واختيار مقسوم متوافق قريب لتقدير نواتج القسمة.",
+        "workedExample": "٨١٢÷١٩≈٨٠٠÷٢٠=٤٠.",
+        "solution": "تقريب المقسوم عليه، ثم اختيار مضاعف متوافق، ثم إجراء القسمة الذهنية.",
+        "commonMistake": "التقدير لا يساوي دائمًا الحاصل الدقيق.",
+        "summary": "أقدر ناتج قسمة رقم كبير على مقسوم عليه من رقمين وأتحقق من معقوليته."
+      }
     }
   ]
 }
