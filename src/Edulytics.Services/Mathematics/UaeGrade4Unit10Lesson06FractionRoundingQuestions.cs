@@ -13,7 +13,8 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     internal const string G5MixedNumberWhole="uae.g5.u08.l01.round_mixed_number_to_whole";
     internal const string G5EstimateMixedSum="uae.g5.u08.l08.estimate_mixed_sum";
     internal const string G5ReasonableSum="uae.g5.u08.l08.check_reasonable_sum";
-    private static bool G5EstimateFamily(string? f)=>f is G5EstimateMixedSum or G5ReasonableSum;
+    internal const string G5EstimateMixedDifference="uae.g5.u08.l09.estimate_mixed_difference";
+    private static bool G5EstimateFamily(string? f)=>f is G5EstimateMixedSum or G5ReasonableSum or G5EstimateMixedDifference;
     private static Item BuildG5MixedNumberWhole(Random random)
     {
         int w=random.Next(1,13),d=random.Next(4,17),n=random.Next(1,d);
@@ -52,14 +53,18 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
     // Reuse G4 benchmark rounding; extend to estimate sums of two mixed numbers.
     private static Item BuildG5Estimation(string f,Random rng)
     {
-        int w1=rng.Next(1,11),w2=rng.Next(1,9);
+        int w1=f==G5EstimateMixedDifference?rng.Next(5,13):rng.Next(1,11);
+        int w2=f==G5EstimateMixedDifference?rng.Next(1,Math.Min(9,w1-1)):rng.Next(1,9);
         int d1=rng.Next(3,13),d2=rng.Next(3,13);
         int n1=rng.Next(1,d1),n2=rng.Next(1,d2);
-        int expected=w1+(2*n1>=d1?1:0)+w2+(2*n2>=d2?1:0);
+        int first=w1+(2*n1>=d1?1:0),second=w2+(2*n2>=d2?1:0);
+        int expected=f==G5EstimateMixedDifference?first-second:first+second;
         int proposed=expected+(rng.Next(2)==0?0:2);
         var p=new Dictionary<string,int>{{"w1",w1},{"n1",n1},{"d1",d1},
             {"w2",w2},{"n2",n2},{"d2",d2},{"proposed",proposed}};
-        string prompt=f==G5EstimateMixedSum
+        string prompt=f==G5EstimateMixedDifference
+            ?$"قرّب كل عدد كسري ثم قدّر الفرق بين {w1} و{n1}/{d1} و{w2} و{n2}/{d2} إلى أقرب عدد كلي."
+            :f==G5EstimateMixedSum
             ?$"قرّب كل عدد كسري إلى أقرب عدد كلي ثم قدّر مجموع {w1} و{n1}/{d1} و{w2} و{n2}/{d2}. ما الناتج التقريبي؟"
             :$"بعد تقريب {w1} و{n1}/{d1} مع {w2} و{n2}/{d2} إلى أقرب عدد كلي لكل عدد، هل التقدير {proposed} منطقي؟ اكتب ١ لنعم أو ٠ للا.";
         return new Item(f,prompt,"أقارن كل جزء كسري بالنصف، ثم أجمع التقريبين وأتحقق من معقولية التقدير.",
@@ -74,18 +79,19 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
           p.TryGetValue("d1",out d1)&&p.TryGetValue("w2",out w2)&&
           p.TryGetValue("n2",out n2)&&p.TryGetValue("d2",out d2)&&
           p.TryGetValue("proposed",out proposed)&&
-          w1 is >=1 and <=10 && w2 is >=1 and <=8 &&
+          w1 is >=1 and <=12 && w2 is >=1 and <=8 &&
           d1 is >=3 and <=12 && d2 is >=3 and <=12 &&
           n1>=1&&n1<d1&&n2>=1&&n2<d2 &&
-          proposed is >=2 and <=22;
+          proposed is >=1 and <=22;
     }
     private static string SolveG5Estimation(string f,IReadOnlyDictionary<string,int> p)
     {
         if(!ValidG5Estimation(f,p,out int w1,out int n1,out int d1,
             out int w2,out int n2,out int d2,out int prop))
             throw new InvalidOperationException("Invalid mixed-number estimate parameters.");
-        int approximate=w1+(2*n1>=d1?1:0)+w2+(2*n2>=d2?1:0);
-        int answer=f==G5EstimateMixedSum?approximate:(prop==approximate?1:0);
+        int first=w1+(2*n1>=d1?1:0),second=w2+(2*n2>=d2?1:0);
+        int approximate=f==G5EstimateMixedDifference?first-second:first+second;
+        int answer=f is G5EstimateMixedSum or G5EstimateMixedDifference ?approximate:(prop==approximate?1:0);
         return answer.ToString(CultureInfo.InvariantCulture);
     }
     private static bool VerifyG5Estimation(string f,IReadOnlyDictionary<string,int> p,string? response)
@@ -99,7 +105,8 @@ internal static class UaeGrade4Unit10Lesson06FractionRoundingQuestions
         if(!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual))return false;
         // Independent benchmark: compare each numerator to the missing piece of its denominator.
         int first=w1+(n1>=d1-n1?1:0),second=w2+(n2>=d2-n2?1:0);
-        int want=f==G5EstimateMixedSum?first+second:(prop==first+second?1:0);
+        int want=f==G5EstimateMixedDifference?first-second:
+                 f==G5EstimateMixedSum?first+second:(prop==first+second?1:0);
         return actual==want;
     }
 
