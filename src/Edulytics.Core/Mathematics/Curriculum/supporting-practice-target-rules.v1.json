@@ -15224,6 +15224,27 @@
         "commonMistake": "طرح المقامات.",
         "summary": "طرح وتبسيط الكسور المتشابهة."
       }
+    },
+    {
+      "id": "uae-g5-u08-l04-unlike-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:04$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "UNLIKE_FRACTION_MODEL_ADD",
+      "families": [
+        "uae.g5.u08.l04.model_common_denominator",
+        "uae.g5.u08.l04.equivalent_second_numerator",
+        "uae.g5.u08.l04.model_unlike_sum_simplified"
+      ],
+      "content": {
+        "concept": "تُمثل الكسور غير المتشابهة بشريطي كسور ثم توحد المقامات وتجمع.",
+        "workedExample": "٢/٣+٣/٤=٨/١٢+٩/١٢=١٧/١٢.",
+        "solution": "أجد المضاعف المشترك الأصغر ثم أجمع البسطين وأبسط.",
+        "commonMistake": "لا أجمع المقامات.",
+        "summary": "نمذجة أجزاء متساوية."
+      }
     }
   ]
 }
