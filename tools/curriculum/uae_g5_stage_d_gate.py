@@ -220,44 +220,89 @@ def audit_source():
 
 
 def audit_final():
+    """Require same-SHA current-run proof; owner-approved source limits are separate."""
+    import xml.etree.ElementTree as ET
     results = {name: os.getenv(env, "NOT_RUN") for name, env in [
         ("source", "SOURCE_RESULT"), ("structural", "STRUCTURAL_RESULT"),
         ("math", "MATH_RESULT"), ("authenticatedE2E", "E2E_RESULT"),
     ]}
     errors = [f"{name}:{status}" for name, status in results.items()
               if status != "success"]
-    approval_path = EVID / "grade5-owner-academic-approval.json"
-    try:
-        approval = read(approval_path) if approval_path.is_file() else {}
-    except (OSError, ValueError):
-        approval = {}
+    sha, run_id = os.getenv("GITHUB_SHA"), os.getenv("GITHUB_RUN_ID")
+    artifacts = {}
+    for phase in ("structural", "source", "authenticated-e2e", "arabic-visual"):
+        path = OUT / f"grade5-{phase}-gate.json"
+        try:
+            item = read(path)
+        except (OSError, ValueError, TypeError):
+            errors.append("CURRENT_RUN_EVIDENCE_MISSING:" + phase)
+            continue
+        artifacts[phase] = item
+        if item.get("status") != "PASS" or item.get("candidateSha") != sha:
+            errors.append("SHA_OR_STATUS_NOT_VERIFIED:" + phase)
+        if phase in ("structural", "source") and str(item.get("actionsRunId")) != str(run_id):
+            errors.append("CURRENT_RUN_SOURCE_OR_STRUCTURAL_ID_MISMATCH:" + phase)
+    structural = artifacts.get("structural", {})
+    if (structural.get("actualCheckpoints") != TOTAL or
+        structural.get("actualArabicRichLessons") != TOTAL):
+        errors.append("GRADE5_STRUCTURAL_127_NOT_PROVEN")
+    source = artifacts.get("source", {})
+    if (source.get("selectedLocalBookLessons") != TOTAL or
+        source.get("ownerFirstPartyApproval") is not True or
+        source.get("official2026_2027TextbookParity") != "UNKNOWN_NOT_CERTIFIED" or
+        source.get("embeddedExternalRichMediaCount") != 0 or
+        source.get("originalArabicRichLessonCount") != TOTAL):
+        errors.append("OWNER_LIMITED_SOURCE_OR_DIGITAL_ASSET_EVIDENCE_NOT_PROVEN")
+    auth = artifacts.get("authenticated-e2e", {}).get("checks", {})
+    if (auth.get("learnerPages") != TOTAL or
+        auth.get("persistedAnswerAttempts") != 3 * TOTAL or
+        auth.get("fiveRoleLogins") is not True or
+        auth.get("crossTenantAccessDenied") is not True):
+        errors.append("GRADE5_AUTHENTICATED_127_381_NOT_PROVEN")
+    browser = artifacts.get("arabic-visual", {}).get("checks", {})
+    if (browser.get("chromiumDesktopPages") != TOTAL or
+        browser.get("chromiumMobilePages") != TOTAL or
+        browser.get("screenshotSamples", 0) < 8):
+        errors.append("GRADE5_CHROMIUM_127_DESKTOP_MOBILE_NOT_PROVEN")
+    for name in ("g5.trx", "g5-impact.trx"):
+        file = OUT / "trx" / name
+        try:
+            root = ET.parse(file).getroot()
+            counts = next(node for node in root.iter() if node.tag.endswith("Counters"))
+            if (int(counts.get("passed", "0")) < 1 or
+                int(counts.get("failed", "-1")) != 0 or
+                int(counts.get("error", "-1")) != 0):
+                errors.append("NON_GREEN_MATH_TRX:" + name)
+        except (OSError, ValueError, TypeError, StopIteration, ET.ParseError):
+            errors.append("MATH_TRX_MISSING_OR_INVALID:" + name)
+    approval = read(EVID / "grade5-owner-academic-approval.json")
     owner_approved = (
-        approval.get("ownerAcademicApproval") == "APPROVED"
-        and approval.get("ownerReleaseAuthorization") ==
-        "APPROVED_SUBJECT_TO_TESTS_AND_RELEASE_SAFETY"
+        approval.get("ownerAcademicApproval") == "APPROVED" and
+        approval.get("OwnerAcceptsKnownSourceLimitationsForOriginalContentRelease") is True and
+        approval.get("ownerReleaseAuthorization") ==
+            "APPROVED_SUBJECT_TO_TESTS_AND_RELEASE_SAFETY"
     )
     if not owner_approved:
-        errors.append("OWNER_ACADEMIC_APPROVAL_NOT_RECORDED")
-    asset_rights = approval.get("externalVisualRights", "UNVERIFIED")
-    if asset_rights not in ("VERIFIED_CLEARED", "FIRST_PARTY_ONLY_VERIFIED"):
-        errors.append("NON_ORIGINAL_VISUAL_ASSET_RIGHTS_NOT_CLEARED")
-    # Automated browser screenshots are smoke evidence, not a human review.
-    visual_human_review = approval.get("humanRtlScreenshotReview", "NOT_RECORDED")
-    if visual_human_review != "APPROVED_WITH_EVIDENCE":
-        errors.append("HUMAN_RTL_SCREENSHOT_REVIEW_NOT_RECORDED")
-    # The source gate only checks provisional structures. Its present report
-    # never certifies exhaustive 2026-2027 numerator/denominator parity.
-    errors.append("SOURCE_2026_2027_ELEMENT_PARITY_UNVERIFIED")
-    return report("final", "BLOCKED", errors,
-                  dependencyResults=results, finalCandidateAccepted=False,
-                  sourceParityPercent="UNKNOWN", digitalCoveragePercent="UNKNOWN",
-                  ownerAcademicApprovalRecorded=owner_approved,
-                  externalVisualRightsStatus=asset_rights,
-                  authenticatedE2ETested=results["authenticatedE2E"] == "success",
-                  humanRtlReviewStatus=visual_human_review,
-                  releaseDecision="NO_GO_SOURCE_100", mergeAllowed=False,
-                  renderAllowed=False,
-                  note="Owner approval and passed HTTPS/Chromium E2E are recorded separately. Source element parity, asset rights, and human visual acceptance remain independently unverified; never substitute past or merely structural results.")
+        errors.append("GRADE5_OWNER_FIRST_PARTY_RELEASE_NOT_APPROVED")
+    # Technical and local-book acceptance, not independent 2026-27 source parity,
+    # third-party asset certification, human classroom UAT, or Render deployment.
+    success = not errors
+    return report(
+        "final", "PASS" if success else "BLOCKED", errors,
+        dependencyResults=results,
+        finalCandidateAccepted=success,
+        sourceParityPercent="UNKNOWN",
+        official2026_2027SourceParityCertified=False,
+        ownerFirstPartyApprovalRecorded=owner_approved,
+        authenticatedE2ETested=results["authenticatedE2E"] == "success",
+        humanRtlScreenshotReview="NOT_INDEPENDENTLY_CERTIFIED",
+        independentThirdPartyAssetRights="NOT_CERTIFIED",
+        releaseDecision="READY_FOR_RELEASE_DECISION" if success else "NO_GO_TECHNICAL",
+        mergeAllowed=success,
+        renderAllowed=False,
+        note=("All technical acceptance requires current-run SHA-linked artifacts; "
+              "source latest-edition parity remains UNKNOWN as in Grades 1-3.")
+    )
 
 
 if __name__ == "__main__":
