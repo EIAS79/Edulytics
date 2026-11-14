@@ -9053,6 +9053,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L01_PRINTED339_340",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05 L02: exact signed positions/opposites and set extrema; drawn lines teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:02:STUDENT-AR-128","number.integers.signed_positions",
+            "GRAPH_SINGLE_AND_GROUPED_INTEGERS_HORIZONTAL_VERTICAL_CONTEXT",
+            ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l02.signed_plot_set_extremum"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L02_PRINTED341_348",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

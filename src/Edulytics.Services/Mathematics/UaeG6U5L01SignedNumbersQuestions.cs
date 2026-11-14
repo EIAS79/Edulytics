@@ -9,13 +9,30 @@ internal static class UaeG6U5L01SignedNumbersQuestions
 {
     internal const string Position="uae.g6.u05.l01.signed_position";
     internal const string Opposite="uae.g6.u05.l01.opposite_integer";
+    internal const string GraphSetExtremum="uae.g6.u05.l02.signed_plot_set_extremum";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
+
         ArgumentNullException.ThrowIfNull(random);
+        if(family==GraphSetExtremum)
+        {
+            var numbers=new HashSet<int>();
+            while(numbers.Count<4)numbers.Add(random.Next(-20,21));
+            var entries=numbers.ToArray();
+            int mode=random.Next(2);
+            var pp=new Dictionary<string,int>{
+                ["a"]=entries[0],["b"]=entries[1],["c"]=entries[2],
+                ["d"]=entries[3],["mode"]=mode
+            };
+            return new Item(family,
+                $"مثّل الأعداد {{{string.Join("، ",entries)}}} على خط الأعداد، وحدد العدد الموجود في أقصى {(mode==0?"اليسار":"اليمين")}. اكتب العدد فقط.",
+                "ثبّت الصفر ووحدات متساوية، ووضّح موضع كل عدد. يفحص المعلم الرسم ويصحّح النظام إجابة الطرف.",
+                AssessmentItemType.ShortAnswer,pp);
+        }
         int magnitude=random.Next(family==Opposite?0:1,501);
         int sign=random.Next(2)==0?-1:1;
         var p=new Dictionary<string,int>{{"magnitude",magnitude},{"sign",sign}};
@@ -33,7 +50,19 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     private static bool Valid(string family,IReadOnlyDictionary<string,int>? p,out int answer)
     {
+
         answer=0;
+        if(family==GraphSetExtremum)
+        {
+            if(p is null||p.Count!=5||!p.TryGetValue("a",out var a)||
+               !p.TryGetValue("b",out var b)||!p.TryGetValue("c",out var c)||
+               !p.TryGetValue("d",out var d)||!p.TryGetValue("mode",out var mode)||
+               mode is not (0 or 1)||new[]{a,b,c,d}.Any(n=>n is <-20 or >20))
+                return false;
+            answer=mode==0?Math.Min(Math.Min(a,b),Math.Min(c,d)):
+                Math.Max(Math.Max(a,b),Math.Max(c,d));
+            return true;
+        }
         if(!Supports(family)||p is null||p.Count!=2||
            !p.TryGetValue("magnitude",out int magnitude)||
            !p.TryGetValue("sign",out int sign)||sign is not (-1 or 1)||
