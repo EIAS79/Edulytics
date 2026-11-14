@@ -9193,6 +9193,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u02.l01.commutative_add","uae.g4.u02.l01.associative_add","uae.g4.u02.l01.additive_identity","uae.g4.u03.l05.identity","uae.g4.u03.l06.grouped_product","uae.g6.u06.l08.classify_property","uae.g6.u06.l08.rewrite_associative","uae.g6.u06.l08.triangle_area_reordered"],
             "G6_ARABIC_2025_2026_BOOK2_U06L08_PRINTED467_474",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L09: distribution lab and teacher-reviewed algebra-tile models.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:09:STUDENT-AR-128","algebra.distributive_property.models",
+            "RECTANGLE_AREA_ALGEBRA_TILE_EXPAND_AND_COMPARE",
+            ["uae.g4.u04.l07.distributive_sum","uae.g3.u09.l02.distributive_property","uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive","uae.g6.u06.l09.count_variable_tiles"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L09_PRINTED475_478",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
