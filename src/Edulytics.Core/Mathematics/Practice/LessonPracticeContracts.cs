@@ -9011,6 +9011,13 @@ public static class LessonPracticeContractRegistry
             ["ratio.unit_rate.divide_total","ratio.unit_rate.equivalent_ratio"],
             "G6_GENERAL_STUDENT_U04L06_PRINTED293_295_TEACHER_REVIEW",
             "READY_VERIFIED",Version);
+        // G6 Arabic General U04L07 lab: exact fraction counts only, visual model teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:07:STUDENT-AR-128","fractions.divide.whole_by_fraction",
+            "WHOLE_BY_UNIT_AND_NONUNIT_FRACTION_BAR_GROUPS",
+            ["uae.g5.u09.l09.whole_divide_unit_fraction","uae.g6.u04.l07.whole_divide_nonunit_fraction"],
+            "G6_GENERAL_STUDENT_U04L07_PRINTED297_300",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
