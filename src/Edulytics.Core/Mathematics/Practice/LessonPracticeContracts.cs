@@ -8813,6 +8813,19 @@ public static class LessonPracticeContractRegistry
             "UAE_G6_AR_LOCAL_STUDENT_U02_L01_PRINTED_89_96",
             "READY_VERIFIED",Version)
         { SkillIds = ["decimals.place_value","fractions.equivalent"] };
+        // G6 Arabic Student Book Unit2 exploration 1, printed pp97-100.
+        // Exactly the existing G5 hundred-grid/percent conversion engine.
+        // Drawing/shading remains a human-reviewed physical representation.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:02:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:02:STUDENT-AR-128","decimals.place_value",
+            "REPRESENT_PERCENT_WITH_HUNDRED_GRID_AND_EQUAL_FRACTION_BARS",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g5.u07.l07.count_shaded_hundredths"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L02_PRINTED_97_100",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
