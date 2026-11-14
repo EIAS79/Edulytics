@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 6,
+  "ordinal": 58,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:06:03:STUDENT-AR-128",
+  "title": "التعابير العددية",
+  "sourceBook": "02.pdf",
+  "sourcePdfSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "sourceEdition": "Local book tracked 2025–2026; target2026–2027 NOT_VERIFIED",
+  "sourcePagesVisuallyInspected": 8,
+  "sourceBookPagesPrinted": [
+    435,
+    442
+  ],
+  "sourcePdfPages": [
+    108,
+    115
+  ],
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        435
+      ],
+      "source": "سياق تكاليف أطعمة بكمية وسعر ورموز تعابير",
+      "equivalent": "أمثلة التكاليف ونموذج جدول الكميات"
+    },
+    {
+      "pages": [
+        436
+      ],
+      "source": "تسلسل جمع وطرح وضرب وقسمة من اليسار إلى اليمين",
+      "equivalent": "أمثلة ١–٣ وعائلات sum_sub/div_mul"
+    },
+    {
+      "pages": [
+        437
+      ],
+      "source": "الأقواس والأسس وتقويم تعابير عدة عمليات",
+      "equivalent": "أمثلة ٤–٦ وparenthesis/exponent families"
+    },
+    {
+      "pages": [
+        438
+      ],
+      "source": "تعبير تكلفة ونصوص سياقية مع سؤال انعكاسي",
+      "equivalent": "مثال ٧ وعائلة two_item_cost وteacher review"
+    },
+    {
+      "pages": [
+        439
+      ],
+      "source": "تدريبات على ترتيب العمليات والأسس والأقواس وتكلفة",
+      "equivalent": "أمثلة متعددة وخوارزميات exact order"
+    },
+    {
+      "pages": [
+        440
+      ],
+      "source": "تصحيح خطأ ترتيب وعكس تنظيم الأقواس وتفسيرها",
+      "equivalent": "مثال ١٠ والتصنيف الأولى وتعليل المعلم"
+    },
+    {
+      "pages": [
+        441
+      ],
+      "source": "تدريب إضافي بكسور وتعبير مختلط وتكاليف",
+      "equivalent": "قوالب العمليات والجمع مع نماذج تكلفة"
+    },
+    {
+      "pages": [
+        442
+      ],
+      "source": "اختبار اختيار تعبير التكلفة ومراجعة مفاهيم سابقة",
+      "equivalent": "نموذج original cost وfirst operation؛ لا ندعي تغطية المراجعة التراكمية"
+    }
+  ],
+  "engineStrategy": "REUSE_GRADE4_ORDER_OF_OPERATIONS_FAMILY_PLUS_G6_SCOPED_EXACT_COMPLEX_EXPRESSION_ADAPTER",
+  "questionFamilies": [
+    "uae.g4.u07.l07.order_multiply_before_add",
+    "uae.g6.u06.l03.sum_sub_left_right",
+    "uae.g6.u06.l03.division_multiplication_left_right",
+    "uae.g6.u06.l03.parenthesis_first",
+    "uae.g6.u06.l03.exponent_then_multiply",
+    "uae.g6.u06.l03.two_item_cost",
+    "uae.g6.u06.l03.first_operation"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "CalculationChain",
+    "RatioTable"
+  ],
+  "teacherReview": [
+    "written expression composition",
+    "open order-of-operations error explanation",
+    "contextual planning"
+  ],
+  "sourceQuestionDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_SKILLS_MAPPED_NOT_ALL_EXERCISES_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U6L03NumericalExpressionsTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}

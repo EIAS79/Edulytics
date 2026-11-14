@@ -9148,6 +9148,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l02.repeated_to_power","uae.g6.u06.l02.integer_power","uae.g6.u06.l02.decimal_power","uae.g6.u06.l02.fraction_power","uae.g6.u06.l02.ten_power","uae.g6.u06.l02.power_addition","uae.g6.u06.l02.perfect_square"],
             "G6_ARABIC_2025_2026_BOOK2_U06L02_PRINTED427_434",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L03: reuse Grade4 multiply-before-add; extend for left-to-right,
+        // parentheses, exponents and multi-item real-world costs with exact arithmetic.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:03:STUDENT-AR-128","algebra.order_of_operations",
+            "PARENTHESES_EXPONENTS_LEFT_TO_RIGHT_MULTIPLY_DIVIDE_COSTS",
+            ["uae.g4.u07.l07.order_multiply_before_add","uae.g6.u06.l03.sum_sub_left_right","uae.g6.u06.l03.division_multiplication_left_right","uae.g6.u06.l03.parenthesis_first","uae.g6.u06.l03.exponent_then_multiply","uae.g6.u06.l03.two_item_cost","uae.g6.u06.l03.first_operation"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L03_PRINTED435_442",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
