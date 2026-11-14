@@ -9116,6 +9116,15 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l10.coordinate_region","uae.g6.u05.l10.reflect_across_x","uae.g6.u05.l10.reflect_across_y"],
             "G6_ARABIC_2025_2026_BOOK2_U05L10_PRINTED391_398",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L11: plotting with signed quarter-coordinates, two reflections,
+        // perpendicular mirrored-point distance and original right triangle area.
+        // Freehand graph/shape review remains with the teacher.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:11:STUDENT-AR-128","geometry.coordinate_plane.plotting",
+            "QUARTER_COORDINATE_POINTS_DOUBLE_REFLECTIONS_DISTANCE_TRIANGLES",
+            ["uae.g6.u05.l11.plot_from_signed_moves","uae.g6.u05.l11.reflect_both_axes","uae.g6.u05.l11.mirror_separation","uae.g6.u05.l11.axis_aligned_triangle_area"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L11_PRINTED399_406",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

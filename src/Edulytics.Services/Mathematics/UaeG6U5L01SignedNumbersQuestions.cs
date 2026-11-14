@@ -23,14 +23,48 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string CoordinateRegion="uae.g6.u05.l10.coordinate_region";
     internal const string ReflectAcrossX="uae.g6.u05.l10.reflect_across_x";
     internal const string ReflectAcrossY="uae.g6.u05.l10.reflect_across_y";
+    internal const string PlotFromMoves="uae.g6.u05.l11.plot_from_signed_moves";
+    internal const string ReflectBothAxes="uae.g6.u05.l11.reflect_both_axes";
+    internal const string MirrorSeparation="uae.g6.u05.l11.mirror_separation";
+    internal const string AxisTriangleArea="uae.g6.u05.l11.axis_aligned_triangle_area";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder or CoordinateRegion or ReflectAcrossX or ReflectAcrossY;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder or CoordinateRegion or ReflectAcrossX or ReflectAcrossY or PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
+        {
+            if(family==AxisTriangleArea)
+            {
+                int width4=random.Next(4,25),height4=random.Next(4,25);
+                return new Item(family,
+                    $"على مستوى إحداثي، مثل مثلثًا قائمًا رؤوسه (٠،٠)، ({FormatQuarter(width4)}،٠)، (٠،{FormatQuarter(height4)}). ما مساحته بالوحدات المربعة؟",
+                    "ارسم الأضلاع المتعامدة، ثم المساحة نصف حاصل ضرب القاعدة في الارتفاع.",
+                    AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"w4",width4},{"h4",height4}});
+            }
+            int x4=random.Next(-32,33),y4=random.Next(-32,33);
+            var p=new Dictionary<string,int>{{"x4",x4},{"y4",y4}};
+            string point=$"({FormatQuarter(x4)},{FormatQuarter(y4)})";
+            if(family==PlotFromMoves)
+                return new Item(family,
+                    $"على شبكة إحداثية تحركت من الأصل أفقيًا {FormatQuarter(x4)} وحدة (السالب يسارًا)، ثم رأسيًا {FormatQuarter(y4)} وحدة (السالب أسفل). اكتب الزوج المرتب للنقطة.",
+                    "اقرأ انتقال س ثم انتقال ص، ولا تبدل الترتيب.",
+                    AssessmentItemType.ShortAnswer,p);
+            if(family==ReflectBothAxes)
+                return new Item(family,
+                    $"مثّل النقطة {point} ثم اعكسها حول س، وبعد ذلك حول ص. ما الزوج المرتب النهائي؟",
+                    "انعكاس س يغيّر إشارة ص ثم انعكاس ص يغيّر إشارة س.",
+                    AssessmentItemType.ShortAnswer,p);
+            int axis=random.Next(2);
+            p["axis"]=axis;
+            return new Item(family,
+                $"مثّل النقطة {point} وصورتها بعد انعكاس حول {(axis==0?"المحور السيني":"المحور الصادي")}. ما المسافة بين النقطتين بالوحدات؟",
+                "المسافة بين نقطة وصورتها ضعف البعد العمودي عن محور الانعكاس.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
         {
             int x2=random.Next(-10,11),y2=random.Next(-10,11);
@@ -195,6 +229,42 @@ internal static class UaeG6U5L01SignedNumbersQuestions
 
 
 
+
+    // U05L11 signed quarter coordinates and right triangles are exact decimals.
+    private static string FormatQuarter(int quarters) =>
+        (quarters/4m).ToString("0.##",CultureInfo.InvariantCulture);
+    private static bool TryPlotAnswer(string family,IReadOnlyDictionary<string,int>? p,out string expected)
+    {
+        expected="";
+        if(p is null)return false;
+        if(family==AxisTriangleArea)
+        {
+            if(p.Count!=2||!p.TryGetValue("w4",out int w4)||
+               !p.TryGetValue("h4",out int h4)||w4 is <4 or >24||h4 is <4 or >24)
+                return false;
+            expected=(w4*h4/32m).ToString("0.#####",CultureInfo.InvariantCulture);
+            return true;
+        }
+        if(p.Count!=(family==MirrorSeparation?3:2)||
+           !p.TryGetValue("x4",out int x4)||!p.TryGetValue("y4",out int y4)||
+           x4 is <-32 or >32||y4 is <-32 or >32)return false;
+        if(family==PlotFromMoves)
+        {
+            expected=$"({FormatQuarter(x4)},{FormatQuarter(y4)})";
+            return true;
+        }
+        if(family==ReflectBothAxes)
+        {
+            expected=$"({FormatQuarter(-x4)},{FormatQuarter(-y4)})";
+            return true;
+        }
+        if(family==MirrorSeparation&&p.TryGetValue("axis",out int axis)&&axis is 0 or 1)
+        {
+            expected=(Math.Abs(axis==0?y4:x4)/2m).ToString("0.##",CultureInfo.InvariantCulture);
+            return true;
+        }
+        return false;
+    }
 
     // Signed Cartesian pairs use integer half-units for exact grading.
     private static string FormatHalf(int halves) =>
@@ -371,6 +441,9 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
+            return TryPlotAnswer(family,p,out string plotting)?plotting:
+                throw new InvalidOperationException("Invalid coordinate plotting parameters.");
         if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
             return TryCoordinateAnswer(family,p,out string result)?result:
                 throw new InvalidOperationException("Invalid coordinate parameters.");
@@ -402,6 +475,18 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
+        {
+            if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||
+               !TryPlotAnswer(family,p,out string expected))return false;
+            string normalized=NormalizeSignedAnswer(answer.Trim());
+            if(family is MirrorSeparation or AxisTriangleArea)
+                return decimal.TryParse(normalized,NumberStyles.Number,
+                    CultureInfo.InvariantCulture,out decimal actual)&&
+                    decimal.TryParse(expected,NumberStyles.Number,
+                    CultureInfo.InvariantCulture,out decimal wanted)&&actual==wanted;
+            return string.Equals(normalized,expected,StringComparison.Ordinal);
+        }
         if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||

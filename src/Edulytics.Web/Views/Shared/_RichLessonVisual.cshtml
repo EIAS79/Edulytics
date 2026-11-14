@@ -376,17 +376,20 @@
                !double.TryParse(row.Cells[1],System.Globalization.NumberStyles.Float,
                    System.Globalization.CultureInfo.InvariantCulture,out var y) ||
                !double.IsFinite(x)||!double.IsFinite(y)||
-               x< -5||x>5||y< -5||y>5) continue;
+               x< -10||x>10||y< -10||y>10) continue;
             points.Add((row.Label,x,y));
         }
+        var extent=Math.Max(5d,Math.Ceiling(points.Count>0?
+            points.Max(pt=>Math.Max(Math.Abs(pt.X),Math.Abs(pt.Y))):5d));
+        var scale=175d/extent;
         <div class="rich-lesson-cartesian" dir="ltr">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 460"
                  role="img" aria-label="@Model.Description"
                  style="width:100%;height:auto;max-width:700px">
                 <title>@Model.Title</title><desc>@Model.Description</desc>
-                @for(var tick=-5;tick<=5;tick++)
+                @for(var tick=-(int)extent;tick<=(int)extent;tick++)
                 {
-                    var px=330+tick*35;var py=225-tick*35;
+                    var px=330d+tick*scale;var py=225d-tick*scale;
                     <line x1="@px" y1="50" x2="@px" y2="400" stroke="currentColor" stroke-opacity=".15"/>
                     <line x1="155" y1="@py" x2="505" y2="@py" stroke="currentColor" stroke-opacity=".15"/>
                     @if(tick!=0)
@@ -402,7 +405,7 @@
                 <text x="337" y="35" font-size="18" fill="currentColor">y</text>
                 @foreach(var point in points)
                 {
-                    var px=330d+point.X*35d;var py=225d-point.Y*35d;
+                    var px=330d+point.X*scale;var py=225d-point.Y*scale;
                     <circle cx="@px" cy="@py" r="5.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
                     <text x="@(px+8)" y="@(py-8)" font-size="13" fill="currentColor">@point.Name</text>
                 }
@@ -416,8 +419,8 @@
                 @foreach(var point in points)
                 {
                     <tr><th scope="row">@point.Name</th>
-                        <td>@point.X.ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)</td>
-                        <td>@point.Y.ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)</td></tr>
+                        <td>@point.X.ToString("0.##",System.Globalization.CultureInfo.InvariantCulture)</td>
+                        <td>@point.Y.ToString("0.##",System.Globalization.CultureInfo.InvariantCulture)</td></tr>
                 }
                 </tbody>
             </table>

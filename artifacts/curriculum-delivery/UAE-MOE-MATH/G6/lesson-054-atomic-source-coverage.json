@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 5,
+  "ordinal": 54,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:05:11:STUDENT-AR-128",
+  "title": "التمثيل البياني على المستوى الإحداثي",
+  "sourceBook": "02.pdf",
+  "sourceBookEdition": "Locally tracked 2025–2026; target 2026–2027 NOT_VERIFIED",
+  "sourcePdfSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "bookPagesPrinted": [
+    399,
+    406
+  ],
+  "pdfPages": [
+    72,
+    79
+  ],
+  "sourcePagesVisuallyInspected": 8,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        399
+      ],
+      "source": "لعبة البحث عن الكنز وقراءة خرائط مربعات وترجمة ومواضع بعد انعكاس",
+      "equivalent": "نموذج أصلي لخرائط وانعكاسات وتقويم شرح المعلم"
+    },
+    {
+      "pages": [
+        400
+      ],
+      "source": "تمثيل الأزواج المرتبة ذات أنصاف الوحدات والمتغيرات السالبة",
+      "equivalent": "أمثلة ١–٤ وشبكة SignedCartesianPlot"
+    },
+    {
+      "pages": [
+        401
+      ],
+      "source": "رسم الانعكاسات حول المحورين بإحداثيات موقعة ونصفية",
+      "equivalent": "أمثلة ٥–٧ وعائلات انعكاس إحداثيات"
+    },
+    {
+      "pages": [
+        402
+      ],
+      "source": "انعكاس مركب لشكل هندسي وتمارين موجهة",
+      "equivalent": "أمثلة ١٠ ونموذج انعكاسين ورسم حر للمعلم"
+    },
+    {
+      "pages": [
+        403
+      ],
+      "source": "تمثيل بيانات بنصف وربع وحدة، انعكاس ومسافة بين الصور",
+      "equivalent": "أمثلة ٢ و٨ وعائلة mirror_separation"
+    },
+    {
+      "pages": [
+        404
+      ],
+      "source": "مساحة مثلث على شبكة، انعكاس شكل، مناقشة عبارات الإشارات",
+      "equivalent": "مثال ٩ وعائلة triangle_area مع استدلال المعلم"
+    },
+    {
+      "pages": [
+        405
+      ],
+      "source": "تدريبات متعددة على الأرباع وأنصافها وانعكاسين وحدود المسافة",
+      "equivalent": "نماذج SignedCartesianPlot ودقة الأرباع وأمثلة ٥–٨"
+    },
+    {
+      "pages": [
+        406
+      ],
+      "source": "اختبار مساحة مثلث وانعكاس ثنائي ومراجعة شاملة سابقة",
+      "equivalent": "مثال ٩ واختبار الانعكاسين؛ المراجعة التراكمية خارج دليل اكتمال الدرس"
+    }
+  ],
+  "engineStrategy": "REUSE_G6_SIGNED_COORDINATE_ENGINE_EXTEND_QUARTER_PLOT_DOUBLE_REFLECT_DISTANCE_TRIANGLE_AREA",
+  "questionFamilies": [
+    "uae.g6.u05.l11.plot_from_signed_moves",
+    "uae.g6.u05.l11.reflect_both_axes",
+    "uae.g6.u05.l11.mirror_separation",
+    "uae.g6.u05.l11.axis_aligned_triangle_area"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "SignedCartesianPlot",
+    "CalculationChain"
+  ],
+  "teacherReview": [
+    "freehand plotting quarter-unit points",
+    "shape and map drawing",
+    "higher-level open reasoning"
+  ],
+  "sourceQuestionItemDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_ACTIVITY_CATEGORIES_MAPPED_NOT_EACH_EXERCISE_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U5L11CoordinatePlotTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}
