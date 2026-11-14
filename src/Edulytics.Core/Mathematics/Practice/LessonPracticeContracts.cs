@@ -8968,6 +8968,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l13.exact_decimal_divide","uae.g5.u05.l13.contextual_decimal_unit_rate"],
             "G6_GENERAL_STUDENT_U03L10_PRINTED235_242",
             "READY_VERIFIED",Version);
+        // G6 Arabic General U04L01: estimate fraction products using benchmarks,
+        // compatible whole numbers, and teacher-reviewed strip/area models.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:01:STUDENT-AR-128","fractions.estimate_product",
+            "FRACTION_PRODUCT_BENCHMARKS_AND_COMPATIBLE_NUMBERS",
+            ["uae.g5.u09.l02.estimate_fraction_product_quarters","uae.g5.u09.l02.estimate_whole_fraction_compatible"],
+            "G6_GENERAL_STUDENT_U04L01_PRINTED253_260",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
