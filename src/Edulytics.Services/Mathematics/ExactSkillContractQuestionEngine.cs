@@ -636,6 +636,12 @@ public sealed class ExactSkillContractQuestionEngine
                         StringComparison.Ordinal) ||
                     string.Equals(scopeKey,
                         "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
                         StringComparison.Ordinal))
                 {
                     problem = LocalizeUaeGrade6RatioLab(problem);
@@ -5387,6 +5393,12 @@ public sealed class ExactSkillContractQuestionEngine
         var p = problem.Parameters;
         return problem.Family switch
         {
+            "ratio.unit_rate.direct" =>
+                problem with
+                {
+                    Prompt = $"إذا بلغت الكمية الكلية {p["total"]} من الوحدات خلال {p["quantity"]} وحدات زمنية أو مجموعات متساوية، فما المقدار لكل وحدة واحدة؟",
+                    Solution = "اقسم الكمية الكلية على عدد الوحدات المتساوية، وأضف وحدة القياس المناسبة، ثم اضرب الناتج للتحقق."
+                },
             "ratio.unit_rate.equivalent_ratio" =>
                 problem with
                 {

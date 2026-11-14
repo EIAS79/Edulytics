@@ -8713,6 +8713,16 @@ public static class LessonPracticeContractRegistry
             {
                 SkillIds = ["ratio.unit_rate", "fractions.equivalent"]
             };
+        // Grade 6 Arabic owner-selected Student Book U01 exploration lab 2.
+        // Existing exact unit-rate kernel, decimal and drawn models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "UNIT_RATE_TAPE_DIAGRAM_DIVIDE_EQUAL_PARTS",
+                ["ratio.unit_rate.direct"],
+                "UAE_G6_STUDENT_FIRST_U01_L04_PRINTED_27_30_ORIGINAL_AR",
+                "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
