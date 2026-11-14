@@ -135,14 +135,40 @@ def audit_final():
         ("source", "SOURCE_RESULT"), ("structural", "STRUCTURAL_RESULT"),
         ("math", "MATH_RESULT"), ("authenticatedE2E", "E2E_RESULT"),
     ]}
-    errors = [f"{name}:{status}" for name, status in results.items() if status != "success"]
-    errors += ["ACADEMIC_RIGHTS_APPROVAL_NOT_VERIFIED", "G5_AUTHENTICATED_RTL_E2E_NOT_RUN"]
+    errors = [f"{name}:{status}" for name, status in results.items()
+              if status != "success"]
+    approval_path = EVID / "grade5-owner-academic-approval.json"
+    try:
+        approval = read(approval_path) if approval_path.is_file() else {}
+    except (OSError, ValueError):
+        approval = {}
+    owner_approved = (
+        approval.get("ownerAcademicApproval") == "APPROVED"
+        and approval.get("ownerReleaseAuthorization") ==
+        "APPROVED_SUBJECT_TO_TESTS_AND_RELEASE_SAFETY"
+    )
+    if not owner_approved:
+        errors.append("OWNER_ACADEMIC_APPROVAL_NOT_RECORDED")
+    asset_rights = approval.get("externalVisualRights", "UNVERIFIED")
+    if asset_rights not in ("VERIFIED_CLEARED", "FIRST_PARTY_ONLY_VERIFIED"):
+        errors.append("NON_ORIGINAL_VISUAL_ASSET_RIGHTS_NOT_CLEARED")
+    # Automated browser screenshots are smoke evidence, not a human review.
+    visual_human_review = approval.get("humanRtlScreenshotReview", "NOT_RECORDED")
+    if visual_human_review != "APPROVED_WITH_EVIDENCE":
+        errors.append("HUMAN_RTL_SCREENSHOT_REVIEW_NOT_RECORDED")
+    # The source gate only checks provisional structures. Its present report
+    # never certifies exhaustive 2026-2027 numerator/denominator parity.
+    errors.append("SOURCE_2026_2027_ELEMENT_PARITY_UNVERIFIED")
     return report("final", "BLOCKED", errors,
                   dependencyResults=results, finalCandidateAccepted=False,
                   sourceParityPercent="UNKNOWN", digitalCoveragePercent="UNKNOWN",
+                  ownerAcademicApprovalRecorded=owner_approved,
+                  externalVisualRightsStatus=asset_rights,
+                  authenticatedE2ETested=results["authenticatedE2E"] == "success",
+                  humanRtlReviewStatus=visual_human_review,
                   releaseDecision="NO_GO_SOURCE_100", mergeAllowed=False,
                   renderAllowed=False,
-                  note="Technical diagnostics are not a substitute for authenticated Grade 5 HTTPS pages, 2x eligible Practice attempts, PostgreSQL and source approval.")
+                  note="Owner approval and passed HTTPS/Chromium E2E are recorded separately. Source element parity, asset rights, and human visual acceptance remain independently unverified; never substitute past or merely structural results.")
 
 
 if __name__ == "__main__":
