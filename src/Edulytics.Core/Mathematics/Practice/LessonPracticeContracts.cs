@@ -9133,6 +9133,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l12.distance_same_y","uae.g6.u05.l12.distance_same_x","uae.g6.u05.l12.find_horizontal_endpoint","uae.g6.u05.l12.find_vertical_endpoint"],
             "G6_ARABIC_2025_2026_BOOK2_U05L12_PRINTED407_410",
             "READY_VERIFIED",Version);
+        // G6 General Arabic U06L01 expression structure, terms and repeated grouped factors.
+        // Bar drawings and argumentation require teacher review, not false auto-grading.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:01:STUDENT-AR-128","algebra.expressions.structure",
+            "REPEATED_SUM_GROUPS_OUTER_OPERATOR_AND_SUM_FACTOR",
+            ["uae.g6.u06.l01.classify_outer_operation","uae.g6.u06.l01.count_repeated_groups","uae.g6.u06.l01.identify_sum_factor"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L01_PRINTED423_426",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

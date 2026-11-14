@@ -426,6 +426,28 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.ExpressionStripBars)
+    {
+        // Edulytics-authored grouped bar model for Grade6 expression factors.
+        <div class="rich-lesson-expression-strips" dir="rtl"
+             role="img" aria-label="@Model.Description"
+             style="display:grid;gap:12px;max-width:720px">
+            @foreach(var row in Model.Rows)
+            {
+                <div style="display:grid;gap:5px">
+                    <strong>@row.Label</strong>
+                    <div style="display:flex;gap:4px;flex-wrap:wrap">
+                        @foreach(var cell in row.Cells.Take(12))
+                        {
+                            <span style="flex:1 1 70px;display:block;min-height:40px;
+                                  padding:8px;border:2px solid currentColor;
+                                  border-radius:4px;text-align:center">@cell</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

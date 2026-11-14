@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 6,
+  "ordinal": 56,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:06:01:STUDENT-AR-128",
+  "title": "مختبر الاستكشاف: بنية التعابير",
+  "sourceBook": "02.pdf",
+  "sourceEdition": "Local 2025–2026; 2026–2027 NOT_VERIFIED",
+  "sourcePdfSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "pdfPages": [
+    96,
+    99
+  ],
+  "printedPages": [
+    423,
+    426
+  ],
+  "sourcePagesVisuallyInspected": 4,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        423
+      ],
+      "source": "مقارنة تعبير جمع وتعبير ضرب لمجموعات مساوية، مصطلحات حدود وعوامل",
+      "equivalent": "أمثلة ١–٣ ورسوم الشرائط الأصلية"
+    },
+    {
+      "pages": [
+        424
+      ],
+      "source": "تكرار مجموع (a+b)، عوامل التعبير، مجموعات مساوية بأشرطة",
+      "equivalent": "أمثلة ٤–٦ وتمثيل شريطين متساويين"
+    },
+    {
+      "pages": [
+        425
+      ],
+      "source": "إعادة الكتابة من جمع متكرر إلى ضرب وتمييز عامل مجموع",
+      "equivalent": "أمثلة ٥–٧ وExpressionStripBars"
+    },
+    {
+      "pages": [
+        426
+      ],
+      "source": "مطابقة الوصف إلى التعبير، تصنيف العملية الخارجية والتفسير",
+      "equivalent": "أمثلة ٧–٩ وعائلة classify_outer_operation ومراجعة المعلم"
+    }
+  ],
+  "engineStrategy": "REUSE_EXISTING_EXACT_SKILL_PIPELINE_ADD_SCOPED_EXPRESSION_STRUCTURE_ADAPTER_AND_ORIGINAL_BAR_VISUAL",
+  "questionFamilies": [
+    "uae.g6.u06.l01.classify_outer_operation",
+    "uae.g6.u06.l01.count_repeated_groups",
+    "uae.g6.u06.l01.identify_sum_factor"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "ExpressionStripBars",
+    "CalculationChain",
+    "RatioTable"
+  ],
+  "teacherReview": [
+    "bar-model drawing",
+    "open explanation of factors",
+    "expression rewriting and contextual story"
+  ],
+  "sourceQuestionItemDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_ACTIVITY_CATEGORIES_MAPPED_NOT_EVERY_EXERCISE_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U6L01ExpressionStructureTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}
