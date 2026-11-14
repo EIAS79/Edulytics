@@ -361,17 +361,23 @@ internal static class MeetingDemoProvisioner
             (string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G2", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G3", StringComparison.Ordinal) ||
-             string.Equals(ciProgramme, "UAE-G4", StringComparison.Ordinal));
+             string.Equals(ciProgramme, "UAE-G4", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "UAE-G5", StringComparison.Ordinal));
         var activeSchools = isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
                     ? s with
                     {
                         DefaultCulture = "ar",
-                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G4" ? 4 :
+                        // Grade 5 is enrolled only inside disposable GitHub Actions PostgreSQL.
+                        // Existing school fixture and production paths remain unchanged.
+                        MaximumLogicalLevel = ciProgramme == "UAE-G5" ? 5 : s.MaximumLogicalLevel,
+                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G5" ? 5 :
+                            ciProgramme == "UAE-G4" ? 4 :
                             ciProgramme == "UAE-G3" ? 3 :
                             ciProgramme == "UAE-G2" ? 2 : 1,
-                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G4" ? 3 :
+                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G5" ? 4 :
+                            ciProgramme == "UAE-G4" ? 3 :
                             ciProgramme == "UAE-G3" ? 2 :
                             ciProgramme == "UAE-G2" ? 1 : 2
                     }

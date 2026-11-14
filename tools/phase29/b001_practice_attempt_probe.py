@@ -297,7 +297,7 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
             # G2 reuses many first-party/shared numeric and category families.
             # Opt-in only: never change existing US or G1 negative controls.
-            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4"):
+            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5"):
                 answer=grade6_syntactically_valid_wrong_answer(answer)
             else:
                 answer=syntactically_valid_wrong_answer(answer,family)
