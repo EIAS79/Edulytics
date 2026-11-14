@@ -9322,6 +9322,14 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l03.equation_from_line","uae.g6.u08.l03.y_intercept","uae.g6.u08.l02.linear_rule"],
            "LOCAL_G6_BOOK2_U08L04_PRINTED597_604_TARGET2026_27_UNVERIFIED",
            "READY_VERIFIED",Version);
+        // U08L05 Draw a Table inquiry: reuse bounded numeric pattern engines;
+        // student-created tables, visual cube models, estimates are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:05:STUDENT-AR-128","problem_solving.draw_table",
+            "TABLE_DOUBLING_GAME_LEVELS_CUBE_STAIRS_COSTS_SAVINGS",
+            ["uae.g6.u08.l02.geometric_nth","uae.g6.u08.l02.arithmetic_nth","uae.g6.u08.l01.linear_output","uae.g6.u07.l06.monthly_savings"],
+            "LOCAL_G6_BOOK2_U08L05_PRINTED605_607_MIDUNIT_608_EXCLUDED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
