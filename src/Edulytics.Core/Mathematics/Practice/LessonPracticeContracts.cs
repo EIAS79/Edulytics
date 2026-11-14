@@ -8976,6 +8976,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u09.l02.estimate_fraction_product_quarters","uae.g5.u09.l02.estimate_whole_fraction_compatible"],
             "G6_GENERAL_STUDENT_U04L01_PRINTED253_260",
             "READY_VERIFIED",Version);
+        // G6 General Arabic U04L02: fraction times whole; reuse existing G4 exact model/product engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:02:STUDENT-AR-128","fractions.multiply_whole",
+            "FRACTION_WHOLE_PRODUCT_MODEL_AND_MIXED_NUMBER",
+            ["uae.g4.u09.l08.model_repeated_sum","uae.g4.u09.l08.model_unit_fraction_count","uae.g4.u09.l09.product_numerator","uae.g4.u09.l09.product_whole","uae.g4.u09.l09.product_remainder"],
+            "G6_GENERAL_STUDENT_U04L02_PRINTED261_268",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
