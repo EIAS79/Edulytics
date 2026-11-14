@@ -18,14 +18,48 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string WorkBackwardSchedule="uae.g6.u05.l06.work_backward_schedule";
     internal const string SignedRationalCompare="uae.g6.u05.l07.compare_signed_rationals";
     internal const string SignedRationalSide="uae.g6.u05.l07.rational_relative_zero";
+    internal const string MixedRationalCompare="uae.g6.u05.l09.compare_mixed_signed_rationals";
+    internal const string FourRationalOrder="uae.g6.u05.l09.order_four_signed_rationals";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family is MixedRationalCompare or FourRationalOrder)
+        {
+            int[] denominators=[2,4,5,8,10,12,16,20,25,100];
+            static string Format(int n,int d)=>d is 10 or 100?
+                (n/(decimal)d).ToString("0.##",CultureInfo.InvariantCulture):$"{n}/{d}";
+            if(family==MixedRationalCompare)
+            {
+                int d1=denominators[random.Next(denominators.Length)];
+                int d2=denominators[random.Next(denominators.Length)];
+                int n1=random.Next(-3*d1,3*d1+1),n2=random.Next(-3*d2,3*d2+1);
+                var parameters=new Dictionary<string,int>{{"n1",n1},{"d1",d1},{"n2",n2},{"d2",d2}};
+                return new Item(family,
+                    $"قارن {Format(n1,d1)} و{Format(n2,d2)}، واكتب < أو > أو =.",
+                    "يمكن توحيد المقامين والمقارنة بضرب تبادلي دقيق؛ لا تُقرب الأعداد الدورية.",
+                    AssessmentItemType.ShortAnswer,parameters);
+            }
+            var entries=new List<(int N,int D)>();
+            while(entries.Count<4)
+            {
+                int d=denominators[random.Next(denominators.Length)],n=random.Next(-3*d,3*d+1);
+                if(entries.Any(x=>(long)x.N*d==(long)n*x.D))continue;
+                entries.Add((n,d));
+            }
+            int mode=random.Next(2);
+            var p=new Dictionary<string,int>{{"mode",mode}};
+            for(int i=0;i<4;i++){p["n"+(i+1)]=entries[i].N;p["d"+(i+1)]=entries[i].D;}
+            string labels=string.Join("؛ ",entries.Select((x,i)=>$"{i+1}) {Format(x.N,x.D)}"));
+            return new Item(family,
+                $"رتب الأعداد {labels} من {(mode==0?"الأصغر إلى الأكبر":"الأكبر إلى الأصغر")}. اكتب ترتيب أرقام العناصر ١ إلى ٤ مفصولة بفواصل.",
+                "استخدم كسرًا مكافئًا أو قسمة دقيقة، ثم رتب القيم على خط الأعداد. الجواب تسلسل أرقام العناصر.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         if(family==SignedRationalCompare)
         {
             int[] denominators=[2,4,5,8,10,12];
@@ -138,6 +172,43 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
 
 
+
+
+    // U05L09 scoped exact comparison of positive and negative fractions, decimals, mixed values.
+    // Denominators remain positive and all comparison uses integer cross-products.
+    private static bool TryMixedRationalCompare(IReadOnlyDictionary<string,int>? p,out string result)
+    {
+        result="";
+        if(p is null||p.Count!=4||!p.TryGetValue("n1",out int n1)||
+           !p.TryGetValue("d1",out int d1)||!p.TryGetValue("n2",out int n2)||
+           !p.TryGetValue("d2",out int d2)||d1 is <2 or >100||d2 is <2 or >100||
+           n1 < -3*d1||n1>3*d1||n2 < -3*d2||n2>3*d2)return false;
+        long a=(long)n1*d2,b=(long)n2*d1;
+        result=a<b?"<":a>b?">":"=";
+        return true;
+    }
+    private static bool TryFourRationalOrder(IReadOnlyDictionary<string,int>? p,out string result)
+    {
+        result="";
+        if(p is null||p.Count!=9||!p.TryGetValue("mode",out int mode)||
+           mode is not (0 or 1))return false;
+        var fractions=new (int N,int D,int Position)[4];
+        for(int i=0;i<4;i++)
+        {
+            if(!p.TryGetValue("n"+(i+1),out int n)||
+               !p.TryGetValue("d"+(i+1),out int d)||d is <2 or >100||
+               n < -3*d||n>3*d)return false;
+            fractions[i]=(n,d,i+1);
+        }
+        for(int i=0;i<4;i++)
+            for(int j=i+1;j<4;j++)
+                if((long)fractions[i].N*fractions[j].D==
+                   (long)fractions[j].N*fractions[i].D)return false;
+        Array.Sort(fractions,(a,b)=>((long)a.N*b.D).CompareTo((long)b.N*a.D));
+        if(mode==1)Array.Reverse(fractions);
+        result=string.Join(",",fractions.Select(x=>x.Position.ToString(CultureInfo.InvariantCulture)));
+        return true;
+    }
 
     // Reuse the G6 signed-number engine for bounded rational positions and comparisons.
     // Only exact symbols are auto-graded. Student-drawn scales and points remain teacher-reviewed.
@@ -257,6 +328,12 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==MixedRationalCompare)
+            return TryMixedRationalCompare(p,out string symbol)?symbol:
+                throw new InvalidOperationException("Invalid mixed-rational comparison.");
+        if(family==FourRationalOrder)
+            return TryFourRationalOrder(p,out string sequence)?sequence:
+                throw new InvalidOperationException("Invalid rational ordering.");
         if(family==SignedRationalCompare)
             return TrySignedRationalCompare(p,out string rationalSymbol)?rationalSymbol:
                 throw new InvalidOperationException("Invalid signed rational comparison.");
@@ -279,6 +356,15 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is MixedRationalCompare or FourRationalOrder)
+        {
+            if(string.IsNullOrWhiteSpace(answer)||answer.Length>80)return false;
+            string expected;
+            if(family==MixedRationalCompare){
+                if(!TryMixedRationalCompare(p,out expected))return false;
+            }else if(!TryFourRationalOrder(p,out expected))return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),expected,StringComparison.Ordinal);
+        }
         if(family is SignedRationalCompare or SignedRationalSide)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;

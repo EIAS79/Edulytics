@@ -9102,6 +9102,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u07.l08.reducible_fraction_to_decimal","uae.g6.u05.l08.classify_fraction_decimal","uae.g6.u05.l08.fraction_exact_decimal"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L08_PRINTED375_382",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L09: signed mixed fraction/decimal comparison and four-item ordering; exact cross-products.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:09:STUDENT-AR-128","number.rational.signed_comparison_order",
+            "COMPARE_AND_ORDER_SIGNED_RATIONAL_DECIMALS_AND_FRACTIONS",
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals","uae.g6.u05.l09.order_four_signed_rationals"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L09_PRINTED383_390",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
