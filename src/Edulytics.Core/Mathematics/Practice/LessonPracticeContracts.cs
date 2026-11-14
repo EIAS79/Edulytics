@@ -9081,6 +9081,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l05.compare_signed_integers","uae.g6.u05.l05.order_integer_set","uae.g6.u05.l02.signed_plot_set_extremum"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L05_PRINTED359_366",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L06: work backwards temperature and schedule; context reasoning teacher assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:06:STUDENT-AR-128","problem_solving.work_backward",
+            "FOUR_STEP_UNDERSTAND_PLAN_SOLVE_CHECK_REVERSE_STRATEGY",
+            ["uae.g6.u05.l06.work_backward_temperature","uae.g6.u05.l06.work_backward_schedule","uae.g6.u05.l05.compare_signed_integers"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L06_PRINTED367_369",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -14,14 +14,36 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string AbsoluteExpression="uae.g6.u05.l04.absolute_expression";
     internal const string SignedCompare="uae.g6.u05.l05.compare_signed_integers";
     internal const string SignedOrderSet="uae.g6.u05.l05.order_integer_set";
+    internal const string WorkBackwardTemperature="uae.g6.u05.l06.work_backward_temperature";
+    internal const string WorkBackwardSchedule="uae.g6.u05.l06.work_backward_schedule";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family==WorkBackwardTemperature)
+        {
+            int final=random.Next(-15,16),change=random.Next(-25,26);
+            if(change==0)change=5;
+            return new Item(family,
+                $"بعد تغير درجة الحرارة بمقدار {change} درجات أصبحت {final} درجة. كم كانت في البداية؟ أوجدها بالعمل بترتيب عكسي.",
+                "للرجوع إلى البداية نطرح التغير من الدرجة النهائية ثم نتحقق بإضافته.",
+                AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"final",final},{"change",change}});
+        }
+        if(family==WorkBackwardSchedule)
+        {
+            int end=random.Next(96,121)*5,travel=random.Next(10,26),
+                food=random.Next(20,36),prepare=random.Next(5,21),message=random.Next(5,21);
+            var p=new Dictionary<string,int>{{"endMinute",end},{"travel",travel},
+                {"food",food},{"prepare",prepare},{"message",message}};
+            return new Item(family,
+                $"موعد النهاية {(end/60):D2}:{(end%60):D2} صباحًا. قبلها السفر {travel} دقيقة، والفطور {food} دقيقة، والاستعداد {prepare} دقيقة، والرسائل {message} دقيقة. متى تبدأ؟ اكتب الوقت بنظام 24 ساعة HH:MM.",
+                "ابدأ من الوقت النهائي واطرح المدد بالعكس، ثم اجمعها للتحقق.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         if(family==SignedCompare)
         {
             int a=random.Next(-40,41),b=random.Next(-40,41);
@@ -88,6 +110,31 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         return new Item(family,$"اكتب العدد الصحيح المقابل للعدد {original}. ما موقعه من الصفر؟",
             "العددان المتقابلان على بعد متساوٍ من الصفر وفي اتجاهين متعاكسين؛ مقابل الصفر هو الصفر.",
             AssessmentItemType.ShortAnswer,p);
+    }
+
+
+    // U05L06 teacher-led reverse-step inquiry; only temperature and schedule numeric components are auto-scored.
+    private static bool TryBackTemperature(IReadOnlyDictionary<string,int>? p,out int start)
+    {
+        start=0;
+        if(p is null||p.Count!=2||!p.TryGetValue("final",out int end)||
+           !p.TryGetValue("change",out int change)||
+           end is <-15 or >15||change is <-25 or >25||change==0)return false;
+        start=end-change;
+        return true;
+    }
+    private static bool TryBackSchedule(IReadOnlyDictionary<string,int>? p,out string start)
+    {
+        start="";
+        if(p is null||p.Count!=5||!p.TryGetValue("endMinute",out int end)||
+           !p.TryGetValue("travel",out int travel)||!p.TryGetValue("food",out int food)||
+           !p.TryGetValue("prepare",out int prep)||!p.TryGetValue("message",out int message)||
+           end is <480 or >600||end%5!=0||travel is <10 or >25||
+           food is <20 or >35||prep is <5 or >20||message is <5 or >20)return false;
+        int minute=end-travel-food-prep-message;
+        if(minute<0)return false;
+        start=$"{minute/60:D2}:{minute%60:D2}";
+        return true;
     }
 
     // Scoped G6 U05L05 exact comparison and 4-number ordering; reuse existing signed-number adapter.
@@ -161,6 +208,12 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==WorkBackwardTemperature)
+            return TryBackTemperature(p,out int n)?n.ToString(CultureInfo.InvariantCulture):
+                throw new InvalidOperationException("Invalid reverse-temperature parameters.");
+        if(family==WorkBackwardSchedule)
+            return TryBackSchedule(p,out string clock)?clock:
+                throw new InvalidOperationException("Invalid reverse-schedule parameters.");
         if(family==SignedCompare)
             return TryCompare(p,out string symbol)?symbol:throw new InvalidOperationException("Invalid signed comparison.");
         if(family==SignedOrderSet)
@@ -171,6 +224,19 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family==WorkBackwardTemperature)
+        {
+            if(!TryBackTemperature(p,out int n)||string.IsNullOrWhiteSpace(answer)||
+               answer.Length>48)return false;
+            return int.TryParse(NormalizeSignedAnswer(answer.Trim()),
+                NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int actual)&&actual==n;
+        }
+        if(family==WorkBackwardSchedule)
+        {
+            if(!TryBackSchedule(p,out string clock)||string.IsNullOrWhiteSpace(answer)||
+               answer.Length>40)return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),clock,StringComparison.Ordinal);
+        }
         if(family is SignedCompare or SignedOrderSet)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>100)return false;
