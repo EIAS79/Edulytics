@@ -8881,6 +8881,9 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity"],
             "G6_GENERAL_U02_L08_SOURCE_PRINTED137_144",
             "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128","percentages.core","BAR_MODEL_PERCENT_OF_QUANTITY",
+            ["percentages.core.of_quantity"],"G6_U02L09_PRINTED145_146_AR","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

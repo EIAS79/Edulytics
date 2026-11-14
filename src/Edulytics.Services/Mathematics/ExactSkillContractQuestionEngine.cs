@@ -716,6 +716,14 @@ public sealed class ExactSkillContractQuestionEngine
                     };
                 }
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=problem with {
+                        Prompt=$"يمثل الشريط ١٠٠% من عدد {problem.Parameters["quantity"]}، فما مقدار {problem.Parameters["percent"]}% منه؟",
+                        Solution="استخدم أجزاء الشريط المتساوية، واضرب الكمية في النسبة ثم اقسم على ١٠٠."
+                    };
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
