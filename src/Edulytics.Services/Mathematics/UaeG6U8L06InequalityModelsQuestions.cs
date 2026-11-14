@@ -8,9 +8,11 @@ internal static class UaeG6U8L06InequalityModelsQuestions
     internal const string Endpoint="uae.g6.u08.l06.endpoint_inclusion";
     internal const string Direction="uae.g6.u08.l06.graph_direction";
     internal const string Write="uae.g6.u08.l08.write_word_inequality";
+    internal const string Add="uae.g6.u08.l09.solve_add_inequality";
+    internal const string Subtract="uae.g6.u08.l09.solve_subtract_inequality";
     internal sealed record Item(string Family,string Prompt,string Solution,
       AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Membership or Endpoint or Direction or Write;
+    internal static bool Supports(string? family)=>family is Membership or Endpoint or Direction or Write or Add or Subtract;
     private static string Symbol(int mode)=>mode switch{0=>"<",1=>"≤",2=>">",3=>"≥",
       _=>throw new ArgumentOutOfRangeException(nameof(mode))};
     private static bool TryExpected(string family,IReadOnlyDictionary<string,int>? p,out string answer)
@@ -18,6 +20,15 @@ internal static class UaeG6U8L06InequalityModelsQuestions
         answer="";
         if(!Supports(family)||p is null||!p.TryGetValue("op",out int op)||
            op is <0 or >3)return false;
+        if(family is Add or Subtract)
+        {
+            if(p.Count!=3||!p.TryGetValue("b",out int b)||
+               !p.TryGetValue("change",out int change)||
+               b is <-25 or >25||change is <1 or >20)return false;
+            int limit=family==Add?b-change:b+change;
+            answer=$"س{Symbol(op)}{limit}";
+            return true;
+        }
         if(family==Write)
         {
             if(p.Count!=2||!p.TryGetValue("bound10",out int b10)||
@@ -47,7 +58,15 @@ internal static class UaeG6U8L06InequalityModelsQuestions
         int op=random.Next(4),bound=random.Next(-12,13),candidate=random.Next(-15,16);
         var p=new Dictionary<string,int>{{"op",op}};
         string prompt;
-        if(family==Write)
+        if(family is Add or Subtract)
+        {
+            int b=random.Next(-25,26),change=random.Next(1,21);
+            p["b"]=b;p["change"]=change;
+            prompt=family==Add?
+                $"أوجد مجموعة حل المتباينة س+{change} {Symbol(op)} {b}، واكتب متباينة س وحدها.":
+                $"أوجد مجموعة حل المتباينة س−{change} {Symbol(op)} {b}، واكتب متباينة س وحدها.";
+        }
+        else if(family==Write)
         {
             int b10=random.Next(-200,201);p["bound10"]=b10;
             string value=(b10/10m).ToString("0.#",System.Globalization.CultureInfo.InvariantCulture);
@@ -77,6 +96,6 @@ internal static class UaeG6U8L06InequalityModelsQuestions
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)=>
         !string.IsNullOrWhiteSpace(answer)&&answer.Length<=70&&
         TryExpected(family,p,out var wanted)&&
-        string.Equals(family==Write?NormalizeSymbolic(answer):answer.Trim(),
-           family==Write?NormalizeSymbolic(wanted):wanted,StringComparison.Ordinal);
+        string.Equals(family is Write or Add or Subtract?NormalizeSymbolic(answer):answer.Trim(),
+           family is Write or Add or Subtract?NormalizeSymbolic(wanted):wanted,StringComparison.Ordinal);
 }

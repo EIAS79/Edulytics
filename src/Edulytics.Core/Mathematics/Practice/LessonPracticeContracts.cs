@@ -9353,6 +9353,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction","uae.g6.u08.l08.write_word_inequality"],
             "G6_LOCAL_BOOK2_U08L08_PRINTED619_626_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // U08L09: exploratory one-step additive inequalities with exact
+        // inverse operation, interval number lines and teacher-reviewed models.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:09:STUDENT-AR-128","algebra.inequalities.one_step_add_sub_lab",
+            "INVERSE_ADDITION_SUBTRACTION_KEEP_INEQUALITY_DIRECTION",
+            ["uae.g6.u08.l09.solve_add_inequality","uae.g6.u08.l09.solve_subtract_inequality","uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.graph_direction"],
+            "G6_LOCAL_BOOK2_U08L09_PRINTED627_628_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
