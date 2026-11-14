@@ -8,11 +8,14 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
     internal const string UnitByWhole="uae.g5.u09.l09.unit_fraction_divide_whole";
     internal const string G6WholeByFraction="uae.g6.u04.l07.whole_divide_nonunit_fraction";
     internal const string G6Reciprocal="uae.g6.u04.l08.reciprocal_number";
+    internal const string G6FractionByFraction="uae.g6.u04.l09.fraction_divide_fraction";
+    internal const string G6FractionByWhole="uae.g6.u04.l09.fraction_divide_whole";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is WholeByUnit or UnitByWhole or G6WholeByFraction or G6Reciprocal;
+    internal static bool Supports(string? family)=>family is WholeByUnit or UnitByWhole or G6WholeByFraction or G6Reciprocal or G6FractionByFraction or G6FractionByWhole;
     internal static Item Build(string family,Random r)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported unit fraction division.");
+        if(family is G6FractionByFraction or G6FractionByWhole)return BuildG6FractionDivision(family,r);
         if(family==G6Reciprocal)return BuildG6Reciprocal(r);
         if(family==G6WholeByFraction)return BuildG6(r);
         int n=r.Next(2,11),d=r.Next(2,11);
@@ -24,6 +27,58 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
             family==WholeByUnit?AssessmentItemType.Numeric:AssessmentItemType.ShortAnswer,p);
     }
 
+
+
+    // Grade6 exploratory fraction models. The number is scored, freehand bars need teacher review.
+    // This scoped extension never alters the existing G5 unit fraction scenarios.
+    private static Item BuildG6FractionDivision(string family,Random r)
+    {
+        int d=r.Next(3,13),n=r.Next(1,d);
+        int a=family==G6FractionByWhole?r.Next(2,8):r.Next(1,10);
+        int b=family==G6FractionByWhole?1:r.Next(Math.Max(2,a+1),13);
+        IReadOnlyDictionary<string,int> p=new Dictionary<string,int>{
+            ["n"]=n,["d"]=d,["a"]=a,["b"]=b
+        };
+        return new Item(family,
+            $"أوجد {n}/{d} ÷ {(b==1?$"{a}":$"{a}/{b}")}. اكتب عددًا صحيحًا أو كسرًا في أبسط صورة (بسط/مقام).",
+            "مثّل المقسوم بأشرطة متساوية ثم احسب عدد المجموعات؛ تحقق بضرب ناتج القسمة في المقسوم عليه.",
+            AssessmentItemType.ShortAnswer,p);
+    }
+    private static bool TryG6FractionDivision(string family,IReadOnlyDictionary<string,int>? p,out int numerator,out int denominator)
+    {
+        numerator=denominator=0;
+        if(family is not (G6FractionByFraction or G6FractionByWhole)||p is null||
+           p.Count!=4||!p.TryGetValue("n",out int n)||
+           !p.TryGetValue("d",out int d)||!p.TryGetValue("a",out int a)||
+           !p.TryGetValue("b",out int b)||d is <3 or >12||
+           n<1||n>=d||a is <1 or >9||
+           (family==G6FractionByWhole?(b!=1||a<2):(b is <2 or >12||a>=b)))return false;
+        int top=checked(n*b),bottom=checked(d*a),common=Gcd(top,bottom);
+        numerator=top/common;denominator=bottom/common;return true;
+    }
+    private static string SolveG6FractionDivision(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!TryG6FractionDivision(family,p,out int n,out int d))
+            throw new InvalidOperationException("Invalid Grade6 fraction division operands.");
+        return d==1?n.ToString(CultureInfo.InvariantCulture):$"{n}/{d}";
+    }
+    private static bool VerifyG6FractionDivision(string family,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!TryG6FractionDivision(family,p,out int n,out int d)||
+           string.IsNullOrWhiteSpace(answer)||answer.Length>48)return false;
+        string normalized=new(answer.Trim().Where(c=>!char.IsWhiteSpace(c))
+            .Select(c=>c switch{
+                >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+                '⁄'=>'/',_=>c}).ToArray());
+        string[] v=normalized.Split('/');
+        if(d==1&&v.Length==1)return int.TryParse(v[0],NumberStyles.None,
+            CultureInfo.InvariantCulture,out int integer)&&integer==n;
+        return v.Length==2&&int.TryParse(v[0],NumberStyles.None,
+            CultureInfo.InvariantCulture,out int top)&&int.TryParse(v[1],
+            NumberStyles.None,CultureInfo.InvariantCulture,out int bottom)&&
+            top>0&&bottom>0&&Gcd(top,bottom)==1&&top==n&&bottom==d;
+    }
 
     // Grade6 reciprocal is mathematically distinct from division; own bounded exact family.
     private static Item BuildG6Reciprocal(Random r)
@@ -109,6 +164,7 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is G6FractionByFraction or G6FractionByWhole)return SolveG6FractionDivision(family,p);
         if(family==G6Reciprocal)return SolveReciprocal(p);
         if(family==G6WholeByFraction)return SolveG6(p);
         if(!Valid(family,p,out int n,out int d))throw new InvalidOperationException("Invalid G5 fraction division.");
@@ -116,6 +172,7 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is G6FractionByFraction or G6FractionByWhole)return VerifyG6FractionDivision(family,p,answer);
         if(family==G6Reciprocal)return VerifyReciprocal(p,answer);
         if(family==G6WholeByFraction)return VerifyG6(p,answer);
         if(!Valid(family,p,out int n,out int d)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)return false;
