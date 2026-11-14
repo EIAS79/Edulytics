@@ -168,6 +168,25 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
             AssessmentItemType.Numeric,
             new Dictionary<string,int>{{"dividendHundredths",dividendHundredths},{"divisor",d}});
     }
+    // Grade6 U03:L09 extends the existing Grade5 whole-divisor decimal
+    // family to larger divisors and thousandth-scaled source operands.
+    // Exact questions reject non-terminating quotients instead of rounding.
+    private static bool ValidG6DecimalByWhole(string f,IReadOnlyDictionary<string,int> p,
+        out decimal expected)
+    {
+        expected=0m;
+        if (f is not (G5Exact or G5Rounded)||
+            !p.TryGetValue("g6DividendThousandths",out int n)||
+            !p.TryGetValue("g6WholeDivisor",out int d)||
+            n is <1 or >5000000 || d is <2 or >900)
+            return false;
+        var exact=(decimal)n/(d*1000m);
+        if(f==G5Exact && Math.Round(exact,6,MidpointRounding.AwayFromZero)!=exact)
+            return false;
+        expected=f==G5Rounded?Math.Round(exact,2,MidpointRounding.AwayFromZero):exact;
+        return true;
+    }
+
     private static bool ValidG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p,
         out int qMilli)
     {
@@ -181,6 +200,13 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static string SolveG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(p.ContainsKey("g6DividendThousandths"))
+        {
+            if(!ValidG6DecimalByWhole(f,p,out var value))
+                throw new InvalidOperationException("Invalid Grade6 decimal-by-whole parameters.");
+            return value.ToString("0.######",CultureInfo.InvariantCulture);
+        }
+
         if(!ValidG5WholeDecimal(f,p,out int q))
             throw new InvalidOperationException("Invalid G5 decimal-by-whole parameters");
         decimal exact=q/1000m;
@@ -193,6 +219,21 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static bool VerifyG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(p.ContainsKey("g6DividendThousandths"))
+        {
+            if(!ValidG6DecimalByWhole(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))
+                return false;
+            string normalized=new(answer.Trim().Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '٫'=>'.',_=>ch
+            }).ToArray());
+            if(normalized.Length>36||
+               !normalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+        }
+
         if(!ValidG5WholeDecimal(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Select(ch=>ch switch{
             >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),

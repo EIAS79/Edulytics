@@ -759,6 +759,12 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"uae.g5.u05.l06.decimal_times_power_ten",StringComparison.Ordinal))
                     problem=LocalizeG6PowersOfTenLab(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (string.Equals(problem.Family,"uae.g5.u05.l11.exact_decimal_by_whole",StringComparison.Ordinal) ||
+                     string.Equals(problem.Family,"uae.g5.u05.l11.round_decimal_quotient_hundredth",StringComparison.Ordinal)))
+                    problem=LocalizeG6DecimalByWhole(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5641,6 +5647,60 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
             Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalByWhole(ExactProblem problem)
+    {
+        var exactSamples=new (int Dividend,int Divisor)[] {
+            (6800,2),
+            (7700,14),
+            (3490,4),
+            (55080,17),
+            (9480,15),
+            (12320,22),
+            (69904,34),
+            (3600,4),
+            (118500,5),
+            (55200,46),
+            (752400,33),
+            (3082240,4),
+            (24000,16),
+            (15480,36),
+            (36800,2),
+            (16200,12),
+            (59200,16)
+        };
+        var roundedSamples=new (int Dividend,int Divisor)[] {
+            (6740,3),
+            (7240,7),
+            (336752,31),
+            (42560,22),
+            (39400,3),
+            (10900,6),
+            (27400,11),
+            (12340,7),
+            (80400,19),
+            (35820,16),
+            (15900,7),
+            (14400,13),
+            (11100,8),
+            (26900,6),
+            (31250,6)
+        };
+        var p=problem.Parameters;
+        var samples=problem.Family=="uae.g5.u05.l11.round_decimal_quotient_hundredth"?roundedSamples:exactSamples;
+        var selected=samples[(p["dividendHundredths"]*7+p["divisor"])%samples.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DividendThousandths"]=selected.Dividend;
+        values["g6WholeDivisor"]=selected.Divisor;
+        var a=(selected.Dividend/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        string prompt=problem.Family=="uae.g5.u05.l11.round_decimal_quotient_hundredth"
+            ?$"احسب {a} ÷ {selected.Divisor} ثم قرّب الناتج إلى أقرب جزء من مئة."
+            :$"احسب {a} ÷ {selected.Divisor} بدقة دون تقريب، وتحقق بالضرب.";
+        return problem with {
+            Parameters=values,Prompt=prompt,
+            Solution="أقسم المنازل بالترتيب وأضع الفاصلة فوق فاصلة المقسوم؛ أقرب إلى الجزء من مئة فقط إذا طلب السؤال."
         };
     }
 

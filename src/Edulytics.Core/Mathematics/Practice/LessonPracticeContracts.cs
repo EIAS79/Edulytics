@@ -8951,6 +8951,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l09.estimate_decimal_quotient","uae.g5.u05.l09.compatible_decimal_dividend","uae.g5.u04.l01.estimate_two_digit_quotient"],
             "G6_GENERAL_STUDENT_U03L08_PRINTED219_226",
             "READY_VERIFIED",Version);
+        // Grade6 General Arabic U03:L09: exact and rounded division of
+        // decimals by whole numbers, using the already approved Grade5 kernel.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128","decimal.arithmetic",
+            "EXACT_AND_ROUNDED_DECIMAL_DIVISION_BY_WHOLE",
+            ["uae.g5.u05.l11.exact_decimal_by_whole","uae.g5.u05.l11.round_decimal_quotient_hundredth"],
+            "G6_GENERAL_STUDENT_U03L09_PRINTED227_234",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
