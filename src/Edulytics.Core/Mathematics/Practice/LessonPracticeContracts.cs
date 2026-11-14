@@ -9095,6 +9095,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l07.compare_signed_rationals","uae.g6.u05.l07.rational_relative_zero"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L07_PRINTED371_374",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L08: exact recurring/terminating rational decimal conversion, reuse Grade5 fraction-decimal.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:08:STUDENT-AR-128","number.rational.terminating_repeating_decimal",
+            "RATIONAL_DECIMAL_CONVERSION_PERIODIC_BAR_AND_DENOMINATOR_CLASSIFICATION",
+            ["uae.g5.u07.l08.reducible_fraction_to_decimal","uae.g6.u05.l08.classify_fraction_decimal","uae.g6.u05.l08.fraction_exact_decimal"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L08_PRINTED375_382",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
