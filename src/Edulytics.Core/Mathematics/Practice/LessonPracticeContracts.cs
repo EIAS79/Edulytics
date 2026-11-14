@@ -9271,6 +9271,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide","uae.g6.u07.l07.write_equal_groups","uae.g6.u07.l07.inverse_division_statement","uae.g6.u07.l07.classify_equal_groups"],
             "G6_LOCAL_BOOK2_U07L07_PRINTED541_544_YEAR2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U07L08: division property of equality, rational and decimal coefficients.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:08:STUDENT-AR-128"]=new LessonPracticeContract(
+          "PED:UAE-MOE-MATH:L6:GENERAL:07:08:STUDENT-AR-128","algebra.multiplication_equations",
+          "MULTIPLICATION_EQUATION_DIVISION_EQUALITY_DECIMAL_RATIONAL",
+          ["uae.g6.u07.l01.multiply","uae.g6.u07.l07.write_equal_groups","uae.g6.u07.l07.inverse_division_statement","uae.g6.u07.l08.decimal_coefficient","uae.g6.u07.l08.fraction_coefficient","uae.g6.u07.l08.division_property"],
+          "G6_LOCAL_BOOK2_U07L08_PRINTED545_552_TARGET2026_27_NOT_VERIFIED",
+          "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

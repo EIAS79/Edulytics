@@ -355,6 +355,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U7L05SubtractionEquationQuestions.Supports(family.Trim()) ||
           UaeG6U7L06GuessCheckQuestions.Supports(family.Trim()) ||
           UaeG6U7L07MultiplicationLabQuestions.Supports(family.Trim()) ||
+          UaeG6U7L08MultiplicationEquationsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -1037,6 +1038,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L06GuessCheckQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L07MultiplicationLabQuestions.Supports(family))
             return UaeG6U7L07MultiplicationLabQuestions.Verify(family,parameters,answer);
+        if (UaeG6U7L08MultiplicationEquationsQuestions.Supports(family))
+            return UaeG6U7L08MultiplicationEquationsQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4459,6 +4462,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U7L07MultiplicationLabQuestions.Supports(family))
         {
             var q=UaeG6U7L07MultiplicationLabQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U7L08MultiplicationEquationsQuestions.Supports(family))
+        {
+            var q=UaeG6U7L08MultiplicationEquationsQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
@@ -9212,6 +9220,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L06GuessCheckQuestions.Solve(problem.Family,p);
         if (UaeG6U7L07MultiplicationLabQuestions.Supports(problem.Family))
             return UaeG6U7L07MultiplicationLabQuestions.Solve(problem.Family,p);
+        if (UaeG6U7L08MultiplicationEquationsQuestions.Supports(problem.Family))
+            return UaeG6U7L08MultiplicationEquationsQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))
