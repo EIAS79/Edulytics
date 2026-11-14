@@ -8900,6 +8900,11 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128","decimal.arithmetic","ALIGN_ADD_SUBTRACT_TO_THOUSANDTH",
             ["uae.g4.u11.l06.column_sum","uae.g4.u11.l10.column_difference"],
             "G6_STUDENT_U03L01_PRINTED173_180","READY_VERIFIED",Version);
+        // G6 U03L02: existing decimal multiplication family, exact specified rounding rules.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128","decimal.arithmetic","ESTIMATE_DECIMAL_PRODUCTS_BY_SPECIFIED_PLACE",
+            ["uae.g5.u05.l05.multiply_decimal_factors"],
+            "G6_GENERAL_U03L02_PRINTED181_188","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -315,6 +315,20 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
+       p.TryGetValue("g6EstimateProduct",out var estimateMode) && estimateMode==1)
+   {
+       if (!p.TryGetValue("aTenths",out var a) || !p.TryGetValue("bTenths",out var b) ||
+           !p.TryGetValue("placeA",out var placeA) || !p.TryGetValue("placeB",out var placeB) ||
+           a is <1 or >10000 || b is <1 or >10000 ||
+           placeA is not (1 or 10) || placeB is not (1 or 10))
+           return false;
+       var roundedA=Math.Round((a/10m)/placeA,0,MidpointRounding.AwayFromZero)*placeA;
+       var roundedB=Math.Round((b/10m)/placeB,0,MidpointRounding.AwayFromZero)*placeB;
+       result=roundedA*roundedB;
+       return true;
+   }
+
    if ((f is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference") &&
        p.TryGetValue("g6Thousandths",out var enabled) && enabled==1)
    {
@@ -357,6 +371,17 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if (p.TryGetValue("g6EstimateProduct",out var g6) && g6==1)
+   {
+       if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
+       string western=new(answer.Trim().Select(c=>c switch{
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           _=>c
+       }).ToArray());
+       return decimal.TryParse(western,NumberStyles.Number,CultureInfo.InvariantCulture,out var actual)
+           && actual==expected;
+   }
    if(IsG5DividePow(f))return VerifyG5DividePow(f,p,answer);
    if(IsG5Pow(f))return VerifyG5Pow(f,p,answer);
    if(IsG5Factor(f))return VerifyG5Factor(f,p,answer);

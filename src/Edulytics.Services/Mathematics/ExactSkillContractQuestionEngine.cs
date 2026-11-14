@@ -739,6 +739,11 @@ public sealed class ExactSkillContractQuestionEngine
                     (problem.Family is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference"))
                     problem=LocalizeG6ThousandthOperations(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
+                    problem=LocalizeG6DecimalProductEstimate(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5601,6 +5606,26 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=args,
             Prompt=$"رتّب الفواصل العشرية ثم احسب {a} {(add?"+":"−")} {b}. اكتب الجواب حتى أجزاء الألف.",
             Solution="حاذِ الفواصل وأضف الأصفار اللازمة، ثم احسب وتحقق بالعملية العكسية."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalProductEstimate(ExactProblem problem)
+    {
+        var items=new (int A,int B,int PlaceA,int PlaceB)[] {
+            (87,28,1,1),(426,372,10,10),(693,65,10,1),
+            (97,33,1,1),(282,80,10,1),(719,20,10,1),(175,84,1,1)
+        };
+        var p=problem.Parameters;
+        var item=items[(p["aHundredths"]+p["bHundredths"])%items.Length];
+        var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+        x["g6EstimateProduct"]=1; x["aTenths"]=item.A; x["bTenths"]=item.B;
+        x["placeA"]=item.PlaceA; x["placeB"]=item.PlaceB;
+        var a=(item.A/10m).ToString("0.#",CultureInfo.InvariantCulture);
+        var b=(item.B/10m).ToString("0.#",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=x,
+            Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
+            Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
         };
     }
 
