@@ -9338,6 +9338,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction"],
             "G6_LOCAL_BOOK2_U08L06_PRINTED609_610_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // U08L07 solution sets and substitution validation reuse U08L06
+        // inequality membership, inclusive endpoint and direction engines.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:07:STUDENT-AR-128","algebra.inequality.solution_sets",
+            "CHECK_INEQUALITY_TRUTH_AND_CHOOSE_CONTEXTUAL_SOLUTION_SET",
+            ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction"],
+            "G6_LOCAL_BOOK2_U08L07_PRINTED611_618_YEAR2026_27_NOT_VERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
