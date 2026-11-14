@@ -235,7 +235,8 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
         if(!IsG5(f)||p.Count!=2||
            !p.TryGetValue("dividendTenths",out int n)||
            !p.TryGetValue("groups",out int g)||
-           n is <4 or >224||g is <2 or >8||
+           // The generator permits eight groups of 29 tenths (232 tenths).
+           n is <4 or >232||g is <2 or >8||
            n%g!=0||n/g is <2 or >29)return false;
         int tenthsEach=n/g;
         answer=f switch{G5DecimalGroup=>tenthsEach/10m,
