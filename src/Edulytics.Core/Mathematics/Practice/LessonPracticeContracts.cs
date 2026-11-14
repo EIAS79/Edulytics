@@ -9250,6 +9250,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u07.l01.subtract","uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l04.write_subtraction_model","uae.g6.u07.l04.inverse_addition_statement"],
             "LOCAL_G6_BOOK2_U07L04_PRINTED527_528_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U07L05: addition property to solve subtraction equations; exact fractions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:05:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:07:05:STUDENT-AR-128","algebra.subtraction_equations",
+           "ADDITION_PROPERTY_OF_EQUALITY_SOLVE_DECIMALS_AND_FRACTIONS",
+           ["uae.g6.u07.l01.subtract","uae.g6.u07.l04.write_subtraction_model","uae.g6.u07.l04.inverse_addition_statement","uae.g6.u07.l05.decimal_subtraction","uae.g6.u07.l05.fraction_subtraction","uae.g6.u07.l05.addition_property"],
+           "G6_LOCAL_BOOK2_U07L05_PRINTED529_536_TARGET2026_27_UNVERIFIED",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
