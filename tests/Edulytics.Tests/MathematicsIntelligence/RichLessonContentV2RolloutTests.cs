@@ -142,11 +142,13 @@ public sealed class RichLessonContentV2RolloutTests
         Assert.All(curatedLessons, lesson =>
         {
             Assert.Contains(lesson.LessonCode, canonicalCodes);
-            // Grade 4 has its own reviewed, first-party Arabic Rich sidecars.
-            // Other curated cohorts must remain English, never silently
-            // reclassify an arbitrary language as an accepted locale.
+            // UAE Grade 4 Common and Grade 5 General have their own reviewed,
+            // first-party Arabic Rich V2 sidecars. Never silently reclassify
+            // another curated cohort as an accepted locale.
             if (lesson.LessonCode.StartsWith(
-                "PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal))
+                    "PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal) ||
+                lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L5:GENERAL:", StringComparison.Ordinal))
                 Assert.Equal("ar", NormalizeCulture(lesson.CultureCode));
             else
                 Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
