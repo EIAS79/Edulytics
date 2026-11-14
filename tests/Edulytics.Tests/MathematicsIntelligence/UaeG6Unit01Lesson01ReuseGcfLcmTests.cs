@@ -1,3 +1,4 @@
+using Edulytics.Core.Curriculum;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Mathematics;
 
@@ -8,6 +9,29 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 // Written during A-B-C, not executed in this phase.
 public sealed class UaeG6Unit01Lesson01ReuseGcfLcmTests
 {
+    private const string SourceLesson = "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES";
+
+    [Fact]
+    public void ArabicLessonIsEmbeddedAndUsesExistingGcfLcmPracticeFamilies()
+    {
+        var content = RichLessonContentV2Registry.Find(SourceLesson, "ar");
+        Assert.NotNull(content);
+        Assert.Equal("العوامل والمضاعفات", content!.Title);
+        Assert.True(content.KeyConcepts.Count >= 4);
+        Assert.True(content.WorkedExamples.Count >= 4);
+        Assert.Contains(content.Visuals, v => v.Kind == RichLessonVisualKind.NumberLine);
+        Assert.Contains(content.Visuals, v => v.Kind == RichLessonVisualKind.EquationSet);
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(SourceLesson, out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal(6, contract!.AllowedQuestionFamilies.Count);
+        Assert.Contains("number.lcm", contract.SkillIds);
+        foreach (var family in contract.AllowedQuestionFamilies)
+        {
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+            Assert.True(LessonPracticeInteractionRegistry.TryResolve(family, out _));
+        }
+    }
+
     [Theory]
     [InlineData("uae.g5.u07.l02.gcf_two_numbers", 18, 30, 30, "6")]
     [InlineData("uae.g5.u07.l02.gcf_three_numbers", 24, 36, 60, "12")]

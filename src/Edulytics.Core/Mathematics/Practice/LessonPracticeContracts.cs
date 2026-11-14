@@ -8662,6 +8662,29 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE G6 Arabic Common — local Student Book U01:L01 (printed pp 7-14).
+        // Reuse Grade 5 exact GCF/LCM families; do not remap legacy Grade 6 ratios U01:L01.
+        // Explanatory/diagram responses are teacher-reviewed, not numeric-auto-graded.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+                "number.factors_and_multiples",
+                "GCF_LCM_NUMERIC_SUBSKILLS_TEACHER_REVIEW_EXPLANATIONS",
+                [
+                    "uae.g5.u07.l02.gcf_two_numbers",
+                    "uae.g5.u07.l02.gcf_three_numbers",
+                    "uae.g5.u07.l02.test_common_factor",
+                    "uae.g5.u07.l05.lcm_two_numbers",
+                    "uae.g5.u07.l05.lcm_three_numbers",
+                    "uae.g5.u07.l05.test_common_multiple"
+                ],
+                "UAE_G6_GENERAL_LOCAL_STUDENT_BOOK_U01_L01_PRINTED_7_14",
+                "READY_VERIFIED",
+                Version)
+            {
+                SkillIds = ["number.factors_and_multiples", "number.lcm"]
+            };
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
