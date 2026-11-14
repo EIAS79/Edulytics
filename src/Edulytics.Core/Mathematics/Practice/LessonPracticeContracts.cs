@@ -9046,6 +9046,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u04.l11.mixed_fraction_division_exact","uae.g6.u04.l09.fraction_divide_fraction"],
             "G6_GENERAL_STUDENT_U04L11_PRINTED321_328",
             "READY_VERIFIED",Version);
+        // G6 Arabic Unit5 L01: integer positions and opposites; numeric only, learner line drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:01:STUDENT-AR-128","number.integers.signed_positions",
+            "SIGNED_SEA_LEVEL_POSITION_AND_OPPOSITE_NUMBER_LINE_LAB",
+            ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L01_PRINTED339_340",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
