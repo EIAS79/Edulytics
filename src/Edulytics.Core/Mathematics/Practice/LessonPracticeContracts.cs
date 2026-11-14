@@ -9361,6 +9361,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l09.solve_add_inequality","uae.g6.u08.l09.solve_subtract_inequality","uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.graph_direction"],
             "G6_LOCAL_BOOK2_U08L09_PRINTED627_628_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U08L10: inverse addition/subtraction and positive-factor multiplication/division.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:10:STUDENT-AR-128","algebra.inequalities.one_step",
+            "SOLVE_ADD_SUBTRACT_MULTIPLY_DIVIDE_GRAPH_POSITIVE_FACTOR",
+            ["uae.g6.u08.l09.solve_add_inequality","uae.g6.u08.l09.solve_subtract_inequality","uae.g6.u08.l10.solve_multiply_inequality","uae.g6.u08.l10.solve_divide_inequality","uae.g6.u08.l06.candidate_membership"],
+            "LOCAL_G6_BOOK2_U08L10_PRINTED629_636_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -16,9 +16,9 @@
   "verifiedTocInstructionalItemCount": 128,
   "sourceBodyCoverageComplete": false,
   "gradeLessonCount": 128,
-  "closedLessons": 86,
-  "firstIncompleteLessonOrdinal": 87,
-  "lastClosedLessonOrdinal": 86,
+  "closedLessons": 87,
+  "firstIncompleteLessonOrdinal": 88,
+  "lastClosedLessonOrdinal": 87,
   "readyForStageD": false,
   "unitStates": [
     {
@@ -70,8 +70,9 @@
     {
       "unit": 8,
       "sourceIndexElements": 10,
-      "closed": 9,
-      "readyForStageD": false
+      "closed": 10,
+      "readyForStageD": true,
+      "status": "ABC_COMPLETE_STAGE_D_PENDING"
     },
     {
       "unit": 9,
@@ -99,23 +100,23 @@
     }
   ],
   "current": {
-    "unit": 8,
-    "lesson": 10,
-    "title": "حل المتباينات من خطوة واحدة",
+    "unit": 9,
+    "lesson": 1,
+    "title": "مختبر الاستكشاف: مساحة متوازي الأضلاع",
     "status": "SOURCE_PENDING",
     "sourceBookFile": "02.pdf",
     "sourcePdfPages": [
-      303,
-      310
+      325,
+      328
     ],
     "sourcePagesPrinted": [
-      629,
-      636
+      651,
+      654
     ]
   },
   "sourceIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/source-index.json",
   "sourceElementLedgerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/element-coverage-ledger.json",
-  "checkpointPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-086-stage-a-c-checkpoint.json",
+  "checkpointPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-087-stage-a-c-checkpoint.json",
   "testsRunPerLesson": "NOT_RUN",
   "manualCiInvocations": 0,
   "githubPr": 637,
@@ -128,9 +129,9 @@
     "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs.",
     "U01:L01 first lesson READY_FOR_STAGE_D based on Grade5-equivalent authored/static A-B-C closure criteria; no .NET/CI manually run, no StageD/production migration. U01:L02 is next; old English 59 intact."
   ],
-  "A_B_C_Ready": 86,
+  "A_B_C_Ready": 87,
   "A_B_C_InProgress": 1,
-  "lastClosedContentScope": "U08L09 Book2 PDF301–302 printed627–628 inverse inequality lab; 2026–2027 and StageD NOT_VERIFIED",
+  "lastClosedContentScope": "G6 U08L10 PDF303–310 printed629–636, unit8 10/10 A-B-C, Stage D and target year unverified",
   "unit3A_B_C_ClosedLessons": 10,
   "unit3StageD": "NOT_RUN",
   "unit3HistoricalEnglishPackPreserved": true
