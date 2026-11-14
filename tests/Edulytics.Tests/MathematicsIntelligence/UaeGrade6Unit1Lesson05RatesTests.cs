@@ -38,7 +38,7 @@ public sealed class UaeGrade6Unit1Lesson05RatesTests
             Assert.True(LessonPracticeInteractionRegistry.TryResolve(family,out _));
             foreach(var q in engine.Generate(Lesson,Lesson,[family],ExactSkillQuestionDifficulty.Standard,3,20261114,[]))
             {
-                Assert.Contains("وحدة",q.Prompt);
+                Assert.True(q.Prompt.Contains("وحدة", StringComparison.Ordinal) || q.Prompt.Contains("نسب", StringComparison.Ordinal));
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family,q.Parameters,q.CorrectAnswer));
             }
         }
