@@ -9330,6 +9330,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l02.geometric_nth","uae.g6.u08.l02.arithmetic_nth","uae.g6.u08.l01.linear_output","uae.g6.u07.l06.monthly_savings"],
             "LOCAL_G6_BOOK2_U08L05_PRINTED605_607_MIDUNIT_608_EXCLUDED",
             "READY_VERIFIED",Version);
+        // U08L06 inequality exploration: exact numeric membership, open/closed
+        // boundary and left/right; manual graph drawing remains teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:06:STUDENT-AR-128","algebra.inequality.number_line_models",
+            "NUMBER_LINE_COMPARE_STRICT_INCLUSIVE_BOUNDS_OPEN_CLOSED",
+            ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction"],
+            "G6_LOCAL_BOOK2_U08L06_PRINTED609_610_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
