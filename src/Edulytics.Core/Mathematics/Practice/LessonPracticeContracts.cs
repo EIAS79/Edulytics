@@ -8742,6 +8742,15 @@ public static class LessonPracticeContractRegistry
                 ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.divide_total"],
                 "UAE_G6_U01_L06_SOURCE_PRINTED_39_46",
                 "READY_VERIFIED",Version);
+        // Grade 6 Arabic General source native Lesson 5: graph equivalent ratio tables.
+        // Exact number practice reused; cartesian plotting is an authored RichV2 visual.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128","ratio.unit_rate",
+                "COORDINATE_PAIRS_GRAPHS_OF_EQUAL_RATIOS",
+                ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.direct"],
+                "UAE_G6_U01_L07_SOURCE_PRINTED_47_54",
+                "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
