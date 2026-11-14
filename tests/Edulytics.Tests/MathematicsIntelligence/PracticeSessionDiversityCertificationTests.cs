@@ -119,39 +119,41 @@ public sealed class PracticeSessionDiversityCertificationTests
             .OrderBy(x => x, StringComparer.Ordinal)
             .ToArray();
 
-        // These exact UAE G5 first-party families have finite, source-faithful
-        // models: e.g. four circle segment categories, six triangle angle sets,
-        // eight described quadrilaterals and eight fixed expression values.
-        // A single family cannot yield ten different questions without inventing
-        // new source models or manufacturing superficial duplicates. Prove two
-        // independent verified variants here; the separate per-lesson test above
-        // still requires ten verified, unique questions across its approved
-        // mix of families. All other families retain the ten-item invariant.
-        var finiteG5Families = new HashSet<string>(StringComparer.Ordinal)
+        // Certify the actual maximum number of distinct first-party source
+        // models in these explicitly enumerated UAE G5 finite families.
+        // Counts come from the original generators (four fixed triangle growth
+        // rounds, five growth weeks, six angle-pattern or toothpick models,
+        // eight fraction pairs, symbolic models, circle descriptions or
+        // quadrilateral descriptions). Do not add cosmetic duplicates or
+        // invent extra lesson models to satisfy an impossible ten-item quota.
+        // The separate per-lesson test still certifies ten diverse verified
+        // questions across each lesson's approved family mix. Every other
+        // family below must independently sustain ten distinct questions.
+        var finiteG5FamilyCapacities = new Dictionary<string, int>(StringComparer.Ordinal)
         {
-            "uae.g5.u02.l02.triangle_growth",
-            "uae.g5.u06.l06.model_unknown_minus",
-            "uae.g5.u06.l06.model_unknown_plus",
-            "uae.g5.u06.l07.compare_three_six_growth",
-            "uae.g5.u06.l07.matchstick_adjacent_squares",
-            "uae.g5.u06.l07.matchstick_shared_triangles",
-            "uae.g5.u06.l07.matchstick_square_diagonal",
-            "uae.g5.u06.l08.compare_weekly_growth",
-            "uae.g5.u07.l08.reducible_fraction_to_decimal",
-            "uae.g5.u12.l02.acute_angle_count",
-            "uae.g5.u12.l02.obtuse_angle_count",
-            "uae.g5.u12.l02.right_angle_count",
-            "uae.g5.u12.l02.third_angle",
-            "uae.g5.u12.l03.triangle_angle_type",
-            "uae.g5.u12.l04.circle_segment_classify",
-            "uae.g5.u12.l05.opposite_equal_angle_pairs",
-            "uae.g5.u12.l05.opposite_equal_pairs",
-            "uae.g5.u12.l05.opposite_parallel_pairs",
-            "uae.g5.u12.l05.right_angle_count",
-            "uae.g5.u12.l06.quadrilateral_most_specific"
+            ["uae.g5.u02.l02.triangle_growth"] = 4,
+            ["uae.g5.u06.l06.model_unknown_minus"] = 8,
+            ["uae.g5.u06.l06.model_unknown_plus"] = 8,
+            ["uae.g5.u06.l07.compare_three_six_growth"] = 6,
+            ["uae.g5.u06.l07.matchstick_adjacent_squares"] = 6,
+            ["uae.g5.u06.l07.matchstick_shared_triangles"] = 6,
+            ["uae.g5.u06.l07.matchstick_square_diagonal"] = 6,
+            ["uae.g5.u06.l08.compare_weekly_growth"] = 5,
+            ["uae.g5.u07.l08.reducible_fraction_to_decimal"] = 8,
+            ["uae.g5.u12.l02.acute_angle_count"] = 6,
+            ["uae.g5.u12.l02.obtuse_angle_count"] = 6,
+            ["uae.g5.u12.l02.right_angle_count"] = 6,
+            ["uae.g5.u12.l02.third_angle"] = 6,
+            ["uae.g5.u12.l03.triangle_angle_type"] = 6,
+            ["uae.g5.u12.l04.circle_segment_classify"] = 8,
+            ["uae.g5.u12.l05.opposite_equal_angle_pairs"] = 8,
+            ["uae.g5.u12.l05.opposite_equal_pairs"] = 8,
+            ["uae.g5.u12.l05.opposite_parallel_pairs"] = 8,
+            ["uae.g5.u12.l05.right_angle_count"] = 8,
+            ["uae.g5.u12.l06.quadrilateral_most_specific"] = 8
         };
-        Assert.Equal(20, finiteG5Families.Count);
-        Assert.All(finiteG5Families, family => Assert.Contains(family, families));
+        Assert.Equal(20, finiteG5FamilyCapacities.Count);
+        Assert.All(finiteG5FamilyCapacities.Keys, family => Assert.Contains(family, families));
 
         var failures = new List<string>();
 
@@ -161,7 +163,8 @@ public sealed class PracticeSessionDiversityCertificationTests
 
             try
             {
-                var questionCount = finiteG5Families.Contains(family) ? 2 : 10;
+                var questionCount = finiteG5FamilyCapacities.TryGetValue(family, out var certifiedCapacity)
+                    ? certifiedCapacity : 10;
 
                 var questions = engine.Generate(
                     "family-session-capacity-certification",
