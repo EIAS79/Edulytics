@@ -9185,6 +9185,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l07.table_seats","uae.g6.u06.l07.staircase_squares","uae.g6.u06.l07.savings_after_weeks","uae.g6.u06.l07.equal_team_size","uae.g6.u06.l07.fractional_votes"],
             "G6_ARABIC_2025_2026_BOOK2_U06L07_PRINTED463_465",
             "READY_VERIFIED",Version);
+        // G6 U06L08: reuse G4 additive and multiplicative property engines.
+        // Negative examples for subtraction/division covered by scoped classification.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:08:STUDENT-AR-128","algebra.equivalent_properties",
+            "COMMUTATIVE_ASSOCIATIVE_IDENTITY_AND_INVALID_SUBTRACTION_DIVISION",
+            ["uae.g4.u02.l01.commutative_add","uae.g4.u02.l01.associative_add","uae.g4.u02.l01.additive_identity","uae.g4.u03.l05.identity","uae.g4.u03.l06.grouped_product","uae.g6.u06.l08.classify_property","uae.g6.u06.l08.rewrite_associative","uae.g6.u06.l08.triangle_area_reordered"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L08_PRINTED467_474",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
