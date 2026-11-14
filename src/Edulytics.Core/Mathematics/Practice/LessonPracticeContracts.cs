@@ -8751,6 +8751,16 @@ public static class LessonPracticeContractRegistry
                 ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.direct"],
                 "UAE_G6_U01_L07_SOURCE_PRINTED_47_54",
                 "READY_VERIFIED",Version);
+        // G6 Arabic U01 inquiry: a four-step reasoning sequence.
+        // Numeric equal-group calculation reuses exact unit-rate kernel;
+        // pattern, mixed budgeting and explanation are teacher-scored.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128", "ratio.unit_rate",
+                "FOUR_STEP_INQUIRY_EQUAL_GROUP_NUMERIC_SUBSKILL",
+                ["ratio.unit_rate.direct"],
+                "UAE_G6_U01_L08_SOURCE_PRINTED_55_57",
+                "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
