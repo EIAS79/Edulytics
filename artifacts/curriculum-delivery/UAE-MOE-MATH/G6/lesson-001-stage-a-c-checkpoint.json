@@ -26,11 +26,12 @@
     "status": "PARTIAL_CANDIDATE_ONLY",
     "implemented": [
       "Original Arabic authored draft stored at artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json, while immutable 59-lesson English pack restored byte-identically",
-      "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down"
+      "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down",
+      "Original editable numeric number-line and prime-factor-tree model data authored in lesson-001-original-visual-models.json; renderer has NOT been connected"
     ],
     "issues": [
       "No effective U01:L01 Arabic learner binding yet",
-      "Visual number line and prime factor trees need actual rendered lesson models; text alone is not visual evidence",
+      "Original visual model DATA now exists, but real interactive RichV2 page rendering remains unwired and untested",
       "Pack-level AcademicLanguage remains en to avoid breaking other 58 lessons",
       "Original Arabic G6 L01 remains CANDIDATE_ONLY; no runtime content change until new Grade6 Arabic source-version and safe identity bridge"
     ]
@@ -38,7 +39,8 @@
   "stageC": {
     "status": "PARTIAL",
     "reuse": [
-      "UaeGrade4Unit8Lesson01FactorMultipleQuestions existing G5 GCF/LCM family logic as candidate for reuse via separate G6 aliases; do not create duplicate engine"
+      "UaeGrade4Unit8Lesson01FactorMultipleQuestions existing G5 GCF/LCM family logic as candidate for reuse via separate G6 aliases; do not create duplicate engine",
+      "Independent positive/negative/ar-digit C# tests written against existing engine in UaeG6Unit01Lesson01ReuseGcfLcmTests.cs; not executed"
     ],
     "mathSpotChecks": [
       {
@@ -72,7 +74,8 @@
     "testsRunInRepo": "NOT_RUN",
     "issues": [
       "G6 exact family registration, renderer and independent verifier wiring not implemented or executed",
-      "No compiled .NET tests and no RTL browser test in Stage A-C"
+      "No compiled .NET tests and no RTL browser test in Stage A-C",
+      "Candidate source-first G6 numeric skill contract stored in lesson-001-skill-contract-candidate.json; no canonical lesson registration yet."
     ]
   },
   "readyForStageD": false,
@@ -87,9 +90,29 @@
   ],
   "checkpointState": "A_C_EXPLICIT_GAP",
   "nextLessonAllowed": false,
-  "testsRun": "WRITTEN_NOT_RUN except in-memory arithmetic and JSON validation; no CI/.NET",
+  "testsRun": "NOT_RUN (.NET/CI not manually triggered; PR workflows run automatically under repository policy)",
   "githubPr": 637,
   "expectedLegacyMainPackContentSha": "ce794587ff6c386bd212c9794e24c53a620a6e53",
   "legacyMainPackRestored": true,
-  "ciObservation": "Auto-triggered PR workflows initially failed source parity on modified legacy pack; source pack reverted to exact original blob. Follow-up CI on new HEAD not yet measured."
+  "ciObservation": "Auto-triggered PR workflows initially failed source parity on modified legacy pack; source pack reverted to exact original blob. Follow-up CI on new HEAD not yet measured.",
+  "sourceTocAnnualLessonsVerified": 128,
+  "sourceTocUnitCounts": [
+    11,
+    11,
+    10,
+    11,
+    12,
+    12,
+    10,
+    10,
+    11,
+    14,
+    7,
+    9
+  ],
+  "elementCoverageLedger": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/element-coverage-ledger.json",
+  "targetedSourceElements": 11,
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6Unit01Lesson01ReuseGcfLcmTests.cs"
+  ]
 }
