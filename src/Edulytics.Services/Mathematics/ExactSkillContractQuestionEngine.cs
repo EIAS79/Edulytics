@@ -678,6 +678,12 @@ public sealed class ExactSkillContractQuestionEngine
                         StringComparison.Ordinal) ||
                     string.Equals(scopeKey,
                         "PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128",
                         StringComparison.Ordinal))
                 {
                     problem = LocalizeUaeGrade6RatioLab(problem);

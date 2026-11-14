@@ -8785,6 +8785,19 @@ public static class LessonPracticeContractRegistry
             ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
             "UAE_G6_AR_LOCAL_STUDENT_BOOK_U01_L10_67_70",
             "READY_VERIFIED", Version);
+        // G6 Arabic Common, original source Student Book Unit 1 last indexed
+        // lesson: word problems with equivalent ratios/rates; open models
+        // and multi-part assessment remain teacher-assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128", "ratio.unit_rate",
+            "SOLVE_RATIO_RATE_WORD_PROBLEMS_AND_CHECK_EQUIVALENCE",
+            [
+                "ratio.unit_rate.direct",
+                "ratio.unit_rate.equivalent_ratio",
+                "ratio.unit_rate.divide_total"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U01_L11_PRINTED_71_78",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
