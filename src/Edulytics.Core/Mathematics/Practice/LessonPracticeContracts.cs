@@ -8854,6 +8854,13 @@ public static class LessonPracticeContractRegistry
             ],
             "UAE_G6_AR_LOCAL_STUDENT_U02_L04_PRINTED_109_116",
             "READY_VERIFIED",Version);
+        // Grade 6 Arabic local source U02:L05, exact extreme percentage conversion.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:05:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:05:STUDENT-AR-128", "decimals.place_value",
+            "PERCENT_EXTREMES_DECIMAL_AND_PERCENT",
+            ["uae.g6.u02.l05.percent_extreme_to_decimal","uae.g6.u02.l05.decimal_extreme_to_percent"],
+            "UAE_G6_U02_L05_SOURCE_AR_PRINTED117_124",
+            "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

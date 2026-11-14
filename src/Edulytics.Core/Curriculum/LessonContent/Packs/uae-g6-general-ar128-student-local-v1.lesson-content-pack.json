@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-AR-LOCAL-128",
-  "ContentVersion": "uae-g6-ar128-source-first-u02-l04-abc-20261114",
+  "ContentVersion": "uae-g6-ar128-source-first-u02-l05-abc-20261114",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -504,6 +504,38 @@
           "StepByStepSolutions": "٥٦% تعني ٥٦/١٠٠. ٥٦÷١٠٠=٠٫٥٦. احذف علامة % بعد القسمة. ٨% = ٨/١٠٠. ثمانية أجزاء من مئة تكتب ٠٫٠٨. لا تكتب ٠٫٨؛ فهذا يساوي ٨٠%. ٠٫٣٨×١٠٠=٣٨. ضع علامة % بجانب الناتج. إذن ٠٫٣٨=٣٨%.",
           "CommonMistakes": "اعتبار ٨% مساوية ٠٫٨. اكتب ٨/١٠٠=٠٫٠٨. حذف علامة % فقط مع إبقاء العدد ٣٨ دون تغيير. اقسم على ١٠٠ قبل حذف العلامة. قسمة العدد العشري على ١٠٠ عند التحويل إلى نسبة مئوية. من عشري إلى مئوي نضرب في ١٠٠، والعكس نقسم.",
           "QuickSummary": "أقسم على ١٠٠ لتحويل النسبة المئوية إلى عدد عشري. أضرب في ١٠٠ لتحويل العدد العشري إلى نسبة مئوية. أنتبه للأصفار والمنزلتين العشريتين، خاصة النسب الأقل من ١٠%. أتحقق بكسر مقامه ١٠٠ أو بالعملية العكسية. أحافظ على المعنى والوحدات عند قراءة الجداول والسياقات."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:02:05:STUDENT-AR-128",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Local Grade6 Arabic Student Book PDF158–165 / printed117–124; percentages above 100 or below 1.",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "G6 General Arabic U2 native lesson4, PDF158–165",
+      "SourceTitle": "UAE Grade 6 Arabic Mathematics Student Edition",
+      "SourcePublisher": "UAE Ministry of Education (authority, not learner-facing)",
+      "SourceEdition": "Owner-selected Arabic student book; edition year is not lesson gate",
+      "SourceRights": "Original Edulytics text and visuals; book used only for curricular skills and order.",
+      "SourceSha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+      "SourceVerifiedAtUtc": "2026-11-14T13:34:00Z",
+      "RetrievalUrl": "https://minhaji.moe.gov.ae/",
+      "RetrievalChannel": "Authorized local PDF visual inspection",
+      "RetrievalTimestamp": "2026-11-14T13:34:00Z",
+      "AdaptationStatus": "Arabic A–C source verified, exact existing decimal engine extended for extreme percentages, runtime C# checks remain Stage D.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "النسب المئوية الأكبر من 100% والنسب المئوية الأصغر من 1%",
+          "Explanation": "النسبة المئوية أكبر من ١٠٠% عندما يكون المقدار أكبر من الكل المرجعي، مثل ٢٥٠% = ٢٫٥ مرة. وإذا كانت أقل من ١% فإنها تمثّل جزءًا صغيرًا جدًا من الكل، مثل ٠٫٢% = ٠٫٠٠٢. لتحويل أي نسبة مئوية إلى عدد عشري اقسم قيمتها على ١٠٠؛ ولتحويل العدد العشري إلى نسبة مئوية اضرب في ١٠٠. لا تحذف الأصفار المؤثرة: ٠٫٠٣٦% = ٠٫٠٠٠٣٦، وليس ٠٫٠٠٣٦. عند كتابة النسبة في صورة كسر نكتبها على ١٠٠ ثم نختصر. النسبة الأكبر من ١٠٠% تحتاج أكثر من شكل كامل في الرسم: ١٣٥% = ١٠٠% + ٣٥%.",
+          "KeyConceptsAndRules": "٢٥٠/١٠٠ = ٢٫٥. ٠٫٢/١٠٠ = ٠٫٠٠٢. ٠٫٠٣٦ ÷ ١٠٠ = ٠٫٠٠٠٣٦. ٠٫٠٠٧٥ × ١٠٠ = ٠٫٧٥.",
+          "WorkedExamples": "اكتب ١٧٠% في صورة عدد عشري وعدد كسري. ١٫٧، و١ ٧/١٠ حوّل ٠٫٢% إلى عدد عشري وكسر. ٠٫٠٠٢، و١/٥٠٠ حوّل ٠٫٠٣٦% إلى عدد عشري وكسر. ٠٫٠٠٠٣٦، و٩/٢٥٠٠٠ اكتب ٠٫٠٠٧٥ في صورة نسبة مئوية. ٠٫٧٥% اكتب ٢٧٥% و٠٫٠٥% كعددين عشريين، ثم حوّل ٠٫٠٠١٦ إلى نسبة مئوية. ٢٫٧٥، ٠٫٠٠٠٥، ٠٫١٦%",
+          "StepByStepSolutions": "١٧٠/١٠٠ = ١٫٧. الجزء الصحيح ١ والباقي ٧/١٠. العدد الكسري ١ ٧/١٠. ٠٫٢ ÷ ١٠٠ = ٠٫٠٠٢. ٠٫٠٠٢ = ٢/١٠٠٠. بأبسط صورة ١/٥٠٠. ٠٫٠٣٦% = ٠٫٠٠٠٣٦. ٠٫٠٠٠٣٦ = ٣٦/١٠٠٠٠٠. القسمة على ٤ تعطينا ٩/٢٥٠٠٠. ٠٫٠٠٧٥×١٠٠=٠٫٧٥. أضف علامة % دون تغيير القيمة. النتيجة ٠٫٧٥%. ٢٧٥÷١٠٠=٢٫٧٥. ٠٫٠٥÷١٠٠=٠٫٠٠٠٥. ٠٫٠٠١٦×١٠٠=٠٫١٦%.",
+          "CommonMistakes": "كتابة ٠٫٢% على أنها ٠٫٢. أوجد ٠٫٢÷١٠٠=٠٫٠٠٢. حذف صفر مؤثر من نسبة دون الواحد. اكتب كسرًا مقامه ١٠٠ ثم انتقل للصيغة العشرية. اعتبار ١٧٠% أقل من الكل. ارسم شكلًا كاملًا وزيادة ٧٠% من شكل ثانٍ.",
+          "QuickSummary": "أكبر من ١٠٠% أكبر من كامل المرجع. أقل من ١% يحتاج أحيانًا أربعة أو خمسة منازل عشرية. من المئوي إلى العشري أقسم على ١٠٠، والعكس أضرب في ١٠٠. أراجع الكسر المختصر والأصفار الدالة على القيمة."
         }
       ]
     }
