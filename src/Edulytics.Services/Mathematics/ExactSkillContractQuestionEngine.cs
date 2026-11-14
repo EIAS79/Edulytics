@@ -623,6 +623,18 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 6 Arabic student-book ratio lab: keep the proven
+                // ratio solver/verifier; replace only the learner prompt/steps.
+                if (string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                        StringComparison.Ordinal))
+                {
+                    problem = LocalizeUaeGrade6RatioLab(problem);
+                }
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5360,6 +5372,29 @@ public sealed class ExactSkillContractQuestionEngine
             AssessmentItemType.Numeric,
             ("total", total),
             ("quantity", quantity));
+    }
+
+    // Reuse existing exact ratio mathematics without a new engine or
+    // changing any other curriculum's generated questions.
+    private static ExactProblem LocalizeUaeGrade6RatioLab(ExactProblem problem)
+    {
+        var p = problem.Parameters;
+        return problem.Family switch
+        {
+            "ratio.unit_rate.equivalent_ratio" =>
+                problem with
+                {
+                    Prompt = $"في جدول نسب، يقابل {p["baseFirst"]} من العناصر الأولى {p["baseSecond"]} من العناصر الثانية. إذا أصبح عدد العناصر الثانية {p["targetSecond"]}، فما العدد المناظر من العناصر الأولى؟",
+                    Solution = "للحفاظ على النسبة نفسها نضرب الكميتين في العامل نفسه، ونتحقق بالضرب التبادلي."
+                },
+            "ratio.unit_rate.divide_total" =>
+                problem with
+                {
+                    Prompt = $"لدينا {p["total"]} عنصرًا. نسبة المجموعة الأولى إلى الثانية هي {p["firstPart"]}:{p["secondPart"]}. أوجد عدد عناصر الجزء الممثل بالعدد {p["askedPart"]} في النسبة.",
+                    Solution = "اجمع جزأي النسبة، اقسم المجموع على عدد الأجزاء، ثم اضرب في عدد الأجزاء المطلوبة وتحقق من المجموع."
+                },
+            _ => problem
+        };
     }
 
     private static ExactProblem BuildEquivalentRatio(Random random, int scale)

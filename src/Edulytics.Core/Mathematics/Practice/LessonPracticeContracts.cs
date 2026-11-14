@@ -8685,6 +8685,17 @@ public static class LessonPracticeContractRegistry
                 SkillIds = ["number.factors_and_multiples", "number.lcm"]
             };
 
+        // Arabic Grade 6 Common selected Student Book Unit 1 Exploration Lab 1.
+        // Numeric ratio-table and total-share subskills only; drawings are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "EQUIVALENT_RATIO_TABLE_AND_TOTAL_SHARE",
+                ["ratio.unit_rate.equivalent_ratio", "ratio.unit_rate.divide_total"],
+                "UAE_G6_STUDENT_FIRST_U01_L02_PRINTED_P15_18_ORIGINAL_ARABIC",
+                "READY_VERIFIED",
+                Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

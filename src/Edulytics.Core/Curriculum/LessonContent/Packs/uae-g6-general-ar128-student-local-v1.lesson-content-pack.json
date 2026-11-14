@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-AR-LOCAL-128",
-  "ContentVersion": "uae-g6-ar128-source-first-unit1-l01-candidate-20261114",
+  "ContentVersion": "uae-g6-ar128-source-first-unit1-l01-l02-abc-candidate-20261114",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -56,6 +56,38 @@
           "StepByStepSolutions": "١. اقرأ السياق وحدد الأعداد ووحداتها. ٢. اسأل: هل أوزّع إلى أكبر مجموعات متساوية (GCF) أم أبحث عن أول تكرار مشترك (LCM)؟ ٣. اختر قائمة العوامل/المضاعفات أو شجرة العوامل الأولية وارسمها برموز وألوان أصلية. ٤. احسب النتيجة واحفظ وحدة المسألة. ٥. تحقق: العدد الذي اخترته في GCF يقسم جميع الأعداد ولا يوجد عامل مشترك أكبر؛ والعدد المختار في LCM مضاعف موجب لكل عدد ولا يوجد أصغر منه. ٦. طبّق النتيجة في القصة وافحص معناها.",
           "CommonMistakes": "الخلط بين العامل والمضاعف، واختيار أصغر عامل عند طلب العامل الأكبر، أو اختيار المضاعف صفرًا، أو ضرب العددين دائمًا لإيجاد LCM رغم وجود عوامل مشتركة، أو جمع العوامل الأولية بدل ضربها، أو نسيان التحقق من القسمة دون باق. عند إيجاد LCM في جدول مواعيد لا تكتب عدد الحزم بل المدة بوحدة الأيام؛ وعند توزيع مجموعات لا تكتب المدة بدل عدد الحزم.",
           "QuickSummary": "خلاصة: GCF لأكبر تقسيم متساوٍ وLCM لأقرب تزامن. تقويم ختامي أصلي (Cool-down): ١) أوجد GCF(16,24) وفسّر لماذا النتيجة 8. ٢) أوجد LCM(4,10) باستخدام مضاعفات مرسومة على خط الأعداد؛ الناتج 20. ٣) هل LCM(3,6)=18؟ صحّح: الأصغر المشترك 6. تفسير الحل والرسم الحر يراجعان بمعيار المعلم؛ الإجابات العددية يمكن التحقق منها آليًا عند تفعيل عقد الدرس الصحيح."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Local Arabic Grade 6 student edition, PDF pp 56-59 / printed 15-18; مختبر الاستكشاف: النسب",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade6 General Arabic / Unit1 / Exploration Lab1 / Student Book 01-1.pdf PDF56–59 printed15–18",
+      "SourceTitle": "UAE Grade 6 Arabic Mathematics Student Edition",
+      "SourcePublisher": "UAE Ministry of Education (source authority; not displayed in learner pages)",
+      "SourceEdition": "Owner-selected local Arabic Student Book (edition year not independently confirmed)",
+      "SourceRights": "Book referenced for scope/order/skills only; all learner text and visual models original Edulytics content, no protected images/text copied.",
+      "SourceSha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+      "SourceVerifiedAtUtc": "2026-11-14T10:30:00Z",
+      "RetrievalUrl": "https://minhaji.moe.gov.ae/",
+      "RetrievalChannel": "Authorized local Our-CS student PDF visual read",
+      "RetrievalTimestamp": "2026-11-14T10:30:00Z",
+      "AdaptationStatus": "A–B–C authoring candidate: original Arabic RichV2; numerical ratios reuse exact kernel; teacher reviews diagrams and reasoning.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "مختبر الاستكشاف: النسب",
+          "Explanation": "في هذا المختبر نتعامل مع مجموعات من لونين أو نوعين، ونستعمل جدول الضرب والجداول الثنائية لتمثيل النسبة بين الكميتين. النسبة ٣:٤ تعني ٣ عناصر من النوع الأول مقابل ٤ من النوع الثاني في كل مجموعة متطابقة. عندما تتغير الكميات وتبقى العلاقة نفسها نضرب طرفي النسبة في العدد نفسه. ويمكننا إيجاد حجم المجموعة إذا علمنا مجموع العناصر: عدد الأجزاء = مجموع عددي النسبة، ثم نحسب قيمة الجزء الواحد ونضرب بعدد الأجزاء المطلوبة. النماذج اليدوية بالقطع الملونة والجداول وسائل لشرح الحل، ويفسّر الطالب طريقة تكوين المجموعات للمعلم. المسائل العددية المحددة فقط تُصحَّح آليًا؛ بناء نموذج فعلي أو تعليل مفتوح يحتاج مراجعة المعلم.",
+          "KeyConceptsAndRules": "النسبة بين مجموعتين: ٣:٤ تعني ٣ عناصر أولى لكل ٤ عناصر ثانية، وليس المجموع ٣ أو ٤. الجدول النسبي: اضرب كلا العددين في العامل نفسه، مثل ٣:٤، ٦:٨، ٩:١٢. تقسيم المجموع بالنسبة: قيمة الجزء الواحد = المجموع ÷ مجموع جزأي النسبة عندما تقبل القسمة. المجموعات المتساوية: عدد كل نوع يساوي عدد المجموعات مضروبًا في جزء النسبة الخاص به.",
+          "WorkedExamples": "لدينا ٣ كتب رواية و٦ كتب غير روائية؛ كيف نكوّن ٣ مجموعات متطابقة؟ ١ كتاب رواية و٢ غير روائية في كل مجموعة إذا كانت كل مجموعة تحتوي ٣ دفاتر و٤ أقلام، فكم قلمًا نحتاج مع ٩ دفاتر؟ ١٢ قلمًا هناك ٢٧ قطعة، ونريد أن تكون نسبة الحمراء إلى الزرقاء ٤:٥. كم قطعة من كل لون؟ ١٢ حمراء و١٥ زرقاء في كل مجموعة ٣ دفاتر و٥ أقلام. إذا توفرت ١٢ دفترًا، كم قلمًا نحتاج؟ ٢٠ قلمًا",
+          "StepByStepSolutions": "النسبة الأصلية هي ٣:٤. للوصول من ٣ دفاتر إلى ٩، نضرب في ٣. اضرب ٤ أقلام في ٣ للحصول على ١٢ قلمًا.",
+          "CommonMistakes": "ضرب طرف واحد من النسبة وترك الطرف الآخر. اضرب الطرفين في المعامل نفسه. الخلط بين مجموع عناصر المجموعة وجزأي النسبة. للمجموع، اجمع ٣+٤؛ ولنوع واحد خذ الجزء المقابل. تبديل ترتيب العددين في النسبة. ثبت أسماء الصفين في جدول النسب.",
+          "QuickSummary": "أكوّن مجموعات متساوية من عنصرين وأكتب النسبة بالترتيب الصحيح. أملأ جدول النسب باستخدام الضرب في العامل نفسه. أقسم الإجمالي على مجموع جزأي النسبة قبل حساب نصيب كل نوع. أتحقق من المجموع والتناسب وأشرح النموذج بصريًا للمعلم."
         }
       ]
     }
