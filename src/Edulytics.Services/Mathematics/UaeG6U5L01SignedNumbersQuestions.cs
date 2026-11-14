@@ -11,14 +11,25 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string Opposite="uae.g6.u05.l01.opposite_integer";
     internal const string GraphSetExtremum="uae.g6.u05.l02.signed_plot_set_extremum";
     internal const string AbsoluteDistance="uae.g6.u05.l03.absolute_distance";
+    internal const string AbsoluteExpression="uae.g6.u05.l04.absolute_expression";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family==AbsoluteExpression)
+        {
+            int a=random.Next(-25,26),b=random.Next(-25,26),operation=random.Next(2);
+            var p=new Dictionary<string,int>{{"a",a},{"b",b},{"operation",operation}};
+            string op=operation==0?"+":"−";
+            return new Item(family,
+                $"أوجد قيمة التعبير |{a}| {op} |{b}|. اكتب الناتج عددًا صحيحًا.",
+                "أوجد المسافة من الصفر لكل عدد أولًا، ثم اجمع أو اطرح المقدارين حسب رمز التعبير.",
+                AssessmentItemType.ShortAnswer,p);
+        }
         if(family==AbsoluteDistance)
         {
             int n=random.Next(-40,41);
@@ -62,6 +73,15 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     {
 
         answer=0;
+        if(family==AbsoluteExpression)
+        {
+            if(p is null||p.Count!=3||!p.TryGetValue("a",out int a)||
+               !p.TryGetValue("b",out int b)||!p.TryGetValue("operation",out int op)||
+               op is not (0 or 1)||a is <-25 or >25||b is <-25 or >25)
+                return false;
+            answer=op==0?Math.Abs(a)+Math.Abs(b):Math.Abs(a)-Math.Abs(b);
+            return true;
+        }
         if(family==AbsoluteDistance)
         {
             if(p is null||p.Count!=1||!p.TryGetValue("n",out int n)||

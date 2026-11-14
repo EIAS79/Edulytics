@@ -9067,6 +9067,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l01.signed_position"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L03_PRINTED349_350",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L04: absolute distance, opposites and sum/difference expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:04:STUDENT-AR-128","number.integers.absolute_distance",
+            "ABSOLUTE_DISTANCE_OPPOSITES_SUM_AND_DIFFERENCE",
+            ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l04.absolute_expression"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L04_PRINTED351_358",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
