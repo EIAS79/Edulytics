@@ -8905,6 +8905,11 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128","decimal.arithmetic","ESTIMATE_DECIMAL_PRODUCTS_BY_SPECIFIED_PLACE",
             ["uae.g5.u05.l05.multiply_decimal_factors"],
             "G6_GENERAL_U03L02_PRINTED181_188","READY_VERIFIED",Version);
+        // Source-selected G6 Arabic U03L03, existing exact Grade5 decimal×whole family.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128","decimal.arithmetic","DECIMAL_TIMES_WHOLE_TO_TEN_THOUSANDTHS",
+            ["uae.g5.u05.l03.decimal_times_whole"],
+            "G6_STUDENT_U03L03_PRINTED189_196","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

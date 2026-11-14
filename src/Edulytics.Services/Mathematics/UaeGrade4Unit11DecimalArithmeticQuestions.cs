@@ -315,6 +315,16 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if (f=="uae.g5.u05.l03.decimal_times_whole" &&
+       p.TryGetValue("g6DecimalFactorTenThousandths",out var n))
+   {
+       if (!p.TryGetValue("g6WholeFactor",out var whole) ||
+           n is <1 or >2000000 || whole is <1 or >100)
+           return false;
+       result=(decimal)n*whole/10000m;
+       return true;
+   }
+
    if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
        p.TryGetValue("g6EstimateProduct",out var estimateMode) && estimateMode==1)
    {
@@ -366,11 +376,23 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString(p.TryGetValue("g6Thousandths",out var enabled) && enabled==1 ?
+    return ans.ToString(p.ContainsKey("g6DecimalFactorTenThousandths")?"0.####":
+       p.TryGetValue("g6Thousandths",out var enabled) && enabled==1 ?
        "0.###" : IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if (p.ContainsKey("g6DecimalFactorTenThousandths"))
+   {
+       if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
+       string western=new(answer.Trim().Select(c=>c switch {
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           '٫'=>'.',_=>c
+       }).ToArray());
+       return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
+           CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+   }
    if (p.TryGetValue("g6EstimateProduct",out var g6) && g6==1)
    {
        if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;

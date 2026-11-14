@@ -744,6 +744,11 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
                     problem=LocalizeG6DecimalProductEstimate(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l03.decimal_times_whole",StringComparison.Ordinal))
+                    problem=LocalizeG6WholeDecimalProduct(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5626,6 +5631,25 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
             Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6WholeDecimalProduct(ExactProblem problem)
+    {
+        var samples=new (int DecimalTenThousandths,int Whole)[] {
+            (49000,6),(8300,4),(142000,3),(9500,4),
+            (180,2),(120,4),(36,19),(650,18),(710,8)
+        };
+        var p=problem.Parameters;
+        var choice=samples[(p["aThousandths"]+p["whole"])%samples.Length];
+        var values=p.ToDictionary(z=>z.Key,z=>z.Value);
+        values["g6DecimalFactorTenThousandths"]=choice.DecimalTenThousandths;
+        values["g6WholeFactor"]=choice.Whole;
+        var x=(choice.DecimalTenThousandths/10000m).ToString("0.####",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=values,
+            Prompt=$"أوجد {x} × {choice.Whole}. اكتب حاصل الضرب العشري الدقيق.",
+            Solution="اضرب العامل في العدد الكلي، ثم ضع الفاصلة حسب عدد منازل العامل العشري."
         };
     }
 
