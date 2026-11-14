@@ -754,6 +754,11 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
                     problem=LocalizeG6DecimalTimesDecimal(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l06.decimal_times_power_ten",StringComparison.Ordinal))
+                    problem=LocalizeG6PowersOfTenLab(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5636,6 +5641,47 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
             Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6PowersOfTenLab(ExactProblem problem)
+    {
+        var cases=new (int NumberMillionths,int Power)[] {
+            (28600000,6),
+            (28600000,-1),
+            (12400000,-1),
+            (12400000,-2),
+            (12400000,-3),
+            (12400000,-4),
+            (1240000,0),
+            (1240000,1),
+            (1240000,2),
+            (1240000,3),
+            (1240000,4),
+            (1240000,5),
+            (1240000,6),
+            (1240000,7),
+            (4950000,1),
+            (13600000,3),
+            (1250000,4),
+            (2350000,-2),
+            (365000,2),
+            (8700000,3),
+            (4500000,-3),
+            (250000,6)
+        };
+        var p=problem.Parameters;
+        var item=cases[(p["thousandths"]*3+p["pow"])%cases.Length];
+        var args=p.ToDictionary(x=>x.Key,x=>x.Value);
+        args["g6PowerBaseMillionths"]=item.NumberMillionths;
+        args["g6PowerExponent"]=item.Power;
+        var x=(item.NumberMillionths/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var pLabel=item.Power<0?$"10^({item.Power})":$"10^{item.Power}";
+        return problem with
+        {
+            Parameters=args,
+            Prompt=$"احسب ناتج {x} × {pLabel} بدقة باستخدام نمط المنازل العشرية.",
+            Solution="عند الضرب في قوى عشرة موجبة تتحرك الفاصلة يمينًا، وفي قوى عشرة سالبة تتحرك يسارًا؛ أضف الأصفار المطلوبة."
         };
     }
 

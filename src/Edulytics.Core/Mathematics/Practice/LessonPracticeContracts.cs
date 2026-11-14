@@ -8918,6 +8918,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l05.multiply_decimal_factors"],
             "G6_GENERAL_STUDENT_U03L04_PRINTED197_204",
             "READY_VERIFIED",Version);
+        // G6 student source U03:L05: original discovery of powers-of-ten.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128","decimal.arithmetic",
+            "SIGNED_POWERS_OF_TEN_PLACE_VALUE_DISCOVERY",
+            ["uae.g5.u05.l06.decimal_times_power_ten"],
+            "G6_GENERAL_STUDENT_U03L05_PRINTED205_206",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
