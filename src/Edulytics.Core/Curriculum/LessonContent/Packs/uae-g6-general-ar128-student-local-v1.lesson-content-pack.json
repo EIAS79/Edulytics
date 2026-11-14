@@ -1,0 +1,63 @@
+{
+  "PackCode": "UAE-MOE-MATH",
+  "VersionCode": "MOE-2026-2027-AR-LOCAL-128",
+  "ContentVersion": "uae-g6-ar128-source-first-unit1-l01-candidate-20261114",
+  "AcademicLanguage": "ar",
+  "CurriculumTranslationRequired": false,
+  "TargetCurriculumPeriod": "2026-2027",
+  "SourceCurriculumPeriod": "Owner-selected local Arabic Student Book; publication year not independently determined",
+  "SourceVersionLabel": "Grade 6 Arabic General student edition, locally selected (edition year not a lesson-matching gate)",
+  "SourceAuthority": "UAE Ministry of Education",
+  "SourceUrl": "https://minhaji.moe.gov.ae/",
+  "SourceCheckedAtUtc": "2026-11-14T10:30:00Z",
+  "SourceResolution": "OwnerSelectedStudentBookCrosscheck",
+  "FallbackReason": "Owner supplied the selected Grade 6 Arabic student edition locally and authorized year-independent use when content matches learning skill and objective. No claim of an independently verified 2026-2027 textbook edition.",
+  "ReviewMethod": "Visually inspected the Grade6 Arabic source-book TOC pp.11-22 and lesson one PDF pp.48-55; authored original Arabic explanation and practice; pending runtime verification.",
+  "SourcePolicyVersion": 2,
+  "PedagogicalSourceType": "OpenEducationalResource",
+  "PedagogicalSourceTitle": "UK Department for Education primary Mathematics guidance",
+  "PedagogicalSourcePublisher": "UK Department for Education",
+  "PedagogicalSourceEdition": "Primary Mathematics guidance / current GOV.UK publication",
+  "PedagogicalSourceUrl": "https://www.gov.uk/government/publications/teaching-mathematics-in-primary-schools",
+  "PedagogicalSourceCheckedAtUtc": "2026-09-01T00:00:00Z",
+  "PedagogicalSourceSelectionReason": "Open government Mathematics material is used as pedagogical scaffolding so Edulytics can publish independently authored explanations without copying restricted official curriculum prose.",
+  "PedagogicalSourceSelectionEvidence": "Edulytics uses UK DfE OGL teaching guidance only as secondary pedagogical scaffolding; lesson order and objectives are from the locally selected Arabic student book, SHA256 6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e; protected student-book prose/images are not reproduced.",
+  "PedagogicalSourceRightsNote": "Contains public sector information licensed under the Open Government Licence v3.0. Official curriculum wording is not reproduced.",
+  "Status": "Draft",
+  "ReviewedBy": "",
+  "ReviewEvidence": "",
+  "Lessons": [
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Local Arabic student book Grade_06/01_Student_Books/01-1.pdf; PDF pp 48-55, printed pp 7-14; Title العوامل والمضاعفات",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "UAE Grade6 General Arabic / Student book / Unit1 / Lesson1 / printed 7–14 / PDF 48–55",
+      "SourceTitle": "UAE Grade 6 Arabic Mathematics Student Edition",
+      "SourcePublisher": "UAE Ministry of Education (source authority; publisher name not displayed to learners)",
+      "SourceEdition": "Owner-selected local Arabic Student Book (edition year not independently confirmed)",
+      "SourceRights": "Textbook referenced only for title, scope, order, skill and objectives. Explanations, examples, model data and questions are Edulytics-authored; no protected source images or text copied.",
+      "SourceSha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+      "SourceVerifiedAtUtc": "2026-11-14T10:30:00Z",
+      "RetrievalUrl": "https://minhaji.moe.gov.ae/",
+      "RetrievalChannel": "Local file reviewed visually on authorized Our-CS device",
+      "RetrievalTimestamp": "2026-11-14T10:30:00Z",
+      "AdaptationStatus": "Arabic authored U01:L01, 128-item TOC verified, first-lesson runtime/visual acceptance still pending; next lessons not authored.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "العوامل والمضاعفات",
+          "Explanation": "نتعلّم كيف نقسّم مجموعات من الأشياء إلى مجموعات متساوية، وكيف نعرف أوقات تكرار حدثين معًا. العامل عدد يقسم عددًا آخر دون باق، والمضاعف ناتج ضرب عدد في عدد كلي. العامل المشترك الأكبر (GCF) هو أكبر عامل موجب مشترك، والمضاعف المشترك الأصغر (LCM) أصغر مضاعف موجب مشترك. قبل الحل نحدد هل المطلوب تكوين مجموعات متساوية بأكبر حجم أم البحث عن أول تزامن في التكرار.",
+          "KeyConceptsAndRules": "لإيجاد GCF: اكتب عوامل كل عدد وحدد المشتركة وخذ أكبرها، أو حلّل الأعداد إلى عوامل أولية وخذ العوامل المشتركة بأقل أسس. لإيجاد LCM: اكتب المضاعفات الموجبة أو حلّل الأعداد إلى عوامل أولية وخذ كل عامل أولي بأكبر أس. مثال 18=2×3² و24=2³×3؛ إذن GCF=2×3=6 وLCM=2³×3²=72. للعددين الموجبين: GCF لا يزيد عن الأصغر وLCM لا يقل عن الأكبر؛ وقيمة LCM موجبة ولا تختار الصفر.",
+          "WorkedExamples": "مثال أصلي (المجموعات): لدى النادي 18 كرة و30 قمعًا، ويريد أكبر عدد من حزم متطابقة دون بقايا. GCF(18,30)=6، فتحتوي الحزمة على 3 كرات و5 أقماع. مثال أصلي (التزامن): يعاد فحص جهاز كل 6 أيام وآخر كل 8 أيام؛ أول فحص مشترك بعد LCM(6,8)=24 يومًا. مثال تمثيل بصري: اكتب مضاعفات 4: 4،8،12،16،20،24، ومضاعفات 6: 6،12،18،24؛ علّم 12 و24 على خط أعداد بلونين، فأول نقطة مشتركة 12. مثال التحليل: GCF(24,36,60)=12 لأن 12 يقسمها كلها، ولا عامل مشترك أكبر منه.",
+          "StepByStepSolutions": "١. اقرأ السياق وحدد الأعداد ووحداتها. ٢. اسأل: هل أوزّع إلى أكبر مجموعات متساوية (GCF) أم أبحث عن أول تكرار مشترك (LCM)؟ ٣. اختر قائمة العوامل/المضاعفات أو شجرة العوامل الأولية وارسمها برموز وألوان أصلية. ٤. احسب النتيجة واحفظ وحدة المسألة. ٥. تحقق: العدد الذي اخترته في GCF يقسم جميع الأعداد ولا يوجد عامل مشترك أكبر؛ والعدد المختار في LCM مضاعف موجب لكل عدد ولا يوجد أصغر منه. ٦. طبّق النتيجة في القصة وافحص معناها.",
+          "CommonMistakes": "الخلط بين العامل والمضاعف، واختيار أصغر عامل عند طلب العامل الأكبر، أو اختيار المضاعف صفرًا، أو ضرب العددين دائمًا لإيجاد LCM رغم وجود عوامل مشتركة، أو جمع العوامل الأولية بدل ضربها، أو نسيان التحقق من القسمة دون باق. عند إيجاد LCM في جدول مواعيد لا تكتب عدد الحزم بل المدة بوحدة الأيام؛ وعند توزيع مجموعات لا تكتب المدة بدل عدد الحزم.",
+          "QuickSummary": "خلاصة: GCF لأكبر تقسيم متساوٍ وLCM لأقرب تزامن. تقويم ختامي أصلي (Cool-down): ١) أوجد GCF(16,24) وفسّر لماذا النتيجة 8. ٢) أوجد LCM(4,10) باستخدام مضاعفات مرسومة على خط الأعداد؛ الناتج 20. ٣) هل LCM(3,6)=18؟ صحّح: الأصغر المشترك 6. تفسير الحل والرسم الحر يراجعان بمعيار المعلم؛ الإجابات العددية يمكن التحقق منها آليًا عند تفعيل عقد الدرس الصحيح."
+        }
+      ]
+    }
+  ]
+}
