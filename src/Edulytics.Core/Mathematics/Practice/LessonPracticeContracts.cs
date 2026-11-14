@@ -9141,6 +9141,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l01.classify_outer_operation","uae.g6.u06.l01.count_repeated_groups","uae.g6.u06.l01.identify_sum_factor"],
             "G6_ARABIC_2025_2026_BOOK2_U06L01_PRINTED423_426",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L02 powers: integer, decimal, fraction bases, ten powers and squares.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:02:STUDENT-AR-128","number.exponents.positive_integer",
+            "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION_TEN_SQUARE",
+            ["uae.g6.u06.l02.repeated_to_power","uae.g6.u06.l02.integer_power","uae.g6.u06.l02.decimal_power","uae.g6.u06.l02.fraction_power","uae.g6.u06.l02.ten_power","uae.g6.u06.l02.power_addition","uae.g6.u06.l02.perfect_square"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L02_PRINTED427_434",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
