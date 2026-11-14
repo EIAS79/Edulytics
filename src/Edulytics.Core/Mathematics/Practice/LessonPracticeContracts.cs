@@ -9171,6 +9171,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l05.repeated","uae.g6.u06.l05.groups_plus","uae.g6.u06.l05.operation_type"],
             "G6_ARABIC_2025_2026_BOOK2_U06L05_PRINTED451_454",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic U06L06 writing one- and two-step algebra expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:06:STUDENT-AR-128","algebra.expressions.write_two_step",
+            "DEFINE_VARIABLE_WRITE_TWO_STEP_AND_GROUPED_EXPRESSIONS",
+            ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l06.multiple_minus","uae.g6.u06.l06.multiple_plus","uae.g6.u06.l06.fixed_minus_variable","uae.g6.u06.l06.grouped_ticket_cost","uae.g6.u06.l06.inches_to_centimeters","uae.g6.u06.l06.percentage_markup"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L06_PRINTED455_462",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
