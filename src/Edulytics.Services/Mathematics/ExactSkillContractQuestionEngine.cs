@@ -347,6 +347,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U6L07ModelItQuestions.Supports(family.Trim()) ||
           UaeG6U6L08PropertiesQuestions.Supports(family.Trim()) ||
           UaeG6U6L09DistributionLabQuestions.Supports(family.Trim()) ||
+          UaeG6U6L10DistributionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -1013,6 +1014,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L08PropertiesQuestions.Verify(family,parameters,answer);
         if (UaeG6U6L09DistributionLabQuestions.Supports(family))
             return UaeG6U6L09DistributionLabQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L10DistributionQuestions.Supports(family))
+            return UaeG6U6L10DistributionQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4395,6 +4398,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U6L09DistributionLabQuestions.Supports(family))
         {
             var q=UaeG6U6L09DistributionLabQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L10DistributionQuestions.Supports(family))
+        {
+            var q=UaeG6U6L10DistributionQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
@@ -9132,6 +9140,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U6L08PropertiesQuestions.Solve(problem.Family,p);
         if (UaeG6U6L09DistributionLabQuestions.Supports(problem.Family))
             return UaeG6U6L09DistributionLabQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L10DistributionQuestions.Supports(problem.Family))
+            return UaeG6U6L10DistributionQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))

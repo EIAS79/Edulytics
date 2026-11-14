@@ -9200,6 +9200,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u04.l07.distributive_sum","uae.g3.u09.l02.distributive_property","uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive","uae.g6.u06.l09.count_variable_tiles"],
             "G6_ARABIC_2025_2026_BOOK2_U06L09_PRINTED475_478",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L10 distribution: expand linear, factor common, decimals and validate forms.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:10:STUDENT-AR-128","algebra.distributive_property",
+            "EXPAND_FACTOR_GCF_MIXED_DECIMAL_DISTRIBUTION",
+            ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive","uae.g4.u04.l07.distributive_sum","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l10.factor_common","uae.g6.u06.l10.mixed_decimal_distribute","uae.g6.u06.l10.distribution_true_false"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L10_PRINTED479_486",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
