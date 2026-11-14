@@ -8723,6 +8723,16 @@ public static class LessonPracticeContractRegistry
                 ["ratio.unit_rate.direct"],
                 "UAE_G6_STUDENT_FIRST_U01_L04_PRINTED_27_30_ORIGINAL_AR",
                 "READY_VERIFIED", Version);
+        // Arabic UAE G6 General Unit 1 native Lesson 3, Source printed pp 31-38.
+        // Existing unit-rate and equivalent ratio numeric subskills; ratio comparison
+        // of two distinct contexts remains an independent teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128", "ratio.unit_rate",
+                "RATE_TO_UNIT_RATE_AND_SCALED_EQUIVALENCE",
+                ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+                "UAE_G6_STUDENT_FIRST_U01_L05_PRINTED_31_38",
+                "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
