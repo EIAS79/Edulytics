@@ -8776,6 +8776,15 @@ public static class LessonPracticeContractRegistry
                 "UAE_G6_U01_L09_SOURCE_PRINTED_59_66",
                 "READY_VERIFIED",Version)
             { SkillIds = ["ratio.unit_rate","fractions.equivalent"] };
+        // G6 Arabic Student Edition U01 exploration lab #3, printed pp. 67-70.
+        // Reuses the production exact rate kernel; diagrams and open explanations
+        // remain teacher-reviewed, not falsely auto-graded.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128", "ratio.unit_rate",
+            "UNIT_RATE_BAR_MODELS_AND_EQUIVALENT_RATIO_MULTIPLICATION",
+            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+            "UAE_G6_AR_LOCAL_STUDENT_BOOK_U01_L10_67_70",
+            "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
