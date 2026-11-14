@@ -724,6 +724,11 @@ public sealed class ExactSkillContractQuestionEngine
                         Solution="استخدم أجزاء الشريط المتساوية، واضرب الكمية في النسبة ثم اقسم على ١٠٠."
                     };
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=LocalizeG6PercentOfQuantityPrecision(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -800,6 +805,22 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            parameters.TryGetValue("scaledPercentHundredths",out var percentageHundredths))
+        {
+            if (!parameters.TryGetValue("quantity",out var sourceQuantity) ||
+                percentageHundredths is < 1 or > 30000 || sourceQuantity is < 1 or > 10000)
+                return false;
+            var western=string.Concat((answer??"").Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                '٫' => '.',
+                _ => c
+            }));
+            return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
+                CultureInfo.InvariantCulture,out var value) &&
+                value == (decimal)percentageHundredths * sourceQuantity / 10000m;
+        }
         if (UaeGrade2Unit1Lesson01Questions.Supports(family))
             return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
@@ -5495,6 +5516,26 @@ public sealed class ExactSkillContractQuestionEngine
         return problem;
     }
 
+    private static ExactProblem LocalizeG6PercentOfQuantityPrecision(ExactProblem problem)
+    {
+        var choices=new (int PercentHundredths,int Quantity)[] {
+            (14500,320),(22000,65),(25,58),(3,1500),
+            (46,80),(55,220),(27500,4),(12800,550),(2000,70),(7500,90)
+        };
+        var p=problem.Parameters;
+        var index=(p["percent"]*17+p["quantity"]/20)%choices.Length;
+        var item=choices[index];
+        var parameters=p.ToDictionary(z=>z.Key,z=>z.Value);
+        parameters["scaledPercentHundredths"]=item.PercentHundredths;
+        parameters["quantity"]=item.Quantity;
+        var percent=((decimal)item.PercentHundredths/100m).ToString("0.##",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=parameters,
+            Prompt=$"أوجد {percent}% من {item.Quantity} مع إبقاء الإجابة العشرية دقيقة دون تقريب.",
+            Solution="حوّل النسبة المئوية إلى عدد عشري بالقسمة على مئة ثم اضرب؛ راجع الخانات بعد الفاصلة."
+        };
+    }
+
     private static ExactProblem LocalizeUaeGrade6RatioLab(ExactProblem problem)
     {
         var p = problem.Parameters;
@@ -8529,6 +8570,11 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            p.TryGetValue("scaledPercentHundredths",out var scaledHundredths))
+            return ((decimal)scaledHundredths * p["quantity"] / 10000m)
+                .ToString("0.####",CultureInfo.InvariantCulture);
+
         if (UaeGrade2Unit1Lesson01Questions.Supports(problem.Family))
             return UaeGrade2Unit1Lesson01Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(problem.Family))

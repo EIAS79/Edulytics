@@ -8884,6 +8884,12 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128"]=new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128","percentages.core","BAR_MODEL_PERCENT_OF_QUANTITY",
             ["percentages.core.of_quantity"],"G6_U02L09_PRINTED145_146_AR","READY_VERIFIED",Version);
+        // Grade6 Arabic Student U02 L10. Reuse exact percent kernel with
+        // source-scoped hundredths-of-percent precision, no new engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128","percentages.core","PRECISION_PERCENT_OF_QUANTITY_ABOVE_100_AND_BELOW_1",
+            ["percentages.core.of_quantity"],
+            "G6_STUDENT_U02_L10_PRINTED147_154","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
