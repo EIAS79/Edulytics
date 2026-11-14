@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "curriculumCode": "UAE-MOE-MATH",
+  "grade": 6,
+  "pathway": "General",
+  "ordinal": 88,
+  "unit": 9,
+  "unitLessonOrdinal": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128",
+  "title": "مختبر الاستكشاف: مساحة متوازي الأضلاع",
+  "expectedPrintedPages": [
+    651,
+    654
+  ],
+  "status": "SOURCE_BLOCKED",
+  "blockedStage": "A",
+  "sourceVerified": false,
+  "contentMatched": false,
+  "closed": false,
+  "readyForStageD": false,
+  "sourceCandidates": [
+    {
+      "file": "02.pdf",
+      "pages": 336,
+      "sha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+      "observation": "PDF pages325–328 show foldable handouts (مطويات), not printed book pages651–654"
+    },
+    {
+      "file": "03.pdf",
+      "pages": 270,
+      "sha256": "239c71f761de1b12f82b6c3b26afaa6fb2e53bd99b6cacec73377800ebe93c96",
+      "observation": "Older Arabic 2019–2020 edition; initial contents sequence shows printed page650 then lesson printed655, with required lab651–654 not present at the expected position"
+    },
+    {
+      "file": "03-1.pdf",
+      "pages": 198,
+      "sha256": "de285362c8bee58e43b564f555debbc0e60529987d984f2e139fb06b007e73e4",
+      "observation": "Older integrated math volume 3; begins Unit10 printed around727 rather than Unit9 exploration"
+    }
+  ],
+  "blocker": "Complete authorized General Arabic Student Book pages printed 651–654 for the selected curriculum have not been located; cannot verify source content and close lesson88 without inventing matching evidence.",
+  "nextRequiredAction": "Locate and inspect exact original source pages printed 651–654 in an authorized Grade6 General Arabic Student Book; then compare existing lesson content, repair only gaps, write tests and close this lesson before any 89+ closure.",
+  "verifiedBookEdition2026_2027": false,
+  "sourceQuestionDenominator": "UNKNOWN",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "productionPublished": false,
+  "noLessonCountAdvance": true,
+  "skipNextLessons": false,
+  "repositoryPr": 637
+}
