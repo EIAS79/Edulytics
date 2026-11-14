@@ -19,13 +19,154 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal const string Grade5DigitPlaceValue="uae.g5.u01.l05.decimal_digit_place_value";
     internal const string Grade5PlaceFactor="uae.g5.u01.l05.place_factor_ten";
     internal const string Grade5ExpandedDecimal="uae.g5.u01.l06.expanded_decimal_to_standard";
+    internal const string G6DecimalKind="uae.g6.u05.l08.classify_fraction_decimal";
+    internal const string G6FractionExactDecimal="uae.g6.u05.l08.fraction_exact_decimal";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
     internal static bool Supports(string? family)=>family is PlaceValueDecimal or HundredthsCount or TenthsDigit
         or TenthsDecimal or TenthsCount or HundredthsDecimal or HundredthsFraction
         or DecimalToHundredths or DecimalToTenths or Grade5HundredthsPercent or Grade5TenthsPercent
         or Grade5ThousandthsDecimal or Grade5ThousandthsNumerator
-        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal || IsG5Model(family) || family==G5ReducibleDecimal;
+        or Grade5DigitPlaceValue or Grade5PlaceFactor or Grade5ExpandedDecimal || IsG5Model(family) || family==G5ReducibleDecimal || IsG6Extreme(family) || family is G6DecimalKind or G6FractionExactDecimal;
 
+
+
+    // Narrow exact conversion extension of the existing Grade 4/5 decimal engine.
+    internal const string G6PercentExtremeToDecimal="uae.g6.u02.l05.percent_extreme_to_decimal";
+    internal const string G6DecimalExtremeToPercent="uae.g6.u02.l05.decimal_extreme_to_percent";
+    private static bool IsG6Extreme(string? f)=>
+        f is G6PercentExtremeToDecimal or G6DecimalExtremeToPercent;
+
+    private static Item BuildG6Extreme(string f,Random random)
+    {
+        if(f==G6PercentExtremeToDecimal)
+        {
+            int[] samples=[36,50,110,150,200,125000,170000,250000,300000,475000,530000];
+            int n=samples[random.Next(samples.Length)];
+            return new Item(f,
+                $"حوّل {(n/1000m).ToString("0.###",CultureInfo.InvariantCulture)}% إلى عدد عشري؛ اكتب العدد فقط.",
+                "اقسم النسبة المئوية على مئة.",AssessmentItemType.Numeric,
+                new Dictionary<string,int>{{"scaledPercent",n}});
+        }
+        int[] decimalSamples=[15,16,40,75,90,160,190,340,16800,21000,25000,27500];
+        int d=decimalSamples[random.Next(decimalSamples.Length)];
+        return new Item(f,
+            $"حوّل {(d/10000m).ToString("0.####",CultureInfo.InvariantCulture)} إلى نسبة مئوية؛ اكتب العدد دون الرمز.",
+            "اضرب العدد العشري في مئة.",AssessmentItemType.Numeric,
+            new Dictionary<string,int>{{"scaledDecimal",d}});
+    }
+
+    private static bool ValidG6Extreme(string f,IReadOnlyDictionary<string,int> p,out int n)
+    {
+        n=0;
+        if(p.Count!=1)return false;
+        if(f==G6PercentExtremeToDecimal)
+            return p.TryGetValue("scaledPercent",out n)&&
+                n>0&&n<=600000&&(n<1000||n>100000);
+        if(f==G6DecimalExtremeToPercent)
+            return p.TryGetValue("scaledDecimal",out n)&&
+                n>0&&n<=100000&&(n<100||n>10000);
+        return false;
+    }
+    private static string SolveG6Extreme(string f,IReadOnlyDictionary<string,int> p)
+    {
+        if(!ValidG6Extreme(f,p,out int n))
+            throw new InvalidOperationException("Invalid G6 extreme percent");
+        return f==G6PercentExtremeToDecimal
+            ? (n/100000m).ToString("0.#####",CultureInfo.InvariantCulture)
+            : (n/100m).ToString("0.##",CultureInfo.InvariantCulture);
+    }
+    private static bool VerifyG6Extreme(string f,IReadOnlyDictionary<string,int> p,string? response)
+    {
+        if(!ValidG6Extreme(f,p,out int n)||
+           string.IsNullOrWhiteSpace(response)||response.Length>32)return false;
+        string a=new(response.Trim().Select(ch=>ch switch{
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '٫'=>'.',_=>ch
+        }).Where(ch=>ch is not ' ' and not '\u00A0').ToArray());
+        if(a.Count(ch=>ch=='.')>1||!a.All(ch=>ch is >= '0' and <= '9' or '.'))
+            return false;
+        if(!decimal.TryParse(a,NumberStyles.AllowDecimalPoint,
+            CultureInfo.InvariantCulture,out decimal supplied))return false;
+        // Exact recomputation from integer units, independent of SolveG6Extreme.
+        return f==G6PercentExtremeToDecimal ? supplied*100000m==n : supplied*100m==n;
+    }
+
+
+    // Grade6 scoped recurrence conversion: reuse the Grade4/5 exact decimal pipeline.
+    // Bounded denominator ensures at most 11 recurring digits; no floating-point equality.
+    private static bool TryG6Rational(IReadOnlyDictionary<string,int>? p,out int n,out int d)
+    {
+        n=d=0;
+        return p is not null&&p.Count==2&&p.TryGetValue("n",out n)&&
+            p.TryGetValue("d",out d)&&d is >=2 and <=12&&
+            n >= -3*d && n <= 3*d;
+    }
+    private static int GcdG6(int a,int b)
+    {
+        while(b!=0){int t=a%b;a=b;b=t;}return a;
+    }
+    private static bool IsTerminating(int n,int d)
+    {
+        int g=GcdG6(Math.Abs(n),d);d/=g;
+        while(d%2==0)d/=2;
+        while(d%5==0)d/=5;
+        return d==1;
+    }
+    private static string FormatRecurringDecimal(int numerator,int denominator)
+    {
+        int abs=Math.Abs(numerator),whole=abs/denominator,remainder=abs%denominator;
+        string sign=numerator<0?"-":"";
+        if(remainder==0)return sign+whole.ToString(CultureInfo.InvariantCulture);
+        var digits=new System.Text.StringBuilder();
+        var seen=new Dictionary<int,int>();
+        while(remainder!=0&&!seen.ContainsKey(remainder))
+        {
+            seen[remainder]=digits.Length;
+            remainder*=10;
+            digits.Append((char)('0'+remainder/denominator));
+            remainder%=denominator;
+        }
+        string fraction=digits.ToString();
+        if(remainder==0)return sign+whole.ToString(CultureInfo.InvariantCulture)+"."+fraction;
+        int at=seen[remainder];
+        return sign+whole.ToString(CultureInfo.InvariantCulture)+"."+
+            fraction[..at]+"("+fraction[at..]+")";
+    }
+    private static Item BuildG6Decimal(string family,Random random)
+    {
+        int[] choices=[2,3,4,5,6,7,8,9,10,11,12];
+        int d=choices[random.Next(choices.Length)],n=random.Next(-3*d,3*d+1);
+        if(n==0)n=1;
+        var p=new Dictionary<string,int>{{"n",n},{"d",d}};
+        bool classification=family==G6DecimalKind;
+        string prompt=classification
+            ? $"هل التمثيل العشري للكسر {n}/{d} منتهٍ أم دوري؟ اكتب منتهٍ أو دوري."
+            : $"اكتب الكسر {n}/{d} كعدد عشري دقيق. إن تكررت أرقام فاكتب الدورة بين قوسين؛ مثال ١/٣ = 0.(3).";
+        return new Item(family,prompt,
+            "بسّط الكسر، ثم اقسم البسط على المقام مع تتبع الباقي. إذا انتهى الباقي فالعدد منتهٍ؛ وإذا تكرر الباقي فاكتب الدورة بين قوسين بدل تقريبها.",
+            AssessmentItemType.ShortAnswer,p);
+    }
+    private static string SolveG6Decimal(string family,IReadOnlyDictionary<string,int> p)
+    {
+        if(!TryG6Rational(p,out int n,out int d))
+            throw new InvalidOperationException("Invalid Grade6 rational decimal operands.");
+        return family==G6DecimalKind?(IsTerminating(n,d)?"منتهٍ":"دوري"):
+            FormatRecurringDecimal(n,d);
+    }
+    private static bool VerifyG6Decimal(string family,IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!TryG6Rational(p,out int n,out int d)||string.IsNullOrWhiteSpace(answer)||
+           answer.Length>64)return false;
+        string expected=family==G6DecimalKind?(IsTerminating(n,d)?"منتهٍ":"دوري"):
+            FormatRecurringDecimal(n,d);
+        string clean=new(answer.Trim().Where(c=>!char.IsWhiteSpace(c)).Select(c=>c switch{
+            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+            '٫'=>'.','−' or '–'=>'-',_=>c
+        }).ToArray());
+        return string.Equals(clean,expected,StringComparison.Ordinal);
+    }
 
     // Grade5 U07 L08: fraction with an initially non-decimal denominator
     // can still give a terminating decimal after reducing (9/12=3/4=0.75).
@@ -132,7 +273,9 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported decimal place-value family");
+        if(family is G6DecimalKind or G6FractionExactDecimal)return BuildG6Decimal(family,random);
         if(family==G5ReducibleDecimal)return BuildG5ReducibleDecimal(random);
+        if(IsG6Extreme(family))return BuildG6Extreme(family,random);
         if(IsG5Model(family))return BuildG5Model(family,random);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return BuildGrade5Thousandths(family,random);
@@ -193,7 +336,9 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is G6DecimalKind or G6FractionExactDecimal)return SolveG6Decimal(family,p);
         if(family==G5ReducibleDecimal)return SolveG5ReducibleDecimal(p);
+        if(IsG6Extreme(family))return SolveG6Extreme(family,p);
         if(IsG5Model(family))return SolveG5Model(family,p);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return SolveGrade5Thousandths(family,p);
@@ -207,7 +352,9 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is G6DecimalKind or G6FractionExactDecimal)return VerifyG6Decimal(family,p,answer);
         if(family==G5ReducibleDecimal)return VerifyG5ReducibleDecimal(p,answer);
+        if(IsG6Extreme(family))return VerifyG6Extreme(family,p,answer);
         if(IsG5Model(family))return VerifyG5Model(family,p,answer);
         if (family is Grade5ThousandthsDecimal or Grade5ThousandthsNumerator)
             return VerifyGrade5Thousandths(family,p,answer);

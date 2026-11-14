@@ -270,6 +270,184 @@
         </div>
     }
 
+    else if (Model.Kind == RichLessonVisualKind.CartesianPlot)
+    {
+        // Reuse the RichV2 visual model; original learner-safe SVG graph, not
+        // a publisher asset. Rows encode [x,y] numeric coordinates by series name.
+        // Do not render non-finite, negative or oversized coordinates.
+        var points = new List<(string Series, double X, double Y)>();
+        foreach (var row in Model.Rows)
+        {
+            if (row.Cells.Count < 2 ||
+                !double.TryParse(row.Cells[0], System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture, out var x) ||
+                !double.TryParse(row.Cells[1], System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture, out var y) ||
+                !double.IsFinite(x) || !double.IsFinite(y) ||
+                x < 0 || y < 0 || x > 10000 || y > 10000)
+            {
+                continue;
+            }
+            points.Add((row.Label, x, y));
+        }
+        var maxX = Math.Ceiling(Math.Max(4d,
+            points.Count > 0 ? points.Max(p => p.X) : 4d));
+        var yMaxValue = Math.Max(10d,
+            points.Count > 0 ? points.Max(p => p.Y) : 10d);
+        var yTick = Math.Ceiling(yMaxValue / 5d);
+        var yTop = yTick * 5d;
+        var series = points.Select(p => p.Series)
+            .Distinct(StringComparer.Ordinal).ToArray();
+        var palette = new[] { "#1d4ed8", "#b91c1c", "#047857", "#7c3aed" };
+        <div class="rich-lesson-cartesian" dir="ltr">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 440"
+                 role="img" aria-label="@Model.Description"
+                 style="width:100%;height:auto;max-width:760px">
+                <title>@Model.Title</title>
+                <desc>@Model.Description</desc>
+                @for (var tick = 0; tick <= 5; tick++)
+                {
+                    var y = 340d - 275d * tick / 5d;
+                    var value = tick * yTick;
+                    <line x1="80" x2="650" y1="@y" y2="@y"
+                          stroke="currentColor" stroke-opacity=".16" />
+                    @Html.Raw($"<text x=\"66\" y=\"{(y + 5).ToString(System.Globalization.CultureInfo.InvariantCulture)}\" fill=\"currentColor\" text-anchor=\"end\" font-size=\"15\">")
+                    @value.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture)
+                    @Html.Raw("</text>")
+                }
+                @for (var tick = 0; tick <= (int)maxX; tick++)
+                {
+                    var x = 80d + 560d * tick / maxX;
+                    <line x1="@x" x2="@x" y1="65" y2="340"
+                          stroke="currentColor" stroke-opacity=".16" />
+                    @Html.Raw($"<text x=\"{x.ToString(System.Globalization.CultureInfo.InvariantCulture)}\" y=\"365\" fill=\"currentColor\" text-anchor=\"middle\" font-size=\"15\">")@tick@Html.Raw("</text>")
+                }
+                <line x1="80" x2="658" y1="340" y2="340"
+                      stroke="currentColor" stroke-width="2" />
+                <line x1="80" x2="80" y1="48" y2="340"
+                      stroke="currentColor" stroke-width="2" />
+                @foreach (var point in points)
+                {
+                    var px = 80d + 560d * point.X / maxX;
+                    var py = 340d - 275d * point.Y / yTop;
+                    var si = Array.IndexOf(series, point.Series);
+                    var color = palette[(si < 0 ? 0 : si) % palette.Length];
+                    <circle cx="@px" cy="@py" r="6" fill="@color"
+                            stroke="#fff" stroke-width="1.5" />
+                }
+                <text x="360" y="405" fill="currentColor"
+                      text-anchor="middle" font-size="18">@Model.PrimaryLabel</text>
+                <text transform="translate(24 203) rotate(-90)" fill="currentColor"
+                      text-anchor="middle" font-size="18">@Model.SecondaryLabel</text>
+                @for (var i = 0; i < series.Length && i < 4; i++)
+                {
+                    <circle cx="@(530 + (i % 2) * 110)" cy="@(20 + (i / 2) * 20)"
+                            r="5" fill="@palette[i]" />
+                    @Html.Raw($"<text x=\"{541 + (i % 2) * 110}\" y=\"{25 + (i / 2) * 20}\" font-size=\"13\" fill=\"currentColor\">")@series[i]@Html.Raw("</text>")
+                }
+            </svg>
+        </div>
+        <div class="rich-lesson-table-wrap">
+            <table class="rich-lesson-table">
+                <caption>@Model.Title — البيانات الرقمية</caption>
+                <thead><tr><th scope="col">المجموعة</th>
+                    <th scope="col">@Model.PrimaryLabel</th>
+                    <th scope="col">@Model.SecondaryLabel</th></tr></thead>
+                <tbody>
+                @foreach (var point in points)
+                {
+                    <tr><th scope="row">@point.Series</th>
+                        <td>@point.X.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture)</td>
+                        <td>@point.Y.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture)</td></tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.SignedCartesianPlot)
+    {
+        // Signed coordinates with four quadrants. Existing CartesianPlot remains unchanged.
+        var points=new List<(string Name,double X,double Y)>();
+        foreach (var row in Model.Rows)
+        {
+            if(row.Cells.Count<2 ||
+               !double.TryParse(row.Cells[0],System.Globalization.NumberStyles.Float,
+                   System.Globalization.CultureInfo.InvariantCulture,out var x) ||
+               !double.TryParse(row.Cells[1],System.Globalization.NumberStyles.Float,
+                   System.Globalization.CultureInfo.InvariantCulture,out var y) ||
+               !double.IsFinite(x)||!double.IsFinite(y)||
+               x< -10||x>10||y< -10||y>10) continue;
+            points.Add((row.Label,x,y));
+        }
+        var extent=Math.Max(5d,Math.Ceiling(points.Count>0?
+            points.Max(pt=>Math.Max(Math.Abs(pt.X),Math.Abs(pt.Y))):5d));
+        var scale=175d/extent;
+        <div class="rich-lesson-cartesian" dir="ltr">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 460"
+                 role="img" aria-label="@Model.Description"
+                 style="width:100%;height:auto;max-width:700px">
+                <title>@Model.Title</title><desc>@Model.Description</desc>
+                @for(var tick=-(int)extent;tick<=(int)extent;tick++)
+                {
+                    var px=330d+tick*scale;var py=225d-tick*scale;
+                    <line x1="@px" y1="50" x2="@px" y2="400" stroke="currentColor" stroke-opacity=".15"/>
+                    <line x1="155" y1="@py" x2="505" y2="@py" stroke="currentColor" stroke-opacity=".15"/>
+                    @if(tick!=0)
+                    {
+                        <text x="@px" y="243" text-anchor="middle" font-size="12" fill="currentColor">@tick</text>
+                        <text x="320" y="@(py+4)" text-anchor="end" font-size="12" fill="currentColor">@tick</text>
+                    }
+                }
+                <line x1="145" y1="225" x2="515" y2="225" stroke="currentColor" stroke-width="2.5"/>
+                <line x1="330" y1="40" x2="330" y2="410" stroke="currentColor" stroke-width="2.5"/>
+                <text x="337" y="242" font-size="13" fill="currentColor">0</text>
+                <text x="520" y="220" font-size="18" fill="currentColor">x</text>
+                <text x="337" y="35" font-size="18" fill="currentColor">y</text>
+                @foreach(var point in points)
+                {
+                    var px=330d+point.X*scale;var py=225d-point.Y*scale;
+                    <circle cx="@px" cy="@py" r="5.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+                    <text x="@(px+8)" y="@(py-8)" font-size="13" fill="currentColor">@point.Name</text>
+                }
+            </svg>
+        </div>
+        <div class="rich-lesson-table-wrap">
+            <table class="rich-lesson-table">
+                <caption>@Model.Title — إحداثيات النقاط</caption>
+                <thead><tr><th scope="col">النقطة</th><th scope="col">س (x)</th><th scope="col">ص (y)</th></tr></thead>
+                <tbody>
+                @foreach(var point in points)
+                {
+                    <tr><th scope="row">@point.Name</th>
+                        <td>@point.X.ToString("0.##",System.Globalization.CultureInfo.InvariantCulture)</td>
+                        <td>@point.Y.ToString("0.##",System.Globalization.CultureInfo.InvariantCulture)</td></tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+    else if (Model.Kind == RichLessonVisualKind.ExpressionStripBars)
+    {
+        // Edulytics-authored grouped bar model for Grade6 expression factors.
+        <div class="rich-lesson-expression-strips" dir="rtl"
+             role="img" aria-label="@Model.Description"
+             style="display:grid;gap:12px;max-width:720px">
+            @foreach(var row in Model.Rows)
+            {
+                <div style="display:grid;gap:5px">
+                    <strong>@row.Label</strong>
+                    <div style="display:flex;gap:4px;flex-wrap:wrap">
+                        @foreach(var cell in row.Cells.Take(12))
+                        {
+                            <span style="flex:1 1 70px;display:block;min-height:40px;
+                                  padding:8px;border:2px solid currentColor;
+                                  border-radius:4px;text-align:center">@cell</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

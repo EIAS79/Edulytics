@@ -336,6 +336,16 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit10Lesson07DecimalAdditionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family.Trim()) ||
+          UaeG6U4L05CustomaryUnitConversionsQuestions.Supports(family.Trim()) ||
+          UaeG6U5L01SignedNumbersQuestions.Supports(family.Trim()) ||
+          UaeG6U6L01ExpressionStructureQuestions.Supports(family.Trim()) ||
+          UaeG6U6L02PowersQuestions.Supports(family.Trim()) ||
+          UaeG6U6L03NumericalExpressionsQuestions.Supports(family.Trim()) ||
+          UaeG6U6L04VariableExpressionsQuestions.Supports(family.Trim()) ||
+          UaeG6U6L05WriteExpressionsQuestions.Supports(family.Trim()) ||
+          UaeG6U6L06WriteExpressionsQuestions.Supports(family.Trim()) ||
+          UaeG6U6L07ModelItQuestions.Supports(family.Trim()) ||
+          UaeG6U6L08PropertiesQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -623,6 +633,154 @@ public sealed class ExactSkillContractQuestionEngine
                     requestedVariant,
                     allowedQuestionFamilies.Count == 1 && questionCount >= 10,
                     preferredVariant.HasValue);
+                // Grade 6 Arabic student-book ratio lab: keep the proven
+                // ratio solver/verifier; replace only the learner prompt/steps.
+                if (string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128",
+                        StringComparison.Ordinal))
+                {
+                    problem = LocalizeUaeGrade6RatioLab(problem);
+                }
+
+                if (string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128",StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128",StringComparison.Ordinal))
+                {
+                    if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"أوجد {problem.Parameters["percent"]}% من {problem.Parameters["quantity"]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+                            Solution = "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+                        };
+                    }
+                }
+
+                if (string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128",StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128",StringComparison.Ordinal))
+                    problem = LocalizeG6U2L7Mixed(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                {
+                    problem=problem with {
+                        Prompt=$"أوجد القيمة الدقيقة لـ{problem.Parameters["percent"]}% من {problem.Parameters["quantity"]}. ثم ناقش مع المعلم تقديرها بنسبة معيارية قريبة.",
+                        Solution="اضرب الكمية بالنسبة وقسّم على ١٠٠، ثم اختر تقديرًا معقولًا للتحقق."
+                    };
+                }
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=problem with {
+                        Prompt=$"يمثل الشريط ١٠٠% من عدد {problem.Parameters["quantity"]}، فما مقدار {problem.Parameters["percent"]}% منه؟",
+                        Solution="استخدم أجزاء الشريط المتساوية، واضرب الكمية في النسبة ثم اقسم على ١٠٠."
+                    };
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=LocalizeG6PercentOfQuantityPrecision(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=LocalizeG6InversePercent(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (problem.Family is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference"))
+                    problem=LocalizeG6ThousandthOperations(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
+                    problem=LocalizeG6DecimalProductEstimate(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l03.decimal_times_whole",StringComparison.Ordinal))
+                    problem=LocalizeG6WholeDecimalProduct(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
+                    problem=LocalizeG6DecimalTimesDecimal(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l06.decimal_times_power_ten",StringComparison.Ordinal))
+                    problem=LocalizeG6PowersOfTenLab(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (string.Equals(problem.Family,"uae.g5.u05.l11.exact_decimal_by_whole",StringComparison.Ordinal) ||
+                     string.Equals(problem.Family,"uae.g5.u05.l11.round_decimal_quotient_hundredth",StringComparison.Ordinal)))
+                    problem=LocalizeG6DecimalByWhole(problem);
+
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (string.Equals(problem.Family,"uae.g5.u05.l13.exact_decimal_divide",StringComparison.Ordinal) ||
+                     string.Equals(problem.Family,"uae.g5.u05.l13.contextual_decimal_unit_rate",StringComparison.Ordinal)))
+                    problem=LocalizeG6DecimalByDecimal(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -699,6 +857,37 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            parameters.TryGetValue("wholeUnknownPercent",out var inversePercent))
+        {
+            if (!parameters.TryGetValue("knownPart",out var part) ||
+                inversePercent is < 1 or > 100 || part < 1 ||
+                (part*100L)%inversePercent!=0)
+                return false;
+            var normalized=string.Concat((answer??"").Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _ => c
+            }));
+            return long.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var n) &&
+                n>0 && n*inversePercent==part*100L;
+        }
+        if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            parameters.TryGetValue("scaledPercentHundredths",out var percentageHundredths))
+        {
+            if (!parameters.TryGetValue("quantity",out var sourceQuantity) ||
+                percentageHundredths is < 1 or > 30000 || sourceQuantity is < 1 or > 10000)
+                return false;
+            var western=string.Concat((answer??"").Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                '٫' => '.',
+                _ => c
+            }));
+            return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
+                CultureInfo.InvariantCulture,out var g6PercentComputed) &&
+                g6PercentComputed == (decimal)percentageHundredths * sourceQuantity / 10000m;
+        }
         if (UaeGrade2Unit1Lesson01Questions.Supports(family))
             return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(family))
@@ -801,6 +990,26 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit10Lesson06FractionRoundingQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family))
             return UaeGrade4Unit10DecimalPlaceValueQuestions.Verify(family, parameters, answer);
+        if (UaeG6U4L05CustomaryUnitConversionsQuestions.Supports(family))
+            return UaeG6U4L05CustomaryUnitConversionsQuestions.Verify(family, parameters, answer);
+        if (UaeG6U5L01SignedNumbersQuestions.Supports(family))
+            return UaeG6U5L01SignedNumbersQuestions.Verify(family, parameters, answer);
+        if (UaeG6U6L01ExpressionStructureQuestions.Supports(family))
+            return UaeG6U6L01ExpressionStructureQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L02PowersQuestions.Supports(family))
+            return UaeG6U6L02PowersQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L03NumericalExpressionsQuestions.Supports(family))
+            return UaeG6U6L03NumericalExpressionsQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L04VariableExpressionsQuestions.Supports(family))
+            return UaeG6U6L04VariableExpressionsQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L05WriteExpressionsQuestions.Supports(family))
+            return UaeG6U6L05WriteExpressionsQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L06WriteExpressionsQuestions.Supports(family))
+            return UaeG6U6L06WriteExpressionsQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L07ModelItQuestions.Supports(family))
+            return UaeG6U6L07ModelItQuestions.Verify(family,parameters,answer);
+        if (UaeG6U6L08PropertiesQuestions.Supports(family))
+            return UaeG6U6L08PropertiesQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4130,6 +4339,56 @@ public sealed class ExactSkillContractQuestionEngine
             var q = UaeGrade4Unit10DecimalPlaceValueQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
+        if (UaeG6U4L05CustomaryUnitConversionsQuestions.Supports(family))
+        {
+            var q = UaeG6U4L05CustomaryUnitConversionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U5L01SignedNumbersQuestions.Supports(family))
+        {
+            var q = UaeG6U5L01SignedNumbersQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L01ExpressionStructureQuestions.Supports(family))
+        {
+            var q=UaeG6U6L01ExpressionStructureQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L02PowersQuestions.Supports(family))
+        {
+            var q=UaeG6U6L02PowersQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L03NumericalExpressionsQuestions.Supports(family))
+        {
+            var q=UaeG6U6L03NumericalExpressionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L04VariableExpressionsQuestions.Supports(family))
+        {
+            var q=UaeG6U6L04VariableExpressionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L05WriteExpressionsQuestions.Supports(family))
+        {
+            var q=UaeG6U6L05WriteExpressionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L06WriteExpressionsQuestions.Supports(family))
+        {
+            var q=UaeG6U6L06WriteExpressionsQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L07ModelItQuestions.Supports(family))
+        {
+            var q=UaeG6U6L07ModelItQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U6L08PropertiesQuestions.Supports(family))
+        {
+            var q=UaeG6U6L08PropertiesQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
         {
             var q = UaeGrade4Unit9FractionMultiplicationQuestions.Build(family,random);
@@ -5360,6 +5619,375 @@ public sealed class ExactSkillContractQuestionEngine
             AssessmentItemType.Numeric,
             ("total", total),
             ("quantity", quantity));
+    }
+
+    // Reuse existing exact ratio mathematics without a new engine or
+    // changing any other curriculum's generated questions.
+    // Reuse existing exact fraction solver and only localize this source lesson.
+    private static ExactProblem LocalizeG6U2L7Mixed(ExactProblem problem)
+    {
+        var p=problem.Parameters;
+        if (problem.Family=="fractions.compare.unlike.common_denominator")
+        {
+            var hundredths=21+((p["n1"]*17+p["n2"]*13+p["d2"]*7)%69);
+            var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+            x["n2"]=hundredths; x["d2"]=100;
+            return problem with {
+                Parameters=x,
+                Prompt=$"قارن {p["n1"]}/{p["d1"]} مع {(hundredths/100.0).ToString("0.00",CultureInfo.InvariantCulture)}. اكتب < أو > أو =.",
+                Solution="حوّل العشري إلى كسر من مئة وقارن بالضرب التبادلي الدقيق."
+            };
+        }
+        if (problem.Family=="fractions.compare.unlike.order_three")
+        {
+            var hundredths=20+((p["n2"]*11+p["d2"]*3)%66);
+            var percent=30+((p["n3"]*17+p["d3"]*5)%65);
+            var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+            x["n2"]=hundredths; x["d2"]=100; x["n3"]=percent; x["d3"]=100;
+            return problem with {
+                Parameters=x,
+                Prompt=$"رتّب تصاعديًا: A={p["n1"]}/{p["d1"]}، B={(hundredths/100.0).ToString("0.00",CultureInfo.InvariantCulture)}، C={percent}%. اكتب رموز A وB وC بالترتيب.",
+                Solution="حوّل B وC إلى كسرين من مئة ثم رتّب القيم بدقة."
+            };
+        }
+        return problem;
+    }
+
+    private static ExactProblem LocalizeG6PercentOfQuantityPrecision(ExactProblem problem)
+    {
+        var choices=new (int PercentHundredths,int Quantity)[] {
+            (14500,320),(22000,65),(25,58),(3,1500),
+            (46,80),(55,220),(27500,4),(12800,550),(2000,70),(7500,90)
+        };
+        var p=problem.Parameters;
+        var index=(p["percent"]*17+p["quantity"]/20)%choices.Length;
+        var item=choices[index];
+        var parameters=p.ToDictionary(z=>z.Key,z=>z.Value);
+        parameters["scaledPercentHundredths"]=item.PercentHundredths;
+        parameters["quantity"]=item.Quantity;
+        var percent=((decimal)item.PercentHundredths/100m).ToString("0.##",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=parameters,
+            Prompt=$"أوجد {percent}% من {item.Quantity} مع إبقاء الإجابة العشرية دقيقة دون تقريب.",
+            Solution="حوّل النسبة المئوية إلى عدد عشري بالقسمة على مئة ثم اضرب؛ راجع الخانات بعد الفاصلة."
+        };
+    }
+
+    private static ExactProblem LocalizeG6InversePercent(ExactProblem problem)
+    {
+        var items=new (int Percent,int Part)[] {
+            (25,10),(75,90),(30,15),(75,225),(5,15),(20,4200),
+            (15,75),(36,9),(70,7),(35,7),(90,63),(44,22)
+        };
+        var p=problem.Parameters;
+        var item=items[(p["percent"]*13+p["quantity"]/20)%items.Length];
+        var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+        x["wholeUnknownPercent"]=item.Percent; x["knownPart"]=item.Part;
+        return problem with {
+            Parameters=x,
+            Prompt=$"ما العدد الكلي إذا كانت {item.Percent}% منه تساوي {item.Part}؟",
+            Solution="الكل يساوي الجزء مضروبًا في مئة ومقسومًا على النسبة، ثم تحقق بالضرب."
+        };
+    }
+
+    private static ExactProblem LocalizeG6ThousandthOperations(ExactProblem problem)
+    {
+        var p=problem.Parameters;
+        var add=problem.Family=="uae.g4.u11.l06.column_sum";
+        var addPairs=new (int,int)[] {
+            (23100,5800),(29600,14700),(22360,17030),(14700,87900),
+            (15080,4790),(15800,2300)
+        };
+        var subPairs=new (int,int)[] {
+            (5774,2371),(6000,4780),(23000,4216),(589400,208620),
+            (9543,3671),(82000,67180)
+        };
+        var choices=add?addPairs:subPairs;
+        var chosen=choices[(p["aHundredths"]+p["bHundredths"])%choices.Length];
+        var args=p.ToDictionary(z=>z.Key,z=>z.Value);
+        args["g6Thousandths"]=1;
+        args["aThousandths"]=chosen.Item1; args["bThousandths"]=chosen.Item2;
+        string a=(chosen.Item1/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        string b=(chosen.Item2/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=args,
+            Prompt=$"رتّب الفواصل العشرية ثم احسب {a} {(add?"+":"−")} {b}. اكتب الجواب حتى أجزاء الألف.",
+            Solution="حاذِ الفواصل وأضف الأصفار اللازمة، ثم احسب وتحقق بالعملية العكسية."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalProductEstimate(ExactProblem problem)
+    {
+        var items=new (int A,int B,int PlaceA,int PlaceB)[] {
+            (87,28,1,1),(426,372,10,10),(693,65,10,1),
+            (97,33,1,1),(282,80,10,1),(719,20,10,1),(175,84,1,1)
+        };
+        var p=problem.Parameters;
+        var item=items[(p["aHundredths"]+p["bHundredths"])%items.Length];
+        var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+        x["g6EstimateProduct"]=1; x["aTenths"]=item.A; x["bTenths"]=item.B;
+        x["placeA"]=item.PlaceA; x["placeB"]=item.PlaceB;
+        var a=(item.A/10m).ToString("0.#",CultureInfo.InvariantCulture);
+        var b=(item.B/10m).ToString("0.#",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=x,
+            Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
+            Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalByDecimal(ExactProblem problem)
+    {
+        var cases=new (int Dividend,int Divisor)[] {
+            (36000000,9000000),
+            (36000000,900000),
+            (36000000,90000),
+            (36000000,9000),
+            (36000000,900),
+            (3600000,900000),
+            (360000,90000),
+            (36000,9000),
+            (3600,900),
+            (1710000,900000),
+            (2640000,600000),
+            (52000000,400000),
+            (9000,180000),
+            (11200000,70000),
+            (5600000,14000),
+            (6240000,200000000),
+            (400000,25000000),
+            (680000,3400000),
+            (3690000,300000),
+            (33800,1300000),
+            (167280,3400000),
+            (6300,7000),
+            (1440000,400000),
+            (16240000,140000),
+            (600000,2400),
+            (96600000,420000),
+            (13500000,30000),
+            (120000,150000),
+            (8400000,20000),
+            (8424000,360000),
+            (54400000,1700000),
+            (2070000,900000),
+            (1080000,2700000),
+            (242000,400000)
+        };
+        var p=problem.Parameters;
+        var selected=cases[(p["dividendThousandths"]*11+p["divisorHundredths"])%cases.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DividendMillionths"]=selected.Dividend;
+        values["g6DivisorMillionths"]=selected.Divisor;
+        var dividend=(selected.Dividend/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var divisor=(selected.Divisor/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        return problem with{
+            Parameters=values,
+            Prompt=$"احسب {dividend} ÷ {divisor} بدقة؛ حوّل المقسوم عليه إلى عدد كلي بضرب كلا الطرفين بقوة عشرة واحدة.",
+            Solution="اضرب المقسوم والمقسوم عليه بالقوة العشرية نفسها ثم اقسم، وأكمل الأصفار اللازمة، وتحقق بضرب الحاصل في المقسوم عليه."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalByWhole(ExactProblem problem)
+    {
+        var exactSamples=new (int Dividend,int Divisor)[] {
+            (6800,2),
+            (7700,14),
+            (3490,4),
+            (55080,17),
+            (9480,15),
+            (12320,22),
+            (69904,34),
+            (3600,4),
+            (118500,5),
+            (55200,46),
+            (752400,33),
+            (3082240,4),
+            (24000,16),
+            (15480,36),
+            (36800,2),
+            (16200,12),
+            (59200,16)
+        };
+        var roundedSamples=new (int Dividend,int Divisor)[] {
+            (6740,3),
+            (7240,7),
+            (336752,31),
+            (42560,22),
+            (39400,3),
+            (10900,6),
+            (27400,11),
+            (12340,7),
+            (80400,19),
+            (35820,16),
+            (15900,7),
+            (14400,13),
+            (11100,8),
+            (26900,6),
+            (31250,6)
+        };
+        var p=problem.Parameters;
+        var samples=problem.Family=="uae.g5.u05.l11.round_decimal_quotient_hundredth"?roundedSamples:exactSamples;
+        var selected=samples[(p["dividendHundredths"]*7+p["divisor"])%samples.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DividendThousandths"]=selected.Dividend;
+        values["g6WholeDivisor"]=selected.Divisor;
+        var a=(selected.Dividend/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        string prompt=problem.Family=="uae.g5.u05.l11.round_decimal_quotient_hundredth"
+            ?$"احسب {a} ÷ {selected.Divisor} ثم قرّب الناتج إلى أقرب جزء من مئة."
+            :$"احسب {a} ÷ {selected.Divisor} بدقة دون تقريب، وتحقق بالضرب.";
+        return problem with {
+            Parameters=values,Prompt=prompt,
+            Solution="أقسم المنازل بالترتيب وأضع الفاصلة فوق فاصلة المقسوم؛ أقرب إلى الجزء من مئة فقط إذا طلب السؤال."
+        };
+    }
+
+    private static ExactProblem LocalizeG6PowersOfTenLab(ExactProblem problem)
+    {
+        var cases=new (int NumberMillionths,int Power)[] {
+            (28600000,6),
+            (28600000,-1),
+            (12400000,-1),
+            (12400000,-2),
+            (12400000,-3),
+            (12400000,-4),
+            (1240000,0),
+            (1240000,1),
+            (1240000,2),
+            (1240000,3),
+            (1240000,4),
+            (1240000,5),
+            (1240000,6),
+            (1240000,7),
+            (4950000,1),
+            (13600000,3),
+            (1250000,4),
+            (2350000,-2),
+            (365000,2),
+            (8700000,3),
+            (4500000,-3),
+            (250000,6)
+        };
+        var p=problem.Parameters;
+        var item=cases[(p["thousandths"]*3+p["pow"])%cases.Length];
+        var args=p.ToDictionary(x=>x.Key,x=>x.Value);
+        args["g6PowerBaseMillionths"]=item.NumberMillionths;
+        args["g6PowerExponent"]=item.Power;
+        var x=(item.NumberMillionths/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var pLabel=item.Power<0?$"10^({item.Power})":$"10^{item.Power}";
+        return problem with
+        {
+            Parameters=args,
+            Prompt=$"احسب ناتج {x} × {pLabel} بدقة باستخدام نمط المنازل العشرية.",
+            Solution="عند الضرب في قوى عشرة موجبة تتحرك الفاصلة يمينًا، وفي قوى عشرة سالبة تتحرك يسارًا؛ أضف الأصفار المطلوبة."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalTimesDecimal(ExactProblem problem)
+    {
+        // Source-aligned first-party practice: existing Grade5 family retains
+        // ownership of generation, solver, verifier and fingerprints.
+        // The extra parameters are applied ONLY to Grade6 Arabic U03:L04.
+        var pairs=new (int First,int Second)[] {
+            (3600000,50000),
+            (112000,7200000),
+            (67000,1400000),
+            (53000,450000),
+            (28450000,11500000),
+            (5700000,2800000),
+            (4120000,50000),
+            (14000,3700000),
+            (40000,320000),
+            (260000,205000),
+            (1330000,60000),
+            (600000,500000),
+            (27430000,1089000000),
+            (980000,7300000),
+            (2700000,1350000),
+            (30000,90000),
+            (40000,2120000),
+            (700000,400000),
+            (400000,3700000),
+            (520000,2100000),
+            (6200000,30000),
+            (14700000,11361000),
+            (280000,80000),
+            (25040000,3005000),
+            (1030000,1005000),
+            (5120000,4001000),
+            (3985300,8032856),
+            (8200000,9700000),
+            (1609000,2500000),
+            (3850000,4000000),
+            (4100000,2500000),
+            (125000,320000),
+            (4800000,75000)
+        };
+        var p=problem.Parameters;
+        var selected=pairs[(p["leftHundredths"]*13+p["rightHundredths"])%pairs.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DecimalFirstMillionths"]=selected.First;
+        values["g6DecimalSecondMillionths"]=selected.Second;
+        var a=(selected.First/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var b=(selected.Second/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        return problem with
+        {
+            Parameters=values,
+            Prompt=$"احسب حاصل الضرب الدقيق {a} × {b} دون تقريب، ثم تحقق بتقدير مناسب.",
+            Solution="اضرب الرقمين دون فواصل، واجمع منازل الجزء العشري للعاملين، ثم أعد الفاصلة. أضف الأصفار اللازمة وتحقق من رتبة الناتج بالتقدير."
+        };
+    }
+
+    private static ExactProblem LocalizeG6WholeDecimalProduct(ExactProblem problem)
+    {
+        var samples=new (int DecimalTenThousandths,int Whole)[] {
+            (49000,6),(8300,4),(142000,3),(9500,4),
+            (180,2),(120,4),(36,19),(650,18),(710,8)
+        };
+        var p=problem.Parameters;
+        var choice=samples[(p["aThousandths"]+p["whole"])%samples.Length];
+        var values=p.ToDictionary(z=>z.Key,z=>z.Value);
+        values["g6DecimalFactorTenThousandths"]=choice.DecimalTenThousandths;
+        values["g6WholeFactor"]=choice.Whole;
+        var x=(choice.DecimalTenThousandths/10000m).ToString("0.####",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=values,
+            Prompt=$"أوجد {x} × {choice.Whole}. اكتب حاصل الضرب العشري الدقيق.",
+            Solution="اضرب العامل في العدد الكلي، ثم ضع الفاصلة حسب عدد منازل العامل العشري."
+        };
+    }
+
+    private static ExactProblem LocalizeUaeGrade6RatioLab(ExactProblem problem)
+    {
+        var p = problem.Parameters;
+        return problem.Family switch
+        {
+            "ratio.unit_rate.direct" =>
+                problem with
+                {
+                    Prompt = $"إذا بلغت الكمية الكلية {p["total"]} من الوحدات خلال {p["quantity"]} وحدات زمنية أو مجموعات متساوية، فما المقدار لكل وحدة واحدة؟",
+                    Solution = "اقسم الكمية الكلية على عدد الوحدات المتساوية، وأضف وحدة القياس المناسبة، ثم اضرب الناتج للتحقق."
+                },
+            "ratio.unit_rate.equivalent_ratio" =>
+                problem with
+                {
+                    Prompt = $"في جدول نسب، يقابل {p["baseFirst"]} من العناصر الأولى {p["baseSecond"]} من العناصر الثانية. إذا أصبح عدد العناصر الثانية {p["targetSecond"]}، فما العدد المناظر من العناصر الأولى؟",
+                    Solution = "للحفاظ على النسبة نفسها نضرب الكميتين في العامل نفسه، ونتحقق بالضرب التبادلي."
+                },
+            "fractions.equivalent.reduce_common_factor" =>
+                problem with
+                {
+                    Prompt = $"في نموذج نوعين من القطع، النسبة {p["largeN"]}:{p["largeD"]} تعادل النسبة □:{p["targetD"]}. ما العدد في المربع؟",
+                    Solution = "اكتب النسبة ككسر وابسط بقسمة الطرفين على العامل المشترك. تحقق من الضرب التبادلي."
+                },
+            "ratio.unit_rate.divide_total" =>
+                problem with
+                {
+                    Prompt = $"لدينا {p["total"]} عنصرًا. نسبة المجموعة الأولى إلى الثانية هي {p["firstPart"]}:{p["secondPart"]}. أوجد عدد عناصر الجزء الممثل بالعدد {p["askedPart"]} في النسبة.",
+                    Solution = "اجمع جزأي النسبة، اقسم المجموع على عدد الأجزاء، ثم اضرب في عدد الأجزاء المطلوبة وتحقق من المجموع."
+                },
+            _ => problem
+        };
     }
 
     private static ExactProblem BuildEquivalentRatio(Random random, int scale)
@@ -8363,6 +8991,15 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            p.TryGetValue("wholeUnknownPercent",out var inversePercent))
+            return (p["knownPart"]*100L/inversePercent).ToString(CultureInfo.InvariantCulture);
+
+        if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            p.TryGetValue("scaledPercentHundredths",out var scaledHundredths))
+            return ((decimal)scaledHundredths * p["quantity"] / 10000m)
+                .ToString("0.####",CultureInfo.InvariantCulture);
+
         if (UaeGrade2Unit1Lesson01Questions.Supports(problem.Family))
             return UaeGrade2Unit1Lesson01Questions.Solve(problem.Family, p);
         if (UaeGrade2Unit1Lessons02And13Questions.Supports(problem.Family))
@@ -8465,6 +9102,26 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit10Lesson06FractionRoundingQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(problem.Family))
             return UaeGrade4Unit10DecimalPlaceValueQuestions.Solve(problem.Family, p);
+        if (UaeG6U4L05CustomaryUnitConversionsQuestions.Supports(problem.Family))
+            return UaeG6U4L05CustomaryUnitConversionsQuestions.Solve(problem.Family,p);
+        if (UaeG6U5L01SignedNumbersQuestions.Supports(problem.Family))
+            return UaeG6U5L01SignedNumbersQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L01ExpressionStructureQuestions.Supports(problem.Family))
+            return UaeG6U6L01ExpressionStructureQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L02PowersQuestions.Supports(problem.Family))
+            return UaeG6U6L02PowersQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L03NumericalExpressionsQuestions.Supports(problem.Family))
+            return UaeG6U6L03NumericalExpressionsQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L04VariableExpressionsQuestions.Supports(problem.Family))
+            return UaeG6U6L04VariableExpressionsQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L05WriteExpressionsQuestions.Supports(problem.Family))
+            return UaeG6U6L05WriteExpressionsQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L06WriteExpressionsQuestions.Supports(problem.Family))
+            return UaeG6U6L06WriteExpressionsQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L07ModelItQuestions.Supports(problem.Family))
+            return UaeG6U6L07ModelItQuestions.Solve(problem.Family,p);
+        if (UaeG6U6L08PropertiesQuestions.Supports(problem.Family))
+            return UaeG6U6L08PropertiesQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))

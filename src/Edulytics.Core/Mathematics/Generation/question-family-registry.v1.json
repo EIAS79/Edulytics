@@ -48118,6 +48118,44 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g6.u02.l05.percent_extreme_to_decimal",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g6-independent-percent-thousandth-scale-recomposition",
+      "representations": [
+        "symbolic",
+        "place_value_chart",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "uae.g6.u02.l05.decimal_extreme_to_percent",
+      "version": 1,
+      "skillId": "decimals.place_value",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_decimal",
+      "verificationPolicy": "g6-independent-decimal-ten-thousandth-scale-recomposition",
+      "representations": [
+        "symbolic",
+        "place_value_chart",
+        "contextual"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

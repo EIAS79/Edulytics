@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 5,
+  "ordinal": 55,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:05:12:STUDENT-AR-128",
+  "title": "مختبر الاستكشاف: إيجاد المسافة على المستوى الإحداثي",
+  "sourceBook": "02.pdf",
+  "sourcePdfSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "sourceBookEdition": "Local student book tracked 2025–2026; 2026–2027 NOT_VERIFIED",
+  "sourcePagesVisuallyInspected": 4,
+  "pdfPages": [
+    80,
+    83
+  ],
+  "printedPages": [
+    407,
+    410
+  ],
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        407
+      ],
+      "source": "تحديد موقع المنزل والمدرسة على خط أفقي وعد وحدات المسافة",
+      "equivalent": "نموذج SignedCartesianPlot وأمثلة مسافة أفقية"
+    },
+    {
+      "pages": [
+        408
+      ],
+      "source": "مسافة نقطتين على خط رأسي، مراجعة بالعد والجمع عندما يتغير الجانبان",
+      "equivalent": "نموذج المسافة الرأسية والأمثلة ٣–٤ وقاعدة الفرق المطلق"
+    },
+    {
+      "pages": [
+        409
+      ],
+      "source": "استكشاف أزواج نقاط أفقية ورأسية وتحديد المسافة مع المعلم",
+      "equivalent": "أمثلة ١–٦ وفحص H وV والتمثيلات الأصلية"
+    },
+    {
+      "pages": [
+        410
+      ],
+      "source": "جدول الإحداثيات والبعد، استنتاج قاعدة القيمة المطلقة وصياغة مسألة",
+      "equivalent": "قواعد H/V ومهام طرف مفقود مع تفسير يراجعه المعلم"
+    }
+  ],
+  "engineStrategy": "REUSE_SIGNED_COORDINATE_ENGINE_EXTEND_ONLY_AXIS_ALIGNED_ABSOLUTE_DIFFERENCE",
+  "questionFamilies": [
+    "uae.g6.u05.l12.distance_same_y",
+    "uae.g6.u05.l12.distance_same_x",
+    "uae.g6.u05.l12.find_horizontal_endpoint",
+    "uae.g6.u05.l12.find_vertical_endpoint"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "SignedCartesianPlot",
+    "CalculationChain"
+  ],
+  "teacherReview": [
+    "draw lines between points on grid",
+    "student-led compare table",
+    "open context problem and explanation"
+  ],
+  "exclusions": [
+    "diagonal distances not in source and not auto-graded",
+    "open drawing requires teacher review"
+  ],
+  "sourceQuestionItemDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "CATEGORIES_MAPPED_NOT_EVERY_EXERCISE_PARITY_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U5L12CoordinateDistanceLabTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}

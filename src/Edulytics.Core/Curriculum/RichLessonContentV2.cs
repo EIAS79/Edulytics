@@ -27,7 +27,10 @@ public enum RichLessonVisualKind
     ShapeDecomposition = 9,
     Grade4Unit1AreaFigures = 10,
     Grade5Unit1CubeComparison = 11,
-    Grade5Unit1CubeModelWodb = 12
+    Grade5Unit1CubeModelWodb = 12,
+    CartesianPlot = 13,
+    SignedCartesianPlot = 14,
+    ExpressionStripBars = 15
 }
 
 public sealed class RichLessonContentV2Document

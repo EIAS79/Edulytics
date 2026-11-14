@@ -70,6 +70,23 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
             AssessmentItemType.Numeric,
             new Dictionary<string,int>{{"dividendThousandths",n},{"divisorHundredths",d}});
     }
+    // Grade6 Arabic General U03:L10 extends the existing Grade5 decimal
+    // division kernel with two millionth-scaled positive operands.
+    // Preserve exact arithmetic; non-terminating results require a separately
+    // requested approximation and are NOT certified as exact here.
+    private static bool ValidG6DecimalByDecimal(string f,IReadOnlyDictionary<string,int> p,
+        out decimal quotient)
+    {
+        quotient=0m;
+        if(f is not (G5DivideExact or G5DivideContext) ||
+           !p.TryGetValue("g6DividendMillionths",out int dividend) ||
+           !p.TryGetValue("g6DivisorMillionths",out int divisor) ||
+           dividend is <1 or >2000000000 || divisor is <1 or >2000000000)
+            return false;
+        quotient=(decimal)dividend/divisor;
+        return Math.Round(quotient,6,MidpointRounding.AwayFromZero)==quotient;
+    }
+
     private static bool ValidG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,out int n,out int d)
     {
         n=d=0;
@@ -80,6 +97,13 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static string SolveG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(p.ContainsKey("g6DividendMillionths"))
+        {
+            if(!ValidG6DecimalByDecimal(f,p,out decimal q))
+                throw new InvalidOperationException("Invalid Grade6 exact decimal-by-decimal operands.");
+            return q.ToString("0.######",CultureInfo.InvariantCulture);
+        }
+
         if(!ValidG5DecimalQuotient(f,p,out int n,out int d))
             throw new InvalidOperationException("Invalid decimal-by-decimal division parameters");
         int qMilli=n*100/d;
@@ -88,6 +112,20 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static bool VerifyG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(p.ContainsKey("g6DividendMillionths"))
+        {
+            if(!ValidG6DecimalByDecimal(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))return false;
+            string g6QuotientNormalized=new(answer.Trim().Select(c=>c switch{
+                >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+                '٫'=>'.',_=>c
+            }).ToArray());
+            if(g6QuotientNormalized.Length>36||
+               !g6QuotientNormalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(g6QuotientNormalized,NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture,out var answerValue)&&answerValue==expected;
+        }
+
         if(!ValidG5DecimalQuotient(f,p,out int n,out int d)||
            string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(ch=>ch switch
@@ -168,6 +206,25 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
             AssessmentItemType.Numeric,
             new Dictionary<string,int>{{"dividendHundredths",dividendHundredths},{"divisor",d}});
     }
+    // Grade6 U03:L09 extends the existing Grade5 whole-divisor decimal
+    // family to larger divisors and thousandth-scaled source operands.
+    // Exact questions reject non-terminating quotients instead of rounding.
+    private static bool ValidG6DecimalByWhole(string f,IReadOnlyDictionary<string,int> p,
+        out decimal expected)
+    {
+        expected=0m;
+        if (f is not (G5Exact or G5Rounded)||
+            !p.TryGetValue("g6DividendThousandths",out int n)||
+            !p.TryGetValue("g6WholeDivisor",out int d)||
+            n is <1 or >5000000 || d is <2 or >900)
+            return false;
+        var exact=(decimal)n/(d*1000m);
+        if(f==G5Exact && Math.Round(exact,6,MidpointRounding.AwayFromZero)!=exact)
+            return false;
+        expected=f==G5Rounded?Math.Round(exact,2,MidpointRounding.AwayFromZero):exact;
+        return true;
+    }
+
     private static bool ValidG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p,
         out int qMilli)
     {
@@ -181,6 +238,13 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static string SolveG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(p.ContainsKey("g6DividendThousandths"))
+        {
+            if(!ValidG6DecimalByWhole(f,p,out var value))
+                throw new InvalidOperationException("Invalid Grade6 decimal-by-whole parameters.");
+            return value.ToString("0.######",CultureInfo.InvariantCulture);
+        }
+
         if(!ValidG5WholeDecimal(f,p,out int q))
             throw new InvalidOperationException("Invalid G5 decimal-by-whole parameters");
         decimal exact=q/1000m;
@@ -193,6 +257,21 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static bool VerifyG5WholeDecimal(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(p.ContainsKey("g6DividendThousandths"))
+        {
+            if(!ValidG6DecimalByWhole(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))
+                return false;
+            string g6WholeNormalized=new(answer.Trim().Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '٫'=>'.',_=>ch
+            }).ToArray());
+            if(g6WholeNormalized.Length>36||
+               !g6WholeNormalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(g6WholeNormalized,NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture,out var g6WholeActual)&&g6WholeActual==expected;
+        }
+
         if(!ValidG5WholeDecimal(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
         string s=new(answer.Trim().Select(ch=>ch switch{
             >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 5,
+  "ordinal": 49,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:05:06:STUDENT-AR-128",
+  "title": "استقصاء حل المسائل: العمل بترتيب عكسي",
+  "sourceBook": "02.pdf",
+  "sourceBookEdition": "2025–2026",
+  "targetEdition": "2026–2027 NOT_VERIFIED",
+  "sourcePdfSha256": null,
+  "bookPagesPrinted": [
+    367,
+    369
+  ],
+  "pdfPages": [
+    40,
+    42
+  ],
+  "followingAssessment": {
+    "printedPage": 370,
+    "pdfPage": 43,
+    "type": "MID_UNIT_TEST",
+    "includedInLesson": false
+  },
+  "sourcePagesVisuallyInspected": 3,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        367
+      ],
+      "source": "قصة درجة حرارة نهائية بعد انخفاض",
+      "equivalent": "مثال ١ وخط الحساب العكسي"
+    },
+    {
+      "pages": [
+        367
+      ],
+      "source": "منهج الفهم والتخطيط والحل والتحقق",
+      "equivalent": "المفاهيم والخطوات التعليمية الأربع"
+    },
+    {
+      "pages": [
+        368
+      ],
+      "source": "جدول أوقات وأنشطة حتى الوصول لموعد",
+      "equivalent": "أمثلة ٤–٥ وRatioTable"
+    },
+    {
+      "pages": [
+        368
+      ],
+      "source": "الرجوع في الزمن ثم التحقق للأمام",
+      "equivalent": "عائلة work_backward_schedule"
+    },
+    {
+      "pages": [
+        369
+      ],
+      "source": "مسائل عمق وارتفاع ومقدار مجهول",
+      "equivalent": "أمثلة ٦ و٨–٩"
+    },
+    {
+      "pages": [
+        369
+      ],
+      "source": "مسائل عدة خطوات تشمل كمية الصور وأعدادًا مجهولة",
+      "equivalent": "أمثلة ٧ و١٠ والتقويم الأصلي"
+    },
+    {
+      "pages": [
+        370
+      ],
+      "source": "اختبار منتصف الوحدة لا يتبع نطاق الدرس 49",
+      "equivalent": "ASSESSMENT_SEPARATE_NOT_CLAIMED_AS_LESSON_49"
+    }
+  ],
+  "engineStrategy": "REUSE_U05_SIGNED_NUMBERS_EXACT_ENGINE_WITH_TWO_SCOPED_BACKWARD_TEMPERATURE_AND_SCHEDULE_FAMILIES",
+  "questionFamilies": [
+    "uae.g6.u05.l06.work_backward_temperature",
+    "uae.g6.u05.l06.work_backward_schedule",
+    "uae.g6.u05.l05.compare_signed_integers"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "CalculationChain",
+    "RatioTable",
+    "EquationSet"
+  ],
+  "teacherReview": [
+    "student-devised reverse plans",
+    "four-step explanation",
+    "contextual open-ended tasks"
+  ],
+  "sourceQuestionItemDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_ACTIVITY_CATEGORIES_MAPPED_NOT_EXERCISE_FOR_EXERCISE_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U5L06WorkBackwardsTests.cs",
+  "testsRun": "NOT_RUN",
+  "staticMathCasesPassed": 4,
+  "stageD": "NOT_RUN",
+  "publisherArtworkCopied": false
+}

@@ -8662,6 +8662,537 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE G6 Arabic Common — local Student Book U01:L01 (printed pp 7-14).
+        // Reuse Grade 5 exact GCF/LCM families; do not remap legacy Grade 6 ratios U01:L01.
+        // Explanatory/diagram responses are teacher-reviewed, not numeric-auto-graded.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+                "number.factors_and_multiples",
+                "GCF_LCM_NUMERIC_SUBSKILLS_TEACHER_REVIEW_EXPLANATIONS",
+                [
+                    "uae.g5.u07.l02.gcf_two_numbers",
+                    "uae.g5.u07.l02.gcf_three_numbers",
+                    "uae.g5.u07.l02.test_common_factor",
+                    "uae.g5.u07.l05.lcm_two_numbers",
+                    "uae.g5.u07.l05.lcm_three_numbers",
+                    "uae.g5.u07.l05.test_common_multiple"
+                ],
+                "UAE_G6_GENERAL_LOCAL_STUDENT_BOOK_U01_L01_PRINTED_7_14",
+                "READY_VERIFIED",
+                Version)
+            {
+                SkillIds = ["number.factors_and_multiples", "number.lcm"]
+            };
+
+        // Arabic Grade 6 Common selected Student Book Unit 1 Exploration Lab 1.
+        // Numeric ratio-table and total-share subskills only; drawings are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "EQUIVALENT_RATIO_TABLE_AND_TOTAL_SHARE",
+                ["ratio.unit_rate.equivalent_ratio", "ratio.unit_rate.divide_total"],
+                "UAE_G6_STUDENT_FIRST_U01_L02_PRINTED_P15_18_ORIGINAL_ARABIC",
+                "READY_VERIFIED",
+                Version);
+        // UAE G6 General Arabic: Student Book Unit 1, native Lesson 2 / indexed item 3.
+        // Numeric ratios, equivalent values and simplification only; source drawings teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "SIMPLIFY_COMPARE_AND_PART_WHOLE_RATIOS",
+                [
+                    "ratio.unit_rate.equivalent_ratio",
+                    "ratio.unit_rate.divide_total",
+                    "fractions.equivalent.reduce_common_factor"
+                ],
+                "UAE_G6_STUDENT_FIRST_U01_L03_PRINTED_P19_26_ORIGINAL_ARABIC",
+                "READY_VERIFIED", Version)
+            {
+                SkillIds = ["ratio.unit_rate", "fractions.equivalent"]
+            };
+        // Grade 6 Arabic owner-selected Student Book U01 exploration lab 2.
+        // Existing exact unit-rate kernel, decimal and drawn models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:04:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "UNIT_RATE_TAPE_DIAGRAM_DIVIDE_EQUAL_PARTS",
+                ["ratio.unit_rate.direct"],
+                "UAE_G6_STUDENT_FIRST_U01_L04_PRINTED_27_30_ORIGINAL_AR",
+                "READY_VERIFIED", Version);
+        // Arabic UAE G6 General Unit 1 native Lesson 3, Source printed pp 31-38.
+        // Existing unit-rate and equivalent ratio numeric subskills; ratio comparison
+        // of two distinct contexts remains an independent teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:05:STUDENT-AR-128", "ratio.unit_rate",
+                "RATE_TO_UNIT_RATE_AND_SCALED_EQUIVALENCE",
+                ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+                "UAE_G6_STUDENT_FIRST_U01_L05_PRINTED_31_38",
+                "READY_VERIFIED", Version);
+        // Grade 6 Arabic General local student-book lesson 4, ratio tables.
+        // Reuse existing proportional exact families; authored graphics teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128","ratio.unit_rate",
+                "PROPORTIONAL_TABLE_SCALING_AND_PART_WHOLE",
+                ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.divide_total"],
+                "UAE_G6_U01_L06_SOURCE_PRINTED_39_46",
+                "READY_VERIFIED",Version);
+        // Grade 6 Arabic General source native Lesson 5: graph equivalent ratio tables.
+        // Exact number practice reused; cartesian plotting is an authored RichV2 visual.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:07:STUDENT-AR-128","ratio.unit_rate",
+                "COORDINATE_PAIRS_GRAPHS_OF_EQUAL_RATIOS",
+                ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.direct"],
+                "UAE_G6_U01_L07_SOURCE_PRINTED_47_54",
+                "READY_VERIFIED",Version);
+        // G6 Arabic U01 inquiry: a four-step reasoning sequence.
+        // Numeric equal-group calculation reuses exact unit-rate kernel;
+        // pattern, mixed budgeting and explanation are teacher-scored.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:08:STUDENT-AR-128", "ratio.unit_rate",
+                "FOUR_STEP_INQUIRY_EQUAL_GROUP_NUMERIC_SUBSKILL",
+                ["ratio.unit_rate.direct"],
+                "UAE_G6_U01_L08_SOURCE_PRINTED_55_57",
+                "READY_VERIFIED",Version);
+        // UAE Arabic Grade6 native Lesson6 U01, equivalent ratios/rates.
+        // Reuse grade-independent exact ratio and fraction equivalents;
+        // comparative reasoning and priced contextual word problems teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128","ratio.unit_rate",
+                "COMPARE_EQUIVALENT_RATIOS_AND_UNIT_RATES",
+                [
+                    "ratio.unit_rate.direct",
+                    "ratio.unit_rate.equivalent_ratio",
+                    "fractions.equivalent.reduce_common_factor"
+                ],
+                "UAE_G6_U01_L09_SOURCE_PRINTED_59_66",
+                "READY_VERIFIED",Version)
+            { SkillIds = ["ratio.unit_rate","fractions.equivalent"] };
+        // G6 Arabic Student Edition U01 exploration lab #3, printed pp. 67-70.
+        // Reuses the production exact rate kernel; diagrams and open explanations
+        // remain teacher-reviewed, not falsely auto-graded.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:01:10:STUDENT-AR-128", "ratio.unit_rate",
+            "UNIT_RATE_BAR_MODELS_AND_EQUIVALENT_RATIO_MULTIPLICATION",
+            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+            "UAE_G6_AR_LOCAL_STUDENT_BOOK_U01_L10_67_70",
+            "READY_VERIFIED", Version);
+        // G6 Arabic Common, original source Student Book Unit 1 last indexed
+        // lesson: word problems with equivalent ratios/rates; open models
+        // and multi-part assessment remain teacher-assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:01:11:STUDENT-AR-128", "ratio.unit_rate",
+            "SOLVE_RATIO_RATE_WORD_PROBLEMS_AND_CHECK_EQUIVALENCE",
+            [
+                "ratio.unit_rate.direct",
+                "ratio.unit_rate.equivalent_ratio",
+                "ratio.unit_rate.divide_total"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U01_L11_PRINTED_71_78",
+            "READY_VERIFIED",Version);
+        // Grade 6 General Arabic Student Book Unit2 Lesson1, printed pp89-96.
+        // Reuse Grade4/G5 decimal place-value, fraction reduction and decimal
+        // answer verifiers; open reasoning and visual assessment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:01:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:01:STUDENT-AR-128", "decimals.place_value",
+            "DECIMAL_TO_REDUCED_FRACTION_AND_TERMINATING_FRACTION_TO_DECIMAL",
+            [
+                "uae.g4.u10.l04.decimal_to_hundredths",
+                "uae.g5.u01.l04.thousandths_numerator",
+                "uae.g5.u07.l03.simplify_fraction",
+                "uae.g5.u07.l08.reducible_fraction_to_decimal"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L01_PRINTED_89_96",
+            "READY_VERIFIED",Version)
+        { SkillIds = ["decimals.place_value","fractions.equivalent"] };
+        // G6 Arabic Student Book Unit2 exploration 1, printed pp97-100.
+        // Exactly the existing G5 hundred-grid/percent conversion engine.
+        // Drawing/shading remains a human-reviewed physical representation.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:02:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:02:STUDENT-AR-128","decimals.place_value",
+            "REPRESENT_PERCENT_WITH_HUNDRED_GRID_AND_EQUAL_FRACTION_BARS",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g5.u07.l07.count_shaded_hundredths"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L02_PRINTED_97_100",
+            "READY_VERIFIED",Version);
+        // UAE G6 Arabic student edition U02 native Lesson2 / index14 pp101-108.
+        // Reuse exact percent-hundredths and existing G5 fractional GCF reduction.
+        // Source drawn hundred-grids and explanations teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:03:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:03:STUDENT-AR-128","decimals.place_value",
+            "CONVERT_PERCENT_AND_SIMPLEST_FRACTIONS_WITH_HUNDRED_GRID",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g5.u07.l03.simplify_fraction"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L03_PRINTED_101_108",
+            "READY_VERIFIED",Version)
+        { SkillIds = ["decimals.place_value","fractions.equivalent"] };
+        // G6 Arabic Student Book U02 L04 printed109-116:
+        // BOTH directions covered by existing G4 decimal-place and G5 percent
+        // exact families, without a duplicate conversion engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:04:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:04:STUDENT-AR-128","decimals.place_value",
+            "PERCENT_TO_DECIMAL_AND_DECIMAL_TO_PERCENT",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g4.u10.l03.hundredths_decimal",
+                "uae.g4.u10.l02.tenths_decimal"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L04_PRINTED_109_116",
+            "READY_VERIFIED",Version);
+        // Grade 6 Arabic local source U02:L05, exact extreme percentage conversion.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:05:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:05:STUDENT-AR-128", "decimals.place_value",
+            "PERCENT_EXTREMES_DECIMAL_AND_PERCENT",
+            ["uae.g6.u02.l05.percent_extreme_to_decimal","uae.g6.u02.l05.decimal_extreme_to_percent"],
+            "UAE_G6_U02_L05_SOURCE_AR_PRINTED117_124",
+            "READY_VERIFIED", Version);
+        // UAE G6 General Arabic original Student Book U02 L06 problem solving.
+        // Numeric percent and recurring multiple targets only; diagrams and open strategies teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128", "percentages.core",
+            "SIMPLIFY_PERCENT_AND_PERIODIC_PROBLEMS",
+            ["percentages.core.of_quantity", "uae.g5.u07.l05.lcm_two_numbers"],
+            "UAE_G6_GENERAL_U02_L06_BOOK_PRINTED_125_128_ORIGINAL_AR",
+            "READY_VERIFIED", Version);
+        // Arabic U02L07 mixed decimal/percentage formats retain verified fraction verifier.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128","fractions.compare","COMPARE_ORDER_MIXED_FRACTIONS_PERCENT_DECIMAL",
+            ["fractions.compare.unlike.common_denominator","fractions.compare.unlike.order_three"],
+            "G6_AR_STUDENT_U02L07_PRINTED_129_136","READY_VERIFIED",Version);
+        // Selected Arabic source U02L08: estimate by reference percents; verify exact computations with existing family.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128","percentages.core",
+            "ESTIMATE_PERCENT_FROM_REFERENCE_AND_CHECK_EXACT",
+            ["percentages.core.of_quantity"],
+            "G6_GENERAL_U02_L08_SOURCE_PRINTED137_144",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:09:STUDENT-AR-128","percentages.core","BAR_MODEL_PERCENT_OF_QUANTITY",
+            ["percentages.core.of_quantity"],"G6_U02L09_PRINTED145_146_AR","READY_VERIFIED",Version);
+        // Grade6 Arabic Student U02 L10. Reuse exact percent kernel with
+        // source-scoped hundredths-of-percent precision, no new engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128","percentages.core","PRECISION_PERCENT_OF_QUANTITY_ABOVE_100_AND_BELOW_1",
+            ["percentages.core.of_quantity"],
+            "G6_STUDENT_U02_L10_PRINTED147_154","READY_VERIFIED",Version);
+        // Source-selected Arabic G6 U02L11 inverse percent, exact existing verifier extended.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128","percentages.core","INVERSE_PERCENT_WHOLE_UNKNOWN",
+            ["percentages.core.of_quantity"],"G6_U02L11_AR_PRINTED155_162","READY_VERIFIED",Version);
+        // G6 General Arabic U03L01: reuse Grade4 decimal arithmetic families
+        // extended for thousandths and original Arabic contexts.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128","decimal.arithmetic","ALIGN_ADD_SUBTRACT_TO_THOUSANDTH",
+            ["uae.g4.u11.l06.column_sum","uae.g4.u11.l10.column_difference"],
+            "G6_STUDENT_U03L01_PRINTED173_180","READY_VERIFIED",Version);
+        // G6 U03L02: existing decimal multiplication family, exact specified rounding rules.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:02:STUDENT-AR-128","decimal.arithmetic","ESTIMATE_DECIMAL_PRODUCTS_BY_SPECIFIED_PLACE",
+            ["uae.g5.u05.l05.multiply_decimal_factors"],
+            "G6_GENERAL_U03L02_PRINTED181_188","READY_VERIFIED",Version);
+        // Source-selected G6 Arabic U03L03, existing exact Grade5 decimal×whole family.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128","decimal.arithmetic","DECIMAL_TIMES_WHOLE_TO_TEN_THOUSANDTHS",
+            ["uae.g5.u05.l03.decimal_times_whole"],
+            "G6_STUDENT_U03L03_PRINTED189_196","READY_VERIFIED",Version);
+        // Grade6 Arabic selected Student Book U03:L04; extend the existing
+        // Grade5 exact decimal factor family, no redundant new question engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128","decimal.arithmetic",
+            "EXACT_DECIMAL_BY_DECIMAL_MULTIPLICATION_TO_TWELVE_PLACES",
+            ["uae.g5.u05.l05.multiply_decimal_factors"],
+            "G6_GENERAL_STUDENT_U03L04_PRINTED197_204",
+            "READY_VERIFIED",Version);
+        // G6 student source U03:L05: original discovery of powers-of-ten.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:05:STUDENT-AR-128","decimal.arithmetic",
+            "SIGNED_POWERS_OF_TEN_PLACE_VALUE_DISCOVERY",
+            ["uae.g5.u05.l06.decimal_times_power_ten"],
+            "G6_GENERAL_STUDENT_U03L05_PRINTED205_206",
+            "READY_VERIFIED",Version);
+        // UAE Grade6 General Unit3 Inquiry: identify numeric and price patterns.
+        // Existing exact arithmetic-sequence and Grade5 money kernels reused as-is;
+        // open graphical explanations and Pascal rows remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:06:STUDENT-AR-128","numeric.patterns",
+            "RECURSIVE_NUMBER_PATTERN_AND_PRICE_TABLE",
+            ["uae.g5.u05.l07.arithmetic_step_pattern","uae.g5.u05.l03.unit_price_total"],
+            "G6_GENERAL_STUDENT_U03L06_PRINTED207_209",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic General student U03L07: source long division
+        // of three-to-five-digit numbers. Reuse verified Grade5 quotient/
+        // remainder kernels; open vertical algorithm is teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:07:STUDENT-AR-128","number.whole.division",
+            "MULTI_DIGIT_LONG_DIVISION_AND_REMAINDERS",
+            ["uae.g5.u04.l05.large_quotient","uae.g5.u04.l05.large_remainder","uae.g5.u04.l03.two_digit_long_quotient","uae.g5.u04.l03.two_digit_long_remainder"],
+            "G6_GENERAL_STUDENT_U03L07_PRINTED211_218",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic General U03L08: estimate quotients using compatible numbers.
+        // Reuse Grade5 decimal and two-digit estimate families without changing math.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:08:STUDENT-AR-128","number.division.estimate",
+            "DECIMAL_DIVISION_COMPATIBLE_NUMBER_ESTIMATION",
+            ["uae.g5.u05.l09.estimate_decimal_quotient","uae.g5.u05.l09.compatible_decimal_dividend","uae.g5.u04.l01.estimate_two_digit_quotient"],
+            "G6_GENERAL_STUDENT_U03L08_PRINTED219_226",
+            "READY_VERIFIED",Version);
+        // Grade6 General Arabic U03:L09: exact and rounded division of
+        // decimals by whole numbers, using the already approved Grade5 kernel.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:09:STUDENT-AR-128","decimal.arithmetic",
+            "EXACT_AND_ROUNDED_DECIMAL_DIVISION_BY_WHOLE",
+            ["uae.g5.u05.l11.exact_decimal_by_whole","uae.g5.u05.l11.round_decimal_quotient_hundredth"],
+            "G6_GENERAL_STUDENT_U03L09_PRINTED227_234",
+            "READY_VERIFIED",Version);
+        // G6 General Arabic U03:L10: exact decimal-by-decimal quotient
+        // using the already existing Grade5 exact unit-rate/quotient kernel.
+        // Nonterminating rounded word problems use teacher review in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128","decimal.arithmetic",
+            "DECIMAL_DIVISOR_CONVERSION_AND_EXACT_QUOTIENT",
+            ["uae.g5.u05.l13.exact_decimal_divide","uae.g5.u05.l13.contextual_decimal_unit_rate"],
+            "G6_GENERAL_STUDENT_U03L10_PRINTED235_242",
+            "READY_VERIFIED",Version);
+        // G6 Arabic General U04L01: estimate fraction products using benchmarks,
+        // compatible whole numbers, and teacher-reviewed strip/area models.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:01:STUDENT-AR-128","fractions.estimate_product",
+            "FRACTION_PRODUCT_BENCHMARKS_AND_COMPATIBLE_NUMBERS",
+            ["uae.g5.u09.l02.estimate_fraction_product_quarters","uae.g5.u09.l02.estimate_whole_fraction_compatible"],
+            "G6_GENERAL_STUDENT_U04L01_PRINTED253_260",
+            "READY_VERIFIED",Version);
+        // G6 General Arabic U04L02: fraction times whole; reuse existing G4 exact model/product engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:02:STUDENT-AR-128","fractions.multiply_whole",
+            "FRACTION_WHOLE_PRODUCT_MODEL_AND_MIXED_NUMBER",
+            ["uae.g4.u09.l08.model_repeated_sum","uae.g4.u09.l08.model_unit_fraction_count","uae.g4.u09.l09.product_numerator","uae.g4.u09.l09.product_whole","uae.g4.u09.l09.product_remainder"],
+            "G6_GENERAL_STUDENT_U04L02_PRINTED261_268",
+            "READY_VERIFIED",Version);
+        // G6 General Arabic U04L03: fraction pair with simplified exact answer; reuse G4 whole fraction family.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:03:STUDENT-AR-128","fractions.multiply",
+            "PROPER_FRACTION_PAIR_AREA_AND_CROSS_CANCELLATION",
+            ["uae.g6.u04.l03.multiply_fraction_pair_simplified","uae.g4.u09.l09.product_whole"],
+            "G6_GENERAL_STUDENT_U04L03_PRINTED269_276",
+            "READY_VERIFIED",Version);
+        // G6 Arabic General U04L04: mixed number products and factor scaling; reuse G5 families + scoped mixed x whole extension.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:04:STUDENT-AR-128","fractions.multiply_mixed",
+            "MIXED_NUMBER_PRODUCTS_CROSS_CANCELLATION_SCALING",
+            ["uae.g5.u09.l07.multiply_two_mixed","uae.g5.u09.l07.multiply_mixed_by_fraction","uae.g5.u09.l08.classify_scaling","uae.g6.u04.l04.multiply_mixed_by_whole"],
+            "G6_GENERAL_STUDENT_U04L04_PRINTED277_284",
+            "READY_VERIFIED",Version);
+        // G6 Arabic General U04L05: exact customary unit conversion via scoped ratio adapter.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:05:STUDENT-AR-128","measurement.customary.conversion",
+            "CUSTOMARY_UNIT_RATIO_FORWARD_AND_REVERSE",
+            ["uae.g6.u04.l05.to_smaller_exact","uae.g6.u04.l05.to_larger_exact"],
+            "G6_GENERAL_STUDENT_U04L05_PRINTED285_292",
+            "READY_VERIFIED",Version);
+        // G6 General U04L06 inquiry: four-step graph/bar model; numeric subskill only via reused ratio families.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:06:STUDENT-AR-128","ratio.unit_rate",
+            "BAR_MODEL_PART_WHOLE_INQUIRY_TEACHER_REVIEW",
+            ["ratio.unit_rate.divide_total","ratio.unit_rate.equivalent_ratio"],
+            "G6_GENERAL_STUDENT_U04L06_PRINTED293_295_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
+        // G6 Arabic General U04L07 lab: exact fraction counts only, visual model teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:07:STUDENT-AR-128","fractions.divide.whole_by_fraction",
+            "WHOLE_BY_UNIT_AND_NONUNIT_FRACTION_BAR_GROUPS",
+            ["uae.g5.u09.l09.whole_divide_unit_fraction","uae.g6.u04.l07.whole_divide_nonunit_fraction"],
+            "G6_GENERAL_STUDENT_U04L07_PRINTED297_300",
+            "READY_VERIFIED",Version);
+        // G6 Arabic General U04L08: reciprocal, unit/nonunit whole division, reuse G5 class.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:08:STUDENT-AR-128","fractions.divide.whole_by_fraction",
+            "RECIPROCAL_WHOLE_BY_FRACTION_AND_MULTIPLICATION_CHECK",
+            ["uae.g6.u04.l08.reciprocal_number","uae.g6.u04.l07.whole_divide_nonunit_fraction","uae.g5.u09.l09.whole_divide_unit_fraction"],
+            "G6_GENERAL_STUDENT_U04L08_PRINTED301_308",
+            "READY_VERIFIED",Version);
+        // G6 General Arabic U04L09: bar-model exploration, exact fraction pair & fraction by whole, teacher evaluates drawings.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:09:STUDENT-AR-128","fractions.divide.fraction_by_fraction",
+            "EXPLORATION_EQUAL_PARTS_FRACTION_DIVISION_TEACHER_BAR_REVIEW",
+            ["uae.g6.u04.l09.fraction_divide_fraction","uae.g6.u04.l09.fraction_divide_whole","uae.g5.u09.l09.unit_fraction_divide_whole"],
+            "G6_GENERAL_STUDENT_U04L09_PRINTED309_312",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U04L10: fraction division and fraction by whole; exact existing U04L09 families.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:10:STUDENT-AR-128","fractions.divide.fraction_by_fraction",
+            "FRACTION_DIVISION_RECIPROCAL_AND_MULTIPLICATION_CHECK",
+            ["uae.g6.u04.l09.fraction_divide_fraction","uae.g6.u04.l09.fraction_divide_whole","uae.g5.u09.l09.unit_fraction_divide_whole"],
+            "G6_GENERAL_STUDENT_U04L10_PRINTED313_320",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U04L11: mixed-number division including mixed/whole and mixed/mixed, exact existing G5 pipeline.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:11:STUDENT-AR-128","fractions.divide.mixed",
+            "MIXED_NUMBER_DIVISION_CONVERT_RECIPROCAL_CHECK",
+            ["uae.g6.u04.l11.mixed_fraction_division_exact","uae.g6.u04.l09.fraction_divide_fraction"],
+            "G6_GENERAL_STUDENT_U04L11_PRINTED321_328",
+            "READY_VERIFIED",Version);
+        // G6 Arabic Unit5 L01: integer positions and opposites; numeric only, learner line drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:01:STUDENT-AR-128","number.integers.signed_positions",
+            "SIGNED_SEA_LEVEL_POSITION_AND_OPPOSITE_NUMBER_LINE_LAB",
+            ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L01_PRINTED339_340",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05 L02: exact signed positions/opposites and set extrema; drawn lines teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:02:STUDENT-AR-128","number.integers.signed_positions",
+            "GRAPH_SINGLE_AND_GROUPED_INTEGERS_HORIZONTAL_VERTICAL_CONTEXT",
+            ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l02.signed_plot_set_extremum"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L02_PRINTED341_348",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L03: exact distance from zero, existing signed number model and opposites, drawings teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:03:STUDENT-AR-128","number.integers.absolute_distance",
+            "NUMBER_LINE_DISTANCE_AND_OPPOSITE_SYMMETRY",
+            ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l01.signed_position"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L03_PRINTED349_350",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L04: absolute distance, opposites and sum/difference expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:04:STUDENT-AR-128","number.integers.absolute_distance",
+            "ABSOLUTE_DISTANCE_OPPOSITES_SUM_AND_DIFFERENCE",
+            ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l04.absolute_expression"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L04_PRINTED351_358",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L05 signed integer comparisons and ordering, exact numeric/scalar subskills only.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:05:STUDENT-AR-128","number.integers.signed_comparison",
+            "COMPARE_SIGNED_INTEGER_VALUES_ORDER_GROUPS_AND_CONTEXT",
+            ["uae.g6.u05.l05.compare_signed_integers","uae.g6.u05.l05.order_integer_set","uae.g6.u05.l02.signed_plot_set_extremum"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L05_PRINTED359_366",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L06: work backwards temperature and schedule; context reasoning teacher assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:06:STUDENT-AR-128","problem_solving.work_backward",
+            "FOUR_STEP_UNDERSTAND_PLAN_SOLVE_CHECK_REVERSE_STRATEGY",
+            ["uae.g6.u05.l06.work_backward_temperature","uae.g6.u05.l06.work_backward_schedule","uae.g6.u05.l05.compare_signed_integers"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L06_PRINTED367_369",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L07: signed rational comparison and position relative to zero; student lines teacher assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:07:STUDENT-AR-128","number.rational.signed_number_line",
+            "NUMBER_LINE_SIGNED_RATIONAL_EXPLORATION_AND_EXACT_COMPARISON",
+            ["uae.g6.u05.l07.compare_signed_rationals","uae.g6.u05.l07.rational_relative_zero"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L07_PRINTED371_374",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L08: exact recurring/terminating rational decimal conversion, reuse Grade5 fraction-decimal.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:08:STUDENT-AR-128","number.rational.terminating_repeating_decimal",
+            "RATIONAL_DECIMAL_CONVERSION_PERIODIC_BAR_AND_DENOMINATOR_CLASSIFICATION",
+            ["uae.g5.u07.l08.reducible_fraction_to_decimal","uae.g6.u05.l08.classify_fraction_decimal","uae.g6.u05.l08.fraction_exact_decimal"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L08_PRINTED375_382",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L09: signed mixed fraction/decimal comparison and four-item ordering; exact cross-products.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:09:STUDENT-AR-128","number.rational.signed_comparison_order",
+            "COMPARE_AND_ORDER_SIGNED_RATIONAL_DECIMALS_AND_FRACTIONS",
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals","uae.g6.u05.l09.order_four_signed_rationals"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L09_PRINTED383_390",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L10 exact quadrants and reflections. Freehand plotting teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:10:STUDENT-AR-128","geometry.coordinate_plane.signed",
+            "SIGNED_QUADRANTS_AXES_AND_REFLECTIONS",
+            ["uae.g6.u05.l10.coordinate_region","uae.g6.u05.l10.reflect_across_x","uae.g6.u05.l10.reflect_across_y"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L10_PRINTED391_398",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L11: plotting with signed quarter-coordinates, two reflections,
+        // perpendicular mirrored-point distance and original right triangle area.
+        // Freehand graph/shape review remains with the teacher.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:11:STUDENT-AR-128","geometry.coordinate_plane.plotting",
+            "QUARTER_COORDINATE_POINTS_DOUBLE_REFLECTIONS_DISTANCE_TRIANGLES",
+            ["uae.g6.u05.l11.plot_from_signed_moves","uae.g6.u05.l11.reflect_both_axes","uae.g6.u05.l11.mirror_separation","uae.g6.u05.l11.axis_aligned_triangle_area"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L11_PRINTED399_406",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U05L12 lab: bounded axis-aligned horizontal/vertical distances;
+        // student-drawn connections, tables and narrative require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:12:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:12:STUDENT-AR-128","geometry.coordinate_plane.axis_distance",
+            "ABSOLUTE_DIFFERENCE_SAME_X_OR_Y_AND_SIGNED_ENDPOINTS",
+            ["uae.g6.u05.l12.distance_same_y","uae.g6.u05.l12.distance_same_x","uae.g6.u05.l12.find_horizontal_endpoint","uae.g6.u05.l12.find_vertical_endpoint"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L12_PRINTED407_410",
+            "READY_VERIFIED",Version);
+        // G6 General Arabic U06L01 expression structure, terms and repeated grouped factors.
+        // Bar drawings and argumentation require teacher review, not false auto-grading.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:01:STUDENT-AR-128","algebra.expressions.structure",
+            "REPEATED_SUM_GROUPS_OUTER_OPERATOR_AND_SUM_FACTOR",
+            ["uae.g6.u06.l01.classify_outer_operation","uae.g6.u06.l01.count_repeated_groups","uae.g6.u06.l01.identify_sum_factor"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L01_PRINTED423_426",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U06L02 powers: integer, decimal, fraction bases, ten powers and squares.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:02:STUDENT-AR-128","number.exponents.positive_integer",
+            "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION_TEN_SQUARE",
+            ["uae.g6.u06.l02.repeated_to_power","uae.g6.u06.l02.integer_power","uae.g6.u06.l02.decimal_power","uae.g6.u06.l02.fraction_power","uae.g6.u06.l02.ten_power","uae.g6.u06.l02.power_addition","uae.g6.u06.l02.perfect_square"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L02_PRINTED427_434",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U06L03: reuse Grade4 multiply-before-add; extend for left-to-right,
+        // parentheses, exponents and multi-item real-world costs with exact arithmetic.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:03:STUDENT-AR-128","algebra.order_of_operations",
+            "PARENTHESES_EXPONENTS_LEFT_TO_RIGHT_MULTIPLY_DIVIDE_COSTS",
+            ["uae.g4.u07.l07.order_multiply_before_add","uae.g6.u06.l03.sum_sub_left_right","uae.g6.u06.l03.division_multiplication_left_right","uae.g6.u06.l03.parenthesis_first","uae.g6.u06.l03.exponent_then_multiply","uae.g6.u06.l03.two_item_cost","uae.g6.u06.l03.first_operation"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L03_PRINTED435_442",
+            "READY_VERIFIED",Version);
+        // G6 U06L04: bounded exact substitution, multi-variable formulas,
+        // decimal/fraction powers, geometric volume and contextual cost.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:04:STUDENT-AR-128","algebra.variables.evaluate_expressions",
+            "SUBSTITUTE_ONE_AND_TWO_VARIABLES_FRACTION_SQUARE_CUBE_COST",
+            ["uae.g6.u06.l04.substitute_add","uae.g6.u06.l04.substitute_difference","uae.g6.u06.l04.substitute_product","uae.g6.u06.l04.substitute_division","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l04.fraction_squared","uae.g6.u06.l04.two_variable_expression","uae.g6.u06.l04.cube_volume","uae.g6.u06.l04.money_remaining"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L04_PRINTED443_450",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U06L05: bar-model lab, bounded writing of simple expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:05:STUDENT-AR-128","algebra.expressions.word_to_model",
+            "WORD_DESCRIPTION_TO_BAR_MODEL_AND_SYMBOLIC_EXPRESSION",
+            ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l05.repeated","uae.g6.u06.l05.groups_plus","uae.g6.u06.l05.operation_type"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L05_PRINTED451_454",
+            "READY_VERIFIED",Version);
+        // Grade6 Arabic U06L06 writing one- and two-step algebra expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:06:STUDENT-AR-128","algebra.expressions.write_two_step",
+            "DEFINE_VARIABLE_WRITE_TWO_STEP_AND_GROUPED_EXPRESSIONS",
+            ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l06.multiple_minus","uae.g6.u06.l06.multiple_plus","uae.g6.u06.l06.fixed_minus_variable","uae.g6.u06.l06.grouped_ticket_cost","uae.g6.u06.l06.inches_to_centimeters","uae.g6.u06.l06.percentage_markup"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L06_PRINTED455_462",
+            "READY_VERIFIED",Version);
+        // G6 Arabic U06L07 teacher-led model-it inquiry: numeric subskills only.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:07:STUDENT-AR-128","problem_solving.models",
+            "MODEL_TABULAR_SEATING_STAIRCASE_SAVINGS_EQUAL_TEAMS_VOTES",
+            ["uae.g6.u06.l07.table_seats","uae.g6.u06.l07.staircase_squares","uae.g6.u06.l07.savings_after_weeks","uae.g6.u06.l07.equal_team_size","uae.g6.u06.l07.fractional_votes"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L07_PRINTED463_465",
+            "READY_VERIFIED",Version);
+        // G6 U06L08: reuse G4 additive and multiplicative property engines.
+        // Negative examples for subtraction/division covered by scoped classification.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:08:STUDENT-AR-128","algebra.equivalent_properties",
+            "COMMUTATIVE_ASSOCIATIVE_IDENTITY_AND_INVALID_SUBTRACTION_DIVISION",
+            ["uae.g4.u02.l01.commutative_add","uae.g4.u02.l01.associative_add","uae.g4.u02.l01.additive_identity","uae.g4.u03.l05.identity","uae.g4.u03.l06.grouped_product","uae.g6.u06.l08.classify_property","uae.g6.u06.l08.rewrite_associative","uae.g6.u06.l08.triangle_area_reordered"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L08_PRINTED467_474",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

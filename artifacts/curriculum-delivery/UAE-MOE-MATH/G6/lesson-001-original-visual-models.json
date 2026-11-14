@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "originalAuthored": true,
+  "lesson": "UAE G6 General U01 L01 العوامل والمضاعفات",
+  "visuals": [
+    {
+      "id": "g6u1l1-number-line",
+      "kind": "number-line-multiples",
+      "range": {
+        "start": 0,
+        "end": 24,
+        "increment": 2
+      },
+      "multipliers": [
+        4,
+        6
+      ],
+      "marks": [
+        {
+          "number": 4,
+          "multipleOf": [
+            4
+          ]
+        },
+        {
+          "number": 6,
+          "multipleOf": [
+            6
+          ]
+        },
+        {
+          "number": 8,
+          "multipleOf": [
+            4
+          ]
+        },
+        {
+          "number": 12,
+          "multipleOf": [
+            4,
+            6
+          ]
+        },
+        {
+          "number": 16,
+          "multipleOf": [
+            4
+          ]
+        },
+        {
+          "number": 18,
+          "multipleOf": [
+            6
+          ]
+        },
+        {
+          "number": 20,
+          "multipleOf": [
+            4
+          ]
+        },
+        {
+          "number": 24,
+          "multipleOf": [
+            4,
+            6
+          ]
+        }
+      ],
+      "firstCommonPositive": 12,
+      "notes": "Include zero as the origin marker only, not as LCM. Learner can mark all multiples up to 24.",
+      "status": "MODEL_DATA_ONLY_NOT_RENDERED"
+    },
+    {
+      "id": "g6u1l1-factor-tree",
+      "kind": "prime-factor-tree",
+      "values": [
+        {
+          "value": 24,
+          "primeLeaves": [
+            2,
+            2,
+            2,
+            3
+          ]
+        },
+        {
+          "value": 36,
+          "primeLeaves": [
+            2,
+            2,
+            3,
+            3
+          ]
+        }
+      ],
+      "greatestCommonFactor": 12,
+      "leastCommonMultiple": 72,
+      "notes": "Use original plotted nodes/edges; do not copy publisher illustrations.",
+      "status": "MODEL_DATA_ONLY_NOT_RENDERED"
+    }
+  ],
+  "teacherRubric": {
+    "criteria": [
+      "Shows a mathematically valid factor or multiple model",
+      "Identifies first positive simultaneous multiple on number line or all shared prime factors",
+      "Explains whether real-world story asks for GCF or LCM"
+    ],
+    "grading": "TEACHER_REVIEW_REQUIRED",
+    "automatedGrade": false
+  },
+  "testsRun": "NOT_RUN"
+}
