@@ -364,6 +364,65 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.SignedCartesianPlot)
+    {
+        // Signed coordinates with four quadrants. Existing CartesianPlot remains unchanged.
+        var points=new List<(string Name,double X,double Y)>();
+        foreach (var row in Model.Rows)
+        {
+            if(row.Cells.Count<2 ||
+               !double.TryParse(row.Cells[0],System.Globalization.NumberStyles.Float,
+                   System.Globalization.CultureInfo.InvariantCulture,out var x) ||
+               !double.TryParse(row.Cells[1],System.Globalization.NumberStyles.Float,
+                   System.Globalization.CultureInfo.InvariantCulture,out var y) ||
+               !double.IsFinite(x)||!double.IsFinite(y)||
+               x< -5||x>5||y< -5||y>5) continue;
+            points.Add((row.Label,x,y));
+        }
+        <div class="rich-lesson-cartesian" dir="ltr">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 460"
+                 role="img" aria-label="@Model.Description"
+                 style="width:100%;height:auto;max-width:700px">
+                <title>@Model.Title</title><desc>@Model.Description</desc>
+                @for(var tick=-5;tick<=5;tick++)
+                {
+                    var px=330+tick*35;var py=225-tick*35;
+                    <line x1="@px" y1="50" x2="@px" y2="400" stroke="currentColor" stroke-opacity=".15"/>
+                    <line x1="155" y1="@py" x2="505" y2="@py" stroke="currentColor" stroke-opacity=".15"/>
+                    @if(tick!=0)
+                    {
+                        <text x="@px" y="243" text-anchor="middle" font-size="12" fill="currentColor">@tick</text>
+                        <text x="320" y="@(py+4)" text-anchor="end" font-size="12" fill="currentColor">@tick</text>
+                    }
+                }
+                <line x1="145" y1="225" x2="515" y2="225" stroke="currentColor" stroke-width="2.5"/>
+                <line x1="330" y1="40" x2="330" y2="410" stroke="currentColor" stroke-width="2.5"/>
+                <text x="337" y="242" font-size="13" fill="currentColor">0</text>
+                <text x="520" y="220" font-size="18" fill="currentColor">x</text>
+                <text x="337" y="35" font-size="18" fill="currentColor">y</text>
+                @foreach(var point in points)
+                {
+                    var px=330d+point.X*35d;var py=225d-point.Y*35d;
+                    <circle cx="@px" cy="@py" r="5.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+                    <text x="@(px+8)" y="@(py-8)" font-size="13" fill="currentColor">@point.Name</text>
+                }
+            </svg>
+        </div>
+        <div class="rich-lesson-table-wrap">
+            <table class="rich-lesson-table">
+                <caption>@Model.Title — إحداثيات النقاط</caption>
+                <thead><tr><th scope="col">النقطة</th><th scope="col">س (x)</th><th scope="col">ص (y)</th></tr></thead>
+                <tbody>
+                @foreach(var point in points)
+                {
+                    <tr><th scope="row">@point.Name</th>
+                        <td>@point.X.ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)</td>
+                        <td>@point.Y.ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)</td></tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

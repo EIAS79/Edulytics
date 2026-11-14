@@ -20,14 +20,36 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string SignedRationalSide="uae.g6.u05.l07.rational_relative_zero";
     internal const string MixedRationalCompare="uae.g6.u05.l09.compare_mixed_signed_rationals";
     internal const string FourRationalOrder="uae.g6.u05.l09.order_four_signed_rationals";
+    internal const string CoordinateRegion="uae.g6.u05.l10.coordinate_region";
+    internal const string ReflectAcrossX="uae.g6.u05.l10.reflect_across_x";
+    internal const string ReflectAcrossY="uae.g6.u05.l10.reflect_across_y";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder or CoordinateRegion or ReflectAcrossX or ReflectAcrossY;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
+        {
+            int x2=random.Next(-10,11),y2=random.Next(-10,11);
+            var p=new Dictionary<string,int>{{"x2",x2},{"y2",y2}};
+            string at=$"({FormatHalf(x2)},{FormatHalf(y2)})";
+            string prompt=family switch
+            {
+                CoordinateRegion=>$"حدد موقع النقطة {at}. اكتب الأول أو الثاني أو الثالث أو الرابع أو المحور السيني أو المحور الصادي أو الأصل.",
+                ReflectAcrossX=>$"اكتب صورة النقطة {at} عند الانعكاس حول المحور السيني x بالصيغة (س،ص).",
+                _=>$"اكتب صورة النقطة {at} عند الانعكاس حول المحور الصادي y بالصيغة (س،ص)."
+            };
+            string hint=family switch
+            {
+                CoordinateRegion=>"إشارتا س وص تحددان الربع؛ المحاور والأصل خارج الأرباع.",
+                ReflectAcrossX=>"احتفظ بس وغيّر إشارة ص فقط.",
+                _=>"احتفظ بص وغيّر إشارة س فقط."
+            };
+            return new Item(family,prompt,hint,AssessmentItemType.ShortAnswer,p);
+        }
         if(family is MixedRationalCompare or FourRationalOrder)
         {
             int[] denominators=[2,4,5,8,10,12,16,20,25,100];
@@ -174,6 +196,27 @@ internal static class UaeG6U5L01SignedNumbersQuestions
 
 
 
+    // Signed Cartesian pairs use integer half-units for exact grading.
+    private static string FormatHalf(int halves) =>
+        (halves/2m).ToString("0.#",CultureInfo.InvariantCulture);
+    private static bool TryCoordinateAnswer(string family,IReadOnlyDictionary<string,int>? p,out string result)
+    {
+        result="";
+        if(family is not (CoordinateRegion or ReflectAcrossX or ReflectAcrossY)||
+           p is null||p.Count!=2||!p.TryGetValue("x2",out int x2)||
+           !p.TryGetValue("y2",out int y2)||
+           x2 is <-10 or >10||y2 is <-10 or >10)return false;
+        if(family==CoordinateRegion)
+        {
+            result=x2==0&&y2==0?"الأصل":y2==0?"المحور السيني":
+                x2==0?"المحور الصادي":x2>0&&y2>0?"الأول":
+                x2<0&&y2>0?"الثاني":x2<0&&y2<0?"الثالث":"الرابع";
+            return true;
+        }
+        result=$"({FormatHalf(family==ReflectAcrossY?-x2:x2)},{FormatHalf(family==ReflectAcrossX?-y2:y2)})";
+        return true;
+    }
+
     // U05L09 scoped exact comparison of positive and negative fractions, decimals, mixed values.
     // Denominators remain positive and all comparison uses integer cross-products.
     private static bool TryMixedRationalCompare(IReadOnlyDictionary<string,int>? p,out string result)
@@ -283,7 +326,7 @@ internal static class UaeG6U5L01SignedNumbersQuestions
             .Select(ch=>ch switch{
                 >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
                 >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
-                '−' or '–'=>'-','،'=>',',_=>ch}).ToArray());
+                '−' or '–'=>'-','،'=>',','٫'=>'.',_=>ch}).ToArray());
     }
 
     private static bool Valid(string family,IReadOnlyDictionary<string,int>? p,out int answer)
@@ -328,6 +371,9 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
+            return TryCoordinateAnswer(family,p,out string result)?result:
+                throw new InvalidOperationException("Invalid coordinate parameters.");
         if(family==MixedRationalCompare)
             return TryMixedRationalCompare(p,out string symbol)?symbol:
                 throw new InvalidOperationException("Invalid mixed-rational comparison.");
@@ -356,6 +402,12 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
+        {
+            if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||
+                !TryCoordinateAnswer(family,p,out string result))return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),result,StringComparison.Ordinal);
+        }
         if(family is MixedRationalCompare or FourRationalOrder)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80)return false;

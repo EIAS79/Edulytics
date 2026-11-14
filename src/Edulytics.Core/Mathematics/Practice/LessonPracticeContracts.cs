@@ -9109,6 +9109,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l09.compare_mixed_signed_rationals","uae.g6.u05.l09.order_four_signed_rationals"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L09_PRINTED383_390",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L10 exact quadrants and reflections. Freehand plotting teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:10:STUDENT-AR-128","geometry.coordinate_plane.signed",
+            "SIGNED_QUADRANTS_AXES_AND_REFLECTIONS",
+            ["uae.g6.u05.l10.coordinate_region","uae.g6.u05.l10.reflect_across_x","uae.g6.u05.l10.reflect_across_y"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L10_PRINTED391_398",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
