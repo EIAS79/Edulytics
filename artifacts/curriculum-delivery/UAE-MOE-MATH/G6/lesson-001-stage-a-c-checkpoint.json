@@ -10,7 +10,7 @@
   "sourcePagesPdf": "48-55",
   "sourcePagesPrinted": "7-14",
   "stageA": {
-    "status": "A_C_EXPLICIT_GAP",
+    "status": "CLOSED_SELECTED_LOCAL_SOURCE_ONLY",
     "verified": [
       "Title, topic, TOC position and book pages",
       "GCF and LCM definitions",
@@ -23,24 +23,27 @@
     ]
   },
   "stageB": {
-    "status": "PARTIAL_CANDIDATE_ONLY",
+    "status": "CLOSED_ORIGINAL_ARABIC_RICHV2_AND_DRAFT_CANONICAL_STAGED",
     "implemented": [
       "Original Arabic authored draft stored at artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json, while immutable 59-lesson English pack restored byte-identically",
       "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down",
-      "Original editable numeric number-line and prime-factor-tree model data authored in lesson-001-original-visual-models.json; renderer has NOT been connected"
+      "Original editable numeric number-line and prime-factor-tree model data authored in lesson-001-original-visual-models.json; renderer has NOT been connected",
+      "Staged exact production RichV2 file src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g6-general-u01-l01-ar.rich-lesson-v2.json with 5 worked examples, 5 key concepts, 4 misconception repairs, three visual kinds",
+      "Staged independent source-ordered Grade6 Arabic 128-lesson blueprint VersionCode=MOE-2026-2027-AR-LOCAL-128 and Draft canonical content pack AcademicLanguage=ar for L01",
+      "Registered 6 existing G5 GCF/LCM Practice families for exact new source identity in LessonPracticeContractRegistry without creating a new engine"
     ],
     "issues": [
-      "No effective U01:L01 Arabic learner binding yet",
-      "Original visual model DATA now exists, but real interactive RichV2 page rendering remains unwired and untested",
-      "Pack-level AcademicLanguage remains en to avoid breaking other 58 lessons",
-      "Original Arabic G6 L01 remains CANDIDATE_ONLY; no runtime content change until new Grade6 Arabic source-version and safe identity bridge"
+      "New Arabic RichV2 content is embedded for exact new U01:L01 identity; browser rendering verification deferred to Stage D.",
+      "Original factor tree is represented by prime-factor equations; rich original tree model data is separately staged, interactive tree UI remains a Stage D visual follow-up.",
+      "Draft canonical 128-scope content pack includes only verified U01:L01; other lessons not synthesized."
     ]
   },
   "stageC": {
-    "status": "PARTIAL",
+    "status": "CLOSED_EXACT_REUSED_GCF_LCM_REGISTRY_STAGED",
     "reuse": [
       "UaeGrade4Unit8Lesson01FactorMultipleQuestions existing G5 GCF/LCM family logic as candidate for reuse via separate G6 aliases; do not create duplicate engine",
-      "Independent positive/negative/ar-digit C# tests written against existing engine in UaeG6Unit01Lesson01ReuseGcfLcmTests.cs; not executed"
+      "Independent positive/negative/ar-digit C# tests written against existing engine in UaeG6Unit01Lesson01ReuseGcfLcmTests.cs; not executed",
+      "Production Grade6 source identity directs to existing exact question engine via LessonPracticeContractRegistry READY_VERIFIED for numeric subskills; explanation and diagrams teacher assessed."
     ],
     "mathSpotChecks": [
       {
@@ -69,28 +72,32 @@
       }
     ],
     "targetedMathChecksExecuted": 6,
-    "targetedChecksStatus": "PASS_IN_MEMORY_ARITHMETIC_ONLY",
+    "targetedChecksStatus": "PASS_STATIC_JSON_AND_MATH_ONLY",
     "jsonParseCheck": "PASS",
     "testsRunInRepo": "NOT_RUN",
     "issues": [
-      "G6 exact family registration, renderer and independent verifier wiring not implemented or executed",
-      "No compiled .NET tests and no RTL browser test in Stage A-C",
-      "Candidate source-first G6 numeric skill contract stored in lesson-001-skill-contract-candidate.json; no canonical lesson registration yet."
+      "Actual .NET/CI and learner-browser RTL acceptance reserved for Stage D; tests authored not manually run",
+      "Versioned 128-item Draft pack currently has only one Arabic lesson: other 127 not ready; no production migration.",
+      "NumberLine and EquationSet representations are embedded; graphical appearance is Stage D validation."
     ]
   },
-  "readyForStageD": false,
-  "closed": false,
-  "firstIncompleteLessonOrdinal": 1,
+  "readyForStageD": true,
+  "closed": true,
+  "firstIncompleteLessonOrdinal": 2,
   "reasonNotClosed": "Source order is not yet reflected in the effective app route; G6 families and actual visual models remain unwired",
   "sourceRights": "Only internally recorded textbook SHA/page positions. New explanatory wording is Edulytics-authored; publisher images and passages not copied.",
   "githubBranch": "curriculum/uae-g6-common-student-first-abc-20261114",
   "modifiedPaths": [
     "docs/curriculum/EDULYTICS_UAE_GRADE_6_STAGE_A_B_C_STRICT_TEMPLATE_EXECUTION_PLAN.md",
-    "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json"
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json",
+    "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g6-general-ar128-student-local-v1.lesson-blueprint.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g6-general-ar128-student-local-v1.lesson-content-pack.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g6-general-u01-l01-ar.rich-lesson-v2.json",
+    "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
   ],
-  "checkpointState": "A_C_EXPLICIT_GAP",
-  "nextLessonAllowed": false,
-  "testsRun": "NOT_RUN (.NET/CI not manually triggered; PR workflows run automatically under repository policy)",
+  "checkpointState": "READY_FOR_STAGE_D",
+  "nextLessonAllowed": true,
+  "testsRun": "NOT_RUN (owner-directed Stage A-B-C; static JSON/math checks executed in memory; GitHub auto CI independent)",
   "githubPr": 637,
   "expectedLegacyMainPackContentSha": "ce794587ff6c386bd212c9794e24c53a620a6e53",
   "legacyMainPackRestored": true,
@@ -114,5 +121,20 @@
   "targetedSourceElements": 11,
   "testsWritten": [
     "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6Unit01Lesson01ReuseGcfLcmTests.cs"
-  ]
+  ],
+  "staticChecks": {
+    "counts": true,
+    "code": true,
+    "arabic": true,
+    "contentSchema": true,
+    "visual": true,
+    "exercises": true,
+    "engine": true,
+    "math": true,
+    "source": true,
+    "priorReady": true
+  },
+  "stagedNotPublished": true,
+  "manualCiRuns": 0,
+  "StageD": "NOT_RUN"
 }

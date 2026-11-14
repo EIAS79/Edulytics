@@ -16,16 +16,17 @@
   "verifiedTocInstructionalItemCount": 128,
   "sourceBodyCoverageComplete": false,
   "gradeLessonCount": 128,
-  "closedLessons": 0,
-  "firstIncompleteLessonOrdinal": 1,
-  "lastClosedLessonOrdinal": 0,
+  "closedLessons": 1,
+  "firstIncompleteLessonOrdinal": 2,
+  "lastClosedLessonOrdinal": 1,
   "readyForStageD": false,
   "unitStates": [
     {
       "unit": 1,
       "sourceIndexElements": 11,
-      "closed": 0,
-      "readyForStageD": false
+      "closed": 1,
+      "readyForStageD": false,
+      "status": "IN_PROGRESS"
     },
     {
       "unit": 2,
@@ -96,25 +97,16 @@
   ],
   "current": {
     "unit": 1,
-    "lesson": 1,
-    "title": "العوامل والمضاعفات",
-    "status": "A_C_EXPLICIT_GAP",
-    "sourcePagesPdf": [
-      48,
-      55
+    "lesson": 2,
+    "title": "مختبر الاستكشاف: النسب",
+    "status": "SOURCE_PENDING",
+    "sourcePdfPages": [
+      56,
+      59
     ],
     "sourcePagesPrinted": [
-      7,
-      14
-    ],
-    "content": "ORIGINAL_ARABIC_CANDIDATE_ONLY",
-    "skillContract": "REUSE_EXISTING_FAMILIES_CANDIDATE_ONLY",
-    "visualModels": "AUTHORED_DATA_NOT_RENDERED",
-    "testFile": "WRITTEN_NOT_RUN",
-    "unresolved": [
-      "Separate versioned source-first Arabic Grade6 blueprint and safe mapping from legacy 59 General records",
-      "Exact runtime content/skill binding for new U01:L01",
-      "Visual RichV2 render and real learner interaction"
+      15,
+      18
     ]
   },
   "sourceIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/source-index.json",
@@ -129,6 +121,10 @@
   "notes": [
     "No lessons closed. Do not advance to ordinal 2 before completing and committing ordinal 1.",
     "The 128 figure is visually established for the selected student's full-year TOC, not all individual source body parity.",
-    "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs."
-  ]
+    "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs.",
+    "U01:L01 first lesson READY_FOR_STAGE_D based on Grade5-equivalent authored/static A-B-C closure criteria; no .NET/CI manually run, no StageD/production migration. U01:L02 is next; old English 59 intact."
+  ],
+  "A_B_C_Ready": 1,
+  "A_B_C_InProgress": 1,
+  "lastClosedContentScope": "01-1.pdf printed pp 7–14; PDF pp 48–55. GCF/LCM reuse and 3 RichV2 visual representations staged"
 }
