@@ -8983,6 +8983,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u09.l08.model_repeated_sum","uae.g4.u09.l08.model_unit_fraction_count","uae.g4.u09.l09.product_numerator","uae.g4.u09.l09.product_whole","uae.g4.u09.l09.product_remainder"],
             "G6_GENERAL_STUDENT_U04L02_PRINTED261_268",
             "READY_VERIFIED",Version);
+        // G6 General Arabic U04L03: fraction pair with simplified exact answer; reuse G4 whole fraction family.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:03:STUDENT-AR-128","fractions.multiply",
+            "PROPER_FRACTION_PAIR_AREA_AND_CROSS_CANCELLATION",
+            ["uae.g6.u04.l03.multiply_fraction_pair_simplified","uae.g4.u09.l09.product_whole"],
+            "G6_GENERAL_STUDENT_U04L03_PRINTED269_276",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
