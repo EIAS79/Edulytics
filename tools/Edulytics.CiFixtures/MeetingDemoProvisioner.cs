@@ -1323,7 +1323,17 @@ DELETE FROM "Schools";
             definition.PrimaryLoginLogicalLevel,
             // UAE-G5 disposable CI must authenticate the General learner, not
             // the alphabetically first Advanced class. Do not alter live/demo tenants.
-            disposableCi && ciProgramme == "UAE-G5" && definition.Key == "uae-primary"
+            definition.Key == "uae-primary" &&
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G5", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal) &&
+            string.Equals(db.Database.GetDbConnection().Database,
+                "edulytics_clean_ci", StringComparison.Ordinal)
                 ? "General"
                 : null);
 
