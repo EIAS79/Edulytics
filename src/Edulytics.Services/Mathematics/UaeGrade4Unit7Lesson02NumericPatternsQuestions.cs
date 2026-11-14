@@ -87,7 +87,7 @@ internal static class UaeGrade4Unit7Lesson02NumericPatternsQuestions
             actual==expected;
     }
 
-    
+
     // Grade 5 Unit 6 Lesson 8: numeric subskills of additive/multiplicative
     // patterns and comparisons. Reuse G4 engine; do not alter G4 constraints.
     internal const string G5L08Add="uae.g5.u06.l08.next_additive_term";
