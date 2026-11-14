@@ -8943,6 +8943,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u04.l05.large_quotient","uae.g5.u04.l05.large_remainder","uae.g5.u04.l03.two_digit_long_quotient","uae.g5.u04.l03.two_digit_long_remainder"],
             "G6_GENERAL_STUDENT_U03L07_PRINTED211_218",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic General U03L08: estimate quotients using compatible numbers.
+        // Reuse Grade5 decimal and two-digit estimate families without changing math.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:08:STUDENT-AR-128","number.division.estimate",
+            "DECIMAL_DIVISION_COMPATIBLE_NUMBER_ESTIMATION",
+            ["uae.g5.u05.l09.estimate_decimal_quotient","uae.g5.u05.l09.compatible_decimal_dividend","uae.g5.u04.l01.estimate_two_digit_quotient"],
+            "G6_GENERAL_STUDENT_U03L08_PRINTED219_226",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
