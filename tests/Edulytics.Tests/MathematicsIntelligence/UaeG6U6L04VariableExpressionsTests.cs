@@ -30,6 +30,9 @@ public sealed class UaeG6U6L04VariableExpressionsTests
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l04.substitute_product",p,"٣٠"));
         var div=new Dictionary<string,int>{{"x",20},{"d",4}};
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l04.substitute_division",div,"5"));
+        div["x"]=7;div["d"]=3;
+        Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l04.substitute_division",div,"2.333333"));
+        div["x"]=20;div["d"]=4;
         var lin=new Dictionary<string,int>{{"x",3},{"a",5},{"b",4}};
         Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l04.substitute_linear",lin,"19"));
         var two=new Dictionary<string,int>{{"x",4},{"y",9},{"cx",3},{"cy",2}};

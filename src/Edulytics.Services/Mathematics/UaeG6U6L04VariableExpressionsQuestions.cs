@@ -78,7 +78,7 @@ internal static class UaeG6U6L04VariableExpressionsQuestions
         if(family==Divide)
         {
             if(p.Count!=2||!p.TryGetValue("x",out int x)||!p.TryGetValue("d",out int d)||
-               x is <0 or >100||d is <2 or >12)return false;
+               x is <0 or >100||d is <2 or >12||x%d!=0)return false;
             expected=Format(x/(decimal)d);return true;
         }
         if(family==Add)
@@ -137,7 +137,7 @@ internal static class UaeG6U6L04VariableExpressionsQuestions
         }
         else if(family==Divide)
         {
-            int d=random.Next(2,13),x=random.Next(0,101);
+            int d=random.Next(2,13),x=random.Next(0,100/d+1)*d;
             p=new(){{"x",x},{"d",d}};
             prompt=$"إذا س={x}، احسب س÷{d} (اكتب القيمة العددية).";
         }
