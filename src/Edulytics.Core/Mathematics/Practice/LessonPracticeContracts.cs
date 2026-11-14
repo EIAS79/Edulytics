@@ -8934,6 +8934,15 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l07.arithmetic_step_pattern","uae.g5.u05.l03.unit_price_total"],
             "G6_GENERAL_STUDENT_U03L06_PRINTED207_209",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic General student U03L07: source long division
+        // of three-to-five-digit numbers. Reuse verified Grade5 quotient/
+        // remainder kernels; open vertical algorithm is teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:07:STUDENT-AR-128","number.whole.division",
+            "MULTI_DIGIT_LONG_DIVISION_AND_REMAINDERS",
+            ["uae.g5.u04.l05.large_quotient","uae.g5.u04.l05.large_remainder","uae.g5.u04.l03.two_digit_long_quotient","uae.g5.u04.l03.two_digit_long_remainder"],
+            "G6_GENERAL_STUDENT_U03L07_PRINTED211_218",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
