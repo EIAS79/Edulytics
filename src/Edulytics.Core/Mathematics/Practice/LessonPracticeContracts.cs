@@ -9257,6 +9257,13 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u07.l01.subtract","uae.g6.u07.l04.write_subtraction_model","uae.g6.u07.l04.inverse_addition_statement","uae.g6.u07.l05.decimal_subtraction","uae.g6.u07.l05.fraction_subtraction","uae.g6.u07.l05.addition_property"],
            "G6_LOCAL_BOOK2_U07L05_PRINTED529_536_TARGET2026_27_UNVERIFIED",
            "READY_VERIFIED",Version);
+        // G6 U07L06: inquiry strategy guess/check/revise, exact bounded numeric subskills only.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:06:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:07:06:STUDENT-AR-128","problem_solving.guess_check_revise",
+           "TABULAR_GUESS_CHECK_REVISE_BANKNOTES_STORIES_POINTS_SAVINGS",
+           ["uae.g6.u07.l06.banknotes","uae.g6.u07.l06.comic_sets","uae.g6.u07.l06.quiz_points","uae.g6.u07.l06.monthly_savings","uae.g6.u07.l06.operator_check"],
+           "G6_LOCAL_BOOK2_U07L06_PRINTED537_539_MIDUNIT_EXCLUDED",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
