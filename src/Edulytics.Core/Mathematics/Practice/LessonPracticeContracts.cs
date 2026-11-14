@@ -8890,6 +8890,10 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:02:10:STUDENT-AR-128","percentages.core","PRECISION_PERCENT_OF_QUANTITY_ABOVE_100_AND_BELOW_1",
             ["percentages.core.of_quantity"],
             "G6_STUDENT_U02_L10_PRINTED147_154","READY_VERIFIED",Version);
+        // Source-selected Arabic G6 U02L11 inverse percent, exact existing verifier extended.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128","percentages.core","INVERSE_PERCENT_WHOLE_UNKNOWN",
+            ["percentages.core.of_quantity"],"G6_U02L11_AR_PRINTED155_162","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

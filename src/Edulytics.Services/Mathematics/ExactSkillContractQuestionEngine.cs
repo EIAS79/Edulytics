@@ -729,6 +729,11 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
                     problem=LocalizeG6PercentOfQuantityPrecision(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    problem=LocalizeG6InversePercent(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -805,6 +810,21 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            parameters.TryGetValue("wholeUnknownPercent",out var inversePercent))
+        {
+            if (!parameters.TryGetValue("knownPart",out var part) ||
+                inversePercent is < 1 or > 100 || part < 1 ||
+                (part*100L)%inversePercent!=0)
+                return false;
+            var normalized=string.Concat((answer??"").Trim().Select(c=>c switch {
+                >= '٠' and <= '٩' => (char)('0'+c-'٠'),
+                >= '۰' and <= '۹' => (char)('0'+c-'۰'),
+                _ => c
+            }));
+            return long.TryParse(normalized,NumberStyles.Integer,CultureInfo.InvariantCulture,out var n) &&
+                n>0 && n*inversePercent==part*100L;
+        }
         if (string.Equals(family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             parameters.TryGetValue("scaledPercentHundredths",out var percentageHundredths))
         {
@@ -5536,6 +5556,23 @@ public sealed class ExactSkillContractQuestionEngine
         };
     }
 
+    private static ExactProblem LocalizeG6InversePercent(ExactProblem problem)
+    {
+        var items=new (int Percent,int Part)[] {
+            (25,10),(75,90),(30,15),(75,225),(5,15),(20,4200),
+            (15,75),(36,9),(70,7),(35,7),(90,63),(44,22)
+        };
+        var p=problem.Parameters;
+        var item=items[(p["percent"]*13+p["quantity"]/20)%items.Length];
+        var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+        x["wholeUnknownPercent"]=item.Percent; x["knownPart"]=item.Part;
+        return problem with {
+            Parameters=x,
+            Prompt=$"ما العدد الكلي إذا كانت {item.Percent}% منه تساوي {item.Part}؟",
+            Solution="الكل يساوي الجزء مضروبًا في مئة ومقسومًا على النسبة، ثم تحقق بالضرب."
+        };
+    }
+
     private static ExactProblem LocalizeUaeGrade6RatioLab(ExactProblem problem)
     {
         var p = problem.Parameters;
@@ -8570,6 +8607,10 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
+            p.TryGetValue("wholeUnknownPercent",out var inversePercent))
+            return (p["knownPart"]*100L/inversePercent).ToString(CultureInfo.InvariantCulture);
+
         if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal) &&
             p.TryGetValue("scaledPercentHundredths",out var scaledHundredths))
             return ((decimal)scaledHundredths * p["quantity"] / 10000m)
