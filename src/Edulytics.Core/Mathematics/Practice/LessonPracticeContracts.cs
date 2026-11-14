@@ -9229,6 +9229,13 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract","uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide","uae.g6.u07.l01.test_candidate"],
            "G6_LOCAL_BOOK2_U07L01_PRINTED507_514_YEAR2026_27_NOT_VERIFIED",
            "READY_VERIFIED",Version);
+        // G6 U07L02 addition lab: reuse one-step add practice and strip-model writing.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:02:STUDENT-AR-128"]=new LessonPracticeContract(
+          "PED:UAE-MOE-MATH:L6:GENERAL:07:02:STUDENT-AR-128","algebra.equations.addition_models",
+          "WRITE_ADDITION_EQUATIONS_WITH_TAPE_AND_BALANCE_MATERIALS",
+          ["uae.g6.u07.l01.add","uae.g6.u07.l02.write_tape_equation","uae.g6.u07.l02.solve_decimal_money","uae.g6.u07.l02.subtraction_form"],
+          "G6_LOCAL_BOOK2_U07L02_PRINTED515_518_YEAR2026_27_NOT_VERIFIED",
+          "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
