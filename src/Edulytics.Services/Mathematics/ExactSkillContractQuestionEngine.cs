@@ -734,6 +734,11 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
                     problem=LocalizeG6InversePercent(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (problem.Family is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference"))
+                    problem=LocalizeG6ThousandthOperations(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5570,6 +5575,32 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"ما العدد الكلي إذا كانت {item.Percent}% منه تساوي {item.Part}؟",
             Solution="الكل يساوي الجزء مضروبًا في مئة ومقسومًا على النسبة، ثم تحقق بالضرب."
+        };
+    }
+
+    private static ExactProblem LocalizeG6ThousandthOperations(ExactProblem problem)
+    {
+        var p=problem.Parameters;
+        var add=problem.Family=="uae.g4.u11.l06.column_sum";
+        var addPairs=new (int,int)[] {
+            (23100,5800),(29600,14700),(22360,17030),(14700,87900),
+            (15080,4790),(15800,2300)
+        };
+        var subPairs=new (int,int)[] {
+            (5774,2371),(6000,4780),(23000,4216),(589400,208620),
+            (9543,3671),(82000,67180)
+        };
+        var choices=add?addPairs:subPairs;
+        var chosen=choices[(p["aHundredths"]+p["bHundredths"])%choices.Length];
+        var args=p.ToDictionary(z=>z.Key,z=>z.Value);
+        args["g6Thousandths"]=1;
+        args["aThousandths"]=chosen.Item1; args["bThousandths"]=chosen.Item2;
+        string a=(chosen.Item1/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        string b=(chosen.Item2/1000m).ToString("0.###",CultureInfo.InvariantCulture);
+        return problem with {
+            Parameters=args,
+            Prompt=$"رتّب الفواصل العشرية ثم احسب {a} {(add?"+":"−")} {b}. اكتب الجواب حتى أجزاء الألف.",
+            Solution="حاذِ الفواصل وأضف الأصفار اللازمة، ثم احسب وتحقق بالعملية العكسية."
         };
     }
 

@@ -315,6 +315,18 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   if ((f is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference") &&
+       p.TryGetValue("g6Thousandths",out var enabled) && enabled==1)
+   {
+       if (!p.TryGetValue("aThousandths",out var a) ||
+           !p.TryGetValue("bThousandths",out var b) ||
+           a is <0 or >999999 || b is <0 or >999999 ||
+           (f=="uae.g4.u11.l10.column_difference" && b>a))
+           return false;
+       result=(f=="uae.g4.u11.l10.column_difference"? a-b : a+b)/1000m;
+       return true;
+   }
+
    if(IsG5DividePow(f))return ValidG5DividePow(f,p,out result);
    if(IsG5Pow(f))return ValidG5Pow(f,p,out result);
    if(IsG5Factor(f))return ValidG5Factor(f,p,out result);
@@ -340,7 +352,8 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString(IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
+    return ans.ToString(p.TryGetValue("g6Thousandths",out var enabled) && enabled==1 ?
+       "0.###" : IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {

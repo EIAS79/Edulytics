@@ -8894,6 +8894,12 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128"]=new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L6:GENERAL:02:11:STUDENT-AR-128","percentages.core","INVERSE_PERCENT_WHOLE_UNKNOWN",
             ["percentages.core.of_quantity"],"G6_U02L11_AR_PRINTED155_162","READY_VERIFIED",Version);
+        // G6 General Arabic U03L01: reuse Grade4 decimal arithmetic families
+        // extended for thousandths and original Arabic contexts.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:01:STUDENT-AR-128","decimal.arithmetic","ALIGN_ADD_SUBTRACT_TO_THOUSANDTH",
+            ["uae.g4.u11.l06.column_sum","uae.g4.u11.l10.column_difference"],
+            "G6_STUDENT_U03L01_PRINTED173_180","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

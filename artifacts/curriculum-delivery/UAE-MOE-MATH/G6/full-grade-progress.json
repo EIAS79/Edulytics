@@ -16,9 +16,9 @@
   "verifiedTocInstructionalItemCount": 128,
   "sourceBodyCoverageComplete": false,
   "gradeLessonCount": 128,
-  "closedLessons": 22,
-  "firstIncompleteLessonOrdinal": 23,
-  "lastClosedLessonOrdinal": 22,
+  "closedLessons": 23,
+  "firstIncompleteLessonOrdinal": 24,
+  "lastClosedLessonOrdinal": 23,
   "readyForStageD": false,
   "unitStates": [
     {
@@ -38,8 +38,9 @@
     {
       "unit": 3,
       "sourceIndexElements": 10,
-      "closed": 0,
-      "readyForStageD": false
+      "closed": 1,
+      "readyForStageD": false,
+      "status": "IN_PROGRESS"
     },
     {
       "unit": 4,
@@ -98,16 +99,16 @@
   ],
   "current": {
     "unit": 3,
-    "lesson": 1,
-    "title": "جمع الأعداد العشرية وطرحها",
+    "lesson": 2,
+    "title": "تقدير ناتج الضرب",
     "status": "SOURCE_PENDING",
     "sourcePdfPages": [
-      214,
-      221
+      222,
+      229
     ],
     "sourcePagesPrinted": [
-      173,
-      180
+      181,
+      188
     ]
   },
   "sourceIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/source-index.json",
@@ -125,7 +126,7 @@
     "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs.",
     "U01:L01 first lesson READY_FOR_STAGE_D based on Grade5-equivalent authored/static A-B-C closure criteria; no .NET/CI manually run, no StageD/production migration. U01:L02 is next; old English 59 intact."
   ],
-  "A_B_C_Ready": 22,
+  "A_B_C_Ready": 23,
   "A_B_C_InProgress": 1,
   "lastClosedContentScope": "Source U02L06 Arabic Student pp125–128 PDF166–169, simplify percentage estimation and recurring patterns; existing exact engines and teacher-reviewed models."
 }
