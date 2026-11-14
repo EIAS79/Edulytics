@@ -130,7 +130,7 @@ def audit_source():
                 **{i: "02-1.pdf" for i in range(6, 8)},
                 **{i: "02.pdf" for i in range(8, 10)},
                 **{i: "03.pdf" for i in range(10, 13)}}
-    selected, elements, missing_optional_sha = 0, 0, []
+    selected, elements, missing_optional_sha, printed_only_locators = 0, 0, [], []
     ordinal = 0
     for unit, total_in_unit in enumerate(COUNTS, 1):
         for lesson in range(1, total_in_unit + 1):
@@ -144,10 +144,15 @@ def audit_source():
             cp, src = read(cp_path), read(src_path)
             expected_pdf = unit_pdf[unit]
             expected_hash = str(hashes.get(expected_pdf, "")).lower()
-            actual_file = str(src.get("SourcePdfPath") or "").replace("\\", "/")
+            actual_file = str(src.get("SourcePdfPath") or src.get("SourceBook") or "").replace("\\", "/")
             actual_hash = str(src.get("SourcePdfSha256") or "").lower()
-            pages = src.get("SourcePdfPages")
-            parts = src.get("SourceElements")
+            pdf_pages = (src.get("SourcePdfPages") or src.get("LessonPdfPages") or
+                         src.get("PdfPages"))
+            printed_pages = (src.get("SourcePrintedPages") or src.get("LessonPrintedPages") or
+                             src.get("PrintedPages"))
+            pages = pdf_pages or printed_pages
+            parts = (src.get("SourceElements") or src.get("SourceCoverage") or
+                     src.get("Elements") or src.get("Coverage"))
             if (cp.get("LessonOrdinal") != ordinal or
                 src.get("LessonOrdinal") != ordinal or
                 cp.get("LessonCode") != code or src.get("LessonCode") != code or
@@ -165,6 +170,8 @@ def audit_source():
                 continue
             if not cp_hash:
                 missing_optional_sha.append(ordinal)
+            if not pdf_pages:
+                printed_only_locators.append(ordinal)
             if ordinal > len(pack.get("Lessons", [])):
                 errors.append(f"CANONICAL_LESSON_MISSING:{ordinal}")
                 continue
@@ -213,6 +220,7 @@ def audit_source():
         independentThirdPartyRightsCertified=False,
         humanRtlReviewCertified=False,
         optionalCheckpointHashesNotRepeated=missing_optional_sha,
+        printPageOnlySourceLocators=printed_only_locators,
         releaseScopeAllowed=not errors,
         note=("Same first-party owner-release scope as UAE G1, G2, G3. "
               "2026-27 textbook order and exercise-level parity are NOT certified.")
