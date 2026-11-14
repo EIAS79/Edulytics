@@ -8733,6 +8733,15 @@ public static class LessonPracticeContractRegistry
                 ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
                 "UAE_G6_STUDENT_FIRST_U01_L05_PRINTED_31_38",
                 "READY_VERIFIED", Version);
+        // Grade 6 Arabic General local student-book lesson 4, ratio tables.
+        // Reuse existing proportional exact families; authored graphics teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:06:STUDENT-AR-128","ratio.unit_rate",
+                "PROPORTIONAL_TABLE_SCALING_AND_PART_WHOLE",
+                ["ratio.unit_rate.equivalent_ratio","ratio.unit_rate.divide_total"],
+                "UAE_G6_U01_L06_SOURCE_PRINTED_39_46",
+                "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
