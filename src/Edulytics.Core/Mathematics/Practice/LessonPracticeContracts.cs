@@ -9313,6 +9313,15 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l03.equation_from_line","uae.g6.u08.l03.linear_vs_square","uae.g6.u08.l03.y_intercept"],
             "G6_LOCAL_BOOK2_U08L03_PRINTED589_596_YEAR2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // Grade6 U08L04 multiple function representations: reuse verified U08L01–03
+        // output/input, ordered pair, linear rule, graph equation and intercept.
+        // Student-drawn tables and graphs remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:04:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:08:04:STUDENT-AR-128","functions.multiple_representations",
+           "WORDS_TABLE_EQUATION_ORDERED_PAIRS_CARTESIAN_GRAPHS",
+           ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l03.equation_from_line","uae.g6.u08.l03.y_intercept","uae.g6.u08.l02.linear_rule"],
+           "LOCAL_G6_BOOK2_U08L04_PRINTED597_604_TARGET2026_27_UNVERIFIED",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
