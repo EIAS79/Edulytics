@@ -8925,6 +8925,15 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l06.decimal_times_power_ten"],
             "G6_GENERAL_STUDENT_U03L05_PRINTED205_206",
             "READY_VERIFIED",Version);
+        // UAE Grade6 General Unit3 Inquiry: identify numeric and price patterns.
+        // Existing exact arithmetic-sequence and Grade5 money kernels reused as-is;
+        // open graphical explanations and Pascal rows remain teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:06:STUDENT-AR-128","numeric.patterns",
+            "RECURSIVE_NUMBER_PATTERN_AND_PRICE_TABLE",
+            ["uae.g5.u05.l07.arithmetic_step_pattern","uae.g5.u05.l03.unit_price_total"],
+            "G6_GENERAL_STUDENT_U03L06_PRINTED207_209",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
