@@ -27,14 +27,50 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string ReflectBothAxes="uae.g6.u05.l11.reflect_both_axes";
     internal const string MirrorSeparation="uae.g6.u05.l11.mirror_separation";
     internal const string AxisTriangleArea="uae.g6.u05.l11.axis_aligned_triangle_area";
+    internal const string DistanceSameY="uae.g6.u05.l12.distance_same_y";
+    internal const string DistanceSameX="uae.g6.u05.l12.distance_same_x";
+    internal const string FindHorizontalEndpoint="uae.g6.u05.l12.find_horizontal_endpoint";
+    internal const string FindVerticalEndpoint="uae.g6.u05.l12.find_vertical_endpoint";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder or CoordinateRegion or ReflectAcrossX or ReflectAcrossY or PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide or MixedRationalCompare or FourRationalOrder or CoordinateRegion or ReflectAcrossX or ReflectAcrossY or PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea or DistanceSameY or DistanceSameX or FindHorizontalEndpoint or FindVerticalEndpoint;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family is DistanceSameY or DistanceSameX or FindHorizontalEndpoint or FindVerticalEndpoint)
+        {
+            int a4=random.Next(-28,29);
+            if(family is DistanceSameY or DistanceSameX)
+            {
+                int b4=random.Next(-28,29);
+                if(a4==b4)b4=a4==28?27:a4+1;
+                int fixed4=random.Next(-16,17);
+                var p=new Dictionary<string,int>{{"a4",a4},{"b4",b4},{"fixed4",fixed4}};
+                string first=family==DistanceSameY?
+                    $"({FormatQuarter(a4)},{FormatQuarter(fixed4)})":
+                    $"({FormatQuarter(fixed4)},{FormatQuarter(a4)})";
+                string second=family==DistanceSameY?
+                    $"({FormatQuarter(b4)},{FormatQuarter(fixed4)})":
+                    $"({FormatQuarter(fixed4)},{FormatQuarter(b4)})";
+                return new Item(family,$"احسب المسافة بين النقطتين {first} و{second} على {(family==DistanceSameY?"خط أفقي":"خط رأسي")}. اكتب عدد الوحدات فقط.",
+                    "الخط أفقي أو رأسي؛ المسافة هي القيمة المطلقة لفرق الإحداثيين المتغيرين.",
+                    AssessmentItemType.ShortAnswer,p);
+            }
+            int start4=random.Next(-16,17),distance4=random.Next(1,13),direction=random.Next(2);
+            int fixedCoordinate4=random.Next(-16,17);
+            var parameters=new Dictionary<string,int>{{"start4",start4},{"distance4",distance4},
+                {"direction",direction},{"fixed4",fixedCoordinate4}};
+            string begin=family==FindHorizontalEndpoint?
+                $"({FormatQuarter(start4)},{FormatQuarter(fixedCoordinate4)})":
+                $"({FormatQuarter(fixedCoordinate4)},{FormatQuarter(start4)})";
+            string toward=family==FindHorizontalEndpoint?
+                (direction==0?"يمينًا":"يسارًا"):(direction==0?"إلى أعلى":"إلى أسفل");
+            return new Item(family,$"من النقطة {begin} تحرك {FormatQuarter(distance4)} وحدة {toward} على خط {(family==FindHorizontalEndpoint?"أفقي":"رأسي")}. اكتب قيمة الإحداثي {(family==FindHorizontalEndpoint?"السيني":"الصادي")} للنقطة الجديدة.",
+                "اجمع أو اطرح المسافة من الإحداثي المتغير فقط مع إبقاء الإحداثي الآخر ثابتًا.",
+                AssessmentItemType.ShortAnswer,parameters);
+        }
         if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
         {
             if(family==AxisTriangleArea)
@@ -229,6 +265,36 @@ internal static class UaeG6U5L01SignedNumbersQuestions
 
 
 
+
+    // G6 U05L12: horizontal / vertical distance only, never diagonal distance.
+    private static bool TryAxisDistanceAnswer(string family,
+        IReadOnlyDictionary<string,int>? p,out decimal distance)
+    {
+        distance=0m;
+        if(p is null)return false;
+        if(family is DistanceSameY or DistanceSameX)
+        {
+            if(p.Count!=3||!p.TryGetValue("a4",out int a4)||
+               !p.TryGetValue("b4",out int b4)||
+               !p.TryGetValue("fixed4",out int fixed4)||
+               a4 is <-28 or >28||b4 is <-28 or >28||
+               fixed4 is <-16 or >16)return false;
+            distance=Math.Abs(a4-b4)/4m;
+            return true;
+        }
+        if(family is FindHorizontalEndpoint or FindVerticalEndpoint)
+        {
+            if(p.Count!=4||!p.TryGetValue("start4",out int start4)||
+               !p.TryGetValue("distance4",out int distance4)||
+               !p.TryGetValue("direction",out int direction)||
+               !p.TryGetValue("fixed4",out int fixed4)||
+               start4 is <-16 or >16||fixed4 is <-16 or >16||
+               distance4 is <1 or >12||direction is not (0 or 1))return false;
+            distance=(start4+(direction==0?distance4:-distance4))/4m;
+            return true;
+        }
+        return false;
+    }
 
     // U05L11 signed quarter coordinates and right triangles are exact decimals.
     private static string FormatQuarter(int quarters) =>
@@ -441,6 +507,10 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family is DistanceSameY or DistanceSameX or FindHorizontalEndpoint or FindVerticalEndpoint)
+            return TryAxisDistanceAnswer(family,p,out decimal length)?
+                length.ToString("0.##",CultureInfo.InvariantCulture):
+                throw new InvalidOperationException("Invalid axis-aligned distance parameters.");
         if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
             return TryPlotAnswer(family,p,out string plotting)?plotting:
                 throw new InvalidOperationException("Invalid coordinate plotting parameters.");
@@ -475,6 +545,13 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is DistanceSameY or DistanceSameX or FindHorizontalEndpoint or FindVerticalEndpoint)
+        {
+            return !string.IsNullOrWhiteSpace(answer)&&answer.Length<=36&&
+                TryAxisDistanceAnswer(family,p,out decimal expected)&&
+                decimal.TryParse(NormalizeSignedAnswer(answer.Trim()),NumberStyles.Number,
+                    CultureInfo.InvariantCulture,out decimal actual)&&actual==expected;
+        }
         if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||

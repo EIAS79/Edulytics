@@ -9125,6 +9125,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l11.plot_from_signed_moves","uae.g6.u05.l11.reflect_both_axes","uae.g6.u05.l11.mirror_separation","uae.g6.u05.l11.axis_aligned_triangle_area"],
             "G6_ARABIC_2025_2026_BOOK2_U05L11_PRINTED399_406",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L12 lab: bounded axis-aligned horizontal/vertical distances;
+        // student-drawn connections, tables and narrative require teacher review.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:12:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:12:STUDENT-AR-128","geometry.coordinate_plane.axis_distance",
+            "ABSOLUTE_DIFFERENCE_SAME_X_OR_Y_AND_SIGNED_ENDPOINTS",
+            ["uae.g6.u05.l12.distance_same_y","uae.g6.u05.l12.distance_same_x","uae.g6.u05.l12.find_horizontal_endpoint","uae.g6.u05.l12.find_vertical_endpoint"],
+            "G6_ARABIC_2025_2026_BOOK2_U05L12_PRINTED407_410",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
