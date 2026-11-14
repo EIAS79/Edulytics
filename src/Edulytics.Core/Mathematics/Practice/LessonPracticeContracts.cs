@@ -9178,6 +9178,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l06.multiple_minus","uae.g6.u06.l06.multiple_plus","uae.g6.u06.l06.fixed_minus_variable","uae.g6.u06.l06.grouped_ticket_cost","uae.g6.u06.l06.inches_to_centimeters","uae.g6.u06.l06.percentage_markup"],
             "G6_ARABIC_2025_2026_BOOK2_U06L06_PRINTED455_462",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L07 teacher-led model-it inquiry: numeric subskills only.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:07:STUDENT-AR-128","problem_solving.models",
+            "MODEL_TABULAR_SEATING_STAIRCASE_SAVINGS_EQUAL_TEAMS_VOTES",
+            ["uae.g6.u06.l07.table_seats","uae.g6.u06.l07.staircase_squares","uae.g6.u06.l07.savings_after_weeks","uae.g6.u06.l07.equal_team_size","uae.g6.u06.l07.fractional_votes"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L07_PRINTED463_465",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
