@@ -137,8 +137,10 @@ test('Grade 5 additions preserve every published G1-G4 and US/G11 engine line',(
   }
   assert.equal(matched,prior.length,'G5 must preserve all pre-existing engine lines');
   assert.equal(added.length,30,'Exactly thirty G5 registration lines are permitted');
-  assert.equal(added.filter(x=>/UaeGrade5/.test(x)).length,24);
+  assert.equal(added.filter(x=>/UaeGrade5/.test(x)).length,21);
+  assert.equal(added.filter(x=>/return new ExactProblem\(q\.Family/.test(x)).length,3);
   assert.ok(added.every(x=>/UaeGrade5/.test(x) ||
+    /return new ExactProblem\(q\.Family/.test(x) ||
     x.trim()==='{' || x.trim()==='}'));
   // Negative control: the shared US/G1 wrong-answer predicate is modified
   // on a single pinned line solely to add the G5 fixture profile.
