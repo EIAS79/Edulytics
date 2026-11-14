@@ -9018,6 +9018,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u09.l09.whole_divide_unit_fraction","uae.g6.u04.l07.whole_divide_nonunit_fraction"],
             "G6_GENERAL_STUDENT_U04L07_PRINTED297_300",
             "READY_VERIFIED",Version);
+        // G6 Arabic General U04L08: reciprocal, unit/nonunit whole division, reuse G5 class.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:08:STUDENT-AR-128","fractions.divide.whole_by_fraction",
+            "RECIPROCAL_WHOLE_BY_FRACTION_AND_MULTIPLICATION_CHECK",
+            ["uae.g6.u04.l08.reciprocal_number","uae.g6.u04.l07.whole_divide_nonunit_fraction","uae.g5.u09.l09.whole_divide_unit_fraction"],
+            "G6_GENERAL_STUDENT_U04L08_PRINTED301_308",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

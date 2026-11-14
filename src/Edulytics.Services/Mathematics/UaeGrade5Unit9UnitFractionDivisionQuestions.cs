@@ -7,11 +7,13 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
     internal const string WholeByUnit="uae.g5.u09.l09.whole_divide_unit_fraction";
     internal const string UnitByWhole="uae.g5.u09.l09.unit_fraction_divide_whole";
     internal const string G6WholeByFraction="uae.g6.u04.l07.whole_divide_nonunit_fraction";
+    internal const string G6Reciprocal="uae.g6.u04.l08.reciprocal_number";
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is WholeByUnit or UnitByWhole or G6WholeByFraction;
+    internal static bool Supports(string? family)=>family is WholeByUnit or UnitByWhole or G6WholeByFraction or G6Reciprocal;
     internal static Item Build(string family,Random r)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported unit fraction division.");
+        if(family==G6Reciprocal)return BuildG6Reciprocal(r);
         if(family==G6WholeByFraction)return BuildG6(r);
         int n=r.Next(2,11),d=r.Next(2,11);
         var p=new Dictionary<string,int>{{"n",n},{"d",d}};
@@ -20,6 +22,45 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
             : $"إذا قُسم كسر الوحدة ١/{d} إلى {n} مجموعات متساوية، فما نصيب المجموعة الواحدة؟ اكتب كسرًا مبسطًا بسط/مقام.";
         return new Item(family,prompt,"أعد الأجزاء أو قسم كسر الوحدة برقائق كسور متساوية، ثم تحقق بالضرب.",
             family==WholeByUnit?AssessmentItemType.Numeric:AssessmentItemType.ShortAnswer,p);
+    }
+
+
+    // Grade6 reciprocal is mathematically distinct from division; own bounded exact family.
+    private static Item BuildG6Reciprocal(Random r)
+    {
+        int a=r.Next(1,13),b=r.Next(1,13);
+        var p=new Dictionary<string,int>{{"a",a},{"b",b}};
+        string value=b==1?$"{a}":$"{a}/{b}";
+        return new Item(G6Reciprocal,
+            $"أوجد المعكوس الضربي للعدد {value}. اكتب عددًا صحيحًا أو كسرًا في أبسط صورة.",
+            "المعكوس الضربي لعدد غير صفري يبدّل البسط والمقام، ويكون حاصل ضرب العدد في معكوسه واحدًا.",
+            AssessmentItemType.ShortAnswer,p);
+    }
+    private static bool TryReciprocal(IReadOnlyDictionary<string,int>? p,out int num,out int den)
+    {
+        num=den=0;
+        if(p is null||p.Count!=2||!p.TryGetValue("a",out int a)||
+           !p.TryGetValue("b",out int b)||a is <1 or >12||b is <1 or >12)return false;
+        int g=Gcd(a,b);num=b/g;den=a/g;return true;
+    }
+    private static string SolveReciprocal(IReadOnlyDictionary<string,int> p)
+    {
+        if(!TryReciprocal(p,out int n,out int d))
+            throw new InvalidOperationException("Bad reciprocal");
+        return d==1?n.ToString(CultureInfo.InvariantCulture):$"{n}/{d}";
+    }
+    private static bool VerifyReciprocal(IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!TryReciprocal(p,out int n,out int d)||string.IsNullOrWhiteSpace(answer)||answer.Length>48)return false;
+        string text=new(answer.Trim().Where(c=>!char.IsWhiteSpace(c))
+            .Select(c=>c switch{>= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+c-'۰'),'⁄'=>'/',_=>c}).ToArray());
+        var parts=text.Split('/');
+        if(d==1&&parts.Length==1)return int.TryParse(parts[0],NumberStyles.None,
+            CultureInfo.InvariantCulture,out int whole)&&whole==n;
+        return parts.Length==2&&int.TryParse(parts[0],NumberStyles.None,CultureInfo.InvariantCulture,out int top)&&
+            int.TryParse(parts[1],NumberStyles.None,CultureInfo.InvariantCulture,out int bottom)&&
+            top>0&&bottom>0&&Gcd(top,bottom)==1&&top==n&&bottom==d;
     }
 
     // Grade6 scoped whole ÷ non-unit proper fraction; G5 behavior preserved.
@@ -68,12 +109,14 @@ internal static class UaeGrade5Unit9UnitFractionDivisionQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==G6Reciprocal)return SolveReciprocal(p);
         if(family==G6WholeByFraction)return SolveG6(p);
         if(!Valid(family,p,out int n,out int d))throw new InvalidOperationException("Invalid G5 fraction division.");
         return family==WholeByUnit?(n*d).ToString(CultureInfo.InvariantCulture):$"1/{n*d}";
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family==G6Reciprocal)return VerifyReciprocal(p,answer);
         if(family==G6WholeByFraction)return VerifyG6(p,answer);
         if(!Valid(family,p,out int n,out int d)||string.IsNullOrWhiteSpace(answer)||answer.Length>32)return false;
         string normalized=new(answer.Trim().Where(c=>!char.IsWhiteSpace(c)&&c is not ',' and not '٬')
