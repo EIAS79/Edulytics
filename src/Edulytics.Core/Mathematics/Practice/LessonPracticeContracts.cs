@@ -9222,6 +9222,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l11.combine_like_terms","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l10.factor_common","uae.g6.u06.l09.evaluate_distributive","uae.g6.u06.l12.combine_two_variables","uae.g6.u06.l12.distribute_two_variables","uae.g6.u06.l12.factor_two_variables","uae.g6.u06.l12.grouped_tickets_cost"],
             "G6_ARABIC_2025_2026_BOOK2_U06L12_PRINTED489_496",
             "READY_VERIFIED",Version);
+        // UAE Grade6 Arabic U07L01: equation versus expression and one-step truth.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:01:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:07:01:STUDENT-AR-128","algebra.equations.one_step",
+           "ADDITIVE_MULTIPLICATIVE_EQUATION_SOLUTION_BY_SUBSTITUTION",
+           ["uae.g6.u07.l01.add","uae.g6.u07.l01.subtract","uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide","uae.g6.u07.l01.test_candidate"],
+           "G6_LOCAL_BOOK2_U07L01_PRINTED507_514_YEAR2026_27_NOT_VERIFIED",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
