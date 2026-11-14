@@ -9032,6 +9032,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u04.l09.fraction_divide_fraction","uae.g6.u04.l09.fraction_divide_whole","uae.g5.u09.l09.unit_fraction_divide_whole"],
             "G6_GENERAL_STUDENT_U04L09_PRINTED309_312",
             "READY_VERIFIED",Version);
+        // G6 Arabic U04L10: fraction division and fraction by whole; exact existing U04L09 families.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:10:STUDENT-AR-128","fractions.divide.fraction_by_fraction",
+            "FRACTION_DIVISION_RECIPROCAL_AND_MULTIPLICATION_CHECK",
+            ["uae.g6.u04.l09.fraction_divide_fraction","uae.g6.u04.l09.fraction_divide_whole","uae.g5.u09.l09.unit_fraction_divide_whole"],
+            "G6_GENERAL_STUDENT_U04L10_PRINTED313_320",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
