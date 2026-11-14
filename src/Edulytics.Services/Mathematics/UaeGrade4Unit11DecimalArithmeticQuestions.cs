@@ -359,13 +359,13 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
    if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
        p.TryGetValue("g6EstimateProduct",out var estimateMode) && estimateMode==1)
    {
-       if (!p.TryGetValue("aTenths",out var a) || !p.TryGetValue("bTenths",out var b) ||
+       if (!p.TryGetValue("aTenths",out var estimateFactorA) || !p.TryGetValue("bTenths",out var estimateFactorB) ||
            !p.TryGetValue("placeA",out var placeA) || !p.TryGetValue("placeB",out var placeB) ||
-           a is <1 or >10000 || b is <1 or >10000 ||
+           estimateFactorA is <1 or >10000 || estimateFactorB is <1 or >10000 ||
            placeA is not (1 or 10) || placeB is not (1 or 10))
            return false;
-       var roundedA=Math.Round((a/10m)/placeA,0,MidpointRounding.AwayFromZero)*placeA;
-       var roundedB=Math.Round((b/10m)/placeB,0,MidpointRounding.AwayFromZero)*placeB;
+       var roundedA=Math.Round((estimateFactorA/10m)/placeA,0,MidpointRounding.AwayFromZero)*placeA;
+       var roundedB=Math.Round((estimateFactorB/10m)/placeB,0,MidpointRounding.AwayFromZero)*placeB;
        result=roundedA*roundedB;
        return true;
    }
@@ -373,12 +373,12 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
    if ((f is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference") &&
        p.TryGetValue("g6Thousandths",out var enabled) && enabled==1)
    {
-       if (!p.TryGetValue("aThousandths",out var a) ||
-           !p.TryGetValue("bThousandths",out var b) ||
-           a is <0 or >999999 || b is <0 or >999999 ||
-           (f=="uae.g4.u11.l10.column_difference" && b>a))
+       if (!p.TryGetValue("aThousandths",out var thousandthsFactorA) ||
+           !p.TryGetValue("bThousandths",out var thousandthsFactorB) ||
+           thousandthsFactorA is <0 or >999999 || thousandthsFactorB is <0 or >999999 ||
+           (f=="uae.g4.u11.l10.column_difference" && thousandthsFactorB>thousandthsFactorA))
            return false;
-       result=(f=="uae.g4.u11.l10.column_difference"? a-b : a+b)/1000m;
+       result=(f=="uae.g4.u11.l10.column_difference"? thousandthsFactorA-thousandthsFactorB : thousandthsFactorA+thousandthsFactorB)/1000m;
        return true;
    }
 
@@ -417,54 +417,54 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  {
    if (p.ContainsKey("g6PowerBaseMillionths"))
    {
-       if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
-       var normalized=new string(answer.Trim().Select(c=>c switch{
+       if(!Valid(f,p,out decimal g6PowerExpected)||string.IsNullOrWhiteSpace(answer))return false;
+       var g6PowerNormalized=new string(answer.Trim().Select(c=>c switch{
            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
            '٫'=>'.',_=>c
        }).ToArray());
-       if(normalized.Length>35||
-          !normalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
-       return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
-           CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+       if(g6PowerNormalized.Length>35||
+          !g6PowerNormalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
+       return decimal.TryParse(g6PowerNormalized,NumberStyles.AllowDecimalPoint,
+           CultureInfo.InvariantCulture,out var g6PowerActual)&&g6PowerActual==g6PowerExpected;
    }
    if (p.ContainsKey("g6DecimalFirstMillionths"))
    {
-       if (!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))
+       if (!Valid(f,p,out decimal g6DecimalFirstExpected)||string.IsNullOrWhiteSpace(answer))
            return false;
-       string normalized=new(answer.Trim().Select(c=>c switch
+       string g6DecimalFirstNormalized=new(answer.Trim().Select(c=>c switch
        {
            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
            '٫'=>'.',_=>c
        }).ToArray());
-       if (normalized.Length>35 ||
-           !normalized.All(c=>c is >= '0' and <= '9' or '.'))
+       if (g6DecimalFirstNormalized.Length>35 ||
+           !g6DecimalFirstNormalized.All(c=>c is >= '0' and <= '9' or '.'))
            return false;
-       return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
-           CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+       return decimal.TryParse(g6DecimalFirstNormalized,NumberStyles.AllowDecimalPoint,
+           CultureInfo.InvariantCulture,out var g6DecimalFirstActual)&&g6DecimalFirstActual==g6DecimalFirstExpected;
    }
    if (p.ContainsKey("g6DecimalFactorTenThousandths"))
    {
-       if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
+       if(!Valid(f,p,out decimal g6FactorExpected)||string.IsNullOrWhiteSpace(answer))return false;
        string western=new(answer.Trim().Select(c=>c switch {
            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
            '٫'=>'.',_=>c
        }).ToArray());
        return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
-           CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+           CultureInfo.InvariantCulture,out var g6FactorActual)&&g6FactorActual==g6FactorExpected;
    }
    if (p.TryGetValue("g6EstimateProduct",out var g6) && g6==1)
    {
-       if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;
+       if(!Valid(f,p,out decimal g6EstimateExpected)||string.IsNullOrWhiteSpace(answer))return false;
        string western=new(answer.Trim().Select(c=>c switch{
            >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
            >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
            _=>c
        }).ToArray());
-       return decimal.TryParse(western,NumberStyles.Number,CultureInfo.InvariantCulture,out var actual)
-           && actual==expected;
+       return decimal.TryParse(western,NumberStyles.Number,CultureInfo.InvariantCulture,out var g6EstimateActual)
+           && g6EstimateActual==g6EstimateExpected;
    }
    if(IsG5DividePow(f))return VerifyG5DividePow(f,p,answer);
    if(IsG5Pow(f))return VerifyG5Pow(f,p,answer);

@@ -876,8 +876,8 @@ public sealed class ExactSkillContractQuestionEngine
                 _ => c
             }));
             return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
-                CultureInfo.InvariantCulture,out var value) &&
-                value == (decimal)percentageHundredths * sourceQuantity / 10000m;
+                CultureInfo.InvariantCulture,out var g6PercentComputed) &&
+                g6PercentComputed == (decimal)percentageHundredths * sourceQuantity / 10000m;
         }
         if (UaeGrade2Unit1Lesson01Questions.Supports(family))
             return UaeGrade2Unit1Lesson01Questions.Verify(family, parameters, answer);

@@ -115,14 +115,14 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
         if(p.ContainsKey("g6DividendMillionths"))
         {
             if(!ValidG6DecimalByDecimal(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))return false;
-            string normalized=new(answer.Trim().Select(c=>c switch{
+            string g6QuotientNormalized=new(answer.Trim().Select(c=>c switch{
                 >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
                 >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
                 '٫'=>'.',_=>c
             }).ToArray());
-            if(normalized.Length>36||
-               !normalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
-            return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+            if(g6QuotientNormalized.Length>36||
+               !g6QuotientNormalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(g6QuotientNormalized,NumberStyles.AllowDecimalPoint,
                 CultureInfo.InvariantCulture,out var answerValue)&&answerValue==expected;
         }
 
@@ -261,15 +261,15 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
         {
             if(!ValidG6DecimalByWhole(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))
                 return false;
-            string normalized=new(answer.Trim().Select(ch=>ch switch{
+            string g6WholeNormalized=new(answer.Trim().Select(ch=>ch switch{
                 >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
                 >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
                 '٫'=>'.',_=>ch
             }).ToArray());
-            if(normalized.Length>36||
-               !normalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
-            return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
-                CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+            if(g6WholeNormalized.Length>36||
+               !g6WholeNormalized.All(ch=>ch is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(g6WholeNormalized,NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture,out var g6WholeActual)&&g6WholeActual==expected;
         }
 
         if(!ValidG5WholeDecimal(f,p,out _)||string.IsNullOrWhiteSpace(answer))return false;
