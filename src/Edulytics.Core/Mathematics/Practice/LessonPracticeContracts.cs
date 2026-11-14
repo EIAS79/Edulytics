@@ -8861,6 +8861,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u02.l05.percent_extreme_to_decimal","uae.g6.u02.l05.decimal_extreme_to_percent"],
             "UAE_G6_U02_L05_SOURCE_AR_PRINTED117_124",
             "READY_VERIFIED", Version);
+        // UAE G6 General Arabic original Student Book U02 L06 problem solving.
+        // Numeric percent and recurring multiple targets only; diagrams and open strategies teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128", "percentages.core",
+            "SIMPLIFY_PERCENT_AND_PERIODIC_PROBLEMS",
+            ["percentages.core.of_quantity", "uae.g5.u07.l05.lcm_two_numbers"],
+            "UAE_G6_GENERAL_U02_L06_BOOK_PRINTED_125_128_ORIGINAL_AR",
+            "READY_VERIFIED", Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -689,6 +689,19 @@ public sealed class ExactSkillContractQuestionEngine
                     problem = LocalizeUaeGrade6RatioLab(problem);
                 }
 
+                if (string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128",StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:06:STUDENT-AR-128",StringComparison.Ordinal))
+                {
+                    if (string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                    {
+                        problem = problem with
+                        {
+                            Prompt = $"أوجد {problem.Parameters["percent"]}% من {problem.Parameters["quantity"]} باستخدام مسألة ١٠% الأبسط، ثم تحقق بالحساب المباشر.",
+                            Solution = "احسب عُشر الكمية، وابنِ منه النسبة المطلوبة، ثم تحقق من ضرب الكمية بالنسبة على ١٠٠."
+                        };
+                    }
+                }
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
