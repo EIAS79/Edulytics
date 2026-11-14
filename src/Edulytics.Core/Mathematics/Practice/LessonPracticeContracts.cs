@@ -8798,6 +8798,21 @@ public static class LessonPracticeContractRegistry
             ],
             "UAE_G6_AR_LOCAL_STUDENT_U01_L11_PRINTED_71_78",
             "READY_VERIFIED",Version);
+        // Grade 6 General Arabic Student Book Unit2 Lesson1, printed pp89-96.
+        // Reuse Grade4/G5 decimal place-value, fraction reduction and decimal
+        // answer verifiers; open reasoning and visual assessment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:01:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:01:STUDENT-AR-128", "decimals.place_value",
+            "DECIMAL_TO_REDUCED_FRACTION_AND_TERMINATING_FRACTION_TO_DECIMAL",
+            [
+                "uae.g4.u10.l04.decimal_to_hundredths",
+                "uae.g5.u01.l04.thousandths_numerator",
+                "uae.g5.u07.l03.simplify_fraction",
+                "uae.g5.u07.l08.reducible_fraction_to_decimal"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L01_PRINTED_89_96",
+            "READY_VERIFIED",Version)
+        { SkillIds = ["decimals.place_value","fractions.equivalent"] };
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
