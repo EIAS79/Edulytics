@@ -9004,6 +9004,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u04.l05.to_smaller_exact","uae.g6.u04.l05.to_larger_exact"],
             "G6_GENERAL_STUDENT_U04L05_PRINTED285_292",
             "READY_VERIFIED",Version);
+        // G6 General U04L06 inquiry: four-step graph/bar model; numeric subskill only via reused ratio families.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:06:STUDENT-AR-128","ratio.unit_rate",
+            "BAR_MODEL_PART_WHOLE_INQUIRY_TEACHER_REVIEW",
+            ["ratio.unit_rate.divide_total","ratio.unit_rate.equivalent_ratio"],
+            "G6_GENERAL_STUDENT_U04L06_PRINTED293_295_TEACHER_REVIEW",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
