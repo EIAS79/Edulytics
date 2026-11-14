@@ -706,6 +706,16 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128",StringComparison.Ordinal))
                     problem = LocalizeG6U2L7Mixed(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:08:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"percentages.core.of_quantity",StringComparison.Ordinal))
+                {
+                    problem=problem with {
+                        Prompt=$"أوجد القيمة الدقيقة لـ{problem.Parameters["percent"]}% من {problem.Parameters["quantity"]}. ثم ناقش مع المعلم تقديرها بنسبة معيارية قريبة.",
+                        Solution="اضرب الكمية بالنسبة وقسّم على ١٠٠، ثم اختر تقديرًا معقولًا للتحقق."
+                    };
+                }
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
