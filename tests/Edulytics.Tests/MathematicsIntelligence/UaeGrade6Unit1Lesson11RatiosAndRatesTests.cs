@@ -24,10 +24,10 @@ public sealed class UaeGrade6Unit1Lesson11RatiosAndRatesTests
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));
     }
     [Theory]
-    [InlineData("ratio.unit_rate.direct",150,5,0,30)]
-    [InlineData("ratio.unit_rate.direct",108,3,0,36)]
+    [InlineData("ratio.unit_rate.direct",150,5,30)]
+    [InlineData("ratio.unit_rate.direct",108,3,36)]
     public void ExistingPerUnitVerificationRejectsOffByOne(
-        string family,int total,int quantity,int unused,int answer)
+        string family,int total,int quantity,int answer)
     {
         var parameters=new Dictionary<string,int>{{"total",total},{"quantity",quantity}};
         Assert.True(ExactSkillContractQuestionEngine.Verify(family,parameters,answer.ToString()));
