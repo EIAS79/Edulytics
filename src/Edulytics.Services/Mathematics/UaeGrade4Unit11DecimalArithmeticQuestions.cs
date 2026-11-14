@@ -315,6 +315,19 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   // UAE G6 U03:L04 — source-scoped extension of existing Grade5 exact
+   // decimal-factor multiplication; two millionth-scaled integers preserve
+   // up to twelve fractional places without binary floating-point rounding.
+   if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
+       p.TryGetValue("g6DecimalFirstMillionths",out var first))
+   {
+       if (!p.TryGetValue("g6DecimalSecondMillionths",out var second) ||
+           first is <1 or >2000000000 || second is <1 or >2000000000)
+           return false;
+       result=(decimal)first*second/1000000000000m;
+       return true;
+   }
+
    if (f=="uae.g5.u05.l03.decimal_times_whole" &&
        p.TryGetValue("g6DecimalFactorTenThousandths",out var n))
    {
@@ -376,12 +389,29 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString(p.ContainsKey("g6DecimalFactorTenThousandths")?"0.####":
+    return ans.ToString(p.ContainsKey("g6DecimalFirstMillionths")?"0.############":
+       p.ContainsKey("g6DecimalFactorTenThousandths")?"0.####":
        p.TryGetValue("g6Thousandths",out var enabled) && enabled==1 ?
        "0.###" : IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if (p.ContainsKey("g6DecimalFirstMillionths"))
+   {
+       if (!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))
+           return false;
+       string normalized=new(answer.Trim().Select(c=>c switch
+       {
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           '٫'=>'.',_=>c
+       }).ToArray());
+       if (normalized.Length>35 ||
+           !normalized.All(c=>c is >= '0' and <= '9' or '.'))
+           return false;
+       return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+           CultureInfo.InvariantCulture,out var actual)&&actual==expected;
+   }
    if (p.ContainsKey("g6DecimalFactorTenThousandths"))
    {
        if(!Valid(f,p,out decimal expected)||string.IsNullOrWhiteSpace(answer))return false;

@@ -8910,6 +8910,14 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:03:03:STUDENT-AR-128","decimal.arithmetic","DECIMAL_TIMES_WHOLE_TO_TEN_THOUSANDTHS",
             ["uae.g5.u05.l03.decimal_times_whole"],
             "G6_STUDENT_U03L03_PRINTED189_196","READY_VERIFIED",Version);
+        // Grade6 Arabic selected Student Book U03:L04; extend the existing
+        // Grade5 exact decimal factor family, no redundant new question engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128","decimal.arithmetic",
+            "EXACT_DECIMAL_BY_DECIMAL_MULTIPLICATION_TO_TWELVE_PLACES",
+            ["uae.g5.u05.l05.multiply_decimal_factors"],
+            "G6_GENERAL_STUDENT_U03L04_PRINTED197_204",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

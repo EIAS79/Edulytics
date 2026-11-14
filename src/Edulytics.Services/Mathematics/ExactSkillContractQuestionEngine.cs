@@ -749,6 +749,11 @@ public sealed class ExactSkillContractQuestionEngine
                     string.Equals(problem.Family,"uae.g5.u05.l03.decimal_times_whole",StringComparison.Ordinal))
                     problem=LocalizeG6WholeDecimalProduct(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    string.Equals(problem.Family,"uae.g5.u05.l05.multiply_decimal_factors",StringComparison.Ordinal))
+                    problem=LocalizeG6DecimalTimesDecimal(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5631,6 +5636,61 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
             Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalTimesDecimal(ExactProblem problem)
+    {
+        // Source-aligned first-party practice: existing Grade5 family retains
+        // ownership of generation, solver, verifier and fingerprints.
+        // The extra parameters are applied ONLY to Grade6 Arabic U03:L04.
+        var pairs=new (int First,int Second)[] {
+            (3600000,50000),
+            (112000,7200000),
+            (67000,1400000),
+            (53000,450000),
+            (28450000,11500000),
+            (5700000,2800000),
+            (4120000,50000),
+            (14000,3700000),
+            (40000,320000),
+            (260000,205000),
+            (1330000,60000),
+            (600000,500000),
+            (27430000,1089000000),
+            (980000,7300000),
+            (2700000,1350000),
+            (30000,90000),
+            (40000,2120000),
+            (700000,400000),
+            (400000,3700000),
+            (520000,2100000),
+            (6200000,30000),
+            (14700000,11361000),
+            (280000,80000),
+            (25040000,3005000),
+            (1030000,1005000),
+            (5120000,4001000),
+            (3985300,8032856),
+            (8200000,9700000),
+            (1609000,2500000),
+            (3850000,4000000),
+            (4100000,2500000),
+            (125000,320000),
+            (4800000,75000)
+        };
+        var p=problem.Parameters;
+        var selected=pairs[(p["leftHundredths"]*13+p["rightHundredths"])%pairs.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DecimalFirstMillionths"]=selected.First;
+        values["g6DecimalSecondMillionths"]=selected.Second;
+        var a=(selected.First/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var b=(selected.Second/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        return problem with
+        {
+            Parameters=values,
+            Prompt=$"احسب حاصل الضرب الدقيق {a} × {b} دون تقريب، ثم تحقق بتقدير مناسب.",
+            Solution="اضرب الرقمين دون فواصل، واجمع منازل الجزء العشري للعاملين، ثم أعد الفاصلة. أضف الأصفار اللازمة وتحقق من رتبة الناتج بالتقدير."
         };
     }
 
