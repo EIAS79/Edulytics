@@ -8826,6 +8826,20 @@ public static class LessonPracticeContractRegistry
             ],
             "UAE_G6_AR_LOCAL_STUDENT_U02_L02_PRINTED_97_100",
             "READY_VERIFIED",Version);
+        // UAE G6 Arabic student edition U02 native Lesson2 / index14 pp101-108.
+        // Reuse exact percent-hundredths and existing G5 fractional GCF reduction.
+        // Source drawn hundred-grids and explanations teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:03:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:03:STUDENT-AR-128","decimals.place_value",
+            "CONVERT_PERCENT_AND_SIMPLEST_FRACTIONS_WITH_HUNDRED_GRID",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g5.u07.l03.simplify_fraction"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L03_PRINTED_101_108",
+            "READY_VERIFIED",Version)
+        { SkillIds = ["decimals.place_value","fractions.equivalent"] };
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
