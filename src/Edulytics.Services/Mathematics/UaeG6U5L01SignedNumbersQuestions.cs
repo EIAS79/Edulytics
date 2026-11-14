@@ -12,14 +12,34 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string GraphSetExtremum="uae.g6.u05.l02.signed_plot_set_extremum";
     internal const string AbsoluteDistance="uae.g6.u05.l03.absolute_distance";
     internal const string AbsoluteExpression="uae.g6.u05.l04.absolute_expression";
+    internal const string SignedCompare="uae.g6.u05.l05.compare_signed_integers";
+    internal const string SignedOrderSet="uae.g6.u05.l05.order_integer_set";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family==SignedCompare)
+        {
+            int a=random.Next(-40,41),b=random.Next(-40,41);
+            return new Item(family,$"ضع الرمز الصحيح (< أو > أو =) بين {a} و{b}.",
+                "على خط الأعداد العدد الواقع يمين العدد الآخر هو الأكبر، والأعداد الموجبة أكبر من الصفر والسالبة.",
+                AssessmentItemType.ShortAnswer,new Dictionary<string,int>{{"a",a},{"b",b}});
+        }
+        if(family==SignedOrderSet)
+        {
+            var set=new HashSet<int>();
+            while(set.Count<4)set.Add(random.Next(-40,41));
+            var n=set.ToArray();int mode=random.Next(2);
+            return new Item(family,
+                $"رتب الأعداد {{{string.Join("، ",n)}}} من {(mode==0?"الأصغر إلى الأكبر":"الأكبر إلى الأصغر")}. اكتب القيم مفصولة بفواصل.",
+                "مثّل الأعداد بمقياس واحد، ثم اقرأها من اليسار أو اليمين بحسب الترتيب المطلوب.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int>{{"a",n[0]},{"b",n[1]},{"c",n[2]},{"d",n[3]},{"mode",mode}});
+        }
         if(family==AbsoluteExpression)
         {
             int a=random.Next(-25,26),b=random.Next(-25,26),operation=random.Next(2);
@@ -69,6 +89,36 @@ internal static class UaeG6U5L01SignedNumbersQuestions
             "العددان المتقابلان على بعد متساوٍ من الصفر وفي اتجاهين متعاكسين؛ مقابل الصفر هو الصفر.",
             AssessmentItemType.ShortAnswer,p);
     }
+
+    // Scoped G6 U05L05 exact comparison and 4-number ordering; reuse existing signed-number adapter.
+    private static bool TryCompare(IReadOnlyDictionary<string,int>? p,out string symbol)
+    {
+        symbol="";
+        if(p is null||p.Count!=2||!p.TryGetValue("a",out int a)||
+           !p.TryGetValue("b",out int b)||a is <-40 or >40||b is <-40 or >40)return false;
+        symbol=a<b?"<":a>b?">":"=";
+        return true;
+    }
+    private static bool TryOrder(IReadOnlyDictionary<string,int>? p,out string values)
+    {
+        values="";
+        if(p is null||p.Count!=5||!p.TryGetValue("a",out int a)||
+           !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+           !p.TryGetValue("d",out int d)||!p.TryGetValue("mode",out int mode)||
+           mode is not (0 or 1)||new[]{a,b,c,d}.Any(n=>n is <-40 or >40))return false;
+        var ordered=mode==0?new[]{a,b,c,d}.OrderBy(n=>n):new[]{a,b,c,d}.OrderByDescending(n=>n);
+        values=string.Join(",",ordered.Select(n=>n.ToString(CultureInfo.InvariantCulture)));
+        return true;
+    }
+    private static string NormalizeSignedAnswer(string answer)
+    {
+        return new string(answer.Where(ch=>!char.IsWhiteSpace(ch))
+            .Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '−' or '–'=>'-','،'=>',',_=>ch}).ToArray());
+    }
+
     private static bool Valid(string family,IReadOnlyDictionary<string,int>? p,out int answer)
     {
 
@@ -111,12 +161,25 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==SignedCompare)
+            return TryCompare(p,out string symbol)?symbol:throw new InvalidOperationException("Invalid signed comparison.");
+        if(family==SignedOrderSet)
+            return TryOrder(p,out string ordered)?ordered:throw new InvalidOperationException("Invalid signed ordering.");
         if(!Valid(family,p,out int signed))
             throw new InvalidOperationException("Invalid signed-number parameters.");
         return signed.ToString(CultureInfo.InvariantCulture);
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is SignedCompare or SignedOrderSet)
+        {
+            if(string.IsNullOrWhiteSpace(answer)||answer.Length>100)return false;
+            string expected;
+            if(family==SignedCompare){
+                if(!TryCompare(p,out expected))return false;
+            }else if(!TryOrder(p,out expected))return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),expected,StringComparison.Ordinal);
+        }
         if(!Valid(family,p,out int expected)||
            string.IsNullOrWhiteSpace(answer)||answer.Length>36)return false;
         string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch))

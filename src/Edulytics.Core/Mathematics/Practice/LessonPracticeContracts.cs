@@ -9074,6 +9074,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l04.absolute_expression"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L04_PRINTED351_358",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L05 signed integer comparisons and ordering, exact numeric/scalar subskills only.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:05:STUDENT-AR-128","number.integers.signed_comparison",
+            "COMPARE_SIGNED_INTEGER_VALUES_ORDER_GROUPS_AND_CONTEXT",
+            ["uae.g6.u05.l05.compare_signed_integers","uae.g6.u05.l05.order_integer_set","uae.g6.u05.l02.signed_plot_set_extremum"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L05_PRINTED359_366",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
