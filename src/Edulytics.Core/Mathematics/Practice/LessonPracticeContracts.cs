@@ -8696,6 +8696,23 @@ public static class LessonPracticeContractRegistry
                 "UAE_G6_STUDENT_FIRST_U01_L02_PRINTED_P15_18_ORIGINAL_ARABIC",
                 "READY_VERIFIED",
                 Version);
+        // UAE G6 General Arabic: Student Book Unit 1, native Lesson 2 / indexed item 3.
+        // Numeric ratios, equivalent values and simplification only; source drawings teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                "ratio.unit_rate",
+                "SIMPLIFY_COMPARE_AND_PART_WHOLE_RATIOS",
+                [
+                    "ratio.unit_rate.equivalent_ratio",
+                    "ratio.unit_rate.divide_total",
+                    "fractions.equivalent.reduce_common_factor"
+                ],
+                "UAE_G6_STUDENT_FIRST_U01_L03_PRINTED_P19_26_ORIGINAL_ARABIC",
+                "READY_VERIFIED", Version)
+            {
+                SkillIds = ["ratio.unit_rate", "fractions.equivalent"]
+            };
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

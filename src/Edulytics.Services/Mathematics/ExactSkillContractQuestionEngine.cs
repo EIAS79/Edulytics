@@ -630,6 +630,12 @@ public sealed class ExactSkillContractQuestionEngine
                         StringComparison.Ordinal) ||
                     string.Equals(scopeKey,
                         "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(fingerprintNamespace,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+                        StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,
+                        "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
                         StringComparison.Ordinal))
                 {
                     problem = LocalizeUaeGrade6RatioLab(problem);
@@ -5386,6 +5392,12 @@ public sealed class ExactSkillContractQuestionEngine
                 {
                     Prompt = $"في جدول نسب، يقابل {p["baseFirst"]} من العناصر الأولى {p["baseSecond"]} من العناصر الثانية. إذا أصبح عدد العناصر الثانية {p["targetSecond"]}، فما العدد المناظر من العناصر الأولى؟",
                     Solution = "للحفاظ على النسبة نفسها نضرب الكميتين في العامل نفسه، ونتحقق بالضرب التبادلي."
+                },
+            "fractions.equivalent.reduce_common_factor" =>
+                problem with
+                {
+                    Prompt = $"في نموذج نوعين من القطع، النسبة {p["largeN"]}:{p["largeD"]} تعادل النسبة □:{p["targetD"]}. ما العدد في المربع؟",
+                    Solution = "اكتب النسبة ككسر وابسط بقسمة الطرفين على العامل المشترك. تحقق من الضرب التبادلي."
                 },
             "ratio.unit_rate.divide_total" =>
                 problem with
