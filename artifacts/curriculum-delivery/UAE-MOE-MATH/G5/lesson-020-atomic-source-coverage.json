@@ -1,0 +1,63 @@
+{
+  "Grade": 5,
+  "Unit": 3,
+  "LessonOrdinal": 20,
+  "LessonNumber": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:01",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    157,
+    158,
+    159,
+    160,
+    161,
+    162
+  ],
+  "SourceEdition": "Owner-selected Arabic student 2025–2026",
+  "TargetYear": "2026–2027",
+  "OfficialSequenceVerified": false,
+  "SourceCoverage": [
+    {
+      "Id": "G5-U3-L1-1",
+      "Pages": [
+        157,
+        158
+      ],
+      "Topic": "fact family and division-multiplication inverse",
+      "Artefact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "Id": "G5-U3-L1-2",
+      "Pages": [
+        159,
+        160
+      ],
+      "Topic": "related facts, missing factors, word problems",
+      "Artefact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit3Lesson01FactFamilyTests.cs"
+    },
+    {
+      "Id": "G5-U3-L1-3",
+      "Pages": [
+        161,
+        162
+      ],
+      "Topic": "homework and model-based verification",
+      "Artefact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l01-ar.rich-lesson-v2.json"
+    }
+  ],
+  "ExistingEngine": "UaeGrade4Unit6Lesson01DivisionPowersQuestions extended with G5 fact inverse mechanics",
+  "SkillId": "number.whole.divide",
+  "Families": [
+    "uae.g5.u03.l01.quotient_from_fact",
+    "uae.g5.u03.l01.missing_multiplier",
+    "uae.g5.u03.l01.missing_divisor",
+    "uae.g5.u03.l01.related_product"
+  ],
+  "StageA": "CLOSED_SELECTED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXISTING_INVERSE_ENGINE_EXTENDED",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}

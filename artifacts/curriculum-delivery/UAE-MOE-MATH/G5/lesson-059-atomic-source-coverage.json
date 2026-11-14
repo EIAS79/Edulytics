@@ -1,0 +1,105 @@
+{
+  "Grade": 5,
+  "Unit": 6,
+  "LessonOrdinal": 59,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:07",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\02-1.pdf",
+  "SourcePdfSha256": "f0a111404b9e94bbc598f1ff4a7f80d68e434c54d3a30155858994404ddf5ab6",
+  "SourceEdition": "Arabic 2025–2026 owner-selected student book",
+  "SourcePrintedPages": [
+    443,
+    444,
+    445,
+    446,
+    447,
+    448
+  ],
+  "SourcePdfPages": [
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "TargetYear2026_2027Index": "NOT_VERIFIED",
+  "SourceElements": [
+    {
+      "Type": "concrete-square-toothpick-construction-and-count",
+      "Pages": [
+        443
+      ],
+      "Coverage": "FIRST_PARTY_ARABIC_RICHV2_AND_SOURCE_SCOPED_SQUARE_NUMERIC_FAMILY"
+    },
+    {
+      "Type": "table-of-increment-3-and-increment-6-constructions",
+      "Pages": [
+        444
+      ],
+      "Coverage": "ARABIC_TABLE_AND_NEW_COMPARISON_FAMILY"
+    },
+    {
+      "Type": "connected-and-other-shape-toothpick-patterns",
+      "Pages": [
+        444,
+        445
+      ],
+      "Coverage": "FIRST_PARTY_ARABIC_TRIANGLE_AND_DIAGONAL_SHAPE_FAMILIES_PLUS_TEACHER_RUBRIC"
+    },
+    {
+      "Type": "explain-and-compare-staged-diagrams",
+      "Pages": [
+        445
+      ],
+      "Coverage": "FIRST_PARTY_VISUAL_COMPARISON_AND_TEACHER_RUBRIC"
+    },
+    {
+      "Type": "day-by-day-and-cost-comparison-tables",
+      "Pages": [
+        446
+      ],
+      "Coverage": "FIRST_PARTY_LIFE_EXAMPLE_AND_TEACHER_TABLE_REVIEW"
+    },
+    {
+      "Type": "homestudy-new-pattern-rate-4-and-complete-table",
+      "Pages": [
+        447,
+        448
+      ],
+      "Coverage": "NEW_INCREMENT_FOUR_NUMERIC_FAMILY_AND_ARABIC_EXAMPLES"
+    }
+  ],
+  "EngineDecision": "REUSE_AND_EXTEND UaeGrade4Unit7Lesson02NumericPatternsQuestions (existing exact solver, independent numeric verifier) with 4 Grade5 local source-scoped variants; do not build new engine",
+  "SkillId": "number.numeric_sequences_identify_extend",
+  "QuestionFamilies": [
+    "uae.g5.u06.l07.matchstick_adjacent_squares",
+    "uae.g5.u06.l07.matchstick_square_diagonal",
+    "uae.g5.u06.l07.matchstick_shared_triangles",
+    "uae.g5.u06.l07.compare_three_six_growth"
+  ],
+  "TeacherRubric": {
+    "Source": "ORIGINAL_EDULYTICS",
+    "Activity": "يرسم الطالب نموذجًا جديدًا من مربعات أو مثلثات متصلة، ويحدد بدقة الأضلاع المشتركة والأعواد المضافة، ثم يبني جدولًا ويبرر قاعدة العدد.",
+    "Criteria": [
+      "يرسم 3 أشكال على الأقل مع توضيح العود المشترك",
+      "يعدّ الأعواد الجديدة ويبرر فرق النمط دون نسخ شكل الكتاب",
+      "يكمل جدول 5 أشكال بأعداد صحيحة",
+      "يفسر سبب اختلاف قاعدة +٣ عن +٤ وعن +٦",
+      "يقارن النمطين عند رقم الشكل نفسه ويحافظ على الوحدة"
+    ],
+    "HumanReviewRequired": true
+  },
+  "CoolDown": {
+    "Source": "ORIGINAL_EDULYTICS",
+    "Question": "صمم نمطًا أصليًا يبدأ بستة أعواد ويزيد خمسة أعواد كل خطوة؛ أكمل أعداد الأشكال من الأول إلى الخامس واشرح الرسم.",
+    "Answer": "٦،١١،١٦،٢١،٢٦؛ مع رسم متسق يراجعه المعلم"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ARABIC_CONTENT_AND_ORIGINAL_VISUALS",
+  "StageC": "CLOSED_SOURCE_SCOPED_NUMERIC_SUBSKILLS_AND_TEACHER_RUBRIC_STAGED_NOT_RUN",
+  "ReadinessMechanism": "Official reviewed exact-LessonCode rule authorizes four source-specific question families with numeric answer types, independent verification and keyboard interaction. Only numeric subskills are automatable; original tactile drawing remains teacher-reviewed.",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "NoVerbatimTextbookCopy": true
+}

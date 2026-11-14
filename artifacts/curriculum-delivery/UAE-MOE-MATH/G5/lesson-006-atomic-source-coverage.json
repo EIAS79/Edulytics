@@ -1,0 +1,119 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 6,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:06",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourceEdition": "Owner-selected local Arabic Student 2025–2026",
+  "Official2026_2027SourceOrder": "UNKNOWN",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+  ],
+  "SourcePrintedPages": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "SourceElements": [
+    {
+      "Id": "G5-U01-L06-01",
+      "Category": "title-and-value-to-thousandth",
+      "Pages": [
+        62
+      ],
+      "Coverage": "ORIGINAL_ARABIC"
+    },
+    {
+      "Id": "G5-U01-L06-02",
+      "Category": "place-value-chart-integers-and-fractions",
+      "Pages": [
+        62,
+        63
+      ],
+      "Coverage": "ORIGINAL_PLACEVALUECHART"
+    },
+    {
+      "Id": "G5-U01-L06-03",
+      "Category": "decimal-standard-expanded-word-form-examples",
+      "Pages": [
+        63
+      ],
+      "Coverage": "FOUR_AUTHORED_RICH_EXAMPLES"
+    },
+    {
+      "Id": "G5-U01-L06-04",
+      "Category": "guided-exercises-and-notation",
+      "Pages": [
+        63,
+        64
+      ],
+      "Coverage": "REUSED_DECIMAL_FAMILIES_AND_EXPANDED_EXACT"
+    },
+    {
+      "Id": "G5-U01-L06-05",
+      "Category": "homework-reading-writing",
+      "Pages": [
+        65,
+        66
+      ],
+      "Coverage": "ORIGINAL_PARALLEL_EXAMPLES"
+    },
+    {
+      "Id": "G5-U01-L06-06",
+      "Category": "problem-solving-contexts-and-place-value",
+      "Pages": [
+        66,
+        67
+      ],
+      "Coverage": "ORIGINAL_QUESTIONS_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-U01-L06-07",
+      "Category": "short-assessment-and-misconceptions",
+      "Pages": [
+        67
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN_AND_TEACHER_RUBRIC"
+    }
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.place_value",
+    "Strategy": "Reuse Grade5 thousandth decimal and digit-place from same existing engine; add expanded-to-standard exact decimal family only.",
+    "AllowedQuestionFamilies": [
+      "uae.g5.u01.l04.thousandths_decimal",
+      "uae.g5.u01.l05.decimal_digit_place_value",
+      "uae.g5.u01.l06.expanded_decimal_to_standard"
+    ],
+    "Renderer": "PlaceValueChart + CalculationChain + NumericEntry",
+    "Grader": "Existing decimal engine extended with exact expanded sum",
+    "IndependentVerifier": "Integer thousandth-unit reassembly distinct from decimal sum solver",
+    "TeacherReview": [
+      "word forms",
+      "reasoning"
+    ],
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "CoolDown": {
+    "OriginalSubstitute": true,
+    "Question": "اكتب ١٢٫٠٤٨ بالصيغة الموسعة، وحدد منزلة الرقم ٨ وقيمته.",
+    "Answer": "١٠ + ٢ + ٠٫٠٤ + ٠٫٠٠٨؛ الرقم ٨ في أجزاء الألف وقيمته ٠٫٠٠٨.",
+    "Rubric": "الدقة في الصيغة الموسعة ومكان الصفر"
+  },
+  "StageA": "CLOSED_LOCAL_PDF",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_REUSE_AND_ONE_EXTENSION_WRITTEN_NOT_RUN",
+  "StageDRun": false,
+  "TestsRun": "NOT_RUN",
+  "RuntimeVerified": false
+}

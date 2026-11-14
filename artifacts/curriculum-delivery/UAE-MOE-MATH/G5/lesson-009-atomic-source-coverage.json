@@ -1,0 +1,102 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 9,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:09",
+  "Title": "استقصاء حل المسائل: استخدام خطة الخطوات الأربع",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourceEdition": "Owner-selected 2025–2026 Arabic student",
+  "SourcePrintedPages": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+  ],
+  "SourcePdfPages": [
+    80,
+    81,
+    82,
+    83,
+    84,
+    85
+  ],
+  "TargetAcademicYear": "2026–2027",
+  "Official2026_2027LessonOrder": "UNVERIFIED",
+  "SourceElements": [
+    {
+      "Id": "G5-U1-L9-01",
+      "Concept": "four stage strategy",
+      "Pages": [
+        61,
+        62
+      ],
+      "Coverage": "ORIGINAL_RICH_CONTENT_AND_CALCULATION_CHAIN"
+    },
+    {
+      "Id": "G5-U1-L9-02",
+      "Concept": "multi-step money and inverse multiplication/division",
+      "Pages": [
+        61
+      ],
+      "Coverage": "ORIGINAL_WORKED_EXAMPLE_EXACT_BUDGET_FAMILY"
+    },
+    {
+      "Id": "G5-U1-L9-03",
+      "Concept": "unknown starting quantity and missing distance",
+      "Pages": [
+        62,
+        63,
+        64
+      ],
+      "Coverage": "REUSED_G4_FOUR_STEP_ENGINE_EXTENDED_G5_EXACT"
+    },
+    {
+      "Id": "G5-U1-L9-04",
+      "Concept": "mixed word problems and expression inverse",
+      "Pages": [
+        63,
+        64,
+        66
+      ],
+      "Coverage": "G5_EXACT_FAMILIES_PLUS_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-U1-L9-05",
+      "Concept": "homework four-stage explanation and verification",
+      "Pages": [
+        65
+      ],
+      "Coverage": "FIRST_PARTY_EXAMPLE_AND_TEACHER_RUBRIC"
+    }
+  ],
+  "CoolDown": {
+    "Type": "EDULYTICS_ORIGINAL_NOT_TEACHER_SOURCE",
+    "Question": "بدأت جمعية بعدد من الدفاتر؛ وزّعت ١٨ ثم ٢٤ دفترًا وبقي لديها ٣١ دفترًا. كم دفترًا كان لديها عند البداية؟ وضّح خطواتك الأربع.",
+    "Answer": "٧٣ دفترًا",
+    "Rubric": "Correct model, arithmetic, explanation and substitution; teacher reviews written reasoning"
+  },
+  "SkillContract": {
+    "SkillId": "problem_solving.four_steps_with_whole_numbers",
+    "ExistingEngine": "UaeGrade4Unit1FourStepQuestions (extended, Grade4 unchanged)",
+    "Families": [
+      "uae.g5.u01.l09.find_missing_distance",
+      "uae.g5.u01.l09.find_starting_total",
+      "uae.g5.u01.l09.budget_purchase_count",
+      "uae.g5.u01.l09.undo_four_steps"
+    ],
+    "Grader": "ExactSkillContractQuestionEngine existing pass-through",
+    "Verifier": "Exact numerical validation from persisted parameters; teacher rubric for open four-step reasoning",
+    "TestsWritten": "UaeGrade5Unit1Lesson09FourStepTests.cs",
+    "TestsRun": "NOT_RUN"
+  },
+  "StageA": "CLOSED_OWNER_SELECTED_2025_2026_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "CLOSED_EXISTING_ENGINE_EXTENDED_G5_FAMILIES__TESTS_WRITTEN_NOT_RUN",
+  "StageDRun": false,
+  "AcademicYearScope": "Source comparison local only; official detailed 2026–2027 index not authenticated"
+}

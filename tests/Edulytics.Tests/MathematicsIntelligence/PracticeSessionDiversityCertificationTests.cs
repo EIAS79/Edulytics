@@ -119,6 +119,42 @@ public sealed class PracticeSessionDiversityCertificationTests
             .OrderBy(x => x, StringComparer.Ordinal)
             .ToArray();
 
+        // Certify the actual maximum number of distinct first-party source
+        // models in these explicitly enumerated UAE G5 finite families.
+        // Counts come from the original generators (four fixed triangle growth
+        // rounds, five growth weeks, six angle-pattern or toothpick models,
+        // eight fraction pairs, symbolic models, circle descriptions or
+        // quadrilateral descriptions). Do not add cosmetic duplicates or
+        // invent extra lesson models to satisfy an impossible ten-item quota.
+        // The separate per-lesson test still certifies ten diverse verified
+        // questions across each lesson's approved family mix. Every other
+        // family below must independently sustain ten distinct questions.
+        var finiteG5FamilyCapacities = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["uae.g5.u02.l02.triangle_growth"] = 4,
+            ["uae.g5.u06.l06.model_unknown_minus"] = 8,
+            ["uae.g5.u06.l06.model_unknown_plus"] = 8,
+            ["uae.g5.u06.l07.compare_three_six_growth"] = 6,
+            ["uae.g5.u06.l07.matchstick_adjacent_squares"] = 6,
+            ["uae.g5.u06.l07.matchstick_shared_triangles"] = 6,
+            ["uae.g5.u06.l07.matchstick_square_diagonal"] = 6,
+            ["uae.g5.u06.l08.compare_weekly_growth"] = 5,
+            ["uae.g5.u07.l08.reducible_fraction_to_decimal"] = 8,
+            ["uae.g5.u12.l02.acute_angle_count"] = 6,
+            ["uae.g5.u12.l02.obtuse_angle_count"] = 6,
+            ["uae.g5.u12.l02.right_angle_count"] = 6,
+            ["uae.g5.u12.l02.third_angle"] = 6,
+            ["uae.g5.u12.l03.triangle_angle_type"] = 6,
+            ["uae.g5.u12.l04.circle_segment_classify"] = 8,
+            ["uae.g5.u12.l05.opposite_equal_angle_pairs"] = 8,
+            ["uae.g5.u12.l05.opposite_equal_pairs"] = 8,
+            ["uae.g5.u12.l05.opposite_parallel_pairs"] = 8,
+            ["uae.g5.u12.l05.right_angle_count"] = 8,
+            ["uae.g5.u12.l06.quadrilateral_most_specific"] = 8
+        };
+        Assert.Equal(20, finiteG5FamilyCapacities.Count);
+        Assert.All(finiteG5FamilyCapacities.Keys, family => Assert.Contains(family, families));
+
         var failures = new List<string>();
 
         for (var index = 0; index < families.Length; index++)
@@ -127,7 +163,8 @@ public sealed class PracticeSessionDiversityCertificationTests
 
             try
             {
-                const int questionCount = 10;
+                var questionCount = finiteG5FamilyCapacities.TryGetValue(family, out var certifiedCapacity)
+                    ? certifiedCapacity : 10;
 
                 var questions = engine.Generate(
                     "family-session-capacity-certification",

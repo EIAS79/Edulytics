@@ -1,0 +1,46 @@
+{
+  "Grade": 5,
+  "Unit": 6,
+  "LessonOrdinal": 58,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:06:06",
+  "Status": "READY_FOR_STAGE_D",
+  "StageA": "CLOSED",
+  "StageB": "CLOSED",
+  "StageC": "CLOSED_STAGED_NOT_EXECUTED",
+  "SourcePrintedPages": [
+    437,
+    438,
+    439,
+    440
+  ],
+  "SourcePdfPages": [
+    50,
+    51,
+    52,
+    53
+  ],
+  "SourceSkillScope": [
+    "represent_unknown_container",
+    "interpret_addition_subtraction_expressions",
+    "understand_repeated_variable_and_parentheses",
+    "explain_real_world_expression"
+  ],
+  "ArabicLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u06-l06-ar.rich-lesson-v2.json",
+  "QuestionFamiliesApproved": [
+    "uae.g5.u06.l06.model_unknown_plus",
+    "uae.g5.u06.l06.model_unknown_minus",
+    "uae.g5.u06.l06.model_repeated_group"
+  ],
+  "ReadinessReason": "All source model objectives represented by Arabic rich lesson and three new source-specific structured-expression generator/solver/verifier families, with reviewed exact-code rule, interaction metadata and teacher rubric for open drawings. Test cases written but NOT_RUN.",
+  "StaticFixtures": {
+    "unknownPlusFive": 9,
+    "subtractThree": 8,
+    "threeRepeatedGroups": 18,
+    "repeatedVariable": 15
+  },
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "NextOrdinal": 59,
+  "HumanReviewRequired": true,
+  "SkillId": "number.algebra.write_expressions"
+}

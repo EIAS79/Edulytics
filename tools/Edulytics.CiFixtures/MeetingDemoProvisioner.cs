@@ -361,17 +361,23 @@ internal static class MeetingDemoProvisioner
             (string.Equals(ciProgramme, "UAE-G1", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G2", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G3", StringComparison.Ordinal) ||
-             string.Equals(ciProgramme, "UAE-G4", StringComparison.Ordinal));
+             string.Equals(ciProgramme, "UAE-G4", StringComparison.Ordinal) ||
+             string.Equals(ciProgramme, "UAE-G5", StringComparison.Ordinal));
         var activeSchools = isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
                     ? s with
                     {
                         DefaultCulture = "ar",
-                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G4" ? 4 :
+                        // Grade 5 is enrolled only inside disposable GitHub Actions PostgreSQL.
+                        // Existing school fixture and production paths remain unchanged.
+                        MaximumLogicalLevel = ciProgramme == "UAE-G5" ? 5 : s.MaximumLogicalLevel,
+                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G5" ? 5 :
+                            ciProgramme == "UAE-G4" ? 4 :
                             ciProgramme == "UAE-G3" ? 3 :
                             ciProgramme == "UAE-G2" ? 2 : 1,
-                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G4" ? 3 :
+                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G5" ? 4 :
+                            ciProgramme == "UAE-G4" ? 3 :
                             ciProgramme == "UAE-G3" ? 2 :
                             ciProgramme == "UAE-G2" ? 1 : 2
                     }
@@ -1315,7 +1321,21 @@ DELETE FROM "Schools";
         var primaryLoginClass = SelectLoginClass(
             classes,
             definition.PrimaryLoginLogicalLevel,
-            null);
+            // UAE-G5 disposable CI must authenticate the General learner, not
+            // the alphabetically first Advanced class. Do not alter live/demo tenants.
+            definition.Key == "uae-primary" &&
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.OrdinalIgnoreCase) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G5", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal) &&
+            string.Equals(db.Database.GetDbConnection().Database,
+                "edulytics_clean_ci", StringComparison.Ordinal)
+                ? "General"
+                : null);
 
         var secondaryLoginClass = SelectLoginClass(
             classes,

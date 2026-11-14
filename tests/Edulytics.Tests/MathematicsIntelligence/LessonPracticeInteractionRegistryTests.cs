@@ -58,10 +58,16 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g4.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(295, uaeGrade4.Length);
+        // UAE Grade 5 adds 308 explicitly routed first-party families. Preserve
+        // the previously certified registry baseline without hiding any legacy drift.
+        var uaeGrade5 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g5.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(308, uaeGrade5.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
-            uaeGrade3.Length - uaeGrade4.Length);
+            uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

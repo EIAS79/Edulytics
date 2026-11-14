@@ -1,0 +1,90 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 123,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:09",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "SourcePdfPages": [
+    225,
+    226,
+    227,
+    228,
+    229,
+    230
+  ],
+  "SourcePrintedPages": [
+    929,
+    930,
+    931,
+    932,
+    933,
+    934
+  ],
+  "Objectives": [
+    "استخدام مكعبات حجمها ١ سم³ لنمذجة حيز المنشور",
+    "حساب عدد المكعبات في الطبقة وعدد الطبقات",
+    "حساب العدد الكلي أو الحجم بالسنتمترات المكعبة",
+    "استنتاج الارتفاع من الحجم ومساحة القاعدة"
+  ],
+  "SourceElements": [
+    {
+      "Category": "unit cube definition and 4 prism factor-triples",
+      "Pages": [
+        929
+      ],
+      "Coverage": "concepts and independent examples"
+    },
+    {
+      "Category": "physical layer patterns and volume formula",
+      "Pages": [
+        930,
+        931
+      ],
+      "Coverage": "4 family numeric model and teacher stacking rubric"
+    },
+    {
+      "Category": "apply prism base, volume, missing height",
+      "Pages": [
+        932
+      ],
+      "Coverage": "exact tasks and independent explanations"
+    },
+    {
+      "Category": "homework models with five layers",
+      "Pages": [
+        933,
+        934
+      ],
+      "Coverage": "volume and unit-cube layer task evidence"
+    }
+  ],
+  "Engine": "REUSE UaeGrade4Unit12GeometryOneQuestions existing unit-cube, layer and volume exact engine; add four Grade5 routes.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l09.model_cubes_per_layer",
+    "uae.g5.u12.l09.model_total_unit_cubes",
+    "uae.g5.u12.l09.model_volume_cm3",
+    "uae.g5.u12.l09.model_missing_layers"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "منشور بلا فراغات طوله ٥ مكعبات وعرضه ٣ مكعبات وارتفاعه طبقتان؛ كم مكعبًا في الطبقة وما حجمه؟",
+    "Answer": "١٥ مكعبًا في الطبقة؛ الحجم ٣٠ سم³ إذا كان حجم كل مكعب ١ سم³.",
+    "TeacherRubric": "يربط بين صفوف الطبقة ومجسم ثلاثي الأبعاد كامل."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "L123_UNIT_CUBE_MODEL_FAMILIES_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson09VolumeModelsTests.cs",
+  "TestsRun": "FOCUSED_4_PASSED; L122_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Build physical model without voids or overlaps",
+    "Explain layer pattern in student words"
+  ],
+  "SourceRights": "Original Edulytics Arabic text, independently authored examples and tasks."
+}

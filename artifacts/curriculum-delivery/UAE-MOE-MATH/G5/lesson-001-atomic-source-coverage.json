@@ -1,0 +1,135 @@
+{
+  "LessonOrdinal": 1,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:01",
+  "Grade": 5,
+  "Unit": 1,
+  "Pathway": "General/Common",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourceEdition": "Arabic Student 2025-2026",
+  "SourcePdfPages": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "SourcePrintedPages": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "TargetAcademicYear": "2026–2027",
+  "AnnualSequenceStatus": "UNVERIFIED__2026_2027_RESEQUENCED",
+  "SourceElements": [
+    {
+      "SourceElementId": "G5-01-01-01",
+      "Type": "objective-and-title",
+      "Pages": [
+        30
+      ],
+      "Status": "ORIGINAL_ARABIC_AUTHORED",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-02",
+      "Type": "place-value-model",
+      "Pages": [
+        30,
+        31
+      ],
+      "Status": "ORIGINAL_VISUAL_AUTHORED",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-03",
+      "Type": "standard-word-expanded-forms",
+      "Pages": [
+        31,
+        32
+      ],
+      "Status": "ORIGINAL_ARABIC_AUTHORED",
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u01-l01-ar.rich-lesson-v2.json"
+    },
+    {
+      "SourceElementId": "G5-01-01-04",
+      "Type": "guided-and-independent-practice",
+      "Pages": [
+        31,
+        32
+      ],
+      "Status": "EXACT_DIGITAL_ASSESSMENT_AUTHORED_PENDING_STAGE_D"
+    },
+    {
+      "SourceElementId": "G5-01-01-05",
+      "Type": "word-problem-and-reasoning",
+      "Pages": [
+        33
+      ],
+      "Status": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "SourceElementId": "G5-01-01-06",
+      "Type": "homework-and-error-analysis",
+      "Pages": [
+        34,
+        35
+      ],
+      "Status": "TEACHER_REVIEW_REQUIRED"
+    },
+    {
+      "SourceElementId": "G5-01-01-07",
+      "Type": "vocabulary-and-check",
+      "Pages": [
+        35
+      ],
+      "Status": "COOLDOWN_ORIGINAL_SUBSTITUTE"
+    }
+  ],
+  "CoolDown": {
+    "Question": "في العدد ٣٬٠٥٧٬٤٠٢٬٠١٨ ما قيمة الرقم ٥؟ اكتب العدد أيضًا بالصورة التحليلية.",
+    "Expected": "٥٠٬٠٠٠٬٠٠٠؛ ٣٬٠٠٠٬٠٠٠٬٠٠٠ + ٥٠٬٠٠٠٬٠٠٠ + ٧٬٠٠٠٬٠٠٠ + ٤٠٠٬٠٠٠ + ٢٬٠٠٠ + ١٠ + ٨",
+    "Rubric": "دقة المنزلة والقيمة، الحفاظ على الأصفار والتحقق من مجموع الأجزاء",
+    "OriginalTeacherContentInspected": false
+  },
+  "SkillContract": {
+    "Target": "number.place_value.to_billions",
+    "ExistingReuseCandidate": "G4 exact place-value structure extended with ten base-10 digits and Int64 numeric answer; G4 unchanged",
+    "AllowedQuestionFamilies": [
+      "uae.g5.u01.l01.digit_value_to_billions",
+      "uae.g5.u01.l01.compose_ten_digits",
+      "uae.g5.u01.l01.expanded_to_standard"
+    ],
+    "AnswerType": "exact_integer (Int64)",
+    "Forbidden": [
+      "rounding-only",
+      "generic arithmetic",
+      "int32-overflow",
+      "incorrect official-year provenance"
+    ],
+    "Renderer": "IntegerKeypad + original Arabic PlaceValueChart",
+    "Grader": "G5 exact Solve (weighted positional sum)",
+    "IndependentVerifier": "G5 exact Verify (base-ten repeated accumulation)",
+    "TeacherReview": [
+      "reasoning",
+      "error analysis",
+      "word explanation"
+    ],
+    "Tests": "WRITTEN_NOT_RUN",
+    "Status": "STAGE_C_AUTHORED_NOT_EXECUTED"
+  },
+  "StageA": "LOCAL_STUDENT_2025_2026_PDF_PAGES_30_35_CLOSED__2026_2027_RESEQUENCING_UNVERIFIED",
+  "StageB": "ORIGINAL_ARABIC_CONTENT_RICHV2_CLOSED__RUNTIME_NOT_VERIFIED",
+  "StageC": "EXACT_INT64_PRACTICE_SKILL_FAMILIES_3_AND_GRADER_VERIFIER_AUTHORED__TESTS_WRITTEN_NOT_RUN",
+  "Status": "READY_FOR_STAGE_D",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Rights": "Only internal source page hashes and original learner content",
+  "SourceSelectionScope": "Owner-selected local Arabic student book with year-neutral skill alignment. Grade 5 official 2026–2027 lesson order is NOT verified.",
+  "ABCSourceShapeChecks": "PASSED_STATIC_JSON_AND_JAVASCRIPT_MATH_INSPECTION_ONLY",
+  "ReadinessMeaning": "A/B/C authored and structurally aligned to selected local book; NOT StageD verification, NOT full 2026-27 official source parity"
+}

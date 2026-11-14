@@ -1,0 +1,118 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 8,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:08",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Official2026_2027Order": "UNVERIFIED",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "SourcePrintedPages": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "SourceElements": [
+    {
+      "Id": "G5-U01-L08-01",
+      "Category": "title-order-goal",
+      "Pages": [
+        74
+      ],
+      "Coverage": "ORIGINAL_ARABIC"
+    },
+    {
+      "Id": "G5-U01-L08-02",
+      "Category": "example-2-decimal-length-order",
+      "Pages": [
+        75
+      ],
+      "Coverage": "ORIGINAL_WORKED_EXAMPLE"
+    },
+    {
+      "Id": "G5-U01-L08-03",
+      "Category": "asc-desc-and-place-values",
+      "Pages": [
+        75,
+        76
+      ],
+      "Coverage": "PLACE_CHART_EXACT_FAMILIES"
+    },
+    {
+      "Id": "G5-U01-L08-04",
+      "Category": "practice-sets-of-four-decimals",
+      "Pages": [
+        76,
+        77
+      ],
+      "Coverage": "TWO_EXACT_SORT_FAMILIES"
+    },
+    {
+      "Id": "G5-U01-L08-05",
+      "Category": "tables-of-measurements",
+      "Pages": [
+        77
+      ],
+      "Coverage": "ORIGINAL_PARALLEL_EXAMPLE_AND_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-U01-L08-06",
+      "Category": "homework-context-money-time",
+      "Pages": [
+        78,
+        79
+      ],
+      "Coverage": "ORIGINAL_CONTEXT_EXAMPLES"
+    },
+    {
+      "Id": "G5-U01-L08-07",
+      "Category": "short-assessment-including-equality",
+      "Pages": [
+        79
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN_AND_RUBRIC"
+    }
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.compare",
+    "Strategy": "Reuse existing G5 decimal comparison extension (G4-origin exact engine); EXTEND two 4-number order families",
+    "AllowedQuestionFamilies": [
+      "uae.g5.u01.l07.compare_decimal_to_thousandths",
+      "uae.g5.u01.l08.order_decimals_ascending",
+      "uae.g5.u01.l08.order_decimals_descending"
+    ],
+    "Renderer": "ShortAnswer sorted decimal list separated semicolons, PlaceValueChart and NumberLine",
+    "Grader": "Existing decimal comparison engine with order logic",
+    "IndependentVerifier": "Parse each answer as exact integer count of thousandths and independently sort values",
+    "TeacherReview": [
+      "data table reasoning",
+      "visual numberline explanation"
+    ],
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "CoolDown": {
+    "OriginalAuthored": true,
+    "Question": "رتب ٨٫٢٥ و٨٫٢٠٥ و٨٫٢٥٠ و٨٫٢٠ تصاعديًا، وفسر موضع التساوي.",
+    "Answer": "٨٫٢٠ <٨٫٢٠٥ <٨٫٢٥ =٨٫٢٥٠",
+    "Rubric": "المقارنة وبيان التساوي"
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_PDF",
+  "StageB": "CLOSED_ORIGINAL_RICHV2",
+  "StageC": "EXACT_REUSE_AND_TWO_SORT_EXTENSIONS_NOT_RUN",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "RuntimeVerified": false
+}

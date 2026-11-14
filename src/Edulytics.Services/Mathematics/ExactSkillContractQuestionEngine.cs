@@ -293,6 +293,8 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade2Unit5Questions.Supports(family.Trim()) ||
           UaeGrade3Unit1Questions.Supports(family.Trim()) ||
           UaeGrade4Unit1Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade5Unit1Lesson01Questions.Supports(family.Trim()) ||
+          UaeGrade5Unit1Lesson02Questions.Supports(family.Trim()) ||
           UaeGrade4Unit1ComparisonQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit1RoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit1FourStepQuestions.Supports(family.Trim()) ||
@@ -335,6 +337,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeGrade4Unit10Lesson06FractionRoundingQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit10DecimalPlaceValueQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
+          UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson05WorkingBackwardsQuestions.Supports(family.Trim()) ||
@@ -712,6 +715,10 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit1Questions.Verify(family, parameters, answer);
         if (UaeGrade4Unit1Lesson01Questions.Supports(family))
             return UaeGrade4Unit1Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade5Unit1Lesson01Questions.Supports(family))
+            return UaeGrade5Unit1Lesson01Questions.Verify(family, parameters, answer);
+        if (UaeGrade5Unit1Lesson02Questions.Supports(family))
+            return UaeGrade5Unit1Lesson02Questions.Verify(family, parameters, answer);
         if (UaeGrade4Unit1ComparisonQuestions.Supports(family))
             return UaeGrade4Unit1ComparisonQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit1RoundingQuestions.Supports(family))
@@ -796,6 +803,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit10DecimalPlaceValueQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
+        if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
+            return UaeGrade5Unit9UnitFractionDivisionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family))
             return UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Verify(family, parameters, answer);
         if (UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(family))
@@ -3906,6 +3915,16 @@ public sealed class ExactSkillContractQuestionEngine
             var q = UaeGrade4Unit1Lesson01Questions.Build(family, random);
             return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
         }
+        if (UaeGrade5Unit1Lesson01Questions.Supports(family))
+        {
+            var q = UaeGrade5Unit1Lesson01Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
+        if (UaeGrade5Unit1Lesson02Questions.Supports(family))
+        {
+            var q = UaeGrade5Unit1Lesson02Questions.Build(family, random);
+            return new ExactProblem(q.Family, q.Prompt, q.Solution, q.ItemType, q.Parameters);
+        }
         if (UaeGrade4Unit1ComparisonQuestions.Supports(family))
         {
             var q = UaeGrade4Unit1ComparisonQuestions.Build(family, random);
@@ -4114,6 +4133,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
         {
             var q = UaeGrade4Unit9FractionMultiplicationQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
+        {
+            var q = UaeGrade5Unit9UnitFractionDivisionQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family))
@@ -8355,6 +8379,10 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade3Unit1Questions.Solve(problem.Family, p);
         if (UaeGrade4Unit1Lesson01Questions.Supports(problem.Family))
             return UaeGrade4Unit1Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade5Unit1Lesson01Questions.Supports(problem.Family))
+            return UaeGrade5Unit1Lesson01Questions.Solve(problem.Family, p);
+        if (UaeGrade5Unit1Lesson02Questions.Supports(problem.Family))
+            return UaeGrade5Unit1Lesson02Questions.Solve(problem.Family, p);
         if (UaeGrade4Unit1ComparisonQuestions.Supports(problem.Family))
             return UaeGrade4Unit1ComparisonQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit1RoundingQuestions.Supports(problem.Family))
@@ -8439,6 +8467,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeGrade4Unit10DecimalPlaceValueQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
+        if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))
+            return UaeGrade5Unit9UnitFractionDivisionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(problem.Family))
             return UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Solve(problem.Family, p);
         if (UaeGrade4Unit9Lesson06MixedAdditionQuestions.Supports(problem.Family))

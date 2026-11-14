@@ -25,9 +25,10 @@ internal static class UaeGrade4Unit14MetricMeasurementQuestions
   GuessRemaining,LengthCm,LengthMm,CapacityMl,CapacityCombined,MassGrams,MassCombined,ListPairs,ListTriples,ConvertMm,ConvertCm,
   MeasurementTotal,MeasurementTime];
  internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
- internal static bool Supports(string? f)=>f!=null&&Families.Contains(f);
+ internal static bool Supports(string? f)=>f!=null&&(Families.Contains(f)||IsG5(f));
  internal static Item Build(string f,Random random)
  {
+  if(IsG5(f))return BuildG5(f,random);
   if(!Supports(f))throw new InvalidOperationException("Unsupported metric measurement family");
   int a=random.Next(2,12),b=random.Next(2,12),c=random.Next(1,Math.Min(10,a*b));
   var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
@@ -80,11 +81,13 @@ internal static class UaeGrade4Unit14MetricMeasurementQuestions
  }
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
+  if(IsG5(f))return SolveG5(f,p);
   if(!Valid(f,p,out int ans))throw new InvalidOperationException("Invalid metric values");
   return ans.ToString(CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+  if(IsG5(f))return VerifyG5(f,p,answer);
   if(!Valid(f,p,out int expected)||string.IsNullOrWhiteSpace(answer))return false;
   string normalized=new(answer.Trim().Select(c=>c switch{
     >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
@@ -92,4 +95,105 @@ internal static class UaeGrade4Unit14MetricMeasurementQuestions
   }).Where(c=>c is not ' ' and not ',' and not '٬' and not '\u00a0').ToArray());
   return int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)&&actual==expected;
  }
+// UAE G5 Common U10: extend the existing metric/line-plot exact families,
+// with Grade 5 decimals and teacher-reviewed physical measurement tasks.
+private const string G5PlotCount = "uae.g5.u10.l01.fraction_plot_count";
+private const string G5PlotTotal = "uae.g5.u10.l01.fraction_plot_total";
+private const string G5RulerCm = "uae.g5.u10.l02.ruler_nearest_centimeter";
+private const string G5RulerMm = "uae.g5.u10.l02.ruler_length_millimeters";
+private const string G5LengthCm = "uae.g5.u10.l03.meters_tenths_to_centimeters";
+private const string G5LengthM = "uae.g5.u10.l03.millimeters_to_meters";
+private const string G5MassDiff = "uae.g5.u10.l04.mass_difference_kg_g";
+private const string G5MassG = "uae.g5.u10.l05.kilograms_tenths_to_grams";
+private const string G5MassKg = "uae.g5.u10.l05.grams_to_kilograms";
+private const string G5CapMl = "uae.g5.u10.l06.liters_tenths_to_milliliters";
+private const string G5CapL = "uae.g5.u10.l06.milliliters_to_liters";
+private const string G5LogicalRemaining = "uae.g5.u10.l07.logical_remaining";
+private const string G5LogicalOriginal = "uae.g5.u10.l07.logical_original_total";
+
+private static bool IsG5(string? family) =>
+    family is G5PlotCount or G5PlotTotal or G5RulerCm or G5RulerMm or
+      G5LengthCm or G5LengthM or G5MassDiff or G5MassG or G5MassKg or
+      G5CapMl or G5CapL or G5LogicalRemaining or G5LogicalOriginal;
+
+private static Item BuildG5(string family, Random rng)
+{
+    int a=rng.Next(2,10), b=rng.Next(1,10), c=rng.Next(1,10);
+    // These legacy family IDs retain stable registry routing; generated tasks now use source-aligned logical clues.
+    var p=new Dictionary<string,int>{{"a",a},{"b",b},{"c",c}};
+    string question=family switch
+    {
+        G5PlotCount=>$"تظهر ١/٤ متر على مخطط نقاط بطول {a} علامات، و١/٣ متر بعدد {b} علامات و١/٢ متر بعدد {c} علامات. كم علامة عند ١/٤ متر؟",
+        G5PlotTotal=>$"مخطط قياسات يضم {a} علامات فوق ١/٤ و{b} فوق ١/٣ و{c} فوق ١/٢. كم عدد القياسات كلها؟",
+        G5RulerCm=>$"يمتد جسم من صفر المسطرة إلى {a} سنتيمترًا و{b} ملليمترات. ما طوله مقربًا إلى أقرب سنتيمتر؟",
+        G5RulerMm=>$"ما طول جسم بالسنتيمترات والملليمترات: {a} سم و{b} ملم، إذا كتبنا الطول بالملليمترات فقط؟",
+        G5LengthCm=>$"حوّل {a} أمتار و{b} أعشار المتر إلى سنتيمترات.",
+        G5LengthM=>$"حوّل {a*1000+b*10} ملليمتر إلى متر. اكتب عددًا عشريًا.",
+        G5MassDiff=>$"كتلة حقيبة {a} كيلوجرامات، وكتلة علبة {b*100} جرام. كم جرامًا تزيد كتلة الحقيبة عن العلبة؟",
+        G5MassG=>$"حوّل {a} كيلوجرامات و{b} أعشار الكيلوجرام إلى جرامات.",
+        G5MassKg=>$"حوّل {a*1000+b*10} جرامًا إلى كيلوجرامات بالعدد العشري.",
+        G5CapMl=>$"حوّل {a} لترات و{b} أعشار اللتر إلى ملليلترات.",
+        G5CapL=>$"حوّل {a*1000+b*10} ملليلتر إلى لترات بالعدد العشري.",
+        G5LogicalRemaining=>$"ثلاث أشجار ارتفاعاتها {a*100+b} و{a*100+b+c} و{a*100+b+2*c} سنتيمترًا. شجرة مريم أطول من شجرة سارة وأقصر من شجرة هدى. ما ارتفاع شجرة مريم بالسنتيمتر؟ نظّم المعطيات واستبعد القيم غير الممكنة.",
+        G5LogicalOriginal=>$"أعمار ثلاث أشجار هي {a} و{a+b} و{a+b+c} سنوات. شجرة النخيل أكبر عمرًا من شجرة الليمون، والليمون أكبر من شجرة الزيتون. كم عمر شجرة النخيل؟ ضع الأعمار في جدول من الأصغر إلى الأكبر.",
+        _=>throw new InvalidOperationException("Unsupported G5 metric family.")
+    };
+    return new Item(family,question,
+        "أقرأ الوحدات أو التكرارات، أستعمل الجدول الصحيح، وأتحقق بعلاقة عكسية أو بعملية مكافئة.",
+        family is G5LengthM or G5MassKg or G5CapL ? AssessmentItemType.Numeric :
+        AssessmentItemType.Numeric,p);
+}
+
+private static bool TryG5Answer(string family,IReadOnlyDictionary<string,int> p,
+    out decimal expected)
+{
+    expected=0m;
+    if(!IsG5(family)||p.Count!=3||!p.TryGetValue("a",out int a)||
+       !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+       a is <2 or >9||b is <1 or >9||c is <1 or >9)return false;
+    expected=family switch
+    {
+        G5PlotCount=>a,
+        G5PlotTotal=>a+b+c,
+        G5RulerCm=>(a*10+b+5)/10,
+        G5RulerMm=>a*10+b,
+        G5LengthCm=>a*100+b*10,
+        G5LengthM=>a+b/100m,
+        G5MassDiff=>a*1000-b*100,
+        G5MassG=>a*1000+b*100,
+        G5MassKg=>a+b/100m,
+        G5CapMl=>a*1000+b*100,
+        G5CapL=>a+b/100m,
+        G5LogicalRemaining=>a*100+b+c,
+        G5LogicalOriginal=>a+b+c,
+        _=>throw new InvalidOperationException("Unsupported G5 metric family.")
+    };
+    return expected>=0m;
+}
+
+private static string SolveG5(string family,IReadOnlyDictionary<string,int> p)
+{
+    if(!TryG5Answer(family,p,out decimal expected))
+        throw new InvalidOperationException("Invalid G5 metric parameters.");
+    return expected.ToString(family is G5LengthM or G5MassKg or G5CapL?
+        "0.00":"0",CultureInfo.InvariantCulture);
+}
+
+private static bool VerifyG5(string family,IReadOnlyDictionary<string,int> p,string? answer)
+{
+    if(!TryG5Answer(family,p,out decimal expected)||
+       string.IsNullOrWhiteSpace(answer)||answer.Length>35)return false;
+    string normalized=new(answer.Trim().Select(ch=>ch switch
+    {
+        >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+        >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+        '٫'=>'.',
+        _=>ch
+    }).Where(ch=>!char.IsWhiteSpace(ch)&&ch is not ',' and not '٬').ToArray());
+    var style=family is G5LengthM or G5MassKg or G5CapL
+        ? NumberStyles.AllowDecimalPoint : NumberStyles.None;
+    return decimal.TryParse(normalized,style,CultureInfo.InvariantCulture,out decimal provided)
+        &&provided==expected;
+}
+
 }

@@ -1,0 +1,89 @@
+{
+  "Grade": 5,
+  "Unit": 11,
+  "LessonOrdinal": 105,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:11:02",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "SourcePrintedPages": [
+    797,
+    798,
+    799,
+    800,
+    801,
+    802
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "تجميع قياسات زمنية في جدول أزواج مرتبة",
+    "إنشاء تمثيل بياني خطي بمحاور مسماة وتدرج منتظم",
+    "تمثيل نقاط مرتبة ووصلها زمنيًا، وقراءة القيم والفرق والأقصى",
+    "مقارنة خطين يشتركان في وحدة ومقياس"
+  ],
+  "SourceElements": [
+    {
+      "Category": "hands-on axis and dot-plot sequence",
+      "Pages": [
+        797,
+        798
+      ],
+      "Coverage": "original step-by-step Arabic graph construction and source-aligned numerical examples"
+    },
+    {
+      "Category": "three source tables for constructing line graphs",
+      "Pages": [
+        799
+      ],
+      "Coverage": "first-party multi-time table and teacher-checked drawing"
+    },
+    {
+      "Category": "double-line graph and axis-scale reasoning",
+      "Pages": [
+        800
+      ],
+      "Coverage": "original comparison rubric and common mistake"
+    },
+    {
+      "Category": "homework graph creation and contextual table",
+      "Pages": [
+        801,
+        802
+      ],
+      "Coverage": "first-party original model and three exact numeric families"
+    }
+  ],
+  "Engine": "EXTEND existing UaeGrade4Unit13GraphsQuestions Grade4/Grade5 graph engine with three exact line-plot families",
+  "SkillId": "data.graphs",
+  "QuestionFamilies": [
+    "uae.g5.u11.l02.line_plot_read_point",
+    "uae.g5.u11.l02.line_plot_total_change",
+    "uae.g5.u11.l02.line_plot_max_value"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "درجات حرارة خلال خمس ساعات: ١٨، ٢١، ٢٦، ٢٤، ٢٩. ارسم تمثيلًا خطيًا؛ ما قيمة الساعة الثالثة وما أعلى قيمة؟",
+    "Answer": "٢٦ في الساعة الثالثة، وأعلى قيمة ٢٩",
+    "TeacherRubric": "جدول أزواج مرتب، الزمن على x، درجات الحرارة على y، مقياس ثابت ووحدات، نقاط موضوعة بدقة وموصولة بالتتابع، وقراءة ٢٦ و٢٩ صحيحة."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_LINE_PLOT_3_FAMILIES_AND_SOURCE_RULE_STAGED__NOT_RUN",
+  "TestsWritten": "UaeGrade5Unit11Lesson02LineGraphPracticeTests.cs",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Physical graph drawing and scale selection",
+    "Double-line graph representation"
+  ],
+  "SourceRights": "Only objective and source page metadata; original Edulytics student content."
+}

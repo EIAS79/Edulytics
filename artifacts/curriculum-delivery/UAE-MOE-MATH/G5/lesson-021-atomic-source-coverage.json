@@ -1,0 +1,66 @@
+{
+  "Grade": 5,
+  "Unit": 3,
+  "LessonOrdinal": 21,
+  "LessonNumber": 2,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:02",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    163,
+    164,
+    165,
+    166,
+    167,
+    168
+  ],
+  "SourceEdition": "Owner-selected 2025–2026 Arabic student",
+  "TargetAcademicYear": "2026–2027",
+  "OfficialDetailedIndexVerified": false,
+  "SourceCoverage": [
+    {
+      "Source": "equal group ten-ones model",
+      "Pages": [
+        163,
+        164
+      ],
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l02-ar.rich-lesson-v2.json"
+    },
+    {
+      "Source": "quotient with remainder / regrouping",
+      "Pages": [
+        164,
+        165
+      ],
+      "Artifact": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g5-u03-l02-ar.rich-lesson-v2.json"
+    },
+    {
+      "Source": "guided-independent activities",
+      "Pages": [
+        165,
+        167
+      ],
+      "Artifact": "tests/Edulytics.Tests/MathematicsIntelligence/UaeGrade5Unit3Lesson02DivisionModelsReuseTests.cs"
+    },
+    {
+      "Source": "word problems and error reasoning",
+      "Pages": [
+        166,
+        168
+      ],
+      "Artifact": "teacher review + authored cooldown"
+    }
+  ],
+  "ReusedExactPracticeFamilies": [
+    "uae.g4.u06.l03.base_ten_quotient",
+    "uae.g4.u06.l03.base_ten_remainder"
+  ],
+  "SkillId": "number.base_ten_division_with_remainders",
+  "EngineReused": "UaeGrade4Unit6Lesson03BaseTenDivisionQuestions; NO NEW ENGINE OR G5 GENERATOR",
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXISTING_EXACT_PRACTICE_REUSED",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}

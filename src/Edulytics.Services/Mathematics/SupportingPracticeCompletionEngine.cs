@@ -111,6 +111,8 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.midpoint",
             "supporting.geometry.axis_distance",
             "usccss.g7.u03.l02.radius_diameter_relation",
+            "uae.g5.u12.l04.radius_diameter_exact",
+            "uae.g5.u12.l04.circle_segment_classify",
             "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
@@ -303,6 +305,8 @@ internal static partial class SupportingPracticeCompletionEngine
             "supporting.geometry.midpoint" => Midpoint(random, scale),
             "supporting.geometry.axis_distance" => AxisDistance(random, scale),
             "usccss.g7.u03.l02.radius_diameter_relation" => CircleRadiusDiameter(random, scale),
+            "uae.g5.u12.l04.radius_diameter_exact" => CircleRadiusDiameterG5(random, scale),
+            "uae.g5.u12.l04.circle_segment_classify" => CircleSegmentG5(random),
             "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
@@ -516,6 +520,10 @@ internal static partial class SupportingPracticeCompletionEngine
                 Math.Abs(p["end"] - p["start"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l02.radius_diameter_relation" =>
                 (p["mode"] == 0 ? 2 * p["radius"] : p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g5.u12.l04.radius_diameter_exact" =>
+                (p["mode"] == 0 ? 2 * p["radius"] : p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g5.u12.l04.circle_segment_classify" =>
+                CircleSegmentTypeG5(p["variant"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l05.wheel_rotations_distance" =>
                 p["mode"] switch
                 {
@@ -630,6 +638,27 @@ internal static partial class SupportingPracticeCompletionEngine
         if (!Supports(family))
             return false;
 
+        if (family is "uae.g5.u12.l04.radius_diameter_exact" or
+            "uae.g5.u12.l04.circle_segment_classify")
+        {
+            if (string.IsNullOrWhiteSpace(answer) || answer.Length > 24) return false;
+            bool isRadius=family == "uae.g5.u12.l04.radius_diameter_exact";
+            if (isRadius && (p.Count!=2 || !p.TryGetValue("radius",out int radius) ||
+                radius is <1 or >1000 || !p.TryGetValue("mode",out int mode) ||
+                mode is <0 or >1)) return false;
+            if (!isRadius && (p.Count!=1 || !p.TryGetValue("variant",out int variant) ||
+                variant is <0 or >7)) return false;
+            string normalized=new(answer.Trim().Select(ch=>ch switch
+            {
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                _=>ch
+            }).ToArray());
+            if (!int.TryParse(normalized,NumberStyles.None,CultureInfo.InvariantCulture,out int actual)) return false;
+            int independent=isRadius ? (p["mode"]==0 ? 2*p["radius"] : p["radius"])
+                : CircleSegmentTypeG5(p["variant"]);
+            return actual==independent;
+        }
         var expected = Solve(family, p);
         if (family is
             "usccss.g7.u04.fractional_change" or
@@ -1524,6 +1553,47 @@ internal static partial class SupportingPracticeCompletionEngine
             ("mode", mode), ("radius", radius));
     }
 
+    // UAE Grade5 Unit12 Lesson4: original Arabic source, existing circle numeric engine.
+    // Keep the shared G7 math contract unchanged; only adapt the prompt/routing.
+    private static Problem CircleRadiusDiameterG5(Random rng,int scale)
+    {
+        int radius=rng.Next(2,34+scale*3);
+        int mode=rng.Next(0,2);
+        string unit=new[]{"سم","م","مم"}[rng.Next(3)];
+        string question=mode==0
+            ? $"دائرة نصف قطرها {radius} {unit}. احسب طول قطرها بوحدة {unit}."
+            : $"دائرة قطرها {2*radius} {unit}. احسب نصف قطرها بوحدة {unit}.";
+        return P("uae.g5.u12.l04.radius_diameter_exact",question,
+            "القطر ضعف نصف القطر؛ ونصف القطر نصف طول القطر.",
+            ("radius",radius),("mode",mode));
+    }
+    private static int CircleSegmentTypeG5(int variant) => variant switch
+    {
+        0 or 4 => 0, // radius
+        1 or 5 => 1, // diameter
+        2 or 6 => 2, // non-diameter chord
+        3 or 7 => 3, // not a straight segment with the required endpoints
+        _=>throw new ArgumentOutOfRangeException(nameof(variant))
+    };
+    private static Problem CircleSegmentG5(Random rng)
+    {
+        int variant=rng.Next(8);
+        string[] descriptions=
+        [
+            "قطعة تصل مركز الدائرة بنقطة على محيطها",
+            "قطعة يصل طرفاها نقطتين على المحيط وتمر بالمركز",
+            "قطعة تصل بين نقطتين على المحيط ولا تمر بالمركز",
+            "قوس منحني من محيط الدائرة",
+            "قطعة مستقيمة تبدأ من المركز وتنتهي عند المحيط",
+            "الوتر المستقيم الأطول في الدائرة ويمر بالمركز",
+            "وتر مستقيم يصل نقطتين على المحيط لكنه لا يمر بمركز الدائرة",
+            "قطعة مستقيمة تقع خارج الدائرة ولا تلامس محيطها"
+        ];
+        return P("uae.g5.u12.l04.circle_segment_classify",
+            $"الوصف: {descriptions[variant]}. اختر النوع: ٠ نصف القطر؛ ١ القطر؛ ٢ وتر غير قطري؛ ٣ لا شيء مما سبق.",
+            "نصف القطر يبدأ بالمركز، والقطر وتر يمر به، والوتر طرفاه على المحيط.",
+            ("variant",variant));
+    }
     private static Problem WheelRotationsDistance(Random r, int s)
     {
         var mode = r.Next(0, 3);

@@ -118,6 +118,11 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // current-SHA G1 math/runtime tests and authenticated CI remain mandatory.
   // All original and current Git blobs are immutable evidence, NOT fresh
   // academic certification of the 96 G1 original-source activities.
+  // UAE G5 2026-11-14: exact 30-line G5-only engine additions preserve every
+  // prior G1/G11 line, plus exactly one wrong-answer-profile probe opt-in.
+  // Both immutable approved Git blobs are enforced by this eight-file check
+  // and tests/us-ccss-g1-g11-additive-engine-compatibility.test.cjs.
+  // No re-certification of original Grade1 source pedagogy is claimed.
   // This technical compatibility check must be paired with CURRENT-HEAD
   // G1 source-math regression AND authenticated two-school CI; it is NOT an
   // academic reapproval, replacement for those tests, or blanket SHA reset.
@@ -160,7 +165,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','d84a61ebc37e8ca026f95906720bfaef3ea56081']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','02748e9f3b6f56d5ab0b9e3b4a08777fd9bb2c88']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
       ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
@@ -168,7 +173,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d778e602928ff252573365dce53e7e3e31ab708d']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','ece5ce8b368f8cb07f5c4be0992d45de0d4ba96a']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;

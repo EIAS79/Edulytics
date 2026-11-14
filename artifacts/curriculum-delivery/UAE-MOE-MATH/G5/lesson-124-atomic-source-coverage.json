@@ -1,0 +1,90 @@
+{
+    "Grade":  5,
+    "Unit":  12,
+    "LessonOrdinal":  124,
+    "LessonCode":  "PED:UAE-MOE-MATH:L5:GENERAL:12:10",
+    "Status":  "READY_FOR_STAGE_D",
+    "SourcePdfPath":  "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+    "SourcePdfSha256":  "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+    "SourceEdition":  "Owner-selected Arabic Student 2025–2026",
+    "SourcePdfPages":  [
+                           231,
+                           232,
+                           233,
+                           234,
+                           235,
+                           236
+                       ],
+    "SourcePrintedPages":  [
+                               935,
+                               936,
+                               937,
+                               938,
+                               939,
+                               940
+                           ],
+    "Objectives":  [
+                       "تطبيق ح=ط×ع×ا لمنشور مستطيل القاعدة",
+                       "استخدام ح=مساحة القاعدة×الارتفاع",
+                       "إيجاد الارتفاع المفقود من الحجم ومساحة القاعدة",
+                       "تحديد وحدة حجم مناسبة ومقارنة أحجام منشورين"
+                   ],
+    "SourceElements":  [
+                           {
+                               "Category":  "both prism-volume formulas and cooler example",
+                               "Pages":  [
+                                             935
+                                         ],
+                               "Coverage":  "original Arabic concepts and independent examples"
+                           },
+                           {
+                               "Category":  "associative property and dimensions/base area examples",
+                               "Pages":  [
+                                             936,
+                                             937
+                                         ],
+                               "Coverage":  "both numeric equation families and volume units"
+                           },
+                           {
+                               "Category":  "animal carrier comparisons and real-world volume",
+                               "Pages":  [
+                                             938
+                                         ],
+                               "Coverage":  "compare-two-prisms family and teacher reasoning rubric"
+                           },
+                           {
+                               "Category":  "homework and volume word problems",
+                               "Pages":  [
+                                             939,
+                                             940
+                                         ],
+                               "Coverage":  "first-party practice and verification"
+                           }
+                       ],
+    "Engine":  "REUSE UaeGrade4Unit12GeometryOneQuestions existing prism-volume and missing-height backend; add 4 Grade5 routes.",
+    "SkillId":  "geometry.polygons",
+    "QuestionFamilies":  [
+                             "uae.g5.u12.l10.volume_lwh",
+                             "uae.g5.u12.l10.volume_base_area_height",
+                             "uae.g5.u12.l10.missing_prism_height",
+                             "uae.g5.u12.l10.compare_prism_volumes"
+                         ],
+    "CoolDown":  {
+                     "Type":  "Edulytics original",
+                     "Question":  "منشور طول قاعدته ٨ سم وعرضها ٣ سم وارتفاعه ٥ سم. أوجد الحجم بطريقتين.",
+                     "Answer":  "١٢٠ سم³؛ إما ٨×٣×٥، أو مساحة القاعدة ٢٤ سم² ×٥ سم.",
+                     "TeacherRubric":  "يوضح سبب تكافؤ الطريقتين وصحة وحدات القياس."
+                 },
+    "StageA":  "CLOSED_LOCAL_ARABIC_SOURCE",
+    "StageB":  "CLOSED_ORIGINAL_ARABIC_RICHV2",
+    "StageC":  "L124_PRISM_VOLUME_FAMILIES_FOCUSED_TEST_PASSED",
+    "TestsWritten":  "UaeGrade5Unit12Lesson10PrismVolumeTests.cs",
+    "TestsRun":  "FOCUSED_4_PASSED; L123_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+    "StageDRun":  false,
+    "Official2026_2027Index":  "NOT_VERIFIED",
+    "TeacherReviewRequired":  [
+                                  "Represent two different box dimensions visually",
+                                  "Apply exact geometry only when physical object is approximately prism-shaped"
+                              ],
+    "SourceRights":  "Original Edulytics content and tests; no publisher artwork copied."
+}

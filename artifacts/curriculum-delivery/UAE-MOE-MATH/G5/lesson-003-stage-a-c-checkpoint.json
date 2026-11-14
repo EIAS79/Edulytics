@@ -1,0 +1,44 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 3,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:03",
+  "Status": "READY_FOR_STAGE_D",
+  "StageA": "CLOSED",
+  "StageB": "CLOSED",
+  "StageC": "CLOSED_STAGED_NOT_RUN",
+  "SourceSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "OriginalArabic": true,
+  "RichVisuals": [
+    "FractionBars",
+    "RatioTable"
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.place_value",
+    "Strategy": "REUSE existing G4 decimal exact engine, EXTEND with two percent families; no new engine",
+    "AllowedQuestionFamilies": [
+      "uae.g4.u10.l02.tenths_decimal",
+      "uae.g4.u10.l03.hundredths_decimal",
+      "uae.g4.u10.l03.hundredths_fraction_numerator",
+      "uae.g5.u01.l03.hundredths_to_percent",
+      "uae.g5.u01.l03.tenths_to_percent"
+    ],
+    "Renderer": "NumericEntry for decimals, IntegerKeypad for percents; FractionBars + RatioTable originals",
+    "IndependentVerifier": "G4 existing decimal verifier extended percent exact integer and 0/100,100/100 bounds",
+    "ManualTasks": "TEACHER_REVIEW_REQUIRED model drawing and explanations",
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "TestsWritten": "UaeGrade5Unit1Lesson03FractionDecimalPercentTests.cs",
+  "TestsRun": "NOT_RUN",
+  "OfficialYear2026_2027AnnualIndex": "UNKNOWN",
+  "NextLesson": "PED:UAE-MOE-MATH:L5:GENERAL:01:04",
+  "ClosureCommit": "SELF_CLOSURE_COMMIT"
+}

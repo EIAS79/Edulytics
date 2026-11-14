@@ -1,0 +1,75 @@
+{
+  "Grade": 5,
+  "Unit": 3,
+  "LessonOrdinal": 28,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:03:09",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    209,
+    210,
+    211,
+    212,
+    213,
+    214
+  ],
+  "SourcePdfPages": [
+    228,
+    229,
+    230,
+    231,
+    232,
+    233
+  ],
+  "SourceEdition": "owner-selected 2025–2026 Arabic student",
+  "TargetYear": "2026–2027",
+  "OfficialAnnualOrderVerified": false,
+  "Elements": [
+    {
+      "Pages": [
+        209,
+        210
+      ],
+      "Scope": "leading dividend place insufficient to divide, 135÷3; 498÷6",
+      "Coverage": "original Arabic RichV2 and first-quotient digit-place exact families"
+    },
+    {
+      "Pages": [
+        211,
+        212
+      ],
+      "Scope": "independent 3/4-digit division, first quotient digit and place",
+      "Coverage": "existing G4 division engine extended with G5 exact skill and two families"
+    },
+    {
+      "Pages": [
+        213,
+        214
+      ],
+      "Scope": "homework and error checks",
+      "Coverage": "first-party worked examples and cooldown teacher-rubric"
+    }
+  ],
+  "Reuse": {
+    "Engine": "UaeGrade4Unit6Lesson03BaseTenDivisionQuestions",
+    "NewEngine": false,
+    "Skill": "number.long_division.first_quotient_digit_place",
+    "Families": [
+      "uae.g5.u03.l09.first_digit_place",
+      "uae.g5.u03.l09.first_quotient_digit"
+    ],
+    "RuleOverrides": "Existing generic matching title was not specific enough for leading-quotient-digit skill; reviewed exact code rule takes precedence"
+  },
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "عند قسمة ٢٣٢ على ٨، ما أول منزلة يُكتب فيها رقم في الحاصل، وما أول رقم؟ تحقق من الإجابة.",
+    "Answer": "الرقم ٢ في منزلة العشرات",
+    "TeacherReview": "Explains why first digit goes in the tens place and verifies product"
+  },
+  "StageA": "CLOSED_LOCAL",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_ENGINE_EXTENSION_STAGED",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false
+}

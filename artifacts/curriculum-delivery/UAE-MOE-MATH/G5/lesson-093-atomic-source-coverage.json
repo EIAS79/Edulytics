@@ -1,0 +1,72 @@
+{
+  "Grade": 5,
+  "Unit": 9,
+  "LessonOrdinal": 93,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:09:09",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\02.pdf",
+  "SourcePdfSha256": "0461764acc421f9d5a36b0d0f629811d93c24b5b24ed64fcb22e114e29db5649",
+  "SourcePdfPages": [
+    162,
+    163,
+    164,
+    165,
+    166,
+    167
+  ],
+  "SourcePrintedPages": [
+    695,
+    696,
+    697,
+    698,
+    699,
+    700
+  ],
+  "SourceEdition": "Owner-selected Arabic 2025–2026",
+  "SourceElements": [
+    {
+      "Category": "unit fraction strip division",
+      "Pages": [
+        695,
+        696
+      ],
+      "Coverage": "Arabic originals and FractionBars visual"
+    },
+    {
+      "Category": "whole divided by unit fraction",
+      "Pages": [
+        695,
+        697,
+        699
+      ],
+      "Coverage": "exact family with numeric verifier"
+    },
+    {
+      "Category": "unit fraction divided by whole and reasoning",
+      "Pages": [
+        696,
+        697,
+        700
+      ],
+      "Coverage": "exact fractional family and teacher rubric"
+    }
+  ],
+  "Engine": "EXTEND ExactSkillContractQuestionEngine with unit-fraction family implementation",
+  "SkillId": "supporting.fractions.multiply_divide",
+  "QuestionFamilies": [
+    "uae.g5.u09.l09.whole_divide_unit_fraction",
+    "uae.g5.u09.l09.unit_fraction_divide_whole"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "كم ربعًا في ٣ وحدات؟ وما نصيب كل شخص من ١/٦ وحدة إذا تقاسمها شخصان؟",
+    "Answer": "١٢ ربعًا؛ و١/١٢ لكل شخص",
+    "TeacherRubric": "اشرح النموذج والفرق بين نوعي القسمة"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ARABIC_RICHV2",
+  "StageC": "CLOSED_STAGED_EXACT_ENGINE",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED"
+}

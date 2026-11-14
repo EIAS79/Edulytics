@@ -1,0 +1,90 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 122,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:08",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "SourcePdfPages": [
+    217,
+    218,
+    219,
+    220,
+    221,
+    222
+  ],
+  "SourcePrintedPages": [
+    921,
+    922,
+    923,
+    924,
+    925,
+    926
+  ],
+  "Objectives": [
+    "التعرف على الأوجه والأحرف والرؤوس للمجسم",
+    "التمييز بين المكعب والمنشور مستطيل القاعدة والمنشور الثلاثي",
+    "عد الأوجه والأحرف والرؤوس وتحديد شكل القاعدتين",
+    "التعرف على مجسمات الحياة الواقعية ومناقشة خصائصها"
+  ],
+  "SourceElements": [
+    {
+      "Category": "3D terms face, edge, vertex and properties of rectangular prism",
+      "Pages": [
+        921
+      ],
+      "Coverage": "Arabic first-party definitions"
+    },
+    {
+      "Category": "cube, triangular prism, rectangular prism comparisons",
+      "Pages": [
+        922
+      ],
+      "Coverage": "exact counts 6/12/8 and 5/9/6"
+    },
+    {
+      "Category": "classification from images and real-world examples",
+      "Pages": [
+        923,
+        924
+      ],
+      "Coverage": "description-based exact questions plus teacher image review"
+    },
+    {
+      "Category": "homework, sample triangular prism and unit test",
+      "Pages": [
+        925,
+        926
+      ],
+      "Coverage": "teacher rubric and independent numerical assessment"
+    }
+  ],
+  "Engine": "REUSE UaeGrade4Unit12GeometryOneQuestions existing solid faces/vertices engine; add 4 Grade5-specific families.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l08.solid_type",
+    "uae.g5.u12.l08.solid_faces",
+    "uae.g5.u12.l08.solid_edges",
+    "uae.g5.u12.l08.solid_vertices"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "مجسم قاعدتاه مثلثيتان ومتطابقتان وثلاثة أوجه جانبية مستطيلة. ما نوعه وكم وجهًا وحرفًا ورأسًا له؟",
+    "Answer": "منشور ثلاثي قائم: ٥ أوجه و٩ أحرف و٦ رؤوس.",
+    "TeacherRubric": "يحدد نوع القاعدة ويبرر العد من نموذج أو رسم أصلي."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "G5_3D_SOLID_FACES_EDGES_VERTICES_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson08SolidElementsTests.cs",
+  "TestsRun": "FOCUSED_4_PASSED; L121_REGRESSION_3_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Identification of faces in source photographs",
+    "Independent student 3D drawing with hidden edges"
+  ],
+  "SourceRights": "Original Edulytics Arabic math text and numeric tasks; publisher imagery not copied."
+}

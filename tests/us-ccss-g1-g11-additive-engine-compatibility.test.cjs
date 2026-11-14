@@ -23,8 +23,8 @@ const g1Critical=[
 ];
 const expectedOld={
   'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs':['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a'],
-  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','d84a61ebc37e8ca026f95906720bfaef3ea56081'],
-  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','d778e602928ff252573365dce53e7e3e31ab708d']
+  [engine]:['e24c62e02c7474cbd7badf0b3c36951faec4b60d','02748e9f3b6f56d5ab0b9e3b4a08777fd9bb2c88'],
+  'tools/phase29/b001_practice_attempt_probe.py':['aea34e8bf12c74e823ab16564451c36a7a4c9c86','ece5ce8b368f8cb07f5c4be0992d45de0d4ba96a']
 };
 test('Only the existing eight audited shared G1 paths differ from original proof',()=>{
   assert.equal(git('merge-base','--is-ancestor',g1Proof,'HEAD'),'');
@@ -61,14 +61,14 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
   assert.equal(git('rev-parse',preUaeG1Release+':'+engine),
     '19ca4300c3a8c772a4624831987ae164489026e8');
   assert.equal(git('rev-parse','HEAD:'+engine),
-    'd84a61ebc37e8ca026f95906720bfaef3ea56081');
+    '02748e9f3b6f56d5ab0b9e3b4a08777fd9bb2c88');
   assert.equal(git('diff','--numstat',preUaeG1Release,'HEAD','--',engine),
-    '2841\t0\t'+engine);
+    '2871\t0\t'+engine);
   // Explicitly constrain the G3-only additive changes, rather than blindly
   // accepting a moving SHA or dropping the original US G1 negative control.
   const grade2Published='d4448d58b43d46a73b2f8bed6128524f6c003caf';
   assert.equal(git('diff','--numstat',grade2Published,'HEAD','--',engine),
-    '970\t0\t'+engine);
+    '1000\t0\t'+engine);
   assert.equal(git('diff','--numstat',grade2Published,'HEAD','--',
     'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'),
     '1451\t0\tsrc/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
@@ -80,13 +80,13 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
     '1\t1\t'+probe);
   const probeDiff=git('diff','--unified=0',grade2Published,'HEAD','--',probe);
   assert.ok(probeDiff.includes('-            if wrong_answer_profile=="uae-g2":'));
-  assert.ok(probeDiff.includes('+            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4"):'));
+  assert.ok(probeDiff.includes('+            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5"):'));
   // UAE Grade 4 contributes only reviewed additive registrations.
   // Preserve the entire published main-branch engine and contract lines;
   // a changed, deleted or replaced pre-existing US/G1 path fails here.
   const preG4='c0970107123a3e94ca5d0928b45a58c577162d17';
   for(const [file,expectedDelta] of [
-    [engine,670],
+    [engine,700],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',828]
   ]){
     const changes=git('diff','--numstat',preG4,'HEAD','--',file).split('\t');
@@ -115,4 +115,38 @@ test('Algebra 2 additive engine proof preserved and Grade12 changes never touch 
     assert.equal(f.productionRouting,false);
     assert.ok(source.includes(f.id),'Missing G11-only routing for '+f.id);
   }
+});
+
+
+test('Grade 5 additions preserve every published G1-G4 and US/G11 engine line',()=>{
+  // Release baseline is immutable. Exactly 30 first-party G5 registrations
+  // are appended without replacing any previously published instruction.
+  const preG5='50f89c7276c7d44b8a0a527096d3d590222ec7f6';
+  assert.equal(git('rev-parse',preG5+':'+engine),
+    'd84a61ebc37e8ca026f95906720bfaef3ea56081');
+  assert.equal(git('diff','--numstat',preG5,'HEAD','--',engine),
+    '30\t0\t'+engine);
+  const prior=cp.execFileSync('git',['show',preG5+':'+engine],
+    {cwd:root,encoding:'utf8'}).split('\n');
+  const now=fs.readFileSync(path.join(root,engine),'utf8').split('\n');
+  let matched=0;
+  const added=[];
+  for(const line of now){
+    if(matched<prior.length && line===prior[matched]) matched++;
+    else added.push(line);
+  }
+  assert.equal(matched,prior.length,'G5 must preserve all pre-existing engine lines');
+  assert.equal(added.length,30,'Exactly thirty G5 registration lines are permitted');
+  assert.equal(added.filter(x=>/UaeGrade5/.test(x)).length,21);
+  assert.equal(added.filter(x=>/return new ExactProblem\(q\.Family/.test(x)).length,3);
+  assert.ok(added.every(x=>/UaeGrade5/.test(x) ||
+    /return new ExactProblem\(q\.Family/.test(x) ||
+    x.trim()==='{' || x.trim()==='}'));
+  // Negative control: the shared US/G1 wrong-answer predicate is modified
+  // on a single pinned line solely to add the G5 fixture profile.
+  const probe='tools/phase29/b001_practice_attempt_probe.py';
+  assert.equal(git('rev-parse','HEAD:'+probe),
+    'ece5ce8b368f8cb07f5c4be0992d45de0d4ba96a');
+  assert.equal(git('diff','--numstat',preG5,'HEAD','--',probe),
+    '1\t1\t'+probe);
 });

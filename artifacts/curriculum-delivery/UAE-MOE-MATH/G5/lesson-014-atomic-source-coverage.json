@@ -1,0 +1,92 @@
+{
+  "Grade": 5,
+  "Unit": 2,
+  "LessonOrdinal": 14,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:05",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourceEdition": "Owner-selected Arabic 2025–2026 local",
+  "SourcePrintedPages": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "SourcePdfPages": [
+    123,
+    124,
+    125,
+    126,
+    127,
+    128
+  ],
+  "Official2026_2027Order": "UNVERIFIED",
+  "SourceElements": [
+    {
+      "Type": "table-scaling-population",
+      "Pages": [
+        105
+      ],
+      "Coverage": "ORIGINAL_RATIO_TABLE_AND_EXACT_FAMILY"
+    },
+    {
+      "Type": "weekly-savings-doubling",
+      "Pages": [
+        106,
+        107
+      ],
+      "Coverage": "ORIGINAL_WEEK_TABLE_AND_EXACT_FAMILY"
+    },
+    {
+      "Type": "table-practice-and-interpretation",
+      "Pages": [
+        107,
+        108
+      ],
+      "Coverage": "ORIGINAL_PARALLEL_QUESTIONS_TEACHER_EXPLANATION"
+    },
+    {
+      "Type": "rate-in-minutes-table",
+      "Pages": [
+        109
+      ],
+      "Coverage": "ORIGINAL_RATE_EXACT_FAMILY"
+    },
+    {
+      "Type": "homework-planning-with-table",
+      "Pages": [
+        109,
+        110
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN_AND_TEACHER_RUBRIC"
+    }
+  ],
+  "SkillContract": {
+    "ReusedEngine": "UaeGrade4Unit1FourStepQuestions (Grade5 table extension)",
+    "SkillId": "problem_solving.four_steps_with_whole_numbers",
+    "QuestionFamilies": [
+      "uae.g5.u02.l05.table_population_scale",
+      "uae.g5.u02.l05.table_weekly_doubling",
+      "uae.g5.u02.l05.table_constant_rate"
+    ],
+    "AnswerType": "exact_integer",
+    "Grader": "ExactSkillContractQuestionEngine existing",
+    "Verifier": "Recompute integer scaling, weekly exponentiation, and time-rate from parameters",
+    "TestsWritten": "UaeGrade5Unit2Lesson05MakeTableTests.cs",
+    "TestsRun": "NOT_RUN"
+  },
+  "CoolDown": {
+    "Source": "EDULYTICS_ORIGINAL",
+    "Question": "يسجل نادي ٢٤ مشاركًا كل ١٥ دقيقة. كم مشاركًا يسجل خلال ٧٥ دقيقة إذا ظل المعدل ثابتًا؟",
+    "Answer": "١٢٠ مشاركًا",
+    "Rubric": "يتحقق الطالب من عدد الفترات ويبرر طريقة بناء الجدول"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "CLOSED_EXISTING_ENGINE_EXTENDED_STAGED",
+  "StageDRun": false,
+  "TestsRun": "NOT_RUN"
+}

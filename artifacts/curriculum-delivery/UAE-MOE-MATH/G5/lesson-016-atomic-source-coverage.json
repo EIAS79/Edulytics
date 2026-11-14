@@ -1,0 +1,93 @@
+{
+  "Grade": 5,
+  "Unit": 2,
+  "LessonOrdinal": 16,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:02:07",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePrintedPages": [
+    119,
+    120,
+    121,
+    122,
+    123,
+    124
+  ],
+  "SourcePdfPages": [
+    137,
+    138,
+    139,
+    140,
+    141,
+    142
+  ],
+  "Official2026_2027Order": "UNKNOWN",
+  "SourceElements": [
+    {
+      "Type": "property-definition",
+      "Pages": [
+        119
+      ],
+      "Coverage": "ARABIC_CONCEPT_AND_EQUATION_VISUAL"
+    },
+    {
+      "Type": "mental-redistribution",
+      "Pages": [
+        119,
+        120
+      ],
+      "Coverage": "WORKED_EXAMPLES_AND_EXACT_EXISTING_FAMILIES"
+    },
+    {
+      "Type": "guided-and-independent-practice",
+      "Pages": [
+        120,
+        121
+      ],
+      "Coverage": "G4_EXACT_TWO_FAMILY_REUSE"
+    },
+    {
+      "Type": "distribution-over-subtraction",
+      "Pages": [
+        122,
+        124
+      ],
+      "Coverage": "ORIGINAL_REASONING_EXAMPLE_TEACHER_REVIEW"
+    },
+    {
+      "Type": "homework-and-application",
+      "Pages": [
+        123,
+        124
+      ],
+      "Coverage": "ORIGINAL_PARALLEL_PROBLEMS_COOLDOWN"
+    }
+  ],
+  "SkillContract": {
+    "Engine": "Existing G4 distributive exact engine",
+    "ReusedNoNewEngine": true,
+    "SkillId": "number.distributive_property",
+    "Families": [
+      "uae.g4.u04.l07.distributive_tens",
+      "uae.g4.u04.l07.distributive_sum"
+    ],
+    "AnswerType": "exact_integer",
+    "TestsWritten": "UaeGrade5Unit2Lesson07DistributiveReuseTests.cs",
+    "TestsRun": "NOT_RUN",
+    "TeacherReview": [
+      "open subtraction explanation",
+      "error-correction reasoning"
+    ]
+  },
+  "CoolDown": {
+    "Source": "EDULYTICS_ORIGINAL",
+    "Question": "صحح: ٦×(٩+٤)=٦×٩+٤=٥٨. ما الناتج الصحيح؟",
+    "Answer": "٧٨",
+    "Rubric": "Correct both distribution products and explain incorrect missing factor"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC",
+  "StageC": "CLOSED_EXISTING_ENGINE_REUSE",
+  "StageDRun": false
+}

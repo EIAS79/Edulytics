@@ -1,0 +1,84 @@
+{
+    "Grade":  5,
+    "Unit":  12,
+    "LessonOrdinal":  126,
+    "LessonCode":  "PED:UAE-MOE-MATH:L5:GENERAL:12:12",
+    "Status":  "READY_FOR_STAGE_D",
+    "SourcePdfPath":  "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+    "SourcePdfSha256":  "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+    "SourcePdfPages":  [
+                           243,
+                           244,
+                           245,
+                           246,
+                           247,
+                           248
+                       ],
+    "SourcePrintedPages":  [
+                               947,
+                               948,
+                               949,
+                               950,
+                               951,
+                               952
+                           ],
+    "SourceEdition":  "Owner-selected Arabic Student 2025–2026",
+    "Objectives":  [
+                       "تجزئة مركب ثلاثي الأبعاد إلى مناشير مستطيلة",
+                       "جمع أحجام أجزاء لا تتداخل",
+                       "إيجاد حجم بعد حذف جزء معلوم",
+                       "التحقق من الحساب ووحدات الحجم"
+                   ],
+    "SourceElements":  [
+                           {
+                               "Category":  "two/three non-overlapping prism decomposition and real building",
+                               "Pages":  [
+                                             947
+                                         ],
+                               "Coverage":  "model and original independent examples"
+                           },
+                           {
+                               "Category":  "L-shape with base and top, geometry formula",
+                               "Pages":  [
+                                             948,
+                                             949
+                                         ],
+                               "Coverage":  "4 exact volume families and teacher diagram reasoning"
+                           },
+                           {
+                               "Category":  "comparison and cutout volume",
+                               "Pages":  [
+                                             950
+                                         ],
+                               "Coverage":  "independent classifying and subtracting cutouts"
+                           },
+                           {
+                               "Category":  "homework volume examples, cakes and top+base 360+24",
+                               "Pages":  [
+                                             951,
+                                             952
+                                         ],
+                               "Coverage":  "source-aligned word problems, without publisher images"
+                           }
+                       ],
+    "Engine":  "REUSE UaeGrade4Unit12GeometryOneQuestions existing prism volume engine; extend 4 composite routes.",
+    "SkillId":  "geometry.polygons",
+    "QuestionFamilies":  [
+                             "uae.g5.u12.l12.sum_two_prisms",
+                             "uae.g5.u12.l12.base_plus_top",
+                             "uae.g5.u12.l12.prism_with_removed_section",
+                             "uae.g5.u12.l12.upper_volume_from_total"
+                         ],
+    "StageA":  "CLOSED_LOCAL_ARABIC_SOURCE",
+    "StageB":  "CLOSED_ORIGINAL_ARABIC_RICHV2",
+    "StageC":  "COMPOSITE_PRISM_VOLUME_FAMILIES_FOCUSED_TEST_PASSED",
+    "TestsWritten":  "UaeGrade5Unit12Lesson12CompositeVolumeTests.cs",
+    "TestsRun":  "FOCUSED_4_PASSED; L125_REGRESSION_4_PASSED; FULL_STAGE_D_NOT_RUN",
+    "StageDRun":  false,
+    "Official2026_2027Index":  "NOT_VERIFIED",
+    "TeacherReviewRequired":  [
+                                  "Nonoverlapping geometric decomposition and hidden faces",
+                                  "Original student drawing of compound solid"
+                              ],
+    "SourceRights":  "Original content and numeric examples; no publisher artwork copied."
+}

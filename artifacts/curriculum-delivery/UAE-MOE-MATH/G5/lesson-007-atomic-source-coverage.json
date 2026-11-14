@@ -1,0 +1,118 @@
+{
+  "Grade": 5,
+  "Unit": 1,
+  "LessonOrdinal": 7,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:01:07",
+  "Status": "READY_FOR_STAGE_D",
+  "Pathway": "General/Common",
+  "SourceEdition": "Owner-selected Arabic student 2025–2026",
+  "Official2026_2027Sequence": "UNKNOWN",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\01.pdf",
+  "SourcePdfSha256": "8b444a773c9069a0566eb5ec2fc2dd6d0fc0a3c6675491c67ead61c50c7083ad",
+  "SourcePdfPages": [
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "SourcePrintedPages": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "SourceElements": [
+    {
+      "Id": "G5-U01-L07-01",
+      "Category": "decimal-compare-objective",
+      "Pages": [
+        68
+      ],
+      "Coverage": "ORIGINAL_ARABIC"
+    },
+    {
+      "Id": "G5-U01-L07-02",
+      "Category": "trailing-zero-equivalence",
+      "Pages": [
+        68,
+        69
+      ],
+      "Coverage": "ORIGINAL_RICH_EXAMPLE_AND_BOUNDS"
+    },
+    {
+      "Id": "G5-U01-L07-03",
+      "Category": "decimal-number-line",
+      "Pages": [
+        69
+      ],
+      "Coverage": "ORIGINAL_NUMBERLINE"
+    },
+    {
+      "Id": "G5-U01-L07-04",
+      "Category": "compare-3-place-decimals",
+      "Pages": [
+        70
+      ],
+      "Coverage": "G5_EXACT_QUESTION_FAMILIES"
+    },
+    {
+      "Id": "G5-U01-L07-05",
+      "Category": "guided-and-independent-comparisons",
+      "Pages": [
+        70,
+        71
+      ],
+      "Coverage": "EXACT_REUSE_AND_EXTENSION"
+    },
+    {
+      "Id": "G5-U01-L07-06",
+      "Category": "money-length-mass-questions",
+      "Pages": [
+        72,
+        73
+      ],
+      "Coverage": "ORIGINAL_WORD_PROBLEMS_TEACHER_REVIEW"
+    },
+    {
+      "Id": "G5-U01-L07-07",
+      "Category": "review-assessment",
+      "Pages": [
+        73
+      ],
+      "Coverage": "ORIGINAL_COOLDOWN"
+    }
+  ],
+  "SkillContract": {
+    "SkillId": "decimals.compare",
+    "Strategy": "Reuse existing Grade4 decimal comparison family and EXTEND same exact engine to thousandths using 2 G5 families",
+    "AllowedQuestionFamilies": [
+      "uae.g4.u10.l08.decimal_compare",
+      "uae.g5.u01.l07.compare_decimal_to_thousandths",
+      "uae.g5.u01.l07.select_greater_decimal"
+    ],
+    "Grader": "G4 decimal compare engine with fractional extension",
+    "IndependentVerifier": "exact integer-thousandth numerator comparison and decimal reparse",
+    "Renderer": "Numeric / ShortAnswer + NumberLine + PlaceValueChart",
+    "TeacherReview": [
+      "number-line explanation",
+      "context justification"
+    ],
+    "Tests": "WRITTEN_NOT_RUN"
+  },
+  "CoolDown": {
+    "Authored": true,
+    "Question": "قارن ١٢٫٠٧٥ و١٢٫٠٧٥٠، ثم قارن ١٢٫٠٧٥ و١٢٫٠٧٦.",
+    "Answer": "١٢٫٠٧٥ = ١٢٫٠٧٥٠؛ و١٢٫٠٧٥ < ١٢٫٠٧٦.",
+    "Rubric": "مساواة أصفار النهاية وفروق أجزاء الألف"
+  },
+  "StageA": "CLOSED_LOCAL_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "REUSE_EXTEND_DECIMAL_COMPARISON_WRITTEN_NOT_RUN",
+  "TestsRun": "NOT_RUN",
+  "StageDRun": false,
+  "RuntimeVerified": false
+}

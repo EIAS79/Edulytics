@@ -9534,14 +9534,10 @@
     {
       "id": "uae-official-g3g5-auto-collecting-data",
       "titlePatterns": [
-        "^Collect and Organize Data$",
-        "^Collect and Record Data$",
-        "^Make Predictions from Data$"
+        "^Collect and Record Data$"
       ],
       "codePatterns": [
-        "^PED:UAE-MOE-MATH:L3:COMMON:12:01$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:01$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:04$"
+        "^PED:UAE-MOE-MATH:L3:COMMON:12:01$"
       ],
       "skillId": "supporting.statistics.data_collection",
       "mechanic": "DATA_COLLECTION",
@@ -9865,8 +9861,6 @@
         "^Median and Mode$"
       ],
       "codePatterns": [
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:07$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:11:08$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:11:09$"
       ],
       "skillId": "statistics.center_spread.core",
@@ -10205,7 +10199,6 @@
       "id": "uae-official-g3g5-auto-unit-conversion",
       "titlePatterns": [
         "^Capacity Problems$",
-        "^Convert Metric Capacity Units$",
         "^Convert Metric Length Units$",
         "^Convert Metric Mass Units$",
         "^Hands-on: Estimate and Measure Capacity$",
@@ -10232,8 +10225,7 @@
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:02$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:03$",
         "^PED:UAE-MOE-MATH:L5:GENERAL:10:04$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:10:05$",
-        "^PED:UAE-MOE-MATH:L5:GENERAL:10:06$"
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:05$"
       ],
       "skillId": "supporting.measurement.practical",
       "mechanic": "UNIT_CONVERSION",
@@ -13662,6 +13654,2673 @@
         "solution": "أضرب عدد الدراهم في100، أضيف الفلوس الباقية إن وجدت، ثم أكتب الوحدة الصحيحة.",
         "commonMistake": "الخطأ اعتبار الدرهم10 فلوس أو تجاهل الفلوس الإضافية بعد التحويل.",
         "summary": "خروج: حوّل4 دراهم و75 فلسًا إلى فلوس."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l01-place-value-to-billions",
+      "titlePatterns": [
+        "^القيمة المكانية حتى منزلة البلايين$",
+        "^Place Value to Billions$"
+      ],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:01$"
+      ],
+      "skillId": "number.place_value.to_billions",
+      "mechanic": "PLACE_VALUE_BILLIONS",
+      "families": [
+        "uae.g5.u01.l01.digit_value_to_billions",
+        "uae.g5.u01.l01.compose_ten_digits",
+        "uae.g5.u01.l01.expanded_to_standard"
+      ],
+      "content": {
+        "concept": "نحدد قيمة الرقم من منزلته حتى آحاد البلايين، باستعمال دورات الآحاد والألوف والملايين والبلايين.",
+        "workedExample": "قيمة الرقم ٧ في ١٬٢٠٤٬٠٧٠٬٣٠٥ = ٧٠٬٠٠٠؛ لأن ٧ في منزلة عشرات الألوف.",
+        "solution": "نحدد المنزلة من اليمين، ثم نحسب الرقم مضروبًا في قيمتها، ونراجع بجدول المنازل.",
+        "commonMistake": "لا تُسقط أصفارًا داخل العدد ولا تكتب الرقم بدل قيمته المكانية.",
+        "summary": "اكتب العدد وحلله، وحدد قيمة كل رقم حتى البلايين."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l02-compare-order-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:02$"
+      ],
+      "skillId": "number.place_value.compare_and_order_to_millions",
+      "mechanic": "G5_COMPARE_AND_ORDER_TO_MILLIONS",
+      "families": [
+        "uae.g5.u01.l02.compare_to_millions",
+        "uae.g5.u01.l02.select_greater",
+        "uae.g5.u01.l02.order_four_ascending",
+        "uae.g5.u01.l02.order_four_descending"
+      ],
+      "content": {
+        "concept": "تُقارن الأعداد الكلية من أكبر منزلة إلى أصغر منزلة.",
+        "workedExample": "٨٥٬٢٩٠٬٧٠٠ > ٨٤٬١٨٩٬٦٨٨ لأن منزلة آحاد الملايين ٥ > ٤.",
+        "solution": "ابدأ بأكبر منزلة، ثم انتقل يمينًا حتى أول اختلاف؛ رتّب القيم وفق ذلك.",
+        "commonMistake": "لا تقارن عددًا من آخر منزلة أو ترتبه عكس المطلوب.",
+        "summary": "قارن الأعداد ورتبها تصاعديًا وتنازليًا."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l03-fraction-decimal-percent-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:03$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "G5_TENTHS_HUNDREDTHS_PERCENT_MODELS",
+      "families": [
+        "uae.g4.u10.l02.tenths_decimal",
+        "uae.g4.u10.l03.hundredths_decimal",
+        "uae.g4.u10.l03.hundredths_fraction_numerator",
+        "uae.g5.u01.l03.hundredths_to_percent",
+        "uae.g5.u01.l03.tenths_to_percent"
+      ],
+      "content": {
+        "concept": "الكسور العشرية والعدد العشري والنسبة المئوية ثلاثة تمثيلات للقيمة نفسها.",
+        "workedExample": "٣٤/١٠٠ = ٠٫٣٤ = ٣٤٪.",
+        "solution": "اعزل الجزء من الكل، وحول إلى أجزاء من مئة ثم اقرأ العدد العشري والنسبة.",
+        "commonMistake": "خلط ٣/١٠ مع ٣٪ بدل ٣٠٪.",
+        "summary": "نمذج الكسور والعدد العشري والنسبة المئوية واستعمل تحويلات دقيقة."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l04-thousandths-represent-decimals-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:04$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "G5_TENTHS_HUNDREDTHS_THOUSANDTHS_REPRESENTATION",
+      "families": [
+        "uae.g4.u10.l02.tenths_decimal",
+        "uae.g4.u10.l03.hundredths_decimal",
+        "uae.g5.u01.l04.thousandths_decimal",
+        "uae.g5.u01.l04.thousandths_numerator"
+      ],
+      "content": {
+        "concept": "العدد العشري يمثل أجزاء من عشرة أو مئة أو ألف، وتُحفظ الأصفار في منازلها.",
+        "workedExample": "٩٥/١٠٠٠ = ٠٫٠٩٥ وليس ٠٫٩٥٠.",
+        "solution": "حدد المقام ثم اكتب البسط في عدد الخانات الصحيح وتحقق بالضرب.",
+        "commonMistake": "٠٫٩٥٠ يعبر عن ٩٥٠ جزءًا من ألف لا ٩٥.",
+        "summary": "مثل كسور الأعشار والمئة والألف بالأرقام العشرية والقيم المكانية."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l05-decimal-place-tens",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:05$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "G5_DECIMAL_DIGIT_VALUE_AND_TENFOLD_POSITIONS",
+      "families": [
+        "uae.g4.u10.l01.tenths_digit",
+        "uae.g5.u01.l05.decimal_digit_place_value",
+        "uae.g5.u01.l05.place_factor_ten"
+      ],
+      "content": {
+        "concept": "تختلف القيمة المكانية للرقم في الأعشار وأجزاء المئة وأجزاء الألف بعامل عشرة.",
+        "workedExample": "٠٫٠٣٣: قيمة الثلاثة في أجزاء المئة ٠٫٠٣، وفي أجزاء الألف ٠٫٠٠٣.",
+        "solution": "حدد منزلة كل رقم في المخطط وقارن القيم بقوة ١٠.",
+        "commonMistake": "لا تساوِ قيم الأرقام المتكررة مع اختلاف منازلها.",
+        "summary": "حدد القيمة المكانية والعامل بين الأعشار وأجزاء المئة وأجزاء الألف."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l06-expanded-decimal-representation",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:06$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "G5_DECIMAL_THOUSANDTHS_EXPANDED_TO_STANDARD",
+      "families": [
+        "uae.g5.u01.l04.thousandths_decimal",
+        "uae.g5.u01.l05.decimal_digit_place_value",
+        "uae.g5.u01.l06.expanded_decimal_to_standard"
+      ],
+      "content": {
+        "concept": "قيمة المنازل حتى أجزاء الألف وتحويل الأعداد العشرية بين القياسية واللفظية والموسعة.",
+        "workedExample": "٥٫٦١٤ = ٥ + ٠٫٦ + ٠٫٠١ + ٠٫٠٠٤.",
+        "solution": "حلل الأرقام بحسب منزلة كل منها وجمع القيم.",
+        "commonMistake": "لا تغير مكان الفاصلة أو تهمل الأصفار البينية.",
+        "summary": "اكتب العدد حتى أجزاء الألف بالصيغ القياسية والموسعة."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l07-decimal-compare-to-thousandths",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:07$"
+      ],
+      "skillId": "decimals.compare",
+      "mechanic": "DECIMAL_COMPARE_TO_THOUSANDTHS",
+      "families": [
+        "uae.g4.u10.l08.decimal_compare",
+        "uae.g5.u01.l07.compare_decimal_to_thousandths",
+        "uae.g5.u01.l07.select_greater_decimal"
+      ],
+      "content": {
+        "concept": "قارن الأعداد العشرية حتى أجزاء الألف من الأكبر منزلة إلى الأصغر.",
+        "workedExample": "٨٫٦٩ > ٨٫٦٠، و٣٠٫٥٠ =٣٠٫٥.",
+        "solution": "حاذِ الفاصلة ثم أكمل الأصفار اليمينية وقارن المنازل.",
+        "commonMistake": "زيادة الأصفار يمين الجزء العشري لا تغير القيمة.",
+        "summary": "قارن القيم العشرية بدقة باستعمال الجدول وخط الأعداد."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l08-order-whole-and-decimal",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:08$"
+      ],
+      "skillId": "decimals.compare",
+      "mechanic": "G5_ORDER_DECIMALS_ASC_DESC",
+      "families": [
+        "uae.g5.u01.l07.compare_decimal_to_thousandths",
+        "uae.g5.u01.l08.order_decimals_ascending",
+        "uae.g5.u01.l08.order_decimals_descending"
+      ],
+      "content": {
+        "concept": "ترتيب أعداد كلية وعشرية بعد مقارنة قيم المنازل.",
+        "workedExample": "٢٢ <٢٢٫٦٥ <٢٣٫٢٥ <٢٣٫٨٩.",
+        "solution": "أحاذي الفواصل وأكمل الأصفار إلى أجزاء الألف ثم أرتب.",
+        "commonMistake": "ليس العدد ذي الأرقام العشرية الأكثر هو الأكبر بالضرورة.",
+        "summary": "رتب الأعداد من الأصغر للأكبر أو بالعكس باستخدام المنازل."
+      }
+    },
+    {
+      "id": "uae-g5-u01-l09-four-steps",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:01:09$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "FOUR_STEP_MULTISTEP_INVERSE",
+      "families": [
+        "uae.g5.u01.l09.find_missing_distance",
+        "uae.g5.u01.l09.find_starting_total",
+        "uae.g5.u01.l09.budget_purchase_count",
+        "uae.g5.u01.l09.undo_four_steps"
+      ],
+      "content": {
+        "concept": "أفهم المطلوب، أخطط لحل متعدد الخطوات، أحسب وأتحقق بالتعويض.",
+        "workedExample": "عند مجموع ٣٤ كم ومسافات ٥ و٨ و١٣ كم، المسافة المتبقية ٣٤−(٥+٨+١٣)=٨ كم.",
+        "solution": "حدد المجهول ثم حل بالتسلسل وحافظ على وحدات المقادير.",
+        "commonMistake": "لا تجمع إجماليًا مع الأجزاء المعطاة أو تهمل أثر المشتريات.",
+        "summary": "الفهم، التخطيط، الحل، التحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l01-prime-factorization-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:01$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "PRIME_FACTORIZATION_TREE",
+      "families": [
+        "uae.g5.u02.l01.prime_factorize",
+        "uae.g5.u02.l01.prime_factor_count",
+        "uae.g5.u02.l01.complete_factor_tree"
+      ],
+      "content": {
+        "concept": "حلل العدد إلى عوامله الأولية مع التكرار حتى تنتهي كل الفروع بأعداد أولية.",
+        "workedExample": "٣٦ = ٢×٢×٣×٣.",
+        "solution": "قسم على أصغر عدد أولي وأعد العملية ثم تحقق بالضرب.",
+        "commonMistake": "لا تتوقف عند عامل مركب مثل ٦ أو ٩.",
+        "summary": "العوامل الأولية جميعها أولية ويعيد حاصل ضربها العدد."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l02-prime-pattern-growth",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:02$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "PRIME_FACTOR_PATTERNS",
+      "families": [
+        "uae.g5.u02.l02.fold_holes",
+        "uae.g5.u02.l02.triangle_growth",
+        "uae.g5.u02.l02.repeated_growth"
+      ],
+      "content": {
+        "concept": "الضرب المتكرر وتحليل النتائج إلى عوامل أولية.",
+        "workedExample": "٢،٤،٨،١٦،٣٢.",
+        "solution": "أكرر الضرب بعامل النمو في كل مرحلة.",
+        "commonMistake": "لا تستبدل الضرب بجمع ثابت.",
+        "summary": "العامل المكرر يحدد النمط."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l03-integer-powers-exponents",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:03$"
+      ],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "INTEGER_POWERS_EXPONENTS",
+      "families": [
+        "uae.g5.u02.l03.evaluate_integer_power",
+        "uae.g5.u02.l03.count_repeated_factor",
+        "uae.g5.u02.l03.cube_volume"
+      ],
+      "content": {
+        "concept": "الأس عدد مرات ضرب الأساس في نفسه.",
+        "workedExample": "٣ أس ٤ = ٨١.",
+        "solution": "أكتب الضرب المتكرر وأحسبه ثم أتحقق.",
+        "commonMistake": "٣ أس ٤ ليس ٣×٤.",
+        "summary": "أفهم الأس والأساس وأحسب القوى."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l04-multiplication-powers10",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:04$"
+      ],
+      "skillId": "supporting.indices.roots_standard_form",
+      "mechanic": "POWERS_OF_TEN_MULTIPLICATION",
+      "families": [
+        "uae.g5.u02.l04.multiply_by_power_ten",
+        "uae.g5.u02.l04.product_with_trailing_zeros",
+        "uae.g5.u02.l04.find_missing_power_ten"
+      ],
+      "content": {
+        "concept": "نستعمل القيمة المكانية لضرب الأعداد الكلية في قوى العشرة.",
+        "workedExample": "٤٠×٧٠٠٠=٢٨٠٬٠٠٠.",
+        "solution": "اضرب الأرقام الأساسية ثم أضف قوة العشرة المطلوبة.",
+        "commonMistake": "عدم جمع أصفار العاملين أو قراءة الأس خطأ.",
+        "summary": "أحسب الضرب ذهنيًا بقوى العشرة."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l05-create-table",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:05$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "G5_MAKE_A_TABLE",
+      "families": [
+        "uae.g5.u02.l05.table_population_scale",
+        "uae.g5.u02.l05.table_weekly_doubling",
+        "uae.g5.u02.l05.table_constant_rate"
+      ],
+      "content": {
+        "concept": "تُنشأ الجداول لمتابعة علاقة الكميات بحسب المراحل.",
+        "workedExample": "١٠٠↦٦٣؛ ١٠٠٠↦٦٣٠؛ ١٠٬٠٠٠↦٦٣٠٠.",
+        "solution": "نظم الكميات في صفوف وأعمدة ثم طبق النسبة أو التضاعف.",
+        "commonMistake": "خلط القيمة في أسبوع معين مع مجموع الأسابيع.",
+        "summary": "أتابع النمط أو المعدل في جدول وأتحقق من الناتج."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l06-reuse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:06$"
+      ],
+      "skillId": "number.multiply_two_digit_place_value_models",
+      "mechanic": "PARTIAL_PRODUCTS_EXISTING_G4_MODEL",
+      "families": [
+        "uae.g4.u04.l03.model_two_digit_product",
+        "uae.g4.u04.l03.model_tens_product",
+        "uae.g4.u04.l03.model_ones_product"
+      ],
+      "content": {
+        "concept": "نموذج مساحة يعرض ناتج الضرب الجزئي للعشرات والآحاد.",
+        "workedExample": "٧×٥٦=٣٥٠+٤٢=٣٩٢.",
+        "solution": "أضرب كل جزء في العامل ثم أجمع الناتجين.",
+        "commonMistake": "٥ في ٥٦ قيمتها ٥٠ لا ٥.",
+        "summary": "أجد ناتج العشرات والآحاد وأجمعهما."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l07-distributive-reuse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:07$"
+      ],
+      "skillId": "number.distributive_property",
+      "mechanic": "DISTRIBUTIVE_PROPERTY_REUSE_G4",
+      "families": [
+        "uae.g4.u04.l07.distributive_tens",
+        "uae.g4.u04.l07.distributive_sum"
+      ],
+      "content": {
+        "concept": "نوزع العامل على حدَي مجموع أو فرق.",
+        "workedExample": "٣×٤٢=٣×٤٠+٣×٢=١٢٦.",
+        "solution": "أضرب كل جزء ثم أجمع أو أطرح.",
+        "commonMistake": "عدم ضرب العامل في الحد الثاني.",
+        "summary": "التوزيع على الجمع والطرح مع التحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l08-estimate-products",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:08$"
+      ],
+      "skillId": "number.rounding_to_estimate_products",
+      "mechanic": "ESTIMATE_PRODUCTS_ONE_BOTH_COMPATIBLE",
+      "families": [
+        "uae.g5.u02.l08.round_one_factor",
+        "uae.g5.u02.l08.round_both_factors",
+        "uae.g5.u02.l08.compatible_factors",
+        "uae.g5.u02.l08.estimate_high_or_low"
+      ],
+      "content": {
+        "concept": "تقدير حاصل الضرب باستخدام التقريب أو أعداد متوافقة.",
+        "workedExample": "١٥٤ × ٢١ ≈ ١٥٠ × ٢٠ = ٣٠٠٠ أو ٢٠٠ × ٢٠ = ٤٠٠٠ بعد تحديد الطريقة.",
+        "solution": "اختر العامل أو العاملين المطلوب تقريبهما، ثم اضرب الناتج المقرب.",
+        "commonMistake": "عدم الخلط بين الناتج الدقيق والتقريبي.",
+        "summary": "حدد خطة التقريب ثم قدر وتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l09-one-digit-multiplication",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:09$"
+      ],
+      "skillId": "number.multiply_multidigit_by_one",
+      "mechanic": "ONE_DIGIT_MULTIPLICATION_WITH_REGROUPING",
+      "families": [
+        "uae.g5.u02.l09.exact_one_digit_product",
+        "uae.g5.u02.l09.ones_partial",
+        "uae.g5.u02.l09.tens_partial",
+        "uae.g5.u02.l09.round_and_estimate"
+      ],
+      "content": {
+        "concept": "ضرب أعداد من رقمين أو ثلاثة في رقم واحد مع إعادة التجميع.",
+        "workedExample": "٢٤٦×٧ = ١٤٠٠+٢٨٠+٤٢ = ١٧٢٢.",
+        "solution": "أضرب منزلة الآحاد ثم العشرات ثم المئات، وأعيد تجميع القيم حسب المنازل.",
+        "commonMistake": "نسيان حمل قيمة العشرات عند إعادة التجميع.",
+        "summary": "أحسب الناتج الدقيق وأتحقق بالتقدير."
+      }
+    },
+    {
+      "id": "uae-g5-u02-l10-two-digit-product",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:02:10$"
+      ],
+      "skillId": "number.whole.multiply.two_digit_partial_products",
+      "mechanic": "MULTI_DIGIT_BY_TWO_DIGIT_PARTIAL_PRODUCTS",
+      "families": [
+        "uae.g5.u02.l10.multiply_two_digit_factor",
+        "uae.g5.u02.l10.ones_partial",
+        "uae.g5.u02.l10.tens_partial",
+        "uae.g5.u02.l10.estimate_product",
+        "uae.g5.u02.l10.three_digit_challenge"
+      ],
+      "content": {
+        "concept": "استخدم خاصية التوزيع لضرب عدد في عامل من رقمين.",
+        "workedExample": "١٧٤×٢٣=٥٢٢+٣٤٨٠=٤٠٠٢.",
+        "solution": "أضرب في الآحاد ثم العشرات ثم أجمع مع مراعاة المنازل.",
+        "commonMistake": "إهمال الصفر الدال على منزلة العشرات.",
+        "summary": "أحسب النواتج الجزئية وأجمع وأتحقق بالتقدير."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l01-fact-family-inverse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:01$"
+      ],
+      "skillId": "number.whole.divide",
+      "mechanic": "MULTIPLICATION_DIVISION_FACT_FAMILY",
+      "families": [
+        "uae.g5.u03.l01.quotient_from_fact",
+        "uae.g5.u03.l01.missing_multiplier",
+        "uae.g5.u03.l01.missing_divisor",
+        "uae.g5.u03.l01.related_product"
+      ],
+      "content": {
+        "concept": "استخدم عائلة حقائق تربط العدد المقسوم بالمقسوم عليه وناتج القسمة.",
+        "workedExample": "٦×٨=٤٨، إذن ٤٨÷٦=٨ و٤٨÷٨=٦.",
+        "solution": "ابحث عن حقيقة الضرب ثم اعكسها إلى قسمة.",
+        "commonMistake": "لا تخلط بين المقسوم والمقسوم عليه، ولا تقسّم على صفر.",
+        "summary": "الضرب والقسمة عمليتان عكسيتان."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l02-division-models-reuse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:02$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "BASE_TEN_EQUAL_GROUP_DIVISION_WITH_REMAINDER",
+      "families": [
+        "uae.g4.u06.l03.base_ten_quotient",
+        "uae.g4.u06.l03.base_ten_remainder"
+      ],
+      "content": {
+        "concept": "نمثل القسمة بمكعبات العشرات والآحاد والمجموعات المتساوية.",
+        "workedExample": "٥٦ ÷ ٥ = ١١ والباقي ١ بعد توزيع ٥ عشرات و٦ آحاد.",
+        "solution": "وزّع العشرات على المجموعات ثم أعد تجميع الباقي إلى آحاد ووزعها.",
+        "commonMistake": "لا تحسب عدد البواقي أكثر من المقسوم عليه.",
+        "summary": "أفهم ناتج القسمة والباقي باستخدام نماذج القيمة المكانية."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l03-two-digit-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:03$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "TWO_DIGIT_DIVISION_WITH_REMAINDER",
+      "families": [
+        "uae.g5.u03.l03.two_digit_quotient",
+        "uae.g5.u03.l03.two_digit_remainder"
+      ],
+      "content": {
+        "concept": "قسمة الأعداد من رقمين باستخدام العشرات والآحاد والباقي.",
+        "workedExample": "٨٧÷٦ = ١٤ والباقي ٣.",
+        "solution": "أقسم وأضرب وأطرح ثم أنزل الرقم التالي، وأتحقق بالضرب.",
+        "commonMistake": "يجب أن يكون الباقي أقل من المقسوم عليه، ولا تقسيم على صفر.",
+        "summary": "اكتب الحاصل والباقي وتحقق بالمضاعفة."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l04-division-patterns",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:04$"
+      ],
+      "skillId": "number.division.patterns_powers_of_ten",
+      "mechanic": "DIVISION_PATTERNS_COMMON_POWER_TEN",
+      "families": [
+        "uae.g5.u03.l04.scale_dividend",
+        "uae.g5.u03.l04.cancel_common_zeros",
+        "uae.g5.u03.l04.quotient_with_tens_divisor"
+      ],
+      "content": {
+        "concept": "استخدم حقائق القسمة وأنماط قوى العشرة ومضاعفاتها.",
+        "workedExample": "٥٤٠٠÷٩٠=٦٠ وليس ٦؛ قسمة العددين على ١٠ تنتج ٥٤٠÷٩.",
+        "solution": "اختصر عامل العشرة من الطرفين عند وجوده ثم احسب.",
+        "commonMistake": "حذف الأصفار من المقسوم وحده يغيّر الحاصل.",
+        "summary": "استخدم أنماط القسمة وتحقق بالضرب."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l05-estimate-compatible-quotient",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:05$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "ESTIMATE_QUOTIENT_COMPATIBLE_DIVIDEND",
+      "families": [
+        "uae.g5.u03.l05.estimate_compatible_quotient",
+        "uae.g5.u03.l05.select_compatible_dividend",
+        "uae.g5.u03.l05.is_estimate_above_exact"
+      ],
+      "content": {
+        "concept": "قدّر ناتج القسمة باختيار أعداد متوافقة.",
+        "workedExample": "٢٠٨÷٨≈٢٠٠÷٨=٢٥.",
+        "solution": "أختار أقرب مضاعف مناسب للمقسوم عليه وأقسم.",
+        "commonMistake": "لا تعامل التقدير كناتج دقيق.",
+        "summary": "قدّر الناتج وتحقق من معقوليته."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l06-large-division-models",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:06$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "BASE_TEN_HUNDREDS_TENS_ONES_DIVISION",
+      "families": [
+        "uae.g4.u06.l03.base_ten_quotient",
+        "uae.g4.u06.l03.base_ten_remainder"
+      ],
+      "content": {
+        "concept": "قسمة عدد ثلاثي الأرقام باستعمال مئات وعشرات وآحاد.",
+        "workedExample": "٣٣٦÷٣=١١٢ بتوزيع المئات والعشرات والآحاد.",
+        "solution": "أقسم المئات ثم العشرات ثم الآحاد مع إعادة تجميع الباقي.",
+        "commonMistake": "إسقاط قيم المنازل عند إعادة التجميع.",
+        "summary": "استخدم نموذج القيمة المكانية لتمثيل القسمة الكبيرة والتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l07-partial-quotients",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:07$"
+      ],
+      "skillId": "number.division.distributive_partial_quotients",
+      "mechanic": "DISTRIBUTIVE_PARTIAL_QUOTIENTS",
+      "families": [
+        "uae.g5.u03.l07.distributed_quotient",
+        "uae.g5.u03.l07.sum_partial_quotients",
+        "uae.g5.u03.l07.tens_partial_quotient"
+      ],
+      "content": {
+        "concept": "القسمة على مجموع أجزاء قابلة للقسمة على العامل نفسه تساوي مجموع الحواصل الجزئية.",
+        "workedExample": "٣٦٩÷٣=(٣٠٠÷٣)+(٦٠÷٣)+(٩÷٣)=١٢٣.",
+        "solution": "أقسم أجزاء متوافقة ثم أجمع الحواصل وأتحقق بالضرب.",
+        "commonMistake": "لا تجمع الأجزاء نفسها بدل نواتج القسمة الجزئية.",
+        "summary": "قسم الأجزاء ثم اجمع النواتج الجزئية."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l08-long-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:08$"
+      ],
+      "skillId": "number.long_division.three_four_digit_one_digit",
+      "mechanic": "LONG_DIVISION_THREE_FOUR_DIGITS",
+      "families": [
+        "uae.g5.u03.l08.long_division_quotient",
+        "uae.g5.u03.l08.long_division_remainder"
+      ],
+      "content": {
+        "concept": "القسمة المطولة من أعلى منزلة إلى أدنى منزلة مع تتبع الباقي.",
+        "workedExample": "٨٥٢÷٤=٢١٣؛ و٧٩٤٦÷٦=١٣٢٤ والباقي٢.",
+        "solution": "اقسم، اضرب، اطرح، أنزّل، ثم تحقق بحاصل×مقسوم عليه+باق.",
+        "commonMistake": "لا تنزل رقمًا أو تكتب رقم الحاصل في موضع خاطئ.",
+        "summary": "قسمة ثلاثة وأربعة أرقام على مقسوم عليه من رقم واحد."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l09-leading-quotient-position",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:09$"
+      ],
+      "skillId": "number.long_division.first_quotient_digit_place",
+      "mechanic": "FIRST_QUOTIENT_DIGIT_AND_PLACE",
+      "families": [
+        "uae.g5.u03.l09.first_digit_place",
+        "uae.g5.u03.l09.first_quotient_digit"
+      ],
+      "content": {
+        "concept": "يبدأ أول رقم في الحاصل عند أول منزلة يمكن تقسيمها على المقسوم عليه.",
+        "workedExample": "١٣٥÷٣=٤٥؛ أول رقم ٤ في العشرات.",
+        "solution": "قارن المنزلة الأولى، وضُم التالية عند الحاجة، وأكمل القسمة.",
+        "commonMistake": "وضع الرقم الأول في منزلة لا تكفي للقسمة.",
+        "summary": "أحدد منزلة بدء الحاصل ورقمه الأول قبل متابعة القسمة."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l10-quotients-with-zero",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:10$"
+      ],
+      "skillId": "number.division.zero_in_quotient",
+      "mechanic": "LONG_DIVISION_MIDDLE_ZERO_QUOTIENT",
+      "families": [
+        "uae.g5.u03.l10.middle_zero_quotient",
+        "uae.g5.u03.l10.middle_zero_remainder"
+      ],
+      "content": {
+        "concept": "أحافظ على الصفر داخل الحاصل إذا كانت منزلة وسطية أقل من المقسوم عليه.",
+        "workedExample": "٣٢٧÷٣=١٠٩؛ ٨١٥÷٢=٤٠٧ والباقي١.",
+        "solution": "ابدأ القسمة وأدخل الصفر في وسط الحاصل ثم تابع إنزال المنازل.",
+        "commonMistake": "حذف صفر وسط الحاصل يغير قيمة العدد.",
+        "summary": "الصفر الوسطي جزء من القيمة المكانية للحاصل."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l11-remainder-equal-groups",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:11$"
+      ],
+      "skillId": "number.division.equal_groups_remainder_models",
+      "mechanic": "EQUAL_GROUP_MODEL_AND_REMAINDER",
+      "families": [
+        "uae.g5.u03.l11.equal_group_count",
+        "uae.g5.u03.l11.model_leftover_count"
+      ],
+      "content": {
+        "concept": "التوزيع المتساوي يقسم العدد إلى مجموعات كاملة وباقي غير موزع.",
+        "workedExample": "٤٦÷٣=١٥ والباقي١، لأن ٣×١٥+١=٤٦.",
+        "solution": "امثل مجموعات متساوية، احسب عناصر كل مجموعة والباقي، وتحقق.",
+        "commonMistake": "لا توزع عناصر الباقي في مجموعة واحدة فقط.",
+        "summary": "عدد المجموعات × عدد العناصر + الباقي = المقسوم."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l12-contextual-remainder",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:12$"
+      ],
+      "skillId": "number.division.contextual_remainder_interpretation",
+      "mechanic": "REMAINDER_REAL_WORLD_INTERPRETATION",
+      "families": [
+        "uae.g5.u03.l12.minimum_groups_ceil",
+        "uae.g5.u03.l12.full_groups_floor",
+        "uae.g5.u03.l12.leftover_amount"
+      ],
+      "content": {
+        "concept": "يختلف قرار التعامل مع الباقي بحسب السؤال العملي.",
+        "workedExample": "٥٠÷٨=٦ والباقي٢؛ نحتاج ٧ سيارات لنقل الجميع.",
+        "solution": "احسب الحاصل والباقي، ثم اختر الاكتفاء بالحاصل أو إضافة مجموعة أو تفسير الباقي.",
+        "commonMistake": "لا تضف مجموعة كاملة عند السؤال عن العلب الممتلئة فقط.",
+        "summary": "اقرأ السياق لتحديد التصرف الصحيح مع الباقي."
+      }
+    },
+    {
+      "id": "uae-g5-u03-l13-extra-missing-info",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:03:13$"
+      ],
+      "skillId": "problem_solving.identify_extra_or_missing_information",
+      "mechanic": "EXTRANEOUS_MISSING_INFORMATION",
+      "families": [
+        "uae.g5.u03.l13.ignore_extra_and_divide",
+        "uae.g5.u03.l13.ignore_extra_and_compare",
+        "uae.g5.u03.l13.classify_sufficient_information"
+      ],
+      "content": {
+        "concept": "تحديد المعلومات الزائدة أو الناقصة قبل الحل.",
+        "workedExample": "٥٠ علبة بمعدل ١٠ يوميًا تعني ٥ أيام؛ اللون زائد.",
+        "solution": "حدد المطلوب؛ استخدم الضروري فقط؛ لا تخترع العدد الناقص.",
+        "commonMistake": "لا تدخل كل رقم في المعادلة بلا داع.",
+        "summary": "أميز المعطيات الزائدة والناقصة وأحل ما تسمح به المعطيات."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l01-two-digit-division-estimates",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:01$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "DIVIDE_TWO_DIGIT_ESTIMATE_COMPATIBLE",
+      "families": [
+        "uae.g5.u04.l01.estimate_two_digit_quotient",
+        "uae.g5.u04.l01.choose_compatible_dividend",
+        "uae.g5.u04.l01.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "تقريب المقسوم عليه إلى عشرات واختيار مقسوم متوافق قريب لتقدير نواتج القسمة.",
+        "workedExample": "٨١٢÷١٩≈٨٠٠÷٢٠=٤٠.",
+        "solution": "تقريب المقسوم عليه، ثم اختيار مضاعف متوافق، ثم إجراء القسمة الذهنية.",
+        "commonMistake": "التقدير لا يساوي دائمًا الحاصل الدقيق.",
+        "summary": "أقدر ناتج قسمة رقم كبير على مقسوم عليه من رقمين وأتحقق من معقوليته."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l02-base-ten-two-digit-grouping",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:02$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "BASE_TEN_TWO_DIGIT_GROUPS",
+      "families": [
+        "uae.g5.u04.l02.base_ten_group_quotient",
+        "uae.g5.u04.l02.base_ten_group_remainder"
+      ],
+      "content": {
+        "concept": "أمثل المقسوم بمكعبات المئات والعشرات والآحاد، وأعيد التجميع ثم أقسم على عدد من رقمين.",
+        "workedExample": "156÷12=13 لأن 12×13=156؛ ويمكن إعادة تجميع المئة إلى عشر عشرات ثم الآحاد.",
+        "solution": "مثّل المقسوم؛ وزّع المئات والعشرات ثم بدّل البواقي إلى آحاد وأكمل المجموعات.",
+        "commonMistake": "لا تخلط بين الباقي ونصيب المجموعة ولا توزع العشرات كآحاد دون إعادة تجميع.",
+        "summary": "أعيد التجميع وأتحقق من المقسوم = المقسوم عليه × الحاصل + الباقي."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l03-two-digit-exact-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:03$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "TWO_DIGIT_LONG_DIVISION_QUOTIENT_REMAINDER",
+      "families": [
+        "uae.g5.u04.l03.two_digit_long_quotient",
+        "uae.g5.u04.l03.two_digit_long_remainder"
+      ],
+      "content": {
+        "concept": "أقسم عددًا من ثلاث أو أربع خانات على عدد من رقمين بالقسمة المطولة مع التقدير والمراجعة.",
+        "workedExample": "٨٣٦÷٧٦=١١ لأن ٧٦×١١=٨٣٦.",
+        "solution": "أقدّر حاصل القسمة، أقسم، أضرب، أطرح، أنزل وأراجع الباقي.",
+        "commonMistake": "إسقاط خطوة الإنزال أو اختيار رقم حاصل أكبر من اللازم يجعل حاصل الضرب أكبر من المقسوم.",
+        "summary": "أتحقق باستخدام المقسوم = المقسوم عليه×الحاصل+الباقي."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l04-adjust-two-digit-quotients",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:04$"
+      ],
+      "skillId": "number.base_ten_division_with_remainders",
+      "mechanic": "ADJUST_QUOTIENT_TRIAL_BY_PRODUCT_AND_REMAINDER",
+      "families": [
+        "uae.g5.u04.l04.corrected_trial_quotient",
+        "uae.g5.u04.l04.trial_too_high_indicator",
+        "uae.g5.u04.l04.adjusted_remainder"
+      ],
+      "content": {
+        "concept": "أراجع رقم الحاصل المؤقت بالضرب وأعدله إذا كان حاصل الضرب كبيرًا أو الباقي كبيرًا.",
+        "workedExample": "٢٣٨÷٦٢: ٤ مرتفع لأن ٤×٦٢=٢٤٨>٢٣٨، فنجرّب ٣ والباقي ٥٢.",
+        "solution": "أضرب ثم أقارن؛ ارفع أو اخفض تقدير الحاصل حتى يكون الباقي بين صفر والمقسوم عليه.",
+        "commonMistake": "الاعتماد على التقدير دون اختبار حاصل الضرب.",
+        "summary": "أعدل رقم الحاصل حتى تصبح القسمة صحيحة."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l05-large-number-long-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:05$"
+      ],
+      "skillId": "number.long_division_large_numbers",
+      "mechanic": "LONG_DIVISION_LARGE_NUMBER_TWO_THREE_DIGIT_DIVISOR",
+      "families": [
+        "uae.g5.u04.l05.large_quotient",
+        "uae.g5.u04.l05.large_remainder",
+        "uae.g5.u04.l05.zero_place_quotient"
+      ],
+      "content": {
+        "concept": "أقسم أعدادًا كبيرة على عدد من رقمين أو ثلاثة مع المحافظة على مواضع صفر الحاصل.",
+        "workedExample": "٢٢٬٥٠٠÷٧٥=٣٠٠؛ لأن ٧٥×٣٠٠=٢٢٬٥٠٠.",
+        "solution": "اكتب أرقام الحاصل في منازلها، أنزل رقمًا في كل دورة، وتحقق بالمضاعفة والباقي.",
+        "commonMistake": "إسقاط الصفر الداخلي أو التأخر في إنزال رقم يغير قيمة الحاصل.",
+        "summary": "أراجع حاصل القسمة المطولة بالضرب والباقي."
+      }
+    },
+    {
+      "id": "uae-g5-u04-l06-simpler-problem-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:04:06$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "FOUR_STEP_SIMPLER_PROBLEM_RATE_SCALE_AREA_SAVING",
+      "families": [
+        "uae.g5.u04.l06.equal_group_unit_rate",
+        "uae.g5.u04.l06.simpler_scaled_groups",
+        "uae.g5.u04.l06.remaining_area",
+        "uae.g5.u04.l06.saving_weeks_strictly_more"
+      ],
+      "content": {
+        "concept": "أحوّل المسألة المركبة إلى معدل وحدة أو جزء مساحة أو ادخار أسبوعي، ثم أعود إلى المطلوب.",
+        "workedExample": "ادخار ٥٠−١٠=٤٠ درهمًا أسبوعيًا؛ لتجاوز ٣٠٠ درهم نحتاج ٨ أسابيع.",
+        "solution": "أبسط، أستنتج قيمة الوحدة، أوسّع أو أطرح، وأتحقق من شرط المسألة.",
+        "commonMistake": "مساواة الهدف ليست تجاوزه، كما يجب توحيد وحدات المساحة والعدد.",
+        "summary": "أحل مسألة أبسط ثم أتحقق في سياق المسألة الأصلية."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l01-decimal-product-estimation",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:01$"
+      ],
+      "skillId": "number.rounding_to_estimate_products",
+      "mechanic": "ROUND_DECIMAL_PRODUCT_ESTIMATION",
+      "families": [
+        "uae.g5.u05.l01.round_decimal_to_whole",
+        "uae.g5.u05.l01.round_both_factors",
+        "uae.g5.u05.l01.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "أقدر حاصل ضرب عدد عشري في عدد كلي بتقريب العدد العشري إلى كلي مناسب وقد أقرب العامل الآخر إلى عشرة.",
+        "workedExample": "٥٩٫٨×٥≈٦٠×٥=٣٠٠؛ الناتج الدقيق قريب من التقدير.",
+        "solution": "أقرب وفق المطلوب ثم أضرب وأقارن بناتج الضرب الدقيق لتقرير المعقولية.",
+        "commonMistake": "حساب الناتج الدقيق وتسميته تقديرًا أو تجاهل العامل الذي طُلب تقريبه.",
+        "summary": "أستخدم أعدادًا متوافقة لأقدّر حاصل الضرب وأفسر مقدار التقريب."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l02-equal-tenths-decimal-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:02$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "TENTHS_EQUAL_GROUP_MODEL",
+      "families": [
+        "uae.g5.u05.l02.model_decimal_product",
+        "uae.g5.u05.l02.model_shaded_hundredths",
+        "uae.g5.u05.l02.model_complete_wholes"
+      ],
+      "content": {
+        "concept": "أمثل ضرب العدد العشري في العدد الكلي بتكرار الأعشار في مجموعات متساوية.",
+        "workedExample": "٠٫٤×٢ = ٠٫٨؛ ٠٫٧×٢ = ١٫٤ بعد إعادة التجميع.",
+        "solution": "ظلّل نفس عدد الأعشار لكل مجموعة ثم اجمع وحوّل كل عشرة أعشار إلى وحدة.",
+        "commonMistake": "١٤ عُشرًا ليست ٠٫١٤ وإنما ١٫٤.",
+        "summary": "الضرب العشري جمع متكرر لنماذج متساوية من الأعشار."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l03-decimal-whole-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:03$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_MULTIPLY_WHOLE_HUNDREDTHS",
+      "families": [
+        "uae.g5.u05.l03.decimal_times_whole",
+        "uae.g5.u05.l03.unit_price_total",
+        "uae.g5.u05.l03.decimal_point_placement"
+      ],
+      "content": {
+        "concept": "أضرب العشري في عدد كلي وأحافظ على المنازل.",
+        "workedExample": "٠٫٩٦×٣=٢٫٨٨",
+        "solution": "ضرب ٩٦×٣ ثم القسمة على ١٠٠.",
+        "commonMistake": "٢٨٨ ليست الناتج النهائي.",
+        "summary": "أعد الفاصلة بدقة وتحقق بالتقدير."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l04-decimal-area",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:04$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_AREA_TENTHS_HUNDREDTHS",
+      "families": [
+        "uae.g5.u05.l04.area_tenths_product",
+        "uae.g5.u05.l04.area_shaded_hundredths",
+        "uae.g5.u05.l04.area_extended_product"
+      ],
+      "content": {
+        "concept": "ضرب الأعداد العشرية بشبكة المساحة.",
+        "workedExample": "٠٫٣×٠٫٧=٠٫٢١؛ ٠٫١١×٠٫٥=٠٫٠٥٥.",
+        "solution": "أضرب أجزاء الأعشار أو المئة وأعيد المقياس الصحيح.",
+        "commonMistake": "لا تقرب ٠٫٠٥٥ قبل أن يُطلب التقريب.",
+        "summary": "مساحة التقاطع تحقق ناتج الضرب العشري."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l05-decimal-factors",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:05$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_FACTOR_MULTIPLICATION",
+      "families": [
+        "uae.g5.u05.l05.multiply_decimal_factors",
+        "uae.g5.u05.l05.apply_decimal_price_rate",
+        "uae.g5.u05.l05.restore_decimal_point"
+      ],
+      "content": {
+        "concept": "أضرب العشريين وأعيد عدد المنازل العشرية معًا.",
+        "workedExample": "٠٫٤٧×٠٫١٨=٠٫٠٨٤٦.",
+        "solution": "٤٧×١٨=٨٤٦؛ أربع منازل عشرية.",
+        "commonMistake": "لا تختزل الدقة إلى منزلتين.",
+        "summary": "اضرب العشريين بدقة وأعد الفاصلة."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l06-decimal-powers",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:06$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_MULTIPLY_BY_POWERS_TEN",
+      "families": [
+        "uae.g5.u05.l06.decimal_times_power_ten",
+        "uae.g5.u05.l06.decimal_shift_positions",
+        "uae.g5.u05.l06.price_times_power_ten"
+      ],
+      "content": {
+        "concept": "الضرب في قوى عشرة ينقل القيمة المكانية.",
+        "workedExample": "٠٫٨٥٣×١٠³=٨٥٣.",
+        "solution": "حرك الفاصلة يمينًا حسب الأس.",
+        "commonMistake": "إضافة أصفار إلى اليمين من دون تحريك الفاصلة لا يكبر العدد.",
+        "summary": "حدد ١٠^ن ثم اضرب وراجع بالقسمة."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l07-find-pattern",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:07$"
+      ],
+      "skillId": "number.numeric_sequences_identify_extend",
+      "mechanic": "G5_DECIMAL_INPUT_TABLE_DISCOUNT_PATTERNS",
+      "families": [
+        "uae.g5.u05.l07.decimal_factor_ten_pattern",
+        "uae.g5.u05.l07.arithmetic_step_pattern",
+        "uae.g5.u05.l07.table_double_minus_one",
+        "uae.g5.u05.l07.ten_percent_discount_pattern"
+      ],
+      "content": {
+        "concept": "أحدد قاعدة ثابتة للنمط ثم أستنتج الحد التالي.",
+        "workedExample": "٠٫٠٣،٠٫٣،٣،٣٠ ثم ٣٠٠.",
+        "solution": "اختبر الضرب أو القسمة أو القاعدة الخطية.",
+        "commonMistake": "لا تفترض الجمع في كل نمط.",
+        "summary": "أكمل الأنماط وأتحقق من القاعدة."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l08-multiplication-properties",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:08$"
+      ],
+      "skillId": "number.mult_div_properties",
+      "mechanic": "MULTIPLICATION_PROPERTIES_DECIMALS",
+      "families": [
+        "uae.g5.u05.l08.commutative_decimal_factor",
+        "uae.g5.u05.l08.associative_decimal_product",
+        "uae.g5.u05.l08.multiplicative_identity"
+      ],
+      "content": {
+        "concept": "التبديل والتجميع والمحايد لتسهيل ضرب الأعداد العشرية.",
+        "workedExample": "(١٫٧×٥)×٢ =١٧ بخاصية التجميع.",
+        "solution": "غيّر ترتيب العاملين أو تجميعهم دون تغيير قيمتهم.",
+        "commonMistake": "الخلط بين محايد الضرب (١) وصفر الضرب.",
+        "summary": "حدد الخاصية وطبقها وفسر سبب صحة الناتج."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l09-decimal-compatible-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:09$"
+      ],
+      "skillId": "number.estimate_quotient_compatible_numbers",
+      "mechanic": "ESTIMATE_DECIMAL_DIVISION_COMPATIBLE",
+      "families": [
+        "uae.g5.u05.l09.estimate_decimal_quotient",
+        "uae.g5.u05.l09.compatible_decimal_dividend",
+        "uae.g5.u05.l09.estimate_above_exact"
+      ],
+      "content": {
+        "concept": "قدّر ناتج قسمة العشري باستخدام أعداد متوافقة.",
+        "workedExample": "٧٨٫٧٤÷٤٢≈٨٠÷٤٠=٢.",
+        "solution": "أقرب المقسوم والمقسوم عليه إلى أعداد يسهل قسمتها.",
+        "commonMistake": "لا تساوِ بين التقدير والحاصل الدقيق.",
+        "summary": "قدّر القسمة وتحقق بالضرب."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l10-decimal-tenths-group",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:10$"
+      ],
+      "skillId": "number.division_model_word_problem",
+      "mechanic": "MODEL_DECIMAL_BY_WHOLE_EQUAL_GROUPS",
+      "families": [
+        "uae.g5.u05.l10.tenths_equal_group_quotient",
+        "uae.g5.u05.l10.tenths_per_group",
+        "uae.g5.u05.l10.whole_units_per_group"
+      ],
+      "content": {
+        "concept": "نقسم الوحدات والأعشار إلى مجموعات متساوية.",
+        "workedExample": "٣٫٦÷٣=١٫٢؛ ٢٫٤÷٤=٠٫٦.",
+        "solution": "حوّل الوحدات إلى أعشار، وزّع وأعد الصيغة العشرية.",
+        "commonMistake": "٦ أعشار تعني ٠٫٦ وليس ٦.",
+        "summary": "نماذج متساوية وتحقق بضرب نصيب المجموعة."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l11-decimal-by-whole",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:11$"
+      ],
+      "skillId": "number.division_model_word_problem",
+      "mechanic": "DECIMAL_LONG_DIVISION_BY_WHOLE",
+      "families": [
+        "uae.g5.u05.l11.exact_decimal_by_whole",
+        "uae.g5.u05.l11.round_decimal_quotient_hundredth",
+        "uae.g5.u05.l11.quotient_hundredths_digit"
+      ],
+      "content": {
+        "concept": "قسمة عشري على عدد كلي مع الحفاظ على فاصلة الحاصل.",
+        "workedExample": "٦٫٥٤÷١٢=٠٫٥٤٥، وأقرب جزء من مئة ٠٫٥٥.",
+        "solution": "أكمل القسمة كما في الأعداد الكلية وأتحقق بالضرب.",
+        "commonMistake": "لا تقرّب قبل إتمام القسمة.",
+        "summary": "ضع الفاصلة في الحاصل ثم تحقق بالتعويض."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l12-decimal-model-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:12$"
+      ],
+      "skillId": "number.division_model_word_problem",
+      "mechanic": "DECIMAL_HUNDREDTHS_EQUAL_GROUP_MODEL",
+      "families": [
+        "uae.g5.u05.l12.model_decimal_equal_groups",
+        "uae.g5.u05.l12.model_decimal_hundredths_count"
+      ],
+      "content": {
+        "concept": "أحوّل وحدات وأعشار المقسوم إلى أجزاء من مئة قبل تكوين مجموعات متساوية.",
+        "workedExample": "٢٫٤ ÷ ٠٫٨ = ٣ مجموعات، لأن ٢٤٠ جزءًا من مئة ÷ ٨٠ جزءًا من مئة = ٣.",
+        "solution": "مثّل العددين بأجزاء المئة، كوّن مجموعات كاملة، ثم تحقّق بالضرب.",
+        "commonMistake": "لا تعتبر ٠٫٨ ثماني وحدات، ولا تقسّم دون توحيد الوحدة.",
+        "summary": "النموذج يوضح عدد المجموعات المتساوية من أجزاء المئة."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l13-decimal-by-decimal-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:13$"
+      ],
+      "skillId": "number.division_model_word_problem",
+      "mechanic": "DECIMAL_DIVISION_EXACT_TWO_SCALES",
+      "families": [
+        "uae.g5.u05.l13.exact_decimal_divide",
+        "uae.g5.u05.l13.contextual_decimal_unit_rate",
+        "uae.g5.u05.l13.quotient_tenths_digit"
+      ],
+      "content": {
+        "concept": "أضرب المقسوم والمقسوم عليه بالقوة العشرية نفسها حتى يكون المقسوم عليه عددًا كليًا.",
+        "workedExample": "٦٫٨٩÷١٫٣=٥٫٣، لأن ٦٨٫٩÷١٣=٥٫٣.",
+        "solution": "أُحوِّل المقسوم عليه إلى عدد كلي ثم أجد الحاصل الدقيق وأتحقق بالضرب.",
+        "commonMistake": "تحريك الفاصلة في طرف واحد فقط يغير الحاصل.",
+        "summary": "قسمة الأعداد العشرية بدقة والتحقق من الحاصل."
+      }
+    },
+    {
+      "id": "uae-g5-u05-l14-decimal-divide-powers-ten",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:05:14$"
+      ],
+      "skillId": "supporting.decimals.core",
+      "mechanic": "DECIMAL_DIVIDE_POWER_OF_TEN",
+      "families": [
+        "uae.g5.u05.l14.decimal_divide_power_ten",
+        "uae.g5.u05.l14.decimal_left_shift_places",
+        "uae.g5.u05.l14.equal_payment_decimal"
+      ],
+      "content": {
+        "concept": "عند القسمة على ١٠ أو ١٠٠ أو ١٠٠٠ تنتقل الفاصلة يسارًا بمقدار الأس.",
+        "workedExample": "٣٦٫٤ ÷ ١٠٠ = ٠٫٣٦٤.",
+        "solution": "حدد الأس، وانقل الفاصلة لليسار مع الأصفار المطلوبة، وتحقق بالضرب.",
+        "commonMistake": "لا تحرك الفاصلة إلى اليمين؛ هذا يضرب العدد ولا يقسمه.",
+        "summary": "قسمة الأعداد العشرية على قوى العشرة."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l01-original-bar-model-expressions",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:01$"
+      ],
+      "skillId": "number.algebra.write_expressions",
+      "mechanic": "BAR_MODEL_NUMERICAL_EXPRESSION_AND_VALUE",
+      "families": [
+        "uae.g5.u06.l01.equal_group_bar_total",
+        "uae.g5.u06.l01.two_group_bar_total",
+        "uae.g5.u06.l01.paired_group_expression_value"
+      ],
+      "content": {
+        "concept": "أمثل أجزاء الرسم الشريطي بتعبير عددي يتضمن جمعًا متكررًا أو ضربًا.",
+        "workedExample": "مجموعتان من ٥ ومجموعتان من ٤ تساوي (٢×٥)+(٢×٤)=١٨.",
+        "solution": "أعدّ الأجزاء وأحدد قيمة كل جزء ثم أكتب التعبير وأحسب نتيجته.",
+        "commonMistake": "لا أهمل عدد تكرارات الجزء أو أخلط بين التعبير العددي وقيمته.",
+        "summary": "أكتب تعبيرين متكافئين ثم أتحقق من مجموع الأجزاء."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l02-order-of-operations",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:02$"
+      ],
+      "skillId": "number.algebra.evaluate_expressions",
+      "mechanic": "PARENTHESES_EXPONENTS_MULTIPLY_ADD",
+      "families": [
+        "uae.g5.u06.l02.multiply_before_add",
+        "uae.g5.u06.l02.nested_parentheses",
+        "uae.g5.u06.l02.exponents_before_products"
+      ],
+      "content": {
+        "concept": "الأقواس أولًا ثم الأسس ثم الضرب والقسمة ثم الجمع والطرح مع مراعاة اليسار إلى اليمين في المرتبة نفسها.",
+        "workedExample": "١٢×٤+١٠×٨=٤٨+٨٠=١٢٨.",
+        "solution": "أُكمل كل مستوى بالترتيب، ثم أتحقق باستبدال الخطوات في التعبير.",
+        "commonMistake": "لا أجمع ٤+١٠ قبل الضرب.",
+        "summary": "أحترم ترتيب العمليات والأقواس."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l03-write-numerical-expressions",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:03$"
+      ],
+      "skillId": "number.algebra.write_expressions",
+      "mechanic": "WRITE_SYMBOLIC_NUMERIC_EXPRESSION",
+      "families": [
+        "uae.g5.u06.l03.write_multiply_then_subtract",
+        "uae.g5.u06.l03.write_sum_then_divide",
+        "uae.g5.u06.l03.write_group_times_sum"
+      ],
+      "content": {
+        "concept": "أحوّل وصفًا لفظيًا يتضمن مجموعات وخصمًا أو قسمة إلى تعبير عددي دون إلزام بحسابه.",
+        "workedExample": "أربع تذاكر قيمة الواحدة ٧ دراهم وخصم ٣ دراهم: ٤×٧−٣.",
+        "solution": "أحدد كل عملية من ألفاظ المسألة وأستعمل الأقواس إذا لزم.",
+        "commonMistake": "لا أستبدل (١٠+٦)÷٤ بالتعبير ١٠+٦÷٤.",
+        "summary": "أكتب تعبيرًا عدديًا يراعي الترتيب والمعنى."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l04-work-backward-reuse",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:04$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "FOUR_STEP_MULTISTEP_INVERSE",
+      "families": [
+        "uae.g5.u01.l09.undo_four_steps",
+        "uae.g5.u01.l09.find_starting_total",
+        "uae.g5.u01.l09.find_missing_distance"
+      ],
+      "content": {
+        "concept": "أستخدم العمليات العكسية بدءًا من نتيجة المسألة حتى أستعيد العدد المجهول.",
+        "workedExample": "(x÷٣)+٦−٤=١٣، إذن x=(١٣+٤−٦)×٣=٣٣.",
+        "solution": "اعكس ترتيب العمليات، ثم تحقق بإعادتها إلى الأمام.",
+        "commonMistake": "تغيير العملية دون عكس ترتيبها يؤدي إلى جواب غير صحيح.",
+        "summary": "أبدأ بالنهاية، أرجع بالعمليات، وأتحقق من البداية."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l05-substitute-and-evaluate",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:05$"
+      ],
+      "skillId": "number.algebra.evaluate_expressions",
+      "mechanic": "VARIABLE_SUBSTITUTION_INTEGERS_AND_DECIMALS",
+      "families": [
+        "uae.g5.u06.l05.substitute_bracket_add",
+        "uae.g5.u06.l05.substitute_squared_subtract",
+        "uae.g5.u06.l05.substitute_decimal_values"
+      ],
+      "content": {
+        "concept": "أستبدل كل متغير بالقيمة المعطاة ثم أحسب التعبير حسب ترتيب العمليات.",
+        "workedExample": "إذا a=٤ وb=٩ فإن (b−a)+٦ = (٩−٤)+٦=١١.",
+        "solution": "ضع العدد مكان الحرف واحسب الأقواس والضرب ثم الجمع والطرح.",
+        "commonMistake": "لا تعتبر الحرف قيمة ثابتة في كل مسألة ولا تخلط بين ٢a وa+٢.",
+        "summary": "استبدل المتغيرات واحسب التعبير بدقة."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l06-unknown-container-expression-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:06$"
+      ],
+      "skillId": "number.algebra.write_expressions",
+      "mechanic": "UNKNOWN_CONTAINER_ADD_SUBTRACT_REPEATED_GROUP_MODELS",
+      "families": [
+        "uae.g5.u06.l06.model_unknown_plus",
+        "uae.g5.u06.l06.model_unknown_minus",
+        "uae.g5.u06.l06.model_repeated_group"
+      ],
+      "content": {
+        "concept": "أربط عددًا مجهولًا داخل صندوق بالقطع الظاهرة وأمثل الجمع والطرح وتكرار المجموعات بتعبيرات جبرية عربية.",
+        "workedExample": "صندوق x مجهول ومعه ٥ قطع يعطي x+٥؛ إذا أزلت ٣ قطع من الصندوق كان الباقي x−٣؛ ثلاث مجموعات من x+٢ تعطي ٣(x+٢).",
+        "solution": "أحدد المجهول x، وأميز المجموعة الأصلية من المنقول أو المضاف، وأكتب التعبير محافظًا على الأقواس.",
+        "commonMistake": "لا أفسر الصندوق المجهول بأنه فارغ، ولا أعكس الطرح إلى ٣−x، ولا أوزع العدد على المتغير وحده.",
+        "summary": "أصف النموذج أولًا وأكتب التعبير الذي يمثل بنيته؛ فحص الرسم وتبرير التفسير من اختصاص المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l07-hands-on-toothpick-numeric-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:07$"
+      ],
+      "skillId": "number.numeric_sequences_identify_extend",
+      "mechanic": "TOOTHPICK_SHAPES_ADDITIVE_PATTERNS_COMPARE_GROWTH",
+      "families": [
+        "uae.g5.u06.l07.matchstick_adjacent_squares",
+        "uae.g5.u06.l07.matchstick_square_diagonal",
+        "uae.g5.u06.l07.matchstick_shared_triangles",
+        "uae.g5.u06.l07.compare_three_six_growth"
+      ],
+      "content": {
+        "concept": "أبني مربعات ومثلثات بأعواد وأعدّ الجزء المضاف في كل شكل، ثم أصف التغير الثابت.",
+        "workedExample": "صف مربعات ٤،٧،١٠ يزيد ثلاثة أعواد في كل شكل؛ الشكل السادس يحتاج ١٩ عودًا. نمط +٤ يبدأ ٤،٨،١٢.",
+        "solution": "أحدد رقم الشكل الأول والزيادة لكل انتقال، وأستخدم عدد الانتقالات n−١ مع جدول يراجع الأعداد.",
+        "commonMistake": "لا أعيد عد الأضلاع المشتركة، ولا أفترض أن جميع الأنماط المرسومة تزيد بالمقدار نفسه.",
+        "summary": "التدريب الرقمي يغطي الأنماط والتحقق الحسابي فقط؛ يرسم الطالب النماذج ويشرحها للمعلم في نشاط منفصل."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l08-patterns",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:08$"
+      ],
+      "skillId": "number.numeric_sequences_identify_extend",
+      "mechanic": "ADDITIVE_MULTIPLICATIVE_COMPARE_PATTERN",
+      "families": [
+        "uae.g5.u06.l08.next_additive_term",
+        "uae.g5.u06.l08.next_multiplicative_term",
+        "uae.g5.u06.l08.compare_weekly_growth"
+      ],
+      "content": {
+        "concept": "المتتاليات أنماط ذات حدود وقواعد ثابتة في الجمع أو الضرب.",
+        "workedExample": "٤،٨،١٢،١٦؛ الحد التالي ٢٠. و٢،٦،١٨،٥٤؛ الحد التالي ١٦٢.",
+        "solution": "أفحص الفروق أو عوامل الضرب وأكمل الحد وأتحقق من القاعدة.",
+        "commonMistake": "لا تستخدم فرقًا ثابتًا لنمط ضربي.",
+        "summary": "أتعرف على النمط وأفسر القاعدة وأكمل الجداول."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l09-map-grid",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:09$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "MAP_GRID_MOVEMENT",
+      "families": [
+        "uae.g5.u06.l09.map_horizontal_steps",
+        "uae.g5.u06.l09.map_vertical_steps",
+        "uae.g5.u06.l09.map_shortest_grid_route"
+      ],
+      "content": {
+        "concept": "أرسم مواقع المعالم على خريطة شبكة وأصف الطريق أفقيًا ورأسيًا.",
+        "workedExample": "من (١،١) إلى (٤،٥): ثلاث وحدات يمينًا وأربع وحدات أعلى.",
+        "solution": "أعد وحدات الانتقال حسب الاتجاه وأتحقق من نقطة النهاية.",
+        "commonMistake": "لا أعد النقاط بدل الفواصل أو أستخدم حركة قطرية عند منعها.",
+        "summary": "مواقع الخريطة، الاتجاهات، وعدد وحدات الطريق."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l10-ordered-pairs",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:10$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "FIRST_QUADRANT_ORDERED_PAIRS",
+      "families": [
+        "uae.g5.u06.l10.coordinate_x",
+        "uae.g5.u06.l10.coordinate_y",
+        "uae.g5.u06.l10.write_ordered_pair"
+      ],
+      "content": {
+        "concept": "الزوج المرتب يحدد الموقع بالتحرك أفقيًا ثم رأسيًا على المستوى الإحداثي.",
+        "workedExample": "من (٠،٠) إلى (٣،٥) أتحرك ٣ يمينًا ثم ٥ لأعلى.",
+        "solution": "اكتب العدد الأول للإحداثي الأفقي والثاني للرأسي.",
+        "commonMistake": "تبديل (٣،٥) إلى (٥،٣) يؤدي إلى موقع مختلف.",
+        "summary": "أقرأ وأعين الأزواج المرتبة في الربع الأول."
+      }
+    },
+    {
+      "id": "uae-g5-u06-l11-graph-patterns",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:06:11$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "TABLE_TO_GRAPH_LINEAR_PATTERN",
+      "families": [
+        "uae.g5.u06.l11.graph_value_at_hour",
+        "uae.g5.u06.l11.compare_linear_rentals",
+        "uae.g5.u06.l11.graph_linear_increase"
+      ],
+      "content": {
+        "concept": "أرسم الأنماط من جدول أزواج مرتبة وأقرأ العلاقة بين مدخل الساعات ومخرج التكلفة.",
+        "workedExample": "٥ دراهم/ساعة: الأزواج (١،٥)،(٢،١٠)،(٣،١٥).",
+        "solution": "اضرب المدخل في السعر ثم اقرأ الناتج عند نفس المدخل في الرسم.",
+        "commonMistake": "لا تبدل المحاور أو تقارن عند عدد ساعات مختلف.",
+        "summary": "الجداول، الأزواج المرتبة، الرسوم البيانية ومعدلات التغير."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l01-division-as-fraction",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:01$"
+      ],
+      "skillId": "number.fractions.division_as_fraction",
+      "mechanic": "FRACTION_AS_WHOLE_NUMBER_DIVISION",
+      "families": [
+        "uae.g5.u07.l01.division_as_fraction",
+        "uae.g5.u07.l01.quotient_whole_part",
+        "uae.g5.u07.l01.quotient_remainder"
+      ],
+      "content": {
+        "concept": "عدد الوحدات مقسومًا على عدد المجموعات يساوي كسرًا بسطه الوحدات ومقامه المجموعات.",
+        "workedExample": "٥÷٤ = ٥/٤ = ١ و١/٤.",
+        "solution": "أحول القسمة إلى كسر وأتحقق من الجزء الصحيح والباقي.",
+        "commonMistake": "لا أقلب البسط والمقام أو أفترض أن الناتج أقل من واحد.",
+        "summary": "الكسور والقسمة وتوزيع الوحدات بالتساوي."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l02-gcf",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:02$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "GCF_OF_TWO_AND_THREE",
+      "families": [
+        "uae.g5.u07.l02.gcf_two_numbers",
+        "uae.g5.u07.l02.gcf_three_numbers",
+        "uae.g5.u07.l02.test_common_factor"
+      ],
+      "content": {
+        "concept": "العامل المشترك الأكبر هو أكبر عامل يقسم الأعداد كلها دون باق.",
+        "workedExample": "ع.م.أ(٦٠،٩٦،١٤٤)=١٢.",
+        "solution": "حدد العوامل المشتركة أو العوامل الأولية المشتركة بأقل تكرار.",
+        "commonMistake": "لا تختَر عاملاً مشتركًا في عددين فقط من أصل ثلاثة.",
+        "summary": "العامل المشترك الأكبر باستخدام العوامل والتحليل."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l03-simplest-form",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:03$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "REDUCE_FRACTION_TO_COPRIME_TERMS",
+      "families": [
+        "uae.g5.u07.l03.simplify_fraction",
+        "uae.g5.u07.l03.gcf_for_simplification",
+        "uae.g5.u07.l03.reduced_numerator"
+      ],
+      "content": {
+        "concept": "أقسم بسط الكسر ومقامه على العامل المشترك الأكبر لكتابته في أبسط صورة.",
+        "workedExample": "٦/٨=٣/٤، و٨/٢٤=١/٣.",
+        "solution": "أوجد العامل المشترك الأكبر ثم أقسم العددين عليه.",
+        "commonMistake": "لا تقسم البسط وحده أو تترك كسرًا قابلًا للاختزال.",
+        "summary": "اختزال الكسر والتأكد من التكافؤ وأبسط صورة."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l04-guess-check-revise",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:04$"
+      ],
+      "skillId": "problem_solving.four_steps_with_whole_numbers",
+      "mechanic": "GUESS_CHECK_REVISE",
+      "families": [
+        "uae.g5.u07.l04.cars_from_total_wheels",
+        "uae.g5.u07.l04.adults_from_ticket_revenue",
+        "uae.g5.u07.l04.validate_guess_wheels"
+      ],
+      "content": {
+        "concept": "أخمّن وأتحقق من شروط المسألة ثم أراجع التخمين.",
+        "workedExample": "١١ مركبة و٣٤ عجلة: ٦ سيارات و٥ دراجات.",
+        "solution": "اختبر إجمالي العدد والمجموع العددي في كل تخمين.",
+        "commonMistake": "لا تقبل تخمينًا يحقق شرطًا واحدًا فقط.",
+        "summary": "تخمين وتحقق ومراجعة."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l05-lcm-exact",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:05$"
+      ],
+      "skillId": "supporting.number.factors_primes",
+      "mechanic": "LCM_TWO_AND_THREE",
+      "families": [
+        "uae.g5.u07.l05.lcm_two_numbers",
+        "uae.g5.u07.l05.lcm_three_numbers",
+        "uae.g5.u07.l05.test_common_multiple"
+      ],
+      "content": {
+        "concept": "المضاعف المشترك الأصغر أصغر مضاعف موجب مشترك لعددين أو أكثر.",
+        "workedExample": "م.م.أ(٦،٨)=٢٤، لا ٢.",
+        "solution": "اكتب المضاعفات أو العوامل الأولية وتحقق من القسمة.",
+        "commonMistake": "الخلط بين ع.م.أ وم.م.أ.",
+        "summary": "أوجد م.م.أ لعددين أو ثلاثة."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l06-fraction-compare",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:06$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "FRACTION_COMPARE_COMMON_DENOMINATOR",
+      "families": [
+        "uae.g5.u07.l06.compare_common_denominator",
+        "uae.g5.u07.l06.find_least_common_denominator",
+        "uae.g5.u07.l06.equivalent_numerator"
+      ],
+      "content": {
+        "concept": "كوّن كسورًا متكافئة بالمقام المشترك الأصغر وقارن البسوط.",
+        "workedExample": "٢/٣ = ٤/٦ < ٥/٦.",
+        "solution": "أوجد م.م.أ للمقامين، ثم أحوّل وأقارن.",
+        "commonMistake": "تغيير المقام دون البسط.",
+        "summary": "قارن الكسور بكسور مكافئة."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l07-fraction-decimal-models",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:07$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "FRACTION_TO_DECIMAL_GRID",
+      "families": [
+        "uae.g5.u07.l07.model_tenths_decimal",
+        "uae.g5.u07.l07.model_hundredths_decimal",
+        "uae.g5.u07.l07.count_shaded_hundredths"
+      ],
+      "content": {
+        "concept": "مثّل الكسور بأشرطة أعشار وشبكة مئة ثم اكتب أعدادًا عشرية مكافئة.",
+        "workedExample": "٣/٤=٧٥/١٠٠=٠٫٧٥.",
+        "solution": "حوّل البسط والمقام إلى ١٠ أو ١٠٠، ثم اقرأ العدد العشري.",
+        "commonMistake": "اعتبار ٣/٤ هو ٣ مربعات من ١٠٠.",
+        "summary": "الكسور والنماذج والأعداد العشرية متساوية القيم."
+      }
+    },
+    {
+      "id": "uae-g5-u07-l08-fraction-decimal",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:07:08$"
+      ],
+      "skillId": "decimals.place_value",
+      "mechanic": "FRACTION_TO_TERMINATING_DECIMAL",
+      "families": [
+        "uae.g5.u07.l07.model_hundredths_decimal",
+        "uae.g5.u07.l07.count_shaded_hundredths",
+        "uae.g5.u07.l08.reducible_fraction_to_decimal"
+      ],
+      "content": {
+        "concept": "بسط الكسر عند الحاجة وحوله إلى مقام ١٠ أو ١٠٠، ثم اكتب العدد العشري.",
+        "workedExample": "٩/١٢=٣/٤=٠٫٧٥.",
+        "solution": "أختصر أولًا أو أُنشئ كسرًا مكافئًا ثم أتحقق.",
+        "commonMistake": "تغيير المقام دون البسط أو اعتبار ١/٥=٠٫٥.",
+        "summary": "اكتب الكسور كأعداد عشرية مكافئة."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l01-fraction-rounding",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:01$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "FRACTION_BENCHMARK_ROUNDING",
+      "families": [
+        "uae.g4.u10.l06.nearest_benchmark",
+        "uae.g4.u10.l06.compared_to_half",
+        "uae.g5.u08.l01.round_mixed_number_to_whole"
+      ],
+      "content": {
+        "concept": "تقريب كسور إلى الصفر أو النصف أو الواحد.",
+        "workedExample": "٢/١٠٠≈٠ و٤/٩≈١/٢ و٧/٨≈١.",
+        "solution": "حدد الأقرب على خط الأعداد.",
+        "commonMistake": "تقريب كل الكسور الأصغر من واحد إلى الصفر.",
+        "summary": "قرب الكسور بمرجع واضح."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l02-add-like-fractions",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:02$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "ADD_LIKE_FRACTIONS",
+      "families": [
+        "uae.g4.u09.l02.sum_numerator",
+        "uae.g4.u09.l02.simplified_sum_numerator",
+        "uae.g4.u09.l02.simplified_sum_denominator",
+        "uae.g5.u08.l02.add_like_extended_fraction"
+      ],
+      "content": {
+        "concept": "أجمع البسطين مع الحفاظ على المقام.",
+        "workedExample": "٥/٦+٥/٦=١٠/٦=١ و٢/٣.",
+        "solution": "أجمع البسطين وأبسّط.",
+        "commonMistake": "لا أجمع المقامين.",
+        "summary": "أجمع وأبسط الكسور المتشابهة."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l03-subtract-like-fractions",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:03$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "SUBTRACT_LIKE_FRACTIONS",
+      "families": [
+        "uae.g4.u09.l04.difference_numerator",
+        "uae.g4.u09.l04.reduced_difference_numerator",
+        "uae.g4.u09.l04.reduced_difference_denominator",
+        "uae.g5.u08.l03.subtract_like_extended_fraction"
+      ],
+      "content": {
+        "concept": "طرح الكسور المتشابهة بطرح البسطين.",
+        "workedExample": "٧/١٠−٣/١٠=٢/٥.",
+        "solution": "أطرح البسطين وأثبت المقام وأبسط.",
+        "commonMistake": "طرح المقامات.",
+        "summary": "طرح وتبسيط الكسور المتشابهة."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l04-unlike-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:04$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "UNLIKE_FRACTION_MODEL_ADD",
+      "families": [
+        "uae.g5.u08.l04.model_common_denominator",
+        "uae.g5.u08.l04.equivalent_second_numerator",
+        "uae.g5.u08.l04.model_unlike_sum_simplified"
+      ],
+      "content": {
+        "concept": "تُمثل الكسور غير المتشابهة بشريطي كسور ثم توحد المقامات وتجمع.",
+        "workedExample": "٢/٣+٣/٤=٨/١٢+٩/١٢=١٧/١٢.",
+        "solution": "أجد المضاعف المشترك الأصغر ثم أجمع البسطين وأبسط.",
+        "commonMistake": "لا أجمع المقامات.",
+        "summary": "نمذجة أجزاء متساوية."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l05-unlike-sums",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:05$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "UNLIKE_FRACTION_ADD",
+      "families": [
+        "uae.g5.u08.l04.model_common_denominator",
+        "uae.g5.u08.l04.model_unlike_sum_simplified"
+      ],
+      "content": {
+        "concept": "أجمع كسورًا غير متشابهة باستخدام المضاعف المشترك الأصغر.",
+        "workedExample": "٣/٥+١/٤=١٢/٢٠+٥/٢٠=١٧/٢٠.",
+        "solution": "أوحد المقامين وأجمع البسطين ثم أبسط الناتج.",
+        "commonMistake": "لا أجمع المقامات أو أغير المقام وحده.",
+        "summary": "جمع الكسور بدقة والتقدير للتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l06-unlike-subtract-model",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:06$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "UNLIKE_FRACTION_SUBTRACT_MODEL",
+      "families": [
+        "uae.g5.u08.l06.model_subtract_common_denominator",
+        "uae.g5.u08.l06.model_subtract_difference",
+        "uae.g5.u08.l06.model_second_equivalent_numerator"
+      ],
+      "content": {
+        "concept": "تمثيل طرح الكسور غير المتشابهة بشرائط متساوية.",
+        "workedExample": "٣/٤−١/٦=٩/١٢−٢/١٢=٧/١٢.",
+        "solution": "المقام المشترك ثم طرح البسطين والتبسيط.",
+        "commonMistake": "لا تطرح المقامين.",
+        "summary": "شرائط الكسور والطرح الدقيق."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l07-unlike-subtraction",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:07$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "UNLIKE_FRACTION_SUBTRACT",
+      "families": [
+        "uae.g5.u08.l06.model_subtract_common_denominator",
+        "uae.g5.u08.l06.model_subtract_difference"
+      ],
+      "content": {
+        "concept": "طرح كسرين غير متشابهين بمقام مشترك.",
+        "workedExample": "٤/٥−١/٢=٣/١٠.",
+        "solution": "أكتب كسورًا مكافئة وأطرح ثم أبسط.",
+        "commonMistake": "لا أطرح المقامات.",
+        "summary": "الطرح والتبسيط والتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l08-reasonableness",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:08$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "FRACTION_MIXED_ESTIMATE_REASONABLE",
+      "families": [
+        "uae.g5.u08.l08.estimate_mixed_sum",
+        "uae.g5.u08.l08.check_reasonable_sum"
+      ],
+      "content": {
+        "concept": "التقدير باستخدام النصف والعدد الكلي للتحقق من معقولية الحل.",
+        "workedExample": "٣ و٢/٣ + ٢ و١/٧ ≈ ٤+٢=٦.",
+        "solution": "أقرب كلا المقدارين ثم أقارن الإجابة.",
+        "commonMistake": "لا أخلط الإجابة الدقيقة بالتقدير.",
+        "summary": "تبرير تقدير منطقي."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l09-estimate-sums-differences",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:09$"
+      ],
+      "skillId": "fractions.compare",
+      "mechanic": "ESTIMATE_MIXED_SUM_DIFFERENCE",
+      "families": [
+        "uae.g5.u08.l08.estimate_mixed_sum",
+        "uae.g5.u08.l09.estimate_mixed_difference"
+      ],
+      "content": {
+        "concept": "أقرب أعدادًا كسرية ثم أقدّر المجاميع والفروق.",
+        "workedExample": "٦ و٣/٤−٢ و١/٨≈٧−٢=٥.",
+        "solution": "أقرب كل عدد باستخدام النصف، وأجري العملية حسب السؤال.",
+        "commonMistake": "لا أعكس ترتيب الطرح أو أخلط التقدير بالدقة.",
+        "summary": "تقريب وجمع وطرح للتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l10-mixed-models",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:10$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "MIXED_NUMBER_ADDITION_MODEL",
+      "families": [
+        "uae.g5.u08.l10.model_mixed_sum_fraction",
+        "uae.g5.u08.l10.model_mixed_sum_whole"
+      ],
+      "content": {
+        "concept": "جمع الأجزاء الكلية والكسرية بنموذج دوائر أو شرائط.",
+        "workedExample": "٢ و١/٣ +١ و١/٣ =٣ و٢/٣.",
+        "solution": "أجمع الوحدات والأجزاء وأعيد التجميع.",
+        "commonMistake": "لا أهمل جزءًا تكوّن منه واحد صحيح.",
+        "summary": "نماذج جمع أعداد كسرية."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l11-mixed-add",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:11$"
+      ],
+      "skillId": "fractions.add",
+      "mechanic": "MIXED_NUMBER_ADD_COMMON_DENOMINATOR",
+      "families": [
+        "uae.g5.u08.l10.model_mixed_sum_fraction",
+        "uae.g5.u08.l10.model_mixed_sum_whole"
+      ],
+      "content": {
+        "concept": "جمع الأجزاء الكلية والكسرية للعدد الكسري.",
+        "workedExample": "٤ و٣/٨+٧ و١/٤=١١ و٥/٨.",
+        "solution": "أجمع الوحدات، أوحد المقامات، أجمع الكسور وأبسّط.",
+        "commonMistake": "لا تجمع المقامات أو تهمل الوحدة المتكونة من الكسر غير الفعلي.",
+        "summary": "جمع الأعداد الكسرية مع إعادة التجميع."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l12-mixed-subtraction",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:12$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "MIXED_NUMBER_SUBTRACTION",
+      "families": [
+        "uae.g5.u08.l12.mixed_difference_fraction",
+        "uae.g5.u08.l12.mixed_difference_whole"
+      ],
+      "content": {
+        "concept": "طرح الأعداد الكسرية بعد توحيد المقامات.",
+        "workedExample": "٦ و١١/١٦−٢ و٥/٨=٤ و١/١٦.",
+        "solution": "وحّد المقامات، ثم اطرح مع إعادة التسمية عند الحاجة.",
+        "commonMistake": "لا تطرح أجزاء غير متساوية أو تهمل إعادة التسمية.",
+        "summary": "طرح عددين كسريين والتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u08-l13-borrow-regroup",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:08:13$"
+      ],
+      "skillId": "fractions.subtract",
+      "mechanic": "MIXED_SUBTRACT_WITH_REGROUPING",
+      "families": [
+        "uae.g5.u08.l13.borrow_mixed_difference"
+      ],
+      "content": {
+        "concept": "إعادة تسمية وحدة كاملة قبل طرح جزء كسري أكبر.",
+        "workedExample": "٤ و١/٤−٢ و٥/٨=١ و٥/٨.",
+        "solution": "أوحّد المقام وأستلف وحدة وأطرح وأبسّط.",
+        "commonMistake": "لا أهمل الوحدة المستلفة.",
+        "summary": "إعادة تسمية الأعداد الكسرية للطرح."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l01-fraction-of-number",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:01$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_OF_QUANTITY",
+      "families": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "أقسم العدد إلى مجموعات متساوية ثم آخذ عددًا منها.",
+        "workedExample": "١/٣ من ١٥=٥.",
+        "solution": "أقسم الكل على المقام وأضرب في البسط.",
+        "commonMistake": "لا أقسم على البسط.",
+        "summary": "جزء من عدد باستخدام نموذج شريطي."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l02-estimate-products",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:02$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "ESTIMATE_FRACTION_PRODUCTS",
+      "families": [
+        "uae.g5.u09.l02.estimate_fraction_product_quarters",
+        "uae.g5.u09.l02.estimate_whole_fraction_compatible"
+      ],
+      "content": {
+        "concept": "تقدير ضرب كسور باستخدام كسور مرجعية أو أعداد متوافقة.",
+        "workedExample": "١/٣ من١٧ نحو١/٣ من١٨ يساوي٦.",
+        "solution": "أقدر كل عامل ثم أضرب وأتحقق.",
+        "commonMistake": "لا أخلط الإجابة الدقيقة بالتقدير.",
+        "summary": "ناتج ضرب الكسور بالتقريب."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l03-whole-multiply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:03$"
+      ],
+      "skillId": "fractions.multiply_whole",
+      "mechanic": "WHOLE_TIMES_FRACTION",
+      "families": [
+        "uae.g4.u09.l08.model_repeated_sum",
+        "uae.g4.u09.l08.model_unit_fraction_count"
+      ],
+      "content": {
+        "concept": "تمثيل الضرب في عدد كلي بجمع الكسر نفسه عدة مرات على شرائط متساوية.",
+        "workedExample": "5×2/5=2",
+        "solution": "أضرب العدد الكلي في البسط ثم أبسّط.",
+        "commonMistake": "لا أضرب المقام.",
+        "summary": "نموذج تكرار الكسور وضربها."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l04-whole-multiply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:04$"
+      ],
+      "skillId": "fractions.multiply_whole",
+      "mechanic": "WHOLE_TIMES_FRACTION",
+      "families": [
+        "uae.g4.u09.l09.product_numerator",
+        "uae.g4.u09.l09.product_whole",
+        "uae.g4.u09.l09.product_remainder"
+      ],
+      "content": {
+        "concept": "ضرب عدد كلي في كسر بضرب العدد في البسط وإبقاء المقام، ثم إعادة تجميع الأجزاء.",
+        "workedExample": "6×3/5=3 و3/5",
+        "solution": "أضرب العدد الكلي في البسط ثم أبسّط.",
+        "commonMistake": "لا أضرب المقام.",
+        "summary": "نموذج تكرار الكسور وضربها."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l05-fraction-multiply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:05$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_TIMES_FRACTION",
+      "families": [
+        "supporting.fractions.multiply"
+      ],
+      "content": {
+        "concept": "نستخدم شبكة المساحة لفهم كسر من كسر؛ تتكون المساحة المظللة المشتركة من حاصل ضرب الكسرين من الوحدة الأصلية.",
+        "workedExample": "١/٦×٢/٣ = ١/٩",
+        "solution": "أضرب البسطين والمقامين وأبسط الناتج.",
+        "commonMistake": "لا أجمع عناصر الكسور.",
+        "summary": "ضرب كسور دقيق ونمذجة جزء من جزء."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l06-fraction-multiply",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:06$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_TIMES_FRACTION",
+      "families": [
+        "supporting.fractions.multiply"
+      ],
+      "content": {
+        "concept": "لضرب كسرين، أضرب البسطين معًا والمقامين معًا، ثم أبسط الناتج. أفهم الضرب بوصفه جزءًا من جزء، وأستخدم التقدير للتحقق.",
+        "workedExample": "٣/٤×٢/٣ = ١/٢",
+        "solution": "أضرب البسطين والمقامين وأبسط الناتج.",
+        "commonMistake": "لا أجمع عناصر الكسور.",
+        "summary": "ضرب كسور دقيق ونمذجة جزء من جزء."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l07-mixed-product",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:07$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "MIXED_NUMBER_MULTIPLICATION",
+      "families": [
+        "uae.g5.u09.l07.multiply_two_mixed",
+        "uae.g5.u09.l07.multiply_mixed_by_fraction"
+      ],
+      "content": {
+        "concept": "أحوّل العدد الكسري إلى كسر غير فعلي ثم أضرب.",
+        "workedExample": "٢ و٢/٥×٢ و٣/٤=٦ و٣/٥.",
+        "solution": "التحويل والضرب والتبسيط والتحقق بالتقدير.",
+        "commonMistake": "لا أضرب الجزأين الكليين وحدهما.",
+        "summary": "ضرب الأعداد الكسرية بدقة."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l08-scaling",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:08$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "FRACTION_MULTIPLICATION_SCALING_CLASSIFICATION",
+      "families": [
+        "uae.g5.u09.l08.classify_scaling"
+      ],
+      "content": {
+        "concept": "أتوقع تكبير العدد الموجب أو تصغيره بمقارنة عامل المقياس بالواحد.",
+        "workedExample": "٢×٥/٨=١ و١/٤، أقل من ٢.",
+        "solution": "قارن العامل بالواحد ثم تحقق بحاصل الضرب.",
+        "commonMistake": "لا تفترض أن كل عملية ضرب تزيد القيمة.",
+        "summary": "عامل أكبر من ١ يكبّر، وعامل بين ٠ و١ يصغّر، والواحد لا يغيّر."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l09-unit-fraction-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:09$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "UNIT_FRACTION_DIVISION",
+      "families": [
+        "uae.g5.u09.l09.whole_divide_unit_fraction",
+        "uae.g5.u09.l09.unit_fraction_divide_whole"
+      ],
+      "content": {
+        "concept": "قسمة عدد كلي على كسر وحدة تعني عد كسور الوحدة في الكل، وقسمة كسر الوحدة على عدد كلي تعني تجزئة الجزء.",
+        "workedExample": "٤÷١/٢=٨، و١/٥÷٢=١/١٠.",
+        "solution": "استخدم رقائق الكسور ثم تحقق بالضرب.",
+        "commonMistake": "التبادل غير الصحيح بين عمليتي القسمة.",
+        "summary": "أعد الأجزاء المتساوية وأتحقق من النتائج."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l10-unit-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:10$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "WHOLE_DIVIDE_UNIT_FRACTION",
+      "families": [
+        "uae.g5.u09.l09.whole_divide_unit_fraction"
+      ],
+      "content": {
+        "concept": "عندما أقسم عددًا كليًا على كسر وحدة، أبحث عن عدد الأجزاء الصغيرة التي يمكن تكوينها من الوحدات الكاملة. تقسيم كل وحدة إلى أرباع يعني وجود أربعة أرباع في كل وحدة.",
+        "workedExample": "كم ثلثًا في وحدتين كاملتين؟ = ٦",
+        "solution": "أرسم شريطين كل منهما وحدة كاملة. أقسم كل شريط إلى ثلاثة أجزاء متساوية. أعد الأثلاث: ٢×٣ = ٦.",
+        "commonMistake": "اعتبار ٤÷١/٦ = ٤/٦",
+        "summary": "أقسم كل وحدة كاملة إلى عدد الأجزاء الذي يحدده المقام. أحسب عدد الأجزاء بضرب العدد الكلي في المقام. أراجع الناتج بالضرب في كسر الوحدة."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l11-unit-division",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:11$"
+      ],
+      "skillId": "supporting.fractions.multiply_divide",
+      "mechanic": "UNIT_FRACTION_DIVIDE_WHOLE",
+      "families": [
+        "uae.g5.u09.l09.unit_fraction_divide_whole"
+      ],
+      "content": {
+        "concept": "عندما نقسم كسر وحدة على عدد كلي موجب، فإننا نقسم الجزء الكسري نفسه إلى مجموعات متساوية. لذلك تصبح حصة كل مجموعة أصغر من الجزء الأصلي.",
+        "workedExample": "إذا قسمت ١/٤ وحدة بالتساوي بين ٣ أشخاص، فما حصة كل شخص؟ = ١/١٢",
+        "solution": "أمثل الكل بشريط من أربعة أرباع. أقسم ربعًا واحدًا إلى ثلاثة أجزاء متساوية. كل جزء يساوي ١/١٢ من الوحدة.",
+        "commonMistake": "اعتبار ١/٤÷٣=٣/٤",
+        "summary": "أحدد كسر الوحدة الأصلي وعدد المجموعات. أجزّئ كسر الوحدة نفسه إلى حصص متساوية. أكتب ١/(المقام×عدد المجموعات) وأتحقق بالضرب."
+      }
+    },
+    {
+      "id": "uae-g5-u09-l12-draw-diagram",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:09:12$"
+      ],
+      "skillId": "fractions.of_quantity",
+      "mechanic": "FRACTION_BAR_WORD_PROBLEMS",
+      "families": [
+        "fractions.of_quantity.build",
+        "fractions.of_quantity.apply"
+      ],
+      "content": {
+        "concept": "أستخدم مخطط شريط متساوي الأجزاء لتمثيل الكل والأجزاء والمجهول.",
+        "workedExample": "٣/٨ من ٦٤=٢٤.",
+        "solution": "أقسم الكل على المقام ثم أضرب في البسط وأراجع المتبقي.",
+        "commonMistake": "تقسيم الشريط بعدد البسط بدل المقام.",
+        "summary": "أحدد الكل وأرسم الشريط وأفسر الناتج."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l01-fraction-line-plot",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:01$"
+      ],
+      "skillId": "data.line_plot",
+      "mechanic": "FRACTIONAL_MEASUREMENT_LINE_PLOT",
+      "families": [
+        "uae.g5.u10.l01.fraction_plot_count",
+        "uae.g5.u10.l01.fraction_plot_total"
+      ],
+      "content": {
+        "concept": "يعرض مخطط النقاط المجمعة بيانات القياس بصورة تُظهر تكرار كل قيمة. أرسم خط أعداد عليه قيم القياس مثل ١/٤ أو ١/٣ أو ١/٢ متر، ثم أضع علامة X فوق القيمة لكل قياس مسجل.",
+        "workedExample": "أطوال ستة أشرطة بنسب: ١/٤، ١/٤، ١/٣، ١/٣، ١/٣، ١/٢ من المتر. مثّل البيانات. → ٦ قياسات؛ الأكثر تكرارًا ١/٣",
+        "solution": "أرسم خط الأعداد وأحدد ١/٤، ١/٣، ١/٢ على مسافات متناسبة. أضع علامتين فوق ١/٤ وثلاث علامات فوق ١/٣ وعلامة واحدة فوق ١/٢. أكتب عنوانًا ووحدة القياس وأراجع أن عدد العلامات ست.",
+        "commonMistake": "الاعتقاد أن طول عمود العلامات هو القياس نفسه.",
+        "summary": "أنظم القياسات الكسرية وأقرأ التكرارات والمنوال."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l02-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:02$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "METRIC_RULER_MEASUREMENT",
+      "families": [
+        "uae.g5.u10.l02.ruler_nearest_centimeter",
+        "uae.g5.u10.l02.ruler_length_millimeters"
+      ],
+      "content": {
+        "concept": "تُستخدم المسطرة المترية لقياس أطوال الأشياء القصيرة بالسنتيمتر والملليمتر. كل سنتيمتر يحتوي على عشرة ملليمترات. أضع علامة الصفر بمحاذاة بداية الجسم، وأقرأ التدريج عند نهايته دون البدء من حافة المسطرة المادية.",
+        "workedExample": "امتد كتاب من صفر المسطرة إلى ٥ سم و٢ مم. ما القياس الدقيق لأقرب ملليمتر؟ → ٥٢ مم",
+        "solution": "أحدد خمسة سنتيمترات كاملة. أحوّل ٥ سم إلى ٥٠ مم. أضيف ٢ مم فأحصل على ٥٢ مم.",
+        "commonMistake": "البدء من حافة المسطرة بدل صفرها",
+        "summary": "الأنشطة الواقعية تتطلب مسطرة فعلية؛ أما التدريب الرقمي فيقيس قراءة التدريج وتحويل السنتيمترات إلى ملليمترات. لا يمكن ادعاء قياس جسم المستخدم دون أداة فعلية."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l03-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:03$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "METRIC_LENGTH_CONVERSION",
+      "families": [
+        "uae.g5.u10.l03.meters_tenths_to_centimeters",
+        "uae.g5.u10.l03.millimeters_to_meters"
+      ],
+      "content": {
+        "concept": "النظام المتري نظام عشري تُحوّل فيه وحدات الطول بالضرب أو القسمة في ١٠ أو ١٠٠ أو ١٠٠٠. كل متر = ١٠٠ سم = ١٠٠٠ مم، وكل كيلومتر = ١٠٠٠ متر، وكل سنتيمتر = ١٠ مم.",
+        "workedExample": "حوّل ٨٥٠٠ مم إلى أمتار. → ٨٫٥ م",
+        "solution": "أكتب ١ م=١٠٠٠ مم. أقسم ٨٥٠٠ على ١٠٠٠. أحصل على ٨٫٥ م.",
+        "commonMistake": "الضرب عند الانتقال من مم إلى م",
+        "summary": "قبل المقارنة بين قياسين مثل ٢٠ سم و٢٠٢ مم أو إتمام مسألة تحويل، أوحد الوحدة أولًا. أتحقق من اتجاه الحركة للفاصلة العشرية ومن أن العدد في الوحدة الصغيرة يكون أكبر."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l04-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:04$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "MASS_ESTIMATE_MEASURE",
+      "families": [
+        "uae.g5.u10.l04.mass_difference_kg_g",
+        "uae.g4.u14.l06.kilograms_grams"
+      ],
+      "content": {
+        "concept": "الكتلة مقدار المادة في الجسم، وتقاس في النظام المتري بالجرام والكيلوجرام. أختار الجرام للأجسام الصغيرة والكيلوجرام للأجسام الأثقل؛ كل كيلوجرام يساوي ١٠٠٠ جرام.",
+        "workedExample": "حقيبة كتلتها ٢ كجم وعلبة ٥٠٠ جرام. ما فرق الكتلتين؟ = ١٥٠٠ جرام",
+        "solution": "أحوّل ٢ كجم إلى ٢٠٠٠ جرام. أطرح ٥٠٠ جرام. الفرق ١٥٠٠ جرام.",
+        "commonMistake": "تسجيل التقدير وكأنه نتيجة الميزان",
+        "summary": "يمكن إجراء التحويلات والفروق الرقمية في التدريب التفاعلي، أما قياس الممحاة أو الحقيبة الحقيقية فلا يُدّعى إنجازه دون ميزان وتحقق المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l05-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:05$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "METRIC_MASS_CONVERSIONS",
+      "families": [
+        "uae.g5.u10.l05.kilograms_tenths_to_grams",
+        "uae.g5.u10.l05.grams_to_kilograms",
+        "uae.g4.u14.l06.kilograms_grams"
+      ],
+      "content": {
+        "concept": "للكتلة المترية وحدات كيلوجرام وجرام وملليجرام. الكيلوجرام يساوي ١٠٠٠ جرام، والجرام يساوي ١٠٠٠ ملليجرام. أحول من وحدة كبيرة إلى أصغر بالضرب، ومن أصغر إلى أكبر بالقسمة.",
+        "workedExample": "كم جرامًا في ٢٫٠٥ كجم؟ = ٢٠٥٠ جرام",
+        "solution": "أضرب ٢٫٠٥ في ١٠٠٠. تنتقل الفاصلة ثلاث منازل نحو اليمين. القيمة ٢٠٥٠ جرام.",
+        "commonMistake": "الضرب عند الانتقال من جرام إلى كيلوجرام",
+        "summary": "عند المقارنة أو حساب مجموع كتل أضع جميع القيم في وحدة واحدة. تحقق بالتعويض في العلاقة العكسية، واختر الجرام للأشياء الصغيرة والكيلوجرام للأثقل."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l06-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:06$"
+      ],
+      "skillId": "measurement.metric",
+      "mechanic": "METRIC_CAPACITY_CONVERSION",
+      "families": [
+        "uae.g5.u10.l06.liters_tenths_to_milliliters",
+        "uae.g5.u10.l06.milliliters_to_liters"
+      ],
+      "content": {
+        "concept": "١ لتر = ١٠٠٠ ملليلتر؛ التحويل بضرب أو قسمة ١٠٠٠ مع الحفاظ على المنازل العشرية.",
+        "workedExample": "٢٫٠٥ لتر = ٢٠٥٠ ملليلتر.",
+        "solution": "أضرب ٢٫٠٥ في ١٠٠٠ وأتحقق بالقسمة العكسية.",
+        "commonMistake": "القسمة عند تحويل لتر إلى ملليلتر أو إسقاط صفر عشري.",
+        "summary": "أوحد وحدات السعة للمقارنة وأتحقق من معقولية كل نتيجة."
+      }
+    },
+    {
+      "id": "uae-g5-u10-l07-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:10:07$"
+      ],
+      "skillId": "problem_solving",
+      "mechanic": "LOGICAL_ORDERING_FROM_CLUES",
+      "families": [
+        "uae.g5.u10.l07.logical_remaining",
+        "uae.g5.u10.l07.logical_original_total"
+      ],
+      "content": {
+        "concept": "التفكير المنطقي ينظم أدلة أكبر/أصغر لاستبعاد الخيارات المخالفة.",
+        "workedExample": "إذا كان طول ليلى أقل من مروى وأقل مروى من رنا، تأخذ مروى الطول الأوسط.",
+        "solution": "رتب القيم ثم اربط كل قيمة بشرط الترتيب واختبر جميع المعطيات.",
+        "commonMistake": "الحكم من شرط واحد بدل جميع الشروط.",
+        "summary": "أحدد الشروط وأستخدم الجدول والاستبعاد ثم أتحقق."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l01-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:01$"
+      ],
+      "skillId": "statistics.data.tally",
+      "mechanic": "CATEGORICAL_TALLY_FREQUENCY",
+      "families": [
+        "uae.g5.u11.l01.tally_category_frequency",
+        "uae.g5.u11.l01.tally_total_frequency",
+        "uae.g5.u11.l01.tally_frequency_range"
+      ],
+      "content": {
+        "concept": "المسح يجمع بيانات لفئات، وتُعرض في جدول علامات إحصاء يقابله تكرار صحيح لكل فئة.",
+        "workedExample": "اختيرت القراءة ٥ مرات والرياضة ٤ والرسم ٣: المجموع ١٢ استجابة.",
+        "solution": "صنّف كل استجابة مرة واحدة، ودوّن علامات العد في مجموعات خمسة، ثم اكتب عددها وقارن التكرارات.",
+        "commonMistake": "نسيان فئة أو إدخال استجابة مرتين أو عدم تطابق علامات الإحصاء مع عمود التكرار.",
+        "summary": "يجب أن يساوي مجموع التكرارات عدد الاستجابات الخام، مع تمييز أعلى فئة وأقل فئة."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l02-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:02$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "LINE_GRAPH_PLOTTING_TABLE_VALUES",
+      "families": [
+        "uae.g5.u11.l02.line_plot_read_point",
+        "uae.g5.u11.l02.line_plot_total_change",
+        "uae.g5.u11.l02.line_plot_max_value"
+      ],
+      "content": {
+        "concept": "التمثيل البياني الخطي يعرض تغير مقدار عبر زمن، حيث x للوقت وy للقيمة المقاسة، مع تدريج واضح.",
+        "workedExample": "عند الأوقات ١،٢،٣ ساعات قيم القياس ١٤،١٨،٢٢؛ قيمة الساعة الثالثة ٢٢.",
+        "solution": "ارسم المحورين بمقياس متساو، مثل الأزواج المرتبة، صل النقاط زمنيًا ثم اقرأ أكبر قيمة والفرق.",
+        "commonMistake": "تبديل المحورين أو اختيار مقياس غير منتظم أو وصل النقاط بترتيب غير زمني.",
+        "summary": "يمكن تقييم قراءة القيم وفروقها بدقة، أما إنشاء الرسم وتمثيل الخط نفسه فيحتاج إلى تحقق المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l03-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:03$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "READ_AND_COMPARE_LINE_AND_DOUBLE_LINE_GRAPHS",
+      "families": [
+        "uae.g5.u11.l03.double_line_final_difference",
+        "uae.g5.u11.l03.double_line_growth",
+        "uae.g5.u11.l02.line_plot_read_point",
+        "uae.g5.u11.l02.line_plot_max_value"
+      ],
+      "content": {
+        "concept": "يُظهر التمثيل الخطي تغير القيم عبر الزمن، ويتيح التمثيل المزدوج مقارنة مجموعتين باستخدام المحور والمقياس والوحدة نفسيهما.",
+        "workedExample": "في عام ٢٠٢٤ كانت قيمة أ ١٨ وقيمة ب ٢٢؛ الفرق بينهما ٤ وحدات.",
+        "solution": "أحدد التاريخ والنقطة على كل خط، وأقرأ القيم أو الفروق من مقياس موحّد وأتحقق بالجدول.",
+        "commonMistake": "مقارنة خطين دون مراعاة مقياس موحّد أو تفسير ارتفاع الخط بوصفه زيادة فعلية دون قراءة القيم.",
+        "summary": "أقرأ نقاط الرسم ثم أستخرج الفرق والاتجاه لكل خط؛ شرح الاتجاهات يحتاج مراجعة المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l04-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:04$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "LINE_GRAPH_PATTERN_EXTRAPOLATION_AND_SAMPLE_ESTIMATE",
+      "families": [
+        "uae.g5.u11.l04.linear_next_prediction",
+        "uae.g5.u11.l04.linear_future_prediction",
+        "uae.g5.u11.l04.sample_scaled_estimate"
+      ],
+      "content": {
+        "concept": "استقراء بيانات خط بياني يعتمد على نمط ثابت قابل للفحص، وتقدير المجتمع من عينة يمثل حسابًا مشروطًا بملاءمة العينة.",
+        "workedExample": "نبات طوله ٨، ١١، ١٤، ١٧ سم في أربعة أسابيع؛ إذا استمر النمو ٣ سم كل أسبوع، فالمتوقع للأسبوع الخامس ٢٠ سم.",
+        "solution": "أحسب فروق البيانات، أتحقق من ثبات المعدل، ثم أمد الخط لفترة واحدة. وللعينة أضرب نسبة الخيار في عدد المجتمع.",
+        "commonMistake": "اعتبار أي توقع حقيقة مؤكدة أو تعميم عينة متحيزة على مجتمع كامل.",
+        "summary": "الأجوبة الرقمية شرطية على استمرار النمط أو تمثيل العينة؛ جودة الافتراض يراجعها المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l05-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:05$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "ANALYZE_LINE_GRAPH_MAX_CHANGE_INTERPOLATION_AND_EXTRAPOLATION",
+      "families": [
+        "uae.g5.u11.l02.line_plot_read_point",
+        "uae.g5.u11.l02.line_plot_total_change",
+        "uae.g5.u11.l02.line_plot_max_value",
+        "uae.g5.u11.l04.linear_next_prediction",
+        "uae.g5.u11.l04.linear_future_prediction"
+      ],
+      "content": {
+        "concept": "تحليل التمثيلات الخطية يتضمن تحديد القيم العليا والدنيا وفترات الزيادة والنقصان والثبات واستنتاج معدل التغير والتوقع المشروط.",
+        "workedExample": "قيمة السيارة ٢٠ كم بعد ساعة و٤٠ بعد ساعتين؛ المعدل ٢٠ كم في الساعة، والتوقع بعد ثلاث ساعات ٦٠ كم عند ثبات المعدل.",
+        "solution": "أقرأ محور x ومحور y، وأحدد النقاط بالترتيب، وأحسب التغير من فرق قيمتين وأتحقق من النموذج الزمني.",
+        "commonMistake": "الاستقراء من قراءة نقطة واحدة أو الخلط بين ارتفاع نقطة ومعدل تغير منحنى.",
+        "summary": "أميز ما يمكن قراءته مباشرة وما يستلزم توقعًا مشروطًا بالمعدل، وأراجع وحدات القياس."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l06-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:06$"
+      ],
+      "skillId": "data.graphs",
+      "mechanic": "MAKE_GRAPH_FROM_PAIRED_DATA_AND_INTERPOLATE",
+      "families": [
+        "uae.g5.u11.l06.scatter_midpoint_interpolation",
+        "uae.g5.u11.l06.scatter_linear_extrapolation",
+        "uae.g5.u11.l02.line_plot_total_change"
+      ],
+      "content": {
+        "concept": "حل المسألة بإنشاء تمثيل بياني للأزواج المرتبة من جدول؛ أختار المحاور والوحدات، أبحث عن العلاقة، وأستخدمها للتقدير المشروط.",
+        "workedExample": "إذا كانت قيمة y عند ٢٠ درجة ٤٠ وعند ٣٠ درجة ٦٠، ومع افتراض تغير خطي فإن القيمة عند ٢٥ درجة هي ٥٠.",
+        "solution": "أنظم أزواج (x,y) وأمثل النقاط وأحدد موضع المنتصف أو مدد خطًا فقط إذا كان افتراض الخطية مناسبًا.",
+        "commonMistake": "رسم خط يوصل البيانات ثم افتراض أن كل متغيرين بينهما علاقة خطية مؤكدة.",
+        "summary": "صحة الرسم وتقدير القيمة يتوقفان على المحاور وعلاقة البيانات وفرضية التغير الخطي."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l07-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:07$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "MEAN_EQUAL_SHARING_MODEL",
+      "families": [
+        "uae.g5.u11.l07.equal_share_two_groups",
+        "uae.g5.u11.l07.equal_share_three_groups",
+        "uae.g5.u11.l07.equal_share_missing_group"
+      ],
+      "content": {
+        "concept": "المتوسط الحسابي يمثل التوزيع العادل؛ نجمع القيم ثم نقسم المجموع على عدد المجموعات، ونستطيع إيجاد قيمة ناقصة بمعرفة المتوسط.",
+        "workedExample": "مجموعة ٨ كرات وأخرى ٤: المجموع ١٢، المتوسط ٦ كرات لكل مجموعة.",
+        "solution": "أجمع جميع القطع وأقسم عددها على عدد المجموعات؛ للتحقق أعيد التوزيع أو أضرب المتوسط في عدد المجموعات.",
+        "commonMistake": "القسمة على عدد القطع بدل عدد المجموعات، أو توزيع القطع من مجموعة دون جمعها.",
+        "summary": "يجب أن يظل مجموع العناصر ثابتًا بعد إعادة التوزيع ويكون نصيب كل مجموعة مساويًا للمتوسط."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l08-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:08$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "ARITHMETIC_MEAN_EXACT_AND_UNKNOWN_RECONSTRUCTION",
+      "families": [
+        "uae.g5.u11.l08.arithmetic_mean_five",
+        "uae.g5.u11.l08.missing_value_given_mean",
+        "uae.g5.u11.l08.mean_half_decimal"
+      ],
+      "content": {
+        "concept": "المتوسط الحسابي = مجموع البيانات ÷ عددها، وقد يكون عددًا عشريًا لا يظهر بين القيم نفسها.",
+        "workedExample": "للقيم ٥، ٦، ٩، ١٠ يكون المتوسط (٥+٦+٩+١٠)÷٤=٧٫٥.",
+        "solution": "أحدد عدد القيم ثم أحسب المجموع وأقسم؛ للعدد المجهول أحسب المجموع المطلوب من المتوسط وأطرح القيم المعروفة.",
+        "commonMistake": "القسمة على قيمة البيانات بدل عددها أو تقريب المتوسط قبل حل المسألة.",
+        "summary": "يمكن التحقق بإعادة ضرب المتوسط في عدد القيم ومقارنته بمجموعها."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l09-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:09$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "MEDIAN_MODE_ODD_EVEN_TIES_NO_MODE",
+      "families": [
+        "uae.g5.u11.l09.median_odd_five",
+        "uae.g5.u11.l09.median_even_four",
+        "uae.g5.u11.l09.single_mode",
+        "uae.g5.u11.l09.two_modes_count",
+        "uae.g5.u11.l09.no_mode_count"
+      ],
+      "content": {
+        "concept": "الوسيط القيمة الوسطى بعد الترتيب، وللعدد الزوجي متوسط القيمتين الأوسطين؛ والمنوال أكثر قيمة تكرارًا، وقد يتعدد أو لا يوجد.",
+        "workedExample": "البيانات ٣، ٥، ٥، ٧، ٩، ١١: الوسيط (٥+٧)÷٢=٦، والمنوال ٥.",
+        "solution": "رتب القيم لتعيين الوسيط، ثم أنشئ قائمة تكرارات لتحديد المنوال أو المنوالات.",
+        "commonMistake": "اختيار وسيط قبل الترتيب أو أكبر قيمة بدل الأكثر تكرارًا، أو افتراض منوال واحد دائمًا.",
+        "summary": "أتحقق من عدد القيم وتكرار كل عنصر؛ وقد لا يتطابق الوسيط والمنوال."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l10-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:10$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "DOT_PLOT_FREQUENCY_MEDIAN_MODE_RANGE",
+      "families": [
+        "uae.g5.u11.l10.dot_frequency",
+        "uae.g5.u11.l10.dot_total",
+        "uae.g5.u11.l10.dot_median",
+        "uae.g5.u11.l10.dot_mode",
+        "uae.g5.u11.l10.dot_range"
+      ],
+      "content": {
+        "concept": "كل X تمثل مشاهدة واحدة فوق قيمة محددة على خط أعداد ذي مقياس ثابت؛ يحافظ الرسم على التكرارات.",
+        "workedExample": "بيانات ٢،٢،٣،٣،٣،٥: فوق ٢ علامتان، وفوق ٣ ثلاث، وفوق ٥ علامة، والمنوال ٣.",
+        "solution": "أحفظ عدد العلامات عند كل قيمة وأجمعها؛ للوسيط أرتب جميع المشاهدات، وللمدى أطرح الطرفين.",
+        "commonMistake": "حذف قيم مكررة أو تغيير مقياس المحور أو اعتبار أكبر قيمة هي المنوال.",
+        "summary": "أتحقق من مجموع العلامات وأفسر التكرار والوسيط والمنوال والمدى؛ الرسم الفعلي وتبرير القيم المتطرفة للمعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u11-l11-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:11:11$"
+      ],
+      "skillId": "statistics.center_spread.core",
+      "mechanic": "STEM_LEAF_ORDERED_RECONSTRUCTION",
+      "families": [
+        "uae.g5.u11.l11.leaf_count_at_stem",
+        "uae.g5.u11.l11.stem_median",
+        "uae.g5.u11.l11.stem_range",
+        "uae.g5.u11.l11.stem_mode_frequency",
+        "uae.g5.u11.l11.ordered_kth"
+      ],
+      "content": {
+        "concept": "كل ورقة تمثل قيمة أصلية واحدة، وتحدد الساق العشرات والورقة الآحاد؛ يجب توضيح المفتاح.",
+        "workedExample": "٢|١ ٤ ٤؛ ٣|٢ ٣ ٥: القيم ٢١،٢٤،٢٤،٣٢،٣٣،٣٥؛ الوسيط ٢٨.",
+        "solution": "أستعيد القيم من المفتاح، وأرتبها مع المكرر لأحسب التكرار والوسيط والمدى.",
+        "commonMistake": "عد السيقان بدل الأوراق، أو حذف الأوراق المكررة، أو ترك ترتيب الأوراق عشوائيًا.",
+        "summary": "أعرض البيانات مع مفتاح واضح وأستخرج الحقائق العددية؛ الرسم العملي والتفسير المفتوح يراجعهما المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l01-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:01$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "SIMPLE_POLYGON_IDENTIFICATION_AND_REGULARITY",
+      "families": [
+        "uae.g5.u12.l01.polygon_or_nonpolygon",
+        "uae.g5.u12.l01.polygon_side_count",
+        "uae.g5.u12.l01.polygon_vertex_count",
+        "uae.g5.u12.l01.regular_polygon"
+      ],
+      "content": {
+        "concept": "المضلع شكل مستو مغلق من قطع مستقيمة، والمنتظم له أضلاع متطابقة وزوايا متطابقة.",
+        "workedExample": "الشكل السداسي له ٦ أضلاع و٦ رؤوس؛ إذا تساوت الأضلاع والزوايا فهو منتظم.",
+        "solution": "أفحص الإغلاق والاستقامة وعدم التقاطع، ثم أعد الأضلاع والرؤوس وأطبق شرطي الانتظام.",
+        "commonMistake": "اعتبار كل شكل مغلق مضلعًا أو اعتبار تساوي الأضلاع وحده كافيًا للانتظام.",
+        "summary": "الاسم بحسب الأضلاع؛ العدد نفسه للرؤوس؛ الرسم وتبرير التناظر والانتظام يراجعهما المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l02-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:02$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "TRIANGLE_CONGRUENT_SIDES_ANGLE_COUNT",
+      "families": [
+        "uae.g5.u12.l02.congruent_side_count",
+        "uae.g5.u12.l02.acute_angle_count",
+        "uae.g5.u12.l02.right_angle_count",
+        "uae.g5.u12.l02.obtuse_angle_count",
+        "uae.g5.u12.l02.third_angle"
+      ],
+      "content": {
+        "concept": "أقارن قياسات أضلاع المثلث وزواياه، وأتذكر أن مجموع زواياه ١٨٠°.",
+        "workedExample": "الأطوال ٥،٥،٥ لها ثلاثة أضلاع متطابقة؛ الزوايا ٩٠،٣٥،٥٥ بها زاوية قائمة واحدة.",
+        "solution": "أعد الأضلاع المتساوية وأنواع الزوايا بالنسبة إلى ٩٠°، وأحسب الناقصة بطرح مجموع المعلومتين من ١٨٠°.",
+        "commonMistake": "اعتبار زاوية ٩٠° حادة أو افتراض وجود زاويتين قائمتين في مثلث.",
+        "summary": "القياسات العددية تتحقق آليًا، أما القياس اليدوي بالمسطرة والمنقلة ورسم مثلث فيقيمه المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l03-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:03$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "TRIANGLE_SIDE_AND_ANGLE_TYPE",
+      "families": [
+        "uae.g5.u12.l03.triangle_side_type",
+        "uae.g5.u12.l03.triangle_angle_type",
+        "uae.g5.u12.l02.congruent_side_count",
+        "uae.g5.u12.l02.acute_angle_count",
+        "uae.g5.u12.l02.right_angle_count",
+        "uae.g5.u12.l02.obtuse_angle_count"
+      ],
+      "content": {
+        "concept": "يختلف تصنيف المثلث بالأضلاع عن تصنيفه بالزوايا، ولا بد أن تكون الأطوال صالحة هندسيًا.",
+        "workedExample": "٧،٧،١٠: متساوي الساقين؛ ٩٠،٣٥،٥٥: قائم الزاوية.",
+        "solution": "أتحقق من متباينة المثلث وأحصي الأطوال المتساوية؛ ثم أقارن أكبر زاوية بـ٩٠°.",
+        "commonMistake": "اعتبار أطوال ٢،٢،٤ مثلثًا أو الخلط بين تصنيف الأضلاع والزوايا.",
+        "summary": "تدريبات التصنيف العددي قابلة للتحقق؛ رسم المثلث وشرح الاختلافات يراجعهما المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l04-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:04$"
+      ],
+      "skillId": "supporting.geometry.circles_loci",
+      "mechanic": "CIRCLE_RADIUS_DIAMETER_CHORD_CLASSIFICATION",
+      "families": [
+        "uae.g5.u12.l04.radius_diameter_exact",
+        "uae.g5.u12.l04.circle_segment_classify"
+      ],
+      "content": {
+        "concept": "نصف القطر يصل المركز بالمحيط؛ القطر يصل نقطتين بالمحيط عبر المركز ويساوي ضعف نصف القطر؛ كل قطر وتر.",
+        "workedExample": "نصف القطر ٧ سم => القطر ١٤ سم، والقطر ١٨ م => نصف القطر ٩ م.",
+        "solution": "أضرب طول نصف القطر في ٢ لإيجاد القطر، أو أقسم القطر على ٢؛ تصنيف القطع يعتمد على المركز ونقطتي المحيط.",
+        "commonMistake": "مساواة القطر ونصف القطر أو تسمية كل وتر قطرًا.",
+        "summary": "أطبق د=٢نق، وأميز المركز والوتر والقطر؛ الرسم بالفرجار والتمثيل البصري للمعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l05-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:05$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "QUADRILATERAL_OPPOSITE_SIDES_AND_ANGLES",
+      "families": [
+        "uae.g5.u12.l05.opposite_parallel_pairs",
+        "uae.g5.u12.l05.opposite_equal_pairs",
+        "uae.g5.u12.l05.right_angle_count",
+        "uae.g5.u12.l05.opposite_equal_angle_pairs"
+      ],
+      "content": {
+        "concept": "أربعة أضلاع وزوايا؛ أدرس توازي وتطابق الأضلاع المتقابلة، وتطابق الزوايا، ووجود زوايا قائمة.",
+        "workedExample": "المربع أربع زوايا قائمة وزوجان متوازيان من الأضلاع المتقابلة.",
+        "solution": "أعد الأزواج المتقابلة لكل صفة، ولا أخلط التوازي وتساوي الأطوال.",
+        "commonMistake": "استنتاج أن كل معين مربع، أو أن كل رباعي ذي زوج متوازٍ هو مستطيل.",
+        "summary": "الرسم والقياس اليدوي للمراجعة؛ الأسئلة الرقمية من أوصاف هندسية محددة."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l06-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:06$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "QUADRILATERAL_HIERARCHY_EXACT",
+      "families": [
+        "uae.g5.u12.l06.quadrilateral_most_specific",
+        "uae.g5.u12.l06.quadrilateral_subclass",
+        "uae.g5.u12.l05.opposite_parallel_pairs",
+        "uae.g5.u12.l05.opposite_equal_pairs",
+        "uae.g5.u12.l05.right_angle_count",
+        "uae.g5.u12.l05.opposite_equal_angle_pairs"
+      ],
+      "content": {
+        "concept": "تصنف رباعيات الأضلاع بحسب الأزواج المتوازية والأضلاع المتساوية والزوايا القائمة؛ المربع مستطيل ومعين.",
+        "workedExample": "مربع له أربعة أضلاع متساوية وأربع زوايا قائمة، وله جميع خصائص المستطيل والمعين.",
+        "solution": "أقارن عدد الأزواج المتوازية والشروط الأخرى ثم أختار أضيق فئة تستوفي جميع القيود.",
+        "commonMistake": "القول إن المربع ليس مستطيلًا، أو تسمية شبه المنحرف ذي الزوج الوحيد متوازي أضلاع.",
+        "summary": "الفئات لها علاقة احتواء، والاسم الأكثر تحديدًا يعتمد على جميع الخصائص."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l07-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:07$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "3D_NETS_CUBE_AND_RECTANGULAR_PRISM",
+      "families": [
+        "uae.g5.u12.l07.net_solid_classification",
+        "uae.g5.u12.l07.net_total_faces",
+        "uae.g5.u12.l07.net_congruent_matching_faces"
+      ],
+      "content": {
+        "concept": "الشبكة المستوية لأوجه المجسم تُطوى دون تداخل؛ المكعب ستة مربعات متطابقة، والمنشور المستطيل مختلف الأبعاد ثلاثة أزواج من المستطيلات المتطابقة.",
+        "workedExample": "المكعب ستة أوجه مربعة متطابقة؛ المنشور أبعاده ٣×٤×٥ له ٦ أوجه وثلاثة أزواج متطابقة.",
+        "solution": "أميز عدد الأوجه ونوع المجسم من وصف الشبكة الصالحة وأقارن تطابق أبعاد الأوجه.",
+        "commonMistake": "كل ترتيب من ستة مربعات صالح كشبكة للمكعب، أو جميع أوجه المنشور غير المكعب متطابقة.",
+        "summary": "التعرف والتصنيف والحساب من وصف محدد، والقص والطي والرسم والتماثل الفعلي يراجعها المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l08-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:08$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "SOLID_FACES_EDGES_VERTICES_CLASSIFICATION",
+      "families": [
+        "uae.g5.u12.l08.solid_type",
+        "uae.g5.u12.l08.solid_faces",
+        "uae.g5.u12.l08.solid_edges",
+        "uae.g5.u12.l08.solid_vertices"
+      ],
+      "content": {
+        "concept": "أصنف مجسم المكعب والمنشور المستطيل والمنشور الثلاثي من شكل قاعدتيه وأوجهه، وأحصي الأوجه والأحرف والرؤوس.",
+        "workedExample": "المنشور الثلاثي له خمس أوجه وتسعة أحرف وستة رؤوس.",
+        "solution": "أحدد نوع القاعدتين، ثم أعد الأوجه والأحرف والرؤوس وفق خواص المجسم.",
+        "commonMistake": "تسمية أي مجسم له ستة أوجه مكعبًا أو عد الخطوط المتقطعة كأحرف زائدة.",
+        "summary": "العد العددي من وصف هندسي واضح؛ النظر في رسوم معقدة وأجسام حقيقية يراجع بشريًا."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l09-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:09$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "UNIT_CUBE_LAYER_VOLUME_MODELS",
+      "families": [
+        "uae.g5.u12.l09.model_cubes_per_layer",
+        "uae.g5.u12.l09.model_total_unit_cubes",
+        "uae.g5.u12.l09.model_volume_cm3",
+        "uae.g5.u12.l09.model_missing_layers"
+      ],
+      "content": {
+        "concept": "أبني منشورًا بلا فجوات من مكعبات الوحدة: مكعبات الطبقة = طول×عرض، والحجم = مكعبات الطبقة×عدد الطبقات.",
+        "workedExample": "قاعدة ٣×٢ وأربع طبقات = ٦ مكعبات في الطبقة و٢٤ مكعبًا إجمالًا أو ٢٤ سم³.",
+        "solution": "أحسب مساحة القاعدة ثم عدد الطبقات أو العكس وأكتب الوحدات المكعبة.",
+        "commonMistake": "جمع الأبعاد أو الخلط بين الوحدات المربعة والمكعبة أو عد طبقة واحدة فقط.",
+        "summary": "التدريبات العددية منضبطة؛ تركيب النموذج المكعبي الحقيقي يراجع المعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l10-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:10$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "PRISM_VOLUME_LWH_AND_BASE_HEIGHT",
+      "families": [
+        "uae.g5.u12.l10.volume_lwh",
+        "uae.g5.u12.l10.volume_base_area_height",
+        "uae.g5.u12.l10.missing_prism_height",
+        "uae.g5.u12.l10.compare_prism_volumes"
+      ],
+      "content": {
+        "concept": "منشور مستطيل القاعدة: الحجم=الطول×العرض×الارتفاع أو مساحة القاعدة×الارتفاع، مع توحيد الوحدات.",
+        "workedExample": "٣٠×١٥×٢٠ سم=٩٠٠٠ سم³، وهو نفسه ٤٥٠ سم² ×٢٠ سم.",
+        "solution": "أضرب العوامل أو أقسم الحجم على مساحة القاعدة لإيجاد الارتفاع، وللمقارنة أحسب كلا الحجمين بالوحدة نفسها.",
+        "commonMistake": "خلط الوحدات المربعة والمكعبة أو مقارنة منشورين دون توحيد الوحدات.",
+        "summary": "أطبق قانون الحجم بطريقتين ومقارنة أحجام واقعية وتقدير نماذج، وتقييم الرسم للمعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l11-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:11$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "COMPOSITE_UNIT_CUBE_LAYER_ADDITION",
+      "families": [
+        "uae.g5.u12.l11.base_layer_cubes",
+        "uae.g5.u12.l11.upper_layers_cubes",
+        "uae.g5.u12.l11.composite_total_cubes",
+        "uae.g5.u12.l11.incorrect_product_correction"
+      ],
+      "content": {
+        "concept": "المجسم المركب من قاعدة وأجزاء إضافية يُحسب حجمه بجمع أحجام أجزاء لا تتداخل.",
+        "workedExample": "قاعدة ٤×٣=١٢ مكعبًا؛ أعلى ٢×٢×٢=٨؛ الإجمالي ٢٠ سم³.",
+        "solution": "احسب مكعبات القاعدة والجزء العلوي مستقلين ثم اجمع.",
+        "commonMistake": "ضرب عدد مكعبات القاعدة في الجزء الأعلى بدل جمعهما.",
+        "summary": "تقييم الرسم والتركيب الحقيقي للمعلم، وحساب المكعبات آلي بدقة."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l12-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:12$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "ADDITIVE_SUBTRACTIVE_COMPOSITE_PRISM_VOLUME",
+      "families": [
+        "uae.g5.u12.l12.sum_two_prisms",
+        "uae.g5.u12.l12.base_plus_top",
+        "uae.g5.u12.l12.prism_with_removed_section",
+        "uae.g5.u12.l12.upper_volume_from_total"
+      ],
+      "content": {
+        "concept": "أقسم المجسم المركب إلى مناشير غير متداخلة، وأجمع الأحجام أو أطرح حجم الجزء المحذوف.",
+        "workedExample": "قاعدة ١٠×٩×٤ حجمها ٣٦٠، وأعلى ٣×٤×٢ حجمه ٢٤، المجموع ٣٨٤ م³.",
+        "solution": "احسب كل حجم من ط×ع×ا ثم اجمع أو اطرح الجزء المزال.",
+        "commonMistake": "جمع أحجام متداخلة مرتين أو تجاهل الوحدات المكعبة.",
+        "summary": "النماذج العددية قابلة للتحقق؛ قراءة الرسم وتحديد الأجزاء البشرية للمعلم."
+      }
+    },
+    {
+      "id": "uae-g5-u12-l13-source-aligned",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:UAE-MOE-MATH:L5:GENERAL:12:13$"
+      ],
+      "skillId": "geometry.polygons",
+      "mechanic": "MATH_MODEL_PROBLEM_SOLVING_EXACT",
+      "families": [
+        "uae.g5.u12.l13.model_total_units",
+        "uae.g5.u12.l13.model_missing_layers",
+        "uae.g5.u12.l13.model_loop_stations",
+        "uae.g5.u12.l13.model_tiles_per_row"
+      ],
+      "content": {
+        "concept": "أفهم المسألة وأخطط بنموذج ثم أحل وأتحقق من معقولية الناتج.",
+        "workedExample": "٩ مكعبات في كل طبقة وست طبقات =٥٤ مكعبًا؛ المسار المغلق طوله١٥٠ م ومحطة كل١٥ م =١٠ محطات.",
+        "solution": "أستخدم نموذج صفوف أو طبقات أو مسار دائري حسب المسألة، وأضرب أو أقسم حسب المطلوب.",
+        "commonMistake": "تكرار نقطة البداية والنهاية في مسار مغلق أو إهمال تمثيل وحدات القياس.",
+        "summary": "يُختبر الحساب بدقة وتُراجع النماذج والرسومات والتبريرات بشريًا."
       }
     }
   ]

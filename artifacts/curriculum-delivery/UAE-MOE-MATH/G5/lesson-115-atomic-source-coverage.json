@@ -1,0 +1,90 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 115,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:01",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourcePdfPages": [
+    174,
+    175,
+    176,
+    177,
+    178,
+    179
+  ],
+  "SourcePrintedPages": [
+    877,
+    878,
+    879,
+    880,
+    881,
+    882
+  ],
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "Objectives": [
+    "التمييز بين المضلع وغير المضلع وفق كون الحد مستقيما مغلقا غير متقاطع",
+    "تسمية المضلع بحسب عدد الأضلاع وعد الرؤوس والزوايا",
+    "تمييز المضلعات المنتظمة عن غير المنتظمة بشرطي الأضلاع والزوايا",
+    "تطبيق التمييز على تصاميم ومحيط الطالب ورسم أمثلة"
+  ],
+  "SourceElements": [
+    {
+      "Category": "introduction, polygon versus nonpolygon boundaries and regularity",
+      "Pages": [
+        877,
+        878
+      ],
+      "Coverage": "original Arabic explanations and first-party examples"
+    },
+    {
+      "Category": "individual identification, naming and drawing irregular polygons",
+      "Pages": [
+        879
+      ],
+      "Coverage": "classification and teacher drawing rubric"
+    },
+    {
+      "Category": "real-world design and boundary examples",
+      "Pages": [
+        880
+      ],
+      "Coverage": "polygon status and interpretation prompts"
+    },
+    {
+      "Category": "homework classification with closed straight, regular and irregular shapes",
+      "Pages": [
+        881,
+        882
+      ],
+      "Coverage": "independent exact families and human-explanation rubric"
+    }
+  ],
+  "Engine": "REUSE existing UsCcssG6Unit1Lesson11PolygonQuestions classification service; extend 4 Grade5 numeric families, no duplicate engine",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l01.polygon_or_nonpolygon",
+    "uae.g5.u12.l01.polygon_side_count",
+    "uae.g5.u12.l01.polygon_vertex_count",
+    "uae.g5.u12.l01.regular_polygon"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "مضلع خماسي حدوده مستقيمة ومغلقة؛ جميع أضلاعه متساوية لكن زواياه ليست متساوية. هل هو مضلع؟ هل هو منتظم؟",
+    "Answer": "نعم مضلع خماسي الأضلاع؛ لكنه غير منتظم.",
+    "TeacherRubric": "يتحقق من الاستقامة والإغلاق وعدم التقاطع؛ ينتفي شرط تساوي جميع الزوايا."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "EXACT_POLYGON_FAMILIES_AUTHORED_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson01PolygonsTests.cs",
+  "TestsRun": "FOCUSED_4_PASSED; L114_REGRESSION_5_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Accuracy of original polygon drawing",
+    "Visual and written justification of selected geometric examples"
+  ],
+  "SourceRights": "Original Edulytics prose and numerical prompts; no protected textbook figures copied."
+}

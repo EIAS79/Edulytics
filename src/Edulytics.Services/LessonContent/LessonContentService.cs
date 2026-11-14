@@ -781,8 +781,11 @@ public sealed class LessonContentService : ILessonContentService
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L3:COMMON:", StringComparison.Ordinal);
         var grade4Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal);
+        var grade5Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L5:GENERAL:", StringComparison.Ordinal);
         var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) ||
-                                grade2Arabic || grade3Arabic || grade4Arabic) &&
+                                grade2Arabic || grade3Arabic || grade4Arabic ||
+                                grade5Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
@@ -795,7 +798,7 @@ public sealed class LessonContentService : ILessonContentService
                     StringComparison.Ordinal))
                 .AcademicLanguage;
 
-        // No English fallback when approved UAE Common G1/G2/G3/G4 Arabic body is missing.
+        // No English fallback for approved UAE G1-G4 Common or G5 General Arabic lessons.
         return translations.FirstOrDefault(x =>
             NormalizeCulture(x.CultureCode) == NormalizeCulture(academicLanguage));
     }

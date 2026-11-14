@@ -1,0 +1,89 @@
+{
+  "Grade": 5,
+  "Unit": 12,
+  "LessonOrdinal": 121,
+  "LessonCode": "PED:UAE-MOE-MATH:L5:GENERAL:12:07",
+  "Status": "READY_FOR_STAGE_D",
+  "SourcePdfPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_05\\01_Student_Books\\03.pdf",
+  "SourcePdfSha256": "460da68eb71070f503292069f236c2405bc02807e392463ac1224e944ffe2e5d",
+  "SourceEdition": "Owner-selected Arabic Student 2025–2026",
+  "SourcePdfPages": [
+    211,
+    212,
+    213,
+    214,
+    215,
+    216
+  ],
+  "SourcePrintedPages": [
+    915,
+    916,
+    917,
+    918,
+    919,
+    920
+  ],
+  "Objectives": [
+    "استخدام شبكات من مضلعات مستوية لتكوين المكعب والمنشور مستطيل القاعدة",
+    "تحديد أن للمكعب والمنشور ستة أوجه",
+    "التمييز بين الأوجه المتطابقة في المكعب والمنشور المستطيل",
+    "التمييز بين الوجه والحرف والرأس وتحليل أطوال المجسم"
+  ],
+  "SourceElements": [
+    {
+      "Category": "definition of solids, face and net, cube/prism",
+      "Pages": [
+        915
+      ],
+      "Coverage": "original Arabic descriptions and net dimensions"
+    },
+    {
+      "Category": "cut-fold activities and cube net with five-unit edges",
+      "Pages": [
+        916
+      ],
+      "Coverage": "teacher folding rubric and six-face class"
+    },
+    {
+      "Category": "practice three rectangular prism nets and face matching",
+      "Pages": [
+        917,
+        918
+      ],
+      "Coverage": "original exact family and manual net visual check"
+    },
+    {
+      "Category": "homework matching nets and faces",
+      "Pages": [
+        919,
+        920
+      ],
+      "Coverage": "teacher construction and unique first-party numeric practice"
+    }
+  ],
+  "Engine": "REUSE existing UaeGrade4Unit12GeometryOneQuestions net and solid engine, add 3 Grade5-specific family routes.",
+  "SkillId": "geometry.polygons",
+  "QuestionFamilies": [
+    "uae.g5.u12.l07.net_solid_classification",
+    "uae.g5.u12.l07.net_total_faces",
+    "uae.g5.u12.l07.net_congruent_matching_faces"
+  ],
+  "CoolDown": {
+    "Type": "Edulytics original",
+    "Question": "شبكة صالحة لمنشور أبعاده ٣×٤×٥ سم. كم وجهًا، وكم وجهًا يطابق أكبر وجه؟",
+    "Answer": "٦ أوجه، ووجهان يطابقان أكبر وجه شاملًا الوجه نفسه.",
+    "TeacherRubric": "يرسم شبكة صالحة ويحدد الأوجه المتقابلة والأبعاد."
+  },
+  "StageA": "CLOSED_LOCAL_ARABIC_SOURCE",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2",
+  "StageC": "G5_3D_NET_FAMILIES_FOCUSED_TEST_PASSED",
+  "TestsWritten": "UaeGrade5Unit12Lesson07NetsTests.cs",
+  "TestsRun": "FOCUSED_3_PASSED; L120_REGRESSION_2_PASSED; FULL_STAGE_D_NOT_RUN",
+  "StageDRun": false,
+  "Official2026_2027Index": "NOT_VERIFIED",
+  "TeacherReviewRequired": [
+    "Fold selected original nets and verify no overlaps",
+    "Identify face pairs in student diagrams"
+  ],
+  "SourceRights": "First-party Arabic text and prompts; no publisher diagrams copied."
+}

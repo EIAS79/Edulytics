@@ -76,6 +76,14 @@ def run():
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         errors.append(f"Grade3 pinned owner academic delta invalid: {exc}")
         g3_owner_content = set()
+    # Owner-approved UAE Grade5 first-party 127 Arabic translations and
+    # exact blueprint revision; 2026-27 official source parity stays UNKNOWN.
+    try:
+        from verify_uae_g5_owner_academic_content_delta import validate as validate_uae_g5
+        uae_g5_owner_content = validate_uae_g5()
+    except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"UAE Grade5 exact-blob owner academic delta invalid: {exc}")
+        uae_g5_owner_content = set()
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -154,11 +162,13 @@ def run():
                 )
             g1_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g1-common-t1-ogl-v1.lesson-blueprint.json"
             g2_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g2-common-t1-ogl-v1.lesson-blueprint.json"
+            uae_g5_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g5-general-t1-ogl-v1.lesson-blueprint.json"
             if not (
                 uae_g4_exact or
                 (path == g4_blueprint and len(g4_owner_authored) == 149) or
                 (path == g1_blueprint and len(g1_owner_content) == 102) or
-                (path == g2_blueprint and len(g2_owner_content) == 99)
+                (path == g2_blueprint and len(g2_owner_content) == 99) or
+                (path == uae_g5_blueprint and len(uae_g5_owner_content) == 127)
             ):
                 errors.append(f"changed original lesson blueprint: {path}")
         verified_blueprints += 1
@@ -387,17 +397,17 @@ def run():
         ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
     ).strip() == g4_lock["originalMainCommit"]
     g4_new_changes = g4_owner_authored if original_main else set()
-    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | (g4_changed if g4_replacement_authorized else set())
+    expected_changes = changes_expected | g4_new_changes | g5_owner_content | g6_first_party | g1_owner_content | g2_owner_content | g3_owner_content | uae_g5_owner_content | (g4_changed if g4_replacement_authorized else set())
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
                            if key not in approved and key not in g4_owner_authored
                            and (not g4_replacement_authorized or key not in g4_changed)
                            and key not in g5_owner_content and key not in g6_first_party
-                           and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and baseline[key] != candidate[key]]
+                           and key not in g1_owner_content and key not in g2_owner_content and key not in g3_owner_content and key not in uae_g5_owner_content and baseline[key] != candidate[key]]
     if unexpected_metadata:
         errors.append(f"unapproved lesson metadata changes: {unexpected_metadata[:6]}")
-    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} g6FirstPartyTechnicalOnly={len(g6_first_party)} g1OwnerAcademicApprovedUnknownSourceParity={len(g1_owner_content)} g2OwnerAcademicApprovedUnknownSourceParity={len(g2_owner_content)} g3OwnerAcademicApprovedUnknownSourceParity={len(g3_owner_content)} release=NO_GO_SOURCE_PARITY_NOT_CERTIFIED")
+    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} g5OwnerContentOnly={len(g5_owner_content)} g6FirstPartyTechnicalOnly={len(g6_first_party)} g1OwnerAcademicApprovedUnknownSourceParity={len(g1_owner_content)} g2OwnerAcademicApprovedUnknownSourceParity={len(g2_owner_content)} g3OwnerAcademicApprovedUnknownSourceParity={len(g3_owner_content)} uaeG5OwnerAcademicApprovedUnknownSourceParity={len(uae_g5_owner_content)} release=NO_GO_SOURCE_PARITY_NOT_CERTIFIED")
     for e in errors: print("ERROR:",e)
     return 1 if errors else 0
 
