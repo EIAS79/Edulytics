@@ -30,7 +30,7 @@ public sealed class UaeGrade6Unit1Lesson08FourStepStrategyTests
             ExactSkillQuestionDifficulty.Standard,2,20261114,[]))
         {
             Assert.Contains("وحدة",q.Prompt);
-            Assert.True(ExactSkillContractQuestionEngine.Verify(q.Family,q.Parameters,q.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify("ratio.unit_rate.direct",q.Parameters,q.CorrectAnswer));
         }
     }
 }
