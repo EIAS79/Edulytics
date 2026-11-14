@@ -9264,6 +9264,13 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u07.l06.banknotes","uae.g6.u07.l06.comic_sets","uae.g6.u07.l06.quiz_points","uae.g6.u07.l06.monthly_savings","uae.g6.u07.l06.operator_check"],
            "G6_LOCAL_BOOK2_U07L06_PRINTED537_539_MIDUNIT_EXCLUDED",
            "READY_VERIFIED",Version);
+        // G6 Arabic U07L07 equal-groups multiplication tape/balance lab.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:07:07:STUDENT-AR-128","algebra.multiplication_equation_models",
+            "EQUAL_GROUPS_TAPE_BALANCE_INVERSE_DIVISION_EQUATION",
+            ["uae.g6.u07.l01.multiply","uae.g6.u07.l01.divide","uae.g6.u07.l07.write_equal_groups","uae.g6.u07.l07.inverse_division_statement","uae.g6.u07.l07.classify_equal_groups"],
+            "G6_LOCAL_BOOK2_U07L07_PRINTED541_544_YEAR2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
