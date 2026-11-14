@@ -9243,6 +9243,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u07.l01.add","uae.g6.u07.l02.write_tape_equation","uae.g6.u07.l02.subtraction_form","uae.g6.u07.l02.solve_decimal_money","uae.g6.u07.l03.fraction_addition_unknown","uae.g6.u07.l03.decimal_addition_unknown","uae.g6.u07.l03.identify_subtraction_property"],
             "G6_LOCAL_BOOK2_U07L03_PRINTED519_526_YEAR2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U07L04 source two-page lab: subtraction tape model with inverse addition.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:07:04:STUDENT-AR-128","algebra.subtraction_equation_models",
+            "WRITE_SUBTRACTION_TAPE_AND_INVERSE_ADDITION",
+            ["uae.g6.u07.l01.subtract","uae.g6.u07.l01.result_minus_unknown","uae.g6.u07.l04.write_subtraction_model","uae.g6.u07.l04.inverse_addition_statement"],
+            "LOCAL_G6_BOOK2_U07L04_PRINTED527_528_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
