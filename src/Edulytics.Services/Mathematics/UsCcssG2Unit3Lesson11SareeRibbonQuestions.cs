@@ -29,7 +29,10 @@ internal static class UsCcssG2Unit3Lesson11SareeRibbonQuestions
         else if(family==Start)
         {
             known=random.Next(14,48);
-            var left=random.Next(15,101-known);
+            // A 14-inch cut with only 15 inches remaining yields 29 inches,
+            // which violates Valid's minimum whole length of 30.
+            // Keep the original upper bound and all other story constraints.
+            var left=random.Next(Math.Max(15,30-known),101-known);
             whole=known+left; // known=cut, unknown=start; left is described in prompt
         }
         else
