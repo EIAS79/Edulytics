@@ -9299,6 +9299,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.linear_input","uae.g6.u08.l01.division_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l01.classify_variable"],
             "G6_LOCAL_BOOK2_U08L01_PRINTED573_580_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U08L02 sequence rules: arithmetic difference, geometric ratio, nth term.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:02:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:08:02:STUDENT-AR-128","functions.sequence_rules",
+           "ARITHMETIC_GEOMETRIC_SEQUENCE_NTH_TERM_AND_LINEAR_RULES",
+           ["uae.g6.u08.l01.linear_output","uae.g6.u08.l02.arithmetic_nth","uae.g6.u08.l02.geometric_nth","uae.g6.u08.l02.classify","uae.g6.u08.l02.decimal_arithmetic","uae.g6.u08.l02.linear_rule"],
+           "G6_LOCAL_BOOK2_U08L02_PRINTED581_588_YEAR2026_27_UNVERIFIED",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
