@@ -350,6 +350,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U6L10DistributionQuestions.Supports(family.Trim()) ||
           UaeG6U7L01EquationPracticeQuestions.Supports(family.Trim()) ||
           UaeG6U7L02AdditionLabQuestions.Supports(family.Trim()) ||
+          UaeG6U7L03AdditionEquationQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -1022,6 +1023,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L01EquationPracticeQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L02AdditionLabQuestions.Supports(family))
             return UaeG6U7L02AdditionLabQuestions.Verify(family,parameters,answer);
+        if (UaeG6U7L03AdditionEquationQuestions.Supports(family))
+            return UaeG6U7L03AdditionEquationQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4419,6 +4422,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U7L02AdditionLabQuestions.Supports(family))
         {
             var q=UaeG6U7L02AdditionLabQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U7L03AdditionEquationQuestions.Supports(family))
+        {
+            var q=UaeG6U7L03AdditionEquationQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
@@ -9162,6 +9170,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L01EquationPracticeQuestions.Solve(problem.Family,p);
         if (UaeG6U7L02AdditionLabQuestions.Supports(problem.Family))
             return UaeG6U7L02AdditionLabQuestions.Solve(problem.Family,p);
+        if (UaeG6U7L03AdditionEquationQuestions.Supports(problem.Family))
+            return UaeG6U7L03AdditionEquationQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))

@@ -9236,6 +9236,13 @@ public static class LessonPracticeContractRegistry
           ["uae.g6.u07.l01.add","uae.g6.u07.l02.write_tape_equation","uae.g6.u07.l02.solve_decimal_money","uae.g6.u07.l02.subtraction_form"],
           "G6_LOCAL_BOOK2_U07L02_PRINTED515_518_YEAR2026_27_NOT_VERIFIED",
           "READY_VERIFIED",Version);
+        // Grade6 Arabic U07L03 subtraction property of equality, fraction and decimals.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:07:03:STUDENT-AR-128","algebra.addition_equations",
+            "WRITE_SOLVE_AND_CHECK_ADDITION_SUBTRACT_SAME_AMOUNT_BOTH_SIDES",
+            ["uae.g6.u07.l01.add","uae.g6.u07.l02.write_tape_equation","uae.g6.u07.l02.subtraction_form","uae.g6.u07.l02.solve_decimal_money","uae.g6.u07.l03.fraction_addition_unknown","uae.g6.u07.l03.decimal_addition_unknown","uae.g6.u07.l03.identify_subtraction_property"],
+            "G6_LOCAL_BOOK2_U07L03_PRINTED519_526_YEAR2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
