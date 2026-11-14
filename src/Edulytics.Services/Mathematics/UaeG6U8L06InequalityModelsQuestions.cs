@@ -7,9 +7,10 @@ internal static class UaeG6U8L06InequalityModelsQuestions
     internal const string Membership="uae.g6.u08.l06.candidate_membership";
     internal const string Endpoint="uae.g6.u08.l06.endpoint_inclusion";
     internal const string Direction="uae.g6.u08.l06.graph_direction";
+    internal const string Write="uae.g6.u08.l08.write_word_inequality";
     internal sealed record Item(string Family,string Prompt,string Solution,
       AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Membership or Endpoint or Direction;
+    internal static bool Supports(string? family)=>family is Membership or Endpoint or Direction or Write;
     private static string Symbol(int mode)=>mode switch{0=>"<",1=>"≤",2=>">",3=>"≥",
       _=>throw new ArgumentOutOfRangeException(nameof(mode))};
     private static bool TryExpected(string family,IReadOnlyDictionary<string,int>? p,out string answer)
@@ -17,6 +18,13 @@ internal static class UaeG6U8L06InequalityModelsQuestions
         answer="";
         if(!Supports(family)||p is null||!p.TryGetValue("op",out int op)||
            op is <0 or >3)return false;
+        if(family==Write)
+        {
+            if(p.Count!=2||!p.TryGetValue("bound10",out int b10)||
+               b10 is <-200 or >200)return false;
+            answer=$"س{Symbol(op)}{(b10/10m).ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)}";
+            return true;
+        }
         if(family==Membership)
         {
             if(p.Count!=3||!p.TryGetValue("bound",out int bound)||
@@ -39,7 +47,14 @@ internal static class UaeG6U8L06InequalityModelsQuestions
         int op=random.Next(4),bound=random.Next(-12,13),candidate=random.Next(-15,16);
         var p=new Dictionary<string,int>{{"op",op}};
         string prompt;
-        if(family==Membership)
+        if(family==Write)
+        {
+            int b10=random.Next(-200,201);p["bound10"]=b10;
+            string value=(b10/10m).ToString("0.#",System.Globalization.CultureInfo.InvariantCulture);
+            string phrase=op switch{0=>"أقل من",1=>"على الأكثر",2=>"أكبر من",_=>"على الأقل"};
+            prompt=$"اكتب متباينة باستخدام س تعني أن الكمية {phrase} {value}. اكتب الرمز والحد.";
+        }
+        else if(family==Membership)
         {
             p["bound"]=bound;p["candidate"]=candidate;
             prompt=$"هل العدد {candidate} حل للمتباينة س {Symbol(op)} {bound}؟ اكتب نعم أو لا.";
@@ -54,8 +69,14 @@ internal static class UaeG6U8L06InequalityModelsQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)=>
         TryExpected(family,p,out var s)?s:throw new InvalidOperationException("Invalid inequality params");
+    private static string NormalizeSymbolic(string s)=>new string(s.Where(ch=>!char.IsWhiteSpace(ch))
+        .Select(ch=>ch switch{
+            >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+            >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+            '−' or '–'=>'-','٫'=>'.',_=>ch}).ToArray());
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)=>
-        !string.IsNullOrWhiteSpace(answer)&&answer.Length<=40&&
+        !string.IsNullOrWhiteSpace(answer)&&answer.Length<=70&&
         TryExpected(family,p,out var wanted)&&
-        string.Equals(answer.Trim(),wanted,StringComparison.Ordinal);
+        string.Equals(family==Write?NormalizeSymbolic(answer):answer.Trim(),
+           family==Write?NormalizeSymbolic(wanted):wanted,StringComparison.Ordinal);
 }

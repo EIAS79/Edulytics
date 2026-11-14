@@ -9346,6 +9346,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction"],
             "G6_LOCAL_BOOK2_U08L07_PRINTED611_618_YEAR2026_27_NOT_VERIFIED",
             "READY_VERIFIED",Version);
+        // Grade6 U08L08: Arabic writing and graphing strict/inclusive comparisons.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:08:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:08:STUDENT-AR-128","algebra.inequalities.write_and_graph",
+            "WRITE_LANGUAGE_INEQUALITY_WITH_EXACT_OPEN_CLOSED_NUMBER_LINE",
+            ["uae.g6.u08.l06.candidate_membership","uae.g6.u08.l06.endpoint_inclusion","uae.g6.u08.l06.graph_direction","uae.g6.u08.l08.write_word_inequality"],
+            "G6_LOCAL_BOOK2_U08L08_PRINTED619_626_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
