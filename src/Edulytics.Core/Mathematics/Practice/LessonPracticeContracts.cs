@@ -8997,6 +8997,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u09.l07.multiply_two_mixed","uae.g5.u09.l07.multiply_mixed_by_fraction","uae.g5.u09.l08.classify_scaling","uae.g6.u04.l04.multiply_mixed_by_whole"],
             "G6_GENERAL_STUDENT_U04L04_PRINTED277_284",
             "READY_VERIFIED",Version);
+        // G6 Arabic General U04L05: exact customary unit conversion via scoped ratio adapter.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:05:STUDENT-AR-128","measurement.customary.conversion",
+            "CUSTOMARY_UNIT_RATIO_FORWARD_AND_REVERSE",
+            ["uae.g6.u04.l05.to_smaller_exact","uae.g6.u04.l05.to_larger_exact"],
+            "G6_GENERAL_STUDENT_U04L05_PRINTED285_292",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
