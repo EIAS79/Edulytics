@@ -9292,6 +9292,13 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u07.l01.divide","uae.g6.u07.l09.write_quotient_equation","uae.g6.u07.l09.inverse_multiplication","uae.g6.u07.l10.decimal_divisor","uae.g6.u07.l10.rational_divisor","uae.g6.u07.l10.variable_denominator","uae.g6.u07.l10.multiplication_property"],
            "G6_LOCAL_BOOK2_U07L10_PRINTED555_562_PDF_DUPLICATE_557",
            "READY_VERIFIED",Version);
+        // G6 U08L01 input/output linear and reciprocal function tables, ordered pairs.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:01:STUDENT-AR-128","functions.input_output_tables",
+            "INPUT_OUTPUT_INDEPENDENT_DEPENDENT_LINEAR_AND_INVERSE_TABLE",
+            ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.linear_input","uae.g6.u08.l01.division_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l01.classify_variable"],
+            "G6_LOCAL_BOOK2_U08L01_PRINTED573_580_TARGET2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
