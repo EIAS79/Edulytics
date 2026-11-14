@@ -9278,6 +9278,13 @@ public static class LessonPracticeContractRegistry
           ["uae.g6.u07.l01.multiply","uae.g6.u07.l07.write_equal_groups","uae.g6.u07.l07.inverse_division_statement","uae.g6.u07.l08.decimal_coefficient","uae.g6.u07.l08.fraction_coefficient","uae.g6.u07.l08.division_property"],
           "G6_LOCAL_BOOK2_U07L08_PRINTED545_552_TARGET2026_27_NOT_VERIFIED",
           "READY_VERIFIED",Version);
+        // G6 U07L09: write division equations from equal-share models, inverse multiply.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:09:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:07:09:STUDENT-AR-128","algebra.division_equation_models",
+            "EQUAL_SHARES_DIVISION_TAPE_AND_INVERSE_MULTIPLICATION",
+            ["uae.g6.u07.l01.divide","uae.g6.u07.l01.multiply","uae.g6.u07.l09.write_quotient_equation","uae.g6.u07.l09.inverse_multiplication"],
+            "G6_LOCAL_BOOK2_U07L09_PRINTED553_554_YEAR2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
