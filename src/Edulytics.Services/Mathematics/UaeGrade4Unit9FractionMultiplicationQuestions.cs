@@ -12,12 +12,14 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
     internal const string G5MixedByFraction="uae.g5.u09.l07.multiply_mixed_by_fraction";
     internal const string G5Scaling="uae.g5.u09.l08.classify_scaling";
     internal const string G6FractionPair="uae.g6.u04.l03.multiply_fraction_pair_simplified";
+    internal const string G6MixedByWhole="uae.g6.u04.l04.multiply_mixed_by_whole";
     private static bool G5MixedProduct(string? f)=>f is G5TwoMixed or G5MixedByFraction;
     internal sealed record Item(string Family,string Prompt,string Solution,AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is ModelRepeatedSum or UnitFractionCount or ProductNumerator or ProductWhole or ProductRemainder || G5MixedProduct(f) || f==G5Scaling || f==G6FractionPair;
+    internal static bool Supports(string? f)=>f is ModelRepeatedSum or UnitFractionCount or ProductNumerator or ProductWhole or ProductRemainder || G5MixedProduct(f) || f==G5Scaling || f==G6FractionPair || f==G6MixedByWhole;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported fraction multiplication");
+        if(family==G6MixedByWhole)return BuildG6MixedByWhole(random);
         if(family==G6FractionPair)return BuildG6FractionPair(random);
         if(G5MixedProduct(family))return BuildG5MixedProduct(family,random);
         if(family==G5Scaling)return BuildG5Scaling(random);
@@ -76,6 +78,53 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
 
     // Grade 6 Common Arabic-specific fraction-by-fraction extension.
     // This dispatch leaves all existing G4 and G5 family validators unchanged.
+
+    // Grade 6 Common Arabic mixed number x whole; scoped adapter in existing exact kernel.
+    private static Item BuildG6MixedByWhole(Random random)
+    {
+        int w=random.Next(1,7),d=random.Next(2,11),n=random.Next(1,d),whole=random.Next(2,13);
+        return new Item(G6MixedByWhole,
+            $"احسب {w} و{n}/{d} × {whole} واكتب الناتج في أبسط صورة بسط/مقام (أو عدد صحيح).",
+            "حوّل العدد الكسري إلى كسر غير فعلي، اضرب في العدد الصحيح ثم بسط الناتج.",
+            AssessmentItemType.ShortAnswer,
+            new Dictionary<string,int>{{"w",w},{"n",n},{"d",d},{"whole",whole}});
+    }
+    private static bool TryG6MixedByWhole(IReadOnlyDictionary<string,int>? p,out int numerator,out int denominator)
+    {
+        numerator=denominator=0;
+        if(p is null||p.Count!=4||!p.TryGetValue("w",out int w)||
+           !p.TryGetValue("n",out int n)||!p.TryGetValue("d",out int d)||
+           !p.TryGetValue("whole",out int whole)||
+           w is <1 or >6||d is <2 or >10||n<1||n>=d||whole is <2 or >12)return false;
+        int top=checked((w*d+n)*whole),g=GcdG5(top,d);
+        numerator=top/g;denominator=d/g;
+        return true;
+    }
+    private static string SolveG6MixedByWhole(IReadOnlyDictionary<string,int> p)
+    {
+        if(!TryG6MixedByWhole(p,out int n,out int d))
+            throw new InvalidOperationException("Invalid G6 mixed by whole operands.");
+        return d==1?n.ToString(CultureInfo.InvariantCulture):$"{n}/{d}";
+    }
+    private static bool VerifyG6MixedByWhole(IReadOnlyDictionary<string,int> p,string? answer)
+    {
+        if(!TryG6MixedByWhole(p,out int n,out int d)||
+           string.IsNullOrWhiteSpace(answer)||answer.Length>48)return false;
+        string normalized=new(answer.Trim().Where(ch=>!char.IsWhiteSpace(ch))
+            .Select(ch=>ch switch{
+                >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+ch-'۰'),
+                '⁄'=>'/',_=>ch}).ToArray());
+        string[] components=normalized.Split('/');
+        if(d==1&&components.Length==1)
+            return int.TryParse(components[0],NumberStyles.None,CultureInfo.InvariantCulture,
+                out int actualWhole)&&actualWhole==n;
+        return components.Length==2&&
+            int.TryParse(components[0],NumberStyles.None,CultureInfo.InvariantCulture,out int top)&&
+            int.TryParse(components[1],NumberStyles.None,CultureInfo.InvariantCulture,out int den)&&
+            top>0&&den>0&&GcdG5(top,den)==1&&top==n&&den==d;
+    }
+
     private static Item BuildG6FractionPair(Random random)
     {
         int d1=random.Next(2,13),d2=random.Next(2,13);
@@ -189,6 +238,7 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==G6MixedByWhole)return SolveG6MixedByWhole(p);
         if(family==G6FractionPair)return SolveG6FractionPair(p);
         if(G5MixedProduct(family))return SolveG5MixedProduct(family,p);
         if(family==G5Scaling)return SolveG5Scaling(p);
@@ -197,6 +247,7 @@ internal static class UaeGrade4Unit9FractionMultiplicationQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family==G6MixedByWhole)return VerifyG6MixedByWhole(p,answer);
         if(family==G6FractionPair)return VerifyG6FractionPair(p,answer);
         if(G5MixedProduct(family))return VerifyG5MixedProduct(family,p,answer);
         if(family==G5Scaling)return VerifyG5Scaling(p,answer);

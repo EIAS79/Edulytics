@@ -8990,6 +8990,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u04.l03.multiply_fraction_pair_simplified","uae.g4.u09.l09.product_whole"],
             "G6_GENERAL_STUDENT_U04L03_PRINTED269_276",
             "READY_VERIFIED",Version);
+        // G6 Arabic General U04L04: mixed number products and factor scaling; reuse G5 families + scoped mixed x whole extension.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:04:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:04:04:STUDENT-AR-128","fractions.multiply_mixed",
+            "MIXED_NUMBER_PRODUCTS_CROSS_CANCELLATION_SCALING",
+            ["uae.g5.u09.l07.multiply_two_mixed","uae.g5.u09.l07.multiply_mixed_by_fraction","uae.g5.u09.l08.classify_scaling","uae.g6.u04.l04.multiply_mixed_by_whole"],
+            "G6_GENERAL_STUDENT_U04L04_PRINTED277_284",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
