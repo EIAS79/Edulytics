@@ -8761,6 +8761,21 @@ public static class LessonPracticeContractRegistry
                 ["ratio.unit_rate.direct"],
                 "UAE_G6_U01_L08_SOURCE_PRINTED_55_57",
                 "READY_VERIFIED",Version);
+        // UAE Arabic Grade6 native Lesson6 U01, equivalent ratios/rates.
+        // Reuse grade-independent exact ratio and fraction equivalents;
+        // comparative reasoning and priced contextual word problems teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:09:STUDENT-AR-128","ratio.unit_rate",
+                "COMPARE_EQUIVALENT_RATIOS_AND_UNIT_RATES",
+                [
+                    "ratio.unit_rate.direct",
+                    "ratio.unit_rate.equivalent_ratio",
+                    "fractions.equivalent.reduce_common_factor"
+                ],
+                "UAE_G6_U01_L09_SOURCE_PRINTED_59_66",
+                "READY_VERIFIED",Version)
+            { SkillIds = ["ratio.unit_rate","fractions.equivalent"] };
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
