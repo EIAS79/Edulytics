@@ -80,7 +80,8 @@ def check_school_adoption():
       SELECT c."CurriculumAdoptionId"::text||'|'||
              a."CurriculumLogicalLevel"::text||'|'||
              COALESCE(a."CurriculumLevelKey",'')||'|'||
-             COALESCE(s."DefaultCulture",'')
+             COALESCE(s."DefaultCulture",'')||'|'||
+             COALESCE(a."CurriculumPathway",'')
       FROM "StudentEnrollments" e
       JOIN "StudentProfiles" p ON p."Id"=e."StudentProfileId"
       JOIN "AspNetUsers" u ON u."Id"=p."UserId"
@@ -89,9 +90,9 @@ def check_school_adoption():
       JOIN "Schools" s ON s."Id"=c."SchoolId"
       WHERE u."Email"='""" + STUDENT + """' AND s."SchoolCode"='""" + SCHOOL + """';
     """
-    adoption, level, key, culture = one(q, "Grade5 Arabic student adoption").split("|", 3)
-    if not re.fullmatch(UUID, adoption) or level != "5" or culture != "ar":
-        raise AssertionError(f"UAE G5 adoption/culture mismatch: {level}/{culture}")
+    adoption, level, key, culture, pathway = one(q, "Grade5 Arabic student adoption").split("|", 4)
+    if not re.fullmatch(UUID, adoption) or level != "5" or culture != "ar" or pathway != "General":
+        raise AssertionError(f"UAE G5 adoption/culture/pathway mismatch: {level}/{culture}/{pathway}")
     if "UAE" not in key.upper() and "5" not in key:
         raise AssertionError("UAE G5 adoption key not UAE Grade 5")
     return adoption, key

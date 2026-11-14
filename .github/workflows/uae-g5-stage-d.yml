@@ -5,6 +5,10 @@ on:
     paths:
       - '.github/workflows/uae-g5-stage-d.yml'
       - 'tools/curriculum/uae_g5_stage_d_gate.py'
+      - 'tools/curriculum/uae_g5_stage_d_authenticated_https.py'
+      - 'tools/curriculum/uae_g5_stage_d_browser_rtl.py'
+      - 'tools/Edulytics.CiFixtures/**'
+      - 'src/Edulytics.Services/LessonContent/**'
       - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G5/**'
       - 'src/Edulytics.Core/Curriculum/**'
       - 'src/Edulytics.Core/Mathematics/**'
@@ -207,7 +211,7 @@ jobs:
           visual=json.loads(pathlib.Path("/tmp/uae-g5-stage-d-browser-rtl/report.json").read_text())
           sha=os.environ["GITHUB_SHA"]
           assert auth["candidateSha"]==visual["candidateSha"]==sha
-          assert auth["grade"]==4 and auth["lessonPageCount"]==127
+          assert auth["grade"]==5 and auth["lessonPageCount"]==127
           assert auth["correctAttemptPersistenceCount"]==127
           assert auth["wrongAttemptPersistenceCount"]==127
           assert auth["malformedAttemptRejectionCount"]==127

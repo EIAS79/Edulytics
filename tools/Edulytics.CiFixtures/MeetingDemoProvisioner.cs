@@ -1321,7 +1321,11 @@ DELETE FROM "Schools";
         var primaryLoginClass = SelectLoginClass(
             classes,
             definition.PrimaryLoginLogicalLevel,
-            null);
+            // UAE-G5 disposable CI must authenticate the General learner, not
+            // the alphabetically first Advanced class. Do not alter live/demo tenants.
+            disposableCi && ciProgramme == "UAE-G5" && definition.Key == "uae-primary"
+                ? "General"
+                : null);
 
         var secondaryLoginClass = SelectLoginClass(
             classes,
