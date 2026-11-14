@@ -360,6 +360,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U7L10DivisionEquationsQuestions.Supports(family.Trim()) ||
           UaeG6U8FunctionQuestions.Supports(family.Trim()) ||
           UaeG6U8L02SequenceQuestions.Supports(family.Trim()) ||
+          UaeG6U8L03FunctionGraphsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -1052,6 +1053,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U8FunctionQuestions.Verify(family,parameters,answer);
         if (UaeG6U8L02SequenceQuestions.Supports(family))
             return UaeG6U8L02SequenceQuestions.Verify(family,parameters,answer);
+        if (UaeG6U8L03FunctionGraphsQuestions.Supports(family))
+            return UaeG6U8L03FunctionGraphsQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4499,6 +4502,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U8L02SequenceQuestions.Supports(family))
         {
             var q=UaeG6U8L02SequenceQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U8L03FunctionGraphsQuestions.Supports(family))
+        {
+            var q=UaeG6U8L03FunctionGraphsQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
@@ -9262,6 +9270,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U8FunctionQuestions.Solve(problem.Family,p);
         if (UaeG6U8L02SequenceQuestions.Supports(problem.Family))
             return UaeG6U8L02SequenceQuestions.Solve(problem.Family,p);
+        if (UaeG6U8L03FunctionGraphsQuestions.Supports(problem.Family))
+            return UaeG6U8L03FunctionGraphsQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))

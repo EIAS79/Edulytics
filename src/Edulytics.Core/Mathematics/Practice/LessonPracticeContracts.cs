@@ -9306,6 +9306,13 @@ public static class LessonPracticeContractRegistry
            ["uae.g6.u08.l01.linear_output","uae.g6.u08.l02.arithmetic_nth","uae.g6.u08.l02.geometric_nth","uae.g6.u08.l02.classify","uae.g6.u08.l02.decimal_arithmetic","uae.g6.u08.l02.linear_rule"],
            "G6_LOCAL_BOOK2_U08L02_PRINTED581_588_YEAR2026_27_UNVERIFIED",
            "READY_VERIFIED",Version);
+        // G6 U08L03: source-scoped Cartesian graphs and linear equations.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:08:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:08:03:STUDENT-AR-128","functions.linear_graphs",
+            "CARTESIAN_PLOT_LINE_EQUATION_SLOPE_INTERCEPT_AND_NONLINEARITY",
+            ["uae.g6.u08.l01.linear_output","uae.g6.u08.l01.ordered_pair","uae.g6.u08.l03.equation_from_line","uae.g6.u08.l03.linear_vs_square","uae.g6.u08.l03.y_intercept"],
+            "G6_LOCAL_BOOK2_U08L03_PRINTED589_596_YEAR2026_27_UNVERIFIED",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
