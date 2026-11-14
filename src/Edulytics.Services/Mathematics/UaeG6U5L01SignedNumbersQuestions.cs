@@ -10,14 +10,24 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string Position="uae.g6.u05.l01.signed_position";
     internal const string Opposite="uae.g6.u05.l01.opposite_integer";
     internal const string GraphSetExtremum="uae.g6.u05.l02.signed_plot_set_extremum";
+    internal const string AbsoluteDistance="uae.g6.u05.l03.absolute_distance";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family==AbsoluteDistance)
+        {
+            int n=random.Next(-40,41);
+            return new Item(family,
+                $"احسب المسافة بين العدد الصحيح {n} والصفر على خط الأعداد. اكتب المقدار فقط.",
+                "القيمة المطلقة تقيس المسافة من الصفر وهي غير سالبة.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int>{{"n",n}});
+        }
         if(family==GraphSetExtremum)
         {
             var numbers=new HashSet<int>();
@@ -52,6 +62,13 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     {
 
         answer=0;
+        if(family==AbsoluteDistance)
+        {
+            if(p is null||p.Count!=1||!p.TryGetValue("n",out int n)||
+                n is <-40 or >40)return false;
+            answer=Math.Abs(n);
+            return true;
+        }
         if(family==GraphSetExtremum)
         {
             if(p is null||p.Count!=5||!p.TryGetValue("a",out var a)||

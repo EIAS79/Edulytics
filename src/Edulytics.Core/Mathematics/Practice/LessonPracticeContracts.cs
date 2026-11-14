@@ -9060,6 +9060,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l01.signed_position","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l02.signed_plot_set_extremum"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L02_PRINTED341_348",
             "READY_VERIFIED",Version);
+        // G6 Arabic U05L03: exact distance from zero, existing signed number model and opposites, drawings teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:03:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:03:STUDENT-AR-128","number.integers.absolute_distance",
+            "NUMBER_LINE_DISTANCE_AND_OPPOSITE_SYMMETRY",
+            ["uae.g6.u05.l03.absolute_distance","uae.g6.u05.l01.opposite_integer","uae.g6.u05.l01.signed_position"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L03_PRINTED349_350",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
