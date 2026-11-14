@@ -9164,6 +9164,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l04.substitute_add","uae.g6.u06.l04.substitute_difference","uae.g6.u06.l04.substitute_product","uae.g6.u06.l04.substitute_division","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l04.fraction_squared","uae.g6.u06.l04.two_variable_expression","uae.g6.u06.l04.cube_volume","uae.g6.u06.l04.money_remaining"],
             "G6_ARABIC_2025_2026_BOOK2_U06L04_PRINTED443_450",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L05: bar-model lab, bounded writing of simple expressions.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:05:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:05:STUDENT-AR-128","algebra.expressions.word_to_model",
+            "WORD_DESCRIPTION_TO_BAR_MODEL_AND_SYMBOLIC_EXPRESSION",
+            ["uae.g6.u06.l05.more_than","uae.g6.u06.l05.less_than","uae.g6.u06.l05.part_of","uae.g6.u06.l05.repeated","uae.g6.u06.l05.groups_plus","uae.g6.u06.l05.operation_type"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L05_PRINTED451_454",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
