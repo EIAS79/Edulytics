@@ -702,6 +702,10 @@ public sealed class ExactSkillContractQuestionEngine
                     }
                 }
 
+                if (string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128",StringComparison.Ordinal) ||
+                    string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128",StringComparison.Ordinal))
+                    problem = LocalizeG6U2L7Mixed(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5443,6 +5447,36 @@ public sealed class ExactSkillContractQuestionEngine
 
     // Reuse existing exact ratio mathematics without a new engine or
     // changing any other curriculum's generated questions.
+    // Reuse existing exact fraction solver and only localize this source lesson.
+    private static ExactProblem LocalizeG6U2L7Mixed(ExactProblem problem)
+    {
+        var p=problem.Parameters;
+        if (problem.Family=="fractions.compare.unlike.common_denominator")
+        {
+            var hundredths=21+((p["n1"]*17+p["n2"]*13+p["d2"]*7)%69);
+            var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+            x["n2"]=hundredths; x["d2"]=100;
+            return problem with {
+                Parameters=x,
+                Prompt=$"قارن {p["n1"]}/{p["d1"]} مع {(hundredths/100.0).ToString("0.00",CultureInfo.InvariantCulture)}. اكتب < أو > أو =.",
+                Solution="حوّل العشري إلى كسر من مئة وقارن بالضرب التبادلي الدقيق."
+            };
+        }
+        if (problem.Family=="fractions.compare.unlike.order_three")
+        {
+            var hundredths=20+((p["n2"]*11+p["d2"]*3)%66);
+            var percent=30+((p["n3"]*17+p["d3"]*5)%65);
+            var x=p.ToDictionary(z=>z.Key,z=>z.Value);
+            x["n2"]=hundredths; x["d2"]=100; x["n3"]=percent; x["d3"]=100;
+            return problem with {
+                Parameters=x,
+                Prompt=$"رتّب تصاعديًا: A={p["n1"]}/{p["d1"]}، B={(hundredths/100.0).ToString("0.00",CultureInfo.InvariantCulture)}، C={percent}%. اكتب رموز A وB وC بالترتيب.",
+                Solution="حوّل B وC إلى كسرين من مئة ثم رتّب القيم بدقة."
+            };
+        }
+        return problem;
+    }
+
     private static ExactProblem LocalizeUaeGrade6RatioLab(ExactProblem problem)
     {
         var p = problem.Parameters;

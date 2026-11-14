@@ -8869,6 +8869,11 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity", "uae.g5.u07.l05.lcm_two_numbers"],
             "UAE_G6_GENERAL_U02_L06_BOOK_PRINTED_125_128_ORIGINAL_AR",
             "READY_VERIFIED", Version);
+        // Arabic U02L07 mixed decimal/percentage formats retain verified fraction verifier.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:07:STUDENT-AR-128","fractions.compare","COMPARE_ORDER_MIXED_FRACTIONS_PERCENT_DECIMAL",
+            ["fractions.compare.unlike.common_denominator","fractions.compare.unlike.order_three"],
+            "G6_AR_STUDENT_U02L07_PRINTED_129_136","READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
