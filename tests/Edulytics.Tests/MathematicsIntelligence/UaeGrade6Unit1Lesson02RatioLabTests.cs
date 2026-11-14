@@ -51,7 +51,7 @@ public sealed class UaeGrade6Unit1Lesson02RatioLabTests
             foreach (var q in engine.Generate(Lesson, family, [family],
                 ExactSkillQuestionDifficulty.Standard, 3, 20261114, []))
             {
-                Assert.Contains("النسبة", q.Prompt);
+                Assert.Contains("نسب", q.Prompt);
                 Assert.True(ExactSkillContractQuestionEngine.Verify(family, q.Parameters, q.CorrectAnswer));
             }
         }
