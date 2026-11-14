@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 1,
+  "ordinal": 1,
+  "sourceTitle": "العوامل والمضاعفات",
+  "plannedLessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+  "reusedExistingLessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:05:05:FACTORS-AND-MULTIPLES",
+  "sourcePdfSha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+  "sourcePagesPdf": "48-55",
+  "sourcePagesPrinted": "7-14",
+  "stageA": {
+    "status": "A_C_EXPLICIT_GAP",
+    "verified": [
+      "Title, topic, TOC position and book pages",
+      "GCF and LCM definitions",
+      "Prime-factor tree and number-line representations",
+      "Guided, independent, applied and extension questions"
+    ],
+    "issues": [
+      "Existing lesson is located U05:L05 while source places it U01:L01; do not reuse identity without audited safe migration",
+      "No approved Grade6 General Arabic canonical lesson mapping in current 59-lesson legacy candidate"
+    ]
+  },
+  "stageB": {
+    "status": "PARTIAL",
+    "implemented": [
+      "Original Arabic translation added to existing Factors and Multiples lesson; original English content and all legacy IDs preserved",
+      "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down"
+    ],
+    "issues": [
+      "No effective U01:L01 Arabic learner binding yet",
+      "Visual number line and prime factor trees need actual rendered lesson models; text alone is not visual evidence",
+      "Pack-level AcademicLanguage remains en to avoid breaking other 58 lessons"
+    ]
+  },
+  "stageC": {
+    "status": "PARTIAL",
+    "reuse": [
+      "UaeGrade4Unit8Lesson01FactorMultipleQuestions existing G5 GCF/LCM family logic as candidate for reuse via separate G6 aliases; do not create duplicate engine"
+    ],
+    "mathSpotChecks": [
+      {
+        "input": "GCF(24,36,60)",
+        "answer": 12
+      },
+      {
+        "input": "GCF(16,24)",
+        "answer": 8
+      },
+      {
+        "input": "LCM(4,10)",
+        "answer": 20
+      },
+      {
+        "input": "LCM(6,8)",
+        "answer": 24
+      },
+      {
+        "input": "LCM(3,6)",
+        "answer": 6
+      },
+      {
+        "input": "GCF(18,30)",
+        "answer": 6
+      }
+    ],
+    "targetedMathChecksExecuted": 6,
+    "targetedChecksStatus": "PASS_IN_MEMORY_ARITHMETIC_ONLY",
+    "jsonParseCheck": "PASS",
+    "testsRunInRepo": "NOT_RUN",
+    "issues": [
+      "G6 exact family registration, renderer and independent verifier wiring not implemented or executed",
+      "No compiled .NET tests and no RTL browser test in Stage A-C"
+    ]
+  },
+  "readyForStageD": false,
+  "closed": false,
+  "firstIncompleteLessonOrdinal": 1,
+  "reasonNotClosed": "Source order is not yet reflected in the effective app route; G6 families and actual visual models remain unwired",
+  "sourceRights": "Only internally recorded textbook SHA/page positions. New explanatory wording is Edulytics-authored; publisher images and passages not copied.",
+  "githubBranch": "curriculum/uae-g6-common-student-first-abc-20261114",
+  "modifiedPaths": [
+    "docs/curriculum/EDULYTICS_UAE_GRADE_6_STAGE_A_B_C_STRICT_TEMPLATE_EXECUTION_PLAN.md",
+    "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g6-general-t1-ogl-v1.lesson-content-pack.json"
+  ],
+  "checkpointState": "A_C_EXPLICIT_GAP",
+  "nextLessonAllowed": false,
+  "testsRun": "WRITTEN_NOT_RUN except in-memory arithmetic and JSON validation; no CI/.NET"
+}
