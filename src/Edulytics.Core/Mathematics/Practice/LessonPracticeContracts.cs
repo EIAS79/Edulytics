@@ -9285,6 +9285,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u07.l01.divide","uae.g6.u07.l01.multiply","uae.g6.u07.l09.write_quotient_equation","uae.g6.u07.l09.inverse_multiplication"],
             "G6_LOCAL_BOOK2_U07L09_PRINTED553_554_YEAR2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U07L10 multiplication property of equality, division equations.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:07:10:STUDENT-AR-128"]=new LessonPracticeContract(
+           "PED:UAE-MOE-MATH:L6:GENERAL:07:10:STUDENT-AR-128","algebra.division_equations",
+           "MULTIPLY_EQUALITY_TO_SOLVE_DIVISION_DECIMAL_FRACTION_UNKNOWN_DIVISOR",
+           ["uae.g6.u07.l01.divide","uae.g6.u07.l09.write_quotient_equation","uae.g6.u07.l09.inverse_multiplication","uae.g6.u07.l10.decimal_divisor","uae.g6.u07.l10.rational_divisor","uae.g6.u07.l10.variable_denominator","uae.g6.u07.l10.multiplication_property"],
+           "G6_LOCAL_BOOK2_U07L10_PRINTED555_562_PDF_DUPLICATE_557",
+           "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

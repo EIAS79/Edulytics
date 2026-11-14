@@ -357,6 +357,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U7L07MultiplicationLabQuestions.Supports(family.Trim()) ||
           UaeG6U7L08MultiplicationEquationsQuestions.Supports(family.Trim()) ||
           UaeG6U7L09DivisionLabQuestions.Supports(family.Trim()) ||
+          UaeG6U7L10DivisionEquationsQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family.Trim()) ||
           UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family.Trim()) ||
           UaeGrade4Unit9Lesson07MixedSubtractionQuestions.Supports(family.Trim()) ||
@@ -1043,6 +1044,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L08MultiplicationEquationsQuestions.Verify(family,parameters,answer);
         if (UaeG6U7L09DivisionLabQuestions.Supports(family))
             return UaeG6U7L09DivisionLabQuestions.Verify(family,parameters,answer);
+        if (UaeG6U7L10DivisionEquationsQuestions.Supports(family))
+            return UaeG6U7L10DivisionEquationsQuestions.Verify(family,parameters,answer);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Verify(family, parameters, answer);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(family))
@@ -4475,6 +4478,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U7L09DivisionLabQuestions.Supports(family))
         {
             var q=UaeG6U7L09DivisionLabQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U7L10DivisionEquationsQuestions.Supports(family))
+        {
+            var q=UaeG6U7L10DivisionEquationsQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(family))
@@ -9232,6 +9240,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L08MultiplicationEquationsQuestions.Solve(problem.Family,p);
         if (UaeG6U7L09DivisionLabQuestions.Supports(problem.Family))
             return UaeG6U7L09DivisionLabQuestions.Solve(problem.Family,p);
+        if (UaeG6U7L10DivisionEquationsQuestions.Supports(problem.Family))
+            return UaeG6U7L10DivisionEquationsQuestions.Solve(problem.Family,p);
         if (UaeGrade4Unit9FractionMultiplicationQuestions.Supports(problem.Family))
             return UaeGrade4Unit9FractionMultiplicationQuestions.Solve(problem.Family, p);
         if (UaeGrade5Unit9UnitFractionDivisionQuestions.Supports(problem.Family))
