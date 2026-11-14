@@ -7,9 +7,10 @@ internal static class UaeG6U6L10DistributionQuestions
 {
     internal const string Expand="uae.g6.u06.l10.expand_two_term",Factor="uae.g6.u06.l10.factor_common",
         Mixed="uae.g6.u06.l10.mixed_decimal_distribute",Equivalence="uae.g6.u06.l10.distribution_true_false";
+    internal const string Combine="uae.g6.u06.l11.combine_like_terms",Pair="uae.g6.u06.l11.equivalent_pair",Tiles="uae.g6.u06.l11.count_variable_tiles";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Expand or Factor or Mixed or Equivalence;
+    internal static bool Supports(string? f)=>f is Expand or Factor or Mixed or Equivalence or Combine or Pair or Tiles;
     private static string Norm(string? s)=>new string((s??"").Where(ch=>!char.IsWhiteSpace(ch))
         .Select(ch=>ch switch{
             >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
@@ -24,6 +25,22 @@ internal static class UaeG6U6L10DistributionQuestions
     {
         result="";
         if(!Supports(family)||p is null)return false;
+        if(family is Combine or Pair or Tiles)
+        {
+            if(!p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+               !p.TryGetValue("c",out int c)||a is <1 or >15||b is <1 or >30||
+               c is <1 or >15)return false;
+            if(family==Pair)
+            {
+                if(p.Count!=4||!p.TryGetValue("mode",out int mode)||
+                   mode is not (0 or 1))return false;
+                result=mode==0?"نعم":"لا";return true;
+            }
+            if(p.Count!=3)return false;
+            result=family==Combine?$"{a+c}س+{b}":
+                (a+c).ToString(CultureInfo.InvariantCulture);
+            return true;
+        }
         if(family==Mixed)
         {
             if(p.Count!=4||!p.TryGetValue("a",out int a)||
@@ -62,7 +79,22 @@ internal static class UaeG6U6L10DistributionQuestions
         ArgumentNullException.ThrowIfNull(r);
         Dictionary<string,int> p;
         string question;
-        if(family==Mixed)
+        if(family is Combine or Pair or Tiles)
+        {
+            int a=r.Next(1,16),b=r.Next(1,31),c=r.Next(1,16);
+            p=new(){{"a",a},{"b",b},{"c",c}};
+            if(family==Pair)
+            {
+                int mode=r.Next(2);p["mode"]=mode;
+                int otherConstant=b+(mode==0?0:1);
+                question=$"هل التعبيران {a}س+{b}+{c}س و{a+c}س+{otherConstant} متكافئان لكل قيمة س؟ اكتب نعم أو لا.";
+            }
+            else if(family==Tiles)
+                question=$"نموذج جبري يحوي {a} قطع س و{b} قطع آحاد و{c} قطع س إضافية. كم قطعة س بعد الجمع؟";
+            else
+                question=$"بسّط التعبير {a}س+{b}+{c}س بجمع الحدود المتشابهة؛ احتفظ بالحد الثابت.";
+        }
+        else if(family==Mixed)
         {
             int[] denominators=[2,4,5,10];
             int d=denominators[r.Next(denominators.Length)],whole=r.Next(1,13),
@@ -101,6 +133,11 @@ internal static class UaeG6U6L10DistributionQuestions
            !TryAnswer(f,p,out string expected))return false;
         string answer=Norm(response),wanted=Norm(expected);
         if(answer==wanted)return true;
+        if(f==Combine)
+        {
+            int a=p["a"],b=p["b"],c=p["c"];
+            return answer==$"{a+c}*س+{b}"||answer==$"{b}+{a+c}س";
+        }
         if(f==Expand)
         {
             int a=p["a"],b=p["b"],c=p["c"];

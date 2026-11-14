@@ -9207,6 +9207,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l09.evaluate_distributive","uae.g4.u04.l07.distributive_sum","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l10.factor_common","uae.g6.u06.l10.mixed_decimal_distribute","uae.g6.u06.l10.distribution_true_false"],
             "G6_ARABIC_2025_2026_BOOK2_U06L10_PRINTED479_486",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L11: algebra tiles, like terms, and equivalent expressions.
+        // Reuses existing U06L10 exact adapter and previous distributive families.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:11:STUDENT-AR-128","algebra.equivalent_expressions.models",
+            "ALGEBRA_TILES_COMBINE_LIKE_TERMS_AND_TEST_EQUIVALENCE",
+            ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l05.repeated","uae.g6.u06.l11.combine_like_terms","uae.g6.u06.l11.equivalent_pair","uae.g6.u06.l11.count_variable_tiles"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L11_PRINTED487_488",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
