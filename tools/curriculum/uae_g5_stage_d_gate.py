@@ -85,49 +85,138 @@ def audit_structural():
 
 
 def audit_source():
+    """Owner-approved G1-G3 style local textbook scope; not 2026-27 Ministry parity."""
     errors = []
     selection = read(EVID / "source-selection.json")
+    index = read(EVID / "source-index.json")
+    approval = read(EVID / "grade5-owner-academic-approval.json")
     blueprint = read(BLUE)
-    for path, code in [
-        (EVID / "grade5-a-c-handoff.md", "MISSING_A_C_HANDOFF"),
-        (EVID / "source-index.json", "MISSING_SOURCE_INDEX"),
-        (ROOT / "docs/curriculum/UAE_G5_COMMON_OFFICIAL_MANIFEST.json", "PLAN_NAMED_OFFICIAL_MANIFEST_MISSING"),
-    ]:
-        if not path.is_file():
-            errors.append(code)
-    if selection.get("SourceLockFor2026_2027OfficialIndex") != "LOCKED":
-        errors.append("OFFICIAL_2026_2027_INDEX_NOT_LOCKED")
-    if "2025" in selection.get("EditionUsed", ""):
-        errors.append("2025_2026_LOCAL_BOOK_IS_NOT_PROOF_OF_2026_2027")
-    if blueprint.get("VersionCode") == "MOE-2026-2027-T1" and errors:
-        errors.append("BLUEPRINT_TARGET_YEAR_SOURCE_CONFLICT")
-    if blueprint.get("Pathway") == "General":
-        errors.append("PLAN_COMMON_VS_REPOSITORY_GENERAL_ALIAS_UNVERIFIED")
-    element_rows = 0
-    lessons_with_elements = 0
-    lessons_with_explicit_numerator = 0
-    for ordinal in range(1, TOTAL + 1):
-        file = EVID / f"lesson-{ordinal:03d}-atomic-source-coverage.json"
-        if not file.exists():
-            errors.append(f"MISSING_ATOMIC:{ordinal}")
-            continue
-        item = read(file)
-        rows = item.get("SourceElements")
-        if isinstance(rows, list) and rows:
-            lessons_with_elements += 1
-            element_rows += len(rows)
-        if isinstance(item.get("VerifiedEquivalentCount"), int):
-            lessons_with_explicit_numerator += 1
-    if lessons_with_elements != TOTAL or lessons_with_explicit_numerator != TOTAL:
-        errors.append("ELEMENT_DENOMINATOR_AND_EQUIVALENCE_PROOF_INCOMPLETE")
-    return report("source", "BLOCKED" if errors else "PASS", errors,
-                  firstIncompleteLessonOrdinal=1 if errors else None,
-                  acceptedLessons=0, sourceElementRowsRecorded=element_rows,
-                  sourceElementFullDenominator=None, equivalentElementsVerified=None,
-                  semanticParityPercent="UNKNOWN", officialEdition="UNVERIFIED",
-                  rightsStatus="UNVERIFIED", humanReview="PENDING",
-                  dStatus="D_PENDING_A_C_EVIDENCE" if errors else "D_PENDING",
-                  note="Source records do not establish exhaustive page-level parity or latest-year approval.")
+    pack = read(ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs" /
+                "uae-g5-general-t1-ogl-v1.lesson-content-pack.json")
+    manifest_path = ROOT / "docs/curriculum/UAE_G5_GENERAL_OFFICIAL_MANIFEST.json"
+    manifest = read(manifest_path) if manifest_path.exists() else {}
+    progress = read(EVID / "full-grade-progress.json")
+    owner_scope = (
+        approval.get("ownerAcademicApproval") == "APPROVED" and
+        approval.get("ownerReleaseAuthorization") ==
+            "APPROVED_SUBJECT_TO_TESTS_AND_RELEASE_SAFETY" and
+        approval.get("OwnerAcceptsKnownSourceLimitationsForOriginalContentRelease") is True and
+        approval.get("Independent2026_2027ElementParity") == "UNKNOWN" and
+        approval.get("SourceParityIsNotReleaseClaim") is True and
+        approval.get("NoFalseCIClaim") is True
+    )
+    if not owner_scope:
+        errors.append("OWNER_FIRST_PARTY_LIMITED_SCOPE_RELEASE_NOT_AUTHORIZED")
+    hashes = approval.get("SelectedLocalSourceSha256") or {}
+    names = {"01.pdf", "02-1.pdf", "02.pdf", "03.pdf"}
+    if set(hashes) != names or any(len(str(hashes[n])) != 64 for n in names):
+        errors.append("SELECTED_LOCAL_PDF_HASHES_MISSING")
+    if hashes.get("01.pdf", "").lower() != selection.get("StudentPdfSha256", "").lower():
+        errors.append("SOURCE_SELECTION_01_PDF_SHA_MISMATCH")
+    if (manifest.get("Grade"), manifest.get("Pathway"), manifest.get("LessonCount"),
+        len(manifest.get("Units", []))) != (5, "General", TOTAL, 12):
+        errors.append("EXISTING_G5_GENERAL_MANIFEST_NOT_127_12")
+    if (blueprint.get("Pathway"), blueprint.get("LogicalLevel"),
+        len(blueprint.get("Lessons", []))) != ("General", 5, TOTAL):
+        errors.append("EXISTING_G5_BLUEPRINT_NOT_127_GENERAL")
+    if (pack.get("AcademicLanguage"), len(pack.get("Lessons", [])),
+        progress.get("A_B_C_Ready"), len(index.get("lessons", []))) != (
+            "ar", TOTAL, TOTAL, TOTAL):
+        errors.append("LOCAL_SOURCE_ARABIC_ABC_OR_INDEX_NOT_127")
+    handoff = EVID / "grade5-a-c-handoff.md"
+    if not handoff.exists() or "UNKNOWN" not in handoff.read_text(encoding="utf-8"):
+        errors.append("SOURCE_LIMITATIONS_NOT_DISCLOSED_IN_HANDOFF")
+    unit_pdf = {**{i: "01.pdf" for i in range(1, 6)},
+                **{i: "02-1.pdf" for i in range(6, 8)},
+                **{i: "02.pdf" for i in range(8, 10)},
+                **{i: "03.pdf" for i in range(10, 13)}}
+    selected, elements, missing_optional_sha = 0, 0, []
+    ordinal = 0
+    for unit, total_in_unit in enumerate(COUNTS, 1):
+        for lesson in range(1, total_in_unit + 1):
+            ordinal += 1
+            code = f"PED:UAE-MOE-MATH:L5:GENERAL:{unit:02d}:{lesson:02d}"
+            cp_path = EVID / f"lesson-{ordinal:03d}-stage-a-c-checkpoint.json"
+            src_path = EVID / f"lesson-{ordinal:03d}-atomic-source-coverage.json"
+            if not cp_path.exists() or not src_path.exists():
+                errors.append(f"LOCAL_BOOK_SOURCE_EVIDENCE_MISSING:{ordinal}")
+                continue
+            cp, src = read(cp_path), read(src_path)
+            expected_pdf = unit_pdf[unit]
+            expected_hash = str(hashes.get(expected_pdf, "")).lower()
+            actual_file = str(src.get("SourcePdfPath") or "").replace("\\", "/")
+            actual_hash = str(src.get("SourcePdfSha256") or "").lower()
+            pages = src.get("SourcePdfPages")
+            parts = src.get("SourceElements")
+            if (cp.get("LessonOrdinal") != ordinal or
+                src.get("LessonOrdinal") != ordinal or
+                cp.get("LessonCode") != code or src.get("LessonCode") != code or
+                cp.get("Status") != "READY_FOR_STAGE_D" or
+                src.get("Status") != "READY_FOR_STAGE_D" or
+                not actual_file.endswith("/" + expected_pdf) or
+                actual_hash != expected_hash or
+                not isinstance(pages, list) or not pages or
+                not isinstance(parts, list) or not parts):
+                errors.append(f"LOCAL_BOOK_SHA_PAGE_OR_ABC_IDENTITY:{ordinal}")
+                continue
+            cp_hash = cp.get("SourceSha256") or cp.get("SourcePdfSha256")
+            if cp_hash and str(cp_hash).lower() != expected_hash:
+                errors.append(f"CHECKPOINT_BOOK_HASH_DRIFT:{ordinal}")
+                continue
+            if not cp_hash:
+                missing_optional_sha.append(ordinal)
+            if ordinal > len(pack.get("Lessons", [])):
+                errors.append(f"CANONICAL_LESSON_MISSING:{ordinal}")
+                continue
+            row = pack["Lessons"][ordinal - 1]
+            translations = row.get("Translations", [])
+            if (row.get("LessonCode") != code or not row.get("SourceLocator") or
+                not any(t.get("CultureCode") == "ar" and
+                        all(t.get(k) for k in ("Title", "Explanation", "WorkedExamples"))
+                        for t in translations)):
+                errors.append(f"ORIGINAL_ARABIC_LESSON_MISMATCH:{ordinal}")
+                continue
+            selected += 1
+            elements += len(parts)
+    if selected != TOTAL:
+        errors.append(f"OWNER_SELECTED_SOURCE_LESSONS_{selected}_OF_{TOTAL}")
+    # Static digital-only scan: no image tags, data URLs or third-party media
+    # embedded in the Arabic learner content. This is not a copyright opinion.
+    rich_codes, externally_embedded = [], []
+    for file in sorted(RICH.glob("uae-g5-*.rich-lesson-v2.json")):
+        for lesson in read(file).get("Lessons", []):
+            code = lesson.get("LessonCode")
+            rich_codes.append(code)
+            prose = json.dumps(lesson, ensure_ascii=False).lower()
+            if any(s in prose for s in ("<img", "<iframe", "<object", "<embed",
+                                         "data:image", "http://", "https://")):
+                externally_embedded.append(code)
+    if len(rich_codes) != TOTAL or len(set(rich_codes)) != TOTAL:
+        errors.append("G5_FIRST_PARTY_RICH_SCOPE_NOT_127")
+    if externally_embedded:
+        errors.append("G5_RICHV2_EXTERNAL_EMBEDDED_ASSET_REVIEW_REQUIRED")
+    # Owner acceptance permits first-party publication; UNKNOWN remains UNKNOWN.
+    return report(
+        "source", "PASS" if not errors else "FAIL", errors,
+        sourceReleaseBasis="OWNER_APPROVED_FIRST_PARTY_LOCAL_BOOK_LIMITED_SCOPE",
+        selectedLocalBookLessons=selected,
+        selectedBookSha256=hashes,
+        sourceElementRowsRecorded=elements,
+        sourceElementFullDenominator=None,
+        equivalentElementsVerified=None,
+        semanticParityPercent="UNKNOWN",
+        official2026_2027TextbookParity="UNKNOWN_NOT_CERTIFIED",
+        ministrySourceCertificationClaim=False,
+        ownerFirstPartyApproval=owner_scope,
+        embeddedExternalRichMediaCount=len(externally_embedded),
+        originalArabicRichLessonCount=len(rich_codes),
+        independentThirdPartyRightsCertified=False,
+        humanRtlReviewCertified=False,
+        optionalCheckpointHashesNotRepeated=missing_optional_sha,
+        releaseScopeAllowed=not errors,
+        note=("Same first-party owner-release scope as UAE G1, G2, G3. "
+              "2026-27 textbook order and exercise-level parity are NOT certified.")
+    )
 
 
 def audit_final():
