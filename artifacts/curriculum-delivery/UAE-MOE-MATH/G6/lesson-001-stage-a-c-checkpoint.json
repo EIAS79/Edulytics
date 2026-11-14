@@ -23,15 +23,16 @@
     ]
   },
   "stageB": {
-    "status": "PARTIAL",
+    "status": "PARTIAL_CANDIDATE_ONLY",
     "implemented": [
-      "Original Arabic translation added to existing Factors and Multiples lesson; original English content and all legacy IDs preserved",
+      "Original Arabic authored draft stored at artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json, while immutable 59-lesson English pack restored byte-identically",
       "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down"
     ],
     "issues": [
       "No effective U01:L01 Arabic learner binding yet",
       "Visual number line and prime factor trees need actual rendered lesson models; text alone is not visual evidence",
-      "Pack-level AcademicLanguage remains en to avoid breaking other 58 lessons"
+      "Pack-level AcademicLanguage remains en to avoid breaking other 58 lessons",
+      "Original Arabic G6 L01 remains CANDIDATE_ONLY; no runtime content change until new Grade6 Arabic source-version and safe identity bridge"
     ]
   },
   "stageC": {
@@ -82,9 +83,13 @@
   "githubBranch": "curriculum/uae-g6-common-student-first-abc-20261114",
   "modifiedPaths": [
     "docs/curriculum/EDULYTICS_UAE_GRADE_6_STAGE_A_B_C_STRICT_TEMPLATE_EXECUTION_PLAN.md",
-    "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g6-general-t1-ogl-v1.lesson-content-pack.json"
+    "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json"
   ],
   "checkpointState": "A_C_EXPLICIT_GAP",
   "nextLessonAllowed": false,
-  "testsRun": "WRITTEN_NOT_RUN except in-memory arithmetic and JSON validation; no CI/.NET"
+  "testsRun": "WRITTEN_NOT_RUN except in-memory arithmetic and JSON validation; no CI/.NET",
+  "githubPr": 637,
+  "expectedLegacyMainPackContentSha": "ce794587ff6c386bd212c9794e24c53a620a6e53",
+  "legacyMainPackRestored": true,
+  "ciObservation": "Auto-triggered PR workflows initially failed source parity on modified legacy pack; source pack reverted to exact original blob. Follow-up CI on new HEAD not yet measured."
 }
