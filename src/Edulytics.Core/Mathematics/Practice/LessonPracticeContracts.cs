@@ -8959,6 +8959,15 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u05.l11.exact_decimal_by_whole","uae.g5.u05.l11.round_decimal_quotient_hundredth"],
             "G6_GENERAL_STUDENT_U03L09_PRINTED227_234",
             "READY_VERIFIED",Version);
+        // G6 General Arabic U03:L10: exact decimal-by-decimal quotient
+        // using the already existing Grade5 exact unit-rate/quotient kernel.
+        // Nonterminating rounded word problems use teacher review in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128","decimal.arithmetic",
+            "DECIMAL_DIVISOR_CONVERSION_AND_EXACT_QUOTIENT",
+            ["uae.g5.u05.l13.exact_decimal_divide","uae.g5.u05.l13.contextual_decimal_unit_rate"],
+            "G6_GENERAL_STUDENT_U03L10_PRINTED235_242",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

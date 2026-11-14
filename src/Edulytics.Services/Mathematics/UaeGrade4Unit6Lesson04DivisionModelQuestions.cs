@@ -70,6 +70,23 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
             AssessmentItemType.Numeric,
             new Dictionary<string,int>{{"dividendThousandths",n},{"divisorHundredths",d}});
     }
+    // Grade6 Arabic General U03:L10 extends the existing Grade5 decimal
+    // division kernel with two millionth-scaled positive operands.
+    // Preserve exact arithmetic; non-terminating results require a separately
+    // requested approximation and are NOT certified as exact here.
+    private static bool ValidG6DecimalByDecimal(string f,IReadOnlyDictionary<string,int> p,
+        out decimal quotient)
+    {
+        quotient=0m;
+        if(f is not (G5DivideExact or G5DivideContext) ||
+           !p.TryGetValue("g6DividendMillionths",out int dividend) ||
+           !p.TryGetValue("g6DivisorMillionths",out int divisor) ||
+           dividend is <1 or >2000000000 || divisor is <1 or >2000000000)
+            return false;
+        quotient=(decimal)dividend/divisor;
+        return Math.Round(quotient,6,MidpointRounding.AwayFromZero)==quotient;
+    }
+
     private static bool ValidG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,out int n,out int d)
     {
         n=d=0;
@@ -80,6 +97,13 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static string SolveG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p)
     {
+        if(p.ContainsKey("g6DividendMillionths"))
+        {
+            if(!ValidG6DecimalByDecimal(f,p,out decimal q))
+                throw new InvalidOperationException("Invalid Grade6 exact decimal-by-decimal operands.");
+            return q.ToString("0.######",CultureInfo.InvariantCulture);
+        }
+
         if(!ValidG5DecimalQuotient(f,p,out int n,out int d))
             throw new InvalidOperationException("Invalid decimal-by-decimal division parameters");
         int qMilli=n*100/d;
@@ -88,6 +112,20 @@ internal static class UaeGrade4Unit6Lesson04DivisionModelQuestions
     }
     private static bool VerifyG5DecimalQuotient(string f,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(p.ContainsKey("g6DividendMillionths"))
+        {
+            if(!ValidG6DecimalByDecimal(f,p,out var expected)||string.IsNullOrWhiteSpace(answer))return false;
+            string normalized=new(answer.Trim().Select(c=>c switch{
+                >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+                >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+                '٫'=>'.',_=>c
+            }).ToArray());
+            if(normalized.Length>36||
+               !normalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
+            return decimal.TryParse(normalized,NumberStyles.AllowDecimalPoint,
+                CultureInfo.InvariantCulture,out var answerValue)&&answerValue==expected;
+        }
+
         if(!ValidG5DecimalQuotient(f,p,out int n,out int d)||
            string.IsNullOrWhiteSpace(answer))return false;
         string normalized=new(answer.Trim().Select(ch=>ch switch

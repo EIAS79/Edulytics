@@ -16,9 +16,9 @@
   "verifiedTocInstructionalItemCount": 128,
   "sourceBodyCoverageComplete": false,
   "gradeLessonCount": 128,
-  "closedLessons": 31,
-  "firstIncompleteLessonOrdinal": 32,
-  "lastClosedLessonOrdinal": 31,
+  "closedLessons": 32,
+  "firstIncompleteLessonOrdinal": 33,
+  "lastClosedLessonOrdinal": 32,
   "readyForStageD": false,
   "unitStates": [
     {
@@ -38,9 +38,9 @@
     {
       "unit": 3,
       "sourceIndexElements": 10,
-      "closed": 9,
-      "readyForStageD": false,
-      "status": "IN_PROGRESS"
+      "closed": 10,
+      "readyForStageD": true,
+      "status": "ABC_COMPLETE_READY_FOR_STAGE_D"
     },
     {
       "unit": 4,
@@ -98,17 +98,17 @@
     }
   ],
   "current": {
-    "unit": 3,
-    "lesson": 10,
-    "title": "قسمة الأعداد العشرية على الأعداد العشرية",
+    "unit": 4,
+    "lesson": 1,
+    "title": "تقدير ناتج ضرب الكسور",
     "status": "SOURCE_PENDING",
     "sourcePdfPages": [
-      276,
-      283
+      294,
+      301
     ],
     "sourcePagesPrinted": [
-      235,
-      242
+      253,
+      260
     ]
   },
   "sourceIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/source-index.json",
@@ -126,7 +126,10 @@
     "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs.",
     "U01:L01 first lesson READY_FOR_STAGE_D based on Grade5-equivalent authored/static A-B-C closure criteria; no .NET/CI manually run, no StageD/production migration. U01:L02 is next; old English 59 intact."
   ],
-  "A_B_C_Ready": 31,
+  "A_B_C_Ready": 32,
   "A_B_C_InProgress": 1,
-  "lastClosedContentScope": "G6 U03L09 printed227-234 PDF268-275, original Arabic exact and rounded whole-divisor decimal division"
+  "lastClosedContentScope": "G6 Unit3 fully reviewed 10/10 from selected local Arabic book; last source pages235–242 PDF276–283 exact decimal division kernel reused/extended; Stage D pending.",
+  "unit3A_B_C_ClosedLessons": 10,
+  "unit3StageD": "NOT_RUN",
+  "unit3HistoricalEnglishPackPreserved": true
 }

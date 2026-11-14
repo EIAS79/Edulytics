@@ -765,6 +765,12 @@ public sealed class ExactSkillContractQuestionEngine
                      string.Equals(problem.Family,"uae.g5.u05.l11.round_decimal_quotient_hundredth",StringComparison.Ordinal)))
                     problem=LocalizeG6DecimalByWhole(problem);
 
+                if ((string.Equals(fingerprintNamespace,"PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128",StringComparison.Ordinal) ||
+                     string.Equals(scopeKey,"PED:UAE-MOE-MATH:L6:GENERAL:03:10:STUDENT-AR-128",StringComparison.Ordinal)) &&
+                    (string.Equals(problem.Family,"uae.g5.u05.l13.exact_decimal_divide",StringComparison.Ordinal) ||
+                     string.Equals(problem.Family,"uae.g5.u05.l13.contextual_decimal_unit_rate",StringComparison.Ordinal)))
+                    problem=LocalizeG6DecimalByDecimal(problem);
+
                 var answer = Solve(problem);
 
                 if (!Verify(problem.Family, problem.Parameters, answer))
@@ -5647,6 +5653,58 @@ public sealed class ExactSkillContractQuestionEngine
             Parameters=x,
             Prompt=$"قدّر ناتج {a} × {b} بعد تقريب العامل الأول لأقرب {item.PlaceA} والثاني لأقرب {item.PlaceB}. اكتب عددًا صحيحًا.",
             Solution="قرّب كل عامل إلى المنزلة المحددة ثم اضرب، ولا تساوِ التقدير بالناتج الدقيق."
+        };
+    }
+
+    private static ExactProblem LocalizeG6DecimalByDecimal(ExactProblem problem)
+    {
+        var cases=new (int Dividend,int Divisor)[] {
+            (36000000,9000000),
+            (36000000,900000),
+            (36000000,90000),
+            (36000000,9000),
+            (36000000,900),
+            (3600000,900000),
+            (360000,90000),
+            (36000,9000),
+            (3600,900),
+            (1710000,900000),
+            (2640000,600000),
+            (52000000,400000),
+            (9000,180000),
+            (11200000,70000),
+            (5600000,14000),
+            (6240000,200000000),
+            (400000,25000000),
+            (680000,3400000),
+            (3690000,300000),
+            (33800,1300000),
+            (167280,3400000),
+            (6300,7000),
+            (1440000,400000),
+            (16240000,140000),
+            (600000,2400),
+            (96600000,420000),
+            (13500000,30000),
+            (120000,150000),
+            (8400000,20000),
+            (8424000,360000),
+            (54400000,1700000),
+            (2070000,900000),
+            (1080000,2700000),
+            (242000,400000)
+        };
+        var p=problem.Parameters;
+        var selected=cases[(p["dividendThousandths"]*11+p["divisorHundredths"])%cases.Length];
+        var values=p.ToDictionary(x=>x.Key,x=>x.Value);
+        values["g6DividendMillionths"]=selected.Dividend;
+        values["g6DivisorMillionths"]=selected.Divisor;
+        var dividend=(selected.Dividend/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        var divisor=(selected.Divisor/1000000m).ToString("0.######",CultureInfo.InvariantCulture);
+        return problem with{
+            Parameters=values,
+            Prompt=$"احسب {dividend} ÷ {divisor} بدقة؛ حوّل المقسوم عليه إلى عدد كلي بضرب كلا الطرفين بقوة عشرة واحدة.",
+            Solution="اضرب المقسوم والمقسوم عليه بالقوة العشرية نفسها ثم اقسم، وأكمل الأصفار اللازمة، وتحقق بضرب الحاصل في المقسوم عليه."
         };
     }
 
