@@ -9088,6 +9088,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l06.work_backward_temperature","uae.g6.u05.l06.work_backward_schedule","uae.g6.u05.l05.compare_signed_integers"],
             "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L06_PRINTED367_369",
             "READY_VERIFIED",Version);
+        // Grade6 Arabic U05L07: signed rational comparison and position relative to zero; student lines teacher assessed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:05:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:05:07:STUDENT-AR-128","number.rational.signed_number_line",
+            "NUMBER_LINE_SIGNED_RATIONAL_EXPLORATION_AND_EXACT_COMPARISON",
+            ["uae.g6.u05.l07.compare_signed_rationals","uae.g6.u05.l07.rational_relative_zero"],
+            "G6_ARABIC_2025_2026_STUDENT_BOOK2_U05L07_PRINTED371_374",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

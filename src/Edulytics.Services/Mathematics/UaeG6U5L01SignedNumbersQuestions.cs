@@ -16,14 +16,39 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     internal const string SignedOrderSet="uae.g6.u05.l05.order_integer_set";
     internal const string WorkBackwardTemperature="uae.g6.u05.l06.work_backward_temperature";
     internal const string WorkBackwardSchedule="uae.g6.u05.l06.work_backward_schedule";
+    internal const string SignedRationalCompare="uae.g6.u05.l07.compare_signed_rationals";
+    internal const string SignedRationalSide="uae.g6.u05.l07.rational_relative_zero";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule;
+    internal static bool Supports(string? family)=>family is Position or Opposite or GraphSetExtremum or AbsoluteDistance or AbsoluteExpression or SignedCompare or SignedOrderSet or WorkBackwardTemperature or WorkBackwardSchedule or SignedRationalCompare or SignedRationalSide;
     internal static Item Build(string family,Random random)
     {
         if(!Supports(family))throw new InvalidOperationException("Unsupported signed-number family.");
 
         ArgumentNullException.ThrowIfNull(random);
+        if(family==SignedRationalCompare)
+        {
+            int[] denominators=[2,4,5,8,10,12];
+            int b=denominators[random.Next(denominators.Length)];
+            int d=denominators[random.Next(denominators.Length)];
+            int a=random.Next(-2*b,2*b+1),c=random.Next(-2*d,2*d+1);
+            return new Item(family,
+                $"قارن {a}/{b} و{c}/{d} على خط الأعداد. اكتب الرمز الصحيح (< أو > أو =).",
+                "مثّل العددين بمقياس متساوٍ حول الصفر، أو قارن البسطين بعد توحيد المقامين؛ العدد الأيمن أكبر.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int>{{"a",a},{"b",b},{"c",c},{"d",d}});
+        }
+        if(family==SignedRationalSide)
+        {
+            int[] denominators=[2,4,5,8,10];
+            int d=denominators[random.Next(denominators.Length)];
+            int n=random.Next(-2*d,2*d+1);
+            return new Item(family,
+                $"على خط أعداد مرجعه صفر، هل {n}/{d} أكبر من الصفر أو أصغر منه أو يساويه؟ اكتب > أو < أو =.",
+                "البسط السالب يعني نقطة يسار الصفر، والموجب يمينه؛ البسط صفر عند المرجع.",
+                AssessmentItemType.ShortAnswer,
+                new Dictionary<string,int>{{"n",n},{"d",d}});
+        }
         if(family==WorkBackwardTemperature)
         {
             int final=random.Next(-15,16),change=random.Next(-25,26);
@@ -112,6 +137,30 @@ internal static class UaeG6U5L01SignedNumbersQuestions
             AssessmentItemType.ShortAnswer,p);
     }
 
+
+
+    // Reuse the G6 signed-number engine for bounded rational positions and comparisons.
+    // Only exact symbols are auto-graded. Student-drawn scales and points remain teacher-reviewed.
+    private static bool TrySignedRationalCompare(IReadOnlyDictionary<string,int>? p,out string symbol)
+    {
+        symbol="";
+        if(p is null||p.Count!=4||!p.TryGetValue("a",out int a)||
+           !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+           !p.TryGetValue("d",out int d)||b is <2 or >12||d is <2 or >12||
+           a < -2*b||a>2*b||c < -2*d||c>2*d)return false;
+        long left=(long)a*d,right=(long)c*b;
+        symbol=left<right?"<":left>right?">":"=";
+        return true;
+    }
+    private static bool TrySignedRationalSide(IReadOnlyDictionary<string,int>? p,out string symbol)
+    {
+        symbol="";
+        if(p is null||p.Count!=2||!p.TryGetValue("n",out int n)||
+           !p.TryGetValue("d",out int d)||d is <2 or >10||
+           n < -2*d||n>2*d)return false;
+        symbol=n<0?"<":n>0?">":"=";
+        return true;
+    }
 
     // U05L06 teacher-led reverse-step inquiry; only temperature and schedule numeric components are auto-scored.
     private static bool TryBackTemperature(IReadOnlyDictionary<string,int>? p,out int start)
@@ -208,6 +257,12 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static string Solve(string family,IReadOnlyDictionary<string,int> p)
     {
+        if(family==SignedRationalCompare)
+            return TrySignedRationalCompare(p,out string rationalSymbol)?rationalSymbol:
+                throw new InvalidOperationException("Invalid signed rational comparison.");
+        if(family==SignedRationalSide)
+            return TrySignedRationalSide(p,out string zeroSymbol)?zeroSymbol:
+                throw new InvalidOperationException("Invalid rational zero comparison.");
         if(family==WorkBackwardTemperature)
             return TryBackTemperature(p,out int n)?n.ToString(CultureInfo.InvariantCulture):
                 throw new InvalidOperationException("Invalid reverse-temperature parameters.");
@@ -224,6 +279,15 @@ internal static class UaeG6U5L01SignedNumbersQuestions
     }
     internal static bool Verify(string family,IReadOnlyDictionary<string,int> p,string? answer)
     {
+        if(family is SignedRationalCompare or SignedRationalSide)
+        {
+            if(string.IsNullOrWhiteSpace(answer)||answer.Length>24)return false;
+            string symbol;
+            if(family==SignedRationalCompare){
+                if(!TrySignedRationalCompare(p,out symbol))return false;
+            }else if(!TrySignedRationalSide(p,out symbol))return false;
+            return string.Equals(answer.Trim(),symbol,StringComparison.Ordinal);
+        }
         if(family==WorkBackwardTemperature)
         {
             if(!TryBackTemperature(p,out int n)||string.IsNullOrWhiteSpace(answer)||
