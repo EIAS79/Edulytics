@@ -9156,6 +9156,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g4.u07.l07.order_multiply_before_add","uae.g6.u06.l03.sum_sub_left_right","uae.g6.u06.l03.division_multiplication_left_right","uae.g6.u06.l03.parenthesis_first","uae.g6.u06.l03.exponent_then_multiply","uae.g6.u06.l03.two_item_cost","uae.g6.u06.l03.first_operation"],
             "G6_ARABIC_2025_2026_BOOK2_U06L03_PRINTED435_442",
             "READY_VERIFIED",Version);
+        // G6 U06L04: bounded exact substitution, multi-variable formulas,
+        // decimal/fraction powers, geometric volume and contextual cost.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:04:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:04:STUDENT-AR-128","algebra.variables.evaluate_expressions",
+            "SUBSTITUTE_ONE_AND_TWO_VARIABLES_FRACTION_SQUARE_CUBE_COST",
+            ["uae.g6.u06.l04.substitute_add","uae.g6.u06.l04.substitute_difference","uae.g6.u06.l04.substitute_product","uae.g6.u06.l04.substitute_division","uae.g6.u06.l04.substitute_linear","uae.g6.u06.l04.fraction_squared","uae.g6.u06.l04.two_variable_expression","uae.g6.u06.l04.cube_volume","uae.g6.u06.l04.money_remaining"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L04_PRINTED443_450",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
