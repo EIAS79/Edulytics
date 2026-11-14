@@ -8840,6 +8840,20 @@ public static class LessonPracticeContractRegistry
             "UAE_G6_AR_LOCAL_STUDENT_U02_L03_PRINTED_101_108",
             "READY_VERIFIED",Version)
         { SkillIds = ["decimals.place_value","fractions.equivalent"] };
+        // G6 Arabic Student Book U02 L04 printed109-116:
+        // BOTH directions covered by existing G4 decimal-place and G5 percent
+        // exact families, without a duplicate conversion engine.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:02:04:STUDENT-AR-128"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:02:04:STUDENT-AR-128","decimals.place_value",
+            "PERCENT_TO_DECIMAL_AND_DECIMAL_TO_PERCENT",
+            [
+                "uae.g5.u01.l03.hundredths_to_percent",
+                "uae.g5.u01.l03.tenths_to_percent",
+                "uae.g4.u10.l03.hundredths_decimal",
+                "uae.g4.u10.l02.tenths_decimal"
+            ],
+            "UAE_G6_AR_LOCAL_STUDENT_U02_L04_PRINTED_109_116",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
