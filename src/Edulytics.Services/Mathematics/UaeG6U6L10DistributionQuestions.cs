@@ -8,9 +8,11 @@ internal static class UaeG6U6L10DistributionQuestions
     internal const string Expand="uae.g6.u06.l10.expand_two_term",Factor="uae.g6.u06.l10.factor_common",
         Mixed="uae.g6.u06.l10.mixed_decimal_distribute",Equivalence="uae.g6.u06.l10.distribution_true_false";
     internal const string Combine="uae.g6.u06.l11.combine_like_terms",Pair="uae.g6.u06.l11.equivalent_pair",Tiles="uae.g6.u06.l11.count_variable_tiles";
+    internal const string TwoVarCombine="uae.g6.u06.l12.combine_two_variables",TwoVarExpand="uae.g6.u06.l12.distribute_two_variables",
+        TwoVarFactor="uae.g6.u06.l12.factor_two_variables",GroupedTickets="uae.g6.u06.l12.grouped_tickets_cost";
     internal sealed record Item(string Family,string Prompt,string Solution,
         AssessmentItemType ItemType,IReadOnlyDictionary<string,int> Parameters);
-    internal static bool Supports(string? f)=>f is Expand or Factor or Mixed or Equivalence or Combine or Pair or Tiles;
+    internal static bool Supports(string? f)=>f is Expand or Factor or Mixed or Equivalence or Combine or Pair or Tiles or TwoVarCombine or TwoVarExpand or TwoVarFactor or GroupedTickets;
     private static string Norm(string? s)=>new string((s??"").Where(ch=>!char.IsWhiteSpace(ch))
         .Select(ch=>ch switch{
             >= '٠' and <= '٩'=>(char)('0'+ch-'٠'),
@@ -25,6 +27,38 @@ internal static class UaeG6U6L10DistributionQuestions
     {
         result="";
         if(!Supports(family)||p is null)return false;
+        if(family is TwoVarCombine or TwoVarExpand or TwoVarFactor or GroupedTickets)
+        {
+            if(family==GroupedTickets)
+            {
+                if(p.Count!=2||!p.TryGetValue("q",out int q)||
+                    !p.TryGetValue("fee",out int fee)||q is <2 or >8||
+                    fee is <1 or >30)return false;
+                result=$"{q+1}س+{q*fee}";return true;
+            }
+            if(family==TwoVarFactor)
+            {
+                if(p.Count!=2||!p.TryGetValue("ax",out int ax)||
+                    !p.TryGetValue("by",out int by)||ax is <2 or >120||
+                    by is <2 or >120)return false;
+                int g=Gcd(ax,by);
+                if(g<2)return false;
+                result=$"{g}({(ax/g==1?"":(ax/g).ToString(CultureInfo.InvariantCulture))}س+{(by/g==1?"":(by/g).ToString(CultureInfo.InvariantCulture))}ص)";
+                return true;
+            }
+            if(family==TwoVarExpand)
+            {
+                if(p.Count!=3||!p.TryGetValue("k",out int k)||
+                   !p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
+                   k is <2 or >10||a is <1 or >12||b is <1 or >12)return false;
+                result=$"{k*a}س+{k*b}ص";return true;
+            }
+            if(p.Count!=4||!p.TryGetValue("a",out int x1)||
+               !p.TryGetValue("b",out int y1)||!p.TryGetValue("c",out int x2)||
+               !p.TryGetValue("d",out int y2)||x1 is <1 or >15||
+               x2 is <1 or >15||y1 is <1 or >15||y2 is <1 or >15)return false;
+            result=$"{x1+x2}س+{y1+y2}ص";return true;
+        }
         if(family is Combine or Pair or Tiles)
         {
             if(!p.TryGetValue("a",out int a)||!p.TryGetValue("b",out int b)||
@@ -79,7 +113,34 @@ internal static class UaeG6U6L10DistributionQuestions
         ArgumentNullException.ThrowIfNull(r);
         Dictionary<string,int> p;
         string question;
-        if(family is Combine or Pair or Tiles)
+        if(family is TwoVarCombine or TwoVarExpand or TwoVarFactor or GroupedTickets)
+        {
+            if(family==GroupedTickets)
+            {
+                int q=r.Next(2,9),fee=r.Next(1,31);
+                p=new(){{"q",q},{"fee",fee}};
+                question=$"يدفع {q} أشخاص ثمن دخول س ورسوم عرض {fee} لكل منهم، وشخص آخر يدفع س فقط. بسّط التعبير {q}(س+{fee})+س.";
+            }
+            else if(family==TwoVarFactor)
+            {
+                int k=r.Next(2,11),a=r.Next(1,12),b=r.Next(1,12);
+                p=new(){{"ax",k*a},{"by",k*b}};
+                question=$"حلل {k*a}س+{k*b}ص بإخراج العامل المشترك الأكبر.";
+            }
+            else if(family==TwoVarExpand)
+            {
+                int k=r.Next(2,11),a=r.Next(1,13),b=r.Next(1,13);
+                p=new(){{"k",k},{"a",a},{"b",b}};
+                question=$"وسّع {k}({a}س+{b}ص) باستخدام خاصية التوزيع.";
+            }
+            else
+            {
+                int a=r.Next(1,16),b=r.Next(1,16),c=r.Next(1,16),d=r.Next(1,16);
+                p=new(){{"a",a},{"b",b},{"c",c},{"d",d}};
+                question=$"بسّط {a}س+{b}ص+{c}س+{d}ص واجمع الحدود المتشابهة.";
+            }
+        }
+        else if(family is Combine or Pair or Tiles)
         {
             int a=r.Next(1,16),b=r.Next(1,31),c=r.Next(1,16);
             p=new(){{"a",a},{"b",b},{"c",c}};
@@ -133,6 +194,28 @@ internal static class UaeG6U6L10DistributionQuestions
            !TryAnswer(f,p,out string expected))return false;
         string answer=Norm(response),wanted=Norm(expected);
         if(answer==wanted)return true;
+        if(f==TwoVarExpand)
+        {
+            int k=p["k"],a=p["a"],b=p["b"];
+            return answer==$"{k*a}*س+{k*b}*ص";
+        }
+        if(f==TwoVarCombine)
+        {
+            int a=p["a"],b=p["b"],c=p["c"],d=p["d"];
+            return answer==$"{a+c}*س+{b+d}*ص";
+        }
+        if(f==TwoVarFactor)
+        {
+            int ax=p["ax"],by=p["by"],g=Gcd(ax,by);
+            string x=ax/g==1?"":(ax/g).ToString(CultureInfo.InvariantCulture);
+            string y=by/g==1?"":(by/g).ToString(CultureInfo.InvariantCulture);
+            return answer==$"{g}*({x}س+{y}ص)";
+        }
+        if(f==GroupedTickets)
+        {
+            int q=p["q"],fee=p["fee"];
+            return answer==$"{q+1}*س+{q*fee}";
+        }
         if(f==Combine)
         {
             int a=p["a"],b=p["b"],c=p["c"];

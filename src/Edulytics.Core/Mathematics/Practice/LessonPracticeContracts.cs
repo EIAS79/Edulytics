@@ -9215,6 +9215,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u06.l09.expand_variable","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l05.repeated","uae.g6.u06.l11.combine_like_terms","uae.g6.u06.l11.equivalent_pair","uae.g6.u06.l11.count_variable_tiles"],
             "G6_ARABIC_2025_2026_BOOK2_U06L11_PRINTED487_488",
             "READY_VERIFIED",Version);
+        // G6 Arabic U06L12 equivalence: combine two variables, distribute, factor and contextual costs.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:06:12:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:06:12:STUDENT-AR-128","algebra.equivalent_expressions",
+            "ONE_TWO_VARIABLE_LIKE_TERMS_DISTRIBUTION_FACTORING_COST",
+            ["uae.g6.u06.l11.combine_like_terms","uae.g6.u06.l10.expand_two_term","uae.g6.u06.l10.factor_common","uae.g6.u06.l09.evaluate_distributive","uae.g6.u06.l12.combine_two_variables","uae.g6.u06.l12.distribute_two_variables","uae.g6.u06.l12.factor_two_variables","uae.g6.u06.l12.grouped_tickets_cost"],
+            "G6_ARABIC_2025_2026_BOOK2_U06L12_PRINTED489_496",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
