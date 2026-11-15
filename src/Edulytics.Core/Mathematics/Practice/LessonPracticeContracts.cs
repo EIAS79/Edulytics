@@ -9018,6 +9018,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.complementary_angle", "geometry.angles.supplementary", "geometry.angles.algebraic_supplementary"],
             "UAE_G7_ARABIC_U07L02_PDF_13_24",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/03, student 02-07.pdf printed 555-574.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:03:TRIANGLE-CLASSIFY-AND-ANGLE-SUM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:03:TRIANGLE-CLASSIFY-AND-ANGLE-SUM", "geometry.polygons.missing_interior_angle",
+            "TRIANGLE-CLASSIFY-AND-ANGLE-SUM",
+            ["usccss.g5.u07.l08.source_triangle_side_and_angle_types", "uae.g5.u12.l03.triangle_side_type", "uae.g5.u12.l03.triangle_angle_type", "usccss.g7.u07.triangle_side_feasible"],
+            "UAE_G7_ARABIC_U07L03_PDF_25_44",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
