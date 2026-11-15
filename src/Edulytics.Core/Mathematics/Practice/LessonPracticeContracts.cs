@@ -8788,6 +8788,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u05.signed_rational_add_subtract", "uae.g6.u05.l01.opposite_integer", "usccss.g6.u07.l02.signed_opposites_values"],
             "UAE_G7_GENERAL_ARABIC_U03L02_PRINTED_203_210",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L03, student printed 215-221:
+        // signed subtraction as adding opposite with existing directed-operation family.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:03:SUBTRACT-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:03:SUBTRACT-INTEGERS", "supporting.number.directed_operations",
+            "SUBTRACT_INTEGER_AS_ADD_OPPOSITE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "uae.g6.u05.l01.opposite_integer", "usccss.g6.u07.l02.signed_opposites_values"],
+            "UAE_G7_GENERAL_ARABIC_U03L03_PRINTED_215_221",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
