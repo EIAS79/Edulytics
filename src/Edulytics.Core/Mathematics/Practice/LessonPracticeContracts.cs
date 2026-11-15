@@ -9154,6 +9154,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.probability.sample_space_count", "supporting.statistics.experimental_probability", "probability.simple.favourable_over_total.exact"],
             "UAE_G7_ARABIC_U10L04_PDF_35_42",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/05, student 03-10.pdf printed 779-786.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:05:FUNDAMENTAL-COUNTING-PRINCIPLE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:05:FUNDAMENTAL-COUNTING-PRINCIPLE", "supporting.probability_statistics",
+            "FUNDAMENTAL-COUNTING-PRINCIPLE",
+            ["supporting.probability.sample_space_count", "g12.precalculus.u11.l05.permutations", "supporting.probability.independent_product"],
+            "UAE_G7_ARABIC_U10L05_PDF_51_58",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
