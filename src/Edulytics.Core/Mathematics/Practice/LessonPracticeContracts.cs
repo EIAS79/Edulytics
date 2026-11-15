@@ -8667,6 +8667,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables"],
             "UAE_G7_GENERAL_ARABIC_BOOK1_U01L04_PRINTED_33_40",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L05; student PDF85-92; plot/ratio classification
+        // Reuse existing exact table/origin families, teacher review drawing.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:05:GRAPH-PROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:05:GRAPH-PROPORTIONAL-RELATIONSHIPS", "proportions.equivalent_ratios",
+            "GRAPH_PROPORTIONAL_RELATIONSHIPS_ORIGIN_SLOPE",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L05_P45_52",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
