@@ -5875,7 +5875,7 @@ public sealed class ExactSkillContractQuestionEngine
             (97,33,1,1),(282,80,10,1),(719,20,10,1),(175,84,1,1)
         };
         var p=problem.Parameters;
-        var item=items[(p["aHundredths"]+p["bHundredths"])%items.Length];
+        var item=items[(p["leftHundredths"]+p["rightHundredths"])%items.Length];
         var x=p.ToDictionary(z=>z.Key,z=>z.Value);
         x["g6EstimateProduct"]=1; x["aTenths"]=item.A; x["bTenths"]=item.B;
         x["placeA"]=item.PlaceA; x["placeB"]=item.PlaceB;
@@ -6030,7 +6030,7 @@ public sealed class ExactSkillContractQuestionEngine
         return problem with
         {
             Parameters=args,
-            Prompt=$"احسب ناتج {x} × {pLabel} بدقة باستخدام نمط المنازل العشرية.",
+            Prompt=$"احسب ناتج {x} × {pLabel} بدقة باستخدام قوى العشرة ونمط المنازل العشرية.",
             Solution="عند الضرب في قوى عشرة موجبة تتحرك الفاصلة يمينًا، وفي قوى عشرة سالبة تتحرك يسارًا؛ أضف الأصفار المطلوبة."
         };
     }
@@ -6076,7 +6076,10 @@ public sealed class ExactSkillContractQuestionEngine
             (4800000,75000)
         };
         var p=problem.Parameters;
-        var selected=pairs[(p["leftHundredths"]*13+p["rightHundredths"])%pairs.Length];
+        var basePair=pairs[(p["leftHundredths"]*13+p["rightHundredths"])%pairs.Length];
+        // Keep each distinct source decimal pair distinct after source-scoped localisation.
+        var selected=(First:basePair.First+p["leftHundredths"],
+                      Second:basePair.Second+p["rightHundredths"]);
         var values=p.ToDictionary(x=>x.Key,x=>x.Value);
         values["g6DecimalFirstMillionths"]=selected.First;
         values["g6DecimalSecondMillionths"]=selected.Second;
@@ -6097,7 +6100,7 @@ public sealed class ExactSkillContractQuestionEngine
             (180,2),(120,4),(36,19),(650,18),(710,8)
         };
         var p=problem.Parameters;
-        var choice=samples[(p["aThousandths"]+p["whole"])%samples.Length];
+        var choice=samples[(p["hundredths"]+p["whole"])%samples.Length];
         var values=p.ToDictionary(z=>z.Key,z=>z.Value);
         values["g6DecimalFactorTenThousandths"]=choice.DecimalTenThousandths;
         values["g6WholeFactor"]=choice.Whole;

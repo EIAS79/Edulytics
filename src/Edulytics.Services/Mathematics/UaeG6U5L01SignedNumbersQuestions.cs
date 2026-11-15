@@ -568,7 +568,7 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||
                 !TryCoordinateAnswer(family,p,out string result))return false;
-            return string.Equals(NormalizeSignedAnswer(answer.Trim()),result,StringComparison.Ordinal);
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),NormalizeSignedAnswer(result),StringComparison.Ordinal);
         }
         if(family is MixedRationalCompare or FourRationalOrder)
         {

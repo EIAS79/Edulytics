@@ -47,7 +47,9 @@ internal static class UaeGrade4Unit10DecimalPlaceValueQuestions
                 "اقسم النسبة المئوية على مئة.",AssessmentItemType.Numeric,
                 new Dictionary<string,int>{{"scaledPercent",n}});
         }
-        int[] decimalSamples=[15,16,40,75,90,160,190,340,16800,21000,25000,27500];
+        // The extreme-percent family accepts values strictly below 1% or above 100%.
+        // Do not emit 1.6%, 1.9%, or 3.4%, which violate that family domain.
+        int[] decimalSamples=[15,16,40,75,90,16800,21000,25000,27500,35000,60000];
         int d=decimalSamples[random.Next(decimalSamples.Length)];
         return new Item(f,
             $"حوّل {(d/10000m).ToString("0.####",CultureInfo.InvariantCulture)} إلى نسبة مئوية؛ اكتب العدد دون الرمز.",

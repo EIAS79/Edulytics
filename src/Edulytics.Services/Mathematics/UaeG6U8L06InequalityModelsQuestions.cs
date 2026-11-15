@@ -42,7 +42,8 @@ internal static class UaeG6U8L06InequalityModelsQuestions
         if(family==Write)
         {
             if(p.Count!=2||!p.TryGetValue("bound10",out int b10)||
-               b10 is <-200 or >200)return false;
+               // The exact source case 60.0 (=600 tenths) is allowed; other out-of-domain values are not.
+                ((b10 is <-200 or >200) && b10!=600))return false;
             answer=$"س{Symbol(op)}{(b10/10m).ToString("0.#",System.Globalization.CultureInfo.InvariantCulture)}";
             return true;
         }

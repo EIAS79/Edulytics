@@ -82,7 +82,7 @@ internal static class UaeG6U7L06GuessCheckQuestions
         if(f is Comics or Quiz)
         {
             actual=actual.Replace(",","،");
-            return actual==expected;
+            return actual==Norm(expected).Replace(",","،");
         }
         if(f==Operators)return actual==expected;
         return actual==expected;
