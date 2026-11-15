@@ -9178,6 +9178,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.probability.independent_product", "supporting.probability.conditional_simple", "probability.theoretical.two_coins_exactly_one"],
             "UAE_G7_ARABIC_U10L07_PDF_69_76",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/01, student 03-11.pdf printed 815-822.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:01:PREDICTION-USING-SAMPLE-PROPORTION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:01:PREDICTION-USING-SAMPLE-PROPORTION", "supporting.statistics.charts",
+            "PREDICTION-USING-SAMPLE-PROPORTION",
+            ["uae.g5.u11.l04.sample_scaled_estimate", "supporting.statistics.table_total", "supporting.probability.expected_frequency"],
+            "UAE_G7_ARABIC_U11L01_PDF_5_12",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
