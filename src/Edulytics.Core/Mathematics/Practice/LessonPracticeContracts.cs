@@ -9098,6 +9098,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l16.surface_volume_unit_logic", "geometry.volume.rectangular_prism"],
             "UAE_G7_ARABIC_U09L03_PDF_20_28",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/04, student 04-09-volume-surface-2021-student.pdf printed 689-694.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA", "supporting.geometry.area_volume",
+            "CYLINDER-SURFACE-AREA",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u07.prism_surface_area_base_perimeter_height", "usccss.g6.u01.l12.surface_area_meaning"],
+            "UAE_G7_ARABIC_U09L04_PDF_29_34",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
