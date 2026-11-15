@@ -8654,6 +8654,23 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE Grade 7 General Arabic, Unit 1 Lesson 2 printed pp17–24.
+        // Reuse exact fractional division and rational unit-rate engines.
+        // Teacher grades original diagrams. CI/runtime Stage D NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES",
+                "fractions.divide.fraction_by_fraction",
+                "EXACT_COMPLEX_FRACTION_RECIPROCAL_AND_FRACTIONAL_UNIT_RATE",
+                [
+                    "uae.g6.u04.l09.fraction_divide_fraction",
+                    "uae.g6.u04.l11.mixed_fraction_division_exact",
+                    "usccss.g7.u02.l03.unit_rates_reciprocal"
+                ],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L02_PRINTED_17_24",
+                "READY_VERIFIED",
+                Version);
+
         // UAE Grade 7 General Arabic: owner-selected Student Book Unit 1 Lesson 1.
         // Existing UNIT_RATE numeric families only; source diagrams and written
         // justifications require teacher review. No borrowed English lesson text.
