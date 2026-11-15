@@ -9210,6 +9210,14 @@ public static class LessonPracticeContractRegistry
             ["statistics.center_spread.mean", "statistics.center_spread.median", "statistics.center_spread.range", "supporting.statistics.compare_range", "usccss.g6.u08.l14.mean_median_choice_reasoning"],
             "UAE_G7_ARABIC_U11L04_PDF_39_50",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/05, student 03-11.pdf printed 861-868.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:05:SELECT-APPROPRIATE-DATA-DISPLAY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:05:SELECT-APPROPRIATE-DATA-DISPLAY", "supporting.statistics.charts",
+            "SELECT-APPROPRIATE-DATA-DISPLAY",
+            ["supporting.statistics.charts.mixed", "supporting.statistics.scatter_correlation", "supporting.statistics.table_total", "supporting.statistics.compare_range"],
+            "UAE_G7_ARABIC_U11L05_PDF_51_58",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
