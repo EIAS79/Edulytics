@@ -91,9 +91,9 @@ def check_school_adoption():
       WHERE u."Email"='""" + STUDENT + """' AND s."SchoolCode"='""" + SCHOOL + """';
     """
     adoption, level, key, culture, pathway = one(q, "Grade6 Arabic student adoption").split("|", 4)
-    if not re.fullmatch(UUID, adoption) or level != "5" or culture != "ar" or pathway != "General":
+    if not re.fullmatch(UUID, adoption) or level != "6" or culture != "ar" or pathway != "General":
         raise AssertionError(f"UAE G6 adoption/culture/pathway mismatch: {level}/{culture}/{pathway}")
-    if "UAE" not in key.upper() and "5" not in key:
+    if "UAE" not in key.upper() and "6" not in key:
         raise AssertionError("UAE G6 adoption key not UAE Grade 6")
     return adoption, key
 
@@ -208,7 +208,7 @@ def run():
         "candidateSha": os.environ["GITHUB_SHA"],
         "testedRefKind": os.environ.get("GITHUB_EVENT_NAME"),
         "curriculum": "UAE-MOE-MATH",
-        "grade": 5,
+        "grade": 6,
         "pathway": "General",
         "academicLanguage": "ar",
         "sourceEditionParity": "UNVERIFIED",

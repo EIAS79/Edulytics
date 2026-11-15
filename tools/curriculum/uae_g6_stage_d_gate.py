@@ -137,39 +137,73 @@ def structural():
     })
 
 
-def source():
-    errors = []
-    progress = load(ART / "full-grade-progress.json")
-    index = load(ART / "source-index.json")
-    handoff = ART / "grade6-a-c-handoff.md"
-    if not handoff.is_file():
-        errors.append("MISSING_G6_A_C_HANDOFF")
-    if progress.get("sourceBodyCoverageComplete") is not True:
-        errors.append("G6_STUDENT_BOOK_SOURCE_BODY_COVERAGE_INCOMPLETE")
-    if index.get("fullLessonElementParityVerified") is not True:
-        errors.append("G6_1_TO_1_SOURCE_ELEMENT_PARITY_UNVERIFIED")
-    if not progress.get("sourceSnapshotId"):
-        errors.append("G6_SOURCE_SNAPSHOT_ID_NOT_LOCKED")
-    if any(state.get("readyForStageD") is not True for state in progress.get("unitStates", [])):
-        errors.append("G6_A_C_UNIT_READY_FLAGS_UNRESOLVED")
-    checkpoints = [load(p) for p in sorted(ART.glob("lesson-*-stage-a-c-checkpoint.json"))]
-    if len(checkpoints) != TOTAL:
-        errors.append("G6_A_C_CHECKPOINT_COVERAGE_INCOMPLETE")
-    missing_denominators = sum(
-        1 for d in checkpoints
-        if not isinstance(d.get("sourceElementCount"), int) or
-           not isinstance(d.get("verifiedEquivalentCount"), int)
-    )
-    if missing_denominators:
-        errors.append(f"G6_SOURCE_ITEM_DENOMINATORS_UNKNOWN:{missing_denominators}")
-    return report("source", errors,
-                  notes=["Book year by itself is not a blocker. Do not claim exact original task parity where pages were not inspected.",
-                         "The owner approves academically authored equivalent activities; source gaps stay disclosed."],
-                  metrics={"missingSourceNumeratorsDenominators":missing_denominators,
-                           "sourceBodyComplete":progress.get("sourceBodyCoverageComplete"),
-                           "fullElementParity":index.get("fullLessonElementParityVerified"),
-                           "aCCheckpoints":len(checkpoints)})
 
+def source():
+    # Owner-approved educational equivalence does not certify verbatim source parity.
+    errors=[]
+    ap=ART / "grade6-owner-academic-approval.json"
+    handoff=ART / "grade6-a-c-handoff.md"
+    if not ap.is_file() or not handoff.is_file():
+        return report("source", ["G6_OWNER_APPROVAL_OR_HANDOFF_MISSING"])
+    approved=load(ap)
+    progress=load(ART / "full-grade-progress.json")
+    index=load(ART / "source-index.json")
+    bp=load(BLUEPRINT)
+    pack=load(CONTENT)
+    required={
+        "curriculumCode":"UAE-MOE-MATH","grade":6,"pathway":"General",
+        "language":"ar","scopeIndexedLessons":128,"scopeUnits":12,
+        "academicApprovalAuthority":"PLATFORM_OWNER",
+        "ownerDecision":"APPROVED_FOR_PUBLICATION_AS_EDULYTICS_ORIGINAL_EDUCATIONAL_EQUIVALENCE",
+        "productionApproval":True,"sourceEditionIdentityClaim":"NONE",
+        "originalTextbookExerciseNumeratorDenominator":"NOT_INDEPENDENTLY_VERIFIED",
+    }
+    for k,v in required.items():
+        if approved.get(k)!=v:errors.append("G6_OWNER_APPROVAL_INVALID:"+k)
+    if len(pack.get("Lessons",[]))!=128 or len(bp.get("Lessons",[]))!=128:
+        errors.append("G6_OWNER_APPROVAL_SCOPE_DRIFT")
+    if len(index.get("sourceTocLessons",[]))!=128 or progress.get("closedLessons")!=128:
+        errors.append("G6_INDEX_OR_A_C_SCOPE_DRIFT")
+    for name,path in [
+        ("sourceIndexSha256",ART / "source-index.json"),
+        ("contentPackSha256",CONTENT),
+        ("blueprintSha256",BLUEPRINT)]:
+        if approved.get(name)!=hashlib.sha256(path.read_bytes()).hexdigest():
+            errors.append("G6_SOURCE_FINGERPRINT_DRIFT:"+name)
+    rich_dir=ROOT / "src/Edulytics.Core/Curriculum/LessonContent/RichV2"
+    rich=list(rich_dir.glob("uae-g6-general-*-ar.rich-lesson-v2.json"))
+    if len(rich)!=128:errors.append("G6_RICH_VISUAL_SCOPE_DRIFT")
+    invalid=[
+        p.name for p in rich if
+        "http://" in p.read_text(encoding="utf-8") or
+        "https://" in p.read_text(encoding="utf-8") or
+        any(ext in p.read_text(encoding="utf-8").lower()
+            for ext in (".png",".jpg",".jpeg",".webp"))
+    ]
+    if invalid or approved.get("noExternalRichVisualImageRefsVerified") is not True:
+        errors.append("G6_EXTERNAL_VISUAL_MEDIA_REFERENCE_FOUND")
+    if not (ART / "lesson-088-atomic-source-coverage.json").is_file():
+        errors.append("G6_DISCLOSED_SOURCE_GAP_MISSING")
+    checkpoints=list(ART.glob("lesson-*-stage-a-c-checkpoint.json"))
+    if len(checkpoints)!=128:
+        errors.append("G6_A_C_CHECKPOINTS_INCOMPLETE")
+    unverified=sum(
+        1 for p in checkpoints
+        if not isinstance(load(p).get("sourceElementCount"),int)
+        or not isinstance(load(p).get("verifiedEquivalentCount"),int))
+    return report("source",errors,notes=[
+        "Owner has explicitly approved Edulytics first-party educational equivalence and publication.",
+        "PASS is not a claim of exact source question/image or 2026-2027 edition parity.",
+        "The source gap in Unit 9 remains disclosed, not silently claimed inspected.",
+        "No third-party image/media references in 128 Rich V2 visual model resources.",
+        "Independent .NET, authenticated HTTPS/DB, school roles and browser RTL CI are required.",
+    ],metrics={
+        "approvalMode":"OWNER_APPROVED_EDUCATIONAL_EQUIVALENCE",
+        "exactTextbookParity":"UNKNOWN",
+        "unverifiedSourceQuestionDenominators":unverified,
+        "firstPartyVisualResources":len(rich),
+        "externalRichVisualMediaReferences":len(invalid)
+    })
 
 def final():
     results = {job: os.getenv(job.upper() + "_RESULT", "MISSING")
@@ -189,7 +223,7 @@ def final():
         errors.append("CURRENT_RUN_DOTNET_TRX_MISSING")
     return report("final", errors, notes=[
         "This is only a fail-closed diagnostics workflow. No merge, Render production writes or real student data.",
-        "Teacher/rights review and verified source parity are separately required.",
+        "Owner-approved equivalence is not exact original text parity; third-party media rights remain separate.",
     ], metrics={"jobResults":results})
 
 
