@@ -9066,6 +9066,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient"],
             "UAE_G7_ARABIC_U08L02_PDF_19_26",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/03, student 03-8-10.pdf printed 631-638.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:03:COMPOSITE-FIGURES-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:03:COMPOSITE-FIGURES-AREA", "geometry.perimeter_area",
+            "COMPOSITE-FIGURES-AREA",
+            ["usccss.g6.u01.l06.composite_area", "uae.g3.u14.l08.composite_area", "supporting.geometry.circle_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U08L03_PDF_27_34",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
