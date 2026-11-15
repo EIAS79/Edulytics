@@ -8890,6 +8890,14 @@ public static class LessonPracticeContractRegistry
             ["sequences.arithmetic.nth_term.exact", "supporting.sequences.next_term"],
             "UAE_G7_ARABIC_U05L02_PDF_23_32",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/03, student 02-5-6.pdf printed 367-374.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:03:PROPERTIES-OF-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:03:PROPERTIES-OF-OPERATIONS", "supporting.algebra.expressions",
+            "PROPERTIES-OF-OPERATIONS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L03_PDF_33_40",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",

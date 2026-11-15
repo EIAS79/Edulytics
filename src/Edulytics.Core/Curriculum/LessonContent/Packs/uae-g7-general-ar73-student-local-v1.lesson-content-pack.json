@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u05l02-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u05l03-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1018,6 +1018,35 @@
           "StepByStepSolutions": "1. اكتب أول أربعة حدود بالترتيب؛ 2. احسب الفروق بين الحدود المتتالية؛ 3. إذا كانت الفروق ثابتة حدد د؛ 4. اكتب حن=ح١+(ن−١)د؛ 5. عوض عن الرتبة المطلوبة وأوجد الحد؛ 6. تحقق بتعويض ن=١ ون=٢ ثم فسر الرسم",
           "CommonMistakes": "خطأ: الخلط بين رتبة الحد وقيمته. لماذا خطأ: الرتبة ١ تختلف عن ح١. التصويب: استخدم جدول عمود الرتبة والقيمة. خطأ: استخدام ن×د دون تعديل أول حد. لماذا خطأ: يؤدي إلى تغيير قيمة ح١. التصويب: حن=ح١+(ن−١)د. خطأ: اعتبار كل نمط حسابيًا. لماذا خطأ: هناك أنماط بضرب أو تغير فرق. التصويب: اختبر فروق ثلاث قيم متتالية.",
           "QuickSummary": "المتتابعة الحسابية فرقها ثابت. قاعدة نونية تسمح بالتنبؤ دون تكرار طويل. أنواع الأنماط الأخرى لا تخضع لنفس القاعدة. أميز الرتبة من القيمة. Cool-down أصلي بلا حلول: احسب الحد العشرين في ٣،٧،١١،...؛ هل −٣،١،٥،٩ حسابية؟ اكتب قاعدتها؛ ارسم جدول أول ٥ حدود لقاعدة ٢ن+٥. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:05:03:PROPERTIES-OF-OPERATIONS",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF33-40 (printed 367-374); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF33-40 (printed 367-374); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "خواص العمليات",
+          "Explanation": "خواص العمليات تشرح متى يمكن تبديل ترتيب الأعداد أو إعادة تجميعها دون تغيير الناتج. خاصية الإبدال للجمع أ+ب=ب+أ وللضرب أ×ب=ب×أ، وخاصية التجميع للجمع (أ+ب)+ج=أ+(ب+ج)، ومثلها للضرب. الصفر عنصر محايد في الجمع: أ+٠=أ، والواحد محايد في الضرب: أ×١=أ. الصفر يمتص حاصل الضرب أ×٠=٠. لا تنطبق خاصيتا الإبدال والتجميع على الطرح أو القسمة عمومًا؛ فـ١٢−٥ يختلف عن ٥−١٢. تسهل الخواص الحساب الذهني: ٢٥+١٧+٧٥=(٢٥+٧٥)+١٧=١١٧، و٤×٣×٢٥=(٤×٢٥)×٣=٣٠٠. عند تبسيط تعبير رمزي لا نغيّر إشارات الحدود، وإذا وزعنا عاملًا على مجموع نستخدم قاعدة التوزيع التي ستدرس بالتفصيل لاحقًا.",
+          "KeyConceptsAndRules": "الإبدال: أ+ب=ب+أ، أب=بأ مثل ٨+٣=٣+٨. التجميع: (أ+ب)+ج=أ+(ب+ج) مثل (٥+٧)+٣=٥+(٧+٣). العنصر المحايد: أ+٠=أ، أ×١=أ مثل ١٣×١=١٣. الضرب في صفر: ٠×أ=٠ مثل ٠×(س+٥)=٠.",
+          "WorkedExamples": "مثال 1: احسب ٢٥+١٧+٧٥ بسهولة. الخطوات: استخدم الإبدال لوضع ٢٥ قرب ٧٥.؛ اجمع ٢٥+٧٥=١٠٠.؛ أضف ١٧.. الإجابة ١١٧. التحقق: الحساب الأصلي يعطي ١١٧. مثال 2: احسب ٤×٣×٢٥. الخطوات: بدّل الترتيب إلى ٤×٢٥×٣.؛ ٤×٢٥=١٠٠.؛ ١٠٠×٣=٣٠٠.. الإجابة ٣٠٠. التحقق: ١٢×٢٥=٣٠٠. مثال 3: بسط (٣س+٠)×١. الخطوات: الصفر لا يغير جمع ٣س.؛ الواحد لا يغير ضرب ٣س.؛ تبقى ٣س.. الإجابة ٣س. التحقق: إذا س=٢ فإن الناتج ٦. مثال 4: هل ١٢−٥=٥−١٢؟ الخطوات: احسب ١٢−٥=٧.؛ احسب ٥−١٢=−٧.؛ الطرح غير إبدالي.. الإجابة لا. التحقق: ٧≠−٧.",
+          "StepByStepSolutions": "1. حدد العملية جمع/ضرب أو طرح/قسمة؛ 2. اختر الخاصية الصالحة لهذه العملية؛ 3. احفظ قيم الحدود وإشاراتها أثناء إعادة الترتيب؛ 4. جمّع الحدود التي تعطي عشرة أو مئة أو سهلة؛ 5. احسب أو بسط التعبير؛ 6. تحقق بتعويض قيم عددية مختلفة",
+          "CommonMistakes": "خطأ: تطبيق الإبدال على الطرح. لماذا خطأ: الطرح لا يحافظ على الترتيب. التصويب: لا تبدّل طرفَي الطرح. خطأ: الخلط بين محايد الضرب والصفر. لماذا خطأ: ضرب أي قيمة في صفر يمحوها. التصويب: محايد الضرب ١. خطأ: تغيير إشارات الحدود عند التجميع. لماذا خطأ: الخاصية لا تقلب الإشارة. التصويب: احتفظ بإشارة كل حد.",
+          "QuickSummary": "الإبدال والتجميع صالحان للجمع والضرب. الصفر محايد جمع والواحد محايد ضرب. الضرب في صفر يعطي صفرًا. الطرح والقسمة غير إبداليين. Cool-down أصلي بلا حلول: سم خاصية (ن+٧)+٣=ن+(٧+٣)؛ احسب ٨×١٢٥×٧؛ بيّن مثالًا مضادًا لإبدال القسمة. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }
