@@ -8882,6 +8882,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.substitute", "usccss.algebra.expression_coefficient"],
             "UAE_G7_ARABIC_U05L01_PDF_15_22",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/02, student 02-5-6.pdf printed 357-366.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES", "sequences.core",
+            "ARITHMETIC-SEQUENCES",
+            ["sequences.arithmetic.nth_term.exact", "supporting.sequences.next_term"],
+            "UAE_G7_ARABIC_U05L02_PDF_23_32",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
