@@ -9042,6 +9042,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u12.l07.net_solid_classification", "usccss.g6.u01.l11.polygon_classification"],
             "UAE_G7_ARABIC_U07L05_PDF_55_62",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/06, student 02-07.pdf printed 593-600.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:06:CROSS-SECTION-OF-SOLIDS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:06:CROSS-SECTION-OF-SOLIDS", "geometry.spatial.cross_sections",
+            "CROSS-SECTION-OF-SOLIDS",
+            ["usccss.g7.u07.parallel_base_cross_section_sides", "uae.g5.u12.l07.net_solid_classification"],
+            "UAE_G7_ARABIC_U07L06_PDF_63_70",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
