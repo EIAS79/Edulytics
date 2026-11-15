@@ -8763,6 +8763,15 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original", "percentages.core.of_quantity"],
             "UAE_G7_GENERAL_ARABIC_U02L07_PRINTED_159_166",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02L08 simple interest I=P*r*t.
+        // Reuse exact percent-of-quantity for effective rate r*t; inference of
+        // P/r/t and time conversion are authored and subject to teacher review.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:08:SIMPLE-INTEREST"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:08:SIMPLE-INTEREST", "percentages.core.of_quantity",
+            "SIMPLE_INTEREST_EFFECTIVE_RATE_PERCENT_AND_TEACHER_REVIEW",
+            ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.reverse_percent_original"],
+            "UAE_G7_GENERAL_ARABIC_U02L08_PRINTED_167_173",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
