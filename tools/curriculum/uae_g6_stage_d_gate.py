@@ -74,6 +74,22 @@ def structural():
         errors.append("G6_LESSON_CODE_PATHWAY_MISMATCH")
     if pack.get("AcademicLanguage") != "ar":
         errors.append("G6_ACADEMIC_LANGUAGE_NOT_AR")
+    # Accepted VersionCode is the existing database persistence key, NOT
+    # a claim of original 2026-2027 textbook edition parity.
+    accepted = load(ROOT / "src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json").get("VersionCode")
+    if blue.get("VersionCode") != accepted or pack.get("VersionCode") != accepted:
+        errors.append("G6_CURRICULUM_PERSISTENCE_VERSION_DRIFT")
+    # Only one Grade 6 General blueprint/content resource is allowed.
+    # Reject duplicates or accidental reintroductions in either registry.
+    for folder, expected in [
+        (BLUEPRINT.parent, BLUEPRINT),
+        (CONTENT.parent, CONTENT),
+    ]:
+        candidates = list(folder.glob("uae-g6-general-*.lesson-*.json"))
+        unexpected = [candidate.name for candidate in candidates if candidate != expected]
+        if unexpected or len(candidates) != 1:
+            errors.append("G6_COMPETING_GENERAL_PACK_RESOURCES:" +
+                          ",".join(sorted(unexpected)))
     if blue.get("Pathway", "").lower() not in ("general", "common"):
         errors.append("G6_BLUEPRINT_PATHWAY_WRONG")
     if any(not any(t.get("CultureCode") == "ar" and t.get("Title") and

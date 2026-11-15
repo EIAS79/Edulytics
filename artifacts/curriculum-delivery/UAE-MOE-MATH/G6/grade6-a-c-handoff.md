@@ -18,3 +18,5 @@ semanticParity: UNKNOWN.
 Owner academic approval for original Edulytics teaching material: RECORDED.
 Third-party artwork rights and physical teacher-reviewed open activities: independent and not yet verified.
 Release decision: NO_GO_SOURCE_100 until evidenced; technical diagnostics may continue, no merge or production deployment.
+
+Stage D integration correction (2026-11-15): legacy production persistence VersionCode MOE-2026-2027-T1 is used by the 128-lesson Arabic blueprint/content pair, consistent with the accepted UAE-MOE-MATH curriculum pack. This key is NOT a declaration of verified 2026-2027 original-book edition. The active Grade 6 General canonical resource contains exclusively 128 Arabic indexed lessons; an obsolete unused Advanced reuse tool has also been retired. Original source question parity stays UNKNOWN, not overridden.

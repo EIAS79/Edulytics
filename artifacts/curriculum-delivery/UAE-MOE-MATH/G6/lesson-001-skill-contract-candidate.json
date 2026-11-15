@@ -83,12 +83,13 @@
     "original-number-line-multiple-markers"
   ],
   "runtimeIntegration": {
-    "registered": false,
-    "reason": "New 128-item Arabic Grade6 source-catalog version and safe relation to old 59-lesson records not installed; do not register family against old mismatched U01 lesson."
+    "registered": true,
+    "reason": "The original skill families are registered for the active Arabic Grade 6 General lesson U01L01, confirmed by the 128-lesson exact-family inventory matrix. Historical source-element parity remains unverified."
   },
   "tests": {
     "authored": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6Unit01Lesson01ReuseGcfLcmTests.cs",
     "testsRun": "NOT_RUN",
     "ciIntentionallyNotInvokedManually": true
-  }
+  },
+  "stageDIntegrationUpdate": "2026-11-15: superseded English General resources purged; original Arabic G6 U01L01 contract retained."
 }

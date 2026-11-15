@@ -19,17 +19,17 @@
     ],
     "issues": [
       "Existing lesson is located U05:L05 while source places it U01:L01; do not reuse identity without audited safe migration",
-      "No approved Grade6 General Arabic canonical lesson mapping in current 59-lesson legacy candidate"
+      "Stage D resolved registration: Grade 6 General has an accepted Arabic 128-lesson canonical identity; source-body element parity remains pending."
     ]
   },
   "stageB": {
     "status": "CLOSED_ORIGINAL_ARABIC_RICHV2_AND_DRAFT_CANONICAL_STAGED",
     "implemented": [
-      "Original Arabic authored draft stored at artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json, while immutable 59-lesson English pack restored byte-identically",
+      "Original Arabic authored draft stored at artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-001-arabic-authoring.json, now referenced by the sole active Arabic canonical content pack",
       "Stepwise GCF/LCM explanations, distinct original examples, common misconceptions, original Cool-down",
       "Original editable numeric number-line and prime-factor-tree model data authored in lesson-001-original-visual-models.json; renderer has NOT been connected",
       "Staged exact production RichV2 file src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g6-general-u01-l01-ar.rich-lesson-v2.json with 5 worked examples, 5 key concepts, 4 misconception repairs, three visual kinds",
-      "Staged independent source-ordered Grade6 Arabic 128-lesson blueprint VersionCode=MOE-2026-2027-AR-LOCAL-128 and Draft canonical content pack AcademicLanguage=ar for L01",
+      "Staged independent source-ordered Grade6 Arabic 128-lesson blueprint VersionCode=MOE-2026-2027-T1 (accepted database persistence key) and Draft canonical content pack AcademicLanguage=ar for L01",
       "Registered 6 existing G5 GCF/LCM Practice families for exact new source identity in LessonPracticeContractRegistry without creating a new engine"
     ],
     "issues": [
@@ -136,5 +136,6 @@
   },
   "stagedNotPublished": true,
   "manualCiRuns": 0,
-  "StageD": "NOT_RUN"
+  "StageD": "NOT_RUN",
+  "stageDIntegrationUpdate": "2026-11-15: English-only retired Grade 6 General resources removed from current source tree. 128-lesson Arabic blueprint/content use accepted persistence VersionCode. This does not re-date the 2019-2020 textbook or certify unverified source elements."
 }
