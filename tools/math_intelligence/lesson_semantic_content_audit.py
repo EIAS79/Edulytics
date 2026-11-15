@@ -221,17 +221,24 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     # independently certified G12 Precalculus lessons unchanged.
     grade12 = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
     grade4 = "PED:UAE-MOE-MATH:L4:COMMON:"
+    grade6 = "PED:UAE-MOE-MATH:L6:GENERAL:"
     supplemental = {code for code in by_code if code.startswith(grade12)}
     grade4_replacement = {code for code in by_code if code.startswith(grade4)}
-    untouched_base = set(by_code) - supplemental - grade4_replacement
-    if (len(by_code) != 5222 or len(supplemental) != 73 or
-        len(grade4_replacement) != 132 or len(untouched_base) != 5017):
+    grade6_replacement = {code for code in by_code if code.startswith(grade6)}
+    untouched_base = (set(by_code) - supplemental -
+                      grade4_replacement - grade6_replacement)
+    # 5,017 prior included 59 obsolete Grade6 English entries. Exactly
+    # 4,958 previous non-G6 identities must survive the 59->128 replacement.
+    if (len(by_code) != 5291 or len(supplemental) != 73 or
+        len(grade4_replacement) != 132 or
+        len(grade6_replacement) != 128 or len(untouched_base) != 4958):
         errors.append(
-            "Effective learner snapshot requires 5,017 unchanged prior, "
-            "132 owner-approved UAE Grade 4, and 73 G12 lessons; "
+            "Effective learner snapshot requires 4,958 unchanged prior, "
+            "132 owner-approved UAE Grade 4, 128 Grade6 Arabic, 73 G12 lessons; "
             f"got {len(untouched_base)} prior, "
-            f"{len(grade4_replacement)} G4, {len(supplemental)} G12, "
-            f"{len(by_code)} total."
+            f"{len(grade4_replacement)} G4, "
+            f"{len(grade6_replacement)} G6, "
+            f"{len(supplemental)} G12, {len(by_code)} total."
         )
 
     return by_code, errors
@@ -246,6 +253,13 @@ def audit() -> dict[str, Any]:
     blockers.extend(validate_supporting_rules(supporting_rules))
     effective_by_code, effective_errors = load_effective_snapshot()
     certified_g12=independently_certified_g12()
+    # The exact owner acceptance is separately checked against 128 canonical
+    # lessons, contract families, source/blueprint JSON fingerprints, and the
+    # 2026-11-15 approval manifest. Do not re-label it "official source parity".
+    from lesson_skill_resolution_audit import owner_approved_g6_declared_practice
+    approved_g6 = owner_approved_g6_declared_practice()
+    if len(approved_g6) != 128:
+        blockers.append("G6 owner approved semantic source/skill evidence does not cover 128 verified Arabic lessons")
     blockers.extend(effective_errors)
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)
@@ -437,6 +451,26 @@ def audit() -> dict[str, Any]:
                     "; owner-approved exact G12 course has separate 73-lesson "
                     "reviewed learner/Practice/teacher runtime. This is not "
                     "third-party source-item mathematical parity proof.")
+
+            g6_owner_reviewed = bool(
+                lesson_code in approved_g6
+                and academic_language == "ar"
+                and effective_row is not None
+                and not has_english_translation
+                and worked and explanation and key_concepts and solutions
+                and normalize_space(effective_row.get("documentStatus")) == "Published"
+                and normalize_space(effective_row.get("reviewedBy"))
+                and normalize_space(effective_row.get("reviewEvidence"))
+                and normalize_space(effective_row.get("reviewMethod"))
+            )
+            if g6_owner_reviewed and status in {"UNCLASSIFIED","CONTENT_WEAK","REVIEW_REQUIRED"}:
+                status = "PASS_OWNER_APPROVED_G6_ARABIC_WITH_SIGNATURE_WARNING"
+                findings.append(
+                    "Owner-approved first-party Arabic teaching body and exact "
+                    "Practice contract are independently fingerprinted. Generic "
+                    "semantic signature did not classify this Arabic text; "
+                    "this is NOT proof of verbatim official book-item parity."
+                )
 
             reviewed_correction_target = bool(
                 supporting_rule is not None

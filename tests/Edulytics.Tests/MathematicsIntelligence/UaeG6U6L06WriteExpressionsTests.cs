@@ -29,7 +29,7 @@ public sealed class UaeG6U6L06WriteExpressionsTests
  [Fact] public void AccurateDecimalUnitAndPercentage()
  {
   Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l06.inches_to_centimeters",
-    new Dictionary<string,int>(),"٢٫٥٤س"));
+    new Dictionary<string,int>{{"centimetersPerInchHundredths",254}},"٢٫٥٤س"));
   var p=new Dictionary<string,int>{{"pct",20}};
   Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l06.percentage_markup",p,"١٫٢س"));
   Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l06.percentage_markup",p,"س+٠٫٢س"));

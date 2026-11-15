@@ -45,13 +45,72 @@ internal static class UaeG6U11U12StatisticsQuestions
         _=>throw new ArgumentOutOfRangeException(nameof(f))
     };
 
+    // Each classification family needs independently distinct authentic data
+    // contexts. Vary the concrete mathematical scenario, not a cosmetic word
+    // suffix, while preserving the first-party categorical answer semantics.
+    private static string CategoryPrompt(string family, int mode, int variant)
+    {
+        int k=variant+1;
+        string group=variant switch {
+            0=>"الصف السادس أ",1=>"الصف السادس ب",2=>"نادي العلوم",
+            3=>"فريق الرياضة",4=>"مكتبة المدرسة",_=>"النادي البيئي"
+        };
+        if(family==Stat)
+            return mode==0
+                ? $"إذا سألنا أفراد {group} عن عدد الدقائق التي يقرأون فيها يوميًا، هل نتوقع اختلاف الإجابات بما يجعل السؤال إحصائيًا؟"
+                : $"هل سؤال: كم يومًا يتكون منه الأسبوع عند تنظيم جدول {group}؟ سؤال إحصائي تتغير إجابته بين الأفراد؟";
+        if(family==Logic)
+            return mode==0
+                ? $"عندما تختلف أوقات وصول أفراد {group} إلى النشاط، هل يجوز أن تكون إجابات السؤال الإحصائي متنوعة؟"
+                : $"عند قياس أطوال أفراد {group}، هل يجب أن تتساوى جميع القياسات كي يُعد سؤال الطول إحصائيًا؟";
+        if(family==Best)
+            return mode switch {
+                0=>$"قيم تبرعات {group} هي {k}، {k+1}، {k+2}، {k+3}، {100+k}. ما مقياس المركز الأكثر مقاومة للقيمة الشاذة؟",
+                1=>$"درجات نشاط {group} هي {10+k}، {12+k}، {14+k}، {16+k}، {18+k} دون قيم شاذة. ما مقياس المركز الذي يستخدم كل القيم؟",
+                _=>$"سجّل {group} ألوان حقائب: أزرق، أحمر، أزرق، أصفر، أزرق. ما مقياس المركز المناسب للبيانات الاسمية؟"
+            };
+        if(family==Shape)
+            return mode switch {
+                0=>$"تكرارات القياسات المتتالية لدى {group} هي {k}، {k+2}، {k+4}، {k+2}، {k}. صنف تماثل الشكل.",
+                1=>$"تكرارات الفئات المتصاعدة لدى {group} هي {10+k}، {5+k}، {2+k}، 1 مع ذيل ممتد إلى القيم الكبيرة. ما اتجاه الانحراف؟",
+                _=>$"تكرارات الفئات المتصاعدة لدى {group} هي 1، {2+k}، {5+k}، {10+k} مع ذيل ممتد إلى القيم الصغيرة. ما اتجاه الانحراف؟"
+            };
+        if(family==Choose)
+            return mode switch {
+                0=>$"جمّع {group} قيم عدد الكتب المستعارة من 0 إلى {5+k}، ونريد نقاطًا منفردة فوق كل قيمة بعدد تكرارها. اختر نوع المخطط.",
+                1=>$"قسّم {group} أطوال {20+k} نباتًا إلى فئات متصلة بالسنتيمتر لعرض التكرارات. اختر المخطط المناسب.",
+                2=>$"رصد {group} درجة الحرارة يوميًا على مدى {6+k} أيام لبيان صعودها وهبوطها. اختر المخطط المناسب.",
+                3=>$"عدّ {group} المشاركين في {3+k} مجموعات أسماء أنشطة مختلفة. ما نوع المخطط الذي يقارن هذه الفئات؟",
+                _=>$"لدى {group} بيانات {12+k} قياسًا ونريد عرض الوسيط والربيعات والمدى. اختر المخطط المناسب."
+            };
+        if(family==Unit)
+            return mode switch {
+                0=>$"ما الوحدة المناسبة لقياس طول قلم من مجموعة أدوات {group}؟",
+                1=>$"ما الوحدة المناسبة للمسافة بين موقع {group} ومدينة أخرى؟",
+                2=>$"ما الوحدة المناسبة لكتلة حقيبة معدات {group} الثقيلة؟",
+                3=>$"ما الوحدة المناسبة لسعة قارورة سائل صغيرة يستخدمها {group}؟",
+                _=>$"ما الوحدة المناسبة لارتفاع باب غرفة {group}؟"
+            };
+        return mode switch {
+            0=>$"أي أداة يستخدمها {group} لقياس طول قلم رصاص بالسنتيمتر؟",
+            1=>$"أي أداة يستخدمها {group} لمعرفة كتلة حقيبة بالكيلوجرام؟",
+            2=>$"أي أداة يستخدمها {group} لقياس حجم سائل بالمليلتر؟",
+            _=>$"أي أداة يستخدمها {group} لقياس طول غرفة بأمتار؟"
+        };
+    }
+
     private static bool Expected(string? f,IReadOnlyDictionary<string,int>? p,out string answer)
     {
         answer=string.Empty;
         if (!Supports(f) || p is null) return false;
         if (f is Stat or Logic or Best or Shape or Choose or Unit or Tool)
         {
-            if (p.Count!=1 || !p.TryGetValue("mode",out int mode)) return false;
+            // Historical mode-only contracts remain independently verifiable,
+            // while new varied prompts carry an explicit bounded scenario.
+            if((p.Count!=1 && p.Count!=2)||
+               !p.TryGetValue("mode",out int mode))return false;
+            if(p.Count==2 && (!p.TryGetValue("scenario",out int v)||
+                v is <0 or >5))return false;
             int max=f switch {Stat or Logic=>1,Best or Shape=>2,Tool=>3,_=>4};
             if (mode<0 || mode>max) return false;
             answer=Category(f,mode);return true;
@@ -111,28 +170,9 @@ internal static class UaeG6U11U12StatisticsQuestions
         if(family is Stat or Logic or Best or Shape or Choose or Unit or Tool)
         {
             int limit=family switch {Stat or Logic=>2,Best or Shape=>3,Tool=>4,_=>5};
-            int mode=random.Next(limit);p=new(){{"mode",mode}};
-            prompt=family switch {
-                Stat=>mode==0?"هل سؤال: كم ساعة ينام طلاب صفك عادة؟ سؤال إحصائي يتوقع اختلاف الإجابات؟":
-                    "هل سؤال: ما عدد أيام الأسبوع؟ سؤال إحصائي يتوقع اختلاف الإجابات؟",
-                Logic=>mode==0?"إذا كان عدد الطلاب مختلفًا، هل يجوز أن تختلف إجابات السؤال الإحصائي؟":
-                    "هل تساوي جميع البيانات هو شرط لازم لكل سؤال إحصائي؟",
-                Best=>mode switch{0=>"في بيانات تحتوي قيمة شاذة مرتفعة جدًا، أي مقياس مركز أرجح؟",
-                    1=>"في بيانات عددية متوازنة دون قيم شاذة، أي مقياس مركز مفيد؟",
-                    _=>"في بيانات لون الحقيبة الأكثر شيوعًا، أي مقياس مناسب؟"},
-                Shape=>mode switch{0=>"توزيع ارتفاعات متماثل حول المركز؛ صف شكله.",
-                    1=>"توزيع أغلب قيمه صغيرة مع ذيل ممتد للقيم الكبيرة؛ ما شكله؟",
-                    _=>"توزيع أغلب قيمه كبيرة مع ذيل ممتد للقيم الصغيرة؛ ما شكله؟"},
-                Choose=>mode switch{0=>"لإظهار كل قيمة عددية وتكرارها بالنقاط، ما العرض المناسب؟",
-                    1=>"للبيانات العددية المستمرة في فئات، ما العرض المناسب؟",
-                    2=>"لتغير درجة الحرارة عبر الزمن، ما العرض المناسب؟",
-                    3=>"لمقارنة عدد الطلاب في فئات اسمية، ما العرض المناسب؟",
-                    _=>"لإظهار الربيعات والوسيط والمدى، ما العرض المناسب؟"},
-                Unit=>mode switch{0=>"ما وحدة قياس طول قلم رصاص؟",1=>"ما وحدة المسافة بين مدينتين؟",
-                    2=>"ما وحدة كتلة بطيخة؟",3=>"ما وحدة سعة زجاجة ماء صغيرة؟",_=>"ما وحدة ارتفاع باب؟"},
-                _=>mode switch{0=>"ما أداة قياس طول قلم؟",1=>"ما أداة قياس كتلة حقيبة؟",
-                    2=>"ما أداة قياس سعة سائل؟",_=>"ما أداة قياس طول غرفة؟"}
-            };
+            int mode=random.Next(limit),scenario=random.Next(6);
+            p=new(){{"mode",mode},{"scenario",scenario}};
+            prompt=CategoryPrompt(family,mode,scenario);
         }
         else if(family is Mean or Median or Collect or Dots or Histogram)
         {

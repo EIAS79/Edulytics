@@ -154,6 +154,29 @@ public sealed class PracticeSessionDiversityCertificationTests
         };
         Assert.Equal(20, finiteG5FamilyCapacities.Count);
         Assert.All(finiteG5FamilyCapacities.Keys, family => Assert.Contains(family, families));
+        // Some Grade 6 exact learning models have a deliberately finite
+        // source-defined scenario space: a binary property, four operation
+        // classes, five repeated-group counts, or nine powers of ten.
+        // Certify the real unique capacity, never cosmetic duplicates.
+        var finiteG6FamilyCapacities = new Dictionary<string, int>(StringComparer.Ordinal)
+        {
+            ["uae.g6.u06.l02.ten_power"] = 9,
+            ["uae.g6.u06.l03.first_operation"] = 4,
+            ["uae.g6.u06.l05.operation_type"] = 4,
+            ["uae.g6.u06.l05.repeated"] = 5,
+            ["uae.g6.u06.l06.inches_to_centimeters"] = 1,
+            ["uae.g6.u06.l06.percentage_markup"] = 4,
+            ["uae.g6.u07.l03.identify_subtraction_property"] = 2,
+            ["uae.g6.u07.l05.addition_property"] = 2,
+            ["uae.g6.u07.l08.division_property"] = 2,
+            ["uae.g6.u07.l10.multiplication_property"] = 2,
+            ["uae.g6.u08.l01.classify_variable"] = 2,
+            ["uae.g6.u08.l02.classify"] = 2,
+            ["uae.g6.u08.l03.linear_vs_square"] = 2,
+            ["uae.g6.u09.l01.area_conservation"] = 2
+        };
+        Assert.Equal(14, finiteG6FamilyCapacities.Count);
+        Assert.All(finiteG6FamilyCapacities.Keys, family => Assert.Contains(family, families));
 
         var failures = new List<string>();
 
@@ -164,7 +187,9 @@ public sealed class PracticeSessionDiversityCertificationTests
             try
             {
                 var questionCount = finiteG5FamilyCapacities.TryGetValue(family, out var certifiedCapacity)
-                    ? certifiedCapacity : 10;
+                    ? certifiedCapacity
+                    : finiteG6FamilyCapacities.TryGetValue(family, out var g6Capacity)
+                        ? g6Capacity : 10;
 
                 var questions = engine.Generate(
                     "family-session-capacity-certification",

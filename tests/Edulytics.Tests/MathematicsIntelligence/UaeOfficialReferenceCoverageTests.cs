@@ -105,7 +105,10 @@ public sealed class UaeOfficialReferenceCoverageTests
                     {
                         // Explicit first-party approval permits genuine skills
                         // without inventing official learning-outcome references.
-                        Assert.True(isSupporting);
+                        // The canonical RoleRegistry explicitly marks these learning
+                        // lessons as student-facing, not Supporting, despite
+                        // absence of invented official outcome codes.
+                        Assert.False(isSupporting);
                         Assert.Empty(lesson.OutcomeCodes);
                         Assert.Empty(lesson.Alignments);
                         Assert.True(string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode));

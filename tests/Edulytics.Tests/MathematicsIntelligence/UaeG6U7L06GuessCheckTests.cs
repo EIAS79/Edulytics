@@ -24,12 +24,21 @@ public sealed class UaeG6U7L06GuessCheckTests
   savings["months"]=25;
   Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.monthly_savings",savings,"25"));
  }
- [Fact] public void FixedPuzzleCasesPreserveOrder()
+ [Fact] public void VaryingPuzzleParametersPreserveUniqueAnswersAndOrder()
  {
-  var empty=new Dictionary<string,int>();
-  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.comic_sets",empty,"٢،٢"));
-  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.quiz_points",empty,"٣،٣"));
-  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.operator_check",empty,"٣×٤+٦÷١"));
-  Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.operator_check",empty,"3+4*6/1"));
+  var comics=new Dictionary<string,int>{{"newGroups",2},{"usedGroups",2}};
+  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.comic_sets",comics,"٢،٢"));
+  Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.comic_sets",comics,"٣،١"));
+  comics["newGroups"]=3;
+  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.comic_sets",comics,"٣،٢"));
+  var quiz=new Dictionary<string,int>{{"twoPoint",3},{"fourPoint",3}};
+  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.quiz_points",quiz,"٣،٣"));
+  quiz["fourPoint"]=4;
+  Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.quiz_points",quiz,"٣،٣"));
+  var operation=new Dictionary<string,int>{{"a",3},{"b",4},{"c",6},{"d",1}};
+  Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.operator_check",operation,"٣×٤+٦÷١"));
+  Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.operator_check",operation,"3+4*6/1"));
+  operation["a"]=5;
+  Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u07.l06.operator_check",operation,"٣×٤+٦÷١"));
  }
 }

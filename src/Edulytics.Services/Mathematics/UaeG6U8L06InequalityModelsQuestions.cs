@@ -57,7 +57,8 @@ internal static class UaeG6U8L06InequalityModelsQuestions
             answer=yes?"نعم":"لا";
             return true;
         }
-        if(p.Count!=1)return false;
+        if(p.Count!=2||!p.TryGetValue("bound",out int graphBound)||
+           graphBound is <-12 or >12)return false;
         answer=family==Endpoint?(op is 0 or 2?"مفتوحة":"مغلقة"):
           (op is 0 or 1?"يسار":"يمين");
         return true;
@@ -98,9 +99,15 @@ internal static class UaeG6U8L06InequalityModelsQuestions
             prompt=$"هل العدد {candidate} حل للمتباينة س {Symbol(op)} {bound}؟ اكتب نعم أو لا.";
         }
         else if(family==Endpoint)
+        {
+            p["bound"]=bound;
             prompt=$"في التمثيل البياني للمتباينة س {Symbol(op)} {bound}، هل دائرة الحد {bound} مفتوحة أم مغلقة؟";
+        }
         else
+        {
+            p["bound"]=bound;
             prompt=$"في تمثيل س {Symbol(op)} {bound}، هل جهة التظليل يسار العدد {bound} أم يمينه؟ اكتب يسار أو يمين.";
+        }
         return new Item(family,prompt,
             "أحدد أولًا الرمز واتجاه القيم المقبولة ثم أختبر إدراج الحد.",
             AssessmentItemType.ShortAnswer,p);
