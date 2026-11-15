@@ -8654,6 +8654,26 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE General Grade7 Unit1 Lesson3 (printed pp25–32):
+        // Reuse existing exact metric/customary conversion and rational-rate
+        // question kernels; diagrams and unit justifications teacher reviewed.
+        // A–B–C content staged; real runtime and CI are Stage D only.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
+                "ratio.unit_rate",
+                "DIMENSIONAL_ANALYSIS_METRIC_CUSTOMARY_RATE_CONVERSION",
+                [
+                    "usccss.g6.u03.l04.source_ratio_unit_conversions",
+                    "usccss.g6.u03.l04.conversion_direction_and_units",
+                    "uae.g6.u04.l05.to_smaller_exact",
+                    "uae.g6.u04.l05.to_larger_exact",
+                    "usccss.g7.u02.l03.unit_rates_reciprocal"
+                ],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L03_PRINTED_25_32",
+                "READY_VERIFIED",
+                Version);
+
         // UAE Grade 7 General Arabic, Unit 1 Lesson 2 printed pp17–24.
         // Reuse exact fractional division and rational unit-rate engines.
         // Teacher grades original diagrams. CI/runtime Stage D NOT_RUN.
