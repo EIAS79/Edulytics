@@ -173,9 +173,12 @@ public sealed class PracticeSessionDiversityCertificationTests
             ["uae.g6.u08.l01.classify_variable"] = 2,
             ["uae.g6.u08.l02.classify"] = 2,
             ["uae.g6.u08.l03.linear_vs_square"] = 2,
-            ["uae.g6.u09.l01.area_conservation"] = 2
+            ["uae.g6.u09.l01.area_conservation"] = 2,
+            // Exactly three distinct geometries (rectangular prism,
+            // triangular prism, square pyramid) define this face-count task.
+            ["uae.g6.u10.l07.net_faces"] = 3
         };
-        Assert.Equal(14, finiteG6FamilyCapacities.Count);
+        Assert.Equal(15, finiteG6FamilyCapacities.Count);
         Assert.All(finiteG6FamilyCapacities.Keys, family => Assert.Contains(family, families));
 
         var failures = new List<string>();

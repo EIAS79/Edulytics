@@ -32,13 +32,17 @@ public sealed class UaeG6U8L06InequalityModelsTests
  }
  [Fact] public void BoundaryAndDirectionFollowOperator()
  {
-   var p=new Dictionary<string,int>{{"op",0}};
+   var p=new Dictionary<string,int>{{"op",0},{"bound",7}};
    Assert.True(ExactSkillContractQuestionEngine.Verify(E,p,"مفتوحة"));
    Assert.True(ExactSkillContractQuestionEngine.Verify(D,p,"يسار"));
    p["op"]=3;
    Assert.True(ExactSkillContractQuestionEngine.Verify(E,p,"مغلقة"));
    Assert.True(ExactSkillContractQuestionEngine.Verify(D,p,"يمين"));
+   p["bound"]=9;
+   Assert.True(ExactSkillContractQuestionEngine.Verify(E,p,"مغلقة"));
    p["op"]=4;
    Assert.False(ExactSkillContractQuestionEngine.Verify(E,p,"مغلقة"));
+   p.Remove("bound");
+   Assert.False(ExactSkillContractQuestionEngine.Verify(D,p,"يمين"));
  }
 }

@@ -148,6 +148,11 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // control enforces G3-only changes: 300/0 engine, 623/0 contracts,
   // exactly one G3 opt-in probe change. This is runtime compatibility
   // evidence, not retroactive G1 academic approval or a source parity claim.
+  // 2026-11-15 UAE G6: two shared C# blobs and the single scoped B001
+  // wrong-answer fixture profile ("uae-g6") are re-pinned; the earlier
+  // G1/G2/G3/G4/G5 branches and grading semantics remain guarded.
+  // The exact new B001 blob is b8c4bf67034bb52c15d5968a414c073af6bab5de.
+  // These source-hash declarations do not waive current two-school CI.
   // 2026-11-15 UAE G6: two shared C# blobs are re-pinned to the exact
   // first-party 128-lesson candidate after dedicated G6 math and cross-grade
   // G1 tests. The additive-compatibility negative control verifies that
@@ -178,7 +183,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','ece5ce8b368f8cb07f5c4be0992d45de0d4ba96a']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','b8c4bf67034bb52c15d5968a414c073af6bab5de']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
