@@ -9002,6 +9002,14 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.inequality.ax_plus_b_relation_c", "algebra.linear.inequality.variables_both_sides"],
             "UAE_G7_ARABIC_U06L08_PDF_179_186",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/01, student 02-07.pdf printed 535-542.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:01:CLASSIFY-AND-NAME-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:01:CLASSIFY-AND-NAME-ANGLES", "supporting.geometry.angle_classify",
+            "CLASSIFY-AND-NAME-ANGLES",
+            ["supporting.geometry.angle_classify", "uae.g3.u13.l02.angle_types", "usccss.g7.u07.vertical_angle"],
+            "UAE_G7_ARABIC_U07L01_PDF_5_12",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
