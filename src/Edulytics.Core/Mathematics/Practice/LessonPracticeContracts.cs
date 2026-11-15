@@ -8707,6 +8707,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l10.graphs_origin_slope"],
             "UAE_G7_GENERAL_ARABIC_U01L09_PRINTED_81_88",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L01, student printed 103-109:
+        // percent of a quantity incl >100%, below 1%, discounts and commissions.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:01:PERCENT-OF-A-NUMBER"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:01:PERCENT-OF-A-NUMBER", "percentages.core.of_quantity",
+            "PERCENT_OF_QUANTITY_GENERAL_FRACTIONAL_AND_OVER_100",
+            ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g6.u03.l15.percent_of_quantity_exact"],
+            "UAE_G7_GENERAL_ARABIC_U02L01_PRINTED_103_109",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
