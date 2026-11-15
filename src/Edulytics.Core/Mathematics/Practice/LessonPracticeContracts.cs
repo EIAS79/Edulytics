@@ -9400,6 +9400,12 @@ public static class LessonPracticeContractRegistry
             "G6_U09_TRAP_ARABIC_EXACT_WITH_TEACHER_REVIEW",
             ["uae.g6.u09.l05.trapezoid_decomposition","uae.g6.u09.l06.trapezoid_area"],"LOCAL_G6_03_EDITION_INDEPENDENT_EQUIVALENCE",
             "READY_VERIFIED",Version);
+        // UAE G6 U09 L06 owner-accepted equivalent Arabic area skill; original-page gaps retained.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:09:06:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:09:06:STUDENT-AR-128","geometry.area.g6.u09.trap",
+            "G6_U09_TRAP_ARABIC_EXACT_WITH_TEACHER_REVIEW",
+            ["uae.g6.u09.l06.trapezoid_area","uae.g6.u09.l05.trapezoid_decomposition"],"LOCAL_G6_03_EDITION_INDEPENDENT_EQUIVALENCE",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
