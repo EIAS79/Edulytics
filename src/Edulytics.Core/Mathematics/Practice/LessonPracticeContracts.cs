@@ -8859,6 +8859,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.fractions.multiply", "usccss.number.signed_rational_multiply"],
             "UAE_G7_GENERAL_ARABIC_U04L06_PRINTED_311_317",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L07 printed319-325: metric/customary conversions
+        // Existing conversion engine; source approximations explicitly preserved.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:07:MEASUREMENT-SYSTEM-CONVERSION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:07:MEASUREMENT-SYSTEM-CONVERSION", "supporting.measurement.practical",
+            "UNIT_SYSTEM_CONVERSION_CUSTOMARY_METRIC_APPROX",
+            ["supporting.measurement.unit_conversion", "usccss.g6.u03.l04.source_ratio_unit_conversions"],
+            "UAE_G7_GENERAL_ARABIC_U04L07_PRINTED_319_325",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
