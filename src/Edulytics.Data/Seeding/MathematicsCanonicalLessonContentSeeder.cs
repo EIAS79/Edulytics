@@ -96,6 +96,49 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     }
 
     /// <summary>
+    /// One-shot scoped UAE Grade6 metadata importer. Only the exact 128
+    /// student-authored Arabic canonical content records may be inserted.
+    /// Never reconcile or publish unrelated candidate grades (notably the
+    /// 73 separately staged G12 Precalculus records).
+    /// This is called inside the pedagogical seeder's outer PostgreSQL
+    /// transaction, so all 128 lesson identities and metadata commit together.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade6MetadataAsync(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L6:GENERAL:";
+        var documents = LoadEmbeddedDocuments()
+            .Where(document =>
+                document.Lessons.Any(lesson =>
+                    lesson.LessonCode.StartsWith(prefix,
+                        StringComparison.Ordinal)))
+            .ToArray();
+
+        foreach (var document in documents)
+        {
+            if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+                document.AcademicLanguage != "ar")
+                throw new InvalidOperationException(
+                    "Grade6 scoped metadata must be an Arabic UAE pack.");
+            document.Lessons = document.Lessons
+                .Where(lesson =>
+                    lesson.LessonCode.StartsWith(prefix,
+                        StringComparison.Ordinal))
+                .ToList();
+        }
+
+        if (documents.Length != 1 ||
+            documents.Sum(x => x.Lessons.Count) != 128 ||
+            documents[0].Lessons
+                .Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal).Count() != 128)
+            throw new InvalidOperationException(
+                "Grade6 scoped metadata release requires exactly 128 unique Arabic lessons.");
+
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
+
+    /// <summary>
     /// Metadata-only reconciliation for the narrowly source-hash-guarded CCSS
     /// editorial candidates when ReadFromJson=true and the host intentionally
     /// skips full startup data maintenance. Never insert lesson prose or update
@@ -831,6 +874,21 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         bool metadataOnly)
     {
         ValidateDistinctTargets(documents);
+
+        if (_db.Database.IsNpgsql() &&
+            _db.Database.CurrentTransaction is not null)
+        {
+            // Scoped G6 production import owns the outer transaction across
+            // pedagogy AND canonical metadata. Preserve the same advisory
+            // lock; never nest a transaction or commit partial Grade6 data.
+            await _db.Database.ExecuteSqlRawAsync(
+                $"SELECT pg_advisory_xact_lock({AdvisoryLockKey});", ct);
+            foreach (var document in documents
+                         .OrderBy(x => x.PackCode, StringComparer.Ordinal)
+                         .ThenBy(x => x.VersionCode, StringComparer.Ordinal))
+                await SeedOneAsync(document, ct, metadataOnly);
+            return;
+        }
 
         if (_db.Database.IsNpgsql())
         {

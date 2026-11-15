@@ -359,6 +359,24 @@ var runStartupDataMaintenance =
         "Edulytics:Deployment:RunStartupDataMaintenance") ??
     !cleanBootstrap;
 
+// Explicit one-time, production-baseline-pinned G6 academic release.
+// No token or an unrelated token NEVER widens the normal startup seeder.
+const string g6ScopedToken =
+    "CONFIRM_SEED_ONLY_UAE_GRADE6_ARABIC_128";
+var g6RequestedToken =
+    Environment.GetEnvironmentVariable("EDULYTICS_G6_SCOPED_RELEASE");
+var g6ScopedRelease =
+    string.Equals(g6RequestedToken, g6ScopedToken,
+        StringComparison.Ordinal);
+if (!string.IsNullOrEmpty(g6RequestedToken) && !g6ScopedRelease)
+    throw new InvalidOperationException(
+        "Invalid UAE Grade6 scoped production release token.");
+if (g6ScopedRelease &&
+    (runStartupDataMaintenance || !readCanonicalJson))
+    throw new InvalidOperationException(
+        "UAE Grade6 scoped import requires JSON delivery and " +
+        "RunStartupDataMaintenance=false. Other grades must not be reseeded.");
+
 // Owner-approved Grade 4 replacement cannot be a silent no-op when production
 // maintenance is disabled. The exact migration token is checked again inside
 // the pedagogical seeder, before any existing lesson/content can be removed.
@@ -404,7 +422,14 @@ using (var scope =
             .GetRequiredService<
                 Edulytics.Data.Seeding.MathematicsCanonicalLessonContentSeeder>();
 
-    if (runStartupDataMaintenance)
+    if (g6ScopedRelease)
+    {
+        var grade6ScopedSeeder = scope.ServiceProvider
+            .GetRequiredService<
+                Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+        await grade6ScopedSeeder.SeedOnlyApprovedUaeGrade6Async();
+    }
+    else if (runStartupDataMaintenance)
     {
         var maintenanceTimer =
             Stopwatch.StartNew();

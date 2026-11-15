@@ -140,6 +140,81 @@ jobs:
           dotnet publish src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-restore --output /tmp/g2-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Rehearse exactly 128 Grade6 production imports on disposable PostgreSQL 18
+        run: |
+          set -euo pipefail
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5291
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
+          BEGIN;
+          CREATE TEMP TABLE ids ON COMMIT DROP AS
+          SELECT "Id" FROM "CurriculumPedagogicalLessons" WHERE
+            "Code" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%' OR
+            "Code" LIKE 'PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:%';
+          DO $$ BEGIN
+            IF (SELECT COUNT(*) FROM ids) <> 201 THEN
+              RAISE EXCEPTION 'Expected exactly 128 G6 plus 73 G12 temporary rows';
+            END IF;
+          END $$;
+          DELETE FROM "CurriculumLessonContents" WHERE "PedagogicalLessonId" IN (SELECT "Id" FROM ids);
+          DELETE FROM "CurriculumPedagogicalLessonOutcomes" WHERE "PedagogicalLessonId" IN (SELECT "Id" FROM ids);
+          DELETE FROM "CurriculumPedagogicalLessons" WHERE "Id" IN (SELECT "Id" FROM ids);
+          COMMIT;
+          SQL
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5090
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5090
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumPedagogicalLessons" x' >/tmp/lessons-before
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumLessonContents" x' >/tmp/content-before
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."PedagogicalLessonId",x."OutcomeNodeId")) FROM "CurriculumPedagogicalLessonOutcomes" x' >/tmp/outcomes-before
+          export EDULYTICS_G6_SCOPED_RELEASE=CONFIRM_SEED_ONLY_UAE_GRADE6_ARABIC_128
+          for n in 1 2; do
+            dotnet run --project src/Edulytics.Web/Edulytics.Web.csproj --configuration Release --no-build --no-launch-profile -- --urls http://127.0.0.1:18416 >"/tmp/g6-scoped-$n.log" 2>&1 &
+            server_pid=$!
+            success=false
+            for attempt in $(seq 1 100); do
+              if grep -q 'UAE_G6_SCOPED_PRODUCTION_128_LESSONS_AND_128_METADATA_PASS' "/tmp/g6-scoped-$n.log"; then success=true; break; fi
+              if ! kill -0 "$server_pid" 2>/dev/null; then break; fi
+              sleep 2
+            done
+            kill "$server_pid" 2>/dev/null || true
+            wait "$server_pid" 2>/dev/null || true
+            if [ "$success" != true ]; then
+              tail -n 55 "/tmp/g6-scoped-$n.log" | grep -Eiv 'password|credential|secret|connection' || true
+              exit 1
+            fi
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5218
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5218
+          done
+          unset EDULYTICS_G6_SCOPED_RELEASE
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%'" >/tmp/lessons-after
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumLessonContents\" x WHERE x.\"PedagogicalLessonId\" NOT IN (SELECT \"Id\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%')" >/tmp/content-after
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"PedagogicalLessonId\",x.\"OutcomeNodeId\")) FROM \"CurriculumPedagogicalLessonOutcomes\" x WHERE x.\"PedagogicalLessonId\" NOT IN (SELECT \"Id\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%')" >/tmp/outcomes-after
+          diff /tmp/lessons-before /tmp/lessons-after
+          diff /tmp/content-before /tmp/content-after
+          diff /tmp/outcomes-before /tmp/outcomes-after
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'")" = 132
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L5:GENERAL:%'")" = 127
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:%'")" = 0
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContentTranslations"')" = 0
+          mkdir -p artifacts/uae-g6-stage-d
+          python3 - <<'PY'
+          import os,json,pathlib
+          p=pathlib.Path('artifacts/uae-g6-stage-d/grade6-scoped-production-gate.json')
+          p.write_text(json.dumps({
+            'phase':'scoped-production','status':'PASS',
+            'candidateSha':os.environ['GITHUB_SHA'],
+            'approvedArabicLessonCount':128,'canonicalMetadataCount':128,
+            'unrelatedRecordsPreserved':5090,'independentRunCount':2,
+            'unrelatedGradesModified':False,
+            'productionDatabaseWritten':False,
+            'testDatabase':'disposable PostgreSQL 18'},indent=2)+'\n')
+          PY
+          echo 'UAE_G6_SCOPE_ONLY_5090_REMAIN_UNCHANGED_PASS'
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g6-scoped-production
+          path: artifacts/uae-g6-stage-d/grade6-scoped-production-gate.json
+          if-no-files-found: warn
       - name: Install pinned Playwright Chromium for real Arabic desktop/mobile screenshots
         run: |
           python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
@@ -288,6 +363,12 @@ jobs:
         continue-on-error: true
         with:
           name: g6-arabic-visual
+          path: artifacts/uae-g6-stage-d/
+      - name: Retrieve current-run scoped G6-only production import proof
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g6-scoped-production
           path: artifacts/uae-g6-stage-d/
       - name: Evaluate current-run artifacts and exact SHA; reject release on missing source/E2E
         env:

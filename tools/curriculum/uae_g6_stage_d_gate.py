@@ -219,7 +219,8 @@ def final():
     errors = [f"{job.upper()}_NOT_SUCCESS:{value}" for job, value in results.items()
               if value != "success"]
     expected_sha = os.environ.get("GITHUB_SHA")
-    for name in ["structural", "source", "authenticated-e2e", "arabic-visual"]:
+    for name in ["structural", "source", "authenticated-e2e",
+                 "arabic-visual", "scoped-production"]:
         filename = OUT / f"grade6-{name}-gate.json"
         if not filename.exists():
             errors.append(f"CURRENT_RUN_GATE_MISSING:{name}")
