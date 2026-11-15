@@ -178,8 +178,10 @@
         "uae.g6.u10.l03.tri_prism_volume"
       ],
       "candidateMechanic": "PRISM_VOLUME_BASE_AREA_HEIGHT",
-      "decision": "CONFIRMED_MISSING_INDEPENDENT_LESSON__NOT_YET_IMPLEMENTED",
-      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index"
+      "decision": "IMPLEMENTED_AS_ARABIC_A_B_C_CANDIDATE_STAGE_D_PENDING",
+      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index",
+      "candidateOrdinal": 74,
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:08:04:PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT"
     },
     {
       "supplementalEditionUnit": 8,
@@ -195,8 +197,10 @@
         "uae.g6.u10.l05.pyramid_volume"
       ],
       "candidateMechanic": "PYRAMID_VOLUME_ONE_THIRD_BASE_HEIGHT",
-      "decision": "CONFIRMED_MISSING_INDEPENDENT_LESSON__NOT_YET_IMPLEMENTED",
-      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index"
+      "decision": "IMPLEMENTED_AS_ARABIC_A_B_C_CANDIDATE_STAGE_D_PENDING",
+      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index",
+      "candidateOrdinal": 75,
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:08:05:PYRAMID-VOLUME-ONE-THIRD-BASE-HEIGHT"
     },
     {
       "supplementalEditionUnit": 8,
@@ -213,8 +217,10 @@
         "uae.g6.u10.l10.tri_prism_surface"
       ],
       "candidateMechanic": "PRISM_SURFACE_NET_BASE_AND_LATERAL",
-      "decision": "CONFIRMED_MISSING_INDEPENDENT_LESSON__NOT_YET_IMPLEMENTED",
-      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index"
+      "decision": "IMPLEMENTED_AS_ARABIC_A_B_C_CANDIDATE_STAGE_D_PENDING",
+      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index",
+      "candidateOrdinal": 76,
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:08:06:PRISM-SURFACE-AREA-NET-ALL-FACES"
     },
     {
       "supplementalEditionUnit": 8,
@@ -230,8 +236,10 @@
         "uae.g6.u10.l12.pyramid_surface"
       ],
       "candidateMechanic": "PYRAMID_SURFACE_NET_SLOPE_HEIGHT",
-      "decision": "CONFIRMED_MISSING_INDEPENDENT_LESSON__NOT_YET_IMPLEMENTED",
-      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index"
+      "decision": "IMPLEMENTED_AS_ARABIC_A_B_C_CANDIDATE_STAGE_D_PENDING",
+      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index",
+      "candidateOrdinal": 77,
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:08:07:PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES"
     },
     {
       "supplementalEditionUnit": 8,
@@ -248,13 +256,15 @@
         "uae.g6.u10.l14.composite_surface"
       ],
       "candidateMechanic": "COMPOSITE_SOLIDS_EXPOSED_SURFACE_VOLUME",
-      "decision": "CONFIRMED_MISSING_INDEPENDENT_LESSON__NOT_YET_IMPLEMENTED",
-      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index"
+      "decision": "IMPLEMENTED_AS_ARABIC_A_B_C_CANDIDATE_STAGE_D_PENDING",
+      "editionPolicy": "supplemental edition to owner-selected 11-unit 73-lesson annual index",
+      "candidateOrdinal": 78,
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:08:08:COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE"
     }
   ],
   "candidateTotalDistinctNumberedLessons": 78,
   "candidateTotalIsFinal": false,
-  "otherEditionCrosswalkStatus": "NOT_YET_FULLY_CONFIRMED",
+  "otherEditionCrosswalkStatus": "FIVE_CONFIRMED_UNIT8_GAPS_IMPLEMENTED__OTHER_EDITION_VARIANTS_NOT_FULLY_CLOSED",
   "openQuestions": [
     "Other edition chapter/lab differences and overlapping review/explorations still need final classification",
     "Preserve primary 73 identity; supplemental lesson placement must not mislabel them as primary official annual index",
@@ -262,5 +272,17 @@
   ],
   "testsRun": "NOT_RUN",
   "stageD": "NOT_RUN",
-  "productionTouched": false
+  "productionTouched": false,
+  "supplementalImplementation": {
+    "originalCoreLessonsPreserved": 73,
+    "extraLessonsImplemented": 5,
+    "candidateGradeLessonCount": 78,
+    "candidateGradeUnitCount": 11,
+    "stageABCCodeAndSourceRecordsWritten": true,
+    "learnerUnit8SortOrderNeedsStageDReview": true,
+    "CI": "NOT_RUN",
+    "runtimeVerification": "NOT_RUN",
+    "fullSourcePublisherExerciseParity": "NOT_CLAIMED",
+    "published": false
+  }
 }

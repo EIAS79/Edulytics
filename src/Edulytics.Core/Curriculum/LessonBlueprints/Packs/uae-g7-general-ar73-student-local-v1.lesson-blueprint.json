@@ -16,8 +16,8 @@
   "SourceCheckedAtUtc": "2026-11-15T17:42:33Z",
   "SourceLicense": "Reference-only local copyrighted student text; original Edulytics content, no reuse license presumed",
   "RequiredDigitalAttribution": "No publisher prose or artwork embedded. Provenance recorded privately.",
-  "SourceSelectionReason": "The owner-selected Arabic General Student Book controls topic, title, goal and order regardless of edition year. Existing English Grade 7 General index is retired.",
-  "SourceSelectionEvidence": "73 numbered lessons / 11 units visually transcribed from first Arabic PDF TOC pages 9–19; Owner-selected Arabic UAE Grade 7 Student Edition; Unit 1 Lesson 1; printed pages 9–16 / physical PDF pages 49–56; source SHA-256 cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+  "SourceSelectionReason": "73 primary Arabic annual-TOC lessons preserved; five additional independently numbered lessons from alternate local Arabic textbook edition included with separate source flags. This does not claim one official 78-lesson edition.",
+  "SourceSelectionEvidence": "73 numbered lessons / 11 units visually transcribed from first Arabic PDF TOC pages 9–19; Owner-selected Arabic UAE Grade 7 Student Edition; Unit 1 Lesson 1; printed pages 9–16 / physical PDF pages 49–56; source SHA-256 cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d; source-gap audit 2026-11-15: five additional Arabic Unit8 numbered lessons 4-8 sourced to 03-8-10.pdf and individually added without rewriting prior 73 lessons. Variant source is not the annual TOC authority.",
   "SourceEvidenceUrls": [
     "https://minhaji.moe.gov.ae/"
   ],
@@ -34,7 +34,10 @@
     "LessonsWithoutNumberedGradeReferenceAnyRole": 1,
     "LessonsWithoutNumberedAddressingStandard": 1,
     "LessonsWithoutNumberedAddressingOrBuildingTowardsStandard": 1,
-    "MultiStandardLessons": 0
+    "MultiStandardLessons": 0,
+    "SupplementalEditionLessonCount": 5,
+    "CoreAnnualLessonCount": 73,
+    "CrossEditionCandidateLessonCount": 78
   },
   "Units": [
     {
