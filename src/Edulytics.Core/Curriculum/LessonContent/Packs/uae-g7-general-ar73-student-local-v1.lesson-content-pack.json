@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u06l06-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u06l07-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1366,6 +1366,35 @@
           "StepByStepSolutions": "1. حدد رمز المقارنة وكونه صارمًا؛ 2. حدد عملية الجمع أو الطرح المجاورة للمجهول؛ 3. نفذ العكس على الطرفين دون قلب الرمز؛ 4. اكتب مجموعة الحل بصيغة رمزية؛ 5. مثّل نقطة مفتوحة أو مغلقة وسهمًا؛ 6. تحقق بقيمتين واحدة داخلة وأخرى خارجة",
           "CommonMistakes": "خطأ: قلب الرمز عند جمع موجب. لماذا خطأ: الجمع لا يعكس الترتيب. التصويب: احتفظ بالرمز. خطأ: وضع نقطة مغلقة مع <. لماذا خطأ: القيمة الحدية مستبعدة. التصويب: ضع نقطة مفتوحة. خطأ: القول إن الحل قيمة واحدة. لماذا خطأ: المتباينة لها مجموعة حلول. التصويب: اكتب الاتجاه على خط أعداد.",
           "QuickSummary": "الجمع والطرح لا يعكسان الرمز. < و> لا يشملان الحد. ≤ و≥ يشملان الحد. المتباينة لها مجموعة حلول. Cool-down أصلي بلا حلول: حل ن+٩>−٤؛ حل س−١١≤−٨؛ مثل ص≥٣ على خط أعداد وبيّن قيمًا صحيحة. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:06:07:MULTIPLY-DIVIDE-INEQUALITIES",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF171-178 (printed 505-512); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF171-178 (printed 505-512); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المتباينات بالضرب أو القسمة",
+          "Explanation": "في المتباينات عند ضرب الطرفين في عدد موجب أو قسمتهما عليه، نحافظ على اتجاه رمز المتباينة. مثال ٣س>١٨ ⇒ س>٦. أما إذا ضربنا الطرفين في عدد سالب أو قسمناهما عليه، فإن ترتيب القيم ينعكس ويجب قلب الرمز: −٤س<٢٠ ⇒ س>−٥. السبب واضح بمثال عددي: ٢<٥، لكن عند ضربهما في −١ يصبح −٢>−٥. لا يجوز نسيان هذا التغيير لأنه يخرج مجموعة حلول خاطئة. إذا احتوى معامل المتغير على كسر سالب نستعمل معكوسه السالب ونعكس الرمز مرة واحدة. بعد حل المتباينة نختبر قيمة داخل مجموعة الحل وقيمة خارجها. في التمثيل بخط الأعداد تكون الدائرة مفتوحة عند الرموز الصارمة ومغلقة عند الرموز الشاملة. إذا احتوى المقام على متغير مجهول فلا نقسم عليه دون معرفة إشارته، لكن الدرس يركز على معاملات عددية معلومة.",
+          "KeyConceptsAndRules": "ضرب موجب: إذا أ<ب وج>٠، أ ج<ب ج مثل ٣س>١٨ ⇒ س>٦. ضرب سالب: إذا أ<ب وج<٠، أ ج>ب ج مثل −٤س<٢٠ ⇒ س>−٥. قسمة سالب: −٢س≥٨ ⇒ س≤−٤ مثل −٤<٨ غير كافٍ دون اختبار. التحقق: اختر س=٠ مثلًا عند س>−٥ مثل −٤×٠=٠<٢٠.",
+          "WorkedExamples": "مثال 1: حل ٣س>١٨. الخطوات: اقسم الطرفين على ٣ الموجب.؛ الرمز > يبقى.؛ س>٦.. الإجابة س>٦. التحقق: س=٧ يحقق ٢١>١٨. مثال 2: حل −٤س<٢٠. الخطوات: اقسم على −٤.؛ اقلب < إلى >.؛ س>−٥.. الإجابة س>−٥. التحقق: س=٠ يحقق ٠<٢٠. مثال 3: حل −٢س≥٨. الخطوات: اقسم على −٢.؛ اقلب ≥ إلى ≤.؛ س≤−٤.. الإجابة س≤−٤. التحقق: س=−٤ يعطي ٨≥٨. مثال 4: حل −س/٣<٢. الخطوات: اضرب في −٣.؛ اقلب < إلى >.؛ س>−٦.. الإجابة س>−٦. التحقق: س=٠ يعطي ٠<٢.",
+          "StepByStepSolutions": "1. حدد معامل المتغير وإشارته؛ 2. افحص أنه غير صفر؛ 3. اقسم أو اضرب لعزل المتغير؛ 4. احفظ الرمز عند موجب واقلبه عند سالب؛ 5. مثل الحل على خط الأعداد بنقطة مناسبة؛ 6. تحقق بقيمة تحقق وأخرى لا تحقق الأصل",
+          "CommonMistakes": "خطأ: نسيان قلب الرمز عند القسمة بسالب. لماذا خطأ: ينعكس ترتيب الأعداد. التصويب: اقلب المتباينة مرة عند سالب. خطأ: قلب الرمز عند القسمة بموجب. لماذا خطأ: الموجب يحفظ الترتيب. التصويب: أبق الرمز. خطأ: قلب الرمز مرتين بلا سبب. لماذا خطأ: قد يعود خطأ إلى الاتجاه الأول. التصويب: عد عمليات الضرب/القسمة السالبة فقط.",
+          "QuickSummary": "السالب يعكس رمز المتباينة. الموجب لا يعكسه. التحقق في الأصل مهم. الحلول تُمثّل بنقاط وأسهم. Cool-down أصلي بلا حلول: حل −٥ن≥١٥؛ حل س/−٤<٣؛ فسر لماذا س<٧ يصبح −س>−٧. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }

@@ -8986,6 +8986,14 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.inequality.ax_plus_b_relation_c", "usccss.g6.u07.l08.inequality_bound_examples"],
             "UAE_G7_ARABIC_U06L06_PDF_163_170",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/07, student 02-5-6.pdf printed 505-512.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:07:MULTIPLY-DIVIDE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:07:MULTIPLY-DIVIDE-INEQUALITIES", "algebra.linear.inequality.solve",
+            "MULTIPLY-DIVIDE-INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c", "usccss.g6.u07.l09.inequality_solution_set_logic"],
+            "UAE_G7_ARABIC_U06L07_PDF_171_178",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
