@@ -8962,6 +8962,14 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.ax_plus_b_equals_c", "usccss.g6.u06.l02.variable_equation_solutions"],
             "UAE_G7_ARABIC_U06L03_PDF_123_134",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/04, student 02-5-6.pdf printed 469-480.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:04:TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:04:TWO-STEP-EQUATIONS", "algebra.linear.solve",
+            "TWO-STEP-EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed"],
+            "UAE_G7_ARABIC_U06L04_PDF_135_146",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",

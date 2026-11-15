@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u06l03-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u06l04-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1279,6 +1279,35 @@
           "StepByStepSolutions": "1. حدد المجهول والمعامل النسبي؛ 2. اكتب المقلوب الضربي للمعامل غير الصفري؛ 3. اضرب طرفي المعادلة في المقلوب؛ 4. بسط حاصل الضرب في الطرفين؛ 5. اكتب قيمة المجهول بدقة؛ 6. تحقق بإعادة ضرب المعامل في الحل",
           "CommonMistakes": "خطأ: قلب المقسوم بدل المعامل. لماذا خطأ: يغيّر المسألة. التصويب: خذ مقلوب المعامل المضروب. خطأ: تجاهل السالب في المقلوب. لماذا خطأ: يعطي ناتجًا بعكس الإشارة. التصويب: اكتب المقلوب بإشارته. خطأ: تقريب ٢/٣ إلى ٠٫٦٧ أثناء الحل. لماذا خطأ: ينتج خطأ عدديًا. التصويب: استعمل الكسر الدقيق.",
           "QuickSummary": "المعامل الكسري يعكس بالمقلوب. العدد العشري يعالج بالقسمة. الإشارة السالبة لا تضيع. التأكد بالتعويض يمنع أخطاء الكسور. Cool-down أصلي بلا حلول: حل ٥/٦س=١٥؛ حل −٠٫٤س=٦؛ اكتب معادلة تمثل ٣/٨ من مساحة ٤٨ مترًا. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:06:04:TWO-STEP-EQUATIONS",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF135-146 (printed 469-480); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF135-146 (printed 469-480); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المعادلات المكونة من خطوتين",
+          "Explanation": "في المعادلة المكونة من خطوتين يوجد عادة معامل مضروب في المجهول ثم ثابت يُجمع أو يُطرح، مثل ٤س+٧=٣١. نعكس العمليات بالترتيب العكسي: نطرح ٧ أولًا فيصبح ٤س=٢٤، ثم نقسم على ٤ فنجد س=٦. إذا كان الثابت سالبًا، فإن ٣س−٥=١٦ تُحل بإضافة ٥ أولًا، ثم القسمة على ٣، والناتج س=٧. أما −٢س+٩=١٥ فتحتاج طرح ٩ ثم القسمة على −٢، فينتج س=−٣. يجب تبرير كل خطوة بالحفاظ على تساوي الطرفين، لا القفز من ٤س+٧ إلى س=٢٤ من دون قسمة. نماذج الأرصدة والمشتريات تعين على فهم ما يمثل المجهول وما يمثل الرسم الثابت؛ المعلم يراجع صياغة المعادلة من النص.",
+          "KeyConceptsAndRules": "خطوتان: أ س+ب=ج مثل ٤س+٧=٣١. عكس الجمع: أس=ج−ب مثل ٤س=٢٤. عكس الضرب: س=(ج−ب)/أ مثل س=٦. التحقق: أس+ب=ج مثل ٤×٦+٧=٣١.",
+          "WorkedExamples": "مثال 1: حل ٤س+٧=٣١. الخطوات: اطرح ٧: ٤س=٢٤.؛ اقسم على ٤.؛ س=٦.. الإجابة س=٦. التحقق: ٤×٦+٧=٣١. مثال 2: حل ٣س−٥=١٦. الخطوات: أضف ٥: ٣س=٢١.؛ اقسم على ٣.؛ س=٧.. الإجابة س=٧. التحقق: ٣×٧−٥=١٦. مثال 3: حل −٢س+٩=١٥. الخطوات: اطرح ٩: −٢س=٦.؛ اقسم على −٢.؛ س=−٣.. الإجابة س=−٣. التحقق: −٢×−٣+٩=١٥. مثال 4: رسوم ثابتة ١٢ و٥ لكل قطعة وإجمالي ٤٧، كم قطعة؟ الخطوات: اكتب ٥ن+١٢=٤٧.؛ اطرح ١٢ ليصبح ٥ن=٣٥.؛ اقسم على ٥.. الإجابة ٧ قطع. التحقق: ٥×٧+١٢=٤٧.",
+          "StepByStepSolutions": "1. اقرأ طرفَي المعادلة؛ 2. حدد الثابت والمعامل؛ 3. اعكس الجمع أو الطرح لإزالة الثابت؛ 4. اعكس الضرب أو القسمة لعزل المتغير؛ 5. احسب النتيجة مع الإشارة؛ 6. تحقق بالتعويض والتفسير",
+          "CommonMistakes": "خطأ: قسمة على المعامل قبل معالجة الثابت بطريقة خاطئة. لماذا خطأ: ينسى الطالب تقسيم الثابت أيضًا. التصويب: أزل الثابت أولًا. خطأ: عدم حفظ سالب المعامل. لماذا خطأ: قد ينعكس اتجاه الناتج. التصويب: اقسم على القيمة الموقعة. خطأ: ترك جواب دون تحقق. لماذا خطأ: لا يكشف خطأ جمع أو طرح. التصويب: عوض في الأصل.",
+          "QuickSummary": "أزيل الثابت أولًا ثم المعامل. أنفذ عملية متوازنة في الطرفين. أراجع الإشارات. أتحقق بالتعويض. Cool-down أصلي بلا حلول: حل ٥س−٨=١٧؛ حل −٣ص+٤=−١١؛ كوّن معادلة لعدد كتب سعر الواحد ٨ مع شحن ١٢ والإجمالي ٦٨. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }
