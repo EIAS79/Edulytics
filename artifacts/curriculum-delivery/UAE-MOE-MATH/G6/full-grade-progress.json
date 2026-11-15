@@ -16,9 +16,9 @@
   "verifiedTocInstructionalItemCount": 128,
   "sourceBodyCoverageComplete": false,
   "gradeLessonCount": 128,
-  "closedLessons": 87,
-  "firstIncompleteLessonOrdinal": 88,
-  "lastClosedLessonOrdinal": 87,
+  "closedLessons": 88,
+  "firstIncompleteLessonOrdinal": 89,
+  "lastClosedLessonOrdinal": 88,
   "readyForStageD": false,
   "unitStates": [
     {
@@ -77,7 +77,7 @@
     {
       "unit": 9,
       "sourceIndexElements": 11,
-      "closed": 0,
+      "closed": 1,
       "readyForStageD": false
     },
     {
@@ -101,18 +101,18 @@
   ],
   "current": {
     "unit": 9,
-    "lesson": 1,
-    "title": "مختبر الاستكشاف: مساحة متوازي الأضلاع",
-    "status": "A_C_EXPLICIT_GAP_B_C_AUTHORED",
-    "sourceBookFile": null,
-    "sourcePdfPages": null,
-    "sourcePagesPrinted": [
-      651,
-      654
+    "lesson": 2,
+    "title": "????? ?????? ???????",
+    "status": "A_C_PENDING",
+    "sourceBookFile": "03.pdf",
+    "sourcePrintedPages": [
+      655,
+      661
     ],
-    "sourceBlockerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-088-source-blocker.json",
-    "conceptualReference": "03.pdf PDF8–10 printed655–657, not original lab",
-    "sourceSequenceClarification": "U09 pre-lesson exploration lab pp651–654 (ordinal88); first formally numbered lesson starts p655 (ordinal89). Do not confuse pedagogical ordinal with printed lesson numbering."
+    "sourcePdfPages": [
+      8,
+      14
+    ]
   },
   "sourceIndexPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/source-index.json",
   "sourceElementLedgerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/element-coverage-ledger.json",
@@ -129,11 +129,12 @@
     "Draft PR GitHub actions can auto-trigger under branch/PR workflow settings; never report these as manual per-lesson test runs.",
     "U01:L01 first lesson READY_FOR_STAGE_D based on Grade5-equivalent authored/static A-B-C closure criteria; no .NET/CI manually run, no StageD/production migration. U01:L02 is next; old English 59 intact.",
     "2026-11-15: Lesson 88 Arabic B and C authored with existing exact area families; direct lab printed651–654 still unavailable; 87/128 unchanged.",
-    "Source indexing clarified: U09 printed lesson 1 begins p655 and is ordinal89; ordinal88 pp651–654 is a separately indexed pre-lesson lab, not formal lesson 1."
+    "Source indexing clarified: U09 printed lesson 1 begins p655 and is ordinal89; ordinal88 pp651–654 is a separately indexed pre-lesson lab, not formal lesson 1.",
+    "2026-11-15: ordinal88 pre-lesson lab accepted on educational skill equivalence, NOT exact-textbook-page match; 88/128, Stage D unrun."
   ],
-  "A_B_C_Ready": 87,
+  "A_B_C_Ready": 88,
   "A_B_C_InProgress": 1,
-  "lastClosedContentScope": "G6 U08L10 87/128 confirmed; U09L01 printed651–654 is SOURCE_BLOCKED, no A-B-C closure; local 02.pdf foldables and 03.pdf printed650–655 gap",
+  "lastClosedContentScope": "U09 prelesson lab ordinal88: original equivalent rearrangement & area activity approved; source printed651-654 still unavailable, unrelated first formal lesson begins p655.",
   "unit3A_B_C_ClosedLessons": 10,
   "unit3StageD": "NOT_RUN",
   "unit3HistoricalEnglishPackPreserved": true,

@@ -16,7 +16,7 @@ public sealed class UaeG6U9L01ParallelogramAreaLabTests
     [Fact] public void ReusesExistingEngineAndRetainsSourceGate()
     {
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var c));
-        Assert.Equal("SOURCE_REVIEW_PENDING",c!.Readiness);
+        Assert.Equal("READY_VERIFIED",c!.Readiness);
         Assert.Equal(3,c.AllowedQuestionFamilies.Count);
         foreach(var f in c.AllowedQuestionFamilies)
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));

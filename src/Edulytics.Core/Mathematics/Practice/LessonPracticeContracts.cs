@@ -9374,7 +9374,7 @@ public static class LessonPracticeContractRegistry
             "REARRANGE_PARALLELOGRAM_AND_BASE_TIMES_PERPENDICULAR_HEIGHT",
             ["usccss.g6.u01.l04.parallelogram_exact_area","usccss.g6.u01.l04.equal_area_rearrangement","usccss.g6.u01.l05.corresponding_height"],
             "LOCAL_G6_03_PDF8_10_CONCEPTUAL_ONLY_EXACT_LAB_UNAVAILABLE",
-            "SOURCE_REVIEW_PENDING",Version);
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

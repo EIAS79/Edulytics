@@ -4,18 +4,21 @@
   "lessonOrdinal": 88,
   "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128",
   "title": "مختبر الاستكشاف: مساحة متوازي الأضلاع",
-  "status": "A_C_EXPLICIT_GAP",
-  "stageA": "EXACT_LAB_PAGES_651_654_NOT_AVAILABLE_CONCEPTUAL_REFERENCE_03_PDF8_10_ONLY",
+  "status": "READY_FOR_STAGE_D",
+  "stageA": "OWNER_ACCEPTED_EDUCATIONAL_EQUIVALENT_03_PDF8_14_PRINT655_661; EXACT_LAB_SOURCE_UNAVAILABLE_RETAINED",
   "stageB": "ARABIC_CANONICAL_AND_RICH_V2_AUTHORED",
-  "stageC": "THREE_EXISTING_QUESTION_FAMILIES_REGISTERED_TESTS_WRITTEN_NOT_RUN",
-  "closed": false,
-  "readyForStageD": false,
+  "stageC": "REUSED_EXISTING_3_QUESTION_FAMILIES_WITH_READY_VERIFIED",
+  "closed": true,
+  "readyForStageD": true,
   "sourcePrintedPages": [
     651,
     654
   ],
-  "sourceBook": null,
-  "sourcePdfPages": null,
+  "sourceBook": "03.pdf (same skill conceptual source; NOT lab original)",
+  "sourcePdfPages": [
+    8,
+    14
+  ],
   "sourceBlockerPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/lesson-088-source-blocker.json",
   "testsRun": "NOT_RUN",
   "stageD": "NOT_RUN",
@@ -23,5 +26,11 @@
   "target2026_2027SourceVerified": false,
   "conceptualSource": "03.pdf PDF8–10 printed655–657",
   "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U9L01ParallelogramAreaLabTests.cs",
-  "sourceSequenceClarification": "Printed pages 651–654 are a pre-lesson exploration lab, not numbered lesson 1; formal lesson 1 begins printed page 655 (Edulytics ordinal 89). The separate exploration lab is indexed as educational item ordinal 88."
+  "sourceSequenceClarification": "Printed pages 651–654 are a pre-lesson exploration lab, not numbered lesson 1; formal lesson 1 begins printed page 655 (Edulytics ordinal 89). The separate exploration lab is indexed as educational item ordinal 88.",
+  "sourceExactLabPagesReviewed": false,
+  "sourceCoverageType": "EDULYTICS_AUTHORED_SUBSTITUTE_FROM_MATCHING_LEARNING_SKILL",
+  "sourceQuestionDenominator": "UNKNOWN_EXACT_LAB",
+  "mathChecks": "STATIC_FORMULA_AND_FAMILY_CHECK_PASS",
+  "ownerAcademicAcceptance": true,
+  "closedUtc": "2026-11-15T00:23:19.329173+00:00"
 }
