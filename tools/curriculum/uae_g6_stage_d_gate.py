@@ -114,6 +114,13 @@ def structural():
             errors.append("G6_INVALID_RICH_V2_JSON:" + f.name)
     if len(rich_codes) != TOTAL or set(rich_codes) != set(codes):
         errors.append(f"G6_RICH_V2_SCOPE_MISMATCH:{len(rich_codes)}")
+    extra = load(ROOT / "src/Edulytics.Core/Mathematics/Curriculum/supporting-practice-target-rules.v1.json")
+    for rule in extra.get("rules", []):
+        for pattern in rule.get("codePatterns", []):
+            if pattern.startswith("^PED:UAE-MOE-MATH:L6:GENERAL:"):
+                literal = pattern.removeprefix("^").removesuffix("$")
+                if literal not in set(codes):
+                    errors.append("G6_NONCANONICAL_SUPPLEMENTAL_TARGET:" + str(rule.get("id")))
     markup = VIEW.read_text(encoding="utf-8")
     for marker in ("isUaeGrade6Arabic", "uae-g6-original-arabic-lesson",
                    'Model.RichContent?.Visuals.Count > 0'):
