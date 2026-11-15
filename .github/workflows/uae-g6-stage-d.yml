@@ -104,9 +104,9 @@ jobs:
           --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
           --health-interval=5s --health-timeout=5s --health-retries=20
     env:
-      ConnectionStrings__DefaultConnection: 'Host=128.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
-      ConnectionStrings__MigrationConnection: 'Host=128.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
-      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=128.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
       EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
       EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
       EDULYTICS_CI_REHEARSAL: 'true'
@@ -163,12 +163,12 @@ jobs:
           openssl req -x509 -newkey rsa:2048 -nodes -days 1 \
             -keyout /tmp/g2-key.pem -out /tmp/g2-cert.pem \
             -subj '/CN=localhost' \
-            -addext 'subjectAltName=DNS:localhost,IP:128.0.0.1' >/dev/null 2>&1
+            -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
           openssl pkcs12 -export -out /tmp/g2-identity.pfx \
             -inkey /tmp/g2-key.pem -in /tmp/g2-cert.pem \
             -passout pass:local-test-tls >/dev/null 2>&1
           cp /tmp/g2-cert.pem /tmp/phase-uat-cert.pem
-          export ASPNETCORE_URLS='https://128.0.0.1:5052'
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
           export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g2-identity.pfx
           export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
           export Edulytics__MeetingDemo__ResetAndSeed='false'

@@ -9,7 +9,7 @@ public sealed class UaeG6U8L10SolveInequalityTests
  {
   var r=RichLessonContentV2Registry.Find(L,"ar");
   Assert.NotNull(r);Assert.Equal(10,r!.WorkedExamples.Count);
-  Assert.True(r.Visuals.Any(v=>v.Kind==RichLessonVisualKind.InequalityNumberLine));
+  Assert.Contains(r.Visuals,v=>v.Kind==RichLessonVisualKind.InequalityNumberLine);
   Assert.True(LessonPracticeCapabilityResolver.TryResolve(L,out var c));
   Assert.Equal(5,c!.AllowedQuestionFamilies.Count);
   foreach(var x in c.AllowedQuestionFamilies)Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(x));

@@ -12,7 +12,7 @@ public sealed class UaeG6U10L12SolidTests
    Assert.Equal(8,lesson!.WorkedExamples.Count);
    Assert.True(lesson.Visuals.Count>=3);
    Assert.True(LessonPracticeCapabilityResolver.TryResolve(L,out var contract));
-   Assert.Equal(1,contract!.AllowedQuestionFamilies.Count);
+   Assert.Single(contract!.AllowedQuestionFamilies);
    foreach(var f in contract.AllowedQuestionFamilies) Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));
  }
  [Fact] public void CheckCorrectArabicAnswerAndRejectWrongValue()

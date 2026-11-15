@@ -12,7 +12,7 @@ public sealed class UaeG6U9L07SemanticTests
         Assert.Equal(8,x!.WorkedExamples.Count);
         Assert.True(x.Visuals.Count>=3);
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(Lesson,out var c));
-        Assert.Equal(1,c!.AllowedQuestionFamilies.Count);
+        Assert.Single(c!.AllowedQuestionFamilies);
         foreach(var f in c.AllowedQuestionFamilies)Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(f));
     }
     [Fact] public void ExactVerificationAndWrongAnswer()
