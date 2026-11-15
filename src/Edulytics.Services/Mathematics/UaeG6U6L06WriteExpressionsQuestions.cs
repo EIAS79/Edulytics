@@ -29,7 +29,10 @@ internal static class UaeG6U6L06WriteExpressionsQuestions
         if(!Supports(family)||p is null)return false;
         if(family==Inches)
         {
-            if(p.Count!=0)return false;
+            // Preserve the sole exact conversion constant as an explicit
+            // reconstructable parameter, rather than an empty parameter set.
+            if(p.Count!=1||!p.TryGetValue("centimetersPerInchHundredths",out int v)||
+               v!=254)return false;
             expected="2.54س";return true;
         }
         if(family==Markup)
@@ -65,7 +68,7 @@ internal static class UaeG6U6L06WriteExpressionsQuestions
         string question;
         if(family==Inches)
         {
-            p=new();
+            p=new(){{"centimetersPerInchHundredths",254}};
             question="س عدد البوصات. إذا كانت البوصة تساوي ٢٫٥٤ سنتيمتر، اكتب تعبير عدد السنتيمترات.";
         }
         else if(family==Markup)

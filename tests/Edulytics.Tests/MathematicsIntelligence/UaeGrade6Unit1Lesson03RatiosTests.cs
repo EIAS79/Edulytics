@@ -44,6 +44,7 @@ public sealed class UaeGrade6Unit1Lesson03RatiosTests
         Assert.Equal(3,6/2);
         Assert.Equal(5,10/2);
         Assert.Equal(8,16/2);
-        Assert.Equal(5,30/(2+3));
+        Assert.Equal(6, 30 / (2 + 3));
+        Assert.NotEqual(30 / 2, 30 / (2 + 3));
     }
 }

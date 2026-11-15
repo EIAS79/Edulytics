@@ -306,7 +306,8 @@ public sealed class LessonContentService : ILessonContentService
                              x.OfficialOutcomeCount) &&
                          LessonContentPolicy.CanExposeStudentLesson(
                              context.FrameworkCode,
-                             x.IsSupporting == true)))
+                             x.IsSupporting == true,
+                             x.Code)))
             {
                 if (!contentByLesson.TryGetValue(lesson.Id, out var content))
                     continue;
@@ -388,7 +389,8 @@ public sealed class LessonContentService : ILessonContentService
         if (context is null ||
             !LessonContentPolicy.CanExposeStudentLesson(
                 context.FrameworkCode,
-                lesson.IsSupporting == true))
+                lesson.IsSupporting == true,
+                lesson.Code))
         {
             return LessonContentQueryResult<StudentLessonDetail>.Failure(
                 LessonContentErrorCode.LessonNotFound);

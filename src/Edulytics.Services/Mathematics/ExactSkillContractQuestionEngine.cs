@@ -9303,6 +9303,16 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L10DivisionEquationsQuestions.Solve(problem.Family,p);
         if (UaeG6U8FunctionQuestions.Supports(problem.Family))
             return UaeG6U8FunctionQuestions.Solve(problem.Family,p);
+        // Each G6 area/solid/statistics question already has a bounded
+        // independent solver and verifier. Wire the solver side as well as
+        // the existing generator/verification dispatch (do not use the
+        // generated Solution prose as a grading answer).
+        if (UaeG6U9AreaPracticeQuestions.Supports(problem.Family))
+            return UaeG6U9AreaPracticeQuestions.Solve(problem.Family,p);
+        if (UaeG6U10SolidPracticeQuestions.Supports(problem.Family))
+            return UaeG6U10SolidPracticeQuestions.Solve(problem.Family,p);
+        if (UaeG6U11U12StatisticsQuestions.Supports(problem.Family))
+            return UaeG6U11U12StatisticsQuestions.Solve(problem.Family,p);
         if (UaeG6U8L02SequenceQuestions.Supports(problem.Family))
             return UaeG6U8L02SequenceQuestions.Solve(problem.Family,p);
         if (UaeG6U8L03FunctionGraphsQuestions.Supports(problem.Family))

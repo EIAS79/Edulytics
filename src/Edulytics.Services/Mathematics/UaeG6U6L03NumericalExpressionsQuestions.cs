@@ -145,7 +145,8 @@ internal static class UaeG6U6L03NumericalExpressionsQuestions
         if(!TryAnswer(family,p,out var expected)||string.IsNullOrWhiteSpace(response)||
            response.Length>75)return false;
         string answer=Normalize(response.Trim());
-        if(family==FirstStep)return string.Equals(answer,expected,StringComparison.Ordinal);
+        if(family==FirstStep)
+            return string.Equals(answer,Normalize(expected),StringComparison.Ordinal);
         return decimal.TryParse(answer,NumberStyles.Number,CultureInfo.InvariantCulture,out var actual)&&
             decimal.TryParse(expected,NumberStyles.Number,CultureInfo.InvariantCulture,out var target)&&actual==target;
     }

@@ -67,7 +67,9 @@ internal static class UaeG6U6L07ModelItQuestions
         }
         else if(family==Savings)
         {
-            int init=r.Next(0,101)*100+r.Next(0,100),week=r.Next(1,51)*100+r.Next(0,100);
+            // Keep generated currency values inside the independent verifier bounds.
+            int init=r.Next(0,100)*100+r.Next(0,100),
+                week=r.Next(1,50)*100+r.Next(0,100);
             int weeks=r.Next(1,53);
             p=new(){{"initialCents",init},{"weekCents",week},{"weeks",weeks}};
             prompt=$"رصيد أولي {(init/100m).ToString("0.00",CultureInfo.InvariantCulture)} درهم، وتضاف {(week/100m).ToString("0.00",CultureInfo.InvariantCulture)} درهم كل أسبوع. كم الرصيد بعد {weeks} أسبوعًا؟";

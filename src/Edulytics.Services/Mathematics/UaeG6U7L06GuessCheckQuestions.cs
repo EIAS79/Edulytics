@@ -18,11 +18,28 @@ internal static class UaeG6U7L06GuessCheckQuestions
     {
         answer="";
         if(!Supports(f)||p is null)return false;
-        if(f==Comics||f==Quiz||f==Operators)
+        if(f==Comics)
         {
-            if(p.Count!=0)return false;
-            answer=f==Comics?"٢،٢":f==Quiz?"٣،٣":"3*4+6/1";
-            return true;
+            if(p.Count!=2||!p.TryGetValue("newGroups",out int n)||
+               !p.TryGetValue("usedGroups",out int u)||n is <1 or >12||
+               u is <1 or >12)return false;
+            answer=$"{n}،{u}";return true;
+        }
+        if(f==Quiz)
+        {
+            if(p.Count!=2||!p.TryGetValue("twoPoint",out int a)||
+               !p.TryGetValue("fourPoint",out int b)||a is <1 or >12||
+               b is <1 or >12)return false;
+            answer=$"{a}،{b}";return true;
+        }
+        if(f==Operators)
+        {
+            if(p.Count!=4||!p.TryGetValue("a",out int a)||
+               !p.TryGetValue("b",out int b)||!p.TryGetValue("c",out int c)||
+               !p.TryGetValue("d",out int d)||a is <2 or >9||
+               b is <2 or >9||c is <2 or >45||d is <1 or >5||
+               c%d!=0)return false;
+            answer=$"{a}*{b}+{c}/{d}";return true;
         }
         if(f==Notes)
         {
@@ -49,18 +66,24 @@ internal static class UaeG6U7L06GuessCheckQuestions
         }
         else if(f==Comics)
         {
-            p=new();
-            question="اشترى طالب ١٦ قصة في مجموعات: كل مجموعة جديدة ٥ قصص وكل مستعملة ٣ قصص، مع وجود النوعين. كم مجموعة جديدة وكم مجموعة مستعملة؟ اكتب العددين بهذا الترتيب مفصولين بفاصلة عربية.";
+            // The count of groups and total books jointly determine both
+            // unknowns, unlike a total-only open-ended guessing prompt.
+            int n=r.Next(1,13),u=r.Next(1,13);
+            p=new(){{"newGroups",n},{"usedGroups",u}};
+            question=$"اشترى طالب {5*n+3*u} قصة موزعة على {n+u} مجموعات. المجموعة الجديدة ٥ قصص والمستعملة ٣ قصص. كم مجموعة جديدة وكم مستعملة؟ اكتب العددين بهذا الترتيب مفصولين بفاصلة.";
         }
         else if(f==Quiz)
         {
-            p=new();
-            question="اختبار فيه ٦ أسئلة، بعضها بنقطتين وبعضها بأربع نقاط. مجموع النقاط ١٨. كم سؤالًا من كل نوع؟ اكتب عدد أسئلة النقطتين ثم الأربع نقاط.";
+            int a=r.Next(1,13),b=r.Next(1,13);
+            p=new(){{"twoPoint",a},{"fourPoint",b}};
+            question=$"في اختبار {a+b} أسئلة بنقطتين أو أربع نقاط لكل سؤال، مجموع النقاط {2*a+4*b}. كم سؤالًا من كل نوع؟ اكتب عدد أسئلة النقطتين ثم الأربع نقاط.";
         }
         else if(f==Operators)
         {
-            p=new();
-            question="أكمل التعبير ٣ □ ٤ □ ٦ □ ١ = ١٨ باستخدام × ثم + ثم ÷، مرة لكل رمز. اكتب التعبير كاملًا دون مساواة.";
+            int a=r.Next(2,10),b=r.Next(2,10),d=r.Next(1,6);
+            int c=d*r.Next(2,10);
+            p=new(){{"a",a},{"b",b},{"c",c},{"d",d}};
+            question=$"أكمل التعبير {a} □ {b} □ {c} □ {d} = {a*b+c/d} باستخدام × ثم + ثم ÷ مرة لكل رمز وفق ترتيب العمليات. اكتب التعبير كاملًا دون المساواة.";
         }
         else
         {
