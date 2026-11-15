@@ -9034,6 +9034,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u01.l02.scale_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l03.scaled_l_polygon"],
             "UAE_G7_ARABIC_U07L04_PDF_45_54",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/05, student 02-07.pdf printed 585-592.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:05:THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:05:THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS", "geometry.spatial.views",
+            "THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS",
+            ["uae.g5.u12.l07.net_solid_classification", "usccss.g6.u01.l11.polygon_classification"],
+            "UAE_G7_ARABIC_U07L05_PDF_55_62",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
