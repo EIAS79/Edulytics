@@ -55,7 +55,9 @@ def verify(root: Path):
                 t.get("CultureCode") == "ar" for t in x["Translations"])
                 for x in content["Lessons"])
             and content.get("AcademicLanguage") == "ar"
-            and content.get("Status") == "Draft"
+            and content.get("Status") == "Published"
+            and approval.get("contentPublicationMetadataApproved") is True
+            and approval.get("approvedPublicationContentStatus") == "Published"
             and blueprint.get("Pathway") == "General"
             and blueprint.get("LogicalLevel") == 7
             and len(blueprint["Units"]) == 11):
