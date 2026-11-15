@@ -8804,6 +8804,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.number.signed_rational_multiply"],
             "UAE_G7_GENERAL_ARABIC_U03L04_PRINTED_233_239",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L05, printed 243-249:
+        // exact signed rational division and signed displacement rate from existing engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:05:DIVIDE-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:05:DIVIDE-INTEGERS", "supporting.fractions.multiply_divide",
+            "SIGNED_INTEGER_DIVISION_WITH_RATE_AND_ZERO_GUARD",
+            ["usccss.number.signed_rational_divide", "usccss.number.signed_rate_displacement"],
+            "UAE_G7_GENERAL_ARABIC_U03L05_PRINTED_243_249",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
