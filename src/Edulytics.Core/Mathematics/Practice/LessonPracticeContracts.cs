@@ -9082,6 +9082,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_area_pi_coefficient", "geometry.volume.rectangular_prism", "usccss.g6.u01.l16.surface_volume_unit_logic"],
             "UAE_G7_ARABIC_U09L01_PDF_4_11",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/02, student 04-09-volume-surface-2021-student.pdf printed 667-674.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME", "supporting.geometry.area_volume",
+            "CONE-VOLUME",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l16.surface_volume_unit_logic", "geometry.volume.rectangular_prism"],
+            "UAE_G7_ARABIC_U09L02_PDF_12_19",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
