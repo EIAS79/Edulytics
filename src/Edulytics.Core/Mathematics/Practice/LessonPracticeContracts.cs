@@ -8867,6 +8867,13 @@ public static class LessonPracticeContractRegistry
             ["supporting.measurement.unit_conversion", "usccss.g6.u03.l04.source_ratio_unit_conversions"],
             "UAE_G7_GENERAL_ARABIC_U04L07_PRINTED_319_325",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic Unit4 Lesson8 student printed327-334.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS", "supporting.fractions.multiply_divide",
+            "FRACTION_DIVIDE_RECIPROCAL_SIGNED_MIXED",
+            ["usccss.number.signed_rational_divide", "supporting.fractions.multiply_divide"],
+            "UAE_G7_GENERAL_ARABIC_U04L08_PRINTED_327_334",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
