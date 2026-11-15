@@ -8675,6 +8675,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
             "UAE_G7_GENERAL_ARABIC_U01L05_P45_52",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01L06, printed 55-62; cross-products
+        // and equivalent proportional equations, original lesson body.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:06:SOLVE-PROPORTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:SOLVE-PROPORTIONS", "proportions.equivalent_ratios",
+            "CROSS_PRODUCT_AND_UNIT_RATE_PROPORTION_SOLVE",
+            ["usccss.g7.u02.l04.proportional_equations", "usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L06_PRINTED_55_62",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
