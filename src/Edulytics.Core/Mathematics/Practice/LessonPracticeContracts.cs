@@ -9122,6 +9122,14 @@ public static class LessonPracticeContractRegistry
             ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "usccss.g6.u06.l18.related_area_volume_growth"],
             "UAE_G7_ARABIC_U09L06_PDF_43_47",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/01, student 03-10.pdf printed 733-740.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY", "supporting.probability_statistics",
+            "SIMPLE-PROBABILITY",
+            ["probability.simple.favourable_over_total.exact", "probability.complement.exact", "probability.theoretical.simple_event"],
+            "UAE_G7_ARABIC_U10L01_PDF_5_12",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
