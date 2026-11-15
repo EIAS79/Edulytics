@@ -79,7 +79,16 @@ def main(phase):
         check("source_parity_evidenced", progress.get("sourceParityPercent") == 100 and all(x.get("verifiedEquivalentCount") == x.get("sourceElementCount") for x in ledgers), {"reported_percent": progress.get("sourceParityPercent")})
         audit = data(G7 / "multi-edition-source-gap-audit-20261115.json")
         check("all_selected_book_editions_crosswalk_closed", audit.get("otherEditionCrosswalkStatus") == "FULLY_VERIFIED")
-        check("rights_and_teacher_review_recorded", False, "NOT_VERIFIED: no lesson-level documented human signoff asserted")
+        approval = data(G7 / "grade7-owner-academic-approval.json")
+        check("owner_academic_approval_recorded",
+              approval.get("ownerAcademicApproval") is True and
+              approval.get("ownerPermissionToProceedToReleaseGates") is True and
+              approval.get("grade") == 7 and approval.get("pathway") == "General")
+        check("first_party_no_publisher_artwork_license_claim",
+              approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False and
+              approval.get("publisherBookReferenceOnly") is True and
+              approval.get("internalSourceProvenanceRetained") is True)
+        check("independent_teacher_review", False, "NOT_VERIFIED: no third-party teacher review evidence")
     OUT.mkdir(parents=True, exist_ok=True)
     record = {
         "schemaVersion": 1,
