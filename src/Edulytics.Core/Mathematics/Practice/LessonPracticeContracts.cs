@@ -8715,6 +8715,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g6.u03.l15.percent_of_quantity_exact"],
             "UAE_G7_GENERAL_ARABIC_U02L01_PRINTED_103_109",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L02: percent benchmarks and approximation.
+        // Existing exact percent and benchmark families; open estimation reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:02:PERCENT-ESTIMATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:02:PERCENT-ESTIMATION", "percentages.core.of_quantity",
+            "BENCHMARK_PERCENT_ESTIMATION_REASONS",
+            ["usccss.g6.u03.l13.benchmark_percent_values", "usccss.g6.u03.l13.benchmark_percent_reasoning", "percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L02_PRINTED_111_118",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
