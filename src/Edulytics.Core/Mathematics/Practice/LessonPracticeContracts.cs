@@ -8739,6 +8739,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity"],
             "UAE_G7_GENERAL_ARABIC_U02L04_PRINTED_129_136",
             "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U02L05 printed 143-150:
+        // existing percent change, fractional change and percent error families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:05:PERCENT-CHANGE-AND-ERROR"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:05:PERCENT-CHANGE-AND-ERROR", "percentages.core.increase_decrease",
+            "PERCENT_CHANGE_INCREASE_DECREASE_AND_ERROR",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.percent_error", "usccss.g7.u04.fractional_change"],
+            "UAE_G7_GENERAL_ARABIC_U02L05_PRINTED_143_150",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
