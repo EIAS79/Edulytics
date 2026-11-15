@@ -398,3 +398,11 @@ artifacts/curriculum-delivery/UAE-MOE-MATH/G6/
 - **الفرق المهم:** وجود فهرس وصف المجلد الأول للصف السادس 2026–2027 لا يثبت بقية الفصول، وأعداد التطبيق لا تصلح مقامًا لمطابقة مصدر. نسخة المصدر النهائية هي المرجع الوحيد لعدد الدروس.
 
 **حالة الوثيقة:** خطة تنفيذ فقط؛ لم تُجرَ A–B–C ولا Stage D ولا نشر بهذه الوثيقة.
+
+### Owner execution override — 2026-11-15
+
+- Use existing first-incomplete checkpoint in PR #637; keep sequential A→B→C→evidence→commit, with no skipping or waiting for follow-up at each lesson.
+- Grade 6 Arabic General Student Book files on Our-CS are the basis of lesson order/content, teacher guide auxiliary; exclude advanced or English variants. A different edition year is not by itself a block when the lesson's objectives and skills match. Record the actual edition accurately.
+- Batch source reading at unit level; use Reuse→Extend→New Engine; prefer one GitHub commit per completed lesson. Reduce redundant device calls and repeated verification. Produce unit-level reports, not one report per lesson. Target 3 minutes per lesson as a performance goal, never as permission to invent evidence.
+- Author an original educational substitute where a Cool-down or source-specific activity is inaccessible but the skill and objective are known; maintain an explicit source gap for unverified source objectives, questions or illustrations. Authored content is not proof of page-level 1:1 source matching; READY_FOR_STAGE_D requires completed A/B/C evidence.
+- During A/B/C run narrow checks only and record accurately; no per-lesson full build, manual CI, E2E or Stage D. Do not schedule any task. Record owner academic approval separately from source verification and publishing rights.

@@ -39,7 +39,7 @@
     }
   ],
   "blocker": "Complete authorized General Arabic Student Book pages printed 651–654 for the selected curriculum have not been located; cannot verify source content and close lesson88 without inventing matching evidence.",
-  "nextRequiredAction": "Locate and inspect exact original source pages printed 651–654 in an authorized Grade6 General Arabic Student Book; then compare existing lesson content, repair only gaps, write tests and close this lesson before any 89+ closure.",
+  "nextRequiredAction": "Recheck original lab pages or obtain explicit academically supported equivalent source. Preserve source gap and do not close 88 or advance to 89 until Stage A passes.",
   "verifiedBookEdition2026_2027": false,
   "sourceQuestionDenominator": "UNKNOWN",
   "testsRun": "NOT_RUN",
@@ -64,5 +64,21 @@
     ],
     "finding": "The page immediately after printed page 650 is printed page 655 (Lesson 1, area of parallelograms). The four exploration-lab pages are not present in this older local file. This is a confirmed physical sequence gap, not a PDF offset mismatch.",
     "note": "02.pdf pages325–328 were visually checked and are foldables, not the missing lab; 03-1.pdf begins later material. Do not infer lab coverage or claim lesson 88 closure."
+  },
+  "contentAuthored": true,
+  "stageB": "ARABIC_ORIGINAL_AUTHORED",
+  "stageC": "EXISTING_ENGINE_REUSED_TESTS_WRITTEN_NOT_RUN",
+  "conceptualSource": {
+    "pdfFile": "03.pdf",
+    "sha256": "239c71f761de1b12f82b6c3b26afaa6fb2e53bd99b6cacec73377800ebe93c96",
+    "pdfPages": [
+      8,
+      10
+    ],
+    "printedPages": [
+      655,
+      657
+    ],
+    "isExactLab": false
   }
 }

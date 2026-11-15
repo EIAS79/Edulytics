@@ -9368,6 +9368,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u08.l09.solve_add_inequality","uae.g6.u08.l09.solve_subtract_inequality","uae.g6.u08.l10.solve_multiply_inequality","uae.g6.u08.l10.solve_divide_inequality","uae.g6.u08.l06.candidate_membership"],
             "LOCAL_G6_BOOK2_U08L10_PRINTED629_636_TARGET2026_27_UNVERIFIED",
             "READY_VERIFIED",Version);
+        // G6 U09L01: independent area lab B/C, exact student lab 651-654 unavailable.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128","geometry.area.parallelogram.exploration",
+            "REARRANGE_PARALLELOGRAM_AND_BASE_TIMES_PERPENDICULAR_HEIGHT",
+            ["usccss.g6.u01.l04.parallelogram_exact_area","usccss.g6.u01.l04.equal_area_rearrangement","usccss.g6.u01.l05.corresponding_height"],
+            "LOCAL_G6_03_PDF8_10_CONCEPTUAL_ONLY_EXACT_LAB_UNAVAILABLE",
+            "SOURCE_REVIEW_PENDING",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
