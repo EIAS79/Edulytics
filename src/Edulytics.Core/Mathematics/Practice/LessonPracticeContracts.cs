@@ -8683,6 +8683,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l04.proportional_equations", "usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l02.proportional_tables"],
             "UAE_G7_GENERAL_ARABIC_U01L06_PRINTED_55_62",
             "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U01L07 printed 65-71: constant delta-y/delta-x
+        // Numeric rate table and graph families reused; teacher reviews contexts.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:07:CONSTANT-RATE-OF-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:07:CONSTANT-RATE-OF-CHANGE", "proportions.unit_rate",
+            "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_AND_GRAPH",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "UAE_G7_GENERAL_ARABIC_U01L07_PRINTED_65_71",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
