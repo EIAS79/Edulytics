@@ -138,13 +138,14 @@ public sealed class AdaptivePracticeV2Service(
         AssessmentItem item;
         try
         {
-            item = itemGenerator.GenerateOne(
+            var selected = itemGenerator.GenerateOneWithVerifiedFamilyFallback(
                 context.Student.SchoolId,
                 context.Adoption.Id,
                 lessonId,
                 studentUserId,
                 contract,
                 decision,
+                learningState.CurrentComplexityScore,
                 RandomNumberGenerator.GetInt32(1, int.MaxValue),
                 context.Exposures
                     .OrderByDescending(x => x.ExposedAtUtc)
@@ -156,6 +157,8 @@ public sealed class AdaptivePracticeV2Service(
                             .RecentExposureFreshnessWindow)
                     .ToArray(),
                 excludedSemanticIdentityKeys: []);
+            item = selected.Item;
+            decision = selected.Decision; // Persist the actual verified family.
         }
         catch (InvalidOperationException)
         {
@@ -710,13 +713,14 @@ public sealed class AdaptivePracticeV2Service(
         AssessmentItem nextItem;
         try
         {
-            nextItem = itemGenerator.GenerateOne(
+            var selected = itemGenerator.GenerateOneWithVerifiedFamilyFallback(
                 session.SchoolId,
                 session.CurriculumAdoptionId,
                 session.CurriculumPedagogicalLessonId,
                 studentUserId,
                 contract,
                 decision,
+                learningState.CurrentComplexityScore,
                 RandomNumberGenerator.GetInt32(1, int.MaxValue),
                 replayTurns
                     .OrderByDescending(x => x.Sequence)
@@ -741,6 +745,8 @@ public sealed class AdaptivePracticeV2Service(
                         AdaptivePracticeV2Behavior
                             .RecentSemanticFreshnessWindow)
                     .ToArray());
+            nextItem = selected.Item;
+            decision = selected.Decision; // Keep recorded family truthful.
         }
         catch (InvalidOperationException)
         {

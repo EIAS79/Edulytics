@@ -212,7 +212,7 @@ jobs:
           visual=json.loads(pathlib.Path("/tmp/uae-g6-stage-d-browser-rtl/report.json").read_text())
           sha=os.environ["GITHUB_SHA"]
           assert auth["candidateSha"]==visual["candidateSha"]==sha
-          assert auth["grade"]==5 and auth["lessonPageCount"]==128
+          assert auth["grade"]==6 and auth["lessonPageCount"]==128
           assert auth["correctAttemptPersistenceCount"]==128
           assert auth["wrongAttemptPersistenceCount"]==128
           assert auth["malformedAttemptRejectionCount"]==128

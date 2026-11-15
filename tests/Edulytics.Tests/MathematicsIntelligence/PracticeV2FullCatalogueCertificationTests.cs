@@ -8,9 +8,9 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class PracticeV2FullCatalogueCertificationTests
 {
-    // 5,110 previously indexed lessons (including 93 old UAE G4),
-    // replace only those 93 with 132 (+39), retain 73 G12 Precalculus.
-    private const int ExpectedLessonCount = 5222;
+    // 5,110 prior lessons included 93 old UAE G4 and 59 old G6.
+    // G4 93->132 (+39), G12 +73 and G6 English 59->Arabic 128 (+69).
+    private const int ExpectedLessonCount = 5291;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_PRACTICE_V2_CERTIFICATION";
 

@@ -72,7 +72,9 @@ internal static class UaeG6U7L10DivisionEquationsQuestions
         }
         else if(f==UnknownDivisor)
         {
-            int q=r.Next(1,26),den=r.Next(1,21),total=q*den;
+            // numerator=1 is excluded by the exact independent verifier.
+            // Generate at least two units in the numerator, including q=1.
+            int q=r.Next(1,26),den=r.Next(2,21),total=q*den;
             p=new(){{"numerator",total},{"quotient",q}};
             prompt=$"حل {total}÷س={q}. يجب أن يكون س غير صفر.";
         }

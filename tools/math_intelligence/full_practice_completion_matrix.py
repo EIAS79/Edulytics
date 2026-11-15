@@ -128,6 +128,9 @@ def audit() -> dict[str, Any]:
     semantic = lesson_semantic_content_audit.audit()
     skill = lesson_skill_resolution_audit.audit()
     eligibility_by_code = load_practice_eligibility()
+    # Exact source-locked contract and owner authorisation come from the
+    # existing academic-gate verifier. No official outcome is synthesized.
+    approved_g6 = lesson_skill_resolution_audit.owner_approved_g6_declared_practice()
 
     skills_doc = read_json(SKILL_REGISTRY)
     families_doc = read_json(FAMILY_REGISTRY)
@@ -168,15 +171,45 @@ def audit() -> dict[str, Any]:
                 continue
             domains.add(str(skill_doc.get("domain") or "unknown"))
 
+        cross_grade_family_adapters: list[dict[str, str]] = []
+        is_owner_scoped_g6 = (
+            len(approved_g6) == 128
+            and code in approved_g6
+            and row.get("specialistGrade6OwnerScopedContractPendingRuntime") is True
+            and row.get("generationReadiness") == "READY_CONTEXTUAL"
+            and row.get("skillResolutionStatus")
+                == "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING"
+            and row.get("semanticContentStatus")
+                == "PASS_OWNER_APPROVED_G6_ARABIC_WITH_SIGNATURE_WARNING"
+            and row.get("approvedPrimarySkills") == [approved_g6[code]]
+            and row.get("approvedMapping") is True
+        )
         for family_id in question_families:
             family = families.get(family_id)
             if family is None:
                 internal_blockers.append(f"{code}: approved family {family_id} missing from registry")
                 continue
-            if str(family.get("skillId") or "") not in primary_skills:
-                internal_blockers.append(
-                    f"{code}: approved family {family_id} is not bound to an approved primary SkillId"
-                )
+            original_skill = str(family.get("skillId") or "")
+            if original_skill not in primary_skills:
+                # First-party G6 explicitly reuses an older, already registered
+                # exact mathematical generator under a new instructional SkillId.
+                # Preserve BOTH original SkillIds; record the adapter evidence
+                # rather than mislabeling another grade's registry family.
+                # Every reuse is already declared in the 128 C# contracts,
+                # independently checked by owner_approved_g6_declared_practice.
+                if (is_owner_scoped_g6 and original_skill in skills
+                    and family.get("lessonPracticeRouting") is True):
+                    cross_grade_family_adapters.append({
+                        "family": family_id,
+                        "originalSkillId": original_skill,
+                        "targetGrade6SkillId": approved_g6[code],
+                        "reuseEvidence":
+                            "owner-scoped-g6-csharp-lesson-contract-and-registered-exact-family",
+                    })
+                else:
+                    internal_blockers.append(
+                        f"{code}: approved family {family_id} is not bound to an approved primary SkillId"
+                    )
             representations.update(clean_list(family.get("representations")))
 
         readiness_state = str(row.get("generationReadiness") or "UNRESOLVED")
@@ -215,7 +248,20 @@ def audit() -> dict[str, Any]:
             and readiness_state == "READY_VERIFIED"
             and not semantic_row.get("studentFacingDefects")
         )
-        runtime_contract_ready = specialist_g12_ready or specialist_g4_ready or (
+        specialist_g6_ready = bool(
+            is_owner_scoped_g6
+            and not semantic_row.get("studentFacingDefects")
+            and len(question_families) > 0
+            and all(f in families for f in question_families)
+            and all(
+                families[f].get("lessonPracticeRouting") is True
+                for f in question_families
+            )
+        )
+        # Contract readiness here is independent of persisted HTTPS/RTL Stage D.
+        # Those run as mandatory separate same-SHA CI release gates.
+        runtime_contract_ready = (specialist_g12_ready or specialist_g4_ready
+            or specialist_g6_ready) or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -292,10 +338,12 @@ def audit() -> dict[str, Any]:
             "representations": sorted(representations),
             "visualRequired": visual_required,
             "visualStatus": visual_status,
-            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready,
-            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready,
+            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready,
+            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready,
             "independentG12SpecialistContractVerified": specialist_g12_ready,
             "independentG4ExactPracticeContractVerified": specialist_g4_ready,
+            "independentG6OwnerScopedExactPracticeContractVerified": specialist_g6_ready,
+            "crossGradeExactFamilyReuse": cross_grade_family_adapters,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
             "blockerCodes": blockers,
@@ -319,6 +367,20 @@ def audit() -> dict[str, Any]:
         summary["grade4SpecialistVerifiedLessonCount"] != 132):
         internal_blockers.append(
             "Grade4 exact Practice completion not proven for all 132 source lessons")
+    summary["grade6OwnerScopedExactPracticeContractCount"] = sum(
+        row["independentG6OwnerScopedExactPracticeContractVerified"]
+        for row in rows)
+    summary["grade6CrossGradeExactFamilyReuseCount"] = sum(
+        len(row["crossGradeExactFamilyReuse"]) for row in rows)
+    g6_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L6:GENERAL:")]
+    if g6_rows and (
+        len(g6_rows) != 128 or len(approved_g6) != 128
+        or summary["grade6OwnerScopedExactPracticeContractCount"] != 128
+    ):
+        internal_blockers.append(
+            "Grade6 128 owner-approved first-party exact Practice routes "
+            "are not fully bound to canonical skill-family contracts")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(
