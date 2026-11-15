@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u06l05-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u06l06-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1337,6 +1337,35 @@
           "StepByStepSolutions": "1. وزّع جميع الأقواس بإشارات صحيحة؛ 2. اجمع الحدود المتشابهة داخل الطرفين؛ 3. اجمع حدود المتغير في طرف؛ 4. اجمع الثوابت في الطرف الآخر؛ 5. اقسم على معامل المتغير إن بقي؛ 6. إذا اختفى المتغير فافحص الهوية أو التناقض وتحكم في الحل",
           "CommonMistakes": "خطأ: إزالة الأقواس دون توزيع على كل حد. لماذا خطأ: تتغير المساواة. التصويب: وزع العامل على كامل القوس. خطأ: حذف المتغير يعني أن حلّه صفر. لماذا خطأ: قد تكون هوية أو تناقضًا. التصويب: افحص العلاقة العددية المتبقية. خطأ: نقل حد بين الطرفين دون تغيير مناسب. لماذا خطأ: لا يحافظ على التساوي. التصويب: نفذ العملية نفسها في الطرفين.",
           "QuickSummary": "أوزع وأجمع قبل النقل. كل انتقال عملية متوازنة. قد لا يكون حل أو تكون جميع القيم. أتحقق من الأصلي. Cool-down أصلي بلا حلول: حل ٤(س−٢)=٢س+٦؛ هل ٣(س+٢)=٣س+٧ لها حل؟؛ حل ٢(س+٤)−٣=س+٧. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:06:06:ADD-SUBTRACT-INEQUALITIES",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF163-170 (printed 497-504); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF163-170 (printed 497-504); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المتباينات بالجمع أو الطرح",
+          "Explanation": "المتباينة جملة مقارنة بين كميتين باستعمال الرموز < أو > أو ≤ أو ≥. لحل متباينة جمع أو طرح، نجري العملية العكسية نفسها على الطرفين مع الإبقاء على اتجاه رمز المتباينة؛ لأن إضافة عدد أو طرحه لا يغيّر ترتيب الأعداد. مثال: س+٤≤١٢. بطرح ٤ من الطرفين يكون س≤٨. يشمل الحل القيمة ٨ وكل ما هو أصغر منها، ونمثله بنقطة مغلقة عند ٨ وسهم إلى اليسار. بينما س−٣>٥ يعني س>٨، ونقطة مفتوحة عند ٨ لأن الرمز صارم. قد تحتوي المتباينة على أعداد سالبة: س+٧<−٢ ⇒ س<−٩. يجب اختبار قيمة تحقق المتباينة وأخرى لا تحققها، مع شرح معنى نقطة الحد على خط الأعداد. إذا كان السؤال عددًا صحيحًا من الأشخاص أو أشياء محددة، نأخذ فقط قيم المجال المناسبة.",
+          "KeyConceptsAndRules": "رموز المتباينة: س≥٤ يشمل ٤ مثل س>٤ لا يشمل ٤. الجمع والطرح: إذا أ<ب فإن أ+ج<ب+ج مثل س+٤≤١٢ ⇒ س≤٨. النقطة المغلقة: ≤ و≥ نقطة مغلقة مثل س≤٨ يشمل ٨. النقطة المفتوحة: < و> نقطة مفتوحة مثل س>٨ لا يشمل ٨.",
+          "WorkedExamples": "مثال 1: حل س+٤≤١٢. الخطوات: اطرح ٤ من الطرفين.؛ س≤٨.؛ النقطة عند ٨ مغلقة وسهم يسار.. الإجابة س≤٨. التحقق: س=٨ تحقق ١٢≤١٢. مثال 2: حل س−٣>٥. الخطوات: أضف ٣ للطرفين.؛ س>٨.؛ ٨ غير مشمولة.. الإجابة س>٨. التحقق: س=٩ يحقق ٦>٥. مثال 3: حل س+٧<−٢. الخطوات: اطرح ٧.؛ س<−٩.؛ تحقق س=−١٠.. الإجابة س<−٩. التحقق: −١٠+٧=−٣<−٢. مثال 4: حل ن−٦≥−١. الخطوات: أضف ٦ للطرفين.؛ ن≥٥.؛ الحد ٥ مشمول.. الإجابة ن≥٥. التحقق: ٥−٦=−١.",
+          "StepByStepSolutions": "1. حدد رمز المقارنة وكونه صارمًا؛ 2. حدد عملية الجمع أو الطرح المجاورة للمجهول؛ 3. نفذ العكس على الطرفين دون قلب الرمز؛ 4. اكتب مجموعة الحل بصيغة رمزية؛ 5. مثّل نقطة مفتوحة أو مغلقة وسهمًا؛ 6. تحقق بقيمتين واحدة داخلة وأخرى خارجة",
+          "CommonMistakes": "خطأ: قلب الرمز عند جمع موجب. لماذا خطأ: الجمع لا يعكس الترتيب. التصويب: احتفظ بالرمز. خطأ: وضع نقطة مغلقة مع <. لماذا خطأ: القيمة الحدية مستبعدة. التصويب: ضع نقطة مفتوحة. خطأ: القول إن الحل قيمة واحدة. لماذا خطأ: المتباينة لها مجموعة حلول. التصويب: اكتب الاتجاه على خط أعداد.",
+          "QuickSummary": "الجمع والطرح لا يعكسان الرمز. < و> لا يشملان الحد. ≤ و≥ يشملان الحد. المتباينة لها مجموعة حلول. Cool-down أصلي بلا حلول: حل ن+٩>−٤؛ حل س−١١≤−٨؛ مثل ص≥٣ على خط أعداد وبيّن قيمًا صحيحة. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }
