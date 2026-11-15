@@ -9010,6 +9010,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.angle_classify", "uae.g3.u13.l02.angle_types", "usccss.g7.u07.vertical_angle"],
             "UAE_G7_ARABIC_U07L01_PDF_5_12",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/02, student 02-07.pdf printed 543-554.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:02:COMPLEMENTARY-SUPPLEMENTARY-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:02:COMPLEMENTARY-SUPPLEMENTARY-ANGLES", "geometry.angles.supplementary",
+            "COMPLEMENTARY-SUPPLEMENTARY-ANGLES",
+            ["usccss.g7.u07.complementary_angle", "geometry.angles.supplementary", "geometry.angles.algebraic_supplementary"],
+            "UAE_G7_ARABIC_U07L02_PDF_13_24",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
