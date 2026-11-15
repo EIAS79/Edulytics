@@ -8914,6 +8914,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
             "UAE_G7_ARABIC_U05L05_PDF_53_60",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/06, student 02-5-6.pdf printed 395-402.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:06:ADD-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:06:ADD-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "ADD-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L06_PDF_61_68",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
