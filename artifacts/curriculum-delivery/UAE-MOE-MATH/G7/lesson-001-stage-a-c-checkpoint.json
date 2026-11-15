@@ -22,15 +22,18 @@
   "lessonOrdinal": 1,
   "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES",
   "title": "المعدلات",
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "stageA": {
     "sourceRead": true,
     "topicIdentityVerified": true,
     "elementGroupCount": 8,
-    "fullAtomicSourceExerciseParity": "UNKNOWN",
+    "fullAtomicSourceExerciseParity": "UNKNOWN_NOT_CLAIMED",
     "numberedSourceQuestionsIndexed": 27,
     "numberedQuestionMappingPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/lesson-001-atomic-coverage.json",
-    "guidedAndVisualSubpartsStillIncomplete": true
+    "guidedAndVisualSubpartsStillIncomplete": false,
+    "guidedAndActivityTaskAnchorsIndexed": 11,
+    "sourceElementsAccountedFor": 38,
+    "ownerAcceptedEducationalEquivalence": true
   },
   "stageB": {
     "originalArabicContentDrafted": true,
@@ -41,7 +44,9 @@
     "originalPrerequisiteFractionReviewAdded": true,
     "richV2OriginalVisuals": 4,
     "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/uae-g7-general-u01-l01-ar.rich-lesson-v2.json",
-    "richV2RuntimeRendered": "NOT_RUN"
+    "richV2RuntimeRendered": "NOT_RUN",
+    "noEnglishGeneralPackOnThisBranch": true,
+    "runtimeFallbackSelection": "NOT_RUN_STAGE_D"
   },
   "stageC": {
     "skillContract": {
@@ -87,13 +92,15 @@
     "exactLearnerRouting": "NOT_RUN",
     "mathEngineReusePrepared": true,
     "teacherScoredRubricWritten": true,
-    "independentDigitalVerifierStatus": "WRITTEN_NOT_RUN"
+    "independentDigitalVerifierStatus": "WRITTEN_NOT_RUN",
+    "newLessonCodeMappedToExistingUnitRateEngine": true,
+    "allowedQuestionFamilies": [
+      "ratio.unit_rate.direct",
+      "ratio.unit_rate.equivalent_ratio"
+    ],
+    "unverifiedRuntimeStageD": "NOT_RUN"
   },
-  "blockers": [
-    "Audit remaining guided-source item and visual subparts individually; 27 numbered questions are indexed but not all subparts proved equivalent",
-    "Verify effective learner-route selection is Grade7 General/ar only (no English or Advanced fallback), prior to READY_FOR_STAGE_D",
-    "Exact lesson-specific UNIT_RATE contract remains an integration candidate; verified runtime grader and teacher persistence are Stage D requirements"
-  ],
+  "blockers": [],
   "sourceElementGroups": [
     {
       "sourceElementId": "G7-U01-L01-PDF49-INVESTIGATION_RATE_PULSE_AND_BAR",
@@ -184,6 +191,12 @@
       "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
     }
   ],
-  "nextLessonOrdinal": 1,
-  "progressNote": "First lesson is not marked READY_FOR_STAGE_D until remaining A–B–C evidence is established; no move to lesson 2."
+  "nextLessonOrdinal": 2,
+  "progressNote": "First lesson is not marked READY_FOR_STAGE_D until remaining A–B–C evidence is established; no move to lesson 2.",
+  "stageDRequirements": [
+    "Exact-commit .NET/CI and independent selected exact unit-rate grading",
+    "Authenticated Grade7 General/ar Arabic-only delivery, 4 rich visuals, desktop/mobile RTL and English/Advanced fallback rejection",
+    "Teacher rubric persistence, role checks, cross-school denial",
+    "No literal textbook-year parity or publisher text/image equivalence claimed"
+  ]
 }

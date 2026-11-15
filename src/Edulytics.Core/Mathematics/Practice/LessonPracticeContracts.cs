@@ -8654,6 +8654,19 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE Grade 7 General Arabic: owner-selected Student Book Unit 1 Lesson 1.
+        // Existing UNIT_RATE numeric families only; source diagrams and written
+        // justifications require teacher review. No borrowed English lesson text.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES",
+                "ratio.unit_rate",
+                "UNIT_RATE",
+                ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L01_P9_16",
+                "READY_VERIFIED",
+                Version);
+
         // UAE G6 Arabic Common — local Student Book U01:L01 (printed pp 7-14).
         // Reuse Grade 5 exact GCF/LCM families; do not remap legacy Grade 6 ratios U01:L01.
         // Explanatory/diagram responses are teacher-reviewed, not numeric-auto-graded.
