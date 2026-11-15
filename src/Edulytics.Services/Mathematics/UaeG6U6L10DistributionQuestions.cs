@@ -41,9 +41,9 @@ internal static class UaeG6U6L10DistributionQuestions
                 if(p.Count!=2||!p.TryGetValue("ax",out int ax)||
                     !p.TryGetValue("by",out int by)||ax is <2 or >120||
                     by is <2 or >120)return false;
-                int g=Gcd(ax,by);
-                if(g<2)return false;
-                result=$"{g}({(ax/g==1?"":(ax/g).ToString(CultureInfo.InvariantCulture))}س+{(by/g==1?"":(by/g).ToString(CultureInfo.InvariantCulture))}ص)";
+                int commonFactor=Gcd(ax,by);
+                if(commonFactor<2)return false;
+                result=$"{commonFactor}({(ax/commonFactor==1?"":(ax/commonFactor).ToString(CultureInfo.InvariantCulture))}س+{(by/commonFactor==1?"":(by/commonFactor).ToString(CultureInfo.InvariantCulture))}ص)";
                 return true;
             }
             if(family==TwoVarExpand)

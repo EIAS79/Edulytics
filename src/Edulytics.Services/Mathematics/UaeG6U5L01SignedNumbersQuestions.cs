@@ -249,18 +249,18 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         }
         int magnitude=random.Next(family==Opposite?0:1,501);
         int sign=random.Next(2)==0?-1:1;
-        var p=new Dictionary<string,int>{{"magnitude",magnitude},{"sign",sign}};
+        var fallbackParams=new Dictionary<string,int>{{"magnitude",magnitude},{"sign",sign}};
         if(family==Position)
         {
             string place=sign==1?"فوق مستوى سطح البحر":"تحت مستوى سطح البحر";
             return new Item(family,$"يقع موضع على بعد {magnitude} قدم {place}. اكتب العدد الصحيح بإشارته بالنسبة إلى المستوى المرجعي صفر.",
                 "الموضع الأعلى من المرجع موجب، والأدنى منه سالب. الصفر يمثّل مستوى المرجع.",
-                AssessmentItemType.ShortAnswer,p);
+                AssessmentItemType.ShortAnswer,fallbackParams);
         }
         int original=sign*magnitude;
         return new Item(family,$"اكتب العدد الصحيح المقابل للعدد {original}. ما موقعه من الصفر؟",
             "العددان المتقابلان على بعد متساوٍ من الصفر وفي اتجاهين متعاكسين؛ مقابل الصفر هو الصفر.",
-            AssessmentItemType.ShortAnswer,p);
+            AssessmentItemType.ShortAnswer,fallbackParams);
     }
 
 
@@ -548,21 +548,21 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         if(family is DistanceSameY or DistanceSameX or FindHorizontalEndpoint or FindVerticalEndpoint)
         {
             return !string.IsNullOrWhiteSpace(answer)&&answer.Length<=36&&
-                TryAxisDistanceAnswer(family,p,out decimal expected)&&
+                TryAxisDistanceAnswer(family,p,out decimal axisExpected)&&
                 decimal.TryParse(NormalizeSignedAnswer(answer.Trim()),NumberStyles.Number,
-                    CultureInfo.InvariantCulture,out decimal actual)&&actual==expected;
+                    CultureInfo.InvariantCulture,out decimal axisActual)&&axisActual==axisExpected;
         }
         if(family is PlotFromMoves or ReflectBothAxes or MirrorSeparation or AxisTriangleArea)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80||
-               !TryPlotAnswer(family,p,out string expected))return false;
-            string normalized=NormalizeSignedAnswer(answer.Trim());
+               !TryPlotAnswer(family,p,out string plottedExpected))return false;
+            string plottedNormalized=NormalizeSignedAnswer(answer.Trim());
             if(family is MirrorSeparation or AxisTriangleArea)
-                return decimal.TryParse(normalized,NumberStyles.Number,
-                    CultureInfo.InvariantCulture,out decimal actual)&&
-                    decimal.TryParse(expected,NumberStyles.Number,
-                    CultureInfo.InvariantCulture,out decimal wanted)&&actual==wanted;
-            return string.Equals(normalized,expected,StringComparison.Ordinal);
+                return decimal.TryParse(plottedNormalized,NumberStyles.Number,
+                    CultureInfo.InvariantCulture,out decimal plottedActual)&&
+                    decimal.TryParse(plottedExpected,NumberStyles.Number,
+                    CultureInfo.InvariantCulture,out decimal wanted)&&plottedActual==wanted;
+            return string.Equals(plottedNormalized,plottedExpected,StringComparison.Ordinal);
         }
         if(family is CoordinateRegion or ReflectAcrossX or ReflectAcrossY)
         {
@@ -573,11 +573,11 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         if(family is MixedRationalCompare or FourRationalOrder)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>80)return false;
-            string expected;
+            string mixedExpected;
             if(family==MixedRationalCompare){
-                if(!TryMixedRationalCompare(p,out expected))return false;
-            }else if(!TryFourRationalOrder(p,out expected))return false;
-            return string.Equals(NormalizeSignedAnswer(answer.Trim()),expected,StringComparison.Ordinal);
+                if(!TryMixedRationalCompare(p,out mixedExpected))return false;
+            }else if(!TryFourRationalOrder(p,out mixedExpected))return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),mixedExpected,StringComparison.Ordinal);
         }
         if(family is SignedRationalCompare or SignedRationalSide)
         {
@@ -593,7 +593,7 @@ internal static class UaeG6U5L01SignedNumbersQuestions
             if(!TryBackTemperature(p,out int n)||string.IsNullOrWhiteSpace(answer)||
                answer.Length>48)return false;
             return int.TryParse(NormalizeSignedAnswer(answer.Trim()),
-                NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int actual)&&actual==n;
+                NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out int temperatureActual)&&temperatureActual==n;
         }
         if(family==WorkBackwardSchedule)
         {
@@ -604,11 +604,11 @@ internal static class UaeG6U5L01SignedNumbersQuestions
         if(family is SignedCompare or SignedOrderSet)
         {
             if(string.IsNullOrWhiteSpace(answer)||answer.Length>100)return false;
-            string expected;
+            string orderExpected;
             if(family==SignedCompare){
-                if(!TryCompare(p,out expected))return false;
-            }else if(!TryOrder(p,out expected))return false;
-            return string.Equals(NormalizeSignedAnswer(answer.Trim()),expected,StringComparison.Ordinal);
+                if(!TryCompare(p,out orderExpected))return false;
+            }else if(!TryOrder(p,out orderExpected))return false;
+            return string.Equals(NormalizeSignedAnswer(answer.Trim()),orderExpected,StringComparison.Ordinal);
         }
         if(!Valid(family,p,out int expected)||
            string.IsNullOrWhiteSpace(answer)||answer.Length>36)return false;

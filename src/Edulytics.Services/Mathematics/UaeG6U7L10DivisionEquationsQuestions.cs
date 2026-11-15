@@ -48,7 +48,7 @@ internal static class UaeG6U7L10DivisionEquationsQuestions
         if(p.Count!=3||!p.TryGetValue("num",out int n)||
            !p.TryGetValue("den",out int d)||!p.TryGetValue("q",out int quotient)||
            n is <1 or >15||d is <2 or >20||quotient is <1 or >50)return false;
-        int top=n*quot,g=Gcd(top,d);
+        int top=n*quotient,g=Gcd(top,d);
         answer=d/g==1?(top/g).ToString(CultureInfo.InvariantCulture):$"{top/g}/{d/g}";
         return true;
     }

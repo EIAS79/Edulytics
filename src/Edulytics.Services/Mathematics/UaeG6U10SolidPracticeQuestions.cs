@@ -71,7 +71,7 @@ internal static class UaeG6U10SolidPracticeQuestions
         {
             if (p.Count != 6 || !p.TryGetValue("l1", out int firstVolLength)
                 || !p.TryGetValue("w1", out int w1) || !p.TryGetValue("h1", out int h1)
-                || !p.TryGetValue("l2", out int l2) || !p.TryGetValue("w2", out int w2)
+                || !p.TryGetValue("l2", out int secondVolLength) || !p.TryGetValue("w2", out int w2)
                 || !p.TryGetValue("h2", out int h2)
                 || !ValidDim(firstVolLength) || !ValidDim(w1) || !ValidDim(h1)
                 || !ValidDim(secondVolLength) || !ValidDim(w2) || !ValidDim(h2))
