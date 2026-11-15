@@ -8938,6 +8938,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.factor", "supporting.algebra.expand", "usccss.g6.u06.l11.expansion_factor_values"],
             "UAE_G7_ARABIC_U05L08_PDF_81_90",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/01, student 02-5-6.pdf printed 437-446.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:01:ONE-STEP-ADDITION-SUBTRACTION-EQUATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:01:ONE-STEP-ADDITION-SUBTRACTION-EQUATION", "algebra.linear.solve",
+            "ONE-STEP-ADDITION-SUBTRACTION-EQUATION",
+            ["algebra.linear.ax_plus_b_equals_c", "usccss.g6.u06.l02.variable_equation_solutions"],
+            "UAE_G7_ARABIC_U06L01_PDF_103_112",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
