@@ -8755,6 +8755,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity", "percentages.core.increase_decrease", "uae.g6.u06.l06.percentage_markup"],
             "UAE_G7_GENERAL_ARABIC_U02L06_PRINTED_151_158",
             "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U02L07, student printed 159-166:
+        // discounts, net sale price, reverse original, sequential tax after discount.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:07:DISCOUNTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:07:DISCOUNTS", "percentages.core.increase_decrease",
+            "PERCENT_DISCOUNT_NET_PRICE_WITH_OPTIONAL_VAT",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original", "percentages.core.of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L07_PRINTED_159_166",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
