@@ -18,18 +18,9 @@
 **الاسم بالإنجليزية:** UAE Ministry of Education Mathematics — Grade 7 (General Pathway).  
 **رمز Edulytics:** `UAE-MOE-MATH`، **الصف:** `Grade 7`، **المسار:** `General`، **العام المستهدف:** `2026–2027`، **اللغة المستهدفة:** `ar` / `RTL`.
 
-**المسارات الموجودة على `main` والمتحقق منها بتاريخ 15 نوفمبر 2026:**
+**حالة التنفيذ في فرع الصف السابع:** حُذفت الحزمة التعليمية الإنجليزية القديمة والفهرس الذي كان يصفها، وأزيلت مراجعها من سجل المنهج المشترك وقواعد التدريب القديمة. لم يبقَ لها موضع في حزم المصدر العاملة لهذا الفرع. هذا التغيير لا يعني أن Neon الإنتاجية قد خضعت للترحيل؛ التعامل مع سجلاتها القديمة يتم فقط عند تأمين الاستبدال العربي والنسخ الاحتياطي والتحقق من الاعتماد المدرسي.
 
-```text
-src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json
-src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g7-general-t1-ogl-v1.lesson-blueprint.json
-src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-t1-ogl-v1.lesson-content-pack.json
-docs/curriculum/UAE_G7_GENERAL_OFFICIAL_MANIFEST.json
-```
-
-**خط الأساس التقني المثبت:** `Manifest.LessonCount=62`، `Blueprint=62 Lessons / 11 Units`، و`LessonContent=62 Lessons`، `LogicalLevel: 7`, `Pathway: General`. يبدأ النطاق المسجل بـ`PED:UAE-MOE-MATH:L7:GENERAL:01:01:UNIT-RATES-INVOLVING-RATIOS-OF-FRACTIONS` وينتهي بـ`PED:UAE-MOE-MATH:L7:GENERAL:11:05:ASSESS-VISUAL-OVERLAP`. **المعرفات الحالية تحوي لاحقة إنجليزية (slug)**؛ لا تُختصر أكواد الدروس ولا تُغيّر على قاعدة حية دون migration وتحقق مراجع التعيينات والنتائج.
-
-**الخلل المؤكد، وهو سبب الإصلاح:** `AcademicLanguage: en`، و`CurriculumTranslationRequired: false`، و`SourceResolution: PreviousOfficialFallback`، و`Status: Published`. الحزمة تستخدم فهرسًا تعليميًا إنجليزيًا ومصدر شرح تربوي إنجليزيًا؛ لا تثبت أنها تحقق كتاب الطالب الوزاري **العربي**. في Blueprint: `OfficialStandardCount=0`, `AddressingCoverageCount=0` و`LessonsWithoutNumberedAddressingStandard=62`. لا يتحول ذلك إلى مطابقة أو اعتماد بمجرد تغيير metadata أو العناوين. يجب فصل `Published` التقني عن اكتمال الدروس العربية الفعلي.
+**قاعدة بناء الفهرس:** لا يُستعاد فهرس الحزمة السابقة من Git history ولا تُترجم عناوينها؛ يُستخرج الفهرس كاملًا من صفحات الكتب العربية المختارة.
 
 ### قرار إلغاء الفهرس الإنجليزي القديم
 
