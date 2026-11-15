@@ -9486,6 +9486,11 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:10:10:STUDENT-AR-128","geometry.solids.g6.tri_surface","SOLID_TRI_SURFACE_MEASUREMENT",
             ["uae.g6.u10.l10.tri_prism_surface"],"LOCAL_G6_03_PRINTED_777_784",
             "READY_VERIFIED",Version);
+        // G6 U10L11: Arabic General textbook scope; existing exact engine extended.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:10:11:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:10:11:STUDENT-AR-128","geometry.solids.g6.pyr_surface","SOLID_PYR_SURFACE_MEASUREMENT",
+            ["uae.g6.u10.l12.pyramid_surface","uae.g6.u10.l07.net_faces"],"LOCAL_G6_03_PRINTED_785_786",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
