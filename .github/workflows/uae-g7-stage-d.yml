@@ -1,0 +1,107 @@
+name: UAE Grade 7 General Arabic Stage D - fail-closed diagnostics
+on:
+  push:
+    branches:
+      - curriculum/uae-g7-arabic-student-first-abc-20261115
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g7-stage-d.yml'
+      - 'tools/curriculum/uae_g7_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G7/**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/**'
+      - 'tests/academic-uae-grade7-arabic-*.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: uae-g7-stage-d-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  CI: 'true'
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+jobs:
+  structure:
+    name: G7 structural, Arabic identity, term and learner ordering
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check source-index, pack, 78 lessons and real source guard
+        run: python3 tools/curriculum/uae_g7_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g7-structure-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d/grade7-structural-gate.json
+          if-no-files-found: error
+          retention-days: 30
+  source:
+    name: G7 source handoff and per-element parity - fail closed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify selected Arabic-source handoff without inventing 100 percent
+        run: python3 tools/curriculum/uae_g7_stage_d_gate.py --phase source
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g7-source-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d/grade7-source-gate.json
+          if-no-files-found: error
+          retention-days: 30
+  lesson-tests:
+    name: G7 native Node tests for all 78 lessons
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Execute all A-C-authored G7 lesson tests, not just parse them
+        run: node --test --test-reporter=tap tests/academic-uae-grade7-arabic-u*l*.test.cjs > /tmp/g7-lessons.tap 2>&1 || { tail -n 160 /tmp/g7-lessons.tap; exit 1; }
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g7-lesson-tests-${{ github.run_id }}
+          path: /tmp/g7-lessons.tap
+          if-no-files-found: error
+          retention-days: 30
+  compile-and-regressions:
+    name: Build candidate once and run affected mathematics regressions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: Shared restore and Release build
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+      - name: Shared UAE and US geometry regressions
+        run: |
+          mkdir -p artifacts/uae-g7-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeG6|FullyQualifiedName~UaeGrade5|FullyQualifiedName~UaeG5|FullyQualifiedName~UsCcssG7' --logger 'trx;LogFileName=g7-shared-impact.trx' --results-directory artifacts/uae-g7-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g7-shared-math-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d/trx
+          if-no-files-found: ignore
+          retention-days: 30
+# Real authenticated Grade7 API/RTL, exact source item 1:1, isolated DB
+# migration and persisted Practice acceptance are NOT tested by this workflow.
+# Do not treat these diagnostic jobs as a release gate or a publishing approval.
