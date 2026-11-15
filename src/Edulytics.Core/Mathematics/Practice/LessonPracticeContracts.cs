@@ -8691,6 +8691,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l03.unit_rates_reciprocal"],
             "UAE_G7_GENERAL_ARABIC_U01L07_PRINTED_65_71",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L08 slope, student printed 73-79; reuse
+        // existing exact slope/origin/ratio engines. Drawn graph teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:08:SLOPE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:08:SLOPE", "proportions.unit_rate",
+            "SLOPE_RISE_OVER_RUN_EXACT_RATIONAL",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L08_PRINTED_73_79",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
