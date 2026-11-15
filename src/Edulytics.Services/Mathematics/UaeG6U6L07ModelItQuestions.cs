@@ -82,7 +82,12 @@ internal static class UaeG6U6L07ModelItQuestions
         }
         else
         {
-            int den=r.Next(2,9),num=r.Next(1,den),factor=r.Next(1,13),total=den*factor;
+            // The independent verifier requires at least four people. A
+            // denominator of two or three with factor one previously emitted
+            // an invalid question and broke adaptive recovery at random.
+            int den=r.Next(2,9),num=r.Next(1,den),
+                factor=r.Next(Math.Max(1,(4+den-1)/den),13),
+                total=den*factor;
             p=new(){{"people",total},{"numerator",num},{"denominator",den}};
             prompt=$"في استطلاع شارك {total} شخصًا، اختار {num}/{den} منهم الخيار الأول. كم شخصًا اختار هذا الخيار؟";
         }

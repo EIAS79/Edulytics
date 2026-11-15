@@ -180,7 +180,23 @@ def audit() -> dict[str, Any]:
         blockers.append(
             f"UAE Grade4 must retain 93 legacy or exactly 132 owner-approved replacement lessons; got {grade4_count}"
         )
-    expected_catalogue_count = 5110 - 93 + grade4_count + grade12_count
+    # The historical 5,110 catalogue includes 59 English UAE Grade6
+    # General lesson slots. The owner-authorised 128 Arabic replacements
+    # contribute exactly +69, without changing any Polish mapped outcome.
+    # Accept only either complete historical identity set (59) or complete
+    # Arabic set (128); a partial migration is a genuine release blocker.
+    grade6_prefix = "PED:UAE-MOE-MATH:L6:GENERAL:"
+    grade6_count = sum(
+        str(row.get("lessonCode") or "").startswith(grade6_prefix)
+        for row in rows
+    )
+    if grade6_count not in (59, 128):
+        blockers.append(
+            f"UAE Grade6 must retain 59 legacy or exactly 128 owner-approved Arabic lessons; got {grade6_count}"
+        )
+    expected_catalogue_count = (
+        5110 - 93 + grade4_count + grade12_count - 59 + grade6_count
+    )
     required_global = {
         "lessonCount": expected_catalogue_count,
         "practiceEligibleLessonCount": expected_catalogue_count,

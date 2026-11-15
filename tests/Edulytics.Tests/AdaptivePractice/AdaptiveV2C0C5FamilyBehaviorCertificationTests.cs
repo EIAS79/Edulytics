@@ -3,6 +3,7 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
+using Edulytics.Services.Practice;
 using Edulytics.Services.Mathematics.Difficulty;
 
 namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
@@ -644,28 +645,56 @@ public sealed class AdaptiveV2C0C5FamilyBehaviorCertificationTests
         AdaptiveNextItemDecision decision,
         int seed,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        IReadOnlyCollection<string> excludedSemanticIdentityKeys) =>
-        generator.GenerateOne(
-            Guid.NewGuid(),
-            Guid.NewGuid(),
-            Guid.NewGuid(),
-            Guid.NewGuid(),
-            target.Contract,
-            decision,
-            seed,
-            excludedExposureFingerprints,
+        IReadOnlyCollection<string> excludedSemanticIdentityKeys)
+    {
+        var schoolId = Guid.NewGuid();
+        var adoptionId = Guid.NewGuid();
+        var lessonId = Guid.NewGuid();
+        var studentId = Guid.NewGuid();
+        // The learner-facing G6 V2 service chooses another canonical family
+        // once a mathematically finite family exhausts its distinct exposures.
+        // Exercise that actual service path for the full C0-C5 matrix, instead
+        // of demanding three distinct fraction-free questions from a binary
+        // property. Keep all other grades' family-exact behavior unchanged.
+        if (target.Contract.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal))
+        {
+            var selected = generator.GenerateOneWithVerifiedFamilyFallback(
+                schoolId, adoptionId, lessonId, studentId, target.Contract,
+                decision, decision.TargetComplexityScore, seed,
+                excludedExposureFingerprints, excludedSemanticIdentityKeys);
+            Require(
+                string.Equals(selected.Item.GenerationFamily,
+                    selected.Decision.TargetQuestionFamily,
+                    StringComparison.Ordinal),
+                "G6 adaptive fallback did not record the actual selected family.");
+            return selected.Item;
+        }
+
+        return generator.GenerateOne(
+            schoolId, adoptionId, lessonId, studentId, target.Contract,
+            decision, seed, excludedExposureFingerprints,
             excludedSemanticIdentityKeys);
+    }
 
     private static void ValidateItem(
         FamilyTarget target,
         AssessmentItem item)
     {
-        Require(
-            string.Equals(
-                item.GenerationFamily,
-                target.Family,
-                StringComparison.Ordinal),
-            "Generator changed the certified family.");
+        var grade6 = target.Contract.LessonCode.StartsWith(
+            "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal);
+        var familyMatch = grade6
+            ? target.Contract.AllowedQuestionFamilies.Contains(
+                item.GenerationFamily!, StringComparer.Ordinal)
+            : string.Equals(
+                item.GenerationFamily, target.Family,
+                StringComparison.Ordinal);
+        Require(familyMatch,
+            "Generator used a family outside its original approved contract.");
+        if (grade6)
+            Require(Stage18SkillContractPracticeEngine.VerifyPersistedItem(
+                target.Contract.ToLegacyStage18Contract(), item),
+                "G6 fallback did not preserve the independent verified item.");
 
         Require(
             !string.IsNullOrWhiteSpace(item.ExposureFingerprint) &&

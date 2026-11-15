@@ -30,6 +30,20 @@ public sealed class UaeG6U6L07ModelItTests
   Assert.True(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l07.savings_after_weeks",p,"٢٠٫٠٣"));
   Assert.False(ExactSkillContractQuestionEngine.Verify("uae.g6.u06.l07.savings_after_weeks",p,"20"));
  }
+ [Fact] public void VoteFractionGeneratorNeverEmitsParametersRejectedByItsOwnVerifier()
+ {
+  const string family="uae.g6.u06.l07.fractional_votes";
+  var engine=new ExactSkillContractQuestionEngine();
+  for(int seed=1;seed<=300;seed++)
+  {
+   var generated=engine.Generate(L,family,[family],ExactSkillQuestionDifficulty.Standard,
+       1,seed,[]).Single();
+   Assert.True(ExactSkillContractQuestionEngine.Verify(
+       family,generated.Parameters,generated.CorrectAnswer),
+       $"Invalid fractional vote generated at seed {seed}");
+   Assert.InRange(generated.Parameters["people"],4,120);
+  }
+ }
  [Fact] public void EqualGroupsAndVoteFractionsCheckBoundaries()
  {
   var p=new Dictionary<string,int>{{"people",24},{"teams",4}};
