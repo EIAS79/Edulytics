@@ -36,6 +36,20 @@ def main(phase):
     expected_printed = list(range(1, len(lessons) + 1))
     snapshot_id = idx.get("sourceSnapshotId") or idx.get("SourceSnapshotId")
     if phase == "structural":
+        pack = data(ROOT / "src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json")
+        official = sum(1 for x in pack["Nodes"]
+                       if x["IsOfficial"] and x["Kind"] in ("Standard", "Outcome", "Reference"))
+        legacy = [x["Code"] for x in pack["Nodes"] if
+                  "UAE:REF:TEXTBOOK:G7:GENERAL:" in x["Code"] or
+                  "UAE:CATALOG:G7:GENERAL:" in x["Code"]]
+        check("retired_english_grade7_reference_nodes_absent", len(legacy) == 0, {"legacy_count":len(legacy)})
+        check("uae_pack_official_counts_integrity",
+              len(pack["Nodes"]) == pack["NodeCount"] == 1467 and
+              official == pack["OfficialNodeCount"] == 1358 and
+              len(pack["Links"]) == pack["LinkCount"] == 48,
+              {"nodeCount":len(pack["Nodes"]), "declared":pack["NodeCount"],
+               "officialActual":official,"officialDeclared":pack["OfficialNodeCount"],
+               "links":len(pack["Links"])})
         check("curriculum_identity", idx.get("packCode") == "UAE-MOE-MATH" and idx.get("grade") == 7 and idx.get("pathway") == "General", {"code": idx.get("packCode"), "grade": idx.get("grade"), "pathway": idx.get("pathway")})
         check("academic_language_ar", body.get("AcademicLanguage") == "ar" and idx.get("academicLanguage") == "ar" and idx.get("rtl") is True)
         check("candidate_counts", len(units) == 11 and len(lessons) == len(contents) == len(index_lessons) == 78 and progress.get("closedABCCount") == 78, {"units": len(units), "blueprint": len(lessons), "content": len(contents), "index": len(index_lessons)})
