@@ -8772,6 +8772,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.reverse_percent_original"],
             "UAE_G7_GENERAL_ARABIC_U02L08_PRINTED_167_173",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L01 signed integers, absolute distance.
+        // Reuse exact signed number/absolute value graders; graphs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:01:INTEGERS-ABSOLUTE-VALUE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:01:INTEGERS-ABSOLUTE-VALUE", "number.integers.absolute_distance",
+            "INTEGERS_SIGNED_NUMBER_LINE_ABSOLUTE_DISTANCE",
+            ["usccss.g6.u07.l06.absolute_distance_values", "usccss.g6.u07.l06.absolute_value_reasoning", "usccss.g6.u07.l07.signed_comparisons_absolute", "uae.g6.u05.l03.absolute_distance"],
+            "UAE_G7_GENERAL_ARABIC_U03L01_PRINTED_191_197",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
