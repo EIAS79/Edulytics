@@ -8658,6 +8658,15 @@ public static class LessonPracticeContractRegistry
         // Reuse existing exact metric/customary conversion and rational-rate
         // question kernels; diagrams and unit justifications teacher reviewed.
         // A–B–C content staged; real runtime and CI are Stage D only.
+        // UAE G7 General Arabic U01L04, student book printed 33-40:
+        // exact classification of proportional tables, fee-intercepts, equations.
+        // Visual graph explanations are scored by teacher.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:04:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:04:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS", "proportions.equivalent_ratios",
+            "PROPORTIONAL_OR_NONPROPORTIONAL_TABLE_CLASSIFICATION",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_BOOK1_U01L04_PRINTED_33_40",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
