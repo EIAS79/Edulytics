@@ -9162,6 +9162,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.probability.sample_space_count", "g12.precalculus.u11.l05.permutations", "supporting.probability.independent_product"],
             "UAE_G7_ARABIC_U10L05_PDF_51_58",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/06, student 03-10.pdf printed 787-794.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:06:PERMUTATIONS-WITHOUT-REPETITION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:06:PERMUTATIONS-WITHOUT-REPETITION", "supporting.probability_statistics",
+            "PERMUTATIONS-WITHOUT-REPETITION",
+            ["g12.precalculus.u11.l05.permutations", "supporting.probability.sample_space_count", "usccss.g2.u05.l11.largest_card_permutation"],
+            "UAE_G7_ARABIC_U10L06_PDF_59_66",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
