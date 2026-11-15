@@ -8699,6 +8699,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
             "UAE_G7_GENERAL_ARABIC_U01L08_PRINTED_73_79",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L09 direct variation, student printed 81-88:
+        // reuse exact proportionality tables, y=kx model and origin classifiers.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:09:DIRECT-VARIATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:09:DIRECT-VARIATION", "proportions.equivalent_ratios",
+            "DIRECT_VARIATION_CONSTANT_K_OR_NONPROPORTIONAL_CLASSIFY",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l10.graphs_origin_slope"],
+            "UAE_G7_GENERAL_ARABIC_U01L09_PRINTED_81_88",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
