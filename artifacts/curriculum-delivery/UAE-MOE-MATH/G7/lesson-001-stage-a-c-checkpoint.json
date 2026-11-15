@@ -27,14 +27,18 @@
     "sourceRead": true,
     "topicIdentityVerified": true,
     "elementGroupCount": 8,
-    "fullAtomicSourceExerciseParity": "UNKNOWN"
+    "fullAtomicSourceExerciseParity": "UNKNOWN",
+    "numberedSourceQuestionsIndexed": 27,
+    "numberedQuestionMappingPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/lesson-001-atomic-coverage.json",
+    "guidedAndVisualSubpartsStillIncomplete": true
   },
   "stageB": {
     "originalArabicContentDrafted": true,
     "contentStatus": "Draft",
     "rtlContentLanguage": "ar",
     "runtimeRendering": "NOT_RUN",
-    "noPublisherArtworkCopied": true
+    "noPublisherArtworkCopied": true,
+    "originalPrerequisiteFractionReviewAdded": true
   },
   "stageC": {
     "skillContract": {
@@ -78,12 +82,14 @@
     "testsWritten": true,
     "testsRun": "NOT_RUN",
     "exactLearnerRouting": "NOT_RUN",
-    "mathEngineReusePrepared": true
+    "mathEngineReusePrepared": true,
+    "teacherScoredRubricWritten": true,
+    "independentDigitalVerifierStatus": "WRITTEN_NOT_RUN"
   },
   "blockers": [
-    "Complete each source exercise's independent 1:1 learning equivalence verification, including prerequisite items 25–27",
-    "Confirm runtime selection of this Arabic Grade 7 General lesson blocks Advanced/English fallback",
-    "Run Stage D later for exact grader and Arabic learner route"
+    "Audit remaining guided-source item and visual subparts individually; 27 numbered questions are indexed but not all subparts proved equivalent",
+    "Verify effective learner-route selection is Grade7 General/ar only (no English or Advanced fallback), prior to READY_FOR_STAGE_D",
+    "Exact lesson-specific UNIT_RATE contract remains an integration candidate; verified runtime grader and teacher persistence are Stage D requirements"
   ],
   "sourceElementGroups": [
     {
