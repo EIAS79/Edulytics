@@ -9250,6 +9250,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u10.l12.pyramid_surface", "uae.g6.u10.l07.net_faces"],
             "UAE_G7_ARABIC_U08L07_PDF_73_84",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/08, student 03-8-10.pdf printed 689-696.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:08:COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:08:COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE", "geometry.solids.g6.combined_volume",
+            "COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE",
+            ["uae.g6.u10.l14.composite_volume", "uae.g6.u10.l14.composite_surface", "usccss.g5.u01.l08.add_nonoverlap_prism_volumes"],
+            "UAE_G7_ARABIC_U08L08_PDF_85_92",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
