@@ -8827,6 +8827,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l09.compare_mixed_signed_rationals", "uae.g6.u05.l09.order_four_signed_rationals", "uae.g6.u05.l07.compare_signed_rationals", "usccss.g7.u05.compare_signed_rational"],
             "UAE_G7_GENERAL_ARABIC_U04L02_PRINTED_271_278",
             "READY_VERIFIED",Version);
+        // UAE Grade7 General Arabic U04L03, printed283-289:
+        // same denominator signed fraction add/subtract; reuse fractions engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:03:LIKE-FRACTION-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:03:LIKE-FRACTION-ADD-SUB", "fractions.add_subtract",
+            "SIGNED_LIKE_DENOMINATOR_ADD_SUBTRACT_SIMPLIFY",
+            ["fractions.add_subtract.same_denominator.mixed.build", "fractions.add_subtract.same_denominator.mixed.apply", "uae.g4.u09.l01.model_add_like_denominators"],
+            "UAE_G7_GENERAL_ARABIC_U04L03_PRINTED_283_289",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
