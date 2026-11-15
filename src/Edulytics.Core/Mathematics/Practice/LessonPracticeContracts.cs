@@ -9130,6 +9130,14 @@ public static class LessonPracticeContractRegistry
             ["probability.simple.favourable_over_total.exact", "probability.complement.exact", "probability.theoretical.simple_event"],
             "UAE_G7_ARABIC_U10L01_PDF_5_12",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/02, student 03-10.pdf printed 743-752.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:02:THEORETICAL-EXPERIMENTAL-PROBABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:02:THEORETICAL-EXPERIMENTAL-PROBABILITY", "supporting.probability_statistics",
+            "THEORETICAL-EXPERIMENTAL-PROBABILITY",
+            ["probability.theoretical.simple_event", "supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "UAE_G7_ARABIC_U10L02_PDF_15_24",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
