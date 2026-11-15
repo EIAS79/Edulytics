@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u05l07-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u05l08-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1163,6 +1163,35 @@
           "StepByStepSolutions": "1. اكتب التعبير الأول ناقص الثاني مع أقواس؛ 2. وزع السالب على جميع حدود التعبير الثاني؛ 3. اكتب تعبيرًا دون أقواس؛ 4. اجمع حدود المتغيرات المتشابهة؛ 5. اجمع الحدود العددية؛ 6. تحقق بقيم عددية في التعبيرين وفرق الناتجين",
           "CommonMistakes": "خطأ: عكس إشارة أول حد فقط. لماذا خطأ: الطرح يطبق على جميع حدود القوس. التصويب: وزّع −١ على الكل. خطأ: الخلط بين أ−ب وب−أ. لماذا خطأ: الطرح غير إبدالي. التصويب: حافظ على ترتيب التعبيرين. خطأ: تجاهل سالب على الثابت. لماذا خطأ: يفسد الفرق الحسابي. التصويب: اكتب كامل فتح الأقواس.",
           "QuickSummary": "طرح تعبير يتطلب تغيير إشارات كل حد فيه. الترتيب مهم. اجمع الحدود المتشابهة بعد فتح الأقواس. يمكن أن يكون الفرق سالبًا. Cool-down أصلي بلا حلول: بسط (٨س−١)−(٣س+٤)؛ بسط (س+٧)−(−٢س−٥)؛ قارن تكلفتين ٤ن+٩ و٣ن+١٤. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:05:08:FACTOR-LINEAR-EXPRESSIONS",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF81-90 (printed 415-424); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF81-90 (printed 415-424); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "تحليل التعابير الخطية إلى عوامل",
+          "Explanation": "التحليل إلى عوامل هو كتابة تعبير جمع أو طرح في صورة حاصل ضرب عوامل. وهو عملية عكس خاصية التوزيع؛ مثل ٦س+٩=٣(٢س+٣) لأن ٣ عامل مشترك بين الحدين. نبحث عن أكبر عامل عددي مشترك وعن متغيرات تشترك فيها الحدود. إذا كان ١٢س²−٨س، نُخرج ٤س فنكتب ٤س(٣س−٢). لا نُخرج س إذا كان بعض الحدود ثابتًا لا يحوي س، مثل ٤س+٦؛ العامل المشترك هنا ٢ فقط. للتحقق نوزّع العامل الخارجي على جميع حدود القوس، أو نعوّض قيمة للمتغير ثم نقارن الصورتين. قد تتطلب المسألة تمثيل مساحة مستطيل أبعاده ٣ و(٢س+٥)، بحيث يكون التعبير الموزع ٦س+١٥. عند غياب عامل مشترك أكبر من ١ يمكن القول إن التعبير غير قابل للتحليل بهذه الطريقة ضمن الأعداد الصحيحة.",
+          "KeyConceptsAndRules": "العامل المشترك الأكبر: ع.م.أ(٦،٩)=٣ مثل ٦س+٩=٣(٢س+٣). التحليل عكس التوزيع: أب+أج=أ(ب+ج) مثل ٥س+١٥=٥(س+٣). عامل متغير مشترك: ١٢س²−٨س=٤س(٣س−٢) مثل ٤س×٣س=١٢س². التحقق بالتوزيع: ٢(٣س+٤)=٦س+٨ مثل يرجع التعبير الأصلي.",
+          "WorkedExamples": "مثال 1: حلل ٦س+٩. الخطوات: العامل المشترك العددي ٣.؛ قسم الحدود على ٣: ٢س و٣.؛ النتيجة ٣(٢س+٣).. الإجابة ٣(٢س+٣). التحقق: التوزيع ٦س+٩. مثال 2: حلل ١٢س²−٨س. الخطوات: العامل المشترك العددي ٤.؛ كل حد يحتوي س.؛ اكتب ٤س(٣س−٢).. الإجابة ٤س(٣س−٢). التحقق: التوزيع ١٢س²−٨س. مثال 3: حلل −١٠س−١٥. الخطوات: العامل المشترك ٥ ويمكن اختيار −٥.؛ اقسم كل حد على −٥.؛ اكتب −٥(٢س+٣).. الإجابة −٥(٢س+٣). التحقق: التوزيع −١٠س−١٥. مثال 4: إذا كانت المساحة ٨س+١٢، فاكتب حاصل ضرب مع طول ٤. الخطوات: ٤ يقسم كلا الحدين.؛ ٨س÷٤=٢س و١٢÷٤=٣.؛ الأبعاد ٤ و(٢س+٣).. الإجابة ٤(٢س+٣). التحقق: ٤×(٢س+٣)=٨س+١٢.",
+          "StepByStepSolutions": "1. حدد جميع الحدود التي ستُحلّل؛ 2. ابحث عن قاسم عددي مشترك؛ 3. تحقق من وجود متغير مشترك في كل الحدود؛ 4. اقسم كل حد على العامل المختار؛ 5. اكتب العامل خارج قوس باقي الحدود؛ 6. تأكد بالتوزيع ثم فسّر نموذج المساحة",
+          "CommonMistakes": "خطأ: إخراج عامل لا يقسم كل حد. لماذا خطأ: يعطي معاملات داخلية غير صحيحة. التصويب: احسب العامل المشترك لكافة الحدود. خطأ: إخراج س من حد ثابت. لماذا خطأ: الثابت لا يحوي المتغير. التصويب: أخرج العامل العددي فقط. خطأ: نسيان التحقق بالتوزيع. لماذا خطأ: يمكن خطأ إشارات الحدود أن يمر. التصويب: وزّع وأعد التعبير الأصلي.",
+          "QuickSummary": "التحليل كتابة المجموع كحاصل ضرب. أخرج أكبر عامل مشترك. لا تخرج متغيرًا من حد لا يحتويه. التحقق بالتوزيع أساسي. Cool-down أصلي بلا حلول: حلل ١٥س+٢٥؛ حلل ٩س²−٦س؛ افحص لماذا ٢س+٥ لا يستخرج منها عامل صحيح أكبر من ١. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }

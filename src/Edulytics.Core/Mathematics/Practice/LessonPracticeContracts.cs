@@ -8930,6 +8930,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.simplify", "supporting.algebra.expand"],
             "UAE_G7_ARABIC_U05L07_PDF_69_80",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/08, student 02-5-6.pdf printed 415-424.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:08:FACTOR-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:08:FACTOR-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "FACTOR-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.factor", "supporting.algebra.expand", "usccss.g6.u06.l11.expansion_factor_values"],
+            "UAE_G7_ARABIC_U05L08_PDF_81_90",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
