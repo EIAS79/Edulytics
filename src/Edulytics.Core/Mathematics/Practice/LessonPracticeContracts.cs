@@ -9186,6 +9186,14 @@ public static class LessonPracticeContractRegistry
             ["uae.g5.u11.l04.sample_scaled_estimate", "supporting.statistics.table_total", "supporting.probability.expected_frequency"],
             "UAE_G7_ARABIC_U11L01_PDF_5_12",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/02, student 03-11.pdf printed 823-832.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:02:BIASED-UNBIASED-SAMPLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:02:BIASED-UNBIASED-SAMPLES", "supporting.statistics.charts",
+            "BIASED-UNBIASED-SAMPLES",
+            ["supporting.statistics.collection_method", "usccss.g6.u08.l02.statistical_question_classification", "uae.g5.u11.l04.sample_scaled_estimate"],
+            "UAE_G7_ARABIC_U11L02_PDF_13_22",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
