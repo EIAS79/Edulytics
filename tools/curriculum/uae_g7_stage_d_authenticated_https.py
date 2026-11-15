@@ -20,7 +20,7 @@ from g5_stage_d_authenticated_https import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-CONTENT = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar78-student-local-v1.lesson-content-pack.json"
+CONTENT = ROOT / "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json"
 OUT = Path("/tmp/uae-g7-stage-d-authenticated-78-lessons.json")
 SCHOOL = "REHEARSAL-AE-PRIMARY"
 STUDENT = "uae-primary.student.primary@edulytiks.com"
