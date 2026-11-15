@@ -8874,6 +8874,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.number.signed_rational_divide", "supporting.fractions.multiply_divide"],
             "UAE_G7_GENERAL_ARABIC_U04L08_PRINTED_327_334",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/01, student 02-5-6.pdf printed 349-356.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:01:ALGEBRAIC-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:01:ALGEBRAIC-EXPRESSIONS", "supporting.algebra.expressions",
+            "ALGEBRAIC-EXPRESSIONS",
+            ["supporting.algebra.substitute", "usccss.algebra.expression_coefficient"],
+            "UAE_G7_ARABIC_U05L01_PDF_15_22",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
