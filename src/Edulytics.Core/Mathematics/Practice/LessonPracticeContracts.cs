@@ -9242,6 +9242,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.prism_surface_area_base_perimeter_height", "uae.g6.u10.l10.tri_prism_surface", "uae.g6.u10.l08.rect_prism_surface"],
             "UAE_G7_ARABIC_U08L06_PDF_61_72",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/07, student 03-8-10.pdf printed 677-688.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:07:PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:07:PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES", "geometry.solids.g6.pyr_surface",
+            "PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES",
+            ["uae.g6.u10.l12.pyramid_surface", "uae.g6.u10.l07.net_faces"],
+            "UAE_G7_ARABIC_U08L07_PDF_73_84",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
