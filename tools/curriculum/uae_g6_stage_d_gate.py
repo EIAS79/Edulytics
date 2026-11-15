@@ -74,6 +74,8 @@ def structural():
         errors.append("G6_LESSON_CODE_PATHWAY_MISMATCH")
     if pack.get("AcademicLanguage") != "ar":
         errors.append("G6_ACADEMIC_LANGUAGE_NOT_AR")
+    if pack.get("Status") != "Published" or not pack.get("ReviewedBy") or not pack.get("ReviewEvidence"):
+        errors.append("G6_OWNER_APPROVED_ARABIC_PACK_NOT_PUBLISHED")
     # Accepted VersionCode is the existing database persistence key, NOT
     # a claim of original 2026-2027 textbook edition parity.
     accepted = load(ROOT / "src/Edulytics.Core/Curriculum/Packs/uae-moe-math.curriculum-pack.json").get("VersionCode")
@@ -156,6 +158,7 @@ def source():
         "academicApprovalAuthority":"PLATFORM_OWNER",
         "ownerDecision":"APPROVED_FOR_PUBLICATION_AS_EDULYTICS_ORIGINAL_EDUCATIONAL_EQUIVALENCE",
         "productionApproval":True,"sourceEditionIdentityClaim":"NONE",
+        "approvedPublicationContentStatus":"Published",
         "originalTextbookExerciseNumeratorDenominator":"NOT_INDEPENDENTLY_VERIFIED",
     }
     for k,v in required.items():

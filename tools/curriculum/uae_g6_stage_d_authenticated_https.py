@@ -71,6 +71,18 @@ def check_catalogue():
         raise AssertionError(
             f"UAE G6 seeded runtime lesson set mismatch: {len(parsed)} / 128"
         )
+    # Catch a Draft-only seed immediately; the student portal intentionally
+    # exposes only Published canonical content, never silently renders drafts.
+    published = sql("""
+      SELECT COUNT(*)::text
+      FROM "CurriculumLessonContents" c
+      JOIN "CurriculumPedagogicalLessons" l ON l."Id"=c."LessonNodeId"
+      WHERE l."Code" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%'
+        AND c."Status"=3;
+    """).strip()
+    if published != "128":
+        raise AssertionError(
+            "UAE G6 128 canonical lesson identities exist but Published content count is " + published)
     return parsed, expected
 
 
