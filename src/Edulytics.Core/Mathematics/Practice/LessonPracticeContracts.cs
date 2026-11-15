@@ -8747,6 +8747,14 @@ public static class LessonPracticeContractRegistry
             ["percentages.core.increase_decrease", "usccss.g7.u04.percent_error", "usccss.g7.u04.fractional_change"],
             "UAE_G7_GENERAL_ARABIC_U02L05_PRINTED_143_150",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L06: tax, tip and cost-based markup.
+        // Reuses exact percent-of-quantity and markup families, not legal tax rates.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:06:SALES-TAX-TIP-MARKUP"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:06:SALES-TAX-TIP-MARKUP", "percentages.core.of_quantity",
+            "SALES_TAX_TIP_AND_MARKUP_BY_BASE",
+            ["percentages.core.of_quantity", "percentages.core.increase_decrease", "uae.g6.u06.l06.percentage_markup"],
+            "UAE_G7_GENERAL_ARABIC_U02L06_PRINTED_151_158",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
