@@ -9050,6 +9050,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u07.parallel_base_cross_section_sides", "uae.g5.u12.l07.net_solid_classification"],
             "UAE_G7_ARABIC_U07L06_PDF_63_70",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/01, student 03-8-10.pdf printed 613-620.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:01:CIRCLE-CIRCUMFERENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:01:CIRCLE-CIRCUMFERENCE", "supporting.geometry.circles_loci",
+            "CIRCLE-CIRCUMFERENCE",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "uae.g5.u12.l04.circle_segment_classify"],
+            "UAE_G7_ARABIC_U08L01_PDF_9_16",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
