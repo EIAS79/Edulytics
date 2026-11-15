@@ -8796,6 +8796,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u05.signed_rational_add_subtract", "uae.g6.u05.l01.opposite_integer", "usccss.g6.u07.l02.signed_opposites_values"],
             "UAE_G7_GENERAL_ARABIC_U03L03_PRINTED_215_221",
             "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U03L04, printed 233-239.
+        // Existing exact signed-rational-multiply family, integer-domain practice.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:04:MULTIPLY-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:04:MULTIPLY-INTEGERS", "supporting.fractions.multiply_divide",
+            "SIGNED_INTEGER_MULTIPLY_WITH_POWERS_SIGN",
+            ["usccss.number.signed_rational_multiply"],
+            "UAE_G7_GENERAL_ARABIC_U03L04_PRINTED_233_239",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
