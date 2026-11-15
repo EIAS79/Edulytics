@@ -9114,6 +9114,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l12.surface_area_meaning", "usccss.g6.u01.l14.source_net_surface_area"],
             "UAE_G7_ARABIC_U09L05_PDF_35_42",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/06, student 04-09-volume-surface-2021-student.pdf printed 711-715.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME", "supporting.geometry.area_volume",
+            "SCALE-DIMENSIONS-AREA-VOLUME",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "usccss.g6.u06.l18.related_area_volume_growth"],
+            "UAE_G7_ARABIC_U09L06_PDF_43_47",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
