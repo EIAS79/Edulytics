@@ -9536,6 +9536,11 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:11:06:STUDENT-AR-128","statistics.data.g6.mad","GRADE6_MAD_STATISTICS",
             ["uae.g6.u11.l06.mean_absolute_deviation","uae.g6.u11.l02.mean"],"LOCAL_G6_03_PDF181_188_PRINT853_860",
             "READY_VERIFIED",Version);
+        // G6 U11L07: Arabic student-book statistics, exact skill scoped.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:11:07:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:11:07:STUDENT-AR-128","statistics.data.g6.best","GRADE6_BEST_STATISTICS",
+            ["uae.g6.u11.l07.choose_centre","uae.g6.u11.l02.mean","uae.g6.u11.l03.median"],"LOCAL_G6_03_PDF189_196_PRINT861_868",
+            "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
