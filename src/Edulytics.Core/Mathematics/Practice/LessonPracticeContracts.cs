@@ -9218,6 +9218,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.statistics.charts.mixed", "supporting.statistics.scatter_correlation", "supporting.statistics.table_total", "supporting.statistics.compare_range"],
             "UAE_G7_ARABIC_U11L05_PDF_51_58",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/04, student 03-8-10.pdf printed 639-652.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:04:PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:04:PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT", "geometry.volume",
+            "PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT",
+            ["usccss.g7.u07.prism_volume_base_height", "uae.g6.u10.l03.tri_prism_volume", "geometry.volume.rectangular_prism"],
+            "UAE_G7_ARABIC_U08L04_PDF_35_48",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",

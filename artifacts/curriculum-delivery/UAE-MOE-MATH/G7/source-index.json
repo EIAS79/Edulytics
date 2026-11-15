@@ -8,7 +8,7 @@
   "rtl": true,
   "targetAcademicPeriod": "2026-2027",
   "sourceEdition": "2025-2026 Arabic student-book cover observed; target period does not certify source-year equivalence",
-  "sourceSelection": "Only owner-supplied Grade_07 Arabic Student Book TOC; no Reveal English 62-lesson, Advanced, or American course substitutions",
+  "sourceSelection": "Original Arabic 11-unit 73-lesson annual TOC retained; 5 independently numbered solid-geometry lessons sourced from alternate local Arabic volume3 edition appended as supplemental lessons without altering original lesson IDs",
   "selectedLocalStudentBookRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_07\\01_Student_Books",
   "annualTocSourceFile": "01-1-4.pdf",
   "annualTocSourceSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
@@ -17,17 +17,19 @@
   "verifiedFirstLessonPdfPages": "49-56",
   "verifiedFirstLessonPrintedPages": "9-16",
   "sourceUnitCount": 11,
-  "sourceLessonCount": 73,
+  "sourceLessonCount": 78,
   "sourceTocIndexVerified": true,
-  "sourceBodyCoverageComplete": true,
+  "sourceBodyCoverageComplete": false,
   "legacyEnglishLessonCountForComparisonOnly": 62,
   "denominators": {
     "sourceTocLessons": 73,
-    "lessonBodyVerifiedSoFar": 73,
-    "completedABC": 73,
-    "readyForStageD": 73
+    "lessonBodyVerifiedSoFar": 74,
+    "completedABC": 74,
+    "readyForStageD": 74,
+    "originalAnnualTocLessons": 73,
+    "supplementalEditionLessons": 5
   },
-  "pendingBodyChecks": "All 73 lesson body opening-page locators have source Stage-A visual-read checkpoints and verified source SHA256. Literal publisher-question-by-question parity remains NOT_CLAIMED; Stage D/CI is pending. Unit9 uses a separately labeled older Arabic student edition.",
+  "pendingBodyChecks": "The 73 primary annual-index lessons are A-C ready; 5 supplemental alternate-edition solid-geometry lessons U08L04-U08L08 are not yet closed. Cross-edition comparison remains provisional.",
   "otherItems": "Scaffold includes exploration labs, review, assessment, project and teacher tasks; exclude them from 73 numbered lessons but inventory their educational elements per lesson.",
   "units": [
     {
@@ -789,7 +791,7 @@
     {
       "unitNumber": 8,
       "unitTitle": "قياس الدائرة",
-      "lessonCount": 3,
+      "lessonCount": 8,
       "contentsFrom": "01-1-4.pdf",
       "sourceTocPdfPage": 16,
       "candidateBodyPdfFile": "03-8-10.pdf",
@@ -833,8 +835,86 @@
           "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
           "sourceBodyVerified": true,
           "stageABCStatus": "READY_FOR_STAGE_D"
+        },
+        {
+          "ordinal": 74,
+          "unitLessonNumber": 4,
+          "title": "حجم المنشور",
+          "sourceTocPdfPage": null,
+          "sourceTocKind": "ALTERNATIVE_ARABIC_STUDENT_EDITION",
+          "supplementalEditionUnit": 8,
+          "supplementalEditionUnitTitle": "قياس الأشكال",
+          "printedStartPage": 639,
+          "pdfStartPage": 35,
+          "sourceStudentBookFile": "03-8-10.pdf",
+          "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
+          "sourceBodyVerified": true,
+          "stageABCStatus": "READY_FOR_STAGE_D",
+          "pdfStartMappingEvidence": "Local owner-selected student book opening-page visual verification"
+        },
+        {
+          "ordinal": 75,
+          "unitLessonNumber": 5,
+          "title": "حجم الأشكال الهرمية",
+          "sourceTocPdfPage": null,
+          "sourceTocKind": "ALTERNATIVE_ARABIC_STUDENT_EDITION",
+          "supplementalEditionUnit": 8,
+          "supplementalEditionUnitTitle": "قياس الأشكال",
+          "printedStartPage": 653,
+          "pdfStartPage": 49,
+          "sourceStudentBookFile": "03-8-10.pdf",
+          "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
+          "sourceBodyVerified": false,
+          "stageABCStatus": "NOT_STARTED"
+        },
+        {
+          "ordinal": 76,
+          "unitLessonNumber": 6,
+          "title": "مساحة سطح المنشور",
+          "sourceTocPdfPage": null,
+          "sourceTocKind": "ALTERNATIVE_ARABIC_STUDENT_EDITION",
+          "supplementalEditionUnit": 8,
+          "supplementalEditionUnitTitle": "قياس الأشكال",
+          "printedStartPage": 665,
+          "pdfStartPage": 61,
+          "sourceStudentBookFile": "03-8-10.pdf",
+          "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
+          "sourceBodyVerified": false,
+          "stageABCStatus": "NOT_STARTED"
+        },
+        {
+          "ordinal": 77,
+          "unitLessonNumber": 7,
+          "title": "مساحة سطح الأشكال الهرمية",
+          "sourceTocPdfPage": null,
+          "sourceTocKind": "ALTERNATIVE_ARABIC_STUDENT_EDITION",
+          "supplementalEditionUnit": 8,
+          "supplementalEditionUnitTitle": "قياس الأشكال",
+          "printedStartPage": 677,
+          "pdfStartPage": 73,
+          "sourceStudentBookFile": "03-8-10.pdf",
+          "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
+          "sourceBodyVerified": false,
+          "stageABCStatus": "NOT_STARTED"
+        },
+        {
+          "ordinal": 78,
+          "unitLessonNumber": 8,
+          "title": "الحجم ومساحة السطح للأشكال المركبة",
+          "sourceTocPdfPage": null,
+          "sourceTocKind": "ALTERNATIVE_ARABIC_STUDENT_EDITION",
+          "supplementalEditionUnit": 8,
+          "supplementalEditionUnitTitle": "قياس الأشكال",
+          "printedStartPage": 689,
+          "pdfStartPage": 85,
+          "sourceStudentBookFile": "03-8-10.pdf",
+          "sourceStudentBookSha256": "2238eb8ec088db2e5601d8c3d3f703aa703d53a091bc9467df45c12248088642",
+          "sourceBodyVerified": false,
+          "stageABCStatus": "NOT_STARTED"
         }
-      ]
+      ],
+      "annualTocLessonCount": 3,
+      "supplementalEditionLessonCount": 5
     },
     {
       "unitNumber": 9,
@@ -1103,5 +1183,7 @@
         }
       ]
     }
-  ]
+  ],
+  "originalAnnualTocLessonCount": 73,
+  "supplementalEditionLessonCount": 5
 }
