@@ -8851,6 +8851,14 @@ public static class LessonPracticeContractRegistry
             ["fractions.add_subtract.same_denominator.mixed.apply", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.apply"],
             "UAE_G7_GENERAL_ARABIC_U04L05_PRINTED_299_306",
             "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U04L06 printed311-317:
+        // signed and mixed fraction multiplication using existing exact engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:06:MULTIPLY-FRACTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:06:MULTIPLY-FRACTIONS", "supporting.fractions.multiply_divide",
+            "SIGNED_FRACTION_MULTIPLY_MIXED_AND_CANCEL",
+            ["supporting.fractions.multiply", "usccss.number.signed_rational_multiply"],
+            "UAE_G7_GENERAL_ARABIC_U04L06_PRINTED_311_317",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
