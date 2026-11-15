@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u05l04-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u05l05-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1076,6 +1076,35 @@
           "StepByStepSolutions": "1. حدد العامل خارج القوس؛ 2. اقرأ جميع حدود القوس وإشاراتها؛ 3. اضرب العامل في كل حد على حدة؛ 4. اكتب مجموع النواتج دون إسقاط إشارة؛ 5. اجمع الحدود المتشابهة إن ظهرت؛ 6. تحقق بإحلال قيمة للمتغير في التعبيرين",
           "CommonMistakes": "خطأ: توزيع العامل على أول حد فقط. لماذا خطأ: يُهمل الحد الآخر في الضرب. التصويب: اضرب في كل حد. خطأ: الاحتفاظ بسالب الحد عند سالب×سالب. لماذا خطأ: سالب×سالب موجب. التصويب: −٢(س−٤)=−٢س+٨. خطأ: جمع حدود غير متشابهة بعد التوزيع. لماذا خطأ: ١٥س و١٠ نوعان مختلفان. التصويب: احتفظ بالتعبير ١٥س+١٠.",
           "QuickSummary": "أوزّع العامل على كل حد. سالب×سالب يعطي موجبًا. التعبير الموزع مكافئ للأصلي. النموذج المساحي يساعد على فهم التوزيع. Cool-down أصلي بلا حلول: بسط ٧(٢س−٣)؛ بسط −٣(س−٥)؛ صحح الخطأ ٤(س+٢)=٤س+٢. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:05:05:SIMPLIFY-LIKE-TERMS",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF53-60 (printed 387-394); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF53-60 (printed 387-394); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "تبسيط التعابير الجبرية",
+          "Explanation": "الحدود المتشابهة هي حدود تحتوي الجزء المتغير نفسه مع الأس نفسه؛ يمكن جمع معاملات الحدود المتشابهة أو طرحها دون تغيير الأس. مثلًا ٣س+٧س=١٠س، بينما ٣س و٣س² غير متشابهين. في تعبير ٥س+٣−٢س+٧، نجمع حدود س فتصبح ٣س، والثوابت تصبح ١٠، فنحصل على ٣س+١٠. لا نخلط المعامل بالثابت: الحد ٦ وحد مستقل والحد ٦س تابع للمتغير. إذا احتوى التعبير أقواسًا نزيلها باستخدام التوزيع ثم نجمع المتشابه: ٢(س+٤)−٣س=٢س+٨−٣س=٨−س. ينبغي الانتباه للطرح من تعبير مجاور وللإشارات السالبة، ويمكن تمثيل الحدود بقطع جبرية أصلية والتحقق بالتعويض.",
+          "KeyConceptsAndRules": "الحد الجبري: ٤س و−٣ و٢ص حدود مختلفة مثل ٤س−٣+٢ص. الحدود المتشابهة: ٣س و−٧س متشابهان مثل ٣س−٧س=−٤س. الثابت: ٧+−٢=٥ مثل ٣س+٧−٢=٣س+٥. اختزال تعبير: أس المتغير لا يتغير عند الجمع مثل ٢س²+٣س²=٥س².",
+          "WorkedExamples": "مثال 1: بسط ٨س−٣س+٥. الخطوات: جمع ٨−٣=٥.؛ الحد ثابت ٥.؛ لا تدمج الثابت في س.. الإجابة ٥س+٥. التحقق: س=٢ يعطي ١٥. مثال 2: بسط ٥س+٣−٢س+٧. الخطوات: حدود س تعطي ٣س.؛ الثوابت ٣+٧=١٠.؛ اكتب ٣س+١٠.. الإجابة ٣س+١٠. التحقق: س=٤ يعطي ٢٢. مثال 3: بسط ٢(س+٤)−٣س. الخطوات: وزّع ٢: ٢س+٨−٣س.؛ اجمع ٢س−٣س=−س.؛ النتيجة ٨−س.. الإجابة ٨−س. التحقق: س=٢ ينتج ٦. مثال 4: بسط ٤س²+٣س−س²+٢س. الخطوات: اجمع س²: ٤−١=٣.؛ اجمع س: ٣+٢=٥.؛ اكتب ٣س²+٥س.. الإجابة ٣س²+٥س. التحقق: س=١: ٨.",
+          "StepByStepSolutions": "1. حدد حدود التعبير كلها؛ 2. اجمع الحدود التي تحمل المتغير والأس نفسيهما؛ 3. اجمع الثوابت وحدها؛ 4. استخدم التوزيع قبل التجميع إن وجدت أقواس؛ 5. اكتب معاملات وإشارات الناتج؛ 6. تحقق بتعويض قيمتين مختلفتين",
+          "CommonMistakes": "خطأ: جمع س وس² كأنهما حد واحد. لماذا خطأ: أس المتغير يحدد التشابه. التصويب: احتفظ بالحدين منفصلين. خطأ: تحويل ٣س+٥ إلى ٨س. لماذا خطأ: الثابت لا يحوي المتغير. التصويب: لا تدمج ثابتًا ومتغيرًا. خطأ: نسيان توزيع سالب قبل التجميع. لماذا خطأ: الإشارات تحدد المعامل الصحيح. التصويب: ارفع القوس بتوزيع إشاراته.",
+          "QuickSummary": "المتشابه يعني نفس المتغير والأس. اجمع المعاملات فقط. الثوابت تتجمع مع ثوابت. بعد التوزيع أتحقق بالتعويض. Cool-down أصلي بلا حلول: بسط ٩س−٤س+٦؛ بسط ٣س²+٢س−س²+٧س؛ حدد الخطأ في ٥س+٣=٨س. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }

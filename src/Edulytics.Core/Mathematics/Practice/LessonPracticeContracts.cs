@@ -8906,6 +8906,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.expand", "usccss.g6.u06.l10.variable_distributive_values", "usccss.g6.u06.l09.distributive_numeric_products"],
             "UAE_G7_ARABIC_U05L04_PDF_41_52",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/05, student 02-5-6.pdf printed 387-394.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:05:SIMPLIFY-LIKE-TERMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:05:SIMPLIFY-LIKE-TERMS", "supporting.algebra.expressions",
+            "SIMPLIFY-LIKE-TERMS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L05_PDF_53_60",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
