@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u06l04-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u06l05-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1308,6 +1308,35 @@
           "StepByStepSolutions": "1. اقرأ طرفَي المعادلة؛ 2. حدد الثابت والمعامل؛ 3. اعكس الجمع أو الطرح لإزالة الثابت؛ 4. اعكس الضرب أو القسمة لعزل المتغير؛ 5. احسب النتيجة مع الإشارة؛ 6. تحقق بالتعويض والتفسير",
           "CommonMistakes": "خطأ: قسمة على المعامل قبل معالجة الثابت بطريقة خاطئة. لماذا خطأ: ينسى الطالب تقسيم الثابت أيضًا. التصويب: أزل الثابت أولًا. خطأ: عدم حفظ سالب المعامل. لماذا خطأ: قد ينعكس اتجاه الناتج. التصويب: اقسم على القيمة الموقعة. خطأ: ترك جواب دون تحقق. لماذا خطأ: لا يكشف خطأ جمع أو طرح. التصويب: عوض في الأصل.",
           "QuickSummary": "أزيل الثابت أولًا ثم المعامل. أنفذ عملية متوازنة في الطرفين. أراجع الإشارات. أتحقق بالتعويض. Cool-down أصلي بلا حلول: حل ٥س−٨=١٧؛ حل −٣ص+٤=−١١؛ كوّن معادلة لعدد كتب سعر الواحد ٨ مع شحن ١٢ والإجمالي ٦٨. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:06:05:MULTI-STEP-EQUATIONS",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF147-162 (printed 481-496); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF147-162 (printed 481-496); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المعادلات المكونة من أكثر من خطوتين",
+          "Explanation": "المعادلة متعددة الخطوات قد تحتوي أقواسًا أو حدودًا متشابهة أو المجهول في طرفي المساواة. نبدأ بإزالة الأقواس بالتوزيع، ثم نجمع الحدود المتشابهة في كل طرف، وننقل حدود المجهول إلى طرف والثوابت إلى الآخر بتنفيذ عمليات متوازنة. مثلًا ٣(٢س−١)+٤=٢س+١٧. بعد التوزيع ٦س−٣+٤=٢س+١٧، أي ٦س+١=٢س+١٧. نطرح ٢س ثم ١ فيصبح ٤س=١٦، وحلها س=٤. قد تكون هناك معادلات لا حل لها مثل ٢(س+٣)=٢س+٩؛ ينتج ٦=٩ وهو تناقض. وقد تتحقق لكل قيمة مثل ٢(س+٣)=٢س+٦، وهو تطابق. لا نلغي حد س من الطرفين ثم نقول س=٠ تلقائيًا. التحقق بالمعادلة الأصلية يكشف الفهم غير الصحيح.",
+          "KeyConceptsAndRules": "التوزيع: ٣(٢س−١)=٦س−٣ مثل ٣(٢×٤−١)=٢١. التجميع: ٦س−٣+٤=٦س+١ مثل مع س=٤ يعطي ٢٥. المجهول في طرفين: ٦س+١=٢س+١٧ ⇒ ٤س=١٦ مثل س=٤. تطابق/تناقض: ٦=٦ كل القيم، ٦=٩ لا حل مثل ٢س+٦=٢(س+٣).",
+          "WorkedExamples": "مثال 1: حل ٣(٢س−١)+٤=٢س+١٧. الخطوات: وزع ثم بسط: ٦س+١=٢س+١٧.؛ اطرح ٢س ثم ١: ٤س=١٦.؛ س=٤.. الإجابة س=٤. التحقق: ٣(٨−١)+٤=٢٥ و٨+١٧=٢٥. مثال 2: حل ٥س−٣=٢س+١٢. الخطوات: اطرح ٢س: ٣س−٣=١٢.؛ أضف ٣: ٣س=١٥.؛ س=٥.. الإجابة س=٥. التحقق: ٢٥−٣=٢٢، ١٠+١٢=٢٢. مثال 3: حل ٢(س+٣)=٢س+٩. الخطوات: وزع: ٢س+٦=٢س+٩.؛ اطرح ٢س: ٦=٩.؛ هذا تناقض، فلا حل.. الإجابة لا حل. التحقق: ٦≠٩. مثال 4: حل ٢(س+٣)=٢س+٦. الخطوات: وزع: ٢س+٦=٢س+٦.؛ طرفا المعادلة متساويان دائمًا.؛ أي قيمة حقيقية تحققها.. الإجابة كل الأعداد الحقيقية. التحقق: س=٠ وس=١ كلاهما صحيح.",
+          "StepByStepSolutions": "1. وزّع جميع الأقواس بإشارات صحيحة؛ 2. اجمع الحدود المتشابهة داخل الطرفين؛ 3. اجمع حدود المتغير في طرف؛ 4. اجمع الثوابت في الطرف الآخر؛ 5. اقسم على معامل المتغير إن بقي؛ 6. إذا اختفى المتغير فافحص الهوية أو التناقض وتحكم في الحل",
+          "CommonMistakes": "خطأ: إزالة الأقواس دون توزيع على كل حد. لماذا خطأ: تتغير المساواة. التصويب: وزع العامل على كامل القوس. خطأ: حذف المتغير يعني أن حلّه صفر. لماذا خطأ: قد تكون هوية أو تناقضًا. التصويب: افحص العلاقة العددية المتبقية. خطأ: نقل حد بين الطرفين دون تغيير مناسب. لماذا خطأ: لا يحافظ على التساوي. التصويب: نفذ العملية نفسها في الطرفين.",
+          "QuickSummary": "أوزع وأجمع قبل النقل. كل انتقال عملية متوازنة. قد لا يكون حل أو تكون جميع القيم. أتحقق من الأصلي. Cool-down أصلي بلا حلول: حل ٤(س−٢)=٢س+٦؛ هل ٣(س+٢)=٣س+٧ لها حل؟؛ حل ٢(س+٤)−٣=س+٧. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }
