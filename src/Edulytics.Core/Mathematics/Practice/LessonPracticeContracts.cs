@@ -8820,6 +8820,13 @@ public static class LessonPracticeContractRegistry
             ["uae.g6.u05.l08.classify_fraction_decimal", "uae.g6.u05.l08.fraction_exact_decimal", "usccss.number.rational_terminating_decimal", "usccss.number.repeating_decimal_digit"],
             "UAE_G7_GENERAL_ARABIC_U04L01_PRINTED_263_269",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L02: signed rational compare/order, printed271-278.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:02:COMPARE-ORDER-RATIONALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:02:COMPARE-ORDER-RATIONALS", "number.rational.signed_comparison_order",
+            "COMPARE_ORDER_SIGNED_RATIONAL_LCM_DECIMAL_PERCENT",
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals", "uae.g6.u05.l09.order_four_signed_rationals", "uae.g6.u05.l07.compare_signed_rationals", "usccss.g7.u05.compare_signed_rational"],
+            "UAE_G7_GENERAL_ARABIC_U04L02_PRINTED_271_278",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
