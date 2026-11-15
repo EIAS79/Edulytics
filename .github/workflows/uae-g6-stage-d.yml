@@ -155,7 +155,7 @@ jobs:
               RAISE EXCEPTION 'Expected exactly 128 G6 plus 73 G12 temporary rows';
             END IF;
           END $$;
-          DELETE FROM "CurriculumLessonContents" WHERE "PedagogicalLessonId" IN (SELECT "Id" FROM ids);
+          DELETE FROM "CurriculumLessonContents" WHERE "LessonNodeId" IN (SELECT "Id" FROM ids);
           DELETE FROM "CurriculumPedagogicalLessonOutcomes" WHERE "PedagogicalLessonId" IN (SELECT "Id" FROM ids);
           DELETE FROM "CurriculumPedagogicalLessons" WHERE "Id" IN (SELECT "Id" FROM ids);
           COMMIT;
@@ -186,7 +186,7 @@ jobs:
           done
           unset EDULYTICS_G6_SCOPED_RELEASE
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%'" >/tmp/lessons-after
-          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumLessonContents\" x WHERE x.\"PedagogicalLessonId\" NOT IN (SELECT \"Id\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%')" >/tmp/content-after
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumLessonContents\" x WHERE x.\"LessonNodeId\" NOT IN (SELECT \"Id\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%')" >/tmp/content-after
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"PedagogicalLessonId\",x.\"OutcomeNodeId\")) FROM \"CurriculumPedagogicalLessonOutcomes\" x WHERE x.\"PedagogicalLessonId\" NOT IN (SELECT \"Id\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%')" >/tmp/outcomes-after
           diff /tmp/lessons-before /tmp/lessons-after
           diff /tmp/content-before /tmp/content-after
