@@ -8835,6 +8835,14 @@ public static class LessonPracticeContractRegistry
             ["fractions.add_subtract.same_denominator.mixed.build", "fractions.add_subtract.same_denominator.mixed.apply", "uae.g4.u09.l01.model_add_like_denominators"],
             "UAE_G7_GENERAL_ARABIC_U04L03_PRINTED_283_289",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L04, student printed291-297:
+        // reuse existing exact unlike denominator fractions add/sub families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:04:UNLIKE-FRACTION-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:04:UNLIKE-FRACTION-ADD-SUB", "fractions.add_subtract",
+            "UNLIKE_DENOMINATOR_SIGNED_FRACTIONS_LCM",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.build", "fractions.add_subtract.related.apply"],
+            "UAE_G7_GENERAL_ARABIC_U04L04_PRINTED_291_297",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
