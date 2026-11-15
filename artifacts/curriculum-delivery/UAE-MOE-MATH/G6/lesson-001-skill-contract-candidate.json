@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "CANDIDATE_ONLY_NOT_REGISTERED",
+  "lesson": "العوامل والمضاعفات",
+  "grade": 6,
+  "pathway": "General",
+  "sourcePosition": "U01:L01",
+  "bookPrintedPages": [
+    7,
+    14
+  ],
+  "bookPdfPages": [
+    48,
+    55
+  ],
+  "targetCanonicalCode": "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+  "changeStrategy": "REUSE_EXISTING_VERIFIED_ENGINE_WITH_NO_NEW_GENERATOR",
+  "learningTargets": [
+    {
+      "key": "gcf",
+      "objective": "أوجد العامل المشترك الأكبر لعددين أو ثلاثة أعداد طبيعية وفسّر اختيار العوامل الأولية",
+      "allowedQuestionFamilies": [
+        "uae.g5.u07.l02.gcf_two_numbers",
+        "uae.g5.u07.l02.gcf_three_numbers"
+      ],
+      "answerType": "positive_integer",
+      "verifier": "ExactSkillContractQuestionEngine.Verify",
+      "renderer": "NumericEntry",
+      "teacherReview": false
+    },
+    {
+      "key": "lcm",
+      "objective": "أوجد المضاعف المشترك الأصغر باستخدام القوائم والتحليل والعلاقات الزمنية",
+      "allowedQuestionFamilies": [
+        "uae.g5.u07.l05.lcm_two_numbers",
+        "uae.g5.u07.l05.lcm_three_numbers"
+      ],
+      "answerType": "positive_integer",
+      "verifier": "ExactSkillContractQuestionEngine.Verify",
+      "renderer": "NumericEntry",
+      "teacherReview": false
+    },
+    {
+      "key": "factor_check",
+      "objective": "تحقق من كون عدد عاملًا مشتركًا",
+      "allowedQuestionFamilies": [
+        "uae.g5.u07.l02.test_common_factor"
+      ],
+      "answerType": "binary_integer_0_or_1",
+      "verifier": "ExactSkillContractQuestionEngine.Verify",
+      "renderer": "IntegerKeypad",
+      "teacherReview": false
+    },
+    {
+      "key": "multiple_check",
+      "objective": "تحقق من كون عدد مضاعفًا مشتركًا",
+      "allowedQuestionFamilies": [
+        "uae.g5.u07.l05.test_common_multiple"
+      ],
+      "answerType": "binary_integer_0_or_1",
+      "verifier": "ExactSkillContractQuestionEngine.Verify",
+      "renderer": "IntegerKeypad",
+      "teacherReview": false
+    },
+    {
+      "key": "explain_visual",
+      "objective": "اشرح لماذا كل عامل ومضاعف مشترك هو الأكبر أو الأصغر باستعمال شجرة عوامل أو خط أعداد",
+      "allowedQuestionFamilies": [],
+      "answerType": "teacher_rubric",
+      "renderer": "VisualConstructedResponse",
+      "teacherReview": true
+    }
+  ],
+  "forbiddenQuestionFamilies": [],
+  "questionRanges": {
+    "positiveNumbersOnly": true,
+    "divisionByZeroForbidden": true,
+    "zeroMayNotBeUsedAsLcm": true
+  },
+  "requiredVisuals": [
+    "original-factor-tree-data",
+    "original-number-line-multiple-markers"
+  ],
+  "runtimeIntegration": {
+    "registered": true,
+    "reason": "The original skill families are registered for the active Arabic Grade 6 General lesson U01L01, confirmed by the 128-lesson exact-family inventory matrix. Historical source-element parity remains unverified."
+  },
+  "tests": {
+    "authored": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6Unit01Lesson01ReuseGcfLcmTests.cs",
+    "testsRun": "NOT_RUN",
+    "ciIntentionallyNotInvokedManually": true
+  },
+  "stageDIntegrationUpdate": "2026-11-15: superseded English General resources purged; original Arabic G6 U01L01 contract retained.",
+  "stageDLegacyReferenceCleanup": "2026-11-15: old General lesson-code reference removed. The sole active curriculum uses 128 Arabic source-ordered identities; original lesson-body source parity remains independently unverified."
+}

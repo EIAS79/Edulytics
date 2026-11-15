@@ -81,9 +81,9 @@ jobs:
             (SELECT count(*) FROM "Schools");"""
           result = subprocess.check_output(['psql','-h','127.0.0.1','-U','postgres','-d','edulytics_clean_ci','-A','-t','-F','|','-c',sql],text=True).strip()
           data = tuple(map(int,result.split('|')))
-          # The owner-approved G4 93-to-132 replacement adds 39 canonical lesson/content rows.
-          # Keep the outcome-row invariant strict until its exact value is independently verified.
-          expected = (4,5222,5751,5222,0,0,0)
+          # G4 93->132 (+39), G12 +73, G6 English 59->Arabic 128 (+69).
+          # The 5,751 official outcome mappings must remain unchanged.
+          expected = (4,5291,5751,5291,0,0,0)
           print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected, flush=True)
           assert data == expected, 'Database invariant failure'
           PY

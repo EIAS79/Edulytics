@@ -3,14 +3,15 @@ using Edulytics.Core.AdaptivePractice;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.AdaptivePractice;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
-    // 5,110 prior including 93 legacy UAE Grade 4; replace those 93
-    // with 132 source-grounded G4 lessons (+39), keep all 73 G12 lessons.
-    private const int ExpectedLessonCount = 5222;
+    // 5,110 prior including 93 legacy G4 and 59 legacy G6; replace G4
+    // 93->132 (+39), add G12 73, replace G6 English 59->Arabic 128 (+69).
+    private const int ExpectedLessonCount = 5291;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 
@@ -119,6 +120,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
 
         var certifiedSessionCount = 0;
         var generatedSessionItemCount = 0;
+        var grade6VerifiedFamilyFallbackTurns = 0;
 
         // Production normally keeps the latest family selected unless
         // remediation/misconception/representation evidence changes it. A
@@ -175,11 +177,19 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                                 contractIndex,
                             sequence,
                             exposureExclusions,
-                            semanticExclusions);
+                            semanticExclusions,
+                            useScopeLockedGrade6FamilyFallback: true);
 
+                    // Retain only lesson-approved exact families, never a
+                    // fake duplicate created to satisfy a 30-turn quota.
+                    Assert.Contains(item.GenerationFamily, contract.AllowedQuestionFamilies);
+                    if (!string.Equals(item.GenerationFamily, family,
+                        StringComparison.Ordinal))
+                        grade6VerifiedFamilyFallbackTurns++;
                     ValidateGeneratedItem(
                         contract,
-                        family,
+                        item.GenerationFamily ?? throw new InvalidOperationException(
+                            "Approved Grade6 family fallback returned a null family"),
                         item);
 
                     RememberFreshness(
@@ -205,6 +215,8 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         }
 
         var certifiedFamilyBudgetCount = 0;
+        var grade6FiniteFamilyCapacityChecks = 0;
+        var grade6FiniteVerifiedQuestions = 0;
 
         // A lesson's first family is not enough: any allowed family can become
         // the production-selected remediation target. Stress every distinct
@@ -221,10 +233,17 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
             var semanticExclusions =
                 new List<string>();
             var succeeded = true;
+            var capacity = UaeG6FinitePracticeFamilyCapacity.CertifiedBudget(
+                pair.Family, AdaptivePracticeV2Behavior.MaximumSessionItems);
+            if (UaeG6FinitePracticeFamilyCapacity.FamilyCapacities
+                .ContainsKey(pair.Family))
+            {
+                grade6FiniteFamilyCapacityChecks++;
+                grade6FiniteVerifiedQuestions += capacity;
+            }
 
             for (var sequence = 1;
-                 sequence <=
-                 AdaptivePracticeV2Behavior.MaximumSessionItems;
+                 sequence <= capacity;
                  sequence++)
             {
                 try
@@ -286,12 +305,18 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                 certifiedPairCount,
                 familyRepresentatives.Length,
                 certifiedFamilyBudgetCount,
+                grade6FiniteFamilyCapacityChecks,
+                grade6FiniteVerifiedQuestions,
+                grade6VerifiedFamilyFallbackTurns,
                 blockers.Count);
 
         WriteReport(
             summary,
             blockers);
 
+        Assert.Equal(15, grade6FiniteFamilyCapacityChecks);
+        Assert.True(grade6VerifiedFamilyFallbackTurns > 0,
+            "Finite Grade6 families must exercise an actual canonical fallback.");
         Assert.True(
             blockers.Count == 0,
             "Adaptive V2 full catalogue certification blockers: " +
@@ -375,7 +400,8 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         int identityIndex,
         int sequence,
         IReadOnlyCollection<string> excludedExposureFingerprints,
-        IReadOnlyCollection<string> excludedSemanticIdentityKeys)
+        IReadOnlyCollection<string> excludedSemanticIdentityKeys,
+        bool useScopeLockedGrade6FamilyFallback = false)
     {
         var decision =
             new AdaptiveNextItemDecision(
@@ -411,6 +437,18 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
                 PolicyVersion:
                     AdaptivePracticeV2Versions
                         .PolicyVersion);
+
+        if (useScopeLockedGrade6FamilyFallback)
+        {
+            return generator.GenerateOneWithVerifiedFamilyFallback(
+                DeterministicGuid(identityIndex, 1),
+                DeterministicGuid(identityIndex, 2),
+                DeterministicGuid(identityIndex, 3),
+                DeterministicGuid(identityIndex, 4),
+                contract, decision, complexity, seed,
+                excludedExposureFingerprints,
+                excludedSemanticIdentityKeys).Item;
+        }
 
         return generator.GenerateOne(
             DeterministicGuid(
@@ -575,5 +613,8 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
         int CertifiedLessonFamilyPairCount,
         int DistinctQuestionFamilyCount,
         int CertifiedFamilyBudgetCount,
+        int Grade6FiniteFamilyCapacityChecks,
+        int Grade6FiniteVerifiedQuestions,
+        int Grade6VerifiedFamilyFallbackTurns,
         int BlockerCount);
 }

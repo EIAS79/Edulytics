@@ -48,7 +48,7 @@ def synthetic_survey_protocol(expected, parameters_json):
     return "v:"+votes+"|g:"+tally
 
 
-def grade6_syntactically_valid_wrong_answer(correct):
+def grade6_syntactically_valid_wrong_answer(correct, family=None):
     """Perturb a server-generated Grade 6 answer without breaking its numeric
     schema. The persisted grade is checked separately; this is not a publisher
     source oracle. Grade 1's custom multi-field wrong-answer rules are unchanged.
@@ -72,9 +72,63 @@ def grade6_syntactically_valid_wrong_answer(correct):
             "ODD":"EVEN","EVEN":"ODD","POSITIVE":"NEGATIVE","NEGATIVE":"POSITIVE"
         }
         key=correct.strip().upper()
-        if key not in categories:
-            raise ValueError("Unknown Grade 6 answer format for valid-wrong probe")
-        candidate=categories[key]
+        if key in categories:
+            candidate=categories[key]
+        else:
+            # Real UAE G6 mathematics uses Arabic categorical responses.
+            # Choose a *different available category* from the same
+            # mathematical question domain, never a malformed sentinel.
+            # These are genuine response alternatives, not fake copies of
+            # numbers or cosmetic suffixes. The runtime must independently
+            # persist a zero score for the incorrect alternative.
+            arabic_domains=(
+                ("الأول","الثاني","الثالث","الرابع",
+                 "المحور السيني","المحور الصادي","الأصل"),
+                ("نعم","لا"),
+                ("صحيح","خطأ"),
+                ("يسار","يمين"),
+                ("مفتوحة","مغلقة"),
+                ("موجب","سالب","صفر"),
+                ("الوسيط","المتوسط الحسابي","المنوال"),
+                ("متماثل","منحرف إلى اليمين","منحرف إلى اليسار"),
+                ("مخطط نقاط","مدرج تكراري","مخطط خطوط",
+                 "مخطط أعمدة","مخطط الصندوق"),
+                ("سم","كم","كجم","مل","م"),
+                ("مسطرة","ميزان","كوب مدرج","شريط قياس"),
+                ("الجمع","الطرح","الضرب","القسمة"),
+                ("جمع","طرح","ضرب","قسمة"),
+                ("أكبر","أصغر","يساوي"),
+                ("متزايدة","متناقصة","ثابتة"),
+                ("متزايد","متناقص","ثابت"),
+                ("منتهٍ","دوري"),
+                ("مجموع","فرق","حاصل ضرب","حاصل قسمة"),
+                ("الأقواس","الأسس","الضرب والقسمة","الجمع والطرح"),
+                ("التبديل","التجميع","المحايد","غير متكافئين"),
+                ("مستقل","تابع"),
+                ("حسابية","هندسية"),
+                ("خطية","غير خطية"),
+            )
+            if family=="fractions.compare.unlike.order_three":
+                # A source-valid ordering question expects exactly three
+                # distinct labeled fractions and two comparison signs.
+                m=re.fullmatch(r"([ABC])\s*([<>])\s*([ABC])\s*([<>])\s*([ABC])",correct.strip())
+                if m is None or len({m[1],m[3],m[5]})!=3 or m[2]!=m[4]:
+                    raise ValueError("Unsupported Grade 6 ordering answer schema")
+                candidate=f"{m[1]} {m[2]} {m[5]} {m[4]} {m[3]}"
+            elif family=="uae.g6.u05.l10.coordinate_region":
+                domain=arabic_domains[0]
+                if correct.strip() not in domain:
+                    raise ValueError("Unknown UAE G6 coordinate region category")
+                candidate=domain[(domain.index(correct.strip())+1)%len(domain)]
+            else:
+                domain=next(
+                    (options for options in arabic_domains
+                     if correct.strip() in options),None)
+                if domain is None:
+                    raise ValueError(
+                        "Unknown Grade 6 answer category for valid-wrong probe: "
+                        + str(family or "UNSCOPED"))
+                candidate=domain[(domain.index(correct.strip())+1)%len(domain)]
     if candidate==correct or "B001_MALFORMED" in candidate:
         raise ValueError("Not distinct valid-wrong answer")
     return candidate
@@ -297,8 +351,8 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
             # G2 reuses many first-party/shared numeric and category families.
             # Opt-in only: never change existing US or G1 negative controls.
-            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5"):
-                answer=grade6_syntactically_valid_wrong_answer(answer)
+            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
+                answer=grade6_syntactically_valid_wrong_answer(answer,family)
             else:
                 answer=syntactically_valid_wrong_answer(answer,family)
         if answer_mode=="malformed":
@@ -399,6 +453,40 @@ if __name__=="__main__":
             self.assertEqual(syntactically_valid_wrong_answer(
                 "-2.5","algebra.linear.ax_plus_b_equals_c"),"8.5")
             self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,"")
+        def test_g6_arabic_categories_are_legitimate_wrong_alternatives(self):
+            domains=[
+                ("الأول","uae.g6.u05.l10.coordinate_region"),
+                ("المحور السيني","uae.g6.u05.l10.coordinate_region"),
+                ("الأصل","uae.g6.u05.l10.coordinate_region"),
+                ("نعم","uae.g6.u11.l01.statistical_question"),
+                ("مفتوحة","uae.g6.u08.l06.endpoint_inclusion"),
+                ("يسار","uae.g6.u08.l06.graph_direction"),
+                ("الوسيط","uae.g6.u11.l07.choose_centre"),
+                ("مخطط نقاط","uae.g6.u12.l08.choose_display"),
+                ("كجم","uae.g6.u12.l09.choose_unit"),
+                ("ميزان","uae.g6.u12.l09.choose_tool"),
+                ("المنحرف","uae.g6.invalid-sentinel"),
+            ]
+            domains.extend([
+                ("A < C < B","fractions.compare.unlike.order_three"),
+                ("دوري","uae.g6.u05.l08.classify_fraction_decimal"),
+                ("مجموع","uae.g6.u06.l01.classify_outer_operation"),
+                ("الأسس","uae.g6.u06.l03.first_operation"),
+                ("فرق","uae.g6.u06.l05.operation_type"),
+                ("التجميع","uae.g6.u06.l08.classify_property"),
+                ("مستقل","uae.g6.u08.l01.classify_variable"),
+                ("حسابية","uae.g6.u08.l02.classify"),
+                ("خطية","uae.g6.u08.l03.linear_vs_square")
+            ])
+            for value,family in domains:
+                if family=="uae.g6.invalid-sentinel":
+                    continue
+                wrong=grade6_syntactically_valid_wrong_answer(value,family)
+                self.assertNotEqual(value,wrong)
+                self.assertNotIn("B001_MALFORMED",wrong)
+            self.assertRaises(ValueError,
+                grade6_syntactically_valid_wrong_answer,
+                "المنحرف","uae.g6.invalid-sentinel")
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))

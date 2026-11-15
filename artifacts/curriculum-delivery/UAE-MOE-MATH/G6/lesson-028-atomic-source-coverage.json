@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 3,
+  "ordinal": 28,
+  "title": "استقصاء حل المسائل: البحث عن نمط",
+  "sourcePdfPages": [
+    248,
+    250
+  ],
+  "sourcePrintedPages": [
+    207,
+    209
+  ],
+  "separateUnitMidtermPdfPage": 251,
+  "sourceBook": "Local Grade06 Student Book 01-1.pdf",
+  "sourceElements": [
+    "cost-per-unit pattern table",
+    "rental device rate table",
+    "subscription from repeated intervals",
+    "Pascal-number triangle and next row",
+    "compound decimal recurrence and next three terms",
+    "price budget difference",
+    "strategy explain/check"
+  ],
+  "sourceRights": "Only source math/objectives used, original writing and models; no publisher images copied",
+  "engineFamilies": [
+    "uae.g5.u05.l07.arithmetic_step_pattern",
+    "uae.g5.u05.l03.unit_price_total"
+  ],
+  "engineStrategy": "REUSE existing arithmetic step and unit-cost exact kernel without modifying their math",
+  "autoChecked": "numeric recurrence and exact unit-money examples",
+  "teacherReview": [
+    "hand-drawn Pascal triangle",
+    "explanation of pattern rule",
+    "open student word problems"
+  ],
+  "independentStaticChecksPassed": 7,
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U3L06FindPatternInquiryTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN"
+}

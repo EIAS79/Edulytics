@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "ordinal": 89,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:09:02:STUDENT-AR-128",
+  "title": "مساحة متوازي الأضلاع",
+  "sourcePdfSha256": "239c71f761de1b12f82b6c3b26afaa6fb2e53bd99b6cacec73377800ebe93c96",
+  "sourceBookFile": "03.pdf",
+  "visuallyInspectedPdfPages": [
+    8,
+    14
+  ],
+  "visuallyInspectedPrintedPages": [
+    655,
+    661
+  ],
+  "sourceMappedCategories": [
+    {
+      "source": "printed p655 title and conceptual intro",
+      "equivalent": "original Arabic title/concept"
+    },
+    {
+      "source": "p656 base6 height8 area48 on grid",
+      "equivalent": "48 example with decomposition"
+    },
+    {
+      "source": "p657 base20 height11 area220 + inverse height",
+      "equivalent": "220 and inverse examples"
+    },
+    {
+      "source": "p658–661 exercises and contexts",
+      "equivalent": "8 original arithmetic and contextual problems + graph/table visual"
+    }
+  ],
+  "notInspected": [
+    {
+      "printedPage": 662,
+      "reason": "Not in older local PDF; educational substitute only"
+    }
+  ],
+  "lessonSkills": [
+    "perpendicular base × height",
+    "inverse height or base",
+    "units squared",
+    "rearrangement invariance"
+  ],
+  "questionFamilies": [
+    "uae.g6.u09.l02.parallelogram_area",
+    "uae.g6.u09.l02.parallelogram_height",
+    "uae.g6.u09.l01.area_conservation"
+  ],
+  "engineStrategy": "EXTEND_EXISTING_EXACT_QUESTION_ENGINE_ARABIC_ADAPTER",
+  "teacherReviewRequired": [
+    "hand-drawn perpendicular height",
+    "cut-and-move visual explanations"
+  ],
+  "testsWritten": "tests\\Edulytics.Tests\\MathematicsIntelligence\\UaeG6U9L02ParallelogramAreaTests.cs",
+  "testsRun": "NOT_RUN",
+  "closed": true,
+  "readyForStageD": true,
+  "sourceElementDenominator": "INCOMPLETE_P662",
+  "stageD": "NOT_RUN"
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 5,
+  "ordinal": 44,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:05:01:STUDENT-AR-128",
+  "title": "مختبر الاستكشاف: الأعداد الصحيحة",
+  "sourceBookFile": "02.pdf",
+  "sourceEditionCover": "2025–2026",
+  "targetEdition": "2026–2027 NOT VERIFIED",
+  "sourceBookPdfPages": [
+    12,
+    13
+  ],
+  "sourcePrintedPages": [
+    339,
+    340
+  ],
+  "sourcePagesVisuallyInspected": 2,
+  "sourceSha256Verified": false,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        12
+      ],
+      "source": "مستوى سطح البحر والصفر والارتفاع والعمق",
+      "equivalent": "شرح المستوى المرجعي وتعيين الإشارة"
+    },
+    {
+      "pages": [
+        12
+      ],
+      "source": "النشاط العملي: إعداد خط أعداد صحيح",
+      "equivalent": "المفاهيم وعرض تسلسل −٥ إلى +٥"
+    },
+    {
+      "pages": [
+        12
+      ],
+      "source": "تمثيل موضع تحت سطح البحر بإشارة سالبة",
+      "equivalent": "أمثلة ٢ و٨ وعائلة signed_position"
+    },
+    {
+      "pages": [
+        13
+      ],
+      "source": "جدول كائنات فوق المرجع وتحته",
+      "equivalent": "جدول أصلي للمواقع النسبية وعائلة signed_position"
+    },
+    {
+      "pages": [
+        13
+      ],
+      "source": "المسافة المتساوية للأعداد المتقابلة +٤ و−٤",
+      "equivalent": "المفاهيم وأمثلة ٤ و٥ و٦ وعائلة opposite_integer"
+    },
+    {
+      "pages": [
+        13
+      ],
+      "source": "نشاط تعاوني ورسم خط الأعداد",
+      "equivalent": "Rubric مستقل لمراجعة رسم الطالب"
+    },
+    {
+      "pages": [
+        13
+      ],
+      "source": "تأليف موقف حقيقي موجب وآخر سالب",
+      "equivalent": "تقويم تفسيري بشري مستقل"
+    }
+  ],
+  "engineStrategy": "EXISTING_EXACT_MATH_PIPELINE_WITH_SCOPED_SIGNED_POSITION_AND_OPPOSITE_ADAPTER_NO_DUPLICATE_LESSON",
+  "questionFamilies": [
+    "uae.g6.u05.l01.signed_position",
+    "uae.g6.u05.l01.opposite_integer"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "EquationSet",
+    "RatioTable",
+    "CalculationChain"
+  ],
+  "teacherReview": [
+    "handdrawn evenly spaced number lines",
+    "explanations of relative position",
+    "original sign-context storytelling"
+  ],
+  "sourceQuestionItemDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_SCOPE_CATEGORIES_MAPPED_BUT_NO_2026_27_OR_EXERCISE_100_PERCENT_CLAIM",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U5L01IntegerExplorationTests.cs",
+  "testsRun": "NOT_RUN",
+  "staticMathCasesPassed": 9,
+  "stageD": "NOT_RUN",
+  "publisherArtworkCopied": false
+}

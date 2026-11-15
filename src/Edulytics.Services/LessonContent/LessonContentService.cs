@@ -306,7 +306,8 @@ public sealed class LessonContentService : ILessonContentService
                              x.OfficialOutcomeCount) &&
                          LessonContentPolicy.CanExposeStudentLesson(
                              context.FrameworkCode,
-                             x.IsSupporting == true)))
+                             x.IsSupporting == true,
+                             x.Code)))
             {
                 if (!contentByLesson.TryGetValue(lesson.Id, out var content))
                     continue;
@@ -388,7 +389,8 @@ public sealed class LessonContentService : ILessonContentService
         if (context is null ||
             !LessonContentPolicy.CanExposeStudentLesson(
                 context.FrameworkCode,
-                lesson.IsSupporting == true))
+                lesson.IsSupporting == true,
+                lesson.Code))
         {
             return LessonContentQueryResult<StudentLessonDetail>.Failure(
                 LessonContentErrorCode.LessonNotFound);
@@ -783,9 +785,15 @@ public sealed class LessonContentService : ILessonContentService
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal);
         var grade5Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
             lessonCode.StartsWith("PED:UAE-MOE-MATH:L5:GENERAL:", StringComparison.Ordinal);
+        var grade6Arabic = !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal) &&
+            (lessonCode.EndsWith(":STUDENT-AR-128", StringComparison.Ordinal) ||
+             string.Equals(lessonCode,
+                "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
+                StringComparison.Ordinal));
         var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) ||
                                 grade2Arabic || grade3Arabic || grade4Arabic ||
-                                grade5Arabic) &&
+                                grade5Arabic || grade6Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
@@ -798,7 +806,7 @@ public sealed class LessonContentService : ILessonContentService
                     StringComparison.Ordinal))
                 .AcademicLanguage;
 
-        // No English fallback for approved UAE G1-G4 Common or G5 General Arabic lessons.
+        // Do not fallback to English for first-party approved UAE Arabic G1-G6 lessons.
         return translations.FirstOrDefault(x =>
             NormalizeCulture(x.CultureCode) == NormalizeCulture(academicLanguage));
     }

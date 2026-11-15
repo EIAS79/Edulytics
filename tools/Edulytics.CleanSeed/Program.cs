@@ -174,8 +174,53 @@ if (metadata < 1 || pedagogical < 1 || versions < 4)
     throw new InvalidOperationException(
         "Missing expected curriculum, lesson or content metadata.");
 if (metadata != jsonBodies)
-    throw new InvalidOperationException(
-        $"Canonical metadata count {metadata} does not match approved JSON identities {jsonBodies}.");
+{
+    // The independent Grade4 legacy-replacement rehearsal intentionally starts
+    // from frozen pre-G6 production with 59 old English Grade6 lessons. Its
+    // narrowly approved 93->132 G4-only transaction MUST NOT touch another
+    // grade (including those 59). Separate current-G6 disposable E2E runs
+    // independently require all 128 Arabic lessons and zero legacy records.
+    //
+    // This exception is restricted to disposable GitHub Actions PostgreSQL;
+    // never tolerate a partial 59/128 release in production or a normal seed.
+    var g4LegacyRehearsal =
+        string.Equals(
+            Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+            "true", StringComparison.Ordinal) &&
+        string.Equals(
+            Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+            "edulytics_clean_ci", StringComparison.Ordinal) &&
+        string.Equals(
+            Environment.GetEnvironmentVariable("EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132"),
+            "CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132", StringComparison.Ordinal);
+    if (!g4LegacyRehearsal)
+        throw new InvalidOperationException(
+            $"Canonical metadata count {metadata} does not match approved JSON identities {jsonBodies}.");
+
+    var legacyG6Ids = await db.CurriculumPedagogicalLessons
+        .AsNoTracking()
+        .Where(x => x.Code.StartsWith("PED:UAE-MOE-MATH:L6:GENERAL:"))
+        .Select(x => x.Id)
+        .ToArrayAsync();
+    var legacyG6Contents = await db.CurriculumLessonContents
+        .AsNoTracking()
+        .CountAsync(x => legacyG6Ids.Contains(x.PedagogicalLessonId));
+    var grade4ArabicCount = await db.CurriculumPedagogicalLessons
+        .AsNoTracking()
+        .CountAsync(x => x.Code.StartsWith("PED:UAE-MOE-MATH:L4:COMMON:"));
+    if (jsonBodies != 5291 || pedagogical != metadata ||
+        metadata != jsonBodies - 128 + 59 ||
+        legacyG6Ids.Length != 59 || legacyG6Contents != 59 ||
+        grade4ArabicCount != 132)
+        throw new InvalidOperationException(
+            "G4 rehearsal's mixed historical G6/Arabic G4 identity set is not " +
+            "the exact audited 59-old-G6 and 132-new-G4 baseline. Refusing a " +
+            "partial, stale or destructive replacement.");
+    Console.WriteLine(
+        "G4_REHEARSAL_PRESERVES_EXACT_59_OLD_G6_LESSONS_AND_CONTENTS " +
+        "while validating 132 newly mapped G4 lessons; " +
+        "not a Grade6 publication or current JSON parity certificate.");
+}
 
 if (await db.Users.AnyAsync() || await db.Schools.AnyAsync() ||
     await db.StudentProfiles.AnyAsync() || await db.BillingInvoices.AnyAsync())

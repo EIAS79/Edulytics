@@ -19,7 +19,7 @@ public sealed class PracticeSessionDiversityCertificationTests
         // Grade12 verified-subskill cohort; every new entry must still generate
         // 10 varied questions and pass the same verification below.
         const string grade12Prefix = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
-        Assert.Equal(5110 - 93 + 132, contracts.Count(x => !x.LessonCode.StartsWith(
+        Assert.Equal(5110 - 93 + 132 - 59 + 128, contracts.Count(x => !x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)));
         Assert.InRange(contracts.Count(x => x.LessonCode.StartsWith(
             grade12Prefix, StringComparison.Ordinal)), 21, 73);
@@ -154,6 +154,14 @@ public sealed class PracticeSessionDiversityCertificationTests
         };
         Assert.Equal(20, finiteG5FamilyCapacities.Count);
         Assert.All(finiteG5FamilyCapacities.Keys, family => Assert.Contains(family, families));
+        // Some Grade 6 exact learning models have a deliberately finite
+        // source-defined scenario space: a binary property, four operation
+        // classes, five repeated-group counts, or nine powers of ten.
+        // Certify the real unique capacity, never cosmetic duplicates.
+        var finiteG6FamilyCapacities =
+            UaeG6FinitePracticeFamilyCapacity.FamilyCapacities;
+        Assert.Equal(15, finiteG6FamilyCapacities.Count);
+        Assert.All(finiteG6FamilyCapacities.Keys, family => Assert.Contains(family, families));
 
         var failures = new List<string>();
 
@@ -164,7 +172,9 @@ public sealed class PracticeSessionDiversityCertificationTests
             try
             {
                 var questionCount = finiteG5FamilyCapacities.TryGetValue(family, out var certifiedCapacity)
-                    ? certifiedCapacity : 10;
+                    ? certifiedCapacity
+                    : finiteG6FamilyCapacities.TryGetValue(family, out var g6Capacity)
+                        ? g6Capacity : 10;
 
                 var questions = engine.Generate(
                     "family-session-capacity-certification",

@@ -80,6 +80,10 @@ public sealed class UaeOfficialReferenceCoverageTests
         Assert.Equal(83, grade4.Lessons.Count(x =>
             !string.IsNullOrWhiteSpace(x.OfficialReferenceCode)));
 
+        var grade6General = Assert.Single(blueprints, x =>
+            x.LogicalLevel == 6 &&
+            string.Equals(x.Pathway, "General", StringComparison.OrdinalIgnoreCase));
+        Assert.Equal(128, grade6General.Lessons.Count);
         foreach (var blueprint in blueprints)
         {
             Assert.All(
@@ -91,6 +95,25 @@ public sealed class UaeOfficialReferenceCoverageTests
                             lesson.LessonCode,
                             out var isSupporting));
 
+                    var approvedG6 =
+                        blueprint.LogicalLevel == 6 &&
+                        string.Equals(blueprint.Pathway, "General",
+                            StringComparison.OrdinalIgnoreCase) &&
+                        lesson.LessonCode.StartsWith(
+                            "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal);
+                    if (approvedG6)
+                    {
+                        // Explicit first-party approval permits genuine skills
+                        // without inventing official learning-outcome references.
+                        // The canonical RoleRegistry explicitly marks these learning
+                        // lessons as student-facing, not Supporting, despite
+                        // absence of invented official outcome codes.
+                        Assert.False(isSupporting);
+                        Assert.Empty(lesson.OutcomeCodes);
+                        Assert.Empty(lesson.Alignments);
+                        Assert.True(string.IsNullOrWhiteSpace(lesson.OfficialReferenceCode));
+                        return;
+                    }
                     Assert.False(isSupporting);
 
                     // The G4 owner-authored source audit explicitly records

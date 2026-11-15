@@ -140,6 +140,128 @@ public sealed class MathematicsPedagogicalLessonSeeder
         }
     }
 
+    /// <summary>
+    /// Guarded, idempotent production import of ONLY the 128 Arabic UAE Grade6
+    /// General lessons and their JSON-backed canonical metadata. The old 59
+    /// Grade6 records must already have been retired by the owner. Never run
+    /// global pack retirement, resync other grade titles, or seed unpublished G12.
+    /// This is a single PostgreSQL transaction (or full rollback).
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade6Async(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L6:GENERAL:";
+        const string g4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
+        const string g5Prefix = "PED:UAE-MOE-MATH:L5:GENERAL:";
+        const string g12Prefix =
+            "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
+
+        if (!_db.Database.IsNpgsql())
+            throw new InvalidOperationException(
+                "Scoped Grade6 production import requires PostgreSQL.");
+
+        MathematicsCurriculumPackRegistry.Validate();
+        var states = await _db.CurriculumPackImportStates
+            .AsNoTracking()
+            .Where(x => x.IsComplete &&
+                SupportedCodes.Contains(x.FrameworkCode))
+            .ToArrayAsync(ct);
+        if (states.Length != 4 ||
+            !SupportedCodes.ToHashSet(StringComparer.Ordinal)
+                .SetEquals(states.Select(x => x.FrameworkCode)))
+            throw new InvalidOperationException(
+                "Scoped Grade6 import requires all four accepted pack states.");
+        var byCode = states.ToDictionary(x => x.FrameworkCode,
+            StringComparer.Ordinal);
+
+        var lessons = new List<CurriculumPedagogicalLesson>();
+        var mappings = new List<CurriculumPedagogicalLessonOutcome>();
+        var blueprintIds = new HashSet<Guid>();
+        var blueprints = PedagogicalLessonBlueprintRegistry
+            .LoadEmbeddedDocuments();
+
+        await BuildUaeAsync(byCode[MathematicsCurriculumPackRegistry.UaeCode],
+            lessons, mappings, ct);
+        await BuildBlueprintLessonsAsync(byCode, blueprints, lessons, mappings,
+            blueprintIds, ct);
+        await BuildOutcomeBackedLessonsAsync(byCode, blueprints, lessons,
+            mappings, ct);
+        ValidateExpectedGraph(lessons, mappings, blueprintIds);
+
+        var scoped = lessons
+            .Where(x => x.Code.StartsWith(prefix, StringComparison.Ordinal))
+            .ToArray();
+        if (scoped.Length != 128 ||
+            scoped.Select(x => x.Code)
+                .Distinct(StringComparer.Ordinal).Count() != 128)
+            throw new InvalidOperationException(
+                "Owner-approved Grade6 import needs exactly 128 distinct identities.");
+        var scopedIds = scoped.Select(x => x.Id).ToHashSet();
+        var scopedMappings = mappings
+            .Where(x => scopedIds.Contains(x.PedagogicalLessonId))
+            .ToArray();
+
+        // Exact SELECT-only baseline observed in production before this
+        // owner-scoped release: 5,090 canonical records, no old G6 and no
+        // staged G12 publication. Repeats must preserve 5,090 unrelated
+        // identities plus the exact 128 G6 identities and metadata.
+        var allCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
+        var g6Count = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(prefix), ct);
+        var g4Count = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
+        var g5Count = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(g5Prefix), ct);
+        var g12Count = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(g12Prefix), ct);
+        var translationCount = await _db.CurriculumLessonContentTranslations
+            .CountAsync(ct);
+
+        if (g6Count is not (0 or 128) ||
+            allCount != 5090 + g6Count ||
+            contentCount != allCount ||
+            g4Count != 132 || g5Count != 127 ||
+            g12Count != 0 || translationCount != 0)
+            throw new InvalidOperationException(
+                "Scoped Grade6 release refused: production baseline drift. " +
+                "Expected 5090 unrelated lessons, 132 G4, 127 G5, " +
+                "zero G12, zero stored translations and 0/128 complete G6.");
+
+        await using var transaction =
+            await _db.Database.BeginTransactionAsync(ct);
+        await _db.Database.ExecuteSqlRawAsync(
+            "SELECT pg_advisory_xact_lock(27500029);", ct);
+
+        await UpsertLessonsAsync(scoped, ct);
+        await UpsertMappingsAsync(scoped, scopedMappings, ct);
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedOnlyApprovedUaeGrade6MetadataAsync(ct);
+
+        var afterCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var afterContent = await _db.CurriculumLessonContents.CountAsync(ct);
+        var actualG6 = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix))
+            .Select(x => x.Id).ToArrayAsync(ct);
+        var actualG6Content = await _db.CurriculumLessonContents
+            .CountAsync(x => actualG6.Contains(x.PedagogicalLessonId), ct);
+        var actualG12 = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(g12Prefix), ct);
+
+        if (actualG6.Length != 128 ||
+            actualG6Content != 128 ||
+            afterCount != 5218 ||
+            afterContent != 5218 ||
+            actualG12 != 0)
+            throw new InvalidOperationException(
+                "Scoped Grade6 release postconditions failed; transaction rolled back.");
+
+        await transaction.CommitAsync(ct);
+        Console.WriteLine(
+            "UAE_G6_SCOPED_PRODUCTION_128_LESSONS_AND_128_METADATA_PASS " +
+            "unrelatedBaseline=5090 grade12=0 lessonTranslations=0");
+    }
+
     private async Task BuildUaeAsync(
         CurriculumPackImportState state,
         ICollection<CurriculumPedagogicalLesson> expectedLessons,

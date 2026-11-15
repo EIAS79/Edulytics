@@ -148,6 +148,16 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   // control enforces G3-only changes: 300/0 engine, 623/0 contracts,
   // exactly one G3 opt-in probe change. This is runtime compatibility
   // evidence, not retroactive G1 academic approval or a source parity claim.
+  // 2026-11-15 UAE G6: two shared C# blobs and the single scoped B001
+  // wrong-answer fixture profile ("uae-g6") are re-pinned; the earlier
+  // G1/G2/G3/G4/G5 branches and grading semantics remain guarded.
+  // The exact new B001 blob is b8c4bf67034bb52c15d5968a414c073af6bab5de.
+  // These source-hash declarations do not waive current two-school CI.
+  // 2026-11-15 UAE G6: two shared C# blobs are re-pinned to the exact
+  // first-party 128-lesson candidate after dedicated G6 math and cross-grade
+  // G1 tests. The additive-compatibility negative control verifies that
+  // pre-G5/G1 engine and contract source lines still survive unchanged.
+  // This is SHA-scoped technical preservation, not reapproval of G1 teaching.
   // A ninth path or unexpected future blob still FAILS CLOSED. This audit
   // is runtime compatibility only, NEVER a new G1 academic approval.
   // Live G1 practice and two-school HTTPS gates remain mandatory.
@@ -165,15 +175,15 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
     ['tools/phase29/acceptance_two_school_https.py',
       ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']],
     ['src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs',
-      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','02748e9f3b6f56d5ab0b9e3b4a08777fd9bb2c88']],
+      ['e24c62e02c7474cbd7badf0b3c36951faec4b60d','98ba81c056083d817ee3964eb38400e644eaf912']],
     ['src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs',
-      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','7fcc5777093ea8c53e4abf88f100d5ca42430f6a']],
+      ['5bb7e5e356c5422144d20d5ac0b6d632a18feedc','54644a498e78a3c6368dfca9189bee46c3cd06bc']],
     ['src/Edulytics.Web/Presentation/PracticeMathVisualRenderer.cs',
       ['323eea9d5d69e5ee22995293f58b87b9ec7a9524','7fed805bc6cc4cb195cebbc33f03b56b4d68ba7b']],
     ['src/Edulytics.Data/Seeding/CommonCoreSourceBoundHtmlEntityCorrections.cs',
       ['7d149bfa5347e367dbbde5eba085cd006840f10d','30a2f26ab62ac9b4c553acb4afc9f8ab15777372']],
     ['tools/phase29/b001_practice_attempt_probe.py',
-      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','ece5ce8b368f8cb07f5c4be0992d45de0d4ba96a']]
+      ['aea34e8bf12c74e823ab16564451c36a7a4c9c86','b8c4bf67034bb52c15d5968a414c073af6bab5de']]
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;

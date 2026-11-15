@@ -8,9 +8,10 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class LessonObjectiveContentAlignmentCertificationTests
 {
-    // Reviewed baseline: 5,110 canonical lessons, including 93 legacy UAE G4;
-    // owner-approved replacement makes G4 132 (+39), plus 73 G12 Precalculus.
-    private const int ExpectedLessonCount = 5222;
+    // Baseline 5,110 included 93 retired UAE G4 and 59 retired G6 English.
+    // G4 93->132 (+39), G12 Precalculus +73, G6 English 59->Arabic 128 (+69).
+    // Preserve every unrelated canonical lesson identity: 5,110+39+73+69.
+    private const int ExpectedLessonCount = 5291;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION";
 

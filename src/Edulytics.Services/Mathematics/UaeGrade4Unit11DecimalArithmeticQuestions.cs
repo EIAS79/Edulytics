@@ -315,6 +315,73 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  private static bool Valid(string f,IReadOnlyDictionary<string,int> p,out decimal result)
  {
    result=0m;
+   // UAE G6 U03:L04 — source-scoped extension of existing Grade5 exact
+   // decimal-factor multiplication; two millionth-scaled integers preserve
+   // up to twelve fractional places without binary floating-point rounding.
+   if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
+       p.TryGetValue("g6DecimalFirstMillionths",out var first))
+   {
+       if (!p.TryGetValue("g6DecimalSecondMillionths",out var second) ||
+           first is <1 or >2000000000 || second is <1 or >2000000000)
+           return false;
+       result=(decimal)first*second/1000000000000m;
+       return true;
+   }
+
+   // UAE G6 Unit3 Exploration Lab: exact signed powers of ten, using
+   // the pre-existing Grade5 family with this new lesson's isolated parameters.
+   if (f=="uae.g5.u05.l06.decimal_times_power_ten" &&
+       p.TryGetValue("g6PowerBaseMillionths",out var baseMillionths))
+   {
+       if (!p.TryGetValue("g6PowerExponent",out var exponent) ||
+           baseMillionths is <1 or >1000000000 || exponent is <-4 or >7)
+           return false;
+       decimal scale=exponent switch
+       {
+           -4=>0.0001m,-3=>0.001m,-2=>0.01m,-1=>0.1m,
+           0=>1m,1=>10m,2=>100m,3=>1000m,4=>10000m,
+           5=>100000m,6=>1000000m,7=>10000000m,_=>0m
+       };
+       result=(decimal)baseMillionths*scale/1000000m;
+       return true;
+   }
+
+   if (f=="uae.g5.u05.l03.decimal_times_whole" &&
+       p.TryGetValue("g6DecimalFactorTenThousandths",out var n))
+   {
+       if (!p.TryGetValue("g6WholeFactor",out var whole) ||
+           n is <1 or >2000000 || whole is <1 or >100)
+           return false;
+       result=(decimal)n*whole/10000m;
+       return true;
+   }
+
+   if (f=="uae.g5.u05.l05.multiply_decimal_factors" &&
+       p.TryGetValue("g6EstimateProduct",out var estimateMode) && estimateMode==1)
+   {
+       if (!p.TryGetValue("aTenths",out var estimateFactorA) || !p.TryGetValue("bTenths",out var estimateFactorB) ||
+           !p.TryGetValue("placeA",out var placeA) || !p.TryGetValue("placeB",out var placeB) ||
+           estimateFactorA is <1 or >10000 || estimateFactorB is <1 or >10000 ||
+           placeA is not (1 or 10) || placeB is not (1 or 10))
+           return false;
+       var roundedA=Math.Round((estimateFactorA/10m)/placeA,0,MidpointRounding.AwayFromZero)*placeA;
+       var roundedB=Math.Round((estimateFactorB/10m)/placeB,0,MidpointRounding.AwayFromZero)*placeB;
+       result=roundedA*roundedB;
+       return true;
+   }
+
+   if ((f is "uae.g4.u11.l06.column_sum" or "uae.g4.u11.l10.column_difference") &&
+       p.TryGetValue("g6Thousandths",out var enabled) && enabled==1)
+   {
+       if (!p.TryGetValue("aThousandths",out var thousandthsFactorA) ||
+           !p.TryGetValue("bThousandths",out var thousandthsFactorB) ||
+           thousandthsFactorA is <0 or >999999 || thousandthsFactorB is <0 or >999999 ||
+           (f=="uae.g4.u11.l10.column_difference" && thousandthsFactorB>thousandthsFactorA))
+           return false;
+       result=(f=="uae.g4.u11.l10.column_difference"? thousandthsFactorA-thousandthsFactorB : thousandthsFactorA+thousandthsFactorB)/1000m;
+       return true;
+   }
+
    if(IsG5DividePow(f))return ValidG5DividePow(f,p,out result);
    if(IsG5Pow(f))return ValidG5Pow(f,p,out result);
    if(IsG5Factor(f))return ValidG5Factor(f,p,out result);
@@ -340,10 +407,65 @@ internal static class UaeGrade4Unit11DecimalArithmeticQuestions
  internal static string Solve(string f,IReadOnlyDictionary<string,int> p)
  {
     if(!Valid(f,p,out decimal ans))throw new InvalidOperationException("Invalid decimal arithmetic parameters");
-    return ans.ToString(IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
+    return ans.ToString(p.ContainsKey("g6PowerBaseMillionths")?"0.##########":
+       p.ContainsKey("g6DecimalFirstMillionths")?"0.############":
+       p.ContainsKey("g6DecimalFactorTenThousandths")?"0.####":
+       p.TryGetValue("g6Thousandths",out var enabled) && enabled==1 ?
+       "0.###" : IsG5DividePow(f)?"0.######":(IsG5Area(f)||IsG5Factor(f))?"0.####":"0.##",CultureInfo.InvariantCulture);
  }
  internal static bool Verify(string f,IReadOnlyDictionary<string,int> p,string? answer)
  {
+   if (p.ContainsKey("g6PowerBaseMillionths"))
+   {
+       if(!Valid(f,p,out decimal g6PowerExpected)||string.IsNullOrWhiteSpace(answer))return false;
+       var g6PowerNormalized=new string(answer.Trim().Select(c=>c switch{
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           '٫'=>'.',_=>c
+       }).ToArray());
+       if(g6PowerNormalized.Length>35||
+          !g6PowerNormalized.All(c=>c is >= '0' and <= '9' or '.'))return false;
+       return decimal.TryParse(g6PowerNormalized,NumberStyles.AllowDecimalPoint,
+           CultureInfo.InvariantCulture,out var g6PowerActual)&&g6PowerActual==g6PowerExpected;
+   }
+   if (p.ContainsKey("g6DecimalFirstMillionths"))
+   {
+       if (!Valid(f,p,out decimal g6DecimalFirstExpected)||string.IsNullOrWhiteSpace(answer))
+           return false;
+       string g6DecimalFirstNormalized=new(answer.Trim().Select(c=>c switch
+       {
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           '٫'=>'.',_=>c
+       }).ToArray());
+       if (g6DecimalFirstNormalized.Length>35 ||
+           !g6DecimalFirstNormalized.All(c=>c is >= '0' and <= '9' or '.'))
+           return false;
+       return decimal.TryParse(g6DecimalFirstNormalized,NumberStyles.AllowDecimalPoint,
+           CultureInfo.InvariantCulture,out var g6DecimalFirstActual)&&g6DecimalFirstActual==g6DecimalFirstExpected;
+   }
+   if (p.ContainsKey("g6DecimalFactorTenThousandths"))
+   {
+       if(!Valid(f,p,out decimal g6FactorExpected)||string.IsNullOrWhiteSpace(answer))return false;
+       string western=new(answer.Trim().Select(c=>c switch {
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           '٫'=>'.',_=>c
+       }).ToArray());
+       return decimal.TryParse(western,NumberStyles.AllowDecimalPoint|NumberStyles.AllowLeadingSign,
+           CultureInfo.InvariantCulture,out var g6FactorActual)&&g6FactorActual==g6FactorExpected;
+   }
+   if (p.TryGetValue("g6EstimateProduct",out var g6) && g6==1)
+   {
+       if(!Valid(f,p,out decimal g6EstimateExpected)||string.IsNullOrWhiteSpace(answer))return false;
+       string western=new(answer.Trim().Select(c=>c switch{
+           >= '٠' and <= '٩'=>(char)('0'+c-'٠'),
+           >= '۰' and <= '۹'=>(char)('0'+c-'۰'),
+           _=>c
+       }).ToArray());
+       return decimal.TryParse(western,NumberStyles.Number,CultureInfo.InvariantCulture,out var g6EstimateActual)
+           && g6EstimateActual==g6EstimateExpected;
+   }
    if(IsG5DividePow(f))return VerifyG5DividePow(f,p,answer);
    if(IsG5Pow(f))return VerifyG5Pow(f,p,answer);
    if(IsG5Factor(f))return VerifyG5Factor(f,p,answer);

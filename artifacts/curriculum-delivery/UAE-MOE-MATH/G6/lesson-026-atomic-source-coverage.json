@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "curriculum": "UAE-MOE-MATH",
+  "grade": 6,
+  "pathway": "General",
+  "unit": 3,
+  "lessonOrdinal": 26,
+  "title": "ضرب الأعداد العشرية في أعداد عشرية",
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:03:04:STUDENT-AR-128",
+  "book": "Local Grade_06/01_Student_Books/01-1.pdf",
+  "sha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+  "printedPages": [
+    197,
+    204
+  ],
+  "pdfPages": [
+    238,
+    245
+  ],
+  "locallyInspected": true,
+  "sourceElements": [
+    {
+      "page": "197",
+      "focus": "المقدمة والتطبيقات العملية: كتل ومقادير عشرية",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "198",
+      "focus": "قاعدة جمع المنازل العشرية والتقدير وأمثلة الضرب",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "199",
+      "focus": "إضافة الأصفار وإعادة موضع الفاصلة والضرب الرأسي",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "200",
+      "focus": "مسائل مسافة الوقود وتمارين موجهة ومناقشة صحة التقدير",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "201",
+      "focus": "التمارين المستقلة والمسافة والسعر ودقة الأعداد العشرية",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "202",
+      "focus": "امتداد STEM وأعداد كبيرة ومهارات التفكير العليا",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "203",
+      "focus": "المساحة والأبعاد والقياس وتطبيقات متعددة الخطوات",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    },
+    {
+      "page": "204",
+      "focus": "الاختبار والمسائل المركبة ومراجعة عامة تتضمن مسائل خارج هدف الدرس",
+      "originalAuthoring": true,
+      "originalPublisherArtworkCopied": false
+    }
+  ],
+  "sourceExamplesReimplementedAsOriginalExplanations": 10,
+  "models": [
+    "RatioTable",
+    "CalculationChain",
+    "EquationSet"
+  ],
+  "questionFamily": "uae.g5.u05.l05.multiply_decimal_factors",
+  "engineStrategy": "EXTEND existing Grade5 exact decimal-factor engine with G6-only millionth-scaled params",
+  "checks": {
+    "independentRationalProducts": 8,
+    "allPass": true,
+    "JSONStructure": true,
+    "unmodifiedLegacyPack": true
+  },
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U3L04DecimalTimesDecimalTests.cs",
+  "testsRun": "NOT_RUN",
+  "ciManuallyTriggered": false,
+  "stageD": "NOT_RUN",
+  "openExplanationTeacherReview": true,
+  "productionPublished": false
+}

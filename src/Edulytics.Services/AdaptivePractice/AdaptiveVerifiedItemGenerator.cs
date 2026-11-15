@@ -243,6 +243,80 @@ public sealed class AdaptiveVerifiedItemGenerator
         return item;
     }
 
+    /// <summary>
+    /// Only owner-approved UAE G6 General may move to a second mathematically
+    /// verified family after its exact current-family exposure space is
+    /// exhausted. Every alternative is already on the SAME lesson's canonical
+    /// Practice contract; no unrelated skill, locale or unapproved content is
+    /// introduced. US G1 and all other grades retain the previous exact route.
+    /// Returns the effective decision so persisted telemetry and remediation
+    /// always identify the *actual* generated family.
+    /// </summary>
+    public (AssessmentItem Item, AdaptiveNextItemDecision Decision)
+        GenerateOneWithVerifiedFamilyFallback(
+        Guid schoolId,
+        Guid curriculumAdoptionId,
+        Guid lessonId,
+        Guid createdByUserId,
+        LessonPracticeContract contract,
+        AdaptiveNextItemDecision decision,
+        int currentComplexityScore,
+        int seed,
+        IReadOnlyCollection<string> excludedExposureFingerprints,
+        IReadOnlyCollection<string>? excludedSemanticIdentityKeys = null)
+    {
+        ArgumentNullException.ThrowIfNull(contract);
+        ArgumentNullException.ThrowIfNull(decision);
+        ArgumentNullException.ThrowIfNull(excludedExposureFingerprints);
+        const string g6Prefix = "PED:UAE-MOE-MATH:L6:GENERAL:";
+        if (!contract.LessonCode.StartsWith(g6Prefix, StringComparison.Ordinal))
+            return (GenerateOne(schoolId, curriculumAdoptionId, lessonId,
+                createdByUserId, contract, decision, seed,
+                excludedExposureFingerprints, excludedSemanticIdentityKeys),
+                decision);
+
+        var alternates = contract.AllowedQuestionFamilies
+            .Where(x => !string.Equals(x, decision.TargetQuestionFamily,
+                StringComparison.Ordinal))
+            .Distinct(StringComparer.Ordinal)
+            // First select a genuine high-capacity alternative. A second
+            // two-state identification family cannot solve a 30-turn budget.
+            .OrderByDescending(x =>
+                UaeG6FinitePracticeFamilyCapacity.CertifiedBudget(x, 30))
+            .ThenBy(x => x, StringComparer.Ordinal);
+        var candidates = new[] { decision.TargetQuestionFamily }
+            .Concat(alternates).Distinct(StringComparer.Ordinal).ToArray();
+        var exhausted = 0;
+        for (int index = 0; index < candidates.Length; index++)
+        {
+            var effective = index == 0
+                ? decision
+                : NormalizeDecisionToTruthfulCapability(
+                    decision with { TargetQuestionFamily = candidates[index] },
+                    currentComplexityScore);
+            try
+            {
+                var item = GenerateOne(schoolId, curriculumAdoptionId,
+                    lessonId, createdByUserId, contract, effective,
+                    unchecked(seed ^ (index * 1000003)),
+                    excludedExposureFingerprints, excludedSemanticIdentityKeys);
+                return (item, effective);
+            }
+            catch (InvalidOperationException ex) when (
+                string.Equals(ex.Message,
+                    "Adaptive Practice V2 exhausted verified freshness retries.",
+                    StringComparison.Ordinal))
+            {
+                exhausted++;
+                // Exact source math never falls back on invalid parameters,
+                // failed verification, authorization or a wrong skill.
+            }
+        }
+        throw new InvalidOperationException(
+            "UAE Grade6 verified lesson family pool exhausted across " +
+            exhausted + " exact contract-approved families.");
+    }
+
     private static PracticeCognitiveDifficulty CognitiveDifficultyFor(
         int complexity)
     {

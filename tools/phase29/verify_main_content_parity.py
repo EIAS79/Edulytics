@@ -13,11 +13,11 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = Path("src/Edulytics.Core/Curriculum/LessonContent/Packs")
 
 def main_files():
-    raw = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "origin/main", "--", str(BASE)], cwd=ROOT, text=True)
+    raw = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "origin/main", "--", BASE.as_posix()], cwd=ROOT, text=True)
     return [p for p in raw.splitlines() if p.endswith(".lesson-content-pack.json")]
 
 def load_main(path):
-    return json.loads(subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT, text=True))
+    return json.loads(subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT, text=True, encoding="utf-8"))
 
 def identities(doc):
     return [(str(doc.get("PackCode") or doc.get("packCode") or ""), str(x.get("LessonCode") or x.get("lessonCode") or ""), x)
@@ -84,9 +84,92 @@ def run():
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         errors.append(f"UAE Grade5 exact-blob owner academic delta invalid: {exc}")
         uae_g5_owner_content = set()
+    # UAE Grade 6 owner-approved academic cutover: the 59 English General
+    # pseudo-lessons are retired, and a separately fingerprinted Arabic 128
+    # catalogue replaces them. This is NOT textbook verbatim-source parity.
+    # Exact scope checks prevent this exception from admitting any other grade.
+    g6_authorized = False
+    g6_old_content = None
+    g6_old_blueprint = None
+    g6_legacy_keys = set()
+    try:
+        owner_path = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G6/grade6-owner-academic-approval.json"
+        owner = json.loads(owner_path.read_text(encoding="utf-8"))
+        new_content = "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g6-general-ar128-student-local-v1.lesson-content-pack.json"
+        new_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g6-general-ar128-student-local-v1.lesson-blueprint.json"
+        def _portable(path):
+            doc = json.loads((ROOT / path).read_text(encoding="utf-8-sig"))
+            encoded = json.dumps(doc, ensure_ascii=False, sort_keys=True,
+                                 separators=(",", ":")).encode("utf-8")
+            return hashlib.sha256(encoded).hexdigest()
+        if not (owner.get("legacyEnglish59RetirementOwnerApproved") is True
+                and owner.get("productionApproval") is True
+                and owner.get("grade") == 6 and owner.get("scopeIndexedLessons") == 128
+                and owner.get("ownerDecision") == "APPROVED_FOR_PUBLICATION_AS_EDULYTICS_ORIGINAL_EDUCATIONAL_EQUIVALENCE"
+                and owner.get("sourceEditionIdentityClaim") == "NONE"
+                and owner.get("originalTextbookExerciseNumeratorDenominator") == "NOT_INDEPENDENTLY_VERIFIED"):
+            raise ValueError("missing exact Grade6 owner retirement and academic-equivalence approval")
+        if (owner.get("contentPackSha256") != _portable(new_content)
+                or owner.get("blueprintSha256") != _portable(new_blueprint)):
+            raise ValueError("Grade6 128 Arabic approved body/blueprint fingerprint mismatch")
+        actual_content = json.loads((ROOT / new_content).read_text(encoding="utf-8"))
+        actual_blueprint = json.loads((ROOT / new_blueprint).read_text(encoding="utf-8"))
+        new_content_codes = [x["LessonCode"] for x in actual_content["Lessons"]]
+        new_blueprint_codes = [x["LessonCode"] for x in actual_blueprint["Lessons"]]
+        if not (len(new_content_codes) == len(new_blueprint_codes) == 128
+                and len(set(new_content_codes)) == 128
+                and new_content_codes == new_blueprint_codes
+                and actual_content.get("AcademicLanguage") == "ar"
+                and actual_blueprint.get("Pathway") == "General"
+                and all(x.startswith("PED:UAE-MOE-MATH:L6:GENERAL:") for x in new_content_codes)):
+            raise ValueError("Grade6 128 Arabic canonical identity count/role mismatch")
+        current_content = list((ROOT / BASE).glob("uae-g6-general-*.lesson-content-pack.json"))
+        current_blueprint = list((ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs").glob("uae-g6-general-*.lesson-blueprint.json"))
+        if not (current_content == [ROOT / new_content]
+                and current_blueprint == [ROOT / new_blueprint]):
+            raise ValueError("extra or missing Grade6 General resource, old corpus reintroduced")
+        previous_content = [
+            path for path in main_files()
+            if Path(path).name.startswith("uae-g6-general-") and path != new_content
+        ]
+        previous_blueprint = subprocess.check_output(
+            ["git","ls-tree","-r","--name-only","origin/main","--",
+             "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs"],
+            cwd=ROOT,text=True).splitlines()
+        previous_blueprint = [
+            path for path in previous_blueprint
+            if Path(path).name.startswith("uae-g6-general-") and path != new_blueprint
+        ]
+        if len(previous_content) != len(previous_blueprint) or len(previous_content) not in (0,1):
+            raise ValueError("unexpected Grade6 General pre-release legacy resource cardinality")
+        if previous_content:
+            g6_old_content = previous_content[0]
+            g6_old_blueprint = previous_blueprint[0]
+            old_content_doc = load_main(g6_old_content)
+            old_blueprint_doc = load_main(g6_old_blueprint)
+            old_content_codes = [code for _,code,_ in identities(old_content_doc)]
+            old_blueprint_codes = [x["LessonCode"] for x in old_blueprint_doc["Lessons"]]
+            if not (len(old_content_codes) == len(old_blueprint_codes) == 59
+                    and set(old_content_codes) == set(old_blueprint_codes)
+                    and len(set(old_content_codes)) == 59
+                    and set(old_content_codes).isdisjoint(new_content_codes)
+                    and all(x.startswith("PED:UAE-MOE-MATH:L6:GENERAL:") for x in old_content_codes)
+                    and not (ROOT / g6_old_content).exists()
+                    and not (ROOT / g6_old_blueprint).exists()):
+                raise ValueError("Grade6 old 59 identities, removed files or replacement not exact")
+            g6_legacy_keys = {("UAE-MOE-MATH", code) for code in old_content_codes}
+        g6_authorized = True
+    except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade6 owner-authorized 59-to-128 replacement failed: {exc}")
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
+            if g6_authorized and path == g6_old_content:
+                for pack,code,lesson in identities(load_main(path)):
+                    key = (pack,code)
+                    if key in baseline: errors.append(f"duplicate retired Grade6 identity {key}")
+                    baseline[key] = lesson
+                continue
             errors.append(f"missing original content pack: {path}")
             continue
         for bucket, doc in [(baseline, load_main(path)), (candidate, json.loads(current.read_text(encoding="utf8")))]:
@@ -129,6 +212,9 @@ def run():
             continue
         current = ROOT / path
         if not current.is_file():
+            if g6_authorized and path == g6_old_blueprint:
+                verified_blueprints += 1
+                continue
             errors.append(f"missing original lesson blueprint: {path}")
             continue
         if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
@@ -269,7 +355,7 @@ def run():
             g4_replacement_authorized = True
     except (KeyError, ValueError, TypeError, OSError, json.JSONDecodeError) as exc:
         errors.append(f"UAE Grade4 narrowly-scoped owner replacement audit failed: {exc}")
-    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set())
+    unexpected_missing = set(missing) - (g4_missing if g4_replacement_authorized else set()) - (g6_legacy_keys if g6_authorized else set())
     if unexpected_missing:
         errors.append(f"missing original lesson identities outside accepted Grade4 replacement: {sorted(unexpected_missing)[:5]}")
 

@@ -64,10 +64,17 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g5.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(308, uaeGrade5.Length);
+        // Add exactly the owner-authored UAE G6 interaction families while
+        // keeping the prior 1,691 generic/legacy families unchanged.
+        var uaeGrade6 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g6.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(192, uaeGrade6.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
-            uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length);
+            uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length -
+            uaeGrade6.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 6,
+  "ordinal": 57,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:06:02:STUDENT-AR-128",
+  "title": "القوى والأسس",
+  "sourceBook": "02.pdf",
+  "sourceEdition": "Local 2025–2026; target2026–2027 NOT_VERIFIED",
+  "sourceSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "bookPagesPrinted": [
+    427,
+    434
+  ],
+  "pdfPages": [
+    100,
+    107
+  ],
+  "sourcePagesVisuallyInspected": 8,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        427
+      ],
+      "source": "تعريف الأساس والأس وربط القوة بتكرار عشرة ومربع كامل",
+      "equivalent": "شرح أس وأساس ونموذج أشرطة وقوى ١٠"
+    },
+    {
+      "pages": [
+        428
+      ],
+      "source": "كتابة حاصل ضرب متكرر على صورة قوة، نماذج مربعات ومكعبات",
+      "equivalent": "عائلة repeated_to_power وأمثلة ٢ و٣"
+    },
+    {
+      "pages": [
+        429
+      ],
+      "source": "حساب قوى عددية وعشرية وكسرية، توسيع حاصل ضرب العوامل",
+      "equivalent": "عائلات integer_power decimal_power fraction_power"
+    },
+    {
+      "pages": [
+        430
+      ],
+      "source": "سياق سعة وخزانات، تمارين موجهة، قوى لعوامل ١ وأعداد عشرية",
+      "equivalent": "أمثلة ٣ و٤ و٦ وتغطية power forms"
+    },
+    {
+      "pages": [
+        431
+      ],
+      "source": "تمارين ذاتية، قوى تخزين ١٠³ و١٠⁶ والسعات",
+      "equivalent": "عائلة ten_power ومراجعة نص سياقي"
+    },
+    {
+      "pages": [
+        432
+      ],
+      "source": "حساب قوى داخل التعابير، أنماط وقاعدة الأس صفر وكسور",
+      "equivalent": "power_addition وقيم القوى وأنماط صفر الأس"
+    },
+    {
+      "pages": [
+        433
+      ],
+      "source": "تدريبات قوى صحيحة وعشرية وكسرية ومسائل واقعية",
+      "equivalent": "exact power adapter وأمثلة متنوعة"
+    },
+    {
+      "pages": [
+        434
+      ],
+      "source": "تقييم تعرف أساس وأس ومربعات نموذجية ومراجعة تراكمية",
+      "equivalent": "power/square families وشرح نموذج مربعات؛ لا ندعي تغطية كل المراجعة التراكمية"
+    }
+  ],
+  "engineStrategy": "REUSE_EXACT_SKILL_PIPELINE_WITH_SCOPED_INTEGER_DECIMAL_FRACTION_POWERS_ADAPTER",
+  "questionFamilies": [
+    "uae.g6.u06.l02.repeated_to_power",
+    "uae.g6.u06.l02.integer_power",
+    "uae.g6.u06.l02.decimal_power",
+    "uae.g6.u06.l02.fraction_power",
+    "uae.g6.u06.l02.ten_power",
+    "uae.g6.u06.l02.power_addition",
+    "uae.g6.u06.l02.perfect_square"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "ExpressionStripBars",
+    "RatioTable",
+    "CalculationChain"
+  ],
+  "teacherReview": [
+    "student-authored model/grid",
+    "real-world power contextual explanations",
+    "open analysis of growing square patterns"
+  ],
+  "sourceQuestionDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "LEARNING_GOAL_CATEGORIES_MAPPED_NOT_EXERCISE_BY_EXERCISE_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U6L02PowersTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}

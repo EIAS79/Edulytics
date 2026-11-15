@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "unit": 8,
+  "ordinal": 80,
+  "lessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:08:03:STUDENT-AR-128",
+  "title": "الدوال والمعادلات",
+  "sourceBook": "02.pdf",
+  "sourceEdition": "Local 2025–2026; target2026–2027 NOT_VERIFIED",
+  "sourcePdfSha256": "e8c5adf6bfd870ceb5e58bfa432803052fecab320040a4a5c177c4b5a6806939",
+  "sourcePdfPages": [
+    263,
+    270
+  ],
+  "sourcePrintedPages": [
+    589,
+    596
+  ],
+  "sourcePagesVisuallyInspected": 8,
+  "sourceMappedCategories": [
+    {
+      "pages": [
+        589
+      ],
+      "source": "مفهوم الدالة الخطية ومكتسبات مجالسة الأطفال ٦ دراهم للساعة",
+      "equivalent": "مثال أجرة جليسة الأطفال"
+    },
+    {
+      "pages": [
+        590
+      ],
+      "source": "معادلة جدول ص=٩س والانتقال إلى الأزواج المرتبة",
+      "equivalent": "مثال استخراج قاعدة خطية"
+    },
+    {
+      "pages": [
+        591
+      ],
+      "source": "رسم ص=٢س وص=س+١ وص=٣س+٢ وارتفاع صبار",
+      "equivalent": "ثلاث رسومات CartesianPlot وأمثلة"
+    },
+    {
+      "pages": [
+        592
+      ],
+      "source": "بيانات عدد المجلات والتكلفة وثلج المطر والتحقق",
+      "equivalent": "معدل خطي ب"
+    },
+    {
+      "pages": [
+        593
+      ],
+      "source": "قواعد ص=٦س وص=١٥س ومعاملات ورسوم تكلفة",
+      "equivalent": "معدل تغير وكتابة المعادلة"
+    },
+    {
+      "pages": [
+        594
+      ],
+      "source": "جدول مساحة المربع ص=س² غير خطية وعكس إحداثيات",
+      "equivalent": "تمييز خطي/غير خطي"
+    },
+    {
+      "pages": [
+        595
+      ],
+      "source": "معادلات ورسوم خطية وأجور الأفلام والرحلات",
+      "equivalent": "مثال الشركة ٥٠+٥س"
+    },
+    {
+      "pages": [
+        596
+      ],
+      "source": "اختبار ربط الجدول بالقاعدة ورسم أزواج ومراجعة تراكمية",
+      "equivalent": "أسئلة اختيار وتفسير، التراكمية منفصلة"
+    }
+  ],
+  "engineStrategy": "REUSE_U8_EXACT_FUNCTION_PAIRS_AND_CARTESIAN_PLOT_WITH_SCOPED_LINEARITY_EQUATIONS",
+  "questionFamilies": [
+    "uae.g6.u08.l01.linear_output",
+    "uae.g6.u08.l01.ordered_pair",
+    "uae.g6.u08.l03.equation_from_line",
+    "uae.g6.u08.l03.linear_vs_square",
+    "uae.g6.u08.l03.y_intercept"
+  ],
+  "examplesOriginal": 10,
+  "visuals": [
+    "CartesianPlot",
+    "RatioTable",
+    "CalculationChain"
+  ],
+  "teacherReview": [
+    "freehand graph plotting",
+    "correct axis scaling",
+    "open nonlinearity justification"
+  ],
+  "sourceQuestionDenominator": "NOT_FULLY_INVENTORIED",
+  "semanticParityClaim": "SOURCE_SKILL_CATEGORIES_MAPPED_NOT_ALL_EXERCISES_100_PERCENT",
+  "testsWritten": "tests/Edulytics.Tests/MathematicsIntelligence/UaeG6U8L03FunctionGraphsTests.cs",
+  "testsRun": "NOT_RUN",
+  "stageD": "NOT_RUN",
+  "target2026_2027SourceVerified": false,
+  "publisherArtworkCopied": false
+}

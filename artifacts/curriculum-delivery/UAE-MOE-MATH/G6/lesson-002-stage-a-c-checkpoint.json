@@ -1,0 +1,58 @@
+{
+  "Grade": 6,
+  "Unit": 1,
+  "LessonOrdinal": 2,
+  "LessonCode": "PED:UAE-MOE-MATH:L6:GENERAL:01:02:STUDENT-AR-128",
+  "Status": "READY_FOR_STAGE_D",
+  "StageA": "CLOSED_SELECTED_LOCAL_SOURCE_ONLY",
+  "StageB": "CLOSED_ORIGINAL_ARABIC_RICHV2_STAGED",
+  "StageC": "CLOSED_REUSED_EXACT_RATIO_ENGINE_WITH_ARABIC_SCOPED_PROMPTS",
+  "SourcePdf": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_06\\01_Student_Books\\01-1.pdf",
+  "SourceSha256": "6b8782b83631303bd4e115067edd48e05920a0ffe64daeac2639a0cc4f3a6d6e",
+  "SourcePdfPages": [
+    56,
+    57,
+    58,
+    59
+  ],
+  "SourcePrintedPages": [
+    15,
+    16,
+    17,
+    18
+  ],
+  "RichArabic": "ar",
+  "OriginalVisual": "RatioTable + CalculationChain + EquationSet (original Edulytics diagrams and math)",
+  "SourceElementCount": 16,
+  "QuestionFamilies": [
+    "ratio.unit_rate.equivalent_ratio",
+    "ratio.unit_rate.divide_total"
+  ],
+  "SkillContract": "ratio.unit_rate",
+  "StaticChecks": {
+    "priorClosed": true,
+    "code": true,
+    "arabic": true,
+    "counts": true,
+    "source": true,
+    "contentSchema": true,
+    "visual": true,
+    "exercises": true,
+    "engine": true,
+    "mathematics": true
+  },
+  "TestsWritten": "UaeGrade6Unit1Lesson02RatioLabTests.cs",
+  "TestsRun": "NOT_RUN",
+  "NoCI": true,
+  "NoStageD": true,
+  "TeacherReviewRequired": [
+    "physical manipulative/colored-chip group models",
+    "open-ended questions 8–13",
+    "teacher rubric for reasoning and self-authored examples"
+  ],
+  "NextLesson": "PED:UAE-MOE-MATH:L6:GENERAL:01:03:STUDENT-AR-128",
+  "CandidateBranch": "curriculum/uae-g6-common-student-first-abc-20261114",
+  "ClosureCommit": "SELF_CLOSURE_COMMIT",
+  "StageDNotRun": true,
+  "ProductionDeployed": false
+}
