@@ -9372,8 +9372,15 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128"]=new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L6:GENERAL:09:01:STUDENT-AR-128","geometry.area.parallelogram.exploration",
             "REARRANGE_PARALLELOGRAM_AND_BASE_TIMES_PERPENDICULAR_HEIGHT",
-            ["usccss.g6.u01.l04.parallelogram_exact_area","usccss.g6.u01.l04.equal_area_rearrangement","usccss.g6.u01.l05.corresponding_height"],
-            "LOCAL_G6_03_PDF8_10_CONCEPTUAL_ONLY_EXACT_LAB_UNAVAILABLE",
+            ["uae.g6.u09.l01.area_conservation","uae.g6.u09.l02.parallelogram_area","uae.g6.u09.l02.parallelogram_height"],
+            "LOCAL_G6_03_PDF8_14_EDUCATIONAL_EQUIVALENT_ORIGINAL_LAB_UNAVAILABLE",
+            "READY_VERIFIED",Version);
+        // U09L02 actual first numbered textbook lesson; source pp.655-661 visually reviewed.
+        byLesson["PED:UAE-MOE-MATH:L6:GENERAL:09:02:STUDENT-AR-128"]=new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L6:GENERAL:09:02:STUDENT-AR-128","geometry.area.parallelogram",
+            "BASE_TIMES_PERPENDICULAR_HEIGHT_AND_INVERSE_HEIGHT",
+            ["uae.g6.u09.l02.parallelogram_area","uae.g6.u09.l02.parallelogram_height","uae.g6.u09.l01.area_conservation"],
+            "LOCAL_G6_GENERAL_03_PDF8_14_PRINTED655_661",
             "READY_VERIFIED",Version);
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)

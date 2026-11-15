@@ -359,6 +359,7 @@ public sealed class ExactSkillContractQuestionEngine
           UaeG6U7L09DivisionLabQuestions.Supports(family.Trim()) ||
           UaeG6U7L10DivisionEquationsQuestions.Supports(family.Trim()) ||
           UaeG6U8FunctionQuestions.Supports(family.Trim()) ||
+         UaeG6U9AreaPracticeQuestions.Supports(family.Trim()) ||
           UaeG6U8L02SequenceQuestions.Supports(family.Trim()) ||
           UaeG6U8L03FunctionGraphsQuestions.Supports(family.Trim()) ||
           UaeG6U8L06InequalityModelsQuestions.Supports(family.Trim()) ||
@@ -1052,6 +1053,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UaeG6U7L10DivisionEquationsQuestions.Verify(family,parameters,answer);
         if (UaeG6U8FunctionQuestions.Supports(family))
             return UaeG6U8FunctionQuestions.Verify(family,parameters,answer);
+        if (UaeG6U9AreaPracticeQuestions.Supports(family))
+            return UaeG6U9AreaPracticeQuestions.Verify(family,parameters,answer);
         if (UaeG6U8L02SequenceQuestions.Supports(family))
             return UaeG6U8L02SequenceQuestions.Verify(family,parameters,answer);
         if (UaeG6U8L03FunctionGraphsQuestions.Supports(family))
@@ -4500,6 +4503,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UaeG6U8FunctionQuestions.Supports(family))
         {
             var q=UaeG6U8FunctionQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UaeG6U9AreaPracticeQuestions.Supports(family))
+        {
+            var q=UaeG6U9AreaPracticeQuestions.Build(family,random);
             return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
         }
         if (UaeG6U8L02SequenceQuestions.Supports(family))
