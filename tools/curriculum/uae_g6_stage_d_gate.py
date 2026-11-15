@@ -164,11 +164,16 @@ def source():
         errors.append("G6_OWNER_APPROVAL_SCOPE_DRIFT")
     if len(index.get("sourceTocLessons",[]))!=128 or progress.get("closedLessons")!=128:
         errors.append("G6_INDEX_OR_A_C_SCOPE_DRIFT")
+    def canonical_json_sha256(path):
+        obj = json.loads(path.read_text(encoding="utf-8-sig"))
+        payload = json.dumps(obj, ensure_ascii=False, sort_keys=True,
+                             separators=(",", ":")).encode("utf-8")
+        return hashlib.sha256(payload).hexdigest()
     for name,path in [
         ("sourceIndexSha256",ART / "source-index.json"),
         ("contentPackSha256",CONTENT),
         ("blueprintSha256",BLUEPRINT)]:
-        if approved.get(name)!=hashlib.sha256(path.read_bytes()).hexdigest():
+        if approved.get(name)!=canonical_json_sha256(path):
             errors.append("G6_SOURCE_FINGERPRINT_DRIFT:"+name)
     rich_dir=ROOT / "src/Edulytics.Core/Curriculum/LessonContent/RichV2"
     rich=list(rich_dir.glob("uae-g6-general-*-ar.rich-lesson-v2.json"))
