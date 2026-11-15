@@ -8812,6 +8812,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.number.signed_rational_divide", "usccss.number.signed_rate_displacement"],
             "UAE_G7_GENERAL_ARABIC_U03L05_PRINTED_243_249",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General U04L01 printed 263-269:
+        // reuse terminating/repeating fraction-decimal exact question families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:01:TERMINATING-REPEATING-DECIMALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:01:TERMINATING-REPEATING-DECIMALS", "number.rational.terminating_repeating_decimal",
+            "FRACTION_DECIMAL_FINITE_REPEATING_AND_BACK",
+            ["uae.g6.u05.l08.classify_fraction_decimal", "uae.g6.u05.l08.fraction_exact_decimal", "usccss.number.rational_terminating_decimal", "usccss.number.repeating_decimal_digit"],
+            "UAE_G7_GENERAL_ARABIC_U04L01_PRINTED_263_269",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
