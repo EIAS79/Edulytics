@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u05l03-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u05l04-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1047,6 +1047,35 @@
           "StepByStepSolutions": "1. حدد العملية جمع/ضرب أو طرح/قسمة؛ 2. اختر الخاصية الصالحة لهذه العملية؛ 3. احفظ قيم الحدود وإشاراتها أثناء إعادة الترتيب؛ 4. جمّع الحدود التي تعطي عشرة أو مئة أو سهلة؛ 5. احسب أو بسط التعبير؛ 6. تحقق بتعويض قيم عددية مختلفة",
           "CommonMistakes": "خطأ: تطبيق الإبدال على الطرح. لماذا خطأ: الطرح لا يحافظ على الترتيب. التصويب: لا تبدّل طرفَي الطرح. خطأ: الخلط بين محايد الضرب والصفر. لماذا خطأ: ضرب أي قيمة في صفر يمحوها. التصويب: محايد الضرب ١. خطأ: تغيير إشارات الحدود عند التجميع. لماذا خطأ: الخاصية لا تقلب الإشارة. التصويب: احتفظ بإشارة كل حد.",
           "QuickSummary": "الإبدال والتجميع صالحان للجمع والضرب. الصفر محايد جمع والواحد محايد ضرب. الضرب في صفر يعطي صفرًا. الطرح والقسمة غير إبداليين. Cool-down أصلي بلا حلول: سم خاصية (ن+٧)+٣=ن+(٧+٣)؛ احسب ٨×١٢٥×٧؛ بيّن مثالًا مضادًا لإبدال القسمة. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:05:04:DISTRIBUTIVE-PROPERTY",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF41-52 (printed 375-386); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF41-52 (printed 375-386); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "خاصية التوزيع",
+          "Explanation": "تربط خاصية التوزيع الضرب بالجمع والطرح: أ(ب+ج)=أب+أج وأ(ب−ج)=أب−أج. إذا كان لدينا ٣ صناديق يحتوي كل منها على ٤ دفاتر و٢ قلم، فإن العدد الكلي ٣(٤+٢)=١٨، وهو نفسه ٣×٤+٣×٢. للأعداد السالبة يجب توزيع الإشارة على كل حد: −٢(٣س−٤)=−٦س+٨، وليس −٦س−٨. وعندما يكون العامل كسريًا مثل ١/٢(٦س+٨)، نضرب كلا الحدين في نصف فنحصل على ٣س+٤. تستعمل الخاصية لتكوين تعابير مكافئة أو إعادة التحليل عند الحاجة. يمكن التحقق بالتعويض العشوائي الثابت غير الصفر أو برسم مستطيل مقسم إلى منطقتين، لكن الرسم الأصلي لا يُعتبر دليلًا وحده على كل قيمة سالبة؛ يعتمد التحقق الجبري على القانون.",
+          "KeyConceptsAndRules": "التوزيع على الجمع: أ(ب+ج)=أب+أج مثل ٥(س+٢)=٥س+١٠. التوزيع على الطرح: أ(ب−ج)=أب−أج مثل ٣(س−٤)=٣س−١٢. توزيع سالب: −(أ−ب)=−أ+ب مثل −٢(٣س−٤)=−٦س+٨. المكافأة الجبرية: أ(ب+ج)≡أب+أج مثل س=٢: ٥(س+٢)=٢٠.",
+          "WorkedExamples": "مثال 1: بسط ٥(٣س+٢). الخطوات: اضرب ٥×٣س=١٥س.؛ اضرب ٥×٢=١٠.؛ اجمع الحدين.. الإجابة ١٥س+١٠. التحقق: س=٢ يعطي ٤٠ في الصورتين. مثال 2: بسط −٢(٣س−٤). الخطوات: −٢×٣س=−٦س.؛ −٢×−٤=+٨.؛ الناتج −٦س+٨.. الإجابة −٦س+٨. التحقق: س=١: −٢(−١)=٢. مثال 3: بسط ١/٢(٦ع+٨). الخطوات: اضرب ٦ع×١/٢=٣ع.؛ اضرب ٨×١/٢=٤.؛ اجمع.. الإجابة ٣ع+٤. التحقق: ع=٢ يعطي ١٠. مثال 4: احسب ٣(٤+٧) بطريقتين. الخطوات: داخل القوس ١١، ٣×١١=٣٣.؛ بالتوزيع ٣×٤+٣×٧.؛ ١٢+٢١=٣٣.. الإجابة ٣٣. التحقق: الطريقتان متساويتان.",
+          "StepByStepSolutions": "1. حدد العامل خارج القوس؛ 2. اقرأ جميع حدود القوس وإشاراتها؛ 3. اضرب العامل في كل حد على حدة؛ 4. اكتب مجموع النواتج دون إسقاط إشارة؛ 5. اجمع الحدود المتشابهة إن ظهرت؛ 6. تحقق بإحلال قيمة للمتغير في التعبيرين",
+          "CommonMistakes": "خطأ: توزيع العامل على أول حد فقط. لماذا خطأ: يُهمل الحد الآخر في الضرب. التصويب: اضرب في كل حد. خطأ: الاحتفاظ بسالب الحد عند سالب×سالب. لماذا خطأ: سالب×سالب موجب. التصويب: −٢(س−٤)=−٢س+٨. خطأ: جمع حدود غير متشابهة بعد التوزيع. لماذا خطأ: ١٥س و١٠ نوعان مختلفان. التصويب: احتفظ بالتعبير ١٥س+١٠.",
+          "QuickSummary": "أوزّع العامل على كل حد. سالب×سالب يعطي موجبًا. التعبير الموزع مكافئ للأصلي. النموذج المساحي يساعد على فهم التوزيع. Cool-down أصلي بلا حلول: بسط ٧(٢س−٣)؛ بسط −٣(س−٥)؛ صحح الخطأ ٤(س+٢)=٤س+٢. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }
