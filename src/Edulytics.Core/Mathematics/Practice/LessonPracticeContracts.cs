@@ -9026,6 +9026,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g5.u07.l08.source_triangle_side_and_angle_types", "uae.g5.u12.l03.triangle_side_type", "uae.g5.u12.l03.triangle_angle_type", "usccss.g7.u07.triangle_side_feasible"],
             "UAE_G7_ARABIC_U07L03_PDF_25_44",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/04, student 02-07.pdf printed 575-584.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:04:SCALE-DRAWING-RATIO"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:04:SCALE-DRAWING-RATIO", "geometry.similarity.scale_factor",
+            "SCALE-DRAWING-RATIO",
+            ["usccss.g7.u01.l02.scale_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l03.scaled_l_polygon"],
+            "UAE_G7_ARABIC_U07L04_PDF_45_54",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
