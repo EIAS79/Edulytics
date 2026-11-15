@@ -8723,6 +8723,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g6.u03.l13.benchmark_percent_values", "usccss.g6.u03.l13.benchmark_percent_reasoning", "percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity"],
             "UAE_G7_GENERAL_ARABIC_U02L02_PRINTED_111_118",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L03, printed 121-127:
+        // percent proportion find percentage, part or whole using existing engines.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:03:PERCENT-PROPORTION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:03:PERCENT-PROPORTION", "percentages.core.of_quantity",
+            "PERCENT_PROPORTION_FIND_PART_WHOLE_OR_RATE",
+            ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u02.l04.proportional_equations"],
+            "UAE_G7_GENERAL_ARABIC_U02L03_PRINTED_121_127",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
