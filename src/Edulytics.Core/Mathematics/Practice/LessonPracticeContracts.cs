@@ -8922,6 +8922,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
             "UAE_G7_ARABIC_U05L06_PDF_61_68",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/07, student 02-5-6.pdf printed 403-414.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:07:SUBTRACT-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:07:SUBTRACT-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "SUBTRACT-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.simplify", "supporting.algebra.expand"],
+            "UAE_G7_ARABIC_U05L07_PDF_69_80",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
