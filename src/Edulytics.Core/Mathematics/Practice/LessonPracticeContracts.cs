@@ -8731,6 +8731,14 @@ public static class LessonPracticeContractRegistry
             ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u02.l04.proportional_equations"],
             "UAE_G7_GENERAL_ARABIC_U02L03_PRINTED_121_127",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02L04: percent equations, student printed 129-136.
+        // Existing exact percent of quantity / reverse-percent, no new engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:04:PERCENT-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:04:PERCENT-EQUATIONS", "percentages.core.of_quantity",
+            "PERCENT_EQUATIONS_FIND_RATE_PART_WHOLE",
+            ["percentages.core.of_quantity", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L04_PRINTED_129_136",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
