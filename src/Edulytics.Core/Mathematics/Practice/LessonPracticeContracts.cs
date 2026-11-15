@@ -9058,6 +9058,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.geometry.circle_circumference_pi_coefficient", "uae.g5.u12.l04.circle_segment_classify"],
             "UAE_G7_ARABIC_U08L01_PDF_9_16",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/02, student 03-8-10.pdf printed 623-630.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:02:CIRCLE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:02:CIRCLE-AREA", "supporting.geometry.area_volume",
+            "CIRCLE-AREA",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U08L02_PDF_19_26",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
