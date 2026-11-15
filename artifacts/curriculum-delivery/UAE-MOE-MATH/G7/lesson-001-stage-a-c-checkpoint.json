@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "packCode": "UAE-MOE-MATH",
+  "pathway": "General",
+  "sourceEdition": "Local Arabic student-book cover 2025–2026",
+  "sourceStudentBook": "Grade_07/01_Student_Books/01-1-4.pdf",
+  "sourceSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+  "sourcePagesPdf": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "sourcePagesPrinted": "9–16",
+  "unitNumber": 1,
+  "lessonNumber": 1,
+  "lessonOrdinal": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES",
+  "title": "المعدلات",
+  "status": "A_C_EXPLICIT_GAP",
+  "stageA": {
+    "sourceRead": true,
+    "topicIdentityVerified": true,
+    "elementGroupCount": 8,
+    "fullAtomicSourceExerciseParity": "UNKNOWN"
+  },
+  "stageB": {
+    "originalArabicContentDrafted": true,
+    "contentStatus": "Draft",
+    "rtlContentLanguage": "ar",
+    "runtimeRendering": "NOT_RUN",
+    "noPublisherArtworkCopied": true
+  },
+  "stageC": {
+    "skillContract": {
+      "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES",
+      "grade": 7,
+      "pathway": "General",
+      "academicLanguage": "ar",
+      "unit": 1,
+      "lesson": 1,
+      "skill": "ratio.unit_rate",
+      "mechanic": "UNIT_RATE",
+      "decision": "REUSE_EXISTING_ENGINE",
+      "allowedQuestionFamilies": [
+        "ratio.unit_rate.direct",
+        "ratio.unit_rate.equivalent_ratio"
+      ],
+      "forbiddenQuestionFamilies": [
+        "percent.change",
+        "algebra.inequalities",
+        "geometry.scale"
+      ],
+      "answerType": [
+        "exact_fraction_or_decimal",
+        "numeric_unit_rate"
+      ],
+      "renderer": "Existing UNIT_RATE numeric fraction/decimal renderer (runtime verification pending)",
+      "grader": "Existing exact ratio.unit_rate grader (runtime verification pending)",
+      "independentVerifier": "Reference arithmetic/check-digit oracle in authored Node tests; main runtime verifier must be independently certified in Stage D",
+      "teacherReview": "TEACHER_REVIEW_REQUIRED for drawn graph, real measured pulse/activity, written comparisons, and justification",
+      "visualRequirements": [
+        "Arabic RTL text",
+        "table of proportional quantities",
+        "original axes/bar visualization",
+        "correct order of units and no copied publisher artwork"
+      ],
+      "noAnswerLeak": "Cool-down text has no solutions; golden test fixtures stay in tests only",
+      "testStatus": "WRITTEN_NOT_RUN",
+      "runtimeSelectionVerified": false,
+      "englishFallbackRejectedAtRuntime": "NOT_RUN"
+    },
+    "testsWritten": true,
+    "testsRun": "NOT_RUN",
+    "exactLearnerRouting": "NOT_RUN",
+    "mathEngineReusePrepared": true
+  },
+  "blockers": [
+    "Complete each source exercise's independent 1:1 learning equivalence verification, including prerequisite items 25–27",
+    "Confirm runtime selection of this Arabic Grade 7 General lesson blocks Advanced/English fallback",
+    "Run Stage D later for exact grader and Arabic learner route"
+  ],
+  "sourceElementGroups": [
+    {
+      "sourceElementId": "G7-U01-L01-PDF49-INVESTIGATION_RATE_PULSE_AND_BAR",
+      "sourcePdfPage": 49,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "INVESTIGATION_RATE_PULSE_AND_BAR",
+      "sourceElementSummary": "Activity with measured quantities, bar chart and interpretation",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "Explanation, StepByStepSolutions, original beat-count activity",
+      "coverageStatus": "TEACHER_REVIEW_REQUIRED",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF50-CONCEPT_UNIT_RATE_AND_WORKED_EXAMPLE",
+      "sourcePdfPage": 50,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "CONCEPT_UNIT_RATE_AND_WORKED_EXAMPLE",
+      "sourceElementSummary": "Rate and unit rate, standard units, speed and money per unit",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "KeyConceptsAndRules and WorkedExamples",
+      "coverageStatus": "CANDIDATE_ORIGINAL",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF51-SINGLE_UNIT_COST_AND_COMPARATIVE_OFFERS",
+      "sourcePdfPage": 51,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "SINGLE_UNIT_COST_AND_COMPARATIVE_OFFERS",
+      "sourceElementSummary": "Unit cost, compare choices in tables, decimal rounding",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "WorkedExamples #2-#3 and independent comparison",
+      "coverageStatus": "CANDIDATE_ORIGINAL",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF52-DOUBLE_BAR_AND_UNIT_RATE_METHODS",
+      "sourcePdfPage": 52,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "DOUBLE_BAR_AND_UNIT_RATE_METHODS",
+      "sourceElementSummary": "Multiple methods: bar model, division, unit comparison; guided tasks",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "WorkedExamples #4 and step-by-step",
+      "coverageStatus": "CANDIDATE_ORIGINAL",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF53-INDEPENDENT_1_TO_9",
+      "sourcePdfPage": 53,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "INDEPENDENT_1_TO_9",
+      "sourceElementSummary": "Units of work, time, speed, costs and interpreting a data table",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "Unit rate worked examples and progress checks",
+      "coverageStatus": "CANDIDATE_ORIGINAL",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF54-INDEPENDENT_10_TO_15",
+      "sourcePdfPage": 54,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "INDEPENDENT_10_TO_15",
+      "sourceElementSummary": "Unit price after price change, research prices, error spotting, ratio reasoning",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "CommonMistakes, original comparisons, teacher-rubric task",
+      "coverageStatus": "CANDIDATE_ORIGINAL_WITH_TEACHER_REVIEW",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF55-EXTENSION_16_TO_22",
+      "sourcePdfPage": 55,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "EXTENSION_16_TO_22",
+      "sourceElementSummary": "Rates across contexts; price per item; number line and chart interpretation",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "Extended examples and graph task",
+      "coverageStatus": "CANDIDATE_ORIGINAL_WITH_TEACHER_REVIEW",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    },
+    {
+      "sourceElementId": "G7-U01-L01-PDF56-REVIEW_23_TO_27",
+      "sourcePdfPage": 56,
+      "sourcePdfSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+      "sourceElementType": "REVIEW_23_TO_27",
+      "sourceElementSummary": "Rate table 23/24 plus fraction-operation prerequisite review 25/26/27",
+      "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g7-general-ar73-student-local-v1.lesson-content-pack.json",
+      "EdulyticsTarget": "Teacher-scored original rate table; fraction prerequisites remain distinct from unit-rate digital contract",
+      "coverageStatus": "PARTIAL_PREREQUISITE_REVIEW",
+      "verificationMethod": "Manual source classification / candidate original Arabic equivalence; learner-route not run"
+    }
+  ],
+  "nextLessonOrdinal": 1,
+  "progressNote": "First lesson is not marked READY_FOR_STAGE_D until remaining A–B–C evidence is established; no move to lesson 2."
+}
