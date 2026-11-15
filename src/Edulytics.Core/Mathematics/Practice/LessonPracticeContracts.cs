@@ -9194,6 +9194,14 @@ public static class LessonPracticeContractRegistry
             ["supporting.statistics.collection_method", "usccss.g6.u08.l02.statistical_question_classification", "uae.g5.u11.l04.sample_scaled_estimate"],
             "UAE_G7_ARABIC_U11L02_PDF_13_22",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/03, student 03-11.pdf printed 835-846.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:03:MISLEADING-STATISTICAL-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:03:MISLEADING-STATISTICAL-GRAPHS", "supporting.statistics.charts",
+            "MISLEADING-STATISTICAL-GRAPHS",
+            ["supporting.statistics.charts.mixed", "supporting.statistics.pie_sector_angle", "usccss.g6.u08.l02.expected_data_variation_reasoning"],
+            "UAE_G7_ARABIC_U11L03_PDF_25_36",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
