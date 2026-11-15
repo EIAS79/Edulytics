@@ -8843,6 +8843,14 @@ public static class LessonPracticeContractRegistry
             ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.build", "fractions.add_subtract.related.apply"],
             "UAE_G7_GENERAL_ARABIC_U04L04_PRINTED_291_297",
             "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L05 printed299-306:
+        // Reuse fractions mixed and common denominator addition subtraction.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:05:MIXED-NUMBERS-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:05:MIXED-NUMBERS-ADD-SUB", "fractions.add_subtract",
+            "ADD_SUB_MIXED_FRACTIONS_WITH_BORROWING",
+            ["fractions.add_subtract.same_denominator.mixed.apply", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.apply"],
+            "UAE_G7_GENERAL_ARABIC_U04L05_PRINTED_299_306",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
