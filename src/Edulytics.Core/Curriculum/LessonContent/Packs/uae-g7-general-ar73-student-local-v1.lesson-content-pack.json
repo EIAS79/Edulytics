@@ -1,7 +1,7 @@
 {
   "PackCode": "UAE-MOE-MATH",
   "VersionCode": "MOE-2026-2027-T1",
-  "ContentVersion": "uae-g7-general-ar73-u06l07-abc-20261115",
+  "ContentVersion": "uae-g7-general-ar73-u06l08-abc-20261115",
   "AcademicLanguage": "ar",
   "CurriculumTranslationRequired": false,
   "TargetCurriculumPeriod": "2026-2027",
@@ -1395,6 +1395,35 @@
           "StepByStepSolutions": "1. حدد معامل المتغير وإشارته؛ 2. افحص أنه غير صفر؛ 3. اقسم أو اضرب لعزل المتغير؛ 4. احفظ الرمز عند موجب واقلبه عند سالب؛ 5. مثل الحل على خط الأعداد بنقطة مناسبة؛ 6. تحقق بقيمة تحقق وأخرى لا تحقق الأصل",
           "CommonMistakes": "خطأ: نسيان قلب الرمز عند القسمة بسالب. لماذا خطأ: ينعكس ترتيب الأعداد. التصويب: اقلب المتباينة مرة عند سالب. خطأ: قلب الرمز عند القسمة بموجب. لماذا خطأ: الموجب يحفظ الترتيب. التصويب: أبق الرمز. خطأ: قلب الرمز مرتين بلا سبب. لماذا خطأ: قد يعود خطأ إلى الاتجاه الأول. التصويب: عد عمليات الضرب/القسمة السالبة فقط.",
           "QuickSummary": "السالب يعكس رمز المتباينة. الموجب لا يعكسه. التحقق في الأصل مهم. الحلول تُمثّل بنقاط وأسهم. Cool-down أصلي بلا حلول: حل −٥ن≥١٥؛ حل س/−٤<٣؛ فسر لماذا س<٧ يصبح −س>−٧. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
+        }
+      ]
+    },
+    {
+      "LessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:06:08:TWO-STEP-INEQUALITIES",
+      "TitleProvenance": "PedagogicalSource",
+      "TitleSourceReference": "Grade_07/01_Student_Books/02-5-6.pdf PDF179-186 (printed 513-520); title read directly on lesson opening page; exercise categories sampled",
+      "OutcomeCodes": [],
+      "OfficialReferenceCode": null,
+      "IsSupporting": false,
+      "SourceUrl": "https://minhaji.moe.gov.ae/",
+      "SourceLocator": "Grade_07/01_Student_Books/02-5-6.pdf PDF179-186 (printed 513-520); title read directly on lesson opening page; exercise categories sampled",
+      "SourceTitle": "UAE Grade 7 Mathematics Arabic Student Book, owner-selected copy",
+      "SourcePublisher": "Internal curriculum-source provenance only; no learner publisher branding",
+      "SourceEdition": "Owner-selected Arabic local reference",
+      "SourceRights": "Original Edulytics math prose, examples and numerical tables. Textbook used for lesson skill/topic and sequence. No illustrations or literal publisher exercises copied.",
+      "SourceSha256": "7f9c251ff4055b410d58538d7e24f9fc96d03088bba3377adf6339ff78784531",
+      "RetrievalChannel": "Direct local scanned student-book visual lesson start and sampled exercise source pages",
+      "AdaptationStatus": "Arabic A-C drafted from source learning skill and sampled activities; complete literal exercise-by-exercise equivalence NOT_CLAIMED; tests authored NOT_RUN, runtime Stage D pending.",
+      "Translations": [
+        {
+          "CultureCode": "ar",
+          "Title": "حل المتباينات المكونة من خطوتين",
+          "Explanation": "لحل متباينة مكونة من خطوتين مثل ٥س+٧≤٣٢، نعكس العمليات بترتيب عكسي: نطرح ٧ أولًا لنحصل على ٥س≤٢٥، ثم نقسم على ٥ الموجب فنصل إلى س≤٥. لا يتغير الرمز هنا لأن القسمة على موجب. إذا كان المعامل سالبًا، كـ−٣س+٤<١٦، نطرح ٤ ثم نقسم على −٣ مع قلب رمز < إلى >؛ فتكون س>−٤. أثناء هذا الحل لا نقلب الرمز عند الطرح، وإنما عند القسمة على العدد السالب فقط. في مسائل الميزانية أو الصندوق يمكن أن تكون هناك رسوم ثابتة ورسوم لكل قطعة، ويُسأل عن الحد الأقصى من القطع. مثل رسوم ثابتة ١٥ وثمن كل نسخة ٨، والميزانية ٧٩: ٨ن+١٥≤٧٩ => ن≤٨؛ إذا كان عدد القطع صحيحًا غير سالب نختار ٠ إلى٨. لا نعتمد العدد العشري جزءًا من قطعة كاملة بلا تفسير.",
+          "KeyConceptsAndRules": "خطوتان: أ س+ب≤ج ⇒ أ س≤ج−ب مثل ٥س+٧≤٣٢. معامل موجب: ٥س≤٢٥ ⇒ س≤٥ مثل الحد ٥ مشمول. معامل سالب: −٣س<١٢ ⇒ س>−٤ مثل س=٠ يحقق الأصل. سياق حدود: ٨ن+١٥≤٧٩ ⇒ ن≤٨ مثل ن عدد صحيح ٠..٨.",
+          "WorkedExamples": "مثال 1: حل ٥س+٧≤٣٢. الخطوات: اطرح ٧: ٥س≤٢٥.؛ اقسم على ٥ الموجب.؛ س≤٥.. الإجابة س≤٥. التحقق: س=٥ يعطي ٣٢≤٣٢. مثال 2: حل −٣س+٤<١٦. الخطوات: اطرح ٤: −٣س<١٢.؛ اقسم على −٣ واقلب الرمز.؛ س>−٤.. الإجابة س>−٤. التحقق: س=٠ يعطي ٤<١٦. مثال 3: رسوم ١٥ و٨ لكل نسخة والميزانية ٧٩، ما أقصى نسخ كاملة؟ الخطوات: ٨ن+١٥≤٧٩.؛ ٨ن≤٦٤، ن≤٨.؛ الأقصى ٨ نسخ.. الإجابة ٨ نسخ. التحقق: ٨×٨+١٥=٧٩. مثال 4: حل −٢س−٣≥١١. الخطوات: أضف ٣: −٢س≥١٤.؛ اقسم على −٢ واقلب ≥ إلى ≤.؛ س≤−٧.. الإجابة س≤−٧. التحقق: س=−٧ يعطي ١٤−٣=١١.",
+          "StepByStepSolutions": "1. اكتب المتباينة مع الثابت والمعامل؛ 2. احذف الثابت بإضافة/طرح متوازن؛ 3. اعزل المتغير بالضرب/القسمة؛ 4. اقلب الرمز فقط إذا ضربت/قسمت بسالب؛ 5. مثّل النتيجة بنقطة وحد واتجاه؛ 6. تحقق بقيمة داخل الحل وخارجه مع مراعاة قيود السياق",
+          "CommonMistakes": "خطأ: قلب الرمز عند طرح الثابت. لماذا خطأ: الطرح لا يغير الترتيب. التصويب: اقلب فقط عند الضرب/القسمة بسالب. خطأ: نسيان قيد الأعداد الصحيحة في سياق النسخ. لماذا خطأ: قد تظهر كسور غير عملية. التصويب: أخذ الأعداد الصحيحة غير السالبة. خطأ: إلغاء سالب المعامل. لماذا خطأ: يعطي حلًا مقلوبًا. التصويب: احتفظ بالمعامل وإشارته.",
+          "QuickSummary": "حل خطوتين يبدأ بإزالة الثابت. القسمة على سالب تقلب الرمز. الحد يدخل عند ≤/≥. قيود السياق تحدد القيم المقبولة. Cool-down أصلي بلا حلول: حل ٤س−٣>١٧؛ حل −٦ص+٢≤٢٠؛ مسألة تكاليف ٩ ثابتة و٧ للوحدة بحد ٥٨: ما أقصى وحدات كاملة؟. الأسئلة المفتوحة والتفسير والرسم يراجعها المعلم."
         }
       ]
     }

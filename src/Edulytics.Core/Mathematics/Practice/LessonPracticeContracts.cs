@@ -8994,6 +8994,14 @@ public static class LessonPracticeContractRegistry
             ["algebra.linear.inequality.ax_plus_b_relation_c", "usccss.g6.u07.l09.inequality_solution_set_logic"],
             "UAE_G7_ARABIC_U06L07_PDF_171_178",
             "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/08, student 02-5-6.pdf printed 513-520.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:08:TWO-STEP-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:08:TWO-STEP-INEQUALITIES", "algebra.linear.inequality.solve",
+            "TWO-STEP-INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c", "algebra.linear.inequality.variables_both_sides"],
+            "UAE_G7_ARABIC_U06L08_PDF_179_186",
+            "READY_VERIFIED",Version);
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
             new LessonPracticeContract(
                 "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
