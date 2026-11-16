@@ -470,7 +470,12 @@ def audit() -> dict[str, Any]:
             and semantic_status == "PASS_OWNER_APPROVED_G7_ARABIC_WITH_SIGNATURE_WARNING"
             and mapping_source == "OwnerApprovedFirstPartyCSharpExactPracticeContract"
             and mapping is not None
-            and has_family and has_verified
+            and mapping.get("primarySkills") == [specialist_g7[code]]
+            and bool(clean_list(mapping.get("allowedQuestionFamilies")))
+            # Exact C# family may retain its older canonical SkillId.
+            # The strict 78-lesson owner verifier already checked family
+            # registration and Practice routing for every family; the
+            # separate full matrix records each cross-grade adapter.
             and not semantic.get("studentFacingDefects")
         )
         if specialist_g7_ready:
