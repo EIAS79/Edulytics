@@ -64,6 +64,20 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
         old=number.group()
         candidate=correct[:number.start()]+format(Decimal(old)+Decimal(11),"f")+correct[number.end():]
     else:
+        # These three families return explicit answer categories (not numeric
+        # responses). Preserve the actual server's choice vocabulary when
+        # submitting a syntactically valid but intentionally wrong answer.
+        # Do not alter the production engine or any Grade 1/US contracts.
+        family_options={
+            "supporting.statistics.collection_method":("census","sample"),
+            "supporting.statistics.scatter_correlation":("positive","negative","none"),
+            "supporting.statistics.compare_range":("A","B","equal"),
+        }.get(family)
+        if family_options is not None:
+            if correct.strip() not in family_options:
+                raise ValueError("Unknown category for scoped statistical family")
+            i=family_options.index(correct.strip())
+            return family_options[(i+1)%len(family_options)]
         categories={
             "YES":"NO","NO":"YES","TRUE":"FALSE","FALSE":"TRUE",
             "GREATER":"LESS","LESS":"GREATER","EQUAL":"GREATER",
@@ -552,6 +566,19 @@ if __name__=="__main__":
                 self.assertNotEqual(wrong,expected)
                 self.assertIn(wrong,("حادة","قائمة","منفرجة","مستقيمة",
                                      "حاد","قائم","منفرج","مستقيم"))
+        def test_g7_real_statistical_family_wrong_categories(self):
+            scenarios={
+                "supporting.statistics.collection_method":("census","sample"),
+                "supporting.statistics.scatter_correlation":("positive","negative","none"),
+                "supporting.statistics.compare_range":("A","B","equal"),
+            }
+            for family,choices in scenarios.items():
+                for answer in choices:
+                    wrong=grade6_syntactically_valid_wrong_answer(answer,family)
+                    self.assertIn(wrong,choices)
+                    self.assertNotEqual(wrong,answer)
+            self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,
+                              "unknown","supporting.statistics.collection_method")
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))
