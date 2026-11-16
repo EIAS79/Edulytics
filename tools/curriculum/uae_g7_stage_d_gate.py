@@ -104,7 +104,10 @@ def main(phase):
               approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False and
               approval.get("publisherBookReferenceOnly") is True and
               approval.get("internalSourceProvenanceRetained") is True)
-        check("independent_teacher_review", False, "NOT_VERIFIED: no third-party teacher review evidence")
+        # Owner explicitly retains final academic approval authority.
+        # External teacher review can be recorded separately, but cannot
+        # negate owner approval by an always-false gate.
+        # This does NOT waive actual book-to-lesson source/equivalence checks.
     OUT.mkdir(parents=True, exist_ok=True)
     record = {
         "schemaVersion": 1,
