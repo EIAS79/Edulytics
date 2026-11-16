@@ -10415,6 +10415,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L06_PDF254_261",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U03 L07, local Student Book PDF 266-275.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING", "algebra.linear.systems.classification", "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
+            ["algebra.linear.systems.solution_count.classify", "algebra.linear.systems.two_by_two.solve", "algebra.linear.graph_connections"],
+            "UAE_G8_GENERAL_AR_U03L07_PDF266_275",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
