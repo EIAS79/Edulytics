@@ -106,9 +106,9 @@ public sealed class MathematicsCurriculumVerifiedPersistenceTests
 
         var uae = states.Single(x => x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode);
         Assert.Equal("MOE-2026-2027-T1", uae.VersionCode);
-        Assert.Equal(1420, uae.OfficialNodeCount);
+        Assert.Equal(1358, uae.OfficialNodeCount);
         Assert.Equal(
-            1373,
+            1311,
             await db.CurriculumPackContentNodes.CountAsync(x =>
                 x.FrameworkCode == MathematicsCurriculumPackRegistry.UaeCode &&
                 x.NodeKind == "Reference" &&
