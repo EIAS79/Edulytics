@@ -402,7 +402,11 @@ def audit() -> dict[str, Any]:
         row["independentG6OwnerScopedExactPracticeContractVerified"]
         for row in rows)
     summary["grade6CrossGradeExactFamilyReuseCount"] = sum(
-        len(row["crossGradeExactFamilyReuse"]) for row in rows)
+        len(row["crossGradeExactFamilyReuse"]) for row in rows
+        if row["lessonCode"].startswith("PED:UAE-MOE-MATH:L6:GENERAL:"))
+    summary["grade7CrossGradeExactFamilyReuseCount"] = sum(
+        len(row["crossGradeExactFamilyReuse"]) for row in rows
+        if row["lessonCode"].startswith("PED:UAE-MOE-MATH:L7:GENERAL:"))
     g6_rows = [row for row in rows if row["lessonCode"].startswith(
         "PED:UAE-MOE-MATH:L6:GENERAL:")]
     if g6_rows and (
@@ -412,6 +416,18 @@ def audit() -> dict[str, Any]:
         internal_blockers.append(
             "Grade6 128 owner-approved first-party exact Practice routes "
             "are not fully bound to canonical skill-family contracts")
+    summary["grade7OwnerScopedExactPracticeContractCount"] = sum(
+        row["independentG7OwnerScopedExactPracticeContractVerified"]
+        for row in rows)
+    g7_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L7:GENERAL:")]
+    if g7_rows and (
+        len(g7_rows) != 78 or len(approved_g7) != 78
+        or summary["grade7OwnerScopedExactPracticeContractCount"] != 78
+    ):
+        internal_blockers.append(
+            "Grade7 78 owner-approved first-party exact Practice routes "
+            "are not fully bound to canonical Arabic skill-family contracts")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(
