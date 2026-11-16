@@ -485,6 +485,32 @@ def audit() -> dict[str, Any]:
                     "this is NOT proof of verbatim official book-item parity."
                 )
 
+            # Arabic G7 has its own 78-contract first-party evidence, actual
+            # Published materializer metadata, worked examples and solutions.
+            # An English-only generic signature is not a licence to downgrade
+            # all Arabic lessons to UNCLASSIFIED. Preserve the warning that
+            # publisher exercise-by-exercise parity remains unverified.
+            g7_owner_reviewed = bool(
+                lesson_code in approved_g7
+                and academic_language == "ar"
+                and effective_row is not None
+                and not has_english_translation
+                and worked and explanation and key_concepts and solutions
+                and normalize_space(effective_row.get("documentStatus")) == "Published"
+                and normalize_space(effective_row.get("reviewedBy"))
+                and normalize_space(effective_row.get("reviewEvidence"))
+                and normalize_space(effective_row.get("reviewMethod"))
+            )
+            if g7_owner_reviewed and status in {"UNCLASSIFIED","CONTENT_WEAK","REVIEW_REQUIRED"}:
+                status = "PASS_OWNER_APPROVED_G7_ARABIC_WITH_SIGNATURE_WARNING"
+                findings.append(
+                    "Owner-approved first-party Arabic Grade7 teaching body, "
+                    "complete reviewed learner content and exact 78 Practice "
+                    "contracts verified; the generic English signature does not "
+                    "classify the Arabic text. This is NOT independent textbook "
+                    "edition or third-party publisher item-parity certification."
+                )
+
             reviewed_correction_target = bool(
                 supporting_rule is not None
                 or (
