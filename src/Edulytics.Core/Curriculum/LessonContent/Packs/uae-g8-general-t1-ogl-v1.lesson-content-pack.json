@@ -379,10 +379,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 9",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 114–121; printed 81–88",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book cover 2025–2026, locally inspected",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "23f1309ecee4cdfafc77f3be48b8e57dae53eb34d6c64cf1a99bd4a8c79084f0",
       "CanonicalBodySha256": "1548ad2c9104453b58fc5cb4b0f8af9dd66c090218c895cf026a266a445ccd0d",
@@ -390,7 +390,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original student-book-aligned Arabic content; exact task-by-task publisher parity UNKNOWN; tests not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -401,6 +401,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Estimating Roots, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Estimating Roots: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تقدير الجذور",
+          "Explanation": "الهدف تقدير الجذر التربيعي أو التكعيبي لعدد ليس مربعًا أو مكعبًا كاملًا، وتحديد موضع تقديره على خط الأعداد. نستخدم عددين مربعين كاملين يحيطان بالعدد: 81<83<100، إذن 9<√83<10، والتقدير العددي نحو 9.11. ولتقدير ∛320 نجد 6^3=216 و7^3=343، فينتج 6<∛320<7، والتقدير حوالي 6.84. يمكن زيادة الدقة بمقارنة مربعات قيم عشرية أو استخدام آلة حاسبة للتحقق، لكن لا أدعي أن القيمة المقربة مساوية للجذر بالضبط. يطبق الطالب ذلك على أطوال أضلاع مربعات ومسافات قطرية ويصمم خط أعداد أصلي لرسم موقع الجذر. مصدر الوحدة يتضمن مختبر استكشاف سابقًا عن الجذور غير الكاملة؛ نعوضه بنشاط حسابي ورسمة أصلية.",
+          "KeyConceptsAndRules": "إذا أ^2<ن<(أ+1)^2، وكان أ عددًا صحيحًا غير سالب، فإن أ<√ن<أ+1. وللتقدير لأقرب عُشر اختبر قيمًا مثل 9.1^2=82.81 و9.2^2=84.64 لإثبات أن 9.1<√83<9.2، ثم قرّب لأقرب جزء من مئة عند الحاجة. وللجذر التكعيبي يجوز أ سالبًا لأن دالة المكعب متزايدة: إذا 6^3<320<7^3، فـ6<∛320<7. لا تستخدم √ن للأعداد السالبة في مجموعة الأعداد الحقيقية؛ قارن بين التقدير وحدود المربعات والحساب الدقيق.",
+          "WorkedExamples": "مثال1: √83 يقع بين 9 و10 لأن 81<83<100، وقيمته تقريبًا 9.11. مثال2: √28 بين 5 و6 لأن 25<28<36، وقيمته نحو 5.29. مثال3: ∛320 بين 6 و7 لأن 216<320<343، ونحو 6.84. مثال4: √2 بين 1 و2، ويقارب 1.414 عند ثلاث منازل. مثال5: طول ضلع مربع مساحته 65 م² يساوي √65≈8.06 م. مثال6: رتّب √50 و7.2 و√53 تصاعديًا؛ √50≈7.071، ثم 7.2، ثم √53≈7.280. مثال7: لا تكتب √200=100؛ فهي نحو14.14.",
+          "StepByStepSolutions": "أحدد هل العدد الواقع تحت الجذر تربيعي أم تكعيبي، وأتأكد أن مجال الجذر التربيعي حقيقي. أبحث عن أكبر قوة كاملة لا تتجاوز العدد وأصغر قوة كاملة أكبر منه. أسجل حدين للمقدار الجذري، مثل 8<√70<9. لتقدير أقرب جزء من مئة أتحقق بمربعات القيم العشرية القريبة أو بالحاسبة. أكتب ≈ عند التقريب لا =، وأضع العدد على خط الأعداد ضمن المدى المناسب. في مسائل المساحة والحجم أذكر وحدات الطول وأجعلها موجبة.",
+          "CommonMistakes": "أشيع خطأ هو مساواة الجذر بالتقدير بدل استخدام ≈: √2 ليس مساويًا 1.41 تمامًا. ومن الخطأ تقدير √83 بين 8 و9 لأن 9^2=81 و10^2=100. وعند الجذر التكعيبي يجب استعمال المكعبات الكاملة لا المربعات. لا يجوز تقدير √(-4) كعدد حقيقي. وعند ترتيب جذور متقاربة يجب استخدام دقة كافية حتى لا ينعكس ترتيبها.",
+          "QuickSummary": "أحاصر الجذر بين مربعين أو مكعبين كاملين، وأقرب إلى القيمة المطلوبة ثم أتحقق بالمربعات أو المكعبات وخط الأعداد. Cool-down أصلي: حدّد مجال √50، وقدّر √70 لأقرب عُشر، وحدد مجال ∛250، ثم فسّر لماذا نكتب √2≈1.414 لا √2=1.414. المبررات والرسم يراجعهما المعلم."
         }
       ]
     },

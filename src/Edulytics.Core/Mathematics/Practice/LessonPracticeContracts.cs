@@ -10300,6 +10300,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L08_PDF104_111",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 Arabic U01L09, PDF 114–121.
+        // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS", "number.exponents.positive_integer", "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
+            ["uae.g6.u06.l02.perfect_square", "supporting.algebra.quadratic_larger_root", "usccss.g6.u01.l17.original_square_cube_values"],
+            "UAE_G8_AR_U01L09_PDF114_121",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
