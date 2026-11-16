@@ -87,10 +87,16 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
 });
 test('Other grades and cross-school Practice negative-answer profiles remain explicit',()=>{
   const probe=fs.readFileSync(path.join(root,'tools/phase29/b001_practice_attempt_probe.py'),'utf8');
-  assert.ok(probe.includes('wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6", "uae-g7")'),
-    'The G6 profile must be added without replacing G2-G5 negative controls');
-  assert.ok(probe.includes('wrong_answer_profile=="uae-g2"') ||
-    probe.includes('wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6", "uae-g7")'));
+  assert.ok(probe.includes('if wrong_answer_profile == "uae-g7":'),
+    'Grade7 must have its own first-party wrong-answer branch');
+  assert.ok(probe.includes('grade7_syntactically_valid_wrong_answer(answer,family)'),
+    'Grade7 must retain its scoped category/number response helper');
+  assert.ok(probe.includes('elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):'),
+    'Existing Grade2-6 profiles must remain unchanged and explicit');
+  assert.ok(probe.includes('grade6_syntactically_valid_wrong_answer(answer,family)'),
+    'Existing Grade2-6 negative control helper must remain intact');
+  assert.ok(probe.includes('answer=syntactically_valid_wrong_answer(answer,family)'),
+    'The independent default/US negative control must not be replaced');
   for(const file of [engine,contracts]){
     const changes=git('diff','--unified=0',preG5,'HEAD','--',file);
     const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
