@@ -61,6 +61,10 @@ public sealed class UaeGrade7Unit9ExactSolidPracticeTests
             Assert.Equal(answer, SupportingPracticeCompletionEngine.Solve(family, p));
             Assert.True(SupportingPracticeCompletionEngine.Verify(family, p, answer));
             Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, answer));
+            var arabicIndic = string.Concat(answer.Select(ch => (char)('٠' + ch - '0')));
+            var easternPersian = string.Concat(answer.Select(ch => (char)('۰' + ch - '0')));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, arabicIndic));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, easternPersian));
             Assert.False(ExactSkillContractQuestionEngine.Verify(
                 family, p, (expected + 1).ToString(CultureInfo.InvariantCulture)));
             Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "NaN"));
