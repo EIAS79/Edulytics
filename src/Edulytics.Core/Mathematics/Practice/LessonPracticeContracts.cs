@@ -10388,6 +10388,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L03_PDF222_231",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General U03 L04; local Student Book PDF232-239.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM", "algebra.modeling.linear_relationship", "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.y_intercept_from_rule", "functions.rules.linear", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L04_PDF232_239",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -809,10 +809,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 232–239; printed 199–206",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local UAE Arabic Student Book 2025–2026 edition",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "8d8d609e6a631f2f162ae1db86435cba067f1e6c330480a25195d1602afdc266",
       "CanonicalBodySha256": "eeab167e09745584406230898bac2b30a30c8500e9bd2c4dc6e0db4d6e722ccd",
@@ -820,7 +820,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic skill-equivalent content, source checked; exact workbook one-to-one parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -831,6 +831,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Slope-Intercept Form, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Slope-Intercept Form: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "صيغة الميل والمقطع",
+          "Explanation": "كل علاقة خطية غير رأسية يمكن كتابتها في صورة ص=م س+ب، حيث م ميل المستقيم و ب مقطعه من محور ص أي قيمة ص عندما س=0. للمستقيم الذي يقطع محور ص عند (0،4) ويمر بالنقطة (2،10)، نجد م=(10−4)/2=3، فالمعادلة ص=3س+4. عند ص=−2س+5 يكون الميل -2 والمقطع الرأسي 5، ويبدأ الرسم عند (0،5) ثم يهبط مقدار 2 عند زيادة س بمقدار 1. تحافظ المعادلة على علاقة ما بين التكلفة الثابتة لكل خدمة والمعدل المتغير، لكن الرسم لا يمر بالأصل إذا ب≠0. يفرق الطالب بين المقطع السيني والمقطع الصادي، ويرسم نموذجًا أصليًا للخط من نقطتين.",
+          "KeyConceptsAndRules": "الصيغة ص=م س+ب تحقق أن (0،ب) نقطة على المستقيم و م=(فرق ص)/(فرق س) لأي نقطتين مختلفتي س. إذا عُلم الميل والمقطع اكتب المعادلة مباشرة، ثم احسب نقطة أخرى لتمثيلها. مثال الميل 3 والمقطع -4 ⇒ ص=3س−4. إذا عُلم الرسم أو جدول، احسب فرق ص/فرق س ثم اجعل س=0 لإيجاد ب. عند المعادلة 3س+ص=−4 نحصل ص=−3س−4، أي م=-3 وب=-4. لا توجد صيغة ص=م س+ب للمستقيم الرأسي س=ثابت، لأن له ميلًا غير معرّف.",
+          "WorkedExamples": "مثال 1: ص=(2/3)س−4: الميل 2/3، والمقطع الصادي −4. مثال 2: الميل -3 والمقطع 5 ⇒ ص=−3س+5. مثال 3: خط يمر بـ(0،4)،(2،10) ⇒ م=3 وب=4 ومنه ص=3س+4. مثال 4: إذا كانت تكلفة الاشتراك 25 درهمًا ثابتًا و8 دراهم لكل جلسة فالتمثيل ص=8س+25، والمقطع 25. مثال 5: حوّل 3س+ص=−4 إلى ص=−3س−4، وحدد المقطع. مثال 6: خط يمر بـ(−2،0)،(0،−6)، ميله -3، وصيغته ص=−3س−6.",
+          "StepByStepSolutions": "أنظر أولًا إلى ما إذا كان المستقيم رأسيًا؛ إذا كان س=قيمة ثابتة فلا أكتب صيغة ميل ومقطع له. أستخرج الميل من المعادلة أو من نقطتين: (ص₂−ص₁)/(س₂−س₁). أستخرج المقطع ب من النقطة ذات س=0 أو بالتعويض ب=ص−م س. أكتب ص=م س+ب مع الإشارات الصحيحة. أبدأ رسم الخط من (0،ب) وأتحرك وفق الميل أو نقطة أخرى، ثم أتحقق من اتساق زوج ثالث إذا أتيح. في سياق التكلفة أتأكد أن ب هو الثابت وليس الميل.",
+          "CommonMistakes": "تبديل الميل بالمقطع الصادي خطأ: في ص=3س+4 الميل 3 والمقطع 4. وقول إن المقطع هو تقاطع المحور السيني يخلط بين المحورين. لا نخلط ميلًا -2 مع تغير رأسي +2 عند تحرك أفقي موجب. عند إعادة ترتيب أ س+ب ص=ج يجب القسمة على معامل ص بأكمله. إذا كان الخط رأسيًا فليس له ميل معرف، فلا تستعمل ص=م س+ب قسرًا.",
+          "QuickSummary": "الصيغة ص=م س+ب تجمع ميل المستقيم ومقطعه الصادي. Cool-down أصلي: (1) استخرج م و ب من ص=−3س+7. (2) اكتب معادلة ميلها 4 وتقطع محور ص عند −2. (3) اكتب معادلة النقطتين (0،5)،(2،11). (4) علل عدم تمثيل س=4 بهذه الصيغة. يراجع المعلم الرسم والتفسير."
         }
       ]
     },
