@@ -10451,6 +10451,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_U04L02_PDF310_317",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic local Student Book U04:L03, PDF320–327.
+        // Reuse existing exact numeric/table families. Open diagrams,
+        // equivalence and conceptual explanation teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS", "functions.relations.unique_output.classify", "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
+            ["functions.relations.unique_output.classify", "functions.notation.evaluate_context", "functions.rules.linear", "functions.domain_range.context"],
+            "UAE_G8_GENERAL_U04L03_PDF320_327",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

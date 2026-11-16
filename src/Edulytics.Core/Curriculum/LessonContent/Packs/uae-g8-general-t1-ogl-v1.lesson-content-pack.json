@@ -1110,10 +1110,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:04:03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 4 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF320–327, printed 287–294",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local Arabic UAE Student Book 2025–2026",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "5d900e68e344f44c547634ac9ae4010d0ed2e128c2f89412a3e2b717cb17f692",
       "CanonicalBodySha256": "37e520bb054e3e7f6c37b25fd94862e66a3d74945fd0ff381bb0d37bd30f4c88",
@@ -1121,7 +1121,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Owner-selected textbook skill comparison plus Edulytics-authored Arabic candidate; publisher exact item parity unknown; StageD not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1132,6 +1132,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Functions, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Functions: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الدوال",
+          "Explanation": "الدالة علاقة تجعل كل قيمة مدخلة س مرتبطة بقيمة مخرجة ص واحدة فقط. يمكن أن يكون لمدخلين مختلفين المخرج نفسه، لكن لا يصح أن يكون المدخل نفسه مرتبطًا بمخرجين مختلفين. مثلاً الأزواج {(1،4)،(2،4)،(3،7)} تمثل دالة؛ أما {(1،4)،(1،6)،(2،8)} فليست دالة. يرمز د(س) إلى مخرج الدالة عند إدخال س، وليس ضرب د في س. إذا كانت د(س)=2س+1، فإن د(−3)=−5. الجدول والمخطط والتمثيل البياني يمكن استخدامها جميعًا؛ يقرر اختبار الخط الرأسي إن كان أي خط س=ثابت يقطع الرسم في أكثر من نقطة. نشاط أصلي: قارن تكلفة ثابتة 30 درهمًا مضافًا إليها 1.5 عن كل صفحة، وأوجد الدالة ك(ن)=30+1.5ن ومجال صفحات صحيح غير سالب.",
+          "KeyConceptsAndRules": "لكل س من المجال يجب وجود مخرج واحد لا أكثر في الدالة المعرّفة. إذا كانت العلاقة تمثل نقاطًا فقط، فإن تكرار س مع ص مختلف يثبت أنها ليست دالة. اختبار الخط الرأسي: إذا قطع خط رأسي رسم العلاقة عند نقطتين أو أكثر فلا تمثل دالة ص في س. في ترميز د(س)=3س−4، د(2)=2، ود(0)=−4. مجال نموذج عدد أشياء قد يكون {0،1،2،...} بينما مجال نموذج زمن مستمر قد يشمل فترات. المدى هو قيم المخرجات الواقعية ضمن المجال المختار. عدم الخلط بين د(س) و قيمة س ضروري.",
+          "WorkedExamples": "مثال1: د(س)=2س+1، إذن د(−3)=2(−3)+1=−5. مثال2: {(1،4)،(2،4)،(3،7)} دالة لأن لكل مدخل قيمة واحدة. مثال3: {(1،4)،(1،6),(2،8)} ليست دالة لأن 1 يقابل 4 و6. مثال4: د(س)=−3س+5، د(4)=−7. مثال5: خدمة طباعة 30 درهمًا رسمًا ثابتًا و1.5 درهم للصفحة تعطي ك(ن)=30+1.5ن، وك(20)=60 درهمًا. مثال6: المستقيم العمودي س=2 ليس رسم دالة ص في س لأنه يضم قيم ص متعددة للس نفسها.",
+          "StepByStepSolutions": "1) حدد قيم س المدخلة وقيم ص المخرجة من تمثيل العلاقة. 2) إذا كانت النقاط محدودة، تحقق من أن كل س يقابل ص واحدة؛ تكرار ص مسموح. 3) إذا كان رسمًا مستمرًا، اختبر قطع أي خط رأسي أكثر من مرة. 4) إذا أعطيت قاعدة د(س)، عوض عن س بالقيمة داخل الأقواس ثم نفذ العمليات بالترتيب. 5) كوّن جدولًا للمدخلات والمخرجات إن طُلب وحدد مجاله ومداه. 6) في السياق الواقعي راع إذا كان المجال أعدادًا صحيحة أو فترات حقيقية. 7) عالج الأسئلة التي تتطلب تفسير شكل الرسم بمراجعة المعلم.",
+          "CommonMistakes": "بعض الطلاب يرفضون دالة فيها مخرج مكرر مثل {(1،4)،(2،4)} رغم أنها دالة؛ الحظر على تكرار المدخل مع أكثر من مخرج، وليس على تكرار المخرج. لا تعتبر د(3) ضرب العدد 3 في الحرف د. قد يبدو رسم دائرة علاقة لكنه ليس دالة ص في س لاجتياز خط رأسي بنقطتين. لا تجعل مجال عدد الورق يشمل نصف ورقة إن كان معنى المسألة عدد صفحات مكتملة. جدول ينقصه مخرج لمدخل معلن لا يوثق دالة تامة على ذلك المجال.",
+          "QuickSummary": "الدالة علاقة ذات مخرج واحد لكل مدخل، ويمكن اختبارها من أزواج مرتبة أو رسم رأسي وتقييمها بد(س). Cool-down أصلي: (1) هل {(0،2)،(1،2)،(1،3)} دالة؟ علل. (2) احسب د(−2) إذا د(س)=4س+7. (3) صف المجال المناسب لعدد رسوم طباعة يبدأ بـ25 درهمًا ويزيد 2 عن كل صفحة. (4) ارسم علاقة يرفضها اختبار الخط الرأسي. المعلم يراجع الرسم والتفسير."
         }
       ]
     },
