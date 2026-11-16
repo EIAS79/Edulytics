@@ -138,6 +138,43 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
     return candidate
 
 
+def grade7_syntactically_valid_wrong_answer(correct, family=None):
+    """Preserve a *valid alternative mathematical category* for UAE Grade7
+    angle-classification/angle-relation items, otherwise reuse G6's numeric
+    perturbation. This is an E2E negative answer, not an engine/fallback change.
+    """
+    if family in (
+        "supporting.geometry.angle_classify",
+        "uae.g3.u13.l02.angle_types",
+        "usccss.g7.u07.vertical_angle",
+    ):
+        # Each alternative is an existing mathematical angle/angle-pair type.
+        # Preserve the source answer's language and letter case.
+        domains = (
+            ("acute", "obtuse", "right", "straight", "reflex"),
+            ("acute angle", "obtuse angle", "right angle", "straight angle", "reflex angle"),
+            ("vertical", "adjacent", "complementary", "supplementary"),
+            ("vertical angles", "adjacent angles", "complementary angles", "supplementary angles"),
+            ("حادة", "منفرجة", "قائمة", "مستقيمة", "منعكسة"),
+            ("حادّة", "منفرجة", "قائمة", "مستقيمة", "منعكسة"),
+            ("زاوية حادة", "زاوية منفرجة", "زاوية قائمة", "زاوية مستقيمة", "زاوية منعكسة"),
+            ("متقابلتان بالرأس", "متجاورتان", "متتامتان", "متكاملتان"),
+            ("متقابلتان", "متجاورتان", "متتامتان", "متكاملتان"),
+        )
+        clean = correct.strip()
+        for group in domains:
+            matches = [item.casefold() for item in group]
+            if clean.casefold() in matches:
+                idx = matches.index(clean.casefold())
+                next_item = group[(idx + 1) % len(group)]
+                if clean.isupper() and clean.isascii():
+                    return next_item.upper()
+                if clean.islower() and clean.isascii():
+                    return next_item.lower()
+                return next_item
+    return grade6_syntactically_valid_wrong_answer(correct, family)
+
+
 def syntactically_valid_wrong_answer(correct, family=None):
     """Create a real incorrect Grade 1 submission, preserving its answer
     field/schema; unlike a malformed sentinel, this exercises math grading.
@@ -355,7 +392,9 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
             # G2 reuses many first-party/shared numeric and category families.
             # Opt-in only: never change existing US or G1 negative controls.
-            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6", "uae-g7"):
+            if wrong_answer_profile == "uae-g7":
+                answer=grade7_syntactically_valid_wrong_answer(answer,family)
+            elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
                 answer=grade6_syntactically_valid_wrong_answer(answer,family)
             else:
                 answer=syntactically_valid_wrong_answer(answer,family)
@@ -457,6 +496,20 @@ if __name__=="__main__":
             self.assertEqual(syntactically_valid_wrong_answer(
                 "-2.5","algebra.linear.ax_plus_b_equals_c"),"8.5")
             self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,"")
+        def test_g7_angle_categories_preserve_valid_labels(self):
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "ACUTE", "supporting.geometry.angle_classify"), "OBTUSE")
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "زاوية قائمة", "uae.g3.u13.l02.angle_types"),
+                "زاوية مستقيمة")
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "90", "supporting.geometry.angle_classify"), "101")
+            self.assertRaises(ValueError,
+                grade7_syntactically_valid_wrong_answer, "UNKNOWN_LABEL",
+                "supporting.geometry.angle_classify")
         def test_g6_arabic_categories_are_legitimate_wrong_alternatives(self):
             domains=[
                 ("الأول","uae.g6.u05.l10.coordinate_region"),
