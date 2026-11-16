@@ -336,10 +336,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 8",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 104–111; printed 71–78; subsequent square-root exploration",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local Arabic Student Book cover 2025–2026",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "5fbbdef70178767fcaf5ce18c624bebea232f80fd3bb86d34e1d7aa64c178293",
       "CanonicalBodySha256": "7b8d4773fe8f42f0909ee32cb2185a5ac480f19b445dfc0ff25338ef814cd022",
@@ -347,7 +347,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original authored Arabic academic correction; exact publisher-item parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -358,6 +358,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Roots, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Roots: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الجذور",
+          "Explanation": "الجذر التربيعي الرئيسي لعدد غير سالب هو العدد غير السالب الذي مربعه يساوي ذلك العدد. مثل √64=8، وليس ±8؛ لكن المعادلة س^2=64 لها حلان س=8 أو س=-8. إذا وضعنا سالبًا خارج الجذر فإن -√25=-5، وإذا كان تحت جذر تربيعي لعدد سالب مثل √(-16) فلا توجد قيمة حقيقية. الجذر التكعيبي لأي عدد حقيقي هو العدد الذي مكعبه يساويه؛ مثل ∛(-27)=-3، و∛125=5. يطبق الطالب ذلك على مساحة مربع طول ضلعه مجهول وحجم مكعب. مختبر استكشاف لاحق للوحدة يستخدم نماذج مربعات بمساحات غير كاملة ومراجعة بشرية للرسم.",
+          "KeyConceptsAndRules": "√س هو الجذر التربيعي الرئيسي غير السالب عندما س≥0. إذا أ^2=س غير سالب، يكون حل المعادلة أ=±√س عندما س>0، وحل وحيد صفر إذا س=0. ولا يجوز كتابة √(-16)=4 أو -4 على مجموعة الأعداد الحقيقية. أما ∛س فمعرّف لكل عدد حقيقي، حيث ∛(-125)=-5. مثل √(9/16)=3/4، و-√49=-7، و∛(8/27)=2/3، وحل س^3=-64 هو س=-4. المربعات الكاملة والمكعبات الكاملة تساعد على الحساب دون آلة.",
+          "WorkedExamples": "مثال1: √64=8 لأن 8^2=64. مثال2: -√(25/36)=-5/6. مثال3: المعادلة س^2=169 حلها س=±13، لكن √169=13 فقط. مثال4: ∛(-27)=-3. مثال5: ∛(64/125)=4/5. مثال6: إذا كانت مساحة مربع 121 م² فطول ضلعه 11 م، ولا نختار طولًا سالبًا. مثال7: مكعب حجمه 729 سم³ طول حرفه 9 سم. مثال8: √(-49) ليس عددًا حقيقيًا، بينما ∛(-64)=-4.",
+          "StepByStepSolutions": "حدد هل الجذر تربيعي أم تكعيبي، وافحص مجال العدد تحت جذر تربيعي: يجب أن يكون غير سالب في الأعداد الحقيقية. ابحث عن مربع كامل أو مكعب كامل معروف، أو حل المعادلة بالقوة العكسية. للجذر الرئيسي √س اختر الناتج غير السالب؛ وعند حل س^2=م أعد ± إذا كانت م موجبة، ولا تنس أن 0 له حل واحد. للجذر التكعيبي احتفظ بإشارة العدد: ∛(-8)=-2. في مسائل المساحة والحجم اذكر الوحدة وطبيعة طول الضلع الموجب ثم تحقق بتربيعه أو تكعيبه.",
+          "CommonMistakes": "كتابة √25=±5 خطأ لأن الجذر الرئيسي 5 فقط؛ الرمز ± ينشأ عند حل المعادلة س^2=25. ويخطئ من يكتب √(-9)=-3 ضمن الأعداد الحقيقية؛ لا جذر تربيعي حقيقي لعدد سالب. أما ∛(-8)=-2 فصحيح لأن المكعب السالب سالب. ولا يصح تقدير √(a+b)=√a+√b عموما، مثل √(9+16)=5 وليس 3+4=7. في الجذر التربيعي لكسر موجب احسب الجذرين للمربعين الكاملين بدقة.",
+          "QuickSummary": "أميز الجذر التربيعي الرئيسي غير السالب من حلول معادلة مربعة، وأستخدم الجذر التكعيبي للأعداد الموجبة والسالبة. أطبق على أطوال المربعات والمكعبات، مع وحدات صحيحة. Cool-down أصلي: √81، و-√(9/16)، و∛(-64)، ثم فسر لماذا √(-36) لا يمثل عددًا حقيقيًا ولماذا حل س^2=49 ليس عددًا واحدًا. التفسير والرسم يراجع المعلم."
         }
       ]
     },

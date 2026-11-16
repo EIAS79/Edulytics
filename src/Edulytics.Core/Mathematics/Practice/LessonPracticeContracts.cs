@@ -10292,6 +10292,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L07_PDF92_99",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U01L08; local Arabic source PDF 104–111.
+        // Reuse established numeric family; handwritten proof/diagram teacher scored.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS", "number.exponents.positive_integer", "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
+            ["uae.g6.u06.l02.perfect_square", "usccss.g6.u01.l17.original_square_cube_values", "uae.g6.u06.l04.cube_volume"],
+            "UAE_G8_AR_U01L08_PDF104_111",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
