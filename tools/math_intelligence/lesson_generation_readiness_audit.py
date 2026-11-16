@@ -12,6 +12,7 @@ from lesson_skill_resolution_audit import (
     audit as skill_resolution_audit,
     separately_certified_g4_practice,
     owner_approved_g6_declared_practice,
+    owner_approved_g7_declared_practice,
     G4_CONTRACTS,
 )
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
@@ -111,6 +112,36 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
                 "officialOutcomeCodes": [],
                 "technicalReadiness": "PENDING_CURRENT_SHA_STAGE_D_RUNTIME",
             }
+    specialist_g7 = owner_approved_g7_declared_practice()
+    if len(specialist_g7) != 78:
+        errors.append("G7 owner-approved 78 Arabic exact skill/Practice contracts are missing or unverified")
+    else:
+        # G7 is an independently owner-approved first-party 78-lesson
+        # scope, not a claim of publisher edition parity. Verify every
+        # exact Practice contract and never invent official outcome links.
+        import re
+        text = G4_CONTRACTS.read_text(encoding="utf-8-sig")
+        declaration = re.compile(
+            r'byLesson\["(PED:UAE-MOE-MATH:L7:GENERAL:[^"]+)"\]\s*'
+            r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+            r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]', re.S)
+        contract_rows = declaration.findall(text)
+        if len(contract_rows) != 78:
+            errors.append("G7 source-scoped exact Practice contract count drift")
+        for code, declared, skill, mechanic, raw in contract_rows:
+            family_ids = re.findall(r'"([^"]+)"', raw)
+            if (code != declared or specialist_g7.get(code) != skill
+                    or not mechanic or not family_ids or code in result):
+                errors.append("G7 invalid or colliding owner mapping: " + code)
+                continue
+            result[code] = {
+                "lessonCode": code,
+                "sourceType": "OwnerApprovedFirstPartyCSharpExactPracticeContract",
+                "primarySkills": [skill],
+                "allowedQuestionFamilies": family_ids,
+                "officialOutcomeCodes": [],
+                "technicalReadiness": "PENDING_CURRENT_SHA_STAGE_D_RUNTIME",
+            }
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
@@ -118,6 +149,7 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
         and row["lessonCode"] not in specialist_g12
         and row["lessonCode"] not in specialist_g4
         and row["lessonCode"] not in specialist_g6
+        and row["lessonCode"] not in specialist_g7
     )
     return result, errors
 
@@ -316,6 +348,7 @@ def audit() -> dict[str, Any]:
     specialist_g12=independently_certified_g12()
     specialist_g4=separately_certified_g4_practice()
     specialist_g6=owner_approved_g6_declared_practice()
+    specialist_g7=owner_approved_g7_declared_practice()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
@@ -430,6 +463,29 @@ def audit() -> dict[str, Any]:
                 "status is not a textbook exercise-parity certificate."
             ]
 
+        specialist_g7_ready=bool(
+            len(specialist_g7) == 78
+            and code in specialist_g7
+            and skill_status == "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING"
+            and semantic_status == "PASS_OWNER_APPROVED_G7_ARABIC_WITH_SIGNATURE_WARNING"
+            and mapping_source == "OwnerApprovedFirstPartyCSharpExactPracticeContract"
+            and mapping is not None
+            and has_family and has_verified
+            and not semantic.get("studentFacingDefects")
+        )
+        if specialist_g7_ready:
+            # This is an audited owner-scoped exact generation contract.
+            # Stage D 78 HTTPS pages, 234 persisted Practice answers,
+            # Chromium RTL and isolated 0->78 DB proof remain mandatory.
+            readiness="READY_CONTEXTUAL"
+            reasons=[
+                "Owner-approved first-party UAE Grade7 Arabic: registered "
+                "exact lesson-specific skill and question-family mapping "
+                "and independently reviewed learner material. Runtime "
+                "Stage D remains mandatory. No literal textbook parity "
+                "or publisher artwork rights are asserted."
+            ]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -464,7 +520,8 @@ def audit() -> dict[str, Any]:
             "specialistGrade12AuthenticatedPractice": specialist_g12_ready,
             "specialistGrade4ExactPractice": specialist_g4_ready,
             "specialistGrade6OwnerScopedContractPendingRuntime": specialist_g6_ready,
-            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready) else capability_reasons),
+            "specialistGrade7OwnerScopedContractPendingRuntime": specialist_g7_ready,
+            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready) else capability_reasons),
         })
 
     summary["grade4SpecialistExactPracticeCount"] = sum(
@@ -481,6 +538,13 @@ def audit() -> dict[str, Any]:
     if grade6_seen and (len(grade6_seen)!=128 or
         summary["grade6OwnerScopedPendingStageDCount"]!=128):
         blockers.append("G6 128 owner-approved first-party exact Practice contracts not scope-verified")
+    summary["grade7OwnerScopedPendingStageDCount"] = sum(
+        r["specialistGrade7OwnerScopedContractPendingRuntime"] for r in rows)
+    grade7_seen={c for c in all_codes if c.startswith(
+        "PED:UAE-MOE-MATH:L7:GENERAL:")}
+    if grade7_seen and (len(grade7_seen)!=78 or
+        summary["grade7OwnerScopedPendingStageDCount"]!=78):
+        blockers.append("G7 78 owner-approved first-party exact Practice contracts not scope-verified")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         r["specialistGrade12AuthenticatedPractice"] for r in rows)
     grade12_seen={c for c in all_codes if c.startswith(
