@@ -8887,7 +8887,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES", "sequences.core",
             "ARITHMETIC-SEQUENCES",
-            ["sequences.arithmetic.nth_term.exact", "supporting.sequences.next_term"],
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
             "UAE_G7_ARABIC_U05L02_PDF_23_32",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 05/03, student 02-5-6.pdf printed 367-374.
