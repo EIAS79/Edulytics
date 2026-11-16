@@ -65,7 +65,14 @@ def main(phase):
         check("sequential_display_order_matches_textbook_units", order_by_sort == expected_printed, {"actual_order_by_unit": order_by_sort, "expected": expected_printed})
         check("course_version_spans_all_terms_without_t1_only", not str(bp.get("VersionCode", "")).endswith("-T1"), {"version": bp.get("VersionCode")})
         check("source_snapshot_id_defined", isinstance(snapshot_id, str) and bool(snapshot_id.strip()))
-        check("no_runtime_english_fallback", False, "NOT_RUN: requires authenticated API/DOM fail-closed negative-case testing")
+        # A structural gate can prove files are retired, not a runtime HTTP negative.
+        # All 78 runtime negative-locale checks live in authenticated-e2e.
+        retired_blue = BLUE.parent / "uae-g7-general-t1-ogl-v1.lesson-blueprint.json"
+        retired_body = BODY.parent / "uae-g7-general-t1-ogl-v1.lesson-content-pack.json"
+        check("legacy_english_general_runtime_packs_absent",
+              not retired_blue.exists() and not retired_body.exists(),
+              {"retiredBlueprintPresent": retired_blue.exists(),
+               "retiredContentPresent": retired_body.exists()})
     else:
         handoff = G7 / "grade7-a-c-handoff.md"
         check("source_handoff_present", handoff.is_file())
