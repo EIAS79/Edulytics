@@ -63,7 +63,16 @@ def main(phase):
         contracts_text = CONTRACTS.read_text(encoding="utf-8")
         check("all_codes_in_practice_contracts", all(c in contracts_text for c in codes), {"contracts_present": sum(c in contracts_text for c in codes), "expected": len(codes)})
         check("sequential_display_order_matches_textbook_units", order_by_sort == expected_printed, {"actual_order_by_unit": order_by_sort, "expected": expected_printed})
-        check("course_version_spans_all_terms_without_t1_only", not str(bp.get("VersionCode", "")).endswith("-T1"), {"version": bp.get("VersionCode")})
+        # The shared UAE framework uses an opaque -T1 version identifier.
+        # Lesson-level academic-year applicability is distinct from that
+        # database framework identity and is not certified by this check.
+        check("course_version_matches_accepted_database_framework",
+              bp.get("VersionCode") == body.get("VersionCode") == "MOE-2026-2027-T1",
+              {"frameworkVersion":bp.get("VersionCode"),
+               "contentVersion":body.get("VersionCode"),
+               "targetSchoolYear":body.get("TargetCurriculumPeriod")})
+        check("target_academic_year_is_explicit",
+              body.get("TargetCurriculumPeriod") == "2026-2027")
         check("source_snapshot_id_defined", isinstance(snapshot_id, str) and bool(snapshot_id.strip()))
         # A structural gate can prove files are retired, not a runtime HTTP negative.
         # All 78 runtime negative-locale checks live in authenticated-e2e.
