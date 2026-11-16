@@ -10276,6 +10276,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L05_PDF76_83",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U01L06; local PDF 84–91.
+        // Reuse supported numerical families; teacher reviews open justification.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION", "supporting.indices.roots_standard_form", "SCIENTIFIC_NOTATION_NORMALIZED_DECIMAL_AND_TEN_POWER",
+            ["supporting.standard_form.power10_exponent", "supporting.powers10.evaluate", "supporting.powers10.missing_exponent"],
+            "UAE_G8_AR_U01L06_PDF84_91",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

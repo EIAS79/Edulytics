@@ -250,10 +250,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 6",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 84–91; printed 51–58",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book 2025–2026 scanned local",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "0508fcc2f6ac39705f3dbc9683faf2b7ed5dbb02672feb254a36d6921da84bb1",
       "CanonicalBodySha256": "2f7fa7707a348fa01a13deceb2723dc9ac68d7fc1e02d7c897e0db962ba8b9e4",
@@ -261,7 +261,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic student-book skill authoring; exact item parity UNKNOWN; Stage D NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -272,6 +272,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Scientific Notation, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Scientific Notation: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الترميز العلمي",
+          "Explanation": "الترميز العلمي طريقة دقيقة لكتابة أعداد كبيرة جدًا أو صغيرة جدًا في صورة أ×10^ن، بحيث 1≤|أ|<10 ون عدد صحيح؛ ولا يُكتب الصفر بهذه الصيغة إلا باتفاق منفصل. يحرك الأس الموجب الفاصلة العشرية نحو اليمين عند العودة للصيغة القياسية، والأس السالب نحو اليسار. مثل 5.34×10^4=53400، و3.27×10^-3=0.00327. لتحويل 4250000 إلى الترميز العلمي ننقل الفاصلة إلى 4.25 ونعد ست مراتب، فنكتب 4.25×10^6. في تمثيلات أصلية للبيانات نسجل أعدادًا ضخمة لمسافات فلكية وأعدادًا صغيرة لسماكات دون إعادة رسوم المصدر. نتعلم المقارنة بين عددين بالأس ومقدار المعامل عند تساوي الأس.",
+          "KeyConceptsAndRules": "الصيغة العلمية القياسية أ×10^ن، حيث 1≤|أ|<10، ون عدد صحيح. كل نقل للفاصلة نحو اليسار عند كتابة عدد كبير يجعل الأس أكبر موجبًا؛ مثال 3725000=3.725×10^6. وكل نقل نحو اليمين عند كتابة عدد صغير جدًا يعطي أسًا سالبًا؛ 0.000316=3.16×10^-4. للعودة إلى الصيغة الاعتيادية نفذ الضرب الحقيقي في 10^ن. العدد 53.4×10^3 يساوي 5.34×10^4 لكنه ليس في الصورة العلمية المعيارية لأن |53.4|≥10. عند المقارنة لنفس الإشارة، يكون الأس الأكبر عادة أكبر بعد توحيد المعاملات المعيارية؛ والقيمة السالبة تحتاج مقارنة حسابية بعناية.",
+          "WorkedExamples": "مثال1: 5.34×10^4=53400. مثال2: 3.27×10^-3=0.00327. مثال3: 3725000=3.725×10^6. مثال4: 0.000316=3.16×10^-4. مثال5: قارن 7.15×10^6 و1.83×10^7؛ الثاني أكبر لأن أسه أكبر. مثال6: اكتب -0.00048 علميًا: -4.8×10^-4. مثال7: عدد قياس كبير 8400000000 يكتب 8.4×10^9، ثم تحقق بإرجاع الفاصلة تسع خانات.",
+          "StepByStepSolutions": "ابدأ بتحديد هل العدد كبير جدًا أم صغيرًا جدًا وإشارته. حرّك الفاصلة حتى يتبقى رقم غير صفري واحد قبلها؛ يكون المعامل بقيمة مطلقة من 1 إلى أقل من 10. احسب عدد مرات التحريك بدقة؛ أعد كتابته كأس موجب إذا انتقلت الفاصلة لليسار في العدد الكبير، أو سالب إذا انتقلت لليمين في الصغير. مثال 0.0072=7.2×10^-3. للاتجاه العكسي اضرب في 10^ن وانقل الفاصلة بما يقتضيه الأس، ثم تحقق من القيمة الأصلية، ولا تخلط صفرًا إضافيًا في التحويل.",
+          "CommonMistakes": "كتابة 25×10^3 بوصفها صيغة علمية معيارية خطأ، لأن المعامل يجب أن يكون أقل من 10 في القيمة المطلقة؛ الصحيح 2.5×10^4. وإشارة الأس لعدد صغير مثل 0.0007 يجب أن تكون سالبة: 7×10^-4. لا يعتبر 4.7×10^-3 مساويًا 4700؛ الصحيح 0.0047. وعند المقارنة قد تقارن معاملات عددين لهما أسس مختلفة بلا توحيد فتخطيء. العدد السالب الكبير في القيمة المطلقة أصغر حسابيًا من السالب القريب من الصفر.",
+          "QuickSummary": "أكتب العدد على الصورة أ×10^ن مع 1≤|أ|<10، وأحدد إشارة الأس بعد عدد نقلات الفاصلة. أستطيع التحويل للصيغة الاعتيادية والمقارنة بدقة. Cool-down أصلي: اكتب 0.000072 و6,450,000 بالترميز العلمي؛ حوّل 2.18×10^-2 إلى عدد عشري؛ قارن 7.5×10^5 و2.3×10^6 وفسر. مراجعة المعلم للتفسير والسياق."
         }
       ]
     },
