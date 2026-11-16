@@ -89,17 +89,39 @@ def main(phase):
         check("all_78_lesson_pdf_shas", all(isinstance(x.get("sourceStudentBookSha256"), str) and len(x["sourceStudentBookSha256"]) == 64 for x in index_lessons))
         check("all_78_ready", all(x.get("stageABCStatus") == "READY_FOR_STAGE_D" for x in index_lessons))
         check("source_snapshot_id_defined", isinstance(snapshot_id, str) and bool(snapshot_id.strip()))
-        check("unit_and_lesson_term_resolved", all(x.get("term") or x.get("Term") for x in index_lessons))
+        # Release basis follows the owner-approved, first-party Grade 5/6
+        # workflow. An UNKNOWN publisher exercise/edition parity stays UNKNOWN
+        # and MUST NOT be silently represented as a 100% source claim.
+        term_known = all(x.get("term") or x.get("Term") for x in index_lessons)
         ledgers = [data(G7 / f"lesson-{i:03d}-atomic-coverage.json") for i in range(1, 79)]
-        check("element_level_denominators_known", all(isinstance(x.get("sourceElementCount"), int) and isinstance(x.get("verifiedEquivalentCount"), int) for x in ledgers), "Per-question anchors are not a complete educational element 1:1 map")
-        check("source_parity_evidenced", progress.get("sourceParityPercent") == 100 and all(x.get("verifiedEquivalentCount") == x.get("sourceElementCount") for x in ledgers), {"reported_percent": progress.get("sourceParityPercent")})
+        literal_counts_known = all(
+            isinstance(x.get("sourceElementCount"), int) and
+            isinstance(x.get("verifiedEquivalentCount"), int) for x in ledgers)
+        literal_parity_proven = (
+            literal_counts_known and progress.get("sourceParityPercent") == 100 and
+            all(x["sourceElementCount"] == x["verifiedEquivalentCount"] for x in ledgers))
         audit = data(G7 / "multi-edition-source-gap-audit-20261115.json")
-        check("all_selected_book_editions_crosswalk_closed", audit.get("otherEditionCrosswalkStatus") == "FULLY_VERIFIED")
+        edition_crosswalk_closed = audit.get("otherEditionCrosswalkStatus") == "FULLY_VERIFIED"
         approval = data(G7 / "grade7-owner-academic-approval.json")
         check("owner_academic_approval_recorded",
               approval.get("ownerAcademicApproval") is True and
               approval.get("ownerPermissionToProceedToReleaseGates") is True and
               approval.get("grade") == 7 and approval.get("pathway") == "General")
+        check("owner_authorized_first_party_limited_source_release",
+              approval.get("ownerFirstPartyAuthorshipRepresentation") is True and
+              approval.get("sourceEditionIdentityClaim") == "NONE" and
+              approval.get("originalPublisherElementParity") == "NOT_INDEPENDENTLY_VERIFIED" and
+              approval.get("contentPublicationMetadataApproved") is True and
+              approval.get("deploymentAuthorizedOnlyAfterCiAndScopedDbVerification") is True)
+        check("source_gaps_explicitly_not_misrepresented",
+              (literal_parity_proven and edition_crosswalk_closed and term_known) or
+              (progress.get("sourceParityPercent") is None and
+               audit.get("candidateTotalIsFinal") is False and
+               not edition_crosswalk_closed),
+              {"sourceLiteralParity":"VERIFIED" if literal_parity_proven else "UNKNOWN",
+               "termAssignment":"VERIFIED" if term_known else "UNKNOWN",
+               "crossEditionIndex":"VERIFIED" if edition_crosswalk_closed else "OPEN",
+               "fullItemSourceElementDenominator":"KNOWN" if literal_counts_known else "UNKNOWN"})
         check("first_party_no_publisher_artwork_license_claim",
               approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False and
               approval.get("publisherBookReferenceOnly") is True and
@@ -119,6 +141,8 @@ def main(phase):
         "status": "PASS" if all(x["status"] == "PASS" for x in checks) else "D_BLOCKED",
         "checks": checks,
         "unpassed": [x["check"] for x in checks if x["status"] != "PASS"],
+        "sourceParityCertified": False,
+        "sourceApprovalBasis": "OWNER_APPROVED_FIRST_PARTY_WITH_DISCLOSED_SOURCE_LIMITATIONS" if phase == "source" else "NOT_EVALUATED",
         "stageDVerifiedLessons": 0,
         "productionTouched": False,
     }
