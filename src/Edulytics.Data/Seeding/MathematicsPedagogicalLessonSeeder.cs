@@ -153,6 +153,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
         const string prefix = "PED:UAE-MOE-MATH:L6:GENERAL:";
         const string g4Prefix = "PED:UAE-MOE-MATH:L4:COMMON:";
         const string g5Prefix = "PED:UAE-MOE-MATH:L5:GENERAL:";
+        const string g7Prefix = "PED:UAE-MOE-MATH:L7:GENERAL:";
         const string g12Prefix =
             "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:";
 
@@ -213,19 +214,26 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
         var g5Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g5Prefix), ct);
+        var g7Count = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(g7Prefix), ct);
         var g12Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g12Prefix), ct);
         var translationCount = await _db.CurriculumLessonContentTranslations
             .CountAsync(ct);
 
-        if (g6Count is not (0 or 128) ||
-            allCount != 5090 + g6Count ||
+        // Before G7 cutover: 5,090 unrelated includes 62 old English G7.
+        // After the approved G7 62-to-78 cutover, 5,106 unrelated includes
+        // 78 new Arabic G7: permit only these two exact audited states.
+        var unrelatedBaseline = g7Count == 78 ? 5106 : 5090;
+        if (g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
+            allCount != unrelatedBaseline + g6Count ||
             contentCount != allCount ||
             g4Count != 132 || g5Count != 127 ||
             g12Count != 0 || translationCount != 0)
             throw new InvalidOperationException(
                 "Scoped Grade6 release refused: production baseline drift. " +
-                "Expected 5090 unrelated lessons, 132 G4, 127 G5, " +
+                "Expected audited 5090 pre-G7 or 5106 post-G7 unrelated " +
+                "lessons, 132 G4, 127 G5, 0/78 complete G7, " +
                 "zero G12, zero stored translations and 0/128 complete G6.");
 
         await using var transaction =
@@ -250,8 +258,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
 
         if (actualG6.Length != 128 ||
             actualG6Content != 128 ||
-            afterCount != 5218 ||
-            afterContent != 5218 ||
+            afterCount != unrelatedBaseline + 128 ||
+            afterContent != unrelatedBaseline + 128 ||
             actualG12 != 0)
             throw new InvalidOperationException(
                 "Scoped Grade6 release postconditions failed; transaction rolled back.");
@@ -259,7 +267,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
         await transaction.CommitAsync(ct);
         Console.WriteLine(
             "UAE_G6_SCOPED_PRODUCTION_128_LESSONS_AND_128_METADATA_PASS " +
-            "unrelatedBaseline=5090 grade12=0 lessonTranslations=0");
+            $"unrelatedBaseline={unrelatedBaseline} grade7={g7Count} " +
+            "grade12=0 lessonTranslations=0");
     }
 
     /// <summary>
