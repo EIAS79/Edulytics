@@ -10343,6 +10343,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U02L03_LOCAL_PDF162_169",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General owner-selected Arabic Student Book U02:L04, PDF178–185.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE", "algebra.linear.solve", "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
+            ["supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c", "supporting.algebra.simplify"],
+            "UAE_G8_U02L04_LOCAL_PDF178_185",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
