@@ -375,7 +375,7 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .CountAsync(x => actualG7.Contains(x.PedagogicalLessonId), ct);
         var publishedG7 = await _db.CurriculumLessonContents
             .CountAsync(x => actualG7.Contains(x.PedagogicalLessonId) &&
-                x.Status == CurriculumLessonContentStatus.Published, ct);
+                (int)x.Status == 3, ct);
         var afterCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
         var afterContent = await _db.CurriculumLessonContents.CountAsync(ct);
         if (actualG7.Length != 78 || actualG7Content != 78 ||
