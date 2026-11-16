@@ -164,10 +164,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 64–71; unit-linked PDF 72–75; printed 31–38 plus unit investigation",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book cover 2025–2026; local scanned",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "e9646189c931090ef31fb8df40b2c38c896536e6c8bd6811b7f7744c18ba0a72",
       "CanonicalBodySha256": "ba2f9250d1ee8d7cfad406ffb4aedbe7083bb86ab76ed23294c89e277c9fe41a",
@@ -175,7 +175,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored per local source; exact publisher item parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -186,6 +186,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Powers of Monomials, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Powers of Monomials: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القوى الأسية لأحاديات الحد",
+          "Explanation": "يركز الدرس على رفع قوة إلى قوة ورفع حاصل ضرب أو قسمة إلى قوة. إذا كان ن وم موجبين صحيحين فإن (أ^م)^ن = أ^(م×ن) لأن هناك ن مجموعات تتضمن كل مجموعة م من عوامل أ. مثل (س^3)^4 = س^12. وقوة حاصل الضرب: (أب)^ن = أ^ن ب^ن، مثال (3س^2)^3 = 27س^6. وقوة حاصل القسمة: (أ/ب)^ن=أ^ن/ب^ن مع ب≠0. في سياق هندسي إذا كان طول ضلع مكعب 2س^2 مترًا، فالحجم (2س^2)^3=8س^6 متر مكعب. يربط الطالب المساحة والحجم بقوانين القوى ولا يستخدم صورًا من الناشر.",
+          "KeyConceptsAndRules": "(أ^م)^ن = أ^(م×ن). و(أب)^ن=أ^ن ب^ن. و(أ/ب)^ن=أ^ن/ب^ن مع ب≠0. والأس الموجب إذا كان زوجيًا يحول إشارة الأساس السالب داخل القوس إلى موجب؛ إذا كان فرديًا تبقى سالبة. مثال (−2س^3)^4=16س^12، بينما (−2س^3)^3=−8س^9. لا يطبق الأس على جمع حدين: (س+2)^2 لا يساوي س^2+4، بل س^2+4س+4. ولا يجوز الخلط بين (س^2)^3=س^6 وس^2×س^3=س^5.",
+          "WorkedExamples": "مثال1: (5^2)^3=5^6=15625. مثال2: (2س^3)^4=16س^12. مثال3: (−3أ^2ب)^3=−27أ^6ب^3. مثال4: (2س^2/(3ص))^2 = 4س^4/(9ص^2)، ص≠0. مثال5: مساحة مربع طول ضلعه 4س^3 سم: (4س^3)^2=16س^6 سم². مثال6: مكعب طول حرفه 2أ^2 سم: الحجم (2أ^2)^3=8أ^6 سم³.",
+          "StepByStepSolutions": "1) حدد الأس الذي يشمل كامل القوس. 2) إذا كانت قوة لقوة اضرب الأسين، مثل (س^3)^2=س^6. 3) إذا كان الأس على حاصل ضرب وزعه على كل عامل، بما في ذلك المعامل السالب: (−2أب^2)^3=−8أ^3ب^6. 4) إذا كان على كسر ارفع البسط والمقام بشرط المقام غير صفر. 5) بعد حساب القوة بسط التعبير باستعمال قانوني ضرب/قسمة الأسس عند وجودهما. 6) تحقق بتعويض قيمة مناسبة مثل س=2، وقارن التعبير قبل التبسيط وبعده.",
+          "CommonMistakes": "من الأخطاء جمع الأسين في قوة القوة بدل ضربهما: (س^2)^3 = س^6 لا س^5. ومن الأخطاء ترك المعامل خارج القوة: (3س)^2 = 9س^2 لا 3س^2. انتبه للإشارة: (−2س)^2 = 4س^2، و(−2س)^3 = −8س^3. ومن الخطأ تطبيق قوة حاصل الضرب على مجموع مثل (س+ص)^2، فلا تساوي س^2+ص^2. في قوة الكسر يجب رفع المقام كذلك والتأكد من عدم انعدامه.",
+          "QuickSummary": "عند رفع قوة إلى قوة أضرب الأسس؛ وعند رفع حاصل ضرب أو قسمة إلى قوة أرفع كل عامل مع قيد المقام غير الصفري. أنشئ أصلًا رسما لمربع ومكعب لتمثيل زيادة الأبعاد وتفسير الأسس. Cool-down أصلي: (1) بسّط (2س^3)^2. (2) بسّط (−3أ^2ب)^3. (3) هل (س+2)^2 يساوي س^2+4؟ برر بمثال. (4) وضح كيف يغير ضرب طول ضلع مكعب في 2 حجمه. تُراجع الرسوم والتعليلات من قبل المعلم."
         }
       ]
     },

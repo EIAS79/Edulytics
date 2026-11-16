@@ -10259,6 +10259,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L03_LOCAL_PDF56_63",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U01L04, local Arabic Student Book PDF 64-71.
+        // Reuse existing algebraic/numeric families. Variable-proof/geometry
+        // responses are teacher scored; do not claim exact symbolic runtime parity.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS", "supporting.algebra.expressions", "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
+            ["supporting.algebra.expand", "supporting.algebra.simplify", "uae.g6.u06.l02.integer_power", "uae.g6.u06.l02.fraction_power"],
+            "UAE_G8_AR_U01L04_LOCAL_PDF64_71",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
