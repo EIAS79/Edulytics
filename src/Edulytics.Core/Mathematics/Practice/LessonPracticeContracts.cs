@@ -10241,6 +10241,15 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED", Version)
         { SkillIds = ["decimals.place_value", "fractions.equivalent"] };
 
+        // UAE G8 Arabic Student Book lesson 2, PDF48–55, printed 15–22.
+        // Reuse G6 exact numeric powers; open justifications stay teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS", "number.exponents.positive_integer",
+            "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION",
+            ["uae.g6.u06.l02.repeated_to_power", "uae.g6.u06.l02.integer_power", "uae.g6.u06.l02.decimal_power", "uae.g6.u06.l02.fraction_power", "uae.g6.u06.l02.ten_power", "uae.g6.u06.l02.power_addition"],
+            "UAE_G8_GENERAL_AR_2025_2026_U01L02_PP15_22",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -78,10 +78,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF pages 48–55; printed pages 15–22",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book cover 2025–2026; locally inspected",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "4f58d83079600436e472a4602f575bb5e87b17a899cb9d613d391312a0a9d22b",
       "CanonicalBodySha256": "552b076694d90be948babd8b22f14983deb7bb0d984383c73dc42db9284d2288",
@@ -89,7 +89,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic lesson grounded in scanned PDF48-55; exact third-party task parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -100,6 +100,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Powers and Exponents, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Powers and Exponents: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القوى والأسس",
+          "Explanation": "هدف الدرس: كتابة الضرب المتكرر في صورة قوة، وتحديد الأساس والأس، ثم إيجاد قيمة قوة لعدد صحيح أو كسر أو متغير معلوم. القوة أ^ن تعني ضرب الأساس أ في نفسه ن مرات عندما يكون الأس ن عددًا صحيحًا موجبًا؛ مثال 4^3=4×4×4=64، وليس 4×3. الأساس هو العدد المتكرر، والأس هو عدد مرات التكرار. في (-2)^4، الأساس سالب كامل داخل القوس والناتج 16؛ أما -2^4 فمعناه سالب 16 لأن الأس يطبق على 2 قبل السالب. اكتب جدولا لانتشار عدد من الأشكال يتضاعف أسبوعيًا: 1،2،4،8،16، ثم فسر دور القوى في وصف النمو. تمثيلات مربعات ومساحة أرض مربعة من أمثلة التطبيق، مع رسوم أصلية لا تنقل صور الكتاب.",
+          "KeyConceptsAndRules": "أ^ن = أ×أ×...×أ (ن عوامل) عندما ن موجب صحيح. 3^4=81؛ الأساس 3 والأس 4، و3×4=12 لا يساوي 81. (−2)^4=16 لكن (−2)^3=−8؛ والأس الزوجي لأساس سالب يعطي موجبًا، والفردي يعطي سالبًا. −2^4 = −(2^4)=−16 إذا غاب القوس حول الأساس. (3/4)^2=3^2/4^2=9/16 لأن القوة تشمل البسط والمقام مع مقام غير صفري. (0.5)^3=0.125. عند التعويض: أ^2+ب^3 حيث أ=2، ب=3 تعطي 4+27=31؛ أما (أ+ب)^2=25، فلا توزع الأس على الجمع. في هذا الدرس نعمل بالأسس الصحيحة الموجبة؛ الأسس الصفرية والسالبة لها درس لاحق.",
+          "WorkedExamples": "مثال 1: 7×7×7×7=7^4=2401. مثال 2: (-3)^2=9 لأن (-3)×(-3)=9، بينما (-3)^3=-27. مثال 3: (2/5)^3=8/125؛ رفع البسط والمقام إلى الثالثة. مثال 4: مساحة مربع طول ضلعه 12 مترًا: 12^2=144 مترًا مربعًا. مثال 5: احسب أ^2+ب^4 عندما أ=3، ب=2: 3^2+2^4=9+16=25. مثال 6: أعداد خلايا تتضاعف كل دورة من خلية واحدة: بعد خمس دورات 2^5=32 خلية؛ لا تخلط التضاعف مع زيادة ثابتة.",
+          "StepByStepSolutions": "1) حدد العوامل المتساوية في الضرب المتكرر. 2) اكتب الأساس والأس، مثل 5×5×5=5^3. 3) لإيجاد القيمة كرر ضرب الأساس بقدر الأس أو استخدم حسابًا موثقًا ثم تحقق بعدد العوامل. 4) افحص الأقواس بعناية: (-4)^2=16 لكن -4^2=-16. 5) في الكسر ارفع البسط والمقام؛ (2/3)^2=4/9. 6) في تعبير متغيرات عوض أولًا بالقيم ثم احسب القوى قبل الجمع والطرح: إذا س=2 وص=5 فإن س^3+ص^2=8+25=33. 7) تحقق بتقدير معقول أو بتوسيع القوة إلى عوامل.",
+          "CommonMistakes": "الخطأ الأكثر شيوعًا ضرب الأساس في الأس بدل ضربه في نفسه: 3^4=81 لا 12. والخطأ الثاني إسقاط أقواس الأساس السالب: (-2)^4=16 بينما -2^4=-16. وفي الأس الفردي يبقى السالب: (-2)^3=-8. ومن الخطأ حساب (أ+ب)^2 كأنه أ^2+ب^2، إذ (2+3)^2=25 و2^2+3^2=13. ولا يصح رفع بسط كسر وترك مقامه: (2/3)^2=4/9 لا 4/3. الأس هنا عدد مرات تكرار العامل، لا قيمة العامل الأخير.",
+          "QuickSummary": "القوة طريقة مختصرة للضرب المتكرر؛ الأساس هو العامل، والأس هو عدد مرات تكراره. أحافظ على الأقواس وإشارة الأساس، وأرفع البسط والمقام في القوى الكسرية، وأحسب القوى قبل الجمع وفق ترتيب العمليات. تقويم ختامي أصلي (Cool-down): (1) اكتب 6×6×6 في صورة قوة واحسب قيمتها. (2) قارن (-4)^2 و-4^2 مع السبب. (3) احسب (2/3)^3. (4) إذا س=3، ص=2 فاحسب س^2+ص^3 واشرح الترتيب. المبررات المفتوحة يراجعها المعلم دون عرض الحلول في واجهة الطالب."
         }
       ]
     },
