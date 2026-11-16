@@ -8,10 +8,12 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 
 public sealed class LessonObjectiveContentAlignmentCertificationTests
 {
-    // Baseline 5,110 included 93 retired UAE G4 and 59 retired G6 English.
-    // G4 93->132 (+39), G12 Precalculus +73, G6 English 59->Arabic 128 (+69).
-    // Preserve every unrelated canonical lesson identity: 5,110+39+73+69.
-    private const int ExpectedLessonCount = 5291;
+    // Baseline 5,110 included 93 retired UAE G4, 59 retired G6 English,
+    // and 62 obsolete G7 General English lessons.
+    // G4 93->132 (+39), G12 Precalculus +73, G6 59->128 (+69),
+    // G7 General 62->78 Arabic (+16). Preserve all unrelated identities.
+    // 5,110 + 39 + 73 + 69 + 16 = 5,307 canonical lessons.
+    private const int ExpectedLessonCount = 5307;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_LESSON_OBJECTIVE_CONTENT_CERTIFICATION";
 
