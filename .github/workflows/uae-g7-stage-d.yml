@@ -211,10 +211,11 @@ jobs:
           assert auth['grade']==7 and auth['lessonPageCount']==78
           assert auth['correctAttemptPersistenceCount']==auth['wrongAttemptPersistenceCount']==auth['malformedAttemptRejectionCount']==78
           assert auth['crossSchoolAccessDenied'] is True and all(auth['roleLogins'].values())
+          assert auth['negativeEnglishFallbackChecks']==78
           assert rtl['rtlDesktopLessons']==rtl['rtlMobileLessons']==78 and rtl['screenshotsWritten']>=8
           out=pathlib.Path('artifacts/uae-g7-stage-d/grade7-e2e.json')
           out.parent.mkdir(parents=True,exist_ok=True)
-          out.write_text(json.dumps({'candidateSha':os.environ['GITHUB_SHA'],'status':'PASS','authenticatedLearnerPages':78,'persistedPracticeAttempts':234,'chromiumPagesDesktopMobile':156,'screenshots':rtl['screenshotsWritten'],'sourceLiteralParity':'UNKNOWN','productionWritten':False},indent=2))
+          out.write_text(json.dumps({'candidateSha':os.environ['GITHUB_SHA'],'status':'PASS','authenticatedLearnerPages':78,'negativeEnglishFallbackChecks':78,'persistedPracticeAttempts':234,'chromiumPagesDesktopMobile':156,'screenshots':rtl['screenshotsWritten'],'sourceLiteralParity':'UNKNOWN','productionWritten':False},indent=2))
           PY
       - if: always()
         uses: actions/upload-artifact@v4
