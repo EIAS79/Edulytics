@@ -981,10 +981,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:08",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 8",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 276–283; printed 243–250",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic UAE Student Book 2025–2026 local scanned",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "6ddf7c690ad40db5939c9d62d507a4ed8d8e8fe9071adf5c7086dea11ccde361",
       "CanonicalBodySha256": "8a59ac7641479674f9a90da8243e9e4e54fd7d3b5e2827ab4a51d1c0d50de321",
@@ -992,7 +992,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic first-party source-aligned authoring; publisher task exact parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1003,6 +1003,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Solving Systems of Equations Algebraically, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Solving Systems of Equations Algebraically: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل أنظمة المعادلات جبريًا",
+          "Explanation": "يمكن إيجاد الزوج الذي يحقق معادلتين من الدرجة الأولى بالتعويض أو بالحذف، ثم التحقق من الناتج في المعادلتين. بالتعويض إذا كانت ص=س+2 وص=3س−4، نساوي التعبيرين فنحصل س+2=3س−4، أي س=3 ثم ص=5. وبالحذف، في النظام 2س+ص=7 و3س−ص=8، نجمع المعادلتين فنجد 5س=15 وبالتالي س=3 وص=1. من المعاني الواقعية نوعا تذاكر أو سلع، حيث س عدد أحدهما وص عدد الآخر، ويشترط أن يلائم الحل أعدادًا صحيحة غير سالبة في الحالات المناسبة. إذا اختفت المتغيرات فقد ينتج تناقض (لا حل) أو هوية (حلول غير منتهية)، فلا نقسم على صفر.",
+          "KeyConceptsAndRules": "طريقة التعويض: أعزل متغيرًا في إحدى المعادلتين، أعوض التعبير في الثانية، أحل المتغير الأول ثم أعود لإيجاد الآخر. طريقة الحذف: أضرب إحدى المعادلتين أو كلتيهما بمعامل مناسب لجعل معاملات متغير متعاكسة، ثم أجمع أو أطرح. أتحقق في المعادلتين الأصليتين. للنظام س+ص=45 و2ص+4س=130: من ص=45−س، نعوض 2(45−س)+4س=130 ⇒ 2س=40 ⇒ س=20، ص=25. إذا حصلنا على 0=5 فلا حل، وإذا حصلنا 0=0 بعد إزالة متغيرين فالمعادلتان متكافئتان.",
+          "WorkedExamples": "مثال1 تعويض: ص=س+2، ص=3س−4 ⇒ س+2=3س−4 ⇒ س=3، ص=5. مثال2 حذف: 2س+ص=7، 3س−ص=8 ⇒ 5س=15 ⇒ س=3، ص=1. مثال3 سياقي: س+ص=45، 4س+2ص=130 ⇒ (س،ص)=(20،25)، لأن 80+50=130. مثال4: 2س+3ص=12 و4س+6ص=24 معادلتان متكافئتان؛ حلول غير منتهية على الخط ذاته. مثال5: 2س+3ص=12 و2س+3ص=15 متناقضتان؛ لا حل. مثال6: إذا 5س−2ص=4 و3س+2ص=12 فالجمع يعطي 8س=16 ⇒ س=2، ومن 3(2)+2ص=12 ⇒ ص=3.",
+          "StepByStepSolutions": "للتعويض أختار المعادلة الأسهل لعزل س أو ص، ثم أستبدل المتغير في المعادلة الأخرى بكامل التعبير بما في ذلك الأقواس. أحل المعادلة الناتجة، وأرجع لأجد المتغير الثاني ثم أتحقق في المعادلتين. للحذف أجعل معاملات أحد المتغيرين متعاكسة بضرب طرفي معادلة في العامل نفسه، وأجمع لتختفي حدود ذلك المتغير، ثم أتابع الحل. أراجع إن كان الناتج 0=0 أو تناقضًا قبل ادعاء حل وحيد. أخيرًا أفسر الزوج المرتب بالسياق ولا أعكس ترتيب س وص.",
+          "CommonMistakes": "عند التعويض لا أكتب س+2 بدل (س+2) إذا كان التعبير مضروبًا أو مسبوقًا بسالب. عند الحذف لا أجمع حدين لهما الإشارة نفسها وأدعي أنهما ألغيا، بل أجعل المعاملين متعاكسين. يجب أن أضرب كل حد في المعادلة بعامل الحذف، لا المعامل فقط. الحل الصحيح لنظام يجب أن يحقق الطرفين في المعادلتين معًا. أميز بين هوية وتناقض عند زوال المتغيرات، وأحافظ على ترتيب (س،ص) في التفسير.",
+          "QuickSummary": "أحل النظام جبريًا بالتعويض أو الحذف، وأتحقق من الزوج المرتب في المعادلتين وأميز عدد الحلول. Cool-down أصلي: (1) ص=2س+1 وص=−س+10: حل بالتعويض. (2) 3س+2ص=16 و3س−2ص=8: حل بالحذف. (3) صنف النظام 2س+ص=5 و4س+2ص=10. (4) فسر لماذا لا يكفي تحقق حل في معادلة واحدة. يراجع المعلم البرهان والسياق."
         }
       ]
     },

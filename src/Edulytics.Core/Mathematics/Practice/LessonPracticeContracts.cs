@@ -10424,6 +10424,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L07_PDF266_275",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U03 L08, local Student Book PDF 276-283.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY", "algebra.linear.systems.two_by_two.solve", "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
+            ["algebra.linear.systems.two_by_two.integer_coefficients", "algebra.linear.systems.solution_count.classify", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_GENERAL_AR_U03L08_PDF276_283",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
