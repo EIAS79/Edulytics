@@ -153,8 +153,12 @@ def main():
         finally:
             version = browser.version
             browser.close()
-    if len(results) != 256:
-        raise AssertionError(f"UAE G7 Chromium RTL page count {len(results)} != 256")
+    expected_browser_pages = len(pairs) * 2  # 78 Arabic lessons x 2 real viewports
+    if len(pairs) != 78 or len(results) != expected_browser_pages:
+        raise AssertionError(
+            f"UAE G7 Chromium RTL pages {len(results)} != "
+            f"78 lessons x 2 viewports = {expected_browser_pages}"
+        )
     report = {
         "scope":"UAE_G7_REAL_CHROMIUM_RTL_78_LESSONS_DESKTOP_AND_MOBILE_CI_NOT_HUMAN_APPROVAL",
         "candidateSha":os.getenv("GITHUB_SHA"),
