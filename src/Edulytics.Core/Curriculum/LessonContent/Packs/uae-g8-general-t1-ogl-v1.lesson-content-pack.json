@@ -637,10 +637,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:02:05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 2 / Lesson 5",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 186–193; printed 153–160",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic local Student Book cover 2025–2026",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "b8a4fe9136f69f7a59208a9d796a4d45720d3504e508be3a9854cd04fa10ce3d",
       "CanonicalBodySha256": "a021f44818a5afc4a44a3330b9b997aa9c2c21f0f7a2d5f2bde61a39e983d4ca",
@@ -648,7 +648,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "First-party Arabic grade8 lesson aligned to student-book objectives; complete publisher task parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -659,6 +659,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Solving Multi-Step Equations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Solving Multi-Step Equations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل المعادلات المكوّنة من عدة خطوات",
+          "Explanation": "المعادلة متعددة الخطوات قد تتضمن أقواسًا وحدودًا متشابهة ومتغيرات في الطرفين. أبدأ باستخدام خاصية التوزيع ثم أجمع الحدود المتشابهة وأحل بمعكوسات الجمع والضرب. مثال: 15(20+د)=420 ⇒ 300+15د=420 ⇒ 15د=120 ⇒ د=8. إذا كانت 6(س−3)+10=2(3س−4)، يصبح الطرفان 6س−8، فتتحقق المعادلة لكل س (هوية). وإذا كانت 8(4−2س)=4(3−5س)+4س، يصبح 32−16س=12−16س وهو تناقض، فلا حل. الأنشطة الأصلية ترتبط بتكلفة معدات النادي وأحجام مجموعات، وتشرح المعنى الواقعي للحلول.",
+          "KeyConceptsAndRules": "أطبق التوزيع أ(ب+ج)=أب+أج بما في ذلك الإشارة، ثم أجمع الحدود المتشابهة. مثال 4(س+3)−2س=2س+12؛ لا حاجة لإجراء قسمة قبل التبسيط. المعادلة أ س+ب=ج س+د لها حل واحد إذا أ≠ج؛ وليس لها حل إذا أ=ج مع ب≠د؛ ولها حلول غير منتهية إذا أ=ج وب=د. بعد حل كل معادلة أتحقق من التعويض، ولا أقسم على صفر إن اختفى حد س. في سياق عدد من الطلاب أو جلسات غير قابلة للتجزئة أفسر معقولية الحل.",
+          "WorkedExamples": "مثال 1: 15(20+د)=420؛ بعد التوزيع 300+15د=420؛ د=8. مثال 2: 6(س−3)+10=2(3س−4): اليسار 6س−18+10=6س−8؛ اليمين 6س−8؛ إذن جميع الأعداد تحقق المعادلة. مثال 3: 8(4−2س)=4(3−5س)+4س: اليسار 32−16س واليمين 12−16س؛ يلزم 32=12 وهو محال، فلا حل. مثال 4: 10س+2(س−15)=57 ⇒ 12س−30=57 ⇒ 12س=87 ⇒ س=29/4=7.25. مثال 5: 4(س+5)−2=2س+18 ⇒ 4س+18=2س+18 ⇒ س=0. مثال 6: 3(2ن−1)=5ن+8 ⇒ 6ن−3=5ن+8 ⇒ ن=11.",
+          "StepByStepSolutions": "1) أحدد الأقواس وأوزع عاملها على كل حد مع حفظ علامة السالب: −2(س−3)=−2س+6. 2) أجمع الحدود المتشابهة في كل جانب. 3) أنقل حدود المتغير باستعمال العملية نفسها على الطرفين. 4) أبسط الثوابت ثم اقسم على معامل المتغير غير الصفري. 5) إذا انتهى التبسيط إلى مساواة صحيحة مثل 0=0 فالحلول غير منتهية، وإذا إلى 0=5 فلا حل. 6) أتحقق من الحالات بتعويض قيم مختلفة أو بمراجعة التبسيط. 7) أربط الجواب بالسياق ووحدة القياس.",
+          "CommonMistakes": "نسيان توزيع العامل على كل حد داخل القوس يغير المعادلة، خاصة مع السالب. لا نجمع حدودًا غير متشابهة، فلا يصبح 2س+3 عددًا 5س. من الخطأ القسمة على معامل صفر بعد حذف س من الطرفين؛ عندها يجب تصنيف المعادلة. وقد يُخلط بين الهوية 2(س+1)=2س+2 التي تتحقق لكل س، والتناقض 2(س+1)=2س+3 الذي لا يتحقق لأي س. أعد الحل أو التعويض لاكتشاف خطأ التوزيع.",
+          "QuickSummary": "أطبق التوزيع ثم أجمع الحدود المتشابهة وأعكس العمليات، وأميّز بدقة بين حل واحد ولا حل وحلول غير منتهية. Cool-down أصلي: (1) حل 3(2س−1)=5س+8. (2) صنف 4(س−2)=4س−8. (3) صنف 5(س+1)=5س+3. (4) فسّر لماذا لا يمكن قسمة 0س=4 على الصفر. تفسير التصنيف والرسوم يراجعه المعلم."
         }
       ]
     },

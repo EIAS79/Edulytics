@@ -10352,6 +10352,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U02L04_LOCAL_PDF178_185",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General owner-selected Arabic Student Book U02:L05, PDF186–193.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS", "supporting.algebra.equations", "MULTI_STEP_DISTRIBUTIVE_LINEAR_EQUATIONS_AND_SOLUTION_COUNT",
+            ["supporting.algebra.expand", "supporting.algebra.simplify", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_U02L05_LOCAL_PDF186_193",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
