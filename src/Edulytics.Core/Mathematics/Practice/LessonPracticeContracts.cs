@@ -8871,7 +8871,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS", "supporting.fractions.multiply_divide",
             "FRACTION_DIVIDE_RECIPROCAL_SIGNED_MIXED",
-            ["usccss.number.signed_rational_divide", "supporting.fractions.multiply_divide"],
+            ["usccss.number.signed_rational_divide"],
             "UAE_G7_GENERAL_ARABIC_U04L08_PRINTED_327_334",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 05/01, student 02-5-6.pdf printed 349-356.
@@ -9127,7 +9127,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY", "supporting.probability_statistics",
             "SIMPLE-PROBABILITY",
-            ["probability.simple.favourable_over_total.exact", "probability.complement.exact", "probability.theoretical.simple_event"],
+            ["probability.theoretical.simple_event", "probability.theoretical.complement"],
             "UAE_G7_ARABIC_U10L01_PDF_5_12",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 10/02, student 03-10.pdf printed 743-752.
@@ -9151,7 +9151,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:04:SIMULATION-MODELS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:10:04:SIMULATION-MODELS", "supporting.probability_statistics",
             "SIMULATION-MODELS",
-            ["supporting.probability.sample_space_count", "supporting.statistics.experimental_probability", "probability.simple.favourable_over_total.exact"],
+            ["supporting.probability.sample_space_count", "supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
             "UAE_G7_ARABIC_U10L04_PDF_35_42",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 10/05, student 03-10.pdf printed 779-786.
