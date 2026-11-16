@@ -126,7 +126,8 @@
     "lessonCodeUniqueness": "PASS",
     "stageD": "NOT_RUN",
     "mathEngineTests": "NOT_RUN",
-    "uiRuntime": "NOT_RUN"
+    "uiRuntime": "NOT_RUN",
+    "canonicalLanguageDraftGate": "PASS_STATIC"
   },
   "coverage": {
     "pdfPagesExamined": 8,
@@ -135,14 +136,14 @@
     "visualRenderer": "NOT_VERIFIED"
   },
   "gradeLevelBlockers": [
-    "AcademicLanguage remains en until all 76 translations replaced, to avoid falsely declaring an all-Arabic pack",
+    "Content pack switched to Status=Draft and AcademicLanguage=ar; 76 legacy English-only lessons remain before publishable Arabic pack",
     "Manifest and blueprint still contain extra Unit 12 Lesson 5; scoped retirement requires identity/attempt reference checks",
     "CanonicalBodySha256 reconciliation with current runtime not yet verified"
   ],
   "status": "A_C_EVIDENCE_GAP",
   "readyForStageD": false,
   "startedAtUtc": "2026-11-16T20:21:48.174431+00:00",
-  "updatedAtUtc": "2026-11-16T20:21:48.269794+00:00",
+  "updatedAtUtc": "2026-11-16T20:27:46.325788+00:00",
   "changes": [
     "Retained original LessonCode and all source/meta fields",
     "Replaced only first lesson generic English translation with lesson-specific Arabic original",
