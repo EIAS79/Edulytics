@@ -157,7 +157,7 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         {
             if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
                 document.AcademicLanguage != "ar" ||
-                document.TargetCurriculumPeriod != "2026-2027")
+                document.VersionCode != "MOE-2026-2027-T1")
                 throw new InvalidOperationException(
                     "Grade7 scoped metadata must be an owner-approved Arabic UAE annual candidate.");
             document.Lessons = document.Lessons
