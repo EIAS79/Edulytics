@@ -344,3 +344,55 @@ jobs:
           path: artifacts/uae-g7-stage-d/grade7-scoped-production.json
           if-no-files-found: warn
           retention-days: 30
+
+  final:
+    name: G7 current-SHA first-party release readiness - all technical gates
+    if: always()
+    needs: [structure, source, lesson-tests, compile-and-regressions, authenticated-e2e, scoped-production-rehearsal]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read exact-run Grade7 structural gate
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g7-structure-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d
+      - name: Read exact-run Grade7 owner-authorized source gate
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g7-source-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d
+      - name: Read Grade7 real authenticated HTTPS/Chromium gate
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g7-authenticated-e2e
+          path: artifacts/uae-g7-stage-d
+      - name: Read Grade7 production-scoped 0-to-78 rehearsal
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g7-scoped-production
+          path: artifacts/uae-g7-stage-d
+      - name: Reject incomplete, cross-SHA or fabricated source evidence
+        env:
+          STRUCTURE_RESULT: "${{ needs.structure.result }}"
+          SOURCE_RESULT: "${{ needs.source.result }}"
+          LESSON_TESTS_RESULT: "${{ needs['lesson-tests'].result }}"
+          COMPILE_RESULT: "${{ needs['compile-and-regressions'].result }}"
+          AUTH_E2E_RESULT: "${{ needs['authenticated-e2e'].result }}"
+          SCOPED_RESULT: "${{ needs['scoped-production-rehearsal'].result }}"
+        run: python3 tools/curriculum/uae_g7_stage_d_final.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g7-final-${{ github.run_id }}
+          path: artifacts/uae-g7-stage-d/grade7-final-release-gate.json
+          if-no-files-found: error
+          retention-days: 30
