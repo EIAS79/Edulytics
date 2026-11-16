@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "pathway": "General",
+  "curriculum": "UAE-MOE-MATH",
+  "targetAcademicYear": "2026-2027",
+  "approvedScope": {
+    "units": 12,
+    "lessons": 76,
+    "sourceIndexFile": "03-9-12.pdf",
+    "indexCoverYear": "2019-2020"
+  },
+  "githubBaseline": {
+    "units": 12,
+    "lessons": 77,
+    "baseSha": "b62f42b41aaca9496bf085924404fbbbbcfec93f",
+    "extraLesson": "U12:L05 Infinite Sets"
+  },
+  "branch": "curriculum/uae-g8-general-arabic-abc-20261116",
+  "lastPushedSha": "59098891026daf6c528ea30007f3a2cc0c4ef818",
+  "firstIncompleteLessonOrdinal": 1,
+  "closedLessons": 0,
+  "lessonStates": {
+    "1": {
+      "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
+      "status": "A_C_EVIDENCE_GAP",
+      "arabicContentReplaced": true,
+      "sourcePagesReviewed": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "remains": [
+        "atomic exercise mapping",
+        "renderer/grader/verifier binding",
+        "visual assessment parity"
+      ]
+    }
+  },
+  "contentPackage": {
+    "academicLanguage": "ar",
+    "status": "Draft",
+    "curriculumTranslationRequired": true,
+    "arabicLocalizedLessons": 1,
+    "englishOnlyLegacyLessons": 76,
+    "versionPromotionBlocked": true
+  },
+  "ci": {
+    "stageD": "NOT_RUN",
+    "build": "NOT_RUN"
+  },
+  "sourceFilesHashed": 4,
+  "sourceInventory": "source-inventory.json",
+  "sourceSelection": "source-selection.json",
+  "nextAction": "Complete lesson 1 atomic source evidence and reuse/extend math-engine contract; then checkpoint and commit before lesson 2.",
+  "generatedAtUtc": "2026-11-16T20:33:03.915274+00:00"
+}
