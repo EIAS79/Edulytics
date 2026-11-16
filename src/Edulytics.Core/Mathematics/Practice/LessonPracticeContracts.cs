@@ -10228,6 +10228,19 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:12:09:STUDENT-AR-128","statistics.data.g6.unit","GRADE6_UNIT_STATISTICS",
             ["uae.g6.u12.l09.choose_unit","uae.g6.u12.l09.choose_tool"],"LOCAL_G6_03_PDF261_268_PRINT933_940",
             "READY_VERIFIED",Version);
+        // UAE G8 General local Arabic Student Book 2025-2026 U01 L01, print 7-14.
+        // Reuse exact terminating-decimal/fraction families; repeating proofs
+        // and open classification require teacher review, not false auto-grade.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS", "decimals.place_value",
+            "RATIONAL_TERMINATING_DECIMAL_EQUIVALENCE",
+            ["uae.g4.u10.l04.decimal_to_hundredths",
+             "uae.g5.u07.l03.simplify_fraction",
+             "uae.g5.u07.l08.reducible_fraction_to_decimal"],
+            "UAE_G8_GENERAL_AR_2025_2026_U01L01_PP7_14",
+            "READY_VERIFIED", Version)
+        { SkillIds = ["decimals.place_value", "fractions.equivalent"] };
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

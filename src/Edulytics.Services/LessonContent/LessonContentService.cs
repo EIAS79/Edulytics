@@ -808,9 +808,17 @@ public sealed class LessonContentService : ILessonContentService
 
         var grade7Arabic = LessonContentPolicy.IsUaeG7ArabicLesson(
             frameworkCode, lessonCode);
+        // Never expose unconverted Grade8 General English-only legacy lessons.
+        var grade8General = string.Equals(frameworkCode,
+                MathematicsCurriculumPackRegistry.UaeCode, StringComparison.Ordinal) &&
+            !string.IsNullOrWhiteSpace(lessonCode) &&
+            lessonCode.StartsWith("PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal);
+        if (grade8General && !translations.Any(x =>
+                NormalizeCulture(x.CultureCode) == "ar"))
+            return null;
         var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) ||
                                 grade2Arabic || grade3Arabic || grade4Arabic ||
-                                grade5Arabic || grade6Arabic || grade7Arabic) &&
+                                grade5Arabic || grade6Arabic || grade7Arabic || grade8General) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
