@@ -852,10 +852,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 5",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 242–249; printed 209–216",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic UAE Student Book 2025–2026 local scanned",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "ae34ad8b98fd0021f5be3b98c99e75da9130cbcd98378fdd3ead4714d877c1e9",
       "CanonicalBodySha256": "fdbb81a6955059cfb4b5cd9e19e57925ffa84534007144dd5a05123ecab6f5b5",
@@ -863,7 +863,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic first-party source-aligned authoring; publisher task exact parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -874,6 +874,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Graphing a Line Using Intercepts, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Graphing a Line Using Intercepts: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تمثيل خط مستقيم بيانيًا باستخدام التقاطعات",
+          "Explanation": "لرسم مستقيم من معادلته بإيجاد التقاطعات مع المحورين، نجعل ص=0 فنوجد المقطع السيني (س،0)، ثم نجعل س=0 فنوجد المقطع الصادي (0،ص). على سبيل المثال في 2س+3ص=12، عند ص=0 يكون 2س=12، ومنه (6،0)، وعند س=0 يكون 3ص=12، ومنه (0،4). نرسم النقطتين ونمد الخط المستقيم عبرهما بمقياس واضح. إذا كان المستقيم يمر بالأصل فقد يكون المقطعان هما النقطة نفسها، وعندئذ نختار نقطة أخرى بدل ادعاء أن نقطة واحدة تحدد خطًا. هذه المهارة تربط نموذج ميزانية أو تخطيط قطع تذاكر بنقطتي استهلاك كل مورد منفردًا وتفسيرهما في الواقع.",
+          "KeyConceptsAndRules": "المقطع السيني هو الإحداثي س حيث ص=0، والمقطع الصادي هو الإحداثي ص حيث س=0. للمعادلة أ س+ب ص=ج عندما أ،ب غير صفريين: المقطع السيني ج/أ والمقطع الصادي ج/ب. إن كانت المعادلة ص=م س+ب، فالمقطع الرأسي ب والمقطع السيني -ب/م بشرط م≠0. المستقيمات الأفقية أو الرأسية ذات حالات خاصة؛ ص=5 لا يقطع محور س، وس=3 لا يقطع محور ص. إذا كان أ س+ب ص=0 فإن التقاطعين كلاهما (0،0)، لذا اختر نقطة مختلفة لرسم المستقيم.",
+          "WorkedExamples": "مثال1: 2س+3ص=12 ⇒ ص=0 يعطينا س=6، وس=0 يعطينا ص=4؛ نقطتا التقاطع (6،0)،(0،4). مثال2: 8س+4ص=80 ⇒ المقطعان (10،0)،(0،20). مثال3: ص=1.5س−9 ⇒ المقطع الصادي −9 والسيني 6. مثال4: 3س+ص=0 يمر بالأصل، ونختار نقطة إضافية (1،−3) لرسمه. مثال5: ص=5 خط أفقي لا مقطع سيني له، وتقاطع ص هو (0،5). مثال6: الميزانية 60س+15ص=4740 تعطي تقاطعين (79،0)،(0،316) يمثلان الكميتين الممكنتين عند تخصيص الميزانية لنوع واحد.",
+          "StepByStepSolutions": "أعيد ترتيب المعادلة إذا لزم، وأضع ص=0 لأجد نقطة على المحور السيني. أضع س=0 لأجد نقطة على المحور الصادي. أحدد مقياس المحاور وأرسم النقطتين ثم أوصل بينهما بخط مستقيم. أتحقق بالتعويض بكل نقطة في المعادلة الأصلية، ثم أضع نقطة ثالثة للتحقق إذا كان الرسم غير واضح. إذا حصلت على النقطة (0،0) في الحالتين فلا أعتمد على تكرارها؛ أختار قيمة أخرى لإيجاد نقطة ثانية. في التطبيقات أفسر المقاطع بوحدات السلع أو التذاكر ولا أفسر مقطعًا سالبًا كمية شراء فعلية دون قيد.",
+          "CommonMistakes": "الخلط بين تصفير ص وتصفير س يبدل التقاطعات. لا يكفي رسم نقطة واحدة، ولا نستنتج خطًا فريدًا من تكرار (0،0). عند تطبيق معادلة الميزانية لا تتجاهل وحدات كل محور. وفي ص=5 لا يوجد تقاطع مع محور س رغم وجود تقاطع مع محور ص. إذا كانت س=3 فالمستقيم رأسي ولا يقطع محور ص. بعض الرسوم قد تعطي مقطعًا خارج نطاق الرسم؛ يلزم تعديل المقياس وليس تغيير قيمة المعادلة.",
+          "QuickSummary": "أرسم خطًا مستقيمًا من مقطعيه بتصفير أحد المتغيرين في كل مرة، وأتحقق بالتعويض مع مراعاة الحالات الخاصة. Cool-down أصلي: (1) حدد مقطعي 3س+2ص=18 وارسم خطها. (2) حدد التقاطعات لـص=−2س+6. (3) لماذا لا يكفي المقطعان لرسم ص=4س؟ (4) فسر مقطعي 25س+5ص=100 في ميزانية شراء. رسم المحاور يراجعه المعلم."
         }
       ]
     },

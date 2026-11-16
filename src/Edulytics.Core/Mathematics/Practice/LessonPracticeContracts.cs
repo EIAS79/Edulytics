@@ -10397,6 +10397,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L04_PDF232_239",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U03 L05, local Student Book PDF 242-249.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS", "algebra.linear.graph_connections", "undefined",
+            ["geometry.coordinate.y_intercept_from_rule", "algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L05_PDF242_249",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
