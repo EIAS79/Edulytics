@@ -508,10 +508,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:02:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 2 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 154–161, printed 121–128",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "2025–2026 selected locally scanned Arabic UAE Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "37ab1119fef2ca0ebf3f1b71e7cf3a2db612bf871fe12c76f46a76b19b9fcda0",
       "CanonicalBodySha256": "f7e2688467246e881a4c21983c36aeed1c123a2871877c06dbcf84f82f7729a5",
@@ -519,7 +519,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authoring matching Student Book goals, examples and task families; full item parity UNKNOWN; Stage D NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -530,6 +530,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Solving Two-Step Equations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Solving Two-Step Equations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حل المعادلات المكوّنة من خطوتين",
+          "Explanation": "لحل معادلة مثل 2س+3=7، نلغي الجمع أولاً بطرح 3 من الطرفين، ثم نلغي الضرب بقسمة الطرفين على 2، فنحصل س=2. قد يكون الحد المتضمن المتغير سالباً أو كسرياً، ونستعمل عكس الجمع أو الطرح قبل عكس الضرب أو القسمة. نموذج كفتي ميزان أصلي يبين ضرورة إجراء العملية نفسها على الجانبين. الهدف أن يشرح الطالب لماذا يحافظ كل انتقال جبري على تكافؤ المعادلة، وأن يفحص الحل بالتعويض، وأن يطبق الاستراتيجية على مسائل أصلية في تكاليف شراء وخدمات أو تغير درجة حرارة.",
+          "KeyConceptsAndRules": "للمعادلة أ س+ب=ج حيث أ≠0، الحل س=(ج−ب)/أ. مثال 5+3س=20: اطرح 5 أولاً، ثم اقسم على 3، فيكون س=5. مثال 6−3س=21: اطرح 6 فيكون -3س=15؛ اقسم على -3 فتحصل س=-5. إذا كان 2/3 س−5=7، أضف 5 ثم اضرب في 3/2 فتكون س=18. المعامل الصفري أو سوء شرط المجال يستلزم تصنيفاً منفصلاً، والضرب أو القسمة على صفر غير مسموح. تحقّق من كل إجابة بالرجوع إلى المعادلة الأصلية.",
+          "WorkedExamples": "مثال 1: 2س+3=7؛ اطرح 3 من الطرفين: 2س=4، ثم س=2، وتحقق 2(2)+3=7. مثال 2: 6−3س=21؛ بعد طرح 6 نحصل على -3س=15، س=-5، وتحقق 6−3(-5)=21. مثال 3: 3/4 س+2=11؛ اطرح 2، ثم اضرب في 4/3، فنحصل س=12. مثال 4: 25=1/4 ن−3؛ أضف 3 إلى الطرفين لتصبح 28=ن/4، ثم ن=112. مثال 5: -27=1.8س+32؛ اطرح 32 ثم اقسم على 1.8، س=-59/1.8، أي -295/9، وتحفظ القيمة الكسرية دون تقريب مضلل.",
+          "StepByStepSolutions": "1) أكتب المعادلة وأتأكد من موضع المتغير؛ مثال -4س+7=23. 2) أعكس الجمع أو الطرح أولاً: -4س=16. 3) أعكس الضرب أو القسمة: س=-4. 4) أتحقق: -4(-4)+7=16+7=23. 5) أستعمل القاعدة نفسها مع الكسر: (3/5)س−1=8 ⇒ (3/5)س=9 ⇒ س=15. 6) في مسألة سياقية أترجم المعطيات إلى معادلة قبل الحل، وأذكر معنى المتغير ووحدة الإجابة. 7) إذا اقترح حل غير صحيح أتحقق بالتعويض وأحدد العملية التي أخلّت بالتوازن.",
+          "CommonMistakes": "طرح الحد الثابت من طرف واحد فقط يجعل المعادلة غير مكافئة. قسمة حد واحد بدل طرف المعادلة كله خطأ؛ يجب أن تطبق العملية على كل طرف بعد عزل الحد. ومن الأخطاء تجاهل السالب في 6−3س=21؛ النتيجة س=-5. إذا كان المتغير في مقام ثابت مثل س/4 فلا نضرب في 1/4 بل في 4. لا نخلط عدد الخطوات مع عدد الحدود، وقد نحتاج التبسيط قبل الحل. جميع الحلول الرقمية تتحقق بالتعويض.",
+          "QuickSummary": "أحل أ س+ب=ج بعمليتين عكسيتين، وأفحص صحة الجواب بالتعويض. Cool-down أصلي: (1) 4س−7=9. (2) 15−3ص=−6. (3) (2/5)م+1=9. (4) اشرح لماذا لا يجوز طرح 5 من جهة واحدة في 5+2س=11. تفسير خطأ الميزان يراجعه المعلم."
         }
       ]
     },

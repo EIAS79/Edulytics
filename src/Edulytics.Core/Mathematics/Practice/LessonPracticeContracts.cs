@@ -10325,6 +10325,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U02L01_PDF144_151",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U02:L02, owner-selected Student Book PDF 154–161.
+        // Reuse numeric equation families only; written equivalence and visual
+        // balance proofs are teacher reviewed. Stage D runtime checks NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS", "algebra.linear.solve", "TWO_STEP_LINEAR_AX_PLUS_B_EQUALS_C",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed", "supporting.algebra.expand"],
+            "UAE_G8_AR_U02L02_PDF154_161",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
