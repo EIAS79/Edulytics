@@ -150,7 +150,9 @@ public sealed class RichLessonContentV2RolloutTests
                 lesson.LessonCode.StartsWith(
                     "PED:UAE-MOE-MATH:L5:GENERAL:", StringComparison.Ordinal) ||
                 lesson.LessonCode.StartsWith(
-                    "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal))
+                    "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal) ||
+                lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal))
                 Assert.Equal("ar", NormalizeCulture(lesson.CultureCode));
             else
                 Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
