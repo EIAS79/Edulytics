@@ -686,6 +686,23 @@ internal static partial class SupportingPracticeCompletionEngine
             return actual==independent;
         }
         var expected = Solve(family, p);
+        // Scoped Arabic Grade 7 exact numeric Practice accepts both
+        // Western digits and Arabic/extended-Arabic-Indic input; no
+        // special handling is applied to any other family.
+        if (family.StartsWith("uae.g7.u09.", StringComparison.Ordinal))
+        {
+            if (string.IsNullOrWhiteSpace(answer) || answer.Length > 24)
+                return false;
+            var normalized = string.Concat(answer.Trim().Select(ch => ch switch
+            {
+                >= '٠' and <= '٩' => (char)('0' + ch - '٠'),
+                >= '۰' and <= '۹' => (char)('0' + ch - '۰'),
+                _ => ch
+            }));
+            return int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var actual)
+                && int.TryParse(expected, NumberStyles.Integer, CultureInfo.InvariantCulture, out var target)
+                && actual == target;
+        }
         if (family is
             "usccss.g7.u04.fractional_change" or
             "usccss.g7.u04.reverse_percent_original" or
