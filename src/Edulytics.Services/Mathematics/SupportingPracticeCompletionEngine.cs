@@ -1787,7 +1787,7 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem G7SphereVolume(Random random, int scale)
     {
-        var radius = 3 * random.Next(1, 4 + scale);
+        var radius = 3 * random.Next(1, 20 + Math.Min(scale, 3));
         return P("uae.g7.u09.l03.sphere_volume_pi_coefficient",
             $"كرة نصف قطرها {radius} سم. حجمها الدقيق kπ سم³. أوجد k.",
             "حجم الكرة = (4 ÷ 3) × π × مكعب نصف القطر.",
@@ -1806,10 +1806,13 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem G7ConeSurfaceArea(Random random, int scale)
     {
+        // Independent integer right-triangle profiles keep slant height
+        // geometrically valid while supporting ten genuinely distinct items.
         (int Radius, int Height, int SlantHeight)[] triples =
-            [(3, 4, 5), (5, 12, 13), (8, 15, 17)];
+            [(3, 4, 5), (5, 12, 13), (8, 15, 17),
+             (7, 24, 25), (9, 40, 41), (12, 35, 37)];
         var triple = triples[random.Next(triples.Length)];
-        var multiplier = random.Next(1, 2 + Math.Min(scale, 3));
+        var multiplier = random.Next(1, 6);
         var radius = triple.Radius * multiplier;
         var slantHeight = triple.SlantHeight * multiplier;
         return P("uae.g7.u09.l05.cone_surface_area_pi_coefficient",
@@ -1820,7 +1823,9 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem G7ScaleFactor(Random random, bool area)
     {
-        var factor = random.Next(2, 6);
+        // A certified ten-question family needs more than four true
+        // dilation factors; no cosmetic duplicates or false variants.
+        var factor = random.Next(2, 24);
         return P(area ? "uae.g7.u09.l06.scale_area_factor" : "uae.g7.u09.l06.scale_volume_factor",
             area
                 ? $"إذا ضُرب كل بُعد طولي لمجسم في {factor}، فكم مرة تتضاعف مساحة سطحه؟"
