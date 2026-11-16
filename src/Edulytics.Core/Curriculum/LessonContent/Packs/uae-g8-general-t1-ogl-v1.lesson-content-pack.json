@@ -121,10 +121,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 56–63; printed 23–30",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book cover 2025–2026; local scanned",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "f28ef11f372d9ff70c00187f7e8b9d74078a3fccd2a74d76e3e0839961732bbd",
       "CanonicalBodySha256": "2dd8b40389cd1578ba89532af46f64ca595129574033879bf1bade40a16f3642",
@@ -132,7 +132,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored per local source; exact publisher item parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -143,6 +143,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Multiplying and Dividing Monomials, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Multiplying and Dividing Monomials: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "ضرب أحاديات الحد وقسمتها",
+          "Explanation": "الدرس يربط ضرب أحاديات الحد وقسمتها بقوانين القوى. عند ضرب قوتين لهما الأساس نفسه نجمع الأسس: أ^م × أ^ن = أ^(م+ن). مثال: س^3 × س^4 = س^7 لأن عوامل س السبعة تتجمع. وعند القسمة على قوة لها الأساس نفسه نطرح الأسس: أ^م ÷ أ^ن = أ^(م−ن) بشرط أ≠0؛ مثل س^8 ÷ س^3 = س^5. نضرب المعاملات العددية على حدة ثم نطبق قاعدة الأسس على كل متغير، فتكون (3س^2 ص^3)(−4س^5 ص)=−12س^7 ص^4. في القسمة نراعي عدم جعل المقام صفرًا وألا ننقل قاعدة جمع الأسس بين أساسين مختلفين. النشاط الأصلي: اكتب في جدول نتائج ضرب أطوال بوحدات متر وسم وسنتيمتر بعد توحيد الأسس والأساس.",
+          "KeyConceptsAndRules": "قانون ناتج ضرب القوى ذات الأساس الواحد: أ^م أ^ن = أ^(م+ن). قانون قسمة القوى ذات الأساس الواحد: أ^م/أ^ن=أ^(م−ن)، أ≠0. لمجموع حدود غير متشابهة لا نختصر الأسس، ولحاصل ضرب أحاديات الحد نضرب المعاملات ثم نجمع أسس المتغير المتماثل. مثال 2س^2 × 5س^3=10س^5. وعند القسمة 18س^7ص^4/(6س^2ص)=3س^5ص^3 حيث س وص غير صفريين في المقام. يجب عدم تطبيق قوانين القوى على الجمع، فلا تساوي س^2+س^3 س^5.",
+          "WorkedExamples": "مثال1: 5^2×5^3=5^5=3125. مثال2: س^4×س^6=س^10. مثال3: 7^6÷7^4=7^2=49. مثال4: (3س^2ص)(−4س^3ص^2)=−12س^5ص^3. مثال5: 24أ^7ب^5 ÷ (6أ^2ب^3)=4أ^5ب^2 مع أ،ب غير صفريين. مثال6 تطبيقي: مساحة مستطيل طول ضلعيه 2س^2 متر و3س^3 متر تساوي 6س^5 متر مربع؛ وإذا أعطيت المساحة وأحد الأضلاع يمكن إيجاد الآخر بالقسمة.",
+          "StepByStepSolutions": "أولًا أحدد هل المسألة ضرب أم قسمة وأفصل المعاملات عن المتغيرات. ثانيًا أضرب المعاملات أو أقسمها مع حفظ الإشارة. ثالثًا أجمع الأسس للمتغير المكرر في الضرب، أو أطرح أسس المقام من أسس البسط عند القسمة على أساس مطابق وغير صفري. رابعًا أعيد كتابة حد واحد مبسط: 12س^8ص^3/(3س^2ص)=4س^6ص^2. خامسًا أتحقق بالتعويض بس=2،ص=3 أو بتوسيع عوامل صغيرة؛ لا يحق لي إلغاء س إذا كان صفرًا في المقام.",
+          "CommonMistakes": "من الأخطاء ضرب الأسس في قانون ضرب قوتين بدل جمعها: س^2×س^3=س^5 وليس س^6. ومن الأخطاء جمع الأسس في القسمة بدل طرحها: س^7/س^2=س^5. لا يجوز تطبيق القاعدة على أسس مختلفة مثل 2^3×3^2 كأنها 6^5. ولا تصح اختصارات س^2+س^3. عند وجود مقام متغير يجب إعلان شرط عدم انعدامه، وإشارة ناتج ضرب معامل موجب وسالب سالبة.",
+          "QuickSummary": "أضرب أحاديات الحد بضرب المعاملات وجمع أسس المتغيرات المتشابهة، وأقسمها بقسمة المعاملات وطرح الأسس مع مقام غير صفري. نشاط ختامي (Cool-down) أصلي: (1) بسّط 4س^3×(−2س^4). (2) بسّط 18أ^7ب^3/(3أ^2ب) واكتب شروط المجال. (3) فسّر لماذا س^2+س^3 لا يساوي س^5. التفسير الكتابي يراجعه المعلم."
         }
       ]
     },

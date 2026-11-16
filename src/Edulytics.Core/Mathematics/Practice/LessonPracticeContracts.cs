@@ -10250,6 +10250,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_2025_2026_U01L02_PP15_22",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U01L03, local Arabic Student Book PDF 56-63.
+        // Reuse existing algebraic/numeric families. Variable-proof/geometry
+        // responses are teacher scored; do not claim exact symbolic runtime parity.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS", "supporting.algebra.expressions", "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
+            ["supporting.algebra.simplify", "supporting.algebra.expand", "supporting.powers10.multiply", "supporting.powers10.divide"],
+            "UAE_G8_AR_U01L03_LOCAL_PDF56_63",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
