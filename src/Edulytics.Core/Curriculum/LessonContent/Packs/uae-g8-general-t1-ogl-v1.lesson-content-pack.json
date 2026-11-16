@@ -293,10 +293,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 7",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 92–99; printed 59–66; subsequent unit exploration",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local Arabic Student Book cover 2025–2026",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "3b45cc3489f156945d54297a59f4845450d99e10017b95be2d0fdebbfdcf91bd",
       "CanonicalBodySha256": "bb685cbfb67803c1a8735bafda7b722a211d49cf29ef5e701fd7a70e88256c4e",
@@ -304,7 +304,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original authored Arabic academic correction; exact publisher-item parity UNKNOWN; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -315,6 +315,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Computing with Scientific Notation, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Computing with Scientific Notation: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الحساب باستخدام الترميز العلمي",
+          "Explanation": "أتعلم إجراء العمليات الأربع على أعداد مكتوبة بالترميز العلمي مع الحفاظ على القيمة والمجال. عند الضرب أضرب المعاملات وأجمع أسس قوى العشرة، ثم أعيد التطبيع حتى يكون مقدار المعامل بين 1 و10. عند القسمة أقسم المعاملات مع عدم انعدام المقسوم عليه وأطرح الأسس. أما الجمع والطرح فلا أجمع الأسس؛ أوحّد قوة العشرة أولًا ثم أجمع أو أطرح المعاملات. نموذج: (3.2×10^4)(2×10^3)=6.4×10^7. وعند الجمع (4.5×10^6)+(2.3×10^5)=(4.5+0.23)×10^6=4.73×10^6. أنشطة أصلية تحاكي حساب رسائل شبكة حاسوبية وحجم جزيئات صغيرة، بدون إعادة رسم المصدر.",
+          "KeyConceptsAndRules": "الضرب: (أ×10^م)(ب×10^ن)=(أب)×10^(م+ن). القسمة: (أ×10^م)/(ب×10^ن)=(أ/ب)×10^(م−ن) مع ب≠0. الجمع والطرح: يجب توحيد الأس قبل جمع المعاملات، مثل 6.3×10^5−1.2×10^4=(6.3−0.12)×10^5=6.18×10^5. بعد كل عملية أطبع المعامل ليرضي 1≤|أ|<10. مثال (6×10^7)(4×10^2)=24×10^9=2.4×10^10. أقرب في النهاية فقط حسب دقة المعطيات، ولا أتعامل مع علامة الأس السالب كعلامة نتيجة سالبة.",
+          "WorkedExamples": "مثال1: (7.2×10^3)(1.6×10^4)=11.52×10^7=1.152×10^8. مثال2: (9×10^8)/(3×10^2)=3×10^6. مثال3: (6.89×10^4)+(9.24×10^5)=(0.689+9.24)×10^5=9.929×10^5. مثال4: (7.83×10^8)−11,610,000 = (7.83−0.1161)×10^8=7.7139×10^8. مثال5: 5400+(6.8×10^5)=(0.054+6.8)×10^5=6.854×10^5. مثال6: (3.6×10^-3)(2×10^-4)=7.2×10^-7.",
+          "StepByStepSolutions": "لضرب عددين علميين اضرب معامليهما واجمع الأسين، ثم إذا خرج المعامل عن المجال 1≤|أ|<10 حرك الفاصلة وعدّل الأس. للقسمة اقسم المعاملات واطرح الأسين مع اختبار مقام غير صفري. للجمع والطرح اختر قوة عشرة مشتركة، حول أحد الحدين إلى المعامل المناسب دون تغيير قيمته، ثم أجر الجمع أو الطرح وطبّع الناتج. اكتب معادلة تحقق بإرجاع العدد إلى صورته القياسية أو تقدير رتبة المقدار. في المسألة المفتوحة اشرح لماذا لم تجمع الأسين في عملية جمع.",
+          "CommonMistakes": "جمع الأسين عند جمع عددين علميين خطأ، فالأسس تجمع في الضرب فقط؛ قبل الجمع نوحد القوى. ومن الخطأ ترك 12.5×10^6 في صورة علمية معيارية؛ الصحيح 1.25×10^7. لا نخلط 10^-4 مع عدد سالب: قيمته موجبة 0.0001. عند قسمة (8×10^7)/(2×10^3) نطرح الأسس لنحصل على 4×10^4 لا 4×10^10. ومن الخطأ التقريب المبكر للمعاملات الدقيقة وإضاعة مرتبة عشرية.",
+          "QuickSummary": "الضرب والجمع والقسمة والطرح على الصيغة أ×10^ن: أجمع الأسس في الضرب، وأطرحها في القسمة، وأوحدها للجمع والطرح؛ أطبّع المعامل. Cool-down أصلي: احسب (4×10^5)(3×10^-2)، و(9×10^7)/(3×10^3)، و(2.5×10^6)+(3×10^5)، ثم برر اختلاف قواعد الأسس بين الضرب والجمع. المبررات يراجعها المعلم."
         }
       ]
     },
