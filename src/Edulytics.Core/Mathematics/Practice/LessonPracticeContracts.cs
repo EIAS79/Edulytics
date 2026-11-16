@@ -10334,6 +10334,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U02L02_PDF154_161",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General owner-selected Arabic Student Book U02:L03, PDF162–169.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS", "supporting.algebra.equations", "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
+            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_U02L03_LOCAL_PDF162_169",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
