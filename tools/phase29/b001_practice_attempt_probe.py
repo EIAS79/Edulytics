@@ -105,6 +105,10 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
                 ("الأقواس","الأسس","الضرب والقسمة","الجمع والطرح"),
                 ("التبديل","التجميع","المحايد","غير متكافئين"),
                 ("مستقل","تابع"),
+                # UAE G7 angle-type prompts return Arabic categorical answers.
+                # Preserve the correct family schema for the graded wrong control.
+                ("حادة","قائمة","منفرجة","مستقيمة"),
+                ("حاد","قائم","منفرج","مستقيم"),
                 ("حسابية","هندسية"),
                 ("خطية","غير خطية"),
             )
@@ -487,6 +491,14 @@ if __name__=="__main__":
             self.assertRaises(ValueError,
                 grade6_syntactically_valid_wrong_answer,
                 "المنحرف","uae.g6.invalid-sentinel")
+        def test_g7_angle_classification_wrong_answer_uses_valid_category(self):
+            for expected in ("حادة","قائمة","منفرجة","مستقيمة",
+                             "حاد","قائم","منفرج","مستقيم"):
+                wrong=grade6_syntactically_valid_wrong_answer(
+                    expected,"supporting.geometry.angle_classify")
+                self.assertNotEqual(wrong,expected)
+                self.assertIn(wrong,("حادة","قائمة","منفرجة","مستقيمة",
+                                     "حاد","قائم","منفرج","مستقيم"))
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))
