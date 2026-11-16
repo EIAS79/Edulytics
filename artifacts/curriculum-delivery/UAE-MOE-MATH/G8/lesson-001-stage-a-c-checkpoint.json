@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "project": "Edulytics",
+  "curriculum": "UAE-MOE-MATH",
+  "grade": 8,
+  "pathway": "General",
+  "lessonOrdinal": 1,
+  "unit": 1,
+  "lessonWithinUnit": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS",
+  "title": "الأعداد النسبية",
+  "repositoryBase": "b62f42b41aaca9496bf085924404fbbbbcfec93f",
+  "source": {
+    "kind": "StudentBook",
+    "localFile": "Grade_08/01_Student_Books/01-1-4.pdf",
+    "editionOnCover": "2025-2026",
+    "sha256": "d10222e87f41a05cfed0dc7dd06fb0dff9b069c31ff4e71c80c65d1007474f0e",
+    "pdfPagesReviewed": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "printedPages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "comparisons": [
+    {
+      "category": "definition",
+      "observed": "rational numbers a/b with nonzero denominator",
+      "action": "replaced generic English with Arabic, specified condition"
+    },
+    {
+      "category": "representations",
+      "observed": "fraction; terminating and repeating decimal; number sets containment",
+      "action": "added Arabic explanation and number-set relationships"
+    },
+    {
+      "category": "worked_examples",
+      "observed": "fraction-to-decimal; repeating decimal-to-fraction; signed values",
+      "action": "added independently authored numeric examples and verification"
+    },
+    {
+      "category": "practice",
+      "observed": "guided and independent conversion; applied problems",
+      "action": "added original practice and answers"
+    },
+    {
+      "category": "assessment",
+      "observed": "check understanding; exercises and explanation",
+      "action": "added original cool-down linked to the objective"
+    },
+    {
+      "category": "visuals",
+      "observed": "number sets inclusion representation",
+      "action": "concept described; interactive visual renderer not verified"
+    }
+  ],
+  "skillContractCandidate": {
+    "skill": "rational-number-representations",
+    "answerTypes": [
+      "rational",
+      "decimal",
+      "classification"
+    ],
+    "allowedQuestionFamilies": [
+      "fraction-to-decimal",
+      "terminating-decimal-to-fraction",
+      "repeating-decimal-to-fraction",
+      "rational-number-classification"
+    ],
+    "forbidden": [
+      "denominator-zero",
+      "irrational-as-rational"
+    ],
+    "renderer": "REUSE_OR_EXTEND_REVIEW_PENDING",
+    "grader": "REUSE_OR_EXTEND_REVIEW_PENDING",
+    "independentVerifier": "MUST_BE_CONFIRMED_IN_STAGE_D",
+    "cooldown": {
+      "prompt": "هل 0.666… عدد نسبي؟ علل ثم اكتبه كسرًا في أبسط صورة.",
+      "expected": "نعم؛ 2/3"
+    }
+  },
+  "candidateTestsWritten": [
+    {
+      "family": "fraction-to-decimal",
+      "input": "5/8",
+      "expected": "0.625"
+    },
+    {
+      "family": "terminating-decimal-to-fraction",
+      "input": "0.125",
+      "expected": "1/8"
+    },
+    {
+      "family": "repeating-decimal-to-fraction",
+      "input": "0.666...",
+      "expected": "2/3"
+    },
+    {
+      "family": "signed-fraction",
+      "input": "-7/4",
+      "expected": "-1.75"
+    },
+    {
+      "family": "invalid-denominator",
+      "input": "3/0",
+      "expected": "REJECT"
+    }
+  ],
+  "tests": {
+    "jsonParse": "PASS",
+    "arabicTranslationFields": "PASS",
+    "lessonCodeUniqueness": "PASS",
+    "stageD": "NOT_RUN",
+    "mathEngineTests": "NOT_RUN",
+    "uiRuntime": "NOT_RUN"
+  },
+  "coverage": {
+    "pdfPagesExamined": 8,
+    "pdfPagesExpected": 8,
+    "atomicQuestionParity": "NOT_VERIFIED",
+    "visualRenderer": "NOT_VERIFIED"
+  },
+  "gradeLevelBlockers": [
+    "AcademicLanguage remains en until all 76 translations replaced, to avoid falsely declaring an all-Arabic pack",
+    "Manifest and blueprint still contain extra Unit 12 Lesson 5; scoped retirement requires identity/attempt reference checks",
+    "CanonicalBodySha256 reconciliation with current runtime not yet verified"
+  ],
+  "status": "A_C_EVIDENCE_GAP",
+  "readyForStageD": false,
+  "startedAtUtc": "2026-11-16T20:21:48.174431+00:00",
+  "updatedAtUtc": "2026-11-16T20:21:48.269794+00:00",
+  "changes": [
+    "Retained original LessonCode and all source/meta fields",
+    "Replaced only first lesson generic English translation with lesson-specific Arabic original",
+    "Added focused test candidates and independent cool-down"
+  ]
+}
