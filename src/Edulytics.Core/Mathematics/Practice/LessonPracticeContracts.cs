@@ -10316,6 +10316,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L10_PDF122_129",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U02:L01, owner-selected Student Book PDF 144–151.
+        // Reuse numeric equation families only; written equivalence and visual
+        // balance proofs are teacher reviewed. Stage D runtime checks NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS", "supporting.algebra.equations", "ONE_STEP_RATIONAL_COEFFICIENT_LINEAR_EQUATION",
+            ["usccss.g7.u05.rational_linear_equation", "usccss.number.signed_rational_divide", "supporting.algebra.equations.mixed"],
+            "UAE_G8_AR_U02L01_PDF144_151",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
