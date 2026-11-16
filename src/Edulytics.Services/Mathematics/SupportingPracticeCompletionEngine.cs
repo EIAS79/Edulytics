@@ -1939,27 +1939,50 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem ScatterCorrelation(Random r)
     {
+        // The legacy four context prompts provide only twelve distinct
+        // semantic questions. A ten-question practice session could exhaust
+        // the uniqueness retry budget. Generate a genuine, interpretable
+        // three-point dataset with independently varying measurements
+        // without changing the verified positive/negative/none answer contract.
         var kind = r.Next(0, 3);
-        var variant = r.Next(0, 8);
-        var description = kind switch
+        var variant = r.Next(0, 16);
+        var startX = r.Next(1, 9);
+        var startY = r.Next(3, 31);
+        var step = r.Next(1, 9);
+        var xStep = r.Next(1, 5);
+        var context = (variant % 8) switch
         {
-            0 => "as x increases, y generally increases",
-            1 => "as x increases, y generally decreases",
-            _ => "there is no clear upward or downward trend"
+            0 => "study hours and test scores",
+            1 => "temperature and heating energy consumption",
+            2 => "daily distance and travel duration",
+            3 => "elapsed time and remaining battery capacity",
+            4 => "exercise duration and heart-rate recovery",
+            5 => "advertising spend and product sales",
+            6 => "water intake and plant growth",
+            _ => "outdoor temperature and demand for cooling"
         };
-        var context = (variant % 4) switch
-        {
-            0 => "paired measurements collected from students",
-            1 => "paired measurements collected over several days",
-            2 => "paired measurements from a science investigation",
-            _ => "paired measurements from a survey"
-        };
+        // For no trend, the first and last points have the same ordinate;
+        // the middle point differs. Neither a rising nor falling trend is
+        // supported. All three coordinate pairs must be read by students.
+        var firstY = kind == 1 ? startY + 2 * step : startY;
+        var middleY = startY + step;
+        var lastY = kind == 0 ? startY + 2 * step : startY;
         return P("supporting.statistics.scatter_correlation",
-            $"A scatter graph of {context} shows that {description}. State the correlation: positive, negative, or none.",
-            "Correlation describes the direction of the overall trend, not whether every point follows it.",
+            $"A scatter plot of {context} contains the points " +
+            $"({startX}, {firstY}), ({startX + xStep}, {middleY}), " +
+            $"({startX + 2 * xStep}, {lastY}). " +
+            "Classify the association as positive, negative, or none.",
+            "Compare the first, middle and last ordinate as x increases. " +
+            "Increasing values indicate positive association, decreasing " +
+            "values indicate negative association, and no consistent " +
+            "upward/downward trend indicates none. Correlation is not causation.",
             AssessmentItemType.ShortAnswer,
             ("kind", kind),
-            ("variant", variant));
+            ("variant", variant),
+            ("startX", startX),
+            ("startY", startY),
+            ("step", step),
+            ("xStep", xStep));
     }
 
     private static Problem ExperimentalProbability(Random r, int s)
