@@ -10361,6 +10361,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U02L05_LOCAL_PDF186_193",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General U03 L01; local Student Book PDF204-211.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE", "ratio.unit_rate", "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
+            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio", "usccss.g6.u03.l07.unit_rate_equivalence", "usccss.g7.u02.l10.graphs_origin_slope"],
+            "UAE_G8_GENERAL_AR_U03L01_PDF204_211",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

@@ -680,10 +680,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 204–211; printed 171–178",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local UAE Arabic Student Book 2025–2026 edition",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "99276480a6f715eadee5d1e6e447a84133553a02f593f90ebab0053a9fcc8fbd",
       "CanonicalBodySha256": "b7173a4acdcaffffa82fb803def35467edb43a5dfb7d46fb9d1d7fe55cace326",
@@ -691,7 +691,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic skill-equivalent content, source checked; exact workbook one-to-one parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -702,6 +702,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Constant Rate of Change, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Constant Rate of Change: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "معدل التغير الثابت",
+          "Explanation": "معدل التغير الثابت يصف مقدار تغير المخرجات عند تغير المدخلات بمقدار واحد. يحسب من جدول أو رسم بياني بالعلاقة (ص₂−ص₁)/(س₂−س₁) عندما س₂≠س₁. إذا انخفض رصيد من 170 إلى 140 درهمًا خلال ثلاثة أسابيع، فإن التغير =−30/3=−10 دراهم في الأسبوع، ويعبر السالب عن تناقص الرصيد. أما إنتاج 5 و10 و15 قطعة عند الزمن 2 و4 و6 دقائق فيعطي معدل 2.5 قطعة/دقيقة. لا يصبح كل معدل ثابت تناسبًا طرديًا؛ التناسب يمر بنقطة الأصل ويحقق ص=م س. النشاط الأصلي: قارن جدولاً يتغير 6 وحدات كل ساعتين برسم يبين التغير في الزمن والكمية وتحقق من ثبات النسبة بين فروق المخرجات والمدخلات.",
+          "KeyConceptsAndRules": "معدل التغير = فرق المخرجات ÷ فرق المدخلات، مع اتساق وحدات المحورين. اختر نقطتين مختلفتي س؛ إذا س₂=س₁ فالفرق الرأسي لا يمثل دالة بمعدل معين. مثال جدول (س،ص)=(1،8)،(3،14)،(5،20): فرق ص هو 6 في مقابل فرق س هو 2، فيكون 3 وحدات لكل وحدة س. ويظل المعدل ثابتًا بين الأزواج الثلاثة. معدل سالب يعني انخفاضًا، وصفر يعني ثبات المخرجات. التمييز بين العلاقة الخطية والتناسب مهم؛ ص=3س+5 معدلها 3 لكنها لا تمر بالأصل، أما ص=3س فتمر بالأصل.",
+          "WorkedExamples": "مثال 1: الزمن بالأسابيع 1،2،3،4 والرصيد 170،140،110،80؛ معدل التغير (140−170)/(2−1)=−30 درهمًا في الأسبوع. مثال 2: في جدول ص=4س+7، تتغير ص 8 إذا تغيرت س من 2 إلى 4، فيكون المعدل 8/2=4. مثال 3: عند (2،10) و(6،18)، معدل التغير=(18−10)/(6−2)=2. مثال 4: نقارن علاقة 2س=ص بعلاقة ص=2س+6؛ كلاهما له معدل 2 لكن الثانية ليست تناسبًا طرديًا. مثال 5: خط أفقي عند ص=5 معدله 0. مثال 6: عند (0،9) و(3،3)، المعدل=(3−9)/3=−2.",
+          "StepByStepSolutions": "أقرأ من الجدول أو الرسم زوجين متمايزين في قيمة س. أكتب التغير في ص بوحدته، والتغير في س بوحدته، وأقسم فرق ص على فرق س بنفس ترتيب الطرح. أتحقق من المعدل باستخدام زوج آخر أو فاصل آخر، ولا أستنتج ثبات المعدل من زوج واحد فقط عند وجود أكثر من زوج في المعطيات. أقرأ الإشارة: موجب زيادة، سالب نقصان، صفر لا تغير. إذا سئلت عن تناسب طردي أختبر مرور الخط بالأصل أو ثبات نسبة ص/س إلى جانب ثبات الفرق. أختم بتفسير عدد المعدل ووحدتيه في سياق المشكلة.",
+          "CommonMistakes": "من الخطأ قسمة ص₂/س₂ بدل حساب فروق القيم في علاقة غير متناسبة؛ في ص=3س+5 لا تساوي ص/س معدل التغير. لا نغير ترتيب طرح ص دون تغيير ترتيب طرح س. قد يظهر معدل سالب لا يعني أن كمية ص نفسها سالبة بل إنها تتناقص. لا تقرأ ميل خط عمودي كعدد معرف؛ فرق س يساوي صفرًا. ولا نستنتج التناسب الطردي لمجرد أن التغير ثابت؛ يجب فحص وجود الأصل.",
+          "QuickSummary": "أحسب معدل التغير الثابت من جدول أو رسم بخارج قسمة التغير الرأسي على الأفقي وأذكر وحداته وإشارته. Cool-down أصلي: (1) نقاط (1،9) و(4،21) احسب المعدل. (2) رصيد ينقص 15 درهمًا كل 3 أيام؛ ما المعدل اليومي؟ (3) هل ص=4س+7 تناسب طردي؟ علل. تراجع الرسوم والأسباب الكتابية بشريًا."
         }
       ]
     },
