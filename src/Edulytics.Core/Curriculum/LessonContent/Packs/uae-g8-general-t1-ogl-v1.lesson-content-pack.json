@@ -766,10 +766,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf PDF 222–231; printed 189–198",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Local UAE Arabic Student Book 2025–2026 edition",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "0c662fa22e9890aa15fa0b6dbc534ae2471fbaa65ea6e2574b96e568bd08275b",
       "CanonicalBodySha256": "e6e0a5ed126d7a360aedafc87519a4acfdae5fd502b7828d80f61841db49d148",
@@ -777,7 +777,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic skill-equivalent content, source checked; exact workbook one-to-one parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -788,6 +788,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Equations in y = mx Form, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Equations in y = mx Form: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المعادلات بصيغة y = mx",
+          "Explanation": "تمثل العلاقة ص=م س تناسبًا طرديًا عندما تكون م ثابتًا ويكون التمثيل البياني خطًا مستقيمًا يمر بنقطة الأصل (0،0). العدد م هو معدل التغير أو ثابت التناسب، ويمكن إيجاده من ص/س لنقطة لا تساوي فيها س صفرًا. إذا تدفع حافلة 12 درهمًا لكل ساعة تشغيل، فإن التكلفة ص=12س عند س ساعات؛ لهذا (0،0)،(2،24)،(5،60) تنتمي إلى الخط نفسه. في جدول تناسب طردي تختلف قيم س لكن النسبة ص/س ثابتة؛ أما ص=12س+5 فليست تناسبًا طرديًا لأنها لا تمر بالأصل. يميز الطالب من سياق التذاكر والمسافة كيف يؤدي رفع س إلى رفع ص بالمعدل الثابت.",
+          "KeyConceptsAndRules": "ص=م س، م هو ثابت التناسب وميل المستقيم، ونقطة التقاطع الرأسي هي صفر. لأي نقطة (س،ص) حيث س≠0 نجد م=ص/س. عند (3،21)، م=7 فالمعادلة ص=7س. لا نضيف حدًا ثابتًا إذا كانت العلاقة تناسبًا طرديًا؛ ص=7س+4 ليست من الصيغة المطلوبة. إذا كان م سالبًا يقل ص عندما يزيد س، لكنه لا يزال خطًا يمر بالأصل. يمكن اختيار نقطتين مثل (0،0) و(2،14) لرسم ص=7س. أختبر الجدول بحساب ص/س لكل صف غير صفري وملاحظة نقطة (0،0).",
+          "WorkedExamples": "مثال 1: السعر 12 درهمًا لكل ساعة: ص=12س، وعند س=4، ص=48 درهمًا. مثال 2: نقاط (2،18)،(4،36) تعطي ثابت تناسب 9، إذن ص=9س. مثال 3: من جدول س=1،2،3 وص=7،14،21 نكتب ص=7س. مثال 4: ص=−3س عند س=−2 فيكون ص=6، ورسمها يمر بالأصل. مثال 5: جدول س=1،2،3 وص=7،14،22 لا تناسب طرديًا لأن النسبة ليست ثابتة. مثال 6: في نموذج نقل 70 لترًا لكل ساعة نكتب ص=70س، ويمكن توقع 350 لترًا بعد خمس ساعات.",
+          "StepByStepSolutions": "افحص سياق المسألة: هل توجد كلفة ثابتة أو قيمة أولية مستقلة عن س؟ إن لم توجد وكان المعدل ثابتًا، اكتب ص=م س. اختر صفًا بس≠0 واحسب م=ص÷س بوحدته المناسبة. تحقق من صف آخر ومن أن الصفر في س يقابله صفر في ص، ثم اكتب المعادلة. للرسم ابدأ بالنقطة (0،0) وحدد نقطة إضافية متوافقة مع م ثم ارسم مستقيمًا. لقياس ص عند قيمة س معينة عوّض في ص=م س، ولا تخلط وحدات الزمن أو المسافة.",
+          "CommonMistakes": "ليس كل معدل تغير ثابت تناسبًا طرديًا: ص=4س+7 خطي لكنه لا يمر بالأصل. لا تجعل م ناتج س/ص بدل ص/س. إذا أخذت نسبة 0/0 لحساب م فإنها غير معرفة؛ استخدم نقطة بس غير صفر. في كتابة ص=م س لا تضف حدًا ثابتًا من غير دليل. عند رسم خط بميل سالب احفظ اتجاه الخط في الأرباع ولا تكتف برسم نقاط موجبة.",
+          "QuickSummary": "أميز التناسب الطردي بصيغة ص=م س وخط مستقيم يمر بالأصل وثابت م=ص/س. Cool-down أصلي: (1) جدول س=2،5 وص=14،35: أوجد م والمعادلة. (2) هل ص=3س+2 تناسب طردي؟ (3) مثل ص=−2س بنقطتين أصليتين. (4) اشرح لماذا 0/0 لا يُستخدم لإيجاد م. المعلم يراجع رسم المحاور والبرهان."
         }
       ]
     },

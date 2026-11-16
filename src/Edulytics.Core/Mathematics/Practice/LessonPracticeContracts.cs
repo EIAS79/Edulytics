@@ -10379,6 +10379,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L02_PDF214_221",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General U03 L03; local Student Book PDF222-231.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM", "algebra.modeling.linear_relationship", "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
+            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule", "functions.rules.linear"],
+            "UAE_G8_GENERAL_AR_U03L03_PDF222_231",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
