@@ -94,7 +94,7 @@ jobs:
       - name: Shared UAE and US geometry regressions
         run: |
           mkdir -p artifacts/uae-g7-stage-d/trx
-          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade7ArabicPathwayPolicyTests|FullyQualifiedName~UaeGrade7FirstPartyReferenceRightsTests|FullyQualifiedName~UaeGrade7PracticeGenerationPreflightTests|FullyQualifiedName~UaeGrade1ArabicStudentLocaleTests|FullyQualifiedName~UaeG6|FullyQualifiedName~UaeGrade5|FullyQualifiedName~UaeG5|FullyQualifiedName~UsCcssG7' --logger 'trx;LogFileName=g7-shared-impact.trx' --results-directory artifacts/uae-g7-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade7ArabicPathwayPolicyTests|FullyQualifiedName~UaeGrade7FirstPartyReferenceRightsTests|FullyQualifiedName~UaeGrade7PracticeGenerationPreflightTests|FullyQualifiedName~UaeGrade7Unit9ExactSolidPracticeTests|FullyQualifiedName~UaeGrade1ArabicStudentLocaleTests|FullyQualifiedName~UaeG6|FullyQualifiedName~UaeGrade5|FullyQualifiedName~UaeG5|FullyQualifiedName~UsCcssG7' --logger 'trx;LogFileName=g7-shared-impact.trx' --results-directory artifacts/uae-g7-stage-d/trx
       - if: always()
         uses: actions/upload-artifact@v4
         with:
