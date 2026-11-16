@@ -386,7 +386,7 @@ public sealed class Phase29PedagogicalLessonArchitectureTests
         // 128 independently authored Arabic lessons without invented official
         // reference nodes. The other grades remain unchanged.
         Assert.Equal(
-            1373 - 10 - 59,
+            1373 - 10 - 59 - 62,
             await db.CurriculumPedagogicalLessons
                 .CountAsync(
                     x =>

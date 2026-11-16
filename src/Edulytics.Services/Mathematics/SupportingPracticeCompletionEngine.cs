@@ -116,6 +116,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+            "uae.g7.u09.l02.cone_volume_pi_coefficient",
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+            "uae.g7.u09.l06.scale_area_factor",
+            "uae.g7.u09.l06.scale_volume_factor",
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
             "usccss.g7.u04.fractional_change",
             "usccss.g7.u04.reverse_percent_original",
@@ -310,6 +317,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient" => G7CylinderVolume(random, scale),
+            "uae.g7.u09.l02.cone_volume_pi_coefficient" => G7ConeVolume(random, scale),
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient" => G7SphereVolume(random, scale),
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient" => G7CylinderSurfaceArea(random, scale),
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient" => G7ConeSurfaceArea(random, scale),
+            "uae.g7.u09.l06.scale_area_factor" => G7ScaleFactor(random, area: true),
+            "uae.g7.u09.l06.scale_volume_factor" => G7ScaleFactor(random, area: false),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => CircleFractionArea(random, scale),
             "usccss.g7.u04.fractional_change" => G7FractionalChange(random, scale),
             "usccss.g7.u04.reverse_percent_original" => G7ReversePercentOriginal(random, scale),
@@ -535,6 +549,18 @@ internal static partial class SupportingPracticeCompletionEngine
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient" =>
+                checked(p["radius"] * p["radius"] * p["height"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l02.cone_volume_pi_coefficient" =>
+                checked(p["radius"] * p["radius"] * p["height"] / 3).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient" =>
+                checked(4 * p["radius"] * p["radius"] * p["radius"] / 3).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient" =>
+                checked(2 * p["radius"] * (p["radius"] + p["height"])).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient" =>
+                checked(p["radius"] * (p["radius"] + p["slantHeight"])).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l06.scale_area_factor" => checked(p["scale"] * p["scale"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l06.scale_volume_factor" => checked(p["scale"] * p["scale"] * p["scale"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" =>
                 SimplifyFraction(p["radius"] * p["radius"], p["denominator"]),
             "usccss.g7.u04.fractional_change" =>
@@ -660,6 +686,23 @@ internal static partial class SupportingPracticeCompletionEngine
             return actual==independent;
         }
         var expected = Solve(family, p);
+        // Scoped Arabic Grade 7 exact numeric Practice accepts both
+        // Western digits and Arabic/extended-Arabic-Indic input; no
+        // special handling is applied to any other family.
+        if (family.StartsWith("uae.g7.u09.", StringComparison.Ordinal))
+        {
+            if (string.IsNullOrWhiteSpace(answer) || answer.Length > 24)
+                return false;
+            var normalized = string.Concat(answer.Trim().Select(ch => ch switch
+            {
+                >= '٠' and <= '٩' => (char)('0' + ch - '٠'),
+                >= '۰' and <= '۹' => (char)('0' + ch - '۰'),
+                _ => ch
+            }));
+            return int.TryParse(normalized, NumberStyles.Integer, CultureInfo.InvariantCulture, out var actual)
+                && int.TryParse(expected, NumberStyles.Integer, CultureInfo.InvariantCulture, out var target)
+                && actual == target;
+        }
         if (family is
             "usccss.g7.u04.fractional_change" or
             "usccss.g7.u04.reverse_percent_original" or
@@ -1718,6 +1761,81 @@ internal static partial class SupportingPracticeCompletionEngine
             ("radius", radius));
     }
 
+
+    // UAE Grade 7 Arabic: independently assessed solid-geometry formulas.
+    // Questions request the integer coefficient k in kπ, avoiding decimal
+    // approximation and ensuring each lesson actually assesses its own formula.
+    private static Problem G7CylinderVolume(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = random.Next(3, 10 + scale);
+        return P("uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+            $"أسطوانة نصف قطرها {radius} سم وارتفاعها {height} سم. حجمها kπ سم³. أوجد معامل π، أي العدد k.",
+            "حجم الأسطوانة = π × مربع نصف القطر × الارتفاع.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7ConeVolume(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = 3 * random.Next(2, 6 + scale);
+        return P("uae.g7.u09.l02.cone_volume_pi_coefficient",
+            $"مخروط دائري قائم نصف قطر قاعدته {radius} سم وارتفاعه العمودي {height} سم. حجمه kπ سم³. أوجد k.",
+            "حجم المخروط = (π × مربع نصف القطر × الارتفاع العمودي) ÷ 3.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7SphereVolume(Random random, int scale)
+    {
+        var radius = 3 * random.Next(1, 20 + Math.Min(scale, 3));
+        return P("uae.g7.u09.l03.sphere_volume_pi_coefficient",
+            $"كرة نصف قطرها {radius} سم. حجمها الدقيق kπ سم³. أوجد k.",
+            "حجم الكرة = (4 ÷ 3) × π × مكعب نصف القطر.",
+            ("radius", radius));
+    }
+
+    private static Problem G7CylinderSurfaceArea(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = random.Next(3, 10 + scale);
+        return P("uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+            $"أسطوانة مغلقة نصف قطر قاعدتها {radius} سم وارتفاعها {height} سم. مساحة سطحها الكلية kπ سم². أوجد k.",
+            "مساحة السطح الكلية = مساحتي القاعدتين + المساحة الجانبية = 2πr² + 2πrh.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7ConeSurfaceArea(Random random, int scale)
+    {
+        // Independent integer right-triangle profiles keep slant height
+        // geometrically valid while supporting ten genuinely distinct items.
+        (int Radius, int Height, int SlantHeight)[] triples =
+            [(3, 4, 5), (5, 12, 13), (8, 15, 17),
+             (7, 24, 25), (9, 40, 41), (12, 35, 37)];
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, 6);
+        var radius = triple.Radius * multiplier;
+        var slantHeight = triple.SlantHeight * multiplier;
+        return P("uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+            $"مخروط دائري قائم مغلق نصف قطر قاعدته {radius} سم وطول راسمه {slantHeight} سم. مساحة سطحه الكلية kπ سم². أوجد k.",
+            "مساحة السطح الكلية = مساحة القاعدة + المساحة الجانبية = πr² + πr×طول الراسم.",
+            ("radius", radius), ("slantHeight", slantHeight));
+    }
+
+    private static Problem G7ScaleFactor(Random random, bool area)
+    {
+        // A certified ten-question family needs more than four true
+        // dilation factors; no cosmetic duplicates or false variants.
+        var factor = random.Next(2, 24);
+        return P(area ? "uae.g7.u09.l06.scale_area_factor" : "uae.g7.u09.l06.scale_volume_factor",
+            area
+                ? $"إذا ضُرب كل بُعد طولي لمجسم في {factor}، فكم مرة تتضاعف مساحة سطحه؟"
+                : $"إذا ضُرب كل بُعد طولي لمجسم في {factor}، فكم مرة يتضاعف حجمه؟",
+            area
+                ? "مساحة السطح تتغير بمربع معامل القياس الخطي."
+                : "الحجم يتغير بمكعب معامل القياس الخطي.",
+            ("scale", factor));
+    }
+
     private static Problem CircleFractionArea(Random r, int s)
     {
         var radius = r.Next(2, 18 + s * 3);
@@ -1821,27 +1939,50 @@ internal static partial class SupportingPracticeCompletionEngine
 
     private static Problem ScatterCorrelation(Random r)
     {
+        // The legacy four context prompts provide only twelve distinct
+        // semantic questions. A ten-question practice session could exhaust
+        // the uniqueness retry budget. Generate a genuine, interpretable
+        // three-point dataset with independently varying measurements
+        // without changing the verified positive/negative/none answer contract.
         var kind = r.Next(0, 3);
-        var variant = r.Next(0, 8);
-        var description = kind switch
+        var variant = r.Next(0, 16);
+        var startX = r.Next(1, 9);
+        var startY = r.Next(3, 31);
+        var step = r.Next(1, 9);
+        var xStep = r.Next(1, 5);
+        var context = (variant % 8) switch
         {
-            0 => "as x increases, y generally increases",
-            1 => "as x increases, y generally decreases",
-            _ => "there is no clear upward or downward trend"
+            0 => "study hours and test scores",
+            1 => "temperature and heating energy consumption",
+            2 => "daily distance and travel duration",
+            3 => "elapsed time and remaining battery capacity",
+            4 => "exercise duration and heart-rate recovery",
+            5 => "advertising spend and product sales",
+            6 => "water intake and plant growth",
+            _ => "outdoor temperature and demand for cooling"
         };
-        var context = (variant % 4) switch
-        {
-            0 => "paired measurements collected from students",
-            1 => "paired measurements collected over several days",
-            2 => "paired measurements from a science investigation",
-            _ => "paired measurements from a survey"
-        };
+        // For no trend, the first and last points have the same ordinate;
+        // the middle point differs. Neither a rising nor falling trend is
+        // supported. All three coordinate pairs must be read by students.
+        var firstY = kind == 1 ? startY + 2 * step : startY;
+        var middleY = startY + step;
+        var lastY = kind == 0 ? startY + 2 * step : startY;
         return P("supporting.statistics.scatter_correlation",
-            $"A scatter graph of {context} shows that {description}. State the correlation: positive, negative, or none.",
-            "Correlation describes the direction of the overall trend, not whether every point follows it.",
+            $"A scatter plot of {context} contains the points " +
+            $"({startX}, {firstY}), ({startX + xStep}, {middleY}), " +
+            $"({startX + 2 * xStep}, {lastY}). " +
+            "Classify the association as positive, negative, or none.",
+            "Compare the first, middle and last ordinate as x increases. " +
+            "Increasing values indicate positive association, decreasing " +
+            "values indicate negative association, and no consistent " +
+            "upward/downward trend indicates none. Correlation is not causation.",
             AssessmentItemType.ShortAnswer,
             ("kind", kind),
-            ("variant", variant));
+            ("variant", variant),
+            ("startX", startX),
+            ("startY", startY),
+            ("step", step),
+            ("xStep", xStep));
     }
 
     private static Problem ExperimentalProbability(Random r, int s)

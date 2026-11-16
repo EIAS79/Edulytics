@@ -338,14 +338,6 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version),
         new(
-            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:RATES-AND-UNIT-RATES",
-            "ratio.unit_rate",
-            "UNIT_RATE",
-            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
-        new(
             "PED:UAE-MOE-MATH:L8:ADVANCED:01:06:RATES-AND-UNIT-RATES",
             "ratio.unit_rate",
             "UNIT_RATE",
@@ -8662,6 +8654,656 @@ public static class LessonPracticeContractRegistry
             ["uae.g3.u14.l10.problem_solving_diagram"],
             "UAE_G3_VOLUME2_SOURCE_SCOPED_PRINTED_895_900_STAGED_STAGE_D_NOT_RUN",
             "READY_VERIFIED",Version);
+        // UAE General Grade7 Unit1 Lesson3 (printed pp25–32):
+        // Reuse existing exact metric/customary conversion and rational-rate
+        // question kernels; diagrams and unit justifications teacher reviewed.
+        // A–B–C content staged; real runtime and CI are Stage D only.
+        // UAE G7 General Arabic U01L04, student book printed 33-40:
+        // exact classification of proportional tables, fee-intercepts, equations.
+        // Visual graph explanations are scored by teacher.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:04:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:04:PROPORTIONAL-AND-NONPROPORTIONAL-RELATIONSHIPS", "proportions.equivalent_ratios",
+            "PROPORTIONAL_OR_NONPROPORTIONAL_TABLE_CLASSIFICATION",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_BOOK1_U01L04_PRINTED_33_40",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L05; student PDF85-92; plot/ratio classification
+        // Reuse existing exact table/origin families, teacher review drawing.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:05:GRAPH-PROPORTIONAL-RELATIONSHIPS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:05:GRAPH-PROPORTIONAL-RELATIONSHIPS", "proportions.equivalent_ratios",
+            "GRAPH_PROPORTIONAL_RELATIONSHIPS_ORIGIN_SLOPE",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L05_P45_52",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01L06, printed 55-62; cross-products
+        // and equivalent proportional equations, original lesson body.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:06:SOLVE-PROPORTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:SOLVE-PROPORTIONS", "proportions.equivalent_ratios",
+            "CROSS_PRODUCT_AND_UNIT_RATE_PROPORTION_SOLVE",
+            ["usccss.g7.u02.l04.proportional_equations", "usccss.g7.u02.l03.unit_rates_reciprocal", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L06_PRINTED_55_62",
+            "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U01L07 printed 65-71: constant delta-y/delta-x
+        // Numeric rate table and graph families reused; teacher reviews contexts.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:07:CONSTANT-RATE-OF-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:07:CONSTANT-RATE-OF-CHANGE", "proportions.unit_rate",
+            "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_AND_GRAPH",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l03.unit_rates_reciprocal"],
+            "UAE_G7_GENERAL_ARABIC_U01L07_PRINTED_65_71",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L08 slope, student printed 73-79; reuse
+        // existing exact slope/origin/ratio engines. Drawn graph teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:08:SLOPE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:08:SLOPE", "proportions.unit_rate",
+            "SLOPE_RISE_OVER_RUN_EXACT_RATIONAL",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l02.proportional_tables"],
+            "UAE_G7_GENERAL_ARABIC_U01L08_PRINTED_73_79",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U01 L09 direct variation, student printed 81-88:
+        // reuse exact proportionality tables, y=kx model and origin classifiers.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:09:DIRECT-VARIATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:01:09:DIRECT-VARIATION", "proportions.equivalent_ratios",
+            "DIRECT_VARIATION_CONSTANT_K_OR_NONPROPORTIONAL_CLASSIFY",
+            ["usccss.g7.u02.l07.table_proportional_or_not", "usccss.g7.u02.l08.classify_equations", "usccss.g7.u02.l02.proportional_tables", "usccss.g7.u02.l10.graphs_origin_slope"],
+            "UAE_G7_GENERAL_ARABIC_U01L09_PRINTED_81_88",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L01, student printed 103-109:
+        // percent of a quantity incl >100%, below 1%, discounts and commissions.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:01:PERCENT-OF-A-NUMBER"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:01:PERCENT-OF-A-NUMBER", "percentages.core.of_quantity",
+            "PERCENT_OF_QUANTITY_GENERAL_FRACTIONAL_AND_OVER_100",
+            ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g6.u03.l15.percent_of_quantity_exact"],
+            "UAE_G7_GENERAL_ARABIC_U02L01_PRINTED_103_109",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L02: percent benchmarks and approximation.
+        // Existing exact percent and benchmark families; open estimation reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:02:PERCENT-ESTIMATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:02:PERCENT-ESTIMATION", "percentages.core.of_quantity",
+            "BENCHMARK_PERCENT_ESTIMATION_REASONS",
+            ["usccss.g6.u03.l13.benchmark_percent_values", "usccss.g6.u03.l13.benchmark_percent_reasoning", "percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L02_PRINTED_111_118",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L03, printed 121-127:
+        // percent proportion find percentage, part or whole using existing engines.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:03:PERCENT-PROPORTION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:03:PERCENT-PROPORTION", "percentages.core.of_quantity",
+            "PERCENT_PROPORTION_FIND_PART_WHOLE_OR_RATE",
+            ["usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u02.l04.proportional_equations"],
+            "UAE_G7_GENERAL_ARABIC_U02L03_PRINTED_121_127",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02L04: percent equations, student printed 129-136.
+        // Existing exact percent of quantity / reverse-percent, no new engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:04:PERCENT-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:04:PERCENT-EQUATIONS", "percentages.core.of_quantity",
+            "PERCENT_EQUATIONS_FIND_RATE_PART_WHOLE",
+            ["percentages.core.of_quantity", "usccss.g7.u04.percent_rate_from_values", "usccss.g7.u04.reverse_percent_original", "usccss.g7.u04.nonwhole_percent_of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L04_PRINTED_129_136",
+            "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U02L05 printed 143-150:
+        // existing percent change, fractional change and percent error families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:05:PERCENT-CHANGE-AND-ERROR"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:05:PERCENT-CHANGE-AND-ERROR", "percentages.core.increase_decrease",
+            "PERCENT_CHANGE_INCREASE_DECREASE_AND_ERROR",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.percent_error", "usccss.g7.u04.fractional_change"],
+            "UAE_G7_GENERAL_ARABIC_U02L05_PRINTED_143_150",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02 L06: tax, tip and cost-based markup.
+        // Reuses exact percent-of-quantity and markup families, not legal tax rates.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:06:SALES-TAX-TIP-MARKUP"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:06:SALES-TAX-TIP-MARKUP", "percentages.core.of_quantity",
+            "SALES_TAX_TIP_AND_MARKUP_BY_BASE",
+            ["percentages.core.of_quantity", "percentages.core.increase_decrease", "uae.g6.u06.l06.percentage_markup"],
+            "UAE_G7_GENERAL_ARABIC_U02L06_PRINTED_151_158",
+            "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U02L07, student printed 159-166:
+        // discounts, net sale price, reverse original, sequential tax after discount.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:07:DISCOUNTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:07:DISCOUNTS", "percentages.core.increase_decrease",
+            "PERCENT_DISCOUNT_NET_PRICE_WITH_OPTIONAL_VAT",
+            ["percentages.core.increase_decrease", "usccss.g7.u04.reverse_percent_original", "percentages.core.of_quantity"],
+            "UAE_G7_GENERAL_ARABIC_U02L07_PRINTED_159_166",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U02L08 simple interest I=P*r*t.
+        // Reuse exact percent-of-quantity for effective rate r*t; inference of
+        // P/r/t and time conversion are authored and subject to teacher review.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:02:08:SIMPLE-INTEREST"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:02:08:SIMPLE-INTEREST", "percentages.core.of_quantity",
+            "SIMPLE_INTEREST_EFFECTIVE_RATE_PERCENT_AND_TEACHER_REVIEW",
+            ["percentages.core.of_quantity", "usccss.g7.u04.nonwhole_percent_of_quantity", "usccss.g7.u04.reverse_percent_original"],
+            "UAE_G7_GENERAL_ARABIC_U02L08_PRINTED_167_173",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L01 signed integers, absolute distance.
+        // Reuse exact signed number/absolute value graders; graphs teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:01:INTEGERS-ABSOLUTE-VALUE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:01:INTEGERS-ABSOLUTE-VALUE", "number.integers.absolute_distance",
+            "INTEGERS_SIGNED_NUMBER_LINE_ABSOLUTE_DISTANCE",
+            ["usccss.g6.u07.l06.absolute_distance_values", "usccss.g6.u07.l06.absolute_value_reasoning", "usccss.g6.u07.l07.signed_comparisons_absolute", "uae.g6.u05.l03.absolute_distance"],
+            "UAE_G7_GENERAL_ARABIC_U03L01_PRINTED_191_197",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L02 integer sums with signed terms:
+        // reuse signed rational addition and opposites exact families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:02:ADD-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:02:ADD-INTEGERS", "supporting.number.directed_operations",
+            "ADD_SIGNED_INTEGERS_OPPOSITES_AND_SUM",
+            ["usccss.g7.u05.signed_rational_add_subtract", "uae.g6.u05.l01.opposite_integer", "usccss.g6.u07.l02.signed_opposites_values"],
+            "UAE_G7_GENERAL_ARABIC_U03L02_PRINTED_203_210",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L03, student printed 215-221:
+        // signed subtraction as adding opposite with existing directed-operation family.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:03:SUBTRACT-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:03:SUBTRACT-INTEGERS", "supporting.number.directed_operations",
+            "SUBTRACT_INTEGER_AS_ADD_OPPOSITE",
+            ["usccss.g7.u05.signed_rational_add_subtract", "uae.g6.u05.l01.opposite_integer", "usccss.g6.u07.l02.signed_opposites_values"],
+            "UAE_G7_GENERAL_ARABIC_U03L03_PRINTED_215_221",
+            "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U03L04, printed 233-239.
+        // Existing exact signed-rational-multiply family, integer-domain practice.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:04:MULTIPLY-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:04:MULTIPLY-INTEGERS", "supporting.fractions.multiply_divide",
+            "SIGNED_INTEGER_MULTIPLY_WITH_POWERS_SIGN",
+            ["usccss.number.signed_rational_multiply"],
+            "UAE_G7_GENERAL_ARABIC_U03L04_PRINTED_233_239",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U03L05, printed 243-249:
+        // exact signed rational division and signed displacement rate from existing engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:03:05:DIVIDE-INTEGERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:03:05:DIVIDE-INTEGERS", "supporting.fractions.multiply_divide",
+            "SIGNED_INTEGER_DIVISION_WITH_RATE_AND_ZERO_GUARD",
+            ["usccss.number.signed_rational_divide", "usccss.number.signed_rate_displacement"],
+            "UAE_G7_GENERAL_ARABIC_U03L05_PRINTED_243_249",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General U04L01 printed 263-269:
+        // reuse terminating/repeating fraction-decimal exact question families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:01:TERMINATING-REPEATING-DECIMALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:01:TERMINATING-REPEATING-DECIMALS", "number.rational.terminating_repeating_decimal",
+            "FRACTION_DECIMAL_FINITE_REPEATING_AND_BACK",
+            ["uae.g6.u05.l08.classify_fraction_decimal", "uae.g6.u05.l08.fraction_exact_decimal", "usccss.number.rational_terminating_decimal", "usccss.number.repeating_decimal_digit"],
+            "UAE_G7_GENERAL_ARABIC_U04L01_PRINTED_263_269",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L02: signed rational compare/order, printed271-278.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:02:COMPARE-ORDER-RATIONALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:02:COMPARE-ORDER-RATIONALS", "number.rational.signed_comparison_order",
+            "COMPARE_ORDER_SIGNED_RATIONAL_LCM_DECIMAL_PERCENT",
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals", "uae.g6.u05.l09.order_four_signed_rationals", "uae.g6.u05.l07.compare_signed_rationals", "usccss.g7.u05.compare_signed_rational"],
+            "UAE_G7_GENERAL_ARABIC_U04L02_PRINTED_271_278",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 General Arabic U04L03, printed283-289:
+        // same denominator signed fraction add/subtract; reuse fractions engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:03:LIKE-FRACTION-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:03:LIKE-FRACTION-ADD-SUB", "fractions.add_subtract",
+            "SIGNED_LIKE_DENOMINATOR_ADD_SUBTRACT_SIMPLIFY",
+            ["fractions.add_subtract.same_denominator.mixed.build", "fractions.add_subtract.same_denominator.mixed.apply", "uae.g4.u09.l01.model_add_like_denominators"],
+            "UAE_G7_GENERAL_ARABIC_U04L03_PRINTED_283_289",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L04, student printed291-297:
+        // reuse existing exact unlike denominator fractions add/sub families.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:04:UNLIKE-FRACTION-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:04:UNLIKE-FRACTION-ADD-SUB", "fractions.add_subtract",
+            "UNLIKE_DENOMINATOR_SIGNED_FRACTIONS_LCM",
+            ["fractions.add_subtract.common_denominator.build", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.build", "fractions.add_subtract.related.apply"],
+            "UAE_G7_GENERAL_ARABIC_U04L04_PRINTED_291_297",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L05 printed299-306:
+        // Reuse fractions mixed and common denominator addition subtraction.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:05:MIXED-NUMBERS-ADD-SUB"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:05:MIXED-NUMBERS-ADD-SUB", "fractions.add_subtract",
+            "ADD_SUB_MIXED_FRACTIONS_WITH_BORROWING",
+            ["fractions.add_subtract.same_denominator.mixed.apply", "fractions.add_subtract.common_denominator.apply", "fractions.add_subtract.related.apply"],
+            "UAE_G7_GENERAL_ARABIC_U04L05_PRINTED_299_306",
+            "READY_VERIFIED",Version);
+        // UAE G7 Arabic General U04L06 printed311-317:
+        // signed and mixed fraction multiplication using existing exact engine.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:06:MULTIPLY-FRACTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:06:MULTIPLY-FRACTIONS", "supporting.fractions.multiply_divide",
+            "SIGNED_FRACTION_MULTIPLY_MIXED_AND_CANCEL",
+            ["supporting.fractions.multiply", "usccss.number.signed_rational_multiply"],
+            "UAE_G7_GENERAL_ARABIC_U04L06_PRINTED_311_317",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic U04L07 printed319-325: metric/customary conversions
+        // Existing conversion engine; source approximations explicitly preserved.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:07:MEASUREMENT-SYSTEM-CONVERSION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:07:MEASUREMENT-SYSTEM-CONVERSION", "supporting.measurement.practical",
+            "UNIT_SYSTEM_CONVERSION_CUSTOMARY_METRIC_APPROX",
+            ["supporting.measurement.unit_conversion", "usccss.g6.u03.l04.source_ratio_unit_conversions"],
+            "UAE_G7_GENERAL_ARABIC_U04L07_PRINTED_319_325",
+            "READY_VERIFIED",Version);
+        // UAE G7 General Arabic Unit4 Lesson8 student printed327-334.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:04:08:DIVIDE-FRACTIONS", "supporting.fractions.multiply_divide",
+            "FRACTION_DIVIDE_RECIPROCAL_SIGNED_MIXED",
+            ["usccss.number.signed_rational_divide"],
+            "UAE_G7_GENERAL_ARABIC_U04L08_PRINTED_327_334",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/01, student 02-5-6.pdf printed 349-356.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:01:ALGEBRAIC-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:01:ALGEBRAIC-EXPRESSIONS", "supporting.algebra.expressions",
+            "ALGEBRAIC-EXPRESSIONS",
+            ["supporting.algebra.substitute", "usccss.algebra.expression_coefficient"],
+            "UAE_G7_ARABIC_U05L01_PDF_15_22",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/02, student 02-5-6.pdf printed 357-366.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:02:ARITHMETIC-SEQUENCES", "sequences.core",
+            "ARITHMETIC-SEQUENCES",
+            ["sequences.core.arithmetic_nth_term", "sequences.core.find_position_arithmetic"],
+            "UAE_G7_ARABIC_U05L02_PDF_23_32",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/03, student 02-5-6.pdf printed 367-374.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:03:PROPERTIES-OF-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:03:PROPERTIES-OF-OPERATIONS", "supporting.algebra.expressions",
+            "PROPERTIES-OF-OPERATIONS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L03_PDF_33_40",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/04, student 02-5-6.pdf printed 375-386.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:04:DISTRIBUTIVE-PROPERTY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:04:DISTRIBUTIVE-PROPERTY", "supporting.algebra.expressions",
+            "DISTRIBUTIVE-PROPERTY",
+            ["supporting.algebra.expand", "usccss.g6.u06.l10.variable_distributive_values", "usccss.g6.u06.l09.distributive_numeric_products"],
+            "UAE_G7_ARABIC_U05L04_PDF_41_52",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/05, student 02-5-6.pdf printed 387-394.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:05:SIMPLIFY-LIKE-TERMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:05:SIMPLIFY-LIKE-TERMS", "supporting.algebra.expressions",
+            "SIMPLIFY-LIKE-TERMS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L05_PDF_53_60",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/06, student 02-5-6.pdf printed 395-402.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:06:ADD-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:06:ADD-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "ADD-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.simplify", "usccss.g6.u06.l11.distributive_equivalence_logic"],
+            "UAE_G7_ARABIC_U05L06_PDF_61_68",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/07, student 02-5-6.pdf printed 403-414.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:07:SUBTRACT-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:07:SUBTRACT-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "SUBTRACT-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.simplify", "supporting.algebra.expand"],
+            "UAE_G7_ARABIC_U05L07_PDF_69_80",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 05/08, student 02-5-6.pdf printed 415-424.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:05:08:FACTOR-LINEAR-EXPRESSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:05:08:FACTOR-LINEAR-EXPRESSIONS", "supporting.algebra.expressions",
+            "FACTOR-LINEAR-EXPRESSIONS",
+            ["supporting.algebra.factor", "supporting.algebra.expand", "usccss.g6.u06.l11.expansion_factor_values"],
+            "UAE_G7_ARABIC_U05L08_PDF_81_90",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/01, student 02-5-6.pdf printed 437-446.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:01:ONE-STEP-ADDITION-SUBTRACTION-EQUATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:01:ONE-STEP-ADDITION-SUBTRACTION-EQUATION", "algebra.linear.solve",
+            "ONE-STEP-ADDITION-SUBTRACTION-EQUATION",
+            ["algebra.linear.ax_plus_b_equals_c", "usccss.g6.u06.l02.variable_equation_solutions"],
+            "UAE_G7_ARABIC_U06L01_PDF_103_112",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/02, student 02-5-6.pdf printed 447-456.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:02:ONE-STEP-MULTIPLICATION-DIVISION-EQUATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:02:ONE-STEP-MULTIPLICATION-DIVISION-EQUATION", "algebra.linear.solve",
+            "ONE-STEP-MULTIPLICATION-DIVISION-EQUATION",
+            ["algebra.linear.ax_plus_b_equals_c", "usccss.g6.u06.l02.variable_equation_solutions"],
+            "UAE_G7_ARABIC_U06L02_PDF_113_122",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/03, student 02-5-6.pdf printed 457-468.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:03:RATIONAL-COEFFICIENT-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:03:RATIONAL-COEFFICIENT-EQUATIONS", "algebra.linear.solve",
+            "RATIONAL-COEFFICIENT-EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "usccss.g6.u06.l02.variable_equation_solutions"],
+            "UAE_G7_ARABIC_U06L03_PDF_123_134",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/04, student 02-5-6.pdf printed 469-480.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:04:TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:04:TWO-STEP-EQUATIONS", "algebra.linear.solve",
+            "TWO-STEP-EQUATIONS",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed"],
+            "UAE_G7_ARABIC_U06L04_PDF_135_146",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/05, student 02-5-6.pdf printed 481-496.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:05:MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:05:MULTI-STEP-EQUATIONS", "algebra.linear.solve",
+            "MULTI-STEP-EQUATIONS",
+            ["algebra.linear.variables_both_sides", "supporting.algebra.expand", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G7_ARABIC_U06L05_PDF_147_162",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/06, student 02-5-6.pdf printed 497-504.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:06:ADD-SUBTRACT-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:06:ADD-SUBTRACT-INEQUALITIES", "algebra.linear.inequality.solve",
+            "ADD-SUBTRACT-INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c", "usccss.g6.u07.l08.inequality_bound_examples"],
+            "UAE_G7_ARABIC_U06L06_PDF_163_170",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/07, student 02-5-6.pdf printed 505-512.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:07:MULTIPLY-DIVIDE-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:07:MULTIPLY-DIVIDE-INEQUALITIES", "algebra.linear.inequality.solve",
+            "MULTIPLY-DIVIDE-INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c", "usccss.g6.u07.l09.inequality_solution_set_logic"],
+            "UAE_G7_ARABIC_U06L07_PDF_171_178",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 06/08, student 02-5-6.pdf printed 513-520.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:06:08:TWO-STEP-INEQUALITIES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:06:08:TWO-STEP-INEQUALITIES", "algebra.linear.inequality.solve",
+            "TWO-STEP-INEQUALITIES",
+            ["algebra.linear.inequality.ax_plus_b_relation_c", "algebra.linear.inequality.variables_both_sides"],
+            "UAE_G7_ARABIC_U06L08_PDF_179_186",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/01, student 02-07.pdf printed 535-542.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:01:CLASSIFY-AND-NAME-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:01:CLASSIFY-AND-NAME-ANGLES", "supporting.geometry.angle_classify",
+            "CLASSIFY-AND-NAME-ANGLES",
+            ["supporting.geometry.angle_classify", "uae.g3.u13.l02.angle_types", "usccss.g7.u07.vertical_angle"],
+            "UAE_G7_ARABIC_U07L01_PDF_5_12",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/02, student 02-07.pdf printed 543-554.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:02:COMPLEMENTARY-SUPPLEMENTARY-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:02:COMPLEMENTARY-SUPPLEMENTARY-ANGLES", "geometry.angles.supplementary",
+            "COMPLEMENTARY-SUPPLEMENTARY-ANGLES",
+            ["usccss.g7.u07.complementary_angle", "geometry.angles.supplementary", "geometry.angles.algebraic_supplementary"],
+            "UAE_G7_ARABIC_U07L02_PDF_13_24",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/03, student 02-07.pdf printed 555-574.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:03:TRIANGLE-CLASSIFY-AND-ANGLE-SUM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:03:TRIANGLE-CLASSIFY-AND-ANGLE-SUM", "geometry.polygons.missing_interior_angle",
+            "TRIANGLE-CLASSIFY-AND-ANGLE-SUM",
+            ["usccss.g5.u07.l08.source_triangle_side_and_angle_types", "uae.g5.u12.l03.triangle_side_type", "uae.g5.u12.l03.triangle_angle_type", "usccss.g7.u07.triangle_side_feasible"],
+            "UAE_G7_ARABIC_U07L03_PDF_25_44",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/04, student 02-07.pdf printed 575-584.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:04:SCALE-DRAWING-RATIO"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:04:SCALE-DRAWING-RATIO", "geometry.similarity.scale_factor",
+            "SCALE-DRAWING-RATIO",
+            ["usccss.g7.u01.l02.scale_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l03.scaled_l_polygon"],
+            "UAE_G7_ARABIC_U07L04_PDF_45_54",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/05, student 02-07.pdf printed 585-592.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:05:THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:05:THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS", "geometry.spatial.views",
+            "THREE-DIMENSIONAL-ORTHOGRAPHIC-VIEWS",
+            ["uae.g5.u12.l07.net_solid_classification", "usccss.g6.u01.l11.polygon_classification"],
+            "UAE_G7_ARABIC_U07L05_PDF_55_62",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 07/06, student 02-07.pdf printed 593-600.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:07:06:CROSS-SECTION-OF-SOLIDS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:07:06:CROSS-SECTION-OF-SOLIDS", "geometry.spatial.cross_sections",
+            "CROSS-SECTION-OF-SOLIDS",
+            ["usccss.g7.u07.parallel_base_cross_section_sides", "uae.g5.u12.l07.net_solid_classification"],
+            "UAE_G7_ARABIC_U07L06_PDF_63_70",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/01, student 03-8-10.pdf printed 613-620.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:01:CIRCLE-CIRCUMFERENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:01:CIRCLE-CIRCUMFERENCE", "supporting.geometry.circles_loci",
+            "CIRCLE-CIRCUMFERENCE",
+            ["supporting.geometry.circle_circumference_pi_coefficient", "uae.g5.u12.l04.circle_segment_classify"],
+            "UAE_G7_ARABIC_U08L01_PDF_9_16",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/02, student 03-8-10.pdf printed 623-630.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:02:CIRCLE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:02:CIRCLE-AREA", "supporting.geometry.area_volume",
+            "CIRCLE-AREA",
+            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U08L02_PDF_19_26",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/03, student 03-8-10.pdf printed 631-638.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:03:COMPOSITE-FIGURES-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:03:COMPOSITE-FIGURES-AREA", "geometry.perimeter_area",
+            "COMPOSITE-FIGURES-AREA",
+            ["usccss.g6.u01.l06.composite_area", "uae.g3.u14.l08.composite_area", "supporting.geometry.circle_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U08L03_PDF_27_34",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/01, student 04-09-volume-surface-2021-student.pdf printed 659-666.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:01:CYLINDER-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:01:CYLINDER-VOLUME", "supporting.geometry.area_volume",
+            "CYLINDER-VOLUME",
+            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient"],
+            "UAE_G7_ARABIC_U09L01_PDF_4_11",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/02, student 04-09-volume-surface-2021-student.pdf printed 667-674.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME", "supporting.geometry.area_volume",
+            "CONE-VOLUME",
+            ["uae.g7.u09.l02.cone_volume_pi_coefficient"],
+            "UAE_G7_ARABIC_U09L02_PDF_12_19",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/03, student 04-09-volume-surface-2021-student.pdf printed 675-683.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:03:SPHERE-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:03:SPHERE-VOLUME", "supporting.geometry.area_volume",
+            "SPHERE-VOLUME",
+            ["uae.g7.u09.l03.sphere_volume_pi_coefficient"],
+            "UAE_G7_ARABIC_U09L03_PDF_20_28",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/04, student 04-09-volume-surface-2021-student.pdf printed 689-694.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA", "supporting.geometry.area_volume",
+            "CYLINDER-SURFACE-AREA",
+            ["uae.g7.u09.l04.cylinder_surface_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U09L04_PDF_29_34",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/05, student 04-09-volume-surface-2021-student.pdf printed 701-708.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:05:CONE-SURFACE-AREA"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:05:CONE-SURFACE-AREA", "supporting.geometry.area_volume",
+            "CONE-SURFACE-AREA",
+            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient"],
+            "UAE_G7_ARABIC_U09L05_PDF_35_42",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 09/06, student 04-09-volume-surface-2021-student.pdf printed 711-715.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME", "supporting.geometry.area_volume",
+            "SCALE-DIMENSIONS-AREA-VOLUME",
+            ["uae.g7.u09.l06.scale_area_factor", "uae.g7.u09.l06.scale_volume_factor"],
+            "UAE_G7_ARABIC_U09L06_PDF_43_47",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/01, student 03-10.pdf printed 733-740.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:01:SIMPLE-PROBABILITY", "supporting.probability_statistics",
+            "SIMPLE-PROBABILITY",
+            ["probability.theoretical.simple_event", "probability.theoretical.complement"],
+            "UAE_G7_ARABIC_U10L01_PDF_5_12",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/02, student 03-10.pdf printed 743-752.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:02:THEORETICAL-EXPERIMENTAL-PROBABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:02:THEORETICAL-EXPERIMENTAL-PROBABILITY", "supporting.probability_statistics",
+            "THEORETICAL-EXPERIMENTAL-PROBABILITY",
+            ["probability.theoretical.simple_event", "supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "UAE_G7_ARABIC_U10L02_PDF_15_24",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/03, student 03-10.pdf printed 755-762.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:03:COMPOUND-EVENT-SAMPLE-SPACE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:03:COMPOUND-EVENT-SAMPLE-SPACE", "supporting.probability_statistics",
+            "COMPOUND-EVENT-SAMPLE-SPACE",
+            ["supporting.probability.sample_space_count", "probability.theoretical.two_coins_exactly_one", "supporting.probability.independent_product"],
+            "UAE_G7_ARABIC_U10L03_PDF_27_34",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/04, student 03-10.pdf printed 763-770.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:04:SIMULATION-MODELS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:04:SIMULATION-MODELS", "supporting.probability_statistics",
+            "SIMULATION-MODELS",
+            ["supporting.probability.sample_space_count", "supporting.statistics.experimental_probability", "supporting.probability.expected_frequency"],
+            "UAE_G7_ARABIC_U10L04_PDF_35_42",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/05, student 03-10.pdf printed 779-786.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:05:FUNDAMENTAL-COUNTING-PRINCIPLE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:05:FUNDAMENTAL-COUNTING-PRINCIPLE", "supporting.probability_statistics",
+            "FUNDAMENTAL-COUNTING-PRINCIPLE",
+            ["supporting.probability.sample_space_count", "g12.precalculus.u11.l05.permutations", "supporting.probability.independent_product"],
+            "UAE_G7_ARABIC_U10L05_PDF_51_58",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/06, student 03-10.pdf printed 787-794.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:06:PERMUTATIONS-WITHOUT-REPETITION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:06:PERMUTATIONS-WITHOUT-REPETITION", "supporting.probability_statistics",
+            "PERMUTATIONS-WITHOUT-REPETITION",
+            ["g12.precalculus.u11.l05.permutations", "supporting.probability.sample_space_count", "usccss.g2.u05.l11.largest_card_permutation"],
+            "UAE_G7_ARABIC_U10L06_PDF_59_66",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 10/07, student 03-10.pdf printed 797-804.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:10:07:INDEPENDENT-DEPENDENT-EVENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:10:07:INDEPENDENT-DEPENDENT-EVENTS", "supporting.probability_statistics",
+            "INDEPENDENT-DEPENDENT-EVENTS",
+            ["supporting.probability.independent_product", "supporting.probability.conditional_simple", "probability.theoretical.two_coins_exactly_one"],
+            "UAE_G7_ARABIC_U10L07_PDF_69_76",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/01, student 03-11.pdf printed 815-822.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:01:PREDICTION-USING-SAMPLE-PROPORTION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:01:PREDICTION-USING-SAMPLE-PROPORTION", "supporting.statistics.charts",
+            "PREDICTION-USING-SAMPLE-PROPORTION",
+            ["uae.g5.u11.l04.sample_scaled_estimate", "supporting.statistics.table_total", "supporting.probability.expected_frequency"],
+            "UAE_G7_ARABIC_U11L01_PDF_5_12",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/02, student 03-11.pdf printed 823-832.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:02:BIASED-UNBIASED-SAMPLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:02:BIASED-UNBIASED-SAMPLES", "supporting.statistics.charts",
+            "BIASED-UNBIASED-SAMPLES",
+            ["supporting.statistics.collection_method", "usccss.g6.u08.l02.statistical_question_classification", "uae.g5.u11.l04.sample_scaled_estimate"],
+            "UAE_G7_ARABIC_U11L02_PDF_13_22",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/03, student 03-11.pdf printed 835-846.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:03:MISLEADING-STATISTICAL-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:03:MISLEADING-STATISTICAL-GRAPHS", "supporting.statistics.charts",
+            "MISLEADING-STATISTICAL-GRAPHS",
+            ["supporting.statistics.charts.mixed", "supporting.statistics.pie_sector_angle", "usccss.g6.u08.l02.expected_data_variation_reasoning"],
+            "UAE_G7_ARABIC_U11L03_PDF_25_36",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/04, student 03-11.pdf printed 849-860.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:04:COMPARE-STATISTICAL-DISTRIBUTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:04:COMPARE-STATISTICAL-DISTRIBUTIONS", "supporting.statistics.charts",
+            "COMPARE-STATISTICAL-DISTRIBUTIONS",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "statistics.center_spread.range", "supporting.statistics.compare_range", "usccss.g6.u08.l14.mean_median_choice_reasoning"],
+            "UAE_G7_ARABIC_U11L04_PDF_39_50",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 11/05, student 03-11.pdf printed 861-868.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:11:05:SELECT-APPROPRIATE-DATA-DISPLAY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:11:05:SELECT-APPROPRIATE-DATA-DISPLAY", "supporting.statistics.charts",
+            "SELECT-APPROPRIATE-DATA-DISPLAY",
+            ["supporting.statistics.charts.mixed", "supporting.statistics.scatter_correlation", "supporting.statistics.table_total", "supporting.statistics.compare_range"],
+            "UAE_G7_ARABIC_U11L05_PDF_51_58",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/04, student 03-8-10.pdf printed 639-652.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:04:PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:04:PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT", "geometry.volume",
+            "PRISM-VOLUME-BASE-AREA-TIMES-HEIGHT",
+            ["usccss.g7.u07.prism_volume_base_height", "uae.g6.u10.l03.tri_prism_volume", "geometry.volume.rectangular_prism"],
+            "UAE_G7_ARABIC_U08L04_PDF_35_48",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/05, student 03-8-10.pdf printed 653-664.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:05:PYRAMID-VOLUME-ONE-THIRD-BASE-HEIGHT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:05:PYRAMID-VOLUME-ONE-THIRD-BASE-HEIGHT", "geometry.solids.g6.pyr_volume",
+            "PYRAMID-VOLUME-ONE-THIRD-BASE-HEIGHT",
+            ["uae.g6.u10.l05.pyramid_volume", "usccss.g7.u07.prism_volume_base_height"],
+            "UAE_G7_ARABIC_U08L05_PDF_49_60",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/06, student 03-8-10.pdf printed 665-676.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:06:PRISM-SURFACE-AREA-NET-ALL-FACES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:06:PRISM-SURFACE-AREA-NET-ALL-FACES", "geometry.surface_area",
+            "PRISM-SURFACE-AREA-NET-ALL-FACES",
+            ["usccss.g7.u07.prism_surface_area_base_perimeter_height", "uae.g6.u10.l10.tri_prism_surface", "uae.g6.u10.l08.rect_prism_surface"],
+            "UAE_G7_ARABIC_U08L06_PDF_61_72",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/07, student 03-8-10.pdf printed 677-688.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:07:PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:07:PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES", "geometry.solids.g6.pyr_surface",
+            "PYRAMID-SURFACE-BASE-AND-TRIANGULAR-FACES",
+            ["uae.g6.u10.l12.pyramid_surface", "uae.g6.u10.l07.net_faces"],
+            "UAE_G7_ARABIC_U08L07_PDF_73_84",
+            "READY_VERIFIED",Version);
+        // UAE Grade7 Arabic General 08/08, student 03-8-10.pdf printed 689-696.
+        // Reuse existing verified registry families; open reasoning teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:08:08:COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L7:GENERAL:08:08:COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE", "geometry.solids.g6.combined_volume",
+            "COMPOSITE-SOLIDS-VOLUME-AND-EXPOSED-SURFACE",
+            ["uae.g6.u10.l14.composite_volume", "uae.g6.u10.l14.composite_surface", "usccss.g5.u01.l08.add_nonoverlap_prism_volumes"],
+            "UAE_G7_ARABIC_U08L08_PDF_85_92",
+            "READY_VERIFIED",Version);
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
+                "ratio.unit_rate",
+                "DIMENSIONAL_ANALYSIS_METRIC_CUSTOMARY_RATE_CONVERSION",
+                [
+                    "usccss.g6.u03.l04.source_ratio_unit_conversions",
+                    "usccss.g6.u03.l04.conversion_direction_and_units",
+                    "uae.g6.u04.l05.to_smaller_exact",
+                    "uae.g6.u04.l05.to_larger_exact",
+                    "usccss.g7.u02.l03.unit_rates_reciprocal"
+                ],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L03_PRINTED_25_32",
+                "READY_VERIFIED",
+                Version);
+
+        // UAE Grade 7 General Arabic, Unit 1 Lesson 2 printed pp17–24.
+        // Reuse exact fractional division and rational unit-rate engines.
+        // Teacher grades original diagrams. CI/runtime Stage D NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES",
+                "fractions.divide.fraction_by_fraction",
+                "EXACT_COMPLEX_FRACTION_RECIPROCAL_AND_FRACTIONAL_UNIT_RATE",
+                [
+                    "uae.g6.u04.l09.fraction_divide_fraction",
+                    "uae.g6.u04.l11.mixed_fraction_division_exact",
+                    "usccss.g7.u02.l03.unit_rates_reciprocal"
+                ],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L02_PRINTED_17_24",
+                "READY_VERIFIED",
+                Version);
+
+        // UAE Grade 7 General Arabic: owner-selected Student Book Unit 1 Lesson 1.
+        // Existing UNIT_RATE numeric families only; source diagrams and written
+        // justifications require teacher review. No borrowed English lesson text.
+        byLesson["PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES"] =
+            new LessonPracticeContract(
+                "PED:UAE-MOE-MATH:L7:GENERAL:01:01:RATES",
+                "ratio.unit_rate",
+                "UNIT_RATE",
+                ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],
+                "UAE_G7_GENERAL_AR_STUDENT_BOOK_U01L01_P9_16",
+                "READY_VERIFIED",
+                Version);
+
         // UAE G6 Arabic Common — local Student Book U01:L01 (printed pp 7-14).
         // Reuse Grade 5 exact GCF/LCM families; do not remap legacy Grade 6 ratios U01:L01.
         // Explanatory/diagram responses are teacher-reviewed, not numeric-auto-graded.

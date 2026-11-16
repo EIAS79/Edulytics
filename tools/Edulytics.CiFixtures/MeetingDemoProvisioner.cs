@@ -363,7 +363,8 @@ internal static class MeetingDemoProvisioner
              string.Equals(ciProgramme, "UAE-G3", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G4", StringComparison.Ordinal) ||
              string.Equals(ciProgramme, "UAE-G5", StringComparison.Ordinal) ||
-              string.Equals(ciProgramme, "UAE-G6", StringComparison.Ordinal));
+              string.Equals(ciProgramme, "UAE-G6", StringComparison.Ordinal) ||
+              string.Equals(ciProgramme, "UAE-G7", StringComparison.Ordinal));
         var activeSchools = isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
@@ -372,14 +373,17 @@ internal static class MeetingDemoProvisioner
                         DefaultCulture = "ar",
                         // Grade 5 is enrolled only inside disposable GitHub Actions PostgreSQL.
                         // Existing school fixture and production paths remain unchanged.
-                        MaximumLogicalLevel = ciProgramme == "UAE-G6" ? 6 :
+                        MaximumLogicalLevel = ciProgramme == "UAE-G7" ? 7 :
+                            ciProgramme == "UAE-G6" ? 6 :
                             ciProgramme == "UAE-G5" ? 5 : s.MaximumLogicalLevel,
-                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G6" ? 6 :
+                        PrimaryLoginLogicalLevel = ciProgramme == "UAE-G7" ? 7 :
+                            ciProgramme == "UAE-G6" ? 6 :
                             ciProgramme == "UAE-G5" ? 5 :
                             ciProgramme == "UAE-G4" ? 4 :
                             ciProgramme == "UAE-G3" ? 3 :
                             ciProgramme == "UAE-G2" ? 2 : 1,
-                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G6" ? 5 :
+                        SecondaryLoginLogicalLevel = ciProgramme == "UAE-G7" ? 6 :
+                            ciProgramme == "UAE-G6" ? 5 :
                             ciProgramme == "UAE-G5" ? 4 :
                             ciProgramme == "UAE-G4" ? 3 :
                             ciProgramme == "UAE-G3" ? 2 :
@@ -1335,7 +1339,9 @@ DELETE FROM "Schools";
             (string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
                 "UAE-G5", StringComparison.Ordinal) ||
              string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
-                "UAE-G6", StringComparison.Ordinal)) &&
+                "UAE-G6", StringComparison.Ordinal) ||
+             string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL_PROGRAMME"),
+                "UAE-G7", StringComparison.Ordinal)) &&
             string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
                 "Staging", StringComparison.Ordinal) &&
             string.Equals(db.Database.GetDbConnection().Database,

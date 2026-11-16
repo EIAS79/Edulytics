@@ -127,12 +127,16 @@ public sealed partial class MathematicsCurriculumPackSeeder
         if (d.PackCode == MathematicsCurriculumPackRegistry.PolandCode && d.OfficialNodeCount != 306)
             throw new InvalidOperationException("Poland verified count must be 306.");
 
+        // The owner-retired G7 General English catalogue removes exactly
+        // 62 official textbook references and 3 nonofficial source catalogues.
+        // Keep strict new actual totals; prior accepted 137/402 row baselines
+        // are still checked separately by the migration repair routines.
         if (d.PackCode == MathematicsCurriculumPackRegistry.UaeCode)
         {
             if (d.SchemaVersion != 14 ||
                 d.VersionCode != "MOE-2026-2027-T1" ||
-                d.NodeCount != 1532 ||
-                d.OfficialNodeCount != 1420 ||
+                d.NodeCount != 1467 ||
+                d.OfficialNodeCount != 1358 ||
                 d.UnitCount != 6 ||
                 d.LessonCount != 42 ||
                 d.LinkCount != 48 ||
@@ -754,14 +758,14 @@ public sealed partial class MathematicsCurriculumPackSeeder
             d.SourceDigest !=
                 "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
             d.ContentDigest !=
-                "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372" ||
-            d.NodeCount != 1532 ||
-            d.OfficialNodeCount != 1420 ||
+                "0f247717b6c34d4732bed664e61593ea69bbdb7fe6aeebf911fba8f30d287996" ||
+            d.NodeCount != 1467 ||
+            d.OfficialNodeCount != 1358 ||
             d.UnitCount != 6 ||
             d.LessonCount != 42 ||
             d.LinkCount != 48 ||
-            textbookReferences.Length != 1373 ||
-            sourceCatalogs.Length != 42)
+            textbookReferences.Length != 1311 ||
+            sourceCatalogs.Length != 39)
         {
             throw new InvalidOperationException(
                 "UAE legacy-137 rebuild target contract drift.");
@@ -969,9 +973,9 @@ public sealed partial class MathematicsCurriculumPackSeeder
             d.SourceDigest !=
                 "470e9bd35d26931e3c4a2e4666b97a35481c3212b72024060c49dd6160bf776f" ||
             d.ContentDigest !=
-                "ff6200142b1eea8f12a7d5ff0fd172259582044359c642aeb3c045e5e8886372" ||
-            d.NodeCount != 1532 ||
-            d.OfficialNodeCount != 1420 ||
+                "0f247717b6c34d4732bed664e61593ea69bbdb7fe6aeebf911fba8f30d287996" ||
+            d.NodeCount != 1467 ||
+            d.OfficialNodeCount != 1358 ||
             d.UnitCount != 6 ||
             d.LessonCount != 42 ||
             d.LinkCount != 48)

@@ -139,6 +139,42 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     }
 
     /// <summary>
+    /// Only the 78 owner-approved first-party Arabic UAE Grade7 General metadata
+    /// records may be inserted in the scoped 0-to-78 production cutover.
+    /// Persist no third-party book prose or translations. Called within the
+    /// guarded pedagogical outer transaction; no unrelated content changes.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade7MetadataAsync(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L7:GENERAL:";
+        var documents = LoadEmbeddedDocuments()
+            .Where(document => document.Lessons.Any(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+
+        foreach (var document in documents)
+        {
+            if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+                document.AcademicLanguage != "ar" ||
+                document.VersionCode != "MOE-2026-2027-T1")
+                throw new InvalidOperationException(
+                    "Grade7 scoped metadata must be an owner-approved Arabic UAE annual candidate.");
+            document.Lessons = document.Lessons
+                .Where(lesson => lesson.LessonCode.StartsWith(
+                    prefix, StringComparison.Ordinal)).ToList();
+        }
+        if (documents.Length != 1 ||
+            documents.Sum(x => x.Lessons.Count) != 78 ||
+            documents[0].Lessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal).Count() != 78)
+            throw new InvalidOperationException(
+                "Grade7 scoped metadata release requires exactly 78 unique Arabic lessons.");
+
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
+
+    /// <summary>
     /// Metadata-only reconciliation for the narrowly source-hash-guarded CCSS
     /// editorial candidates when ReadFromJson=true and the host intentionally
     /// skips full startup data maintenance. Never insert lesson prose or update

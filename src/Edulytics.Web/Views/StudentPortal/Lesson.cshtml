@@ -40,13 +40,16 @@
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L5:GENERAL:", StringComparison.Ordinal);
     var isUaeGrade6Arabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal);
+    var isUaeGrade7Arabic =
+        Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal);
     var isUaePrimaryArabic =
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L1:COMMON:", StringComparison.Ordinal) ||
         Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ||
         isUaeGrade3Arabic ||
         isUaeGrade4Arabic ||
         isUaeGrade5Arabic ||
-        isUaeGrade6Arabic;
+        isUaeGrade6Arabic ||
+        isUaeGrade7Arabic;
     var lessonNavTitle = isUaePrimaryArabic ? "الدرس" : S["Lesson"].Value;
     var practiceNavTitle = isUaePrimaryArabic ? "التدريب" : P["Practice"].Value;
     var backToLessonsTitle = isUaePrimaryArabic ? "العودة إلى الدروس" : L["BackToLessons"].Value;
@@ -1960,7 +1963,7 @@
             <div class="lesson-reader-meta">
                 <span>
                     <small>@(isUaePrimaryArabic ? "الصف" : L["Grade"].Value)</small>
-                    <strong>@(isUaePrimaryArabic ? (isUaeGrade6Arabic ? "السادس" : isUaeGrade5Arabic ? "الخامس" : isUaeGrade4Arabic ? "??????" : isUaeGrade3Arabic ? "??????" : Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
+                    <strong>@(isUaePrimaryArabic ? (isUaeGrade7Arabic ? "السابع" : isUaeGrade6Arabic ? "السادس" : isUaeGrade5Arabic ? "الخامس" : isUaeGrade4Arabic ? "??????" : isUaeGrade3Arabic ? "??????" : Model.LessonCode.StartsWith("PED:UAE-MOE-MATH:L2:COMMON:", StringComparison.Ordinal) ? "الثاني" : "الأول") : Model.GradeName)</strong>
                 </span>
                 <span>
                     <small>@(isUaePrimaryArabic ? "المنهج" : L["Framework"].Value)</small>
@@ -2524,22 +2527,22 @@
                 </details>
             </section>
         }
-        @if (isUaeGrade3Arabic || isUaeGrade4Arabic || isUaeGrade5Arabic || isUaeGrade6Arabic)
+        @if (isUaeGrade3Arabic || isUaeGrade4Arabic || isUaeGrade5Arabic || isUaeGrade6Arabic || isUaeGrade7Arabic)
         {
-            @* UAE Grades 3-6: render all six authored Arabic teaching sections
+            @* UAE Grades 3-7: render all six authored Arabic teaching sections
                instead of substituting unrelated generic V2 fallback content. *@
-            <div class="@(isUaeGrade6Arabic ? "uae-g6-original-arabic-lesson" : isUaeGrade5Arabic ? "uae-g5-original-arabic-lesson" : isUaeGrade4Arabic ? "uae-g4-original-arabic-lesson" : "uae-g3-original-arabic-lesson")" lang="ar" dir="rtl">
+            <div class="@(isUaeGrade7Arabic ? "uae-g7-original-arabic-lesson" : isUaeGrade6Arabic ? "uae-g6-original-arabic-lesson" : isUaeGrade5Arabic ? "uae-g5-original-arabic-lesson" : isUaeGrade4Arabic ? "uae-g4-original-arabic-lesson" : "uae-g3-original-arabic-lesson")" lang="ar" dir="rtl">
                 @foreach (var section in sections)
                 {
                     <partial name="_LessonReaderSection" model="section" />
                 }
-                @if ((isUaeGrade4Arabic || isUaeGrade5Arabic || isUaeGrade6Arabic) && Model.RichContent?.Visuals.Count > 0)
+                @if ((isUaeGrade4Arabic || isUaeGrade5Arabic || isUaeGrade6Arabic || isUaeGrade7Arabic) && Model.RichContent?.Visuals.Count > 0)
                 {
                     @* First-party student-book skill models: do not drop the
                        rich place-value tables, number lines and arithmetic diagrams
                        when rendering the full six Arabic lesson sections. *@
-                    <section class="uae-g4-original-rich-models @(isUaeGrade6Arabic ? "uae-g6-original-rich-models" : "")" aria-label="@(isUaeGrade6Arabic ? "النماذج الرياضية الأصلية" : "?????? ???????? ?????????")">
-                        <h2>@(isUaeGrade6Arabic ? "النماذج الرياضية الأصلية" : "?????? ???????? ?????????")</h2>
+                    <section class="uae-g4-original-rich-models @(isUaeGrade7Arabic ? "uae-g7-original-rich-models" : isUaeGrade6Arabic ? "uae-g6-original-rich-models" : "")" aria-label="@(isUaeGrade7Arabic || isUaeGrade6Arabic ? "النماذج الرياضية الأصلية" : "?????? ???????? ?????????")">
+                        <h2>@(isUaeGrade7Arabic || isUaeGrade6Arabic ? "النماذج الرياضية الأصلية" : "?????? ???????? ?????????")</h2>
                         @foreach (var visual in Model.RichContent.Visuals)
                         {
                             <partial name="_RichLessonVisual" model="visual" />

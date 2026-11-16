@@ -70,11 +70,17 @@ public sealed class LessonPracticeInteractionRegistryTests
             .Where(x => x.FamilyId.StartsWith("uae.g6.", StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(192, uaeGrade6.Length);
+        // Grade 7 General adds seven independently verified solid-geometry
+        // and scale families; keep the original 1,691 other families intact.
+        var uaeGrade7 = LessonPracticeInteractionRegistry.All
+            .Where(x => x.FamilyId.StartsWith("uae.g7.u09.", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(7, uaeGrade7.Length);
         Assert.Equal(1691,
             LessonPracticeInteractionRegistry.All.Count -
             algebra2.Length - uaeGrade1.Length - uaeGrade2.Length -
             uaeGrade3.Length - uaeGrade4.Length - uaeGrade5.Length -
-            uaeGrade6.Length);
+            uaeGrade6.Length - uaeGrade7.Length);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,

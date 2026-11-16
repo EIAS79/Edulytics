@@ -101,7 +101,13 @@ public sealed class UaeOfficialReferenceCoverageTests
                             StringComparison.OrdinalIgnoreCase) &&
                         lesson.LessonCode.StartsWith(
                             "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal);
-                    if (approvedG6)
+                    var approvedG7 =
+                        blueprint.LogicalLevel == 7 &&
+                        string.Equals(blueprint.Pathway, "General", StringComparison.OrdinalIgnoreCase) &&
+                        lesson.LessonCode.StartsWith(
+                            "PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal);
+                    // First-party source lesson, without fabricated official outcomes.
+                    if (approvedG6 || approvedG7)
                     {
                         // Explicit first-party approval permits genuine skills
                         // without inventing official learning-outcome references.

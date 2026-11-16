@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "pathway": "General",
+  "lessonOrdinal": 3,
+  "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
+  "title": "تحويل معدلات الوحدة",
+  "unitNumber": 1,
+  "lessonNumber": 3,
+  "sourceSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+  "sourcePrintedPages": "25–32",
+  "sourcePdfPages": "65–72",
+  "stageA": {
+    "sourceRead": true,
+    "sourceTitleVerified": true,
+    "sourceQuestionAnchors": 24,
+    "guidedAndExampleAnchors": 14,
+    "sourceLiteralParity": "UNKNOWN"
+  },
+  "stageB": {
+    "originalArabicContentAuthored": true,
+    "originalRichV2VisualCount": 3,
+    "rtl": "ar",
+    "runtime": "NOT_RUN"
+  },
+  "stageC": {
+    "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:03:CONVERT-UNIT-RATES",
+    "skillId": "measurement.speed.rate_conversion",
+    "mechanic": "DIMENSIONAL_ANALYSIS_UNIT_RATE",
+    "allowedQuestionFamilies": [
+      "usccss.g6.u03.l04.source_ratio_unit_conversions",
+      "usccss.g6.u03.l04.conversion_direction_and_units",
+      "uae.g6.u04.l05.to_smaller_exact",
+      "uae.g6.u04.l05.to_larger_exact",
+      "usccss.g7.u02.l03.unit_rates_reciprocal"
+    ],
+    "decision": "REUSE_EXISTING_MATH_ENGINES",
+    "answerType": "numeric exact or bounded decimal rounding with units; teacher-scored justification",
+    "renderer": "Existing numeric answer + original RichV2 table/number line/step equations",
+    "independentVerifier": "exact rational factor unit algebra oracle in Node tests, NOT_RUN",
+    "testsWritten": "WRITTEN_NOT_RUN",
+    "runtime": "NOT_RUN_STAGE_D",
+    "productionGradeSelection": "NOT_VERIFIED",
+    "teacherReviewRequired": true,
+    "runtimeStageDVerification": "NOT_RUN"
+  },
+  "status": "READY_FOR_STAGE_D",
+  "testsRun": "NOT_RUN",
+  "ciRun": false,
+  "noOriginalPublisherIllustrations": true,
+  "sourceElementsPath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/lesson-003-atomic-coverage.json",
+  "nextLessonOrdinal": 4,
+  "startedUtc": "2026-11-15T18:08:24Z",
+  "closedUtc": "2026-11-15T18:08:24Z",
+  "sourceLiteralBookParityStatus": "UNKNOWN_NOT_CLAIMED",
+  "academicOwnerDecision": "First-party mathematically equivalent skill coverage authorized, distinct from publisher certification and runtime checks"
+}

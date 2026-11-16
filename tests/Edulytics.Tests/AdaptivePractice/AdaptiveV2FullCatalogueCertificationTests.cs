@@ -9,9 +9,10 @@ namespace Edulytics.Tests.MathematicsIntelligence.AdaptivePractice;
 
 public sealed class AdaptiveV2FullCatalogueCertificationTests
 {
-    // 5,110 prior including 93 legacy G4 and 59 legacy G6; replace G4
-    // 93->132 (+39), add G12 73, replace G6 English 59->Arabic 128 (+69).
-    private const int ExpectedLessonCount = 5291;
+    // 5,110 prior included 93 legacy G4, 59 legacy G6 and 62 legacy G7.
+    // Exact owner-approved deltas: G4 +39, G12 +73, G6 +69, G7 +16.
+    // Adaptive V2 must cover all 5,307 actual canonical lesson contracts.
+    private const int ExpectedLessonCount = 5307;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 

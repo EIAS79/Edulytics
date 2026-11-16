@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "pathway": "General",
+  "lessonOrdinal": 2,
+  "unitNumber": 1,
+  "lessonNumber": 2,
+  "lessonTitle": "الكسور المركبة ومعدلات الوحدة",
+  "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES",
+  "sourceLocalStudentBook": "Grade_07/01_Student_Books/01-1-4.pdf",
+  "sourceSha256": "cc6ed187b9e0a518bab08b6992fa9748ab800f45c9dbdea5c398d285a004920d",
+  "sourcePdfPages": "57–64",
+  "sourcePrintedPages": "17–24",
+  "stageA": {
+    "sourceRead": true,
+    "lessonIdentityVerified": true,
+    "numberedExercises": 36,
+    "guidedAndExampleAnchors": 21,
+    "sourceAtomicCoveragePath": "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/lesson-002-atomic-coverage.json",
+    "literalTextbookParity": "UNKNOWN",
+    "originalLearningSkillsEquivalentCandidate": true
+  },
+  "stageB": {
+    "canonicalArabicDraft": true,
+    "richV2WithOriginalVisuals": 3,
+    "correctUnitsAndFractionMathVerifiedByCalculation": "STATIC_ONLY_NOT_TEST_RUN",
+    "englishFallbackBlockedAtRuntime": "NOT_RUN",
+    "copyrightArtworkCopied": false
+  },
+  "stageC": {
+    "lessonCode": "PED:UAE-MOE-MATH:L7:GENERAL:01:02:COMPLEX-FRACTIONS-AND-UNIT-RATES",
+    "skillId": "fractions.divide.fraction_by_fraction",
+    "supplementarySkills": [
+      "proportions.unit_rate",
+      "fractions.divide.mixed",
+      "fractional_percent"
+    ],
+    "decision": "REUSE_EXISTING_ENGINE_PENDING_RUNTIME",
+    "existingFamilyCandidates": [
+      "uae.g6.u04.l09.fraction_divide_fraction",
+      "uae.g6.u04.l11.mixed_fraction_division_exact",
+      "usccss.g7.u02.l03.unit_rates_reciprocal"
+    ],
+    "candidateProductionRouting": "FAMILIES_IN_REGISTRY_NOT_PRODUCTION_ROUTED",
+    "allowedQuestionFamilies": [
+      "uae.g6.u04.l09.fraction_divide_fraction",
+      "uae.g6.u04.l11.mixed_fraction_division_exact",
+      "usccss.g7.u02.l03.unit_rates_reciprocal"
+    ],
+    "forbiddenQuestionFamilies": [
+      "ratio.unit_rate.direct_only_when_integers",
+      "percentages.core.of_quantity_only",
+      "unbounded_expression_eval"
+    ],
+    "renderer": "Existing exact rational numeric fraction-answer renderer plus human-reviewed visual explanation",
+    "grader": "Existing exact rational fraction division candidate, runtime selection unverified",
+    "independentVerifier": "Fraction arithmetic identity and reciprocal oracle in unrun regression tests",
+    "teacherReview": "TEACHER_REVIEW_REQUIRED for diagram justification and rate context",
+    "language": "ar",
+    "rtl": true,
+    "answerType": [
+      "reduced_rational",
+      "numeric_fractional_rate",
+      "teacher_rubric"
+    ],
+    "sourceChecked": "2026-11-15",
+    "status": "READY_FOR_STAGE_D_NOT_RUNTIME_VERIFIED",
+    "testsWritten": "WRITTEN_NOT_RUN",
+    "ciExecuted": false,
+    "contractPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "csharpRegistryEntryWritten": true,
+    "actualRuntimeSelection": "NOT_RUN_STAGE_D",
+    "claimLimits": "No generated question, learner route, teacher persistence, or CI verified; exact source parity UNKNOWN."
+  },
+  "testsRun": "NOT_RUN",
+  "status": "READY_FOR_STAGE_D",
+  "reason": "All source-aligned first-party academic A-C candidate content and reuse contract authored; exact runtime/CI verification belongs to Stage D.",
+  "lastClosedLessonOrdinal": 2,
+  "nextIncompleteLessonOrdinal": 3,
+  "commitPending": true,
+  "startedUtc": "2026-11-15T18:00:38Z",
+  "closedUtc": "2026-11-15T18:03:14Z"
+}

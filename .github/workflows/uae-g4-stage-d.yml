@@ -127,6 +127,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: candidate
+      - name: Checkout independently CI-accepted Grade4 Arabic release
+        uses: actions/checkout@v4
+        with:
+          ref: 72318376967504ef04a1c25dd541a1c5e164be33
+          path: approved
+      - name: Assert candidate retains exact owner-approved Grade4 source documents
+        run: |
+          set -euo pipefail
+          for p in \
+            docs/curriculum/UAE_G4_COMMON_OFFICIAL_MANIFEST.json \
+            src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g4-common-t1-ogl-v1.lesson-blueprint.json \
+            src/Edulytics.Core/Curriculum/LessonContent/Packs/uae-g4-common-t1-ogl-v1.lesson-content-pack.json \
+            tools/curriculum/uae_g4_stage_d_gate.py; do
+            cmp "approved/$p" "candidate/$p"
+          done
+          echo 'G4_APPROVED_132_FIRST_PARTY_SCOPE_UNCHANGED_PASS'
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
@@ -156,22 +172,27 @@ jobs:
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-content-before
           test "$(cat /tmp/g4-content-before)" = "93"
-      - name: Reproduce genuine non-UAE US G4 legacy title drift and preserve it
+      - name: Inject independently scoped US G4 drift for strict rejection test
         run: |
           set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c \
+            "SELECT \"Title\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01'" > /tmp/g4-us-original-title
+          test -s /tmp/g4-us-original-title
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c \
+            "SELECT md5(string_agg(x.\"Id\"::text || ':' || x.\"Code\" || ':' || x.\"FrameworkVersionId\"::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/g4-unrelated-lesson-hash-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c \
             "UPDATE \"CurriculumPedagogicalLessons\" SET \"Title\" = \"Title\" || ' [retained legacy drift]' WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' RETURNING \"Code\"" | grep -qx 'PED:US-CCSS-MATH:G4:U01:L01'
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]'" | grep -qx 1
-      - name: Build candidate replacement importer
-        working-directory: candidate
+      - name: Build historical Grade4 approved replacement importer
+        working-directory: approved
         run: |
           set -euo pipefail
           dotnet restore Edulytics.sln
           dotnet restore tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
           dotnet build tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj --no-restore
       - name: Reject accidental replacement without precise owner token
-        working-directory: candidate
+        working-directory: approved
         run: |
           set -euo pipefail
           if dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj > /tmp/g4-unguarded-attempt.log 2>&1; then
@@ -179,8 +200,31 @@ jobs:
           fi
           grep -E "identity collision|baseline drift|refusing" /tmp/g4-unguarded-attempt.log || true
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 93
-      - name: Apply explicitly approved same-database replacement
-        working-directory: candidate
+      - name: Prove owner token cannot silently rewrite independent US G4 drift
+        working-directory: approved
+        env:
+          EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
+        run: |
+          set -euo pipefail
+          if dotnet run --no-build --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj > /tmp/g4-offscope-rejected.log 2>&1; then
+            echo 'ERROR: owner token allowed cross-curriculum US G4 rewrite'; exit 1
+          fi
+          grep -Fq 'Pedagogical lesson baseline drift: PED:US-CCSS-MATH:G4:U01:L01' /tmp/g4-offscope-rejected.log
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 93
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]'" | grep -qx 1
+      - name: Restore synthetic US G4 drift and prove unrelated lesson identities unchanged
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 -At -c \
+            "UPDATE \"CurriculumPedagogicalLessons\" SET \"Title\" = LEFT(\"Title\", length(\"Title\") - length(' [retained legacy drift]')) WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]' RETURNING \"Code\"" | grep -qx 'PED:US-CCSS-MATH:G4:U01:L01'
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT \"Title\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01'" | cmp - /tmp/g4-us-original-title
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT md5(string_agg(x.\"Id\"::text || ':' || x.\"Code\" || ':' || x.\"FrameworkVersionId\"::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | cmp - /tmp/g4-unrelated-lesson-hash-before
+      - name: Apply explicitly approved historical Grade4 replacement
+        working-directory: approved
         env:
           EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
         run: |
@@ -191,14 +235,20 @@ jobs:
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" > /tmp/non-g4-after
           cmp /tmp/non-g4-before /tmp/non-g4-after
-          # The US G4 lesson title drift deliberately introduced above must
-          # remain exactly as it was: UAE publication has no authority to fix it.
+          # The synthetic US G4 drift was proved fail-closed and reverted;
+          # the actual owner-authorized Grade4 cutover must preserve every
+          # unrelated lesson Id, Code and FrameworkVersionId, plus the US G4
+          # title. The frozen approved importer separately reconciles known
+          # historical Cambridge/G1 projection metadata and timestamps; those
+          # mutable fields cannot be mistaken for lost lesson identities.
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
-            "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01' AND \"Title\" LIKE '%[retained legacy drift]'" | grep -qx 1
+            "SELECT \"Title\" FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" = 'PED:US-CCSS-MATH:G4:U01:L01'" | cmp - /tmp/g4-us-original-title
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c \
+            "SELECT md5(string_agg(x.\"Id\"::text || ':' || x.\"Code\" || ':' || x.\"FrameworkVersionId\"::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | cmp - /tmp/g4-unrelated-lesson-hash-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%' AND \"Title\" LIKE 'Math Is %'" | grep -qx 0
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -At -c             "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON c.\"LessonNodeId\"=l.\"Id\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L4:COMMON:%'" | grep -qx 132
       - name: Test second startup without re-deleting 132 canonical records
-        working-directory: candidate
+        working-directory: approved
         env:
           EDULYTICS_G4_REPLACE_LEGACY_93_WITH_132: CONFIRM_REPLACE_OLD_GRADE4_93_WITH_NEW_132
         run: |
@@ -215,6 +265,8 @@ jobs:
             "checks":{"legacyGrade4Lessons":93,"replacementGrade4Lessons":132,
               "replacementCanonicalContents":132,
               "sameVersionOwnerApprovedReplacement":True,
+              "historicApprovedImporterCommit":"72318376967504ef04a1c25dd541a1c5e164be33",
+              "currentGrade4ManifestBlueprintContentGateByteIdentical":True,
               "negativeNoTokenTest":True,"secondRunIdempotent":True,
               "nonGrade4RowsPreserved":True,
               "rehearsedInEphemeralPostgreSQL":True},

@@ -64,6 +64,20 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
         old=number.group()
         candidate=correct[:number.start()]+format(Decimal(old)+Decimal(11),"f")+correct[number.end():]
     else:
+        # These three families return explicit answer categories (not numeric
+        # responses). Preserve the actual server's choice vocabulary when
+        # submitting a syntactically valid but intentionally wrong answer.
+        # Do not alter the production engine or any Grade 1/US contracts.
+        family_options={
+            "supporting.statistics.collection_method":("census","sample"),
+            "supporting.statistics.scatter_correlation":("positive","negative","none"),
+            "supporting.statistics.compare_range":("A","B","equal"),
+        }.get(family)
+        if family_options is not None:
+            if correct.strip() not in family_options:
+                raise ValueError("Unknown category for scoped statistical family")
+            i=family_options.index(correct.strip())
+            return family_options[(i+1)%len(family_options)]
         categories={
             "YES":"NO","NO":"YES","TRUE":"FALSE","FALSE":"TRUE",
             "GREATER":"LESS","LESS":"GREATER","EQUAL":"GREATER",
@@ -105,6 +119,10 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
                 ("الأقواس","الأسس","الضرب والقسمة","الجمع والطرح"),
                 ("التبديل","التجميع","المحايد","غير متكافئين"),
                 ("مستقل","تابع"),
+                # UAE G7 angle-type prompts return Arabic categorical answers.
+                # Preserve the correct family schema for the graded wrong control.
+                ("حادة","قائمة","منفرجة","مستقيمة"),
+                ("حاد","قائم","منفرج","مستقيم"),
                 ("حسابية","هندسية"),
                 ("خطية","غير خطية"),
             )
@@ -132,6 +150,43 @@ def grade6_syntactically_valid_wrong_answer(correct, family=None):
     if candidate==correct or "B001_MALFORMED" in candidate:
         raise ValueError("Not distinct valid-wrong answer")
     return candidate
+
+
+def grade7_syntactically_valid_wrong_answer(correct, family=None):
+    """Preserve a *valid alternative mathematical category* for UAE Grade7
+    angle-classification/angle-relation items, otherwise reuse G6's numeric
+    perturbation. This is an E2E negative answer, not an engine/fallback change.
+    """
+    if family in (
+        "supporting.geometry.angle_classify",
+        "uae.g3.u13.l02.angle_types",
+        "usccss.g7.u07.vertical_angle",
+    ):
+        # Each alternative is an existing mathematical angle/angle-pair type.
+        # Preserve the source answer's language and letter case.
+        domains = (
+            ("acute", "obtuse", "right", "straight", "reflex"),
+            ("acute angle", "obtuse angle", "right angle", "straight angle", "reflex angle"),
+            ("vertical", "adjacent", "complementary", "supplementary"),
+            ("vertical angles", "adjacent angles", "complementary angles", "supplementary angles"),
+            ("حادة", "منفرجة", "قائمة", "مستقيمة", "منعكسة"),
+            ("حادّة", "منفرجة", "قائمة", "مستقيمة", "منعكسة"),
+            ("زاوية حادة", "زاوية منفرجة", "زاوية قائمة", "زاوية مستقيمة", "زاوية منعكسة"),
+            ("متقابلتان بالرأس", "متجاورتان", "متتامتان", "متكاملتان"),
+            ("متقابلتان", "متجاورتان", "متتامتان", "متكاملتان"),
+        )
+        clean = correct.strip()
+        for group in domains:
+            matches = [item.casefold() for item in group]
+            if clean.casefold() in matches:
+                idx = matches.index(clean.casefold())
+                next_item = group[(idx + 1) % len(group)]
+                if clean.isupper() and clean.isascii():
+                    return next_item.upper()
+                if clean.islower() and clean.isascii():
+                    return next_item.lower()
+                return next_item
+    return grade6_syntactically_valid_wrong_answer(correct, family)
 
 
 def syntactically_valid_wrong_answer(correct, family=None):
@@ -351,7 +406,9 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
                 return {"status":"SURVEY_REQUIRES_HUMAN_NOT_VALID_WRONG_FIXTURE","family":family}
             # G2 reuses many first-party/shared numeric and category families.
             # Opt-in only: never change existing US or G1 negative controls.
-            if wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
+            if wrong_answer_profile == "uae-g7":
+                answer=grade7_syntactically_valid_wrong_answer(answer,family)
+            elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
                 answer=grade6_syntactically_valid_wrong_answer(answer,family)
             else:
                 answer=syntactically_valid_wrong_answer(answer,family)
@@ -453,6 +510,20 @@ if __name__=="__main__":
             self.assertEqual(syntactically_valid_wrong_answer(
                 "-2.5","algebra.linear.ax_plus_b_equals_c"),"8.5")
             self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,"")
+        def test_g7_angle_categories_preserve_valid_labels(self):
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "ACUTE", "supporting.geometry.angle_classify"), "OBTUSE")
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "زاوية قائمة", "uae.g3.u13.l02.angle_types"),
+                "زاوية مستقيمة")
+            self.assertEqual(
+                grade7_syntactically_valid_wrong_answer(
+                    "90", "supporting.geometry.angle_classify"), "101")
+            self.assertRaises(ValueError,
+                grade7_syntactically_valid_wrong_answer, "UNKNOWN_LABEL",
+                "supporting.geometry.angle_classify")
         def test_g6_arabic_categories_are_legitimate_wrong_alternatives(self):
             domains=[
                 ("الأول","uae.g6.u05.l10.coordinate_region"),
@@ -487,6 +558,27 @@ if __name__=="__main__":
             self.assertRaises(ValueError,
                 grade6_syntactically_valid_wrong_answer,
                 "المنحرف","uae.g6.invalid-sentinel")
+        def test_g7_angle_classification_wrong_answer_uses_valid_category(self):
+            for expected in ("حادة","قائمة","منفرجة","مستقيمة",
+                             "حاد","قائم","منفرج","مستقيم"):
+                wrong=grade6_syntactically_valid_wrong_answer(
+                    expected,"supporting.geometry.angle_classify")
+                self.assertNotEqual(wrong,expected)
+                self.assertIn(wrong,("حادة","قائمة","منفرجة","مستقيمة",
+                                     "حاد","قائم","منفرج","مستقيم"))
+        def test_g7_real_statistical_family_wrong_categories(self):
+            scenarios={
+                "supporting.statistics.collection_method":("census","sample"),
+                "supporting.statistics.scatter_correlation":("positive","negative","none"),
+                "supporting.statistics.compare_range":("A","B","equal"),
+            }
+            for family,choices in scenarios.items():
+                for answer in choices:
+                    wrong=grade6_syntactically_valid_wrong_answer(answer,family)
+                    self.assertIn(wrong,choices)
+                    self.assertNotEqual(wrong,answer)
+            self.assertRaises(ValueError,grade6_syntactically_valid_wrong_answer,
+                              "unknown","supporting.statistics.collection_method")
         def test_parse_csrf_and_adoption(self):
             self.assertEqual(extract_csrf('<input name="__RequestVerificationToken" value="token123">'),"token123")
             self.assertIsNone(extract_csrf('<div>no csrf</div>'))

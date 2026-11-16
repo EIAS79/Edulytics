@@ -15,9 +15,36 @@ const familyRegistry='src/Edulytics.Core/Mathematics/Generation/question-family-
 const priorLines=(ref,file)=>cp.execFileSync('git',['show',ref+':'+file],
   {cwd:root,encoding:'utf8'}).split('\n');
 const nowLines=file=>fs.readFileSync(path.join(root,file),'utf8').split('\n');
+// Owner-directed retirement of one obsolete UAE G7 General English
+// supporting contract is the sole permitted historical contract removal.
+// The shared US G1-G11 exact engine and all other contracts stay immutable.
+const retiredG7GeneralContractBlock=[
+  '        new(',
+  '            "PED:UAE-MOE-MATH:L7:GENERAL:01:06:RATES-AND-UNIT-RATES",',
+  '            "ratio.unit_rate",',
+  '            "UNIT_RATE",',
+  '            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio"],',
+  '            "SupportingLesson",',
+  '            "READY_VERIFIED",',
+  '            Version),'
+];
+function stripOnlyRetiredG7Contract(lines){
+  const start=lines.findIndex((line,i)=>
+    retiredG7GeneralContractBlock.every((expected,offset)=>
+      lines[i+offset]===expected));
+  assert.ok(start>=0,'Expected old Grade7 English contract block missing from immutable baseline');
+  assert.equal(lines.filter(line=>line===retiredG7GeneralContractBlock[1]).length,1);
+  return [...lines.slice(0,start),
+          ...lines.slice(start+retiredG7GeneralContractBlock.length)];
+}
 function assertOriginalLinesUnchanged(ref,file){
-  const baseline=priorLines(ref,file);
+  const baseline=file===contracts
+    ? stripOnlyRetiredG7Contract(priorLines(ref,file))
+    : priorLines(ref,file);
   const current=nowLines(file);
+  if(file===contracts)
+    assert.ok(!current.includes(retiredG7GeneralContractBlock[1]),
+      'Retired English G7 contract accidentally reinstated');
   let originalIndex=0;
   const added=[];
   for(const line of current){
@@ -44,7 +71,9 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
   const diff=git('diff','--numstat',preG5,'HEAD','--',engine,contracts);
   for(const row of diff.split('\n').filter(Boolean)){
     const [added,removed,file]=row.split('\t');
-    assert.equal(removed,'0','An older published line was removed in '+file);
+    assert.equal(Number(removed),
+      file===contracts ? retiredG7GeneralContractBlock.length : 0,
+      'Only the exact retired Grade7 English contract may be removed in '+file);
     assert.ok(Number(added)>0);
   }
   const data=JSON.parse(fs.readFileSync(path.join(root,familyRegistry),'utf8'));
@@ -58,13 +87,22 @@ test('Original G1 family semantics and G11 routes are preserved after authorized
 });
 test('Other grades and cross-school Practice negative-answer profiles remain explicit',()=>{
   const probe=fs.readFileSync(path.join(root,'tools/phase29/b001_practice_attempt_probe.py'),'utf8');
-  assert.ok(probe.includes('wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6")'),
-    'The G6 profile must be added without replacing G2-G5 negative controls');
-  assert.ok(probe.includes('wrong_answer_profile=="uae-g2"') ||
-    probe.includes('wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6")'));
+  assert.ok(probe.includes('if wrong_answer_profile == "uae-g7":'),
+    'Grade7 must have its own first-party wrong-answer branch');
+  assert.ok(probe.includes('grade7_syntactically_valid_wrong_answer(answer,family)'),
+    'Grade7 must retain its scoped category/number response helper');
+  assert.ok(probe.includes('elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):'),
+    'Existing Grade2-6 profiles must remain unchanged and explicit');
+  assert.ok(probe.includes('grade6_syntactically_valid_wrong_answer(answer,family)'),
+    'Existing Grade2-6 negative control helper must remain intact');
+  assert.ok(probe.includes('answer=syntactically_valid_wrong_answer(answer,family)'),
+    'The independent default/US negative control must not be replaced');
   for(const file of [engine,contracts]){
     const changes=git('diff','--unified=0',preG5,'HEAD','--',file);
     const deleted=changes.split('\n').filter(x=>x.startsWith('-')&&!x.startsWith('---'));
-    assert.deepEqual(deleted,[],'No historical Grade1-5/US engine or contract deletion: '+file);
+    assert.deepEqual(
+      deleted,
+      file===contracts ? retiredG7GeneralContractBlock.map(line=>'-'+line) : [],
+      'Only the explicitly retired UAE Grade7 English contract may be removed: '+file);
   }
 });

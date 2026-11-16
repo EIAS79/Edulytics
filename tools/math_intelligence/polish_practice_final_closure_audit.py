@@ -194,8 +194,23 @@ def audit() -> dict[str, Any]:
         blockers.append(
             f"UAE Grade6 must retain 59 legacy or exactly 128 owner-approved Arabic lessons; got {grade6_count}"
         )
+    # Owner-approved UAE G7 General Arabic replacement has exactly 78
+    # first-party lesson identities instead of 62 obsolete English ones.
+    # Preserve Polish's independent 1,569/306 outcome invariants, while
+    # rejecting partial or silently drifted cross-curriculum totals.
+    grade7_prefix = "PED:UAE-MOE-MATH:L7:GENERAL:"
+    grade7_count = sum(
+        str(row.get("lessonCode") or "").startswith(grade7_prefix)
+        for row in rows
+    )
+    if grade7_count not in (62, 78):
+        blockers.append(
+            "UAE Grade7 General must be exactly 62 old or 78 approved "
+            f"Arabic lessons, got {grade7_count}"
+        )
     expected_catalogue_count = (
-        5110 - 93 + grade4_count + grade12_count - 59 + grade6_count
+        5110 - 93 + grade4_count + grade12_count
+        - 59 + grade6_count - 62 + grade7_count
     )
     required_global = {
         "lessonCount": expected_catalogue_count,

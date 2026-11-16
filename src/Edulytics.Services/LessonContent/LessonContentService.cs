@@ -162,6 +162,11 @@ public sealed class LessonContentService : ILessonContentService
                 var context = group.First();
                 var items = lessons
                     .Where(x => MatchesContext(x, context))
+                    .Where(x =>
+                        !LessonContentPolicy.IsUaeGrade7GeneralScope(
+                            context.FrameworkCode, x.Code) ||
+                        LessonContentPolicy.IsUaeG7ArabicLesson(
+                            context.FrameworkCode, x.Code))
                     .OrderBy(x => x.SortOrder)
                     .Select(lesson =>
                     {
@@ -480,7 +485,11 @@ public sealed class LessonContentService : ILessonContentService
 
         var context = resolvableContexts.FirstOrDefault(x =>
             MatchesContext(lesson, x));
-        if (context is null)
+        if (context is null ||
+            (LessonContentPolicy.IsUaeGrade7GeneralScope(
+                 context.FrameworkCode, lesson.Code) &&
+             !LessonContentPolicy.IsUaeG7ArabicLesson(
+                 context.FrameworkCode, lesson.Code)))
         {
             return LessonContentQueryResult<CanonicalLessonDetail>.Failure(
                 LessonContentErrorCode.LessonNotFound);
@@ -791,9 +800,17 @@ public sealed class LessonContentService : ILessonContentService
              string.Equals(lessonCode,
                 "PED:UAE-MOE-MATH:L6:GENERAL:01:01:FACTORS-AND-MULTIPLES",
                 StringComparison.Ordinal));
+        // Fail closed for legacy or unknown G7 General IDs even if an
+        // English-only record remains in a school database before migration.
+        if (LessonContentPolicy.IsUaeGrade7GeneralScope(frameworkCode, lessonCode) &&
+            !LessonContentPolicy.IsUaeG7ArabicLesson(frameworkCode, lessonCode))
+            return null;
+
+        var grade7Arabic = LessonContentPolicy.IsUaeG7ArabicLesson(
+            frameworkCode, lessonCode);
         var academicLanguage = (IsUaeG1ArabicLesson(lessonCode) ||
                                 grade2Arabic || grade3Arabic || grade4Arabic ||
-                                grade5Arabic || grade6Arabic) &&
+                                grade5Arabic || grade6Arabic || grade7Arabic) &&
                                string.Equals(
                                    frameworkCode,
                                    MathematicsCurriculumPackRegistry.UaeCode,
@@ -806,7 +823,7 @@ public sealed class LessonContentService : ILessonContentService
                     StringComparison.Ordinal))
                 .AcademicLanguage;
 
-        // Do not fallback to English for first-party approved UAE Arabic G1-G6 lessons.
+        // Do not fallback to English for registered UAE Arabic G1-G7 lessons.
         return translations.FirstOrDefault(x =>
             NormalizeCulture(x.CultureCode) == NormalizeCulture(academicLanguage));
     }
