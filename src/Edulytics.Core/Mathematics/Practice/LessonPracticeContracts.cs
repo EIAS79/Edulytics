@@ -10268,6 +10268,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L04_LOCAL_PDF64_71",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U01L05; local PDF 76–83.
+        // Reuse supported numerical families; teacher reviews open justification.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS", "functions.exponential.negative_exponents", "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
+            ["functions.exponential.negative_exponents", "supporting.powers10.evaluate", "supporting.powers10.divide", "supporting.powers10.missing_exponent"],
+            "UAE_G8_AR_U01L05_PDF76_83",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

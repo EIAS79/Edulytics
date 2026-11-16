@@ -207,10 +207,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:01:05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 1 / Lesson 5",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 76–83; printed 43–50",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic Student Book 2025–2026 scanned local",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "7a835caac450804e895beba65e403503f465bdde2d7efeeb9c0de5a44b1b2207",
       "CanonicalBodySha256": "3d6f37eb1561953c636052cb67921f071f6bf692bbbe2a2cc3127fadbf85a677",
@@ -218,7 +218,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic student-book skill authoring; exact item parity UNKNOWN; Stage D NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -229,6 +229,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Negative Exponents, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Negative Exponents: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الأسس السالبة",
+          "Explanation": "الأس السالب لا يجعل الناتج سالبًا تلقائيًا؛ بل يدل على المقلوب. أ^(-ن)=1/أ^ن بشرط أ ≠ 0 ون صحيح موجب. مثل 2^(-3)=1/8، و(-2)^(-3)=−1/8. والأس الصفري أ^0=1 عندما أ≠0. يمكن اكتشاف المعنى عبر جدول قوى العدد 10: 10^2=100، 10^1=10، 10^0=1، 10^-1=0.1، 10^-2=0.01، مع القسمة على 10 في كل انتقال. يهدف الدرس إلى كتابة القوى ذات الأس السالب بصورة لا تحتوي أسسًا سالبة والعكس، وإجراء ضرب وقسمة القوى بأمان. نشاط أصلي: استقصاء مقياس قياس أصغر الأجسام حيث يعبر 10^-6 عن واحد في المليون.",
+          "KeyConceptsAndRules": "إذا أ غير صفر فإن أ^0=1، وأ^-ن=1/أ^ن، و1/أ^ن=أ^-ن. وفي الكسر (أ/ب)^-ن=(ب/أ)^ن مع أ وب غير صفريين. ضرب القوى ذات الأساس الواحد يجمع الأسس بما فيها السالبة: 5^3×5^-5=5^-2=1/25. القسمة تطرح الأسس: س^-1/س^-4=س^3 بشرط س≠0. الإشارة تعتمد على إشارة الأساس داخل القوس وزوجية الأس لا على سالب الأس وحده؛ (-2)^-2=1/4. لا نعرف 0^0 أو 0^-ن ضمن هذه القواعد، لأن المقلوب يحتاج مقامًا غير صفري.",
+          "WorkedExamples": "مثال1: 6^-3 = 1/6^3 = 1/216. مثال2: 1/5^2 = 5^-2. مثال3: (-3)^-3 = -1/27، لكن (-3)^-2 = 1/9. مثال4: (2/7)^-2 = (7/2)^2 =49/4. مثال5: 4^3×4^-5=4^-2=1/16. مثال6: 0.0001=10^-4، بينما 10^4=10000. مثال7: بسّط أ^5/أ^8=أ^-3=1/أ^3، أ≠0.",
+          "StepByStepSolutions": "حدد أولًا إذا كان الأس سالبًا أو صفرًا، وافحص أن الأساس غير صفري. عند الأس السالب بدّل الصورة إلى مقلوب بقيمة أس موجب: 3^-2=1/9. عند وجود كسر مرفوع للأس السالب اقلب الكسر وارفعه للأس الموجب: (2/3)^-2=(3/2)^2=9/4. احسب الأسس بعد استعادة الإشارات: (-2)^-3=-1/8. في ضرب أو قسمة قوى الأساس الواحد أجمع أو اطرح الأسس، ثم أكتب الناتج بأس موجب حيث أمكن. أتحقق بمقارنة الطرفين عند قيمة أساس غير صفرية.",
+          "CommonMistakes": "من الأخطاء تفسير 5^-2 على أنه -25؛ الصحيح 1/25. ومن الخطأ اعتبار 4^0=0؛ الصحيح 1. ولا نستطيع كتابة 0^-2=1/0^2 إذ القسمة على صفر غير معرفة. كما أن (-2)^-2 ليس -1/4 بل +1/4. والفرق بين (-2)^-3 و-2^-3 تحدده الأقواس وليس مجرد الأس السالب. وعند عكس كسر بسبب أس سالب يجب عكس البسط والمقام كاملين.",
+          "QuickSummary": "الأس السالب يعني المقلوب وليس إشارة سالب بالضرورة؛ أ^-ن=1/أ^ن عندما أ≠0، وأ^0=1 للأساس غير الصفري. نكتب القيم النهائية بأسس موجبة حيث يكون ذلك مناسبًا، ونطبق قوانين الضرب والقسمة للأُسس الصحيحة. Cool-down أصلي: 3^-2، (-2)^-3، (2/5)^-2، وسبب عدم تعريف 0^-1. التفسير المكتوب يراجعه المعلم."
         }
       ]
     },
