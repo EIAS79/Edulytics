@@ -10308,6 +10308,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U01L09_PDF114_121",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 Arabic U01L10, PDF 122–129.
+        // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS", "number.rational.signed_number_line", "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
+            ["number.rational.signed_number_line", "fractions.compare.unlike_denominators", "decimals.compare"],
+            "UAE_G8_AR_U01L10_PDF122_129",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
