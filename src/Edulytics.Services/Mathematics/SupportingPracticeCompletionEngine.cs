@@ -116,6 +116,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance",
             "supporting.geometry.circle_circumference_pi_coefficient",
             "supporting.geometry.circle_area_pi_coefficient",
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+            "uae.g7.u09.l02.cone_volume_pi_coefficient",
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient",
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+            "uae.g7.u09.l06.scale_area_factor",
+            "uae.g7.u09.l06.scale_volume_factor",
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient",
             "usccss.g7.u04.fractional_change",
             "usccss.g7.u04.reverse_percent_original",
@@ -310,6 +317,13 @@ internal static partial class SupportingPracticeCompletionEngine
             "usccss.g7.u03.l05.wheel_rotations_distance" => WheelRotationsDistance(random, scale),
             "supporting.geometry.circle_circumference_pi_coefficient" => CircleCircumference(random, scale),
             "supporting.geometry.circle_area_pi_coefficient" => CircleArea(random, scale),
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient" => G7CylinderVolume(random, scale),
+            "uae.g7.u09.l02.cone_volume_pi_coefficient" => G7ConeVolume(random, scale),
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient" => G7SphereVolume(random, scale),
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient" => G7CylinderSurfaceArea(random, scale),
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient" => G7ConeSurfaceArea(random, scale),
+            "uae.g7.u09.l06.scale_area_factor" => G7ScaleFactor(random, area: true),
+            "uae.g7.u09.l06.scale_volume_factor" => G7ScaleFactor(random, area: false),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" => CircleFractionArea(random, scale),
             "usccss.g7.u04.fractional_change" => G7FractionalChange(random, scale),
             "usccss.g7.u04.reverse_percent_original" => G7ReversePercentOriginal(random, scale),
@@ -535,6 +549,18 @@ internal static partial class SupportingPracticeCompletionEngine
                 (2 * p["radius"]).ToString(CultureInfo.InvariantCulture),
             "supporting.geometry.circle_area_pi_coefficient" =>
                 (p["radius"] * p["radius"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l01.cylinder_volume_pi_coefficient" =>
+                checked(p["radius"] * p["radius"] * p["height"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l02.cone_volume_pi_coefficient" =>
+                checked(p["radius"] * p["radius"] * p["height"] / 3).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l03.sphere_volume_pi_coefficient" =>
+                checked(4 * p["radius"] * p["radius"] * p["radius"] / 3).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l04.cylinder_surface_area_pi_coefficient" =>
+                checked(2 * p["radius"] * (p["radius"] + p["height"])).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l05.cone_surface_area_pi_coefficient" =>
+                checked(p["radius"] * (p["radius"] + p["slantHeight"])).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l06.scale_area_factor" => checked(p["scale"] * p["scale"]).ToString(CultureInfo.InvariantCulture),
+            "uae.g7.u09.l06.scale_volume_factor" => checked(p["scale"] * p["scale"] * p["scale"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g7.u03.l09.circle_fraction_area_pi_coefficient" =>
                 SimplifyFraction(p["radius"] * p["radius"], p["denominator"]),
             "usccss.g7.u04.fractional_change" =>
@@ -1716,6 +1742,76 @@ internal static partial class SupportingPracticeCompletionEngine
             $"A circle has radius {radius}. Its area is kπ. Find k.",
             "Use A = πr² and report the exact coefficient of π.",
             ("radius", radius));
+    }
+
+
+    // UAE Grade 7 Arabic: independently assessed solid-geometry formulas.
+    // Questions request the integer coefficient k in kπ, avoiding decimal
+    // approximation and ensuring each lesson actually assesses its own formula.
+    private static Problem G7CylinderVolume(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = random.Next(3, 10 + scale);
+        return P("uae.g7.u09.l01.cylinder_volume_pi_coefficient",
+            $"أسطوانة نصف قطرها {radius} سم وارتفاعها {height} سم. حجمها kπ سم³. أوجد معامل π، أي العدد k.",
+            "حجم الأسطوانة = π × مربع نصف القطر × الارتفاع.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7ConeVolume(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = 3 * random.Next(2, 6 + scale);
+        return P("uae.g7.u09.l02.cone_volume_pi_coefficient",
+            $"مخروط دائري قائم نصف قطر قاعدته {radius} سم وارتفاعه العمودي {height} سم. حجمه kπ سم³. أوجد k.",
+            "حجم المخروط = (π × مربع نصف القطر × الارتفاع العمودي) ÷ 3.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7SphereVolume(Random random, int scale)
+    {
+        var radius = 3 * random.Next(1, 4 + scale);
+        return P("uae.g7.u09.l03.sphere_volume_pi_coefficient",
+            $"كرة نصف قطرها {radius} سم. حجمها الدقيق kπ سم³. أوجد k.",
+            "حجم الكرة = (4 ÷ 3) × π × مكعب نصف القطر.",
+            ("radius", radius));
+    }
+
+    private static Problem G7CylinderSurfaceArea(Random random, int scale)
+    {
+        var radius = random.Next(2, 8 + scale);
+        var height = random.Next(3, 10 + scale);
+        return P("uae.g7.u09.l04.cylinder_surface_area_pi_coefficient",
+            $"أسطوانة مغلقة نصف قطر قاعدتها {radius} سم وارتفاعها {height} سم. مساحة سطحها الكلية kπ سم². أوجد k.",
+            "مساحة السطح الكلية = مساحتي القاعدتين + المساحة الجانبية = 2πr² + 2πrh.",
+            ("radius", radius), ("height", height));
+    }
+
+    private static Problem G7ConeSurfaceArea(Random random, int scale)
+    {
+        (int Radius, int Height, int SlantHeight)[] triples =
+            [(3, 4, 5), (5, 12, 13), (8, 15, 17)];
+        var triple = triples[random.Next(triples.Length)];
+        var multiplier = random.Next(1, 2 + Math.Min(scale, 3));
+        var radius = triple.Radius * multiplier;
+        var slantHeight = triple.SlantHeight * multiplier;
+        return P("uae.g7.u09.l05.cone_surface_area_pi_coefficient",
+            $"مخروط دائري قائم مغلق نصف قطر قاعدته {radius} سم وطول راسمه {slantHeight} سم. مساحة سطحه الكلية kπ سم². أوجد k.",
+            "مساحة السطح الكلية = مساحة القاعدة + المساحة الجانبية = πr² + πr×طول الراسم.",
+            ("radius", radius), ("slantHeight", slantHeight));
+    }
+
+    private static Problem G7ScaleFactor(Random random, bool area)
+    {
+        var factor = random.Next(2, 6);
+        return P(area ? "uae.g7.u09.l06.scale_area_factor" : "uae.g7.u09.l06.scale_volume_factor",
+            area
+                ? $"إذا ضُرب كل بُعد طولي لمجسم في {factor}، فكم مرة تتضاعف مساحة سطحه؟"
+                : $"إذا ضُرب كل بُعد طولي لمجسم في {factor}، فكم مرة يتضاعف حجمه؟",
+            area
+                ? "مساحة السطح تتغير بمربع معامل القياس الخطي."
+                : "الحجم يتغير بمكعب معامل القياس الخطي.",
+            ("scale", factor));
     }
 
     private static Problem CircleFractionArea(Random r, int s)
