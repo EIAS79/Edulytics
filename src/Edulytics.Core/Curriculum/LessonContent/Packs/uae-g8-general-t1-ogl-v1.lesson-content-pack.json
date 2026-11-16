@@ -895,10 +895,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:03:06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 3 / Lesson 6",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; PDF 254–261; printed 221–228",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic UAE Student Book 2025–2026 local scanned",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "a0ccf1ae3090258116b688b9c82a334719a691c3c6e47f4325d09fb544667753",
       "CanonicalBodySha256": "3977209e856519e6687ca6bc4ef265fb1cf3c43e83cc49680f5a47cdc0953a65",
@@ -906,7 +906,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic first-party source-aligned authoring; publisher task exact parity unknown; StageD runtime not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -917,6 +917,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Writing Linear Equations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Writing Linear Equations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "كتابة المعادلات الخطية",
+          "Explanation": "أكتب معادلة خط مستقيم عندما أعرف ميله ونقطة عليه، أو نقطتين مختلفتين، أو جدولًا يوضح تغيرًا ثابتًا. صيغة النقطة والميل هي ص−ص₁=م(س−س₁)، وصيغة الميل والمقطع هي ص=م س+ب. إذا مر الخط بالنقطتين (1،5)،(3،11)، فالميل=(11−5)/(3−1)=3؛ وبالتعويض في ص=3س+ب عند (1،5) نجد ب=2، فالصيغة ص=3س+2. إذا عرفت نقطة (-2،3) وميلًا 4، أكتب ص−3=4(س+2) ⇒ ص=4س+11. يمكن استخراج المعادلة من جدول رسوم أو مسافة وزمن، ثم اختبار كل صف في النموذج. الرسم المفتوح وتفسير صيغ المعادلات يراجعان من المعلم.",
+          "KeyConceptsAndRules": "من نقطتين مختلفتي س احسب م=(ص₂−ص₁)/(س₂−س₁). ثم استعمل ص−ص₁=م(س−س₁) أو ب=ص₁−م س₁، فتكتب ص=م س+ب. في حالة مستقيم رأسي س=ج لا يمكن كتابة ص على صورة م س+ب. في الجدول ذي زيادة ثابتة اختر أي زوجين ولا تخلط المقاطع من الجدول. مثال (5،165)،(10،290) يعطي الميل 125/5=25، والتقاطع 165−25×5=40، إذن ص=25س+40. يجب أن تحقق المعادلة كل زوج بيانات إذا كانت العلاقة خطية بدقة.",
+          "WorkedExamples": "مثال1: النقطتان (1،5) و(3،11) ⇒ م=3، ب=2، ص=3س+2. مثال2: الميل 4 والنقطة (−2،3) ⇒ ص−3=4(س+2) ⇒ ص=4س+11. مثال3: النقطتان (−2،9)،(8،1) ⇒ الميل (1−9)/(8+2)=−4/5؛ ب=9−(−4/5×−2)=37/5؛ ص=−4/5 س+37/5. مثال4: جدول (5،165)،(10،290) ⇒ ص=25س+40. مثال5: الميل -2 والمقطع 7 ⇒ ص=−2س+7. مثال6: إذا كانت تكلفة الإصلاح 30 درهمًا ثابتًا و12 درهمًا لكل ساعة، فص=12س+30.",
+          "StepByStepSolutions": "أحدد نوع المعطيات: نقطتان، أو ميل ونقطة، أو جدول. للنقطتين أحسب الميل بشرط اختلاف س، وأحافظ على ترتيب فرق ص وفرق س. أختار إحدى النقطتين وأعوض في ص−ص₁=م(س−س₁)، وأوزع وأجمع حدودًا متشابهة إن رغبت بصيغة الميل والمقطع. أتحقق بأن النقطة الثانية تحقق المعادلة. في جدول أحسب المعدل من فروق صفين ثم أجد ب بالتعويض؛ في سياق تكلفة أفسر ب كرسم ثابت و م كقيمة لكل وحدة. لا أفرض شكل ص=م س+ب على مستقيم رأسي.",
+          "CommonMistakes": "قد يكتفي الطالب بقسمة ص/س من نقطة ويعدها الميل في علاقة ذات مقطع غير صفري، وهذا خطأ. إذا كان الميل سالبًا يجب حفظ الإشارة أثناء إيجاد ب. في صيغة النقطة والميل، ص−ص₁=م(س−س₁) لا تُستبدل بإضافة ص₁ في الطرف الخطأ. عند التوزيع يجب توزيع م على الحدين. لا يجوز استعمال نقطتين لهما س متساوية لاستخراج ميل عددي، لأن المستقيم عمودي.",
+          "QuickSummary": "أستخدم ميل نقطتين أو ميلًا ونقطة لكتابة ص−ص₁=م(س−س₁) ثم ص=م س+ب، وأتحقق بالتعويض. Cool-down أصلي: (1) اكتب معادلة خط يمر بـ(1،4)،(3،10). (2) اكتب معادلة ميلها −2 وتمر بـ(−1،5). (3) استنتج معادلة تكلفة تبدأ بـ35 درهمًا وتزيد 9 عن كل ساعة. (4) ماذا تكتب إذا كانت النقطتان (3،1)،(3،6)؟ يراجع المعلم التفسير والرسم."
         }
       ]
     },

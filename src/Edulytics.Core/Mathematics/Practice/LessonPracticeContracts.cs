@@ -10406,6 +10406,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U03L05_PDF242_249",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Arabic U03 L06, local Student Book PDF 254-261.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS", "algebra.modeling.linear_relationship", "undefined",
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule", "functions.rules.linear"],
+            "UAE_G8_GENERAL_AR_U03L06_PDF254_261",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
