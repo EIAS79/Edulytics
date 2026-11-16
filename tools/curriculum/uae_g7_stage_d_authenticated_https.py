@@ -165,6 +165,25 @@ def run():
                        if t["CultureCode"] == "ar"), None)
         if not arabic or arabic["Title"] not in page:
             raise AssertionError(f"UAE G7 canonical Arabic title not served for {code}")
+        # Negative-locale runtime guard: English UI selection must not
+        # silently switch this General curriculum to obsolete English lessons.
+        # An unsupported locale may be rejected or display the same Arabic
+        # canonical lesson; neither path may serve English instructional content.
+        try:
+            english_request = html.unescape(get_page(
+                student, "/student/learning/lesson/" + lesson_id + "?culture=en"
+            ))
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (403, 404, 406):
+                raise
+            negative_locale_result = "DENIED_" + str(exc.code)
+        else:
+            if ('class="uae-g7-original-arabic-lesson" lang="ar" dir="rtl"'
+                    not in english_request or arabic["Title"] not in english_request):
+                raise AssertionError(
+                    f"UAE G7 legacy English lesson fallback for {index}: {code}"
+                )
+            negative_locale_result = "ARABIC_CANONICAL"
         # HTML check is not screenshot/visual a11y sign-off.
         rtl_markup = (
             'class="uae-g7-original-arabic-lesson" lang="ar" dir="rtl"' in page
@@ -208,6 +227,7 @@ def run():
             "studentPageSha256": hashlib.sha256(page.encode()).hexdigest(),
             "servedArabicCanonicalTitle": True,
             "htmlRtlMarker": rtl_markup,
+            "negativeEnglishLocale": negative_locale_result,
             "correct": positive,
             "wellFormedWrong": wrong,
             "malformed": negative,
@@ -234,6 +254,10 @@ def run():
         "wrongAttemptPersistenceCount": 78,
         "malformedAttemptRejectionCount": 78,
         "htmlRtlMarkedCount": sum(x["htmlRtlMarker"] for x in records),
+        "negativeEnglishFallbackChecks": sum(
+            x["negativeEnglishLocale"].startswith(("DENIED_", "ARABIC_CANONICAL"))
+            for x in records
+        ),
         "lessons": records,
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
