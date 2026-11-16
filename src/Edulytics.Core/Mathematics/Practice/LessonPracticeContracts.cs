@@ -9079,7 +9079,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:01:CYLINDER-VOLUME"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:01:CYLINDER-VOLUME", "supporting.geometry.area_volume",
             "CYLINDER-VOLUME",
-            ["supporting.geometry.circle_area_pi_coefficient", "geometry.volume.rectangular_prism", "usccss.g6.u01.l16.surface_volume_unit_logic"],
+            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient"],
             "UAE_G7_ARABIC_U09L01_PDF_4_11",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 09/02, student 04-09-volume-surface-2021-student.pdf printed 667-674.
@@ -9087,7 +9087,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:02:CONE-VOLUME", "supporting.geometry.area_volume",
             "CONE-VOLUME",
-            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l16.surface_volume_unit_logic", "geometry.volume.rectangular_prism"],
+            ["uae.g7.u09.l02.cone_volume_pi_coefficient"],
             "UAE_G7_ARABIC_U09L02_PDF_12_19",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 09/03, student 04-09-volume-surface-2021-student.pdf printed 675-683.
@@ -9095,7 +9095,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:03:SPHERE-VOLUME"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:03:SPHERE-VOLUME", "supporting.geometry.area_volume",
             "SPHERE-VOLUME",
-            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l16.surface_volume_unit_logic", "geometry.volume.rectangular_prism"],
+            ["uae.g7.u09.l03.sphere_volume_pi_coefficient"],
             "UAE_G7_ARABIC_U09L03_PDF_20_28",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 09/04, student 04-09-volume-surface-2021-student.pdf printed 689-694.
@@ -9103,7 +9103,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:04:CYLINDER-SURFACE-AREA", "supporting.geometry.area_volume",
             "CYLINDER-SURFACE-AREA",
-            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g7.u07.prism_surface_area_base_perimeter_height", "usccss.g6.u01.l12.surface_area_meaning"],
+            ["uae.g7.u09.l04.cylinder_surface_area_pi_coefficient"],
             "UAE_G7_ARABIC_U09L04_PDF_29_34",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 09/05, student 04-09-volume-surface-2021-student.pdf printed 701-708.
@@ -9111,7 +9111,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:05:CONE-SURFACE-AREA"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:05:CONE-SURFACE-AREA", "supporting.geometry.area_volume",
             "CONE-SURFACE-AREA",
-            ["supporting.geometry.circle_area_pi_coefficient", "usccss.g6.u01.l12.surface_area_meaning", "usccss.g6.u01.l14.source_net_surface_area"],
+            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient"],
             "UAE_G7_ARABIC_U09L05_PDF_35_42",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 09/06, student 04-09-volume-surface-2021-student.pdf printed 711-715.
@@ -9119,7 +9119,7 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L7:GENERAL:09:06:SCALE-DIMENSIONS-AREA-VOLUME", "supporting.geometry.area_volume",
             "SCALE-DIMENSIONS-AREA-VOLUME",
-            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "usccss.g6.u06.l18.related_area_volume_growth"],
+            ["uae.g7.u09.l06.scale_area_factor", "uae.g7.u09.l06.scale_volume_factor"],
             "UAE_G7_ARABIC_U09L06_PDF_43_47",
             "READY_VERIFIED",Version);
         // UAE Grade7 Arabic General 10/01, student 03-10.pdf printed 733-740.
