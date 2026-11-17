@@ -2959,10 +2959,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:11:03",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 11 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf PDF193–201, printed 805–813",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected UAE Arabic Student Book Term3 2019–2020",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "f038b827df2188166f24de771aaf40b55c1b7cc2b35616e6780f8067fccb0c11",
       "CanonicalBodySha256": "a3225b08fdfb54a8d3cf334f1438bbd0b633e16d33b27413f3784f23221ebe15",
@@ -2970,7 +2970,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original first-party Arabic geometry matched to local student book; exact question item parity UNKNOWN; runtime NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2981,6 +2981,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Tests for Parallelograms, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Tests for Parallelograms: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "اختبارات متوازي الأضلاع",
+          "Explanation": "لإثبات أن شكلًا رباعيًا متوازي أضلاع نستخدم اختبارات عكسية لخصائص الشكل. من الشروط الكافية: أن يكون كل زوج من الأضلاع المتقابلة متوازيًا، أو كل زوج من الأضلاع المتقابلة متساوي الطول، أو أن يكون زوج واحد من الأضلاع المتقابلة متوازيًا ومتساوي الطول في آن واحد، أو أن ينصف قطرَا الشكل أحدهما الآخر، أو أن يكون كل زوج من الزوايا المتقابلة متساويًا. لا يكفي وجود زوج واحد متوازٍ فقط ولا زوج واحد متساوٍ فقط. في شكل أصلي نحدد إحداثيات A(0،0)،B(4،0)،C(6،3)،D(2،3): نجد AB وCD متوازيين ومتساويين، فيتحقق أحد الاختبارات.",
+          "KeyConceptsAndRules": "في رباعي ABCD تكفي إحدى الحالات الموثوقة: AB∥CD وBC∥AD؛ AB=CD وBC=AD؛ AB∥CD مع AB=CD؛ تقاطع AC وBD في نقطة منتصف كل منهما؛ ∠A=∠C و∠B=∠D. لا يكفي AB=CD وحده دون التوازي أو تحقق شرط آخر. إذا كان A(0،0)،B(4،0)،C(6،3)،D(2،3)، فإن متجه AB=(4،0) ومتجه DC=(4،0)، أي توازي وتطابق زوج مقابل. ويمكن استخدام منتصف AC=(3،1.5) ومنتصف BD=(3،1.5) لاختبار الأقطار.",
+          "WorkedExamples": "مثال1: رباعي له AB∥CD وطول AB=CD=8، إذن هو متوازي أضلاع. مثال2: رباعي يتقاطع قطراه عند M بحيث AM=MC وBM=MD؛ هو متوازي أضلاع. مثال3: إحداثيات A(0،0)،B(4،0)،C(6،3)،D(2،3) تحقق توازي وتساوي AB وCD ومتوسطَي القطرين. مثال4: رباعي له فقط AB∥CD لا يكفي للحكم بمتوازي أضلاع، فقد يكون شبه منحرف. مثال5: إذا AB=CD وBC=AD، فهذا شرط كافٍ حتى لو لم يرد رمز التوازي.",
+          "StepByStepSolutions": "أحصي المعطيات المكتوبة وأميز ما إذا كانت عن أطوال أو توازٍ أو زوايا أو أقطار. أختار اختبارًا واحدًا كاملاً؛ مثلاً زوج متقابل واحد متوازٍ ومساوٍ للطول، وليس مجرد شرط منفرد. أستعمل خواص الزوايا المتبادلة عند القاطع أو متجهات الإحداثيات لإثبات التوازي حين يلزم. أتحقق أن الشكل غير منحل وأن الأضلاع محددة بترتيب رؤوس رباعي. إذا كان البرهان بالأقطار أوجد منتصفيهما؛ تطابقهما يعطي التنصيف المتبادل. أكتب عبارة سبب وخاتمة لا تتجاوز ما تثبته المعطيات.",
+          "CommonMistakes": "الاعتماد على تساوي زوج واحد من الأضلاع المتقابلة دون ثبوت توازيه لا يثبت الشكل؛ وكذلك التوازي وحده غير كافٍ في تعريف شبه المنحرف. لا يجوز استنتاج تساوي الأقطار من تنصيفها؛ خاصية التساوي الإضافية للمستطيلات. عند حساب ميل الأضلاع الرأسية لا تستخدم قسمة على صفر، بل قارن ثبات السينات. لا توظف انعكاس رسم منظور بصري بدل حساب أو رموز معطاة.",
+          "QuickSummary": "أختار اختبارًا كافيًا واحدًا لإثبات متوازي الأضلاع، وأفرق بين الشروط اللازمة وغير الكافية. Cool-down أصلي: هل رباعي له AB∥CD وAB=CD متوازي أضلاع؟ أثبت. وهل AB=CD وحده يكفي؟ فسر. تحسب المنتصفات في شبكة إحداثية أصلية ويراجع المعلم التبرير."
         }
       ]
     },

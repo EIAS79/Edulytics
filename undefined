@@ -10807,6 +10807,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U11L02_PDF183_191",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U11L03; local Student Book PDF193–201.
+        // Existing geometry numeric families. Diagrams and full proofs are
+        // teacher-scored. Full CI and runtime are Stage D only.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS", "geometry.quadrilaterals.attributes", "PARALLELOGRAM_CONVERSE_TESTS_PROPERTIES_PROOF",
+            ["geometry.quadrilaterals.attributes", "geometry.congruence.identify_criterion", "geometry.problem_solving.justification"],
+            "UAE_G8_GENERAL_AR_U11L03_PDF193_201",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
