@@ -10580,6 +10580,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U06L02_PDF97_104_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U06 L03; source PDF 111–118.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS", "geometry.coordinate_plane.plotting", "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
+            ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed", "geometry.reflection_symmetry"],
+            "UAE_G8_AR_U06L03_PDF111_118_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

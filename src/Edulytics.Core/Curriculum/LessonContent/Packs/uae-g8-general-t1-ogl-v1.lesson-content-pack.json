@@ -1798,10 +1798,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:06:03",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 6 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 111–118; printed 475–482",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Selected Arabic Grade8 General Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "cf05786d7b8747106c566e4e0bd41073ba3f30d6114a5be0ca460ad0e4ddbe96",
       "CanonicalBodySha256": "fe6c23cf6c0a72993349dad29d1358a80c1241a416975777b031bbb9fed765e8",
@@ -1809,7 +1809,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-aligned transformations; teacher to review coordinate diagrams; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1820,6 +1820,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Rotations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Rotations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الدوران",
+          "Explanation": "الدوران تحويل يحرك كل نقطة حول مركز ثابت بزاوية واتجاه محددين، مع ثبات بعدها عن المركز. عند الدوران عكس عقارب الساعة حول نقطة الأصل 90° تتحول (س،ص) إلى (−ص،س)، وعند 180° تتحول إلى (−س،−ص)، وعند 270° إلى (ص،−س). مثال أ(2،3): بعد 90° تصبح (−3،2)، وبعد 180° تصبح (−2،−3)، وبعد 270° تصبح (3،−2). الدوران باتجاه عقارب الساعة 90° يعادل عكس العقارب 270°. تتحول جميع رؤوس الشكل بالقانون نفسه وتتساوى أطوال الأضلاع والزوايا؛ ولا تتغير المسافة من الأصل. تستعمل أنشطة أصلية مثل دوران مؤشر ساعة أو شكل هندسي على شبكة إحداثية.",
+          "KeyConceptsAndRules": "دوران حول الأصل عكس عقارب الساعة: 90° ⇒ (−ص،س)، 180° ⇒ (−س،−ص)، 270° ⇒ (ص،−س). دوران 360° يعيد الشكل الأصلي. 90° باتجاه عقارب الساعة يساوي 270° عكسه، وصورته (ص،−س). المركز ثابت إذا كان الدوران حوله، والمسافة من المركز ثابتة لأن طول المتجه √(س²+ص²) لا يتغير. إذا كان المركز غير الأصل فلا تستخدم القواعد مباشرة دون نقل المركز إلى الأصل وإعادته. الحفاظ على اتجاه الدوران ضروري، لأن 90° يميناً و90° يساراً يعطيان صورتين مختلفتين.",
+          "WorkedExamples": "مثال1: النقطة (2،3) بعد 90° عكس الساعة تصبح (−3،2). مثال2: (−4،1) بعد 180° تصبح (4،−1). مثال3: (−2،−5) بعد 270° عكس الساعة تصبح (−5،2). مثال4: المثلث (1،0)،(3،0)،(1،2) بعد 90° عكس الساعة يصبح (0،1)،(0،3)،(−2،1). مثال5: دوران (4،−3) 90° مع الساعة يعطي (−3،−4)، ويحفظ البعد 5 عن الأصل. مثال6: ثلاث دورانات متتابعة 90° عكس الساعة تساوي دوراناً واحداً 270°.",
+          "StepByStepSolutions": "أقرأ مركز الدوران واتجاهه وزاويته. إذا كان حول الأصل أختار القانون المطابق للزاوية والاتجاه، ولا أبدل س وص عشوائياً. أطبع إحداثيات كل رأس وأحسب صورته وفق القانون نفسه؛ مثلاً 90° عكس الساعة يستبدل (س،ص) بـ(−ص،س). أرسم الصور على الشبكة وأوصلها بترتيب الرؤوس. أتحقق بأن المسافة من الأصل لكل رأس لم تتغير وأن أطوال الأضلاع متناظرة. إذا طُلب تركيب دورانين أجمع الزوايا مع مراعاة اتجاه الإشارة ثم أختزل بترديد 360°.",
+          "CommonMistakes": "الخلط بين مع وعكس اتجاه عقارب الساعة ينتج النقطة المقابلة. في 90° عكس الساعة نكتب (−ص،س)، لا (ص،−س). الدوران لا يكبر الشكل ولا يقلبه على محور انعكاس. لا تنس استخدام القاعدة لكل رأس، ولا تغير المركز في الرسم أثناء حساب صورة نقطة. عند 180° يتغير إشارتي الإحداثيين معاً، لكن عند 90° تتبادل مواقعهما بالإضافة إلى تغيير إشارة إحداهما.",
+          "QuickSummary": "الدوران حول الأصل يحافظ على الأطوال والمسافات من المركز ويغير اتجاه الإحداثيات بقواعد 90° و180° و270°. Cool-down أصلي: دوّر (3،−2) 90° عكس الساعة، ثم 180°، ثم 90° مع الساعة (كل عملية من النقطة الأصلية). دوّر رؤوس مثلث قائم 90° وفسر ثبات وتره. يراجع المعلم الرسم واتجاه الدوران."
         }
       ]
     },
