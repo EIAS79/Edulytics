@@ -10548,6 +10548,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U05L05_PDF47_54_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U05L06, local Student Book PDF59-66.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.find_side_exact", "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+            ["trigonometry.right_triangle.find_side_exact", "geometry.coordinate_plane.axis_distance", "supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L06_PDF59_66_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
