@@ -10652,6 +10652,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L07_PDF203_210_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U08L01; original Student Book PDF7–14.
+        // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS", "geometry.volume", "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
+            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient", "usccss.g7.u07.prism_volume_base_height", "supporting.geometry.area_volume"],
+            "UAE_G8_AR_U08L01_PDF7_14_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

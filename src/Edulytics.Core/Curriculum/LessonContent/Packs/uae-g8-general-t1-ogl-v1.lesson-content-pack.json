@@ -2185,10 +2185,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:08:01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 8 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 7–14; printed 587–594",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected local UAE Arabic Grade8 Student Book Unit8",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "570f8439ee82f81dea86adb3333ee830b855229a69eb1566eb17b88f8f2ac2fa",
       "CanonicalBodySha256": "3c9b8220029373fece2ee6ddd6e4642f8be41a3fbd8affeddc9432b44f903044",
@@ -2196,7 +2196,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic solid geometry source-aligned; exact publisher task parity UNKNOWN; runtime StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2207,6 +2207,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Volume of Cylinders, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Volume of Cylinders: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حجم الأسطوانة",
+          "Explanation": "تتكون الأسطوانة الدائرية القائمة من قاعدتين دائريتين متوازيتين لهما نصف قطر واحد وارتفاع عمودي بين القاعدتين. حجمها هو مساحة القاعدة مضروبة في الارتفاع، أي ح=π نق² ع. إذا نق=3 سم والارتفاع 10 سم، فالحجم 90π سم³، ويساوي نحو 282.74 سم³ عند التقريب إلى منزلتين باستعمال قيمة π الأدق. إذا أُعطي القطر 8 سم، فيجب قسمة القطر على 2 للحصول على نق=4 سم قبل التربيع. يمكن تجزئة أسطوانة موضوعة فوق منشور مستطيل إلى جزأين غير متداخلين ونجمع حجميهما. في نموذج أوعية التعبئة تُكتب وحدة الحجم سم³ أو م³ وليس سم²، وقد تتحول وحدة السنتيمتر المكعب إلى ملليلتر عندما يكون ذلك مناسبًا.",
+          "KeyConceptsAndRules": "قانون حجم أسطوانة قائمة: ح=π نق² ع، حيث نق نصف القطر، وع الارتفاع العمودي وليس طول الحافة المائلة، وπ ثابت الدائرة. إذا كان القطر ق فإن نق=ق/2. إذا تضاعف نق وحده أصبح الحجم أربعة أمثال الأصل، وإذا تضاعف الارتفاع وحده أصبح ضعفه. لحساب حجم جسم مركب من أسطوانة ومنشور لا يتداخلان نجمع حجم كل جزء، ولثقب أسطواني نطرح حجم الثقب. لا تتغير صيغة الحجم بميل سطح الورقة؛ نحتاج الأبعاد الحقيقية والإسقاط العمودي بين القاعدتين، ويجب توحيد وحدات القياس قبل الحساب.",
+          "WorkedExamples": "مثال1: نق=3 سم، ع=10 سم ⇒ ح=π×9×10=90π سم³. مثال2: قطر 8 م وارتفاع 5 م ⇒ نق=4 م، ح=80π م³. مثال3: نق=2.5 سم، ع=8 سم ⇒ ح=50π سم³. مثال4: أسطوانتان لهما نصف القطر نفسه وارتفاع الثانية ضعف الأولى؛ حجم الثانية ضعف الأولى. مثال5: منشور قاعدته 12×8 وارتفاعه 2 سم تعلوه أسطوانة نق=2 سم وارتفاع 4 سم؛ الحجم المركب=192+16π سم³. مثال6: أسطوانة خارجية نق=5 سم وارتفاع 10 سم مع ثقب أسطواني نق=2 سم بطول 10 سم؛ حجم المادة=210π سم³.",
+          "StepByStepSolutions": "أحدد شكل الأسطوانة ونصف قطرها وارتفاعها العمودي. إذا كان المعطى قطرًا أحوله إلى نصف قطر. أكتب مساحة القاعدة د=π نق²، ثم أضرب في الارتفاع: ح=د×ع. أترك الناتج في صورة مضاعف لـπ إذا طلبت قيمة دقيقة، وإلا أعطي تقريباً محدد الدقة. في الأجسام المركبة أرسم الأجزاء وأحسب كل حجم على حدة، ثم أجمع الأحجام غير المتداخلة أو أطرح الفراغ. أتأكد من توحيد وحدات الطول وأكتب وحدة مكعبة وأختبر معقولية الإجابة بالمقارنة مع ارتفاع أو نصف قطر آخر.",
+          "CommonMistakes": "استخدام القطر بدل نصف القطر يضاعف المساحة أربع مرات خطأ. لا تحسب حجم الأسطوانة بقانون مساحة السطح، فالحجم π نق² ع وليس 2π نق ع. تربيع الارتفاع بدل نصف القطر يغيّر النتيجة. تكتب الوحدة سم³ لا سم²، ولا تجمع حجمين متداخلين من غير حساب الجزء المشترك. إذا كان الارتفاع معطى بالملليمتر ونصف القطر بالسنتيمتر يجب توحيد الوحدات قبل حساب الحجم.",
+          "QuickSummary": "حجم الأسطوانة القائمة ح=π نق² ع مع نصف قطر حقيقي وارتفاع عمودي، ويمكن جمع أو طرح أحجام الأجزاء المركبة. Cool-down أصلي: (1) أسطوانة نق=4 سم، ع=6 سم، احسب حجمها بصيغة π. (2) قطر الأسطوانة 12 سم وارتفاعها 3 سم، احسب الحجم. (3) كيف يؤثر مضاعفة نصف القطر مع ثبات الارتفاع على الحجم؟ (4) علل سبب استخدام سم³. الرسوم والمجسمات المركبة للمعلم."
         }
       ]
     },
