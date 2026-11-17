@@ -2572,10 +2572,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:09:04",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 9 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 85–92; printed 697–704",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected UAE Arabic Student Book Term 3 (2019–2020)",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "78f8f27ba4b407d5f1ebf152963e3ac23bf757adeb59527a0f5def8175138ab7",
       "CanonicalBodySha256": "ce7635e94ed0cca867c525253372d76c62777fae91929f40e1f407a60f321631",
@@ -2583,7 +2583,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic skill-aligned correction, exact page-item parity not proven; runtime and CI NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2594,6 +2594,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Descriptive Statistics, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Descriptive Statistics: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الإحصاء الوصفي",
+          "Explanation": "الإحصاء الوصفي يساعد على عرض مجموعة بيانات دون أن يغيّرها. المتوسط الحسابي هو مجموع القيم مقسوماً على عددها، والوسيط القيمة الوسطى بعد ترتيب البيانات، والمنوال أكثر قيمة تكرارًا وقد يوجد أكثر من منوال أو لا منوال. المدى هو أكبر قيمة ناقص أصغر قيمة. ويلخص ملخص الأعداد الخمسة الصغرى والربيع الأول والوسيط والربيع الثالث والعظمى، ويمكن رسم مخطط صندوقي منها. لمجموعة أصلية [2،3،3،6،8،9،11] يكون المتوسط 6 والوسيط 6 والمنوال 3 والمدى 9، والربيعان 3 و9، بينما قد تعطي قيمة متطرفة متوسطًا غير ممثل للمركز النموذجي. يختلف اختيار المقياس بحسب طبيعة التوزيع.",
+          "KeyConceptsAndRules": "أرتب البيانات قبل حساب الوسيط والربيعات. إذا عدد القيم فردي فالوسيط القيمة الوسطى، وإذا زوجي فهو متوسط القيمتين الوسطيتين. المتوسط = مجموع القيم / عددها. المنوال أكثر قيمة تتكرر وقد تتعدد القيم الأعلى تكرارًا. المدى = الأكبر−الأصغر. عند استخدام طريقة استبعاد الوسيط من نصفَي البيانات الفردية، نحصل Q1 وQ3 بوسيط كل نصف، ويكون المدى الربيعي Q3−Q1. إذا كان التوزيع منحرفًا أو به قيم قصوى مؤثرة، يساعد الوسيط والمدى الربيعي في تقديم وصف مقاوم للتطرف.",
+          "WorkedExamples": "مثال1: البيانات 2،3،3،6،8،9،11: المجموع42 والمتوسط6 والوسيط6 والمنوال3 والمدى11−2=9. مثال2: ملخص الأعداد الخمسة للمجموعة ذاتها: الصغرى2، الربيع الأول3، الوسيط6، الربيع الثالث9، العظمى11. مثال3: للبيانات 4،4،6،8،8 يكون المتوسط6 والوسيط6 والمنوالان4 و8. مثال4: البيانات 1،2،3،4،30 متوسطها8 لكن الوسيط3، لذا الوسيط أوضح للقيمة النمطية. مثال5: لا يجوز حساب وسيط القيم 10،2،8 قبل ترتيبها؛ بعد الترتيب 2،8،10 يكون الوسيط8.",
+          "StepByStepSolutions": "أجمع قيم المجموعة المسموح بها وأتحقق من عدد المشاهدات. أرتبها تصاعديًا، وأحدد الصغرى والعظمى والوسيط والمنوال مع ملاحظة القيم المكررة. أحسب المتوسط بقسمة المجموع على العدد، ثم المدى بفارق الطرفين. لتحديد الربيعات أختار طريقة واضحة ثابتة: استبعاد الوسيط عند عدد فردي ثم وسيط النصف السفلي Q1 والعلوي Q3. أكتب الملخص الخماسي، وأفسر مدى تشتت النصف الأوسط وأختار المتوسط أو الوسيط بحسب التشوه والقيم القصوى. أتحقق من أن كل مقياس له وحدة البيانات الأصلية.",
+          "CommonMistakes": "ليس المتوسط القيمة الوسطى بالضرورة؛ الوسيط يحتاج ترتيب البيانات. ولا تعني أكثر قيمة عددية أنها المنوال؛ المنوال الأكثر تكرارًا. يخلط بعض الطلاب بين المدى والربيعي فيطرح الصغرى من العظمى بدلاً من Q1 من Q3. لا يجوز إسقاط القيمة القصوى بلا تفسير لتصبح البيانات أنسب. عند عدد فردي يجب التصريح باتفاقية حساب الربيعات، لأن طرق المقررات قد تختلف. يجب تمييز مفاهيم الفئة وكمية البيانات والعدد.",
+          "QuickSummary": "أصف مركز البيانات وتشتتها بالمتوسط والوسيط والمنوال والمدى والملخص الخماسي، وأفحص أثر القيم المتطرفة. Cool-down أصلي: للبيانات 2،4،4،7،8،11،14 احسب المتوسط والوسيط والمنوال والمدى وQ1 وQ3 بالقاعدة المحددة، ثم اشرح أي مقياس مقاوم لإضافة قيمة كبيرة. المعلم يراجع التفسير ومخطط الصندوق."
         }
       ]
     },
