@@ -132,6 +132,7 @@ def audit() -> dict[str, Any]:
     # existing academic-gate verifier. No official outcome is synthesized.
     approved_g6 = lesson_skill_resolution_audit.owner_approved_g6_declared_practice()
     approved_g7 = lesson_skill_resolution_audit.owner_approved_g7_declared_practice()
+    approved_g8 = lesson_skill_resolution_audit.owner_approved_g8_declared_practice()
 
     skills_doc = read_json(SKILL_REGISTRY)
     families_doc = read_json(FAMILY_REGISTRY)
@@ -197,6 +198,17 @@ def audit() -> dict[str, Any]:
             and row.get("approvedPrimarySkills") == [approved_g7[code]]
             and row.get("approvedMapping") is True
         )
+        is_owner_scoped_g8 = (
+            len(approved_g8) == 76
+            and code in approved_g8
+            and row.get("specialistGrade8OwnerScopedContractPendingRuntime") is True
+            and row.get("generationReadiness") == "READY_CONTEXTUAL"
+            and row.get("skillResolutionStatus")
+                == "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING"
+            and row.get("approvedPrimarySkills") == [approved_g8[code]]
+            and row.get("approvedMapping") is True
+            and not semantic_row.get("studentFacingDefects")
+        )
         for family_id in question_families:
             family = families.get(family_id)
             if family is None:
@@ -227,6 +239,19 @@ def audit() -> dict[str, Any]:
                         "targetGrade7SkillId": approved_g7[code],
                         "reuseEvidence":
                             "owner-scoped-g7-csharp-lesson-contract-and-registered-exact-family",
+                    })
+                elif (is_owner_scoped_g8 and original_skill in skills
+                      and family.get("lessonPracticeRouting") is True):
+                    # Contract already checked against all 76 source codes,
+                    # exact C# families, registered SkillIds and owner approval.
+                    # This adapter records G8's use of existing exact math
+                    # generators; it does not certify textbook item parity.
+                    cross_grade_family_adapters.append({
+                        "family": family_id,
+                        "originalSkillId": original_skill,
+                        "targetGrade8SkillId": approved_g8[code],
+                        "reuseEvidence":
+                            "owner-scoped-g8-csharp-lesson-contract-registered-exact-family",
                     })
                 else:
                     internal_blockers.append(
@@ -288,10 +313,17 @@ def audit() -> dict[str, Any]:
                     families[f].get("lessonPracticeRouting") is True
                     for f in question_families)
         )
+        specialist_g8_ready = bool(
+            is_owner_scoped_g8
+            and not semantic_row.get("studentFacingDefects")
+            and len(question_families) > 0
+            and all(f in families and families[f].get("lessonPracticeRouting") is True
+                    for f in question_families)
+        )
         # Contract readiness here is independent of persisted HTTPS/RTL Stage D.
         # Those run as mandatory separate same-SHA CI release gates.
         runtime_contract_ready = (specialist_g12_ready or specialist_g4_ready
-            or specialist_g6_ready or specialist_g7_ready) or (
+            or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready) or (
             skill_status == "EXISTING_VERIFIED_MAPPING"
             and approved_mapping
             and has_family
@@ -368,12 +400,13 @@ def audit() -> dict[str, Any]:
             "representations": sorted(representations),
             "visualRequired": visual_required,
             "visualStatus": visual_status,
-            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready,
-            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready,
+            "solverReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready,
+            "verifierReady": solver_ready or specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready,
             "independentG12SpecialistContractVerified": specialist_g12_ready,
             "independentG4ExactPracticeContractVerified": specialist_g4_ready,
             "independentG6OwnerScopedExactPracticeContractVerified": specialist_g6_ready,
             "independentG7OwnerScopedExactPracticeContractVerified": specialist_g7_ready,
+            "independentG8OwnerScopedExactPracticeContractVerified": specialist_g8_ready,
             "crossGradeExactFamilyReuse": cross_grade_family_adapters,
             "generationReadiness": readiness_state,
             "terminalPracticeStatus": terminal,
@@ -428,6 +461,21 @@ def audit() -> dict[str, Any]:
         internal_blockers.append(
             "Grade7 78 owner-approved first-party exact Practice routes "
             "are not fully bound to canonical Arabic skill-family contracts")
+    summary["grade8OwnerScopedExactPracticeContractCount"] = sum(
+        row["independentG8OwnerScopedExactPracticeContractVerified"]
+        for row in rows)
+    summary["grade8CrossGradeExactFamilyReuseCount"] = sum(
+        len(row["crossGradeExactFamilyReuse"]) for row in rows
+        if row["lessonCode"].startswith("PED:UAE-MOE-MATH:L8:GENERAL:"))
+    g8_rows = [row for row in rows if row["lessonCode"].startswith(
+        "PED:UAE-MOE-MATH:L8:GENERAL:")]
+    if g8_rows and (
+        len(g8_rows) != 76 or len(approved_g8) != 76
+        or summary["grade8OwnerScopedExactPracticeContractCount"] != 76
+    ):
+        internal_blockers.append(
+            "Grade8 76 owner-approved Arabic first-party exact Practice routes "
+            "not fully bound to canonical 76 lesson skills/families")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         row["independentG12SpecialistContractVerified"] for row in rows)
     g12_rows=[row for row in rows if row["lessonCode"].startswith(
