@@ -10588,6 +10588,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U06L03_PDF111_118_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U06 L04; source PDF 123–130.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS", "geometry.similarity.scale_factor", "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "geometry.coordinate_plane.plotting"],
+            "UAE_G8_AR_U06L04_PDF123_130_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

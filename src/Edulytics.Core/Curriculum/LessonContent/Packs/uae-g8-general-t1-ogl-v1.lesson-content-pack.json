@@ -1841,10 +1841,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:06:04",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 6 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 123–130; printed 487–494",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Selected Arabic Grade8 General Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "23ef7cb89da6d2e632f4a65c7f99b297f8daca2af0ee19a188e3ab121238fa69",
       "CanonicalBodySha256": "561c7b3cbb12ea9e0e9e15fc7298930b8ba2ec9f55b1e8b85a603307e68c0f87",
@@ -1852,7 +1852,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-aligned transformations; teacher to review coordinate diagrams; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1863,6 +1863,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Dilations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Dilations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "عمليات تغيير الأبعاد/التمدد",
+          "Explanation": "التمدد (تغيير الأبعاد) تحويل يغير حجم الشكل وفق معامل قياس ثابت ك مع الحفاظ على شكل الزوايا وتناسب الأطوال. عندما يكون مركز التمدد هو الأصل، تتحول النقطة (س،ص) إلى (ك س،ك ص). إذا ك=2، تنتقل (−3،4) إلى (−6،8) ويصبح كل طول ضعف الأصل، بينما تكبر المساحة إلى أربعة أمثالها. إذا ك=1/2، تتحول (4،−6) إلى (2،−3) وتصبح الأطوال نصف قيمها. عندما يكون ك أكبر من 1 تكبير، وبين 0 و1 تصغير؛ وإذا ك=1 تبقى الصورة كما هي. تمثل التطبيقات الأصلية تكبير تصميم مخطط أو تصغيره على شبكة مربعات، مع ضرورة تثبيت مركز التمدد.",
+          "KeyConceptsAndRules": "من المركز (0،0) ومعامل ك موجب: د(س،ص)=(ك س،ك ص). أطوال الصورة =ك × أطوال الأصل، ومحيط الصورة =ك × المحيط الأصلي، والمساحة =ك² × المساحة الأصلية. الزوايا المتناظرة متساوية، لذلك الشكلان متشابهان، ولا يكونان متطابقين إلا إذا ك=1 في نطاق معاملات القياس الموجبة. إذا مركز التمدد ج=(أ،ب)، فالصورة ج+ك(النقطة−ج)، ولا تضرب إحداثيات النقطة مباشرة في ك دون حساب المركز. عند ك>1 تكبير، وعند 0<ك<1 تصغير؛ الطلاب يميزون ذلك من المسافات إلى المركز.",
+          "WorkedExamples": "مثال1: أ(−3،4) بتمدد ك=2 حول الأصل تصبح (−6،8). مثال2: ب(4،−6) بتمدد ك=1/2 تصبح (2،−3). مثال3: مثلث أضلاعه 3،4،5 وتتمدد صورته ك=3 فالأضلاع 9،12،15، والمحيط يزيد من 12 إلى 36. مثال4: مساحة مربع أصلية 16 سم² مع ك=1/2 تصبح 16×(1/4)=4 سم²، لا 8. مثال5: إذا كان ضلع الصورة 18 والأصلي 6 فمعامل ك=3. مثال6: مركز تمدد ج(1،1)، ونقطة أ(3،2)، ك=2 ⇒ أ′=(1،1)+2(2،1)=(5،3).",
+          "StepByStepSolutions": "أحدد مركز التمدد ومعامل القياس ك. إذا كان المركز الأصل أضرب كل س وكل ص في ك، مع الاحتفاظ بإشارات الأعداد. إذا كان المركز ج غير الأصل أطرح إحداثياته أولاً من النقطة، ثم أضرب الفرق في ك وأعيد إحداثيات ج. أرسم النقاط الجديدة على الشعاع الخارج من المركز في اتجاه النقطة للأمام عند ك>0. أحسب طول ضلع قبل وبعد لأتحقق من نسبة ك، وأقارن المحيط والمساحة بالقواعد ك وك². أذكر ما إذا كانت الصورة تكبيراً أو تصغيراً، وأتحقق من ثبات الزوايا.",
+          "CommonMistakes": "من الخطأ جمع معامل القياس إلى الإحداثيات بدل ضربها؛ ك=2 لا يعني إزاحة بمقدار 2. لا يتضاعف كل من المساحة والطول بالنسبة نفسها؛ المساحة تتغير بمربع ك. إذا كان مركز التمدد غير الأصل فلا يصح ضرب الإحداثيات المطلقة مباشرة في ك. التمدد غير المحافظ على القياس ليس تحويل تطابق عندما ك≠1، لكنه يحافظ على الشكل والزوايا. وقد ينسى الطالب ضرب الإحداثي السالب فينتج موضع غير صحيح بالنسبة إلى المركز.",
+          "QuickSummary": "أحدد صورة الشكل بتمدد ك حول المركز، فأضرب المسافات والأطوال في ك والمساحات في ك² وأبقي الزوايا. Cool-down أصلي: (1) مدد (−2،5) حول الأصل بمعامل 3. (2) صغّر (6،−4) بمعامل 1/2. (3) شكل مساحته 30 سم²، ما مساحة صورته بمعامل 2؟ (4) ما قانون الصورة بمركز (1،−1) ومعامل 2؟ الرسم ونسبة القياس يراجعهما المعلم."
         }
       ]
     },
