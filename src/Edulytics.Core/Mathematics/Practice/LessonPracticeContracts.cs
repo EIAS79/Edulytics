@@ -10721,6 +10721,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U09L02_LOCAL_PDF61_68",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U09L03; selected Student Book PDF73-80.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES", "statistics.categorical.two_way", "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
+            ["statistics.two_way.marginal_count", "statistics.categorical.relative_frequency", "statistics.two_way.conditional_relative", "supporting.statistics.table_total"],
+            "UAE_G8_AR_U09L03_LOCAL_PDF73_80",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
