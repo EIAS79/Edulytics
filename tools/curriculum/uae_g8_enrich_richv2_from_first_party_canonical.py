@@ -58,7 +58,7 @@ def add_content(lesson, canonical):
         if len(source_rule) < 20 or len(example) < 12:
             raise ValueError("Original mathematical concept too short")
         lesson["KeyConcepts"].append({
-            "Title": f"قاعدة إضافية من الشرح العربي الأصلي ({index+1})",
+            "Title": f"قاعدة: {source_rule[:64]}",
             "Definition": source_rule,
             "Rule": rule_order[(index + 1) % len(rule_order)],
             "Example": example
@@ -67,12 +67,12 @@ def add_content(lesson, canonical):
         index = len(lesson["WorkedExamples"]) - old["WorkedExamples"]
         # Start after existing source examples to avoid repeating a worked example.
         canonical_example_index = min(old["WorkedExamples"]+index, len(examples)-1)
-        source_case = examples[canonical_example_index]
+        source_case = next((case for case in examples[canonical_example_index:] if len(case) >= 14), "")
         if len(source_case) < 14:
             raise ValueError("A proposed third worked example has no mathematical substance")
         steps = solution[:3]
         lesson["WorkedExamples"].append({
-            "Title": f"مثال محلول إضافي من المحتوى الأصلي ({canonical_example_index+1})",
+            "Title": f"تطبيق: {source_case[:64]}",
             "Question": "تتبع المثال العربي المحلول التالي وفسّر النتيجة: " + source_case,
             "Method": rule_order[canonical_example_index % len(rule_order)],
             "Steps": steps,
