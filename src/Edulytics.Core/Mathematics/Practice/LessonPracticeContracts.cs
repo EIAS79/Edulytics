@@ -10685,6 +10685,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U08L04_LOCAL_PDF38_45",
             "READY_VERIFIED", Version);
 
+        // Grade 8 UAE General Arabic U08L05, Student Book PDF 50–57.
+        // Reuse exact geometry numerical family; visuals and written
+        // physical-modeling answers are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES", "supporting.geometry.area_volume", "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
+            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient", "geometry.angles.relationships"],
+            "UAE_G8_GENERAL_AR_U08L05_LOCAL_PDF50_57",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
