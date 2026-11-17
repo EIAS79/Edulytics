@@ -2228,10 +2228,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:08:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 8 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/03-8.pdf; PDF 15–22; printed 595–602",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected local UAE Arabic Grade8 Student Book Unit8",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "c36beecc1f443b5e074cff4c722d59dc0378d98a487d0e07b7257f6a488a30b2",
       "CanonicalBodySha256": "532736413abc799ee282d5d89135195e6a1a2ba045b456c277cb75d050bbbc8b",
@@ -2239,7 +2239,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic solid geometry source-aligned; exact publisher task parity UNKNOWN; runtime StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2250,6 +2250,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Volume of Cones, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Volume of Cones: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "حجم المخروط",
+          "Explanation": "المخروط الدائري القائم ذو قاعدة دائرية ورأس واحد، وارتفاعه ع يقاس عمودياً من الرأس إلى مركز القاعدة. يساوي حجمه ثلث حجم أسطوانة لها القاعدة نفسها والارتفاع نفسه: ح=(1/3)π نق² ع. إذا كان نصف قطر القاعدة 3 سم والارتفاع 6 سم، فح=18π سم³. يمكن مقارنة مخاريط متساوية القاعدة والارتفاع مع أسطوانة لاستقصاء نسبة الثلث، لكن هذا الاستقصاء لا يجيز استخدام طول المولد المائل بدلاً من الارتفاع العمودي. عندما يحتوي مجسم على مخروط فوق أسطوانة، نحسب حجم كل منهما ثم نجمعهما إذا لم يتداخلا. ولحساب ارتفاع من حجم معطى نعزل ع=3ح/(π نق²) بشرط نق>0.",
+          "KeyConceptsAndRules": "حجم مخروط دائري قائم: ح=π نق² ع/3، حيث نق نصف قطر القاعدة وع الارتفاع العمودي. الأسطوانة المطابقة في القاعدة والارتفاع حجمها ثلاثة أمثال المخروط. إذا أعطي القطر ق، فنق=ق/2. إذا كان ع مجهولًا ومعلوم الحجم ونق، فع=3ح/(π نق²)، وإذا نق مجهولًا فـنق=√(3ح/(π ع)) بشرط موجبية الأبعاد. في المجسم المركب المخروط فوق الأسطوانة نجمع الحجمين فقط للجزأين غير المتداخلين. كل حجم بوحدة مكعبة، ولا تختلط مع السطح الجانبي للمخروط الذي يحتاج المولد ل.",
+          "WorkedExamples": "مثال1: نق=3، ع=6 ⇒ ح=(1/3)π×9×6=18π سم³. مثال2: نق=4، ع=9 ⇒ ح=48π سم³. مثال3: قطر=10 سم، ع=12 سم ⇒ نق=5، ح=100π سم³. مثال4: أسطوانة نق=2، ع=9 حجمها 36π، والمخروط المطابق حجم 12π. مثال5: مخروط حجمه 75π سم³ ونق=5 سم، فع=9 سم. مثال6: مجسم مكوّن من مخروط نق=3، ع=4 فوق أسطوانة نق=3، ع=5 ⇒ حجمه 12π+45π=57π سم³.",
+          "StepByStepSolutions": "أميز الرأس والقاعدة وأرسم خط الارتفاع العمودي من الرأس إلى القاعدة. أسجل نصف القطر وأحول القطر إلى نصف قطر إن لزم. أحسب π نق² ع ثم أقسم على ثلاثة، أو أحسب مساحة القاعدة وأضرب في ع/3. أحتفظ بالصيغة الدقيقة π ثم أقرب في النهاية فقط. إذا كان المطلوب المجهول هو الارتفاع أرتب القانون وأتحقق بالتعويض. إذا ظهر مخروطان أو مخروط مع أسطوانة، أجزئ المجسم وأجمع الأحجام دون احتساب الأجزاء المشتركة مرتين.",
+          "CommonMistakes": "أخذ الحجم مساوياً لحجم الأسطوانة بدلاً من ثلثه خطأ جوهري. استخدام طول المولد المائل ل في موضع ارتفاع المخروط ع يعطي حجمًا أكبر من الحقيقي. لا نضرب نصف القطر في 2 عند إدخال قطر معطى؛ بل نقسم القطر على 2. لا نكتب وحدة سم² للحجم. في المخروط المائل أيضًا قد يختلف طول المولد عن الارتفاع؛ ويجب حساب الارتفاع العمودي من المعطيات الملائمة.",
+          "QuickSummary": "المخروط ذو قاعدة دائرية حجمُه ثلث حجم الأسطوانة المتساوية معه في القاعدة والارتفاع: ح=π نق² ع/3. Cool-down أصلي: (1) مخروط نق=2 سم وع=9 سم، حجمُه؟ (2) قطر قاعدة 8 سم وارتفاع 6 سم، حجمُه؟ (3) ما حجم مخروط مقابل أسطوانة حجمها 45π لهما الأبعاد نفسها؟ (4) لماذا لا نستخدم المولد المائل في قانون الحجم؟ يراجع المعلم الرسم المقارن."
         }
       ]
     },
