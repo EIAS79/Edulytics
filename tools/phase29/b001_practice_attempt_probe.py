@@ -189,6 +189,22 @@ def grade7_syntactically_valid_wrong_answer(correct, family=None):
     return grade6_syntactically_valid_wrong_answer(correct, family)
 
 
+def grade8_syntactically_valid_wrong_answer(correct, family=None):
+    """A scoped G8 wrong-answer fixture respecting actual exact-engine schemas.
+
+    Distinct *well-formed* alternatives are submitted and must grade zero.
+    The question comes from the real engine; we never alter an accepted G1,
+    G6 or G7 response profile or pretend to verify a textbook source item.
+    """
+    if family == "algebra.linear.systems.solution_count.classify":
+        choices = ("one", "none", "infinitely-many")
+        value = correct.strip()
+        if value not in choices:
+            raise ValueError("Unsupported G8 linear-system count answer")
+        return choices[(choices.index(value) + 1) % len(choices)]
+    return grade7_syntactically_valid_wrong_answer(correct, family)
+
+
 def syntactically_valid_wrong_answer(correct, family=None):
     """Create a real incorrect Grade 1 submission, preserving its answer
     field/schema; unlike a malformed sentinel, this exercises math grading.
@@ -409,7 +425,7 @@ def probe_lesson(opener,base,lesson_id,adoption_id,csrf,idempotency_key,sql,answ
             if wrong_answer_profile == "uae-g7":
                 answer=grade7_syntactically_valid_wrong_answer(answer,family)
             elif wrong_answer_profile == "uae-g8":
-                answer=grade7_syntactically_valid_wrong_answer(answer,family)
+                answer=grade8_syntactically_valid_wrong_answer(answer,family)
             elif wrong_answer_profile in ("uae-g2", "uae-g3", "uae-g4", "uae-g5", "uae-g6"):
                 answer=grade6_syntactically_valid_wrong_answer(answer,family)
             else:
@@ -526,6 +542,17 @@ if __name__=="__main__":
             self.assertRaises(ValueError,
                 grade7_syntactically_valid_wrong_answer, "UNKNOWN_LABEL",
                 "supporting.geometry.angle_classify")
+        def test_g8_system_solution_count_preserves_exact_math_categories(self):
+            expected = ("one", "none", "infinitely-many")
+            for answer in expected:
+                wrong = grade8_syntactically_valid_wrong_answer(
+                    answer, "algebra.linear.systems.solution_count.classify")
+                self.assertIn(wrong, expected)
+                self.assertNotEqual(wrong, answer)
+            self.assertRaises(ValueError,
+                grade8_syntactically_valid_wrong_answer,
+                "unapproved", "algebra.linear.systems.solution_count.classify")
+
         def test_g6_arabic_categories_are_legitimate_wrong_alternatives(self):
             domains=[
                 ("الأول","uae.g6.u05.l10.coordinate_region"),
