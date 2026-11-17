@@ -3131,10 +3131,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:12:01",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 12 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 240–250; printed 852–862",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "UAE Arabic local Student Book 2019–2020 selected",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "5e4028d77770832c899fcf0652b895c809c42f2d9157c8f8a6a94f93e5efd46f",
       "CanonicalBodySha256": "b63be18bfd5d06aac5c0326a50e78e56d79f56447dd73ffaaa396856a56b4f1f",
@@ -3142,7 +3142,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic set theory authoring; actual diagrams & open set proofs teacher-reviewed, automated family parity NOT VERIFIED, runtime NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3153,6 +3153,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Introduction to Set Theory, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Introduction to Set Theory: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مقدمة في نظرية المجموعات",
+          "Explanation": "المجموعة تجمّع محدد العناصر، أي يمكن الحكم على انتماء عنصر إليها بصورة واضحة. نكتب عناصرها بين قوسين معقوفين مثل أ={2،4،6،8}، ونقول 4∈أ بينما 5∉أ. لا تتغير المجموعة بتغيير ترتيب عناصرها أو تكرار العنصر، لأن كل عنصر يحسب مرة واحدة. يمكن كتابة المجموعة بطريقة السرد أو بصفة مميزة، مثلاً أ={2،4،6،8} أو أ={س | س عدد زوجي موجب أصغر من 10}. المجموعة الخالية ∅ لا عناصر فيها؛ والمجموعة المنتهية محدودة العدد، في حين أن مجموعة الأعداد الصحيحة غير منتهية. تقدم الأهداف الأصلية كذلك رموز المجموعات العددية والتفريق بين القائمة ذات العناصر والمجموعة.",
+          "KeyConceptsAndRules": "نكتب مجموعة س={أ،ب،ج} وتعبير x∈س إذا كان x عنصرًا فيها، و x∉س إذا لم يكن. المجموعة ∅ لا تحوي عناصر، وعند سرد المجموعة لا نكرر عنصرًا متساويًا مرتين. مجموعة الأعداد الطبيعية الموجبة الأصغر من 6 هي {1،2،3،4،5}، وهي منتهية. مجموعة المضاعفات الطبيعية للعدد 3 هي {3،6،9،12،...}، وهي غير منتهية. عندما نصف مجموعة بعلاقة مثل {س∈الأعداد الصحيحة | س²=4} نحصل {-2،2}. ولا يجوز اعتبار أي وصف غير محدد مثل «أجمل الألوان» مجموعة رياضية واضحة دون تعريف معيار الحكم.",
+          "WorkedExamples": "مثال1: مجموعة الأيام التي يبدأ اسمها بحرف السين تحتاج فحصًا لغويًا دقيقًا؛ والأوضح أ={2،4،6} فتكون 4∈أ و3∉أ. مثال2: ط={س | س عدد صحيح بين 1 و5 حصراً}={2،3،4}. مثال3: المجموعة التي تحقق س²=-1 داخل الأعداد الحقيقية خالية. مثال4: مجموعة الأعداد الطبيعية الموجبة مجموعة غير منتهية بينما مجموعة مضاعفات 4 الأقل من 20 {4،8،12،16} منتهية. مثال5: المجموعة {2،2،4،4،6} هي المجموعة نفسها {2،4،6}، وعدد عناصرها3.",
+          "StepByStepSolutions": "أحدد الكون الذي ينتمي إليه العناصر أولاً، ثم أقرأ وصف المجموعة وأقرر هل يعطي معيارًا واضحًا للعضوية. إذا كان المطلوب طريقة السرد أسجل جميع العناصر المختلفة بين قوسين معقوفين وبترتيب مناسب. إذا طُلبت الطريقة الوصفية أذكر صفة دقيقة ومتغيرًا ومجاله مثل {س∈ص | س موجب وزوجي وأقل من 8}. أتحقق من العضوية باستعمال ∈ و∉، وأصنف المجموعة منتهية أو غير منتهية أو خالية وفق عدد عناصرها. إذا استخدمت النقاط الثلاث لتدل على استمرار غير منتهٍ أو تتابع واضح، أوضح القاعدة بدل افتراضها.",
+          "CommonMistakes": "الخطأ عد العنصر المتكرر مرتين داخل المجموعة رغم أن العناصر مميزة؛ وتبديل معنى ∈ مع ∉. لا تخلط المجموعة الخالية { } مع المجموعة {∅} التي تحتوي عنصرًا واحدًا هو المجموعة الخالية. قد تكون المجموعة غير منتهية رغم إمكانية وصفها بعبارة قصيرة مثل {س | س عدد صحيح موجب}. ولا نستخدم فئة غير محددة المعيار مثل «أجمل المدن» لتمثيل مجموعة عضوية رياضية حاسمة بلا قواعد إضافية.",
+          "QuickSummary": "المجموعة عناصر يحددها معيار عضوية واضح. أستخدم ∈،∉،∅ والسرد والوصف، وأميز المنتهية وغير المنتهية والخالية. Cool-down أصلي: اكتب العناصر الزوجية الموجبة الأقل من 10 بطريقة السرد والوصف، قرر هل 6 ينتمي إليها، ثم قارن {∅} و∅. يراجع المعلم تفسير العضوية والصياغة الوصفية."
         }
       ]
     },

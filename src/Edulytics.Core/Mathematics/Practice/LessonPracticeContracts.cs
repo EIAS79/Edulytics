@@ -10816,6 +10816,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U11L06_LOCAL_PDF219_228",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Unit12 Lesson1; source selected Student Book PDF240-250.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY", "algebra.inequality.solution_sets", "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
+            ["algebra.inequality.solution_sets"],
+            "UAE_G8_GENERAL_AR_U12L01_LOCAL_PDF240_250_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
