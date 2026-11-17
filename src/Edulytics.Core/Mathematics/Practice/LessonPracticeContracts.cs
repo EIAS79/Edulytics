@@ -10765,6 +10765,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U10L01_PDF121_128_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Unit10 Lesson2, local Arabic Student Book PDF130-137.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE", "geometry.measure.linear", "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
+            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values", "geometry.coordinate_plane.axis_distance"],
+            "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

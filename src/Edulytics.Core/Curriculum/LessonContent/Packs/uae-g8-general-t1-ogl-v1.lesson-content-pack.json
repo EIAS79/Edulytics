@@ -2744,10 +2744,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:10:02",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 10 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 130–137; printed 742–749",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "UAE Arabic Student Book Term3 local 2019–2020",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "9890365f03c45e2948f700d0a508920efe606c5c18c11a5a1eaf79012e43e29b",
       "CanonicalBodySha256": "b82fcbcab516ae394b1c751913cd39ee9c2fdc891815da0af9212608f7c5612b",
@@ -2755,7 +2755,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original first-party Arabic content, source goals and skill mapped; exact atomic item parity UNKNOWN, CI NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2766,6 +2766,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Linear Measure, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Linear Measure: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "القياس الخطي",
+          "Explanation": "القياس الخطي يحدد المسافة بين نقطتي نهاية قطعة مستقيمة باستعمال وحدة متفق عليها مثل مم أو سم أو م. إذا كانت A وB على خط الأعداد عند -3 و5 فالطول AB=|5−(-3)|=8 وحدات بغض النظر عن ترتيب النقطتين. إذا كانت B واقعة بين A وC، فمسلّمة جمع أطوال القطع تقول AB+BC=AC. في رسم أصلي A—B—C قد يكون AB=4 سم وBC=7 سم، فيكون AC=11 سم. عند القياس بالمسطرة أضع نقطة البداية عند صفر التدريج وأقرأ نهاية القطعة، ولا أخلط بين موضع نقطتين وبين مقدار المسافة الموجب.",
+          "KeyConceptsAndRules": "الطول AB مقدار غير سالب، وAB=BA. إذا كانت B بين A وC فإن AB+BC=AC؛ وإذا لم تكن B بينهما فلا تطبق المسلّمة بهذه الصيغة. على خط الأعداد طول القطعة بين أ وب يساوي |ب−أ|. أستخدم عامل التحويل 10 مم=1 سم، و100 سم=1 م، وأحافظ على دقة القياس ضمن تدريج الأداة. عند سؤال مثل AB=2س+3 وBC=س+5 وAC=20، نكتب (2س+3)+(س+5)=20، فيكون 3س=12 وس=4، ثم AB=11 وBC=9.",
+          "WorkedExamples": "مثال1: على خط الأعداد -6 و2، طول القطعة8 وحدات. مثال2: إذا كان AB=3.7 سم وBC=2.3 سم وكانت B بين A وC، فإن AC=6 سم. مثال3: 45 مم=4.5 سم. مثال4: AB=2س+3،BC=س+5،AC=20 ⇒ س=4، والقطعتان11 و9 سم. مثال5: إذا AC=15 سم وAB=6 سم وكانت B بين A وC، فإن BC=9 سم. مثال6: إذا ظهر طول مسطرة من تدريج 1.2 إلى5.8 سم، فطول القطعة 4.6 سم وليس5.8.",
+          "StepByStepSolutions": "أحدد نقطتي نهاية القطعة وأقرأ التدريج أو الإحداثيات الصحيحين. إن كانت على مسطرة أقيس الفرق بين قيمتي الطرفين، ولا أفترض البداية عند صفر إذا لم تكن كذلك. أقرر إن كانت هناك نقطة بين الطرفين فأطبق مسلّمة جمع القطع. أحدد الوحدات وأحولها قبل إجراء الجمع أو المقارنة. إذا كان أحد الأطوال مجهولًا أمثل العلاقة بمعادلة ثم أتحقق أن جميع أطوال القطع غير سالبة. أقدم إجابة مع الوحدة وقيمة معقولة ضمن دقة المسطرة.",
+          "CommonMistakes": "من الأخطاء قياس القطعة بنهاية المسطرة فقط إذا بدأت عند تدريج غير صفر؛ الصحيح طرح البداية من النهاية. لا يعتبر طول القطعة سالبًا حتى عند وقوع نقطة إلى يسار الأخرى؛ نأخذ القيمة المطلقة. لا يجوز جمع AB وBC للحصول على AC إذا كانت B ليست بين A وC. قد يؤدي جمع 2 سم و3 مم مباشرة دون توحيد الوحدات إلى خطأ. كذلك لا تقيس شعاعًا أو مستقيمًا كاملاً لأنهما غير محدودين.",
+          "QuickSummary": "أقيس القطع من فرق الإحداثيات أو المسطرة، وأطبق AB+BC=AC عند وقوع B بين A وC. Cool-down أصلي: (1) ما طول قطعة من -5 إلى3؟ (2) إذا AB=5.5 سم وBC=2.5 سم وB بين A,C، أوجد AC. (3) لماذا يكون 1.2 إلى5.8 سم طوله 4.6؟ (4) صحح الخطأ في جمع ملم وسنتيمتر. يراجع المعلم الرسم ووضع المسطرة."
         }
       ]
     },
