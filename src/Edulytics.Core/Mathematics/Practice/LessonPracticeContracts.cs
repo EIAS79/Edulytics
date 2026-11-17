@@ -10644,6 +10644,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L06_PDF195_202_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L07; selected Arabic Student Book PDF 203–210.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES", "geometry.area.scaled_figures", "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
+            ["geometry.area.scaled_figures", "usccss.g7.u01.l06.scaled_area_square_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l10.change_scale_length_and_area"],
+            "UAE_G8_AR_U07L07_PDF203_210_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
