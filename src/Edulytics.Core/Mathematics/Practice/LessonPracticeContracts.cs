@@ -10694,6 +10694,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U08L05_LOCAL_PDF50_57",
             "READY_VERIFIED", Version);
 
+        // Grade 8 UAE General Arabic U08L06, Student Book PDF 60–67.
+        // Reuse exact geometry numerical family; visuals and written
+        // physical-modeling answers are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS", "supporting.geometry.area_volume", "SIMILAR_SOLIDS_SCALE_LENGTH_AREA_SQUARE_VOLUME_CUBE",
+            ["uae.g7.u09.l06.scale_area_factor", "uae.g7.u09.l06.scale_volume_factor", "geometry.similarity.scale_factor"],
+            "UAE_G8_GENERAL_AR_U08L06_LOCAL_PDF60_67",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

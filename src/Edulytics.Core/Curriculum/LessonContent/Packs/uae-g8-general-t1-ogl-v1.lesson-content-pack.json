@@ -2400,10 +2400,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:08:06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 8 / Lesson 6",
+      "SourceLocator": "Grade_08/01_Student_Books/03-8.pdf PDF 60–67; printed 639–646",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Student Book Grade08 Unit08",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "3c4c05e9fa11e97d5db1c4d72a557acef23d4772f98f928e2bfdb7434775ec8a",
       "CanonicalBodySha256": "d1b61cb5ccbdcbb13552b45cceacc4bbc9922e07d54223eff5f635fef30009ec",
@@ -2411,7 +2411,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "First-party Arabic skill-equivalent lesson; source item exact parity UNKNOWN; runtime / CI not performed",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2422,6 +2422,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Changes in Dimensions, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Changes in Dimensions: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تغيرات الأبعاد",
+          "Explanation": "إذا تغيرت جميع الأبعاد الخطية لمجسم مشابه بمعامل تكبير أو تصغير موجب ك، فإن أطوال الأضلاع تُضرب في ك، ومساحة سطحه تُضرب في ك²، وحجمه يُضرب في ك³. لذلك مضاعفة طول ضلع مكعب من 4 إلى 8 سم تجعل المساحة 4 أمثال والحجم 8 أمثال. أما تغيير بعد واحد فقط فلا يبرر استعمال ك² وك³، لأن المجسم الناتج قد لا يكون مشابهًا للأول. في نشاط أصلي يقارن الطالب علبة مكعبة وأخرى مضاعفة الأبعاد مع مثال نموذج مبنى وقطعة شوكولاتة، ويستنتج أثر زيادة القياسات على كمية المادة المطلوبة والمساحة والحجم.",
+          "KeyConceptsAndRules": "إذا كان كل بعد بعد التكبير = ك × البعد الأصلي، فمعامل الأطوال ك، ومعامل المساحات ك²، ومعامل الحجوم ك³. مثال مكعب ضلع 4 سم: المساحة 6×4²=96 سم² والحجم 4³=64 سم³. عند مضاعفة الضلع إلى 8 سم تصبح المساحة 384 سم² والحجم 512 سم³، أي 4 و8 أضعاف على التوالي. إذا كان ك=1/2 فالمساحة الجديدة 1/4 والحجم 1/8. إذا زادت المساحة 9 أضعاف في مجسمين متشابهين، فإن ك=3 والحجم يزيد 27 ضعفًا. يشترط التكبير المنتظم والمجسمات المتشابهة؛ ولا تؤخذ الأبعاد السالبة.",
+          "WorkedExamples": "مثال1: مكعب طول حرفه 4 سم مساحته 96 سم² وحجمه 64 سم³؛ مكعب حرف 8 سم مساحته 384 سم² وحجمه 512 سم³. مثال2: متوازي مستطيلات أبعاده 2،3،4 سم حجمه 24 سم³ ومساحة سطحه 2(6+12+8)=52 سم²؛ بعد مضاعفة الأبعاد كلها إلى 4،6،8 سم يصبح الحجم 192 سم³ والمساحة 208 سم². مثال3: مجسم مشابه بمعامل تصغير 1/2 تصبح مساحة سطحه ربع الأصل وحجمه ثمن الأصل. مثال4: إذا كان حجم مجسم 30 سم³ وكبرنا أبعاده بمعامل 3، فالحجم الجديد 810 سم³ ومساحة السطح تتضاعف 9 مرات. مثال5: نموذج هندسي بسطح 48 سم² يصغر كل بعد فيه إلى 1/3، فالمساحة الجديدة 48/9=16/3 سم².",
+          "StepByStepSolutions": "أقرأ هل زادت جميع الأبعاد بنفس النسبة أم تغير بعد واحد فقط. إذا كانت المجسمات متشابهة أجد معامل القياس الخطي ك=الطول الجديد/القديم، وأتأكد أن ك موجب. لحساب مساحة السطح أضرب المساحة القديمة في ك²، ولحساب الحجم أضرب الحجم القديم في ك³. إن أعطيت نسبة المساحة أستخرج ك بالجذر التربيعي الموجب، وإن أعطيت نسبة الحجم أستخرج ك بالجذر التكعيبي الموجب. أتحقق بالحساب المباشر لمكعب أو منشور بسيط وأن المساحة بوحدات مربعة والحجم بوحدات مكعبة. إذا تغير بعد واحد، أعود إلى قانون المساحة والحجم الخاص بالمجسم بدل تطبيق ك² أو ك³ دون تحقق.",
+          "CommonMistakes": "الخطأ الشائع مضاعفة مساحة السطح والحجم مرتين فقط عندما يتضاعف الطول؛ الصحيح المساحة أربع مرات والحجم ثماني مرات. لا تضرب المساحة في ك³ ولا الحجم في ك². لا يصح افتراض التشابه إذا تغير الارتفاع وحده وبقي نصف القطر كما هو، فحينئذ تعتمد العلاقات على الصيغة الفعلية. لا تضع قيمًا سالبة للقياسات؛ وعند الحصول على نسبة المساحة 9 نأخذ معامل قياس موجب 3 لا -3. لا تخلط وحدات السم² والسم³.",
+          "QuickSummary": "في مجسمات متشابهة ذات معامل أطوال ك تكون نسبة المساحة ك² ونسبة الحجم ك³. Cool-down أصلي: (1) إذا ك=3 فما نسبة المساحة والحجم؟ (2) مكعب حرف 2 سم وآخر حرف 6 سم: قارن المساحتين والحجمين. (3) إذا تضاعفت مساحة السطح 16 مرة فما معامل الطول ونسبة الحجم؟ (4) وضح لماذا لا يطبق قانون ك³ على أسطوانة زاد ارتفاعها وحده. يراجع المعلم الاستدلال الهندسي."
         }
       ]
     },
