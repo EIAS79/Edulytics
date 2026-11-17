@@ -170,9 +170,99 @@ jobs:
           print(json.dumps(result,indent=2))
           if not ok: raise SystemExit(1)
           PY
+      - name: Rehearse guarded production-style 77 English to 76 Arabic release on disposable DB
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
+          BEGIN;
+          DO $
+          BEGIN
+            IF (SELECT count(*) FROM "CurriculumPedagogicalLessons"
+                WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%')<>76 THEN
+              RAISE EXCEPTION 'Isolated candidate should start with 76';
+            END IF;
+          END $;
+          UPDATE "CurriculumLessonContents" c
+            SET "ContentVersion"='supporting-practice-remediation-v2'
+            WHERE c."LessonNodeId" IN (
+              SELECT l."Id" FROM "CurriculumPedagogicalLessons" l
+              WHERE l."Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%');
+          UPDATE "CurriculumPedagogicalLessons"
+            SET "Title"='Legacy English Grade8 lesson'
+            WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%';
+          INSERT INTO "CurriculumPedagogicalLessons"(
+            "Id","FrameworkVersionId","OfficialLessonNodeId","Code",
+            "UnitKey","UnitTitle","Title","LogicalLevelFrom","LogicalLevelTo",
+            "NativeLevel","Pathway","SortOrder","CreatedAtUtc","UpdatedAtUtc","RowVersion")
+          SELECT gen_random_uuid(),l."FrameworkVersionId",NULL,
+            'PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS',
+            l."UnitKey",l."UnitTitle",'Infinite Sets',
+            l."LogicalLevelFrom",l."LogicalLevelTo",l."NativeLevel",
+            l."Pathway",77,NOW(),NOW(),'\x'::bytea
+          FROM "CurriculumPedagogicalLessons" l
+          WHERE l."Code"='PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS';
+          INSERT INTO "CurriculumLessonContents"(
+            "Id","FrameworkVersionId","LessonNodeId","Status",
+            "ContentVersion","VerifiedAtUtc","PublishedAtUtc",
+            "CreatedAtUtc","UpdatedAtUtc","RowVersion")
+          SELECT gen_random_uuid(),l."FrameworkVersionId",l."Id",3,
+            'supporting-practice-remediation-v2',NOW(),NOW(),NOW(),NOW(),'\x'::bytea
+          FROM "CurriculumPedagogicalLessons" l
+          WHERE l."Code"='PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS';
+          DO $
+          BEGIN
+            IF (SELECT count(*) FROM "CurriculumPedagogicalLessons"
+                WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%')<>77 THEN
+              RAISE EXCEPTION 'Synthetic pre-cutover 77 lesson fixture missing';
+            END IF;
+          END $;
+          COMMIT;
+          SQL
+          # Only the explicitly unlocked G8 seeder runs; no global maintenance
+          # and no production database URL is present in this ephemeral job.
+          export EDULYTICS_G8_SCOPED_RELEASE=CONFIRM_REPLACE_UAE_GRADE8_GENERAL_EN77_WITH_AR76
+          export Edulytics__Deployment__CleanBootstrap=false
+          export Edulytics__Deployment__RunStartupMigrations=false
+          export Edulytics__Deployment__RunStartupDataMaintenance=false
+          export Edulytics__LessonContent__ReadFromJson=true
+          for attempt in 1 2; do
+            dotnet run --project src/Edulytics.Web/Edulytics.Web.csproj \
+              --configuration Release --no-build --no-launch-profile \
+              -- --urls http://127.0.0.1:18418 >"/tmp/g8-release-$attempt.log" 2>&1 &
+            pid=$!
+            success=false
+            for i in $(seq 1 100); do
+              if grep -q 'UAE_G8_SCOPED_REPLACE_77_WITH_76_ARABIC_PASS' "/tmp/g8-release-$attempt.log"; then
+                success=true
+                break
+              fi
+              if ! kill -0 "$pid" 2>/dev/null; then break; fi
+              sleep 2
+            done
+            kill "$pid" 2>/dev/null || true
+            wait "$pid" 2>/dev/null || true
+            if [ "$success" != true ]; then
+              tail -n 100 "/tmp/g8-release-$attempt.log" | grep -Eiv 'password|credential|secret|connection' || true
+              exit 1
+            fi
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")" = 76
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:ADVANCED:%'")" = 77
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT count(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%' AND c.\"ContentVersion\"='supporting-practice-remediation-v2'")" = 0
+          done
+          python3 - <<'PY'
+          import json,os,pathlib
+          out=pathlib.Path('artifacts/uae-g8-stage-d/grade8-scoped-77-to-76-rehearsal.json')
+          out.write_text(json.dumps({'status':'PASS','candidateSha':os.environ['GITHUB_SHA'],
+            'database':'disposable PostgreSQL18','originalEnglishFixture':77,
+            'ownerApprovedArabicLessons':76,'independentCutoverRuns':2,
+            'grade8AdvancedRetained':77,'productionDatabaseWritten':False},indent=2)+'\n')
+          PY
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: uae-g8-isolated-postgresql
-          path: artifacts/uae-g8-stage-d/grade8-isolated-db.json
+          path: |
+            artifacts/uae-g8-stage-d/grade8-isolated-db.json
+            artifacts/uae-g8-stage-d/grade8-scoped-77-to-76-rehearsal.json
           if-no-files-found: warn
