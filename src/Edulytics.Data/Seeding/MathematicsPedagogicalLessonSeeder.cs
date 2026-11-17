@@ -216,24 +216,30 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .CountAsync(x => x.Code.StartsWith(g5Prefix), ct);
         var g7Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g7Prefix), ct);
+        var g8GeneralCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
         var g12Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g12Prefix), ct);
         var translationCount = await _db.CurriculumLessonContentTranslations
             .CountAsync(ct);
 
         // Before G7 cutover: 5,090 unrelated includes 62 old English G7.
-        // After the approved G7 62-to-78 cutover, 5,106 unrelated includes
-        // 78 new Arabic G7: permit only these two exact audited states.
-        var unrelatedBaseline = g7Count == 78 ? 5106 : 5090;
-        if (g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
+        // After G7 62-to-78, 5,106 unrelated; after G8 77-to-76,
+        // 5,105 unrelated. Preserve only these exact observed cohorts.
+        var unrelatedBaseline = g7Count == 78
+            ? g8GeneralCount == 76 ? 5105 : g8GeneralCount == 77 ? 5106 : -1
+            : g7Count == 0 && g8GeneralCount == 77 ? 5090 : -1;
+        if (unrelatedBaseline < 0 ||
+            g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
             allCount != unrelatedBaseline + g6Count ||
             contentCount != allCount ||
             g4Count != 132 || g5Count != 127 ||
             g12Count != 0 || translationCount != 0)
             throw new InvalidOperationException(
                 "Scoped Grade6 release refused: production baseline drift. " +
-                "Expected audited 5090 pre-G7 or 5106 post-G7 unrelated " +
-                "lessons, 132 G4, 127 G5, 0/78 complete G7, " +
+                "Expected audited 5090 pre-G7, 5106 post-G7 or 5105 " +
+                "post-G8 unrelated lessons, 132 G4, 127 G5, 0/78 G7, " +
                 "zero G12, zero stored translations and 0/128 complete G6.");
 
         await using var transaction =
