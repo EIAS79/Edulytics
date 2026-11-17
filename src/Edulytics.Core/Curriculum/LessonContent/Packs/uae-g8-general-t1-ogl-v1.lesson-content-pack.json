@@ -1239,10 +1239,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:04:06",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 4 / Lesson 6",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 352–359; printed 319–326",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Student Book 2025–2026 (local)",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "c564e78b3be3344a2ddb305cea32f446c1190c21734c21823e9216836786aa5b",
       "CanonicalBodySha256": "6ef733fc2b17721a489e54467494df1794e6d21654a31232ed73226d7d32c585",
@@ -1250,7 +1250,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic source-aligned correction; exact publisher task parity not verified; runtime and CI not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1261,6 +1261,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Constructing Functions, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Constructing Functions: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "تكوين الدوال",
+          "Explanation": "تكوين الدالة يعني بناء قاعدة تربط مدخلات الموقف بمخرجاته باستخدام بيانات أو وصف أو رسم. في نموذج يبدأ برسم ثابت 20 درهماً ويضاف 12 درهماً عن كل درس، نكتب ك(ن)=20+12ن. إذا أعطي جدول بمدخلات 2 و4 و6 ومخرجات 53 و59 و65 فإن فرق النتائج 6 لكل خطوتين في المدخل، فالميل 3؛ وبالتعويض في ك(2)=53 نجد ب=47، فيكون ك(ن)=3ن+47. إذا كانت كلفة 5 ساعات 110 دراهم و7 ساعات 150 درهماً، فالمعدل (150−110)/(7−5)=20 درهماً لكل ساعة؛ والمبلغ الأساسي 10. لا يكفي أن تمر الصيغة بصفين إذا أعطيت بيانات كثيرة؛ يجب فحص جميع الصفوف وتفسير أن المتغير له مجال واقعي.",
+          "KeyConceptsAndRules": "لتكوين علاقة خطية من بيانات نقطتين مختلفتي س: م=(ص₂−ص₁)/(س₂−س₁)، ب=ص₁−م س₁، ثم د(س)=م س+ب. إذا كانت كل الفروق تؤكد معدلًا واحدًا فهي دالة خطية، وإلا فقد تحتاج نموذجًا غير خطي ولا تجبرها على ص=م س+ب. إذا بدأ النموذج من الصفر وكان المعدل ثابتًا فاكتب د(س)=م س. عند وجود مبلغ ثابت تضيف ب، ولا تضربه في س. ينبغي أن يكون مجال عدد الجلسات أو القطع أعدادًا صحيحة غير سالبة، بينما يكون مجال الزمن المقاس المستمر فترة موجبة في غالب التطبيقات.",
+          "WorkedExamples": "مثال1: قيمة خدمة أساسية 20 درهماً وزيادة 12 درهماً لكل جلسة: د(س)=20+12س؛ د(4)=68. مثال2: جدول (2،53)،(4،59)،(6،65): معدل 3، والمقطع 47، إذن د(س)=3س+47. مثال3: كلفة 5 ساعات 110 وكلفة 7 ساعات 150: م=20، ب=10، ك(س)=20س+10. مثال4: مخزون 60 وحدة يستهلك 4 كل يوم: م(ي)=60−4ي، والمجال أيام من 0 إلى 15 إذا لا يسمح مخزون سالب. مثال5: جدول المدخلات 0،1،2 والمخرجات 6،10،14 ينتج د(س)=4س+6.",
+          "StepByStepSolutions": "أكتب ما يمثله س وما تمثله ص ووحدتيهما. أحدد إذا كان ثمة رسم ثابت أو قيمة بدء، وأجمع من الوصف أو الجدول نقطتين على الأقل. أستخرج الميل م بفروق ص على فروق س، ثم أوجد ب من أي زوج. أصوغ د(س)=م س+ب، وأختبرها على نقطة ثالثة إن كانت موجودة. أحدد المجال الملائم للموقف وأجري توقعًا لمخرجة قيمة مدخلة جديدة، مع وحدة وشرح سبب قبول المدخل. إذا اختلف معدل التغير من فترة لأخرى فلا أصرّ على نموذج خطي وأصف الحاجة لدالة غير خطية.",
+          "CommonMistakes": "اعتبار المبلغ الثابت معدلاً متغيراً أو معاملًا مضروبًا في عدد الجلسات يفسد النموذج؛ ك(ن)=20+12ن لا تساوي (20+12)ن. وقد يستخرج طالب الميل من ص/س في جدول لا يمر بالأصل؛ استخدم الفروق. إذا كان جدول متناقضاً مع الخطية فلا تغير بياناته لتناسب قانوناً مرغوباً. لا تستعمل عددًا سالبًا من الحصص أو الأشخاص. وكذلك لا تدعي أن قيم التجربة المتفرقة تضمن علاقة خطية خارج نطاق البيانات دون افتراض مناسب.",
+          "QuickSummary": "أكتب دالة من موقف أو جدول أو رسم عن طريق الميل والقيمة الابتدائية، وأتحقق من البيانات والمجال الواقعي. Cool-down أصلي: (1) رسم أساسي 35 درهماً و8 دراهم لكل زيارة: اكتب ك(ن). (2) جدول (1،14)،(3،22)،(5،30): أوجد القاعدة. (3) إذا المخزون 40 ويقل 5 يومياً، حدد مجال الأيام المعقول. (4) فسر لماذا لا تمثل بيانات (0،1)،(1،2)،(2،5) دالة خطية. مراجعة النص والتمثيل البياني للمعلم."
         }
       ]
     },
