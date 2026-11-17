@@ -1669,10 +1669,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:05:07",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 5 / Lesson 7",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 67–74; printed 431–438",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Selected local UAE Arabic Student Book Term2",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "53492820d436741ab75f5ea71319bf4e8d9a3ea3a2fcb2b8534222bdac8cc852",
       "CanonicalBodySha256": "5be67ab2375c544df111357d6b39e921a240cd8935e26bacae171d97e89b9f40",
@@ -1680,7 +1680,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored topic-aligned lesson, exact atomic publisher question parity unknown; Stage D NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1691,6 +1691,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Distance on the Coordinate Plane, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Distance on the Coordinate Plane: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المسافة على المستوى الإحداثي",
+          "Explanation": "المسافة بين النقطتين أ(س₁،ص₁) وب(س₂،ص₂) في المستوى الإحداثي تُحسب بتكوين مثلث قائم ضلعاه الأفقي |س₂−س₁| والرأسي |ص₂−ص₁|، ثم نطبق فيثاغورس لنحصل د=√((س₂−س₁)²+(ص₂−ص₁)²). مثلاً بين أ(2،−1) وب(5،3) يكون الفرق الأفقي 3 والرأسي 4، فالمسافة 5 وحدات. عند النقطتين (−4،2) و(2،−6) الفرق 6 أفقياً و−8 رأسياً، فالمسافة √(36+64)=10 وحدات. المسافة غير سالبة ومتماثلة: د(أ،ب)=د(ب،أ). على خط أفقي تتبسط إلى الفرق المطلق بين السينات، وعلى خط رأسي الفرق المطلق بين الصادات.",
+          "KeyConceptsAndRules": "قانون المسافة: د=√((س₂−س₁)²+(ص₂−ص₁)²) لجميع نقطتين في المستوى الديكارتي. تبادل ترتيب النقطتين لا يغير المسافة لأن فروق الإحداثيات مربعة. إذا كانت ص₁=ص₂ فالنتيجة |س₂−س₁|، وإذا س₁=س₂ فالنتيجة |ص₂−ص₁|. إذا كانت النقطتان متطابقتين فالمسافة صفر. ينبغي تربيع الفروق كاملة بعد طرح الإحداثيات؛ لا نطرح المربعات منفصلة. النتيجة الجذرية يمكن حفظها دقيقة أو تقريبها حسب تعليمات المسألة، مع ذكر وحدة القياس إن كان للمحورين وحدات طول متساوية.",
+          "WorkedExamples": "مثال1: أ(2،−1)، ب(5،3): د=√((5−2)²+(3−(−1))²)=√(9+16)=5. مثال2: (−4،2)،(2،−6): د=√(6²+(−8)²)=10. مثال3: (−2،5)،(3،5): د=|3−(−2)|=5. مثال4: (4،−3)،(4،6): د=|6−(−3)|=9. مثال5: (0،0)،(3،4): د=5. مثال6: (1،2)،(4،4): د=√(9+4)=√13≈3.606 وحدات.",
+          "StepByStepSolutions": "أكتب إحداثيات النقطتين بالترتيب (س₁،ص₁) و(س₂،ص₂). أرسم عند الحاجة ضلعاً أفقياً بطول الفرق المطلق في السينات وآخر عمودياً بطول الفرق المطلق في الصادات. أحسب الفرق س₂−س₁ والفرق ص₂−ص₁ مع الانتباه لطرح السالب. أضع كلا الفرقين داخل أقواس قبل التربيع، أجمع المربعين، وآخذ الجذر غير السالب. أتحقق من أن تبديل أسماء النقطتين لا يغير الناتج، وأنه أكبر من أو يساوي كل إسقاط مستقل. أعطي قيمة دقيقة إن لم تطلب المسألة تقريباً، وأذكر الوحدة الملائمة.",
+          "CommonMistakes": "من الأخطاء حساب (س₂²−س₁²) بدل (س₂−س₁)². طرح السالب قد يغيّر فرقاً من 3 إلى 5، فلا تحذف الأقواس. لا تجمع قيم فروق المحاور مباشرة فتكون تلك مسافة مسار أفقي-رأسي لا المسافة المستقيمة. لا تكتب مسافة سالبة؛ الجذر الرئيسي غير سالب. إذا كانت الوحدة مترًا في المحورين فالجواب بالمتر، لا بالمتر المربع. ويجب التنبه إلى أن محورين بوحدتين مختلفتين يحتاجان توحيد وحدة القياس قبل تطبيق الصيغة الهندسية.",
+          "QuickSummary": "أجد المسافة بين نقطتين بقانون الجذر لمجموع مربعي فروق الإحداثيات، مع مراعاة الإشارة والدقة والوحدة. Cool-down أصلي: (1) د بين (−1،2) و(2،6). (2) د بين (4،−3) و(4،6). (3) لماذا تبقى المسافة نفسها عند تبديل نقطتي البداية والنهاية؟ (4) قارن طول المسار القائم والمسافة المستقيمة بين (0،0) و(3،4). الرسوم وتفسير المسار للمعلم."
         }
       ]
     },

@@ -10556,6 +10556,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U05L06_PDF59_66_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U05L07, local Student Book PDF67-74.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "geometry.coordinate_plane.axis_distance", "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+            ["geometry.coordinate_plane.axis_distance", "usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "trigonometry.right_triangle.find_side_exact", "geometry.coordinate_plane.signed"],
+            "UAE_G8_U05L07_PDF67_74_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
