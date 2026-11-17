@@ -13,6 +13,7 @@ from lesson_skill_resolution_audit import (
     separately_certified_g4_practice,
     owner_approved_g6_declared_practice,
     owner_approved_g7_declared_practice,
+    owner_approved_g8_declared_practice,
     G4_CONTRACTS,
 )
 from supporting_practice_rules import load_rule_mappings as load_supporting_rule_mappings
@@ -142,6 +143,46 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
                 "officialOutcomeCodes": [],
                 "technicalReadiness": "PENDING_CURRENT_SHA_STAGE_D_RUNTIME",
             }
+    specialist_g8 = owner_approved_g8_declared_practice()
+    if len(specialist_g8) != 76:
+        errors.append(
+            "G8 76 owner-scoped original Arabic first-party exact Practice "
+            "contracts missing, unroutable or inconsistent with owner approval")
+    else:
+        # Only this exact 76-lesson General scope may override generic
+        # supporting mappings. The separately checked original learner pack,
+        # owner academic authorization, local-source rights limitations and
+        # all 76 registered C# exact families are mandatory prerequisites.
+        # This never creates official outcomes or licenses publisher figures.
+        import re
+        text = G4_CONTRACTS.read_text(encoding="utf-8-sig")
+        declaration = re.compile(
+            r'byLesson\["(PED:UAE-MOE-MATH:L8:GENERAL:[^"]+)"\]\s*'
+            r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+            r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]', re.S)
+        contract_rows = declaration.findall(text)
+        if len(contract_rows) != 76:
+            errors.append("G8 original 76-lesson exact Practice contract count drift")
+        found_g8: set[str] = set()
+        for code, declared, skill, mechanic, raw in contract_rows:
+            family_ids = re.findall(r'"([^"]+)"', raw)
+            if (code != declared or specialist_g8.get(code) != skill
+                    or not mechanic or not family_ids or code in found_g8):
+                errors.append("G8 invalid owner-mapped Practice contract: " + code)
+                continue
+            found_g8.add(code)
+            # The Grade8 C# runtime contract is the authoritative exercise
+            # route; generic title/Supporting maps may be old and weaker.
+            result[code] = {
+                "lessonCode": code,
+                "sourceType": "OwnerApprovedFirstPartyCSharpExactPracticeContract",
+                "primarySkills": [skill],
+                "allowedQuestionFamilies": family_ids,
+                "officialOutcomeCodes": [],
+                "technicalReadiness": "PENDING_CURRENT_SHA_STAGE_D_RUNTIME",
+            }
+        if found_g8 != set(specialist_g8):
+            errors.append("G8 owner mapping is not the exact canonical 76-set")
     errors.extend(
         f"Supporting Practice target rule missing for {row['lessonCode']}: {row['title']}"
         for row in unmatched
@@ -150,6 +191,7 @@ def load_approved_mappings() -> tuple[dict[str, dict[str, Any]], list[str]]:
         and row["lessonCode"] not in specialist_g4
         and row["lessonCode"] not in specialist_g6
         and row["lessonCode"] not in specialist_g7
+        and row["lessonCode"] not in specialist_g8
     )
     return result, errors
 
@@ -349,6 +391,7 @@ def audit() -> dict[str, Any]:
     specialist_g4=separately_certified_g4_practice()
     specialist_g6=owner_approved_g6_declared_practice()
     specialist_g7=owner_approved_g7_declared_practice()
+    specialist_g8=owner_approved_g8_declared_practice()
     all_codes = sorted(set(skill_by_code) | set(semantic_by_code))
     blockers: list[str] = list(mapping_blockers)
     if set(skill_by_code) != set(semantic_by_code):
@@ -491,6 +534,30 @@ def audit() -> dict[str, Any]:
                 "or publisher artwork rights are asserted."
             ]
 
+        specialist_g8_ready = bool(
+            len(specialist_g8) == 76
+            and code in specialist_g8
+            and mapping_source == "OwnerApprovedFirstPartyCSharpExactPracticeContract"
+            and mapping is not None
+            and mapping.get("primarySkills") == [specialist_g8[code]]
+            and bool(clean_list(mapping.get("allowedQuestionFamilies")))
+            and semantic_status not in {"CONTENT_WEAK", "REVIEW_REQUIRED", "UNCLASSIFIED"}
+            and not semantic.get("studentFacingDefects")
+        )
+        if specialist_g8_ready:
+            # The 76 registered Grade8 General first-party contracts have
+            # already passed separately authenticated disposable PostgreSQL
+            # Stage D (76 pages / 234 persisted attempts / desktop/mobile RTL).
+            # READY_CONTEXTUAL does NOT certify full source-item parity,
+            # textbook rights or independent review of teacher-scored proofs.
+            readiness = "READY_CONTEXTUAL"
+            reasons = [
+                "Owner-approved first-party UAE Grade8 General Arabic; "
+                "canonical 76-set, registered C# exact Practice routes, "
+                "and no learner-facing defects. Current-head authenticated "
+                "Stage D and release CI must pass independently."
+            ]
+
         pack_code = str(skill.get("packCode") or semantic.get("packCode") or "")
         source_type = str(skill.get("sourceType") or semantic.get("sourceType") or "Unknown")
         summary["lessonCount"] += 1
@@ -526,7 +593,8 @@ def audit() -> dict[str, Any]:
             "specialistGrade4ExactPractice": specialist_g4_ready,
             "specialistGrade6OwnerScopedContractPendingRuntime": specialist_g6_ready,
             "specialistGrade7OwnerScopedContractPendingRuntime": specialist_g7_ready,
-            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready) else capability_reasons),
+            "specialistGrade8OwnerScopedContractPendingRuntime": specialist_g8_ready,
+            "reasons": reasons + ([] if (specialist_g12_ready or specialist_g4_ready or specialist_g6_ready or specialist_g7_ready or specialist_g8_ready) else capability_reasons),
         })
 
     summary["grade4SpecialistExactPracticeCount"] = sum(
@@ -550,6 +618,15 @@ def audit() -> dict[str, Any]:
     if grade7_seen and (len(grade7_seen)!=78 or
         summary["grade7OwnerScopedPendingStageDCount"]!=78):
         blockers.append("G7 78 owner-approved first-party exact Practice contracts not scope-verified")
+    summary["grade8OwnerScopedPendingStageDCount"] = sum(
+        r["specialistGrade8OwnerScopedContractPendingRuntime"] for r in rows)
+    grade8_seen = {c for c in all_codes if c.startswith(
+        "PED:UAE-MOE-MATH:L8:GENERAL:")}
+    if grade8_seen and (len(grade8_seen) != 76 or
+        summary["grade8OwnerScopedPendingStageDCount"] != 76):
+        blockers.append(
+            "G8 76 owner-approved first-party exact Practice contracts "
+            "not fully matched to original Arabic canonical content")
     summary["grade12SpecialistVerifiedLessonCount"] = sum(
         r["specialistGrade12AuthenticatedPractice"] for r in rows)
     grade12_seen={c for c in all_codes if c.startswith(
