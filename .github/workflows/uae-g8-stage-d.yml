@@ -176,13 +176,13 @@ jobs:
           set -euo pipefail
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
-          DO $
+          DO $g8$
           BEGIN
             IF (SELECT count(*) FROM "CurriculumPedagogicalLessons"
                 WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%')<>76 THEN
               RAISE EXCEPTION 'Isolated candidate should start with 76';
             END IF;
-          END $;
+          END $g8$;
           UPDATE "CurriculumLessonContents" c
             SET "ContentVersion"='supporting-practice-remediation-v2'
             WHERE c."LessonNodeId" IN (
@@ -210,13 +210,13 @@ jobs:
             'supporting-practice-remediation-v2',NOW(),NOW(),NOW(),NOW(),'\x'::bytea
           FROM "CurriculumPedagogicalLessons" l
           WHERE l."Code"='PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS';
-          DO $
+          DO $g8$
           BEGIN
             IF (SELECT count(*) FROM "CurriculumPedagogicalLessons"
                 WHERE "Code" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%')<>77 THEN
               RAISE EXCEPTION 'Synthetic pre-cutover 77 lesson fixture missing';
             END IF;
-          END $;
+          END $g8$;
           COMMIT;
           SQL
           # Only the explicitly unlocked G8 seeder runs; no global maintenance
