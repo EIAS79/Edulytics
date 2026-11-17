@@ -15,7 +15,7 @@
   "abcReadyLessons": 76,
   "stageDVerifiedLessons": 0,
   "firstIncompleteLessonOrdinal": 1,
-  "stageDStatus": "D_PENDING",
+  "stageDStatus": "D_BLOCKED",
   "technicalReleaseReady": false,
   "knownReleaseBlockers": [
     "CROSS_EDITION_CROSSWALK_UNVERIFIED",
@@ -23,7 +23,9 @@
     "SEMANTIC_HASH_REGEN_PENDING",
     "PRODUCTION_12_05_RETIREMENT_PENDING",
     "AUTHENTICATED_RTL_E2E_NOT_RUN",
-    "FINAL_CI_NOT_PASSED"
+    "FINAL_CI_NOT_PASSED",
+    "66_RICHV2_RUNTIME_SCHEMA_GAPS_AFTER_UNIT_1",
+    "ISOLATED_PG_AUTHENTICATED_E2E_NOT_RUN"
   ],
   "productionReadOnlyInventory": {
     "readDate": "2026-11-17",
@@ -44,5 +46,31 @@
     "academicOwnerGrade8ApprovalRecorded": false,
     "rightsClearanceVerified": false,
     "productionReleaseApproved": false
+  },
+  "lastNodeTestEvidence": {
+    "candidateSha": "1287a1d6ae73ffd84e52778707364e4d88bb028e",
+    "workflowRunId": 44055515546,
+    "jobId": 133943731582,
+    "passed": 221,
+    "failed": 0,
+    "total": 221,
+    "scope": "76 authored lesson Node tests and G8 source76 test; does not establish browser/authenticated or PostgreSQL E2E"
+  },
+  "richV2ContractAudit": {
+    "candidateSha": "bfdc6a66a3e21dd6570acc04390d009e4a834472",
+    "previousInvalid": 74,
+    "rectifiedUnit1Lessons": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "currentExpectedValid": 10,
+    "currentExpectedInvalid": 66,
+    "validationStatus": "CI_RUN_PENDING_FOR_FINAL_COMMIT"
   }
 }

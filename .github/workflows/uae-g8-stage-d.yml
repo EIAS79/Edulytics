@@ -13,9 +13,6 @@ on:
       - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
       - 'tests/academic-uae-grade8-arabic-*.test.cjs'
       - 'tests/academic-uae-grade8-general-ar-*.test.cjs'
-  push:
-    branches:
-      - curriculum/uae-g8-general-ar-student-first-abc-20261116
   workflow_dispatch:
 permissions:
   contents: read
