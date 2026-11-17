@@ -10757,6 +10757,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U09L06_LOCAL_PDF101_108",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Unit10 Lesson1, local Arabic Student Book PDF121-128.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES", "geometry.foundations.point_line_ray", "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
+            ["geometry.foundations.point_line_ray", "geometry.points_lines_rays", "uae.g4.u12.l01.segments_from_points"],
+            "UAE_G8_AR_U10L01_PDF121_128_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
