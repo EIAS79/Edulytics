@@ -363,21 +363,21 @@ jobs:
           fi
           python3 tools/curriculum/uae_g8_stage_d_authenticated_https.py || { tail -n 80 /tmp/g8-web.log | grep -Eiv 'password|credential|secret|connection' || true; exit 1; }
           python3 tools/curriculum/uae_g8_stage_d_browser_rtl.py
-      - name: Verify 76 pages, 234 actual persisted attempt responses, 156 rendered viewports
+      - name: Verify 76 pages, 228 actual persisted attempt responses, 152 rendered viewports
         run: |
           python3 - <<'PY'
           import os,json,pathlib
           auth=json.loads(pathlib.Path('/tmp/uae-g8-stage-d-authenticated-76-lessons.json').read_text())
           rtl=json.loads(pathlib.Path('/tmp/uae-g8-stage-d-browser-rtl/report.json').read_text())
           assert auth['candidateSha']==rtl['candidateSha']==os.environ['GITHUB_SHA']
-          assert auth['grade']==7 and auth['lessonPageCount']==76
+          assert auth['grade']==8 and auth['lessonPageCount']==76
           assert auth['correctAttemptPersistenceCount']==auth['wrongAttemptPersistenceCount']==auth['malformedAttemptRejectionCount']==76
           assert auth['crossSchoolAccessDenied'] is True and all(auth['roleLogins'].values())
           assert auth['negativeEnglishFallbackChecks']==76
           assert rtl['rtlDesktopLessons']==rtl['rtlMobileLessons']==76 and rtl['screenshotsWritten']>=8
           out=pathlib.Path('artifacts/uae-g8-stage-d/grade8-e2e.json')
           out.parent.mkdir(parents=True,exist_ok=True)
-          out.write_text(json.dumps({'candidateSha':os.environ['GITHUB_SHA'],'status':'PASS','authenticatedLearnerPages':76,'negativeEnglishFallbackChecks':76,'persistedPracticeAttempts':234,'chromiumPagesDesktopMobile':156,'screenshots':rtl['screenshotsWritten'],'sourceLiteralParity':'UNKNOWN','productionWritten':False},indent=2))
+          out.write_text(json.dumps({'candidateSha':os.environ['GITHUB_SHA'],'status':'PASS','authenticatedLearnerPages':76,'negativeEnglishFallbackChecks':76,'persistedPracticeAttempts':228,'chromiumPagesDesktopMobile':152,'screenshots':rtl['screenshotsWritten'],'sourceLiteralParity':'UNKNOWN','productionWritten':False},indent=2))
           PY
       - if: always()
         uses: actions/upload-artifact@v4
@@ -387,3 +387,55 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+
+
+  final-release:
+    name: G8 exact-SHA final source, safe cutover, HTTPS and Chromium release gate
+    if: always()
+    needs: [structural, source-release-gate, lesson-tests, dotnet, isolated-db, authenticated-e2e]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read structural evidence from this workflow run
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g8-structural
+          path: artifacts/uae-g8-stage-d
+      - name: Read owner-approved first-party source evidence
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g8-source-release-gate
+          path: artifacts/uae-g8-stage-d
+      - name: Read isolated DB and 77-to-76 cutover rehearsal
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: uae-g8-isolated-postgresql
+          path: artifacts/uae-g8-stage-d
+      - name: Read authenticated browser and practice results
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: g8-authenticated-e2e
+          path: artifacts/uae-g8-stage-d
+      - name: Refuse merging on skipped, failed or mismatched technical evidence
+        env:
+          STRUCTURE_RESULT: "${{ needs.structural.result }}"
+          SOURCE_RESULT: "${{ needs['source-release-gate'].result }}"
+          LESSON_RESULT: "${{ needs['lesson-tests'].result }}"
+          DOTNET_RESULT: "${{ needs.dotnet.result }}"
+          ISOLATED_RESULT: "${{ needs['isolated-db'].result }}"
+          AUTH_RESULT: "${{ needs['authenticated-e2e'].result }}"
+        run: python3 tools/curriculum/uae_g8_stage_d_final.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-final-release-gate
+          path: artifacts/uae-g8-stage-d/grade8-final-release-gate.json
+          if-no-files-found: error
