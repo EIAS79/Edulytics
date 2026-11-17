@@ -1454,10 +1454,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:05:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 5 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 15–22; printed 379–386",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic UAE Grade8 General local Term2 student book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "fca8a243d286310667d9fed1a7ef3f143029228fa10156807d4d9c56eec858be",
       "CanonicalBodySha256": "75deb2579c1509c7569f52dcd388ee2ee5f37477e43c6e08941b44e7b2384646",
@@ -1465,7 +1465,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic geometry skill-equivalent; open diagrams and proofs teacher-reviewed; StageD NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1476,6 +1476,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Geometric Proof, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Geometric Proof: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "البرهان الهندسي",
+          "Explanation": "البرهان الهندسي سلسلة عبارات مبررة من معطيات معلومة إلى نتيجة مطلوبة. في برهان العمودين تكتب في العمود الأيمن أو الأول العبارات الرياضية وفي المقابل أسباب كل منها مثل «معطى»، «تعريف الزوايا المتقابلة بالرأس»، «الزوايا المتكاملة مجموعها 180°»، «خاصية الطرح من المساواة»، أو «خاصية التعدي». نستخدم ذلك لإثبات تساوي زاويتين متقابلتين بالرأس: إذا كان المستقيمان يتقاطعان، فالزاويتان (أ،ب) و(ب،ج) متجاورتان ومتكاملتان، وكذلك (ب،ج) و(ج،د)؛ طرح قياس (ب،ج) من المساواتين يعطي مساواة قياسي الزاويتين المتقابلتين. الهدف ليس إعلان النتيجة فقط بل اختيار سبب صحيح لكل انتقال.",
+          "KeyConceptsAndRules": "يبدأ البرهان بتحديد المعطيات والمطلوب. كل عبارة جديدة تحتاج سببًا معلومًا: تعريف مستقيمات متعامدة، زاويتان على استقامة واحدة، زوايا متقابلة بالرأس، جمع الزوايا، خاصية التعويض، خاصية التساوي أو التعدي. من تساوي أ+ب=180 وأ+ج=180 نستنتج ب=ج بطرح أ، وهو برهان تكافؤ لا تخمين. استخدام البرهان بعمودين يفصل العبارة عن سببها، ويجب ألا ترد النتيجة المطلوب إثباتها كسبب سابق لها (استدلال دائري). في برهان مستقيمين متوازيين يمكن تبرير تطابق زاويتين متناظرتين بعد تحقق الفرضية، والعكس يثبت التوازي بتوافق زاويتين وفق النظرية العكسية.",
+          "WorkedExamples": "مثال1: إذا كانت زاويتان أ وب متكاملتين، وأ وج متكاملتين، فإن ق أ+ق ب=180 وق أ+ق ج=180؛ نطرح ق أ فنجد ق ب=ق ج. مثال2: على خطين متقاطعين، نكتب علاقة مكملات للزاويتين المتقابلتين بالرأس ونستنتج تساويهما بالمساواة والطرح. مثال3: إذا AB=CD وCD=EF فنستنتج AB=EF بخاصية التعدي. مثال4: إذا كانت زاويتان متطابقتين مع زاوية واحدة فإنهما متطابقتان معاً. مثال5: إذا كانت م∠1=3س+2 وم∠2=5س−18 وقد ثبت تقابلهما بالرأس، نساويهما فـس=10 والزاويتان 32°.",
+          "StepByStepSolutions": "أنظم حل المسألة في جدول «العبارة» و«السبب». أدون المعطيات أولاً، ثم أحدد تعريفات أو نظريات تسمح بكتابة علاقات زاوية جديدة. أرتب العلاقات من المعطيات إلى المطلوب دون افتراض النتيجة. أكتب أسباب الجمع أو الطرح أو التعويض مع المحافظة على مساواة الطرفين. إذا ظهرت قياسات مجهولة أستنتج المعادلة المناسبة وأحلها، ثم أعود للبرهان الهندسي. أراجع ما إذا كانت جميع الأسباب صالحة لما هو معطى في الرسم وليس لما يبدو فقط.",
+          "CommonMistakes": "كتابة «واضح من الرسم» لا تكفي سبباً في البرهان. إثبات توازي خطين باستعمال تطابق زوايا متناظرة دون ذكر أن ذلك مستنتج من المعطيات أو من النظرية العكسية قد يكون دورانياً. لا يجوز استخدام المطلوب إثباته في خطوة سابقة. خطأ شائع نقل رقم دون تطبيق خاصية مساواة صحيحة على الطرفين أو الخلط بين العبارات والأسباب. لا يدعي برنامج التصحيح الآلي التحقق الكامل من صحة برهان كتابي مفتوح؛ يتولى المعلم مراجعته.",
+          "QuickSummary": "أبني برهاناً هندسياً من معطيات ومطلوب، مع عبارة وسبب لكل خطوة، وأتفادى الاستدلال الدائري. Cool-down أصلي: إذا ق∠أ+ق∠ب=180 و ق∠أ+ق∠ج=180، أثبت ق∠ب=ق∠ج بجدول عبارة/سبب. بيّن لماذا لا يصلح «واضح من الرسم» دليلاً على التعامد. يبقى البرهان التحريري للمراجعة البشرية."
         }
       ]
     },

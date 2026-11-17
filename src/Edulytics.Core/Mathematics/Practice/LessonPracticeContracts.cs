@@ -10516,6 +10516,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U05L01_PDF7_14_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U05 L02; selected local Student Book PDF 15–22.
+        // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF", "geometry.angles.relationships", "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
+            ["geometry.angles.relationships", "supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L02_PDF15_22_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
