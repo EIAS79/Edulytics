@@ -233,7 +233,7 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
     # After exact G7 General replacement, 4,896 independent identifiers
     # remain outside G4/G6/G7 General and independently certified G12;
     # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5307 or len(supplemental) != 73 or
+    if (len(by_code) != 5306 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
         len(grade7_replacement) != 78 or len(untouched_base) != 4896):

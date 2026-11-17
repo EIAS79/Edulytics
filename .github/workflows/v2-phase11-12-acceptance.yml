@@ -85,7 +85,7 @@ jobs:
           # Owner-approved G7 General 62 English -> 78 Arabic adds exactly
           # 16 identities: 5,307 canonical lesson/metadata records, and the
           # independent 5,751 official outcome mappings remain unchanged.
-          expected = (4,5307,5751,5307,0,0,0)
+          expected = (4,5306,5751,5306,0,0,0)
           print('ACCEPTANCE_DB_COUNTS', data, 'EXPECTED', expected, flush=True)
           assert data == expected, 'Database invariant failure'
           PY

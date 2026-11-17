@@ -143,7 +143,7 @@ jobs:
       - name: Rehearse exactly 128 Grade6 production imports on disposable PostgreSQL 18
         run: |
           set -euo pipefail
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5307
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5306
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
           CREATE TEMP TABLE ids ON COMMIT DROP AS

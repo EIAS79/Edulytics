@@ -226,7 +226,7 @@ jobs:
           retention-days: 30
 
   scoped-production-rehearsal:
-    name: G7 isolated production 0-to-78 import twice; preserve 5,156 unrelated records
+    name: G7 isolated production 0-to-78 import twice; preserve 5,155 unrelated records
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     services:
@@ -272,8 +272,8 @@ jobs:
       - name: Verify scoped production baseline and reimport twice without altering unrelated grades
         run: |
           set -euo pipefail
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5307
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5307
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5306
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5306
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
           CREATE TEMP TABLE g7_cutover_fixture_ids ON COMMIT DROP AS
@@ -293,8 +293,8 @@ jobs:
             WHERE "Id" IN (SELECT "Id" FROM g7_cutover_fixture_ids);
           COMMIT;
           SQL
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5156
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5156
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5155
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5155
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumPedagogicalLessons" x' >/tmp/g7-other-lesson-hash
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumLessonContents" x' >/tmp/g7-other-content-hash
           export EDULYTICS_G7_SCOPED_RELEASE=CONFIRM_SEED_ONLY_UAE_GRADE7_ARABIC_78
@@ -313,8 +313,8 @@ jobs:
               tail -n 65 "/tmp/g7-scoped-$n.log" | grep -Eiv 'password|credential|secret|connection' || true
               exit 1
             fi
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5234
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5234
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5233
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5233
           done
           unset EDULYTICS_G7_SCOPED_RELEASE
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L7:GENERAL:%'" >/tmp/g7-other-lesson-after
@@ -330,7 +330,7 @@ jobs:
           pathlib.Path('artifacts/uae-g7-stage-d/grade7-scoped-production.json').write_text(json.dumps({
             'phase':'scoped-production','status':'PASS','candidateSha':os.environ['GITHUB_SHA'],
             'approvedArabicLessonCount':78,'canonicalMetadataCount':78,
-            'unrelatedRecordsPreserved':5156,'independentRunCount':2,
+            'unrelatedRecordsPreserved':5155,'independentRunCount':2,
             'otherGradeDataChanged':False,'productionDatabaseWritten':False,
             'database':'disposable PostgreSQL 18'},indent=2)+'\n')
           PY

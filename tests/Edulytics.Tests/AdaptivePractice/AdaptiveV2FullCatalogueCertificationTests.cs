@@ -12,7 +12,7 @@ public sealed class AdaptiveV2FullCatalogueCertificationTests
     // 5,110 prior included 93 legacy G4, 59 legacy G6 and 62 legacy G7.
     // Exact owner-approved deltas: G4 +39, G12 +73, G6 +69, G7 +16.
     // Adaptive V2 must cover all 5,307 actual canonical lesson contracts.
-    private const int ExpectedLessonCount = 5307;
+    private const int ExpectedLessonCount = 5306;
     private const string RunEnvironmentVariable =
         "EDULYTICS_RUN_FULL_ADAPTIVE_V2_CERTIFICATION";
 

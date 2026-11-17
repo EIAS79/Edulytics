@@ -340,6 +340,13 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
         var g7Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(prefix), ct);
+        // G8 owner-approved replacement removes only one General lesson.
+        // Preserve exact current G8 scope; do not change any other grade.
+        var g8GeneralCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
+        var g7UnrelatedBaseline = g8GeneralCount == 77 ? 5156 :
+            g8GeneralCount == 76 ? 5155 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
         var g5Count = await _db.CurriculumPedagogicalLessons
@@ -356,7 +363,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 x.Code.StartsWith("UAE:CATALOG:G7:GENERAL:"), ct);
 
         if (g7Count is not (0 or 78) ||
-            allCount != 5156 + g7Count ||
+            g7UnrelatedBaseline < 0 ||
+            allCount != g7UnrelatedBaseline + g7Count ||
             contentCount != allCount ||
             g4Count != 132 || g5Count != 127 ||
             g6Count != 128 || g12Count != 0 ||
@@ -388,14 +396,15 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var afterCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
         var afterContent = await _db.CurriculumLessonContents.CountAsync(ct);
         if (actualG7.Length != 78 || actualG7Content != 78 ||
-            publishedG7 != 78 || afterCount != 5234 || afterContent != 5234)
+            publishedG7 != 78 || afterCount != g7UnrelatedBaseline + 78 ||
+            afterContent != g7UnrelatedBaseline + 78)
             throw new InvalidOperationException(
                 "Scoped Grade7 0-to-78 import postconditions failed; rolled back.");
 
         await transaction.CommitAsync(ct);
         Console.WriteLine(
             "UAE_G7_SCOPED_PRODUCTION_78_LESSONS_AND_78_METADATA_PASS " +
-            "unrelatedBaseline=5156 advancedAndUsUnaffected=true");
+            "unrelatedBaseline=" + g7UnrelatedBaseline + " advancedAndUsUnaffected=true");
     }
 
 
