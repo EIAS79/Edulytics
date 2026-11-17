@@ -10846,6 +10846,16 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U12L03_LOCAL_PDF264_273_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Unit12 Lesson4; source selected Student Book PDF275-284.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS", "algebra.inequality.solution_sets", "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
+            ["algebra.inequality.solution_sets", "supporting.statistics.table_total"],
+            "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

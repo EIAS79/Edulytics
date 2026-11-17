@@ -3260,10 +3260,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:12:04",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 12 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 275–284; printed 887–896",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "UAE Arabic local Student Book 2019–2020 selected",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "3def446101160ad7c5dbaab3e32a12d967d5c142e28799dda2c99c72591f98b2",
       "CanonicalBodySha256": "6e4bdf64a6964710bea5acf6aa0b19fc317e498618aa6c3e07bf61a9442a5cf4",
@@ -3271,7 +3271,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic set theory authoring; actual diagrams & open set proofs teacher-reviewed, automated family parity NOT VERIFIED, runtime NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -3282,6 +3282,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Using Sets to Solve Problems, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Using Sets to Solve Problems: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "استخدام المجموعات لحل المسائل",
+          "Explanation": "نستخدم المجموعات لحل مسائل العد التي قد ينتمي فيها الشخص لأكثر من فئة. إذا كان من أصل 50 مشاركًا يحب 30 القراءة و28 الرياضة و12 كليهما، فإن الاتحاد=30+28−12=46، ومن لا يحب أيًا منهما 50−46=4. و«القراءة فقط»=30−12=18، و«الرياضة فقط»=28−12=16. نبدأ من التقاطع لئلا نحسب الأشخاص مرتين، ثم نكمل المناطق المنفصلة، وأخيرًا المنطقة خارج الدائرتين داخل المجموعة الشاملة. في ثلاث مجموعات نستعمل مبدأ الشمول والاستبعاد بحذر لأن أعداد التقاطعات الثنائية قد تشمل التقاطع الثلاثي، فلا نكرر العد.",
+          "KeyConceptsAndRules": "لمجموعتين منتهيتين أ وب: |أ∪ب|=|أ|+|ب|−|أ∩ب|. عدد «لا هذه ولا تلك»=|ش|−|أ∪ب|. «أ فقط»=|أ|−|أ∩ب|، «ب فقط»=|ب|−|أ∩ب|. لثلاث مجموعات أ وب وج: |أ∪ب∪ج|=|أ|+|ب|+|ج|−|أ∩ب|−|أ∩ج|−|ب∩ج|+|أ∩ب∩ج|، عندما تتضمن الأعداد الثنائية الأشخاص في الثلاث جميعًا. في مسائل ثلاث مجموعات بالعدد نبدأ بالتقاطع الثلاثي ثم ننقصه من الثنائية للحصول على «الثنائي فقط». كل منطقة يجب أن تعطي عددًا غير سالب ويجب ألا يتجاوز الاتحاد حجم ش.",
+          "WorkedExamples": "مثال1: من 50 متعلمًا 30 في القراءة و28 في الرياضة و12 في الاثنين؛ الاتحاد46 والخارج4 والقراءة فقط18 والرياضة فقط16. مثال2: عدد 40 شخصًا، أ=25،ب=18، والتقاطع10؛ الاتحاد33 والخارج7. مثال3: في 60 طالبًا أ=35،ب=30،والاتحاد50، إذن التقاطع=35+30−50=15. مثال4: أ=20،ب=16،ج=12، تقاطعات أ∩ب=6، أ∩ج=5، ب∩ج=4، والثلاثي=2؛ اتحاد الثلاث=20+16+12−6−5−4+2=35. مثال5: عندما يخبرك النص أن مجموعات متداخلة، لا تستخدم مجرد جمع أحجام الفئات لأنه يعد الأعضاء المشتركين مرتين.",
+          "StepByStepSolutions": "أحدد المجموعة الشاملة وعدد أفرادها وأعرّف المجموعتين أو الثلاث وأقرأ إن كانت كلمة «كليهما» تعني تقاطعًا شاملًا أو منطقة «فقط». أرسم مخطط فن وأبدأ بالتقاطع المشترك؛ في ثلاث مجموعات أبدأ بالثلاثي. أستخرج أ فقط وب فقط بطرح التقاطع من حجم كل مجموعة، وأحسب الاتحاد بجمع مناطق منفصلة أو بصيغة الشمول والاستبعاد. أجد عدد الخارج بطرح الاتحاد من حجم ش، وأتحقق أن المجموع النهائي يعيد |ش| وأن أي منطقة غير سالبة. أكتب إجابة كاملة وواضحة بالأسماء والوحدات، ثم أراجع هل الأعداد منطقية للموقف.",
+          "CommonMistakes": "جمع |أ|+|ب| من دون طرح التقاطع يعد المشتركين مرتين. وفي ثلاث مجموعات من الخطأ طرح التقاطعات الثنائية التي تشمل الثلاثي ثم عدم إضافة الثلاثي مرة إلى المجموع. لا تخلط بين «من يحب كليهما» و«من يحب واحدًا فقط». إذا الناتج الخارج سالب فهذا يكشف عدم اتساق المعطيات أو تفسير خاطئ. يقتضي حساب «لا أي نشاط» معرفة حجم المجموعة الشاملة؛ لا يخمن من أحجام أ وب وحدهما.",
+          "QuickSummary": "أحوّل مسائل العد إلى مخطط فن ثم أستعمل |أ∪ب|=|أ|+|ب|−|أ∩ب|، وأجد خارج الاتحاد من المجموعة الشاملة. Cool-down أصلي: من 45 طالبًا 25 يختارون الرسم و20 الموسيقى و10 كليهما؛ احسب الاتحاد، والاختيارات المنفردة، ومن لا يختار أيًا منهما، ثم تحقق من مجموع المناطق. يراجع المعلم الرسم والتبرير."
         }
       ]
     },
