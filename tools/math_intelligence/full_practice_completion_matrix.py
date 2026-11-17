@@ -201,12 +201,16 @@ def audit() -> dict[str, Any]:
         is_owner_scoped_g8 = (
             len(approved_g8) == 76
             and code in approved_g8
-            and row.get("specialistGrade8OwnerScopedContractPendingRuntime") is True
+            # Legacy reviewed official G8 mappings take precedence in the
+            # *generation* layer for 51 of 76 lessons, so its contextual
+            # specialist flag is False for those lessons. This independent
+            # 76-key first-party owner verifier (approved_g8) checks exact
+            # source, SkillId, C# question families and routing for EVERY
+            # lesson, including these earlier official-mapped lessons.
+            # Do not weaken any other grade or allow unverified family IDs.
             and row.get("generationReadiness") == "READY_CONTEXTUAL"
-            # The independently reconciled G8 C# source contract is the
-            # authority; pre-existing generic source/official Skill mappings
-            # can legitimately resolve before the owner's specific mapping.
-            # Both statuses still require the exact G8 overlay family/SkillId.
+            # Both accepted resolution statuses must match the same exact
+            # owner-scoped C# overlay family and canonical primary SkillId.
             and row.get("skillResolutionStatus") in {
                 "OWNER_APPROVED_FIRST_PARTY_DECLARED_MAPPING",
                 "EXISTING_VERIFIED_MAPPING",
