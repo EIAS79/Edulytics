@@ -397,6 +397,24 @@ if (g7ScopedRelease &&
         "UAE Grade7 scoped import requires JSON delivery and " +
         "RunStartupDataMaintenance=false. Unrelated grades must not be reseeded.");
 
+// Explicit Grade8 General owner release: replace 77 legacy English identities
+// with precisely 76 Arabic ones while keeping stable per-lesson IDs and other grades.
+const string g8ScopedToken =
+    "CONFIRM_REPLACE_UAE_GRADE8_GENERAL_EN77_WITH_AR76";
+var g8RequestedToken =
+    Environment.GetEnvironmentVariable("EDULYTICS_G8_SCOPED_RELEASE");
+var g8ScopedRelease = string.Equals(
+    g8RequestedToken, g8ScopedToken, StringComparison.Ordinal);
+if (!string.IsNullOrEmpty(g8RequestedToken) && !g8ScopedRelease)
+    throw new InvalidOperationException(
+        "Invalid Grade8 Arabic scoped release token.");
+if (g8ScopedRelease && (g7ScopedRelease || g6ScopedRelease))
+    throw new InvalidOperationException(
+        "Grade8 release token cannot combine with Grade6 or Grade7 release.");
+if (g8ScopedRelease && (runStartupDataMaintenance || !readCanonicalJson))
+    throw new InvalidOperationException(
+        "Grade8 scoped replacement requires JSON canonical delivery and disabled global maintenance.");
+
 // Owner-approved Grade 4 replacement cannot be a silent no-op when production
 // maintenance is disabled. The exact migration token is checked again inside
 // the pedagogical seeder, before any existing lesson/content can be removed.
@@ -455,6 +473,12 @@ using (var scope =
             .GetRequiredService<
                 Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
         await grade7ScopedSeeder.SeedOnlyApprovedUaeGrade7Async();
+    }
+    else if (g8ScopedRelease)
+    {
+        var g8Seeder = scope.ServiceProvider.GetRequiredService<
+            Edulytics.Data.Seeding.MathematicsPedagogicalLessonSeeder>();
+        await g8Seeder.SeedOnlyApprovedUaeGrade8Async();
     }
     else if (runStartupDataMaintenance)
     {
