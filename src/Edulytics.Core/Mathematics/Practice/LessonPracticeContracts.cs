@@ -10508,6 +10508,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U04L09_PDF380_387_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U05 L01; selected local Student Book PDF 7–14.
+        // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES", "geometry.angles.relationships", "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
+            ["geometry.angles.relationships", "supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L01_PDF7_14_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
