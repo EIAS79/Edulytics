@@ -10628,6 +10628,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L04_PDF179_186_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L05; selected Arabic Student Book PDF 187–194.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT", "geometry.similarity.scale_factor", "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.hidden_corresponding_distance", "trigonometry.right_triangle.ratio"],
+            "UAE_G8_AR_U07L05_PDF187_194_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
