@@ -1927,10 +1927,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:07:02",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 7 / Lesson 2",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 157–164; printed 521–528",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected local Arabic UAE Grade8 Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "b68d03ffa96a9e0b4fee1288aef919470eba80718f67b09ebf3cbaeadb0ecbeb",
       "CanonicalBodySha256": "7d9fc8b2abe35d25d60abadfe9a0b37a46da01e6acc95efe773585ff8803bbf8",
@@ -1938,7 +1938,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-scoped geometry; exact publisher-item parity unknown; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1949,6 +1949,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Congruence, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Congruence: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التطابق",
+          "Explanation": "عند كتابة △أ ب ج ≅ △د هـ و فإن ترتيب الحروف يحدد التناظر: أ↔د، ب↔هـ، ج↔و. تتساوى عندئذ الأضلاع أ ب=د هـ، ب ج=هـ و، أ ج=د و، وتتساوى الزوايا المناظرة. يمكن أن يقع مثلثان متطابقان على جانبين مختلفين أو أحدهما مقلوبًا ولا يغيّر ذلك القياس. إذا كان △أ ب ج بأطوال 5 و12 و13، وكان △د هـ و متطابقًا معه بالترتيب نفسه، فالأضلاع المقابلة هي 5 و12 و13 بلا تغيير. يستعمل الطالب معادلات قيم مجهولة مثل أ ب=3س+2، د هـ=17؛ باستعمال التطابق يجد 3س+2=17 ومنه س=5. يجب فحص ترتيب الرؤوس وعلامات القياسات في الرسم لا مجرد تسمية المثلثين.",
+          "KeyConceptsAndRules": "الشكلان المتطابقان لهما أضلاع متناظرة متساوية وزوايا متناظرة متطابقة. في المثلثين △أ ب ج ≅ △د هـ و يكون أ ب↔د هـ، ب ج↔هـ و، ج أ↔و د، والزاوية أ↔د وهكذا. عند وجود ثلاثة أطوال وزوايا متناظرة مناسبة يمكن إثبات التطابق بأحد شروط التطابق المبرهنة هندسيًا، لكن قياسات زوايا متساوية وحدها قد تثبت التشابه لا التطابق. لن يستنتج التطابق تلقائيًا من نسب أطوال متساوية بمعامل 2، بل من معامل 1. يجب أن تكون المعادلات المستخدمة للمجهول مبنية على زوج من الأجزاء المتناظرة الصحيح.",
+          "WorkedExamples": "مثال1: △أ ب ج ≅ △د هـ و، إذا أ ب=7 سم فإن د هـ=7 سم. مثال2: إذا كانت ∠ج=48° فإن ∠و=48°. مثال3: أ ب=3س+2 ود هـ=17 في مثلثين متطابقين، إذن س=5. مثال4: إذا أ ج=2ص+4 ود و=18 فص=7. مثال5: مثلث قائم أطواله 3،4،5 وآخر 3،4،5، مع الزاوية القائمة بين 3 و4 في كل منهما؛ تتطابق الأجزاء المناظرة بعد تحويل جامد مناسب. مثال6: مثلث بأطوال 5،12،13 وآخر 10،24،26 ليس مطابقًا بل مشابهًا بمعامل 2.",
+          "StepByStepSolutions": "أكتب رمز التطابق وأحافظ على الترتيب: أول حرف في المثلث الأول يناظر أول حرف في الثاني وهكذا. أحدد على الرسم علامة كل ضلع وزاوية تقابلها. أنشئ قائمة أزواج متناظرة، ثم إذا وجد تعبير جبري لقياس ضلع أو زاوية أساويه بقياس جزئه المناظر وأحل. أتحقق بأن الناتج يعطي قياسات هندسية معقولة وبأن أطوال الأضلاع المناظرة لا تختلف. عند السؤال عن سبب التطابق أحدد التحويل الجامد الممكن أو شرط الإثبات الصحيح، ولا أعتمد على مجرد تشابه الشكلين في صورة.",
+          "CommonMistakes": "كتابة △أ ب ج ≅ △هـ د و مع تغيير ترتيب الحروف يبدل التناظر وقد يؤدي لمقارنة ضلعين غير متناظرين. ليس تساوي الزوايا الثلاث وحده كافيًا للتطابق لأن المثلثات قد تختلف في الحجم. لا نقارن ضلع أ ب بضلع هـ و إلا إذا أثبت الرسم أن هذا هو التناظر الصحيح. لا يعني انقلاب الصورة في مرآة أنها غير متطابقة؛ الانعكاس يحفظ القياسات. لا تستخدم قيمة س قبل التحقق من أنها تحقق زوج الأجزاء المتناظرة الذي أنشأ المعادلة.",
+          "QuickSummary": "التطابق يعني تساوي قياسات الأضلاع والزوايا المناظرة، وترتيب حروف الرمز يحدد المقابلات. Cool-down أصلي: إذا △أ ب ج ≅ △د هـ و، وأ ب=2س+1 ود هـ=13، أوجد س. إذا ∠ب=68°، فما الزاوية المناظرة؟ لماذا لا تكفي الزوايا المتطابقة وحدها لإثبات تطابق مثلثين؟ مراجعة الرسم والأسباب للمعلم."
         }
       ]
     },

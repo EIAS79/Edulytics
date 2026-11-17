@@ -10604,6 +10604,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L01_LOCAL_PDF145_152_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L02, original Arabic Student PDF 157–164.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE", "geometry.triangles.classification", "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
+            ["geometry.angles.relationships", "usccss.g5.u07.l08.source_triangle_side_and_angle_types", "geometry.polygons.sides_vertices"],
+            "UAE_G8_AR_U07L02_LOCAL_PDF157_164_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
