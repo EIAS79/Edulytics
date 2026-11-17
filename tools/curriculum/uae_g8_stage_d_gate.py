@@ -5,6 +5,8 @@ import datetime
 import json
 import os
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -143,8 +145,13 @@ def main(phase):
                                           for x in contents))
         check("grade8_owner_release_authorization_recorded",
               owner_authorized)
-        check("stale_semantic_hashes_regenerated",
-              (G8 / "grade8-semantic-hash-reconciliation.json").is_file())
+        semantic_check = subprocess.run([sys.executable,
+            str(ROOT / "tools/curriculum/uae_g8_semantic_hashes.py"), "--check"],
+            capture_output=True, text=True, check=False)
+        check("semantic_hashes_regenerated_and_reproducible",
+              semantic_check.returncode == 0,
+              {"result": semantic_check.stdout.strip()[-800:],
+               "error": semantic_check.stderr.strip()[-400:]})
         check("production_retirement_transaction_rehearsed",
               (G8 / "grade8-legacy-retirement-rehearsal.json").is_file())
     OUT.mkdir(parents=True, exist_ok=True)
