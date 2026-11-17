@@ -10773,6 +10773,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Unit10 Lesson3, local Arabic Student Book PDF141-148.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS", "geometry.coordinate.distance_midpoint", "CARTESIAN_DISTANCE_AND_MIDPOINT",
+            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "geometry.coordinate_plane.axis_distance", "number.integers.absolute_distance"],
+            "UAE_G8_AR_U10L03_PDF141_148_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

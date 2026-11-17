@@ -2787,10 +2787,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:10:03",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 10 / Lesson 3",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 141–148; printed 753–760",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "UAE Arabic Student Book Term3 local 2019–2020",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "24701b1f12c95b6de7595ec438e8959d396f4dfd55d33bebb8085272a57ed795",
       "CanonicalBodySha256": "669c6af3bc76da906fbd4321eb9574582bfc67ab4decd1cc51cf7a65dd710dfd",
@@ -2798,7 +2798,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original first-party Arabic content, source goals and skill mapped; exact atomic item parity UNKNOWN, CI NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2809,6 +2809,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Distance and Midpoints, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Distance and Midpoints: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "المسافة ونقاط المنتصف",
+          "Explanation": "المسافة بين نقطتين A(س1،ص1) وB(س2،ص2) في مستوى الإحداثيات تنتج من مثلث قائم فرعاه فرق السينات وفرق الصادات، لذلك d=√((س2−س1)²+(ص2−ص1)²). أما نقطة المنتصف م فهي متوسط إحداثيي الطرفين: ((س1+س2)/2،(ص1+ص2)/2). إذا كان A=(-2،3) وB=(4،11)، فالفرق الأفقي6 والرأسي8، والمسافة10، ونقطة المنتصف (1،7). يربط الطالب ذلك بتحديد نقطة التقاء على خريطة شبكية، مع ملاحظة أن قراءة مواقع من خريطة جغرافية فعلية تحتاج مقياسًا مناسبًا وليست كل درجات خطوط الطول وحدات طول متساوية.",
+          "KeyConceptsAndRules": "d(A,B)=√((س2−س1)²+(ص2−ص1)²)، وم=((س1+س2)/2،(ص1+ص2)/2). لا يؤثر تبديل النقطتين في المسافة أو المنتصف. إن كانت ص1=ص2 فالقطعة أفقية وطولها |س2−س1|، وإن كانت س1=س2 فالطول الرأسي |ص2−ص1|. عند توسيط نقطة على خط الأعداد يكون م=(أ+ب)/2. إذا أعطي أحد الطرفين والمنتصف فيمكن إيجاد الطرف الآخر: س2=2س_m−س1، وص2=2ص_m−ص1. نقيس المسافة على مستوى مستوٍ بنظام إحداثي متسق الوحدات.",
+          "WorkedExamples": "مثال1: A=(-2،3)، B=(4،11)، المسافة√(6²+8²)=10، المنتصف(1،7). مثال2: A=(1،2)،B=(7،10)، المسافة10، المنتصف(4،6). مثال3: بين (−3،5) و(5،5) المسافة8، المنتصف(1،5). مثال4: بين (2،−4) و(2،6) المسافة10، المنتصف(2،1). مثال5: إذا كان المنتصف(3،4) وأحد الطرفين(−1،2)، فالطرف الثاني (7،6). مثال6: بين طرفي خط الأعداد عند -7 و5 منتصفها -1 ومسافتها12.",
+          "StepByStepSolutions": "أحدد إحداثيات الطرفين وأتأكد أن ترتيب كل زوج هو (س،ص). أحسب فرق السينات وفرق الصادات بالإشارة الصحيحة، وأربع كل فرق وأجمع ثم آخذ الجذر الرئيسي غير السالب للمسافة. أحسب منتصفًا منفصلاً بجمع السينات وتقسيم2، وجمع الصادات وتقسيم2. أختبر أن المسافة من المنتصف لكل طرف تساوي نصف المسافة الكلية، وأن الناتج في نطاق موضع النقطتين. عند وجود طرف مجهول أستعمل ضعف المنتصف ناقص الطرف المعروف. أكتب الوحدة إذا كانت المحاور تمثل قياسات مترية أو على خريطة.",
+          "CommonMistakes": "قد يجمع الطالب فروق الإحداثيات مباشرة بدلاً من أخذ مجموع المربعات والجذر. ولا يجوز أخذ متوسط السينات والصادات في زوج واحد من دون موازاة نظائرهما. المسافة لا تكون سالبة، لذا يستعمل الجذر غير السالب. إذا كانت النقطتان أفقيتين يمكن اختصار الصيغة إلى فرق سينات مطلق، لكن لا يطبق ذلك على خط مائل. لا يجب أن توجد إحداثيات المنتصف عند أعداد صحيحة دائمًا؛ قد تكون أنصافًا.",
+          "QuickSummary": "المسافة على المستوى تحسب بفيثاغورس، ونقطة المنتصف بمتوسط سينات الطرفين وصاداتهما. Cool-down أصلي: احسب المسافة ومنتصف A=(-1،4)،B=(5،12)، ثم إذا كان المنتصف(2،8) والطرف A=(-1،4) ما الطرف الآخر؟ يراجع المعلم الرسم واستراتيجية التحقق."
         }
       ]
     },
