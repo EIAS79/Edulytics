@@ -1712,10 +1712,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T2:UAEED:06:01",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T2 / Unit 6 / Lesson 1",
+      "SourceLocator": "Grade_08/01_Student_Books/02-5-7.pdf; PDF 89–96; printed 453–460",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Selected Arabic Grade8 General Term2 Student Book",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "533aabad21c0b9b526ea3ec3b2293e75dbb609a61e5ea461548a9333d29eb8df",
       "CanonicalBodySha256": "5d0f41242c5bf83782ca18895e9f03729cfe5d6c71232324e57233441d4492b1",
@@ -1723,7 +1723,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic authored source-aligned transformations; teacher to review coordinate diagrams; Stage D not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1734,6 +1734,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Translations, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Translations: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "الإزاحة",
+          "Explanation": "الإزاحة تحويل هندسي ينقل كل نقطة بالاتجاه نفسه والمسافة نفسها دون تدوير أو قلب. إذا كانت الإزاحة أربع وحدات يمينًا وثلاث وحدات إلى أسفل، تتحول النقطة (س،ص) إلى (س+4،ص−3). مثال: أ(−2،1) تصبح أ′(2،−2)، وب(3،5) تصبح ب′(7،2). تمتلك الصورة الأطوال وقياسات الزوايا نفسها لأن الإزاحة تحويل تطابق، وترتيب الرؤوس واتجاهها لا يتغيران. يمكن استنتاج متجه الإزاحة من نقطة وصورتها بطرح إحداثيي الأصل من إحداثيي الصورة. عند صناعة تحريك عنصر رسوم متحركة على شاشة الحاسوب، ينبغي أن يحصل كل رأس على المتجه نفسه دون اختلاف.",
+          "KeyConceptsAndRules": "الإزاحة بالمتجه (أ،ب): ت(س،ص)=(س+أ،ص+ب). أ موجب نحو اليمين وسالب نحو اليسار، وب موجب نحو الأعلى وسالب نحو الأسفل. إن عُرفت نقطة (−3،4) وصورتها (2،1)، فمتجه الإزاحة (5،−3). لكل رأس في مضلع نطبق المتجه نفسه؛ أ′ب′ يساوي أب طولاً، والزوايا المتناظرة متساوية. تركيب إزاحتين (أ،ب) و(ج،د) يساوي إزاحة واحدة (أ+ج،ب+د)، ولا نغيّر ترتيب الرؤوس عند توصيل الصور. إذا كانت الإزاحة صفراً فالشكل يبقى على وضعه.",
+          "WorkedExamples": "مثال1: أ(−2،1) بإزاحة (4،−3) تصبح (2،−2). مثال2: مثلث رؤوسه (1،1)،(4،1)،(1،3)، ينقل بمقدار (−2،5) إلى (−1،6)،(2،6)،(−1،8). مثال3: أ(−3،4) وصورتها (2،1) ⇒ المتجه (5،−3). مثال4: إزاحة (2،−1) ثم (−3،4) تعادل (−1،3). مثال5: طول ضلع 7 سم في الأصل يظل 7 سم في الصورة، وإن تغيرت إحداثيات الطرفين.",
+          "StepByStepSolutions": "أحدد نقطة من الشكل الأصلي وأحسب متجه الإزاحة المطلوب، أو أستخرجه من الفرق بين نقطة وصورتها. أسجل الرؤوس كلها في جدول واضح. أضيف المركبة الأفقية إلى كل س، والرأسية إلى كل ص بنفس الإشارتين. أرسم الرؤوس الجديدة على محاور ذات مقياس موحد ثم أوصلها وفق ترتيب المضلع الأصلي. أتحقق من تطابق أطوال الأضلاع والزوايا ومن أن متجه الفرق واحد لجميع الأزواج. إذا تعارض متجه رأس واحد مع باقي الرؤوس، أراجع إشارة السالب أو قراءة المحور.",
+          "CommonMistakes": "تطبيق الإزاحة على بعض الرؤوس فقط يحرف الشكل. لا تخلط (س+4،ص−3) مع (س−4،ص+3)؛ الاتجاه يحدده المتجه. الإزاحة لا تغير الحجم ولا تدير الشكل، فلا يجوز قبول صورة مقلوبة أو مكبرة. عند حساب متجه من الأصل للصورة نطرح الإحداثيات بالترتيب صورة ناقص أصل. وقد يكون اتجاه الإزاحة معاكساً لاتجاه رسم حركة سهم على محور معكوس التدريج؛ افحص تدريج المحور.",
+          "QuickSummary": "أستخدم ت(س،ص)=(س+أ،ص+ب) لنقل كل رؤوس الشكل بمتجه واحد، مع الحفاظ على الأطوال والزوايا. Cool-down أصلي: انقل النقطة (−3،2) بالمتجه (5،−4)، ثم انقل مثلثاً رؤوسه (0،0)،(2،0)،(0،3) بالمقدار نفسه. استنتج متجه إزاحة (1،2)→(−2،6). الرسم والمطابقة يراجعهما المعلم."
         }
       ]
     },

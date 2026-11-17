@@ -10564,6 +10564,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U05L07_PDF67_74_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General U06 L01; source PDF 89–96.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS", "geometry.coordinate_plane.plotting", "TRANSLATE_SHAPE_VECTOR_COORDINATE",
+            ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.axis_distance"],
+            "UAE_G8_AR_U06L01_PDF89_96_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
