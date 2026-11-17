@@ -103,9 +103,9 @@ def check_school_adoption():
       WHERE u."Email"='""" + STUDENT + """' AND s."SchoolCode"='""" + SCHOOL + """';
     """
     adoption, level, key, culture, pathway = one(q, "Grade8 Arabic student adoption").split("|", 4)
-    if not re.fullmatch(UUID, adoption) or level != "7" or culture != "ar" or pathway != "General":
+    if not re.fullmatch(UUID, adoption) or level != "8" or culture != "ar" or pathway != "General":
         raise AssertionError(f"UAE G8 adoption/culture/pathway mismatch: {level}/{culture}/{pathway}")
-    if "UAE" not in key.upper() and "7" not in key:
+    if "UAE" not in key.upper() or "08" not in key:
         raise AssertionError("UAE G8 adoption key not UAE Grade 8")
     return adoption, key
 
@@ -240,7 +240,7 @@ def run():
         "candidateSha": os.environ["GITHUB_SHA"],
         "testedRefKind": os.environ.get("GITHUB_EVENT_NAME"),
         "curriculum": "UAE-MOE-MATH",
-        "grade": 7,
+        "grade": 8,
         "pathway": "General",
         "academicLanguage": "ar",
         "sourceEditionParity": "UNVERIFIED",
@@ -261,7 +261,7 @@ def run():
         "lessons": records,
     }
     OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("UAE_G8_76_AUTH_HTTPS_384_PRACTICE_ATTEMPTS_PASS", flush=True)
+    print("UAE_G8_76_AUTH_HTTPS_228_PRACTICE_ATTEMPTS_PASS", flush=True)
 
 
 if __name__ == "__main__":
