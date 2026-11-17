@@ -10798,6 +10798,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U11L04_LOCAL_PDF203_209",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic U11L05, source Student Book PDF 210-218.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES", "geometry.quadrilaterals.attributes", "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
+            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification", "usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"],
+            "UAE_G8_AR_U11L05_LOCAL_PDF210_218",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
