@@ -1196,10 +1196,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:04:05",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 4 / Lesson 5",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 342–351; printed 309–318",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Owner-selected Arabic Student Book 2025–2026 (local)",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "0c53f89d1661f04df6a0d6bf7798f5ca23708792f5681d80ac8f3eaa1e86058b",
       "CanonicalBodySha256": "8932c9561a2d7807cf28710208ce04165e67fc3231926492478fa853b3cbc3b3",
@@ -1207,7 +1207,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic source-aligned correction; exact publisher task parity not verified; runtime and CI not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1218,6 +1218,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Comparing Properties of Functions, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Comparing Properties of Functions: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "مقارنة خصائص الدوال",
+          "Explanation": "لمقارنة دالتين خطيتين قد تعرض إحداهما بجدول والأخرى برسم أو بمعادلة. نقارن الميل م، وهو التغير في الناتج لكل زيادة وحدة في المدخل، ونقارن المقطع الرأسي ب أي قيمة الدالة عندما س=0. مثلاً د(س)=5س و هـ(س)=3س+12: الدالة د أسرع زيادة لأن معدلها 5 أكبر من 3، لكن هـ تبدأ بقيمة أعلى. تتساوى الدالتان عندما 5س=3س+12، أي عند س=6 والناتج 30. المقارنة بين رسوم خدمات متغيرة بالزمن أو معدلات جمع تبرعات تحتاج بيان الوحدات، والمستوى الابتدائي، ومتى تصبح إحدى الدالتين أكبر من الأخرى. لا يمكن الحكم من القيمة النهائية وحدها على أي معدل تغير أكبر.",
+          "KeyConceptsAndRules": "إذا كانت د(س)=م₁س+ب₁ و هـ(س)=م₂س+ب₂، قارِن الميلين م₁،م₂ والمقطعين ب₁،ب₂، وحل م₁س+ب₁=م₂س+ب₂ إن طُلبت نقطة التساوي. عند م₁≠م₂ يكون س=(ب₂−ب₁)/(م₁−م₂)، ثم ص=د(س). عند تساوي الميلين واختلاف المقطعين لا تلتقي الدالتان، وعند تطابق الميلين والمقطعين تتساويان لكل س. إذا كانت الدالة معطاة بجدول احسب (فرق ص)/(فرق س) ولا تفترض أن ص/س هو المعدل عند ب≠0. يجب تفسير المقاطع السالبة في سياق التكلفة والحدود المسموح بها.",
+          "WorkedExamples": "مثال1: د(س)=5س و هـ(س)=3س+12؛ الأولى ميلها 5 والثانية ميلها 3، والتساوي عند س=6 حيث الناتج 30. مثال2: جدول د يوضح س=1،2،3 وص=20،28،36، فيكون الميل 8 والمقطع 12. مقارنة بدالة هـ(س)=10س+4: الثانية أسرع زيادة بمقدار 2 لكل وحدة، والتساوي عندما 8س+12=10س+4 عند س=4. مثال3: تكلفة صيانة أ تبدأ 50 وتزيد 15 لكل زيارة، وب تبدأ 20 وتزيد 20؛ تتساويان بعد 6 زيارات عند 140. مثال4: مخرجات 35 و50 و65 عند س=1،2،3 تعني معدل 15 لا 35. مثال5: إذا كانت الزيادات في الرسم 4 كل ساعتين فالميل 2 في الساعة.",
+          "StepByStepSolutions": "أسجل صيغة كل دالة أو أستخرج من تمثيلها زوجين لأحسب الميل. أحدد نقطة س=0 أو أستخدم ب=ص−م س لإيجاد القيمة الابتدائية. أضع جدول مقارنة: الميل، المقطع، نوع التغير، ومجال السياق. إذا أردت زمن التساوي أساوي المعادلتين وأحل س ثم أتحقق في الطرفين. إذا وجدت الدالة الأسرع ابتداءً أقل، فلا أقول إنها الأكبر دائمًا؛ أحدد نقطة التقاطع ثم أقارن قبلها وبعدها. أشرح بالكلمات معنى الفرق بين التغير المستمر والمبلغ الأولي.",
+          "CommonMistakes": "مقارنة أعلى قيمة في الرسم دون توحيد مقاييس المحاور قد تؤدي لاستنتاج خاطئ. الميل ليس نفس المقطع الرأسي، ومبلغ البداية الأعلى لا يعني معدل زيادة أعلى. لا تقارن 5 دراهم/ساعة و8 دراهم/يوم من غير تحويل الوحدات. إذا كان الميلان متساويين فلا تقسم على صفر عند حل نقطة التساوي؛ بل صنّف الدالتين. قراءة قيمة من الرسم قد تكون تقريبية، ويفضل حساب التساوي بدقة عند توفر قواعد الدوال.",
+          "QuickSummary": "أقارن الدوال الخطية بواسطة ميلها ومقطعها وبدايتها ونقطة تساويها مع توحيد الوحدات. Cool-down أصلي: (1) قارن د(س)=4س+15 و هـ(س)=6س+5. (2) متى تتساويان؟ (3) إذا كان جدول د يزيد 18 خلال 3 وحدات، احسب معدل التغير. (4) فسّر كيف تكون الدالة الأعلى بداية أقل بعد زمن طويل. يراجع المعلم المبررات والتمثيلات."
         }
       ]
     },

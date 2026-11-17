@@ -10468,6 +10468,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U04L04_PDF328_337_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade 8 General Unit04 L05, original Arabic Student Book PDF 342-351.
+        // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS", "functions.compare.intersection_and_rate", "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
+            ["functions.graph.key_features", "functions.multiple_representations", "functions.average_rate_of_change", "functions.compare.intersection_and_rate"],
+            "UAE_G8_GENERAL_AR_U04L05_PDF342_351_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
