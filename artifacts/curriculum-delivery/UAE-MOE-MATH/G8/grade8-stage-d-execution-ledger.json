@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "pathway": "General",
+  "targetSchoolYear": "2026-2027",
+  "scope": {
+    "unitCount": 12,
+    "lessonCount": 76,
+    "academicLanguage": "ar",
+    "rtl": true
+  },
+  "observedABCHeadSha": "ca13285d74c62bca54db637524d73dbe4dfa0794",
+  "finalCandidateSha": null,
+  "ciRefKind": null,
+  "abcReadyLessons": 76,
+  "stageDVerifiedLessons": 0,
+  "firstIncompleteLessonOrdinal": 1,
+  "stageDStatus": "D_RELEASABLE_SOURCE_WITH_TECHNICAL_CUTOVER_PENDING",
+  "technicalReleaseReady": false,
+  "knownReleaseBlockers": [
+    "CROSS_EDITION_CROSSWALK_UNVERIFIED",
+    "ATOMIC_SOURCE_PARITY_UNKNOWN",
+    "AUTHENTICATED_RTL_E2E_NOT_RUN",
+    "FINAL_CI_NOT_PASSED",
+    "ISOLATED_PG_AUTHENTICATED_E2E_NOT_RUN",
+    "PRODUCTION_PRE_CUTOVER_BACKUP_BLOCKED_BY_NEON_QUOTA",
+    "LEGACY_12_05_PRODUCTION_ACTUAL_RETIREMENT_PENDING",
+    "PRODUCTION_BACKUP_OR_RESTORE_PLAN_NEEDS_CAPACITY"
+  ],
+  "productionReadOnlyInventory": {
+    "readDate": "2026-11-17",
+    "database": "Edulytiks / production (Neon)",
+    "grade8GeneralLessons": 77,
+    "grade8AdvancedLessons": 77,
+    "legacyLessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS",
+    "legacyCurriculumLessonContents": 1,
+    "legacyPracticeAttempts": 0,
+    "legacyAssessmentItems": 0,
+    "legacyAdaptivePracticeSessions": 0,
+    "legacyAdaptivePracticeShadowObservations": 0,
+    "legacyPedagogicalLessonOutcomes": 0,
+    "grade8GeneralAdoptions": 2,
+    "productionMutated": false,
+    "protectiveBackupAttempt": "NEON_BRANCH_AND_SNAPSHOT_QUOTAS_EXCEEDED",
+    "externalDestructiveChangePerformed": false,
+    "legacyRetirementRehearsal": "PASS_SAVEPOINT_ROLLBACK_NO_PERSISTED_DELETE"
+  },
+  "authorization": {
+    "academicOwnerGrade8ApprovalRecorded": true,
+    "rightsClearanceVerified": false,
+    "productionReleaseApproved": true,
+    "productionReleaseCondition": "OWNER_AUTHORIZED_ONLY_AFTER_TECHNICAL_CI_SAFE_CUTOVER"
+  },
+  "lastNodeTestEvidence": {
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
+    "passed": 221,
+    "failed": 0,
+    "total": 221,
+    "scope": "Local Node unit and Grade8 source76 test suite"
+  },
+  "richV2ContractAudit": {
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
+    "previousInvalid": 74,
+    "remediatedFromExistingCanonical": 66,
+    "structurallyValidRichV2": 76,
+    "runtimeSchemaAudit": "PASS_LOCAL",
+    "limitations": "Source-derived structural supplements, not independent review of 76 individual mathematical solution sets"
+  },
+  "lastDotnetTestEvidence": {
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
+    "workflowRunId": 44089493108,
+    "passed": 66,
+    "failed": 0,
+    "total": 66,
+    "build": "Release 0 errors"
+  },
+  "semanticHashReconciliation": {
+    "candidateSha": "67cc341f1111dcc76335b6f8daf0dd28308a8705",
+    "graphSha256": "3d0ce7678b3adb2bcb5c206d06d7e3ca777ad97812781e6a327cbf57e79c3109",
+    "lessonFingerprints": 76,
+    "unitFingerprints": 12,
+    "status": "CHECK_REPRODUCIBLE"
+  }
+}

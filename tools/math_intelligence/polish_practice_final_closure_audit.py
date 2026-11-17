@@ -208,9 +208,23 @@ def audit() -> dict[str, Any]:
             "UAE Grade7 General must be exactly 62 old or 78 approved "
             f"Arabic lessons, got {grade7_count}"
         )
+    # Grade8 General uses exactly 77 historical English lesson identities
+    # or the owner's approved 76 Arabic lessons. No other G8 pathway, G7
+    # lesson, Polish outcome, or curriculum identity may change here.
+    grade8_general_prefix = "PED:UAE-MOE-MATH:L8:GENERAL:"
+    grade8_general_count = sum(
+        str(row.get("lessonCode") or "").startswith(grade8_general_prefix)
+        for row in rows
+    )
+    if grade8_general_count not in (77, 76):
+        blockers.append(
+            "UAE Grade8 General must be exactly 77 old or 76 approved "
+            f"Arabic lessons, got {grade8_general_count}"
+        )
     expected_catalogue_count = (
         5110 - 93 + grade4_count + grade12_count
         - 59 + grade6_count - 62 + grade7_count
+        - 77 + grade8_general_count
     )
     required_global = {
         "lessonCount": expected_catalogue_count,

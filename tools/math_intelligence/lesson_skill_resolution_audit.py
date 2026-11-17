@@ -44,6 +44,13 @@ G7_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-
 G7_SOURCE_INDEX = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/source-index.json"
 G7_APPROVAL = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G7/grade7-owner-academic-approval.json"
 
+G8_PREFIX = "PED:UAE-MOE-MATH:L8:GENERAL:"
+G8_CONTENT = CONTENT_DIR / "uae-g8-general-t1-ogl-v1.lesson-content-pack.json"
+G8_BLUEPRINT = ROOT / "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/uae-g8-general-t1-ogl-v1.lesson-blueprint.json"
+G8_APPROVAL = ROOT / "artifacts/curriculum-delivery/UAE-MOE-MATH/G8/grade8-owner-academic-approval.json"
+G8_CONTRACTS = ROOT / "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
+
+
 
 
 
@@ -280,6 +287,67 @@ def owner_approved_g7_declared_practice() -> dict[str, str]:
             mapped[code] = skill
         return mapped if set(mapped) == set(ccodes) else {}
     except (OSError, TypeError, ValueError, KeyError, json.JSONDecodeError):
+        return {}
+
+
+def owner_approved_g8_declared_practice() -> dict[str, str]:
+    """Check all G8 General owner-approved first-party C# Practice declarations.
+
+    Only exact 76 lesson codes and 76 registered, routable generation-family
+    sets may bypass generic Supporting-rule discovery. This is NOT evidence
+    of textbook exercise parity; the real runtime/HTTPS tests remain mandatory.
+    """
+    inputs = (G8_CONTENT, G8_BLUEPRINT, G8_APPROVAL, G8_CONTRACTS,
+              G4_FAMILIES, G4_SKILLS)
+    if not all(p.is_file() for p in inputs):
+        return {}
+    try:
+        content, blueprint, approval = (read_json(p) for p in (
+            G8_CONTENT, G8_BLUEPRINT, G8_APPROVAL))
+        skills = {row["id"] for row in read_json(G4_SKILLS)["skills"]}
+        families = {row["id"]: row for row in read_json(G4_FAMILIES)["families"]}
+        declared = G8_CONTRACTS.read_text(encoding="utf-8-sig")
+        ccodes = [row["LessonCode"] for row in content["Lessons"]]
+        bcodes = [row["LessonCode"] for row in blueprint["Lessons"]]
+        if not (
+            ccodes == bcodes and len(ccodes) == len(set(ccodes)) == 76
+            and all(code.startswith(G8_PREFIX) for code in ccodes)
+            and not any(":12:05:" in code for code in ccodes)
+            and len(blueprint["Units"]) == 12
+            and content.get("PackCode") == blueprint.get("PackCode") == "UAE-MOE-MATH"
+            and content.get("VersionCode") == blueprint.get("VersionCode") == "MOE-2026-2027-T1"
+            and content.get("AcademicLanguage") == "ar"
+            and content.get("Status") == "Published"
+            and blueprint.get("LogicalLevel") == approval.get("grade") == 8
+            and blueprint.get("Pathway") == approval.get("pathway") == "General"
+            and approval.get("ownerAcademicApproval") is True
+            and approval.get("ownerPermissionToProceedToReleaseGates") is True
+            and approval.get("ownerFirstPartyAuthorshipRepresentation") is True
+            and approval.get("sourceEditionIdentityClaim") == "NONE"
+            and approval.get("originalPublisherElementParity") == "NOT_INDEPENDENTLY_VERIFIED"
+            and approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False
+        ):
+            return {}
+        declaration = re.compile(
+            r'byLesson\["(PED:UAE-MOE-MATH:L8:GENERAL:[^"]+)"\]\s*'
+            r'=\s*new LessonPracticeContract\(\s*"([^"]+)",\s*'
+            r'"([^"]+)",\s*"([^"]+)",\s*\[([^\]]+)\]', re.S)
+        rows = declaration.findall(declared)
+        if len(rows) != 76:
+            return {}
+        mapped: dict[str, str] = {}
+        for code, declared_code, skill, mechanic, family_text in rows:
+            family_ids = re.findall(r'"([^"]+)"', family_text)
+            if (code != declared_code or code not in ccodes or
+                code in mapped or not mechanic or
+                skill not in skills or not family_ids or
+                any(f not in families or
+                    families[f].get("lessonPracticeRouting") is not True
+                    for f in family_ids)):
+                return {}
+            mapped[code] = skill
+        return mapped if set(mapped) == set(ccodes) else {}
+    except (KeyError, TypeError, OSError, ValueError, json.JSONDecodeError):
         return {}
 
 
@@ -610,7 +678,8 @@ def audit() -> dict[str, Any]:
     rules, scores, rule_errors = load_rules(skill_ids)
     g6_owner_skills = owner_approved_g6_declared_practice()
     g7_owner_skills = owner_approved_g7_declared_practice()
-    owner_declared_skills = {**g6_owner_skills, **g7_owner_skills}
+    g8_owner_skills = owner_approved_g8_declared_practice()
+    owner_declared_skills = {**g6_owner_skills, **g7_owner_skills, **g8_owner_skills}
 
     summary = Counter()
     by_pack: dict[str, Counter] = defaultdict(Counter)
@@ -720,7 +789,9 @@ def audit() -> dict[str, Any]:
                     "titleMatched": True,
                     "evidence": [{
                         "type": (
-                            "OwnerApprovedGrade7ExactPracticeContract"
+                            "OwnerApprovedGrade8ExistingEngineScopedPracticeContract"
+                            if code in g8_owner_skills
+                            else "OwnerApprovedGrade7ExactPracticeContract"
                             if code in g7_owner_skills
                             else "OwnerApprovedGrade6ExactPracticeContract"
                         ),
@@ -787,6 +858,9 @@ def audit() -> dict[str, Any]:
     g7_seen = {code for code in seen_lessons if code.startswith(G7_PREFIX)}
     if g7_seen and g7_seen != set(g7_owner_skills):
         blockers.append("G7 78 owner-approved first-party exact Practice contracts not fully bound to canonical skills/families")
+    g8_seen = {code for code in seen_lessons if code.startswith(G8_PREFIX)}
+    if g8_seen and g8_seen != set(g8_owner_skills):
+        blockers.append("G8 76 owner-approved first-party lesson Practice contracts missing or unregistered")
     g4_seen = {c for c in seen_lessons if c.startswith(G4_PREFIX)}
     if g4_seen and certified_grade4 != g4_seen:
         blockers.append("G4 132 source-specific exact Practice contracts missing, altered or unverified")
@@ -833,6 +907,7 @@ def audit() -> dict[str, Any]:
     summary["grade4IndependentExactPracticeContracts"] = len(certified_grade4)
     summary["grade6OwnerApprovedFirstPartyDeclaredPracticeMappings"] = len(g6_owner_skills)
     summary["grade7OwnerApprovedFirstPartyDeclaredPracticeMappings"] = len(g7_owner_skills)
+    summary["grade8OwnerApprovedFirstPartyDeclaredPracticeMappings"] = len(g8_owner_skills)
     summary["ruleCount"] = len(rules)
     summary["skillRegistryCount"] = len(skill_ids)
     summary["blockerCount"] = len(blockers)

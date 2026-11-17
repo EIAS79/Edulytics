@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "pathway": "General",
+  "sourceRoot": "C:\\Users\\khali\\Downloads\\New folder (2)\\emirates\\Grade_08\\01_Student_Books",
+  "verifiedSource": {
+    "file": "03-9-12.pdf",
+    "edition": "2019–2020 Grade 8 General Arabic Student Book, term 3",
+    "pdfPagesReviewed": [
+      1,
+      2,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289
+    ],
+    "lastLesson": "U12:L04 — استخدام المجموعات لحل المسائل",
+    "lastLessonPdfPages": [
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284
+    ],
+    "afterLastLesson": "12-4 exercises, unit review, unit assessment, projects; no fifth numbered lesson in owner-selected book"
+  },
+  "baseline": {
+    "legacy": 77,
+    "blueprint": 77,
+    "manifest": 77,
+    "en": 77
+  },
+  "result": {
+    "sourceSelectedLessonCount": 76,
+    "unitCount": 12,
+    "unit12LessonCount": 4,
+    "originalArabicLessons": 76,
+    "remainingEnglishTranslations": 0,
+    "removedLegacyCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS"
+  },
+  "removed": {
+    "code": "PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS",
+    "reason": "not present in controlling owner-selected local Student Book Unit12 index; retained in audit record only",
+    "englishTranslationCountInRemainingLessons": 76
+  },
+  "changes": [
+    "Retired source-unsupported extra lesson from candidate blueprint and content pack and manifest (no production DB mutation).",
+    "Removed 76 obsolete English translations from Grade8 General candidate, retained authored Arabic bodies and original lesson codes.",
+    "Changed only Grade8 General pack AcademicLanguage en to ar.",
+    "Aligned all manifest lesson titles and blueprint UnitTitle fields with Arabic source-index names.",
+    "Replaced obsolete UK Key Stage3 source scaffolding labels with owner-selected UAE Arabic Student Book basis.",
+    "Preserved source code lesson IDs, order 1–76, unchanged numeric practice engines."
+  ],
+  "productionCaveat": "No Neon production deletion, student attempts migration, adoption remap, CI, JSON schema validator, runtime probe, or deployment has been performed",
+  "stageDRequirements": [
+    "Inspect production Grade8 general enrollments/attempts/assignments referencing legacy 12:05 before retirement.",
+    "Perform migration on a controlled transaction with reversible backup for legacy lesson data.",
+    "Recompute legacy SemanticGraphSha256 and unit SemanticSha256 against new 76-lesson source graph.",
+    "Validate 76 Arabic lessons on rendered RTL student pages; check missing translation fallback and objective-specific activities.",
+    "Run exact-head StageD CI, content validators, math grading invariants, database seed/migrations, regression on Grade8 Advanced and US-CCSS.",
+    "Only then allow deployment/publish."
+  ],
+  "integrityStatus": "STATIC_JSON_STRUCTURE_AND_COUNTS_CHECKED_IN_TOOL; TESTS_NOT_RUN; STAGE_D_NOT_RUN"
+}

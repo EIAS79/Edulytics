@@ -81,7 +81,7 @@ def main():
         for key, val in (
             ("approvedArabicLessonCount", 78),
             ("canonicalMetadataCount", 78),
-            ("unrelatedRecordsPreserved", 5156),
+            ("unrelatedRecordsPreserved", 5155),
             ("independentRunCount", 2),
             ("otherGradeDataChanged", False),
             ("productionDatabaseWritten", False),

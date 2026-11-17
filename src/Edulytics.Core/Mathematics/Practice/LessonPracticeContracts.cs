@@ -10228,6 +10228,669 @@ public static class LessonPracticeContractRegistry
             "PED:UAE-MOE-MATH:L6:GENERAL:12:09:STUDENT-AR-128","statistics.data.g6.unit","GRADE6_UNIT_STATISTICS",
             ["uae.g6.u12.l09.choose_unit","uae.g6.u12.l09.choose_tool"],"LOCAL_G6_03_PDF261_268_PRINT933_940",
             "READY_VERIFIED",Version);
+        // UAE G8 General local Arabic Student Book 2025-2026 U01 L01, print 7-14.
+        // Reuse exact terminating-decimal/fraction families; repeating proofs
+        // and open classification require teacher review, not false auto-grade.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:01:RATIONAL-NUMBERS", "decimals.place_value",
+            "RATIONAL_TERMINATING_DECIMAL_EQUIVALENCE",
+            ["uae.g4.u10.l04.decimal_to_hundredths",
+             "uae.g5.u07.l03.simplify_fraction",
+             "uae.g5.u07.l08.reducible_fraction_to_decimal"],
+            "UAE_G8_GENERAL_AR_2025_2026_U01L01_PP7_14",
+            "READY_VERIFIED", Version)
+        { SkillIds = ["decimals.place_value", "fractions.equivalent"] };
+
+        // UAE G8 Arabic Student Book lesson 2, PDF48–55, printed 15–22.
+        // Reuse G6 exact numeric powers; open justifications stay teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:02:POWERS-AND-EXPONENTS", "number.exponents.positive_integer",
+            "POWER_BASE_EXPONENT_REPEATED_PRODUCTS_DECIMAL_FRACTION",
+            ["uae.g6.u06.l02.repeated_to_power", "uae.g6.u06.l02.integer_power", "uae.g6.u06.l02.decimal_power", "uae.g6.u06.l02.fraction_power", "uae.g6.u06.l02.ten_power", "uae.g6.u06.l02.power_addition"],
+            "UAE_G8_GENERAL_AR_2025_2026_U01L02_PP15_22",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General U01L03, local Arabic Student Book PDF 56-63.
+        // Reuse existing algebraic/numeric families. Variable-proof/geometry
+        // responses are teacher scored; do not claim exact symbolic runtime parity.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:03:MULTIPLYING-AND-DIVIDING-MONOMIALS", "supporting.algebra.expressions", "MONOMIAL_SAME_BASE_PRODUCT_AND_QUOTIENT",
+            ["supporting.algebra.simplify", "supporting.algebra.expand", "supporting.powers10.multiply", "supporting.powers10.divide"],
+            "UAE_G8_AR_U01L03_LOCAL_PDF56_63",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General U01L04, local Arabic Student Book PDF 64-71.
+        // Reuse existing algebraic/numeric families. Variable-proof/geometry
+        // responses are teacher scored; do not claim exact symbolic runtime parity.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:04:POWERS-OF-MONOMIALS", "supporting.algebra.expressions", "POWER_OF_POWER_PRODUCT_AND_QUOTIENT_MONOMIAL",
+            ["supporting.algebra.expand", "supporting.algebra.simplify", "uae.g6.u06.l02.integer_power", "uae.g6.u06.l02.fraction_power"],
+            "UAE_G8_AR_U01L04_LOCAL_PDF64_71",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Arabic U01L05; local PDF 76–83.
+        // Reuse supported numerical families; teacher reviews open justification.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:05:NEGATIVE-EXPONENTS", "supporting.indices.roots_standard_form", "ZERO_AND_NEGATIVE_INTEGER_EXPONENTS",
+            ["supporting.powers10.evaluate", "supporting.powers10.divide", "supporting.powers10.missing_exponent"],
+            "UAE_G8_AR_U01L05_PDF76_83",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Arabic U01L06; local PDF 84–91.
+        // Reuse supported numerical families; teacher reviews open justification.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:06:SCIENTIFIC-NOTATION", "supporting.indices.roots_standard_form", "SCIENTIFIC_NOTATION_NORMALIZED_DECIMAL_AND_TEN_POWER",
+            ["supporting.standard_form.power10_exponent", "supporting.powers10.evaluate", "supporting.powers10.missing_exponent"],
+            "UAE_G8_AR_U01L06_PDF84_91",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General U01L07; local Arabic source PDF 92–99.
+        // Reuse established numeric family; handwritten proof/diagram teacher scored.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:07:COMPUTING-WITH-SCIENTIFIC-NOTATION"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:07:COMPUTING-WITH-SCIENTIFIC-NOTATION", "supporting.indices.roots_standard_form", "SCIENTIFIC_NOTATION_MULTIPLY_DIVIDE_ADD_SUBTRACT",
+            ["supporting.standard_form.power10_exponent", "supporting.powers10.multiply", "supporting.powers10.divide", "supporting.algebra.expressions.mixed"],
+            "UAE_G8_AR_U01L07_PDF92_99",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General U01L08; local Arabic source PDF 104–111.
+        // Reuse established numeric family; handwritten proof/diagram teacher scored.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:08:ROOTS", "number.exponents.positive_integer", "PERFECT_SQUARE_AND_CUBE_ROOTS_REAL_DOMAIN",
+            ["uae.g6.u06.l02.perfect_square", "usccss.g6.u01.l17.original_square_cube_values", "uae.g6.u06.l04.cube_volume"],
+            "UAE_G8_AR_U01L08_PDF104_111",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 Arabic U01L09, PDF 114–121.
+        // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:09:ESTIMATING-ROOTS", "number.exponents.positive_integer", "SQUARE_CUBE_ROOT_ESTIMATION_USING_PERFECT_POWERS",
+            ["uae.g6.u06.l02.perfect_square", "supporting.algebra.quadratic_larger_root", "usccss.g6.u01.l17.original_square_cube_values"],
+            "UAE_G8_AR_U01L09_PDF114_121",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 Arabic U01L10, PDF 122–129.
+        // Reuse eligible math families; nontrivial irrational proof/visual graded by teacher.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:01:10:COMPARING-REAL-NUMBERS", "number.rational.signed_number_line", "REAL_NUMBER_CLASSIFICATION_AND_ORDERING_APPROXIMATION",
+            ["uae.g6.u05.l09.compare_mixed_signed_rationals", "fractions.compare.unlike.common_denominator", "uae.g4.u10.l08.decimal_compare"],
+            "UAE_G8_AR_U01L10_PDF122_129",
+            "READY_VERIFIED", Version) { SkillIds = ["number.rational.signed_number_line", "number.rational.signed_comparison_order", "fractions.compare.unlike_denominators", "decimals.compare"] };
+
+        // UAE Grade 8 General Arabic U02:L01, owner-selected Student Book PDF 144–151.
+        // Reuse numeric equation families only; written equivalence and visual
+        // balance proofs are teacher reviewed. Stage D runtime checks NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS", "supporting.algebra.equations", "ONE_STEP_RATIONAL_COEFFICIENT_LINEAR_EQUATION",
+            ["usccss.g7.u05.rational_linear_equation", "usccss.number.signed_rational_divide", "supporting.algebra.equations.mixed"],
+            "UAE_G8_AR_U02L01_PDF144_151",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic U02:L02, owner-selected Student Book PDF 154–161.
+        // Reuse numeric equation families only; written equivalence and visual
+        // balance proofs are teacher reviewed. Stage D runtime checks NOT_RUN.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS", "algebra.linear.solve", "TWO_STEP_LINEAR_AX_PLUS_B_EQUALS_C",
+            ["algebra.linear.ax_plus_b_equals_c", "supporting.algebra.equations.mixed", "supporting.algebra.expand"],
+            "UAE_G8_AR_U02L02_PDF154_161",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General owner-selected Arabic Student Book U02:L03, PDF162–169.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:03:WRITING-TWO-STEP-EQUATIONS", "supporting.algebra.equations", "TRANSLATE_WORD_CONTEXT_TO_TWO_STEP_EQUATION",
+            ["usccss.g7.u02.l08.classify_equations", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_U02L03_LOCAL_PDF162_169",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General owner-selected Arabic Student Book U02:L04, PDF178–185.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:04:SOLVING-EQUATIONS-WITH-VARIABLES-ON-EACH-SIDE", "algebra.linear.solve", "LINEAR_EQUATION_VARIABLES_ON_BOTH_SIDES",
+            ["supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c", "supporting.algebra.simplify"],
+            "UAE_G8_U02L04_LOCAL_PDF178_185",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General owner-selected Arabic Student Book U02:L05, PDF186–193.
+        // Reuse exact numeric canonical forms; story modeling and symbolic
+        // proof beyond existing families remain teacher-reviewed in Stage A-C.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:02:05:SOLVING-MULTI-STEP-EQUATIONS", "supporting.algebra.equations", "MULTI_STEP_DISTRIBUTIVE_LINEAR_EQUATIONS_AND_SOLUTION_COUNT",
+            ["supporting.algebra.expand", "supporting.algebra.simplify", "supporting.algebra.equations.mixed", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_U02L05_LOCAL_PDF186_193",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General U03 L01; local Student Book PDF204-211.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:01:CONSTANT-RATE-OF-CHANGE", "ratio.unit_rate", "CONSTANT_RATE_OF_CHANGE_FROM_TABLE_GRAPH_CONTEXT",
+            ["ratio.unit_rate.direct", "ratio.unit_rate.equivalent_ratio", "usccss.g6.u03.l07.unit_rate_equivalence", "usccss.g7.u02.l10.graphs_origin_slope"],
+            "UAE_G8_GENERAL_AR_U03L01_PDF204_211",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General U03 L02; local Student Book PDF214-221.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:02:SLOPE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:02:SLOPE", "proportions.equivalent_ratios", "SLOPE_FROM_POINTS_TABLE_AND_GRAPH",
+            ["usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule", "algebra.linear.standard_form.slope_intercept"],
+            "UAE_G8_GENERAL_AR_U03L02_PDF214_221",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General U03 L03; local Student Book PDF222-231.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:03:EQUATIONS-IN-Y-MX-FORM", "algebra.relationships.two_unknowns", "DIRECT_VARIATION_Y_EQUALS_MX_GRAPH_AND_UNIT_RATE",
+            ["algebra.modeling.linear_relationship.select_equation", "usccss.g7.u02.l10.graphs_origin_slope", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L03_PDF222_231",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General U03 L04; local Student Book PDF232-239.
+        // Reuse existing exact numeric families; diagrams and prose justification
+        // need teacher review. No runtime/CI claims until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:04:SLOPE-INTERCEPT-FORM", "functions.graph.sample.coordinates", "SLOPE_INTERCEPT_Y_EQUALS_MX_PLUS_B_GRAPH",
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.y_intercept_from_rule", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L04_PDF232_239",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic U03 L05, local Student Book PDF 242-249.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:05:GRAPHING-A-LINE-USING-INTERCEPTS", "geometry.coordinate.straight_line", "undefined",
+            ["geometry.coordinate.y_intercept_from_rule", "algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L05_PDF242_249",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic U03 L06, local Student Book PDF 254-261.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:06:WRITING-LINEAR-EQUATIONS", "functions.graph.sample.coordinates", "undefined",
+            ["algebra.linear.standard_form.slope_intercept", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U03L06_PDF254_261",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic U03 L07, local Student Book PDF 266-275.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:07:SOLVING-SYSTEMS-OF-EQUATIONS-BY-GRAPHING", "algebra.linear.systems.two_by_two.solve", "TWO_LINE_INTERSECTION_GRAPH_SYSTEM_CLASSIFICATION",
+            ["algebra.linear.systems.solution_count.classify"],
+            "UAE_G8_GENERAL_AR_U03L07_PDF266_275",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic U03 L08, local Student Book PDF 276-283.
+        // Reuse existing practice families, with graph precision and open
+        // reasoning subject to human review. No CI/runtime verification yet.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:03:08:SOLVING-SYSTEMS-OF-EQUATIONS-ALGEBRAICALLY", "algebra.linear.systems.two_by_two.solve", "TWO_BY_TWO_LINEAR_SYSTEM_SUBSTITUTION_ELIMINATION",
+            ["algebra.linear.systems.two_by_two.integer_coefficients", "algebra.linear.systems.solution_count.classify", "algebra.linear.ax_plus_b_equals_c"],
+            "UAE_G8_GENERAL_AR_U03L08_PDF276_283",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic local Student Book U04:L01, PDF300–309.
+        // Reuse existing exact numeric/table families. Open diagrams,
+        // equivalence and conceptual explanation teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:01:REPRESENTING-RELATIONS", "functions.multiple_representations", "REPRESENT_LINEAR_RELATION_TABLE_GRAPH_EQUATION_WORDS",
+            ["algebra.modeling.linear_relationship.select_equation"],
+            "UAE_G8_GENERAL_U04L01_PDF300_309",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic local Student Book U04:L02, PDF310–317.
+        // Reuse existing exact numeric/table families. Open diagrams,
+        // equivalence and conceptual explanation teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:02:RELATIONS", "supporting.functions.core", "RELATION_ORDERED_PAIRS_DOMAIN_RANGE_MAPPING_GRAPH",
+            ["functions.table.lookup.invert"],
+            "UAE_G8_GENERAL_U04L02_PDF310_317",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Arabic local Student Book U04:L03, PDF320–327.
+        // Reuse existing exact numeric/table families. Open diagrams,
+        // equivalence and conceptual explanation teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:03:FUNCTIONS", "supporting.functions.core", "FUNCTION_DEFINITION_NOTATION_INPUT_OUTPUT_VERTICAL_LINE",
+            ["functions.relations.unique_output.classify", "functions.notation.evaluate_context"],
+            "UAE_G8_GENERAL_U04L03_PDF320_327",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Unit04 L04, original Arabic Student Book PDF 328-337.
+        // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:04:LINEAR-FUNCTIONS", "geometry.coordinate.straight_line", "LINEAR_FUNCTION_RULE_TABLE_GRAPH",
+            ["geometry.coordinate.evaluate_linear_rule", "algebra.linear.standard_form.slope_intercept"],
+            "UAE_G8_GENERAL_AR_U04L04_PDF328_337_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade 8 General Unit04 L05, original Arabic Student Book PDF 342-351.
+        // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:05:COMPARING-PROPERTIES-OF-FUNCTIONS", "proportions.equivalent_ratios", "COMPARE_FUNCTIONS_RATE_START_INTERSECTIONS_MULTIREPRESENTATIONS",
+            ["usccss.g7.u02.l12.compare_same_axes_rates", "uae.g6.u08.l03.linear_vs_square"],
+            "UAE_G8_GENERAL_AR_U04L05_PDF342_351_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["proportions.equivalent_ratios", "functions.linear_graphs"] };
+
+        // UAE Grade 8 General Unit04 L06, original Arabic Student Book PDF 352-359.
+        // Numeric functions reuse; drawings, justifications and domain constraints need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:06:CONSTRUCTING-FUNCTIONS", "algebra.relationships.two_unknowns", "BUILD_LINEAR_FUNCTION_FROM_TABLE_GRAPH_CONTEXT",
+            ["algebra.modeling.linear_relationship.select_equation", "uae.g6.u08.l02.linear_rule", "geometry.coordinate.evaluate_linear_rule"],
+            "UAE_G8_GENERAL_AR_U04L06_PDF352_359_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["algebra.relationships.two_unknowns", "functions.sequence_rules", "geometry.coordinate.straight_line"] };
+
+        // UAE Grade8 General Arabic Unit04 Lesson07, Student Book PDF 360-367.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS", "functions.linear_graphs", "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
+            ["usccss.g7.u02.l10.graphs_origin_slope",
+             "functions.quadratic.output_roots.solve"],
+            "UAE_G8_GENERAL_AR_U04L07_PDF360_367_TEACHER_REVIEW",
+            "READY_VERIFIED", Version)
+        {
+            // Separate existing exact numeric models for linear slope and
+            // quadratic nonlinearity. Table/graph classification and open
+            // explanation remain in original Arabic lesson + teacher rubric.
+            // The finite two-model G6 linear-vs-square generator cannot
+            // sustain adaptive freshness; do not weaken adaptive checks.
+            SkillIds = ["functions.linear_graphs",
+                "proportions.equivalent_ratios", "supporting.functions.core"]
+        };
+
+        // UAE Grade8 General Arabic Unit04 Lesson08, Student Book PDF 368-375.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS", "supporting.functions.core", "QUADRATIC_PARABOLA_TABLE_VERTEX_SYMMETRY",
+            ["supporting.functions.polynomial_value", "functions.quadratic.output_roots.solve", "uae.g6.u08.l03.linear_vs_square"],
+            "UAE_G8_GENERAL_AR_U04L08_PDF368_375_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Arabic Unit04 Lesson09, Student Book PDF 380-387.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS", "supporting.functions.core", "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
+            ["functions.domain_range.context_bounds", "uae.g6.u08.l03.linear_vs_square"],
+            "UAE_G8_GENERAL_AR_U04L09_PDF380_387_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["supporting.functions.core", "functions.linear_graphs"] };
+
+        // UAE Grade8 General U05 L01; selected local Student Book PDF 7–14.
+        // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:01:LINES", "geometry.angles.relationships", "PARALLEL_LINES_TRANSVERSAL_ANGLE_RELATIONSHIPS",
+            ["supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L01_PDF7_14_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05 L02; selected local Student Book PDF 15–22.
+        // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:02:GEOMETRIC-PROOF", "geometry.angles.relationships", "TWO_COLUMN_GEOMETRIC_PROOF_STATEMENT_REASON",
+            ["supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L02_PDF15_22_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05 L03; selected local Student Book PDF 25–32.
+        // Numeric angle families reused. Drawing, proof and assumptions need teacher review.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:03:ANGLES-OF-TRIANGLES", "geometry.angles.relationships", "TRIANGLE_ANGLE_SUM_EXTERIOR_ANGLE_THEOREM",
+            ["supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L03_PDF25_32_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05L04, local Student Book PDF33-40.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES", "geometry.polygons", "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+            ["geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            "UAE_G8_U05L04_PDF33_40_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05L05, local Student Book PDF47-54.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:05:THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.sin_cos_tan", "RIGHT_TRIANGLE_PYTHAGOREAN_THEOREM_AND_CONVERSE",
+            ["trigonometry.right_triangle.find_side_exact", "supporting.geometry.triangle_area"],
+            "UAE_G8_U05L05_PDF47_54_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05L06, local Student Book PDF59-66.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:06:USING-THE-PYTHAGOREAN-THEOREM", "trigonometry.right_triangle.sin_cos_tan", "PYTHAGOREAN_CONTEXTUAL_LENGTH_DIAGONAL_AND_3D",
+            ["trigonometry.right_triangle.find_side_exact", "supporting.algebra.equations.mixed"],
+            "UAE_G8_U05L06_PDF59_66_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U05L07, local Student Book PDF67-74.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:07:DISTANCE-ON-THE-COORDINATE-PLANE", "geometry.coordinate_plane.axis_distance", "COORDINATE_DISTANCE_GENERAL_PYTHAGOREAN",
+            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances", "trigonometry.right_triangle.find_side_exact"],
+            "UAE_G8_U05L07_PDF67_74_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General U06 L01; source PDF 89–96.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:01:TRANSLATIONS", "geometry.coordinate_plane.plotting", "TRANSLATE_SHAPE_VECTOR_COORDINATE",
+            ["uae.g6.u05.l11.plot_from_signed_moves", "uae.g6.u05.l12.find_horizontal_endpoint", "uae.g6.u05.l12.find_vertical_endpoint"],
+            "UAE_G8_AR_U06L01_PDF89_96_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.axis_distance"] };
+
+        // UAE G8 General U06 L02; source PDF 97–104.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:02:REFLECTIONS", "geometry.reflection_symmetry", "REFLECT_POINT_ACROSS_X_Y_AXES",
+            ["uae.g6.u05.l10.reflect_across_x", "uae.g6.u05.l10.reflect_across_y", "uae.g6.u05.l11.reflect_both_axes"],
+            "UAE_G8_AR_U06L02_PDF97_104_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.reflection_symmetry", "geometry.coordinate_plane.signed", "geometry.coordinate_plane.plotting"] };
+
+        // UAE G8 General U06 L03; source PDF 111–118.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:03:ROTATIONS", "geometry.coordinate_plane.plotting", "ROTATE_ABOUT_ORIGIN_RIGHT_ANGLES_COORDINATES",
+            ["uae.g6.u05.l11.reflect_both_axes"],
+            "UAE_G8_AR_U06L03_PDF111_118_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting"] };
+
+        // UAE G8 General U06 L04; source PDF 123–130.
+        // Reuse coordinate/numeric families. Transform drawings and proofs teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:06:04:DILATIONS", "geometry.similarity.scale_factor", "DILATION_CENTER_ORIGIN_SCALE_FACTOR_SIZE",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor"],
+            "UAE_G8_AR_U06L04_PDF123_130_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L01, original Arabic Student PDF 145–152.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:01:CONGRUENCE-AND-TRANSFORMATIONS", "geometry.coordinate_plane.plotting", "CONGRUENCE_RIGID_TRANSFORMATION_COMPOSITION",
+            ["uae.g6.u05.l10.reflect_across_x", "uae.g6.u05.l10.reflect_across_y", "uae.g6.u05.l11.reflect_both_axes"],
+            "UAE_G8_AR_U07L01_LOCAL_PDF145_152_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.coordinate_plane.plotting", "geometry.coordinate_plane.signed"] };
+
+        // UAE Grade8 General U07L02, original Arabic Student PDF 157–164.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:02:CONGRUENCE", "geometry.triangles.classification", "CONGRUENT_POLYGONS_CORRESPONDING_SIDES_ANGLES",
+            ["usccss.g5.u07.l08.source_triangle_side_and_angle_types"],
+            "UAE_G8_AR_U07L02_LOCAL_PDF157_164_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L03, original Arabic Student PDF 171–178.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS", "geometry.similarity.scale_factor", "SIMILARITY_DILATION_AND_RIGID_TRANSFORMS",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "usccss.g7.u01.l04.angle_and_distance_scaling"],
+            "UAE_G8_AR_U07L03_LOCAL_PDF171_178_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L04; selected Arabic Student Book PDF 179–186.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:04:PROPERTIES-OF-SIMILAR-POLYGONS", "geometry.similarity.scale_factor", "SIMILAR_POLYGONS_CORRESPONDENCE_RATIO_MISSING_SIDE",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.angle_and_distance_scaling", "usccss.g6.u02.l05.scaled_ratio_missing_term"],
+            "UAE_G8_AR_U07L04_PDF179_186_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L05; selected Arabic Student Book PDF 187–194.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:05:SIMILAR-TRIANGLES-AND-INDIRECT-MEASUREMENT", "geometry.similarity.scale_factor", "TRIANGLE_AA_SIMILARITY_INDIRECT_MEASUREMENT_SHADOW",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l04.hidden_corresponding_distance"],
+            "UAE_G8_AR_U07L05_PDF187_194_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L06; selected Arabic Student Book PDF 195–202.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:06:SLOPES-AND-SIMILAR-TRIANGLES", "geometry.coordinate.straight_line", "RIGHT_TRIANGLE_SIMILARITY_SLOPE_RISE_OVER_RUN",
+            ["geometry.coordinate.gradient_between_points", "usccss.g7.u02.l10.graphs_origin_slope"],
+            "UAE_G8_AR_U07L06_PDF195_202_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U07L07; selected Arabic Student Book PDF 203–210.
+        // Reuse similarity exact numeric families. Visual proofs and drawings teacher reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:07:AREA-AND-PERIMETER-OF-SIMILAR-FIGURES", "geometry.area.scaled_figures", "SIMILAR_SHAPE_PERIMETER_FACTOR_AREA_SQUARE_FACTOR",
+            ["usccss.g7.u01.l06.scaled_area_square_factor", "geometry.similarity.scale_factor", "usccss.g7.u01.l10.change_scale_length_and_area"],
+            "UAE_G8_AR_U07L07_PDF203_210_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U08L01; original Student Book PDF7–14.
+        // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:01:VOLUME-OF-CYLINDERS", "geometry.volume", "CYLINDER_VOLUME_BASE_AREA_TIMES_HEIGHT",
+            ["uae.g7.u09.l01.cylinder_volume_pi_coefficient", "usccss.g7.u07.prism_volume_base_height"],
+            "UAE_G8_AR_U08L01_PDF7_14_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U08L02; original Student Book PDF15–22.
+        // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:02:VOLUME-OF-CONES", "geometry.volume", "CONE_VOLUME_ONE_THIRD_CYLINDER",
+            ["uae.g7.u09.l02.cone_volume_pi_coefficient", "uae.g7.u09.l01.cylinder_volume_pi_coefficient"],
+            "UAE_G8_AR_U08L02_PDF15_22_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General U08L03; original Student Book PDF24–31.
+        // Reuse exact Grade7 cylinder/cone/sphere numeric engines; physical models teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:03:VOLUME-OF-SPHERES", "geometry.volume", "SPHERE_VOLUME_FOUR_THIRDS_PI_R_CUBED",
+            ["uae.g7.u09.l03.sphere_volume_pi_coefficient", "geometry.similarity.scale_factor"],
+            "UAE_G8_AR_U08L03_PDF24_31_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // Grade 8 UAE General Arabic U08L04, Student Book PDF 38–45.
+        // Reuse exact geometry numerical family; visuals and written
+        // physical-modeling answers are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:04:SURFACE-AREA-OF-CYLINDERS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:04:SURFACE-AREA-OF-CYLINDERS", "supporting.geometry.area_volume", "CYLINDER_LATERAL_AND_TOTAL_SURFACE_PI_COEFFICIENT",
+            ["uae.g7.u09.l04.cylinder_surface_area_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient", "supporting.geometry.circle_circumference_pi_coefficient"],
+            "UAE_G8_GENERAL_AR_U08L04_LOCAL_PDF38_45",
+            "READY_VERIFIED", Version);
+
+        // Grade 8 UAE General Arabic U08L05, Student Book PDF 50–57.
+        // Reuse exact geometry numerical family; visuals and written
+        // physical-modeling answers are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:05:SURFACE-AREA-OF-CONES", "supporting.geometry.area_volume", "CONE_SLANT_HEIGHT_LATERAL_TOTAL_SURFACE_PI_COEFFICIENT",
+            ["uae.g7.u09.l05.cone_surface_area_pi_coefficient", "supporting.geometry.circle_area_pi_coefficient"],
+            "UAE_G8_GENERAL_AR_U08L05_LOCAL_PDF50_57",
+            "READY_VERIFIED", Version);
+
+        // Grade 8 UAE General Arabic U08L06, Student Book PDF 60–67.
+        // Reuse exact geometry numerical family; visuals and written
+        // physical-modeling answers are teacher-reviewed until Stage D.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:08:06:CHANGES-IN-DIMENSIONS", "supporting.geometry.area_volume", "SIMILAR_SOLIDS_SCALE_LENGTH_AREA_SQUARE_VOLUME_CUBE",
+            ["uae.g7.u09.l06.scale_area_factor", "uae.g7.u09.l06.scale_volume_factor", "geometry.similarity.scale_factor"],
+            "UAE_G8_GENERAL_AR_U08L06_LOCAL_PDF60_67",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Arabic U09L01; selected Student Book PDF49-58.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS", "supporting.statistics.scatter", "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
+            ["supporting.statistics.scatter_correlation", "statistics.correlation.direction"],
+            "UAE_G8_AR_U09L01_LOCAL_PDF49_58",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Arabic U09L02; selected Student Book PDF61-68.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:02:LINES-OF-BEST-FIT", "supporting.statistics.scatter", "LINE_OF_BEST_FIT_PREDICTION_INTERPOLATION_EXTRAPOLATION",
+            ["statistics.linear_model.fit_select", "statistics.linear_model.predict", "statistics.linear_model.residual"],
+            "UAE_G8_AR_U09L02_LOCAL_PDF61_68",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Arabic U09L03; selected Student Book PDF73-80.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:03:TWO-WAY-TABLES", "supporting.statistics.charts", "TWO_WAY_FREQUENCY_TABLE_MARGINAL_RELATIVE",
+            ["statistics.two_way.marginal_count", "statistics.two_way.conditional_relative", "supporting.statistics.table_total"],
+            "UAE_G8_AR_U09L03_LOCAL_PDF73_80",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Arabic U09L04; Student Book local PDF85-92.
+        // Reuse verified arithmetic summary families; student-drawn charts
+        // and explanations are teacher-reviewed; no runtime/CI claims.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:04:DESCRIPTIVE-STATISTICS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:04:DESCRIPTIVE-STATISTICS", "statistics.center_spread.core", "DESCRIPTIVE_STATISTICS_FIVE_NUMBER_MEAN_MEDIAN_MODE_RANGE",
+            ["statistics.center_spread.mean", "statistics.center_spread.median", "supporting.statistics.quartile", "statistics.center_spread.range"],
+            "UAE_G8_AR_U09L04_LOCAL_PDF85_92",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Arabic U09L05; Student Book local PDF93-100.
+        // Reuse verified arithmetic summary families; student-drawn charts
+        // and explanations are teacher-reviewed; no runtime/CI claims.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:05:MEASURES-OF-VARIABILITY", "statistics.center_spread.core", "MEAN_ABSOLUTE_DEVIATION_AND_POPULATION_SD",
+            ["statistics.center_spread.mad", "usccss.g6.u08.l11.mean_absolute_deviation_amounts", "statistics.center_spread.range"],
+            "UAE_G8_AR_U09L05_LOCAL_PDF93_100",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Arabic U09L06; Student Book local PDF101-108.
+        // Reuse verified arithmetic summary families; student-drawn charts
+        // and explanations are teacher-reviewed; no runtime/CI claims.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS", "supporting.statistics.distributions", "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
+            ["statistics.distribution_shape.classify", "usccss.g6.u08.l16.box_plot_source_quartiles"],
+            "UAE_G8_AR_U09L06_LOCAL_PDF101_108",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Unit10 Lesson1, local Arabic Student Book PDF121-128.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:01:POINTS-LINES-AND-PLANES", "geometry.foundations.point_line_ray", "POINT_LINE_PLANE_COLLINEAR_COPLANAR_INTERSECTIONS",
+            ["uae.g4.u12.l01.segments_from_points"],
+            "UAE_G8_AR_U10L01_PDF121_128_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Unit10 Lesson2, local Arabic Student Book PDF130-137.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:02:LINEAR-MEASURE", "geometry.points_lines_rays", "SEGMENT_LENGTH_ADDITION_UNIT_CONVERSION",
+            ["uae.g4.u12.l01.segments_from_points", "usccss.g6.u07.l06.absolute_distance_values"],
+            "UAE_G8_AR_U10L02_PDF130_137_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Unit10 Lesson3, local Arabic Student Book PDF141-148.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:03:DISTANCE-AND-MIDPOINTS", "ratio.unit_rate", "CARTESIAN_DISTANCE_AND_MIDPOINT",
+            ["usccss.g6.u07.l14.horizontal_vertical_coordinate_distances"],
+            "UAE_G8_AR_U10L03_PDF141_148_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Unit10 Lesson4, local Arabic Student Book PDF154-161.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS", "geometry.points_lines_rays", "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
+            ["uae.g4.u12.l01.segments_from_points"],
+            "UAE_G8_AR_U10L04_PDF154_161_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Unit11 Lessons 1-3: first-party Arabic source-specific
+        // polygon and parallelogram tasks. Open proofs remain teacher-reviewed.
+        // READY_VERIFIED is machine-verifiable numeric/category Practice readiness only.
+        // Source geometry proof and constructions still require teacher scoring;
+        // full G8 HTTPS persistence, proper negatives and Grade8 RTL tests are
+        // required before any production release.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS", "geometry.polygons.missing_interior_angle",
+            "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+            ["geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            "UAE_G8_AR_U11L01_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "READY_VERIFIED", Version);
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:02:PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
+            "PARALLELOGRAM_OPPOSITE_SIDES_ANGLES_PARALLEL",
+            ["usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
+            "UAE_G8_AR_U11L02_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:03:TESTS-FOR-PARALLELOGRAMS", "geometry.quadrilaterals.attributes",
+            "PARALLELOGRAM_DIAGONALS_AND_CONVERSE_PROPERTIES",
+            ["usccss.g5.u07.l04.source_quadrilateral_sort_attributes", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
+            "UAE_G8_AR_U11L03_LOCAL_STUDENT_BOOK_TEACHER_PROOFS",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
+
+        // UAE Grade8 General Arabic U11L04, source Student Book PDF 203-209.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES", "geometry.quadrilaterals.attributes", "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
+            ["usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle", "usccss.g5.u07.l07.source_quadrilateral_always_sometimes_never"],
+            "UAE_G8_AR_U11L04_LOCAL_PDF203_209",
+            "READY_VERIFIED", Version) { SkillIds = ["geometry.quadrilaterals.attributes", "supporting.geometry.properties"] };
+
+        // UAE Grade8 General Arabic U11L05, source Student Book PDF 210-218.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:05:RHOMBI-AND-SQUARES", "geometry.quadrilaterals.attributes", "RHOMBUS_SQUARE_DIAGONALS_PERPENDICULAR_BISECT_ANGLES",
+            ["usccss.g5.u07.l06.source_hierarchy_square_rhombus_rectangle"],
+            "UAE_G8_AR_U11L05_LOCAL_PDF210_218",
+            "READY_VERIFIED", Version);
+
+        // UAE Grade8 General Arabic U11L06, source Student Book PDF 219-228.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES", "geometry.quadrilaterals.attributes", "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
+            ["uae.g6.u09.l06.trapezoid_area"],
+            "UAE_G8_AR_U11L06_LOCAL_PDF219_228",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Unit12 Lesson1; source selected Student Book PDF240-250.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:01:INTRODUCTION-TO-SET-THEORY", "algebra.inequality.solution_sets", "SET_MEMBERSHIP_ROSTER_RULE_FINITE_INFINITE_EMPTY",
+            ["supporting.sets.union_count"],
+            "UAE_G8_GENERAL_AR_U12L01_LOCAL_PDF240_250_TEACHER_REVIEW",
+            "READY_VERIFIED", Version) { SkillIds = ["algebra.inequality.solution_sets", "supporting.sets.core"] };
+
+        // UAE G8 General Unit12 Lesson2; source selected Student Book PDF253-262.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:02:SUBSETS-AND-OPERATIONS-ON-SETS", "algebra.inequality.solution_sets", "SUBSET_UNION_INTERSECTION_COMPLEMENT_DIFFERENCE",
+            ["probability.theoretical.complement"],
+            "UAE_G8_GENERAL_AR_U12L02_LOCAL_PDF253_262_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Unit12 Lesson3; source selected Student Book PDF264-273.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:03:USING-VENN-DIAGRAMS-TO-STUDY-SET-OPERATIONS", "algebra.inequality.solution_sets", "VENN_REGION_UNION_INTERSECTION_COMPLEMENT_3_SETS",
+            ["probability.theoretical.complement"],
+            "UAE_G8_GENERAL_AR_U12L03_LOCAL_PDF264_273_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
+        // UAE G8 General Unit12 Lesson4; source selected Student Book PDF275-284.
+        // Existing solution-set/membership family only supports simple
+        // numerical membership; exact Venn operations and written reasoning
+        // are MANUAL TEACHER REVIEW until a verified set-operator extension.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:12:04:USING-SETS-TO-SOLVE-PROBLEMS", "algebra.inequality.solution_sets", "SET_WORD_PROBLEM_INCLUSION_EXCLUSION_VENN_COUNT",
+            ["supporting.statistics.table_total"],
+            "UAE_G8_GENERAL_AR_U12L04_LOCAL_PDF275_284_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

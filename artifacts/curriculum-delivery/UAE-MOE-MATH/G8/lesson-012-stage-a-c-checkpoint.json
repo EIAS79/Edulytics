@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "pathway": "General",
+  "lessonOrdinal": 12,
+  "unit": 2,
+  "lesson": 2,
+  "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:02:SOLVING-TWO-STEP-EQUATIONS",
+  "title": "حل المعادلات المكوّنة من خطوتين",
+  "status": "READY_FOR_STAGE_D",
+  "meaning": "A–B–C original Arabic candidate complete; no claim of runtime or exact item parity",
+  "stageA": {
+    "sourceFile": "Grade_08/01_Student_Books/01-1-4.pdf",
+    "sha256": "d10222e87f41a05cfed0dc7dd06fb0dff9b069c31ff4e71c80c65d1007474f0e",
+    "sourcePages": [
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161
+    ],
+    "sourceTaskReferences": 35,
+    "atomicSourceParity": "UNKNOWN_NOT_CLAIMED"
+  },
+  "stageB": {
+    "originalArabicTranslation": true,
+    "richV2Visuals": 2,
+    "originalCooldown": true,
+    "preservedLessonCode": true,
+    "rtlCodeAlreadyWritten": true,
+    "oldPackAcademicLanguage": "en pending all-grade migration"
+  },
+  "stageC": {
+    "decision": "REUSE_EXISTING_NUMERIC_ENGINE_WITH_TEACHER_REVIEW",
+    "skill": "algebra.linear.solve",
+    "allowedFamilies": [
+      "algebra.linear.ax_plus_b_equals_c",
+      "supporting.algebra.equations.mixed",
+      "supporting.algebra.expand"
+    ],
+    "teacherReview": [
+      "تمثيل معادلة من خطوتين بنموذج ميزان",
+      "كتابة خطوات المعادلة من موقف لغوي",
+      "التحقق بالتعويض مع معاملات سالبة وكسور"
+    ],
+    "testFile": "tests/academic-uae-grade8-arabic-u02l02.test.cjs",
+    "testsWritten": true,
+    "testsRun": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "runtime": "NOT_RUN"
+  },
+  "gradeReleaseBlockers": [
+    "unmigrated English Grade8 General lessons",
+    "77 vs 76 local-source index conflict",
+    "Stage D checks not run"
+  ]
+}

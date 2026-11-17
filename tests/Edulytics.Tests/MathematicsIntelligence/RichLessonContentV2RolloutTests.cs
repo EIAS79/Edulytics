@@ -113,7 +113,7 @@ public sealed class RichLessonContentV2RolloutTests
             }
         }
 
-        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78, rows.Count);
+        Assert.Equal(5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76, rows.Count);
         // Curated count is data-driven: newly authored grades must not fail
         // rollout merely because the historical global total was pinned.
         // A curated sidecar with an unknown lesson or unexpected locale
@@ -143,7 +143,7 @@ public sealed class RichLessonContentV2RolloutTests
         {
             Assert.Contains(lesson.LessonCode, canonicalCodes);
             // UAE Grade 4 Common and Grade 5 General have their own reviewed,
-            // first-party Arabic Rich V2 sidecars. Never silently reclassify
+            // first-party Arabic Rich V2 sidecars. UAE G8 General also has\n            // its own 76 original Arabic RichV2 lessons. Never silently reclassify
             // another curated cohort as an accepted locale.
             if (lesson.LessonCode.StartsWith(
                     "PED:UAE-MOE-MATH:L4:COMMON:", StringComparison.Ordinal) ||
@@ -152,7 +152,9 @@ public sealed class RichLessonContentV2RolloutTests
                 lesson.LessonCode.StartsWith(
                     "PED:UAE-MOE-MATH:L6:GENERAL:", StringComparison.Ordinal) ||
                 lesson.LessonCode.StartsWith(
-                    "PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal))
+                    "PED:UAE-MOE-MATH:L7:GENERAL:", StringComparison.Ordinal) ||
+                lesson.LessonCode.StartsWith(
+                    "PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal))
                 Assert.Equal("ar", NormalizeCulture(lesson.CultureCode));
             else
                 Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
@@ -163,7 +165,7 @@ public sealed class RichLessonContentV2RolloutTests
         // All 102 + 99 + 109 Arabic lessons are intentionally excluded from
         // the English/Polish-only Rich V2 compiler (310, not a generic fallback).
         Assert.Equal(102 + 99 + 109, blockedLocalized);
-        Assert.Equal((5183 - 93 + 132 - 59 + 128 - 62 + 78) - readyCurated - blockedLocalized, readyRuntime);
+        Assert.Equal((5183 - 93 + 132 - 59 + 128 - 62 + 78 - 77 + 76) - readyCurated - blockedLocalized, readyRuntime);
         Assert.Equal(0, blockedContract);
         Assert.Equal(0, blockedGeneration);
 

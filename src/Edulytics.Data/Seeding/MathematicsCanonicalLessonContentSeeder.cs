@@ -174,6 +174,42 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         await SeedDocumentsAsync(documents, ct, metadataOnly: true);
     }
 
+
+    /// <summary>
+    /// The owner-approved 76-lesson Grade8 General Arabic cutover uses only
+    /// validated first-party JSON canonical metadata. Existing published
+    /// predecessor records are replaced under the outer Grade8 transaction.
+    /// No persisted prose or translated publisher material is introduced.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade8MetadataAsync(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L8:GENERAL:";
+        var documents = LoadEmbeddedDocuments()
+            .Where(document => document.Lessons.Any(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)))
+            .ToArray();
+        foreach (var document in documents)
+        {
+            if (document.PackCode != MathematicsCurriculumPackRegistry.UaeCode ||
+                document.VersionCode != "MOE-2026-2027-T1" ||
+                document.AcademicLanguage != "ar" ||
+                document.Status != CanonicalLessonContentStatus.Published)
+                throw new InvalidOperationException(
+                    "G8 scoped metadata requires one published first-party Arabic UAE pack.");
+            document.Lessons = document.Lessons.Where(lesson =>
+                lesson.LessonCode.StartsWith(prefix, StringComparison.Ordinal)).ToList();
+        }
+        if (documents.Length != 1 || documents[0].Lessons.Count != 76 ||
+            documents[0].Lessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal).Count() != 76 ||
+            documents[0].Lessons.Any(x => x.LessonCode.EndsWith(
+                ":12:05:INFINITE-SETS", StringComparison.Ordinal)))
+            throw new InvalidOperationException(
+                "G8 owner-approved scoped metadata must match exact 76-lesson source.");
+        await SeedDocumentsAsync(documents, ct, metadataOnly: true);
+    }
+
     /// <summary>
     /// Metadata-only reconciliation for the narrowly source-hash-guarded CCSS
     /// editorial candidates when ReadFromJson=true and the host intentionally
@@ -1226,6 +1262,37 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         expectedContentVersion,
                         StringComparison.Ordinal))
                 {
+                    // Only the explicitly owner-approved UAE G8 General scoped
+                    // release may replace the production-observed 77 English
+                    // support markers with 76 Arabic JSON markers in place.
+                    // The caller verified all lesson IDs, published state,
+                    // no stored translations and exact predecessor cardinality.
+                    var guardedGrade8ArabicCutover =
+                        metadataOnly &&
+                        string.Equals(Environment.GetEnvironmentVariable(
+                            "EDULYTICS_G8_SCOPED_RELEASE"),
+                            "CONFIRM_REPLACE_UAE_GRADE8_GENERAL_EN77_WITH_AR76",
+                            StringComparison.Ordinal) &&
+                        document.PackCode == MathematicsCurriculumPackRegistry.UaeCode &&
+                        document.VersionCode == "MOE-2026-2027-T1" &&
+                        document.AcademicLanguage == "ar" &&
+                        document.Lessons.Count == 76 &&
+                        sourceLesson.LessonCode.StartsWith(
+                            "PED:UAE-MOE-MATH:L8:GENERAL:", StringComparison.Ordinal) &&
+                        content.ContentVersion == "supporting-practice-remediation-v2" &&
+                        (int)content.Status == 3 &&
+                        !await _db.CurriculumLessonContentTranslations.AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
+                    if (guardedGrade8ArabicCutover)
+                    {
+                        content.ContentVersion = expectedContentVersion;
+                        content.UpdatedAtUtc = now;
+                        ApplyStatusMetadata(content, document.Status, now);
+                        continue;
+                    }
+
                     // Permit exactly the previously released U04:L21 V1 marker
                     // to become its V2 marker ONLY for JSON-backed metadata
                     // with no saved prose.  Other unknown predecessors still

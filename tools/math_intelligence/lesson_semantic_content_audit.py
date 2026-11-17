@@ -217,34 +217,39 @@ def load_effective_snapshot() -> tuple[dict[str, dict[str, Any]], list[str]]:
 
     # Guard every approved replacement independently. Old approved snapshot:
     # G4 93->132 (+39), G6 59->128 (+69), G12 independently certified 73.
-    # G7 General English 62->Arabic 78 (+16) replaces that exact scope,
-    # giving 5,307 current canonical lessons instead of 5,291.
+    # G7 General English 62->Arabic 78 (+16), then G8 General English
+    # 77->Arabic 76 (-1) replaces that exact scope. New total: 5,306.
     grade12 = "PED:US-CCSS-MATH:HS:ADV:PRECALC:OPENSTAX-2017:"
     grade4 = "PED:UAE-MOE-MATH:L4:COMMON:"
     grade6 = "PED:UAE-MOE-MATH:L6:GENERAL:"
     grade7 = "PED:UAE-MOE-MATH:L7:GENERAL:"
+    grade8 = "PED:UAE-MOE-MATH:L8:GENERAL:"
     supplemental = {code for code in by_code if code.startswith(grade12)}
     grade4_replacement = {code for code in by_code if code.startswith(grade4)}
     grade6_replacement = {code for code in by_code if code.startswith(grade6)}
     grade7_replacement = {code for code in by_code if code.startswith(grade7)}
+    grade8_replacement = {code for code in by_code if code.startswith(grade8)}
     untouched_base = (set(by_code) - supplemental -
                       grade4_replacement - grade6_replacement -
-                      grade7_replacement)
-    # After exact G7 General replacement, 4,896 independent identifiers
-    # remain outside G4/G6/G7 General and independently certified G12;
+                      grade7_replacement - grade8_replacement)
+    # Lock every independently approved scope, including the G8 one-lesson
+    # retirement: 4,819 identifiers belong to all unaffected programmes.
     # no deprecated G7 English lesson may survive under the scoped prefix.
-    if (len(by_code) != 5307 or len(supplemental) != 73 or
+    if (len(by_code) != 5306 or len(supplemental) != 73 or
         len(grade4_replacement) != 132 or
         len(grade6_replacement) != 128 or
-        len(grade7_replacement) != 78 or len(untouched_base) != 4896):
+        len(grade7_replacement) != 78 or
+        len(grade8_replacement) != 76 or len(untouched_base) != 4819):
         errors.append(
-            "Effective learner snapshot requires 4,896 other lessons, "
-            "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General and "
-            "73 independently certified G12, totaling exactly 5,307; "
+            "Effective learner snapshot requires 4,819 other lessons, "
+            "132 approved UAE G4, 128 Arabic G6, 78 Arabic G7 General, "
+            "76 Arabic G8 General and 73 independently certified G12, "
+            "totaling exactly 5,306; "
             f"got {len(untouched_base)} other, "
             f"{len(grade4_replacement)} G4, "
             f"{len(grade6_replacement)} G6, "
             f"{len(grade7_replacement)} G7, "
+            f"{len(grade8_replacement)} G8, "
             f"{len(supplemental)} G12, {len(by_code)} total."
         )
 
@@ -266,13 +271,17 @@ def audit() -> dict[str, Any]:
     from lesson_skill_resolution_audit import (
         owner_approved_g6_declared_practice,
         owner_approved_g7_declared_practice,
+        owner_approved_g8_declared_practice,
     )
     approved_g6 = owner_approved_g6_declared_practice()
     approved_g7 = owner_approved_g7_declared_practice()
+    approved_g8 = owner_approved_g8_declared_practice()
     if len(approved_g6) != 128:
         blockers.append("G6 owner approved semantic source/skill evidence does not cover 128 verified Arabic lessons")
     if len(approved_g7) != 78:
         blockers.append("G7 owner approved semantic source/skill evidence does not cover 78 verified Arabic lessons")
+    if len(approved_g8) != 76:
+        blockers.append("G8 owner-approved 76 exact first-party Arabic Practice contracts not fully registered")
     blockers.extend(effective_errors)
     lessons: list[dict[str, Any]] = []
     worked_groups: dict[str, list[int]] = defaultdict(list)

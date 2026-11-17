@@ -216,24 +216,30 @@ public sealed class MathematicsPedagogicalLessonSeeder
             .CountAsync(x => x.Code.StartsWith(g5Prefix), ct);
         var g7Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g7Prefix), ct);
+        var g8GeneralCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
         var g12Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g12Prefix), ct);
         var translationCount = await _db.CurriculumLessonContentTranslations
             .CountAsync(ct);
 
         // Before G7 cutover: 5,090 unrelated includes 62 old English G7.
-        // After the approved G7 62-to-78 cutover, 5,106 unrelated includes
-        // 78 new Arabic G7: permit only these two exact audited states.
-        var unrelatedBaseline = g7Count == 78 ? 5106 : 5090;
-        if (g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
+        // After G7 62-to-78, 5,106 unrelated; after G8 77-to-76,
+        // 5,105 unrelated. Preserve only these exact observed cohorts.
+        var unrelatedBaseline = g7Count == 78
+            ? g8GeneralCount == 76 ? 5105 : g8GeneralCount == 77 ? 5106 : -1
+            : g7Count == 0 && g8GeneralCount == 77 ? 5090 : -1;
+        if (unrelatedBaseline < 0 ||
+            g6Count is not (0 or 128) || g7Count is not (0 or 78) ||
             allCount != unrelatedBaseline + g6Count ||
             contentCount != allCount ||
             g4Count != 132 || g5Count != 127 ||
             g12Count != 0 || translationCount != 0)
             throw new InvalidOperationException(
                 "Scoped Grade6 release refused: production baseline drift. " +
-                "Expected audited 5090 pre-G7 or 5106 post-G7 unrelated " +
-                "lessons, 132 G4, 127 G5, 0/78 complete G7, " +
+                "Expected audited 5090 pre-G7, 5106 post-G7 or 5105 " +
+                "post-G8 unrelated lessons, 132 G4, 127 G5, 0/78 G7, " +
                 "zero G12, zero stored translations and 0/128 complete G6.");
 
         await using var transaction =
@@ -340,6 +346,13 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
         var g7Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(prefix), ct);
+        // G8 owner-approved replacement removes only one General lesson.
+        // Preserve exact current G8 scope; do not change any other grade.
+        var g8GeneralCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(
+                "PED:UAE-MOE-MATH:L8:GENERAL:"), ct);
+        var g7UnrelatedBaseline = g8GeneralCount == 77 ? 5156 :
+            g8GeneralCount == 76 ? 5155 : -1;
         var g4Count = await _db.CurriculumPedagogicalLessons
             .CountAsync(x => x.Code.StartsWith(g4Prefix), ct);
         var g5Count = await _db.CurriculumPedagogicalLessons
@@ -356,7 +369,8 @@ public sealed class MathematicsPedagogicalLessonSeeder
                 x.Code.StartsWith("UAE:CATALOG:G7:GENERAL:"), ct);
 
         if (g7Count is not (0 or 78) ||
-            allCount != 5156 + g7Count ||
+            g7UnrelatedBaseline < 0 ||
+            allCount != g7UnrelatedBaseline + g7Count ||
             contentCount != allCount ||
             g4Count != 132 || g5Count != 127 ||
             g6Count != 128 || g12Count != 0 ||
@@ -388,14 +402,174 @@ public sealed class MathematicsPedagogicalLessonSeeder
         var afterCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
         var afterContent = await _db.CurriculumLessonContents.CountAsync(ct);
         if (actualG7.Length != 78 || actualG7Content != 78 ||
-            publishedG7 != 78 || afterCount != 5234 || afterContent != 5234)
+            publishedG7 != 78 || afterCount != g7UnrelatedBaseline + 78 ||
+            afterContent != g7UnrelatedBaseline + 78)
             throw new InvalidOperationException(
                 "Scoped Grade7 0-to-78 import postconditions failed; rolled back.");
 
         await transaction.CommitAsync(ct);
         Console.WriteLine(
             "UAE_G7_SCOPED_PRODUCTION_78_LESSONS_AND_78_METADATA_PASS " +
-            "unrelatedBaseline=5156 advancedAndUsUnaffected=true");
+            "unrelatedBaseline=" + g7UnrelatedBaseline + " advancedAndUsUnaffected=true");
+    }
+
+
+    /// <summary>
+    /// Owner-authorized Grade8 General 77 legacy to 76 first-party Arabic cutover.
+    /// Preserves deterministic 76 pedagogical lesson IDs and all adoptions.
+    /// The extra U12L05 and its single metadata row retire inside the SAME
+    /// transaction as Arabic title, mapping and JSON metadata reconciliation.
+    /// Never touches Grade8 Advanced, students, or any other curriculum.
+    /// </summary>
+    public async Task SeedOnlyApprovedUaeGrade8Async(
+        CancellationToken ct = default)
+    {
+        const string prefix = "PED:UAE-MOE-MATH:L8:GENERAL:";
+        const string retired = prefix + "12:05:INFINITE-SETS";
+        const string advanced = "PED:UAE-MOE-MATH:L8:ADVANCED:";
+        const string obsoleteVersion = "supporting-practice-remediation-v2";
+
+        if (!_db.Database.IsNpgsql())
+            throw new InvalidOperationException(
+                "Grade8 scoped release requires PostgreSQL.");
+
+        MathematicsCurriculumPackRegistry.Validate();
+        var states = await _db.CurriculumPackImportStates
+            .AsNoTracking().Where(x => x.IsComplete &&
+                SupportedCodes.Contains(x.FrameworkCode))
+            .ToArrayAsync(ct);
+        if (states.Length != 4 ||
+            !SupportedCodes.ToHashSet(StringComparer.Ordinal)
+                .SetEquals(states.Select(x => x.FrameworkCode)))
+            throw new InvalidOperationException(
+                "Grade8 scoped release requires all four accepted pack states.");
+        var byCode = states.ToDictionary(x => x.FrameworkCode,
+            StringComparer.Ordinal);
+
+        var lessons = new List<CurriculumPedagogicalLesson>();
+        var mappings = new List<CurriculumPedagogicalLessonOutcome>();
+        var blueprintIds = new HashSet<Guid>();
+        var blueprints = PedagogicalLessonBlueprintRegistry.LoadEmbeddedDocuments();
+        await BuildUaeAsync(
+            byCode[MathematicsCurriculumPackRegistry.UaeCode], lessons, mappings, ct);
+        await BuildBlueprintLessonsAsync(
+            byCode, blueprints, lessons, mappings, blueprintIds, ct);
+        await BuildOutcomeBackedLessonsAsync(
+            byCode, blueprints, lessons, mappings, ct);
+        ValidateExpectedGraph(lessons, mappings, blueprintIds);
+        var scope = lessons.Where(x =>
+            x.Code.StartsWith(prefix, StringComparison.Ordinal)).ToArray();
+        if (scope.Length != 76 ||
+            scope.Select(x => x.Code).Distinct(StringComparer.Ordinal).Count() != 76 ||
+            scope.Any(x => x.Code == retired) ||
+            scope.Any(x => !x.Title.Any(c => c >= '\u0600' && c <= '\u06ff')))
+            throw new InvalidOperationException(
+                "Grade8 owner-selected release requires exactly 76 unique Arabic pedagogical lessons.");
+
+        var scopeIds = scope.Select(x => x.Id).ToHashSet();
+        var scopedMappings = mappings
+            .Where(x => scopeIds.Contains(x.PedagogicalLessonId)).ToArray();
+
+        // Production 2026-11-17 pinned read-only inventory:
+        // 5,157 non-G8 General lessons/contents, plus 77 G8 General,
+        // 77 G8 Advanced; all 77 legacy metadata Published, no saved translations.
+        // This also allows repeat invocation after a complete 76-only release.
+        var allCount = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var contentCount = await _db.CurriculumLessonContents.CountAsync(ct);
+        var existing = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var advancedCount = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(advanced), ct);
+        var translationCount = await _db.CurriculumLessonContentTranslations
+            .CountAsync(ct);
+        var actualByCode = existing.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        var expectedByCode = scope.ToDictionary(x => x.Code, StringComparer.Ordinal);
+        var unexpected = existing.Where(x => !expectedByCode.ContainsKey(x.Code))
+            .ToArray();
+        // One disposable GitHub-only clean database can contain additional
+        // synthetic CI curricula; production retains a pinned 5,157 baseline.
+        var isIsolatedRehearsal =
+            string.Equals(Environment.GetEnvironmentVariable("GITHUB_ACTIONS"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CI_REHEARSAL"),
+                "true", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("EDULYTICS_CLEAN_DATABASE_NAME"),
+                "edulytics_clean_ci", StringComparison.Ordinal) &&
+            string.Equals(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
+                "Staging", StringComparison.Ordinal);
+        var unrelatedBefore = allCount - existing.Length;
+        if (existing.Length is not (76 or 77) ||
+            unexpected.Length != (existing.Length == 77 ? 1 : 0) ||
+            unexpected.Any(x => x.Code != retired) ||
+            existing.Where(x => x.Code != retired).Count() != 76 ||
+            !scope.All(x => actualByCode.TryGetValue(x.Code, out var live) &&
+                live.Id == x.Id && live.FrameworkVersionId == x.FrameworkVersionId) ||
+            (!isIsolatedRehearsal && unrelatedBefore != 5157) ||
+            (isIsolatedRehearsal && unrelatedBefore < 5000) ||
+            contentCount != allCount ||
+            advancedCount != 77 || translationCount != 0)
+            throw new InvalidOperationException(
+                "Grade8 77-to-76 cutover refused: exact production inventory, identity or metadata drift.");
+
+        var currentIds = existing.Select(x => x.Id).ToArray();
+        var currentContents = await _db.CurriculumLessonContents
+            .Where(x => currentIds.Contains(x.PedagogicalLessonId)).ToArrayAsync(ct);
+        if (currentContents.Length != existing.Length ||
+            currentContents.Any(x => (int)x.Status != 3) ||
+            (existing.Length == 77 &&
+                currentContents.Any(x => x.ContentVersion != obsoleteVersion)))
+            throw new InvalidOperationException(
+                "Grade8 legacy Published metadata baseline drift.");
+
+        await using var transaction = await _db.Database.BeginTransactionAsync(ct);
+        await _db.Database.ExecuteSqlRawAsync(
+            "SELECT pg_advisory_xact_lock(27500029);", ct);
+        if (existing.Length == 77)
+        {
+            var obsolete = actualByCode[retired];
+            var obsoleteContent = currentContents.Single(x =>
+                x.PedagogicalLessonId == obsolete.Id);
+            // Restricting FKs reject deletion if any student/assessment/
+            // adaptive-practice/rubric row points to this obsolete lesson.
+            // No such references were observed in the owner-directed read-only
+            // Neon inventory; every FK is still enforced by PostgreSQL.
+            _db.CurriculumLessonContents.Remove(obsoleteContent);
+            _db.CurriculumPedagogicalLessons.Remove(obsolete);
+            await _db.SaveChangesAsync(ct);
+        }
+
+        await UpsertLessonsAsync(scope, ct);
+        await UpsertMappingsAsync(scope, scopedMappings, ct);
+        await new MathematicsCanonicalLessonContentSeeder(_db)
+            .SeedOnlyApprovedUaeGrade8MetadataAsync(ct);
+
+        var actualScope = await _db.CurriculumPedagogicalLessons
+            .Where(x => x.Code.StartsWith(prefix)).ToArrayAsync(ct);
+        var actualScopeIds = actualScope.Select(x => x.Id).ToArray();
+        var actualMetadata = await _db.CurriculumLessonContents
+            .Where(x => actualScopeIds.Contains(x.PedagogicalLessonId))
+            .ToArrayAsync(ct);
+        var afterAll = await _db.CurriculumPedagogicalLessons.CountAsync(ct);
+        var afterContent = await _db.CurriculumLessonContents.CountAsync(ct);
+        var stillAdvanced = await _db.CurriculumPedagogicalLessons
+            .CountAsync(x => x.Code.StartsWith(advanced), ct);
+        if (actualScope.Length != 76 ||
+            actualMetadata.Length != 76 ||
+            actualMetadata.Any(x => (int)x.Status != 3 ||
+                x.ContentVersion == obsoleteVersion) ||
+            actualScope.Any(x => !expectedByCode.TryGetValue(x.Code,
+                out var expected) || x.Id != expected.Id ||
+                x.Title != expected.Title) ||
+            await _db.CurriculumPedagogicalLessons.AnyAsync(x => x.Code == retired, ct) ||
+            stillAdvanced != 77 || afterAll != unrelatedBefore + 76 ||
+            afterContent != unrelatedBefore + 76)
+            throw new InvalidOperationException(
+                "Grade8 Arabic 76-lesson cutover failed postconditions; transaction rolled back.");
+
+        await transaction.CommitAsync(ct);
+        Console.WriteLine(
+            "UAE_G8_SCOPED_REPLACE_77_WITH_76_ARABIC_PASS " +
+            "otherCurriculaUntouched=true advanced=77 publishedArabicMetadata=76");
     }
 
     private async Task BuildUaeAsync(

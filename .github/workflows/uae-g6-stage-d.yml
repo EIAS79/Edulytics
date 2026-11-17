@@ -143,7 +143,7 @@ jobs:
       - name: Rehearse exactly 128 Grade6 production imports on disposable PostgreSQL 18
         run: |
           set -euo pipefail
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5307
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5306
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -v ON_ERROR_STOP=1 <<'SQL'
           BEGIN;
           CREATE TEMP TABLE ids ON COMMIT DROP AS
@@ -160,8 +160,8 @@ jobs:
           DELETE FROM "CurriculumPedagogicalLessons" WHERE "Id" IN (SELECT "Id" FROM ids);
           COMMIT;
           SQL
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5106
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5106
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5105
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5105
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumPedagogicalLessons" x' >/tmp/lessons-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."Id")) FROM "CurriculumLessonContents" x' >/tmp/content-before
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x."PedagogicalLessonId",x."OutcomeNodeId")) FROM "CurriculumPedagogicalLessonOutcomes" x' >/tmp/outcomes-before
@@ -181,8 +181,8 @@ jobs:
               tail -n 55 "/tmp/g6-scoped-$n.log" | grep -Eiv 'password|credential|secret|connection' || true
               exit 1
             fi
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5234
-            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5234
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumPedagogicalLessons"')" = 5233
+            test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc 'SELECT COUNT(*) FROM "CurriculumLessonContents"')" = 5233
           done
           unset EDULYTICS_G6_SCOPED_RELEASE
           psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT md5(string_agg(to_jsonb(x)::text,chr(10) ORDER BY x.\"Id\")) FROM \"CurriculumPedagogicalLessons\" x WHERE x.\"Code\" NOT LIKE 'PED:UAE-MOE-MATH:L6:GENERAL:%'" >/tmp/lessons-after
@@ -204,12 +204,12 @@ jobs:
             'phase':'scoped-production','status':'PASS',
             'candidateSha':os.environ['GITHUB_SHA'],
             'approvedArabicLessonCount':128,'canonicalMetadataCount':128,
-            'unrelatedRecordsPreserved':5106,'independentRunCount':2,
+            'unrelatedRecordsPreserved':5105,'independentRunCount':2,
             'unrelatedGradesModified':False,
             'productionDatabaseWritten':False,
             'testDatabase':'disposable PostgreSQL 18'},indent=2)+'\n')
           PY
-          echo 'UAE_G6_SCOPE_ONLY_5106_WITH_78_G7_REMAIN_UNCHANGED_PASS'
+          echo 'UAE_G6_SCOPE_ONLY_5105_WITH_78_G7_76_G8_REMAIN_UNCHANGED_PASS'
       - if: always()
         uses: actions/upload-artifact@v4
         with:

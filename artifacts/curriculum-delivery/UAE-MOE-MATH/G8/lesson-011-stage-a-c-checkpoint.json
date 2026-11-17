@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "pathway": "General",
+  "lessonOrdinal": 11,
+  "unit": 2,
+  "lesson": 1,
+  "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:02:01:SOLVING-EQUATIONS-WITH-RATIONAL-COEFFICIENTS",
+  "title": "حل المعادلات باستخدام المعاملات النسبية",
+  "status": "READY_FOR_STAGE_D",
+  "meaning": "A–B–C original Arabic candidate complete; no claim of runtime or exact item parity",
+  "stageA": {
+    "sourceFile": "Grade_08/01_Student_Books/01-1-4.pdf",
+    "sha256": "d10222e87f41a05cfed0dc7dd06fb0dff9b069c31ff4e71c80c65d1007474f0e",
+    "sourcePages": [
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151
+    ],
+    "sourceTaskReferences": 38,
+    "atomicSourceParity": "UNKNOWN_NOT_CLAIMED"
+  },
+  "stageB": {
+    "originalArabicTranslation": true,
+    "richV2Visuals": 2,
+    "originalCooldown": true,
+    "preservedLessonCode": true,
+    "rtlCodeAlreadyWritten": true,
+    "oldPackAcademicLanguage": "en pending all-grade migration"
+  },
+  "stageC": {
+    "decision": "REUSE_EXISTING_NUMERIC_ENGINE_WITH_TEACHER_REVIEW",
+    "skill": "supporting.algebra.equations",
+    "allowedFamilies": [
+      "usccss.g7.u05.rational_linear_equation",
+      "usccss.number.signed_rational_divide",
+      "supporting.algebra.equations.mixed"
+    ],
+    "teacherReview": [
+      "تفسير استخدام المقلوب مع حفظ إشارة الكسر",
+      "تعويض الحل في طرفي المعادلة",
+      "التمييز بين 0س=0 و0س=5",
+      "نشاط نسب مئوية يتطلب مراجعة بشرية"
+    ],
+    "testFile": "tests/academic-uae-grade8-arabic-u02l01.test.cjs",
+    "testsWritten": true,
+    "testsRun": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "runtime": "NOT_RUN"
+  },
+  "gradeReleaseBlockers": [
+    "unmigrated English Grade8 General lessons",
+    "77 vs 76 local-source index conflict",
+    "Stage D checks not run"
+  ]
+}

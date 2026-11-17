@@ -17,7 +17,10 @@ public enum PedagogicalSourceType
     CurrentOfficialTextbook = 2,
     WidelyUsedPublisherTextbook = 3,
     OfficialFrameworkOnly = 4,
-    OpenEducationalResource = 5
+    OpenEducationalResource = 5,
+    // First-party material authored from locally selected textbook references;
+    // this value does not license reproduction of textbook prose or artwork.
+    OwnerSelectedLocalArabicStudentBookReference = 6
 }
 
 public enum LessonTitleProvenance
