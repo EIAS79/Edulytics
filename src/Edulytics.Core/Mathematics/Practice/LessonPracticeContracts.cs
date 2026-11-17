@@ -10488,9 +10488,13 @@ public static class LessonPracticeContractRegistry
         // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
         byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS", "functions.linear_graphs", "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
-            ["uae.g6.u08.l03.linear_vs_square"],
+            ["uae.g6.u08.l03.linear_vs_square",
+             "algebra.modeling.pattern.classify_relation"],
             "UAE_G8_GENERAL_AR_U04L07_PDF360_367_TEACHER_REVIEW",
-            "READY_VERIFIED", Version);
+            "READY_VERIFIED", Version)
+        {
+            SkillIds = ["functions.linear_graphs", "supporting.sequences.core"]
+        };
 
         // UAE Grade8 General Arabic Unit04 Lesson08, Student Book PDF 368-375.
         // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
