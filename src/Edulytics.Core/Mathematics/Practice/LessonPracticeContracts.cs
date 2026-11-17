@@ -10703,6 +10703,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U08L06_LOCAL_PDF60_67",
             "READY_VERIFIED", Version);
 
+        // UAE G8 General Arabic U09L01; selected Student Book PDF49-58.
+        // Existing numerical families reused; first-party plots and open
+        // interpretation require teacher review. No CI/runtime claim.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:01:SCATTER-PLOTS", "supporting.statistics.scatter_correlation", "SCATTER_BIVARIATE_TREND_POSITIVE_NEGATIVE_NONE",
+            ["supporting.statistics.scatter_correlation", "statistics.bivariate.correlation", "statistics.correlation.direction"],
+            "UAE_G8_AR_U09L01_LOCAL_PDF49_58",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
