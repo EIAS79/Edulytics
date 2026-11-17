@@ -100,3 +100,79 @@ jobs:
           if-no-files-found: error
 # This diagnostic workflow does NOT execute authenticated 76-page RTL E2E, isolated PostgreSQL
 # migrations or rendered live-production acceptance. Green diagnostic jobs are not RELEASED_VERIFIED.
+
+
+  isolated-db:
+    name: G8 disposable PostgreSQL 18 migration, seed, 76 Arabic release metadata and Advanced isolation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 85
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G8
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply real EF migration and seed on disposable database only
+        run: |
+          set -euo pipefail
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Confirm exactly 76 G8 General with Published metadata and no legacy source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/uae-g8-stage-d
+          python3 - <<'PY'
+          import json,os,pathlib,subprocess
+          def query(q):
+              return subprocess.check_output(["psql","-h","127.0.0.1","-U","postgres","-d","edulytics_clean_ci","-A","-t","-c",q],text=True).strip()
+          general=query("SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")
+          advanced=query("SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:ADVANCED:%'")
+          published=query("SELECT count(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%' AND c.\"Status\"=3")
+          legacy=query("SELECT count(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\"='PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS'")
+          translations=query("SELECT count(*) FROM \"CurriculumLessonContentTranslations\" t JOIN \"CurriculumLessonContents\" c ON c.\"Id\"=t.\"CurriculumLessonContentId\" JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")
+          result={"candidateSha":os.environ["GITHUB_SHA"],"phase":"isolated-db","database":"disposable PostgreSQL 18","generalLessons":int(general),"advancedLessons":int(advanced),"publishedGeneralMetadata":int(published),"legacyExtra":int(legacy),"persistedTranslations":int(translations),"productionWritten":False}
+          ok=(result["generalLessons"]==76 and result["advancedLessons"]==77 and result["publishedGeneralMetadata"]==76 and result["legacyExtra"]==0 and result["persistedTranslations"]==0)
+          result["status"]="PASS" if ok else "D_BLOCKED"
+          pathlib.Path("artifacts/uae-g8-stage-d/grade8-isolated-db.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(result,indent=2))
+          if not ok: raise SystemExit(1)
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-isolated-postgresql
+          path: artifacts/uae-g8-stage-d/grade8-isolated-db.json
+          if-no-files-found: warn
