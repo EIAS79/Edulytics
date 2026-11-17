@@ -10612,6 +10612,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U07L02_LOCAL_PDF157_164_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U07L03, original Arabic Student PDF 171–178.
+        // Reuse numeric geometry families; diagrams/correspondence require human scoring.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:07:03:SIMILARITY-AND-TRANSFORMATIONS", "geometry.similarity.scale_factor", "SIMILARITY_DILATION_AND_RIGID_TRANSFORMS",
+            ["geometry.similarity.scale_factor", "usccss.g7.u01.l02.scale_factor", "usccss.g7.u01.l04.angle_and_distance_scaling"],
+            "UAE_G8_AR_U07L03_LOCAL_PDF171_178_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
