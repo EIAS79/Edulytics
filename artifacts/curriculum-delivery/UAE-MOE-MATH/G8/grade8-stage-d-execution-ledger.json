@@ -15,18 +15,17 @@
   "abcReadyLessons": 76,
   "stageDVerifiedLessons": 0,
   "firstIncompleteLessonOrdinal": 1,
-  "stageDStatus": "D_BLOCKED",
+  "stageDStatus": "D_RELEASABLE_SOURCE_WITH_TECHNICAL_CUTOVER_PENDING",
   "technicalReleaseReady": false,
   "knownReleaseBlockers": [
     "CROSS_EDITION_CROSSWALK_UNVERIFIED",
     "ATOMIC_SOURCE_PARITY_UNKNOWN",
-    "SEMANTIC_HASH_REGEN_PENDING",
-    "PRODUCTION_12_05_RETIREMENT_PENDING",
     "AUTHENTICATED_RTL_E2E_NOT_RUN",
     "FINAL_CI_NOT_PASSED",
-    "66_RICHV2_RUNTIME_SCHEMA_GAPS_AFTER_UNIT_1",
     "ISOLATED_PG_AUTHENTICATED_E2E_NOT_RUN",
-    "PRODUCTION_PRE_CUTOVER_BACKUP_BLOCKED_BY_NEON_QUOTA"
+    "PRODUCTION_PRE_CUTOVER_BACKUP_BLOCKED_BY_NEON_QUOTA",
+    "LEGACY_12_05_PRODUCTION_ACTUAL_RETIREMENT_PENDING",
+    "PRODUCTION_BACKUP_OR_RESTORE_PLAN_NEEDS_CAPACITY"
   ],
   "productionReadOnlyInventory": {
     "readDate": "2026-11-17",
@@ -43,7 +42,8 @@
     "grade8GeneralAdoptions": 2,
     "productionMutated": false,
     "protectiveBackupAttempt": "NEON_BRANCH_AND_SNAPSHOT_QUOTAS_EXCEEDED",
-    "externalDestructiveChangePerformed": false
+    "externalDestructiveChangePerformed": false,
+    "legacyRetirementRehearsal": "PASS_SAVEPOINT_ROLLBACK_NO_PERSISTED_DELETE"
   },
   "authorization": {
     "academicOwnerGrade8ApprovalRecorded": true,
@@ -52,29 +52,33 @@
     "productionReleaseCondition": "OWNER_AUTHORIZED_ONLY_AFTER_TECHNICAL_CI_SAFE_CUTOVER"
   },
   "lastNodeTestEvidence": {
-    "candidateSha": "1287a1d6ae73ffd84e52778707364e4d88bb028e",
-    "workflowRunId": 44055515546,
-    "jobId": 133943731582,
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
     "passed": 221,
     "failed": 0,
     "total": 221,
-    "scope": "76 authored lesson Node tests and G8 source76 test; does not establish browser/authenticated or PostgreSQL E2E"
+    "scope": "Local Node unit and Grade8 source76 test suite"
   },
   "richV2ContractAudit": {
-    "candidateSha": "bfdc6a66a3e21dd6570acc04390d009e4a834472",
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
     "previousInvalid": 74,
-    "rectifiedUnit1Lessons": [
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10
-    ],
-    "currentExpectedValid": 10,
-    "currentExpectedInvalid": 66,
-    "validationStatus": "CI_RUN_PENDING_FOR_FINAL_COMMIT"
+    "remediatedFromExistingCanonical": 66,
+    "structurallyValidRichV2": 76,
+    "runtimeSchemaAudit": "PASS_LOCAL",
+    "limitations": "Source-derived structural supplements, not independent review of 76 individual mathematical solution sets"
+  },
+  "lastDotnetTestEvidence": {
+    "candidateSha": "46826b5ca591b06d4f7a52f0c5bbb8c033786a8b",
+    "workflowRunId": 44089493108,
+    "passed": 66,
+    "failed": 0,
+    "total": 66,
+    "build": "Release 0 errors"
+  },
+  "semanticHashReconciliation": {
+    "candidateSha": "67cc341f1111dcc76335b6f8daf0dd28308a8705",
+    "graphSha256": "3d0ce7678b3adb2bcb5c206d06d7e3ca777ad97812781e6a327cbf57e79c3109",
+    "lessonFingerprints": 76,
+    "unitFingerprints": 12,
+    "status": "CHECK_REPRODUCIBLE"
   }
 }

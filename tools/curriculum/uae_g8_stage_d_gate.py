@@ -152,8 +152,23 @@ def main(phase):
               semantic_check.returncode == 0,
               {"result": semantic_check.stdout.strip()[-800:],
                "error": semantic_check.stderr.strip()[-400:]})
-        check("production_retirement_transaction_rehearsed",
-              (G8 / "grade8-legacy-retirement-rehearsal.json").is_file())
+        rehearsal_path = G8 / "grade8-legacy-retirement-rehearsal.json"
+        rehearsal = read(rehearsal_path) if rehearsal_path.is_file() else {}
+        rr = rehearsal.get("rehearsal", {})
+        fk = rehearsal.get("readOnlyForeignKeyAudit", {})
+        check("production_extra_12_05_delete_and_rollback_rehearsal_proven",
+              rehearsal.get("legacyCode") == "PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS"
+              and rr.get("initialG8General") == 77
+              and rr.get("countDuringDelete") == 76
+              and rr.get("countAfterRollback") == 77
+              and rr.get("restoredLegacyCount") == 1
+              and rr.get("allStepsInOneTransaction") is True
+              and rr.get("status") == "PASS"
+              and fk.get("CurriculumLessonContents") == 1
+              and all(count == 0 for table, count in fk.items()
+                      if table != "CurriculumLessonContents")
+              and rehearsal.get("productionTouchedPersistently") is False
+              and rehearsal.get("retirementActuallyDone") is False)
     OUT.mkdir(parents=True, exist_ok=True)
     ok = all(x["status"] == "PASS" for x in results)
     record = {

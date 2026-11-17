@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "course": "UAE-MOE-MATH",
+  "grade": 8,
+  "pathway": "General",
+  "recordedDate": "2026-11-17",
+  "database": "Neon Edulytiks production",
+  "schema": "public",
+  "mode": "SINGLE_TRANSACTION_SAVEPOINT_DELETE_ROLLBACK",
+  "legacyCode": "PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS",
+  "readOnlyForeignKeyAudit": {
+    "CurriculumLessonContents": 1,
+    "PracticeAttempts": 0,
+    "AssessmentItems": 0,
+    "AdaptivePracticeSessions": 0,
+    "AdaptivePracticeShadowObservations": 0,
+    "Grade5U03L02TeacherRubrics": 0,
+    "Grade10GeometryTeacherRubrics": 0,
+    "Grade11Algebra2TeacherRubrics": 0,
+    "Grade12PrecalculusTeacherRubrics": 0,
+    "CurriculumPedagogicalLessonOutcomes": 0
+  },
+  "rehearsal": {
+    "initialG8General": 77,
+    "contentDeleteReturnedId": "309fbd99-3503-e755-b67d-47509c33fb24",
+    "pedagogicalLessonDeleteReturnedId": "048c3851-0fd0-5252-a201-5729b1245a9b",
+    "countDuringDelete": 76,
+    "rollbackCommand": "ROLLBACK TO SAVEPOINT g8_legacy_rehearsal",
+    "countAfterRollback": 77,
+    "restoredLegacyCount": 1,
+    "allStepsInOneTransaction": true,
+    "status": "PASS"
+  },
+  "parallelCurriculum": {
+    "grade8AdvancedExpectedUnchanged": 77
+  },
+  "backupAttempts": {
+    "neonNewBranch": "DENIED_QUOTA",
+    "neonSnapshot": "DENIED_QUOTA"
+  },
+  "productionTouchedPersistently": false,
+  "retirementActuallyDone": false,
+  "scopeLimitation": "Proves single-extra-lesson deletion and rollback only. Does not validate the 76 Arabic lesson replacement pipeline, student page RTL or full production migration.",
+  "decision": "SAFE_TO_RETIRE_EXTRA_ONLY_WITH_A_PROVEN_RECOVERY_MECHANISM_AND_NEW_CANDIDATE_VALIDATED"
+}
