@@ -266,3 +266,124 @@ jobs:
             artifacts/uae-g8-stage-d/grade8-isolated-db.json
             artifacts/uae-g8-stage-d/grade8-scoped-77-to-76-rehearsal.json
           if-no-files-found: warn
+
+
+  authenticated-e2e:
+    name: G8 real authenticated HTTPS, 76 lessons, 234 attempts, Chromium desktop/mobile
+    runs-on: ubuntu-24.04
+    timeout-minutes: 95
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: edulytics_clean_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U postgres -d edulytics_clean_ci"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    env:
+      ConnectionStrings__DefaultConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      ConnectionStrings__MigrationConnection: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_CONNECTION: 'Host=127.0.0.1;Port=5432;Database=edulytics_clean_ci;Username=postgres;Password=postgres;SSL Mode=Disable'
+      EDULYTICS_CLEAN_DATABASE_NAME: edulytics_clean_ci
+      EDULYTICS_CLEAN_SEED_CONFIRM: I_CONFIRM_NEW_EMPTY_DATABASE
+      EDULYTICS_CI_REHEARSAL: 'true'
+      EDULYTICS_CI_REHEARSAL_PROGRAMME: UAE-G8
+      ASPNETCORE_ENVIRONMENT: Staging
+      PGPASSWORD: postgres
+      Edulytics__LessonContent__ReadFromJson: 'true'
+      Edulytics__Deployment__CleanBootstrap: 'true'
+      Edulytics__Deployment__RunStartupDataMaintenance: 'false'
+      Edulytics__Deployment__SeedCurriculum: 'false'
+      Edulytics__PresentationDemo__Provision: 'false'
+      Edulytics__MeetingDemo__ResetAndSeed: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build and migrate on disposable PostgreSQL only
+        run: |
+          set -euo pipefail
+          python3 -m py_compile tools/curriculum/uae_g8_stage_d_authenticated_https.py tools/curriculum/uae_g8_stage_d_browser_rtl.py
+          dotnet tool restore
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+          dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore -o /tmp/g8-web-publish
+          dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
+          dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
+      - name: Require exactly 76 Arabic Published G8 General identities, no legacy English refs
+        run: |
+          set -euo pipefail
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")" = 76
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%' AND c.\"Status\"=3")" = 76
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPackContentNodes\" WHERE \"Code\" LIKE 'UAE:REF:TEXTBOOK:G8:GENERAL:%' OR \"Code\" LIKE 'UAE:CATALOG:G8:GENERAL:%'")" = 0
+      - name: Run isolated four-role Grade8 HTTPS and actual Chromium mobile/desktop
+        env:
+          Edulytics__Deployment__CleanBootstrap: 'false'
+          Edulytics__MeetingDemo__ResetAndSeed: 'true'
+          Edulytics__Deployment__RunStartupMigrations: 'false'
+          RENDER_SERVICE_ID: ci-disposable
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python3 -m playwright install --with-deps chromium
+          export Edulytics__MeetingDemo__Password="$(openssl rand -hex 24)Aa1!"
+          echo "::add-mask::$Edulytics__MeetingDemo__Password"
+          if ! dotnet run --project tools/Edulytics.CiFixtures/Edulytics.CiFixtures.csproj -- academic > /tmp/g8-fixture.log 2>&1; then
+            tail -n 80 /tmp/g8-fixture.log | grep -Eiv 'password|credential|secret|connection' || true
+            exit 1
+          fi
+          grep -q 'MEETING_DEMO_SEED_COMPLETED' /tmp/g8-fixture.log
+          openssl req -x509 -newkey rsa:2048 -nodes -days 1 -keyout /tmp/g8-key.pem -out /tmp/g8-cert.pem -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1' >/dev/null 2>&1
+          openssl pkcs12 -export -out /tmp/g8-identity.pfx -inkey /tmp/g8-key.pem -in /tmp/g8-cert.pem -passout pass:local-test-tls >/dev/null 2>&1
+          cp /tmp/g8-cert.pem /tmp/phase-uat-cert.pem
+          export ASPNETCORE_URLS='https://127.0.0.1:5052'
+          export ASPNETCORE_Kestrel__Certificates__Default__Path=/tmp/g8-identity.pfx
+          export ASPNETCORE_Kestrel__Certificates__Default__Password=local-test-tls
+          export Edulytics__MeetingDemo__ResetAndSeed='false'
+          export ASPNETCORE_CONTENTROOT=/tmp/g8-web-publish
+          dotnet /tmp/g8-web-publish/Edulytics.Web.dll >/tmp/g8-web.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent --cacert /tmp/phase-uat-cert.pem https://localhost:5052/health/ready >/dev/null; then ready=true; break; fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then break; fi
+            sleep 3
+          done
+          if [ "$ready" != true ]; then
+            tail -n 80 /tmp/g8-web.log | grep -Eiv 'password|credential|secret|connection' || true
+            exit 1
+          fi
+          python3 tools/curriculum/uae_g8_stage_d_authenticated_https.py || { tail -n 80 /tmp/g8-web.log | grep -Eiv 'password|credential|secret|connection' || true; exit 1; }
+          python3 tools/curriculum/uae_g8_stage_d_browser_rtl.py
+      - name: Verify 76 pages, 234 actual persisted attempt responses, 156 rendered viewports
+        run: |
+          python3 - <<'PY'
+          import os,json,pathlib
+          auth=json.loads(pathlib.Path('/tmp/uae-g8-stage-d-authenticated-76-lessons.json').read_text())
+          rtl=json.loads(pathlib.Path('/tmp/uae-g8-stage-d-browser-rtl/report.json').read_text())
+          assert auth['candidateSha']==rtl['candidateSha']==os.environ['GITHUB_SHA']
+          assert auth['grade']==7 and auth['lessonPageCount']==76
+          assert auth['correctAttemptPersistenceCount']==auth['wrongAttemptPersistenceCount']==auth['malformedAttemptRejectionCount']==76
+          assert auth['crossSchoolAccessDenied'] is True and all(auth['roleLogins'].values())
+          assert auth['negativeEnglishFallbackChecks']==76
+          assert rtl['rtlDesktopLessons']==rtl['rtlMobileLessons']==76 and rtl['screenshotsWritten']>=8
+          out=pathlib.Path('artifacts/uae-g8-stage-d/grade8-e2e.json')
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text(json.dumps({'candidateSha':os.environ['GITHUB_SHA'],'status':'PASS','authenticatedLearnerPages':76,'negativeEnglishFallbackChecks':76,'persistedPracticeAttempts':234,'chromiumPagesDesktopMobile':156,'screenshots':rtl['screenshotsWritten'],'sourceLiteralParity':'UNKNOWN','productionWritten':False},indent=2))
+          PY
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: g8-authenticated-e2e
+          path: artifacts/uae-g8-stage-d/grade8-e2e.json
+          if-no-files-found: error
+          retention-days: 30
+

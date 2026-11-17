@@ -365,7 +365,22 @@ internal static class MeetingDemoProvisioner
              string.Equals(ciProgramme, "UAE-G5", StringComparison.Ordinal) ||
               string.Equals(ciProgramme, "UAE-G6", StringComparison.Ordinal) ||
               string.Equals(ciProgramme, "UAE-G7", StringComparison.Ordinal));
-        var activeSchools = isUaeEarlyGradeCi
+        // Grade8 General-specific authenticated learner E2E; never alter demo
+        // school data outside disposable GitHub PostgreSQL rehearsals.
+        var isUaeG8Ci = disposableCi &&
+            string.Equals(ciProgramme, "UAE-G8", StringComparison.Ordinal);
+        var activeSchools = isUaeG8Ci
+            ? Schools.Where(s => s.Key is "uae-middle" or "commoncore-middle")
+                .Select(s => s.Key == "uae-middle"
+                    ? s with
+                    {
+                        DefaultCulture = "ar",
+                        PrimaryLoginLogicalLevel = 7,
+                        SecondaryLoginLogicalLevel = 8,
+                        SecondaryLoginPathway = "General"
+                    }
+                    : s).ToArray()
+            : isUaeEarlyGradeCi
             ? Schools.Where(s => s.Key is "uae-primary" or "commoncore-primary")
                 .Select(s => s.Key == "uae-primary"
                     ? s with
