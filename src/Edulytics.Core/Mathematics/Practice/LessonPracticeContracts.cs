@@ -10789,6 +10789,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U10L04_PDF154_161_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic U11L04, source Student Book PDF 203-209.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:04:RECTANGLES", "geometry.quadrilaterals.attributes", "RECTANGLE_ANGLE_DIAGONAL_AND_PARALLELOGRAM_TEST",
+            ["geometry.quadrilaterals.attributes", "geometry.quadrilaterals.classification", "geometry.coordinate_plane.axis_distance"],
+            "UAE_G8_AR_U11L04_LOCAL_PDF203_209",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
