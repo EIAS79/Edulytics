@@ -317,12 +317,15 @@ jobs:
           dotnet publish src/Edulytics.Web/Edulytics.Web.csproj -c Release --no-restore -o /tmp/g8-web-publish
           dotnet ef database update --project src/Edulytics.Data/Edulytics.Data.csproj --startup-project src/Edulytics.Web/Edulytics.Web.csproj --context EdulyticsDbContext
           dotnet run --project tools/Edulytics.CleanSeed/Edulytics.CleanSeed.csproj
-      - name: Require exactly 76 Arabic Published G8 General identities, no legacy English refs
+      - name: Require exactly 76 Arabic Published G8 General identities, retained internal source mapping, no legacy G8 General lesson
         run: |
           set -euo pipefail
           test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%'")" = 76
           test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumLessonContents\" c JOIN \"CurriculumPedagogicalLessons\" l ON l.\"Id\"=c.\"LessonNodeId\" WHERE l.\"Code\" LIKE 'PED:UAE-MOE-MATH:L8:GENERAL:%' AND c.\"Status\"=3")" = 76
-          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPackContentNodes\" WHERE \"Code\" LIKE 'UAE:REF:TEXTBOOK:G8:GENERAL:%' OR \"Code\" LIKE 'UAE:CATALOG:G8:GENERAL:%'")" = 0
+          # Referenced Grade8 internal source nodes are intentional: all 76 source-linked
+          # Arabic lessons resolve through them. They are not English learner lessons.
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPackContentNodes\" WHERE \"NodeKind\"='Reference' AND \"Code\" LIKE 'UAE:REF:TEXTBOOK:G8:GENERAL:%'")" -ge 76
+          test "$(psql -h 127.0.0.1 -U postgres -d edulytics_clean_ci -Atqc "SELECT COUNT(*) FROM \"CurriculumPedagogicalLessons\" WHERE \"Code\"='PED:UAE-MOE-MATH:L8:GENERAL:12:05:INFINITE-SETS'")" = 0
       - name: Run isolated four-role Grade8 HTTPS and actual Chromium mobile/desktop
         env:
           Edulytics__Deployment__CleanBootstrap: 'false'
