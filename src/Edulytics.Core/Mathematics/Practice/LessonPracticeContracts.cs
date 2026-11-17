@@ -10532,6 +10532,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_U05L03_PDF25_32_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General U05L04, local Student Book PDF33-40.
+        // Reuses existing exact numeric family; diagram and proof judgment teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:05:04:POLYGONS-AND-ANGLES", "geometry.polygons", "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
+            ["geometry.polygons", "geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
+            "UAE_G8_U05L04_PDF33_40_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
