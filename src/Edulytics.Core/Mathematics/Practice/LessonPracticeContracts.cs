@@ -10748,6 +10748,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U09L05_LOCAL_PDF93_100",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic U09L06; Student Book local PDF101-108.
+        // Reuse verified arithmetic summary families; student-drawn charts
+        // and explanations are teacher-reviewed; no runtime/CI claims.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:09:06:ANALYZING-DATA-DISTRIBUTIONS", "statistics.distribution_shape", "DISTRIBUTION_SYMMETRY_SKEW_CLUSTER_GAP_OUTLIER",
+            ["statistics.distribution_shape.classify", "statistics.compare_distributions", "statistics.outliers", "usccss.g6.u08.l16.box_plot_source_quartiles"],
+            "UAE_G8_AR_U09L06_LOCAL_PDF101_108",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
