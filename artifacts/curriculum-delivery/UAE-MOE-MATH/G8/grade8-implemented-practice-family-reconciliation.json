@@ -5,7 +5,7 @@
   "modifiedContracts": 54,
   "previousUnsupportedRoutes": 92,
   "distinctUnsupportedRoutes": 44,
-  "lessonsRequiringSourceAppropriateImplementedSubset": 12,
+  "lessonsRequiringSourceAppropriateImplementedSubset": 13,
   "sourcePublisherExerciseParity": "UNKNOWN",
   "completeObjectiveGenerationCoverage": "NOT_CERTIFIED",
   "existingSourcePreserved": true,
@@ -166,9 +166,10 @@
         "functions.quadratic.context"
       ],
       "remainingExactQuestionFamilies": [
-        "uae.g6.u08.l03.linear_vs_square"
+        "usccss.g7.u02.l10.graphs_origin_slope",
+        "functions.quadratic.output_roots.solve"
       ],
-      "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
+      "sourceType": "EXISTING_SUPPORTED_PREREQUISITE_EXACT_QUESTIONS_WITH_SOURCE_CLASSIFICATION_TEACHER_REVIEW"
     },
     {
       "lessonCode": "PED:UAE-MOE-MATH:L8:GENERAL:04:08:QUADRATIC-FUNCTIONS",
@@ -638,5 +639,6 @@
       ],
       "sourceType": "EXACT_REGISTERED_FAMILIES_PRESERVED"
     }
-  ]
+  ],
+  "u04l07AdaptiveNote": "Remove limited-capacity UAE G6 linear_vs_square (2 unique fixtures); source Arabic lesson still teaches and assesses linear/nonlinear classification with teacher-reviewed explanations; exact digital families cover slope and quadratic roots."
 }

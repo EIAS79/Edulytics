@@ -37,7 +37,7 @@ function stripOnlyRetiredG7Contract(lines){
   return [...lines.slice(0,start),
           ...lines.slice(start+retiredG7GeneralContractBlock.length)];
 }
-const ownerAuditedExactG8PracticeContractBlob='ce91ad6ffa164426c32d37d37c87662c41831538';
+const ownerAuditedExactG8PracticeContractBlob='b26cc01758c7533368295c360f3e40f8d757df11';
 function withoutGrade8ScopedPracticeAssignments(lines){
   // All Grade8 GENERAL Practice rewrites are isolated by their
   // byLesson[...] deterministic contract key; compare every other line
