@@ -1,0 +1,105 @@
+name: UAE Grade 8 General Arabic Stage D - 76 lesson diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/uae-g8-stage-d.yml'
+      - 'tools/curriculum/uae_g8_stage_d_gate.py'
+      - 'artifacts/curriculum-delivery/UAE-MOE-MATH/G8/**'
+      - 'docs/curriculum/UAE_G8_GENERAL_**'
+      - 'src/Edulytics.Core/Curriculum/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/LessonContent/**'
+      - 'src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml'
+      - 'tests/academic-uae-grade8-arabic-*.test.cjs'
+      - 'tests/academic-uae-grade8-general-ar-*.test.cjs'
+  push:
+    branches:
+      - curriculum/uae-g8-general-ar-student-first-abc-20261116
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  DOTNET_NOLOGO: '1'
+jobs:
+  structural:
+    name: G8 12 units / 76 Arabic lesson identities and source artifacts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify Grade 8 source-selected structure and fail-closed status
+        run: python3 tools/curriculum/uae_g8_stage_d_gate.py --phase structural
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-structural
+          path: artifacts/uae-g8-stage-d/grade8-structural-gate.json
+          if-no-files-found: error
+  lesson-tests:
+    name: G8 run all 76 authored lesson tests and general 76 gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Execute all 76 native lessons, not only parse test files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/uae-g8-stage-d
+          node --test --test-reporter=tap tests/academic-uae-grade8-arabic-u??l??.test.cjs tests/academic-uae-grade8-general-ar-source76-stage-d-gate.test.cjs | tee artifacts/uae-g8-stage-d/grade8-lessons.tap
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-lesson-test-results
+          path: artifacts/uae-g8-stage-d/grade8-lessons.tap
+          if-no-files-found: ignore
+  dotnet:
+    name: G8 shared release build and relevant UAE/US regressions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - name: One restore and one Release build
+        run: |
+          dotnet restore Edulytics.sln
+          dotnet build Edulytics.sln -c Release --no-restore
+      - name: Relevant Grade 8, Arabic and shared Grade 7 regression tests
+        run: |
+          mkdir -p artifacts/uae-g8-stage-d/trx
+          dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-build --no-restore --filter 'FullyQualifiedName~UaeGrade8|FullyQualifiedName~UaeG8|FullyQualifiedName~UsCcssGrade8|FullyQualifiedName~UaeGrade7' --logger 'trx;LogFileName=g8-regressions.trx' --results-directory artifacts/uae-g8-stage-d/trx
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-dotnet-regressions
+          path: artifacts/uae-g8-stage-d/trx
+          if-no-files-found: ignore
+  source-release-gate:
+    name: G8 source 2019/2025 crosswalk, atomic parity and publication guards
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse 100% and merge while required source evidence remains absent
+        run: python3 tools/curriculum/uae_g8_stage_d_gate.py --phase source
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: uae-g8-source-release-gate
+          path: artifacts/uae-g8-stage-d/grade8-source-gate.json
+          if-no-files-found: error
+# This diagnostic workflow does NOT execute authenticated 76-page RTL E2E, isolated PostgreSQL
+# migrations or rendered live-production acceptance. Green diagnostic jobs are not RELEASED_VERIFIED.
