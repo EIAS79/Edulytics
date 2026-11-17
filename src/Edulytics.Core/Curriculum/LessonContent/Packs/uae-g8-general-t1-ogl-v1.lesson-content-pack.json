@@ -1368,10 +1368,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T1:UAEED:04:09",
       "IsSupporting": false,
       "SourceUrl": "https://minhaji.moe.gov.ae/",
-      "SourceLocator": "Grade 8 General / T1 / Unit 4 / Lesson 9",
+      "SourceLocator": "Grade_08/01_Student_Books/01-1-4.pdf; local PDF 380–387; printed 347–354",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "Arabic student book 2025–2026, owner-selected local edition",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "611a58d9a291fc70577b1b180bd638735349585ce6ea5d86b65c00dea071cee0",
       "CanonicalBodySha256": "7af28588d9c4ef77304e528427fe6bf28585c4eec2105e7a59f1e18f37e2e8e0",
@@ -1379,7 +1379,7 @@
       "RetrievalUrl": "https://minhaji.moe.gov.ae/",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original Arabic lesson aligned to source objectives and topics; exact source item parity unknown; tests, runtime, CI not run",
       "Translations": [
         {
           "CultureCode": "en",
@@ -1390,6 +1390,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Qualitative Graphs, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Qualitative Graphs: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "التمثيلات البيانية النوعية",
+          "Explanation": "يعرض التمثيل البياني النوعي وصفًا لكيف تتغير كمية مع الوقت أو مع مقدار مستقل، حتى إذا لم تكن القيم الدقيقة متاحة. يمثل ميل الرسم للأعلى زيادة الكمية، والخط الأفقي فترة ثبات، والميل للأسفل نقصانها. مثال أصلي: تبدأ كمية ماء في خزان عند صفر، ترتفع تدريجيًا خلال أول دقيقتين، ثم تبقى ثابتة دقيقتين، وبعدها تقل حتى الصفر؛ يجب أن يظهر الرسم ارتفاعًا ثم مستوى أفقيًا ثم انخفاضًا. في نموذج آخر ترتفع سرعة عدّاء وتثبت مدة ثم تنخفض قبل التوقف. نوع المحور الرأسي مهم؛ خط أفقي في الرسم (المسافة–الزمن) يعني توقف تغير المسافة، بينما خط أفقي في رسم (السرعة–الزمن) يعني سرعة ثابتة غير صفرية غالباً، فلا نخلط التفسيرين.",
+          "KeyConceptsAndRules": "اقرأ أسماء المحاور ووحداتها قبل وصف المنحنى. الصعود من اليسار إلى اليمين يدل أن الكمية الممثلة على محور ص تتزايد، والنزول يدل التناقص، والجزء الأفقي يدل ثبات الكمية. النقطة الأعلى في المدى المرسوم تمثل قيمة عظمى مرئية، لا بالضرورة أعلى قيمة خارج الفترة. قد يتكون التمثيل من مقاطع متتالية ذات ميل مختلف أو منحنيات ناعمة، وليس شرطًا أن يكون خطياً واحداً. إذا لم يعط الرسم تدريجًا رقمياً، لا تخترع وقتاً أو قيمة دقيقة. ينبغي أن ترتبط القصة المروية بالمحاور: مسافة عن البيت قد تزيد ثم تقل، أما المسافة الإجمالية المقطوعة فلا تنقص مع مرور الوقت.",
+          "WorkedExamples": "مثال1: كمية ماء تبدأ 10 لترات ثم ترتفع إلى 25، تثبت عند 25، وتنخفض إلى 5؛ الرسم يحتوي ثلاثة مقاطع: صاعد، أفقي، هابط. مثال2: ارتفاع قفزة يصل إلى قمة ثم يعود إلى الأرض: ارتفاع–زمن يبدأ بزيادة ثم ينقص بعد نقطة عظمى. مثال3: سرعة سيارة تزداد ثم تثبت ثم تتناقص للصفر؛ خط السرعة الأفقي لا يعني توقف السيارة. مثال4: رسم مسافة كليّة مقطوعة لا يمكن أن يظهر هبوطًا إذا كانت المسافة تراكمية وليست بعداً عن نقطة البداية. مثال5: قراءة رسم لجهاز قياس حرارة ترتفع حرارته ثم تهدأ ثم تبرد، مع مراعاة أن مدة المرحلة لا تحدد ما لم تسمَّ على محور الزمن.",
+          "StepByStepSolutions": "أقرأ عنوان الرسم والمحور الأفقي (مثل الزمن) والرأسي (مثل كمية الماء أو المسافة)، وأحدد المجال الذي يغطيه الرسم. أمر عبر الزمن من اليسار إلى اليمين وأصف كل فترة بكلمة زيادة أو ثبات أو نقصان. أميز النقاط القصوى، وأفسر طبيعتها في القصة بدلاً من افتراض أرقام لا يوفرها الرسم. عند إنشاء رسم من وصف أقسم الزمن إلى مراحل بالترتيب الصحيح، وأرسم ارتفاعًا أو مستوى أفقيًا أو هبوطًا يناسب كل مرحلة، وأكتب وحدة كل محور. أتحقق أن الرسم لا يخالف قيود الواقع، مثل مسافة كلية سالبة أو كمية سالبة من الماء.",
+          "CommonMistakes": "قراءة جزء أفقي على مخطط السرعة–الزمن كأنه توقف خطأ؛ ذلك يعني سرعة ثابتة. من الخطأ الادعاء أن كل خط صاعد يوضح تسارعًا؛ هذا يعتمد على ماهية المحور الرأسي. لا يمكن استنتاج أرقام دقيقة إذا كان الرسم نوعياً بلا تدريج. النقطة العظمى في الفترة ليست دائماً عظمى مدى الحياة. كذلك لا يجوز جعل مخطط المسافة التراكمية ينخفض لأن الإجمالي المقطوع لا ينقص، بينما البعد عن البيت قد ينقص عند العودة.",
+          "QuickSummary": "أقرأ التمثيل النوعي من المحاور ثم أصف الارتفاع والثبات والانخفاض والقيم العظمى، وأحول القصة إلى رسم مراحل معقول. Cool-down أصلي: (1) صف رحلة تبعد عن المنزل ثم تتوقف ثم تعود، على مخطط البعد–الزمن. (2) ماذا يعني الجزء الأفقي من مخطط سرعة–زمن؟ (3) لماذا لا يمكن استخراج قيمة دقيقة من رسم بلا تدريج؟ (4) ارسم مخطط مستوى ماء يرتفع ويثبت ثم يهبط. المعلم يراجع الرسوم والوصف."
         }
       ]
     },

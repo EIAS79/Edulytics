@@ -10500,6 +10500,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U04L08_PDF368_375_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic Unit04 Lesson09, Student Book PDF 380-387.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:09:QUALITATIVE-GRAPHS", "functions.graph.model_and_interpret", "QUALITATIVE_TIME_GRAPH_INCREASE_DECREASE_CONSTANT_MAX",
+            ["functions.graph.key_features", "functions.graph.model_and_interpret", "functions.piecewise.interpret", "functions.domain_range.graph"],
+            "UAE_G8_GENERAL_AR_U04L09_PDF380_387_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
