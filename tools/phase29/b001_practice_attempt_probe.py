@@ -202,6 +202,17 @@ def grade8_syntactically_valid_wrong_answer(correct, family=None):
         if value not in choices:
             raise ValueError("Unsupported G8 linear-system count answer")
         return choices[(choices.index(value) + 1) % len(choices)]
+    if family == "statistics.distribution_shape.classify":
+        # Real ALG1 Unit1 distribution-shape short answers; all five choices
+        # are accepted answer categories by the existing exact C# engine.
+        choices = (
+            "uniform", "symmetric bell-shaped", "right-skewed",
+            "left-skewed", "bimodal"
+        )
+        value = correct.strip()
+        if value not in choices:
+            raise ValueError("Unsupported G8 distribution shape answer")
+        return choices[(choices.index(value) + 1) % len(choices)]
     return grade7_syntactically_valid_wrong_answer(correct, family)
 
 
@@ -552,6 +563,19 @@ if __name__=="__main__":
             self.assertRaises(ValueError,
                 grade8_syntactically_valid_wrong_answer,
                 "unapproved", "algebra.linear.systems.solution_count.classify")
+
+        def test_g8_distribution_shape_answer_has_valid_category_control(self):
+            family = "statistics.distribution_shape.classify"
+            choices = (
+                "uniform", "symmetric bell-shaped", "right-skewed",
+                "left-skewed", "bimodal"
+            )
+            for correct in choices:
+                wrong = grade8_syntactically_valid_wrong_answer(correct, family)
+                self.assertIn(wrong, choices)
+                self.assertNotEqual(wrong, correct)
+            self.assertRaises(ValueError, grade8_syntactically_valid_wrong_answer,
+                              "unknown", family)
 
         def test_g6_arabic_categories_are_legitimate_wrong_alternatives(self):
             domains=[
