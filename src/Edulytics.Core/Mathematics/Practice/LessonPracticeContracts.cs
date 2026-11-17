@@ -10807,6 +10807,15 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U11L05_LOCAL_PDF210_218",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic U11L06, source Student Book PDF 219-228.
+        // Numeric families reused; source-based original proofs and geometry
+        // diagrams are reserved for teacher assessment.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:11:06:TRAPEZOIDS-AND-KITES", "geometry.quadrilaterals.attributes", "TRAPEZOID_EXACT_ONE_PARALLEL_PAIR_KITE_LEGS_MIDSEGMENT",
+            ["geometry.quadrilaterals.attributes", "uae.g6.u09.l06.trapezoid_area", "geometry.quadrilaterals.classification"],
+            "UAE_G8_AR_U11L06_LOCAL_PDF219_228",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
