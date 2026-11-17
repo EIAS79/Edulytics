@@ -2830,10 +2830,10 @@
       "OfficialReferenceCode": "UAE:REF:TEXTBOOK:G8:GENERAL:T3:UAEED:10:04",
       "IsSupporting": false,
       "SourceUrl": "https://almanahj.com/ae/8math3",
-      "SourceLocator": "Grade 8 General / T3 / Unit 10 / Lesson 4",
+      "SourceLocator": "Grade_08/01_Student_Books/03-9-12.pdf; PDF 154–161; printed 766–773",
       "SourceTitle": "UAE Grade 8 General Mathematics Student Edition",
       "SourcePublisher": "McGraw-Hill Education",
-      "SourceEdition": "United Arab Emirates Edition; verified current-use sequence",
+      "SourceEdition": "UAE Arabic Student Book Term3 local 2019–2020",
       "SourceRights": "Official textbook used only for curriculum scope/title/order provenance; learner-facing text independently authored by Edulytics.",
       "SourceSha256": "750e5dd4e0b5d63273364289189d38eaf88bc0afd535b88d8a94c2c5925699cd",
       "CanonicalBodySha256": "216cfa8965cc739dfd0e62096eac2aae70f3069b1776b07a9982377c2d88488e",
@@ -2841,7 +2841,7 @@
       "RetrievalUrl": "https://almanahj.com/ae/8math3",
       "RetrievalChannel": "HTTPS / locally verified UAE PDF",
       "RetrievalTimestamp": "2026-10-04T00:00:00Z",
-      "AdaptationStatus": "Edulytics-authored lesson aligned to verified UAE textbook structure; no textbook prose reproduced and no unverified OutcomeCode claimed.",
+      "AdaptationStatus": "Original first-party Arabic content, source goals and skill mapped; exact atomic item parity UNKNOWN, CI NOT_RUN",
       "Translations": [
         {
           "CultureCode": "en",
@@ -2852,6 +2852,16 @@
           "StepByStepSolutions": "Step 1: Identify the mathematical objects and the required result. Step 2: Record conditions and restrictions. Step 3: Choose the appropriate representation, theorem or equation. Step 4: Apply the method in justified steps. Step 5: Verify and interpret the answer.",
           "CommonMistakes": "For Proving Relationships Between Segments, avoid ignoring signs, units, domains, geometric conditions or scale, and do not treat a diagram or graph as proof without checking the required relationships.",
           "QuickSummary": "Proving Relationships Between Segments: identify the structure and conditions, apply the correct relationship, and verify the conclusion."
+        },
+        {
+          "CultureCode": "ar",
+          "Title": "إثبات العلاقات بين القطع المستقيمة",
+          "Explanation": "يعتمد إثبات علاقات القطع المستقيمة على تعريفات واضحة وخطوات مبررة. إذا كان B بين A وC فإن AB+BC=AC بمسلّمة جمع القطع. ويكون قطعتان متطابقتين إذا تساوى طولاهما. وتساعد خواص المساواة الانعكاسية (أ=أ)، والتناظرية (إذا أ=ب فب=أ)، والتعدية (إذا أ=ب وب=ج فأ=ج)، وخاصية الجمع والطرح، في تنظيم البرهان. في نموذج أصلي AB=س+2 وBC=2س+1 وAC=18، نكتب (س+2)+(2س+1)=18، فيكون س=5، ثم AB=7 وBC=11. وفي البرهان ذي العمودين توضع العبارات المرقمة وأسبابها المقابلة، دون نسخ صياغة الكتاب.",
+          "KeyConceptsAndRules": "إذا B بين A وC ⇒ AB+BC=AC. وإذا AB=CD ⇒ القطعتان AB وCD متطابقتان. التساوي انعكاسي وتناظري وتعدٍّ؛ وإذا أضفت أو طرحت مقداراً واحداً من طرفي مساواة ظلت صحيحة. برهان مثال: المعطى AB=CD وBC=DE، ومع B بين A,C وD بين C,E، يكون AC=AB+BC وCE=CD+DE، ومن مساواة الأزواج نستنتج AC=CE. يلزم التأكد من ترتيب وقوع النقط قبل استخدام مسلّمة جمع القطع، ومن حفظ الإشارات أثناء استبدال تعابير أطوالها.",
+          "WorkedExamples": "مثال1: B بين A وC، AB=5 وBC=8 ⇒ AC=13. مثال2: AB=س+2،BC=2س+1،AC=18 ⇒3س+3=18⇒س=5 ثم AB=7 وBC=11. مثال3: AB=CD وCD=EF، إذن AB=EF بالتعدي. مثال4: إذا كان M منتصف AB، فإن AM=MB وAM+MB=AB، لذلك AM=AB/2. مثال5: إذا AC=20 وAB=9 وB بين A,C، فإن BC=11 بإعادة ترتيب مسلّمة الجمع.",
+          "StepByStepSolutions": "أقرأ المعطيات وأضعها في عبارات رياضية صريحة، وأحدد وقوع النقاط بينها. أكتب المسلّمة أو التعريف الذي يربط القطع: AB+BC=AC أو AM=MB لتعريف المنتصف. أستخدم خواص المساواة في خطوات صغيرة موثقة: التعويض ثم الجمع أو الطرح، مع كتابة السبب. أتأكد من استنتاج المطلوب دون افتراضه مسبقًا، وأضع العبارات والأسباب في جدول عمودين من تأليفي عند الحاجة. إذا كان الأمر مسألة عددية أحل المعادلة وأتحقق من أن كل طول موجب وأن مجموع الأجزاء يساوي الكل.",
+          "CommonMistakes": "من الخطأ الاستنتاج أن AB+BC=AC إذا كانت B خارج القطعة AC؛ يجب تحقق شرط «بين». لا تقلب تطابق أطوال إلى تطابق مستويين أو أشكال كاملة. وقد يكتب الطالب سببًا مثل «واضح من الرسم» بدل مسلّمة أو خاصية مساواة. لا يصح استنتاج AB=CD من تساوي AC وBD بلا معطيات كافية. إذا اختفت القيم السالبة في طول مجهول لا تهمل شرط أن أطوال القطع غير سالبة.",
+          "QuickSummary": "أثبت علاقات القطع بتحديد المعطيات والمطلوب ثم استخدام مسلّمة الجمع وخواص المساواة والتطابق. Cool-down أصلي: إذا B بين A,C وAB=3س+1 وBC=س+3 وAC=20 فأوجد س وطولي القطعتين واكتب سبب كل انتقال. وإذا AB=CD وCD=EF، فما مبرر AB=EF؟ تقييم بنية البرهان والرسم للمعلم."
         }
       ]
     },

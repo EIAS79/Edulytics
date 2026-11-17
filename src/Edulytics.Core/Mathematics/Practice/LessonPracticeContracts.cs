@@ -10781,6 +10781,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_AR_U10L03_PDF141_148_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Unit10 Lesson4, local Arabic Student Book PDF154-161.
+        // Reuse geometry numeric practice; construction and proof teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:10:04:PROVING-RELATIONSHIPS-BETWEEN-SEGMENTS", "geometry.segment.proof", "SEGMENT_ADDITION_EQUALITY_POSTULATES_REASONING",
+            ["uae.g4.u12.l01.segments_from_points", "supporting.geometry.properties", "geometry.problem_solving.justification"],
+            "UAE_G8_AR_U10L04_PDF154_161_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
