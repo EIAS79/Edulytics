@@ -10791,7 +10791,11 @@ public static class LessonPracticeContractRegistry
 
         // UAE Grade8 General Unit11 Lessons 1-3: first-party Arabic source-specific
         // polygon and parallelogram tasks. Open proofs remain teacher-reviewed.
-        // READY_VERIFIED is machine-verifiable numeric/category Practice readiness only.\n        // Source geometry proof and constructions still require teacher scoring;\n        // full G8 HTTPS persistence, proper negatives and Grade8 RTL tests are\n        // required before any production release.\n        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS"] = new LessonPracticeContract(
+        // READY_VERIFIED is machine-verifiable numeric/category Practice readiness only.
+        // Source geometry proof and constructions still require teacher scoring;
+        // full G8 HTTPS persistence, proper negatives and Grade8 RTL tests are
+        // required before any production release.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS"] = new LessonPracticeContract(
             "PED:UAE-MOE-MATH:L8:GENERAL:11:01:ANGLES-OF-POLYGONS", "geometry.polygons.missing_interior_angle",
             "POLYGON_INTERIOR_EXTERIOR_ANGLE_SUM_REGULAR",
             ["geometry.polygons.missing_interior_angle", "geometry.angles.supplementary"],
