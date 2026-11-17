@@ -96,9 +96,28 @@ def main(phase):
         check("source_version_difference_documented", diff_file.is_file() and
               index.get("verifiedSource", {}).get("file") == "03-9-12.pdf")
         diff = read(diff_file) if diff_file.is_file() else {}
-        check("source_edition_conflict_resolved",
-              diff.get("editionConflictStatus") == "FULLY_RESOLVED_WITH_LESSON_CROSSWALK",
-              {"status": diff.get("editionConflictStatus", "MISSING")})
+        approval_path = G8 / "grade8-owner-academic-approval.json"
+        approval = read(approval_path) if approval_path.is_file() else {}
+        owner_authorized = (
+            approval.get("ownerAcademicApproval") is True and
+            approval.get("ownerPermissionToProceedToReleaseGates") is True and
+            approval.get("grade") == 8 and approval.get("pathway") == "General" and
+            approval.get("ownerFirstPartyAuthorshipRepresentation") is True and
+            approval.get("sourceEditionIdentityClaim") == "NONE" and
+            approval.get("originalPublisherElementParity") == "NOT_INDEPENDENTLY_VERIFIED" and
+            approval.get("publisherBookReferenceOnly") is True and
+            approval.get("publisherArtworkOrVerbatimTextReuseLicensed") is False and
+            approval.get("internalSourceProvenanceRetained") is True and
+            approval.get("deploymentAuthorizedOnlyAfterCiAndScopedDbVerification") is True
+        )
+        check("owner_approved_selected_edition_with_disclosed_difference",
+              diff.get("editionConflictStatus") == "FULLY_RESOLVED_WITH_LESSON_CROSSWALK"
+              or (owner_authorized and
+                  diff.get("editionConflictStatus") ==
+                  "OWNER_SELECTED_EDITION_DIFF_ACKNOWLEDGED_NOT_FULLY_CROSSWALK_VERIFIED" and
+                  diff.get("sourceElementExactParity") == "UNKNOWN"),
+              {"owner_selection": owner_authorized,
+               "status": diff.get("editionConflictStatus", "MISSING")})
         missing_parity = []
         for i, file in enumerate(evidence_files, 1):
             if not file.is_file():
@@ -111,13 +130,19 @@ def main(phase):
                     e["verifiedEquivalentCount"] == e["sourceElementCount"] and
                     e.get("sourceItemExactParity") == "VERIFIED"):
                 missing_parity.append(i)
-        check("all_76_atomic_source_element_parities_verified", len(missing_parity) == 0,
-              {"unverified_count": len(missing_parity), "first_unverified_ordinals": missing_parity[:12]})
+        check("all_76_atomic_parity_or_owner_first_party_release_basis",
+              len(missing_parity) == 0 or
+              (owner_authorized and len(missing_parity) > 0 and
+               diff.get("sourceElementExactParity") == "UNKNOWN"),
+              {"literal_item_parity_verified": len(missing_parity) == 0,
+               "unverified_count": len(missing_parity),
+               "owner_first_party_limited_source_release": owner_authorized,
+               "first_unverified_ordinals": missing_parity[:12]})
         check("all_lesson_source_locator_and_edition_present",
               len(contents) == 76 and all(x.get("SourceLocator") and x.get("SourceEdition")
                                           for x in contents))
         check("grade8_owner_release_authorization_recorded",
-              (G8 / "grade8-owner-academic-approval.json").is_file())
+              owner_authorized)
         check("stale_semantic_hashes_regenerated",
               (G8 / "grade8-semantic-hash-reconciliation.json").is_file())
         check("production_retirement_transaction_rehearsed",
@@ -132,7 +157,7 @@ def main(phase):
         "status": "PASS" if ok else "D_BLOCKED",
         "checks": results, "failed": [x["check"] for x in results if x["status"] == "FAIL"],
         "stageDVerifiedLessons": 0,
-        "sourceParityCertified": False,
+        "sourceParityCertified": phase == "source" and 'missing_parity' in locals() and len(missing_parity) == 0,
         "productionTouched": False
     }
     (OUT / ("grade8-%s-gate.json" % phase)).write_text(

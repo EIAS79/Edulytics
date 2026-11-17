@@ -25,7 +25,8 @@
     "AUTHENTICATED_RTL_E2E_NOT_RUN",
     "FINAL_CI_NOT_PASSED",
     "66_RICHV2_RUNTIME_SCHEMA_GAPS_AFTER_UNIT_1",
-    "ISOLATED_PG_AUTHENTICATED_E2E_NOT_RUN"
+    "ISOLATED_PG_AUTHENTICATED_E2E_NOT_RUN",
+    "PRODUCTION_PRE_CUTOVER_BACKUP_BLOCKED_BY_NEON_QUOTA"
   ],
   "productionReadOnlyInventory": {
     "readDate": "2026-11-17",
@@ -40,12 +41,15 @@
     "legacyAdaptivePracticeShadowObservations": 0,
     "legacyPedagogicalLessonOutcomes": 0,
     "grade8GeneralAdoptions": 2,
-    "productionMutated": false
+    "productionMutated": false,
+    "protectiveBackupAttempt": "NEON_BRANCH_AND_SNAPSHOT_QUOTAS_EXCEEDED",
+    "externalDestructiveChangePerformed": false
   },
   "authorization": {
-    "academicOwnerGrade8ApprovalRecorded": false,
+    "academicOwnerGrade8ApprovalRecorded": true,
     "rightsClearanceVerified": false,
-    "productionReleaseApproved": false
+    "productionReleaseApproved": true,
+    "productionReleaseCondition": "OWNER_AUTHORIZED_ONLY_AFTER_TECHNICAL_CI_SAFE_CUTOVER"
   },
   "lastNodeTestEvidence": {
     "candidateSha": "1287a1d6ae73ffd84e52778707364e4d88bb028e",
