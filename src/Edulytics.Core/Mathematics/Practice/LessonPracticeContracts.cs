@@ -10484,6 +10484,14 @@ public static class LessonPracticeContractRegistry
             "UAE_G8_GENERAL_AR_U04L06_PDF352_359_TEACHER_REVIEW",
             "READY_VERIFIED", Version);
 
+        // UAE Grade8 General Arabic Unit04 Lesson07, Student Book PDF 360-367.
+        // Reuse numeric practice; explanation, graphs and open tasks are teacher-reviewed.
+        byLesson["PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS"] = new LessonPracticeContract(
+            "PED:UAE-MOE-MATH:L8:GENERAL:04:07:LINEAR-AND-NONLINEAR-FUNCTIONS", "functions.graph.key_features", "CLASSIFY_LINEAR_NONLINEAR_FIRST_DIFFERENCE_TABLE_GRAPH",
+            ["functions.linear_graphs", "uae.g6.u08.l03.linear_vs_square", "functions.graph.key_features", "functions.quadratic.context"],
+            "UAE_G8_GENERAL_AR_U04L07_PDF360_367_TEACHER_REVIEW",
+            "READY_VERIFIED", Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
